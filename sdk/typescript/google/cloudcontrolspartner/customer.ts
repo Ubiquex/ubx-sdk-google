@@ -33,12 +33,8 @@ export interface CustomerConfig {
   customerOnboardingState?: Customer_CustomerOnboardingState | Computed<Customer_CustomerOnboardingState>;
   /** Required. Display name for the customer */
   displayName?: string | Computed<string>;
-  /** Output only. Indicates whether a customer is fully onboarded */
-  isOnboarded?: boolean | Computed<boolean>;
   /** Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}` */
   name?: string | Computed<string>;
-  /** Output only. The customer organization domain, extracted from CRM Organization’s display_name field. e.g. "google.com" */
-  organizationDomain?: string | Computed<string>;
 }
 
 export interface CustomerAttrs {
@@ -63,8 +59,6 @@ export const Customer: ResourceBinding<CustomerConfig, CustomerAttrs> = {
       fields: Customer_CustomerOnboardingStateFields,
     },
     displayName: "display_name",
-    isOnboarded: "is_onboarded",
     name: "name",
-    organizationDomain: "organization_domain",
   },
 };

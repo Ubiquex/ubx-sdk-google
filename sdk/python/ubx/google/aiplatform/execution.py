@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExecutionConfig:
-    # Output only. Timestamp when this Execution was created.
-    create_time: Any = None
     # Description of the Execution
     description: Any = None
     # User provided display name of the Execution. May be up to 128 Unicode characters.
@@ -20,16 +18,12 @@ class ExecutionConfig:
     labels: Any = None
     # Properties of the Execution. Top level metadata keys' heading and trailing spaces will be trimmed. The size of this field should not exceed 200KB.
     metadata: Any = None
-    # Output only. The resource name of the Execution.
-    name: Any = None
     # The title of the schema describing the metadata. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
     schema_title: Any = None
     # The version of the schema in `schema_title` to use. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
     schema_version: Any = None
     # The state of this Execution. This is a property of the Execution, and does not imply or capture any ongoing process. This property is managed by clients (such as Vertex AI Pipelines) and the system does not prescribe or check the validity of state transitions.
     state: Any = None
-    # Output only. Timestamp when this Execution was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ExecutionAttrs:
@@ -59,16 +53,13 @@ class ExecutionAttrs:
 Execution = ubx.ResourceBinding(
     wire_type="google_aiplatform_execution",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "schema_title": ubx.FieldSpec(wire_name="schema_title"),
         "schema_version": ubx.FieldSpec(wire_name="schema_version"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

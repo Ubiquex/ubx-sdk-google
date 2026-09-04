@@ -486,20 +486,12 @@ class CertificateConfig:
     certificate_template: Any = None
     # A CertificateConfig describes an X.509 certificate or CSR that is to be created, as an alternative to using ASN.1.
     config: Any = None
-    # Output only. The time at which this Certificate was created.
-    create_time: Any = None
-    # Output only. The resource name of the issuing CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
-    issuer_certificate_authority: Any = None
     # Optional. Labels with user-defined metadata.
     labels: Any = None
     # Required. Immutable. The desired lifetime of a certificate. Used to create the "not_before_time" and "not_after_time" fields inside an X.509 certificate. Note that the lifetime may be truncated if it would extend past the life of any certificate authority in the issuing chain.
     lifetime: Any = None
     # Identifier. The resource name for this Certificate in the format `projects/*/locations/*/caPools/*/certificates/*`.
     name: Any = None
-    # Output only. The pem-encoded, signed X.509 certificate.
-    pem_certificate: Any = None
-    # Output only. The chain that may be used to verify the X.509 certificate. Expected to be in issuer-to-root order according to RFC 5246.
-    pem_certificate_chain: Any = None
     # Immutable. A pem-encoded X.509 certificate signing request (CSR).
     pem_csr: Any = None
     # Optional. The requested not_before_time of this Certificate. This field may only be set if the CaPool.IssuancePolicy.allow_requester_specified_not_before_time field is set to true for the issuing CaPool. If this field is specified, the certificate will be issued with this 'not_before_time'. If this is not specified, the 'not_before_time' will be set to the issuance time or issuance time minus backdate_duration depending on the CaPool configuration.
@@ -508,8 +500,6 @@ class CertificateConfig:
     revocation_details: Any = None
     # Immutable. Specifies how the Certificate's identity fields are to be decided. If this is omitted, the `DEFAULT` subject mode will be used.
     subject_mode: Any = None
-    # Output only. The time at which this Certificate was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CertificateAttrs:
@@ -558,13 +548,9 @@ Certificate = ubx.ResourceBinding(
             kind="object",
             fields=_Certificate_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "issuer_certificate_authority": ubx.FieldSpec(wire_name="issuer_certificate_authority"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "lifetime": ubx.FieldSpec(wire_name="lifetime"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pem_certificate": ubx.FieldSpec(wire_name="pem_certificate"),
-        "pem_certificate_chain": ubx.FieldSpec(wire_name="pem_certificate_chain"),
         "pem_csr": ubx.FieldSpec(wire_name="pem_csr"),
         "requested_not_before_time": ubx.FieldSpec(wire_name="requested_not_before_time"),
         "revocation_details": ubx.FieldSpec(
@@ -573,6 +559,5 @@ Certificate = ubx.ResourceBinding(
             fields=_Certificate_RevocationDetailsFields,
         ),
         "subject_mode": ubx.FieldSpec(wire_name="subject_mode"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

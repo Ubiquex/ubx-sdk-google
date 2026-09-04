@@ -17,8 +17,6 @@ _MulticastConsumerAssociation_StateFields = {
 
 @dataclasses.dataclass
 class MulticastConsumerAssociationConfig:
-    # Output only. [Output only] The timestamp when the multicast consumer association was created.
-    create_time: Any = None
     # Optional. An optional text description of the multicast consumer association.
     description: Any = None
     # Optional. Labels as key-value pairs
@@ -29,16 +27,8 @@ class MulticastConsumerAssociationConfig:
     name: Any = None
     # Required. The resource name of the multicast consumer VPC network. Use following format: `projects/{project}/locations/global/networks/{network}`.
     network: Any = None
-    # Output only. [Output only] A Compute Engine (placement policy)[https://cloud.google.com/compute/docs/instances/placement-policies-overview] that can be used to place virtual machine (VM) instances as multicast consumers close to the multicast infrastructure created for this domain, on a best effort basis.
-    placement_policy: Any = None
-    # Output only. [Deprecated] The resource state of the multicast consumer association. Use the state field instead.
-    resource_state: Any = None
     # The multicast resource's state.
     state: Any = None
-    # Output only. [Output only] The Google-generated UUID for the resource. This value is unique across all multicast consumer association resources. If a consumer association is deleted and another with the same name is created, the new consumer association is assigned a different unique_id.
-    unique_id: Any = None
-    # Output only. [Output only] The timestamp when the Multicast Consumer Association was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MulticastConsumerAssociationAttrs:
@@ -68,20 +58,15 @@ class MulticastConsumerAssociationAttrs:
 MulticastConsumerAssociation = ubx.ResourceBinding(
     wire_type="google_networkservices_multicast_consumer_association",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "multicast_domain_activation": ubx.FieldSpec(wire_name="multicast_domain_activation"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
-        "placement_policy": ubx.FieldSpec(wire_name="placement_policy"),
-        "resource_state": ubx.FieldSpec(wire_name="resource_state"),
         "state": ubx.FieldSpec(
             wire_name="state",
             kind="object",
             fields=_MulticastConsumerAssociation_StateFields,
         ),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

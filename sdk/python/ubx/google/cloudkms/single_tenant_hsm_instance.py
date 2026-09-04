@@ -23,22 +23,12 @@ _SingleTenantHsmInstance_QuorumAuthFields = {
 
 @dataclasses.dataclass
 class SingleTenantHsmInstanceConfig:
-    # Output only. The time at which the SingleTenantHsmInstance was created.
-    create_time: Any = None
-    # Output only. The time at which the SingleTenantHsmInstance was deleted.
-    delete_time: Any = None
-    # Output only. The time at which the instance will be automatically disabled if not refreshed. This field is updated upon creation and after each successful refresh operation and enable. A RefreshSingleTenantHsmInstance operation must be made via a SingleTenantHsmInstanceProposal before this time otherwise the SingleTenantHsmInstance will become disabled.
-    disable_time: Any = None
     # Optional. Immutable. Indicates whether key portability is enabled for the SingleTenantHsmInstance. This can only be set at creation time. Key portability features are disabled by default.
     key_portability_enabled: Any = None
     # Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/*/locations/*/singleTenantHsmInstances/*`.
     name: Any = None
     # Configuration for M of N quorum auth.
     quorum_auth: Any = None
-    # Output only. The state of the SingleTenantHsmInstance.
-    state: Any = None
-    # Output only. The system-defined duration that an instance can remain unrefreshed until it is automatically disabled. This will have a value of 730 days.
-    unrefreshed_duration_until_disable: Any = None
 
 @dataclasses.dataclass
 class SingleTenantHsmInstanceAttrs:
@@ -62,9 +52,6 @@ class SingleTenantHsmInstanceAttrs:
 SingleTenantHsmInstance = ubx.ResourceBinding(
     wire_type="google_cloudkms_single_tenant_hsm_instance",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "disable_time": ubx.FieldSpec(wire_name="disable_time"),
         "key_portability_enabled": ubx.FieldSpec(wire_name="key_portability_enabled"),
         "name": ubx.FieldSpec(wire_name="name"),
         "quorum_auth": ubx.FieldSpec(
@@ -72,7 +59,5 @@ SingleTenantHsmInstance = ubx.ResourceBinding(
             kind="object",
             fields=_SingleTenantHsmInstance_QuorumAuthFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unrefreshed_duration_until_disable": ubx.FieldSpec(wire_name="unrefreshed_duration_until_disable"),
     },
 )

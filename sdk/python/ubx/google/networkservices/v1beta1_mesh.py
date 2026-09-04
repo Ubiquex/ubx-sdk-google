@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1MeshConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
@@ -20,10 +18,6 @@ class V1beta1MeshConfig:
     labels: Any = None
     # Identifier. Name of the Mesh resource. It matches pattern `projects/*/locations/*/meshes/`.
     name: Any = None
-    # Output only. Server-defined URL of this resource
-    self_link: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1MeshAttrs:
@@ -47,13 +41,10 @@ class V1beta1MeshAttrs:
 V1beta1Mesh = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_mesh",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "envoy_headers": ubx.FieldSpec(wire_name="envoy_headers"),
         "interception_port": ubx.FieldSpec(wire_name="interception_port"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

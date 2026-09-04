@@ -234,8 +234,6 @@ const Task_TriggerSpecFields: FieldMap = {
 };
 
 export interface TaskConfig {
-  /** Output only. The time when the task was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the task. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
@@ -246,20 +244,12 @@ export interface TaskConfig {
   executionStatus?: Task_ExecutionStatus | Computed<Task_ExecutionStatus>;
   /** Optional. User-defined labels for the task. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the task, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/ tasks/{task_id}. */
-  name?: string | Computed<string>;
   /** Config for running scheduled notebooks. */
   notebook?: Task_Notebook | Computed<Task_Notebook>;
   /** User-specified config for running a Spark task. */
   spark?: Task_Spark | Computed<Task_Spark>;
-  /** Output only. Current state of the task. */
-  state?: string | Computed<string>;
   /** Task scheduling and trigger settings. */
   triggerSpec?: Task_TriggerSpec | Computed<Task_TriggerSpec>;
-  /** Output only. System generated globally unique ID for the task. This ID will be different if the task is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the task was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TaskAttrs {
@@ -294,7 +284,6 @@ export interface TaskAttrs {
 export const Task: ResourceBinding<TaskConfig, TaskAttrs> = {
   wireType: "google_dataplex_task",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     executionSpec: {
@@ -308,7 +297,6 @@ export const Task: ResourceBinding<TaskConfig, TaskAttrs> = {
       fields: Task_ExecutionStatusFields,
     },
     labels: "labels",
-    name: "name",
     notebook: {
       wireName: "notebook",
       kind: "object",
@@ -319,13 +307,10 @@ export const Task: ResourceBinding<TaskConfig, TaskAttrs> = {
       kind: "object",
       fields: Task_SparkFields,
     },
-    state: "state",
     triggerSpec: {
       wireName: "trigger_spec",
       kind: "object",
       fields: Task_TriggerSpecFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

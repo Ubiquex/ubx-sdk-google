@@ -1284,461 +1284,17 @@ _V1alphaFeature_MembershipSpecsFields = {
     ),
 }
 
-_V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "description": ubx.FieldSpec(wire_name="description"),
-}
-
-_V1alphaFeature_MembershipStates_AppdevexperienceFields = {
-    "networking_install_succeeded": ubx.FieldSpec(
-        wire_name="networking_install_succeeded",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields = {
-    "ignored_time": ubx.FieldSpec(wire_name="ignored_time"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-}
-
-_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
-_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "version": ubx.FieldSpec(wire_name="version"),
-}
-
-_V1alphaFeature_MembershipStates_Clusterupgrade_UpgradesFields = {
-    "status": ubx.FieldSpec(
-        wire_name="status",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-    ),
-    "upgrade": ubx.FieldSpec(
-        wire_name="upgrade",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_ClusterupgradeFields = {
-    "ignored": ubx.FieldSpec(
-        wire_name="ignored",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-    ),
-    "scopes": ubx.FieldSpec(wire_name="scopes"),
-    "upgrades": ubx.FieldSpec(
-        wire_name="upgrades",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_UpgradesFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields = {
-    "webhook_version": ubx.FieldSpec(wire_name="webhook_version"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_BinauthzStateFields = {
-    "version": ubx.FieldSpec(
-        wire_name="version",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields,
-    ),
-    "webhook": ubx.FieldSpec(wire_name="webhook"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields = {
-    "admission_webhook": ubx.FieldSpec(wire_name="admission_webhook"),
-    "git_sync": ubx.FieldSpec(wire_name="git_sync"),
-    "importer": ubx.FieldSpec(wire_name="importer"),
-    "monitor": ubx.FieldSpec(wire_name="monitor"),
-    "otel_collector": ubx.FieldSpec(wire_name="otel_collector"),
-    "reconciler_manager": ubx.FieldSpec(wire_name="reconciler_manager"),
-    "resource_group_controller_manager": ubx.FieldSpec(wire_name="resource_group_controller_manager"),
-    "root_reconciler": ubx.FieldSpec(wire_name="root_reconciler"),
-    "syncer": ubx.FieldSpec(wire_name="syncer"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields = {
-    "error_message": ubx.FieldSpec(wire_name="error_message"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields = {
-    "group": ubx.FieldSpec(wire_name="group"),
-    "kind": ubx.FieldSpec(wire_name="kind"),
-    "version": ubx.FieldSpec(wire_name="version"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields = {
-    "resource_gvk": ubx.FieldSpec(
-        wire_name="resource_gvk",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields,
-    ),
-    "resource_name": ubx.FieldSpec(wire_name="resource_name"),
-    "resource_namespace": ubx.FieldSpec(wire_name="resource_namespace"),
-    "source_path": ubx.FieldSpec(wire_name="source_path"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "error_message": ubx.FieldSpec(wire_name="error_message"),
-    "error_resources": ubx.FieldSpec(
-        wire_name="error_resources",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "errors": ubx.FieldSpec(
-        wire_name="errors",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields,
-    ),
-    "import_token": ubx.FieldSpec(wire_name="import_token"),
-    "last_sync": ubx.FieldSpec(wire_name="last_sync"),
-    "last_sync_time": ubx.FieldSpec(wire_name="last_sync_time"),
-    "source_token": ubx.FieldSpec(wire_name="source_token"),
-    "sync_token": ubx.FieldSpec(wire_name="sync_token"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields = {
-    "cluster_level_stop_syncing_state": ubx.FieldSpec(wire_name="cluster_level_stop_syncing_state"),
-    "cr_count": ubx.FieldSpec(wire_name="cr_count"),
-    "deployment_state": ubx.FieldSpec(
-        wire_name="deployment_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-    ),
-    "errors": ubx.FieldSpec(
-        wire_name="errors",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-    ),
-    "reposync_crd": ubx.FieldSpec(wire_name="reposync_crd"),
-    "rootsync_crd": ubx.FieldSpec(wire_name="rootsync_crd"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "sync_state": ubx.FieldSpec(
-        wire_name="sync_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields,
-    ),
-    "version": ubx.FieldSpec(
-        wire_name="version",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields = {
-    "extension": ubx.FieldSpec(wire_name="extension"),
-    "hnc": ubx.FieldSpec(wire_name="hnc"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields = {
-    "state": ubx.FieldSpec(
-        wire_name="state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-    ),
-    "version": ubx.FieldSpec(
-        wire_name="version",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_OperatorStateFields = {
-    "deployment_state": ubx.FieldSpec(wire_name="deployment_state"),
-    "errors": ubx.FieldSpec(
-        wire_name="errors",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-    ),
-    "version": ubx.FieldSpec(wire_name="version"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields = {
-    "gatekeeper_audit": ubx.FieldSpec(wire_name="gatekeeper_audit"),
-    "gatekeeper_controller_manager_state": ubx.FieldSpec(wire_name="gatekeeper_controller_manager_state"),
-    "gatekeeper_mutation": ubx.FieldSpec(wire_name="gatekeeper_mutation"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields = {
-    "copy_time": ubx.FieldSpec(wire_name="copy_time"),
-    "stage": ubx.FieldSpec(wire_name="stage"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields = {
-    "version": ubx.FieldSpec(wire_name="version"),
-}
-
-_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields = {
-    "deployment_state": ubx.FieldSpec(
-        wire_name="deployment_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields,
-    ),
-    "migration": ubx.FieldSpec(
-        wire_name="migration",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields,
-    ),
-    "version": ubx.FieldSpec(
-        wire_name="version",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_ConfigmanagementFields = {
-    "binauthz_state": ubx.FieldSpec(
-        wire_name="binauthz_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_BinauthzStateFields,
-    ),
-    "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-    "config_sync_state": ubx.FieldSpec(
-        wire_name="config_sync_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields,
-    ),
-    "hierarchy_controller_state": ubx.FieldSpec(
-        wire_name="hierarchy_controller_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields,
-    ),
-    "kubernetes_api_server_version": ubx.FieldSpec(wire_name="kubernetes_api_server_version"),
-    "membership_spec": ubx.FieldSpec(
-        wire_name="membership_spec",
-        kind="object",
-        fields=_V1alphaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
-    ),
-    "operator_state": ubx.FieldSpec(
-        wire_name="operator_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_OperatorStateFields,
-    ),
-    "policy_controller_state": ubx.FieldSpec(
-        wire_name="policy_controller_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_IdentityserviceFields = {
-    "failure_reason": ubx.FieldSpec(wire_name="failure_reason"),
-    "installed_version": ubx.FieldSpec(wire_name="installed_version"),
-    "member_config": ubx.FieldSpec(
-        wire_name="member_config",
-        kind="object",
-        fields=_V1alphaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1alphaFeature_MembershipStates_MeteringFields = {
-    "last_measurement_time": ubx.FieldSpec(wire_name="last_measurement_time"),
-    "precise_last_measured_cluster_vcpu_capacity": ubx.FieldSpec(wire_name="precise_last_measured_cluster_vcpu_capacity"),
-}
-
-_V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields = {
-    "details": ubx.FieldSpec(wire_name="details"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1alphaFeature_MembershipStates_Policycontroller_PolicyContentStateFields = {
-    "bundle_states": ubx.FieldSpec(
-        wire_name="bundle_states",
-        kind="map",
-        fields=_V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-    ),
-    "referential_sync_config_state": ubx.FieldSpec(
-        wire_name="referential_sync_config_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-    ),
-    "template_library_state": ubx.FieldSpec(
-        wire_name="template_library_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_PolicycontrollerFields = {
-    "component_states": ubx.FieldSpec(
-        wire_name="component_states",
-        kind="map",
-        fields=_V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-    ),
-    "policy_content_state": ubx.FieldSpec(
-        wire_name="policy_content_state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Policycontroller_PolicyContentStateFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields = {
-    "documentation_url": ubx.FieldSpec(wire_name="documentation_url"),
-    "level": ubx.FieldSpec(wire_name="level"),
-    "type": ubx.FieldSpec(
-        wire_name="type",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields = {
-    "args": ubx.FieldSpec(wire_name="args"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "message_base": ubx.FieldSpec(
-        wire_name="message_base",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields,
-    ),
-    "resource_paths": ubx.FieldSpec(wire_name="resource_paths"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "documentation_link": ubx.FieldSpec(wire_name="documentation_link"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields = {
-    "details": ubx.FieldSpec(
-        wire_name="details",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-    ),
-    "implementation": ubx.FieldSpec(wire_name="implementation"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1alphaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields = {
-    "details": ubx.FieldSpec(
-        wire_name="details",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1alphaFeature_MembershipStates_ServicemeshFields = {
-    "analysis_messages": ubx.FieldSpec(
-        wire_name="analysis_messages",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields,
-    ),
-    "conditions": ubx.FieldSpec(
-        wire_name="conditions",
-        kind="list",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields,
-    ),
-    "config_api_version": ubx.FieldSpec(wire_name="config_api_version"),
-    "control_plane_management": ubx.FieldSpec(
-        wire_name="control_plane_management",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields,
-    ),
-    "data_plane_management": ubx.FieldSpec(
-        wire_name="data_plane_management",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStates_StateFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
-_V1alphaFeature_MembershipStates_WorkloadidentityFields = {
-    "description": ubx.FieldSpec(wire_name="description"),
-    "identity_provider_state_details": ubx.FieldSpec(
-        wire_name="identity_provider_state_details",
-        kind="map",
-        fields=_V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-    ),
-}
-
-_V1alphaFeature_MembershipStatesFields = {
-    "appdevexperience": ubx.FieldSpec(
-        wire_name="appdevexperience",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_AppdevexperienceFields,
-    ),
-    "clusterupgrade": ubx.FieldSpec(
-        wire_name="clusterupgrade",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_ClusterupgradeFields,
-    ),
-    "configmanagement": ubx.FieldSpec(
-        wire_name="configmanagement",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_ConfigmanagementFields,
-    ),
-    "fleetobservability": ubx.FieldSpec(wire_name="fleetobservability"),
-    "identityservice": ubx.FieldSpec(
-        wire_name="identityservice",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_IdentityserviceFields,
-    ),
-    "metering": ubx.FieldSpec(
-        wire_name="metering",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_MeteringFields,
-    ),
-    "namespaceactuation": ubx.FieldSpec(wire_name="namespaceactuation"),
-    "policycontroller": ubx.FieldSpec(
-        wire_name="policycontroller",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_PolicycontrollerFields,
-    ),
-    "servicemesh": ubx.FieldSpec(
-        wire_name="servicemesh",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_ServicemeshFields,
-    ),
-    "state": ubx.FieldSpec(
-        wire_name="state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_StateFields,
-    ),
-    "workloadidentity": ubx.FieldSpec(
-        wire_name="workloadidentity",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_WorkloadidentityFields,
-    ),
-}
-
 _V1alphaFeature_ResourceStateFields = {
     "state": ubx.FieldSpec(wire_name="state"),
 }
 
 _V1alphaFeature_ScopeSpecs_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields = {
     "soaking": ubx.FieldSpec(wire_name="soaking"),
+}
+
+_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields = {
+    "name": ubx.FieldSpec(wire_name="name"),
+    "version": ubx.FieldSpec(wire_name="version"),
 }
 
 _V1alphaFeature_ScopeSpecs_Clusterupgrade_GkeUpgradeOverridesFields = {
@@ -1773,67 +1329,6 @@ _V1alphaFeature_ScopeSpecsFields = {
         wire_name="clusterupgrade",
         kind="object",
         fields=_V1alphaFeature_ScopeSpecs_ClusterupgradeFields,
-    ),
-}
-
-_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields = {
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "status": ubx.FieldSpec(wire_name="status"),
-    "type": ubx.FieldSpec(wire_name="type"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
-_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields = {
-    "stats": ubx.FieldSpec(wire_name="stats"),
-    "status": ubx.FieldSpec(
-        wire_name="status",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-    ),
-    "upgrade": ubx.FieldSpec(
-        wire_name="upgrade",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-    ),
-}
-
-_V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields = {
-    "conditions": ubx.FieldSpec(
-        wire_name="conditions",
-        kind="list",
-        fields=_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields,
-    ),
-    "upgrade_state": ubx.FieldSpec(
-        wire_name="upgrade_state",
-        kind="list",
-        fields=_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields,
-    ),
-}
-
-_V1alphaFeature_ScopeStates_ClusterupgradeFields = {
-    "downstream_scopes": ubx.FieldSpec(wire_name="downstream_scopes"),
-    "gke_state": ubx.FieldSpec(
-        wire_name="gke_state",
-        kind="object",
-        fields=_V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields,
-    ),
-    "ignored": ubx.FieldSpec(
-        wire_name="ignored",
-        kind="map",
-        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-    ),
-}
-
-_V1alphaFeature_ScopeStatesFields = {
-    "clusterupgrade": ubx.FieldSpec(
-        wire_name="clusterupgrade",
-        kind="object",
-        fields=_V1alphaFeature_ScopeStates_ClusterupgradeFields,
-    ),
-    "state": ubx.FieldSpec(
-        wire_name="state",
-        kind="object",
-        fields=_V1alphaFeature_MembershipStates_StateFields,
     ),
 }
 
@@ -1970,6 +1465,64 @@ _V1alphaFeature_SpecFields = {
     ),
 }
 
+_V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "description": ubx.FieldSpec(wire_name="description"),
+}
+
+_V1alphaFeature_MembershipStates_AppdevexperienceFields = {
+    "networking_install_succeeded": ubx.FieldSpec(
+        wire_name="networking_install_succeeded",
+        kind="object",
+        fields=_V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+    ),
+}
+
+_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields = {
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "type": ubx.FieldSpec(wire_name="type"),
+    "update_time": ubx.FieldSpec(wire_name="update_time"),
+}
+
+_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "update_time": ubx.FieldSpec(wire_name="update_time"),
+}
+
+_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields = {
+    "stats": ubx.FieldSpec(wire_name="stats"),
+    "status": ubx.FieldSpec(
+        wire_name="status",
+        kind="object",
+        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
+    ),
+    "upgrade": ubx.FieldSpec(
+        wire_name="upgrade",
+        kind="object",
+        fields=_V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
+    ),
+}
+
+_V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields = {
+    "conditions": ubx.FieldSpec(
+        wire_name="conditions",
+        kind="list",
+        fields=_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields,
+    ),
+    "upgrade_state": ubx.FieldSpec(
+        wire_name="upgrade_state",
+        kind="list",
+        fields=_V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields,
+    ),
+}
+
+_V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields = {
+    "ignored_time": ubx.FieldSpec(wire_name="ignored_time"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+}
+
 _V1alphaFeature_State_ClusterupgradeFields = {
     "downstream_fleets": ubx.FieldSpec(wire_name="downstream_fleets"),
     "gke_state": ubx.FieldSpec(
@@ -2027,6 +1580,39 @@ _V1alphaFeature_State_FleetobservabilityFields = {
     ),
 }
 
+_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "display_name": ubx.FieldSpec(wire_name="display_name"),
+}
+
+_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields = {
+    "documentation_url": ubx.FieldSpec(wire_name="documentation_url"),
+    "level": ubx.FieldSpec(wire_name="level"),
+    "type": ubx.FieldSpec(
+        wire_name="type",
+        kind="object",
+        fields=_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields,
+    ),
+}
+
+_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields = {
+    "args": ubx.FieldSpec(wire_name="args"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "message_base": ubx.FieldSpec(
+        wire_name="message_base",
+        kind="object",
+        fields=_V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields,
+    ),
+    "resource_paths": ubx.FieldSpec(wire_name="resource_paths"),
+}
+
+_V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "details": ubx.FieldSpec(wire_name="details"),
+    "documentation_link": ubx.FieldSpec(wire_name="documentation_link"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+}
+
 _V1alphaFeature_State_ServicemeshFields = {
     "analysis_messages": ubx.FieldSpec(
         wire_name="analysis_messages",
@@ -2038,6 +1624,12 @@ _V1alphaFeature_State_ServicemeshFields = {
         kind="list",
         fields=_V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields,
     ),
+}
+
+_V1alphaFeature_MembershipStates_StateFields = {
+    "code": ubx.FieldSpec(wire_name="code"),
+    "description": ubx.FieldSpec(wire_name="description"),
+    "update_time": ubx.FieldSpec(wire_name="update_time"),
 }
 
 _V1alphaFeature_State_WorkloadidentityFields = {
@@ -2093,34 +1685,20 @@ _V1alphaFeature_StateFields = {
 
 @dataclasses.dataclass
 class V1alphaFeatureConfig:
-    # Output only. When the Feature resource was created.
-    create_time: Any = None
-    # Output only. When the Feature resource was deleted.
-    delete_time: Any = None
     # CommonFleetDefaultMemberConfigSpec contains default configuration information for memberships of a fleet
     fleet_default_member_config: Any = None
     # Labels for this Feature.
     labels: Any = None
     # Optional. Membership-specific configuration for this Feature. If this Feature does not support any per-Membership configuration, this field may be unused. The keys indicate which Membership the configuration is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Membership is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature.
     membership_specs: Any = None
-    # Output only. Membership-specific Feature status. If this Feature does report any per-Membership status, this field may be unused. The keys indicate which Membership the state is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project number, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} MUST match the Feature's project number.
-    membership_states: Any = None
-    # Output only. The full, unique name of this Feature resource in the format `projects/*/locations/*/features/*`.
-    name: Any = None
     # FeatureResourceState describes the state of a Feature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the Feature in the Fleet and across Memberships.
     resource_state: Any = None
     # Optional. Scope-specific configuration for this Feature. If this Feature does not support any per-Scope configuration, this field may be unused. The keys indicate which Scope the configuration is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Scope is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature.
     scope_specs: Any = None
-    # Output only. Scope-specific Feature status. If this Feature does report any per-Scope status, this field may be unused. The keys indicate which Scope the state is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project.
-    scope_states: Any = None
     # CommonFeatureSpec contains Fleet-wide configuration information
     spec: Any = None
     # CommonFeatureState contains Fleet-wide Feature status information.
     state: Any = None
-    # Output only. List of locations that could not be reached while fetching this feature.
-    unreachable: Any = None
-    # Output only. When the Feature resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaFeatureAttrs:
@@ -2156,8 +1734,6 @@ class V1alphaFeatureAttrs:
 V1alphaFeature = ubx.ResourceBinding(
     wire_type="google_gkehub_v1alpha_feature",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "fleet_default_member_config": ubx.FieldSpec(
             wire_name="fleet_default_member_config",
             kind="object",
@@ -2169,12 +1745,6 @@ V1alphaFeature = ubx.ResourceBinding(
             kind="map",
             fields=_V1alphaFeature_MembershipSpecsFields,
         ),
-        "membership_states": ubx.FieldSpec(
-            wire_name="membership_states",
-            kind="map",
-            fields=_V1alphaFeature_MembershipStatesFields,
-        ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "resource_state": ubx.FieldSpec(
             wire_name="resource_state",
             kind="object",
@@ -2184,11 +1754,6 @@ V1alphaFeature = ubx.ResourceBinding(
             wire_name="scope_specs",
             kind="map",
             fields=_V1alphaFeature_ScopeSpecsFields,
-        ),
-        "scope_states": ubx.FieldSpec(
-            wire_name="scope_states",
-            kind="map",
-            fields=_V1alphaFeature_ScopeStatesFields,
         ),
         "spec": ubx.FieldSpec(
             wire_name="spec",
@@ -2200,7 +1765,5 @@ V1alphaFeature = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaFeature_StateFields,
         ),
-        "unreachable": ubx.FieldSpec(wire_name="unreachable"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

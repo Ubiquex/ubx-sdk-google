@@ -566,16 +566,12 @@ class CustomConnectorVersionConfig:
     auth_override_support: Any = None
     # Optional. Backend variable templates is only used when connector backend is enabled. This is used to specify the variables required by the connector backend service to talk to the actual application backend. This translates to additional variable templates in the connection config.
     backend_variable_templates: Any = None
-    # Output only. Created time.
-    create_time: Any = None
     # Optional. Destination config(s) for accessing connector service (facade). This is used only when enable_backend_destination_config is true.
     destination_configs: Any = None
     # Optional. Indicates if an intermediatory connectorservice is used as backend. When this is enabled, the connector destination and connector auth config are required. For SDK based connectors, this is always enabled.
     enable_backend_destination_config: Any = None
     # Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
-    # Output only. Identifier. Resource name of the Version. Format: projects/{project}/locations/{location}/customConnectors/{custom_connector}/customConnectorVersions/{custom_connector_version}
-    name: Any = None
     # Partner metadata details. This will be populated when publishing the custom connector as a partner connector version. On publishing, parntner connector version will be created using the fields in PartnerMetadata.
     partner_metadata: Any = None
     # Publish status of a custom connector.
@@ -584,12 +580,6 @@ class CustomConnectorVersionConfig:
     service_account: Any = None
     # Optional. Location of the custom connector spec. This is only used for Open API based custom connectors. The location can be either a public url like `https://public-url.com/spec` Or a Google Cloud Storage location like `gs:///`.
     spec_location: Any = None
-    # Output only. Server URLs parsed from the Open API spec. This is only used for Open API based custom connectors.
-    spec_server_urls: Any = None
-    # Output only. State of the custom connector version.
-    state: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorVersionAttrs:
@@ -648,7 +638,6 @@ CustomConnectorVersion = ubx.ResourceBinding(
             kind="list",
             fields=_CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination_configs": ubx.FieldSpec(
             wire_name="destination_configs",
             kind="list",
@@ -656,7 +645,6 @@ CustomConnectorVersion = ubx.ResourceBinding(
         ),
         "enable_backend_destination_config": ubx.FieldSpec(wire_name="enable_backend_destination_config"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "partner_metadata": ubx.FieldSpec(
             wire_name="partner_metadata",
             kind="object",
@@ -669,8 +657,5 @@ CustomConnectorVersion = ubx.ResourceBinding(
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "spec_location": ubx.FieldSpec(wire_name="spec_location"),
-        "spec_server_urls": ubx.FieldSpec(wire_name="spec_server_urls"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -4,55 +4,55 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hl7V2Store_NotificationConfigs struct {
-	Filter any
+	Filter      any
 	PubsubTopic any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_Segment struct {
 	MaxOccurs any
 	MinOccurs any
-	Type any
+	Type      any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members struct {
-	Group any
+	Group   any
 	Segment any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs struct {
-	Choice any
+	Choice    any
 	MaxOccurs any
-	Members any
+	Members   any
 	MinOccurs any
-	Name any
+	Name      any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas_Version struct {
 	MshField any
-	Value any
+	Value    any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Schemas struct {
 	MessageSchemaConfigs any
-	Version any
+	Version              any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types_Type_Fields struct {
 	MaxOccurs any
 	MinOccurs any
-	Name any
-	Table any
-	Type any
+	Name      any
+	Table     any
+	Type      any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types_Type struct {
-	Fields any
-	Name any
+	Fields    any
+	Name      any
 	Primitive any
 }
 
 type Hl7V2Store_ParserConfig_Schema_Types struct {
-	Type any
+	Type    any
 	Version any
 }
 
@@ -81,112 +81,112 @@ type Hl7V2Store_ParserConfig struct {
 }
 
 var Hl7V2Store_NotificationConfigsFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"Filter":      ubx.FieldSpec{WireName: "filter"},
+	"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_SegmentFields = ubx.FieldMap{
-		"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
-		"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
+	"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_MembersFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Segment": ubx.FieldSpec{
-			WireName: "segment",
-			Kind: "object",
-			Fields: Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_SegmentFields,
-		},
-	}
+	"Group": ubx.FieldSpec{WireName: "group"},
+	"Segment": ubx.FieldSpec{
+		WireName: "segment",
+		Kind:     "object",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_Members_SegmentFields,
+	},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigsFields = ubx.FieldMap{
-		"Choice": ubx.FieldSpec{WireName: "choice"},
-		"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
-		"Members": ubx.FieldSpec{
-			WireName: "members",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_MembersFields,
-		},
-		"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Choice":    ubx.FieldSpec{WireName: "choice"},
+	"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
+	"Members": ubx.FieldSpec{
+		WireName: "members",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigs_MembersFields,
+	},
+	"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Schemas_VersionFields = ubx.FieldMap{
-		"MshField": ubx.FieldSpec{WireName: "msh_field"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"MshField": ubx.FieldSpec{WireName: "msh_field"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_SchemasFields = ubx.FieldMap{
-		"MessageSchemaConfigs": ubx.FieldSpec{
-			WireName: "message_schema_configs",
-			Kind: "map",
-			Fields: Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigsFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_Schemas_VersionFields,
-		},
-	}
+	"MessageSchemaConfigs": ubx.FieldSpec{
+		WireName: "message_schema_configs",
+		Kind:     "map",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Schemas_MessageSchemaConfigsFields,
+	},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Schemas_VersionFields,
+	},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Types_Type_FieldsFields = ubx.FieldMap{
-		"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
-		"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"MaxOccurs": ubx.FieldSpec{WireName: "max_occurs"},
+	"MinOccurs": ubx.FieldSpec{WireName: "min_occurs"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Table":     ubx.FieldSpec{WireName: "table"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_Types_TypeFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_Types_Type_FieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Primitive": ubx.FieldSpec{WireName: "primitive"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Types_Type_FieldsFields,
+	},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Primitive": ubx.FieldSpec{WireName: "primitive"},
+}
 
 var Hl7V2Store_ParserConfig_Schema_TypesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_Types_TypeFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_Schemas_VersionFields,
-		},
-	}
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Types_TypeFields,
+	},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_Schemas_VersionFields,
+	},
+}
 
 var Hl7V2Store_ParserConfig_SchemaFields = ubx.FieldMap{
-		"IgnoreMinOccurs": ubx.FieldSpec{WireName: "ignore_min_occurs"},
-		"Schemas": ubx.FieldSpec{
-			WireName: "schemas",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_SchemasFields,
-		},
-		"SchematizedParsingType": ubx.FieldSpec{WireName: "schematized_parsing_type"},
-		"Types": ubx.FieldSpec{
-			WireName: "types",
-			Kind: "list",
-			Fields: Hl7V2Store_ParserConfig_Schema_TypesFields,
-		},
-		"UnexpectedSegmentHandling": ubx.FieldSpec{WireName: "unexpected_segment_handling"},
-	}
+	"IgnoreMinOccurs": ubx.FieldSpec{WireName: "ignore_min_occurs"},
+	"Schemas": ubx.FieldSpec{
+		WireName: "schemas",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_SchemasFields,
+	},
+	"SchematizedParsingType": ubx.FieldSpec{WireName: "schematized_parsing_type"},
+	"Types": ubx.FieldSpec{
+		WireName: "types",
+		Kind:     "list",
+		Fields:   Hl7V2Store_ParserConfig_Schema_TypesFields,
+	},
+	"UnexpectedSegmentHandling": ubx.FieldSpec{WireName: "unexpected_segment_handling"},
+}
 
 var Hl7V2Store_ParserConfigFields = ubx.FieldMap{
-		"AllowNullHeader": ubx.FieldSpec{WireName: "allow_null_header"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Hl7V2Store_ParserConfig_SchemaFields,
-		},
-		"SegmentTerminator": ubx.FieldSpec{WireName: "segment_terminator"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AllowNullHeader": ubx.FieldSpec{WireName: "allow_null_header"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Hl7V2Store_ParserConfig_SchemaFields,
+	},
+	"SegmentTerminator": ubx.FieldSpec{WireName: "segment_terminator"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 type Hl7V2StoreConfig struct {
 	// User-supplied key-value pairs used to organize HL7v2 stores. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62} Label values are optional, must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a given store.
@@ -218,16 +218,16 @@ var Hl7V2Store = ubx.ResourceBinding{
 	WireType: "google_healthcare_hl7_v2_store",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NotificationConfigs": ubx.FieldSpec{
 			WireName: "notification_configs",
-			Kind: "list",
-			Fields: Hl7V2Store_NotificationConfigsFields,
+			Kind:     "list",
+			Fields:   Hl7V2Store_NotificationConfigsFields,
 		},
 		"ParserConfig": ubx.FieldSpec{
 			WireName: "parser_config",
-			Kind: "object",
-			Fields: Hl7V2Store_ParserConfigFields,
+			Kind:     "object",
+			Fields:   Hl7V2Store_ParserConfigFields,
 		},
 		"RejectDuplicateMessage": ubx.FieldSpec{WireName: "reject_duplicate_message"},
 	},

@@ -101,37 +101,14 @@ _Version_DocumentationFields = {
     "external_uri": ubx.FieldSpec(wire_name="external_uri"),
 }
 
-_Version_SourceMetadata_PluginInstanceActionSourceFields = {
-    "action_id": ubx.FieldSpec(wire_name="action_id"),
-    "plugin_instance": ubx.FieldSpec(wire_name="plugin_instance"),
-}
-
-_Version_SourceMetadataFields = {
-    "original_resource_create_time": ubx.FieldSpec(wire_name="original_resource_create_time"),
-    "original_resource_id": ubx.FieldSpec(wire_name="original_resource_id"),
-    "original_resource_update_time": ubx.FieldSpec(wire_name="original_resource_update_time"),
-    "plugin_instance_action_source": ubx.FieldSpec(
-        wire_name="plugin_instance_action_source",
-        kind="object",
-        fields=_Version_SourceMetadata_PluginInstanceActionSourceFields,
-    ),
-    "source_type": ubx.FieldSpec(wire_name="source_type"),
-}
-
 @dataclasses.dataclass
 class VersionConfig:
     # The attribute values associated with resource.
     accreditation: Any = None
-    # Output only. The operations contained in the API version. These operations will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
-    api_operations: Any = None
     # Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
     attributes: Any = None
     # The attribute values associated with resource.
     compliance: Any = None
-    # Output only. The time at which the version was created.
-    create_time: Any = None
-    # Output only. The definitions contained in the API version. These definitions will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/definitions/{definition}`
-    definitions: Any = None
     # Optional. The deployments linked directly to this API version. Only directly-linked deployments are returned; deployments linked to this version's specs or operations are not included. Note: A particular API version could be deployed to multiple deployments (for dev deployment, UAT deployment, etc) Format is `projects/{project}/locations/{location}/deployments/{deployment}`
     deployments: Any = None
     # Optional. The description of the version.
@@ -146,12 +123,6 @@ class VersionConfig:
     name: Any = None
     # Optional. The selected deployment for a Version resource. This can be used when special handling is needed on client side for a particular deployment linked to the version. Format is `projects/{project}/locations/{location}/deployments/{deployment}`
     selected_deployment: Any = None
-    # Output only. The list of sources and metadata from the sources of the version.
-    source_metadata: Any = None
-    # Output only. The specs associated with this version. Note that an API version can be associated with multiple specs. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
-    specs: Any = None
-    # Output only. The time at which the version was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class VersionAttrs:
@@ -196,7 +167,6 @@ Version = ubx.ResourceBinding(
             kind="object",
             fields=_Version_AccreditationFields,
         ),
-        "api_operations": ubx.FieldSpec(wire_name="api_operations"),
         "attributes": ubx.FieldSpec(
             wire_name="attributes",
             kind="map",
@@ -207,8 +177,6 @@ Version = ubx.ResourceBinding(
             kind="object",
             fields=_Version_AccreditationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "definitions": ubx.FieldSpec(wire_name="definitions"),
         "deployments": ubx.FieldSpec(wire_name="deployments"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -224,12 +192,5 @@ Version = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "selected_deployment": ubx.FieldSpec(wire_name="selected_deployment"),
-        "source_metadata": ubx.FieldSpec(
-            wire_name="source_metadata",
-            kind="list",
-            fields=_Version_SourceMetadataFields,
-        ),
-        "specs": ubx.FieldSpec(wire_name="specs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex struct {
 	GroupIndexes any
-	Pattern any
+	Pattern      any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment struct {
-	FixedLikelihood any
+	FixedLikelihood    any
 	RelativeLikelihood any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity struct {
-	WindowAfter any
+	WindowAfter  any
 	WindowBefore any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule struct {
-	HotwordRegex any
+	HotwordRegex         any
 	LikelihoodAdjustment any
-	Proximity any
+	Proximity            any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules struct {
@@ -38,17 +38,17 @@ type InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordList struct {
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary struct {
 	CloudStoragePath any
-	WordList any
+	WordList         any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch struct {
-	Id any
+	Id    any
 	Value any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel struct {
 	LabelFieldsToMatch any
-	LabelId any
+	LabelId            any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel struct {
@@ -65,37 +65,37 @@ type InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScore str
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_InfoType struct {
-	Name any
+	Name             any
 	SensitivityScore any
-	Version any
+	Version          any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression struct {
-	KeyRegex any
+	KeyRegex   any
 	ValueRegex any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes_StoredType struct {
 	CreateTime any
-	Name any
+	Name       any
 }
 
 type InspectTemplate_InspectConfig_CustomInfoTypes struct {
-	DetectionRules any
-	Dictionary any
-	ExclusionType any
-	FileLabelInfoType any
-	InfoType any
-	Likelihood any
+	DetectionRules             any
+	Dictionary                 any
+	ExclusionType              any
+	FileLabelInfoType          any
+	InfoType                   any
+	Likelihood                 any
 	MetadataKeyValueExpression any
-	Regex any
-	SensitivityScore any
-	StoredType any
-	SurrogateType any
+	Regex                      any
+	SensitivityScore           any
+	StoredType                 any
+	SurrogateType              any
 }
 
 type InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoType struct {
-	InfoType any
+	InfoType    any
 	MaxFindings any
 }
 
@@ -109,42 +109,42 @@ type InspectTemplate_InspectConfig_Limits struct {
 }
 
 type InspectTemplate_InspectConfig_MinLikelihoodPerInfoType struct {
-	InfoType any
+	InfoType      any
 	MinLikelihood any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType struct {
-	Encloses any
+	Encloses    any
 	FullyInside any
-	Overlaps any
+	Overlaps    any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
-	MinLikelihood any
+	InfoTypes            any
+	MinLikelihood        any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes struct {
-	InfoTypes any
-	MatchingType any
+	InfoTypes     any
+	MatchingType  any
 	MinLikelihood any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule struct {
-	AdjustByImageFindings any
+	AdjustByImageFindings     any
 	AdjustByMatchingInfoTypes any
-	LikelihoodAdjustment any
+	LikelihoodAdjustment      any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword struct {
 	HotwordRegex any
-	Proximity any
+	Proximity    any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
+	InfoTypes            any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes struct {
@@ -152,23 +152,23 @@ type InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes 
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule struct {
-	Dictionary any
-	ExcludeByHotword any
+	Dictionary             any
+	ExcludeByHotword       any
 	ExcludeByImageFindings any
-	ExcludeInfoTypes any
-	MatchingType any
-	Regex any
+	ExcludeInfoTypes       any
+	MatchingType           any
+	Regex                  any
 }
 
 type InspectTemplate_InspectConfig_RuleSet_Rules struct {
 	AdjustmentRule any
-	ExclusionRule any
-	HotwordRule any
+	ExclusionRule  any
+	HotwordRule    any
 }
 
 type InspectTemplate_InspectConfig_RuleSet struct {
 	InfoTypes any
-	Rules any
+	Rules     any
 }
 
 type InspectTemplate_InspectConfig struct {
@@ -210,383 +210,383 @@ type InspectTemplate_InspectTemplate struct {
 }
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields = ubx.FieldMap{
-		"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
+	"Pattern":      ubx.FieldSpec{WireName: "pattern"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields = ubx.FieldMap{
-		"FixedLikelihood": ubx.FieldSpec{WireName: "fixed_likelihood"},
-		"RelativeLikelihood": ubx.FieldSpec{WireName: "relative_likelihood"},
-	}
+	"FixedLikelihood":    ubx.FieldSpec{WireName: "fixed_likelihood"},
+	"RelativeLikelihood": ubx.FieldSpec{WireName: "relative_likelihood"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields = ubx.FieldMap{
-		"WindowAfter": ubx.FieldSpec{WireName: "window_after"},
-		"WindowBefore": ubx.FieldSpec{WireName: "window_before"},
-	}
+	"WindowAfter":  ubx.FieldSpec{WireName: "window_after"},
+	"WindowBefore": ubx.FieldSpec{WireName: "window_before"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields = ubx.FieldMap{
-		"HotwordRegex": ubx.FieldSpec{
-			WireName: "hotword_regex",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"LikelihoodAdjustment": ubx.FieldSpec{
-			WireName: "likelihood_adjustment",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
-		},
-		"Proximity": ubx.FieldSpec{
-			WireName: "proximity",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
-		},
-	}
+	"HotwordRegex": ubx.FieldSpec{
+		WireName: "hotword_regex",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"LikelihoodAdjustment": ubx.FieldSpec{
+		WireName: "likelihood_adjustment",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
+	},
+	"Proximity": ubx.FieldSpec{
+		WireName: "proximity",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRulesFields = ubx.FieldMap{
-		"HotwordRule": ubx.FieldSpec{
-			WireName: "hotword_rule",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
-		},
-	}
+	"HotwordRule": ubx.FieldSpec{
+		WireName: "hotword_rule",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordListFields = ubx.FieldMap{
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_DictionaryFields = ubx.FieldMap{
-		"CloudStoragePath": ubx.FieldSpec{
-			WireName: "cloud_storage_path",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePathFields,
-		},
-		"WordList": ubx.FieldSpec{
-			WireName: "word_list",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordListFields,
-		},
-	}
+	"CloudStoragePath": ubx.FieldSpec{
+		WireName: "cloud_storage_path",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_CloudStoragePathFields,
+	},
+	"WordList": ubx.FieldSpec{
+		WireName: "word_list",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_Dictionary_WordListFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields = ubx.FieldMap{
-		"LabelFieldsToMatch": ubx.FieldSpec{
-			WireName: "label_fields_to_match",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields,
-		},
-		"LabelId": ubx.FieldSpec{WireName: "label_id"},
-	}
+	"LabelFieldsToMatch": ubx.FieldSpec{
+		WireName: "label_fields_to_match",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields,
+	},
+	"LabelId": ubx.FieldSpec{WireName: "label_id"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields = ubx.FieldMap{
-		"Guid": ubx.FieldSpec{WireName: "guid"},
-	}
+	"Guid": ubx.FieldSpec{WireName: "guid"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields = ubx.FieldMap{
-		"GoogleDriveLabel": ubx.FieldSpec{
-			WireName: "google_drive_label",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields,
-		},
-		"SensitivityLabel": ubx.FieldSpec{
-			WireName: "sensitivity_label",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields,
-		},
-	}
+	"GoogleDriveLabel": ubx.FieldSpec{
+		WireName: "google_drive_label",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields,
+	},
+	"SensitivityLabel": ubx.FieldSpec{
+		WireName: "sensitivity_label",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScoreFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScoreFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScoreFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields = ubx.FieldMap{
-		"KeyRegex": ubx.FieldSpec{WireName: "key_regex"},
-		"ValueRegex": ubx.FieldSpec{WireName: "value_regex"},
-	}
+	"KeyRegex":   ubx.FieldSpec{WireName: "key_regex"},
+	"ValueRegex": ubx.FieldSpec{WireName: "value_regex"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypes_StoredTypeFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var InspectTemplate_InspectConfig_CustomInfoTypesFields = ubx.FieldMap{
-		"DetectionRules": ubx.FieldSpec{
-			WireName: "detection_rules",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRulesFields,
-		},
-		"Dictionary": ubx.FieldSpec{
-			WireName: "dictionary",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DictionaryFields,
-		},
-		"ExclusionType": ubx.FieldSpec{WireName: "exclusion_type"},
-		"FileLabelInfoType": ubx.FieldSpec{
-			WireName: "file_label_info_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields,
-		},
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"Likelihood": ubx.FieldSpec{WireName: "likelihood"},
-		"MetadataKeyValueExpression": ubx.FieldSpec{
-			WireName: "metadata_key_value_expression",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields,
-		},
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScoreFields,
-		},
-		"StoredType": ubx.FieldSpec{
-			WireName: "stored_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_StoredTypeFields,
-		},
-		"SurrogateType": ubx.FieldSpec{WireName: "surrogate_type"},
-	}
+	"DetectionRules": ubx.FieldSpec{
+		WireName: "detection_rules",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRulesFields,
+	},
+	"Dictionary": ubx.FieldSpec{
+		WireName: "dictionary",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DictionaryFields,
+	},
+	"ExclusionType": ubx.FieldSpec{WireName: "exclusion_type"},
+	"FileLabelInfoType": ubx.FieldSpec{
+		WireName: "file_label_info_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields,
+	},
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"Likelihood": ubx.FieldSpec{WireName: "likelihood"},
+	"MetadataKeyValueExpression": ubx.FieldSpec{
+		WireName: "metadata_key_value_expression",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields,
+	},
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoType_SensitivityScoreFields,
+	},
+	"StoredType": ubx.FieldSpec{
+		WireName: "stored_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_StoredTypeFields,
+	},
+	"SurrogateType": ubx.FieldSpec{WireName: "surrogate_type"},
+}
 
 var InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoTypeFields = ubx.FieldMap{
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"MaxFindings": ubx.FieldSpec{WireName: "max_findings"},
-	}
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"MaxFindings": ubx.FieldSpec{WireName: "max_findings"},
+}
 
 var InspectTemplate_InspectConfig_LimitsFields = ubx.FieldMap{
-		"MaxFindingsPerInfoType": ubx.FieldSpec{
-			WireName: "max_findings_per_info_type",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoTypeFields,
-		},
-		"MaxFindingsPerItem": ubx.FieldSpec{WireName: "max_findings_per_item"},
-		"MaxFindingsPerRequest": ubx.FieldSpec{WireName: "max_findings_per_request"},
-	}
+	"MaxFindingsPerInfoType": ubx.FieldSpec{
+		WireName: "max_findings_per_info_type",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_Limits_MaxFindingsPerInfoTypeFields,
+	},
+	"MaxFindingsPerItem":    ubx.FieldSpec{WireName: "max_findings_per_item"},
+	"MaxFindingsPerRequest": ubx.FieldSpec{WireName: "max_findings_per_request"},
+}
 
 var InspectTemplate_InspectConfig_MinLikelihoodPerInfoTypeFields = ubx.FieldMap{
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields = ubx.FieldMap{
-		"Encloses": ubx.FieldSpec{WireName: "encloses"},
-		"FullyInside": ubx.FieldSpec{WireName: "fully_inside"},
-		"Overlaps": ubx.FieldSpec{WireName: "overlaps"},
-	}
+	"Encloses":    ubx.FieldSpec{WireName: "encloses"},
+	"FullyInside": ubx.FieldSpec{WireName: "fully_inside"},
+	"Overlaps":    ubx.FieldSpec{WireName: "overlaps"},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields = ubx.FieldMap{
-		"ImageContainmentType": ubx.FieldSpec{
-			WireName: "image_containment_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
-		},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"ImageContainmentType": ubx.FieldSpec{
+		WireName: "image_containment_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
+	},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"MatchingType":  ubx.FieldSpec{WireName: "matching_type"},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRuleFields = ubx.FieldMap{
-		"AdjustByImageFindings": ubx.FieldSpec{
-			WireName: "adjust_by_image_findings",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields,
-		},
-		"AdjustByMatchingInfoTypes": ubx.FieldSpec{
-			WireName: "adjust_by_matching_info_types",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields,
-		},
-		"LikelihoodAdjustment": ubx.FieldSpec{
-			WireName: "likelihood_adjustment",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
-		},
-	}
+	"AdjustByImageFindings": ubx.FieldSpec{
+		WireName: "adjust_by_image_findings",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields,
+	},
+	"AdjustByMatchingInfoTypes": ubx.FieldSpec{
+		WireName: "adjust_by_matching_info_types",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields,
+	},
+	"LikelihoodAdjustment": ubx.FieldSpec{
+		WireName: "likelihood_adjustment",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields = ubx.FieldMap{
-		"HotwordRegex": ubx.FieldSpec{
-			WireName: "hotword_regex",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"Proximity": ubx.FieldSpec{
-			WireName: "proximity",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
-		},
-	}
+	"HotwordRegex": ubx.FieldSpec{
+		WireName: "hotword_regex",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"Proximity": ubx.FieldSpec{
+		WireName: "proximity",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields = ubx.FieldMap{
-		"ImageContainmentType": ubx.FieldSpec{
-			WireName: "image_containment_type",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
-		},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-	}
+	"ImageContainmentType": ubx.FieldSpec{
+		WireName: "image_containment_type",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
+	},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypesFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRuleFields = ubx.FieldMap{
-		"Dictionary": ubx.FieldSpec{
-			WireName: "dictionary",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DictionaryFields,
-		},
-		"ExcludeByHotword": ubx.FieldSpec{
-			WireName: "exclude_by_hotword",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields,
-		},
-		"ExcludeByImageFindings": ubx.FieldSpec{
-			WireName: "exclude_by_image_findings",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{
-			WireName: "exclude_info_types",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypesFields,
-		},
-		"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-	}
+	"Dictionary": ubx.FieldSpec{
+		WireName: "dictionary",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DictionaryFields,
+	},
+	"ExcludeByHotword": ubx.FieldSpec{
+		WireName: "exclude_by_hotword",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields,
+	},
+	"ExcludeByImageFindings": ubx.FieldSpec{
+		WireName: "exclude_by_image_findings",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{
+		WireName: "exclude_info_types",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypesFields,
+	},
+	"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSet_RulesFields = ubx.FieldMap{
-		"AdjustmentRule": ubx.FieldSpec{
-			WireName: "adjustment_rule",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRuleFields,
-		},
-		"ExclusionRule": ubx.FieldSpec{
-			WireName: "exclusion_rule",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRuleFields,
-		},
-		"HotwordRule": ubx.FieldSpec{
-			WireName: "hotword_rule",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
-		},
-	}
+	"AdjustmentRule": ubx.FieldSpec{
+		WireName: "adjustment_rule",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_AdjustmentRuleFields,
+	},
+	"ExclusionRule": ubx.FieldSpec{
+		WireName: "exclusion_rule",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_Rules_ExclusionRuleFields,
+	},
+	"HotwordRule": ubx.FieldSpec{
+		WireName: "hotword_rule",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
+	},
+}
 
 var InspectTemplate_InspectConfig_RuleSetFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_RuleSet_RulesFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_RuleSet_RulesFields,
+	},
+}
 
 var InspectTemplate_InspectConfigFields = ubx.FieldMap{
-		"ContentOptions": ubx.FieldSpec{WireName: "content_options"},
-		"CustomInfoTypes": ubx.FieldSpec{
-			WireName: "custom_info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypesFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
-		"IncludeQuote": ubx.FieldSpec{WireName: "include_quote"},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
-		},
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfig_LimitsFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-		"MinLikelihoodPerInfoType": ubx.FieldSpec{
-			WireName: "min_likelihood_per_info_type",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_MinLikelihoodPerInfoTypeFields,
-		},
-		"RuleSet": ubx.FieldSpec{
-			WireName: "rule_set",
-			Kind: "list",
-			Fields: InspectTemplate_InspectConfig_RuleSetFields,
-		},
-	}
+	"ContentOptions": ubx.FieldSpec{WireName: "content_options"},
+	"CustomInfoTypes": ubx.FieldSpec{
+		WireName: "custom_info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypesFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
+	"IncludeQuote":     ubx.FieldSpec{WireName: "include_quote"},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_CustomInfoTypes_InfoTypeFields,
+	},
+	"Limits": ubx.FieldSpec{
+		WireName: "limits",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfig_LimitsFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+	"MinLikelihoodPerInfoType": ubx.FieldSpec{
+		WireName: "min_likelihood_per_info_type",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_MinLikelihoodPerInfoTypeFields,
+	},
+	"RuleSet": ubx.FieldSpec{
+		WireName: "rule_set",
+		Kind:     "list",
+		Fields:   InspectTemplate_InspectConfig_RuleSetFields,
+	},
+}
 
 var InspectTemplate_InspectTemplateFields = ubx.FieldMap{
-		"AllowLimitedAvailabilityInfoTypes": ubx.FieldSpec{WireName: "allow_limited_availability_info_types"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InspectConfig": ubx.FieldSpec{
-			WireName: "inspect_config",
-			Kind: "object",
-			Fields: InspectTemplate_InspectConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AllowLimitedAvailabilityInfoTypes": ubx.FieldSpec{WireName: "allow_limited_availability_info_types"},
+	"CreateTime":                        ubx.FieldSpec{WireName: "create_time"},
+	"Description":                       ubx.FieldSpec{WireName: "description"},
+	"DisplayName":                       ubx.FieldSpec{WireName: "display_name"},
+	"InspectConfig": ubx.FieldSpec{
+		WireName: "inspect_config",
+		Kind:     "object",
+		Fields:   InspectTemplate_InspectConfigFields,
+	},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type InspectTemplateConfig struct {
 	// The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more.
@@ -625,8 +625,8 @@ var InspectTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InspectTemplate": ubx.FieldSpec{
 			WireName: "inspect_template",
-			Kind: "object",
-			Fields: InspectTemplate_InspectTemplateFields,
+			Kind:     "object",
+			Fields:   InspectTemplate_InspectTemplateFields,
 		},
 		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},

@@ -52,18 +52,18 @@ type V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpec struct {
 
 type V1beta1HyperparameterTuningJob_StudySpec_Metrics_SafetyConfig struct {
 	DesiredMinSafeTrialsFraction any
-	SafetyThreshold any
+	SafetyThreshold              any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Metrics struct {
-	Goal any
-	MetricId any
+	Goal         any
+	MetricId     any
 	SafetyConfig any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpec struct {
 	DefaultValue any
-	Values any
+	Values       any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues struct {
@@ -75,37 +75,37 @@ type V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpe
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs struct {
-	ParameterSpec any
+	ParameterSpec           any
 	ParentCategoricalValues any
-	ParentDiscreteValues any
-	ParentIntValues any
+	ParentDiscreteValues    any
+	ParentIntValues         any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpec struct {
 	DefaultValue any
-	Values any
+	Values       any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpec struct {
 	DefaultValue any
-	MaxValue any
-	MinValue any
+	MaxValue     any
+	MinValue     any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpec struct {
 	DefaultValue any
-	MaxValue any
-	MinValue any
+	MaxValue     any
+	MinValue     any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_Parameters struct {
-	CategoricalValueSpec any
+	CategoricalValueSpec      any
 	ConditionalParameterSpecs any
-	DiscreteValueSpec any
-	DoubleValueSpec any
-	IntegerValueSpec any
-	ParameterId any
-	ScaleType any
+	DiscreteValueSpec         any
+	DoubleValueSpec           any
+	IntegerValueSpec          any
+	ParameterId               any
+	ScaleType                 any
 }
 
 type V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraint struct {
@@ -170,7 +170,7 @@ type V1beta1HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectory struct {
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -196,68 +196,68 @@ type V1beta1HyperparameterTuningJob_TrialJobSpec_Scheduling struct {
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec struct {
-	Args any
-	Command any
-	Env any
+	Args     any
+	Command  any
+	Env      any
 	ImageUri any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpec struct {
 	BootDiskSizeGb any
-	BootDiskType any
+	BootDiskType   any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMounts struct {
-	Filesystem any
-	InstanceIp any
-	MountPoint any
+	Filesystem   any
+	InstanceIp   any
+	MountPoint   any
 	VolumeHandle any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
-	MinGpuDriverVersion any
+	AcceleratorCount      any
+	AcceleratorType       any
+	GpuPartitionSize      any
+	MachineType           any
+	MinGpuDriverVersion   any
 	MultihostGpuNodeCount any
-	ReservationAffinity any
-	TpuTopology any
+	ReservationAffinity   any
+	TpuTopology           any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMounts struct {
 	MountPoint any
-	Path any
-	Server any
+	Path       any
+	Server     any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpec struct {
-	Args any
-	Env any
+	Args             any
+	Env              any
 	ExecutorImageUri any
-	PackageUris any
-	PythonModule any
+	PackageUris      any
+	PythonModule     any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs struct {
-	ContainerSpec any
-	DiskSpec any
-	LustreMounts any
-	MachineSpec any
-	NfsMounts any
+	ContainerSpec     any
+	DiskSpec          any
+	LustreMounts      any
+	MachineSpec       any
+	NfsMounts         any
 	PythonPackageSpec any
-	ReplicaCount any
+	ReplicaCount      any
 }
 
 type V1beta1HyperparameterTuningJob_TrialJobSpec struct {
@@ -295,452 +295,401 @@ type V1beta1HyperparameterTuningJob_TrialJobSpec struct {
 
 type V1beta1HyperparameterTuningJob_Trials_FinalMeasurement_Metrics struct {
 	MetricId any
-	Value any
+	Value    any
 }
 
 type V1beta1HyperparameterTuningJob_Trials_FinalMeasurement struct {
 	ElapsedDuration any
-	Metrics any
-	StepCount any
+	Metrics         any
+	StepCount       any
 }
 
 type V1beta1HyperparameterTuningJob_Trials_Parameters struct {
 	ParameterId any
-	Value any
+	Value       any
 }
 
 type V1beta1HyperparameterTuningJob_Trials struct {
-	ClientId any
-	CustomJob any
-	EndTime any
+	ClientId         any
+	CustomJob        any
+	EndTime          any
 	FinalMeasurement any
-	Id any
+	Id               any
 	InfeasibleReason any
-	Measurements any
-	Name any
-	Parameters any
-	StartTime any
-	State any
-	WebAccessUris any
+	Measurements     any
+	Name             any
+	Parameters       any
+	StartTime        any
+	State            any
+	WebAccessUris    any
 }
 
 var V1beta1HyperparameterTuningJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1HyperparameterTuningJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_ConvexAutomatedStoppingSpecFields = ubx.FieldMap{
-		"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
-		"MaxStepCount": ubx.FieldSpec{WireName: "max_step_count"},
-		"MinMeasurementCount": ubx.FieldSpec{WireName: "min_measurement_count"},
-		"MinStepCount": ubx.FieldSpec{WireName: "min_step_count"},
-		"UpdateAllStoppedTrials": ubx.FieldSpec{WireName: "update_all_stopped_trials"},
-		"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
-	}
+	"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
+	"MaxStepCount":              ubx.FieldSpec{WireName: "max_step_count"},
+	"MinMeasurementCount":       ubx.FieldSpec{WireName: "min_measurement_count"},
+	"MinStepCount":              ubx.FieldSpec{WireName: "min_step_count"},
+	"UpdateAllStoppedTrials":    ubx.FieldSpec{WireName: "update_all_stopped_trials"},
+	"UseElapsedDuration":        ubx.FieldSpec{WireName: "use_elapsed_duration"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_ConvexStopConfigFields = ubx.FieldMap{
-		"AutoregressiveOrder": ubx.FieldSpec{WireName: "autoregressive_order"},
-		"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
-		"MaxNumSteps": ubx.FieldSpec{WireName: "max_num_steps"},
-		"MinNumSteps": ubx.FieldSpec{WireName: "min_num_steps"},
-		"UseSeconds": ubx.FieldSpec{WireName: "use_seconds"},
-	}
+	"AutoregressiveOrder":       ubx.FieldSpec{WireName: "autoregressive_order"},
+	"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
+	"MaxNumSteps":               ubx.FieldSpec{WireName: "max_num_steps"},
+	"MinNumSteps":               ubx.FieldSpec{WireName: "min_num_steps"},
+	"UseSeconds":                ubx.FieldSpec{WireName: "use_seconds"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpecFields = ubx.FieldMap{
-		"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
-	}
+	"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Metrics_SafetyConfigFields = ubx.FieldMap{
-		"DesiredMinSafeTrialsFraction": ubx.FieldSpec{WireName: "desired_min_safe_trials_fraction"},
-		"SafetyThreshold": ubx.FieldSpec{WireName: "safety_threshold"},
-	}
+	"DesiredMinSafeTrialsFraction": ubx.FieldSpec{WireName: "desired_min_safe_trials_fraction"},
+	"SafetyThreshold":              ubx.FieldSpec{WireName: "safety_threshold"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_MetricsFields = ubx.FieldMap{
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"SafetyConfig": ubx.FieldSpec{
-			WireName: "safety_config",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Metrics_SafetyConfigFields,
-		},
-	}
+	"Goal":     ubx.FieldSpec{WireName: "goal"},
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"SafetyConfig": ubx.FieldSpec{
+		WireName: "safety_config",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Metrics_SafetyConfigFields,
+	},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecsFields = ubx.FieldMap{
-		"ParameterSpec": ubx.FieldSpec{WireName: "parameter_spec"},
-		"ParentCategoricalValues": ubx.FieldSpec{
-			WireName: "parent_categorical_values",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
-		},
-		"ParentDiscreteValues": ubx.FieldSpec{
-			WireName: "parent_discrete_values",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields,
-		},
-		"ParentIntValues": ubx.FieldSpec{
-			WireName: "parent_int_values",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
-		},
-	}
+	"ParameterSpec": ubx.FieldSpec{WireName: "parameter_spec"},
+	"ParentCategoricalValues": ubx.FieldSpec{
+		WireName: "parent_categorical_values",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
+	},
+	"ParentDiscreteValues": ubx.FieldSpec{
+		WireName: "parent_discrete_values",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields,
+	},
+	"ParentIntValues": ubx.FieldSpec{
+		WireName: "parent_int_values",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
+	},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"MaxValue":     ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":     ubx.FieldSpec{WireName: "min_value"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"MaxValue":     ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":     ubx.FieldSpec{WireName: "min_value"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_ParametersFields = ubx.FieldMap{
-		"CategoricalValueSpec": ubx.FieldSpec{
-			WireName: "categorical_value_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpecFields,
-		},
-		"ConditionalParameterSpecs": ubx.FieldSpec{
-			WireName: "conditional_parameter_specs",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecsFields,
-		},
-		"DiscreteValueSpec": ubx.FieldSpec{
-			WireName: "discrete_value_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpecFields,
-		},
-		"DoubleValueSpec": ubx.FieldSpec{
-			WireName: "double_value_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpecFields,
-		},
-		"IntegerValueSpec": ubx.FieldSpec{
-			WireName: "integer_value_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpecFields,
-		},
-		"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
-		"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
-	}
+	"CategoricalValueSpec": ubx.FieldSpec{
+		WireName: "categorical_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_CategoricalValueSpecFields,
+	},
+	"ConditionalParameterSpecs": ubx.FieldSpec{
+		WireName: "conditional_parameter_specs",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_ConditionalParameterSpecsFields,
+	},
+	"DiscreteValueSpec": ubx.FieldSpec{
+		WireName: "discrete_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_DiscreteValueSpecFields,
+	},
+	"DoubleValueSpec": ubx.FieldSpec{
+		WireName: "double_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_DoubleValueSpecFields,
+	},
+	"IntegerValueSpec": ubx.FieldSpec{
+		WireName: "integer_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_Parameters_IntegerValueSpecFields,
+	},
+	"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
+	"ScaleType":   ubx.FieldSpec{WireName: "scale_type"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-	}
+	"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+	"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfigFields = ubx.FieldMap{
-		"MaxDurationNoProgress": ubx.FieldSpec{WireName: "max_duration_no_progress"},
-		"MaxNumTrials": ubx.FieldSpec{WireName: "max_num_trials"},
-		"MaxNumTrialsNoProgress": ubx.FieldSpec{WireName: "max_num_trials_no_progress"},
-		"MaximumRuntimeConstraint": ubx.FieldSpec{
-			WireName: "maximum_runtime_constraint",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
-		},
-		"MinNumTrials": ubx.FieldSpec{WireName: "min_num_trials"},
-		"MinimumRuntimeConstraint": ubx.FieldSpec{
-			WireName: "minimum_runtime_constraint",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
-		},
-		"ShouldStopAsap": ubx.FieldSpec{WireName: "should_stop_asap"},
-	}
+	"MaxDurationNoProgress":  ubx.FieldSpec{WireName: "max_duration_no_progress"},
+	"MaxNumTrials":           ubx.FieldSpec{WireName: "max_num_trials"},
+	"MaxNumTrialsNoProgress": ubx.FieldSpec{WireName: "max_num_trials_no_progress"},
+	"MaximumRuntimeConstraint": ubx.FieldSpec{
+		WireName: "maximum_runtime_constraint",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
+	},
+	"MinNumTrials": ubx.FieldSpec{WireName: "min_num_trials"},
+	"MinimumRuntimeConstraint": ubx.FieldSpec{
+		WireName: "minimum_runtime_constraint",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
+	},
+	"ShouldStopAsap": ubx.FieldSpec{WireName: "should_stop_asap"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpec_TransferLearningConfigFields = ubx.FieldMap{
-		"DisableTransferLearning": ubx.FieldSpec{WireName: "disable_transfer_learning"},
-		"PriorStudyNames": ubx.FieldSpec{WireName: "prior_study_names"},
-	}
+	"DisableTransferLearning": ubx.FieldSpec{WireName: "disable_transfer_learning"},
+	"PriorStudyNames":         ubx.FieldSpec{WireName: "prior_study_names"},
+}
 
 var V1beta1HyperparameterTuningJob_StudySpecFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ConvexAutomatedStoppingSpec": ubx.FieldSpec{
-			WireName: "convex_automated_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_ConvexAutomatedStoppingSpecFields,
-		},
-		"ConvexStopConfig": ubx.FieldSpec{
-			WireName: "convex_stop_config",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_ConvexStopConfigFields,
-		},
-		"DecayCurveStoppingSpec": ubx.FieldSpec{
-			WireName: "decay_curve_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpecFields,
-		},
-		"MeasurementSelectionType": ubx.FieldSpec{WireName: "measurement_selection_type"},
-		"MedianAutomatedStoppingSpec": ubx.FieldSpec{
-			WireName: "median_automated_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpecFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_MetricsFields,
-		},
-		"ObservationNoise": ubx.FieldSpec{WireName: "observation_noise"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_ParametersFields,
-		},
-		"StudyStoppingConfig": ubx.FieldSpec{
-			WireName: "study_stopping_config",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfigFields,
-		},
-		"TransferLearningConfig": ubx.FieldSpec{
-			WireName: "transfer_learning_config",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpec_TransferLearningConfigFields,
-		},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"ConvexAutomatedStoppingSpec": ubx.FieldSpec{
+		WireName: "convex_automated_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_ConvexAutomatedStoppingSpecFields,
+	},
+	"ConvexStopConfig": ubx.FieldSpec{
+		WireName: "convex_stop_config",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_ConvexStopConfigFields,
+	},
+	"DecayCurveStoppingSpec": ubx.FieldSpec{
+		WireName: "decay_curve_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpecFields,
+	},
+	"MeasurementSelectionType": ubx.FieldSpec{WireName: "measurement_selection_type"},
+	"MedianAutomatedStoppingSpec": ubx.FieldSpec{
+		WireName: "median_automated_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_DecayCurveStoppingSpecFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_MetricsFields,
+	},
+	"ObservationNoise": ubx.FieldSpec{WireName: "observation_noise"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_ParametersFields,
+	},
+	"StudyStoppingConfig": ubx.FieldSpec{
+		WireName: "study_stopping_config",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_StudyStoppingConfigFields,
+	},
+	"TransferLearningConfig": ubx.FieldSpec{
+		WireName: "transfer_learning_config",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_StudySpec_TransferLearningConfigFields,
+	},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectoryFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_SchedulingFields = ubx.FieldMap{
-		"DisableRetries": ubx.FieldSpec{WireName: "disable_retries"},
-		"MaxWaitDuration": ubx.FieldSpec{WireName: "max_wait_duration"},
-		"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"DisableRetries":            ubx.FieldSpec{WireName: "disable_retries"},
+	"MaxWaitDuration":           ubx.FieldSpec{WireName: "max_wait_duration"},
+	"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
+	"Strategy":                  ubx.FieldSpec{WireName: "strategy"},
+	"Timeout":                   ubx.FieldSpec{WireName: "timeout"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpecFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMountsFields = ubx.FieldMap{
-		"Filesystem": ubx.FieldSpec{WireName: "filesystem"},
-		"InstanceIp": ubx.FieldSpec{WireName: "instance_ip"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
-	}
+	"Filesystem":   ubx.FieldSpec{WireName: "filesystem"},
+	"InstanceIp":   ubx.FieldSpec{WireName: "instance_ip"},
+	"MountPoint":   ubx.FieldSpec{WireName: "mount_point"},
+	"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMountsFields = ubx.FieldMap{
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Server":     ubx.FieldSpec{WireName: "server"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
-		"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
-		"PythonModule": ubx.FieldSpec{WireName: "python_module"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
+	"PackageUris":      ubx.FieldSpec{WireName: "package_uris"},
+	"PythonModule":     ubx.FieldSpec{WireName: "python_module"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecsFields = ubx.FieldMap{
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpecFields,
-		},
-		"DiskSpec": ubx.FieldSpec{
-			WireName: "disk_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpecFields,
-		},
-		"LustreMounts": ubx.FieldSpec{
-			WireName: "lustre_mounts",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMountsFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpecFields,
-		},
-		"NfsMounts": ubx.FieldSpec{
-			WireName: "nfs_mounts",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMountsFields,
-		},
-		"PythonPackageSpec": ubx.FieldSpec{
-			WireName: "python_package_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-	}
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_ContainerSpecFields,
+	},
+	"DiskSpec": ubx.FieldSpec{
+		WireName: "disk_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_DiskSpecFields,
+	},
+	"LustreMounts": ubx.FieldSpec{
+		WireName: "lustre_mounts",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_LustreMountsFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_MachineSpecFields,
+	},
+	"NfsMounts": ubx.FieldSpec{
+		WireName: "nfs_mounts",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_NfsMountsFields,
+	},
+	"PythonPackageSpec": ubx.FieldSpec{
+		WireName: "python_package_spec",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
+	},
+	"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+}
 
 var V1beta1HyperparameterTuningJob_TrialJobSpecFields = ubx.FieldMap{
-		"BaseOutputDirectory": ubx.FieldSpec{
-			WireName: "base_output_directory",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectoryFields,
-		},
-		"EnableDashboardAccess": ubx.FieldSpec{WireName: "enable_dashboard_access"},
-		"EnableWebAccess": ubx.FieldSpec{WireName: "enable_web_access"},
-		"Experiment": ubx.FieldSpec{WireName: "experiment"},
-		"ExperimentRun": ubx.FieldSpec{WireName: "experiment_run"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PersistentResourceId": ubx.FieldSpec{WireName: "persistent_resource_id"},
-		"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfigFields,
-		},
-		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_SchedulingFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Tensorboard": ubx.FieldSpec{WireName: "tensorboard"},
-		"WorkerPoolSpecs": ubx.FieldSpec{
-			WireName: "worker_pool_specs",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecsFields,
-		},
-	}
-
-var V1beta1HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields = ubx.FieldMap{
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields = ubx.FieldMap{
-		"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
-
-var V1beta1HyperparameterTuningJob_Trials_ParametersFields = ubx.FieldMap{
-		"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var V1beta1HyperparameterTuningJob_TrialsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"CustomJob": ubx.FieldSpec{WireName: "custom_job"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FinalMeasurement": ubx.FieldSpec{
-			WireName: "final_measurement",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InfeasibleReason": ubx.FieldSpec{WireName: "infeasible_reason"},
-		"Measurements": ubx.FieldSpec{
-			WireName: "measurements",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_Trials_ParametersFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"WebAccessUris": ubx.FieldSpec{WireName: "web_access_uris"},
-	}
+	"BaseOutputDirectory": ubx.FieldSpec{
+		WireName: "base_output_directory",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_BaseOutputDirectoryFields,
+	},
+	"EnableDashboardAccess":       ubx.FieldSpec{WireName: "enable_dashboard_access"},
+	"EnableWebAccess":             ubx.FieldSpec{WireName: "enable_web_access"},
+	"Experiment":                  ubx.FieldSpec{WireName: "experiment"},
+	"ExperimentRun":               ubx.FieldSpec{WireName: "experiment_run"},
+	"Models":                      ubx.FieldSpec{WireName: "models"},
+	"Network":                     ubx.FieldSpec{WireName: "network"},
+	"PersistentResourceId":        ubx.FieldSpec{WireName: "persistent_resource_id"},
+	"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_PscInterfaceConfigFields,
+	},
+	"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_SchedulingFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Tensorboard":    ubx.FieldSpec{WireName: "tensorboard"},
+	"WorkerPoolSpecs": ubx.FieldSpec{
+		WireName: "worker_pool_specs",
+		Kind:     "list",
+		Fields:   V1beta1HyperparameterTuningJob_TrialJobSpec_WorkerPoolSpecsFields,
+	},
+}
 
 type V1beta1HyperparameterTuningJobConfig struct {
-	// Output only. Time when the HyperparameterTuningJob was created.
-	CreateTime any
 	// Required. The display name of the HyperparameterTuningJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the HyperparameterTuningJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
@@ -749,26 +698,12 @@ type V1beta1HyperparameterTuningJobConfig struct {
 	MaxFailedTrialCount any
 	// Required. The desired total number of Trials.
 	MaxTrialCount any
-	// Output only. Resource name of the HyperparameterTuningJob.
-	Name any
 	// Required. The desired number of Trials to run in parallel.
 	ParallelTrialCount any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
 	// Represents specification of a Study.
 	StudySpec any
 	// Represents the spec of a CustomJob.
 	TrialJobSpec any
-	// Output only. Trials of the HyperparameterTuningJob.
-	Trials any
-	// Output only. Time when the HyperparameterTuningJob was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1HyperparameterTuningJobAttrs struct {
@@ -813,43 +748,30 @@ type V1beta1HyperparameterTuningJobAttrs struct {
 var V1beta1HyperparameterTuningJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_hyperparameter_tuning_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1HyperparameterTuningJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1HyperparameterTuningJob_ErrorFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"MaxFailedTrialCount": ubx.FieldSpec{WireName: "max_failed_trial_count"},
-		"MaxTrialCount": ubx.FieldSpec{WireName: "max_trial_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParallelTrialCount": ubx.FieldSpec{WireName: "parallel_trial_count"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"MaxTrialCount":       ubx.FieldSpec{WireName: "max_trial_count"},
+		"ParallelTrialCount":  ubx.FieldSpec{WireName: "parallel_trial_count"},
 		"StudySpec": ubx.FieldSpec{
 			WireName: "study_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_StudySpecFields,
+			Kind:     "object",
+			Fields:   V1beta1HyperparameterTuningJob_StudySpecFields,
 		},
 		"TrialJobSpec": ubx.FieldSpec{
 			WireName: "trial_job_spec",
-			Kind: "object",
-			Fields: V1beta1HyperparameterTuningJob_TrialJobSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1HyperparameterTuningJob_TrialJobSpecFields,
 		},
-		"Trials": ubx.FieldSpec{
-			WireName: "trials",
-			Kind: "list",
-			Fields: V1beta1HyperparameterTuningJob_TrialsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

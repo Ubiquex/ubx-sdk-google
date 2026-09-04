@@ -4,18 +4,18 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntryLink_Aspects_AspectSource struct {
-	CreateTime any
+	CreateTime  any
 	DataVersion any
-	UpdateTime any
+	UpdateTime  any
 }
 
 type EntryLink_Aspects struct {
 	AspectSource any
-	AspectType any
-	CreateTime any
-	Data any
-	Path any
-	UpdateTime any
+	AspectType   any
+	CreateTime   any
+	Data         any
+	Path         any
+	UpdateTime   any
 }
 
 type EntryLink_EntryReferences struct {
@@ -25,43 +25,37 @@ type EntryLink_EntryReferences struct {
 }
 
 var EntryLink_Aspects_AspectSourceFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataVersion": ubx.FieldSpec{WireName: "data_version"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DataVersion": ubx.FieldSpec{WireName: "data_version"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 var EntryLink_AspectsFields = ubx.FieldMap{
-		"AspectSource": ubx.FieldSpec{
-			WireName: "aspect_source",
-			Kind: "object",
-			Fields: EntryLink_Aspects_AspectSourceFields,
-		},
-		"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AspectSource": ubx.FieldSpec{
+		WireName: "aspect_source",
+		Kind:     "object",
+		Fields:   EntryLink_Aspects_AspectSourceFields,
+	},
+	"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Data":       ubx.FieldSpec{WireName: "data"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var EntryLink_EntryReferencesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EntryLinkConfig struct {
 	// Optional. The aspects that are attached to the entry link. The format of the aspect key has to be the following: {project_id_or_number}.{location_id}.{aspect_type_id} Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
 	Aspects any
-	// Output only. The time when the Entry Link was created.
-	CreateTime any
 	// Required. Immutable. Relative resource name of the Entry Link Type used to create this Entry Link. For example: Entry link between synonym terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/synonym Entry link between related terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/related Entry link between glossary terms and data assets: projects/dataplex-types/locations/global/entryLinkTypes/definition
 	EntryLinkType any
 	// Required. Immutable. Specifies the Entries referenced in the Entry Link. There should be exactly two entry references.
 	EntryReferences any
-	// Output only. Immutable. Identifier. The relative resource name of the Entry Link, of the form: projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}
-	Name any
-	// Output only. The time when the Entry Link was last updated.
-	UpdateTime any
 }
 
 type EntryLinkAttrs struct {
@@ -84,17 +78,14 @@ var EntryLink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aspects": ubx.FieldSpec{
 			WireName: "aspects",
-			Kind: "map",
-			Fields: EntryLink_AspectsFields,
+			Kind:     "map",
+			Fields:   EntryLink_AspectsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EntryLinkType": ubx.FieldSpec{WireName: "entry_link_type"},
 		"EntryReferences": ubx.FieldSpec{
 			WireName: "entry_references",
-			Kind: "list",
-			Fields: EntryLink_EntryReferencesFields,
+			Kind:     "list",
+			Fields:   EntryLink_EntryReferencesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

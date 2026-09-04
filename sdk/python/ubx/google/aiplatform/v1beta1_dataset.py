@@ -43,10 +43,6 @@ _V1beta1Dataset_SavedQueriesFields = {
 
 @dataclasses.dataclass
 class V1beta1DatasetConfig:
-    # Output only. Timestamp when this Dataset was created.
-    create_time: Any = None
-    # Output only. The number of DataItems in this Dataset. Only apply for non-structured Dataset.
-    data_item_count: Any = None
     # The description of the Dataset.
     description: Any = None
     # Required. The user-defined name of the Dataset. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -59,22 +55,12 @@ class V1beta1DatasetConfig:
     labels: Any = None
     # Required. Additional information about the Dataset.
     metadata: Any = None
-    # Output only. The resource name of the Artifact that was created in MetadataStore when creating the Dataset. The Artifact resource name pattern is `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
-    metadata_artifact: Any = None
     # Required. Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
     metadata_schema_uri: Any = None
     # Optional. Reference to the public base model last used by the dataset. Only set for prompt datasets.
     model_reference: Any = None
-    # Output only. Identifier. The resource name of the Dataset. Format: `projects/{project}/locations/{location}/datasets/{dataset}`
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # All SavedQueries belong to the Dataset will be returned in List/Get Dataset response. The annotation_specs field will not be populated except for UI cases which will only use annotation_spec_count. In CreateDataset request, a SavedQuery is created together if this field is set, up to one SavedQuery can be set in CreateDatasetRequest. The SavedQuery should not contain any AnnotationSpec.
     saved_queries: Any = None
-    # Output only. Timestamp when this Dataset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1DatasetAttrs:
@@ -114,8 +100,6 @@ class V1beta1DatasetAttrs:
 V1beta1Dataset = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_dataset",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "data_item_count": ubx.FieldSpec(wire_name="data_item_count"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -126,17 +110,12 @@ V1beta1Dataset = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "metadata_artifact": ubx.FieldSpec(wire_name="metadata_artifact"),
         "metadata_schema_uri": ubx.FieldSpec(wire_name="metadata_schema_uri"),
         "model_reference": ubx.FieldSpec(wire_name="model_reference"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "saved_queries": ubx.FieldSpec(
             wire_name="saved_queries",
             kind="list",
             fields=_V1beta1Dataset_SavedQueriesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

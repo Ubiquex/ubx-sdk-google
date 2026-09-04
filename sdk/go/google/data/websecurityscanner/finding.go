@@ -27,7 +27,7 @@ type Finding_ViolatingResource struct {
 }
 
 type Finding_VulnerableHeaders_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -82,7 +82,7 @@ type FindingAttrs struct {
 	FuzzedUrl any
 	// Output only. The http method of the request that triggered the vulnerability, in uppercase.
 	HttpMethod any
-	Name any
+	Name       any
 	// Information reported for an outdated library.
 	OutdatedLibrary any
 	// Output only. The URL containing human-readable payload that user can leverage to reproduce the vulnerability.

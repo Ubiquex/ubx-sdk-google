@@ -105,19 +105,19 @@ type DataScan_DataDiscoverySpec struct {
 
 type DataScan_DataDocumentationResult_DatasetResult_Queries struct {
 	Description any
-	Sql any
+	Sql         any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths struct {
-	Paths any
+	Paths    any
 	TableFqn any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships struct {
-	LeftSchemaPaths any
+	LeftSchemaPaths  any
 	RightSchemaPaths any
-	Sources any
-	Type any
+	Sources          any
+	Type             any
 }
 
 type DataScan_DataDocumentationResult_DatasetResult struct {
@@ -131,8 +131,8 @@ type DataScan_DataDocumentationResult_DatasetResult struct {
 
 type DataScan_DataDocumentationResult_TableResult_Schema_Fields struct {
 	Description any
-	Fields any
-	Name any
+	Fields      any
+	Name        any
 }
 
 type DataScan_DataDocumentationResult_TableResult_Schema struct {
@@ -183,25 +183,25 @@ type DataScan_DataProfileResult_PostScanActionsResult struct {
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfile struct {
-	Average any
-	Max any
-	Min any
-	Quartiles any
+	Average           any
+	Max               any
+	Min               any
+	Quartiles         any
 	StandardDeviation any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfile struct {
-	Average any
-	Max any
-	Min any
-	Quartiles any
+	Average           any
+	Max               any
+	Min               any
+	Quartiles         any
 	StandardDeviation any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_StringProfile struct {
 	AverageLength any
-	MaxLength any
-	MinLength any
+	MaxLength     any
+	MinLength     any
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues struct {
@@ -211,19 +211,19 @@ type DataScan_DataProfileResult_Profile_Fields_Profile_TopNvalues struct {
 }
 
 type DataScan_DataProfileResult_Profile_Fields_Profile struct {
-	DistinctRatio any
-	DoubleProfile any
+	DistinctRatio  any
+	DoubleProfile  any
 	IntegerProfile any
-	NullRatio any
-	StringProfile any
-	TopNvalues any
+	NullRatio      any
+	StringProfile  any
+	TopNvalues     any
 }
 
 type DataScan_DataProfileResult_Profile_Fields struct {
-	Mode any
-	Name any
+	Mode    any
+	Name    any
 	Profile any
-	Type any
+	Type    any
 }
 
 type DataScan_DataProfileResult_Profile struct {
@@ -307,20 +307,20 @@ type DataScan_DataQualityResult_Columns_Dimensions_Dimension struct {
 
 type DataScan_DataQualityResult_Columns_Dimensions struct {
 	Dimension any
-	Passed any
-	Score any
+	Passed    any
+	Score     any
 }
 
 type DataScan_DataQualityResult_Columns struct {
-	Column any
+	Column     any
 	Dimensions any
-	Passed any
-	Score any
+	Passed     any
+	Score      any
 }
 
 type DataScan_DataQualityResult_Rules_DebugQueriesResultSets_Results struct {
-	Name any
-	Type any
+	Name  any
+	Type  any
 	Value any
 }
 
@@ -329,13 +329,13 @@ type DataScan_DataQualityResult_Rules_DebugQueriesResultSets struct {
 }
 
 type DataScan_DataQualityResult_Rules_Rule_DebugQueries struct {
-	Description any
+	Description  any
 	SqlStatement any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RangeExpectation struct {
-	MaxValue any
-	MinValue any
+	MaxValue         any
+	MinValue         any
 	StrictMaxEnabled any
 	StrictMinEnabled any
 }
@@ -349,19 +349,19 @@ type DataScan_DataQualityResult_Rules_Rule_RowConditionExpectation struct {
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource struct {
-	EntryLink any
+	EntryLink     any
 	EntryLinkType any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource struct {
 	DisplayName any
-	Entry any
-	EntryType any
+	Entry       any
+	EntryType   any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements struct {
 	EntryLinkSource any
-	EntrySource any
+	EntrySource     any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_RuleSource struct {
@@ -377,16 +377,16 @@ type DataScan_DataQualityResult_Rules_Rule_SqlAssertion struct {
 }
 
 type DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectation struct {
-	MaxValue any
-	MinValue any
-	Statistic any
+	MaxValue         any
+	MinValue         any
+	Statistic        any
 	StrictMaxEnabled any
 	StrictMinEnabled any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters struct {
 	DefaultValue any
-	Description any
+	Description  any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection struct {
@@ -394,11 +394,11 @@ type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCol
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate struct {
-	Capabilities any
-	Dimension any
+	Capabilities    any
+	Dimension       any
 	InputParameters any
-	Name any
-	SqlCollection any
+	Name            any
+	SqlCollection   any
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values struct {
@@ -406,45 +406,45 @@ type DataScan_DataQualityResult_Rules_Rule_TemplateReference_Values struct {
 }
 
 type DataScan_DataQualityResult_Rules_Rule_TemplateReference struct {
-	Name any
-	ResolvedSql any
+	Name         any
+	ResolvedSql  any
 	RuleTemplate any
-	Values any
+	Values       any
 }
 
 type DataScan_DataQualityResult_Rules_Rule struct {
-	Attributes any
-	Column any
-	DebugQueries any
-	Description any
-	Dimension any
-	IgnoreNull any
-	Name any
-	NonNullExpectation any
-	RangeExpectation any
-	RegexExpectation any
-	RowConditionExpectation any
-	RuleSource any
-	SetExpectation any
-	SqlAssertion any
+	Attributes                any
+	Column                    any
+	DebugQueries              any
+	Description               any
+	Dimension                 any
+	IgnoreNull                any
+	Name                      any
+	NonNullExpectation        any
+	RangeExpectation          any
+	RegexExpectation          any
+	RowConditionExpectation   any
+	RuleSource                any
+	SetExpectation            any
+	SqlAssertion              any
 	StatisticRangeExpectation any
-	Suspended any
+	Suspended                 any
 	TableConditionExpectation any
-	TemplateReference any
-	Threshold any
-	UniquenessExpectation any
+	TemplateReference         any
+	Threshold                 any
+	UniquenessExpectation     any
 }
 
 type DataScan_DataQualityResult_Rules struct {
-	AssertionRowCount any
+	AssertionRowCount      any
 	DebugQueriesResultSets any
-	EvaluatedCount any
-	FailingRowsQuery any
-	NullCount any
-	PassRatio any
-	Passed any
-	PassedCount any
-	Rule any
+	EvaluatedCount         any
+	FailingRowsQuery       any
+	NullCount              any
+	PassRatio              any
+	Passed                 any
+	PassedCount            any
+	Rule                   any
 }
 
 type DataScan_DataQualityResult struct {
@@ -570,47 +570,47 @@ type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHin
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints struct {
 	Normalization any
-	Synthesis any
+	Synthesis     any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields struct {
-	DataType any
-	Description any
+	DataType        any
+	Description     any
 	ExtractionHints any
-	Fields any
-	MetadataType any
-	Mode any
-	Name any
+	Fields          any
+	MetadataType    any
+	Mode            any
+	Name            any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings struct {
-	Field any
+	Field           any
 	ReferencedField any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys struct {
-	Description any
-	FieldMappings any
-	Name any
+	Description        any
+	FieldMappings      any
+	Name               any
 	ReferencedNodeType any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes struct {
-	Description any
+	Description     any
 	ExtractionHints any
-	Fields any
-	ForeignKeys any
-	Name any
-	SourceNodeType any
-	TargetNodeType any
+	Fields          any
+	ForeignKeys     any
+	Name            any
+	SourceNodeType  any
+	TargetNodeType  any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypes struct {
-	Description any
+	Description     any
 	ExtractionHints any
-	Fields any
-	Name any
-	PrimaryKeys any
+	Fields          any
+	Name            any
+	PrimaryKeys     any
 }
 
 type DataScan_UnstructuredDataProfileResult_GraphProfile struct {
@@ -639,845 +639,843 @@ type DataScan_UnstructuredDataProfileSpec struct {
 }
 
 var DataScan_DataFields = ubx.FieldMap{
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Entity":   ubx.FieldSpec{WireName: "entity"},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var DataScan_DataDiscoveryResult_BigqueryPublishingFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Dataset":  ubx.FieldSpec{WireName: "dataset"},
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var DataScan_DataDiscoveryResult_ScanStatisticsFields = ubx.FieldMap{
-		"DataProcessedBytes": ubx.FieldSpec{WireName: "data_processed_bytes"},
-		"FilesExcluded": ubx.FieldSpec{WireName: "files_excluded"},
-		"FilesetsCreated": ubx.FieldSpec{WireName: "filesets_created"},
-		"FilesetsDeleted": ubx.FieldSpec{WireName: "filesets_deleted"},
-		"FilesetsUpdated": ubx.FieldSpec{WireName: "filesets_updated"},
-		"ScannedFileCount": ubx.FieldSpec{WireName: "scanned_file_count"},
-		"TablesCreated": ubx.FieldSpec{WireName: "tables_created"},
-		"TablesDeleted": ubx.FieldSpec{WireName: "tables_deleted"},
-		"TablesUpdated": ubx.FieldSpec{WireName: "tables_updated"},
-	}
+	"DataProcessedBytes": ubx.FieldSpec{WireName: "data_processed_bytes"},
+	"FilesExcluded":      ubx.FieldSpec{WireName: "files_excluded"},
+	"FilesetsCreated":    ubx.FieldSpec{WireName: "filesets_created"},
+	"FilesetsDeleted":    ubx.FieldSpec{WireName: "filesets_deleted"},
+	"FilesetsUpdated":    ubx.FieldSpec{WireName: "filesets_updated"},
+	"ScannedFileCount":   ubx.FieldSpec{WireName: "scanned_file_count"},
+	"TablesCreated":      ubx.FieldSpec{WireName: "tables_created"},
+	"TablesDeleted":      ubx.FieldSpec{WireName: "tables_deleted"},
+	"TablesUpdated":      ubx.FieldSpec{WireName: "tables_updated"},
+}
 
 var DataScan_DataDiscoveryResultFields = ubx.FieldMap{
-		"BigqueryPublishing": ubx.FieldSpec{
-			WireName: "bigquery_publishing",
-			Kind: "object",
-			Fields: DataScan_DataDiscoveryResult_BigqueryPublishingFields,
-		},
-		"ScanStatistics": ubx.FieldSpec{
-			WireName: "scan_statistics",
-			Kind: "object",
-			Fields: DataScan_DataDiscoveryResult_ScanStatisticsFields,
-		},
-	}
+	"BigqueryPublishing": ubx.FieldSpec{
+		WireName: "bigquery_publishing",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoveryResult_BigqueryPublishingFields,
+	},
+	"ScanStatistics": ubx.FieldSpec{
+		WireName: "scan_statistics",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoveryResult_ScanStatisticsFields,
+	},
+}
 
 var DataScan_DataDiscoverySpec_BigqueryPublishingConfigFields = ubx.FieldMap{
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"TableType": ubx.FieldSpec{WireName: "table_type"},
-	}
+	"Connection": ubx.FieldSpec{WireName: "connection"},
+	"Location":   ubx.FieldSpec{WireName: "location"},
+	"Project":    ubx.FieldSpec{WireName: "project"},
+	"TableType":  ubx.FieldSpec{WireName: "table_type"},
+}
 
 var DataScan_DataDiscoverySpec_StorageConfig_CsvOptionsFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-		"TypeInferenceDisabled": ubx.FieldSpec{WireName: "type_inference_disabled"},
-	}
+	"Delimiter":             ubx.FieldSpec{WireName: "delimiter"},
+	"Encoding":              ubx.FieldSpec{WireName: "encoding"},
+	"HeaderRows":            ubx.FieldSpec{WireName: "header_rows"},
+	"Quote":                 ubx.FieldSpec{WireName: "quote"},
+	"TypeInferenceDisabled": ubx.FieldSpec{WireName: "type_inference_disabled"},
+}
 
 var DataScan_DataDiscoverySpec_StorageConfig_JsonOptionsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"TypeInferenceDisabled": ubx.FieldSpec{WireName: "type_inference_disabled"},
-	}
+	"Encoding":              ubx.FieldSpec{WireName: "encoding"},
+	"TypeInferenceDisabled": ubx.FieldSpec{WireName: "type_inference_disabled"},
+}
 
 var DataScan_DataDiscoverySpec_StorageConfig_UnstructuredDataOptionsFields = ubx.FieldMap{
-		"GlobalEndpointEnabled": ubx.FieldSpec{WireName: "global_endpoint_enabled"},
-		"SemanticInferenceEnabled": ubx.FieldSpec{WireName: "semantic_inference_enabled"},
-	}
+	"GlobalEndpointEnabled":    ubx.FieldSpec{WireName: "global_endpoint_enabled"},
+	"SemanticInferenceEnabled": ubx.FieldSpec{WireName: "semantic_inference_enabled"},
+}
 
 var DataScan_DataDiscoverySpec_StorageConfigFields = ubx.FieldMap{
-		"CsvOptions": ubx.FieldSpec{
-			WireName: "csv_options",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpec_StorageConfig_CsvOptionsFields,
-		},
-		"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
-		"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
-		"JsonOptions": ubx.FieldSpec{
-			WireName: "json_options",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpec_StorageConfig_JsonOptionsFields,
-		},
-		"UnstructuredDataOptions": ubx.FieldSpec{
-			WireName: "unstructured_data_options",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpec_StorageConfig_UnstructuredDataOptionsFields,
-		},
-	}
+	"CsvOptions": ubx.FieldSpec{
+		WireName: "csv_options",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoverySpec_StorageConfig_CsvOptionsFields,
+	},
+	"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
+	"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
+	"JsonOptions": ubx.FieldSpec{
+		WireName: "json_options",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoverySpec_StorageConfig_JsonOptionsFields,
+	},
+	"UnstructuredDataOptions": ubx.FieldSpec{
+		WireName: "unstructured_data_options",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoverySpec_StorageConfig_UnstructuredDataOptionsFields,
+	},
+}
 
 var DataScan_DataDiscoverySpecFields = ubx.FieldMap{
-		"BigqueryPublishingConfig": ubx.FieldSpec{
-			WireName: "bigquery_publishing_config",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpec_BigqueryPublishingConfigFields,
-		},
-		"StorageConfig": ubx.FieldSpec{
-			WireName: "storage_config",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpec_StorageConfigFields,
-		},
-	}
+	"BigqueryPublishingConfig": ubx.FieldSpec{
+		WireName: "bigquery_publishing_config",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoverySpec_BigqueryPublishingConfigFields,
+	},
+	"StorageConfig": ubx.FieldSpec{
+		WireName: "storage_config",
+		Kind:     "object",
+		Fields:   DataScan_DataDiscoverySpec_StorageConfigFields,
+	},
+}
 
 var DataScan_DataDocumentationResult_DatasetResult_QueriesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Sql": ubx.FieldSpec{WireName: "sql"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Sql":         ubx.FieldSpec{WireName: "sql"},
+}
 
 var DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields = ubx.FieldMap{
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"TableFqn": ubx.FieldSpec{WireName: "table_fqn"},
-	}
+	"Paths":    ubx.FieldSpec{WireName: "paths"},
+	"TableFqn": ubx.FieldSpec{WireName: "table_fqn"},
+}
 
 var DataScan_DataDocumentationResult_DatasetResult_SchemaRelationshipsFields = ubx.FieldMap{
-		"LeftSchemaPaths": ubx.FieldSpec{
-			WireName: "left_schema_paths",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields,
-		},
-		"RightSchemaPaths": ubx.FieldSpec{
-			WireName: "right_schema_paths",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields,
-		},
-		"Sources": ubx.FieldSpec{WireName: "sources"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LeftSchemaPaths": ubx.FieldSpec{
+		WireName: "left_schema_paths",
+		Kind:     "object",
+		Fields:   DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields,
+	},
+	"RightSchemaPaths": ubx.FieldSpec{
+		WireName: "right_schema_paths",
+		Kind:     "object",
+		Fields:   DataScan_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPathsFields,
+	},
+	"Sources": ubx.FieldSpec{WireName: "sources"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var DataScan_DataDocumentationResult_DatasetResultFields = ubx.FieldMap{
-		"Overview": ubx.FieldSpec{WireName: "overview"},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: DataScan_DataDocumentationResult_DatasetResult_QueriesFields,
-		},
-		"SchemaRelationships": ubx.FieldSpec{
-			WireName: "schema_relationships",
-			Kind: "list",
-			Fields: DataScan_DataDocumentationResult_DatasetResult_SchemaRelationshipsFields,
-		},
-	}
+	"Overview": ubx.FieldSpec{WireName: "overview"},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   DataScan_DataDocumentationResult_DatasetResult_QueriesFields,
+	},
+	"SchemaRelationships": ubx.FieldSpec{
+		WireName: "schema_relationships",
+		Kind:     "list",
+		Fields:   DataScan_DataDocumentationResult_DatasetResult_SchemaRelationshipsFields,
+	},
+}
 
 var DataScan_DataDocumentationResult_TableResult_Schema_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Fields":      ubx.FieldSpec{WireName: "fields"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var DataScan_DataDocumentationResult_TableResult_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: DataScan_DataDocumentationResult_TableResult_Schema_FieldsFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   DataScan_DataDocumentationResult_TableResult_Schema_FieldsFields,
+	},
+}
 
 var DataScan_DataDocumentationResult_TableResultFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Overview": ubx.FieldSpec{WireName: "overview"},
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: DataScan_DataDocumentationResult_DatasetResult_QueriesFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResult_TableResult_SchemaFields,
-		},
-	}
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Overview": ubx.FieldSpec{WireName: "overview"},
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   DataScan_DataDocumentationResult_DatasetResult_QueriesFields,
+	},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   DataScan_DataDocumentationResult_TableResult_SchemaFields,
+	},
+}
 
 var DataScan_DataDocumentationResultFields = ubx.FieldMap{
-		"DatasetResult": ubx.FieldSpec{
-			WireName: "dataset_result",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResult_DatasetResultFields,
-		},
-		"TableResult": ubx.FieldSpec{
-			WireName: "table_result",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResult_TableResultFields,
-		},
-	}
+	"DatasetResult": ubx.FieldSpec{
+		WireName: "dataset_result",
+		Kind:     "object",
+		Fields:   DataScan_DataDocumentationResult_DatasetResultFields,
+	},
+	"TableResult": ubx.FieldSpec{
+		WireName: "table_result",
+		Kind:     "object",
+		Fields:   DataScan_DataDocumentationResult_TableResultFields,
+	},
+}
 
 var DataScan_DataDocumentationSpecFields = ubx.FieldMap{
-		"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
-		"GenerationScopes": ubx.FieldSpec{WireName: "generation_scopes"},
-	}
+	"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
+	"GenerationScopes":         ubx.FieldSpec{WireName: "generation_scopes"},
+}
 
 var DataScan_DataProfileResult_CatalogPublishingStatusFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var DataScan_DataProfileResult_PostScanActionsResult_BigqueryExportResultFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"State":   ubx.FieldSpec{WireName: "state"},
+}
 
 var DataScan_DataProfileResult_PostScanActionsResultFields = ubx.FieldMap{
-		"BigqueryExportResult": ubx.FieldSpec{
-			WireName: "bigquery_export_result",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_PostScanActionsResult_BigqueryExportResultFields,
-		},
-	}
+	"BigqueryExportResult": ubx.FieldSpec{
+		WireName: "bigquery_export_result",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_PostScanActionsResult_BigqueryExportResultFields,
+	},
+}
 
 var DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfileFields = ubx.FieldMap{
-		"Average": ubx.FieldSpec{WireName: "average"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Quartiles": ubx.FieldSpec{WireName: "quartiles"},
-		"StandardDeviation": ubx.FieldSpec{WireName: "standard_deviation"},
-	}
+	"Average":           ubx.FieldSpec{WireName: "average"},
+	"Max":               ubx.FieldSpec{WireName: "max"},
+	"Min":               ubx.FieldSpec{WireName: "min"},
+	"Quartiles":         ubx.FieldSpec{WireName: "quartiles"},
+	"StandardDeviation": ubx.FieldSpec{WireName: "standard_deviation"},
+}
 
 var DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfileFields = ubx.FieldMap{
-		"Average": ubx.FieldSpec{WireName: "average"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Quartiles": ubx.FieldSpec{WireName: "quartiles"},
-		"StandardDeviation": ubx.FieldSpec{WireName: "standard_deviation"},
-	}
+	"Average":           ubx.FieldSpec{WireName: "average"},
+	"Max":               ubx.FieldSpec{WireName: "max"},
+	"Min":               ubx.FieldSpec{WireName: "min"},
+	"Quartiles":         ubx.FieldSpec{WireName: "quartiles"},
+	"StandardDeviation": ubx.FieldSpec{WireName: "standard_deviation"},
+}
 
 var DataScan_DataProfileResult_Profile_Fields_Profile_StringProfileFields = ubx.FieldMap{
-		"AverageLength": ubx.FieldSpec{WireName: "average_length"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-	}
+	"AverageLength": ubx.FieldSpec{WireName: "average_length"},
+	"MaxLength":     ubx.FieldSpec{WireName: "max_length"},
+	"MinLength":     ubx.FieldSpec{WireName: "min_length"},
+}
 
 var DataScan_DataProfileResult_Profile_Fields_Profile_TopNvaluesFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Ratio": ubx.FieldSpec{WireName: "ratio"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Ratio": ubx.FieldSpec{WireName: "ratio"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DataScan_DataProfileResult_Profile_Fields_ProfileFields = ubx.FieldMap{
-		"DistinctRatio": ubx.FieldSpec{WireName: "distinct_ratio"},
-		"DoubleProfile": ubx.FieldSpec{
-			WireName: "double_profile",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfileFields,
-		},
-		"IntegerProfile": ubx.FieldSpec{
-			WireName: "integer_profile",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfileFields,
-		},
-		"NullRatio": ubx.FieldSpec{WireName: "null_ratio"},
-		"StringProfile": ubx.FieldSpec{
-			WireName: "string_profile",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_Profile_Fields_Profile_StringProfileFields,
-		},
-		"TopNvalues": ubx.FieldSpec{
-			WireName: "top_nvalues",
-			Kind: "list",
-			Fields: DataScan_DataProfileResult_Profile_Fields_Profile_TopNvaluesFields,
-		},
-	}
+	"DistinctRatio": ubx.FieldSpec{WireName: "distinct_ratio"},
+	"DoubleProfile": ubx.FieldSpec{
+		WireName: "double_profile",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_Profile_Fields_Profile_DoubleProfileFields,
+	},
+	"IntegerProfile": ubx.FieldSpec{
+		WireName: "integer_profile",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_Profile_Fields_Profile_IntegerProfileFields,
+	},
+	"NullRatio": ubx.FieldSpec{WireName: "null_ratio"},
+	"StringProfile": ubx.FieldSpec{
+		WireName: "string_profile",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_Profile_Fields_Profile_StringProfileFields,
+	},
+	"TopNvalues": ubx.FieldSpec{
+		WireName: "top_nvalues",
+		Kind:     "list",
+		Fields:   DataScan_DataProfileResult_Profile_Fields_Profile_TopNvaluesFields,
+	},
+}
 
 var DataScan_DataProfileResult_Profile_FieldsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Profile": ubx.FieldSpec{
-			WireName: "profile",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_Profile_Fields_ProfileFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Profile": ubx.FieldSpec{
+		WireName: "profile",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_Profile_Fields_ProfileFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DataScan_DataProfileResult_ProfileFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: DataScan_DataProfileResult_Profile_FieldsFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   DataScan_DataProfileResult_Profile_FieldsFields,
+	},
+}
 
 var DataScan_DataProfileResult_ScannedData_IncrementalFieldFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var DataScan_DataProfileResult_ScannedDataFields = ubx.FieldMap{
-		"IncrementalField": ubx.FieldSpec{
-			WireName: "incremental_field",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_ScannedData_IncrementalFieldFields,
-		},
-	}
+	"IncrementalField": ubx.FieldSpec{
+		WireName: "incremental_field",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_ScannedData_IncrementalFieldFields,
+	},
+}
 
 var DataScan_DataProfileResultFields = ubx.FieldMap{
-		"CatalogPublishingStatus": ubx.FieldSpec{
-			WireName: "catalog_publishing_status",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_CatalogPublishingStatusFields,
-		},
-		"PostScanActionsResult": ubx.FieldSpec{
-			WireName: "post_scan_actions_result",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_PostScanActionsResultFields,
-		},
-		"Profile": ubx.FieldSpec{
-			WireName: "profile",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_ProfileFields,
-		},
-		"RowCount": ubx.FieldSpec{WireName: "row_count"},
-		"ScannedData": ubx.FieldSpec{
-			WireName: "scanned_data",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_ScannedDataFields,
-		},
-	}
+	"CatalogPublishingStatus": ubx.FieldSpec{
+		WireName: "catalog_publishing_status",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_CatalogPublishingStatusFields,
+	},
+	"PostScanActionsResult": ubx.FieldSpec{
+		WireName: "post_scan_actions_result",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_PostScanActionsResultFields,
+	},
+	"Profile": ubx.FieldSpec{
+		WireName: "profile",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_ProfileFields,
+	},
+	"RowCount": ubx.FieldSpec{WireName: "row_count"},
+	"ScannedData": ubx.FieldSpec{
+		WireName: "scanned_data",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_ScannedDataFields,
+	},
+}
 
 var DataScan_DataProfileSpec_ExcludeFieldsFields = ubx.FieldMap{
-		"FieldNames": ubx.FieldSpec{WireName: "field_names"},
-	}
+	"FieldNames": ubx.FieldSpec{WireName: "field_names"},
+}
 
 var DataScan_DataProfileSpec_PostScanActions_BigqueryExportFields = ubx.FieldMap{
-		"ResultsTable": ubx.FieldSpec{WireName: "results_table"},
-	}
+	"ResultsTable": ubx.FieldSpec{WireName: "results_table"},
+}
 
 var DataScan_DataProfileSpec_PostScanActionsFields = ubx.FieldMap{
-		"BigqueryExport": ubx.FieldSpec{
-			WireName: "bigquery_export",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpec_PostScanActions_BigqueryExportFields,
-		},
-	}
+	"BigqueryExport": ubx.FieldSpec{
+		WireName: "bigquery_export",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileSpec_PostScanActions_BigqueryExportFields,
+	},
+}
 
 var DataScan_DataProfileSpecFields = ubx.FieldMap{
-		"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
-		"ExcludeFields": ubx.FieldSpec{
-			WireName: "exclude_fields",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpec_ExcludeFieldsFields,
-		},
-		"IncludeFields": ubx.FieldSpec{
-			WireName: "include_fields",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpec_ExcludeFieldsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PostScanActions": ubx.FieldSpec{
-			WireName: "post_scan_actions",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpec_PostScanActionsFields,
-		},
-		"RowFilter": ubx.FieldSpec{WireName: "row_filter"},
-		"SamplingPercent": ubx.FieldSpec{WireName: "sampling_percent"},
-	}
+	"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
+	"ExcludeFields": ubx.FieldSpec{
+		WireName: "exclude_fields",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileSpec_ExcludeFieldsFields,
+	},
+	"IncludeFields": ubx.FieldSpec{
+		WireName: "include_fields",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileSpec_ExcludeFieldsFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"PostScanActions": ubx.FieldSpec{
+		WireName: "post_scan_actions",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileSpec_PostScanActionsFields,
+	},
+	"RowFilter":       ubx.FieldSpec{WireName: "row_filter"},
+	"SamplingPercent": ubx.FieldSpec{WireName: "sampling_percent"},
+}
 
 var DataScan_DataQualityResult_AnomalyDetectionGeneratedAssetsFields = ubx.FieldMap{
-		"DataIntermediateTable": ubx.FieldSpec{WireName: "data_intermediate_table"},
-		"FreshnessIntermediateTable": ubx.FieldSpec{WireName: "freshness_intermediate_table"},
-		"ResultTable": ubx.FieldSpec{WireName: "result_table"},
-		"VolumeIntermediateTable": ubx.FieldSpec{WireName: "volume_intermediate_table"},
-	}
+	"DataIntermediateTable":      ubx.FieldSpec{WireName: "data_intermediate_table"},
+	"FreshnessIntermediateTable": ubx.FieldSpec{WireName: "freshness_intermediate_table"},
+	"ResultTable":                ubx.FieldSpec{WireName: "result_table"},
+	"VolumeIntermediateTable":    ubx.FieldSpec{WireName: "volume_intermediate_table"},
+}
 
 var DataScan_DataQualityResult_Columns_Dimensions_DimensionFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DataScan_DataQualityResult_Columns_DimensionsFields = ubx.FieldMap{
-		"Dimension": ubx.FieldSpec{
-			WireName: "dimension",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Columns_Dimensions_DimensionFields,
-		},
-		"Passed": ubx.FieldSpec{WireName: "passed"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Dimension": ubx.FieldSpec{
+		WireName: "dimension",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Columns_Dimensions_DimensionFields,
+	},
+	"Passed": ubx.FieldSpec{WireName: "passed"},
+	"Score":  ubx.FieldSpec{WireName: "score"},
+}
 
 var DataScan_DataQualityResult_ColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Columns_DimensionsFields,
-		},
-		"Passed": ubx.FieldSpec{WireName: "passed"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Column": ubx.FieldSpec{WireName: "column"},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Columns_DimensionsFields,
+	},
+	"Passed": ubx.FieldSpec{WireName: "passed"},
+	"Score":  ubx.FieldSpec{WireName: "score"},
+}
 
 var DataScan_DataQualityResult_Rules_DebugQueriesResultSets_ResultsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DataScan_DataQualityResult_Rules_DebugQueriesResultSetsFields = ubx.FieldMap{
-		"Results": ubx.FieldSpec{
-			WireName: "results",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_DebugQueriesResultSets_ResultsFields,
-		},
-	}
+	"Results": ubx.FieldSpec{
+		WireName: "results",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_DebugQueriesResultSets_ResultsFields,
+	},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_DebugQueriesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"SqlStatement": ubx.FieldSpec{WireName: "sql_statement"},
-	}
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"SqlStatement": ubx.FieldSpec{WireName: "sql_statement"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RangeExpectationFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"StrictMaxEnabled": ubx.FieldSpec{WireName: "strict_max_enabled"},
-		"StrictMinEnabled": ubx.FieldSpec{WireName: "strict_min_enabled"},
-	}
+	"MaxValue":         ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":         ubx.FieldSpec{WireName: "min_value"},
+	"StrictMaxEnabled": ubx.FieldSpec{WireName: "strict_max_enabled"},
+	"StrictMinEnabled": ubx.FieldSpec{WireName: "strict_min_enabled"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RegexExpectationFields = ubx.FieldMap{
-		"Regex": ubx.FieldSpec{WireName: "regex"},
-	}
+	"Regex": ubx.FieldSpec{WireName: "regex"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RowConditionExpectationFields = ubx.FieldMap{
-		"SqlExpression": ubx.FieldSpec{WireName: "sql_expression"},
-	}
+	"SqlExpression": ubx.FieldSpec{WireName: "sql_expression"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSourceFields = ubx.FieldMap{
-		"EntryLink": ubx.FieldSpec{WireName: "entry_link"},
-		"EntryLinkType": ubx.FieldSpec{WireName: "entry_link_type"},
-	}
+	"EntryLink":     ubx.FieldSpec{WireName: "entry_link"},
+	"EntryLinkType": ubx.FieldSpec{WireName: "entry_link_type"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySourceFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Entry": ubx.FieldSpec{WireName: "entry"},
-		"EntryType": ubx.FieldSpec{WireName: "entry_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Entry":       ubx.FieldSpec{WireName: "entry"},
+	"EntryType":   ubx.FieldSpec{WireName: "entry_type"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElementsFields = ubx.FieldMap{
-		"EntryLinkSource": ubx.FieldSpec{
-			WireName: "entry_link_source",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSourceFields,
-		},
-		"EntrySource": ubx.FieldSpec{
-			WireName: "entry_source",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySourceFields,
-		},
-	}
+	"EntryLinkSource": ubx.FieldSpec{
+		WireName: "entry_link_source",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSourceFields,
+	},
+	"EntrySource": ubx.FieldSpec{
+		WireName: "entry_source",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySourceFields,
+	},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_RuleSourceFields = ubx.FieldMap{
-		"RulePathElements": ubx.FieldSpec{
-			WireName: "rule_path_elements",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElementsFields,
-		},
-	}
+	"RulePathElements": ubx.FieldSpec{
+		WireName: "rule_path_elements",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RuleSource_RulePathElementsFields,
+	},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_SetExpectationFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_SqlAssertionFields = ubx.FieldMap{
-		"SqlStatement": ubx.FieldSpec{WireName: "sql_statement"},
-	}
+	"SqlStatement": ubx.FieldSpec{WireName: "sql_statement"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectationFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"Statistic": ubx.FieldSpec{WireName: "statistic"},
-		"StrictMaxEnabled": ubx.FieldSpec{WireName: "strict_max_enabled"},
-		"StrictMinEnabled": ubx.FieldSpec{WireName: "strict_min_enabled"},
-	}
+	"MaxValue":         ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":         ubx.FieldSpec{WireName: "min_value"},
+	"Statistic":        ubx.FieldSpec{WireName: "statistic"},
+	"StrictMaxEnabled": ubx.FieldSpec{WireName: "strict_max_enabled"},
+	"StrictMinEnabled": ubx.FieldSpec{WireName: "strict_min_enabled"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParametersFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollectionFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplateFields = ubx.FieldMap{
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"InputParameters": ubx.FieldSpec{
-			WireName: "input_parameters",
-			Kind: "map",
-			Fields: DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParametersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SqlCollection": ubx.FieldSpec{
-			WireName: "sql_collection",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollectionFields,
-		},
-	}
+	"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
+	"Dimension":    ubx.FieldSpec{WireName: "dimension"},
+	"InputParameters": ubx.FieldSpec{
+		WireName: "input_parameters",
+		Kind:     "map",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParametersFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SqlCollection": ubx.FieldSpec{
+		WireName: "sql_collection",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollectionFields,
+	},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_TemplateReference_ValuesFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var DataScan_DataQualityResult_Rules_Rule_TemplateReferenceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResolvedSql": ubx.FieldSpec{WireName: "resolved_sql"},
-		"RuleTemplate": ubx.FieldSpec{
-			WireName: "rule_template",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplateFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "map",
-			Fields: DataScan_DataQualityResult_Rules_Rule_TemplateReference_ValuesFields,
-		},
-	}
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"ResolvedSql": ubx.FieldSpec{WireName: "resolved_sql"},
+	"RuleTemplate": ubx.FieldSpec{
+		WireName: "rule_template",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplateFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "map",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_TemplateReference_ValuesFields,
+	},
+}
 
 var DataScan_DataQualityResult_Rules_RuleFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DebugQueries": ubx.FieldSpec{
-			WireName: "debug_queries",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_Rule_DebugQueriesFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"IgnoreNull": ubx.FieldSpec{WireName: "ignore_null"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NonNullExpectation": ubx.FieldSpec{WireName: "non_null_expectation"},
-		"RangeExpectation": ubx.FieldSpec{
-			WireName: "range_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RangeExpectationFields,
-		},
-		"RegexExpectation": ubx.FieldSpec{
-			WireName: "regex_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RegexExpectationFields,
-		},
-		"RowConditionExpectation": ubx.FieldSpec{
-			WireName: "row_condition_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RowConditionExpectationFields,
-		},
-		"RuleSource": ubx.FieldSpec{
-			WireName: "rule_source",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RuleSourceFields,
-		},
-		"SetExpectation": ubx.FieldSpec{
-			WireName: "set_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_SetExpectationFields,
-		},
-		"SqlAssertion": ubx.FieldSpec{
-			WireName: "sql_assertion",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_SqlAssertionFields,
-		},
-		"StatisticRangeExpectation": ubx.FieldSpec{
-			WireName: "statistic_range_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectationFields,
-		},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
-		"TableConditionExpectation": ubx.FieldSpec{
-			WireName: "table_condition_expectation",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_RowConditionExpectationFields,
-		},
-		"TemplateReference": ubx.FieldSpec{
-			WireName: "template_reference",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_Rule_TemplateReferenceFields,
-		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-		"UniquenessExpectation": ubx.FieldSpec{WireName: "uniqueness_expectation"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Column":     ubx.FieldSpec{WireName: "column"},
+	"DebugQueries": ubx.FieldSpec{
+		WireName: "debug_queries",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_DebugQueriesFields,
+	},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"Dimension":          ubx.FieldSpec{WireName: "dimension"},
+	"IgnoreNull":         ubx.FieldSpec{WireName: "ignore_null"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"NonNullExpectation": ubx.FieldSpec{WireName: "non_null_expectation"},
+	"RangeExpectation": ubx.FieldSpec{
+		WireName: "range_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RangeExpectationFields,
+	},
+	"RegexExpectation": ubx.FieldSpec{
+		WireName: "regex_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RegexExpectationFields,
+	},
+	"RowConditionExpectation": ubx.FieldSpec{
+		WireName: "row_condition_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RowConditionExpectationFields,
+	},
+	"RuleSource": ubx.FieldSpec{
+		WireName: "rule_source",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RuleSourceFields,
+	},
+	"SetExpectation": ubx.FieldSpec{
+		WireName: "set_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_SetExpectationFields,
+	},
+	"SqlAssertion": ubx.FieldSpec{
+		WireName: "sql_assertion",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_SqlAssertionFields,
+	},
+	"StatisticRangeExpectation": ubx.FieldSpec{
+		WireName: "statistic_range_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_StatisticRangeExpectationFields,
+	},
+	"Suspended": ubx.FieldSpec{WireName: "suspended"},
+	"TableConditionExpectation": ubx.FieldSpec{
+		WireName: "table_condition_expectation",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_RowConditionExpectationFields,
+	},
+	"TemplateReference": ubx.FieldSpec{
+		WireName: "template_reference",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_Rule_TemplateReferenceFields,
+	},
+	"Threshold":             ubx.FieldSpec{WireName: "threshold"},
+	"UniquenessExpectation": ubx.FieldSpec{WireName: "uniqueness_expectation"},
+}
 
 var DataScan_DataQualityResult_RulesFields = ubx.FieldMap{
-		"AssertionRowCount": ubx.FieldSpec{WireName: "assertion_row_count"},
-		"DebugQueriesResultSets": ubx.FieldSpec{
-			WireName: "debug_queries_result_sets",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_DebugQueriesResultSetsFields,
-		},
-		"EvaluatedCount": ubx.FieldSpec{WireName: "evaluated_count"},
-		"FailingRowsQuery": ubx.FieldSpec{WireName: "failing_rows_query"},
-		"NullCount": ubx.FieldSpec{WireName: "null_count"},
-		"PassRatio": ubx.FieldSpec{WireName: "pass_ratio"},
-		"Passed": ubx.FieldSpec{WireName: "passed"},
-		"PassedCount": ubx.FieldSpec{WireName: "passed_count"},
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_Rules_RuleFields,
-		},
-	}
+	"AssertionRowCount": ubx.FieldSpec{WireName: "assertion_row_count"},
+	"DebugQueriesResultSets": ubx.FieldSpec{
+		WireName: "debug_queries_result_sets",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_DebugQueriesResultSetsFields,
+	},
+	"EvaluatedCount":   ubx.FieldSpec{WireName: "evaluated_count"},
+	"FailingRowsQuery": ubx.FieldSpec{WireName: "failing_rows_query"},
+	"NullCount":        ubx.FieldSpec{WireName: "null_count"},
+	"PassRatio":        ubx.FieldSpec{WireName: "pass_ratio"},
+	"Passed":           ubx.FieldSpec{WireName: "passed"},
+	"PassedCount":      ubx.FieldSpec{WireName: "passed_count"},
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_Rules_RuleFields,
+	},
+}
 
 var DataScan_DataQualityResultFields = ubx.FieldMap{
-		"AnomalyDetectionGeneratedAssets": ubx.FieldSpec{
-			WireName: "anomaly_detection_generated_assets",
-			Kind: "object",
-			Fields: DataScan_DataQualityResult_AnomalyDetectionGeneratedAssetsFields,
-		},
-		"CatalogPublishingStatus": ubx.FieldSpec{
-			WireName: "catalog_publishing_status",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_CatalogPublishingStatusFields,
-		},
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_ColumnsFields,
-		},
-		"Dimensions": ubx.FieldSpec{
-			WireName: "dimensions",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Columns_DimensionsFields,
-		},
-		"Passed": ubx.FieldSpec{WireName: "passed"},
-		"PostScanActionsResult": ubx.FieldSpec{
-			WireName: "post_scan_actions_result",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_PostScanActionsResultFields,
-		},
-		"RowCount": ubx.FieldSpec{WireName: "row_count"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_RulesFields,
-		},
-		"ScannedData": ubx.FieldSpec{
-			WireName: "scanned_data",
-			Kind: "object",
-			Fields: DataScan_DataProfileResult_ScannedDataFields,
-		},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"AnomalyDetectionGeneratedAssets": ubx.FieldSpec{
+		WireName: "anomaly_detection_generated_assets",
+		Kind:     "object",
+		Fields:   DataScan_DataQualityResult_AnomalyDetectionGeneratedAssetsFields,
+	},
+	"CatalogPublishingStatus": ubx.FieldSpec{
+		WireName: "catalog_publishing_status",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_CatalogPublishingStatusFields,
+	},
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_ColumnsFields,
+	},
+	"Dimensions": ubx.FieldSpec{
+		WireName: "dimensions",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Columns_DimensionsFields,
+	},
+	"Passed": ubx.FieldSpec{WireName: "passed"},
+	"PostScanActionsResult": ubx.FieldSpec{
+		WireName: "post_scan_actions_result",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_PostScanActionsResultFields,
+	},
+	"RowCount": ubx.FieldSpec{WireName: "row_count"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_RulesFields,
+	},
+	"ScannedData": ubx.FieldSpec{
+		WireName: "scanned_data",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileResult_ScannedDataFields,
+	},
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var DataScan_DataQualitySpec_PostScanActions_NotificationReport_RecipientsFields = ubx.FieldMap{
-		"Emails": ubx.FieldSpec{WireName: "emails"},
-	}
+	"Emails": ubx.FieldSpec{WireName: "emails"},
+}
 
 var DataScan_DataQualitySpec_PostScanActions_NotificationReport_ScoreThresholdTriggerFields = ubx.FieldMap{
-		"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
-	}
+	"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
+}
 
 var DataScan_DataQualitySpec_PostScanActions_NotificationReportFields = ubx.FieldMap{
-		"JobEndTrigger": ubx.FieldSpec{WireName: "job_end_trigger"},
-		"JobFailureTrigger": ubx.FieldSpec{WireName: "job_failure_trigger"},
-		"Recipients": ubx.FieldSpec{
-			WireName: "recipients",
-			Kind: "object",
-			Fields: DataScan_DataQualitySpec_PostScanActions_NotificationReport_RecipientsFields,
-		},
-		"ScoreThresholdTrigger": ubx.FieldSpec{
-			WireName: "score_threshold_trigger",
-			Kind: "object",
-			Fields: DataScan_DataQualitySpec_PostScanActions_NotificationReport_ScoreThresholdTriggerFields,
-		},
-	}
+	"JobEndTrigger":     ubx.FieldSpec{WireName: "job_end_trigger"},
+	"JobFailureTrigger": ubx.FieldSpec{WireName: "job_failure_trigger"},
+	"Recipients": ubx.FieldSpec{
+		WireName: "recipients",
+		Kind:     "object",
+		Fields:   DataScan_DataQualitySpec_PostScanActions_NotificationReport_RecipientsFields,
+	},
+	"ScoreThresholdTrigger": ubx.FieldSpec{
+		WireName: "score_threshold_trigger",
+		Kind:     "object",
+		Fields:   DataScan_DataQualitySpec_PostScanActions_NotificationReport_ScoreThresholdTriggerFields,
+	},
+}
 
 var DataScan_DataQualitySpec_PostScanActionsFields = ubx.FieldMap{
-		"BigqueryExport": ubx.FieldSpec{
-			WireName: "bigquery_export",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpec_PostScanActions_BigqueryExportFields,
-		},
-		"NotificationReport": ubx.FieldSpec{
-			WireName: "notification_report",
-			Kind: "object",
-			Fields: DataScan_DataQualitySpec_PostScanActions_NotificationReportFields,
-		},
-	}
+	"BigqueryExport": ubx.FieldSpec{
+		WireName: "bigquery_export",
+		Kind:     "object",
+		Fields:   DataScan_DataProfileSpec_PostScanActions_BigqueryExportFields,
+	},
+	"NotificationReport": ubx.FieldSpec{
+		WireName: "notification_report",
+		Kind:     "object",
+		Fields:   DataScan_DataQualitySpec_PostScanActions_NotificationReportFields,
+	},
+}
 
 var DataScan_DataQualitySpecFields = ubx.FieldMap{
-		"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
-		"EnableCatalogBasedRules": ubx.FieldSpec{WireName: "enable_catalog_based_rules"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"PostScanActions": ubx.FieldSpec{
-			WireName: "post_scan_actions",
-			Kind: "object",
-			Fields: DataScan_DataQualitySpec_PostScanActionsFields,
-		},
-		"RowFilter": ubx.FieldSpec{WireName: "row_filter"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: DataScan_DataQualityResult_Rules_RuleFields,
-		},
-		"SamplingPercent": ubx.FieldSpec{WireName: "sampling_percent"},
-	}
+	"CatalogPublishingEnabled": ubx.FieldSpec{WireName: "catalog_publishing_enabled"},
+	"EnableCatalogBasedRules":  ubx.FieldSpec{WireName: "enable_catalog_based_rules"},
+	"Filter":                   ubx.FieldSpec{WireName: "filter"},
+	"PostScanActions": ubx.FieldSpec{
+		WireName: "post_scan_actions",
+		Kind:     "object",
+		Fields:   DataScan_DataQualitySpec_PostScanActionsFields,
+	},
+	"RowFilter": ubx.FieldSpec{WireName: "row_filter"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   DataScan_DataQualityResult_Rules_RuleFields,
+	},
+	"SamplingPercent": ubx.FieldSpec{WireName: "sampling_percent"},
+}
 
 var DataScan_ExecutionIdentity_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var DataScan_ExecutionIdentityFields = ubx.FieldMap{
-		"DataplexServiceAgent": ubx.FieldSpec{WireName: "dataplex_service_agent"},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: DataScan_ExecutionIdentity_ServiceAccountFields,
-		},
-		"UserCredential": ubx.FieldSpec{WireName: "user_credential"},
-	}
+	"DataplexServiceAgent": ubx.FieldSpec{WireName: "dataplex_service_agent"},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   DataScan_ExecutionIdentity_ServiceAccountFields,
+	},
+	"UserCredential": ubx.FieldSpec{WireName: "user_credential"},
+}
 
 var DataScan_ExecutionSpec_Trigger_OneTimeFields = ubx.FieldMap{
-		"TtlAfterScanCompletion": ubx.FieldSpec{WireName: "ttl_after_scan_completion"},
-	}
+	"TtlAfterScanCompletion": ubx.FieldSpec{WireName: "ttl_after_scan_completion"},
+}
 
 var DataScan_ExecutionSpec_Trigger_ScheduleFields = ubx.FieldMap{
-		"Cron": ubx.FieldSpec{WireName: "cron"},
-	}
+	"Cron": ubx.FieldSpec{WireName: "cron"},
+}
 
 var DataScan_ExecutionSpec_TriggerFields = ubx.FieldMap{
-		"OnDemand": ubx.FieldSpec{WireName: "on_demand"},
-		"OneTime": ubx.FieldSpec{
-			WireName: "one_time",
-			Kind: "object",
-			Fields: DataScan_ExecutionSpec_Trigger_OneTimeFields,
-		},
-		"Schedule": ubx.FieldSpec{
-			WireName: "schedule",
-			Kind: "object",
-			Fields: DataScan_ExecutionSpec_Trigger_ScheduleFields,
-		},
-	}
+	"OnDemand": ubx.FieldSpec{WireName: "on_demand"},
+	"OneTime": ubx.FieldSpec{
+		WireName: "one_time",
+		Kind:     "object",
+		Fields:   DataScan_ExecutionSpec_Trigger_OneTimeFields,
+	},
+	"Schedule": ubx.FieldSpec{
+		WireName: "schedule",
+		Kind:     "object",
+		Fields:   DataScan_ExecutionSpec_Trigger_ScheduleFields,
+	},
+}
 
 var DataScan_ExecutionSpecFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: DataScan_ExecutionSpec_TriggerFields,
-		},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   DataScan_ExecutionSpec_TriggerFields,
+	},
+}
 
 var DataScan_ExecutionStatusFields = ubx.FieldMap{
-		"LatestJobCreateTime": ubx.FieldSpec{WireName: "latest_job_create_time"},
-		"LatestJobEndTime": ubx.FieldSpec{WireName: "latest_job_end_time"},
-		"LatestJobStartTime": ubx.FieldSpec{WireName: "latest_job_start_time"},
-	}
+	"LatestJobCreateTime": ubx.FieldSpec{WireName: "latest_job_create_time"},
+	"LatestJobEndTime":    ubx.FieldSpec{WireName: "latest_job_end_time"},
+	"LatestJobStartTime":  ubx.FieldSpec{WireName: "latest_job_start_time"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHintsFields = ubx.FieldMap{
-		"Cardinality": ubx.FieldSpec{WireName: "cardinality"},
-	}
+	"Cardinality": ubx.FieldSpec{WireName: "cardinality"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHintsFields = ubx.FieldMap{
-		"Normalization": ubx.FieldSpec{WireName: "normalization"},
-		"Synthesis": ubx.FieldSpec{WireName: "synthesis"},
-	}
+	"Normalization": ubx.FieldSpec{WireName: "normalization"},
+	"Synthesis":     ubx.FieldSpec{WireName: "synthesis"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_FieldsFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExtractionHints": ubx.FieldSpec{
-			WireName: "extraction_hints",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHintsFields,
-		},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"MetadataType": ubx.FieldSpec{WireName: "metadata_type"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DataType":    ubx.FieldSpec{WireName: "data_type"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ExtractionHints": ubx.FieldSpec{
+		WireName: "extraction_hints",
+		Kind:     "object",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHintsFields,
+	},
+	"Fields":       ubx.FieldSpec{WireName: "fields"},
+	"MetadataType": ubx.FieldSpec{WireName: "metadata_type"},
+	"Mode":         ubx.FieldSpec{WireName: "mode"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappingsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"ReferencedField": ubx.FieldSpec{WireName: "referenced_field"},
-	}
+	"Field":           ubx.FieldSpec{WireName: "field"},
+	"ReferencedField": ubx.FieldSpec{WireName: "referenced_field"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeysFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FieldMappings": ubx.FieldSpec{
-			WireName: "field_mappings",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReferencedNodeType": ubx.FieldSpec{WireName: "referenced_node_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FieldMappings": ubx.FieldSpec{
+		WireName: "field_mappings",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappingsFields,
+	},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ReferencedNodeType": ubx.FieldSpec{WireName: "referenced_node_type"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExtractionHints": ubx.FieldSpec{
-			WireName: "extraction_hints",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHintsFields,
-		},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_FieldsFields,
-		},
-		"ForeignKeys": ubx.FieldSpec{
-			WireName: "foreign_keys",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeysFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceNodeType": ubx.FieldSpec{WireName: "source_node_type"},
-		"TargetNodeType": ubx.FieldSpec{WireName: "target_node_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ExtractionHints": ubx.FieldSpec{
+		WireName: "extraction_hints",
+		Kind:     "object",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHintsFields,
+	},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_FieldsFields,
+	},
+	"ForeignKeys": ubx.FieldSpec{
+		WireName: "foreign_keys",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeysFields,
+	},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"SourceNodeType": ubx.FieldSpec{WireName: "source_node_type"},
+	"TargetNodeType": ubx.FieldSpec{WireName: "target_node_type"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExtractionHints": ubx.FieldSpec{
-			WireName: "extraction_hints",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHintsFields,
-		},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_FieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryKeys": ubx.FieldSpec{WireName: "primary_keys"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ExtractionHints": ubx.FieldSpec{
+		WireName: "extraction_hints",
+		Kind:     "object",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHintsFields,
+	},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_FieldsFields,
+	},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PrimaryKeys": ubx.FieldSpec{WireName: "primary_keys"},
+}
 
 var DataScan_UnstructuredDataProfileResult_GraphProfileFields = ubx.FieldMap{
-		"EdgeTypes": ubx.FieldSpec{
-			WireName: "edge_types",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypesFields,
-		},
-		"NodeTypes": ubx.FieldSpec{
-			WireName: "node_types",
-			Kind: "list",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypesFields,
-		},
-	}
+	"EdgeTypes": ubx.FieldSpec{
+		WireName: "edge_types",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_EdgeTypesFields,
+	},
+	"NodeTypes": ubx.FieldSpec{
+		WireName: "node_types",
+		Kind:     "list",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfile_NodeTypesFields,
+	},
+}
 
 var DataScan_UnstructuredDataProfileResultFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GraphProfile": ubx.FieldSpec{
-			WireName: "graph_profile",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileResult_GraphProfileFields,
-		},
-		"PartialFailureMessage": ubx.FieldSpec{WireName: "partial_failure_message"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"GraphProfile": ubx.FieldSpec{
+		WireName: "graph_profile",
+		Kind:     "object",
+		Fields:   DataScan_UnstructuredDataProfileResult_GraphProfileFields,
+	},
+	"PartialFailureMessage": ubx.FieldSpec{WireName: "partial_failure_message"},
+}
 
 var DataScan_UnstructuredDataProfileSpecFields = ubx.FieldMap{
-		"CustomizedPrompt": ubx.FieldSpec{WireName: "customized_prompt"},
-		"GlobalEndpointEnabled": ubx.FieldSpec{WireName: "global_endpoint_enabled"},
-		"GraphProfilePublishingEnabled": ubx.FieldSpec{WireName: "graph_profile_publishing_enabled"},
-	}
+	"CustomizedPrompt":              ubx.FieldSpec{WireName: "customized_prompt"},
+	"GlobalEndpointEnabled":         ubx.FieldSpec{WireName: "global_endpoint_enabled"},
+	"GraphProfilePublishingEnabled": ubx.FieldSpec{WireName: "graph_profile_publishing_enabled"},
+}
 
 type DataScanConfig struct {
-	// Output only. The time when the scan was created.
-	CreateTime any
 	// The data source for DataScan.
 	Data any
 	// The output of a data discovery scan.
@@ -1508,20 +1506,10 @@ type DataScanConfig struct {
 	ExecutionStatus any
 	// Optional. User-defined labels for the scan.
 	Labels any
-	// Output only. Identifier. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a Google Cloud region.
-	Name any
-	// Output only. Current state of the DataScan.
-	State any
-	// Output only. The type of DataScan.
-	Type any
-	// Output only. System generated globally unique ID for the scan. This ID will be different if the scan is deleted and re-created with the same name.
-	Uid any
 	// Contains the result of an unstructured data profile scan.
 	UnstructuredDataProfileResult any
 	// Contains the specification for an unstructured data profile scan.
 	UnstructuredDataProfileSpec any
-	// Output only. The time when the scan was last updated.
-	UpdateTime any
 }
 
 type DataScanAttrs struct {
@@ -1576,84 +1564,78 @@ type DataScanAttrs struct {
 var DataScan = ubx.ResourceBinding{
 	WireType: "google_dataplex_data_scan",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Data": ubx.FieldSpec{
 			WireName: "data",
-			Kind: "object",
-			Fields: DataScan_DataFields,
+			Kind:     "object",
+			Fields:   DataScan_DataFields,
 		},
 		"DataDiscoveryResult": ubx.FieldSpec{
 			WireName: "data_discovery_result",
-			Kind: "object",
-			Fields: DataScan_DataDiscoveryResultFields,
+			Kind:     "object",
+			Fields:   DataScan_DataDiscoveryResultFields,
 		},
 		"DataDiscoverySpec": ubx.FieldSpec{
 			WireName: "data_discovery_spec",
-			Kind: "object",
-			Fields: DataScan_DataDiscoverySpecFields,
+			Kind:     "object",
+			Fields:   DataScan_DataDiscoverySpecFields,
 		},
 		"DataDocumentationResult": ubx.FieldSpec{
 			WireName: "data_documentation_result",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationResultFields,
+			Kind:     "object",
+			Fields:   DataScan_DataDocumentationResultFields,
 		},
 		"DataDocumentationSpec": ubx.FieldSpec{
 			WireName: "data_documentation_spec",
-			Kind: "object",
-			Fields: DataScan_DataDocumentationSpecFields,
+			Kind:     "object",
+			Fields:   DataScan_DataDocumentationSpecFields,
 		},
 		"DataProfileResult": ubx.FieldSpec{
 			WireName: "data_profile_result",
-			Kind: "object",
-			Fields: DataScan_DataProfileResultFields,
+			Kind:     "object",
+			Fields:   DataScan_DataProfileResultFields,
 		},
 		"DataProfileSpec": ubx.FieldSpec{
 			WireName: "data_profile_spec",
-			Kind: "object",
-			Fields: DataScan_DataProfileSpecFields,
+			Kind:     "object",
+			Fields:   DataScan_DataProfileSpecFields,
 		},
 		"DataQualityResult": ubx.FieldSpec{
 			WireName: "data_quality_result",
-			Kind: "object",
-			Fields: DataScan_DataQualityResultFields,
+			Kind:     "object",
+			Fields:   DataScan_DataQualityResultFields,
 		},
 		"DataQualitySpec": ubx.FieldSpec{
 			WireName: "data_quality_spec",
-			Kind: "object",
-			Fields: DataScan_DataQualitySpecFields,
+			Kind:     "object",
+			Fields:   DataScan_DataQualitySpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ExecutionIdentity": ubx.FieldSpec{
 			WireName: "execution_identity",
-			Kind: "object",
-			Fields: DataScan_ExecutionIdentityFields,
+			Kind:     "object",
+			Fields:   DataScan_ExecutionIdentityFields,
 		},
 		"ExecutionSpec": ubx.FieldSpec{
 			WireName: "execution_spec",
-			Kind: "object",
-			Fields: DataScan_ExecutionSpecFields,
+			Kind:     "object",
+			Fields:   DataScan_ExecutionSpecFields,
 		},
 		"ExecutionStatus": ubx.FieldSpec{
 			WireName: "execution_status",
-			Kind: "object",
-			Fields: DataScan_ExecutionStatusFields,
+			Kind:     "object",
+			Fields:   DataScan_ExecutionStatusFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 		"UnstructuredDataProfileResult": ubx.FieldSpec{
 			WireName: "unstructured_data_profile_result",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileResultFields,
+			Kind:     "object",
+			Fields:   DataScan_UnstructuredDataProfileResultFields,
 		},
 		"UnstructuredDataProfileSpec": ubx.FieldSpec{
 			WireName: "unstructured_data_profile_spec",
-			Kind: "object",
-			Fields: DataScan_UnstructuredDataProfileSpecFields,
+			Kind:     "object",
+			Fields:   DataScan_UnstructuredDataProfileSpecFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

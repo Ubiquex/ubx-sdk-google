@@ -95,24 +95,11 @@ const V1beta1Instance_MaintenanceScheduleFields: FieldMap = {
   startTime: "start_time",
 };
 
-const V1beta1Instance_NodesFields: FieldMap = {
-  id: "id",
-  zone: "zone",
-};
-
 const V1beta1Instance_PersistenceConfigFields: FieldMap = {
   persistenceMode: "persistence_mode",
   rdbNextSnapshotTime: "rdb_next_snapshot_time",
   rdbSnapshotPeriod: "rdb_snapshot_period",
   rdbSnapshotStartTime: "rdb_snapshot_start_time",
-};
-
-const V1beta1Instance_ServerCaCertsFields: FieldMap = {
-  cert: "cert",
-  createTime: "create_time",
-  expireTime: "expire_time",
-  serialNumber: "serial_number",
-  sha1Fingerprint: "sha1_fingerprint",
 };
 
 export interface V1beta1InstanceConfig {
@@ -126,16 +113,10 @@ export interface V1beta1InstanceConfig {
   availableMaintenanceVersions?: string[] | Computed<string[]>;
   /** Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING. */
   connectMode?: string | Computed<string>;
-  /** Output only. The time the instance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as [location_id]. In standard tier, this can be the zone of any node in the instance. */
-  currentLocationId?: string | Computed<string>;
   /** Optional. The KMS key reference that the customer provides when trying to create the instance. */
   customerManagedKey?: string | Computed<string>;
   /** An arbitrary and optional user-provided name for the instance. */
   displayName?: string | Computed<string>;
-  /** Output only. Hostname or IP address of the exposed Redis endpoint used by clients to connect to the service. */
-  host?: string | Computed<string>;
   /** Resource labels to represent user provided metadata */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone from the specified region for the instance. For standard tier, additional nodes will be added across multiple zones for protection against zonal failures. If specified, at least one node will be provisioned in this zone. */
@@ -150,18 +131,8 @@ export interface V1beta1InstanceConfig {
   memorySizeGb?: number | Computed<number>;
   /** Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details. */
   name?: string | Computed<string>;
-  /** Output only. Info per node. */
-  nodes?: V1beta1Instance_Nodes[] | Computed<V1beta1Instance_Nodes[]>;
   /** Configuration of the persistence functionality. */
   persistenceConfig?: V1beta1Instance_PersistenceConfig | Computed<V1beta1Instance_PersistenceConfig>;
-  /** Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation. */
-  persistenceIamIdentity?: string | Computed<string>;
-  /** Output only. The port number of the exposed Redis endpoint. */
-  port?: number | Computed<number>;
-  /** Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'. */
-  readEndpoint?: string | Computed<string>;
-  /** Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'. */
-  readEndpointPort?: number | Computed<number>;
   /** Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED. */
   readReplicasMode?: string | Computed<string>;
   /** Optional. Redis configuration parameters, according to [Redis configuration](https://redis.io/docs/latest/operate/oss_and_stack/management/config/). Currently, the only supported parameters are: Redis version 3.2 and newer: * maxmemory-policy * notify-keyspace-events Redis version 4.0 and newer: * activedefrag * lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and newer: * stream-node-max-bytes * stream-node-max-entries */
@@ -172,18 +143,8 @@ export interface V1beta1InstanceConfig {
   replicaCount?: number | Computed<number>;
   /** Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28. */
   reservedIpRange?: string | Computed<string>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Optional. Additional IP range for node placement. Required when enabling read replicas on an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or "auto". */
   secondaryIpRange?: string | Computed<string>;
-  /** Output only. List of server CA certificates for the instance. */
-  serverCaCerts?: V1beta1Instance_ServerCaCerts[] | Computed<V1beta1Instance_ServerCaCerts[]>;
-  /** Output only. The current state of this instance. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current status of this instance, if available. */
-  statusMessage?: string | Computed<string>;
   /** Optional. reasons that causes instance in "SUSPENDED" state. */
   suspensionReasons?: string[] | Computed<string[]>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
@@ -281,11 +242,8 @@ export const V1beta1Instance: ResourceBinding<V1beta1InstanceConfig, V1beta1Inst
     authorizedNetwork: "authorized_network",
     availableMaintenanceVersions: "available_maintenance_versions",
     connectMode: "connect_mode",
-    createTime: "create_time",
-    currentLocationId: "current_location_id",
     customerManagedKey: "customer_managed_key",
     displayName: "display_name",
-    host: "host",
     labels: "labels",
     locationId: "location_id",
     maintenancePolicy: {
@@ -301,35 +259,17 @@ export const V1beta1Instance: ResourceBinding<V1beta1InstanceConfig, V1beta1Inst
     maintenanceVersion: "maintenance_version",
     memorySizeGb: "memory_size_gb",
     name: "name",
-    nodes: {
-      wireName: "nodes",
-      kind: "list",
-      fields: V1beta1Instance_NodesFields,
-    },
     persistenceConfig: {
       wireName: "persistence_config",
       kind: "object",
       fields: V1beta1Instance_PersistenceConfigFields,
     },
-    persistenceIamIdentity: "persistence_iam_identity",
-    port: "port",
-    readEndpoint: "read_endpoint",
-    readEndpointPort: "read_endpoint_port",
     readReplicasMode: "read_replicas_mode",
     redisConfigs: "redis_configs",
     redisVersion: "redis_version",
     replicaCount: "replica_count",
     reservedIpRange: "reserved_ip_range",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     secondaryIpRange: "secondary_ip_range",
-    serverCaCerts: {
-      wireName: "server_ca_certs",
-      kind: "list",
-      fields: V1beta1Instance_ServerCaCertsFields,
-    },
-    state: "state",
-    statusMessage: "status_message",
     suspensionReasons: "suspension_reasons",
     tags: "tags",
     tier: "tier",

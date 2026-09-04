@@ -80,30 +80,14 @@ const V1alpha1DatacenterConnector_UpgradeStatusFields: FieldMap = {
 };
 
 export interface V1alpha1DatacenterConnectorConfig {
-  /** Output only. Appliance OVA version. This is the OVA which is manually installed by the user and contains the infrastructure for the automatically updatable components on the appliance. */
-  applianceInfrastructureVersion?: string | Computed<string>;
-  /** Output only. Appliance last installed update bundle version. This is the version of the automatically updatable components on the appliance. */
-  applianceSoftwareVersion?: string | Computed<string>;
   /** Holds information about the available versions for upgrade. */
   availableVersions?: V1alpha1DatacenterConnector_AvailableVersions | Computed<V1alpha1DatacenterConnector_AvailableVersions>;
-  /** Output only. The communication channel between the datacenter connector and Google Cloud. */
-  bucket?: string | Computed<string>;
-  /** Output only. The time the connector was created (as an API call, not when it was actually installed). */
-  createTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1alpha1DatacenterConnector_Error | Computed<V1alpha1DatacenterConnector_Error>;
-  /** Output only. The connector's name. */
-  name?: string | Computed<string>;
   /** Immutable. A unique key for this connector. This key is internal to the OVA connector and is supplied with its creation during the registration process and can not be modified. */
   registrationId?: string | Computed<string>;
   /** The service account to use in the connector when communicating with the cloud. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. State of the DatacenterConnector, as determined by the health checks. */
-  state?: string | Computed<string>;
-  /** Output only. The time the state was last set. */
-  stateTime?: string | Computed<string>;
-  /** Output only. The last time the connector was updated with an API call. */
-  updateTime?: string | Computed<string>;
   /** UpgradeStatus contains information about upgradeAppliance operation. */
   upgradeStatus?: V1alpha1DatacenterConnector_UpgradeStatus | Computed<V1alpha1DatacenterConnector_UpgradeStatus>;
   /** The version running in the DatacenterConnector. This is supplied by the OVA connector during the registration process and can not be modified. */
@@ -144,26 +128,18 @@ export interface V1alpha1DatacenterConnectorAttrs {
 export const V1alpha1DatacenterConnector: ResourceBinding<V1alpha1DatacenterConnectorConfig, V1alpha1DatacenterConnectorAttrs> = {
   wireType: "google_vmmigration_v1alpha1_datacenter_connector",
   fields: {
-    applianceInfrastructureVersion: "appliance_infrastructure_version",
-    applianceSoftwareVersion: "appliance_software_version",
     availableVersions: {
       wireName: "available_versions",
       kind: "object",
       fields: V1alpha1DatacenterConnector_AvailableVersionsFields,
     },
-    bucket: "bucket",
-    createTime: "create_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1alpha1DatacenterConnector_ErrorFields,
     },
-    name: "name",
     registrationId: "registration_id",
     serviceAccount: "service_account",
-    state: "state",
-    stateTime: "state_time",
-    updateTime: "update_time",
     upgradeStatus: {
       wireName: "upgrade_status",
       kind: "object",

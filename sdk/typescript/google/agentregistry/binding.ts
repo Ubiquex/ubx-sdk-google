@@ -28,8 +28,6 @@ const Binding_SourceFields: FieldMap = {
 export interface BindingConfig {
   /** The AuthProvider of the Binding. */
   authProviderBinding?: Binding_AuthProviderBinding | Computed<Binding_AuthProviderBinding>;
-  /** Output only. Timestamp when this binding was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of a Binding. Can have a maximum length of `2048` characters. */
   description?: string | Computed<string>;
   /** Optional. User-defined display name for the Binding. Can have a maximum length of `63` characters. */
@@ -40,8 +38,6 @@ export interface BindingConfig {
   source?: Binding_Source | Computed<Binding_Source>;
   /** The target of the Binding. */
   target?: Binding_Source | Computed<Binding_Source>;
-  /** Output only. Timestamp when this binding was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BindingAttrs {
@@ -71,7 +67,6 @@ export const Binding: ResourceBinding<BindingConfig, BindingAttrs> = {
       kind: "object",
       fields: Binding_AuthProviderBindingFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -85,6 +80,5 @@ export const Binding: ResourceBinding<BindingConfig, BindingAttrs> = {
       kind: "object",
       fields: Binding_SourceFields,
     },
-    updateTime: "update_time",
   },
 };

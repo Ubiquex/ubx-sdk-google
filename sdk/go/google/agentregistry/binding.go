@@ -18,20 +18,18 @@ type Binding_Source struct {
 }
 
 var Binding_AuthProviderBindingFields = ubx.FieldMap{
-		"AuthProvider": ubx.FieldSpec{WireName: "auth_provider"},
-		"ContinueUri": ubx.FieldSpec{WireName: "continue_uri"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"AuthProvider": ubx.FieldSpec{WireName: "auth_provider"},
+	"ContinueUri":  ubx.FieldSpec{WireName: "continue_uri"},
+	"Scopes":       ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Binding_SourceFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+}
 
 type BindingConfig struct {
 	// The AuthProvider of the Binding.
 	AuthProviderBinding any
-	// Output only. Timestamp when this binding was created.
-	CreateTime any
 	// Optional. User-defined description of a Binding. Can have a maximum length of `2048` characters.
 	Description any
 	// Optional. User-defined display name for the Binding. Can have a maximum length of `63` characters.
@@ -42,8 +40,6 @@ type BindingConfig struct {
 	Source any
 	// The target of the Binding.
 	Target any
-	// Output only. Timestamp when this binding was last updated.
-	UpdateTime any
 }
 
 type BindingAttrs struct {
@@ -70,23 +66,21 @@ var Binding = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AuthProviderBinding": ubx.FieldSpec{
 			WireName: "auth_provider_binding",
-			Kind: "object",
-			Fields: Binding_AuthProviderBindingFields,
+			Kind:     "object",
+			Fields:   Binding_AuthProviderBindingFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Binding_SourceFields,
+			Kind:     "object",
+			Fields:   Binding_SourceFields,
 		},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: Binding_SourceFields,
+			Kind:     "object",
+			Fields:   Binding_SourceFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

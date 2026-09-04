@@ -12,8 +12,8 @@ type Job_BucketList_Buckets_PrefixList struct {
 }
 
 type Job_BucketList_Buckets struct {
-	Bucket any
-	Manifest any
+	Bucket     any
+	Manifest   any
 	PrefixList any
 }
 
@@ -48,12 +48,12 @@ type Job_DeleteObject struct {
 
 type Job_ErrorSummaries_ErrorLogEntries struct {
 	ErrorDetails any
-	ObjectUri any
+	ObjectUri    any
 }
 
 type Job_ErrorSummaries struct {
-	ErrorCode any
-	ErrorCount any
+	ErrorCode       any
+	ErrorCount      any
 	ErrorLogEntries any
 }
 
@@ -141,7 +141,7 @@ type Job_RewriteObject struct {
 
 type Job_SetObjectAcls_AccessControlsUpdates_Grants struct {
 	Entity any
-	Role any
+	Role   any
 }
 
 type Job_SetObjectAcls_AccessControlsUpdates struct {
@@ -175,197 +175,174 @@ type Job_UpdateObjectCustomContext struct {
 }
 
 var Job_BucketList_Buckets_ManifestFields = ubx.FieldMap{
-		"ManifestLocation": ubx.FieldSpec{WireName: "manifest_location"},
-	}
+	"ManifestLocation": ubx.FieldSpec{WireName: "manifest_location"},
+}
 
 var Job_BucketList_Buckets_PrefixListFields = ubx.FieldMap{
-		"IncludedObjectPrefixes": ubx.FieldSpec{WireName: "included_object_prefixes"},
-	}
+	"IncludedObjectPrefixes": ubx.FieldSpec{WireName: "included_object_prefixes"},
+}
 
 var Job_BucketList_BucketsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Manifest": ubx.FieldSpec{
-			WireName: "manifest",
-			Kind: "object",
-			Fields: Job_BucketList_Buckets_ManifestFields,
-		},
-		"PrefixList": ubx.FieldSpec{
-			WireName: "prefix_list",
-			Kind: "object",
-			Fields: Job_BucketList_Buckets_PrefixListFields,
-		},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"Manifest": ubx.FieldSpec{
+		WireName: "manifest",
+		Kind:     "object",
+		Fields:   Job_BucketList_Buckets_ManifestFields,
+	},
+	"PrefixList": ubx.FieldSpec{
+		WireName: "prefix_list",
+		Kind:     "object",
+		Fields:   Job_BucketList_Buckets_PrefixListFields,
+	},
+}
 
 var Job_BucketListFields = ubx.FieldMap{
-		"Buckets": ubx.FieldSpec{
-			WireName: "buckets",
-			Kind: "list",
-			Fields: Job_BucketList_BucketsFields,
-		},
-	}
+	"Buckets": ubx.FieldSpec{
+		WireName: "buckets",
+		Kind:     "list",
+		Fields:   Job_BucketList_BucketsFields,
+	},
+}
 
 var Job_CountersFields = ubx.FieldMap{
-		"FailedObjectCount": ubx.FieldSpec{WireName: "failed_object_count"},
-		"ObjectCustomContextsCreated": ubx.FieldSpec{WireName: "object_custom_contexts_created"},
-		"ObjectCustomContextsDeleted": ubx.FieldSpec{WireName: "object_custom_contexts_deleted"},
-		"ObjectCustomContextsUpdated": ubx.FieldSpec{WireName: "object_custom_contexts_updated"},
-		"SucceededObjectCount": ubx.FieldSpec{WireName: "succeeded_object_count"},
-		"TotalBytesFound": ubx.FieldSpec{WireName: "total_bytes_found"},
-		"TotalBytesTransformed": ubx.FieldSpec{WireName: "total_bytes_transformed"},
-		"TotalObjectCount": ubx.FieldSpec{WireName: "total_object_count"},
-	}
+	"FailedObjectCount":           ubx.FieldSpec{WireName: "failed_object_count"},
+	"ObjectCustomContextsCreated": ubx.FieldSpec{WireName: "object_custom_contexts_created"},
+	"ObjectCustomContextsDeleted": ubx.FieldSpec{WireName: "object_custom_contexts_deleted"},
+	"ObjectCustomContextsUpdated": ubx.FieldSpec{WireName: "object_custom_contexts_updated"},
+	"SucceededObjectCount":        ubx.FieldSpec{WireName: "succeeded_object_count"},
+	"TotalBytesFound":             ubx.FieldSpec{WireName: "total_bytes_found"},
+	"TotalBytesTransformed":       ubx.FieldSpec{WireName: "total_bytes_transformed"},
+	"TotalObjectCount":            ubx.FieldSpec{WireName: "total_object_count"},
+}
 
 var Job_DeleteObjectFields = ubx.FieldMap{
-		"PermanentObjectDeletionEnabled": ubx.FieldSpec{WireName: "permanent_object_deletion_enabled"},
-	}
-
-var Job_ErrorSummaries_ErrorLogEntriesFields = ubx.FieldMap{
-		"ErrorDetails": ubx.FieldSpec{WireName: "error_details"},
-		"ObjectUri": ubx.FieldSpec{WireName: "object_uri"},
-	}
-
-var Job_ErrorSummariesFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorCount": ubx.FieldSpec{WireName: "error_count"},
-		"ErrorLogEntries": ubx.FieldSpec{
-			WireName: "error_log_entries",
-			Kind: "list",
-			Fields: Job_ErrorSummaries_ErrorLogEntriesFields,
-		},
-	}
+	"PermanentObjectDeletionEnabled": ubx.FieldSpec{WireName: "permanent_object_deletion_enabled"},
+}
 
 var Job_LoggingConfigFields = ubx.FieldMap{
-		"LogActionStates": ubx.FieldSpec{WireName: "log_action_states"},
-		"LogActions": ubx.FieldSpec{WireName: "log_actions"},
-	}
+	"LogActionStates": ubx.FieldSpec{WireName: "log_action_states"},
+	"LogActions":      ubx.FieldSpec{WireName: "log_actions"},
+}
 
 var Job_ProjectSource_BucketFiltersFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Job_ProjectSource_TargetLocationsFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
-	}
+	"Locations":    ubx.FieldSpec{WireName: "locations"},
+	"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
+}
 
 var Job_ProjectSourceFields = ubx.FieldMap{
-		"BucketFilters": ubx.FieldSpec{
-			WireName: "bucket_filters",
-			Kind: "object",
-			Fields: Job_ProjectSource_BucketFiltersFields,
-		},
-		"DryRunJobId": ubx.FieldSpec{WireName: "dry_run_job_id"},
-		"InsightsDatasetConfig": ubx.FieldSpec{WireName: "insights_dataset_config"},
-		"ObjectFilters": ubx.FieldSpec{
-			WireName: "object_filters",
-			Kind: "object",
-			Fields: Job_ProjectSource_BucketFiltersFields,
-		},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
-		"TargetLocations": ubx.FieldSpec{
-			WireName: "target_locations",
-			Kind: "object",
-			Fields: Job_ProjectSource_TargetLocationsFields,
-		},
-	}
+	"BucketFilters": ubx.FieldSpec{
+		WireName: "bucket_filters",
+		Kind:     "object",
+		Fields:   Job_ProjectSource_BucketFiltersFields,
+	},
+	"DryRunJobId":           ubx.FieldSpec{WireName: "dry_run_job_id"},
+	"InsightsDatasetConfig": ubx.FieldSpec{WireName: "insights_dataset_config"},
+	"ObjectFilters": ubx.FieldSpec{
+		WireName: "object_filters",
+		Kind:     "object",
+		Fields:   Job_ProjectSource_BucketFiltersFields,
+	},
+	"Project":      ubx.FieldSpec{WireName: "project"},
+	"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
+	"TargetLocations": ubx.FieldSpec{
+		WireName: "target_locations",
+		Kind:     "object",
+		Fields:   Job_ProjectSource_TargetLocationsFields,
+	},
+}
 
 var Job_PutMetadata_ObjectRetentionFields = ubx.FieldMap{
-		"RetainUntilTime": ubx.FieldSpec{WireName: "retain_until_time"},
-		"RetentionMode": ubx.FieldSpec{WireName: "retention_mode"},
-	}
+	"RetainUntilTime": ubx.FieldSpec{WireName: "retain_until_time"},
+	"RetentionMode":   ubx.FieldSpec{WireName: "retention_mode"},
+}
 
 var Job_PutMetadataFields = ubx.FieldMap{
-		"CacheControl": ubx.FieldSpec{WireName: "cache_control"},
-		"ContentDisposition": ubx.FieldSpec{WireName: "content_disposition"},
-		"ContentEncoding": ubx.FieldSpec{WireName: "content_encoding"},
-		"ContentLanguage": ubx.FieldSpec{WireName: "content_language"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"CustomMetadata": ubx.FieldSpec{WireName: "custom_metadata"},
-		"CustomTime": ubx.FieldSpec{WireName: "custom_time"},
-		"ObjectRetention": ubx.FieldSpec{
-			WireName: "object_retention",
-			Kind: "object",
-			Fields: Job_PutMetadata_ObjectRetentionFields,
-		},
-	}
+	"CacheControl":       ubx.FieldSpec{WireName: "cache_control"},
+	"ContentDisposition": ubx.FieldSpec{WireName: "content_disposition"},
+	"ContentEncoding":    ubx.FieldSpec{WireName: "content_encoding"},
+	"ContentLanguage":    ubx.FieldSpec{WireName: "content_language"},
+	"ContentType":        ubx.FieldSpec{WireName: "content_type"},
+	"CustomMetadata":     ubx.FieldSpec{WireName: "custom_metadata"},
+	"CustomTime":         ubx.FieldSpec{WireName: "custom_time"},
+	"ObjectRetention": ubx.FieldSpec{
+		WireName: "object_retention",
+		Kind:     "object",
+		Fields:   Job_PutMetadata_ObjectRetentionFields,
+	},
+}
 
 var Job_PutObjectHoldFields = ubx.FieldMap{
-		"EventBasedHold": ubx.FieldSpec{WireName: "event_based_hold"},
-		"TemporaryHold": ubx.FieldSpec{WireName: "temporary_hold"},
-	}
+	"EventBasedHold": ubx.FieldSpec{WireName: "event_based_hold"},
+	"TemporaryHold":  ubx.FieldSpec{WireName: "temporary_hold"},
+}
 
 var Job_RewriteObjectFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"KmsKey":       ubx.FieldSpec{WireName: "kms_key"},
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var Job_SetObjectAcls_AccessControlsUpdates_GrantsFields = ubx.FieldMap{
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Entity": ubx.FieldSpec{WireName: "entity"},
+	"Role":   ubx.FieldSpec{WireName: "role"},
+}
 
 var Job_SetObjectAcls_AccessControlsUpdatesFields = ubx.FieldMap{
-		"Grants": ubx.FieldSpec{
-			WireName: "grants",
-			Kind: "list",
-			Fields: Job_SetObjectAcls_AccessControlsUpdates_GrantsFields,
-		},
-		"RemoveEntities": ubx.FieldSpec{WireName: "remove_entities"},
-	}
+	"Grants": ubx.FieldSpec{
+		WireName: "grants",
+		Kind:     "list",
+		Fields:   Job_SetObjectAcls_AccessControlsUpdates_GrantsFields,
+	},
+	"RemoveEntities": ubx.FieldSpec{WireName: "remove_entities"},
+}
 
 var Job_SetObjectAclsFields = ubx.FieldMap{
-		"AccessControlsUpdates": ubx.FieldSpec{
-			WireName: "access_controls_updates",
-			Kind: "object",
-			Fields: Job_SetObjectAcls_AccessControlsUpdatesFields,
-		},
-	}
+	"AccessControlsUpdates": ubx.FieldSpec{
+		WireName: "access_controls_updates",
+		Kind:     "object",
+		Fields:   Job_SetObjectAcls_AccessControlsUpdatesFields,
+	},
+}
 
 var Job_UpdateObjectCustomContext_CustomContextUpdates_UpdatesFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Job_UpdateObjectCustomContext_CustomContextUpdatesFields = ubx.FieldMap{
-		"KeysToClear": ubx.FieldSpec{WireName: "keys_to_clear"},
-		"Updates": ubx.FieldSpec{
-			WireName: "updates",
-			Kind: "map",
-			Fields: Job_UpdateObjectCustomContext_CustomContextUpdates_UpdatesFields,
-		},
-	}
+	"KeysToClear": ubx.FieldSpec{WireName: "keys_to_clear"},
+	"Updates": ubx.FieldSpec{
+		WireName: "updates",
+		Kind:     "map",
+		Fields:   Job_UpdateObjectCustomContext_CustomContextUpdates_UpdatesFields,
+	},
+}
 
 var Job_UpdateObjectCustomContextFields = ubx.FieldMap{
-		"ClearAll": ubx.FieldSpec{WireName: "clear_all"},
-		"CustomContextUpdates": ubx.FieldSpec{
-			WireName: "custom_context_updates",
-			Kind: "object",
-			Fields: Job_UpdateObjectCustomContext_CustomContextUpdatesFields,
-		},
-	}
+	"ClearAll": ubx.FieldSpec{WireName: "clear_all"},
+	"CustomContextUpdates": ubx.FieldSpec{
+		WireName: "custom_context_updates",
+		Kind:     "object",
+		Fields:   Job_UpdateObjectCustomContext_CustomContextUpdatesFields,
+	},
+}
 
 type JobConfig struct {
 	// Describes list of buckets and their objects to be transformed.
 	BucketList any
-	// Output only. The time that the job was completed.
-	CompleteTime any
 	// Describes details about the progress of the job.
 	Counters any
-	// Output only. The time that the job was created.
-	CreateTime any
 	// Describes options to delete an object.
 	DeleteObject any
 	// Optional. A user-provided description for the job. Maximum length: 1024 bytes when unicode-encoded.
 	Description any
 	// Optional. If true, the job runs in dry run mode, returning the total object count and, if the object configuration is a prefix list, the bytes found from source. No transformations are performed.
 	DryRun any
-	// Output only. Summarizes errors encountered with sample error log entries.
-	ErrorSummaries any
-	// Output only. If true, this job operates on multiple buckets. Multi-bucket jobs are subject to different quota limits than single-bucket jobs.
-	IsMultiBucketJob any
 	// Specifies the Cloud Logging behavior.
 	LoggingConfig any
 	// Identifier. The resource name of the job. Format: `projects/{project_id}/locations/global/jobs/{job_id}`. For example: `projects/123456/locations/global/jobs/job01`. `job_id` is unique in a given project.
@@ -378,12 +355,8 @@ type JobConfig struct {
 	PutObjectHold any
 	// Describes options for object rewrite.
 	RewriteObject any
-	// Output only. The time that the job was scheduled.
-	ScheduleTime any
 	// Describes options for setting object ACLs.
 	SetObjectAcls any
-	// Output only. State of the job.
-	State any
 	// Describes options to update object custom contexts.
 	UpdateObjectCustomContext any
 }
@@ -434,66 +407,56 @@ var Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BucketList": ubx.FieldSpec{
 			WireName: "bucket_list",
-			Kind: "object",
-			Fields: Job_BucketListFields,
+			Kind:     "object",
+			Fields:   Job_BucketListFields,
 		},
-		"CompleteTime": ubx.FieldSpec{WireName: "complete_time"},
 		"Counters": ubx.FieldSpec{
 			WireName: "counters",
-			Kind: "object",
-			Fields: Job_CountersFields,
+			Kind:     "object",
+			Fields:   Job_CountersFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DeleteObject": ubx.FieldSpec{
 			WireName: "delete_object",
-			Kind: "object",
-			Fields: Job_DeleteObjectFields,
+			Kind:     "object",
+			Fields:   Job_DeleteObjectFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"ErrorSummaries": ubx.FieldSpec{
-			WireName: "error_summaries",
-			Kind: "list",
-			Fields: Job_ErrorSummariesFields,
-		},
-		"IsMultiBucketJob": ubx.FieldSpec{WireName: "is_multi_bucket_job"},
+		"DryRun":      ubx.FieldSpec{WireName: "dry_run"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: Job_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   Job_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProjectSource": ubx.FieldSpec{
 			WireName: "project_source",
-			Kind: "object",
-			Fields: Job_ProjectSourceFields,
+			Kind:     "object",
+			Fields:   Job_ProjectSourceFields,
 		},
 		"PutMetadata": ubx.FieldSpec{
 			WireName: "put_metadata",
-			Kind: "object",
-			Fields: Job_PutMetadataFields,
+			Kind:     "object",
+			Fields:   Job_PutMetadataFields,
 		},
 		"PutObjectHold": ubx.FieldSpec{
 			WireName: "put_object_hold",
-			Kind: "object",
-			Fields: Job_PutObjectHoldFields,
+			Kind:     "object",
+			Fields:   Job_PutObjectHoldFields,
 		},
 		"RewriteObject": ubx.FieldSpec{
 			WireName: "rewrite_object",
-			Kind: "object",
-			Fields: Job_RewriteObjectFields,
+			Kind:     "object",
+			Fields:   Job_RewriteObjectFields,
 		},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
 		"SetObjectAcls": ubx.FieldSpec{
 			WireName: "set_object_acls",
-			Kind: "object",
-			Fields: Job_SetObjectAclsFields,
+			Kind:     "object",
+			Fields:   Job_SetObjectAclsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"UpdateObjectCustomContext": ubx.FieldSpec{
 			WireName: "update_object_custom_context",
-			Kind: "object",
-			Fields: Job_UpdateObjectCustomContextFields,
+			Kind:     "object",
+			Fields:   Job_UpdateObjectCustomContextFields,
 		},
 	},
 }

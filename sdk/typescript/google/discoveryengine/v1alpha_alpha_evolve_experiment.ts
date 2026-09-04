@@ -137,14 +137,8 @@ const V1alphaAlphaEvolveExperiment_StatsFields: FieldMap = {
 export interface V1alphaAlphaEvolveExperimentConfig {
   /** Configuration of an experiment. */
   config?: V1alphaAlphaEvolveExperiment_Config | Computed<V1alphaAlphaEvolveExperiment_Config>;
-  /** Output only. Time when the experiment was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Specifies the name of the seed program used to start the experiment. */
-  initialAlphaEvolveProgram?: string | Computed<string>;
   /** Identifier. The full resource name of the experiment. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the experiment. */
-  state?: string | Computed<string>;
   /** Stats about the experiment. */
   stats?: V1alphaAlphaEvolveExperiment_Stats | Computed<V1alphaAlphaEvolveExperiment_Stats>;
 }
@@ -172,10 +166,7 @@ export const V1alphaAlphaEvolveExperiment: ResourceBinding<V1alphaAlphaEvolveExp
       kind: "object",
       fields: V1alphaAlphaEvolveExperiment_ConfigFields,
     },
-    createTime: "create_time",
-    initialAlphaEvolveProgram: "initial_alpha_evolve_program",
     name: "name",
-    state: "state",
     stats: {
       wireName: "stats",
       kind: "object",

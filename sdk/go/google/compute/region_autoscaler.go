@@ -11,16 +11,11 @@ type RegionAutoscaler_AutoscalingPolicy_CpuUtilization struct {
 }
 
 type RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizations struct {
-	// A filter string that selects which time series (resources) contribute to the metric for autoscaling decisions, applied using the Cloud Monitoring API syntax. (AI-inferred)
-	Filter any
-	// The name of the metric to use for autoscaling. This corresponds to the Cloud Monitoring metric identifier, typically in the form 'custom.googleapis.com/[metric_name]'. (AI-inferred)
-	Metric any
-	// The number of instances used to calculate the custom metric utilization. If omitted, the metric is calculated across all instances in the group. (AI-inferred)
+	Filter                   any
+	Metric                   any
 	SingleInstanceAssignment any
-	// The target value for the custom metric that the autoscaler aims to maintain. When the metric value exceeds or falls below this target, the autoscaler adjusts the number of instances accordingly. (AI-inferred)
-	UtilizationTarget any
-	// Specifies the type of utilization target for the custom metric: GAUGE for instantaneous values, DELTA_PER_MINUTE for the rate per minute, or DELTA_PER_SECOND for the rate per second. (AI-inferred)
-	UtilizationTargetType any
+	UtilizationTarget        any
+	UtilizationTargetType    any
 }
 
 type RegionAutoscaler_AutoscalingPolicy_LoadBalancingUtilization struct {
@@ -45,18 +40,12 @@ type RegionAutoscaler_AutoscalingPolicy_ScaleInControl struct {
 }
 
 type RegionAutoscaler_AutoscalingPolicy_ScalingSchedules struct {
-	// An optional description of this scaling schedule. (AI-inferred)
-	Description any
-	// Whether the scaling schedule is disabled. When set to true, the autoscaler does not apply this schedule. Defaults to false. (AI-inferred)
-	Disabled any
-	// The duration of the scaling schedule in seconds. After the scheduled start time (defined by the cron expression in the 'schedule' field), the scaling parameters are applied for this length of time. (AI-inferred)
-	DurationSec any
-	// The minimum number of replicas that must be running during the scheduled time period. This value is used by the autoscaler to ensure capacity during the schedule. (AI-inferred)
+	Description         any
+	Disabled            any
+	DurationSec         any
 	MinRequiredReplicas any
-	// A cron-style schedule string that specifies when the autoscaling policy's scaling schedule takes effect (e.g., '0 9 * * *' means daily at 09:00). (AI-inferred)
-	Schedule any
-	// The time zone to use for the scaling schedule, specified as a string from the IANA time zone database (e.g., "UTC", "America/New_York"). This determines how the schedule's start time and duration are interpreted. (AI-inferred)
-	TimeZone any
+	Schedule            any
+	TimeZone            any
 }
 
 type RegionAutoscaler_AutoscalingPolicy struct {
@@ -83,125 +72,102 @@ type RegionAutoscaler_AutoscalingPolicy struct {
 }
 
 type RegionAutoscaler_ScalingScheduleStatus struct {
-	// The last time the scaling schedule started, in RFC3339 UTC format. (AI-inferred)
 	LastStartTime any
-	// The next time this scaling schedule is scheduled to become active, in RFC3339 timestamp format. (AI-inferred)
 	NextStartTime any
-	// The current state of the scaling schedule. Valid values are `ACTIVE` (schedule is active and will be used for autoscaling) and `OBSOLETE` (schedule is no longer active, e.g., due to expiration or deletion). (AI-inferred)
-	State any
+	State         any
 }
 
 type RegionAutoscaler_StatusDetails struct {
-	// The human-readable message describing the status detail, typically containing information about an error or warning condition. (AI-inferred)
 	Message any
-	// The type of the autoscaler status detail, indicating a specific condition or reason for the current scaling state. Possible values are: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred)
-	Type any
+	Type    any
 }
 
 var RegionAutoscaler_AutoscalingPolicy_CpuUtilizationFields = ubx.FieldMap{
-		"PredictiveMethod": ubx.FieldSpec{WireName: "predictive_method"},
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-	}
+	"PredictiveMethod":  ubx.FieldSpec{WireName: "predictive_method"},
+	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+}
 
 var RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-		"UtilizationTargetType": ubx.FieldSpec{WireName: "utilization_target_type"},
-	}
+	"Filter":                   ubx.FieldSpec{WireName: "filter"},
+	"Metric":                   ubx.FieldSpec{WireName: "metric"},
+	"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
+	"UtilizationTarget":        ubx.FieldSpec{WireName: "utilization_target"},
+	"UtilizationTargetType":    ubx.FieldSpec{WireName: "utilization_target_type"},
+}
 
 var RegionAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields = ubx.FieldMap{
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-	}
+	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+}
 
 var RegionAutoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicasFields = ubx.FieldMap{
-		"Calculated": ubx.FieldSpec{WireName: "calculated"},
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Calculated": ubx.FieldSpec{WireName: "calculated"},
+	"Fixed":      ubx.FieldSpec{WireName: "fixed"},
+	"Percent":    ubx.FieldSpec{WireName: "percent"},
+}
 
 var RegionAutoscaler_AutoscalingPolicy_ScaleInControlFields = ubx.FieldMap{
-		"MaxScaledInReplicas": ubx.FieldSpec{
-			WireName: "max_scaled_in_replicas",
-			Kind: "object",
-			Fields: RegionAutoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicasFields,
-		},
-		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-	}
+	"MaxScaledInReplicas": ubx.FieldSpec{
+		WireName: "max_scaled_in_replicas",
+		Kind:     "object",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_ScaleInControl_MaxScaledInReplicasFields,
+	},
+	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+}
 
 var RegionAutoscaler_AutoscalingPolicy_ScalingSchedulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DurationSec": ubx.FieldSpec{WireName: "duration_sec"},
-		"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"Disabled":            ubx.FieldSpec{WireName: "disabled"},
+	"DurationSec":         ubx.FieldSpec{WireName: "duration_sec"},
+	"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
+	"Schedule":            ubx.FieldSpec{WireName: "schedule"},
+	"TimeZone":            ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var RegionAutoscaler_AutoscalingPolicyFields = ubx.FieldMap{
-		"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
-		"CpuUtilization": ubx.FieldSpec{
-			WireName: "cpu_utilization",
-			Kind: "object",
-			Fields: RegionAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
-		},
-		"CustomMetricUtilizations": ubx.FieldSpec{
-			WireName: "custom_metric_utilizations",
-			Kind: "list",
-			Fields: RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
-		},
-		"LoadBalancingUtilization": ubx.FieldSpec{
-			WireName: "load_balancing_utilization",
-			Kind: "object",
-			Fields: RegionAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
-		},
-		"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
-		"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ScaleInControl": ubx.FieldSpec{
-			WireName: "scale_in_control",
-			Kind: "object",
-			Fields: RegionAutoscaler_AutoscalingPolicy_ScaleInControlFields,
-		},
-		"ScalingSchedules": ubx.FieldSpec{
-			WireName: "scaling_schedules",
-			Kind: "map",
-			Fields: RegionAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
-		},
-		"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
-	}
-
-var RegionAutoscaler_ScalingScheduleStatusFields = ubx.FieldMap{
-		"LastStartTime": ubx.FieldSpec{WireName: "last_start_time"},
-		"NextStartTime": ubx.FieldSpec{WireName: "next_start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
+	"CpuUtilization": ubx.FieldSpec{
+		WireName: "cpu_utilization",
+		Kind:     "object",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
+	},
+	"CustomMetricUtilizations": ubx.FieldSpec{
+		WireName: "custom_metric_utilizations",
+		Kind:     "list",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
+	},
+	"LoadBalancingUtilization": ubx.FieldSpec{
+		WireName: "load_balancing_utilization",
+		Kind:     "object",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
+	},
+	"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
+	"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
+	"Mode":           ubx.FieldSpec{WireName: "mode"},
+	"ScaleInControl": ubx.FieldSpec{
+		WireName: "scale_in_control",
+		Kind:     "object",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_ScaleInControlFields,
+	},
+	"ScalingSchedules": ubx.FieldSpec{
+		WireName: "scaling_schedules",
+		Kind:     "map",
+		Fields:   RegionAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
+	},
+	"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
+}
 
 var RegionAutoscaler_StatusDetailsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type RegionAutoscalerConfig struct {
 	// Cloud Autoscaler policy.
 	AutoscalingPolicy any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
-	RecommendedSize any
-	// Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope).
-	Region any
-	// Output only. [Output Only] Status information of existing scaling schedules.
-	ScalingScheduleStatus any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
@@ -210,8 +176,6 @@ type RegionAutoscalerConfig struct {
 	StatusDetails any
 	// URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
 	Target any
-	// Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope).
-	Zone any
 }
 
 type RegionAutoscalerAttrs struct {
@@ -250,29 +214,18 @@ var RegionAutoscaler = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind: "object",
-			Fields: RegionAutoscaler_AutoscalingPolicyFields,
+			Kind:     "object",
+			Fields:   RegionAutoscaler_AutoscalingPolicyFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecommendedSize": ubx.FieldSpec{WireName: "recommended_size"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ScalingScheduleStatus": ubx.FieldSpec{
-			WireName: "scaling_schedule_status",
-			Kind: "map",
-			Fields: RegionAutoscaler_ScalingScheduleStatusFields,
-		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 		"StatusDetails": ubx.FieldSpec{
 			WireName: "status_details",
-			Kind: "list",
-			Fields: RegionAutoscaler_StatusDetailsFields,
+			Kind:     "list",
+			Fields:   RegionAutoscaler_StatusDetailsFields,
 		},
 		"Target": ubx.FieldSpec{WireName: "target"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

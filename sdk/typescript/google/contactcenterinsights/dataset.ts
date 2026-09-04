@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DatasetConfig {
-  /** Output only. Dataset create time. */
-  createTime?: string | Computed<string>;
   /** Dataset description. */
   description?: string | Computed<string>;
   /** Display name for the dataaset */
@@ -14,8 +12,6 @@ export interface DatasetConfig {
   ttl?: string | Computed<string>;
   /** Dataset usage type. */
   type?: string | Computed<string>;
-  /** Output only. Dataset update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DatasetAttrs {
@@ -38,12 +34,10 @@ export interface DatasetAttrs {
 export const Dataset: ResourceBinding<DatasetConfig, DatasetAttrs> = {
   wireType: "google_contactcenterinsights_dataset",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
     ttl: "ttl",
     type: "type",
-    updateTime: "update_time",
   },
 };

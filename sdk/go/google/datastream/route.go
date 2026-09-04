@@ -4,8 +4,6 @@ package datastream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RouteConfig struct {
-	// Output only. The create time of the resource.
-	CreateTime any
 	// Required. Destination address for connection
 	DestinationAddress any
 	// Destination port for connection
@@ -14,10 +12,6 @@ type RouteConfig struct {
 	DisplayName any
 	// Labels.
 	Labels any
-	// Output only. Identifier. The resource's name.
-	Name any
-	// Output only. The update time of the resource.
-	UpdateTime any
 }
 
 type RouteAttrs struct {
@@ -40,12 +34,9 @@ type RouteAttrs struct {
 var Route = ubx.ResourceBinding{
 	WireType: "google_datastream_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
-		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"DestinationPort":    ubx.FieldSpec{WireName: "destination_port"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
 	},
 }

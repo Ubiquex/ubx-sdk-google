@@ -433,18 +433,12 @@ class BetaFutureReservationConfig:
     auto_delete_auto_created_reservations: Any = None
     commitment_info: Any = None
     confidential_compute_type: Any = None
-    # Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
-    creation_timestamp: Any = None
     # Type of the deployment requested as part of future reservation.
     deployment_type: Any = None
     # An optional description of this resource. Provide this property when you create the future reservation.
     description: Any = None
     # Indicates if this group of VMs have emergent maintenance enabled.
     enable_emergent_maintenance: Any = None
-    # Output only. [Output Only] A unique identifier for this future reservation. The server defines this identifier.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
-    kind: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Name prefix for the reservations to be created at the time of delivery. The name prefix must comply with RFC1035. Maximum allowed length for name prefix is 20. Automatically created reservations name format will be -date-####.
@@ -463,10 +457,6 @@ class BetaFutureReservationConfig:
     resource_name: Any = None
     # Maintenance information for this reservation
     scheduling_type: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
     # Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation.
@@ -477,8 +467,6 @@ class BetaFutureReservationConfig:
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
     time_window: Any = None
-    # Output only. [Output Only] URL of the Zone where this future reservation resides.
-    zone: Any = None
 
 @dataclasses.dataclass
 class BetaFutureReservationAttrs:
@@ -567,12 +555,9 @@ BetaFutureReservation = ubx.ResourceBinding(
             fields=_BetaFutureReservation_CommitmentInfoFields,
         ),
         "confidential_compute_type": ubx.FieldSpec(wire_name="confidential_compute_type"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "deployment_type": ubx.FieldSpec(wire_name="deployment_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_emergent_maintenance": ubx.FieldSpec(wire_name="enable_emergent_maintenance"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
         "params": ubx.FieldSpec(
@@ -586,8 +571,6 @@ BetaFutureReservation = ubx.ResourceBinding(
         "reservation_name": ubx.FieldSpec(wire_name="reservation_name"),
         "resource_name": ubx.FieldSpec(wire_name="resource_name"),
         "scheduling_type": ubx.FieldSpec(wire_name="scheduling_type"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "share_settings": ubx.FieldSpec(
             wire_name="share_settings",
             kind="object",
@@ -614,6 +597,5 @@ BetaFutureReservation = ubx.ResourceBinding(
             kind="object",
             fields=_BetaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
         ),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

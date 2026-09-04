@@ -260,30 +260,19 @@ _BetaResourcePolicy_WorkloadPolicyFields = {
 
 @dataclasses.dataclass
 class BetaResourcePolicyConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     description: Any = None
     # Resource policy for disk consistency groups.
     disk_consistency_group_policy: Any = None
     # A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation
     group_placement_policy: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
     # An InstanceSchedulePolicy specifies when and how frequent certain operations are performed on the instance.
     instance_schedule_policy: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies.
-    kind: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    region: Any = None
     # Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification.
     resource_status: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
     # A snapshot schedule policy specifies when and how frequently snapshots are to be created for the target disk. Also specifies how many and how long these scheduled snapshots should be retained.
     snapshot_schedule_policy: Any = None
-    # Output only. [Output Only] The status of resource policy creation.
-    status: Any = None
     # Represents the workload policy.
     workload_policy: Any = None
 
@@ -319,7 +308,6 @@ class BetaResourcePolicyAttrs:
 BetaResourcePolicy = ubx.ResourceBinding(
     wire_type="google_compute_beta_resource_policy",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_consistency_group_policy": ubx.FieldSpec(wire_name="disk_consistency_group_policy"),
         "group_placement_policy": ubx.FieldSpec(
@@ -327,27 +315,22 @@ BetaResourcePolicy = ubx.ResourceBinding(
             kind="object",
             fields=_BetaResourcePolicy_GroupPlacementPolicyFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_schedule_policy": ubx.FieldSpec(
             wire_name="instance_schedule_policy",
             kind="object",
             fields=_BetaResourcePolicy_InstanceSchedulePolicyFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_status": ubx.FieldSpec(
             wire_name="resource_status",
             kind="object",
             fields=_BetaResourcePolicy_ResourceStatusFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "snapshot_schedule_policy": ubx.FieldSpec(
             wire_name="snapshot_schedule_policy",
             kind="object",
             fields=_BetaResourcePolicy_SnapshotSchedulePolicyFields,
         ),
-        "status": ubx.FieldSpec(wire_name="status"),
         "workload_policy": ubx.FieldSpec(
             wire_name="workload_policy",
             kind="object",

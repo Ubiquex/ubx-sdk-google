@@ -26,8 +26,6 @@ _V1beta1ProducerExtension_ExtensionSettingsFields = {
 
 @dataclasses.dataclass
 class V1beta1ProducerExtensionConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
@@ -40,8 +38,6 @@ class V1beta1ProducerExtensionConfig:
     name: Any = None
     # Required. The phase in which this `ProducerExtension` should execute.
     phase: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ProducerExtensionAttrs:
@@ -65,7 +61,6 @@ class V1beta1ProducerExtensionAttrs:
 V1beta1ProducerExtension = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_producer_extension",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "extension_settings": ubx.FieldSpec(
@@ -76,6 +71,5 @@ V1beta1ProducerExtension = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "phase": ubx.FieldSpec(wire_name="phase"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

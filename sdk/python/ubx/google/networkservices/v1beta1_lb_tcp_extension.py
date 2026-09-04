@@ -68,8 +68,6 @@ _V1beta1LbTcpExtension_ExtensionChainsFields = {
 
 @dataclasses.dataclass
 class V1beta1LbTcpExtensionConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource.
@@ -82,8 +80,6 @@ class V1beta1LbTcpExtensionConfig:
     name: Any = None
     # Optional. If set, this `LbTcpExtension` resource applies to all `ForwardingRule` resources in these VPC networks. Values should be relative resource names identifying VPC networks, for example `projects/*/global/networks/network-1`. Currently limited to 1 network per resource. Limited to 1 network per resource.
     networks: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1LbTcpExtensionAttrs:
@@ -107,7 +103,6 @@ class V1beta1LbTcpExtensionAttrs:
 V1beta1LbTcpExtension = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_lb_tcp_extension",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "extension_chains": ubx.FieldSpec(
             wire_name="extension_chains",
@@ -118,6 +113,5 @@ V1beta1LbTcpExtension = ubx.ResourceBinding(
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
         "name": ubx.FieldSpec(wire_name="name"),
         "networks": ubx.FieldSpec(wire_name="networks"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -46,24 +46,24 @@ type Template_Environment struct {
 
 type Template_Metadata_Parameters_EnumOptions struct {
 	Description any
-	Label any
-	Value any
+	Label       any
+	Value       any
 }
 
 type Template_Metadata_Parameters struct {
-	CustomMetadata any
-	DefaultValue any
-	EnumOptions any
-	GroupName any
-	HelpText any
-	HiddenUi any
-	IsOptional any
-	Label any
-	Name any
-	ParamType any
-	ParentName any
+	CustomMetadata      any
+	DefaultValue        any
+	EnumOptions         any
+	GroupName           any
+	HelpText            any
+	HiddenUi            any
+	IsOptional          any
+	Label               any
+	Name                any
+	ParamType           any
+	ParentName          any
 	ParentTriggerValues any
-	Regexes any
+	Regexes             any
 }
 
 type Template_Metadata struct {
@@ -109,26 +109,26 @@ type Template_Status struct {
 }
 
 var Template_EnvironmentFields = ubx.FieldMap{
-		"AdditionalExperiments": ubx.FieldSpec{WireName: "additional_experiments"},
-		"AdditionalPipelineOptions": ubx.FieldSpec{WireName: "additional_pipeline_options"},
-		"AdditionalUserLabels": ubx.FieldSpec{WireName: "additional_user_labels"},
-		"BypassTempDirValidation": ubx.FieldSpec{WireName: "bypass_temp_dir_validation"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"EnableStreamingEngine": ubx.FieldSpec{WireName: "enable_streaming_engine"},
-		"IpConfiguration": ubx.FieldSpec{WireName: "ip_configuration"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxWorkers": ubx.FieldSpec{WireName: "max_workers"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NumWorkers": ubx.FieldSpec{WireName: "num_workers"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"StreamingMode": ubx.FieldSpec{WireName: "streaming_mode"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TempLocation": ubx.FieldSpec{WireName: "temp_location"},
-		"WorkerRegion": ubx.FieldSpec{WireName: "worker_region"},
-		"WorkerZone": ubx.FieldSpec{WireName: "worker_zone"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AdditionalExperiments":     ubx.FieldSpec{WireName: "additional_experiments"},
+	"AdditionalPipelineOptions": ubx.FieldSpec{WireName: "additional_pipeline_options"},
+	"AdditionalUserLabels":      ubx.FieldSpec{WireName: "additional_user_labels"},
+	"BypassTempDirValidation":   ubx.FieldSpec{WireName: "bypass_temp_dir_validation"},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"EnableStreamingEngine":     ubx.FieldSpec{WireName: "enable_streaming_engine"},
+	"IpConfiguration":           ubx.FieldSpec{WireName: "ip_configuration"},
+	"KmsKeyName":                ubx.FieldSpec{WireName: "kms_key_name"},
+	"MachineType":               ubx.FieldSpec{WireName: "machine_type"},
+	"MaxWorkers":                ubx.FieldSpec{WireName: "max_workers"},
+	"Network":                   ubx.FieldSpec{WireName: "network"},
+	"NumWorkers":                ubx.FieldSpec{WireName: "num_workers"},
+	"ServiceAccountEmail":       ubx.FieldSpec{WireName: "service_account_email"},
+	"StreamingMode":             ubx.FieldSpec{WireName: "streaming_mode"},
+	"Subnetwork":                ubx.FieldSpec{WireName: "subnetwork"},
+	"TempLocation":              ubx.FieldSpec{WireName: "temp_location"},
+	"WorkerRegion":              ubx.FieldSpec{WireName: "worker_region"},
+	"WorkerZone":                ubx.FieldSpec{WireName: "worker_zone"},
+	"Zone":                      ubx.FieldSpec{WireName: "zone"},
+}
 
 type TemplateConfig struct {
 	// The environment values to set at runtime.
@@ -169,12 +169,12 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Environment": ubx.FieldSpec{
 			WireName: "environment",
-			Kind: "object",
-			Fields: Template_EnvironmentFields,
+			Kind:     "object",
+			Fields:   Template_EnvironmentFields,
 		},
-		"GcsPath": ubx.FieldSpec{WireName: "gcs_path"},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"GcsPath":    ubx.FieldSpec{WireName: "gcs_path"},
+		"JobName":    ubx.FieldSpec{WireName: "job_name"},
+		"Location":   ubx.FieldSpec{WireName: "location"},
 		"Parameters": ubx.FieldSpec{WireName: "parameters"},
 	},
 }

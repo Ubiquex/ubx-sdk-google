@@ -4,14 +4,14 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterceptEndpointGroup_Associations struct {
-	Name any
+	Name    any
 	Network any
-	State any
+	State   any
 }
 
 type InterceptEndpointGroup_ConnectedDeploymentGroup_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type InterceptEndpointGroup_ConnectedDeploymentGroup struct {
@@ -21,33 +21,23 @@ type InterceptEndpointGroup_ConnectedDeploymentGroup struct {
 	Name any
 }
 
-var InterceptEndpointGroup_AssociationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
 var InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"State":    ubx.FieldSpec{WireName: "state"},
+}
 
 var InterceptEndpointGroup_ConnectedDeploymentGroupFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "list",
-			Fields: InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Locations": ubx.FieldSpec{
+		WireName: "locations",
+		Kind:     "list",
+		Fields:   InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type InterceptEndpointGroupConfig struct {
-	// Output only. List of associations to this endpoint group.
-	Associations any
 	// The endpoint group's view of a connected deployment group.
 	ConnectedDeploymentGroup any
-	// Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-	CreateTime any
 	// Optional. User-provided description of the endpoint group. Used as additional context for the endpoint group.
 	Description any
 	// Required. Immutable. The deployment group that this endpoint group is connected to, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/124.
@@ -56,12 +46,6 @@ type InterceptEndpointGroupConfig struct {
 	Labels any
 	// Immutable. Identifier. The resource name of this endpoint group, for example: `projects/123456789/locations/global/interceptEndpointGroups/my-eg`. See https://google.aip.dev/122 for more details.
 	Name any
-	// Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new association to the group). See https://google.aip.dev/128.
-	Reconciling any
-	// Output only. The current state of the endpoint group. See https://google.aip.dev/216.
-	State any
-	// Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-	UpdateTime any
 }
 
 type InterceptEndpointGroupAttrs struct {
@@ -90,23 +74,14 @@ type InterceptEndpointGroupAttrs struct {
 var InterceptEndpointGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_intercept_endpoint_group",
 	Fields: ubx.FieldMap{
-		"Associations": ubx.FieldSpec{
-			WireName: "associations",
-			Kind: "list",
-			Fields: InterceptEndpointGroup_AssociationsFields,
-		},
 		"ConnectedDeploymentGroup": ubx.FieldSpec{
 			WireName: "connected_deployment_group",
-			Kind: "object",
-			Fields: InterceptEndpointGroup_ConnectedDeploymentGroupFields,
+			Kind:     "object",
+			Fields:   InterceptEndpointGroup_ConnectedDeploymentGroupFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
 		"InterceptDeploymentGroup": ubx.FieldSpec{WireName: "intercept_deployment_group"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 	},
 }

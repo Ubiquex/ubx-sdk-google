@@ -6,12 +6,8 @@ export interface V1beta1SpecialistPoolConfig {
   displayName?: string | Computed<string>;
   /** Required. The resource name of the SpecialistPool. */
   name?: string | Computed<string>;
-  /** Output only. The resource name of the pending data labeling jobs. */
-  pendingDataLabelingJobs?: string[] | Computed<string[]>;
   /** The email addresses of the managers in the SpecialistPool. */
   specialistManagerEmails?: string[] | Computed<string[]>;
-  /** Output only. The number of managers in this SpecialistPool. */
-  specialistManagersCount?: number | Computed<number>;
   /** The email addresses of workers in the SpecialistPool. */
   specialistWorkerEmails?: string[] | Computed<string[]>;
 }
@@ -36,9 +32,7 @@ export const V1beta1SpecialistPool: ResourceBinding<V1beta1SpecialistPoolConfig,
   fields: {
     displayName: "display_name",
     name: "name",
-    pendingDataLabelingJobs: "pending_data_labeling_jobs",
     specialistManagerEmails: "specialist_manager_emails",
-    specialistManagersCount: "specialist_managers_count",
     specialistWorkerEmails: "specialist_worker_emails",
   },
 };

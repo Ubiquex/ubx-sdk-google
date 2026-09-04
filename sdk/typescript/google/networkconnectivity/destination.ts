@@ -39,8 +39,6 @@ const Destination_StateTimelineFields: FieldMap = {
 };
 
 export interface DestinationConfig {
-  /** Output only. Time when the `Destination` resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of this resource. */
   description?: string | Computed<string>;
   /** Required. Unordered list. The list of `DestinationEndpoint` resources configured for the IP prefix. */
@@ -55,10 +53,6 @@ export interface DestinationConfig {
   name?: string | Computed<string>;
   /** The timeline of the pending states for a resource. */
   stateTimeline?: Destination_StateTimeline | Computed<Destination_StateTimeline>;
-  /** Output only. The Google-generated unique ID for the `Destination` resource. This value is unique across all `Destination` resources. If a resource is deleted and another with the same name is created, the new resource is assigned a different and unique ID. */
-  uid?: string | Computed<string>;
-  /** Output only. Time when the `Destination` resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DestinationAttrs {
@@ -87,7 +81,6 @@ export interface DestinationAttrs {
 export const Destination: ResourceBinding<DestinationConfig, DestinationAttrs> = {
   wireType: "google_networkconnectivity_destination",
   fields: {
-    createTime: "create_time",
     description: "description",
     endpoints: {
       wireName: "endpoints",
@@ -103,7 +96,5 @@ export const Destination: ResourceBinding<DestinationConfig, DestinationAttrs> =
       kind: "object",
       fields: Destination_StateTimelineFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

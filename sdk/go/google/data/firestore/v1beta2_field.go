@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2Field_IndexConfig_Indexes_Fields struct {
 	ArrayConfig any
-	FieldPath any
-	Order any
+	FieldPath   any
+	Order       any
 }
 
 type V1beta2Field_IndexConfig_Indexes struct {
-	Fields any
-	Name any
+	Fields     any
+	Name       any
 	QueryScope any
-	State any
+	State      any
 }
 
 type V1beta2Field_IndexConfig struct {
@@ -34,7 +34,7 @@ type V1beta2FieldConfig struct {
 type V1beta2FieldAttrs struct {
 	// The index configuration for this field.
 	IndexConfig any
-	Name any
+	Name        any
 }
 
 var V1beta2Field = ubx.DataSourceBinding{

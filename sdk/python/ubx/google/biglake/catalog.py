@@ -8,16 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CatalogConfig:
-    # Output only. The creation time of the catalog.
-    create_time: Any = None
-    # Output only. The deletion time of the catalog. Only set after the catalog is deleted.
-    delete_time: Any = None
-    # Output only. The time when this catalog is considered expired. Only set after the catalog is deleted.
-    expire_time: Any = None
-    # Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
-    name: Any = None
-    # Output only. The last modification time of the catalog.
-    update_time: Any = None
+    pass
 
 @dataclasses.dataclass
 class CatalogAttrs:
@@ -35,10 +26,5 @@ class CatalogAttrs:
 Catalog = ubx.ResourceBinding(
     wire_type="google_biglake_catalog",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -4,47 +4,47 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Metadata struct {
 	FeatureAttributionsSchemaUri any
-	Inputs any
-	LatentSpaceSource any
-	Outputs any
+	Inputs                       any
+	LatentSpaceSource            any
+	Outputs                      any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSource struct {
@@ -53,19 +53,19 @@ type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsS
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource struct {
 	DataFormat any
-	GcsSource any
+	GcsSource  any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_Presets struct {
 	Modality any
-	Query any
+	Query    any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples struct {
-	ExampleGcsSource any
+	ExampleGcsSource            any
 	NearestNeighborSearchConfig any
-	NeighborCount any
-	Presets any
+	NeighborCount               any
+	Presets                     any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfig struct {
@@ -73,7 +73,7 @@ type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsA
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -83,14 +83,14 @@ type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsA
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig struct {
 	FeatureNoiseSigma any
-	NoiseSigma any
-	NoisySampleCount any
+	NoiseSigma        any
+	NoisySampleCount  any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution struct {
 	BlurBaselineConfig any
-	SmoothGradConfig any
-	StepCount any
+	SmoothGradConfig   any
+	StepCount          any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttribution struct {
@@ -98,16 +98,16 @@ type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttrib
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec_Parameters struct {
-	Examples any
+	Examples                       any
 	IntegratedGradientsAttribution any
-	OutputIndices any
-	SampledShapleyAttribution any
-	TopK any
-	XraiAttribution any
+	OutputIndices                  any
+	SampledShapleyAttribution      any
+	TopK                           any
+	XraiAttribution                any
 }
 
 type Evaluation_ExplanationSpecs_ExplanationSpec struct {
-	Metadata any
+	Metadata   any
 	Parameters any
 }
 
@@ -117,13 +117,13 @@ type Evaluation_ExplanationSpecs struct {
 }
 
 type Evaluation_ModelExplanation_MeanAttributions struct {
-	ApproximationError any
+	ApproximationError  any
 	BaselineOutputValue any
 	FeatureAttributions any
 	InstanceOutputValue any
-	OutputDisplayName any
-	OutputIndex any
-	OutputName any
+	OutputDisplayName   any
+	OutputIndex         any
+	OutputName          any
 }
 
 type Evaluation_ModelExplanation struct {
@@ -132,7 +132,6 @@ type Evaluation_ModelExplanation struct {
 }
 
 type EvaluationConfig struct {
-	Name any
 }
 
 type EvaluationAttrs struct {
@@ -154,14 +153,12 @@ type EvaluationAttrs struct {
 	MetricsSchemaUri any
 	// Aggregated explanation metrics for a Model over a set of instances.
 	ModelExplanation any
-	Name any
+	Name             any
 	// All possible dimensions of ModelEvaluationSlices. The dimensions can be used as the filter of the ModelService.ListModelEvaluationSlices request, in the form of `slice.dimension = `.
 	SliceDimensions any
 }
 
 var Evaluation = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_evaluation",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

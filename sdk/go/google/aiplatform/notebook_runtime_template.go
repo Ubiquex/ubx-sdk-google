@@ -84,7 +84,7 @@ type NotebookRuntimeTemplate_SoftwareConfig_ColabImage struct {
 }
 
 type NotebookRuntimeTemplate_SoftwareConfig_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -107,96 +107,94 @@ type NotebookRuntimeTemplate_SoftwareConfig struct {
 }
 
 var NotebookRuntimeTemplate_DataPersistentDiskSpecFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-	}
+	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
+}
 
 var NotebookRuntimeTemplate_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var NotebookRuntimeTemplate_EucConfigFields = ubx.FieldMap{
-		"BypassActasCheck": ubx.FieldSpec{WireName: "bypass_actas_check"},
-		"EucDisabled": ubx.FieldSpec{WireName: "euc_disabled"},
-	}
+	"BypassActasCheck": ubx.FieldSpec{WireName: "bypass_actas_check"},
+	"EucDisabled":      ubx.FieldSpec{WireName: "euc_disabled"},
+}
 
 var NotebookRuntimeTemplate_IdleShutdownConfigFields = ubx.FieldMap{
-		"IdleShutdownDisabled": ubx.FieldSpec{WireName: "idle_shutdown_disabled"},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-	}
+	"IdleShutdownDisabled": ubx.FieldSpec{WireName: "idle_shutdown_disabled"},
+	"IdleTimeout":          ubx.FieldSpec{WireName: "idle_timeout"},
+}
 
 var NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var NotebookRuntimeTemplate_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":      ubx.FieldSpec{WireName: "machine_type"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var NotebookRuntimeTemplate_NetworkSpecFields = ubx.FieldMap{
-		"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
+	"Network":              ubx.FieldSpec{WireName: "network"},
+	"Subnetwork":           ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var NotebookRuntimeTemplate_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var NotebookRuntimeTemplate_ShieldedVmConfigFields = ubx.FieldMap{
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-	}
+	"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+}
 
 var NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ReleaseName": ubx.FieldSpec{WireName: "release_name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ReleaseName": ubx.FieldSpec{WireName: "release_name"},
+}
 
 var NotebookRuntimeTemplate_SoftwareConfig_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields = ubx.FieldMap{
-		"PostStartupScript": ubx.FieldSpec{WireName: "post_startup_script"},
-		"PostStartupScriptBehavior": ubx.FieldSpec{WireName: "post_startup_script_behavior"},
-		"PostStartupScriptUrl": ubx.FieldSpec{WireName: "post_startup_script_url"},
-	}
+	"PostStartupScript":         ubx.FieldSpec{WireName: "post_startup_script"},
+	"PostStartupScriptBehavior": ubx.FieldSpec{WireName: "post_startup_script_behavior"},
+	"PostStartupScriptUrl":      ubx.FieldSpec{WireName: "post_startup_script_url"},
+}
 
 var NotebookRuntimeTemplate_SoftwareConfigFields = ubx.FieldMap{
-		"ColabImage": ubx.FieldSpec{
-			WireName: "colab_image",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields,
-		},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: NotebookRuntimeTemplate_SoftwareConfig_EnvFields,
-		},
-		"PostStartupScriptConfig": ubx.FieldSpec{
-			WireName: "post_startup_script_config",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields,
-		},
-	}
+	"ColabImage": ubx.FieldSpec{
+		WireName: "colab_image",
+		Kind:     "object",
+		Fields:   NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields,
+	},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   NotebookRuntimeTemplate_SoftwareConfig_EnvFields,
+	},
+	"PostStartupScriptConfig": ubx.FieldSpec{
+		WireName: "post_startup_script_config",
+		Kind:     "object",
+		Fields:   NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields,
+	},
+}
 
 type NotebookRuntimeTemplateConfig struct {
-	// Output only. Timestamp when this NotebookRuntimeTemplate was created.
-	CreateTime any
 	// Represents the spec of persistent disk and hyperdisk options.
 	DataPersistentDiskSpec any
 	// The description of the NotebookRuntimeTemplate.
@@ -211,8 +209,6 @@ type NotebookRuntimeTemplateConfig struct {
 	EucConfig any
 	// The idle shutdown configuration of NotebookRuntimeTemplate, which contains the idle_timeout as required field.
 	IdleShutdownConfig any
-	// Output only. Deprecated: This field has no behavior. Use notebook_runtime_type = 'ONE_CLICK' instead. The default template to use if not specified.
-	IsDefault any
 	// The labels with user-defined metadata to organize the NotebookRuntimeTemplates. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
 	// Specification of a single machine.
@@ -233,8 +229,6 @@ type NotebookRuntimeTemplateConfig struct {
 	ShieldedVmConfig any
 	// Notebook Software Config. This is passed to the backend when user makes software configurations in UI.
 	SoftwareConfig any
-	// Output only. Timestamp when this NotebookRuntimeTemplate was most recently updated.
-	UpdateTime any
 }
 
 type NotebookRuntimeTemplateAttrs struct {
@@ -283,61 +277,58 @@ type NotebookRuntimeTemplateAttrs struct {
 var NotebookRuntimeTemplate = ubx.ResourceBinding{
 	WireType: "google_aiplatform_notebook_runtime_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataPersistentDiskSpec": ubx.FieldSpec{
 			WireName: "data_persistent_disk_spec",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_DataPersistentDiskSpecFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_DataPersistentDiskSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_EncryptionSpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"EucConfig": ubx.FieldSpec{
 			WireName: "euc_config",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_EucConfigFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_EucConfigFields,
 		},
 		"IdleShutdownConfig": ubx.FieldSpec{
 			WireName: "idle_shutdown_config",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_IdleShutdownConfigFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_IdleShutdownConfigFields,
 		},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MachineSpec": ubx.FieldSpec{
 			WireName: "machine_spec",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_MachineSpecFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_MachineSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkSpec": ubx.FieldSpec{
 			WireName: "network_spec",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_NetworkSpecFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_NetworkSpecFields,
 		},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+		"NetworkTags":         ubx.FieldSpec{WireName: "network_tags"},
 		"NotebookRuntimeType": ubx.FieldSpec{WireName: "notebook_runtime_type"},
 		"ReservationAffinity": ubx.FieldSpec{
 			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_ReservationAffinityFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_ReservationAffinityFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"ShieldedVmConfig": ubx.FieldSpec{
 			WireName: "shielded_vm_config",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_ShieldedVmConfigFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_ShieldedVmConfigFields,
 		},
 		"SoftwareConfig": ubx.FieldSpec{
 			WireName: "software_config",
-			Kind: "object",
-			Fields: NotebookRuntimeTemplate_SoftwareConfigFields,
+			Kind:     "object",
+			Fields:   NotebookRuntimeTemplate_SoftwareConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

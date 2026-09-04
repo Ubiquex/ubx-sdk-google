@@ -4,50 +4,42 @@ package ftp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_StorageDirectoryMappings struct {
-	Bucket any
+	Bucket       any
 	BucketPrefix any
-	Directory any
-	Permission any
+	Directory    any
+	Permission   any
 }
 
 type User_UserCredentials struct {
-	CredentialName any
-	CredentialType any
+	CredentialName   any
+	CredentialType   any
 	SshPublicKeyBody any
 }
 
 var User_StorageDirectoryMappingsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"Directory": ubx.FieldSpec{WireName: "directory"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"Bucket":       ubx.FieldSpec{WireName: "bucket"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"Directory":    ubx.FieldSpec{WireName: "directory"},
+	"Permission":   ubx.FieldSpec{WireName: "permission"},
+}
 
 var User_UserCredentialsFields = ubx.FieldMap{
-		"CredentialName": ubx.FieldSpec{WireName: "credential_name"},
-		"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
-		"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
-	}
+	"CredentialName":   ubx.FieldSpec{WireName: "credential_name"},
+	"CredentialType":   ubx.FieldSpec{WireName: "credential_type"},
+	"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
+}
 
 type UserConfig struct {
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Required. Service account in customer project attached to this SFTP User.
 	CustomerServiceAccount any
 	// Optional. Labels as key value pairs
 	Labels any
 	// Identifier. User-friendly name via which User will be identified. projects/{project}/locations/{location}/servers/{server}/users/{user}
 	Name any
-	// Output only. Tracks user creation.
-	State any
 	// Required. Mapping of Cloud Storage buckets to directories where the user will land in the SFTP server.
 	StorageDirectoryMappings any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 	// Required. User credential for the user. The maximum number of user credentials is 10.
 	UserCredentials any
-	// Output only. [Output only] The username of the user.
-	Username any
 }
 
 type UserAttrs struct {
@@ -74,22 +66,18 @@ type UserAttrs struct {
 var User = ubx.ResourceBinding{
 	WireType: "google_ftp_user",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomerServiceAccount": ubx.FieldSpec{WireName: "customer_service_account"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"StorageDirectoryMappings": ubx.FieldSpec{
 			WireName: "storage_directory_mappings",
-			Kind: "list",
-			Fields: User_StorageDirectoryMappingsFields,
+			Kind:     "list",
+			Fields:   User_StorageDirectoryMappingsFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"UserCredentials": ubx.FieldSpec{
 			WireName: "user_credentials",
-			Kind: "list",
-			Fields: User_UserCredentialsFields,
+			Kind:     "list",
+			Fields:   User_UserCredentialsFields,
 		},
-		"Username": ubx.FieldSpec{WireName: "username"},
 	},
 }

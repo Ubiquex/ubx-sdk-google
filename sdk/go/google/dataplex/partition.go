@@ -8,8 +8,6 @@ type PartitionConfig struct {
 	Etag any
 	// Required. Immutable. The location of the entity data within the partition, for example, gs://bucket/path/to/entity/key1=value1/key2=value2. Or projects//datasets//tables/
 	Location any
-	// Output only. Partition values used in the HTTP URL must be double encoded. For example, url_encode(url_encode(value)) can be used to encode "US:CA/CA#Sunnyvale so that the request URL ends with "/partitions/US%253ACA/CA%2523Sunnyvale". The name field in the response retains the encoded format.
-	Name any
 	// Required. Immutable. The set of values representing the partition, which correspond to the partition schema defined in the parent entity.
 	Values any
 }
@@ -28,9 +26,8 @@ type PartitionAttrs struct {
 var Partition = ubx.ResourceBinding{
 	WireType: "google_dataplex_partition",
 	Fields: ubx.FieldMap{
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":     ubx.FieldSpec{WireName: "etag"},
 		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Values": ubx.FieldSpec{WireName: "values"},
+		"Values":   ubx.FieldSpec{WireName: "values"},
 	},
 }

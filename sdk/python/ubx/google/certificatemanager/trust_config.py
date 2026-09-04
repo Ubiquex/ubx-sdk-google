@@ -36,8 +36,6 @@ _TrustConfig_SpiffeTrustStoresFields = {
 class TrustConfigConfig:
     # Optional. A certificate matching an allowlisted certificate is always considered valid as long as the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met.
     allowlisted_certificates: Any = None
-    # Output only. The creation timestamp of a TrustConfig.
-    create_time: Any = None
     # Optional. One or more paragraphs of text description of a TrustConfig.
     description: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -52,8 +50,6 @@ class TrustConfigConfig:
     tags: Any = None
     # Optional. Set of trust stores to perform validation against. This field is supported when TrustConfig is configured with Load Balancers, currently not supported for SPIFFE certificate validation. Only one TrustStore specified is currently allowed.
     trust_stores: Any = None
-    # Output only. The last update timestamp of a TrustConfig.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TrustConfigAttrs:
@@ -86,7 +82,6 @@ TrustConfig = ubx.ResourceBinding(
             kind="list",
             fields=_TrustConfig_AllowlistedCertificatesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -102,6 +97,5 @@ TrustConfig = ubx.ResourceBinding(
             kind="list",
             fields=_TrustConfig_SpiffeTrustStoresFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

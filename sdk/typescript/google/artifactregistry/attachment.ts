@@ -6,20 +6,14 @@ export interface AttachmentConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** The namespace this attachment belongs to. E.g. If an attachment is created by artifact analysis, namespace is set to `artifactanalysis.googleapis.com`. */
   attachmentNamespace?: string | Computed<string>;
-  /** Output only. The time when the attachment was created. */
-  createTime?: string | Computed<string>;
   /** Required. The files that belong to this attachment. If the file ID part contains slashes, they are escaped. E.g. `projects/p1/locations/us-central1/repositories/repo1/files/sha:`. */
   files?: string[] | Computed<string[]>;
   /** The name of the attachment. E.g. `projects/p1/locations/us/repositories/repo/attachments/sbom`. */
   name?: string | Computed<string>;
-  /** Output only. The name of the OCI version that this attachment created. Only populated for Docker attachments. E.g. `projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1`. */
-  ociVersionName?: string | Computed<string>;
   /** Required. The target the attachment is for, can be a Version, Package or Repository. E.g. `projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1`. */
   target?: string | Computed<string>;
   /** Type of attachment. E.g. `application/vnd.spdx+json` */
   type?: string | Computed<string>;
-  /** Output only. The time when the attachment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AttachmentAttrs {
@@ -48,12 +42,9 @@ export const Attachment: ResourceBinding<AttachmentConfig, AttachmentAttrs> = {
   fields: {
     annotations: "annotations",
     attachmentNamespace: "attachment_namespace",
-    createTime: "create_time",
     files: "files",
     name: "name",
-    ociVersionName: "oci_version_name",
     target: "target",
     type: "type",
-    updateTime: "update_time",
   },
 };

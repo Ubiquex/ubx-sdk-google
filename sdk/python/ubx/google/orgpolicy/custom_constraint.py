@@ -22,8 +22,6 @@ class CustomConstraintConfig:
     name: Any = None
     # Immutable. The resource instance type on which this policy applies. Format will be of the form : `/` Example: * `compute.googleapis.com/Instance`.
     resource_types: Any = None
-    # Output only. The last time this custom constraint was updated. This represents the last time that the `CreateCustomConstraint` or `UpdateCustomConstraint` methods were called.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomConstraintAttrs:
@@ -54,6 +52,5 @@ CustomConstraint = ubx.ResourceBinding(
         "method_types": ubx.FieldSpec(wire_name="method_types"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource_types": ubx.FieldSpec(wire_name="resource_types"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -17,12 +17,12 @@ type BackupVault_BackupRetentionPolicy struct {
 }
 
 var BackupVault_BackupRetentionPolicyFields = ubx.FieldMap{
-		"BackupMinimumEnforcedRetentionDays": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_days"},
-		"DailyBackupImmutable": ubx.FieldSpec{WireName: "daily_backup_immutable"},
-		"ManualBackupImmutable": ubx.FieldSpec{WireName: "manual_backup_immutable"},
-		"MonthlyBackupImmutable": ubx.FieldSpec{WireName: "monthly_backup_immutable"},
-		"WeeklyBackupImmutable": ubx.FieldSpec{WireName: "weekly_backup_immutable"},
-	}
+	"BackupMinimumEnforcedRetentionDays": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_days"},
+	"DailyBackupImmutable":               ubx.FieldSpec{WireName: "daily_backup_immutable"},
+	"ManualBackupImmutable":              ubx.FieldSpec{WireName: "manual_backup_immutable"},
+	"MonthlyBackupImmutable":             ubx.FieldSpec{WireName: "monthly_backup_immutable"},
+	"WeeklyBackupImmutable":              ubx.FieldSpec{WireName: "weekly_backup_immutable"},
+}
 
 type BackupVaultConfig struct {
 	// Optional. Region where the backups are stored. Format: `projects/{project_id}/locations/{location}`
@@ -31,28 +31,16 @@ type BackupVaultConfig struct {
 	BackupRetentionPolicy any
 	// Optional. Type of backup vault to be created. Default is IN_REGION.
 	BackupVaultType any
-	// Output only. The crypto key version used to encrypt the backup vault. Format: `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
-	BackupsCryptoKeyVersion any
-	// Output only. Create time of the backup vault.
-	CreateTime any
 	// Description of the backup vault.
 	Description any
-	// Output only. Name of the Backup vault created in backup region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
-	DestinationBackupVault any
-	// Output only. Field indicating encryption state of CMEK backups.
-	EncryptionState any
 	// Optional. Specifies the Key Management System (KMS) configuration to be used for backup encryption. Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
 	KmsConfig any
 	// Resource labels to represent user provided metadata.
 	Labels any
 	// Identifier. The resource name of the backup vault. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`.
 	Name any
-	// Output only. Name of the Backup vault created in source region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
-	SourceBackupVault any
 	// Optional. Region in which the backup vault is created. Format: `projects/{project_id}/locations/{location}`
 	SourceRegion any
-	// Output only. The backup vault state.
-	State any
 }
 
 type BackupVaultAttrs struct {
@@ -92,20 +80,14 @@ var BackupVault = ubx.ResourceBinding{
 		"BackupRegion": ubx.FieldSpec{WireName: "backup_region"},
 		"BackupRetentionPolicy": ubx.FieldSpec{
 			WireName: "backup_retention_policy",
-			Kind: "object",
-			Fields: BackupVault_BackupRetentionPolicyFields,
+			Kind:     "object",
+			Fields:   BackupVault_BackupRetentionPolicyFields,
 		},
 		"BackupVaultType": ubx.FieldSpec{WireName: "backup_vault_type"},
-		"BackupsCryptoKeyVersion": ubx.FieldSpec{WireName: "backups_crypto_key_version"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationBackupVault": ubx.FieldSpec{WireName: "destination_backup_vault"},
-		"EncryptionState": ubx.FieldSpec{WireName: "encryption_state"},
-		"KmsConfig": ubx.FieldSpec{WireName: "kms_config"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceBackupVault": ubx.FieldSpec{WireName: "source_backup_vault"},
-		"SourceRegion": ubx.FieldSpec{WireName: "source_region"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"KmsConfig":       ubx.FieldSpec{WireName: "kms_config"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"SourceRegion":    ubx.FieldSpec{WireName: "source_region"},
 	},
 }

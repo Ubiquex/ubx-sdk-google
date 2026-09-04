@@ -40,14 +40,10 @@ _V1beta1Policy_SettingFields = {
 class V1beta1PolicyConfig:
     # Immutable. Customer that the Policy belongs to. The value is in the format 'customers/{customerId}'. The `customerId` must begin with "C" To find your customer ID in Admin Console see https://support.google.com/a/answer/10070793.
     customer: Any = None
-    # Output only. Identifier. The [resource name](https://cloud.google.com/apis/design/resource_names) of the Policy. Format: policies/{policy}.
-    name: Any = None
     # PolicyQuery
     policy_query: Any = None
     # Setting
     setting: Any = None
-    # Output only. The type of the policy.
-    type: Any = None
 
 @dataclasses.dataclass
 class V1beta1PolicyAttrs:
@@ -66,7 +62,6 @@ V1beta1Policy = ubx.ResourceBinding(
     wire_type="google_cloudidentity_v1beta1_policy",
     fields={
         "customer": ubx.FieldSpec(wire_name="customer"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "policy_query": ubx.FieldSpec(
             wire_name="policy_query",
             kind="object",
@@ -77,6 +72,5 @@ V1beta1Policy = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Policy_SettingFields,
         ),
-        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

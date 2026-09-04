@@ -31,38 +31,34 @@ type SandboxEnvironment_Spec struct {
 }
 
 var SandboxEnvironment_ConnectionInfoFields = ubx.FieldMap{
-		"LoadBalancerHostname": ubx.FieldSpec{WireName: "load_balancer_hostname"},
-		"LoadBalancerIp": ubx.FieldSpec{WireName: "load_balancer_ip"},
-		"RoutingToken": ubx.FieldSpec{WireName: "routing_token"},
-		"SandboxInternalIp": ubx.FieldSpec{WireName: "sandbox_internal_ip"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"LoadBalancerHostname": ubx.FieldSpec{WireName: "load_balancer_hostname"},
+	"LoadBalancerIp":       ubx.FieldSpec{WireName: "load_balancer_ip"},
+	"RoutingToken":         ubx.FieldSpec{WireName: "routing_token"},
+	"SandboxInternalIp":    ubx.FieldSpec{WireName: "sandbox_internal_ip"},
+	"ServiceAttachment":    ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 var SandboxEnvironment_Spec_CodeExecutionEnvironmentFields = ubx.FieldMap{
-		"CodeLanguage": ubx.FieldSpec{WireName: "code_language"},
-		"MachineConfig": ubx.FieldSpec{WireName: "machine_config"},
-	}
+	"CodeLanguage":  ubx.FieldSpec{WireName: "code_language"},
+	"MachineConfig": ubx.FieldSpec{WireName: "machine_config"},
+}
 
 var SandboxEnvironment_SpecFields = ubx.FieldMap{
-		"CodeExecutionEnvironment": ubx.FieldSpec{
-			WireName: "code_execution_environment",
-			Kind: "object",
-			Fields: SandboxEnvironment_Spec_CodeExecutionEnvironmentFields,
-		},
-		"ShellEnvironment": ubx.FieldSpec{WireName: "shell_environment"},
-	}
+	"CodeExecutionEnvironment": ubx.FieldSpec{
+		WireName: "code_execution_environment",
+		Kind:     "object",
+		Fields:   SandboxEnvironment_Spec_CodeExecutionEnvironmentFields,
+	},
+	"ShellEnvironment": ubx.FieldSpec{WireName: "shell_environment"},
+}
 
 type SandboxEnvironmentConfig struct {
 	// The connection information of the SandboxEnvironment.
 	ConnectionInfo any
-	// Output only. The timestamp when this SandboxEnvironment was created.
-	CreateTime any
 	// Required. The display name of the SandboxEnvironment.
 	DisplayName any
 	// Optional. Timestamp in UTC of when this SandboxEnvironment is considered expired. This is *always* provided on output, regardless of what `expiration` was sent on input.
 	ExpireTime any
-	// Output only. The resource name of the latest snapshot taken for this SandboxEnvironment.
-	LatestSandboxEnvironmentSnapshot any
 	// Identifier. The name of the SandboxEnvironment.
 	Name any
 	// Optional. Owner information for this sandbox environment. A Sandbox can only be restored from a snapshot that belongs to the same owner. If not set, sandbox will be created as the default owner.
@@ -73,12 +69,8 @@ type SandboxEnvironmentConfig struct {
 	SandboxEnvironmentTemplate any
 	// The specification of a SandboxEnvironment.
 	Spec any
-	// Output only. The runtime state of the SandboxEnvironment.
-	State any
 	// Optional. Input only. The TTL for the sandbox environment. The expiration time is computed: now + TTL.
 	Ttl any
-	// Output only. The timestamp when this SandboxEnvironment was most recently updated.
-	UpdateTime any
 }
 
 type SandboxEnvironmentAttrs struct {
@@ -115,24 +107,20 @@ var SandboxEnvironment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectionInfo": ubx.FieldSpec{
 			WireName: "connection_info",
-			Kind: "object",
-			Fields: SandboxEnvironment_ConnectionInfoFields,
+			Kind:     "object",
+			Fields:   SandboxEnvironment_ConnectionInfoFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"LatestSandboxEnvironmentSnapshot": ubx.FieldSpec{WireName: "latest_sandbox_environment_snapshot"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Owner": ubx.FieldSpec{WireName: "owner"},
+		"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime":                 ubx.FieldSpec{WireName: "expire_time"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"Owner":                      ubx.FieldSpec{WireName: "owner"},
 		"SandboxEnvironmentSnapshot": ubx.FieldSpec{WireName: "sandbox_environment_snapshot"},
 		"SandboxEnvironmentTemplate": ubx.FieldSpec{WireName: "sandbox_environment_template"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: SandboxEnvironment_SpecFields,
+			Kind:     "object",
+			Fields:   SandboxEnvironment_SpecFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

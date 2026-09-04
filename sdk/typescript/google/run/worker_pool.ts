@@ -246,18 +246,6 @@ const WorkerPool_BinaryAuthorizationFields: FieldMap = {
   useDefault: "use_default",
 };
 
-const WorkerPool_ConditionsFields: FieldMap = {
-  executionReason: "execution_reason",
-  instanceReason: "instance_reason",
-  lastTransitionTime: "last_transition_time",
-  message: "message",
-  reason: "reason",
-  revisionReason: "revision_reason",
-  severity: "severity",
-  state: "state",
-  type: "type",
-};
-
 const WorkerPool_InstanceSplitStatusesFields: FieldMap = {
   percent: "percent",
   revision: "revision",
@@ -575,6 +563,18 @@ const WorkerPool_TemplateFields: FieldMap = {
   },
 };
 
+const WorkerPool_ConditionsFields: FieldMap = {
+  executionReason: "execution_reason",
+  instanceReason: "instance_reason",
+  lastTransitionTime: "last_transition_time",
+  message: "message",
+  reason: "reason",
+  revisionReason: "revision_reason",
+  severity: "severity",
+  state: "state",
+  type: "type",
+};
+
 export interface WorkerPoolConfig {
   /** Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected in new resources. All system annotations in v1 now have a corresponding field in v2 WorkerPool. This field follows Kubernetes annotations' namespacing, limits, and rules. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
@@ -584,58 +584,26 @@ export interface WorkerPoolConfig {
   client?: string | Computed<string>;
   /** Arbitrary version identifier for the API client. */
   clientVersion?: string | Computed<string>;
-  /** Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the WorkerPool does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  conditions?: WorkerPool_Conditions[] | Computed<WorkerPool_Conditions[]>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
-  /** Output only. Email address of the authenticated creator. */
-  creator?: string | Computed<string>;
   /** Deprecated: Not supported, and ignored by Cloud Run. */
   customAudiences?: string[] | Computed<string[]>;
-  /** Output only. The deletion time. It is only populated as a response to a Delete request. */
-  deleteTime?: string | Computed<string>;
   /** User-provided description of the WorkerPool. This field currently has a 512-character limit. */
   description?: string | Computed<string>;
   /** Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates. */
   etag?: string | Computed<string>;
-  /** Output only. For a deleted resource, the time after which it will be permamently deleted. */
-  expireTime?: string | Computed<string>;
-  /** Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`. */
-  generation?: string | Computed<string>;
-  /** Output only. Detailed status information for corresponding instance splits. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  instanceSplitStatuses?: WorkerPool_InstanceSplitStatuses[] | Computed<WorkerPool_InstanceSplitStatuses[]>;
   /** Optional. Specifies how to distribute instances over a collection of Revisions belonging to the WorkerPool. If instance split is empty or not provided, defaults to 100% instances assigned to the latest `Ready` Revision. */
   instanceSplits?: WorkerPool_InstanceSplitStatuses[] | Computed<WorkerPool_InstanceSplitStatuses[]>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 WorkerPool. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Email address of the last authenticated modifier. */
-  lastModifier?: string | Computed<string>;
-  /** Output only. Name of the last created revision. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  latestCreatedRevision?: string | Computed<string>;
-  /** Output only. Name of the latest revision that is serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  latestReadyRevision?: string | Computed<string>;
   /** Optional. The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output. */
   launchStage?: string | Computed<string>;
   /** The fully qualified name of this WorkerPool. In CreateWorkerPoolRequest, this field is ignored, and instead composed from CreateWorkerPoolRequest.parent and CreateWorkerPoolRequest.worker_id. Format: `projects/{project}/locations/{location}/workerPools/{worker_id}` */
   name?: string | Computed<string>;
-  /** Output only. The generation of this WorkerPool currently serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`. */
-  observedGeneration?: string | Computed<string>;
-  /** Output only. Returns true if the WorkerPool is currently being acted upon by the system to bring it into the desired state. When a new WorkerPool is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the WorkerPool to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation`, `latest_ready_revison`, `instance_split_statuses`, and `uri` will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the serving state matches the WorkerPool, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `instance_splits` and `instance_split_statuses`, `observed_generation` and `generation`, `latest_ready_revision` and `latest_created_revision`. If reconciliation failed, `instance_split_statuses`, `observed_generation`, and `latest_ready_revision` will have the state of the last serving revision, or empty for newly created WorkerPools. Additional information on the failure can be found in `terminal_condition` and `conditions`. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Worker pool scaling settings. */
   scaling?: WorkerPool_Scaling | Computed<WorkerPool_Scaling>;
   /** WorkerPoolRevisionTemplate describes the data a worker pool revision should have when created from a template. */
   template?: WorkerPool_Template | Computed<WorkerPool_Template>;
   /** Defines a status condition for a resource. */
   terminalCondition?: WorkerPool_Conditions | Computed<WorkerPool_Conditions>;
-  /** Output only. Indicates whether Cloud Run Threat Detection monitoring is enabled for the parent project of this worker pool. */
-  threatDetectionEnabled?: boolean | Computed<boolean>;
-  /** Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface WorkerPoolAttrs {
@@ -712,38 +680,17 @@ export const WorkerPool: ResourceBinding<WorkerPoolConfig, WorkerPoolAttrs> = {
     },
     client: "client",
     clientVersion: "client_version",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: WorkerPool_ConditionsFields,
-    },
-    createTime: "create_time",
-    creator: "creator",
     customAudiences: "custom_audiences",
-    deleteTime: "delete_time",
     description: "description",
     etag: "etag",
-    expireTime: "expire_time",
-    generation: "generation",
-    instanceSplitStatuses: {
-      wireName: "instance_split_statuses",
-      kind: "list",
-      fields: WorkerPool_InstanceSplitStatusesFields,
-    },
     instanceSplits: {
       wireName: "instance_splits",
       kind: "list",
       fields: WorkerPool_InstanceSplitStatusesFields,
     },
     labels: "labels",
-    lastModifier: "last_modifier",
-    latestCreatedRevision: "latest_created_revision",
-    latestReadyRevision: "latest_ready_revision",
     launchStage: "launch_stage",
     name: "name",
-    observedGeneration: "observed_generation",
-    reconciling: "reconciling",
-    satisfiesPzs: "satisfies_pzs",
     scaling: {
       wireName: "scaling",
       kind: "object",
@@ -759,8 +706,5 @@ export const WorkerPool: ResourceBinding<WorkerPoolConfig, WorkerPoolAttrs> = {
       kind: "object",
       fields: WorkerPool_ConditionsFields,
     },
-    threatDetectionEnabled: "threat_detection_enabled",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

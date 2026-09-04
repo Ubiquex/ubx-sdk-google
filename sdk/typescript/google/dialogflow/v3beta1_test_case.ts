@@ -886,7 +886,6 @@ const V3beta1TestCase_TestConfigFields: FieldMap = {
 };
 
 export interface V3beta1TestCaseConfig {
-  creationTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   lastTestResult?: V3beta1TestCase_LastTestResult | Computed<V3beta1TestCase_LastTestResult>;
   name?: string | Computed<string>;
@@ -910,7 +909,6 @@ export interface V3beta1TestCaseAttrs {
 export const V3beta1TestCase: ResourceBinding<V3beta1TestCaseConfig, V3beta1TestCaseAttrs> = {
   wireType: "google_dialogflow_v3beta1_test_case",
   fields: {
-    creationTime: "creation_time",
     displayName: "display_name",
     lastTestResult: {
       wireName: "last_test_result",

@@ -75,8 +75,6 @@ _DataPolicy_DataPolicyFields = {
 class DataPolicyConfig:
     # Represents the label-policy binding.
     data_policy: Any = None
-    # Required. User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {data_policy_id} in part of the resource name.
-    data_policy_id: Any = None
 
 @dataclasses.dataclass
 class DataPolicyAttrs:
@@ -109,6 +107,5 @@ DataPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_DataPolicy_DataPolicyFields,
         ),
-        "data_policy_id": ubx.FieldSpec(wire_name="data_policy_id"),
     },
 )

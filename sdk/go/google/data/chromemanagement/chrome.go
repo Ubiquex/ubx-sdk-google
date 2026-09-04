@@ -13,9 +13,9 @@ type Chrome_AndroidAppInfo struct {
 }
 
 type Chrome_ChromeAppInfo_Permissions struct {
-	AccessUserData any
+	AccessUserData   any
 	DocumentationUri any
-	Type any
+	Type             any
 }
 
 type Chrome_ChromeAppInfo_SiteAccess struct {
@@ -59,7 +59,6 @@ type Chrome_ServiceError struct {
 }
 
 type ChromeConfig struct {
-	Name any
 }
 
 type ChromeAttrs struct {
@@ -87,7 +86,7 @@ type ChromeAttrs struct {
 	IsPaidApp any
 	// Output only. Latest published time.
 	LatestPublishTime any
-	Name any
+	Name              any
 	// Output only. The URI pointing to the privacy policy of the app, if it was provided by the developer. Version-specific field that will only be set when the requested app version is found.
 	PrivacyPolicyUri any
 	// Output only. The publisher of the item.
@@ -106,7 +105,5 @@ type ChromeAttrs struct {
 
 var Chrome = ubx.DataSourceBinding{
 	WireType: "google_chromemanagement_chrome",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

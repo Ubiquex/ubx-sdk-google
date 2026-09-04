@@ -14,8 +14,6 @@ const V1beta2Repository_MavenConfigFields: FieldMap = {
 };
 
 export interface V1beta2RepositoryConfig {
-  /** Output only. The time when the repository was created. */
-  createTime?: string | Computed<string>;
   /** The user-provided description of the repository. */
   description?: string | Computed<string>;
   /** Optional. The format of packages that are stored in the repository. */
@@ -28,14 +26,6 @@ export interface V1beta2RepositoryConfig {
   mavenConfig?: V1beta2Repository_MavenConfig | Computed<V1beta2Repository_MavenConfig>;
   /** The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique. */
   name?: string | Computed<string>;
-  /** Output only. Whether or not this repository satisfies PZI. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Whether or not this repository satisfies PZS. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs. */
-  sizeBytes?: string | Computed<string>;
-  /** Output only. The time when the repository was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta2RepositoryAttrs {
@@ -66,7 +56,6 @@ export interface V1beta2RepositoryAttrs {
 export const V1beta2Repository: ResourceBinding<V1beta2RepositoryConfig, V1beta2RepositoryAttrs> = {
   wireType: "google_artifactregistry_v1beta2_repository",
   fields: {
-    createTime: "create_time",
     description: "description",
     format: "format",
     kmsKeyName: "kms_key_name",
@@ -77,9 +66,5 @@ export const V1beta2Repository: ResourceBinding<V1beta2RepositoryConfig, V1beta2
       fields: V1beta2Repository_MavenConfigFields,
     },
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    sizeBytes: "size_bytes",
-    updateTime: "update_time",
   },
 };

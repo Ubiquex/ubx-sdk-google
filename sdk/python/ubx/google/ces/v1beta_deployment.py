@@ -241,12 +241,8 @@ class V1betaDeploymentConfig:
     app_version: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
     channel_profile: Any = None
-    # Output only. Timestamp when this deployment was created.
-    create_time: Any = None
     # Required. Display name of the deployment.
     display_name: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
     # Experiment for the deployment.
     experiment_config: Any = None
     # Ephemeral Meta credentials for Instagram native integration.
@@ -257,8 +253,6 @@ class V1betaDeploymentConfig:
     model_settings: Any = None
     # Identifier. The resource name of the deployment. Format: `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
     name: Any = None
-    # Output only. Timestamp when this deployment was last updated.
-    update_time: Any = None
     # Ephemeral Meta credentials for WhatsApp native integration.
     whatsapp_credentials: Any = None
 
@@ -298,9 +292,7 @@ V1betaDeployment = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaDeployment_ChannelProfileFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "experiment_config": ubx.FieldSpec(
             wire_name="experiment_config",
             kind="object",
@@ -318,7 +310,6 @@ V1betaDeployment = ubx.ResourceBinding(
             fields=_V1betaDeployment_ModelSettingsFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "whatsapp_credentials": ubx.FieldSpec(
             wire_name="whatsapp_credentials",
             kind="object",

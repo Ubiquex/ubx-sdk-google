@@ -5,61 +5,59 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TcpRoute_Rules_Action_Destinations struct {
 	ServiceName any
-	Weight any
+	Weight      any
 }
 
 type TcpRoute_Rules_Action struct {
-	Destinations any
-	IdleTimeout any
+	Destinations        any
+	IdleTimeout         any
 	OriginalDestination any
 }
 
 type TcpRoute_Rules_Matches struct {
 	Address any
-	Port any
+	Port    any
 }
 
 type TcpRoute_Rules struct {
-	Action any
+	Action  any
 	Matches any
 }
 
 var TcpRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var TcpRoute_Rules_ActionFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: TcpRoute_Rules_Action_DestinationsFields,
-		},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   TcpRoute_Rules_Action_DestinationsFields,
+	},
+	"IdleTimeout":         ubx.FieldSpec{WireName: "idle_timeout"},
+	"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
+}
 
 var TcpRoute_Rules_MatchesFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Port":    ubx.FieldSpec{WireName: "port"},
+}
 
 var TcpRoute_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: TcpRoute_Rules_ActionFields,
-		},
-		"Matches": ubx.FieldSpec{
-			WireName: "matches",
-			Kind: "list",
-			Fields: TcpRoute_Rules_MatchesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   TcpRoute_Rules_ActionFields,
+	},
+	"Matches": ubx.FieldSpec{
+		WireName: "matches",
+		Kind:     "list",
+		Fields:   TcpRoute_Rules_MatchesFields,
+	},
+}
 
 type TcpRouteConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -72,10 +70,6 @@ type TcpRouteConfig struct {
 	Name any
 	// Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match.
 	Rules any
-	// Output only. Server-defined URL of this resource
-	SelfLink any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type TcpRouteAttrs struct {
@@ -102,18 +96,15 @@ type TcpRouteAttrs struct {
 var TcpRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_tcp_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways": ubx.FieldSpec{WireName: "gateways"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Meshes": ubx.FieldSpec{WireName: "meshes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: TcpRoute_RulesFields,
+			Kind:     "list",
+			Fields:   TcpRoute_RulesFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -8,44 +8,32 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Instances_PreservedState_Disks:
-    # Specifies whether the preserved state disk is automatically deleted when the instance is deleted. Accepts string values 'true' or 'false' (defaults to 'false'). (AI-inferred)
     auto_delete: Any = None
-    # The access mode for the preserved disk. Valid values are READ_ONLY and READ_WRITE. (AI-inferred)
     mode: Any = None
-    # The source disk associated with the preserved state. This is the device name or URL of the disk attached to the instance. (AI-inferred)
     source: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddress:
-    # The external IP address to preserve for the instance in the resize request. (AI-inferred)
     address: Any = None
-    # The literal IP address value to preserve for the external IP. (AI-inferred)
     literal: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps:
-    # Whether the preserved external IP address should be automatically deleted when the associated instance is deleted, controlling the lifecycle of the IP in the instance's preserved state. (AI-inferred)
     auto_delete: Any = None
     ip_address: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Instances_PreservedState:
-    # Map of disk device names to their preservation state. The key is the device name of the disk, and the value configures preservation settings such as whether the disk is automatically deleted when the instance is deleted. (AI-inferred)
     disks: Any = None
-    # Map of instance names to preserved external IP configurations for the resize operation. The keys are instance names, and the values are objects representing the external IP assignment for each instance. (AI-inferred)
     external_ips: Any = None
-    # Preserved internal IPs for the instance. The map keys are the network interface names, and the values define the IP address and auto-delete settings for each interface. (AI-inferred)
     internal_ips: Any = None
-    # Preserved metadata key-value pairs to be applied to the instances created by the resize request. This overrides metadata from the instance template for these instances. (AI-inferred)
     metadata: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Instances:
     fingerprint: Any = None
     name: Any = None
-    # Configuration for the state to preserve for the instance in the resize request. This block is used to set stateful disks and metadata that should be preserved when the instance is created or deleted. See the preserved_state sub-block for the full structure. (AI-inferred)
     preserved_state: Any = None
-    # The status of the instance in relation to the resize request. Possible values are APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION, indicating whether the instance is being applied, deleted, effective, not applicable, unapplied, or scheduled for deletion but not yet applied. (AI-inferred)
     status: Any = None
 
 @dataclasses.dataclass
@@ -57,62 +45,45 @@ class InstanceGroupManagerResizeRequest_RequestedRunDuration:
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfo:
-    # The logical grouping for the error, such as 'global' for consumer-facing errors or a service-specific domain like 'compute.googleapis.com' for producer-facing errors. (AI-inferred)
     domain: Any = None
-    # Metadata about the error, as key-value pairs. The keys and values are service-specific and provide additional context for the error condition. (AI-inferred)
     metadatas: Any = None
-    # The `reason` is a stable, machine-readable identifier that indicates the specific cause of the error. It is typically part of the error info structure and can be used to programmatically handle distinct error conditions. (AI-inferred)
     reason: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_Links:
     description: Any = None
-    # The URL pointing to additional documentation or resources for troubleshooting the error. (AI-inferred)
     url: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help:
-    # A list of links to documentation or resources that provide additional information about the error. Each link includes a description and a URL. (AI-inferred)
     links: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessage:
-    # The locale code for the localized error message (e.g., en-US). (AI-inferred)
     locale: Any = None
-    # The localized text of the error message, intended for display to users. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo:
-    # The quota dimensions (such as region or zone) as key-value pairs. Each key is a dimension name and the value is the dimension value, both as strings. (AI-inferred)
     dimensions: Any = None
     future_limit: Any = None
-    # The quota limit for the resource, representing the maximum allowed value for the metric in question. (AI-inferred)
     limit: Any = None
-    # The name of the quota limit that was exceeded, as reported in the quota error details. (AI-inferred)
     limit_name: Any = None
-    # The name of the quota metric that was exceeded, identifying the specific quota limit that caused the error. (AI-inferred)
     metric_name: Any = None
-    # The rollout status of the quota. Possible values are IN_PROGRESS (indicating a rollout is currently underway) and ROLLOUT_STATUS_UNSPECIFIED (indicating the status is not specified). (AI-inferred)
     rollout_status: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails:
     error_info: Any = None
-    # Help information for the error, containing links to documentation that can assist in resolving the issue. (AI-inferred)
     help: Any = None
-    # An object containing a localized error message and its locale. Provides a user-readable error description in the user's preferred language. (AI-inferred)
     localized_message: Any = None
     quota_info: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequest_Status_Error_Errors:
-    # The error code for this error entry, typically a machine-readable identifier for the specific error type. (AI-inferred)
     code: Any = None
     error_details: Any = None
-    # The location of the error in the request, such as the path to a specific field or parameter that caused the error. (AI-inferred)
     location: Any = None
-    # A human-readable error message describing the failure. (AI-inferred)
     message: Any = None
 
 @dataclasses.dataclass
@@ -129,7 +100,6 @@ class InstanceGroupManagerResizeRequest_Status_LastAttempt:
 class InstanceGroupManagerResizeRequest_Status:
     # Output only. Fatal errors encountered during the queueing or provisioning phases of the ResizeRequest that caused the transition to the FAILED state. Contrary to the last_attempt errors, this field is final and errors are never removed from here, as the ResizeRequest is not going to retry.
     error: Any = None
-    # The result of the most recent resize attempt, including any error that occurred if the attempt failed. (AI-inferred)
     last_attempt: Any = None
 
 _InstanceGroupManagerResizeRequest_Instances_PreservedState_DisksFields = {
@@ -285,34 +255,17 @@ _InstanceGroupManagerResizeRequest_StatusFields = {
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequestConfig:
-    # Output only. The creation timestamp for this resize request inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource.
     description: Any = None
-    # Output only. A unique identifier for this resource type. The server generates this identifier.
-    id: Any = None
     # The names of instances to be created by this resize request. The number of names specified determines the number of instances to create. The group's target size will be increased by this number. This field cannot be used together with 'resize_by'.
     instances: Any = None
-    # Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
-    kind: Any = None
     # The name of this resize request. The name must be 1-63 characters long, and comply withRFC1035.
     name: Any = None
-    # Output only. The URL of a region where the resize request is located. Populated only for regional resize requests.
-    region: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     requested_run_duration: Any = None
     # The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
     resize_by: Any = None
-    # Output only. The URL for this resize request. The server defines this URL.
-    self_link: Any = None
-    # Output only. Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
-    # Output only. Current state of the request.
-    state: Any = None
-    # The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred)
     status: Any = None
-    # Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests.
-    zone: Any = None
 
 @dataclasses.dataclass
 class InstanceGroupManagerResizeRequestAttrs:
@@ -340,7 +293,6 @@ class InstanceGroupManagerResizeRequestAttrs:
     self_link_with_id: Any = None
     # Output only. Current state of the request.
     state: Any = None
-    # The status of the resize request, containing the current state of the operation (such as pending, succeeded, or failed) and any error details if the request was not successful. (AI-inferred)
     status: Any = None
     # Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests.
     zone: Any = None
@@ -348,31 +300,23 @@ class InstanceGroupManagerResizeRequestAttrs:
 InstanceGroupManagerResizeRequest = ubx.ResourceBinding(
     wire_type="google_compute_instance_group_manager_resize_request",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instances": ubx.FieldSpec(
             wire_name="instances",
             kind="list",
             fields=_InstanceGroupManagerResizeRequest_InstancesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "requested_run_duration": ubx.FieldSpec(
             wire_name="requested_run_duration",
             kind="object",
             fields=_InstanceGroupManagerResizeRequest_RequestedRunDurationFields,
         ),
         "resize_by": ubx.FieldSpec(wire_name="resize_by"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_InstanceGroupManagerResizeRequest_StatusFields,
         ),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

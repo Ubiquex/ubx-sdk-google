@@ -34,8 +34,6 @@ _V1alphaBinding_SourceFields = {
 class V1alphaBindingConfig:
     # The AuthProvider of the Binding.
     auth_provider_binding: Any = None
-    # Output only. Timestamp when this binding was created.
-    create_time: Any = None
     # Optional. User-defined description of a Binding. Can have a maximum length of `2048` characters.
     description: Any = None
     # Optional. User-defined display name for the Binding. Can have a maximum length of `63` characters.
@@ -46,8 +44,6 @@ class V1alphaBindingConfig:
     source: Any = None
     # The target of the Binding.
     target: Any = None
-    # Output only. Timestamp when this binding was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaBindingAttrs:
@@ -76,7 +72,6 @@ V1alphaBinding = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaBinding_AuthProviderBindingFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -90,6 +85,5 @@ V1alphaBinding = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaBinding_SourceFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

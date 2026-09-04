@@ -124,20 +124,6 @@ _Node_NetworkConfigFields = {
     "subnetwork": ubx.FieldSpec(wire_name="subnetwork"),
 }
 
-_Node_NetworkEndpoints_AccessConfigFields = {
-    "external_ip": ubx.FieldSpec(wire_name="external_ip"),
-}
-
-_Node_NetworkEndpointsFields = {
-    "access_config": ubx.FieldSpec(
-        wire_name="access_config",
-        kind="object",
-        fields=_Node_NetworkEndpoints_AccessConfigFields,
-    ),
-    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-    "port": ubx.FieldSpec(wire_name="port"),
-}
-
 _Node_SchedulingConfigFields = {
     "preemptible": ubx.FieldSpec(wire_name="preemptible"),
     "reserved": ubx.FieldSpec(wire_name="reserved"),
@@ -151,13 +137,6 @@ _Node_ServiceAccountFields = {
 
 _Node_ShieldedInstanceConfigFields = {
     "enable_secure_boot": ubx.FieldSpec(wire_name="enable_secure_boot"),
-}
-
-_Node_SymptomsFields = {
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "symptom_type": ubx.FieldSpec(wire_name="symptom_type"),
-    "worker_id": ubx.FieldSpec(wire_name="worker_id"),
 }
 
 _Node_UpcomingMaintenanceFields = {
@@ -175,40 +154,24 @@ class NodeConfig:
     accelerator_config: Any = None
     # Optional. The type of hardware accelerators associated with this node.
     accelerator_type: Any = None
-    # Output only. The API version that created this Node.
-    api_version: Any = None
     # Sets the boot disk configuration for the TPU node.
     boot_disk_config: Any = None
     # The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.
     cidr_block: Any = None
-    # Output only. The time when the node was created.
-    create_time: Any = None
     # The additional data disks for the Node.
     data_disks: Any = None
     # The user-supplied description of the TPU. Maximum of 512 characters.
     description: Any = None
     # The health status of the TPU node.
     health: Any = None
-    # Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy.
-    health_description: Any = None
-    # Output only. The unique identifier for the TPU Node.
-    id: Any = None
     # Resource labels to represent user-provided metadata.
     labels: Any = None
     # Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script
     metadata: Any = None
-    # Output only. Whether the Node belongs to a Multislice group.
-    multislice_node: Any = None
-    # Output only. Immutable. The name of the TPU.
-    name: Any = None
     # Network related configurations.
     network_config: Any = None
     # Optional. Repeated network configurations for the TPU node. This field is used to specify multiple networks configs for the TPU node. network_config and network_configs are mutually exclusive, you can only specify one of them. If both are specified, an error will be returned.
     network_configs: Any = None
-    # Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that runtime clients of the node reach out to the 0th entry in this map first.
-    network_endpoints: Any = None
-    # Output only. The qualified name of the QueuedResource that requested this Node.
-    queued_resource: Any = None
     # Required. The runtime version running in the Node.
     runtime_version: Any = None
     # Sets the scheduling options for this node.
@@ -217,10 +180,6 @@ class NodeConfig:
     service_account: Any = None
     # A set of Shielded Instance options.
     shielded_instance_config: Any = None
-    # Output only. The current state for the TPU Node.
-    state: Any = None
-    # Output only. The Symptoms that have occurred to the TPU Node.
-    symptoms: Any = None
     # Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls.
     tags: Any = None
     # Upcoming Maintenance notification information.
@@ -292,14 +251,12 @@ Node = ubx.ResourceBinding(
             fields=_Node_AcceleratorConfigFields,
         ),
         "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
-        "api_version": ubx.FieldSpec(wire_name="api_version"),
         "boot_disk_config": ubx.FieldSpec(
             wire_name="boot_disk_config",
             kind="object",
             fields=_Node_BootDiskConfigFields,
         ),
         "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_disks": ubx.FieldSpec(
             wire_name="data_disks",
             kind="list",
@@ -307,12 +264,8 @@ Node = ubx.ResourceBinding(
         ),
         "description": ubx.FieldSpec(wire_name="description"),
         "health": ubx.FieldSpec(wire_name="health"),
-        "health_description": ubx.FieldSpec(wire_name="health_description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "multislice_node": ubx.FieldSpec(wire_name="multislice_node"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
             kind="object",
@@ -323,12 +276,6 @@ Node = ubx.ResourceBinding(
             kind="list",
             fields=_Node_NetworkConfigFields,
         ),
-        "network_endpoints": ubx.FieldSpec(
-            wire_name="network_endpoints",
-            kind="list",
-            fields=_Node_NetworkEndpointsFields,
-        ),
-        "queued_resource": ubx.FieldSpec(wire_name="queued_resource"),
         "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
         "scheduling_config": ubx.FieldSpec(
             wire_name="scheduling_config",
@@ -344,12 +291,6 @@ Node = ubx.ResourceBinding(
             wire_name="shielded_instance_config",
             kind="object",
             fields=_Node_ShieldedInstanceConfigFields,
-        ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "symptoms": ubx.FieldSpec(
-            wire_name="symptoms",
-            kind="list",
-            fields=_Node_SymptomsFields,
         ),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "upcoming_maintenance": ubx.FieldSpec(

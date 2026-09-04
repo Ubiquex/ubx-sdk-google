@@ -270,8 +270,6 @@ class V1betaServingConfigConfig:
     answer_generation_spec: Any = None
     # Boost controls to use in serving path. All triggered boost controls will be applied. Boost controls must be in the same data store as the serving config. Maximum of 20 boost controls.
     boost_control_ids: Any = None
-    # Output only. ServingConfig created timestamp.
-    create_time: Any = None
     # Required. The human readable serving config display name. Used in Discovery UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
     display_name: Any = None
     # Condition do not associate specifications. If multiple do not associate conditions match, all matching do not associate controls in the list will execute. Order does not matter. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
@@ -308,8 +306,6 @@ class V1betaServingConfigConfig:
     solution_type: Any = None
     # Condition synonyms specifications. If multiple synonyms conditions match, all matching synonyms controls in the list will execute. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
     synonyms_control_ids: Any = None
-    # Output only. ServingConfig updated timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaServingConfigAttrs:
@@ -367,7 +363,6 @@ V1betaServingConfig = ubx.ResourceBinding(
             fields=_V1betaServingConfig_AnswerGenerationSpecFields,
         ),
         "boost_control_ids": ubx.FieldSpec(wire_name="boost_control_ids"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "dissociate_control_ids": ubx.FieldSpec(wire_name="dissociate_control_ids"),
         "diversity_level": ubx.FieldSpec(wire_name="diversity_level"),
@@ -402,6 +397,5 @@ V1betaServingConfig = ubx.ResourceBinding(
         "replacement_control_ids": ubx.FieldSpec(wire_name="replacement_control_ids"),
         "solution_type": ubx.FieldSpec(wire_name="solution_type"),
         "synonyms_control_ids": ubx.FieldSpec(wire_name="synonyms_control_ids"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

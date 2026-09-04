@@ -42,7 +42,7 @@ type PreviewFeature_Status struct {
 
 type PreviewFeatureConfig struct {
 	PreviewFeature any
-	Project any
+	Project        any
 }
 
 type PreviewFeatureAttrs struct {
@@ -57,9 +57,9 @@ type PreviewFeatureAttrs struct {
 	// Output only. [Output only] The type of the feature. Always "compute#previewFeature" for preview features.
 	Kind any
 	// Name of the feature.
-	Name any
+	Name           any
 	PreviewFeature any
-	Project any
+	Project        any
 	// Represents the rollout operation
 	RolloutOperation any
 	// Output only. [Output Only] Server-defined URL for the resource.
@@ -72,6 +72,6 @@ var PreviewFeature = ubx.DataSourceBinding{
 	WireType: "google_compute_preview_feature",
 	Fields: ubx.FieldMap{
 		"PreviewFeature": ubx.FieldSpec{WireName: "preview_feature"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":        ubx.FieldSpec{WireName: "project"},
 	},
 }

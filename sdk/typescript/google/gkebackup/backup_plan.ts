@@ -227,46 +227,20 @@ const BackupPlan_RetentionPolicyFields: FieldMap = {
 };
 
 export interface BackupPlanConfig {
-  /** Output only. The fully qualified name of the BackupChannel to be used to create a backup. This field is set only if the cluster being backed up is in a different project. `projects/* /locations/* /backupChannels/*` */
-  backupChannel?: string | Computed<string>;
   /** BackupConfig defines the configuration of Backups created via this BackupPlan. */
   backupConfig?: BackupPlan_BackupConfig | Computed<BackupPlan_BackupConfig>;
   /** Defines scheduling parameters for automatically creating Backups via this BackupPlan. */
   backupSchedule?: BackupPlan_BackupSchedule | Computed<BackupPlan_BackupSchedule>;
   /** Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Valid formats: - `projects/* /locations/* /clusters/*` - `projects/* /zones/* /clusters/*` */
   cluster?: string | Computed<string>;
-  /** Output only. The timestamp when this BackupPlan resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False */
   deactivated?: boolean | Computed<boolean>;
   /** Optional. User specified descriptive string for this BackupPlan. */
   description?: string | Computed<string>;
-  /** Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` or `DeleteBackupPlan` to ensure that their change will be applied to the same version of the resource. */
-  etag?: string | Computed<string>;
   /** Optional. A set of custom labels supplied by user. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Completion time of the last successful Backup. This is sourced from a successful Backup's complete_time field. This field is added to maintain consistency with BackupPlanBinding to display last successful backup time. */
-  lastSuccessfulBackupTime?: string | Computed<string>;
-  /** Output only. Identifier. The full name of the BackupPlan resource. Format: `projects/* /locations/* /backupPlans/*` */
-  name?: string | Computed<string>;
-  /** Output only. The number of user managed namespaces backed up in the last successful Backup created via this BackupPlan. */
-  protectedNamespaceCount?: number | Computed<number>;
-  /** Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan. */
-  protectedPodCount?: number | Computed<number>;
   /** RetentionPolicy defines a Backup retention policy for a BackupPlan. */
   retentionPolicy?: BackupPlan_RetentionPolicy | Computed<BackupPlan_RetentionPolicy>;
-  /** Output only. A number that represents the current risk level of this BackupPlan from RPO perspective with 1 being no risk and 5 being highest risk. */
-  rpoRiskLevel?: number | Computed<number>;
-  /** Output only. Human-readable description of why the BackupPlan is in the current rpo_risk_level and action items if any. */
-  rpoRiskReason?: string | Computed<string>;
-  /** Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update */
-  state?: string | Computed<string>;
-  /** Output only. Human-readable description of why BackupPlan is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent. */
-  stateReason?: string | Computed<string>;
-  /** Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when this BackupPlan resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BackupPlanAttrs {
@@ -315,7 +289,6 @@ export interface BackupPlanAttrs {
 export const BackupPlan: ResourceBinding<BackupPlanConfig, BackupPlanAttrs> = {
   wireType: "google_gkebackup_backup_plan",
   fields: {
-    backupChannel: "backup_channel",
     backupConfig: {
       wireName: "backup_config",
       kind: "object",
@@ -327,25 +300,13 @@ export const BackupPlan: ResourceBinding<BackupPlanConfig, BackupPlanAttrs> = {
       fields: BackupPlan_BackupScheduleFields,
     },
     cluster: "cluster",
-    createTime: "create_time",
     deactivated: "deactivated",
     description: "description",
-    etag: "etag",
     labels: "labels",
-    lastSuccessfulBackupTime: "last_successful_backup_time",
-    name: "name",
-    protectedNamespaceCount: "protected_namespace_count",
-    protectedPodCount: "protected_pod_count",
     retentionPolicy: {
       wireName: "retention_policy",
       kind: "object",
       fields: BackupPlan_RetentionPolicyFields,
     },
-    rpoRiskLevel: "rpo_risk_level",
-    rpoRiskReason: "rpo_risk_reason",
-    state: "state",
-    stateReason: "state_reason",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

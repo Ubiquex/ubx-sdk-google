@@ -40,25 +40,14 @@ _AlphaAcceleratorPodController_ManagementInterfacesFields = {
 
 @dataclasses.dataclass
 class AlphaAcceleratorPodControllerConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource.
     description: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    kind: Any = None
     # Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long.
     management_interfaces: Any = None
     # Required. The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource with the resource ID.
-    self_link_with_id: Any = None
     # Required. The target accelerator domain this controller manages. This must be a resolvable identifier for the specific NVLink Domain or TPU system (e.g., a Reservation Sub-block URI). Example: "projects/my-project/reservations/my-reservation/subBlocks/subblock-1".
     target: Any = None
-    # Output only. [Output Only] URL of the zone where the accelerator pod controller resides.
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaAcceleratorPodControllerAttrs:
@@ -85,19 +74,13 @@ class AlphaAcceleratorPodControllerAttrs:
 AlphaAcceleratorPodController = ubx.ResourceBinding(
     wire_type="google_compute_alpha_accelerator_pod_controller",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "management_interfaces": ubx.FieldSpec(
             wire_name="management_interfaces",
             kind="map",
             fields=_AlphaAcceleratorPodController_ManagementInterfacesFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "target": ubx.FieldSpec(wire_name="target"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

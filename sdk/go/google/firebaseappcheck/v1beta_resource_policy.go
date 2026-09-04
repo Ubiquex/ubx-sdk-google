@@ -12,8 +12,6 @@ type V1betaResourcePolicyConfig struct {
 	Name any
 	// Required. Service specific name of the resource object to which this policy applies, in the format: * **iOS OAuth clients** (Google Identity for iOS): `//oauth2.googleapis.com/projects/{project_number}/oauthClients/{oauth_client_id}` Note that the resource must belong to the service specified in the `name` and be from the same project as this policy, but the resource is allowed to be missing at the time of creation of this policy; in that case, we make a best-effort attempt at respecting this policy, but it may not have any effect until the resource is fully created.
 	TargetResource any
-	// Output only. Timestamp when this resource policy configuration object was most recently updated.
-	UpdateTime any
 }
 
 type V1betaResourcePolicyAttrs struct {
@@ -33,9 +31,8 @@ var V1betaResourcePolicy = ubx.ResourceBinding{
 	WireType: "google_firebaseappcheck_v1beta_resource_policy",
 	Fields: ubx.FieldMap{
 		"EnforcementMode": ubx.FieldSpec{WireName: "enforcement_mode"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetResource": ubx.FieldSpec{WireName: "target_resource"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":            ubx.FieldSpec{WireName: "etag"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"TargetResource":  ubx.FieldSpec{WireName: "target_resource"},
 	},
 }

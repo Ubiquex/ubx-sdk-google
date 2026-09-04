@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1TlsInspectionPolicyConfig {
   /** Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}". */
   caPool?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field. */
   customTlsFeatures?: string[] | Computed<string[]>;
   /** Optional. Free-text description of the resource. */
@@ -20,8 +18,6 @@ export interface V1beta1TlsInspectionPolicyConfig {
   tlsFeatureProfile?: string | Computed<string>;
   /** Optional. A TrustConfig resource used when making a connection to the TLS server. This is a relative resource path following the form "projects/{project}/locations/{location}/trustConfigs/{trust_config}". This is necessary to intercept TLS connections to servers with certificates signed by a private CA or self-signed certificates. Note that Secure Web Proxy does not yet honor this field. */
   trustConfig?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1TlsInspectionPolicyAttrs {
@@ -51,7 +47,6 @@ export const V1beta1TlsInspectionPolicy: ResourceBinding<V1beta1TlsInspectionPol
   wireType: "google_networksecurity_v1beta1_tls_inspection_policy",
   fields: {
     caPool: "ca_pool",
-    createTime: "create_time",
     customTlsFeatures: "custom_tls_features",
     description: "description",
     excludePublicCaSet: "exclude_public_ca_set",
@@ -59,6 +54,5 @@ export const V1beta1TlsInspectionPolicy: ResourceBinding<V1beta1TlsInspectionPol
     name: "name",
     tlsFeatureProfile: "tls_feature_profile",
     trustConfig: "trust_config",
-    updateTime: "update_time",
   },
 };

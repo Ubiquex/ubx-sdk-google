@@ -269,287 +269,281 @@ type TransferJob_TransferSpec struct {
 }
 
 var TransferJob_EventStreamFields = ubx.FieldMap{
-		"EventStreamExpirationTime": ubx.FieldSpec{WireName: "event_stream_expiration_time"},
-		"EventStreamStartTime": ubx.FieldSpec{WireName: "event_stream_start_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"EventStreamExpirationTime": ubx.FieldSpec{WireName: "event_stream_expiration_time"},
+	"EventStreamStartTime":      ubx.FieldSpec{WireName: "event_stream_start_time"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+}
 
 var TransferJob_LoggingConfigFields = ubx.FieldMap{
-		"EnableOnpremGcsTransferLogs": ubx.FieldSpec{WireName: "enable_onprem_gcs_transfer_logs"},
-		"LogActionStates": ubx.FieldSpec{WireName: "log_action_states"},
-		"LogActions": ubx.FieldSpec{WireName: "log_actions"},
-	}
+	"EnableOnpremGcsTransferLogs": ubx.FieldSpec{WireName: "enable_onprem_gcs_transfer_logs"},
+	"LogActionStates":             ubx.FieldSpec{WireName: "log_action_states"},
+	"LogActions":                  ubx.FieldSpec{WireName: "log_actions"},
+}
 
 var TransferJob_NotificationConfigFields = ubx.FieldMap{
-		"EventTypes": ubx.FieldSpec{WireName: "event_types"},
-		"PayloadFormat": ubx.FieldSpec{WireName: "payload_format"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"EventTypes":    ubx.FieldSpec{WireName: "event_types"},
+	"PayloadFormat": ubx.FieldSpec{WireName: "payload_format"},
+	"PubsubTopic":   ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var TransferJob_ReplicationSpec_GcsDataSinkFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ManagedFolderTransferEnabled": ubx.FieldSpec{WireName: "managed_folder_transfer_enabled"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"BucketName":                   ubx.FieldSpec{WireName: "bucket_name"},
+	"ManagedFolderTransferEnabled": ubx.FieldSpec{WireName: "managed_folder_transfer_enabled"},
+	"Path":                         ubx.FieldSpec{WireName: "path"},
+}
 
 var TransferJob_ReplicationSpec_ObjectConditionsFields = ubx.FieldMap{
-		"ExcludePrefixes": ubx.FieldSpec{WireName: "exclude_prefixes"},
-		"IncludePrefixes": ubx.FieldSpec{WireName: "include_prefixes"},
-		"IncludeStorageClasses": ubx.FieldSpec{WireName: "include_storage_classes"},
-		"LastModifiedBefore": ubx.FieldSpec{WireName: "last_modified_before"},
-		"LastModifiedSince": ubx.FieldSpec{WireName: "last_modified_since"},
-		"MatchGlob": ubx.FieldSpec{WireName: "match_glob"},
-		"MaxTimeElapsedSinceLastModification": ubx.FieldSpec{WireName: "max_time_elapsed_since_last_modification"},
-		"MinTimeElapsedSinceLastModification": ubx.FieldSpec{WireName: "min_time_elapsed_since_last_modification"},
-	}
+	"ExcludePrefixes":                     ubx.FieldSpec{WireName: "exclude_prefixes"},
+	"IncludePrefixes":                     ubx.FieldSpec{WireName: "include_prefixes"},
+	"IncludeStorageClasses":               ubx.FieldSpec{WireName: "include_storage_classes"},
+	"LastModifiedBefore":                  ubx.FieldSpec{WireName: "last_modified_before"},
+	"LastModifiedSince":                   ubx.FieldSpec{WireName: "last_modified_since"},
+	"MatchGlob":                           ubx.FieldSpec{WireName: "match_glob"},
+	"MaxTimeElapsedSinceLastModification": ubx.FieldSpec{WireName: "max_time_elapsed_since_last_modification"},
+	"MinTimeElapsedSinceLastModification": ubx.FieldSpec{WireName: "min_time_elapsed_since_last_modification"},
+}
 
 var TransferJob_ReplicationSpec_TransferOptions_MetadataOptionsFields = ubx.FieldMap{
-		"Acl": ubx.FieldSpec{WireName: "acl"},
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"Symlink": ubx.FieldSpec{WireName: "symlink"},
-		"TemporaryHold": ubx.FieldSpec{WireName: "temporary_hold"},
-		"TimeCreated": ubx.FieldSpec{WireName: "time_created"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Acl":           ubx.FieldSpec{WireName: "acl"},
+	"Gid":           ubx.FieldSpec{WireName: "gid"},
+	"KmsKey":        ubx.FieldSpec{WireName: "kms_key"},
+	"Mode":          ubx.FieldSpec{WireName: "mode"},
+	"StorageClass":  ubx.FieldSpec{WireName: "storage_class"},
+	"Symlink":       ubx.FieldSpec{WireName: "symlink"},
+	"TemporaryHold": ubx.FieldSpec{WireName: "temporary_hold"},
+	"TimeCreated":   ubx.FieldSpec{WireName: "time_created"},
+	"Uid":           ubx.FieldSpec{WireName: "uid"},
+}
 
 var TransferJob_ReplicationSpec_TransferOptionsFields = ubx.FieldMap{
-		"DeleteObjectsFromSourceAfterTransfer": ubx.FieldSpec{WireName: "delete_objects_from_source_after_transfer"},
-		"DeleteObjectsUniqueInSink": ubx.FieldSpec{WireName: "delete_objects_unique_in_sink"},
-		"MetadataOptions": ubx.FieldSpec{
-			WireName: "metadata_options",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_TransferOptions_MetadataOptionsFields,
-		},
-		"OverwriteObjectsAlreadyExistingInSink": ubx.FieldSpec{WireName: "overwrite_objects_already_existing_in_sink"},
-		"OverwriteWhen": ubx.FieldSpec{WireName: "overwrite_when"},
-	}
+	"DeleteObjectsFromSourceAfterTransfer": ubx.FieldSpec{WireName: "delete_objects_from_source_after_transfer"},
+	"DeleteObjectsUniqueInSink":            ubx.FieldSpec{WireName: "delete_objects_unique_in_sink"},
+	"MetadataOptions": ubx.FieldSpec{
+		WireName: "metadata_options",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_TransferOptions_MetadataOptionsFields,
+	},
+	"OverwriteObjectsAlreadyExistingInSink": ubx.FieldSpec{WireName: "overwrite_objects_already_existing_in_sink"},
+	"OverwriteWhen":                         ubx.FieldSpec{WireName: "overwrite_when"},
+}
 
 var TransferJob_ReplicationSpecFields = ubx.FieldMap{
-		"GcsDataSink": ubx.FieldSpec{
-			WireName: "gcs_data_sink",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_GcsDataSinkFields,
-		},
-		"GcsDataSource": ubx.FieldSpec{
-			WireName: "gcs_data_source",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_GcsDataSinkFields,
-		},
-		"ObjectConditions": ubx.FieldSpec{
-			WireName: "object_conditions",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_ObjectConditionsFields,
-		},
-		"TransferOptions": ubx.FieldSpec{
-			WireName: "transfer_options",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_TransferOptionsFields,
-		},
-	}
+	"GcsDataSink": ubx.FieldSpec{
+		WireName: "gcs_data_sink",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_GcsDataSinkFields,
+	},
+	"GcsDataSource": ubx.FieldSpec{
+		WireName: "gcs_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_GcsDataSinkFields,
+	},
+	"ObjectConditions": ubx.FieldSpec{
+		WireName: "object_conditions",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_ObjectConditionsFields,
+	},
+	"TransferOptions": ubx.FieldSpec{
+		WireName: "transfer_options",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_TransferOptionsFields,
+	},
+}
 
 var TransferJob_Schedule_EndTimeOfDayFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var TransferJob_Schedule_ScheduleEndDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var TransferJob_ScheduleFields = ubx.FieldMap{
-		"EndTimeOfDay": ubx.FieldSpec{
-			WireName: "end_time_of_day",
-			Kind: "object",
-			Fields: TransferJob_Schedule_EndTimeOfDayFields,
-		},
-		"RepeatInterval": ubx.FieldSpec{WireName: "repeat_interval"},
-		"ScheduleEndDate": ubx.FieldSpec{
-			WireName: "schedule_end_date",
-			Kind: "object",
-			Fields: TransferJob_Schedule_ScheduleEndDateFields,
-		},
-		"ScheduleStartDate": ubx.FieldSpec{
-			WireName: "schedule_start_date",
-			Kind: "object",
-			Fields: TransferJob_Schedule_ScheduleEndDateFields,
-		},
-		"StartTimeOfDay": ubx.FieldSpec{
-			WireName: "start_time_of_day",
-			Kind: "object",
-			Fields: TransferJob_Schedule_EndTimeOfDayFields,
-		},
-	}
+	"EndTimeOfDay": ubx.FieldSpec{
+		WireName: "end_time_of_day",
+		Kind:     "object",
+		Fields:   TransferJob_Schedule_EndTimeOfDayFields,
+	},
+	"RepeatInterval": ubx.FieldSpec{WireName: "repeat_interval"},
+	"ScheduleEndDate": ubx.FieldSpec{
+		WireName: "schedule_end_date",
+		Kind:     "object",
+		Fields:   TransferJob_Schedule_ScheduleEndDateFields,
+	},
+	"ScheduleStartDate": ubx.FieldSpec{
+		WireName: "schedule_start_date",
+		Kind:     "object",
+		Fields:   TransferJob_Schedule_ScheduleEndDateFields,
+	},
+	"StartTimeOfDay": ubx.FieldSpec{
+		WireName: "start_time_of_day",
+		Kind:     "object",
+		Fields:   TransferJob_Schedule_EndTimeOfDayFields,
+	},
+}
 
 var TransferJob_TransferSpec_AwsS3CompatibleDataSource_S3MetadataFields = ubx.FieldMap{
-		"AuthMethod": ubx.FieldSpec{WireName: "auth_method"},
-		"ListApi": ubx.FieldSpec{WireName: "list_api"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RequestModel": ubx.FieldSpec{WireName: "request_model"},
-	}
+	"AuthMethod":   ubx.FieldSpec{WireName: "auth_method"},
+	"ListApi":      ubx.FieldSpec{WireName: "list_api"},
+	"Protocol":     ubx.FieldSpec{WireName: "protocol"},
+	"RequestModel": ubx.FieldSpec{WireName: "request_model"},
+}
 
 var TransferJob_TransferSpec_AwsS3CompatibleDataSourceFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"S3Metadata": ubx.FieldSpec{
-			WireName: "s3_metadata",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AwsS3CompatibleDataSource_S3MetadataFields,
-		},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"Endpoint":   ubx.FieldSpec{WireName: "endpoint"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Region":     ubx.FieldSpec{WireName: "region"},
+	"S3Metadata": ubx.FieldSpec{
+		WireName: "s3_metadata",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AwsS3CompatibleDataSource_S3MetadataFields,
+	},
+}
 
 var TransferJob_TransferSpec_AwsS3DataSource_AwsAccessKeyFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
-	}
+	"AccessKeyId":     ubx.FieldSpec{WireName: "access_key_id"},
+	"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
+}
 
 var TransferJob_TransferSpec_AwsS3DataSourceFields = ubx.FieldMap{
-		"AwsAccessKey": ubx.FieldSpec{
-			WireName: "aws_access_key",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AwsS3DataSource_AwsAccessKeyFields,
-		},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"CloudfrontDomain": ubx.FieldSpec{WireName: "cloudfront_domain"},
-		"CredentialsSecret": ubx.FieldSpec{WireName: "credentials_secret"},
-		"ManagedPrivateNetwork": ubx.FieldSpec{WireName: "managed_private_network"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PrivateNetworkService": ubx.FieldSpec{WireName: "private_network_service"},
-		"RoleArn": ubx.FieldSpec{WireName: "role_arn"},
-	}
+	"AwsAccessKey": ubx.FieldSpec{
+		WireName: "aws_access_key",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AwsS3DataSource_AwsAccessKeyFields,
+	},
+	"BucketName":            ubx.FieldSpec{WireName: "bucket_name"},
+	"CloudfrontDomain":      ubx.FieldSpec{WireName: "cloudfront_domain"},
+	"CredentialsSecret":     ubx.FieldSpec{WireName: "credentials_secret"},
+	"ManagedPrivateNetwork": ubx.FieldSpec{WireName: "managed_private_network"},
+	"Path":                  ubx.FieldSpec{WireName: "path"},
+	"PrivateNetworkService": ubx.FieldSpec{WireName: "private_network_service"},
+	"RoleArn":               ubx.FieldSpec{WireName: "role_arn"},
+}
 
 var TransferJob_TransferSpec_AzureBlobStorageDataSource_AzureCredentialsFields = ubx.FieldMap{
-		"SasToken": ubx.FieldSpec{WireName: "sas_token"},
-	}
+	"SasToken": ubx.FieldSpec{WireName: "sas_token"},
+}
 
 var TransferJob_TransferSpec_AzureBlobStorageDataSource_FederatedIdentityConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var TransferJob_TransferSpec_AzureBlobStorageDataSourceFields = ubx.FieldMap{
-		"AzureCredentials": ubx.FieldSpec{
-			WireName: "azure_credentials",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AzureBlobStorageDataSource_AzureCredentialsFields,
-		},
-		"Container": ubx.FieldSpec{WireName: "container"},
-		"CredentialsSecret": ubx.FieldSpec{WireName: "credentials_secret"},
-		"FederatedIdentityConfig": ubx.FieldSpec{
-			WireName: "federated_identity_config",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AzureBlobStorageDataSource_FederatedIdentityConfigFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PrivateNetworkService": ubx.FieldSpec{WireName: "private_network_service"},
-		"StorageAccount": ubx.FieldSpec{WireName: "storage_account"},
-	}
+	"AzureCredentials": ubx.FieldSpec{
+		WireName: "azure_credentials",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AzureBlobStorageDataSource_AzureCredentialsFields,
+	},
+	"Container":         ubx.FieldSpec{WireName: "container"},
+	"CredentialsSecret": ubx.FieldSpec{WireName: "credentials_secret"},
+	"FederatedIdentityConfig": ubx.FieldSpec{
+		WireName: "federated_identity_config",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AzureBlobStorageDataSource_FederatedIdentityConfigFields,
+	},
+	"Path":                  ubx.FieldSpec{WireName: "path"},
+	"PrivateNetworkService": ubx.FieldSpec{WireName: "private_network_service"},
+	"StorageAccount":        ubx.FieldSpec{WireName: "storage_account"},
+}
 
 var TransferJob_TransferSpec_HdfsDataSourceFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var TransferJob_TransferSpec_HttpDataSourceFields = ubx.FieldMap{
-		"ListUrl": ubx.FieldSpec{WireName: "list_url"},
-	}
+	"ListUrl": ubx.FieldSpec{WireName: "list_url"},
+}
 
 var TransferJob_TransferSpec_PosixDataSinkFields = ubx.FieldMap{
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-	}
+	"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+}
 
 var TransferJob_TransferSpec_TransferManifestFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var TransferJob_TransferSpecFields = ubx.FieldMap{
-		"AwsS3CompatibleDataSource": ubx.FieldSpec{
-			WireName: "aws_s3_compatible_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AwsS3CompatibleDataSourceFields,
-		},
-		"AwsS3DataSource": ubx.FieldSpec{
-			WireName: "aws_s3_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AwsS3DataSourceFields,
-		},
-		"AzureBlobStorageDataSource": ubx.FieldSpec{
-			WireName: "azure_blob_storage_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_AzureBlobStorageDataSourceFields,
-		},
-		"GcsDataSink": ubx.FieldSpec{
-			WireName: "gcs_data_sink",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_GcsDataSinkFields,
-		},
-		"GcsDataSource": ubx.FieldSpec{
-			WireName: "gcs_data_source",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_GcsDataSinkFields,
-		},
-		"GcsIntermediateDataLocation": ubx.FieldSpec{
-			WireName: "gcs_intermediate_data_location",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_GcsDataSinkFields,
-		},
-		"HdfsDataSource": ubx.FieldSpec{
-			WireName: "hdfs_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_HdfsDataSourceFields,
-		},
-		"HttpDataSource": ubx.FieldSpec{
-			WireName: "http_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_HttpDataSourceFields,
-		},
-		"ObjectConditions": ubx.FieldSpec{
-			WireName: "object_conditions",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_ObjectConditionsFields,
-		},
-		"PosixDataSink": ubx.FieldSpec{
-			WireName: "posix_data_sink",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_PosixDataSinkFields,
-		},
-		"PosixDataSource": ubx.FieldSpec{
-			WireName: "posix_data_source",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_PosixDataSinkFields,
-		},
-		"SinkAgentPoolName": ubx.FieldSpec{WireName: "sink_agent_pool_name"},
-		"SourceAgentPoolName": ubx.FieldSpec{WireName: "source_agent_pool_name"},
-		"TransferManifest": ubx.FieldSpec{
-			WireName: "transfer_manifest",
-			Kind: "object",
-			Fields: TransferJob_TransferSpec_TransferManifestFields,
-		},
-		"TransferOptions": ubx.FieldSpec{
-			WireName: "transfer_options",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpec_TransferOptionsFields,
-		},
-	}
+	"AwsS3CompatibleDataSource": ubx.FieldSpec{
+		WireName: "aws_s3_compatible_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AwsS3CompatibleDataSourceFields,
+	},
+	"AwsS3DataSource": ubx.FieldSpec{
+		WireName: "aws_s3_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AwsS3DataSourceFields,
+	},
+	"AzureBlobStorageDataSource": ubx.FieldSpec{
+		WireName: "azure_blob_storage_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_AzureBlobStorageDataSourceFields,
+	},
+	"GcsDataSink": ubx.FieldSpec{
+		WireName: "gcs_data_sink",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_GcsDataSinkFields,
+	},
+	"GcsDataSource": ubx.FieldSpec{
+		WireName: "gcs_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_GcsDataSinkFields,
+	},
+	"GcsIntermediateDataLocation": ubx.FieldSpec{
+		WireName: "gcs_intermediate_data_location",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_GcsDataSinkFields,
+	},
+	"HdfsDataSource": ubx.FieldSpec{
+		WireName: "hdfs_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_HdfsDataSourceFields,
+	},
+	"HttpDataSource": ubx.FieldSpec{
+		WireName: "http_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_HttpDataSourceFields,
+	},
+	"ObjectConditions": ubx.FieldSpec{
+		WireName: "object_conditions",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_ObjectConditionsFields,
+	},
+	"PosixDataSink": ubx.FieldSpec{
+		WireName: "posix_data_sink",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_PosixDataSinkFields,
+	},
+	"PosixDataSource": ubx.FieldSpec{
+		WireName: "posix_data_source",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_PosixDataSinkFields,
+	},
+	"SinkAgentPoolName":   ubx.FieldSpec{WireName: "sink_agent_pool_name"},
+	"SourceAgentPoolName": ubx.FieldSpec{WireName: "source_agent_pool_name"},
+	"TransferManifest": ubx.FieldSpec{
+		WireName: "transfer_manifest",
+		Kind:     "object",
+		Fields:   TransferJob_TransferSpec_TransferManifestFields,
+	},
+	"TransferOptions": ubx.FieldSpec{
+		WireName: "transfer_options",
+		Kind:     "object",
+		Fields:   TransferJob_ReplicationSpec_TransferOptionsFields,
+	},
+}
 
 type TransferJobConfig struct {
-	// Output only. The time that the transfer job was created.
-	CreationTime any
-	// Output only. The time that the transfer job was deleted.
-	DeletionTime any
 	// A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded.
 	Description any
 	// Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files.
 	EventStream any
-	// Output only. The time that the transfer job was last modified.
-	LastModificationTime any
 	// The name of the most recently started TransferOperation of this JobConfig. Present if a TransferOperation has been created for this JobConfig.
 	LatestOperationName any
 	// Specifies the logging behavior for transfer operations. Logs can be sent to Cloud Logging for all transfer types. See [Read transfer logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for details.
@@ -608,44 +602,41 @@ type TransferJobAttrs struct {
 var TransferJob = ubx.ResourceBinding{
 	WireType: "google_storagetransfer_transfer_job",
 	Fields: ubx.FieldMap{
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"DeletionTime": ubx.FieldSpec{WireName: "deletion_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EventStream": ubx.FieldSpec{
 			WireName: "event_stream",
-			Kind: "object",
-			Fields: TransferJob_EventStreamFields,
+			Kind:     "object",
+			Fields:   TransferJob_EventStreamFields,
 		},
-		"LastModificationTime": ubx.FieldSpec{WireName: "last_modification_time"},
 		"LatestOperationName": ubx.FieldSpec{WireName: "latest_operation_name"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: TransferJob_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   TransferJob_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NotificationConfig": ubx.FieldSpec{
 			WireName: "notification_config",
-			Kind: "object",
-			Fields: TransferJob_NotificationConfigFields,
+			Kind:     "object",
+			Fields:   TransferJob_NotificationConfigFields,
 		},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 		"ReplicationSpec": ubx.FieldSpec{
 			WireName: "replication_spec",
-			Kind: "object",
-			Fields: TransferJob_ReplicationSpecFields,
+			Kind:     "object",
+			Fields:   TransferJob_ReplicationSpecFields,
 		},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: TransferJob_ScheduleFields,
+			Kind:     "object",
+			Fields:   TransferJob_ScheduleFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":         ubx.FieldSpec{WireName: "status"},
 		"TransferSpec": ubx.FieldSpec{
 			WireName: "transfer_spec",
-			Kind: "object",
-			Fields: TransferJob_TransferSpecFields,
+			Kind:     "object",
+			Fields:   TransferJob_TransferSpecFields,
 		},
 	},
 }

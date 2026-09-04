@@ -4,40 +4,34 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MuteConfigConfig struct {
-	CreateTime any
 	Description any
 	DisplayName any
-	ExpiryTime any
-	Filter any
-	MostRecentEditor any
-	Name any
-	Type any
-	UpdateTime any
+	ExpiryTime  any
+	Filter      any
+	Name        any
+	Type        any
 }
 
 type MuteConfigAttrs struct {
-	CreateTime any
-	Description any
-	DisplayName any
-	ExpiryTime any
-	Filter any
+	CreateTime       any
+	Description      any
+	DisplayName      any
+	ExpiryTime       any
+	Filter           any
 	MostRecentEditor any
-	Name any
-	Type any
-	UpdateTime any
+	Name             any
+	Type             any
+	UpdateTime       any
 }
 
 var MuteConfig = ubx.ResourceBinding{
 	WireType: "google_securitycenter_mute_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpiryTime": ubx.FieldSpec{WireName: "expiry_time"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MostRecentEditor": ubx.FieldSpec{WireName: "most_recent_editor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"ExpiryTime":  ubx.FieldSpec{WireName: "expiry_time"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MulticloudDataTransferSupportedService_ServiceConfigs struct {
 	EligibilityCriteria any
-	SupportEndTime any
+	SupportEndTime      any
 }
 
 type MulticloudDataTransferSupportedServiceConfig struct {

@@ -20,7 +20,7 @@ type ReservationAttrs struct {
 var Reservation = ubx.ResourceBinding{
 	WireType: "google_pubsublite_reservation",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"ThroughputCapacity": ubx.FieldSpec{WireName: "throughput_capacity"},
 	},
 }

@@ -196,10 +196,6 @@ _V1alpha1ImportJob_InlinePayloadFields = {
 class V1alpha1ImportJobConfig:
     # Required. Reference to a source.
     asset_source: Any = None
-    # Output only. The timestamp when the import job was completed.
-    complete_time: Any = None
-    # Output only. The timestamp when the import job was created.
-    create_time: Any = None
     # User-friendly display name. Maximum length is 63 characters.
     display_name: Any = None
     # A resource that reports result of the import job execution.
@@ -210,12 +206,6 @@ class V1alpha1ImportJobConfig:
     inline_payload: Any = None
     # Labels as key value pairs.
     labels: Any = None
-    # Output only. The full name of the import job.
-    name: Any = None
-    # Output only. The state of the import job.
-    state: Any = None
-    # Output only. The timestamp when the import job was last updated.
-    update_time: Any = None
     # A resource that aggregates errors across import job files.
     validation_report: Any = None
 
@@ -250,8 +240,6 @@ V1alpha1ImportJob = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_import_job",
     fields={
         "asset_source": ubx.FieldSpec(wire_name="asset_source"),
-        "complete_time": ubx.FieldSpec(wire_name="complete_time"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "execution_report": ubx.FieldSpec(
             wire_name="execution_report",
@@ -269,9 +257,6 @@ V1alpha1ImportJob = ubx.ResourceBinding(
             fields=_V1alpha1ImportJob_InlinePayloadFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "validation_report": ubx.FieldSpec(
             wire_name="validation_report",
             kind="object",

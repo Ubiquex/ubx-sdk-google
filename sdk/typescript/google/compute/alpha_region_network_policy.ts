@@ -43,87 +43,13 @@ export interface AlphaRegionNetworkPolicy_TrafficClassificationRules {
   targetServiceAccounts?: string[] | Computed<string[]>;
 }
 
-const AlphaRegionNetworkPolicy_AssociationsFields: FieldMap = {
-  attachmentTarget: "attachment_target",
-  name: "name",
-};
-
-const AlphaRegionNetworkPolicy_TrafficClassificationRules_ActionFields: FieldMap = {
-  dscpMode: "dscp_mode",
-  dscpValue: "dscp_value",
-  trafficClass: "traffic_class",
-  type: "type",
-};
-
-const AlphaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4ConfigsFields: FieldMap = {
-  ipProtocol: "ip_protocol",
-  ports: "ports",
-};
-
-const AlphaRegionNetworkPolicy_TrafficClassificationRules_MatchFields: FieldMap = {
-  destAddressGroups: "dest_address_groups",
-  destIpRanges: "dest_ip_ranges",
-  layer4Configs: {
-    wireName: "layer4_configs",
-    kind: "list",
-    fields: AlphaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4ConfigsFields,
-  },
-  srcIpRanges: "src_ip_ranges",
-};
-
-const AlphaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTagsFields: FieldMap = {
-  name: "name",
-  state: "state",
-};
-
-const AlphaRegionNetworkPolicy_TrafficClassificationRulesFields: FieldMap = {
-  action: {
-    wireName: "action",
-    kind: "object",
-    fields: AlphaRegionNetworkPolicy_TrafficClassificationRules_ActionFields,
-  },
-  description: "description",
-  disabled: "disabled",
-  kind: "kind",
-  match: {
-    wireName: "match",
-    kind: "object",
-    fields: AlphaRegionNetworkPolicy_TrafficClassificationRules_MatchFields,
-  },
-  priority: "priority",
-  ruleName: "rule_name",
-  ruleTupleCount: "rule_tuple_count",
-  targetSecureTags: {
-    wireName: "target_secure_tags",
-    kind: "list",
-    fields: AlphaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTagsFields,
-  },
-  targetServiceAccounts: "target_service_accounts",
-};
-
 export interface AlphaRegionNetworkPolicyConfig {
-  /** Output only. [Output Only] A list of associations that belong to this network policy. */
-  associations?: AlphaRegionNetworkPolicy_Associations[] | Computed<AlphaRegionNetworkPolicy_Associations[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output only] Type of the resource. Alwayscompute#networkPolicy for network policies */
-  kind?: string | Computed<string>;
   /** Name of the resource. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional network policy resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Total count of all network policy rule tuples. A network policy can not exceed a set number of tuples. */
-  ruleTupleCount?: number | Computed<number>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. [Output Only] A list of traffic classification rules that belong to this policy. */
-  trafficClassificationRules?: AlphaRegionNetworkPolicy_TrafficClassificationRules[] | Computed<AlphaRegionNetworkPolicy_TrafficClassificationRules[]>;
 }
 
 export interface AlphaRegionNetworkPolicyAttrs {
@@ -154,24 +80,8 @@ export interface AlphaRegionNetworkPolicyAttrs {
 export const AlphaRegionNetworkPolicy: ResourceBinding<AlphaRegionNetworkPolicyConfig, AlphaRegionNetworkPolicyAttrs> = {
   wireType: "google_compute_alpha_region_network_policy",
   fields: {
-    associations: {
-      wireName: "associations",
-      kind: "list",
-      fields: AlphaRegionNetworkPolicy_AssociationsFields,
-    },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
-    ruleTupleCount: "rule_tuple_count",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    trafficClassificationRules: {
-      wireName: "traffic_classification_rules",
-      kind: "list",
-      fields: AlphaRegionNetworkPolicy_TrafficClassificationRulesFields,
-    },
   },
 };

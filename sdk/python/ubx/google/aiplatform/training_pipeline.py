@@ -981,14 +981,10 @@ _TrainingPipeline_ModelToUploadFields = {
 
 @dataclasses.dataclass
 class TrainingPipelineConfig:
-    # Output only. Time when the TrainingPipeline was created.
-    create_time: Any = None
     # Required. The user-defined name of this TrainingPipeline.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the TrainingPipeline entered any of the following states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`, `PIPELINE_STATE_CANCELLED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # Specifies Vertex AI owned input data to be used for training, and possibly evaluating, the Model.
@@ -999,22 +995,12 @@ class TrainingPipelineConfig:
     model_id: Any = None
     # A trained machine learning Model.
     model_to_upload: Any = None
-    # Output only. Resource name of the TrainingPipeline.
-    name: Any = None
     # Optional. When specify this field, the `model_to_upload` will not be uploaded as a new model, instead, it will become a new version of this `parent_model`.
     parent_model: Any = None
-    # Output only. Time when the TrainingPipeline for the first time entered the `PIPELINE_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the pipeline.
-    state: Any = None
     # Required. A Google Cloud Storage path to the YAML file that defines the training task which is responsible for producing the model artifact, and may also include additional auxiliary work. The definition files that can be used here are found in gs://google-cloud-aiplatform/schema/trainingjob/definition/. Note: The URI given on output will be immutable and probably different, including the URI scheme, than the one given on input. The output URI will point to a location where the user only has a read access.
     training_task_definition: Any = None
     # Required. The training task's parameter(s), as specified in the training_task_definition's `inputs`.
     training_task_inputs: Any = None
-    # Output only. The metadata information as specified in the training_task_definition's `metadata`. This metadata is an auxiliary runtime and final information about the training task. While the pipeline is running this information is populated only at a best effort basis. Only present if the pipeline's training_task_definition contains `metadata` object.
-    training_task_metadata: Any = None
-    # Output only. Time when the TrainingPipeline was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TrainingPipelineAttrs:
@@ -1056,14 +1042,12 @@ class TrainingPipelineAttrs:
 TrainingPipeline = ubx.ResourceBinding(
     wire_type="google_aiplatform_training_pipeline",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
             kind="object",
             fields=_TrainingPipeline_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -1081,13 +1065,8 @@ TrainingPipeline = ubx.ResourceBinding(
             kind="object",
             fields=_TrainingPipeline_ModelToUploadFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parent_model": ubx.FieldSpec(wire_name="parent_model"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "training_task_definition": ubx.FieldSpec(wire_name="training_task_definition"),
         "training_task_inputs": ubx.FieldSpec(wire_name="training_task_inputs"),
-        "training_task_metadata": ubx.FieldSpec(wire_name="training_task_metadata"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

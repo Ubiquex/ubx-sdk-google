@@ -339,20 +339,14 @@ const GoldengateDeployment_PropertiesFields: FieldMap = {
 };
 
 export interface GoldengateDeploymentConfig {
-  /** Output only. The date and time that the GoldengateDeployment was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name for the GoldengateDeployment. */
   displayName?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the GoldengateDeployment */
-  entitlementId?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where Oracle GoldengateDeployment is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
   gcpOracleZone?: string | Computed<string>;
   /** Optional. The labels or tags associated with the GoldengateDeployment. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the GoldengateDeployment resource in the following format: projects/{project}/locations/{region}/goldengateDeployments/{goldengate_deployment} */
   name?: string | Computed<string>;
-  /** Output only. HTTPS link to OCI resources exposed to Customer via UI Interface. */
-  ociUrl?: string | Computed<string>;
   /** Optional. The name of the OdbNetwork associated with the GoldengateDeployment. */
   odbNetwork?: string | Computed<string>;
   /** Required. The name of the OdbSubnet associated with the GoldengateDeployment for IP allocation. */
@@ -387,13 +381,10 @@ export interface GoldengateDeploymentAttrs {
 export const GoldengateDeployment: ResourceBinding<GoldengateDeploymentConfig, GoldengateDeploymentAttrs> = {
   wireType: "google_oracledatabase_goldengate_deployment",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",
     name: "name",
-    ociUrl: "oci_url",
     odbNetwork: "odb_network",
     odbSubnet: "odb_subnet",
     properties: {

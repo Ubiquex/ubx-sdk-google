@@ -103,8 +103,6 @@ _SchemaVersion_SchemaFields = {
 
 @dataclasses.dataclass
 class SchemaVersionConfig:
-    # Output only. The time when the SchemaVersion was created.
-    create_time: Any = None
     # Required. The user-defined name of the SchemaVersion.
     display_name: Any = None
     # Optional. The {{gcp_name_short}} labels for the SchemaVersion.
@@ -130,7 +128,6 @@ class SchemaVersionAttrs:
 SchemaVersion = ubx.ResourceBinding(
     wire_type="google_documentai_schema_version",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),

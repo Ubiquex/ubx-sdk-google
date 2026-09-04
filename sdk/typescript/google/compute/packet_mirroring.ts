@@ -52,36 +52,23 @@ const PacketMirroring_MirroredResourcesFields: FieldMap = {
 };
 
 export interface PacketMirroringConfig {
-  /** The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred) */
   collectorIlb?: PacketMirroring_CollectorIlb | Computed<PacketMirroring_CollectorIlb>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE. */
   enable?: string | Computed<string>;
-  /** The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred) */
   filter?: PacketMirroring_Filter | Computed<PacketMirroring_Filter>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings. */
-  kind?: string | Computed<string>;
-  /** An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred) */
   mirroredResources?: PacketMirroring_MirroredResources | Computed<PacketMirroring_MirroredResources>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred) */
   network?: PacketMirroring_CollectorIlb | Computed<PacketMirroring_CollectorIlb>;
   /** The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535. */
   priority?: number | Computed<number>;
   /** [Output Only] URI of the region where the packetMirroring resides. */
   region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface PacketMirroringAttrs {
-  /** The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred) */
   collectorIlb: PacketMirroring_CollectorIlb;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
@@ -89,17 +76,14 @@ export interface PacketMirroringAttrs {
   description: string;
   /** Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE. */
   enable: string;
-  /** The filter configuration as returned by the API (output only). It defines the criteria that determine which packets are mirrored. (AI-inferred) */
   filter: PacketMirroring_Filter;
   /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id: string;
   /** Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings. */
   kind: string;
-  /** An object defining the instances, subnetworks, or tags whose traffic is mirrored. This field is output-only and reflects the effective mirroring configuration. (AI-inferred) */
   mirroredResources: PacketMirroring_MirroredResources;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name: string;
-  /** The network that the packet mirroring applies to. This field is output-only and contains the URL of the VPC network. (AI-inferred) */
   network: PacketMirroring_CollectorIlb;
   /** The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535. */
   priority: number;
@@ -117,7 +101,6 @@ export const PacketMirroring: ResourceBinding<PacketMirroringConfig, PacketMirro
       kind: "object",
       fields: PacketMirroring_CollectorIlbFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     enable: "enable",
     filter: {
@@ -125,8 +108,6 @@ export const PacketMirroring: ResourceBinding<PacketMirroringConfig, PacketMirro
       kind: "object",
       fields: PacketMirroring_FilterFields,
     },
-    id: "id",
-    kind: "kind",
     mirroredResources: {
       wireName: "mirrored_resources",
       kind: "object",
@@ -140,6 +121,5 @@ export const PacketMirroring: ResourceBinding<PacketMirroringConfig, PacketMirro
     },
     priority: "priority",
     region: "region",
-    selfLink: "self_link",
   },
 };

@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1AuthzExtensionConfig struct {
 	// Optional. The `:authority` header in the gRPC request sent from Envoy to the extension service. It is required when the `service` field points to a backend service.
 	Authority any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A human-readable description of the resource.
 	Description any
 	// Optional. Determines how the proxy behaves if the call to the extension fails or times out. When set to `TRUE`, request or response processing continues without error. Any subsequent extensions in the extension chain are also executed. When set to `FALSE` or the default setting of `FALSE` is used, one of the following happens: * If response headers have not been delivered to the downstream client, a generic 500 error is returned to the client. The error response can be tailored by configuring a custom error response in the load balancer. * If response headers have been delivered, then the HTTP stream to the downstream client is reset.
@@ -28,8 +26,6 @@ type V1beta1AuthzExtensionConfig struct {
 	Service any
 	// Required. Specifies the timeout for each individual message on the stream. The timeout must be between 10-10000 milliseconds.
 	Timeout any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 	// Optional. The format of communication supported by the callout extension. This field is supported only for regional `AuthzExtension` resources. If not specified, the default value `EXT_PROC_GRPC` is used. Global `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
 	WireFormat any
 }
@@ -68,19 +64,17 @@ type V1beta1AuthzExtensionAttrs struct {
 var V1beta1AuthzExtension = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_authz_extension",
 	Fields: ubx.FieldMap{
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"ForwardAttributes": ubx.FieldSpec{WireName: "forward_attributes"},
-		"ForwardHeaders": ubx.FieldSpec{WireName: "forward_headers"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Authority":           ubx.FieldSpec{WireName: "authority"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"FailOpen":            ubx.FieldSpec{WireName: "fail_open"},
+		"ForwardAttributes":   ubx.FieldSpec{WireName: "forward_attributes"},
+		"ForwardHeaders":      ubx.FieldSpec{WireName: "forward_headers"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WireFormat": ubx.FieldSpec{WireName: "wire_format"},
+		"Metadata":            ubx.FieldSpec{WireName: "metadata"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Service":             ubx.FieldSpec{WireName: "service"},
+		"Timeout":             ubx.FieldSpec{WireName: "timeout"},
+		"WireFormat":          ubx.FieldSpec{WireName: "wire_format"},
 	},
 }

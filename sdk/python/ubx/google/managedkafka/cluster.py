@@ -61,12 +61,6 @@ class Cluster_UpdateOptions:
     # Optional. If true, allows an update operation that increases the total vCPU and/or memory allocation of the cluster to significantly decrease the per-broker vCPU and/or memory allocation. This can result in reduced performance and availability. By default, the update operation will fail if an upscale request results in a vCPU or memory allocation for the brokers that is smaller than 90% of the current broker size.
     allow_broker_downscale_on_cluster_upscale: Any = None
 
-_Cluster_BrokerDetailsFields = {
-    "broker_index": ubx.FieldSpec(wire_name="broker_index"),
-    "node_id": ubx.FieldSpec(wire_name="node_id"),
-    "rack": ubx.FieldSpec(wire_name="rack"),
-}
-
 _Cluster_CapacityConfigFields = {
     "memory_bytes": ubx.FieldSpec(wire_name="memory_bytes"),
     "vcpu_count": ubx.FieldSpec(wire_name="vcpu_count"),
@@ -124,34 +118,20 @@ _Cluster_UpdateOptionsFields = {
 
 @dataclasses.dataclass
 class ClusterConfig:
-    # Output only. Only populated when FULL view is requested. Details of each broker in the cluster.
-    broker_details: Any = None
     # A capacity configuration of a Kafka cluster.
     capacity_config: Any = None
-    # Output only. The time when the cluster was created.
-    create_time: Any = None
     # Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
     gcp_config: Any = None
-    # Output only. Only populated when FULL view is requested. The Kafka version of the cluster.
-    kafka_version: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Identifier. The name of the cluster. Structured like: projects/{project_number}/locations/{location}/clusters/{cluster_id}
     name: Any = None
     # Defines rebalancing behavior of a Kafka cluster.
     rebalance_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The current state of the cluster.
-    state: Any = None
     # The TLS configuration for the Kafka cluster.
     tls_config: Any = None
     # UpdateOptions specifies options that influence how a cluster update is applied. These options control the behavior of the update process, rather than defining the desired end-state of a cluster.
     update_options: Any = None
-    # Output only. The time when the cluster was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
@@ -187,23 +167,16 @@ class ClusterAttrs:
 Cluster = ubx.ResourceBinding(
     wire_type="google_managedkafka_cluster",
     fields={
-        "broker_details": ubx.FieldSpec(
-            wire_name="broker_details",
-            kind="list",
-            fields=_Cluster_BrokerDetailsFields,
-        ),
         "capacity_config": ubx.FieldSpec(
             wire_name="capacity_config",
             kind="object",
             fields=_Cluster_CapacityConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "gcp_config": ubx.FieldSpec(
             wire_name="gcp_config",
             kind="object",
             fields=_Cluster_GcpConfigFields,
         ),
-        "kafka_version": ubx.FieldSpec(wire_name="kafka_version"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "rebalance_config": ubx.FieldSpec(
@@ -211,9 +184,6 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_RebalanceConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "tls_config": ubx.FieldSpec(
             wire_name="tls_config",
             kind="object",
@@ -224,6 +194,5 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_UpdateOptionsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

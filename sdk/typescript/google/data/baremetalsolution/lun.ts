@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface LunConfig {
-  name: string | Computed<string>;
 }
 
 export interface LunAttrs {
@@ -34,6 +33,5 @@ export interface LunAttrs {
 export const Lun: DataSourceBinding<LunConfig, LunAttrs> = {
   wireType: "google_baremetalsolution_lun",
   fields: {
-    name: "name",
   },
 };

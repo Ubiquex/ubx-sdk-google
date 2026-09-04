@@ -27,28 +27,14 @@ class RolloutConfig:
     annotations: Any = None
     # Required. Immutable. The name of a build that already exists. It doesn't have to be built; a rollout will wait for a build to be ready before updating traffic.
     build: Any = None
-    # Output only. Time at which the rollout was created.
-    create_time: Any = None
-    # Output only. Time at which the rollout was deleted.
-    delete_time: Any = None
     # Optional. Human-readable name. 63 character limit.
     display_name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-    etag: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects.
     labels: Any = None
     # Identifier. The resource name of the rollout. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/rollouts/{rolloutId}`.
     name: Any = None
-    # Output only. A field that, if true, indicates that the Rollout currently has an LRO.
-    reconciling: Any = None
-    # Output only. The state of the rollout.
-    state: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. Time at which the rollout was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class RolloutAttrs:
@@ -84,20 +70,13 @@ Rollout = ubx.ResourceBinding(
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "build": ubx.FieldSpec(wire_name="build"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_Rollout_ErrorFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

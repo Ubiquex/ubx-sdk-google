@@ -605,12 +605,8 @@ _V2betaPolicyOrchestrator_OrchestrationStateFields = {
 class V2betaPolicyOrchestratorConfig:
     # Required. Action to be done by the orchestrator in `projects/{project_id}/zones/{zone_id}` locations defined by the `orchestration_scope`. Allowed values: - `UPSERT` - Orchestrator will create or update target resources. - `DELETE` - Orchestrator will delete target resources, if they exist
     action: Any = None
-    # Output only. Timestamp when the policy orchestrator resource was created.
-    create_time: Any = None
     # Optional. Freeform text describing the purpose of the resource.
     description: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Optional. Labels as key value pairs
     labels: Any = None
     # Immutable. Identifier. In the following format: * `organizations/{organization_id}/locations/global/policyOrchestrators/{orchestrator_id}` * `folders/{folder_id}/locations/global/policyOrchestrators/{orchestrator_id}` * `projects/{project_id_or_number}/locations/global/policyOrchestrators/{orchestrator_id}`
@@ -621,12 +617,8 @@ class V2betaPolicyOrchestratorConfig:
     orchestration_scope: Any = None
     # Describes the state of the orchestration process.
     orchestration_state: Any = None
-    # Output only. Set to true, if there are ongoing changes being applied by the orchestrator.
-    reconciling: Any = None
     # Optional. State of the orchestrator. Can be updated to change orchestrator behaviour. Allowed values: - `ACTIVE` - orchestrator is actively looking for actions to be taken. - `STOPPED` - orchestrator won't make any changes. Note: There might be more states added in the future. We use string here instead of an enum, to avoid the need of propagating new states to all the client code.
     state: Any = None
-    # Output only. Timestamp when the policy orchestrator resource was last modified.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2betaPolicyOrchestratorAttrs:
@@ -659,9 +651,7 @@ V2betaPolicyOrchestrator = ubx.ResourceBinding(
     wire_type="google_osconfig_v2beta_policy_orchestrator",
     fields={
         "action": ubx.FieldSpec(wire_name="action"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "orchestrated_resource": ubx.FieldSpec(
@@ -679,8 +669,6 @@ V2betaPolicyOrchestrator = ubx.ResourceBinding(
             kind="object",
             fields=_V2betaPolicyOrchestrator_OrchestrationStateFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

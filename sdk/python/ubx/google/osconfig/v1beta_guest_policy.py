@@ -335,8 +335,6 @@ _V1betaGuestPolicy_RecipesFields = {
 class V1betaGuestPolicyConfig:
     # An assignment represents the group or groups of VM instances that the policy applies to. If an assignment is empty, it applies to all VM instances. Otherwise, the targeted VM instances must meet all the criteria specified. So if both labels and zones are specified, the policy applies to VM instances with those labels and in those zones.
     assignment: Any = None
-    # Output only. Time this guest policy was created.
-    create_time: Any = None
     # Description of the guest policy. Length of the description is limited to 1024 characters.
     description: Any = None
     # The etag for this guest policy. If this is provided on update, it must match the server's etag.
@@ -349,8 +347,6 @@ class V1betaGuestPolicyConfig:
     packages: Any = None
     # A list of Recipes to install on the VM instance.
     recipes: Any = None
-    # Output only. Last time this guest policy was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaGuestPolicyAttrs:
@@ -381,7 +377,6 @@ V1betaGuestPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaGuestPolicy_AssignmentFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -400,6 +395,5 @@ V1betaGuestPolicy = ubx.ResourceBinding(
             kind="list",
             fields=_V1betaGuestPolicy_RecipesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

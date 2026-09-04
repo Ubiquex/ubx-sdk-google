@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Version_Accreditation_EnumValues_Values struct {
 	Description any
 	DisplayName any
-	Id any
-	Immutable any
+	Id          any
+	Immutable   any
 }
 
 type Version_Accreditation_EnumValues struct {
@@ -39,95 +39,72 @@ type Version_Documentation struct {
 }
 
 type Version_SourceMetadata_PluginInstanceActionSource struct {
-	ActionId any
+	ActionId       any
 	PluginInstance any
 }
 
 type Version_SourceMetadata struct {
 	OriginalResourceCreateTime any
-	OriginalResourceId any
+	OriginalResourceId         any
 	OriginalResourceUpdateTime any
 	PluginInstanceActionSource any
-	SourceType any
+	SourceType                 any
 }
 
 var Version_Accreditation_EnumValues_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 var Version_Accreditation_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Version_Accreditation_EnumValues_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Version_Accreditation_EnumValues_ValuesFields,
+	},
+}
 
 var Version_Accreditation_JsonValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Version_AccreditationFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: Version_Accreditation_EnumValuesFields,
-		},
-		"JsonValues": ubx.FieldSpec{
-			WireName: "json_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-		"StringValues": ubx.FieldSpec{
-			WireName: "string_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-		"UriValues": ubx.FieldSpec{
-			WireName: "uri_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_EnumValuesFields,
+	},
+	"JsonValues": ubx.FieldSpec{
+		WireName: "json_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+	"StringValues": ubx.FieldSpec{
+		WireName: "string_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+	"UriValues": ubx.FieldSpec{
+		WireName: "uri_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+}
 
 var Version_DocumentationFields = ubx.FieldMap{
-		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-	}
-
-var Version_SourceMetadata_PluginInstanceActionSourceFields = ubx.FieldMap{
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
-		"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
-	}
-
-var Version_SourceMetadataFields = ubx.FieldMap{
-		"OriginalResourceCreateTime": ubx.FieldSpec{WireName: "original_resource_create_time"},
-		"OriginalResourceId": ubx.FieldSpec{WireName: "original_resource_id"},
-		"OriginalResourceUpdateTime": ubx.FieldSpec{WireName: "original_resource_update_time"},
-		"PluginInstanceActionSource": ubx.FieldSpec{
-			WireName: "plugin_instance_action_source",
-			Kind: "object",
-			Fields: Version_SourceMetadata_PluginInstanceActionSourceFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+}
 
 type VersionConfig struct {
 	// The attribute values associated with resource.
 	Accreditation any
-	// Output only. The operations contained in the API version. These operations will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
-	ApiOperations any
 	// Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
 	Attributes any
 	// The attribute values associated with resource.
 	Compliance any
-	// Output only. The time at which the version was created.
-	CreateTime any
-	// Output only. The definitions contained in the API version. These definitions will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/definitions/{definition}`
-	Definitions any
 	// Optional. The deployments linked directly to this API version. Only directly-linked deployments are returned; deployments linked to this version's specs or operations are not included. Note: A particular API version could be deployed to multiple deployments (for dev deployment, UAT deployment, etc) Format is `projects/{project}/locations/{location}/deployments/{deployment}`
 	Deployments any
 	// Optional. The description of the version.
@@ -142,12 +119,6 @@ type VersionConfig struct {
 	Name any
 	// Optional. The selected deployment for a Version resource. This can be used when special handling is needed on client side for a particular deployment linked to the version. Format is `projects/{project}/locations/{location}/deployments/{deployment}`
 	SelectedDeployment any
-	// Output only. The list of sources and metadata from the sources of the version.
-	SourceMetadata any
-	// Output only. The specs associated with this version. Note that an API version can be associated with multiple specs. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
-	Specs any
-	// Output only. The time at which the version was last updated.
-	UpdateTime any
 }
 
 type VersionAttrs struct {
@@ -190,43 +161,33 @@ var Version = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Accreditation": ubx.FieldSpec{
 			WireName: "accreditation",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
-		"ApiOperations": ubx.FieldSpec{WireName: "api_operations"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "map",
-			Fields: Version_AccreditationFields,
+			Kind:     "map",
+			Fields:   Version_AccreditationFields,
 		},
 		"Compliance": ubx.FieldSpec{
 			WireName: "compliance",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Definitions": ubx.FieldSpec{WireName: "definitions"},
 		"Deployments": ubx.FieldSpec{WireName: "deployments"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: Version_DocumentationFields,
+			Kind:     "object",
+			Fields:   Version_DocumentationFields,
 		},
 		"Lifecycle": ubx.FieldSpec{
 			WireName: "lifecycle",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SelectedDeployment": ubx.FieldSpec{WireName: "selected_deployment"},
-		"SourceMetadata": ubx.FieldSpec{
-			WireName: "source_metadata",
-			Kind: "list",
-			Fields: Version_SourceMetadataFields,
-		},
-		"Specs": ubx.FieldSpec{WireName: "specs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

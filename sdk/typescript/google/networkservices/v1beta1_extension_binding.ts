@@ -132,8 +132,6 @@ const V1beta1ExtensionBinding_TargetFields: FieldMap = {
 };
 
 export interface V1beta1ExtensionBindingConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Etag of the resource. If provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
@@ -154,8 +152,6 @@ export interface V1beta1ExtensionBindingConfig {
   producerMetadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Specifies a list of targets to which this `ExtensionBinding` should attach. */
   target?: V1beta1ExtensionBinding_Target | Computed<V1beta1ExtensionBinding_Target>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ExtensionBindingAttrs {
@@ -188,7 +184,6 @@ export interface V1beta1ExtensionBindingAttrs {
 export const V1beta1ExtensionBinding: ResourceBinding<V1beta1ExtensionBindingConfig, V1beta1ExtensionBindingAttrs> = {
   wireType: "google_networkservices_v1beta1_extension_binding",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     failOpen: "fail_open",
@@ -207,6 +202,5 @@ export const V1beta1ExtensionBinding: ResourceBinding<V1beta1ExtensionBindingCon
       kind: "object",
       fields: V1beta1ExtensionBinding_TargetFields,
     },
-    updateTime: "update_time",
   },
 };

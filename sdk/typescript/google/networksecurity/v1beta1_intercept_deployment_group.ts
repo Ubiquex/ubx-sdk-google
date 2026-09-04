@@ -15,43 +15,15 @@ export interface V1beta1InterceptDeploymentGroup_NestedDeployments {
   state?: string | Computed<string>;
 }
 
-const V1beta1InterceptDeploymentGroup_ConnectedEndpointGroupsFields: FieldMap = {
-  name: "name",
-};
-
-const V1beta1InterceptDeploymentGroup_LocationsFields: FieldMap = {
-  location: "location",
-  state: "state",
-};
-
-const V1beta1InterceptDeploymentGroup_NestedDeploymentsFields: FieldMap = {
-  name: "name",
-  state: "state",
-};
-
 export interface V1beta1InterceptDeploymentGroupConfig {
-  /** Output only. The list of endpoint groups that are connected to this resource. */
-  connectedEndpointGroups?: V1beta1InterceptDeploymentGroup_ConnectedEndpointGroups[] | Computed<V1beta1InterceptDeploymentGroup_ConnectedEndpointGroups[]>;
-  /** Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description of the deployment group. Used as additional context for the deployment group. */
   description?: string | Computed<string>;
   /** Optional. Labels are key/value pairs that help to organize and filter resources. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The list of locations where the deployment group is present. */
-  locations?: V1beta1InterceptDeploymentGroup_Locations[] | Computed<V1beta1InterceptDeploymentGroup_Locations[]>;
   /** Immutable. Identifier. The resource name of this deployment group, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/122 for more details. */
   name?: string | Computed<string>;
-  /** Output only. The list of Intercept Deployments that belong to this group. */
-  nestedDeployments?: V1beta1InterceptDeploymentGroup_NestedDeployments[] | Computed<V1beta1InterceptDeploymentGroup_NestedDeployments[]>;
   /** Required. Immutable. The network that will be used for all child deployments, for example: `projects/{project}/global/networks/{network}`. See https://google.aip.dev/124. */
   network?: string | Computed<string>;
-  /** Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new deployment to the group) See https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the deployment group. See https://google.aip.dev/216. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1InterceptDeploymentGroupAttrs {
@@ -82,28 +54,9 @@ export interface V1beta1InterceptDeploymentGroupAttrs {
 export const V1beta1InterceptDeploymentGroup: ResourceBinding<V1beta1InterceptDeploymentGroupConfig, V1beta1InterceptDeploymentGroupAttrs> = {
   wireType: "google_networksecurity_v1beta1_intercept_deployment_group",
   fields: {
-    connectedEndpointGroups: {
-      wireName: "connected_endpoint_groups",
-      kind: "list",
-      fields: V1beta1InterceptDeploymentGroup_ConnectedEndpointGroupsFields,
-    },
-    createTime: "create_time",
     description: "description",
     labels: "labels",
-    locations: {
-      wireName: "locations",
-      kind: "list",
-      fields: V1beta1InterceptDeploymentGroup_LocationsFields,
-    },
     name: "name",
-    nestedDeployments: {
-      wireName: "nested_deployments",
-      kind: "list",
-      fields: V1beta1InterceptDeploymentGroup_NestedDeploymentsFields,
-    },
     network: "network",
-    reconciling: "reconciling",
-    state: "state",
-    updateTime: "update_time",
   },
 };

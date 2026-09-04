@@ -140,12 +140,8 @@ _CustomTargetType_TasksFields = {
 class CustomTargetTypeConfig:
     # Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
     annotations: Any = None
-    # Output only. Time at which the `CustomTargetType` was created.
-    create_time: Any = None
     # CustomTargetSkaffoldActions represents the `CustomTargetType` configuration using Skaffold custom actions.
     custom_actions: Any = None
-    # Output only. Resource id of the `CustomTargetType`.
-    custom_target_type_id: Any = None
     # Optional. Description of the `CustomTargetType`. Max length is 255 characters.
     description: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -156,10 +152,6 @@ class CustomTargetTypeConfig:
     name: Any = None
     # CustomTargetTasks represents the `CustomTargetType` configuration using tasks.
     tasks: Any = None
-    # Output only. Unique identifier of the `CustomTargetType`.
-    uid: Any = None
-    # Output only. Most recent time at which the `CustomTargetType` was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomTargetTypeAttrs:
@@ -190,13 +182,11 @@ CustomTargetType = ubx.ResourceBinding(
     wire_type="google_clouddeploy_custom_target_type",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_actions": ubx.FieldSpec(
             wire_name="custom_actions",
             kind="object",
             fields=_CustomTargetType_CustomActionsFields,
         ),
-        "custom_target_type_id": ubx.FieldSpec(wire_name="custom_target_type_id"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -206,7 +196,5 @@ CustomTargetType = ubx.ResourceBinding(
             kind="object",
             fields=_CustomTargetType_TasksFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

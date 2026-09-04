@@ -125,23 +125,6 @@ _CompilationResult_CodeCompilationConfigFields = {
     "vars": ubx.FieldSpec(wire_name="vars"),
 }
 
-_CompilationResult_CompilationErrors_ActionTargetFields = {
-    "database": ubx.FieldSpec(wire_name="database"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "schema": ubx.FieldSpec(wire_name="schema"),
-}
-
-_CompilationResult_CompilationErrorsFields = {
-    "action_target": ubx.FieldSpec(
-        wire_name="action_target",
-        kind="object",
-        fields=_CompilationResult_CompilationErrors_ActionTargetFields,
-    ),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "path": ubx.FieldSpec(wire_name="path"),
-    "stack": ubx.FieldSpec(wire_name="stack"),
-}
-
 _CompilationResult_DataEncryptionStateFields = {
     "kms_key_version_name": ubx.FieldSpec(wire_name="kms_key_version_name"),
 }
@@ -160,28 +143,16 @@ _CompilationResult_PrivateResourceMetadataFields = {
 class CompilationResultConfig:
     # Configures various aspects of Dataform code compilation.
     code_compilation_config: Any = None
-    # Output only. Errors encountered during project compilation.
-    compilation_errors: Any = None
-    # Output only. The timestamp of when the compilation result was created.
-    create_time: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
-    # Output only. The version of `@dataform/core` that was used for compilation.
-    dataform_core_version: Any = None
     # Metadata about a repository snapshot stored in Google Cloud Storage.
     gcs_repository_snapshot_metadata: Any = None
     # Immutable. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
     git_commitish: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
-    # Output only. The compilation result's name.
-    name: Any = None
     # Metadata used to identify if a resource is user scoped.
     private_resource_metadata: Any = None
     # Immutable. The name of the release config to compile. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
     release_config: Any = None
-    # Output only. The fully resolved Git commit SHA of the code that was compiled. Not set for compilation results whose source is a workspace.
-    resolved_git_commit_sha: Any = None
     # Immutable. The name of the workspace to compile. Must be in the format `projects/*/locations/*/repositories/*/workspaces/*`.
     workspace: Any = None
 
@@ -222,33 +193,23 @@ CompilationResult = ubx.ResourceBinding(
             kind="object",
             fields=_CompilationResult_CodeCompilationConfigFields,
         ),
-        "compilation_errors": ubx.FieldSpec(
-            wire_name="compilation_errors",
-            kind="list",
-            fields=_CompilationResult_CompilationErrorsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_encryption_state": ubx.FieldSpec(
             wire_name="data_encryption_state",
             kind="object",
             fields=_CompilationResult_DataEncryptionStateFields,
         ),
-        "dataform_core_version": ubx.FieldSpec(wire_name="dataform_core_version"),
         "gcs_repository_snapshot_metadata": ubx.FieldSpec(
             wire_name="gcs_repository_snapshot_metadata",
             kind="object",
             fields=_CompilationResult_GcsRepositorySnapshotMetadataFields,
         ),
         "git_commitish": ubx.FieldSpec(wire_name="git_commitish"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "private_resource_metadata": ubx.FieldSpec(
             wire_name="private_resource_metadata",
             kind="object",
             fields=_CompilationResult_PrivateResourceMetadataFields,
         ),
         "release_config": ubx.FieldSpec(wire_name="release_config"),
-        "resolved_git_commit_sha": ubx.FieldSpec(wire_name="resolved_git_commit_sha"),
         "workspace": ubx.FieldSpec(wire_name="workspace"),
     },
 )

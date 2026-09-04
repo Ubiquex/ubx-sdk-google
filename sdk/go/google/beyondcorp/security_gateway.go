@@ -58,86 +58,80 @@ type SecurityGateway_ServiceDiscovery struct {
 }
 
 var SecurityGateway_Hubs_InternetGatewayFields = ubx.FieldMap{
-		"AssignedIps": ubx.FieldSpec{WireName: "assigned_ips"},
-	}
+	"AssignedIps": ubx.FieldSpec{WireName: "assigned_ips"},
+}
 
 var SecurityGateway_HubsFields = ubx.FieldMap{
-		"InternetGateway": ubx.FieldSpec{
-			WireName: "internet_gateway",
-			Kind: "object",
-			Fields: SecurityGateway_Hubs_InternetGatewayFields,
-		},
-	}
+	"InternetGateway": ubx.FieldSpec{
+		WireName: "internet_gateway",
+		Kind:     "object",
+		Fields:   SecurityGateway_Hubs_InternetGatewayFields,
+	},
+}
 
 var SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields = ubx.FieldMap{
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
-	}
+	"OutputType": ubx.FieldSpec{WireName: "output_type"},
+}
 
 var SecurityGateway_ProxyProtocolConfig_ContextualHeadersFields = ubx.FieldMap{
-		"DeviceInfo": ubx.FieldSpec{
-			WireName: "device_info",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-		},
-		"DispatchInfo": ubx.FieldSpec{
-			WireName: "dispatch_info",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-		},
-		"GroupInfo": ubx.FieldSpec{
-			WireName: "group_info",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-		},
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
-		"UserInfo": ubx.FieldSpec{
-			WireName: "user_info",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-		},
-	}
+	"DeviceInfo": ubx.FieldSpec{
+		WireName: "device_info",
+		Kind:     "object",
+		Fields:   SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+	},
+	"DispatchInfo": ubx.FieldSpec{
+		WireName: "dispatch_info",
+		Kind:     "object",
+		Fields:   SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+	},
+	"GroupInfo": ubx.FieldSpec{
+		WireName: "group_info",
+		Kind:     "object",
+		Fields:   SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+	},
+	"OutputType": ubx.FieldSpec{WireName: "output_type"},
+	"UserInfo": ubx.FieldSpec{
+		WireName: "user_info",
+		Kind:     "object",
+		Fields:   SecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+	},
+}
 
 var SecurityGateway_ProxyProtocolConfigFields = ubx.FieldMap{
-		"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
-		"ClientIp": ubx.FieldSpec{WireName: "client_ip"},
-		"ContextualHeaders": ubx.FieldSpec{
-			WireName: "contextual_headers",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfig_ContextualHeadersFields,
-		},
-		"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
-		"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
-	}
+	"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
+	"ClientIp":             ubx.FieldSpec{WireName: "client_ip"},
+	"ContextualHeaders": ubx.FieldSpec{
+		WireName: "contextual_headers",
+		Kind:     "object",
+		Fields:   SecurityGateway_ProxyProtocolConfig_ContextualHeadersFields,
+	},
+	"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
+	"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
+}
 
 var SecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var SecurityGateway_ServiceDiscovery_ApiGatewayFields = ubx.FieldMap{
-		"ResourceOverride": ubx.FieldSpec{
-			WireName: "resource_override",
-			Kind: "object",
-			Fields: SecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields,
-		},
-	}
+	"ResourceOverride": ubx.FieldSpec{
+		WireName: "resource_override",
+		Kind:     "object",
+		Fields:   SecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields,
+	},
+}
 
 var SecurityGateway_ServiceDiscoveryFields = ubx.FieldMap{
-		"ApiGateway": ubx.FieldSpec{
-			WireName: "api_gateway",
-			Kind: "object",
-			Fields: SecurityGateway_ServiceDiscovery_ApiGatewayFields,
-		},
-	}
+	"ApiGateway": ubx.FieldSpec{
+		WireName: "api_gateway",
+		Kind:     "object",
+		Fields:   SecurityGateway_ServiceDiscovery_ApiGatewayFields,
+	},
+}
 
 type SecurityGatewayConfig struct {
-	// Output only. Timestamp when the resource was created.
-	CreateTime any
-	// Output only. Service account used for operations that involve resources in consumer projects.
-	DelegatingServiceAccount any
 	// Optional. An arbitrary user-provided name for the SecurityGateway. Cannot exceed 64 characters.
 	DisplayName any
-	// Output only. IP addresses that will be used for establishing connection to the endpoints.
-	ExternalIps any
 	// Optional. Map of Hubs that represents regional data path deployment with GCP region as a key.
 	Hubs any
 	// Configuration for Cloud Logging.
@@ -148,10 +142,6 @@ type SecurityGatewayConfig struct {
 	ProxyProtocolConfig any
 	// Settings related to the Service Discovery.
 	ServiceDiscovery any
-	// Output only. The operational state of the SecurityGateway.
-	State any
-	// Output only. Timestamp when the resource was last modified.
-	UpdateTime any
 }
 
 type SecurityGatewayAttrs struct {
@@ -182,28 +172,23 @@ type SecurityGatewayAttrs struct {
 var SecurityGateway = ubx.ResourceBinding{
 	WireType: "google_beyondcorp_security_gateway",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DelegatingServiceAccount": ubx.FieldSpec{WireName: "delegating_service_account"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExternalIps": ubx.FieldSpec{WireName: "external_ips"},
 		"Hubs": ubx.FieldSpec{
 			WireName: "hubs",
-			Kind: "map",
-			Fields: SecurityGateway_HubsFields,
+			Kind:     "map",
+			Fields:   SecurityGateway_HubsFields,
 		},
 		"Logging": ubx.FieldSpec{WireName: "logging"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"ProxyProtocolConfig": ubx.FieldSpec{
 			WireName: "proxy_protocol_config",
-			Kind: "object",
-			Fields: SecurityGateway_ProxyProtocolConfigFields,
+			Kind:     "object",
+			Fields:   SecurityGateway_ProxyProtocolConfigFields,
 		},
 		"ServiceDiscovery": ubx.FieldSpec{
 			WireName: "service_discovery",
-			Kind: "object",
-			Fields: SecurityGateway_ServiceDiscoveryFields,
+			Kind:     "object",
+			Fields:   SecurityGateway_ServiceDiscoveryFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

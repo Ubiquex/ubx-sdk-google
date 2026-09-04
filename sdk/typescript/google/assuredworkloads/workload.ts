@@ -93,11 +93,6 @@ const Workload_ResourceSettingsFields: FieldMap = {
   resourceType: "resource_type",
 };
 
-const Workload_ResourcesFields: FieldMap = {
-  resourceId: "resource_id",
-  resourceType: "resource_type",
-};
-
 const Workload_SaaEnrollmentResponseFields: FieldMap = {
   setupErrors: "setup_errors",
   setupStatus: "setup_status",
@@ -114,10 +109,6 @@ export interface WorkloadConfig {
   complianceRegime?: string | Computed<string>;
   /** Represents the Compliance Status of this workload */
   complianceStatus?: Workload_ComplianceStatus | Computed<Workload_ComplianceStatus>;
-  /** Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment. */
-  compliantButDisallowedServices?: string[] | Computed<string[]>;
-  /** Output only. Immutable. The Workload creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload */
   displayName?: string | Computed<string>;
   /** External key management systems(EKM) Provisioning response */
@@ -126,8 +117,6 @@ export interface WorkloadConfig {
   enableSovereignControls?: boolean | Computed<boolean>;
   /** Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations. */
   etag?: string | Computed<string>;
-  /** Output only. Represents the KAJ enrollment state of the given workload. */
-  kajEnrollmentState?: string | Computed<string>;
   /** Settings specific to the Key Management Service. */
   kmsSettings?: Workload_KmsSettings | Computed<Workload_KmsSettings>;
   /** Optional. Labels applied to the workload. */
@@ -142,12 +131,8 @@ export interface WorkloadConfig {
   partnerServicesBillingAccount?: string | Computed<string>;
   /** Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id} */
   provisionedResourcesParent?: string | Computed<string>;
-  /** Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload. */
-  resourceMonitoringEnabled?: boolean | Computed<boolean>;
   /** Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional. */
   resourceSettings?: Workload_ResourceSettings[] | Computed<Workload_ResourceSettings[]>;
-  /** Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only. */
-  resources?: Workload_Resources[] | Computed<Workload_Resources[]>;
   /** Signed Access Approvals (SAA) enrollment response. */
   saaEnrollmentResponse?: Workload_SaaEnrollmentResponse | Computed<Workload_SaaEnrollmentResponse>;
   /** Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload. */
@@ -215,8 +200,6 @@ export const Workload: ResourceBinding<WorkloadConfig, WorkloadAttrs> = {
       kind: "object",
       fields: Workload_ComplianceStatusFields,
     },
-    compliantButDisallowedServices: "compliant_but_disallowed_services",
-    createTime: "create_time",
     displayName: "display_name",
     ekmProvisioningResponse: {
       wireName: "ekm_provisioning_response",
@@ -225,7 +208,6 @@ export const Workload: ResourceBinding<WorkloadConfig, WorkloadAttrs> = {
     },
     enableSovereignControls: "enable_sovereign_controls",
     etag: "etag",
-    kajEnrollmentState: "kaj_enrollment_state",
     kmsSettings: {
       wireName: "kms_settings",
       kind: "object",
@@ -241,16 +223,10 @@ export const Workload: ResourceBinding<WorkloadConfig, WorkloadAttrs> = {
     },
     partnerServicesBillingAccount: "partner_services_billing_account",
     provisionedResourcesParent: "provisioned_resources_parent",
-    resourceMonitoringEnabled: "resource_monitoring_enabled",
     resourceSettings: {
       wireName: "resource_settings",
       kind: "list",
       fields: Workload_ResourceSettingsFields,
-    },
-    resources: {
-      wireName: "resources",
-      kind: "list",
-      fields: Workload_ResourcesFields,
     },
     saaEnrollmentResponse: {
       wireName: "saa_enrollment_response",

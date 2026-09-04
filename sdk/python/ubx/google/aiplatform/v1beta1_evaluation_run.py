@@ -2555,10 +2555,6 @@ _V1beta1EvaluationRun_InferenceConfigsFields = {
 
 @dataclasses.dataclass
 class V1beta1EvaluationRunConfig:
-    # Output only. Time when the evaluation run was completed.
-    completion_time: Any = None
-    # Output only. Time when the evaluation run was created.
-    create_time: Any = None
     # The data source for the evaluation run.
     data_source: Any = None
     # Required. The display name of the Evaluation Run.
@@ -2571,8 +2567,6 @@ class V1beta1EvaluationRunConfig:
     evaluation_config: Any = None
     # The results of the evaluation run.
     evaluation_results: Any = None
-    # Output only. The specific evaluation set of the evaluation run. For runs with an evaluation set input, this will be that same set. For runs with BigQuery input, it's the sampled BigQuery dataset.
-    evaluation_set_snapshot: Any = None
     # Optional. The candidate to inference config map for the evaluation run. The candidate can be up to 128 characters long and can consist of any UTF-8 characters.
     inference_configs: Any = None
     # Optional. Labels for the evaluation run.
@@ -2581,8 +2575,6 @@ class V1beta1EvaluationRunConfig:
     metadata: Any = None
     # Identifier. The resource name of the EvaluationRun. This is a unique identifier. Format: `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run}`
     name: Any = None
-    # Output only. The state of the evaluation run.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1beta1EvaluationRunAttrs:
@@ -2618,8 +2610,6 @@ class V1beta1EvaluationRunAttrs:
 V1beta1EvaluationRun = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_evaluation_run",
     fields={
-        "completion_time": ubx.FieldSpec(wire_name="completion_time"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_source": ubx.FieldSpec(
             wire_name="data_source",
             kind="object",
@@ -2646,7 +2636,6 @@ V1beta1EvaluationRun = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1EvaluationRun_EvaluationResultsFields,
         ),
-        "evaluation_set_snapshot": ubx.FieldSpec(wire_name="evaluation_set_snapshot"),
         "inference_configs": ubx.FieldSpec(
             wire_name="inference_configs",
             kind="map",
@@ -2655,6 +2644,5 @@ V1beta1EvaluationRun = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

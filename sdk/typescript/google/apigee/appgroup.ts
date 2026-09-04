@@ -12,22 +12,16 @@ const Appgroup_AttributesFields: FieldMap = {
 };
 
 export interface AppgroupConfig {
-  /** Output only. Internal identifier that cannot be edited */
-  appGroupId?: string | Computed<string>;
   /** A list of attributes */
   attributes?: Appgroup_Attributes[] | Computed<Appgroup_Attributes[]>;
   /** channel identifier identifies the owner maintaing this grouping. */
   channelId?: string | Computed<string>;
   /** A reference to the associated storefront/marketplace. */
   channelUri?: string | Computed<string>;
-  /** Output only. Created time as milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** app group name displayed in the UI */
   displayName?: string | Computed<string>;
   /** Optional. Email of the AppGroup. */
   email?: string | Computed<string>;
-  /** Output only. Modified time as milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** Immutable. Name of the AppGroup. Characters you can use in the name are restricted to: A-Z0-9._\-$ %. */
   name?: string | Computed<string>;
   /** Immutable. the org the app group is created */
@@ -64,7 +58,6 @@ export interface AppgroupAttrs {
 export const Appgroup: ResourceBinding<AppgroupConfig, AppgroupAttrs> = {
   wireType: "google_apigee_appgroup",
   fields: {
-    appGroupId: "app_group_id",
     attributes: {
       wireName: "attributes",
       kind: "list",
@@ -72,10 +65,8 @@ export const Appgroup: ResourceBinding<AppgroupConfig, AppgroupAttrs> = {
     },
     channelId: "channel_id",
     channelUri: "channel_uri",
-    createdAt: "created_at",
     displayName: "display_name",
     email: "email",
-    lastModifiedAt: "last_modified_at",
     name: "name",
     organization: "organization",
     status: "status",

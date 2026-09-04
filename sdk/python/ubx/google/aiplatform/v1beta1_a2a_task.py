@@ -164,42 +164,6 @@ class V1beta1A2aTask_StatusDetails:
     # Represents a single message in a conversation, compliant with the A2A specification.
     task_message: Any = None
 
-_V1beta1A2aTask_Artifacts_PartsFields = {
-    "data": ubx.FieldSpec(wire_name="data"),
-    "filename": ubx.FieldSpec(wire_name="filename"),
-    "media_type": ubx.FieldSpec(wire_name="media_type"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "raw": ubx.FieldSpec(wire_name="raw"),
-    "text": ubx.FieldSpec(wire_name="text"),
-    "url": ubx.FieldSpec(wire_name="url"),
-}
-
-_V1beta1A2aTask_ArtifactsFields = {
-    "artifact_id": ubx.FieldSpec(wire_name="artifact_id"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "extensions": ubx.FieldSpec(wire_name="extensions"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "parts": ubx.FieldSpec(
-        wire_name="parts",
-        kind="list",
-        fields=_V1beta1A2aTask_Artifacts_PartsFields,
-    ),
-}
-
-_V1beta1A2aTask_HistoryFields = {
-    "extensions": ubx.FieldSpec(wire_name="extensions"),
-    "message_id": ubx.FieldSpec(wire_name="message_id"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "parts": ubx.FieldSpec(
-        wire_name="parts",
-        kind="list",
-        fields=_V1beta1A2aTask_Artifacts_PartsFields,
-    ),
-    "reference_task_ids": ubx.FieldSpec(wire_name="reference_task_ids"),
-    "role": ubx.FieldSpec(wire_name="role"),
-}
-
 _V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_WordsFields = {
     "end_offset": ubx.FieldSpec(wire_name="end_offset"),
     "start_offset": ubx.FieldSpec(wire_name="start_offset"),
@@ -368,6 +332,29 @@ _V1beta1A2aTask_OutputFields = {
     ),
 }
 
+_V1beta1A2aTask_Artifacts_PartsFields = {
+    "data": ubx.FieldSpec(wire_name="data"),
+    "filename": ubx.FieldSpec(wire_name="filename"),
+    "media_type": ubx.FieldSpec(wire_name="media_type"),
+    "metadata": ubx.FieldSpec(wire_name="metadata"),
+    "raw": ubx.FieldSpec(wire_name="raw"),
+    "text": ubx.FieldSpec(wire_name="text"),
+    "url": ubx.FieldSpec(wire_name="url"),
+}
+
+_V1beta1A2aTask_HistoryFields = {
+    "extensions": ubx.FieldSpec(wire_name="extensions"),
+    "message_id": ubx.FieldSpec(wire_name="message_id"),
+    "metadata": ubx.FieldSpec(wire_name="metadata"),
+    "parts": ubx.FieldSpec(
+        wire_name="parts",
+        kind="list",
+        fields=_V1beta1A2aTask_Artifacts_PartsFields,
+    ),
+    "reference_task_ids": ubx.FieldSpec(wire_name="reference_task_ids"),
+    "role": ubx.FieldSpec(wire_name="role"),
+}
+
 _V1beta1A2aTask_StatusFields = {
     "message": ubx.FieldSpec(
         wire_name="message",
@@ -401,36 +388,22 @@ _V1beta1A2aTask_StatusDetailsFields = {
 class V1beta1A2aTaskConfig:
     # Optional. Agent application which created the task.
     app_id: Any = None
-    # Output only. The artifacts produced by the task.
-    artifacts: Any = None
     # Optional. A generic identifier for grouping related tasks (e.g., session_id, workflow_id).
     context_id: Any = None
-    # Output only. The creation timestamp of the task.
-    create_time: Any = None
     # Optional. Timestamp of when this task is considered expired. This is *always* provided on output, and is calculated based on the `ttl` if set on the request
     expire_time: Any = None
-    # Output only. The task generation number.
-    generation: Any = None
-    # Output only. The history of the task messages.
-    history: Any = None
     # Optional. Arbitrary, user-defined metadata.
     metadata: Any = None
     # Identifier. The resource name of the task. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/a2aTasks/{a2a_task}` or `projects/{project}/locations/{location}/taskStores/{task_store}/a2aTasks/{a2a_task}`
     name: Any = None
-    # Output only. The next event sequence number to be appended to the task. This value starts at 1 and is guaranteed to be monotonically increasing.
-    next_event_sequence_number: Any = None
     # Represents the final output of a task.
     output: Any = None
-    # Output only. The state of the task. The state of a new task is SUBMITTED by default. The state of a task can only be updated via AppendA2aTaskEvents API.
-    state: Any = None
     # Represents the status of an A2aTask.
     status: Any = None
     # Represents the additional status details of a task.
     status_details: Any = None
     # Optional. Input only. The TTL (Time To Live) for the task. If not set, the task will expire in 24 hours by default. Valid range: (0 seconds, 1000 days]
     ttl: Any = None
-    # Output only. The last update timestamp of the task.
-    update_time: Any = None
     # Optional. Task owner user ID.
     user_id: Any = None
 
@@ -475,29 +448,15 @@ V1beta1A2aTask = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_a2a_task",
     fields={
         "app_id": ubx.FieldSpec(wire_name="app_id"),
-        "artifacts": ubx.FieldSpec(
-            wire_name="artifacts",
-            kind="list",
-            fields=_V1beta1A2aTask_ArtifactsFields,
-        ),
         "context_id": ubx.FieldSpec(wire_name="context_id"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generation": ubx.FieldSpec(wire_name="generation"),
-        "history": ubx.FieldSpec(
-            wire_name="history",
-            kind="list",
-            fields=_V1beta1A2aTask_HistoryFields,
-        ),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "next_event_sequence_number": ubx.FieldSpec(wire_name="next_event_sequence_number"),
         "output": ubx.FieldSpec(
             wire_name="output",
             kind="object",
             fields=_V1beta1A2aTask_OutputFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
@@ -509,7 +468,6 @@ V1beta1A2aTask = ubx.ResourceBinding(
             fields=_V1beta1A2aTask_StatusDetailsFields,
         ),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),
     },
 )

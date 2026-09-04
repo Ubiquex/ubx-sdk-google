@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RouteViewConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RouteViewAttrs:
@@ -25,6 +25,5 @@ class RouteViewAttrs:
 RouteView = ubx.DataSourceBinding(
     wire_type="google_networkservices_route_view",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

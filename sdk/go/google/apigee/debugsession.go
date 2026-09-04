@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DebugsessionConfig struct {
 	// Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10.
 	Count any
-	// Output only. The first transaction creation timestamp, recorded by UAP.
-	CreateTime any
 	// Optional. A conditional statement which is evaluated against the request message to determine if it should be traced. Syntax matches that of on API Proxy bundle flow Condition.
 	Filter any
 	// A unique ID for this DebugSession.
@@ -40,12 +38,11 @@ type DebugsessionAttrs struct {
 var Debugsession = ubx.ResourceBinding{
 	WireType: "google_apigee_debugsession",
 	Fields: ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Count":     ubx.FieldSpec{WireName: "count"},
+		"Filter":    ubx.FieldSpec{WireName: "filter"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Timeout":   ubx.FieldSpec{WireName: "timeout"},
 		"Tracesize": ubx.FieldSpec{WireName: "tracesize"},
-		"Validity": ubx.FieldSpec{WireName: "validity"},
+		"Validity":  ubx.FieldSpec{WireName: "validity"},
 	},
 }

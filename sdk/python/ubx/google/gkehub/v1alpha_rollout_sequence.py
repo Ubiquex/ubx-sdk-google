@@ -75,40 +75,20 @@ _V1alphaRolloutSequence_StagesFields = {
 class V1alphaRolloutSequenceConfig:
     # Configuration for automatic upgrades.
     auto_upgrade_config: Any = None
-    # Output only. The computed release channel used for the Rollout Sequence.
-    computed_release_channel: Any = None
-    # Output only. The timestamp at which the Rollout Sequence was created.
-    create_time: Any = None
-    # Output only. The timestamp at the Rollout Sequence was deleted.
-    delete_time: Any = None
     # Optional. Human readable display name of the Rollout Sequence.
     display_name: Any = None
     # Configuration for automatic upgrades.
     effective_auto_upgrade_config: Any = None
-    # Output only. etag of the Rollout Sequence Ex. abc1234
-    etag: Any = None
     # Selector for clusters.
     ignored_clusters_selector: Any = None
     # Optional. Labels for this Rollout Sequence.
     labels: Any = None
-    # Output only. The last qualified control plane version.
-    last_qualified_control_plane_version: Any = None
-    # Output only. The last qualified node version.
-    last_qualified_node_version: Any = None
     # Identifier. Name of the rollout sequence in the format of: projects/{PROJECT_ID}/locations/global/rolloutSequences/{NAME}
     name: Any = None
     # Operational state of the Rollout Sequence.
     operational_state: Any = None
     # Required. Ordered list of stages that constitutes this Rollout.
     stages: Any = None
-    # Output only. The target control plane version of the Rollout Sequence.
-    target_control_plane_version: Any = None
-    # Output only. The target node version of the Rollout Sequence.
-    target_node_version: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all Rollout Sequence resources. If a Rollout Sequence resource is deleted and another resource with the same name is created, it gets a different uid.
-    uid: Any = None
-    # Output only. The timestamp at which the Rollout Sequence was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaRolloutSequenceAttrs:
@@ -157,24 +137,18 @@ V1alphaRolloutSequence = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaRolloutSequence_AutoUpgradeConfigFields,
         ),
-        "computed_release_channel": ubx.FieldSpec(wire_name="computed_release_channel"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "effective_auto_upgrade_config": ubx.FieldSpec(
             wire_name="effective_auto_upgrade_config",
             kind="object",
             fields=_V1alphaRolloutSequence_AutoUpgradeConfigFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "ignored_clusters_selector": ubx.FieldSpec(
             wire_name="ignored_clusters_selector",
             kind="object",
             fields=_V1alphaRolloutSequence_IgnoredClustersSelectorFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_qualified_control_plane_version": ubx.FieldSpec(wire_name="last_qualified_control_plane_version"),
-        "last_qualified_node_version": ubx.FieldSpec(wire_name="last_qualified_node_version"),
         "name": ubx.FieldSpec(wire_name="name"),
         "operational_state": ubx.FieldSpec(
             wire_name="operational_state",
@@ -186,9 +160,5 @@ V1alphaRolloutSequence = ubx.ResourceBinding(
             kind="list",
             fields=_V1alphaRolloutSequence_StagesFields,
         ),
-        "target_control_plane_version": ubx.FieldSpec(wire_name="target_control_plane_version"),
-        "target_node_version": ubx.FieldSpec(wire_name="target_node_version"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

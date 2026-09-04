@@ -26,8 +26,6 @@ const Service_InterfacesFields: FieldMap = {
 export interface ServiceConfig {
   /** The spec of the agent. */
   agentSpec?: Service_AgentSpec | Computed<Service_AgentSpec>;
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of an Service. Can have a maximum length of `2048` characters. */
   description?: string | Computed<string>;
   /** Optional. User-defined display name for the Service. Can have a maximum length of `63` characters. */
@@ -40,10 +38,6 @@ export interface ServiceConfig {
   mcpServerSpec?: Service_AgentSpec | Computed<Service_AgentSpec>;
   /** Identifier. The resource name of the Service. Format: `projects/{project}/locations/{location}/services/{service}`. */
   name?: string | Computed<string>;
-  /** Output only. The resource name of the resulting Agent, MCP Server, or Endpoint. Format: * `projects/{project}/locations/{location}/mcpServers/{mcp_server}` * `projects/{project}/locations/{location}/agents/{agent}` * `projects/{project}/locations/{location}/endpoints/{endpoint}` */
-  registryResource?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServiceAttrs {
@@ -77,7 +71,6 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
       kind: "object",
       fields: Service_AgentSpecFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     endpointSpec: {
@@ -96,7 +89,5 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
       fields: Service_AgentSpecFields,
     },
     name: "name",
-    registryResource: "registry_resource",
-    updateTime: "update_time",
   },
 };

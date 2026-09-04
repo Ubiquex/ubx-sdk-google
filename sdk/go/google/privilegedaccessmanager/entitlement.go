@@ -15,9 +15,9 @@ type Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers struct {
 }
 
 type Entitlement_ApprovalWorkflow_ManualApprovals_Steps struct {
-	ApprovalsNeeded any
+	ApprovalsNeeded         any
 	ApproverEmailRecipients any
-	Approvers any
+	Approvers               any
 }
 
 type Entitlement_ApprovalWorkflow_ManualApprovals struct {
@@ -34,7 +34,7 @@ type Entitlement_ApprovalWorkflow struct {
 
 type Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindings struct {
 	ConditionExpression any
-	Role any
+	Role                any
 }
 
 type Entitlement_PrivilegedAccess_GcpIamAccess struct {
@@ -59,76 +59,74 @@ type Entitlement_RequesterJustificationConfig struct {
 }
 
 var Entitlement_AdditionalNotificationTargetsFields = ubx.FieldMap{
-		"AdminEmailRecipients": ubx.FieldSpec{WireName: "admin_email_recipients"},
-		"RequesterEmailRecipients": ubx.FieldSpec{WireName: "requester_email_recipients"},
-	}
+	"AdminEmailRecipients":     ubx.FieldSpec{WireName: "admin_email_recipients"},
+	"RequesterEmailRecipients": ubx.FieldSpec{WireName: "requester_email_recipients"},
+}
 
 var Entitlement_ApprovalWorkflow_ManualApprovals_Steps_ApproversFields = ubx.FieldMap{
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-	}
+	"Principals": ubx.FieldSpec{WireName: "principals"},
+}
 
 var Entitlement_ApprovalWorkflow_ManualApprovals_StepsFields = ubx.FieldMap{
-		"ApprovalsNeeded": ubx.FieldSpec{WireName: "approvals_needed"},
-		"ApproverEmailRecipients": ubx.FieldSpec{WireName: "approver_email_recipients"},
-		"Approvers": ubx.FieldSpec{
-			WireName: "approvers",
-			Kind: "list",
-			Fields: Entitlement_ApprovalWorkflow_ManualApprovals_Steps_ApproversFields,
-		},
-	}
+	"ApprovalsNeeded":         ubx.FieldSpec{WireName: "approvals_needed"},
+	"ApproverEmailRecipients": ubx.FieldSpec{WireName: "approver_email_recipients"},
+	"Approvers": ubx.FieldSpec{
+		WireName: "approvers",
+		Kind:     "list",
+		Fields:   Entitlement_ApprovalWorkflow_ManualApprovals_Steps_ApproversFields,
+	},
+}
 
 var Entitlement_ApprovalWorkflow_ManualApprovalsFields = ubx.FieldMap{
-		"RequireApproverJustification": ubx.FieldSpec{WireName: "require_approver_justification"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: Entitlement_ApprovalWorkflow_ManualApprovals_StepsFields,
-		},
-	}
+	"RequireApproverJustification": ubx.FieldSpec{WireName: "require_approver_justification"},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   Entitlement_ApprovalWorkflow_ManualApprovals_StepsFields,
+	},
+}
 
 var Entitlement_ApprovalWorkflowFields = ubx.FieldMap{
-		"ManualApprovals": ubx.FieldSpec{
-			WireName: "manual_approvals",
-			Kind: "object",
-			Fields: Entitlement_ApprovalWorkflow_ManualApprovalsFields,
-		},
-	}
+	"ManualApprovals": ubx.FieldSpec{
+		WireName: "manual_approvals",
+		Kind:     "object",
+		Fields:   Entitlement_ApprovalWorkflow_ManualApprovalsFields,
+	},
+}
 
 var Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindingsFields = ubx.FieldMap{
-		"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
+	"Role":                ubx.FieldSpec{WireName: "role"},
+}
 
 var Entitlement_PrivilegedAccess_GcpIamAccessFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"RoleBindings": ubx.FieldSpec{
-			WireName: "role_bindings",
-			Kind: "list",
-			Fields: Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindingsFields,
-		},
-	}
+	"Resource":     ubx.FieldSpec{WireName: "resource"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"RoleBindings": ubx.FieldSpec{
+		WireName: "role_bindings",
+		Kind:     "list",
+		Fields:   Entitlement_PrivilegedAccess_GcpIamAccess_RoleBindingsFields,
+	},
+}
 
 var Entitlement_PrivilegedAccessFields = ubx.FieldMap{
-		"GcpIamAccess": ubx.FieldSpec{
-			WireName: "gcp_iam_access",
-			Kind: "object",
-			Fields: Entitlement_PrivilegedAccess_GcpIamAccessFields,
-		},
-	}
+	"GcpIamAccess": ubx.FieldSpec{
+		WireName: "gcp_iam_access",
+		Kind:     "object",
+		Fields:   Entitlement_PrivilegedAccess_GcpIamAccessFields,
+	},
+}
 
 var Entitlement_RequesterJustificationConfigFields = ubx.FieldMap{
-		"NotMandatory": ubx.FieldSpec{WireName: "not_mandatory"},
-		"Unstructured": ubx.FieldSpec{WireName: "unstructured"},
-	}
+	"NotMandatory": ubx.FieldSpec{WireName: "not_mandatory"},
+	"Unstructured": ubx.FieldSpec{WireName: "unstructured"},
+}
 
 type EntitlementConfig struct {
 	// `AdditionalNotificationTargets` includes email addresses to be notified.
 	AdditionalNotificationTargets any
 	// Different types of approval workflows that can be used to gate privileged access granting.
 	ApprovalWorkflow any
-	// Output only. Create time stamp.
-	CreateTime any
 	// Optional. Who can create grants using this entitlement. This list should contain at most one entry.
 	EligibleUsers any
 	// An `etag` is used for optimistic concurrency control as a way to prevent simultaneous updates to the same entitlement. An `etag` is returned in the response to `GetEntitlement` and the caller should put the `etag` in the request to `UpdateEntitlement` so that their change is applied on the same version. If this field is omitted or if there is a mismatch while updating an entitlement, then the server rejects the request.
@@ -141,10 +139,6 @@ type EntitlementConfig struct {
 	PrivilegedAccess any
 	// Defines how a requester must provide a justification when requesting access.
 	RequesterJustificationConfig any
-	// Output only. Current state of this entitlement.
-	State any
-	// Output only. Update time stamp.
-	UpdateTime any
 }
 
 type EntitlementAttrs struct {
@@ -177,34 +171,31 @@ var Entitlement = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdditionalNotificationTargets": ubx.FieldSpec{
 			WireName: "additional_notification_targets",
-			Kind: "object",
-			Fields: Entitlement_AdditionalNotificationTargetsFields,
+			Kind:     "object",
+			Fields:   Entitlement_AdditionalNotificationTargetsFields,
 		},
 		"ApprovalWorkflow": ubx.FieldSpec{
 			WireName: "approval_workflow",
-			Kind: "object",
-			Fields: Entitlement_ApprovalWorkflowFields,
+			Kind:     "object",
+			Fields:   Entitlement_ApprovalWorkflowFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EligibleUsers": ubx.FieldSpec{
 			WireName: "eligible_users",
-			Kind: "list",
-			Fields: Entitlement_ApprovalWorkflow_ManualApprovals_Steps_ApproversFields,
+			Kind:     "list",
+			Fields:   Entitlement_ApprovalWorkflow_ManualApprovals_Steps_ApproversFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":               ubx.FieldSpec{WireName: "etag"},
 		"MaxRequestDuration": ubx.FieldSpec{WireName: "max_request_duration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"PrivilegedAccess": ubx.FieldSpec{
 			WireName: "privileged_access",
-			Kind: "object",
-			Fields: Entitlement_PrivilegedAccessFields,
+			Kind:     "object",
+			Fields:   Entitlement_PrivilegedAccessFields,
 		},
 		"RequesterJustificationConfig": ubx.FieldSpec{
 			WireName: "requester_justification_config",
-			Kind: "object",
-			Fields: Entitlement_RequesterJustificationConfigFields,
+			Kind:     "object",
+			Fields:   Entitlement_RequesterJustificationConfigFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

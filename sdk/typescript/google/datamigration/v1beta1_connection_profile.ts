@@ -178,8 +178,6 @@ const V1beta1ConnectionProfile_MysqlFields: FieldMap = {
 export interface V1beta1ConnectionProfileConfig {
   /** Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance. */
   cloudsql?: V1beta1ConnectionProfile_Cloudsql | Computed<V1beta1ConnectionProfile_Cloudsql>;
-  /** Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  createTime?: string | Computed<string>;
   /** The connection profile display name. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -194,8 +192,6 @@ export interface V1beta1ConnectionProfileConfig {
   provider?: string | Computed<string>;
   /** The current connection profile state (e.g. DRAFT, READY, or FAILED). */
   state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ConnectionProfileAttrs {
@@ -229,7 +225,6 @@ export const V1beta1ConnectionProfile: ResourceBinding<V1beta1ConnectionProfileC
       kind: "object",
       fields: V1beta1ConnectionProfile_CloudsqlFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
@@ -245,6 +240,5 @@ export const V1beta1ConnectionProfile: ResourceBinding<V1beta1ConnectionProfileC
     name: "name",
     provider: "provider",
     state: "state",
-    updateTime: "update_time",
   },
 };

@@ -61,76 +61,64 @@ type RegionHealthCheck_SslHealthCheck struct {
 }
 
 var RegionHealthCheck_GrpcHealthCheckFields = ubx.FieldMap{
-		"GrpcServiceName": ubx.FieldSpec{WireName: "grpc_service_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-	}
+	"GrpcServiceName":   ubx.FieldSpec{WireName: "grpc_service_name"},
+	"Port":              ubx.FieldSpec{WireName: "port"},
+	"PortName":          ubx.FieldSpec{WireName: "port_name"},
+	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+}
 
 var RegionHealthCheck_GrpcTlsHealthCheckFields = ubx.FieldMap{
-		"GrpcServiceName": ubx.FieldSpec{WireName: "grpc_service_name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-	}
+	"GrpcServiceName":   ubx.FieldSpec{WireName: "grpc_service_name"},
+	"Port":              ubx.FieldSpec{WireName: "port"},
+	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+}
 
 var RegionHealthCheck_Http2HealthCheckFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
-		"RequestPath": ubx.FieldSpec{WireName: "request_path"},
-		"Response": ubx.FieldSpec{WireName: "response"},
-	}
+	"Host":              ubx.FieldSpec{WireName: "host"},
+	"Port":              ubx.FieldSpec{WireName: "port"},
+	"PortName":          ubx.FieldSpec{WireName: "port_name"},
+	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+	"ProxyHeader":       ubx.FieldSpec{WireName: "proxy_header"},
+	"RequestPath":       ubx.FieldSpec{WireName: "request_path"},
+	"Response":          ubx.FieldSpec{WireName: "response"},
+}
 
 var RegionHealthCheck_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-	}
+	"Enable": ubx.FieldSpec{WireName: "enable"},
+}
 
 var RegionHealthCheck_SslHealthCheckFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
-		"Request": ubx.FieldSpec{WireName: "request"},
-		"Response": ubx.FieldSpec{WireName: "response"},
-	}
+	"Port":              ubx.FieldSpec{WireName: "port"},
+	"PortName":          ubx.FieldSpec{WireName: "port_name"},
+	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+	"ProxyHeader":       ubx.FieldSpec{WireName: "proxy_header"},
+	"Request":           ubx.FieldSpec{WireName: "request"},
+	"Response":          ubx.FieldSpec{WireName: "response"},
+}
 
 type RegionHealthCheckConfig struct {
 	// How often (in seconds) to send a health check. The default value is 5 seconds.
 	CheckIntervalSec any
-	// Output only. [Output Only] Creation timestamp in3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description any
-	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
-	GrpcHealthCheck any
+	Description        any
+	GrpcHealthCheck    any
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
-	// The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
 	Http2HealthCheck any
-	// Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
-	HttpHealthCheck any
-	// The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
+	HttpHealthCheck  any
 	HttpsHealthCheck any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. Type of the resource.
-	Kind any
 	// Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
 	LogConfig any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
 	Name any
-	// Output only. [Output Only] Region where the health check resides. Not applicable to global health checks.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
-	SourceRegions any
-	// The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
+	SourceRegions  any
 	SslHealthCheck any
-	// The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
 	TcpHealthCheck any
 	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
 	TimeoutSec any
@@ -146,17 +134,13 @@ type RegionHealthCheckAttrs struct {
 	// Output only. [Output Only] Creation timestamp in3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description any
-	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
-	GrpcHealthCheck any
+	Description        any
+	GrpcHealthCheck    any
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
-	// The computed HTTP/2 health check configuration for this region health check. This field is output-only and is present when the health check is configured to use HTTP/2. (AI-inferred)
 	Http2HealthCheck any
-	// Configuration block for HTTP health check parameters. This includes settings such as the port to check, the request path, and expected response behavior. Only one health check type block may be specified within a region health check resource. (AI-inferred)
-	HttpHealthCheck any
-	// The configuration block for an HTTPS health check. This field is computed and contains the settings that define the HTTPS health check for this regional health check. (AI-inferred)
+	HttpHealthCheck  any
 	HttpsHealthCheck any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
@@ -171,10 +155,8 @@ type RegionHealthCheckAttrs struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
-	SourceRegions any
-	// The SSL health check configuration. This field is present when the health check type is SSL and contains SSL-specific settings. It is computed by the API and output-only. (AI-inferred)
+	SourceRegions  any
 	SslHealthCheck any
-	// The TCP health check configuration. This computed, output-only field provides the current TCP health check parameters (such as port and probe settings) for the region health check, as configured via the TCP health check type. (AI-inferred)
 	TcpHealthCheck any
 	// How long (in seconds) to wait before claiming failure. The default value is 5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
 	TimeoutSec any
@@ -188,57 +170,54 @@ var RegionHealthCheck = ubx.ResourceBinding{
 	WireType: "google_compute_region_health_check",
 	Fields: ubx.FieldMap{
 		"CheckIntervalSec": ubx.FieldSpec{WireName: "check_interval_sec"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"GrpcHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_GrpcHealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_GrpcHealthCheckFields,
 		},
 		"GrpcTlsHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_tls_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_GrpcTlsHealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_GrpcTlsHealthCheckFields,
 		},
 		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
 		"Http2HealthCheck": ubx.FieldSpec{
 			WireName: "http2_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_Http2HealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpHealthCheck": ubx.FieldSpec{
 			WireName: "http_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_Http2HealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpsHealthCheck": ubx.FieldSpec{
 			WireName: "https_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_Http2HealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: RegionHealthCheck_LogConfigFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_LogConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"SelfLink":      ubx.FieldSpec{WireName: "self_link"},
 		"SourceRegions": ubx.FieldSpec{WireName: "source_regions"},
 		"SslHealthCheck": ubx.FieldSpec{
 			WireName: "ssl_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_SslHealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_SslHealthCheckFields,
 		},
 		"TcpHealthCheck": ubx.FieldSpec{
 			WireName: "tcp_health_check",
-			Kind: "object",
-			Fields: RegionHealthCheck_SslHealthCheckFields,
+			Kind:     "object",
+			Fields:   RegionHealthCheck_SslHealthCheckFields,
 		},
-		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"TimeoutSec":         ubx.FieldSpec{WireName: "timeout_sec"},
+		"Type":               ubx.FieldSpec{WireName: "type"},
 		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
 	},
 }

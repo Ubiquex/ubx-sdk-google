@@ -13,26 +13,20 @@ type Command_CommandResult struct {
 }
 
 var Command_CommandResultFields = ubx.FieldMap{
-		"ClientExecutionTime": ubx.FieldSpec{WireName: "client_execution_time"},
-		"ResultCode": ubx.FieldSpec{WireName: "result_code"},
-		"ResultType": ubx.FieldSpec{WireName: "result_type"},
-	}
+	"ClientExecutionTime": ubx.FieldSpec{WireName: "client_execution_time"},
+	"ResultCode":          ubx.FieldSpec{WireName: "result_code"},
+	"ResultType":          ubx.FieldSpec{WireName: "result_type"},
+}
 
 type CommandConfig struct {
 	// Result of the execution of a command.
 	CommandResult any
-	// Output only. State of the remote command.
-	CommandState any
 	// Required. Type of the remote command. The only supported command_type is "clearBrowsingData".
 	CommandType any
-	// Output only. Timestamp of the issurance of the remote command.
-	IssueTime any
 	// Identifier. Format: customers/{customer_id}/profiles/{profile_permanent_id}/commands/{command_id}
 	Name any
 	// Required. Payload of the remote command. The payload for "clearBrowsingData" command supports: - fields "clearCache" and "clearCookies" - values of boolean type.
 	Payload any
-	// Output only. Valid duration of the remote command.
-	ValidDuration any
 }
 
 type CommandAttrs struct {
@@ -57,14 +51,11 @@ var Command = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CommandResult": ubx.FieldSpec{
 			WireName: "command_result",
-			Kind: "object",
-			Fields: Command_CommandResultFields,
+			Kind:     "object",
+			Fields:   Command_CommandResultFields,
 		},
-		"CommandState": ubx.FieldSpec{WireName: "command_state"},
 		"CommandType": ubx.FieldSpec{WireName: "command_type"},
-		"IssueTime": ubx.FieldSpec{WireName: "issue_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"ValidDuration": ubx.FieldSpec{WireName: "valid_duration"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Payload":     ubx.FieldSpec{WireName: "payload"},
 	},
 }

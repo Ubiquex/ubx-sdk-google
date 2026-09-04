@@ -17,16 +17,10 @@ const Backup_EncryptionConfigFields: FieldMap = {
 };
 
 export interface BackupConfig {
-  /** Output only. The time when the backup was started. */
-  createTime?: string | Computed<string>;
   /** Encryption configuration (i.e. CMEK). */
   encryptionConfig?: Backup_EncryptionConfig | Computed<Backup_EncryptionConfig>;
-  /** Output only. The time when the backup will be deleted. */
-  expireTime?: string | Computed<string>;
   /** Immutable. The relative resource name of the backup, in the following form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}/backups/{backup}` */
   name?: string | Computed<string>;
-  /** Output only. The current state of the backup. */
-  state?: string | Computed<string>;
 }
 
 export interface BackupAttrs {
@@ -45,14 +39,11 @@ export interface BackupAttrs {
 export const Backup: ResourceBinding<BackupConfig, BackupAttrs> = {
   wireType: "google_looker_backup",
   fields: {
-    createTime: "create_time",
     encryptionConfig: {
       wireName: "encryption_config",
       kind: "object",
       fields: Backup_EncryptionConfigFields,
     },
-    expireTime: "expire_time",
     name: "name",
-    state: "state",
   },
 };

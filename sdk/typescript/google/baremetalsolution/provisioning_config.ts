@@ -204,8 +204,6 @@ const ProvisioningConfig_VolumesFields: FieldMap = {
 };
 
 export interface ProvisioningConfigConfig {
-  /** Output only. URI to Cloud Console UI view of this provisioning config. */
-  cloudConsoleUri?: string | Computed<string>;
   /** Optional. The user-defined identifier of the provisioning config. */
   customId?: string | Computed<string>;
   /** Email provided to send a confirmation with provisioning config to. Deprecated in favour of email field in request messages. */
@@ -216,20 +214,14 @@ export interface ProvisioningConfigConfig {
   instances?: ProvisioningConfig_Instances[] | Computed<ProvisioningConfig_Instances[]>;
   /** Optional. Location name of this ProvisioningConfig. It is optional only for Intake UI transition period. */
   location?: string | Computed<string>;
-  /** Output only. The system-generated name of the provisioning config. This follows the UUID format. */
-  name?: string | Computed<string>;
   /** Networks to be created. */
   networks?: ProvisioningConfig_Networks[] | Computed<ProvisioningConfig_Networks[]>;
   /** Optional. Pod name. Pod is an independent part of infrastructure. Instance can be connected to the assets (networks, volumes, nfsshares) allocated in the same pod only. */
   pod?: string | Computed<string>;
-  /** Output only. State of ProvisioningConfig. */
-  state?: string | Computed<string>;
   /** Optional status messages associated with the FAILED state. */
   statusMessage?: string | Computed<string>;
   /** A generated ticket id to track provisioning request. */
   ticketId?: string | Computed<string>;
-  /** Output only. Last update timestamp. */
-  updateTime?: string | Computed<string>;
   /** Volumes to be created. */
   volumes?: ProvisioningConfig_Volumes[] | Computed<ProvisioningConfig_Volumes[]>;
   /** If true, VPC SC is enabled for the cluster. */
@@ -272,7 +264,6 @@ export interface ProvisioningConfigAttrs {
 export const ProvisioningConfig: ResourceBinding<ProvisioningConfigConfig, ProvisioningConfigAttrs> = {
   wireType: "google_baremetalsolution_provisioning_config",
   fields: {
-    cloudConsoleUri: "cloud_console_uri",
     customId: "custom_id",
     email: "email",
     handoverServiceAccount: "handover_service_account",
@@ -282,17 +273,14 @@ export const ProvisioningConfig: ResourceBinding<ProvisioningConfigConfig, Provi
       fields: ProvisioningConfig_InstancesFields,
     },
     location: "location",
-    name: "name",
     networks: {
       wireName: "networks",
       kind: "list",
       fields: ProvisioningConfig_NetworksFields,
     },
     pod: "pod",
-    state: "state",
     statusMessage: "status_message",
     ticketId: "ticket_id",
-    updateTime: "update_time",
     volumes: {
       wireName: "volumes",
       kind: "list",

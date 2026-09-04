@@ -86,8 +86,6 @@ _AccountConnector_ProxyConfigFields = {
 class AccountConnectorConfig:
     # Optional. Allows users to store small amounts of arbitrary data.
     annotations: Any = None
-    # Output only. The timestamp when the accountConnector was created.
-    create_time: Any = None
     # Message for a customized OAuth config.
     custom_oauth_config: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -96,16 +94,10 @@ class AccountConnectorConfig:
     labels: Any = None
     # Identifier. The resource name of the accountConnector, in the format `projects/{project}/locations/{location}/accountConnectors/{account_connector_id}`.
     name: Any = None
-    # Output only. Start OAuth flow by clicking on this URL.
-    oauth_start_uri: Any = None
     # ProviderOAuthConfig is the OAuth config for a provider.
     provider_oauth_config: Any = None
     # The proxy configuration.
     proxy_config: Any = None
-    # Output only. A system-assigned unique identifier for the Account Connector.
-    uid: Any = None
-    # Output only. The timestamp when the accountConnector was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AccountConnectorAttrs:
@@ -136,7 +128,6 @@ AccountConnector = ubx.ResourceBinding(
     wire_type="google_developerconnect_account_connector",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_oauth_config": ubx.FieldSpec(
             wire_name="custom_oauth_config",
             kind="object",
@@ -145,7 +136,6 @@ AccountConnector = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "oauth_start_uri": ubx.FieldSpec(wire_name="oauth_start_uri"),
         "provider_oauth_config": ubx.FieldSpec(
             wire_name="provider_oauth_config",
             kind="object",
@@ -156,7 +146,5 @@ AccountConnector = ubx.ResourceBinding(
             kind="object",
             fields=_AccountConnector_ProxyConfigFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -10,12 +10,6 @@ type BillingAccountConfig struct {
 	DisplayName any
 	// If this account is a [subaccount](https://cloud.google.com/billing/docs/concepts), then this will be the resource name of the parent billing account that it is being resold through. Otherwise this will be empty.
 	MasterBillingAccount any
-	// Output only. The resource name of the billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF` would be the resource name for billing account `012345-567890-ABCDEF`.
-	Name any
-	// Output only. True if the billing account is open, and will therefore be charged for any usage on associated projects. False if the billing account is closed, and therefore projects associated with it are unable to use paid services.
-	Open any
-	// Output only. The billing account's parent resource identifier. Use the `MoveBillingAccount` method to update the account's parent resource if it is a organization. Format: - `organizations/{organization_id}`, for example, `organizations/12345678` - `billingAccounts/{billing_account_id}`, for example, `billingAccounts/012345-567890-ABCDEF`
-	Parent any
 }
 
 type BillingAccountAttrs struct {
@@ -36,11 +30,8 @@ type BillingAccountAttrs struct {
 var BillingAccount = ubx.ResourceBinding{
 	WireType: "google_cloudbilling_billing_account",
 	Fields: ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CurrencyCode":         ubx.FieldSpec{WireName: "currency_code"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
 		"MasterBillingAccount": ubx.FieldSpec{WireName: "master_billing_account"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Open": ubx.FieldSpec{WireName: "open"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
 	},
 }

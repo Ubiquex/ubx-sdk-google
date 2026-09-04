@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizedView_SubsetView_FamilySubsets struct {
 	QualifierPrefixes any
-	Qualifiers any
+	Qualifiers        any
 }
 
 type AuthorizedView_SubsetView struct {
@@ -16,18 +16,18 @@ type AuthorizedView_SubsetView struct {
 }
 
 var AuthorizedView_SubsetView_FamilySubsetsFields = ubx.FieldMap{
-		"QualifierPrefixes": ubx.FieldSpec{WireName: "qualifier_prefixes"},
-		"Qualifiers": ubx.FieldSpec{WireName: "qualifiers"},
-	}
+	"QualifierPrefixes": ubx.FieldSpec{WireName: "qualifier_prefixes"},
+	"Qualifiers":        ubx.FieldSpec{WireName: "qualifiers"},
+}
 
 var AuthorizedView_SubsetViewFields = ubx.FieldMap{
-		"FamilySubsets": ubx.FieldSpec{
-			WireName: "family_subsets",
-			Kind: "map",
-			Fields: AuthorizedView_SubsetView_FamilySubsetsFields,
-		},
-		"RowPrefixes": ubx.FieldSpec{WireName: "row_prefixes"},
-	}
+	"FamilySubsets": ubx.FieldSpec{
+		WireName: "family_subsets",
+		Kind:     "map",
+		Fields:   AuthorizedView_SubsetView_FamilySubsetsFields,
+	},
+	"RowPrefixes": ubx.FieldSpec{WireName: "row_prefixes"},
+}
 
 type AuthorizedViewConfig struct {
 	// Set to true to make the AuthorizedView protected against deletion. The parent Table and containing Instance cannot be deleted if an AuthorizedView has this bit set.
@@ -55,12 +55,12 @@ var AuthorizedView = ubx.ResourceBinding{
 	WireType: "google_bigtableadmin_authorized_view",
 	Fields: ubx.FieldMap{
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":               ubx.FieldSpec{WireName: "etag"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SubsetView": ubx.FieldSpec{
 			WireName: "subset_view",
-			Kind: "object",
-			Fields: AuthorizedView_SubsetViewFields,
+			Kind:     "object",
+			Fields:   AuthorizedView_SubsetViewFields,
 		},
 	},
 }

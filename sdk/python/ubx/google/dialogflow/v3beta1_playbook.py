@@ -509,23 +509,17 @@ _V3beta1Playbook_LlmModelSettingsFields = {
 @dataclasses.dataclass
 class V3beta1PlaybookConfig:
     code_block: Any = None
-    create_time: Any = None
     display_name: Any = None
     goal: Any = None
     handlers: Any = None
-    inline_actions: Any = None
     input_parameter_definitions: Any = None
     instruction: Any = None
     llm_model_settings: Any = None
     name: Any = None
     output_parameter_definitions: Any = None
     playbook_type: Any = None
-    referenced_flows: Any = None
-    referenced_playbooks: Any = None
     referenced_tools: Any = None
     speech_settings: Any = None
-    token_count: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V3beta1PlaybookAttrs:
@@ -556,7 +550,6 @@ V3beta1Playbook = ubx.ResourceBinding(
             kind="object",
             fields=_V3beta1Playbook_CodeBlockFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "goal": ubx.FieldSpec(wire_name="goal"),
         "handlers": ubx.FieldSpec(
@@ -564,7 +557,6 @@ V3beta1Playbook = ubx.ResourceBinding(
             kind="list",
             fields=_V3beta1Playbook_HandlersFields,
         ),
-        "inline_actions": ubx.FieldSpec(wire_name="inline_actions"),
         "input_parameter_definitions": ubx.FieldSpec(
             wire_name="input_parameter_definitions",
             kind="list",
@@ -587,15 +579,11 @@ V3beta1Playbook = ubx.ResourceBinding(
             fields=_V3beta1Playbook_InputParameterDefinitionsFields,
         ),
         "playbook_type": ubx.FieldSpec(wire_name="playbook_type"),
-        "referenced_flows": ubx.FieldSpec(wire_name="referenced_flows"),
-        "referenced_playbooks": ubx.FieldSpec(wire_name="referenced_playbooks"),
         "referenced_tools": ubx.FieldSpec(wire_name="referenced_tools"),
         "speech_settings": ubx.FieldSpec(
             wire_name="speech_settings",
             kind="object",
             fields=_V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettingsFields,
         ),
-        "token_count": ubx.FieldSpec(wire_name="token_count"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

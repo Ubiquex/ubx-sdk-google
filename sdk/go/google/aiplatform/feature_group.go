@@ -22,38 +22,36 @@ type FeatureGroup_BigQuery struct {
 	EntityIdColumns any
 	// Optional. Set if the data source is not a time-series.
 	StaticDataSource any
-	TimeSeries any
+	TimeSeries       any
 }
 
 var FeatureGroup_BigQuery_BigQuerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var FeatureGroup_BigQuery_TimeSeriesFields = ubx.FieldMap{
-		"TimestampColumn": ubx.FieldSpec{WireName: "timestamp_column"},
-	}
+	"TimestampColumn": ubx.FieldSpec{WireName: "timestamp_column"},
+}
 
 var FeatureGroup_BigQueryFields = ubx.FieldMap{
-		"BigQuerySource": ubx.FieldSpec{
-			WireName: "big_query_source",
-			Kind: "object",
-			Fields: FeatureGroup_BigQuery_BigQuerySourceFields,
-		},
-		"Dense": ubx.FieldSpec{WireName: "dense"},
-		"EntityIdColumns": ubx.FieldSpec{WireName: "entity_id_columns"},
-		"StaticDataSource": ubx.FieldSpec{WireName: "static_data_source"},
-		"TimeSeries": ubx.FieldSpec{
-			WireName: "time_series",
-			Kind: "object",
-			Fields: FeatureGroup_BigQuery_TimeSeriesFields,
-		},
-	}
+	"BigQuerySource": ubx.FieldSpec{
+		WireName: "big_query_source",
+		Kind:     "object",
+		Fields:   FeatureGroup_BigQuery_BigQuerySourceFields,
+	},
+	"Dense":            ubx.FieldSpec{WireName: "dense"},
+	"EntityIdColumns":  ubx.FieldSpec{WireName: "entity_id_columns"},
+	"StaticDataSource": ubx.FieldSpec{WireName: "static_data_source"},
+	"TimeSeries": ubx.FieldSpec{
+		WireName: "time_series",
+		Kind:     "object",
+		Fields:   FeatureGroup_BigQuery_TimeSeriesFields,
+	},
+}
 
 type FeatureGroupConfig struct {
 	// Input source type for BigQuery Tables and Views.
 	BigQuery any
-	// Output only. Timestamp when this FeatureGroup was created.
-	CreateTime any
 	// Optional. Description of the FeatureGroup.
 	Description any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -62,12 +60,8 @@ type FeatureGroupConfig struct {
 	Labels any
 	// Identifier. Name of the FeatureGroup. Format: `projects/{project}/locations/{location}/featureGroups/{featureGroup}`
 	Name any
-	// Output only. A Service Account unique to this FeatureGroup. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to access source data while running jobs under this FeatureGroup.
-	ServiceAccountEmail any
 	// Optional. Service agent type used during jobs under a FeatureGroup. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureGroup within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service account to access the BigQuery source table.
 	ServiceAgentType any
-	// Output only. Timestamp when this FeatureGroup was last updated.
-	UpdateTime any
 }
 
 type FeatureGroupAttrs struct {
@@ -96,16 +90,13 @@ var FeatureGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigQuery": ubx.FieldSpec{
 			WireName: "big_query",
-			Kind: "object",
-			Fields: FeatureGroup_BigQueryFields,
+			Kind:     "object",
+			Fields:   FeatureGroup_BigQueryFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Etag":             ubx.FieldSpec{WireName: "etag"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ServiceAgentType": ubx.FieldSpec{WireName: "service_agent_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

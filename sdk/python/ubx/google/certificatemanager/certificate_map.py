@@ -17,37 +17,16 @@ class CertificateMap_GclbTargets:
     target_https_proxy: Any = None
     target_ssl_proxy: Any = None
 
-_CertificateMap_GclbTargets_IpConfigsFields = {
-    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-    "ports": ubx.FieldSpec(wire_name="ports"),
-}
-
-_CertificateMap_GclbTargetsFields = {
-    "ip_configs": ubx.FieldSpec(
-        wire_name="ip_configs",
-        kind="list",
-        fields=_CertificateMap_GclbTargets_IpConfigsFields,
-    ),
-    "target_https_proxy": ubx.FieldSpec(wire_name="target_https_proxy"),
-    "target_ssl_proxy": ubx.FieldSpec(wire_name="target_ssl_proxy"),
-}
-
 @dataclasses.dataclass
 class CertificateMapConfig:
-    # Output only. The creation timestamp of a Certificate Map.
-    create_time: Any = None
     # Optional. One or more paragraphs of text description of a certificate map.
     description: Any = None
-    # Output only. A list of GCLB targets that use this Certificate Map. A Target Proxy is only present on this list if it's attached to a Forwarding Rule.
-    gclb_targets: Any = None
     # Optional. Set of labels associated with a Certificate Map.
     labels: Any = None
     # Identifier. A user-defined name of the Certificate Map. Certificate Map names must be unique globally and match pattern `projects/*/locations/*/certificateMaps/*`.
     name: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
     tags: Any = None
-    # Output only. The update timestamp of a Certificate Map.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CertificateMapAttrs:
@@ -69,16 +48,9 @@ class CertificateMapAttrs:
 CertificateMap = ubx.ResourceBinding(
     wire_type="google_certificatemanager_certificate_map",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "gclb_targets": ubx.FieldSpec(
-            wire_name="gclb_targets",
-            kind="list",
-            fields=_CertificateMap_GclbTargetsFields,
-        ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

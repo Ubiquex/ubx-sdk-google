@@ -169,8 +169,6 @@ const V1alphaControl_SynonymsActionFields: FieldMap = {
 };
 
 export interface V1alphaControlConfig {
-  /** Output only. List of all ServingConfig IDs this control is attached to. May take up to 10 minutes to update after changes. */
-  associatedServingConfigIds?: string[] | Computed<string[]>;
   /** Adjusts order of products in returned list. */
   boostAction?: V1alphaControl_BoostAction | Computed<V1alphaControl_BoostAction>;
   /** Determines when the associated action will trigger. Omit to always apply the action. Currently only a single condition may be specified. Otherwise an INVALID ARGUMENT error is thrown. */
@@ -221,7 +219,6 @@ export interface V1alphaControlAttrs {
 export const V1alphaControl: ResourceBinding<V1alphaControlConfig, V1alphaControlAttrs> = {
   wireType: "google_discoveryengine_v1alpha_control",
   fields: {
-    associatedServingConfigIds: "associated_serving_config_ids",
     boostAction: {
       wireName: "boost_action",
       kind: "object",

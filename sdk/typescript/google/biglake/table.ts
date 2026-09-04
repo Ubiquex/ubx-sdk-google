@@ -52,22 +52,12 @@ const Table_HiveOptionsFields: FieldMap = {
 };
 
 export interface TableConfig {
-  /** Output only. The creation time of the table. */
-  createTime?: string | Computed<string>;
-  /** Output only. The deletion time of the table. Only set after the table is deleted. */
-  deleteTime?: string | Computed<string>;
   /** The checksum of a table object computed by the server based on the value of other fields. It may be sent on update requests to ensure the client has an up-to-date value before proceeding. It is only checked for update table operations. */
   etag?: string | Computed<string>;
-  /** Output only. The time when this table is considered expired. Only set after the table is deleted. */
-  expireTime?: string | Computed<string>;
   /** Options of a Hive table. */
   hiveOptions?: Table_HiveOptions | Computed<Table_HiveOptions>;
-  /** Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id} */
-  name?: string | Computed<string>;
   /** The table type. */
   type?: string | Computed<string>;
-  /** Output only. The last modification time of the table. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TableAttrs {
@@ -92,17 +82,12 @@ export interface TableAttrs {
 export const Table: ResourceBinding<TableConfig, TableAttrs> = {
   wireType: "google_biglake_table",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     etag: "etag",
-    expireTime: "expire_time",
     hiveOptions: {
       wireName: "hive_options",
       kind: "object",
       fields: Table_HiveOptionsFields,
     },
-    name: "name",
     type: "type",
-    updateTime: "update_time",
   },
 };

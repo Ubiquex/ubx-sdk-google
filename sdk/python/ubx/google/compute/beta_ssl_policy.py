@@ -17,37 +17,14 @@ class BetaSslPolicy_Warnings:
     data: Any = None
     message: Any = None
 
-_BetaSslPolicy_Warnings_DataFields = {
-    "key": ubx.FieldSpec(wire_name="key"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
-
-_BetaSslPolicy_WarningsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "data": ubx.FieldSpec(
-        wire_name="data",
-        kind="list",
-        fields=_BetaSslPolicy_Warnings_DataFields,
-    ),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
 @dataclasses.dataclass
 class BetaSslPolicyConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is notCUSTOM.
     custom_features: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] The list of features enabled in the SSL policy.
-    enabled_features: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
     fingerprint: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
-    kind: Any = None
     # The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field must be set to RESTRICTED.
     min_tls_version: Any = None
     # Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -56,12 +33,6 @@ class BetaSslPolicyConfig:
     post_quantum_key_exchange: Any = None
     # Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in the customFeatures field. If using FIPS_202205, the min_tls_version field must be set to TLS_1_2.
     profile: Any = None
-    # Output only. [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
-    region: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
-    warnings: Any = None
 
 @dataclasses.dataclass
 class BetaSslPolicyAttrs:
@@ -97,23 +68,12 @@ class BetaSslPolicyAttrs:
 BetaSslPolicy = ubx.ResourceBinding(
     wire_type="google_compute_beta_ssl_policy",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "custom_features": ubx.FieldSpec(wire_name="custom_features"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "enabled_features": ubx.FieldSpec(wire_name="enabled_features"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "min_tls_version": ubx.FieldSpec(wire_name="min_tls_version"),
         "name": ubx.FieldSpec(wire_name="name"),
         "post_quantum_key_exchange": ubx.FieldSpec(wire_name="post_quantum_key_exchange"),
         "profile": ubx.FieldSpec(wire_name="profile"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "warnings": ubx.FieldSpec(
-            wire_name="warnings",
-            kind="list",
-            fields=_BetaSslPolicy_WarningsFields,
-        ),
     },
 )

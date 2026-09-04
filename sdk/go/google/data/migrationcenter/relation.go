@@ -4,7 +4,6 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RelationConfig struct {
-	Name any
 }
 
 type RelationAttrs struct {
@@ -12,7 +11,7 @@ type RelationAttrs struct {
 	CreateTime any
 	// Output only. The destination asset name in the relation.
 	DstAsset any
-	Name any
+	Name     any
 	// Output only. The source asset name in the relation.
 	SrcAsset any
 	// Optional. The type of the relation.
@@ -21,7 +20,5 @@ type RelationAttrs struct {
 
 var Relation = ubx.DataSourceBinding{
 	WireType: "google_migrationcenter_relation",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

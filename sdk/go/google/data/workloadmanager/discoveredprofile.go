@@ -19,49 +19,49 @@ type Discoveredprofile_SapWorkload_Application_DatabaseProperties struct {
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties_SapInstanceProperties_AgentStates_HanaMonitoring_IamPermissions struct {
 	Granted any
-	Name any
+	Name    any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties_SapInstanceProperties_AgentStates_HanaMonitoring struct {
 	IamPermissions any
-	State any
+	State          any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties_SapInstanceProperties_AgentStates struct {
 	AvailableVersion any
-	HanaMonitoring any
+	HanaMonitoring   any
 	InstalledVersion any
-	IsFullyEnabled any
-	ProcessMetrics any
-	SystemDiscovery any
+	IsFullyEnabled   any
+	ProcessMetrics   any
+	SystemDiscovery  any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties_SapInstanceProperties struct {
 	AgentStates any
-	Numbers any
+	Numbers     any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties_UpcomingMaintenanceEvent struct {
-	EndTime any
+	EndTime           any
 	MaintenanceStatus any
 	OnHostMaintenance any
-	StartTime any
-	Type any
+	StartTime         any
+	Type              any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources_InstanceProperties struct {
-	InstanceNumber any
-	MachineType any
-	Roles any
-	SapInstanceProperties any
-	Status any
+	InstanceNumber           any
+	MachineType              any
+	Roles                    any
+	SapInstanceProperties    any
+	Status                   any
 	UpcomingMaintenanceEvent any
 }
 
 type Discoveredprofile_SapWorkload_Application_Resources struct {
 	InstanceProperties any
-	Kind any
-	Name any
+	Kind               any
+	Name               any
 }
 
 type Discoveredprofile_SapWorkload_Application struct {
@@ -78,7 +78,7 @@ type Discoveredprofile_SapWorkload_Application struct {
 }
 
 type Discoveredprofile_SapWorkload_Products struct {
-	Name any
+	Name    any
 	Version any
 }
 
@@ -102,7 +102,7 @@ type DiscoveredprofileConfig struct {
 type DiscoveredprofileAttrs struct {
 	// Optional. such as name, description, version. More example can be found in deployment
 	Labels any
-	Name any
+	Name   any
 	// Required. time when the workload data was refreshed
 	RefreshedTime any
 	// The body of sap workload

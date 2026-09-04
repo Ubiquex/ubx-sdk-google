@@ -23,22 +23,22 @@ type Database_SourceInfo struct {
 }
 
 var Database_CmekConfigFields = ubx.FieldMap{
-		"ActiveKeyVersion": ubx.FieldSpec{WireName: "active_key_version"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"ActiveKeyVersion": ubx.FieldSpec{WireName: "active_key_version"},
+	"KmsKeyName":       ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Database_SourceInfo_BackupFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{WireName: "backup"},
-	}
+	"Backup": ubx.FieldSpec{WireName: "backup"},
+}
 
 var Database_SourceInfoFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{
-			WireName: "backup",
-			Kind: "object",
-			Fields: Database_SourceInfo_BackupFields,
-		},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-	}
+	"Backup": ubx.FieldSpec{
+		WireName: "backup",
+		Kind:     "object",
+		Fields:   Database_SourceInfo_BackupFields,
+	},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+}
 
 type DatabaseConfig struct {
 	// The App Engine integration mode to use for this database.
@@ -47,24 +47,14 @@ type DatabaseConfig struct {
 	CmekConfig any
 	// The default concurrency control mode to use for this database. If unspecified in a CreateDatabase request, this will default based on the database edition: Optimistic for Enterprise and Pessimistic for all other databases. While transactions can explicitly specify their own concurrency mode, this setting defines the default behavior when left unspecified. Important: This database-level setting is not respected for Firestore with MongoDB compatibility. All transactions through the MongoDB compatibility layer will use optimistic concurrency control, regardless of this setting.
 	ConcurrencyMode any
-	// Output only. The timestamp at which this database was created. Databases created before 2016 do not populate create_time.
-	CreateTime any
 	// Immutable. The edition of the database.
 	DatabaseEdition any
 	// State of delete protection for the database.
 	DeleteProtectionState any
-	// Output only. The timestamp at which this database was deleted. Only set if the database has been deleted.
-	DeleteTime any
-	// Output only. The earliest timestamp at which older versions of the data can be read from the database. See [version_retention_period] above; this field is populated with `now - version_retention_period`. This value is continuously updated, and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
-	EarliestVersionTime any
 	// This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
 	// Optional. The Firestore API data access mode to use for this database. If not set on write: - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise edition. - the default value is DATA_ACCESS_MODE_ENABLED for Standard edition.
 	FirestoreDataAccessMode any
-	// Output only. Background: Free tier is the ability of a Firestore database to use a small amount of resources every day without being charged. Once usage exceeds the free tier limit further usage is charged. Whether this database can make use of the free tier. Only one database per project can be eligible for the free tier. The first (or next) database that is created in a project without a free tier database will be marked as eligible for the free tier. Databases that are created while there is a free tier database will not be eligible for the free tier.
-	FreeTier any
-	// Output only. The key_prefix for this database. This key_prefix is used, in combination with the project ID ("~") to construct the application ID that is returned from the Cloud Datastore APIs in Google App Engine first generation runtimes. This value may be empty in which case the appid to use for URL-encoded keys is the project_id (eg: foo instead of v~foo).
-	KeyPrefix any
 	// Required. The location of the database. Available locations are listed at https://cloud.google.com/firestore/docs/locations.
 	LocationId any
 	// Optional. The MongoDB compatible API data access mode to use for this database. If not set on write, the default value is DATA_ACCESS_MODE_ENABLED for Enterprise edition. The value is always DATA_ACCESS_MODE_DISABLED for Standard edition.
@@ -73,8 +63,6 @@ type DatabaseConfig struct {
 	Name any
 	// Whether to enable the PITR feature on this database.
 	PointInTimeRecoveryEnablement any
-	// Output only. The database resource's prior database ID. This field is only populated for deleted databases.
-	PreviousId any
 	// Immutable. The default Realtime Updates mode to use for this database.
 	RealtimeUpdatesMode any
 	// Information about the provenance of this database.
@@ -83,12 +71,6 @@ type DatabaseConfig struct {
 	Tags any
 	// Required. The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.
 	Type any
-	// Output only. The system-generated UUID4 for this Database.
-	Uid any
-	// Output only. The timestamp at which this database was most recently updated. Note this only includes updates to the database resource and not data contained by the database.
-	UpdateTime any
-	// Output only. The period during which past versions of data are retained in the database. Any read or query can specify a `read_time` within this window, and will read the state of the database at that time. If the PITR feature is enabled, the retention period is 7 days. Otherwise, the retention period is 1 hour.
-	VersionRetentionPeriod any
 }
 
 type DatabaseAttrs struct {
@@ -148,34 +130,25 @@ var Database = ubx.ResourceBinding{
 		"AppEngineIntegrationMode": ubx.FieldSpec{WireName: "app_engine_integration_mode"},
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: Database_CmekConfigFields,
+			Kind:     "object",
+			Fields:   Database_CmekConfigFields,
 		},
-		"ConcurrencyMode": ubx.FieldSpec{WireName: "concurrency_mode"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatabaseEdition": ubx.FieldSpec{WireName: "database_edition"},
-		"DeleteProtectionState": ubx.FieldSpec{WireName: "delete_protection_state"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"EarliestVersionTime": ubx.FieldSpec{WireName: "earliest_version_time"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FirestoreDataAccessMode": ubx.FieldSpec{WireName: "firestore_data_access_mode"},
-		"FreeTier": ubx.FieldSpec{WireName: "free_tier"},
-		"KeyPrefix": ubx.FieldSpec{WireName: "key_prefix"},
-		"LocationId": ubx.FieldSpec{WireName: "location_id"},
+		"ConcurrencyMode":                 ubx.FieldSpec{WireName: "concurrency_mode"},
+		"DatabaseEdition":                 ubx.FieldSpec{WireName: "database_edition"},
+		"DeleteProtectionState":           ubx.FieldSpec{WireName: "delete_protection_state"},
+		"Etag":                            ubx.FieldSpec{WireName: "etag"},
+		"FirestoreDataAccessMode":         ubx.FieldSpec{WireName: "firestore_data_access_mode"},
+		"LocationId":                      ubx.FieldSpec{WireName: "location_id"},
 		"MongodbCompatibleDataAccessMode": ubx.FieldSpec{WireName: "mongodb_compatible_data_access_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PointInTimeRecoveryEnablement": ubx.FieldSpec{WireName: "point_in_time_recovery_enablement"},
-		"PreviousId": ubx.FieldSpec{WireName: "previous_id"},
-		"RealtimeUpdatesMode": ubx.FieldSpec{WireName: "realtime_updates_mode"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
+		"PointInTimeRecoveryEnablement":   ubx.FieldSpec{WireName: "point_in_time_recovery_enablement"},
+		"RealtimeUpdatesMode":             ubx.FieldSpec{WireName: "realtime_updates_mode"},
 		"SourceInfo": ubx.FieldSpec{
 			WireName: "source_info",
-			Kind: "object",
-			Fields: Database_SourceInfoFields,
+			Kind:     "object",
+			Fields:   Database_SourceInfoFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VersionRetentionPeriod": ubx.FieldSpec{WireName: "version_retention_period"},
 	},
 }

@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QaQuestionTagConfig:
-    # Output only. The time at which the question tag was created.
-    create_time: Any = None
     # Required. A user-specified display name for the tag.
     display_name: Any = None
     # Identifier. Resource name for the QaQuestionTag Format projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag} In the above format, the last segment, i.e., qa_question_tag, is a server-generated ID corresponding to the tag resource.
     name: Any = None
     # Optional. The list of Scorecard Question IDs that the tag applies to. Each QaQuestionId is represented as a full resource name containing the Question ID. Lastly, Since a tag may not necessarily be referenced by any Scorecard Questions, we treat this field as optional.
     qa_question_ids: Any = None
-    # Output only. The most recent time at which the question tag was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class QaQuestionTagAttrs:
@@ -35,10 +31,8 @@ class QaQuestionTagAttrs:
 QaQuestionTag = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_qa_question_tag",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "qa_question_ids": ubx.FieldSpec(wire_name="qa_question_ids"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

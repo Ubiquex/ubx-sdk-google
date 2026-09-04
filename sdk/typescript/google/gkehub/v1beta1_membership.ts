@@ -240,10 +240,6 @@ const V1beta1Membership_StateFields: FieldMap = {
 export interface V1beta1MembershipConfig {
   /** Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity */
   authority?: V1beta1Membership_Authority | Computed<V1beta1Membership_Authority>;
-  /** Output only. When the Membership was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the Membership was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Description of this membership, limited to 63 characters. Must match the regex: `a-zA-Z0-9*` */
   description?: string | Computed<string>;
   /** MembershipEndpoint contains information needed to contact a Kubernetes API, endpoint and any additional Kubernetes metadata. */
@@ -254,20 +250,10 @@ export interface V1beta1MembershipConfig {
   infrastructureType?: string | Computed<string>;
   /** Optional. Google Cloud labels for this membership. These labels are not leveraged by multi-cluster features, instead, we prefer cluster labels, which can be set on GKE cluster or other cluster types. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. For clusters using Connect, the timestamp of the most recent connection established with Google Cloud. This time is updated every several minutes, not continuously. For clusters that do not use GKE Connect, or that have never connected successfully, this field will be unset. */
-  lastConnectionTime?: string | Computed<string>;
-  /** Output only. The type of the membership. */
-  membershipType?: string | Computed<string>;
   /** MonitoringConfig informs Fleet-based applications/services/UIs how the metrics for the underlying cluster is reported to cloud monitoring services. It can be set from empty to non-empty, but can't be mutated directly to prevent accidentally breaking the constinousty of metrics. */
   monitoringConfig?: V1beta1Membership_MonitoringConfig | Computed<V1beta1Membership_MonitoringConfig>;
-  /** Output only. The full, unique name of this Membership resource in the format `projects/* /locations/* /memberships/{membership_id}`, set during creation. `membership_id` must be a valid RFC 1123 compliant DNS label: 1. At most 63 characters in length 2. It must consist of lower case alphanumeric characters or `-` 3. It must start and end with an alphanumeric character Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters. */
-  name?: string | Computed<string>;
   /** State of the Membership resource. */
   state?: V1beta1Membership_State | Computed<V1beta1Membership_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Membership resources. If a Membership resource is deleted and another resource with the same name is created, it gets a different unique_id. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. When the Membership was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1MembershipAttrs {
@@ -311,8 +297,6 @@ export const V1beta1Membership: ResourceBinding<V1beta1MembershipConfig, V1beta1
       kind: "object",
       fields: V1beta1Membership_AuthorityFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     description: "description",
     endpoint: {
       wireName: "endpoint",
@@ -322,20 +306,15 @@ export const V1beta1Membership: ResourceBinding<V1beta1MembershipConfig, V1beta1
     externalId: "external_id",
     infrastructureType: "infrastructure_type",
     labels: "labels",
-    lastConnectionTime: "last_connection_time",
-    membershipType: "membership_type",
     monitoringConfig: {
       wireName: "monitoring_config",
       kind: "object",
       fields: V1beta1Membership_MonitoringConfigFields,
     },
-    name: "name",
     state: {
       wireName: "state",
       kind: "object",
       fields: V1beta1Membership_StateFields,
     },
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

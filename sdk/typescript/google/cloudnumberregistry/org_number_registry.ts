@@ -4,16 +4,12 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface OrgNumberRegistryConfig {
   /** Required. The project that will act as the admin project for CNR resources Format: projects/{project_number} or projects/{project_id} */
   adminProject?: string | Computed<string>;
-  /** Output only. The time at which the OrgNumberRegistry was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the OrgNumberRegistry. */
   name?: string | Computed<string>;
   /** Required. The scopes within the organization that the project is able to manage. Currently only organization scope is supported. For example, "organizations/1234567890". */
   targetScopes?: string[] | Computed<string[]>;
-  /** Output only. The time at which the OrgNumberRegistry was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface OrgNumberRegistryAttrs {
@@ -35,10 +31,8 @@ export const OrgNumberRegistry: ResourceBinding<OrgNumberRegistryConfig, OrgNumb
   wireType: "google_cloudnumberregistry_org_number_registry",
   fields: {
     adminProject: "admin_project",
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     targetScopes: "target_scopes",
-    updateTime: "update_time",
   },
 };

@@ -89,26 +89,26 @@ type Subscription_MessageTransforms_AiInference_UnstructuredInference struct {
 }
 
 type Subscription_MessageTransforms_AiInference struct {
-	Endpoint any
-	ServiceAccountEmail any
+	Endpoint              any
+	ServiceAccountEmail   any
 	UnstructuredInference any
 }
 
 type Subscription_MessageTransforms_Compression struct {
 	CompressionAlgorithm any
-	CompressionMode any
+	CompressionMode      any
 }
 
 type Subscription_MessageTransforms_JavascriptUdf struct {
-	Code any
+	Code         any
 	FunctionName any
 }
 
 type Subscription_MessageTransforms struct {
-	AiInference any
-	Compression any
-	Disabled any
-	Enabled any
+	AiInference   any
+	Compression   any
+	Disabled      any
+	Enabled       any
 	JavascriptUdf any
 }
 
@@ -145,133 +145,133 @@ type Subscription_RetryPolicy struct {
 }
 
 var Subscription_AnalyticsHubSubscriptionInfoFields = ubx.FieldMap{
-		"Listing": ubx.FieldSpec{WireName: "listing"},
-		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-	}
+	"Listing":      ubx.FieldSpec{WireName: "listing"},
+	"Subscription": ubx.FieldSpec{WireName: "subscription"},
+}
 
 var Subscription_BigqueryConfigFields = ubx.FieldMap{
-		"DropUnknownFields": ubx.FieldSpec{WireName: "drop_unknown_fields"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"UseTableSchema": ubx.FieldSpec{WireName: "use_table_schema"},
-		"UseTopicSchema": ubx.FieldSpec{WireName: "use_topic_schema"},
-		"WriteMetadata": ubx.FieldSpec{WireName: "write_metadata"},
-	}
+	"DropUnknownFields":   ubx.FieldSpec{WireName: "drop_unknown_fields"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"Table":               ubx.FieldSpec{WireName: "table"},
+	"UseTableSchema":      ubx.FieldSpec{WireName: "use_table_schema"},
+	"UseTopicSchema":      ubx.FieldSpec{WireName: "use_topic_schema"},
+	"WriteMetadata":       ubx.FieldSpec{WireName: "write_metadata"},
+}
 
 var Subscription_BigtableConfigFields = ubx.FieldMap{
-		"AppProfileId": ubx.FieldSpec{WireName: "app_profile_id"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-		"WriteMetadata": ubx.FieldSpec{WireName: "write_metadata"},
-	}
+	"AppProfileId":        ubx.FieldSpec{WireName: "app_profile_id"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"Table":               ubx.FieldSpec{WireName: "table"},
+	"WriteMetadata":       ubx.FieldSpec{WireName: "write_metadata"},
+}
 
 var Subscription_CloudStorageConfig_AvroConfigFields = ubx.FieldMap{
-		"UseTopicSchema": ubx.FieldSpec{WireName: "use_topic_schema"},
-		"WriteMetadata": ubx.FieldSpec{WireName: "write_metadata"},
-	}
+	"UseTopicSchema": ubx.FieldSpec{WireName: "use_topic_schema"},
+	"WriteMetadata":  ubx.FieldSpec{WireName: "write_metadata"},
+}
 
 var Subscription_CloudStorageConfigFields = ubx.FieldMap{
-		"AvroConfig": ubx.FieldSpec{
-			WireName: "avro_config",
-			Kind: "object",
-			Fields: Subscription_CloudStorageConfig_AvroConfigFields,
-		},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"FilenameDatetimeFormat": ubx.FieldSpec{WireName: "filename_datetime_format"},
-		"FilenamePrefix": ubx.FieldSpec{WireName: "filename_prefix"},
-		"FilenameSuffix": ubx.FieldSpec{WireName: "filename_suffix"},
-		"MaxBytes": ubx.FieldSpec{WireName: "max_bytes"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxMessages": ubx.FieldSpec{WireName: "max_messages"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TextConfig": ubx.FieldSpec{WireName: "text_config"},
-	}
+	"AvroConfig": ubx.FieldSpec{
+		WireName: "avro_config",
+		Kind:     "object",
+		Fields:   Subscription_CloudStorageConfig_AvroConfigFields,
+	},
+	"Bucket":                 ubx.FieldSpec{WireName: "bucket"},
+	"FilenameDatetimeFormat": ubx.FieldSpec{WireName: "filename_datetime_format"},
+	"FilenamePrefix":         ubx.FieldSpec{WireName: "filename_prefix"},
+	"FilenameSuffix":         ubx.FieldSpec{WireName: "filename_suffix"},
+	"MaxBytes":               ubx.FieldSpec{WireName: "max_bytes"},
+	"MaxDuration":            ubx.FieldSpec{WireName: "max_duration"},
+	"MaxMessages":            ubx.FieldSpec{WireName: "max_messages"},
+	"ServiceAccountEmail":    ubx.FieldSpec{WireName: "service_account_email"},
+	"State":                  ubx.FieldSpec{WireName: "state"},
+	"TextConfig":             ubx.FieldSpec{WireName: "text_config"},
+}
 
 var Subscription_DeadLetterPolicyFields = ubx.FieldMap{
-		"DeadLetterTopic": ubx.FieldSpec{WireName: "dead_letter_topic"},
-		"MaxDeliveryAttempts": ubx.FieldSpec{WireName: "max_delivery_attempts"},
-	}
+	"DeadLetterTopic":     ubx.FieldSpec{WireName: "dead_letter_topic"},
+	"MaxDeliveryAttempts": ubx.FieldSpec{WireName: "max_delivery_attempts"},
+}
 
 var Subscription_ExpirationPolicyFields = ubx.FieldMap{
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Ttl": ubx.FieldSpec{WireName: "ttl"},
+}
 
 var Subscription_MessageTransforms_AiInference_UnstructuredInferenceFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Subscription_MessageTransforms_AiInferenceFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"UnstructuredInference": ubx.FieldSpec{
-			WireName: "unstructured_inference",
-			Kind: "object",
-			Fields: Subscription_MessageTransforms_AiInference_UnstructuredInferenceFields,
-		},
-	}
+	"Endpoint":            ubx.FieldSpec{WireName: "endpoint"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"UnstructuredInference": ubx.FieldSpec{
+		WireName: "unstructured_inference",
+		Kind:     "object",
+		Fields:   Subscription_MessageTransforms_AiInference_UnstructuredInferenceFields,
+	},
+}
 
 var Subscription_MessageTransforms_CompressionFields = ubx.FieldMap{
-		"CompressionAlgorithm": ubx.FieldSpec{WireName: "compression_algorithm"},
-		"CompressionMode": ubx.FieldSpec{WireName: "compression_mode"},
-	}
+	"CompressionAlgorithm": ubx.FieldSpec{WireName: "compression_algorithm"},
+	"CompressionMode":      ubx.FieldSpec{WireName: "compression_mode"},
+}
 
 var Subscription_MessageTransforms_JavascriptUdfFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
-	}
+	"Code":         ubx.FieldSpec{WireName: "code"},
+	"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+}
 
 var Subscription_MessageTransformsFields = ubx.FieldMap{
-		"AiInference": ubx.FieldSpec{
-			WireName: "ai_inference",
-			Kind: "object",
-			Fields: Subscription_MessageTransforms_AiInferenceFields,
-		},
-		"Compression": ubx.FieldSpec{
-			WireName: "compression",
-			Kind: "object",
-			Fields: Subscription_MessageTransforms_CompressionFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"JavascriptUdf": ubx.FieldSpec{
-			WireName: "javascript_udf",
-			Kind: "object",
-			Fields: Subscription_MessageTransforms_JavascriptUdfFields,
-		},
-	}
+	"AiInference": ubx.FieldSpec{
+		WireName: "ai_inference",
+		Kind:     "object",
+		Fields:   Subscription_MessageTransforms_AiInferenceFields,
+	},
+	"Compression": ubx.FieldSpec{
+		WireName: "compression",
+		Kind:     "object",
+		Fields:   Subscription_MessageTransforms_CompressionFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"JavascriptUdf": ubx.FieldSpec{
+		WireName: "javascript_udf",
+		Kind:     "object",
+		Fields:   Subscription_MessageTransforms_JavascriptUdfFields,
+	},
+}
 
 var Subscription_PushConfig_NoWrapperFields = ubx.FieldMap{
-		"WriteMetadata": ubx.FieldSpec{WireName: "write_metadata"},
-	}
+	"WriteMetadata": ubx.FieldSpec{WireName: "write_metadata"},
+}
 
 var Subscription_PushConfig_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var Subscription_PushConfigFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"NoWrapper": ubx.FieldSpec{
-			WireName: "no_wrapper",
-			Kind: "object",
-			Fields: Subscription_PushConfig_NoWrapperFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: Subscription_PushConfig_OidcTokenFields,
-		},
-		"PubsubWrapper": ubx.FieldSpec{WireName: "pubsub_wrapper"},
-		"PushEndpoint": ubx.FieldSpec{WireName: "push_endpoint"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"NoWrapper": ubx.FieldSpec{
+		WireName: "no_wrapper",
+		Kind:     "object",
+		Fields:   Subscription_PushConfig_NoWrapperFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   Subscription_PushConfig_OidcTokenFields,
+	},
+	"PubsubWrapper": ubx.FieldSpec{WireName: "pubsub_wrapper"},
+	"PushEndpoint":  ubx.FieldSpec{WireName: "push_endpoint"},
+}
 
 var Subscription_RetryPolicyFields = ubx.FieldMap{
-		"MaximumBackoff": ubx.FieldSpec{WireName: "maximum_backoff"},
-		"MinimumBackoff": ubx.FieldSpec{WireName: "minimum_backoff"},
-	}
+	"MaximumBackoff": ubx.FieldSpec{WireName: "maximum_backoff"},
+	"MinimumBackoff": ubx.FieldSpec{WireName: "minimum_backoff"},
+}
 
 type SubscriptionConfig struct {
 	// Optional. The approximate amount of time (on a best-effort basis) Pub/Sub waits for the subscriber to acknowledge receipt before resending the message. In the interval after the message is delivered and before it is acknowledged, it is considered to be _outstanding_. During that time period, the message will not be redelivered (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using non-streaming pull or send the `ack_id` in a `StreamingModifyAckDeadlineRequest` if using streaming pull. The minimum custom deadline you can specify is 10 seconds. The maximum custom deadline you can specify is 600 seconds (10 minutes). If this parameter is 0, a default value of 10 seconds is used. For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message.
@@ -310,14 +310,10 @@ type SubscriptionConfig struct {
 	RetainAckedMessages any
 	// A policy that specifies how Pub/Sub retries message delivery. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded events for a given message. Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not match the configuration. That is, delay can be more or less than configured backoff.
 	RetryPolicy any
-	// Output only. An output-only field indicating whether or not the subscription can receive messages.
-	State any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources.
 	Tags any
 	// Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted.
 	Topic any
-	// Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests.
-	TopicMessageRetentionDuration any
 }
 
 type SubscriptionAttrs struct {
@@ -373,60 +369,58 @@ var Subscription = ubx.ResourceBinding{
 		"AckDeadlineSeconds": ubx.FieldSpec{WireName: "ack_deadline_seconds"},
 		"AnalyticsHubSubscriptionInfo": ubx.FieldSpec{
 			WireName: "analytics_hub_subscription_info",
-			Kind: "object",
-			Fields: Subscription_AnalyticsHubSubscriptionInfoFields,
+			Kind:     "object",
+			Fields:   Subscription_AnalyticsHubSubscriptionInfoFields,
 		},
 		"BigqueryConfig": ubx.FieldSpec{
 			WireName: "bigquery_config",
-			Kind: "object",
-			Fields: Subscription_BigqueryConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_BigqueryConfigFields,
 		},
 		"BigtableConfig": ubx.FieldSpec{
 			WireName: "bigtable_config",
-			Kind: "object",
-			Fields: Subscription_BigtableConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_BigtableConfigFields,
 		},
 		"CloudStorageConfig": ubx.FieldSpec{
 			WireName: "cloud_storage_config",
-			Kind: "object",
-			Fields: Subscription_CloudStorageConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_CloudStorageConfigFields,
 		},
 		"DeadLetterPolicy": ubx.FieldSpec{
 			WireName: "dead_letter_policy",
-			Kind: "object",
-			Fields: Subscription_DeadLetterPolicyFields,
+			Kind:     "object",
+			Fields:   Subscription_DeadLetterPolicyFields,
 		},
-		"Detached": ubx.FieldSpec{WireName: "detached"},
+		"Detached":                  ubx.FieldSpec{WireName: "detached"},
 		"EnableExactlyOnceDelivery": ubx.FieldSpec{WireName: "enable_exactly_once_delivery"},
-		"EnableMessageOrdering": ubx.FieldSpec{WireName: "enable_message_ordering"},
+		"EnableMessageOrdering":     ubx.FieldSpec{WireName: "enable_message_ordering"},
 		"ExpirationPolicy": ubx.FieldSpec{
 			WireName: "expiration_policy",
-			Kind: "object",
-			Fields: Subscription_ExpirationPolicyFields,
+			Kind:     "object",
+			Fields:   Subscription_ExpirationPolicyFields,
 		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Filter":                   ubx.FieldSpec{WireName: "filter"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MessageRetentionDuration": ubx.FieldSpec{WireName: "message_retention_duration"},
 		"MessageTransforms": ubx.FieldSpec{
 			WireName: "message_transforms",
-			Kind: "list",
-			Fields: Subscription_MessageTransformsFields,
+			Kind:     "list",
+			Fields:   Subscription_MessageTransformsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PushConfig": ubx.FieldSpec{
 			WireName: "push_config",
-			Kind: "object",
-			Fields: Subscription_PushConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_PushConfigFields,
 		},
 		"RetainAckedMessages": ubx.FieldSpec{WireName: "retain_acked_messages"},
 		"RetryPolicy": ubx.FieldSpec{
 			WireName: "retry_policy",
-			Kind: "object",
-			Fields: Subscription_RetryPolicyFields,
+			Kind:     "object",
+			Fields:   Subscription_RetryPolicyFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":  ubx.FieldSpec{WireName: "tags"},
 		"Topic": ubx.FieldSpec{WireName: "topic"},
-		"TopicMessageRetentionDuration": ubx.FieldSpec{WireName: "topic_message_retention_duration"},
 	},
 }

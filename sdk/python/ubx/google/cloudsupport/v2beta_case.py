@@ -58,8 +58,6 @@ class V2betaCaseConfig:
     classification: Any = None
     # A user-supplied email address to send case update notifications for. This should only be used in BYOID flows, where we cannot infer the user's email address directly from their EUCs.
     contact_email: Any = None
-    # Output only. The time this case was created.
-    create_time: Any = None
     # An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case.
     creator: Any = None
     # A broad description of the issue.
@@ -76,16 +74,12 @@ class V2betaCaseConfig:
     priority: Any = None
     # REMOVED. The severity of this case. Use priority instead.
     severity: Any = None
-    # Output only. The current status of the support case.
-    state: Any = None
     # The email addresses to receive updates on this case.
     subscriber_email_addresses: Any = None
     # Whether this case was created for internal API testing and should not be acted on by the support team.
     test_case: Any = None
     # The timezone of the user who created the support case. It should be in a format IANA recognizes: https://www.iana.org/time-zones. There is no additional validation done by the API.
     time_zone: Any = None
-    # Output only. The time this case was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2betaCaseAttrs:
@@ -131,7 +125,6 @@ V2betaCase = ubx.ResourceBinding(
             fields=_V2betaCase_ClassificationFields,
         ),
         "contact_email": ubx.FieldSpec(wire_name="contact_email"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "creator": ubx.FieldSpec(
             wire_name="creator",
             kind="object",
@@ -144,10 +137,8 @@ V2betaCase = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "severity": ubx.FieldSpec(wire_name="severity"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subscriber_email_addresses": ubx.FieldSpec(wire_name="subscriber_email_addresses"),
         "test_case": ubx.FieldSpec(wire_name="test_case"),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

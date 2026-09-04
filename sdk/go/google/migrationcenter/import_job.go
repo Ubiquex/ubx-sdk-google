@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrors struct {
 	ErrorDetails any
-	Severity any
+	Severity     any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvError struct {
@@ -19,25 +19,25 @@ type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_Archive
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxError struct {
 	RowNumber any
-	Sheet any
+	Sheet     any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors struct {
 	ArchiveError any
-	AssetTitle any
-	CsvError any
-	Errors any
-	RowNumber any
-	VmName any
-	VmUuid any
-	XlsxError any
+	AssetTitle   any
+	CsvError     any
+	Errors       any
+	RowNumber    any
+	VmName       any
+	VmUuid       any
+	XlsxError    any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors_FileValidations struct {
-	FileErrors any
-	FileName any
+	FileErrors    any
+	FileName      any
 	PartialReport any
-	RowErrors any
+	RowErrors     any
 }
 
 type ImportJob_ExecutionReport_ExecutionErrors struct {
@@ -57,112 +57,102 @@ type ImportJob_ExecutionReport struct {
 }
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields = ubx.FieldMap{
-		"ErrorDetails": ubx.FieldSpec{WireName: "error_details"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"ErrorDetails": ubx.FieldSpec{WireName: "error_details"},
+	"Severity":     ubx.FieldSpec{WireName: "severity"},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvErrorFields = ubx.FieldMap{
-		"RowNumber": ubx.FieldSpec{WireName: "row_number"},
-	}
+	"RowNumber": ubx.FieldSpec{WireName: "row_number"},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveErrorFields = ubx.FieldMap{
-		"CsvError": ubx.FieldSpec{
-			WireName: "csv_error",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvErrorFields,
-		},
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-	}
+	"CsvError": ubx.FieldSpec{
+		WireName: "csv_error",
+		Kind:     "object",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvErrorFields,
+	},
+	"FilePath": ubx.FieldSpec{WireName: "file_path"},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxErrorFields = ubx.FieldMap{
-		"RowNumber": ubx.FieldSpec{WireName: "row_number"},
-		"Sheet": ubx.FieldSpec{WireName: "sheet"},
-	}
+	"RowNumber": ubx.FieldSpec{WireName: "row_number"},
+	"Sheet":     ubx.FieldSpec{WireName: "sheet"},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrorsFields = ubx.FieldMap{
-		"ArchiveError": ubx.FieldSpec{
-			WireName: "archive_error",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveErrorFields,
-		},
-		"AssetTitle": ubx.FieldSpec{WireName: "asset_title"},
-		"CsvError": ubx.FieldSpec{
-			WireName: "csv_error",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvErrorFields,
-		},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
-		},
-		"RowNumber": ubx.FieldSpec{WireName: "row_number"},
-		"VmName": ubx.FieldSpec{WireName: "vm_name"},
-		"VmUuid": ubx.FieldSpec{WireName: "vm_uuid"},
-		"XlsxError": ubx.FieldSpec{
-			WireName: "xlsx_error",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxErrorFields,
-		},
-	}
+	"ArchiveError": ubx.FieldSpec{
+		WireName: "archive_error",
+		Kind:     "object",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveErrorFields,
+	},
+	"AssetTitle": ubx.FieldSpec{WireName: "asset_title"},
+	"CsvError": ubx.FieldSpec{
+		WireName: "csv_error",
+		Kind:     "object",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_ArchiveError_CsvErrorFields,
+	},
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
+	},
+	"RowNumber": ubx.FieldSpec{WireName: "row_number"},
+	"VmName":    ubx.FieldSpec{WireName: "vm_name"},
+	"VmUuid":    ubx.FieldSpec{WireName: "vm_uuid"},
+	"XlsxError": ubx.FieldSpec{
+		WireName: "xlsx_error",
+		Kind:     "object",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrors_XlsxErrorFields,
+	},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrors_FileValidationsFields = ubx.FieldMap{
-		"FileErrors": ubx.FieldSpec{
-			WireName: "file_errors",
-			Kind: "list",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
-		},
-		"FileName": ubx.FieldSpec{WireName: "file_name"},
-		"PartialReport": ubx.FieldSpec{WireName: "partial_report"},
-		"RowErrors": ubx.FieldSpec{
-			WireName: "row_errors",
-			Kind: "list",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrorsFields,
-		},
-	}
+	"FileErrors": ubx.FieldSpec{
+		WireName: "file_errors",
+		Kind:     "list",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
+	},
+	"FileName":      ubx.FieldSpec{WireName: "file_name"},
+	"PartialReport": ubx.FieldSpec{WireName: "partial_report"},
+	"RowErrors": ubx.FieldSpec{
+		WireName: "row_errors",
+		Kind:     "list",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_RowErrorsFields,
+	},
+}
 
 var ImportJob_ExecutionReport_ExecutionErrorsFields = ubx.FieldMap{
-		"FileValidations": ubx.FieldSpec{
-			WireName: "file_validations",
-			Kind: "list",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidationsFields,
-		},
-		"JobErrors": ubx.FieldSpec{
-			WireName: "job_errors",
-			Kind: "list",
-			Fields: ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
-		},
-	}
+	"FileValidations": ubx.FieldSpec{
+		WireName: "file_validations",
+		Kind:     "list",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidationsFields,
+	},
+	"JobErrors": ubx.FieldSpec{
+		WireName: "job_errors",
+		Kind:     "list",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrors_FileValidations_FileErrorsFields,
+	},
+}
 
 var ImportJob_ExecutionReportFields = ubx.FieldMap{
-		"ExecutionErrors": ubx.FieldSpec{
-			WireName: "execution_errors",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrorsFields,
-		},
-		"FramesReported": ubx.FieldSpec{WireName: "frames_reported"},
-		"TotalRowsCount": ubx.FieldSpec{WireName: "total_rows_count"},
-	}
+	"ExecutionErrors": ubx.FieldSpec{
+		WireName: "execution_errors",
+		Kind:     "object",
+		Fields:   ImportJob_ExecutionReport_ExecutionErrorsFields,
+	},
+	"FramesReported": ubx.FieldSpec{WireName: "frames_reported"},
+	"TotalRowsCount": ubx.FieldSpec{WireName: "total_rows_count"},
+}
 
 type ImportJobConfig struct {
 	// Required. Reference to a source.
 	AssetSource any
-	// Output only. The timestamp when the import job was completed.
-	CompleteTime any
-	// Output only. The timestamp when the import job was created.
-	CreateTime any
 	// Optional. User-friendly display name. Maximum length is 256 characters.
 	DisplayName any
 	// A resource that reports result of the import job execution.
 	ExecutionReport any
 	// Labels as key value pairs.
 	Labels any
-	// Output only. The full name of the import job.
-	Name any
-	// Output only. The state of the import job.
-	State any
-	// Output only. The timestamp when the import job was last updated.
-	UpdateTime any
 	// A resource that aggregates errors across import job files.
 	ValidationReport any
 }
@@ -194,22 +184,17 @@ var ImportJob = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_import_job",
 	Fields: ubx.FieldMap{
 		"AssetSource": ubx.FieldSpec{WireName: "asset_source"},
-		"CompleteTime": ubx.FieldSpec{WireName: "complete_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ExecutionReport": ubx.FieldSpec{
 			WireName: "execution_report",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReportFields,
+			Kind:     "object",
+			Fields:   ImportJob_ExecutionReportFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"ValidationReport": ubx.FieldSpec{
 			WireName: "validation_report",
-			Kind: "object",
-			Fields: ImportJob_ExecutionReport_ExecutionErrorsFields,
+			Kind:     "object",
+			Fields:   ImportJob_ExecutionReport_ExecutionErrorsFields,
 		},
 	},
 }

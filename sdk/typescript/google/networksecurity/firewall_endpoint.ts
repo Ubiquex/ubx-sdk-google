@@ -11,24 +11,13 @@ export interface FirewallEndpoint_EndpointSettings {
   jumboFramesEnabled?: boolean | Computed<boolean>;
 }
 
-const FirewallEndpoint_AssociationsFields: FieldMap = {
-  name: "name",
-  network: "network",
-};
-
 const FirewallEndpoint_EndpointSettingsFields: FieldMap = {
   jumboFramesEnabled: "jumbo_frames_enabled",
 };
 
 export interface FirewallEndpointConfig {
-  /** Output only. Deprecated: List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}. */
-  associatedNetworks?: string[] | Computed<string[]>;
-  /** Output only. List of FirewallEndpointAssociations that are associated to this endpoint. An association will only appear in this list after traffic routing is fully configured. */
-  associations?: FirewallEndpoint_Associations[] | Computed<FirewallEndpoint_Associations[]>;
   /** Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise. */
   billingProjectId?: string | Computed<string>;
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the firewall endpoint. Max length 2048 characters. */
   description?: string | Computed<string>;
   /** Settings for the endpoint. */
@@ -37,16 +26,6 @@ export interface FirewallEndpointConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. Name of resource. */
   name?: string | Computed<string>;
-  /** Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Current state of the endpoint. */
-  state?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface FirewallEndpointAttrs {
@@ -81,14 +60,7 @@ export interface FirewallEndpointAttrs {
 export const FirewallEndpoint: ResourceBinding<FirewallEndpointConfig, FirewallEndpointAttrs> = {
   wireType: "google_networksecurity_firewall_endpoint",
   fields: {
-    associatedNetworks: "associated_networks",
-    associations: {
-      wireName: "associations",
-      kind: "list",
-      fields: FirewallEndpoint_AssociationsFields,
-    },
     billingProjectId: "billing_project_id",
-    createTime: "create_time",
     description: "description",
     endpointSettings: {
       wireName: "endpoint_settings",
@@ -97,10 +69,5 @@ export const FirewallEndpoint: ResourceBinding<FirewallEndpointConfig, FirewallE
     },
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DeploymentConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class DeploymentAttrs:
@@ -23,6 +23,5 @@ class DeploymentAttrs:
 Deployment = ubx.DataSourceBinding(
     wire_type="google_sasportal_deployment",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -8,14 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BigQueryExportConfig:
-    create_time: Any = None
     dataset: Any = None
     description: Any = None
     filter: Any = None
-    most_recent_editor: Any = None
     name: Any = None
-    principal: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BigQueryExportAttrs:
@@ -31,13 +27,9 @@ class BigQueryExportAttrs:
 BigQueryExport = ubx.ResourceBinding(
     wire_type="google_securitycenter_big_query_export",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dataset": ubx.FieldSpec(wire_name="dataset"),
         "description": ubx.FieldSpec(wire_name="description"),
         "filter": ubx.FieldSpec(wire_name="filter"),
-        "most_recent_editor": ubx.FieldSpec(wire_name="most_recent_editor"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "principal": ubx.FieldSpec(wire_name="principal"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -25,7 +25,7 @@ var Node = ubx.ResourceBinding{
 	WireType: "google_sasportal_node",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SasUserIds": ubx.FieldSpec{WireName: "sas_user_ids"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"SasUserIds":  ubx.FieldSpec{WireName: "sas_user_ids"},
 	},
 }

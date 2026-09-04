@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta3SchemaConfig {
-  /** Output only. The time when the Schema was created. */
-  createTime?: string | Computed<string>;
   /** Required. The user-defined name of the Schema. */
   displayName?: string | Computed<string>;
   /** Optional. The {{gcp_name_short}} labels for the Schema. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the Schema. Format: `projects/{project}/locations/{location}/schemas/{schema}` */
   name?: string | Computed<string>;
-  /** Output only. The time when the Schema was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta3SchemaAttrs {
@@ -30,10 +26,8 @@ export interface V1beta3SchemaAttrs {
 export const V1beta3Schema: ResourceBinding<V1beta3SchemaConfig, V1beta3SchemaAttrs> = {
   wireType: "google_documentai_v1beta3_schema",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     labels: "labels",
     name: "name",
-    updateTime: "update_time",
   },
 };

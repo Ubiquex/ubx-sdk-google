@@ -12,8 +12,6 @@ class PscAuthorizationPolicyConfig:
     authorization_mode: Any = None
     # Required. List of authorized consumer resources allowed to connect. Supported values are: 1. Project resource name (e.g., `projects/{project_id}`) 2. Wildcard `"*"` (grants global ingress authorization to the target).
     authorized_client_resources: Any = None
-    # Output only. The time when the PscAuthorizationPolicy was created.
-    create_time: Any = None
     # Optional. A description of this resource.
     description: Any = None
     # Output only. The etag of the PscAuthorizationPolicy.
@@ -24,10 +22,6 @@ class PscAuthorizationPolicyConfig:
     name: Any = None
     # Required. The full absolute URI of the targeted resource governed by this policy. For example, for an AgentRegistry resource, the format is: `//agentregistry.googleapis.com/projects/{project}/locations/{location}`
     target_resource_uri: Any = None
-    # Output only. The unique identifier of the PscAuthorizationPolicy.
-    uid: Any = None
-    # Output only. The time when the PscAuthorizationPolicy was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PscAuthorizationPolicyAttrs:
@@ -57,13 +51,10 @@ PscAuthorizationPolicy = ubx.ResourceBinding(
     fields={
         "authorization_mode": ubx.FieldSpec(wire_name="authorization_mode"),
         "authorized_client_resources": ubx.FieldSpec(wire_name="authorized_client_resources"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "target_resource_uri": ubx.FieldSpec(wire_name="target_resource_uri"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

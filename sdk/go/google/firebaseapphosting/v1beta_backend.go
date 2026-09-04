@@ -19,12 +19,12 @@ type V1betaBackend_ManagedResources struct {
 }
 
 type V1betaBackend_OverrideEnv struct {
-	Availability any
-	Origin any
+	Availability   any
+	Origin         any
 	OriginFileName any
-	Secret any
-	Value any
-	Variable any
+	Secret         any
+	Value          any
+	Variable       any
 }
 
 type V1betaBackend_Runtime struct {
@@ -33,34 +33,22 @@ type V1betaBackend_Runtime struct {
 }
 
 var V1betaBackend_CodebaseFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-	}
-
-var V1betaBackend_ManagedResources_RunServiceFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
-
-var V1betaBackend_ManagedResourcesFields = ubx.FieldMap{
-		"RunService": ubx.FieldSpec{
-			WireName: "run_service",
-			Kind: "object",
-			Fields: V1betaBackend_ManagedResources_RunServiceFields,
-		},
-	}
+	"Repository":    ubx.FieldSpec{WireName: "repository"},
+	"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+}
 
 var V1betaBackend_OverrideEnvFields = ubx.FieldMap{
-		"Availability": ubx.FieldSpec{WireName: "availability"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"Availability":   ubx.FieldSpec{WireName: "availability"},
+	"Origin":         ubx.FieldSpec{WireName: "origin"},
+	"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
+	"Secret":         ubx.FieldSpec{WireName: "secret"},
+	"Value":          ubx.FieldSpec{WireName: "value"},
+	"Variable":       ubx.FieldSpec{WireName: "variable"},
+}
 
 var V1betaBackend_RuntimeFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type V1betaBackendConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -71,28 +59,18 @@ type V1betaBackendConfig struct {
 	AutomaticBaseImageUpdatesDisabled any
 	// The connection to an external source repository to watch for event-driven updates to the backend.
 	Codebase any
-	// Output only. Time at which the backend was created.
-	CreateTime any
-	// Output only. Time at which the backend was deleted.
-	DeleteTime any
 	// Optional. Human-readable name. 63 character limit.
 	DisplayName any
 	// Optional. The environment name of the backend, used to load environment variables from environment specific configuration.
 	Environment any
-	// Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-	Etag any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects.
 	Labels any
-	// Output only. A list of the resources managed by this backend.
-	ManagedResources any
 	// Optional. Deprecated: Use `environment` instead.
 	Mode any
 	// Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`.
 	Name any
 	// Optional. Override environment variables for this Backend.
 	OverrideEnv any
-	// Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO.
-	Reconciling any
 	// Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default.
 	RequestLogsDisabled any
 	// Runtime is a string that represents the runtime that is used to build the backend. Users can specify one of the following runtimes: nodejs20, nodejs22, nodejs24, nodejs. Runtime "nodejs" means that nodejs version will be determined at build time. If not specified or specified with a value that is not in the list above, the default runtime `nodejs` will be used and Automatic Base Image Updates will be disabled. See [Firebase documentation](https://firebase.google.com/docs/app-hosting/frameworks-tooling#managing_runtime_versions) for more details.
@@ -101,12 +79,6 @@ type V1betaBackendConfig struct {
 	ServiceAccount any
 	// Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS).
 	ServingLocality any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. Time at which the backend was last updated.
-	UpdateTime any
-	// Output only. The primary URI to communicate with the backend.
-	Uri any
 }
 
 type V1betaBackendAttrs struct {
@@ -159,43 +131,31 @@ type V1betaBackendAttrs struct {
 var V1betaBackend = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_v1beta_backend",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"Annotations":                       ubx.FieldSpec{WireName: "annotations"},
+		"AppId":                             ubx.FieldSpec{WireName: "app_id"},
 		"AutomaticBaseImageUpdatesDisabled": ubx.FieldSpec{WireName: "automatic_base_image_updates_disabled"},
 		"Codebase": ubx.FieldSpec{
 			WireName: "codebase",
-			Kind: "object",
-			Fields: V1betaBackend_CodebaseFields,
+			Kind:     "object",
+			Fields:   V1betaBackend_CodebaseFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedResources": ubx.FieldSpec{
-			WireName: "managed_resources",
-			Kind: "list",
-			Fields: V1betaBackend_ManagedResourcesFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Mode":        ubx.FieldSpec{WireName: "mode"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OverrideEnv": ubx.FieldSpec{
 			WireName: "override_env",
-			Kind: "list",
-			Fields: V1betaBackend_OverrideEnvFields,
+			Kind:     "list",
+			Fields:   V1betaBackend_OverrideEnvFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
 		"RequestLogsDisabled": ubx.FieldSpec{WireName: "request_logs_disabled"},
 		"Runtime": ubx.FieldSpec{
 			WireName: "runtime",
-			Kind: "object",
-			Fields: V1betaBackend_RuntimeFields,
+			Kind:     "object",
+			Fields:   V1betaBackend_RuntimeFields,
 		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
 		"ServingLocality": ubx.FieldSpec{WireName: "serving_locality"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
 	},
 }

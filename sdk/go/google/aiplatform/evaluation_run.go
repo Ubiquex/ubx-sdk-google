@@ -91,36 +91,36 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfig
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate any
-	Delivery any
-	MimeType any
+	BitRate    any
+	Delivery   any
+	MimeType   any
 	SampleRate any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
 	AspectRatio any
-	Delivery any
-	ImageSize any
-	MimeType any
+	Delivery    any
+	ImageSize   any
+	MimeType    any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
 	MimeType any
-	Schema any
+	Schema   any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
 	AspectRatio any
-	Delivery any
-	Duration any
-	GcsUri any
-	Resolution any
+	Delivery    any
+	Duration    any
+	GcsUri      any
+	Resolution  any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat struct {
 	Audio any
 	Image any
-	Text any
+	Text  any
 	Video any
 }
 
@@ -141,7 +141,7 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSch
 	Example any
 	// Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
 	Format any
-	Items any
+	Items  any
 	// Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
 	MaxItems any
 	// Optional. If type is `STRING`, `max_length` specifies the maximum length of the string.
@@ -198,17 +198,17 @@ type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfi
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType any
+	MimeType         any
 	VoiceSampleAudio any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig any
+	PrebuiltVoiceConfig   any
 	ReplicatedVoiceConfig any
 }
 
 type EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker any
+	Speaker     any
 	VoiceConfig any
 }
 
@@ -317,40 +317,40 @@ type EvaluationRun_EvaluationConfig_CloudLoggingConfig struct {
 
 type EvaluationRun_EvaluationConfig_DatasetCustomMetrics struct {
 	AggregationFunction any
-	DisplayName any
+	DisplayName         any
 }
 
 type EvaluationRun_EvaluationConfig_LossAnalysisConfig struct {
 	Candidate any
-	Metric any
+	Metric    any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpec struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
 	MetricSpecName any
-	Parameters any
+	Parameters     any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec struct {
 	MetricResourceName any
-	ModelConfig any
-	PromptTemplate any
-	RubricContentType any
+	ModelConfig        any
+	PromptTemplate     any
+	RubricContentType  any
 	RubricTypeOntology any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec struct {
-	AdditionalConfig any
-	JudgeAutoraterConfig any
-	MetricPromptTemplate any
+	AdditionalConfig               any
+	JudgeAutoraterConfig           any
+	MetricPromptTemplate           any
 	PredefinedRubricGenerationSpec any
-	RubricGenerationSpec any
-	RubricGroupKey any
-	SystemInstruction any
+	RubricGenerationSpec           any
+	RubricGroupKey                 any
+	SystemInstruction              any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpec struct {
@@ -362,14 +362,14 @@ type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpec
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfig struct {
-	AutoraterModel any
-	FlipEnabled any
+	AutoraterModel   any
+	FlipEnabled      any
 	GenerationConfig any
-	SamplingCount any
+	SamplingCount    any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
-	MetricSpecName any
+	MetricSpecName       any
 	MetricSpecParameters any
 }
 
@@ -382,34 +382,34 @@ type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_Resu
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpec struct {
-	ModelConfig any
-	PromptTemplate any
-	RubricContentType any
+	ModelConfig        any
+	PromptTemplate     any
+	RubricContentType  any
 	RubricTypeOntology any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec struct {
-	AdditionalConfig any
-	JudgeAutoraterConfig any
-	MetricPromptTemplate any
+	AdditionalConfig               any
+	JudgeAutoraterConfig           any
+	MetricPromptTemplate           any
 	PredefinedRubricGenerationSpec any
-	ResultParserConfig any
-	RubricGenerationSpec any
-	RubricGroupKey any
-	SystemInstruction any
+	ResultParserConfig             any
+	RubricGenerationSpec           any
+	RubricGroupKey                 any
+	SystemInstruction              any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRange struct {
 	Description any
-	Max any
-	Min any
-	Step any
+	Max         any
+	Min         any
+	Step        any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata struct {
 	OtherMetadata any
-	ScoreRange any
-	Title any
+	ScoreRange    any
+	Title         any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfig struct {
@@ -417,37 +417,37 @@ type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_Cust
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec struct {
-	BaselineResponseFieldName any
+	BaselineResponseFieldName  any
 	CandidateResponseFieldName any
-	CustomOutputFormatConfig any
-	MetricPromptTemplate any
-	SystemInstruction any
+	CustomOutputFormatConfig   any
+	MetricPromptTemplate       any
+	SystemInstruction          any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpec struct {
 	CustomOutputFormatConfig any
-	MetricPromptTemplate any
-	SystemInstruction any
+	MetricPromptTemplate     any
+	SystemInstruction        any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpec struct {
-	RougeType any
+	RougeType      any
 	SplitSummaries any
-	UseStemmer any
+	UseStemmer     any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_MetricConfig struct {
-	AggregationMetrics any
-	BleuSpec any
+	AggregationMetrics         any
+	BleuSpec                   any
 	ComputationBasedMetricSpec any
-	CustomCodeExecutionSpec any
-	ExactMatchSpec any
-	LlmBasedMetricSpec any
-	Metadata any
-	PairwiseMetricSpec any
-	PointwiseMetricSpec any
-	PredefinedMetricSpec any
-	RougeSpec any
+	CustomCodeExecutionSpec    any
+	ExactMatchSpec             any
+	LlmBasedMetricSpec         any
+	Metadata                   any
+	PairwiseMetricSpec         any
+	PointwiseMetricSpec        any
+	PredefinedMetricSpec       any
+	RougeSpec                  any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_Property struct {
@@ -459,10 +459,10 @@ type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics struct {
-	Content any
+	Content    any
 	Importance any
-	RubricId any
-	Type any
+	RubricId   any
+	Type       any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics struct {
@@ -470,21 +470,21 @@ type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics 
 }
 
 type EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec struct {
-	InlineRubrics any
+	InlineRubrics        any
 	JudgeAutoraterConfig any
 	MetricPromptTemplate any
 	RubricGenerationSpec any
-	RubricGroupKey any
+	RubricGroupKey       any
 }
 
 type EvaluationRun_EvaluationConfig_Metrics struct {
 	ComputationBasedMetricSpec any
-	LlmBasedMetricSpec any
-	Metric any
-	MetricConfig any
-	MetricResourceName any
-	PredefinedMetricSpec any
-	RubricBasedMetricSpec any
+	LlmBasedMetricSpec         any
+	Metric                     any
+	MetricConfig               any
+	MetricResourceName         any
+	PredefinedMetricSpec       any
+	RubricBasedMetricSpec      any
 }
 
 type EvaluationRun_EvaluationConfig_OutputConfig_BigqueryDestination struct {
@@ -513,8 +513,8 @@ type EvaluationRun_EvaluationConfig_PromptTemplate struct {
 
 type EvaluationRun_EvaluationConfig_RubricConfigs struct {
 	PredefinedRubricGenerationSpec any
-	RubricGenerationSpec any
-	RubricGroupKey any
+	RubricGenerationSpec           any
+	RubricGroupKey                 any
 }
 
 type EvaluationRun_EvaluationConfig struct {
@@ -557,74 +557,74 @@ type EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfig struct {
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInput struct {
-	Parameters any
+	Parameters   any
 	SessionState any
-	UserId any
+	UserId       any
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfig struct {
-	MaxTurn any
+	MaxTurn     any
 	ModelConfig any
-	ModelName any
+	ModelName   any
 }
 
 type EvaluationRun_InferenceConfigs_AgentRunConfig struct {
-	AgentEngine any
-	GeminiAgentConfig any
-	SessionInput any
+	AgentEngine         any
+	GeminiAgentConfig   any
+	SessionInput        any
 	UserSimulatorConfig any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUse struct {
 	EnablePromptInjectionDetection any
-	Environment any
-	ExcludedPredefinedFunctions any
+	Environment                    any
+	ExcludedPredefinedFunctions    any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
+	ExcludeDomains     any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearch struct {
-	ApiKey any
+	ApiKey        any
 	CustomConfigs any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarations struct {
-	Behavior any
-	Description any
-	Name any
-	Parameters any
+	Behavior             any
+	Description          any
+	Name                 any
+	Parameters           any
 	ParametersJsonSchema any
-	Response any
-	ResponseJsonSchema any
+	Response             any
+	ResponseJsonSchema   any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypes struct {
-	Places any
+	Places  any
 	Routing any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps struct {
-	EnableWidget any
+	EnableWidget   any
 	GroundingTypes any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypes struct {
 	ImageSearch any
-	WebSearch any
+	WebSearch   any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
-	SearchTypes any
+	ExcludeDomains     any
+	SearchTypes        any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig struct {
 	DynamicThreshold any
-	Mode any
+	Mode             any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval struct {
@@ -632,15 +632,15 @@ type EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval struct {
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearch struct {
-	ApiKey any
-	CustomConfigs any
-	EnableDataRetention any
+	ApiKey                  any
+	CustomConfigs           any
+	EnableDataRetention     any
 	EnableZeroDataRetention any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth struct {
@@ -648,10 +648,10 @@ type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth s
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig struct {
-	ApiKeySecret any
-	ApiKeyString any
+	ApiKeySecret        any
+	ApiKeyString        any
 	HttpElementLocation any
-	Name any
+	Name                any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig struct {
@@ -663,1237 +663,1233 @@ type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfi
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig struct {
-	AccessToken any
+	AccessToken    any
 	ServiceAccount any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig struct {
-	IdToken any
+	IdToken        any
 	ServiceAccount any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig struct {
-	ApiKeyConfig any
-	AuthType any
+	ApiKeyConfig               any
+	AuthType                   any
 	GoogleServiceAccountConfig any
-	HttpBasicAuthConfig any
-	OauthConfig any
-	OidcConfig any
+	HttpBasicAuthConfig        any
+	OauthConfig                any
+	OidcConfig                 any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParams struct {
-	Index any
-	NumHits any
+	Index          any
+	NumHits        any
 	SearchTemplate any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi struct {
-	ApiAuth any
-	ApiSpec any
-	AuthConfig any
+	ApiAuth             any
+	ApiSpec             any
+	AuthConfig          any
 	ElasticSearchParams any
-	Endpoint any
-	SimpleSearchParams any
+	Endpoint            any
+	SimpleSearchParams  any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecs struct {
 	DataStore any
-	Filter any
+	Filter    any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch struct {
 	DataStoreSpecs any
-	Datastore any
-	Engine any
-	Filter any
-	MaxResults any
+	Datastore      any
+	Engine         any
+	Filter         any
+	MaxResults     any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResources struct {
-	RagCorpus any
+	RagCorpus  any
 	RagFileIds any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter struct {
-	MetadataFilter any
-	VectorDistanceThreshold any
+	MetadataFilter            any
+	VectorDistanceThreshold   any
 	VectorSimilarityThreshold any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking struct {
-	LlmRanker any
+	LlmRanker   any
 	RankService any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig struct {
-	Filter any
+	Filter  any
 	Ranking any
-	TopK any
+	TopK    any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore struct {
-	RagResources any
-	RagRetrievalConfig any
-	SimilarityTopK any
+	RagResources            any
+	RagRetrievalConfig      any
+	SimilarityTopK          any
 	VectorDistanceThreshold any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval struct {
 	DisableAttribution any
-	ExternalApi any
-	VertexAiSearch any
-	VertexRagStore any
+	ExternalApi        any
+	VertexAiSearch     any
+	VertexRagStore     any
 }
 
 type EvaluationRun_InferenceConfigs_Agents_Tools struct {
-	CodeExecution any
-	ComputerUse any
-	EnterpriseWebSearch any
-	ExaAiSearch any
-	FunctionDeclarations any
-	GoogleMaps any
-	GoogleSearch any
+	CodeExecution         any
+	ComputerUse           any
+	EnterpriseWebSearch   any
+	ExaAiSearch           any
+	FunctionDeclarations  any
+	GoogleMaps            any
+	GoogleSearch          any
 	GoogleSearchRetrieval any
-	ParallelAiSearch any
-	Retrieval any
-	UrlContext any
+	ParallelAiSearch      any
+	Retrieval             any
+	UrlContext            any
 }
 
 type EvaluationRun_InferenceConfigs_Agents struct {
-	AgentId any
-	AgentType any
+	AgentId     any
+	AgentType   any
 	Description any
 	Instruction any
-	SubAgents any
-	Tools any
+	SubAgents   any
+	Tools       any
 }
 
 type EvaluationRun_InferenceConfigs struct {
-	AgentRunConfig any
-	Agents any
+	AgentRunConfig   any
+	Agents           any
 	GenerationConfig any
-	Model any
-	Parallelism any
-	PromptTemplate any
+	Model            any
+	Parallelism      any
+	PromptTemplate   any
 }
 
 var EvaluationRun_DataSource_BigqueryRequestSet_SamplingConfigFields = ubx.FieldMap{
-		"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
-		"SamplingDuration": ubx.FieldSpec{WireName: "sampling_duration"},
-		"SamplingMethod": ubx.FieldSpec{WireName: "sampling_method"},
-	}
+	"SamplingCount":    ubx.FieldSpec{WireName: "sampling_count"},
+	"SamplingDuration": ubx.FieldSpec{WireName: "sampling_duration"},
+	"SamplingMethod":   ubx.FieldSpec{WireName: "sampling_method"},
+}
 
 var EvaluationRun_DataSource_BigqueryRequestSetFields = ubx.FieldMap{
-		"CandidateResponseColumns": ubx.FieldSpec{WireName: "candidate_response_columns"},
-		"PromptColumn": ubx.FieldSpec{WireName: "prompt_column"},
-		"RubricsColumn": ubx.FieldSpec{WireName: "rubrics_column"},
-		"SamplingConfig": ubx.FieldSpec{
-			WireName: "sampling_config",
-			Kind: "object",
-			Fields: EvaluationRun_DataSource_BigqueryRequestSet_SamplingConfigFields,
-		},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"CandidateResponseColumns": ubx.FieldSpec{WireName: "candidate_response_columns"},
+	"PromptColumn":             ubx.FieldSpec{WireName: "prompt_column"},
+	"RubricsColumn":            ubx.FieldSpec{WireName: "rubrics_column"},
+	"SamplingConfig": ubx.FieldSpec{
+		WireName: "sampling_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_DataSource_BigqueryRequestSet_SamplingConfigFields,
+	},
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var EvaluationRun_DataSourceFields = ubx.FieldMap{
-		"BigqueryRequestSet": ubx.FieldSpec{
-			WireName: "bigquery_request_set",
-			Kind: "object",
-			Fields: EvaluationRun_DataSource_BigqueryRequestSetFields,
-		},
-		"EvaluationSet": ubx.FieldSpec{WireName: "evaluation_set"},
-	}
+	"BigqueryRequestSet": ubx.FieldSpec{
+		WireName: "bigquery_request_set",
+		Kind:     "object",
+		Fields:   EvaluationRun_DataSource_BigqueryRequestSetFields,
+	},
+	"EvaluationSet": ubx.FieldSpec{WireName: "evaluation_set"},
+}
 
 var EvaluationRun_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var EvaluationRun_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields = ubx.FieldMap{
-		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-	}
+	"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields = ubx.FieldMap{
-		"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
-		"CustomVocabulary": ubx.FieldSpec{WireName: "custom_vocabulary"},
-		"Diarization": ubx.FieldSpec{WireName: "diarization"},
-		"LanguageAuto": ubx.FieldSpec{WireName: "language_auto"},
-		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-		"LanguageHints": ubx.FieldSpec{
-			WireName: "language_hints",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
-	}
+	"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
+	"CustomVocabulary":  ubx.FieldSpec{WireName: "custom_vocabulary"},
+	"Diarization":       ubx.FieldSpec{WireName: "diarization"},
+	"LanguageAuto":      ubx.FieldSpec{WireName: "language_auto"},
+	"LanguageCodes":     ubx.FieldSpec{WireName: "language_codes"},
+	"LanguageHints": ubx.FieldSpec{
+		WireName: "language_hints",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
+	},
+	"Mode":          ubx.FieldSpec{WireName: "mode"},
+	"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields = ubx.FieldMap{
-		"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
+	"MimeType":           ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfigFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"ImageOutputOptions": ubx.FieldSpec{
-			WireName: "image_output_options",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
-		},
-		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
-		"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
-		"ProminentPeople": ubx.FieldSpec{WireName: "prominent_people"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"ImageOutputOptions": ubx.FieldSpec{
+		WireName: "image_output_options",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
+	},
+	"ImageSize":        ubx.FieldSpec{WireName: "image_size"},
+	"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
+	"ProminentPeople":  ubx.FieldSpec{WireName: "prominent_people"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields = ubx.FieldMap{
-		"BitRate": ubx.FieldSpec{WireName: "bit_rate"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"BitRate":    ubx.FieldSpec{WireName: "bit_rate"},
+	"Delivery":   ubx.FieldSpec{WireName: "delivery"},
+	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
+	"ImageSize":   ubx.FieldSpec{WireName: "image_size"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	"Schema":   ubx.FieldSpec{WireName: "schema"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
+	"Duration":    ubx.FieldSpec{WireName: "duration"},
+	"GcsUri":      ubx.FieldSpec{WireName: "gcs_uri"},
+	"Resolution":  ubx.FieldSpec{WireName: "resolution"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormatFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Example":              ubx.FieldSpec{WireName: "example"},
+	"Format":               ubx.FieldSpec{WireName: "format"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
+	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
+	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields = ubx.FieldMap{
-		"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
-	}
+	"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields = ubx.FieldMap{
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"ModelName": ubx.FieldSpec{WireName: "model_name"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfigFields = ubx.FieldMap{
-		"AutoMode": ubx.FieldSpec{
-			WireName: "auto_mode",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
-		},
-		"ManualMode": ubx.FieldSpec{
-			WireName: "manual_mode",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-	}
+	"AutoMode": ubx.FieldSpec{
+		WireName: "auto_mode",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
+	},
+	"ManualMode": ubx.FieldSpec{
+		WireName: "manual_mode",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields = ubx.FieldMap{
-		"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
-	}
+	"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
-	}
+	"MimeType":         ubx.FieldSpec{WireName: "mime_type"},
+	"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields = ubx.FieldMap{
-		"PrebuiltVoiceConfig": ubx.FieldSpec{
-			WireName: "prebuilt_voice_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
-		},
-		"ReplicatedVoiceConfig": ubx.FieldSpec{
-			WireName: "replicated_voice_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
-		},
-	}
+	"PrebuiltVoiceConfig": ubx.FieldSpec{
+		WireName: "prebuilt_voice_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
+	},
+	"ReplicatedVoiceConfig": ubx.FieldSpec{
+		WireName: "replicated_voice_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields = ubx.FieldMap{
-		"Speaker": ubx.FieldSpec{WireName: "speaker"},
-		"VoiceConfig": ubx.FieldSpec{
-			WireName: "voice_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-		},
-	}
+	"Speaker": ubx.FieldSpec{WireName: "speaker"},
+	"VoiceConfig": ubx.FieldSpec{
+		WireName: "voice_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields = ubx.FieldMap{
-		"SpeakerVoiceConfigs": ubx.FieldSpec{
-			WireName: "speaker_voice_configs",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
-		},
-	}
+	"SpeakerVoiceConfigs": ubx.FieldSpec{
+		WireName: "speaker_voice_configs",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfigFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"MultiSpeakerVoiceConfig": ubx.FieldSpec{
-			WireName: "multi_speaker_voice_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
-		},
-		"VoiceConfig": ubx.FieldSpec{
-			WireName: "voice_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-		},
-	}
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"MultiSpeakerVoiceConfig": ubx.FieldSpec{
+		WireName: "multi_speaker_voice_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
+	},
+	"VoiceConfig": ubx.FieldSpec{
+		WireName: "voice_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ThinkingConfigFields = ubx.FieldMap{
-		"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
-		"ThinkingBudget": ubx.FieldSpec{WireName: "thinking_budget"},
-		"ThinkingLevel": ubx.FieldSpec{WireName: "thinking_level"},
-	}
+	"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
+	"ThinkingBudget":  ubx.FieldSpec{WireName: "thinking_budget"},
+	"ThinkingLevel":   ubx.FieldSpec{WireName: "thinking_level"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields = ubx.FieldMap{
-		"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
-		"AudioTranscriptionConfig": ubx.FieldSpec{
-			WireName: "audio_transcription_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
-		},
-		"CandidateCount": ubx.FieldSpec{WireName: "candidate_count"},
-		"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
-		"FrequencyPenalty": ubx.FieldSpec{WireName: "frequency_penalty"},
-		"ImageConfig": ubx.FieldSpec{
-			WireName: "image_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfigFields,
-		},
-		"Logprobs": ubx.FieldSpec{WireName: "logprobs"},
-		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-		"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
-		"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
-		"ResponseFormat": ubx.FieldSpec{
-			WireName: "response_format",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormatFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-		"ResponseLogprobs": ubx.FieldSpec{WireName: "response_logprobs"},
-		"ResponseMimeType": ubx.FieldSpec{WireName: "response_mime_type"},
-		"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
-		"ResponseSchema": ubx.FieldSpec{
-			WireName: "response_schema",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"RoutingConfig": ubx.FieldSpec{
-			WireName: "routing_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfigFields,
-		},
-		"Seed": ubx.FieldSpec{WireName: "seed"},
-		"SpeechConfig": ubx.FieldSpec{
-			WireName: "speech_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfigFields,
-		},
-		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"ThinkingConfig": ubx.FieldSpec{
-			WireName: "thinking_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ThinkingConfigFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
+	"AudioTranscriptionConfig": ubx.FieldSpec{
+		WireName: "audio_transcription_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
+	},
+	"CandidateCount":        ubx.FieldSpec{WireName: "candidate_count"},
+	"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
+	"FrequencyPenalty":      ubx.FieldSpec{WireName: "frequency_penalty"},
+	"ImageConfig": ubx.FieldSpec{
+		WireName: "image_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ImageConfigFields,
+	},
+	"Logprobs":        ubx.FieldSpec{WireName: "logprobs"},
+	"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
+	"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
+	"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
+	"ResponseFormat": ubx.FieldSpec{
+		WireName: "response_format",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseFormatFields,
+	},
+	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+	"ResponseLogprobs":   ubx.FieldSpec{WireName: "response_logprobs"},
+	"ResponseMimeType":   ubx.FieldSpec{WireName: "response_mime_type"},
+	"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
+	"ResponseSchema": ubx.FieldSpec{
+		WireName: "response_schema",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"RoutingConfig": ubx.FieldSpec{
+		WireName: "routing_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfigFields,
+	},
+	"Seed": ubx.FieldSpec{WireName: "seed"},
+	"SpeechConfig": ubx.FieldSpec{
+		WireName: "speech_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_SpeechConfigFields,
+	},
+	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
+	"ThinkingConfig": ubx.FieldSpec{
+		WireName: "thinking_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ThinkingConfigFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"TopP": ubx.FieldSpec{WireName: "top_p"},
+}
 
 var EvaluationRun_EvaluationConfig_AutoraterConfigFields = ubx.FieldMap{
-		"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
-		},
-		"SampleCount": ubx.FieldSpec{WireName: "sample_count"},
-	}
+	"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
+	},
+	"SampleCount": ubx.FieldSpec{WireName: "sample_count"},
+}
 
 var EvaluationRun_EvaluationConfig_CloudLoggingConfig_TracingContextFields = ubx.FieldMap{
-		"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
-		"SpanId": ubx.FieldSpec{WireName: "span_id"},
-		"TraceId": ubx.FieldSpec{WireName: "trace_id"},
-	}
+	"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
+	"SpanId":         ubx.FieldSpec{WireName: "span_id"},
+	"TraceId":        ubx.FieldSpec{WireName: "trace_id"},
+}
 
 var EvaluationRun_EvaluationConfig_CloudLoggingConfigFields = ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"ResourceLabels": ubx.FieldSpec{WireName: "resource_labels"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"TracingContext": ubx.FieldSpec{
-			WireName: "tracing_context",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_CloudLoggingConfig_TracingContextFields,
-		},
-	}
+	"Project":        ubx.FieldSpec{WireName: "project"},
+	"ResourceLabels": ubx.FieldSpec{WireName: "resource_labels"},
+	"ResourceType":   ubx.FieldSpec{WireName: "resource_type"},
+	"TracingContext": ubx.FieldSpec{
+		WireName: "tracing_context",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_CloudLoggingConfig_TracingContextFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_DatasetCustomMetricsFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
+	"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+}
 
 var EvaluationRun_EvaluationConfig_LossAnalysisConfigFields = ubx.FieldMap{
-		"Candidate": ubx.FieldSpec{WireName: "candidate"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-	}
+	"Candidate": ubx.FieldSpec{WireName: "candidate"},
+	"Metric":    ubx.FieldSpec{WireName: "metric"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields = ubx.FieldMap{
-		"MetricSpecName": ubx.FieldSpec{WireName: "metric_spec_name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"MetricSpecName": ubx.FieldSpec{WireName: "metric_spec_name"},
+	"Parameters":     ubx.FieldSpec{WireName: "parameters"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields = ubx.FieldMap{
-		"MetricResourceName": ubx.FieldSpec{WireName: "metric_resource_name"},
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfigFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
-		"RubricContentType": ubx.FieldSpec{WireName: "rubric_content_type"},
-		"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
-	}
+	"MetricResourceName": ubx.FieldSpec{WireName: "metric_resource_name"},
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfigFields,
+	},
+	"PromptTemplate":     ubx.FieldSpec{WireName: "prompt_template"},
+	"RubricContentType":  ubx.FieldSpec{WireName: "rubric_content_type"},
+	"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpecFields = ubx.FieldMap{
-		"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
-		"JudgeAutoraterConfig": ubx.FieldSpec{
-			WireName: "judge_autorater_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"PredefinedRubricGenerationSpec": ubx.FieldSpec{
-			WireName: "predefined_rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"RubricGenerationSpec": ubx.FieldSpec{
-			WireName: "rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
-		},
-		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
+	"JudgeAutoraterConfig": ubx.FieldSpec{
+		WireName: "judge_autorater_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"PredefinedRubricGenerationSpec": ubx.FieldSpec{
+		WireName: "predefined_rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"RubricGenerationSpec": ubx.FieldSpec{
+		WireName: "rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
+	},
+	"RubricGroupKey":    ubx.FieldSpec{WireName: "rubric_group_key"},
+	"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpecFields = ubx.FieldMap{
-		"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
-	}
+	"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpecFields = ubx.FieldMap{
-		"EvaluationFunction": ubx.FieldSpec{WireName: "evaluation_function"},
-	}
+	"EvaluationFunction": ubx.FieldSpec{WireName: "evaluation_function"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfigFields = ubx.FieldMap{
-		"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
-		"FlipEnabled": ubx.FieldSpec{WireName: "flip_enabled"},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
-		},
-		"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
-	}
+	"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
+	"FlipEnabled":    ubx.FieldSpec{WireName: "flip_enabled"},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
+	},
+	"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields = ubx.FieldMap{
-		"MetricSpecName": ubx.FieldSpec{WireName: "metric_spec_name"},
-		"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
-	}
+	"MetricSpecName":       ubx.FieldSpec{WireName: "metric_spec_name"},
+	"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields = ubx.FieldMap{
-		"ParsingFunction": ubx.FieldSpec{WireName: "parsing_function"},
-	}
+	"ParsingFunction": ubx.FieldSpec{WireName: "parsing_function"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfigFields = ubx.FieldMap{
-		"CustomCodeParserConfig": ubx.FieldSpec{
-			WireName: "custom_code_parser_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
-		},
-	}
+	"CustomCodeParserConfig": ubx.FieldSpec{
+		WireName: "custom_code_parser_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpecFields = ubx.FieldMap{
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
-		"RubricContentType": ubx.FieldSpec{WireName: "rubric_content_type"},
-		"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
-	}
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
+	},
+	"PromptTemplate":     ubx.FieldSpec{WireName: "prompt_template"},
+	"RubricContentType":  ubx.FieldSpec{WireName: "rubric_content_type"},
+	"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpecFields = ubx.FieldMap{
-		"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
-		"JudgeAutoraterConfig": ubx.FieldSpec{
-			WireName: "judge_autorater_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"PredefinedRubricGenerationSpec": ubx.FieldSpec{
-			WireName: "predefined_rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"ResultParserConfig": ubx.FieldSpec{
-			WireName: "result_parser_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfigFields,
-		},
-		"RubricGenerationSpec": ubx.FieldSpec{
-			WireName: "rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpecFields,
-		},
-		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
+	"JudgeAutoraterConfig": ubx.FieldSpec{
+		WireName: "judge_autorater_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"PredefinedRubricGenerationSpec": ubx.FieldSpec{
+		WireName: "predefined_rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"ResultParserConfig": ubx.FieldSpec{
+		WireName: "result_parser_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_ResultParserConfigFields,
+	},
+	"RubricGenerationSpec": ubx.FieldSpec{
+		WireName: "rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_RubricGenerationSpecFields,
+	},
+	"RubricGroupKey":    ubx.FieldSpec{WireName: "rubric_group_key"},
+	"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRangeFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Max":         ubx.FieldSpec{WireName: "max"},
+	"Min":         ubx.FieldSpec{WireName: "min"},
+	"Step":        ubx.FieldSpec{WireName: "step"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_MetadataFields = ubx.FieldMap{
-		"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
-		"ScoreRange": ubx.FieldSpec{
-			WireName: "score_range",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRangeFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
+	"ScoreRange": ubx.FieldSpec{
+		WireName: "score_range",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_Metadata_ScoreRangeFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfigFields = ubx.FieldMap{
-		"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
-	}
+	"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpecFields = ubx.FieldMap{
-		"BaselineResponseFieldName": ubx.FieldSpec{WireName: "baseline_response_field_name"},
-		"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
-		"CustomOutputFormatConfig": ubx.FieldSpec{
-			WireName: "custom_output_format_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"BaselineResponseFieldName":  ubx.FieldSpec{WireName: "baseline_response_field_name"},
+	"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
+	"CustomOutputFormatConfig": ubx.FieldSpec{
+		WireName: "custom_output_format_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpecFields = ubx.FieldMap{
-		"CustomOutputFormatConfig": ubx.FieldSpec{
-			WireName: "custom_output_format_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"CustomOutputFormatConfig": ubx.FieldSpec{
+		WireName: "custom_output_format_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpecFields = ubx.FieldMap{
-		"RougeType": ubx.FieldSpec{WireName: "rouge_type"},
-		"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
-		"UseStemmer": ubx.FieldSpec{WireName: "use_stemmer"},
-	}
+	"RougeType":      ubx.FieldSpec{WireName: "rouge_type"},
+	"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
+	"UseStemmer":     ubx.FieldSpec{WireName: "use_stemmer"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_MetricConfigFields = ubx.FieldMap{
-		"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
-		"BleuSpec": ubx.FieldSpec{
-			WireName: "bleu_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpecFields,
-		},
-		"ComputationBasedMetricSpec": ubx.FieldSpec{
-			WireName: "computation_based_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
-		},
-		"CustomCodeExecutionSpec": ubx.FieldSpec{
-			WireName: "custom_code_execution_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpecFields,
-		},
-		"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
-		"LlmBasedMetricSpec": ubx.FieldSpec{
-			WireName: "llm_based_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpecFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_MetadataFields,
-		},
-		"PairwiseMetricSpec": ubx.FieldSpec{
-			WireName: "pairwise_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpecFields,
-		},
-		"PointwiseMetricSpec": ubx.FieldSpec{
-			WireName: "pointwise_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpecFields,
-		},
-		"PredefinedMetricSpec": ubx.FieldSpec{
-			WireName: "predefined_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"RougeSpec": ubx.FieldSpec{
-			WireName: "rouge_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpecFields,
-		},
-	}
+	"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
+	"BleuSpec": ubx.FieldSpec{
+		WireName: "bleu_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_BleuSpecFields,
+	},
+	"ComputationBasedMetricSpec": ubx.FieldSpec{
+		WireName: "computation_based_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
+	},
+	"CustomCodeExecutionSpec": ubx.FieldSpec{
+		WireName: "custom_code_execution_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_CustomCodeExecutionSpecFields,
+	},
+	"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
+	"LlmBasedMetricSpec": ubx.FieldSpec{
+		WireName: "llm_based_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpecFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_MetadataFields,
+	},
+	"PairwiseMetricSpec": ubx.FieldSpec{
+		WireName: "pairwise_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PairwiseMetricSpecFields,
+	},
+	"PointwiseMetricSpec": ubx.FieldSpec{
+		WireName: "pointwise_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_PointwiseMetricSpecFields,
+	},
+	"PredefinedMetricSpec": ubx.FieldSpec{
+		WireName: "predefined_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"RougeSpec": ubx.FieldSpec{
+		WireName: "rouge_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfig_RougeSpecFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_PropertyFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_ContentFields = ubx.FieldMap{
-		"Property": ubx.FieldSpec{
-			WireName: "property",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_PropertyFields,
-		},
-	}
+	"Property": ubx.FieldSpec{
+		WireName: "property",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_Content_PropertyFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_RubricsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_ContentFields,
-		},
-		"Importance": ubx.FieldSpec{WireName: "importance"},
-		"RubricId": ubx.FieldSpec{WireName: "rubric_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_Rubrics_ContentFields,
+	},
+	"Importance": ubx.FieldSpec{WireName: "importance"},
+	"RubricId":   ubx.FieldSpec{WireName: "rubric_id"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubricsFields = ubx.FieldMap{
-		"Rubrics": ubx.FieldSpec{
-			WireName: "rubrics",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_RubricsFields,
-		},
-	}
+	"Rubrics": ubx.FieldSpec{
+		WireName: "rubrics",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubrics_RubricsFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpecFields = ubx.FieldMap{
-		"InlineRubrics": ubx.FieldSpec{
-			WireName: "inline_rubrics",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubricsFields,
-		},
-		"JudgeAutoraterConfig": ubx.FieldSpec{
-			WireName: "judge_autorater_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"RubricGenerationSpec": ubx.FieldSpec{
-			WireName: "rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
-		},
-		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
-	}
+	"InlineRubrics": ubx.FieldSpec{
+		WireName: "inline_rubrics",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpec_InlineRubricsFields,
+	},
+	"JudgeAutoraterConfig": ubx.FieldSpec{
+		WireName: "judge_autorater_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"RubricGenerationSpec": ubx.FieldSpec{
+		WireName: "rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
+	},
+	"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
+}
 
 var EvaluationRun_EvaluationConfig_MetricsFields = ubx.FieldMap{
-		"ComputationBasedMetricSpec": ubx.FieldSpec{
-			WireName: "computation_based_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
-		},
-		"LlmBasedMetricSpec": ubx.FieldSpec{
-			WireName: "llm_based_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpecFields,
-		},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"MetricConfig": ubx.FieldSpec{
-			WireName: "metric_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_MetricConfigFields,
-		},
-		"MetricResourceName": ubx.FieldSpec{WireName: "metric_resource_name"},
-		"PredefinedMetricSpec": ubx.FieldSpec{
-			WireName: "predefined_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"RubricBasedMetricSpec": ubx.FieldSpec{
-			WireName: "rubric_based_metric_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpecFields,
-		},
-	}
+	"ComputationBasedMetricSpec": ubx.FieldSpec{
+		WireName: "computation_based_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
+	},
+	"LlmBasedMetricSpec": ubx.FieldSpec{
+		WireName: "llm_based_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpecFields,
+	},
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+	"MetricConfig": ubx.FieldSpec{
+		WireName: "metric_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_MetricConfigFields,
+	},
+	"MetricResourceName": ubx.FieldSpec{WireName: "metric_resource_name"},
+	"PredefinedMetricSpec": ubx.FieldSpec{
+		WireName: "predefined_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"RubricBasedMetricSpec": ubx.FieldSpec{
+		WireName: "rubric_based_metric_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_RubricBasedMetricSpecFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_OutputConfig_BigqueryDestinationFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var EvaluationRun_EvaluationConfig_OutputConfig_GcsDestinationFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var EvaluationRun_EvaluationConfig_OutputConfigFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_OutputConfig_BigqueryDestinationFields,
-		},
-		"GcsDestination": ubx.FieldSpec{
-			WireName: "gcs_destination",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_OutputConfig_GcsDestinationFields,
-		},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_OutputConfig_BigqueryDestinationFields,
+	},
+	"GcsDestination": ubx.FieldSpec{
+		WireName: "gcs_destination",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_OutputConfig_GcsDestinationFields,
+	},
+}
 
 var EvaluationRun_EvaluationConfig_PromptTemplateFields = ubx.FieldMap{
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
-	}
+	"GcsUri":         ubx.FieldSpec{WireName: "gcs_uri"},
+	"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
+}
 
 var EvaluationRun_EvaluationConfig_RubricConfigsFields = ubx.FieldMap{
-		"PredefinedRubricGenerationSpec": ubx.FieldSpec{
-			WireName: "predefined_rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"RubricGenerationSpec": ubx.FieldSpec{
-			WireName: "rubric_generation_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
-		},
-		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
-	}
+	"PredefinedRubricGenerationSpec": ubx.FieldSpec{
+		WireName: "predefined_rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"RubricGenerationSpec": ubx.FieldSpec{
+		WireName: "rubric_generation_spec",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
+	},
+	"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
+}
 
 var EvaluationRun_EvaluationConfigFields = ubx.FieldMap{
-		"AutoraterConfig": ubx.FieldSpec{
-			WireName: "autorater_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfigFields,
-		},
-		"CloudLoggingConfig": ubx.FieldSpec{
-			WireName: "cloud_logging_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_CloudLoggingConfigFields,
-		},
-		"DatasetCustomMetrics": ubx.FieldSpec{
-			WireName: "dataset_custom_metrics",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_DatasetCustomMetricsFields,
-		},
-		"LossAnalysisConfig": ubx.FieldSpec{
-			WireName: "loss_analysis_config",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_LossAnalysisConfigFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_MetricsFields,
-		},
-		"OutputConfig": ubx.FieldSpec{
-			WireName: "output_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_OutputConfigFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{
-			WireName: "prompt_template",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_PromptTemplateFields,
-		},
-		"RubricConfigs": ubx.FieldSpec{
-			WireName: "rubric_configs",
-			Kind: "list",
-			Fields: EvaluationRun_EvaluationConfig_RubricConfigsFields,
-		},
-	}
+	"AutoraterConfig": ubx.FieldSpec{
+		WireName: "autorater_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfigFields,
+	},
+	"CloudLoggingConfig": ubx.FieldSpec{
+		WireName: "cloud_logging_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_CloudLoggingConfigFields,
+	},
+	"DatasetCustomMetrics": ubx.FieldSpec{
+		WireName: "dataset_custom_metrics",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_DatasetCustomMetricsFields,
+	},
+	"LossAnalysisConfig": ubx.FieldSpec{
+		WireName: "loss_analysis_config",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_LossAnalysisConfigFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_MetricsFields,
+	},
+	"OutputConfig": ubx.FieldSpec{
+		WireName: "output_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_OutputConfigFields,
+	},
+	"PromptTemplate": ubx.FieldSpec{
+		WireName: "prompt_template",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_PromptTemplateFields,
+	},
+	"RubricConfigs": ubx.FieldSpec{
+		WireName: "rubric_configs",
+		Kind:     "list",
+		Fields:   EvaluationRun_EvaluationConfig_RubricConfigsFields,
+	},
+}
 
 var EvaluationRun_EvaluationResults_SummaryMetricsFields = ubx.FieldMap{
-		"FailedItems": ubx.FieldSpec{WireName: "failed_items"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"TotalItems": ubx.FieldSpec{WireName: "total_items"},
-	}
+	"FailedItems": ubx.FieldSpec{WireName: "failed_items"},
+	"Metrics":     ubx.FieldSpec{WireName: "metrics"},
+	"TotalItems":  ubx.FieldSpec{WireName: "total_items"},
+}
 
 var EvaluationRun_EvaluationResultsFields = ubx.FieldMap{
-		"EvaluationSet": ubx.FieldSpec{WireName: "evaluation_set"},
-		"SummaryMetrics": ubx.FieldSpec{
-			WireName: "summary_metrics",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationResults_SummaryMetricsFields,
-		},
-	}
+	"EvaluationSet": ubx.FieldSpec{WireName: "evaluation_set"},
+	"SummaryMetrics": ubx.FieldSpec{
+		WireName: "summary_metrics",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationResults_SummaryMetricsFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfigFields = ubx.FieldMap{
-		"GeminiAgent": ubx.FieldSpec{WireName: "gemini_agent"},
-	}
+	"GeminiAgent": ubx.FieldSpec{WireName: "gemini_agent"},
+}
 
 var EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInputFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SessionState": ubx.FieldSpec{WireName: "session_state"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"Parameters":   ubx.FieldSpec{WireName: "parameters"},
+	"SessionState": ubx.FieldSpec{WireName: "session_state"},
+	"UserId":       ubx.FieldSpec{WireName: "user_id"},
+}
 
 var EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfigFields = ubx.FieldMap{
-		"MaxTurn": ubx.FieldSpec{WireName: "max_turn"},
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
-		},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"MaxTurn": ubx.FieldSpec{WireName: "max_turn"},
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
+	},
+	"ModelName": ubx.FieldSpec{WireName: "model_name"},
+}
 
 var EvaluationRun_InferenceConfigs_AgentRunConfigFields = ubx.FieldMap{
-		"AgentEngine": ubx.FieldSpec{WireName: "agent_engine"},
-		"GeminiAgentConfig": ubx.FieldSpec{
-			WireName: "gemini_agent_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfigFields,
-		},
-		"SessionInput": ubx.FieldSpec{
-			WireName: "session_input",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInputFields,
-		},
-		"UserSimulatorConfig": ubx.FieldSpec{
-			WireName: "user_simulator_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfigFields,
-		},
-	}
+	"AgentEngine": ubx.FieldSpec{WireName: "agent_engine"},
+	"GeminiAgentConfig": ubx.FieldSpec{
+		WireName: "gemini_agent_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_AgentRunConfig_GeminiAgentConfigFields,
+	},
+	"SessionInput": ubx.FieldSpec{
+		WireName: "session_input",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_AgentRunConfig_SessionInputFields,
+	},
+	"UserSimulatorConfig": ubx.FieldSpec{
+		WireName: "user_simulator_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_AgentRunConfig_UserSimulatorConfigFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUseFields = ubx.FieldMap{
-		"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"ExcludedPredefinedFunctions": ubx.FieldSpec{WireName: "excluded_predefined_functions"},
-	}
+	"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
+	"Environment":                    ubx.FieldSpec{WireName: "environment"},
+	"ExcludedPredefinedFunctions":    ubx.FieldSpec{WireName: "excluded_predefined_functions"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-	}
+	"ApiKey":        ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarationsFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-	}
+	"Behavior":    ubx.FieldSpec{WireName: "behavior"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypesFields = ubx.FieldMap{
-		"Places": ubx.FieldSpec{WireName: "places"},
-		"Routing": ubx.FieldSpec{WireName: "routing"},
-	}
+	"Places":  ubx.FieldSpec{WireName: "places"},
+	"Routing": ubx.FieldSpec{WireName: "routing"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMapsFields = ubx.FieldMap{
-		"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
-		"GroundingTypes": ubx.FieldSpec{
-			WireName: "grounding_types",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypesFields,
-		},
-	}
+	"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
+	"GroundingTypes": ubx.FieldSpec{
+		WireName: "grounding_types",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMaps_GroundingTypesFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypesFields = ubx.FieldMap{
-		"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
-		"WebSearch": ubx.FieldSpec{WireName: "web_search"},
-	}
+	"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
+	"WebSearch":   ubx.FieldSpec{WireName: "web_search"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-		"SearchTypes": ubx.FieldSpec{
-			WireName: "search_types",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypesFields,
-		},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+	"SearchTypes": ubx.FieldSpec{
+		WireName: "search_types",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearch_SearchTypesFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields = ubx.FieldMap{
-		"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
+	"Mode":             ubx.FieldSpec{WireName: "mode"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrievalFields = ubx.FieldMap{
-		"DynamicRetrievalConfig": ubx.FieldSpec{
-			WireName: "dynamic_retrieval_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
-		},
-	}
+	"DynamicRetrievalConfig": ubx.FieldSpec{
+		WireName: "dynamic_retrieval_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-		"EnableDataRetention": ubx.FieldSpec{WireName: "enable_data_retention"},
-		"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
-	}
+	"ApiKey":                  ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs":           ubx.FieldSpec{WireName: "custom_configs"},
+	"EnableDataRetention":     ubx.FieldSpec{WireName: "enable_data_retention"},
+	"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuthFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKeySecret":        ubx.FieldSpec{WireName: "api_key_secret"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields = ubx.FieldMap{
-		"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
-	}
+	"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields = ubx.FieldMap{
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"IdToken":        ubx.FieldSpec{WireName: "id_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfigFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
-		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"GoogleServiceAccountConfig": ubx.FieldSpec{
-			WireName: "google_service_account_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
-		},
-		"HttpBasicAuthConfig": ubx.FieldSpec{
-			WireName: "http_basic_auth_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
-		},
-		"OidcConfig": ubx.FieldSpec{
-			WireName: "oidc_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
+	},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"GoogleServiceAccountConfig": ubx.FieldSpec{
+		WireName: "google_service_account_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
+	},
+	"HttpBasicAuthConfig": ubx.FieldSpec{
+		WireName: "http_basic_auth_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
+	},
+	"OidcConfig": ubx.FieldSpec{
+		WireName: "oidc_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields = ubx.FieldMap{
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"NumHits": ubx.FieldSpec{WireName: "num_hits"},
-		"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
-	}
+	"Index":          ubx.FieldSpec{WireName: "index"},
+	"NumHits":        ubx.FieldSpec{WireName: "num_hits"},
+	"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApiFields = ubx.FieldMap{
-		"ApiAuth": ubx.FieldSpec{
-			WireName: "api_auth",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuthFields,
-		},
-		"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfigFields,
-		},
-		"ElasticSearchParams": ubx.FieldSpec{
-			WireName: "elastic_search_params",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
-		},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
-	}
+	"ApiAuth": ubx.FieldSpec{
+		WireName: "api_auth",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ApiAuthFields,
+	},
+	"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_AuthConfigFields,
+	},
+	"ElasticSearchParams": ubx.FieldSpec{
+		WireName: "elastic_search_params",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
+	},
+	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
+	"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{WireName: "data_store"},
+	"Filter":    ubx.FieldSpec{WireName: "filter"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearchFields = ubx.FieldMap{
-		"DataStoreSpecs": ubx.FieldSpec{
-			WireName: "data_store_specs",
-			Kind: "list",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
-		},
-		"Datastore": ubx.FieldSpec{WireName: "datastore"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-	}
+	"DataStoreSpecs": ubx.FieldSpec{
+		WireName: "data_store_specs",
+		Kind:     "list",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
+	},
+	"Datastore":  ubx.FieldSpec{WireName: "datastore"},
+	"Engine":     ubx.FieldSpec{WireName: "engine"},
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResourcesFields = ubx.FieldMap{
-		"RagCorpus": ubx.FieldSpec{WireName: "rag_corpus"},
-		"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
-	}
+	"RagCorpus":  ubx.FieldSpec{WireName: "rag_corpus"},
+	"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields = ubx.FieldMap{
-		"MetadataFilter": ubx.FieldSpec{WireName: "metadata_filter"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-		"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
-	}
+	"MetadataFilter":            ubx.FieldSpec{WireName: "metadata_filter"},
+	"VectorDistanceThreshold":   ubx.FieldSpec{WireName: "vector_distance_threshold"},
+	"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields = ubx.FieldMap{
-		"LlmRanker": ubx.FieldSpec{
-			WireName: "llm_ranker",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-		"RankService": ubx.FieldSpec{
-			WireName: "rank_service",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-	}
+	"LlmRanker": ubx.FieldSpec{
+		WireName: "llm_ranker",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+	"RankService": ubx.FieldSpec{
+		WireName: "rank_service",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
-		},
-		"Ranking": ubx.FieldSpec{
-			WireName: "ranking",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
+	},
+	"Ranking": ubx.FieldSpec{
+		WireName: "ranking",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStoreFields = ubx.FieldMap{
-		"RagResources": ubx.FieldSpec{
-			WireName: "rag_resources",
-			Kind: "list",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResourcesFields,
-		},
-		"RagRetrievalConfig": ubx.FieldSpec{
-			WireName: "rag_retrieval_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
-		},
-		"SimilarityTopK": ubx.FieldSpec{WireName: "similarity_top_k"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-	}
+	"RagResources": ubx.FieldSpec{
+		WireName: "rag_resources",
+		Kind:     "list",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagResourcesFields,
+	},
+	"RagRetrievalConfig": ubx.FieldSpec{
+		WireName: "rag_retrieval_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
+	},
+	"SimilarityTopK":          ubx.FieldSpec{WireName: "similarity_top_k"},
+	"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_Tools_RetrievalFields = ubx.FieldMap{
-		"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
-		"ExternalApi": ubx.FieldSpec{
-			WireName: "external_api",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApiFields,
-		},
-		"VertexAiSearch": ubx.FieldSpec{
-			WireName: "vertex_ai_search",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearchFields,
-		},
-		"VertexRagStore": ubx.FieldSpec{
-			WireName: "vertex_rag_store",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStoreFields,
-		},
-	}
+	"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
+	"ExternalApi": ubx.FieldSpec{
+		WireName: "external_api",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_ExternalApiFields,
+	},
+	"VertexAiSearch": ubx.FieldSpec{
+		WireName: "vertex_ai_search",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexAiSearchFields,
+	},
+	"VertexRagStore": ubx.FieldSpec{
+		WireName: "vertex_rag_store",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_Retrieval_VertexRagStoreFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigs_Agents_ToolsFields = ubx.FieldMap{
-		"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
-		"ComputerUse": ubx.FieldSpec{
-			WireName: "computer_use",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUseFields,
-		},
-		"EnterpriseWebSearch": ubx.FieldSpec{
-			WireName: "enterprise_web_search",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearchFields,
-		},
-		"ExaAiSearch": ubx.FieldSpec{
-			WireName: "exa_ai_search",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearchFields,
-		},
-		"FunctionDeclarations": ubx.FieldSpec{
-			WireName: "function_declarations",
-			Kind: "list",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarationsFields,
-		},
-		"GoogleMaps": ubx.FieldSpec{
-			WireName: "google_maps",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMapsFields,
-		},
-		"GoogleSearch": ubx.FieldSpec{
-			WireName: "google_search",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchFields,
-		},
-		"GoogleSearchRetrieval": ubx.FieldSpec{
-			WireName: "google_search_retrieval",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrievalFields,
-		},
-		"ParallelAiSearch": ubx.FieldSpec{
-			WireName: "parallel_ai_search",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearchFields,
-		},
-		"Retrieval": ubx.FieldSpec{
-			WireName: "retrieval",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_Agents_Tools_RetrievalFields,
-		},
-		"UrlContext": ubx.FieldSpec{WireName: "url_context"},
-	}
+	"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
+	"ComputerUse": ubx.FieldSpec{
+		WireName: "computer_use",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_ComputerUseFields,
+	},
+	"EnterpriseWebSearch": ubx.FieldSpec{
+		WireName: "enterprise_web_search",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_EnterpriseWebSearchFields,
+	},
+	"ExaAiSearch": ubx.FieldSpec{
+		WireName: "exa_ai_search",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_ExaAiSearchFields,
+	},
+	"FunctionDeclarations": ubx.FieldSpec{
+		WireName: "function_declarations",
+		Kind:     "list",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_FunctionDeclarationsFields,
+	},
+	"GoogleMaps": ubx.FieldSpec{
+		WireName: "google_maps",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleMapsFields,
+	},
+	"GoogleSearch": ubx.FieldSpec{
+		WireName: "google_search",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchFields,
+	},
+	"GoogleSearchRetrieval": ubx.FieldSpec{
+		WireName: "google_search_retrieval",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_GoogleSearchRetrievalFields,
+	},
+	"ParallelAiSearch": ubx.FieldSpec{
+		WireName: "parallel_ai_search",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_ParallelAiSearchFields,
+	},
+	"Retrieval": ubx.FieldSpec{
+		WireName: "retrieval",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_Tools_RetrievalFields,
+	},
+	"UrlContext": ubx.FieldSpec{WireName: "url_context"},
+}
 
 var EvaluationRun_InferenceConfigs_AgentsFields = ubx.FieldMap{
-		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
-		"AgentType": ubx.FieldSpec{WireName: "agent_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"SubAgents": ubx.FieldSpec{WireName: "sub_agents"},
-		"Tools": ubx.FieldSpec{
-			WireName: "tools",
-			Kind: "list",
-			Fields: EvaluationRun_InferenceConfigs_Agents_ToolsFields,
-		},
-	}
+	"AgentId":     ubx.FieldSpec{WireName: "agent_id"},
+	"AgentType":   ubx.FieldSpec{WireName: "agent_type"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Instruction": ubx.FieldSpec{WireName: "instruction"},
+	"SubAgents":   ubx.FieldSpec{WireName: "sub_agents"},
+	"Tools": ubx.FieldSpec{
+		WireName: "tools",
+		Kind:     "list",
+		Fields:   EvaluationRun_InferenceConfigs_Agents_ToolsFields,
+	},
+}
 
 var EvaluationRun_InferenceConfigsFields = ubx.FieldMap{
-		"AgentRunConfig": ubx.FieldSpec{
-			WireName: "agent_run_config",
-			Kind: "object",
-			Fields: EvaluationRun_InferenceConfigs_AgentRunConfigFields,
-		},
-		"Agents": ubx.FieldSpec{
-			WireName: "agents",
-			Kind: "map",
-			Fields: EvaluationRun_InferenceConfigs_AgentsFields,
-		},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
-		},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Parallelism": ubx.FieldSpec{WireName: "parallelism"},
-		"PromptTemplate": ubx.FieldSpec{
-			WireName: "prompt_template",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfig_PromptTemplateFields,
-		},
-	}
+	"AgentRunConfig": ubx.FieldSpec{
+		WireName: "agent_run_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_InferenceConfigs_AgentRunConfigFields,
+	},
+	"Agents": ubx.FieldSpec{
+		WireName: "agents",
+		Kind:     "map",
+		Fields:   EvaluationRun_InferenceConfigs_AgentsFields,
+	},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_AutoraterConfig_GenerationConfigFields,
+	},
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Parallelism": ubx.FieldSpec{WireName: "parallelism"},
+	"PromptTemplate": ubx.FieldSpec{
+		WireName: "prompt_template",
+		Kind:     "object",
+		Fields:   EvaluationRun_EvaluationConfig_PromptTemplateFields,
+	},
+}
 
 type EvaluationRunConfig struct {
-	// Output only. Time when the evaluation run was completed.
-	CompletionTime any
-	// Output only. Time when the evaluation run was created.
-	CreateTime any
 	// The data source for the evaluation run.
 	DataSource any
 	// Required. The display name of the Evaluation Run.
@@ -1906,8 +1902,6 @@ type EvaluationRunConfig struct {
 	EvaluationConfig any
 	// The results of the evaluation run.
 	EvaluationResults any
-	// Output only. The specific evaluation set of the evaluation run. For runs with an evaluation set input, this will be that same set. For runs with BigQuery input, it's the sampled BigQuery dataset.
-	EvaluationSetSnapshot any
 	// Optional. The candidate to inference config map for the evaluation run. The candidate can be up to 128 characters long and can consist of any UTF-8 characters.
 	InferenceConfigs any
 	// Optional. Labels for the evaluation run.
@@ -1916,8 +1910,6 @@ type EvaluationRunConfig struct {
 	Metadata any
 	// Identifier. The resource name of the EvaluationRun. This is a unique identifier. Format: `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run}`
 	Name any
-	// Output only. The state of the evaluation run.
-	State any
 }
 
 type EvaluationRunAttrs struct {
@@ -1954,43 +1946,39 @@ type EvaluationRunAttrs struct {
 var EvaluationRun = ubx.ResourceBinding{
 	WireType: "google_aiplatform_evaluation_run",
 	Fields: ubx.FieldMap{
-		"CompletionTime": ubx.FieldSpec{WireName: "completion_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataSource": ubx.FieldSpec{
 			WireName: "data_source",
-			Kind: "object",
-			Fields: EvaluationRun_DataSourceFields,
+			Kind:     "object",
+			Fields:   EvaluationRun_DataSourceFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: EvaluationRun_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   EvaluationRun_EncryptionSpecFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: EvaluationRun_ErrorFields,
+			Kind:     "object",
+			Fields:   EvaluationRun_ErrorFields,
 		},
 		"EvaluationConfig": ubx.FieldSpec{
 			WireName: "evaluation_config",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationConfigFields,
+			Kind:     "object",
+			Fields:   EvaluationRun_EvaluationConfigFields,
 		},
 		"EvaluationResults": ubx.FieldSpec{
 			WireName: "evaluation_results",
-			Kind: "object",
-			Fields: EvaluationRun_EvaluationResultsFields,
+			Kind:     "object",
+			Fields:   EvaluationRun_EvaluationResultsFields,
 		},
-		"EvaluationSetSnapshot": ubx.FieldSpec{WireName: "evaluation_set_snapshot"},
 		"InferenceConfigs": ubx.FieldSpec{
 			WireName: "inference_configs",
-			Kind: "map",
-			Fields: EvaluationRun_InferenceConfigsFields,
+			Kind:     "map",
+			Fields:   EvaluationRun_InferenceConfigsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":   ubx.FieldSpec{WireName: "labels"},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -44,20 +44,12 @@ _ApiHubInstance_ConfigFields = {
 class ApiHubInstanceConfig:
     # Available configurations to provision an ApiHub Instance.
     config: Any = None
-    # Output only. Creation timestamp.
-    create_time: Any = None
     # Optional. Description of the ApiHub instance.
     description: Any = None
     # Optional. Instance labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
     # Identifier. Format: `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
     name: Any = None
-    # Output only. The current state of the ApiHub instance.
-    state: Any = None
-    # Output only. Extra information about ApiHub instance state. Currently the message would be populated when state is `FAILED`.
-    state_message: Any = None
-    # Output only. Last update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ApiHubInstanceAttrs:
@@ -86,12 +78,8 @@ ApiHubInstance = ubx.ResourceBinding(
             kind="object",
             fields=_ApiHubInstance_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_message": ubx.FieldSpec(wire_name="state_message"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

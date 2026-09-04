@@ -38,10 +38,10 @@ type TransferResource_LatestStatusDetail_Error struct {
 
 type TransferResource_LatestStatusDetail_Summary_Metrics struct {
 	Completed any
-	Failed any
-	Pending any
-	Total any
-	Unit any
+	Failed    any
+	Pending   any
+	Total     any
+	Unit      any
 }
 
 type TransferResource_LatestStatusDetail_Summary struct {
@@ -77,7 +77,7 @@ type TransferResourceAttrs struct {
 	LatestRun any
 	// Status details of the resource being transferred.
 	LatestStatusDetail any
-	Name any
+	Name               any
 	// Optional. Resource type.
 	Type any
 	// Output only. Time when the resource was last updated.

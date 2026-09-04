@@ -65,7 +65,7 @@ type DataSourceReferenceAttrs struct {
 	DataSourceBackupCount any
 	// The Google Cloud resource that the DataSource is associated with.
 	DataSourceGcpResourceInfo any
-	Name any
+	Name                      any
 	// Output only. Total size of the storage used by all backup resources for the referenced datasource.
 	TotalStoredBytes any
 }

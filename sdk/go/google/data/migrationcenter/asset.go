@@ -10,19 +10,19 @@ type Asset_DatabaseDeploymentDetails_AggregatedStats struct {
 
 type Asset_DatabaseDeploymentDetails_Mysql_Plugins struct {
 	Enabled any
-	Plugin any
+	Plugin  any
 	Version any
 }
 
 type Asset_DatabaseDeploymentDetails_Mysql_Properties struct {
-	Enabled any
+	Enabled      any
 	NumericValue any
-	Property any
+	Property     any
 }
 
 type Asset_DatabaseDeploymentDetails_Mysql_Variables struct {
 	Category any
-	Value any
+	Value    any
 	Variable any
 }
 
@@ -38,13 +38,13 @@ type Asset_DatabaseDeploymentDetails_Mysql struct {
 }
 
 type Asset_DatabaseDeploymentDetails_Postgresql_Settings struct {
-	BoolValue any
-	IntValue any
-	RealValue any
-	Setting any
-	Source any
+	BoolValue   any
+	IntValue    any
+	RealValue   any
+	Setting     any
+	Source      any
 	StringValue any
-	Unit any
+	Unit        any
 }
 
 type Asset_DatabaseDeploymentDetails_Postgresql struct {
@@ -55,18 +55,18 @@ type Asset_DatabaseDeploymentDetails_Postgresql struct {
 }
 
 type Asset_DatabaseDeploymentDetails_SqlServer_Features struct {
-	Enabled any
+	Enabled     any
 	FeatureName any
 }
 
 type Asset_DatabaseDeploymentDetails_SqlServer_ServerFlags struct {
 	ServerFlagName any
-	Value any
-	ValueInUse any
+	Value          any
+	ValueInUse     any
 }
 
 type Asset_DatabaseDeploymentDetails_SqlServer_TraceFlags struct {
-	Scope any
+	Scope         any
 	TraceFlagName any
 }
 
@@ -80,15 +80,15 @@ type Asset_DatabaseDeploymentDetails_SqlServer struct {
 }
 
 type Asset_DatabaseDeploymentDetails_Topology_Instances_Network struct {
-	HostNames any
-	IpAddresses any
+	HostNames         any
+	IpAddresses       any
 	PrimaryMacAddress any
 }
 
 type Asset_DatabaseDeploymentDetails_Topology_Instances struct {
 	InstanceName any
-	Network any
-	Role any
+	Network      any
+	Role         any
 }
 
 type Asset_DatabaseDeploymentDetails_Topology struct {
@@ -144,8 +144,8 @@ type Asset_DatabaseDetails_ParentDatabaseDeployment struct {
 
 type Asset_DatabaseDetails_Schemas_Mysql_StorageEngines struct {
 	EncryptedTableCount any
-	Engine any
-	TableCount any
+	Engine              any
+	TableCount          any
 }
 
 type Asset_DatabaseDetails_Schemas_Mysql struct {
@@ -154,16 +154,16 @@ type Asset_DatabaseDetails_Schemas_Mysql struct {
 
 type Asset_DatabaseDetails_Schemas_Objects struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type Asset_DatabaseDetails_Schemas_Postgresql_PostgresqlExtensions struct {
 	Extension any
-	Version any
+	Version   any
 }
 
 type Asset_DatabaseDetails_Schemas_Postgresql struct {
-	ForeignTablesCount any
+	ForeignTablesCount   any
 	PostgresqlExtensions any
 }
 
@@ -172,11 +172,11 @@ type Asset_DatabaseDetails_Schemas_SqlServer struct {
 }
 
 type Asset_DatabaseDetails_Schemas struct {
-	Mysql any
-	Objects any
-	Postgresql any
-	SchemaName any
-	SqlServer any
+	Mysql           any
+	Objects         any
+	Postgresql      any
+	SchemaName      any
+	SqlServer       any
 	TablesSizeBytes any
 }
 
@@ -193,22 +193,22 @@ type Asset_DatabaseDetails struct {
 
 type Asset_InsightList_Insights_GenericInsight struct {
 	AdditionalInformation any
-	DefaultMessage any
-	MessageId any
+	DefaultMessage        any
+	MessageId             any
 }
 
 type Asset_InsightList_Insights_MigrationInsight_ComputeEngineTarget_Shape_Storage struct {
 	SizeGb any
-	Type any
+	Type   any
 }
 
 type Asset_InsightList_Insights_MigrationInsight_ComputeEngineTarget_Shape struct {
-	LogicalCoreCount any
-	MachineType any
-	MemoryMb any
+	LogicalCoreCount  any
+	MachineType       any
+	MemoryMb          any
 	PhysicalCoreCount any
-	Series any
-	Storage any
+	Series            any
+	Storage           any
 }
 
 type Asset_InsightList_Insights_MigrationInsight_ComputeEngineTarget struct {
@@ -221,11 +221,11 @@ type Asset_InsightList_Insights_MigrationInsight_Fit struct {
 
 type Asset_InsightList_Insights_MigrationInsight struct {
 	ComputeEngineTarget any
-	Fit any
+	Fit                 any
 }
 
 type Asset_InsightList_Insights struct {
-	GenericInsight any
+	GenericInsight   any
 	MigrationInsight any
 }
 
@@ -283,12 +283,12 @@ type Asset_MachineDetails_Architecture struct {
 
 type Asset_MachineDetails_DiskPartitions_Partitions_Entries struct {
 	CapacityBytes any
-	FileSystem any
-	FreeBytes any
-	MountPoint any
+	FileSystem    any
+	FreeBytes     any
+	MountPoint    any
 	SubPartitions any
-	Type any
-	Uuid any
+	Type          any
+	Uuid          any
 }
 
 type Asset_MachineDetails_DiskPartitions_Partitions struct {
@@ -306,21 +306,21 @@ type Asset_MachineDetails_DiskPartitions struct {
 }
 
 type Asset_MachineDetails_Disks_Disks_Entries_Vmware struct {
-	BackingType any
+	BackingType      any
 	RdmCompatibility any
-	Shared any
-	VmdkMode any
+	Shared           any
+	VmdkMode         any
 }
 
 type Asset_MachineDetails_Disks_Disks_Entries struct {
 	CapacityBytes any
-	DiskLabel any
+	DiskLabel     any
 	DiskLabelType any
-	FreeBytes any
-	HwAddress any
+	FreeBytes     any
+	HwAddress     any
 	InterfaceType any
-	Partitions any
-	Vmware any
+	Partitions    any
+	Vmware        any
 }
 
 type Asset_MachineDetails_Disks_Disks struct {
@@ -338,11 +338,11 @@ type Asset_MachineDetails_Disks struct {
 }
 
 type Asset_MachineDetails_GuestOs_Config_Fstab_Entries struct {
-	File any
-	Freq any
-	Mntops any
-	Passno any
-	Spec any
+	File    any
+	Freq    any
+	Mntops  any
+	Passno  any
+	Spec    any
 	Vfstype any
 }
 
@@ -353,7 +353,7 @@ type Asset_MachineDetails_GuestOs_Config_Fstab struct {
 
 type Asset_MachineDetails_GuestOs_Config_Hosts_Entries struct {
 	HostNames any
-	Ip any
+	Ip        any
 }
 
 type Asset_MachineDetails_GuestOs_Config_Hosts struct {
@@ -363,7 +363,7 @@ type Asset_MachineDetails_GuestOs_Config_Hosts struct {
 
 type Asset_MachineDetails_GuestOs_Config_NfsExports_Entries struct {
 	ExportDirectory any
-	Hosts any
+	Hosts           any
 }
 
 type Asset_MachineDetails_GuestOs_Config_NfsExports struct {
@@ -386,11 +386,11 @@ type Asset_MachineDetails_GuestOs_Config struct {
 
 type Asset_MachineDetails_GuestOs_Runtime_InstalledApps_Entries struct {
 	ApplicationName any
-	InstallTime any
-	Licenses any
-	Path any
-	Vendor any
-	Version any
+	InstallTime     any
+	Licenses        any
+	Path            any
+	Vendor          any
+	Version         any
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_InstalledApps struct {
@@ -399,14 +399,14 @@ type Asset_MachineDetails_GuestOs_Runtime_InstalledApps struct {
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_Network_Connections_Entries struct {
-	LocalIpAddress any
-	LocalPort any
-	Pid any
-	ProcessName any
-	Protocol any
+	LocalIpAddress  any
+	LocalPort       any
+	Pid             any
+	ProcessName     any
+	Protocol        any
 	RemoteIpAddress any
-	RemotePort any
-	State any
+	RemotePort      any
+	State           any
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_Network_Connections struct {
@@ -422,10 +422,10 @@ type Asset_MachineDetails_GuestOs_Runtime_Network struct {
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_OpenFileList_Entries struct {
-	Command any
+	Command  any
 	FilePath any
 	FileType any
-	User any
+	User     any
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_OpenFileList struct {
@@ -435,10 +435,10 @@ type Asset_MachineDetails_GuestOs_Runtime_OpenFileList struct {
 
 type Asset_MachineDetails_GuestOs_Runtime_Processes_Entries struct {
 	Attributes any
-	Cmdline any
-	ExePath any
-	Pid any
-	User any
+	Cmdline    any
+	ExePath    any
+	Pid        any
+	User       any
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_Processes struct {
@@ -447,12 +447,12 @@ type Asset_MachineDetails_GuestOs_Runtime_Processes struct {
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_Services_Entries struct {
-	Cmdline any
-	ExePath any
-	Pid any
+	Cmdline     any
+	ExePath     any
+	Pid         any
 	ServiceName any
-	StartMode any
-	State any
+	StartMode   any
+	State       any
 }
 
 type Asset_MachineDetails_GuestOs_Runtime_Services struct {
@@ -494,9 +494,9 @@ type Asset_MachineDetails_GuestOs struct {
 
 type Asset_MachineDetails_Network_Adapters_Entries_Addresses_Entries struct {
 	Assignment any
-	Bcast any
-	Fqdn any
-	IpAddress any
+	Bcast      any
+	Fqdn       any
+	IpAddress  any
 	SubnetMask any
 }
 
@@ -506,8 +506,8 @@ type Asset_MachineDetails_Network_Adapters_Entries_Addresses struct {
 
 type Asset_MachineDetails_Network_Adapters_Entries struct {
 	AdapterType any
-	Addresses any
-	MacAddress any
+	Addresses   any
+	MacAddress  any
 }
 
 type Asset_MachineDetails_Network_Adapters struct {
@@ -613,10 +613,10 @@ type Asset_MachineDetails struct {
 }
 
 type Asset_PerformanceData_DailyResourceUsageAggregations_Cpu_UtilizationPercentage struct {
-	Average any
-	Median any
+	Average               any
+	Median                any
 	NinteyFifthPercentile any
-	Peak any
+	Peak                  any
 }
 
 type Asset_PerformanceData_DailyResourceUsageAggregations_Cpu struct {
@@ -624,21 +624,21 @@ type Asset_PerformanceData_DailyResourceUsageAggregations_Cpu struct {
 }
 
 type Asset_PerformanceData_DailyResourceUsageAggregations_Disk struct {
-	Iops any
-	ReadIops any
+	Iops      any
+	ReadIops  any
 	WriteIops any
 }
 
 type Asset_PerformanceData_DailyResourceUsageAggregations_Network struct {
-	EgressBps any
+	EgressBps  any
 	IngressBps any
 }
 
 type Asset_PerformanceData_DailyResourceUsageAggregations struct {
-	Cpu any
-	Date any
-	Disk any
-	Memory any
+	Cpu     any
+	Date    any
+	Disk    any
+	Memory  any
 	Network any
 }
 
@@ -648,7 +648,6 @@ type Asset_PerformanceData struct {
 }
 
 type AssetConfig struct {
-	Name any
 	View any
 }
 
@@ -675,7 +674,7 @@ type AssetAttrs struct {
 	Labels any
 	// Details of a machine.
 	MachineDetails any
-	Name any
+	Name           any
 	// Performance data for an asset.
 	PerformanceData any
 	// Output only. The list of sources contributing to the asset.
@@ -684,13 +683,12 @@ type AssetAttrs struct {
 	Title any
 	// Output only. The timestamp when the asset was last updated.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var Asset = ubx.DataSourceBinding{
 	WireType: "google_migrationcenter_asset",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

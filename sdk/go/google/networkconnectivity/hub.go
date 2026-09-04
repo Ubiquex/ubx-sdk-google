@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Hub_RoutingVpcs struct {
 	RequiredForNewSiteToSiteDataTransferSpokes any
-	Uri any
+	Uri                                        any
 }
 
 type Hub_SpokeSummary_SpokeStateCounts struct {
@@ -14,12 +14,12 @@ type Hub_SpokeSummary_SpokeStateCounts struct {
 }
 
 type Hub_SpokeSummary_SpokeStateReasonCounts struct {
-	Count any
+	Count           any
 	StateReasonCode any
 }
 
 type Hub_SpokeSummary_SpokeTypeCounts struct {
-	Count any
+	Count     any
 	SpokeType any
 }
 
@@ -32,47 +32,40 @@ type Hub_SpokeSummary struct {
 	SpokeTypeCounts any
 }
 
-var Hub_RoutingVpcsFields = ubx.FieldMap{
-		"RequiredForNewSiteToSiteDataTransferSpokes": ubx.FieldSpec{WireName: "required_for_new_site_to_site_data_transfer_spokes"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
-
 var Hub_SpokeSummary_SpokeStateCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Hub_SpokeSummary_SpokeStateReasonCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
-	}
+	"Count":           ubx.FieldSpec{WireName: "count"},
+	"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
+}
 
 var Hub_SpokeSummary_SpokeTypeCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"SpokeType": ubx.FieldSpec{WireName: "spoke_type"},
-	}
+	"Count":     ubx.FieldSpec{WireName: "count"},
+	"SpokeType": ubx.FieldSpec{WireName: "spoke_type"},
+}
 
 var Hub_SpokeSummaryFields = ubx.FieldMap{
-		"SpokeStateCounts": ubx.FieldSpec{
-			WireName: "spoke_state_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeStateCountsFields,
-		},
-		"SpokeStateReasonCounts": ubx.FieldSpec{
-			WireName: "spoke_state_reason_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeStateReasonCountsFields,
-		},
-		"SpokeTypeCounts": ubx.FieldSpec{
-			WireName: "spoke_type_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeTypeCountsFields,
-		},
-	}
+	"SpokeStateCounts": ubx.FieldSpec{
+		WireName: "spoke_state_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeStateCountsFields,
+	},
+	"SpokeStateReasonCounts": ubx.FieldSpec{
+		WireName: "spoke_state_reason_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeStateReasonCountsFields,
+	},
+	"SpokeTypeCounts": ubx.FieldSpec{
+		WireName: "spoke_type_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeTypeCountsFields,
+	},
+}
 
 type HubConfig struct {
-	// Output only. The time the hub was created.
-	CreateTime any
 	// Optional. An optional description of the hub.
 	Description any
 	// Optional. Whether Private Service Connect connection propagation is enabled for the hub. If true, Private Service Connect endpoints in VPC spokes attached to the hub are made accessible to other VPC spokes attached to the hub. The default value is false.
@@ -85,18 +78,8 @@ type HubConfig struct {
 	PolicyMode any
 	// Optional. The topology implemented in this hub. Currently, this field is only used when policy_mode = PRESET. The available preset topologies are MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET, the preset_topology defaults to MESH. When policy_mode = CUSTOM, the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
 	PresetTopology any
-	// Output only. The route tables that belong to this hub. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}` This field is read-only. Network Connectivity Center automatically populates it based on the route tables nested under the hub.
-	RouteTables any
-	// Output only. The VPC networks associated with this hub's spokes. This field is read-only. Network Connectivity Center automatically populates it based on the set of spokes attached to the hub.
-	RoutingVpcs any
 	// Summarizes information about the spokes associated with a hub. The summary includes a count of spokes according to type and according to state. If any spokes are inactive, the summary also lists the reasons they are inactive, including a count for each reason.
 	SpokeSummary any
-	// Output only. The current lifecycle state of this hub.
-	State any
-	// Output only. The Google-generated UUID for the hub. This value is unique across all hub resources. If a hub is deleted and another with the same name is created, the new hub is assigned a different unique_id.
-	UniqueId any
-	// Output only. The time the hub was last updated.
-	UpdateTime any
 }
 
 type HubAttrs struct {
@@ -131,26 +114,16 @@ type HubAttrs struct {
 var Hub = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_hub",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExportPsc": ubx.FieldSpec{WireName: "export_psc"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyMode": ubx.FieldSpec{WireName: "policy_mode"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"ExportPsc":      ubx.FieldSpec{WireName: "export_psc"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"PolicyMode":     ubx.FieldSpec{WireName: "policy_mode"},
 		"PresetTopology": ubx.FieldSpec{WireName: "preset_topology"},
-		"RouteTables": ubx.FieldSpec{WireName: "route_tables"},
-		"RoutingVpcs": ubx.FieldSpec{
-			WireName: "routing_vpcs",
-			Kind: "list",
-			Fields: Hub_RoutingVpcsFields,
-		},
 		"SpokeSummary": ubx.FieldSpec{
 			WireName: "spoke_summary",
-			Kind: "object",
-			Fields: Hub_SpokeSummaryFields,
+			Kind:     "object",
+			Fields:   Hub_SpokeSummaryFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

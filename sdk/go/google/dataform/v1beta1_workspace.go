@@ -14,16 +14,14 @@ type V1beta1Workspace_PrivateResourceMetadata struct {
 }
 
 var V1beta1Workspace_DataEncryptionStateFields = ubx.FieldMap{
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var V1beta1Workspace_PrivateResourceMetadataFields = ubx.FieldMap{
-		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-	}
+	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+}
 
 type V1beta1WorkspaceConfig struct {
-	// Output only. The timestamp of when the workspace was created.
-	CreateTime any
 	// Describes encryption state of a resource.
 	DataEncryptionState any
 	// Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
@@ -32,16 +30,12 @@ type V1beta1WorkspaceConfig struct {
 	DisableMoves any
 	// Immutable. Controls the enablement of branch checkout for the workspace. When set to True, the workspace will be allowed to checkout branches.
 	EnableBranchManagement any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Identifier. The workspace's name.
 	Name any
 	// Optional. Input only. Immutable. The name of the default upstream branch for all pull/push operations in the remote repository for this workspace. If empty, the HEAD branch from repository will be used.
 	OriginalBranch any
 	// Metadata used to identify if a resource is user scoped.
 	PrivateResourceMetadata any
-	// Output only. If set to true, the workspace was created as a shallow clone. Will be set to true if the depth field is set to a value greater than 0, otherwise it will be set to false.
-	Shallow any
 }
 
 type V1beta1WorkspaceAttrs struct {
@@ -70,23 +64,20 @@ type V1beta1WorkspaceAttrs struct {
 var V1beta1Workspace = ubx.ResourceBinding{
 	WireType: "google_dataform_v1beta1_workspace",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind: "object",
-			Fields: V1beta1Workspace_DataEncryptionStateFields,
+			Kind:     "object",
+			Fields:   V1beta1Workspace_DataEncryptionStateFields,
 		},
-		"Depth": ubx.FieldSpec{WireName: "depth"},
-		"DisableMoves": ubx.FieldSpec{WireName: "disable_moves"},
+		"Depth":                  ubx.FieldSpec{WireName: "depth"},
+		"DisableMoves":           ubx.FieldSpec{WireName: "disable_moves"},
 		"EnableBranchManagement": ubx.FieldSpec{WireName: "enable_branch_management"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalBranch": ubx.FieldSpec{WireName: "original_branch"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"OriginalBranch":         ubx.FieldSpec{WireName: "original_branch"},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind: "object",
-			Fields: V1beta1Workspace_PrivateResourceMetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1Workspace_PrivateResourceMetadataFields,
 		},
-		"Shallow": ubx.FieldSpec{WireName: "shallow"},
 	},
 }

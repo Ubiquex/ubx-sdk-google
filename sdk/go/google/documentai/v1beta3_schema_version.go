@@ -22,27 +22,27 @@ type V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldEx
 
 type V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata struct {
 	FieldExtractionMetadata any
-	Inactive any
+	Inactive                any
 }
 
 type V1beta3SchemaVersion_Schema_EntityTypes_Properties struct {
-	Description any
-	DisplayName any
-	Method any
-	Name any
-	OccurrenceType any
+	Description      any
+	DisplayName      any
+	Method           any
+	Name             any
+	OccurrenceType   any
 	PropertyMetadata any
-	ValueType any
+	ValueType        any
 }
 
 type V1beta3SchemaVersion_Schema_EntityTypes struct {
-	BaseTypes any
-	Description any
-	DisplayName any
+	BaseTypes          any
+	Description        any
+	DisplayName        any
 	EntityTypeMetadata any
-	EnumValues any
-	Name any
-	Properties any
+	EnumValues         any
+	Name               any
+	Properties         any
 }
 
 type V1beta3SchemaVersion_Schema_Metadata struct {
@@ -70,97 +70,95 @@ type V1beta3SchemaVersion_Schema struct {
 }
 
 var V1beta3SchemaVersion_Schema_EntityTypes_EntityTypeMetadataFields = ubx.FieldMap{
-		"Inactive": ubx.FieldSpec{WireName: "inactive"},
-	}
+	"Inactive": ubx.FieldSpec{WireName: "inactive"},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypes_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadata_SummaryOptionsFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Length": ubx.FieldSpec{WireName: "length"},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadataFields = ubx.FieldMap{
-		"SummaryOptions": ubx.FieldSpec{
-			WireName: "summary_options",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadata_SummaryOptionsFields,
-		},
-	}
+	"SummaryOptions": ubx.FieldSpec{
+		WireName: "summary_options",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadata_SummaryOptionsFields,
+	},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadataFields = ubx.FieldMap{
-		"FieldExtractionMetadata": ubx.FieldSpec{
-			WireName: "field_extraction_metadata",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadataFields,
-		},
-		"Inactive": ubx.FieldSpec{WireName: "inactive"},
-	}
+	"FieldExtractionMetadata": ubx.FieldSpec{
+		WireName: "field_extraction_metadata",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadata_FieldExtractionMetadataFields,
+	},
+	"Inactive": ubx.FieldSpec{WireName: "inactive"},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypes_PropertiesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OccurrenceType": ubx.FieldSpec{WireName: "occurrence_type"},
-		"PropertyMetadata": ubx.FieldSpec{
-			WireName: "property_metadata",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadataFields,
-		},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"Method":         ubx.FieldSpec{WireName: "method"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"OccurrenceType": ubx.FieldSpec{WireName: "occurrence_type"},
+	"PropertyMetadata": ubx.FieldSpec{
+		WireName: "property_metadata",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_Properties_PropertyMetadataFields,
+	},
+	"ValueType": ubx.FieldSpec{WireName: "value_type"},
+}
 
 var V1beta3SchemaVersion_Schema_EntityTypesFields = ubx.FieldMap{
-		"BaseTypes": ubx.FieldSpec{WireName: "base_types"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntityTypeMetadata": ubx.FieldSpec{
-			WireName: "entity_type_metadata",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_EntityTypeMetadataFields,
-		},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_EnumValuesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "list",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypes_PropertiesFields,
-		},
-	}
+	"BaseTypes":   ubx.FieldSpec{WireName: "base_types"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"EntityTypeMetadata": ubx.FieldSpec{
+		WireName: "entity_type_metadata",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_EntityTypeMetadataFields,
+	},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_EnumValuesFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "list",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypes_PropertiesFields,
+	},
+}
 
 var V1beta3SchemaVersion_Schema_MetadataFields = ubx.FieldMap{
-		"DocumentAllowMultipleLabels": ubx.FieldSpec{WireName: "document_allow_multiple_labels"},
-		"DocumentSplitter": ubx.FieldSpec{WireName: "document_splitter"},
-		"PrefixedNamingOnProperties": ubx.FieldSpec{WireName: "prefixed_naming_on_properties"},
-		"SkipNamingValidation": ubx.FieldSpec{WireName: "skip_naming_validation"},
-	}
+	"DocumentAllowMultipleLabels": ubx.FieldSpec{WireName: "document_allow_multiple_labels"},
+	"DocumentSplitter":            ubx.FieldSpec{WireName: "document_splitter"},
+	"PrefixedNamingOnProperties":  ubx.FieldSpec{WireName: "prefixed_naming_on_properties"},
+	"SkipNamingValidation":        ubx.FieldSpec{WireName: "skip_naming_validation"},
+}
 
 var V1beta3SchemaVersion_SchemaFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DocumentPrompt": ubx.FieldSpec{WireName: "document_prompt"},
-		"EntityTypes": ubx.FieldSpec{
-			WireName: "entity_types",
-			Kind: "list",
-			Fields: V1beta3SchemaVersion_Schema_EntityTypesFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_Schema_MetadataFields,
-		},
-	}
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"DocumentPrompt": ubx.FieldSpec{WireName: "document_prompt"},
+	"EntityTypes": ubx.FieldSpec{
+		WireName: "entity_types",
+		Kind:     "list",
+		Fields:   V1beta3SchemaVersion_Schema_EntityTypesFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta3SchemaVersion_Schema_MetadataFields,
+	},
+}
 
 type V1beta3SchemaVersionConfig struct {
-	// Output only. The time when the SchemaVersion was created.
-	CreateTime any
 	// Required. The user-defined name of the SchemaVersion.
 	DisplayName any
 	// Optional. The {{gcp_name_short}} labels for the SchemaVersion.
@@ -187,14 +185,13 @@ type V1beta3SchemaVersionAttrs struct {
 var V1beta3SchemaVersion = ubx.ResourceBinding{
 	WireType: "google_documentai_v1beta3_schema_version",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: V1beta3SchemaVersion_SchemaFields,
+			Kind:     "object",
+			Fields:   V1beta3SchemaVersion_SchemaFields,
 		},
 	},
 }

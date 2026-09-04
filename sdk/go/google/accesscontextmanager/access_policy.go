@@ -4,8 +4,6 @@ package accesscontextmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessPolicyConfig struct {
-	// Output only. An opaque identifier for the current version of the `AccessPolicy`. This will always be a strongly validated etag, meaning that two Access Policies will be identical if and only if their etags are identical. Clients should not expect this to be in any specific format.
-	Etag any
 	// Output only. Identifier. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`
 	Name any
 	// Required. The parent of this `AccessPolicy` in the Cloud Resource Hierarchy. Currently immutable once created. Format: `organizations/{organization_id}`
@@ -32,10 +30,9 @@ type AccessPolicyAttrs struct {
 var AccessPolicy = ubx.ResourceBinding{
 	WireType: "google_accesscontextmanager_access_policy",
 	Fields: ubx.FieldMap{
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Parent": ubx.FieldSpec{WireName: "parent"},
 		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":  ubx.FieldSpec{WireName: "title"},
 	},
 }

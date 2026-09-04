@@ -130,18 +130,10 @@ _SavedQuery_ContentFields = {
 class SavedQueryConfig:
     # The query content.
     content: Any = None
-    # Output only. The create time of this saved query.
-    create_time: Any = None
-    # Output only. The account's email address who has created this saved query.
-    creator: Any = None
     # The description of this saved query. This value should be fewer than 255 characters.
     description: Any = None
     # Labels applied on the resource. This value should not contain more than 10 entries. The key and value of each entry must be non-empty and fewer than 64 characters.
     labels: Any = None
-    # Output only. The last update time of this saved query.
-    last_update_time: Any = None
-    # Output only. The account's email address who has updated this saved query most recently.
-    last_updater: Any = None
     # The resource name of the saved query. The format must be: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
     name: Any = None
 
@@ -172,12 +164,8 @@ SavedQuery = ubx.ResourceBinding(
             kind="object",
             fields=_SavedQuery_ContentFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_update_time": ubx.FieldSpec(wire_name="last_update_time"),
-        "last_updater": ubx.FieldSpec(wire_name="last_updater"),
         "name": ubx.FieldSpec(wire_name="name"),
     },
 )

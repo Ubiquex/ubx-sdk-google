@@ -56,12 +56,6 @@ export interface Cluster_UpdateOptions {
   allowBrokerDownscaleOnClusterUpscale?: boolean | Computed<boolean>;
 }
 
-const Cluster_BrokerDetailsFields: FieldMap = {
-  brokerIndex: "broker_index",
-  nodeId: "node_id",
-  rack: "rack",
-};
-
 const Cluster_CapacityConfigFields: FieldMap = {
   memoryBytes: "memory_bytes",
   vcpuCount: "vcpu_count",
@@ -118,34 +112,20 @@ const Cluster_UpdateOptionsFields: FieldMap = {
 };
 
 export interface ClusterConfig {
-  /** Output only. Only populated when FULL view is requested. Details of each broker in the cluster. */
-  brokerDetails?: Cluster_BrokerDetails[] | Computed<Cluster_BrokerDetails[]>;
   /** A capacity configuration of a Kafka cluster. */
   capacityConfig?: Cluster_CapacityConfig | Computed<Cluster_CapacityConfig>;
-  /** Output only. The time when the cluster was created. */
-  createTime?: string | Computed<string>;
   /** Configuration properties for a Kafka cluster deployed to Google Cloud Platform. */
   gcpConfig?: Cluster_GcpConfig | Computed<Cluster_GcpConfig>;
-  /** Output only. Only populated when FULL view is requested. The Kafka version of the cluster. */
-  kafkaVersion?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the cluster. Structured like: projects/{project_number}/locations/{location}/clusters/{cluster_id} */
   name?: string | Computed<string>;
   /** Defines rebalancing behavior of a Kafka cluster. */
   rebalanceConfig?: Cluster_RebalanceConfig | Computed<Cluster_RebalanceConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The current state of the cluster. */
-  state?: string | Computed<string>;
   /** The TLS configuration for the Kafka cluster. */
   tlsConfig?: Cluster_TlsConfig | Computed<Cluster_TlsConfig>;
   /** UpdateOptions specifies options that influence how a cluster update is applied. These options control the behavior of the update process, rather than defining the desired end-state of a cluster. */
   updateOptions?: Cluster_UpdateOptions | Computed<Cluster_UpdateOptions>;
-  /** Output only. The time when the cluster was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ClusterAttrs {
@@ -182,23 +162,16 @@ export interface ClusterAttrs {
 export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
   wireType: "google_managedkafka_cluster",
   fields: {
-    brokerDetails: {
-      wireName: "broker_details",
-      kind: "list",
-      fields: Cluster_BrokerDetailsFields,
-    },
     capacityConfig: {
       wireName: "capacity_config",
       kind: "object",
       fields: Cluster_CapacityConfigFields,
     },
-    createTime: "create_time",
     gcpConfig: {
       wireName: "gcp_config",
       kind: "object",
       fields: Cluster_GcpConfigFields,
     },
-    kafkaVersion: "kafka_version",
     labels: "labels",
     name: "name",
     rebalanceConfig: {
@@ -206,9 +179,6 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "object",
       fields: Cluster_RebalanceConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
     tlsConfig: {
       wireName: "tls_config",
       kind: "object",
@@ -219,6 +189,5 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "object",
       fields: Cluster_UpdateOptionsFields,
     },
-    updateTime: "update_time",
   },
 };

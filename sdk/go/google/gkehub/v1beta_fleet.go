@@ -47,77 +47,67 @@ type V1betaFleet_State struct {
 }
 
 var V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields = ubx.FieldMap{
-		"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
-		"PolicyBindings": ubx.FieldSpec{
-			WireName: "policy_bindings",
-			Kind: "list",
-			Fields: V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields,
-		},
-	}
+	"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
+	"PolicyBindings": ubx.FieldSpec{
+		WireName: "policy_bindings",
+		Kind:     "list",
+		Fields:   V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields,
+	},
+}
 
 var V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields = ubx.FieldMap{
-		"Standard": ubx.FieldSpec{WireName: "standard"},
-	}
+	"Standard": ubx.FieldSpec{WireName: "standard"},
+}
 
 var V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields = ubx.FieldMap{
-		"ComplianceStandards": ubx.FieldSpec{
-			WireName: "compliance_standards",
-			Kind: "list",
-			Fields: V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"ComplianceStandards": ubx.FieldSpec{
+		WireName: "compliance_standards",
+		Kind:     "list",
+		Fields:   V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"VulnerabilityMode": ubx.FieldSpec{WireName: "vulnerability_mode"},
-	}
+	"Mode":              ubx.FieldSpec{WireName: "mode"},
+	"VulnerabilityMode": ubx.FieldSpec{WireName: "vulnerability_mode"},
+}
 
 var V1betaFleet_DefaultClusterConfigFields = ubx.FieldMap{
-		"BinaryAuthorizationConfig": ubx.FieldSpec{
-			WireName: "binary_authorization_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields,
-		},
-		"CompliancePostureConfig": ubx.FieldSpec{
-			WireName: "compliance_posture_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields,
-		},
-		"SecurityPostureConfig": ubx.FieldSpec{
-			WireName: "security_posture_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields,
-		},
-	}
+	"BinaryAuthorizationConfig": ubx.FieldSpec{
+		WireName: "binary_authorization_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields,
+	},
+	"CompliancePostureConfig": ubx.FieldSpec{
+		WireName: "compliance_posture_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields,
+	},
+	"SecurityPostureConfig": ubx.FieldSpec{
+		WireName: "security_posture_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields,
+	},
+}
 
 var V1betaFleet_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaFleetConfig struct {
-	// Output only. When the Fleet was created.
-	CreateTime any
 	// DefaultClusterConfig describes the default cluster configurations to be applied to all clusters born-in-fleet.
 	DefaultClusterConfig any
-	// Output only. When the Fleet was deleted.
-	DeleteTime any
 	// Optional. A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point. Example: `Production Fleet`
 	DisplayName any
 	// Optional. Labels for this Fleet.
 	Labels any
-	// Output only. The full, unique resource name of this fleet in the format of `projects/{project}/locations/{location}/fleets/{fleet}`. Each Google Cloud project can have at most one fleet resource, named "default".
-	Name any
 	// FleetLifecycleState describes the state of a Fleet resource.
 	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all Fleet resources. If a Fleet resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. When the Fleet was last updated.
-	UpdateTime any
 }
 
 type V1betaFleetAttrs struct {
@@ -144,22 +134,17 @@ type V1betaFleetAttrs struct {
 var V1betaFleet = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_fleet",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DefaultClusterConfig": ubx.FieldSpec{
 			WireName: "default_cluster_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfigFields,
+			Kind:     "object",
+			Fields:   V1betaFleet_DefaultClusterConfigFields,
 		},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFleet_StateFields,
+			Kind:     "object",
+			Fields:   V1betaFleet_StateFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

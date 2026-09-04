@@ -599,10 +599,6 @@ class EnvironmentConfig:
     labels: Any = None
     # Identifier. The resource name of the environment, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" EnvironmentId must start with a lowercase letter followed by up to 63 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
     name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # The current state of the environment.
     state: Any = None
     # The configuration for data storage in the environment.
@@ -646,8 +642,6 @@ Environment = ubx.ResourceBinding(
         "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "state": ubx.FieldSpec(wire_name="state"),
         "storage_config": ubx.FieldSpec(
             wire_name="storage_config",

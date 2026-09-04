@@ -26,20 +26,12 @@ const AssistantSession_MessagesFields: FieldMap = {
 };
 
 export interface AssistantSessionConfig {
-  /** Output only. The time the session was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The display name of the session. */
   displayName?: string | Computed<string>;
   /** Optional. History of messages in the session. */
   messages?: AssistantSession_Messages[] | Computed<AssistantSession_Messages[]>;
   /** Identifier. Resource name of the session. Format: projects/{project}/locations/{location}/assistantSessions/{assistant_session} */
   name?: string | Computed<string>;
-  /** Output only. The user who initiated the session. */
-  requester?: string | Computed<string>;
-  /** Output only. The status of the session. */
-  state?: string | Computed<string>;
-  /** Output only. The time the session was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AssistantSessionAttrs {
@@ -62,7 +54,6 @@ export interface AssistantSessionAttrs {
 export const AssistantSession: ResourceBinding<AssistantSessionConfig, AssistantSessionAttrs> = {
   wireType: "google_contactcenterinsights_assistant_session",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     messages: {
       wireName: "messages",
@@ -70,8 +61,5 @@ export const AssistantSession: ResourceBinding<AssistantSessionConfig, Assistant
       fields: AssistantSession_MessagesFields,
     },
     name: "name",
-    requester: "requester",
-    state: "state",
-    updateTime: "update_time",
   },
 };

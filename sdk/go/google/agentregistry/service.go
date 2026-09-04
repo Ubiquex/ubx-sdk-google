@@ -12,24 +12,22 @@ type Service_AgentSpec struct {
 
 type Service_Interfaces struct {
 	ProtocolBinding any
-	Url any
+	Url             any
 }
 
 var Service_AgentSpecFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_InterfacesFields = ubx.FieldMap{
-		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 type ServiceConfig struct {
 	// The spec of the agent.
 	AgentSpec any
-	// Output only. Create time.
-	CreateTime any
 	// Optional. User-defined description of an Service. Can have a maximum length of `2048` characters.
 	Description any
 	// Optional. User-defined display name for the Service. Can have a maximum length of `63` characters.
@@ -42,10 +40,6 @@ type ServiceConfig struct {
 	McpServerSpec any
 	// Identifier. The resource name of the Service. Format: `projects/{project}/locations/{location}/services/{service}`.
 	Name any
-	// Output only. The resource name of the resulting Agent, MCP Server, or Endpoint. Format: * `projects/{project}/locations/{location}/mcpServers/{mcp_server}` * `projects/{project}/locations/{location}/agents/{agent}` * `projects/{project}/locations/{location}/endpoints/{endpoint}`
-	RegistryResource any
-	// Output only. Update time.
-	UpdateTime any
 }
 
 type ServiceAttrs struct {
@@ -76,29 +70,26 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentSpec": ubx.FieldSpec{
 			WireName: "agent_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EndpointSpec": ubx.FieldSpec{
 			WireName: "endpoint_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
 		"Interfaces": ubx.FieldSpec{
 			WireName: "interfaces",
-			Kind: "list",
-			Fields: Service_InterfacesFields,
+			Kind:     "list",
+			Fields:   Service_InterfacesFields,
 		},
 		"McpServerSpec": ubx.FieldSpec{
 			WireName: "mcp_server_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"RegistryResource": ubx.FieldSpec{WireName: "registry_resource"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -108,8 +108,6 @@ export interface PostureTemplate_PolicySets {
 }
 
 export interface PostureTemplateConfig {
-  name: string | Computed<string>;
-  revisionId?: string | Computed<string>;
 }
 
 export interface PostureTemplateAttrs {
@@ -128,7 +126,5 @@ export interface PostureTemplateAttrs {
 export const PostureTemplate: DataSourceBinding<PostureTemplateConfig, PostureTemplateAttrs> = {
   wireType: "google_securityposture_posture_template",
   fields: {
-    name: "name",
-    revisionId: "revision_id",
   },
 };

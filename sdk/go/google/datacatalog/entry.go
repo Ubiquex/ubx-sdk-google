@@ -35,7 +35,7 @@ type Entry_BigqueryTableSpec struct {
 
 type Entry_BusinessContext_Contacts_People struct {
 	Designation any
-	Email any
+	Email       any
 }
 
 type Entry_BusinessContext_Contacts struct {
@@ -142,10 +142,10 @@ type Entry_DatabaseTableSpec_DataplexTable_DataplexSpec struct {
 }
 
 type Entry_DatabaseTableSpec_DataplexTable_ExternalTables struct {
-	DataCatalogEntry any
-	FullyQualifiedName any
+	DataCatalogEntry    any
+	FullyQualifiedName  any
 	GoogleCloudResource any
-	System any
+	System              any
 }
 
 type Entry_DatabaseTableSpec_DataplexTable struct {
@@ -200,9 +200,9 @@ type Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps struct {
 }
 
 type Entry_GcsFilesetSpec_SampleGcsFileSpecs struct {
-	FilePath any
+	FilePath      any
 	GcsTimestamps any
-	SizeBytes any
+	SizeBytes     any
 }
 
 type Entry_GcsFilesetSpec struct {
@@ -214,7 +214,7 @@ type Entry_GcsFilesetSpec struct {
 
 type Entry_GraphSpec_EdgeTables_DestinationNodeReference struct {
 	EdgeTableColumns any
-	NodeAlias any
+	NodeAlias        any
 	NodeTableColumns any
 }
 
@@ -224,21 +224,21 @@ type Entry_GraphSpec_EdgeTables_LabelAndProperties_Properties struct {
 }
 
 type Entry_GraphSpec_EdgeTables_LabelAndProperties struct {
-	Label any
+	Label      any
 	Properties any
 }
 
 type Entry_GraphSpec_EdgeTables struct {
-	Alias any
-	DataSource any
+	Alias                    any
+	DataSource               any
 	DestinationNodeReference any
-	DynamicLabelColumn any
-	DynamicPropertiesColumn any
-	ElementKeys any
-	InputSource any
-	Kind any
-	LabelAndProperties any
-	SourceNodeReference any
+	DynamicLabelColumn       any
+	DynamicPropertiesColumn  any
+	ElementKeys              any
+	InputSource              any
+	Kind                     any
+	LabelAndProperties       any
+	SourceNodeReference      any
 }
 
 type Entry_GraphSpec struct {
@@ -328,17 +328,17 @@ type Entry_Schema_Columns_LookerColumnSpec struct {
 }
 
 type Entry_Schema_Columns struct {
-	Column any
-	DefaultValue any
-	Description any
-	GcRule any
+	Column              any
+	DefaultValue        any
+	Description         any
+	GcRule              any
 	HighestIndexingType any
-	LookerColumnSpec any
-	Mode any
-	OrdinalPosition any
-	RangeElementType any
-	Subcolumns any
-	Type any
+	LookerColumnSpec    any
+	Mode                any
+	OrdinalPosition     any
+	RangeElementType    any
+	Subcolumns          any
+	Type                any
 }
 
 type Entry_Schema struct {
@@ -347,10 +347,10 @@ type Entry_Schema struct {
 }
 
 type Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecs struct {
-	DisplayName any
+	DisplayName    any
 	LinkedResource any
-	Location any
-	Type any
+	Location       any
+	Type           any
 }
 
 type Entry_ServiceSpec_CloudBigtableInstanceSpec struct {
@@ -364,14 +364,14 @@ type Entry_ServiceSpec struct {
 }
 
 type Entry_SpannerTableSpec_ForeignKeys_ColumnMappings struct {
-	Column any
+	Column          any
 	ReferenceColumn any
 }
 
 type Entry_SpannerTableSpec_ForeignKeys struct {
 	ColumnMappings any
-	Entry any
-	Name any
+	Entry          any
+	Name           any
 }
 
 type Entry_SpannerTableSpec_PrimaryKey struct {
@@ -400,10 +400,10 @@ type Entry_UsageSignal_CommonUsageWithinTimeRange struct {
 }
 
 type Entry_UsageSignal_UsageWithinTimeRange struct {
-	TotalCancellations any
-	TotalCompletions any
+	TotalCancellations                     any
+	TotalCompletions                       any
 	TotalExecutionTimeForCompletionsMillis any
-	TotalFailures any
+	TotalFailures                          any
 }
 
 type Entry_UsageSignal struct {
@@ -418,488 +418,488 @@ type Entry_UsageSignal struct {
 }
 
 var Entry_BigqueryDateShardedSpecFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"LatestShardResource": ubx.FieldSpec{WireName: "latest_shard_resource"},
-		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-	}
+	"Dataset":             ubx.FieldSpec{WireName: "dataset"},
+	"LatestShardResource": ubx.FieldSpec{WireName: "latest_shard_resource"},
+	"ShardCount":          ubx.FieldSpec{WireName: "shard_count"},
+	"TablePrefix":         ubx.FieldSpec{WireName: "table_prefix"},
+}
 
 var Entry_BigqueryTableSpec_TableSpecFields = ubx.FieldMap{
-		"GroupedEntry": ubx.FieldSpec{WireName: "grouped_entry"},
-	}
+	"GroupedEntry": ubx.FieldSpec{WireName: "grouped_entry"},
+}
 
 var Entry_BigqueryTableSpec_ViewSpecFields = ubx.FieldMap{
-		"ViewQuery": ubx.FieldSpec{WireName: "view_query"},
-	}
+	"ViewQuery": ubx.FieldSpec{WireName: "view_query"},
+}
 
 var Entry_BigqueryTableSpecFields = ubx.FieldMap{
-		"TableSourceType": ubx.FieldSpec{WireName: "table_source_type"},
-		"TableSpec": ubx.FieldSpec{
-			WireName: "table_spec",
-			Kind: "object",
-			Fields: Entry_BigqueryTableSpec_TableSpecFields,
-		},
-		"ViewSpec": ubx.FieldSpec{
-			WireName: "view_spec",
-			Kind: "object",
-			Fields: Entry_BigqueryTableSpec_ViewSpecFields,
-		},
-	}
+	"TableSourceType": ubx.FieldSpec{WireName: "table_source_type"},
+	"TableSpec": ubx.FieldSpec{
+		WireName: "table_spec",
+		Kind:     "object",
+		Fields:   Entry_BigqueryTableSpec_TableSpecFields,
+	},
+	"ViewSpec": ubx.FieldSpec{
+		WireName: "view_spec",
+		Kind:     "object",
+		Fields:   Entry_BigqueryTableSpec_ViewSpecFields,
+	},
+}
 
 var Entry_BusinessContext_Contacts_PeopleFields = ubx.FieldMap{
-		"Designation": ubx.FieldSpec{WireName: "designation"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Designation": ubx.FieldSpec{WireName: "designation"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var Entry_BusinessContext_ContactsFields = ubx.FieldMap{
-		"People": ubx.FieldSpec{
-			WireName: "people",
-			Kind: "list",
-			Fields: Entry_BusinessContext_Contacts_PeopleFields,
-		},
-	}
+	"People": ubx.FieldSpec{
+		WireName: "people",
+		Kind:     "list",
+		Fields:   Entry_BusinessContext_Contacts_PeopleFields,
+	},
+}
 
 var Entry_BusinessContext_EntryOverviewFields = ubx.FieldMap{
-		"Overview": ubx.FieldSpec{WireName: "overview"},
-	}
+	"Overview": ubx.FieldSpec{WireName: "overview"},
+}
 
 var Entry_BusinessContextFields = ubx.FieldMap{
-		"Contacts": ubx.FieldSpec{
-			WireName: "contacts",
-			Kind: "object",
-			Fields: Entry_BusinessContext_ContactsFields,
-		},
-		"EntryOverview": ubx.FieldSpec{
-			WireName: "entry_overview",
-			Kind: "object",
-			Fields: Entry_BusinessContext_EntryOverviewFields,
-		},
-	}
+	"Contacts": ubx.FieldSpec{
+		WireName: "contacts",
+		Kind:     "object",
+		Fields:   Entry_BusinessContext_ContactsFields,
+	},
+	"EntryOverview": ubx.FieldSpec{
+		WireName: "entry_overview",
+		Kind:     "object",
+		Fields:   Entry_BusinessContext_EntryOverviewFields,
+	},
+}
 
 var Entry_CloudBigtableSystemSpecFields = ubx.FieldMap{
-		"InstanceDisplayName": ubx.FieldSpec{WireName: "instance_display_name"},
-	}
+	"InstanceDisplayName": ubx.FieldSpec{WireName: "instance_display_name"},
+}
 
 var Entry_DataSource_StoragePropertiesFields = ubx.FieldMap{
-		"FilePattern": ubx.FieldSpec{WireName: "file_pattern"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"FilePattern": ubx.FieldSpec{WireName: "file_pattern"},
+	"FileType":    ubx.FieldSpec{WireName: "file_type"},
+}
 
 var Entry_DataSourceFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SourceEntry": ubx.FieldSpec{WireName: "source_entry"},
-		"StorageProperties": ubx.FieldSpec{
-			WireName: "storage_properties",
-			Kind: "object",
-			Fields: Entry_DataSource_StoragePropertiesFields,
-		},
-	}
+	"Resource":    ubx.FieldSpec{WireName: "resource"},
+	"Service":     ubx.FieldSpec{WireName: "service"},
+	"SourceEntry": ubx.FieldSpec{WireName: "source_entry"},
+	"StorageProperties": ubx.FieldSpec{
+		WireName: "storage_properties",
+		Kind:     "object",
+		Fields:   Entry_DataSource_StoragePropertiesFields,
+	},
+}
 
 var Entry_DataSourceConnectionSpec_BigqueryConnectionSpec_CloudSqlFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Database":   ubx.FieldSpec{WireName: "database"},
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_DataSourceConnectionSpec_BigqueryConnectionSpecFields = ubx.FieldMap{
-		"CloudSql": ubx.FieldSpec{
-			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: Entry_DataSourceConnectionSpec_BigqueryConnectionSpec_CloudSqlFields,
-		},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"HasCredential": ubx.FieldSpec{WireName: "has_credential"},
-	}
+	"CloudSql": ubx.FieldSpec{
+		WireName: "cloud_sql",
+		Kind:     "object",
+		Fields:   Entry_DataSourceConnectionSpec_BigqueryConnectionSpec_CloudSqlFields,
+	},
+	"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
+	"HasCredential":  ubx.FieldSpec{WireName: "has_credential"},
+}
 
 var Entry_DataSourceConnectionSpecFields = ubx.FieldMap{
-		"BigqueryConnectionSpec": ubx.FieldSpec{
-			WireName: "bigquery_connection_spec",
-			Kind: "object",
-			Fields: Entry_DataSourceConnectionSpec_BigqueryConnectionSpecFields,
-		},
-	}
+	"BigqueryConnectionSpec": ubx.FieldSpec{
+		WireName: "bigquery_connection_spec",
+		Kind:     "object",
+		Fields:   Entry_DataSourceConnectionSpec_BigqueryConnectionSpecFields,
+	},
+}
 
 var Entry_DatabaseTableSpec_DatabaseViewSpecFields = ubx.FieldMap{
-		"BaseTable": ubx.FieldSpec{WireName: "base_table"},
-		"SqlQuery": ubx.FieldSpec{WireName: "sql_query"},
-		"ViewType": ubx.FieldSpec{WireName: "view_type"},
-	}
+	"BaseTable": ubx.FieldSpec{WireName: "base_table"},
+	"SqlQuery":  ubx.FieldSpec{WireName: "sql_query"},
+	"ViewType":  ubx.FieldSpec{WireName: "view_type"},
+}
 
 var Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormatFields = ubx.FieldMap{
-		"Avro": ubx.FieldSpec{
-			WireName: "avro",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
-		},
-		"Csv": ubx.FieldSpec{WireName: "csv"},
-		"Orc": ubx.FieldSpec{WireName: "orc"},
-		"Parquet": ubx.FieldSpec{WireName: "parquet"},
-		"Protobuf": ubx.FieldSpec{
-			WireName: "protobuf",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
-		},
-		"Thrift": ubx.FieldSpec{
-			WireName: "thrift",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
-		},
-	}
+	"Avro": ubx.FieldSpec{
+		WireName: "avro",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
+	},
+	"Csv":     ubx.FieldSpec{WireName: "csv"},
+	"Orc":     ubx.FieldSpec{WireName: "orc"},
+	"Parquet": ubx.FieldSpec{WireName: "parquet"},
+	"Protobuf": ubx.FieldSpec{
+		WireName: "protobuf",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
+	},
+	"Thrift": ubx.FieldSpec{
+		WireName: "thrift",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormat_AvroFields,
+	},
+}
 
 var Entry_DatabaseTableSpec_DataplexTable_DataplexSpecFields = ubx.FieldMap{
-		"Asset": ubx.FieldSpec{WireName: "asset"},
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"DataFormat": ubx.FieldSpec{
-			WireName: "data_format",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormatFields,
-		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Asset":             ubx.FieldSpec{WireName: "asset"},
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"DataFormat": ubx.FieldSpec{
+		WireName: "data_format",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpec_DataFormatFields,
+	},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Entry_DatabaseTableSpec_DataplexTable_ExternalTablesFields = ubx.FieldMap{
-		"DataCatalogEntry": ubx.FieldSpec{WireName: "data_catalog_entry"},
-		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"GoogleCloudResource": ubx.FieldSpec{WireName: "google_cloud_resource"},
-		"System": ubx.FieldSpec{WireName: "system"},
-	}
+	"DataCatalogEntry":    ubx.FieldSpec{WireName: "data_catalog_entry"},
+	"FullyQualifiedName":  ubx.FieldSpec{WireName: "fully_qualified_name"},
+	"GoogleCloudResource": ubx.FieldSpec{WireName: "google_cloud_resource"},
+	"System":              ubx.FieldSpec{WireName: "system"},
+}
 
 var Entry_DatabaseTableSpec_DataplexTableFields = ubx.FieldMap{
-		"DataplexSpec": ubx.FieldSpec{
-			WireName: "dataplex_spec",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpecFields,
-		},
-		"ExternalTables": ubx.FieldSpec{
-			WireName: "external_tables",
-			Kind: "list",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_ExternalTablesFields,
-		},
-		"UserManaged": ubx.FieldSpec{WireName: "user_managed"},
-	}
+	"DataplexSpec": ubx.FieldSpec{
+		WireName: "dataplex_spec",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpecFields,
+	},
+	"ExternalTables": ubx.FieldSpec{
+		WireName: "external_tables",
+		Kind:     "list",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_ExternalTablesFields,
+	},
+	"UserManaged": ubx.FieldSpec{WireName: "user_managed"},
+}
 
 var Entry_DatabaseTableSpecFields = ubx.FieldMap{
-		"DatabaseViewSpec": ubx.FieldSpec{
-			WireName: "database_view_spec",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DatabaseViewSpecFields,
-		},
-		"DataplexTable": ubx.FieldSpec{
-			WireName: "dataplex_table",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTableFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DatabaseViewSpec": ubx.FieldSpec{
+		WireName: "database_view_spec",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DatabaseViewSpecFields,
+	},
+	"DataplexTable": ubx.FieldSpec{
+		WireName: "dataplex_table",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTableFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_DatasetSpec_VertexDatasetSpecFields = ubx.FieldMap{
-		"DataItemCount": ubx.FieldSpec{WireName: "data_item_count"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-	}
+	"DataItemCount": ubx.FieldSpec{WireName: "data_item_count"},
+	"DataType":      ubx.FieldSpec{WireName: "data_type"},
+}
 
 var Entry_DatasetSpecFields = ubx.FieldMap{
-		"VertexDatasetSpec": ubx.FieldSpec{
-			WireName: "vertex_dataset_spec",
-			Kind: "object",
-			Fields: Entry_DatasetSpec_VertexDatasetSpecFields,
-		},
-	}
+	"VertexDatasetSpec": ubx.FieldSpec{
+		WireName: "vertex_dataset_spec",
+		Kind:     "object",
+		Fields:   Entry_DatasetSpec_VertexDatasetSpecFields,
+	},
+}
 
 var Entry_FeatureOnlineStoreSpecFields = ubx.FieldMap{
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-	}
+	"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+}
 
 var Entry_FilesetSpec_DataplexFilesetFields = ubx.FieldMap{
-		"DataplexSpec": ubx.FieldSpec{
-			WireName: "dataplex_spec",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpec_DataplexTable_DataplexSpecFields,
-		},
-	}
+	"DataplexSpec": ubx.FieldSpec{
+		WireName: "dataplex_spec",
+		Kind:     "object",
+		Fields:   Entry_DatabaseTableSpec_DataplexTable_DataplexSpecFields,
+	},
+}
 
 var Entry_FilesetSpecFields = ubx.FieldMap{
-		"DataplexFileset": ubx.FieldSpec{
-			WireName: "dataplex_fileset",
-			Kind: "object",
-			Fields: Entry_FilesetSpec_DataplexFilesetFields,
-		},
-	}
+	"DataplexFileset": ubx.FieldSpec{
+		WireName: "dataplex_fileset",
+		Kind:     "object",
+		Fields:   Entry_FilesetSpec_DataplexFilesetFields,
+	},
+}
 
 var Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Entry_GcsFilesetSpec_SampleGcsFileSpecsFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"GcsTimestamps": ubx.FieldSpec{
-			WireName: "gcs_timestamps",
-			Kind: "object",
-			Fields: Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
-		},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-	}
+	"FilePath": ubx.FieldSpec{WireName: "file_path"},
+	"GcsTimestamps": ubx.FieldSpec{
+		WireName: "gcs_timestamps",
+		Kind:     "object",
+		Fields:   Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
+	},
+	"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
+}
 
 var Entry_GcsFilesetSpecFields = ubx.FieldMap{
-		"FilePatterns": ubx.FieldSpec{WireName: "file_patterns"},
-		"SampleGcsFileSpecs": ubx.FieldSpec{
-			WireName: "sample_gcs_file_specs",
-			Kind: "list",
-			Fields: Entry_GcsFilesetSpec_SampleGcsFileSpecsFields,
-		},
-	}
+	"FilePatterns": ubx.FieldSpec{WireName: "file_patterns"},
+	"SampleGcsFileSpecs": ubx.FieldSpec{
+		WireName: "sample_gcs_file_specs",
+		Kind:     "list",
+		Fields:   Entry_GcsFilesetSpec_SampleGcsFileSpecsFields,
+	},
+}
 
 var Entry_GraphSpec_EdgeTables_DestinationNodeReferenceFields = ubx.FieldMap{
-		"EdgeTableColumns": ubx.FieldSpec{WireName: "edge_table_columns"},
-		"NodeAlias": ubx.FieldSpec{WireName: "node_alias"},
-		"NodeTableColumns": ubx.FieldSpec{WireName: "node_table_columns"},
-	}
+	"EdgeTableColumns": ubx.FieldSpec{WireName: "edge_table_columns"},
+	"NodeAlias":        ubx.FieldSpec{WireName: "node_alias"},
+	"NodeTableColumns": ubx.FieldSpec{WireName: "node_table_columns"},
+}
 
 var Entry_GraphSpec_EdgeTables_LabelAndProperties_PropertiesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_GraphSpec_EdgeTables_LabelAndPropertiesFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "list",
-			Fields: Entry_GraphSpec_EdgeTables_LabelAndProperties_PropertiesFields,
-		},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "list",
+		Fields:   Entry_GraphSpec_EdgeTables_LabelAndProperties_PropertiesFields,
+	},
+}
 
 var Entry_GraphSpec_EdgeTablesFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"DestinationNodeReference": ubx.FieldSpec{
-			WireName: "destination_node_reference",
-			Kind: "object",
-			Fields: Entry_GraphSpec_EdgeTables_DestinationNodeReferenceFields,
-		},
-		"DynamicLabelColumn": ubx.FieldSpec{WireName: "dynamic_label_column"},
-		"DynamicPropertiesColumn": ubx.FieldSpec{WireName: "dynamic_properties_column"},
-		"ElementKeys": ubx.FieldSpec{WireName: "element_keys"},
-		"InputSource": ubx.FieldSpec{WireName: "input_source"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LabelAndProperties": ubx.FieldSpec{
-			WireName: "label_and_properties",
-			Kind: "list",
-			Fields: Entry_GraphSpec_EdgeTables_LabelAndPropertiesFields,
-		},
-		"SourceNodeReference": ubx.FieldSpec{
-			WireName: "source_node_reference",
-			Kind: "object",
-			Fields: Entry_GraphSpec_EdgeTables_DestinationNodeReferenceFields,
-		},
-	}
+	"Alias":      ubx.FieldSpec{WireName: "alias"},
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+	"DestinationNodeReference": ubx.FieldSpec{
+		WireName: "destination_node_reference",
+		Kind:     "object",
+		Fields:   Entry_GraphSpec_EdgeTables_DestinationNodeReferenceFields,
+	},
+	"DynamicLabelColumn":      ubx.FieldSpec{WireName: "dynamic_label_column"},
+	"DynamicPropertiesColumn": ubx.FieldSpec{WireName: "dynamic_properties_column"},
+	"ElementKeys":             ubx.FieldSpec{WireName: "element_keys"},
+	"InputSource":             ubx.FieldSpec{WireName: "input_source"},
+	"Kind":                    ubx.FieldSpec{WireName: "kind"},
+	"LabelAndProperties": ubx.FieldSpec{
+		WireName: "label_and_properties",
+		Kind:     "list",
+		Fields:   Entry_GraphSpec_EdgeTables_LabelAndPropertiesFields,
+	},
+	"SourceNodeReference": ubx.FieldSpec{
+		WireName: "source_node_reference",
+		Kind:     "object",
+		Fields:   Entry_GraphSpec_EdgeTables_DestinationNodeReferenceFields,
+	},
+}
 
 var Entry_GraphSpecFields = ubx.FieldMap{
-		"EdgeTables": ubx.FieldSpec{
-			WireName: "edge_tables",
-			Kind: "list",
-			Fields: Entry_GraphSpec_EdgeTablesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeTables": ubx.FieldSpec{
-			WireName: "node_tables",
-			Kind: "list",
-			Fields: Entry_GraphSpec_EdgeTablesFields,
-		},
-	}
+	"EdgeTables": ubx.FieldSpec{
+		WireName: "edge_tables",
+		Kind:     "list",
+		Fields:   Entry_GraphSpec_EdgeTablesFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"NodeTables": ubx.FieldSpec{
+		WireName: "node_tables",
+		Kind:     "list",
+		Fields:   Entry_GraphSpec_EdgeTablesFields,
+	},
+}
 
 var Entry_LookerSystemSpecFields = ubx.FieldMap{
-		"ParentInstanceDisplayName": ubx.FieldSpec{WireName: "parent_instance_display_name"},
-		"ParentInstanceId": ubx.FieldSpec{WireName: "parent_instance_id"},
-		"ParentModelDisplayName": ubx.FieldSpec{WireName: "parent_model_display_name"},
-		"ParentModelId": ubx.FieldSpec{WireName: "parent_model_id"},
-		"ParentViewDisplayName": ubx.FieldSpec{WireName: "parent_view_display_name"},
-		"ParentViewId": ubx.FieldSpec{WireName: "parent_view_id"},
-	}
+	"ParentInstanceDisplayName": ubx.FieldSpec{WireName: "parent_instance_display_name"},
+	"ParentInstanceId":          ubx.FieldSpec{WireName: "parent_instance_id"},
+	"ParentModelDisplayName":    ubx.FieldSpec{WireName: "parent_model_display_name"},
+	"ParentModelId":             ubx.FieldSpec{WireName: "parent_model_id"},
+	"ParentViewDisplayName":     ubx.FieldSpec{WireName: "parent_view_display_name"},
+	"ParentViewId":              ubx.FieldSpec{WireName: "parent_view_id"},
+}
 
 var Entry_ModelSpec_VertexModelSpec_VertexModelSourceInfoFields = ubx.FieldMap{
-		"Copy": ubx.FieldSpec{WireName: "copy"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"Copy":       ubx.FieldSpec{WireName: "copy"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var Entry_ModelSpec_VertexModelSpecFields = ubx.FieldMap{
-		"ContainerImageUri": ubx.FieldSpec{WireName: "container_image_uri"},
-		"VersionAliases": ubx.FieldSpec{WireName: "version_aliases"},
-		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-		"VertexModelSourceInfo": ubx.FieldSpec{
-			WireName: "vertex_model_source_info",
-			Kind: "object",
-			Fields: Entry_ModelSpec_VertexModelSpec_VertexModelSourceInfoFields,
-		},
-	}
+	"ContainerImageUri":  ubx.FieldSpec{WireName: "container_image_uri"},
+	"VersionAliases":     ubx.FieldSpec{WireName: "version_aliases"},
+	"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
+	"VersionId":          ubx.FieldSpec{WireName: "version_id"},
+	"VertexModelSourceInfo": ubx.FieldSpec{
+		WireName: "vertex_model_source_info",
+		Kind:     "object",
+		Fields:   Entry_ModelSpec_VertexModelSpec_VertexModelSourceInfoFields,
+	},
+}
 
 var Entry_ModelSpecFields = ubx.FieldMap{
-		"VertexModelSpec": ubx.FieldSpec{
-			WireName: "vertex_model_spec",
-			Kind: "object",
-			Fields: Entry_ModelSpec_VertexModelSpecFields,
-		},
-	}
+	"VertexModelSpec": ubx.FieldSpec{
+		WireName: "vertex_model_spec",
+		Kind:     "object",
+		Fields:   Entry_ModelSpec_VertexModelSpecFields,
+	},
+}
 
 var Entry_PersonalDetailsFields = ubx.FieldMap{
-		"StarTime": ubx.FieldSpec{WireName: "star_time"},
-		"Starred": ubx.FieldSpec{WireName: "starred"},
-	}
+	"StarTime": ubx.FieldSpec{WireName: "star_time"},
+	"Starred":  ubx.FieldSpec{WireName: "starred"},
+}
 
 var Entry_RoutineSpec_BigqueryRoutineSpecFields = ubx.FieldMap{
-		"ImportedLibraries": ubx.FieldSpec{WireName: "imported_libraries"},
-	}
+	"ImportedLibraries": ubx.FieldSpec{WireName: "imported_libraries"},
+}
 
 var Entry_RoutineSpec_RoutineArgumentsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_RoutineSpecFields = ubx.FieldMap{
-		"BigqueryRoutineSpec": ubx.FieldSpec{
-			WireName: "bigquery_routine_spec",
-			Kind: "object",
-			Fields: Entry_RoutineSpec_BigqueryRoutineSpecFields,
-		},
-		"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"ReturnType": ubx.FieldSpec{WireName: "return_type"},
-		"RoutineArguments": ubx.FieldSpec{
-			WireName: "routine_arguments",
-			Kind: "list",
-			Fields: Entry_RoutineSpec_RoutineArgumentsFields,
-		},
-		"RoutineType": ubx.FieldSpec{WireName: "routine_type"},
-	}
+	"BigqueryRoutineSpec": ubx.FieldSpec{
+		WireName: "bigquery_routine_spec",
+		Kind:     "object",
+		Fields:   Entry_RoutineSpec_BigqueryRoutineSpecFields,
+	},
+	"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
+	"Language":       ubx.FieldSpec{WireName: "language"},
+	"ReturnType":     ubx.FieldSpec{WireName: "return_type"},
+	"RoutineArguments": ubx.FieldSpec{
+		WireName: "routine_arguments",
+		Kind:     "list",
+		Fields:   Entry_RoutineSpec_RoutineArgumentsFields,
+	},
+	"RoutineType": ubx.FieldSpec{WireName: "routine_type"},
+}
 
 var Entry_Schema_Columns_LookerColumnSpecFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_Schema_ColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GcRule": ubx.FieldSpec{WireName: "gc_rule"},
-		"HighestIndexingType": ubx.FieldSpec{WireName: "highest_indexing_type"},
-		"LookerColumnSpec": ubx.FieldSpec{
-			WireName: "looker_column_spec",
-			Kind: "object",
-			Fields: Entry_Schema_Columns_LookerColumnSpecFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"RangeElementType": ubx.FieldSpec{
-			WireName: "range_element_type",
-			Kind: "object",
-			Fields: Entry_Schema_Columns_LookerColumnSpecFields,
-		},
-		"Subcolumns": ubx.FieldSpec{WireName: "subcolumns"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Column":              ubx.FieldSpec{WireName: "column"},
+	"DefaultValue":        ubx.FieldSpec{WireName: "default_value"},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"GcRule":              ubx.FieldSpec{WireName: "gc_rule"},
+	"HighestIndexingType": ubx.FieldSpec{WireName: "highest_indexing_type"},
+	"LookerColumnSpec": ubx.FieldSpec{
+		WireName: "looker_column_spec",
+		Kind:     "object",
+		Fields:   Entry_Schema_Columns_LookerColumnSpecFields,
+	},
+	"Mode":            ubx.FieldSpec{WireName: "mode"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"RangeElementType": ubx.FieldSpec{
+		WireName: "range_element_type",
+		Kind:     "object",
+		Fields:   Entry_Schema_Columns_LookerColumnSpecFields,
+	},
+	"Subcolumns": ubx.FieldSpec{WireName: "subcolumns"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_SchemaFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Entry_Schema_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Entry_Schema_ColumnsFields,
+	},
+}
 
 var Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LinkedResource": ubx.FieldSpec{WireName: "linked_resource"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"LinkedResource": ubx.FieldSpec{WireName: "linked_resource"},
+	"Location":       ubx.FieldSpec{WireName: "location"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_ServiceSpec_CloudBigtableInstanceSpecFields = ubx.FieldMap{
-		"CloudBigtableClusterSpecs": ubx.FieldSpec{
-			WireName: "cloud_bigtable_cluster_specs",
-			Kind: "list",
-			Fields: Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecsFields,
-		},
-	}
+	"CloudBigtableClusterSpecs": ubx.FieldSpec{
+		WireName: "cloud_bigtable_cluster_specs",
+		Kind:     "list",
+		Fields:   Entry_ServiceSpec_CloudBigtableInstanceSpec_CloudBigtableClusterSpecsFields,
+	},
+}
 
 var Entry_ServiceSpecFields = ubx.FieldMap{
-		"CloudBigtableInstanceSpec": ubx.FieldSpec{
-			WireName: "cloud_bigtable_instance_spec",
-			Kind: "object",
-			Fields: Entry_ServiceSpec_CloudBigtableInstanceSpecFields,
-		},
-	}
+	"CloudBigtableInstanceSpec": ubx.FieldSpec{
+		WireName: "cloud_bigtable_instance_spec",
+		Kind:     "object",
+		Fields:   Entry_ServiceSpec_CloudBigtableInstanceSpecFields,
+	},
+}
 
 var Entry_SpannerTableSpec_ForeignKeys_ColumnMappingsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"ReferenceColumn": ubx.FieldSpec{WireName: "reference_column"},
-	}
+	"Column":          ubx.FieldSpec{WireName: "column"},
+	"ReferenceColumn": ubx.FieldSpec{WireName: "reference_column"},
+}
 
 var Entry_SpannerTableSpec_ForeignKeysFields = ubx.FieldMap{
-		"ColumnMappings": ubx.FieldSpec{
-			WireName: "column_mappings",
-			Kind: "list",
-			Fields: Entry_SpannerTableSpec_ForeignKeys_ColumnMappingsFields,
-		},
-		"Entry": ubx.FieldSpec{WireName: "entry"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ColumnMappings": ubx.FieldSpec{
+		WireName: "column_mappings",
+		Kind:     "list",
+		Fields:   Entry_SpannerTableSpec_ForeignKeys_ColumnMappingsFields,
+	},
+	"Entry": ubx.FieldSpec{WireName: "entry"},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+}
 
 var Entry_SpannerTableSpec_PrimaryKeyFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-	}
+	"Columns": ubx.FieldSpec{WireName: "columns"},
+}
 
 var Entry_SpannerTableSpecFields = ubx.FieldMap{
-		"ForeignKeys": ubx.FieldSpec{
-			WireName: "foreign_keys",
-			Kind: "list",
-			Fields: Entry_SpannerTableSpec_ForeignKeysFields,
-		},
-		"PrimaryKey": ubx.FieldSpec{
-			WireName: "primary_key",
-			Kind: "object",
-			Fields: Entry_SpannerTableSpec_PrimaryKeyFields,
-		},
-	}
+	"ForeignKeys": ubx.FieldSpec{
+		WireName: "foreign_keys",
+		Kind:     "list",
+		Fields:   Entry_SpannerTableSpec_ForeignKeysFields,
+	},
+	"PrimaryKey": ubx.FieldSpec{
+		WireName: "primary_key",
+		Kind:     "object",
+		Fields:   Entry_SpannerTableSpec_PrimaryKeyFields,
+	},
+}
 
 var Entry_SqlDatabaseSystemSpecFields = ubx.FieldMap{
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
-		"InstanceHost": ubx.FieldSpec{WireName: "instance_host"},
-		"SqlEngine": ubx.FieldSpec{WireName: "sql_engine"},
-	}
+	"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
+	"InstanceHost":    ubx.FieldSpec{WireName: "instance_host"},
+	"SqlEngine":       ubx.FieldSpec{WireName: "sql_engine"},
+}
 
 var Entry_UsageSignal_CommonUsageWithinTimeRangeFields = ubx.FieldMap{
-		"ViewCount": ubx.FieldSpec{WireName: "view_count"},
-	}
+	"ViewCount": ubx.FieldSpec{WireName: "view_count"},
+}
 
 var Entry_UsageSignal_UsageWithinTimeRangeFields = ubx.FieldMap{
-		"TotalCancellations": ubx.FieldSpec{WireName: "total_cancellations"},
-		"TotalCompletions": ubx.FieldSpec{WireName: "total_completions"},
-		"TotalExecutionTimeForCompletionsMillis": ubx.FieldSpec{WireName: "total_execution_time_for_completions_millis"},
-		"TotalFailures": ubx.FieldSpec{WireName: "total_failures"},
-	}
+	"TotalCancellations":                     ubx.FieldSpec{WireName: "total_cancellations"},
+	"TotalCompletions":                       ubx.FieldSpec{WireName: "total_completions"},
+	"TotalExecutionTimeForCompletionsMillis": ubx.FieldSpec{WireName: "total_execution_time_for_completions_millis"},
+	"TotalFailures":                          ubx.FieldSpec{WireName: "total_failures"},
+}
 
 var Entry_UsageSignalFields = ubx.FieldMap{
-		"CommonUsageWithinTimeRange": ubx.FieldSpec{
-			WireName: "common_usage_within_time_range",
-			Kind: "map",
-			Fields: Entry_UsageSignal_CommonUsageWithinTimeRangeFields,
-		},
-		"FavoriteCount": ubx.FieldSpec{WireName: "favorite_count"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UsageWithinTimeRange": ubx.FieldSpec{
-			WireName: "usage_within_time_range",
-			Kind: "map",
-			Fields: Entry_UsageSignal_UsageWithinTimeRangeFields,
-		},
-	}
+	"CommonUsageWithinTimeRange": ubx.FieldSpec{
+		WireName: "common_usage_within_time_range",
+		Kind:     "map",
+		Fields:   Entry_UsageSignal_CommonUsageWithinTimeRangeFields,
+	},
+	"FavoriteCount": ubx.FieldSpec{WireName: "favorite_count"},
+	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
+	"UsageWithinTimeRange": ubx.FieldSpec{
+		WireName: "usage_within_time_range",
+		Kind:     "map",
+		Fields:   Entry_UsageSignal_UsageWithinTimeRangeFields,
+	},
+}
 
 type EntryConfig struct {
 	// Specification for a group of BigQuery tables with the `[prefix]YYYYMMDD` name pattern. For more information, see [Introduction to partitioned tables] (https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding).
@@ -932,8 +932,6 @@ type EntryConfig struct {
 	GcsFilesetSpec any
 	// Specification that applies to a graph.
 	GraphSpec any
-	// Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
-	IntegratedSystem any
 	// Cloud labels attached to the entry. In Data Catalog, you can create and modify labels attached only to custom entries. Synced entries have unmodifiable labels that come from the source system.
 	Labels any
 	// The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8.
@@ -942,8 +940,6 @@ type EntryConfig struct {
 	LookerSystemSpec any
 	// Specification that applies to a model. Valid only for entries with the `MODEL` type.
 	ModelSpec any
-	// Output only. Identifier. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.
-	Name any
 	// Entry metadata relevant only to the user and private to them.
 	PersonalDetails any
 	// Specification that applies to a routine. Valid only for entries with the `ROUTINE` type.
@@ -1040,123 +1036,121 @@ var Entry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryDateShardedSpec": ubx.FieldSpec{
 			WireName: "bigquery_date_sharded_spec",
-			Kind: "object",
-			Fields: Entry_BigqueryDateShardedSpecFields,
+			Kind:     "object",
+			Fields:   Entry_BigqueryDateShardedSpecFields,
 		},
 		"BigqueryTableSpec": ubx.FieldSpec{
 			WireName: "bigquery_table_spec",
-			Kind: "object",
-			Fields: Entry_BigqueryTableSpecFields,
+			Kind:     "object",
+			Fields:   Entry_BigqueryTableSpecFields,
 		},
 		"BusinessContext": ubx.FieldSpec{
 			WireName: "business_context",
-			Kind: "object",
-			Fields: Entry_BusinessContextFields,
+			Kind:     "object",
+			Fields:   Entry_BusinessContextFields,
 		},
 		"CloudBigtableSystemSpec": ubx.FieldSpec{
 			WireName: "cloud_bigtable_system_spec",
-			Kind: "object",
-			Fields: Entry_CloudBigtableSystemSpecFields,
+			Kind:     "object",
+			Fields:   Entry_CloudBigtableSystemSpecFields,
 		},
 		"DataSource": ubx.FieldSpec{
 			WireName: "data_source",
-			Kind: "object",
-			Fields: Entry_DataSourceFields,
+			Kind:     "object",
+			Fields:   Entry_DataSourceFields,
 		},
 		"DataSourceConnectionSpec": ubx.FieldSpec{
 			WireName: "data_source_connection_spec",
-			Kind: "object",
-			Fields: Entry_DataSourceConnectionSpecFields,
+			Kind:     "object",
+			Fields:   Entry_DataSourceConnectionSpecFields,
 		},
 		"DatabaseTableSpec": ubx.FieldSpec{
 			WireName: "database_table_spec",
-			Kind: "object",
-			Fields: Entry_DatabaseTableSpecFields,
+			Kind:     "object",
+			Fields:   Entry_DatabaseTableSpecFields,
 		},
 		"DatasetSpec": ubx.FieldSpec{
 			WireName: "dataset_spec",
-			Kind: "object",
-			Fields: Entry_DatasetSpecFields,
+			Kind:     "object",
+			Fields:   Entry_DatasetSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"FeatureOnlineStoreSpec": ubx.FieldSpec{
 			WireName: "feature_online_store_spec",
-			Kind: "object",
-			Fields: Entry_FeatureOnlineStoreSpecFields,
+			Kind:     "object",
+			Fields:   Entry_FeatureOnlineStoreSpecFields,
 		},
 		"FilesetSpec": ubx.FieldSpec{
 			WireName: "fileset_spec",
-			Kind: "object",
-			Fields: Entry_FilesetSpecFields,
+			Kind:     "object",
+			Fields:   Entry_FilesetSpecFields,
 		},
 		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
 		"GcsFilesetSpec": ubx.FieldSpec{
 			WireName: "gcs_fileset_spec",
-			Kind: "object",
-			Fields: Entry_GcsFilesetSpecFields,
+			Kind:     "object",
+			Fields:   Entry_GcsFilesetSpecFields,
 		},
 		"GraphSpec": ubx.FieldSpec{
 			WireName: "graph_spec",
-			Kind: "object",
-			Fields: Entry_GraphSpecFields,
+			Kind:     "object",
+			Fields:   Entry_GraphSpecFields,
 		},
-		"IntegratedSystem": ubx.FieldSpec{WireName: "integrated_system"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 		"LinkedResource": ubx.FieldSpec{WireName: "linked_resource"},
 		"LookerSystemSpec": ubx.FieldSpec{
 			WireName: "looker_system_spec",
-			Kind: "object",
-			Fields: Entry_LookerSystemSpecFields,
+			Kind:     "object",
+			Fields:   Entry_LookerSystemSpecFields,
 		},
 		"ModelSpec": ubx.FieldSpec{
 			WireName: "model_spec",
-			Kind: "object",
-			Fields: Entry_ModelSpecFields,
+			Kind:     "object",
+			Fields:   Entry_ModelSpecFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PersonalDetails": ubx.FieldSpec{
 			WireName: "personal_details",
-			Kind: "object",
-			Fields: Entry_PersonalDetailsFields,
+			Kind:     "object",
+			Fields:   Entry_PersonalDetailsFields,
 		},
 		"RoutineSpec": ubx.FieldSpec{
 			WireName: "routine_spec",
-			Kind: "object",
-			Fields: Entry_RoutineSpecFields,
+			Kind:     "object",
+			Fields:   Entry_RoutineSpecFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Entry_SchemaFields,
+			Kind:     "object",
+			Fields:   Entry_SchemaFields,
 		},
 		"ServiceSpec": ubx.FieldSpec{
 			WireName: "service_spec",
-			Kind: "object",
-			Fields: Entry_ServiceSpecFields,
+			Kind:     "object",
+			Fields:   Entry_ServiceSpecFields,
 		},
 		"SourceSystemTimestamps": ubx.FieldSpec{
 			WireName: "source_system_timestamps",
-			Kind: "object",
-			Fields: Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
+			Kind:     "object",
+			Fields:   Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
 		},
 		"SpannerTableSpec": ubx.FieldSpec{
 			WireName: "spanner_table_spec",
-			Kind: "object",
-			Fields: Entry_SpannerTableSpecFields,
+			Kind:     "object",
+			Fields:   Entry_SpannerTableSpecFields,
 		},
 		"SqlDatabaseSystemSpec": ubx.FieldSpec{
 			WireName: "sql_database_system_spec",
-			Kind: "object",
-			Fields: Entry_SqlDatabaseSystemSpecFields,
+			Kind:     "object",
+			Fields:   Entry_SqlDatabaseSystemSpecFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"UsageSignal": ubx.FieldSpec{
 			WireName: "usage_signal",
-			Kind: "object",
-			Fields: Entry_UsageSignalFields,
+			Kind:     "object",
+			Fields:   Entry_UsageSignalFields,
 		},
 		"UserSpecifiedSystem": ubx.FieldSpec{WireName: "user_specified_system"},
-		"UserSpecifiedType": ubx.FieldSpec{WireName: "user_specified_type"},
+		"UserSpecifiedType":   ubx.FieldSpec{WireName: "user_specified_type"},
 	},
 }

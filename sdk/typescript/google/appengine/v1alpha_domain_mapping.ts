@@ -14,12 +14,6 @@ export interface V1alphaDomainMapping_SslSettings {
   isManagedCertificate?: boolean | Computed<boolean>;
 }
 
-const V1alphaDomainMapping_ResourceRecordsFields: FieldMap = {
-  name: "name",
-  rrdata: "rrdata",
-  type: "type",
-};
-
 const V1alphaDomainMapping_SslSettingsFields: FieldMap = {
   certificateId: "certificate_id",
   isManagedCertificate: "is_managed_certificate",
@@ -28,10 +22,6 @@ const V1alphaDomainMapping_SslSettingsFields: FieldMap = {
 export interface V1alphaDomainMappingConfig {
   /** Relative name of the domain serving the application. Example: example.com. */
   id?: string | Computed<string>;
-  /** Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly */
-  name?: string | Computed<string>;
-  /** Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly */
-  resourceRecords?: V1alphaDomainMapping_ResourceRecords[] | Computed<V1alphaDomainMapping_ResourceRecords[]>;
   /** SSL configuration for a DomainMapping resource. */
   sslSettings?: V1alphaDomainMapping_SslSettings | Computed<V1alphaDomainMapping_SslSettings>;
 }
@@ -51,12 +41,6 @@ export const V1alphaDomainMapping: ResourceBinding<V1alphaDomainMappingConfig, V
   wireType: "google_appengine_v1alpha_domain_mapping",
   fields: {
     id: "id",
-    name: "name",
-    resourceRecords: {
-      wireName: "resource_records",
-      kind: "list",
-      fields: V1alphaDomainMapping_ResourceRecordsFields,
-    },
     sslSettings: {
       wireName: "ssl_settings",
       kind: "object",

@@ -5,25 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Agent_Tools struct {
 	Headers any
-	Name any
-	Type any
-	Url any
+	Name    any
+	Type    any
+	Url     any
 }
 
 var V1beta1Agent_ToolsFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Headers": ubx.FieldSpec{WireName: "headers"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 type V1beta1AgentConfig struct {
 	// Required. Immutable. The base agent for the agent. Supported values: * `antigravity-preview-05-2026` Immutable: `UpdateAgent` rejects a change, including clearing it. The kind of agent this is gets derived from this field when the agent is created and is recorded then; nothing recomputes it afterwards, so a later change would leave the agent described as one kind and behaving as another. Create a new agent instead.
 	BaseAgent any
 	// Optional. The base environment configuration for the agent. Valid types: * A string value for the environment ID, or `remote` for the default. * A struct value for the `environment_config`.
 	BaseEnvironment any
-	// Output only. The time the agent was created.
-	Created any
 	// Optional. The description of the agent.
 	Description any
 	// Immutable. The user-specified ID for the agent. This ID becomes the final component of the agent resource name. If not provided, Vertex AI will generate a value for this ID. The ID can be up to 63 characters and must match the regular expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
@@ -32,14 +30,10 @@ type V1beta1AgentConfig struct {
 	Metadata any
 	// Identifier. The resource name of the agent. Format: `projects/{project}/locations/{location}/agents/{agent}`.
 	Name any
-	// Output only. The object type of the resource. For agents, the value is `agent`.
-	Object any
 	// Optional. The instructions for the agent to follow. These instructions are passed to the LLM as a system instruction.
 	SystemInstruction any
 	// Optional. The tools available to the agent.
 	Tools any
-	// Output only. The time the agent was last updated.
-	Updated any
 }
 
 type V1beta1AgentAttrs struct {
@@ -70,20 +64,17 @@ type V1beta1AgentAttrs struct {
 var V1beta1Agent = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_agent",
 	Fields: ubx.FieldMap{
-		"BaseAgent": ubx.FieldSpec{WireName: "base_agent"},
-		"BaseEnvironment": ubx.FieldSpec{WireName: "base_environment"},
-		"Created": ubx.FieldSpec{WireName: "created"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Object": ubx.FieldSpec{WireName: "object"},
+		"BaseAgent":         ubx.FieldSpec{WireName: "base_agent"},
+		"BaseEnvironment":   ubx.FieldSpec{WireName: "base_environment"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
 		"Tools": ubx.FieldSpec{
 			WireName: "tools",
-			Kind: "list",
-			Fields: V1beta1Agent_ToolsFields,
+			Kind:     "list",
+			Fields:   V1beta1Agent_ToolsFields,
 		},
-		"Updated": ubx.FieldSpec{WireName: "updated"},
 	},
 }

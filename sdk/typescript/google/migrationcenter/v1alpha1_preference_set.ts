@@ -396,20 +396,14 @@ const V1alpha1PreferenceSet_VirtualMachinePreferencesFields: FieldMap = {
 };
 
 export interface V1alpha1PreferenceSetConfig {
-  /** Output only. The timestamp when the preference set was created. */
-  createTime?: string | Computed<string>;
   /** DatabasePreferences enables you to create sets of preferences for your migrated databases. */
   databasePreferences?: V1alpha1PreferenceSet_DatabasePreferences | Computed<V1alpha1PreferenceSet_DatabasePreferences>;
   /** A description of the preference set. */
   description?: string | Computed<string>;
   /** User-friendly display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Name of the PreferenceSet. */
-  name?: string | Computed<string>;
   /** The user preferences relating to target regions. */
   regionPreferences?: V1alpha1PreferenceSet_RegionPreferences | Computed<V1alpha1PreferenceSet_RegionPreferences>;
-  /** Output only. The timestamp when the preference set was last updated. */
-  updateTime?: string | Computed<string>;
   /** VirtualMachinePreferences enables you to create sets of preferences, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets. */
   virtualMachinePreferences?: V1alpha1PreferenceSet_VirtualMachinePreferences | Computed<V1alpha1PreferenceSet_VirtualMachinePreferences>;
 }
@@ -436,7 +430,6 @@ export interface V1alpha1PreferenceSetAttrs {
 export const V1alpha1PreferenceSet: ResourceBinding<V1alpha1PreferenceSetConfig, V1alpha1PreferenceSetAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_preference_set",
   fields: {
-    createTime: "create_time",
     databasePreferences: {
       wireName: "database_preferences",
       kind: "object",
@@ -444,13 +437,11 @@ export const V1alpha1PreferenceSet: ResourceBinding<V1alpha1PreferenceSetConfig,
     },
     description: "description",
     displayName: "display_name",
-    name: "name",
     regionPreferences: {
       wireName: "region_preferences",
       kind: "object",
       fields: V1alpha1PreferenceSet_RegionPreferencesFields,
     },
-    updateTime: "update_time",
     virtualMachinePreferences: {
       wireName: "virtual_machine_preferences",
       kind: "object",

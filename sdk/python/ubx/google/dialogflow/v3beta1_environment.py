@@ -162,7 +162,6 @@ class V3beta1EnvironmentConfig:
     display_name: Any = None
     name: Any = None
     test_cases_config: Any = None
-    update_time: Any = None
     version_configs: Any = None
     webhook_config: Any = None
 
@@ -187,7 +186,6 @@ V3beta1Environment = ubx.ResourceBinding(
             kind="object",
             fields=_V3beta1Environment_TestCasesConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "version_configs": ubx.FieldSpec(
             wire_name="version_configs",
             kind="list",

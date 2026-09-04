@@ -4,9 +4,9 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecs struct {
-	MetricName any
+	MetricName              any
 	MonitoredResourceLabels any
-	Target any
+	Target                  any
 }
 
 type V1beta1DeploymentResourcePool_DedicatedResources_FlexStart struct {
@@ -95,91 +95,91 @@ type V1beta1DeploymentResourcePool_DeploymentResourcePool struct {
 }
 
 var V1beta1DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecsFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MonitoredResourceLabels": ubx.FieldSpec{WireName: "monitored_resource_labels"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"MetricName":              ubx.FieldSpec{WireName: "metric_name"},
+	"MonitoredResourceLabels": ubx.FieldSpec{WireName: "monitored_resource_labels"},
+	"Target":                  ubx.FieldSpec{WireName: "target"},
+}
 
 var V1beta1DeploymentResourcePool_DedicatedResources_FlexStartFields = ubx.FieldMap{
-		"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
-	}
+	"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
+}
 
 var V1beta1DeploymentResourcePool_DedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1DeploymentResourcePool_DedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResources_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1DeploymentResourcePool_DedicatedResources_ScaleToZeroSpecFields = ubx.FieldMap{
-		"IdleScaledownPeriod": ubx.FieldSpec{WireName: "idle_scaledown_period"},
-		"MinScaleupPeriod": ubx.FieldSpec{WireName: "min_scaleup_period"},
-	}
+	"IdleScaledownPeriod": ubx.FieldSpec{WireName: "idle_scaledown_period"},
+	"MinScaleupPeriod":    ubx.FieldSpec{WireName: "min_scaleup_period"},
+}
 
 var V1beta1DeploymentResourcePool_DedicatedResourcesFields = ubx.FieldMap{
-		"AutoscalingMetricSpecs": ubx.FieldSpec{
-			WireName: "autoscaling_metric_specs",
-			Kind: "list",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecsFields,
-		},
-		"FlexStart": ubx.FieldSpec{
-			WireName: "flex_start",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResources_FlexStartFields,
-		},
-		"InitialReplicaCount": ubx.FieldSpec{WireName: "initial_replica_count"},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-		"RequiredReplicaCount": ubx.FieldSpec{WireName: "required_replica_count"},
-		"ScaleToZeroSpec": ubx.FieldSpec{
-			WireName: "scale_to_zero_spec",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResources_ScaleToZeroSpecFields,
-		},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
+	"AutoscalingMetricSpecs": ubx.FieldSpec{
+		WireName: "autoscaling_metric_specs",
+		Kind:     "list",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResources_AutoscalingMetricSpecsFields,
+	},
+	"FlexStart": ubx.FieldSpec{
+		WireName: "flex_start",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResources_FlexStartFields,
+	},
+	"InitialReplicaCount": ubx.FieldSpec{WireName: "initial_replica_count"},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResources_MachineSpecFields,
+	},
+	"MaxReplicaCount":      ubx.FieldSpec{WireName: "max_replica_count"},
+	"MinReplicaCount":      ubx.FieldSpec{WireName: "min_replica_count"},
+	"RequiredReplicaCount": ubx.FieldSpec{WireName: "required_replica_count"},
+	"ScaleToZeroSpec": ubx.FieldSpec{
+		WireName: "scale_to_zero_spec",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResources_ScaleToZeroSpecFields,
+	},
+	"Spot": ubx.FieldSpec{WireName: "spot"},
+}
 
 var V1beta1DeploymentResourcePool_DeploymentResourcePool_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1DeploymentResourcePool_DeploymentResourcePoolFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DedicatedResources": ubx.FieldSpec{
-			WireName: "dedicated_resources",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DedicatedResourcesFields,
-		},
-		"DisableContainerLogging": ubx.FieldSpec{WireName: "disable_container_logging"},
-		"EncryptionSpec": ubx.FieldSpec{
-			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DeploymentResourcePool_EncryptionSpecFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DedicatedResources": ubx.FieldSpec{
+		WireName: "dedicated_resources",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DedicatedResourcesFields,
+	},
+	"DisableContainerLogging": ubx.FieldSpec{WireName: "disable_container_logging"},
+	"EncryptionSpec": ubx.FieldSpec{
+		WireName: "encryption_spec",
+		Kind:     "object",
+		Fields:   V1beta1DeploymentResourcePool_DeploymentResourcePool_EncryptionSpecFields,
+	},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"SatisfiesPzi":   ubx.FieldSpec{WireName: "satisfies_pzi"},
+	"SatisfiesPzs":   ubx.FieldSpec{WireName: "satisfies_pzs"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 type V1beta1DeploymentResourcePoolConfig struct {
 	// A description of resources that can be shared by multiple DeployedModels, whose underlying specification consists of a DedicatedResources.
@@ -216,8 +216,8 @@ var V1beta1DeploymentResourcePool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentResourcePool": ubx.FieldSpec{
 			WireName: "deployment_resource_pool",
-			Kind: "object",
-			Fields: V1beta1DeploymentResourcePool_DeploymentResourcePoolFields,
+			Kind:     "object",
+			Fields:   V1beta1DeploymentResourcePool_DeploymentResourcePoolFields,
 		},
 		"DeploymentResourcePoolId": ubx.FieldSpec{WireName: "deployment_resource_pool_id"},
 	},

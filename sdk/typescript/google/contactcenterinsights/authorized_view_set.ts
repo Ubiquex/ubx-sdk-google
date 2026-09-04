@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AuthorizedViewSetConfig {
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Display Name. Limit 64 characters. */
   displayName?: string | Computed<string>;
   /** Identifier. The resource name of the AuthorizedViewSet. Format: projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set} */
   name?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AuthorizedViewSetAttrs {
@@ -26,9 +22,7 @@ export interface AuthorizedViewSetAttrs {
 export const AuthorizedViewSet: ResourceBinding<AuthorizedViewSetConfig, AuthorizedViewSetAttrs> = {
   wireType: "google_contactcenterinsights_authorized_view_set",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     name: "name",
-    updateTime: "update_time",
   },
 };

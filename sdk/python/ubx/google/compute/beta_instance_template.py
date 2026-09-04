@@ -772,21 +772,11 @@ _BetaInstanceTemplate_SourceInstanceParamsFields = {
 
 @dataclasses.dataclass
 class BetaInstanceTemplateConfig:
-    # Output only. [Output Only] The creation timestamp for this instance template inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] A unique identifier for this instance template. The server defines this identifier.
-    id: Any = None
-    # Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates.
-    kind: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     properties: Any = None
-    # Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources.
-    region: Any = None
-    # Output only. [Output Only] The URL for this instance template. The server defines this URL.
-    self_link: Any = None
     # The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
     source_instance: Any = None
     # A specification of the parameters to use when creating the instance template from a source instance.
@@ -817,18 +807,13 @@ class BetaInstanceTemplateAttrs:
 BetaInstanceTemplate = ubx.ResourceBinding(
     wire_type="google_compute_beta_instance_template",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "properties": ubx.FieldSpec(
             wire_name="properties",
             kind="object",
             fields=_BetaInstanceTemplate_PropertiesFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "source_instance": ubx.FieldSpec(wire_name="source_instance"),
         "source_instance_params": ubx.FieldSpec(
             wire_name="source_instance_params",

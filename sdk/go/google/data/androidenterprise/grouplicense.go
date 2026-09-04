@@ -4,7 +4,7 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GrouplicenseConfig struct {
-	EnterpriseId any
+	EnterpriseId   any
 	GroupLicenseId any
 }
 
@@ -12,8 +12,8 @@ type GrouplicenseAttrs struct {
 	// How this group license was acquired. "bulkPurchase" means that this Grouplicenses resource was created because the enterprise purchased licenses for this product; otherwise, the value is "free" (for free products).
 	AcquisitionKind any
 	// Whether the product to which this group license relates is currently approved by the enterprise. Products are approved when a group license is first created, but this approval may be revoked by an enterprise admin via Google Play. Unapproved products will not be visible to end users in collections, and new entitlements to them should not normally be created.
-	Approval any
-	EnterpriseId any
+	Approval       any
+	EnterpriseId   any
 	GroupLicenseId any
 	// The total number of provisioned licenses for this product. Returned by read operations, but ignored in write operations.
 	NumProvisioned any
@@ -28,7 +28,7 @@ type GrouplicenseAttrs struct {
 var Grouplicense = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_grouplicense",
 	Fields: ubx.FieldMap{
-		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
+		"EnterpriseId":   ubx.FieldSpec{WireName: "enterprise_id"},
 		"GroupLicenseId": ubx.FieldSpec{WireName: "group_license_id"},
 	},
 }

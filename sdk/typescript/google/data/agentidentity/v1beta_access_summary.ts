@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface V1betaAccessSummaryConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1betaAccessSummaryAttrs {
@@ -32,6 +31,5 @@ export interface V1betaAccessSummaryAttrs {
 export const V1betaAccessSummary: DataSourceBinding<V1betaAccessSummaryConfig, V1betaAccessSummaryAttrs> = {
   wireType: "google_agentidentity_v1beta_access_summary",
   fields: {
-    name: "name",
   },
 };

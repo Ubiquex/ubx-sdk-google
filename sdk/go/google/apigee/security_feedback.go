@@ -5,31 +5,25 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityFeedback_FeedbackContexts struct {
 	Attribute any
-	Values any
+	Values    any
 }
 
 var SecurityFeedback_FeedbackContextsFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type SecurityFeedbackConfig struct {
 	// Optional. Optional text the user can provide for additional, unstructured context.
 	Comment any
-	// Output only. The time when this specific feedback id was created.
-	CreateTime any
 	// Optional. The display name of the feedback.
 	DisplayName any
 	// Required. One or more attribute/value pairs for constraining the feedback.
 	FeedbackContexts any
 	// Required. The type of feedback being submitted.
 	FeedbackType any
-	// Output only. Identifier. The feedback name is intended to be a system-generated uuid.
-	Name any
 	// Optional. The reason for the feedback.
 	Reason any
-	// Output only. The time when this specific feedback id was updated.
-	UpdateTime any
 }
 
 type SecurityFeedbackAttrs struct {
@@ -54,17 +48,14 @@ type SecurityFeedbackAttrs struct {
 var SecurityFeedback = ubx.ResourceBinding{
 	WireType: "google_apigee_security_feedback",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Comment":     ubx.FieldSpec{WireName: "comment"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"FeedbackContexts": ubx.FieldSpec{
 			WireName: "feedback_contexts",
-			Kind: "list",
-			Fields: SecurityFeedback_FeedbackContextsFields,
+			Kind:     "list",
+			Fields:   SecurityFeedback_FeedbackContextsFields,
 		},
 		"FeedbackType": ubx.FieldSpec{WireName: "feedback_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Reason":       ubx.FieldSpec{WireName: "reason"},
 	},
 }

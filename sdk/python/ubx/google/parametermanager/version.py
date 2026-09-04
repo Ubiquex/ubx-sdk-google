@@ -17,18 +17,12 @@ _Version_PayloadFields = {
 
 @dataclasses.dataclass
 class VersionConfig:
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Optional. Disabled boolean to determine if a ParameterVersion acts as a metadata only resource (payload is never returned if disabled is true). If true any calls will always default to BASIC view even if the user explicitly passes FULL view as part of the request. A render call on a disabled resource fails with an error. Default value is False.
     disabled: Any = None
-    # Optional. Output only. [Output only] The resource name of the KMS key version used to encrypt the ParameterVersion payload. This field is populated only if the Parameter resource has customer managed encryption key (CMEK) configured.
-    kms_key_version: Any = None
     # Identifier. [Output only] The resource name of the ParameterVersion in the format `projects/*/locations/*/parameters/*/versions/*`.
     name: Any = None
     # Message for storing a ParameterVersion resource's payload data
     payload: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class VersionAttrs:
@@ -48,15 +42,12 @@ class VersionAttrs:
 Version = ubx.ResourceBinding(
     wire_type="google_parametermanager_version",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "kms_key_version": ubx.FieldSpec(wire_name="kms_key_version"),
         "name": ubx.FieldSpec(wire_name="name"),
         "payload": ubx.FieldSpec(
             wire_name="payload",
             kind="object",
             fields=_Version_PayloadFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

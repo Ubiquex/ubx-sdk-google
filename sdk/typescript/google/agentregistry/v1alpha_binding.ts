@@ -28,8 +28,6 @@ const V1alphaBinding_SourceFields: FieldMap = {
 export interface V1alphaBindingConfig {
   /** The AuthProvider of the Binding. */
   authProviderBinding?: V1alphaBinding_AuthProviderBinding | Computed<V1alphaBinding_AuthProviderBinding>;
-  /** Output only. Timestamp when this binding was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of a Binding. Can have a maximum length of `2048` characters. */
   description?: string | Computed<string>;
   /** Optional. User-defined display name for the Binding. Can have a maximum length of `63` characters. */
@@ -40,8 +38,6 @@ export interface V1alphaBindingConfig {
   source?: V1alphaBinding_Source | Computed<V1alphaBinding_Source>;
   /** The target of the Binding. */
   target?: V1alphaBinding_Source | Computed<V1alphaBinding_Source>;
-  /** Output only. Timestamp when this binding was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaBindingAttrs {
@@ -71,7 +67,6 @@ export const V1alphaBinding: ResourceBinding<V1alphaBindingConfig, V1alphaBindin
       kind: "object",
       fields: V1alphaBinding_AuthProviderBindingFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -85,6 +80,5 @@ export const V1alphaBinding: ResourceBinding<V1alphaBindingConfig, V1alphaBindin
       kind: "object",
       fields: V1alphaBinding_SourceFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class KeystoreConfig:
-    # Output only. Aliases in this keystore.
-    aliases: Any = None
     # Required. Resource ID for this keystore. Values must match the regular expression `[\w[:space:].-]{1,255}`.
     name: Any = None
 
@@ -23,7 +21,6 @@ class KeystoreAttrs:
 Keystore = ubx.ResourceBinding(
     wire_type="google_apigee_keystore",
     fields={
-        "aliases": ubx.FieldSpec(wire_name="aliases"),
         "name": ubx.FieldSpec(wire_name="name"),
     },
 )

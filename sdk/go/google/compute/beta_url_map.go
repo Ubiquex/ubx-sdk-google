@@ -4,9 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules struct {
-	MatchResponseCodes any
+	MatchResponseCodes   any
 	OverrideResponseCode any
-	Path any
+	Path                 any
 }
 
 type BetaUrlMap_DefaultCustomErrorResponsePolicy struct {
@@ -42,7 +42,7 @@ type BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtl struct {
 
 type BetaUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy struct {
 	Code any
-	Ttl any
+	Ttl  any
 }
 
 type BetaUrlMap_DefaultRouteAction_CachePolicy struct {
@@ -148,22 +148,22 @@ type BetaUrlMap_DefaultRouteAction_UrlRewrite struct {
 }
 
 type BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd struct {
-	HeaderName any
+	HeaderName  any
 	HeaderValue any
-	Replace any
+	Replace     any
 }
 
 type BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction struct {
-	RequestHeadersToAdd any
-	RequestHeadersToRemove any
-	ResponseHeadersToAdd any
+	RequestHeadersToAdd     any
+	RequestHeadersToRemove  any
+	ResponseHeadersToAdd    any
 	ResponseHeadersToRemove any
 }
 
 type BetaUrlMap_DefaultRouteAction_WeightedBackendServices struct {
 	BackendService any
-	HeaderAction any
-	Weight any
+	HeaderAction   any
+	Weight         any
 }
 
 type BetaUrlMap_DefaultRouteAction struct {
@@ -206,91 +206,91 @@ type BetaUrlMap_DefaultUrlRedirect struct {
 
 type BetaUrlMap_HostRules struct {
 	Description any
-	Hosts any
+	Hosts       any
 	PathMatcher any
 }
 
 type BetaUrlMap_PathMatchers_PathRules struct {
 	CustomErrorResponsePolicy any
-	Paths any
-	RouteAction any
-	Service any
-	UrlRedirect any
+	Paths                     any
+	RouteAction               any
+	Service                   any
+	UrlRedirect               any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigs struct {
-	Config any
+	Config        any
 	ConfigTypeUrl any
-	FilterName any
+	FilterName    any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch struct {
-	RangeEnd any
+	RangeEnd   any
 	RangeStart any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches struct {
-	ExactMatch any
-	HeaderName any
-	InvertMatch any
-	PrefixMatch any
+	ExactMatch   any
+	HeaderName   any
+	InvertMatch  any
+	PrefixMatch  any
 	PresentMatch any
-	RangeMatch any
-	RegexMatch any
-	SuffixMatch any
+	RangeMatch   any
+	RegexMatch   any
+	SuffixMatch  any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters struct {
-	FilterLabels any
+	FilterLabels        any
 	FilterMatchCriteria any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches struct {
-	ExactMatch any
-	Name any
+	ExactMatch   any
+	Name         any
 	PresentMatch any
-	RegexMatch any
+	RegexMatch   any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules_MatchRules struct {
-	FullPathMatch any
-	HeaderMatches any
-	IgnoreCase any
-	MetadataFilters any
-	PathTemplateMatch any
-	PrefixMatch any
+	FullPathMatch         any
+	HeaderMatches         any
+	IgnoreCase            any
+	MetadataFilters       any
+	PathTemplateMatch     any
+	PrefixMatch           any
 	QueryParameterMatches any
-	RegexMatch any
+	RegexMatch            any
 }
 
 type BetaUrlMap_PathMatchers_RouteRules struct {
 	CustomErrorResponsePolicy any
-	Description any
-	HeaderAction any
-	HttpFilterConfigs any
-	HttpFilterMetadata any
-	MatchRules any
-	Priority any
-	RouteAction any
-	Service any
-	UrlRedirect any
+	Description               any
+	HeaderAction              any
+	HttpFilterConfigs         any
+	HttpFilterMetadata        any
+	MatchRules                any
+	Priority                  any
+	RouteAction               any
+	Service                   any
+	UrlRedirect               any
 }
 
 type BetaUrlMap_PathMatchers struct {
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction any
-	DefaultService any
-	DefaultUrlRedirect any
-	Description any
-	HeaderAction any
-	Name any
-	PathRules any
-	RouteRules any
+	DefaultRouteAction               any
+	DefaultService                   any
+	DefaultUrlRedirect               any
+	Description                      any
+	HeaderAction                     any
+	Name                             any
+	PathRules                        any
+	RouteRules                       any
 }
 
 type BetaUrlMap_Status_QuotaUsage struct {
@@ -306,463 +306,461 @@ type BetaUrlMap_Status struct {
 }
 
 type BetaUrlMap_Tests struct {
-	Description any
-	ExpectedOutputUrl any
+	Description                  any
+	ExpectedOutputUrl            any
 	ExpectedRedirectResponseCode any
-	Headers any
-	Host any
-	Path any
-	Service any
+	Headers                      any
+	Host                         any
+	Path                         any
+	Service                      any
 }
 
 var BetaUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields = ubx.FieldMap{
-		"MatchResponseCodes": ubx.FieldSpec{WireName: "match_response_codes"},
-		"OverrideResponseCode": ubx.FieldSpec{WireName: "override_response_code"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"MatchResponseCodes":   ubx.FieldSpec{WireName: "match_response_codes"},
+	"OverrideResponseCode": ubx.FieldSpec{WireName: "override_response_code"},
+	"Path":                 ubx.FieldSpec{WireName: "path"},
+}
 
 var BetaUrlMap_DefaultCustomErrorResponsePolicyFields = ubx.FieldMap{
-		"ErrorResponseRules": ubx.FieldSpec{
-			WireName: "error_response_rules",
-			Kind: "list",
-			Fields: BetaUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields,
-		},
-		"ErrorService": ubx.FieldSpec{WireName: "error_service"},
-	}
+	"ErrorResponseRules": ubx.FieldSpec{
+		WireName: "error_response_rules",
+		Kind:     "list",
+		Fields:   BetaUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields,
+	},
+	"ErrorService": ubx.FieldSpec{WireName: "error_service"},
+}
 
 var BetaUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields = ubx.FieldMap{
-		"ExcludedQueryParameters": ubx.FieldSpec{WireName: "excluded_query_parameters"},
-		"IncludeHost": ubx.FieldSpec{WireName: "include_host"},
-		"IncludeProtocol": ubx.FieldSpec{WireName: "include_protocol"},
-		"IncludeQueryString": ubx.FieldSpec{WireName: "include_query_string"},
-		"IncludedCookieNames": ubx.FieldSpec{WireName: "included_cookie_names"},
-		"IncludedHeaderNames": ubx.FieldSpec{WireName: "included_header_names"},
-		"IncludedQueryParameters": ubx.FieldSpec{WireName: "included_query_parameters"},
-	}
+	"ExcludedQueryParameters": ubx.FieldSpec{WireName: "excluded_query_parameters"},
+	"IncludeHost":             ubx.FieldSpec{WireName: "include_host"},
+	"IncludeProtocol":         ubx.FieldSpec{WireName: "include_protocol"},
+	"IncludeQueryString":      ubx.FieldSpec{WireName: "include_query_string"},
+	"IncludedCookieNames":     ubx.FieldSpec{WireName: "included_cookie_names"},
+	"IncludedHeaderNames":     ubx.FieldSpec{WireName: "included_header_names"},
+	"IncludedQueryParameters": ubx.FieldSpec{WireName: "included_query_parameters"},
+}
 
 var BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var BetaUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Ttl": ubx.FieldSpec{
-			WireName: "ttl",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Ttl": ubx.FieldSpec{
+		WireName: "ttl",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+}
 
 var BetaUrlMap_DefaultRouteAction_CachePolicyFields = ubx.FieldMap{
-		"CacheBypassRequestHeaderNames": ubx.FieldSpec{WireName: "cache_bypass_request_header_names"},
-		"CacheKeyPolicy": ubx.FieldSpec{
-			WireName: "cache_key_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields,
-		},
-		"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
-		"ClientTtl": ubx.FieldSpec{
-			WireName: "client_ttl",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"DefaultTtl": ubx.FieldSpec{
-			WireName: "default_ttl",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"MaxTtl": ubx.FieldSpec{
-			WireName: "max_ttl",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
-		"NegativeCachingPolicy": ubx.FieldSpec{
-			WireName: "negative_caching_policy",
-			Kind: "list",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields,
-		},
-		"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
-		"ServeWhileStale": ubx.FieldSpec{
-			WireName: "serve_while_stale",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-	}
+	"CacheBypassRequestHeaderNames": ubx.FieldSpec{WireName: "cache_bypass_request_header_names"},
+	"CacheKeyPolicy": ubx.FieldSpec{
+		WireName: "cache_key_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields,
+	},
+	"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
+	"ClientTtl": ubx.FieldSpec{
+		WireName: "client_ttl",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"DefaultTtl": ubx.FieldSpec{
+		WireName: "default_ttl",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"MaxTtl": ubx.FieldSpec{
+		WireName: "max_ttl",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
+	"NegativeCachingPolicy": ubx.FieldSpec{
+		WireName: "negative_caching_policy",
+		Kind:     "list",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields,
+	},
+	"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
+	"ServeWhileStale": ubx.FieldSpec{
+		WireName: "serve_while_stale",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+}
 
 var BetaUrlMap_DefaultRouteAction_CorsPolicyFields = ubx.FieldMap{
-		"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
-		"AllowHeaders": ubx.FieldSpec{WireName: "allow_headers"},
-		"AllowMethods": ubx.FieldSpec{WireName: "allow_methods"},
-		"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
-		"AllowOrigins": ubx.FieldSpec{WireName: "allow_origins"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-	}
+	"AllowCredentials":   ubx.FieldSpec{WireName: "allow_credentials"},
+	"AllowHeaders":       ubx.FieldSpec{WireName: "allow_headers"},
+	"AllowMethods":       ubx.FieldSpec{WireName: "allow_methods"},
+	"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
+	"AllowOrigins":       ubx.FieldSpec{WireName: "allow_origins"},
+	"Disabled":           ubx.FieldSpec{WireName: "disabled"},
+	"ExposeHeaders":      ubx.FieldSpec{WireName: "expose_headers"},
+	"MaxAge":             ubx.FieldSpec{WireName: "max_age"},
+}
 
 var BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields = ubx.FieldMap{
-		"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields = ubx.FieldMap{
-		"FixedDelay": ubx.FieldSpec{
-			WireName: "fixed_delay",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"FixedDelay": ubx.FieldSpec{
+		WireName: "fixed_delay",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var BetaUrlMap_DefaultRouteAction_FaultInjectionPolicyFields = ubx.FieldMap{
-		"Abort": ubx.FieldSpec{
-			WireName: "abort",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields,
-		},
-		"Delay": ubx.FieldSpec{
-			WireName: "delay",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields,
-		},
-	}
+	"Abort": ubx.FieldSpec{
+		WireName: "abort",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields,
+	},
+	"Delay": ubx.FieldSpec{
+		WireName: "delay",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields,
+	},
+}
 
 var BetaUrlMap_DefaultRouteAction_ImageOptimizationPolicyFields = ubx.FieldMap{
-		"QueryParameterInterpretation": ubx.FieldSpec{WireName: "query_parameter_interpretation"},
-	}
+	"QueryParameterInterpretation": ubx.FieldSpec{WireName: "query_parameter_interpretation"},
+}
 
 var BetaUrlMap_DefaultRouteAction_RequestMirrorPolicyFields = ubx.FieldMap{
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
-		"MirrorPercent": ubx.FieldSpec{WireName: "mirror_percent"},
-	}
+	"BackendService": ubx.FieldSpec{WireName: "backend_service"},
+	"MirrorPercent":  ubx.FieldSpec{WireName: "mirror_percent"},
+}
 
 var BetaUrlMap_DefaultRouteAction_RetryPolicyFields = ubx.FieldMap{
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"PerTryTimeout": ubx.FieldSpec{
-			WireName: "per_try_timeout",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
-	}
+	"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
+	"PerTryTimeout": ubx.FieldSpec{
+		WireName: "per_try_timeout",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
+}
 
 var BetaUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields = ubx.FieldMap{
-		"PathPattern": ubx.FieldSpec{WireName: "path_pattern"},
-		"PathSubstitution": ubx.FieldSpec{WireName: "path_substitution"},
-	}
+	"PathPattern":      ubx.FieldSpec{WireName: "path_pattern"},
+	"PathSubstitution": ubx.FieldSpec{WireName: "path_substitution"},
+}
 
 var BetaUrlMap_DefaultRouteAction_UrlRewriteFields = ubx.FieldMap{
-		"HostRewrite": ubx.FieldSpec{WireName: "host_rewrite"},
-		"PathPrefixRewrite": ubx.FieldSpec{WireName: "path_prefix_rewrite"},
-		"PathTemplateRewrite": ubx.FieldSpec{WireName: "path_template_rewrite"},
-		"RegexRewrite": ubx.FieldSpec{
-			WireName: "regex_rewrite",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields,
-		},
-	}
+	"HostRewrite":         ubx.FieldSpec{WireName: "host_rewrite"},
+	"PathPrefixRewrite":   ubx.FieldSpec{WireName: "path_prefix_rewrite"},
+	"PathTemplateRewrite": ubx.FieldSpec{WireName: "path_template_rewrite"},
+	"RegexRewrite": ubx.FieldSpec{
+		WireName: "regex_rewrite",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields,
+	},
+}
 
 var BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-		"Replace": ubx.FieldSpec{WireName: "replace"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+	"Replace":     ubx.FieldSpec{WireName: "replace"},
+}
 
 var BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields = ubx.FieldMap{
-		"RequestHeadersToAdd": ubx.FieldSpec{
-			WireName: "request_headers_to_add",
-			Kind: "list",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
-		},
-		"RequestHeadersToRemove": ubx.FieldSpec{WireName: "request_headers_to_remove"},
-		"ResponseHeadersToAdd": ubx.FieldSpec{
-			WireName: "response_headers_to_add",
-			Kind: "list",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
-		},
-		"ResponseHeadersToRemove": ubx.FieldSpec{WireName: "response_headers_to_remove"},
-	}
+	"RequestHeadersToAdd": ubx.FieldSpec{
+		WireName: "request_headers_to_add",
+		Kind:     "list",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
+	},
+	"RequestHeadersToRemove": ubx.FieldSpec{WireName: "request_headers_to_remove"},
+	"ResponseHeadersToAdd": ubx.FieldSpec{
+		WireName: "response_headers_to_add",
+		Kind:     "list",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
+	},
+	"ResponseHeadersToRemove": ubx.FieldSpec{WireName: "response_headers_to_remove"},
+}
 
 var BetaUrlMap_DefaultRouteAction_WeightedBackendServicesFields = ubx.FieldMap{
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"BackendService": ubx.FieldSpec{WireName: "backend_service"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var BetaUrlMap_DefaultRouteActionFields = ubx.FieldMap{
-		"CachePolicy": ubx.FieldSpec{
-			WireName: "cache_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicyFields,
-		},
-		"CorsPolicy": ubx.FieldSpec{
-			WireName: "cors_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CorsPolicyFields,
-		},
-		"FaultInjectionPolicy": ubx.FieldSpec{
-			WireName: "fault_injection_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
-		},
-		"ImageOptimizationPolicy": ubx.FieldSpec{
-			WireName: "image_optimization_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_ImageOptimizationPolicyFields,
-		},
-		"MaxStreamDuration": ubx.FieldSpec{
-			WireName: "max_stream_duration",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"RequestMirrorPolicy": ubx.FieldSpec{
-			WireName: "request_mirror_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
-		},
-		"RetryPolicy": ubx.FieldSpec{
-			WireName: "retry_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_RetryPolicyFields,
-		},
-		"Timeout": ubx.FieldSpec{
-			WireName: "timeout",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"UrlRewrite": ubx.FieldSpec{
-			WireName: "url_rewrite",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_UrlRewriteFields,
-		},
-		"WeightedBackendServices": ubx.FieldSpec{
-			WireName: "weighted_backend_services",
-			Kind: "list",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
-		},
-	}
+	"CachePolicy": ubx.FieldSpec{
+		WireName: "cache_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicyFields,
+	},
+	"CorsPolicy": ubx.FieldSpec{
+		WireName: "cors_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CorsPolicyFields,
+	},
+	"FaultInjectionPolicy": ubx.FieldSpec{
+		WireName: "fault_injection_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
+	},
+	"ImageOptimizationPolicy": ubx.FieldSpec{
+		WireName: "image_optimization_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_ImageOptimizationPolicyFields,
+	},
+	"MaxStreamDuration": ubx.FieldSpec{
+		WireName: "max_stream_duration",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"RequestMirrorPolicy": ubx.FieldSpec{
+		WireName: "request_mirror_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
+	},
+	"RetryPolicy": ubx.FieldSpec{
+		WireName: "retry_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_RetryPolicyFields,
+	},
+	"Timeout": ubx.FieldSpec{
+		WireName: "timeout",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"UrlRewrite": ubx.FieldSpec{
+		WireName: "url_rewrite",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_UrlRewriteFields,
+	},
+	"WeightedBackendServices": ubx.FieldSpec{
+		WireName: "weighted_backend_services",
+		Kind:     "list",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
+	},
+}
 
 var BetaUrlMap_DefaultUrlRedirectFields = ubx.FieldMap{
-		"HostRedirect": ubx.FieldSpec{WireName: "host_redirect"},
-		"HttpsRedirect": ubx.FieldSpec{WireName: "https_redirect"},
-		"PathRedirect": ubx.FieldSpec{WireName: "path_redirect"},
-		"PrefixRedirect": ubx.FieldSpec{WireName: "prefix_redirect"},
-		"RedirectResponseCode": ubx.FieldSpec{WireName: "redirect_response_code"},
-		"StripQuery": ubx.FieldSpec{WireName: "strip_query"},
-	}
+	"HostRedirect":         ubx.FieldSpec{WireName: "host_redirect"},
+	"HttpsRedirect":        ubx.FieldSpec{WireName: "https_redirect"},
+	"PathRedirect":         ubx.FieldSpec{WireName: "path_redirect"},
+	"PrefixRedirect":       ubx.FieldSpec{WireName: "prefix_redirect"},
+	"RedirectResponseCode": ubx.FieldSpec{WireName: "redirect_response_code"},
+	"StripQuery":           ubx.FieldSpec{WireName: "strip_query"},
+}
 
 var BetaUrlMap_HostRulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"PathMatcher": ubx.FieldSpec{WireName: "path_matcher"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Hosts":       ubx.FieldSpec{WireName: "hosts"},
+	"PathMatcher": ubx.FieldSpec{WireName: "path_matcher"},
+}
 
 var BetaUrlMap_PathMatchers_PathRulesFields = ubx.FieldMap{
-		"CustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "custom_error_response_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"RouteAction": ubx.FieldSpec{
-			WireName: "route_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteActionFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlRedirect": ubx.FieldSpec{
-			WireName: "url_redirect",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultUrlRedirectFields,
-		},
-	}
+	"CustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "custom_error_response_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"Paths": ubx.FieldSpec{WireName: "paths"},
+	"RouteAction": ubx.FieldSpec{
+		WireName: "route_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteActionFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlRedirect": ubx.FieldSpec{
+		WireName: "url_redirect",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultUrlRedirectFields,
+	},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigsFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"ConfigTypeUrl": ubx.FieldSpec{WireName: "config_type_url"},
-		"FilterName": ubx.FieldSpec{WireName: "filter_name"},
-	}
+	"Config":        ubx.FieldSpec{WireName: "config"},
+	"ConfigTypeUrl": ubx.FieldSpec{WireName: "config_type_url"},
+	"FilterName":    ubx.FieldSpec{WireName: "filter_name"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields = ubx.FieldMap{
-		"RangeEnd": ubx.FieldSpec{WireName: "range_end"},
-		"RangeStart": ubx.FieldSpec{WireName: "range_start"},
-	}
+	"RangeEnd":   ubx.FieldSpec{WireName: "range_end"},
+	"RangeStart": ubx.FieldSpec{WireName: "range_start"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields = ubx.FieldMap{
-		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"InvertMatch": ubx.FieldSpec{WireName: "invert_match"},
-		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
-		"RangeMatch": ubx.FieldSpec{
-			WireName: "range_match",
-			Kind: "object",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
-		},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-		"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
-	}
+	"ExactMatch":   ubx.FieldSpec{WireName: "exact_match"},
+	"HeaderName":   ubx.FieldSpec{WireName: "header_name"},
+	"InvertMatch":  ubx.FieldSpec{WireName: "invert_match"},
+	"PrefixMatch":  ubx.FieldSpec{WireName: "prefix_match"},
+	"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+	"RangeMatch": ubx.FieldSpec{
+		WireName: "range_match",
+		Kind:     "object",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
+	},
+	"RegexMatch":  ubx.FieldSpec{WireName: "regex_match"},
+	"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields = ubx.FieldMap{
-		"FilterLabels": ubx.FieldSpec{
-			WireName: "filter_labels",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
-		},
-		"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
-	}
+	"FilterLabels": ubx.FieldSpec{
+		WireName: "filter_labels",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+	},
+	"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields = ubx.FieldMap{
-		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-	}
+	"ExactMatch":   ubx.FieldSpec{WireName: "exact_match"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+	"RegexMatch":   ubx.FieldSpec{WireName: "regex_match"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRules_MatchRulesFields = ubx.FieldMap{
-		"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
-		"HeaderMatches": ubx.FieldSpec{
-			WireName: "header_matches",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields,
-		},
-		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
-		"MetadataFilters": ubx.FieldSpec{
-			WireName: "metadata_filters",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields,
-		},
-		"PathTemplateMatch": ubx.FieldSpec{WireName: "path_template_match"},
-		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-		"QueryParameterMatches": ubx.FieldSpec{
-			WireName: "query_parameter_matches",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields,
-		},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-	}
+	"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
+	"HeaderMatches": ubx.FieldSpec{
+		WireName: "header_matches",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields,
+	},
+	"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
+	"MetadataFilters": ubx.FieldSpec{
+		WireName: "metadata_filters",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields,
+	},
+	"PathTemplateMatch": ubx.FieldSpec{WireName: "path_template_match"},
+	"PrefixMatch":       ubx.FieldSpec{WireName: "prefix_match"},
+	"QueryParameterMatches": ubx.FieldSpec{
+		WireName: "query_parameter_matches",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields,
+	},
+	"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+}
 
 var BetaUrlMap_PathMatchers_RouteRulesFields = ubx.FieldMap{
-		"CustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "custom_error_response_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"HttpFilterConfigs": ubx.FieldSpec{
-			WireName: "http_filter_configs",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigsFields,
-		},
-		"HttpFilterMetadata": ubx.FieldSpec{
-			WireName: "http_filter_metadata",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigsFields,
-		},
-		"MatchRules": ubx.FieldSpec{
-			WireName: "match_rules",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRulesFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RouteAction": ubx.FieldSpec{
-			WireName: "route_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteActionFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlRedirect": ubx.FieldSpec{
-			WireName: "url_redirect",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultUrlRedirectFields,
-		},
-	}
+	"CustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "custom_error_response_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"HttpFilterConfigs": ubx.FieldSpec{
+		WireName: "http_filter_configs",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigsFields,
+	},
+	"HttpFilterMetadata": ubx.FieldSpec{
+		WireName: "http_filter_metadata",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_HttpFilterConfigsFields,
+	},
+	"MatchRules": ubx.FieldSpec{
+		WireName: "match_rules",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRulesFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"RouteAction": ubx.FieldSpec{
+		WireName: "route_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteActionFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlRedirect": ubx.FieldSpec{
+		WireName: "url_redirect",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultUrlRedirectFields,
+	},
+}
 
 var BetaUrlMap_PathMatchersFields = ubx.FieldMap{
-		"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "default_custom_error_response_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"DefaultRouteAction": ubx.FieldSpec{
-			WireName: "default_route_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteActionFields,
-		},
-		"DefaultService": ubx.FieldSpec{WireName: "default_service"},
-		"DefaultUrlRedirect": ubx.FieldSpec{
-			WireName: "default_url_redirect",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultUrlRedirectFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PathRules": ubx.FieldSpec{
-			WireName: "path_rules",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_PathRulesFields,
-		},
-		"RouteRules": ubx.FieldSpec{
-			WireName: "route_rules",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRulesFields,
-		},
-	}
+	"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "default_custom_error_response_policy",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"DefaultRouteAction": ubx.FieldSpec{
+		WireName: "default_route_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteActionFields,
+	},
+	"DefaultService": ubx.FieldSpec{WireName: "default_service"},
+	"DefaultUrlRedirect": ubx.FieldSpec{
+		WireName: "default_url_redirect",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultUrlRedirectFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PathRules": ubx.FieldSpec{
+		WireName: "path_rules",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_PathRulesFields,
+	},
+	"RouteRules": ubx.FieldSpec{
+		WireName: "route_rules",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRulesFields,
+	},
+}
 
 var BetaUrlMap_Status_QuotaUsageFields = ubx.FieldMap{
-		"ForwardingRules": ubx.FieldSpec{WireName: "forwarding_rules"},
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"ForwardingRules": ubx.FieldSpec{WireName: "forwarding_rules"},
+	"Units":           ubx.FieldSpec{WireName: "units"},
+}
 
 var BetaUrlMap_StatusFields = ubx.FieldMap{
-		"QuotaUsage": ubx.FieldSpec{
-			WireName: "quota_usage",
-			Kind: "object",
-			Fields: BetaUrlMap_Status_QuotaUsageFields,
-		},
-	}
+	"QuotaUsage": ubx.FieldSpec{
+		WireName: "quota_usage",
+		Kind:     "object",
+		Fields:   BetaUrlMap_Status_QuotaUsageFields,
+	},
+}
 
 var BetaUrlMap_TestsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpectedOutputUrl": ubx.FieldSpec{WireName: "expected_output_url"},
-		"ExpectedRedirectResponseCode": ubx.FieldSpec{WireName: "expected_redirect_response_code"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
-		},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Description":                  ubx.FieldSpec{WireName: "description"},
+	"ExpectedOutputUrl":            ubx.FieldSpec{WireName: "expected_output_url"},
+	"ExpectedRedirectResponseCode": ubx.FieldSpec{WireName: "expected_redirect_response_code"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   BetaUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+	},
+	"Host":    ubx.FieldSpec{WireName: "host"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 type BetaUrlMapConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction any
+	DefaultRouteAction               any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.
@@ -777,14 +775,10 @@ type BetaUrlMapConfig struct {
 	HostRules any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The list of named PathMatchers to use against the URL.
 	PathMatchers any
-	// Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// [Output Only] The status of the URL map.
@@ -798,7 +792,7 @@ type BetaUrlMapAttrs struct {
 	CreationTimestamp any
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	DefaultRouteAction any
+	DefaultRouteAction               any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.
@@ -832,54 +826,51 @@ type BetaUrlMapAttrs struct {
 var BetaUrlMap = ubx.ResourceBinding{
 	WireType: "google_compute_beta_url_map",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
 			WireName: "default_custom_error_response_policy",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
+			Kind:     "object",
+			Fields:   BetaUrlMap_DefaultCustomErrorResponsePolicyFields,
 		},
 		"DefaultRouteAction": ubx.FieldSpec{
 			WireName: "default_route_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteActionFields,
+			Kind:     "object",
+			Fields:   BetaUrlMap_DefaultRouteActionFields,
 		},
 		"DefaultService": ubx.FieldSpec{WireName: "default_service"},
 		"DefaultUrlRedirect": ubx.FieldSpec{
 			WireName: "default_url_redirect",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultUrlRedirectFields,
+			Kind:     "object",
+			Fields:   BetaUrlMap_DefaultUrlRedirectFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HeaderAction": ubx.FieldSpec{
 			WireName: "header_action",
-			Kind: "object",
-			Fields: BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+			Kind:     "object",
+			Fields:   BetaUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
 		},
 		"HostRules": ubx.FieldSpec{
 			WireName: "host_rules",
-			Kind: "list",
-			Fields: BetaUrlMap_HostRulesFields,
+			Kind:     "list",
+			Fields:   BetaUrlMap_HostRulesFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Id":   ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PathMatchers": ubx.FieldSpec{
 			WireName: "path_matchers",
-			Kind: "list",
-			Fields: BetaUrlMap_PathMatchersFields,
+			Kind:     "list",
+			Fields:   BetaUrlMap_PathMatchersFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: BetaUrlMap_StatusFields,
+			Kind:     "object",
+			Fields:   BetaUrlMap_StatusFields,
 		},
 		"Tests": ubx.FieldSpec{
 			WireName: "tests",
-			Kind: "list",
-			Fields: BetaUrlMap_TestsFields,
+			Kind:     "list",
+			Fields:   BetaUrlMap_TestsFields,
 		},
 	},
 }

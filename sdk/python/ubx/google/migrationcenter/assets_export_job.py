@@ -79,96 +79,6 @@ _AssetsExportJob_PerformanceDataFields = {
     "max_days": ubx.FieldSpec(wire_name="max_days"),
 }
 
-_AssetsExportJob_RecentExecutions_Result_ErrorFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields = {
-    "file": ubx.FieldSpec(wire_name="file"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
-}
-
-_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields = {
-    "columns_count": ubx.FieldSpec(wire_name="columns_count"),
-    "row_count": ubx.FieldSpec(wire_name="row_count"),
-    "signed_uri": ubx.FieldSpec(
-        wire_name="signed_uri",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields = {
-    "signed_uri": ubx.FieldSpec(
-        wire_name="signed_uri",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutions_Result_OutputFiles_EntriesFields = {
-    "csv_output_file": ubx.FieldSpec(
-        wire_name="csv_output_file",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields,
-    ),
-    "file_size_bytes": ubx.FieldSpec(wire_name="file_size_bytes"),
-    "xlsx_output_file": ubx.FieldSpec(
-        wire_name="xlsx_output_file",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutions_Result_OutputFilesFields = {
-    "entries": ubx.FieldSpec(
-        wire_name="entries",
-        kind="list",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_EntriesFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutions_Result_SignedUrisFields = {
-    "signed_uris": ubx.FieldSpec(
-        wire_name="signed_uris",
-        kind="list",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutions_ResultFields = {
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_ErrorFields,
-    ),
-    "output_files": ubx.FieldSpec(
-        wire_name="output_files",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_OutputFilesFields,
-    ),
-    "signed_uris": ubx.FieldSpec(
-        wire_name="signed_uris",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_Result_SignedUrisFields,
-    ),
-}
-
-_AssetsExportJob_RecentExecutionsFields = {
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "execution_id": ubx.FieldSpec(wire_name="execution_id"),
-    "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-    "requested_asset_count": ubx.FieldSpec(wire_name="requested_asset_count"),
-    "result": ubx.FieldSpec(
-        wire_name="result",
-        kind="object",
-        fields=_AssetsExportJob_RecentExecutions_ResultFields,
-    ),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
 _AssetsExportJob_SignedUriDestinationFields = {
     "file_format": ubx.FieldSpec(wire_name="file_format"),
 }
@@ -177,26 +87,18 @@ _AssetsExportJob_SignedUriDestinationFields = {
 class AssetsExportJobConfig:
     # Conditions for selecting assets to export.
     condition: Any = None
-    # Output only. Resource creation time.
-    create_time: Any = None
     # Configuration for asset inventory details exports.
     inventory: Any = None
     # Optional. Labels as key value pairs. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
     labels: Any = None
-    # Output only. Identifier. Resource name.
-    name: Any = None
     # Configuration for network dependencies exports.
     network_dependencies: Any = None
     # Configuration for performance data exports.
     performance_data: Any = None
-    # Output only. Recent non expired executions of the job.
-    recent_executions: Any = None
     # Optional. When this value is set to 'true' the response will include all assets, including those that are hidden.
     show_hidden: Any = None
     # Signed URI destination configuration.
     signed_uri_destination: Any = None
-    # Output only. Resource update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AssetsExportJobAttrs:
@@ -231,20 +133,13 @@ AssetsExportJob = ubx.ResourceBinding(
             kind="object",
             fields=_AssetsExportJob_ConditionFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "inventory": ubx.FieldSpec(wire_name="inventory"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network_dependencies": ubx.FieldSpec(wire_name="network_dependencies"),
         "performance_data": ubx.FieldSpec(
             wire_name="performance_data",
             kind="object",
             fields=_AssetsExportJob_PerformanceDataFields,
-        ),
-        "recent_executions": ubx.FieldSpec(
-            wire_name="recent_executions",
-            kind="list",
-            fields=_AssetsExportJob_RecentExecutionsFields,
         ),
         "show_hidden": ubx.FieldSpec(wire_name="show_hidden"),
         "signed_uri_destination": ubx.FieldSpec(
@@ -252,6 +147,5 @@ AssetsExportJob = ubx.ResourceBinding(
             kind="object",
             fields=_AssetsExportJob_SignedUriDestinationFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

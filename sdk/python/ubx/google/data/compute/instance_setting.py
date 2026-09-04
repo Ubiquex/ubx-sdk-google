@@ -16,7 +16,6 @@ class InstanceSetting_Metadata:
 @dataclasses.dataclass
 class InstanceSettingConfig:
     project: Any = None
-    zone: Any = None
 
 @dataclasses.dataclass
 class InstanceSettingAttrs:
@@ -32,6 +31,5 @@ InstanceSetting = ubx.DataSourceBinding(
     wire_type="google_compute_instance_setting",
     fields={
         "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

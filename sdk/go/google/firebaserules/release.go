@@ -4,14 +4,10 @@ package firebaserules
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReleaseConfig struct {
-	// Output only. Time the release was created.
-	CreateTime any
 	// Required. Format: `projects/{project_id}/releases/{release_id}`
 	Name any
 	// Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.
 	RulesetName any
-	// Output only. Time the release was updated.
-	UpdateTime any
 }
 
 type ReleaseAttrs struct {
@@ -28,9 +24,7 @@ type ReleaseAttrs struct {
 var Release = ubx.ResourceBinding{
 	WireType: "google_firebaserules_release",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

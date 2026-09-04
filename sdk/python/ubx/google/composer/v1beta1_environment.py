@@ -615,24 +615,14 @@ _V1beta1Environment_StorageConfigFields = {
 class V1beta1EnvironmentConfig:
     # Configuration information for an environment.
     config: Any = None
-    # Output only. The time at which this environment was created.
-    create_time: Any = None
     # Optional. User-defined labels for this environment. The labels map can contain no more than 64 entries. Entries of the labels map are UTF8 strings that comply with the following restrictions: * Keys must conform to regexp: \p{Ll}\p{Lo}{0,62} * Values must conform to regexp: [\p{Ll}\p{Lo}\p{N}_-]{0,63} * Both keys and values are additionally constrained to be <= 128 bytes in size.
     labels: Any = None
     # Identifier. The resource name of the environment, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" EnvironmentId must start with a lowercase letter followed by up to 63 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
     name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # The current state of the environment.
     state: Any = None
     # The configuration for data storage in the environment.
     storage_config: Any = None
-    # Output only. The time at which this environment was last modified.
-    update_time: Any = None
-    # Output only. The UUID (Universally Unique IDentifier) associated with this environment. This value is generated when the environment is created.
-    uuid: Any = None
 
 @dataclasses.dataclass
 class V1beta1EnvironmentAttrs:
@@ -665,18 +655,13 @@ V1beta1Environment = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Environment_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "state": ubx.FieldSpec(wire_name="state"),
         "storage_config": ubx.FieldSpec(
             wire_name="storage_config",
             kind="object",
             fields=_V1beta1Environment_StorageConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "uuid": ubx.FieldSpec(wire_name="uuid"),
     },
 )

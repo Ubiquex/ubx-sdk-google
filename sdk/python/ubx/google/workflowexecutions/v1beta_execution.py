@@ -95,22 +95,10 @@ class V1betaExecutionConfig:
     argument: Any = None
     # The call logging level associated to this execution.
     call_log_level: Any = None
-    # Output only. Marks the end of execution, successful or not.
-    end_time: Any = None
     # Error describes why the execution was abnormally terminated.
     error: Any = None
-    # Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
-    name: Any = None
-    # Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
-    result: Any = None
-    # Output only. Marks the beginning of execution.
-    start_time: Any = None
-    # Output only. Current state of the execution.
-    state: Any = None
     # Represents the current status of this execution.
     status: Any = None
-    # Output only. Revision of the workflow this execution is using.
-    workflow_revision_id: Any = None
 
 @dataclasses.dataclass
 class V1betaExecutionAttrs:
@@ -140,21 +128,15 @@ V1betaExecution = ubx.ResourceBinding(
     fields={
         "argument": ubx.FieldSpec(wire_name="argument"),
         "call_log_level": ubx.FieldSpec(wire_name="call_log_level"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_V1betaExecution_ErrorFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "result": ubx.FieldSpec(wire_name="result"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_V1betaExecution_StatusFields,
         ),
-        "workflow_revision_id": ubx.FieldSpec(wire_name="workflow_revision_id"),
     },
 )

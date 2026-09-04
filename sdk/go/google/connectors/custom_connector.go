@@ -4,14 +4,6 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomConnectorConfig struct {
-	// Output only. Active connector versions.
-	ActiveConnectorVersions any
-	// Output only. All connector versions.
-	AllConnectorVersions any
-	// Output only. All marketplace versions.
-	AllMarketplaceVersions any
-	// Output only. Created time.
-	CreateTime any
 	// Required. Type of the custom connector.
 	CustomConnectorType any
 	// Optional. Description of the resource.
@@ -24,10 +16,6 @@ type CustomConnectorConfig struct {
 	Logo any
 	// Identifier. Resource name of the CustomConnector. Format: projects/{project}/locations/{location}/customConnectors/{connector}
 	Name any
-	// Output only. Published marketplace versions.
-	PublishedMarketplaceVersions any
-	// Output only. Updated time.
-	UpdateTime any
 }
 
 type CustomConnectorAttrs struct {
@@ -60,17 +48,11 @@ type CustomConnectorAttrs struct {
 var CustomConnector = ubx.ResourceBinding{
 	WireType: "google_connectors_custom_connector",
 	Fields: ubx.FieldMap{
-		"ActiveConnectorVersions": ubx.FieldSpec{WireName: "active_connector_versions"},
-		"AllConnectorVersions": ubx.FieldSpec{WireName: "all_connector_versions"},
-		"AllMarketplaceVersions": ubx.FieldSpec{WireName: "all_marketplace_versions"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomConnectorType": ubx.FieldSpec{WireName: "custom_connector_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Logo": ubx.FieldSpec{WireName: "logo"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublishedMarketplaceVersions": ubx.FieldSpec{WireName: "published_marketplace_versions"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Logo":                ubx.FieldSpec{WireName: "logo"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 	},
 }

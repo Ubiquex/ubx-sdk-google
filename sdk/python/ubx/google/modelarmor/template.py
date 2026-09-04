@@ -189,8 +189,6 @@ _Template_TemplateMetadataFields = {
 
 @dataclasses.dataclass
 class TemplateConfig:
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Filters configuration.
     filter_config: Any = None
     # Optional. Labels as key value pairs
@@ -199,8 +197,6 @@ class TemplateConfig:
     name: Any = None
     # Message describing TemplateMetadata
     template_metadata: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TemplateAttrs:
@@ -220,7 +216,6 @@ class TemplateAttrs:
 Template = ubx.ResourceBinding(
     wire_type="google_modelarmor_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "filter_config": ubx.FieldSpec(
             wire_name="filter_config",
             kind="object",
@@ -233,6 +228,5 @@ Template = ubx.ResourceBinding(
             kind="object",
             fields=_Template_TemplateMetadataFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

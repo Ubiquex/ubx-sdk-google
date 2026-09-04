@@ -89,30 +89,9 @@ const Deployment_DocumentationFields: FieldMap = {
   externalUri: "external_uri",
 };
 
-const Deployment_SourceMetadata_PluginInstanceActionSourceFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
-const Deployment_SourceMetadataFields: FieldMap = {
-  originalResourceCreateTime: "original_resource_create_time",
-  originalResourceId: "original_resource_id",
-  originalResourceUpdateTime: "original_resource_update_time",
-  pluginInstanceActionSource: {
-    wireName: "plugin_instance_action_source",
-    kind: "object",
-    fields: Deployment_SourceMetadata_PluginInstanceActionSourceFields,
-  },
-  sourceType: "source_type",
-};
-
 export interface DeploymentConfig {
-  /** Output only. The API versions linked to this deployment. Note: A particular deployment could be linked to multiple different API versions (of same or different APIs). */
-  apiVersions?: string[] | Computed<string[]>;
   /** Optional. The list of user defined attributes associated with the deployment resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource. */
   attributes?: Record<string, Deployment_Attributes> | Computed<Record<string, Deployment_Attributes>>;
-  /** Output only. The time at which the deployment was created. */
-  createTime?: string | Computed<string>;
   /** The attribute values associated with resource. */
   deploymentType?: Deployment_Attributes | Computed<Deployment_Attributes>;
   /** Optional. The description of the deployment. */
@@ -135,14 +114,10 @@ export interface DeploymentConfig {
   slo?: Deployment_Attributes | Computed<Deployment_Attributes>;
   /** Optional. The environment at source for the deployment. For example: prod, dev, staging, etc. */
   sourceEnvironment?: string | Computed<string>;
-  /** Output only. The list of sources and metadata from the sources of the deployment. */
-  sourceMetadata?: Deployment_SourceMetadata[] | Computed<Deployment_SourceMetadata[]>;
   /** Optional. The project to which the deployment belongs. For Google Cloud gateways, this will refer to the project identifier. For others like Edge/OPDK, this will refer to the org identifier. */
   sourceProject?: string | Computed<string>;
   /** The attribute values associated with resource. */
   sourceUri?: Deployment_Attributes | Computed<Deployment_Attributes>;
-  /** Output only. The time at which the deployment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DeploymentAttrs {
@@ -187,13 +162,11 @@ export interface DeploymentAttrs {
 export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
   wireType: "google_apihub_deployment",
   fields: {
-    apiVersions: "api_versions",
     attributes: {
       wireName: "attributes",
       kind: "map",
       fields: Deployment_AttributesFields,
     },
-    createTime: "create_time",
     deploymentType: {
       wireName: "deployment_type",
       kind: "object",
@@ -225,17 +198,11 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
       fields: Deployment_AttributesFields,
     },
     sourceEnvironment: "source_environment",
-    sourceMetadata: {
-      wireName: "source_metadata",
-      kind: "list",
-      fields: Deployment_SourceMetadataFields,
-    },
     sourceProject: "source_project",
     sourceUri: {
       wireName: "source_uri",
       kind: "object",
       fields: Deployment_AttributesFields,
     },
-    updateTime: "update_time",
   },
 };

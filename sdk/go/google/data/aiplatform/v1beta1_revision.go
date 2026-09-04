@@ -4,8 +4,8 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Revision_ExtractedMemories struct {
-	Context any
-	Fact any
+	Context        any
+	Fact           any
 	StructuredData any
 }
 
@@ -24,7 +24,7 @@ type V1beta1RevisionAttrs struct {
 	Fact any
 	// Output only. Represents the labels of the Memory Revision. These labels are applied to the MemoryRevision when it is created based on `GenerateMemoriesRequest.revision_labels`.
 	Labels any
-	Name any
+	Name   any
 	// Output only. Represents the structured value of the memory at the time of revision creation.
 	StructuredData any
 }

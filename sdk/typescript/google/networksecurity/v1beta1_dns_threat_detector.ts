@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1DnsThreatDetectorConfig {
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. A list of network resource names which aren't monitored by this DnsThreatDetector. Example: `projects/PROJECT_ID/global/networks/NETWORK_NAME`. */
   excludedNetworks?: string[] | Computed<string[]>;
   /** Optional. Any labels associated with the DnsThreatDetector, listed as key value pairs. */
@@ -12,8 +10,6 @@ export interface V1beta1DnsThreatDetectorConfig {
   name?: string | Computed<string>;
   /** Required. The provider used for DNS threat analysis. */
   provider?: string | Computed<string>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1DnsThreatDetectorAttrs {
@@ -34,11 +30,9 @@ export interface V1beta1DnsThreatDetectorAttrs {
 export const V1beta1DnsThreatDetector: ResourceBinding<V1beta1DnsThreatDetectorConfig, V1beta1DnsThreatDetectorAttrs> = {
   wireType: "google_networksecurity_v1beta1_dns_threat_detector",
   fields: {
-    createTime: "create_time",
     excludedNetworks: "excluded_networks",
     labels: "labels",
     name: "name",
     provider: "provider",
-    updateTime: "update_time",
   },
 };

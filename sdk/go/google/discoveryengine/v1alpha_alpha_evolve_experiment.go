@@ -19,7 +19,7 @@ type V1alphaAlphaEvolveExperiment_Config_EvolutionSettings struct {
 }
 
 type V1alphaAlphaEvolveExperiment_Config_GenerationSettings_Models struct {
-	Name any
+	Name   any
 	Weight any
 }
 
@@ -68,85 +68,79 @@ type V1alphaAlphaEvolveExperiment_Stats struct {
 }
 
 var V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfig_ParetoSamplingConfigFields = ubx.FieldMap{
-		"ParetoSamplingProbability": ubx.FieldSpec{WireName: "pareto_sampling_probability"},
-	}
+	"ParetoSamplingProbability": ubx.FieldSpec{WireName: "pareto_sampling_probability"},
+}
 
 var V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfigFields = ubx.FieldMap{
-		"ParetoSamplingConfig": ubx.FieldSpec{
-			WireName: "pareto_sampling_config",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfig_ParetoSamplingConfigFields,
-		},
-	}
+	"ParetoSamplingConfig": ubx.FieldSpec{
+		WireName: "pareto_sampling_config",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfig_ParetoSamplingConfigFields,
+	},
+}
 
 var V1alphaAlphaEvolveExperiment_Config_EvolutionSettingsFields = ubx.FieldMap{
-		"ParentSamplingConfig": ubx.FieldSpec{
-			WireName: "parent_sampling_config",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfigFields,
-		},
-	}
+	"ParentSamplingConfig": ubx.FieldSpec{
+		WireName: "parent_sampling_config",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_EvolutionSettings_ParentSamplingConfigFields,
+	},
+}
 
 var V1alphaAlphaEvolveExperiment_Config_GenerationSettings_ModelsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var V1alphaAlphaEvolveExperiment_Config_GenerationSettingsFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"IncludeFullProgramInPrompt": ubx.FieldSpec{WireName: "include_full_program_in_prompt"},
-		"Models": ubx.FieldSpec{
-			WireName: "models",
-			Kind: "list",
-			Fields: V1alphaAlphaEvolveExperiment_Config_GenerationSettings_ModelsFields,
-		},
-	}
+	"Context":                    ubx.FieldSpec{WireName: "context"},
+	"IncludeFullProgramInPrompt": ubx.FieldSpec{WireName: "include_full_program_in_prompt"},
+	"Models": ubx.FieldSpec{
+		WireName: "models",
+		Kind:     "list",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_GenerationSettings_ModelsFields,
+	},
+}
 
 var V1alphaAlphaEvolveExperiment_Config_RunSettingsFields = ubx.FieldMap{
-		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"MaxPrograms": ubx.FieldSpec{WireName: "max_programs"},
-	}
+	"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+	"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
+	"MaxPrograms": ubx.FieldSpec{WireName: "max_programs"},
+}
 
 var V1alphaAlphaEvolveExperiment_ConfigFields = ubx.FieldMap{
-		"EvolutionSettings": ubx.FieldSpec{
-			WireName: "evolution_settings",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_Config_EvolutionSettingsFields,
-		},
-		"GenerationSettings": ubx.FieldSpec{
-			WireName: "generation_settings",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_Config_GenerationSettingsFields,
-		},
-		"ProblemDescription": ubx.FieldSpec{WireName: "problem_description"},
-		"ProgramLanguage": ubx.FieldSpec{WireName: "program_language"},
-		"RunSettings": ubx.FieldSpec{
-			WireName: "run_settings",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_Config_RunSettingsFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"EvolutionSettings": ubx.FieldSpec{
+		WireName: "evolution_settings",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_EvolutionSettingsFields,
+	},
+	"GenerationSettings": ubx.FieldSpec{
+		WireName: "generation_settings",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_GenerationSettingsFields,
+	},
+	"ProblemDescription": ubx.FieldSpec{WireName: "problem_description"},
+	"ProgramLanguage":    ubx.FieldSpec{WireName: "program_language"},
+	"RunSettings": ubx.FieldSpec{
+		WireName: "run_settings",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveExperiment_Config_RunSettingsFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var V1alphaAlphaEvolveExperiment_StatsFields = ubx.FieldMap{
-		"CandidatesCount": ubx.FieldSpec{WireName: "candidates_count"},
-		"EvaluatedCandidatesCount": ubx.FieldSpec{WireName: "evaluated_candidates_count"},
-		"InputTokenCount": ubx.FieldSpec{WireName: "input_token_count"},
-		"OutputTokenCount": ubx.FieldSpec{WireName: "output_token_count"},
-	}
+	"CandidatesCount":          ubx.FieldSpec{WireName: "candidates_count"},
+	"EvaluatedCandidatesCount": ubx.FieldSpec{WireName: "evaluated_candidates_count"},
+	"InputTokenCount":          ubx.FieldSpec{WireName: "input_token_count"},
+	"OutputTokenCount":         ubx.FieldSpec{WireName: "output_token_count"},
+}
 
 type V1alphaAlphaEvolveExperimentConfig struct {
 	// Configuration of an experiment.
 	Config any
-	// Output only. Time when the experiment was created.
-	CreateTime any
-	// Output only. Specifies the name of the seed program used to start the experiment.
-	InitialAlphaEvolveProgram any
 	// Identifier. The full resource name of the experiment. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}`
 	Name any
-	// Output only. The state of the experiment.
-	State any
 	// Stats about the experiment.
 	Stats any
 }
@@ -171,17 +165,14 @@ var V1alphaAlphaEvolveExperiment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_ConfigFields,
+			Kind:     "object",
+			Fields:   V1alphaAlphaEvolveExperiment_ConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"InitialAlphaEvolveProgram": ubx.FieldSpec{WireName: "initial_alpha_evolve_program"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Stats": ubx.FieldSpec{
 			WireName: "stats",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveExperiment_StatsFields,
+			Kind:     "object",
+			Fields:   V1alphaAlphaEvolveExperiment_StatsFields,
 		},
 	},
 }

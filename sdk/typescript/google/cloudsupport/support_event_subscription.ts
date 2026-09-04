@@ -2,22 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SupportEventSubscriptionConfig {
-  /** Output only. The time at which the subscription was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which the subscription was deleted. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. Reason why subscription is failing. State of subscription must be FAILING in order for this to have a value. */
-  failureReason?: string | Computed<string>;
   /** Identifier. The resource name of the support event subscription. */
   name?: string | Computed<string>;
   /** Required. The name of the Pub/Sub topic to publish notifications to. Format: projects/{project}/topics/{topic} */
   pubSubTopic?: string | Computed<string>;
-  /** Output only. The time at which the subscription will be purged. */
-  purgeTime?: string | Computed<string>;
-  /** Output only. The state of the subscription. */
-  state?: string | Computed<string>;
-  /** Output only. The time at which the subscription was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SupportEventSubscriptionAttrs {
@@ -42,13 +30,7 @@ export interface SupportEventSubscriptionAttrs {
 export const SupportEventSubscription: ResourceBinding<SupportEventSubscriptionConfig, SupportEventSubscriptionAttrs> = {
   wireType: "google_cloudsupport_support_event_subscription",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    failureReason: "failure_reason",
     name: "name",
     pubSubTopic: "pub_sub_topic",
-    purgeTime: "purge_time",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -8,16 +8,10 @@ type ChannelConnectionConfig struct {
 	ActivationToken any
 	// Required. The name of the connected subscriber Channel. This is a weak reference to avoid cross project and cross accounts references. This must be in `projects/{project}/location/{location}/channels/{channel_id}` format.
 	Channel any
-	// Output only. The creation time.
-	CreateTime any
 	// Optional. Resource labels.
 	Labels any
 	// Required. The name of the connection.
 	Name any
-	// Output only. Server assigned ID of the resource. The server guarantees uniqueness and immutability until deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type ChannelConnectionAttrs struct {
@@ -41,11 +35,8 @@ var ChannelConnection = ubx.ResourceBinding{
 	WireType: "google_eventarc_channel_connection",
 	Fields: ubx.FieldMap{
 		"ActivationToken": ubx.FieldSpec{WireName: "activation_token"},
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Channel":         ubx.FieldSpec{WireName: "channel"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 	},
 }

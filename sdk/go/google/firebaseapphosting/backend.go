@@ -19,21 +19,9 @@ type Backend_ManagedResources struct {
 }
 
 var Backend_CodebaseFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-	}
-
-var Backend_ManagedResources_RunServiceFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
-
-var Backend_ManagedResourcesFields = ubx.FieldMap{
-		"RunService": ubx.FieldSpec{
-			WireName: "run_service",
-			Kind: "object",
-			Fields: Backend_ManagedResources_RunServiceFields,
-		},
-	}
+	"Repository":    ubx.FieldSpec{WireName: "repository"},
+	"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+}
 
 type BackendConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -42,38 +30,22 @@ type BackendConfig struct {
 	AppId any
 	// The connection to an external source repository to watch for event-driven updates to the backend.
 	Codebase any
-	// Output only. Time at which the backend was created.
-	CreateTime any
-	// Output only. Time at which the backend was deleted.
-	DeleteTime any
 	// Optional. Human-readable name. 63 character limit.
 	DisplayName any
 	// Optional. The environment name of the backend, used to load environment variables from environment specific configuration.
 	Environment any
-	// Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-	Etag any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects.
 	Labels any
-	// Output only. A list of the resources managed by this backend.
-	ManagedResources any
 	// Optional. Deprecated: Use `environment` instead.
 	Mode any
 	// Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`.
 	Name any
-	// Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO.
-	Reconciling any
 	// Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default.
 	RequestLogsDisabled any
 	// Required. The name of the service account used for Cloud Build and Cloud Run. Should have the role roles/firebaseapphosting.computeRunner or equivalent permissions.
 	ServiceAccount any
 	// Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS).
 	ServingLocality any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. Time at which the backend was last updated.
-	UpdateTime any
-	// Output only. The primary URI to communicate with the backend.
-	Uri any
 }
 
 type BackendAttrs struct {
@@ -121,31 +93,19 @@ var Backend = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_backend",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":       ubx.FieldSpec{WireName: "app_id"},
 		"Codebase": ubx.FieldSpec{
 			WireName: "codebase",
-			Kind: "object",
-			Fields: Backend_CodebaseFields,
+			Kind:     "object",
+			Fields:   Backend_CodebaseFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ManagedResources": ubx.FieldSpec{
-			WireName: "managed_resources",
-			Kind: "list",
-			Fields: Backend_ManagedResourcesFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Environment":         ubx.FieldSpec{WireName: "environment"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Mode":                ubx.FieldSpec{WireName: "mode"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"RequestLogsDisabled": ubx.FieldSpec{WireName: "request_logs_disabled"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServingLocality": ubx.FieldSpec{WireName: "serving_locality"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"ServiceAccount":      ubx.FieldSpec{WireName: "service_account"},
+		"ServingLocality":     ubx.FieldSpec{WireName: "serving_locality"},
 	},
 }

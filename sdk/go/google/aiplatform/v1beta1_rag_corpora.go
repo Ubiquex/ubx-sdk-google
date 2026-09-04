@@ -155,207 +155,195 @@ type V1beta1RagCorpora_VertexAiSearchConfig struct {
 }
 
 var V1beta1RagCorpora_CorpusStatusFields = ubx.FieldMap{
-		"ErrorStatus": ubx.FieldSpec{WireName: "error_status"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorStatus": ubx.FieldSpec{WireName: "error_status"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpus_LlmParserFields = ubx.FieldMap{
-		"CustomParsingPrompt": ubx.FieldSpec{WireName: "custom_parsing_prompt"},
-		"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
-		"MaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"CustomParsingPrompt":            ubx.FieldSpec{WireName: "custom_parsing_prompt"},
+	"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
+	"MaxParsingRequestsPerMin":       ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
+	"ModelName":                      ubx.FieldSpec{WireName: "model_name"},
+}
 
 var V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpusFields = ubx.FieldMap{
-		"LlmParser": ubx.FieldSpec{
-			WireName: "llm_parser",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpus_LlmParserFields,
-		},
-	}
+	"LlmParser": ubx.FieldSpec{
+		WireName: "llm_parser",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpus_LlmParserFields,
+	},
+}
 
 var V1beta1RagCorpora_CorpusTypeConfigFields = ubx.FieldMap{
-		"DocumentCorpus": ubx.FieldSpec{WireName: "document_corpus"},
-		"MemoryCorpus": ubx.FieldSpec{
-			WireName: "memory_corpus",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpusFields,
-		},
-	}
+	"DocumentCorpus": ubx.FieldSpec{WireName: "document_corpus"},
+	"MemoryCorpus": ubx.FieldSpec{
+		WireName: "memory_corpus",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_CorpusTypeConfig_MemoryCorpusFields,
+	},
+}
 
 var V1beta1RagCorpora_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_DenseEmbeddingModelPredictionEndpointFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-	}
+	"Endpoint":       ubx.FieldSpec{WireName: "endpoint"},
+	"Model":          ubx.FieldSpec{WireName: "model"},
+	"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
+}
 
 var V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfig_Bm25Fields = ubx.FieldMap{
-		"B": ubx.FieldSpec{WireName: "b"},
-		"K1": ubx.FieldSpec{WireName: "k1"},
-		"Multilingual": ubx.FieldSpec{WireName: "multilingual"},
-	}
+	"B":            ubx.FieldSpec{WireName: "b"},
+	"K1":           ubx.FieldSpec{WireName: "k1"},
+	"Multilingual": ubx.FieldSpec{WireName: "multilingual"},
+}
 
 var V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfigFields = ubx.FieldMap{
-		"Bm25": ubx.FieldSpec{
-			WireName: "bm25",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfig_Bm25Fields,
-		},
-	}
+	"Bm25": ubx.FieldSpec{
+		WireName: "bm25",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfig_Bm25Fields,
+	},
+}
 
 var V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfigFields = ubx.FieldMap{
-		"DenseEmbeddingModelPredictionEndpoint": ubx.FieldSpec{
-			WireName: "dense_embedding_model_prediction_endpoint",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_DenseEmbeddingModelPredictionEndpointFields,
-		},
-		"SparseEmbeddingConfig": ubx.FieldSpec{
-			WireName: "sparse_embedding_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfigFields,
-		},
-	}
+	"DenseEmbeddingModelPredictionEndpoint": ubx.FieldSpec{
+		WireName: "dense_embedding_model_prediction_endpoint",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_DenseEmbeddingModelPredictionEndpointFields,
+	},
+	"SparseEmbeddingConfig": ubx.FieldSpec{
+		WireName: "sparse_embedding_config",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_SparseEmbeddingConfigFields,
+	},
+}
 
 var V1beta1RagCorpora_RagEmbeddingModelConfigFields = ubx.FieldMap{
-		"HybridSearchConfig": ubx.FieldSpec{
-			WireName: "hybrid_search_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfigFields,
-		},
-		"VertexPredictionEndpoint": ubx.FieldSpec{
-			WireName: "vertex_prediction_endpoint",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_DenseEmbeddingModelPredictionEndpointFields,
-		},
-	}
+	"HybridSearchConfig": ubx.FieldSpec{
+		WireName: "hybrid_search_config",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfigFields,
+	},
+	"VertexPredictionEndpoint": ubx.FieldSpec{
+		WireName: "vertex_prediction_endpoint",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfig_HybridSearchConfig_DenseEmbeddingModelPredictionEndpointFields,
+	},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_ApiAuthFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_ApiAuth_ApiKeyConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_ApiAuth_ApiKeyConfigFields,
+	},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_PineconeFields = ubx.FieldMap{
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-	}
+	"IndexName": ubx.FieldSpec{WireName: "index_name"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_RagManagedDb_AnnFields = ubx.FieldMap{
-		"LeafCount": ubx.FieldSpec{WireName: "leaf_count"},
-		"TreeDepth": ubx.FieldSpec{WireName: "tree_depth"},
-	}
+	"LeafCount": ubx.FieldSpec{WireName: "leaf_count"},
+	"TreeDepth": ubx.FieldSpec{WireName: "tree_depth"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_RagManagedDbFields = ubx.FieldMap{
-		"Ann": ubx.FieldSpec{
-			WireName: "ann",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_RagManagedDb_AnnFields,
-		},
-		"Knn": ubx.FieldSpec{WireName: "knn"},
-	}
+	"Ann": ubx.FieldSpec{
+		WireName: "ann",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_RagManagedDb_AnnFields,
+	},
+	"Knn": ubx.FieldSpec{WireName: "knn"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_RagManagedVertexVectorSearchFields = ubx.FieldMap{
-		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
-	}
+	"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_VertexFeatureStoreFields = ubx.FieldMap{
-		"FeatureViewResourceName": ubx.FieldSpec{WireName: "feature_view_resource_name"},
-	}
+	"FeatureViewResourceName": ubx.FieldSpec{WireName: "feature_view_resource_name"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_VertexVectorSearchFields = ubx.FieldMap{
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"IndexEndpoint": ubx.FieldSpec{WireName: "index_endpoint"},
-	}
+	"Index":         ubx.FieldSpec{WireName: "index"},
+	"IndexEndpoint": ubx.FieldSpec{WireName: "index_endpoint"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfig_WeaviateFields = ubx.FieldMap{
-		"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
-		"HttpEndpoint": ubx.FieldSpec{WireName: "http_endpoint"},
-	}
+	"CollectionName": ubx.FieldSpec{WireName: "collection_name"},
+	"HttpEndpoint":   ubx.FieldSpec{WireName: "http_endpoint"},
+}
 
 var V1beta1RagCorpora_RagVectorDbConfigFields = ubx.FieldMap{
-		"ApiAuth": ubx.FieldSpec{
-			WireName: "api_auth",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_ApiAuthFields,
-		},
-		"Pinecone": ubx.FieldSpec{
-			WireName: "pinecone",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_PineconeFields,
-		},
-		"RagEmbeddingModelConfig": ubx.FieldSpec{
-			WireName: "rag_embedding_model_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfigFields,
-		},
-		"RagManagedDb": ubx.FieldSpec{
-			WireName: "rag_managed_db",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_RagManagedDbFields,
-		},
-		"RagManagedVertexVectorSearch": ubx.FieldSpec{
-			WireName: "rag_managed_vertex_vector_search",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_RagManagedVertexVectorSearchFields,
-		},
-		"VertexFeatureStore": ubx.FieldSpec{
-			WireName: "vertex_feature_store",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_VertexFeatureStoreFields,
-		},
-		"VertexVectorSearch": ubx.FieldSpec{
-			WireName: "vertex_vector_search",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_VertexVectorSearchFields,
-		},
-		"Weaviate": ubx.FieldSpec{
-			WireName: "weaviate",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfig_WeaviateFields,
-		},
-	}
+	"ApiAuth": ubx.FieldSpec{
+		WireName: "api_auth",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_ApiAuthFields,
+	},
+	"Pinecone": ubx.FieldSpec{
+		WireName: "pinecone",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_PineconeFields,
+	},
+	"RagEmbeddingModelConfig": ubx.FieldSpec{
+		WireName: "rag_embedding_model_config",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagEmbeddingModelConfigFields,
+	},
+	"RagManagedDb": ubx.FieldSpec{
+		WireName: "rag_managed_db",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_RagManagedDbFields,
+	},
+	"RagManagedVertexVectorSearch": ubx.FieldSpec{
+		WireName: "rag_managed_vertex_vector_search",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_RagManagedVertexVectorSearchFields,
+	},
+	"VertexFeatureStore": ubx.FieldSpec{
+		WireName: "vertex_feature_store",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_VertexFeatureStoreFields,
+	},
+	"VertexVectorSearch": ubx.FieldSpec{
+		WireName: "vertex_vector_search",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_VertexVectorSearchFields,
+	},
+	"Weaviate": ubx.FieldSpec{
+		WireName: "weaviate",
+		Kind:     "object",
+		Fields:   V1beta1RagCorpora_RagVectorDbConfig_WeaviateFields,
+	},
+}
 
 var V1beta1RagCorpora_VertexAiSearchConfigFields = ubx.FieldMap{
-		"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
-	}
+	"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
+}
 
 type V1beta1RagCorporaConfig struct {
 	// RagCorpus status.
 	CorpusStatus any
 	// The config for the corpus type of the RagCorpus.
 	CorpusTypeConfig any
-	// Output only. Timestamp when this RagCorpus was created.
-	CreateTime any
 	// Optional. The description of the RagCorpus.
 	Description any
 	// Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. The resource name of the RagCorpus.
-	Name any
 	// Config for the embedding model to use for RAG.
 	RagEmbeddingModelConfig any
-	// Output only. Number of RagFiles in the RagCorpus. NOTE: This field is not populated in the response of VertexRagDataService.ListRagCorpora.
-	RagFilesCount any
 	// Config for the Vector DB to use for RAG.
 	RagVectorDbConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Timestamp when this RagCorpus was last updated.
-	UpdateTime any
 	// Config for the Vector DB to use for RAG.
 	VectorDbConfig any
 	// Config for the Vertex AI Search.
@@ -400,46 +388,40 @@ var V1beta1RagCorpora = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CorpusStatus": ubx.FieldSpec{
 			WireName: "corpus_status",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_CorpusStatusFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_CorpusStatusFields,
 		},
 		"CorpusTypeConfig": ubx.FieldSpec{
 			WireName: "corpus_type_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_CorpusTypeConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_CorpusTypeConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_EncryptionSpecFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"RagEmbeddingModelConfig": ubx.FieldSpec{
 			WireName: "rag_embedding_model_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagEmbeddingModelConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_RagEmbeddingModelConfigFields,
 		},
-		"RagFilesCount": ubx.FieldSpec{WireName: "rag_files_count"},
 		"RagVectorDbConfig": ubx.FieldSpec{
 			WireName: "rag_vector_db_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_RagVectorDbConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VectorDbConfig": ubx.FieldSpec{
 			WireName: "vector_db_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_RagVectorDbConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_RagVectorDbConfigFields,
 		},
 		"VertexAiSearchConfig": ubx.FieldSpec{
 			WireName: "vertex_ai_search_config",
-			Kind: "object",
-			Fields: V1beta1RagCorpora_VertexAiSearchConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagCorpora_VertexAiSearchConfigFields,
 		},
 	},
 }

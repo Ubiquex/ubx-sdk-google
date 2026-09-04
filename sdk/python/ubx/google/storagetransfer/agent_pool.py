@@ -23,8 +23,6 @@ class AgentPoolConfig:
     display_name: Any = None
     # Required. Specifies a unique string that identifies the agent pool. Format: `projects/{project_id}/agentPools/{agent_pool_id}`
     name: Any = None
-    # Output only. Specifies the state of the AgentPool.
-    state: Any = None
 
 @dataclasses.dataclass
 class AgentPoolAttrs:
@@ -47,6 +45,5 @@ AgentPool = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

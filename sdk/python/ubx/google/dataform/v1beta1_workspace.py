@@ -26,8 +26,6 @@ _V1beta1Workspace_PrivateResourceMetadataFields = {
 
 @dataclasses.dataclass
 class V1beta1WorkspaceConfig:
-    # Output only. The timestamp of when the workspace was created.
-    create_time: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
     # Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
@@ -36,16 +34,12 @@ class V1beta1WorkspaceConfig:
     disable_moves: Any = None
     # Immutable. Controls the enablement of branch checkout for the workspace. When set to True, the workspace will be allowed to checkout branches.
     enable_branch_management: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Identifier. The workspace's name.
     name: Any = None
     # Optional. Input only. Immutable. The name of the default upstream branch for all pull/push operations in the remote repository for this workspace. If empty, the HEAD branch from repository will be used.
     original_branch: Any = None
     # Metadata used to identify if a resource is user scoped.
     private_resource_metadata: Any = None
-    # Output only. If set to true, the workspace was created as a shallow clone. Will be set to true if the depth field is set to a value greater than 0, otherwise it will be set to false.
-    shallow: Any = None
 
 @dataclasses.dataclass
 class V1beta1WorkspaceAttrs:
@@ -73,7 +67,6 @@ class V1beta1WorkspaceAttrs:
 V1beta1Workspace = ubx.ResourceBinding(
     wire_type="google_dataform_v1beta1_workspace",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_encryption_state": ubx.FieldSpec(
             wire_name="data_encryption_state",
             kind="object",
@@ -82,7 +75,6 @@ V1beta1Workspace = ubx.ResourceBinding(
         "depth": ubx.FieldSpec(wire_name="depth"),
         "disable_moves": ubx.FieldSpec(wire_name="disable_moves"),
         "enable_branch_management": ubx.FieldSpec(wire_name="enable_branch_management"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
         "original_branch": ubx.FieldSpec(wire_name="original_branch"),
         "private_resource_metadata": ubx.FieldSpec(
@@ -90,6 +82,5 @@ V1beta1Workspace = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Workspace_PrivateResourceMetadataFields,
         ),
-        "shallow": ubx.FieldSpec(wire_name="shallow"),
     },
 )

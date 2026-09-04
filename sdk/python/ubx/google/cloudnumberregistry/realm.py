@@ -52,8 +52,6 @@ _Realm_DiscoveryMetadataFields = {
 class RealmConfig:
     # Aggregated data for the Realm.
     aggregated_data: Any = None
-    # Output only. The time at which the Realm was created.
-    create_time: Any = None
     # Metadata about a discovered resource, tracking event times, state, and source information.
     discovery_metadata: Any = None
     # Optional. IP version of the Realm.
@@ -68,8 +66,6 @@ class RealmConfig:
     registry_book: Any = None
     # Required. Traffic type of the Realm.
     traffic_type: Any = None
-    # Output only. The time at which the Realm was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class RealmAttrs:
@@ -102,7 +98,6 @@ Realm = ubx.ResourceBinding(
             kind="object",
             fields=_Realm_AggregatedDataFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "discovery_metadata": ubx.FieldSpec(
             wire_name="discovery_metadata",
             kind="object",
@@ -114,6 +109,5 @@ Realm = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "registry_book": ubx.FieldSpec(wire_name="registry_book"),
         "traffic_type": ubx.FieldSpec(wire_name="traffic_type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

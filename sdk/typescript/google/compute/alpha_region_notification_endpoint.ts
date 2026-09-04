@@ -39,22 +39,12 @@ const AlphaRegionNotificationEndpoint_GrpcSettingsFields: FieldMap = {
 };
 
 export interface AlphaRegionNotificationEndpointConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Represents a gRPC setting that describes one gRPC notification endpoint and the retry duration attempting to send notification to this endpoint. */
   grpcSettings?: AlphaRegionNotificationEndpoint_GrpcSettings | Computed<AlphaRegionNotificationEndpoint_GrpcSettings>;
-  /** Output only. [Output Only] A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the notification endpoint resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface AlphaRegionNotificationEndpointAttrs {
@@ -79,17 +69,12 @@ export interface AlphaRegionNotificationEndpointAttrs {
 export const AlphaRegionNotificationEndpoint: ResourceBinding<AlphaRegionNotificationEndpointConfig, AlphaRegionNotificationEndpointAttrs> = {
   wireType: "google_compute_alpha_region_notification_endpoint",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     grpcSettings: {
       wireName: "grpc_settings",
       kind: "object",
       fields: AlphaRegionNotificationEndpoint_GrpcSettingsFields,
     },
-    id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
-    selfLink: "self_link",
   },
 };

@@ -150,8 +150,6 @@ class BudgetConfig:
     display_name: Any = None
     # Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag causes an update to overwrite other changes.
     etag: Any = None
-    # Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
-    name: Any = None
     # NotificationsRule defines notifications that are sent based on budget spend and thresholds.
     notifications_rule: Any = None
     ownership_scope: Any = None
@@ -191,7 +189,6 @@ Budget = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "notifications_rule": ubx.FieldSpec(
             wire_name="notifications_rule",
             kind="object",

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface DeploymentConfig {
-  name: string | Computed<string>;
 }
 
 export interface DeploymentAttrs {
@@ -18,6 +17,5 @@ export interface DeploymentAttrs {
 export const Deployment: DataSourceBinding<DeploymentConfig, DeploymentAttrs> = {
   wireType: "google_sasportal_deployment",
   fields: {
-    name: "name",
   },
 };

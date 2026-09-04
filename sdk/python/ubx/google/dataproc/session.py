@@ -327,18 +327,8 @@ _Session_RuntimeInfoFields = {
     ),
 }
 
-_Session_StateHistoryFields = {
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_message": ubx.FieldSpec(wire_name="state_message"),
-    "state_start_time": ubx.FieldSpec(wire_name="state_start_time"),
-}
-
 @dataclasses.dataclass
 class SessionConfig:
-    # Output only. The time when the session was created.
-    create_time: Any = None
-    # Output only. The email address of the user who created the session.
-    creator: Any = None
     # Environment configuration for a workload.
     environment_config: Any = None
     # Jupyter configuration for an interactive session.
@@ -355,18 +345,8 @@ class SessionConfig:
     session_template: Any = None
     # Spark connect configuration for an interactive session.
     spark_connect_session: Any = None
-    # Output only. A state of the session.
-    state: Any = None
-    # Output only. Historical state information for the session.
-    state_history: Any = None
-    # Output only. Session state details, such as the failure description if the state is FAILED.
-    state_message: Any = None
-    # Output only. The time when the session entered the current state.
-    state_time: Any = None
     # Optional. The email address of the user who owns the session.
     user: Any = None
-    # Output only. A session UUID (Unique Universal Identifier). The service generates this value when it creates the session.
-    uuid: Any = None
 
 @dataclasses.dataclass
 class SessionAttrs:
@@ -406,8 +386,6 @@ class SessionAttrs:
 Session = ubx.ResourceBinding(
     wire_type="google_dataproc_session",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "environment_config": ubx.FieldSpec(
             wire_name="environment_config",
             kind="object",
@@ -432,15 +410,6 @@ Session = ubx.ResourceBinding(
         ),
         "session_template": ubx.FieldSpec(wire_name="session_template"),
         "spark_connect_session": ubx.FieldSpec(wire_name="spark_connect_session"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_history": ubx.FieldSpec(
-            wire_name="state_history",
-            kind="list",
-            fields=_Session_StateHistoryFields,
-        ),
-        "state_message": ubx.FieldSpec(wire_name="state_message"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
         "user": ubx.FieldSpec(wire_name="user"),
-        "uuid": ubx.FieldSpec(wire_name="uuid"),
     },
 )

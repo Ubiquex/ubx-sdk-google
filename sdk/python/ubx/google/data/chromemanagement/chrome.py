@@ -63,7 +63,7 @@ class Chrome_ServiceError:
 
 @dataclasses.dataclass
 class ChromeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ChromeAttrs:
@@ -110,6 +110,5 @@ class ChromeAttrs:
 Chrome = ubx.DataSourceBinding(
     wire_type="google_chromemanagement_chrome",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

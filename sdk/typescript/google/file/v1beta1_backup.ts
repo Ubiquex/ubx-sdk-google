@@ -2,36 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1BackupConfig {
-  /** Output only. Capacity of the source file share when the backup was created. */
-  capacityGb?: string | Computed<string>;
-  /** Output only. The time when the backup was created. */
-  createTime?: string | Computed<string>;
   /** A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
-  /** Output only. Amount of bytes that will be downloaded if the backup is restored */
-  downloadBytes?: string | Computed<string>;
-  /** Output only. The file system protocol of the source Filestore instance that this backup is created from. */
-  fileSystemProtocol?: string | Computed<string>;
   /** Immutable. KMS key name used for data encryption. */
   kmsKeyName?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the backup, in the format `projects/{project_id}/locations/{location_id}/backups/{backup_id}`. */
-  name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Name of the file share in the source Filestore instance that the backup is created from. */
   sourceFileShare?: string | Computed<string>;
   /** The resource name of the source Filestore instance, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}`, used to create this backup. */
   sourceInstance?: string | Computed<string>;
-  /** Output only. The service tier of the source Filestore instance that this backup is created from. */
-  sourceInstanceTier?: string | Computed<string>;
-  /** Output only. The backup state. */
-  state?: string | Computed<string>;
-  /** Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion. */
-  storageBytes?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value */
   tags?: Record<string, string> | Computed<Record<string, string>>;
 }
@@ -74,21 +54,11 @@ export interface V1beta1BackupAttrs {
 export const V1beta1Backup: ResourceBinding<V1beta1BackupConfig, V1beta1BackupAttrs> = {
   wireType: "google_file_v1beta1_backup",
   fields: {
-    capacityGb: "capacity_gb",
-    createTime: "create_time",
     description: "description",
-    downloadBytes: "download_bytes",
-    fileSystemProtocol: "file_system_protocol",
     kmsKeyName: "kms_key_name",
     labels: "labels",
-    name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     sourceFileShare: "source_file_share",
     sourceInstance: "source_instance",
-    sourceInstanceTier: "source_instance_tier",
-    state: "state",
-    storageBytes: "storage_bytes",
     tags: "tags",
   },
 };

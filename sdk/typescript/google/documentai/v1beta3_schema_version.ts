@@ -157,8 +157,6 @@ const V1beta3SchemaVersion_SchemaFields: FieldMap = {
 };
 
 export interface V1beta3SchemaVersionConfig {
-  /** Output only. The time when the SchemaVersion was created. */
-  createTime?: string | Computed<string>;
   /** Required. The user-defined name of the SchemaVersion. */
   displayName?: string | Computed<string>;
   /** Optional. The {{gcp_name_short}} labels for the SchemaVersion. */
@@ -185,7 +183,6 @@ export interface V1beta3SchemaVersionAttrs {
 export const V1beta3SchemaVersion: ResourceBinding<V1beta3SchemaVersionConfig, V1beta3SchemaVersionAttrs> = {
   wireType: "google_documentai_v1beta3_schema_version",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     labels: "labels",
     name: "name",

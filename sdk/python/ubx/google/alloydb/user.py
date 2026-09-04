@@ -12,8 +12,6 @@ class UserConfig:
     database_roles: Any = None
     # Input only. If the user already exists and it has additional roles, keep them granted.
     keep_extra_roles: Any = None
-    # Output only. Name of the resource in the form of projects/{project}/locations/{location}/cluster/{cluster}/users/{user}.
-    name: Any = None
     # Input only. Password for the user.
     password: Any = None
     # Optional. Type of this user.
@@ -37,7 +35,6 @@ User = ubx.ResourceBinding(
     fields={
         "database_roles": ubx.FieldSpec(wire_name="database_roles"),
         "keep_extra_roles": ubx.FieldSpec(wire_name="keep_extra_roles"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "password": ubx.FieldSpec(wire_name="password"),
         "user_type": ubx.FieldSpec(wire_name="user_type"),
     },

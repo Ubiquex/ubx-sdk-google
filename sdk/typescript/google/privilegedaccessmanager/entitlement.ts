@@ -125,8 +125,6 @@ export interface EntitlementConfig {
   additionalNotificationTargets?: Entitlement_AdditionalNotificationTargets | Computed<Entitlement_AdditionalNotificationTargets>;
   /** Different types of approval workflows that can be used to gate privileged access granting. */
   approvalWorkflow?: Entitlement_ApprovalWorkflow | Computed<Entitlement_ApprovalWorkflow>;
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Who can create grants using this entitlement. This list should contain at most one entry. */
   eligibleUsers?: Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers[] | Computed<Entitlement_ApprovalWorkflow_ManualApprovals_Steps_Approvers[]>;
   /** An `etag` is used for optimistic concurrency control as a way to prevent simultaneous updates to the same entitlement. An `etag` is returned in the response to `GetEntitlement` and the caller should put the `etag` in the request to `UpdateEntitlement` so that their change is applied on the same version. If this field is omitted or if there is a mismatch while updating an entitlement, then the server rejects the request. */
@@ -139,10 +137,6 @@ export interface EntitlementConfig {
   privilegedAccess?: Entitlement_PrivilegedAccess | Computed<Entitlement_PrivilegedAccess>;
   /** Defines how a requester must provide a justification when requesting access. */
   requesterJustificationConfig?: Entitlement_RequesterJustificationConfig | Computed<Entitlement_RequesterJustificationConfig>;
-  /** Output only. Current state of this entitlement. */
-  state?: string | Computed<string>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntitlementAttrs {
@@ -183,7 +177,6 @@ export const Entitlement: ResourceBinding<EntitlementConfig, EntitlementAttrs> =
       kind: "object",
       fields: Entitlement_ApprovalWorkflowFields,
     },
-    createTime: "create_time",
     eligibleUsers: {
       wireName: "eligible_users",
       kind: "list",
@@ -202,7 +195,5 @@ export const Entitlement: ResourceBinding<EntitlementConfig, EntitlementAttrs> =
       kind: "object",
       fields: Entitlement_RequesterJustificationConfigFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -894,7 +894,6 @@ _TestCase_TestConfigFields = {
 
 @dataclasses.dataclass
 class TestCaseConfig:
-    creation_time: Any = None
     display_name: Any = None
     last_test_result: Any = None
     name: Any = None
@@ -917,7 +916,6 @@ class TestCaseAttrs:
 TestCase = ubx.ResourceBinding(
     wire_type="google_dialogflow_test_case",
     fields={
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "last_test_result": ubx.FieldSpec(
             wire_name="last_test_result",

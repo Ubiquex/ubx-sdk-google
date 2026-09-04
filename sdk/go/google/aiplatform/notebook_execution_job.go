@@ -120,115 +120,113 @@ type NotebookExecutionJob_WorkbenchRuntime struct {
 }
 
 var NotebookExecutionJob_CustomEnvironmentSpec_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var NotebookExecutionJob_CustomEnvironmentSpec_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpec_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":      ubx.FieldSpec{WireName: "machine_type"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_CustomEnvironmentSpec_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields = ubx.FieldMap{
-		"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
+	"Network":              ubx.FieldSpec{WireName: "network"},
+	"Subnetwork":           ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-	}
+	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
+}
 
 var NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var NotebookExecutionJob_CustomEnvironmentSpecFields = ubx.FieldMap{
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpec_MachineSpecFields,
-		},
-		"NetworkSpec": ubx.FieldSpec{
-			WireName: "network_spec",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields,
-		},
-		"PersistentDiskSpec": ubx.FieldSpec{
-			WireName: "persistent_disk_spec",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields,
-		},
-	}
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_CustomEnvironmentSpec_MachineSpecFields,
+	},
+	"NetworkSpec": ubx.FieldSpec{
+		WireName: "network_spec",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields,
+	},
+	"PersistentDiskSpec": ubx.FieldSpec{
+		WireName: "persistent_disk_spec",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields,
+	},
+}
 
 var NotebookExecutionJob_DataformRepositorySourceFields = ubx.FieldMap{
-		"CommitSha": ubx.FieldSpec{WireName: "commit_sha"},
-		"DataformRepositoryResourceName": ubx.FieldSpec{WireName: "dataform_repository_resource_name"},
-	}
+	"CommitSha":                      ubx.FieldSpec{WireName: "commit_sha"},
+	"DataformRepositoryResourceName": ubx.FieldSpec{WireName: "dataform_repository_resource_name"},
+}
 
 var NotebookExecutionJob_DirectNotebookSourceFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var NotebookExecutionJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var NotebookExecutionJob_GcsNotebookSourceFields = ubx.FieldMap{
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var NotebookExecutionJob_StatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-	}
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+	"Tag":        ubx.FieldSpec{WireName: "tag"},
+}
 
 var NotebookExecutionJob_WorkbenchRuntime_VmImageFields = ubx.FieldMap{
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Family":  ubx.FieldSpec{WireName: "family"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Project": ubx.FieldSpec{WireName: "project"},
+}
 
 var NotebookExecutionJob_WorkbenchRuntimeFields = ubx.FieldMap{
-		"CustomContainerImage": ubx.FieldSpec{
-			WireName: "custom_container_image",
-			Kind: "object",
-			Fields: NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields,
-		},
-		"VmImage": ubx.FieldSpec{
-			WireName: "vm_image",
-			Kind: "object",
-			Fields: NotebookExecutionJob_WorkbenchRuntime_VmImageFields,
-		},
-	}
+	"CustomContainerImage": ubx.FieldSpec{
+		WireName: "custom_container_image",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields,
+	},
+	"VmImage": ubx.FieldSpec{
+		WireName: "vm_image",
+		Kind:     "object",
+		Fields:   NotebookExecutionJob_WorkbenchRuntime_VmImageFields,
+	},
+}
 
 type NotebookExecutionJobConfig struct {
-	// Output only. Timestamp when this NotebookExecutionJob was created.
-	CreateTime any
 	// Compute configuration to use for an execution job.
 	CustomEnvironmentSpec any
 	// The Dataform Repository containing the input notebook.
@@ -247,14 +245,10 @@ type NotebookExecutionJobConfig struct {
 	GcsNotebookSource any
 	// The Cloud Storage location to upload the result to. Format: `gs://bucket-name`
 	GcsOutputUri any
-	// Output only. The state of the NotebookExecutionJob.
-	JobState any
 	// The name of the kernel to use during notebook execution. If unset, the default kernel is used.
 	KernelName any
 	// The labels with user-defined metadata to organize NotebookExecutionJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
 	Labels any
-	// Output only. The resource name of this NotebookExecutionJob. Format: `projects/{project_id}/locations/{location}/notebookExecutionJobs/{job_id}`
-	Name any
 	// The NotebookRuntimeTemplate to source compute configuration from.
 	NotebookRuntimeTemplateResourceName any
 	// The Schedule resource name if this job is triggered by one. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
@@ -263,8 +257,6 @@ type NotebookExecutionJobConfig struct {
 	ServiceAccount any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Status any
-	// Output only. Timestamp when this NotebookExecutionJob was most recently updated.
-	UpdateTime any
 	// Configuration for a Workbench Instances-based environment.
 	WorkbenchRuntime any
 }
@@ -315,53 +307,49 @@ type NotebookExecutionJobAttrs struct {
 var NotebookExecutionJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_notebook_execution_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomEnvironmentSpec": ubx.FieldSpec{
 			WireName: "custom_environment_spec",
-			Kind: "object",
-			Fields: NotebookExecutionJob_CustomEnvironmentSpecFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_CustomEnvironmentSpecFields,
 		},
 		"DataformRepositorySource": ubx.FieldSpec{
 			WireName: "dataform_repository_source",
-			Kind: "object",
-			Fields: NotebookExecutionJob_DataformRepositorySourceFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_DataformRepositorySourceFields,
 		},
 		"DirectNotebookSource": ubx.FieldSpec{
 			WireName: "direct_notebook_source",
-			Kind: "object",
-			Fields: NotebookExecutionJob_DirectNotebookSourceFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_DirectNotebookSourceFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: NotebookExecutionJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_EncryptionSpecFields,
 		},
 		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"ExecutionUser": ubx.FieldSpec{WireName: "execution_user"},
+		"ExecutionUser":    ubx.FieldSpec{WireName: "execution_user"},
 		"GcsNotebookSource": ubx.FieldSpec{
 			WireName: "gcs_notebook_source",
-			Kind: "object",
-			Fields: NotebookExecutionJob_GcsNotebookSourceFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_GcsNotebookSourceFields,
 		},
-		"GcsOutputUri": ubx.FieldSpec{WireName: "gcs_output_uri"},
-		"JobState": ubx.FieldSpec{WireName: "job_state"},
-		"KernelName": ubx.FieldSpec{WireName: "kernel_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"GcsOutputUri":                        ubx.FieldSpec{WireName: "gcs_output_uri"},
+		"KernelName":                          ubx.FieldSpec{WireName: "kernel_name"},
+		"Labels":                              ubx.FieldSpec{WireName: "labels"},
 		"NotebookRuntimeTemplateResourceName": ubx.FieldSpec{WireName: "notebook_runtime_template_resource_name"},
-		"ScheduleResourceName": ubx.FieldSpec{WireName: "schedule_resource_name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"ScheduleResourceName":                ubx.FieldSpec{WireName: "schedule_resource_name"},
+		"ServiceAccount":                      ubx.FieldSpec{WireName: "service_account"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: NotebookExecutionJob_StatusFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_StatusFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"WorkbenchRuntime": ubx.FieldSpec{
 			WireName: "workbench_runtime",
-			Kind: "object",
-			Fields: NotebookExecutionJob_WorkbenchRuntimeFields,
+			Kind:     "object",
+			Fields:   NotebookExecutionJob_WorkbenchRuntimeFields,
 		},
 	},
 }

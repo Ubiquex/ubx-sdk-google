@@ -22,7 +22,7 @@ type Backup_EncryptionKey struct {
 }
 
 type Backup_SelectedApplications_NamespacedNames struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
@@ -32,7 +32,7 @@ type Backup_SelectedApplications struct {
 }
 
 type Backup_SelectedNamespaceLabels_ResourceLabels struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -54,119 +54,73 @@ type Backup_TroubleshootingInfo struct {
 }
 
 var Backup_ClusterMetadataFields = ubx.FieldMap{
-		"AnthosVersion": ubx.FieldSpec{WireName: "anthos_version"},
-		"BackupCrdVersions": ubx.FieldSpec{WireName: "backup_crd_versions"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"GkeVersion": ubx.FieldSpec{WireName: "gke_version"},
-		"K8sVersion": ubx.FieldSpec{WireName: "k8s_version"},
-	}
+	"AnthosVersion":     ubx.FieldSpec{WireName: "anthos_version"},
+	"BackupCrdVersions": ubx.FieldSpec{WireName: "backup_crd_versions"},
+	"Cluster":           ubx.FieldSpec{WireName: "cluster"},
+	"GkeVersion":        ubx.FieldSpec{WireName: "gke_version"},
+	"K8sVersion":        ubx.FieldSpec{WireName: "k8s_version"},
+}
 
 var Backup_EncryptionKeyFields = ubx.FieldMap{
-		"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
-	}
+	"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
+}
 
 var Backup_SelectedApplications_NamespacedNamesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Backup_SelectedApplicationsFields = ubx.FieldMap{
-		"NamespacedNames": ubx.FieldSpec{
-			WireName: "namespaced_names",
-			Kind: "list",
-			Fields: Backup_SelectedApplications_NamespacedNamesFields,
-		},
-	}
+	"NamespacedNames": ubx.FieldSpec{
+		WireName: "namespaced_names",
+		Kind:     "list",
+		Fields:   Backup_SelectedApplications_NamespacedNamesFields,
+	},
+}
 
 var Backup_SelectedNamespaceLabels_ResourceLabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Backup_SelectedNamespaceLabelsFields = ubx.FieldMap{
-		"ResourceLabels": ubx.FieldSpec{
-			WireName: "resource_labels",
-			Kind: "list",
-			Fields: Backup_SelectedNamespaceLabels_ResourceLabelsFields,
-		},
-	}
+	"ResourceLabels": ubx.FieldSpec{
+		WireName: "resource_labels",
+		Kind:     "list",
+		Fields:   Backup_SelectedNamespaceLabels_ResourceLabelsFields,
+	},
+}
 
 var Backup_SelectedNamespacesFields = ubx.FieldMap{
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var Backup_TroubleshootingInfoFields = ubx.FieldMap{
-		"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
-		"StateReasonUri": ubx.FieldSpec{WireName: "state_reason_uri"},
-	}
+	"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
+	"StateReasonUri":  ubx.FieldSpec{WireName: "state_reason_uri"},
+}
 
 type BackupConfig struct {
-	// Output only. If True, all namespaces were included in the Backup.
-	AllNamespaces any
 	// Information about the GKE cluster from which this Backup was created.
 	ClusterMetadata any
-	// Output only. Completion time of the Backup
-	CompleteTime any
-	// Output only. The size of the config backup in bytes.
-	ConfigBackupSizeBytes any
-	// Output only. Whether or not the Backup contains Kubernetes Secrets. Controlled by the parent BackupPlan's include_secrets value.
-	ContainsSecrets any
-	// Output only. Whether or not the Backup contains volume data. Controlled by the parent BackupPlan's include_volume_data value.
-	ContainsVolumeData any
-	// Output only. The timestamp when this Backup resource was created.
-	CreateTime any
 	// Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
 	DeleteLockDays any
-	// Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days).
-	DeleteLockExpireTime any
 	// Optional. User specified descriptive string for this Backup.
 	Description any
 	// Defined a customer managed encryption key that will be used to encrypt Backup artifacts.
 	EncryptionKey any
-	// Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` or `DeleteBackup` to ensure that their change will be applied to the same version of the resource.
-	Etag any
 	// Optional. A set of custom labels supplied by user.
 	Labels any
-	// Output only. This flag indicates whether this Backup resource was created manually by a user or via a schedule in the BackupPlan. A value of True means that the Backup was created manually.
-	Manual any
-	// Output only. Identifier. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`
-	Name any
-	// Output only. The total number of user managed namespaces contained in the Backup.
-	NamespaceCount any
-	// Output only. If false, Backup will fail when Backup for GKE detects Kubernetes configuration that is non-standard or requires additional setup to restore. Inherited from the parent BackupPlan's permissive_mode value.
-	PermissiveMode any
-	// Output only. The total number of Kubernetes Pods contained in the Backup.
-	PodCount any
-	// Output only. The total number of Kubernetes resources included in the Backup.
-	ResourceCount any
 	// Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
 	RetainDays any
-	// Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days).
-	RetainExpireTime any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
 	// A list of namespaced Kubernetes resources.
 	SelectedApplications any
 	// A list of Kubernetes labels.
 	SelectedNamespaceLabels any
 	// A list of Kubernetes Namespaces.
 	SelectedNamespaces any
-	// Output only. The total size of the Backup in bytes = config backup size + sum(volume backup sizes)
-	SizeBytes any
-	// Output only. Current state of the Backup
-	State any
-	// Output only. Human-readable description of why the backup is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-	StateReason any
 	// Stores information about troubleshooting doc for debugging a particular state of an operation (eg - backup/restore). This will be used by the end user to debug their operation failure scenario easily.
 	TroubleshootingInfo any
-	// Output only. Server generated global unique identifier of [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-	Uid any
-	// Output only. The timestamp when this Backup resource was last updated.
-	UpdateTime any
-	// Output only. The total number of volume backups contained in the Backup.
-	VolumeCount any
 }
 
 type BackupAttrs struct {
@@ -241,62 +195,39 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_gkebackup_backup",
 	Fields: ubx.FieldMap{
-		"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
 		"ClusterMetadata": ubx.FieldSpec{
 			WireName: "cluster_metadata",
-			Kind: "object",
-			Fields: Backup_ClusterMetadataFields,
+			Kind:     "object",
+			Fields:   Backup_ClusterMetadataFields,
 		},
-		"CompleteTime": ubx.FieldSpec{WireName: "complete_time"},
-		"ConfigBackupSizeBytes": ubx.FieldSpec{WireName: "config_backup_size_bytes"},
-		"ContainsSecrets": ubx.FieldSpec{WireName: "contains_secrets"},
-		"ContainsVolumeData": ubx.FieldSpec{WireName: "contains_volume_data"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DeleteLockDays": ubx.FieldSpec{WireName: "delete_lock_days"},
-		"DeleteLockExpireTime": ubx.FieldSpec{WireName: "delete_lock_expire_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"EncryptionKey": ubx.FieldSpec{
 			WireName: "encryption_key",
-			Kind: "object",
-			Fields: Backup_EncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Backup_EncryptionKeyFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Manual": ubx.FieldSpec{WireName: "manual"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NamespaceCount": ubx.FieldSpec{WireName: "namespace_count"},
-		"PermissiveMode": ubx.FieldSpec{WireName: "permissive_mode"},
-		"PodCount": ubx.FieldSpec{WireName: "pod_count"},
-		"ResourceCount": ubx.FieldSpec{WireName: "resource_count"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
 		"RetainDays": ubx.FieldSpec{WireName: "retain_days"},
-		"RetainExpireTime": ubx.FieldSpec{WireName: "retain_expire_time"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SelectedApplications": ubx.FieldSpec{
 			WireName: "selected_applications",
-			Kind: "object",
-			Fields: Backup_SelectedApplicationsFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedApplicationsFields,
 		},
 		"SelectedNamespaceLabels": ubx.FieldSpec{
 			WireName: "selected_namespace_labels",
-			Kind: "object",
-			Fields: Backup_SelectedNamespaceLabelsFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedNamespaceLabelsFields,
 		},
 		"SelectedNamespaces": ubx.FieldSpec{
 			WireName: "selected_namespaces",
-			Kind: "object",
-			Fields: Backup_SelectedNamespacesFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedNamespacesFields,
 		},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateReason": ubx.FieldSpec{WireName: "state_reason"},
 		"TroubleshootingInfo": ubx.FieldSpec{
 			WireName: "troubleshooting_info",
-			Kind: "object",
-			Fields: Backup_TroubleshootingInfoFields,
+			Kind:     "object",
+			Fields:   Backup_TroubleshootingInfoFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VolumeCount": ubx.FieldSpec{WireName: "volume_count"},
 	},
 }

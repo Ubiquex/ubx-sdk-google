@@ -20,8 +20,6 @@ _Connector_SubnetFields = {
 
 @dataclasses.dataclass
 class ConnectorConfig:
-    # Output only. List of projects using the connector.
-    connected_projects: Any = None
     # Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
     ip_cidr_range: Any = None
     # Machine type of VM Instance underlying connector. Default is e2-micro
@@ -38,8 +36,6 @@ class ConnectorConfig:
     name: Any = None
     # Optional. Name of a VPC network.
     network: Any = None
-    # Output only. State of the VPC access connector.
-    state: Any = None
     # The subnet in which to house the connector
     subnet: Any = None
 
@@ -71,7 +67,6 @@ class ConnectorAttrs:
 Connector = ubx.ResourceBinding(
     wire_type="google_vpcaccess_connector",
     fields={
-        "connected_projects": ubx.FieldSpec(wire_name="connected_projects"),
         "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
         "machine_type": ubx.FieldSpec(wire_name="machine_type"),
         "max_instances": ubx.FieldSpec(wire_name="max_instances"),
@@ -80,7 +75,6 @@ Connector = ubx.ResourceBinding(
         "min_throughput": ubx.FieldSpec(wire_name="min_throughput"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="object",

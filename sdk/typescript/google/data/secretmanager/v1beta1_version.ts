@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface V1beta1VersionConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1VersionAttrs {
@@ -18,6 +17,5 @@ export interface V1beta1VersionAttrs {
 export const V1beta1Version: DataSourceBinding<V1beta1VersionConfig, V1beta1VersionAttrs> = {
   wireType: "google_secretmanager_v1beta1_version",
   fields: {
-    name: "name",
   },
 };

@@ -8,28 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SourceConfig:
-    # Output only. The timestamp when the source was created.
-    create_time: Any = None
     # Free-text description.
     description: Any = None
     # User-friendly display name.
     display_name: Any = None
-    # Output only. The number of frames that were reported by the source and contained errors.
-    error_frame_count: Any = None
     # If `true`, the source is managed by other service(s).
     managed: Any = None
-    # Output only. The full name of the source.
-    name: Any = None
-    # Output only. Number of frames that are still being processed.
-    pending_frame_count: Any = None
     # The information confidence of the source. The higher the value, the higher the confidence.
     priority: Any = None
-    # Output only. The state of the source.
-    state: Any = None
     # Data source type.
     type: Any = None
-    # Output only. The timestamp when the source was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SourceAttrs:
@@ -59,16 +47,10 @@ class SourceAttrs:
 Source = ubx.ResourceBinding(
     wire_type="google_migrationcenter_source",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "error_frame_count": ubx.FieldSpec(wire_name="error_frame_count"),
         "managed": ubx.FieldSpec(wire_name="managed"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "pending_frame_count": ubx.FieldSpec(wire_name="pending_frame_count"),
         "priority": ubx.FieldSpec(wire_name="priority"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

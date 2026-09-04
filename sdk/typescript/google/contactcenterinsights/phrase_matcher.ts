@@ -54,8 +54,6 @@ const PhraseMatcher_PhraseMatchRuleGroupsFields: FieldMap = {
 };
 
 export interface PhraseMatcherConfig {
-  /** Output only. The most recent time at which the activation status was updated. */
-  activationUpdateTime?: string | Computed<string>;
   /** Applies the phrase matcher only when it is active. */
   active?: boolean | Computed<boolean>;
   /** The human-readable name of the phrase matcher. */
@@ -64,16 +62,10 @@ export interface PhraseMatcherConfig {
   name?: string | Computed<string>;
   /** A list of phase match rule groups that are included in this matcher. */
   phraseMatchRuleGroups?: PhraseMatcher_PhraseMatchRuleGroups[] | Computed<PhraseMatcher_PhraseMatchRuleGroups[]>;
-  /** Output only. The timestamp of when the revision was created. It is also the create time when a new matcher is added. */
-  revisionCreateTime?: string | Computed<string>;
-  /** Output only. Immutable. The revision ID of the phrase matcher. A new revision is committed whenever the matcher is changed, except when it is activated or deactivated. A server generated random ID will be used. Example: locations/global/phraseMatchers/my-first-matcher@1234567 */
-  revisionId?: string | Computed<string>;
   /** The role whose utterances the phrase matcher should be matched against. If the role is ROLE_UNSPECIFIED it will be matched against any utterances in the transcript. */
   roleMatch?: string | Computed<string>;
   /** Required. The type of this phrase matcher. */
   type?: string | Computed<string>;
-  /** Output only. The most recent time at which the phrase matcher was updated. */
-  updateTime?: string | Computed<string>;
   /** The customized version tag to use for the phrase matcher. If not specified, it will default to `revision_id`. */
   versionTag?: string | Computed<string>;
 }
@@ -106,7 +98,6 @@ export interface PhraseMatcherAttrs {
 export const PhraseMatcher: ResourceBinding<PhraseMatcherConfig, PhraseMatcherAttrs> = {
   wireType: "google_contactcenterinsights_phrase_matcher",
   fields: {
-    activationUpdateTime: "activation_update_time",
     active: "active",
     displayName: "display_name",
     name: "name",
@@ -115,11 +106,8 @@ export const PhraseMatcher: ResourceBinding<PhraseMatcherConfig, PhraseMatcherAt
       kind: "list",
       fields: PhraseMatcher_PhraseMatchRuleGroupsFields,
     },
-    revisionCreateTime: "revision_create_time",
-    revisionId: "revision_id",
     roleMatch: "role_match",
     type: "type",
-    updateTime: "update_time",
     versionTag: "version_tag",
   },
 };

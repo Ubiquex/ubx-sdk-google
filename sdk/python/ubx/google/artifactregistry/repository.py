@@ -291,8 +291,6 @@ class RepositoryConfig:
     cleanup_policies: Any = None
     # Optional. If true, the cleanup pipeline is prevented from deleting versions in this repository.
     cleanup_policy_dry_run: Any = None
-    # Output only. The time when the repository was created.
-    create_time: Any = None
     # The user-provided description of the repository.
     description: Any = None
     # Optional. If this is true, an unspecified repo type will be treated as error rather than defaulting to standard.
@@ -313,18 +311,8 @@ class RepositoryConfig:
     name: Any = None
     # The platform logs config for a project or a repository.
     platform_logs_config: Any = None
-    # Output only. The repository endpoint, for example: `us-docker.pkg.dev/my-proj/my-repo`.
-    registry_uri: Any = None
     # Remote repository configuration.
     remote_repository_config: Any = None
-    # Output only. Whether or not this repository satisfies PZI.
-    satisfies_pzi: Any = None
-    # Output only. Whether or not this repository satisfies PZS.
-    satisfies_pzs: Any = None
-    # Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
-    size_bytes: Any = None
-    # Output only. The time when the repository was last updated.
-    update_time: Any = None
     # Virtual repository configuration.
     virtual_repository_config: Any = None
     # Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state.
@@ -384,7 +372,6 @@ Repository = ubx.ResourceBinding(
             fields=_Repository_CleanupPoliciesFields,
         ),
         "cleanup_policy_dry_run": ubx.FieldSpec(wire_name="cleanup_policy_dry_run"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disallow_unspecified_mode": ubx.FieldSpec(wire_name="disallow_unspecified_mode"),
         "docker_config": ubx.FieldSpec(
@@ -407,16 +394,11 @@ Repository = ubx.ResourceBinding(
             kind="object",
             fields=_Repository_PlatformLogsConfigFields,
         ),
-        "registry_uri": ubx.FieldSpec(wire_name="registry_uri"),
         "remote_repository_config": ubx.FieldSpec(
             wire_name="remote_repository_config",
             kind="object",
             fields=_Repository_RemoteRepositoryConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "size_bytes": ubx.FieldSpec(wire_name="size_bytes"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "virtual_repository_config": ubx.FieldSpec(
             wire_name="virtual_repository_config",
             kind="object",

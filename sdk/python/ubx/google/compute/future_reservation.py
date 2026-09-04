@@ -8,14 +8,11 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class FutureReservation_AggregateReservation_InUseResources_Accelerator:
-    # The number of accelerators of the specified type that are currently in use by this aggregate reservation. (AI-inferred)
     accelerator_count: Any = None
-    # The type of accelerator (e.g., GPU) associated with the in-use resources in the aggregate future reservation. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
 class FutureReservation_AggregateReservation_InUseResources:
-    # The accelerator-specific configuration for a resource in the aggregate reservation's in-use resources list. It defines the accelerator type and count to be reserved. (AI-inferred)
     accelerator: Any = None
 
 @dataclasses.dataclass
@@ -59,7 +56,6 @@ class FutureReservation_ResourceMetadata:
 
 @dataclasses.dataclass
 class FutureReservation_ShareSettings_ProjectMap:
-    # The ID of the Google Cloud project to share the future reservation with. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
@@ -71,9 +67,7 @@ class FutureReservation_ShareSettings:
 
 @dataclasses.dataclass
 class FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsds:
-    # The size of the local SSD in GB. Each local SSD is 375 GB by default. (AI-inferred)
     disk_size_gb: Any = None
-    # The interface to use for attaching the local SSD. Valid values are `NVME` and `SCSI`. (AI-inferred)
     interface: Any = None
 
 @dataclasses.dataclass
@@ -118,7 +112,6 @@ class FutureReservation_Status_ExistingMatchingUsageInfo:
 class FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow:
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     duration: Any = None
-    # The end time of the time window during which the future reservation is active, in RFC3339 UTC format. (AI-inferred)
     end_time: Any = None
     # Start time of the Future Reservation. The start_time is an RFC3339 string.
     start_time: Any = None
@@ -127,9 +120,7 @@ class FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWin
 class FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs:
     # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
-    # Specifies the configuration for a specific SKU future reservation, including details like machine type and the total number of resources to reserve. (AI-inferred)
     specific_sku_properties: Any = None
-    # The time window for the future reservation, specifying the start and end times during which the reservation is active. (AI-inferred)
     time_window: Any = None
 
 @dataclasses.dataclass
@@ -408,22 +399,14 @@ class FutureReservationConfig:
     auto_created_reservations_duration: Any = None
     # Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
     auto_delete_auto_created_reservations: Any = None
-    # Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred)
     commitment_info: Any = None
-    # The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred)
     confidential_compute_type: Any = None
-    # Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
-    creation_timestamp: Any = None
     # Type of the deployment requested as part of future reservation.
     deployment_type: Any = None
     # An optional description of this resource. Provide this property when you create the future reservation.
     description: Any = None
     # Indicates if this group of VMs have emergent maintenance enabled.
     enable_emergent_maintenance: Any = None
-    # Output only. [Output Only] A unique identifier for this future reservation. The server defines this identifier.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations.
-    kind: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Name prefix for the reservations to be created at the time of delivery. The name prefix must comply with RFC1035. Maximum allowed length for name prefix is 20. Automatically created reservations name format will be -date-####.
@@ -442,24 +425,16 @@ class FutureReservationConfig:
     resource_name: Any = None
     # Maintenance information for this reservation
     scheduling_type: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
     # Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation.
     specific_reservation_required: Any = None
-    # Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred)
     specific_sku_properties: Any = None
     # [Output only] Represents status related to the future reservation.
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
-    # The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred)
     time_window: Any = None
-    # Output only. [Output Only] URL of the Zone where this future reservation resides.
-    zone: Any = None
 
 @dataclasses.dataclass
 class FutureReservationAttrs:
@@ -471,9 +446,7 @@ class FutureReservationAttrs:
     auto_created_reservations_duration: Any = None
     # Setting for enabling or disabling automatic deletion for auto-created reservation. If set to true, auto-created reservations will be deleted at Future Reservation's end time (default) or at user's defined timestamp if any of the [auto_created_reservations_delete_time, auto_created_reservations_duration] values is specified. For keeping auto-created reservation indefinitely, this value should be set to false.
     auto_delete_auto_created_reservations: Any = None
-    # Information about the commitment that this future reservation is associated with. This field is output-only and may be absent if the reservation is not tied to a commitment. (AI-inferred)
     commitment_info: Any = None
-    # The confidential compute type for the future reservation. Possible values are `CONFIDENTIAL_COMPUTE_TYPE_TDX` (Intel Trust Domain Extensions) and `CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED`. (AI-inferred)
     confidential_compute_type: Any = None
     # Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format.
     creation_timestamp: Any = None
@@ -513,13 +486,11 @@ class FutureReservationAttrs:
     share_settings: Any = None
     # Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation.
     specific_reservation_required: Any = None
-    # Output-only object containing the properties of the specific SKU (e.g., machine type, minimum CPU platform) reserved by this future reservation. (AI-inferred)
     specific_sku_properties: Any = None
     # [Output only] Represents status related to the future reservation.
     status: Any = None
     # Storage pool properties for the future reservation.
     storage_pool_properties: Any = None
-    # The time window during which the future reservation is active, defining the start and end times for the reserved capacity. (AI-inferred)
     time_window: Any = None
     # Output only. [Output Only] URL of the Zone where this future reservation resides.
     zone: Any = None
@@ -545,12 +516,9 @@ FutureReservation = ubx.ResourceBinding(
             fields=_FutureReservation_CommitmentInfoFields,
         ),
         "confidential_compute_type": ubx.FieldSpec(wire_name="confidential_compute_type"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "deployment_type": ubx.FieldSpec(wire_name="deployment_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_emergent_maintenance": ubx.FieldSpec(wire_name="enable_emergent_maintenance"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "name_prefix": ubx.FieldSpec(wire_name="name_prefix"),
         "params": ubx.FieldSpec(
@@ -568,8 +536,6 @@ FutureReservation = ubx.ResourceBinding(
         ),
         "resource_name": ubx.FieldSpec(wire_name="resource_name"),
         "scheduling_type": ubx.FieldSpec(wire_name="scheduling_type"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "share_settings": ubx.FieldSpec(
             wire_name="share_settings",
             kind="object",
@@ -596,6 +562,5 @@ FutureReservation = ubx.ResourceBinding(
             kind="object",
             fields=_FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
         ),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class V1beta1AuthzExtensionConfig:
     # Optional. The `:authority` header in the gRPC request sent from Envoy to the extension service. It is required when the `service` field points to a backend service.
     authority: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Optional. Determines how the proxy behaves if the call to the extension fails or times out. When set to `TRUE`, request or response processing continues without error. Any subsequent extensions in the extension chain are also executed. When set to `FALSE` or the default setting of `FALSE` is used, one of the following happens: * If response headers have not been delivered to the downstream client, a generic 500 error is returned to the client. The error response can be tailored by configuring a custom error response in the load balancer. * If response headers have been delivered, then the HTTP stream to the downstream client is reset.
@@ -32,8 +30,6 @@ class V1beta1AuthzExtensionConfig:
     service: Any = None
     # Required. Specifies the timeout for each individual message on the stream. The timeout must be between 10-10000 milliseconds.
     timeout: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
     # Optional. The format of communication supported by the callout extension. This field is supported only for regional `AuthzExtension` resources. If not specified, the default value `EXT_PROC_GRPC` is used. Global `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format.
     wire_format: Any = None
 
@@ -72,7 +68,6 @@ V1beta1AuthzExtension = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_authz_extension",
     fields={
         "authority": ubx.FieldSpec(wire_name="authority"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "fail_open": ubx.FieldSpec(wire_name="fail_open"),
         "forward_attributes": ubx.FieldSpec(wire_name="forward_attributes"),
@@ -83,7 +78,6 @@ V1beta1AuthzExtension = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "service": ubx.FieldSpec(wire_name="service"),
         "timeout": ubx.FieldSpec(wire_name="timeout"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "wire_format": ubx.FieldSpec(wire_name="wire_format"),
     },
 )

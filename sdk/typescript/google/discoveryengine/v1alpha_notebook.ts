@@ -108,147 +108,13 @@ const V1alphaNotebook_MetadataFields: FieldMap = {
   lastViewed: "last_viewed",
 };
 
-const V1alphaNotebook_Sources_Metadata_AgentspaceMetadataFields: FieldMap = {
-  documentName: "document_name",
-  documentTitle: "document_title",
-};
-
-const V1alphaNotebook_Sources_Metadata_GoogleDocsMetadataFields: FieldMap = {
-  documentId: "document_id",
-  revisionId: "revision_id",
-};
-
-const V1alphaNotebook_Sources_Metadata_YoutubeMetadataFields: FieldMap = {
-  channelName: "channel_name",
-  videoId: "video_id",
-};
-
-const V1alphaNotebook_Sources_MetadataFields: FieldMap = {
-  agentspaceMetadata: {
-    wireName: "agentspace_metadata",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Metadata_AgentspaceMetadataFields,
-  },
-  googleDocsMetadata: {
-    wireName: "google_docs_metadata",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Metadata_GoogleDocsMetadataFields,
-  },
-  sourceAddedTimestamp: "source_added_timestamp",
-  tokenCount: "token_count",
-  wordCount: "word_count",
-  youtubeMetadata: {
-    wireName: "youtube_metadata",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Metadata_YoutubeMetadataFields,
-  },
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReason_AudioTranscriptionErrorFields: FieldMap = {
-  languageDetectionFailed: "language_detection_failed",
-  noAudioDetected: "no_audio_detected",
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReason_GoogleDriveErrorFields: FieldMap = {
-  downloadPrevented: "download_prevented",
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReason_SourceTooLongFields: FieldMap = {
-  wordCount: "word_count",
-  wordLimit: "word_limit",
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReason_SourceUnreachableFields: FieldMap = {
-  errorDetails: "error_details",
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReason_YoutubeErrorFields: FieldMap = {
-  videoDeleted: "video_deleted",
-};
-
-const V1alphaNotebook_Sources_Settings_FailureReasonFields: FieldMap = {
-  audioTranscriptionError: {
-    wireName: "audio_transcription_error",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReason_AudioTranscriptionErrorFields,
-  },
-  domainBlocked: "domain_blocked",
-  googleDriveError: {
-    wireName: "google_drive_error",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReason_GoogleDriveErrorFields,
-  },
-  ingestionError: "ingestion_error",
-  mimeTypeBlocked: "mime_type_blocked",
-  paywallError: "paywall_error",
-  policyCheckFailed: "policy_check_failed",
-  sourceEmpty: "source_empty",
-  sourceLimitExceeded: "source_limit_exceeded",
-  sourceTooLong: {
-    wireName: "source_too_long",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReason_SourceTooLongFields,
-  },
-  sourceUnreachable: {
-    wireName: "source_unreachable",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReason_SourceUnreachableFields,
-  },
-  unknown: "unknown",
-  uploadError: "upload_error",
-  youtubeError: {
-    wireName: "youtube_error",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReason_YoutubeErrorFields,
-  },
-};
-
-const V1alphaNotebook_Sources_SettingsFields: FieldMap = {
-  failureReason: {
-    wireName: "failure_reason",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_Settings_FailureReasonFields,
-  },
-  status: "status",
-};
-
-const V1alphaNotebook_Sources_SourceIdFields: FieldMap = {
-  id: "id",
-};
-
-const V1alphaNotebook_SourcesFields: FieldMap = {
-  metadata: {
-    wireName: "metadata",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_MetadataFields,
-  },
-  name: "name",
-  settings: {
-    wireName: "settings",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_SettingsFields,
-  },
-  sourceId: {
-    wireName: "source_id",
-    kind: "object",
-    fields: V1alphaNotebook_Sources_SourceIdFields,
-  },
-  title: "title",
-};
-
 export interface V1alphaNotebookConfig {
   /** Customer-managed encryption configuration for Notebooks. */
   cmekConfig?: V1alphaNotebook_CmekConfig | Computed<V1alphaNotebook_CmekConfig>;
-  /** Output only. The emoji of the notebook. */
-  emoji?: string | Computed<string>;
   /** Metadata for a notebook. */
   metadata?: V1alphaNotebook_Metadata | Computed<V1alphaNotebook_Metadata>;
   /** Identifier. The identifier of the notebook. Format: `projects/{project}/locations/{location}/notebooks/{notebook_id}`. This field must be a UTF-8 encoded string. */
   name?: string | Computed<string>;
-  /** Output only. Notebook id, which is the last segment of the notebook's resource name. */
-  notebookId?: string | Computed<string>;
-  /** Output only. List of sources in the notebook. This is an output only field. */
-  sources?: V1alphaNotebook_Sources[] | Computed<V1alphaNotebook_Sources[]>;
   /** Optional. The title of the notebook. */
   title?: string | Computed<string>;
 }
@@ -278,19 +144,12 @@ export const V1alphaNotebook: ResourceBinding<V1alphaNotebookConfig, V1alphaNote
       kind: "object",
       fields: V1alphaNotebook_CmekConfigFields,
     },
-    emoji: "emoji",
     metadata: {
       wireName: "metadata",
       kind: "object",
       fields: V1alphaNotebook_MetadataFields,
     },
     name: "name",
-    notebookId: "notebook_id",
-    sources: {
-      wireName: "sources",
-      kind: "list",
-      fields: V1alphaNotebook_SourcesFields,
-    },
     title: "title",
   },
 };

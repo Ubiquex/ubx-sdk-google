@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentGroup_DeploymentUnits struct {
 	Dependencies any
-	Deployment any
-	Id any
+	Deployment   any
+	Id           any
 }
 
 type DeploymentGroup_ProvisioningError struct {
@@ -19,22 +19,20 @@ type DeploymentGroup_ProvisioningError struct {
 }
 
 var DeploymentGroup_DeploymentUnitsFields = ubx.FieldMap{
-		"Dependencies": ubx.FieldSpec{WireName: "dependencies"},
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Dependencies": ubx.FieldSpec{WireName: "dependencies"},
+	"Deployment":   ubx.FieldSpec{WireName: "deployment"},
+	"Id":           ubx.FieldSpec{WireName: "id"},
+}
 
 var DeploymentGroup_ProvisioningErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type DeploymentGroupConfig struct {
 	// Optional. Arbitrary key-value metadata storage e.g. to help client tools identify deployment group during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
 	Annotations any
-	// Output only. Time when the deployment group was created.
-	CreateTime any
 	// The deployment units of the deployment group in a DAG like structure. When a deployment group is being provisioned, the deployment units are deployed in a DAG order. The provided units must be in a DAG order, otherwise an error will be returned.
 	DeploymentUnits any
 	// Optional. User-defined metadata for the deployment group.
@@ -43,16 +41,6 @@ type DeploymentGroupConfig struct {
 	Name any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	ProvisioningError any
-	// Output only. The provisioning state of the deployment group.
-	ProvisioningState any
-	// Output only. Additional information regarding the current provisioning state.
-	ProvisioningStateDescription any
-	// Output only. Current state of the deployment group.
-	State any
-	// Output only. Additional information regarding the current state.
-	StateDescription any
-	// Output only. Time when the deployment group was last updated.
-	UpdateTime any
 }
 
 type DeploymentGroupAttrs struct {
@@ -84,23 +72,17 @@ var DeploymentGroup = ubx.ResourceBinding{
 	WireType: "google_config_deployment_group",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DeploymentUnits": ubx.FieldSpec{
 			WireName: "deployment_units",
-			Kind: "list",
-			Fields: DeploymentGroup_DeploymentUnitsFields,
+			Kind:     "list",
+			Fields:   DeploymentGroup_DeploymentUnitsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ProvisioningError": ubx.FieldSpec{
 			WireName: "provisioning_error",
-			Kind: "object",
-			Fields: DeploymentGroup_ProvisioningErrorFields,
+			Kind:     "object",
+			Fields:   DeploymentGroup_ProvisioningErrorFields,
 		},
-		"ProvisioningState": ubx.FieldSpec{WireName: "provisioning_state"},
-		"ProvisioningStateDescription": ubx.FieldSpec{WireName: "provisioning_state_description"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDescription": ubx.FieldSpec{WireName: "state_description"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

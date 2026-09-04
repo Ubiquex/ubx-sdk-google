@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class DebugsessionConfig:
     # Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10.
     count: Any = None
-    # Output only. The first transaction creation timestamp, recorded by UAP.
-    create_time: Any = None
     # Optional. A conditional statement which is evaluated against the request message to determine if it should be traced. Syntax matches that of on API Proxy bundle flow Condition.
     filter: Any = None
     # A unique ID for this DebugSession.
@@ -44,7 +42,6 @@ Debugsession = ubx.ResourceBinding(
     wire_type="google_apigee_debugsession",
     fields={
         "count": ubx.FieldSpec(wire_name="count"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "filter": ubx.FieldSpec(wire_name="filter"),
         "name": ubx.FieldSpec(wire_name="name"),
         "timeout": ubx.FieldSpec(wire_name="timeout"),

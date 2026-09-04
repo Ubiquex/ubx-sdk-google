@@ -34,8 +34,6 @@ _InternalRange_MigrationFields = {
 class InternalRangeConfig:
     # Range auto-allocation options, to be optionally used when CIDR block is not explicitly set.
     allocation_options: Any = None
-    # Output only. Time when the internal range was created.
-    create_time: Any = None
     # Optional. A description of this resource.
     description: Any = None
     # Optional. ExcludeCidrRanges flag. Specifies a set of CIDR blocks that allows exclusion of particular CIDR ranges from the auto-allocation process, without having to reserve these blocks
@@ -60,12 +58,8 @@ class InternalRangeConfig:
     prefix_length: Any = None
     # Optional. Can be set to narrow down or pick a different address space while searching for a free range. If not set, defaults to the ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks, the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used to target the search in other rfc-1918 address spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
     target_cidr_range: Any = None
-    # Output only. Time when the internal range was updated.
-    update_time: Any = None
     # Optional. The type of usage set for this InternalRange.
     usage: Any = None
-    # Output only. The list of resources that refer to this internal range. Resources that use the internal range for their range allocation are referred to as users of the range. Other resources mark themselves as users while doing so by creating a reference to this internal range. Having a user, based on this reference, prevents deletion of the internal range referred to. Can be empty.
-    users: Any = None
 
 @dataclasses.dataclass
 class InternalRangeAttrs:
@@ -112,7 +106,6 @@ InternalRange = ubx.ResourceBinding(
             kind="object",
             fields=_InternalRange_AllocationOptionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "exclude_cidr_ranges": ubx.FieldSpec(wire_name="exclude_cidr_ranges"),
         "immutable": ubx.FieldSpec(wire_name="immutable"),
@@ -129,8 +122,6 @@ InternalRange = ubx.ResourceBinding(
         "peering": ubx.FieldSpec(wire_name="peering"),
         "prefix_length": ubx.FieldSpec(wire_name="prefix_length"),
         "target_cidr_range": ubx.FieldSpec(wire_name="target_cidr_range"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "usage": ubx.FieldSpec(wire_name="usage"),
-        "users": ubx.FieldSpec(wire_name="users"),
     },
 )

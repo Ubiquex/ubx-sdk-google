@@ -8,14 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RegionTargetTcpProxyConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
-    kind: Any = None
     # Specifies the type of load balancing scheme used by this target proxy.
     load_balancing_scheme: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -24,8 +20,6 @@ class RegionTargetTcpProxyConfig:
     proxy_bind: Any = None
     # Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
     proxy_header: Any = None
-    # Output only. [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
     # URL to the BackendService resource.
@@ -59,15 +53,12 @@ class RegionTargetTcpProxyAttrs:
 RegionTargetTcpProxy = ubx.ResourceBinding(
     wire_type="google_compute_region_target_tcp_proxy",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
         "name": ubx.FieldSpec(wire_name="name"),
         "proxy_bind": ubx.FieldSpec(wire_name="proxy_bind"),
         "proxy_header": ubx.FieldSpec(wire_name="proxy_header"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "service": ubx.FieldSpec(wire_name="service"),
     },

@@ -177,12 +177,8 @@ class EntityConfig:
     access: Any = None
     # Required. Immutable. The ID of the asset associated with the storage location containing the entity data. The entity must be with in the same zone with the asset.
     asset: Any = None
-    # Output only. The name of the associated Data Catalog entry.
-    catalog_entry: Any = None
     # Provides compatibility information for various metadata stores.
     compatibility: Any = None
-    # Output only. The time when the entity was created.
-    create_time: Any = None
     # Required. Immutable. The storage path of the entity data. For Cloud Storage data, this is the fully-qualified path to the entity, such as gs://bucket/path/to/data. For BigQuery data, this is the name of the table resource, such as projects/project_id/datasets/dataset_id/tables/table_id.
     data_path: Any = None
     # Optional. The set of items within the data path constituting the data in the entity, represented as a glob path. Example: gs://bucket/path/to/data/**/*.csv.
@@ -197,18 +193,12 @@ class EntityConfig:
     format: Any = None
     # Required. A user-provided entity ID. It is mutable, and will be used as the published table name. Specifying a new ID in an update entity request will override the existing value. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores, and consist of 256 or fewer characters.
     id: Any = None
-    # Output only. The resource name of the entity, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{id}.
-    name: Any = None
     # Schema information describing the structure and layout of the data.
     schema: Any = None
     # Required. Immutable. Identifies the storage system of the entity data.
     system: Any = None
     # Required. Immutable. The type of entity.
     type: Any = None
-    # Output only. System generated unique ID for the Entity. This ID will be different if the Entity is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the entity was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntityAttrs:
@@ -258,13 +248,11 @@ Entity = ubx.ResourceBinding(
             fields=_Entity_AccessFields,
         ),
         "asset": ubx.FieldSpec(wire_name="asset"),
-        "catalog_entry": ubx.FieldSpec(wire_name="catalog_entry"),
         "compatibility": ubx.FieldSpec(
             wire_name="compatibility",
             kind="object",
             fields=_Entity_CompatibilityFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_path": ubx.FieldSpec(wire_name="data_path"),
         "data_path_pattern": ubx.FieldSpec(wire_name="data_path_pattern"),
         "description": ubx.FieldSpec(wire_name="description"),
@@ -276,7 +264,6 @@ Entity = ubx.ResourceBinding(
             fields=_Entity_FormatFields,
         ),
         "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "schema": ubx.FieldSpec(
             wire_name="schema",
             kind="object",
@@ -284,7 +271,5 @@ Entity = ubx.ResourceBinding(
         ),
         "system": ubx.FieldSpec(wire_name="system"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

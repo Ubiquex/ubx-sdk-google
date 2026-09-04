@@ -58,34 +58,16 @@ const AlphaZoneVmExtensionPolicy_InstanceSelectorsFields: FieldMap = {
 };
 
 export interface AlphaZoneVmExtensionPolicyConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
   /** Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations. */
   extensionPolicies?: Record<string, AlphaZoneVmExtensionPolicy_ExtensionPolicies> | Computed<Record<string, AlphaZoneVmExtensionPolicy_ExtensionPolicies>>;
-  /** Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable. */
-  globalResourceLink?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
   /** Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs. */
   instanceSelectors?: AlphaZoneVmExtensionPolicy_InstanceSelectors[] | Computed<AlphaZoneVmExtensionPolicy_InstanceSelectors[]>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy. */
-  kind?: string | Computed<string>;
-  /** Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy. */
-  managedByGlobal?: boolean | Computed<boolean>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence. */
   priority?: number | Computed<number>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING. */
-  state?: string | Computed<string>;
-  /** Output only. [Output Only] Update timestamp inRFC3339 text format. */
-  updateTimestamp?: string | Computed<string>;
 }
 
 export interface AlphaZoneVmExtensionPolicyAttrs {
@@ -122,27 +104,18 @@ export interface AlphaZoneVmExtensionPolicyAttrs {
 export const AlphaZoneVmExtensionPolicy: ResourceBinding<AlphaZoneVmExtensionPolicyConfig, AlphaZoneVmExtensionPolicyAttrs> = {
   wireType: "google_compute_alpha_zone_vm_extension_policy",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     extensionPolicies: {
       wireName: "extension_policies",
       kind: "map",
       fields: AlphaZoneVmExtensionPolicy_ExtensionPoliciesFields,
     },
-    globalResourceLink: "global_resource_link",
-    id: "id",
     instanceSelectors: {
       wireName: "instance_selectors",
       kind: "list",
       fields: AlphaZoneVmExtensionPolicy_InstanceSelectorsFields,
     },
-    kind: "kind",
-    managedByGlobal: "managed_by_global",
     name: "name",
     priority: "priority",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    state: "state",
-    updateTimestamp: "update_timestamp",
   },
 };

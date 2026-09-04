@@ -20,8 +20,6 @@ _V1beta1Project_ParentFields = {
 
 @dataclasses.dataclass
 class V1beta1ProjectConfig:
-    # Output only. If this project is a Management Project, list of capabilities configured on the parent folder. Note, presence of any capability implies that this is a Management Project. Example: `folders/123/capabilities/app-management`. OUTPUT ONLY.
-    configured_capabilities: Any = None
     # Creation time. Read-only.
     create_time: Any = None
     # The labels associated with this Project. Label keys must be between 1 and 63 characters long and must conform to the following regular expression: a-z{0,62}. Label values must be between 0 and 63 characters long and must conform to the regular expression [a-z0-9_-]{0,63}. A label value can be empty. No more than 256 labels can be associated with a given resource. Clients should store labels in a representation such as JSON that does not depend on specific characters being disallowed. Example: `"environment" : "dev"` Read-write.
@@ -59,7 +57,6 @@ class V1beta1ProjectAttrs:
 V1beta1Project = ubx.ResourceBinding(
     wire_type="google_cloudresourcemanager_v1beta1_project",
     fields={
-        "configured_capabilities": ubx.FieldSpec(wire_name="configured_capabilities"),
         "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "lifecycle_state": ubx.FieldSpec(wire_name="lifecycle_state"),

@@ -12,8 +12,6 @@ class NamespaceConfig:
     labels: Any = None
     # Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
     name: Any = None
-    # Output only. The globally unique identifier of the namespace in the UUID4 format.
-    uid: Any = None
 
 @dataclasses.dataclass
 class NamespaceAttrs:
@@ -29,6 +27,5 @@ Namespace = ubx.ResourceBinding(
     fields={
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

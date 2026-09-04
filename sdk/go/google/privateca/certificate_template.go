@@ -37,7 +37,7 @@ type CertificateTemplate_PassthroughExtensions struct {
 type CertificateTemplate_PredefinedValues_AdditionalExtensions struct {
 	Critical any
 	ObjectId any
-	Value any
+	Value    any
 }
 
 type CertificateTemplate_PredefinedValues_CaOptions struct {
@@ -129,133 +129,131 @@ type CertificateTemplate_PredefinedValues struct {
 }
 
 var CertificateTemplate_IdentityConstraints_CelExpressionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var CertificateTemplate_IdentityConstraintsFields = ubx.FieldMap{
-		"AllowSubjectAltNamesPassthrough": ubx.FieldSpec{WireName: "allow_subject_alt_names_passthrough"},
-		"AllowSubjectPassthrough": ubx.FieldSpec{WireName: "allow_subject_passthrough"},
-		"CelExpression": ubx.FieldSpec{
-			WireName: "cel_expression",
-			Kind: "object",
-			Fields: CertificateTemplate_IdentityConstraints_CelExpressionFields,
-		},
-	}
+	"AllowSubjectAltNamesPassthrough": ubx.FieldSpec{WireName: "allow_subject_alt_names_passthrough"},
+	"AllowSubjectPassthrough":         ubx.FieldSpec{WireName: "allow_subject_passthrough"},
+	"CelExpression": ubx.FieldSpec{
+		WireName: "cel_expression",
+		Kind:     "object",
+		Fields:   CertificateTemplate_IdentityConstraints_CelExpressionFields,
+	},
+}
 
 var CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields = ubx.FieldMap{
-		"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
-	}
+	"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
+}
 
 var CertificateTemplate_PassthroughExtensionsFields = ubx.FieldMap{
-		"AdditionalExtensions": ubx.FieldSpec{
-			WireName: "additional_extensions",
-			Kind: "list",
-			Fields: CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
-		},
-		"KnownExtensions": ubx.FieldSpec{WireName: "known_extensions"},
-	}
+	"AdditionalExtensions": ubx.FieldSpec{
+		WireName: "additional_extensions",
+		Kind:     "list",
+		Fields:   CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
+	},
+	"KnownExtensions": ubx.FieldSpec{WireName: "known_extensions"},
+}
 
 var CertificateTemplate_PredefinedValues_AdditionalExtensionsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ObjectId": ubx.FieldSpec{
-			WireName: "object_id",
-			Kind: "object",
-			Fields: CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Critical": ubx.FieldSpec{WireName: "critical"},
+	"ObjectId": ubx.FieldSpec{
+		WireName: "object_id",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CertificateTemplate_PredefinedValues_CaOptionsFields = ubx.FieldMap{
-		"IsCa": ubx.FieldSpec{WireName: "is_ca"},
-		"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
-	}
+	"IsCa":                ubx.FieldSpec{WireName: "is_ca"},
+	"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
+}
 
 var CertificateTemplate_PredefinedValues_KeyUsage_BaseKeyUsageFields = ubx.FieldMap{
-		"CertSign": ubx.FieldSpec{WireName: "cert_sign"},
-		"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
-		"CrlSign": ubx.FieldSpec{WireName: "crl_sign"},
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-	}
+	"CertSign":          ubx.FieldSpec{WireName: "cert_sign"},
+	"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
+	"CrlSign":           ubx.FieldSpec{WireName: "crl_sign"},
+	"DataEncipherment":  ubx.FieldSpec{WireName: "data_encipherment"},
+	"DecipherOnly":      ubx.FieldSpec{WireName: "decipher_only"},
+	"DigitalSignature":  ubx.FieldSpec{WireName: "digital_signature"},
+	"EncipherOnly":      ubx.FieldSpec{WireName: "encipher_only"},
+	"KeyAgreement":      ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyEncipherment":   ubx.FieldSpec{WireName: "key_encipherment"},
+}
 
 var CertificateTemplate_PredefinedValues_KeyUsage_ExtendedKeyUsageFields = ubx.FieldMap{
-		"ClientAuth": ubx.FieldSpec{WireName: "client_auth"},
-		"CodeSigning": ubx.FieldSpec{WireName: "code_signing"},
-		"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
-		"OcspSigning": ubx.FieldSpec{WireName: "ocsp_signing"},
-		"ServerAuth": ubx.FieldSpec{WireName: "server_auth"},
-		"TimeStamping": ubx.FieldSpec{WireName: "time_stamping"},
-	}
+	"ClientAuth":      ubx.FieldSpec{WireName: "client_auth"},
+	"CodeSigning":     ubx.FieldSpec{WireName: "code_signing"},
+	"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
+	"OcspSigning":     ubx.FieldSpec{WireName: "ocsp_signing"},
+	"ServerAuth":      ubx.FieldSpec{WireName: "server_auth"},
+	"TimeStamping":    ubx.FieldSpec{WireName: "time_stamping"},
+}
 
 var CertificateTemplate_PredefinedValues_KeyUsageFields = ubx.FieldMap{
-		"BaseKeyUsage": ubx.FieldSpec{
-			WireName: "base_key_usage",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValues_KeyUsage_BaseKeyUsageFields,
-		},
-		"ExtendedKeyUsage": ubx.FieldSpec{
-			WireName: "extended_key_usage",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValues_KeyUsage_ExtendedKeyUsageFields,
-		},
-		"UnknownExtendedKeyUsages": ubx.FieldSpec{
-			WireName: "unknown_extended_key_usages",
-			Kind: "list",
-			Fields: CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
-		},
-	}
+	"BaseKeyUsage": ubx.FieldSpec{
+		WireName: "base_key_usage",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PredefinedValues_KeyUsage_BaseKeyUsageFields,
+	},
+	"ExtendedKeyUsage": ubx.FieldSpec{
+		WireName: "extended_key_usage",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PredefinedValues_KeyUsage_ExtendedKeyUsageFields,
+	},
+	"UnknownExtendedKeyUsages": ubx.FieldSpec{
+		WireName: "unknown_extended_key_usages",
+		Kind:     "list",
+		Fields:   CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
+	},
+}
 
 var CertificateTemplate_PredefinedValues_NameConstraintsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ExcludedDnsNames": ubx.FieldSpec{WireName: "excluded_dns_names"},
-		"ExcludedEmailAddresses": ubx.FieldSpec{WireName: "excluded_email_addresses"},
-		"ExcludedIpRanges": ubx.FieldSpec{WireName: "excluded_ip_ranges"},
-		"ExcludedUris": ubx.FieldSpec{WireName: "excluded_uris"},
-		"PermittedDnsNames": ubx.FieldSpec{WireName: "permitted_dns_names"},
-		"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
-		"PermittedIpRanges": ubx.FieldSpec{WireName: "permitted_ip_ranges"},
-		"PermittedUris": ubx.FieldSpec{WireName: "permitted_uris"},
-	}
+	"Critical":                ubx.FieldSpec{WireName: "critical"},
+	"ExcludedDnsNames":        ubx.FieldSpec{WireName: "excluded_dns_names"},
+	"ExcludedEmailAddresses":  ubx.FieldSpec{WireName: "excluded_email_addresses"},
+	"ExcludedIpRanges":        ubx.FieldSpec{WireName: "excluded_ip_ranges"},
+	"ExcludedUris":            ubx.FieldSpec{WireName: "excluded_uris"},
+	"PermittedDnsNames":       ubx.FieldSpec{WireName: "permitted_dns_names"},
+	"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
+	"PermittedIpRanges":       ubx.FieldSpec{WireName: "permitted_ip_ranges"},
+	"PermittedUris":           ubx.FieldSpec{WireName: "permitted_uris"},
+}
 
 var CertificateTemplate_PredefinedValuesFields = ubx.FieldMap{
-		"AdditionalExtensions": ubx.FieldSpec{
-			WireName: "additional_extensions",
-			Kind: "list",
-			Fields: CertificateTemplate_PredefinedValues_AdditionalExtensionsFields,
-		},
-		"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
-		"CaOptions": ubx.FieldSpec{
-			WireName: "ca_options",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValues_CaOptionsFields,
-		},
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValues_KeyUsageFields,
-		},
-		"NameConstraints": ubx.FieldSpec{
-			WireName: "name_constraints",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValues_NameConstraintsFields,
-		},
-		"PolicyIds": ubx.FieldSpec{
-			WireName: "policy_ids",
-			Kind: "list",
-			Fields: CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
-		},
-	}
+	"AdditionalExtensions": ubx.FieldSpec{
+		WireName: "additional_extensions",
+		Kind:     "list",
+		Fields:   CertificateTemplate_PredefinedValues_AdditionalExtensionsFields,
+	},
+	"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
+	"CaOptions": ubx.FieldSpec{
+		WireName: "ca_options",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PredefinedValues_CaOptionsFields,
+	},
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PredefinedValues_KeyUsageFields,
+	},
+	"NameConstraints": ubx.FieldSpec{
+		WireName: "name_constraints",
+		Kind:     "object",
+		Fields:   CertificateTemplate_PredefinedValues_NameConstraintsFields,
+	},
+	"PolicyIds": ubx.FieldSpec{
+		WireName: "policy_ids",
+		Kind:     "list",
+		Fields:   CertificateTemplate_PassthroughExtensions_AdditionalExtensionsFields,
+	},
+}
 
 type CertificateTemplateConfig struct {
-	// Output only. The time at which this CertificateTemplate was created.
-	CreateTime any
 	// Optional. A human-readable description of scenarios this template is intended for.
 	Description any
 	// Describes constraints on a Certificate's Subject and SubjectAltNames.
@@ -270,8 +268,6 @@ type CertificateTemplateConfig struct {
 	PassthroughExtensions any
 	// An X509Parameters is used to describe certain fields of an X.509 certificate, such as the key usage fields, fields specific to CA certificates, certificate policy extensions and custom extensions.
 	PredefinedValues any
-	// Output only. The time at which this CertificateTemplate was updated.
-	UpdateTime any
 }
 
 type CertificateTemplateAttrs struct {
@@ -298,26 +294,24 @@ type CertificateTemplateAttrs struct {
 var CertificateTemplate = ubx.ResourceBinding{
 	WireType: "google_privateca_certificate_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IdentityConstraints": ubx.FieldSpec{
 			WireName: "identity_constraints",
-			Kind: "object",
-			Fields: CertificateTemplate_IdentityConstraintsFields,
+			Kind:     "object",
+			Fields:   CertificateTemplate_IdentityConstraintsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
 		"MaximumLifetime": ubx.FieldSpec{WireName: "maximum_lifetime"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"PassthroughExtensions": ubx.FieldSpec{
 			WireName: "passthrough_extensions",
-			Kind: "object",
-			Fields: CertificateTemplate_PassthroughExtensionsFields,
+			Kind:     "object",
+			Fields:   CertificateTemplate_PassthroughExtensionsFields,
 		},
 		"PredefinedValues": ubx.FieldSpec{
 			WireName: "predefined_values",
-			Kind: "object",
-			Fields: CertificateTemplate_PredefinedValuesFields,
+			Kind:     "object",
+			Fields:   CertificateTemplate_PredefinedValuesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

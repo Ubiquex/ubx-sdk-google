@@ -4,34 +4,18 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface PostureDeploymentConfig {
   /** Optional. The user-specified annotations for the posture deployment. For details about the values you can use in an annotation, see [AIP-148: Standard fields](https://google.aip.dev/148#annotations). */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The categories that the posture deployment belongs to, as determined by the Security Posture API. */
-  categories?: string[] | Computed<string[]>;
-  /** Output only. The time at which the posture deployment was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of the posture deployment. */
   description?: string | Computed<string>;
-  /** Output only. The posture ID that was specified for the deployment. Present only if the posture deployment is in a failed state. */
-  desiredPostureId?: string | Computed<string>;
-  /** Output only. The revision ID of the posture that was specified for the deployment. Present only if the deployment is in a failed state. */
-  desiredPostureRevisionId?: string | Computed<string>;
   /** Optional. An opaque identifier for the current version of the posture deployment. To prevent concurrent updates from overwriting each other, always provide the `etag` when you update a posture deployment. You can also provide the `etag` when you delete a posture deployment, to help ensure that you're deleting the intended posture deployment. */
   etag?: string | Computed<string>;
-  /** Output only. A description of why the posture deployment failed. Present only if the deployment is in a failed state. */
-  failureMessage?: string | Computed<string>;
   /** Required. Identifier. The name of the posture deployment, in the format `organizations/{organization}/locations/global/postureDeployments/{deployment_id}`. */
   name?: string | Computed<string>;
   /** Required. The posture used in the deployment, in the format `organizations/{organization}/locations/global/postures/{posture_id}`. */
   postureId?: string | Computed<string>;
   /** Required. The revision ID of the posture used in the deployment. */
   postureRevisionId?: string | Computed<string>;
-  /** Output only. Whether the posture deployment is in the process of being updated. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The state of the posture deployment. */
-  state?: string | Computed<string>;
   /** Required. The organization, folder, or project where the posture is deployed. Uses one of the following formats: * `organizations/{organization_number}` * `folders/{folder_number}` * `projects/{project_number}` */
   targetResource?: string | Computed<string>;
-  /** Output only. The time at which the posture deployment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PostureDeploymentAttrs {
@@ -71,19 +55,11 @@ export const PostureDeployment: ResourceBinding<PostureDeploymentConfig, Posture
   wireType: "google_securityposture_posture_deployment",
   fields: {
     annotations: "annotations",
-    categories: "categories",
-    createTime: "create_time",
     description: "description",
-    desiredPostureId: "desired_posture_id",
-    desiredPostureRevisionId: "desired_posture_revision_id",
     etag: "etag",
-    failureMessage: "failure_message",
     name: "name",
     postureId: "posture_id",
     postureRevisionId: "posture_revision_id",
-    reconciling: "reconciling",
-    state: "state",
     targetResource: "target_resource",
-    updateTime: "update_time",
   },
 };

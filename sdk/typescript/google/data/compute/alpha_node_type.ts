@@ -26,7 +26,6 @@ export interface AlphaNodeType_Deprecated {
 export interface AlphaNodeTypeConfig {
   nodeType: string | Computed<string>;
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface AlphaNodeTypeAttrs {
@@ -66,6 +65,5 @@ export const AlphaNodeType: DataSourceBinding<AlphaNodeTypeConfig, AlphaNodeType
   fields: {
     nodeType: "node_type",
     project: "project",
-    zone: "zone",
   },
 };

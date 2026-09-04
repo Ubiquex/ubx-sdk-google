@@ -9,14 +9,10 @@ type V1betaBinding_State struct {
 }
 
 var V1betaBinding_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaBindingConfig struct {
-	// Output only. When the membership binding was created.
-	CreateTime any
-	// Output only. When the membership binding was deleted.
-	DeleteTime any
 	// Optional. Labels for this MembershipBinding.
 	Labels any
 	// The resource name for the membershipbinding itself `projects/{project}/locations/{location}/memberships/{membership}/bindings/{membershipbinding}`
@@ -25,10 +21,6 @@ type V1betaBindingConfig struct {
 	Scope any
 	// MembershipBindingLifecycleState describes the state of a Binding resource.
 	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all membershipbinding resources. If a membershipbinding resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. When the membership binding was last updated.
-	UpdateTime any
 }
 
 type V1betaBindingAttrs struct {
@@ -53,17 +45,13 @@ type V1betaBindingAttrs struct {
 var V1betaBinding = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_binding",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Scope":  ubx.FieldSpec{WireName: "scope"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaBinding_StateFields,
+			Kind:     "object",
+			Fields:   V1betaBinding_StateFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

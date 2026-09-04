@@ -117,26 +117,26 @@ type Topic_MessageTransforms_AiInference_UnstructuredInference struct {
 }
 
 type Topic_MessageTransforms_AiInference struct {
-	Endpoint any
-	ServiceAccountEmail any
+	Endpoint              any
+	ServiceAccountEmail   any
 	UnstructuredInference any
 }
 
 type Topic_MessageTransforms_Compression struct {
 	CompressionAlgorithm any
-	CompressionMode any
+	CompressionMode      any
 }
 
 type Topic_MessageTransforms_JavascriptUdf struct {
-	Code any
+	Code         any
 	FunctionName any
 }
 
 type Topic_MessageTransforms struct {
-	AiInference any
-	Compression any
-	Disabled any
-	Enabled any
+	AiInference   any
+	Compression   any
+	Disabled      any
+	Enabled       any
 	JavascriptUdf any
 }
 
@@ -152,151 +152,151 @@ type Topic_SchemaSettings struct {
 }
 
 var Topic_IngestionDataSourceSettings_AwsKinesisFields = ubx.FieldMap{
-		"AwsRoleArn": ubx.FieldSpec{WireName: "aws_role_arn"},
-		"ConsumerArn": ubx.FieldSpec{WireName: "consumer_arn"},
-		"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StreamArn": ubx.FieldSpec{WireName: "stream_arn"},
-	}
+	"AwsRoleArn":        ubx.FieldSpec{WireName: "aws_role_arn"},
+	"ConsumerArn":       ubx.FieldSpec{WireName: "consumer_arn"},
+	"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"StreamArn":         ubx.FieldSpec{WireName: "stream_arn"},
+}
 
 var Topic_IngestionDataSourceSettings_AwsMskFields = ubx.FieldMap{
-		"AwsRoleArn": ubx.FieldSpec{WireName: "aws_role_arn"},
-		"ClusterArn": ubx.FieldSpec{WireName: "cluster_arn"},
-		"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"AwsRoleArn":        ubx.FieldSpec{WireName: "aws_role_arn"},
+	"ClusterArn":        ubx.FieldSpec{WireName: "cluster_arn"},
+	"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"Topic":             ubx.FieldSpec{WireName: "topic"},
+}
 
 var Topic_IngestionDataSourceSettings_AzureEventHubsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"EventHub": ubx.FieldSpec{WireName: "event_hub"},
-		"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ResourceGroup": ubx.FieldSpec{WireName: "resource_group"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId":          ubx.FieldSpec{WireName: "client_id"},
+	"EventHub":          ubx.FieldSpec{WireName: "event_hub"},
+	"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
+	"Namespace":         ubx.FieldSpec{WireName: "namespace"},
+	"ResourceGroup":     ubx.FieldSpec{WireName: "resource_group"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"SubscriptionId":    ubx.FieldSpec{WireName: "subscription_id"},
+	"TenantId":          ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var Topic_IngestionDataSourceSettings_CloudStorage_TextFormatFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+}
 
 var Topic_IngestionDataSourceSettings_CloudStorageFields = ubx.FieldMap{
-		"AvroFormat": ubx.FieldSpec{WireName: "avro_format"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"MatchGlob": ubx.FieldSpec{WireName: "match_glob"},
-		"MinimumObjectCreateTime": ubx.FieldSpec{WireName: "minimum_object_create_time"},
-		"PubsubAvroFormat": ubx.FieldSpec{WireName: "pubsub_avro_format"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TextFormat": ubx.FieldSpec{
-			WireName: "text_format",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_CloudStorage_TextFormatFields,
-		},
-	}
+	"AvroFormat":              ubx.FieldSpec{WireName: "avro_format"},
+	"Bucket":                  ubx.FieldSpec{WireName: "bucket"},
+	"MatchGlob":               ubx.FieldSpec{WireName: "match_glob"},
+	"MinimumObjectCreateTime": ubx.FieldSpec{WireName: "minimum_object_create_time"},
+	"PubsubAvroFormat":        ubx.FieldSpec{WireName: "pubsub_avro_format"},
+	"State":                   ubx.FieldSpec{WireName: "state"},
+	"TextFormat": ubx.FieldSpec{
+		WireName: "text_format",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_CloudStorage_TextFormatFields,
+	},
+}
 
 var Topic_IngestionDataSourceSettings_ConfluentCloudFields = ubx.FieldMap{
-		"BootstrapServer": ubx.FieldSpec{WireName: "bootstrap_server"},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
-		"IdentityPoolId": ubx.FieldSpec{WireName: "identity_pool_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"BootstrapServer":   ubx.FieldSpec{WireName: "bootstrap_server"},
+	"ClusterId":         ubx.FieldSpec{WireName: "cluster_id"},
+	"GcpServiceAccount": ubx.FieldSpec{WireName: "gcp_service_account"},
+	"IdentityPoolId":    ubx.FieldSpec{WireName: "identity_pool_id"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"Topic":             ubx.FieldSpec{WireName: "topic"},
+}
 
 var Topic_IngestionDataSourceSettings_PlatformLogsSettingsFields = ubx.FieldMap{
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+}
 
 var Topic_IngestionDataSourceSettingsFields = ubx.FieldMap{
-		"AwsKinesis": ubx.FieldSpec{
-			WireName: "aws_kinesis",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_AwsKinesisFields,
-		},
-		"AwsMsk": ubx.FieldSpec{
-			WireName: "aws_msk",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_AwsMskFields,
-		},
-		"AzureEventHubs": ubx.FieldSpec{
-			WireName: "azure_event_hubs",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_AzureEventHubsFields,
-		},
-		"CloudStorage": ubx.FieldSpec{
-			WireName: "cloud_storage",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_CloudStorageFields,
-		},
-		"ConfluentCloud": ubx.FieldSpec{
-			WireName: "confluent_cloud",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_ConfluentCloudFields,
-		},
-		"PlatformLogsSettings": ubx.FieldSpec{
-			WireName: "platform_logs_settings",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettings_PlatformLogsSettingsFields,
-		},
-	}
+	"AwsKinesis": ubx.FieldSpec{
+		WireName: "aws_kinesis",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_AwsKinesisFields,
+	},
+	"AwsMsk": ubx.FieldSpec{
+		WireName: "aws_msk",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_AwsMskFields,
+	},
+	"AzureEventHubs": ubx.FieldSpec{
+		WireName: "azure_event_hubs",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_AzureEventHubsFields,
+	},
+	"CloudStorage": ubx.FieldSpec{
+		WireName: "cloud_storage",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_CloudStorageFields,
+	},
+	"ConfluentCloud": ubx.FieldSpec{
+		WireName: "confluent_cloud",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_ConfluentCloudFields,
+	},
+	"PlatformLogsSettings": ubx.FieldSpec{
+		WireName: "platform_logs_settings",
+		Kind:     "object",
+		Fields:   Topic_IngestionDataSourceSettings_PlatformLogsSettingsFields,
+	},
+}
 
 var Topic_MessageStoragePolicyFields = ubx.FieldMap{
-		"AllowedPersistenceRegions": ubx.FieldSpec{WireName: "allowed_persistence_regions"},
-		"EnforceInTransit": ubx.FieldSpec{WireName: "enforce_in_transit"},
-	}
+	"AllowedPersistenceRegions": ubx.FieldSpec{WireName: "allowed_persistence_regions"},
+	"EnforceInTransit":          ubx.FieldSpec{WireName: "enforce_in_transit"},
+}
 
 var Topic_MessageTransforms_AiInference_UnstructuredInferenceFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Topic_MessageTransforms_AiInferenceFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"UnstructuredInference": ubx.FieldSpec{
-			WireName: "unstructured_inference",
-			Kind: "object",
-			Fields: Topic_MessageTransforms_AiInference_UnstructuredInferenceFields,
-		},
-	}
+	"Endpoint":            ubx.FieldSpec{WireName: "endpoint"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"UnstructuredInference": ubx.FieldSpec{
+		WireName: "unstructured_inference",
+		Kind:     "object",
+		Fields:   Topic_MessageTransforms_AiInference_UnstructuredInferenceFields,
+	},
+}
 
 var Topic_MessageTransforms_CompressionFields = ubx.FieldMap{
-		"CompressionAlgorithm": ubx.FieldSpec{WireName: "compression_algorithm"},
-		"CompressionMode": ubx.FieldSpec{WireName: "compression_mode"},
-	}
+	"CompressionAlgorithm": ubx.FieldSpec{WireName: "compression_algorithm"},
+	"CompressionMode":      ubx.FieldSpec{WireName: "compression_mode"},
+}
 
 var Topic_MessageTransforms_JavascriptUdfFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
-	}
+	"Code":         ubx.FieldSpec{WireName: "code"},
+	"FunctionName": ubx.FieldSpec{WireName: "function_name"},
+}
 
 var Topic_MessageTransformsFields = ubx.FieldMap{
-		"AiInference": ubx.FieldSpec{
-			WireName: "ai_inference",
-			Kind: "object",
-			Fields: Topic_MessageTransforms_AiInferenceFields,
-		},
-		"Compression": ubx.FieldSpec{
-			WireName: "compression",
-			Kind: "object",
-			Fields: Topic_MessageTransforms_CompressionFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"JavascriptUdf": ubx.FieldSpec{
-			WireName: "javascript_udf",
-			Kind: "object",
-			Fields: Topic_MessageTransforms_JavascriptUdfFields,
-		},
-	}
+	"AiInference": ubx.FieldSpec{
+		WireName: "ai_inference",
+		Kind:     "object",
+		Fields:   Topic_MessageTransforms_AiInferenceFields,
+	},
+	"Compression": ubx.FieldSpec{
+		WireName: "compression",
+		Kind:     "object",
+		Fields:   Topic_MessageTransforms_CompressionFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
+	"JavascriptUdf": ubx.FieldSpec{
+		WireName: "javascript_udf",
+		Kind:     "object",
+		Fields:   Topic_MessageTransforms_JavascriptUdfFields,
+	},
+}
 
 var Topic_SchemaSettingsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FirstRevisionId": ubx.FieldSpec{WireName: "first_revision_id"},
-		"LastRevisionId": ubx.FieldSpec{WireName: "last_revision_id"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"Encoding":        ubx.FieldSpec{WireName: "encoding"},
+	"FirstRevisionId": ubx.FieldSpec{WireName: "first_revision_id"},
+	"LastRevisionId":  ubx.FieldSpec{WireName: "last_revision_id"},
+	"Schema":          ubx.FieldSpec{WireName: "schema"},
+}
 
 type TopicConfig struct {
 	// Settings for an ingestion data source on a topic.
@@ -317,8 +317,6 @@ type TopicConfig struct {
 	SatisfiesPzs any
 	// Settings for validating messages published against a schema.
 	SchemaSettings any
-	// Output only. An output-only field indicating the state of the topic.
-	State any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources.
 	Tags any
 }
@@ -353,30 +351,29 @@ var Topic = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"IngestionDataSourceSettings": ubx.FieldSpec{
 			WireName: "ingestion_data_source_settings",
-			Kind: "object",
-			Fields: Topic_IngestionDataSourceSettingsFields,
+			Kind:     "object",
+			Fields:   Topic_IngestionDataSourceSettingsFields,
 		},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"KmsKeyName":               ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MessageRetentionDuration": ubx.FieldSpec{WireName: "message_retention_duration"},
 		"MessageStoragePolicy": ubx.FieldSpec{
 			WireName: "message_storage_policy",
-			Kind: "object",
-			Fields: Topic_MessageStoragePolicyFields,
+			Kind:     "object",
+			Fields:   Topic_MessageStoragePolicyFields,
 		},
 		"MessageTransforms": ubx.FieldSpec{
 			WireName: "message_transforms",
-			Kind: "list",
-			Fields: Topic_MessageTransformsFields,
+			Kind:     "list",
+			Fields:   Topic_MessageTransformsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SchemaSettings": ubx.FieldSpec{
 			WireName: "schema_settings",
-			Kind: "object",
-			Fields: Topic_SchemaSettingsFields,
+			Kind:     "object",
+			Fields:   Topic_SchemaSettingsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

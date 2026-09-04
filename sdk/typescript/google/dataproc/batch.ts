@@ -415,25 +415,11 @@ const Batch_SparkSqlBatchFields: FieldMap = {
   queryVariables: "query_variables",
 };
 
-const Batch_StateHistoryFields: FieldMap = {
-  state: "state",
-  stateMessage: "state_message",
-  stateStartTime: "state_start_time",
-};
-
 export interface BatchConfig {
-  /** Output only. The time when the batch was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The email address of the user who created the batch. */
-  creator?: string | Computed<string>;
   /** Environment configuration for a workload. */
   environmentConfig?: Batch_EnvironmentConfig | Computed<Batch_EnvironmentConfig>;
   /** Optional. The labels to associate with this batch. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a batch. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the batch. */
-  name?: string | Computed<string>;
-  /** Output only. The resource name of the operation associated with this batch. */
-  operation?: string | Computed<string>;
   /** A configuration for running an Apache PySpark (https://spark.apache.org/docs/latest/api/python/getting_started/quickstart.html) batch workload. */
   pysparkBatch?: Batch_PysparkBatch | Computed<Batch_PysparkBatch>;
   /** A configuration for running a PySpark Notebook batch workload. */
@@ -448,16 +434,6 @@ export interface BatchConfig {
   sparkRbatch?: Batch_SparkRbatch | Computed<Batch_SparkRbatch>;
   /** A configuration for running Apache Spark SQL (https://spark.apache.org/sql/) queries as a batch workload. */
   sparkSqlBatch?: Batch_SparkSqlBatch | Computed<Batch_SparkSqlBatch>;
-  /** Output only. The state of the batch. */
-  state?: string | Computed<string>;
-  /** Output only. Historical state information for the batch. */
-  stateHistory?: Batch_StateHistory[] | Computed<Batch_StateHistory[]>;
-  /** Output only. Batch state details, such as a failure description if the state is FAILED. */
-  stateMessage?: string | Computed<string>;
-  /** Output only. The time when the batch entered a current state. */
-  stateTime?: string | Computed<string>;
-  /** Output only. A batch UUID (Unique Universal Identifier). The service generates this value when it creates the batch. */
-  uuid?: string | Computed<string>;
 }
 
 export interface BatchAttrs {
@@ -502,16 +478,12 @@ export interface BatchAttrs {
 export const Batch: ResourceBinding<BatchConfig, BatchAttrs> = {
   wireType: "google_dataproc_batch",
   fields: {
-    createTime: "create_time",
-    creator: "creator",
     environmentConfig: {
       wireName: "environment_config",
       kind: "object",
       fields: Batch_EnvironmentConfigFields,
     },
     labels: "labels",
-    name: "name",
-    operation: "operation",
     pysparkBatch: {
       wireName: "pyspark_batch",
       kind: "object",
@@ -547,14 +519,5 @@ export const Batch: ResourceBinding<BatchConfig, BatchAttrs> = {
       kind: "object",
       fields: Batch_SparkSqlBatchFields,
     },
-    state: "state",
-    stateHistory: {
-      wireName: "state_history",
-      kind: "list",
-      fields: Batch_StateHistoryFields,
-    },
-    stateMessage: "state_message",
-    stateTime: "state_time",
-    uuid: "uuid",
   },
 };

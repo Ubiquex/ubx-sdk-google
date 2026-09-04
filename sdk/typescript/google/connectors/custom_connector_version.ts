@@ -560,16 +560,12 @@ export interface CustomConnectorVersionConfig {
   authOverrideSupport?: boolean | Computed<boolean>;
   /** Optional. Backend variable templates is only used when connector backend is enabled. This is used to specify the variables required by the connector backend service to talk to the actual application backend. This translates to additional variable templates in the connection config. */
   backendVariableTemplates?: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates[] | Computed<CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates[]>;
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Destination config(s) for accessing connector service (facade). This is used only when enable_backend_destination_config is true. */
   destinationConfigs?: CustomConnectorVersion_DestinationConfigs[] | Computed<CustomConnectorVersion_DestinationConfigs[]>;
   /** Optional. Indicates if an intermediatory connectorservice is used as backend. When this is enabled, the connector destination and connector auth config are required. For SDK based connectors, this is always enabled. */
   enableBackendDestinationConfig?: boolean | Computed<boolean>;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. Resource name of the Version. Format: projects/{project}/locations/{location}/customConnectors/{custom_connector}/customConnectorVersions/{custom_connector_version} */
-  name?: string | Computed<string>;
   /** Partner metadata details. This will be populated when publishing the custom connector as a partner connector version. On publishing, parntner connector version will be created using the fields in PartnerMetadata. */
   partnerMetadata?: CustomConnectorVersion_PartnerMetadata | Computed<CustomConnectorVersion_PartnerMetadata>;
   /** Publish status of a custom connector. */
@@ -578,12 +574,6 @@ export interface CustomConnectorVersionConfig {
   serviceAccount?: string | Computed<string>;
   /** Optional. Location of the custom connector spec. This is only used for Open API based custom connectors. The location can be either a public url like `https://public-url.com/spec` Or a Google Cloud Storage location like `gs:///`. */
   specLocation?: string | Computed<string>;
-  /** Output only. Server URLs parsed from the Open API spec. This is only used for Open API based custom connectors. */
-  specServerUrls?: string[] | Computed<string[]>;
-  /** Output only. State of the custom connector version. */
-  state?: string | Computed<string>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomConnectorVersionAttrs {
@@ -643,7 +633,6 @@ export const CustomConnectorVersion: ResourceBinding<CustomConnectorVersionConfi
       kind: "list",
       fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
     },
-    createTime: "create_time",
     destinationConfigs: {
       wireName: "destination_configs",
       kind: "list",
@@ -651,7 +640,6 @@ export const CustomConnectorVersion: ResourceBinding<CustomConnectorVersionConfi
     },
     enableBackendDestinationConfig: "enable_backend_destination_config",
     labels: "labels",
-    name: "name",
     partnerMetadata: {
       wireName: "partner_metadata",
       kind: "object",
@@ -664,8 +652,5 @@ export const CustomConnectorVersion: ResourceBinding<CustomConnectorVersionConfi
     },
     serviceAccount: "service_account",
     specLocation: "spec_location",
-    specServerUrls: "spec_server_urls",
-    state: "state",
-    updateTime: "update_time",
   },
 };

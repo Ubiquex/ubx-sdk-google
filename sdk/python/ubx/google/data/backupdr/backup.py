@@ -291,7 +291,6 @@ class Backup_GcpResource:
 
 @dataclasses.dataclass
 class BackupConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -352,7 +351,6 @@ class BackupAttrs:
 Backup = ubx.DataSourceBinding(
     wire_type="google_backupdr_backup",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

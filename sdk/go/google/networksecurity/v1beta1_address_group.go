@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1AddressGroupConfig struct {
 	// Required. Capacity of the Address Group
 	Capacity any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. Free-text description of the resource.
 	Description any
 	// Optional. List of items.
@@ -18,12 +16,8 @@ type V1beta1AddressGroupConfig struct {
 	Name any
 	// Optional. List of supported purposes of the Address Group.
 	Purpose any
-	// Output only. Server-defined fully-qualified URL for this resource.
-	SelfLink any
 	// Required. The type of the Address Group. Possible values are "IPv4" or "IPV6".
 	Type any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type V1beta1AddressGroupAttrs struct {
@@ -52,15 +46,12 @@ type V1beta1AddressGroupAttrs struct {
 var V1beta1AddressGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_address_group",
 	Fields: ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Capacity":    ubx.FieldSpec{WireName: "capacity"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Purpose": ubx.FieldSpec{WireName: "purpose"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Items":       ubx.FieldSpec{WireName: "items"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Purpose":     ubx.FieldSpec{WireName: "purpose"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -4,7 +4,6 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1AnnotationSpecConfig struct {
-	Name any
 	ReadMask any
 }
 
@@ -14,8 +13,8 @@ type V1beta1AnnotationSpecAttrs struct {
 	// Required. The user-defined name of the AnnotationSpec. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
-	Etag any
-	Name any
+	Etag     any
+	Name     any
 	ReadMask any
 	// Output only. Timestamp when AnnotationSpec was last updated.
 	UpdateTime any
@@ -24,7 +23,6 @@ type V1beta1AnnotationSpecAttrs struct {
 var V1beta1AnnotationSpec = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_v1beta1_annotation_spec",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReadMask": ubx.FieldSpec{WireName: "read_mask"},
 	},
 }

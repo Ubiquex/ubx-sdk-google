@@ -4,18 +4,18 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LbEdgeExtension_ExtensionChains_Extensions struct {
-	Authority any
-	FailOpen any
-	ForwardAttributes any
-	ForwardHeaders any
-	Metadata any
-	Name any
-	ObservabilityMode any
-	RequestBodySendMode any
+	Authority            any
+	FailOpen             any
+	ForwardAttributes    any
+	ForwardHeaders       any
+	Metadata             any
+	Name                 any
+	ObservabilityMode    any
+	RequestBodySendMode  any
 	ResponseBodySendMode any
-	Service any
-	SupportedEvents any
-	Timeout any
+	Service              any
+	SupportedEvents      any
+	Timeout              any
 }
 
 type LbEdgeExtension_ExtensionChains_MatchCondition struct {
@@ -23,47 +23,45 @@ type LbEdgeExtension_ExtensionChains_MatchCondition struct {
 }
 
 type LbEdgeExtension_ExtensionChains struct {
-	Extensions any
+	Extensions     any
 	MatchCondition any
-	Name any
+	Name           any
 }
 
 var LbEdgeExtension_ExtensionChains_ExtensionsFields = ubx.FieldMap{
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"ForwardAttributes": ubx.FieldSpec{WireName: "forward_attributes"},
-		"ForwardHeaders": ubx.FieldSpec{WireName: "forward_headers"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
-		"RequestBodySendMode": ubx.FieldSpec{WireName: "request_body_send_mode"},
-		"ResponseBodySendMode": ubx.FieldSpec{WireName: "response_body_send_mode"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Authority":            ubx.FieldSpec{WireName: "authority"},
+	"FailOpen":             ubx.FieldSpec{WireName: "fail_open"},
+	"ForwardAttributes":    ubx.FieldSpec{WireName: "forward_attributes"},
+	"ForwardHeaders":       ubx.FieldSpec{WireName: "forward_headers"},
+	"Metadata":             ubx.FieldSpec{WireName: "metadata"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"ObservabilityMode":    ubx.FieldSpec{WireName: "observability_mode"},
+	"RequestBodySendMode":  ubx.FieldSpec{WireName: "request_body_send_mode"},
+	"ResponseBodySendMode": ubx.FieldSpec{WireName: "response_body_send_mode"},
+	"Service":              ubx.FieldSpec{WireName: "service"},
+	"SupportedEvents":      ubx.FieldSpec{WireName: "supported_events"},
+	"Timeout":              ubx.FieldSpec{WireName: "timeout"},
+}
 
 var LbEdgeExtension_ExtensionChains_MatchConditionFields = ubx.FieldMap{
-		"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
-	}
+	"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
+}
 
 var LbEdgeExtension_ExtensionChainsFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "list",
-			Fields: LbEdgeExtension_ExtensionChains_ExtensionsFields,
-		},
-		"MatchCondition": ubx.FieldSpec{
-			WireName: "match_condition",
-			Kind: "object",
-			Fields: LbEdgeExtension_ExtensionChains_MatchConditionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "list",
+		Fields:   LbEdgeExtension_ExtensionChains_ExtensionsFields,
+	},
+	"MatchCondition": ubx.FieldSpec{
+		WireName: "match_condition",
+		Kind:     "object",
+		Fields:   LbEdgeExtension_ExtensionChains_MatchConditionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type LbEdgeExtensionConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A human-readable description of the resource.
 	Description any
 	// Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource.
@@ -76,8 +74,6 @@ type LbEdgeExtensionConfig struct {
 	LoadBalancingScheme any
 	// Required. Identifier. Name of the `LbEdgeExtension` resource in the following format: `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`.
 	Name any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type LbEdgeExtensionAttrs struct {
@@ -102,17 +98,15 @@ type LbEdgeExtensionAttrs struct {
 var LbEdgeExtension = ubx.ResourceBinding{
 	WireType: "google_networkservices_lb_edge_extension",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionChains": ubx.FieldSpec{
 			WireName: "extension_chains",
-			Kind: "list",
-			Fields: LbEdgeExtension_ExtensionChainsFields,
+			Kind:     "list",
+			Fields:   LbEdgeExtension_ExtensionChainsFields,
 		},
-		"ForwardingRules": ubx.FieldSpec{WireName: "forwarding_rules"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ForwardingRules":     ubx.FieldSpec{WireName: "forwarding_rules"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -140,8 +140,6 @@ const V1alphaApplication_UpstreamsFields: FieldMap = {
 };
 
 export interface V1alphaApplicationConfig {
-  /** Output only. Timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An arbitrary user-provided name for the application resource. Cannot exceed 64 characters. */
   displayName?: string | Computed<string>;
   /** Optional. An array of conditions to match the application's network endpoint. Each element in the array is an EndpointMatcher object, which defines a specific combination of a hostname pattern and one or more ports. The application is considered matched if at least one of the EndpointMatcher conditions in this array is met (the conditions are combined using OR logic). Each EndpointMatcher must contain a hostname pattern, such as "example.com", and one or more port numbers specified as a string, such as "443". Hostname and port number examples: "*.example.com", "443" "example.com" and "22" "example.com" and "22,33" */
@@ -150,8 +148,6 @@ export interface V1alphaApplicationConfig {
   name?: string | Computed<string>;
   /** Optional. Type of the external application. */
   schema?: string | Computed<string>;
-  /** Output only. Timestamp when the resource was last modified. */
-  updateTime?: string | Computed<string>;
   /** Optional. Which upstream resources to forward traffic to. */
   upstreams?: V1alphaApplication_Upstreams[] | Computed<V1alphaApplication_Upstreams[]>;
 }
@@ -176,7 +172,6 @@ export interface V1alphaApplicationAttrs {
 export const V1alphaApplication: ResourceBinding<V1alphaApplicationConfig, V1alphaApplicationAttrs> = {
   wireType: "google_beyondcorp_v1alpha_application",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     endpointMatchers: {
       wireName: "endpoint_matchers",
@@ -185,7 +180,6 @@ export const V1alphaApplication: ResourceBinding<V1alphaApplicationConfig, V1alp
     },
     name: "name",
     schema: "schema",
-    updateTime: "update_time",
     upstreams: {
       wireName: "upstreams",
       kind: "list",

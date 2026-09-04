@@ -20,8 +20,6 @@ export interface AgentConfig {
   baseAgent?: string | Computed<string>;
   /** Optional. The base environment configuration for the agent. Valid types: * A string value for the environment ID, or `remote` for the default. * A struct value for the `environment_config`. */
   baseEnvironment?: unknown | Computed<unknown>;
-  /** Output only. The time the agent was created. */
-  created?: string | Computed<string>;
   /** Optional. The description of the agent. */
   description?: string | Computed<string>;
   /** Immutable. The user-specified ID for the agent. This ID becomes the final component of the agent resource name. If not provided, Vertex AI will generate a value for this ID. The ID can be up to 63 characters and must match the regular expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`. */
@@ -30,14 +28,10 @@ export interface AgentConfig {
   metadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the agent. Format: `projects/{project}/locations/{location}/agents/{agent}`. */
   name?: string | Computed<string>;
-  /** Output only. The object type of the resource. For agents, the value is `agent`. */
-  object?: string | Computed<string>;
   /** Optional. The instructions for the agent to follow. These instructions are passed to the LLM as a system instruction. */
   systemInstruction?: string | Computed<string>;
   /** Optional. The tools available to the agent. */
   tools?: Agent_Tools[] | Computed<Agent_Tools[]>;
-  /** Output only. The time the agent was last updated. */
-  updated?: string | Computed<string>;
 }
 
 export interface AgentAttrs {
@@ -70,18 +64,15 @@ export const Agent: ResourceBinding<AgentConfig, AgentAttrs> = {
   fields: {
     baseAgent: "base_agent",
     baseEnvironment: "base_environment",
-    created: "created",
     description: "description",
     id: "id",
     metadata: "metadata",
     name: "name",
-    object: "object",
     systemInstruction: "system_instruction",
     tools: {
       wireName: "tools",
       kind: "list",
       fields: Agent_ToolsFields,
     },
-    updated: "updated",
   },
 };

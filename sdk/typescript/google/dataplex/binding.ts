@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BindingConfig {
-  /** Output only. The time at which the DataDomainBinding was created. */
-  createTime?: string | Computed<string>;
   /** Identifier. The relative resource name of the DataDomainBinding. Format: projects/{project_id_or_number}/locations/{location}/dataDomains/{data_domain_id}/bindings/{binding_id} */
   name?: string | Computed<string>;
   /** Required. Immutable. The full resource name of the Google Cloud resource to be bound (i.e. included together with its contents) to the DataDomain.Format: IAM Full resource name (https://docs.cloud.google.com/iam/docs/full-resource-names) Examples: - GCP Project: //cloudresourcemanager.googleapis.com/projects/{project-id} - BigQuery Dataset: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id} - BigQuery Table: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id}/tables/{table-id} - Dataplex Data Product: //dataplex.googleapis.com/projects/{project-number}/locations/{location}/dataProducts/{data-product-id}Authorization: the resource to be bound must first grant an IAM role with the resource-specific setIamPolicy permission to the DataDomain. Example: - resource: //bigquery.googleapis.com/projects/{project-id}/datasets/{dataset-id} - IAM role: with bigquery.datasets.setIamPolicy permission (e.g. roles/owner) - IAM member: principal://dataplex.googleapis.com/projects/{project-number}/name/locations/{location}/dataDomains/{data-domain-id} */
   resource?: string | Computed<string>;
-  /** Output only. System-generated unique ID. */
-  uid?: string | Computed<string>;
 }
 
 export interface BindingAttrs {
@@ -26,9 +22,7 @@ export interface BindingAttrs {
 export const Binding: ResourceBinding<BindingConfig, BindingAttrs> = {
   wireType: "google_dataplex_binding",
   fields: {
-    createTime: "create_time",
     name: "name",
     resource: "resource",
-    uid: "uid",
   },
 };

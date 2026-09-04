@@ -69,8 +69,6 @@ const Database_EncryptionConfigFields: FieldMap = {
 export interface DatabaseConfig {
   /** Required. A `CREATE DATABASE` statement, which specifies the ID of the new database. The database ID must conform to the regular expression `a-z*[a-z0-9]` and be between 2 and 30 characters in length. If the database ID is a reserved word or if it contains a hyphen, the database ID must be enclosed in backticks (`` ` ``). */
   createStatement?: string | Computed<string>;
-  /** Optional. The dialect of the Cloud Spanner Database. */
-  databaseDialect?: string | Computed<string>;
   /** Encryption configuration for a Cloud Spanner database. */
   encryptionConfig?: Database_EncryptionConfig | Computed<Database_EncryptionConfig>;
   /** Optional. A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database: if there is an error in any statement, the database is not created. */
@@ -118,7 +116,6 @@ export const Database: ResourceBinding<DatabaseConfig, DatabaseAttrs> = {
   wireType: "google_spanner_database",
   fields: {
     createStatement: "create_statement",
-    databaseDialect: "database_dialect",
     encryptionConfig: {
       wireName: "encryption_config",
       kind: "object",

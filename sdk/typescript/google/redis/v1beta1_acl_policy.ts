@@ -18,44 +18,16 @@ export interface V1beta1AclPolicy_Rules {
   username?: string | Computed<string>;
 }
 
-const V1beta1AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields: FieldMap = {
-  aclPolicyRevision: "acl_policy_revision",
-  aclPolicyRevisionNumber: "acl_policy_revision_number",
-  errorMessage: "error_message",
-  state: "state",
-};
-
-const V1beta1AclPolicy_ClusterAclPolicyAttachmentsFields: FieldMap = {
-  aclPolicyRevisionStatuses: {
-    wireName: "acl_policy_revision_statuses",
-    kind: "list",
-    fields: V1beta1AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields,
-  },
-  cluster: "cluster",
-};
-
 const V1beta1AclPolicy_RulesFields: FieldMap = {
   rule: "rule",
   username: "username",
 };
 
 export interface V1beta1AclPolicyConfig {
-  /** Output only. The ACL policy attachment status for each attached cluster. */
-  clusterAclPolicyAttachments?: V1beta1AclPolicy_ClusterAclPolicyAttachments[] | Computed<V1beta1AclPolicy_ClusterAclPolicyAttachments[]>;
-  /** Output only. The timestamp that the ACL policy was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Etag for the ACL policy. */
-  etag?: string | Computed<string>;
   /** Identifier. Full resource path of the ACL policy. */
   name?: string | Computed<string>;
   /** Required. The ACL rules within the ACL policy. */
   rules?: V1beta1AclPolicy_Rules[] | Computed<V1beta1AclPolicy_Rules[]>;
-  /** Output only. The state of the ACL policy. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp that the ACL policy was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. Deprecated: Used in drift resolution. */
-  version?: string | Computed<string>;
 }
 
 export interface V1beta1AclPolicyAttrs {
@@ -80,21 +52,11 @@ export interface V1beta1AclPolicyAttrs {
 export const V1beta1AclPolicy: ResourceBinding<V1beta1AclPolicyConfig, V1beta1AclPolicyAttrs> = {
   wireType: "google_redis_v1beta1_acl_policy",
   fields: {
-    clusterAclPolicyAttachments: {
-      wireName: "cluster_acl_policy_attachments",
-      kind: "list",
-      fields: V1beta1AclPolicy_ClusterAclPolicyAttachmentsFields,
-    },
-    createTime: "create_time",
-    etag: "etag",
     name: "name",
     rules: {
       wireName: "rules",
       kind: "list",
       fields: V1beta1AclPolicy_RulesFields,
     },
-    state: "state",
-    updateTime: "update_time",
-    version: "version",
   },
 };

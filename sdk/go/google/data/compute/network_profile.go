@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NetworkProfile_Features_PredefinedSubnetworkRanges struct {
-	Ipv6Range any
+	Ipv6Range  any
 	NamePrefix any
 }
 
@@ -64,7 +64,7 @@ type NetworkProfile_Features struct {
 	// Specifies whether VPC peering is allowed.
 	AllowVpcPeering any
 	// Specifies whether VPN creation is allowed.
-	AllowVpn any
+	AllowVpn            any
 	FirewallPolicyTypes any
 	// If set, limits the interface types that the network supports. If empty, all interface types are supported.
 	InterfaceTypes any
@@ -87,20 +87,20 @@ type NetworkProfile_Features struct {
 }
 
 type NetworkProfile_Location struct {
-	Name any
+	Name  any
 	Scope any
 }
 
 type NetworkProfile_ProfileType struct {
 	NetworkType any
 	RdmaSubtype any
-	UllSubtype any
-	VpcSubtype any
+	UllSubtype  any
+	VpcSubtype  any
 }
 
 type NetworkProfileConfig struct {
 	NetworkProfile any
-	Project any
+	Project        any
 }
 
 type NetworkProfileAttrs struct {
@@ -108,17 +108,17 @@ type NetworkProfileAttrs struct {
 	CreationTimestamp any
 	// Output only. [Output Only] An optional description of this resource.
 	Description any
-	Features any
+	Features    any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. [Output Only] Type of the resource. Alwayscompute#networkProfile for network profiles.
-	Kind any
+	Kind     any
 	Location any
 	// Output only. [Output Only] Name of the resource.
-	Name any
+	Name           any
 	NetworkProfile any
-	ProfileType any
-	Project any
+	ProfileType    any
+	Project        any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
@@ -129,6 +129,6 @@ var NetworkProfile = ubx.DataSourceBinding{
 	WireType: "google_compute_network_profile",
 	Fields: ubx.FieldMap{
 		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":        ubx.FieldSpec{WireName: "project"},
 	},
 }

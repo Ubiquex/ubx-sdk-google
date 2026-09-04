@@ -44,7 +44,7 @@ class Device_DeviceMetadata:
 
 @dataclasses.dataclass
 class DeviceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class DeviceAttrs:
@@ -63,6 +63,5 @@ class DeviceAttrs:
 Device = ubx.DataSourceBinding(
     wire_type="google_androiddeviceprovisioning_device",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

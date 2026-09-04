@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1QuotaRuleConfig:
-    # Output only. Create time of the quota rule
-    create_time: Any = None
     # Optional. Description of the quota rule
     description: Any = None
     # Required. The maximum allowed disk space in MiB.
@@ -18,10 +16,6 @@ class V1beta1QuotaRuleConfig:
     labels: Any = None
     # Identifier. The resource name of the quota rule. Format: `projects/{project_number}/locations/{location_id}/volumes/volumes/{volume_id}/quotaRules/{quota_rule_id}`.
     name: Any = None
-    # Output only. State of the quota rule
-    state: Any = None
-    # Output only. State details of the quota rule
-    state_details: Any = None
     # Optional. The quota rule applies to the specified user or group, identified by a Unix UID/GID, Windows SID, or null for default.
     target: Any = None
     # Required. The type of quota rule.
@@ -51,13 +45,10 @@ class V1beta1QuotaRuleAttrs:
 V1beta1QuotaRule = ubx.ResourceBinding(
     wire_type="google_netapp_v1beta1_quota_rule",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_limit_mib": ubx.FieldSpec(wire_name="disk_limit_mib"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
         "target": ubx.FieldSpec(wire_name="target"),
         "type": ubx.FieldSpec(wire_name="type"),
     },

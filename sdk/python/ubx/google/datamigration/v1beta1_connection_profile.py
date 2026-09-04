@@ -184,8 +184,6 @@ _V1beta1ConnectionProfile_MysqlFields = {
 class V1beta1ConnectionProfileConfig:
     # Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
     cloudsql: Any = None
-    # Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    create_time: Any = None
     # The connection profile display name.
     display_name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -200,8 +198,6 @@ class V1beta1ConnectionProfileConfig:
     provider: Any = None
     # The current connection profile state (e.g. DRAFT, READY, or FAILED).
     state: Any = None
-    # Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ConnectionProfileAttrs:
@@ -234,7 +230,6 @@ V1beta1ConnectionProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ConnectionProfile_CloudsqlFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",
@@ -250,6 +245,5 @@ V1beta1ConnectionProfile = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "provider": ubx.FieldSpec(wire_name="provider"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

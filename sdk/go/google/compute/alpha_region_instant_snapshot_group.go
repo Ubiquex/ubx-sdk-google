@@ -4,53 +4,37 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfo struct {
-	ConsistencyGroup any
+	ConsistencyGroup   any
 	ConsistencyGroupId any
 }
 
 type AlphaRegionInstantSnapshotGroup_ResourceStatus struct {
 	// Output only. [Output Only]
 	ConsistencyMembershipResolutionTime any
-	SourceInfo any
+	SourceInfo                          any
 }
 
 var AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields = ubx.FieldMap{
-		"ConsistencyGroup": ubx.FieldSpec{WireName: "consistency_group"},
-		"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
-	}
+	"ConsistencyGroup":   ubx.FieldSpec{WireName: "consistency_group"},
+	"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
+}
 
 var AlphaRegionInstantSnapshotGroup_ResourceStatusFields = ubx.FieldMap{
-		"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
-		"SourceInfo": ubx.FieldSpec{
-			WireName: "source_info",
-			Kind: "object",
-			Fields: AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields,
-		},
-	}
+	"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
+	"SourceInfo": ubx.FieldSpec{
+		WireName: "source_info",
+		Kind:     "object",
+		Fields:   AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields,
+	},
+}
 
 type AlphaRegionInstantSnapshotGroupConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshotGroup for InstantSnapshotGroup resources.
-	Kind any
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
-	// Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	ResourceStatus any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
+	Name                   any
+	ResourceStatus         any
 	SourceConsistencyGroup any
-	// Output only. [Output Only]
-	Status any
-	// Output only. [Output Only] URL of the zone where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Zone any
 }
 
 type AlphaRegionInstantSnapshotGroupAttrs struct {
@@ -65,12 +49,12 @@ type AlphaRegionInstantSnapshotGroupAttrs struct {
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
+	Region         any
 	ResourceStatus any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
+	SelfLinkWithId         any
 	SourceConsistencyGroup any
 	// Output only. [Output Only]
 	Status any
@@ -81,21 +65,13 @@ type AlphaRegionInstantSnapshotGroupAttrs struct {
 var AlphaRegionInstantSnapshotGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_instant_snapshot_group",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: AlphaRegionInstantSnapshotGroup_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstantSnapshotGroup_ResourceStatusFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"SourceConsistencyGroup": ubx.FieldSpec{WireName: "source_consistency_group"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

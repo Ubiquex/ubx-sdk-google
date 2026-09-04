@@ -3365,25 +3365,13 @@ _Job_StatusFields = {
 @dataclasses.dataclass
 class JobConfig:
     configuration: Any = None
-    # Output only. A hash of this resource.
-    etag: Any = None
-    # Output only. Opaque ID field of the job.
-    id: Any = None
     # Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`.
     job_creation_reason: Any = None
     # A job reference is a fully qualified identifier for referring to a job.
     job_reference: Any = None
-    # Output only. The type of the resource.
-    kind: Any = None
-    # Output only. [Full-projection-only] String representation of identity of requesting party. Populated for both first- and third-party identities. Only present for APIs that support third-party identities.
-    principal_subject: Any = None
-    # Output only. A URL that can be used to access the resource again.
-    self_link: Any = None
     # Statistics for a single job execution.
     statistics: Any = None
     status: Any = None
-    # Output only. Email address of the user who ran the job.
-    user_email: Any = None
 
 @dataclasses.dataclass
 class JobAttrs:
@@ -3416,8 +3404,6 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_ConfigurationFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "job_creation_reason": ubx.FieldSpec(
             wire_name="job_creation_reason",
             kind="object",
@@ -3428,9 +3414,6 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_JobReferenceFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
-        "principal_subject": ubx.FieldSpec(wire_name="principal_subject"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "statistics": ubx.FieldSpec(
             wire_name="statistics",
             kind="object",
@@ -3441,6 +3424,5 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_StatusFields,
         ),
-        "user_email": ubx.FieldSpec(wire_name="user_email"),
     },
 )

@@ -143,8 +143,6 @@ const Secret_TopicsFields: FieldMap = {
 export interface SecretConfig {
   /** Optional. Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and alphanumerics in between these symbols. The total size of annotation keys and values must be less than 16KiB. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The time at which the Secret was created. */
-  createTime?: string | Computed<string>;
   /** Configuration for encrypting secret payloads using customer-managed encryption keys (CMEK). */
   customerManagedEncryption?: Secret_CustomerManagedEncryption | Computed<Secret_CustomerManagedEncryption>;
   /** Optional. Etag of the currently stored Secret. */
@@ -153,8 +151,6 @@ export interface SecretConfig {
   expireTime?: string | Computed<string>;
   /** The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the Secret in the format `projects/* /secrets/*`. */
-  name?: string | Computed<string>;
   /** Output-only policy member strings of a Google Cloud resource's built-in identity. */
   policyMember?: Secret_PolicyMember | Computed<Secret_PolicyMember>;
   /** A policy that defines the replication and encryption configuration of data. */
@@ -214,7 +210,6 @@ export const Secret: ResourceBinding<SecretConfig, SecretAttrs> = {
   wireType: "google_secretmanager_secret",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     customerManagedEncryption: {
       wireName: "customer_managed_encryption",
       kind: "object",
@@ -223,7 +218,6 @@ export const Secret: ResourceBinding<SecretConfig, SecretAttrs> = {
     etag: "etag",
     expireTime: "expire_time",
     labels: "labels",
-    name: "name",
     policyMember: {
       wireName: "policy_member",
       kind: "object",

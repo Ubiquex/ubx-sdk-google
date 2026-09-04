@@ -17,7 +17,6 @@ type Resource_TerraformInfo struct {
 }
 
 type ResourceConfig struct {
-	Name any
 }
 
 type ResourceAttrs struct {
@@ -25,7 +24,7 @@ type ResourceAttrs struct {
 	CaiAssets any
 	// Output only. Intent of the resource.
 	Intent any
-	Name any
+	Name   any
 	// Output only. Current state of the resource.
 	State any
 	// Terraform info of a Resource.
@@ -34,7 +33,5 @@ type ResourceAttrs struct {
 
 var Resource = ubx.DataSourceBinding{
 	WireType: "google_config_resource",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

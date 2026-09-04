@@ -71,7 +71,7 @@ type V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocation struct {
 
 type V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentiles struct {
 	LatencyMicros any
-	Percent any
+	Percent       any
 }
 
 type V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency struct {
@@ -80,11 +80,11 @@ type V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency struct 
 
 type V1beta1ConnectivityTest_ProbingDetails_EdgeResponses struct {
 	DestinationEgressLocation any
-	DestinationRouter any
-	ProbingLatency any
-	Result any
-	SentProbeCount any
-	SuccessfulProbeCount any
+	DestinationRouter         any
+	ProbingLatency            any
+	Result                    any
+	SentProbeCount            any
+	SuccessfulProbeCount      any
 }
 
 type V1beta1ConnectivityTest_ProbingDetails_EndpointInfo struct {
@@ -141,126 +141,126 @@ type V1beta1ConnectivityTest_ProbingDetails struct {
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Abort struct {
-	Cause any
-	IpAddress any
+	Cause                     any
+	IpAddress                 any
 	ProjectsMissingPermission any
-	ResourceUri any
+	ResourceUri               any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersion struct {
 	DisplayName any
 	Environment any
-	Runtime any
-	Uri any
+	Runtime     any
+	Uri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunction struct {
 	DisplayName any
-	Location any
-	Uri any
-	VersionId any
+	Location    any
+	Uri         any
+	VersionId   any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJob struct {
 	DisplayName any
-	Location any
-	Uri any
+	Location    any
+	Uri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevision struct {
-	DisplayName any
-	Location any
-	ServiceUri any
-	Uri any
+	DisplayName   any
+	Location      any
+	ServiceUri    any
+	Uri           any
 	WorkerPoolUri any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstance struct {
 	DisplayName any
-	ExternalIp any
-	InternalIp any
-	NetworkUri any
-	Region any
-	Uri any
+	ExternalIp  any
+	InternalIp  any
+	NetworkUri  any
+	Region      any
+	Uri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Deliver struct {
-	GoogleServiceType any
-	IpAddress any
+	GoogleServiceType  any
+	IpAddress          any
 	PscGoogleApiTarget any
-	ResourceUri any
-	StorageBucket any
-	Target any
+	ResourceUri        any
+	StorageBucket      any
+	Target             any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnection struct {
-	NetworkUri any
-	Region any
+	NetworkUri        any
+	Region            any
 	SelectedIpAddress any
-	SelectedIpRange any
-	SubnetworkUri any
+	SelectedIpRange   any
+	SubnetworkUri     any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Drop struct {
-	Cause any
+	Cause                      any
 	DestinationGeolocationCode any
-	DestinationIp any
-	Region any
-	ResourceUri any
-	SourceGeolocationCode any
-	SourceIp any
+	DestinationIp              any
+	Region                     any
+	ResourceUri                any
+	SourceGeolocationCode      any
+	SourceIp                   any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Firewall struct {
-	Action any
-	Direction any
-	DisplayName any
-	FirewallRuleType any
-	NetworkUri any
-	Policy any
-	PolicyPriority any
-	PolicyUri any
-	Priority any
+	Action                any
+	Direction             any
+	DisplayName           any
+	FirewallRuleType      any
+	NetworkUri            any
+	Policy                any
+	PolicyPriority        any
+	PolicyUri             any
+	Priority              any
 	TargetServiceAccounts any
-	TargetTags any
-	TargetType any
-	Uri any
+	TargetTags            any
+	TargetType            any
+	Uri                   any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Forward struct {
-	IpAddress any
+	IpAddress   any
 	ResourceUri any
-	Target any
+	Target      any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRule struct {
-	DisplayName any
+	DisplayName                          any
 	EnvoyHealthCheckFirewallsConfigState any
-	LoadBalancerName any
-	MatchedPortRange any
-	MatchedProtocol any
-	NetworkUri any
-	PscGoogleApiTarget any
-	PscServiceAttachmentUri any
-	Region any
-	Target any
-	Uri any
-	Vip any
+	LoadBalancerName                     any
+	MatchedPortRange                     any
+	MatchedProtocol                      any
+	NetworkUri                           any
+	PscGoogleApiTarget                   any
+	PscServiceAttachmentUri              any
+	Region                               any
+	Target                               any
+	Uri                                  any
+	Vip                                  any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMaster struct {
 	ClusterNetworkUri any
-	ClusterUri any
-	DnsEndpoint any
-	ExternalIp any
-	InternalIp any
+	ClusterUri        any
+	DnsEndpoint       any
+	ExternalIp        any
+	InternalIp        any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicy struct {
-	Action any
-	Direction any
+	Action      any
+	Direction   any
 	DisplayName any
-	Uri any
+	Uri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkipped struct {
@@ -268,104 +268,104 @@ type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySk
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePod struct {
-	IpAddress any
+	IpAddress  any
 	NetworkUri any
-	PodUri any
+	PodUri     any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleService struct {
 	GoogleServiceType any
-	SourceIp any
+	SourceIp          any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnet struct {
 	DisplayName any
-	Region any
-	Uri any
+	Region      any
+	Uri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Instance struct {
-	DisplayName any
-	ExternalIp any
-	Interface any
-	InternalIp any
-	NetworkTags any
-	NetworkUri any
+	DisplayName             any
+	ExternalIp              any
+	Interface               any
+	InternalIp              any
+	NetworkTags             any
+	NetworkUri              any
 	PscNetworkAttachmentUri any
-	Running any
-	ServiceAccount any
-	Status any
-	Uri any
+	Running                 any
+	ServiceAccount          any
+	Status                  any
+	Uri                     any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachment struct {
-	CloudRouterUri any
-	DisplayName any
-	InterconnectUri any
+	CloudRouterUri               any
+	DisplayName                  any
+	InterconnectUri              any
 	L2AttachmentMatchedIpAddress any
-	Region any
-	Type any
-	Uri any
+	Region                       any
+	Type                         any
+	Uri                          any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkipped struct {
 	NonMasqueradeRange any
-	Reason any
+	Reason             any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_Backends struct {
-	DisplayName any
+	DisplayName                      any
 	HealthCheckAllowingFirewallRules any
 	HealthCheckBlockingFirewallRules any
-	HealthCheckFirewallState any
-	Uri any
+	HealthCheckFirewallState         any
+	Uri                              any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer struct {
-	BackendType any
-	BackendUri any
-	Backends any
-	HealthCheckUri any
+	BackendType      any
+	BackendUri       any
+	Backends         any
+	HealthCheckUri   any
 	LoadBalancerType any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfo struct {
-	BackendBucketUri any
-	BackendServiceUri any
+	BackendBucketUri                any
+	BackendServiceUri               any
 	HealthCheckFirewallsConfigState any
-	HealthCheckUri any
-	InstanceGroupUri any
-	InstanceUri any
-	Name any
-	NetworkEndpointGroupUri any
-	PscGoogleApiTarget any
-	PscServiceAttachmentUri any
+	HealthCheckUri                  any
+	InstanceGroupUri                any
+	InstanceUri                     any
+	Name                            any
+	NetworkEndpointGroupUri         any
+	PscGoogleApiTarget              any
+	PscServiceAttachmentUri         any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Nat struct {
 	CloudNatGatewayType any
-	NatGatewayName any
-	NetworkUri any
-	NewDestinationIp any
-	NewDestinationPort any
-	NewSourceIp any
-	NewSourcePort any
-	OldDestinationIp any
-	OldDestinationPort any
-	OldSourceIp any
-	OldSourcePort any
-	Protocol any
-	RouterUri any
-	RuleNumber any
-	Type any
+	NatGatewayName      any
+	NetworkUri          any
+	NewDestinationIp    any
+	NewDestinationPort  any
+	NewSourceIp         any
+	NewSourcePort       any
+	OldDestinationIp    any
+	OldDestinationPort  any
+	OldSourceIp         any
+	OldSourcePort       any
+	Protocol            any
+	RouterUri           any
+	RuleNumber          any
+	Type                any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Network struct {
-	DisplayName any
-	MatchedIpRange any
+	DisplayName      any
+	MatchedIpRange   any
 	MatchedSubnetUri any
-	Region any
-	Uri any
+	Region           any
+	Uri              any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspection struct {
@@ -373,62 +373,62 @@ type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspecti
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnection struct {
-	NetworkUri any
-	NewDestinationIp any
+	NetworkUri         any
+	NewDestinationIp   any
 	NewDestinationPort any
-	NewSourceIp any
-	NewSourcePort any
-	OldDestinationIp any
+	NewSourceIp        any
+	NewSourcePort      any
+	OldDestinationIp   any
 	OldDestinationPort any
-	OldSourceIp any
-	OldSourcePort any
-	Protocol any
-	SubnetUri any
+	OldSourceIp        any
+	OldSourcePort      any
+	Protocol           any
+	SubnetUri          any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisCluster struct {
 	DiscoveryEndpointIpAddress any
-	DisplayName any
-	Location any
-	NetworkUri any
+	DisplayName                any
+	Location                   any
+	NetworkUri                 any
 	SecondaryEndpointIpAddress any
-	Uri any
+	Uri                        any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstance struct {
-	DisplayName any
-	NetworkUri any
+	DisplayName       any
+	NetworkUri        any
 	PrimaryEndpointIp any
-	ReadEndpointIp any
-	Region any
-	Uri any
+	ReadEndpointIp    any
+	Region            any
+	Uri               any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_Route struct {
-	AdvertisedRouteNextHopUri any
+	AdvertisedRouteNextHopUri      any
 	AdvertisedRouteSourceRouterUri any
-	DestIpRange any
-	DestPortRanges any
-	DisplayName any
-	InstanceTags any
-	NccHubRouteUri any
-	NccHubUri any
-	NccSpokeUri any
-	NetworkUri any
-	NextHop any
-	NextHopNetworkUri any
-	NextHopType any
-	NextHopUri any
-	OriginatingRouteDisplayName any
-	OriginatingRouteUri any
-	Priority any
-	Protocols any
-	Region any
-	RouteScope any
-	RouteType any
-	SrcIpRange any
-	SrcPortRanges any
-	Uri any
+	DestIpRange                    any
+	DestPortRanges                 any
+	DisplayName                    any
+	InstanceTags                   any
+	NccHubRouteUri                 any
+	NccHubUri                      any
+	NccSpokeUri                    any
+	NetworkUri                     any
+	NextHop                        any
+	NextHopNetworkUri              any
+	NextHopType                    any
+	NextHopUri                     any
+	OriginatingRouteDisplayName    any
+	OriginatingRouteUri            any
+	Priority                       any
+	Protocols                      any
+	Region                         any
+	RouteScope                     any
+	RouteType                      any
+	SrcIpRange                     any
+	SrcPortRanges                  any
+	Uri                            any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnection struct {
@@ -448,77 +448,77 @@ type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMi
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGateway struct {
-	DisplayName any
-	IpAddress any
-	NetworkUri any
-	Region any
-	Uri any
+	DisplayName  any
+	IpAddress    any
+	NetworkUri   any
+	Region       any
+	Uri          any
 	VpnTunnelUri any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnel struct {
-	DisplayName any
-	NetworkUri any
-	Region any
-	RemoteGateway any
+	DisplayName     any
+	NetworkUri      any
+	Region          any
+	RemoteGateway   any
 	RemoteGatewayIp any
-	RoutingType any
-	SourceGateway any
+	RoutingType     any
+	SourceGateway   any
 	SourceGatewayIp any
-	Uri any
+	Uri             any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps struct {
-	Abort any
-	AppEngineVersion any
-	CausesDrop any
-	CloudFunction any
-	CloudRunJob any
-	CloudRunRevision any
-	CloudSqlInstance any
-	DatastreamPrivateConnection any
-	Deliver any
-	Description any
-	DirectVpcEgressConnection any
-	DmsPrivateConnection any
-	Drop any
-	Endpoint any
-	Firewall any
-	Forward any
-	ForwardingRule any
-	GkeMaster any
-	GkeNetworkPolicy any
-	GkeNetworkPolicySkipped any
-	GkePod any
-	GoogleService any
-	HybridSubnet any
-	Instance any
-	InterconnectAttachment any
-	IpMasqueradingSkipped any
-	LoadBalancer any
-	LoadBalancerBackendInfo any
-	Nat any
-	Network any
-	NgfwPacketInspection any
-	ProjectId any
-	ProxyConnection any
-	RedisCluster any
-	RedisInstance any
-	Route any
+	Abort                        any
+	AppEngineVersion             any
+	CausesDrop                   any
+	CloudFunction                any
+	CloudRunJob                  any
+	CloudRunRevision             any
+	CloudSqlInstance             any
+	DatastreamPrivateConnection  any
+	Deliver                      any
+	Description                  any
+	DirectVpcEgressConnection    any
+	DmsPrivateConnection         any
+	Drop                         any
+	Endpoint                     any
+	Firewall                     any
+	Forward                      any
+	ForwardingRule               any
+	GkeMaster                    any
+	GkeNetworkPolicy             any
+	GkeNetworkPolicySkipped      any
+	GkePod                       any
+	GoogleService                any
+	HybridSubnet                 any
+	Instance                     any
+	InterconnectAttachment       any
+	IpMasqueradingSkipped        any
+	LoadBalancer                 any
+	LoadBalancerBackendInfo      any
+	Nat                          any
+	Network                      any
+	NgfwPacketInspection         any
+	ProjectId                    any
+	ProxyConnection              any
+	RedisCluster                 any
+	RedisInstance                any
+	Route                        any
 	ServerlessExternalConnection any
-	ServerlessNeg any
-	State any
-	StorageBucket any
-	ViewerPermissionMissingInfo any
-	VpcConnector any
-	VpnGateway any
-	VpnTunnel any
+	ServerlessNeg                any
+	State                        any
+	StorageBucket                any
+	ViewerPermissionMissingInfo  any
+	VpcConnector                 any
+	VpnGateway                   any
+	VpnTunnel                    any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails_Traces struct {
-	EndpointInfo any
+	EndpointInfo   any
 	ForwardTraceId any
-	Steps any
+	Steps          any
 }
 
 type V1beta1ConnectivityTest_ReachabilityDetails struct {
@@ -533,716 +533,712 @@ type V1beta1ConnectivityTest_ReachabilityDetails struct {
 }
 
 var V1beta1ConnectivityTest_Destination_AppEngineVersionFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_Destination_CloudRunRevisionFields = ubx.FieldMap{
-		"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
-	}
+	"ServiceUri":    ubx.FieldSpec{WireName: "service_uri"},
+	"Uri":           ubx.FieldSpec{WireName: "uri"},
+	"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
+}
 
 var V1beta1ConnectivityTest_DestinationFields = ubx.FieldMap{
-		"AppEngineVersion": ubx.FieldSpec{
-			WireName: "app_engine_version",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
-		},
-		"CloudFunction": ubx.FieldSpec{
-			WireName: "cloud_function",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
-		},
-		"CloudRunJob": ubx.FieldSpec{WireName: "cloud_run_job"},
-		"CloudRunRevision": ubx.FieldSpec{
-			WireName: "cloud_run_revision",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_Destination_CloudRunRevisionFields,
-		},
-		"CloudSqlInstance": ubx.FieldSpec{WireName: "cloud_sql_instance"},
-		"DatastreamPrivateConnection": ubx.FieldSpec{WireName: "datastream_private_connection"},
-		"DmsPrivateConnection": ubx.FieldSpec{WireName: "dms_private_connection"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"ForwardingRuleTarget": ubx.FieldSpec{WireName: "forwarding_rule_target"},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"GkeMasterCluster": ubx.FieldSpec{WireName: "gke_master_cluster"},
-		"GkePod": ubx.FieldSpec{WireName: "gke_pod"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"LoadBalancerId": ubx.FieldSpec{WireName: "load_balancer_id"},
-		"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RedisCluster": ubx.FieldSpec{WireName: "redis_cluster"},
-		"RedisInstance": ubx.FieldSpec{WireName: "redis_instance"},
-	}
+	"AppEngineVersion": ubx.FieldSpec{
+		WireName: "app_engine_version",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
+	},
+	"CloudFunction": ubx.FieldSpec{
+		WireName: "cloud_function",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
+	},
+	"CloudRunJob": ubx.FieldSpec{WireName: "cloud_run_job"},
+	"CloudRunRevision": ubx.FieldSpec{
+		WireName: "cloud_run_revision",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_Destination_CloudRunRevisionFields,
+	},
+	"CloudSqlInstance":            ubx.FieldSpec{WireName: "cloud_sql_instance"},
+	"DatastreamPrivateConnection": ubx.FieldSpec{WireName: "datastream_private_connection"},
+	"DmsPrivateConnection":        ubx.FieldSpec{WireName: "dms_private_connection"},
+	"ForwardingRule":              ubx.FieldSpec{WireName: "forwarding_rule"},
+	"ForwardingRuleTarget":        ubx.FieldSpec{WireName: "forwarding_rule_target"},
+	"Fqdn":                        ubx.FieldSpec{WireName: "fqdn"},
+	"GkeMasterCluster":            ubx.FieldSpec{WireName: "gke_master_cluster"},
+	"GkePod":                      ubx.FieldSpec{WireName: "gke_pod"},
+	"Instance":                    ubx.FieldSpec{WireName: "instance"},
+	"IpAddress":                   ubx.FieldSpec{WireName: "ip_address"},
+	"LoadBalancerId":              ubx.FieldSpec{WireName: "load_balancer_id"},
+	"LoadBalancerType":            ubx.FieldSpec{WireName: "load_balancer_type"},
+	"Network":                     ubx.FieldSpec{WireName: "network"},
+	"NetworkType":                 ubx.FieldSpec{WireName: "network_type"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"ProjectId":                   ubx.FieldSpec{WireName: "project_id"},
+	"RedisCluster":                ubx.FieldSpec{WireName: "redis_cluster"},
+	"RedisInstance":               ubx.FieldSpec{WireName: "redis_instance"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocationFields = ubx.FieldMap{
-		"MetropolitanArea": ubx.FieldSpec{WireName: "metropolitan_area"},
-	}
+	"MetropolitanArea": ubx.FieldSpec{WireName: "metropolitan_area"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentilesFields = ubx.FieldMap{
-		"LatencyMicros": ubx.FieldSpec{WireName: "latency_micros"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"LatencyMicros": ubx.FieldSpec{WireName: "latency_micros"},
+	"Percent":       ubx.FieldSpec{WireName: "percent"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatencyFields = ubx.FieldMap{
-		"LatencyPercentiles": ubx.FieldSpec{
-			WireName: "latency_percentiles",
-			Kind: "list",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentilesFields,
-		},
-	}
+	"LatencyPercentiles": ubx.FieldSpec{
+		WireName: "latency_percentiles",
+		Kind:     "list",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatency_LatencyPercentilesFields,
+	},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_EdgeResponsesFields = ubx.FieldMap{
-		"DestinationEgressLocation": ubx.FieldSpec{
-			WireName: "destination_egress_location",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocationFields,
-		},
-		"DestinationRouter": ubx.FieldSpec{WireName: "destination_router"},
-		"ProbingLatency": ubx.FieldSpec{
-			WireName: "probing_latency",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatencyFields,
-		},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"SentProbeCount": ubx.FieldSpec{WireName: "sent_probe_count"},
-		"SuccessfulProbeCount": ubx.FieldSpec{WireName: "successful_probe_count"},
-	}
+	"DestinationEgressLocation": ubx.FieldSpec{
+		WireName: "destination_egress_location",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocationFields,
+	},
+	"DestinationRouter": ubx.FieldSpec{WireName: "destination_router"},
+	"ProbingLatency": ubx.FieldSpec{
+		WireName: "probing_latency",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatencyFields,
+	},
+	"Result":               ubx.FieldSpec{WireName: "result"},
+	"SentProbeCount":       ubx.FieldSpec{WireName: "sent_probe_count"},
+	"SuccessfulProbeCount": ubx.FieldSpec{WireName: "successful_probe_count"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields = ubx.FieldMap{
-		"DestinationIp": ubx.FieldSpec{WireName: "destination_ip"},
-		"DestinationNetworkUri": ubx.FieldSpec{WireName: "destination_network_uri"},
-		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SourceAgentUri": ubx.FieldSpec{WireName: "source_agent_uri"},
-		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
-		"SourceNetworkUri": ubx.FieldSpec{WireName: "source_network_uri"},
-		"SourcePort": ubx.FieldSpec{WireName: "source_port"},
-	}
+	"DestinationIp":         ubx.FieldSpec{WireName: "destination_ip"},
+	"DestinationNetworkUri": ubx.FieldSpec{WireName: "destination_network_uri"},
+	"DestinationPort":       ubx.FieldSpec{WireName: "destination_port"},
+	"Protocol":              ubx.FieldSpec{WireName: "protocol"},
+	"SourceAgentUri":        ubx.FieldSpec{WireName: "source_agent_uri"},
+	"SourceIp":              ubx.FieldSpec{WireName: "source_ip"},
+	"SourceNetworkUri":      ubx.FieldSpec{WireName: "source_network_uri"},
+	"SourcePort":            ubx.FieldSpec{WireName: "source_port"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetails_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1ConnectivityTest_ProbingDetailsFields = ubx.FieldMap{
-		"AbortCause": ubx.FieldSpec{WireName: "abort_cause"},
-		"DestinationEgressLocation": ubx.FieldSpec{
-			WireName: "destination_egress_location",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocationFields,
-		},
-		"EdgeResponses": ubx.FieldSpec{
-			WireName: "edge_responses",
-			Kind: "list",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EdgeResponsesFields,
-		},
-		"EndpointInfo": ubx.FieldSpec{
-			WireName: "endpoint_info",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
-		},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_ErrorFields,
-		},
-		"ProbedAllDevices": ubx.FieldSpec{WireName: "probed_all_devices"},
-		"ProbingLatency": ubx.FieldSpec{
-			WireName: "probing_latency",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatencyFields,
-		},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"SentProbeCount": ubx.FieldSpec{WireName: "sent_probe_count"},
-		"SuccessfulProbeCount": ubx.FieldSpec{WireName: "successful_probe_count"},
-		"VerifyTime": ubx.FieldSpec{WireName: "verify_time"},
-	}
+	"AbortCause": ubx.FieldSpec{WireName: "abort_cause"},
+	"DestinationEgressLocation": ubx.FieldSpec{
+		WireName: "destination_egress_location",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_DestinationEgressLocationFields,
+	},
+	"EdgeResponses": ubx.FieldSpec{
+		WireName: "edge_responses",
+		Kind:     "list",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EdgeResponsesFields,
+	},
+	"EndpointInfo": ubx.FieldSpec{
+		WireName: "endpoint_info",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
+	},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_ErrorFields,
+	},
+	"ProbedAllDevices": ubx.FieldSpec{WireName: "probed_all_devices"},
+	"ProbingLatency": ubx.FieldSpec{
+		WireName: "probing_latency",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EdgeResponses_ProbingLatencyFields,
+	},
+	"Result":               ubx.FieldSpec{WireName: "result"},
+	"SentProbeCount":       ubx.FieldSpec{WireName: "sent_probe_count"},
+	"SuccessfulProbeCount": ubx.FieldSpec{WireName: "successful_probe_count"},
+	"VerifyTime":           ubx.FieldSpec{WireName: "verify_time"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AbortFields = ubx.FieldMap{
-		"Cause": ubx.FieldSpec{WireName: "cause"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"ProjectsMissingPermission": ubx.FieldSpec{WireName: "projects_missing_permission"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-	}
+	"Cause":                     ubx.FieldSpec{WireName: "cause"},
+	"IpAddress":                 ubx.FieldSpec{WireName: "ip_address"},
+	"ProjectsMissingPermission": ubx.FieldSpec{WireName: "projects_missing_permission"},
+	"ResourceUri":               ubx.FieldSpec{WireName: "resource_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Runtime":     ubx.FieldSpec{WireName: "runtime"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunctionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+	"VersionId":   ubx.FieldSpec{WireName: "version_id"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJobFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevisionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
-	}
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Location":      ubx.FieldSpec{WireName: "location"},
+	"ServiceUri":    ubx.FieldSpec{WireName: "service_uri"},
+	"Uri":           ubx.FieldSpec{WireName: "uri"},
+	"WorkerPoolUri": ubx.FieldSpec{WireName: "worker_pool_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstanceFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ExternalIp":  ubx.FieldSpec{WireName: "external_ip"},
+	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
+	"NetworkUri":  ubx.FieldSpec{WireName: "network_uri"},
+	"Region":      ubx.FieldSpec{WireName: "region"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DeliverFields = ubx.FieldMap{
-		"GoogleServiceType": ubx.FieldSpec{WireName: "google_service_type"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"PscGoogleApiTarget": ubx.FieldSpec{WireName: "psc_google_api_target"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"StorageBucket": ubx.FieldSpec{WireName: "storage_bucket"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"GoogleServiceType":  ubx.FieldSpec{WireName: "google_service_type"},
+	"IpAddress":          ubx.FieldSpec{WireName: "ip_address"},
+	"PscGoogleApiTarget": ubx.FieldSpec{WireName: "psc_google_api_target"},
+	"ResourceUri":        ubx.FieldSpec{WireName: "resource_uri"},
+	"StorageBucket":      ubx.FieldSpec{WireName: "storage_bucket"},
+	"Target":             ubx.FieldSpec{WireName: "target"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnectionFields = ubx.FieldMap{
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelectedIpAddress": ubx.FieldSpec{WireName: "selected_ip_address"},
-		"SelectedIpRange": ubx.FieldSpec{WireName: "selected_ip_range"},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-	}
+	"NetworkUri":        ubx.FieldSpec{WireName: "network_uri"},
+	"Region":            ubx.FieldSpec{WireName: "region"},
+	"SelectedIpAddress": ubx.FieldSpec{WireName: "selected_ip_address"},
+	"SelectedIpRange":   ubx.FieldSpec{WireName: "selected_ip_range"},
+	"SubnetworkUri":     ubx.FieldSpec{WireName: "subnetwork_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DropFields = ubx.FieldMap{
-		"Cause": ubx.FieldSpec{WireName: "cause"},
-		"DestinationGeolocationCode": ubx.FieldSpec{WireName: "destination_geolocation_code"},
-		"DestinationIp": ubx.FieldSpec{WireName: "destination_ip"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"SourceGeolocationCode": ubx.FieldSpec{WireName: "source_geolocation_code"},
-		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
-	}
+	"Cause":                      ubx.FieldSpec{WireName: "cause"},
+	"DestinationGeolocationCode": ubx.FieldSpec{WireName: "destination_geolocation_code"},
+	"DestinationIp":              ubx.FieldSpec{WireName: "destination_ip"},
+	"Region":                     ubx.FieldSpec{WireName: "region"},
+	"ResourceUri":                ubx.FieldSpec{WireName: "resource_uri"},
+	"SourceGeolocationCode":      ubx.FieldSpec{WireName: "source_geolocation_code"},
+	"SourceIp":                   ubx.FieldSpec{WireName: "source_ip"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_FirewallFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FirewallRuleType": ubx.FieldSpec{WireName: "firewall_rule_type"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"PolicyPriority": ubx.FieldSpec{WireName: "policy_priority"},
-		"PolicyUri": ubx.FieldSpec{WireName: "policy_uri"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-		"TargetTags": ubx.FieldSpec{WireName: "target_tags"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Action":                ubx.FieldSpec{WireName: "action"},
+	"Direction":             ubx.FieldSpec{WireName: "direction"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"FirewallRuleType":      ubx.FieldSpec{WireName: "firewall_rule_type"},
+	"NetworkUri":            ubx.FieldSpec{WireName: "network_uri"},
+	"Policy":                ubx.FieldSpec{WireName: "policy"},
+	"PolicyPriority":        ubx.FieldSpec{WireName: "policy_priority"},
+	"PolicyUri":             ubx.FieldSpec{WireName: "policy_uri"},
+	"Priority":              ubx.FieldSpec{WireName: "priority"},
+	"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
+	"TargetTags":            ubx.FieldSpec{WireName: "target_tags"},
+	"TargetType":            ubx.FieldSpec{WireName: "target_type"},
+	"Uri":                   ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"IpAddress":   ubx.FieldSpec{WireName: "ip_address"},
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+	"Target":      ubx.FieldSpec{WireName: "target"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRuleFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EnvoyHealthCheckFirewallsConfigState": ubx.FieldSpec{WireName: "envoy_health_check_firewalls_config_state"},
-		"LoadBalancerName": ubx.FieldSpec{WireName: "load_balancer_name"},
-		"MatchedPortRange": ubx.FieldSpec{WireName: "matched_port_range"},
-		"MatchedProtocol": ubx.FieldSpec{WireName: "matched_protocol"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"PscGoogleApiTarget": ubx.FieldSpec{WireName: "psc_google_api_target"},
-		"PscServiceAttachmentUri": ubx.FieldSpec{WireName: "psc_service_attachment_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Vip": ubx.FieldSpec{WireName: "vip"},
-	}
+	"DisplayName":                          ubx.FieldSpec{WireName: "display_name"},
+	"EnvoyHealthCheckFirewallsConfigState": ubx.FieldSpec{WireName: "envoy_health_check_firewalls_config_state"},
+	"LoadBalancerName":                     ubx.FieldSpec{WireName: "load_balancer_name"},
+	"MatchedPortRange":                     ubx.FieldSpec{WireName: "matched_port_range"},
+	"MatchedProtocol":                      ubx.FieldSpec{WireName: "matched_protocol"},
+	"NetworkUri":                           ubx.FieldSpec{WireName: "network_uri"},
+	"PscGoogleApiTarget":                   ubx.FieldSpec{WireName: "psc_google_api_target"},
+	"PscServiceAttachmentUri":              ubx.FieldSpec{WireName: "psc_service_attachment_uri"},
+	"Region":                               ubx.FieldSpec{WireName: "region"},
+	"Target":                               ubx.FieldSpec{WireName: "target"},
+	"Uri":                                  ubx.FieldSpec{WireName: "uri"},
+	"Vip":                                  ubx.FieldSpec{WireName: "vip"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMasterFields = ubx.FieldMap{
-		"ClusterNetworkUri": ubx.FieldSpec{WireName: "cluster_network_uri"},
-		"ClusterUri": ubx.FieldSpec{WireName: "cluster_uri"},
-		"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-	}
+	"ClusterNetworkUri": ubx.FieldSpec{WireName: "cluster_network_uri"},
+	"ClusterUri":        ubx.FieldSpec{WireName: "cluster_uri"},
+	"DnsEndpoint":       ubx.FieldSpec{WireName: "dns_endpoint"},
+	"ExternalIp":        ubx.FieldSpec{WireName: "external_ip"},
+	"InternalIp":        ubx.FieldSpec{WireName: "internal_ip"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicyFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Action":      ubx.FieldSpec{WireName: "action"},
+	"Direction":   ubx.FieldSpec{WireName: "direction"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkippedFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Reason": ubx.FieldSpec{WireName: "reason"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePodFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"PodUri": ubx.FieldSpec{WireName: "pod_uri"},
-	}
+	"IpAddress":  ubx.FieldSpec{WireName: "ip_address"},
+	"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
+	"PodUri":     ubx.FieldSpec{WireName: "pod_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleServiceFields = ubx.FieldMap{
-		"GoogleServiceType": ubx.FieldSpec{WireName: "google_service_type"},
-		"SourceIp": ubx.FieldSpec{WireName: "source_ip"},
-	}
+	"GoogleServiceType": ubx.FieldSpec{WireName: "google_service_type"},
+	"SourceIp":          ubx.FieldSpec{WireName: "source_ip"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnetFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Region":      ubx.FieldSpec{WireName: "region"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InstanceFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"PscNetworkAttachmentUri": ubx.FieldSpec{WireName: "psc_network_attachment_uri"},
-		"Running": ubx.FieldSpec{WireName: "running"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
+	"ExternalIp":              ubx.FieldSpec{WireName: "external_ip"},
+	"Interface":               ubx.FieldSpec{WireName: "interface"},
+	"InternalIp":              ubx.FieldSpec{WireName: "internal_ip"},
+	"NetworkTags":             ubx.FieldSpec{WireName: "network_tags"},
+	"NetworkUri":              ubx.FieldSpec{WireName: "network_uri"},
+	"PscNetworkAttachmentUri": ubx.FieldSpec{WireName: "psc_network_attachment_uri"},
+	"Running":                 ubx.FieldSpec{WireName: "running"},
+	"ServiceAccount":          ubx.FieldSpec{WireName: "service_account"},
+	"Status":                  ubx.FieldSpec{WireName: "status"},
+	"Uri":                     ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachmentFields = ubx.FieldMap{
-		"CloudRouterUri": ubx.FieldSpec{WireName: "cloud_router_uri"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InterconnectUri": ubx.FieldSpec{WireName: "interconnect_uri"},
-		"L2AttachmentMatchedIpAddress": ubx.FieldSpec{WireName: "l2_attachment_matched_ip_address"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"CloudRouterUri":               ubx.FieldSpec{WireName: "cloud_router_uri"},
+	"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
+	"InterconnectUri":              ubx.FieldSpec{WireName: "interconnect_uri"},
+	"L2AttachmentMatchedIpAddress": ubx.FieldSpec{WireName: "l2_attachment_matched_ip_address"},
+	"Region":                       ubx.FieldSpec{WireName: "region"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+	"Uri":                          ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkippedFields = ubx.FieldMap{
-		"NonMasqueradeRange": ubx.FieldSpec{WireName: "non_masquerade_range"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"NonMasqueradeRange": ubx.FieldSpec{WireName: "non_masquerade_range"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_BackendsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"HealthCheckAllowingFirewallRules": ubx.FieldSpec{WireName: "health_check_allowing_firewall_rules"},
-		"HealthCheckBlockingFirewallRules": ubx.FieldSpec{WireName: "health_check_blocking_firewall_rules"},
-		"HealthCheckFirewallState": ubx.FieldSpec{WireName: "health_check_firewall_state"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName":                      ubx.FieldSpec{WireName: "display_name"},
+	"HealthCheckAllowingFirewallRules": ubx.FieldSpec{WireName: "health_check_allowing_firewall_rules"},
+	"HealthCheckBlockingFirewallRules": ubx.FieldSpec{WireName: "health_check_blocking_firewall_rules"},
+	"HealthCheckFirewallState":         ubx.FieldSpec{WireName: "health_check_firewall_state"},
+	"Uri":                              ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerFields = ubx.FieldMap{
-		"BackendType": ubx.FieldSpec{WireName: "backend_type"},
-		"BackendUri": ubx.FieldSpec{WireName: "backend_uri"},
-		"Backends": ubx.FieldSpec{
-			WireName: "backends",
-			Kind: "list",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_BackendsFields,
-		},
-		"HealthCheckUri": ubx.FieldSpec{WireName: "health_check_uri"},
-		"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
-	}
+	"BackendType": ubx.FieldSpec{WireName: "backend_type"},
+	"BackendUri":  ubx.FieldSpec{WireName: "backend_uri"},
+	"Backends": ubx.FieldSpec{
+		WireName: "backends",
+		Kind:     "list",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancer_BackendsFields,
+	},
+	"HealthCheckUri":   ubx.FieldSpec{WireName: "health_check_uri"},
+	"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfoFields = ubx.FieldMap{
-		"BackendBucketUri": ubx.FieldSpec{WireName: "backend_bucket_uri"},
-		"BackendServiceUri": ubx.FieldSpec{WireName: "backend_service_uri"},
-		"HealthCheckFirewallsConfigState": ubx.FieldSpec{WireName: "health_check_firewalls_config_state"},
-		"HealthCheckUri": ubx.FieldSpec{WireName: "health_check_uri"},
-		"InstanceGroupUri": ubx.FieldSpec{WireName: "instance_group_uri"},
-		"InstanceUri": ubx.FieldSpec{WireName: "instance_uri"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkEndpointGroupUri": ubx.FieldSpec{WireName: "network_endpoint_group_uri"},
-		"PscGoogleApiTarget": ubx.FieldSpec{WireName: "psc_google_api_target"},
-		"PscServiceAttachmentUri": ubx.FieldSpec{WireName: "psc_service_attachment_uri"},
-	}
+	"BackendBucketUri":                ubx.FieldSpec{WireName: "backend_bucket_uri"},
+	"BackendServiceUri":               ubx.FieldSpec{WireName: "backend_service_uri"},
+	"HealthCheckFirewallsConfigState": ubx.FieldSpec{WireName: "health_check_firewalls_config_state"},
+	"HealthCheckUri":                  ubx.FieldSpec{WireName: "health_check_uri"},
+	"InstanceGroupUri":                ubx.FieldSpec{WireName: "instance_group_uri"},
+	"InstanceUri":                     ubx.FieldSpec{WireName: "instance_uri"},
+	"Name":                            ubx.FieldSpec{WireName: "name"},
+	"NetworkEndpointGroupUri":         ubx.FieldSpec{WireName: "network_endpoint_group_uri"},
+	"PscGoogleApiTarget":              ubx.FieldSpec{WireName: "psc_google_api_target"},
+	"PscServiceAttachmentUri":         ubx.FieldSpec{WireName: "psc_service_attachment_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NatFields = ubx.FieldMap{
-		"CloudNatGatewayType": ubx.FieldSpec{WireName: "cloud_nat_gateway_type"},
-		"NatGatewayName": ubx.FieldSpec{WireName: "nat_gateway_name"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"NewDestinationIp": ubx.FieldSpec{WireName: "new_destination_ip"},
-		"NewDestinationPort": ubx.FieldSpec{WireName: "new_destination_port"},
-		"NewSourceIp": ubx.FieldSpec{WireName: "new_source_ip"},
-		"NewSourcePort": ubx.FieldSpec{WireName: "new_source_port"},
-		"OldDestinationIp": ubx.FieldSpec{WireName: "old_destination_ip"},
-		"OldDestinationPort": ubx.FieldSpec{WireName: "old_destination_port"},
-		"OldSourceIp": ubx.FieldSpec{WireName: "old_source_ip"},
-		"OldSourcePort": ubx.FieldSpec{WireName: "old_source_port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RouterUri": ubx.FieldSpec{WireName: "router_uri"},
-		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CloudNatGatewayType": ubx.FieldSpec{WireName: "cloud_nat_gateway_type"},
+	"NatGatewayName":      ubx.FieldSpec{WireName: "nat_gateway_name"},
+	"NetworkUri":          ubx.FieldSpec{WireName: "network_uri"},
+	"NewDestinationIp":    ubx.FieldSpec{WireName: "new_destination_ip"},
+	"NewDestinationPort":  ubx.FieldSpec{WireName: "new_destination_port"},
+	"NewSourceIp":         ubx.FieldSpec{WireName: "new_source_ip"},
+	"NewSourcePort":       ubx.FieldSpec{WireName: "new_source_port"},
+	"OldDestinationIp":    ubx.FieldSpec{WireName: "old_destination_ip"},
+	"OldDestinationPort":  ubx.FieldSpec{WireName: "old_destination_port"},
+	"OldSourceIp":         ubx.FieldSpec{WireName: "old_source_ip"},
+	"OldSourcePort":       ubx.FieldSpec{WireName: "old_source_port"},
+	"Protocol":            ubx.FieldSpec{WireName: "protocol"},
+	"RouterUri":           ubx.FieldSpec{WireName: "router_uri"},
+	"RuleNumber":          ubx.FieldSpec{WireName: "rule_number"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NetworkFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MatchedIpRange": ubx.FieldSpec{WireName: "matched_ip_range"},
-		"MatchedSubnetUri": ubx.FieldSpec{WireName: "matched_subnet_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"MatchedIpRange":   ubx.FieldSpec{WireName: "matched_ip_range"},
+	"MatchedSubnetUri": ubx.FieldSpec{WireName: "matched_subnet_uri"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspectionFields = ubx.FieldMap{
-		"SecurityProfileGroupUri": ubx.FieldSpec{WireName: "security_profile_group_uri"},
-	}
+	"SecurityProfileGroupUri": ubx.FieldSpec{WireName: "security_profile_group_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnectionFields = ubx.FieldMap{
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"NewDestinationIp": ubx.FieldSpec{WireName: "new_destination_ip"},
-		"NewDestinationPort": ubx.FieldSpec{WireName: "new_destination_port"},
-		"NewSourceIp": ubx.FieldSpec{WireName: "new_source_ip"},
-		"NewSourcePort": ubx.FieldSpec{WireName: "new_source_port"},
-		"OldDestinationIp": ubx.FieldSpec{WireName: "old_destination_ip"},
-		"OldDestinationPort": ubx.FieldSpec{WireName: "old_destination_port"},
-		"OldSourceIp": ubx.FieldSpec{WireName: "old_source_ip"},
-		"OldSourcePort": ubx.FieldSpec{WireName: "old_source_port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SubnetUri": ubx.FieldSpec{WireName: "subnet_uri"},
-	}
+	"NetworkUri":         ubx.FieldSpec{WireName: "network_uri"},
+	"NewDestinationIp":   ubx.FieldSpec{WireName: "new_destination_ip"},
+	"NewDestinationPort": ubx.FieldSpec{WireName: "new_destination_port"},
+	"NewSourceIp":        ubx.FieldSpec{WireName: "new_source_ip"},
+	"NewSourcePort":      ubx.FieldSpec{WireName: "new_source_port"},
+	"OldDestinationIp":   ubx.FieldSpec{WireName: "old_destination_ip"},
+	"OldDestinationPort": ubx.FieldSpec{WireName: "old_destination_port"},
+	"OldSourceIp":        ubx.FieldSpec{WireName: "old_source_ip"},
+	"OldSourcePort":      ubx.FieldSpec{WireName: "old_source_port"},
+	"Protocol":           ubx.FieldSpec{WireName: "protocol"},
+	"SubnetUri":          ubx.FieldSpec{WireName: "subnet_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisClusterFields = ubx.FieldMap{
-		"DiscoveryEndpointIpAddress": ubx.FieldSpec{WireName: "discovery_endpoint_ip_address"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"SecondaryEndpointIpAddress": ubx.FieldSpec{WireName: "secondary_endpoint_ip_address"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DiscoveryEndpointIpAddress": ubx.FieldSpec{WireName: "discovery_endpoint_ip_address"},
+	"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
+	"Location":                   ubx.FieldSpec{WireName: "location"},
+	"NetworkUri":                 ubx.FieldSpec{WireName: "network_uri"},
+	"SecondaryEndpointIpAddress": ubx.FieldSpec{WireName: "secondary_endpoint_ip_address"},
+	"Uri":                        ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstanceFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"PrimaryEndpointIp": ubx.FieldSpec{WireName: "primary_endpoint_ip"},
-		"ReadEndpointIp": ubx.FieldSpec{WireName: "read_endpoint_ip"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+	"NetworkUri":        ubx.FieldSpec{WireName: "network_uri"},
+	"PrimaryEndpointIp": ubx.FieldSpec{WireName: "primary_endpoint_ip"},
+	"ReadEndpointIp":    ubx.FieldSpec{WireName: "read_endpoint_ip"},
+	"Region":            ubx.FieldSpec{WireName: "region"},
+	"Uri":               ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RouteFields = ubx.FieldMap{
-		"AdvertisedRouteNextHopUri": ubx.FieldSpec{WireName: "advertised_route_next_hop_uri"},
-		"AdvertisedRouteSourceRouterUri": ubx.FieldSpec{WireName: "advertised_route_source_router_uri"},
-		"DestIpRange": ubx.FieldSpec{WireName: "dest_ip_range"},
-		"DestPortRanges": ubx.FieldSpec{WireName: "dest_port_ranges"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InstanceTags": ubx.FieldSpec{WireName: "instance_tags"},
-		"NccHubRouteUri": ubx.FieldSpec{WireName: "ncc_hub_route_uri"},
-		"NccHubUri": ubx.FieldSpec{WireName: "ncc_hub_uri"},
-		"NccSpokeUri": ubx.FieldSpec{WireName: "ncc_spoke_uri"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"NextHop": ubx.FieldSpec{WireName: "next_hop"},
-		"NextHopNetworkUri": ubx.FieldSpec{WireName: "next_hop_network_uri"},
-		"NextHopType": ubx.FieldSpec{WireName: "next_hop_type"},
-		"NextHopUri": ubx.FieldSpec{WireName: "next_hop_uri"},
-		"OriginatingRouteDisplayName": ubx.FieldSpec{WireName: "originating_route_display_name"},
-		"OriginatingRouteUri": ubx.FieldSpec{WireName: "originating_route_uri"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RouteScope": ubx.FieldSpec{WireName: "route_scope"},
-		"RouteType": ubx.FieldSpec{WireName: "route_type"},
-		"SrcIpRange": ubx.FieldSpec{WireName: "src_ip_range"},
-		"SrcPortRanges": ubx.FieldSpec{WireName: "src_port_ranges"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"AdvertisedRouteNextHopUri":      ubx.FieldSpec{WireName: "advertised_route_next_hop_uri"},
+	"AdvertisedRouteSourceRouterUri": ubx.FieldSpec{WireName: "advertised_route_source_router_uri"},
+	"DestIpRange":                    ubx.FieldSpec{WireName: "dest_ip_range"},
+	"DestPortRanges":                 ubx.FieldSpec{WireName: "dest_port_ranges"},
+	"DisplayName":                    ubx.FieldSpec{WireName: "display_name"},
+	"InstanceTags":                   ubx.FieldSpec{WireName: "instance_tags"},
+	"NccHubRouteUri":                 ubx.FieldSpec{WireName: "ncc_hub_route_uri"},
+	"NccHubUri":                      ubx.FieldSpec{WireName: "ncc_hub_uri"},
+	"NccSpokeUri":                    ubx.FieldSpec{WireName: "ncc_spoke_uri"},
+	"NetworkUri":                     ubx.FieldSpec{WireName: "network_uri"},
+	"NextHop":                        ubx.FieldSpec{WireName: "next_hop"},
+	"NextHopNetworkUri":              ubx.FieldSpec{WireName: "next_hop_network_uri"},
+	"NextHopType":                    ubx.FieldSpec{WireName: "next_hop_type"},
+	"NextHopUri":                     ubx.FieldSpec{WireName: "next_hop_uri"},
+	"OriginatingRouteDisplayName":    ubx.FieldSpec{WireName: "originating_route_display_name"},
+	"OriginatingRouteUri":            ubx.FieldSpec{WireName: "originating_route_uri"},
+	"Priority":                       ubx.FieldSpec{WireName: "priority"},
+	"Protocols":                      ubx.FieldSpec{WireName: "protocols"},
+	"Region":                         ubx.FieldSpec{WireName: "region"},
+	"RouteScope":                     ubx.FieldSpec{WireName: "route_scope"},
+	"RouteType":                      ubx.FieldSpec{WireName: "route_type"},
+	"SrcIpRange":                     ubx.FieldSpec{WireName: "src_ip_range"},
+	"SrcPortRanges":                  ubx.FieldSpec{WireName: "src_port_ranges"},
+	"Uri":                            ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnectionFields = ubx.FieldMap{
-		"SelectedIpAddress": ubx.FieldSpec{WireName: "selected_ip_address"},
-	}
+	"SelectedIpAddress": ubx.FieldSpec{WireName: "selected_ip_address"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNegFields = ubx.FieldMap{
-		"NegUri": ubx.FieldSpec{WireName: "neg_uri"},
-	}
+	"NegUri": ubx.FieldSpec{WireName: "neg_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucketFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfoFields = ubx.FieldMap{
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGatewayFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"VpnTunnelUri": ubx.FieldSpec{WireName: "vpn_tunnel_uri"},
-	}
+	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+	"IpAddress":    ubx.FieldSpec{WireName: "ip_address"},
+	"NetworkUri":   ubx.FieldSpec{WireName: "network_uri"},
+	"Region":       ubx.FieldSpec{WireName: "region"},
+	"Uri":          ubx.FieldSpec{WireName: "uri"},
+	"VpnTunnelUri": ubx.FieldSpec{WireName: "vpn_tunnel_uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnelFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RemoteGateway": ubx.FieldSpec{WireName: "remote_gateway"},
-		"RemoteGatewayIp": ubx.FieldSpec{WireName: "remote_gateway_ip"},
-		"RoutingType": ubx.FieldSpec{WireName: "routing_type"},
-		"SourceGateway": ubx.FieldSpec{WireName: "source_gateway"},
-		"SourceGatewayIp": ubx.FieldSpec{WireName: "source_gateway_ip"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+	"NetworkUri":      ubx.FieldSpec{WireName: "network_uri"},
+	"Region":          ubx.FieldSpec{WireName: "region"},
+	"RemoteGateway":   ubx.FieldSpec{WireName: "remote_gateway"},
+	"RemoteGatewayIp": ubx.FieldSpec{WireName: "remote_gateway_ip"},
+	"RoutingType":     ubx.FieldSpec{WireName: "routing_type"},
+	"SourceGateway":   ubx.FieldSpec{WireName: "source_gateway"},
+	"SourceGatewayIp": ubx.FieldSpec{WireName: "source_gateway_ip"},
+	"Uri":             ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_Traces_StepsFields = ubx.FieldMap{
-		"Abort": ubx.FieldSpec{
-			WireName: "abort",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AbortFields,
-		},
-		"AppEngineVersion": ubx.FieldSpec{
-			WireName: "app_engine_version",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersionFields,
-		},
-		"CausesDrop": ubx.FieldSpec{WireName: "causes_drop"},
-		"CloudFunction": ubx.FieldSpec{
-			WireName: "cloud_function",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunctionFields,
-		},
-		"CloudRunJob": ubx.FieldSpec{
-			WireName: "cloud_run_job",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJobFields,
-		},
-		"CloudRunRevision": ubx.FieldSpec{
-			WireName: "cloud_run_revision",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevisionFields,
-		},
-		"CloudSqlInstance": ubx.FieldSpec{
-			WireName: "cloud_sql_instance",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstanceFields,
-		},
-		"DatastreamPrivateConnection": ubx.FieldSpec{
-			WireName: "datastream_private_connection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
-		},
-		"Deliver": ubx.FieldSpec{
-			WireName: "deliver",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DeliverFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DirectVpcEgressConnection": ubx.FieldSpec{
-			WireName: "direct_vpc_egress_connection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnectionFields,
-		},
-		"DmsPrivateConnection": ubx.FieldSpec{
-			WireName: "dms_private_connection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
-		},
-		"Drop": ubx.FieldSpec{
-			WireName: "drop",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DropFields,
-		},
-		"Endpoint": ubx.FieldSpec{
-			WireName: "endpoint",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
-		},
-		"Firewall": ubx.FieldSpec{
-			WireName: "firewall",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_FirewallFields,
-		},
-		"Forward": ubx.FieldSpec{
-			WireName: "forward",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardFields,
-		},
-		"ForwardingRule": ubx.FieldSpec{
-			WireName: "forwarding_rule",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRuleFields,
-		},
-		"GkeMaster": ubx.FieldSpec{
-			WireName: "gke_master",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMasterFields,
-		},
-		"GkeNetworkPolicy": ubx.FieldSpec{
-			WireName: "gke_network_policy",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicyFields,
-		},
-		"GkeNetworkPolicySkipped": ubx.FieldSpec{
-			WireName: "gke_network_policy_skipped",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkippedFields,
-		},
-		"GkePod": ubx.FieldSpec{
-			WireName: "gke_pod",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePodFields,
-		},
-		"GoogleService": ubx.FieldSpec{
-			WireName: "google_service",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleServiceFields,
-		},
-		"HybridSubnet": ubx.FieldSpec{
-			WireName: "hybrid_subnet",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnetFields,
-		},
-		"Instance": ubx.FieldSpec{
-			WireName: "instance",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InstanceFields,
-		},
-		"InterconnectAttachment": ubx.FieldSpec{
-			WireName: "interconnect_attachment",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachmentFields,
-		},
-		"IpMasqueradingSkipped": ubx.FieldSpec{
-			WireName: "ip_masquerading_skipped",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkippedFields,
-		},
-		"LoadBalancer": ubx.FieldSpec{
-			WireName: "load_balancer",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerFields,
-		},
-		"LoadBalancerBackendInfo": ubx.FieldSpec{
-			WireName: "load_balancer_backend_info",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfoFields,
-		},
-		"Nat": ubx.FieldSpec{
-			WireName: "nat",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NatFields,
-		},
-		"Network": ubx.FieldSpec{
-			WireName: "network",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NetworkFields,
-		},
-		"NgfwPacketInspection": ubx.FieldSpec{
-			WireName: "ngfw_packet_inspection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspectionFields,
-		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ProxyConnection": ubx.FieldSpec{
-			WireName: "proxy_connection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnectionFields,
-		},
-		"RedisCluster": ubx.FieldSpec{
-			WireName: "redis_cluster",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisClusterFields,
-		},
-		"RedisInstance": ubx.FieldSpec{
-			WireName: "redis_instance",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstanceFields,
-		},
-		"Route": ubx.FieldSpec{
-			WireName: "route",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RouteFields,
-		},
-		"ServerlessExternalConnection": ubx.FieldSpec{
-			WireName: "serverless_external_connection",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnectionFields,
-		},
-		"ServerlessNeg": ubx.FieldSpec{
-			WireName: "serverless_neg",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNegFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StorageBucket": ubx.FieldSpec{
-			WireName: "storage_bucket",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucketFields,
-		},
-		"ViewerPermissionMissingInfo": ubx.FieldSpec{
-			WireName: "viewer_permission_missing_info",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfoFields,
-		},
-		"VpcConnector": ubx.FieldSpec{
-			WireName: "vpc_connector",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJobFields,
-		},
-		"VpnGateway": ubx.FieldSpec{
-			WireName: "vpn_gateway",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGatewayFields,
-		},
-		"VpnTunnel": ubx.FieldSpec{
-			WireName: "vpn_tunnel",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnelFields,
-		},
-	}
+	"Abort": ubx.FieldSpec{
+		WireName: "abort",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AbortFields,
+	},
+	"AppEngineVersion": ubx.FieldSpec{
+		WireName: "app_engine_version",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_AppEngineVersionFields,
+	},
+	"CausesDrop": ubx.FieldSpec{WireName: "causes_drop"},
+	"CloudFunction": ubx.FieldSpec{
+		WireName: "cloud_function",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudFunctionFields,
+	},
+	"CloudRunJob": ubx.FieldSpec{
+		WireName: "cloud_run_job",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJobFields,
+	},
+	"CloudRunRevision": ubx.FieldSpec{
+		WireName: "cloud_run_revision",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunRevisionFields,
+	},
+	"CloudSqlInstance": ubx.FieldSpec{
+		WireName: "cloud_sql_instance",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudSqlInstanceFields,
+	},
+	"DatastreamPrivateConnection": ubx.FieldSpec{
+		WireName: "datastream_private_connection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
+	},
+	"Deliver": ubx.FieldSpec{
+		WireName: "deliver",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DeliverFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DirectVpcEgressConnection": ubx.FieldSpec{
+		WireName: "direct_vpc_egress_connection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DirectVpcEgressConnectionFields,
+	},
+	"DmsPrivateConnection": ubx.FieldSpec{
+		WireName: "dms_private_connection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_Destination_AppEngineVersionFields,
+	},
+	"Drop": ubx.FieldSpec{
+		WireName: "drop",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_DropFields,
+	},
+	"Endpoint": ubx.FieldSpec{
+		WireName: "endpoint",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
+	},
+	"Firewall": ubx.FieldSpec{
+		WireName: "firewall",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_FirewallFields,
+	},
+	"Forward": ubx.FieldSpec{
+		WireName: "forward",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardFields,
+	},
+	"ForwardingRule": ubx.FieldSpec{
+		WireName: "forwarding_rule",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ForwardingRuleFields,
+	},
+	"GkeMaster": ubx.FieldSpec{
+		WireName: "gke_master",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeMasterFields,
+	},
+	"GkeNetworkPolicy": ubx.FieldSpec{
+		WireName: "gke_network_policy",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicyFields,
+	},
+	"GkeNetworkPolicySkipped": ubx.FieldSpec{
+		WireName: "gke_network_policy_skipped",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkeNetworkPolicySkippedFields,
+	},
+	"GkePod": ubx.FieldSpec{
+		WireName: "gke_pod",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GkePodFields,
+	},
+	"GoogleService": ubx.FieldSpec{
+		WireName: "google_service",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_GoogleServiceFields,
+	},
+	"HybridSubnet": ubx.FieldSpec{
+		WireName: "hybrid_subnet",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_HybridSubnetFields,
+	},
+	"Instance": ubx.FieldSpec{
+		WireName: "instance",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InstanceFields,
+	},
+	"InterconnectAttachment": ubx.FieldSpec{
+		WireName: "interconnect_attachment",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_InterconnectAttachmentFields,
+	},
+	"IpMasqueradingSkipped": ubx.FieldSpec{
+		WireName: "ip_masquerading_skipped",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_IpMasqueradingSkippedFields,
+	},
+	"LoadBalancer": ubx.FieldSpec{
+		WireName: "load_balancer",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerFields,
+	},
+	"LoadBalancerBackendInfo": ubx.FieldSpec{
+		WireName: "load_balancer_backend_info",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_LoadBalancerBackendInfoFields,
+	},
+	"Nat": ubx.FieldSpec{
+		WireName: "nat",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NatFields,
+	},
+	"Network": ubx.FieldSpec{
+		WireName: "network",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NetworkFields,
+	},
+	"NgfwPacketInspection": ubx.FieldSpec{
+		WireName: "ngfw_packet_inspection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_NgfwPacketInspectionFields,
+	},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"ProxyConnection": ubx.FieldSpec{
+		WireName: "proxy_connection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ProxyConnectionFields,
+	},
+	"RedisCluster": ubx.FieldSpec{
+		WireName: "redis_cluster",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisClusterFields,
+	},
+	"RedisInstance": ubx.FieldSpec{
+		WireName: "redis_instance",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RedisInstanceFields,
+	},
+	"Route": ubx.FieldSpec{
+		WireName: "route",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_RouteFields,
+	},
+	"ServerlessExternalConnection": ubx.FieldSpec{
+		WireName: "serverless_external_connection",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessExternalConnectionFields,
+	},
+	"ServerlessNeg": ubx.FieldSpec{
+		WireName: "serverless_neg",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ServerlessNegFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"StorageBucket": ubx.FieldSpec{
+		WireName: "storage_bucket",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_StorageBucketFields,
+	},
+	"ViewerPermissionMissingInfo": ubx.FieldSpec{
+		WireName: "viewer_permission_missing_info",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_ViewerPermissionMissingInfoFields,
+	},
+	"VpcConnector": ubx.FieldSpec{
+		WireName: "vpc_connector",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_CloudRunJobFields,
+	},
+	"VpnGateway": ubx.FieldSpec{
+		WireName: "vpn_gateway",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnGatewayFields,
+	},
+	"VpnTunnel": ubx.FieldSpec{
+		WireName: "vpn_tunnel",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_Steps_VpnTunnelFields,
+	},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetails_TracesFields = ubx.FieldMap{
-		"EndpointInfo": ubx.FieldSpec{
-			WireName: "endpoint_info",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
-		},
-		"ForwardTraceId": ubx.FieldSpec{WireName: "forward_trace_id"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_Traces_StepsFields,
-		},
-	}
+	"EndpointInfo": ubx.FieldSpec{
+		WireName: "endpoint_info",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_EndpointInfoFields,
+	},
+	"ForwardTraceId": ubx.FieldSpec{WireName: "forward_trace_id"},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_Traces_StepsFields,
+	},
+}
 
 var V1beta1ConnectivityTest_ReachabilityDetailsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetails_ErrorFields,
-		},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"Traces": ubx.FieldSpec{
-			WireName: "traces",
-			Kind: "list",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetails_TracesFields,
-		},
-		"VerifyTime": ubx.FieldSpec{WireName: "verify_time"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1ConnectivityTest_ProbingDetails_ErrorFields,
+	},
+	"Result": ubx.FieldSpec{WireName: "result"},
+	"Traces": ubx.FieldSpec{
+		WireName: "traces",
+		Kind:     "list",
+		Fields:   V1beta1ConnectivityTest_ReachabilityDetails_TracesFields,
+	},
+	"VerifyTime": ubx.FieldSpec{WireName: "verify_time"},
+}
 
 type V1beta1ConnectivityTestConfig struct {
 	// Whether the analysis should skip firewall checking. Default value is false.
 	BypassFirewallChecks any
-	// Output only. The time the test was created.
-	CreateTime any
 	// The user-supplied description of the Connectivity Test. Maximum of 512 characters.
 	Description any
 	// Source or destination of the Connectivity Test.
 	Destination any
-	// Output only. The display name of a Connectivity Test.
-	DisplayName any
 	// Resource labels to represent user-provided metadata.
 	Labels any
 	// Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test}`
@@ -1261,8 +1257,6 @@ type V1beta1ConnectivityTestConfig struct {
 	RoundTrip any
 	// Source or destination of the Connectivity Test.
 	Source any
-	// Output only. The time the test's configuration was updated.
-	UpdateTime any
 }
 
 type V1beta1ConnectivityTestAttrs struct {
@@ -1302,39 +1296,36 @@ var V1beta1ConnectivityTest = ubx.ResourceBinding{
 	WireType: "google_networkmanagement_v1beta1_connectivity_test",
 	Fields: ubx.FieldMap{
 		"BypassFirewallChecks": ubx.FieldSpec{WireName: "bypass_firewall_checks"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_DestinationFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectivityTest_DestinationFields,
 		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ProbingDetails": ubx.FieldSpec{
 			WireName: "probing_details",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ProbingDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectivityTest_ProbingDetailsFields,
 		},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
 		"ReachabilityDetails": ubx.FieldSpec{
 			WireName: "reachability_details",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectivityTest_ReachabilityDetailsFields,
 		},
 		"RelatedProjects": ubx.FieldSpec{WireName: "related_projects"},
 		"ReturnReachabilityDetails": ubx.FieldSpec{
 			WireName: "return_reachability_details",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_ReachabilityDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectivityTest_ReachabilityDetailsFields,
 		},
 		"RoundTrip": ubx.FieldSpec{WireName: "round_trip"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: V1beta1ConnectivityTest_DestinationFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectivityTest_DestinationFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

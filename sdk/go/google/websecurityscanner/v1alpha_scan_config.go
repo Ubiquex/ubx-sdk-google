@@ -55,45 +55,45 @@ type V1alphaScanConfig_Schedule struct {
 }
 
 var V1alphaScanConfig_Authentication_CustomAccountFields = ubx.FieldMap{
-		"LoginUrl": ubx.FieldSpec{WireName: "login_url"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"LoginUrl": ubx.FieldSpec{WireName: "login_url"},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var V1alphaScanConfig_Authentication_GoogleAccountFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var V1alphaScanConfig_AuthenticationFields = ubx.FieldMap{
-		"CustomAccount": ubx.FieldSpec{
-			WireName: "custom_account",
-			Kind: "object",
-			Fields: V1alphaScanConfig_Authentication_CustomAccountFields,
-		},
-		"GoogleAccount": ubx.FieldSpec{
-			WireName: "google_account",
-			Kind: "object",
-			Fields: V1alphaScanConfig_Authentication_GoogleAccountFields,
-		},
-	}
+	"CustomAccount": ubx.FieldSpec{
+		WireName: "custom_account",
+		Kind:     "object",
+		Fields:   V1alphaScanConfig_Authentication_CustomAccountFields,
+	},
+	"GoogleAccount": ubx.FieldSpec{
+		WireName: "google_account",
+		Kind:     "object",
+		Fields:   V1alphaScanConfig_Authentication_GoogleAccountFields,
+	},
+}
 
 var V1alphaScanConfig_LatestRunFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ExecutionState": ubx.FieldSpec{WireName: "execution_state"},
-		"HasVulnerabilities": ubx.FieldSpec{WireName: "has_vulnerabilities"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
-		"ResultState": ubx.FieldSpec{WireName: "result_state"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"UrlsCrawledCount": ubx.FieldSpec{WireName: "urls_crawled_count"},
-		"UrlsTestedCount": ubx.FieldSpec{WireName: "urls_tested_count"},
-	}
+	"EndTime":            ubx.FieldSpec{WireName: "end_time"},
+	"ExecutionState":     ubx.FieldSpec{WireName: "execution_state"},
+	"HasVulnerabilities": ubx.FieldSpec{WireName: "has_vulnerabilities"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ProgressPercent":    ubx.FieldSpec{WireName: "progress_percent"},
+	"ResultState":        ubx.FieldSpec{WireName: "result_state"},
+	"StartTime":          ubx.FieldSpec{WireName: "start_time"},
+	"UrlsCrawledCount":   ubx.FieldSpec{WireName: "urls_crawled_count"},
+	"UrlsTestedCount":    ubx.FieldSpec{WireName: "urls_tested_count"},
+}
 
 var V1alphaScanConfig_ScheduleFields = ubx.FieldMap{
-		"IntervalDurationDays": ubx.FieldSpec{WireName: "interval_duration_days"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-	}
+	"IntervalDurationDays": ubx.FieldSpec{WireName: "interval_duration_days"},
+	"ScheduleTime":         ubx.FieldSpec{WireName: "schedule_time"},
+}
 
 type V1alphaScanConfigConfig struct {
 	// Scan authentication configuration.
@@ -146,25 +146,25 @@ var V1alphaScanConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authentication": ubx.FieldSpec{
 			WireName: "authentication",
-			Kind: "object",
-			Fields: V1alphaScanConfig_AuthenticationFields,
+			Kind:     "object",
+			Fields:   V1alphaScanConfig_AuthenticationFields,
 		},
 		"BlacklistPatterns": ubx.FieldSpec{WireName: "blacklist_patterns"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
 		"LatestRun": ubx.FieldSpec{
 			WireName: "latest_run",
-			Kind: "object",
-			Fields: V1alphaScanConfig_LatestRunFields,
+			Kind:     "object",
+			Fields:   V1alphaScanConfig_LatestRunFields,
 		},
 		"MaxQps": ubx.FieldSpec{WireName: "max_qps"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: V1alphaScanConfig_ScheduleFields,
+			Kind:     "object",
+			Fields:   V1alphaScanConfig_ScheduleFields,
 		},
-		"StartingUrls": ubx.FieldSpec{WireName: "starting_urls"},
+		"StartingUrls":    ubx.FieldSpec{WireName: "starting_urls"},
 		"TargetPlatforms": ubx.FieldSpec{WireName: "target_platforms"},
-		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
+		"UserAgent":       ubx.FieldSpec{WireName: "user_agent"},
 	},
 }

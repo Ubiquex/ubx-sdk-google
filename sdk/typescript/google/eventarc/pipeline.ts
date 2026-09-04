@@ -168,16 +168,12 @@ const Pipeline_RetryPolicyFields: FieldMap = {
 export interface PipelineConfig {
   /** Optional. User-defined annotations. See https://google.aip.dev/128#annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The creation time. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z". */
-  createTime?: string | Computed<string>;
   /** Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt the event data. If not set, an internal Google-owned key will be used to encrypt messages. It must match the pattern "projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}". */
   cryptoKeyName?: string | Computed<string>;
   /** Required. List of destinations to which messages will be forwarded. Currently, exactly one destination is supported per Pipeline. */
   destinations?: Pipeline_Destinations[] | Computed<Pipeline_Destinations[]>;
   /** Optional. Display name of resource. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Represents the format of message data. */
   inputPayloadFormat?: Pipeline_Destinations_OutputPayloadFormat | Computed<Pipeline_Destinations_OutputPayloadFormat>;
   /** Optional. User labels attached to the Pipeline that can be used to group resources. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }. */
@@ -190,12 +186,6 @@ export interface PipelineConfig {
   name?: string | Computed<string>;
   /** The retry policy configuration for the Pipeline. The pipeline exponentially backs off in case the destination is non responsive or returns a retryable error code. The default semantics are as follows: The backoff starts with a 5 second delay and doubles the delay after each failed attempt (10 seconds, 20 seconds, 40 seconds, etc.). The delay is capped at 60 seconds by default. Please note that if you set the min_retry_delay and max_retry_delay fields to the same value this will make the duration between retries constant. */
   retryPolicy?: Pipeline_RetryPolicy | Computed<Pipeline_RetryPolicy>;
-  /** Output only. Whether or not this Pipeline satisfies the requirements of physical zone separation */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Server-assigned unique identifier for the Pipeline. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z". */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PipelineAttrs {
@@ -235,7 +225,6 @@ export const Pipeline: ResourceBinding<PipelineConfig, PipelineAttrs> = {
   wireType: "google_eventarc_pipeline",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     cryptoKeyName: "crypto_key_name",
     destinations: {
       wireName: "destinations",
@@ -243,7 +232,6 @@ export const Pipeline: ResourceBinding<PipelineConfig, PipelineAttrs> = {
       fields: Pipeline_DestinationsFields,
     },
     displayName: "display_name",
-    etag: "etag",
     inputPayloadFormat: {
       wireName: "input_payload_format",
       kind: "object",
@@ -266,8 +254,5 @@ export const Pipeline: ResourceBinding<PipelineConfig, PipelineAttrs> = {
       kind: "object",
       fields: Pipeline_RetryPolicyFields,
     },
-    satisfiesPzs: "satisfies_pzs",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -5,125 +5,52 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaRegionNetworkPolicy_Associations struct {
 	AttachmentTarget any
-	Name any
+	Name             any
 }
 
 type BetaRegionNetworkPolicy_TrafficClassificationRules_Action struct {
-	DscpMode any
-	DscpValue any
+	DscpMode     any
+	DscpValue    any
 	TrafficClass any
-	Type any
+	Type         any
 }
 
 type BetaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4Configs struct {
 	IpProtocol any
-	Ports any
+	Ports      any
 }
 
 type BetaRegionNetworkPolicy_TrafficClassificationRules_Match struct {
-	DestIpRanges any
+	DestIpRanges  any
 	Layer4Configs any
-	SrcIpRanges any
+	SrcIpRanges   any
 }
 
 type BetaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTags struct {
-	Name any
+	Name  any
 	State any
 }
 
 type BetaRegionNetworkPolicy_TrafficClassificationRules struct {
-	Action any
-	Description any
-	Disabled any
-	Kind any
-	Match any
-	Priority any
-	RuleName any
-	RuleTupleCount any
-	TargetSecureTags any
+	Action                any
+	Description           any
+	Disabled              any
+	Kind                  any
+	Match                 any
+	Priority              any
+	RuleName              any
+	RuleTupleCount        any
+	TargetSecureTags      any
 	TargetServiceAccounts any
 }
 
-var BetaRegionNetworkPolicy_AssociationsFields = ubx.FieldMap{
-		"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
-var BetaRegionNetworkPolicy_TrafficClassificationRules_ActionFields = ubx.FieldMap{
-		"DscpMode": ubx.FieldSpec{WireName: "dscp_mode"},
-		"DscpValue": ubx.FieldSpec{WireName: "dscp_value"},
-		"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
-var BetaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4ConfigsFields = ubx.FieldMap{
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
-
-var BetaRegionNetworkPolicy_TrafficClassificationRules_MatchFields = ubx.FieldMap{
-		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
-		"Layer4Configs": ubx.FieldSpec{
-			WireName: "layer4_configs",
-			Kind: "list",
-			Fields: BetaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4ConfigsFields,
-		},
-		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
-	}
-
-var BetaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTagsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var BetaRegionNetworkPolicy_TrafficClassificationRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: BetaRegionNetworkPolicy_TrafficClassificationRules_ActionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: BetaRegionNetworkPolicy_TrafficClassificationRules_MatchFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
-		"TargetSecureTags": ubx.FieldSpec{
-			WireName: "target_secure_tags",
-			Kind: "list",
-			Fields: BetaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTagsFields,
-		},
-		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-	}
-
 type BetaRegionNetworkPolicyConfig struct {
-	// Output only. [Output Only] A list of associations that belong to this network policy.
-	Associations any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output only] Type of the resource. Alwayscompute#networkPolicy for network policies
-	Kind any
 	// Name of the resource.
 	Name any
-	// Output only. [Output Only] URL of the region where the regional network policy resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output Only] Total count of all network policy rule tuples. A network policy can not exceed a set number of tuples.
-	RuleTupleCount any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	// Output only. [Output Only] A list of traffic classification rules that belong to this policy.
-	TrafficClassificationRules any
 }
 
 type BetaRegionNetworkPolicyAttrs struct {
@@ -154,24 +81,8 @@ type BetaRegionNetworkPolicyAttrs struct {
 var BetaRegionNetworkPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_beta_region_network_policy",
 	Fields: ubx.FieldMap{
-		"Associations": ubx.FieldSpec{
-			WireName: "associations",
-			Kind: "list",
-			Fields: BetaRegionNetworkPolicy_AssociationsFields,
-		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"TrafficClassificationRules": ubx.FieldSpec{
-			WireName: "traffic_classification_rules",
-			Kind: "list",
-			Fields: BetaRegionNetworkPolicy_TrafficClassificationRulesFields,
-		},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

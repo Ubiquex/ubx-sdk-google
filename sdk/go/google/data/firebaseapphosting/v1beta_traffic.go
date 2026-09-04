@@ -4,7 +4,7 @@ package firebaseapphosting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaTraffic_Current_Splits struct {
-	Build any
+	Build   any
 	Percent any
 }
 
@@ -15,7 +15,7 @@ type V1betaTraffic_Current struct {
 
 type V1betaTraffic_RolloutPolicy_IgnoredPaths struct {
 	Pattern any
-	Type any
+	Type    any
 }
 
 type V1betaTraffic_RolloutPolicy struct {
@@ -46,7 +46,7 @@ type V1betaTrafficAttrs struct {
 	Etag any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects.
 	Labels any
-	Name any
+	Name   any
 	// Output only. A field that, if true, indicates that the system is working to make the backend's `current` match the requested `target` list.
 	Reconciling any
 	// The policy for how automatic builds and rollouts are triggered and rolled out.

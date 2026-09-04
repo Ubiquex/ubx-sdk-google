@@ -138,8 +138,6 @@ const V1beta1FeatureOnlineStore_EncryptionSpecFields: FieldMap = {
 
 export interface V1beta1FeatureOnlineStoreConfig {
   bigtable?: V1beta1FeatureOnlineStore_Bigtable | Computed<V1beta1FeatureOnlineStore_Bigtable>;
-  /** Output only. Timestamp when this FeatureOnlineStore was created. */
-  createTime?: string | Computed<string>;
   /** The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default. */
   dedicatedServingEndpoint?: V1beta1FeatureOnlineStore_DedicatedServingEndpoint | Computed<V1beta1FeatureOnlineStore_DedicatedServingEndpoint>;
   /** Deprecated: This sub message is no longer needed anymore and embedding management is automatically enabled when specifying Optimized storage type. Contains settings for embedding management. */
@@ -154,14 +152,6 @@ export interface V1beta1FeatureOnlineStoreConfig {
   name?: string | Computed<string>;
   /** Optimized storage type */
   optimized?: unknown | Computed<unknown>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. State of the featureOnlineStore. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this FeatureOnlineStore was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1FeatureOnlineStoreAttrs {
@@ -200,7 +190,6 @@ export const V1beta1FeatureOnlineStore: ResourceBinding<V1beta1FeatureOnlineStor
       kind: "object",
       fields: V1beta1FeatureOnlineStore_BigtableFields,
     },
-    createTime: "create_time",
     dedicatedServingEndpoint: {
       wireName: "dedicated_serving_endpoint",
       kind: "object",
@@ -220,9 +209,5 @@ export const V1beta1FeatureOnlineStore: ResourceBinding<V1beta1FeatureOnlineStor
     labels: "labels",
     name: "name",
     optimized: "optimized",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
   },
 };

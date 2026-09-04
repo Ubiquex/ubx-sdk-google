@@ -35,8 +35,6 @@ export interface InboundOidcSsoProfileConfig {
   displayName?: string | Computed<string>;
   /** OIDC IDP (identity provider) configuration. */
   idpConfig?: InboundOidcSsoProfile_IdpConfig | Computed<InboundOidcSsoProfile_IdpConfig>;
-  /** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the OIDC SSO profile. */
-  name?: string | Computed<string>;
   /** OIDC RP (relying party) configuration. */
   rpConfig?: InboundOidcSsoProfile_RpConfig | Computed<InboundOidcSsoProfile_RpConfig>;
 }
@@ -64,7 +62,6 @@ export const InboundOidcSsoProfile: ResourceBinding<InboundOidcSsoProfileConfig,
       kind: "object",
       fields: InboundOidcSsoProfile_IdpConfigFields,
     },
-    name: "name",
     rpConfig: {
       wireName: "rp_config",
       kind: "object",

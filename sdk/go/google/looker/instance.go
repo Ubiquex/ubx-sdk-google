@@ -64,7 +64,7 @@ type Instance_EncryptionConfig struct {
 
 type Instance_IngressIpAllowlistConfig_AllowlistRules struct {
 	Description any
-	IpRange any
+	IpRange     any
 }
 
 type Instance_IngressIpAllowlistConfig struct {
@@ -109,10 +109,10 @@ type Instance_PeriodicExportConfig struct {
 }
 
 type Instance_PscConfig_ServiceAttachments struct {
-	ConnectionStatus any
-	FailureReason any
-	LocalFqdn any
-	LocalFqdns any
+	ConnectionStatus           any
+	FailureReason              any
+	LocalFqdn                  any
+	LocalFqdns                 any
 	TargetServiceAttachmentUri any
 }
 
@@ -135,125 +135,125 @@ type Instance_UserMetadata struct {
 }
 
 var Instance_AdminSettingsFields = ubx.FieldMap{
-		"AllowedEmailDomains": ubx.FieldSpec{WireName: "allowed_email_domains"},
-	}
+	"AllowedEmailDomains": ubx.FieldSpec{WireName: "allowed_email_domains"},
+}
 
 var Instance_ControlledEgressConfigFields = ubx.FieldMap{
-		"EgressFqdns": ubx.FieldSpec{WireName: "egress_fqdns"},
-		"MarketplaceEnabled": ubx.FieldSpec{WireName: "marketplace_enabled"},
-		"WebProxyIps": ubx.FieldSpec{WireName: "web_proxy_ips"},
-	}
+	"EgressFqdns":        ubx.FieldSpec{WireName: "egress_fqdns"},
+	"MarketplaceEnabled": ubx.FieldSpec{WireName: "marketplace_enabled"},
+	"WebProxyIps":        ubx.FieldSpec{WireName: "web_proxy_ips"},
+}
 
 var Instance_CustomDomainFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"State":  ubx.FieldSpec{WireName: "state"},
+}
 
 var Instance_DenyMaintenancePeriod_EndDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var Instance_DenyMaintenancePeriod_TimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Instance_DenyMaintenancePeriodFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{
-			WireName: "end_date",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriod_EndDateFields,
-		},
-		"StartDate": ubx.FieldSpec{
-			WireName: "start_date",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriod_EndDateFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriod_TimeFields,
-		},
-	}
+	"EndDate": ubx.FieldSpec{
+		WireName: "end_date",
+		Kind:     "object",
+		Fields:   Instance_DenyMaintenancePeriod_EndDateFields,
+	},
+	"StartDate": ubx.FieldSpec{
+		WireName: "start_date",
+		Kind:     "object",
+		Fields:   Instance_DenyMaintenancePeriod_EndDateFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Instance_DenyMaintenancePeriod_TimeFields,
+	},
+}
 
 var Instance_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
-		"KmsKeyState": ubx.FieldSpec{WireName: "kms_key_state"},
-	}
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
+	"KmsKeyState":       ubx.FieldSpec{WireName: "kms_key_state"},
+}
 
 var Instance_IngressIpAllowlistConfig_AllowlistRulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"IpRange":     ubx.FieldSpec{WireName: "ip_range"},
+}
 
 var Instance_IngressIpAllowlistConfigFields = ubx.FieldMap{
-		"AllowlistRules": ubx.FieldSpec{
-			WireName: "allowlist_rules",
-			Kind: "list",
-			Fields: Instance_IngressIpAllowlistConfig_AllowlistRulesFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"GoogleServicesEnabled": ubx.FieldSpec{WireName: "google_services_enabled"},
-	}
+	"AllowlistRules": ubx.FieldSpec{
+		WireName: "allowlist_rules",
+		Kind:     "list",
+		Fields:   Instance_IngressIpAllowlistConfig_AllowlistRulesFields,
+	},
+	"Enabled":               ubx.FieldSpec{WireName: "enabled"},
+	"GoogleServicesEnabled": ubx.FieldSpec{WireName: "google_services_enabled"},
+}
 
 var Instance_MaintenanceScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Instance_MaintenanceWindowFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriod_TimeFields,
-		},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Instance_DenyMaintenancePeriod_TimeFields,
+	},
+}
 
 var Instance_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"SharedOauthClientEnabled": ubx.FieldSpec{WireName: "shared_oauth_client_enabled"},
-	}
+	"ClientId":                 ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":             ubx.FieldSpec{WireName: "client_secret"},
+	"SharedOauthClientEnabled": ubx.FieldSpec{WireName: "shared_oauth_client_enabled"},
+}
 
 var Instance_PeriodicExportConfigFields = ubx.FieldMap{
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriod_TimeFields,
-		},
-	}
+	"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Instance_DenyMaintenancePeriod_TimeFields,
+	},
+}
 
 var Instance_PscConfig_ServiceAttachmentsFields = ubx.FieldMap{
-		"ConnectionStatus": ubx.FieldSpec{WireName: "connection_status"},
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"LocalFqdn": ubx.FieldSpec{WireName: "local_fqdn"},
-		"LocalFqdns": ubx.FieldSpec{WireName: "local_fqdns"},
-		"TargetServiceAttachmentUri": ubx.FieldSpec{WireName: "target_service_attachment_uri"},
-	}
+	"ConnectionStatus":           ubx.FieldSpec{WireName: "connection_status"},
+	"FailureReason":              ubx.FieldSpec{WireName: "failure_reason"},
+	"LocalFqdn":                  ubx.FieldSpec{WireName: "local_fqdn"},
+	"LocalFqdns":                 ubx.FieldSpec{WireName: "local_fqdns"},
+	"TargetServiceAttachmentUri": ubx.FieldSpec{WireName: "target_service_attachment_uri"},
+}
 
 var Instance_PscConfigFields = ubx.FieldMap{
-		"AllowedVpcs": ubx.FieldSpec{WireName: "allowed_vpcs"},
-		"LookerServiceAttachmentUri": ubx.FieldSpec{WireName: "looker_service_attachment_uri"},
-		"ServiceAttachments": ubx.FieldSpec{
-			WireName: "service_attachments",
-			Kind: "list",
-			Fields: Instance_PscConfig_ServiceAttachmentsFields,
-		},
-	}
+	"AllowedVpcs":                ubx.FieldSpec{WireName: "allowed_vpcs"},
+	"LookerServiceAttachmentUri": ubx.FieldSpec{WireName: "looker_service_attachment_uri"},
+	"ServiceAttachments": ubx.FieldSpec{
+		WireName: "service_attachments",
+		Kind:     "list",
+		Fields:   Instance_PscConfig_ServiceAttachmentsFields,
+	},
+}
 
 var Instance_UserMetadataFields = ubx.FieldMap{
-		"AdditionalDeveloperUserCount": ubx.FieldSpec{WireName: "additional_developer_user_count"},
-		"AdditionalStandardUserCount": ubx.FieldSpec{WireName: "additional_standard_user_count"},
-		"AdditionalViewerUserCount": ubx.FieldSpec{WireName: "additional_viewer_user_count"},
-	}
+	"AdditionalDeveloperUserCount": ubx.FieldSpec{WireName: "additional_developer_user_count"},
+	"AdditionalStandardUserCount":  ubx.FieldSpec{WireName: "additional_standard_user_count"},
+	"AdditionalViewerUserCount":    ubx.FieldSpec{WireName: "additional_viewer_user_count"},
+}
 
 type InstanceConfig struct {
 	// Optional. Accelerated security patch enabled for the instance.
@@ -270,14 +270,10 @@ type InstanceConfig struct {
 	ControlledEgressConfig any
 	// Optional. Whether controlled egress is enabled on the Looker instance.
 	ControlledEgressEnabled any
-	// Output only. The time when the Looker instance provisioning was first requested.
-	CreateTime any
 	// Custom domain information.
 	CustomDomain any
 	// Specifies the maintenance denial period.
 	DenyMaintenancePeriod any
-	// Output only. Public Egress IP (IPv4).
-	EgressPublicIp any
 	// Encryption configuration (i.e. CMEK).
 	EncryptionConfig any
 	// Optional. Whether FIPS is enabled on the Looker instance.
@@ -286,24 +282,14 @@ type InstanceConfig struct {
 	GeminiEnabled any
 	// Ingress IP allowlist configuration.
 	IngressIpAllowlistConfig any
-	// Output only. Private Ingress IP (IPv4).
-	IngressPrivateIp any
-	// Output only. Public Ingress IP (IPv4).
-	IngressPublicIp any
 	// Specifies the maintenance denial period.
 	LastDenyMaintenancePeriod any
 	// Optional. Linked Google Cloud Project Number for Looker Studio Pro.
 	LinkedLspProjectNumber any
-	// Output only. Looker instance URI which can be used to access the Looker Instance UI.
-	LookerUri any
-	// Output only. The Looker version that the instance is using.
-	LookerVersion any
 	// Published upcoming future maintenance schedule.
 	MaintenanceSchedule any
 	// Specifies the recurring maintenance window.
 	MaintenanceWindow any
-	// Output only. Format: `projects/{project}/locations/{location}/instances/{instance}`.
-	Name any
 	// Looker instance OAuth login settings.
 	OauthConfig any
 	// Configuration for periodic export.
@@ -322,18 +308,6 @@ type InstanceConfig struct {
 	ReleaseChannel any
 	// Name of a reserved IP address range within the Instance.consumer_network, to be used for private services access connection. May or may not be specified in a create request.
 	ReservedRange any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The reason for the instance being in a soft-deleted state.
-	SoftDeleteReason any
-	// Output only. The state of the instance.
-	State any
-	// Output only. The time when the Looker instance was suspended (soft deleted).
-	SuspendedTime any
-	// Output only. The time when the Looker instance was last updated.
-	UpdateTime any
 	// Metadata about users for a Looker instance.
 	UserMetadata any
 }
@@ -427,94 +401,81 @@ var Instance = ubx.ResourceBinding{
 		"AcceleratedSecurityPatchEnabled": ubx.FieldSpec{WireName: "accelerated_security_patch_enabled"},
 		"AdminSettings": ubx.FieldSpec{
 			WireName: "admin_settings",
-			Kind: "object",
-			Fields: Instance_AdminSettingsFields,
+			Kind:     "object",
+			Fields:   Instance_AdminSettingsFields,
 		},
 		"CatalogIntegrationOptOut": ubx.FieldSpec{WireName: "catalog_integration_opt_out"},
-		"ClassType": ubx.FieldSpec{WireName: "class_type"},
-		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
+		"ClassType":                ubx.FieldSpec{WireName: "class_type"},
+		"ConsumerNetwork":          ubx.FieldSpec{WireName: "consumer_network"},
 		"ControlledEgressConfig": ubx.FieldSpec{
 			WireName: "controlled_egress_config",
-			Kind: "object",
-			Fields: Instance_ControlledEgressConfigFields,
+			Kind:     "object",
+			Fields:   Instance_ControlledEgressConfigFields,
 		},
 		"ControlledEgressEnabled": ubx.FieldSpec{WireName: "controlled_egress_enabled"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomDomain": ubx.FieldSpec{
 			WireName: "custom_domain",
-			Kind: "object",
-			Fields: Instance_CustomDomainFields,
+			Kind:     "object",
+			Fields:   Instance_CustomDomainFields,
 		},
 		"DenyMaintenancePeriod": ubx.FieldSpec{
 			WireName: "deny_maintenance_period",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriodFields,
+			Kind:     "object",
+			Fields:   Instance_DenyMaintenancePeriodFields,
 		},
-		"EgressPublicIp": ubx.FieldSpec{WireName: "egress_public_ip"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Instance_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Instance_EncryptionConfigFields,
 		},
-		"FipsEnabled": ubx.FieldSpec{WireName: "fips_enabled"},
+		"FipsEnabled":   ubx.FieldSpec{WireName: "fips_enabled"},
 		"GeminiEnabled": ubx.FieldSpec{WireName: "gemini_enabled"},
 		"IngressIpAllowlistConfig": ubx.FieldSpec{
 			WireName: "ingress_ip_allowlist_config",
-			Kind: "object",
-			Fields: Instance_IngressIpAllowlistConfigFields,
+			Kind:     "object",
+			Fields:   Instance_IngressIpAllowlistConfigFields,
 		},
-		"IngressPrivateIp": ubx.FieldSpec{WireName: "ingress_private_ip"},
-		"IngressPublicIp": ubx.FieldSpec{WireName: "ingress_public_ip"},
 		"LastDenyMaintenancePeriod": ubx.FieldSpec{
 			WireName: "last_deny_maintenance_period",
-			Kind: "object",
-			Fields: Instance_DenyMaintenancePeriodFields,
+			Kind:     "object",
+			Fields:   Instance_DenyMaintenancePeriodFields,
 		},
 		"LinkedLspProjectNumber": ubx.FieldSpec{WireName: "linked_lsp_project_number"},
-		"LookerUri": ubx.FieldSpec{WireName: "looker_uri"},
-		"LookerVersion": ubx.FieldSpec{WireName: "looker_version"},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: Instance_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenanceScheduleFields,
 		},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: Instance_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenanceWindowFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OauthConfig": ubx.FieldSpec{
 			WireName: "oauth_config",
-			Kind: "object",
-			Fields: Instance_OauthConfigFields,
+			Kind:     "object",
+			Fields:   Instance_OauthConfigFields,
 		},
 		"PeriodicExportConfig": ubx.FieldSpec{
 			WireName: "periodic_export_config",
-			Kind: "object",
-			Fields: Instance_PeriodicExportConfigFields,
+			Kind:     "object",
+			Fields:   Instance_PeriodicExportConfigFields,
 		},
-		"PlatformEdition": ubx.FieldSpec{WireName: "platform_edition"},
+		"PlatformEdition":  ubx.FieldSpec{WireName: "platform_edition"},
 		"PrivateIpEnabled": ubx.FieldSpec{WireName: "private_ip_enabled"},
 		"PscConfig": ubx.FieldSpec{
 			WireName: "psc_config",
-			Kind: "object",
-			Fields: Instance_PscConfigFields,
+			Kind:     "object",
+			Fields:   Instance_PscConfigFields,
 		},
-		"PscEnabled": ubx.FieldSpec{WireName: "psc_enabled"},
+		"PscEnabled":      ubx.FieldSpec{WireName: "psc_enabled"},
 		"PublicIpEnabled": ubx.FieldSpec{WireName: "public_ip_enabled"},
-		"ReleaseChannel": ubx.FieldSpec{WireName: "release_channel"},
-		"ReservedRange": ubx.FieldSpec{WireName: "reserved_range"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SoftDeleteReason": ubx.FieldSpec{WireName: "soft_delete_reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SuspendedTime": ubx.FieldSpec{WireName: "suspended_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"ReleaseChannel":  ubx.FieldSpec{WireName: "release_channel"},
+		"ReservedRange":   ubx.FieldSpec{WireName: "reserved_range"},
 		"UserMetadata": ubx.FieldSpec{
 			WireName: "user_metadata",
-			Kind: "object",
-			Fields: Instance_UserMetadataFields,
+			Kind:     "object",
+			Fields:   Instance_UserMetadataFields,
 		},
 	},
 }

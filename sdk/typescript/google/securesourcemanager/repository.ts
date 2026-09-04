@@ -60,8 +60,6 @@ const Repository_UrisFields: FieldMap = {
 };
 
 export interface RepositoryConfig {
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the repository, which cannot exceed 500 characters. */
   description?: string | Computed<string>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -76,10 +74,6 @@ export interface RepositoryConfig {
   scanConfig?: Repository_ScanConfig | Computed<Repository_ScanConfig>;
   /** Optional. Repository level service account (BYOSA). */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Unique identifier of the repository. */
-  uid?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
   /** URIs for the repository. */
   uris?: Repository_Uris | Computed<Repository_Uris>;
 }
@@ -112,7 +106,6 @@ export interface RepositoryAttrs {
 export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
   wireType: "google_securesourcemanager_repository",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     initialConfig: {
@@ -128,8 +121,6 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
       fields: Repository_ScanConfigFields,
     },
     serviceAccount: "service_account",
-    uid: "uid",
-    updateTime: "update_time",
     uris: {
       wireName: "uris",
       kind: "object",

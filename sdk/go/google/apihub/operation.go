@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Operation_Attributes_EnumValues_Values struct {
 	Description any
 	DisplayName any
-	Id any
-	Immutable any
+	Id          any
+	Immutable   any
 }
 
 type Operation_Attributes_EnumValues struct {
@@ -19,11 +19,11 @@ type Operation_Attributes_JsonValues struct {
 }
 
 type Operation_Attributes struct {
-	Attribute any
-	EnumValues any
-	JsonValues any
+	Attribute    any
+	EnumValues   any
+	JsonValues   any
 	StringValues any
-	UriValues any
+	UriValues    any
 }
 
 type Operation_Details_Documentation struct {
@@ -94,165 +94,140 @@ type Operation_Details struct {
 }
 
 type Operation_SourceMetadata_PluginInstanceActionSource struct {
-	ActionId any
+	ActionId       any
 	PluginInstance any
 }
 
 type Operation_SourceMetadata struct {
 	OriginalResourceCreateTime any
-	OriginalResourceId any
+	OriginalResourceId         any
 	OriginalResourceUpdateTime any
 	PluginInstanceActionSource any
-	SourceType any
+	SourceType                 any
 }
 
 var Operation_Attributes_EnumValues_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 var Operation_Attributes_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Operation_Attributes_EnumValues_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Operation_Attributes_EnumValues_ValuesFields,
+	},
+}
 
 var Operation_Attributes_JsonValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Operation_AttributesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: Operation_Attributes_EnumValuesFields,
-		},
-		"JsonValues": ubx.FieldSpec{
-			WireName: "json_values",
-			Kind: "object",
-			Fields: Operation_Attributes_JsonValuesFields,
-		},
-		"StringValues": ubx.FieldSpec{
-			WireName: "string_values",
-			Kind: "object",
-			Fields: Operation_Attributes_JsonValuesFields,
-		},
-		"UriValues": ubx.FieldSpec{
-			WireName: "uri_values",
-			Kind: "object",
-			Fields: Operation_Attributes_JsonValuesFields,
-		},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   Operation_Attributes_EnumValuesFields,
+	},
+	"JsonValues": ubx.FieldSpec{
+		WireName: "json_values",
+		Kind:     "object",
+		Fields:   Operation_Attributes_JsonValuesFields,
+	},
+	"StringValues": ubx.FieldSpec{
+		WireName: "string_values",
+		Kind:     "object",
+		Fields:   Operation_Attributes_JsonValuesFields,
+	},
+	"UriValues": ubx.FieldSpec{
+		WireName: "uri_values",
+		Kind:     "object",
+		Fields:   Operation_Attributes_JsonValuesFields,
+	},
+}
 
 var Operation_Details_DocumentationFields = ubx.FieldMap{
-		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-	}
+	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+}
 
 var Operation_Details_HttpOperation_PathFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+}
 
 var Operation_Details_HttpOperationFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Path": ubx.FieldSpec{
-			WireName: "path",
-			Kind: "object",
-			Fields: Operation_Details_HttpOperation_PathFields,
-		},
-	}
+	"Method": ubx.FieldSpec{WireName: "method"},
+	"Path": ubx.FieldSpec{
+		WireName: "path",
+		Kind:     "object",
+		Fields:   Operation_Details_HttpOperation_PathFields,
+	},
+}
 
 var Operation_Details_McpTool_AnnotationsFields = ubx.FieldMap{
-		"AdditionalHints": ubx.FieldSpec{WireName: "additional_hints"},
-		"DestructiveHint": ubx.FieldSpec{WireName: "destructive_hint"},
-		"IdempotentHint": ubx.FieldSpec{WireName: "idempotent_hint"},
-		"OpenWorldHint": ubx.FieldSpec{WireName: "open_world_hint"},
-		"ReadOnlyHint": ubx.FieldSpec{WireName: "read_only_hint"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"AdditionalHints": ubx.FieldSpec{WireName: "additional_hints"},
+	"DestructiveHint": ubx.FieldSpec{WireName: "destructive_hint"},
+	"IdempotentHint":  ubx.FieldSpec{WireName: "idempotent_hint"},
+	"OpenWorldHint":   ubx.FieldSpec{WireName: "open_world_hint"},
+	"ReadOnlyHint":    ubx.FieldSpec{WireName: "read_only_hint"},
+	"Title":           ubx.FieldSpec{WireName: "title"},
+}
 
 var Operation_Details_McpTool_InputSchemaFields = ubx.FieldMap{
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-	}
+	"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
+}
 
 var Operation_Details_McpToolFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{
-			WireName: "annotations",
-			Kind: "object",
-			Fields: Operation_Details_McpTool_AnnotationsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Operation_Details_McpTool_InputSchemaFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: Operation_Details_McpTool_InputSchemaFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Annotations": ubx.FieldSpec{
+		WireName: "annotations",
+		Kind:     "object",
+		Fields:   Operation_Details_McpTool_AnnotationsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Operation_Details_McpTool_InputSchemaFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   Operation_Details_McpTool_InputSchemaFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var Operation_DetailsFields = ubx.FieldMap{
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Documentation": ubx.FieldSpec{
-			WireName: "documentation",
-			Kind: "object",
-			Fields: Operation_Details_DocumentationFields,
-		},
-		"HttpOperation": ubx.FieldSpec{
-			WireName: "http_operation",
-			Kind: "object",
-			Fields: Operation_Details_HttpOperationFields,
-		},
-		"McpTool": ubx.FieldSpec{
-			WireName: "mcp_tool",
-			Kind: "object",
-			Fields: Operation_Details_McpToolFields,
-		},
-	}
-
-var Operation_SourceMetadata_PluginInstanceActionSourceFields = ubx.FieldMap{
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
-		"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
-	}
-
-var Operation_SourceMetadataFields = ubx.FieldMap{
-		"OriginalResourceCreateTime": ubx.FieldSpec{WireName: "original_resource_create_time"},
-		"OriginalResourceId": ubx.FieldSpec{WireName: "original_resource_id"},
-		"OriginalResourceUpdateTime": ubx.FieldSpec{WireName: "original_resource_update_time"},
-		"PluginInstanceActionSource": ubx.FieldSpec{
-			WireName: "plugin_instance_action_source",
-			Kind: "object",
-			Fields: Operation_SourceMetadata_PluginInstanceActionSourceFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"Deprecated":  ubx.FieldSpec{WireName: "deprecated"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Documentation": ubx.FieldSpec{
+		WireName: "documentation",
+		Kind:     "object",
+		Fields:   Operation_Details_DocumentationFields,
+	},
+	"HttpOperation": ubx.FieldSpec{
+		WireName: "http_operation",
+		Kind:     "object",
+		Fields:   Operation_Details_HttpOperationFields,
+	},
+	"McpTool": ubx.FieldSpec{
+		WireName: "mcp_tool",
+		Kind:     "object",
+		Fields:   Operation_Details_McpToolFields,
+	},
+}
 
 type OperationConfig struct {
 	// Optional. The list of user defined attributes associated with the API operation resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
 	Attributes any
-	// Output only. The time at which the operation was created.
-	CreateTime any
 	// The operation details parsed from the spec.
 	Details any
 	// Identifier. The name of the operation. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
 	Name any
-	// Output only. The list of sources and metadata from the sources of the API operation.
-	SourceMetadata any
-	// Output only. The name of the spec will be of the format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` Note:The name of the spec will be empty if the operation is created via CreateApiOperation API.
-	Spec any
-	// Output only. The time at which the operation was last updated.
-	UpdateTime any
 }
 
 type OperationAttrs struct {
@@ -277,22 +252,14 @@ var Operation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "map",
-			Fields: Operation_AttributesFields,
+			Kind:     "map",
+			Fields:   Operation_AttributesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Details": ubx.FieldSpec{
 			WireName: "details",
-			Kind: "object",
-			Fields: Operation_DetailsFields,
+			Kind:     "object",
+			Fields:   Operation_DetailsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceMetadata": ubx.FieldSpec{
-			WireName: "source_metadata",
-			Kind: "list",
-			Fields: Operation_SourceMetadataFields,
-		},
-		"Spec": ubx.FieldSpec{WireName: "spec"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

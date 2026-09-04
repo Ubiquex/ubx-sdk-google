@@ -66,17 +66,6 @@ class V1beta1Feature_MonitoringStatsAnomalies:
     feature_stats_anomaly: Any = None
     objective: Any = None
 
-_V1beta1Feature_FeatureStatsAndAnomalyFields = {
-    "distribution_deviation": ubx.FieldSpec(wire_name="distribution_deviation"),
-    "drift_detected": ubx.FieldSpec(wire_name="drift_detected"),
-    "drift_detection_threshold": ubx.FieldSpec(wire_name="drift_detection_threshold"),
-    "feature_id": ubx.FieldSpec(wire_name="feature_id"),
-    "feature_monitor_id": ubx.FieldSpec(wire_name="feature_monitor_id"),
-    "feature_monitor_job_id": ubx.FieldSpec(wire_name="feature_monitor_job_id"),
-    "feature_stats": ubx.FieldSpec(wire_name="feature_stats"),
-    "stats_time": ubx.FieldSpec(wire_name="stats_time"),
-}
-
 _V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields = {
     "value": ubx.FieldSpec(wire_name="value"),
 }
@@ -116,51 +105,22 @@ _V1beta1Feature_MonitoringConfigFields = {
     ),
 }
 
-_V1beta1Feature_MonitoringStatsFields = {
-    "anomaly_detection_threshold": ubx.FieldSpec(wire_name="anomaly_detection_threshold"),
-    "anomaly_uri": ubx.FieldSpec(wire_name="anomaly_uri"),
-    "distribution_deviation": ubx.FieldSpec(wire_name="distribution_deviation"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "score": ubx.FieldSpec(wire_name="score"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-    "stats_uri": ubx.FieldSpec(wire_name="stats_uri"),
-}
-
-_V1beta1Feature_MonitoringStatsAnomaliesFields = {
-    "feature_stats_anomaly": ubx.FieldSpec(
-        wire_name="feature_stats_anomaly",
-        kind="object",
-        fields=_V1beta1Feature_MonitoringStatsFields,
-    ),
-    "objective": ubx.FieldSpec(wire_name="objective"),
-}
-
 @dataclasses.dataclass
 class V1beta1FeatureConfig:
-    # Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was created.
-    create_time: Any = None
     # Description of the Feature.
     description: Any = None
     # Optional. Only applicable for Vertex AI Feature Store (Legacy). If not set, use the monitoring_config defined for the EntityType this Feature belongs to. Only Features with type (Feature.ValueType) BOOL, STRING, DOUBLE or INT64 can enable monitoring. If set to true, all types of data monitoring are disabled despite the config on EntityType.
     disable_monitoring: Any = None
     # Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
     etag: Any = None
-    # Output only. Only applicable for Vertex AI Feature Store. The list of historical stats and anomalies.
-    feature_stats_and_anomaly: Any = None
     # Optional. The labels with user-defined metadata to organize your Features. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Feature (System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
     labels: Any = None
     # Configuration of how features in Featurestore are monitored.
     monitoring_config: Any = None
-    # Output only. Only applicable for Vertex AI Feature Store (Legacy). A list of historical SnapshotAnalysis stats requested by user, sorted by FeatureStatsAnomaly.start_time descending.
-    monitoring_stats: Any = None
-    # Output only. Only applicable for Vertex AI Feature Store (Legacy). The list of historical stats and anomalies with specified objectives.
-    monitoring_stats_anomalies: Any = None
     # Immutable. Name of the Feature. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}` `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}` The last part feature is assigned by the client. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
     name: Any = None
     # Entity responsible for maintaining this feature. Can be comma separated list of email addresses or URIs.
     point_of_contact: Any = None
-    # Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was most recently updated.
-    update_time: Any = None
     # Immutable. Only applicable for Vertex AI Feature Store (Legacy). Type of Feature value.
     value_type: Any = None
     # Only applicable for Vertex AI Feature Store. The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use feature_id.
@@ -200,34 +160,17 @@ class V1beta1FeatureAttrs:
 V1beta1Feature = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_feature",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disable_monitoring": ubx.FieldSpec(wire_name="disable_monitoring"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "feature_stats_and_anomaly": ubx.FieldSpec(
-            wire_name="feature_stats_and_anomaly",
-            kind="list",
-            fields=_V1beta1Feature_FeatureStatsAndAnomalyFields,
-        ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "monitoring_config": ubx.FieldSpec(
             wire_name="monitoring_config",
             kind="object",
             fields=_V1beta1Feature_MonitoringConfigFields,
         ),
-        "monitoring_stats": ubx.FieldSpec(
-            wire_name="monitoring_stats",
-            kind="list",
-            fields=_V1beta1Feature_MonitoringStatsFields,
-        ),
-        "monitoring_stats_anomalies": ubx.FieldSpec(
-            wire_name="monitoring_stats_anomalies",
-            kind="list",
-            fields=_V1beta1Feature_MonitoringStatsAnomaliesFields,
-        ),
         "name": ubx.FieldSpec(wire_name="name"),
         "point_of_contact": ubx.FieldSpec(wire_name="point_of_contact"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "value_type": ubx.FieldSpec(wire_name="value_type"),
         "version_column_name": ubx.FieldSpec(wire_name="version_column_name"),
     },

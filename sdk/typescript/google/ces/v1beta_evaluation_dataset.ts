@@ -141,22 +141,12 @@ const V1betaEvaluationDataset_AggregatedMetricsFields: FieldMap = {
 export interface V1betaEvaluationDatasetConfig {
   /** Aggregated metrics for an evaluation or evaluation dataset. */
   aggregatedMetrics?: V1betaEvaluationDataset_AggregatedMetrics | Computed<V1betaEvaluationDataset_AggregatedMetrics>;
-  /** Output only. Timestamp when the evaluation dataset was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The user who created the evaluation dataset. */
-  createdBy?: string | Computed<string>;
   /** Required. User-defined display name of the evaluation dataset. Unique within an App. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Optional. Evaluations that are included in this dataset. */
   evaluations?: string[] | Computed<string[]>;
-  /** Output only. The user who last updated the evaluation dataset. */
-  lastUpdatedBy?: string | Computed<string>;
   /** Identifier. The unique identifier of this evaluation dataset. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationDatasets/{evaluationDataset}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the evaluation dataset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaEvaluationDatasetAttrs {
@@ -188,13 +178,8 @@ export const V1betaEvaluationDataset: ResourceBinding<V1betaEvaluationDatasetCon
       kind: "object",
       fields: V1betaEvaluationDataset_AggregatedMetricsFields,
     },
-    createTime: "create_time",
-    createdBy: "created_by",
     displayName: "display_name",
-    etag: "etag",
     evaluations: "evaluations",
-    lastUpdatedBy: "last_updated_by",
     name: "name",
-    updateTime: "update_time",
   },
 };

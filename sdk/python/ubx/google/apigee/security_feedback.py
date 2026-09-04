@@ -20,20 +20,14 @@ _SecurityFeedback_FeedbackContextsFields = {
 class SecurityFeedbackConfig:
     # Optional. Optional text the user can provide for additional, unstructured context.
     comment: Any = None
-    # Output only. The time when this specific feedback id was created.
-    create_time: Any = None
     # Optional. The display name of the feedback.
     display_name: Any = None
     # Required. One or more attribute/value pairs for constraining the feedback.
     feedback_contexts: Any = None
     # Required. The type of feedback being submitted.
     feedback_type: Any = None
-    # Output only. Identifier. The feedback name is intended to be a system-generated uuid.
-    name: Any = None
     # Optional. The reason for the feedback.
     reason: Any = None
-    # Output only. The time when this specific feedback id was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SecurityFeedbackAttrs:
@@ -58,7 +52,6 @@ SecurityFeedback = ubx.ResourceBinding(
     wire_type="google_apigee_security_feedback",
     fields={
         "comment": ubx.FieldSpec(wire_name="comment"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "feedback_contexts": ubx.FieldSpec(
             wire_name="feedback_contexts",
@@ -66,8 +59,6 @@ SecurityFeedback = ubx.ResourceBinding(
             fields=_SecurityFeedback_FeedbackContextsFields,
         ),
         "feedback_type": ubx.FieldSpec(wire_name="feedback_type"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "reason": ubx.FieldSpec(wire_name="reason"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

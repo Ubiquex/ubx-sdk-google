@@ -1085,8 +1085,6 @@ class TableConfig:
     clone_definition: Any = None
     # Configures table clustering.
     clustering: Any = None
-    # Output only. The time when this table was created, in milliseconds since the epoch.
-    creation_time: Any = None
     # Optional. Defines the default collation specification of new STRING fields in the table. During table creation or update, if a STRING field is added to this table without explicit collation specified, then the table inherits the table default collation. A change to this field affects only fields added afterwards, and does not alter the existing fields. The following values are supported: * 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to case-sensitive behavior.
     default_collation: Any = None
     # Optional. Defines the default rounding mode specification of new decimal fields (NUMERIC OR BIGNUMERIC) in the table. During table creation or update, if a decimal field is added to this table without an explicit rounding mode specified, then the field inherits the table default rounding mode. Changing this field doesn't affect existing fields.
@@ -1095,8 +1093,6 @@ class TableConfig:
     description: Any = None
     # Configuration for Cloud KMS encryption settings.
     encryption_configuration: Any = None
-    # Output only. A hash of this resource.
-    etag: Any = None
     # Optional. The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables.
     expiration_time: Any = None
     # Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties.
@@ -1104,16 +1100,10 @@ class TableConfig:
     external_data_configuration: Any = None
     # Optional. A descriptive name for this table.
     friendly_name: Any = None
-    # Output only. An opaque ID uniquely identifying the table.
-    id: Any = None
     # The type of resource ID.
     kind: Any = None
     # The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key.
     labels: Any = None
-    # Output only. The time when this table was last modified, in milliseconds since the epoch.
-    last_modified_time: Any = None
-    # Output only. The geographic location where the table resides. This value is inherited from the dataset.
-    location: Any = None
     # Optional. If set, overrides the default managed table type configured in the dataset.
     managed_table_type: Any = None
     # Definition and configuration of a materialized view.
@@ -1123,37 +1113,9 @@ class TableConfig:
     # Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type.
     max_staleness: Any = None
     model: Any = None
-    # Output only. Number of logical bytes that are less than 90 days old.
-    num_active_logical_bytes: Any = None
-    # Output only. Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_active_physical_bytes: Any = None
-    # Output only. The size of this table in logical bytes, excluding any data in the streaming buffer.
-    num_bytes: Any = None
-    # Output only. Number of physical bytes used by current live data storage. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_current_physical_bytes: Any = None
-    # Output only. The number of logical bytes in the table that are considered "long-term storage".
-    num_long_term_bytes: Any = None
-    # Output only. Number of logical bytes that are more than 90 days old.
-    num_long_term_logical_bytes: Any = None
-    # Output only. Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_long_term_physical_bytes: Any = None
-    # Output only. The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_partitions: Any = None
-    # Output only. The physical size of this table in bytes. This includes storage used for time travel.
-    num_physical_bytes: Any = None
-    # Output only. The number of rows of data in this table, excluding any data in the streaming buffer.
-    num_rows: Any = None
-    # Output only. Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_time_travel_physical_bytes: Any = None
-    # Output only. Total number of logical bytes in the table or materialized view.
-    num_total_logical_bytes: Any = None
-    # Output only. The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes.
-    num_total_physical_bytes: Any = None
     # The partitioning information, which includes managed table, external table and metastore partitioned table partition information.
     partition_definition: Any = None
     range_partitioning: Any = None
-    # Optional. Output only. Table references of all replicas currently active on the table.
-    replicas: Any = None
     # Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified.
     require_partition_filter: Any = None
     # [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production".
@@ -1161,8 +1123,6 @@ class TableConfig:
     restrictions: Any = None
     # Schema of a table
     schema: Any = None
-    # Output only. A URL that can be used to access this resource again.
-    self_link: Any = None
     # Information about base table and snapshot time of the snapshot.
     snapshot_definition: Any = None
     streaming_buffer: Any = None
@@ -1172,8 +1132,6 @@ class TableConfig:
     # Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv`
     table_replication_info: Any = None
     time_partitioning: Any = None
-    # Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](https://cloud.google.com/bigquery/docs/table-snapshots-intro). The default value is `TABLE`.
-    type: Any = None
     # Describes the definition of a logical view.
     view: Any = None
 
@@ -1295,7 +1253,6 @@ Table = ubx.ResourceBinding(
             kind="object",
             fields=_Table_ClusteringFields,
         ),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "default_collation": ubx.FieldSpec(wire_name="default_collation"),
         "default_rounding_mode": ubx.FieldSpec(wire_name="default_rounding_mode"),
         "description": ubx.FieldSpec(wire_name="description"),
@@ -1304,7 +1261,6 @@ Table = ubx.ResourceBinding(
             kind="object",
             fields=_Table_EncryptionConfigurationFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "expiration_time": ubx.FieldSpec(wire_name="expiration_time"),
         "external_catalog_table_options": ubx.FieldSpec(
             wire_name="external_catalog_table_options",
@@ -1317,11 +1273,8 @@ Table = ubx.ResourceBinding(
             fields=_Table_ExternalDataConfigurationFields,
         ),
         "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "kind": ubx.FieldSpec(wire_name="kind"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
-        "location": ubx.FieldSpec(wire_name="location"),
         "managed_table_type": ubx.FieldSpec(wire_name="managed_table_type"),
         "materialized_view": ubx.FieldSpec(
             wire_name="materialized_view",
@@ -1339,19 +1292,6 @@ Table = ubx.ResourceBinding(
             kind="object",
             fields=_Table_ModelFields,
         ),
-        "num_active_logical_bytes": ubx.FieldSpec(wire_name="num_active_logical_bytes"),
-        "num_active_physical_bytes": ubx.FieldSpec(wire_name="num_active_physical_bytes"),
-        "num_bytes": ubx.FieldSpec(wire_name="num_bytes"),
-        "num_current_physical_bytes": ubx.FieldSpec(wire_name="num_current_physical_bytes"),
-        "num_long_term_bytes": ubx.FieldSpec(wire_name="num_long_term_bytes"),
-        "num_long_term_logical_bytes": ubx.FieldSpec(wire_name="num_long_term_logical_bytes"),
-        "num_long_term_physical_bytes": ubx.FieldSpec(wire_name="num_long_term_physical_bytes"),
-        "num_partitions": ubx.FieldSpec(wire_name="num_partitions"),
-        "num_physical_bytes": ubx.FieldSpec(wire_name="num_physical_bytes"),
-        "num_rows": ubx.FieldSpec(wire_name="num_rows"),
-        "num_time_travel_physical_bytes": ubx.FieldSpec(wire_name="num_time_travel_physical_bytes"),
-        "num_total_logical_bytes": ubx.FieldSpec(wire_name="num_total_logical_bytes"),
-        "num_total_physical_bytes": ubx.FieldSpec(wire_name="num_total_physical_bytes"),
         "partition_definition": ubx.FieldSpec(
             wire_name="partition_definition",
             kind="object",
@@ -1361,11 +1301,6 @@ Table = ubx.ResourceBinding(
             wire_name="range_partitioning",
             kind="object",
             fields=_Table_RangePartitioningFields,
-        ),
-        "replicas": ubx.FieldSpec(
-            wire_name="replicas",
-            kind="list",
-            fields=_Table_CloneDefinition_BaseTableReferenceFields,
         ),
         "require_partition_filter": ubx.FieldSpec(wire_name="require_partition_filter"),
         "resource_tags": ubx.FieldSpec(wire_name="resource_tags"),
@@ -1379,7 +1314,6 @@ Table = ubx.ResourceBinding(
             kind="object",
             fields=_Table_ExternalDataConfiguration_SchemaFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "snapshot_definition": ubx.FieldSpec(
             wire_name="snapshot_definition",
             kind="object",
@@ -1410,7 +1344,6 @@ Table = ubx.ResourceBinding(
             kind="object",
             fields=_Table_TimePartitioningFields,
         ),
-        "type": ubx.FieldSpec(wire_name="type"),
         "view": ubx.FieldSpec(
             wire_name="view",
             kind="object",

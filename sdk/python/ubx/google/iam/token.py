@@ -12,10 +12,6 @@ class TokenConfig:
     display_name: Any = None
     # Identifier. Gemini Enterprise only. The resource name of the SCIM Token. Format: `locations/{location}/workforcePools/{workforce_pool}/providers/ {workforce_pool_provider}/scimTenants/{scim_tenant}/tokens/{token}`
     name: Any = None
-    # Output only. Gemini Enterprise only. The token string. Provide this to the IdP for authentication. Will be set only during creation.
-    security_token: Any = None
-    # Output only. Gemini Enterprise only. The state of the token.
-    state: Any = None
 
 @dataclasses.dataclass
 class TokenAttrs:
@@ -33,7 +29,5 @@ Token = ubx.ResourceBinding(
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "security_token": ubx.FieldSpec(wire_name="security_token"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

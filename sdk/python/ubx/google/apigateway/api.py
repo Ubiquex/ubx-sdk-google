@@ -8,20 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ApiConfig:
-    # Output only. Created time.
-    create_time: Any = None
     # Optional. Display name.
     display_name: Any = None
     # Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
     # Optional. Immutable. The name of a Google Managed Service ( https://cloud.google.com/service-infrastructure/docs/glossary#managed). If not specified, a new Service will automatically be created in the same project as this API.
     managed_service: Any = None
-    # Output only. Resource name of the API. Format: projects/{project}/locations/global/apis/{api}
-    name: Any = None
-    # Output only. State of the API.
-    state: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ApiAttrs:
@@ -43,12 +35,8 @@ class ApiAttrs:
 Api = ubx.ResourceBinding(
     wire_type="google_apigateway_api",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "managed_service": ubx.FieldSpec(wire_name="managed_service"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

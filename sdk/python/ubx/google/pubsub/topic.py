@@ -321,8 +321,6 @@ class TopicConfig:
     satisfies_pzs: Any = None
     # Settings for validating messages published against a schema.
     schema_settings: Any = None
-    # Output only. An output-only field indicating the state of the topic.
-    state: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources.
     tags: Any = None
 
@@ -379,7 +377,6 @@ Topic = ubx.ResourceBinding(
             kind="object",
             fields=_Topic_SchemaSettingsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "tags": ubx.FieldSpec(wire_name="tags"),
     },
 )

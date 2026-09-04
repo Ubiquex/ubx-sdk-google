@@ -35,16 +35,10 @@ _Revision_SnapshotFields = {
 
 @dataclasses.dataclass
 class RevisionConfig:
-    # Output only. Alternative IDs for this revision of the scorecard, e.g., `latest`.
-    alternate_ids: Any = None
-    # Output only. The timestamp that the revision was created.
-    create_time: Any = None
     # Identifier. The name of the scorecard revision. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}
     name: Any = None
     # A QaScorecard represents a collection of questions to be scored during analysis.
     snapshot: Any = None
-    # Output only. State of the scorecard revision, indicating whether it's ready to be used in analysis.
-    state: Any = None
 
 @dataclasses.dataclass
 class RevisionAttrs:
@@ -62,14 +56,11 @@ class RevisionAttrs:
 Revision = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_revision",
     fields={
-        "alternate_ids": ubx.FieldSpec(wire_name="alternate_ids"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "snapshot": ubx.FieldSpec(
             wire_name="snapshot",
             kind="object",
             fields=_Revision_SnapshotFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

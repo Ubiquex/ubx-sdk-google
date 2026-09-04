@@ -14,8 +14,6 @@ const V1beta1Volume_MountPointFields: FieldMap = {
 };
 
 export interface V1beta1VolumeConfig {
-  /** Output only. The time when the volume was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of the volume with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
   /** Optional. Resource labels to represent user provided metadata. */
@@ -42,7 +40,6 @@ export interface V1beta1VolumeAttrs {
 export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAttrs> = {
   wireType: "google_file_v1beta1_volume",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     mountPoint: {

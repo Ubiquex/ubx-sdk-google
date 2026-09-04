@@ -278,23 +278,7 @@ const Instance_GceSetupFields: FieldMap = {
   },
 };
 
-const Instance_UpgradeHistoryFields: FieldMap = {
-  action: "action",
-  containerImage: "container_image",
-  createTime: "create_time",
-  framework: "framework",
-  snapshot: "snapshot",
-  state: "state",
-  targetVersion: "target_version",
-  version: "version",
-  vmImage: "vm_image",
-};
-
 export interface InstanceConfig {
-  /** Output only. Instance creation time. */
-  createTime?: string | Computed<string>;
-  /** Output only. Email address of entity that sent original CreateInstance request. */
-  creator?: string | Computed<string>;
   /** Optional. If true, the notebook instance will not register with the proxy. */
   disableProxyAccess?: boolean | Computed<boolean>;
   /** Optional. If true, deletion protection will be enabled for this Workbench Instance. If false, deletion protection will be disabled for this Workbench Instance. */
@@ -305,32 +289,10 @@ export interface InstanceConfig {
   enableThirdPartyIdentity?: boolean | Computed<boolean>;
   /** The definition of how to configure a VM instance outside of Resources and Identity. */
   gceSetup?: Instance_GceSetup | Computed<Instance_GceSetup>;
-  /** Output only. Additional information about instance health. Example: healthInfo": { "docker_proxy_agent_status": "1", "docker_status": "1", "jupyterlab_api_status": "-1", "jupyterlab_status": "-1", "updated": "2020-10-18 09:40:03.573409" } */
-  healthInfo?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Instance health_state. */
-  healthState?: string | Computed<string>;
-  /** Output only. Unique ID of the resource. */
-  id?: string | Computed<string>;
   /** Optional. The owner of this instance after creation. Format: `alias@example.com` Currently supports one owner only. If not specified, all of the service account users of your VM instance's service account can use the instance. */
   instanceOwners?: string[] | Computed<string[]>;
   /** Optional. Labels to apply to this instance. These can be later modified by the UpdateInstance method. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}` */
-  name?: string | Computed<string>;
-  /** Output only. The proxy endpoint that is used to access the Jupyter notebook. */
-  proxyUri?: string | Computed<string>;
-  /** Output only. Reserved for future use for Zone Isolation. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use for Zone Separation. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of this instance. */
-  state?: string | Computed<string>;
-  /** Output only. The workforce pools proxy endpoint that is used to access the Jupyter notebook. */
-  thirdPartyProxyUrl?: string | Computed<string>;
-  /** Output only. Instance update time. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The upgrade history of this instance. */
-  upgradeHistory?: Instance_UpgradeHistory[] | Computed<Instance_UpgradeHistory[]>;
 }
 
 export interface InstanceAttrs {
@@ -379,8 +341,6 @@ export interface InstanceAttrs {
 export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
   wireType: "google_notebooks_instance",
   fields: {
-    createTime: "create_time",
-    creator: "creator",
     disableProxyAccess: "disable_proxy_access",
     enableDeletionProtection: "enable_deletion_protection",
     enableManagedEuc: "enable_managed_euc",
@@ -390,22 +350,7 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_GceSetupFields,
     },
-    healthInfo: "health_info",
-    healthState: "health_state",
-    id: "id",
     instanceOwners: "instance_owners",
     labels: "labels",
-    name: "name",
-    proxyUri: "proxy_uri",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    thirdPartyProxyUrl: "third_party_proxy_url",
-    updateTime: "update_time",
-    upgradeHistory: {
-      wireName: "upgrade_history",
-      kind: "list",
-      fields: Instance_UpgradeHistoryFields,
-    },
   },
 };

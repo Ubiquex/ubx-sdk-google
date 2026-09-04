@@ -169,16 +169,12 @@ export interface CloudVmClusterConfig {
   backupSubnetCidr?: string | Computed<string>;
   /** Optional. Network settings. CIDR to use for cluster IP allocation. */
   cidr?: string | Computed<string>;
-  /** Output only. The date and time that the VM cluster was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User friendly name for this resource. */
   displayName?: string | Computed<string>;
   /** Required. The name of the Exadata Infrastructure resource on which VM cluster resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure} */
   exadataInfrastructure?: string | Computed<string>;
   /** Optional. The name of ExascaleDbStorageVault associated with the VM Cluster. Format: projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault} */
   exascaleDbStorageVault?: string | Computed<string>;
-  /** Output only. The GCP Oracle zone where Oracle CloudVmCluster is hosted. This will be the same as the gcp_oracle_zone of the CloudExadataInfrastructure. Example: us-east4-b-r2. */
-  gcpOracleZone?: string | Computed<string>;
   /** The identity connector details which will allow OCI to securely access the resources in the customer project. */
   identityConnector?: CloudVmCluster_IdentityConnector | Computed<CloudVmCluster_IdentityConnector>;
   /** Optional. Labels or tags associated with the VM Cluster. */
@@ -234,11 +230,9 @@ export const CloudVmCluster: ResourceBinding<CloudVmClusterConfig, CloudVmCluste
     backupOdbSubnet: "backup_odb_subnet",
     backupSubnetCidr: "backup_subnet_cidr",
     cidr: "cidr",
-    createTime: "create_time",
     displayName: "display_name",
     exadataInfrastructure: "exadata_infrastructure",
     exascaleDbStorageVault: "exascale_db_storage_vault",
-    gcpOracleZone: "gcp_oracle_zone",
     identityConnector: {
       wireName: "identity_connector",
       kind: "object",

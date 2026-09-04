@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class QaScorecardConfig:
-    # Output only. The time at which this scorecard was created.
-    create_time: Any = None
     # A text description explaining the intent of the scorecard.
     description: Any = None
     # The user-specified display name of the scorecard.
@@ -18,10 +16,6 @@ class QaScorecardConfig:
     is_default: Any = None
     # Identifier. The scorecard name. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}
     name: Any = None
-    # Output only. The source of the scorecard.
-    source: Any = None
-    # Output only. The most recent time at which the scorecard was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class QaScorecardAttrs:
@@ -43,12 +37,9 @@ class QaScorecardAttrs:
 QaScorecard = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_qa_scorecard",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "is_default": ubx.FieldSpec(wire_name="is_default"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "source": ubx.FieldSpec(wire_name="source"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -250,14 +250,6 @@ _V1betaInstance_NetworkConfigFields = {
     "network": ubx.FieldSpec(wire_name="network"),
 }
 
-_V1betaInstance_NodesFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "ip": ubx.FieldSpec(wire_name="ip"),
-    "is_hot_standby": ubx.FieldSpec(wire_name="is_hot_standby"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "zone_id": ubx.FieldSpec(wire_name="zone_id"),
-}
-
 _V1betaInstance_ObservabilityConfigFields = {
     "assistive_experiences_enabled": ubx.FieldSpec(wire_name="assistive_experiences_enabled"),
     "enabled": ubx.FieldSpec(wire_name="enabled"),
@@ -367,6 +359,14 @@ _V1betaInstance_UpdatePolicyFields = {
     "mode": ubx.FieldSpec(wire_name="mode"),
 }
 
+_V1betaInstance_NodesFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "ip": ubx.FieldSpec(wire_name="ip"),
+    "is_hot_standby": ubx.FieldSpec(wire_name="is_hot_standby"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "zone_id": ubx.FieldSpec(wire_name="zone_id"),
+}
+
 @dataclasses.dataclass
 class V1betaInstanceConfig:
     # Optional. Specifies whether an instance needs to spin up. Once the instance is active, the activation policy can be updated to the `NEVER` to stop the instance. Likewise, the activation policy can be updated to `ALWAYS` to start the instance. There are restrictions around when an instance can/cannot be activated (for example, a read pool instance should be stopped before stopping primary etc.). Please refer to the API documentation for more details.
@@ -379,14 +379,10 @@ class V1betaInstanceConfig:
     client_connection_config: Any = None
     # Configuration for Managed Connection Pool (MCP).
     connection_pool_config: Any = None
-    # Output only. Create time stamp
-    create_time: Any = None
     # Optional. Controls whether the Data API is enabled for this instance. When enabled, this allows authorized users to connect to the instance from the public internet using the `executeSql` API, even for private IP instances. If this is not specified, the data API is enabled by default for Google internal services like AlloyDB Studio. Disable it explicitly to disallow Google internal services as well.
     data_api_access: Any = None
     # Database flags. Set at the instance level. They are copied from the primary instance on secondary instance creation. Flags that have restrictions default to the value at primary instance on read instances during creation. Read instances can set new flags or override existing flags that are relevant for reads, for example, for enabling columnar cache on a read instance. Flags set on read instance might or might not be present on the primary instance. This is a list of "key": "value" pairs. "key": The name of the flag. These flags are passed at instance setup time, so include both server options and system variables for Postgres. Flags are specified with underscores, not hyphens. "value": The value of the flag. Booleans are set to **on** for true and **off** for false. This field must be omitted if the flag doesn't take a value.
     database_flags: Any = None
-    # Output only. Delete time stamp
-    delete_time: Any = None
     # User-settable and human-readable display name for the Instance.
     display_name: Any = None
     # For Resource freshness validation (https://google.aip.dev/154)
@@ -399,46 +395,24 @@ class V1betaInstanceConfig:
     gemini_config: Any = None
     # Required. The type of the instance. Specified at creation time.
     instance_type: Any = None
-    # Output only. The IP address for the Instance. This is the connection endpoint for an end-user application.
-    ip_address: Any = None
     # Labels as key value pairs
     labels: Any = None
     # MachineConfig describes the configuration of a machine.
     machine_config: Any = None
-    # Output only. Maintenance version of the instance, for example: POSTGRES_15.2025_07_15.04_00. Output only. Update this field via the parent cluster's maintenance_version field(s).
-    maintenance_version_name: Any = None
-    # Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id}
-    name: Any = None
     # Metadata related to instance-level network configuration.
     network_config: Any = None
-    # Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance.
-    nodes: Any = None
     # Observability Instance specific configuration.
     observability_config: Any = None
-    # Output only. All outbound public IP addresses configured for the instance.
-    outbound_public_ip_addresses: Any = None
     # PscInstanceConfig contains PSC related configuration at an instance level.
     psc_instance_config: Any = None
     # Information about the Private Service Connect (PSC) for the instance.
     psc_instance_info: Any = None
-    # Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application.
-    public_ip_address: Any = None
     # QueryInsights Instance specific configuration.
     query_insights_config: Any = None
     # Configuration for a read pool instance.
     read_pool_config: Any = None
-    # Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Instance does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
-    reconciling: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The current serving state of the instance.
-    state: Any = None
-    # Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-    uid: Any = None
     # Policy to be used while updating the instance.
     update_policy: Any = None
-    # Output only. Update time stamp
-    update_time: Any = None
     # Details of a single node in the instance. Nodes in an AlloyDB instance are ephemeral, they can change during update, failover, autohealing and resize operations.
     writable_node: Any = None
 
@@ -533,10 +507,8 @@ V1betaInstance = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaInstance_ConnectionPoolConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_api_access": ubx.FieldSpec(wire_name="data_api_access"),
         "database_flags": ubx.FieldSpec(wire_name="database_flags"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "gca_config": ubx.FieldSpec(
@@ -551,31 +523,22 @@ V1betaInstance = ubx.ResourceBinding(
             fields=_V1betaInstance_GeminiConfigFields,
         ),
         "instance_type": ubx.FieldSpec(wire_name="instance_type"),
-        "ip_address": ubx.FieldSpec(wire_name="ip_address"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "machine_config": ubx.FieldSpec(
             wire_name="machine_config",
             kind="object",
             fields=_V1betaInstance_MachineConfigFields,
         ),
-        "maintenance_version_name": ubx.FieldSpec(wire_name="maintenance_version_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
             kind="object",
             fields=_V1betaInstance_NetworkConfigFields,
-        ),
-        "nodes": ubx.FieldSpec(
-            wire_name="nodes",
-            kind="list",
-            fields=_V1betaInstance_NodesFields,
         ),
         "observability_config": ubx.FieldSpec(
             wire_name="observability_config",
             kind="object",
             fields=_V1betaInstance_ObservabilityConfigFields,
         ),
-        "outbound_public_ip_addresses": ubx.FieldSpec(wire_name="outbound_public_ip_addresses"),
         "psc_instance_config": ubx.FieldSpec(
             wire_name="psc_instance_config",
             kind="object",
@@ -586,7 +549,6 @@ V1betaInstance = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaInstance_PscInstanceInfoFields,
         ),
-        "public_ip_address": ubx.FieldSpec(wire_name="public_ip_address"),
         "query_insights_config": ubx.FieldSpec(
             wire_name="query_insights_config",
             kind="object",
@@ -597,16 +559,11 @@ V1betaInstance = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaInstance_ReadPoolConfigFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
         "update_policy": ubx.FieldSpec(
             wire_name="update_policy",
             kind="object",
             fields=_V1betaInstance_UpdatePolicyFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "writable_node": ubx.FieldSpec(
             wire_name="writable_node",
             kind="object",

@@ -147,8 +147,6 @@ class V1beta1FeatureViewConfig:
     big_query_source: Any = None
     # Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances.
     bigtable_metadata: Any = None
-    # Output only. Timestamp when this FeatureView was created.
-    create_time: Any = None
     # Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
     etag: Any = None
     # A Feature Registry source for features that need to be synced to Online Store.
@@ -161,18 +159,10 @@ class V1beta1FeatureViewConfig:
     name: Any = None
     # Configuration for FeatureViews created in Optimized FeatureOnlineStore.
     optimized_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. A Service Account unique to this FeatureView. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to sync data to the online store.
-    service_account_email: Any = None
     # Optional. Service agent type used during data sync. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureView within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_VIEW`. This will generate a separate service account to access the BigQuery source table.
     service_agent_type: Any = None
     # Configuration for Sync. Only one option is set.
     sync_config: Any = None
-    # Output only. Timestamp when this FeatureView was last updated.
-    update_time: Any = None
     # Deprecated. Use IndexConfig instead.
     vector_search_config: Any = None
     # A Vertex Rag source for features that need to be synced to Online Store.
@@ -227,7 +217,6 @@ V1beta1FeatureView = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1FeatureView_BigtableMetadataFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "feature_registry_source": ubx.FieldSpec(
             wire_name="feature_registry_source",
@@ -246,16 +235,12 @@ V1beta1FeatureView = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1FeatureView_OptimizedConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "service_account_email": ubx.FieldSpec(wire_name="service_account_email"),
         "service_agent_type": ubx.FieldSpec(wire_name="service_agent_type"),
         "sync_config": ubx.FieldSpec(
             wire_name="sync_config",
             kind="object",
             fields=_V1beta1FeatureView_SyncConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vector_search_config": ubx.FieldSpec(
             wire_name="vector_search_config",
             kind="object",

@@ -164,8 +164,6 @@ _Asset_SecurityStatusFields = {
 
 @dataclasses.dataclass
 class AssetConfig:
-    # Output only. The time when the asset was created.
-    create_time: Any = None
     # Optional. Description of the asset.
     description: Any = None
     # Settings to manage the metadata discovery and publishing for an asset.
@@ -176,20 +174,12 @@ class AssetConfig:
     display_name: Any = None
     # Optional. User defined labels for the asset.
     labels: Any = None
-    # Output only. The relative resource name of the asset, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}.
-    name: Any = None
     # Identifies the cloud resource that is referenced by this asset.
     resource_spec: Any = None
     # Status of the resource referenced by an asset.
     resource_status: Any = None
     # Security policy status of the asset. Data security policy, i.e., readers, writers & owners, should be specified in the lake/zone/asset IAM policy.
     security_status: Any = None
-    # Output only. Current state of the asset.
-    state: Any = None
-    # Output only. System generated globally unique ID for the asset. This ID will be different if the asset is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the asset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AssetAttrs:
@@ -223,7 +213,6 @@ class AssetAttrs:
 Asset = ubx.ResourceBinding(
     wire_type="google_dataplex_asset",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "discovery_spec": ubx.FieldSpec(
             wire_name="discovery_spec",
@@ -237,7 +226,6 @@ Asset = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "resource_spec": ubx.FieldSpec(
             wire_name="resource_spec",
             kind="object",
@@ -253,8 +241,5 @@ Asset = ubx.ResourceBinding(
             kind="object",
             fields=_Asset_SecurityStatusFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

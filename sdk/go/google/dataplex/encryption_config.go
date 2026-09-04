@@ -11,17 +11,13 @@ type EncryptionConfig_FailureDetails struct {
 }
 
 var EncryptionConfig_FailureDetailsFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-	}
+	"ErrorCode":    ubx.FieldSpec{WireName: "error_code"},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+}
 
 type EncryptionConfigConfig struct {
-	// Output only. The time when the Encryption configuration was created.
-	CreateTime any
 	// Optional. Represent the state of CMEK opt-in for metastore.
 	EnableMetastoreEncryption any
-	// Output only. The state of encryption of the databases.
-	EncryptionState any
 	// Etag of the EncryptionConfig. This is a strong etag.
 	Etag any
 	// Details of the failure if anything related to Cmek db fails.
@@ -30,8 +26,6 @@ type EncryptionConfigConfig struct {
 	Key any
 	// Identifier. The resource name of the EncryptionConfig. Format: organizations/{organization}/locations/{location}/encryptionConfigs/{encryption_config} Global location is not supported.
 	Name any
-	// Output only. The time when the Encryption configuration was last updated.
-	UpdateTime any
 }
 
 type EncryptionConfigAttrs struct {
@@ -56,17 +50,14 @@ type EncryptionConfigAttrs struct {
 var EncryptionConfig = ubx.ResourceBinding{
 	WireType: "google_dataplex_encryption_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EnableMetastoreEncryption": ubx.FieldSpec{WireName: "enable_metastore_encryption"},
-		"EncryptionState": ubx.FieldSpec{WireName: "encryption_state"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":                      ubx.FieldSpec{WireName: "etag"},
 		"FailureDetails": ubx.FieldSpec{
 			WireName: "failure_details",
-			Kind: "object",
-			Fields: EncryptionConfig_FailureDetailsFields,
+			Kind:     "object",
+			Fields:   EncryptionConfig_FailureDetailsFields,
 		},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":  ubx.FieldSpec{WireName: "key"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

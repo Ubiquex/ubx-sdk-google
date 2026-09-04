@@ -28,97 +28,56 @@ type ServiceConnectionPolicy_PscConfig struct {
 }
 
 type ServiceConnectionPolicy_PscConnections_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type ServiceConnectionPolicy_PscConnections_ErrorInfo struct {
-	Domain any
+	Domain   any
 	Metadata any
-	Reason any
+	Reason   any
 }
 
 type ServiceConnectionPolicy_PscConnections struct {
-	ConsumerAddress any
-	ConsumerForwardingRule any
-	ConsumerTargetProject any
-	Error any
-	ErrorInfo any
-	ErrorType any
-	GceOperation any
-	IpVersion any
-	ProducerInstanceId any
+	ConsumerAddress          any
+	ConsumerForwardingRule   any
+	ConsumerTargetProject    any
+	Error                    any
+	ErrorInfo                any
+	ErrorType                any
+	GceOperation             any
+	IpVersion                any
+	ProducerInstanceId       any
 	ProducerInstanceMetadata any
-	PscConnectionId any
-	SelectedSubnetwork any
-	ServiceClass any
-	State any
+	PscConnectionId          any
+	SelectedSubnetwork       any
+	ServiceClass             any
+	State                    any
 }
 
 var ServiceConnectionPolicy_AutoCreatedSubnetInfoFields = ubx.FieldMap{
-		"Delinked": ubx.FieldSpec{WireName: "delinked"},
-		"InternalRange": ubx.FieldSpec{WireName: "internal_range"},
-		"InternalRangeRef": ubx.FieldSpec{WireName: "internal_range_ref"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"SubnetworkRef": ubx.FieldSpec{WireName: "subnetwork_ref"},
-	}
+	"Delinked":         ubx.FieldSpec{WireName: "delinked"},
+	"InternalRange":    ubx.FieldSpec{WireName: "internal_range"},
+	"InternalRangeRef": ubx.FieldSpec{WireName: "internal_range_ref"},
+	"Subnetwork":       ubx.FieldSpec{WireName: "subnetwork"},
+	"SubnetworkRef":    ubx.FieldSpec{WireName: "subnetwork_ref"},
+}
 
 var ServiceConnectionPolicy_PscConfigFields = ubx.FieldMap{
-		"AllowedGoogleProducersResourceHierarchyLevel": ubx.FieldSpec{WireName: "allowed_google_producers_resource_hierarchy_level"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ProducerInstanceLocation": ubx.FieldSpec{WireName: "producer_instance_location"},
-		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
-	}
-
-var ServiceConnectionPolicy_PscConnections_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var ServiceConnectionPolicy_PscConnections_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
-
-var ServiceConnectionPolicy_PscConnectionsFields = ubx.FieldMap{
-		"ConsumerAddress": ubx.FieldSpec{WireName: "consumer_address"},
-		"ConsumerForwardingRule": ubx.FieldSpec{WireName: "consumer_forwarding_rule"},
-		"ConsumerTargetProject": ubx.FieldSpec{WireName: "consumer_target_project"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_PscConnections_ErrorFields,
-		},
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_PscConnections_ErrorInfoFields,
-		},
-		"ErrorType": ubx.FieldSpec{WireName: "error_type"},
-		"GceOperation": ubx.FieldSpec{WireName: "gce_operation"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"ProducerInstanceId": ubx.FieldSpec{WireName: "producer_instance_id"},
-		"ProducerInstanceMetadata": ubx.FieldSpec{WireName: "producer_instance_metadata"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"SelectedSubnetwork": ubx.FieldSpec{WireName: "selected_subnetwork"},
-		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AllowedGoogleProducersResourceHierarchyLevel": ubx.FieldSpec{WireName: "allowed_google_producers_resource_hierarchy_level"},
+	"Limit":                    ubx.FieldSpec{WireName: "limit"},
+	"ProducerInstanceLocation": ubx.FieldSpec{WireName: "producer_instance_location"},
+	"Subnetworks":              ubx.FieldSpec{WireName: "subnetworks"},
+}
 
 type ServiceConnectionPolicyConfig struct {
 	// Information for the automatically created subnetwork and its associated IR.
 	AutoCreatedSubnetInfo any
-	// Output only. Time when the ServiceConnectionPolicy was created.
-	CreateTime any
 	// A description of this resource.
 	Description any
 	// Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. The type of underlying resources used to create the connection.
-	Infrastructure any
 	// User-defined labels.
 	Labels any
 	// Immutable. The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names
@@ -127,12 +86,8 @@ type ServiceConnectionPolicyConfig struct {
 	Network any
 	// Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.
 	PscConfig any
-	// Output only. [Output only] Information about each Private Service Connect connection.
-	PscConnections any
 	// The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass. It is provided by the Service Producer. Google services have a prefix of gcp or google-cloud. For example, gcp-memorystore-redis or google-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.
 	ServiceClass any
-	// Output only. Time when the ServiceConnectionPolicy was updated.
-	UpdateTime any
 }
 
 type ServiceConnectionPolicyAttrs struct {
@@ -167,27 +122,19 @@ var ServiceConnectionPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoCreatedSubnetInfo": ubx.FieldSpec{
 			WireName: "auto_created_subnet_info",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
+			Kind:     "object",
+			Fields:   ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Infrastructure": ubx.FieldSpec{WireName: "infrastructure"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 		"PscConfig": ubx.FieldSpec{
 			WireName: "psc_config",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_PscConfigFields,
-		},
-		"PscConnections": ubx.FieldSpec{
-			WireName: "psc_connections",
-			Kind: "list",
-			Fields: ServiceConnectionPolicy_PscConnectionsFields,
+			Kind:     "object",
+			Fields:   ServiceConnectionPolicy_PscConfigFields,
 		},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

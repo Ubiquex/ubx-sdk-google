@@ -26,24 +26,22 @@ type AssessmentRule_ScheduleInfo struct {
 }
 
 var AssessmentRule_SampleRuleFields = ubx.FieldMap{
-		"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"SamplePercentage": ubx.FieldSpec{WireName: "sample_percentage"},
-		"SampleRow": ubx.FieldSpec{WireName: "sample_row"},
-	}
+	"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
+	"Dimension":          ubx.FieldSpec{WireName: "dimension"},
+	"SamplePercentage":   ubx.FieldSpec{WireName: "sample_percentage"},
+	"SampleRow":          ubx.FieldSpec{WireName: "sample_row"},
+}
 
 var AssessmentRule_ScheduleInfoFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"Schedule":  ubx.FieldSpec{WireName: "schedule"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"TimeZone":  ubx.FieldSpec{WireName: "time_zone"},
+}
 
 type AssessmentRuleConfig struct {
 	// If true, apply this rule to conversations. Otherwise, this rule is inactive.
 	Active any
-	// Output only. The time at which this assessment rule was created.
-	CreateTime any
 	// Display Name of the assessment rule.
 	DisplayName any
 	// Identifier. The resource name of the assessment rule. Format: projects/{project}/locations/{location}/assessmentRules/{assessment_rule}
@@ -52,8 +50,6 @@ type AssessmentRuleConfig struct {
 	SampleRule any
 	// Message for schedule info.
 	ScheduleInfo any
-	// Output only. The most recent time at which this assessment rule was updated.
-	UpdateTime any
 }
 
 type AssessmentRuleAttrs struct {
@@ -76,20 +72,18 @@ type AssessmentRuleAttrs struct {
 var AssessmentRule = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_assessment_rule",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Active":      ubx.FieldSpec{WireName: "active"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SampleRule": ubx.FieldSpec{
 			WireName: "sample_rule",
-			Kind: "object",
-			Fields: AssessmentRule_SampleRuleFields,
+			Kind:     "object",
+			Fields:   AssessmentRule_SampleRuleFields,
 		},
 		"ScheduleInfo": ubx.FieldSpec{
 			WireName: "schedule_info",
-			Kind: "object",
-			Fields: AssessmentRule_ScheduleInfoFields,
+			Kind:     "object",
+			Fields:   AssessmentRule_ScheduleInfoFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

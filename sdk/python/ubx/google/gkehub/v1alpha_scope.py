@@ -17,10 +17,6 @@ _V1alphaScope_StateFields = {
 
 @dataclasses.dataclass
 class V1alphaScopeConfig:
-    # Output only. When the scope was created.
-    create_time: Any = None
-    # Output only. When the scope was deleted.
-    delete_time: Any = None
     # Optional. Labels for this Scope.
     labels: Any = None
     # The resource name for the scope `projects/{project}/locations/{location}/scopes/{scope}`
@@ -29,10 +25,6 @@ class V1alphaScopeConfig:
     namespace_labels: Any = None
     # ScopeLifecycleState describes the state of a Scope resource.
     state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all scope resources. If a scope resource is deleted and another resource with the same name is created, it gets a different uid.
-    uid: Any = None
-    # Output only. When the scope was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaScopeAttrs:
@@ -56,8 +48,6 @@ class V1alphaScopeAttrs:
 V1alphaScope = ubx.ResourceBinding(
     wire_type="google_gkehub_v1alpha_scope",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "namespace_labels": ubx.FieldSpec(wire_name="namespace_labels"),
@@ -66,7 +56,5 @@ V1alphaScope = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaScope_StateFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

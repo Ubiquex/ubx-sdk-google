@@ -88,8 +88,6 @@ const Server_InternalConfigFields: FieldMap = {
 export interface ServerConfig {
   /** Required. The access type of the Server. */
   accessType?: string | Computed<string>;
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Display name of the Server */
   displayName?: string | Computed<string>;
   /** Configuration for external server. */
@@ -102,16 +100,6 @@ export interface ServerConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. name of resource */
   name?: string | Computed<string>;
-  /** Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Service agent used to access the customer bucket. */
-  serviceAgent?: string | Computed<string>;
-  /** Output only. The state of the server. */
-  state?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServerAttrs {
@@ -147,7 +135,6 @@ export const Server: ResourceBinding<ServerConfig, ServerAttrs> = {
   wireType: "google_ftp_server",
   fields: {
     accessType: "access_type",
-    createTime: "create_time",
     displayName: "display_name",
     externalConfig: {
       wireName: "external_config",
@@ -166,10 +153,5 @@ export const Server: ResourceBinding<ServerConfig, ServerAttrs> = {
     },
     labels: "labels",
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    serviceAgent: "service_agent",
-    state: "state",
-    updateTime: "update_time",
   },
 };

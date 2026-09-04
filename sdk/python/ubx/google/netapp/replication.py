@@ -116,38 +116,20 @@ _Replication_TransferStatsFields = {
 class ReplicationConfig:
     # Optional. Location of the user cluster.
     cluster_location: Any = None
-    # Output only. Replication create time.
-    create_time: Any = None
     # A description about this replication relationship.
     description: Any = None
-    # Output only. Full name of destination volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}"
-    destination_volume: Any = None
     # DestinationVolumeParameters specify input parameters used for creating destination volume.
     destination_volume_parameters: Any = None
-    # Output only. Condition of the relationship. Can be one of the following: - true: The replication relationship is healthy. It has not missed the most recent scheduled transfer. - false: The replication relationship is not healthy. It has missed the most recent scheduled transfer.
-    healthy: Any = None
     # HybridPeeringDetails contains details about the hybrid peering.
     hybrid_peering_details: Any = None
-    # Output only. Type of the hybrid replication.
-    hybrid_replication_type: Any = None
     # UserCommands contains the commands to be executed by the customer.
     hybrid_replication_user_commands: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
-    # Output only. Indicates the state of mirroring.
-    mirror_state: Any = None
     # Identifier. The resource name of the Replication. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`.
     name: Any = None
     # Required. Indicates the schedule for replication.
     replication_schedule: Any = None
-    # Output only. Indicates whether this points to source or destination.
-    role: Any = None
-    # Output only. Full name of source volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}"
-    source_volume: Any = None
-    # Output only. State of the replication.
-    state: Any = None
-    # Output only. State details of the replication.
-    state_details: Any = None
     # TransferStats reports all statistics related to replication transfer.
     transfer_stats: Any = None
 
@@ -194,34 +176,25 @@ Replication = ubx.ResourceBinding(
     wire_type="google_netapp_replication",
     fields={
         "cluster_location": ubx.FieldSpec(wire_name="cluster_location"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "destination_volume": ubx.FieldSpec(wire_name="destination_volume"),
         "destination_volume_parameters": ubx.FieldSpec(
             wire_name="destination_volume_parameters",
             kind="object",
             fields=_Replication_DestinationVolumeParametersFields,
         ),
-        "healthy": ubx.FieldSpec(wire_name="healthy"),
         "hybrid_peering_details": ubx.FieldSpec(
             wire_name="hybrid_peering_details",
             kind="object",
             fields=_Replication_HybridPeeringDetailsFields,
         ),
-        "hybrid_replication_type": ubx.FieldSpec(wire_name="hybrid_replication_type"),
         "hybrid_replication_user_commands": ubx.FieldSpec(
             wire_name="hybrid_replication_user_commands",
             kind="object",
             fields=_Replication_HybridReplicationUserCommandsFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "mirror_state": ubx.FieldSpec(wire_name="mirror_state"),
         "name": ubx.FieldSpec(wire_name="name"),
         "replication_schedule": ubx.FieldSpec(wire_name="replication_schedule"),
-        "role": ubx.FieldSpec(wire_name="role"),
-        "source_volume": ubx.FieldSpec(wire_name="source_volume"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
         "transfer_stats": ubx.FieldSpec(
             wire_name="transfer_stats",
             kind="object",

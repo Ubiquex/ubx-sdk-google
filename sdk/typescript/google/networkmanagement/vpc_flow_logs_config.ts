@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface VpcFlowLogsConfigConfig {
   /** Optional. The aggregation interval for the logs. Default value is INTERVAL_5_SEC. */
   aggregationInterval?: string | Computed<string>;
-  /** Output only. The time the config was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Determines whether to include cross project annotations in the logs. This field is available only for organization configurations. If not specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED. */
   crossProjectMetadata?: string | Computed<string>;
   /** Optional. The user-supplied description of the VPC Flow Logs configuration. Maximum of 512 characters. */
@@ -30,10 +28,6 @@ export interface VpcFlowLogsConfigConfig {
   state?: string | Computed<string>;
   /** Traffic will be logged from VMs within the subnetwork. Format: projects/{project_id}/regions/{region}/subnetworks/{name} */
   subnet?: string | Computed<string>;
-  /** Output only. Describes the state of the configured target resource for diagnostic purposes. */
-  targetResourceState?: string | Computed<string>;
-  /** Output only. The time the config was updated. */
-  updateTime?: string | Computed<string>;
   /** Traffic will be logged from the VPN Tunnel. Format: projects/{project_id}/regions/{region}/vpnTunnels/{name} */
   vpnTunnel?: string | Computed<string>;
 }
@@ -79,7 +73,6 @@ export const VpcFlowLogsConfig: ResourceBinding<VpcFlowLogsConfigConfig, VpcFlow
   wireType: "google_networkmanagement_vpc_flow_logs_config",
   fields: {
     aggregationInterval: "aggregation_interval",
-    createTime: "create_time",
     crossProjectMetadata: "cross_project_metadata",
     description: "description",
     filterExpr: "filter_expr",
@@ -92,8 +85,6 @@ export const VpcFlowLogsConfig: ResourceBinding<VpcFlowLogsConfigConfig, VpcFlow
     network: "network",
     state: "state",
     subnet: "subnet",
-    targetResourceState: "target_resource_state",
-    updateTime: "update_time",
     vpnTunnel: "vpn_tunnel",
   },
 };

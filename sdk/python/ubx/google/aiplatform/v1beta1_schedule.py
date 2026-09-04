@@ -1778,26 +1778,18 @@ _V1beta1Schedule_LastScheduledRunResponseFields = {
 class V1beta1ScheduleConfig:
     # Optional. Whether new scheduled runs can be queued when max_concurrent_runs limit is reached. If set to true, new runs will be queued instead of skipped. Default to false.
     allow_queueing: Any = None
-    # Output only. Whether to backfill missed runs when the schedule is resumed from PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled after the backfill is complete. Default to false.
-    catch_up: Any = None
     # Request message for ModelMonitoringService.CreateModelMonitoringJob.
     create_model_monitoring_job_request: Any = None
     # Request message for [NotebookService.CreateNotebookExecutionJob]
     create_notebook_execution_job_request: Any = None
     # Request message for PipelineService.CreatePipelineJob.
     create_pipeline_job_request: Any = None
-    # Output only. Timestamp when this Schedule was created.
-    create_time: Any = None
     # Cron schedule (https://en.wikipedia.org/wiki/Cron) to launch scheduled runs. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".
     cron: Any = None
     # Required. User provided name of the Schedule. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Optional. Timestamp after which no new runs can be scheduled. If specified, The schedule will be completed when either end_time is reached or when scheduled_run_count >= max_run_count. If not specified, new runs will keep getting scheduled until this Schedule is paused or deleted. Already scheduled runs will be allowed to complete. Unset if not specified.
     end_time: Any = None
-    # Output only. Timestamp when this Schedule was last paused. Unset if never paused.
-    last_pause_time: Any = None
-    # Output only. Timestamp when this Schedule was last resumed. Unset if never resumed from pause.
-    last_resume_time: Any = None
     # Status of a scheduled run.
     last_scheduled_run_response: Any = None
     # Optional. Specifies the maximum number of active runs that can be executed concurrently for this Schedule. This limits the number of runs that can be in a non-terminal state at the same time. Currently, this field is only supported for requests of type CreatePipelineJobRequest.
@@ -1808,16 +1800,8 @@ class V1beta1ScheduleConfig:
     max_run_count: Any = None
     # Immutable. The resource name of the Schedule.
     name: Any = None
-    # Output only. Timestamp when this Schedule should schedule the next run. Having a next_run_time in the past means the runs are being started behind schedule.
-    next_run_time: Any = None
     # Optional. Timestamp after which the first run can be scheduled. Default to Schedule create time if not specified.
     start_time: Any = None
-    # Output only. The number of runs started by this schedule.
-    started_run_count: Any = None
-    # Output only. The state of this Schedule.
-    state: Any = None
-    # Output only. Timestamp when this Schedule was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ScheduleAttrs:
@@ -1868,7 +1852,6 @@ V1beta1Schedule = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_schedule",
     fields={
         "allow_queueing": ubx.FieldSpec(wire_name="allow_queueing"),
-        "catch_up": ubx.FieldSpec(wire_name="catch_up"),
         "create_model_monitoring_job_request": ubx.FieldSpec(
             wire_name="create_model_monitoring_job_request",
             kind="object",
@@ -1884,12 +1867,9 @@ V1beta1Schedule = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Schedule_CreatePipelineJobRequestFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "cron": ubx.FieldSpec(wire_name="cron"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "end_time": ubx.FieldSpec(wire_name="end_time"),
-        "last_pause_time": ubx.FieldSpec(wire_name="last_pause_time"),
-        "last_resume_time": ubx.FieldSpec(wire_name="last_resume_time"),
         "last_scheduled_run_response": ubx.FieldSpec(
             wire_name="last_scheduled_run_response",
             kind="object",
@@ -1899,10 +1879,6 @@ V1beta1Schedule = ubx.ResourceBinding(
         "max_concurrent_run_count": ubx.FieldSpec(wire_name="max_concurrent_run_count"),
         "max_run_count": ubx.FieldSpec(wire_name="max_run_count"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "next_run_time": ubx.FieldSpec(wire_name="next_run_time"),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "started_run_count": ubx.FieldSpec(wire_name="started_run_count"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

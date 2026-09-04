@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ObservationJobConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Identifier. name of resource Format: projects/{project}/locations/{location}/observationJobs/{observation_job} */
   name?: string | Computed<string>;
   /** Optional. These should be of the same kind of source. */
   sources?: string[] | Computed<string[]>;
-  /** Output only. The observation job state */
-  state?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ObservationJobAttrs {
@@ -30,10 +24,7 @@ export interface ObservationJobAttrs {
 export const ObservationJob: ResourceBinding<ObservationJobConfig, ObservationJobAttrs> = {
   wireType: "google_apim_observation_job",
   fields: {
-    createTime: "create_time",
     name: "name",
     sources: "sources",
-    state: "state",
-    updateTime: "update_time",
   },
 };

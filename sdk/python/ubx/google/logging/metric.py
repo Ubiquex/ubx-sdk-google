@@ -155,8 +155,6 @@ class MetricConfig:
     bucket_name: Any = None
     # BucketOptions describes the bucket boundaries used to create a histogram for the distribution. The buckets can be in a linear sequence, an exponential sequence, or each bucket can be specified explicitly. BucketOptions does not include the number of values in each bucket.A bucket has an inclusive lower bound and exclusive upper bound for the values that are counted for that bucket. The upper bound of a bucket must be strictly greater than the lower bound. The sequence of N buckets for a distribution consists of an underflow bucket (number 0), zero or more finite buckets (number 1 through N - 2) and an overflow bucket (number N - 1). The buckets are contiguous: the lower bound of bucket i (i > 0) is the same as the upper bound of bucket i - 1. The buckets span the whole range of finite values: lower bound of the underflow bucket is -infinity and the upper bound of the overflow bucket is +infinity. The finite buckets are so-called because both bounds are finite.
     bucket_options: Any = None
-    # Output only. The creation timestamp of the metric.This field may not be present for older metrics.
-    create_time: Any = None
     # Optional. A description of this metric, which is used in documentation. The maximum length of the description is 8000 characters.
     description: Any = None
     # Optional. If set to True, then this metric is disabled and it does not generate any points.
@@ -169,10 +167,6 @@ class MetricConfig:
     metric_descriptor: Any = None
     # Required. The client-assigned metric identifier. Examples: "error_count", "nginx/requests".Metric identifiers are limited to 100 characters and can include only the following characters: A-Z, a-z, 0-9, and the special characters _-.,+!*',()%/. The forward-slash character (/) denotes a hierarchy of name pieces, and it cannot be the first character of the name.This field is the [METRIC_ID] part of a metric resource name in the format "projects/PROJECT_ID/metrics/METRIC_ID". Example: If the resource name of a metric is "projects/my-project/metrics/nginx%2Frequests", this field's value is "nginx/requests".
     name: Any = None
-    # Output only. The resource name of the metric: "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
-    resource_name: Any = None
-    # Output only. The last update timestamp of the metric.This field may not be present for older metrics.
-    update_time: Any = None
     # Optional. A value_extractor is required when using a distribution logs-based metric to extract the values to record from a log entry. Two functions are supported for value extraction: EXTRACT(field) or REGEXP_EXTRACT(field, regex). The arguments are: field: The name of the log entry field from which the value is to be extracted. regex: A regular expression using the Google RE2 syntax (https://github.com/google/re2/wiki/Syntax) with a single capture group to extract data from the specified log entry field. The value of the field is converted to a string before applying the regex. It is an error to specify a regex that does not include exactly one capture group.The result of the extraction must be convertible to a double type, as the distribution always records double values. If either the extraction or the conversion to double fails, then those values are not recorded in the distribution.Example: REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(\d+).*")
     value_extractor: Any = None
     # Deprecated. The API version that created or updated this metric. The v2 format is used by default and cannot be changed.
@@ -216,7 +210,6 @@ Metric = ubx.ResourceBinding(
             kind="object",
             fields=_Metric_BucketOptionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "filter": ubx.FieldSpec(wire_name="filter"),
@@ -227,8 +220,6 @@ Metric = ubx.ResourceBinding(
             fields=_Metric_MetricDescriptorFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "resource_name": ubx.FieldSpec(wire_name="resource_name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "value_extractor": ubx.FieldSpec(wire_name="value_extractor"),
         "version": ubx.FieldSpec(wire_name="version"),
     },

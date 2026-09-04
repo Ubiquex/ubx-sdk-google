@@ -237,24 +237,6 @@ class V2beta1Conversation_TelephonyConnectionInfo:
     sdp: Any = None
     sip_headers: Any = None
 
-_V2beta1Conversation_IngestedContextReferences_ContextContentsFields = {
-    "answer_record": ubx.FieldSpec(wire_name="answer_record"),
-    "content": ubx.FieldSpec(wire_name="content"),
-    "content_format": ubx.FieldSpec(wire_name="content_format"),
-    "ingestion_time": ubx.FieldSpec(wire_name="ingestion_time"),
-}
-
-_V2beta1Conversation_IngestedContextReferencesFields = {
-    "context_contents": ubx.FieldSpec(
-        wire_name="context_contents",
-        kind="list",
-        fields=_V2beta1Conversation_IngestedContextReferences_ContextContentsFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "language_code": ubx.FieldSpec(wire_name="language_code"),
-    "update_mode": ubx.FieldSpec(wire_name="update_mode"),
-}
-
 _V2beta1Conversation_InitialConversationProfile_AutomatedAgentConfigFields = {
     "agent": ubx.FieldSpec(wire_name="agent"),
     "session_ttl": ubx.FieldSpec(wire_name="session_ttl"),
@@ -570,10 +552,6 @@ _V2beta1Conversation_InitialConversationProfileFields = {
     "use_bidi_streaming": ubx.FieldSpec(wire_name="use_bidi_streaming"),
 }
 
-_V2beta1Conversation_InitialGeneratorContextsFields = {
-    "generator_type": ubx.FieldSpec(wire_name="generator_type"),
-}
-
 _V2beta1Conversation_PhoneNumberFields = {
     "country_code": ubx.FieldSpec(wire_name="country_code"),
     "phone_number": ubx.FieldSpec(wire_name="phone_number"),
@@ -608,14 +586,8 @@ _V2beta1Conversation_TelephonyConnectionInfoFields = {
 class V2beta1ConversationConfig:
     conversation_profile: Any = None
     conversation_stage: Any = None
-    end_time: Any = None
-    ingested_context_references: Any = None
     initial_conversation_profile: Any = None
-    initial_generator_contexts: Any = None
-    lifecycle_state: Any = None
-    name: Any = None
     phone_number: Any = None
-    start_time: Any = None
     telephony_connection_info: Any = None
 
 @dataclasses.dataclass
@@ -637,30 +609,16 @@ V2beta1Conversation = ubx.ResourceBinding(
     fields={
         "conversation_profile": ubx.FieldSpec(wire_name="conversation_profile"),
         "conversation_stage": ubx.FieldSpec(wire_name="conversation_stage"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
-        "ingested_context_references": ubx.FieldSpec(
-            wire_name="ingested_context_references",
-            kind="map",
-            fields=_V2beta1Conversation_IngestedContextReferencesFields,
-        ),
         "initial_conversation_profile": ubx.FieldSpec(
             wire_name="initial_conversation_profile",
             kind="object",
             fields=_V2beta1Conversation_InitialConversationProfileFields,
         ),
-        "initial_generator_contexts": ubx.FieldSpec(
-            wire_name="initial_generator_contexts",
-            kind="map",
-            fields=_V2beta1Conversation_InitialGeneratorContextsFields,
-        ),
-        "lifecycle_state": ubx.FieldSpec(wire_name="lifecycle_state"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "phone_number": ubx.FieldSpec(
             wire_name="phone_number",
             kind="object",
             fields=_V2beta1Conversation_PhoneNumberFields,
         ),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
         "telephony_connection_info": ubx.FieldSpec(
             wire_name="telephony_connection_info",
             kind="object",

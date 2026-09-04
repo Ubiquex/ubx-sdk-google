@@ -22,8 +22,6 @@ _V1beta1SacAttachment_SymantecOptionsFields = {
 class V1beta1SacAttachmentConfig:
     # Optional. Case-insensitive ISO-3166 alpha-2 country code used for localization. Only valid for Symantec attachments.
     country: Any = None
-    # Output only. Timestamp when the attachment was created.
-    create_time: Any = None
     # Optional. Optional list of labels applied to the resource.
     labels: Any = None
     # Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.
@@ -32,14 +30,10 @@ class V1beta1SacAttachmentConfig:
     ncc_gateway: Any = None
     # Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`.
     sac_realm: Any = None
-    # Output only. State of the attachment.
-    state: Any = None
     # Fields specific to attachments associated with Symantec Cloud SWG.
     symantec_options: Any = None
     # Optional. Case-sensitive tzinfo identifier used for localization. Only valid for Symantec attachments.
     time_zone: Any = None
-    # Output only. Timestamp when the attachment was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1SacAttachmentAttrs:
@@ -68,18 +62,15 @@ V1beta1SacAttachment = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_sac_attachment",
     fields={
         "country": ubx.FieldSpec(wire_name="country"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "ncc_gateway": ubx.FieldSpec(wire_name="ncc_gateway"),
         "sac_realm": ubx.FieldSpec(wire_name="sac_realm"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "symantec_options": ubx.FieldSpec(
             wire_name="symantec_options",
             kind="object",
             fields=_V1beta1SacAttachment_SymantecOptionsFields,
         ),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

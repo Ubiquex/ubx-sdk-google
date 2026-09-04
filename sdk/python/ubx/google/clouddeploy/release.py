@@ -500,102 +500,6 @@ _Release_ConditionFields = {
     ),
 }
 
-_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields = {
-    "path": ubx.FieldSpec(wire_name="path"),
-    "ref": ubx.FieldSpec(wire_name="ref"),
-    "repo": ubx.FieldSpec(wire_name="repo"),
-}
-
-_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields = {
-    "path": ubx.FieldSpec(wire_name="path"),
-    "ref": ubx.FieldSpec(wire_name="ref"),
-    "repository": ubx.FieldSpec(wire_name="repository"),
-}
-
-_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields = {
-    "path": ubx.FieldSpec(wire_name="path"),
-    "source": ubx.FieldSpec(wire_name="source"),
-}
-
-_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields = {
-    "configs": ubx.FieldSpec(wire_name="configs"),
-    "git": ubx.FieldSpec(
-        wire_name="git",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields,
-    ),
-    "google_cloud_build_repo": ubx.FieldSpec(
-        wire_name="google_cloud_build_repo",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields,
-    ),
-    "google_cloud_storage": ubx.FieldSpec(
-        wire_name="google_cloud_storage",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields,
-    ),
-}
-
-_Release_CustomTargetTypeSnapshots_CustomActionsFields = {
-    "deploy_action": ubx.FieldSpec(wire_name="deploy_action"),
-    "include_skaffold_modules": ubx.FieldSpec(
-        wire_name="include_skaffold_modules",
-        kind="list",
-        fields=_Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields,
-    ),
-    "render_action": ubx.FieldSpec(wire_name="render_action"),
-}
-
-_Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields = {
-    "args": ubx.FieldSpec(wire_name="args"),
-    "command": ubx.FieldSpec(wire_name="command"),
-    "env": ubx.FieldSpec(wire_name="env"),
-    "image": ubx.FieldSpec(wire_name="image"),
-}
-
-_Release_CustomTargetTypeSnapshots_Tasks_DeployFields = {
-    "container": ubx.FieldSpec(
-        wire_name="container",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
-    ),
-}
-
-_Release_CustomTargetTypeSnapshots_TasksFields = {
-    "deploy": ubx.FieldSpec(
-        wire_name="deploy",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-    ),
-    "render": ubx.FieldSpec(
-        wire_name="render",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-    ),
-}
-
-_Release_CustomTargetTypeSnapshotsFields = {
-    "annotations": ubx.FieldSpec(wire_name="annotations"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "custom_actions": ubx.FieldSpec(
-        wire_name="custom_actions",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_CustomActionsFields,
-    ),
-    "custom_target_type_id": ubx.FieldSpec(wire_name="custom_target_type_id"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "etag": ubx.FieldSpec(wire_name="etag"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "tasks": ubx.FieldSpec(
-        wire_name="tasks",
-        kind="object",
-        fields=_Release_CustomTargetTypeSnapshots_TasksFields,
-    ),
-    "uid": ubx.FieldSpec(wire_name="uid"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 _Release_DeliveryPipelineSnapshot_Condition_PipelineReadyConditionFields = {
     "status": ubx.FieldSpec(wire_name="status"),
     "update_time": ubx.FieldSpec(wire_name="update_time"),
@@ -633,6 +537,21 @@ _Release_DeliveryPipelineSnapshot_ConditionFields = {
 _Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParametersFields = {
     "match_target_labels": ubx.FieldSpec(wire_name="match_target_labels"),
     "values": ubx.FieldSpec(wire_name="values"),
+}
+
+_Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields = {
+    "args": ubx.FieldSpec(wire_name="args"),
+    "command": ubx.FieldSpec(wire_name="command"),
+    "env": ubx.FieldSpec(wire_name="env"),
+    "image": ubx.FieldSpec(wire_name="image"),
+}
+
+_Release_CustomTargetTypeSnapshots_Tasks_DeployFields = {
+    "container": ubx.FieldSpec(
+        wire_name="container",
+        kind="object",
+        fields=_Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
+    ),
 }
 
 _Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecksFields = {
@@ -909,185 +828,6 @@ _Release_DeliveryPipelineSnapshotFields = {
     "update_time": ubx.FieldSpec(wire_name="update_time"),
 }
 
-_Release_TargetArtifacts_PhaseArtifactsFields = {
-    "job_manifests_path": ubx.FieldSpec(wire_name="job_manifests_path"),
-    "manifest_path": ubx.FieldSpec(wire_name="manifest_path"),
-    "skaffold_config_path": ubx.FieldSpec(wire_name="skaffold_config_path"),
-}
-
-_Release_TargetArtifactsFields = {
-    "artifact_uri": ubx.FieldSpec(wire_name="artifact_uri"),
-    "manifest_path": ubx.FieldSpec(wire_name="manifest_path"),
-    "phase_artifacts": ubx.FieldSpec(
-        wire_name="phase_artifacts",
-        kind="map",
-        fields=_Release_TargetArtifacts_PhaseArtifactsFields,
-    ),
-    "skaffold_config_path": ubx.FieldSpec(wire_name="skaffold_config_path"),
-}
-
-_Release_TargetRenders_Metadata_CloudRunFields = {
-    "job": ubx.FieldSpec(wire_name="job"),
-    "revision": ubx.FieldSpec(wire_name="revision"),
-    "service": ubx.FieldSpec(wire_name="service"),
-    "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
-}
-
-_Release_TargetRenders_Metadata_CustomFields = {
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_Release_TargetRenders_Metadata_KubernetesFields = {
-    "canary_deployment": ubx.FieldSpec(wire_name="canary_deployment"),
-    "deployment": ubx.FieldSpec(wire_name="deployment"),
-    "kubernetes_namespace": ubx.FieldSpec(wire_name="kubernetes_namespace"),
-}
-
-_Release_TargetRenders_MetadataFields = {
-    "cloud_run": ubx.FieldSpec(
-        wire_name="cloud_run",
-        kind="object",
-        fields=_Release_TargetRenders_Metadata_CloudRunFields,
-    ),
-    "custom": ubx.FieldSpec(
-        wire_name="custom",
-        kind="object",
-        fields=_Release_TargetRenders_Metadata_CustomFields,
-    ),
-    "kubernetes": ubx.FieldSpec(
-        wire_name="kubernetes",
-        kind="object",
-        fields=_Release_TargetRenders_Metadata_KubernetesFields,
-    ),
-}
-
-_Release_TargetRendersFields = {
-    "failure_cause": ubx.FieldSpec(wire_name="failure_cause"),
-    "failure_message": ubx.FieldSpec(wire_name="failure_message"),
-    "metadata": ubx.FieldSpec(
-        wire_name="metadata",
-        kind="object",
-        fields=_Release_TargetRenders_MetadataFields,
-    ),
-    "rendering_build": ubx.FieldSpec(wire_name="rendering_build"),
-    "rendering_state": ubx.FieldSpec(wire_name="rendering_state"),
-}
-
-_Release_TargetSnapshots_AnthosClusterFields = {
-    "membership": ubx.FieldSpec(wire_name="membership"),
-}
-
-_Release_TargetSnapshots_AssociatedEntities_GkeClustersFields = {
-    "cluster": ubx.FieldSpec(wire_name="cluster"),
-    "dns_endpoint": ubx.FieldSpec(wire_name="dns_endpoint"),
-    "internal_ip": ubx.FieldSpec(wire_name="internal_ip"),
-    "proxy_url": ubx.FieldSpec(wire_name="proxy_url"),
-}
-
-_Release_TargetSnapshots_AssociatedEntitiesFields = {
-    "anthos_clusters": ubx.FieldSpec(
-        wire_name="anthos_clusters",
-        kind="list",
-        fields=_Release_TargetSnapshots_AnthosClusterFields,
-    ),
-    "gke_clusters": ubx.FieldSpec(
-        wire_name="gke_clusters",
-        kind="list",
-        fields=_Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-    ),
-}
-
-_Release_TargetSnapshots_CustomTargetFields = {
-    "custom_target_type": ubx.FieldSpec(wire_name="custom_target_type"),
-}
-
-_Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields = {
-    "artifact_storage": ubx.FieldSpec(wire_name="artifact_storage"),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-}
-
-_Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields = {
-    "artifact_storage": ubx.FieldSpec(wire_name="artifact_storage"),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-    "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
-}
-
-_Release_TargetSnapshots_ExecutionConfigsFields = {
-    "artifact_storage": ubx.FieldSpec(wire_name="artifact_storage"),
-    "default_pool": ubx.FieldSpec(
-        wire_name="default_pool",
-        kind="object",
-        fields=_Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields,
-    ),
-    "execution_timeout": ubx.FieldSpec(wire_name="execution_timeout"),
-    "private_pool": ubx.FieldSpec(
-        wire_name="private_pool",
-        kind="object",
-        fields=_Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields,
-    ),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-    "usages": ubx.FieldSpec(wire_name="usages"),
-    "verbose": ubx.FieldSpec(wire_name="verbose"),
-    "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
-}
-
-_Release_TargetSnapshots_MultiTargetFields = {
-    "target_ids": ubx.FieldSpec(wire_name="target_ids"),
-}
-
-_Release_TargetSnapshots_RunFields = {
-    "location": ubx.FieldSpec(wire_name="location"),
-}
-
-_Release_TargetSnapshotsFields = {
-    "annotations": ubx.FieldSpec(wire_name="annotations"),
-    "anthos_cluster": ubx.FieldSpec(
-        wire_name="anthos_cluster",
-        kind="object",
-        fields=_Release_TargetSnapshots_AnthosClusterFields,
-    ),
-    "associated_entities": ubx.FieldSpec(
-        wire_name="associated_entities",
-        kind="map",
-        fields=_Release_TargetSnapshots_AssociatedEntitiesFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "custom_target": ubx.FieldSpec(
-        wire_name="custom_target",
-        kind="object",
-        fields=_Release_TargetSnapshots_CustomTargetFields,
-    ),
-    "deploy_parameters": ubx.FieldSpec(wire_name="deploy_parameters"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "etag": ubx.FieldSpec(wire_name="etag"),
-    "execution_configs": ubx.FieldSpec(
-        wire_name="execution_configs",
-        kind="list",
-        fields=_Release_TargetSnapshots_ExecutionConfigsFields,
-    ),
-    "gke": ubx.FieldSpec(
-        wire_name="gke",
-        kind="object",
-        fields=_Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-    ),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "multi_target": ubx.FieldSpec(
-        wire_name="multi_target",
-        kind="object",
-        fields=_Release_TargetSnapshots_MultiTargetFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "require_approval": ubx.FieldSpec(wire_name="require_approval"),
-    "run": ubx.FieldSpec(
-        wire_name="run",
-        kind="object",
-        fields=_Release_TargetSnapshots_RunFields,
-    ),
-    "target_id": ubx.FieldSpec(wire_name="target_id"),
-    "uid": ubx.FieldSpec(wire_name="uid"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 _Release_ToolVersionsFields = {
     "docker": ubx.FieldSpec(wire_name="docker"),
     "helm": ubx.FieldSpec(wire_name="helm"),
@@ -1099,18 +839,12 @@ _Release_ToolVersionsFields = {
 
 @dataclasses.dataclass
 class ReleaseConfig:
-    # Output only. Indicates whether this is an abandoned release.
-    abandoned: Any = None
     # Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
     annotations: Any = None
     # Optional. List of artifacts to pass through to Skaffold command.
     build_artifacts: Any = None
     # ReleaseCondition contains all conditions relevant to a Release.
     condition: Any = None
-    # Output only. Time at which the `Release` was created.
-    create_time: Any = None
-    # Output only. Snapshot of the custom target types referenced by the targets taken at release creation time.
-    custom_target_type_snapshots: Any = None
     # A `DeliveryPipeline` resource in the Cloud Deploy API. A `DeliveryPipeline` defines a pipeline through which a Skaffold configuration can progress.
     delivery_pipeline_snapshot: Any = None
     # Optional. The deploy parameters to use for all targets in this release.
@@ -1123,28 +857,14 @@ class ReleaseConfig:
     labels: Any = None
     # Identifier. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`. The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
     name: Any = None
-    # Output only. Time at which the render completed.
-    render_end_time: Any = None
-    # Output only. Time at which the render began.
-    render_start_time: Any = None
-    # Output only. Current state of the render operation.
-    render_state: Any = None
     # Optional. Filepath of the Skaffold config inside of the config URI.
     skaffold_config_path: Any = None
     # Optional. Cloud Storage URI of tar.gz archive containing Skaffold configuration.
     skaffold_config_uri: Any = None
     # Optional. The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used.
     skaffold_version: Any = None
-    # Output only. Map from target ID to the target artifacts created during the render operation.
-    target_artifacts: Any = None
-    # Output only. Map from target ID to details of the render operation for that target.
-    target_renders: Any = None
-    # Output only. Snapshot of the targets taken at release creation time.
-    target_snapshots: Any = None
     # Details of ToolVersions for the release.
     tool_versions: Any = None
-    # Output only. Unique identifier of the `Release`.
-    uid: Any = None
 
 @dataclasses.dataclass
 class ReleaseAttrs:
@@ -1198,7 +918,6 @@ class ReleaseAttrs:
 Release = ubx.ResourceBinding(
     wire_type="google_clouddeploy_release",
     fields={
-        "abandoned": ubx.FieldSpec(wire_name="abandoned"),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "build_artifacts": ubx.FieldSpec(
             wire_name="build_artifacts",
@@ -1210,12 +929,6 @@ Release = ubx.ResourceBinding(
             kind="object",
             fields=_Release_ConditionFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "custom_target_type_snapshots": ubx.FieldSpec(
-            wire_name="custom_target_type_snapshots",
-            kind="list",
-            fields=_Release_CustomTargetTypeSnapshotsFields,
-        ),
         "delivery_pipeline_snapshot": ubx.FieldSpec(
             wire_name="delivery_pipeline_snapshot",
             kind="object",
@@ -1226,32 +939,13 @@ Release = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "render_end_time": ubx.FieldSpec(wire_name="render_end_time"),
-        "render_start_time": ubx.FieldSpec(wire_name="render_start_time"),
-        "render_state": ubx.FieldSpec(wire_name="render_state"),
         "skaffold_config_path": ubx.FieldSpec(wire_name="skaffold_config_path"),
         "skaffold_config_uri": ubx.FieldSpec(wire_name="skaffold_config_uri"),
         "skaffold_version": ubx.FieldSpec(wire_name="skaffold_version"),
-        "target_artifacts": ubx.FieldSpec(
-            wire_name="target_artifacts",
-            kind="map",
-            fields=_Release_TargetArtifactsFields,
-        ),
-        "target_renders": ubx.FieldSpec(
-            wire_name="target_renders",
-            kind="map",
-            fields=_Release_TargetRendersFields,
-        ),
-        "target_snapshots": ubx.FieldSpec(
-            wire_name="target_snapshots",
-            kind="list",
-            fields=_Release_TargetSnapshotsFields,
-        ),
         "tool_versions": ubx.FieldSpec(
             wire_name="tool_versions",
             kind="object",
             fields=_Release_ToolVersionsFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

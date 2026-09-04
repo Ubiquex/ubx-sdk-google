@@ -14,12 +14,10 @@ const V3beta1Version_NluSettingsFields: FieldMap = {
 };
 
 export interface V3beta1VersionConfig {
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   name?: string | Computed<string>;
   nluSettings?: V3beta1Version_NluSettings | Computed<V3beta1Version_NluSettings>;
-  state?: string | Computed<string>;
 }
 
 export interface V3beta1VersionAttrs {
@@ -34,7 +32,6 @@ export interface V3beta1VersionAttrs {
 export const V3beta1Version: ResourceBinding<V3beta1VersionConfig, V3beta1VersionAttrs> = {
   wireType: "google_dialogflow_v3beta1_version",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -43,6 +40,5 @@ export const V3beta1Version: ResourceBinding<V3beta1VersionConfig, V3beta1Versio
       kind: "object",
       fields: V3beta1Version_NluSettingsFields,
     },
-    state: "state",
   },
 };

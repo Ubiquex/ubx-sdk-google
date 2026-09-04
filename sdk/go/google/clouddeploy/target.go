@@ -9,15 +9,15 @@ type Target_AnthosCluster struct {
 }
 
 type Target_AssociatedEntities_GkeClusters struct {
-	Cluster any
+	Cluster     any
 	DnsEndpoint any
-	InternalIp any
-	ProxyUrl any
+	InternalIp  any
+	ProxyUrl    any
 }
 
 type Target_AssociatedEntities struct {
 	AnthosClusters any
-	GkeClusters any
+	GkeClusters    any
 }
 
 type Target_CustomTarget struct {
@@ -27,24 +27,24 @@ type Target_CustomTarget struct {
 
 type Target_ExecutionConfigs_DefaultPool struct {
 	ArtifactStorage any
-	ServiceAccount any
+	ServiceAccount  any
 }
 
 type Target_ExecutionConfigs_PrivatePool struct {
 	ArtifactStorage any
-	ServiceAccount any
-	WorkerPool any
+	ServiceAccount  any
+	WorkerPool      any
 }
 
 type Target_ExecutionConfigs struct {
-	ArtifactStorage any
-	DefaultPool any
+	ArtifactStorage  any
+	DefaultPool      any
 	ExecutionTimeout any
-	PrivatePool any
-	ServiceAccount any
-	Usages any
-	Verbose any
-	WorkerPool any
+	PrivatePool      any
+	ServiceAccount   any
+	Usages           any
+	Verbose          any
+	WorkerPool       any
 }
 
 type Target_MultiTarget struct {
@@ -58,70 +58,70 @@ type Target_Run struct {
 }
 
 var Target_AnthosClusterFields = ubx.FieldMap{
-		"Membership": ubx.FieldSpec{WireName: "membership"},
-	}
+	"Membership": ubx.FieldSpec{WireName: "membership"},
+}
 
 var Target_AssociatedEntities_GkeClustersFields = ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"ProxyUrl": ubx.FieldSpec{WireName: "proxy_url"},
-	}
+	"Cluster":     ubx.FieldSpec{WireName: "cluster"},
+	"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
+	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
+	"ProxyUrl":    ubx.FieldSpec{WireName: "proxy_url"},
+}
 
 var Target_AssociatedEntitiesFields = ubx.FieldMap{
-		"AnthosClusters": ubx.FieldSpec{
-			WireName: "anthos_clusters",
-			Kind: "list",
-			Fields: Target_AnthosClusterFields,
-		},
-		"GkeClusters": ubx.FieldSpec{
-			WireName: "gke_clusters",
-			Kind: "list",
-			Fields: Target_AssociatedEntities_GkeClustersFields,
-		},
-	}
+	"AnthosClusters": ubx.FieldSpec{
+		WireName: "anthos_clusters",
+		Kind:     "list",
+		Fields:   Target_AnthosClusterFields,
+	},
+	"GkeClusters": ubx.FieldSpec{
+		WireName: "gke_clusters",
+		Kind:     "list",
+		Fields:   Target_AssociatedEntities_GkeClustersFields,
+	},
+}
 
 var Target_CustomTargetFields = ubx.FieldMap{
-		"CustomTargetType": ubx.FieldSpec{WireName: "custom_target_type"},
-	}
+	"CustomTargetType": ubx.FieldSpec{WireName: "custom_target_type"},
+}
 
 var Target_ExecutionConfigs_DefaultPoolFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+	"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Target_ExecutionConfigs_PrivatePoolFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+	"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
+	"WorkerPool":      ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var Target_ExecutionConfigsFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"DefaultPool": ubx.FieldSpec{
-			WireName: "default_pool",
-			Kind: "object",
-			Fields: Target_ExecutionConfigs_DefaultPoolFields,
-		},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"PrivatePool": ubx.FieldSpec{
-			WireName: "private_pool",
-			Kind: "object",
-			Fields: Target_ExecutionConfigs_PrivatePoolFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Usages": ubx.FieldSpec{WireName: "usages"},
-		"Verbose": ubx.FieldSpec{WireName: "verbose"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+	"DefaultPool": ubx.FieldSpec{
+		WireName: "default_pool",
+		Kind:     "object",
+		Fields:   Target_ExecutionConfigs_DefaultPoolFields,
+	},
+	"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
+	"PrivatePool": ubx.FieldSpec{
+		WireName: "private_pool",
+		Kind:     "object",
+		Fields:   Target_ExecutionConfigs_PrivatePoolFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Usages":         ubx.FieldSpec{WireName: "usages"},
+	"Verbose":        ubx.FieldSpec{WireName: "verbose"},
+	"WorkerPool":     ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var Target_MultiTargetFields = ubx.FieldMap{
-		"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
-	}
+	"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
+}
 
 var Target_RunFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 type TargetConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
@@ -130,8 +130,6 @@ type TargetConfig struct {
 	AnthosCluster any
 	// Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
 	AssociatedEntities any
-	// Output only. Time at which the `Target` was created.
-	CreateTime any
 	// Information specifying a Custom Target.
 	CustomTarget any
 	// Optional. The deploy parameters to use for this target.
@@ -154,12 +152,6 @@ type TargetConfig struct {
 	RequireApproval any
 	// Information specifying where to deploy a Cloud Run Service.
 	Run any
-	// Output only. Resource id of the `Target`.
-	TargetId any
-	// Output only. Unique identifier of the `Target`.
-	Uid any
-	// Output only. Most recent time at which the `Target` was updated.
-	UpdateTime any
 }
 
 type TargetAttrs struct {
@@ -207,48 +199,44 @@ var Target = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AnthosCluster": ubx.FieldSpec{
 			WireName: "anthos_cluster",
-			Kind: "object",
-			Fields: Target_AnthosClusterFields,
+			Kind:     "object",
+			Fields:   Target_AnthosClusterFields,
 		},
 		"AssociatedEntities": ubx.FieldSpec{
 			WireName: "associated_entities",
-			Kind: "map",
-			Fields: Target_AssociatedEntitiesFields,
+			Kind:     "map",
+			Fields:   Target_AssociatedEntitiesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomTarget": ubx.FieldSpec{
 			WireName: "custom_target",
-			Kind: "object",
-			Fields: Target_CustomTargetFields,
+			Kind:     "object",
+			Fields:   Target_CustomTargetFields,
 		},
 		"DeployParameters": ubx.FieldSpec{WireName: "deploy_parameters"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Etag":             ubx.FieldSpec{WireName: "etag"},
 		"ExecutionConfigs": ubx.FieldSpec{
 			WireName: "execution_configs",
-			Kind: "list",
-			Fields: Target_ExecutionConfigsFields,
+			Kind:     "list",
+			Fields:   Target_ExecutionConfigsFields,
 		},
 		"Gke": ubx.FieldSpec{
 			WireName: "gke",
-			Kind: "object",
-			Fields: Target_AssociatedEntities_GkeClustersFields,
+			Kind:     "object",
+			Fields:   Target_AssociatedEntities_GkeClustersFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MultiTarget": ubx.FieldSpec{
 			WireName: "multi_target",
-			Kind: "object",
-			Fields: Target_MultiTargetFields,
+			Kind:     "object",
+			Fields:   Target_MultiTargetFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"RequireApproval": ubx.FieldSpec{WireName: "require_approval"},
 		"Run": ubx.FieldSpec{
 			WireName: "run",
-			Kind: "object",
-			Fields: Target_RunFields,
+			Kind:     "object",
+			Fields:   Target_RunFields,
 		},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

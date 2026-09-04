@@ -448,12 +448,8 @@ const V2alpha1QueuedResource_TpuFields: FieldMap = {
 export interface V2alpha1QueuedResourceConfig {
   /** BestEffort tier definition. */
   bestEffort?: unknown | Computed<unknown>;
-  /** Output only. The time when the QueuedResource was created. */
-  createTime?: string | Computed<string>;
   /** Guaranteed tier definition. */
   guaranteed?: V2alpha1QueuedResource_Guaranteed | Computed<V2alpha1QueuedResource_Guaranteed>;
-  /** Output only. Immutable. The name of the QueuedResource. */
-  name?: string | Computed<string>;
   /** Optional. The provisioning model for the resource. */
   provisioningModel?: string | Computed<string>;
   /** Defines the policy of the QueuedRequest. */
@@ -499,13 +495,11 @@ export const V2alpha1QueuedResource: ResourceBinding<V2alpha1QueuedResourceConfi
   wireType: "google_tpu_v2alpha1_queued_resource",
   fields: {
     bestEffort: "best_effort",
-    createTime: "create_time",
     guaranteed: {
       wireName: "guaranteed",
       kind: "object",
       fields: V2alpha1QueuedResource_GuaranteedFields,
     },
-    name: "name",
     provisioningModel: "provisioning_model",
     queueingPolicy: {
       wireName: "queueing_policy",

@@ -201,7 +201,6 @@ export interface Task_VpcAccess {
 }
 
 export interface TaskConfig {
-  name: string | Computed<string>;
 }
 
 export interface TaskAttrs {
@@ -275,6 +274,5 @@ export interface TaskAttrs {
 export const Task: DataSourceBinding<TaskConfig, TaskAttrs> = {
   wireType: "google_run_task",
   fields: {
-    name: "name",
   },
 };

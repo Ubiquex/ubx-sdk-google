@@ -94,8 +94,6 @@ _Server_InternalConfigFields = {
 class ServerConfig:
     # Required. The access type of the Server.
     access_type: Any = None
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Optional. Display name of the Server
     display_name: Any = None
     # Configuration for external server.
@@ -108,16 +106,6 @@ class ServerConfig:
     labels: Any = None
     # Identifier. name of resource
     name: Any = None
-    # Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements.
-    satisfies_pzi: Any = None
-    # Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements.
-    satisfies_pzs: Any = None
-    # Output only. Service agent used to access the customer bucket.
-    service_agent: Any = None
-    # Output only. The state of the server.
-    state: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServerAttrs:
@@ -152,7 +140,6 @@ Server = ubx.ResourceBinding(
     wire_type="google_ftp_server",
     fields={
         "access_type": ubx.FieldSpec(wire_name="access_type"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "external_config": ubx.FieldSpec(
             wire_name="external_config",
@@ -171,10 +158,5 @@ Server = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "service_agent": ubx.FieldSpec(wire_name="service_agent"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

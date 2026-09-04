@@ -4,8 +4,6 @@ package iam
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CredentialConfig struct {
-	// Output only. The system-generated OAuth client secret. The client secret must be stored securely. If the client secret is leaked, you must delete and re-create the client credential. To learn more, see [OAuth client and credential security risks and mitigations](https://cloud.google.com/iam/docs/workforce-oauth-app#security)
-	ClientSecret any
 	// Optional. Whether the OauthClientCredential is disabled. You cannot use a disabled OauthClientCredential.
 	Disabled any
 	// Optional. A user-specified display name of the OauthClientCredential. Cannot exceed 32 characters.
@@ -28,9 +26,8 @@ type CredentialAttrs struct {
 var Credential = ubx.ResourceBinding{
 	WireType: "google_iam_credential",
 	Fields: ubx.FieldMap{
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

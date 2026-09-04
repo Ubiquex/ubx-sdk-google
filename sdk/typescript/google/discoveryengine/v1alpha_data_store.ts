@@ -484,16 +484,10 @@ export interface V1alphaDataStoreConfig {
   cmekConfig?: V1alphaDataStore_CmekConfig | Computed<V1alphaDataStore_CmekConfig>;
   /** Optional. Configuration for configurable billing approach. See */
   configurableBillingApproach?: string | Computed<string>;
-  /** Output only. The timestamp when configurable_billing_approach was last updated. */
-  configurableBillingApproachUpdateTime?: string | Computed<string>;
   /** Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT. */
   contentConfig?: string | Computed<string>;
-  /** Output only. Timestamp the DataStore was created at. */
-  createTime?: string | Computed<string>;
   /** Contains the data protection policy config for a DataStore or a connector. */
   dataProtectionPolicy?: V1alphaDataStore_DataProtectionPolicy | Computed<V1alphaDataStore_DataProtectionPolicy>;
-  /** Output only. The id of the default Schema associated to this data store. */
-  defaultSchemaId?: string | Computed<string>;
   /** Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
   displayName?: string | Computed<string>;
   /** A singleton resource of DataStore. If it's empty when DataStore is created and DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED, the default parser will default to digital parser. */
@@ -502,8 +496,6 @@ export interface V1alphaDataStoreConfig {
   federatedSearchConfig?: V1alphaDataStore_FederatedSearchConfig | Computed<V1alphaDataStore_FederatedSearchConfig>;
   /** Config to data store for `HEALTHCARE_FHIR` vertical. */
   healthcareFhirConfig?: V1alphaDataStore_HealthcareFhirConfig | Computed<V1alphaDataStore_HealthcareFhirConfig>;
-  /** Output only. Provides the icon URI of the data store's connector source, if this is a connector-backed data store. Empty for data stores without an associated connector source. In DataStoreService.ListDataStores and DataStoreService.GetDataStore, this is only populated when DataStoreView.DATA_STORE_VIEW_FULL is requested via ListDataStoresRequest.view or GetDataStoreRequest.view respectively. */
-  iconUri?: string | Computed<string>;
   /** Immutable. The fully qualified resource name of the associated IdentityMappingStore. This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or `GSUITE` IdP. Format: `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`. */
   identityMappingStore?: string | Computed<string>;
   /** Identity Provider Config. */
@@ -607,15 +599,12 @@ export const V1alphaDataStore: ResourceBinding<V1alphaDataStoreConfig, V1alphaDa
       fields: V1alphaDataStore_CmekConfigFields,
     },
     configurableBillingApproach: "configurable_billing_approach",
-    configurableBillingApproachUpdateTime: "configurable_billing_approach_update_time",
     contentConfig: "content_config",
-    createTime: "create_time",
     dataProtectionPolicy: {
       wireName: "data_protection_policy",
       kind: "object",
       fields: V1alphaDataStore_DataProtectionPolicyFields,
     },
-    defaultSchemaId: "default_schema_id",
     displayName: "display_name",
     documentProcessingConfig: {
       wireName: "document_processing_config",
@@ -632,7 +621,6 @@ export const V1alphaDataStore: ResourceBinding<V1alphaDataStoreConfig, V1alphaDa
       kind: "object",
       fields: V1alphaDataStore_HealthcareFhirConfigFields,
     },
-    iconUri: "icon_uri",
     identityMappingStore: "identity_mapping_store",
     idpConfig: {
       wireName: "idp_config",

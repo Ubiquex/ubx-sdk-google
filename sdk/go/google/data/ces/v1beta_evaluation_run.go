@@ -51,13 +51,13 @@ type V1betaEvaluationRun_ErrorInfo struct {
 }
 
 type V1betaEvaluationRun_EvaluationRunSummaries struct {
-	ErrorCount any
+	ErrorCount  any
 	FailedCount any
 	PassedCount any
 }
 
 type V1betaEvaluationRun_LatencyReport_CallbackLatencies_LatencyMetrics struct {
-	CallCount any
+	CallCount  any
 	P50Latency any
 	P90Latency any
 	P99Latency any
@@ -65,30 +65,30 @@ type V1betaEvaluationRun_LatencyReport_CallbackLatencies_LatencyMetrics struct {
 
 type V1betaEvaluationRun_LatencyReport_CallbackLatencies struct {
 	LatencyMetrics any
-	Stage any
+	Stage          any
 }
 
 type V1betaEvaluationRun_LatencyReport_GuardrailLatencies struct {
-	Guardrail any
+	Guardrail            any
 	GuardrailDisplayName any
-	LatencyMetrics any
+	LatencyMetrics       any
 }
 
 type V1betaEvaluationRun_LatencyReport_LlmCallLatencies struct {
 	LatencyMetrics any
-	Model any
+	Model          any
 }
 
 type V1betaEvaluationRun_LatencyReport_ToolLatencies_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type V1betaEvaluationRun_LatencyReport_ToolLatencies struct {
-	LatencyMetrics any
-	Tool any
+	LatencyMetrics  any
+	Tool            any
 	ToolDisplayName any
-	ToolsetTool any
+	ToolsetTool     any
 }
 
 type V1betaEvaluationRun_LatencyReport struct {
@@ -122,7 +122,7 @@ type V1betaEvaluationRun_OptimizationConfig struct {
 }
 
 type V1betaEvaluationRun_PersonaRunConfigs struct {
-	Persona any
+	Persona   any
 	TaskCount any
 }
 
@@ -180,7 +180,7 @@ type V1betaEvaluationRunAttrs struct {
 	InitiatedBy any
 	// Latency report for the evaluation run.
 	LatencyReport any
-	Name any
+	Name          any
 	// Output only. The operation that created this evaluation run. Format: `projects/{project}/locations/{location}/operations/{operation}`
 	Operation any
 	// Configuration for running the optimization step after the evaluation run.

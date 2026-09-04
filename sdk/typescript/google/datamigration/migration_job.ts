@@ -402,8 +402,6 @@ export interface MigrationJobConfig {
   cmekKeyName?: string | Computed<string>;
   /** A conversion workspace's version. */
   conversionWorkspace?: MigrationJob_ConversionWorkspace | Computed<MigrationJob_ConversionWorkspace>;
-  /** Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  createTime?: string | Computed<string>;
   /** Required. The resource name (URI) of the destination connection profile. */
   destination?: string | Computed<string>;
   /** A message defining the database engine and provider. */
@@ -416,10 +414,6 @@ export interface MigrationJobConfig {
   dumpPath?: string | Computed<string>;
   /** Optional. The type of the data dump. Supported for MySQL to CloudSQL for MySQL migrations only. */
   dumpType?: string | Computed<string>;
-  /** Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s". */
-  duration?: string | Computed<string>;
-  /** Output only. If the migration job is completed, the time when it was completed. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: MigrationJob_Error | Computed<MigrationJob_Error>;
   /** This field can be used to select the entities to migrate as part of the migration job. It uses AIP-160 notation to select a subset of the entities configured on the associated conversion-workspace. This field should not be set on migration-jobs that are not associated with a conversion workspace. */
@@ -438,20 +432,12 @@ export interface MigrationJobConfig {
   originalMigrationName?: string | Computed<string>;
   /** Performance configuration definition. */
   performanceConfig?: MigrationJob_PerformanceConfig | Computed<MigrationJob_PerformanceConfig>;
-  /** Output only. The current migration job phase. */
-  phase?: string | Computed<string>;
   /** Configuration for PostgreSQL to PostgreSQL migrations. */
   postgresHomogeneousConfig?: MigrationJob_PostgresHomogeneousConfig | Computed<MigrationJob_PostgresHomogeneousConfig>;
   /** Configuration for heterogeneous failback migrations from **PostgreSQL to SQL Server**. */
   postgresToSqlserverConfig?: MigrationJob_PostgresToSqlserverConfig | Computed<MigrationJob_PostgresToSqlserverConfig>;
-  /** Output only. Migration job mode. Migration jobs can be standard forward jobs or failback migration jobs. */
-  purpose?: string | Computed<string>;
   /** The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC. */
   reverseSshConnectivity?: MigrationJob_ReverseSshConnectivity | Computed<MigrationJob_ReverseSshConnectivity>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Required. The resource name (URI) of the source connection profile. */
   source?: string | Computed<string>;
   /** A message defining the database engine and provider. */
@@ -466,8 +452,6 @@ export interface MigrationJobConfig {
   staticIpConnectivity?: unknown | Computed<unknown>;
   /** Required. The migration job type. */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the migration job resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  updateTime?: string | Computed<string>;
   /** The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC. */
   vpcPeeringConnectivity?: MigrationJob_VpcPeeringConnectivity | Computed<MigrationJob_VpcPeeringConnectivity>;
 }
@@ -556,7 +540,6 @@ export const MigrationJob: ResourceBinding<MigrationJobConfig, MigrationJobAttrs
       kind: "object",
       fields: MigrationJob_ConversionWorkspaceFields,
     },
-    createTime: "create_time",
     destination: "destination",
     destinationDatabase: {
       wireName: "destination_database",
@@ -571,8 +554,6 @@ export const MigrationJob: ResourceBinding<MigrationJobConfig, MigrationJobAttrs
     },
     dumpPath: "dump_path",
     dumpType: "dump_type",
-    duration: "duration",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -602,7 +583,6 @@ export const MigrationJob: ResourceBinding<MigrationJobConfig, MigrationJobAttrs
       kind: "object",
       fields: MigrationJob_PerformanceConfigFields,
     },
-    phase: "phase",
     postgresHomogeneousConfig: {
       wireName: "postgres_homogeneous_config",
       kind: "object",
@@ -613,14 +593,11 @@ export const MigrationJob: ResourceBinding<MigrationJobConfig, MigrationJobAttrs
       kind: "object",
       fields: MigrationJob_PostgresToSqlserverConfigFields,
     },
-    purpose: "purpose",
     reverseSshConnectivity: {
       wireName: "reverse_ssh_connectivity",
       kind: "object",
       fields: MigrationJob_ReverseSshConnectivityFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     source: "source",
     sourceDatabase: {
       wireName: "source_database",
@@ -640,7 +617,6 @@ export const MigrationJob: ResourceBinding<MigrationJobConfig, MigrationJobAttrs
     state: "state",
     staticIpConnectivity: "static_ip_connectivity",
     type: "type",
-    updateTime: "update_time",
     vpcPeeringConnectivity: {
       wireName: "vpc_peering_connectivity",
       kind: "object",

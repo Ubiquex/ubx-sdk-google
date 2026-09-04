@@ -6,16 +6,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type OrgNumberRegistryConfig struct {
 	// Required. The project that will act as the admin project for CNR resources Format: projects/{project_number} or projects/{project_id}
 	AdminProject any
-	// Output only. The time at which the OrgNumberRegistry was created.
-	CreateTime any
 	// Optional. User-defined labels.
 	Labels any
 	// Identifier. The resource name of the OrgNumberRegistry.
 	Name any
 	// Required. The scopes within the organization that the project is able to manage. Currently only organization scope is supported. For example, "organizations/1234567890".
 	TargetScopes any
-	// Output only. The time at which the OrgNumberRegistry was last updated.
-	UpdateTime any
 }
 
 type OrgNumberRegistryAttrs struct {
@@ -37,10 +33,8 @@ var OrgNumberRegistry = ubx.ResourceBinding{
 	WireType: "google_cloudnumberregistry_org_number_registry",
 	Fields: ubx.FieldMap{
 		"AdminProject": ubx.FieldSpec{WireName: "admin_project"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"TargetScopes": ubx.FieldSpec{WireName: "target_scopes"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

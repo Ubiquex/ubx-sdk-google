@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetricDescriptor_Labels struct {
 	Description any
-	Key any
-	ValueType any
+	Key         any
+	ValueType   any
 }
 
 type MetricDescriptor_Metadata struct {
@@ -21,17 +21,17 @@ type MetricDescriptor_Metadata struct {
 }
 
 var MetricDescriptor_LabelsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"ValueType":   ubx.FieldSpec{WireName: "value_type"},
+}
 
 var MetricDescriptor_MetadataFields = ubx.FieldMap{
-		"IngestDelay": ubx.FieldSpec{WireName: "ingest_delay"},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"SamplePeriod": ubx.FieldSpec{WireName: "sample_period"},
-		"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
-	}
+	"IngestDelay":                      ubx.FieldSpec{WireName: "ingest_delay"},
+	"LaunchStage":                      ubx.FieldSpec{WireName: "launch_stage"},
+	"SamplePeriod":                     ubx.FieldSpec{WireName: "sample_period"},
+	"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
+}
 
 type MetricDescriptorConfig struct {
 	// A detailed description of the metric, which can be used in documentation.
@@ -90,20 +90,20 @@ var MetricDescriptor = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Labels": ubx.FieldSpec{
 			WireName: "labels",
-			Kind: "list",
-			Fields: MetricDescriptor_LabelsFields,
+			Kind:     "list",
+			Fields:   MetricDescriptor_LabelsFields,
 		},
 		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: MetricDescriptor_MetadataFields,
+			Kind:     "object",
+			Fields:   MetricDescriptor_MetadataFields,
 		},
-		"MetricKind": ubx.FieldSpec{WireName: "metric_kind"},
+		"MetricKind":             ubx.FieldSpec{WireName: "metric_kind"},
 		"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Type":                   ubx.FieldSpec{WireName: "type"},
+		"Unit":                   ubx.FieldSpec{WireName: "unit"},
+		"ValueType":              ubx.FieldSpec{WireName: "value_type"},
 	},
 }

@@ -599,12 +599,8 @@ const V2betaPolicyOrchestrator_OrchestrationStateFields: FieldMap = {
 export interface V2betaPolicyOrchestratorConfig {
   /** Required. Action to be done by the orchestrator in `projects/{project_id}/zones/{zone_id}` locations defined by the `orchestration_scope`. Allowed values: - `UPSERT` - Orchestrator will create or update target resources. - `DELETE` - Orchestrator will delete target resources, if they exist */
   action?: string | Computed<string>;
-  /** Output only. Timestamp when the policy orchestrator resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Freeform text describing the purpose of the resource. */
   description?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. In the following format: * `organizations/{organization_id}/locations/global/policyOrchestrators/{orchestrator_id}` * `folders/{folder_id}/locations/global/policyOrchestrators/{orchestrator_id}` * `projects/{project_id_or_number}/locations/global/policyOrchestrators/{orchestrator_id}` */
@@ -615,12 +611,8 @@ export interface V2betaPolicyOrchestratorConfig {
   orchestrationScope?: V2betaPolicyOrchestrator_OrchestrationScope | Computed<V2betaPolicyOrchestrator_OrchestrationScope>;
   /** Describes the state of the orchestration process. */
   orchestrationState?: V2betaPolicyOrchestrator_OrchestrationState | Computed<V2betaPolicyOrchestrator_OrchestrationState>;
-  /** Output only. Set to true, if there are ongoing changes being applied by the orchestrator. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. State of the orchestrator. Can be updated to change orchestrator behaviour. Allowed values: - `ACTIVE` - orchestrator is actively looking for actions to be taken. - `STOPPED` - orchestrator won't make any changes. Note: There might be more states added in the future. We use string here instead of an enum, to avoid the need of propagating new states to all the client code. */
   state?: string | Computed<string>;
-  /** Output only. Timestamp when the policy orchestrator resource was last modified. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V2betaPolicyOrchestratorAttrs {
@@ -654,9 +646,7 @@ export const V2betaPolicyOrchestrator: ResourceBinding<V2betaPolicyOrchestratorC
   wireType: "google_osconfig_v2beta_policy_orchestrator",
   fields: {
     action: "action",
-    createTime: "create_time",
     description: "description",
-    etag: "etag",
     labels: "labels",
     name: "name",
     orchestratedResource: {
@@ -674,8 +664,6 @@ export const V2betaPolicyOrchestrator: ResourceBinding<V2betaPolicyOrchestratorC
       kind: "object",
       fields: V2betaPolicyOrchestrator_OrchestrationStateFields,
     },
-    reconciling: "reconciling",
     state: "state",
-    updateTime: "update_time",
   },
 };

@@ -41,24 +41,14 @@ export interface V1betaConnectorConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Client caching settings of a connector. */
   clientCache?: V1betaConnector_ClientCache | Computed<V1betaConnector_ClientCache>;
-  /** Output only. [Output only] Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Mutable human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154) */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The relative resource name of the connector, in the format: ``` projects/{project}/locations/{location}/services/{service}/connectors/{connector} ``` */
   name?: string | Computed<string>;
-  /** Output only. A field that if true, indicates that the system is working to compile and deploy the connector. */
-  reconciling?: boolean | Computed<boolean>;
   /** Used to represent a set of source files. */
   source?: V1betaConnector_Source | Computed<V1betaConnector_Source>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaConnectorAttrs {
@@ -95,18 +85,13 @@ export const V1betaConnector: ResourceBinding<V1betaConnectorConfig, V1betaConne
       kind: "object",
       fields: V1betaConnector_ClientCacheFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     source: {
       wireName: "source",
       kind: "object",
       fields: V1betaConnector_SourceFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

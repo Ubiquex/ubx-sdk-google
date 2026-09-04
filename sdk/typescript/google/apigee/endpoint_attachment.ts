@@ -2,18 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointAttachmentConfig {
-  /** Output only. State of the endpoint attachment connection to the service attachment. */
-  connectionState?: string | Computed<string>;
-  /** Output only. Host that can be used in either the HTTP target endpoint directly or as the host in target server. */
-  host?: string | Computed<string>;
   /** Required. Location of the endpoint attachment. */
   location?: string | Computed<string>;
   /** Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}` */
   name?: string | Computed<string>;
   /** Format: projects/* /regions/* /serviceAttachments/* */
   serviceAttachment?: string | Computed<string>;
-  /** Output only. State of the endpoint attachment. Values other than `ACTIVE` mean the resource is not ready to use. */
-  state?: string | Computed<string>;
 }
 
 export interface EndpointAttachmentAttrs {
@@ -34,11 +28,8 @@ export interface EndpointAttachmentAttrs {
 export const EndpointAttachment: ResourceBinding<EndpointAttachmentConfig, EndpointAttachmentAttrs> = {
   wireType: "google_apigee_endpoint_attachment",
   fields: {
-    connectionState: "connection_state",
-    host: "host",
     location: "location",
     name: "name",
     serviceAttachment: "service_attachment",
-    state: "state",
   },
 };

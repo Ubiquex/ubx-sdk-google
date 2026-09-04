@@ -862,22 +862,14 @@ _V1alphaEvaluation_QualityMetricsFields = {
 
 @dataclasses.dataclass
 class V1alphaEvaluationConfig:
-    # Output only. Timestamp the Evaluation was created at.
-    create_time: Any = None
-    # Output only. Timestamp the Evaluation was completed at.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. A sample of errors encountered while processing the request.
-    error_samples: Any = None
     # Describes the specification of the evaluation.
     evaluation_spec: Any = None
     # Identifier. The full resource name of the Evaluation, in the format of `projects/{project}/locations/{location}/evaluations/{evaluation}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
     name: Any = None
     # Describes the metrics produced by the evaluation.
     quality_metrics: Any = None
-    # Output only. The state of the evaluation.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1alphaEvaluationAttrs:
@@ -901,16 +893,9 @@ class V1alphaEvaluationAttrs:
 V1alphaEvaluation = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1alpha_evaluation",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
-            fields=_V1alphaEvaluation_ErrorFields,
-        ),
-        "error_samples": ubx.FieldSpec(
-            wire_name="error_samples",
-            kind="list",
             fields=_V1alphaEvaluation_ErrorFields,
         ),
         "evaluation_spec": ubx.FieldSpec(
@@ -924,6 +909,5 @@ V1alphaEvaluation = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaEvaluation_QualityMetricsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

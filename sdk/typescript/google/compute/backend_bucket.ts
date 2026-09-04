@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackendBucket_CdnPolicy_BypassCacheOnRequestHeaders {
-  /** The name of the request header to bypass the cache for. (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
@@ -14,9 +13,7 @@ export interface BackendBucket_CdnPolicy_CacheKeyPolicy {
 }
 
 export interface BackendBucket_CdnPolicy_NegativeCachingPolicy {
-  /** The HTTP status code that this negative caching policy applies to. (AI-inferred) */
   code?: number | Computed<number>;
-  /** Time-to-live in seconds for the cached response for the specified HTTP status code. This defines how long the negative cache entry persists. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
@@ -53,7 +50,6 @@ export interface BackendBucket_Params {
 }
 
 export interface BackendBucket_UsedBy {
-  /** The reference URL of the resource that uses this backend bucket, such as a URL map. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 
@@ -102,10 +98,6 @@ const BackendBucket_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const BackendBucket_UsedByFields: FieldMap = {
-  reference: "reference",
-};
-
 export interface BackendBucketConfig {
   /** Cloud Storage bucket name. */
   bucketName?: string | Computed<string>;
@@ -125,20 +117,14 @@ export interface BackendBucketConfig {
   enableCdn?: boolean | Computed<boolean>;
   /** [Output Only] Unique identifier for the resource; defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. Type of the resource. */
-  kind?: string | Computed<string>;
   /** The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both. */
   loadBalancingScheme?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Additional Backend Bucket parameters. */
   params?: BackendBucket_Params | Computed<BackendBucket_Params>;
-  /** Output only. [Output Only] URL of the region where the regional backend bucket resides. This field is not applicable to global backend buckets. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] List of resources referencing that backend bucket. */
-  usedBy?: BackendBucket_UsedBy[] | Computed<BackendBucket_UsedBy[]>;
 }
 
 export interface BackendBucketAttrs {
@@ -192,7 +178,6 @@ export const BackendBucket: ResourceBinding<BackendBucketConfig, BackendBucketAt
     edgeSecurityPolicy: "edge_security_policy",
     enableCdn: "enable_cdn",
     id: "id",
-    kind: "kind",
     loadBalancingScheme: "load_balancing_scheme",
     name: "name",
     params: {
@@ -200,12 +185,6 @@ export const BackendBucket: ResourceBinding<BackendBucketConfig, BackendBucketAt
       kind: "object",
       fields: BackendBucket_ParamsFields,
     },
-    region: "region",
     selfLink: "self_link",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: BackendBucket_UsedByFields,
-    },
   },
 };

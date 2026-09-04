@@ -10,7 +10,7 @@ type Addon_Config_AllDataAddonConfig struct {
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig_EnvironmentFilter struct {
 	AllEnvironments any
-	Environments any
+	Environments    any
 }
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig struct {
@@ -18,10 +18,10 @@ type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig
 }
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs struct {
-	ApigeeEdgeConfig any
-	ApigeeOpdkConfig any
+	ApigeeEdgeConfig    any
+	ApigeeOpdkConfig    any
 	ApigeeXhybridConfig any
-	PluginInstance any
+	PluginInstance      any
 }
 
 type Addon_Config_GatewayPluginAddonConfig struct {
@@ -51,7 +51,7 @@ type AddonAttrs struct {
 	Description any
 	// Required. The display name of the addon.
 	DisplayName any
-	Name any
+	Name        any
 	// Output only. The state of the addon.
 	State any
 	// Output only. The time at which the addon was last updated.

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface V1beta1RouteViewConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1RouteViewAttrs {
@@ -20,6 +19,5 @@ export interface V1beta1RouteViewAttrs {
 export const V1beta1RouteView: DataSourceBinding<V1beta1RouteViewConfig, V1beta1RouteViewAttrs> = {
   wireType: "google_networkservices_v1beta1_route_view",
   fields: {
-    name: "name",
   },
 };

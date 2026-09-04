@@ -5,21 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AutoLabelingRule_Conditions struct {
 	Condition any
-	Value any
+	Value     any
 }
 
 var AutoLabelingRule_ConditionsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type AutoLabelingRuleConfig struct {
 	// Whether the rule is active.
 	Active any
 	// Conditions to apply for auto-labeling the label_key. Representing sequential block of if .. else if .. else statements. The value of the first matching condition will be used.
 	Conditions any
-	// Output only. The time at which this rule was created.
-	CreateTime any
 	// The description of the rule.
 	Description any
 	// The user-provided display name of the rule.
@@ -30,8 +28,6 @@ type AutoLabelingRuleConfig struct {
 	LabelKeyType any
 	// Identifier. The resource name of the auto-labeling rule. Format: projects/{project}/locations/{location}/autoLabelingRules/{auto_labeling_rule}
 	Name any
-	// Output only. The most recent time at which the rule was updated.
-	UpdateTime any
 }
 
 type AutoLabelingRuleAttrs struct {
@@ -61,15 +57,13 @@ var AutoLabelingRule = ubx.ResourceBinding{
 		"Active": ubx.FieldSpec{WireName: "active"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: AutoLabelingRule_ConditionsFields,
+			Kind:     "list",
+			Fields:   AutoLabelingRule_ConditionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LabelKey": ubx.FieldSpec{WireName: "label_key"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"LabelKey":     ubx.FieldSpec{WireName: "label_key"},
 		"LabelKeyType": ubx.FieldSpec{WireName: "label_key_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

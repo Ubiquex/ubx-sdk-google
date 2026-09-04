@@ -63,7 +63,7 @@ class Android_ServiceError:
 
 @dataclasses.dataclass
 class AndroidConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class AndroidAttrs:
@@ -110,6 +110,5 @@ class AndroidAttrs:
 Android = ubx.DataSourceBinding(
     wire_type="google_chromemanagement_android",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

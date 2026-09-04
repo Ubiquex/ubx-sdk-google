@@ -90,87 +90,87 @@ type Connection_InstallationState struct {
 }
 
 var Connection_BitbucketCloudConfig_AuthorizerCredentialFields = ubx.FieldMap{
-		"UserTokenSecretVersion": ubx.FieldSpec{WireName: "user_token_secret_version"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"UserTokenSecretVersion": ubx.FieldSpec{WireName: "user_token_secret_version"},
+	"Username":               ubx.FieldSpec{WireName: "username"},
+}
 
 var Connection_BitbucketCloudConfigFields = ubx.FieldMap{
-		"AuthorizerCredential": ubx.FieldSpec{
-			WireName: "authorizer_credential",
-			Kind: "object",
-			Fields: Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
-		},
-		"ReadAuthorizerCredential": ubx.FieldSpec{
-			WireName: "read_authorizer_credential",
-			Kind: "object",
-			Fields: Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
-		},
-		"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
-		"Workspace": ubx.FieldSpec{WireName: "workspace"},
-	}
+	"AuthorizerCredential": ubx.FieldSpec{
+		WireName: "authorizer_credential",
+		Kind:     "object",
+		Fields:   Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
+	},
+	"ReadAuthorizerCredential": ubx.FieldSpec{
+		WireName: "read_authorizer_credential",
+		Kind:     "object",
+		Fields:   Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
+	},
+	"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
+	"Workspace":                  ubx.FieldSpec{WireName: "workspace"},
+}
 
 var Connection_BitbucketDataCenterConfig_ServiceDirectoryConfigFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Connection_BitbucketDataCenterConfigFields = ubx.FieldMap{
-		"AuthorizerCredential": ubx.FieldSpec{
-			WireName: "authorizer_credential",
-			Kind: "object",
-			Fields: Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
-		},
-		"HostUri": ubx.FieldSpec{WireName: "host_uri"},
-		"ReadAuthorizerCredential": ubx.FieldSpec{
-			WireName: "read_authorizer_credential",
-			Kind: "object",
-			Fields: Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
-		},
-		"ServerVersion": ubx.FieldSpec{WireName: "server_version"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Connection_BitbucketDataCenterConfig_ServiceDirectoryConfigFields,
-		},
-		"SslCa": ubx.FieldSpec{WireName: "ssl_ca"},
-		"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
-	}
+	"AuthorizerCredential": ubx.FieldSpec{
+		WireName: "authorizer_credential",
+		Kind:     "object",
+		Fields:   Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
+	},
+	"HostUri": ubx.FieldSpec{WireName: "host_uri"},
+	"ReadAuthorizerCredential": ubx.FieldSpec{
+		WireName: "read_authorizer_credential",
+		Kind:     "object",
+		Fields:   Connection_BitbucketCloudConfig_AuthorizerCredentialFields,
+	},
+	"ServerVersion": ubx.FieldSpec{WireName: "server_version"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Connection_BitbucketDataCenterConfig_ServiceDirectoryConfigFields,
+	},
+	"SslCa":                      ubx.FieldSpec{WireName: "ssl_ca"},
+	"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
+}
 
 var Connection_GithubConfig_AuthorizerCredentialFields = ubx.FieldMap{
-		"OauthTokenSecretVersion": ubx.FieldSpec{WireName: "oauth_token_secret_version"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"OauthTokenSecretVersion": ubx.FieldSpec{WireName: "oauth_token_secret_version"},
+	"Username":                ubx.FieldSpec{WireName: "username"},
+}
 
 var Connection_GithubConfigFields = ubx.FieldMap{
-		"AppInstallationId": ubx.FieldSpec{WireName: "app_installation_id"},
-		"AuthorizerCredential": ubx.FieldSpec{
-			WireName: "authorizer_credential",
-			Kind: "object",
-			Fields: Connection_GithubConfig_AuthorizerCredentialFields,
-		},
-	}
+	"AppInstallationId": ubx.FieldSpec{WireName: "app_installation_id"},
+	"AuthorizerCredential": ubx.FieldSpec{
+		WireName: "authorizer_credential",
+		Kind:     "object",
+		Fields:   Connection_GithubConfig_AuthorizerCredentialFields,
+	},
+}
 
 var Connection_GithubEnterpriseConfigFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"AppInstallationId": ubx.FieldSpec{WireName: "app_installation_id"},
-		"AppSlug": ubx.FieldSpec{WireName: "app_slug"},
-		"HostUri": ubx.FieldSpec{WireName: "host_uri"},
-		"PrivateKeySecretVersion": ubx.FieldSpec{WireName: "private_key_secret_version"},
-		"ServerVersion": ubx.FieldSpec{WireName: "server_version"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Connection_BitbucketDataCenterConfig_ServiceDirectoryConfigFields,
-		},
-		"SslCa": ubx.FieldSpec{WireName: "ssl_ca"},
-		"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
-	}
+	"ApiKey":                  ubx.FieldSpec{WireName: "api_key"},
+	"AppId":                   ubx.FieldSpec{WireName: "app_id"},
+	"AppInstallationId":       ubx.FieldSpec{WireName: "app_installation_id"},
+	"AppSlug":                 ubx.FieldSpec{WireName: "app_slug"},
+	"HostUri":                 ubx.FieldSpec{WireName: "host_uri"},
+	"PrivateKeySecretVersion": ubx.FieldSpec{WireName: "private_key_secret_version"},
+	"ServerVersion":           ubx.FieldSpec{WireName: "server_version"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Connection_BitbucketDataCenterConfig_ServiceDirectoryConfigFields,
+	},
+	"SslCa":                      ubx.FieldSpec{WireName: "ssl_ca"},
+	"WebhookSecretSecretVersion": ubx.FieldSpec{WireName: "webhook_secret_secret_version"},
+}
 
 var Connection_InstallationStateFields = ubx.FieldMap{
-		"ActionUri": ubx.FieldSpec{WireName: "action_uri"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-	}
+	"ActionUri": ubx.FieldSpec{WireName: "action_uri"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Stage":     ubx.FieldSpec{WireName: "stage"},
+}
 
 type ConnectionConfig struct {
 	// Optional. Allows clients to store small amounts of arbitrary data.
@@ -179,8 +179,6 @@ type ConnectionConfig struct {
 	BitbucketCloudConfig any
 	// Configuration for connections to Bitbucket Data Center.
 	BitbucketDataCenterConfig any
-	// Output only. Server assigned timestamp for when the connection was created.
-	CreateTime any
 	// Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
 	Disabled any
 	// This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -195,10 +193,6 @@ type ConnectionConfig struct {
 	InstallationState any
 	// Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.
 	Name any
-	// Output only. Set to true when the connection is being set up or updated in the background.
-	Reconciling any
-	// Output only. Server assigned timestamp for when the connection was updated.
-	UpdateTime any
 }
 
 type ConnectionAttrs struct {
@@ -236,39 +230,36 @@ var Connection = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"BitbucketCloudConfig": ubx.FieldSpec{
 			WireName: "bitbucket_cloud_config",
-			Kind: "object",
-			Fields: Connection_BitbucketCloudConfigFields,
+			Kind:     "object",
+			Fields:   Connection_BitbucketCloudConfigFields,
 		},
 		"BitbucketDataCenterConfig": ubx.FieldSpec{
 			WireName: "bitbucket_data_center_config",
-			Kind: "object",
-			Fields: Connection_BitbucketDataCenterConfigFields,
+			Kind:     "object",
+			Fields:   Connection_BitbucketDataCenterConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":     ubx.FieldSpec{WireName: "etag"},
 		"GithubConfig": ubx.FieldSpec{
 			WireName: "github_config",
-			Kind: "object",
-			Fields: Connection_GithubConfigFields,
+			Kind:     "object",
+			Fields:   Connection_GithubConfigFields,
 		},
 		"GithubEnterpriseConfig": ubx.FieldSpec{
 			WireName: "github_enterprise_config",
-			Kind: "object",
-			Fields: Connection_GithubEnterpriseConfigFields,
+			Kind:     "object",
+			Fields:   Connection_GithubEnterpriseConfigFields,
 		},
 		"GitlabConfig": ubx.FieldSpec{
 			WireName: "gitlab_config",
-			Kind: "object",
-			Fields: Connection_BitbucketDataCenterConfigFields,
+			Kind:     "object",
+			Fields:   Connection_BitbucketDataCenterConfigFields,
 		},
 		"InstallationState": ubx.FieldSpec{
 			WireName: "installation_state",
-			Kind: "object",
-			Fields: Connection_InstallationStateFields,
+			Kind:     "object",
+			Fields:   Connection_InstallationStateFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

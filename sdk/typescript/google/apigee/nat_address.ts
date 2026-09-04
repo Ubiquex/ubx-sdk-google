@@ -2,12 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NatAddressConfig {
-  /** Output only. The static IPV4 address. */
-  ipAddress?: string | Computed<string>;
   /** Required. Resource ID of the NAT address. */
   name?: string | Computed<string>;
-  /** Output only. State of the nat address. */
-  state?: string | Computed<string>;
 }
 
 export interface NatAddressAttrs {
@@ -22,8 +18,6 @@ export interface NatAddressAttrs {
 export const NatAddress: ResourceBinding<NatAddressConfig, NatAddressAttrs> = {
   wireType: "google_apigee_nat_address",
   fields: {
-    ipAddress: "ip_address",
     name: "name",
-    state: "state",
   },
 };

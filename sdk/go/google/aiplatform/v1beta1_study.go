@@ -38,18 +38,18 @@ type V1beta1Study_StudySpec_DecayCurveStoppingSpec struct {
 
 type V1beta1Study_StudySpec_Metrics_SafetyConfig struct {
 	DesiredMinSafeTrialsFraction any
-	SafetyThreshold any
+	SafetyThreshold              any
 }
 
 type V1beta1Study_StudySpec_Metrics struct {
-	Goal any
-	MetricId any
+	Goal         any
+	MetricId     any
 	SafetyConfig any
 }
 
 type V1beta1Study_StudySpec_Parameters_CategoricalValueSpec struct {
 	DefaultValue any
-	Values any
+	Values       any
 }
 
 type V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValues struct {
@@ -61,37 +61,37 @@ type V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteV
 }
 
 type V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs struct {
-	ParameterSpec any
+	ParameterSpec           any
 	ParentCategoricalValues any
-	ParentDiscreteValues any
-	ParentIntValues any
+	ParentDiscreteValues    any
+	ParentIntValues         any
 }
 
 type V1beta1Study_StudySpec_Parameters_DiscreteValueSpec struct {
 	DefaultValue any
-	Values any
+	Values       any
 }
 
 type V1beta1Study_StudySpec_Parameters_DoubleValueSpec struct {
 	DefaultValue any
-	MaxValue any
-	MinValue any
+	MaxValue     any
+	MinValue     any
 }
 
 type V1beta1Study_StudySpec_Parameters_IntegerValueSpec struct {
 	DefaultValue any
-	MaxValue any
-	MinValue any
+	MaxValue     any
+	MinValue     any
 }
 
 type V1beta1Study_StudySpec_Parameters struct {
-	CategoricalValueSpec any
+	CategoricalValueSpec      any
 	ConditionalParameterSpecs any
-	DiscreteValueSpec any
-	DoubleValueSpec any
-	IntegerValueSpec any
-	ParameterId any
-	ScaleType any
+	DiscreteValueSpec         any
+	DoubleValueSpec           any
+	IntegerValueSpec          any
+	ParameterId               any
+	ScaleType                 any
 }
 
 type V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraint struct {
@@ -151,205 +151,197 @@ type V1beta1Study_StudySpec struct {
 }
 
 var V1beta1Study_StudySpec_ConvexAutomatedStoppingSpecFields = ubx.FieldMap{
-		"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
-		"MaxStepCount": ubx.FieldSpec{WireName: "max_step_count"},
-		"MinMeasurementCount": ubx.FieldSpec{WireName: "min_measurement_count"},
-		"MinStepCount": ubx.FieldSpec{WireName: "min_step_count"},
-		"UpdateAllStoppedTrials": ubx.FieldSpec{WireName: "update_all_stopped_trials"},
-		"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
-	}
+	"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
+	"MaxStepCount":              ubx.FieldSpec{WireName: "max_step_count"},
+	"MinMeasurementCount":       ubx.FieldSpec{WireName: "min_measurement_count"},
+	"MinStepCount":              ubx.FieldSpec{WireName: "min_step_count"},
+	"UpdateAllStoppedTrials":    ubx.FieldSpec{WireName: "update_all_stopped_trials"},
+	"UseElapsedDuration":        ubx.FieldSpec{WireName: "use_elapsed_duration"},
+}
 
 var V1beta1Study_StudySpec_ConvexStopConfigFields = ubx.FieldMap{
-		"AutoregressiveOrder": ubx.FieldSpec{WireName: "autoregressive_order"},
-		"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
-		"MaxNumSteps": ubx.FieldSpec{WireName: "max_num_steps"},
-		"MinNumSteps": ubx.FieldSpec{WireName: "min_num_steps"},
-		"UseSeconds": ubx.FieldSpec{WireName: "use_seconds"},
-	}
+	"AutoregressiveOrder":       ubx.FieldSpec{WireName: "autoregressive_order"},
+	"LearningRateParameterName": ubx.FieldSpec{WireName: "learning_rate_parameter_name"},
+	"MaxNumSteps":               ubx.FieldSpec{WireName: "max_num_steps"},
+	"MinNumSteps":               ubx.FieldSpec{WireName: "min_num_steps"},
+	"UseSeconds":                ubx.FieldSpec{WireName: "use_seconds"},
+}
 
 var V1beta1Study_StudySpec_DecayCurveStoppingSpecFields = ubx.FieldMap{
-		"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
-	}
+	"UseElapsedDuration": ubx.FieldSpec{WireName: "use_elapsed_duration"},
+}
 
 var V1beta1Study_StudySpec_Metrics_SafetyConfigFields = ubx.FieldMap{
-		"DesiredMinSafeTrialsFraction": ubx.FieldSpec{WireName: "desired_min_safe_trials_fraction"},
-		"SafetyThreshold": ubx.FieldSpec{WireName: "safety_threshold"},
-	}
+	"DesiredMinSafeTrialsFraction": ubx.FieldSpec{WireName: "desired_min_safe_trials_fraction"},
+	"SafetyThreshold":              ubx.FieldSpec{WireName: "safety_threshold"},
+}
 
 var V1beta1Study_StudySpec_MetricsFields = ubx.FieldMap{
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"SafetyConfig": ubx.FieldSpec{
-			WireName: "safety_config",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Metrics_SafetyConfigFields,
-		},
-	}
+	"Goal":     ubx.FieldSpec{WireName: "goal"},
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"SafetyConfig": ubx.FieldSpec{
+		WireName: "safety_config",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Metrics_SafetyConfigFields,
+	},
+}
 
 var V1beta1Study_StudySpec_Parameters_CategoricalValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecsFields = ubx.FieldMap{
-		"ParameterSpec": ubx.FieldSpec{WireName: "parameter_spec"},
-		"ParentCategoricalValues": ubx.FieldSpec{
-			WireName: "parent_categorical_values",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
-		},
-		"ParentDiscreteValues": ubx.FieldSpec{
-			WireName: "parent_discrete_values",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields,
-		},
-		"ParentIntValues": ubx.FieldSpec{
-			WireName: "parent_int_values",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
-		},
-	}
+	"ParameterSpec": ubx.FieldSpec{WireName: "parameter_spec"},
+	"ParentCategoricalValues": ubx.FieldSpec{
+		WireName: "parent_categorical_values",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
+	},
+	"ParentDiscreteValues": ubx.FieldSpec{
+		WireName: "parent_discrete_values",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentDiscreteValuesFields,
+	},
+	"ParentIntValues": ubx.FieldSpec{
+		WireName: "parent_int_values",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecs_ParentCategoricalValuesFields,
+	},
+}
 
 var V1beta1Study_StudySpec_Parameters_DiscreteValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"Values":       ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Study_StudySpec_Parameters_DoubleValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"MaxValue":     ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":     ubx.FieldSpec{WireName: "min_value"},
+}
 
 var V1beta1Study_StudySpec_Parameters_IntegerValueSpecFields = ubx.FieldMap{
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"MaxValue":     ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":     ubx.FieldSpec{WireName: "min_value"},
+}
 
 var V1beta1Study_StudySpec_ParametersFields = ubx.FieldMap{
-		"CategoricalValueSpec": ubx.FieldSpec{
-			WireName: "categorical_value_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_CategoricalValueSpecFields,
-		},
-		"ConditionalParameterSpecs": ubx.FieldSpec{
-			WireName: "conditional_parameter_specs",
-			Kind: "list",
-			Fields: V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecsFields,
-		},
-		"DiscreteValueSpec": ubx.FieldSpec{
-			WireName: "discrete_value_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_DiscreteValueSpecFields,
-		},
-		"DoubleValueSpec": ubx.FieldSpec{
-			WireName: "double_value_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_DoubleValueSpecFields,
-		},
-		"IntegerValueSpec": ubx.FieldSpec{
-			WireName: "integer_value_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_Parameters_IntegerValueSpecFields,
-		},
-		"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
-		"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
-	}
+	"CategoricalValueSpec": ubx.FieldSpec{
+		WireName: "categorical_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_CategoricalValueSpecFields,
+	},
+	"ConditionalParameterSpecs": ubx.FieldSpec{
+		WireName: "conditional_parameter_specs",
+		Kind:     "list",
+		Fields:   V1beta1Study_StudySpec_Parameters_ConditionalParameterSpecsFields,
+	},
+	"DiscreteValueSpec": ubx.FieldSpec{
+		WireName: "discrete_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_DiscreteValueSpecFields,
+	},
+	"DoubleValueSpec": ubx.FieldSpec{
+		WireName: "double_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_DoubleValueSpecFields,
+	},
+	"IntegerValueSpec": ubx.FieldSpec{
+		WireName: "integer_value_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_Parameters_IntegerValueSpecFields,
+	},
+	"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
+	"ScaleType":   ubx.FieldSpec{WireName: "scale_type"},
+}
 
 var V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-	}
+	"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+	"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
+}
 
 var V1beta1Study_StudySpec_StudyStoppingConfigFields = ubx.FieldMap{
-		"MaxDurationNoProgress": ubx.FieldSpec{WireName: "max_duration_no_progress"},
-		"MaxNumTrials": ubx.FieldSpec{WireName: "max_num_trials"},
-		"MaxNumTrialsNoProgress": ubx.FieldSpec{WireName: "max_num_trials_no_progress"},
-		"MaximumRuntimeConstraint": ubx.FieldSpec{
-			WireName: "maximum_runtime_constraint",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
-		},
-		"MinNumTrials": ubx.FieldSpec{WireName: "min_num_trials"},
-		"MinimumRuntimeConstraint": ubx.FieldSpec{
-			WireName: "minimum_runtime_constraint",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
-		},
-		"ShouldStopAsap": ubx.FieldSpec{WireName: "should_stop_asap"},
-	}
+	"MaxDurationNoProgress":  ubx.FieldSpec{WireName: "max_duration_no_progress"},
+	"MaxNumTrials":           ubx.FieldSpec{WireName: "max_num_trials"},
+	"MaxNumTrialsNoProgress": ubx.FieldSpec{WireName: "max_num_trials_no_progress"},
+	"MaximumRuntimeConstraint": ubx.FieldSpec{
+		WireName: "maximum_runtime_constraint",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
+	},
+	"MinNumTrials": ubx.FieldSpec{WireName: "min_num_trials"},
+	"MinimumRuntimeConstraint": ubx.FieldSpec{
+		WireName: "minimum_runtime_constraint",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_StudyStoppingConfig_MaximumRuntimeConstraintFields,
+	},
+	"ShouldStopAsap": ubx.FieldSpec{WireName: "should_stop_asap"},
+}
 
 var V1beta1Study_StudySpec_TransferLearningConfigFields = ubx.FieldMap{
-		"DisableTransferLearning": ubx.FieldSpec{WireName: "disable_transfer_learning"},
-		"PriorStudyNames": ubx.FieldSpec{WireName: "prior_study_names"},
-	}
+	"DisableTransferLearning": ubx.FieldSpec{WireName: "disable_transfer_learning"},
+	"PriorStudyNames":         ubx.FieldSpec{WireName: "prior_study_names"},
+}
 
 var V1beta1Study_StudySpecFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ConvexAutomatedStoppingSpec": ubx.FieldSpec{
-			WireName: "convex_automated_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_ConvexAutomatedStoppingSpecFields,
-		},
-		"ConvexStopConfig": ubx.FieldSpec{
-			WireName: "convex_stop_config",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_ConvexStopConfigFields,
-		},
-		"DecayCurveStoppingSpec": ubx.FieldSpec{
-			WireName: "decay_curve_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_DecayCurveStoppingSpecFields,
-		},
-		"MeasurementSelectionType": ubx.FieldSpec{WireName: "measurement_selection_type"},
-		"MedianAutomatedStoppingSpec": ubx.FieldSpec{
-			WireName: "median_automated_stopping_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_DecayCurveStoppingSpecFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: V1beta1Study_StudySpec_MetricsFields,
-		},
-		"ObservationNoise": ubx.FieldSpec{WireName: "observation_noise"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: V1beta1Study_StudySpec_ParametersFields,
-		},
-		"StudyStoppingConfig": ubx.FieldSpec{
-			WireName: "study_stopping_config",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_StudyStoppingConfigFields,
-		},
-		"TransferLearningConfig": ubx.FieldSpec{
-			WireName: "transfer_learning_config",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpec_TransferLearningConfigFields,
-		},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"ConvexAutomatedStoppingSpec": ubx.FieldSpec{
+		WireName: "convex_automated_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_ConvexAutomatedStoppingSpecFields,
+	},
+	"ConvexStopConfig": ubx.FieldSpec{
+		WireName: "convex_stop_config",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_ConvexStopConfigFields,
+	},
+	"DecayCurveStoppingSpec": ubx.FieldSpec{
+		WireName: "decay_curve_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_DecayCurveStoppingSpecFields,
+	},
+	"MeasurementSelectionType": ubx.FieldSpec{WireName: "measurement_selection_type"},
+	"MedianAutomatedStoppingSpec": ubx.FieldSpec{
+		WireName: "median_automated_stopping_spec",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_DecayCurveStoppingSpecFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   V1beta1Study_StudySpec_MetricsFields,
+	},
+	"ObservationNoise": ubx.FieldSpec{WireName: "observation_noise"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   V1beta1Study_StudySpec_ParametersFields,
+	},
+	"StudyStoppingConfig": ubx.FieldSpec{
+		WireName: "study_stopping_config",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_StudyStoppingConfigFields,
+	},
+	"TransferLearningConfig": ubx.FieldSpec{
+		WireName: "transfer_learning_config",
+		Kind:     "object",
+		Fields:   V1beta1Study_StudySpec_TransferLearningConfigFields,
+	},
+}
 
 type V1beta1StudyConfig struct {
-	// Output only. Time at which the study was created.
-	CreateTime any
 	// Required. Describes the Study, default value is empty string.
 	DisplayName any
-	// Output only. A human readable reason why the Study is inactive. This should be empty if a study is ACTIVE or COMPLETED.
-	InactiveReason any
-	// Output only. The name of a study. The study's globally unique identifier. Format: `projects/{project}/locations/{location}/studies/{study}`
-	Name any
-	// Output only. The detailed state of a Study.
-	State any
 	// Represents specification of a Study.
 	StudySpec any
 }
@@ -372,15 +364,11 @@ type V1beta1StudyAttrs struct {
 var V1beta1Study = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_study",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InactiveReason": ubx.FieldSpec{WireName: "inactive_reason"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"StudySpec": ubx.FieldSpec{
 			WireName: "study_spec",
-			Kind: "object",
-			Fields: V1beta1Study_StudySpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Study_StudySpecFields,
 		},
 	},
 }

@@ -28,14 +28,8 @@ _Comment_CreatorFields = {
 class CommentConfig:
     # The full comment body. Maximum of 12800 characters.
     body: Any = None
-    # Output only. The time when the comment was created.
-    create_time: Any = None
     # An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case.
     creator: Any = None
-    # Output only. Identifier. The resource name of the comment.
-    name: Any = None
-    # Output only. DEPRECATED. DO NOT USE. A duplicate of the `body` field. This field is only present for legacy reasons.
-    plain_text_body: Any = None
 
 @dataclasses.dataclass
 class CommentAttrs:
@@ -54,13 +48,10 @@ Comment = ubx.ResourceBinding(
     wire_type="google_cloudsupport_comment",
     fields={
         "body": ubx.FieldSpec(wire_name="body"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "creator": ubx.FieldSpec(
             wire_name="creator",
             kind="object",
             fields=_Comment_CreatorFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "plain_text_body": ubx.FieldSpec(wire_name="plain_text_body"),
     },
 )

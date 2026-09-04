@@ -18,18 +18,18 @@ type DataExchange_SharingEnvironmentConfig struct {
 }
 
 var DataExchange_SharingEnvironmentConfig_DcrExchangeConfigFields = ubx.FieldMap{
-		"SingleLinkedDatasetPerCleanroom": ubx.FieldSpec{WireName: "single_linked_dataset_per_cleanroom"},
-		"SingleSelectedResourceSharingRestriction": ubx.FieldSpec{WireName: "single_selected_resource_sharing_restriction"},
-	}
+	"SingleLinkedDatasetPerCleanroom":          ubx.FieldSpec{WireName: "single_linked_dataset_per_cleanroom"},
+	"SingleSelectedResourceSharingRestriction": ubx.FieldSpec{WireName: "single_selected_resource_sharing_restriction"},
+}
 
 var DataExchange_SharingEnvironmentConfigFields = ubx.FieldMap{
-		"DcrExchangeConfig": ubx.FieldSpec{
-			WireName: "dcr_exchange_config",
-			Kind: "object",
-			Fields: DataExchange_SharingEnvironmentConfig_DcrExchangeConfigFields,
-		},
-		"DefaultExchangeConfig": ubx.FieldSpec{WireName: "default_exchange_config"},
-	}
+	"DcrExchangeConfig": ubx.FieldSpec{
+		WireName: "dcr_exchange_config",
+		Kind:     "object",
+		Fields:   DataExchange_SharingEnvironmentConfig_DcrExchangeConfigFields,
+	},
+	"DefaultExchangeConfig": ubx.FieldSpec{WireName: "default_exchange_config"},
+}
 
 type DataExchangeConfig struct {
 	// Optional. Description of the data exchange. The description must not contain Unicode non-characters as well as C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
@@ -42,12 +42,8 @@ type DataExchangeConfig struct {
 	Documentation any
 	// Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the content of the fields are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
 	Icon any
-	// Output only. Number of listings contained in the data exchange.
-	ListingCount any
 	// Optional. By default, false. If true, the DataExchange has an email sharing mandate enabled.
 	LogLinkedDatasetQueryUserEmail any
-	// Output only. The resource name of the data exchange. e.g. `projects/myproject/locations/us/dataExchanges/123`.
-	Name any
 	// Optional. Email or URL of the primary point of contact of the data exchange. Max Length: 1000 bytes.
 	PrimaryContact any
 	// Sharing environment is a behavior model for sharing data within a data exchange. This option is configurable for a data exchange.
@@ -80,19 +76,17 @@ type DataExchangeAttrs struct {
 var DataExchange = ubx.ResourceBinding{
 	WireType: "google_analyticshub_data_exchange",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiscoveryType": ubx.FieldSpec{WireName: "discovery_type"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"ListingCount": ubx.FieldSpec{WireName: "listing_count"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DiscoveryType":                  ubx.FieldSpec{WireName: "discovery_type"},
+		"DisplayName":                    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":                  ubx.FieldSpec{WireName: "documentation"},
+		"Icon":                           ubx.FieldSpec{WireName: "icon"},
 		"LogLinkedDatasetQueryUserEmail": ubx.FieldSpec{WireName: "log_linked_dataset_query_user_email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
+		"PrimaryContact":                 ubx.FieldSpec{WireName: "primary_contact"},
 		"SharingEnvironmentConfig": ubx.FieldSpec{
 			WireName: "sharing_environment_config",
-			Kind: "object",
-			Fields: DataExchange_SharingEnvironmentConfigFields,
+			Kind:     "object",
+			Fields:   DataExchange_SharingEnvironmentConfigFields,
 		},
 	},
 }

@@ -35,18 +35,6 @@ const V1betaBackend_CodebaseFields: FieldMap = {
   rootDirectory: "root_directory",
 };
 
-const V1betaBackend_ManagedResources_RunServiceFields: FieldMap = {
-  service: "service",
-};
-
-const V1betaBackend_ManagedResourcesFields: FieldMap = {
-  runService: {
-    wireName: "run_service",
-    kind: "object",
-    fields: V1betaBackend_ManagedResources_RunServiceFields,
-  },
-};
-
 const V1betaBackend_OverrideEnvFields: FieldMap = {
   availability: "availability",
   origin: "origin",
@@ -69,28 +57,18 @@ export interface V1betaBackendConfig {
   automaticBaseImageUpdatesDisabled?: boolean | Computed<boolean>;
   /** The connection to an external source repository to watch for event-driven updates to the backend. */
   codebase?: V1betaBackend_Codebase | Computed<V1betaBackend_Codebase>;
-  /** Output only. Time at which the backend was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the backend was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
   /** Optional. The environment name of the backend, used to load environment variables from environment specific configuration. */
   environment?: string | Computed<string>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. A list of the resources managed by this backend. */
-  managedResources?: V1betaBackend_ManagedResources[] | Computed<V1betaBackend_ManagedResources[]>;
   /** Optional. Deprecated: Use `environment` instead. */
   mode?: string | Computed<string>;
   /** Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`. */
   name?: string | Computed<string>;
   /** Optional. Override environment variables for this Backend. */
   overrideEnv?: V1betaBackend_OverrideEnv[] | Computed<V1betaBackend_OverrideEnv[]>;
-  /** Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default. */
   requestLogsDisabled?: boolean | Computed<boolean>;
   /** Runtime is a string that represents the runtime that is used to build the backend. Users can specify one of the following runtimes: nodejs20, nodejs22, nodejs24, nodejs. Runtime "nodejs" means that nodejs version will be determined at build time. If not specified or specified with a value that is not in the list above, the default runtime `nodejs` will be used and Automatic Base Image Updates will be disabled. See [Firebase documentation](https://firebase.google.com/docs/app-hosting/frameworks-tooling#managing_runtime_versions) for more details. */
@@ -99,12 +77,6 @@ export interface V1betaBackendConfig {
   serviceAccount?: string | Computed<string>;
   /** Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS). */
   servingLocality?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the backend was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The primary URI to communicate with the backend. */
-  uri?: string | Computed<string>;
 }
 
 export interface V1betaBackendAttrs {
@@ -165,17 +137,9 @@ export const V1betaBackend: ResourceBinding<V1betaBackendConfig, V1betaBackendAt
       kind: "object",
       fields: V1betaBackend_CodebaseFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     environment: "environment",
-    etag: "etag",
     labels: "labels",
-    managedResources: {
-      wireName: "managed_resources",
-      kind: "list",
-      fields: V1betaBackend_ManagedResourcesFields,
-    },
     mode: "mode",
     name: "name",
     overrideEnv: {
@@ -183,7 +147,6 @@ export const V1betaBackend: ResourceBinding<V1betaBackendConfig, V1betaBackendAt
       kind: "list",
       fields: V1betaBackend_OverrideEnvFields,
     },
-    reconciling: "reconciling",
     requestLogsDisabled: "request_logs_disabled",
     runtime: {
       wireName: "runtime",
@@ -192,8 +155,5 @@ export const V1betaBackend: ResourceBinding<V1betaBackendConfig, V1betaBackendAt
     },
     serviceAccount: "service_account",
     servingLocality: "serving_locality",
-    uid: "uid",
-    updateTime: "update_time",
-    uri: "uri",
   },
 };

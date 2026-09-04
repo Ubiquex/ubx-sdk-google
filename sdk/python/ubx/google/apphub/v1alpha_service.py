@@ -183,8 +183,6 @@ _V1alphaService_ServiceReferenceFields = {
 class V1alphaServiceConfig:
     # Consumer provided attributes.
     attributes: Any = None
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. User-defined description of a Service. Can have a maximum length of 2048 characters.
     description: Any = None
     # Required. Immutable. The resource name of the original discovered service.
@@ -197,12 +195,6 @@ class V1alphaServiceConfig:
     service_properties: Any = None
     # Reference to an underlying networking resource that can comprise a Service.
     service_reference: Any = None
-    # Output only. Service state.
-    state: Any = None
-    # Output only. A universally unique identifier (UUID) for the `Service` in the UUID4 format.
-    uid: Any = None
-    # Output only. Update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaServiceAttrs:
@@ -237,7 +229,6 @@ V1alphaService = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaService_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "discovered_service": ubx.FieldSpec(wire_name="discovered_service"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -252,8 +243,5 @@ V1alphaService = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaService_ServiceReferenceFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

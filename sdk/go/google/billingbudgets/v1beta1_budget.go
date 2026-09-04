@@ -70,7 +70,7 @@ type V1beta1Budget_Budget_BudgetFilter struct {
 }
 
 type V1beta1Budget_Budget_ThresholdRules struct {
-	SpendBasis any
+	SpendBasis       any
 	ThresholdPercent any
 }
 
@@ -86,101 +86,101 @@ type V1beta1Budget_Budget struct {
 	// Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
 	Etag any
 	// Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
-	Name any
+	Name           any
 	OwnershipScope any
 	// Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
 	ThresholdRules any
 }
 
 var V1beta1Budget_AllUpdatesRuleFields = ubx.FieldMap{
-		"DisableDefaultIamRecipients": ubx.FieldSpec{WireName: "disable_default_iam_recipients"},
-		"EnableProjectLevelRecipients": ubx.FieldSpec{WireName: "enable_project_level_recipients"},
-		"MonitoringNotificationChannels": ubx.FieldSpec{WireName: "monitoring_notification_channels"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-	}
+	"DisableDefaultIamRecipients":    ubx.FieldSpec{WireName: "disable_default_iam_recipients"},
+	"EnableProjectLevelRecipients":   ubx.FieldSpec{WireName: "enable_project_level_recipients"},
+	"MonitoringNotificationChannels": ubx.FieldSpec{WireName: "monitoring_notification_channels"},
+	"PubsubTopic":                    ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SchemaVersion":                  ubx.FieldSpec{WireName: "schema_version"},
+}
 
 var V1beta1Budget_Amount_SpecifiedAmountFields = ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+	"Nanos":        ubx.FieldSpec{WireName: "nanos"},
+	"Units":        ubx.FieldSpec{WireName: "units"},
+}
 
 var V1beta1Budget_AmountFields = ubx.FieldMap{
-		"LastPeriodAmount": ubx.FieldSpec{WireName: "last_period_amount"},
-		"SpecifiedAmount": ubx.FieldSpec{
-			WireName: "specified_amount",
-			Kind: "object",
-			Fields: V1beta1Budget_Amount_SpecifiedAmountFields,
-		},
-	}
+	"LastPeriodAmount": ubx.FieldSpec{WireName: "last_period_amount"},
+	"SpecifiedAmount": ubx.FieldSpec{
+		WireName: "specified_amount",
+		Kind:     "object",
+		Fields:   V1beta1Budget_Amount_SpecifiedAmountFields,
+	},
+}
 
 var V1beta1Budget_Budget_BudgetFilter_CustomPeriod_EndDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var V1beta1Budget_Budget_BudgetFilter_CustomPeriodFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{
-			WireName: "end_date",
-			Kind: "object",
-			Fields: V1beta1Budget_Budget_BudgetFilter_CustomPeriod_EndDateFields,
-		},
-		"StartDate": ubx.FieldSpec{
-			WireName: "start_date",
-			Kind: "object",
-			Fields: V1beta1Budget_Budget_BudgetFilter_CustomPeriod_EndDateFields,
-		},
-	}
+	"EndDate": ubx.FieldSpec{
+		WireName: "end_date",
+		Kind:     "object",
+		Fields:   V1beta1Budget_Budget_BudgetFilter_CustomPeriod_EndDateFields,
+	},
+	"StartDate": ubx.FieldSpec{
+		WireName: "start_date",
+		Kind:     "object",
+		Fields:   V1beta1Budget_Budget_BudgetFilter_CustomPeriod_EndDateFields,
+	},
+}
 
 var V1beta1Budget_Budget_BudgetFilterFields = ubx.FieldMap{
-		"CalendarPeriod": ubx.FieldSpec{WireName: "calendar_period"},
-		"CreditTypes": ubx.FieldSpec{WireName: "credit_types"},
-		"CreditTypesTreatment": ubx.FieldSpec{WireName: "credit_types_treatment"},
-		"CustomPeriod": ubx.FieldSpec{
-			WireName: "custom_period",
-			Kind: "object",
-			Fields: V1beta1Budget_Budget_BudgetFilter_CustomPeriodFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-		"ResourceAncestors": ubx.FieldSpec{WireName: "resource_ancestors"},
-		"Services": ubx.FieldSpec{WireName: "services"},
-		"Subaccounts": ubx.FieldSpec{WireName: "subaccounts"},
-	}
+	"CalendarPeriod":       ubx.FieldSpec{WireName: "calendar_period"},
+	"CreditTypes":          ubx.FieldSpec{WireName: "credit_types"},
+	"CreditTypesTreatment": ubx.FieldSpec{WireName: "credit_types_treatment"},
+	"CustomPeriod": ubx.FieldSpec{
+		WireName: "custom_period",
+		Kind:     "object",
+		Fields:   V1beta1Budget_Budget_BudgetFilter_CustomPeriodFields,
+	},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"Projects":          ubx.FieldSpec{WireName: "projects"},
+	"ResourceAncestors": ubx.FieldSpec{WireName: "resource_ancestors"},
+	"Services":          ubx.FieldSpec{WireName: "services"},
+	"Subaccounts":       ubx.FieldSpec{WireName: "subaccounts"},
+}
 
 var V1beta1Budget_Budget_ThresholdRulesFields = ubx.FieldMap{
-		"SpendBasis": ubx.FieldSpec{WireName: "spend_basis"},
-		"ThresholdPercent": ubx.FieldSpec{WireName: "threshold_percent"},
-	}
+	"SpendBasis":       ubx.FieldSpec{WireName: "spend_basis"},
+	"ThresholdPercent": ubx.FieldSpec{WireName: "threshold_percent"},
+}
 
 var V1beta1Budget_BudgetFields = ubx.FieldMap{
-		"AllUpdatesRule": ubx.FieldSpec{
-			WireName: "all_updates_rule",
-			Kind: "object",
-			Fields: V1beta1Budget_AllUpdatesRuleFields,
-		},
-		"Amount": ubx.FieldSpec{
-			WireName: "amount",
-			Kind: "object",
-			Fields: V1beta1Budget_AmountFields,
-		},
-		"BudgetFilter": ubx.FieldSpec{
-			WireName: "budget_filter",
-			Kind: "object",
-			Fields: V1beta1Budget_Budget_BudgetFilterFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OwnershipScope": ubx.FieldSpec{WireName: "ownership_scope"},
-		"ThresholdRules": ubx.FieldSpec{
-			WireName: "threshold_rules",
-			Kind: "list",
-			Fields: V1beta1Budget_Budget_ThresholdRulesFields,
-		},
-	}
+	"AllUpdatesRule": ubx.FieldSpec{
+		WireName: "all_updates_rule",
+		Kind:     "object",
+		Fields:   V1beta1Budget_AllUpdatesRuleFields,
+	},
+	"Amount": ubx.FieldSpec{
+		WireName: "amount",
+		Kind:     "object",
+		Fields:   V1beta1Budget_AmountFields,
+	},
+	"BudgetFilter": ubx.FieldSpec{
+		WireName: "budget_filter",
+		Kind:     "object",
+		Fields:   V1beta1Budget_Budget_BudgetFilterFields,
+	},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"Etag":           ubx.FieldSpec{WireName: "etag"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"OwnershipScope": ubx.FieldSpec{WireName: "ownership_scope"},
+	"ThresholdRules": ubx.FieldSpec{
+		WireName: "threshold_rules",
+		Kind:     "list",
+		Fields:   V1beta1Budget_Budget_ThresholdRulesFields,
+	},
+}
 
 type V1beta1BudgetConfig struct {
 	// A budget is a plan that describes what you expect to spend on Cloud projects, plus the rules to execute as spend is tracked against that plan, (for example, send an alert when 90% of the target spend is met). The budget time period is configurable, with options such as month (default), quarter, year, or custom time period.
@@ -201,7 +201,7 @@ type V1beta1BudgetAttrs struct {
 	// Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag will cause an update to overwrite other changes.
 	Etag any
 	// Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`.
-	Name any
+	Name           any
 	OwnershipScope any
 	// Optional. Rules that trigger alerts (notifications of thresholds being crossed) when spend exceeds the specified percentages of the budget. Optional for `pubsubTopic` notifications. Required if using email notifications.
 	ThresholdRules any
@@ -212,8 +212,8 @@ var V1beta1Budget = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Budget": ubx.FieldSpec{
 			WireName: "budget",
-			Kind: "object",
-			Fields: V1beta1Budget_BudgetFields,
+			Kind:     "object",
+			Fields:   V1beta1Budget_BudgetFields,
 		},
 	},
 }

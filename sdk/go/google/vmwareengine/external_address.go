@@ -4,22 +4,10 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExternalAddressConfig struct {
-	// Output only. Creation time of this resource.
-	CreateTime any
 	// User-provided description for this resource.
 	Description any
-	// Output only. The external IP address of a workload VM.
-	ExternalIp any
 	// The internal IP address of a workload VM.
 	InternalIp any
-	// Output only. Identifier. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address`
-	Name any
-	// Output only. The state of the resource.
-	State any
-	// Output only. System-generated unique identifier for the resource.
-	Uid any
-	// Output only. Last update time of this resource.
-	UpdateTime any
 }
 
 type ExternalAddressAttrs struct {
@@ -44,13 +32,7 @@ type ExternalAddressAttrs struct {
 var ExternalAddress = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_external_address",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
 	},
 }

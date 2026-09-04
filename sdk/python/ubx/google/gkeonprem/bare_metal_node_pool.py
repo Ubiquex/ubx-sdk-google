@@ -170,10 +170,6 @@ _BareMetalNodePool_UpgradePolicyFields = {
 class BareMetalNodePoolConfig:
     # Annotations on the bare metal node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.
     annotations: Any = None
-    # Output only. The time at which this bare metal node pool was created.
-    create_time: Any = None
-    # Output only. The time at which this bare metal node pool was deleted. If the resource is not deleted, this must be empty
-    delete_time: Any = None
     # The display name for the bare metal node pool.
     display_name: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
@@ -182,16 +178,8 @@ class BareMetalNodePoolConfig:
     name: Any = None
     # BareMetalNodePoolConfig describes the configuration of all nodes within a given bare metal node pool.
     node_pool_config: Any = None
-    # Output only. If set, there are currently changes in flight to the bare metal node pool.
-    reconciling: Any = None
-    # Output only. The current state of the bare metal node pool.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
-    # Output only. The unique identifier of the bare metal node pool.
-    uid: Any = None
-    # Output only. The time at which this bare metal node pool was last updated.
-    update_time: Any = None
     # BareMetalNodePoolUpgradePolicy defines the node pool upgrade policy.
     upgrade_policy: Any = None
 
@@ -228,8 +216,6 @@ BareMetalNodePool = ubx.ResourceBinding(
     wire_type="google_gkeonprem_bare_metal_node_pool",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -238,15 +224,11 @@ BareMetalNodePool = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalNodePool_NodePoolConfigFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_BareMetalNodePool_StatusFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upgrade_policy": ubx.FieldSpec(
             wire_name="upgrade_policy",
             kind="object",

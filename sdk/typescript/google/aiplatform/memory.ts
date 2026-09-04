@@ -26,8 +26,6 @@ const Memory_TopicsFields: FieldMap = {
 };
 
 export interface MemoryConfig {
-  /** Output only. Represents the timestamp when this Memory was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Represents the description of the Memory. */
   description?: string | Computed<string>;
   /** Optional. Input only. Indicates whether no revision will be created for this request. */
@@ -54,8 +52,6 @@ export interface MemoryConfig {
   topics?: Memory_Topics[] | Computed<Memory_Topics[]>;
   /** Optional. Input only. Represents the TTL for this resource. The expiration time is computed: now + TTL. */
   ttl?: string | Computed<string>;
-  /** Output only. Represents the timestamp when this Memory was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MemoryAttrs {
@@ -94,7 +90,6 @@ export interface MemoryAttrs {
 export const Memory: ResourceBinding<MemoryConfig, MemoryAttrs> = {
   wireType: "google_aiplatform_memory",
   fields: {
-    createTime: "create_time",
     description: "description",
     disableMemoryRevisions: "disable_memory_revisions",
     displayName: "display_name",
@@ -116,6 +111,5 @@ export const Memory: ResourceBinding<MemoryConfig, MemoryAttrs> = {
       fields: Memory_TopicsFields,
     },
     ttl: "ttl",
-    updateTime: "update_time",
   },
 };

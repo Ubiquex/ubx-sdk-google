@@ -35,36 +35,9 @@ const V1beta1Trial_FinalMeasurementFields: FieldMap = {
   stepCount: "step_count",
 };
 
-const V1beta1Trial_ParametersFields: FieldMap = {
-  parameterId: "parameter_id",
-  value: "value",
-};
-
 export interface V1beta1TrialConfig {
-  /** Output only. The identifier of the client that originally requested this Trial. Each client is identified by a unique client_id. When a client asks for a suggestion, Vertex AI Vizier will assign it a Trial. The client should evaluate the Trial, complete it, and report back to Vertex AI Vizier. If suggestion is asked again by same client_id before the Trial is completed, the same Trial will be returned. Multiple clients with different client_ids can ask for suggestions simultaneously, each of them will get their own Trial. */
-  clientId?: string | Computed<string>;
-  /** Output only. The CustomJob name linked to the Trial. It's set for a HyperparameterTuningJob's Trial. */
-  customJob?: string | Computed<string>;
-  /** Output only. Time when the Trial's status changed to `SUCCEEDED` or `INFEASIBLE`. */
-  endTime?: string | Computed<string>;
   /** A message representing a Measurement of a Trial. A Measurement contains the Metrics got by executing a Trial using suggested hyperparameter values. */
   finalMeasurement?: V1beta1Trial_FinalMeasurement | Computed<V1beta1Trial_FinalMeasurement>;
-  /** Output only. The identifier of the Trial assigned by the service. */
-  id?: string | Computed<string>;
-  /** Output only. A human readable string describing why the Trial is infeasible. This is set only if Trial state is `INFEASIBLE`. */
-  infeasibleReason?: string | Computed<string>;
-  /** Output only. A list of measurements that are strictly lexicographically ordered by their induced tuples (steps, elapsed_duration). These are used for early stopping computations. */
-  measurements?: V1beta1Trial_FinalMeasurement[] | Computed<V1beta1Trial_FinalMeasurement[]>;
-  /** Output only. Resource name of the Trial assigned by the service. */
-  name?: string | Computed<string>;
-  /** Output only. The parameters of the Trial. */
-  parameters?: V1beta1Trial_Parameters[] | Computed<V1beta1Trial_Parameters[]>;
-  /** Output only. Time when the Trial was started. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the Trial. */
-  state?: string | Computed<string>;
-  /** Output only. URIs for accessing [interactive shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell) (one URI for each training node). Only available if this trial is part of a HyperparameterTuningJob and the job's trial_job_spec.enable_web_access field is `true`. The keys are names of each node used for the trial; for example, `workerpool0-0` for the primary node, `workerpool1-0` for the first node in the second worker pool, and `workerpool1-1` for the second node in the second worker pool. The values are the URIs for each node's interactive shell. */
-  webAccessUris?: Record<string, string> | Computed<Record<string, string>>;
 }
 
 export interface V1beta1TrialAttrs {
@@ -97,29 +70,10 @@ export interface V1beta1TrialAttrs {
 export const V1beta1Trial: ResourceBinding<V1beta1TrialConfig, V1beta1TrialAttrs> = {
   wireType: "google_aiplatform_v1beta1_trial",
   fields: {
-    clientId: "client_id",
-    customJob: "custom_job",
-    endTime: "end_time",
     finalMeasurement: {
       wireName: "final_measurement",
       kind: "object",
       fields: V1beta1Trial_FinalMeasurementFields,
     },
-    id: "id",
-    infeasibleReason: "infeasible_reason",
-    measurements: {
-      wireName: "measurements",
-      kind: "list",
-      fields: V1beta1Trial_FinalMeasurementFields,
-    },
-    name: "name",
-    parameters: {
-      wireName: "parameters",
-      kind: "list",
-      fields: V1beta1Trial_ParametersFields,
-    },
-    startTime: "start_time",
-    state: "state",
-    webAccessUris: "web_access_uris",
   },
 };

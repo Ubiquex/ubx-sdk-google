@@ -32,20 +32,14 @@ class V1beta1ShareConfig:
     backup: Any = None
     # File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0.
     capacity_gb: Any = None
-    # Output only. The time when the share was created.
-    create_time: Any = None
     # A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
     # The mount name of the share. Must be 63 characters or less and consist of uppercase or lowercase letters, numbers, and underscores.
     mount_name: Any = None
-    # Output only. The resource name of the share, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/shares/{share_id}`.
-    name: Any = None
     # Nfs Export Options. There is a limit of 10 export options per file share.
     nfs_export_options: Any = None
-    # Output only. The share state.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1beta1ShareAttrs:
@@ -73,16 +67,13 @@ V1beta1Share = ubx.ResourceBinding(
     fields={
         "backup": ubx.FieldSpec(wire_name="backup"),
         "capacity_gb": ubx.FieldSpec(wire_name="capacity_gb"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "mount_name": ubx.FieldSpec(wire_name="mount_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "nfs_export_options": ubx.FieldSpec(
             wire_name="nfs_export_options",
             kind="list",
             fields=_V1beta1Share_NfsExportOptionsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

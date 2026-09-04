@@ -28,26 +28,14 @@ _BetaSnapshotGroup_SourceInstantSnapshotGroupInfoFields = {
 
 @dataclasses.dataclass
 class BetaSnapshotGroupConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # Optional. An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#snapshotGroup for SnapshotGroup resources.
-    kind: Any = None
     # Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource's resource id.
-    self_link_with_id: Any = None
     source_info: Any = None
     # Input field for the source instant snapshot group.
     source_instant_snapshot_group: Any = None
     source_instant_snapshot_group_info: Any = None
-    # Output only. [Output Only]
-    status: Any = None
 
 @dataclasses.dataclass
 class BetaSnapshotGroupAttrs:
@@ -75,13 +63,8 @@ class BetaSnapshotGroupAttrs:
 BetaSnapshotGroup = ubx.ResourceBinding(
     wire_type="google_compute_beta_snapshot_group",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "source_info": ubx.FieldSpec(
             wire_name="source_info",
             kind="object",
@@ -93,6 +76,5 @@ BetaSnapshotGroup = ubx.ResourceBinding(
             kind="object",
             fields=_BetaSnapshotGroup_SourceInstantSnapshotGroupInfoFields,
         ),
-        "status": ubx.FieldSpec(wire_name="status"),
     },
 )

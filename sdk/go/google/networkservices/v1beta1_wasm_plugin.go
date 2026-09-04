@@ -17,48 +17,40 @@ type V1beta1WasmPlugin_UsedBy struct {
 }
 
 type V1beta1WasmPlugin_Versions struct {
-	CreateTime any
-	Description any
-	ImageDigest any
-	ImageUri any
-	Labels any
-	PluginConfigData any
+	CreateTime         any
+	Description        any
+	ImageDigest        any
+	ImageUri           any
+	Labels             any
+	PluginConfigData   any
 	PluginConfigDigest any
-	PluginConfigUri any
-	UpdateTime any
+	PluginConfigUri    any
+	UpdateTime         any
 }
 
 var V1beta1WasmPlugin_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"MinLogLevel": ubx.FieldSpec{WireName: "min_log_level"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
-
-var V1beta1WasmPlugin_UsedByFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Enable":      ubx.FieldSpec{WireName: "enable"},
+	"MinLogLevel": ubx.FieldSpec{WireName: "min_log_level"},
+	"SampleRate":  ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var V1beta1WasmPlugin_VersionsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"PluginConfigData": ubx.FieldSpec{WireName: "plugin_config_data"},
-		"PluginConfigDigest": ubx.FieldSpec{WireName: "plugin_config_digest"},
-		"PluginConfigUri": ubx.FieldSpec{WireName: "plugin_config_uri"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":         ubx.FieldSpec{WireName: "create_time"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"ImageDigest":        ubx.FieldSpec{WireName: "image_digest"},
+	"ImageUri":           ubx.FieldSpec{WireName: "image_uri"},
+	"Labels":             ubx.FieldSpec{WireName: "labels"},
+	"PluginConfigData":   ubx.FieldSpec{WireName: "plugin_config_data"},
+	"PluginConfigDigest": ubx.FieldSpec{WireName: "plugin_config_digest"},
+	"PluginConfigUri":    ubx.FieldSpec{WireName: "plugin_config_uri"},
+	"UpdateTime":         ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1beta1WasmPluginConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A human-readable description of the resource.
 	Description any
 	// Optional. The name of the customer-managed [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) to be used to encrypt the `WasmPlugin` image (provided by image_uri) and configuration (provided by plugin_config_data or plugin_config_uri) that are stored by the `Service Extensions` product at rest. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}` By default, Google Cloud automatically encrypts all data at rest using Google-owned and Google-managed encryption keys. If you need ownership and control of the keys that protect your data at rest, you can specify a customer-managed encryption key (CMEK) to encrypt your `WasmPlugin` data. For more information, see [Using customer-managed encryption keys](https://cloud.google.com/service-extensions/docs/cmek).
 	KmsKeyName any
-	// Output only. The name of the specific [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) used to encrypt the `WasmPlugin` data, if the kms_key_name field is set. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryptoKeyVersions/{version}` This is a read-only field. `WasmPlugin` data is automatically encrypted using the most recent `CryptoKeyVersion` of the `CryptoKey` provided in the `kms_key_name` field. See [Cloud KMS resources](https://cloud.google.com/kms/docs/resource-hierarchy) for more information.
-	KmsKeyVersion any
 	// Optional. Set of labels associated with the `WasmPlugin` resource. The format must comply with [the following requirements](/compute/docs/labeling-resources#requirements).
 	Labels any
 	// Specifies the logging options for the activity performed by this plugin. If logging is enabled, plugin logs are exported to Cloud Logging.
@@ -67,10 +59,6 @@ type V1beta1WasmPluginConfig struct {
 	MainVersionId any
 	// Identifier. Name of the `WasmPlugin` resource in the following format: `projects/{project}/locations/{location}/wasmPlugins/{wasm_plugin}`.
 	Name any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
-	// Output only. List of all [extensions](https://cloud.google.com/service-extensions/docs/overview) that use this `WasmPlugin` resource.
-	UsedBy any
 	// Optional. All versions of this `WasmPlugin` resource in the key-value format. The key is the resource ID, and the value is the `VersionDetails` object. Lets you create or update a `WasmPlugin` resource and its versions in a single request. When the `main_version_id` field is not empty, it must point to one of the `VersionDetails` objects in the map. If provided in a `PATCH` request, the new versions replace the previous set. Any version omitted from the `versions` field is removed. Because the `WasmPluginVersion` resource is immutable, if a `WasmPluginVersion` resource with the same name already exists and differs, the request fails. Note: In a `GET` request, this field is populated only if the field `GetWasmPluginRequest.view` is set to `WASM_PLUGIN_VIEW_FULL`.
 	Versions any
 }
@@ -103,28 +91,20 @@ type V1beta1WasmPluginAttrs struct {
 var V1beta1WasmPlugin = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_wasm_plugin",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: V1beta1WasmPlugin_LogConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1WasmPlugin_LogConfigFields,
 		},
 		"MainVersionId": ubx.FieldSpec{WireName: "main_version_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UsedBy": ubx.FieldSpec{
-			WireName: "used_by",
-			Kind: "list",
-			Fields: V1beta1WasmPlugin_UsedByFields,
-		},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Versions": ubx.FieldSpec{
 			WireName: "versions",
-			Kind: "map",
-			Fields: V1beta1WasmPlugin_VersionsFields,
+			Kind:     "map",
+			Fields:   V1beta1WasmPlugin_VersionsFields,
 		},
 	},
 }

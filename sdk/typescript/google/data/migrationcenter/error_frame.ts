@@ -615,7 +615,6 @@ export interface ErrorFrame_Violations {
 }
 
 export interface ErrorFrameConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -633,7 +632,6 @@ export interface ErrorFrameAttrs {
 export const ErrorFrame: DataSourceBinding<ErrorFrameConfig, ErrorFrameAttrs> = {
   wireType: "google_migrationcenter_error_frame",
   fields: {
-    name: "name",
     view: "view",
   },
 };

@@ -529,14 +529,10 @@ class VmwareAdminClusterConfig:
     bootstrap_cluster_membership: Any = None
     # VmwareAdminControlPlaneNodeConfig contains control plane node configuration for VMware admin cluster.
     control_plane_node: Any = None
-    # Output only. The time at which VMware admin cluster was created.
-    create_time: Any = None
     # A human readable description of this VMware admin cluster.
     description: Any = None
     # Enable advanced cluster.
     enable_advanced_cluster: Any = None
-    # Output only. The DNS name of VMware admin cluster's API server.
-    endpoint: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
     etag: Any = None
     # Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
@@ -545,8 +541,6 @@ class VmwareAdminClusterConfig:
     image_type: Any = None
     # VmwareAdminLoadBalancerConfig contains load balancer configuration for VMware admin cluster.
     load_balancer: Any = None
-    # Output only. The object name of the VMware OnPremAdminCluster custom resource. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs.
-    local_name: Any = None
     # Immutable. The VMware admin cluster resource name.
     name: Any = None
     # VmwareAdminNetworkConfig contains network configuration for VMware admin cluster.
@@ -561,16 +555,8 @@ class VmwareAdminClusterConfig:
     private_registry_config: Any = None
     # VmwareAdminProxy represents configuration for admin cluster proxy.
     proxy: Any = None
-    # Output only. If set, there are currently changes in flight to the VMware admin cluster.
-    reconciling: Any = None
-    # Output only. The current state of VMware admin cluster.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
-    # Output only. The unique identifier of the VMware admin cluster.
-    uid: Any = None
-    # Output only. The time at which VMware admin cluster was last updated.
-    update_time: Any = None
     # ValidationCheck represents the result of preflight check.
     validation_check: Any = None
     # VmwareAdminVCenterConfig contains VCenter configuration for VMware admin cluster.
@@ -669,10 +655,8 @@ VmwareAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareAdminCluster_ControlPlaneNodeFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_advanced_cluster": ubx.FieldSpec(wire_name="enable_advanced_cluster"),
-        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "fleet": ubx.FieldSpec(
             wire_name="fleet",
@@ -685,7 +669,6 @@ VmwareAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareAdminCluster_LoadBalancerFields,
         ),
-        "local_name": ubx.FieldSpec(wire_name="local_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
@@ -713,15 +696,11 @@ VmwareAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareAdminCluster_ProxyFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "validation_check": ubx.FieldSpec(
             wire_name="validation_check",
             kind="object",

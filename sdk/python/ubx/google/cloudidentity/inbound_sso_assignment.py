@@ -37,8 +37,6 @@ _InboundSsoAssignment_SignInBehaviorFields = {
 class InboundSsoAssignmentConfig:
     # Immutable. The customer. For example: `customers/C0123abc`.
     customer: Any = None
-    # Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment.
-    name: Any = None
     # Details that are applicable when `sso_mode` is set to `OIDC_SSO`.
     oidc_sso_info: Any = None
     # Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set.
@@ -79,7 +77,6 @@ InboundSsoAssignment = ubx.ResourceBinding(
     wire_type="google_cloudidentity_inbound_sso_assignment",
     fields={
         "customer": ubx.FieldSpec(wire_name="customer"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "oidc_sso_info": ubx.FieldSpec(
             wire_name="oidc_sso_info",
             kind="object",

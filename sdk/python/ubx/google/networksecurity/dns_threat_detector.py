@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DnsThreatDetectorConfig:
-    # Output only. Create time stamp.
-    create_time: Any = None
     # Optional. A list of network resource names which aren't monitored by this DnsThreatDetector. Example: `projects/PROJECT_ID/global/networks/NETWORK_NAME`.
     excluded_networks: Any = None
     # Optional. Any labels associated with the DnsThreatDetector, listed as key value pairs.
@@ -18,8 +16,6 @@ class DnsThreatDetectorConfig:
     name: Any = None
     # Required. The provider used for DNS threat analysis.
     provider: Any = None
-    # Output only. Update time stamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DnsThreatDetectorAttrs:
@@ -39,11 +35,9 @@ class DnsThreatDetectorAttrs:
 DnsThreatDetector = ubx.ResourceBinding(
     wire_type="google_networksecurity_dns_threat_detector",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "excluded_networks": ubx.FieldSpec(wire_name="excluded_networks"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "provider": ubx.FieldSpec(wire_name="provider"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

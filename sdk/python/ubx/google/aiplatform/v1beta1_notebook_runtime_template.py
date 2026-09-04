@@ -205,8 +205,6 @@ _V1beta1NotebookRuntimeTemplate_SoftwareConfigFields = {
 
 @dataclasses.dataclass
 class V1beta1NotebookRuntimeTemplateConfig:
-    # Output only. Timestamp when this NotebookRuntimeTemplate was created.
-    create_time: Any = None
     # Represents the spec of persistent disk and hyperdisk options.
     data_persistent_disk_spec: Any = None
     # The description of the NotebookRuntimeTemplate.
@@ -221,8 +219,6 @@ class V1beta1NotebookRuntimeTemplateConfig:
     euc_config: Any = None
     # The idle shutdown configuration of NotebookRuntimeTemplate, which contains the idle_timeout as required field.
     idle_shutdown_config: Any = None
-    # Output only. Deprecated: This field has no behavior. Use notebook_runtime_type = 'ONE_CLICK' instead. The default template to use if not specified.
-    is_default: Any = None
     # The labels with user-defined metadata to organize the NotebookRuntimeTemplates. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
     labels: Any = None
     # Specification of a single machine.
@@ -243,8 +239,6 @@ class V1beta1NotebookRuntimeTemplateConfig:
     shielded_vm_config: Any = None
     # Notebook Software Config. This is passed to the backend when user makes software configurations in UI.
     software_config: Any = None
-    # Output only. Timestamp when this NotebookRuntimeTemplate was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1NotebookRuntimeTemplateAttrs:
@@ -292,7 +286,6 @@ class V1beta1NotebookRuntimeTemplateAttrs:
 V1beta1NotebookRuntimeTemplate = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_notebook_runtime_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_persistent_disk_spec": ubx.FieldSpec(
             wire_name="data_persistent_disk_spec",
             kind="object",
@@ -316,7 +309,6 @@ V1beta1NotebookRuntimeTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1NotebookRuntimeTemplate_IdleShutdownConfigFields,
         ),
-        "is_default": ubx.FieldSpec(wire_name="is_default"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "machine_spec": ubx.FieldSpec(
             wire_name="machine_spec",
@@ -347,6 +339,5 @@ V1beta1NotebookRuntimeTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1NotebookRuntimeTemplate_SoftwareConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

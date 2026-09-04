@@ -15,17 +15,17 @@ type WorkforcePool_AccessRestrictions struct {
 }
 
 var WorkforcePool_AccessRestrictions_AllowedServicesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var WorkforcePool_AccessRestrictionsFields = ubx.FieldMap{
-		"AllowedServices": ubx.FieldSpec{
-			WireName: "allowed_services",
-			Kind: "list",
-			Fields: WorkforcePool_AccessRestrictions_AllowedServicesFields,
-		},
-		"DisableProgrammaticSignin": ubx.FieldSpec{WireName: "disable_programmatic_signin"},
-	}
+	"AllowedServices": ubx.FieldSpec{
+		WireName: "allowed_services",
+		Kind:     "list",
+		Fields:   WorkforcePool_AccessRestrictions_AllowedServicesFields,
+	},
+	"DisableProgrammaticSignin": ubx.FieldSpec{WireName: "disable_programmatic_signin"},
+}
 
 type WorkforcePoolConfig struct {
 	// Access related restrictions on the workforce pool.
@@ -36,16 +36,12 @@ type WorkforcePoolConfig struct {
 	Disabled any
 	// Optional. A display name for the pool. Cannot exceed 32 characters.
 	DisplayName any
-	// Output only. Time after which the workforce pool will be permanently purged and cannot be recovered.
-	ExpireTime any
 	// Identifier. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
 	Name any
 	// Immutable. The resource name of the parent. Format: `organizations/{org-id}`.
 	Parent any
 	// Optional. Duration that the Google Cloud access tokens, console sign-in sessions, and `gcloud` sign-in sessions from this pool are valid. Must be greater than 15 minutes (900s) and less than 12 hours (43200s). If `session_duration` is not configured, minted credentials have a default duration of one hour (3600s). For SAML providers, the lifetime of the token is the minimum of the `session_duration` and the `SessionNotOnOrAfter` claim in the SAML assertion.
 	SessionDuration any
-	// Output only. The state of the pool.
-	State any
 }
 
 type WorkforcePoolAttrs struct {
@@ -74,16 +70,14 @@ var WorkforcePool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRestrictions": ubx.FieldSpec{
 			WireName: "access_restrictions",
-			Kind: "object",
-			Fields: WorkforcePool_AccessRestrictionsFields,
+			Kind:     "object",
+			Fields:   WorkforcePool_AccessRestrictionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Disabled":        ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Parent":          ubx.FieldSpec{WireName: "parent"},
 		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

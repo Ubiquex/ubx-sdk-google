@@ -79,12 +79,12 @@ type Device_ActiveConfig struct {
 
 type Device_CurrentChannels_FrequencyRange struct {
 	HighFrequencyMhz any
-	LowFrequencyMhz any
+	LowFrequencyMhz  any
 }
 
 type Device_CurrentChannels struct {
 	FrequencyRange any
-	Score any
+	Score          any
 }
 
 type Device_DeviceMetadata_NrqzValidation struct {
@@ -114,20 +114,20 @@ type Device_DeviceMetadata struct {
 }
 
 type Device_Grants_MoveList struct {
-	DpaId any
+	DpaId          any
 	FrequencyRange any
 }
 
 type Device_Grants struct {
-	ChannelType any
-	ExpireTime any
-	FrequencyRange any
-	GrantId any
+	ChannelType                     any
+	ExpireTime                      any
+	FrequencyRange                  any
+	GrantId                         any
 	LastHeartbeatTransmitExpireTime any
-	MaxEirp any
-	MoveList any
-	State any
-	SuspensionReason any
+	MaxEirp                         any
+	MoveList                        any
+	State                           any
+	SuspensionReason                any
 }
 
 type DeviceConfig struct {
@@ -149,7 +149,7 @@ type DeviceAttrs struct {
 	GrantRangeAllowlists any
 	// Output only. Grants held by the device.
 	Grants any
-	Name any
+	Name   any
 	// Information about the device configuration.
 	PreloadedConfig any
 	// A serial number assigned to the device by the device manufacturer.

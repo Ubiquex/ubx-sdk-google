@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Upgrade_ComponentUpgrades struct {
 	ComponentType any
-	State any
+	State         any
 }
 
 type Upgrade_Schedule_Constraints_DisallowedIntervals_EndTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type Upgrade_Schedule_Constraints_DisallowedIntervals struct {
-	EndDay any
-	EndTime any
-	StartDay any
+	EndDay    any
+	EndTime   any
+	StartDay  any
 	StartTime any
 }
 
@@ -42,7 +42,7 @@ type Upgrade_Schedule_Constraints struct {
 
 type Upgrade_Schedule_WeeklyWindows struct {
 	DayOfWeek any
-	Duration any
+	Duration  any
 	StartTime any
 }
 
@@ -60,7 +60,6 @@ type Upgrade_Schedule struct {
 }
 
 type UpgradeConfig struct {
-	Name any
 }
 
 type UpgradeAttrs struct {
@@ -97,7 +96,5 @@ type UpgradeAttrs struct {
 
 var Upgrade = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_upgrade",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -103,8 +103,6 @@ _BetaRegionHealthCheck_SslHealthCheckFields = {
 class BetaRegionHealthCheckConfig:
     # How often (in seconds) to send a health check. The default value is 5 seconds.
     check_interval_sec: Any = None
-    # Output only. [Output Only] Creation timestamp in3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     grpc_health_check: Any = None
@@ -116,14 +114,10 @@ class BetaRegionHealthCheckConfig:
     https_health_check: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. Type of the resource.
-    kind: Any = None
     # Configuration of logging on a health check. If logging is enabled, logs will be exported to Stackdriver.
     log_config: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. For example, a name that is 1-63 characters long, matches the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`, and otherwise complies with RFC1035. This regular expression describes a name where the first character is a lowercase letter, and all following characters are a dash, lowercase letter, or digit, except the last character, which isn't a dash.
     name: Any = None
-    # Output only. [Output Only] Region where the health check resides. Not applicable to global health checks.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
     # The list of cloud regions from which health checks are performed. If any regions are specified, then exactly 3 regions should be specified. The region names must be valid names of Google Cloud regions. This can only be set for global health check. If this list is non-empty, then there are restrictions on what other health check fields are supported and what other resources can use this health check: - SSL, HTTP2, GRPC, and GRPC_WITH_TLS protocols are not supported. - The TCP request field is not supported. - The proxyHeader field for HTTP, HTTPS, and TCP is not supported. - The checkIntervalSec field must be at least 30. - The health check cannot be used with BackendService nor with managed instance group auto-healing.
@@ -179,7 +173,6 @@ BetaRegionHealthCheck = ubx.ResourceBinding(
     wire_type="google_compute_beta_region_health_check",
     fields={
         "check_interval_sec": ubx.FieldSpec(wire_name="check_interval_sec"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "grpc_health_check": ubx.FieldSpec(
             wire_name="grpc_health_check",
@@ -208,14 +201,12 @@ BetaRegionHealthCheck = ubx.ResourceBinding(
             fields=_BetaRegionHealthCheck_Http2HealthCheckFields,
         ),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "log_config": ubx.FieldSpec(
             wire_name="log_config",
             kind="object",
             fields=_BetaRegionHealthCheck_LogConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "source_regions": ubx.FieldSpec(wire_name="source_regions"),
         "ssl_health_check": ubx.FieldSpec(

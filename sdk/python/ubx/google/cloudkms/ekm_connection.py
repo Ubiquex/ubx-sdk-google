@@ -50,16 +50,12 @@ _EkmConnection_ServiceResolversFields = {
 
 @dataclasses.dataclass
 class EkmConnectionConfig:
-    # Output only. The time at which the EkmConnection was created.
-    create_time: Any = None
     # Optional. Identifies the EKM Crypto Space that this EkmConnection maps to. Note: This field is required if KeyManagementMode is CLOUD_KMS.
     crypto_space_path: Any = None
     # Optional. Etag of the currently stored EkmConnection.
     etag: Any = None
     # Optional. Describes who can perform control plane operations on the EKM. If unset, this defaults to MANUAL.
     key_management_mode: Any = None
-    # Output only. The resource name for the EkmConnection in the format `projects/*/locations/*/ekmConnections/*`.
-    name: Any = None
     # Optional. A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported.
     service_resolvers: Any = None
 
@@ -81,11 +77,9 @@ class EkmConnectionAttrs:
 EkmConnection = ubx.ResourceBinding(
     wire_type="google_cloudkms_ekm_connection",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_space_path": ubx.FieldSpec(wire_name="crypto_space_path"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "key_management_mode": ubx.FieldSpec(wire_name="key_management_mode"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "service_resolvers": ubx.FieldSpec(
             wire_name="service_resolvers",
             kind="list",

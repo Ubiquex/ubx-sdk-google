@@ -50,7 +50,7 @@ class V1alpha1Object_SourceObject:
 
 @dataclasses.dataclass
 class V1alpha1ObjectConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1alpha1ObjectAttrs:
@@ -71,6 +71,5 @@ class V1alpha1ObjectAttrs:
 V1alpha1Object = ubx.DataSourceBinding(
     wire_type="google_datastream_v1alpha1_object",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

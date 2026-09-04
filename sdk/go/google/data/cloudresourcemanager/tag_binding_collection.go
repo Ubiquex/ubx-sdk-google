@@ -12,7 +12,7 @@ type TagBindingCollectionAttrs struct {
 	Etag any
 	// The full resource name of the resource the TagBindings are bound to. E.g. `//cloudresourcemanager.googleapis.com/projects/123`
 	FullResourceName any
-	Name any
+	Name             any
 	// Tag keys/values directly bound to this resource, specified in namespaced format. For example: "123/environment": "production"
 	Tags any
 }

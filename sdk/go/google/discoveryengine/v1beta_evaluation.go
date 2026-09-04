@@ -19,20 +19,20 @@ type V1betaEvaluation_EvaluationSpec_QuerySetSpec struct {
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
 	AttributeValue any
-	BoostAmount any
+	BoostAmount    any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType any
-	ControlPoints any
-	FieldName any
+	AttributeType     any
+	ControlPoints     any
+	FieldName         any
 	InterpolationType any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs struct {
-	Boost any
+	Boost            any
 	BoostControlSpec any
-	Condition any
+	Condition        any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec struct {
@@ -123,9 +123,9 @@ type V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec struct {
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_CrowdingSpecs struct {
-	Field any
+	Field    any
 	MaxCount any
-	Mode any
+	Mode     any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_CustomRankingParams struct {
@@ -134,11 +134,11 @@ type V1betaEvaluation_EvaluationSpec_SearchRequest_CustomRankingParams struct {
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_DataStoreSpecs struct {
-	BoostSpec any
+	BoostSpec             any
 	CustomSearchOperators any
-	DataStore any
-	Filter any
-	NumResults any
+	DataStore             any
+	Filter                any
+	NumResults            any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_DisplaySpec struct {
@@ -148,7 +148,7 @@ type V1betaEvaluation_EvaluationSpec_SearchRequest_DisplaySpec struct {
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec_EmbeddingVectors struct {
 	FieldPath any
-	Vector any
+	Vector    any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec struct {
@@ -159,25 +159,25 @@ type V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec struct {
 type V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKey_Intervals struct {
 	ExclusiveMaximum any
 	ExclusiveMinimum any
-	Maximum any
-	Minimum any
+	Maximum          any
+	Minimum          any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKey struct {
-	CaseInsensitive any
-	Contains any
-	Intervals any
-	Key any
-	OrderBy any
-	Prefixes any
+	CaseInsensitive  any
+	Contains         any
+	Intervals        any
+	Key              any
+	OrderBy          any
+	Prefixes         any
 	RestrictedValues any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs struct {
 	EnableDynamicPosition any
-	ExcludedFilterKeys any
-	FacetKey any
-	Limit any
+	ExcludedFilterKeys    any
+	FacetKey              any
+	Limit                 any
 }
 
 type V1betaEvaluation_EvaluationSpec_SearchRequest_ImageQuery struct {
@@ -392,469 +392,461 @@ type V1betaEvaluation_QualityMetrics struct {
 }
 
 var V1betaEvaluation_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1betaEvaluation_EvaluationSpec_QuerySetSpecFields = ubx.FieldMap{
-		"SampleQuerySet": ubx.FieldSpec{WireName: "sample_query_set"},
-	}
+	"SampleQuerySet": ubx.FieldSpec{WireName: "sample_query_set"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields = ubx.FieldMap{
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"BoostAmount": ubx.FieldSpec{WireName: "boost_amount"},
-	}
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+	"BoostAmount":    ubx.FieldSpec{WireName: "boost_amount"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpecFields = ubx.FieldMap{
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-		"ControlPoints": ubx.FieldSpec{
-			WireName: "control_points",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
-		},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
-	}
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+	"ControlPoints": ubx.FieldSpec{
+		WireName: "control_points",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
+	},
+	"FieldName":         ubx.FieldSpec{WireName: "field_name"},
+	"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecsFields = ubx.FieldMap{
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"BoostControlSpec": ubx.FieldSpec{
-			WireName: "boost_control_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpecFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"Boost": ubx.FieldSpec{WireName: "boost"},
+	"BoostControlSpec": ubx.FieldSpec{
+		WireName: "boost_control_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecs_BoostControlSpecFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpecFields = ubx.FieldMap{
-		"ConditionBoostSpecs": ubx.FieldSpec{
-			WireName: "condition_boost_specs",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecsFields,
-		},
-	}
+	"ConditionBoostSpecs": ubx.FieldSpec{
+		WireName: "condition_boost_specs",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpec_ConditionBoostSpecsFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ChunkSpecFields = ubx.FieldMap{
-		"NumNextChunks": ubx.FieldSpec{WireName: "num_next_chunks"},
-		"NumPreviousChunks": ubx.FieldSpec{WireName: "num_previous_chunks"},
-	}
+	"NumNextChunks":     ubx.FieldSpec{WireName: "num_next_chunks"},
+	"NumPreviousChunks": ubx.FieldSpec{WireName: "num_previous_chunks"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ExtractiveContentSpecFields = ubx.FieldMap{
-		"MaxExtractiveAnswerCount": ubx.FieldSpec{WireName: "max_extractive_answer_count"},
-		"MaxExtractiveSegmentCount": ubx.FieldSpec{WireName: "max_extractive_segment_count"},
-		"NumNextSegments": ubx.FieldSpec{WireName: "num_next_segments"},
-		"NumPreviousSegments": ubx.FieldSpec{WireName: "num_previous_segments"},
-		"ReturnExtractiveSegmentScore": ubx.FieldSpec{WireName: "return_extractive_segment_score"},
-	}
+	"MaxExtractiveAnswerCount":     ubx.FieldSpec{WireName: "max_extractive_answer_count"},
+	"MaxExtractiveSegmentCount":    ubx.FieldSpec{WireName: "max_extractive_segment_count"},
+	"NumNextSegments":              ubx.FieldSpec{WireName: "num_next_segments"},
+	"NumPreviousSegments":          ubx.FieldSpec{WireName: "num_previous_segments"},
+	"ReturnExtractiveSegmentScore": ubx.FieldSpec{WireName: "return_extractive_segment_score"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SnippetSpecFields = ubx.FieldMap{
-		"MaxSnippetCount": ubx.FieldSpec{WireName: "max_snippet_count"},
-		"ReferenceOnly": ubx.FieldSpec{WireName: "reference_only"},
-		"ReturnSnippet": ubx.FieldSpec{WireName: "return_snippet"},
-	}
+	"MaxSnippetCount": ubx.FieldSpec{WireName: "max_snippet_count"},
+	"ReferenceOnly":   ubx.FieldSpec{WireName: "reference_only"},
+	"ReturnSnippet":   ubx.FieldSpec{WireName: "return_snippet"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpecFields = ubx.FieldMap{
-		"Preamble": ubx.FieldSpec{WireName: "preamble"},
-	}
+	"Preamble": ubx.FieldSpec{WireName: "preamble"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpecFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_MultimodalSpecFields = ubx.FieldMap{
-		"ImageSource": ubx.FieldSpec{WireName: "image_source"},
-	}
+	"ImageSource": ubx.FieldSpec{WireName: "image_source"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpecFields = ubx.FieldMap{
-		"IgnoreAdversarialQuery": ubx.FieldSpec{WireName: "ignore_adversarial_query"},
-		"IgnoreJailBreakingQuery": ubx.FieldSpec{WireName: "ignore_jail_breaking_query"},
-		"IgnoreLowRelevantContent": ubx.FieldSpec{WireName: "ignore_low_relevant_content"},
-		"IgnoreNonSummarySeekingQuery": ubx.FieldSpec{WireName: "ignore_non_summary_seeking_query"},
-		"IncludeCitations": ubx.FieldSpec{WireName: "include_citations"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"ModelPromptSpec": ubx.FieldSpec{
-			WireName: "model_prompt_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpecFields,
-		},
-		"ModelSpec": ubx.FieldSpec{
-			WireName: "model_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpecFields,
-		},
-		"MultimodalSpec": ubx.FieldSpec{
-			WireName: "multimodal_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_MultimodalSpecFields,
-		},
-		"SummaryResultCount": ubx.FieldSpec{WireName: "summary_result_count"},
-		"UseSemanticChunks": ubx.FieldSpec{WireName: "use_semantic_chunks"},
-	}
+	"IgnoreAdversarialQuery":       ubx.FieldSpec{WireName: "ignore_adversarial_query"},
+	"IgnoreJailBreakingQuery":      ubx.FieldSpec{WireName: "ignore_jail_breaking_query"},
+	"IgnoreLowRelevantContent":     ubx.FieldSpec{WireName: "ignore_low_relevant_content"},
+	"IgnoreNonSummarySeekingQuery": ubx.FieldSpec{WireName: "ignore_non_summary_seeking_query"},
+	"IncludeCitations":             ubx.FieldSpec{WireName: "include_citations"},
+	"LanguageCode":                 ubx.FieldSpec{WireName: "language_code"},
+	"ModelPromptSpec": ubx.FieldSpec{
+		WireName: "model_prompt_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelPromptSpecFields,
+	},
+	"ModelSpec": ubx.FieldSpec{
+		WireName: "model_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_ModelSpecFields,
+	},
+	"MultimodalSpec": ubx.FieldSpec{
+		WireName: "multimodal_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpec_MultimodalSpecFields,
+	},
+	"SummaryResultCount": ubx.FieldSpec{WireName: "summary_result_count"},
+	"UseSemanticChunks":  ubx.FieldSpec{WireName: "use_semantic_chunks"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpecFields = ubx.FieldMap{
-		"ChunkSpec": ubx.FieldSpec{
-			WireName: "chunk_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ChunkSpecFields,
-		},
-		"ExtractiveContentSpec": ubx.FieldSpec{
-			WireName: "extractive_content_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ExtractiveContentSpecFields,
-		},
-		"SearchResultMode": ubx.FieldSpec{WireName: "search_result_mode"},
-		"SnippetSpec": ubx.FieldSpec{
-			WireName: "snippet_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SnippetSpecFields,
-		},
-		"SummarySpec": ubx.FieldSpec{
-			WireName: "summary_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpecFields,
-		},
-	}
+	"ChunkSpec": ubx.FieldSpec{
+		WireName: "chunk_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ChunkSpecFields,
+	},
+	"ExtractiveContentSpec": ubx.FieldSpec{
+		WireName: "extractive_content_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_ExtractiveContentSpecFields,
+	},
+	"SearchResultMode": ubx.FieldSpec{WireName: "search_result_mode"},
+	"SnippetSpec": ubx.FieldSpec{
+		WireName: "snippet_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SnippetSpecFields,
+	},
+	"SummarySpec": ubx.FieldSpec{
+		WireName: "summary_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpec_SummarySpecFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_CrowdingSpecsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Field":    ubx.FieldSpec{WireName: "field"},
+	"MaxCount": ubx.FieldSpec{WireName: "max_count"},
+	"Mode":     ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_CustomRankingParamsFields = ubx.FieldMap{
-		"ExpressionsToPrecompute": ubx.FieldSpec{WireName: "expressions_to_precompute"},
-	}
+	"ExpressionsToPrecompute": ubx.FieldSpec{WireName: "expressions_to_precompute"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_DataStoreSpecsFields = ubx.FieldMap{
-		"BoostSpec": ubx.FieldSpec{
-			WireName: "boost_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpecFields,
-		},
-		"CustomSearchOperators": ubx.FieldSpec{WireName: "custom_search_operators"},
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"NumResults": ubx.FieldSpec{WireName: "num_results"},
-	}
+	"BoostSpec": ubx.FieldSpec{
+		WireName: "boost_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpecFields,
+	},
+	"CustomSearchOperators": ubx.FieldSpec{WireName: "custom_search_operators"},
+	"DataStore":             ubx.FieldSpec{WireName: "data_store"},
+	"Filter":                ubx.FieldSpec{WireName: "filter"},
+	"NumResults":            ubx.FieldSpec{WireName: "num_results"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_DisplaySpecFields = ubx.FieldMap{
-		"MatchHighlightingCondition": ubx.FieldSpec{WireName: "match_highlighting_condition"},
-	}
+	"MatchHighlightingCondition": ubx.FieldSpec{WireName: "match_highlighting_condition"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec_EmbeddingVectorsFields = ubx.FieldMap{
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Vector": ubx.FieldSpec{WireName: "vector"},
-	}
+	"FieldPath": ubx.FieldSpec{WireName: "field_path"},
+	"Vector":    ubx.FieldSpec{WireName: "vector"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpecFields = ubx.FieldMap{
-		"EmbeddingVectors": ubx.FieldSpec{
-			WireName: "embedding_vectors",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec_EmbeddingVectorsFields,
-		},
-	}
+	"EmbeddingVectors": ubx.FieldSpec{
+		WireName: "embedding_vectors",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpec_EmbeddingVectorsFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKey_IntervalsFields = ubx.FieldMap{
-		"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
-		"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-	}
+	"ExclusiveMaximum": ubx.FieldSpec{WireName: "exclusive_maximum"},
+	"ExclusiveMinimum": ubx.FieldSpec{WireName: "exclusive_minimum"},
+	"Maximum":          ubx.FieldSpec{WireName: "maximum"},
+	"Minimum":          ubx.FieldSpec{WireName: "minimum"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKeyFields = ubx.FieldMap{
-		"CaseInsensitive": ubx.FieldSpec{WireName: "case_insensitive"},
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Intervals": ubx.FieldSpec{
-			WireName: "intervals",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKey_IntervalsFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"Prefixes": ubx.FieldSpec{WireName: "prefixes"},
-		"RestrictedValues": ubx.FieldSpec{WireName: "restricted_values"},
-	}
+	"CaseInsensitive": ubx.FieldSpec{WireName: "case_insensitive"},
+	"Contains":        ubx.FieldSpec{WireName: "contains"},
+	"Intervals": ubx.FieldSpec{
+		WireName: "intervals",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKey_IntervalsFields,
+	},
+	"Key":              ubx.FieldSpec{WireName: "key"},
+	"OrderBy":          ubx.FieldSpec{WireName: "order_by"},
+	"Prefixes":         ubx.FieldSpec{WireName: "prefixes"},
+	"RestrictedValues": ubx.FieldSpec{WireName: "restricted_values"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecsFields = ubx.FieldMap{
-		"EnableDynamicPosition": ubx.FieldSpec{WireName: "enable_dynamic_position"},
-		"ExcludedFilterKeys": ubx.FieldSpec{WireName: "excluded_filter_keys"},
-		"FacetKey": ubx.FieldSpec{
-			WireName: "facet_key",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKeyFields,
-		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-	}
+	"EnableDynamicPosition": ubx.FieldSpec{WireName: "enable_dynamic_position"},
+	"ExcludedFilterKeys":    ubx.FieldSpec{WireName: "excluded_filter_keys"},
+	"FacetKey": ubx.FieldSpec{
+		WireName: "facet_key",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecs_FacetKeyFields,
+	},
+	"Limit": ubx.FieldSpec{WireName: "limit"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_ImageQueryFields = ubx.FieldMap{
-		"ImageBytes": ubx.FieldSpec{WireName: "image_bytes"},
-	}
+	"ImageBytes": ubx.FieldSpec{WireName: "image_bytes"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_NaturalLanguageQueryUnderstandingSpecFields = ubx.FieldMap{
-		"AllowedFieldNames": ubx.FieldSpec{WireName: "allowed_field_names"},
-		"ExtractedFilterBehavior": ubx.FieldSpec{WireName: "extracted_filter_behavior"},
-		"FilterExtractionCondition": ubx.FieldSpec{WireName: "filter_extraction_condition"},
-		"GeoSearchQueryDetectionFieldNames": ubx.FieldSpec{WireName: "geo_search_query_detection_field_names"},
-	}
+	"AllowedFieldNames":                 ubx.FieldSpec{WireName: "allowed_field_names"},
+	"ExtractedFilterBehavior":           ubx.FieldSpec{WireName: "extracted_filter_behavior"},
+	"FilterExtractionCondition":         ubx.FieldSpec{WireName: "filter_extraction_condition"},
+	"GeoSearchQueryDetectionFieldNames": ubx.FieldSpec{WireName: "geo_search_query_detection_field_names"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_PersonalizationSpecFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_QueryExpansionSpecFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"PinUnexpandedResults": ubx.FieldSpec{WireName: "pin_unexpanded_results"},
-	}
+	"Condition":            ubx.FieldSpec{WireName: "condition"},
+	"PinUnexpandedResults": ubx.FieldSpec{WireName: "pin_unexpanded_results"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpec_KeywordSearchThresholdFields = ubx.FieldMap{
-		"RelevanceThreshold": ubx.FieldSpec{WireName: "relevance_threshold"},
-		"SemanticRelevanceThreshold": ubx.FieldSpec{WireName: "semantic_relevance_threshold"},
-	}
+	"RelevanceThreshold":         ubx.FieldSpec{WireName: "relevance_threshold"},
+	"SemanticRelevanceThreshold": ubx.FieldSpec{WireName: "semantic_relevance_threshold"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpecFields = ubx.FieldMap{
-		"KeywordSearchThreshold": ubx.FieldSpec{
-			WireName: "keyword_search_threshold",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpec_KeywordSearchThresholdFields,
-		},
-		"SemanticSearchThreshold": ubx.FieldSpec{
-			WireName: "semantic_search_threshold",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpec_KeywordSearchThresholdFields,
-		},
-	}
+	"KeywordSearchThreshold": ubx.FieldSpec{
+		WireName: "keyword_search_threshold",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpec_KeywordSearchThresholdFields,
+	},
+	"SemanticSearchThreshold": ubx.FieldSpec{
+		WireName: "semantic_search_threshold",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpec_KeywordSearchThresholdFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceScoreSpecFields = ubx.FieldMap{
-		"ReturnRelevanceScore": ubx.FieldSpec{WireName: "return_relevance_score"},
-	}
+	"ReturnRelevanceScore": ubx.FieldSpec{WireName: "return_relevance_score"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAddonSpecFields = ubx.FieldMap{
-		"DisableGenerativeAnswerAddOn": ubx.FieldSpec{WireName: "disable_generative_answer_add_on"},
-		"DisableKpiPersonalizationAddOn": ubx.FieldSpec{WireName: "disable_kpi_personalization_add_on"},
-		"DisableSemanticAddOn": ubx.FieldSpec{WireName: "disable_semantic_add_on"},
-	}
+	"DisableGenerativeAnswerAddOn":   ubx.FieldSpec{WireName: "disable_generative_answer_add_on"},
+	"DisableKpiPersonalizationAddOn": ubx.FieldSpec{WireName: "disable_kpi_personalization_add_on"},
+	"DisableSemanticAddOn":           ubx.FieldSpec{WireName: "disable_semantic_add_on"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAsYouTypeSpecFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_SessionSpecFields = ubx.FieldMap{
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"SearchResultPersistenceCount": ubx.FieldSpec{WireName: "search_result_persistence_count"},
-	}
+	"QueryId":                      ubx.FieldSpec{WireName: "query_id"},
+	"SearchResultPersistenceCount": ubx.FieldSpec{WireName: "search_result_persistence_count"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocation_PointFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocationFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Point": ubx.FieldSpec{
-			WireName: "point",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocation_PointFields,
-		},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Point": ubx.FieldSpec{
+		WireName: "point",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocation_PointFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfoFields = ubx.FieldMap{
-		"PreciseLocation": ubx.FieldSpec{
-			WireName: "precise_location",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocationFields,
-		},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"PreciseLocation": ubx.FieldSpec{
+		WireName: "precise_location",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfo_PreciseLocationFields,
+	},
+	"TimeZone":  ubx.FieldSpec{WireName: "time_zone"},
+	"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
+	"UserId":    ubx.FieldSpec{WireName: "user_id"},
+}
 
 var V1betaEvaluation_EvaluationSpec_SearchRequestFields = ubx.FieldMap{
-		"BoostSpec": ubx.FieldSpec{
-			WireName: "boost_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpecFields,
-		},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"CanonicalFilter": ubx.FieldSpec{WireName: "canonical_filter"},
-		"ContentSearchSpec": ubx.FieldSpec{
-			WireName: "content_search_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpecFields,
-		},
-		"CrowdingSpecs": ubx.FieldSpec{
-			WireName: "crowding_specs",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_CrowdingSpecsFields,
-		},
-		"CustomRankingParams": ubx.FieldSpec{
-			WireName: "custom_ranking_params",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_CustomRankingParamsFields,
-		},
-		"DataStoreSpecs": ubx.FieldSpec{
-			WireName: "data_store_specs",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_DataStoreSpecsFields,
-		},
-		"DisplaySpec": ubx.FieldSpec{
-			WireName: "display_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_DisplaySpecFields,
-		},
-		"EmbeddingSpec": ubx.FieldSpec{
-			WireName: "embedding_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpecFields,
-		},
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"FacetSpecs": ubx.FieldSpec{
-			WireName: "facet_specs",
-			Kind: "list",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecsFields,
-		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"ImageQuery": ubx.FieldSpec{
-			WireName: "image_query",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_ImageQueryFields,
-		},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"NaturalLanguageQueryUnderstandingSpec": ubx.FieldSpec{
-			WireName: "natural_language_query_understanding_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_NaturalLanguageQueryUnderstandingSpecFields,
-		},
-		"NumResultsPerDataStore": ubx.FieldSpec{WireName: "num_results_per_data_store"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"OneBoxPageSize": ubx.FieldSpec{WireName: "one_box_page_size"},
-		"OrderBy": ubx.FieldSpec{WireName: "order_by"},
-		"PageCategories": ubx.FieldSpec{WireName: "page_categories"},
-		"PageSize": ubx.FieldSpec{WireName: "page_size"},
-		"PageToken": ubx.FieldSpec{WireName: "page_token"},
-		"Params": ubx.FieldSpec{WireName: "params"},
-		"PersonalizationSpec": ubx.FieldSpec{
-			WireName: "personalization_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_PersonalizationSpecFields,
-		},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"QueryExpansionSpec": ubx.FieldSpec{
-			WireName: "query_expansion_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_QueryExpansionSpecFields,
-		},
-		"RankingExpression": ubx.FieldSpec{WireName: "ranking_expression"},
-		"RankingExpressionBackend": ubx.FieldSpec{WireName: "ranking_expression_backend"},
-		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
-		"RelevanceFilterSpec": ubx.FieldSpec{
-			WireName: "relevance_filter_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpecFields,
-		},
-		"RelevanceScoreSpec": ubx.FieldSpec{
-			WireName: "relevance_score_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceScoreSpecFields,
-		},
-		"RelevanceThreshold": ubx.FieldSpec{WireName: "relevance_threshold"},
-		"SafeSearch": ubx.FieldSpec{WireName: "safe_search"},
-		"SearchAddonSpec": ubx.FieldSpec{
-			WireName: "search_addon_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAddonSpecFields,
-		},
-		"SearchAsYouTypeSpec": ubx.FieldSpec{
-			WireName: "search_as_you_type_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAsYouTypeSpecFields,
-		},
-		"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
-		"Session": ubx.FieldSpec{WireName: "session"},
-		"SessionSpec": ubx.FieldSpec{
-			WireName: "session_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_SessionSpecFields,
-		},
-		"SpellCorrectionSpec": ubx.FieldSpec{
-			WireName: "spell_correction_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_PersonalizationSpecFields,
-		},
-		"UserInfo": ubx.FieldSpec{
-			WireName: "user_info",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfoFields,
-		},
-		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
-		"UserPseudoId": ubx.FieldSpec{WireName: "user_pseudo_id"},
-	}
+	"BoostSpec": ubx.FieldSpec{
+		WireName: "boost_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_BoostSpecFields,
+	},
+	"Branch":          ubx.FieldSpec{WireName: "branch"},
+	"CanonicalFilter": ubx.FieldSpec{WireName: "canonical_filter"},
+	"ContentSearchSpec": ubx.FieldSpec{
+		WireName: "content_search_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ContentSearchSpecFields,
+	},
+	"CrowdingSpecs": ubx.FieldSpec{
+		WireName: "crowding_specs",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_CrowdingSpecsFields,
+	},
+	"CustomRankingParams": ubx.FieldSpec{
+		WireName: "custom_ranking_params",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_CustomRankingParamsFields,
+	},
+	"DataStoreSpecs": ubx.FieldSpec{
+		WireName: "data_store_specs",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_DataStoreSpecsFields,
+	},
+	"DisplaySpec": ubx.FieldSpec{
+		WireName: "display_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_DisplaySpecFields,
+	},
+	"EmbeddingSpec": ubx.FieldSpec{
+		WireName: "embedding_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_EmbeddingSpecFields,
+	},
+	"Entity": ubx.FieldSpec{WireName: "entity"},
+	"FacetSpecs": ubx.FieldSpec{
+		WireName: "facet_specs",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_FacetSpecsFields,
+	},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+	"ImageQuery": ubx.FieldSpec{
+		WireName: "image_query",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_ImageQueryFields,
+	},
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"NaturalLanguageQueryUnderstandingSpec": ubx.FieldSpec{
+		WireName: "natural_language_query_understanding_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_NaturalLanguageQueryUnderstandingSpecFields,
+	},
+	"NumResultsPerDataStore": ubx.FieldSpec{WireName: "num_results_per_data_store"},
+	"Offset":                 ubx.FieldSpec{WireName: "offset"},
+	"OneBoxPageSize":         ubx.FieldSpec{WireName: "one_box_page_size"},
+	"OrderBy":                ubx.FieldSpec{WireName: "order_by"},
+	"PageCategories":         ubx.FieldSpec{WireName: "page_categories"},
+	"PageSize":               ubx.FieldSpec{WireName: "page_size"},
+	"PageToken":              ubx.FieldSpec{WireName: "page_token"},
+	"Params":                 ubx.FieldSpec{WireName: "params"},
+	"PersonalizationSpec": ubx.FieldSpec{
+		WireName: "personalization_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_PersonalizationSpecFields,
+	},
+	"Query": ubx.FieldSpec{WireName: "query"},
+	"QueryExpansionSpec": ubx.FieldSpec{
+		WireName: "query_expansion_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_QueryExpansionSpecFields,
+	},
+	"RankingExpression":        ubx.FieldSpec{WireName: "ranking_expression"},
+	"RankingExpressionBackend": ubx.FieldSpec{WireName: "ranking_expression_backend"},
+	"RegionCode":               ubx.FieldSpec{WireName: "region_code"},
+	"RelevanceFilterSpec": ubx.FieldSpec{
+		WireName: "relevance_filter_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceFilterSpecFields,
+	},
+	"RelevanceScoreSpec": ubx.FieldSpec{
+		WireName: "relevance_score_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_RelevanceScoreSpecFields,
+	},
+	"RelevanceThreshold": ubx.FieldSpec{WireName: "relevance_threshold"},
+	"SafeSearch":         ubx.FieldSpec{WireName: "safe_search"},
+	"SearchAddonSpec": ubx.FieldSpec{
+		WireName: "search_addon_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAddonSpecFields,
+	},
+	"SearchAsYouTypeSpec": ubx.FieldSpec{
+		WireName: "search_as_you_type_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_SearchAsYouTypeSpecFields,
+	},
+	"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
+	"Session":       ubx.FieldSpec{WireName: "session"},
+	"SessionSpec": ubx.FieldSpec{
+		WireName: "session_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_SessionSpecFields,
+	},
+	"SpellCorrectionSpec": ubx.FieldSpec{
+		WireName: "spell_correction_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_PersonalizationSpecFields,
+	},
+	"UserInfo": ubx.FieldSpec{
+		WireName: "user_info",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequest_UserInfoFields,
+	},
+	"UserLabels":   ubx.FieldSpec{WireName: "user_labels"},
+	"UserPseudoId": ubx.FieldSpec{WireName: "user_pseudo_id"},
+}
 
 var V1betaEvaluation_EvaluationSpecFields = ubx.FieldMap{
-		"QuerySetSpec": ubx.FieldSpec{
-			WireName: "query_set_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_QuerySetSpecFields,
-		},
-		"SearchRequest": ubx.FieldSpec{
-			WireName: "search_request",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpec_SearchRequestFields,
-		},
-	}
+	"QuerySetSpec": ubx.FieldSpec{
+		WireName: "query_set_spec",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_QuerySetSpecFields,
+	},
+	"SearchRequest": ubx.FieldSpec{
+		WireName: "search_request",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationSpec_SearchRequestFields,
+	},
+}
 
 var V1betaEvaluation_QualityMetrics_DocNdcgFields = ubx.FieldMap{
-		"Top1": ubx.FieldSpec{WireName: "top1"},
-		"Top10": ubx.FieldSpec{WireName: "top10"},
-		"Top3": ubx.FieldSpec{WireName: "top3"},
-		"Top5": ubx.FieldSpec{WireName: "top5"},
-	}
+	"Top1":  ubx.FieldSpec{WireName: "top1"},
+	"Top10": ubx.FieldSpec{WireName: "top10"},
+	"Top3":  ubx.FieldSpec{WireName: "top3"},
+	"Top5":  ubx.FieldSpec{WireName: "top5"},
+}
 
 var V1betaEvaluation_QualityMetricsFields = ubx.FieldMap{
-		"DocNdcg": ubx.FieldSpec{
-			WireName: "doc_ndcg",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetrics_DocNdcgFields,
-		},
-		"DocPrecision": ubx.FieldSpec{
-			WireName: "doc_precision",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetrics_DocNdcgFields,
-		},
-		"DocRecall": ubx.FieldSpec{
-			WireName: "doc_recall",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetrics_DocNdcgFields,
-		},
-		"PageNdcg": ubx.FieldSpec{
-			WireName: "page_ndcg",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetrics_DocNdcgFields,
-		},
-		"PageRecall": ubx.FieldSpec{
-			WireName: "page_recall",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetrics_DocNdcgFields,
-		},
-	}
+	"DocNdcg": ubx.FieldSpec{
+		WireName: "doc_ndcg",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_QualityMetrics_DocNdcgFields,
+	},
+	"DocPrecision": ubx.FieldSpec{
+		WireName: "doc_precision",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_QualityMetrics_DocNdcgFields,
+	},
+	"DocRecall": ubx.FieldSpec{
+		WireName: "doc_recall",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_QualityMetrics_DocNdcgFields,
+	},
+	"PageNdcg": ubx.FieldSpec{
+		WireName: "page_ndcg",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_QualityMetrics_DocNdcgFields,
+	},
+	"PageRecall": ubx.FieldSpec{
+		WireName: "page_recall",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_QualityMetrics_DocNdcgFields,
+	},
+}
 
 type V1betaEvaluationConfig struct {
-	// Output only. Timestamp the Evaluation was created at.
-	CreateTime any
-	// Output only. Timestamp the Evaluation was completed at.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	// Output only. A sample of errors encountered while processing the request.
-	ErrorSamples any
 	// Describes the specification of the evaluation.
 	EvaluationSpec any
 	// Identifier. The full resource name of the Evaluation, in the format of `projects/{project}/locations/{location}/evaluations/{evaluation}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
 	Name any
 	// Describes the metrics produced by the evaluation.
 	QualityMetrics any
-	// Output only. The state of the evaluation.
-	State any
 }
 
 type V1betaEvaluationAttrs struct {
@@ -879,29 +871,21 @@ type V1betaEvaluationAttrs struct {
 var V1betaEvaluation = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1beta_evaluation",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1betaEvaluation_ErrorFields,
-		},
-		"ErrorSamples": ubx.FieldSpec{
-			WireName: "error_samples",
-			Kind: "list",
-			Fields: V1betaEvaluation_ErrorFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_ErrorFields,
 		},
 		"EvaluationSpec": ubx.FieldSpec{
 			WireName: "evaluation_spec",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationSpecFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_EvaluationSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"QualityMetrics": ubx.FieldSpec{
 			WireName: "quality_metrics",
-			Kind: "object",
-			Fields: V1betaEvaluation_QualityMetricsFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_QualityMetricsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

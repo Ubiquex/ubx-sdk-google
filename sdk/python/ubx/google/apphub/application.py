@@ -70,8 +70,6 @@ _Application_AttributesFields = {
 class ApplicationConfig:
     # Consumer provided attributes.
     attributes: Any = None
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. User-defined description of an Application. Can have a maximum length of 2048 characters.
     description: Any = None
     # Optional. User-defined name for the Application. Can have a maximum length of 63 characters.
@@ -80,12 +78,6 @@ class ApplicationConfig:
     name: Any = None
     # Scope of an application.
     scope: Any = None
-    # Output only. Application state.
-    state: Any = None
-    # Output only. A universally unique identifier (in UUID4 format) for the `Application`.
-    uid: Any = None
-    # Output only. Update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ApplicationAttrs:
@@ -116,7 +108,6 @@ Application = ubx.ResourceBinding(
             kind="object",
             fields=_Application_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -125,8 +116,5 @@ Application = ubx.ResourceBinding(
             kind="object",
             fields=_Application_Attributes_CriticalityFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

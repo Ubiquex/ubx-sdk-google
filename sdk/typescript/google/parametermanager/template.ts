@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TemplateConfig {
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Specifies the format of a Template. */
   format?: string | Computed<string>;
   /** Optional. Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the Template in the format `projects/* /locations/* /templates/*`. */
   name?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TemplateAttrs {
@@ -30,10 +26,8 @@ export interface TemplateAttrs {
 export const Template: ResourceBinding<TemplateConfig, TemplateAttrs> = {
   wireType: "google_parametermanager_template",
   fields: {
-    createTime: "create_time",
     format: "format",
     labels: "labels",
     name: "name",
-    updateTime: "update_time",
   },
 };

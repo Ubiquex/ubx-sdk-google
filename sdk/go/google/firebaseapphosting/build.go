@@ -4,12 +4,12 @@ package firebaseapphosting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Build_Config_EffectiveEnv struct {
-	Availability any
-	Origin any
+	Availability   any
+	Origin         any
 	OriginFileName any
-	Secret any
-	Value any
-	Variable any
+	Secret         any
+	Value          any
+	Variable       any
 }
 
 type Build_Config_RunConfig struct {
@@ -35,15 +35,15 @@ type Build_Config struct {
 }
 
 type Build_Errors_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Build_Errors struct {
 	CloudResource any
-	Error any
-	ErrorSource any
+	Error         any
+	ErrorSource   any
 }
 
 type Build_Source_Archive_Author struct {
@@ -104,147 +104,109 @@ type Build_Source struct {
 }
 
 var Build_Config_EffectiveEnvFields = ubx.FieldMap{
-		"Availability": ubx.FieldSpec{WireName: "availability"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"Availability":   ubx.FieldSpec{WireName: "availability"},
+	"Origin":         ubx.FieldSpec{WireName: "origin"},
+	"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
+	"Secret":         ubx.FieldSpec{WireName: "secret"},
+	"Value":          ubx.FieldSpec{WireName: "value"},
+	"Variable":       ubx.FieldSpec{WireName: "variable"},
+}
 
 var Build_Config_RunConfigFields = ubx.FieldMap{
-		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MemoryMib": ubx.FieldSpec{WireName: "memory_mib"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-	}
+	"Concurrency":  ubx.FieldSpec{WireName: "concurrency"},
+	"Cpu":          ubx.FieldSpec{WireName: "cpu"},
+	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+	"MemoryMib":    ubx.FieldSpec{WireName: "memory_mib"},
+	"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+}
 
 var Build_ConfigFields = ubx.FieldMap{
-		"EffectiveEnv": ubx.FieldSpec{
-			WireName: "effective_env",
-			Kind: "list",
-			Fields: Build_Config_EffectiveEnvFields,
-		},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: Build_Config_EffectiveEnvFields,
-		},
-		"RunConfig": ubx.FieldSpec{
-			WireName: "run_config",
-			Kind: "object",
-			Fields: Build_Config_RunConfigFields,
-		},
-	}
-
-var Build_Errors_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var Build_ErrorsFields = ubx.FieldMap{
-		"CloudResource": ubx.FieldSpec{WireName: "cloud_resource"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Build_Errors_ErrorFields,
-		},
-		"ErrorSource": ubx.FieldSpec{WireName: "error_source"},
-	}
+	"EffectiveEnv": ubx.FieldSpec{
+		WireName: "effective_env",
+		Kind:     "list",
+		Fields:   Build_Config_EffectiveEnvFields,
+	},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   Build_Config_EffectiveEnvFields,
+	},
+	"RunConfig": ubx.FieldSpec{
+		WireName: "run_config",
+		Kind:     "object",
+		Fields:   Build_Config_RunConfigFields,
+	},
+}
 
 var Build_Source_Archive_AuthorFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+	"ImageUri":    ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var Build_Source_ArchiveFields = ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: Build_Source_Archive_AuthorFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExternalSignedUri": ubx.FieldSpec{WireName: "external_signed_uri"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-		"UserStorageUri": ubx.FieldSpec{WireName: "user_storage_uri"},
-	}
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   Build_Source_Archive_AuthorFields,
+	},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"ExternalSignedUri": ubx.FieldSpec{WireName: "external_signed_uri"},
+	"RootDirectory":     ubx.FieldSpec{WireName: "root_directory"},
+	"UserStorageUri":    ubx.FieldSpec{WireName: "user_storage_uri"},
+}
 
 var Build_Source_CodebaseFields = ubx.FieldMap{
-		"Author": ubx.FieldSpec{
-			WireName: "author",
-			Kind: "object",
-			Fields: Build_Source_Archive_AuthorFields,
-		},
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"Commit": ubx.FieldSpec{WireName: "commit"},
-		"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
-		"CommitTime": ubx.FieldSpec{WireName: "commit_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Hash": ubx.FieldSpec{WireName: "hash"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Author": ubx.FieldSpec{
+		WireName: "author",
+		Kind:     "object",
+		Fields:   Build_Source_Archive_AuthorFields,
+	},
+	"Branch":        ubx.FieldSpec{WireName: "branch"},
+	"Commit":        ubx.FieldSpec{WireName: "commit"},
+	"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
+	"CommitTime":    ubx.FieldSpec{WireName: "commit_time"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Hash":          ubx.FieldSpec{WireName: "hash"},
+	"Repository":    ubx.FieldSpec{WireName: "repository"},
+	"Uri":           ubx.FieldSpec{WireName: "uri"},
+}
 
 var Build_Source_ContainerFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
+	"Image": ubx.FieldSpec{WireName: "image"},
+}
 
 var Build_SourceFields = ubx.FieldMap{
-		"Archive": ubx.FieldSpec{
-			WireName: "archive",
-			Kind: "object",
-			Fields: Build_Source_ArchiveFields,
-		},
-		"Codebase": ubx.FieldSpec{
-			WireName: "codebase",
-			Kind: "object",
-			Fields: Build_Source_CodebaseFields,
-		},
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Build_Source_ContainerFields,
-		},
-	}
+	"Archive": ubx.FieldSpec{
+		WireName: "archive",
+		Kind:     "object",
+		Fields:   Build_Source_ArchiveFields,
+	},
+	"Codebase": ubx.FieldSpec{
+		WireName: "codebase",
+		Kind:     "object",
+		Fields:   Build_Source_CodebaseFields,
+	},
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   Build_Source_ContainerFields,
+	},
+}
 
 type BuildConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
 	Annotations any
-	// Output only. The location of the [Cloud Build logs](https://cloud.google.com/build/docs/view-build-results) for the build process.
-	BuildLogsUri any
 	// Additional configuration of the backend for this build.
 	Config any
-	// Output only. Time at which the build was created.
-	CreateTime any
-	// Output only. Time at which the build was deleted.
-	DeleteTime any
 	// Optional. Human-readable name. 63 character limit.
 	DisplayName any
-	// Output only. The environment name of the backend when this build was created.
-	Environment any
-	// Output only. A list of all errors that occurred during an App Hosting build.
-	Errors any
-	// Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-	Etag any
-	// Output only. The Artifact Registry [container image](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages) URI, used by the Cloud Run [`revision`](https://cloud.google.com/run/docs/reference/rest/v2/projects.locations.services.revisions) for this build.
-	Image any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects.
 	Labels any
 	// Identifier. The resource name of the build. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/builds/{buildId}`.
 	Name any
-	// Output only. A field that, if true, indicates that the build has an ongoing LRO.
-	Reconciling any
 	// The source for the build.
 	Source any
-	// Output only. The state of the build.
-	State any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. Time at which the build was last updated.
-	UpdateTime any
 }
 
 type BuildAttrs struct {
@@ -288,33 +250,18 @@ var Build = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_build",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"BuildLogsUri": ubx.FieldSpec{WireName: "build_logs_uri"},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Build_ConfigFields,
+			Kind:     "object",
+			Fields:   Build_ConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: Build_ErrorsFields,
-		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Build_SourceFields,
+			Kind:     "object",
+			Fields:   Build_SourceFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

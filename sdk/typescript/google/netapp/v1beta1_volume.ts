@@ -301,14 +301,6 @@ const V1beta1Volume_LargeCapacityConfigFields: FieldMap = {
   constituentCount: "constituent_count",
 };
 
-const V1beta1Volume_MountOptionsFields: FieldMap = {
-  export: "export",
-  exportFull: "export_full",
-  instructions: "instructions",
-  ipAddress: "ip_address",
-  protocol: "protocol",
-};
-
 const V1beta1Volume_RestoreParametersFields: FieldMap = {
   sourceBackup: "source_backup",
   sourceSnapshot: "source_snapshot",
@@ -370,8 +362,6 @@ const V1beta1Volume_TieringPolicyFields: FieldMap = {
 };
 
 export interface V1beta1VolumeConfig {
-  /** Output only. Specifies the ActiveDirectory name of a SMB volume. */
-  activeDirectory?: string | Computed<string>;
   /** BackupConfig contains backup related config on a volume. */
   backupConfig?: V1beta1Volume_BackupConfig | Computed<V1beta1Volume_BackupConfig>;
   /** Optional. Block devices for the volume. Currently, only one block device is permitted per Volume. */
@@ -382,56 +372,32 @@ export interface V1beta1VolumeConfig {
   capacityGib?: string | Computed<string>;
   /** Details about a clone volume. */
   cloneDetails?: V1beta1Volume_CloneDetails | Computed<V1beta1Volume_CloneDetails>;
-  /** Output only. Size of the volume cold tier data rounded down to the nearest GiB. */
-  coldTierSizeGib?: string | Computed<string>;
-  /** Output only. Create time of the volume */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the volume */
   description?: string | Computed<string>;
-  /** Output only. Specified the current volume encryption key source. */
-  encryptionType?: string | Computed<string>;
   /** Defines the export policy for the volume. */
   exportPolicy?: V1beta1Volume_ExportPolicy | Computed<V1beta1Volume_ExportPolicy>;
-  /** Output only. Indicates whether the volume is part of a replication relationship. */
-  hasReplication?: boolean | Computed<boolean>;
-  /** Output only. Total hot tier data rounded down to the nearest GiB used by the Volume. This field is only used for flex Service Level */
-  hotTierSizeUsedGib?: string | Computed<string>;
   /** The Hybrid Replication parameters for the volume. */
   hybridReplicationParameters?: V1beta1Volume_HybridReplicationParameters | Computed<V1beta1Volume_HybridReplicationParameters>;
   /** Optional. Flag indicating if the volume is a kerberos volume or not, export policy rules control kerberos security modes (krb5, krb5i, krb5p). */
   kerberosEnabled?: boolean | Computed<boolean>;
-  /** Output only. Specifies the KMS config to be used for volume encryption. */
-  kmsConfig?: string | Computed<string>;
   /** Optional. Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Flag indicating if the volume will be a large capacity volume or a regular volume. This field is used for legacy FILE pools. For Unified pools, use the `large_capacity_config` field instead. This field and `large_capacity_config` are mutually exclusive. */
   largeCapacity?: boolean | Computed<boolean>;
   /** Configuration for a Large Capacity Volume. A Large Capacity Volume supports sizes ranging from 4.8 TiB to 20 PiB; it is composed of multiple internal constituents, and must be created in a large capacity pool. */
   largeCapacityConfig?: V1beta1Volume_LargeCapacityConfig | Computed<V1beta1Volume_LargeCapacityConfig>;
-  /** Output only. Flag indicating if the volume is NFS LDAP enabled or not. */
-  ldapEnabled?: boolean | Computed<boolean>;
-  /** Output only. Mount options of this volume */
-  mountOptions?: V1beta1Volume_MountOptions[] | Computed<V1beta1Volume_MountOptions[]>;
   /** Optional. Flag indicating if the volume will have an IP address per node for volumes supporting multiple IP endpoints. Only the volume with large_capacity will be allowed to have multiple endpoints. */
   multipleEndpoints?: boolean | Computed<boolean>;
   /** Identifier. Name of the volume */
   name?: string | Computed<string>;
-  /** Output only. VPC Network name. Format: projects/{project}/global/networks/{network} */
-  network?: string | Computed<string>;
   /** Required. Protocols required for the volume */
   protocols?: string[] | Computed<string[]>;
-  /** Output only. This field is not implemented. The values provided in this field are ignored. */
-  psaRange?: string | Computed<string>;
-  /** Output only. Specifies the replica zone for regional volume. */
-  replicaZone?: string | Computed<string>;
   /** The RestoreParameters if volume is created from a snapshot or backup. */
   restoreParameters?: V1beta1Volume_RestoreParameters | Computed<V1beta1Volume_RestoreParameters>;
   /** Optional. List of actions that are restricted on this volume. */
   restrictedActions?: string[] | Computed<string[]>;
   /** Optional. Security Style of the Volume */
   securityStyle?: string | Computed<string>;
-  /** Output only. Service level of the volume */
-  serviceLevel?: string | Computed<string>;
   /** Required. Share name of the volume */
   shareName?: string | Computed<string>;
   /** Optional. SMB share settings for the volume. */
@@ -442,10 +408,6 @@ export interface V1beta1VolumeConfig {
   snapshotDirectory?: boolean | Computed<boolean>;
   /** Snapshot Policy for a volume. */
   snapshotPolicy?: V1beta1Volume_SnapshotPolicy | Computed<V1beta1Volume_SnapshotPolicy>;
-  /** Output only. State of the volume */
-  state?: string | Computed<string>;
-  /** Output only. State details of the volume */
-  stateDetails?: string | Computed<string>;
   /** Required. StoragePool name of the volume */
   storagePool?: string | Computed<string>;
   /** Optional. Throughput of the volume (in MiB/s) */
@@ -454,10 +416,6 @@ export interface V1beta1VolumeConfig {
   tieringPolicy?: V1beta1Volume_TieringPolicy | Computed<V1beta1Volume_TieringPolicy>;
   /** Optional. Default unix style permission (e.g. 777) the mount point will be created with. Applicable for NFS protocol types only. */
   unixPermissions?: string | Computed<string>;
-  /** Output only. Used capacity in GIB of the volume. This is computed periodically and it does not represent the realtime usage. */
-  usedGib?: string | Computed<string>;
-  /** Output only. Specifies the active zone for regional volume. */
-  zone?: string | Computed<string>;
 }
 
 export interface V1beta1VolumeAttrs {
@@ -554,7 +512,6 @@ export interface V1beta1VolumeAttrs {
 export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAttrs> = {
   wireType: "google_netapp_v1beta1_volume",
   fields: {
-    activeDirectory: "active_directory",
     backupConfig: {
       wireName: "backup_config",
       kind: "object",
@@ -576,24 +533,18 @@ export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAt
       kind: "object",
       fields: V1beta1Volume_CloneDetailsFields,
     },
-    coldTierSizeGib: "cold_tier_size_gib",
-    createTime: "create_time",
     description: "description",
-    encryptionType: "encryption_type",
     exportPolicy: {
       wireName: "export_policy",
       kind: "object",
       fields: V1beta1Volume_ExportPolicyFields,
     },
-    hasReplication: "has_replication",
-    hotTierSizeUsedGib: "hot_tier_size_used_gib",
     hybridReplicationParameters: {
       wireName: "hybrid_replication_parameters",
       kind: "object",
       fields: V1beta1Volume_HybridReplicationParametersFields,
     },
     kerberosEnabled: "kerberos_enabled",
-    kmsConfig: "kms_config",
     labels: "labels",
     largeCapacity: "large_capacity",
     largeCapacityConfig: {
@@ -601,18 +552,9 @@ export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAt
       kind: "object",
       fields: V1beta1Volume_LargeCapacityConfigFields,
     },
-    ldapEnabled: "ldap_enabled",
-    mountOptions: {
-      wireName: "mount_options",
-      kind: "list",
-      fields: V1beta1Volume_MountOptionsFields,
-    },
     multipleEndpoints: "multiple_endpoints",
     name: "name",
-    network: "network",
     protocols: "protocols",
-    psaRange: "psa_range",
-    replicaZone: "replica_zone",
     restoreParameters: {
       wireName: "restore_parameters",
       kind: "object",
@@ -620,7 +562,6 @@ export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAt
     },
     restrictedActions: "restricted_actions",
     securityStyle: "security_style",
-    serviceLevel: "service_level",
     shareName: "share_name",
     smbSettings: "smb_settings",
     snapReserve: "snap_reserve",
@@ -630,8 +571,6 @@ export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAt
       kind: "object",
       fields: V1beta1Volume_SnapshotPolicyFields,
     },
-    state: "state",
-    stateDetails: "state_details",
     storagePool: "storage_pool",
     throughputMibps: "throughput_mibps",
     tieringPolicy: {
@@ -640,7 +579,5 @@ export const V1beta1Volume: ResourceBinding<V1beta1VolumeConfig, V1beta1VolumeAt
       fields: V1beta1Volume_TieringPolicyFields,
     },
     unixPermissions: "unix_permissions",
-    usedGib: "used_gib",
-    zone: "zone",
   },
 };

@@ -85,8 +85,6 @@ class SecurityActionConfig:
     api_proxies: Any = None
     # The following are a list of conditions. A valid SecurityAction must contain at least one condition. Within a condition, each element is ORed. Across conditions elements are ANDed. For example if a SecurityAction has the following: ip_address_ranges: ["ip1", "ip2"] and bot_reasons: ["Flooder", "Robot Abuser"] then this is interpreted as: enforce the action if the incoming request has ((ip_address_ranges = "ip1" OR ip_address_ranges = "ip2") AND (bot_reasons="Flooder" OR bot_reasons="Robot Abuser")). Conditions other than ip_address_ranges and bot_reasons cannot be ANDed.
     condition_config: Any = None
-    # Output only. The create time for this SecurityAction.
-    create_time: Any = None
     # Message that should be set in case of a Deny Action.
     deny: Any = None
     # Optional. An optional user provided description of the SecurityAction.
@@ -101,8 +99,6 @@ class SecurityActionConfig:
     state: Any = None
     # Input only. The TTL for this SecurityAction.
     ttl: Any = None
-    # Output only. The update time for this SecurityAction. This reflects when this SecurityAction changed states.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SecurityActionAttrs:
@@ -141,7 +137,6 @@ SecurityAction = ubx.ResourceBinding(
             kind="object",
             fields=_SecurityAction_ConditionConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deny": ubx.FieldSpec(
             wire_name="deny",
             kind="object",
@@ -157,6 +152,5 @@ SecurityAction = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "state": ubx.FieldSpec(wire_name="state"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

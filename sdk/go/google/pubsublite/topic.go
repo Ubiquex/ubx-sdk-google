@@ -32,28 +32,28 @@ type Topic_RetentionConfig struct {
 }
 
 var Topic_PartitionConfig_CapacityFields = ubx.FieldMap{
-		"PublishMibPerSec": ubx.FieldSpec{WireName: "publish_mib_per_sec"},
-		"SubscribeMibPerSec": ubx.FieldSpec{WireName: "subscribe_mib_per_sec"},
-	}
+	"PublishMibPerSec":   ubx.FieldSpec{WireName: "publish_mib_per_sec"},
+	"SubscribeMibPerSec": ubx.FieldSpec{WireName: "subscribe_mib_per_sec"},
+}
 
 var Topic_PartitionConfigFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{
-			WireName: "capacity",
-			Kind: "object",
-			Fields: Topic_PartitionConfig_CapacityFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Capacity": ubx.FieldSpec{
+		WireName: "capacity",
+		Kind:     "object",
+		Fields:   Topic_PartitionConfig_CapacityFields,
+	},
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Scale": ubx.FieldSpec{WireName: "scale"},
+}
 
 var Topic_ReservationConfigFields = ubx.FieldMap{
-		"ThroughputReservation": ubx.FieldSpec{WireName: "throughput_reservation"},
-	}
+	"ThroughputReservation": ubx.FieldSpec{WireName: "throughput_reservation"},
+}
 
 var Topic_RetentionConfigFields = ubx.FieldMap{
-		"PerPartitionBytes": ubx.FieldSpec{WireName: "per_partition_bytes"},
-		"Period": ubx.FieldSpec{WireName: "period"},
-	}
+	"PerPartitionBytes": ubx.FieldSpec{WireName: "per_partition_bytes"},
+	"Period":            ubx.FieldSpec{WireName: "period"},
+}
 
 type TopicConfig struct {
 	// The name of the topic. Structured like: projects/{project_number}/locations/{location}/topics/{topic_id}
@@ -83,18 +83,18 @@ var Topic = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PartitionConfig": ubx.FieldSpec{
 			WireName: "partition_config",
-			Kind: "object",
-			Fields: Topic_PartitionConfigFields,
+			Kind:     "object",
+			Fields:   Topic_PartitionConfigFields,
 		},
 		"ReservationConfig": ubx.FieldSpec{
 			WireName: "reservation_config",
-			Kind: "object",
-			Fields: Topic_ReservationConfigFields,
+			Kind:     "object",
+			Fields:   Topic_ReservationConfigFields,
 		},
 		"RetentionConfig": ubx.FieldSpec{
 			WireName: "retention_config",
-			Kind: "object",
-			Fields: Topic_RetentionConfigFields,
+			Kind:     "object",
+			Fields:   Topic_RetentionConfigFields,
 		},
 	},
 }

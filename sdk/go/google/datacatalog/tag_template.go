@@ -12,52 +12,52 @@ type TagTemplate_Fields_Type_EnumType struct {
 }
 
 type TagTemplate_Fields_Type struct {
-	EnumType any
+	EnumType      any
 	PrimitiveType any
 }
 
 type TagTemplate_Fields struct {
 	Description any
 	DisplayName any
-	IsRequired any
-	Name any
-	Order any
-	Type any
+	IsRequired  any
+	Name        any
+	Order       any
+	Type        any
 }
 
 var TagTemplate_Fields_Type_EnumType_AllowedValuesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var TagTemplate_Fields_Type_EnumTypeFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{
-			WireName: "allowed_values",
-			Kind: "list",
-			Fields: TagTemplate_Fields_Type_EnumType_AllowedValuesFields,
-		},
-	}
+	"AllowedValues": ubx.FieldSpec{
+		WireName: "allowed_values",
+		Kind:     "list",
+		Fields:   TagTemplate_Fields_Type_EnumType_AllowedValuesFields,
+	},
+}
 
 var TagTemplate_Fields_TypeFields = ubx.FieldMap{
-		"EnumType": ubx.FieldSpec{
-			WireName: "enum_type",
-			Kind: "object",
-			Fields: TagTemplate_Fields_Type_EnumTypeFields,
-		},
-		"PrimitiveType": ubx.FieldSpec{WireName: "primitive_type"},
-	}
+	"EnumType": ubx.FieldSpec{
+		WireName: "enum_type",
+		Kind:     "object",
+		Fields:   TagTemplate_Fields_Type_EnumTypeFields,
+	},
+	"PrimitiveType": ubx.FieldSpec{WireName: "primitive_type"},
+}
 
 var TagTemplate_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "object",
-			Fields: TagTemplate_Fields_TypeFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"IsRequired":  ubx.FieldSpec{WireName: "is_required"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Order":       ubx.FieldSpec{WireName: "order"},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "object",
+		Fields:   TagTemplate_Fields_TypeFields,
+	},
+}
 
 type TagTemplateConfig struct {
 	// Optional. Transfer status of the TagTemplate
@@ -89,13 +89,13 @@ var TagTemplate = ubx.ResourceBinding{
 	WireType: "google_datacatalog_tag_template",
 	Fields: ubx.FieldMap{
 		"DataplexTransferStatus": ubx.FieldSpec{WireName: "dataplex_transfer_status"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "map",
-			Fields: TagTemplate_FieldsFields,
+			Kind:     "map",
+			Fields:   TagTemplate_FieldsFields,
 		},
 		"IsPubliclyReadable": ubx.FieldSpec{WireName: "is_publicly_readable"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 	},
 }

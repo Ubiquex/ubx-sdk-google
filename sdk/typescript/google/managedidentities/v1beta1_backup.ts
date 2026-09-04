@@ -2,22 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1BackupConfig {
-  /** Output only. The time the backups was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A short description of the backup. */
   description?: string | Computed<string>;
   /** Optional. Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The unique name of the Backup in the form of projects/{project_id}/locations/global/domains/{domain_name}/backups/{name} */
-  name?: string | Computed<string>;
-  /** Output only. The current state of the backup. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current status of this backup, if available. */
-  statusMessage?: string | Computed<string>;
-  /** Output only. Indicates whether it’s an on-demand backup or scheduled. */
-  type?: string | Computed<string>;
-  /** Output only. Last update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1BackupAttrs {
@@ -42,13 +30,7 @@ export interface V1beta1BackupAttrs {
 export const V1beta1Backup: ResourceBinding<V1beta1BackupConfig, V1beta1BackupAttrs> = {
   wireType: "google_managedidentities_v1beta1_backup",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
-    name: "name",
-    state: "state",
-    statusMessage: "status_message",
-    type: "type",
-    updateTime: "update_time",
   },
 };

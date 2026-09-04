@@ -4,10 +4,6 @@ package cloudkms
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeyRingConfig struct {
-	// Output only. The time at which this KeyRing was created.
-	CreateTime any
-	// Output only. The resource name for the KeyRing in the format `projects/*/locations/*/keyRings/*`.
-	Name any
 }
 
 type KeyRingAttrs struct {
@@ -19,8 +15,5 @@ type KeyRingAttrs struct {
 
 var KeyRing = ubx.ResourceBinding{
 	WireType: "google_cloudkms_key_ring",
-	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

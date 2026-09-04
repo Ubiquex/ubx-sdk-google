@@ -22,28 +22,24 @@ type Policy_Setting struct {
 }
 
 var Policy_PolicyQueryFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"OrgUnit": ubx.FieldSpec{WireName: "org_unit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Group":     ubx.FieldSpec{WireName: "group"},
+	"OrgUnit":   ubx.FieldSpec{WireName: "org_unit"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var Policy_SettingFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type PolicyConfig struct {
 	// Immutable. Customer that the Policy belongs to. The value is in the format 'customers/{customerId}'. The `customerId` must begin with "C" To find your customer ID in Admin Console see https://support.google.com/a/answer/10070793.
 	Customer any
-	// Output only. Identifier. The [resource name](https://cloud.google.com/apis/design/resource_names) of the Policy. Format: policies/{policy}.
-	Name any
 	// PolicyQuery
 	PolicyQuery any
 	// Setting
 	Setting any
-	// Output only. The type of the policy.
-	Type any
 }
 
 type PolicyAttrs struct {
@@ -63,17 +59,15 @@ var Policy = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_policy",
 	Fields: ubx.FieldMap{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PolicyQuery": ubx.FieldSpec{
 			WireName: "policy_query",
-			Kind: "object",
-			Fields: Policy_PolicyQueryFields,
+			Kind:     "object",
+			Fields:   Policy_PolicyQueryFields,
 		},
 		"Setting": ubx.FieldSpec{
 			WireName: "setting",
-			Kind: "object",
-			Fields: Policy_SettingFields,
+			Kind:     "object",
+			Fields:   Policy_SettingFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

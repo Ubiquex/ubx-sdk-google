@@ -47,16 +47,12 @@ class LicenseConfig:
     appendable_to_disk: Any = None
     # [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
     charges_use_fee: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional textual description of the resource; provided by the client when the resource is created.
     description: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
     # Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
     incompatible_licenses: Any = None
-    # Output only. [Output Only] Type of resource. Always compute#license for licenses.
-    kind: Any = None
     # [Output Only] The unique code used to attach this license to images, snapshots, and disks.
     license_code: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
@@ -73,18 +69,11 @@ class LicenseConfig:
     removable_from_disk: Any = None
     # Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
     required_coattached_licenses: Any = None
-    # The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
     resource_requirements: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # If true, this license can only be used on VMs on sole tenant nodes.
     sole_tenant_only: Any = None
     # If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
     transferable: Any = None
-    # Output only. [Output Only] Last update timestamp inRFC3339 text format.
-    update_timestamp: Any = None
 
 @dataclasses.dataclass
 class LicenseAttrs:
@@ -120,7 +109,6 @@ class LicenseAttrs:
     removable_from_disk: Any = None
     # Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
     required_coattached_licenses: Any = None
-    # The minimum resource requirements that an instance must meet to use this license. Includes `min_guest_cpu_count` for the minimum number of virtual CPUs and `min_memory_mb` for the minimum memory in megabytes. (AI-inferred)
     resource_requirements: Any = None
     # Output only. [Output Only] Server-defined URL for the resource.
     self_link: Any = None
@@ -139,11 +127,9 @@ License = ubx.ResourceBinding(
         "allowed_replacement_licenses": ubx.FieldSpec(wire_name="allowed_replacement_licenses"),
         "appendable_to_disk": ubx.FieldSpec(wire_name="appendable_to_disk"),
         "charges_use_fee": ubx.FieldSpec(wire_name="charges_use_fee"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
         "incompatible_licenses": ubx.FieldSpec(wire_name="incompatible_licenses"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "license_code": ubx.FieldSpec(wire_name="license_code"),
         "minimum_retention": ubx.FieldSpec(
             wire_name="minimum_retention",
@@ -165,10 +151,7 @@ License = ubx.ResourceBinding(
             kind="object",
             fields=_License_ResourceRequirementsFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "sole_tenant_only": ubx.FieldSpec(wire_name="sole_tenant_only"),
         "transferable": ubx.FieldSpec(wire_name="transferable"),
-        "update_timestamp": ubx.FieldSpec(wire_name="update_timestamp"),
     },
 )

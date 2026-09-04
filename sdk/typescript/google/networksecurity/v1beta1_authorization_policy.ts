@@ -60,8 +60,6 @@ const V1beta1AuthorizationPolicy_RulesFields: FieldMap = {
 export interface V1beta1AuthorizationPolicyConfig {
   /** Required. The action to take when a rule match is found. Possible values are "ALLOW" or "DENY". */
   action?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Set of label tags associated with the AuthorizationPolicy resource. */
@@ -70,8 +68,6 @@ export interface V1beta1AuthorizationPolicyConfig {
   name?: string | Computed<string>;
   /** Optional. List of rules to match. Note that at least one of the rules must match in order for the action specified in the 'action' field to be taken. A rule is a match if there is a matching source and destination. If left blank, the action specified in the `action` field will be applied on every request. */
   rules?: V1beta1AuthorizationPolicy_Rules[] | Computed<V1beta1AuthorizationPolicy_Rules[]>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1AuthorizationPolicyAttrs {
@@ -95,7 +91,6 @@ export const V1beta1AuthorizationPolicy: ResourceBinding<V1beta1AuthorizationPol
   wireType: "google_networksecurity_v1beta1_authorization_policy",
   fields: {
     action: "action",
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
@@ -104,6 +99,5 @@ export const V1beta1AuthorizationPolicy: ResourceBinding<V1beta1AuthorizationPol
       kind: "list",
       fields: V1beta1AuthorizationPolicy_RulesFields,
     },
-    updateTime: "update_time",
   },
 };

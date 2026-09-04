@@ -189,14 +189,6 @@ _CertificateAuthority_AccessUrlsFields = {
     "crl_access_urls": ubx.FieldSpec(wire_name="crl_access_urls"),
 }
 
-_CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields = {
-    "key_id": ubx.FieldSpec(wire_name="key_id"),
-}
-
-_CertificateAuthority_CaCertificateDescriptions_CertFingerprintFields = {
-    "sha256_hash": ubx.FieldSpec(wire_name="sha256_hash"),
-}
-
 _CertificateAuthority_CaCertificateDescriptions_PublicKeyFields = {
     "format": ubx.FieldSpec(wire_name="format"),
     "key": ubx.FieldSpec(wire_name="key"),
@@ -262,11 +254,7 @@ _CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNam
     "uris": ubx.FieldSpec(wire_name="uris"),
 }
 
-_CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields = {
-    "hex_serial_number": ubx.FieldSpec(wire_name="hex_serial_number"),
-    "lifetime": ubx.FieldSpec(wire_name="lifetime"),
-    "not_after_time": ubx.FieldSpec(wire_name="not_after_time"),
-    "not_before_time": ubx.FieldSpec(wire_name="not_before_time"),
+_CertificateAuthority_Config_SubjectConfigFields = {
     "subject": ubx.FieldSpec(
         wire_name="subject",
         kind="object",
@@ -277,6 +265,10 @@ _CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields = {
         kind="object",
         fields=_CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
     ),
+}
+
+_CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields = {
+    "key_id": ubx.FieldSpec(wire_name="key_id"),
 }
 
 _CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptionsFields = {
@@ -364,55 +356,6 @@ _CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields = {
     ),
 }
 
-_CertificateAuthority_CaCertificateDescriptionsFields = {
-    "aia_issuing_certificate_urls": ubx.FieldSpec(wire_name="aia_issuing_certificate_urls"),
-    "authority_key_id": ubx.FieldSpec(
-        wire_name="authority_key_id",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
-    ),
-    "cert_fingerprint": ubx.FieldSpec(
-        wire_name="cert_fingerprint",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_CertFingerprintFields,
-    ),
-    "crl_distribution_points": ubx.FieldSpec(wire_name="crl_distribution_points"),
-    "public_key": ubx.FieldSpec(
-        wire_name="public_key",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_PublicKeyFields,
-    ),
-    "subject_description": ubx.FieldSpec(
-        wire_name="subject_description",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields,
-    ),
-    "subject_key_id": ubx.FieldSpec(
-        wire_name="subject_key_id",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
-    ),
-    "tbs_certificate_digest": ubx.FieldSpec(wire_name="tbs_certificate_digest"),
-    "x509_description": ubx.FieldSpec(
-        wire_name="x509_description",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields,
-    ),
-}
-
-_CertificateAuthority_Config_SubjectConfigFields = {
-    "subject": ubx.FieldSpec(
-        wire_name="subject",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectFields,
-    ),
-    "subject_alt_name": ubx.FieldSpec(
-        wire_name="subject_alt_name",
-        kind="object",
-        fields=_CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
-    ),
-}
-
 _CertificateAuthority_ConfigFields = {
     "public_key": ubx.FieldSpec(
         wire_name="public_key",
@@ -463,16 +406,8 @@ _CertificateAuthority_UserDefinedAccessUrlsFields = {
 class CertificateAuthorityConfig:
     # URLs where a CertificateAuthority will publish content.
     access_urls: Any = None
-    # Output only. A structured description of this CertificateAuthority's CA certificate and its issuers. Ordered as self-to-root.
-    ca_certificate_descriptions: Any = None
     # A CertificateConfig describes an X.509 certificate or CSR that is to be created, as an alternative to using ASN.1.
     config: Any = None
-    # Output only. The time at which this CertificateAuthority was created.
-    create_time: Any = None
-    # Output only. The time at which this CertificateAuthority was soft deleted, if it is in the DELETED state.
-    delete_time: Any = None
-    # Output only. The time at which this CertificateAuthority will be permanently purged, if it is in the DELETED state.
-    expire_time: Any = None
     # Immutable. The name of a Cloud Storage bucket where this CertificateAuthority will publish content, such as the CA certificate and CRLs. This must be a bucket name, without any prefixes (such as `gs://`) or suffixes (such as `.googleapis.com`). For example, to use a bucket named `my-bucket`, you would simply specify `my-bucket`. If not specified, a managed bucket will be created.
     gcs_bucket: Any = None
     # A Cloud KMS key configuration that a CertificateAuthority will use.
@@ -483,22 +418,10 @@ class CertificateAuthorityConfig:
     lifetime: Any = None
     # Identifier. The resource name for this CertificateAuthority in the format `projects/*/locations/*/caPools/*/certificateAuthorities/*`.
     name: Any = None
-    # Output only. This CertificateAuthority's certificate chain, including the current CertificateAuthority's certificate. Ordered such that the root issuer is the final element (consistent with RFC 5246). For a self-signed CA, this will only list the current CertificateAuthority's certificate.
-    pem_ca_certificates: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The State for this CertificateAuthority.
-    state: Any = None
     # Describes a subordinate CA's issuers. This is either a resource name to a known issuing CertificateAuthority, or a PEM issuer certificate chain.
     subordinate_config: Any = None
-    # Output only. The CaPool.Tier of the CaPool that includes this CertificateAuthority.
-    tier: Any = None
     # Required. Immutable. The Type of this CertificateAuthority.
     type: Any = None
-    # Output only. The time at which this CertificateAuthority was last updated.
-    update_time: Any = None
     # User-defined URLs for accessing content published by this CertificateAuthority.
     user_defined_access_urls: Any = None
 
@@ -553,19 +476,11 @@ CertificateAuthority = ubx.ResourceBinding(
             kind="object",
             fields=_CertificateAuthority_AccessUrlsFields,
         ),
-        "ca_certificate_descriptions": ubx.FieldSpec(
-            wire_name="ca_certificate_descriptions",
-            kind="list",
-            fields=_CertificateAuthority_CaCertificateDescriptionsFields,
-        ),
         "config": ubx.FieldSpec(
             wire_name="config",
             kind="object",
             fields=_CertificateAuthority_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "gcs_bucket": ubx.FieldSpec(wire_name="gcs_bucket"),
         "key_spec": ubx.FieldSpec(
             wire_name="key_spec",
@@ -575,18 +490,12 @@ CertificateAuthority = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "lifetime": ubx.FieldSpec(wire_name="lifetime"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pem_ca_certificates": ubx.FieldSpec(wire_name="pem_ca_certificates"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subordinate_config": ubx.FieldSpec(
             wire_name="subordinate_config",
             kind="object",
             fields=_CertificateAuthority_SubordinateConfigFields,
         ),
-        "tier": ubx.FieldSpec(wire_name="tier"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_defined_access_urls": ubx.FieldSpec(
             wire_name="user_defined_access_urls",
             kind="object",

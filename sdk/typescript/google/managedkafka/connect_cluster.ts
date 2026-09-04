@@ -59,8 +59,6 @@ export interface ConnectClusterConfig {
   capacityConfig?: ConnectCluster_CapacityConfig | Computed<ConnectCluster_CapacityConfig>;
   /** Optional. Reserved for future use. This field is meant for worker config overrides, but is unsupported for now. */
   config?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The time when the cluster was created. */
-  createTime?: string | Computed<string>;
   /** Configuration properties for a Kafka Connect cluster deployed to Google Cloud Platform. */
   gcpConfig?: ConnectCluster_GcpConfig | Computed<ConnectCluster_GcpConfig>;
   /** Required. Immutable. The name of the Kafka cluster this Kafka Connect cluster is attached to. Structured like: projects/{project}/locations/{location}/clusters/{cluster} */
@@ -69,14 +67,6 @@ export interface ConnectClusterConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the Kafka Connect cluster. Structured like: projects/{project_number}/locations/{location}/connectClusters/{connect_cluster_id} */
   name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The current state of the Kafka Connect cluster. */
-  state?: string | Computed<string>;
-  /** Output only. The time when the cluster was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectClusterAttrs {
@@ -113,7 +103,6 @@ export const ConnectCluster: ResourceBinding<ConnectClusterConfig, ConnectCluste
       fields: ConnectCluster_CapacityConfigFields,
     },
     config: "config",
-    createTime: "create_time",
     gcpConfig: {
       wireName: "gcp_config",
       kind: "object",
@@ -122,9 +111,5 @@ export const ConnectCluster: ResourceBinding<ConnectClusterConfig, ConnectCluste
     kafkaCluster: "kafka_cluster",
     labels: "labels",
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
   },
 };

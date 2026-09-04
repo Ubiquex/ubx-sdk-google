@@ -20,8 +20,6 @@ const V1beta1Workspace_PrivateResourceMetadataFields: FieldMap = {
 };
 
 export interface V1beta1WorkspaceConfig {
-  /** Output only. The timestamp of when the workspace was created. */
-  createTime?: string | Computed<string>;
   /** Describes encryption state of a resource. */
   dataEncryptionState?: V1beta1Workspace_DataEncryptionState | Computed<V1beta1Workspace_DataEncryptionState>;
   /** Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management. */
@@ -30,16 +28,12 @@ export interface V1beta1WorkspaceConfig {
   disableMoves?: boolean | Computed<boolean>;
   /** Immutable. Controls the enablement of branch checkout for the workspace. When set to True, the workspace will be allowed to checkout branches. */
   enableBranchManagement?: boolean | Computed<boolean>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Identifier. The workspace's name. */
   name?: string | Computed<string>;
   /** Optional. Input only. Immutable. The name of the default upstream branch for all pull/push operations in the remote repository for this workspace. If empty, the HEAD branch from repository will be used. */
   originalBranch?: string | Computed<string>;
   /** Metadata used to identify if a resource is user scoped. */
   privateResourceMetadata?: V1beta1Workspace_PrivateResourceMetadata | Computed<V1beta1Workspace_PrivateResourceMetadata>;
-  /** Output only. If set to true, the workspace was created as a shallow clone. Will be set to true if the depth field is set to a value greater than 0, otherwise it will be set to false. */
-  shallow?: boolean | Computed<boolean>;
 }
 
 export interface V1beta1WorkspaceAttrs {
@@ -68,7 +62,6 @@ export interface V1beta1WorkspaceAttrs {
 export const V1beta1Workspace: ResourceBinding<V1beta1WorkspaceConfig, V1beta1WorkspaceAttrs> = {
   wireType: "google_dataform_v1beta1_workspace",
   fields: {
-    createTime: "create_time",
     dataEncryptionState: {
       wireName: "data_encryption_state",
       kind: "object",
@@ -77,7 +70,6 @@ export const V1beta1Workspace: ResourceBinding<V1beta1WorkspaceConfig, V1beta1Wo
     depth: "depth",
     disableMoves: "disable_moves",
     enableBranchManagement: "enable_branch_management",
-    internalMetadata: "internal_metadata",
     name: "name",
     originalBranch: "original_branch",
     privateResourceMetadata: {
@@ -85,6 +77,5 @@ export const V1beta1Workspace: ResourceBinding<V1beta1WorkspaceConfig, V1beta1Wo
       kind: "object",
       fields: V1beta1Workspace_PrivateResourceMetadataFields,
     },
-    shallow: "shallow",
   },
 };

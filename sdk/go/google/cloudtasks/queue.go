@@ -15,7 +15,7 @@ type Queue_AppEngineRoutingOverride struct {
 }
 
 type Queue_HttpTarget_HeaderOverrides_Header struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -103,101 +103,101 @@ type Queue_StackdriverLoggingConfig struct {
 }
 
 var Queue_AppEngineRoutingOverrideFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"Service":  ubx.FieldSpec{WireName: "service"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var Queue_HttpTarget_HeaderOverrides_HeaderFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Queue_HttpTarget_HeaderOverridesFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: Queue_HttpTarget_HeaderOverrides_HeaderFields,
-		},
-	}
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_HeaderOverrides_HeaderFields,
+	},
+}
 
 var Queue_HttpTarget_OauthTokenFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Scope":               ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var Queue_HttpTarget_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var Queue_HttpTarget_UriOverride_PathOverrideFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Queue_HttpTarget_UriOverride_QueryOverrideFields = ubx.FieldMap{
-		"QueryParams": ubx.FieldSpec{WireName: "query_params"},
-	}
+	"QueryParams": ubx.FieldSpec{WireName: "query_params"},
+}
 
 var Queue_HttpTarget_UriOverrideFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"PathOverride": ubx.FieldSpec{
-			WireName: "path_override",
-			Kind: "object",
-			Fields: Queue_HttpTarget_UriOverride_PathOverrideFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"QueryOverride": ubx.FieldSpec{
-			WireName: "query_override",
-			Kind: "object",
-			Fields: Queue_HttpTarget_UriOverride_QueryOverrideFields,
-		},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-		"UriOverrideEnforceMode": ubx.FieldSpec{WireName: "uri_override_enforce_mode"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"PathOverride": ubx.FieldSpec{
+		WireName: "path_override",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_UriOverride_PathOverrideFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+	"QueryOverride": ubx.FieldSpec{
+		WireName: "query_override",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_UriOverride_QueryOverrideFields,
+	},
+	"Scheme":                 ubx.FieldSpec{WireName: "scheme"},
+	"UriOverrideEnforceMode": ubx.FieldSpec{WireName: "uri_override_enforce_mode"},
+}
 
 var Queue_HttpTargetFields = ubx.FieldMap{
-		"HeaderOverrides": ubx.FieldSpec{
-			WireName: "header_overrides",
-			Kind: "list",
-			Fields: Queue_HttpTarget_HeaderOverridesFields,
-		},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthToken": ubx.FieldSpec{
-			WireName: "oauth_token",
-			Kind: "object",
-			Fields: Queue_HttpTarget_OauthTokenFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: Queue_HttpTarget_OidcTokenFields,
-		},
-		"UriOverride": ubx.FieldSpec{
-			WireName: "uri_override",
-			Kind: "object",
-			Fields: Queue_HttpTarget_UriOverrideFields,
-		},
-	}
+	"HeaderOverrides": ubx.FieldSpec{
+		WireName: "header_overrides",
+		Kind:     "list",
+		Fields:   Queue_HttpTarget_HeaderOverridesFields,
+	},
+	"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+	"OauthToken": ubx.FieldSpec{
+		WireName: "oauth_token",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_OauthTokenFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_OidcTokenFields,
+	},
+	"UriOverride": ubx.FieldSpec{
+		WireName: "uri_override",
+		Kind:     "object",
+		Fields:   Queue_HttpTarget_UriOverrideFields,
+	},
+}
 
 var Queue_RateLimitsFields = ubx.FieldMap{
-		"MaxBurstSize": ubx.FieldSpec{WireName: "max_burst_size"},
-		"MaxConcurrentDispatches": ubx.FieldSpec{WireName: "max_concurrent_dispatches"},
-		"MaxDispatchesPerSecond": ubx.FieldSpec{WireName: "max_dispatches_per_second"},
-	}
+	"MaxBurstSize":            ubx.FieldSpec{WireName: "max_burst_size"},
+	"MaxConcurrentDispatches": ubx.FieldSpec{WireName: "max_concurrent_dispatches"},
+	"MaxDispatchesPerSecond":  ubx.FieldSpec{WireName: "max_dispatches_per_second"},
+}
 
 var Queue_RetryConfigFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-		"MaxBackoff": ubx.FieldSpec{WireName: "max_backoff"},
-		"MaxDoublings": ubx.FieldSpec{WireName: "max_doublings"},
-		"MaxRetryDuration": ubx.FieldSpec{WireName: "max_retry_duration"},
-		"MinBackoff": ubx.FieldSpec{WireName: "min_backoff"},
-	}
+	"MaxAttempts":      ubx.FieldSpec{WireName: "max_attempts"},
+	"MaxBackoff":       ubx.FieldSpec{WireName: "max_backoff"},
+	"MaxDoublings":     ubx.FieldSpec{WireName: "max_doublings"},
+	"MaxRetryDuration": ubx.FieldSpec{WireName: "max_retry_duration"},
+	"MinBackoff":       ubx.FieldSpec{WireName: "min_backoff"},
+}
 
 var Queue_StackdriverLoggingConfigFields = ubx.FieldMap{
-		"SamplingRatio": ubx.FieldSpec{WireName: "sampling_ratio"},
-	}
+	"SamplingRatio": ubx.FieldSpec{WireName: "sampling_ratio"},
+}
 
 type QueueConfig struct {
 	// App Engine Routing. Defines routing characteristics specific to App Engine - service, version, and instance. For more information about services, versions, and instances see [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine), [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine), [App Engine Standard request routing](https://cloud.google.com/appengine/docs/standard/python/how-requests-are-routed), and [App Engine Flex request routing](https://cloud.google.com/appengine/docs/flexible/python/how-requests-are-routed). Using AppEngineRouting requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform`
@@ -242,30 +242,30 @@ var Queue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppEngineRoutingOverride": ubx.FieldSpec{
 			WireName: "app_engine_routing_override",
-			Kind: "object",
-			Fields: Queue_AppEngineRoutingOverrideFields,
+			Kind:     "object",
+			Fields:   Queue_AppEngineRoutingOverrideFields,
 		},
 		"HttpTarget": ubx.FieldSpec{
 			WireName: "http_target",
-			Kind: "object",
-			Fields: Queue_HttpTargetFields,
+			Kind:     "object",
+			Fields:   Queue_HttpTargetFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
 		"RateLimits": ubx.FieldSpec{
 			WireName: "rate_limits",
-			Kind: "object",
-			Fields: Queue_RateLimitsFields,
+			Kind:     "object",
+			Fields:   Queue_RateLimitsFields,
 		},
 		"RetryConfig": ubx.FieldSpec{
 			WireName: "retry_config",
-			Kind: "object",
-			Fields: Queue_RetryConfigFields,
+			Kind:     "object",
+			Fields:   Queue_RetryConfigFields,
 		},
 		"StackdriverLoggingConfig": ubx.FieldSpec{
 			WireName: "stackdriver_logging_config",
-			Kind: "object",
-			Fields: Queue_StackdriverLoggingConfigFields,
+			Kind:     "object",
+			Fields:   Queue_StackdriverLoggingConfigFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

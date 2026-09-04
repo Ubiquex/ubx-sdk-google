@@ -17,18 +17,10 @@ _UserCred_ResourceIdentityFields = {
 
 @dataclasses.dataclass
 class UserCredConfig:
-    # Output only. The time the user creds were created.
-    create_time: Any = None
     # Identifier. The resource name of the UserCreds. Format: `projects/{project}/databases/{database}/userCreds/{user_creds}`
     name: Any = None
     # Describes a Resource Identity principal.
     resource_identity: Any = None
-    # Output only. The plaintext server-generated password for the user creds. Only populated in responses for CreateUserCreds and ResetUserPassword.
-    secure_password: Any = None
-    # Output only. Whether the user creds are enabled or disabled. Defaults to ENABLED on creation.
-    state: Any = None
-    # Output only. The time the user creds were last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class UserCredAttrs:
@@ -48,15 +40,11 @@ class UserCredAttrs:
 UserCred = ubx.ResourceBinding(
     wire_type="google_firestore_user_cred",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource_identity": ubx.FieldSpec(
             wire_name="resource_identity",
             kind="object",
             fields=_UserCred_ResourceIdentityFields,
         ),
-        "secure_password": ubx.FieldSpec(wire_name="secure_password"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

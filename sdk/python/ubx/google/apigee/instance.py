@@ -77,22 +77,14 @@ class InstanceConfig:
     access_logging_config: Any = None
     # Optional. Customer accept list represents the list of projects (id/number) on customer side that can privately connect to the service attachment. It is an optional field which the customers can provide during the instance creation. By default, the customer project associated with the Apigee organization will be included to the list.
     consumer_accept_list: Any = None
-    # Output only. Time the instance was created in milliseconds since epoch.
-    created_at: Any = None
     # Optional. Description of the instance.
     description: Any = None
     # Optional. Customer Managed Encryption Key (CMEK) used for disk and volume encryption. If not specified, a Google-Managed encryption key will be used. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
     disk_encryption_key_name: Any = None
     # Optional. Display name for the instance.
     display_name: Any = None
-    # Output only. Internal hostname or IP address of the Apigee endpoint used by clients to connect to the service.
-    host: Any = None
     # Optional. Comma-separated list of CIDR blocks of length 22 and/or 28 used to create the Apigee instance. Providing CIDR ranges is optional. You can provide just /22 or /28 or both (or neither). Ranges you provide should be freely available as part of a larger named range you have allocated to the Service Networking peering. If this parameter is not provided, Apigee automatically requests an available /22 and /28 CIDR block from Service Networking. Use the /22 CIDR block for configuring your firewall needs to allow traffic from Apigee. Input formats: `a.b.c.d/22` or `e.f.g.h/28` or `a.b.c.d/22,e.f.g.h/28`
     ip_range: Any = None
-    # Output only. Indicates whether the instance is version locked. If true, the instance will not be updated by automated runtime rollouts. This is only supported for Apigee X instances.
-    is_version_locked: Any = None
-    # Output only. Time the instance was last modified in milliseconds since epoch.
-    last_modified_at: Any = None
     # Required. Compute Engine location where the instance resides.
     location: Any = None
     # MaintenanceUpdatePolicy specifies the preferred window to perform maintenance on the instance (day of the week and time of day).
@@ -101,16 +93,8 @@ class InstanceConfig:
     name: Any = None
     # Optional. Size of the CIDR block range that will be reserved by the instance. PAID organizations support `SLASH_16` to `SLASH_20` and defaults to `SLASH_16`. Evaluation organizations support only `SLASH_23`.
     peering_cidr_range: Any = None
-    # Output only. Port number of the exposed Apigee endpoint.
-    port: Any = None
-    # Output only. Version of the runtime system running in the instance. The runtime system is the set of components that serve the API Proxy traffic in your Environments.
-    runtime_version: Any = None
     # Scheduled maintenance information for an instance.
     scheduled_maintenance: Any = None
-    # Output only. Resource name of the service attachment created for the instance in the format: `projects/*/regions/*/serviceAttachments/*` Apigee customers can privately forward traffic to this service attachment using the PSC endpoints.
-    service_attachment: Any = None
-    # Output only. State of the instance. Values other than `ACTIVE` means the resource is not ready to use.
-    state: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
@@ -162,14 +146,10 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_AccessLoggingConfigFields,
         ),
         "consumer_accept_list": ubx.FieldSpec(wire_name="consumer_accept_list"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_encryption_key_name": ubx.FieldSpec(wire_name="disk_encryption_key_name"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "host": ubx.FieldSpec(wire_name="host"),
         "ip_range": ubx.FieldSpec(wire_name="ip_range"),
-        "is_version_locked": ubx.FieldSpec(wire_name="is_version_locked"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "location": ubx.FieldSpec(wire_name="location"),
         "maintenance_update_policy": ubx.FieldSpec(
             wire_name="maintenance_update_policy",
@@ -178,14 +158,10 @@ Instance = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "peering_cidr_range": ubx.FieldSpec(wire_name="peering_cidr_range"),
-        "port": ubx.FieldSpec(wire_name="port"),
-        "runtime_version": ubx.FieldSpec(wire_name="runtime_version"),
         "scheduled_maintenance": ubx.FieldSpec(
             wire_name="scheduled_maintenance",
             kind="object",
             fields=_Instance_ScheduledMaintenanceFields,
         ),
-        "service_attachment": ubx.FieldSpec(wire_name="service_attachment"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

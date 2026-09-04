@@ -263,11 +263,6 @@ export interface V2beta1Intent_TrainingPhrases {
   type?: string | Computed<string>;
 }
 
-const V2beta1Intent_FollowupIntentInfoFields: FieldMap = {
-  followupIntentName: "followup_intent_name",
-  parentFollowupIntentName: "parent_followup_intent_name",
-};
-
 const V2beta1Intent_Messages_BasicCard_Buttons_OpenUriActionFields: FieldMap = {
   uri: "uri",
 };
@@ -731,7 +726,6 @@ export interface V2beta1IntentConfig {
   displayName?: string | Computed<string>;
   endInteraction?: boolean | Computed<boolean>;
   events?: string[] | Computed<string[]>;
-  followupIntentInfo?: V2beta1Intent_FollowupIntentInfo[] | Computed<V2beta1Intent_FollowupIntentInfo[]>;
   inputContextNames?: string[] | Computed<string[]>;
   isFallback?: boolean | Computed<boolean>;
   liveAgentHandoff?: boolean | Computed<boolean>;
@@ -744,7 +738,6 @@ export interface V2beta1IntentConfig {
   parentFollowupIntentName?: string | Computed<string>;
   priority?: number | Computed<number>;
   resetContexts?: boolean | Computed<boolean>;
-  rootFollowupIntentName?: string | Computed<string>;
   trainingPhrases?: V2beta1Intent_TrainingPhrases[] | Computed<V2beta1Intent_TrainingPhrases[]>;
   webhookState?: string | Computed<string>;
 }
@@ -781,11 +774,6 @@ export const V2beta1Intent: ResourceBinding<V2beta1IntentConfig, V2beta1IntentAt
     displayName: "display_name",
     endInteraction: "end_interaction",
     events: "events",
-    followupIntentInfo: {
-      wireName: "followup_intent_info",
-      kind: "list",
-      fields: V2beta1Intent_FollowupIntentInfoFields,
-    },
     inputContextNames: "input_context_names",
     isFallback: "is_fallback",
     liveAgentHandoff: "live_agent_handoff",
@@ -810,7 +798,6 @@ export const V2beta1Intent: ResourceBinding<V2beta1IntentConfig, V2beta1IntentAt
     parentFollowupIntentName: "parent_followup_intent_name",
     priority: "priority",
     resetContexts: "reset_contexts",
-    rootFollowupIntentName: "root_followup_intent_name",
     trainingPhrases: {
       wireName: "training_phrases",
       kind: "list",

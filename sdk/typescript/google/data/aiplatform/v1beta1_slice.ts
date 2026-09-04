@@ -47,7 +47,6 @@ export interface V1beta1Slice_Slice {
 }
 
 export interface V1beta1SliceConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1SliceAttrs {
@@ -67,6 +66,5 @@ export interface V1beta1SliceAttrs {
 export const V1beta1Slice: DataSourceBinding<V1beta1SliceConfig, V1beta1SliceAttrs> = {
   wireType: "google_aiplatform_v1beta1_slice",
   fields: {
-    name: "name",
   },
 };

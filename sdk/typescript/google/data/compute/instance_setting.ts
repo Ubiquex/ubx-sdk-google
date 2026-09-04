@@ -10,7 +10,6 @@ export interface InstanceSetting_Metadata {
 
 export interface InstanceSettingConfig {
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface InstanceSettingAttrs {
@@ -27,6 +26,5 @@ export const InstanceSetting: DataSourceBinding<InstanceSettingConfig, InstanceS
   wireType: "google_compute_instance_setting",
   fields: {
     project: "project",
-    zone: "zone",
   },
 };

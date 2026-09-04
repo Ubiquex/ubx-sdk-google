@@ -64,7 +64,7 @@ class Upgrade_Schedule:
 
 @dataclasses.dataclass
 class UpgradeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class UpgradeAttrs:
@@ -101,6 +101,5 @@ class UpgradeAttrs:
 Upgrade = ubx.DataSourceBinding(
     wire_type="google_vmwareengine_upgrade",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

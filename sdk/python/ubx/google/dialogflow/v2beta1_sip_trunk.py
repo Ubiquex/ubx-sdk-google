@@ -39,17 +39,6 @@ _V2beta1SipTrunk_Connections_ErrorDetailsFields = {
     "error_message": ubx.FieldSpec(wire_name="error_message"),
 }
 
-_V2beta1SipTrunk_ConnectionsFields = {
-    "connection_id": ubx.FieldSpec(wire_name="connection_id"),
-    "error_details": ubx.FieldSpec(
-        wire_name="error_details",
-        kind="object",
-        fields=_V2beta1SipTrunk_Connections_ErrorDetailsFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 _V2beta1SipTrunk_PeerHostnames_ProbeDetailsFields = {
     "init_time": ubx.FieldSpec(wire_name="init_time"),
     "options_latency": ubx.FieldSpec(wire_name="options_latency"),
@@ -76,7 +65,6 @@ _V2beta1SipTrunk_PeerHostnamesFields = {
 
 @dataclasses.dataclass
 class V2beta1SipTrunkConfig:
-    connections: Any = None
     display_name: Any = None
     expected_hostname: Any = None
     google_root_cert_file: Any = None
@@ -95,11 +83,6 @@ class V2beta1SipTrunkAttrs:
 V2beta1SipTrunk = ubx.ResourceBinding(
     wire_type="google_dialogflow_v2beta1_sip_trunk",
     fields={
-        "connections": ubx.FieldSpec(
-            wire_name="connections",
-            kind="list",
-            fields=_V2beta1SipTrunk_ConnectionsFields,
-        ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "expected_hostname": ubx.FieldSpec(wire_name="expected_hostname"),
         "google_root_cert_file": ubx.FieldSpec(wire_name="google_root_cert_file"),

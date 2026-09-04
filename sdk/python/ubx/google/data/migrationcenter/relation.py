@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RelationConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RelationAttrs:
@@ -25,6 +25,5 @@ class RelationAttrs:
 Relation = ubx.DataSourceBinding(
     wire_type="google_migrationcenter_relation",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -73,8 +73,6 @@ class ReservationConfig:
     autoscale: Any = None
     # Optional. Job concurrency target which sets a soft upper bound on the number of jobs that can run concurrently in this reservation. This is a soft target due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency target will be automatically computed by the system. NOTE: this field is exposed as target job concurrency in the Information Schema, DDL and BigQuery CLI.
     concurrency: Any = None
-    # Output only. Creation time of the reservation.
-    creation_time: Any = None
     # Optional. Edition of the reservation.
     edition: Any = None
     # Optional. If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most.
@@ -87,16 +85,10 @@ class ReservationConfig:
     multi_region_auxiliary: Any = None
     # Identifier. The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
     name: Any = None
-    # Output only. The location where the reservation was originally created. This is set only during the failover reservation's creation. All billing charges for the failover reservation will be applied to this location.
-    original_primary_location: Any = None
-    # Output only. The current location of the reservation's primary replica. This field is only set for reservations using the managed disaster recovery feature.
-    primary_location: Any = None
     # Disaster Recovery(DR) replication status of the reservation.
     replication_status: Any = None
     # Optional. The reservation group that this reservation belongs to. You can set this property when you create or update a reservation. Reservations do not need to belong to a reservation group. Format: projects/{project}/locations/{location}/reservationGroups/{reservation_group} or just {reservation_group}
     reservation_group: Any = None
-    # Output only. The reservation group path of the reservation from root to leaf. The order of elements matters: the first element is the top level group and the last element is the direct parent reservation group. For example, if a reservation is under group-1 -> group-2 -> group-3, then the reservation group path is ["group-1", "group-2", "group-3"].
-    reservation_group_path: Any = None
     # Optional. The scaling mode for the reservation. If the field is present but max_slots is not present, requests will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
     scaling_mode: Any = None
     # The scheduling policy controls how a reservation's resources are distributed.
@@ -105,8 +97,6 @@ class ReservationConfig:
     secondary_location: Any = None
     # Optional. Baseline slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false, or autoscaling is enabled. The total slot_capacity of the reservation and its siblings may exceed the total slot_count of capacity commitments. In that case, the exceeding slots will be charged with the autoscale SKU. You can increase the number of baseline slots in a reservation every few minutes. If you want to decrease your baseline slots, you are limited to once an hour if you have recently changed your baseline slot capacity and your baseline slots exceed your committed slots. Otherwise, you can decrease your baseline slots every few minutes.
     slot_capacity: Any = None
-    # Output only. Last update time of the reservation.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ReservationAttrs:
@@ -158,22 +148,18 @@ Reservation = ubx.ResourceBinding(
             fields=_Reservation_AutoscaleFields,
         ),
         "concurrency": ubx.FieldSpec(wire_name="concurrency"),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "edition": ubx.FieldSpec(wire_name="edition"),
         "ignore_idle_slots": ubx.FieldSpec(wire_name="ignore_idle_slots"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "max_slots": ubx.FieldSpec(wire_name="max_slots"),
         "multi_region_auxiliary": ubx.FieldSpec(wire_name="multi_region_auxiliary"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "original_primary_location": ubx.FieldSpec(wire_name="original_primary_location"),
-        "primary_location": ubx.FieldSpec(wire_name="primary_location"),
         "replication_status": ubx.FieldSpec(
             wire_name="replication_status",
             kind="object",
             fields=_Reservation_ReplicationStatusFields,
         ),
         "reservation_group": ubx.FieldSpec(wire_name="reservation_group"),
-        "reservation_group_path": ubx.FieldSpec(wire_name="reservation_group_path"),
         "scaling_mode": ubx.FieldSpec(wire_name="scaling_mode"),
         "scheduling_policy": ubx.FieldSpec(
             wire_name="scheduling_policy",
@@ -182,6 +168,5 @@ Reservation = ubx.ResourceBinding(
         ),
         "secondary_location": ubx.FieldSpec(wire_name="secondary_location"),
         "slot_capacity": ubx.FieldSpec(wire_name="slot_capacity"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

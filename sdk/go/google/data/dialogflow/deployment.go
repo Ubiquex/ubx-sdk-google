@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_Result struct {
 	DeploymentTestResults any
-	Experiment any
+	Experiment            any
 }
 
 type DeploymentConfig struct {
@@ -13,12 +13,12 @@ type DeploymentConfig struct {
 }
 
 type DeploymentAttrs struct {
-	EndTime any
+	EndTime     any
 	FlowVersion any
-	Name any
-	Result any
-	StartTime any
-	State any
+	Name        any
+	Result      any
+	StartTime   any
+	State       any
 }
 
 var Deployment = ubx.DataSourceBinding{

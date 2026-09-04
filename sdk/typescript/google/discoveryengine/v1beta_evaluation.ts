@@ -837,22 +837,14 @@ const V1betaEvaluation_QualityMetricsFields: FieldMap = {
 };
 
 export interface V1betaEvaluationConfig {
-  /** Output only. Timestamp the Evaluation was created at. */
-  createTime?: string | Computed<string>;
-  /** Output only. Timestamp the Evaluation was completed at. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1betaEvaluation_Error | Computed<V1betaEvaluation_Error>;
-  /** Output only. A sample of errors encountered while processing the request. */
-  errorSamples?: V1betaEvaluation_Error[] | Computed<V1betaEvaluation_Error[]>;
   /** Describes the specification of the evaluation. */
   evaluationSpec?: V1betaEvaluation_EvaluationSpec | Computed<V1betaEvaluation_EvaluationSpec>;
   /** Identifier. The full resource name of the Evaluation, in the format of `projects/{project}/locations/{location}/evaluations/{evaluation}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters. */
   name?: string | Computed<string>;
   /** Describes the metrics produced by the evaluation. */
   qualityMetrics?: V1betaEvaluation_QualityMetrics | Computed<V1betaEvaluation_QualityMetrics>;
-  /** Output only. The state of the evaluation. */
-  state?: string | Computed<string>;
 }
 
 export interface V1betaEvaluationAttrs {
@@ -877,16 +869,9 @@ export interface V1betaEvaluationAttrs {
 export const V1betaEvaluation: ResourceBinding<V1betaEvaluationConfig, V1betaEvaluationAttrs> = {
   wireType: "google_discoveryengine_v1beta_evaluation",
   fields: {
-    createTime: "create_time",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
-      fields: V1betaEvaluation_ErrorFields,
-    },
-    errorSamples: {
-      wireName: "error_samples",
-      kind: "list",
       fields: V1betaEvaluation_ErrorFields,
     },
     evaluationSpec: {
@@ -900,6 +885,5 @@ export const V1betaEvaluation: ResourceBinding<V1betaEvaluationConfig, V1betaEva
       kind: "object",
       fields: V1betaEvaluation_QualityMetricsFields,
     },
-    state: "state",
   },
 };

@@ -22,8 +22,6 @@ _AutomatedDnsRecord_CurrentConfigFields = {
 class AutomatedDnsRecordConfig:
     # Required. Immutable. The full resource path of the consumer network this AutomatedDnsRecord is visible to. Example: "projects/{projectNumOrId}/global/networks/{networkName}".
     consumer_network: Any = None
-    # Output only. The timestamp of when the record was created.
-    create_time: Any = None
     # Required. Immutable. The creation mode of the AutomatedDnsRecord. This field is immutable.
     creation_mode: Any = None
     # Defines the configuration of a DNS record.
@@ -32,12 +30,8 @@ class AutomatedDnsRecordConfig:
     description: Any = None
     # Required. Immutable. The dns suffix for this record to use in longest-suffix matching. Requires a trailing dot. Example: "example.com."
     dns_suffix: Any = None
-    # Output only. DnsZone is the DNS zone managed by automation. Format: projects/{project}/managedZones/{managedZone}
-    dns_zone: Any = None
     # Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
     etag: Any = None
-    # Output only. The FQDN created by combining the hostname and dns suffix. Should include a trailing dot.
-    fqdn: Any = None
     # Required. Immutable. The hostname for the DNS record. This value will be prepended to the `dns_suffix` to create the full domain name (FQDN) for the record. For example, if `hostname` is "corp.db" and `dns_suffix` is "example.com.", the resulting record will be "corp.db.example.com.". Should not include a trailing dot.
     hostname: Any = None
     # Optional. User-defined labels.
@@ -50,12 +44,6 @@ class AutomatedDnsRecordConfig:
     record_type: Any = None
     # Required. Immutable. The service class identifier which authorizes this AutomatedDnsRecord. Any API calls targeting this AutomatedDnsRecord must have `networkconnectivity.serviceClasses.use` IAM permission for the provided service class.
     service_class: Any = None
-    # Output only. The current operational state of this AutomatedDnsRecord as managed by Service Connectivity Automation.
-    state: Any = None
-    # Output only. A human-readable message providing more context about the current state, such as an error description if the state is `FAILED_DEPROGRAMMING`.
-    state_details: Any = None
-    # Output only. The timestamp of when the record was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AutomatedDnsRecordAttrs:
@@ -100,7 +88,6 @@ AutomatedDnsRecord = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_automated_dns_record",
     fields={
         "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "creation_mode": ubx.FieldSpec(wire_name="creation_mode"),
         "current_config": ubx.FieldSpec(
             wire_name="current_config",
@@ -109,9 +96,7 @@ AutomatedDnsRecord = ubx.ResourceBinding(
         ),
         "description": ubx.FieldSpec(wire_name="description"),
         "dns_suffix": ubx.FieldSpec(wire_name="dns_suffix"),
-        "dns_zone": ubx.FieldSpec(wire_name="dns_zone"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "fqdn": ubx.FieldSpec(wire_name="fqdn"),
         "hostname": ubx.FieldSpec(wire_name="hostname"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -122,8 +107,5 @@ AutomatedDnsRecord = ubx.ResourceBinding(
         ),
         "record_type": ubx.FieldSpec(wire_name="record_type"),
         "service_class": ubx.FieldSpec(wire_name="service_class"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

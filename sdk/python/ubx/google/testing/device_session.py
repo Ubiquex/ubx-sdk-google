@@ -30,32 +30,14 @@ _DeviceSession_AndroidDeviceFields = {
     "orientation": ubx.FieldSpec(wire_name="orientation"),
 }
 
-_DeviceSession_StateHistoriesFields = {
-    "event_time": ubx.FieldSpec(wire_name="event_time"),
-    "session_state": ubx.FieldSpec(wire_name="session_state"),
-    "state_message": ubx.FieldSpec(wire_name="state_message"),
-}
-
 @dataclasses.dataclass
 class DeviceSessionConfig:
-    # Output only. The timestamp that the session first became ACTIVE.
-    active_start_time: Any = None
     # A single Android device.
     android_device: Any = None
-    # Output only. The time that the Session was created.
-    create_time: Any = None
-    # Output only. The title of the DeviceSession to be presented in the UI.
-    display_name: Any = None
     # Optional. If the device is still in use at this time, any connections will be ended and the SessionState will transition from ACTIVE to FINISHED.
     expire_time: Any = None
-    # Output only. The interval of time that this device must be interacted with before it transitions from ACTIVE to TIMEOUT_INACTIVITY.
-    inactivity_timeout: Any = None
     # Optional. Name of the DeviceSession, e.g. "projects/{project_id}/deviceSessions/{session_id}"
     name: Any = None
-    # Output only. Current state of the DeviceSession.
-    state: Any = None
-    # Output only. The historical state transitions of the session_state message including the current session state.
-    state_histories: Any = None
     # Optional. The amount of time that a device will be initially allocated for. This can eventually be extended with the UpdateDeviceSession RPC. Default: 15 minutes.
     ttl: Any = None
 
@@ -85,23 +67,13 @@ class DeviceSessionAttrs:
 DeviceSession = ubx.ResourceBinding(
     wire_type="google_testing_device_session",
     fields={
-        "active_start_time": ubx.FieldSpec(wire_name="active_start_time"),
         "android_device": ubx.FieldSpec(
             wire_name="android_device",
             kind="object",
             fields=_DeviceSession_AndroidDeviceFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "display_name": ubx.FieldSpec(wire_name="display_name"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "inactivity_timeout": ubx.FieldSpec(wire_name="inactivity_timeout"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_histories": ubx.FieldSpec(
-            wire_name="state_histories",
-            kind="list",
-            fields=_DeviceSession_StateHistoriesFields,
-        ),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
     },
 )

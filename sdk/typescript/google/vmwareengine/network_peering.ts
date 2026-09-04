@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkPeeringConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description for this network peering. */
   description?: string | Computed<string>;
   /** Optional. True if full mesh connectivity is created and managed automatically between peered networks; false otherwise. Currently this field is always true because Google Compute Engine automatically creates and manages subnetwork routes between two VPC networks when peering state is 'ACTIVE'. */
@@ -16,22 +14,12 @@ export interface NetworkPeeringConfig {
   importCustomRoutes?: boolean | Computed<boolean>;
   /** Optional. True if all subnet routes with public IP address range are imported; false otherwise. The default value is true. IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported to peers and are not controlled by this field. */
   importCustomRoutesWithPublicIp?: boolean | Computed<boolean>;
-  /** Output only. Identifier. The resource name of the network peering. NetworkPeering is a global resource and location can only be global. Resource names are scheme-less URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/networkPeerings/my-peering` */
-  name?: string | Computed<string>;
   /** Optional. Maximum transmission unit (MTU) in bytes. The default value is `1500`. If a value of `0` is provided for this field, VMware Engine uses the default value instead. */
   peerMtu?: number | Computed<number>;
   /** Required. The relative resource name of the network to peer with a standard VMware Engine network. The provided network can be a consumer VPC network or another standard VMware Engine network. If the `peer_network_type` is VMWARE_ENGINE_NETWORK, specify the name in the form: `projects/{project}/locations/global/vmwareEngineNetworks/{vmware_engine_network_id}`. Otherwise specify the name in the form: `projects/{project}/global/networks/{network_id}`, where `{project}` can either be a project number or a project ID. */
   peerNetwork?: string | Computed<string>;
   /** Required. The type of the network to peer with the VMware Engine network. */
   peerNetworkType?: string | Computed<string>;
-  /** Output only. State of the network peering. This field has a value of 'ACTIVE' when there's a matching configuration in the peer network. New values may be added to this enum when appropriate. */
-  state?: string | Computed<string>;
-  /** Output only. Output Only. Details about the current state of the network peering. */
-  stateDetails?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
   /** Required. The relative resource name of the VMware Engine network. Specify the name in the following form: `projects/{project}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}` where `{project}` can either be a project number or a project ID. */
   vmwareEngineNetwork?: string | Computed<string>;
 }
@@ -74,21 +62,15 @@ export interface NetworkPeeringAttrs {
 export const NetworkPeering: ResourceBinding<NetworkPeeringConfig, NetworkPeeringAttrs> = {
   wireType: "google_vmwareengine_network_peering",
   fields: {
-    createTime: "create_time",
     description: "description",
     exchangeSubnetRoutes: "exchange_subnet_routes",
     exportCustomRoutes: "export_custom_routes",
     exportCustomRoutesWithPublicIp: "export_custom_routes_with_public_ip",
     importCustomRoutes: "import_custom_routes",
     importCustomRoutesWithPublicIp: "import_custom_routes_with_public_ip",
-    name: "name",
     peerMtu: "peer_mtu",
     peerNetwork: "peer_network",
     peerNetworkType: "peer_network_type",
-    state: "state",
-    stateDetails: "state_details",
-    uid: "uid",
-    updateTime: "update_time",
     vmwareEngineNetwork: "vmware_engine_network",
   },
 };

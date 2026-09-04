@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NodeTypeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class NodeTypeAttrs:
@@ -37,6 +37,5 @@ class NodeTypeAttrs:
 NodeType = ubx.DataSourceBinding(
     wire_type="google_vmwareengine_node_type",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

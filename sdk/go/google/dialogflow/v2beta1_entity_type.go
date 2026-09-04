@@ -5,42 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1EntityType_Entities struct {
 	Synonyms any
-	Value any
+	Value    any
 }
 
 var V2beta1EntityType_EntitiesFields = ubx.FieldMap{
-		"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type V2beta1EntityTypeConfig struct {
-	AutoExpansionMode any
-	DisplayName any
+	AutoExpansionMode     any
+	DisplayName           any
 	EnableFuzzyExtraction any
-	Entities any
-	Kind any
-	Name any
+	Entities              any
+	Kind                  any
+	Name                  any
 }
 
 type V2beta1EntityTypeAttrs struct {
-	AutoExpansionMode any
-	DisplayName any
+	AutoExpansionMode     any
+	DisplayName           any
 	EnableFuzzyExtraction any
-	Entities any
-	Kind any
-	Name any
+	Entities              any
+	Kind                  any
+	Name                  any
 }
 
 var V2beta1EntityType = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_entity_type",
 	Fields: ubx.FieldMap{
-		"AutoExpansionMode": ubx.FieldSpec{WireName: "auto_expansion_mode"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"AutoExpansionMode":     ubx.FieldSpec{WireName: "auto_expansion_mode"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
 		"EnableFuzzyExtraction": ubx.FieldSpec{WireName: "enable_fuzzy_extraction"},
 		"Entities": ubx.FieldSpec{
 			WireName: "entities",
-			Kind: "list",
-			Fields: V2beta1EntityType_EntitiesFields,
+			Kind:     "list",
+			Fields:   V2beta1EntityType_EntitiesFields,
 		},
 		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},

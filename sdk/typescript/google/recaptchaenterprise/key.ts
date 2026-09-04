@@ -133,8 +133,6 @@ const Key_WebSettingsFields: FieldMap = {
 export interface KeyConfig {
   /** Settings specific to keys that can be used by Android apps. */
   androidSettings?: Key_AndroidSettings | Computed<Key_AndroidSettings>;
-  /** Output only. The timestamp corresponding to the creation of this key. */
-  createTime?: string | Computed<string>;
   /** Required. Human-readable display name of this key. Modifiable by user. */
   displayName?: string | Computed<string>;
   /** Settings specific to keys that can be used for reCAPTCHA Express. */
@@ -188,7 +186,6 @@ export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
       kind: "object",
       fields: Key_AndroidSettingsFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     expressSettings: "express_settings",
     iosSettings: {

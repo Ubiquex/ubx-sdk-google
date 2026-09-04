@@ -37,8 +37,6 @@ _DeploymentGroup_ProvisioningErrorFields = {
 class DeploymentGroupConfig:
     # Optional. Arbitrary key-value metadata storage e.g. to help client tools identify deployment group during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
     annotations: Any = None
-    # Output only. Time when the deployment group was created.
-    create_time: Any = None
     # The deployment units of the deployment group in a DAG like structure. When a deployment group is being provisioned, the deployment units are deployed in a DAG order. The provided units must be in a DAG order, otherwise an error will be returned.
     deployment_units: Any = None
     # Optional. User-defined metadata for the deployment group.
@@ -47,16 +45,6 @@ class DeploymentGroupConfig:
     name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     provisioning_error: Any = None
-    # Output only. The provisioning state of the deployment group.
-    provisioning_state: Any = None
-    # Output only. Additional information regarding the current provisioning state.
-    provisioning_state_description: Any = None
-    # Output only. Current state of the deployment group.
-    state: Any = None
-    # Output only. Additional information regarding the current state.
-    state_description: Any = None
-    # Output only. Time when the deployment group was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DeploymentGroupAttrs:
@@ -87,7 +75,6 @@ DeploymentGroup = ubx.ResourceBinding(
     wire_type="google_config_deployment_group",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deployment_units": ubx.FieldSpec(
             wire_name="deployment_units",
             kind="list",
@@ -100,10 +87,5 @@ DeploymentGroup = ubx.ResourceBinding(
             kind="object",
             fields=_DeploymentGroup_ProvisioningErrorFields,
         ),
-        "provisioning_state": ubx.FieldSpec(wire_name="provisioning_state"),
-        "provisioning_state_description": ubx.FieldSpec(wire_name="provisioning_state_description"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_description": ubx.FieldSpec(wire_name="state_description"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

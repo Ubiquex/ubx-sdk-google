@@ -370,11 +370,6 @@ const TestMatrice_EnvironmentMatrixFields: FieldMap = {
   },
 };
 
-const TestMatrice_ExtendedInvalidMatrixDetailsFields: FieldMap = {
-  message: "message",
-  reason: "reason",
-};
-
 const TestMatrice_ResultStorage_GoogleCloudStorageFields: FieldMap = {
   gcsPath: "gcs_path",
 };
@@ -841,8 +836,6 @@ export interface TestMatriceConfig {
   clientInfo?: TestMatrice_ClientInfo | Computed<TestMatrice_ClientInfo>;
   /** The matrix of environments in which the test is to be executed. */
   environmentMatrix?: TestMatrice_EnvironmentMatrix | Computed<TestMatrice_EnvironmentMatrix>;
-  /** Output only. Details about why a matrix was deemed invalid. If multiple checks can be safely performed, they will be reported but no assumptions should be made about the length of this list. */
-  extendedInvalidMatrixDetails?: TestMatrice_ExtendedInvalidMatrixDetails[] | Computed<TestMatrice_ExtendedInvalidMatrixDetails[]>;
   /** If true, only a single attempt at most will be made to run each execution/shard in the matrix. Flaky test attempts are not affected. Normally, 2 or more attempts are made if a potential infrastructure issue is detected. This feature is for latency sensitive workloads. The incidence of execution failures may be significantly greater for fail-fast matrices and support is more limited because of that expectation. */
   failFast?: boolean | Computed<boolean>;
   /** The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns. */
@@ -910,11 +903,6 @@ export const TestMatrice: ResourceBinding<TestMatriceConfig, TestMatriceAttrs> =
       wireName: "environment_matrix",
       kind: "object",
       fields: TestMatrice_EnvironmentMatrixFields,
-    },
-    extendedInvalidMatrixDetails: {
-      wireName: "extended_invalid_matrix_details",
-      kind: "list",
-      fields: TestMatrice_ExtendedInvalidMatrixDetailsFields,
     },
     failFast: "fail_fast",
     flakyTestAttempts: "flaky_test_attempts",

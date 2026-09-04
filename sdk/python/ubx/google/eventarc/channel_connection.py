@@ -12,16 +12,10 @@ class ChannelConnectionConfig:
     activation_token: Any = None
     # Required. The name of the connected subscriber Channel. This is a weak reference to avoid cross project and cross accounts references. This must be in `projects/{project}/location/{location}/channels/{channel_id}` format.
     channel: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
     # Optional. Resource labels.
     labels: Any = None
     # Required. The name of the connection.
     name: Any = None
-    # Output only. Server assigned ID of the resource. The server guarantees uniqueness and immutability until deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ChannelConnectionAttrs:
@@ -45,10 +39,7 @@ ChannelConnection = ubx.ResourceBinding(
     fields={
         "activation_token": ubx.FieldSpec(wire_name="activation_token"),
         "channel": ubx.FieldSpec(wire_name="channel"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

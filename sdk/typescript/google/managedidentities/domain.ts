@@ -15,20 +15,6 @@ export interface Domain_Trusts {
   updateTime?: string | Computed<string>;
 }
 
-const Domain_TrustsFields: FieldMap = {
-  createTime: "create_time",
-  lastTrustHeartbeatTime: "last_trust_heartbeat_time",
-  selectiveAuthentication: "selective_authentication",
-  state: "state",
-  stateDescription: "state_description",
-  targetDnsIpAddresses: "target_dns_ip_addresses",
-  targetDomainName: "target_domain_name",
-  trustDirection: "trust_direction",
-  trustHandshakeSecret: "trust_handshake_secret",
-  trustType: "trust_type",
-  updateTime: "update_time",
-};
-
 export interface DomainConfig {
   /** Optional. The name of delegated administrator account used to perform Active Directory operations. If not specified, `setupadmin` will be used. */
   admin?: string | Computed<string>;
@@ -36,10 +22,6 @@ export interface DomainConfig {
   auditLogsEnabled?: boolean | Computed<boolean>;
   /** Optional. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) the domain instance is connected to. Networks can be added using UpdateDomain. The domain is only available on networks listed in `authorized_networks`. If CIDR subnets overlap between networks, domain creation will fail. */
   authorizedNetworks?: string[] | Computed<string[]>;
-  /** Output only. The time the instance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The fully-qualified domain name of the exposed domain used by clients to connect to the service. Similar to what would be chosen for an Active Directory set up on an internal network. */
-  fqdn?: string | Computed<string>;
   /** Optional. Resource labels that can contain user-provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Locations where domain needs to be provisioned. The locations can be specified according to https://cloud.google.com/compute/docs/regions-zones, such as `us-west1` or `us-east4`. Each domain supports up to 4 locations, separated by commas. Each location will use a /26 block. */
@@ -48,14 +30,6 @@ export interface DomainConfig {
   name?: string | Computed<string>;
   /** Required. The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger. Ranges must be unique and non-overlapping with existing subnets in [Domain].[authorized_networks]. */
   reservedIpRange?: string | Computed<string>;
-  /** Output only. The current state of this domain. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current status of this domain, if available. */
-  statusMessage?: string | Computed<string>;
-  /** Output only. The current trusts associated with the domain. */
-  trusts?: Domain_Trusts[] | Computed<Domain_Trusts[]>;
-  /** Output only. The last update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DomainAttrs {
@@ -93,19 +67,9 @@ export const Domain: ResourceBinding<DomainConfig, DomainAttrs> = {
     admin: "admin",
     auditLogsEnabled: "audit_logs_enabled",
     authorizedNetworks: "authorized_networks",
-    createTime: "create_time",
-    fqdn: "fqdn",
     labels: "labels",
     locations: "locations",
     name: "name",
     reservedIpRange: "reserved_ip_range",
-    state: "state",
-    statusMessage: "status_message",
-    trusts: {
-      wireName: "trusts",
-      kind: "list",
-      fields: Domain_TrustsFields,
-    },
-    updateTime: "update_time",
   },
 };

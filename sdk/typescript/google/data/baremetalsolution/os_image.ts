@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface OsImageConfig {
-  name: string | Computed<string>;
 }
 
 export interface OsImageAttrs {
@@ -20,6 +19,5 @@ export interface OsImageAttrs {
 export const OsImage: DataSourceBinding<OsImageConfig, OsImageAttrs> = {
   wireType: "google_baremetalsolution_os_image",
   fields: {
-    name: "name",
   },
 };

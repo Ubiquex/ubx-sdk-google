@@ -312,8 +312,6 @@ _Dashboard_RootContainerFields = {
 
 @dataclasses.dataclass
 class DashboardConfig:
-    # Output only. Dashboard creation time.
-    create_time: Any = None
     # Date range configuration for dashboard charts.
     date_range_config: Any = None
     # Dashboard description
@@ -324,12 +322,8 @@ class DashboardConfig:
     filter: Any = None
     # Identifier. Dashboard resource name. Format: projects/{project}/locations/{location}/dashboards/{dashboard}
     name: Any = None
-    # Output only. Whether the dashboard is read-only. All predefined dashboards are read-only and cannot be modified by the user.
-    read_only: Any = None
     # Configurable dashboard's container. Container can contain multiple widgets.
     root_container: Any = None
-    # Output only. Dashboard last update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DashboardAttrs:
@@ -355,7 +349,6 @@ class DashboardAttrs:
 Dashboard = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_dashboard",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "date_range_config": ubx.FieldSpec(
             wire_name="date_range_config",
             kind="object",
@@ -365,12 +358,10 @@ Dashboard = ubx.ResourceBinding(
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "filter": ubx.FieldSpec(wire_name="filter"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "read_only": ubx.FieldSpec(wire_name="read_only"),
         "root_container": ubx.FieldSpec(
             wire_name="root_container",
             kind="object",
             fields=_Dashboard_RootContainerFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

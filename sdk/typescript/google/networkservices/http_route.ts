@@ -342,8 +342,6 @@ const HttpRoute_RulesFields: FieldMap = {
 };
 
 export interface HttpRouteConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Gateways defines a list of gateways this HttpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/* /locations/* /gateways/` */
@@ -358,10 +356,6 @@ export interface HttpRouteConfig {
   name?: string | Computed<string>;
   /** Required. Rules that define how traffic is routed and handled. Rules will be matched sequentially based on the RouteMatch specified for the rule. */
   rules?: HttpRoute_Rules[] | Computed<HttpRoute_Rules[]>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface HttpRouteAttrs {
@@ -390,7 +384,6 @@ export interface HttpRouteAttrs {
 export const HttpRoute: ResourceBinding<HttpRouteConfig, HttpRouteAttrs> = {
   wireType: "google_networkservices_http_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     gateways: "gateways",
     hostnames: "hostnames",
@@ -402,7 +395,5 @@ export const HttpRoute: ResourceBinding<HttpRouteConfig, HttpRouteAttrs> = {
       kind: "list",
       fields: HttpRoute_RulesFields,
     },
-    selfLink: "self_link",
-    updateTime: "update_time",
   },
 };

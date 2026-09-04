@@ -4,14 +4,10 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ViewConfig struct {
-	// Output only. The time at which this view was created.
-	CreateTime any
 	// The human-readable display name of the view.
 	DisplayName any
 	// Immutable. The resource name of the view. Format: projects/{project}/locations/{location}/views/{view}
 	Name any
-	// Output only. The most recent time at which the view was updated.
-	UpdateTime any
 	// A filter to reduce conversation results to a specific subset. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details.
 	Value any
 }
@@ -32,10 +28,8 @@ type ViewAttrs struct {
 var View = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_view",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Value": ubx.FieldSpec{WireName: "value"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Value":       ubx.FieldSpec{WireName: "value"},
 	},
 }

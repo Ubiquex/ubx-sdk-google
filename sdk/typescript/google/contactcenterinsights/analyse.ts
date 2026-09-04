@@ -521,12 +521,8 @@ export interface AnalyseConfig {
   analysisResult?: Analyse_AnalysisResult | Computed<Analyse_AnalysisResult>;
   /** Selector of all available annotators and phrase matchers to run. */
   annotatorSelector?: Analyse_AnnotatorSelector | Computed<Analyse_AnnotatorSelector>;
-  /** Output only. The time at which the analysis was created, which occurs when the long-running operation completes. */
-  createTime?: string | Computed<string>;
   /** Immutable. The resource name of the analysis. Format: projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis} */
   name?: string | Computed<string>;
-  /** Output only. The time at which the analysis was requested. */
-  requestTime?: string | Computed<string>;
 }
 
 export interface AnalyseAttrs {
@@ -555,8 +551,6 @@ export const Analyse: ResourceBinding<AnalyseConfig, AnalyseAttrs> = {
       kind: "object",
       fields: Analyse_AnnotatorSelectorFields,
     },
-    createTime: "create_time",
     name: "name",
-    requestTime: "request_time",
   },
 };

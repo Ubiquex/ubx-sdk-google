@@ -51,26 +51,14 @@ _Trial_ParametersFields = {
 
 @dataclasses.dataclass
 class TrialConfig:
-    # Output only. The identifier of the client that originally requested this trial.
-    client_id: Any = None
-    # Output only. Time at which the trial's status changed to COMPLETED.
-    end_time: Any = None
     # A message representing a measurement.
     final_measurement: Any = None
-    # Output only. A human readable string describing why the trial is infeasible. This should only be set if trial_infeasible is true.
-    infeasible_reason: Any = None
     # A list of measurements that are strictly lexicographically ordered by their induced tuples (steps, elapsed_time). These are used for early stopping computations.
     measurements: Any = None
-    # Output only. Name of the trial assigned by the service.
-    name: Any = None
     # The parameters of the trial.
     parameters: Any = None
-    # Output only. Time at which the trial was started.
-    start_time: Any = None
     # The detailed state of a trial.
     state: Any = None
-    # Output only. If true, the parameters in this trial are not attempted again.
-    trial_infeasible: Any = None
 
 @dataclasses.dataclass
 class TrialAttrs:
@@ -98,27 +86,21 @@ class TrialAttrs:
 Trial = ubx.ResourceBinding(
     wire_type="google_ml_trial",
     fields={
-        "client_id": ubx.FieldSpec(wire_name="client_id"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "final_measurement": ubx.FieldSpec(
             wire_name="final_measurement",
             kind="object",
             fields=_Trial_FinalMeasurementFields,
         ),
-        "infeasible_reason": ubx.FieldSpec(wire_name="infeasible_reason"),
         "measurements": ubx.FieldSpec(
             wire_name="measurements",
             kind="list",
             fields=_Trial_FinalMeasurementFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parameters": ubx.FieldSpec(
             wire_name="parameters",
             kind="list",
             fields=_Trial_ParametersFields,
         ),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "trial_infeasible": ubx.FieldSpec(wire_name="trial_infeasible"),
     },
 )

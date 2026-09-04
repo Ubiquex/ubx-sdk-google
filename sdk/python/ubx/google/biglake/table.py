@@ -58,22 +58,12 @@ _Table_HiveOptionsFields = {
 
 @dataclasses.dataclass
 class TableConfig:
-    # Output only. The creation time of the table.
-    create_time: Any = None
-    # Output only. The deletion time of the table. Only set after the table is deleted.
-    delete_time: Any = None
     # The checksum of a table object computed by the server based on the value of other fields. It may be sent on update requests to ensure the client has an up-to-date value before proceeding. It is only checked for update table operations.
     etag: Any = None
-    # Output only. The time when this table is considered expired. Only set after the table is deleted.
-    expire_time: Any = None
     # Options of a Hive table.
     hive_options: Any = None
-    # Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
-    name: Any = None
     # The table type.
     type: Any = None
-    # Output only. The last modification time of the table.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TableAttrs:
@@ -97,17 +87,12 @@ class TableAttrs:
 Table = ubx.ResourceBinding(
     wire_type="google_biglake_table",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "hive_options": ubx.FieldSpec(
             wire_name="hive_options",
             kind="object",
             fields=_Table_HiveOptionsFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

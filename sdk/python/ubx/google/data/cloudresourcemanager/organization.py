@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OrganizationConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class OrganizationAttrs:
@@ -31,6 +31,5 @@ class OrganizationAttrs:
 Organization = ubx.DataSourceBinding(
     wire_type="google_cloudresourcemanager_organization",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -47,7 +47,6 @@ export interface Slice_Slice {
 }
 
 export interface SliceConfig {
-  name: string | Computed<string>;
 }
 
 export interface SliceAttrs {
@@ -67,6 +66,5 @@ export interface SliceAttrs {
 export const Slice: DataSourceBinding<SliceConfig, SliceAttrs> = {
   wireType: "google_aiplatform_slice",
   fields: {
-    name: "name",
   },
 };

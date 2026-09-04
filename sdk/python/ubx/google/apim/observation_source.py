@@ -31,16 +31,10 @@ _ObservationSource_GclbObservationSourceFields = {
 
 @dataclasses.dataclass
 class ObservationSourceConfig:
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # The GCLB observation source.
     gclb_observation_source: Any = None
     # Identifier. name of resource For MVP, each region can only have 1 source.
     name: Any = None
-    # Output only. The observation source state
-    state: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ObservationSourceAttrs:
@@ -58,14 +52,11 @@ class ObservationSourceAttrs:
 ObservationSource = ubx.ResourceBinding(
     wire_type="google_apim_observation_source",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "gclb_observation_source": ubx.FieldSpec(
             wire_name="gclb_observation_source",
             kind="object",
             fields=_ObservationSource_GclbObservationSourceFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

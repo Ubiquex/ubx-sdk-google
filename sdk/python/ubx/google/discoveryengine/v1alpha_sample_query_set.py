@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alphaSampleQuerySetConfig:
-    # Output only. Timestamp the SampleQuerySet was created at.
-    create_time: Any = None
     # The description of the SampleQuerySet.
     description: Any = None
     # Required. The sample query set display name. This field must be a UTF-8 encoded string with a length limit of 128 characters.
@@ -31,7 +29,6 @@ class V1alphaSampleQuerySetAttrs:
 V1alphaSampleQuerySet = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1alpha_sample_query_set",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),

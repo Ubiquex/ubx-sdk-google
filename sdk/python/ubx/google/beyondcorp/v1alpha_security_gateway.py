@@ -134,14 +134,8 @@ _V1alphaSecurityGateway_ServiceDiscoveryFields = {
 
 @dataclasses.dataclass
 class V1alphaSecurityGatewayConfig:
-    # Output only. Timestamp when the resource was created.
-    create_time: Any = None
-    # Output only. Service account used for operations that involve resources in consumer projects.
-    delegating_service_account: Any = None
     # Optional. An arbitrary user-provided name for the SecurityGateway. Cannot exceed 64 characters.
     display_name: Any = None
-    # Output only. IP addresses that will be used for establishing connection to the endpoints.
-    external_ips: Any = None
     # Optional. Map of Hubs that represents regional data path deployment with GCP region as a key.
     hubs: Any = None
     # Configuration for Cloud Logging.
@@ -152,10 +146,6 @@ class V1alphaSecurityGatewayConfig:
     proxy_protocol_config: Any = None
     # Settings related to the Service Discovery.
     service_discovery: Any = None
-    # Output only. The operational state of the SecurityGateway.
-    state: Any = None
-    # Output only. Timestamp when the resource was last modified.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaSecurityGatewayAttrs:
@@ -185,10 +175,7 @@ class V1alphaSecurityGatewayAttrs:
 V1alphaSecurityGateway = ubx.ResourceBinding(
     wire_type="google_beyondcorp_v1alpha_security_gateway",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delegating_service_account": ubx.FieldSpec(wire_name="delegating_service_account"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "external_ips": ubx.FieldSpec(wire_name="external_ips"),
         "hubs": ubx.FieldSpec(
             wire_name="hubs",
             kind="map",
@@ -206,7 +193,5 @@ V1alphaSecurityGateway = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaSecurityGateway_ServiceDiscoveryFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

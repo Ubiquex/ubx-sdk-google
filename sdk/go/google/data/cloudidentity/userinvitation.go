@@ -10,7 +10,7 @@ type UserinvitationConfig struct {
 type UserinvitationAttrs struct {
 	// Number of invitation emails sent to the user.
 	MailsSentCount any
-	Name any
+	Name           any
 	// State of the `UserInvitation`.
 	State any
 	// Time when the `UserInvitation` was last updated.

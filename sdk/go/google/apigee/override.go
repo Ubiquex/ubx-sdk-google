@@ -11,9 +11,9 @@ type Override_SamplingConfig struct {
 }
 
 var Override_SamplingConfigFields = ubx.FieldMap{
-		"Sampler": ubx.FieldSpec{WireName: "sampler"},
-		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
-	}
+	"Sampler":      ubx.FieldSpec{WireName: "sampler"},
+	"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
+}
 
 type OverrideConfig struct {
 	// ID of the API proxy that will have its trace configuration overridden.
@@ -37,11 +37,11 @@ var Override = ubx.ResourceBinding{
 	WireType: "google_apigee_override",
 	Fields: ubx.FieldMap{
 		"ApiProxy": ubx.FieldSpec{WireName: "api_proxy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"SamplingConfig": ubx.FieldSpec{
 			WireName: "sampling_config",
-			Kind: "object",
-			Fields: Override_SamplingConfigFields,
+			Kind:     "object",
+			Fields:   Override_SamplingConfigFields,
 		},
 	},
 }

@@ -597,6 +597,10 @@ _App_ModelSettingsFields = {
     "temperature": ubx.FieldSpec(wire_name="temperature"),
 }
 
+_App_TimeZoneSettingsFields = {
+    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
+}
+
 _App_PredefinedVariableDeclarations_SchemaFields = {
     "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
     "any_of": ubx.FieldSpec(wire_name="any_of"),
@@ -629,10 +633,6 @@ _App_PredefinedVariableDeclarationsFields = {
     ),
 }
 
-_App_TimeZoneSettingsFields = {
-    "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-}
-
 _App_VpcScSettingsFields = {
     "allowed_origins": ubx.FieldSpec(wire_name="allowed_origins"),
 }
@@ -643,22 +643,16 @@ class AppConfig:
     audio_processing_config: Any = None
     # Settings for custom client certificates.
     client_certificate_settings: Any = None
-    # Output only. Timestamp when the app was created.
-    create_time: Any = None
     # Data store related settings for the app.
     data_store_settings: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
     default_channel_profile: Any = None
-    # Output only. Number of deployments in the app.
-    deployment_count: Any = None
     # Optional. Human-readable description of the app.
     description: Any = None
     # Required. Display name of the app.
     display_name: Any = None
     # Settings to describe how errors should be handled in the app.
     error_handling_settings: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
     # Threshold settings for metrics in an Evaluation.
     evaluation_metrics_thresholds: Any = None
     # Optional. Instructions for all the agents in the app. You can use this instruction to set up a stable identity or personality across all the agents.
@@ -679,18 +673,12 @@ class AppConfig:
     name: Any = None
     # Optional. Whether the app is pinned in the app list.
     pinned: Any = None
-    # Output only. The declarations of predefined variables for the app.
-    predefined_variable_declarations: Any = None
     # Optional. The root agent is the entry point of the app. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
     root_agent: Any = None
     # TimeZone settings of the app.
     time_zone_settings: Any = None
     # Optional. The tool execution mode for the app. If not provided, will default to PARALLEL.
     tool_execution_mode: Any = None
-    # Output only. Timestamp when the app was last updated.
-    update_time: Any = None
-    # Output only. Misconfigurations or warnings in the app.
-    validation_errors: Any = None
     # Optional. The declarations of the variables.
     variable_declarations: Any = None
     # VPC-SC settings for the app.
@@ -768,7 +756,6 @@ App = ubx.ResourceBinding(
             kind="object",
             fields=_App_ClientCertificateSettingsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_store_settings": ubx.FieldSpec(
             wire_name="data_store_settings",
             kind="object",
@@ -779,7 +766,6 @@ App = ubx.ResourceBinding(
             kind="object",
             fields=_App_DefaultChannelProfileFields,
         ),
-        "deployment_count": ubx.FieldSpec(wire_name="deployment_count"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error_handling_settings": ubx.FieldSpec(
@@ -787,7 +773,6 @@ App = ubx.ResourceBinding(
             kind="object",
             fields=_App_ErrorHandlingSettingsFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "evaluation_metrics_thresholds": ubx.FieldSpec(
             wire_name="evaluation_metrics_thresholds",
             kind="object",
@@ -814,11 +799,6 @@ App = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "pinned": ubx.FieldSpec(wire_name="pinned"),
-        "predefined_variable_declarations": ubx.FieldSpec(
-            wire_name="predefined_variable_declarations",
-            kind="list",
-            fields=_App_PredefinedVariableDeclarationsFields,
-        ),
         "root_agent": ubx.FieldSpec(wire_name="root_agent"),
         "time_zone_settings": ubx.FieldSpec(
             wire_name="time_zone_settings",
@@ -826,8 +806,6 @@ App = ubx.ResourceBinding(
             fields=_App_TimeZoneSettingsFields,
         ),
         "tool_execution_mode": ubx.FieldSpec(wire_name="tool_execution_mode"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "validation_errors": ubx.FieldSpec(wire_name="validation_errors"),
         "variable_declarations": ubx.FieldSpec(
             wire_name="variable_declarations",
             kind="list",

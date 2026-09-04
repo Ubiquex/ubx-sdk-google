@@ -235,12 +235,8 @@ export interface V1betaDeploymentConfig {
   appVersion?: string | Computed<string>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
   channelProfile?: V1betaDeployment_ChannelProfile | Computed<V1betaDeployment_ChannelProfile>;
-  /** Output only. Timestamp when this deployment was created. */
-  createTime?: string | Computed<string>;
   /** Required. Display name of the deployment. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Experiment for the deployment. */
   experimentConfig?: V1betaDeployment_ExperimentConfig | Computed<V1betaDeployment_ExperimentConfig>;
   /** Ephemeral Meta credentials for Instagram native integration. */
@@ -251,8 +247,6 @@ export interface V1betaDeploymentConfig {
   modelSettings?: V1betaDeployment_ModelSettings | Computed<V1betaDeployment_ModelSettings>;
   /** Identifier. The resource name of the deployment. Format: `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when this deployment was last updated. */
-  updateTime?: string | Computed<string>;
   /** Ephemeral Meta credentials for WhatsApp native integration. */
   whatsappCredentials?: V1betaDeployment_WhatsappCredentials | Computed<V1betaDeployment_WhatsappCredentials>;
 }
@@ -293,9 +287,7 @@ export const V1betaDeployment: ResourceBinding<V1betaDeploymentConfig, V1betaDep
       kind: "object",
       fields: V1betaDeployment_ChannelProfileFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     experimentConfig: {
       wireName: "experiment_config",
       kind: "object",
@@ -313,7 +305,6 @@ export const V1betaDeployment: ResourceBinding<V1betaDeploymentConfig, V1betaDep
       fields: V1betaDeployment_ModelSettingsFields,
     },
     name: "name",
-    updateTime: "update_time",
     whatsappCredentials: {
       wireName: "whatsapp_credentials",
       kind: "object",

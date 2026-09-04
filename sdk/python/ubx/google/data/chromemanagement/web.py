@@ -63,7 +63,7 @@ class Web_ServiceError:
 
 @dataclasses.dataclass
 class WebConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class WebAttrs:
@@ -110,6 +110,5 @@ class WebAttrs:
 Web = ubx.DataSourceBinding(
     wire_type="google_chromemanagement_web",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

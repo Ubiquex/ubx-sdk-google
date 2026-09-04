@@ -4,14 +4,8 @@ package firebasedatabase
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceConfig struct {
-	// Output only. Output Only. The globally unique hostname of the database.
-	DatabaseUrl any
 	// The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`.
 	Name any
-	// Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`.
-	Project any
-	// Output only. The database's lifecycle state. Read-only.
-	State any
 	// Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.
 	Type any
 }
@@ -32,10 +26,7 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "google_firebasedatabase_instance",
 	Fields: ubx.FieldMap{
-		"DatabaseUrl": ubx.FieldSpec{WireName: "database_url"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

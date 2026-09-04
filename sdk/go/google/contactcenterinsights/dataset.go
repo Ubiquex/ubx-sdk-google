@@ -4,8 +4,6 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatasetConfig struct {
-	// Output only. Dataset create time.
-	CreateTime any
 	// Dataset description.
 	Description any
 	// Display name for the dataaset
@@ -16,8 +14,6 @@ type DatasetConfig struct {
 	Ttl any
 	// Dataset usage type.
 	Type any
-	// Output only. Dataset update time.
-	UpdateTime any
 }
 
 type DatasetAttrs struct {
@@ -40,12 +36,10 @@ type DatasetAttrs struct {
 var Dataset = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_dataset",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Ttl":         ubx.FieldSpec{WireName: "ttl"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

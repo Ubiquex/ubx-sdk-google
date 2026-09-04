@@ -9,40 +9,36 @@ type V1beta1Dataset_EncryptionSpec struct {
 }
 
 type V1beta1Dataset_SavedQueries struct {
-	AnnotationFilter any
-	AnnotationSpecCount any
-	CreateTime any
-	DisplayName any
-	Etag any
-	Metadata any
-	Name any
-	ProblemType any
+	AnnotationFilter      any
+	AnnotationSpecCount   any
+	CreateTime            any
+	DisplayName           any
+	Etag                  any
+	Metadata              any
+	Name                  any
+	ProblemType           any
 	SupportAutomlTraining any
-	UpdateTime any
+	UpdateTime            any
 }
 
 var V1beta1Dataset_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1Dataset_SavedQueriesFields = ubx.FieldMap{
-		"AnnotationFilter": ubx.FieldSpec{WireName: "annotation_filter"},
-		"AnnotationSpecCount": ubx.FieldSpec{WireName: "annotation_spec_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProblemType": ubx.FieldSpec{WireName: "problem_type"},
-		"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AnnotationFilter":      ubx.FieldSpec{WireName: "annotation_filter"},
+	"AnnotationSpecCount":   ubx.FieldSpec{WireName: "annotation_spec_count"},
+	"CreateTime":            ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"Etag":                  ubx.FieldSpec{WireName: "etag"},
+	"Metadata":              ubx.FieldSpec{WireName: "metadata"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"ProblemType":           ubx.FieldSpec{WireName: "problem_type"},
+	"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
+	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1beta1DatasetConfig struct {
-	// Output only. Timestamp when this Dataset was created.
-	CreateTime any
-	// Output only. The number of DataItems in this Dataset. Only apply for non-structured Dataset.
-	DataItemCount any
 	// The description of the Dataset.
 	Description any
 	// Required. The user-defined name of the Dataset. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -55,22 +51,12 @@ type V1beta1DatasetConfig struct {
 	Labels any
 	// Required. Additional information about the Dataset.
 	Metadata any
-	// Output only. The resource name of the Artifact that was created in MetadataStore when creating the Dataset. The Artifact resource name pattern is `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`.
-	MetadataArtifact any
 	// Required. Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/.
 	MetadataSchemaUri any
 	// Optional. Reference to the public base model last used by the dataset. Only set for prompt datasets.
 	ModelReference any
-	// Output only. Identifier. The resource name of the Dataset. Format: `projects/{project}/locations/{location}/datasets/{dataset}`
-	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// All SavedQueries belong to the Dataset will be returned in List/Get Dataset response. The annotation_specs field will not be populated except for UI cases which will only use annotation_spec_count. In CreateDataset request, a SavedQuery is created together if this field is set, up to one SavedQuery can be set in CreateDatasetRequest. The SavedQuery should not contain any AnnotationSpec.
 	SavedQueries any
-	// Output only. Timestamp when this Dataset was last updated.
-	UpdateTime any
 }
 
 type V1beta1DatasetAttrs struct {
@@ -111,29 +97,22 @@ type V1beta1DatasetAttrs struct {
 var V1beta1Dataset = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_dataset",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataItemCount": ubx.FieldSpec{WireName: "data_item_count"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Dataset_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Dataset_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MetadataArtifact": ubx.FieldSpec{WireName: "metadata_artifact"},
+		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
-		"ModelReference": ubx.FieldSpec{WireName: "model_reference"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"ModelReference":    ubx.FieldSpec{WireName: "model_reference"},
 		"SavedQueries": ubx.FieldSpec{
 			WireName: "saved_queries",
-			Kind: "list",
-			Fields: V1beta1Dataset_SavedQueriesFields,
+			Kind:     "list",
+			Fields:   V1beta1Dataset_SavedQueriesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -16,7 +16,7 @@ type RoleAttrs struct {
 	Etag any
 	// The names of the permissions this role grants when bound in an IAM policy.
 	IncludedPermissions any
-	Name any
+	Name                any
 	// The current launch stage of the role. If the `ALPHA` launch stage has been selected for a role, the `stage` field will not be included in the returned definition for the role.
 	Stage any
 	// Optional. A human-readable title for the role. Typically this is limited to 100 UTF-8 bytes.

@@ -2,10 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackupPolicyConfig {
-  /** Output only. The total number of volumes assigned by this backup policy. */
-  assignedVolumeCount?: number | Computed<number>;
-  /** Output only. The time when the backup policy was created. */
-  createTime?: string | Computed<string>;
   /** Number of daily backups to keep. Note that the minimum daily backup limit is 2. */
   dailyBackupLimit?: number | Computed<number>;
   /** Description of the backup policy. */
@@ -18,8 +14,6 @@ export interface BackupPolicyConfig {
   monthlyBackupLimit?: number | Computed<number>;
   /** Identifier. The resource name of the backup policy. Format: `projects/{project_id}/locations/{location}/backupPolicies/{backup_policy_id}`. */
   name?: string | Computed<string>;
-  /** Output only. The backup policy state. */
-  state?: string | Computed<string>;
   /** Number of weekly backups to keep. Note that the sum of daily, weekly and monthly backups should be greater than 1. */
   weeklyBackupLimit?: number | Computed<number>;
 }
@@ -50,15 +44,12 @@ export interface BackupPolicyAttrs {
 export const BackupPolicy: ResourceBinding<BackupPolicyConfig, BackupPolicyAttrs> = {
   wireType: "google_netapp_backup_policy",
   fields: {
-    assignedVolumeCount: "assigned_volume_count",
-    createTime: "create_time",
     dailyBackupLimit: "daily_backup_limit",
     description: "description",
     enabled: "enabled",
     labels: "labels",
     monthlyBackupLimit: "monthly_backup_limit",
     name: "name",
-    state: "state",
     weeklyBackupLimit: "weekly_backup_limit",
   },
 };

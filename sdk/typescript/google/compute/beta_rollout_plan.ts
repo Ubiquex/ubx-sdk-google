@@ -118,22 +118,12 @@ const BetaRolloutPlan_WavesFields: FieldMap = {
 };
 
 export interface BetaRolloutPlanConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#rolloutPlan for rolloutPlans. */
-  kind?: string | Computed<string>;
   /** The location scope of the rollout plan. If not specified, the location scope is considered as ZONAL. */
   locationScope?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** Required. The waves included in this rollout plan. */
   waves?: BetaRolloutPlan_Waves[] | Computed<BetaRolloutPlan_Waves[]>;
 }
@@ -162,14 +152,9 @@ export interface BetaRolloutPlanAttrs {
 export const BetaRolloutPlan: ResourceBinding<BetaRolloutPlanConfig, BetaRolloutPlanAttrs> = {
   wireType: "google_compute_beta_rollout_plan",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     locationScope: "location_scope",
     name: "name",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     waves: {
       wireName: "waves",
       kind: "list",

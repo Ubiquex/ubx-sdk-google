@@ -25,19 +25,19 @@ type V1beta1Listing_RestrictedExportConfig struct {
 }
 
 var V1beta1Listing_BigqueryDatasetFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-	}
+	"Dataset": ubx.FieldSpec{WireName: "dataset"},
+}
 
 var V1beta1Listing_DataProviderFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
+}
 
 var V1beta1Listing_RestrictedExportConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
-		"RestrictQueryResult": ubx.FieldSpec{WireName: "restrict_query_result"},
-	}
+	"Enabled":                   ubx.FieldSpec{WireName: "enabled"},
+	"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
+	"RestrictQueryResult":       ubx.FieldSpec{WireName: "restrict_query_result"},
+}
 
 type V1beta1ListingConfig struct {
 	// Optional. If true, the listing is only available to get the resource metadata. Listing is non subscribable.
@@ -56,8 +56,6 @@ type V1beta1ListingConfig struct {
 	Documentation any
 	// Optional. Base64 encoded image representing the listing. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the contents of the field are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
 	Icon any
-	// Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`
-	Name any
 	// Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
 	PrimaryContact any
 	// Contains details of the listing publisher.
@@ -66,8 +64,6 @@ type V1beta1ListingConfig struct {
 	RequestAccess any
 	// Restricted export config, used to configure restricted export on linked dataset.
 	RestrictedExportConfig any
-	// Output only. Current state of the listing.
-	State any
 }
 
 type V1beta1ListingAttrs struct {
@@ -107,32 +103,30 @@ var V1beta1Listing = ubx.ResourceBinding{
 		"AllowOnlyMetadataSharing": ubx.FieldSpec{WireName: "allow_only_metadata_sharing"},
 		"BigqueryDataset": ubx.FieldSpec{
 			WireName: "bigquery_dataset",
-			Kind: "object",
-			Fields: V1beta1Listing_BigqueryDatasetFields,
+			Kind:     "object",
+			Fields:   V1beta1Listing_BigqueryDatasetFields,
 		},
 		"Categories": ubx.FieldSpec{WireName: "categories"},
 		"DataProvider": ubx.FieldSpec{
 			WireName: "data_provider",
-			Kind: "object",
-			Fields: V1beta1Listing_DataProviderFields,
+			Kind:     "object",
+			Fields:   V1beta1Listing_DataProviderFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
+		"Icon":           ubx.FieldSpec{WireName: "icon"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
 		"Publisher": ubx.FieldSpec{
 			WireName: "publisher",
-			Kind: "object",
-			Fields: V1beta1Listing_DataProviderFields,
+			Kind:     "object",
+			Fields:   V1beta1Listing_DataProviderFields,
 		},
 		"RequestAccess": ubx.FieldSpec{WireName: "request_access"},
 		"RestrictedExportConfig": ubx.FieldSpec{
 			WireName: "restricted_export_config",
-			Kind: "object",
-			Fields: V1beta1Listing_RestrictedExportConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Listing_RestrictedExportConfigFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

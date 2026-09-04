@@ -106,11 +106,6 @@ const V1beta1Workload_ResourceSettingsFields: FieldMap = {
   resourceType: "resource_type",
 };
 
-const V1beta1Workload_ResourcesFields: FieldMap = {
-  resourceId: "resource_id",
-  resourceType: "resource_type",
-};
-
 const V1beta1Workload_SaaEnrollmentResponseFields: FieldMap = {
   setupErrors: "setup_errors",
   setupStatus: "setup_status",
@@ -121,8 +116,6 @@ const V1beta1Workload_WorkloadOptionsFields: FieldMap = {
 };
 
 export interface V1beta1WorkloadConfig {
-  /** Output only. The number of updates available for the workload. */
-  availableUpdates?: number | Computed<number>;
   /** Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`. */
   billingAccount?: string | Computed<string>;
   /** Settings specific to resources needed for CJIS. */
@@ -131,12 +124,6 @@ export interface V1beta1WorkloadConfig {
   complianceRegime?: string | Computed<string>;
   /** Represents the Compliance Status of this workload */
   complianceStatus?: V1beta1Workload_ComplianceStatus | Computed<V1beta1Workload_ComplianceStatus>;
-  /** Output only. Indicates whether the compliance updates feature is enabled for a workload. The compliance updates feature can be enabled via the EnableComplianceUpdates endpoint. */
-  complianceUpdatesEnabled?: boolean | Computed<boolean>;
-  /** Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment. */
-  compliantButDisallowedServices?: string[] | Computed<string[]>;
-  /** Output only. Immutable. The Workload creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload */
   displayName?: string | Computed<string>;
   /** External key management systems(EKM) Provisioning response */
@@ -151,8 +138,6 @@ export interface V1beta1WorkloadConfig {
   fedrampModerateSettings?: V1beta1Workload_CjisSettings | Computed<V1beta1Workload_CjisSettings>;
   /** Settings specific to resources needed for IL4. */
   il4Settings?: V1beta1Workload_CjisSettings | Computed<V1beta1Workload_CjisSettings>;
-  /** Output only. Represents the KAJ enrollment state of the given workload. */
-  kajEnrollmentState?: string | Computed<string>;
   /** Settings specific to the Key Management Service. */
   kmsSettings?: V1beta1Workload_CjisSettings_KmsSettings | Computed<V1beta1Workload_CjisSettings_KmsSettings>;
   /** Optional. Labels applied to the workload. */
@@ -167,12 +152,8 @@ export interface V1beta1WorkloadConfig {
   partnerServicesBillingAccount?: string | Computed<string>;
   /** Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id} */
   provisionedResourcesParent?: string | Computed<string>;
-  /** Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload. */
-  resourceMonitoringEnabled?: boolean | Computed<boolean>;
   /** Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional. */
   resourceSettings?: V1beta1Workload_ResourceSettings[] | Computed<V1beta1Workload_ResourceSettings[]>;
-  /** Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only. */
-  resources?: V1beta1Workload_Resources[] | Computed<V1beta1Workload_Resources[]>;
   /** Signed Access Approvals (SAA) enrollment response. */
   saaEnrollmentResponse?: V1beta1Workload_SaaEnrollmentResponse | Computed<V1beta1Workload_SaaEnrollmentResponse>;
   /** Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload. */
@@ -245,7 +226,6 @@ export interface V1beta1WorkloadAttrs {
 export const V1beta1Workload: ResourceBinding<V1beta1WorkloadConfig, V1beta1WorkloadAttrs> = {
   wireType: "google_assuredworkloads_v1beta1_workload",
   fields: {
-    availableUpdates: "available_updates",
     billingAccount: "billing_account",
     cjisSettings: {
       wireName: "cjis_settings",
@@ -258,9 +238,6 @@ export const V1beta1Workload: ResourceBinding<V1beta1WorkloadConfig, V1beta1Work
       kind: "object",
       fields: V1beta1Workload_ComplianceStatusFields,
     },
-    complianceUpdatesEnabled: "compliance_updates_enabled",
-    compliantButDisallowedServices: "compliant_but_disallowed_services",
-    createTime: "create_time",
     displayName: "display_name",
     ekmProvisioningResponse: {
       wireName: "ekm_provisioning_response",
@@ -284,7 +261,6 @@ export const V1beta1Workload: ResourceBinding<V1beta1WorkloadConfig, V1beta1Work
       kind: "object",
       fields: V1beta1Workload_CjisSettingsFields,
     },
-    kajEnrollmentState: "kaj_enrollment_state",
     kmsSettings: {
       wireName: "kms_settings",
       kind: "object",
@@ -300,16 +276,10 @@ export const V1beta1Workload: ResourceBinding<V1beta1WorkloadConfig, V1beta1Work
     },
     partnerServicesBillingAccount: "partner_services_billing_account",
     provisionedResourcesParent: "provisioned_resources_parent",
-    resourceMonitoringEnabled: "resource_monitoring_enabled",
     resourceSettings: {
       wireName: "resource_settings",
       kind: "list",
       fields: V1beta1Workload_ResourceSettingsFields,
-    },
-    resources: {
-      wireName: "resources",
-      kind: "list",
-      fields: V1beta1Workload_ResourcesFields,
     },
     saaEnrollmentResponse: {
       wireName: "saa_enrollment_response",

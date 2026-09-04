@@ -98,10 +98,6 @@ const BetaBackendBucket_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const BetaBackendBucket_UsedByFields: FieldMap = {
-  reference: "reference",
-};
-
 export interface BetaBackendBucketConfig {
   /** Cloud Storage bucket name. */
   bucketName?: string | Computed<string>;
@@ -121,20 +117,14 @@ export interface BetaBackendBucketConfig {
   enableCdn?: boolean | Computed<boolean>;
   /** [Output Only] Unique identifier for the resource; defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. Type of the resource. */
-  kind?: string | Computed<string>;
   /** The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both. */
   loadBalancingScheme?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Additional Backend Bucket parameters. */
   params?: BetaBackendBucket_Params | Computed<BetaBackendBucket_Params>;
-  /** Output only. [Output Only] URL of the region where the regional backend bucket resides. This field is not applicable to global backend buckets. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] List of resources referencing that backend bucket. */
-  usedBy?: BetaBackendBucket_UsedBy[] | Computed<BetaBackendBucket_UsedBy[]>;
 }
 
 export interface BetaBackendBucketAttrs {
@@ -188,7 +178,6 @@ export const BetaBackendBucket: ResourceBinding<BetaBackendBucketConfig, BetaBac
     edgeSecurityPolicy: "edge_security_policy",
     enableCdn: "enable_cdn",
     id: "id",
-    kind: "kind",
     loadBalancingScheme: "load_balancing_scheme",
     name: "name",
     params: {
@@ -196,12 +185,6 @@ export const BetaBackendBucket: ResourceBinding<BetaBackendBucketConfig, BetaBac
       kind: "object",
       fields: BetaBackendBucket_ParamsFields,
     },
-    region: "region",
     selfLink: "self_link",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: BetaBackendBucket_UsedByFields,
-    },
   },
 };

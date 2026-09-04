@@ -219,38 +219,13 @@ const Operation_DetailsFields: FieldMap = {
   },
 };
 
-const Operation_SourceMetadata_PluginInstanceActionSourceFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
-const Operation_SourceMetadataFields: FieldMap = {
-  originalResourceCreateTime: "original_resource_create_time",
-  originalResourceId: "original_resource_id",
-  originalResourceUpdateTime: "original_resource_update_time",
-  pluginInstanceActionSource: {
-    wireName: "plugin_instance_action_source",
-    kind: "object",
-    fields: Operation_SourceMetadata_PluginInstanceActionSourceFields,
-  },
-  sourceType: "source_type",
-};
-
 export interface OperationConfig {
   /** Optional. The list of user defined attributes associated with the API operation resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource. */
   attributes?: Record<string, Operation_Attributes> | Computed<Record<string, Operation_Attributes>>;
-  /** Output only. The time at which the operation was created. */
-  createTime?: string | Computed<string>;
   /** The operation details parsed from the spec. */
   details?: Operation_Details | Computed<Operation_Details>;
   /** Identifier. The name of the operation. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}` */
   name?: string | Computed<string>;
-  /** Output only. The list of sources and metadata from the sources of the API operation. */
-  sourceMetadata?: Operation_SourceMetadata[] | Computed<Operation_SourceMetadata[]>;
-  /** Output only. The name of the spec will be of the format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` Note:The name of the spec will be empty if the operation is created via CreateApiOperation API. */
-  spec?: string | Computed<string>;
-  /** Output only. The time at which the operation was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface OperationAttrs {
@@ -278,19 +253,11 @@ export const Operation: ResourceBinding<OperationConfig, OperationAttrs> = {
       kind: "map",
       fields: Operation_AttributesFields,
     },
-    createTime: "create_time",
     details: {
       wireName: "details",
       kind: "object",
       fields: Operation_DetailsFields,
     },
     name: "name",
-    sourceMetadata: {
-      wireName: "source_metadata",
-      kind: "list",
-      fields: Operation_SourceMetadataFields,
-    },
-    spec: "spec",
-    updateTime: "update_time",
   },
 };

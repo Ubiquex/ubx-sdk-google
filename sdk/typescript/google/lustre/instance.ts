@@ -145,8 +145,6 @@ export interface InstanceConfig {
   accessRulesOptions?: Instance_AccessRulesOptions | Computed<Instance_AccessRulesOptions>;
   /** Required. The storage capacity of the instance in gibibytes (GiB). Allowed values depend on the `perUnitStorageThroughput`. See [Performance tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers) for specific minimums, maximums, and step sizes for each performance tier. */
   capacityGib?: string | Computed<string>;
-  /** Output only. Timestamp when the instance was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A user-readable description of the instance. */
   description?: string | Computed<string>;
   /** Dynamic tier options for a Managed Lustre instance. */
@@ -161,8 +159,6 @@ export interface InstanceConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Defines a maintenance policy for a resource. */
   maintenancePolicy?: Instance_MaintenancePolicy | Computed<Instance_MaintenancePolicy>;
-  /** Output only. Mount point of the instance in the format `IP_ADDRESS@tcp:/FILESYSTEM`. */
-  mountPoint?: string | Computed<string>;
   /** Identifier. The name of the instance. */
   name?: string | Computed<string>;
   /** Required. Immutable. The full name of the VPC network to which the instance is connected. Must be in the format `projects/{project_id}/global/networks/{network_name}`. */
@@ -171,16 +167,8 @@ export interface InstanceConfig {
   perUnitStorageThroughput?: string | Computed<string>;
   /** Optional. The placement policy name for the instance in the format of projects/{project}/locations/{location}/resourcePolicies/{resource_policy} */
   placementPolicy?: string | Computed<string>;
-  /** Output only. The state of the instance. */
-  state?: string | Computed<string>;
-  /** Output only. The reason why the instance is in a certain state (e.g. SUSPENDED). */
-  stateReason?: string | Computed<string>;
-  /** Output only. Unique ID of the resource. This is unrelated to the access rules which allow specifying the root squash uid. */
-  uid?: string | Computed<string>;
   /** Represents a scheduled maintenance event. */
   upcomingMaintenanceSchedule?: Instance_UpcomingMaintenanceSchedule | Computed<Instance_UpcomingMaintenanceSchedule>;
-  /** Output only. Timestamp when the instance was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface InstanceAttrs {
@@ -235,7 +223,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_AccessRulesOptionsFields,
     },
     capacityGib: "capacity_gib",
-    createTime: "create_time",
     description: "description",
     dynamicTierOptions: {
       wireName: "dynamic_tier_options",
@@ -251,19 +238,14 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_MaintenancePolicyFields,
     },
-    mountPoint: "mount_point",
     name: "name",
     network: "network",
     perUnitStorageThroughput: "per_unit_storage_throughput",
     placementPolicy: "placement_policy",
-    state: "state",
-    stateReason: "state_reason",
-    uid: "uid",
     upcomingMaintenanceSchedule: {
       wireName: "upcoming_maintenance_schedule",
       kind: "object",
       fields: Instance_UpcomingMaintenanceScheduleFields,
     },
-    updateTime: "update_time",
   },
 };

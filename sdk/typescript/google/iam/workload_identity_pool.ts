@@ -70,8 +70,6 @@ export interface WorkloadIdentityPoolConfig {
   disabled?: boolean | Computed<boolean>;
   /** Optional. A display name for the pool. Cannot exceed 32 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Time after which the workload identity pool will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Represents configuration for generating mutual TLS (mTLS) certificates for the identities within this pool. */
   inlineCertificateIssuanceConfig?: WorkloadIdentityPool_InlineCertificateIssuanceConfig | Computed<WorkloadIdentityPool_InlineCertificateIssuanceConfig>;
   /** Defines configuration for extending trust to additional trust domains. By establishing trust with another domain, the current domain will recognize and accept certificates issued by entities within the trusted domains. Note that a trust domain automatically trusts itself, eliminating the need for explicit configuration. */
@@ -80,8 +78,6 @@ export interface WorkloadIdentityPoolConfig {
   mode?: string | Computed<string>;
   /** Identifier. The resource name of the pool. */
   name?: string | Computed<string>;
-  /** Output only. The state of the pool. */
-  state?: string | Computed<string>;
 }
 
 export interface WorkloadIdentityPoolAttrs {
@@ -111,7 +107,6 @@ export const WorkloadIdentityPool: ResourceBinding<WorkloadIdentityPoolConfig, W
     description: "description",
     disabled: "disabled",
     displayName: "display_name",
-    expireTime: "expire_time",
     inlineCertificateIssuanceConfig: {
       wireName: "inline_certificate_issuance_config",
       kind: "object",
@@ -124,6 +119,5 @@ export const WorkloadIdentityPool: ResourceBinding<WorkloadIdentityPoolConfig, W
     },
     mode: "mode",
     name: "name",
-    state: "state",
   },
 };

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha1RouteConfig {
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** Required. Destination address for connection */
   destinationAddress?: string | Computed<string>;
   /** Destination port for connection */
@@ -12,10 +10,6 @@ export interface V1alpha1RouteConfig {
   displayName?: string | Computed<string>;
   /** Labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource's name. */
-  name?: string | Computed<string>;
-  /** Output only. The update time of the resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1RouteAttrs {
@@ -38,12 +32,9 @@ export interface V1alpha1RouteAttrs {
 export const V1alpha1Route: ResourceBinding<V1alpha1RouteConfig, V1alpha1RouteAttrs> = {
   wireType: "google_datastream_v1alpha1_route",
   fields: {
-    createTime: "create_time",
     destinationAddress: "destination_address",
     destinationPort: "destination_port",
     displayName: "display_name",
     labels: "labels",
-    name: "name",
-    updateTime: "update_time",
   },
 };

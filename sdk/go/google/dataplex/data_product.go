@@ -9,46 +9,42 @@ type DataProduct_AccessApprovalConfig struct {
 }
 
 type DataProduct_AccessGroups_Principal struct {
-	GoogleGroup any
+	GoogleGroup    any
 	ServiceAccount any
 }
 
 type DataProduct_AccessGroups struct {
 	Description any
 	DisplayName any
-	Id any
-	Principal any
+	Id          any
+	Principal   any
 }
 
 var DataProduct_AccessApprovalConfigFields = ubx.FieldMap{
-		"ApproverEmails": ubx.FieldSpec{WireName: "approver_emails"},
-	}
+	"ApproverEmails": ubx.FieldSpec{WireName: "approver_emails"},
+}
 
 var DataProduct_AccessGroups_PrincipalFields = ubx.FieldMap{
-		"GoogleGroup": ubx.FieldSpec{WireName: "google_group"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"GoogleGroup":    ubx.FieldSpec{WireName: "google_group"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var DataProduct_AccessGroupsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: DataProduct_AccessGroups_PrincipalFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   DataProduct_AccessGroups_PrincipalFields,
+	},
+}
 
 type DataProductConfig struct {
 	// Configuration for access approval for the data product.
 	AccessApprovalConfig any
 	// Optional. Data product access groups by access group id as key. If data product is used only for packaging data assets, then access groups may be empty. However, if a data product is used for sharing data assets, then at least one access group must be specified.Example: { "analyst": { "id": "analyst", "displayName": "Analyst", "description": "Access group for analysts", "principal": { "googleGroup": "analysts@example.com" } } }
 	AccessGroups any
-	// Output only. Number of data assets associated with this data product.
-	AssetCount any
-	// Output only. The time at which the data product was created.
-	CreateTime any
 	// Optional. Description of the data product.
 	Description any
 	// Required. User-friendly display name of the data product.
@@ -63,10 +59,6 @@ type DataProductConfig struct {
 	Name any
 	// Required. Emails of the data product owners.
 	OwnerEmails any
-	// Output only. System generated unique ID for the data product. This ID will be different if the data product is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time at which the data product was last updated.
-	UpdateTime any
 }
 
 type DataProductAttrs struct {
@@ -103,24 +95,20 @@ var DataProduct = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessApprovalConfig": ubx.FieldSpec{
 			WireName: "access_approval_config",
-			Kind: "object",
-			Fields: DataProduct_AccessApprovalConfigFields,
+			Kind:     "object",
+			Fields:   DataProduct_AccessApprovalConfigFields,
 		},
 		"AccessGroups": ubx.FieldSpec{
 			WireName: "access_groups",
-			Kind: "map",
-			Fields: DataProduct_AccessGroupsFields,
+			Kind:     "map",
+			Fields:   DataProduct_AccessGroupsFields,
 		},
-		"AssetCount": ubx.FieldSpec{WireName: "asset_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Icon":        ubx.FieldSpec{WireName: "icon"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OwnerEmails": ubx.FieldSpec{WireName: "owner_emails"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

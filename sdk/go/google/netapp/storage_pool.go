@@ -8,28 +8,18 @@ type StoragePoolConfig struct {
 	ActiveDirectory any
 	// Optional. True if the storage pool supports Auto Tiering enabled volumes. Default is false. Auto-tiering can be enabled after storage pool creation but it can't be disabled once enabled.
 	AllowAutoTiering any
-	// Output only. Available throughput of the storage pool (in MiB/s).
-	AvailableThroughputMibps any
 	// Required. Capacity in GIB of the pool
 	CapacityGib any
-	// Output only. Total cold tier data rounded down to the nearest GiB used by the storage pool.
-	ColdTierSizeUsedGib any
-	// Output only. Create time of the storage pool
-	CreateTime any
 	// Optional. True if using Independent Scaling of capacity and performance (Hyperdisk) By default set to false
 	CustomPerformanceEnabled any
 	// Optional. Description of the storage pool
 	Description any
 	// Optional. Flag indicating that the hot-tier threshold will be auto-increased by 10% of the hot-tier when it hits 100%. Default is true. The increment will kick in only if the new size after increment is still less than or equal to storage pool size.
 	EnableHotTierAutoResize any
-	// Output only. Specifies the current pool encryption key source.
-	EncryptionType any
 	// Deprecated. Used to allow SO pool to access AD or DNS server from other regions.
 	GlobalAccessAllowed any
 	// Optional. Total hot tier capacity for the Storage Pool. It is applicable only to Flex service level. It should be less than the minimum storage pool size and cannot be more than the current storage pool size. It cannot be decreased once set.
 	HotTierSizeGib any
-	// Output only. Total hot tier data rounded down to the nearest GiB used by the storage pool.
-	HotTierSizeUsedGib any
 	// Optional. Specifies the KMS config to be used for volume encryption.
 	KmsConfig any
 	// Optional. Labels as key value pairs
@@ -48,28 +38,16 @@ type StoragePoolConfig struct {
 	QosType any
 	// Optional. Specifies the replica zone for regional storagePool.
 	ReplicaZone any
-	// Output only. Reserved for future use
-	SatisfiesPzi any
-	// Output only. Reserved for future use
-	SatisfiesPzs any
 	// Optional. The scale type of the storage pool. Defaults to `SCALE_TYPE_DEFAULT` if not specified.
 	ScaleType any
 	// Required. Service level of the storage pool
 	ServiceLevel any
-	// Output only. State of the storage pool
-	State any
-	// Output only. State details of the storage pool
-	StateDetails any
 	// Optional. Custom Performance Total IOPS of the pool if not provided, it will be calculated based on the total_throughput_mibps
 	TotalIops any
 	// Optional. Custom Performance Total Throughput of the pool (in MiBps)
 	TotalThroughputMibps any
 	// Optional. Type of the storage pool. This field is used to control whether the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
 	Type any
-	// Output only. Allocated size of all volumes in GIB in the storage pool
-	VolumeCapacityGib any
-	// Output only. Volume count of the storage pool
-	VolumeCount any
 	// Optional. Specifies the active zone for regional storagePool.
 	Zone any
 }
@@ -148,39 +126,28 @@ type StoragePoolAttrs struct {
 var StoragePool = ubx.ResourceBinding{
 	WireType: "google_netapp_storage_pool",
 	Fields: ubx.FieldMap{
-		"ActiveDirectory": ubx.FieldSpec{WireName: "active_directory"},
-		"AllowAutoTiering": ubx.FieldSpec{WireName: "allow_auto_tiering"},
-		"AvailableThroughputMibps": ubx.FieldSpec{WireName: "available_throughput_mibps"},
-		"CapacityGib": ubx.FieldSpec{WireName: "capacity_gib"},
-		"ColdTierSizeUsedGib": ubx.FieldSpec{WireName: "cold_tier_size_used_gib"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"ActiveDirectory":          ubx.FieldSpec{WireName: "active_directory"},
+		"AllowAutoTiering":         ubx.FieldSpec{WireName: "allow_auto_tiering"},
+		"CapacityGib":              ubx.FieldSpec{WireName: "capacity_gib"},
 		"CustomPerformanceEnabled": ubx.FieldSpec{WireName: "custom_performance_enabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableHotTierAutoResize": ubx.FieldSpec{WireName: "enable_hot_tier_auto_resize"},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"GlobalAccessAllowed": ubx.FieldSpec{WireName: "global_access_allowed"},
-		"HotTierSizeGib": ubx.FieldSpec{WireName: "hot_tier_size_gib"},
-		"HotTierSizeUsedGib": ubx.FieldSpec{WireName: "hot_tier_size_used_gib"},
-		"KmsConfig": ubx.FieldSpec{WireName: "kms_config"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LdapEnabled": ubx.FieldSpec{WireName: "ldap_enabled"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PsaRange": ubx.FieldSpec{WireName: "psa_range"},
-		"QosType": ubx.FieldSpec{WireName: "qos_type"},
-		"ReplicaZone": ubx.FieldSpec{WireName: "replica_zone"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
-		"ServiceLevel": ubx.FieldSpec{WireName: "service_level"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"TotalIops": ubx.FieldSpec{WireName: "total_iops"},
-		"TotalThroughputMibps": ubx.FieldSpec{WireName: "total_throughput_mibps"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VolumeCapacityGib": ubx.FieldSpec{WireName: "volume_capacity_gib"},
-		"VolumeCount": ubx.FieldSpec{WireName: "volume_count"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"EnableHotTierAutoResize":  ubx.FieldSpec{WireName: "enable_hot_tier_auto_resize"},
+		"GlobalAccessAllowed":      ubx.FieldSpec{WireName: "global_access_allowed"},
+		"HotTierSizeGib":           ubx.FieldSpec{WireName: "hot_tier_size_gib"},
+		"KmsConfig":                ubx.FieldSpec{WireName: "kms_config"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
+		"LdapEnabled":              ubx.FieldSpec{WireName: "ldap_enabled"},
+		"Mode":                     ubx.FieldSpec{WireName: "mode"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Network":                  ubx.FieldSpec{WireName: "network"},
+		"PsaRange":                 ubx.FieldSpec{WireName: "psa_range"},
+		"QosType":                  ubx.FieldSpec{WireName: "qos_type"},
+		"ReplicaZone":              ubx.FieldSpec{WireName: "replica_zone"},
+		"ScaleType":                ubx.FieldSpec{WireName: "scale_type"},
+		"ServiceLevel":             ubx.FieldSpec{WireName: "service_level"},
+		"TotalIops":                ubx.FieldSpec{WireName: "total_iops"},
+		"TotalThroughputMibps":     ubx.FieldSpec{WireName: "total_throughput_mibps"},
+		"Type":                     ubx.FieldSpec{WireName: "type"},
+		"Zone":                     ubx.FieldSpec{WireName: "zone"},
 	},
 }

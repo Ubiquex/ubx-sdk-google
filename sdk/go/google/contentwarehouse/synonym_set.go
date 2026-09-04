@@ -8,8 +8,8 @@ type SynonymSet_Synonyms struct {
 }
 
 var SynonymSet_SynonymsFields = ubx.FieldMap{
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 type SynonymSetConfig struct {
 	// This is a freeform field. Example contexts can be "sales," "engineering," "real estate," "accounting," etc. The context can be supplied during search requests.
@@ -33,11 +33,11 @@ var SynonymSet = ubx.ResourceBinding{
 	WireType: "google_contentwarehouse_synonym_set",
 	Fields: ubx.FieldMap{
 		"Context": ubx.FieldSpec{WireName: "context"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Synonyms": ubx.FieldSpec{
 			WireName: "synonyms",
-			Kind: "list",
-			Fields: SynonymSet_SynonymsFields,
+			Kind:     "list",
+			Fields:   SynonymSet_SynonymsFields,
 		},
 	},
 }

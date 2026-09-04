@@ -4,9 +4,9 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Message_Message_ParsedData_Segments struct {
-	Fields any
+	Fields    any
 	SegmentId any
-	SetId any
+	SetId     any
 }
 
 type Message_Message_ParsedData struct {
@@ -14,7 +14,7 @@ type Message_Message_ParsedData struct {
 }
 
 type Message_Message_PatientIds struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -49,53 +49,53 @@ type Message_Message struct {
 }
 
 var Message_Message_ParsedData_SegmentsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"SegmentId": ubx.FieldSpec{WireName: "segment_id"},
-		"SetId": ubx.FieldSpec{WireName: "set_id"},
-	}
+	"Fields":    ubx.FieldSpec{WireName: "fields"},
+	"SegmentId": ubx.FieldSpec{WireName: "segment_id"},
+	"SetId":     ubx.FieldSpec{WireName: "set_id"},
+}
 
 var Message_Message_ParsedDataFields = ubx.FieldMap{
-		"Segments": ubx.FieldSpec{
-			WireName: "segments",
-			Kind: "list",
-			Fields: Message_Message_ParsedData_SegmentsFields,
-		},
-	}
+	"Segments": ubx.FieldSpec{
+		WireName: "segments",
+		Kind:     "list",
+		Fields:   Message_Message_ParsedData_SegmentsFields,
+	},
+}
 
 var Message_Message_PatientIdsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Message_Message_SchematizedDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Error": ubx.FieldSpec{WireName: "error"},
-	}
+	"Data":  ubx.FieldSpec{WireName: "data"},
+	"Error": ubx.FieldSpec{WireName: "error"},
+}
 
 var Message_MessageFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MessageType": ubx.FieldSpec{WireName: "message_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParsedData": ubx.FieldSpec{
-			WireName: "parsed_data",
-			Kind: "object",
-			Fields: Message_Message_ParsedDataFields,
-		},
-		"PatientIds": ubx.FieldSpec{
-			WireName: "patient_ids",
-			Kind: "list",
-			Fields: Message_Message_PatientIdsFields,
-		},
-		"SchematizedData": ubx.FieldSpec{
-			WireName: "schematized_data",
-			Kind: "object",
-			Fields: Message_Message_SchematizedDataFields,
-		},
-		"SendFacility": ubx.FieldSpec{WireName: "send_facility"},
-		"SendTime": ubx.FieldSpec{WireName: "send_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"Labels":      ubx.FieldSpec{WireName: "labels"},
+	"MessageType": ubx.FieldSpec{WireName: "message_type"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"ParsedData": ubx.FieldSpec{
+		WireName: "parsed_data",
+		Kind:     "object",
+		Fields:   Message_Message_ParsedDataFields,
+	},
+	"PatientIds": ubx.FieldSpec{
+		WireName: "patient_ids",
+		Kind:     "list",
+		Fields:   Message_Message_PatientIdsFields,
+	},
+	"SchematizedData": ubx.FieldSpec{
+		WireName: "schematized_data",
+		Kind:     "object",
+		Fields:   Message_Message_SchematizedDataFields,
+	},
+	"SendFacility": ubx.FieldSpec{WireName: "send_facility"},
+	"SendTime":     ubx.FieldSpec{WireName: "send_time"},
+}
 
 type MessageConfig struct {
 	// A complete HL7v2 message. See [Introduction to HL7 Standards] (https://www.hl7.org/implement/standards/index.cfm?ref=common) for details on the standard.
@@ -132,8 +132,8 @@ var Message = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Message": ubx.FieldSpec{
 			WireName: "message",
-			Kind: "object",
-			Fields: Message_MessageFields,
+			Kind:     "object",
+			Fields:   Message_MessageFields,
 		},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaFirewall_Allowed struct {
 	Ipprotocol any
-	Ports any
+	Ports      any
 }
 
 type BetaFirewall_LogConfig struct {
@@ -21,24 +21,22 @@ type BetaFirewall_Params struct {
 }
 
 var BetaFirewall_AllowedFields = ubx.FieldMap{
-		"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
+	"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
+	"Ports":      ubx.FieldSpec{WireName: "ports"},
+}
 
 var BetaFirewall_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Enable":   ubx.FieldSpec{WireName: "enable"},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var BetaFirewall_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type BetaFirewallConfig struct {
 	// The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection.
 	Allowed any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
 	Denied any
 	// An optional description of this resource. Provide this field when you create the resource.
@@ -51,10 +49,6 @@ type BetaFirewallConfig struct {
 	Disabled any
 	// Deprecated in favor of enable in LogConfig. This field denotes whether to enable logging for a particular firewall rule. If logging is enabled, logs will be exported t Cloud Logging.
 	EnableLogging any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#firewall for firewall rules.
-	Kind any
 	// The available logging options for a firewall rule.
 	LogConfig any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -129,40 +123,37 @@ var BetaFirewall = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Allowed": ubx.FieldSpec{
 			WireName: "allowed",
-			Kind: "list",
-			Fields: BetaFirewall_AllowedFields,
+			Kind:     "list",
+			Fields:   BetaFirewall_AllowedFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Denied": ubx.FieldSpec{
 			WireName: "denied",
-			Kind: "list",
-			Fields: BetaFirewall_AllowedFields,
+			Kind:     "list",
+			Fields:   BetaFirewall_AllowedFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DestinationRanges": ubx.FieldSpec{WireName: "destination_ranges"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"Disabled":          ubx.FieldSpec{WireName: "disabled"},
+		"EnableLogging":     ubx.FieldSpec{WireName: "enable_logging"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: BetaFirewall_LogConfigFields,
+			Kind:     "object",
+			Fields:   BetaFirewall_LogConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaFirewall_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaFirewall_ParamsFields,
 		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SourceRanges": ubx.FieldSpec{WireName: "source_ranges"},
+		"Priority":              ubx.FieldSpec{WireName: "priority"},
+		"SelfLink":              ubx.FieldSpec{WireName: "self_link"},
+		"SourceRanges":          ubx.FieldSpec{WireName: "source_ranges"},
 		"SourceServiceAccounts": ubx.FieldSpec{WireName: "source_service_accounts"},
-		"SourceTags": ubx.FieldSpec{WireName: "source_tags"},
+		"SourceTags":            ubx.FieldSpec{WireName: "source_tags"},
 		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-		"TargetTags": ubx.FieldSpec{WireName: "target_tags"},
+		"TargetTags":            ubx.FieldSpec{WireName: "target_tags"},
 	},
 }

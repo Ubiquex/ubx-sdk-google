@@ -28,8 +28,6 @@ const QuotaPreference_QuotaConfigFields: FieldMap = {
 export interface QuotaPreferenceConfig {
   /** Input only. An email address that can be used to contact the user, in case Google Cloud needs more information to make a decision before additional quota can be granted. When requesting a quota increase, the email address is required. When requesting a quota decrease, the email address is optional. For example, the email address is optional when the `QuotaConfig.preferred_value` is smaller than the `QuotaDetails.reset_value`. */
   contactEmail?: string | Computed<string>;
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Immutable. The dimensions that this quota preference applies to. The key of the map entry is the name of a dimension, such as `region`, `zone`, `network_id`, and the value of the map entry is the dimension value. If a dimension is missing from the map of dimensions, the quota preference applies to all the dimension values except for those that have other quota preferences configured for the specific value. Note: QuotaPreferences can only be applied across all values of `user` and `resource` dimension. Do not set values for `user` or `resource` in the dimension map. For example: `{"provider" : "Example Organization"}` where `provider` is a service-specific quota dimension and `Example Organization` is the provider name. */
   dimensions?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. The current etag of the quota preference. If an etag is provided on update and does not match the current server's etag of the quota preference, the request will be blocked and an ABORTED error will be returned. See https://google.aip.dev/134#etags for more details on etags. */
@@ -42,12 +40,8 @@ export interface QuotaPreferenceConfig {
   quotaConfig?: QuotaPreference_QuotaConfig | Computed<QuotaPreference_QuotaConfig>;
   /** Required. The id of the quota to which the quota preference is applied. A quota name is unique in the service. For example, `CpusPerProjectPerRegion` */
   quotaId?: string | Computed<string>;
-  /** Output only. Is the quota preference pending Google Cloud approval and fulfillment. */
-  reconciling?: boolean | Computed<boolean>;
   /** Required. The name of the service to which the quota preference is applied. */
   service?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface QuotaPreferenceAttrs {
@@ -79,7 +73,6 @@ export const QuotaPreference: ResourceBinding<QuotaPreferenceConfig, QuotaPrefer
   wireType: "google_cloudquotas_quota_preference",
   fields: {
     contactEmail: "contact_email",
-    createTime: "create_time",
     dimensions: "dimensions",
     etag: "etag",
     justification: "justification",
@@ -90,8 +83,6 @@ export const QuotaPreference: ResourceBinding<QuotaPreferenceConfig, QuotaPrefer
       fields: QuotaPreference_QuotaConfigFields,
     },
     quotaId: "quota_id",
-    reconciling: "reconciling",
     service: "service",
-    updateTime: "update_time",
   },
 };

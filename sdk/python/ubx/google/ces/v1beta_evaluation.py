@@ -1368,42 +1368,24 @@ _V1betaEvaluation_ScenarioFields = {
 class V1betaEvaluationConfig:
     # Aggregated metrics for an evaluation or evaluation dataset.
     aggregated_metrics: Any = None
-    # Output only. Timestamp when the evaluation was created.
-    create_time: Any = None
-    # Output only. The user who created the evaluation.
-    created_by: Any = None
     # Optional. User-defined description of the evaluation.
     description: Any = None
     # Required. User-defined display name of the evaluation. Unique within an App.
     display_name: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
-    # Output only. List of evaluation datasets the evaluation belongs to. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationDatasets/{evaluationDataset}`
-    evaluation_datasets: Any = None
     # Configures the metrics for an evaluation.
     evaluation_metrics_config_override: Any = None
     # Threshold settings for metrics in an Evaluation.
     evaluation_metrics_threshold_override: Any = None
-    # Output only. The EvaluationRuns that this Evaluation is associated with.
-    evaluation_runs: Any = None
     # The steps required to replay a golden conversation.
     golden: Any = None
-    # Output only. Whether the evaluation is invalid. This can happen if an evaluation is referencing a tool, toolset, or agent that has since been deleted.
-    invalid: Any = None
     # An evaluation result represents the output of running an Evaluation.
     last_completed_result: Any = None
-    # Output only. The last 10 evaluation results for this evaluation. This is only populated if include_last_ten_results is set to true in the ListEvaluationsRequest or GetEvaluationRequest.
-    last_ten_results: Any = None
-    # Output only. The user who last updated the evaluation.
-    last_updated_by: Any = None
     # Identifier. The unique identifier of this evaluation. Format: `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
     name: Any = None
     # The config for a scenario
     scenario: Any = None
     # Optional. User defined tags to categorize the evaluation.
     tags: Any = None
-    # Output only. Timestamp when the evaluation was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaEvaluationAttrs:
@@ -1454,12 +1436,8 @@ V1betaEvaluation = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaEvaluation_AggregatedMetricsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "created_by": ubx.FieldSpec(wire_name="created_by"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
-        "evaluation_datasets": ubx.FieldSpec(wire_name="evaluation_datasets"),
         "evaluation_metrics_config_override": ubx.FieldSpec(
             wire_name="evaluation_metrics_config_override",
             kind="object",
@@ -1470,24 +1448,16 @@ V1betaEvaluation = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
         ),
-        "evaluation_runs": ubx.FieldSpec(wire_name="evaluation_runs"),
         "golden": ubx.FieldSpec(
             wire_name="golden",
             kind="object",
             fields=_V1betaEvaluation_GoldenFields,
         ),
-        "invalid": ubx.FieldSpec(wire_name="invalid"),
         "last_completed_result": ubx.FieldSpec(
             wire_name="last_completed_result",
             kind="object",
             fields=_V1betaEvaluation_LastCompletedResultFields,
         ),
-        "last_ten_results": ubx.FieldSpec(
-            wire_name="last_ten_results",
-            kind="list",
-            fields=_V1betaEvaluation_LastCompletedResultFields,
-        ),
-        "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
         "name": ubx.FieldSpec(wire_name="name"),
         "scenario": ubx.FieldSpec(
             wire_name="scenario",
@@ -1495,6 +1465,5 @@ V1betaEvaluation = ubx.ResourceBinding(
             fields=_V1betaEvaluation_ScenarioFields,
         ),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

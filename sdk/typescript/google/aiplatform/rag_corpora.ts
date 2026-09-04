@@ -177,22 +177,12 @@ const RagCorpora_VertexAiSearchConfigFields: FieldMap = {
 export interface RagCorporaConfig {
   /** RagCorpus status. */
   corpusStatus?: RagCorpora_CorpusStatus | Computed<RagCorpora_CorpusStatus>;
-  /** Output only. Timestamp when this RagCorpus was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the RagCorpus. */
   description?: string | Computed<string>;
   /** Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: RagCorpora_EncryptionSpec | Computed<RagCorpora_EncryptionSpec>;
-  /** Output only. The resource name of the RagCorpus. */
-  name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this RagCorpus was last updated. */
-  updateTime?: string | Computed<string>;
   /** Config for the Vector DB to use for RAG. */
   vectorDbConfig?: RagCorpora_VectorDbConfig | Computed<RagCorpora_VectorDbConfig>;
   /** Config for the Vertex AI Search. */
@@ -232,7 +222,6 @@ export const RagCorpora: ResourceBinding<RagCorporaConfig, RagCorporaAttrs> = {
       kind: "object",
       fields: RagCorpora_CorpusStatusFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -240,10 +229,6 @@ export const RagCorpora: ResourceBinding<RagCorporaConfig, RagCorporaAttrs> = {
       kind: "object",
       fields: RagCorpora_EncryptionSpecFields,
     },
-    name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
     vectorDbConfig: {
       wireName: "vector_db_config",
       kind: "object",

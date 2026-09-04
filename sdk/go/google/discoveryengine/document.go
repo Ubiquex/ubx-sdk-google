@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Document_AclInfo_Readers_Principals struct {
 	ExternalEntityId any
-	GroupId any
-	UserId any
+	GroupId          any
+	UserId           any
 }
 
 type Document_AclInfo_Readers struct {
-	IdpWide any
+	IdpWide    any
 	Principals any
 }
 
@@ -29,7 +29,7 @@ type Document_Content struct {
 }
 
 type Document_IndexStatus_ErrorSamples struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -44,63 +44,59 @@ type Document_IndexStatus struct {
 }
 
 var Document_AclInfo_Readers_PrincipalsFields = ubx.FieldMap{
-		"ExternalEntityId": ubx.FieldSpec{WireName: "external_entity_id"},
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"ExternalEntityId": ubx.FieldSpec{WireName: "external_entity_id"},
+	"GroupId":          ubx.FieldSpec{WireName: "group_id"},
+	"UserId":           ubx.FieldSpec{WireName: "user_id"},
+}
 
 var Document_AclInfo_ReadersFields = ubx.FieldMap{
-		"IdpWide": ubx.FieldSpec{WireName: "idp_wide"},
-		"Principals": ubx.FieldSpec{
-			WireName: "principals",
-			Kind: "list",
-			Fields: Document_AclInfo_Readers_PrincipalsFields,
-		},
-	}
+	"IdpWide": ubx.FieldSpec{WireName: "idp_wide"},
+	"Principals": ubx.FieldSpec{
+		WireName: "principals",
+		Kind:     "list",
+		Fields:   Document_AclInfo_Readers_PrincipalsFields,
+	},
+}
 
 var Document_AclInfoFields = ubx.FieldMap{
-		"Readers": ubx.FieldSpec{
-			WireName: "readers",
-			Kind: "list",
-			Fields: Document_AclInfo_ReadersFields,
-		},
-	}
+	"Readers": ubx.FieldSpec{
+		WireName: "readers",
+		Kind:     "list",
+		Fields:   Document_AclInfo_ReadersFields,
+	},
+}
 
 var Document_ContentFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
+	"Uri":      ubx.FieldSpec{WireName: "uri"},
+}
 
 var Document_IndexStatus_ErrorSamplesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Document_IndexStatusFields = ubx.FieldMap{
-		"ErrorSamples": ubx.FieldSpec{
-			WireName: "error_samples",
-			Kind: "list",
-			Fields: Document_IndexStatus_ErrorSamplesFields,
-		},
-		"IndexTime": ubx.FieldSpec{WireName: "index_time"},
-		"PendingMessage": ubx.FieldSpec{WireName: "pending_message"},
-	}
+	"ErrorSamples": ubx.FieldSpec{
+		WireName: "error_samples",
+		Kind:     "list",
+		Fields:   Document_IndexStatus_ErrorSamplesFields,
+	},
+	"IndexTime":      ubx.FieldSpec{WireName: "index_time"},
+	"PendingMessage": ubx.FieldSpec{WireName: "pending_message"},
+}
 
 type DocumentConfig struct {
 	// ACL Information of the Document.
 	AclInfo any
 	// Unstructured data linked to this document.
 	Content any
-	// Output only. This field is OUTPUT_ONLY. It contains derived data that are not in the original input document.
-	DerivedStructData any
 	// Immutable. The identifier of the document. Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 128 characters.
 	Id any
 	// Index status of the document.
 	IndexStatus any
-	// Output only. The time when the document was last indexed. If this field is populated, it means the document has been indexed. While documents typically become searchable within seconds of indexing, it can sometimes take up to a few hours. If this field is not populated, it means the document has never been indexed.
-	IndexTime any
 	// The JSON string representation of the document. It should conform to the registered Schema or an `INVALID_ARGUMENT` error is thrown.
 	JsonData any
 	// Immutable. The full resource name of the document. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -143,26 +139,24 @@ var Document = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AclInfo": ubx.FieldSpec{
 			WireName: "acl_info",
-			Kind: "object",
-			Fields: Document_AclInfoFields,
+			Kind:     "object",
+			Fields:   Document_AclInfoFields,
 		},
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: Document_ContentFields,
+			Kind:     "object",
+			Fields:   Document_ContentFields,
 		},
-		"DerivedStructData": ubx.FieldSpec{WireName: "derived_struct_data"},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"IndexStatus": ubx.FieldSpec{
 			WireName: "index_status",
-			Kind: "object",
-			Fields: Document_IndexStatusFields,
+			Kind:     "object",
+			Fields:   Document_IndexStatusFields,
 		},
-		"IndexTime": ubx.FieldSpec{WireName: "index_time"},
-		"JsonData": ubx.FieldSpec{WireName: "json_data"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JsonData":         ubx.FieldSpec{WireName: "json_data"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ParentDocumentId": ubx.FieldSpec{WireName: "parent_document_id"},
-		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
-		"StructData": ubx.FieldSpec{WireName: "struct_data"},
+		"SchemaId":         ubx.FieldSpec{WireName: "schema_id"},
+		"StructData":       ubx.FieldSpec{WireName: "struct_data"},
 	},
 }

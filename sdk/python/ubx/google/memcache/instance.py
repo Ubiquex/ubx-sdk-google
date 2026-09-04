@@ -106,45 +106,22 @@ _Instance_MaintenanceScheduleFields = {
     "start_time": ubx.FieldSpec(wire_name="start_time"),
 }
 
-_Instance_MemcacheNodes_ParametersFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "params": ubx.FieldSpec(wire_name="params"),
-}
-
-_Instance_MemcacheNodesFields = {
-    "host": ubx.FieldSpec(wire_name="host"),
-    "memcache_full_version": ubx.FieldSpec(wire_name="memcache_full_version"),
-    "memcache_version": ubx.FieldSpec(wire_name="memcache_version"),
-    "node_id": ubx.FieldSpec(wire_name="node_id"),
-    "parameters": ubx.FieldSpec(
-        wire_name="parameters",
-        kind="object",
-        fields=_Instance_MemcacheNodes_ParametersFields,
-    ),
-    "port": ubx.FieldSpec(wire_name="port"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "zone": ubx.FieldSpec(wire_name="zone"),
-}
-
 _Instance_NodeConfigFields = {
     "cpu_count": ubx.FieldSpec(wire_name="cpu_count"),
     "memory_size_mb": ubx.FieldSpec(wire_name="memory_size_mb"),
+}
+
+_Instance_MemcacheNodes_ParametersFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "params": ubx.FieldSpec(wire_name="params"),
 }
 
 @dataclasses.dataclass
 class InstanceConfig:
     # The full name of the Google Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the instance is connected. If left unspecified, the `default` network will be used.
     authorized_network: Any = None
-    # Output only. The available maintenance versions that can be applied to the instance.
-    available_maintenance_versions: Any = None
-    # Output only. The time the instance was created.
-    create_time: Any = None
-    # Output only. Endpoint for the Discovery API.
-    discovery_endpoint: Any = None
     # User provided name for the instance, which is only used for display purposes. Cannot be more than 80 characters.
     display_name: Any = None
-    # Output only. The effective maintenance version of the instance.
-    effective_maintenance_version: Any = None
     # List of messages that describe the current state of the Memcached instance.
     instance_messages: Any = None
     # Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
@@ -155,10 +132,6 @@ class InstanceConfig:
     maintenance_schedule: Any = None
     # Optional. Last self service update maintenance version triggered by the customer. If it is empty, it means that the maintenance version is not set by the user.
     maintenance_version: Any = None
-    # Output only. The full version of memcached server running on this instance. System automatically determines the full memcached version for an instance based on the input MemcacheVersion. The full version format will be "memcached-1.5.16".
-    memcache_full_version: Any = None
-    # Output only. List of Memcached nodes. Refer to Node message for more details.
-    memcache_nodes: Any = None
     # The major version of Memcached software. If not provided, latest supported version will be used. Currently the latest supported major version is `MEMCACHE_1_5`. The minor version will be automatically determined by our system based on the latest supported minor version.
     memcache_version: Any = None
     # Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at the regional level so `location_id` here refers to a Google Cloud region; however, users may choose which zones Memcached nodes should be provisioned in within an instance. Refer to zones field for more details.
@@ -170,14 +143,6 @@ class InstanceConfig:
     parameters: Any = None
     # Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
     reserved_ip_range_id: Any = None
-    # Optional. Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Optional. Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The state of this Memcached instance.
-    state: Any = None
-    # Output only. The time the instance was updated.
-    update_time: Any = None
     # Zones in which Memcached nodes should be provisioned. Memcached nodes will be equally distributed across these zones. If not provided, the service will by default create nodes in all zones in the region for the instance.
     zones: Any = None
 
@@ -235,11 +200,7 @@ Instance = ubx.ResourceBinding(
     wire_type="google_memcache_instance",
     fields={
         "authorized_network": ubx.FieldSpec(wire_name="authorized_network"),
-        "available_maintenance_versions": ubx.FieldSpec(wire_name="available_maintenance_versions"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "discovery_endpoint": ubx.FieldSpec(wire_name="discovery_endpoint"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "effective_maintenance_version": ubx.FieldSpec(wire_name="effective_maintenance_version"),
         "instance_messages": ubx.FieldSpec(
             wire_name="instance_messages",
             kind="list",
@@ -257,12 +218,6 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_MaintenanceScheduleFields,
         ),
         "maintenance_version": ubx.FieldSpec(wire_name="maintenance_version"),
-        "memcache_full_version": ubx.FieldSpec(wire_name="memcache_full_version"),
-        "memcache_nodes": ubx.FieldSpec(
-            wire_name="memcache_nodes",
-            kind="list",
-            fields=_Instance_MemcacheNodesFields,
-        ),
         "memcache_version": ubx.FieldSpec(wire_name="memcache_version"),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_config": ubx.FieldSpec(
@@ -277,10 +232,6 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_MemcacheNodes_ParametersFields,
         ),
         "reserved_ip_range_id": ubx.FieldSpec(wire_name="reserved_ip_range_id"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "zones": ubx.FieldSpec(wire_name="zones"),
     },
 )

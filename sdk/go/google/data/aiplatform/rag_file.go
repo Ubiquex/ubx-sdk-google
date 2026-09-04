@@ -16,7 +16,7 @@ type RagFile_GcsSource struct {
 }
 
 type RagFile_GoogleDriveSource_ResourceIds struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
@@ -27,15 +27,15 @@ type RagFile_GoogleDriveSource struct {
 
 type RagFile_JiraSource_JiraQueries_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type RagFile_JiraSource_JiraQueries struct {
-	ApiKeyConfig any
+	ApiKeyConfig  any
 	CustomQueries any
-	Email any
-	Projects any
-	ServerUri any
+	Email         any
+	Projects      any
+	ServerUri     any
 }
 
 type RagFile_JiraSource struct {
@@ -44,15 +44,15 @@ type RagFile_JiraSource struct {
 }
 
 type RagFile_SharePointSources_SharePointSources struct {
-	ClientId any
-	ClientSecret any
-	DriveId any
-	DriveName any
-	FileId any
-	SharepointFolderId any
+	ClientId             any
+	ClientSecret         any
+	DriveId              any
+	DriveName            any
+	FileId               any
+	SharepointFolderId   any
 	SharepointFolderPath any
-	SharepointSiteName any
-	TenantId any
+	SharepointSiteName   any
+	TenantId             any
 }
 
 type RagFile_SharePointSources struct {
@@ -62,13 +62,13 @@ type RagFile_SharePointSources struct {
 
 type RagFile_SlackSource_Channels_Channels struct {
 	ChannelId any
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type RagFile_SlackSource_Channels struct {
 	ApiKeyConfig any
-	Channels any
+	Channels     any
 }
 
 type RagFile_SlackSource struct {
@@ -77,7 +77,6 @@ type RagFile_SlackSource struct {
 }
 
 type RagFileConfig struct {
-	Name any
 }
 
 type RagFileAttrs struct {
@@ -97,7 +96,7 @@ type RagFileAttrs struct {
 	GoogleDriveSource any
 	// The Jira source for the ImportRagFilesRequest.
 	JiraSource any
-	Name any
+	Name       any
 	// The SharePointSources to pass to ImportRagFiles.
 	SharePointSources any
 	// The Slack source for the ImportRagFilesRequest.
@@ -110,7 +109,5 @@ type RagFileAttrs struct {
 
 var RagFile = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_rag_file",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -52,22 +52,12 @@ _V1alphaRevision_GcsSourceFields = {
 class V1alphaRevisionConfig:
     # Direct write-only raw archive payload upload.
     archive_upload_source: Any = None
-    # Output only. Revision creation timestamp.
-    create_time: Any = None
     # Structured metadata attributes extracted from the package's local SKILL.md frontmatter.
     frontmatter: Any = None
     # Specifications for Cloud Storage objects.
     gcs_source: Any = None
     # Identifier. Resource name of the SkillRevision. Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}`
     name: Any = None
-    # Output only. Cryptographic SHA-256 integrity and deduplication digest of the payload zip.
-    sha256_hash: Any = None
-    # Output only. Size of the compiled zip payload in bytes (assists client download progress).
-    size_bytes: Any = None
-    # Output only. The system-managed lifecycle state of this revision.
-    state: Any = None
-    # Output only. Universally unique identifier (UUID4) for the skill revision.
-    uid: Any = None
 
 @dataclasses.dataclass
 class V1alphaRevisionAttrs:
@@ -98,7 +88,6 @@ V1alphaRevision = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaRevision_ArchiveUploadSourceFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "frontmatter": ubx.FieldSpec(
             wire_name="frontmatter",
             kind="object",
@@ -110,9 +99,5 @@ V1alphaRevision = ubx.ResourceBinding(
             fields=_V1alphaRevision_GcsSourceFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "sha256_hash": ubx.FieldSpec(wire_name="sha256_hash"),
-        "size_bytes": ubx.FieldSpec(wire_name="size_bytes"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

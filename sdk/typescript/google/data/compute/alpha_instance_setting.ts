@@ -10,7 +10,6 @@ export interface AlphaInstanceSetting_Metadata {
 
 export interface AlphaInstanceSettingConfig {
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface AlphaInstanceSettingAttrs {
@@ -29,6 +28,5 @@ export const AlphaInstanceSetting: DataSourceBinding<AlphaInstanceSettingConfig,
   wireType: "google_compute_alpha_instance_setting",
   fields: {
     project: "project",
-    zone: "zone",
   },
 };

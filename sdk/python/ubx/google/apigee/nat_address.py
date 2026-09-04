@@ -8,12 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NatAddressConfig:
-    # Output only. The static IPV4 address.
-    ip_address: Any = None
     # Required. Resource ID of the NAT address.
     name: Any = None
-    # Output only. State of the nat address.
-    state: Any = None
 
 @dataclasses.dataclass
 class NatAddressAttrs:
@@ -27,8 +23,6 @@ class NatAddressAttrs:
 NatAddress = ubx.ResourceBinding(
     wire_type="google_apigee_nat_address",
     fields={
-        "ip_address": ubx.FieldSpec(wire_name="ip_address"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

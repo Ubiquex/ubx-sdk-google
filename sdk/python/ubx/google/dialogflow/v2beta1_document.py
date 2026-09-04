@@ -44,7 +44,6 @@ class V2beta1DocumentConfig:
     mime_type: Any = None
     name: Any = None
     raw_content: Any = None
-    state: Any = None
 
 @dataclasses.dataclass
 class V2beta1DocumentAttrs:
@@ -77,6 +76,5 @@ V2beta1Document = ubx.ResourceBinding(
         "mime_type": ubx.FieldSpec(wire_name="mime_type"),
         "name": ubx.FieldSpec(wire_name="name"),
         "raw_content": ubx.FieldSpec(wire_name="raw_content"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

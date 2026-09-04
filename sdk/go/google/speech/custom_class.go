@@ -37,28 +37,28 @@ type CustomClass_CustomClass struct {
 }
 
 var CustomClass_CustomClass_ItemsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CustomClass_CustomClassFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CustomClassId": ubx.FieldSpec{WireName: "custom_class_id"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: CustomClass_CustomClass_ItemsFields,
-		},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":   ubx.FieldSpec{WireName: "annotations"},
+	"CustomClassId": ubx.FieldSpec{WireName: "custom_class_id"},
+	"DeleteTime":    ubx.FieldSpec{WireName: "delete_time"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"ExpireTime":    ubx.FieldSpec{WireName: "expire_time"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   CustomClass_CustomClass_ItemsFields,
+	},
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Reconciling":       ubx.FieldSpec{WireName: "reconciling"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"Uid":               ubx.FieldSpec{WireName: "uid"},
+}
 
 type CustomClassConfig struct {
 	// A set of words or phrases that represents a common concept likely to appear in your audio, for example a list of passenger ship names. CustomClass items can be substituted into placeholders that you set in PhraseSet phrases.
@@ -103,8 +103,8 @@ var CustomClass = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomClass": ubx.FieldSpec{
 			WireName: "custom_class",
-			Kind: "object",
-			Fields: CustomClass_CustomClassFields,
+			Kind:     "object",
+			Fields:   CustomClass_CustomClassFields,
 		},
 		"CustomClassId": ubx.FieldSpec{WireName: "custom_class_id"},
 	},

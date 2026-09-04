@@ -10,7 +10,7 @@ type TerraformVersionConfig struct {
 type TerraformVersionAttrs struct {
 	// Output only. When the version is deprecated.
 	DeprecateTime any
-	Name any
+	Name          any
 	// Output only. When the version is obsolete.
 	ObsoleteTime any
 	// Output only. The state of the version, ACTIVE, DEPRECATED or OBSOLETE.

@@ -17,19 +17,19 @@ type Index_Fields_SearchConfig_TextSpec struct {
 }
 
 type Index_Fields_SearchConfig struct {
-	GeoSpec any
+	GeoSpec  any
 	TextSpec any
 }
 
 type Index_Fields_VectorConfig struct {
 	Dimension any
-	Flat any
+	Flat      any
 }
 
 type Index_Fields struct {
-	ArrayConfig any
-	FieldPath any
-	Order any
+	ArrayConfig  any
+	FieldPath    any
+	Order        any
 	SearchConfig any
 	VectorConfig any
 }
@@ -42,60 +42,60 @@ type Index_SearchIndexOptions struct {
 }
 
 var Index_Fields_SearchConfig_GeoSpecFields = ubx.FieldMap{
-		"GeoJsonIndexingDisabled": ubx.FieldSpec{WireName: "geo_json_indexing_disabled"},
-	}
+	"GeoJsonIndexingDisabled": ubx.FieldSpec{WireName: "geo_json_indexing_disabled"},
+}
 
 var Index_Fields_SearchConfig_TextSpec_IndexSpecsFields = ubx.FieldMap{
-		"IndexType": ubx.FieldSpec{WireName: "index_type"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-	}
+	"IndexType": ubx.FieldSpec{WireName: "index_type"},
+	"MatchType": ubx.FieldSpec{WireName: "match_type"},
+}
 
 var Index_Fields_SearchConfig_TextSpecFields = ubx.FieldMap{
-		"IndexSpecs": ubx.FieldSpec{
-			WireName: "index_specs",
-			Kind: "list",
-			Fields: Index_Fields_SearchConfig_TextSpec_IndexSpecsFields,
-		},
-	}
+	"IndexSpecs": ubx.FieldSpec{
+		WireName: "index_specs",
+		Kind:     "list",
+		Fields:   Index_Fields_SearchConfig_TextSpec_IndexSpecsFields,
+	},
+}
 
 var Index_Fields_SearchConfigFields = ubx.FieldMap{
-		"GeoSpec": ubx.FieldSpec{
-			WireName: "geo_spec",
-			Kind: "object",
-			Fields: Index_Fields_SearchConfig_GeoSpecFields,
-		},
-		"TextSpec": ubx.FieldSpec{
-			WireName: "text_spec",
-			Kind: "object",
-			Fields: Index_Fields_SearchConfig_TextSpecFields,
-		},
-	}
+	"GeoSpec": ubx.FieldSpec{
+		WireName: "geo_spec",
+		Kind:     "object",
+		Fields:   Index_Fields_SearchConfig_GeoSpecFields,
+	},
+	"TextSpec": ubx.FieldSpec{
+		WireName: "text_spec",
+		Kind:     "object",
+		Fields:   Index_Fields_SearchConfig_TextSpecFields,
+	},
+}
 
 var Index_Fields_VectorConfigFields = ubx.FieldMap{
-		"Dimension": ubx.FieldSpec{WireName: "dimension"},
-		"Flat": ubx.FieldSpec{WireName: "flat"},
-	}
+	"Dimension": ubx.FieldSpec{WireName: "dimension"},
+	"Flat":      ubx.FieldSpec{WireName: "flat"},
+}
 
 var Index_FieldsFields = ubx.FieldMap{
-		"ArrayConfig": ubx.FieldSpec{WireName: "array_config"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"SearchConfig": ubx.FieldSpec{
-			WireName: "search_config",
-			Kind: "object",
-			Fields: Index_Fields_SearchConfigFields,
-		},
-		"VectorConfig": ubx.FieldSpec{
-			WireName: "vector_config",
-			Kind: "object",
-			Fields: Index_Fields_VectorConfigFields,
-		},
-	}
+	"ArrayConfig": ubx.FieldSpec{WireName: "array_config"},
+	"FieldPath":   ubx.FieldSpec{WireName: "field_path"},
+	"Order":       ubx.FieldSpec{WireName: "order"},
+	"SearchConfig": ubx.FieldSpec{
+		WireName: "search_config",
+		Kind:     "object",
+		Fields:   Index_Fields_SearchConfigFields,
+	},
+	"VectorConfig": ubx.FieldSpec{
+		WireName: "vector_config",
+		Kind:     "object",
+		Fields:   Index_Fields_VectorConfigFields,
+	},
+}
 
 var Index_SearchIndexOptionsFields = ubx.FieldMap{
-		"TextLanguage": ubx.FieldSpec{WireName: "text_language"},
-		"TextLanguageOverrideFieldPath": ubx.FieldSpec{WireName: "text_language_override_field_path"},
-	}
+	"TextLanguage":                  ubx.FieldSpec{WireName: "text_language"},
+	"TextLanguageOverrideFieldPath": ubx.FieldSpec{WireName: "text_language_override_field_path"},
+}
 
 type IndexConfig struct {
 	// The API scope supported by this index.
@@ -147,22 +147,22 @@ var Index = ubx.ResourceBinding{
 	WireType: "google_firestore_index",
 	Fields: ubx.FieldMap{
 		"ApiScope": ubx.FieldSpec{WireName: "api_scope"},
-		"Density": ubx.FieldSpec{WireName: "density"},
+		"Density":  ubx.FieldSpec{WireName: "density"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: Index_FieldsFields,
+			Kind:     "list",
+			Fields:   Index_FieldsFields,
 		},
-		"Multikey": ubx.FieldSpec{WireName: "multikey"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Multikey":   ubx.FieldSpec{WireName: "multikey"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"QueryScope": ubx.FieldSpec{WireName: "query_scope"},
 		"SearchIndexOptions": ubx.FieldSpec{
 			WireName: "search_index_options",
-			Kind: "object",
-			Fields: Index_SearchIndexOptionsFields,
+			Kind:     "object",
+			Fields:   Index_SearchIndexOptionsFields,
 		},
 		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Unique": ubx.FieldSpec{WireName: "unique"},
+		"State":      ubx.FieldSpec{WireName: "state"},
+		"Unique":     ubx.FieldSpec{WireName: "unique"},
 	},
 }

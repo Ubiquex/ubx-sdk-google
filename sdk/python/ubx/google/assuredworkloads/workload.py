@@ -98,11 +98,6 @@ _Workload_ResourceSettingsFields = {
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
 }
 
-_Workload_ResourcesFields = {
-    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
-    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-}
-
 _Workload_SaaEnrollmentResponseFields = {
     "setup_errors": ubx.FieldSpec(wire_name="setup_errors"),
     "setup_status": ubx.FieldSpec(wire_name="setup_status"),
@@ -120,10 +115,6 @@ class WorkloadConfig:
     compliance_regime: Any = None
     # Represents the Compliance Status of this workload
     compliance_status: Any = None
-    # Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment.
-    compliant_but_disallowed_services: Any = None
-    # Output only. Immutable. The Workload creation timestamp.
-    create_time: Any = None
     # Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
     display_name: Any = None
     # External key management systems(EKM) Provisioning response
@@ -132,8 +123,6 @@ class WorkloadConfig:
     enable_sovereign_controls: Any = None
     # Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations.
     etag: Any = None
-    # Output only. Represents the KAJ enrollment state of the given workload.
-    kaj_enrollment_state: Any = None
     # Settings specific to the Key Management Service.
     kms_settings: Any = None
     # Optional. Labels applied to the workload.
@@ -148,12 +137,8 @@ class WorkloadConfig:
     partner_services_billing_account: Any = None
     # Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
     provisioned_resources_parent: Any = None
-    # Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload.
-    resource_monitoring_enabled: Any = None
     # Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
     resource_settings: Any = None
-    # Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
-    resources: Any = None
     # Signed Access Approvals (SAA) enrollment response.
     saa_enrollment_response: Any = None
     # Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
@@ -220,8 +205,6 @@ Workload = ubx.ResourceBinding(
             kind="object",
             fields=_Workload_ComplianceStatusFields,
         ),
-        "compliant_but_disallowed_services": ubx.FieldSpec(wire_name="compliant_but_disallowed_services"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "ekm_provisioning_response": ubx.FieldSpec(
             wire_name="ekm_provisioning_response",
@@ -230,7 +213,6 @@ Workload = ubx.ResourceBinding(
         ),
         "enable_sovereign_controls": ubx.FieldSpec(wire_name="enable_sovereign_controls"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "kaj_enrollment_state": ubx.FieldSpec(wire_name="kaj_enrollment_state"),
         "kms_settings": ubx.FieldSpec(
             wire_name="kms_settings",
             kind="object",
@@ -246,16 +228,10 @@ Workload = ubx.ResourceBinding(
         ),
         "partner_services_billing_account": ubx.FieldSpec(wire_name="partner_services_billing_account"),
         "provisioned_resources_parent": ubx.FieldSpec(wire_name="provisioned_resources_parent"),
-        "resource_monitoring_enabled": ubx.FieldSpec(wire_name="resource_monitoring_enabled"),
         "resource_settings": ubx.FieldSpec(
             wire_name="resource_settings",
             kind="list",
             fields=_Workload_ResourceSettingsFields,
-        ),
-        "resources": ubx.FieldSpec(
-            wire_name="resources",
-            kind="list",
-            fields=_Workload_ResourcesFields,
         ),
         "saa_enrollment_response": ubx.FieldSpec(
             wire_name="saa_enrollment_response",

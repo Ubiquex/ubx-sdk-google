@@ -9,20 +9,14 @@ type BackupSchedule_WeeklyRecurrence struct {
 }
 
 var BackupSchedule_WeeklyRecurrenceFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-	}
+	"Day": ubx.FieldSpec{WireName: "day"},
+}
 
 type BackupScheduleConfig struct {
-	// Output only. The timestamp at which this backup schedule was created and effective since. No backups will be created for this schedule before this time.
-	CreateTime any
 	// Represents a recurring schedule that runs every day. The time zone is UTC.
 	DailyRecurrence any
-	// Output only. The unique backup schedule identifier across all locations and databases for the given project. This will be auto-assigned. Format is `projects/{project}/databases/{database}/backupSchedules/{backup_schedule}`
-	Name any
 	// At what relative time in the future, compared to its creation time, the backup should be deleted, e.g. keep backups for 7 days. The maximum supported retention period is 14 weeks.
 	Retention any
-	// Output only. The timestamp at which this backup schedule was most recently updated. When a backup schedule is first created, this is the same as create_time.
-	UpdateTime any
 	// Represents a recurring schedule that runs on a specified day of the week. The time zone is UTC.
 	WeeklyRecurrence any
 }
@@ -45,15 +39,12 @@ type BackupScheduleAttrs struct {
 var BackupSchedule = ubx.ResourceBinding{
 	WireType: "google_firestore_backup_schedule",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DailyRecurrence": ubx.FieldSpec{WireName: "daily_recurrence"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Retention": ubx.FieldSpec{WireName: "retention"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Retention":       ubx.FieldSpec{WireName: "retention"},
 		"WeeklyRecurrence": ubx.FieldSpec{
 			WireName: "weekly_recurrence",
-			Kind: "object",
-			Fields: BackupSchedule_WeeklyRecurrenceFields,
+			Kind:     "object",
+			Fields:   BackupSchedule_WeeklyRecurrenceFields,
 		},
 	},
 }

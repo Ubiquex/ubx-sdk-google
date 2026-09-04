@@ -46,8 +46,6 @@ _AssessmentRule_ScheduleInfoFields = {
 class AssessmentRuleConfig:
     # If true, apply this rule to conversations. Otherwise, this rule is inactive.
     active: Any = None
-    # Output only. The time at which this assessment rule was created.
-    create_time: Any = None
     # Display Name of the assessment rule.
     display_name: Any = None
     # Identifier. The resource name of the assessment rule. Format: projects/{project}/locations/{location}/assessmentRules/{assessment_rule}
@@ -56,8 +54,6 @@ class AssessmentRuleConfig:
     sample_rule: Any = None
     # Message for schedule info.
     schedule_info: Any = None
-    # Output only. The most recent time at which this assessment rule was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AssessmentRuleAttrs:
@@ -80,7 +76,6 @@ AssessmentRule = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_assessment_rule",
     fields={
         "active": ubx.FieldSpec(wire_name="active"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "sample_rule": ubx.FieldSpec(
@@ -93,6 +88,5 @@ AssessmentRule = ubx.ResourceBinding(
             kind="object",
             fields=_AssessmentRule_ScheduleInfoFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

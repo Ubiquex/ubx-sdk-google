@@ -184,20 +184,14 @@ class ContactCenterConfig:
     advanced_reporting_enabled: Any = None
     # Optional. Whether to enable users to be created in the CCAIP-instance concurrently to having users in Cloud identity
     ccaip_managed_users: Any = None
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Instances in this Channel will receive updates after all instances in `Normal` were updated. They also will only be updated outside of their peak hours.
     critical: Any = None
     # Required. Immutable. At least 2 and max 16 char long, must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
     customer_domain_prefix: Any = None
-    # Output only. Timestamp in UTC of when this resource was soft-deleted.
-    delete_time: Any = None
     # Required. A user friendly name for the ContactCenter.
     display_name: Any = None
     # LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
     early: Any = None
-    # Output only. Timestamp in UTC of when this resource is considered expired.
-    expire_time: Any = None
     feature_config: Any = None
     # Message storing the instance configuration.
     instance_config: Any = None
@@ -211,18 +205,8 @@ class ContactCenterConfig:
     normal: Any = None
     # Defines ingress and egress private traffic settings for CCAIP instances.
     private_access: Any = None
-    # Output only. TODO(b/283407860) Deprecate this field.
-    private_components: Any = None
-    # Output only. Timestamp in UTC of when this resource is going to be hard-deleted.
-    purge_time: Any = None
-    # Output only. UJET release version, unique for each new release.
-    release_version: Any = None
     # Message storing SAML params to enable Google as IDP.
     saml_params: Any = None
-    # Output only. The state of this contact center.
-    state: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
     # Message storing the URIs of the ContactCenter.
     uris: Any = None
     # Optional. Email address of the first admin user.
@@ -290,17 +274,14 @@ ContactCenter = ubx.ResourceBinding(
         ),
         "advanced_reporting_enabled": ubx.FieldSpec(wire_name="advanced_reporting_enabled"),
         "ccaip_managed_users": ubx.FieldSpec(wire_name="ccaip_managed_users"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "critical": ubx.FieldSpec(
             wire_name="critical",
             kind="object",
             fields=_ContactCenter_CriticalFields,
         ),
         "customer_domain_prefix": ubx.FieldSpec(wire_name="customer_domain_prefix"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "early": ubx.FieldSpec(wire_name="early"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "feature_config": ubx.FieldSpec(
             wire_name="feature_config",
             kind="object",
@@ -320,16 +301,11 @@ ContactCenter = ubx.ResourceBinding(
             kind="object",
             fields=_ContactCenter_PrivateAccessFields,
         ),
-        "private_components": ubx.FieldSpec(wire_name="private_components"),
-        "purge_time": ubx.FieldSpec(wire_name="purge_time"),
-        "release_version": ubx.FieldSpec(wire_name="release_version"),
         "saml_params": ubx.FieldSpec(
             wire_name="saml_params",
             kind="object",
             fields=_ContactCenter_SamlParamsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "uris": ubx.FieldSpec(
             wire_name="uris",
             kind="object",

@@ -4,7 +4,7 @@ package eventarc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trigger_Conditions struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -57,8 +57,8 @@ type Trigger_Destination struct {
 
 type Trigger_EventFilters struct {
 	Attribute any
-	Operator any
-	Value any
+	Operator  any
+	Value     any
 }
 
 type Trigger_RetryPolicy struct {
@@ -78,92 +78,81 @@ type Trigger_Transport struct {
 	Pubsub any
 }
 
-var Trigger_ConditionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
 var Trigger_Destination_CloudRunFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Trigger_Destination_GkeFields = ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Cluster":   ubx.FieldSpec{WireName: "cluster"},
+	"Location":  ubx.FieldSpec{WireName: "location"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+	"Service":   ubx.FieldSpec{WireName: "service"},
+}
 
 var Trigger_Destination_HttpEndpointFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Trigger_Destination_NetworkConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var Trigger_DestinationFields = ubx.FieldMap{
-		"CloudFunction": ubx.FieldSpec{WireName: "cloud_function"},
-		"CloudRun": ubx.FieldSpec{
-			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Trigger_Destination_CloudRunFields,
-		},
-		"Gke": ubx.FieldSpec{
-			WireName: "gke",
-			Kind: "object",
-			Fields: Trigger_Destination_GkeFields,
-		},
-		"HttpEndpoint": ubx.FieldSpec{
-			WireName: "http_endpoint",
-			Kind: "object",
-			Fields: Trigger_Destination_HttpEndpointFields,
-		},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: Trigger_Destination_NetworkConfigFields,
-		},
-		"Workflow": ubx.FieldSpec{WireName: "workflow"},
-	}
+	"CloudFunction": ubx.FieldSpec{WireName: "cloud_function"},
+	"CloudRun": ubx.FieldSpec{
+		WireName: "cloud_run",
+		Kind:     "object",
+		Fields:   Trigger_Destination_CloudRunFields,
+	},
+	"Gke": ubx.FieldSpec{
+		WireName: "gke",
+		Kind:     "object",
+		Fields:   Trigger_Destination_GkeFields,
+	},
+	"HttpEndpoint": ubx.FieldSpec{
+		WireName: "http_endpoint",
+		Kind:     "object",
+		Fields:   Trigger_Destination_HttpEndpointFields,
+	},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   Trigger_Destination_NetworkConfigFields,
+	},
+	"Workflow": ubx.FieldSpec{WireName: "workflow"},
+}
 
 var Trigger_EventFiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operator":  ubx.FieldSpec{WireName: "operator"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Trigger_RetryPolicyFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-	}
+	"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
+}
 
 var Trigger_Transport_PubsubFields = ubx.FieldMap{
-		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Subscription": ubx.FieldSpec{WireName: "subscription"},
+	"Topic":        ubx.FieldSpec{WireName: "topic"},
+}
 
 var Trigger_TransportFields = ubx.FieldMap{
-		"Pubsub": ubx.FieldSpec{
-			WireName: "pubsub",
-			Kind: "object",
-			Fields: Trigger_Transport_PubsubFields,
-		},
-	}
+	"Pubsub": ubx.FieldSpec{
+		WireName: "pubsub",
+		Kind:     "object",
+		Fields:   Trigger_Transport_PubsubFields,
+	},
+}
 
 type TriggerConfig struct {
 	// Optional. The name of the channel associated with the trigger in `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from Eventarc SaaS partners.
 	Channel any
-	// Output only. The reason(s) why a trigger is in FAILED state.
-	Conditions any
-	// Output only. The creation time.
-	CreateTime any
 	// Represents a target of an invocation over HTTP.
 	Destination any
-	// Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. EventDataContentType specifies the type of payload in MIME format that is expected from the CloudEvent data field. This is set to `application/json` if the value is not defined.
 	EventDataContentType any
 	// Required. Unordered list. The list of filters that applies to event attributes. Only events that match all the provided filters are sent to the destination.
@@ -174,16 +163,10 @@ type TriggerConfig struct {
 	Name any
 	// The retry policy configuration for the Trigger. Can only be set with Cloud Run destinations.
 	RetryPolicy any
-	// Output only. Whether or not this Trigger satisfies the requirements of physical zone separation
-	SatisfiesPzs any
 	// Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The `iam.serviceAccounts.actAs` permission must be granted on the service account to allow a principal to impersonate the service account. For more information, see the [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific to the trigger destination.
 	ServiceAccount any
 	// Represents the transport intermediaries created for the trigger to deliver events.
 	Transport any
-	// Output only. Server-assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type TriggerAttrs struct {
@@ -223,39 +206,29 @@ var Trigger = ubx.ResourceBinding{
 	WireType: "google_eventarc_trigger",
 	Fields: ubx.FieldMap{
 		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "map",
-			Fields: Trigger_ConditionsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "object",
-			Fields: Trigger_DestinationFields,
+			Kind:     "object",
+			Fields:   Trigger_DestinationFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"EventDataContentType": ubx.FieldSpec{WireName: "event_data_content_type"},
 		"EventFilters": ubx.FieldSpec{
 			WireName: "event_filters",
-			Kind: "list",
-			Fields: Trigger_EventFiltersFields,
+			Kind:     "list",
+			Fields:   Trigger_EventFiltersFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"RetryPolicy": ubx.FieldSpec{
 			WireName: "retry_policy",
-			Kind: "object",
-			Fields: Trigger_RetryPolicyFields,
+			Kind:     "object",
+			Fields:   Trigger_RetryPolicyFields,
 		},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"Transport": ubx.FieldSpec{
 			WireName: "transport",
-			Kind: "object",
-			Fields: Trigger_TransportFields,
+			Kind:     "object",
+			Fields:   Trigger_TransportFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

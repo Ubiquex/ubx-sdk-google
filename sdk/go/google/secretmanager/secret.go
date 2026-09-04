@@ -22,7 +22,7 @@ type Secret_Replication_Automatic struct {
 
 type Secret_Replication_UserManaged_Replicas struct {
 	CustomerManagedEncryption any
-	Location any
+	Location                  any
 }
 
 type Secret_Replication_UserManaged struct {
@@ -67,86 +67,84 @@ type Secret_Topics struct {
 }
 
 var Secret_CustomerManagedEncryptionFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Secret_PolicyMemberFields = ubx.FieldMap{
-		"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
-		"IamPolicyUidPrincipal": ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
-	}
+	"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
+	"IamPolicyUidPrincipal":  ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
+}
 
 var Secret_Replication_AutomaticFields = ubx.FieldMap{
-		"CustomerManagedEncryption": ubx.FieldSpec{
-			WireName: "customer_managed_encryption",
-			Kind: "object",
-			Fields: Secret_CustomerManagedEncryptionFields,
-		},
-	}
+	"CustomerManagedEncryption": ubx.FieldSpec{
+		WireName: "customer_managed_encryption",
+		Kind:     "object",
+		Fields:   Secret_CustomerManagedEncryptionFields,
+	},
+}
 
 var Secret_Replication_UserManaged_ReplicasFields = ubx.FieldMap{
-		"CustomerManagedEncryption": ubx.FieldSpec{
-			WireName: "customer_managed_encryption",
-			Kind: "object",
-			Fields: Secret_CustomerManagedEncryptionFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"CustomerManagedEncryption": ubx.FieldSpec{
+		WireName: "customer_managed_encryption",
+		Kind:     "object",
+		Fields:   Secret_CustomerManagedEncryptionFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var Secret_Replication_UserManagedFields = ubx.FieldMap{
-		"Replicas": ubx.FieldSpec{
-			WireName: "replicas",
-			Kind: "list",
-			Fields: Secret_Replication_UserManaged_ReplicasFields,
-		},
-	}
+	"Replicas": ubx.FieldSpec{
+		WireName: "replicas",
+		Kind:     "list",
+		Fields:   Secret_Replication_UserManaged_ReplicasFields,
+	},
+}
 
 var Secret_ReplicationFields = ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{
-			WireName: "automatic",
-			Kind: "object",
-			Fields: Secret_Replication_AutomaticFields,
-		},
-		"UserManaged": ubx.FieldSpec{
-			WireName: "user_managed",
-			Kind: "object",
-			Fields: Secret_Replication_UserManagedFields,
-		},
-	}
+	"Automatic": ubx.FieldSpec{
+		WireName: "automatic",
+		Kind:     "object",
+		Fields:   Secret_Replication_AutomaticFields,
+	},
+	"UserManaged": ubx.FieldSpec{
+		WireName: "user_managed",
+		Kind:     "object",
+		Fields:   Secret_Replication_UserManagedFields,
+	},
+}
 
 var Secret_Rotation_ManagedRotationStatus_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Secret_Rotation_ManagedRotationStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Secret_Rotation_ManagedRotationStatus_ErrorFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Secret_Rotation_ManagedRotationStatus_ErrorFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Secret_RotationFields = ubx.FieldMap{
-		"ManagedRotationStatus": ubx.FieldSpec{
-			WireName: "managed_rotation_status",
-			Kind: "object",
-			Fields: Secret_Rotation_ManagedRotationStatusFields,
-		},
-		"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
-		"RotationPeriod": ubx.FieldSpec{WireName: "rotation_period"},
-	}
+	"ManagedRotationStatus": ubx.FieldSpec{
+		WireName: "managed_rotation_status",
+		Kind:     "object",
+		Fields:   Secret_Rotation_ManagedRotationStatusFields,
+	},
+	"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
+	"RotationPeriod":   ubx.FieldSpec{WireName: "rotation_period"},
+}
 
 var Secret_TopicsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type SecretConfig struct {
 	// Optional. Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and alphanumerics in between these symbols. The total size of annotation keys and values must be less than 16KiB.
 	Annotations any
-	// Output only. The time at which the Secret was created.
-	CreateTime any
 	// Configuration for encrypting secret payloads using customer-managed encryption keys (CMEK).
 	CustomerManagedEncryption any
 	// Optional. Etag of the currently stored Secret.
@@ -155,8 +153,6 @@ type SecretConfig struct {
 	ExpireTime any
 	// The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
 	Labels any
-	// Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-	Name any
 	// Output-only policy member strings of a Google Cloud resource's built-in identity.
 	PolicyMember any
 	// A policy that defines the replication and encryption configuration of data.
@@ -216,40 +212,38 @@ var Secret = ubx.ResourceBinding{
 	WireType: "google_secretmanager_secret",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomerManagedEncryption": ubx.FieldSpec{
 			WireName: "customer_managed_encryption",
-			Kind: "object",
-			Fields: Secret_CustomerManagedEncryptionFields,
+			Kind:     "object",
+			Fields:   Secret_CustomerManagedEncryptionFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":       ubx.FieldSpec{WireName: "etag"},
 		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
 		"PolicyMember": ubx.FieldSpec{
 			WireName: "policy_member",
-			Kind: "object",
-			Fields: Secret_PolicyMemberFields,
+			Kind:     "object",
+			Fields:   Secret_PolicyMemberFields,
 		},
 		"Replication": ubx.FieldSpec{
 			WireName: "replication",
-			Kind: "object",
-			Fields: Secret_ReplicationFields,
+			Kind:     "object",
+			Fields:   Secret_ReplicationFields,
 		},
 		"Rotation": ubx.FieldSpec{
 			WireName: "rotation",
-			Kind: "object",
-			Fields: Secret_RotationFields,
+			Kind:     "object",
+			Fields:   Secret_RotationFields,
 		},
 		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
 		"Topics": ubx.FieldSpec{
 			WireName: "topics",
-			Kind: "list",
-			Fields: Secret_TopicsFields,
+			Kind:     "list",
+			Fields:   Secret_TopicsFields,
 		},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"VersionAliases": ubx.FieldSpec{WireName: "version_aliases"},
+		"Ttl":               ubx.FieldSpec{WireName: "ttl"},
+		"VersionAliases":    ubx.FieldSpec{WireName: "version_aliases"},
 		"VersionDestroyTtl": ubx.FieldSpec{WireName: "version_destroy_ttl"},
 	},
 }

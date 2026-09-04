@@ -5,19 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataAttributeBinding_Paths struct {
 	Attributes any
-	Name any
+	Name       any
 }
 
 var DataAttributeBinding_PathsFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 type DataAttributeBindingConfig struct {
 	// Optional. List of attributes to be associated with the resource, provided in the form: projects/{project}/locations/{location}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
 	Attributes any
-	// Output only. The time when the DataAttributeBinding was created.
-	CreateTime any
 	// Optional. Description of the DataAttributeBinding.
 	Description any
 	// Optional. User friendly display name.
@@ -26,16 +24,10 @@ type DataAttributeBindingConfig struct {
 	Etag any
 	// Optional. User-defined labels for the DataAttributeBinding.
 	Labels any
-	// Output only. The relative resource name of the Data Attribute Binding, of the form: projects/{project_number}/locations/{location}/dataAttributeBindings/{data_attribute_binding_id}
-	Name any
 	// Optional. The list of paths for items within the associated resource (eg. columns and partitions within a table) along with attribute bindings.
 	Paths any
 	// Optional. Immutable. The resource name of the resource that is associated to attributes. Presently, only entity resource is supported in the form: projects/{project}/locations/{location}/lakes/{lake}/zones/{zone}/entities/{entity_id} Must belong in the same project and region as the attribute binding, and there can only exist one active binding for a resource.
 	Resource any
-	// Output only. System generated globally unique ID for the DataAttributeBinding. This ID will be different if the DataAttributeBinding is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the DataAttributeBinding was last updated.
-	UpdateTime any
 }
 
 type DataAttributeBindingAttrs struct {
@@ -66,20 +58,16 @@ type DataAttributeBindingAttrs struct {
 var DataAttributeBinding = ubx.ResourceBinding{
 	WireType: "google_dataplex_data_attribute_binding",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"Paths": ubx.FieldSpec{
 			WireName: "paths",
-			Kind: "list",
-			Fields: DataAttributeBinding_PathsFields,
+			Kind:     "list",
+			Fields:   DataAttributeBinding_PathsFields,
 		},
 		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

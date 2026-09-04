@@ -50,8 +50,6 @@ const PrivateConnection_VpcPeeringConfigFields: FieldMap = {
 };
 
 export interface PrivateConnectionConfig {
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** The private connection display name. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -64,14 +62,6 @@ export interface PrivateConnectionConfig {
   pscInterfaceConfig?: PrivateConnection_PscInterfaceConfig | Computed<PrivateConnection_PscInterfaceConfig>;
   /** Reserved Public IP configuration. */
   reservedPublicIpConfig?: PrivateConnection_ReservedPublicIpConfig | Computed<PrivateConnection_ReservedPublicIpConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of the private connection. */
-  state?: string | Computed<string>;
-  /** Output only. The last update time of the resource. */
-  updateTime?: string | Computed<string>;
   /** The VPC peering configuration is used to create VPC peering with the consumer's VPC. */
   vpcPeeringConfig?: PrivateConnection_VpcPeeringConfig | Computed<PrivateConnection_VpcPeeringConfig>;
 }
@@ -106,7 +96,6 @@ export interface PrivateConnectionAttrs {
 export const PrivateConnection: ResourceBinding<PrivateConnectionConfig, PrivateConnectionAttrs> = {
   wireType: "google_datamigration_private_connection",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
@@ -125,10 +114,6 @@ export const PrivateConnection: ResourceBinding<PrivateConnectionConfig, Private
       kind: "object",
       fields: PrivateConnection_ReservedPublicIpConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
     vpcPeeringConfig: {
       wireName: "vpc_peering_config",
       kind: "object",

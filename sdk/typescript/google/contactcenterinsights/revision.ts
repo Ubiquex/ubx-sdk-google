@@ -29,16 +29,10 @@ const Revision_SnapshotFields: FieldMap = {
 };
 
 export interface RevisionConfig {
-  /** Output only. Alternative IDs for this revision of the scorecard, e.g., `latest`. */
-  alternateIds?: string[] | Computed<string[]>;
-  /** Output only. The timestamp that the revision was created. */
-  createTime?: string | Computed<string>;
   /** Identifier. The name of the scorecard revision. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision} */
   name?: string | Computed<string>;
   /** A QaScorecard represents a collection of questions to be scored during analysis. */
   snapshot?: Revision_Snapshot | Computed<Revision_Snapshot>;
-  /** Output only. State of the scorecard revision, indicating whether it's ready to be used in analysis. */
-  state?: string | Computed<string>;
 }
 
 export interface RevisionAttrs {
@@ -57,14 +51,11 @@ export interface RevisionAttrs {
 export const Revision: ResourceBinding<RevisionConfig, RevisionAttrs> = {
   wireType: "google_contactcenterinsights_revision",
   fields: {
-    alternateIds: "alternate_ids",
-    createTime: "create_time",
     name: "name",
     snapshot: {
       wireName: "snapshot",
       kind: "object",
       fields: Revision_SnapshotFields,
     },
-    state: "state",
   },
 };

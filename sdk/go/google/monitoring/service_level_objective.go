@@ -90,114 +90,114 @@ type ServiceLevelObjective_ServiceLevelIndicator struct {
 }
 
 var ServiceLevelObjective_ServiceLevelIndicator_BasicSli_LatencyFields = ubx.FieldMap{
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_BasicSliFields = ubx.FieldMap{
-		"Availability": ubx.FieldSpec{WireName: "availability"},
-		"Latency": ubx.FieldSpec{
-			WireName: "latency",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_BasicSli_LatencyFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Availability": ubx.FieldSpec{WireName: "availability"},
+	"Latency": ubx.FieldSpec{
+		WireName: "latency",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_BasicSli_LatencyFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Method":   ubx.FieldSpec{WireName: "method"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCut_RangeFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCutFields = ubx.FieldMap{
-		"DistributionFilter": ubx.FieldSpec{WireName: "distribution_filter"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCut_RangeFields,
-		},
-	}
+	"DistributionFilter": ubx.FieldSpec{WireName: "distribution_filter"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCut_RangeFields,
+	},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_RequestBased_GoodTotalRatioFields = ubx.FieldMap{
-		"BadServiceFilter": ubx.FieldSpec{WireName: "bad_service_filter"},
-		"GoodServiceFilter": ubx.FieldSpec{WireName: "good_service_filter"},
-		"TotalServiceFilter": ubx.FieldSpec{WireName: "total_service_filter"},
-	}
+	"BadServiceFilter":   ubx.FieldSpec{WireName: "bad_service_filter"},
+	"GoodServiceFilter":  ubx.FieldSpec{WireName: "good_service_filter"},
+	"TotalServiceFilter": ubx.FieldSpec{WireName: "total_service_filter"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_RequestBasedFields = ubx.FieldMap{
-		"DistributionCut": ubx.FieldSpec{
-			WireName: "distribution_cut",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCutFields,
-		},
-		"GoodTotalRatio": ubx.FieldSpec{
-			WireName: "good_total_ratio",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBased_GoodTotalRatioFields,
-		},
-	}
+	"DistributionCut": ubx.FieldSpec{
+		WireName: "distribution_cut",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCutFields,
+	},
+	"GoodTotalRatio": ubx.FieldSpec{
+		WireName: "good_total_ratio",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBased_GoodTotalRatioFields,
+	},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_GoodTotalRatioThresholdFields = ubx.FieldMap{
-		"BasicSliPerformance": ubx.FieldSpec{
-			WireName: "basic_sli_performance",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_BasicSliFields,
-		},
-		"Performance": ubx.FieldSpec{
-			WireName: "performance",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBasedFields,
-		},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"BasicSliPerformance": ubx.FieldSpec{
+		WireName: "basic_sli_performance",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_BasicSliFields,
+	},
+	"Performance": ubx.FieldSpec{
+		WireName: "performance",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBasedFields,
+	},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_MetricMeanInRangeFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCut_RangeFields,
-		},
-		"TimeSeries": ubx.FieldSpec{WireName: "time_series"},
-	}
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBased_DistributionCut_RangeFields,
+	},
+	"TimeSeries": ubx.FieldSpec{WireName: "time_series"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicator_WindowsBasedFields = ubx.FieldMap{
-		"GoodBadMetricFilter": ubx.FieldSpec{WireName: "good_bad_metric_filter"},
-		"GoodTotalRatioThreshold": ubx.FieldSpec{
-			WireName: "good_total_ratio_threshold",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_GoodTotalRatioThresholdFields,
-		},
-		"MetricMeanInRange": ubx.FieldSpec{
-			WireName: "metric_mean_in_range",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_MetricMeanInRangeFields,
-		},
-		"MetricSumInRange": ubx.FieldSpec{
-			WireName: "metric_sum_in_range",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_MetricMeanInRangeFields,
-		},
-		"WindowPeriod": ubx.FieldSpec{WireName: "window_period"},
-	}
+	"GoodBadMetricFilter": ubx.FieldSpec{WireName: "good_bad_metric_filter"},
+	"GoodTotalRatioThreshold": ubx.FieldSpec{
+		WireName: "good_total_ratio_threshold",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_GoodTotalRatioThresholdFields,
+	},
+	"MetricMeanInRange": ubx.FieldSpec{
+		WireName: "metric_mean_in_range",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_MetricMeanInRangeFields,
+	},
+	"MetricSumInRange": ubx.FieldSpec{
+		WireName: "metric_sum_in_range",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_WindowsBased_MetricMeanInRangeFields,
+	},
+	"WindowPeriod": ubx.FieldSpec{WireName: "window_period"},
+}
 
 var ServiceLevelObjective_ServiceLevelIndicatorFields = ubx.FieldMap{
-		"BasicSli": ubx.FieldSpec{
-			WireName: "basic_sli",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_BasicSliFields,
-		},
-		"RequestBased": ubx.FieldSpec{
-			WireName: "request_based",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_RequestBasedFields,
-		},
-		"WindowsBased": ubx.FieldSpec{
-			WireName: "windows_based",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicator_WindowsBasedFields,
-		},
-	}
+	"BasicSli": ubx.FieldSpec{
+		WireName: "basic_sli",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_BasicSliFields,
+	},
+	"RequestBased": ubx.FieldSpec{
+		WireName: "request_based",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_RequestBasedFields,
+	},
+	"WindowsBased": ubx.FieldSpec{
+		WireName: "windows_based",
+		Kind:     "object",
+		Fields:   ServiceLevelObjective_ServiceLevelIndicator_WindowsBasedFields,
+	},
+}
 
 type ServiceLevelObjectiveConfig struct {
 	// A calendar period, semantically "since the start of the current ". At this time, only DAY, WEEK, FORTNIGHT, and MONTH are supported.
@@ -237,14 +237,14 @@ var ServiceLevelObjective = ubx.ResourceBinding{
 	WireType: "google_monitoring_service_level_objective",
 	Fields: ubx.FieldMap{
 		"CalendarPeriod": ubx.FieldSpec{WireName: "calendar_period"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RollingPeriod": ubx.FieldSpec{WireName: "rolling_period"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Goal":           ubx.FieldSpec{WireName: "goal"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"RollingPeriod":  ubx.FieldSpec{WireName: "rolling_period"},
 		"ServiceLevelIndicator": ubx.FieldSpec{
 			WireName: "service_level_indicator",
-			Kind: "object",
-			Fields: ServiceLevelObjective_ServiceLevelIndicatorFields,
+			Kind:     "object",
+			Fields:   ServiceLevelObjective_ServiceLevelIndicatorFields,
 		},
 		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
 	},

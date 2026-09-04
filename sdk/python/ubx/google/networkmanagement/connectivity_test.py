@@ -1236,14 +1236,10 @@ _ConnectivityTest_ReachabilityDetailsFields = {
 class ConnectivityTestConfig:
     # Whether the analysis should skip firewall checking. Default value is false.
     bypass_firewall_checks: Any = None
-    # Output only. The time the test was created.
-    create_time: Any = None
     # The user-supplied description of the Connectivity Test. Maximum of 512 characters.
     description: Any = None
     # Source or destination of the Connectivity Test.
     destination: Any = None
-    # Output only. The display name of a Connectivity Test.
-    display_name: Any = None
     # Resource labels to represent user-provided metadata.
     labels: Any = None
     # Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test_id}`
@@ -1262,8 +1258,6 @@ class ConnectivityTestConfig:
     round_trip: Any = None
     # Source or destination of the Connectivity Test.
     source: Any = None
-    # Output only. The time the test's configuration was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConnectivityTestAttrs:
@@ -1302,14 +1296,12 @@ ConnectivityTest = ubx.ResourceBinding(
     wire_type="google_networkmanagement_connectivity_test",
     fields={
         "bypass_firewall_checks": ubx.FieldSpec(wire_name="bypass_firewall_checks"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="object",
             fields=_ConnectivityTest_DestinationFields,
         ),
-        "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "probing_details": ubx.FieldSpec(
@@ -1335,6 +1327,5 @@ ConnectivityTest = ubx.ResourceBinding(
             kind="object",
             fields=_ConnectivityTest_DestinationFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

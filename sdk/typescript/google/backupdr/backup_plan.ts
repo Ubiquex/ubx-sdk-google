@@ -123,12 +123,8 @@ export interface BackupPlanConfig {
   backupRules?: BackupPlan_BackupRules[] | Computed<BackupPlan_BackupRules[]>;
   /** Required. Resource name of backup vault which will be used as storage location for backups. Format: projects/{project}/locations/{location}/backupVaults/{backupvault} */
   backupVault?: string | Computed<string>;
-  /** Output only. The Google Cloud service account to be used by the BackupVault for taking backups. Specify the email address of the Backup Vault Service Account. */
-  backupVaultServiceAccount?: string | Computed<string>;
   /** Properties for a compute instance backup plan. */
   computeInstanceBackupPlanProperties?: BackupPlan_ComputeInstanceBackupPlanProperties | Computed<BackupPlan_ComputeInstanceBackupPlanProperties>;
-  /** Output only. When the `BackupPlan` was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the `BackupPlan` resource. The description allows for additional details about `BackupPlan` and its use cases to be provided. An example description is the following: "This is a backup plan that performs a daily backup at 6pm and retains data for 3 months". The description must be at most 2048 characters. */
   description?: string | Computed<string>;
   /** Properties for a disk backup plan. */
@@ -141,20 +137,8 @@ export interface BackupPlanConfig {
   logRetentionDays?: string | Computed<string>;
   /** Optional. Optional field to configure the maximum number of days for which a backup can be retained. This field is only applicable for on-demand backups taken with custom retention value. */
   maxCustomOnDemandRetentionDays?: number | Computed<number>;
-  /** Output only. Identifier. The resource name of the `BackupPlan`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}` */
-  name?: string | Computed<string>;
   /** Required. The resource type to which the `BackupPlan` will be applied. Examples include, "compute.googleapis.com/Instance", "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster", "compute.googleapis.com/Disk". */
   resourceType?: string | Computed<string>;
-  /** Output only. The user friendly revision ID of the `BackupPlanRevision`. Example: v0, v1, v2, etc. */
-  revisionId?: string | Computed<string>;
-  /** Output only. The resource id of the `BackupPlanRevision`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}` */
-  revisionName?: string | Computed<string>;
-  /** Output only. The `State` for the `BackupPlan`. */
-  state?: string | Computed<string>;
-  /** Output only. All resource types to which backupPlan can be applied. */
-  supportedResourceTypes?: string[] | Computed<string[]>;
-  /** Output only. When the `BackupPlan` was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BackupPlanAttrs {
@@ -205,13 +189,11 @@ export const BackupPlan: ResourceBinding<BackupPlanConfig, BackupPlanAttrs> = {
       fields: BackupPlan_BackupRulesFields,
     },
     backupVault: "backup_vault",
-    backupVaultServiceAccount: "backup_vault_service_account",
     computeInstanceBackupPlanProperties: {
       wireName: "compute_instance_backup_plan_properties",
       kind: "object",
       fields: BackupPlan_ComputeInstanceBackupPlanPropertiesFields,
     },
-    createTime: "create_time",
     description: "description",
     diskBackupPlanProperties: {
       wireName: "disk_backup_plan_properties",
@@ -222,12 +204,6 @@ export const BackupPlan: ResourceBinding<BackupPlanConfig, BackupPlanAttrs> = {
     labels: "labels",
     logRetentionDays: "log_retention_days",
     maxCustomOnDemandRetentionDays: "max_custom_on_demand_retention_days",
-    name: "name",
     resourceType: "resource_type",
-    revisionId: "revision_id",
-    revisionName: "revision_name",
-    state: "state",
-    supportedResourceTypes: "supported_resource_types",
-    updateTime: "update_time",
   },
 };

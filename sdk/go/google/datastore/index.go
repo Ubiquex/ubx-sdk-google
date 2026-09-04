@@ -5,27 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Index_Properties struct {
 	Direction any
-	Name any
+	Name      any
 }
 
 var Index_PropertiesFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 type IndexConfig struct {
 	// Required. The index's ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED.
 	Ancestor any
-	// Output only. The resource ID of the index.
-	IndexId any
 	// Required. The entity kind to which this index applies.
 	Kind any
-	// Output only. Project ID.
-	ProjectId any
 	// Required. An ordered sequence of property names and their index attributes. Requires: * A maximum of 100 properties.
 	Properties any
-	// Output only. The state of the index.
-	State any
 }
 
 type IndexAttrs struct {
@@ -47,14 +41,11 @@ var Index = ubx.ResourceBinding{
 	WireType: "google_datastore_index",
 	Fields: ubx.FieldMap{
 		"Ancestor": ubx.FieldSpec{WireName: "ancestor"},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "list",
-			Fields: Index_PropertiesFields,
+			Kind:     "list",
+			Fields:   Index_PropertiesFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

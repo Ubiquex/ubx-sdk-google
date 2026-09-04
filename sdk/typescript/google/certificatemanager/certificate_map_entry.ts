@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface CertificateMapEntryConfig {
   /** Optional. A set of Certificates defines for the given `hostname`. There can be defined up to four certificates in each Certificate Map Entry. Each certificate must match pattern `projects/* /locations/* /certificates/*`. */
   certificates?: string[] | Computed<string[]>;
-  /** Output only. The creation timestamp of a Certificate Map Entry. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a certificate map entry. */
   description?: string | Computed<string>;
   /** A Hostname (FQDN, e.g. `example.com`) or a wildcard hostname expression (`*.example.com`) for a set of hostnames with common suffix. Used as Server Name Indication (SNI) for selecting a proper certificate. */
@@ -16,10 +14,6 @@ export interface CertificateMapEntryConfig {
   matcher?: string | Computed<string>;
   /** Identifier. A user-defined name of the Certificate Map Entry. Certificate Map Entry names must be unique globally and match pattern `projects/* /locations/* /certificateMaps/* /certificateMapEntries/*`. */
   name?: string | Computed<string>;
-  /** Output only. A serving state of this Certificate Map Entry. */
-  state?: string | Computed<string>;
-  /** Output only. The update timestamp of a Certificate Map Entry. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CertificateMapEntryAttrs {
@@ -47,13 +41,10 @@ export const CertificateMapEntry: ResourceBinding<CertificateMapEntryConfig, Cer
   wireType: "google_certificatemanager_certificate_map_entry",
   fields: {
     certificates: "certificates",
-    createTime: "create_time",
     description: "description",
     hostname: "hostname",
     labels: "labels",
     matcher: "matcher",
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

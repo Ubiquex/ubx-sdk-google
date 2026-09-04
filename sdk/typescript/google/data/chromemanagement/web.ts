@@ -57,7 +57,6 @@ export interface Web_ServiceError {
 }
 
 export interface WebConfig {
-  name: string | Computed<string>;
 }
 
 export interface WebAttrs {
@@ -105,6 +104,5 @@ export interface WebAttrs {
 export const Web: DataSourceBinding<WebConfig, WebAttrs> = {
   wireType: "google_chromemanagement_web",
   fields: {
-    name: "name",
   },
 };

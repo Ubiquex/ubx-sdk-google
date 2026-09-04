@@ -29,53 +29,45 @@ type BetaPacketMirroring_MirroredResources struct {
 }
 
 var BetaPacketMirroring_CollectorIlbFields = ubx.FieldMap{
-		"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
+	"Url":          ubx.FieldSpec{WireName: "url"},
+}
 
 var BetaPacketMirroring_FilterFields = ubx.FieldMap{
-		"CidrRanges": ubx.FieldSpec{WireName: "cidr_ranges"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Ipprotocols": ubx.FieldSpec{WireName: "ipprotocols"},
-	}
+	"CidrRanges":  ubx.FieldSpec{WireName: "cidr_ranges"},
+	"Direction":   ubx.FieldSpec{WireName: "direction"},
+	"Ipprotocols": ubx.FieldSpec{WireName: "ipprotocols"},
+}
 
 var BetaPacketMirroring_MirroredResourcesFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: BetaPacketMirroring_CollectorIlbFields,
-		},
-		"Subnetworks": ubx.FieldSpec{
-			WireName: "subnetworks",
-			Kind: "list",
-			Fields: BetaPacketMirroring_CollectorIlbFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   BetaPacketMirroring_CollectorIlbFields,
+	},
+	"Subnetworks": ubx.FieldSpec{
+		WireName: "subnetworks",
+		Kind:     "list",
+		Fields:   BetaPacketMirroring_CollectorIlbFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 type BetaPacketMirroringConfig struct {
 	CollectorIlb any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
-	Enable any
-	Filter any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
-	Kind any
+	Enable            any
+	Filter            any
 	MirroredResources any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name    any
 	Network any
 	// The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
 	Priority any
 	// [Output Only] URI of the region where the packetMirroring resides.
 	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 }
 
 type BetaPacketMirroringAttrs struct {
@@ -90,10 +82,10 @@ type BetaPacketMirroringAttrs struct {
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
-	Kind any
+	Kind              any
 	MirroredResources any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name    any
 	Network any
 	// The priority of applying this configuration. Priority is used to break ties in cases where there is more than one matching rule. In the case of two rules that apply for a given Instance, the one with the lowest-numbered priority value wins. Default value is 1000. Valid range is 0 through 65535.
 	Priority any
@@ -108,32 +100,28 @@ var BetaPacketMirroring = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectorIlb": ubx.FieldSpec{
 			WireName: "collector_ilb",
-			Kind: "object",
-			Fields: BetaPacketMirroring_CollectorIlbFields,
+			Kind:     "object",
+			Fields:   BetaPacketMirroring_CollectorIlbFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Enable":      ubx.FieldSpec{WireName: "enable"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: BetaPacketMirroring_FilterFields,
+			Kind:     "object",
+			Fields:   BetaPacketMirroring_FilterFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"MirroredResources": ubx.FieldSpec{
 			WireName: "mirrored_resources",
-			Kind: "object",
-			Fields: BetaPacketMirroring_MirroredResourcesFields,
+			Kind:     "object",
+			Fields:   BetaPacketMirroring_MirroredResourcesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{
 			WireName: "network",
-			Kind: "object",
-			Fields: BetaPacketMirroring_CollectorIlbFields,
+			Kind:     "object",
+			Fields:   BetaPacketMirroring_CollectorIlbFields,
 		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Region":   ubx.FieldSpec{WireName: "region"},
 	},
 }

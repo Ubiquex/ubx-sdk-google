@@ -389,20 +389,12 @@ class ConnectionConfig:
     cloud_sql: Any = None
     # Represents concrete parameter values for Connector Configuration.
     configuration: Any = None
-    # Output only. The creation timestamp of the connection.
-    creation_time: Any = None
     # User provided description.
     description: Any = None
     # User provided display name for the connection.
     friendly_name: Any = None
-    # Output only. True, if credential is configured for this connection.
-    has_credential: Any = None
     # Optional. The Cloud KMS key that is used for credentials encryption. If omitted, internal Google owned encryption keys are used. Example: `projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]`
     kms_key_name: Any = None
-    # Output only. The last update timestamp of the connection.
-    last_modified_time: Any = None
-    # Output only. The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
-    name: Any = None
     # Connection properties specific to Salesforce DataCloud. This is intended for use only by Salesforce partner projects.
     salesforce_data_cloud: Any = None
     # Container for connection properties to execute stored procedures for Apache Spark.
@@ -474,13 +466,9 @@ Connection = ubx.ResourceBinding(
             kind="object",
             fields=_Connection_ConfigurationFields,
         ),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
-        "has_credential": ubx.FieldSpec(wire_name="has_credential"),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
-        "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "salesforce_data_cloud": ubx.FieldSpec(
             wire_name="salesforce_data_cloud",
             kind="object",

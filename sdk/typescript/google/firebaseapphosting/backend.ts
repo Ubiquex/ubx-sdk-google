@@ -21,18 +21,6 @@ const Backend_CodebaseFields: FieldMap = {
   rootDirectory: "root_directory",
 };
 
-const Backend_ManagedResources_RunServiceFields: FieldMap = {
-  service: "service",
-};
-
-const Backend_ManagedResourcesFields: FieldMap = {
-  runService: {
-    wireName: "run_service",
-    kind: "object",
-    fields: Backend_ManagedResources_RunServiceFields,
-  },
-};
-
 export interface BackendConfig {
   /** Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
@@ -40,38 +28,22 @@ export interface BackendConfig {
   appId?: string | Computed<string>;
   /** The connection to an external source repository to watch for event-driven updates to the backend. */
   codebase?: Backend_Codebase | Computed<Backend_Codebase>;
-  /** Output only. Time at which the backend was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the backend was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
   /** Optional. The environment name of the backend, used to load environment variables from environment specific configuration. */
   environment?: string | Computed<string>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. A list of the resources managed by this backend. */
-  managedResources?: Backend_ManagedResources[] | Computed<Backend_ManagedResources[]>;
   /** Optional. Deprecated: Use `environment` instead. */
   mode?: string | Computed<string>;
   /** Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`. */
   name?: string | Computed<string>;
-  /** Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default. */
   requestLogsDisabled?: boolean | Computed<boolean>;
   /** Required. The name of the service account used for Cloud Build and Cloud Run. Should have the role roles/firebaseapphosting.computeRunner or equivalent permissions. */
   serviceAccount?: string | Computed<string>;
   /** Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS). */
   servingLocality?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the backend was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The primary URI to communicate with the backend. */
-  uri?: string | Computed<string>;
 }
 
 export interface BackendAttrs {
@@ -125,25 +97,13 @@ export const Backend: ResourceBinding<BackendConfig, BackendAttrs> = {
       kind: "object",
       fields: Backend_CodebaseFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     environment: "environment",
-    etag: "etag",
     labels: "labels",
-    managedResources: {
-      wireName: "managed_resources",
-      kind: "list",
-      fields: Backend_ManagedResourcesFields,
-    },
     mode: "mode",
     name: "name",
-    reconciling: "reconciling",
     requestLogsDisabled: "request_logs_disabled",
     serviceAccount: "service_account",
     servingLocality: "serving_locality",
-    uid: "uid",
-    updateTime: "update_time",
-    uri: "uri",
   },
 };

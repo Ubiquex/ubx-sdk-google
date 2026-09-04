@@ -149,8 +149,6 @@ _Secret_TopicsFields = {
 class SecretConfig:
     # Optional. Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and alphanumerics in between these symbols. The total size of annotation keys and values must be less than 16KiB.
     annotations: Any = None
-    # Output only. The time at which the Secret was created.
-    create_time: Any = None
     # Configuration for encrypting secret payloads using customer-managed encryption keys (CMEK).
     customer_managed_encryption: Any = None
     # Optional. Etag of the currently stored Secret.
@@ -159,8 +157,6 @@ class SecretConfig:
     expire_time: Any = None
     # The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
     labels: Any = None
-    # Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-    name: Any = None
     # Output-only policy member strings of a Google Cloud resource's built-in identity.
     policy_member: Any = None
     # A policy that defines the replication and encryption configuration of data.
@@ -219,7 +215,6 @@ Secret = ubx.ResourceBinding(
     wire_type="google_secretmanager_secret",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_managed_encryption": ubx.FieldSpec(
             wire_name="customer_managed_encryption",
             kind="object",
@@ -228,7 +223,6 @@ Secret = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "policy_member": ubx.FieldSpec(
             wire_name="policy_member",
             kind="object",

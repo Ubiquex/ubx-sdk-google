@@ -4,8 +4,6 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1DnsThreatDetectorConfig struct {
-	// Output only. Create time stamp.
-	CreateTime any
 	// Optional. A list of network resource names which aren't monitored by this DnsThreatDetector. Example: `projects/PROJECT_ID/global/networks/NETWORK_NAME`.
 	ExcludedNetworks any
 	// Optional. Any labels associated with the DnsThreatDetector, listed as key value pairs.
@@ -14,8 +12,6 @@ type V1beta1DnsThreatDetectorConfig struct {
 	Name any
 	// Required. The provider used for DNS threat analysis.
 	Provider any
-	// Output only. Update time stamp.
-	UpdateTime any
 }
 
 type V1beta1DnsThreatDetectorAttrs struct {
@@ -36,11 +32,9 @@ type V1beta1DnsThreatDetectorAttrs struct {
 var V1beta1DnsThreatDetector = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_dns_threat_detector",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"ExcludedNetworks": ubx.FieldSpec{WireName: "excluded_networks"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Provider":         ubx.FieldSpec{WireName: "provider"},
 	},
 }

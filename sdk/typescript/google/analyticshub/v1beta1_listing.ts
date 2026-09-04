@@ -54,8 +54,6 @@ export interface V1beta1ListingConfig {
   documentation?: string | Computed<string>;
   /** Optional. Base64 encoded image representing the listing. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the contents of the field are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire. */
   icon?: string | Computed<string>;
-  /** Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456` */
-  name?: string | Computed<string>;
   /** Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes. */
   primaryContact?: string | Computed<string>;
   /** Contains details of the listing publisher. */
@@ -64,8 +62,6 @@ export interface V1beta1ListingConfig {
   requestAccess?: string | Computed<string>;
   /** Restricted export config, used to configure restricted export on linked dataset. */
   restrictedExportConfig?: V1beta1Listing_RestrictedExportConfig | Computed<V1beta1Listing_RestrictedExportConfig>;
-  /** Output only. Current state of the listing. */
-  state?: string | Computed<string>;
 }
 
 export interface V1beta1ListingAttrs {
@@ -118,7 +114,6 @@ export const V1beta1Listing: ResourceBinding<V1beta1ListingConfig, V1beta1Listin
     displayName: "display_name",
     documentation: "documentation",
     icon: "icon",
-    name: "name",
     primaryContact: "primary_contact",
     publisher: {
       wireName: "publisher",
@@ -131,6 +126,5 @@ export const V1beta1Listing: ResourceBinding<V1beta1ListingConfig, V1beta1Listin
       kind: "object",
       fields: V1beta1Listing_RestrictedExportConfigFields,
     },
-    state: "state",
   },
 };

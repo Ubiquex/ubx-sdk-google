@@ -8,22 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TermConfig:
-    # Output only. The time at which the GlossaryTerm was created.
-    create_time: Any = None
     # Optional. The user-mutable description of the GlossaryTerm.
     description: Any = None
     # Optional. User friendly display name of the GlossaryTerm. This is user-mutable. This will be same as the GlossaryTermId, if not specified.
     display_name: Any = None
     # Optional. User-defined labels for the GlossaryTerm.
     labels: Any = None
-    # Output only. Identifier. The resource name of the GlossaryTerm. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/terms/{term_id}
-    name: Any = None
     # Required. The immediate parent of the GlossaryTerm in the resource-hierarchy. It can either be a Glossary or a GlossaryCategory. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id} OR projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/categories/{category_id}
     parent: Any = None
-    # Output only. System generated unique id for the GlossaryTerm. This ID will be different if the GlossaryTerm is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time at which the GlossaryTerm was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TermAttrs:
@@ -47,13 +39,9 @@ class TermAttrs:
 Term = ubx.ResourceBinding(
     wire_type="google_dataplex_term",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parent": ubx.FieldSpec(wire_name="parent"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

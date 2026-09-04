@@ -4,36 +4,16 @@ package file
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupConfig struct {
-	// Output only. Capacity of the source file share when the backup was created.
-	CapacityGb any
-	// Output only. The time when the backup was created.
-	CreateTime any
 	// A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
 	Description any
-	// Output only. Amount of bytes that will be downloaded if the backup is restored. This may be different than storage bytes, since sequential backups of the same disk will share storage.
-	DownloadBytes any
-	// Output only. The file system protocol of the source Filestore instance that this backup is created from.
-	FileSystemProtocol any
 	// Immutable. KMS key name used for data encryption.
 	KmsKey any
 	// Resource labels to represent user provided metadata.
 	Labels any
-	// Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
-	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Name of the file share in the source Filestore instance that the backup is created from.
 	SourceFileShare any
 	// The resource name of the source Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
 	SourceInstance any
-	// Output only. The service tier of the source Filestore instance that this backup is created from.
-	SourceInstanceTier any
-	// Output only. The backup state.
-	State any
-	// Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
-	StorageBytes any
 	// Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
 	Tags any
 }
@@ -76,21 +56,11 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_file_backup",
 	Fields: ubx.FieldMap{
-		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DownloadBytes": ubx.FieldSpec{WireName: "download_bytes"},
-		"FileSystemProtocol": ubx.FieldSpec{WireName: "file_system_protocol"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"KmsKey":          ubx.FieldSpec{WireName: "kms_key"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
 		"SourceFileShare": ubx.FieldSpec{WireName: "source_file_share"},
-		"SourceInstance": ubx.FieldSpec{WireName: "source_instance"},
-		"SourceInstanceTier": ubx.FieldSpec{WireName: "source_instance_tier"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StorageBytes": ubx.FieldSpec{WireName: "storage_bytes"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SourceInstance":  ubx.FieldSpec{WireName: "source_instance"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
 	},
 }

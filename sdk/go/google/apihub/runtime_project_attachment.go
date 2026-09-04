@@ -4,8 +4,6 @@ package apihub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RuntimeProjectAttachmentConfig struct {
-	// Output only. Create time.
-	CreateTime any
 	// Identifier. The resource name of a runtime project attachment. Format: "projects/{project}/locations/{location}/runtimeProjectAttachments/{runtime_project_attachment}".
 	Name any
 	// Required. Immutable. Google cloud project name in the format: "projects/abc" or "projects/123". As input, project name with either project id or number are accepted. As output, this field will contain project number.
@@ -24,8 +22,7 @@ type RuntimeProjectAttachmentAttrs struct {
 var RuntimeProjectAttachment = ubx.ResourceBinding{
 	WireType: "google_apihub_runtime_project_attachment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"RuntimeProject": ubx.FieldSpec{WireName: "runtime_project"},
 	},
 }

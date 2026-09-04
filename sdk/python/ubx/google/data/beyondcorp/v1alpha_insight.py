@@ -67,7 +67,6 @@ class V1alphaInsight_Rows:
 
 @dataclasses.dataclass
 class V1alphaInsightConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -84,7 +83,6 @@ class V1alphaInsightAttrs:
 V1alphaInsight = ubx.DataSourceBinding(
     wire_type="google_beyondcorp_v1alpha_insight",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

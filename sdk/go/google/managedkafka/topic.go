@@ -28,9 +28,9 @@ type TopicAttrs struct {
 var Topic = ubx.ResourceBinding{
 	WireType: "google_managedkafka_topic",
 	Fields: ubx.FieldMap{
-		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartitionCount": ubx.FieldSpec{WireName: "partition_count"},
+		"Configs":           ubx.FieldSpec{WireName: "configs"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"PartitionCount":    ubx.FieldSpec{WireName: "partition_count"},
 		"ReplicationFactor": ubx.FieldSpec{WireName: "replication_factor"},
 	},
 }

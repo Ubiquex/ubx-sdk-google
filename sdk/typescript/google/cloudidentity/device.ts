@@ -149,64 +149,16 @@ export interface DeviceConfig {
   androidSpecificAttributes?: Device_AndroidSpecificAttributes | Computed<Device_AndroidSpecificAttributes>;
   /** Asset tag of the device. */
   assetTag?: string | Computed<string>;
-  /** Output only. Baseband version of the device. */
-  basebandVersion?: string | Computed<string>;
-  /** Output only. Device bootloader version. Example: 0.6.7. */
-  bootloaderVersion?: string | Computed<string>;
-  /** Output only. Device brand. Example: Samsung. */
-  brand?: string | Computed<string>;
-  /** Output only. Build number of the device. */
-  buildNumber?: string | Computed<string>;
-  /** Output only. Represents whether the Device is compromised. */
-  compromisedState?: string | Computed<string>;
-  /** Output only. When the Company-Owned device was imported. This field is empty for BYOD devices. */
-  createTime?: string | Computed<string>;
   /** Unique identifier for the device. */
   deviceId?: string | Computed<string>;
-  /** Output only. Type of device. */
-  deviceType?: string | Computed<string>;
-  /** Output only. Whether developer options is enabled on device. */
-  enabledDeveloperOptions?: boolean | Computed<boolean>;
-  /** Output only. Whether USB debugging is enabled on device. */
-  enabledUsbDebugging?: boolean | Computed<boolean>;
-  /** Output only. Device encryption state. */
-  encryptionState?: string | Computed<string>;
   /** Resource representing the [Endpoint Verification-specific attributes](https://cloud.google.com/endpoint-verification/docs/device-information) of a device. */
   endpointVerificationSpecificAttributes?: Device_EndpointVerificationSpecificAttributes | Computed<Device_EndpointVerificationSpecificAttributes>;
   /** Host name of the device. */
   hostname?: string | Computed<string>;
-  /** Output only. IMEI number of device if GSM device; empty otherwise. */
-  imei?: string | Computed<string>;
-  /** Output only. Kernel version of the device. */
-  kernelVersion?: string | Computed<string>;
   /** Most recent time when device synced with this service. */
   lastSyncTime?: string | Computed<string>;
-  /** Output only. Management state of the device */
-  managementState?: string | Computed<string>;
-  /** Output only. Device manufacturer. Example: Motorola. */
-  manufacturer?: string | Computed<string>;
-  /** Output only. MEID number of device if CDMA device; empty otherwise. */
-  meid?: string | Computed<string>;
-  /** Output only. Model name of device. Example: Pixel 3. */
-  model?: string | Computed<string>;
-  /** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device}`, where device is the unique id assigned to the Device. Important: Device API scopes require that you use domain-wide delegation to access the API. For more information, see [Set up the Devices API](https://cloud.google.com/identity/docs/how-to/setup-devices). */
-  name?: string | Computed<string>;
-  /** Output only. Mobile or network operator of device, if available. */
-  networkOperator?: string | Computed<string>;
-  /** Output only. OS version of the device. Example: Android 8.1.0. */
-  osVersion?: string | Computed<string>;
-  /** Output only. Domain name for Google accounts on device. Type for other accounts on device. On Android, will only be populated if |ownership_privilege| is |PROFILE_OWNER| or |DEVICE_OWNER|. Does not include the account signed in to the device policy app if that account's domain has only one account. Examples: "com.example", "xyz.com". */
-  otherAccounts?: string[] | Computed<string[]>;
-  /** Output only. Whether the device is owned by the company or an individual */
-  ownerType?: string | Computed<string>;
-  /** Output only. OS release version. Example: 6.0. */
-  releaseVersion?: string | Computed<string>;
-  /** Output only. OS security patch update time on device. */
-  securityPatchTime?: string | Computed<string>;
   /** Serial Number of device. Example: HT82V1A01076. */
   serialNumber?: string | Computed<string>;
-  /** Output only. Unified device id of the device. */
-  unifiedDeviceId?: string | Computed<string>;
   /** WiFi MAC addresses of device. */
   wifiMacAddresses?: string[] | Computed<string[]>;
 }
@@ -287,39 +239,15 @@ export const Device: ResourceBinding<DeviceConfig, DeviceAttrs> = {
       fields: Device_AndroidSpecificAttributesFields,
     },
     assetTag: "asset_tag",
-    basebandVersion: "baseband_version",
-    bootloaderVersion: "bootloader_version",
-    brand: "brand",
-    buildNumber: "build_number",
-    compromisedState: "compromised_state",
-    createTime: "create_time",
     deviceId: "device_id",
-    deviceType: "device_type",
-    enabledDeveloperOptions: "enabled_developer_options",
-    enabledUsbDebugging: "enabled_usb_debugging",
-    encryptionState: "encryption_state",
     endpointVerificationSpecificAttributes: {
       wireName: "endpoint_verification_specific_attributes",
       kind: "object",
       fields: Device_EndpointVerificationSpecificAttributesFields,
     },
     hostname: "hostname",
-    imei: "imei",
-    kernelVersion: "kernel_version",
     lastSyncTime: "last_sync_time",
-    managementState: "management_state",
-    manufacturer: "manufacturer",
-    meid: "meid",
-    model: "model",
-    name: "name",
-    networkOperator: "network_operator",
-    osVersion: "os_version",
-    otherAccounts: "other_accounts",
-    ownerType: "owner_type",
-    releaseVersion: "release_version",
-    securityPatchTime: "security_patch_time",
     serialNumber: "serial_number",
-    unifiedDeviceId: "unified_device_id",
     wifiMacAddresses: "wifi_mac_addresses",
   },
 };

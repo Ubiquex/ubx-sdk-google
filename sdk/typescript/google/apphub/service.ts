@@ -133,8 +133,6 @@ const Service_ServiceReferenceFields: FieldMap = {
 export interface ServiceConfig {
   /** Consumer provided attributes. */
   attributes?: Service_Attributes | Computed<Service_Attributes>;
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of a Service. Can have a maximum length of 2048 characters. */
   description?: string | Computed<string>;
   /** Required. Immutable. The resource name of the original discovered service. */
@@ -147,12 +145,6 @@ export interface ServiceConfig {
   serviceProperties?: Service_ServiceProperties | Computed<Service_ServiceProperties>;
   /** Reference to an underlying networking resource that can comprise a Service. */
   serviceReference?: Service_ServiceReference | Computed<Service_ServiceReference>;
-  /** Output only. Service state. */
-  state?: string | Computed<string>;
-  /** Output only. A universally unique identifier (UUID) for the `Service` in the UUID4 format. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServiceAttrs {
@@ -188,7 +180,6 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
       kind: "object",
       fields: Service_AttributesFields,
     },
-    createTime: "create_time",
     description: "description",
     discoveredService: "discovered_service",
     displayName: "display_name",
@@ -203,8 +194,5 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
       kind: "object",
       fields: Service_ServiceReferenceFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

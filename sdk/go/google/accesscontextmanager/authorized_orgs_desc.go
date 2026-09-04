@@ -32,10 +32,10 @@ type AuthorizedOrgsDescAttrs struct {
 var AuthorizedOrgsDesc = ubx.ResourceBinding{
 	WireType: "google_accesscontextmanager_authorized_orgs_desc",
 	Fields: ubx.FieldMap{
-		"AssetType": ubx.FieldSpec{WireName: "asset_type"},
+		"AssetType":              ubx.FieldSpec{WireName: "asset_type"},
 		"AuthorizationDirection": ubx.FieldSpec{WireName: "authorization_direction"},
-		"AuthorizationType": ubx.FieldSpec{WireName: "authorization_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Orgs": ubx.FieldSpec{WireName: "orgs"},
+		"AuthorizationType":      ubx.FieldSpec{WireName: "authorization_type"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Orgs":                   ubx.FieldSpec{WireName: "orgs"},
 	},
 }

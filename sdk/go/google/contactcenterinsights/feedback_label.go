@@ -25,20 +25,18 @@ type FeedbackLabel_QaAnswerLabel struct {
 }
 
 var FeedbackLabel_QaAnswerLabelFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"NaValue": ubx.FieldSpec{WireName: "na_value"},
-		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-		"NumValue": ubx.FieldSpec{WireName: "num_value"},
-		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"SkipValue": ubx.FieldSpec{WireName: "skip_value"},
-		"StrValue": ubx.FieldSpec{WireName: "str_value"},
-	}
+	"BoolValue":       ubx.FieldSpec{WireName: "bool_value"},
+	"Key":             ubx.FieldSpec{WireName: "key"},
+	"NaValue":         ubx.FieldSpec{WireName: "na_value"},
+	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+	"NumValue":        ubx.FieldSpec{WireName: "num_value"},
+	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
+	"Score":           ubx.FieldSpec{WireName: "score"},
+	"SkipValue":       ubx.FieldSpec{WireName: "skip_value"},
+	"StrValue":        ubx.FieldSpec{WireName: "str_value"},
+}
 
 type FeedbackLabelConfig struct {
-	// Output only. Create time of the label.
-	CreateTime any
 	// String label used for Topic Modeling.
 	Label any
 	// Name of the resource to be labeled. Supported resources are: * `projects/{project}/locations/{location}/qaScorecards/{scorecard}/revisions/{revision}/qaQuestions/{question}` * `projects/{project}/locations/{location}/issueModels/{issue_model}` * `projects/{project}/locations/{location}/generators/{generator_id}`
@@ -47,8 +45,6 @@ type FeedbackLabelConfig struct {
 	Name any
 	// Message for holding the value of a QaAnswer. QaQuestion.AnswerChoice defines the possible answer values for a question.
 	QaAnswerLabel any
-	// Output only. Update time of the label.
-	UpdateTime any
 }
 
 type FeedbackLabelAttrs struct {
@@ -69,15 +65,13 @@ type FeedbackLabelAttrs struct {
 var FeedbackLabel = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_feedback_label",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Label": ubx.FieldSpec{WireName: "label"},
+		"Label":           ubx.FieldSpec{WireName: "label"},
 		"LabeledResource": ubx.FieldSpec{WireName: "labeled_resource"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"QaAnswerLabel": ubx.FieldSpec{
 			WireName: "qa_answer_label",
-			Kind: "object",
-			Fields: FeedbackLabel_QaAnswerLabelFields,
+			Kind:     "object",
+			Fields:   FeedbackLabel_QaAnswerLabelFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -79,12 +79,8 @@ _ExascaleDbStorageVault_PropertiesFields = {
 
 @dataclasses.dataclass
 class ExascaleDbStorageVaultConfig:
-    # Output only. The date and time when the ExascaleDbStorageVault was created.
-    create_time: Any = None
     # Required. The display name for the ExascaleDbStorageVault. The name does not have to be unique within your project. The name must be 1-255 characters long and can only contain alphanumeric characters.
     display_name: Any = None
-    # Output only. The ID of the subscription entitlement associated with the ExascaleDbStorageVault.
-    entitlement_id: Any = None
     # Optional. The Exadata Infrastructure resource on which ExascaleDbStorageVault resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
     exadata_infrastructure: Any = None
     # Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
@@ -118,9 +114,7 @@ class ExascaleDbStorageVaultAttrs:
 ExascaleDbStorageVault = ubx.ResourceBinding(
     wire_type="google_oracledatabase_exascale_db_storage_vault",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
         "exadata_infrastructure": ubx.FieldSpec(wire_name="exadata_infrastructure"),
         "gcp_oracle_zone": ubx.FieldSpec(wire_name="gcp_oracle_zone"),
         "labels": ubx.FieldSpec(wire_name="labels"),

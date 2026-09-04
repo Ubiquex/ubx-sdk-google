@@ -15,7 +15,7 @@ type Targetserver_SSlinfo struct {
 	Ciphers any
 	// Optional. Enables two-way TLS.
 	ClientAuthEnabled any
-	CommonName any
+	CommonName        any
 	// Required. Enables TLS. If false, neither one-way nor two-way TLS will be enabled.
 	Enabled any
 	// TLS is strictly enforced.
@@ -33,26 +33,26 @@ type Targetserver_SSlinfo struct {
 }
 
 var Targetserver_SSlinfo_CommonNameFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"WildcardMatch": ubx.FieldSpec{WireName: "wildcard_match"},
-	}
+	"Value":         ubx.FieldSpec{WireName: "value"},
+	"WildcardMatch": ubx.FieldSpec{WireName: "wildcard_match"},
+}
 
 var Targetserver_SSlinfoFields = ubx.FieldMap{
-		"Ciphers": ubx.FieldSpec{WireName: "ciphers"},
-		"ClientAuthEnabled": ubx.FieldSpec{WireName: "client_auth_enabled"},
-		"CommonName": ubx.FieldSpec{
-			WireName: "common_name",
-			Kind: "object",
-			Fields: Targetserver_SSlinfo_CommonNameFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-		"IgnoreValidationErrors": ubx.FieldSpec{WireName: "ignore_validation_errors"},
-		"KeyAlias": ubx.FieldSpec{WireName: "key_alias"},
-		"KeyStore": ubx.FieldSpec{WireName: "key_store"},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
-		"TrustStore": ubx.FieldSpec{WireName: "trust_store"},
-	}
+	"Ciphers":           ubx.FieldSpec{WireName: "ciphers"},
+	"ClientAuthEnabled": ubx.FieldSpec{WireName: "client_auth_enabled"},
+	"CommonName": ubx.FieldSpec{
+		WireName: "common_name",
+		Kind:     "object",
+		Fields:   Targetserver_SSlinfo_CommonNameFields,
+	},
+	"Enabled":                ubx.FieldSpec{WireName: "enabled"},
+	"Enforce":                ubx.FieldSpec{WireName: "enforce"},
+	"IgnoreValidationErrors": ubx.FieldSpec{WireName: "ignore_validation_errors"},
+	"KeyAlias":               ubx.FieldSpec{WireName: "key_alias"},
+	"KeyStore":               ubx.FieldSpec{WireName: "key_store"},
+	"Protocols":              ubx.FieldSpec{WireName: "protocols"},
+	"TrustStore":             ubx.FieldSpec{WireName: "trust_store"},
+}
 
 type TargetserverConfig struct {
 	// Optional. A human-readable description of this TargetServer.
@@ -92,15 +92,15 @@ var Targetserver = ubx.ResourceBinding{
 	WireType: "google_apigee_targetserver",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"IsEnabled": ubx.FieldSpec{WireName: "is_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Host":        ubx.FieldSpec{WireName: "host"},
+		"IsEnabled":   ubx.FieldSpec{WireName: "is_enabled"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Port":        ubx.FieldSpec{WireName: "port"},
+		"Protocol":    ubx.FieldSpec{WireName: "protocol"},
 		"SSlinfo": ubx.FieldSpec{
 			WireName: "s_slinfo",
-			Kind: "object",
-			Fields: Targetserver_SSlinfoFields,
+			Kind:     "object",
+			Fields:   Targetserver_SSlinfoFields,
 		},
 	},
 }

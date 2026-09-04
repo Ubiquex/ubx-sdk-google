@@ -36,7 +36,6 @@ type StepEntry_VariableData struct {
 }
 
 type StepEntryConfig struct {
-	Name any
 	View any
 }
 
@@ -47,7 +46,7 @@ type StepEntryAttrs struct {
 	EntryId any
 	// Exception describes why the step entry failed.
 	Exception any
-	Name any
+	Name      any
 	// NavigationInfo describes what steps if any come before or after this step, or what steps are parents or children of this step.
 	NavigationInfo any
 	// Output only. The name of the routine this step entry belongs to. A routine name is the subworkflow name defined in the YAML source code. The top level routine name is `main`.
@@ -64,13 +63,12 @@ type StepEntryAttrs struct {
 	UpdateTime any
 	// VariableData contains the variable data for this step.
 	VariableData any
-	View any
+	View         any
 }
 
 var StepEntry = ubx.DataSourceBinding{
 	WireType: "google_workflowexecutions_step_entry",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

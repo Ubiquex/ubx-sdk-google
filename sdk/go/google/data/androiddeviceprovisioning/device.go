@@ -4,13 +4,13 @@ package androiddeviceprovisioning
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Device_Claims struct {
-	AdditionalService any
+	AdditionalService         any
 	GoogleWorkspaceCustomerId any
-	OwnerCompanyId any
-	ResellerId any
-	SectionType any
-	VacationModeExpireTime any
-	VacationModeStartTime any
+	OwnerCompanyId            any
+	ResellerId                any
+	SectionType               any
+	VacationModeExpireTime    any
+	VacationModeStartTime     any
 }
 
 type Device_DeviceIdentifier struct {
@@ -40,7 +40,6 @@ type Device_DeviceMetadata struct {
 }
 
 type DeviceConfig struct {
-	Name any
 }
 
 type DeviceAttrs struct {
@@ -54,12 +53,10 @@ type DeviceAttrs struct {
 	DeviceIdentifier any
 	// Metadata entries that can be attached to a `Device`. To learn more, read [Device metadata](https://developers.google.com/zero-touch/guides/metadata).
 	DeviceMetadata any
-	Name any
+	Name           any
 }
 
 var Device = ubx.DataSourceBinding{
 	WireType: "google_androiddeviceprovisioning_device",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

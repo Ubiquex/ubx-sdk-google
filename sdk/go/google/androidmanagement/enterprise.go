@@ -37,79 +37,79 @@ type Enterprise_SigninDetails_GoogleAuthenticationOptions struct {
 }
 
 type Enterprise_SigninDetails struct {
-	AllowPersonalUsage any
-	DefaultStatus any
+	AllowPersonalUsage          any
+	DefaultStatus               any
 	GoogleAuthenticationOptions any
-	QrCode any
-	SigninEnrollmentToken any
-	SigninUrl any
-	TokenTag any
+	QrCode                      any
+	SigninEnrollmentToken       any
+	SigninUrl                   any
+	TokenTag                    any
 }
 
 type Enterprise_TermsAndConditions_Content struct {
-	DefaultMessage any
+	DefaultMessage    any
 	LocalizedMessages any
 }
 
 type Enterprise_TermsAndConditions struct {
 	Content any
-	Header any
+	Header  any
 }
 
 var Enterprise_ContactInfoFields = ubx.FieldMap{
-		"ContactEmail": ubx.FieldSpec{WireName: "contact_email"},
-		"DataProtectionOfficerEmail": ubx.FieldSpec{WireName: "data_protection_officer_email"},
-		"DataProtectionOfficerName": ubx.FieldSpec{WireName: "data_protection_officer_name"},
-		"DataProtectionOfficerPhone": ubx.FieldSpec{WireName: "data_protection_officer_phone"},
-		"EuRepresentativeEmail": ubx.FieldSpec{WireName: "eu_representative_email"},
-		"EuRepresentativeName": ubx.FieldSpec{WireName: "eu_representative_name"},
-		"EuRepresentativePhone": ubx.FieldSpec{WireName: "eu_representative_phone"},
-	}
+	"ContactEmail":               ubx.FieldSpec{WireName: "contact_email"},
+	"DataProtectionOfficerEmail": ubx.FieldSpec{WireName: "data_protection_officer_email"},
+	"DataProtectionOfficerName":  ubx.FieldSpec{WireName: "data_protection_officer_name"},
+	"DataProtectionOfficerPhone": ubx.FieldSpec{WireName: "data_protection_officer_phone"},
+	"EuRepresentativeEmail":      ubx.FieldSpec{WireName: "eu_representative_email"},
+	"EuRepresentativeName":       ubx.FieldSpec{WireName: "eu_representative_name"},
+	"EuRepresentativePhone":      ubx.FieldSpec{WireName: "eu_representative_phone"},
+}
 
 var Enterprise_GoogleAuthenticationSettingsFields = ubx.FieldMap{
-		"GoogleAuthenticationRequired": ubx.FieldSpec{WireName: "google_authentication_required"},
-	}
+	"GoogleAuthenticationRequired": ubx.FieldSpec{WireName: "google_authentication_required"},
+}
 
 var Enterprise_LogoFields = ubx.FieldMap{
-		"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
+	"Url":        ubx.FieldSpec{WireName: "url"},
+}
 
 var Enterprise_SigninDetails_GoogleAuthenticationOptionsFields = ubx.FieldMap{
-		"AuthenticationRequirement": ubx.FieldSpec{WireName: "authentication_requirement"},
-	}
+	"AuthenticationRequirement": ubx.FieldSpec{WireName: "authentication_requirement"},
+}
 
 var Enterprise_SigninDetailsFields = ubx.FieldMap{
-		"AllowPersonalUsage": ubx.FieldSpec{WireName: "allow_personal_usage"},
-		"DefaultStatus": ubx.FieldSpec{WireName: "default_status"},
-		"GoogleAuthenticationOptions": ubx.FieldSpec{
-			WireName: "google_authentication_options",
-			Kind: "object",
-			Fields: Enterprise_SigninDetails_GoogleAuthenticationOptionsFields,
-		},
-		"QrCode": ubx.FieldSpec{WireName: "qr_code"},
-		"SigninEnrollmentToken": ubx.FieldSpec{WireName: "signin_enrollment_token"},
-		"SigninUrl": ubx.FieldSpec{WireName: "signin_url"},
-		"TokenTag": ubx.FieldSpec{WireName: "token_tag"},
-	}
+	"AllowPersonalUsage": ubx.FieldSpec{WireName: "allow_personal_usage"},
+	"DefaultStatus":      ubx.FieldSpec{WireName: "default_status"},
+	"GoogleAuthenticationOptions": ubx.FieldSpec{
+		WireName: "google_authentication_options",
+		Kind:     "object",
+		Fields:   Enterprise_SigninDetails_GoogleAuthenticationOptionsFields,
+	},
+	"QrCode":                ubx.FieldSpec{WireName: "qr_code"},
+	"SigninEnrollmentToken": ubx.FieldSpec{WireName: "signin_enrollment_token"},
+	"SigninUrl":             ubx.FieldSpec{WireName: "signin_url"},
+	"TokenTag":              ubx.FieldSpec{WireName: "token_tag"},
+}
 
 var Enterprise_TermsAndConditions_ContentFields = ubx.FieldMap{
-		"DefaultMessage": ubx.FieldSpec{WireName: "default_message"},
-		"LocalizedMessages": ubx.FieldSpec{WireName: "localized_messages"},
-	}
+	"DefaultMessage":    ubx.FieldSpec{WireName: "default_message"},
+	"LocalizedMessages": ubx.FieldSpec{WireName: "localized_messages"},
+}
 
 var Enterprise_TermsAndConditionsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: Enterprise_TermsAndConditions_ContentFields,
-		},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: Enterprise_TermsAndConditions_ContentFields,
-		},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   Enterprise_TermsAndConditions_ContentFields,
+	},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   Enterprise_TermsAndConditions_ContentFields,
+	},
+}
 
 type EnterpriseConfig struct {
 	// Deprecated and unused.
@@ -120,16 +120,10 @@ type EnterpriseConfig struct {
 	EnabledNotificationTypes any
 	// The name of the enterprise displayed to users. This field has a maximum length of 100 characters.
 	EnterpriseDisplayName any
-	// Output only. The type of the enterprise.
-	EnterpriseType any
 	// Contains settings for Google-provided user authentication.
 	GoogleAuthenticationSettings any
 	// Data hosted at an external location. The data is to be downloaded by Android Device Policy and verified against the hash.
 	Logo any
-	// Output only. The type of managed Google domain.
-	ManagedGoogleDomainType any
-	// Output only. The type of a managed Google Play Accounts enterprise.
-	ManagedGooglePlayAccountsEnterpriseType any
 	// The name of the enterprise which is generated by the server during creation, in the form enterprises/{enterpriseId}.
 	Name any
 	// A color in RGB format that indicates the predominant color to display in the device management app UI. The color components are stored as follows: (red << 16) | (green << 8) | blue, where the value of each component is between 0 and 255, inclusive.
@@ -179,36 +173,33 @@ var Enterprise = ubx.ResourceBinding{
 		"AppAutoApprovalEnabled": ubx.FieldSpec{WireName: "app_auto_approval_enabled"},
 		"ContactInfo": ubx.FieldSpec{
 			WireName: "contact_info",
-			Kind: "object",
-			Fields: Enterprise_ContactInfoFields,
+			Kind:     "object",
+			Fields:   Enterprise_ContactInfoFields,
 		},
 		"EnabledNotificationTypes": ubx.FieldSpec{WireName: "enabled_notification_types"},
-		"EnterpriseDisplayName": ubx.FieldSpec{WireName: "enterprise_display_name"},
-		"EnterpriseType": ubx.FieldSpec{WireName: "enterprise_type"},
+		"EnterpriseDisplayName":    ubx.FieldSpec{WireName: "enterprise_display_name"},
 		"GoogleAuthenticationSettings": ubx.FieldSpec{
 			WireName: "google_authentication_settings",
-			Kind: "object",
-			Fields: Enterprise_GoogleAuthenticationSettingsFields,
+			Kind:     "object",
+			Fields:   Enterprise_GoogleAuthenticationSettingsFields,
 		},
 		"Logo": ubx.FieldSpec{
 			WireName: "logo",
-			Kind: "object",
-			Fields: Enterprise_LogoFields,
+			Kind:     "object",
+			Fields:   Enterprise_LogoFields,
 		},
-		"ManagedGoogleDomainType": ubx.FieldSpec{WireName: "managed_google_domain_type"},
-		"ManagedGooglePlayAccountsEnterpriseType": ubx.FieldSpec{WireName: "managed_google_play_accounts_enterprise_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"PrimaryColor": ubx.FieldSpec{WireName: "primary_color"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+		"PubsubTopic":  ubx.FieldSpec{WireName: "pubsub_topic"},
 		"SigninDetails": ubx.FieldSpec{
 			WireName: "signin_details",
-			Kind: "list",
-			Fields: Enterprise_SigninDetailsFields,
+			Kind:     "list",
+			Fields:   Enterprise_SigninDetailsFields,
 		},
 		"TermsAndConditions": ubx.FieldSpec{
 			WireName: "terms_and_conditions",
-			Kind: "list",
-			Fields: Enterprise_TermsAndConditionsFields,
+			Kind:     "list",
+			Fields:   Enterprise_TermsAndConditionsFields,
 		},
 	},
 }

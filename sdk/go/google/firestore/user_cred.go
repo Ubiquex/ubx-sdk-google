@@ -9,22 +9,14 @@ type UserCred_ResourceIdentity struct {
 }
 
 var UserCred_ResourceIdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 type UserCredConfig struct {
-	// Output only. The time the user creds were created.
-	CreateTime any
 	// Identifier. The resource name of the UserCreds. Format: `projects/{project}/databases/{database}/userCreds/{user_creds}`
 	Name any
 	// Describes a Resource Identity principal.
 	ResourceIdentity any
-	// Output only. The plaintext server-generated password for the user creds. Only populated in responses for CreateUserCreds and ResetUserPassword.
-	SecurePassword any
-	// Output only. Whether the user creds are enabled or disabled. Defaults to ENABLED on creation.
-	State any
-	// Output only. The time the user creds were last updated.
-	UpdateTime any
 }
 
 type UserCredAttrs struct {
@@ -45,15 +37,11 @@ type UserCredAttrs struct {
 var UserCred = ubx.ResourceBinding{
 	WireType: "google_firestore_user_cred",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceIdentity": ubx.FieldSpec{
 			WireName: "resource_identity",
-			Kind: "object",
-			Fields: UserCred_ResourceIdentityFields,
+			Kind:     "object",
+			Fields:   UserCred_ResourceIdentityFields,
 		},
-		"SecurePassword": ubx.FieldSpec{WireName: "secure_password"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

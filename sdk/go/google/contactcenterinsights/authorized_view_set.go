@@ -4,14 +4,10 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AuthorizedViewSetConfig struct {
-	// Output only. Create time.
-	CreateTime any
 	// Display Name. Limit 64 characters.
 	DisplayName any
 	// Identifier. The resource name of the AuthorizedViewSet. Format: projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}
 	Name any
-	// Output only. Update time.
-	UpdateTime any
 }
 
 type AuthorizedViewSetAttrs struct {
@@ -28,9 +24,7 @@ type AuthorizedViewSetAttrs struct {
 var AuthorizedViewSet = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_authorized_view_set",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

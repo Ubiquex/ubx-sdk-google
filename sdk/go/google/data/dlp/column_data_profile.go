@@ -25,9 +25,9 @@ type ColumnDataProfile_ColumnInfoType struct {
 }
 
 type ColumnDataProfile_OtherMatches struct {
-	EstimatedPrevalence any
+	EstimatedPrevalence  any
 	ExcludedFromAnalysis any
-	InfoType any
+	InfoType             any
 }
 
 type ColumnDataProfile_ProfileStatus_Status struct {
@@ -71,7 +71,7 @@ type ColumnDataProfileAttrs struct {
 	EstimatedUniquenessScore any
 	// The likelihood that this column contains free-form text. A value close to 1 may indicate the column is likely to contain free-form or natural language text. Range in 0-1.
 	FreeTextScore any
-	Name any
+	Name          any
 	// Other types found within this column. List will be unordered.
 	OtherMatches any
 	// Indicates if a policy tag has been applied to the column.

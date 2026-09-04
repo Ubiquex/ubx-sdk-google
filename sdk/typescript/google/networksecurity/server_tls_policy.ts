@@ -57,8 +57,6 @@ const ServerTlsPolicy_MtlsPolicyFields: FieldMap = {
 export interface ServerTlsPolicyConfig {
   /** This field applies only for Traffic Director policies. It is must be set to false for Application Load Balancer policies. Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if `allow_open` and `mtls_policy` are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility. Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80. */
   allowOpen?: boolean | Computed<boolean>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Set of label tags associated with the resource. */
@@ -69,8 +67,6 @@ export interface ServerTlsPolicyConfig {
   name?: string | Computed<string>;
   /** Specification of certificate provider. Defines the mechanism to obtain the certificate and private key for peer to peer authentication. */
   serverCertificate?: ServerTlsPolicy_MtlsPolicy_ClientValidationCa | Computed<ServerTlsPolicy_MtlsPolicy_ClientValidationCa>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServerTlsPolicyAttrs {
@@ -96,7 +92,6 @@ export const ServerTlsPolicy: ResourceBinding<ServerTlsPolicyConfig, ServerTlsPo
   wireType: "google_networksecurity_server_tls_policy",
   fields: {
     allowOpen: "allow_open",
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     mtlsPolicy: {
@@ -110,6 +105,5 @@ export const ServerTlsPolicy: ResourceBinding<ServerTlsPolicyConfig, ServerTlsPo
       kind: "object",
       fields: ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
     },
-    updateTime: "update_time",
   },
 };

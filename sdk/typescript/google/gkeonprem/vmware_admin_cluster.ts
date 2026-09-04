@@ -523,14 +523,10 @@ export interface VmwareAdminClusterConfig {
   bootstrapClusterMembership?: string | Computed<string>;
   /** VmwareAdminControlPlaneNodeConfig contains control plane node configuration for VMware admin cluster. */
   controlPlaneNode?: VmwareAdminCluster_ControlPlaneNode | Computed<VmwareAdminCluster_ControlPlaneNode>;
-  /** Output only. The time at which VMware admin cluster was created. */
-  createTime?: string | Computed<string>;
   /** A human readable description of this VMware admin cluster. */
   description?: string | Computed<string>;
   /** Enable advanced cluster. */
   enableAdvancedCluster?: boolean | Computed<boolean>;
-  /** Output only. The DNS name of VMware admin cluster's API server. */
-  endpoint?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
   etag?: string | Computed<string>;
   /** Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ## */
@@ -539,8 +535,6 @@ export interface VmwareAdminClusterConfig {
   imageType?: string | Computed<string>;
   /** VmwareAdminLoadBalancerConfig contains load balancer configuration for VMware admin cluster. */
   loadBalancer?: VmwareAdminCluster_LoadBalancer | Computed<VmwareAdminCluster_LoadBalancer>;
-  /** Output only. The object name of the VMware OnPremAdminCluster custom resource. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs. */
-  localName?: string | Computed<string>;
   /** Immutable. The VMware admin cluster resource name. */
   name?: string | Computed<string>;
   /** VmwareAdminNetworkConfig contains network configuration for VMware admin cluster. */
@@ -555,16 +549,8 @@ export interface VmwareAdminClusterConfig {
   privateRegistryConfig?: VmwareAdminCluster_PrivateRegistryConfig | Computed<VmwareAdminCluster_PrivateRegistryConfig>;
   /** VmwareAdminProxy represents configuration for admin cluster proxy. */
   proxy?: VmwareAdminCluster_Proxy | Computed<VmwareAdminCluster_Proxy>;
-  /** Output only. If set, there are currently changes in flight to the VMware admin cluster. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of VMware admin cluster. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: VmwareAdminCluster_PlatformConfig_Bundles_Status | Computed<VmwareAdminCluster_PlatformConfig_Bundles_Status>;
-  /** Output only. The unique identifier of the VMware admin cluster. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which VMware admin cluster was last updated. */
-  updateTime?: string | Computed<string>;
   /** ValidationCheck represents the result of preflight check. */
   validationCheck?: VmwareAdminCluster_ValidationCheck | Computed<VmwareAdminCluster_ValidationCheck>;
   /** VmwareAdminVCenterConfig contains VCenter configuration for VMware admin cluster. */
@@ -664,10 +650,8 @@ export const VmwareAdminCluster: ResourceBinding<VmwareAdminClusterConfig, Vmwar
       kind: "object",
       fields: VmwareAdminCluster_ControlPlaneNodeFields,
     },
-    createTime: "create_time",
     description: "description",
     enableAdvancedCluster: "enable_advanced_cluster",
-    endpoint: "endpoint",
     etag: "etag",
     fleet: {
       wireName: "fleet",
@@ -680,7 +664,6 @@ export const VmwareAdminCluster: ResourceBinding<VmwareAdminClusterConfig, Vmwar
       kind: "object",
       fields: VmwareAdminCluster_LoadBalancerFields,
     },
-    localName: "local_name",
     name: "name",
     networkConfig: {
       wireName: "network_config",
@@ -708,15 +691,11 @@ export const VmwareAdminCluster: ResourceBinding<VmwareAdminClusterConfig, Vmwar
       kind: "object",
       fields: VmwareAdminCluster_ProxyFields,
     },
-    reconciling: "reconciling",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
       fields: VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     validationCheck: {
       wireName: "validation_check",
       kind: "object",

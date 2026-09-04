@@ -57,8 +57,6 @@ const Instance_WorkforceIdentityFederationConfigFields: FieldMap = {
 };
 
 export interface InstanceConfig {
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
   /** HostConfig has different instance endpoints. */
   hostConfig?: Instance_HostConfig | Computed<Instance_HostConfig>;
   /** Optional. Immutable. Customer-managed encryption key name, in the format projects/* /locations/* /keyRings/* /cryptoKeys/*. */
@@ -69,16 +67,6 @@ export interface InstanceConfig {
   name?: string | Computed<string>;
   /** PrivateConfig includes settings for private instance. */
   privateConfig?: Instance_PrivateConfig | Computed<Instance_PrivateConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Current state of the instance. */
-  state?: string | Computed<string>;
-  /** Output only. An optional field providing information about the current instance state. */
-  stateNote?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
   /** WorkforceIdentityFederationConfig allows this instance to support users from external identity providers. */
   workforceIdentityFederationConfig?: Instance_WorkforceIdentityFederationConfig | Computed<Instance_WorkforceIdentityFederationConfig>;
 }
@@ -113,7 +101,6 @@ export interface InstanceAttrs {
 export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
   wireType: "google_securesourcemanager_instance",
   fields: {
-    createTime: "create_time",
     hostConfig: {
       wireName: "host_config",
       kind: "object",
@@ -127,11 +114,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_PrivateConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    stateNote: "state_note",
-    updateTime: "update_time",
     workforceIdentityFederationConfig: {
       wireName: "workforce_identity_federation_config",
       kind: "object",

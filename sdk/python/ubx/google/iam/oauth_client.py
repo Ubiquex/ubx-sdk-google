@@ -14,8 +14,6 @@ class OauthClientConfig:
     allowed_redirect_uris: Any = None
     # Required. The list of scopes that the OauthClient is allowed to request during OAuth flows. The following scopes are supported: * `https://www.googleapis.com/auth/cloud-platform`: See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
     allowed_scopes: Any = None
-    # Output only. The system-generated OauthClient id.
-    client_id: Any = None
     # Immutable. The type of OauthClient. Either public or private. For private clients, the client secret can be managed using the dedicated OauthClientCredential resource.
     client_type: Any = None
     # Optional. A user-specified description of the OauthClient. Cannot exceed 256 characters.
@@ -24,12 +22,8 @@ class OauthClientConfig:
     disabled: Any = None
     # Optional. A user-specified display name of the OauthClient. Cannot exceed 32 characters.
     display_name: Any = None
-    # Output only. Time after which the OauthClient will be permanently purged and cannot be recovered.
-    expire_time: Any = None
     # Immutable. Identifier. The resource name of the OauthClient. Format:`projects/{project}/locations/{location}/oauthClients/{oauth_client}`.
     name: Any = None
-    # Output only. The state of the OauthClient.
-    state: Any = None
 
 @dataclasses.dataclass
 class OauthClientAttrs:
@@ -62,13 +56,10 @@ OauthClient = ubx.ResourceBinding(
         "allowed_grant_types": ubx.FieldSpec(wire_name="allowed_grant_types"),
         "allowed_redirect_uris": ubx.FieldSpec(wire_name="allowed_redirect_uris"),
         "allowed_scopes": ubx.FieldSpec(wire_name="allowed_scopes"),
-        "client_id": ubx.FieldSpec(wire_name="client_id"),
         "client_type": ubx.FieldSpec(wire_name="client_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

@@ -179,19 +179,10 @@ _Dataset_RestrictionsFields = {
     "type": ubx.FieldSpec(wire_name="type"),
 }
 
-_Dataset_TagsFields = {
-    "tag_key": ubx.FieldSpec(wire_name="tag_key"),
-    "tag_value": ubx.FieldSpec(wire_name="tag_value"),
-}
-
 @dataclasses.dataclass
 class DatasetConfig:
     # Optional. An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER; If you patch a dataset, then this field is overwritten by the patched dataset's access field. To add entities, you must supply the entire existing access array in addition to any new entities that you want to add.
     access: Any = None
-    # Output only. The origin of the dataset, one of: * (Unset) - Native BigQuery Dataset * BIGLAKE - Dataset is backed by a namespace stored natively in Biglake
-    catalog_source: Any = None
-    # Output only. The time when this dataset was created, in milliseconds since the epoch.
-    creation_time: Any = None
     # Identifier for a dataset.
     dataset_reference: Any = None
     # Optional. Defines the default collation specification of future tables created in the dataset. If a table is created in this dataset without table-level default collation, then the table inherits the dataset default collation, which is applied to the string fields that do not have explicit collation specified. A change to this field affects only tables created afterwards, and does not alter the existing tables. The following values are supported: * 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to case-sensitive behavior.
@@ -206,24 +197,16 @@ class DatasetConfig:
     default_table_expiration_ms: Any = None
     # Optional. A user-friendly description of the dataset.
     description: Any = None
-    # Output only. A hash of the resource.
-    etag: Any = None
     # Options defining open source compatible datasets living in the BigQuery catalog. Contains metadata of open source database, schema, or namespace represented by the current dataset.
     external_catalog_dataset_options: Any = None
     # Configures the access a dataset defined in an external metadata storage.
     external_dataset_reference: Any = None
     # Optional. A descriptive name for the dataset.
     friendly_name: Any = None
-    # Output only. The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field.
-    id: Any = None
     # Optional. TRUE if the dataset and its table names are case-insensitive, otherwise FALSE. By default, this is FALSE, which means the dataset and its table names are case-sensitive. This field does not affect routine references.
     is_case_insensitive: Any = None
-    # Output only. The resource type.
-    kind: Any = None
     # The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See [Creating and Updating Dataset Labels](https://cloud.google.com/bigquery/docs/creating-managing-labels#creating_and_updating_dataset_labels) for more information.
     labels: Any = None
-    # Output only. The date when this dataset was last modified, in milliseconds since the epoch.
-    last_modified_time: Any = None
     # Metadata about the Linked Dataset.
     linked_dataset_metadata: Any = None
     # A dataset source type which refers to another BigQuery dataset.
@@ -235,18 +218,8 @@ class DatasetConfig:
     # Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details.
     resource_tags: Any = None
     restrictions: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource.
-    self_link: Any = None
     # Optional. Updates storage_billing_model for the dataset.
     storage_billing_model: Any = None
-    # Output only. Tags for the dataset. To provide tags as inputs, use the `resourceTags` field.
-    tags: Any = None
-    # Output only. Same as `type` in `ListFormatDataset`. The type of the dataset, one of: * DEFAULT - only accessible by owner and authorized accounts, * PUBLIC - accessible by everyone, * LINKED - linked dataset, * EXTERNAL - dataset with definition in external metadata catalog, * BIGLAKE_ICEBERG - a Biglake dataset accessible through the Iceberg API, * BIGLAKE_HIVE - a Biglake dataset accessible through the Hive API.
-    type: Any = None
 
 @dataclasses.dataclass
 class DatasetAttrs:
@@ -320,8 +293,6 @@ Dataset = ubx.ResourceBinding(
             kind="list",
             fields=_Dataset_AccessFields,
         ),
-        "catalog_source": ubx.FieldSpec(wire_name="catalog_source"),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "dataset_reference": ubx.FieldSpec(
             wire_name="dataset_reference",
             kind="object",
@@ -337,7 +308,6 @@ Dataset = ubx.ResourceBinding(
         "default_rounding_mode": ubx.FieldSpec(wire_name="default_rounding_mode"),
         "default_table_expiration_ms": ubx.FieldSpec(wire_name="default_table_expiration_ms"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "external_catalog_dataset_options": ubx.FieldSpec(
             wire_name="external_catalog_dataset_options",
             kind="object",
@@ -349,11 +319,8 @@ Dataset = ubx.ResourceBinding(
             fields=_Dataset_ExternalDatasetReferenceFields,
         ),
         "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "is_case_insensitive": ubx.FieldSpec(wire_name="is_case_insensitive"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
         "linked_dataset_metadata": ubx.FieldSpec(
             wire_name="linked_dataset_metadata",
             kind="object",
@@ -372,15 +339,6 @@ Dataset = ubx.ResourceBinding(
             kind="object",
             fields=_Dataset_RestrictionsFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "storage_billing_model": ubx.FieldSpec(wire_name="storage_billing_model"),
-        "tags": ubx.FieldSpec(
-            wire_name="tags",
-            kind="list",
-            fields=_Dataset_TagsFields,
-        ),
-        "type": ubx.FieldSpec(wire_name="type"),
     },
 )

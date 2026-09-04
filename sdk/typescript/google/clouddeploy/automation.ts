@@ -235,16 +235,12 @@ const Automation_SelectorFields: FieldMap = {
 export interface AutomationConfig {
   /** Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. Annotations must meet the following constraints: * Annotations are key/value pairs. * Valid annotation keys have two segments: an optional prefix and name, separated by a slash (`/`). * The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. * The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots(`.`), not longer than 253 characters in total, followed by a slash (`/`). See https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set for more details. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Time at which the automation was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the `Automation`. Max length is 255 characters. */
   description?: string | Computed<string>;
   /** Optional. The weak etag of the `Automation` resource. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
   /** Optional. Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 63 characters. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Name of the `Automation`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automations/{automation}`. */
-  name?: string | Computed<string>;
   /** Required. List of Automation rules associated with the Automation resource. Must have at least one rule and limited to 250 rules per Delivery Pipeline. Note: the order of the rules here is not the same as the order of execution. */
   rules?: Automation_Rules[] | Computed<Automation_Rules[]>;
   /** AutomationResourceSelector contains the information to select the resources to which an Automation is going to be applied. */
@@ -253,10 +249,6 @@ export interface AutomationConfig {
   serviceAccount?: string | Computed<string>;
   /** Optional. When Suspended, automation is deactivated from execution. */
   suspended?: boolean | Computed<boolean>;
-  /** Output only. Unique identifier of the `Automation`. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the automation was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AutomationAttrs {
@@ -290,11 +282,9 @@ export const Automation: ResourceBinding<AutomationConfig, AutomationAttrs> = {
   wireType: "google_clouddeploy_automation",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
-    name: "name",
     rules: {
       wireName: "rules",
       kind: "list",
@@ -307,7 +297,5 @@ export const Automation: ResourceBinding<AutomationConfig, AutomationAttrs> = {
     },
     serviceAccount: "service_account",
     suspended: "suspended",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

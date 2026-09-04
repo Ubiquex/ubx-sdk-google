@@ -92,24 +92,16 @@ const Proposal_UpgradeKeyTrustFields: FieldMap = {
 export interface ProposalConfig {
   /** Add a quorum member to the SingleTenantHsmInstance. This will increase the total_approver_count by 1. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation. */
   addQuorumMember?: Proposal_AddQuorumMember | Computed<Proposal_AddQuorumMember>;
-  /** Output only. The time at which the SingleTenantHsmInstanceProposal was created. */
-  createTime?: string | Computed<string>;
   /** Delete the SingleTenantHsmInstance. Deleting a SingleTenantHsmInstance will make all CryptoKeys attached to the SingleTenantHsmInstance unusable. The SingleTenantHsmInstance must not be in the DELETING or DELETED state to perform this operation. */
   deleteSingleTenantHsmInstance?: unknown | Computed<unknown>;
-  /** Output only. The time at which the SingleTenantHsmInstanceProposal was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Disable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation. */
   disableSingleTenantHsmInstance?: unknown | Computed<unknown>;
   /** Enable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the DISABLED state to perform this operation. */
   enableSingleTenantHsmInstance?: unknown | Computed<unknown>;
   /** The time at which the SingleTenantHsmInstanceProposal will expire if not approved and executed. */
   expireTime?: string | Computed<string>;
-  /** Output only. The root cause of the most recent failure. Only present if state is FAILED. */
-  failureReason?: string | Computed<string>;
   /** Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/* /locations/* /singleTenantHsmInstances/* /proposals/*`. */
   name?: string | Computed<string>;
-  /** Output only. The time at which the soft-deleted SingleTenantHsmInstanceProposal will be permanently purged. This field is only populated when the state is DELETED and will be set a time after expiration of the proposal, i.e. >= expire_time or (create_time + ttl). */
-  purgeTime?: string | Computed<string>;
   /** Parameters of quorum approval for the SingleTenantHsmInstanceProposal. */
   quorumParameters?: Proposal_QuorumParameters | Computed<Proposal_QuorumParameters>;
   /** Refreshes the SingleTenantHsmInstance. This operation must be performed periodically to keep the SingleTenantHsmInstance active. This operation must be performed before unrefreshed_duration_until_disable has passed. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation. */
@@ -120,8 +112,6 @@ export interface ProposalConfig {
   removeQuorumMember?: Proposal_AddQuorumMember | Computed<Proposal_AddQuorumMember>;
   /** Parameters for an approval that has both required challenges and a quorum. */
   requiredActionQuorumParameters?: Proposal_RequiredActionQuorumParameters | Computed<Proposal_RequiredActionQuorumParameters>;
-  /** Output only. The state of the SingleTenantHsmInstanceProposal. */
-  state?: string | Computed<string>;
   /** Input only. The TTL for the SingleTenantHsmInstanceProposal. Proposals will expire after this duration. */
   ttl?: string | Computed<string>;
   /** Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key. The key must be in the ACTIVE state to perform this operation. */
@@ -175,15 +165,11 @@ export const Proposal: ResourceBinding<ProposalConfig, ProposalAttrs> = {
       kind: "object",
       fields: Proposal_AddQuorumMemberFields,
     },
-    createTime: "create_time",
     deleteSingleTenantHsmInstance: "delete_single_tenant_hsm_instance",
-    deleteTime: "delete_time",
     disableSingleTenantHsmInstance: "disable_single_tenant_hsm_instance",
     enableSingleTenantHsmInstance: "enable_single_tenant_hsm_instance",
     expireTime: "expire_time",
-    failureReason: "failure_reason",
     name: "name",
-    purgeTime: "purge_time",
     quorumParameters: {
       wireName: "quorum_parameters",
       kind: "object",
@@ -205,7 +191,6 @@ export const Proposal: ResourceBinding<ProposalConfig, ProposalAttrs> = {
       kind: "object",
       fields: Proposal_RequiredActionQuorumParametersFields,
     },
-    state: "state",
     ttl: "ttl",
     upgradeKeyTrust: {
       wireName: "upgrade_key_trust",

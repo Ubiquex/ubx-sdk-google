@@ -49,10 +49,6 @@ class DataProductConfig:
     access_approval_config: Any = None
     # Optional. Data product access groups by access group id as key. If data product is used only for packaging data assets, then access groups may be empty. However, if a data product is used for sharing data assets, then at least one access group must be specified.Example: { "analyst": { "id": "analyst", "displayName": "Analyst", "description": "Access group for analysts", "principal": { "googleGroup": "analysts@example.com" } } }
     access_groups: Any = None
-    # Output only. Number of data assets associated with this data product.
-    asset_count: Any = None
-    # Output only. The time at which the data product was created.
-    create_time: Any = None
     # Optional. Description of the data product.
     description: Any = None
     # Required. User-friendly display name of the data product.
@@ -67,10 +63,6 @@ class DataProductConfig:
     name: Any = None
     # Required. Emails of the data product owners.
     owner_emails: Any = None
-    # Output only. System generated unique ID for the data product. This ID will be different if the data product is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time at which the data product was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DataProductAttrs:
@@ -114,8 +106,6 @@ DataProduct = ubx.ResourceBinding(
             kind="map",
             fields=_DataProduct_AccessGroupsFields,
         ),
-        "asset_count": ubx.FieldSpec(wire_name="asset_count"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
@@ -123,7 +113,5 @@ DataProduct = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "owner_emails": ubx.FieldSpec(wire_name="owner_emails"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

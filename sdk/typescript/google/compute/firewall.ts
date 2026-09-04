@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Firewall_Allowed {
-  /** The IP protocol to which this rule applies. Valid values are 'tcp', 'udp', 'icmp', 'esp', 'ah', 'sctp', or 'all'. (AI-inferred) */
   ipprotocol?: string | Computed<string>;
-  /** An optional list of ports or port ranges (e.g., '80' or '8000-9000') to which this rule applies. Only valid for TCP and UDP protocols; if omitted, the rule applies to all ports. (AI-inferred) */
   ports?: string[] | Computed<string[]>;
 }
 
@@ -37,8 +35,6 @@ const Firewall_ParamsFields: FieldMap = {
 export interface FirewallConfig {
   /** The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection. */
   allowed?: Firewall_Allowed[] | Computed<Firewall_Allowed[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection. */
   denied?: Firewall_Allowed[] | Computed<Firewall_Allowed[]>;
   /** An optional description of this resource. Provide this field when you create the resource. */
@@ -49,10 +45,6 @@ export interface FirewallConfig {
   direction?: string | Computed<string>;
   /** Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled. */
   disabled?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
-  kind?: string | Computed<string>;
   /** The available logging options for a firewall rule. */
   logConfig?: Firewall_LogConfig | Computed<Firewall_LogConfig>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
@@ -128,7 +120,6 @@ export const Firewall: ResourceBinding<FirewallConfig, FirewallAttrs> = {
       kind: "list",
       fields: Firewall_AllowedFields,
     },
-    creationTimestamp: "creation_timestamp",
     denied: {
       wireName: "denied",
       kind: "list",
@@ -138,8 +129,6 @@ export const Firewall: ResourceBinding<FirewallConfig, FirewallAttrs> = {
     destinationRanges: "destination_ranges",
     direction: "direction",
     disabled: "disabled",
-    id: "id",
-    kind: "kind",
     logConfig: {
       wireName: "log_config",
       kind: "object",

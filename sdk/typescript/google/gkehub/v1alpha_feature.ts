@@ -1279,461 +1279,17 @@ const V1alphaFeature_MembershipSpecsFields: FieldMap = {
   },
 };
 
-const V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields: FieldMap = {
-  code: "code",
-  description: "description",
-};
-
-const V1alphaFeature_MembershipStates_AppdevexperienceFields: FieldMap = {
-  networkingInstallSucceeded: {
-    wireName: "networking_install_succeeded",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields: FieldMap = {
-  ignoredTime: "ignored_time",
-  reason: "reason",
-};
-
-const V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields: FieldMap = {
-  code: "code",
-  reason: "reason",
-  updateTime: "update_time",
-};
-
-const V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields: FieldMap = {
-  name: "name",
-  version: "version",
-};
-
-const V1alphaFeature_MembershipStates_Clusterupgrade_UpgradesFields: FieldMap = {
-  status: {
-    wireName: "status",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-  },
-  upgrade: {
-    wireName: "upgrade",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_ClusterupgradeFields: FieldMap = {
-  ignored: {
-    wireName: "ignored",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-  },
-  scopes: "scopes",
-  upgrades: {
-    wireName: "upgrades",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_UpgradesFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields: FieldMap = {
-  webhookVersion: "webhook_version",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_BinauthzStateFields: FieldMap = {
-  version: {
-    wireName: "version",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields,
-  },
-  webhook: "webhook",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields: FieldMap = {
-  admissionWebhook: "admission_webhook",
-  gitSync: "git_sync",
-  importer: "importer",
-  monitor: "monitor",
-  otelCollector: "otel_collector",
-  reconcilerManager: "reconciler_manager",
-  resourceGroupControllerManager: "resource_group_controller_manager",
-  rootReconciler: "root_reconciler",
-  syncer: "syncer",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields: FieldMap = {
-  errorMessage: "error_message",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields: FieldMap = {
-  group: "group",
-  kind: "kind",
-  version: "version",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields: FieldMap = {
-  resourceGvk: {
-    wireName: "resource_gvk",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields,
-  },
-  resourceName: "resource_name",
-  resourceNamespace: "resource_namespace",
-  sourcePath: "source_path",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields: FieldMap = {
-  code: "code",
-  errorMessage: "error_message",
-  errorResources: {
-    wireName: "error_resources",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields: FieldMap = {
-  code: "code",
-  errors: {
-    wireName: "errors",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields,
-  },
-  importToken: "import_token",
-  lastSync: "last_sync",
-  lastSyncTime: "last_sync_time",
-  sourceToken: "source_token",
-  syncToken: "sync_token",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields: FieldMap = {
-  clusterLevelStopSyncingState: "cluster_level_stop_syncing_state",
-  crCount: "cr_count",
-  deploymentState: {
-    wireName: "deployment_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-  },
-  errors: {
-    wireName: "errors",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-  },
-  reposyncCrd: "reposync_crd",
-  rootsyncCrd: "rootsync_crd",
-  state: "state",
-  syncState: {
-    wireName: "sync_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields,
-  },
-  version: {
-    wireName: "version",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields: FieldMap = {
-  extension: "extension",
-  hnc: "hnc",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields: FieldMap = {
-  state: {
-    wireName: "state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-  },
-  version: {
-    wireName: "version",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_OperatorStateFields: FieldMap = {
-  deploymentState: "deployment_state",
-  errors: {
-    wireName: "errors",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-  },
-  version: "version",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields: FieldMap = {
-  gatekeeperAudit: "gatekeeper_audit",
-  gatekeeperControllerManagerState: "gatekeeper_controller_manager_state",
-  gatekeeperMutation: "gatekeeper_mutation",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields: FieldMap = {
-  copyTime: "copy_time",
-  stage: "stage",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields: FieldMap = {
-  version: "version",
-};
-
-const V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields: FieldMap = {
-  deploymentState: {
-    wireName: "deployment_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields,
-  },
-  migration: {
-    wireName: "migration",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields,
-  },
-  version: {
-    wireName: "version",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_ConfigmanagementFields: FieldMap = {
-  binauthzState: {
-    wireName: "binauthz_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_BinauthzStateFields,
-  },
-  clusterName: "cluster_name",
-  configSyncState: {
-    wireName: "config_sync_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields,
-  },
-  hierarchyControllerState: {
-    wireName: "hierarchy_controller_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields,
-  },
-  kubernetesApiServerVersion: "kubernetes_api_server_version",
-  membershipSpec: {
-    wireName: "membership_spec",
-    kind: "object",
-    fields: V1alphaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
-  },
-  operatorState: {
-    wireName: "operator_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_OperatorStateFields,
-  },
-  policyControllerState: {
-    wireName: "policy_controller_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_IdentityserviceFields: FieldMap = {
-  failureReason: "failure_reason",
-  installedVersion: "installed_version",
-  memberConfig: {
-    wireName: "member_config",
-    kind: "object",
-    fields: V1alphaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
-  },
-  state: "state",
-};
-
-const V1alphaFeature_MembershipStates_MeteringFields: FieldMap = {
-  lastMeasurementTime: "last_measurement_time",
-  preciseLastMeasuredClusterVcpuCapacity: "precise_last_measured_cluster_vcpu_capacity",
-};
-
-const V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields: FieldMap = {
-  details: "details",
-  state: "state",
-};
-
-const V1alphaFeature_MembershipStates_Policycontroller_PolicyContentStateFields: FieldMap = {
-  bundleStates: {
-    wireName: "bundle_states",
-    kind: "map",
-    fields: V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-  },
-  referentialSyncConfigState: {
-    wireName: "referential_sync_config_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-  },
-  templateLibraryState: {
-    wireName: "template_library_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_PolicycontrollerFields: FieldMap = {
-  componentStates: {
-    wireName: "component_states",
-    kind: "map",
-    fields: V1alphaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-  },
-  policyContentState: {
-    wireName: "policy_content_state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Policycontroller_PolicyContentStateFields,
-  },
-  state: "state",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields: FieldMap = {
-  code: "code",
-  displayName: "display_name",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields: FieldMap = {
-  documentationUrl: "documentation_url",
-  level: "level",
-  type: {
-    wireName: "type",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields: FieldMap = {
-  args: "args",
-  description: "description",
-  messageBase: {
-    wireName: "message_base",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields,
-  },
-  resourcePaths: "resource_paths",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  documentationLink: "documentation_link",
-  severity: "severity",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields: FieldMap = {
-  code: "code",
-  details: "details",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields: FieldMap = {
-  details: {
-    wireName: "details",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-  },
-  implementation: "implementation",
-  state: "state",
-};
-
-const V1alphaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields: FieldMap = {
-  details: {
-    wireName: "details",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-  },
-  state: "state",
-};
-
-const V1alphaFeature_MembershipStates_ServicemeshFields: FieldMap = {
-  analysisMessages: {
-    wireName: "analysis_messages",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields,
-  },
-  conditions: {
-    wireName: "conditions",
-    kind: "list",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields,
-  },
-  configApiVersion: "config_api_version",
-  controlPlaneManagement: {
-    wireName: "control_plane_management",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields,
-  },
-  dataPlaneManagement: {
-    wireName: "data_plane_management",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields,
-  },
-};
-
-const V1alphaFeature_MembershipStates_StateFields: FieldMap = {
-  code: "code",
-  description: "description",
-  updateTime: "update_time",
-};
-
-const V1alphaFeature_MembershipStates_WorkloadidentityFields: FieldMap = {
-  description: "description",
-  identityProviderStateDetails: {
-    wireName: "identity_provider_state_details",
-    kind: "map",
-    fields: V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-  },
-};
-
-const V1alphaFeature_MembershipStatesFields: FieldMap = {
-  appdevexperience: {
-    wireName: "appdevexperience",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_AppdevexperienceFields,
-  },
-  clusterupgrade: {
-    wireName: "clusterupgrade",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_ClusterupgradeFields,
-  },
-  configmanagement: {
-    wireName: "configmanagement",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_ConfigmanagementFields,
-  },
-  fleetobservability: "fleetobservability",
-  identityservice: {
-    wireName: "identityservice",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_IdentityserviceFields,
-  },
-  metering: {
-    wireName: "metering",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_MeteringFields,
-  },
-  namespaceactuation: "namespaceactuation",
-  policycontroller: {
-    wireName: "policycontroller",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_PolicycontrollerFields,
-  },
-  servicemesh: {
-    wireName: "servicemesh",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_ServicemeshFields,
-  },
-  state: {
-    wireName: "state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_StateFields,
-  },
-  workloadidentity: {
-    wireName: "workloadidentity",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_WorkloadidentityFields,
-  },
-};
-
 const V1alphaFeature_ResourceStateFields: FieldMap = {
   state: "state",
 };
 
 const V1alphaFeature_ScopeSpecs_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields: FieldMap = {
   soaking: "soaking",
+};
+
+const V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields: FieldMap = {
+  name: "name",
+  version: "version",
 };
 
 const V1alphaFeature_ScopeSpecs_Clusterupgrade_GkeUpgradeOverridesFields: FieldMap = {
@@ -1768,67 +1324,6 @@ const V1alphaFeature_ScopeSpecsFields: FieldMap = {
     wireName: "clusterupgrade",
     kind: "object",
     fields: V1alphaFeature_ScopeSpecs_ClusterupgradeFields,
-  },
-};
-
-const V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields: FieldMap = {
-  reason: "reason",
-  status: "status",
-  type: "type",
-  updateTime: "update_time",
-};
-
-const V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields: FieldMap = {
-  stats: "stats",
-  status: {
-    wireName: "status",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-  },
-  upgrade: {
-    wireName: "upgrade",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-  },
-};
-
-const V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields: FieldMap = {
-  conditions: {
-    wireName: "conditions",
-    kind: "list",
-    fields: V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields,
-  },
-  upgradeState: {
-    wireName: "upgrade_state",
-    kind: "list",
-    fields: V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields,
-  },
-};
-
-const V1alphaFeature_ScopeStates_ClusterupgradeFields: FieldMap = {
-  downstreamScopes: "downstream_scopes",
-  gkeState: {
-    wireName: "gke_state",
-    kind: "object",
-    fields: V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields,
-  },
-  ignored: {
-    wireName: "ignored",
-    kind: "map",
-    fields: V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-  },
-};
-
-const V1alphaFeature_ScopeStatesFields: FieldMap = {
-  clusterupgrade: {
-    wireName: "clusterupgrade",
-    kind: "object",
-    fields: V1alphaFeature_ScopeStates_ClusterupgradeFields,
-  },
-  state: {
-    wireName: "state",
-    kind: "object",
-    fields: V1alphaFeature_MembershipStates_StateFields,
   },
 };
 
@@ -1965,6 +1460,64 @@ const V1alphaFeature_SpecFields: FieldMap = {
   },
 };
 
+const V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields: FieldMap = {
+  code: "code",
+  description: "description",
+};
+
+const V1alphaFeature_MembershipStates_AppdevexperienceFields: FieldMap = {
+  networkingInstallSucceeded: {
+    wireName: "networking_install_succeeded",
+    kind: "object",
+    fields: V1alphaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+  },
+};
+
+const V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields: FieldMap = {
+  reason: "reason",
+  status: "status",
+  type: "type",
+  updateTime: "update_time",
+};
+
+const V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields: FieldMap = {
+  code: "code",
+  reason: "reason",
+  updateTime: "update_time",
+};
+
+const V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields: FieldMap = {
+  stats: "stats",
+  status: {
+    wireName: "status",
+    kind: "object",
+    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
+  },
+  upgrade: {
+    wireName: "upgrade",
+    kind: "object",
+    fields: V1alphaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
+  },
+};
+
+const V1alphaFeature_ScopeStates_Clusterupgrade_GkeStateFields: FieldMap = {
+  conditions: {
+    wireName: "conditions",
+    kind: "list",
+    fields: V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_ConditionsFields,
+  },
+  upgradeState: {
+    wireName: "upgrade_state",
+    kind: "list",
+    fields: V1alphaFeature_ScopeStates_Clusterupgrade_GkeState_UpgradeStateFields,
+  },
+};
+
+const V1alphaFeature_MembershipStates_Clusterupgrade_IgnoredFields: FieldMap = {
+  ignoredTime: "ignored_time",
+  reason: "reason",
+};
+
 const V1alphaFeature_State_ClusterupgradeFields: FieldMap = {
   downstreamFleets: "downstream_fleets",
   gkeState: {
@@ -2022,6 +1575,39 @@ const V1alphaFeature_State_FleetobservabilityFields: FieldMap = {
   },
 };
 
+const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields: FieldMap = {
+  code: "code",
+  displayName: "display_name",
+};
+
+const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields: FieldMap = {
+  documentationUrl: "documentation_url",
+  level: "level",
+  type: {
+    wireName: "type",
+    kind: "object",
+    fields: V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBase_TypeFields,
+  },
+};
+
+const V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessagesFields: FieldMap = {
+  args: "args",
+  description: "description",
+  messageBase: {
+    wireName: "message_base",
+    kind: "object",
+    fields: V1alphaFeature_MembershipStates_Servicemesh_AnalysisMessages_MessageBaseFields,
+  },
+  resourcePaths: "resource_paths",
+};
+
+const V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields: FieldMap = {
+  code: "code",
+  details: "details",
+  documentationLink: "documentation_link",
+  severity: "severity",
+};
+
 const V1alphaFeature_State_ServicemeshFields: FieldMap = {
   analysisMessages: {
     wireName: "analysis_messages",
@@ -2033,6 +1619,12 @@ const V1alphaFeature_State_ServicemeshFields: FieldMap = {
     kind: "list",
     fields: V1alphaFeature_MembershipStates_Servicemesh_ConditionsFields,
   },
+};
+
+const V1alphaFeature_MembershipStates_StateFields: FieldMap = {
+  code: "code",
+  description: "description",
+  updateTime: "update_time",
 };
 
 const V1alphaFeature_State_WorkloadidentityFields: FieldMap = {
@@ -2087,34 +1679,20 @@ const V1alphaFeature_StateFields: FieldMap = {
 };
 
 export interface V1alphaFeatureConfig {
-  /** Output only. When the Feature resource was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the Feature resource was deleted. */
-  deleteTime?: string | Computed<string>;
   /** CommonFleetDefaultMemberConfigSpec contains default configuration information for memberships of a fleet */
   fleetDefaultMemberConfig?: V1alphaFeature_FleetDefaultMemberConfig | Computed<V1alphaFeature_FleetDefaultMemberConfig>;
   /** Labels for this Feature. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Membership-specific configuration for this Feature. If this Feature does not support any per-Membership configuration, this field may be unused. The keys indicate which Membership the configuration is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Membership is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature. */
   membershipSpecs?: Record<string, V1alphaFeature_MembershipSpecs> | Computed<Record<string, V1alphaFeature_MembershipSpecs>>;
-  /** Output only. Membership-specific Feature status. If this Feature does report any per-Membership status, this field may be unused. The keys indicate which Membership the state is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project number, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} MUST match the Feature's project number. */
-  membershipStates?: Record<string, V1alphaFeature_MembershipStates> | Computed<Record<string, V1alphaFeature_MembershipStates>>;
-  /** Output only. The full, unique name of this Feature resource in the format `projects/* /locations/* /features/*`. */
-  name?: string | Computed<string>;
   /** FeatureResourceState describes the state of a Feature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the Feature in the Fleet and across Memberships. */
   resourceState?: V1alphaFeature_ResourceState | Computed<V1alphaFeature_ResourceState>;
   /** Optional. Scope-specific configuration for this Feature. If this Feature does not support any per-Scope configuration, this field may be unused. The keys indicate which Scope the configuration is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Scope is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature. */
   scopeSpecs?: Record<string, V1alphaFeature_ScopeSpecs> | Computed<Record<string, V1alphaFeature_ScopeSpecs>>;
-  /** Output only. Scope-specific Feature status. If this Feature does report any per-Scope status, this field may be unused. The keys indicate which Scope the state is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project. */
-  scopeStates?: Record<string, V1alphaFeature_ScopeStates> | Computed<Record<string, V1alphaFeature_ScopeStates>>;
   /** CommonFeatureSpec contains Fleet-wide configuration information */
   spec?: V1alphaFeature_Spec | Computed<V1alphaFeature_Spec>;
   /** CommonFeatureState contains Fleet-wide Feature status information. */
   state?: V1alphaFeature_State | Computed<V1alphaFeature_State>;
-  /** Output only. List of locations that could not be reached while fetching this feature. */
-  unreachable?: string[] | Computed<string[]>;
-  /** Output only. When the Feature resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaFeatureAttrs {
@@ -2151,8 +1729,6 @@ export interface V1alphaFeatureAttrs {
 export const V1alphaFeature: ResourceBinding<V1alphaFeatureConfig, V1alphaFeatureAttrs> = {
   wireType: "google_gkehub_v1alpha_feature",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     fleetDefaultMemberConfig: {
       wireName: "fleet_default_member_config",
       kind: "object",
@@ -2164,12 +1740,6 @@ export const V1alphaFeature: ResourceBinding<V1alphaFeatureConfig, V1alphaFeatur
       kind: "map",
       fields: V1alphaFeature_MembershipSpecsFields,
     },
-    membershipStates: {
-      wireName: "membership_states",
-      kind: "map",
-      fields: V1alphaFeature_MembershipStatesFields,
-    },
-    name: "name",
     resourceState: {
       wireName: "resource_state",
       kind: "object",
@@ -2179,11 +1749,6 @@ export const V1alphaFeature: ResourceBinding<V1alphaFeatureConfig, V1alphaFeatur
       wireName: "scope_specs",
       kind: "map",
       fields: V1alphaFeature_ScopeSpecsFields,
-    },
-    scopeStates: {
-      wireName: "scope_states",
-      kind: "map",
-      fields: V1alphaFeature_ScopeStatesFields,
     },
     spec: {
       wireName: "spec",
@@ -2195,7 +1760,5 @@ export const V1alphaFeature: ResourceBinding<V1alphaFeatureConfig, V1alphaFeatur
       kind: "object",
       fields: V1alphaFeature_StateFields,
     },
-    unreachable: "unreachable",
-    updateTime: "update_time",
   },
 };

@@ -334,11 +334,7 @@ export interface BetaReservationConfig {
   advancedDeploymentControl?: BetaReservation_AdvancedDeploymentControl | Computed<BetaReservation_AdvancedDeploymentControl>;
   /** This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation. */
   aggregateReservation?: BetaReservation_AggregateReservation | Computed<BetaReservation_AggregateReservation>;
-  /** Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment. */
-  commitment?: string | Computed<string>;
   confidentialComputeType?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   deleteAfterDuration?: BetaReservation_DeleteAfterDuration | Computed<BetaReservation_DeleteAfterDuration>;
   /** Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format. */
@@ -351,39 +347,25 @@ export interface BetaReservationConfig {
   earlyAccessMaintenance?: string | Computed<string>;
   /** Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors. */
   enableEmergentMaintenance?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations. */
-  kind?: string | Computed<string>;
-  /** Output only. [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments. */
-  linkedCommitments?: string[] | Computed<string[]>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Additional reservation params. */
   params?: BetaReservation_Params | Computed<BetaReservation_Params>;
   /** Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures). */
   protectionTier?: string | Computed<string>;
-  /** Output only. [Output only] Indicates the reservation mode of the reservation. */
-  reservationMode?: string | Computed<string>;
   reservationSharingPolicy?: BetaReservation_ReservationSharingPolicy | Computed<BetaReservation_ReservationSharingPolicy>;
   /** Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation. */
   resourcePolicies?: Record<string, string> | Computed<Record<string, string>>;
   /** [Output Only] Contains output only fields. */
   resourceStatus?: BetaReservation_ResourceStatus | Computed<BetaReservation_ResourceStatus>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The type of maintenance for the reservation. */
   schedulingType?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
   /** The share setting for reservations and sole tenancy node groups. */
   shareSettings?: BetaReservation_ShareSettings | Computed<BetaReservation_ShareSettings>;
   /** This reservation type allows to pre allocate specific instance configuration. */
   specificReservation?: BetaReservation_SpecificReservation | Computed<BetaReservation_SpecificReservation>;
   /** Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation. */
   specificReservationRequired?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress. */
-  status?: string | Computed<string>;
   /** Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment. */
   zone?: string | Computed<string>;
 }
@@ -460,9 +442,7 @@ export const BetaReservation: ResourceBinding<BetaReservationConfig, BetaReserva
       kind: "object",
       fields: BetaReservation_AggregateReservationFields,
     },
-    commitment: "commitment",
     confidentialComputeType: "confidential_compute_type",
-    creationTimestamp: "creation_timestamp",
     deleteAfterDuration: {
       wireName: "delete_after_duration",
       kind: "object",
@@ -473,9 +453,6 @@ export const BetaReservation: ResourceBinding<BetaReservationConfig, BetaReserva
     description: "description",
     earlyAccessMaintenance: "early_access_maintenance",
     enableEmergentMaintenance: "enable_emergent_maintenance",
-    id: "id",
-    kind: "kind",
-    linkedCommitments: "linked_commitments",
     name: "name",
     params: {
       wireName: "params",
@@ -483,7 +460,6 @@ export const BetaReservation: ResourceBinding<BetaReservationConfig, BetaReserva
       fields: BetaReservation_ParamsFields,
     },
     protectionTier: "protection_tier",
-    reservationMode: "reservation_mode",
     reservationSharingPolicy: {
       wireName: "reservation_sharing_policy",
       kind: "object",
@@ -495,9 +471,7 @@ export const BetaReservation: ResourceBinding<BetaReservationConfig, BetaReserva
       kind: "object",
       fields: BetaReservation_ResourceStatusFields,
     },
-    satisfiesPzs: "satisfies_pzs",
     schedulingType: "scheduling_type",
-    selfLink: "self_link",
     shareSettings: {
       wireName: "share_settings",
       kind: "object",
@@ -509,7 +483,6 @@ export const BetaReservation: ResourceBinding<BetaReservationConfig, BetaReserva
       fields: BetaReservation_SpecificReservationFields,
     },
     specificReservationRequired: "specific_reservation_required",
-    status: "status",
     zone: "zone",
   },
 };

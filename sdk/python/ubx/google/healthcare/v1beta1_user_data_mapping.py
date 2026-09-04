@@ -18,10 +18,6 @@ _V1beta1UserDataMapping_ResourceAttributesFields = {
 
 @dataclasses.dataclass
 class V1beta1UserDataMappingConfig:
-    # Output only. Indicates the time when this mapping was archived.
-    archive_time: Any = None
-    # Output only. Indicates whether this mapping is archived.
-    archived: Any = None
     # Required. A unique identifier for the mapped resource.
     data_id: Any = None
     # Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`.
@@ -49,8 +45,6 @@ class V1beta1UserDataMappingAttrs:
 V1beta1UserDataMapping = ubx.ResourceBinding(
     wire_type="google_healthcare_v1beta1_user_data_mapping",
     fields={
-        "archive_time": ubx.FieldSpec(wire_name="archive_time"),
-        "archived": ubx.FieldSpec(wire_name="archived"),
         "data_id": ubx.FieldSpec(wire_name="data_id"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource_attributes": ubx.FieldSpec(

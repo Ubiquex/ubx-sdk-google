@@ -9,13 +9,13 @@ type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetrics
 
 type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetrics struct {
 	AverageLatency any
-	Tool any
+	Tool           any
 }
 
 type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetrics struct {
 	FailCount any
 	PassCount any
-	Tool any
+	Tool      any
 }
 
 type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetrics struct {
@@ -23,24 +23,24 @@ type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLa
 }
 
 type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn struct {
-	HallucinationMetrics any
+	HallucinationMetrics      any
 	SemanticSimilarityMetrics any
-	ToolCallLatencyMetrics any
-	ToolMetrics any
-	TurnIndex any
-	TurnLatencyMetrics any
+	ToolCallLatencyMetrics    any
+	ToolMetrics               any
+	TurnIndex                 any
+	TurnLatencyMetrics        any
 }
 
 type V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion struct {
-	AppVersionId any
-	FailCount any
-	HallucinationMetrics any
-	MetricsByTurn any
-	PassCount any
+	AppVersionId              any
+	FailCount                 any
+	HallucinationMetrics      any
+	MetricsByTurn             any
+	PassCount                 any
 	SemanticSimilarityMetrics any
-	ToolCallLatencyMetrics any
-	ToolMetrics any
-	TurnLatencyMetrics any
+	ToolCallLatencyMetrics    any
+	ToolMetrics               any
+	TurnLatencyMetrics        any
 }
 
 type V1betaEvaluation_AggregatedMetrics struct {
@@ -133,10 +133,10 @@ type V1betaEvaluation_EvaluationMetricsThresholdOverride struct {
 type V1betaEvaluation_Golden_Turns_RootSpan struct {
 	Attributes any
 	ChildSpans any
-	Duration any
-	EndTime any
-	Name any
-	StartTime any
+	Duration   any
+	EndTime    any
+	Name       any
+	StartTime  any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_AgentTransfer struct {
@@ -145,48 +145,48 @@ type V1betaEvaluation_Golden_Turns_Steps_AgentTransfer struct {
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall struct {
-	Args any
+	Args        any
 	DisplayName any
-	Id any
-	Tool any
+	Id          any
+	Tool        any
 	ToolsetTool any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponse struct {
 	DisplayName any
-	Id any
-	Response any
-	Tool any
+	Id          any
+	Response    any
+	Tool        any
 	ToolsetTool any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseHallucinationMetricsConfigOverride struct {
@@ -194,19 +194,19 @@ type V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseHallucinationM
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_Expectation struct {
-	AgentResponse any
-	AgentResponseHallucinationMetricsConfigOverride any
+	AgentResponse                                        any
+	AgentResponseHallucinationMetricsConfigOverride      any
 	AgentResponseSemanticSimilarityMetricsConfigOverride any
-	AgentTransfer any
-	ComparisonType any
-	ExpectationLevelMetricsThresholdsOverride any
-	MockToolResponse any
-	NoToolCalls any
-	Note any
-	SkipEvaluation any
-	ToolCall any
-	ToolResponse any
-	UpdatedVariables any
+	AgentTransfer                                        any
+	ComparisonType                                       any
+	ExpectationLevelMetricsThresholdsOverride            any
+	MockToolResponse                                     any
+	NoToolCalls                                          any
+	Note                                                 any
+	SkipEvaluation                                       any
+	ToolCall                                             any
+	ToolResponse                                         any
+	UpdatedVariables                                     any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_UserInput_Event struct {
@@ -218,28 +218,28 @@ type V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponses struct {
 }
 
 type V1betaEvaluation_Golden_Turns_Steps_UserInput struct {
-	Audio any
-	Blob any
-	Dtmf any
-	Event any
-	Image any
-	Text any
+	Audio         any
+	Blob          any
+	Dtmf          any
+	Event         any
+	Image         any
+	Text          any
 	ToolResponses any
-	Variables any
-	WillContinue any
+	Variables     any
+	WillContinue  any
 }
 
 type V1betaEvaluation_Golden_Turns_Steps struct {
 	AgentTransfer any
-	Expectation any
-	UserInput any
+	Expectation   any
+	UserInput     any
 }
 
 type V1betaEvaluation_Golden_Turns struct {
 	HallucinationMetricBehaviorOverride any
-	RootSpan any
-	Steps any
-	TurnLevelMetricsThresholdsOverride any
+	RootSpan                            any
+	Steps                               any
+	TurnLevelMetricsThresholdsOverride  any
 }
 
 type V1betaEvaluation_Golden struct {
@@ -298,79 +298,79 @@ type V1betaEvaluation_LastCompletedResult_ErrorInfo struct {
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResults struct {
 	EvaluationExpectation any
-	Explanation any
-	Outcome any
-	Prompt any
+	Explanation           any
+	Outcome               any
+	Prompt                any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResult struct {
 	Explanation any
-	Label any
-	Outcome any
-	Score any
+	Label       any
+	Outcome     any
+	Score       any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_ToolInvocationResult struct {
-	Explanation any
-	Outcome any
+	Explanation               any
+	Outcome                   any
 	ParameterCorrectnessScore any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome struct {
-	Expectation any
-	ObservedAgentResponse any
-	ObservedAgentTransfer any
-	ObservedPayload any
-	ObservedToolCall any
-	ObservedToolResponse any
-	Outcome any
+	Expectation              any
+	ObservedAgentResponse    any
+	ObservedAgentTransfer    any
+	ObservedPayload          any
+	ObservedToolCall         any
+	ObservedToolResponse     any
+	Outcome                  any
 	SemanticSimilarityResult any
-	ToolInvocationResult any
+	ToolInvocationResult     any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResult struct {
 	Explanation any
-	Label any
-	Score any
+	Label       any
+	Score       any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_OverallToolInvocationResult struct {
-	Outcome any
+	Outcome             any
 	ToolInvocationScore any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatencies struct {
-	Callback any
-	DisplayName any
-	EndTime any
+	Callback         any
+	DisplayName      any
+	EndTime          any
 	ExecutionLatency any
-	Model any
-	Resource any
-	StartTime any
-	Toolset any
-	Type any
+	Model            any
+	Resource         any
+	StartTime        any
+	Toolset          any
+	Type             any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatencies struct {
-	DisplayName any
-	EndTime any
+	DisplayName      any
+	EndTime          any
 	ExecutionLatency any
-	StartTime any
-	Tool any
+	StartTime        any
+	Tool             any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults struct {
-	Conversation any
-	ErrorInfo any
-	ExpectationOutcome any
-	HallucinationResult any
+	Conversation                any
+	ErrorInfo                   any
+	ExpectationOutcome          any
+	HallucinationResult         any
 	OverallToolInvocationResult any
-	SemanticSimilarityResult any
-	SpanLatencies any
-	ToolCallLatencies any
-	ToolInvocationScore any
-	ToolOrderedInvocationScore any
-	TurnLatency any
+	SemanticSimilarityResult    any
+	SpanLatencies               any
+	ToolCallLatencies           any
+	ToolInvocationScore         any
+	ToolOrderedInvocationScore  any
+	TurnLatency                 any
 }
 
 type V1betaEvaluation_LastCompletedResult_GoldenResult struct {
@@ -408,30 +408,30 @@ type V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_Exp
 }
 
 type V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_Expectation struct {
-	AgentResponse any
+	AgentResponse   any
 	ToolExpectation any
 }
 
 type V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ObservedToolCall struct {
-	ToolCall any
+	ToolCall     any
 	ToolResponse any
 }
 
 type V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes struct {
-	Expectation any
+	Expectation           any
 	ObservedAgentResponse any
-	ObservedToolCall any
-	Outcome any
+	ObservedToolCall      any
+	Outcome               any
 }
 
 type V1betaEvaluation_LastCompletedResult_ScenarioResult_RubricOutcomes struct {
-	Rubric any
-	Score any
+	Rubric           any
+	Score            any
 	ScoreExplanation any
 }
 
 type V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFacts struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -533,873 +533,855 @@ type V1betaEvaluation_Scenario struct {
 }
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields = ubx.FieldMap{
-		"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
+	"Tool":           ubx.FieldSpec{WireName: "tool"},
+}
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields = ubx.FieldMap{
-		"FailCount": ubx.FieldSpec{WireName: "fail_count"},
-		"PassCount": ubx.FieldSpec{WireName: "pass_count"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"FailCount": ubx.FieldSpec{WireName: "fail_count"},
+	"PassCount": ubx.FieldSpec{WireName: "pass_count"},
+	"Tool":      ubx.FieldSpec{WireName: "tool"},
+}
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields = ubx.FieldMap{
-		"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
-	}
+	"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
+}
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields = ubx.FieldMap{
-		"HallucinationMetrics": ubx.FieldSpec{
-			WireName: "hallucination_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-		},
-		"SemanticSimilarityMetrics": ubx.FieldSpec{
-			WireName: "semantic_similarity_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-		},
-		"ToolCallLatencyMetrics": ubx.FieldSpec{
-			WireName: "tool_call_latency_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
-		},
-		"ToolMetrics": ubx.FieldSpec{
-			WireName: "tool_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
-		},
-		"TurnIndex": ubx.FieldSpec{WireName: "turn_index"},
-		"TurnLatencyMetrics": ubx.FieldSpec{
-			WireName: "turn_latency_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
-		},
-	}
+	"HallucinationMetrics": ubx.FieldSpec{
+		WireName: "hallucination_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+	},
+	"SemanticSimilarityMetrics": ubx.FieldSpec{
+		WireName: "semantic_similarity_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+	},
+	"ToolCallLatencyMetrics": ubx.FieldSpec{
+		WireName: "tool_call_latency_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
+	},
+	"ToolMetrics": ubx.FieldSpec{
+		WireName: "tool_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
+	},
+	"TurnIndex": ubx.FieldSpec{WireName: "turn_index"},
+	"TurnLatencyMetrics": ubx.FieldSpec{
+		WireName: "turn_latency_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
+	},
+}
 
 var V1betaEvaluation_AggregatedMetrics_MetricsByAppVersionFields = ubx.FieldMap{
-		"AppVersionId": ubx.FieldSpec{WireName: "app_version_id"},
-		"FailCount": ubx.FieldSpec{WireName: "fail_count"},
-		"HallucinationMetrics": ubx.FieldSpec{
-			WireName: "hallucination_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-		},
-		"MetricsByTurn": ubx.FieldSpec{
-			WireName: "metrics_by_turn",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields,
-		},
-		"PassCount": ubx.FieldSpec{WireName: "pass_count"},
-		"SemanticSimilarityMetrics": ubx.FieldSpec{
-			WireName: "semantic_similarity_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-		},
-		"ToolCallLatencyMetrics": ubx.FieldSpec{
-			WireName: "tool_call_latency_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
-		},
-		"ToolMetrics": ubx.FieldSpec{
-			WireName: "tool_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
-		},
-		"TurnLatencyMetrics": ubx.FieldSpec{
-			WireName: "turn_latency_metrics",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
-		},
-	}
+	"AppVersionId": ubx.FieldSpec{WireName: "app_version_id"},
+	"FailCount":    ubx.FieldSpec{WireName: "fail_count"},
+	"HallucinationMetrics": ubx.FieldSpec{
+		WireName: "hallucination_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+	},
+	"MetricsByTurn": ubx.FieldSpec{
+		WireName: "metrics_by_turn",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields,
+	},
+	"PassCount": ubx.FieldSpec{WireName: "pass_count"},
+	"SemanticSimilarityMetrics": ubx.FieldSpec{
+		WireName: "semantic_similarity_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+	},
+	"ToolCallLatencyMetrics": ubx.FieldSpec{
+		WireName: "tool_call_latency_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
+	},
+	"ToolMetrics": ubx.FieldSpec{
+		WireName: "tool_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
+	},
+	"TurnLatencyMetrics": ubx.FieldSpec{
+		WireName: "turn_latency_metrics",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
+	},
+}
 
 var V1betaEvaluation_AggregatedMetricsFields = ubx.FieldMap{
-		"MetricsByAppVersion": ubx.FieldSpec{
-			WireName: "metrics_by_app_version",
-			Kind: "list",
-			Fields: V1betaEvaluation_AggregatedMetrics_MetricsByAppVersionFields,
-		},
-	}
+	"MetricsByAppVersion": ubx.FieldSpec{
+		WireName: "metrics_by_app_version",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_AggregatedMetrics_MetricsByAppVersionFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields = ubx.FieldMap{
-		"EnableSemanticSimilarityMetrics": ubx.FieldSpec{WireName: "enable_semantic_similarity_metrics"},
-	}
+	"EnableSemanticSimilarityMetrics": ubx.FieldSpec{WireName: "enable_semantic_similarity_metrics"},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields = ubx.FieldMap{
-		"EnableToolCorrectnessMetrics": ubx.FieldSpec{WireName: "enable_tool_correctness_metrics"},
-	}
+	"EnableToolCorrectnessMetrics": ubx.FieldSpec{WireName: "enable_tool_correctness_metrics"},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfigFields = ubx.FieldMap{
-		"SemanticSimilarityMetricsConfig": ubx.FieldSpec{
-			WireName: "semantic_similarity_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
-		},
-		"StepToolCorrectnessMetricsConfig": ubx.FieldSpec{
-			WireName: "step_tool_correctness_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
-		},
-		"ToolCorrectnessMetricsConfig": ubx.FieldSpec{
-			WireName: "tool_correctness_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
-		},
-	}
+	"SemanticSimilarityMetricsConfig": ubx.FieldSpec{
+		WireName: "semantic_similarity_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
+	},
+	"StepToolCorrectnessMetricsConfig": ubx.FieldSpec{
+		WireName: "step_tool_correctness_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
+	},
+	"ToolCorrectnessMetricsConfig": ubx.FieldSpec{
+		WireName: "tool_correctness_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields = ubx.FieldMap{
-		"EnableExpectationsMetMetrics": ubx.FieldSpec{WireName: "enable_expectations_met_metrics"},
-	}
+	"EnableExpectationsMetMetrics": ubx.FieldSpec{WireName: "enable_expectations_met_metrics"},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields = ubx.FieldMap{
-		"EnableUserGoalMetMetrics": ubx.FieldSpec{WireName: "enable_user_goal_met_metrics"},
-	}
+	"EnableUserGoalMetMetrics": ubx.FieldSpec{WireName: "enable_user_goal_met_metrics"},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfigFields = ubx.FieldMap{
-		"ExpectationsMetMetricsConfig": ubx.FieldSpec{
-			WireName: "expectations_met_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields,
-		},
-		"UserGoalMetMetricsConfig": ubx.FieldSpec{
-			WireName: "user_goal_met_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields,
-		},
-	}
+	"ExpectationsMetMetricsConfig": ubx.FieldSpec{
+		WireName: "expectations_met_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields,
+	},
+	"UserGoalMetMetricsConfig": ubx.FieldSpec{
+		WireName: "user_goal_met_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationMetricsConfigOverrideFields = ubx.FieldMap{
-		"GoldenMetricsConfig": ubx.FieldSpec{
-			WireName: "golden_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfigFields,
-		},
-		"ScenarioMetricsConfig": ubx.FieldSpec{
-			WireName: "scenario_metrics_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfigFields,
-		},
-	}
+	"GoldenMetricsConfig": ubx.FieldSpec{
+		WireName: "golden_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfigFields,
+	},
+	"ScenarioMetricsConfig": ubx.FieldSpec{
+		WireName: "scenario_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_ScenarioMetricsConfigFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields = ubx.FieldMap{
-		"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
-	}
+	"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
+}
 
 var V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields = ubx.FieldMap{
-		"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
-	}
+	"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
+}
 
 var V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields = ubx.FieldMap{
-		"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
-		"SemanticSimilarityChannel": ubx.FieldSpec{WireName: "semantic_similarity_channel"},
-		"SemanticSimilaritySuccessThreshold": ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
-	}
+	"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
+	"SemanticSimilarityChannel":                 ubx.FieldSpec{WireName: "semantic_similarity_channel"},
+	"SemanticSimilaritySuccessThreshold":        ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
+}
 
 var V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholdsFields = ubx.FieldMap{
-		"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "expectation_level_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
-		},
-		"ToolMatchingSettings": ubx.FieldSpec{
-			WireName: "tool_matching_settings",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
-		},
-		"TurnLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "turn_level_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
-		},
-	}
+	"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "expectation_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
+	},
+	"ToolMatchingSettings": ubx.FieldSpec{
+		WireName: "tool_matching_settings",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
+	},
+	"TurnLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "turn_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
+	},
+}
 
 var V1betaEvaluation_EvaluationMetricsThresholdOverrideFields = ubx.FieldMap{
-		"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
-			WireName: "golden_evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholdsFields,
-		},
-		"GoldenHallucinationMetricBehavior": ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
-		"HallucinationMetricBehavior": ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
-		"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
-	}
+	"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
+		WireName: "golden_evaluation_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholdsFields,
+	},
+	"GoldenHallucinationMetricBehavior":   ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
+	"HallucinationMetricBehavior":         ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
+	"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
+}
 
 var V1betaEvaluation_Golden_Turns_RootSpanFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"ChildSpans": ubx.FieldSpec{WireName: "child_spans"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"ChildSpans": ubx.FieldSpec{WireName: "child_spans"},
+	"Duration":   ubx.FieldSpec{WireName: "duration"},
+	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":     ubx.FieldSpec{WireName: "data"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields = ubx.FieldMap{
-		"ToolId": ubx.FieldSpec{WireName: "tool_id"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolId":  ubx.FieldSpec{WireName: "tool_id"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Tool":        ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Response":    ubx.FieldSpec{WireName: "response"},
+	"Tool":        ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_ChunksFields = ubx.FieldMap{
-		"AgentTransfer": ubx.FieldSpec{
-			WireName: "agent_transfer",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
-		},
-		"Blob": ubx.FieldSpec{
-			WireName: "blob",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
-		},
-		"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
-		},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
-		},
-		"ToolResponse": ubx.FieldSpec{
-			WireName: "tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-		"Transcript": ubx.FieldSpec{WireName: "transcript"},
-		"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
-	}
+	"AgentTransfer": ubx.FieldSpec{
+		WireName: "agent_transfer",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
+	},
+	"Blob": ubx.FieldSpec{
+		WireName: "blob",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+	},
+	"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+	},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
+	},
+	"ToolResponse": ubx.FieldSpec{
+		WireName: "tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+	"Transcript":       ubx.FieldSpec{WireName: "transcript"},
+	"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields = ubx.FieldMap{
-		"Chunks": ubx.FieldSpec{
-			WireName: "chunks",
-			Kind: "list",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_ChunksFields,
-		},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Chunks": ubx.FieldSpec{
+		WireName: "chunks",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_ChunksFields,
+	},
+	"EventTime": ubx.FieldSpec{WireName: "event_time"},
+	"Role":      ubx.FieldSpec{WireName: "role"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseHallucinationMetricsConfigOverrideFields = ubx.FieldMap{
-		"EnableHallucinationMetrics": ubx.FieldSpec{WireName: "enable_hallucination_metrics"},
-	}
+	"EnableHallucinationMetrics": ubx.FieldSpec{WireName: "enable_hallucination_metrics"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_ExpectationFields = ubx.FieldMap{
-		"AgentResponse": ubx.FieldSpec{
-			WireName: "agent_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
-		},
-		"AgentResponseHallucinationMetricsConfigOverride": ubx.FieldSpec{
-			WireName: "agent_response_hallucination_metrics_config_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseHallucinationMetricsConfigOverrideFields,
-		},
-		"AgentResponseSemanticSimilarityMetricsConfigOverride": ubx.FieldSpec{
-			WireName: "agent_response_semantic_similarity_metrics_config_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
-		},
-		"AgentTransfer": ubx.FieldSpec{
-			WireName: "agent_transfer",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
-		},
-		"ComparisonType": ubx.FieldSpec{WireName: "comparison_type"},
-		"ExpectationLevelMetricsThresholdsOverride": ubx.FieldSpec{
-			WireName: "expectation_level_metrics_thresholds_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
-		},
-		"MockToolResponse": ubx.FieldSpec{
-			WireName: "mock_tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-		"NoToolCalls": ubx.FieldSpec{WireName: "no_tool_calls"},
-		"Note": ubx.FieldSpec{WireName: "note"},
-		"SkipEvaluation": ubx.FieldSpec{WireName: "skip_evaluation"},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
-		},
-		"ToolResponse": ubx.FieldSpec{
-			WireName: "tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-		"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
-	}
+	"AgentResponse": ubx.FieldSpec{
+		WireName: "agent_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
+	},
+	"AgentResponseHallucinationMetricsConfigOverride": ubx.FieldSpec{
+		WireName: "agent_response_hallucination_metrics_config_override",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseHallucinationMetricsConfigOverrideFields,
+	},
+	"AgentResponseSemanticSimilarityMetricsConfigOverride": ubx.FieldSpec{
+		WireName: "agent_response_semantic_similarity_metrics_config_override",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsConfigOverride_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
+	},
+	"AgentTransfer": ubx.FieldSpec{
+		WireName: "agent_transfer",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
+	},
+	"ComparisonType": ubx.FieldSpec{WireName: "comparison_type"},
+	"ExpectationLevelMetricsThresholdsOverride": ubx.FieldSpec{
+		WireName: "expectation_level_metrics_thresholds_override",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
+	},
+	"MockToolResponse": ubx.FieldSpec{
+		WireName: "mock_tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+	"NoToolCalls":    ubx.FieldSpec{WireName: "no_tool_calls"},
+	"Note":           ubx.FieldSpec{WireName: "note"},
+	"SkipEvaluation": ubx.FieldSpec{WireName: "skip_evaluation"},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
+	},
+	"ToolResponse": ubx.FieldSpec{
+		WireName: "tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+	"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_UserInput_EventFields = ubx.FieldMap{
-		"Event": ubx.FieldSpec{WireName: "event"},
-	}
+	"Event": ubx.FieldSpec{WireName: "event"},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponsesFields = ubx.FieldMap{
-		"ToolResponses": ubx.FieldSpec{
-			WireName: "tool_responses",
-			Kind: "list",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-	}
+	"ToolResponses": ubx.FieldSpec{
+		WireName: "tool_responses",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+}
 
 var V1betaEvaluation_Golden_Turns_Steps_UserInputFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{WireName: "audio"},
-		"Blob": ubx.FieldSpec{
-			WireName: "blob",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
-		},
-		"Dtmf": ubx.FieldSpec{WireName: "dtmf"},
-		"Event": ubx.FieldSpec{
-			WireName: "event",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_UserInput_EventFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"ToolResponses": ubx.FieldSpec{
-			WireName: "tool_responses",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponsesFields,
-		},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Audio": ubx.FieldSpec{WireName: "audio"},
+	"Blob": ubx.FieldSpec{
+		WireName: "blob",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+	},
+	"Dtmf": ubx.FieldSpec{WireName: "dtmf"},
+	"Event": ubx.FieldSpec{
+		WireName: "event",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_UserInput_EventFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+	"ToolResponses": ubx.FieldSpec{
+		WireName: "tool_responses",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponsesFields,
+	},
+	"Variables":    ubx.FieldSpec{WireName: "variables"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1betaEvaluation_Golden_Turns_StepsFields = ubx.FieldMap{
-		"AgentTransfer": ubx.FieldSpec{
-			WireName: "agent_transfer",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
-		},
-		"Expectation": ubx.FieldSpec{
-			WireName: "expectation",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_ExpectationFields,
-		},
-		"UserInput": ubx.FieldSpec{
-			WireName: "user_input",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_UserInputFields,
-		},
-	}
+	"AgentTransfer": ubx.FieldSpec{
+		WireName: "agent_transfer",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
+	},
+	"Expectation": ubx.FieldSpec{
+		WireName: "expectation",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_ExpectationFields,
+	},
+	"UserInput": ubx.FieldSpec{
+		WireName: "user_input",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_UserInputFields,
+	},
+}
 
 var V1betaEvaluation_Golden_TurnsFields = ubx.FieldMap{
-		"HallucinationMetricBehaviorOverride": ubx.FieldSpec{WireName: "hallucination_metric_behavior_override"},
-		"RootSpan": ubx.FieldSpec{
-			WireName: "root_span",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_RootSpanFields,
-		},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1betaEvaluation_Golden_Turns_StepsFields,
-		},
-		"TurnLevelMetricsThresholdsOverride": ubx.FieldSpec{
-			WireName: "turn_level_metrics_thresholds_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
-		},
-	}
+	"HallucinationMetricBehaviorOverride": ubx.FieldSpec{WireName: "hallucination_metric_behavior_override"},
+	"RootSpan": ubx.FieldSpec{
+		WireName: "root_span",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_RootSpanFields,
+	},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_Golden_Turns_StepsFields,
+	},
+	"TurnLevelMetricsThresholdsOverride": ubx.FieldSpec{
+		WireName: "turn_level_metrics_thresholds_override",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverride_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
+	},
+}
 
 var V1betaEvaluation_GoldenFields = ubx.FieldMap{
-		"EvaluationExpectations": ubx.FieldSpec{WireName: "evaluation_expectations"},
-		"Turns": ubx.FieldSpec{
-			WireName: "turns",
-			Kind: "list",
-			Fields: V1betaEvaluation_Golden_TurnsFields,
-		},
-	}
+	"EvaluationExpectations": ubx.FieldSpec{WireName: "evaluation_expectations"},
+	"Turns": ubx.FieldSpec{
+		WireName: "turns",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_Golden_TurnsFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_Config_InputAudioConfigFields = ubx.FieldMap{
-		"AudioEncoding": ubx.FieldSpec{WireName: "audio_encoding"},
-		"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
-		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
-	}
+	"AudioEncoding":         ubx.FieldSpec{WireName: "audio_encoding"},
+	"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
+	"SampleRateHertz":       ubx.FieldSpec{WireName: "sample_rate_hertz"},
+}
 
 var V1betaEvaluation_LastCompletedResult_Config_OutputAudioConfigFields = ubx.FieldMap{
-		"AudioEncoding": ubx.FieldSpec{WireName: "audio_encoding"},
-		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
-	}
+	"AudioEncoding":   ubx.FieldSpec{WireName: "audio_encoding"},
+	"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ConfigFields = ubx.FieldMap{
-		"EvaluationChannel": ubx.FieldSpec{WireName: "evaluation_channel"},
-		"InputAudioConfig": ubx.FieldSpec{
-			WireName: "input_audio_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_Config_InputAudioConfigFields,
-		},
-		"OutputAudioConfig": ubx.FieldSpec{
-			WireName: "output_audio_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_Config_OutputAudioConfigFields,
-		},
-		"ToolCallBehaviour": ubx.FieldSpec{WireName: "tool_call_behaviour"},
-	}
+	"EvaluationChannel": ubx.FieldSpec{WireName: "evaluation_channel"},
+	"InputAudioConfig": ubx.FieldSpec{
+		WireName: "input_audio_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_Config_InputAudioConfigFields,
+	},
+	"OutputAudioConfig": ubx.FieldSpec{
+		WireName: "output_audio_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_Config_OutputAudioConfigFields,
+	},
+	"ToolCallBehaviour": ubx.FieldSpec{WireName: "tool_call_behaviour"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ErrorInfoFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ErrorType": ubx.FieldSpec{WireName: "error_type"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"UserFacingErrorMessage": ubx.FieldSpec{WireName: "user_facing_error_message"},
-	}
+	"ErrorMessage":           ubx.FieldSpec{WireName: "error_message"},
+	"ErrorType":              ubx.FieldSpec{WireName: "error_type"},
+	"SessionId":              ubx.FieldSpec{WireName: "session_id"},
+	"UserFacingErrorMessage": ubx.FieldSpec{WireName: "user_facing_error_message"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResultsFields = ubx.FieldMap{
-		"EvaluationExpectation": ubx.FieldSpec{WireName: "evaluation_expectation"},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"EvaluationExpectation": ubx.FieldSpec{WireName: "evaluation_expectation"},
+	"Explanation":           ubx.FieldSpec{WireName: "explanation"},
+	"Outcome":               ubx.FieldSpec{WireName: "outcome"},
+	"Prompt":                ubx.FieldSpec{WireName: "prompt"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResultFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Explanation": ubx.FieldSpec{WireName: "explanation"},
+	"Label":       ubx.FieldSpec{WireName: "label"},
+	"Outcome":     ubx.FieldSpec{WireName: "outcome"},
+	"Score":       ubx.FieldSpec{WireName: "score"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_ToolInvocationResultFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"ParameterCorrectnessScore": ubx.FieldSpec{WireName: "parameter_correctness_score"},
-	}
+	"Explanation":               ubx.FieldSpec{WireName: "explanation"},
+	"Outcome":                   ubx.FieldSpec{WireName: "outcome"},
+	"ParameterCorrectnessScore": ubx.FieldSpec{WireName: "parameter_correctness_score"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcomeFields = ubx.FieldMap{
-		"Expectation": ubx.FieldSpec{
-			WireName: "expectation",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_ExpectationFields,
-		},
-		"ObservedAgentResponse": ubx.FieldSpec{
-			WireName: "observed_agent_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
-		},
-		"ObservedAgentTransfer": ubx.FieldSpec{
-			WireName: "observed_agent_transfer",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
-		},
-		"ObservedPayload": ubx.FieldSpec{WireName: "observed_payload"},
-		"ObservedToolCall": ubx.FieldSpec{
-			WireName: "observed_tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
-		},
-		"ObservedToolResponse": ubx.FieldSpec{
-			WireName: "observed_tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"SemanticSimilarityResult": ubx.FieldSpec{
-			WireName: "semantic_similarity_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResultFields,
-		},
-		"ToolInvocationResult": ubx.FieldSpec{
-			WireName: "tool_invocation_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_ToolInvocationResultFields,
-		},
-	}
+	"Expectation": ubx.FieldSpec{
+		WireName: "expectation",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_ExpectationFields,
+	},
+	"ObservedAgentResponse": ubx.FieldSpec{
+		WireName: "observed_agent_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
+	},
+	"ObservedAgentTransfer": ubx.FieldSpec{
+		WireName: "observed_agent_transfer",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_AgentTransferFields,
+	},
+	"ObservedPayload": ubx.FieldSpec{WireName: "observed_payload"},
+	"ObservedToolCall": ubx.FieldSpec{
+		WireName: "observed_tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
+	},
+	"ObservedToolResponse": ubx.FieldSpec{
+		WireName: "observed_tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"SemanticSimilarityResult": ubx.FieldSpec{
+		WireName: "semantic_similarity_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResultFields,
+	},
+	"ToolInvocationResult": ubx.FieldSpec{
+		WireName: "tool_invocation_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_ToolInvocationResultFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Explanation": ubx.FieldSpec{WireName: "explanation"},
+	"Label":       ubx.FieldSpec{WireName: "label"},
+	"Score":       ubx.FieldSpec{WireName: "score"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_OverallToolInvocationResultFields = ubx.FieldMap{
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"ToolInvocationScore": ubx.FieldSpec{WireName: "tool_invocation_score"},
-	}
+	"Outcome":             ubx.FieldSpec{WireName: "outcome"},
+	"ToolInvocationScore": ubx.FieldSpec{WireName: "tool_invocation_score"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatenciesFields = ubx.FieldMap{
-		"Callback": ubx.FieldSpec{WireName: "callback"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ExecutionLatency": ubx.FieldSpec{WireName: "execution_latency"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Toolset": ubx.FieldSpec{
-			WireName: "toolset",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Callback":         ubx.FieldSpec{WireName: "callback"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"EndTime":          ubx.FieldSpec{WireName: "end_time"},
+	"ExecutionLatency": ubx.FieldSpec{WireName: "execution_latency"},
+	"Model":            ubx.FieldSpec{WireName: "model"},
+	"Resource":         ubx.FieldSpec{WireName: "resource"},
+	"StartTime":        ubx.FieldSpec{WireName: "start_time"},
+	"Toolset": ubx.FieldSpec{
+		WireName: "toolset",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatenciesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ExecutionLatency": ubx.FieldSpec{WireName: "execution_latency"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"EndTime":          ubx.FieldSpec{WireName: "end_time"},
+	"ExecutionLatency": ubx.FieldSpec{WireName: "execution_latency"},
+	"StartTime":        ubx.FieldSpec{WireName: "start_time"},
+	"Tool":             ubx.FieldSpec{WireName: "tool"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResultsFields = ubx.FieldMap{
-		"Conversation": ubx.FieldSpec{WireName: "conversation"},
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ErrorInfoFields,
-		},
-		"ExpectationOutcome": ubx.FieldSpec{
-			WireName: "expectation_outcome",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcomeFields,
-		},
-		"HallucinationResult": ubx.FieldSpec{
-			WireName: "hallucination_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
-		},
-		"OverallToolInvocationResult": ubx.FieldSpec{
-			WireName: "overall_tool_invocation_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_OverallToolInvocationResultFields,
-		},
-		"SemanticSimilarityResult": ubx.FieldSpec{
-			WireName: "semantic_similarity_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResultFields,
-		},
-		"SpanLatencies": ubx.FieldSpec{
-			WireName: "span_latencies",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatenciesFields,
-		},
-		"ToolCallLatencies": ubx.FieldSpec{
-			WireName: "tool_call_latencies",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatenciesFields,
-		},
-		"ToolInvocationScore": ubx.FieldSpec{WireName: "tool_invocation_score"},
-		"ToolOrderedInvocationScore": ubx.FieldSpec{WireName: "tool_ordered_invocation_score"},
-		"TurnLatency": ubx.FieldSpec{WireName: "turn_latency"},
-	}
+	"Conversation": ubx.FieldSpec{WireName: "conversation"},
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ErrorInfoFields,
+	},
+	"ExpectationOutcome": ubx.FieldSpec{
+		WireName: "expectation_outcome",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcomeFields,
+	},
+	"HallucinationResult": ubx.FieldSpec{
+		WireName: "hallucination_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
+	},
+	"OverallToolInvocationResult": ubx.FieldSpec{
+		WireName: "overall_tool_invocation_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_OverallToolInvocationResultFields,
+	},
+	"SemanticSimilarityResult": ubx.FieldSpec{
+		WireName: "semantic_similarity_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResultFields,
+	},
+	"SpanLatencies": ubx.FieldSpec{
+		WireName: "span_latencies",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatenciesFields,
+	},
+	"ToolCallLatencies": ubx.FieldSpec{
+		WireName: "tool_call_latencies",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatenciesFields,
+	},
+	"ToolInvocationScore":        ubx.FieldSpec{WireName: "tool_invocation_score"},
+	"ToolOrderedInvocationScore": ubx.FieldSpec{WireName: "tool_ordered_invocation_score"},
+	"TurnLatency":                ubx.FieldSpec{WireName: "turn_latency"},
+}
 
 var V1betaEvaluation_LastCompletedResult_GoldenResultFields = ubx.FieldMap{
-		"EvaluationExpectationResults": ubx.FieldSpec{
-			WireName: "evaluation_expectation_results",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResultsFields,
-		},
-		"TurnReplayResults": ubx.FieldSpec{
-			WireName: "turn_replay_results",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResultsFields,
-		},
-	}
+	"EvaluationExpectationResults": ubx.FieldSpec{
+		WireName: "evaluation_expectation_results",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResultsFields,
+	},
+	"TurnReplayResults": ubx.FieldSpec{
+		WireName: "turn_replay_results",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResultsFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_Persona_SpeechConfigFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
-	}
+	"Environment":  ubx.FieldSpec{WireName: "environment"},
+	"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
+	"VoiceId":      ubx.FieldSpec{WireName: "voice_id"},
+}
 
 var V1betaEvaluation_LastCompletedResult_PersonaFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Personality": ubx.FieldSpec{WireName: "personality"},
-		"SpeechConfig": ubx.FieldSpec{
-			WireName: "speech_config",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_Persona_SpeechConfigFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Personality": ubx.FieldSpec{WireName: "personality"},
+	"SpeechConfig": ubx.FieldSpec{
+		WireName: "speech_config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_Persona_SpeechConfigFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_Expectation_ToolExpectationFields = ubx.FieldMap{
-		"ExpectedToolCall": ubx.FieldSpec{
-			WireName: "expected_tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
-		},
-		"MockToolResponse": ubx.FieldSpec{
-			WireName: "mock_tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-	}
+	"ExpectedToolCall": ubx.FieldSpec{
+		WireName: "expected_tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
+	},
+	"MockToolResponse": ubx.FieldSpec{
+		WireName: "mock_tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ExpectationFields = ubx.FieldMap{
-		"AgentResponse": ubx.FieldSpec{
-			WireName: "agent_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
-		},
-		"ToolExpectation": ubx.FieldSpec{
-			WireName: "tool_expectation",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_Expectation_ToolExpectationFields,
-		},
-	}
+	"AgentResponse": ubx.FieldSpec{
+		WireName: "agent_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
+	},
+	"ToolExpectation": ubx.FieldSpec{
+		WireName: "tool_expectation",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_Expectation_ToolExpectationFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ObservedToolCallFields = ubx.FieldMap{
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
-		},
-		"ToolResponse": ubx.FieldSpec{
-			WireName: "tool_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
-		},
-	}
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields,
+	},
+	"ToolResponse": ubx.FieldSpec{
+		WireName: "tool_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomesFields = ubx.FieldMap{
-		"Expectation": ubx.FieldSpec{
-			WireName: "expectation",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ExpectationFields,
-		},
-		"ObservedAgentResponse": ubx.FieldSpec{
-			WireName: "observed_agent_response",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
-		},
-		"ObservedToolCall": ubx.FieldSpec{
-			WireName: "observed_tool_call",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ObservedToolCallFields,
-		},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-	}
+	"Expectation": ubx.FieldSpec{
+		WireName: "expectation",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ExpectationFields,
+	},
+	"ObservedAgentResponse": ubx.FieldSpec{
+		WireName: "observed_agent_response",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponseFields,
+	},
+	"ObservedToolCall": ubx.FieldSpec{
+		WireName: "observed_tool_call",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ObservedToolCallFields,
+	},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_RubricOutcomesFields = ubx.FieldMap{
-		"Rubric": ubx.FieldSpec{WireName: "rubric"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"ScoreExplanation": ubx.FieldSpec{WireName: "score_explanation"},
-	}
+	"Rubric":           ubx.FieldSpec{WireName: "rubric"},
+	"Score":            ubx.FieldSpec{WireName: "score"},
+	"ScoreExplanation": ubx.FieldSpec{WireName: "score_explanation"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFactsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1betaEvaluation_LastCompletedResult_ScenarioResultFields = ubx.FieldMap{
-		"AllExpectationsSatisfied": ubx.FieldSpec{WireName: "all_expectations_satisfied"},
-		"Conversation": ubx.FieldSpec{WireName: "conversation"},
-		"EvaluationExpectationResults": ubx.FieldSpec{
-			WireName: "evaluation_expectation_results",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResultsFields,
-		},
-		"ExpectationOutcomes": ubx.FieldSpec{
-			WireName: "expectation_outcomes",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomesFields,
-		},
-		"HallucinationResult": ubx.FieldSpec{
-			WireName: "hallucination_result",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
-		},
-		"RubricOutcomes": ubx.FieldSpec{
-			WireName: "rubric_outcomes",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_RubricOutcomesFields,
-		},
-		"SpanLatencies": ubx.FieldSpec{
-			WireName: "span_latencies",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatenciesFields,
-		},
-		"Task": ubx.FieldSpec{WireName: "task"},
-		"TaskCompleted": ubx.FieldSpec{WireName: "task_completed"},
-		"TaskCompletionResult": ubx.FieldSpec{
-			WireName: "task_completion_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
-		},
-		"ToolCallLatencies": ubx.FieldSpec{
-			WireName: "tool_call_latencies",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatenciesFields,
-		},
-		"UserFacts": ubx.FieldSpec{
-			WireName: "user_facts",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFactsFields,
-		},
-		"UserGoalSatisfactionResult": ubx.FieldSpec{
-			WireName: "user_goal_satisfaction_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
-		},
-	}
+	"AllExpectationsSatisfied": ubx.FieldSpec{WireName: "all_expectations_satisfied"},
+	"Conversation":             ubx.FieldSpec{WireName: "conversation"},
+	"EvaluationExpectationResults": ubx.FieldSpec{
+		WireName: "evaluation_expectation_results",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_EvaluationExpectationResultsFields,
+	},
+	"ExpectationOutcomes": ubx.FieldSpec{
+		WireName: "expectation_outcomes",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomesFields,
+	},
+	"HallucinationResult": ubx.FieldSpec{
+		WireName: "hallucination_result",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
+	},
+	"RubricOutcomes": ubx.FieldSpec{
+		WireName: "rubric_outcomes",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_RubricOutcomesFields,
+	},
+	"SpanLatencies": ubx.FieldSpec{
+		WireName: "span_latencies",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_SpanLatenciesFields,
+	},
+	"Task":          ubx.FieldSpec{WireName: "task"},
+	"TaskCompleted": ubx.FieldSpec{WireName: "task_completed"},
+	"TaskCompletionResult": ubx.FieldSpec{
+		WireName: "task_completion_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
+	},
+	"ToolCallLatencies": ubx.FieldSpec{
+		WireName: "tool_call_latencies",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_ToolCallLatenciesFields,
+	},
+	"UserFacts": ubx.FieldSpec{
+		WireName: "user_facts",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFactsFields,
+	},
+	"UserGoalSatisfactionResult": ubx.FieldSpec{
+		WireName: "user_goal_satisfaction_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResult_TurnReplayResults_HallucinationResultFields,
+	},
+}
 
 var V1betaEvaluation_LastCompletedResultFields = ubx.FieldMap{
-		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
-		"AppVersionDisplayName": ubx.FieldSpec{WireName: "app_version_display_name"},
-		"Changelog": ubx.FieldSpec{WireName: "changelog"},
-		"ChangelogCreateTime": ubx.FieldSpec{WireName: "changelog_create_time"},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ConfigFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ErrorFields,
-		},
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ErrorInfoFields,
-		},
-		"EvaluationMetricsThresholds": ubx.FieldSpec{
-			WireName: "evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
-		},
-		"EvaluationRun": ubx.FieldSpec{WireName: "evaluation_run"},
-		"EvaluationStatus": ubx.FieldSpec{WireName: "evaluation_status"},
-		"ExecutionState": ubx.FieldSpec{WireName: "execution_state"},
-		"GoldenResult": ubx.FieldSpec{
-			WireName: "golden_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_GoldenResultFields,
-		},
-		"GoldenRunMethod": ubx.FieldSpec{WireName: "golden_run_method"},
-		"InitiatedBy": ubx.FieldSpec{WireName: "initiated_by"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutcomeMetadata": ubx.FieldSpec{WireName: "outcome_metadata"},
-		"Persona": ubx.FieldSpec{
-			WireName: "persona",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_PersonaFields,
-		},
-		"RootSpan": ubx.FieldSpec{
-			WireName: "root_span",
-			Kind: "object",
-			Fields: V1betaEvaluation_Golden_Turns_RootSpanFields,
-		},
-		"ScenarioResult": ubx.FieldSpec{
-			WireName: "scenario_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResultFields,
-		},
-	}
+	"AppVersion":            ubx.FieldSpec{WireName: "app_version"},
+	"AppVersionDisplayName": ubx.FieldSpec{WireName: "app_version_display_name"},
+	"Changelog":             ubx.FieldSpec{WireName: "changelog"},
+	"ChangelogCreateTime":   ubx.FieldSpec{WireName: "changelog_create_time"},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ConfigFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ErrorFields,
+	},
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ErrorInfoFields,
+	},
+	"EvaluationMetricsThresholds": ubx.FieldSpec{
+		WireName: "evaluation_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
+	},
+	"EvaluationRun":    ubx.FieldSpec{WireName: "evaluation_run"},
+	"EvaluationStatus": ubx.FieldSpec{WireName: "evaluation_status"},
+	"ExecutionState":   ubx.FieldSpec{WireName: "execution_state"},
+	"GoldenResult": ubx.FieldSpec{
+		WireName: "golden_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_GoldenResultFields,
+	},
+	"GoldenRunMethod": ubx.FieldSpec{WireName: "golden_run_method"},
+	"InitiatedBy":     ubx.FieldSpec{WireName: "initiated_by"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"OutcomeMetadata": ubx.FieldSpec{WireName: "outcome_metadata"},
+	"Persona": ubx.FieldSpec{
+		WireName: "persona",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_PersonaFields,
+	},
+	"RootSpan": ubx.FieldSpec{
+		WireName: "root_span",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_Golden_Turns_RootSpanFields,
+	},
+	"ScenarioResult": ubx.FieldSpec{
+		WireName: "scenario_result",
+		Kind:     "object",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResultFields,
+	},
+}
 
 var V1betaEvaluation_ScenarioFields = ubx.FieldMap{
-		"EvaluationExpectations": ubx.FieldSpec{WireName: "evaluation_expectations"},
-		"MaxTurns": ubx.FieldSpec{WireName: "max_turns"},
-		"Rubrics": ubx.FieldSpec{WireName: "rubrics"},
-		"ScenarioExecutionMode": ubx.FieldSpec{WireName: "scenario_execution_mode"},
-		"ScenarioExpectations": ubx.FieldSpec{
-			WireName: "scenario_expectations",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ExpectationFields,
-		},
-		"Task": ubx.FieldSpec{WireName: "task"},
-		"TaskCompletionBehavior": ubx.FieldSpec{WireName: "task_completion_behavior"},
-		"UserFacts": ubx.FieldSpec{
-			WireName: "user_facts",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFactsFields,
-		},
-		"UserGoalBehavior": ubx.FieldSpec{WireName: "user_goal_behavior"},
-		"VariableOverrides": ubx.FieldSpec{WireName: "variable_overrides"},
-	}
+	"EvaluationExpectations": ubx.FieldSpec{WireName: "evaluation_expectations"},
+	"MaxTurns":               ubx.FieldSpec{WireName: "max_turns"},
+	"Rubrics":                ubx.FieldSpec{WireName: "rubrics"},
+	"ScenarioExecutionMode":  ubx.FieldSpec{WireName: "scenario_execution_mode"},
+	"ScenarioExpectations": ubx.FieldSpec{
+		WireName: "scenario_expectations",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_ExpectationOutcomes_ExpectationFields,
+	},
+	"Task":                   ubx.FieldSpec{WireName: "task"},
+	"TaskCompletionBehavior": ubx.FieldSpec{WireName: "task_completion_behavior"},
+	"UserFacts": ubx.FieldSpec{
+		WireName: "user_facts",
+		Kind:     "list",
+		Fields:   V1betaEvaluation_LastCompletedResult_ScenarioResult_UserFactsFields,
+	},
+	"UserGoalBehavior":  ubx.FieldSpec{WireName: "user_goal_behavior"},
+	"VariableOverrides": ubx.FieldSpec{WireName: "variable_overrides"},
+}
 
 type V1betaEvaluationConfig struct {
 	// Aggregated metrics for an evaluation or evaluation dataset.
 	AggregatedMetrics any
-	// Output only. Timestamp when the evaluation was created.
-	CreateTime any
-	// Output only. The user who created the evaluation.
-	CreatedBy any
 	// Optional. User-defined description of the evaluation.
 	Description any
 	// Required. User-defined display name of the evaluation. Unique within an App.
 	DisplayName any
-	// Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-	Etag any
-	// Output only. List of evaluation datasets the evaluation belongs to. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationDatasets/{evaluationDataset}`
-	EvaluationDatasets any
 	// Configures the metrics for an evaluation.
 	EvaluationMetricsConfigOverride any
 	// Threshold settings for metrics in an Evaluation.
 	EvaluationMetricsThresholdOverride any
-	// Output only. The EvaluationRuns that this Evaluation is associated with.
-	EvaluationRuns any
 	// The steps required to replay a golden conversation.
 	Golden any
-	// Output only. Whether the evaluation is invalid. This can happen if an evaluation is referencing a tool, toolset, or agent that has since been deleted.
-	Invalid any
 	// An evaluation result represents the output of running an Evaluation.
 	LastCompletedResult any
-	// Output only. The last 10 evaluation results for this evaluation. This is only populated if include_last_ten_results is set to true in the ListEvaluationsRequest or GetEvaluationRequest.
-	LastTenResults any
-	// Output only. The user who last updated the evaluation.
-	LastUpdatedBy any
 	// Identifier. The unique identifier of this evaluation. Format: `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}`
 	Name any
 	// The config for a scenario
 	Scenario any
 	// Optional. User defined tags to categorize the evaluation.
 	Tags any
-	// Output only. Timestamp when the evaluation was last updated.
-	UpdateTime any
 }
 
 type V1betaEvaluationAttrs struct {
@@ -1448,50 +1430,37 @@ var V1betaEvaluation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedMetrics": ubx.FieldSpec{
 			WireName: "aggregated_metrics",
-			Kind: "object",
-			Fields: V1betaEvaluation_AggregatedMetricsFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_AggregatedMetricsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"EvaluationDatasets": ubx.FieldSpec{WireName: "evaluation_datasets"},
 		"EvaluationMetricsConfigOverride": ubx.FieldSpec{
 			WireName: "evaluation_metrics_config_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsConfigOverrideFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_EvaluationMetricsConfigOverrideFields,
 		},
 		"EvaluationMetricsThresholdOverride": ubx.FieldSpec{
 			WireName: "evaluation_metrics_threshold_override",
-			Kind: "object",
-			Fields: V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
 		},
-		"EvaluationRuns": ubx.FieldSpec{WireName: "evaluation_runs"},
 		"Golden": ubx.FieldSpec{
 			WireName: "golden",
-			Kind: "object",
-			Fields: V1betaEvaluation_GoldenFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_GoldenFields,
 		},
-		"Invalid": ubx.FieldSpec{WireName: "invalid"},
 		"LastCompletedResult": ubx.FieldSpec{
 			WireName: "last_completed_result",
-			Kind: "object",
-			Fields: V1betaEvaluation_LastCompletedResultFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_LastCompletedResultFields,
 		},
-		"LastTenResults": ubx.FieldSpec{
-			WireName: "last_ten_results",
-			Kind: "list",
-			Fields: V1betaEvaluation_LastCompletedResultFields,
-		},
-		"LastUpdatedBy": ubx.FieldSpec{WireName: "last_updated_by"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Scenario": ubx.FieldSpec{
 			WireName: "scenario",
-			Kind: "object",
-			Fields: V1betaEvaluation_ScenarioFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluation_ScenarioFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

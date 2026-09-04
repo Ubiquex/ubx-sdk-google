@@ -258,8 +258,6 @@ _CertificateTemplate_PredefinedValuesFields = {
 
 @dataclasses.dataclass
 class CertificateTemplateConfig:
-    # Output only. The time at which this CertificateTemplate was created.
-    create_time: Any = None
     # Optional. A human-readable description of scenarios this template is intended for.
     description: Any = None
     # Describes constraints on a Certificate's Subject and SubjectAltNames.
@@ -274,8 +272,6 @@ class CertificateTemplateConfig:
     passthrough_extensions: Any = None
     # An X509Parameters is used to describe certain fields of an X.509 certificate, such as the key usage fields, fields specific to CA certificates, certificate policy extensions and custom extensions.
     predefined_values: Any = None
-    # Output only. The time at which this CertificateTemplate was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CertificateTemplateAttrs:
@@ -301,7 +297,6 @@ class CertificateTemplateAttrs:
 CertificateTemplate = ubx.ResourceBinding(
     wire_type="google_privateca_certificate_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "identity_constraints": ubx.FieldSpec(
             wire_name="identity_constraints",
@@ -321,6 +316,5 @@ CertificateTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_CertificateTemplate_PredefinedValuesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

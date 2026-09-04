@@ -4,8 +4,6 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaSampleQuerySetConfig struct {
-	// Output only. Timestamp the SampleQuerySet was created at.
-	CreateTime any
 	// The description of the SampleQuerySet.
 	Description any
 	// Required. The sample query set display name. This field must be a UTF-8 encoded string with a length limit of 128 characters.
@@ -28,9 +26,8 @@ type V1alphaSampleQuerySetAttrs struct {
 var V1alphaSampleQuerySet = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_sample_query_set",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

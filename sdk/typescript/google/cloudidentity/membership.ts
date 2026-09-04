@@ -62,20 +62,10 @@ const Membership_RolesFields: FieldMap = {
 };
 
 export interface MembershipConfig {
-  /** Output only. The time when the `Membership` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Delivery setting associated with the membership. */
-  deliverySetting?: string | Computed<string>;
-  /** Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group}/memberships/{membership}`. */
-  name?: string | Computed<string>;
   /** A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s. */
   preferredMemberKey?: Membership_PreferredMemberKey | Computed<Membership_PreferredMemberKey>;
   /** The `MembershipRole`s that apply to the `Membership`. If unspecified, defaults to a single `MembershipRole` with `name` `MEMBER`. Must not contain duplicate `MembershipRole`s with the same `name`. */
   roles?: Membership_Roles[] | Computed<Membership_Roles[]>;
-  /** Output only. The type of the membership. */
-  type?: string | Computed<string>;
-  /** Output only. The time when the `Membership` was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MembershipAttrs {
@@ -98,9 +88,6 @@ export interface MembershipAttrs {
 export const Membership: ResourceBinding<MembershipConfig, MembershipAttrs> = {
   wireType: "google_cloudidentity_membership",
   fields: {
-    createTime: "create_time",
-    deliverySetting: "delivery_setting",
-    name: "name",
     preferredMemberKey: {
       wireName: "preferred_member_key",
       kind: "object",
@@ -111,7 +98,5 @@ export const Membership: ResourceBinding<MembershipConfig, MembershipAttrs> = {
       kind: "list",
       fields: Membership_RolesFields,
     },
-    type: "type",
-    updateTime: "update_time",
   },
 };

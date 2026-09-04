@@ -237,34 +237,16 @@ const V1betaMembership_StateFields: FieldMap = {
 export interface V1betaMembershipConfig {
   /** Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity */
   authority?: V1betaMembership_Authority | Computed<V1betaMembership_Authority>;
-  /** Output only. The tier of the cluster. */
-  clusterTier?: string | Computed<string>;
-  /** Output only. When the Membership was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the Membership was deleted. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. Description of this membership, limited to 63 characters. Must match the regex: `a-zA-Z0-9*` This field is present for legacy purposes. */
-  description?: string | Computed<string>;
   /** MembershipEndpoint contains information needed to contact a Kubernetes API, endpoint and any additional Kubernetes metadata. */
   endpoint?: V1betaMembership_Endpoint | Computed<V1betaMembership_Endpoint>;
   /** Optional. An externally-generated and managed ID for this Membership. This ID may be modified after creation, but this is not recommended. The ID must match the regex: `a-zA-Z0-9*` If this Membership represents a Kubernetes cluster, this value should be set to the UID of the `kube-system` namespace object. */
   externalId?: string | Computed<string>;
   /** Optional. Labels for this membership. These labels are not leveraged by multi-cluster features, instead, we prefer cluster labels, which can be set on GKE cluster or other cluster types. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. For clusters using Connect, the timestamp of the most recent connection established with Google Cloud. This time is updated every several minutes, not continuously. For clusters that do not use GKE Connect, or that have never connected successfully, this field will be unset. */
-  lastConnectionTime?: string | Computed<string>;
-  /** Output only. The type of the membership. */
-  membershipType?: string | Computed<string>;
   /** MonitoringConfig informs Fleet-based applications/services/UIs how the metrics for the underlying cluster is reported to cloud monitoring services. It can be set from empty to non-empty, but can't be mutated directly to prevent accidentally breaking the constinousty of metrics. */
   monitoringConfig?: V1betaMembership_MonitoringConfig | Computed<V1betaMembership_MonitoringConfig>;
-  /** Output only. The full, unique name of this Membership resource in the format `projects/* /locations/* /memberships/{membership_id}`, set during creation. `membership_id` must be a valid RFC 1123 compliant DNS label: 1. At most 63 characters in length 2. It must consist of lower case alphanumeric characters or `-` 3. It must start and end with an alphanumeric character Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters. */
-  name?: string | Computed<string>;
   /** MembershipState describes the state of a Membership resource. */
   state?: V1betaMembership_State | Computed<V1betaMembership_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Membership resources. If a Membership resource is deleted and another resource with the same name is created, it gets a different unique_id. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. When the Membership was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaMembershipAttrs {
@@ -308,10 +290,6 @@ export const V1betaMembership: ResourceBinding<V1betaMembershipConfig, V1betaMem
       kind: "object",
       fields: V1betaMembership_AuthorityFields,
     },
-    clusterTier: "cluster_tier",
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    description: "description",
     endpoint: {
       wireName: "endpoint",
       kind: "object",
@@ -319,20 +297,15 @@ export const V1betaMembership: ResourceBinding<V1betaMembershipConfig, V1betaMem
     },
     externalId: "external_id",
     labels: "labels",
-    lastConnectionTime: "last_connection_time",
-    membershipType: "membership_type",
     monitoringConfig: {
       wireName: "monitoring_config",
       kind: "object",
       fields: V1betaMembership_MonitoringConfigFields,
     },
-    name: "name",
     state: {
       wireName: "state",
       kind: "object",
       fields: V1betaMembership_StateFields,
     },
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

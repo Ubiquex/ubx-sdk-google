@@ -194,7 +194,6 @@ export interface ToolConfig {
   functionSpec?: Tool_FunctionSpec | Computed<Tool_FunctionSpec>;
   name?: string | Computed<string>;
   openApiSpec?: Tool_OpenApiSpec | Computed<Tool_OpenApiSpec>;
-  toolType?: string | Computed<string>;
 }
 
 export interface ToolAttrs {
@@ -228,6 +227,5 @@ export const Tool: ResourceBinding<ToolConfig, ToolAttrs> = {
       kind: "object",
       fields: Tool_OpenApiSpecFields,
     },
-    toolType: "tool_type",
   },
 };

@@ -637,63 +637,12 @@ _HyperparameterTuningJob_TrialJobSpecFields = {
     ),
 }
 
-_HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields = {
-    "metric_id": ubx.FieldSpec(wire_name="metric_id"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
-
-_HyperparameterTuningJob_Trials_FinalMeasurementFields = {
-    "elapsed_duration": ubx.FieldSpec(wire_name="elapsed_duration"),
-    "metrics": ubx.FieldSpec(
-        wire_name="metrics",
-        kind="list",
-        fields=_HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields,
-    ),
-    "step_count": ubx.FieldSpec(wire_name="step_count"),
-}
-
-_HyperparameterTuningJob_Trials_ParametersFields = {
-    "parameter_id": ubx.FieldSpec(wire_name="parameter_id"),
-    "value": ubx.FieldSpec(wire_name="value"),
-}
-
-_HyperparameterTuningJob_TrialsFields = {
-    "client_id": ubx.FieldSpec(wire_name="client_id"),
-    "custom_job": ubx.FieldSpec(wire_name="custom_job"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "final_measurement": ubx.FieldSpec(
-        wire_name="final_measurement",
-        kind="object",
-        fields=_HyperparameterTuningJob_Trials_FinalMeasurementFields,
-    ),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "infeasible_reason": ubx.FieldSpec(wire_name="infeasible_reason"),
-    "measurements": ubx.FieldSpec(
-        wire_name="measurements",
-        kind="list",
-        fields=_HyperparameterTuningJob_Trials_FinalMeasurementFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "parameters": ubx.FieldSpec(
-        wire_name="parameters",
-        kind="list",
-        fields=_HyperparameterTuningJob_Trials_ParametersFields,
-    ),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "web_access_uris": ubx.FieldSpec(wire_name="web_access_uris"),
-}
-
 @dataclasses.dataclass
 class HyperparameterTuningJobConfig:
-    # Output only. Time when the HyperparameterTuningJob was created.
-    create_time: Any = None
     # Required. The display name of the HyperparameterTuningJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the HyperparameterTuningJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
@@ -702,26 +651,12 @@ class HyperparameterTuningJobConfig:
     max_failed_trial_count: Any = None
     # Required. The desired total number of Trials.
     max_trial_count: Any = None
-    # Output only. Resource name of the HyperparameterTuningJob.
-    name: Any = None
     # Required. The desired number of Trials to run in parallel.
     parallel_trial_count: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the job.
-    state: Any = None
     # Represents specification of a Study.
     study_spec: Any = None
     # Represents the spec of a CustomJob.
     trial_job_spec: Any = None
-    # Output only. Trials of the HyperparameterTuningJob.
-    trials: Any = None
-    # Output only. Time when the HyperparameterTuningJob was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class HyperparameterTuningJobAttrs:
@@ -765,14 +700,12 @@ class HyperparameterTuningJobAttrs:
 HyperparameterTuningJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_hyperparameter_tuning_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
             kind="object",
             fields=_HyperparameterTuningJob_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -781,12 +714,7 @@ HyperparameterTuningJob = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "max_failed_trial_count": ubx.FieldSpec(wire_name="max_failed_trial_count"),
         "max_trial_count": ubx.FieldSpec(wire_name="max_trial_count"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parallel_trial_count": ubx.FieldSpec(wire_name="parallel_trial_count"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "study_spec": ubx.FieldSpec(
             wire_name="study_spec",
             kind="object",
@@ -797,11 +725,5 @@ HyperparameterTuningJob = ubx.ResourceBinding(
             kind="object",
             fields=_HyperparameterTuningJob_TrialJobSpecFields,
         ),
-        "trials": ubx.FieldSpec(
-            wire_name="trials",
-            kind="list",
-            fields=_HyperparameterTuningJob_TrialsFields,
-        ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

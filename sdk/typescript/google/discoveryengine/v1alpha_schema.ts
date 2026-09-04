@@ -17,25 +17,7 @@ export interface V1alphaSchema_FieldConfigs {
   searchableOption?: string | Computed<string>;
 }
 
-const V1alphaSchema_FieldConfigsFields: FieldMap = {
-  advancedSiteSearchDataSources: "advanced_site_search_data_sources",
-  completableOption: "completable_option",
-  dynamicFacetableOption: "dynamic_facetable_option",
-  fieldPath: "field_path",
-  fieldType: "field_type",
-  indexableOption: "indexable_option",
-  keyPropertyType: "key_property_type",
-  metatagName: "metatag_name",
-  recsFilterableOption: "recs_filterable_option",
-  retrievableOption: "retrievable_option",
-  schemaOrgPaths: "schema_org_paths",
-  searchableFieldImportance: "searchable_field_importance",
-  searchableOption: "searchable_option",
-};
-
 export interface V1alphaSchemaConfig {
-  /** Output only. Configurations for fields of the schema. */
-  fieldConfigs?: V1alphaSchema_FieldConfigs[] | Computed<V1alphaSchema_FieldConfigs[]>;
   /** The JSON representation of the schema. */
   jsonSchema?: string | Computed<string>;
   /** Immutable. The full resource name of the schema, in the format of `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters. */
@@ -58,11 +40,6 @@ export interface V1alphaSchemaAttrs {
 export const V1alphaSchema: ResourceBinding<V1alphaSchemaConfig, V1alphaSchemaAttrs> = {
   wireType: "google_discoveryengine_v1alpha_schema",
   fields: {
-    fieldConfigs: {
-      wireName: "field_configs",
-      kind: "list",
-      fields: V1alphaSchema_FieldConfigsFields,
-    },
     jsonSchema: "json_schema",
     name: "name",
     structSchema: "struct_schema",

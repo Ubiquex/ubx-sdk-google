@@ -67,83 +67,65 @@ type Replication_TransferStats struct {
 }
 
 var Replication_DestinationVolumeParameters_TieringPolicyFields = ubx.FieldMap{
-		"CoolingThresholdDays": ubx.FieldSpec{WireName: "cooling_threshold_days"},
-		"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
-		"TierAction": ubx.FieldSpec{WireName: "tier_action"},
-	}
+	"CoolingThresholdDays":     ubx.FieldSpec{WireName: "cooling_threshold_days"},
+	"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
+	"TierAction":               ubx.FieldSpec{WireName: "tier_action"},
+}
 
 var Replication_DestinationVolumeParametersFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ShareName": ubx.FieldSpec{WireName: "share_name"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"TieringPolicy": ubx.FieldSpec{
-			WireName: "tiering_policy",
-			Kind: "object",
-			Fields: Replication_DestinationVolumeParameters_TieringPolicyFields,
-		},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ShareName":   ubx.FieldSpec{WireName: "share_name"},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+	"TieringPolicy": ubx.FieldSpec{
+		WireName: "tiering_policy",
+		Kind:     "object",
+		Fields:   Replication_DestinationVolumeParameters_TieringPolicyFields,
+	},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var Replication_HybridPeeringDetailsFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"CommandExpiryTime": ubx.FieldSpec{WireName: "command_expiry_time"},
-		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
-		"PeerClusterName": ubx.FieldSpec{WireName: "peer_cluster_name"},
-		"PeerSvmName": ubx.FieldSpec{WireName: "peer_svm_name"},
-		"PeerVolumeName": ubx.FieldSpec{WireName: "peer_volume_name"},
-		"SubnetIp": ubx.FieldSpec{WireName: "subnet_ip"},
-	}
+	"Command":           ubx.FieldSpec{WireName: "command"},
+	"CommandExpiryTime": ubx.FieldSpec{WireName: "command_expiry_time"},
+	"Passphrase":        ubx.FieldSpec{WireName: "passphrase"},
+	"PeerClusterName":   ubx.FieldSpec{WireName: "peer_cluster_name"},
+	"PeerSvmName":       ubx.FieldSpec{WireName: "peer_svm_name"},
+	"PeerVolumeName":    ubx.FieldSpec{WireName: "peer_volume_name"},
+	"SubnetIp":          ubx.FieldSpec{WireName: "subnet_ip"},
+}
 
 var Replication_HybridReplicationUserCommandsFields = ubx.FieldMap{
-		"Commands": ubx.FieldSpec{WireName: "commands"},
-	}
+	"Commands": ubx.FieldSpec{WireName: "commands"},
+}
 
 var Replication_TransferStatsFields = ubx.FieldMap{
-		"LagDuration": ubx.FieldSpec{WireName: "lag_duration"},
-		"LastTransferBytes": ubx.FieldSpec{WireName: "last_transfer_bytes"},
-		"LastTransferDuration": ubx.FieldSpec{WireName: "last_transfer_duration"},
-		"LastTransferEndTime": ubx.FieldSpec{WireName: "last_transfer_end_time"},
-		"LastTransferError": ubx.FieldSpec{WireName: "last_transfer_error"},
-		"TotalTransferDuration": ubx.FieldSpec{WireName: "total_transfer_duration"},
-		"TransferBytes": ubx.FieldSpec{WireName: "transfer_bytes"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"LagDuration":           ubx.FieldSpec{WireName: "lag_duration"},
+	"LastTransferBytes":     ubx.FieldSpec{WireName: "last_transfer_bytes"},
+	"LastTransferDuration":  ubx.FieldSpec{WireName: "last_transfer_duration"},
+	"LastTransferEndTime":   ubx.FieldSpec{WireName: "last_transfer_end_time"},
+	"LastTransferError":     ubx.FieldSpec{WireName: "last_transfer_error"},
+	"TotalTransferDuration": ubx.FieldSpec{WireName: "total_transfer_duration"},
+	"TransferBytes":         ubx.FieldSpec{WireName: "transfer_bytes"},
+	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
+}
 
 type ReplicationConfig struct {
 	// Optional. Location of the user cluster.
 	ClusterLocation any
-	// Output only. Replication create time.
-	CreateTime any
 	// A description about this replication relationship.
 	Description any
-	// Output only. Full name of destination volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}"
-	DestinationVolume any
 	// DestinationVolumeParameters specify input parameters used for creating destination volume.
 	DestinationVolumeParameters any
-	// Output only. Condition of the relationship. Can be one of the following: - true: The replication relationship is healthy. It has not missed the most recent scheduled transfer. - false: The replication relationship is not healthy. It has missed the most recent scheduled transfer.
-	Healthy any
 	// HybridPeeringDetails contains details about the hybrid peering.
 	HybridPeeringDetails any
-	// Output only. Type of the hybrid replication.
-	HybridReplicationType any
 	// UserCommands contains the commands to be executed by the customer.
 	HybridReplicationUserCommands any
 	// Resource labels to represent user provided metadata.
 	Labels any
-	// Output only. Indicates the state of mirroring.
-	MirrorState any
 	// Identifier. The resource name of the Replication. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`.
 	Name any
 	// Required. Indicates the schedule for replication.
 	ReplicationSchedule any
-	// Output only. Indicates whether this points to source or destination.
-	Role any
-	// Output only. Full name of source volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}"
-	SourceVolume any
-	// Output only. State of the replication.
-	State any
-	// Output only. State details of the replication.
-	StateDetails any
 	// TransferStats reports all statistics related to replication transfer.
 	TransferStats any
 }
@@ -191,38 +173,29 @@ var Replication = ubx.ResourceBinding{
 	WireType: "google_netapp_replication",
 	Fields: ubx.FieldMap{
 		"ClusterLocation": ubx.FieldSpec{WireName: "cluster_location"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationVolume": ubx.FieldSpec{WireName: "destination_volume"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"DestinationVolumeParameters": ubx.FieldSpec{
 			WireName: "destination_volume_parameters",
-			Kind: "object",
-			Fields: Replication_DestinationVolumeParametersFields,
+			Kind:     "object",
+			Fields:   Replication_DestinationVolumeParametersFields,
 		},
-		"Healthy": ubx.FieldSpec{WireName: "healthy"},
 		"HybridPeeringDetails": ubx.FieldSpec{
 			WireName: "hybrid_peering_details",
-			Kind: "object",
-			Fields: Replication_HybridPeeringDetailsFields,
+			Kind:     "object",
+			Fields:   Replication_HybridPeeringDetailsFields,
 		},
-		"HybridReplicationType": ubx.FieldSpec{WireName: "hybrid_replication_type"},
 		"HybridReplicationUserCommands": ubx.FieldSpec{
 			WireName: "hybrid_replication_user_commands",
-			Kind: "object",
-			Fields: Replication_HybridReplicationUserCommandsFields,
+			Kind:     "object",
+			Fields:   Replication_HybridReplicationUserCommandsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MirrorState": ubx.FieldSpec{WireName: "mirror_state"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"ReplicationSchedule": ubx.FieldSpec{WireName: "replication_schedule"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
 		"TransferStats": ubx.FieldSpec{
 			WireName: "transfer_stats",
-			Kind: "object",
-			Fields: Replication_TransferStatsFields,
+			Kind:     "object",
+			Fields:   Replication_TransferStatsFields,
 		},
 	},
 }

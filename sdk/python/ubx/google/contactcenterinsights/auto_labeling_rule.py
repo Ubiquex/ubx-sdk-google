@@ -22,8 +22,6 @@ class AutoLabelingRuleConfig:
     active: Any = None
     # Conditions to apply for auto-labeling the label_key. Representing sequential block of if .. else if .. else statements. The value of the first matching condition will be used.
     conditions: Any = None
-    # Output only. The time at which this rule was created.
-    create_time: Any = None
     # The description of the rule.
     description: Any = None
     # The user-provided display name of the rule.
@@ -34,8 +32,6 @@ class AutoLabelingRuleConfig:
     label_key_type: Any = None
     # Identifier. The resource name of the auto-labeling rule. Format: projects/{project}/locations/{location}/autoLabelingRules/{auto_labeling_rule}
     name: Any = None
-    # Output only. The most recent time at which the rule was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AutoLabelingRuleAttrs:
@@ -67,12 +63,10 @@ AutoLabelingRule = ubx.ResourceBinding(
             kind="list",
             fields=_AutoLabelingRule_ConditionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "label_key": ubx.FieldSpec(wire_name="label_key"),
         "label_key_type": ubx.FieldSpec(wire_name="label_key_type"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

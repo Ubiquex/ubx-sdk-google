@@ -2,22 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LoggingServerConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** Required. Fully-qualified domain name (FQDN) or IP Address of the logging server. */
   hostname?: string | Computed<string>;
-  /** Output only. The resource name of this logging server. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server` */
-  name?: string | Computed<string>;
   /** Required. Port number at which the logging server receives logs. */
   port?: number | Computed<number>;
   /** Required. Protocol used by vCenter to send logs to a logging server. */
   protocol?: string | Computed<string>;
   /** Required. The type of component that produces logs that will be forwarded to this logging server. */
   sourceType?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface LoggingServerAttrs {
@@ -42,13 +34,9 @@ export interface LoggingServerAttrs {
 export const LoggingServer: ResourceBinding<LoggingServerConfig, LoggingServerAttrs> = {
   wireType: "google_vmwareengine_logging_server",
   fields: {
-    createTime: "create_time",
     hostname: "hostname",
-    name: "name",
     port: "port",
     protocol: "protocol",
     sourceType: "source_type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

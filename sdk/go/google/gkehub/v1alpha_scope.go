@@ -9,14 +9,10 @@ type V1alphaScope_State struct {
 }
 
 var V1alphaScope_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1alphaScopeConfig struct {
-	// Output only. When the scope was created.
-	CreateTime any
-	// Output only. When the scope was deleted.
-	DeleteTime any
 	// Optional. Labels for this Scope.
 	Labels any
 	// The resource name for the scope `projects/{project}/locations/{location}/scopes/{scope}`
@@ -25,10 +21,6 @@ type V1alphaScopeConfig struct {
 	NamespaceLabels any
 	// ScopeLifecycleState describes the state of a Scope resource.
 	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all scope resources. If a scope resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. When the scope was last updated.
-	UpdateTime any
 }
 
 type V1alphaScopeAttrs struct {
@@ -53,17 +45,13 @@ type V1alphaScopeAttrs struct {
 var V1alphaScope = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1alpha_scope",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NamespaceLabels": ubx.FieldSpec{WireName: "namespace_labels"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1alphaScope_StateFields,
+			Kind:     "object",
+			Fields:   V1alphaScope_StateFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -4,7 +4,7 @@ package healthcare
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ConsentArtifact_ConsentContentScreenshots struct {
-	GcsUri any
+	GcsUri   any
 	RawBytes any
 }
 
@@ -20,20 +20,20 @@ type V1beta1ConsentArtifact_GuardianSignature struct {
 }
 
 var V1beta1ConsentArtifact_ConsentContentScreenshotsFields = ubx.FieldMap{
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
-	}
+	"GcsUri":   ubx.FieldSpec{WireName: "gcs_uri"},
+	"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
+}
 
 var V1beta1ConsentArtifact_GuardianSignatureFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1beta1ConsentArtifact_ConsentContentScreenshotsFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"SignatureTime": ubx.FieldSpec{WireName: "signature_time"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1beta1ConsentArtifact_ConsentContentScreenshotsFields,
+	},
+	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+	"SignatureTime": ubx.FieldSpec{WireName: "signature_time"},
+	"UserId":        ubx.FieldSpec{WireName: "user_id"},
+}
 
 type V1beta1ConsentArtifactConfig struct {
 	// Optional. Screenshots, PDFs, or other binary information documenting the user's consent.
@@ -78,27 +78,27 @@ var V1beta1ConsentArtifact = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConsentContentScreenshots": ubx.FieldSpec{
 			WireName: "consent_content_screenshots",
-			Kind: "list",
-			Fields: V1beta1ConsentArtifact_ConsentContentScreenshotsFields,
+			Kind:     "list",
+			Fields:   V1beta1ConsentArtifact_ConsentContentScreenshotsFields,
 		},
 		"ConsentContentVersion": ubx.FieldSpec{WireName: "consent_content_version"},
 		"GuardianSignature": ubx.FieldSpec{
 			WireName: "guardian_signature",
-			Kind: "object",
-			Fields: V1beta1ConsentArtifact_GuardianSignatureFields,
+			Kind:     "object",
+			Fields:   V1beta1ConsentArtifact_GuardianSignatureFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
+		"UserId":   ubx.FieldSpec{WireName: "user_id"},
 		"UserSignature": ubx.FieldSpec{
 			WireName: "user_signature",
-			Kind: "object",
-			Fields: V1beta1ConsentArtifact_GuardianSignatureFields,
+			Kind:     "object",
+			Fields:   V1beta1ConsentArtifact_GuardianSignatureFields,
 		},
 		"WitnessSignature": ubx.FieldSpec{
 			WireName: "witness_signature",
-			Kind: "object",
-			Fields: V1beta1ConsentArtifact_GuardianSignatureFields,
+			Kind:     "object",
+			Fields:   V1beta1ConsentArtifact_GuardianSignatureFields,
 		},
 	},
 }

@@ -12,7 +12,7 @@ type EffectiveTagBindingCollectionAttrs struct {
 	EffectiveTags any
 	// The full resource name of the resource the TagBindings are bound to. E.g. `//cloudresourcemanager.googleapis.com/projects/123`
 	FullResourceName any
-	Name any
+	Name             any
 }
 
 var EffectiveTagBindingCollection = ubx.DataSourceBinding{

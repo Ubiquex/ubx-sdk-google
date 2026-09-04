@@ -9,7 +9,7 @@ type BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_EncryptionKey struc
 }
 
 type BackupPlanBinding_BackupPlanDetails_BackupConfigDetails_SelectedApplications_NamespacedNames struct {
-	Name any
+	Name      any
 	Namespace any
 }
 

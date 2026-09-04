@@ -8,31 +8,31 @@ type Flow_AdvancedSettings_AudioExportGcsDestination struct {
 }
 
 type Flow_AdvancedSettings_DtmfSettings struct {
-	Enabled any
+	Enabled                    any
 	EndpointingTimeoutDuration any
-	FinishDigit any
-	InterdigitTimeoutDuration any
-	MaxDigits any
+	FinishDigit                any
+	InterdigitTimeoutDuration  any
+	MaxDigits                  any
 }
 
 type Flow_AdvancedSettings_LoggingSettings struct {
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging any
-	EnableStackdriverLogging any
+	EnableInteractionLogging    any
+	EnableStackdriverLogging    any
 }
 
 type Flow_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity any
-	Models any
-	NoSpeechTimeout any
+	EndpointerSensitivity      any
+	Models                     any
+	NoSpeechTimeout            any
 	UseTimeoutBasedEndpointing any
 }
 
 type Flow_AdvancedSettings struct {
 	AudioExportGcsDestination any
-	DtmfSettings any
-	LoggingSettings any
-	SpeechSettings any
+	DtmfSettings              any
+	LoggingSettings           any
+	SpeechSettings            any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
@@ -41,8 +41,8 @@ type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Me
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
 	AllowPlaybackInterruption any
-	Audio any
-	Uri any
+	Audio                     any
+	Uri                       any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
@@ -51,13 +51,13 @@ type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Me
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
 	AllowPlaybackInterruption any
-	Ssml any
-	Text any
+	Ssml                      any
+	Text                      any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
 	AllowPlaybackInterruption any
-	AudioUri any
+	AudioUri                  any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
@@ -66,39 +66,39 @@ type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Me
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
 	AllowPlaybackInterruption any
-	Text any
+	Text                      any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action any
+	Action          any
 	InputParameters any
-	Tool any
+	Tool            any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel any
-	ConversationSuccess any
-	EndInteraction any
-	KnowledgeInfoCard any
-	LiveAgentHandoff any
-	MixedAudio any
-	OutputAudioText any
-	Payload any
-	PlayAudio any
-	ResponseType any
+	Channel               any
+	ConversationSuccess   any
+	EndInteraction        any
+	KnowledgeInfoCard     any
+	LiveAgentHandoff      any
+	MixedAudio            any
+	OutputAudioText       any
+	Payload               any
+	PlayAudio             any
+	ResponseType          any
 	TelephonyTransferCall any
-	Text any
-	ToolCall any
+	Text                  any
+	ToolCall              any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent struct {
 	AdditionalCases any
-	Message any
+	Message         any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases struct {
 	CaseContent any
-	Condition any
+	Condition   any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_ConditionalCases struct {
@@ -106,429 +106,429 @@ type Flow_EventHandlers_TriggerFulfillment_ConditionalCases struct {
 }
 
 type Flow_EventHandlers_TriggerFulfillment_Generators struct {
-	Generator any
+	Generator       any
 	InputParameters any
 	OutputParameter any
 }
 
 type Flow_EventHandlers_TriggerFulfillment_SetParameterActions struct {
 	Parameter any
-	Value any
+	Value     any
 }
 
 type Flow_EventHandlers_TriggerFulfillment struct {
-	AdvancedSettings any
-	CodeBlockFunction any
-	ConditionalCases any
+	AdvancedSettings         any
+	CodeBlockFunction        any
+	ConditionalCases         any
 	EnableGenerativeFallback any
-	Generators any
-	Messages any
-	ReturnPartialResponses any
-	SetParameterActions any
-	Tag any
-	Webhook any
+	Generators               any
+	Messages                 any
+	ReturnPartialResponses   any
+	SetParameterActions      any
+	Tag                      any
+	Webhook                  any
 }
 
 type Flow_EventHandlers struct {
-	Event any
-	Name any
-	TargetFlow any
-	TargetPage any
-	TargetPlaybook any
+	Event              any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
+	TargetPlaybook     any
 	TriggerFulfillment any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema_InlineSchema struct {
 	Items any
-	Type any
+	Type  any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema_SchemaReference struct {
 	Schema any
-	Tool any
+	Tool   any
 }
 
 type Flow_InputParameterDefinitions_TypeSchema struct {
-	InlineSchema any
+	InlineSchema    any
 	SchemaReference any
 }
 
 type Flow_InputParameterDefinitions struct {
 	Description any
-	Name any
-	Type any
-	TypeSchema any
+	Name        any
+	Type        any
+	TypeSchema  any
 }
 
 type Flow_KnowledgeConnectorSettings_DataStoreConnections struct {
-	DataStore any
-	DataStoreType any
+	DataStore              any
+	DataStoreType          any
 	DocumentProcessingMode any
 }
 
 type Flow_KnowledgeConnectorSettings struct {
 	DataStoreConnections any
-	Enabled any
-	TargetFlow any
-	TargetPage any
-	TriggerFulfillment any
+	Enabled              any
+	TargetFlow           any
+	TargetPage           any
+	TriggerFulfillment   any
 }
 
 type Flow_MultiLanguageSettings struct {
-	EnableMultiLanguageDetection any
+	EnableMultiLanguageDetection   any
 	SupportedResponseLanguageCodes any
 }
 
 type Flow_NluSettings struct {
 	ClassificationThreshold any
-	ModelTrainingMode any
-	ModelType any
+	ModelTrainingMode       any
+	ModelType               any
 }
 
 type Flow_TransitionRoutes struct {
-	Condition any
-	Description any
-	Intent any
-	Name any
-	TargetFlow any
-	TargetPage any
+	Condition          any
+	Description        any
+	Intent             any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
 	TriggerFulfillment any
 }
 
 var Flow_AdvancedSettings_AudioExportGcsDestinationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Flow_AdvancedSettings_DtmfSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
-		"FinishDigit": ubx.FieldSpec{WireName: "finish_digit"},
-		"InterdigitTimeoutDuration": ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
-		"MaxDigits": ubx.FieldSpec{WireName: "max_digits"},
-	}
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
+	"FinishDigit":                ubx.FieldSpec{WireName: "finish_digit"},
+	"InterdigitTimeoutDuration":  ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
+	"MaxDigits":                  ubx.FieldSpec{WireName: "max_digits"},
+}
 
 var Flow_AdvancedSettings_LoggingSettingsFields = ubx.FieldMap{
-		"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
-		"EnableInteractionLogging": ubx.FieldSpec{WireName: "enable_interaction_logging"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-	}
+	"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
+	"EnableInteractionLogging":    ubx.FieldSpec{WireName: "enable_interaction_logging"},
+	"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+}
 
 var Flow_AdvancedSettings_SpeechSettingsFields = ubx.FieldMap{
-		"EndpointerSensitivity": ubx.FieldSpec{WireName: "endpointer_sensitivity"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"NoSpeechTimeout": ubx.FieldSpec{WireName: "no_speech_timeout"},
-		"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
-	}
+	"EndpointerSensitivity":      ubx.FieldSpec{WireName: "endpointer_sensitivity"},
+	"Models":                     ubx.FieldSpec{WireName: "models"},
+	"NoSpeechTimeout":            ubx.FieldSpec{WireName: "no_speech_timeout"},
+	"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
+}
 
 var Flow_AdvancedSettingsFields = ubx.FieldMap{
-		"AudioExportGcsDestination": ubx.FieldSpec{
-			WireName: "audio_export_gcs_destination",
-			Kind: "object",
-			Fields: Flow_AdvancedSettings_AudioExportGcsDestinationFields,
-		},
-		"DtmfSettings": ubx.FieldSpec{
-			WireName: "dtmf_settings",
-			Kind: "object",
-			Fields: Flow_AdvancedSettings_DtmfSettingsFields,
-		},
-		"LoggingSettings": ubx.FieldSpec{
-			WireName: "logging_settings",
-			Kind: "object",
-			Fields: Flow_AdvancedSettings_LoggingSettingsFields,
-		},
-		"SpeechSettings": ubx.FieldSpec{
-			WireName: "speech_settings",
-			Kind: "object",
-			Fields: Flow_AdvancedSettings_SpeechSettingsFields,
-		},
-	}
+	"AudioExportGcsDestination": ubx.FieldSpec{
+		WireName: "audio_export_gcs_destination",
+		Kind:     "object",
+		Fields:   Flow_AdvancedSettings_AudioExportGcsDestinationFields,
+	},
+	"DtmfSettings": ubx.FieldSpec{
+		WireName: "dtmf_settings",
+		Kind:     "object",
+		Fields:   Flow_AdvancedSettings_DtmfSettingsFields,
+	},
+	"LoggingSettings": ubx.FieldSpec{
+		WireName: "logging_settings",
+		Kind:     "object",
+		Fields:   Flow_AdvancedSettings_LoggingSettingsFields,
+	},
+	"SpeechSettings": ubx.FieldSpec{
+		WireName: "speech_settings",
+		Kind:     "object",
+		Fields:   Flow_AdvancedSettings_SpeechSettingsFields,
+	},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Audio": ubx.FieldSpec{WireName: "audio"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Audio":                     ubx.FieldSpec{WireName: "audio"},
+	"Uri":                       ubx.FieldSpec{WireName: "uri"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields = ubx.FieldMap{
-		"Segments": ubx.FieldSpec{
-			WireName: "segments",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
-		},
-	}
+	"Segments": ubx.FieldSpec{
+		WireName: "segments",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
+	},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Ssml": ubx.FieldSpec{WireName: "ssml"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Ssml":                      ubx.FieldSpec{WireName: "ssml"},
+	"Text":                      ubx.FieldSpec{WireName: "text"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"AudioUri": ubx.FieldSpec{WireName: "audio_uri"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"AudioUri":                  ubx.FieldSpec{WireName: "audio_uri"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields = ubx.FieldMap{
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-	}
+	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Text":                      ubx.FieldSpec{WireName: "text"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"Action":          ubx.FieldSpec{WireName: "action"},
+	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+	"Tool":            ubx.FieldSpec{WireName: "tool"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"ConversationSuccess": ubx.FieldSpec{
-			WireName: "conversation_success",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-		},
-		"EndInteraction": ubx.FieldSpec{WireName: "end_interaction"},
-		"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
-		"LiveAgentHandoff": ubx.FieldSpec{
-			WireName: "live_agent_handoff",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-		},
-		"MixedAudio": ubx.FieldSpec{
-			WireName: "mixed_audio",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
-		},
-		"OutputAudioText": ubx.FieldSpec{
-			WireName: "output_audio_text",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
-		},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"PlayAudio": ubx.FieldSpec{
-			WireName: "play_audio",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
-		},
-		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-		"TelephonyTransferCall": ubx.FieldSpec{
-			WireName: "telephony_transfer_call",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
-		},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
-		},
-	}
+	"Channel": ubx.FieldSpec{WireName: "channel"},
+	"ConversationSuccess": ubx.FieldSpec{
+		WireName: "conversation_success",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+	},
+	"EndInteraction":    ubx.FieldSpec{WireName: "end_interaction"},
+	"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
+	"LiveAgentHandoff": ubx.FieldSpec{
+		WireName: "live_agent_handoff",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+	},
+	"MixedAudio": ubx.FieldSpec{
+		WireName: "mixed_audio",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
+	},
+	"OutputAudioText": ubx.FieldSpec{
+		WireName: "output_audio_text",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
+	},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"PlayAudio": ubx.FieldSpec{
+		WireName: "play_audio",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
+	},
+	"ResponseType": ubx.FieldSpec{WireName: "response_type"},
+	"TelephonyTransferCall": ubx.FieldSpec{
+		WireName: "telephony_transfer_call",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
+	},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
+	},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields = ubx.FieldMap{
-		"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-		},
-	}
+	"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+	},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCases_CasesFields = ubx.FieldMap{
-		"CaseContent": ubx.FieldSpec{
-			WireName: "case_content",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"CaseContent": ubx.FieldSpec{
+		WireName: "case_content",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_ConditionalCasesFields = ubx.FieldMap{
-		"Cases": ubx.FieldSpec{
-			WireName: "cases",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_CasesFields,
-		},
-	}
+	"Cases": ubx.FieldSpec{
+		WireName: "cases",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_CasesFields,
+	},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_GeneratorsFields = ubx.FieldMap{
-		"Generator": ubx.FieldSpec{WireName: "generator"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
-	}
+	"Generator":       ubx.FieldSpec{WireName: "generator"},
+	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+	"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
+}
 
 var Flow_EventHandlers_TriggerFulfillment_SetParameterActionsFields = ubx.FieldMap{
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Parameter": ubx.FieldSpec{WireName: "parameter"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Flow_EventHandlers_TriggerFulfillmentFields = ubx.FieldMap{
-		"AdvancedSettings": ubx.FieldSpec{
-			WireName: "advanced_settings",
-			Kind: "object",
-			Fields: Flow_AdvancedSettingsFields,
-		},
-		"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
-		"ConditionalCases": ubx.FieldSpec{
-			WireName: "conditional_cases",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCasesFields,
-		},
-		"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
-		"Generators": ubx.FieldSpec{
-			WireName: "generators",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_GeneratorsFields,
-		},
-		"Messages": ubx.FieldSpec{
-			WireName: "messages",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-		},
-		"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
-		"SetParameterActions": ubx.FieldSpec{
-			WireName: "set_parameter_actions",
-			Kind: "list",
-			Fields: Flow_EventHandlers_TriggerFulfillment_SetParameterActionsFields,
-		},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"Webhook": ubx.FieldSpec{WireName: "webhook"},
-	}
+	"AdvancedSettings": ubx.FieldSpec{
+		WireName: "advanced_settings",
+		Kind:     "object",
+		Fields:   Flow_AdvancedSettingsFields,
+	},
+	"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
+	"ConditionalCases": ubx.FieldSpec{
+		WireName: "conditional_cases",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCasesFields,
+	},
+	"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
+	"Generators": ubx.FieldSpec{
+		WireName: "generators",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_GeneratorsFields,
+	},
+	"Messages": ubx.FieldSpec{
+		WireName: "messages",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+	},
+	"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
+	"SetParameterActions": ubx.FieldSpec{
+		WireName: "set_parameter_actions",
+		Kind:     "list",
+		Fields:   Flow_EventHandlers_TriggerFulfillment_SetParameterActionsFields,
+	},
+	"Tag":     ubx.FieldSpec{WireName: "tag"},
+	"Webhook": ubx.FieldSpec{WireName: "webhook"},
+}
 
 var Flow_EventHandlersFields = ubx.FieldMap{
-		"Event": ubx.FieldSpec{WireName: "event"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
-		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
-		"TargetPlaybook": ubx.FieldSpec{WireName: "target_playbook"},
-		"TriggerFulfillment": ubx.FieldSpec{
-			WireName: "trigger_fulfillment",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillmentFields,
-		},
-	}
+	"Event":          ubx.FieldSpec{WireName: "event"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"TargetFlow":     ubx.FieldSpec{WireName: "target_flow"},
+	"TargetPage":     ubx.FieldSpec{WireName: "target_page"},
+	"TargetPlaybook": ubx.FieldSpec{WireName: "target_playbook"},
+	"TriggerFulfillment": ubx.FieldSpec{
+		WireName: "trigger_fulfillment",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillmentFields,
+	},
+}
 
 var Flow_InputParameterDefinitions_TypeSchema_InlineSchemaFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Items": ubx.FieldSpec{WireName: "items"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Flow_InputParameterDefinitions_TypeSchema_SchemaReferenceFields = ubx.FieldMap{
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+	"Tool":   ubx.FieldSpec{WireName: "tool"},
+}
 
 var Flow_InputParameterDefinitions_TypeSchemaFields = ubx.FieldMap{
-		"InlineSchema": ubx.FieldSpec{
-			WireName: "inline_schema",
-			Kind: "object",
-			Fields: Flow_InputParameterDefinitions_TypeSchema_InlineSchemaFields,
-		},
-		"SchemaReference": ubx.FieldSpec{
-			WireName: "schema_reference",
-			Kind: "object",
-			Fields: Flow_InputParameterDefinitions_TypeSchema_SchemaReferenceFields,
-		},
-	}
+	"InlineSchema": ubx.FieldSpec{
+		WireName: "inline_schema",
+		Kind:     "object",
+		Fields:   Flow_InputParameterDefinitions_TypeSchema_InlineSchemaFields,
+	},
+	"SchemaReference": ubx.FieldSpec{
+		WireName: "schema_reference",
+		Kind:     "object",
+		Fields:   Flow_InputParameterDefinitions_TypeSchema_SchemaReferenceFields,
+	},
+}
 
 var Flow_InputParameterDefinitionsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"TypeSchema": ubx.FieldSpec{
-			WireName: "type_schema",
-			Kind: "object",
-			Fields: Flow_InputParameterDefinitions_TypeSchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+	"TypeSchema": ubx.FieldSpec{
+		WireName: "type_schema",
+		Kind:     "object",
+		Fields:   Flow_InputParameterDefinitions_TypeSchemaFields,
+	},
+}
 
 var Flow_KnowledgeConnectorSettings_DataStoreConnectionsFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"DataStoreType": ubx.FieldSpec{WireName: "data_store_type"},
-		"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
-	}
+	"DataStore":              ubx.FieldSpec{WireName: "data_store"},
+	"DataStoreType":          ubx.FieldSpec{WireName: "data_store_type"},
+	"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
+}
 
 var Flow_KnowledgeConnectorSettingsFields = ubx.FieldMap{
-		"DataStoreConnections": ubx.FieldSpec{
-			WireName: "data_store_connections",
-			Kind: "list",
-			Fields: Flow_KnowledgeConnectorSettings_DataStoreConnectionsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
-		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
-		"TriggerFulfillment": ubx.FieldSpec{
-			WireName: "trigger_fulfillment",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillmentFields,
-		},
-	}
+	"DataStoreConnections": ubx.FieldSpec{
+		WireName: "data_store_connections",
+		Kind:     "list",
+		Fields:   Flow_KnowledgeConnectorSettings_DataStoreConnectionsFields,
+	},
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
+	"TargetPage": ubx.FieldSpec{WireName: "target_page"},
+	"TriggerFulfillment": ubx.FieldSpec{
+		WireName: "trigger_fulfillment",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillmentFields,
+	},
+}
 
 var Flow_MultiLanguageSettingsFields = ubx.FieldMap{
-		"EnableMultiLanguageDetection": ubx.FieldSpec{WireName: "enable_multi_language_detection"},
-		"SupportedResponseLanguageCodes": ubx.FieldSpec{WireName: "supported_response_language_codes"},
-	}
+	"EnableMultiLanguageDetection":   ubx.FieldSpec{WireName: "enable_multi_language_detection"},
+	"SupportedResponseLanguageCodes": ubx.FieldSpec{WireName: "supported_response_language_codes"},
+}
 
 var Flow_NluSettingsFields = ubx.FieldMap{
-		"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
-		"ModelTrainingMode": ubx.FieldSpec{WireName: "model_training_mode"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-	}
+	"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
+	"ModelTrainingMode":       ubx.FieldSpec{WireName: "model_training_mode"},
+	"ModelType":               ubx.FieldSpec{WireName: "model_type"},
+}
 
 var Flow_TransitionRoutesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Intent": ubx.FieldSpec{WireName: "intent"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
-		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
-		"TriggerFulfillment": ubx.FieldSpec{
-			WireName: "trigger_fulfillment",
-			Kind: "object",
-			Fields: Flow_EventHandlers_TriggerFulfillmentFields,
-		},
-	}
+	"Condition":   ubx.FieldSpec{WireName: "condition"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Intent":      ubx.FieldSpec{WireName: "intent"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"TargetFlow":  ubx.FieldSpec{WireName: "target_flow"},
+	"TargetPage":  ubx.FieldSpec{WireName: "target_page"},
+	"TriggerFulfillment": ubx.FieldSpec{
+		WireName: "trigger_fulfillment",
+		Kind:     "object",
+		Fields:   Flow_EventHandlers_TriggerFulfillmentFields,
+	},
+}
 
 type FlowConfig struct {
-	AdvancedSettings any
-	Description any
-	DisplayName any
-	EventHandlers any
-	InputParameterDefinitions any
+	AdvancedSettings           any
+	Description                any
+	DisplayName                any
+	EventHandlers              any
+	InputParameterDefinitions  any
 	KnowledgeConnectorSettings any
-	Locked any
-	MultiLanguageSettings any
-	Name any
-	NluSettings any
+	Locked                     any
+	MultiLanguageSettings      any
+	Name                       any
+	NluSettings                any
 	OutputParameterDefinitions any
-	TransitionRouteGroups any
-	TransitionRoutes any
+	TransitionRouteGroups      any
+	TransitionRoutes           any
 }
 
 type FlowAttrs struct {
-	AdvancedSettings any
-	Description any
-	DisplayName any
-	EventHandlers any
-	InputParameterDefinitions any
+	AdvancedSettings           any
+	Description                any
+	DisplayName                any
+	EventHandlers              any
+	InputParameterDefinitions  any
 	KnowledgeConnectorSettings any
-	Locked any
-	MultiLanguageSettings any
-	Name any
-	NluSettings any
+	Locked                     any
+	MultiLanguageSettings      any
+	Name                       any
+	NluSettings                any
 	OutputParameterDefinitions any
-	TransitionRouteGroups any
-	TransitionRoutes any
+	TransitionRouteGroups      any
+	TransitionRoutes           any
 }
 
 var Flow = ubx.ResourceBinding{
@@ -536,48 +536,48 @@ var Flow = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedSettings": ubx.FieldSpec{
 			WireName: "advanced_settings",
-			Kind: "object",
-			Fields: Flow_AdvancedSettingsFields,
+			Kind:     "object",
+			Fields:   Flow_AdvancedSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EventHandlers": ubx.FieldSpec{
 			WireName: "event_handlers",
-			Kind: "list",
-			Fields: Flow_EventHandlersFields,
+			Kind:     "list",
+			Fields:   Flow_EventHandlersFields,
 		},
 		"InputParameterDefinitions": ubx.FieldSpec{
 			WireName: "input_parameter_definitions",
-			Kind: "list",
-			Fields: Flow_InputParameterDefinitionsFields,
+			Kind:     "list",
+			Fields:   Flow_InputParameterDefinitionsFields,
 		},
 		"KnowledgeConnectorSettings": ubx.FieldSpec{
 			WireName: "knowledge_connector_settings",
-			Kind: "object",
-			Fields: Flow_KnowledgeConnectorSettingsFields,
+			Kind:     "object",
+			Fields:   Flow_KnowledgeConnectorSettingsFields,
 		},
 		"Locked": ubx.FieldSpec{WireName: "locked"},
 		"MultiLanguageSettings": ubx.FieldSpec{
 			WireName: "multi_language_settings",
-			Kind: "object",
-			Fields: Flow_MultiLanguageSettingsFields,
+			Kind:     "object",
+			Fields:   Flow_MultiLanguageSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NluSettings": ubx.FieldSpec{
 			WireName: "nlu_settings",
-			Kind: "object",
-			Fields: Flow_NluSettingsFields,
+			Kind:     "object",
+			Fields:   Flow_NluSettingsFields,
 		},
 		"OutputParameterDefinitions": ubx.FieldSpec{
 			WireName: "output_parameter_definitions",
-			Kind: "list",
-			Fields: Flow_InputParameterDefinitionsFields,
+			Kind:     "list",
+			Fields:   Flow_InputParameterDefinitionsFields,
 		},
 		"TransitionRouteGroups": ubx.FieldSpec{WireName: "transition_route_groups"},
 		"TransitionRoutes": ubx.FieldSpec{
 			WireName: "transition_routes",
-			Kind: "list",
-			Fields: Flow_TransitionRoutesFields,
+			Kind:     "list",
+			Fields:   Flow_TransitionRoutesFields,
 		},
 	},
 }

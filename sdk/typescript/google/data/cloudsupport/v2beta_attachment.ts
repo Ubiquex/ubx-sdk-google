@@ -13,7 +13,6 @@ export interface V2betaAttachment_Creator {
 }
 
 export interface V2betaAttachmentConfig {
-  name: string | Computed<string>;
 }
 
 export interface V2betaAttachmentAttrs {
@@ -33,6 +32,5 @@ export interface V2betaAttachmentAttrs {
 export const V2betaAttachment: DataSourceBinding<V2betaAttachmentConfig, V2betaAttachmentAttrs> = {
   wireType: "google_cloudsupport_v2beta_attachment",
   fields: {
-    name: "name",
   },
 };

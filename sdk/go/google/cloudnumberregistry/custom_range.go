@@ -4,14 +4,14 @@ package cloudnumberregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomRange_Attributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
 var CustomRange_AttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomRangeConfig struct {
 	// Optional. The attributes of the CustomRange.
@@ -30,8 +30,6 @@ type CustomRangeConfig struct {
 	ParentRange any
 	// Optional. The resource name of the Realm associated with the CustomRange, in the format `projects/{project}/locations/{location}/realms/{realm}`. The Realm must be in the same project as the CustomRange. This field must not be set if the `parent_range` field is set, as the Realm will be inherited from the parent CustomRange.
 	Realm any
-	// Output only. The RegistryBook of the CustomRange. This field is inherited from the Realm or parent CustomRange depending on which one is specified.
-	RegistryBook any
 }
 
 type CustomRangeAttrs struct {
@@ -60,16 +58,15 @@ var CustomRange = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: CustomRange_AttributesFields,
+			Kind:     "list",
+			Fields:   CustomRange_AttributesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"Ipv4CidrRange": ubx.FieldSpec{WireName: "ipv4_cidr_range"},
 		"Ipv6CidrRange": ubx.FieldSpec{WireName: "ipv6_cidr_range"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentRange": ubx.FieldSpec{WireName: "parent_range"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
-		"RegistryBook": ubx.FieldSpec{WireName: "registry_book"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ParentRange":   ubx.FieldSpec{WireName: "parent_range"},
+		"Realm":         ubx.FieldSpec{WireName: "realm"},
 	},
 }

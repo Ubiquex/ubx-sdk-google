@@ -103,14 +103,10 @@ export interface AnalysisRuleConfig {
   annotatorSelector?: AnalysisRule_AnnotatorSelector | Computed<AnalysisRule_AnnotatorSelector>;
   /** Filter for the conversations that should apply this analysis rule. An empty filter means this analysis rule applies to all conversations. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details. */
   conversationFilter?: string | Computed<string>;
-  /** Output only. The time at which this analysis rule was created. */
-  createTime?: string | Computed<string>;
   /** Display Name of the analysis rule. */
   displayName?: string | Computed<string>;
   /** Identifier. The resource name of the analysis rule. Format: projects/{project}/locations/{location}/analysisRules/{analysis_rule} */
   name?: string | Computed<string>;
-  /** Output only. The most recent time at which this analysis rule was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AnalysisRuleAttrs {
@@ -143,9 +139,7 @@ export const AnalysisRule: ResourceBinding<AnalysisRuleConfig, AnalysisRuleAttrs
       fields: AnalysisRule_AnnotatorSelectorFields,
     },
     conversationFilter: "conversation_filter",
-    createTime: "create_time",
     displayName: "display_name",
     name: "name",
-    updateTime: "update_time",
   },
 };

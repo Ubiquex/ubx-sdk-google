@@ -28,8 +28,6 @@ export interface CustomRangeConfig {
   parentRange?: string | Computed<string>;
   /** Optional. The resource name of the Realm associated with the CustomRange, in the format `projects/{project}/locations/{location}/realms/{realm}`. The Realm must be in the same project as the CustomRange. This field must not be set if the `parent_range` field is set, as the Realm will be inherited from the parent CustomRange. */
   realm?: string | Computed<string>;
-  /** Output only. The RegistryBook of the CustomRange. This field is inherited from the Realm or parent CustomRange depending on which one is specified. */
-  registryBook?: string | Computed<string>;
 }
 
 export interface CustomRangeAttrs {
@@ -68,6 +66,5 @@ export const CustomRange: ResourceBinding<CustomRangeConfig, CustomRangeAttrs> =
     name: "name",
     parentRange: "parent_range",
     realm: "realm",
-    registryBook: "registry_book",
   },
 };

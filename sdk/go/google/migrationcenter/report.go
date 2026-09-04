@@ -4,7 +4,7 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Report_Summary_AllAssetsStats_CoreCountHistogram_Buckets struct {
-	Count any
+	Count      any
 	LowerBound any
 	UpperBound any
 }
@@ -62,13 +62,13 @@ type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_Mac
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations struct {
 	AllocatedAssetCount any
-	MachineSeries any
+	MachineSeries       any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding struct {
-	AllocatedAssetCount any
-	AllocatedDiskTypes any
-	AllocatedRegions any
+	AllocatedAssetCount      any
+	AllocatedDiskTypes       any
+	AllocatedRegions         any
 	MachineSeriesAllocations any
 }
 
@@ -77,7 +77,7 @@ type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_Compu
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences struct {
-	LicenseType any
+	LicenseType        any
 	MachinePreferences any
 	PersistentDiskType any
 }
@@ -91,78 +91,78 @@ type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleT
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences struct {
-	CommitmentPlan any
-	CpuOvercommitRatio any
+	CommitmentPlan        any
+	CpuOvercommitRatio    any
 	HostMaintenancePolicy any
-	NodeTypes any
+	NodeTypes             any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferences struct {
-	CommitmentPlan any
-	CpuOvercommitRatio any
-	MemoryOvercommitRatio any
+	CommitmentPlan                       any
+	CpuOvercommitRatio                   any
+	MemoryOvercommitRatio                any
 	StorageDeduplicationCompressionRatio any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences struct {
-	CommitmentPlan any
-	ComputeEnginePreferences any
-	RegionPreferences any
+	CommitmentPlan             any
+	ComputeEnginePreferences   any
+	RegionPreferences          any
 	SizingOptimizationStrategy any
-	SoleTenancyPreferences any
-	TargetProduct any
-	VmwareEnginePreferences any
+	SoleTenancyPreferences     any
+	TargetProduct              any
+	VmwareEnginePreferences    any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostCompute struct {
 	CurrencyCode any
-	Nanos any
-	Units any
+	Nanos        any
+	Units        any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocations struct {
 	AllocatedAssetCount any
-	Node any
-	NodeCount any
+	Node                any
+	NodeCount           any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding struct {
 	AllocatedAssetCount any
-	AllocatedRegions any
-	NodeAllocations any
+	AllocatedRegions    any
+	NodeAllocations     any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocations struct {
 	AllocatedAssetCount any
-	NodeCount any
-	VmwareNode any
+	NodeCount           any
+	VmwareNode          any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding struct {
 	AllocatedAssetCount any
-	AllocatedRegions any
-	NodeAllocations any
+	AllocatedRegions    any
+	NodeAllocations     any
 }
 
 type Report_Summary_GroupFindings_PreferenceSetFindings struct {
-	ComputeEngineFinding any
-	Description any
-	DisplayName any
-	MachinePreferences any
-	MonthlyCostCompute any
+	ComputeEngineFinding     any
+	Description              any
+	DisplayName              any
+	MachinePreferences       any
+	MonthlyCostCompute       any
 	MonthlyCostNetworkEgress any
-	MonthlyCostOsLicense any
-	MonthlyCostOther any
-	MonthlyCostStorage any
-	MonthlyCostTotal any
-	SoleTenantFinding any
-	VmwareEngineFinding any
+	MonthlyCostOsLicense     any
+	MonthlyCostOther         any
+	MonthlyCostStorage       any
+	MonthlyCostTotal         any
+	SoleTenantFinding        any
+	VmwareEngineFinding      any
 }
 
 type Report_Summary_GroupFindings struct {
-	AssetAggregateStats any
-	Description any
-	DisplayName any
+	AssetAggregateStats   any
+	Description           any
+	DisplayName           any
 	OverlappingAssetCount any
 	PreferenceSetFindings any
 }
@@ -175,320 +175,314 @@ type Report_Summary struct {
 }
 
 var Report_Summary_AllAssetsStats_CoreCountHistogram_BucketsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"LowerBound": ubx.FieldSpec{WireName: "lower_bound"},
-		"UpperBound": ubx.FieldSpec{WireName: "upper_bound"},
-	}
+	"Count":      ubx.FieldSpec{WireName: "count"},
+	"LowerBound": ubx.FieldSpec{WireName: "lower_bound"},
+	"UpperBound": ubx.FieldSpec{WireName: "upper_bound"},
+}
 
 var Report_Summary_AllAssetsStats_CoreCountHistogramFields = ubx.FieldMap{
-		"Buckets": ubx.FieldSpec{
-			WireName: "buckets",
-			Kind: "list",
-			Fields: Report_Summary_AllAssetsStats_CoreCountHistogram_BucketsFields,
-		},
-	}
+	"Buckets": ubx.FieldSpec{
+		WireName: "buckets",
+		Kind:     "list",
+		Fields:   Report_Summary_AllAssetsStats_CoreCountHistogram_BucketsFields,
+	},
+}
 
 var Report_Summary_AllAssetsStats_MemoryUtilizationChartFields = ubx.FieldMap{
-		"Free": ubx.FieldSpec{WireName: "free"},
-		"Used": ubx.FieldSpec{WireName: "used"},
-	}
+	"Free": ubx.FieldSpec{WireName: "free"},
+	"Used": ubx.FieldSpec{WireName: "used"},
+}
 
 var Report_Summary_AllAssetsStats_OperatingSystem_DataPointsFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Report_Summary_AllAssetsStats_OperatingSystemFields = ubx.FieldMap{
-		"DataPoints": ubx.FieldSpec{
-			WireName: "data_points",
-			Kind: "list",
-			Fields: Report_Summary_AllAssetsStats_OperatingSystem_DataPointsFields,
-		},
-	}
+	"DataPoints": ubx.FieldSpec{
+		WireName: "data_points",
+		Kind:     "list",
+		Fields:   Report_Summary_AllAssetsStats_OperatingSystem_DataPointsFields,
+	},
+}
 
 var Report_Summary_AllAssetsStatsFields = ubx.FieldMap{
-		"CoreCountHistogram": ubx.FieldSpec{
-			WireName: "core_count_histogram",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_CoreCountHistogramFields,
-		},
-		"MemoryBytesHistogram": ubx.FieldSpec{
-			WireName: "memory_bytes_histogram",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_CoreCountHistogramFields,
-		},
-		"MemoryUtilizationChart": ubx.FieldSpec{
-			WireName: "memory_utilization_chart",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_MemoryUtilizationChartFields,
-		},
-		"OperatingSystem": ubx.FieldSpec{
-			WireName: "operating_system",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_OperatingSystemFields,
-		},
-		"SoftwareInstances": ubx.FieldSpec{
-			WireName: "software_instances",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_OperatingSystemFields,
-		},
-		"StorageBytesHistogram": ubx.FieldSpec{
-			WireName: "storage_bytes_histogram",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_CoreCountHistogramFields,
-		},
-		"StorageUtilizationChart": ubx.FieldSpec{
-			WireName: "storage_utilization_chart",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStats_MemoryUtilizationChartFields,
-		},
-		"TotalAssets": ubx.FieldSpec{WireName: "total_assets"},
-		"TotalCores": ubx.FieldSpec{WireName: "total_cores"},
-		"TotalMemoryBytes": ubx.FieldSpec{WireName: "total_memory_bytes"},
-		"TotalStorageBytes": ubx.FieldSpec{WireName: "total_storage_bytes"},
-	}
+	"CoreCountHistogram": ubx.FieldSpec{
+		WireName: "core_count_histogram",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_CoreCountHistogramFields,
+	},
+	"MemoryBytesHistogram": ubx.FieldSpec{
+		WireName: "memory_bytes_histogram",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_CoreCountHistogramFields,
+	},
+	"MemoryUtilizationChart": ubx.FieldSpec{
+		WireName: "memory_utilization_chart",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_MemoryUtilizationChartFields,
+	},
+	"OperatingSystem": ubx.FieldSpec{
+		WireName: "operating_system",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_OperatingSystemFields,
+	},
+	"SoftwareInstances": ubx.FieldSpec{
+		WireName: "software_instances",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_OperatingSystemFields,
+	},
+	"StorageBytesHistogram": ubx.FieldSpec{
+		WireName: "storage_bytes_histogram",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_CoreCountHistogramFields,
+	},
+	"StorageUtilizationChart": ubx.FieldSpec{
+		WireName: "storage_utilization_chart",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStats_MemoryUtilizationChartFields,
+	},
+	"TotalAssets":       ubx.FieldSpec{WireName: "total_assets"},
+	"TotalCores":        ubx.FieldSpec{WireName: "total_cores"},
+	"TotalMemoryBytes":  ubx.FieldSpec{WireName: "total_memory_bytes"},
+	"TotalStorageBytes": ubx.FieldSpec{WireName: "total_storage_bytes"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocationsFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"MachineSeries": ubx.FieldSpec{
-			WireName: "machine_series",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
-		},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"MachineSeries": ubx.FieldSpec{
+		WireName: "machine_series",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFindingFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"AllocatedDiskTypes": ubx.FieldSpec{WireName: "allocated_disk_types"},
-		"AllocatedRegions": ubx.FieldSpec{WireName: "allocated_regions"},
-		"MachineSeriesAllocations": ubx.FieldSpec{
-			WireName: "machine_series_allocations",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocationsFields,
-		},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"AllocatedDiskTypes":  ubx.FieldSpec{WireName: "allocated_disk_types"},
+	"AllocatedRegions":    ubx.FieldSpec{WireName: "allocated_regions"},
+	"MachineSeriesAllocations": ubx.FieldSpec{
+		WireName: "machine_series_allocations",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocationsFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferencesFields = ubx.FieldMap{
-		"AllowedMachineSeries": ubx.FieldSpec{
-			WireName: "allowed_machine_series",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
-		},
-	}
+	"AllowedMachineSeries": ubx.FieldSpec{
+		WireName: "allowed_machine_series",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferencesFields = ubx.FieldMap{
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"MachinePreferences": ubx.FieldSpec{
-			WireName: "machine_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
-		},
-		"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
-	}
+	"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+	"MachinePreferences": ubx.FieldSpec{
+		WireName: "machine_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
+	},
+	"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferencesFields = ubx.FieldMap{
-		"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
-	}
+	"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypesFields = ubx.FieldMap{
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-	}
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-		"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
-		"NodeTypes": ubx.FieldSpec{
-			WireName: "node_types",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypesFields,
-		},
-	}
+	"CommitmentPlan":        ubx.FieldSpec{WireName: "commitment_plan"},
+	"CpuOvercommitRatio":    ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+	"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
+	"NodeTypes": ubx.FieldSpec{
+		WireName: "node_types",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypesFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-		"MemoryOvercommitRatio": ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
-		"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
-	}
+	"CommitmentPlan":                       ubx.FieldSpec{WireName: "commitment_plan"},
+	"CpuOvercommitRatio":                   ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+	"MemoryOvercommitRatio":                ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
+	"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"ComputeEnginePreferences": ubx.FieldSpec{
-			WireName: "compute_engine_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferencesFields,
-		},
-		"RegionPreferences": ubx.FieldSpec{
-			WireName: "region_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferencesFields,
-		},
-		"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
-		"SoleTenancyPreferences": ubx.FieldSpec{
-			WireName: "sole_tenancy_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferencesFields,
-		},
-		"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
-		"VmwareEnginePreferences": ubx.FieldSpec{
-			WireName: "vmware_engine_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferencesFields,
-		},
-	}
+	"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+	"ComputeEnginePreferences": ubx.FieldSpec{
+		WireName: "compute_engine_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_ComputeEnginePreferencesFields,
+	},
+	"RegionPreferences": ubx.FieldSpec{
+		WireName: "region_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_RegionPreferencesFields,
+	},
+	"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
+	"SoleTenancyPreferences": ubx.FieldSpec{
+		WireName: "sole_tenancy_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferencesFields,
+	},
+	"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
+	"VmwareEnginePreferences": ubx.FieldSpec{
+		WireName: "vmware_engine_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_VmwareEnginePreferencesFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields = ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+	"Nanos":        ubx.FieldSpec{WireName: "nanos"},
+	"Units":        ubx.FieldSpec{WireName: "units"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocationsFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"Node": ubx.FieldSpec{
-			WireName: "node",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypesFields,
-		},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"Node": ubx.FieldSpec{
+		WireName: "node",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferences_SoleTenancyPreferences_NodeTypesFields,
+	},
+	"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFindingFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"AllocatedRegions": ubx.FieldSpec{WireName: "allocated_regions"},
-		"NodeAllocations": ubx.FieldSpec{
-			WireName: "node_allocations",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocationsFields,
-		},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"AllocatedRegions":    ubx.FieldSpec{WireName: "allocated_regions"},
+	"NodeAllocations": ubx.FieldSpec{
+		WireName: "node_allocations",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFinding_NodeAllocationsFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocationsFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"VmwareNode": ubx.FieldSpec{
-			WireName: "vmware_node",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
-		},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"NodeCount":           ubx.FieldSpec{WireName: "node_count"},
+	"VmwareNode": ubx.FieldSpec{
+		WireName: "vmware_node",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFinding_MachineSeriesAllocations_MachineSeriesFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFindingFields = ubx.FieldMap{
-		"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
-		"AllocatedRegions": ubx.FieldSpec{WireName: "allocated_regions"},
-		"NodeAllocations": ubx.FieldSpec{
-			WireName: "node_allocations",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocationsFields,
-		},
-	}
+	"AllocatedAssetCount": ubx.FieldSpec{WireName: "allocated_asset_count"},
+	"AllocatedRegions":    ubx.FieldSpec{WireName: "allocated_regions"},
+	"NodeAllocations": ubx.FieldSpec{
+		WireName: "node_allocations",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFinding_NodeAllocationsFields,
+	},
+}
 
 var Report_Summary_GroupFindings_PreferenceSetFindingsFields = ubx.FieldMap{
-		"ComputeEngineFinding": ubx.FieldSpec{
-			WireName: "compute_engine_finding",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFindingFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MachinePreferences": ubx.FieldSpec{
-			WireName: "machine_preferences",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferencesFields,
-		},
-		"MonthlyCostCompute": ubx.FieldSpec{
-			WireName: "monthly_cost_compute",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"MonthlyCostNetworkEgress": ubx.FieldSpec{
-			WireName: "monthly_cost_network_egress",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"MonthlyCostOsLicense": ubx.FieldSpec{
-			WireName: "monthly_cost_os_license",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"MonthlyCostOther": ubx.FieldSpec{
-			WireName: "monthly_cost_other",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"MonthlyCostStorage": ubx.FieldSpec{
-			WireName: "monthly_cost_storage",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"MonthlyCostTotal": ubx.FieldSpec{
-			WireName: "monthly_cost_total",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
-		},
-		"SoleTenantFinding": ubx.FieldSpec{
-			WireName: "sole_tenant_finding",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFindingFields,
-		},
-		"VmwareEngineFinding": ubx.FieldSpec{
-			WireName: "vmware_engine_finding",
-			Kind: "object",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFindingFields,
-		},
-	}
+	"ComputeEngineFinding": ubx.FieldSpec{
+		WireName: "compute_engine_finding",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_ComputeEngineFindingFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MachinePreferences": ubx.FieldSpec{
+		WireName: "machine_preferences",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MachinePreferencesFields,
+	},
+	"MonthlyCostCompute": ubx.FieldSpec{
+		WireName: "monthly_cost_compute",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"MonthlyCostNetworkEgress": ubx.FieldSpec{
+		WireName: "monthly_cost_network_egress",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"MonthlyCostOsLicense": ubx.FieldSpec{
+		WireName: "monthly_cost_os_license",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"MonthlyCostOther": ubx.FieldSpec{
+		WireName: "monthly_cost_other",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"MonthlyCostStorage": ubx.FieldSpec{
+		WireName: "monthly_cost_storage",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"MonthlyCostTotal": ubx.FieldSpec{
+		WireName: "monthly_cost_total",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_MonthlyCostComputeFields,
+	},
+	"SoleTenantFinding": ubx.FieldSpec{
+		WireName: "sole_tenant_finding",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_SoleTenantFindingFields,
+	},
+	"VmwareEngineFinding": ubx.FieldSpec{
+		WireName: "vmware_engine_finding",
+		Kind:     "object",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindings_VmwareEngineFindingFields,
+	},
+}
 
 var Report_Summary_GroupFindingsFields = ubx.FieldMap{
-		"AssetAggregateStats": ubx.FieldSpec{
-			WireName: "asset_aggregate_stats",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStatsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"OverlappingAssetCount": ubx.FieldSpec{WireName: "overlapping_asset_count"},
-		"PreferenceSetFindings": ubx.FieldSpec{
-			WireName: "preference_set_findings",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindings_PreferenceSetFindingsFields,
-		},
-	}
+	"AssetAggregateStats": ubx.FieldSpec{
+		WireName: "asset_aggregate_stats",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStatsFields,
+	},
+	"Description":           ubx.FieldSpec{WireName: "description"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"OverlappingAssetCount": ubx.FieldSpec{WireName: "overlapping_asset_count"},
+	"PreferenceSetFindings": ubx.FieldSpec{
+		WireName: "preference_set_findings",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindings_PreferenceSetFindingsFields,
+	},
+}
 
 var Report_SummaryFields = ubx.FieldMap{
-		"AllAssetsStats": ubx.FieldSpec{
-			WireName: "all_assets_stats",
-			Kind: "object",
-			Fields: Report_Summary_AllAssetsStatsFields,
-		},
-		"GroupFindings": ubx.FieldSpec{
-			WireName: "group_findings",
-			Kind: "list",
-			Fields: Report_Summary_GroupFindingsFields,
-		},
-	}
+	"AllAssetsStats": ubx.FieldSpec{
+		WireName: "all_assets_stats",
+		Kind:     "object",
+		Fields:   Report_Summary_AllAssetsStatsFields,
+	},
+	"GroupFindings": ubx.FieldSpec{
+		WireName: "group_findings",
+		Kind:     "list",
+		Fields:   Report_Summary_GroupFindingsFields,
+	},
+}
 
 type ReportConfig_ struct {
-	// Output only. Creation timestamp.
-	CreateTime any
 	// Free-text description.
 	Description any
 	// User-friendly display name. Maximum length is 63 characters.
 	DisplayName any
-	// Output only. Name of resource.
-	Name any
 	// Report creation state.
 	State any
 	// Describes the Summary view of a Report, which contains aggregated values for all the groups and preference sets included in this Report.
 	Summary any
 	// Report type.
 	Type any
-	// Output only. Last update timestamp.
-	UpdateTime any
 }
 
 type ReportAttrs struct {
@@ -513,17 +507,14 @@ type ReportAttrs struct {
 var Report = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_report",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Summary": ubx.FieldSpec{
 			WireName: "summary",
-			Kind: "object",
-			Fields: Report_SummaryFields,
+			Kind:     "object",
+			Fields:   Report_SummaryFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

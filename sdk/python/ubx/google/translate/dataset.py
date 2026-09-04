@@ -8,26 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatasetConfig:
-    # Output only. Timestamp when this dataset was created.
-    create_time: Any = None
     # The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9.
     display_name: Any = None
-    # Output only. The number of examples in the dataset.
-    example_count: Any = None
     # The resource name of the dataset, in form of `projects/{project-number-or-id}/locations/{location_id}/datasets/{dataset_id}`
     name: Any = None
     # The BCP-47 language code of the source language.
     source_language_code: Any = None
     # The BCP-47 language code of the target language.
     target_language_code: Any = None
-    # Output only. Number of test examples (sentence pairs).
-    test_example_count: Any = None
-    # Output only. Number of training examples (sentence pairs).
-    train_example_count: Any = None
-    # Output only. Timestamp when this dataset was last updated.
-    update_time: Any = None
-    # Output only. Number of validation examples (sentence pairs).
-    validate_example_count: Any = None
 
 @dataclasses.dataclass
 class DatasetAttrs:
@@ -55,15 +43,9 @@ class DatasetAttrs:
 Dataset = ubx.ResourceBinding(
     wire_type="google_translate_dataset",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "example_count": ubx.FieldSpec(wire_name="example_count"),
         "name": ubx.FieldSpec(wire_name="name"),
         "source_language_code": ubx.FieldSpec(wire_name="source_language_code"),
         "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
-        "test_example_count": ubx.FieldSpec(wire_name="test_example_count"),
-        "train_example_count": ubx.FieldSpec(wire_name="train_example_count"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "validate_example_count": ubx.FieldSpec(wire_name="validate_example_count"),
     },
 )

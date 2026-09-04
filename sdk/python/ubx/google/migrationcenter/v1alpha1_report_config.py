@@ -18,18 +18,12 @@ _V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields = {
 
 @dataclasses.dataclass
 class V1alpha1ReportConfigConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Free-text description.
     description: Any = None
     # User-friendly display name. Maximum length is 63 characters.
     display_name: Any = None
     # Required. Collection of combinations of groups and preference sets.
     group_preferenceset_assignments: Any = None
-    # Output only. Name of resource.
-    name: Any = None
-    # Output only. The timestamp when the resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1ReportConfigAttrs:
@@ -49,7 +43,6 @@ class V1alpha1ReportConfigAttrs:
 V1alpha1ReportConfig = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_report_config",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "group_preferenceset_assignments": ubx.FieldSpec(
@@ -57,7 +50,5 @@ V1alpha1ReportConfig = ubx.ResourceBinding(
             kind="list",
             fields=_V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

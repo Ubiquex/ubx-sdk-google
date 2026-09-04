@@ -20,14 +20,10 @@ const Workspace_PrivateResourceMetadataFields: FieldMap = {
 };
 
 export interface WorkspaceConfig {
-  /** Output only. The timestamp of when the workspace was created. */
-  createTime?: string | Computed<string>;
   /** Describes encryption state of a resource. */
   dataEncryptionState?: Workspace_DataEncryptionState | Computed<Workspace_DataEncryptionState>;
   /** Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted. */
   disableMoves?: boolean | Computed<boolean>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Identifier. The workspace's name. */
   name?: string | Computed<string>;
   /** Metadata used to identify if a resource is user scoped. */
@@ -52,14 +48,12 @@ export interface WorkspaceAttrs {
 export const Workspace: ResourceBinding<WorkspaceConfig, WorkspaceAttrs> = {
   wireType: "google_dataform_workspace",
   fields: {
-    createTime: "create_time",
     dataEncryptionState: {
       wireName: "data_encryption_state",
       kind: "object",
       fields: Workspace_DataEncryptionStateFields,
     },
     disableMoves: "disable_moves",
-    internalMetadata: "internal_metadata",
     name: "name",
     privateResourceMetadata: {
       wireName: "private_resource_metadata",

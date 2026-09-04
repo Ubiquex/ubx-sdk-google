@@ -16,12 +16,12 @@ type V1beta1DicomStore_NotificationConfigs struct {
 
 type V1beta1DicomStore_StreamConfigs_BigqueryDestination struct {
 	ChangeDataCaptureConfig any
-	Force any
-	IncludeSourceStore any
-	SchemaFlattened any
-	SchemaJson any
-	TableUri any
-	WriteDisposition any
+	Force                   any
+	IncludeSourceStore      any
+	SchemaFlattened         any
+	SchemaJson              any
+	TableUri                any
+	WriteDisposition        any
 }
 
 type V1beta1DicomStore_StreamConfigs struct {
@@ -29,31 +29,31 @@ type V1beta1DicomStore_StreamConfigs struct {
 }
 
 var V1beta1DicomStore_NotificationConfigFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
-	}
+	"PubsubTopic":       ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
+}
 
 var V1beta1DicomStore_NotificationConfigsFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var V1beta1DicomStore_StreamConfigs_BigqueryDestinationFields = ubx.FieldMap{
-		"ChangeDataCaptureConfig": ubx.FieldSpec{WireName: "change_data_capture_config"},
-		"Force": ubx.FieldSpec{WireName: "force"},
-		"IncludeSourceStore": ubx.FieldSpec{WireName: "include_source_store"},
-		"SchemaFlattened": ubx.FieldSpec{WireName: "schema_flattened"},
-		"SchemaJson": ubx.FieldSpec{WireName: "schema_json"},
-		"TableUri": ubx.FieldSpec{WireName: "table_uri"},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"ChangeDataCaptureConfig": ubx.FieldSpec{WireName: "change_data_capture_config"},
+	"Force":                   ubx.FieldSpec{WireName: "force"},
+	"IncludeSourceStore":      ubx.FieldSpec{WireName: "include_source_store"},
+	"SchemaFlattened":         ubx.FieldSpec{WireName: "schema_flattened"},
+	"SchemaJson":              ubx.FieldSpec{WireName: "schema_json"},
+	"TableUri":                ubx.FieldSpec{WireName: "table_uri"},
+	"WriteDisposition":        ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var V1beta1DicomStore_StreamConfigsFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: V1beta1DicomStore_StreamConfigs_BigqueryDestinationFields,
-		},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   V1beta1DicomStore_StreamConfigs_BigqueryDestinationFields,
+	},
+}
 
 type V1beta1DicomStoreConfig struct {
 	// User-supplied key-value pairs used to organize DICOM stores. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62} Label values are optional, must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a given store.
@@ -85,21 +85,21 @@ var V1beta1DicomStore = ubx.ResourceBinding{
 	WireType: "google_healthcare_v1beta1_dicom_store",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NotificationConfig": ubx.FieldSpec{
 			WireName: "notification_config",
-			Kind: "object",
-			Fields: V1beta1DicomStore_NotificationConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1DicomStore_NotificationConfigFields,
 		},
 		"NotificationConfigs": ubx.FieldSpec{
 			WireName: "notification_configs",
-			Kind: "list",
-			Fields: V1beta1DicomStore_NotificationConfigsFields,
+			Kind:     "list",
+			Fields:   V1beta1DicomStore_NotificationConfigsFields,
 		},
 		"StreamConfigs": ubx.FieldSpec{
 			WireName: "stream_configs",
-			Kind: "list",
-			Fields: V1beta1DicomStore_StreamConfigsFields,
+			Kind:     "list",
+			Fields:   V1beta1DicomStore_StreamConfigsFields,
 		},
 	},
 }

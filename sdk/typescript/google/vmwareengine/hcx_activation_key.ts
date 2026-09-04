@@ -2,16 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface HcxActivationKeyConfig {
-  /** Output only. HCX activation key. */
-  activationKey?: string | Computed<string>;
-  /** Output only. Creation time of HCX activation key. */
-  createTime?: string | Computed<string>;
-  /** Output only. The resource name of this HcxActivationKey. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key` */
-  name?: string | Computed<string>;
-  /** Output only. State of HCX activation key. */
-  state?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
 }
 
 export interface HcxActivationKeyAttrs {
@@ -30,10 +20,5 @@ export interface HcxActivationKeyAttrs {
 export const HcxActivationKey: ResourceBinding<HcxActivationKeyConfig, HcxActivationKeyAttrs> = {
   wireType: "google_vmwareengine_hcx_activation_key",
   fields: {
-    activationKey: "activation_key",
-    createTime: "create_time",
-    name: "name",
-    state: "state",
-    uid: "uid",
   },
 };

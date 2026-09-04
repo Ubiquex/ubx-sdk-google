@@ -20,15 +20,15 @@ type AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStrings struct
 }
 
 type AutonomousDatabase_Properties_ConnectionStrings_Profiles struct {
-	ConsumerGroup any
-	DisplayName any
-	HostFormat any
-	IsRegional any
-	Protocol any
-	SessionMode any
-	SyntaxFormat any
+	ConsumerGroup     any
+	DisplayName       any
+	HostFormat        any
+	IsRegional        any
+	Protocol          any
+	SessionMode       any
+	SyntaxFormat      any
 	TlsAuthentication any
-	Value any
+	Value             any
 }
 
 type AutonomousDatabase_Properties_ConnectionStrings struct {
@@ -78,7 +78,7 @@ type AutonomousDatabase_Properties_EncryptionKey struct {
 
 type AutonomousDatabase_Properties_EncryptionKeyHistoryEntries struct {
 	ActivationTime any
-	EncryptionKey any
+	EncryptionKey  any
 }
 
 type AutonomousDatabase_Properties_LocalStandbyDb struct {
@@ -95,16 +95,16 @@ type AutonomousDatabase_Properties_LocalStandbyDb struct {
 }
 
 type AutonomousDatabase_Properties_ScheduledOperationDetails_StartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type AutonomousDatabase_Properties_ScheduledOperationDetails struct {
 	DayOfWeek any
 	StartTime any
-	StopTime any
+	StopTime  any
 }
 
 type AutonomousDatabase_Properties struct {
@@ -268,217 +268,217 @@ type AutonomousDatabase_SourceConfig struct {
 }
 
 var AutonomousDatabase_Properties_ApexDetailsFields = ubx.FieldMap{
-		"ApexVersion": ubx.FieldSpec{WireName: "apex_version"},
-		"OrdsVersion": ubx.FieldSpec{WireName: "ords_version"},
-	}
+	"ApexVersion": ubx.FieldSpec{WireName: "apex_version"},
+	"OrdsVersion": ubx.FieldSpec{WireName: "ords_version"},
+}
 
 var AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStringsFields = ubx.FieldMap{
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-	}
+	"High":   ubx.FieldSpec{WireName: "high"},
+	"Low":    ubx.FieldSpec{WireName: "low"},
+	"Medium": ubx.FieldSpec{WireName: "medium"},
+}
 
 var AutonomousDatabase_Properties_ConnectionStrings_ProfilesFields = ubx.FieldMap{
-		"ConsumerGroup": ubx.FieldSpec{WireName: "consumer_group"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"HostFormat": ubx.FieldSpec{WireName: "host_format"},
-		"IsRegional": ubx.FieldSpec{WireName: "is_regional"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"SessionMode": ubx.FieldSpec{WireName: "session_mode"},
-		"SyntaxFormat": ubx.FieldSpec{WireName: "syntax_format"},
-		"TlsAuthentication": ubx.FieldSpec{WireName: "tls_authentication"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ConsumerGroup":     ubx.FieldSpec{WireName: "consumer_group"},
+	"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+	"HostFormat":        ubx.FieldSpec{WireName: "host_format"},
+	"IsRegional":        ubx.FieldSpec{WireName: "is_regional"},
+	"Protocol":          ubx.FieldSpec{WireName: "protocol"},
+	"SessionMode":       ubx.FieldSpec{WireName: "session_mode"},
+	"SyntaxFormat":      ubx.FieldSpec{WireName: "syntax_format"},
+	"TlsAuthentication": ubx.FieldSpec{WireName: "tls_authentication"},
+	"Value":             ubx.FieldSpec{WireName: "value"},
+}
 
 var AutonomousDatabase_Properties_ConnectionStringsFields = ubx.FieldMap{
-		"AllConnectionStrings": ubx.FieldSpec{
-			WireName: "all_connection_strings",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStringsFields,
-		},
-		"Dedicated": ubx.FieldSpec{WireName: "dedicated"},
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"Profiles": ubx.FieldSpec{
-			WireName: "profiles",
-			Kind: "list",
-			Fields: AutonomousDatabase_Properties_ConnectionStrings_ProfilesFields,
-		},
-	}
+	"AllConnectionStrings": ubx.FieldSpec{
+		WireName: "all_connection_strings",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ConnectionStrings_AllConnectionStringsFields,
+	},
+	"Dedicated": ubx.FieldSpec{WireName: "dedicated"},
+	"High":      ubx.FieldSpec{WireName: "high"},
+	"Low":       ubx.FieldSpec{WireName: "low"},
+	"Medium":    ubx.FieldSpec{WireName: "medium"},
+	"Profiles": ubx.FieldSpec{
+		WireName: "profiles",
+		Kind:     "list",
+		Fields:   AutonomousDatabase_Properties_ConnectionStrings_ProfilesFields,
+	},
+}
 
 var AutonomousDatabase_Properties_ConnectionUrlsFields = ubx.FieldMap{
-		"ApexUri": ubx.FieldSpec{WireName: "apex_uri"},
-		"DatabaseTransformsUri": ubx.FieldSpec{WireName: "database_transforms_uri"},
-		"GraphStudioUri": ubx.FieldSpec{WireName: "graph_studio_uri"},
-		"MachineLearningNotebookUri": ubx.FieldSpec{WireName: "machine_learning_notebook_uri"},
-		"MachineLearningUserManagementUri": ubx.FieldSpec{WireName: "machine_learning_user_management_uri"},
-		"MongoDbUri": ubx.FieldSpec{WireName: "mongo_db_uri"},
-		"OrdsUri": ubx.FieldSpec{WireName: "ords_uri"},
-		"SqlDevWebUri": ubx.FieldSpec{WireName: "sql_dev_web_uri"},
-	}
+	"ApexUri":                          ubx.FieldSpec{WireName: "apex_uri"},
+	"DatabaseTransformsUri":            ubx.FieldSpec{WireName: "database_transforms_uri"},
+	"GraphStudioUri":                   ubx.FieldSpec{WireName: "graph_studio_uri"},
+	"MachineLearningNotebookUri":       ubx.FieldSpec{WireName: "machine_learning_notebook_uri"},
+	"MachineLearningUserManagementUri": ubx.FieldSpec{WireName: "machine_learning_user_management_uri"},
+	"MongoDbUri":                       ubx.FieldSpec{WireName: "mongo_db_uri"},
+	"OrdsUri":                          ubx.FieldSpec{WireName: "ords_uri"},
+	"SqlDevWebUri":                     ubx.FieldSpec{WireName: "sql_dev_web_uri"},
+}
 
 var AutonomousDatabase_Properties_CustomerContactsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var AutonomousDatabase_Properties_EncryptionKeyFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-	}
+	"KmsKey":   ubx.FieldSpec{WireName: "kms_key"},
+	"Provider": ubx.FieldSpec{WireName: "provider"},
+}
 
 var AutonomousDatabase_Properties_EncryptionKeyHistoryEntriesFields = ubx.FieldMap{
-		"ActivationTime": ubx.FieldSpec{WireName: "activation_time"},
-		"EncryptionKey": ubx.FieldSpec{
-			WireName: "encryption_key",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_EncryptionKeyFields,
-		},
-	}
+	"ActivationTime": ubx.FieldSpec{WireName: "activation_time"},
+	"EncryptionKey": ubx.FieldSpec{
+		WireName: "encryption_key",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_EncryptionKeyFields,
+	},
+}
 
 var AutonomousDatabase_Properties_LocalStandbyDbFields = ubx.FieldMap{
-		"DataGuardRoleChangedTime": ubx.FieldSpec{WireName: "data_guard_role_changed_time"},
-		"DisasterRecoveryRoleChangedTime": ubx.FieldSpec{WireName: "disaster_recovery_role_changed_time"},
-		"LagTimeDuration": ubx.FieldSpec{WireName: "lag_time_duration"},
-		"LifecycleDetails": ubx.FieldSpec{WireName: "lifecycle_details"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"DataGuardRoleChangedTime":        ubx.FieldSpec{WireName: "data_guard_role_changed_time"},
+	"DisasterRecoveryRoleChangedTime": ubx.FieldSpec{WireName: "disaster_recovery_role_changed_time"},
+	"LagTimeDuration":                 ubx.FieldSpec{WireName: "lag_time_duration"},
+	"LifecycleDetails":                ubx.FieldSpec{WireName: "lifecycle_details"},
+	"State":                           ubx.FieldSpec{WireName: "state"},
+}
 
 var AutonomousDatabase_Properties_ScheduledOperationDetails_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AutonomousDatabase_Properties_ScheduledOperationDetailsFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ScheduledOperationDetails_StartTimeFields,
-		},
-		"StopTime": ubx.FieldSpec{
-			WireName: "stop_time",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ScheduledOperationDetails_StartTimeFields,
-		},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ScheduledOperationDetails_StartTimeFields,
+	},
+	"StopTime": ubx.FieldSpec{
+		WireName: "stop_time",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ScheduledOperationDetails_StartTimeFields,
+	},
+}
 
 var AutonomousDatabase_PropertiesFields = ubx.FieldMap{
-		"ActualUsedDataStorageSizeTb": ubx.FieldSpec{WireName: "actual_used_data_storage_size_tb"},
-		"AllocatedStorageSizeTb": ubx.FieldSpec{WireName: "allocated_storage_size_tb"},
-		"AllowlistedIps": ubx.FieldSpec{WireName: "allowlisted_ips"},
-		"ApexDetails": ubx.FieldSpec{
-			WireName: "apex_details",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ApexDetailsFields,
-		},
-		"ArePrimaryAllowlistedIpsUsed": ubx.FieldSpec{WireName: "are_primary_allowlisted_ips_used"},
-		"AutonomousContainerDatabaseId": ubx.FieldSpec{WireName: "autonomous_container_database_id"},
-		"AvailableUpgradeVersions": ubx.FieldSpec{WireName: "available_upgrade_versions"},
-		"BackupRetentionPeriodDays": ubx.FieldSpec{WireName: "backup_retention_period_days"},
-		"CharacterSet": ubx.FieldSpec{WireName: "character_set"},
-		"ComputeCount": ubx.FieldSpec{WireName: "compute_count"},
-		"ConnectionStrings": ubx.FieldSpec{
-			WireName: "connection_strings",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ConnectionStringsFields,
-		},
-		"ConnectionUrls": ubx.FieldSpec{
-			WireName: "connection_urls",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_ConnectionUrlsFields,
-		},
-		"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
-		"CustomerContacts": ubx.FieldSpec{
-			WireName: "customer_contacts",
-			Kind: "list",
-			Fields: AutonomousDatabase_Properties_CustomerContactsFields,
-		},
-		"DataGuardRoleChangedTime": ubx.FieldSpec{WireName: "data_guard_role_changed_time"},
-		"DataSafeState": ubx.FieldSpec{WireName: "data_safe_state"},
-		"DataStorageSizeGb": ubx.FieldSpec{WireName: "data_storage_size_gb"},
-		"DataStorageSizeTb": ubx.FieldSpec{WireName: "data_storage_size_tb"},
-		"DatabaseManagementState": ubx.FieldSpec{WireName: "database_management_state"},
-		"DbEdition": ubx.FieldSpec{WireName: "db_edition"},
-		"DbVersion": ubx.FieldSpec{WireName: "db_version"},
-		"DbWorkload": ubx.FieldSpec{WireName: "db_workload"},
-		"DisasterRecoveryRoleChangedTime": ubx.FieldSpec{WireName: "disaster_recovery_role_changed_time"},
-		"EncryptionKey": ubx.FieldSpec{
-			WireName: "encryption_key",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_EncryptionKeyFields,
-		},
-		"EncryptionKeyHistoryEntries": ubx.FieldSpec{
-			WireName: "encryption_key_history_entries",
-			Kind: "list",
-			Fields: AutonomousDatabase_Properties_EncryptionKeyHistoryEntriesFields,
-		},
-		"FailedDataRecoveryDuration": ubx.FieldSpec{WireName: "failed_data_recovery_duration"},
-		"IsAutoScalingEnabled": ubx.FieldSpec{WireName: "is_auto_scaling_enabled"},
-		"IsLocalDataGuardEnabled": ubx.FieldSpec{WireName: "is_local_data_guard_enabled"},
-		"IsStorageAutoScalingEnabled": ubx.FieldSpec{WireName: "is_storage_auto_scaling_enabled"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"LifecycleDetails": ubx.FieldSpec{WireName: "lifecycle_details"},
-		"LocalAdgAutoFailoverMaxDataLossLimit": ubx.FieldSpec{WireName: "local_adg_auto_failover_max_data_loss_limit"},
-		"LocalAdgAutoFailoverMaxDataLossLimitDuration": ubx.FieldSpec{WireName: "local_adg_auto_failover_max_data_loss_limit_duration"},
-		"LocalDataGuardEnabled": ubx.FieldSpec{WireName: "local_data_guard_enabled"},
-		"LocalDisasterRecoveryType": ubx.FieldSpec{WireName: "local_disaster_recovery_type"},
-		"LocalStandbyDb": ubx.FieldSpec{
-			WireName: "local_standby_db",
-			Kind: "object",
-			Fields: AutonomousDatabase_Properties_LocalStandbyDbFields,
-		},
-		"MaintenanceBeginTime": ubx.FieldSpec{WireName: "maintenance_begin_time"},
-		"MaintenanceEndTime": ubx.FieldSpec{WireName: "maintenance_end_time"},
-		"MaintenanceScheduleType": ubx.FieldSpec{WireName: "maintenance_schedule_type"},
-		"MemoryPerOracleComputeUnitGbs": ubx.FieldSpec{WireName: "memory_per_oracle_compute_unit_gbs"},
-		"MemoryTableGbs": ubx.FieldSpec{WireName: "memory_table_gbs"},
-		"MtlsConnectionRequired": ubx.FieldSpec{WireName: "mtls_connection_required"},
-		"NCharacterSet": ubx.FieldSpec{WireName: "n_character_set"},
-		"NextLongTermBackupTime": ubx.FieldSpec{WireName: "next_long_term_backup_time"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"OpenMode": ubx.FieldSpec{WireName: "open_mode"},
-		"OperationsInsightsState": ubx.FieldSpec{WireName: "operations_insights_state"},
-		"PeerDbIds": ubx.FieldSpec{WireName: "peer_db_ids"},
-		"PermissionLevel": ubx.FieldSpec{WireName: "permission_level"},
-		"PrivateEndpoint": ubx.FieldSpec{WireName: "private_endpoint"},
-		"PrivateEndpointIp": ubx.FieldSpec{WireName: "private_endpoint_ip"},
-		"PrivateEndpointLabel": ubx.FieldSpec{WireName: "private_endpoint_label"},
-		"RefreshableClone": ubx.FieldSpec{WireName: "refreshable_clone"},
-		"RefreshableMode": ubx.FieldSpec{WireName: "refreshable_mode"},
-		"RefreshableState": ubx.FieldSpec{WireName: "refreshable_state"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"ScheduledOperationDetails": ubx.FieldSpec{
-			WireName: "scheduled_operation_details",
-			Kind: "list",
-			Fields: AutonomousDatabase_Properties_ScheduledOperationDetailsFields,
-		},
-		"SecretId": ubx.FieldSpec{WireName: "secret_id"},
-		"ServiceAgentEmail": ubx.FieldSpec{WireName: "service_agent_email"},
-		"SqlWebDeveloperUrl": ubx.FieldSpec{WireName: "sql_web_developer_url"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SupportedCloneRegions": ubx.FieldSpec{WireName: "supported_clone_regions"},
-		"TotalAutoBackupStorageSizeGbs": ubx.FieldSpec{WireName: "total_auto_backup_storage_size_gbs"},
-		"UsedDataStorageSizeTbs": ubx.FieldSpec{WireName: "used_data_storage_size_tbs"},
-		"VaultId": ubx.FieldSpec{WireName: "vault_id"},
-	}
+	"ActualUsedDataStorageSizeTb": ubx.FieldSpec{WireName: "actual_used_data_storage_size_tb"},
+	"AllocatedStorageSizeTb":      ubx.FieldSpec{WireName: "allocated_storage_size_tb"},
+	"AllowlistedIps":              ubx.FieldSpec{WireName: "allowlisted_ips"},
+	"ApexDetails": ubx.FieldSpec{
+		WireName: "apex_details",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ApexDetailsFields,
+	},
+	"ArePrimaryAllowlistedIpsUsed":  ubx.FieldSpec{WireName: "are_primary_allowlisted_ips_used"},
+	"AutonomousContainerDatabaseId": ubx.FieldSpec{WireName: "autonomous_container_database_id"},
+	"AvailableUpgradeVersions":      ubx.FieldSpec{WireName: "available_upgrade_versions"},
+	"BackupRetentionPeriodDays":     ubx.FieldSpec{WireName: "backup_retention_period_days"},
+	"CharacterSet":                  ubx.FieldSpec{WireName: "character_set"},
+	"ComputeCount":                  ubx.FieldSpec{WireName: "compute_count"},
+	"ConnectionStrings": ubx.FieldSpec{
+		WireName: "connection_strings",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ConnectionStringsFields,
+	},
+	"ConnectionUrls": ubx.FieldSpec{
+		WireName: "connection_urls",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_ConnectionUrlsFields,
+	},
+	"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
+	"CustomerContacts": ubx.FieldSpec{
+		WireName: "customer_contacts",
+		Kind:     "list",
+		Fields:   AutonomousDatabase_Properties_CustomerContactsFields,
+	},
+	"DataGuardRoleChangedTime":        ubx.FieldSpec{WireName: "data_guard_role_changed_time"},
+	"DataSafeState":                   ubx.FieldSpec{WireName: "data_safe_state"},
+	"DataStorageSizeGb":               ubx.FieldSpec{WireName: "data_storage_size_gb"},
+	"DataStorageSizeTb":               ubx.FieldSpec{WireName: "data_storage_size_tb"},
+	"DatabaseManagementState":         ubx.FieldSpec{WireName: "database_management_state"},
+	"DbEdition":                       ubx.FieldSpec{WireName: "db_edition"},
+	"DbVersion":                       ubx.FieldSpec{WireName: "db_version"},
+	"DbWorkload":                      ubx.FieldSpec{WireName: "db_workload"},
+	"DisasterRecoveryRoleChangedTime": ubx.FieldSpec{WireName: "disaster_recovery_role_changed_time"},
+	"EncryptionKey": ubx.FieldSpec{
+		WireName: "encryption_key",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_EncryptionKeyFields,
+	},
+	"EncryptionKeyHistoryEntries": ubx.FieldSpec{
+		WireName: "encryption_key_history_entries",
+		Kind:     "list",
+		Fields:   AutonomousDatabase_Properties_EncryptionKeyHistoryEntriesFields,
+	},
+	"FailedDataRecoveryDuration":                   ubx.FieldSpec{WireName: "failed_data_recovery_duration"},
+	"IsAutoScalingEnabled":                         ubx.FieldSpec{WireName: "is_auto_scaling_enabled"},
+	"IsLocalDataGuardEnabled":                      ubx.FieldSpec{WireName: "is_local_data_guard_enabled"},
+	"IsStorageAutoScalingEnabled":                  ubx.FieldSpec{WireName: "is_storage_auto_scaling_enabled"},
+	"LicenseType":                                  ubx.FieldSpec{WireName: "license_type"},
+	"LifecycleDetails":                             ubx.FieldSpec{WireName: "lifecycle_details"},
+	"LocalAdgAutoFailoverMaxDataLossLimit":         ubx.FieldSpec{WireName: "local_adg_auto_failover_max_data_loss_limit"},
+	"LocalAdgAutoFailoverMaxDataLossLimitDuration": ubx.FieldSpec{WireName: "local_adg_auto_failover_max_data_loss_limit_duration"},
+	"LocalDataGuardEnabled":                        ubx.FieldSpec{WireName: "local_data_guard_enabled"},
+	"LocalDisasterRecoveryType":                    ubx.FieldSpec{WireName: "local_disaster_recovery_type"},
+	"LocalStandbyDb": ubx.FieldSpec{
+		WireName: "local_standby_db",
+		Kind:     "object",
+		Fields:   AutonomousDatabase_Properties_LocalStandbyDbFields,
+	},
+	"MaintenanceBeginTime":          ubx.FieldSpec{WireName: "maintenance_begin_time"},
+	"MaintenanceEndTime":            ubx.FieldSpec{WireName: "maintenance_end_time"},
+	"MaintenanceScheduleType":       ubx.FieldSpec{WireName: "maintenance_schedule_type"},
+	"MemoryPerOracleComputeUnitGbs": ubx.FieldSpec{WireName: "memory_per_oracle_compute_unit_gbs"},
+	"MemoryTableGbs":                ubx.FieldSpec{WireName: "memory_table_gbs"},
+	"MtlsConnectionRequired":        ubx.FieldSpec{WireName: "mtls_connection_required"},
+	"NCharacterSet":                 ubx.FieldSpec{WireName: "n_character_set"},
+	"NextLongTermBackupTime":        ubx.FieldSpec{WireName: "next_long_term_backup_time"},
+	"OciUrl":                        ubx.FieldSpec{WireName: "oci_url"},
+	"Ocid":                          ubx.FieldSpec{WireName: "ocid"},
+	"OpenMode":                      ubx.FieldSpec{WireName: "open_mode"},
+	"OperationsInsightsState":       ubx.FieldSpec{WireName: "operations_insights_state"},
+	"PeerDbIds":                     ubx.FieldSpec{WireName: "peer_db_ids"},
+	"PermissionLevel":               ubx.FieldSpec{WireName: "permission_level"},
+	"PrivateEndpoint":               ubx.FieldSpec{WireName: "private_endpoint"},
+	"PrivateEndpointIp":             ubx.FieldSpec{WireName: "private_endpoint_ip"},
+	"PrivateEndpointLabel":          ubx.FieldSpec{WireName: "private_endpoint_label"},
+	"RefreshableClone":              ubx.FieldSpec{WireName: "refreshable_clone"},
+	"RefreshableMode":               ubx.FieldSpec{WireName: "refreshable_mode"},
+	"RefreshableState":              ubx.FieldSpec{WireName: "refreshable_state"},
+	"Role":                          ubx.FieldSpec{WireName: "role"},
+	"ScheduledOperationDetails": ubx.FieldSpec{
+		WireName: "scheduled_operation_details",
+		Kind:     "list",
+		Fields:   AutonomousDatabase_Properties_ScheduledOperationDetailsFields,
+	},
+	"SecretId":                      ubx.FieldSpec{WireName: "secret_id"},
+	"ServiceAgentEmail":             ubx.FieldSpec{WireName: "service_agent_email"},
+	"SqlWebDeveloperUrl":            ubx.FieldSpec{WireName: "sql_web_developer_url"},
+	"State":                         ubx.FieldSpec{WireName: "state"},
+	"SupportedCloneRegions":         ubx.FieldSpec{WireName: "supported_clone_regions"},
+	"TotalAutoBackupStorageSizeGbs": ubx.FieldSpec{WireName: "total_auto_backup_storage_size_gbs"},
+	"UsedDataStorageSizeTbs":        ubx.FieldSpec{WireName: "used_data_storage_size_tbs"},
+	"VaultId":                       ubx.FieldSpec{WireName: "vault_id"},
+}
 
 var AutonomousDatabase_SourceConfigFields = ubx.FieldMap{
-		"AutoRefreshFrequencySeconds": ubx.FieldSpec{WireName: "auto_refresh_frequency_seconds"},
-		"AutoRefreshPointLagSeconds": ubx.FieldSpec{WireName: "auto_refresh_point_lag_seconds"},
-		"AutoRefreshStartTime": ubx.FieldSpec{WireName: "auto_refresh_start_time"},
-		"AutomaticBackupsReplicationEnabled": ubx.FieldSpec{WireName: "automatic_backups_replication_enabled"},
-		"AutonomousDatabase": ubx.FieldSpec{WireName: "autonomous_database"},
-		"AutonomousDatabaseBackup": ubx.FieldSpec{WireName: "autonomous_database_backup"},
-		"BackupTime": ubx.FieldSpec{WireName: "backup_time"},
-		"CloneType": ubx.FieldSpec{WireName: "clone_type"},
-		"RefreshableMode": ubx.FieldSpec{WireName: "refreshable_mode"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"UseLatestAvailableBackup": ubx.FieldSpec{WireName: "use_latest_available_backup"},
-	}
+	"AutoRefreshFrequencySeconds":        ubx.FieldSpec{WireName: "auto_refresh_frequency_seconds"},
+	"AutoRefreshPointLagSeconds":         ubx.FieldSpec{WireName: "auto_refresh_point_lag_seconds"},
+	"AutoRefreshStartTime":               ubx.FieldSpec{WireName: "auto_refresh_start_time"},
+	"AutomaticBackupsReplicationEnabled": ubx.FieldSpec{WireName: "automatic_backups_replication_enabled"},
+	"AutonomousDatabase":                 ubx.FieldSpec{WireName: "autonomous_database"},
+	"AutonomousDatabaseBackup":           ubx.FieldSpec{WireName: "autonomous_database_backup"},
+	"BackupTime":                         ubx.FieldSpec{WireName: "backup_time"},
+	"CloneType":                          ubx.FieldSpec{WireName: "clone_type"},
+	"RefreshableMode":                    ubx.FieldSpec{WireName: "refreshable_mode"},
+	"SourceType":                         ubx.FieldSpec{WireName: "source_type"},
+	"UseLatestAvailableBackup":           ubx.FieldSpec{WireName: "use_latest_available_backup"},
+}
 
 type AutonomousDatabaseConfig struct {
 	// Optional. Immutable. The password for the default ADMIN user. Note: Only one of `admin_password_secret_version` or `admin_password` can be populated.
@@ -487,16 +487,10 @@ type AutonomousDatabaseConfig struct {
 	AdminPasswordSecretVersion any
 	// Optional. Immutable. The subnet CIDR range for the Autonomous Database.
 	Cidr any
-	// Output only. The date and time that the Autonomous Database was created.
-	CreateTime any
 	// Optional. Immutable. The name of the Autonomous Database. The database name must be unique in the project. The name must begin with a letter and can contain a maximum of 30 alphanumeric characters.
 	Database any
-	// Output only. List of supported GCP region to clone the Autonomous Database for disaster recovery. Format: `project/{project}/locations/{location}`.
-	DisasterRecoverySupportedLocations any
 	// Optional. Immutable. The display name for the Autonomous Database. The name does not have to be unique within your project.
 	DisplayName any
-	// Output only. The ID of the subscription entitlement associated with the Autonomous Database.
-	EntitlementId any
 	// Optional. The labels or tags associated with the Autonomous Database.
 	Labels any
 	// Identifier. The name of the Autonomous Database resource in the following format: projects/{project}/locations/{region}/autonomousDatabases/{autonomous_database}
@@ -507,8 +501,6 @@ type AutonomousDatabaseConfig struct {
 	OdbNetwork any
 	// Optional. Immutable. The name of the OdbSubnet associated with the Autonomous Database. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
 	OdbSubnet any
-	// Output only. The peer Autonomous Database names of the given Autonomous Database.
-	PeerAutonomousDatabases any
 	// The properties of an Autonomous Database.
 	Properties any
 	// The source configuration for the standby Autonomous Database.
@@ -553,29 +545,25 @@ type AutonomousDatabaseAttrs struct {
 var AutonomousDatabase = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_autonomous_database",
 	Fields: ubx.FieldMap{
-		"AdminPassword": ubx.FieldSpec{WireName: "admin_password"},
+		"AdminPassword":              ubx.FieldSpec{WireName: "admin_password"},
 		"AdminPasswordSecretVersion": ubx.FieldSpec{WireName: "admin_password_secret_version"},
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DisasterRecoverySupportedLocations": ubx.FieldSpec{WireName: "disaster_recovery_supported_locations"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
-		"PeerAutonomousDatabases": ubx.FieldSpec{WireName: "peer_autonomous_databases"},
+		"Cidr":                       ubx.FieldSpec{WireName: "cidr"},
+		"Database":                   ubx.FieldSpec{WireName: "database"},
+		"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
+		"Labels":                     ubx.FieldSpec{WireName: "labels"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"Network":                    ubx.FieldSpec{WireName: "network"},
+		"OdbNetwork":                 ubx.FieldSpec{WireName: "odb_network"},
+		"OdbSubnet":                  ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: AutonomousDatabase_PropertiesFields,
+			Kind:     "object",
+			Fields:   AutonomousDatabase_PropertiesFields,
 		},
 		"SourceConfig": ubx.FieldSpec{
 			WireName: "source_config",
-			Kind: "object",
-			Fields: AutonomousDatabase_SourceConfigFields,
+			Kind:     "object",
+			Fields:   AutonomousDatabase_SourceConfigFields,
 		},
 	},
 }

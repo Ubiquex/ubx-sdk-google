@@ -360,8 +360,6 @@ const EndUserAuthentication_StatusFields: FieldMap = {
 export interface EndUserAuthenticationConfig {
   /** Optional. Config variables for the EndUserAuthentication. */
   configVariables?: EndUserAuthentication_ConfigVariables[] | Computed<EndUserAuthentication_ConfigVariables[]>;
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Destination configs for the EndUserAuthentication. */
   destinationConfigs?: EndUserAuthentication_DestinationConfigs[] | Computed<EndUserAuthentication_DestinationConfigs[]>;
   /** EndUserAuthenticationConfig defines details of a authentication configuration for EUC */
@@ -376,8 +374,6 @@ export interface EndUserAuthenticationConfig {
   roles?: string[] | Computed<string[]>;
   /** EndUserAuthentication Status denotes the status of the EndUserAuthentication resource. */
   status?: EndUserAuthentication_Status | Computed<EndUserAuthentication_Status>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
   /** Optional. The user id of the user. */
   userId?: string | Computed<string>;
 }
@@ -415,7 +411,6 @@ export const EndUserAuthentication: ResourceBinding<EndUserAuthenticationConfig,
       kind: "list",
       fields: EndUserAuthentication_ConfigVariablesFields,
     },
-    createTime: "create_time",
     destinationConfigs: {
       wireName: "destination_configs",
       kind: "list",
@@ -439,7 +434,6 @@ export const EndUserAuthentication: ResourceBinding<EndUserAuthenticationConfig,
       kind: "object",
       fields: EndUserAuthentication_StatusFields,
     },
-    updateTime: "update_time",
     userId: "user_id",
   },
 };

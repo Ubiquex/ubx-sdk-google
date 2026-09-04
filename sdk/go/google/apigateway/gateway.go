@@ -6,20 +6,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GatewayConfig struct {
 	// Required. Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig}
 	ApiConfig any
-	// Output only. Created time.
-	CreateTime any
-	// Output only. The default API Gateway host name of the form `{gateway_id}-{hash}.{region_code}.gateway.dev`.
-	DefaultHostname any
 	// Optional. Display name.
 	DisplayName any
 	// Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
 	Labels any
-	// Output only. Resource name of the Gateway. Format: projects/{project}/locations/{location}/gateways/{gateway}
-	Name any
-	// Output only. The current state of the Gateway.
-	State any
-	// Output only. Updated time.
-	UpdateTime any
 }
 
 type GatewayAttrs struct {
@@ -44,13 +34,8 @@ type GatewayAttrs struct {
 var Gateway = ubx.ResourceBinding{
 	WireType: "google_apigateway_gateway",
 	Fields: ubx.FieldMap{
-		"ApiConfig": ubx.FieldSpec{WireName: "api_config"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DefaultHostname": ubx.FieldSpec{WireName: "default_hostname"},
+		"ApiConfig":   ubx.FieldSpec{WireName: "api_config"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 	},
 }

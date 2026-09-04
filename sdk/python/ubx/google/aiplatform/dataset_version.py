@@ -8,26 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatasetVersionConfig:
-    # Output only. Name of the associated BigQuery dataset.
-    big_query_dataset_name: Any = None
-    # Output only. Timestamp when this DatasetVersion was created.
-    create_time: Any = None
     # The user-defined name of the DatasetVersion. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
     etag: Any = None
-    # Required. Output only. Additional information about the DatasetVersion.
-    metadata: Any = None
-    # Output only. Reference to the public base model last used by the dataset version. Only set for prompt dataset versions.
-    model_reference: Any = None
-    # Output only. Identifier. The resource name of the DatasetVersion. Format: `projects/{project}/locations/{location}/datasets/{dataset}/datasetVersions/{dataset_version}`
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this DatasetVersion was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DatasetVersionAttrs:
@@ -55,15 +39,7 @@ class DatasetVersionAttrs:
 DatasetVersion = ubx.ResourceBinding(
     wire_type="google_aiplatform_dataset_version",
     fields={
-        "big_query_dataset_name": ubx.FieldSpec(wire_name="big_query_dataset_name"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "metadata": ubx.FieldSpec(wire_name="metadata"),
-        "model_reference": ubx.FieldSpec(wire_name="model_reference"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

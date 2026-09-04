@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Consent_Policies_AuthorizationRule struct {
 	Description any
-	Expression any
-	Location any
-	Title any
+	Expression  any
+	Location    any
+	Title       any
 }
 
 type V1beta1Consent_Policies_ResourceAttributes struct {
 	AttributeDefinitionId any
-	Values any
+	Values                any
 }
 
 type V1beta1Consent_Policies struct {
-	AuthorizationRule any
+	AuthorizationRule  any
 	ResourceAttributes any
 }
 
 var V1beta1Consent_Policies_AuthorizationRuleFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var V1beta1Consent_Policies_ResourceAttributesFields = ubx.FieldMap{
-		"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
+	"Values":                ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Consent_PoliciesFields = ubx.FieldMap{
-		"AuthorizationRule": ubx.FieldSpec{
-			WireName: "authorization_rule",
-			Kind: "object",
-			Fields: V1beta1Consent_Policies_AuthorizationRuleFields,
-		},
-		"ResourceAttributes": ubx.FieldSpec{
-			WireName: "resource_attributes",
-			Kind: "list",
-			Fields: V1beta1Consent_Policies_ResourceAttributesFields,
-		},
-	}
+	"AuthorizationRule": ubx.FieldSpec{
+		WireName: "authorization_rule",
+		Kind:     "object",
+		Fields:   V1beta1Consent_Policies_AuthorizationRuleFields,
+	},
+	"ResourceAttributes": ubx.FieldSpec{
+		WireName: "resource_attributes",
+		Kind:     "list",
+		Fields:   V1beta1Consent_Policies_ResourceAttributesFields,
+	},
+}
 
 type V1beta1ConsentConfig struct {
 	// Required. The resource name of the Consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
@@ -56,10 +56,6 @@ type V1beta1ConsentConfig struct {
 	Name any
 	// Optional. Represents a user's consent in terms of the resources that can be accessed and under what conditions.
 	Policies any
-	// Output only. The timestamp that the revision was created.
-	RevisionCreateTime any
-	// Output only. The revision ID of the Consent. The format is an 8-character hexadecimal string. Refer to a specific revision of a Consent by appending `@{revision_id}` to the Consent's resource name.
-	RevisionId any
 	// Required. Indicates the current state of this Consent.
 	State any
 	// Input only. The time to live for this Consent from when it is created.
@@ -95,18 +91,16 @@ var V1beta1Consent = ubx.ResourceBinding{
 	WireType: "google_healthcare_v1beta1_consent",
 	Fields: ubx.FieldMap{
 		"ConsentArtifact": ubx.FieldSpec{WireName: "consent_artifact"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ExpireTime":      ubx.FieldSpec{WireName: "expire_time"},
+		"Metadata":        ubx.FieldSpec{WireName: "metadata"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: V1beta1Consent_PoliciesFields,
+			Kind:     "list",
+			Fields:   V1beta1Consent_PoliciesFields,
 		},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"State":  ubx.FieldSpec{WireName: "state"},
+		"Ttl":    ubx.FieldSpec{WireName: "ttl"},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

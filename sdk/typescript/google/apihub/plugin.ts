@@ -196,8 +196,6 @@ export interface PluginConfig {
   actionsConfig?: Plugin_ActionsConfig[] | Computed<Plugin_ActionsConfig[]>;
   /** ConfigTemplate represents the configuration template for a plugin. */
   configTemplate?: Plugin_ConfigTemplate | Computed<Plugin_ConfigTemplate>;
-  /** Output only. Timestamp indicating when the plugin was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The plugin description. Max length is 2000 characters (Unicode code points). */
   description?: string | Computed<string>;
   /** Required. The display name of the plugin. Max length is 50 characters (Unicode code points). */
@@ -210,16 +208,10 @@ export interface PluginConfig {
   hostingService?: Plugin_HostingService | Computed<Plugin_HostingService>;
   /** Identifier. The name of the plugin. Format: `projects/{project}/locations/{location}/plugins/{plugin}` */
   name?: string | Computed<string>;
-  /** Output only. The type of the plugin, indicating whether it is 'SYSTEM_OWNED' or 'USER_OWNED'. */
-  ownershipType?: string | Computed<string>;
   /** Optional. The category of the plugin, identifying its primary category or purpose. This field is required for all plugins. */
   pluginCategory?: string | Computed<string>;
-  /** Output only. Represents the state of the plugin. Note this field will not be set for plugins developed via plugin framework as the state will be managed at plugin instance level. */
-  state?: string | Computed<string>;
   /** The attribute values associated with resource. */
   type?: Plugin_Type | Computed<Plugin_Type>;
-  /** Output only. Timestamp indicating when the plugin was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PluginAttrs {
@@ -266,7 +258,6 @@ export const Plugin: ResourceBinding<PluginConfig, PluginAttrs> = {
       kind: "object",
       fields: Plugin_ConfigTemplateFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     documentation: {
@@ -281,14 +272,11 @@ export const Plugin: ResourceBinding<PluginConfig, PluginAttrs> = {
       fields: Plugin_HostingServiceFields,
     },
     name: "name",
-    ownershipType: "ownership_type",
     pluginCategory: "plugin_category",
-    state: "state",
     type: {
       wireName: "type",
       kind: "object",
       fields: Plugin_TypeFields,
     },
-    updateTime: "update_time",
   },
 };

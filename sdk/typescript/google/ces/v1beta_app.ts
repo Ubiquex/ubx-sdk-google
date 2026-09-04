@@ -771,6 +771,10 @@ const V1betaApp_ModelSettingsFields: FieldMap = {
   temperature: "temperature",
 };
 
+const V1betaApp_TimeZoneSettingsFields: FieldMap = {
+  timeZone: "time_zone",
+};
+
 const V1betaApp_PredefinedVariableDeclarations_SchemaFields: FieldMap = {
   additionalProperties: "additional_properties",
   anyOf: "any_of",
@@ -803,10 +807,6 @@ const V1betaApp_PredefinedVariableDeclarationsFields: FieldMap = {
   },
 };
 
-const V1betaApp_TimeZoneSettingsFields: FieldMap = {
-  timeZone: "time_zone",
-};
-
 const V1betaApp_VpcScSettingsFields: FieldMap = {
   allowedOrigins: "allowed_origins",
 };
@@ -816,22 +816,16 @@ export interface V1betaAppConfig {
   audioProcessingConfig?: V1betaApp_AudioProcessingConfig | Computed<V1betaApp_AudioProcessingConfig>;
   /** Settings for custom client certificates. */
   clientCertificateSettings?: V1betaApp_ClientCertificateSettings | Computed<V1betaApp_ClientCertificateSettings>;
-  /** Output only. Timestamp when the app was created. */
-  createTime?: string | Computed<string>;
   /** Data store related settings for the app. */
   dataStoreSettings?: V1betaApp_DataStoreSettings | Computed<V1betaApp_DataStoreSettings>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
   defaultChannelProfile?: V1betaApp_DefaultChannelProfile | Computed<V1betaApp_DefaultChannelProfile>;
-  /** Output only. Number of deployments in the app. */
-  deploymentCount?: number | Computed<number>;
   /** Optional. Human-readable description of the app. */
   description?: string | Computed<string>;
   /** Required. Display name of the app. */
   displayName?: string | Computed<string>;
   /** Settings to describe how errors should be handled in the app. */
   errorHandlingSettings?: V1betaApp_ErrorHandlingSettings | Computed<V1betaApp_ErrorHandlingSettings>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Threshold settings for metrics in an Evaluation. */
   evaluationMetricsThresholds?: V1betaApp_EvaluationMetricsThresholds | Computed<V1betaApp_EvaluationMetricsThresholds>;
   /** Optional. The evaluation personas for the app. This field is used to define the personas that can be used for evaluation. Maximum of 30 personas can be defined. */
@@ -856,18 +850,12 @@ export interface V1betaAppConfig {
   name?: string | Computed<string>;
   /** Optional. Whether the app is pinned in the app list. */
   pinned?: boolean | Computed<boolean>;
-  /** Output only. The declarations of predefined variables for the app. */
-  predefinedVariableDeclarations?: V1betaApp_PredefinedVariableDeclarations[] | Computed<V1betaApp_PredefinedVariableDeclarations[]>;
   /** Optional. The root agent is the entry point of the app. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}` */
   rootAgent?: string | Computed<string>;
   /** TimeZone settings of the app. */
   timeZoneSettings?: V1betaApp_TimeZoneSettings | Computed<V1betaApp_TimeZoneSettings>;
   /** Optional. The tool execution mode for the app. If not provided, will default to PARALLEL. */
   toolExecutionMode?: string | Computed<string>;
-  /** Output only. Timestamp when the app was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. Misconfigurations or warnings in the app. */
-  validationErrors?: string[] | Computed<string[]>;
   /** Optional. The declarations of the variables. */
   variableDeclarations?: V1betaApp_PredefinedVariableDeclarations[] | Computed<V1betaApp_PredefinedVariableDeclarations[]>;
   /** VPC-SC settings for the app. */
@@ -950,7 +938,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
       kind: "object",
       fields: V1betaApp_ClientCertificateSettingsFields,
     },
-    createTime: "create_time",
     dataStoreSettings: {
       wireName: "data_store_settings",
       kind: "object",
@@ -961,7 +948,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
       kind: "object",
       fields: V1betaApp_DefaultChannelProfileFields,
     },
-    deploymentCount: "deployment_count",
     description: "description",
     displayName: "display_name",
     errorHandlingSettings: {
@@ -969,7 +955,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
       kind: "object",
       fields: V1betaApp_ErrorHandlingSettingsFields,
     },
-    etag: "etag",
     evaluationMetricsThresholds: {
       wireName: "evaluation_metrics_thresholds",
       kind: "object",
@@ -1006,11 +991,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
     },
     name: "name",
     pinned: "pinned",
-    predefinedVariableDeclarations: {
-      wireName: "predefined_variable_declarations",
-      kind: "list",
-      fields: V1betaApp_PredefinedVariableDeclarationsFields,
-    },
     rootAgent: "root_agent",
     timeZoneSettings: {
       wireName: "time_zone_settings",
@@ -1018,8 +998,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
       fields: V1betaApp_TimeZoneSettingsFields,
     },
     toolExecutionMode: "tool_execution_mode",
-    updateTime: "update_time",
-    validationErrors: "validation_errors",
     variableDeclarations: {
       wireName: "variable_declarations",
       kind: "list",

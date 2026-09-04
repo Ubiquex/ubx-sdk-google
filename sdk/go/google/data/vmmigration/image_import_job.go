@@ -15,7 +15,7 @@ type ImageImportJob_DiskImageTargetDetails_Encryption struct {
 
 type ImageImportJob_DiskImageTargetDetails_OsAdaptationParameters_AdaptationModifiers struct {
 	Modifier any
-	Value any
+	Value    any
 }
 
 type ImageImportJob_DiskImageTargetDetails_OsAdaptationParameters struct {
@@ -53,7 +53,7 @@ type ImageImportJob_DiskImageTargetDetails struct {
 }
 
 type ImageImportJob_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -64,11 +64,11 @@ type ImageImportJob_MachineImageTargetDetails_MachineImageParametersOverrides st
 }
 
 type ImageImportJob_MachineImageTargetDetails_NetworkInterfaces struct {
-	ExternalIp any
-	InternalIp any
-	Network any
+	ExternalIp  any
+	InternalIp  any
+	Network     any
 	NetworkTier any
-	Subnetwork any
+	Subnetwork  any
 }
 
 type ImageImportJob_MachineImageTargetDetails_ServiceAccount struct {
@@ -119,34 +119,33 @@ type ImageImportJob_MachineImageTargetDetails struct {
 }
 
 type ImageImportJob_Steps struct {
-	AdaptingOs any
-	CreatingImage any
-	EndTime any
-	Initializing any
+	AdaptingOs         any
+	CreatingImage      any
+	EndTime            any
+	Initializing       any
 	LoadingSourceFiles any
-	StartTime any
+	StartTime          any
 }
 
 type ImageImportJob_Warnings_ActionItem struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type ImageImportJob_Warnings_HelpLinks struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type ImageImportJob_Warnings struct {
-	ActionItem any
-	Code any
-	HelpLinks any
+	ActionItem     any
+	Code           any
+	HelpLinks      any
 	WarningMessage any
-	WarningTime any
+	WarningTime    any
 }
 
 type ImageImportJobConfig struct {
-	Name any
 }
 
 type ImageImportJobAttrs struct {
@@ -164,7 +163,7 @@ type ImageImportJobAttrs struct {
 	Errors any
 	// The target details of the machine image resource that will be created by the image import job.
 	MachineImageTargetDetails any
-	Name any
+	Name                      any
 	// Output only. The state of the image import.
 	State any
 	// Output only. The image import steps list representing its progress.
@@ -175,7 +174,5 @@ type ImageImportJobAttrs struct {
 
 var ImageImportJob = ubx.DataSourceBinding{
 	WireType: "google_vmmigration_image_import_job",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

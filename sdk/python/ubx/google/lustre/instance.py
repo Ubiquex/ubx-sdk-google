@@ -151,8 +151,6 @@ class InstanceConfig:
     access_rules_options: Any = None
     # Required. The storage capacity of the instance in gibibytes (GiB). Allowed values depend on the `perUnitStorageThroughput`. See [Performance tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers) for specific minimums, maximums, and step sizes for each performance tier.
     capacity_gib: Any = None
-    # Output only. Timestamp when the instance was created.
-    create_time: Any = None
     # Optional. A user-readable description of the instance.
     description: Any = None
     # Dynamic tier options for a Managed Lustre instance.
@@ -167,8 +165,6 @@ class InstanceConfig:
     labels: Any = None
     # Defines a maintenance policy for a resource.
     maintenance_policy: Any = None
-    # Output only. Mount point of the instance in the format `IP_ADDRESS@tcp:/FILESYSTEM`.
-    mount_point: Any = None
     # Identifier. The name of the instance.
     name: Any = None
     # Required. Immutable. The full name of the VPC network to which the instance is connected. Must be in the format `projects/{project_id}/global/networks/{network_name}`.
@@ -177,16 +173,8 @@ class InstanceConfig:
     per_unit_storage_throughput: Any = None
     # Optional. The placement policy name for the instance in the format of projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
     placement_policy: Any = None
-    # Output only. The state of the instance.
-    state: Any = None
-    # Output only. The reason why the instance is in a certain state (e.g. SUSPENDED).
-    state_reason: Any = None
-    # Output only. Unique ID of the resource. This is unrelated to the access rules which allow specifying the root squash uid.
-    uid: Any = None
     # Represents a scheduled maintenance event.
     upcoming_maintenance_schedule: Any = None
-    # Output only. Timestamp when the instance was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
@@ -240,7 +228,6 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_AccessRulesOptionsFields,
         ),
         "capacity_gib": ubx.FieldSpec(wire_name="capacity_gib"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "dynamic_tier_options": ubx.FieldSpec(
             wire_name="dynamic_tier_options",
@@ -256,19 +243,14 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_MaintenancePolicyFields,
         ),
-        "mount_point": ubx.FieldSpec(wire_name="mount_point"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "per_unit_storage_throughput": ubx.FieldSpec(wire_name="per_unit_storage_throughput"),
         "placement_policy": ubx.FieldSpec(wire_name="placement_policy"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_reason": ubx.FieldSpec(wire_name="state_reason"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
         "upcoming_maintenance_schedule": ubx.FieldSpec(
             wire_name="upcoming_maintenance_schedule",
             kind="object",
             fields=_Instance_UpcomingMaintenanceScheduleFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

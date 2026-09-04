@@ -86,115 +86,105 @@ type RagCorpora_VertexAiSearchConfig struct {
 }
 
 var RagCorpora_CorpusStatusFields = ubx.FieldMap{
-		"ErrorStatus": ubx.FieldSpec{WireName: "error_status"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorStatus": ubx.FieldSpec{WireName: "error_status"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var RagCorpora_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var RagCorpora_VectorDbConfig_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var RagCorpora_VectorDbConfig_ApiAuthFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_ApiAuth_ApiKeyConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_ApiAuth_ApiKeyConfigFields,
+	},
+}
 
 var RagCorpora_VectorDbConfig_PineconeFields = ubx.FieldMap{
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-	}
+	"IndexName": ubx.FieldSpec{WireName: "index_name"},
+}
 
 var RagCorpora_VectorDbConfig_RagEmbeddingModelConfig_VertexPredictionEndpointFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-	}
+	"Endpoint":       ubx.FieldSpec{WireName: "endpoint"},
+	"Model":          ubx.FieldSpec{WireName: "model"},
+	"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
+}
 
 var RagCorpora_VectorDbConfig_RagEmbeddingModelConfigFields = ubx.FieldMap{
-		"VertexPredictionEndpoint": ubx.FieldSpec{
-			WireName: "vertex_prediction_endpoint",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_RagEmbeddingModelConfig_VertexPredictionEndpointFields,
-		},
-	}
+	"VertexPredictionEndpoint": ubx.FieldSpec{
+		WireName: "vertex_prediction_endpoint",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_RagEmbeddingModelConfig_VertexPredictionEndpointFields,
+	},
+}
 
 var RagCorpora_VectorDbConfig_RagManagedDb_AnnFields = ubx.FieldMap{
-		"LeafCount": ubx.FieldSpec{WireName: "leaf_count"},
-		"TreeDepth": ubx.FieldSpec{WireName: "tree_depth"},
-	}
+	"LeafCount": ubx.FieldSpec{WireName: "leaf_count"},
+	"TreeDepth": ubx.FieldSpec{WireName: "tree_depth"},
+}
 
 var RagCorpora_VectorDbConfig_RagManagedDbFields = ubx.FieldMap{
-		"Ann": ubx.FieldSpec{
-			WireName: "ann",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_RagManagedDb_AnnFields,
-		},
-		"Knn": ubx.FieldSpec{WireName: "knn"},
-	}
+	"Ann": ubx.FieldSpec{
+		WireName: "ann",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_RagManagedDb_AnnFields,
+	},
+	"Knn": ubx.FieldSpec{WireName: "knn"},
+}
 
 var RagCorpora_VectorDbConfig_VertexVectorSearchFields = ubx.FieldMap{
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"IndexEndpoint": ubx.FieldSpec{WireName: "index_endpoint"},
-	}
+	"Index":         ubx.FieldSpec{WireName: "index"},
+	"IndexEndpoint": ubx.FieldSpec{WireName: "index_endpoint"},
+}
 
 var RagCorpora_VectorDbConfigFields = ubx.FieldMap{
-		"ApiAuth": ubx.FieldSpec{
-			WireName: "api_auth",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_ApiAuthFields,
-		},
-		"Pinecone": ubx.FieldSpec{
-			WireName: "pinecone",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_PineconeFields,
-		},
-		"RagEmbeddingModelConfig": ubx.FieldSpec{
-			WireName: "rag_embedding_model_config",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_RagEmbeddingModelConfigFields,
-		},
-		"RagManagedDb": ubx.FieldSpec{
-			WireName: "rag_managed_db",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_RagManagedDbFields,
-		},
-		"VertexVectorSearch": ubx.FieldSpec{
-			WireName: "vertex_vector_search",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfig_VertexVectorSearchFields,
-		},
-	}
+	"ApiAuth": ubx.FieldSpec{
+		WireName: "api_auth",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_ApiAuthFields,
+	},
+	"Pinecone": ubx.FieldSpec{
+		WireName: "pinecone",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_PineconeFields,
+	},
+	"RagEmbeddingModelConfig": ubx.FieldSpec{
+		WireName: "rag_embedding_model_config",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_RagEmbeddingModelConfigFields,
+	},
+	"RagManagedDb": ubx.FieldSpec{
+		WireName: "rag_managed_db",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_RagManagedDbFields,
+	},
+	"VertexVectorSearch": ubx.FieldSpec{
+		WireName: "vertex_vector_search",
+		Kind:     "object",
+		Fields:   RagCorpora_VectorDbConfig_VertexVectorSearchFields,
+	},
+}
 
 var RagCorpora_VertexAiSearchConfigFields = ubx.FieldMap{
-		"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
-	}
+	"ServingConfig": ubx.FieldSpec{WireName: "serving_config"},
+}
 
 type RagCorporaConfig struct {
 	// RagCorpus status.
 	CorpusStatus any
-	// Output only. Timestamp when this RagCorpus was created.
-	CreateTime any
 	// Optional. The description of the RagCorpus.
 	Description any
 	// Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. The resource name of the RagCorpus.
-	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Timestamp when this RagCorpus was last updated.
-	UpdateTime any
 	// Config for the Vector DB to use for RAG.
 	VectorDbConfig any
 	// Config for the Vertex AI Search.
@@ -231,30 +221,25 @@ var RagCorpora = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CorpusStatus": ubx.FieldSpec{
 			WireName: "corpus_status",
-			Kind: "object",
-			Fields: RagCorpora_CorpusStatusFields,
+			Kind:     "object",
+			Fields:   RagCorpora_CorpusStatusFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: RagCorpora_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   RagCorpora_EncryptionSpecFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VectorDbConfig": ubx.FieldSpec{
 			WireName: "vector_db_config",
-			Kind: "object",
-			Fields: RagCorpora_VectorDbConfigFields,
+			Kind:     "object",
+			Fields:   RagCorpora_VectorDbConfigFields,
 		},
 		"VertexAiSearchConfig": ubx.FieldSpec{
 			WireName: "vertex_ai_search_config",
-			Kind: "object",
-			Fields: RagCorpora_VertexAiSearchConfigFields,
+			Kind:     "object",
+			Fields:   RagCorpora_VertexAiSearchConfigFields,
 		},
 	},
 }

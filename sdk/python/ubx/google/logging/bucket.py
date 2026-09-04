@@ -42,24 +42,16 @@ class BucketConfig:
     analytics_enabled: Any = None
     # Describes the customer-managed encryption key (CMEK) settings associated with a project, folder, organization, billing account, or flexible resource.Note: CMEK for the Log Router can currently only be configured for Google Cloud organizations. Once configured, it applies to all projects and folders in the Google Cloud organization.See Configure CMEK for Cloud Logging (https://docs.cloud.google.com/logging/docs/routing/managed-encryption) for more information.
     cmek_settings: Any = None
-    # Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
-    create_time: Any = None
     # Optional. Describes this bucket.
     description: Any = None
     # Optional. A list of indexed fields and related configuration data.
     index_configs: Any = None
-    # Output only. The bucket lifecycle state.
-    lifecycle_state: Any = None
     # Optional. Whether the bucket is locked.The retention period on a locked bucket cannot be changed. Locked buckets may only be deleted if they are empty.
     locked: Any = None
-    # Output only. The resource name of the bucket.For example:projects/my-project/locations/global/buckets/my-bucketFor a list of supported locations, see Supported Regions (https://docs.cloud.google.com/logging/docs/region-support)For the location of global it is unspecified where log entries are actually stored.After a bucket has been created, the location cannot be changed.
-    name: Any = None
     # Optional. Log entry field paths that are denied access in this bucket.The following fields and their children are eligible: textPayload, jsonPayload, protoPayload, httpRequest, labels, sourceLocation.Restricting a repeated field will restrict all values. Adding a parent will block all child fields. (e.g. foo.bar will block foo.bar.baz)
     restricted_fields: Any = None
     # Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
     retention_days: Any = None
-    # Output only. The last update timestamp of the bucket.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BucketAttrs:
@@ -95,18 +87,14 @@ Bucket = ubx.ResourceBinding(
             kind="object",
             fields=_Bucket_CmekSettingsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "index_configs": ubx.FieldSpec(
             wire_name="index_configs",
             kind="list",
             fields=_Bucket_IndexConfigsFields,
         ),
-        "lifecycle_state": ubx.FieldSpec(wire_name="lifecycle_state"),
         "locked": ubx.FieldSpec(wire_name="locked"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "restricted_fields": ubx.FieldSpec(wire_name="restricted_fields"),
         "retention_days": ubx.FieldSpec(wire_name="retention_days"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

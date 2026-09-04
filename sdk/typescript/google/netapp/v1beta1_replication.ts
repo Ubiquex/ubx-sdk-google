@@ -110,38 +110,20 @@ const V1beta1Replication_TransferStatsFields: FieldMap = {
 export interface V1beta1ReplicationConfig {
   /** Optional. Location of the user cluster. */
   clusterLocation?: string | Computed<string>;
-  /** Output only. Replication create time. */
-  createTime?: string | Computed<string>;
   /** A description about this replication relationship. */
   description?: string | Computed<string>;
-  /** Output only. Full name of destination volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}" */
-  destinationVolume?: string | Computed<string>;
   /** DestinationVolumeParameters specify input parameters used for creating destination volume. */
   destinationVolumeParameters?: V1beta1Replication_DestinationVolumeParameters | Computed<V1beta1Replication_DestinationVolumeParameters>;
-  /** Output only. Condition of the relationship. Can be one of the following: - true: The replication relationship is healthy. It has not missed the most recent scheduled transfer. - false: The replication relationship is not healthy. It has missed the most recent scheduled transfer. */
-  healthy?: boolean | Computed<boolean>;
   /** HybridPeeringDetails contains details about the hybrid peering. */
   hybridPeeringDetails?: V1beta1Replication_HybridPeeringDetails | Computed<V1beta1Replication_HybridPeeringDetails>;
-  /** Output only. Type of the hybrid replication. */
-  hybridReplicationType?: string | Computed<string>;
   /** UserCommands contains the commands to be executed by the customer. */
   hybridReplicationUserCommands?: V1beta1Replication_HybridReplicationUserCommands | Computed<V1beta1Replication_HybridReplicationUserCommands>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Indicates the state of mirroring. */
-  mirrorState?: string | Computed<string>;
   /** Identifier. The resource name of the Replication. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/replications/{replication_id}`. */
   name?: string | Computed<string>;
   /** Required. Indicates the schedule for replication. */
   replicationSchedule?: string | Computed<string>;
-  /** Output only. Indicates whether this points to source or destination. */
-  role?: string | Computed<string>;
-  /** Output only. Full name of source volume resource. Example : "projects/{project}/locations/{location}/volumes/{volume_id}" */
-  sourceVolume?: string | Computed<string>;
-  /** Output only. State of the replication. */
-  state?: string | Computed<string>;
-  /** Output only. State details of the replication. */
-  stateDetails?: string | Computed<string>;
   /** TransferStats reports all statistics related to replication transfer. */
   transferStats?: V1beta1Replication_TransferStats | Computed<V1beta1Replication_TransferStats>;
 }
@@ -189,34 +171,25 @@ export const V1beta1Replication: ResourceBinding<V1beta1ReplicationConfig, V1bet
   wireType: "google_netapp_v1beta1_replication",
   fields: {
     clusterLocation: "cluster_location",
-    createTime: "create_time",
     description: "description",
-    destinationVolume: "destination_volume",
     destinationVolumeParameters: {
       wireName: "destination_volume_parameters",
       kind: "object",
       fields: V1beta1Replication_DestinationVolumeParametersFields,
     },
-    healthy: "healthy",
     hybridPeeringDetails: {
       wireName: "hybrid_peering_details",
       kind: "object",
       fields: V1beta1Replication_HybridPeeringDetailsFields,
     },
-    hybridReplicationType: "hybrid_replication_type",
     hybridReplicationUserCommands: {
       wireName: "hybrid_replication_user_commands",
       kind: "object",
       fields: V1beta1Replication_HybridReplicationUserCommandsFields,
     },
     labels: "labels",
-    mirrorState: "mirror_state",
     name: "name",
     replicationSchedule: "replication_schedule",
-    role: "role",
-    sourceVolume: "source_volume",
-    state: "state",
-    stateDetails: "state_details",
     transferStats: {
       wireName: "transfer_stats",
       kind: "object",

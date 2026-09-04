@@ -145,22 +145,12 @@ const ImportJob_ExecutionReportFields: FieldMap = {
 export interface ImportJobConfig {
   /** Required. Reference to a source. */
   assetSource?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was completed. */
-  completeTime?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-friendly display name. Maximum length is 256 characters. */
   displayName?: string | Computed<string>;
   /** A resource that reports result of the import job execution. */
   executionReport?: ImportJob_ExecutionReport | Computed<ImportJob_ExecutionReport>;
   /** Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The full name of the import job. */
-  name?: string | Computed<string>;
-  /** Output only. The state of the import job. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was last updated. */
-  updateTime?: string | Computed<string>;
   /** A resource that aggregates errors across import job files. */
   validationReport?: ImportJob_ExecutionReport_ExecutionErrors | Computed<ImportJob_ExecutionReport_ExecutionErrors>;
 }
@@ -192,8 +182,6 @@ export const ImportJob: ResourceBinding<ImportJobConfig, ImportJobAttrs> = {
   wireType: "google_migrationcenter_import_job",
   fields: {
     assetSource: "asset_source",
-    completeTime: "complete_time",
-    createTime: "create_time",
     displayName: "display_name",
     executionReport: {
       wireName: "execution_report",
@@ -201,9 +189,6 @@ export const ImportJob: ResourceBinding<ImportJobConfig, ImportJobAttrs> = {
       fields: ImportJob_ExecutionReportFields,
     },
     labels: "labels",
-    name: "name",
-    state: "state",
-    updateTime: "update_time",
     validationReport: {
       wireName: "validation_report",
       kind: "object",

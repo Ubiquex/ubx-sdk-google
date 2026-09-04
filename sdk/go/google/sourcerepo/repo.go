@@ -13,22 +13,22 @@ type Repo_MirrorConfig struct {
 }
 
 type Repo_PubsubConfigs struct {
-	MessageFormat any
+	MessageFormat       any
 	ServiceAccountEmail any
-	Topic any
+	Topic               any
 }
 
 var Repo_MirrorConfigFields = ubx.FieldMap{
-		"DeployKeyId": ubx.FieldSpec{WireName: "deploy_key_id"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"WebhookId": ubx.FieldSpec{WireName: "webhook_id"},
-	}
+	"DeployKeyId": ubx.FieldSpec{WireName: "deploy_key_id"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+	"WebhookId":   ubx.FieldSpec{WireName: "webhook_id"},
+}
 
 var Repo_PubsubConfigsFields = ubx.FieldMap{
-		"MessageFormat": ubx.FieldSpec{WireName: "message_format"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"MessageFormat":       ubx.FieldSpec{WireName: "message_format"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"Topic":               ubx.FieldSpec{WireName: "topic"},
+}
 
 type RepoConfig struct {
 	// Configuration to automatically mirror a repository from another hosting service, for example GitHub or Bitbucket.
@@ -61,16 +61,16 @@ var Repo = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"MirrorConfig": ubx.FieldSpec{
 			WireName: "mirror_config",
-			Kind: "object",
-			Fields: Repo_MirrorConfigFields,
+			Kind:     "object",
+			Fields:   Repo_MirrorConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PubsubConfigs": ubx.FieldSpec{
 			WireName: "pubsub_configs",
-			Kind: "map",
-			Fields: Repo_PubsubConfigsFields,
+			Kind:     "map",
+			Fields:   Repo_PubsubConfigsFields,
 		},
 		"Size": ubx.FieldSpec{WireName: "size"},
-		"Url": ubx.FieldSpec{WireName: "url"},
+		"Url":  ubx.FieldSpec{WireName: "url"},
 	},
 }

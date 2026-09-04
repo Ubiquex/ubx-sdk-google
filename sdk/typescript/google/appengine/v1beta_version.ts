@@ -626,14 +626,10 @@ export interface V1betaVersionConfig {
   buildEnvVariables?: Record<string, string> | Computed<Record<string, string>>;
   /** Time that this version was created.@OutputOnly */
   createTime?: string | Computed<string>;
-  /** Output only. Email address of the user who created this version.@OutputOnly */
-  createdBy?: string | Computed<string>;
   /** Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1beta/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set. */
   defaultExpiration?: string | Computed<string>;
   /** Code and application artifacts used to deploy a version to App Engine. */
   deployment?: V1betaVersion_Deployment | Computed<V1betaVersion_Deployment>;
-  /** Output only. Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly */
-  diskUsageBytes?: string | Computed<string>;
   /** Google Cloud Endpoints (https://cloud.google.com/endpoints) configuration. The Endpoints API Service provides tooling for serving Open API and gRPC endpoints via an NGINX proxy. Only valid for App Engine Flexible environment deployments.The fields here refer to the name and configuration ID of a "service" resource in the Service Management API (https://cloud.google.com/service-management/overview). */
   endpointsApiService?: V1betaVersion_EndpointsApiService | Computed<V1betaVersion_EndpointsApiService>;
   /** The entrypoint for the application. */
@@ -664,8 +660,6 @@ export interface V1betaVersionConfig {
   livenessCheck?: V1betaVersion_LivenessCheck | Computed<V1betaVersion_LivenessCheck>;
   /** A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time. */
   manualScaling?: V1betaVersion_ManualScaling | Computed<V1betaVersion_ManualScaling>;
-  /** Output only. Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly */
-  name?: string | Computed<string>;
   /** Extra network settings. Only applicable in the App Engine flexible environment. */
   network?: V1betaVersion_Network | Computed<V1betaVersion_Network>;
   /** Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set. */
@@ -688,8 +682,6 @@ export interface V1betaVersionConfig {
   servingStatus?: string | Computed<string>;
   /** Whether multiple requests can be dispatched to this version at once. */
   threadsafe?: boolean | Computed<boolean>;
-  /** Output only. Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly */
-  versionUrl?: string | Computed<string>;
   /** Whether to deploy this version in a container on a virtual machine. */
   vm?: boolean | Computed<boolean>;
   /** VPC Access settings */
@@ -814,14 +806,12 @@ export const V1betaVersion: ResourceBinding<V1betaVersionConfig, V1betaVersionAt
     betaSettings: "beta_settings",
     buildEnvVariables: "build_env_variables",
     createTime: "create_time",
-    createdBy: "created_by",
     defaultExpiration: "default_expiration",
     deployment: {
       wireName: "deployment",
       kind: "object",
       fields: V1betaVersion_DeploymentFields,
     },
-    diskUsageBytes: "disk_usage_bytes",
     endpointsApiService: {
       wireName: "endpoints_api_service",
       kind: "object",
@@ -873,7 +863,6 @@ export const V1betaVersion: ResourceBinding<V1betaVersionConfig, V1betaVersionAt
       kind: "object",
       fields: V1betaVersion_ManualScalingFields,
     },
-    name: "name",
     network: {
       wireName: "network",
       kind: "object",
@@ -897,7 +886,6 @@ export const V1betaVersion: ResourceBinding<V1betaVersionConfig, V1betaVersionAt
     serviceAccount: "service_account",
     servingStatus: "serving_status",
     threadsafe: "threadsafe",
-    versionUrl: "version_url",
     vm: "vm",
     vpcAccess: {
       wireName: "vpc_access",

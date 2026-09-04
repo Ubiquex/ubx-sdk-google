@@ -22,14 +22,8 @@ const Comment_CreatorFields: FieldMap = {
 export interface CommentConfig {
   /** The full comment body. Maximum of 12800 characters. */
   body?: string | Computed<string>;
-  /** Output only. The time when the comment was created. */
-  createTime?: string | Computed<string>;
   /** An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case. */
   creator?: Comment_Creator | Computed<Comment_Creator>;
-  /** Output only. Identifier. The resource name of the comment. */
-  name?: string | Computed<string>;
-  /** Output only. DEPRECATED. DO NOT USE. A duplicate of the `body` field. This field is only present for legacy reasons. */
-  plainTextBody?: string | Computed<string>;
 }
 
 export interface CommentAttrs {
@@ -49,13 +43,10 @@ export const Comment: ResourceBinding<CommentConfig, CommentAttrs> = {
   wireType: "google_cloudsupport_comment",
   fields: {
     body: "body",
-    createTime: "create_time",
     creator: {
       wireName: "creator",
       kind: "object",
       fields: Comment_CreatorFields,
     },
-    name: "name",
-    plainTextBody: "plain_text_body",
   },
 };

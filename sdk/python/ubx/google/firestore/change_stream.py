@@ -19,8 +19,6 @@ _ChangeStream_CollectionGroupScopeFields = {
 class ChangeStreamConfig:
     # The change stream is scoped to a collection group. Only events associated with the given collection group are visible to the Change Stream. Only a single change stream can be enabled per collection group.
     collection_group_scope: Any = None
-    # Output only. The time the Change Stream was created.
-    create_time: Any = None
     # The change stream is scoped to the entire database. All events in the database are visible to the Change Stream. One Database scope Change Stream is allowed per database.
     database_scope: Any = None
     # Optional. An etag used to determine which version of the configuration is being edited.
@@ -29,10 +27,6 @@ class ChangeStreamConfig:
     name: Any = None
     # Required. The retention period of the change stream. This is the amount of time a change event is available on the change stream. Must be from 1 to 7 days, inclusive. The retention_period must be in day granularity, i.e. it must be a multiple of 24 hours.
     retention_period: Any = None
-    # Output only. The time the Change Stream started recording events.
-    start_time: Any = None
-    # Output only. The time the Change Stream was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ChangeStreamAttrs:
@@ -61,12 +55,9 @@ ChangeStream = ubx.ResourceBinding(
             kind="object",
             fields=_ChangeStream_CollectionGroupScopeFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_scope": ubx.FieldSpec(wire_name="database_scope"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
         "retention_period": ubx.FieldSpec(wire_name="retention_period"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

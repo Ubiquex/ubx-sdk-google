@@ -732,18 +732,12 @@ const Session_TurnsFields: FieldMap = {
 export interface SessionConfig {
   /** Optional. The display name of the session. This field is used to identify the session in the UI. By default, the display name is the first turn query text in the session. */
   displayName?: string | Computed<string>;
-  /** Output only. The time the session finished. */
-  endTime?: string | Computed<string>;
   /** Optional. Whether the session is pinned, pinned session will be displayed on the top of the session list. */
   isPinned?: boolean | Computed<boolean>;
   /** Optional. The labels for the session. Can be set as filter in ListSessionsRequest. */
   labels?: string[] | Computed<string[]>;
   /** Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*` */
   name?: string | Computed<string>;
-  /** Output only. Full resource name of an in-progress AsyncAssist operation for this session, e.g. `projects/* /locations/* /collections/* /engines/* /sessions/* /operations/*`. Set when the operation starts and cleared when it finishes. */
-  pendingAsyncAssistOperationId?: string | Computed<string>;
-  /** Output only. The time the session started. */
-  startTime?: string | Computed<string>;
   /** The state of the session. */
   state?: string | Computed<string>;
   /** Turns. */
@@ -779,12 +773,9 @@ export const Session: ResourceBinding<SessionConfig, SessionAttrs> = {
   wireType: "google_discoveryengine_session",
   fields: {
     displayName: "display_name",
-    endTime: "end_time",
     isPinned: "is_pinned",
     labels: "labels",
     name: "name",
-    pendingAsyncAssistOperationId: "pending_async_assist_operation_id",
-    startTime: "start_time",
     state: "state",
     turns: {
       wireName: "turns",

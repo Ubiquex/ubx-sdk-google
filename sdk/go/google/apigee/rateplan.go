@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Rateplan_ConsumptionPricingRates_Fee struct {
 	CurrencyCode any
-	Nanos any
-	Units any
+	Nanos        any
+	Units        any
 }
 
 type Rateplan_ConsumptionPricingRates struct {
-	End any
-	Fee any
+	End   any
+	Fee   any
 	Start any
 }
 
 type Rateplan_RevenueShareRates struct {
-	End any
+	End             any
 	SharePercentage any
-	Start any
+	Start           any
 }
 
 var Rateplan_ConsumptionPricingRates_FeeFields = ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+	"Nanos":        ubx.FieldSpec{WireName: "nanos"},
+	"Units":        ubx.FieldSpec{WireName: "units"},
+}
 
 var Rateplan_ConsumptionPricingRatesFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Fee": ubx.FieldSpec{
-			WireName: "fee",
-			Kind: "object",
-			Fields: Rateplan_ConsumptionPricingRates_FeeFields,
-		},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End": ubx.FieldSpec{WireName: "end"},
+	"Fee": ubx.FieldSpec{
+		WireName: "fee",
+		Kind:     "object",
+		Fields:   Rateplan_ConsumptionPricingRates_FeeFields,
+	},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Rateplan_RevenueShareRatesFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"SharePercentage": ubx.FieldSpec{WireName: "share_percentage"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":             ubx.FieldSpec{WireName: "end"},
+	"SharePercentage": ubx.FieldSpec{WireName: "share_percentage"},
+	"Start":           ubx.FieldSpec{WireName: "start"},
+}
 
 type RateplanConfig struct {
 	// Name of the API product that the rate plan is associated with.
@@ -52,8 +52,6 @@ type RateplanConfig struct {
 	ConsumptionPricingRates any
 	// Pricing model used for consumption-based charges.
 	ConsumptionPricingType any
-	// Output only. Time that the rate plan was created in milliseconds since epoch.
-	CreatedAt any
 	// Currency to be used for billing. Consists of a three-letter code as defined by the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) standard.
 	CurrencyCode any
 	// Description of the rate plan.
@@ -66,10 +64,6 @@ type RateplanConfig struct {
 	FixedFeeFrequency any
 	// Represents an amount of money with its currency type.
 	FixedRecurringFee any
-	// Output only. Time the rate plan was last modified in milliseconds since epoch.
-	LastModifiedAt any
-	// Output only. Name of the rate plan.
-	Name any
 	// DEPRECATED: This field is no longer supported and will eventually be removed when Apigee Hybrid 1.5/1.6 is no longer supported. Instead, use the `billingType` field inside `DeveloperMonetizationConfig` resource. Flag that specifies the billing account type, prepaid or postpaid.
 	PaymentFundingModel any
 	// Details of the revenue sharing model.
@@ -128,40 +122,37 @@ type RateplanAttrs struct {
 var Rateplan = ubx.ResourceBinding{
 	WireType: "google_apigee_rateplan",
 	Fields: ubx.FieldMap{
-		"Apiproduct": ubx.FieldSpec{WireName: "apiproduct"},
+		"Apiproduct":    ubx.FieldSpec{WireName: "apiproduct"},
 		"BillingPeriod": ubx.FieldSpec{WireName: "billing_period"},
 		"ConsumptionPricingRates": ubx.FieldSpec{
 			WireName: "consumption_pricing_rates",
-			Kind: "list",
-			Fields: Rateplan_ConsumptionPricingRatesFields,
+			Kind:     "list",
+			Fields:   Rateplan_ConsumptionPricingRatesFields,
 		},
 		"ConsumptionPricingType": ubx.FieldSpec{WireName: "consumption_pricing_type"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FixedFeeFrequency": ubx.FieldSpec{WireName: "fixed_fee_frequency"},
+		"CurrencyCode":           ubx.FieldSpec{WireName: "currency_code"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+		"EndTime":                ubx.FieldSpec{WireName: "end_time"},
+		"FixedFeeFrequency":      ubx.FieldSpec{WireName: "fixed_fee_frequency"},
 		"FixedRecurringFee": ubx.FieldSpec{
 			WireName: "fixed_recurring_fee",
-			Kind: "object",
-			Fields: Rateplan_ConsumptionPricingRates_FeeFields,
+			Kind:     "object",
+			Fields:   Rateplan_ConsumptionPricingRates_FeeFields,
 		},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PaymentFundingModel": ubx.FieldSpec{WireName: "payment_funding_model"},
 		"RevenueShareRates": ubx.FieldSpec{
 			WireName: "revenue_share_rates",
-			Kind: "list",
-			Fields: Rateplan_RevenueShareRatesFields,
+			Kind:     "list",
+			Fields:   Rateplan_RevenueShareRatesFields,
 		},
 		"RevenueShareType": ubx.FieldSpec{WireName: "revenue_share_type"},
 		"SetupFee": ubx.FieldSpec{
 			WireName: "setup_fee",
-			Kind: "object",
-			Fields: Rateplan_ConsumptionPricingRates_FeeFields,
+			Kind:     "object",
+			Fields:   Rateplan_ConsumptionPricingRates_FeeFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":     ubx.FieldSpec{WireName: "state"},
 	},
 }

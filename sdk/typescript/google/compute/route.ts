@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Route_AsPaths {
-  /** A list of autonomous system (AS) numbers that form the AS path for the route, ordered according to the path segment type (AS_SEQUENCE or AS_SET). (AI-inferred) */
   asLists?: number[] | Computed<number[]>;
-  /** The type of BGP AS path segment, indicating the ordering and confederation scope of the AS numbers in the segment. Possible values are: AS_SEQUENCE (ordered set of AS numbers), AS_SET (unordered set), AS_CONFED_SEQUENCE (ordered set within a confederation), AS_CONFED_SET (unordered set within a confederation). (AI-inferred) */
   pathSegmentType?: string | Computed<string>;
 }
 
@@ -14,84 +12,39 @@ export interface Route_Params {
 }
 
 export interface Route_Warnings_Data {
-  /** The key of the key-value pair that provides additional information in the warning data. (AI-inferred) */
   key?: string | Computed<string>;
-  /** The value associated with a key in a warning data pair. This provides additional machine-readable details about the warning. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface Route_Warnings {
-  /** A warning code that identifies the type of warning. Possible values include CLEANUP_FAILED, DEPRECATED_RESOURCE_USED, DEPRECATED_TYPE_USED, DISK_SIZE_LARGER_THAN_IMAGE_SIZE, EXPERIMENTAL_TYPE_USED, EXTERNAL_API_WARNING, FIELD_VALUE_OVERRIDEN, INJECTED_KERNELS_DEPRECATED, INVALID_HEALTH_CHECK_FOR_DYNAMIC_WIEGHTED_LB, LARGE_DEPLOYMENT_WARNING, LIST_OVERHEAD_QUOTA_EXCEED, MISSING_TYPE_DEPENDENCY, NEXT_HOP_ADDRESS_NOT_ASSIGNED, NEXT_HOP_CANNOT_IP_FORWARD, NEXT_HOP_INSTANCE_HAS_NO_IPV6_INTERFACE, NEXT_HOP_INSTANCE_NOT_FOUND, NEXT_HOP_INSTANCE_NOT_ON_NETWORK, NEXT_HOP_NOT_RUNNING, NOT_CRITICAL_ERROR, NO_RESULTS_ON_PAGE, PARTIAL_SUCCESS, QUOTA_INFO_UNAVAILABLE, REQUIRED_TOS_AGREEMENT, RESOURCE_IN_USE_BY_OTHER_RESOURCE_WARNING, RESOURCE_NOT_DELETED, SCHEMA_VALIDATION_IGNORED, SINGLE_INSTANCE_PROPERTY_TEMPLATE, UNDECLARED_PROPERTIES, UNREACHABLE. (AI-inferred) */
   code?: string | Computed<string>;
-  /** A list of key-value pairs containing additional details about the warning. Each object in the list has a 'key' and a 'value' field that provide context for the warning message. (AI-inferred) */
   data?: Route_Warnings_Data[] | Computed<Route_Warnings_Data[]>;
-  /** A human-readable warning message describing the issue or condition associated with the route, as returned by the Compute Engine API. (AI-inferred) */
   message?: string | Computed<string>;
 }
-
-const Route_AsPathsFields: FieldMap = {
-  asLists: "as_lists",
-  pathSegmentType: "path_segment_type",
-};
 
 const Route_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const Route_Warnings_DataFields: FieldMap = {
-  key: "key",
-  value: "value",
-};
-
-const Route_WarningsFields: FieldMap = {
-  code: "code",
-  data: {
-    wireName: "data",
-    kind: "list",
-    fields: Route_Warnings_DataFields,
-  },
-  message: "message",
-};
-
 export interface RouteConfig {
-  /** Output only. [Output Only] AS path. */
-  asPaths?: Route_AsPaths[] | Computed<Route_AsPaths[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this field when you create the resource. */
   description?: string | Computed<string>;
   /** The destination range of outgoing packets that this route applies to. Both IPv4 and IPv6 are supported. Must specify an IPv4 range (e.g. 192.0.2.0/24) or an IPv6 range in RFC 4291 format (e.g. 2001:db8::/32). IPv6 range will be displayed using RFC 5952 compressed format. */
   destRange?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of this resource. Always compute#routes for Route resources. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
   name?: string | Computed<string>;
   /** Fully-qualified URL of the network that this route applies to. */
   network?: string | Computed<string>;
   /** The URL to a gateway that should handle matching packets. You can only specify the internet gateway using a full or partial valid URL: projects/project/global/gateways/default-internet-gateway */
   nextHopGateway?: string | Computed<string>;
-  /** Output only. [Output Only] The full resource name of the Network Connectivity Center hub that will handle matching packets. */
-  nextHopHub?: string | Computed<string>;
   /** The URL to a forwarding rule of typeloadBalancingScheme=INTERNAL that should handle matching packets or the IP address of the forwarding Rule. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/regions/region/forwardingRules/forwardingRule - regions/region/forwardingRules/forwardingRule If an IP address is provided, must specify an IPv4 address in dot-decimal notation or an IPv6 address in RFC 4291 format. For example, the following are all valid IP addresses: - 10.128.0.56 - 2001:db8::2d9:51:0:0 - 2001:db8:0:0:2d9:51:0:0 IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address. */
   nextHopIlb?: string | Computed<string>;
   /** The URL to an instance that should handle matching packets. You can specify this as a full or partial URL. For example: https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/ */
   nextHopInstance?: string | Computed<string>;
-  /** Output only. [Output only] Internal fixed region-to-region cost that Google Cloud calculates based on factors such as network performance, distance, and available bandwidth between regions. */
-  nextHopInterRegionCost?: number | Computed<number>;
-  /** Output only. [Output Only] The URL to an InterconnectAttachment which is the next hop for the route. This field will only be populated for dynamic routes generated by Cloud Router with a linked interconnectAttachment or the static route generated by each L2 Interconnect Attachment. */
-  nextHopInterconnectAttachment?: string | Computed<string>;
   /** The network IP address of an instance that should handle matching packets. Both IPv6 address and IPv4 addresses are supported. Must specify an IPv4 address in dot-decimal notation (e.g. 192.0.2.99) or an IPv6 address in RFC 4291 format (e.g. 2001:db8::2d9:51:0:0 or 2001:db8:0:0:2d9:51:0:0). IPv6 addresses will be displayed using RFC 5952 compressed format (e.g. 2001:db8::2d9:51:0:0). Should never be an IPv4-mapped IPv6 address. */
   nextHopIp?: string | Computed<string>;
-  /** Output only. [Output Only] Multi-Exit Discriminator, a BGP route metric that indicates the desirability of a particular route in a network. */
-  nextHopMed?: number | Computed<number>;
   /** The URL of the local network if it should handle matching packets. */
   nextHopNetwork?: string | Computed<string>;
-  /** Output only. [Output Only] Indicates the origin of the route. Can be IGP (Interior Gateway Protocol), EGP (Exterior Gateway Protocol), or INCOMPLETE. */
-  nextHopOrigin?: string | Computed<string>;
-  /** Output only. [Output Only] The network peering name that should handle matching packets, which should conform to RFC1035. */
-  nextHopPeering?: string | Computed<string>;
   /** The URL to a VpnTunnel that should handle matching packets. */
   nextHopVpnTunnel?: string | Computed<string>;
   /** Additional route parameters. */
@@ -100,14 +53,10 @@ export interface RouteConfig {
   priority?: number | Computed<number>;
   /** [Output only] The status of the route. This status applies to dynamic routes learned by Cloud Routers. It is also applicable to routes undergoing migration. */
   routeStatus?: string | Computed<string>;
-  /** Output only. [Output Only] The type of this route, which can be one of the following values: - 'TRANSIT' for a transit route that this router learned from another Cloud Router and will readvertise to one of its BGP peers - 'SUBNET' for a route from a subnet of the VPC - 'BGP' for a route learned from a BGP peer of this router - 'STATIC' for a static route */
-  routeType?: string | Computed<string>;
   /** [Output Only] Server-defined fully-qualified URL for this resource. */
   selfLink?: string | Computed<string>;
   /** A list of instance tags to which this route applies. */
   tags?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] If potential misconfigurations are detected for this route, this field will be populated with warning messages. */
-  warnings?: Route_Warnings[] | Computed<Route_Warnings[]>;
 }
 
 export interface RouteAttrs {
@@ -170,29 +119,15 @@ export interface RouteAttrs {
 export const Route: ResourceBinding<RouteConfig, RouteAttrs> = {
   wireType: "google_compute_route",
   fields: {
-    asPaths: {
-      wireName: "as_paths",
-      kind: "list",
-      fields: Route_AsPathsFields,
-    },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     destRange: "dest_range",
-    id: "id",
-    kind: "kind",
     name: "name",
     network: "network",
     nextHopGateway: "next_hop_gateway",
-    nextHopHub: "next_hop_hub",
     nextHopIlb: "next_hop_ilb",
     nextHopInstance: "next_hop_instance",
-    nextHopInterRegionCost: "next_hop_inter_region_cost",
-    nextHopInterconnectAttachment: "next_hop_interconnect_attachment",
     nextHopIp: "next_hop_ip",
-    nextHopMed: "next_hop_med",
     nextHopNetwork: "next_hop_network",
-    nextHopOrigin: "next_hop_origin",
-    nextHopPeering: "next_hop_peering",
     nextHopVpnTunnel: "next_hop_vpn_tunnel",
     params: {
       wireName: "params",
@@ -201,13 +136,7 @@ export const Route: ResourceBinding<RouteConfig, RouteAttrs> = {
     },
     priority: "priority",
     routeStatus: "route_status",
-    routeType: "route_type",
     selfLink: "self_link",
     tags: "tags",
-    warnings: {
-      wireName: "warnings",
-      kind: "list",
-      fields: Route_WarningsFields,
-    },
   },
 };

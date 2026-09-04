@@ -2,9 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages {
-  /** Percentage of the interconnect's total bandwidth allocated to the associated VLAN attachment. All percentages in the bandwidth_percentages block must sum to 100. (AI-inferred) */
   percentage?: number | Computed<number>;
-  /** The traffic class to which this bandwidth percentage applies. Allowed values are TC1, TC2, TC3, TC4, TC5, and TC6. (AI-inferred) */
   trafficClass?: string | Computed<string>;
 }
 
@@ -14,7 +12,6 @@ export interface Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePo
 }
 
 export interface Interconnect_ApplicationAwareInterconnect {
-  /** The bandwidth_percentage_policy block configures the bandwidth percentage allocation for an application-aware interconnect. (AI-inferred) */
   bandwidthPercentagePolicy?: Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy | Computed<Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy>;
   /** Description for the application awareness profile on this Cloud Interconnect. */
   profileDescription?: string | Computed<string>;
@@ -25,34 +22,24 @@ export interface Interconnect_ApplicationAwareInterconnect {
 }
 
 export interface Interconnect_CircuitInfos {
-  /** The customer-side demarcation ID for the interconnect circuit. (AI-inferred) */
   customerDemarcId?: string | Computed<string>;
   googleCircuitId?: string | Computed<string>;
-  /** The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred) */
   googleDemarcId?: string | Computed<string>;
 }
 
 export interface Interconnect_ExpectedOutages {
-  /** The list of circuit names that are affected by this outage. (AI-inferred) */
   affectedCircuits?: string[] | Computed<string[]>;
   description?: string | Computed<string>;
-  /** The time at which the expected outage is scheduled to end. (AI-inferred) */
   endTime?: string | Computed<string>;
-  /** The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred) */
   issueType?: string | Computed<string>;
   name?: string | Computed<string>;
-  /** The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred) */
   source?: string | Computed<string>;
-  /** The start time of the outage, in RFC3339 format. (AI-inferred) */
   startTime?: string | Computed<string>;
-  /** The current state of the expected outage. Possible values are: ACTIVE, CANCELLED, COMPLETED, NS_ACTIVE, NS_CANCELED. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Interconnect_Macsec_PreSharedKeys {
-  /** A user-defined name for this pre-shared key. Must be unique within the interconnect. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The start time for this pre-shared key, in RFC3339 UTC timestamp format. The key becomes active at this time; if omitted, it becomes active immediately. (AI-inferred) */
   startTime?: string | Computed<string>;
 }
 
@@ -96,23 +83,6 @@ const Interconnect_ApplicationAwareInterconnectFields: FieldMap = {
   strictPriorityPolicy: "strict_priority_policy",
 };
 
-const Interconnect_CircuitInfosFields: FieldMap = {
-  customerDemarcId: "customer_demarc_id",
-  googleCircuitId: "google_circuit_id",
-  googleDemarcId: "google_demarc_id",
-};
-
-const Interconnect_ExpectedOutagesFields: FieldMap = {
-  affectedCircuits: "affected_circuits",
-  description: "description",
-  endTime: "end_time",
-  issueType: "issue_type",
-  name: "name",
-  source: "source",
-  startTime: "start_time",
-  state: "state",
-};
-
 const Interconnect_Macsec_PreSharedKeysFields: FieldMap = {
   name: "name",
   startTime: "start_time",
@@ -140,32 +110,12 @@ export interface InterconnectConfig {
   applicationAwareInterconnect?: Interconnect_ApplicationAwareInterconnect | Computed<Interconnect_ApplicationAwareInterconnect>;
   /** [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If present, then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present, then the Interconnect connection is provisioned on non-MACsec capable ports. Any attempt to enable MACsec will fail. - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is provisioned exclusively for Cross-Site Networking. Any attempt to configure VLAN attachments will fail. If not present, then the Interconnect connection is not provisioned for Cross-Site Networking. Any attempt to use it for Cross-Site Networking will fail. */
   availableFeatures?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG. */
-  circuitInfos?: Interconnect_CircuitInfos[] | Computed<Interconnect_CircuitInfos[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect. */
   customerName?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. URL of the InterconnectLocation object that represents where this connection is to be provisioned. By default it will be the same as the location field. */
-  effectiveLocation?: string | Computed<string>;
-  /** Output only. [Output Only] A list of outages expected for this Interconnect. */
-  expectedOutages?: Interconnect_ExpectedOutages[] | Computed<Interconnect_ExpectedOutages[]>;
-  /** Output only. [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests. */
-  googleIpAddress?: string | Computed<string>;
-  /** Output only. [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. */
-  googleReferenceId?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect. */
-  interconnectAttachments?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique. */
-  interconnectGroups?: string[] | Computed<string[]>;
   /** Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED. */
   interconnectType?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects. */
-  kind?: string | Computed<string>;
   /** A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect. */
   labelFingerprint?: string | Computed<string>;
   /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
@@ -182,32 +132,16 @@ export interface InterconnectConfig {
   name?: string | Computed<string>;
   /** Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation. */
   nocContactEmail?: string | Computed<string>;
-  /** Output only. [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. */
-  operationalStatus?: string | Computed<string>;
   /** Additional interconnect parameters. */
   params?: Interconnect_Params | Computed<Interconnect_Params>;
-  /** Output only. [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests. */
-  peerIpAddress?: string | Computed<string>;
-  /** Output only. [Output Only] Number of links actually provisioned in this interconnect. */
-  provisionedLinkCount?: number | Computed<number>;
   /** Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to. */
   remoteLocation?: string | Computed<string>;
   /** Optional. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If specified, then the connection is created on MACsec capable hardware ports. If not specified, non-MACsec capable ports will also be considered. - IF_CROSS_SITE_NETWORK: If specified, then the connection is created exclusively for Cross-Site Networking. The connection can not be used for Cross-Site Networking unless this feature is specified. */
   requestedFeatures?: string[] | Computed<string[]>;
   /** Target number of physical links in the link bundle, as requested by the customer. */
   requestedLinkCount?: number | Computed<number>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect. */
-  state?: string | Computed<string>;
   /** To be deprecated. */
   subzone?: string | Computed<string>;
-  /** Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups configured to use this Interconnect. The Interconnect cannot be deleted if this list is non-empty. */
-  wireGroups?: string[] | Computed<string[]>;
 }
 
 export interface InterconnectAttrs {
@@ -300,27 +234,9 @@ export const Interconnect: ResourceBinding<InterconnectConfig, InterconnectAttrs
       fields: Interconnect_ApplicationAwareInterconnectFields,
     },
     availableFeatures: "available_features",
-    circuitInfos: {
-      wireName: "circuit_infos",
-      kind: "list",
-      fields: Interconnect_CircuitInfosFields,
-    },
-    creationTimestamp: "creation_timestamp",
     customerName: "customer_name",
     description: "description",
-    effectiveLocation: "effective_location",
-    expectedOutages: {
-      wireName: "expected_outages",
-      kind: "list",
-      fields: Interconnect_ExpectedOutagesFields,
-    },
-    googleIpAddress: "google_ip_address",
-    googleReferenceId: "google_reference_id",
-    id: "id",
-    interconnectAttachments: "interconnect_attachments",
-    interconnectGroups: "interconnect_groups",
     interconnectType: "interconnect_type",
-    kind: "kind",
     labelFingerprint: "label_fingerprint",
     labels: "labels",
     linkType: "link_type",
@@ -333,22 +249,14 @@ export const Interconnect: ResourceBinding<InterconnectConfig, InterconnectAttrs
     macsecEnabled: "macsec_enabled",
     name: "name",
     nocContactEmail: "noc_contact_email",
-    operationalStatus: "operational_status",
     params: {
       wireName: "params",
       kind: "object",
       fields: Interconnect_ParamsFields,
     },
-    peerIpAddress: "peer_ip_address",
-    provisionedLinkCount: "provisioned_link_count",
     remoteLocation: "remote_location",
     requestedFeatures: "requested_features",
     requestedLinkCount: "requested_link_count",
-    satisfiesPzs: "satisfies_pzs",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    state: "state",
     subzone: "subzone",
-    wireGroups: "wire_groups",
   },
 };

@@ -26,10 +26,6 @@ const Attribute_ResourceAccessSpecFields: FieldMap = {
 };
 
 export interface AttributeConfig {
-  /** Output only. The number of child attributes present for this attribute. */
-  attributeCount?: number | Computed<number>;
-  /** Output only. The time when the DataAttribute was created. */
-  createTime?: string | Computed<string>;
   /** DataAccessSpec holds the access control configuration to be enforced on data stored within resources (eg: rows, columns in BigQuery Tables). When associated with data, the data is only accessible to principals explicitly granted access through the DataAccessSpec. Principals with access to the containing resource are not implicitly granted access. */
   dataAccessSpec?: Attribute_DataAccessSpec | Computed<Attribute_DataAccessSpec>;
   /** Optional. Description of the DataAttribute. */
@@ -40,16 +36,10 @@ export interface AttributeConfig {
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the DataAttribute. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the dataAttribute, of the form: projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}. */
-  name?: string | Computed<string>;
   /** Optional. The ID of the parent DataAttribute resource, should belong to the same data taxonomy. Circular dependency in parent chain is not valid. Maximum depth of the hierarchy allowed is 4. a -> b -> c -> d -> e, depth = 4 */
   parentId?: string | Computed<string>;
   /** ResourceAccessSpec holds the access control configuration to be enforced on the resources, for example, Cloud Storage bucket, BigQuery dataset, BigQuery table. */
   resourceAccessSpec?: Attribute_ResourceAccessSpec | Computed<Attribute_ResourceAccessSpec>;
-  /** Output only. System generated globally unique ID for the DataAttribute. This ID will be different if the DataAttribute is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the DataAttribute was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AttributeAttrs {
@@ -82,8 +72,6 @@ export interface AttributeAttrs {
 export const Attribute: ResourceBinding<AttributeConfig, AttributeAttrs> = {
   wireType: "google_dataplex_attribute",
   fields: {
-    attributeCount: "attribute_count",
-    createTime: "create_time",
     dataAccessSpec: {
       wireName: "data_access_spec",
       kind: "object",
@@ -93,14 +81,11 @@ export const Attribute: ResourceBinding<AttributeConfig, AttributeAttrs> = {
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
     parentId: "parent_id",
     resourceAccessSpec: {
       wireName: "resource_access_spec",
       kind: "object",
       fields: Attribute_ResourceAccessSpecFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

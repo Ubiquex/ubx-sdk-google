@@ -568,15 +568,12 @@ _V3beta1Example_ActionsFields = {
 class V3beta1ExampleConfig:
     actions: Any = None
     conversation_state: Any = None
-    create_time: Any = None
     description: Any = None
     display_name: Any = None
     language_code: Any = None
     name: Any = None
     playbook_input: Any = None
     playbook_output: Any = None
-    token_count: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V3beta1ExampleAttrs:
@@ -601,7 +598,6 @@ V3beta1Example = ubx.ResourceBinding(
             fields=_V3beta1Example_ActionsFields,
         ),
         "conversation_state": ubx.FieldSpec(wire_name="conversation_state"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
@@ -616,7 +612,5 @@ V3beta1Example = ubx.ResourceBinding(
             kind="object",
             fields=_V3beta1Example_Actions_PlaybookInvocation_PlaybookOutputFields,
         ),
-        "token_count": ubx.FieldSpec(wire_name="token_count"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

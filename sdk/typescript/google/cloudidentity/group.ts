@@ -25,11 +25,6 @@ export interface Group_DynamicGroupMetadata {
   status?: Group_DynamicGroupMetadata_Status | Computed<Group_DynamicGroupMetadata_Status>;
 }
 
-const Group_AdditionalGroupKeysFields: FieldMap = {
-  id: "id",
-  namespace: "namespace",
-};
-
 const Group_DynamicGroupMetadata_QueriesFields: FieldMap = {
   query: "query",
   resourceType: "resource_type",
@@ -53,11 +48,12 @@ const Group_DynamicGroupMetadataFields: FieldMap = {
   },
 };
 
+const Group_AdditionalGroupKeysFields: FieldMap = {
+  id: "id",
+  namespace: "namespace",
+};
+
 export interface GroupConfig {
-  /** Output only. Additional group keys associated with the Group. */
-  additionalGroupKeys?: Group_AdditionalGroupKeys[] | Computed<Group_AdditionalGroupKeys[]>;
-  /** Output only. The time when the `Group` was created. */
-  createTime?: string | Computed<string>;
   /** An extended description to help users determine the purpose of a `Group`. Must not be longer than 4,096 characters. */
   description?: string | Computed<string>;
   /** The display name of the `Group`. */
@@ -68,12 +64,8 @@ export interface GroupConfig {
   groupKey?: Group_AdditionalGroupKeys | Computed<Group_AdditionalGroupKeys>;
   /** Required. One or more label entries that apply to the Group. Labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value. Google Groups can be [locked](https://support.google.com/a?p=locked-groups). To lock a group, add a label with a key of `cloudidentity.googleapis.com/groups.locked` and an empty value. Doing so locks the group. To unlock the group, remove this label. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group}`. */
-  name?: string | Computed<string>;
   /** Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source}` for external [identity-mapped groups](https://support.google.com/a/answer/9039510) or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with "C" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793) */
   parent?: string | Computed<string>;
-  /** Output only. The time when the `Group` was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GroupAttrs {
@@ -102,12 +94,6 @@ export interface GroupAttrs {
 export const Group: ResourceBinding<GroupConfig, GroupAttrs> = {
   wireType: "google_cloudidentity_group",
   fields: {
-    additionalGroupKeys: {
-      wireName: "additional_group_keys",
-      kind: "list",
-      fields: Group_AdditionalGroupKeysFields,
-    },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     dynamicGroupMetadata: {
@@ -121,8 +107,6 @@ export const Group: ResourceBinding<GroupConfig, GroupAttrs> = {
       fields: Group_AdditionalGroupKeysFields,
     },
     labels: "labels",
-    name: "name",
     parent: "parent",
-    updateTime: "update_time",
   },
 };

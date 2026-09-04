@@ -55,8 +55,6 @@ export interface V1beta1AttestorConfig {
   etag?: string | Computed<string>;
   /** Required. The resource name, in the format: `projects/* /attestors/*`. This field may not be updated. */
   name?: string | Computed<string>;
-  /** Output only. Time when the attestor was last updated. */
-  updateTime?: string | Computed<string>;
   /** An user owned drydock note references a Drydock ATTESTATION_AUTHORITY Note created by the user. */
   userOwnedDrydockNote?: V1beta1Attestor_UserOwnedDrydockNote | Computed<V1beta1Attestor_UserOwnedDrydockNote>;
 }
@@ -80,7 +78,6 @@ export const V1beta1Attestor: ResourceBinding<V1beta1AttestorConfig, V1beta1Atte
     description: "description",
     etag: "etag",
     name: "name",
-    updateTime: "update_time",
     userOwnedDrydockNote: {
       wireName: "user_owned_drydock_note",
       kind: "object",

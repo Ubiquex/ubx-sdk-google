@@ -308,14 +308,10 @@ export interface SubscriptionConfig {
   retainAckedMessages?: boolean | Computed<boolean>;
   /** A policy that specifies how Pub/Sub retries message delivery. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded events for a given message. Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not match the configuration. That is, delay can be more or less than configured backoff. */
   retryPolicy?: Subscription_RetryPolicy | Computed<Subscription_RetryPolicy>;
-  /** Output only. An output-only field indicating whether or not the subscription can receive messages. */
-  state?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources. */
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted. */
   topic?: string | Computed<string>;
-  /** Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests. */
-  topicMessageRetentionDuration?: string | Computed<string>;
 }
 
 export interface SubscriptionAttrs {
@@ -422,9 +418,7 @@ export const Subscription: ResourceBinding<SubscriptionConfig, SubscriptionAttrs
       kind: "object",
       fields: Subscription_RetryPolicyFields,
     },
-    state: "state",
     tags: "tags",
     topic: "topic",
-    topicMessageRetentionDuration: "topic_message_retention_duration",
   },
 };

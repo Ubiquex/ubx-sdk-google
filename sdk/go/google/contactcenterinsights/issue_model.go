@@ -13,8 +13,8 @@ type IssueModel_InputDataConfig struct {
 }
 
 type IssueModel_TrainingStats_IssueStats struct {
-	DisplayName any
-	Issue any
+	DisplayName               any
+	Issue                     any
 	LabeledConversationsCount any
 }
 
@@ -28,48 +28,40 @@ type IssueModel_TrainingStats struct {
 }
 
 var IssueModel_InputDataConfigFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"TrainingConversationsCount": ubx.FieldSpec{WireName: "training_conversations_count"},
-	}
+	"Filter":                     ubx.FieldSpec{WireName: "filter"},
+	"Medium":                     ubx.FieldSpec{WireName: "medium"},
+	"TrainingConversationsCount": ubx.FieldSpec{WireName: "training_conversations_count"},
+}
 
 var IssueModel_TrainingStats_IssueStatsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Issue": ubx.FieldSpec{WireName: "issue"},
-		"LabeledConversationsCount": ubx.FieldSpec{WireName: "labeled_conversations_count"},
-	}
+	"DisplayName":               ubx.FieldSpec{WireName: "display_name"},
+	"Issue":                     ubx.FieldSpec{WireName: "issue"},
+	"LabeledConversationsCount": ubx.FieldSpec{WireName: "labeled_conversations_count"},
+}
 
 var IssueModel_TrainingStatsFields = ubx.FieldMap{
-		"AnalyzedConversationsCount": ubx.FieldSpec{WireName: "analyzed_conversations_count"},
-		"IssueStats": ubx.FieldSpec{
-			WireName: "issue_stats",
-			Kind: "map",
-			Fields: IssueModel_TrainingStats_IssueStatsFields,
-		},
-		"UnclassifiedConversationsCount": ubx.FieldSpec{WireName: "unclassified_conversations_count"},
-	}
+	"AnalyzedConversationsCount": ubx.FieldSpec{WireName: "analyzed_conversations_count"},
+	"IssueStats": ubx.FieldSpec{
+		WireName: "issue_stats",
+		Kind:     "map",
+		Fields:   IssueModel_TrainingStats_IssueStatsFields,
+	},
+	"UnclassifiedConversationsCount": ubx.FieldSpec{WireName: "unclassified_conversations_count"},
+}
 
 type IssueModelConfig struct {
-	// Output only. The time at which this issue model was created.
-	CreateTime any
 	// The representative name for the issue model.
 	DisplayName any
 	// Configs for the input data used to create the issue model.
 	InputDataConfig any
-	// Output only. Number of issues in this issue model.
-	IssueCount any
 	// Language of the model.
 	LanguageCode any
 	// Type of the model.
 	ModelType any
 	// Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model}
 	Name any
-	// Output only. State of the model.
-	State any
 	// Aggregated statistics about an issue model.
 	TrainingStats any
-	// Output only. The most recent time at which the issue model was updated.
-	UpdateTime any
 }
 
 type IssueModelAttrs struct {
@@ -98,23 +90,19 @@ type IssueModelAttrs struct {
 var IssueModel = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_issue_model",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"InputDataConfig": ubx.FieldSpec{
 			WireName: "input_data_config",
-			Kind: "object",
-			Fields: IssueModel_InputDataConfigFields,
+			Kind:     "object",
+			Fields:   IssueModel_InputDataConfigFields,
 		},
-		"IssueCount": ubx.FieldSpec{WireName: "issue_count"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"ModelType":    ubx.FieldSpec{WireName: "model_type"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"TrainingStats": ubx.FieldSpec{
 			WireName: "training_stats",
-			Kind: "object",
-			Fields: IssueModel_TrainingStatsFields,
+			Kind:     "object",
+			Fields:   IssueModel_TrainingStatsFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

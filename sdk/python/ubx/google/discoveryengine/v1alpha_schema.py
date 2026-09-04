@@ -22,26 +22,8 @@ class V1alphaSchema_FieldConfigs:
     searchable_field_importance: Any = None
     searchable_option: Any = None
 
-_V1alphaSchema_FieldConfigsFields = {
-    "advanced_site_search_data_sources": ubx.FieldSpec(wire_name="advanced_site_search_data_sources"),
-    "completable_option": ubx.FieldSpec(wire_name="completable_option"),
-    "dynamic_facetable_option": ubx.FieldSpec(wire_name="dynamic_facetable_option"),
-    "field_path": ubx.FieldSpec(wire_name="field_path"),
-    "field_type": ubx.FieldSpec(wire_name="field_type"),
-    "indexable_option": ubx.FieldSpec(wire_name="indexable_option"),
-    "key_property_type": ubx.FieldSpec(wire_name="key_property_type"),
-    "metatag_name": ubx.FieldSpec(wire_name="metatag_name"),
-    "recs_filterable_option": ubx.FieldSpec(wire_name="recs_filterable_option"),
-    "retrievable_option": ubx.FieldSpec(wire_name="retrievable_option"),
-    "schema_org_paths": ubx.FieldSpec(wire_name="schema_org_paths"),
-    "searchable_field_importance": ubx.FieldSpec(wire_name="searchable_field_importance"),
-    "searchable_option": ubx.FieldSpec(wire_name="searchable_option"),
-}
-
 @dataclasses.dataclass
 class V1alphaSchemaConfig:
-    # Output only. Configurations for fields of the schema.
-    field_configs: Any = None
     # The JSON representation of the schema.
     json_schema: Any = None
     # Immutable. The full resource name of the schema, in the format of `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -63,11 +45,6 @@ class V1alphaSchemaAttrs:
 V1alphaSchema = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1alpha_schema",
     fields={
-        "field_configs": ubx.FieldSpec(
-            wire_name="field_configs",
-            kind="list",
-            fields=_V1alphaSchema_FieldConfigsFields,
-        ),
         "json_schema": ubx.FieldSpec(wire_name="json_schema"),
         "name": ubx.FieldSpec(wire_name="name"),
         "struct_schema": ubx.FieldSpec(wire_name="struct_schema"),

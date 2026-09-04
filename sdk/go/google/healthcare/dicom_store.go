@@ -15,12 +15,12 @@ type DicomStore_NotificationConfigs struct {
 }
 
 type DicomStore_StreamConfigs_BigqueryDestination struct {
-	Force any
+	Force              any
 	IncludeSourceStore any
-	SchemaFlattened any
-	SchemaJson any
-	TableUri any
-	WriteDisposition any
+	SchemaFlattened    any
+	SchemaJson         any
+	TableUri           any
+	WriteDisposition   any
 }
 
 type DicomStore_StreamConfigs struct {
@@ -28,30 +28,30 @@ type DicomStore_StreamConfigs struct {
 }
 
 var DicomStore_NotificationConfigFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
-	}
+	"PubsubTopic":       ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
+}
 
 var DicomStore_NotificationConfigsFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var DicomStore_StreamConfigs_BigqueryDestinationFields = ubx.FieldMap{
-		"Force": ubx.FieldSpec{WireName: "force"},
-		"IncludeSourceStore": ubx.FieldSpec{WireName: "include_source_store"},
-		"SchemaFlattened": ubx.FieldSpec{WireName: "schema_flattened"},
-		"SchemaJson": ubx.FieldSpec{WireName: "schema_json"},
-		"TableUri": ubx.FieldSpec{WireName: "table_uri"},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"Force":              ubx.FieldSpec{WireName: "force"},
+	"IncludeSourceStore": ubx.FieldSpec{WireName: "include_source_store"},
+	"SchemaFlattened":    ubx.FieldSpec{WireName: "schema_flattened"},
+	"SchemaJson":         ubx.FieldSpec{WireName: "schema_json"},
+	"TableUri":           ubx.FieldSpec{WireName: "table_uri"},
+	"WriteDisposition":   ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var DicomStore_StreamConfigsFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: DicomStore_StreamConfigs_BigqueryDestinationFields,
-		},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   DicomStore_StreamConfigs_BigqueryDestinationFields,
+	},
+}
 
 type DicomStoreConfig struct {
 	// User-supplied key-value pairs used to organize DICOM stores. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62} Label values are optional, must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a given store.
@@ -83,21 +83,21 @@ var DicomStore = ubx.ResourceBinding{
 	WireType: "google_healthcare_dicom_store",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NotificationConfig": ubx.FieldSpec{
 			WireName: "notification_config",
-			Kind: "object",
-			Fields: DicomStore_NotificationConfigFields,
+			Kind:     "object",
+			Fields:   DicomStore_NotificationConfigFields,
 		},
 		"NotificationConfigs": ubx.FieldSpec{
 			WireName: "notification_configs",
-			Kind: "list",
-			Fields: DicomStore_NotificationConfigsFields,
+			Kind:     "list",
+			Fields:   DicomStore_NotificationConfigsFields,
 		},
 		"StreamConfigs": ubx.FieldSpec{
 			WireName: "stream_configs",
-			Kind: "list",
-			Fields: DicomStore_StreamConfigsFields,
+			Kind:     "list",
+			Fields:   DicomStore_StreamConfigsFields,
 		},
 	},
 }

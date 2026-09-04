@@ -39,7 +39,6 @@ export interface Subscription_LinkedDatasetMap {
 }
 
 export interface SubscriptionConfig {
-  name: string | Computed<string>;
 }
 
 export interface SubscriptionAttrs {
@@ -77,6 +76,5 @@ export interface SubscriptionAttrs {
 export const Subscription: DataSourceBinding<SubscriptionConfig, SubscriptionAttrs> = {
   wireType: "google_analyticshub_subscription",
   fields: {
-    name: "name",
   },
 };

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1FeedbackEntryConfig {
-  /** Output only. The time at which the entry was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Additional key-value metadata associated with the feedback. */
   customMetadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. The ID of the event within the session that the feedback relates to. */
@@ -19,8 +17,6 @@ export interface V1beta1FeedbackEntryConfig {
   sessionId?: string | Computed<string>;
   /** Optional. The surface that the feedback originated from. */
   source?: string | Computed<string>;
-  /** Output only. The time at which the entry was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Optional. A caller-supplied identifier for the user who provided the feedback. The semantics of this field (for example whether it is an opaque token, a hashed value, or a user-visible identifier) are determined by the calling application. */
   userId?: string | Computed<string>;
 }
@@ -52,7 +48,6 @@ export interface V1beta1FeedbackEntryAttrs {
 export const V1beta1FeedbackEntry: ResourceBinding<V1beta1FeedbackEntryConfig, V1beta1FeedbackEntryAttrs> = {
   wireType: "google_aiplatform_v1beta1_feedback_entry",
   fields: {
-    createTime: "create_time",
     customMetadata: "custom_metadata",
     eventId: "event_id",
     feedbackLabels: "feedback_labels",
@@ -61,7 +56,6 @@ export const V1beta1FeedbackEntry: ResourceBinding<V1beta1FeedbackEntryConfig, V
     name: "name",
     sessionId: "session_id",
     source: "source",
-    updateTime: "update_time",
     userId: "user_id",
   },
 };

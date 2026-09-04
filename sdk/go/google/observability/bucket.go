@@ -13,28 +13,20 @@ type Bucket_CmekSettings struct {
 }
 
 var Bucket_CmekSettingsFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	}
+	"KmsKey":           ubx.FieldSpec{WireName: "kms_key"},
+	"KmsKeyVersion":    ubx.FieldSpec{WireName: "kms_key_version"},
+	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+}
 
 type BucketConfig struct {
 	// Settings for configuring CMEK for a bucket.
 	CmekSettings any
-	// Output only. Create timestamp.
-	CreateTime any
-	// Output only. Delete timestamp.
-	DeleteTime any
 	// Optional. Description of the bucket.
 	Description any
 	// Optional. User friendly display name.
 	DisplayName any
 	// Identifier. Name of the bucket. The format is: projects/[PROJECT_ID]/locations/[LOCATION]/buckets/[BUCKET_ID]
 	Name any
-	// Output only. Timestamp when the bucket in soft-deleted state is purged.
-	PurgeTime any
-	// Output only. Update timestamp.
-	UpdateTime any
 }
 
 type BucketAttrs struct {
@@ -61,15 +53,11 @@ var Bucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekSettings": ubx.FieldSpec{
 			WireName: "cmek_settings",
-			Kind: "object",
-			Fields: Bucket_CmekSettingsFields,
+			Kind:     "object",
+			Fields:   Bucket_CmekSettingsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

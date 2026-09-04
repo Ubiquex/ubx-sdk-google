@@ -62,78 +62,70 @@ type BlockchainNode_EthereumDetails struct {
 }
 
 var BlockchainNode_ConnectionInfo_EndpointInfoFields = ubx.FieldMap{
-		"JsonRpcApiEndpoint": ubx.FieldSpec{WireName: "json_rpc_api_endpoint"},
-		"WebsocketsApiEndpoint": ubx.FieldSpec{WireName: "websockets_api_endpoint"},
-	}
+	"JsonRpcApiEndpoint":    ubx.FieldSpec{WireName: "json_rpc_api_endpoint"},
+	"WebsocketsApiEndpoint": ubx.FieldSpec{WireName: "websockets_api_endpoint"},
+}
 
 var BlockchainNode_ConnectionInfoFields = ubx.FieldMap{
-		"EndpointInfo": ubx.FieldSpec{
-			WireName: "endpoint_info",
-			Kind: "object",
-			Fields: BlockchainNode_ConnectionInfo_EndpointInfoFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"EndpointInfo": ubx.FieldSpec{
+		WireName: "endpoint_info",
+		Kind:     "object",
+		Fields:   BlockchainNode_ConnectionInfo_EndpointInfoFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 var BlockchainNode_EthereumDetails_AdditionalEndpointsFields = ubx.FieldMap{
-		"BeaconApiEndpoint": ubx.FieldSpec{WireName: "beacon_api_endpoint"},
-		"BeaconPrometheusMetricsApiEndpoint": ubx.FieldSpec{WireName: "beacon_prometheus_metrics_api_endpoint"},
-		"ExecutionClientPrometheusMetricsApiEndpoint": ubx.FieldSpec{WireName: "execution_client_prometheus_metrics_api_endpoint"},
-	}
+	"BeaconApiEndpoint":                           ubx.FieldSpec{WireName: "beacon_api_endpoint"},
+	"BeaconPrometheusMetricsApiEndpoint":          ubx.FieldSpec{WireName: "beacon_prometheus_metrics_api_endpoint"},
+	"ExecutionClientPrometheusMetricsApiEndpoint": ubx.FieldSpec{WireName: "execution_client_prometheus_metrics_api_endpoint"},
+}
 
 var BlockchainNode_EthereumDetails_GethDetailsFields = ubx.FieldMap{
-		"GarbageCollectionMode": ubx.FieldSpec{WireName: "garbage_collection_mode"},
-	}
+	"GarbageCollectionMode": ubx.FieldSpec{WireName: "garbage_collection_mode"},
+}
 
 var BlockchainNode_EthereumDetails_ValidatorConfigFields = ubx.FieldMap{
-		"BeaconFeeRecipient": ubx.FieldSpec{WireName: "beacon_fee_recipient"},
-		"ManagedValidatorClient": ubx.FieldSpec{WireName: "managed_validator_client"},
-		"MevRelayUrls": ubx.FieldSpec{WireName: "mev_relay_urls"},
-	}
+	"BeaconFeeRecipient":     ubx.FieldSpec{WireName: "beacon_fee_recipient"},
+	"ManagedValidatorClient": ubx.FieldSpec{WireName: "managed_validator_client"},
+	"MevRelayUrls":           ubx.FieldSpec{WireName: "mev_relay_urls"},
+}
 
 var BlockchainNode_EthereumDetailsFields = ubx.FieldMap{
-		"AdditionalEndpoints": ubx.FieldSpec{
-			WireName: "additional_endpoints",
-			Kind: "object",
-			Fields: BlockchainNode_EthereumDetails_AdditionalEndpointsFields,
-		},
-		"ApiEnableAdmin": ubx.FieldSpec{WireName: "api_enable_admin"},
-		"ApiEnableDebug": ubx.FieldSpec{WireName: "api_enable_debug"},
-		"ConsensusClient": ubx.FieldSpec{WireName: "consensus_client"},
-		"ExecutionClient": ubx.FieldSpec{WireName: "execution_client"},
-		"GethDetails": ubx.FieldSpec{
-			WireName: "geth_details",
-			Kind: "object",
-			Fields: BlockchainNode_EthereumDetails_GethDetailsFields,
-		},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"ValidatorConfig": ubx.FieldSpec{
-			WireName: "validator_config",
-			Kind: "object",
-			Fields: BlockchainNode_EthereumDetails_ValidatorConfigFields,
-		},
-	}
+	"AdditionalEndpoints": ubx.FieldSpec{
+		WireName: "additional_endpoints",
+		Kind:     "object",
+		Fields:   BlockchainNode_EthereumDetails_AdditionalEndpointsFields,
+	},
+	"ApiEnableAdmin":  ubx.FieldSpec{WireName: "api_enable_admin"},
+	"ApiEnableDebug":  ubx.FieldSpec{WireName: "api_enable_debug"},
+	"ConsensusClient": ubx.FieldSpec{WireName: "consensus_client"},
+	"ExecutionClient": ubx.FieldSpec{WireName: "execution_client"},
+	"GethDetails": ubx.FieldSpec{
+		WireName: "geth_details",
+		Kind:     "object",
+		Fields:   BlockchainNode_EthereumDetails_GethDetailsFields,
+	},
+	"Network":  ubx.FieldSpec{WireName: "network"},
+	"NodeType": ubx.FieldSpec{WireName: "node_type"},
+	"ValidatorConfig": ubx.FieldSpec{
+		WireName: "validator_config",
+		Kind:     "object",
+		Fields:   BlockchainNode_EthereumDetails_ValidatorConfigFields,
+	},
+}
 
 type BlockchainNodeConfig struct {
 	// Immutable. The blockchain type of the node.
 	BlockchainType any
 	// The connection information through which to interact with a blockchain node.
 	ConnectionInfo any
-	// Output only. The timestamp at which the blockchain node was first created.
-	CreateTime any
 	// Ethereum-specific blockchain node details.
 	EthereumDetails any
 	// User-provided key-value pairs.
 	Labels any
-	// Output only. The fully qualified name of the blockchain node. e.g. `projects/my-project/locations/us-central1/blockchainNodes/my-node`.
-	Name any
 	// Optional. When true, the node is only accessible via Private Service Connect; no public endpoints are exposed. Otherwise, the node is only accessible via public endpoints. Warning: These nodes are deprecated, please use public endpoints instead.
 	PrivateServiceConnectEnabled any
-	// Output only. A status representing the state of the node.
-	State any
-	// Output only. The timestamp at which the blockchain node was last updated.
-	UpdateTime any
 }
 
 type BlockchainNodeAttrs struct {
@@ -163,19 +155,15 @@ var BlockchainNode = ubx.ResourceBinding{
 		"BlockchainType": ubx.FieldSpec{WireName: "blockchain_type"},
 		"ConnectionInfo": ubx.FieldSpec{
 			WireName: "connection_info",
-			Kind: "object",
-			Fields: BlockchainNode_ConnectionInfoFields,
+			Kind:     "object",
+			Fields:   BlockchainNode_ConnectionInfoFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EthereumDetails": ubx.FieldSpec{
 			WireName: "ethereum_details",
-			Kind: "object",
-			Fields: BlockchainNode_EthereumDetailsFields,
+			Kind:     "object",
+			Fields:   BlockchainNode_EthereumDetailsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":                       ubx.FieldSpec{WireName: "labels"},
 		"PrivateServiceConnectEnabled": ubx.FieldSpec{WireName: "private_service_connect_enabled"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

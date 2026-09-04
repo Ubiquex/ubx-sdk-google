@@ -42,40 +42,22 @@ const Workstation_RuntimeHostFields: FieldMap = {
 export interface WorkstationConfig {
   /** Optional. Client-specified annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Time when this workstation was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time when this workstation was soft-deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name for this workstation. */
   displayName?: string | Computed<string>;
   /** Optional. Environment variables passed to the workstation container's entrypoint. */
   env?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Checksum computed by the server. May be sent on update and delete requests to make sure that the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. Host to which clients can send HTTPS traffic that will be received by the workstation. Authorized traffic will be received to the workstation as HTTP on port 80. To send traffic to a different port, clients may prefix the host with the destination port in the format `{port}-{host}`. */
-  host?: string | Computed<string>;
-  /** Output only. The name of the Google Cloud KMS encryption key used to encrypt this workstation. The KMS key can only be configured in the WorkstationConfig. The expected format is `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
-  kmsKey?: string | Computed<string>;
   /** Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation and that are also propagated to the underlying Compute Engine resources. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Full name of this workstation. */
   name?: string | Computed<string>;
   /** Optional. Directories to persist across workstation sessions. */
   persistentDirectories?: Workstation_PersistentDirectories[] | Computed<Workstation_PersistentDirectories[]>;
-  /** Output only. Indicates whether this workstation is currently being updated to match its intended state. */
-  reconciling?: boolean | Computed<boolean>;
   /** Runtime host for the workstation. */
   runtimeHost?: Workstation_RuntimeHost | Computed<Workstation_RuntimeHost>;
   /** Optional. The source workstation from which this workstation's persistent directories were cloned on creation. */
   sourceWorkstation?: string | Computed<string>;
-  /** Output only. Time when this workstation was most recently successfully started, regardless of the workstation's initial state. */
-  startTime?: string | Computed<string>;
-  /** Output only. Current state of the workstation. */
-  state?: string | Computed<string>;
-  /** Output only. A system-assigned unique identifier for this workstation. */
-  uid?: string | Computed<string>;
-  /** Output only. Time when this workstation was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface WorkstationAttrs {
@@ -121,13 +103,9 @@ export const Workstation: ResourceBinding<WorkstationConfig, WorkstationAttrs> =
   wireType: "google_workstations_workstation",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     env: "env",
     etag: "etag",
-    host: "host",
-    kmsKey: "kms_key",
     labels: "labels",
     name: "name",
     persistentDirectories: {
@@ -135,16 +113,11 @@ export const Workstation: ResourceBinding<WorkstationConfig, WorkstationAttrs> =
       kind: "list",
       fields: Workstation_PersistentDirectoriesFields,
     },
-    reconciling: "reconciling",
     runtimeHost: {
       wireName: "runtime_host",
       kind: "object",
       fields: Workstation_RuntimeHostFields,
     },
     sourceWorkstation: "source_workstation",
-    startTime: "start_time",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

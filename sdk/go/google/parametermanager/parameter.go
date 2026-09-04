@@ -11,13 +11,11 @@ type Parameter_PolicyMember struct {
 }
 
 var Parameter_PolicyMemberFields = ubx.FieldMap{
-		"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
-		"IamPolicyUidPrincipal": ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
-	}
+	"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
+	"IamPolicyUidPrincipal":  ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
+}
 
 type ParameterConfig struct {
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Optional. Specifies the format of a Parameter.
 	Format any
 	// Optional. Customer managed encryption key (CMEK) to use for encrypting the Parameter Versions. If not set, the default Google-managed encryption key will be used. Cloud KMS CryptoKeys must reside in the same location as the Parameter. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
@@ -28,8 +26,6 @@ type ParameterConfig struct {
 	Name any
 	// Output-only policy member strings of a Google Cloud resource's built-in identity.
 	PolicyMember any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 }
 
 type ParameterAttrs struct {
@@ -52,16 +48,14 @@ type ParameterAttrs struct {
 var Parameter = ubx.ResourceBinding{
 	WireType: "google_parametermanager_parameter",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PolicyMember": ubx.FieldSpec{
 			WireName: "policy_member",
-			Kind: "object",
-			Fields: Parameter_PolicyMemberFields,
+			Kind:     "object",
+			Fields:   Parameter_PolicyMemberFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

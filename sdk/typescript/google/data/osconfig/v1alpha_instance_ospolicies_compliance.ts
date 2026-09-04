@@ -26,7 +26,6 @@ export interface V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances {
 }
 
 export interface V1alphaInstanceOspoliciesComplianceConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1alphaInstanceOspoliciesComplianceAttrs {
@@ -50,6 +49,5 @@ export interface V1alphaInstanceOspoliciesComplianceAttrs {
 export const V1alphaInstanceOspoliciesCompliance: DataSourceBinding<V1alphaInstanceOspoliciesComplianceConfig, V1alphaInstanceOspoliciesComplianceAttrs> = {
   wireType: "google_osconfig_v1alpha_instance_ospolicies_compliance",
   fields: {
-    name: "name",
   },
 };

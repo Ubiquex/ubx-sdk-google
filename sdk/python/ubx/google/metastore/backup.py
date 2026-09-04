@@ -426,20 +426,12 @@ _Backup_ServiceRevisionFields = {
 
 @dataclasses.dataclass
 class BackupConfig:
-    # Output only. The time when the backup was started.
-    create_time: Any = None
     # Optional. The description of the backup.
     description: Any = None
-    # Output only. The time when the backup finished creating.
-    end_time: Any = None
     # Immutable. Identifier. The relative resource name of the backup, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}
     name: Any = None
-    # Output only. Services that are restoring from the backup.
-    restoring_services: Any = None
     # A managed metastore service that serves metadata queries.
     service_revision: Any = None
-    # Output only. The current state of the backup.
-    state: Any = None
 
 @dataclasses.dataclass
 class BackupAttrs:
@@ -461,16 +453,12 @@ class BackupAttrs:
 Backup = ubx.ResourceBinding(
     wire_type="google_metastore_backup",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "restoring_services": ubx.FieldSpec(wire_name="restoring_services"),
         "service_revision": ubx.FieldSpec(
             wire_name="service_revision",
             kind="object",
             fields=_Backup_ServiceRevisionFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

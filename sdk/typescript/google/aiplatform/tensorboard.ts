@@ -11,10 +11,6 @@ const Tensorboard_EncryptionSpecFields: FieldMap = {
 };
 
 export interface TensorboardConfig {
-  /** Output only. Consumer project Cloud Storage path prefix used to store blob data, which can either be a bucket or directory. Does not end with a '/'. */
-  blobStoragePathPrefix?: string | Computed<string>;
-  /** Output only. Timestamp when this Tensorboard was created. */
-  createTime?: string | Computed<string>;
   /** Description of this Tensorboard. */
   description?: string | Computed<string>;
   /** Required. User provided name of this Tensorboard. */
@@ -27,16 +23,6 @@ export interface TensorboardConfig {
   isDefault?: boolean | Computed<boolean>;
   /** The labels with user-defined metadata to organize your Tensorboards. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Tensorboard (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}` */
-  name?: string | Computed<string>;
-  /** Output only. The number of Runs stored in this Tensorboard. */
-  runCount?: number | Computed<number>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this Tensorboard was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TensorboardAttrs {
@@ -71,8 +57,6 @@ export interface TensorboardAttrs {
 export const Tensorboard: ResourceBinding<TensorboardConfig, TensorboardAttrs> = {
   wireType: "google_aiplatform_tensorboard",
   fields: {
-    blobStoragePathPrefix: "blob_storage_path_prefix",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -83,10 +67,5 @@ export const Tensorboard: ResourceBinding<TensorboardConfig, TensorboardAttrs> =
     etag: "etag",
     isDefault: "is_default",
     labels: "labels",
-    name: "name",
-    runCount: "run_count",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
   },
 };

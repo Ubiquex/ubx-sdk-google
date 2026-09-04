@@ -15,20 +15,20 @@ type Cluster_KeyScreen struct {
 }
 
 type ClusterConfig struct {
-	ClusterId any
+	ClusterId   any
 	ExecutionId any
-	HistoryId any
-	ProjectId any
+	HistoryId   any
+	ProjectId   any
 }
 
 type ClusterAttrs struct {
 	// A string that describes the activity of every screen in the cluster.
-	Activity any
-	ClusterId any
+	Activity    any
+	ClusterId   any
 	ExecutionId any
-	HistoryId any
-	KeyScreen any
-	ProjectId any
+	HistoryId   any
+	KeyScreen   any
+	ProjectId   any
 	// Full list of screens.
 	Screens any
 }
@@ -36,9 +36,9 @@ type ClusterAttrs struct {
 var Cluster = ubx.DataSourceBinding{
 	WireType: "google_toolresults_cluster",
 	Fields: ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+		"ClusterId":   ubx.FieldSpec{WireName: "cluster_id"},
 		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"HistoryId":   ubx.FieldSpec{WireName: "history_id"},
+		"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
 	},
 }

@@ -110,8 +110,6 @@ const V1beta1VolumePool_InstanceTemplateFields: FieldMap = {
 };
 
 export interface V1beta1VolumePoolConfig {
-  /** Output only. The time when the volume pool was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of the volume pool with 2048 characters or less. */
   description?: string | Computed<string>;
   /** Optional. The page size to use when listing instances. */
@@ -144,10 +142,6 @@ export interface V1beta1VolumePoolConfig {
   negbaInstanceRatio?: number | Computed<number>;
   /** Optional. The maximum number of operations to poll in a single reconciliation run. */
   operationPollLimit?: number | Computed<number>;
-  /** Output only. The volume pool state. */
-  state?: string | Computed<string>;
-  /** Output only. Unique ID of the resource, as defined by CCFE. */
-  uniqueId?: string | Computed<string>;
   /** Optional. The number of volumes to create in a single batch. */
   volumeBatchSize?: number | Computed<number>;
   /** Optional. Volume size in MiB. */
@@ -202,7 +196,6 @@ export interface V1beta1VolumePoolAttrs {
 export const V1beta1VolumePool: ResourceBinding<V1beta1VolumePoolConfig, V1beta1VolumePoolAttrs> = {
   wireType: "google_file_v1beta1_volume_pool",
   fields: {
-    createTime: "create_time",
     description: "description",
     instanceListPageSize: "instance_list_page_size",
     instanceNamePrefix: "instance_name_prefix",
@@ -223,8 +216,6 @@ export const V1beta1VolumePool: ResourceBinding<V1beta1VolumePoolConfig, V1beta1
     name: "name",
     negbaInstanceRatio: "negba_instance_ratio",
     operationPollLimit: "operation_poll_limit",
-    state: "state",
-    uniqueId: "unique_id",
     volumeBatchSize: "volume_batch_size",
     volumeSizeMb: "volume_size_mb",
   },

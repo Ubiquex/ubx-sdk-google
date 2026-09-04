@@ -37,8 +37,6 @@ export interface TaxonomyConfig {
   displayName?: string | Computed<string>;
   /** Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs. */
   name?: string | Computed<string>;
-  /** Output only. Number of policy tags in this taxonomy. */
-  policyTagCount?: number | Computed<number>;
   /** The source system of the Taxonomy. */
   service?: Taxonomy_Service | Computed<Taxonomy_Service>;
   /** Timestamps associated with this resource in a particular system. */
@@ -69,7 +67,6 @@ export const Taxonomy: ResourceBinding<TaxonomyConfig, TaxonomyAttrs> = {
     description: "description",
     displayName: "display_name",
     name: "name",
-    policyTagCount: "policy_tag_count",
     service: {
       wireName: "service",
       kind: "object",

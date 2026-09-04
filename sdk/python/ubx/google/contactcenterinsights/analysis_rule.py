@@ -109,14 +109,10 @@ class AnalysisRuleConfig:
     annotator_selector: Any = None
     # Filter for the conversations that should apply this analysis rule. An empty filter means this analysis rule applies to all conversations. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details.
     conversation_filter: Any = None
-    # Output only. The time at which this analysis rule was created.
-    create_time: Any = None
     # Display Name of the analysis rule.
     display_name: Any = None
     # Identifier. The resource name of the analysis rule. Format: projects/{project}/locations/{location}/analysisRules/{analysis_rule}
     name: Any = None
-    # Output only. The most recent time at which this analysis rule was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AnalysisRuleAttrs:
@@ -148,9 +144,7 @@ AnalysisRule = ubx.ResourceBinding(
             fields=_AnalysisRule_AnnotatorSelectorFields,
         ),
         "conversation_filter": ubx.FieldSpec(wire_name="conversation_filter"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

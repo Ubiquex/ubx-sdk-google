@@ -35,8 +35,6 @@ export interface V1beta1InboundOidcSsoProfileConfig {
   displayName?: string | Computed<string>;
   /** OIDC IDP (identity provider) configuration. */
   idpConfig?: V1beta1InboundOidcSsoProfile_IdpConfig | Computed<V1beta1InboundOidcSsoProfile_IdpConfig>;
-  /** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the OIDC SSO profile. */
-  name?: string | Computed<string>;
   /** OIDC RP (relying party) configuration. */
   rpConfig?: V1beta1InboundOidcSsoProfile_RpConfig | Computed<V1beta1InboundOidcSsoProfile_RpConfig>;
 }
@@ -64,7 +62,6 @@ export const V1beta1InboundOidcSsoProfile: ResourceBinding<V1beta1InboundOidcSso
       kind: "object",
       fields: V1beta1InboundOidcSsoProfile_IdpConfigFields,
     },
-    name: "name",
     rpConfig: {
       wireName: "rp_config",
       kind: "object",

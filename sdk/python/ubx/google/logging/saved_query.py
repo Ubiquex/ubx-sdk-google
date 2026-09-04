@@ -224,20 +224,14 @@ _SavedQuery_OpsAnalyticsQueryFields = {
 
 @dataclasses.dataclass
 class SavedQueryConfig:
-    # Output only. The timestamp when the saved query was created.
-    create_time: Any = None
     # Optional. A human readable description of the saved query.
     description: Any = None
     # Required. The user specified title for the SavedQuery.
     display_name: Any = None
     # Describes a Cloud Logging query that can be run in Logs Explorer UI or via the logging API.In addition to the query itself, additional information may be stored to capture the display configuration and other UI state used in association with analysis of query results.
     logging_query: Any = None
-    # Output only. Resource name of the saved query.In the format: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/savedQueries/[QUERY_ID]" For a list of supported locations, see Supported Regions (https://docs.cloud.google.com/logging/docs/region-support#bucket-regions)After the saved query is created, the location cannot be changed.If the user doesn't provide a QUERY_ID, the system will generate an alphanumeric ID.
-    name: Any = None
     # Describes a query that can be run in Log Analytics.
     ops_analytics_query: Any = None
-    # Output only. The timestamp when the saved query was last updated.
-    update_time: Any = None
     # Required. The visibility status of this query, which determines its ownership.
     visibility: Any = None
 
@@ -263,7 +257,6 @@ class SavedQueryAttrs:
 SavedQuery = ubx.ResourceBinding(
     wire_type="google_logging_saved_query",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "logging_query": ubx.FieldSpec(
@@ -271,13 +264,11 @@ SavedQuery = ubx.ResourceBinding(
             kind="object",
             fields=_SavedQuery_LoggingQueryFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "ops_analytics_query": ubx.FieldSpec(
             wire_name="ops_analytics_query",
             kind="object",
             fields=_SavedQuery_OpsAnalyticsQueryFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "visibility": ubx.FieldSpec(wire_name="visibility"),
     },
 )

@@ -11,13 +11,11 @@ type V1beta1Project_Parent struct {
 }
 
 var V1beta1Project_ParentFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type V1beta1ProjectConfig struct {
-	// Output only. If this project is a Management Project, list of capabilities configured on the parent folder. Note, presence of any capability implies that this is a Management Project. Example: `folders/123/capabilities/app-management`. OUTPUT ONLY.
-	ConfiguredCapabilities any
 	// Creation time. Read-only.
 	CreateTime any
 	// The labels associated with this Project. Label keys must be between 1 and 63 characters long and must conform to the following regular expression: a-z{0,62}. Label values must be between 0 and 63 characters long and must conform to the regular expression [a-z0-9_-]{0,63}. A label value can be empty. No more than 256 labels can be associated with a given resource. Clients should store labels in a representation such as JSON that does not depend on specific characters being disallowed. Example: `"environment" : "dev"` Read-write.
@@ -56,17 +54,16 @@ type V1beta1ProjectAttrs struct {
 var V1beta1Project = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_v1beta1_project",
 	Fields: ubx.FieldMap{
-		"ConfiguredCapabilities": ubx.FieldSpec{WireName: "configured_capabilities"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Parent": ubx.FieldSpec{
 			WireName: "parent",
-			Kind: "object",
-			Fields: V1beta1Project_ParentFields,
+			Kind:     "object",
+			Fields:   V1beta1Project_ParentFields,
 		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ProjectId":     ubx.FieldSpec{WireName: "project_id"},
 		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
 	},
 }

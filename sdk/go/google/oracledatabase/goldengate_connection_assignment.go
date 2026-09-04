@@ -17,20 +17,16 @@ type GoldengateConnectionAssignment_Properties struct {
 }
 
 var GoldengateConnectionAssignment_PropertiesFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"GoldengateConnection": ubx.FieldSpec{WireName: "goldengate_connection"},
-		"GoldengateDeployment": ubx.FieldSpec{WireName: "goldengate_deployment"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Alias":                ubx.FieldSpec{WireName: "alias"},
+	"GoldengateConnection": ubx.FieldSpec{WireName: "goldengate_connection"},
+	"GoldengateDeployment": ubx.FieldSpec{WireName: "goldengate_deployment"},
+	"Ocid":                 ubx.FieldSpec{WireName: "ocid"},
+	"State":                ubx.FieldSpec{WireName: "state"},
+}
 
 type GoldengateConnectionAssignmentConfig struct {
-	// Output only. The time when the connection assignment was created.
-	CreateTime any
 	// Optional. The display name for the GoldengateConnectionAssignment.
 	DisplayName any
-	// Output only. The OCID of the entitlement linked to this resource.
-	EntitlementId any
 	// Optional. The labels or tags associated with the GoldengateConnectionAssignment.
 	Labels any
 	// Identifier. The name of the GoldengateConnectionAssignment resource in the following format: projects/{project}/locations/{region}/goldengateConnectionAssignments/{goldengate_connection_assignment}
@@ -57,15 +53,13 @@ type GoldengateConnectionAssignmentAttrs struct {
 var GoldengateConnectionAssignment = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_goldengate_connection_assignment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: GoldengateConnectionAssignment_PropertiesFields,
+			Kind:     "object",
+			Fields:   GoldengateConnectionAssignment_PropertiesFields,
 		},
 	},
 }

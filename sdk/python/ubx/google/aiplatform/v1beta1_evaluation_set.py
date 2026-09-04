@@ -623,8 +623,6 @@ _V1beta1EvaluationSet_EncryptionSpecFields = {
 class V1beta1EvaluationSetConfig:
     # Optional. Static configurations for each agent associated with the items in this set. Key: `agent_id` (matches the `author` field in `events`). Value: The static configuration of the agent.
     agent_configs: Any = None
-    # Output only. Timestamp when this item was created.
-    create_time: Any = None
     # Required. The display name of the EvaluationSet.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -635,8 +633,6 @@ class V1beta1EvaluationSetConfig:
     metadata: Any = None
     # Identifier. The resource name of the EvaluationSet. Format: `projects/{project}/locations/{location}/evaluationSets/{evaluation_set}`
     name: Any = None
-    # Output only. Timestamp when this item was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1EvaluationSetAttrs:
@@ -665,7 +661,6 @@ V1beta1EvaluationSet = ubx.ResourceBinding(
             kind="map",
             fields=_V1beta1EvaluationSet_AgentConfigsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
@@ -675,6 +670,5 @@ V1beta1EvaluationSet = ubx.ResourceBinding(
         "evaluation_items": ubx.FieldSpec(wire_name="evaluation_items"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

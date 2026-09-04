@@ -495,102 +495,6 @@ const Release_ConditionFields: FieldMap = {
   },
 };
 
-const Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields: FieldMap = {
-  path: "path",
-  ref: "ref",
-  repo: "repo",
-};
-
-const Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields: FieldMap = {
-  path: "path",
-  ref: "ref",
-  repository: "repository",
-};
-
-const Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields: FieldMap = {
-  path: "path",
-  source: "source",
-};
-
-const Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields: FieldMap = {
-  configs: "configs",
-  git: {
-    wireName: "git",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields,
-  },
-  googleCloudBuildRepo: {
-    wireName: "google_cloud_build_repo",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields,
-  },
-  googleCloudStorage: {
-    wireName: "google_cloud_storage",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields,
-  },
-};
-
-const Release_CustomTargetTypeSnapshots_CustomActionsFields: FieldMap = {
-  deployAction: "deploy_action",
-  includeSkaffoldModules: {
-    wireName: "include_skaffold_modules",
-    kind: "list",
-    fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields,
-  },
-  renderAction: "render_action",
-};
-
-const Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields: FieldMap = {
-  args: "args",
-  command: "command",
-  env: "env",
-  image: "image",
-};
-
-const Release_CustomTargetTypeSnapshots_Tasks_DeployFields: FieldMap = {
-  container: {
-    wireName: "container",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
-  },
-};
-
-const Release_CustomTargetTypeSnapshots_TasksFields: FieldMap = {
-  deploy: {
-    wireName: "deploy",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-  },
-  render: {
-    wireName: "render",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-  },
-};
-
-const Release_CustomTargetTypeSnapshotsFields: FieldMap = {
-  annotations: "annotations",
-  createTime: "create_time",
-  customActions: {
-    wireName: "custom_actions",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_CustomActionsFields,
-  },
-  customTargetTypeId: "custom_target_type_id",
-  description: "description",
-  etag: "etag",
-  labels: "labels",
-  name: "name",
-  tasks: {
-    wireName: "tasks",
-    kind: "object",
-    fields: Release_CustomTargetTypeSnapshots_TasksFields,
-  },
-  uid: "uid",
-  updateTime: "update_time",
-};
-
 const Release_DeliveryPipelineSnapshot_Condition_PipelineReadyConditionFields: FieldMap = {
   status: "status",
   updateTime: "update_time",
@@ -628,6 +532,21 @@ const Release_DeliveryPipelineSnapshot_ConditionFields: FieldMap = {
 const Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParametersFields: FieldMap = {
   matchTargetLabels: "match_target_labels",
   values: "values",
+};
+
+const Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields: FieldMap = {
+  args: "args",
+  command: "command",
+  env: "env",
+  image: "image",
+};
+
+const Release_CustomTargetTypeSnapshots_Tasks_DeployFields: FieldMap = {
+  container: {
+    wireName: "container",
+    kind: "object",
+    fields: Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
+  },
 };
 
 const Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecksFields: FieldMap = {
@@ -904,185 +823,6 @@ const Release_DeliveryPipelineSnapshotFields: FieldMap = {
   updateTime: "update_time",
 };
 
-const Release_TargetArtifacts_PhaseArtifactsFields: FieldMap = {
-  jobManifestsPath: "job_manifests_path",
-  manifestPath: "manifest_path",
-  skaffoldConfigPath: "skaffold_config_path",
-};
-
-const Release_TargetArtifactsFields: FieldMap = {
-  artifactUri: "artifact_uri",
-  manifestPath: "manifest_path",
-  phaseArtifacts: {
-    wireName: "phase_artifacts",
-    kind: "map",
-    fields: Release_TargetArtifacts_PhaseArtifactsFields,
-  },
-  skaffoldConfigPath: "skaffold_config_path",
-};
-
-const Release_TargetRenders_Metadata_CloudRunFields: FieldMap = {
-  job: "job",
-  revision: "revision",
-  service: "service",
-  workerPool: "worker_pool",
-};
-
-const Release_TargetRenders_Metadata_CustomFields: FieldMap = {
-  values: "values",
-};
-
-const Release_TargetRenders_Metadata_KubernetesFields: FieldMap = {
-  canaryDeployment: "canary_deployment",
-  deployment: "deployment",
-  kubernetesNamespace: "kubernetes_namespace",
-};
-
-const Release_TargetRenders_MetadataFields: FieldMap = {
-  cloudRun: {
-    wireName: "cloud_run",
-    kind: "object",
-    fields: Release_TargetRenders_Metadata_CloudRunFields,
-  },
-  custom: {
-    wireName: "custom",
-    kind: "object",
-    fields: Release_TargetRenders_Metadata_CustomFields,
-  },
-  kubernetes: {
-    wireName: "kubernetes",
-    kind: "object",
-    fields: Release_TargetRenders_Metadata_KubernetesFields,
-  },
-};
-
-const Release_TargetRendersFields: FieldMap = {
-  failureCause: "failure_cause",
-  failureMessage: "failure_message",
-  metadata: {
-    wireName: "metadata",
-    kind: "object",
-    fields: Release_TargetRenders_MetadataFields,
-  },
-  renderingBuild: "rendering_build",
-  renderingState: "rendering_state",
-};
-
-const Release_TargetSnapshots_AnthosClusterFields: FieldMap = {
-  membership: "membership",
-};
-
-const Release_TargetSnapshots_AssociatedEntities_GkeClustersFields: FieldMap = {
-  cluster: "cluster",
-  dnsEndpoint: "dns_endpoint",
-  internalIp: "internal_ip",
-  proxyUrl: "proxy_url",
-};
-
-const Release_TargetSnapshots_AssociatedEntitiesFields: FieldMap = {
-  anthosClusters: {
-    wireName: "anthos_clusters",
-    kind: "list",
-    fields: Release_TargetSnapshots_AnthosClusterFields,
-  },
-  gkeClusters: {
-    wireName: "gke_clusters",
-    kind: "list",
-    fields: Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-  },
-};
-
-const Release_TargetSnapshots_CustomTargetFields: FieldMap = {
-  customTargetType: "custom_target_type",
-};
-
-const Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields: FieldMap = {
-  artifactStorage: "artifact_storage",
-  serviceAccount: "service_account",
-};
-
-const Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields: FieldMap = {
-  artifactStorage: "artifact_storage",
-  serviceAccount: "service_account",
-  workerPool: "worker_pool",
-};
-
-const Release_TargetSnapshots_ExecutionConfigsFields: FieldMap = {
-  artifactStorage: "artifact_storage",
-  defaultPool: {
-    wireName: "default_pool",
-    kind: "object",
-    fields: Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields,
-  },
-  executionTimeout: "execution_timeout",
-  privatePool: {
-    wireName: "private_pool",
-    kind: "object",
-    fields: Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields,
-  },
-  serviceAccount: "service_account",
-  usages: "usages",
-  verbose: "verbose",
-  workerPool: "worker_pool",
-};
-
-const Release_TargetSnapshots_MultiTargetFields: FieldMap = {
-  targetIds: "target_ids",
-};
-
-const Release_TargetSnapshots_RunFields: FieldMap = {
-  location: "location",
-};
-
-const Release_TargetSnapshotsFields: FieldMap = {
-  annotations: "annotations",
-  anthosCluster: {
-    wireName: "anthos_cluster",
-    kind: "object",
-    fields: Release_TargetSnapshots_AnthosClusterFields,
-  },
-  associatedEntities: {
-    wireName: "associated_entities",
-    kind: "map",
-    fields: Release_TargetSnapshots_AssociatedEntitiesFields,
-  },
-  createTime: "create_time",
-  customTarget: {
-    wireName: "custom_target",
-    kind: "object",
-    fields: Release_TargetSnapshots_CustomTargetFields,
-  },
-  deployParameters: "deploy_parameters",
-  description: "description",
-  etag: "etag",
-  executionConfigs: {
-    wireName: "execution_configs",
-    kind: "list",
-    fields: Release_TargetSnapshots_ExecutionConfigsFields,
-  },
-  gke: {
-    wireName: "gke",
-    kind: "object",
-    fields: Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-  },
-  labels: "labels",
-  multiTarget: {
-    wireName: "multi_target",
-    kind: "object",
-    fields: Release_TargetSnapshots_MultiTargetFields,
-  },
-  name: "name",
-  requireApproval: "require_approval",
-  run: {
-    wireName: "run",
-    kind: "object",
-    fields: Release_TargetSnapshots_RunFields,
-  },
-  targetId: "target_id",
-  uid: "uid",
-  updateTime: "update_time",
-};
-
 const Release_ToolVersionsFields: FieldMap = {
   docker: "docker",
   helm: "helm",
@@ -1093,18 +833,12 @@ const Release_ToolVersionsFields: FieldMap = {
 };
 
 export interface ReleaseConfig {
-  /** Output only. Indicates whether this is an abandoned release. */
-  abandoned?: boolean | Computed<boolean>;
   /** Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. List of artifacts to pass through to Skaffold command. */
   buildArtifacts?: Release_BuildArtifacts[] | Computed<Release_BuildArtifacts[]>;
   /** ReleaseCondition contains all conditions relevant to a Release. */
   condition?: Release_Condition | Computed<Release_Condition>;
-  /** Output only. Time at which the `Release` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Snapshot of the custom target types referenced by the targets taken at release creation time. */
-  customTargetTypeSnapshots?: Release_CustomTargetTypeSnapshots[] | Computed<Release_CustomTargetTypeSnapshots[]>;
   /** A `DeliveryPipeline` resource in the Cloud Deploy API. A `DeliveryPipeline` defines a pipeline through which a Skaffold configuration can progress. */
   deliveryPipelineSnapshot?: Release_DeliveryPipelineSnapshot | Computed<Release_DeliveryPipelineSnapshot>;
   /** Optional. The deploy parameters to use for all targets in this release. */
@@ -1117,28 +851,14 @@ export interface ReleaseConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`. The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?` */
   name?: string | Computed<string>;
-  /** Output only. Time at which the render completed. */
-  renderEndTime?: string | Computed<string>;
-  /** Output only. Time at which the render began. */
-  renderStartTime?: string | Computed<string>;
-  /** Output only. Current state of the render operation. */
-  renderState?: string | Computed<string>;
   /** Optional. Filepath of the Skaffold config inside of the config URI. */
   skaffoldConfigPath?: string | Computed<string>;
   /** Optional. Cloud Storage URI of tar.gz archive containing Skaffold configuration. */
   skaffoldConfigUri?: string | Computed<string>;
   /** Optional. The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used. */
   skaffoldVersion?: string | Computed<string>;
-  /** Output only. Map from target ID to the target artifacts created during the render operation. */
-  targetArtifacts?: Record<string, Release_TargetArtifacts> | Computed<Record<string, Release_TargetArtifacts>>;
-  /** Output only. Map from target ID to details of the render operation for that target. */
-  targetRenders?: Record<string, Release_TargetRenders> | Computed<Record<string, Release_TargetRenders>>;
-  /** Output only. Snapshot of the targets taken at release creation time. */
-  targetSnapshots?: Release_TargetSnapshots[] | Computed<Release_TargetSnapshots[]>;
   /** Details of ToolVersions for the release. */
   toolVersions?: Release_ToolVersions | Computed<Release_ToolVersions>;
-  /** Output only. Unique identifier of the `Release`. */
-  uid?: string | Computed<string>;
 }
 
 export interface ReleaseAttrs {
@@ -1193,7 +913,6 @@ export interface ReleaseAttrs {
 export const Release: ResourceBinding<ReleaseConfig, ReleaseAttrs> = {
   wireType: "google_clouddeploy_release",
   fields: {
-    abandoned: "abandoned",
     annotations: "annotations",
     buildArtifacts: {
       wireName: "build_artifacts",
@@ -1205,12 +924,6 @@ export const Release: ResourceBinding<ReleaseConfig, ReleaseAttrs> = {
       kind: "object",
       fields: Release_ConditionFields,
     },
-    createTime: "create_time",
-    customTargetTypeSnapshots: {
-      wireName: "custom_target_type_snapshots",
-      kind: "list",
-      fields: Release_CustomTargetTypeSnapshotsFields,
-    },
     deliveryPipelineSnapshot: {
       wireName: "delivery_pipeline_snapshot",
       kind: "object",
@@ -1221,32 +934,13 @@ export const Release: ResourceBinding<ReleaseConfig, ReleaseAttrs> = {
     etag: "etag",
     labels: "labels",
     name: "name",
-    renderEndTime: "render_end_time",
-    renderStartTime: "render_start_time",
-    renderState: "render_state",
     skaffoldConfigPath: "skaffold_config_path",
     skaffoldConfigUri: "skaffold_config_uri",
     skaffoldVersion: "skaffold_version",
-    targetArtifacts: {
-      wireName: "target_artifacts",
-      kind: "map",
-      fields: Release_TargetArtifactsFields,
-    },
-    targetRenders: {
-      wireName: "target_renders",
-      kind: "map",
-      fields: Release_TargetRendersFields,
-    },
-    targetSnapshots: {
-      wireName: "target_snapshots",
-      kind: "list",
-      fields: Release_TargetSnapshotsFields,
-    },
     toolVersions: {
       wireName: "tool_versions",
       kind: "object",
       fields: Release_ToolVersionsFields,
     },
-    uid: "uid",
   },
 };

@@ -31,30 +31,30 @@ type V1beta1RagMetadata_UserSpecifiedMetadata struct {
 }
 
 var V1beta1RagMetadata_UserSpecifiedMetadata_Value_ListValueFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1RagMetadata_UserSpecifiedMetadata_ValueFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"DatetimeValue": ubx.FieldSpec{WireName: "datetime_value"},
-		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"ListValue": ubx.FieldSpec{
-			WireName: "list_value",
-			Kind: "object",
-			Fields: V1beta1RagMetadata_UserSpecifiedMetadata_Value_ListValueFields,
-		},
-		"StrValue": ubx.FieldSpec{WireName: "str_value"},
-	}
+	"BoolValue":     ubx.FieldSpec{WireName: "bool_value"},
+	"DatetimeValue": ubx.FieldSpec{WireName: "datetime_value"},
+	"FloatValue":    ubx.FieldSpec{WireName: "float_value"},
+	"IntValue":      ubx.FieldSpec{WireName: "int_value"},
+	"ListValue": ubx.FieldSpec{
+		WireName: "list_value",
+		Kind:     "object",
+		Fields:   V1beta1RagMetadata_UserSpecifiedMetadata_Value_ListValueFields,
+	},
+	"StrValue": ubx.FieldSpec{WireName: "str_value"},
+}
 
 var V1beta1RagMetadata_UserSpecifiedMetadataFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: V1beta1RagMetadata_UserSpecifiedMetadata_ValueFields,
-		},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   V1beta1RagMetadata_UserSpecifiedMetadata_ValueFields,
+	},
+}
 
 type V1beta1RagMetadataConfig struct {
 	// Identifier. Resource name of the RagMetadata. Format: `projects/{project}/locations/{location}/ragCorpora/{rag_corpus}/ragFiles/{rag_file}/ragMetadata/{rag_metadata}`
@@ -76,8 +76,8 @@ var V1beta1RagMetadata = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"UserSpecifiedMetadata": ubx.FieldSpec{
 			WireName: "user_specified_metadata",
-			Kind: "object",
-			Fields: V1beta1RagMetadata_UserSpecifiedMetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1RagMetadata_UserSpecifiedMetadataFields,
 		},
 	},
 }

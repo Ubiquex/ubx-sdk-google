@@ -16,7 +16,6 @@ class BetaInstanceSetting_Metadata:
 @dataclasses.dataclass
 class BetaInstanceSettingConfig:
     project: Any = None
-    zone: Any = None
 
 @dataclasses.dataclass
 class BetaInstanceSettingAttrs:
@@ -32,6 +31,5 @@ BetaInstanceSetting = ubx.DataSourceBinding(
     wire_type="google_compute_beta_instance_setting",
     fields={
         "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

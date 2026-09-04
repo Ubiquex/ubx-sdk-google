@@ -99,72 +99,26 @@ const Backup_TroubleshootingInfoFields: FieldMap = {
 };
 
 export interface BackupConfig {
-  /** Output only. If True, all namespaces were included in the Backup. */
-  allNamespaces?: boolean | Computed<boolean>;
   /** Information about the GKE cluster from which this Backup was created. */
   clusterMetadata?: Backup_ClusterMetadata | Computed<Backup_ClusterMetadata>;
-  /** Output only. Completion time of the Backup */
-  completeTime?: string | Computed<string>;
-  /** Output only. The size of the config backup in bytes. */
-  configBackupSizeBytes?: string | Computed<string>;
-  /** Output only. Whether or not the Backup contains Kubernetes Secrets. Controlled by the parent BackupPlan's include_secrets value. */
-  containsSecrets?: boolean | Computed<boolean>;
-  /** Output only. Whether or not the Backup contains volume data. Controlled by the parent BackupPlan's include_volume_data value. */
-  containsVolumeData?: boolean | Computed<boolean>;
-  /** Output only. The timestamp when this Backup resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update). */
   deleteLockDays?: number | Computed<number>;
-  /** Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days). */
-  deleteLockExpireTime?: string | Computed<string>;
   /** Optional. User specified descriptive string for this Backup. */
   description?: string | Computed<string>;
   /** Defined a customer managed encryption key that will be used to encrypt Backup artifacts. */
   encryptionKey?: Backup_EncryptionKey | Computed<Backup_EncryptionKey>;
-  /** Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` or `DeleteBackup` to ensure that their change will be applied to the same version of the resource. */
-  etag?: string | Computed<string>;
   /** Optional. A set of custom labels supplied by user. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. This flag indicates whether this Backup resource was created manually by a user or via a schedule in the BackupPlan. A value of True means that the Backup was created manually. */
-  manual?: boolean | Computed<boolean>;
-  /** Output only. Identifier. The fully qualified name of the Backup. `projects/* /locations/* /backupPlans/* /backups/*` */
-  name?: string | Computed<string>;
-  /** Output only. The total number of user managed namespaces contained in the Backup. */
-  namespaceCount?: number | Computed<number>;
-  /** Output only. If false, Backup will fail when Backup for GKE detects Kubernetes configuration that is non-standard or requires additional setup to restore. Inherited from the parent BackupPlan's permissive_mode value. */
-  permissiveMode?: boolean | Computed<boolean>;
-  /** Output only. The total number of Kubernetes Pods contained in the Backup. */
-  podCount?: number | Computed<number>;
-  /** Output only. The total number of Kubernetes resources included in the Backup. */
-  resourceCount?: number | Computed<number>;
   /** Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value. */
   retainDays?: number | Computed<number>;
-  /** Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days). */
-  retainExpireTime?: string | Computed<string>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** A list of namespaced Kubernetes resources. */
   selectedApplications?: Backup_SelectedApplications | Computed<Backup_SelectedApplications>;
   /** A list of Kubernetes labels. */
   selectedNamespaceLabels?: Backup_SelectedNamespaceLabels | Computed<Backup_SelectedNamespaceLabels>;
   /** A list of Kubernetes Namespaces. */
   selectedNamespaces?: Backup_SelectedNamespaces | Computed<Backup_SelectedNamespaces>;
-  /** Output only. The total size of the Backup in bytes = config backup size + sum(volume backup sizes) */
-  sizeBytes?: string | Computed<string>;
-  /** Output only. Current state of the Backup */
-  state?: string | Computed<string>;
-  /** Output only. Human-readable description of why the backup is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent. */
-  stateReason?: string | Computed<string>;
   /** Stores information about troubleshooting doc for debugging a particular state of an operation (eg - backup/restore). This will be used by the end user to debug their operation failure scenario easily. */
   troubleshootingInfo?: Backup_TroubleshootingInfo | Computed<Backup_TroubleshootingInfo>;
-  /** Output only. Server generated global unique identifier of [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier) */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when this Backup resource was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The total number of volume backups contained in the Backup. */
-  volumeCount?: number | Computed<number>;
 }
 
 export interface BackupAttrs {
@@ -239,37 +193,20 @@ export interface BackupAttrs {
 export const Backup: ResourceBinding<BackupConfig, BackupAttrs> = {
   wireType: "google_gkebackup_backup",
   fields: {
-    allNamespaces: "all_namespaces",
     clusterMetadata: {
       wireName: "cluster_metadata",
       kind: "object",
       fields: Backup_ClusterMetadataFields,
     },
-    completeTime: "complete_time",
-    configBackupSizeBytes: "config_backup_size_bytes",
-    containsSecrets: "contains_secrets",
-    containsVolumeData: "contains_volume_data",
-    createTime: "create_time",
     deleteLockDays: "delete_lock_days",
-    deleteLockExpireTime: "delete_lock_expire_time",
     description: "description",
     encryptionKey: {
       wireName: "encryption_key",
       kind: "object",
       fields: Backup_EncryptionKeyFields,
     },
-    etag: "etag",
     labels: "labels",
-    manual: "manual",
-    name: "name",
-    namespaceCount: "namespace_count",
-    permissiveMode: "permissive_mode",
-    podCount: "pod_count",
-    resourceCount: "resource_count",
     retainDays: "retain_days",
-    retainExpireTime: "retain_expire_time",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     selectedApplications: {
       wireName: "selected_applications",
       kind: "object",
@@ -285,16 +222,10 @@ export const Backup: ResourceBinding<BackupConfig, BackupAttrs> = {
       kind: "object",
       fields: Backup_SelectedNamespacesFields,
     },
-    sizeBytes: "size_bytes",
-    state: "state",
-    stateReason: "state_reason",
     troubleshootingInfo: {
       wireName: "troubleshooting_info",
       kind: "object",
       fields: Backup_TroubleshootingInfoFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
-    volumeCount: "volume_count",
   },
 };

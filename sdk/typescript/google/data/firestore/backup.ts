@@ -11,7 +11,6 @@ export interface Backup_Stats {
 }
 
 export interface BackupConfig {
-  name: string | Computed<string>;
 }
 
 export interface BackupAttrs {
@@ -33,6 +32,5 @@ export interface BackupAttrs {
 export const Backup: DataSourceBinding<BackupConfig, BackupAttrs> = {
   wireType: "google_firestore_backup",
   fields: {
-    name: "name",
   },
 };

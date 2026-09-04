@@ -38,26 +38,14 @@ _PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields = {
 class PublicDelegatedPrefixConfig:
     # The allocatable prefix length supported by this public delegated prefix. This field is optional and cannot be set for prefixes in DELEGATION mode. It cannot be set for IPv4 prefixes either, and it always defaults to 32.
     allocatable_prefix_length: Any = None
-    # Output only. [Output Only] The version of BYOIP API.
-    byoip_api_version: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] Whether this PDP supports enhanced IPv4 allocations. Applicable for IPv4 PDPs only.
-    enable_enhanced_ipv4_allocation: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a new PublicDelegatedPrefix. An up-to-date fingerprint must be provided in order to update thePublicDelegatedPrefix, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a PublicDelegatedPrefix.
     fingerprint: Any = None
-    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-    id: Any = None
     # The IP address range, in CIDR format, represented by this public delegated prefix.
     ip_cidr_range: Any = None
-    # Output only. [Output Only] The internet access type for IPv6 Public Delegated Prefixes. Inherited from parent prefix.
-    ipv6_access_type: Any = None
     # If true, the prefix will be live migrated.
     is_live_migration: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#publicDelegatedPrefix for public delegated prefixes.
-    kind: Any = None
     # The public delegated prefix mode for IPv6 only.
     mode: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -66,10 +54,6 @@ class PublicDelegatedPrefixConfig:
     parent_prefix: Any = None
     # The list of sub public delegated prefixes that exist for this public delegated prefix.
     public_delegated_sub_prefixs: Any = None
-    # Output only. [Output Only] URL of the region where the public delegated prefix resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
     # [Output Only] The status of the public delegated prefix, which can be one of following values: - `INITIALIZING` The public delegated prefix is being initialized and addresses cannot be created yet. - `READY_TO_ANNOUNCE` The public delegated prefix is a live migration prefix and is active. - `ANNOUNCED` The public delegated prefix is announced and ready to use. - `DELETING` The public delegated prefix is being deprovsioned. - `ACTIVE` The public delegated prefix is ready to use.
     status: Any = None
 
@@ -116,16 +100,10 @@ PublicDelegatedPrefix = ubx.ResourceBinding(
     wire_type="google_compute_public_delegated_prefix",
     fields={
         "allocatable_prefix_length": ubx.FieldSpec(wire_name="allocatable_prefix_length"),
-        "byoip_api_version": ubx.FieldSpec(wire_name="byoip_api_version"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "enable_enhanced_ipv4_allocation": ubx.FieldSpec(wire_name="enable_enhanced_ipv4_allocation"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
-        "ipv6_access_type": ubx.FieldSpec(wire_name="ipv6_access_type"),
         "is_live_migration": ubx.FieldSpec(wire_name="is_live_migration"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "mode": ubx.FieldSpec(wire_name="mode"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent_prefix": ubx.FieldSpec(wire_name="parent_prefix"),
@@ -134,8 +112,6 @@ PublicDelegatedPrefix = ubx.ResourceBinding(
             kind="list",
             fields=_PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "status": ubx.FieldSpec(wire_name="status"),
     },
 )

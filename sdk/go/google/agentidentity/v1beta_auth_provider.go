@@ -46,43 +46,43 @@ type V1betaAuthProvider_AuthProviderTypeParams struct {
 }
 
 var V1betaAuthProvider_AuthProviderTypeParams_ApiKeyFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-	}
+	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+}
 
 var V1betaAuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields = ubx.FieldMap{
-		"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"DefaultContinueUri": ubx.FieldSpec{WireName: "default_continue_uri"},
-		"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
-		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-	}
+	"AuthorizationUrl":   ubx.FieldSpec{WireName: "authorization_url"},
+	"ClientId":           ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":       ubx.FieldSpec{WireName: "client_secret"},
+	"DefaultContinueUri": ubx.FieldSpec{WireName: "default_continue_uri"},
+	"EnablePkce":         ubx.FieldSpec{WireName: "enable_pkce"},
+	"RedirectUrl":        ubx.FieldSpec{WireName: "redirect_url"},
+	"TokenUrl":           ubx.FieldSpec{WireName: "token_url"},
+}
 
 var V1betaAuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"TokenUrl":     ubx.FieldSpec{WireName: "token_url"},
+}
 
 var V1betaAuthProvider_AuthProviderTypeParamsFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{
-			WireName: "api_key",
-			Kind: "object",
-			Fields: V1betaAuthProvider_AuthProviderTypeParams_ApiKeyFields,
-		},
-		"GeAuthProvider": ubx.FieldSpec{WireName: "ge_auth_provider"},
-		"ThreeLeggedOauth": ubx.FieldSpec{
-			WireName: "three_legged_oauth",
-			Kind: "object",
-			Fields: V1betaAuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields,
-		},
-		"TwoLeggedOauth": ubx.FieldSpec{
-			WireName: "two_legged_oauth",
-			Kind: "object",
-			Fields: V1betaAuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields,
-		},
-	}
+	"ApiKey": ubx.FieldSpec{
+		WireName: "api_key",
+		Kind:     "object",
+		Fields:   V1betaAuthProvider_AuthProviderTypeParams_ApiKeyFields,
+	},
+	"GeAuthProvider": ubx.FieldSpec{WireName: "ge_auth_provider"},
+	"ThreeLeggedOauth": ubx.FieldSpec{
+		WireName: "three_legged_oauth",
+		Kind:     "object",
+		Fields:   V1betaAuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields,
+	},
+	"TwoLeggedOauth": ubx.FieldSpec{
+		WireName: "two_legged_oauth",
+		Kind:     "object",
+		Fields:   V1betaAuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields,
+	},
+}
 
 type V1betaAuthProviderConfig struct {
 	// Optional. List of scopes that are allowed to be requested for this auth provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
@@ -91,22 +91,12 @@ type V1betaAuthProviderConfig struct {
 	AuthProviderTypeParams any
 	// Optional. List of scopes that are blocked from being requested for this auth provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
 	BlockedScopes any
-	// Output only. The creation timestamp.
-	CreateTime any
-	// Output only. Set to `true` if the auth provider is deleted.
-	Deleted any
 	// Optional. Description of the resource. Must be less than 256 characters.
 	Description any
-	// Output only. The time when the auth provider will expire.
-	ExpireTime any
 	// Optional. Labels as key-value pairs.
 	Labels any
 	// Identifier. The full resource name of the auth provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
 	Name any
-	// Output only. The state of the auth provider.
-	State any
-	// Output only. The update timestamp.
-	UpdateTime any
 	// Optional. Input only. Identifiers for the agents that will use this auth provider, starting with `principal://`. For example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
 	WorkloadIds any
 }
@@ -144,18 +134,13 @@ var V1betaAuthProvider = ubx.ResourceBinding{
 		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
 		"AuthProviderTypeParams": ubx.FieldSpec{
 			WireName: "auth_provider_type_params",
-			Kind: "object",
-			Fields: V1betaAuthProvider_AuthProviderTypeParamsFields,
+			Kind:     "object",
+			Fields:   V1betaAuthProvider_AuthProviderTypeParamsFields,
 		},
 		"BlockedScopes": ubx.FieldSpec{WireName: "blocked_scopes"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WorkloadIds": ubx.FieldSpec{WireName: "workload_ids"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"WorkloadIds":   ubx.FieldSpec{WireName: "workload_ids"},
 	},
 }

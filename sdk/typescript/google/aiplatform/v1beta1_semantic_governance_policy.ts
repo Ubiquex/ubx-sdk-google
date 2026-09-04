@@ -14,10 +14,6 @@ const V1beta1SemanticGovernancePolicy_McpToolsFields: FieldMap = {
 export interface V1beta1SemanticGovernancePolicyConfig {
   /** Required. The name of the agent in Agent Registry that is affected by this policy. */
   agent?: string | Computed<string>;
-  /** Output only. Represents the principal of the agent, used by the Policy Decision Point (PDP) for governance checks. For more information, see https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity Format: `principal://TRUST_DOMAIN/NAMESPACE/AGENT_NAME` Example: `principal://agents.global.org-ORGANIZATION_ID.system.id.goog/resources/aiplatform/projects/PROJECT_NUMBER/locations/LOCATION/reasoningEngines/AGENT_ENGINE_ID` */
-  agentIdentity?: string | Computed<string>;
-  /** Output only. Timestamp when this SemanticGovernancePolicy was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the SemanticGovernancePolicy. */
   description?: string | Computed<string>;
   /** Optional. The user-defined name of the SemanticGovernancePolicy. */
@@ -30,8 +26,6 @@ export interface V1beta1SemanticGovernancePolicyConfig {
   name?: string | Computed<string>;
   /** Required. The natural language constraint of the SemanticGovernancePolicy. */
   naturalLanguageConstraint?: string | Computed<string>;
-  /** Output only. Timestamp when this SemanticGovernancePolicy was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1SemanticGovernancePolicyAttrs {
@@ -61,8 +55,6 @@ export const V1beta1SemanticGovernancePolicy: ResourceBinding<V1beta1SemanticGov
   wireType: "google_aiplatform_v1beta1_semantic_governance_policy",
   fields: {
     agent: "agent",
-    agentIdentity: "agent_identity",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
@@ -73,6 +65,5 @@ export const V1beta1SemanticGovernancePolicy: ResourceBinding<V1beta1SemanticGov
     },
     name: "name",
     naturalLanguageConstraint: "natural_language_constraint",
-    updateTime: "update_time",
   },
 };

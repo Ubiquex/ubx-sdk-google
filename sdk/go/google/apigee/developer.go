@@ -4,14 +4,14 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Developer_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 var Developer_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeveloperConfig struct {
 	// Access type.
@@ -24,22 +24,14 @@ type DeveloperConfig struct {
 	Attributes any
 	// List of companies associated with the developer.
 	Companies any
-	// Output only. Time at which the developer was created in milliseconds since epoch.
-	CreatedAt any
 	// ID of the developer. **Note**: IDs are generated internally by Apigee and are not guaranteed to stay the same over time.
 	DeveloperId any
 	// Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid. Note that the email address has to be in lowercase only.
 	Email any
 	// Required. First name of the developer.
 	FirstName any
-	// Output only. Time at which the developer was last modified in milliseconds since epoch.
-	LastModifiedAt any
 	// Required. Last name of the developer.
 	LastName any
-	// Output only. Name of the Apigee organization in which the developer resides.
-	OrganizationName any
-	// Output only. Status of the developer. Valid values are `active` and `inactive`.
-	Status any
 	// Required. User name of the developer. Not used by Apigee hybrid.
 	UserName any
 }
@@ -79,22 +71,18 @@ var Developer = ubx.ResourceBinding{
 	WireType: "google_apigee_developer",
 	Fields: ubx.FieldMap{
 		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"AppFamily": ubx.FieldSpec{WireName: "app_family"},
-		"Apps": ubx.FieldSpec{WireName: "apps"},
+		"AppFamily":  ubx.FieldSpec{WireName: "app_family"},
+		"Apps":       ubx.FieldSpec{WireName: "apps"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Developer_AttributesFields,
+			Kind:     "list",
+			Fields:   Developer_AttributesFields,
 		},
-		"Companies": ubx.FieldSpec{WireName: "companies"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
+		"Companies":   ubx.FieldSpec{WireName: "companies"},
 		"DeveloperId": ubx.FieldSpec{WireName: "developer_id"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"OrganizationName": ubx.FieldSpec{WireName: "organization_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"Email":       ubx.FieldSpec{WireName: "email"},
+		"FirstName":   ubx.FieldSpec{WireName: "first_name"},
+		"LastName":    ubx.FieldSpec{WireName: "last_name"},
+		"UserName":    ubx.FieldSpec{WireName: "user_name"},
 	},
 }

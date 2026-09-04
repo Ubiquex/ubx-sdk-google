@@ -43,10 +43,6 @@ export interface DataProductConfig {
   accessApprovalConfig?: DataProduct_AccessApprovalConfig | Computed<DataProduct_AccessApprovalConfig>;
   /** Optional. Data product access groups by access group id as key. If data product is used only for packaging data assets, then access groups may be empty. However, if a data product is used for sharing data assets, then at least one access group must be specified.Example: { "analyst": { "id": "analyst", "displayName": "Analyst", "description": "Access group for analysts", "principal": { "googleGroup": "analysts@example.com" } } } */
   accessGroups?: Record<string, DataProduct_AccessGroups> | Computed<Record<string, DataProduct_AccessGroups>>;
-  /** Output only. Number of data assets associated with this data product. */
-  assetCount?: number | Computed<number>;
-  /** Output only. The time at which the data product was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the data product. */
   description?: string | Computed<string>;
   /** Required. User-friendly display name of the data product. */
@@ -61,10 +57,6 @@ export interface DataProductConfig {
   name?: string | Computed<string>;
   /** Required. Emails of the data product owners. */
   ownerEmails?: string[] | Computed<string[]>;
-  /** Output only. System generated unique ID for the data product. This ID will be different if the data product is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which the data product was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DataProductAttrs {
@@ -109,8 +101,6 @@ export const DataProduct: ResourceBinding<DataProductConfig, DataProductAttrs> =
       kind: "map",
       fields: DataProduct_AccessGroupsFields,
     },
-    assetCount: "asset_count",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
@@ -118,7 +108,5 @@ export const DataProduct: ResourceBinding<DataProductConfig, DataProductAttrs> =
     labels: "labels",
     name: "name",
     ownerEmails: "owner_emails",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

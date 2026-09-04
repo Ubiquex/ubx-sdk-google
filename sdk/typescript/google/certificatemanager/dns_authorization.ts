@@ -17,8 +17,6 @@ const DnsAuthorization_DnsResourceRecordFields: FieldMap = {
 };
 
 export interface DnsAuthorizationConfig {
-  /** Output only. The creation timestamp of a DnsAuthorization. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a DnsAuthorization. */
   description?: string | Computed<string>;
   /** The structure describing the DNS Resource Record that needs to be added to DNS configuration for the authorization to be usable by certificate. */
@@ -33,8 +31,6 @@ export interface DnsAuthorizationConfig {
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location `global`: FIXED_RECORD, - in other locations: PER_PROJECT_RECORD. */
   type?: string | Computed<string>;
-  /** Output only. The last update timestamp of a DnsAuthorization. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DnsAuthorizationAttrs {
@@ -61,7 +57,6 @@ export interface DnsAuthorizationAttrs {
 export const DnsAuthorization: ResourceBinding<DnsAuthorizationConfig, DnsAuthorizationAttrs> = {
   wireType: "google_certificatemanager_dns_authorization",
   fields: {
-    createTime: "create_time",
     description: "description",
     dnsResourceRecord: {
       wireName: "dns_resource_record",
@@ -73,6 +68,5 @@ export const DnsAuthorization: ResourceBinding<DnsAuthorizationConfig, DnsAuthor
     name: "name",
     tags: "tags",
     type: "type",
-    updateTime: "update_time",
   },
 };

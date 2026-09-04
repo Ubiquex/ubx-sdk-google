@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ConfigurationConfig struct {
 	// Required. The name of the organization. Zero-touch enrollment shows this organization name to device users during device provisioning.
 	CompanyName any
-	// Output only. The ID of the configuration. Assigned by the server.
-	ConfigurationId any
 	// Required. A short name that describes the configuration's purpose. For example, _Sales team_ or _Temporary employees_. The zero-touch enrollment portal displays this name to IT admins.
 	ConfigurationName any
 	// Required. The email address that device users can contact to get help. Zero-touch enrollment shows this email address to device users before device provisioning. The value is validated on input.
@@ -24,8 +22,6 @@ type ConfigurationConfig struct {
 	ForcedResetTime any
 	// Required. Whether this is the default configuration that zero-touch enrollment applies to any new devices the organization purchases in the future. Only one customer configuration can be the default. Setting this value to `true`, changes the previous default configuration's `isDefault` value to `false`.
 	IsDefault any
-	// Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server.
-	Name any
 }
 
 type ConfigurationAttrs struct {
@@ -56,16 +52,14 @@ type ConfigurationAttrs struct {
 var Configuration = ubx.ResourceBinding{
 	WireType: "google_androiddeviceprovisioning_configuration",
 	Fields: ubx.FieldMap{
-		"CompanyName": ubx.FieldSpec{WireName: "company_name"},
-		"ConfigurationId": ubx.FieldSpec{WireName: "configuration_id"},
+		"CompanyName":       ubx.FieldSpec{WireName: "company_name"},
 		"ConfigurationName": ubx.FieldSpec{WireName: "configuration_name"},
-		"ContactEmail": ubx.FieldSpec{WireName: "contact_email"},
-		"ContactPhone": ubx.FieldSpec{WireName: "contact_phone"},
-		"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
-		"DpcExtras": ubx.FieldSpec{WireName: "dpc_extras"},
-		"DpcResourcePath": ubx.FieldSpec{WireName: "dpc_resource_path"},
-		"ForcedResetTime": ubx.FieldSpec{WireName: "forced_reset_time"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ContactEmail":      ubx.FieldSpec{WireName: "contact_email"},
+		"ContactPhone":      ubx.FieldSpec{WireName: "contact_phone"},
+		"CustomMessage":     ubx.FieldSpec{WireName: "custom_message"},
+		"DpcExtras":         ubx.FieldSpec{WireName: "dpc_extras"},
+		"DpcResourcePath":   ubx.FieldSpec{WireName: "dpc_resource_path"},
+		"ForcedResetTime":   ubx.FieldSpec{WireName: "forced_reset_time"},
+		"IsDefault":         ubx.FieldSpec{WireName: "is_default"},
 	},
 }

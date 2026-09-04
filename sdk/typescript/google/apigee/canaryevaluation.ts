@@ -19,22 +19,14 @@ const Canaryevaluation_MetricLabelsFields: FieldMap = {
 export interface CanaryevaluationConfig {
   /** Required. The stable version that is serving requests. */
   control?: string | Computed<string>;
-  /** Output only. Create time of the canary evaluation. */
-  createTime?: string | Computed<string>;
   /** Required. End time for the evaluation's analysis. */
   endTime?: string | Computed<string>;
   /** Labels that can be used to filter Apigee metrics. */
   metricLabels?: Canaryevaluation_MetricLabels | Computed<Canaryevaluation_MetricLabels>;
-  /** Output only. Name of the canary evalution. */
-  name?: string | Computed<string>;
   /** Required. Start time for the canary evaluation's analysis. */
   startTime?: string | Computed<string>;
-  /** Output only. The current state of the canary evaluation. */
-  state?: string | Computed<string>;
   /** Required. The newer version that is serving requests. */
   treatment?: string | Computed<string>;
-  /** Output only. The resulting verdict of the canary evaluations: NONE, PASS, or FAIL. */
-  verdict?: string | Computed<string>;
 }
 
 export interface CanaryevaluationAttrs {
@@ -62,17 +54,13 @@ export const Canaryevaluation: ResourceBinding<CanaryevaluationConfig, Canaryeva
   wireType: "google_apigee_canaryevaluation",
   fields: {
     control: "control",
-    createTime: "create_time",
     endTime: "end_time",
     metricLabels: {
       wireName: "metric_labels",
       kind: "object",
       fields: Canaryevaluation_MetricLabelsFields,
     },
-    name: "name",
     startTime: "start_time",
-    state: "state",
     treatment: "treatment",
-    verdict: "verdict",
   },
 };

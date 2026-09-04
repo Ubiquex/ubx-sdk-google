@@ -254,8 +254,6 @@ _PersistentResource_ResourceRuntimeSpecFields = {
 
 @dataclasses.dataclass
 class PersistentResourceConfig:
-    # Output only. Time when the PersistentResource was created.
-    create_time: Any = None
     # Optional. The display name of the PersistentResource. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -278,16 +276,6 @@ class PersistentResourceConfig:
     resource_runtime: Any = None
     # Configuration for the runtime on a PersistentResource instance, including but not limited to: * Service accounts used to run the workloads. * Whether to make it a dedicated Ray Cluster.
     resource_runtime_spec: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Time when the PersistentResource for the first time entered the `RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of a Study.
-    state: Any = None
-    # Output only. Time when the PersistentResource was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PersistentResourceAttrs:
@@ -329,7 +317,6 @@ class PersistentResourceAttrs:
 PersistentResource = ubx.ResourceBinding(
     wire_type="google_aiplatform_persistent_resource",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
@@ -365,10 +352,5 @@ PersistentResource = ubx.ResourceBinding(
             kind="object",
             fields=_PersistentResource_ResourceRuntimeSpecFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

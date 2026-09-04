@@ -155,7 +155,7 @@ class DataSource_DataSourceGcpResource:
 
 @dataclasses.dataclass
 class DataSourceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class DataSourceAttrs:
@@ -188,6 +188,5 @@ class DataSourceAttrs:
 DataSource = ubx.DataSourceBinding(
     wire_type="google_backupdr_data_source",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

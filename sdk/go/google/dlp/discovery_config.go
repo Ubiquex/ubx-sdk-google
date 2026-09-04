@@ -6,21 +6,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DiscoveryConfig_Actions_ExportData_ProfileTable struct {
 	DatasetId any
 	ProjectId any
-	TableId any
+	TableId   any
 }
 
 type DiscoveryConfig_Actions_ExportData struct {
-	ProfileTable any
+	ProfileTable        any
 	SampleFindingsTable any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_Conditions struct {
-	MinimumRiskScore any
+	MinimumRiskScore        any
 	MinimumSensitivityScore any
 }
 
 type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions struct {
-	Conditions any
+	Conditions      any
 	LogicalOperator any
 }
 
@@ -30,9 +30,9 @@ type DiscoveryConfig_Actions_PubSubNotification_PubsubCondition struct {
 
 type DiscoveryConfig_Actions_PubSubNotification struct {
 	DetailOfMessage any
-	Event any
+	Event           any
 	PubsubCondition any
-	Topic any
+	Topic           any
 }
 
 type DiscoveryConfig_Actions_PublishToDataplexCatalog struct {
@@ -49,33 +49,33 @@ type DiscoveryConfig_Actions_TagResources_TagConditions_Tag struct {
 
 type DiscoveryConfig_Actions_TagResources_TagConditions struct {
 	SensitivityScore any
-	Tag any
+	Tag              any
 }
 
 type DiscoveryConfig_Actions_TagResources struct {
-	LowerDataRiskToLow any
+	LowerDataRiskToLow      any
 	ProfileGenerationsToTag any
-	TagConditions any
+	TagConditions           any
 }
 
 type DiscoveryConfig_Actions struct {
-	ExportData any
-	PubSubNotification any
-	PublishToChronicle any
+	ExportData               any
+	PubSubNotification       any
+	PublishToChronicle       any
 	PublishToDataplexCatalog any
-	PublishToScc any
-	TagResources any
+	PublishToScc             any
+	TagResources             any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Errors_Details struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Errors struct {
-	Details any
-	ExtraInfo any
+	Details    any
+	ExtraInfo  any
 	Timestamps any
 }
 
@@ -125,18 +125,18 @@ type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTempl
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence struct {
 	Frequency any
-	Types any
+	Types     any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
-	SchemaModifiedCadence any
-	TableModifiedCadence any
+	RefreshFrequency               any
+	SchemaModifiedCadence          any
+	TableModifiedCadence           any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions struct {
-	MinAge any
+	MinAge      any
 	MinRowCount any
 }
 
@@ -145,16 +145,16 @@ type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_Types str
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions struct {
-	CreatedAfter any
-	OrConditions any
+	CreatedAfter   any
+	OrConditions   any
 	TypeCollection any
-	Types any
+	Types          any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns struct {
 	DatasetIdRegex any
 	ProjectIdRegex any
-	TableIdRegex any
+	TableIdRegex   any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes struct {
@@ -166,28 +166,28 @@ type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables struct
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter struct {
-	OtherTables any
+	OtherTables    any
 	TableReference any
-	Tables any
+	Tables         any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget struct {
-	Cadence any
+	Cadence    any
 	Conditions any
-	Disabled any
-	Filter any
+	Disabled   any
+	Filter     any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Conditions struct {
 	DatabaseEngines any
-	Types any
+	Types           any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns struct {
-	DatabaseRegex any
+	DatabaseRegex             any
 	DatabaseResourceNameRegex any
-	InstanceRegex any
-	ProjectIdRegex any
+	InstanceRegex             any
+	ProjectIdRegex            any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes struct {
@@ -199,28 +199,28 @@ type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection st
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference struct {
-	Database any
+	Database         any
 	DatabaseResource any
-	Instance any
-	ProjectId any
+	Instance         any
+	ProjectId        any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter struct {
-	Collection any
+	Collection                any
 	DatabaseResourceReference any
-	Others any
+	Others                    any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
-	SchemaModifiedCadence any
+	RefreshFrequency               any
+	SchemaModifiedCadence          any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
@@ -231,18 +231,18 @@ type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_Cloud
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions struct {
 	CloudStorageConditions any
-	CreatedAfter any
-	MinAge any
+	CreatedAfter           any
+	MinAge                 any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference struct {
 	BucketName any
-	ProjectId any
+	ProjectId  any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex struct {
 	BucketNameRegex any
-	ProjectIdRegex any
+	ProjectIdRegex  any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns struct {
@@ -254,7 +254,7 @@ type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collectio
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters struct {
-	NamespacedTagKey any
+	NamespacedTagKey   any
 	NamespacedTagValue any
 }
 
@@ -264,35 +264,35 @@ type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collectio
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection struct {
 	IncludeRegexes any
-	IncludeTags any
+	IncludeTags    any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter struct {
 	CloudStorageResourceReference any
-	Collection any
-	Others any
+	Collection                    any
+	Others                        any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
+	RefreshFrequency               any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions struct {
-	BucketTypes any
+	BucketTypes          any
 	ObjectStorageClasses any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions struct {
 	AmazonS3BucketConditions any
-	MinAge any
+	MinAge                   any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType struct {
@@ -334,22 +334,22 @@ type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResou
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter struct {
-	Collection any
-	Others any
+	Collection     any
+	Others         any
 	SingleResource any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget struct {
-	Conditions any
-	DataSourceType any
-	Disabled any
-	Filter any
+	Conditions        any
+	DataSourceType    any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions struct {
 	CreatedAfter any
-	MinAge any
+	MinAge       any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns struct {
@@ -369,24 +369,24 @@ type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDa
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter struct {
-	Collection any
-	Others any
+	Collection                     any
+	Others                         any
 	VertexDatasetResourceReference any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type DiscoveryConfig_DiscoveryConfig_Targets struct {
-	BigQueryTarget any
-	CloudSqlTarget any
-	CloudStorageTarget any
-	OtherCloudTarget any
-	SecretsTarget any
+	BigQueryTarget      any
+	CloudSqlTarget      any
+	CloudStorageTarget  any
+	OtherCloudTarget    any
+	SecretsTarget       any
 	VertexDatasetTarget any
 }
 
@@ -420,720 +420,720 @@ type DiscoveryConfig_DiscoveryConfig struct {
 }
 
 var DiscoveryConfig_Actions_ExportData_ProfileTableFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var DiscoveryConfig_Actions_ExportDataFields = ubx.FieldMap{
-		"ProfileTable": ubx.FieldSpec{
-			WireName: "profile_table",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_ExportData_ProfileTableFields,
-		},
-		"SampleFindingsTable": ubx.FieldSpec{
-			WireName: "sample_findings_table",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_ExportData_ProfileTableFields,
-		},
-	}
+	"ProfileTable": ubx.FieldSpec{
+		WireName: "profile_table",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_ExportData_ProfileTableFields,
+	},
+	"SampleFindingsTable": ubx.FieldSpec{
+		WireName: "sample_findings_table",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_ExportData_ProfileTableFields,
+	},
+}
 
 var DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_ConditionsFields = ubx.FieldMap{
-		"MinimumRiskScore": ubx.FieldSpec{WireName: "minimum_risk_score"},
-		"MinimumSensitivityScore": ubx.FieldSpec{WireName: "minimum_sensitivity_score"},
-	}
+	"MinimumRiskScore":        ubx.FieldSpec{WireName: "minimum_risk_score"},
+	"MinimumSensitivityScore": ubx.FieldSpec{WireName: "minimum_sensitivity_score"},
+}
 
 var DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_ExpressionsFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_ConditionsFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_Expressions_ConditionsFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+}
 
 var DiscoveryConfig_Actions_PubSubNotification_PubsubConditionFields = ubx.FieldMap{
-		"Expressions": ubx.FieldSpec{
-			WireName: "expressions",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_ExpressionsFields,
-		},
-	}
+	"Expressions": ubx.FieldSpec{
+		WireName: "expressions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_PubSubNotification_PubsubCondition_ExpressionsFields,
+	},
+}
 
 var DiscoveryConfig_Actions_PubSubNotificationFields = ubx.FieldMap{
-		"DetailOfMessage": ubx.FieldSpec{WireName: "detail_of_message"},
-		"Event": ubx.FieldSpec{WireName: "event"},
-		"PubsubCondition": ubx.FieldSpec{
-			WireName: "pubsub_condition",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_PubSubNotification_PubsubConditionFields,
-		},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"DetailOfMessage": ubx.FieldSpec{WireName: "detail_of_message"},
+	"Event":           ubx.FieldSpec{WireName: "event"},
+	"PubsubCondition": ubx.FieldSpec{
+		WireName: "pubsub_condition",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_PubSubNotification_PubsubConditionFields,
+	},
+	"Topic": ubx.FieldSpec{WireName: "topic"},
+}
 
 var DiscoveryConfig_Actions_PublishToDataplexCatalogFields = ubx.FieldMap{
-		"LowerDataRiskToLow": ubx.FieldSpec{WireName: "lower_data_risk_to_low"},
-	}
+	"LowerDataRiskToLow": ubx.FieldSpec{WireName: "lower_data_risk_to_low"},
+}
 
 var DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScoreFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var DiscoveryConfig_Actions_TagResources_TagConditions_TagFields = ubx.FieldMap{
-		"NamespacedValue": ubx.FieldSpec{WireName: "namespaced_value"},
-	}
+	"NamespacedValue": ubx.FieldSpec{WireName: "namespaced_value"},
+}
 
 var DiscoveryConfig_Actions_TagResources_TagConditionsFields = ubx.FieldMap{
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScoreFields,
-		},
-		"Tag": ubx.FieldSpec{
-			WireName: "tag",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_TagResources_TagConditions_TagFields,
-		},
-	}
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_TagResources_TagConditions_SensitivityScoreFields,
+	},
+	"Tag": ubx.FieldSpec{
+		WireName: "tag",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_TagResources_TagConditions_TagFields,
+	},
+}
 
 var DiscoveryConfig_Actions_TagResourcesFields = ubx.FieldMap{
-		"LowerDataRiskToLow": ubx.FieldSpec{WireName: "lower_data_risk_to_low"},
-		"ProfileGenerationsToTag": ubx.FieldSpec{WireName: "profile_generations_to_tag"},
-		"TagConditions": ubx.FieldSpec{
-			WireName: "tag_conditions",
-			Kind: "list",
-			Fields: DiscoveryConfig_Actions_TagResources_TagConditionsFields,
-		},
-	}
+	"LowerDataRiskToLow":      ubx.FieldSpec{WireName: "lower_data_risk_to_low"},
+	"ProfileGenerationsToTag": ubx.FieldSpec{WireName: "profile_generations_to_tag"},
+	"TagConditions": ubx.FieldSpec{
+		WireName: "tag_conditions",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_Actions_TagResources_TagConditionsFields,
+	},
+}
 
 var DiscoveryConfig_ActionsFields = ubx.FieldMap{
-		"ExportData": ubx.FieldSpec{
-			WireName: "export_data",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_ExportDataFields,
-		},
-		"PubSubNotification": ubx.FieldSpec{
-			WireName: "pub_sub_notification",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_PubSubNotificationFields,
-		},
-		"PublishToChronicle": ubx.FieldSpec{WireName: "publish_to_chronicle"},
-		"PublishToDataplexCatalog": ubx.FieldSpec{
-			WireName: "publish_to_dataplex_catalog",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_PublishToDataplexCatalogFields,
-		},
-		"PublishToScc": ubx.FieldSpec{WireName: "publish_to_scc"},
-		"TagResources": ubx.FieldSpec{
-			WireName: "tag_resources",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_TagResourcesFields,
-		},
-	}
+	"ExportData": ubx.FieldSpec{
+		WireName: "export_data",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_ExportDataFields,
+	},
+	"PubSubNotification": ubx.FieldSpec{
+		WireName: "pub_sub_notification",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_PubSubNotificationFields,
+	},
+	"PublishToChronicle": ubx.FieldSpec{WireName: "publish_to_chronicle"},
+	"PublishToDataplexCatalog": ubx.FieldSpec{
+		WireName: "publish_to_dataplex_catalog",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_PublishToDataplexCatalogFields,
+	},
+	"PublishToScc": ubx.FieldSpec{WireName: "publish_to_scc"},
+	"TagResources": ubx.FieldSpec{
+		WireName: "tag_resources",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_TagResourcesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Errors_DetailsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_ErrorsFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{
-			WireName: "details",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Errors_DetailsFields,
-		},
-		"ExtraInfo": ubx.FieldSpec{WireName: "extra_info"},
-		"Timestamps": ubx.FieldSpec{WireName: "timestamps"},
-	}
+	"Details": ubx.FieldSpec{
+		WireName: "details",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Errors_DetailsFields,
+	},
+	"ExtraInfo":  ubx.FieldSpec{WireName: "extra_info"},
+	"Timestamps": ubx.FieldSpec{WireName: "timestamps"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_OrgConfig_LocationFields = ubx.FieldMap{
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
-	}
+	"FolderId":       ubx.FieldSpec{WireName: "folder_id"},
+	"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_OrgConfigFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_OrgConfig_LocationFields,
-		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_OrgConfig_LocationFields,
+	},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocation_AwsLocationFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-		"AllAssetInventoryAssets": ubx.FieldSpec{WireName: "all_asset_inventory_assets"},
-	}
+	"AccountId":               ubx.FieldSpec{WireName: "account_id"},
+	"AllAssetInventoryAssets": ubx.FieldSpec{WireName: "all_asset_inventory_assets"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocationFields = ubx.FieldMap{
-		"AwsLocation": ubx.FieldSpec{
-			WireName: "aws_location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocation_AwsLocationFields,
-		},
-	}
+	"AwsLocation": ubx.FieldSpec{
+		WireName: "aws_location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocation_AwsLocationFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_ProcessingLocation_DocumentFallbackLocationFields = ubx.FieldMap{
-		"GlobalProcessing": ubx.FieldSpec{WireName: "global_processing"},
-		"MultiRegionProcessing": ubx.FieldSpec{WireName: "multi_region_processing"},
-	}
+	"GlobalProcessing":      ubx.FieldSpec{WireName: "global_processing"},
+	"MultiRegionProcessing": ubx.FieldSpec{WireName: "multi_region_processing"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_ProcessingLocationFields = ubx.FieldMap{
-		"DocumentFallbackLocation": ubx.FieldSpec{
-			WireName: "document_fallback_location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_ProcessingLocation_DocumentFallbackLocationFields,
-		},
-		"ImageFallbackLocation": ubx.FieldSpec{
-			WireName: "image_fallback_location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_ProcessingLocation_DocumentFallbackLocationFields,
-		},
-	}
+	"DocumentFallbackLocation": ubx.FieldSpec{
+		WireName: "document_fallback_location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_ProcessingLocation_DocumentFallbackLocationFields,
+	},
+	"ImageFallbackLocation": ubx.FieldSpec{
+		WireName: "image_fallback_location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_ProcessingLocation_DocumentFallbackLocationFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-	}
+	"Frequency": ubx.FieldSpec{WireName: "frequency"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"Frequency": ubx.FieldSpec{WireName: "frequency"},
+	"Types":     ubx.FieldSpec{WireName: "types"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_CadenceFields = ubx.FieldMap{
-		"InspectTemplateModifiedCadence": ubx.FieldSpec{
-			WireName: "inspect_template_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
-		},
-		"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
-		"SchemaModifiedCadence": ubx.FieldSpec{
-			WireName: "schema_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
-		},
-		"TableModifiedCadence": ubx.FieldSpec{
-			WireName: "table_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
-		},
-	}
+	"InspectTemplateModifiedCadence": ubx.FieldSpec{
+		WireName: "inspect_template_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
+	},
+	"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
+	"SchemaModifiedCadence": ubx.FieldSpec{
+		WireName: "schema_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
+	},
+	"TableModifiedCadence": ubx.FieldSpec{
+		WireName: "table_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditionsFields = ubx.FieldMap{
-		"MinAge": ubx.FieldSpec{WireName: "min_age"},
-		"MinRowCount": ubx.FieldSpec{WireName: "min_row_count"},
-	}
+	"MinAge":      ubx.FieldSpec{WireName: "min_age"},
+	"MinRowCount": ubx.FieldSpec{WireName: "min_row_count"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_TypesFields = ubx.FieldMap{
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"Types": ubx.FieldSpec{WireName: "types"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_ConditionsFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"OrConditions": ubx.FieldSpec{
-			WireName: "or_conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditionsFields,
-		},
-		"TypeCollection": ubx.FieldSpec{WireName: "type_collection"},
-		"Types": ubx.FieldSpec{
-			WireName: "types",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_TypesFields,
-		},
-	}
+	"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+	"OrConditions": ubx.FieldSpec{
+		WireName: "or_conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditionsFields,
+	},
+	"TypeCollection": ubx.FieldSpec{WireName: "type_collection"},
+	"Types": ubx.FieldSpec{
+		WireName: "types",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Conditions_TypesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_PatternsFields = ubx.FieldMap{
-		"DatasetIdRegex": ubx.FieldSpec{WireName: "dataset_id_regex"},
-		"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
-		"TableIdRegex": ubx.FieldSpec{WireName: "table_id_regex"},
-	}
+	"DatasetIdRegex": ubx.FieldSpec{WireName: "dataset_id_regex"},
+	"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
+	"TableIdRegex":   ubx.FieldSpec{WireName: "table_id_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexesFields = ubx.FieldMap{
-		"Patterns": ubx.FieldSpec{
-			WireName: "patterns",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_PatternsFields,
-		},
-	}
+	"Patterns": ubx.FieldSpec{
+		WireName: "patterns",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_PatternsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_TablesFields = ubx.FieldMap{
-		"IncludeRegexes": ubx.FieldSpec{
-			WireName: "include_regexes",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexesFields,
-		},
-	}
+	"IncludeRegexes": ubx.FieldSpec{
+		WireName: "include_regexes",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_FilterFields = ubx.FieldMap{
-		"OtherTables": ubx.FieldSpec{WireName: "other_tables"},
-		"TableReference": ubx.FieldSpec{
-			WireName: "table_reference",
-			Kind: "object",
-			Fields: DiscoveryConfig_Actions_ExportData_ProfileTableFields,
-		},
-		"Tables": ubx.FieldSpec{
-			WireName: "tables",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_TablesFields,
-		},
-	}
+	"OtherTables": ubx.FieldSpec{WireName: "other_tables"},
+	"TableReference": ubx.FieldSpec{
+		WireName: "table_reference",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_Actions_ExportData_ProfileTableFields,
+	},
+	"Tables": ubx.FieldSpec{
+		WireName: "tables",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Filter_TablesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTargetFields = ubx.FieldMap{
-		"Cadence": ubx.FieldSpec{
-			WireName: "cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_CadenceFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_ConditionsFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_FilterFields,
-		},
-	}
+	"Cadence": ubx.FieldSpec{
+		WireName: "cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_CadenceFields,
+	},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_ConditionsFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_FilterFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_ConditionsFields = ubx.FieldMap{
-		"DatabaseEngines": ubx.FieldSpec{WireName: "database_engines"},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"DatabaseEngines": ubx.FieldSpec{WireName: "database_engines"},
+	"Types":           ubx.FieldSpec{WireName: "types"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_PatternsFields = ubx.FieldMap{
-		"DatabaseRegex": ubx.FieldSpec{WireName: "database_regex"},
-		"DatabaseResourceNameRegex": ubx.FieldSpec{WireName: "database_resource_name_regex"},
-		"InstanceRegex": ubx.FieldSpec{WireName: "instance_regex"},
-		"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
-	}
+	"DatabaseRegex":             ubx.FieldSpec{WireName: "database_regex"},
+	"DatabaseResourceNameRegex": ubx.FieldSpec{WireName: "database_resource_name_regex"},
+	"InstanceRegex":             ubx.FieldSpec{WireName: "instance_regex"},
+	"ProjectIdRegex":            ubx.FieldSpec{WireName: "project_id_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexesFields = ubx.FieldMap{
-		"Patterns": ubx.FieldSpec{
-			WireName: "patterns",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_PatternsFields,
-		},
-	}
+	"Patterns": ubx.FieldSpec{
+		WireName: "patterns",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_PatternsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_CollectionFields = ubx.FieldMap{
-		"IncludeRegexes": ubx.FieldSpec{
-			WireName: "include_regexes",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexesFields,
-		},
-	}
+	"IncludeRegexes": ubx.FieldSpec{
+		WireName: "include_regexes",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReferenceFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DatabaseResource": ubx.FieldSpec{WireName: "database_resource"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"DatabaseResource": ubx.FieldSpec{WireName: "database_resource"},
+	"Instance":         ubx.FieldSpec{WireName: "instance"},
+	"ProjectId":        ubx.FieldSpec{WireName: "project_id"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_FilterFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{
-			WireName: "collection",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_CollectionFields,
-		},
-		"DatabaseResourceReference": ubx.FieldSpec{
-			WireName: "database_resource_reference",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReferenceFields,
-		},
-		"Others": ubx.FieldSpec{WireName: "others"},
-	}
+	"Collection": ubx.FieldSpec{
+		WireName: "collection",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_CollectionFields,
+	},
+	"DatabaseResourceReference": ubx.FieldSpec{
+		WireName: "database_resource_reference",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReferenceFields,
+	},
+	"Others": ubx.FieldSpec{WireName: "others"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadenceFields = ubx.FieldMap{
-		"InspectTemplateModifiedCadence": ubx.FieldSpec{
-			WireName: "inspect_template_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
-		},
-		"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
-		"SchemaModifiedCadence": ubx.FieldSpec{
-			WireName: "schema_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
-		},
-	}
+	"InspectTemplateModifiedCadence": ubx.FieldSpec{
+		WireName: "inspect_template_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
+	},
+	"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
+	"SchemaModifiedCadence": ubx.FieldSpec{
+		WireName: "schema_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTargetFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_ConditionsFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_FilterFields,
-		},
-		"GenerationCadence": ubx.FieldSpec{
-			WireName: "generation_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadenceFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_ConditionsFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_FilterFields,
+	},
+	"GenerationCadence": ubx.FieldSpec{
+		WireName: "generation_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditionsFields = ubx.FieldMap{
-		"IncludedBucketAttributes": ubx.FieldSpec{WireName: "included_bucket_attributes"},
-		"IncludedObjectAttributes": ubx.FieldSpec{WireName: "included_object_attributes"},
-	}
+	"IncludedBucketAttributes": ubx.FieldSpec{WireName: "included_bucket_attributes"},
+	"IncludedObjectAttributes": ubx.FieldSpec{WireName: "included_object_attributes"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_ConditionsFields = ubx.FieldMap{
-		"CloudStorageConditions": ubx.FieldSpec{
-			WireName: "cloud_storage_conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditionsFields,
-		},
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"MinAge": ubx.FieldSpec{WireName: "min_age"},
-	}
+	"CloudStorageConditions": ubx.FieldSpec{
+		WireName: "cloud_storage_conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Conditions_CloudStorageConditionsFields,
+	},
+	"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+	"MinAge":       ubx.FieldSpec{WireName: "min_age"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReferenceFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegexFields = ubx.FieldMap{
-		"BucketNameRegex": ubx.FieldSpec{WireName: "bucket_name_regex"},
-		"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
-	}
+	"BucketNameRegex": ubx.FieldSpec{WireName: "bucket_name_regex"},
+	"ProjectIdRegex":  ubx.FieldSpec{WireName: "project_id_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_PatternsFields = ubx.FieldMap{
-		"CloudStorageRegex": ubx.FieldSpec{
-			WireName: "cloud_storage_regex",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegexFields,
-		},
-	}
+	"CloudStorageRegex": ubx.FieldSpec{
+		WireName: "cloud_storage_regex",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegexFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexesFields = ubx.FieldMap{
-		"Patterns": ubx.FieldSpec{
-			WireName: "patterns",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_PatternsFields,
-		},
-	}
+	"Patterns": ubx.FieldSpec{
+		WireName: "patterns",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_PatternsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFiltersFields = ubx.FieldMap{
-		"NamespacedTagKey": ubx.FieldSpec{WireName: "namespaced_tag_key"},
-		"NamespacedTagValue": ubx.FieldSpec{WireName: "namespaced_tag_value"},
-	}
+	"NamespacedTagKey":   ubx.FieldSpec{WireName: "namespaced_tag_key"},
+	"NamespacedTagValue": ubx.FieldSpec{WireName: "namespaced_tag_value"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTagsFields = ubx.FieldMap{
-		"TagFilters": ubx.FieldSpec{
-			WireName: "tag_filters",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFiltersFields,
-		},
-	}
+	"TagFilters": ubx.FieldSpec{
+		WireName: "tag_filters",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFiltersFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CollectionFields = ubx.FieldMap{
-		"IncludeRegexes": ubx.FieldSpec{
-			WireName: "include_regexes",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexesFields,
-		},
-		"IncludeTags": ubx.FieldSpec{
-			WireName: "include_tags",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTagsFields,
-		},
-	}
+	"IncludeRegexes": ubx.FieldSpec{
+		WireName: "include_regexes",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexesFields,
+	},
+	"IncludeTags": ubx.FieldSpec{
+		WireName: "include_tags",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTagsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_FilterFields = ubx.FieldMap{
-		"CloudStorageResourceReference": ubx.FieldSpec{
-			WireName: "cloud_storage_resource_reference",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReferenceFields,
-		},
-		"Collection": ubx.FieldSpec{
-			WireName: "collection",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CollectionFields,
-		},
-		"Others": ubx.FieldSpec{WireName: "others"},
-	}
+	"CloudStorageResourceReference": ubx.FieldSpec{
+		WireName: "cloud_storage_resource_reference",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReferenceFields,
+	},
+	"Collection": ubx.FieldSpec{
+		WireName: "collection",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CollectionFields,
+	},
+	"Others": ubx.FieldSpec{WireName: "others"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields = ubx.FieldMap{
-		"InspectTemplateModifiedCadence": ubx.FieldSpec{
-			WireName: "inspect_template_modified_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
-		},
-		"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
-	}
+	"InspectTemplateModifiedCadence": ubx.FieldSpec{
+		WireName: "inspect_template_modified_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTarget_Cadence_InspectTemplateModifiedCadenceFields,
+	},
+	"RefreshFrequency": ubx.FieldSpec{WireName: "refresh_frequency"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTargetFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_ConditionsFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_FilterFields,
-		},
-		"GenerationCadence": ubx.FieldSpec{
-			WireName: "generation_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_ConditionsFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_FilterFields,
+	},
+	"GenerationCadence": ubx.FieldSpec{
+		WireName: "generation_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditionsFields = ubx.FieldMap{
-		"BucketTypes": ubx.FieldSpec{WireName: "bucket_types"},
-		"ObjectStorageClasses": ubx.FieldSpec{WireName: "object_storage_classes"},
-	}
+	"BucketTypes":          ubx.FieldSpec{WireName: "bucket_types"},
+	"ObjectStorageClasses": ubx.FieldSpec{WireName: "object_storage_classes"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_ConditionsFields = ubx.FieldMap{
-		"AmazonS3BucketConditions": ubx.FieldSpec{
-			WireName: "amazon_s3_bucket_conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditionsFields,
-		},
-		"MinAge": ubx.FieldSpec{WireName: "min_age"},
-	}
+	"AmazonS3BucketConditions": ubx.FieldSpec{
+		WireName: "amazon_s3_bucket_conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditionsFields,
+	},
+	"MinAge": ubx.FieldSpec{WireName: "min_age"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceTypeFields = ubx.FieldMap{
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-	}
+	"DataSource": ubx.FieldSpec{WireName: "data_source"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegexFields = ubx.FieldMap{
-		"AccountIdRegex": ubx.FieldSpec{WireName: "account_id_regex"},
-	}
+	"AccountIdRegex": ubx.FieldSpec{WireName: "account_id_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegexFields = ubx.FieldMap{
-		"AwsAccountRegex": ubx.FieldSpec{
-			WireName: "aws_account_regex",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegexFields,
-		},
-		"BucketNameRegex": ubx.FieldSpec{WireName: "bucket_name_regex"},
-	}
+	"AwsAccountRegex": ubx.FieldSpec{
+		WireName: "aws_account_regex",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegex_AwsAccountRegexFields,
+	},
+	"BucketNameRegex": ubx.FieldSpec{WireName: "bucket_name_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_PatternsFields = ubx.FieldMap{
-		"AmazonS3BucketRegex": ubx.FieldSpec{
-			WireName: "amazon_s3_bucket_regex",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegexFields,
-		},
-	}
+	"AmazonS3BucketRegex": ubx.FieldSpec{
+		WireName: "amazon_s3_bucket_regex",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_Patterns_AmazonS3BucketRegexFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexesFields = ubx.FieldMap{
-		"Patterns": ubx.FieldSpec{
-			WireName: "patterns",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_PatternsFields,
-		},
-	}
+	"Patterns": ubx.FieldSpec{
+		WireName: "patterns",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexes_PatternsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_CollectionFields = ubx.FieldMap{
-		"IncludeRegexes": ubx.FieldSpec{
-			WireName: "include_regexes",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexesFields,
-		},
-	}
+	"IncludeRegexes": ubx.FieldSpec{
+		WireName: "include_regexes",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_Collection_IncludeRegexesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccountFields = ubx.FieldMap{
-		"AccountId": ubx.FieldSpec{WireName: "account_id"},
-	}
+	"AccountId": ubx.FieldSpec{WireName: "account_id"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3BucketFields = ubx.FieldMap{
-		"AwsAccount": ubx.FieldSpec{
-			WireName: "aws_account",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccountFields,
-		},
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	}
+	"AwsAccount": ubx.FieldSpec{
+		WireName: "aws_account",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3Bucket_AwsAccountFields,
+	},
+	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResourceFields = ubx.FieldMap{
-		"AmazonS3Bucket": ubx.FieldSpec{
-			WireName: "amazon_s3_bucket",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3BucketFields,
-		},
-	}
+	"AmazonS3Bucket": ubx.FieldSpec{
+		WireName: "amazon_s3_bucket",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResource_AmazonS3BucketFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_FilterFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{
-			WireName: "collection",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_CollectionFields,
-		},
-		"Others": ubx.FieldSpec{WireName: "others"},
-		"SingleResource": ubx.FieldSpec{
-			WireName: "single_resource",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResourceFields,
-		},
-	}
+	"Collection": ubx.FieldSpec{
+		WireName: "collection",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_CollectionFields,
+	},
+	"Others": ubx.FieldSpec{WireName: "others"},
+	"SingleResource": ubx.FieldSpec{
+		WireName: "single_resource",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_Filter_SingleResourceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTargetFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_ConditionsFields,
-		},
-		"DataSourceType": ubx.FieldSpec{
-			WireName: "data_source_type",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceTypeFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_FilterFields,
-		},
-		"GenerationCadence": ubx.FieldSpec{
-			WireName: "generation_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_ConditionsFields,
+	},
+	"DataSourceType": ubx.FieldSpec{
+		WireName: "data_source_type",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceTypeFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTarget_FilterFields,
+	},
+	"GenerationCadence": ubx.FieldSpec{
+		WireName: "generation_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_ConditionsFields = ubx.FieldMap{
-		"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
-		"MinAge": ubx.FieldSpec{WireName: "min_age"},
-	}
+	"CreatedAfter": ubx.FieldSpec{WireName: "created_after"},
+	"MinAge":       ubx.FieldSpec{WireName: "min_age"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_PatternsFields = ubx.FieldMap{
-		"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
-	}
+	"ProjectIdRegex": ubx.FieldSpec{WireName: "project_id_regex"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexesFields = ubx.FieldMap{
-		"Patterns": ubx.FieldSpec{
-			WireName: "patterns",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_PatternsFields,
-		},
-	}
+	"Patterns": ubx.FieldSpec{
+		WireName: "patterns",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_PatternsFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_CollectionFields = ubx.FieldMap{
-		"VertexDatasetRegexes": ubx.FieldSpec{
-			WireName: "vertex_dataset_regexes",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexesFields,
-		},
-	}
+	"VertexDatasetRegexes": ubx.FieldSpec{
+		WireName: "vertex_dataset_regexes",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexesFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReferenceFields = ubx.FieldMap{
-		"DatasetResourceName": ubx.FieldSpec{WireName: "dataset_resource_name"},
-	}
+	"DatasetResourceName": ubx.FieldSpec{WireName: "dataset_resource_name"},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_FilterFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{
-			WireName: "collection",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_CollectionFields,
-		},
-		"Others": ubx.FieldSpec{WireName: "others"},
-		"VertexDatasetResourceReference": ubx.FieldSpec{
-			WireName: "vertex_dataset_resource_reference",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReferenceFields,
-		},
-	}
+	"Collection": ubx.FieldSpec{
+		WireName: "collection",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_CollectionFields,
+	},
+	"Others": ubx.FieldSpec{WireName: "others"},
+	"VertexDatasetResourceReference": ubx.FieldSpec{
+		WireName: "vertex_dataset_resource_reference",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_VertexDatasetResourceReferenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTargetFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_ConditionsFields,
-		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_FilterFields,
-		},
-		"GenerationCadence": ubx.FieldSpec{
-			WireName: "generation_cadence",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_ConditionsFields,
+	},
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTarget_FilterFields,
+	},
+	"GenerationCadence": ubx.FieldSpec{
+		WireName: "generation_cadence",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadenceFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfig_TargetsFields = ubx.FieldMap{
-		"BigQueryTarget": ubx.FieldSpec{
-			WireName: "big_query_target",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTargetFields,
-		},
-		"CloudSqlTarget": ubx.FieldSpec{
-			WireName: "cloud_sql_target",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTargetFields,
-		},
-		"CloudStorageTarget": ubx.FieldSpec{
-			WireName: "cloud_storage_target",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTargetFields,
-		},
-		"OtherCloudTarget": ubx.FieldSpec{
-			WireName: "other_cloud_target",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTargetFields,
-		},
-		"SecretsTarget": ubx.FieldSpec{WireName: "secrets_target"},
-		"VertexDatasetTarget": ubx.FieldSpec{
-			WireName: "vertex_dataset_target",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTargetFields,
-		},
-	}
+	"BigQueryTarget": ubx.FieldSpec{
+		WireName: "big_query_target",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_BigQueryTargetFields,
+	},
+	"CloudSqlTarget": ubx.FieldSpec{
+		WireName: "cloud_sql_target",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudSqlTargetFields,
+	},
+	"CloudStorageTarget": ubx.FieldSpec{
+		WireName: "cloud_storage_target",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_CloudStorageTargetFields,
+	},
+	"OtherCloudTarget": ubx.FieldSpec{
+		WireName: "other_cloud_target",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_OtherCloudTargetFields,
+	},
+	"SecretsTarget": ubx.FieldSpec{WireName: "secrets_target"},
+	"VertexDatasetTarget": ubx.FieldSpec{
+		WireName: "vertex_dataset_target",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_Targets_VertexDatasetTargetFields,
+	},
+}
 
 var DiscoveryConfig_DiscoveryConfigFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: DiscoveryConfig_ActionsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_ErrorsFields,
-		},
-		"InspectTemplates": ubx.FieldSpec{WireName: "inspect_templates"},
-		"LastRunTime": ubx.FieldSpec{WireName: "last_run_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrgConfig": ubx.FieldSpec{
-			WireName: "org_config",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_OrgConfigFields,
-		},
-		"OtherCloudStartingLocation": ubx.FieldSpec{
-			WireName: "other_cloud_starting_location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocationFields,
-		},
-		"ProcessingLocation": ubx.FieldSpec{
-			WireName: "processing_location",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfig_ProcessingLocationFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: DiscoveryConfig_DiscoveryConfig_TargetsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_ActionsFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_ErrorsFields,
+	},
+	"InspectTemplates": ubx.FieldSpec{WireName: "inspect_templates"},
+	"LastRunTime":      ubx.FieldSpec{WireName: "last_run_time"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"OrgConfig": ubx.FieldSpec{
+		WireName: "org_config",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_OrgConfigFields,
+	},
+	"OtherCloudStartingLocation": ubx.FieldSpec{
+		WireName: "other_cloud_starting_location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_OtherCloudStartingLocationFields,
+	},
+	"ProcessingLocation": ubx.FieldSpec{
+		WireName: "processing_location",
+		Kind:     "object",
+		Fields:   DiscoveryConfig_DiscoveryConfig_ProcessingLocationFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   DiscoveryConfig_DiscoveryConfig_TargetsFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type DiscoveryConfigConfig struct {
 	// The config ID can contain uppercase and lowercase letters, numbers, and hyphens; that is, it must match the regular expression: `[a-zA-Z\d-_]+`. The maximum length is 100 characters. Can be empty to allow the system to generate one.
@@ -1181,8 +1181,8 @@ var DiscoveryConfig = ubx.ResourceBinding{
 		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
 		"DiscoveryConfig": ubx.FieldSpec{
 			WireName: "discovery_config",
-			Kind: "object",
-			Fields: DiscoveryConfig_DiscoveryConfigFields,
+			Kind:     "object",
+			Fields:   DiscoveryConfig_DiscoveryConfigFields,
 		},
 	},
 }

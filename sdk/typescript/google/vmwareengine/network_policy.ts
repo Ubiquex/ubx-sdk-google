@@ -14,8 +14,6 @@ const NetworkPolicy_ExternalIpFields: FieldMap = {
 };
 
 export interface NetworkPolicyConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description for this network policy. */
   description?: string | Computed<string>;
   /** Required. IP address range in CIDR notation used to create internet access and external IP access. An RFC 1918 CIDR block, with a "/26" prefix, is required. The range cannot overlap with any prefixes either in the consumer VPC network or in use by the private clouds attached to that VPC network. */
@@ -24,16 +22,8 @@ export interface NetworkPolicyConfig {
   externalIp?: NetworkPolicy_ExternalIp | Computed<NetworkPolicy_ExternalIp>;
   /** Represents a network service that is managed by a `NetworkPolicy` resource. A network service provides a way to control an aspect of external access to VMware workloads. For example, whether the VMware workloads in the private clouds governed by a network policy can access or be accessed from the internet. */
   internetAccess?: NetworkPolicy_ExternalIp | Computed<NetworkPolicy_ExternalIp>;
-  /** Output only. Identifier. The resource name of this network policy. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/networkPolicies/my-network-policy` */
-  name?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
   /** Optional. The relative resource name of the VMware Engine network. Specify the name in the following form: `projects/{project}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}` where `{project}` can either be a project number or a project ID. */
   vmwareEngineNetwork?: string | Computed<string>;
-  /** Output only. The canonical name of the VMware Engine network in the form: `projects/{project_number}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}` */
-  vmwareEngineNetworkCanonical?: string | Computed<string>;
 }
 
 export interface NetworkPolicyAttrs {
@@ -62,7 +52,6 @@ export interface NetworkPolicyAttrs {
 export const NetworkPolicy: ResourceBinding<NetworkPolicyConfig, NetworkPolicyAttrs> = {
   wireType: "google_vmwareengine_network_policy",
   fields: {
-    createTime: "create_time",
     description: "description",
     edgeServicesCidr: "edge_services_cidr",
     externalIp: {
@@ -75,10 +64,6 @@ export const NetworkPolicy: ResourceBinding<NetworkPolicyConfig, NetworkPolicyAt
       kind: "object",
       fields: NetworkPolicy_ExternalIpFields,
     },
-    name: "name",
-    uid: "uid",
-    updateTime: "update_time",
     vmwareEngineNetwork: "vmware_engine_network",
-    vmwareEngineNetworkCanonical: "vmware_engine_network_canonical",
   },
 };

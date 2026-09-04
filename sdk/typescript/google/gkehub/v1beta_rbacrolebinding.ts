@@ -23,10 +23,6 @@ const V1betaRbacrolebinding_StateFields: FieldMap = {
 };
 
 export interface V1betaRbacrolebindingConfig {
-  /** Output only. When the rbacrolebinding was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the rbacrolebinding was deleted. */
-  deleteTime?: string | Computed<string>;
   /** group is the group, as seen by the kubernetes cluster. */
   group?: string | Computed<string>;
   /** Optional. Labels for this RBACRolebinding. */
@@ -37,10 +33,6 @@ export interface V1betaRbacrolebindingConfig {
   role?: V1betaRbacrolebinding_Role | Computed<V1betaRbacrolebinding_Role>;
   /** RBACRoleBindingLifecycleState describes the state of a RbacRoleBinding resource. */
   state?: V1betaRbacrolebinding_State | Computed<V1betaRbacrolebinding_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all rbacrolebinding resources. If a rbacrolebinding resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. When the rbacrolebinding was last updated. */
-  updateTime?: string | Computed<string>;
   /** user is the name of the user as seen by the kubernetes cluster, example "alice" or "alice@domain.tld" */
   user?: string | Computed<string>;
 }
@@ -71,8 +63,6 @@ export interface V1betaRbacrolebindingAttrs {
 export const V1betaRbacrolebinding: ResourceBinding<V1betaRbacrolebindingConfig, V1betaRbacrolebindingAttrs> = {
   wireType: "google_gkehub_v1beta_rbacrolebinding",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     group: "group",
     labels: "labels",
     name: "name",
@@ -86,8 +76,6 @@ export const V1betaRbacrolebinding: ResourceBinding<V1betaRbacrolebindingConfig,
       kind: "object",
       fields: V1betaRbacrolebinding_StateFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     user: "user",
   },
 };

@@ -296,7 +296,6 @@ class V3beta1ToolConfig:
     function_spec: Any = None
     name: Any = None
     open_api_spec: Any = None
-    tool_type: Any = None
 
 @dataclasses.dataclass
 class V3beta1ToolAttrs:
@@ -341,6 +340,5 @@ V3beta1Tool = ubx.ResourceBinding(
             kind="object",
             fields=_V3beta1Tool_OpenApiSpecFields,
         ),
-        "tool_type": ubx.FieldSpec(wire_name="tool_type"),
     },
 )

@@ -237,8 +237,6 @@ _V1beta1NotebookExecutionJob_WorkbenchRuntimeFields = {
 
 @dataclasses.dataclass
 class V1beta1NotebookExecutionJobConfig:
-    # Output only. Timestamp when this NotebookExecutionJob was created.
-    create_time: Any = None
     # Compute configuration to use for an execution job.
     custom_environment_spec: Any = None
     # The Dataform Repository containing the input notebook.
@@ -257,14 +255,10 @@ class V1beta1NotebookExecutionJobConfig:
     gcs_notebook_source: Any = None
     # The Cloud Storage location to upload the result to. Format: `gs://bucket-name`
     gcs_output_uri: Any = None
-    # Output only. The state of the NotebookExecutionJob.
-    job_state: Any = None
     # The name of the kernel to use during notebook execution. If unset, the default kernel is used.
     kernel_name: Any = None
     # The labels with user-defined metadata to organize NotebookExecutionJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
     labels: Any = None
-    # Output only. The resource name of this NotebookExecutionJob. Format: `projects/{project_id}/locations/{location}/notebookExecutionJobs/{job_id}`
-    name: Any = None
     # The NotebookRuntimeTemplate to source compute configuration from.
     notebook_runtime_template_resource_name: Any = None
     # The Schedule resource name if this job is triggered by one. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}`
@@ -273,8 +267,6 @@ class V1beta1NotebookExecutionJobConfig:
     service_account: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     status: Any = None
-    # Output only. Timestamp when this NotebookExecutionJob was most recently updated.
-    update_time: Any = None
     # Configuration for a Workbench Instances-based environment.
     workbench_runtime: Any = None
 
@@ -324,7 +316,6 @@ class V1beta1NotebookExecutionJobAttrs:
 V1beta1NotebookExecutionJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_notebook_execution_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_environment_spec": ubx.FieldSpec(
             wire_name="custom_environment_spec",
             kind="object",
@@ -354,10 +345,8 @@ V1beta1NotebookExecutionJob = ubx.ResourceBinding(
             fields=_V1beta1NotebookExecutionJob_GcsNotebookSourceFields,
         ),
         "gcs_output_uri": ubx.FieldSpec(wire_name="gcs_output_uri"),
-        "job_state": ubx.FieldSpec(wire_name="job_state"),
         "kernel_name": ubx.FieldSpec(wire_name="kernel_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "notebook_runtime_template_resource_name": ubx.FieldSpec(wire_name="notebook_runtime_template_resource_name"),
         "schedule_resource_name": ubx.FieldSpec(wire_name="schedule_resource_name"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
@@ -366,7 +355,6 @@ V1beta1NotebookExecutionJob = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1NotebookExecutionJob_StatusFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workbench_runtime": ubx.FieldSpec(
             wire_name="workbench_runtime",
             kind="object",

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_AccessRulesOptions_AccessRules struct {
 	IpAddressRanges any
-	Name any
-	SquashMode any
+	Name            any
+	SquashMode      any
 }
 
 type Instance_AccessRulesOptions struct {
@@ -26,22 +26,22 @@ type Instance_DynamicTierOptions struct {
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow_Time struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type Instance_MaintenancePolicy_MaintenanceExclusionWindow struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Time any
+	Time      any
 }
 
 type Instance_MaintenancePolicy_WeeklyMaintenanceWindows struct {
@@ -64,91 +64,89 @@ type Instance_UpcomingMaintenanceSchedule struct {
 }
 
 var Instance_AccessRulesOptions_AccessRulesFields = ubx.FieldMap{
-		"IpAddressRanges": ubx.FieldSpec{WireName: "ip_address_ranges"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SquashMode": ubx.FieldSpec{WireName: "squash_mode"},
-	}
+	"IpAddressRanges": ubx.FieldSpec{WireName: "ip_address_ranges"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SquashMode":      ubx.FieldSpec{WireName: "squash_mode"},
+}
 
 var Instance_AccessRulesOptionsFields = ubx.FieldMap{
-		"AccessRules": ubx.FieldSpec{
-			WireName: "access_rules",
-			Kind: "list",
-			Fields: Instance_AccessRulesOptions_AccessRulesFields,
-		},
-		"DefaultSquashGid": ubx.FieldSpec{WireName: "default_squash_gid"},
-		"DefaultSquashMode": ubx.FieldSpec{WireName: "default_squash_mode"},
-		"DefaultSquashUid": ubx.FieldSpec{WireName: "default_squash_uid"},
-	}
+	"AccessRules": ubx.FieldSpec{
+		WireName: "access_rules",
+		Kind:     "list",
+		Fields:   Instance_AccessRulesOptions_AccessRulesFields,
+	},
+	"DefaultSquashGid":  ubx.FieldSpec{WireName: "default_squash_gid"},
+	"DefaultSquashMode": ubx.FieldSpec{WireName: "default_squash_mode"},
+	"DefaultSquashUid":  ubx.FieldSpec{WireName: "default_squash_uid"},
+}
 
 var Instance_DynamicTierOptionsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var Instance_MaintenancePolicy_MaintenanceExclusionWindow_TimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Instance_MaintenancePolicy_MaintenanceExclusionWindowFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{
-			WireName: "end_date",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDateFields,
-		},
-		"StartDate": ubx.FieldSpec{
-			WireName: "start_date",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDateFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindow_TimeFields,
-		},
-	}
+	"EndDate": ubx.FieldSpec{
+		WireName: "end_date",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDateFields,
+	},
+	"StartDate": ubx.FieldSpec{
+		WireName: "start_date",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindow_EndDateFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindow_TimeFields,
+	},
+}
 
 var Instance_MaintenancePolicy_WeeklyMaintenanceWindowsFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindow_TimeFields,
-		},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindow_TimeFields,
+	},
+}
 
 var Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"MaintenanceExclusionWindow": ubx.FieldSpec{
-			WireName: "maintenance_exclusion_window",
-			Kind: "list",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
-		},
-		"WeeklyMaintenanceWindows": ubx.FieldSpec{
-			WireName: "weekly_maintenance_windows",
-			Kind: "list",
-			Fields: Instance_MaintenancePolicy_WeeklyMaintenanceWindowsFields,
-		},
-	}
+	"MaintenanceExclusionWindow": ubx.FieldSpec{
+		WireName: "maintenance_exclusion_window",
+		Kind:     "list",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
+	},
+	"WeeklyMaintenanceWindows": ubx.FieldSpec{
+		WireName: "weekly_maintenance_windows",
+		Kind:     "list",
+		Fields:   Instance_MaintenancePolicy_WeeklyMaintenanceWindowsFields,
+	},
+}
 
 var Instance_UpcomingMaintenanceScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type InstanceConfig struct {
 	// IP-based access rules for the Managed Lustre instance. These options define the root user squash configuration.
 	AccessRulesOptions any
 	// Required. The storage capacity of the instance in gibibytes (GiB). Allowed values depend on the `perUnitStorageThroughput`. See [Performance tiers](https://docs.cloud.google.com/managed-lustre/docs/performance-tiers) for specific minimums, maximums, and step sizes for each performance tier.
 	CapacityGib any
-	// Output only. Timestamp when the instance was created.
-	CreateTime any
 	// Optional. A user-readable description of the instance.
 	Description any
 	// Dynamic tier options for a Managed Lustre instance.
@@ -163,8 +161,6 @@ type InstanceConfig struct {
 	Labels any
 	// Defines a maintenance policy for a resource.
 	MaintenancePolicy any
-	// Output only. Mount point of the instance in the format `IP_ADDRESS@tcp:/FILESYSTEM`.
-	MountPoint any
 	// Identifier. The name of the instance.
 	Name any
 	// Required. Immutable. The full name of the VPC network to which the instance is connected. Must be in the format `projects/{project_id}/global/networks/{network_name}`.
@@ -173,16 +169,8 @@ type InstanceConfig struct {
 	PerUnitStorageThroughput any
 	// Optional. The placement policy name for the instance in the format of projects/{project}/locations/{location}/resourcePolicies/{resource_policy}
 	PlacementPolicy any
-	// Output only. The state of the instance.
-	State any
-	// Output only. The reason why the instance is in a certain state (e.g. SUSPENDED).
-	StateReason any
-	// Output only. Unique ID of the resource. This is unrelated to the access rules which allow specifying the root squash uid.
-	Uid any
 	// Represents a scheduled maintenance event.
 	UpcomingMaintenanceSchedule any
-	// Output only. Timestamp when the instance was last updated.
-	UpdateTime any
 }
 
 type InstanceAttrs struct {
@@ -233,39 +221,33 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRulesOptions": ubx.FieldSpec{
 			WireName: "access_rules_options",
-			Kind: "object",
-			Fields: Instance_AccessRulesOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_AccessRulesOptionsFields,
 		},
 		"CapacityGib": ubx.FieldSpec{WireName: "capacity_gib"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DynamicTierOptions": ubx.FieldSpec{
 			WireName: "dynamic_tier_options",
-			Kind: "object",
-			Fields: Instance_DynamicTierOptionsFields,
+			Kind:     "object",
+			Fields:   Instance_DynamicTierOptionsFields,
 		},
-		"Filesystem": ubx.FieldSpec{WireName: "filesystem"},
+		"Filesystem":        ubx.FieldSpec{WireName: "filesystem"},
 		"GkeSupportEnabled": ubx.FieldSpec{WireName: "gke_support_enabled"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"KmsKey":            ubx.FieldSpec{WireName: "kms_key"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenancePolicyFields,
 		},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Network":                  ubx.FieldSpec{WireName: "network"},
 		"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
-		"PlacementPolicy": ubx.FieldSpec{WireName: "placement_policy"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateReason": ubx.FieldSpec{WireName: "state_reason"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
+		"PlacementPolicy":          ubx.FieldSpec{WireName: "placement_policy"},
 		"UpcomingMaintenanceSchedule": ubx.FieldSpec{
 			WireName: "upcoming_maintenance_schedule",
-			Kind: "object",
-			Fields: Instance_UpcomingMaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   Instance_UpcomingMaintenanceScheduleFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

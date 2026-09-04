@@ -622,8 +622,6 @@ const ConnectionProfile_WorkdayProfileFields: FieldMap = {
 export interface ConnectionProfileConfig {
   /** Profile for connecting to a BigQuery destination. */
   bigqueryProfile?: unknown | Computed<unknown>;
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** Profile for connecting to a Dataverse source. */
   dataverseProfile?: ConnectionProfile_DataverseProfile | Computed<ConnectionProfile_DataverseProfile>;
   /** Required. Display name. */
@@ -638,8 +636,6 @@ export interface ConnectionProfileConfig {
   mongodbProfile?: ConnectionProfile_MongodbProfile | Computed<ConnectionProfile_MongodbProfile>;
   /** Profile for connecting to a MySQL source. */
   mysqlProfile?: ConnectionProfile_MysqlProfile | Computed<ConnectionProfile_MysqlProfile>;
-  /** Output only. Identifier. The resource's name. */
-  name?: string | Computed<string>;
   /** Profile for connecting to an Oracle source. */
   oracleProfile?: ConnectionProfile_OracleProfile | Computed<ConnectionProfile_OracleProfile>;
   /** Profile for connecting to a PostgreSQL source. */
@@ -650,10 +646,6 @@ export interface ConnectionProfileConfig {
   salesforceMarketingCloudProfile?: ConnectionProfile_SalesforceMarketingCloudProfile | Computed<ConnectionProfile_SalesforceMarketingCloudProfile>;
   /** Profile for connecting to a Salesforce source. */
   salesforceProfile?: ConnectionProfile_SalesforceProfile | Computed<ConnectionProfile_SalesforceProfile>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Profile for connecting to a ServiceNow source. */
   serviceNowProfile?: ConnectionProfile_ServiceNowProfile | Computed<ConnectionProfile_ServiceNowProfile>;
   /** Profile for connecting to a Spanner source. */
@@ -662,8 +654,6 @@ export interface ConnectionProfileConfig {
   sqlServerProfile?: ConnectionProfile_SqlServerProfile | Computed<ConnectionProfile_SqlServerProfile>;
   /** Static IP address connectivity. Used when the source database is configured to allow incoming connections from the Datastream public IP addresses for the region specified in the connection profile. */
   staticServiceIpConnectivity?: unknown | Computed<unknown>;
-  /** Output only. The update time of the resource. */
-  updateTime?: string | Computed<string>;
   /** Profile for connecting to a Workday source. */
   workdayProfile?: ConnectionProfile_WorkdayProfile | Computed<ConnectionProfile_WorkdayProfile>;
 }
@@ -721,7 +711,6 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
   wireType: "google_datastream_connection_profile",
   fields: {
     bigqueryProfile: "bigquery_profile",
-    createTime: "create_time",
     dataverseProfile: {
       wireName: "dataverse_profile",
       kind: "object",
@@ -749,7 +738,6 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
       kind: "object",
       fields: ConnectionProfile_MysqlProfileFields,
     },
-    name: "name",
     oracleProfile: {
       wireName: "oracle_profile",
       kind: "object",
@@ -775,8 +763,6 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
       kind: "object",
       fields: ConnectionProfile_SalesforceProfileFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     serviceNowProfile: {
       wireName: "service_now_profile",
       kind: "object",
@@ -793,7 +779,6 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
       fields: ConnectionProfile_SqlServerProfileFields,
     },
     staticServiceIpConnectivity: "static_service_ip_connectivity",
-    updateTime: "update_time",
     workdayProfile: {
       wireName: "workday_profile",
       kind: "object",

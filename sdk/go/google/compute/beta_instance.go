@@ -26,11 +26,11 @@ type BetaInstance_ConfidentialInstanceConfig struct {
 }
 
 type BetaInstance_Disks_DiskEncryptionKey struct {
-	KmsKeyName any
+	KmsKeyName           any
 	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
-	Sha256 any
+	RawKey               any
+	RsaEncryptedKey      any
+	Sha256               any
 }
 
 type BetaInstance_Disks_GuestOsFeatures struct {
@@ -38,62 +38,62 @@ type BetaInstance_Disks_GuestOsFeatures struct {
 }
 
 type BetaInstance_Disks_InitializeParams struct {
-	Architecture any
-	Description any
-	DiskName any
-	DiskSizeGb any
-	DiskType any
-	EnableConfidentialCompute any
-	GuestOsFeatures any
-	Labels any
-	Licenses any
-	MultiWriter any
-	OnUpdateAction any
-	ProvisionedIops any
-	ProvisionedThroughput any
-	ReplicaZones any
-	ResourceManagerTags any
-	ResourcePolicies any
-	SourceImage any
-	SourceImageEncryptionKey any
-	SourceInstantSnapshot any
-	SourceSnapshot any
+	Architecture                any
+	Description                 any
+	DiskName                    any
+	DiskSizeGb                  any
+	DiskType                    any
+	EnableConfidentialCompute   any
+	GuestOsFeatures             any
+	Labels                      any
+	Licenses                    any
+	MultiWriter                 any
+	OnUpdateAction              any
+	ProvisionedIops             any
+	ProvisionedThroughput       any
+	ReplicaZones                any
+	ResourceManagerTags         any
+	ResourcePolicies            any
+	SourceImage                 any
+	SourceImageEncryptionKey    any
+	SourceInstantSnapshot       any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
-	StoragePool any
+	StoragePool                 any
 }
 
 type BetaInstance_Disks_ShieldedInstanceInitialState_Dbs struct {
-	Content any
+	Content  any
 	FileType any
 }
 
 type BetaInstance_Disks_ShieldedInstanceInitialState struct {
-	Dbs any
+	Dbs  any
 	Dbxs any
 	Keks any
-	Pk any
+	Pk   any
 }
 
 type BetaInstance_Disks struct {
-	Architecture any
-	AutoDelete any
-	Boot any
-	DeviceName any
-	DiskEncryptionKey any
-	DiskSizeGb any
-	ForceAttach any
-	GuestOsFeatures any
-	Index any
-	InitializeParams any
-	Interface any
-	Kind any
-	Licenses any
-	Locked any
-	Mode any
-	SavedState any
+	Architecture                 any
+	AutoDelete                   any
+	Boot                         any
+	DeviceName                   any
+	DiskEncryptionKey            any
+	DiskSizeGb                   any
+	ForceAttach                  any
+	GuestOsFeatures              any
+	Index                        any
+	InitializeParams             any
+	Interface                    any
+	Kind                         any
+	Licenses                     any
+	Locked                       any
+	Mode                         any
+	SavedState                   any
 	ShieldedInstanceInitialState any
-	Source any
-	Type any
+	Source                       any
+	Type                         any
 }
 
 type BetaInstance_DisplayDevice struct {
@@ -103,11 +103,11 @@ type BetaInstance_DisplayDevice struct {
 
 type BetaInstance_GuestAccelerators struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 }
 
 type BetaInstance_Metadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -121,47 +121,47 @@ type BetaInstance_Metadata struct {
 }
 
 type BetaInstance_NetworkInterfaces_AccessConfigs struct {
-	ExternalIpv6 any
+	ExternalIpv6             any
 	ExternalIpv6PrefixLength any
-	Kind any
-	Name any
-	NatIp any
-	NetworkTier any
-	PublicPtrDomainName any
-	SecurityPolicy any
-	SetPublicPtr any
-	Type any
+	Kind                     any
+	Name                     any
+	NatIp                    any
+	NetworkTier              any
+	PublicPtrDomainName      any
+	SecurityPolicy           any
+	SetPublicPtr             any
+	Type                     any
 }
 
 type BetaInstance_NetworkInterfaces_AliasIpRanges struct {
-	IpCidrRange any
+	IpCidrRange         any
 	SubnetworkRangeName any
 }
 
 type BetaInstance_NetworkInterfaces struct {
-	AccessConfigs any
-	AliasIpRanges any
-	AliasIpv6Ranges any
-	EnableVpcScopedDns any
-	Fingerprint any
-	IgmpQuery any
+	AccessConfigs            any
+	AliasIpRanges            any
+	AliasIpv6Ranges          any
+	EnableVpcScopedDns       any
+	Fingerprint              any
+	IgmpQuery                any
 	InternalIpv6PrefixLength any
-	Ipv6AccessConfigs any
-	Ipv6AccessType any
-	Ipv6Address any
-	Kind any
-	MacAddress any
-	Name any
-	Network any
-	NetworkAttachment any
-	NetworkIp any
-	NicType any
-	ParentNicName any
-	QueueCount any
-	ServiceClassId any
-	StackType any
-	Subnetwork any
-	Vlan any
+	Ipv6AccessConfigs        any
+	Ipv6AccessType           any
+	Ipv6Address              any
+	Kind                     any
+	MacAddress               any
+	Name                     any
+	Network                  any
+	NetworkAttachment        any
+	NetworkIp                any
+	NicType                  any
+	ParentNicName            any
+	QueueCount               any
+	ServiceClassId           any
+	StackType                any
+	Subnetwork               any
+	Vlan                     any
 }
 
 type BetaInstance_NetworkPerformanceConfig struct {
@@ -274,7 +274,7 @@ type BetaInstance_ResourceStatus_UpcomingMaintenance struct {
 	MaintenanceOnShutdown any
 	// The reasons for the maintenance. Only valid for vms.
 	MaintenanceReasons any
-	MaintenanceStatus any
+	MaintenanceStatus  any
 	// Defines the type of maintenance.
 	Type any
 	// The time by which the maintenance disruption will be completed. This timestamp value is in RFC3339 text format.
@@ -292,7 +292,7 @@ type BetaInstance_ResourceStatus struct {
 	PhysicalHostTopology any
 	// Reservation consumption information that the instance is consuming from.
 	ReservationConsumptionInfo any
-	Scheduling any
+	Scheduling                 any
 	// Specifies if the instance is in `PENDING_STOP` state or there is a programmed stop scheduled.
 	ShutdownDetails any
 	// Upcoming Maintenance notification information.
@@ -307,9 +307,9 @@ type BetaInstance_Scheduling_GracefulShutdown struct {
 }
 
 type BetaInstance_Scheduling_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type BetaInstance_Scheduling_OnInstanceStopAction struct {
@@ -359,7 +359,7 @@ type BetaInstance_Scheduling struct {
 }
 
 type BetaInstance_ServiceAccounts struct {
-	Email any
+	Email  any
 	Scopes any
 }
 
@@ -385,437 +385,437 @@ type BetaInstance_Tags struct {
 }
 
 type BetaInstance_WorkloadIdentityConfig struct {
-	Identity any
+	Identity                   any
 	IdentityCertificateEnabled any
 }
 
 var BetaInstance_AdvancedMachineFeaturesFields = ubx.FieldMap{
-		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-		"EnableUefiNetworking": ubx.FieldSpec{WireName: "enable_uefi_networking"},
-		"PerformanceMonitoringUnit": ubx.FieldSpec{WireName: "performance_monitoring_unit"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-		"TurboMode": ubx.FieldSpec{WireName: "turbo_mode"},
-		"VisibleCoreCount": ubx.FieldSpec{WireName: "visible_core_count"},
-	}
+	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+	"EnableUefiNetworking":       ubx.FieldSpec{WireName: "enable_uefi_networking"},
+	"PerformanceMonitoringUnit":  ubx.FieldSpec{WireName: "performance_monitoring_unit"},
+	"ThreadsPerCore":             ubx.FieldSpec{WireName: "threads_per_core"},
+	"TurboMode":                  ubx.FieldSpec{WireName: "turbo_mode"},
+	"VisibleCoreCount":           ubx.FieldSpec{WireName: "visible_core_count"},
+}
 
 var BetaInstance_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-	}
+	"ConfidentialInstanceType":  ubx.FieldSpec{WireName: "confidential_instance_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+}
 
 var BetaInstance_Disks_DiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var BetaInstance_Disks_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var BetaInstance_Disks_InitializeParamsFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: BetaInstance_Disks_GuestOsFeaturesFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"MultiWriter": ubx.FieldSpec{WireName: "multi_writer"},
-		"OnUpdateAction": ubx.FieldSpec{WireName: "on_update_action"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-		"SourceImageEncryptionKey": ubx.FieldSpec{
-			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: BetaInstance_Disks_DiskEncryptionKeyFields,
-		},
-		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
-			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: BetaInstance_Disks_DiskEncryptionKeyFields,
-		},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-	}
+	"Architecture":              ubx.FieldSpec{WireName: "architecture"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DiskName":                  ubx.FieldSpec{WireName: "disk_name"},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   BetaInstance_Disks_GuestOsFeaturesFields,
+	},
+	"Labels":                ubx.FieldSpec{WireName: "labels"},
+	"Licenses":              ubx.FieldSpec{WireName: "licenses"},
+	"MultiWriter":           ubx.FieldSpec{WireName: "multi_writer"},
+	"OnUpdateAction":        ubx.FieldSpec{WireName: "on_update_action"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"ReplicaZones":          ubx.FieldSpec{WireName: "replica_zones"},
+	"ResourceManagerTags":   ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ResourcePolicies":      ubx.FieldSpec{WireName: "resource_policies"},
+	"SourceImage":           ubx.FieldSpec{WireName: "source_image"},
+	"SourceImageEncryptionKey": ubx.FieldSpec{
+		WireName: "source_image_encryption_key",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_DiskEncryptionKeyFields,
+	},
+	"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
+	"SourceSnapshot":        ubx.FieldSpec{WireName: "source_snapshot"},
+	"SourceSnapshotEncryptionKey": ubx.FieldSpec{
+		WireName: "source_snapshot_encryption_key",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_DiskEncryptionKeyFields,
+	},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+}
 
 var BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var BetaInstance_Disks_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 var BetaInstance_DisksFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"Boot": ubx.FieldSpec{WireName: "boot"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"DiskEncryptionKey": ubx.FieldSpec{
-			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: BetaInstance_Disks_DiskEncryptionKeyFields,
-		},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: BetaInstance_Disks_GuestOsFeaturesFields,
-		},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"InitializeParams": ubx.FieldSpec{
-			WireName: "initialize_params",
-			Kind: "object",
-			Fields: BetaInstance_Disks_InitializeParamsFields,
-		},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SavedState": ubx.FieldSpec{WireName: "saved_state"},
-		"ShieldedInstanceInitialState": ubx.FieldSpec{
-			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: BetaInstance_Disks_ShieldedInstanceInitialStateFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"AutoDelete":   ubx.FieldSpec{WireName: "auto_delete"},
+	"Boot":         ubx.FieldSpec{WireName: "boot"},
+	"DeviceName":   ubx.FieldSpec{WireName: "device_name"},
+	"DiskEncryptionKey": ubx.FieldSpec{
+		WireName: "disk_encryption_key",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_DiskEncryptionKeyFields,
+	},
+	"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+	"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   BetaInstance_Disks_GuestOsFeaturesFields,
+	},
+	"Index": ubx.FieldSpec{WireName: "index"},
+	"InitializeParams": ubx.FieldSpec{
+		WireName: "initialize_params",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_InitializeParamsFields,
+	},
+	"Interface":  ubx.FieldSpec{WireName: "interface"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Licenses":   ubx.FieldSpec{WireName: "licenses"},
+	"Locked":     ubx.FieldSpec{WireName: "locked"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SavedState": ubx.FieldSpec{WireName: "saved_state"},
+	"ShieldedInstanceInitialState": ubx.FieldSpec{
+		WireName: "shielded_instance_initial_state",
+		Kind:     "object",
+		Fields:   BetaInstance_Disks_ShieldedInstanceInitialStateFields,
+	},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var BetaInstance_DisplayDeviceFields = ubx.FieldMap{
-		"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
-	}
+	"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
+}
 
 var BetaInstance_GuestAcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+}
 
 var BetaInstance_Metadata_ItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BetaInstance_MetadataFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: BetaInstance_Metadata_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   BetaInstance_Metadata_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var BetaInstance_NetworkInterfaces_AccessConfigsFields = ubx.FieldMap{
-		"ExternalIpv6": ubx.FieldSpec{WireName: "external_ipv6"},
-		"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatIp": ubx.FieldSpec{WireName: "nat_ip"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"PublicPtrDomainName": ubx.FieldSpec{WireName: "public_ptr_domain_name"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"SetPublicPtr": ubx.FieldSpec{WireName: "set_public_ptr"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExternalIpv6":             ubx.FieldSpec{WireName: "external_ipv6"},
+	"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
+	"Kind":                     ubx.FieldSpec{WireName: "kind"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"NatIp":                    ubx.FieldSpec{WireName: "nat_ip"},
+	"NetworkTier":              ubx.FieldSpec{WireName: "network_tier"},
+	"PublicPtrDomainName":      ubx.FieldSpec{WireName: "public_ptr_domain_name"},
+	"SecurityPolicy":           ubx.FieldSpec{WireName: "security_policy"},
+	"SetPublicPtr":             ubx.FieldSpec{WireName: "set_public_ptr"},
+	"Type":                     ubx.FieldSpec{WireName: "type"},
+}
 
 var BetaInstance_NetworkInterfaces_AliasIpRangesFields = ubx.FieldMap{
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"SubnetworkRangeName": ubx.FieldSpec{WireName: "subnetwork_range_name"},
-	}
+	"IpCidrRange":         ubx.FieldSpec{WireName: "ip_cidr_range"},
+	"SubnetworkRangeName": ubx.FieldSpec{WireName: "subnetwork_range_name"},
+}
 
 var BetaInstance_NetworkInterfacesFields = ubx.FieldMap{
-		"AccessConfigs": ubx.FieldSpec{
-			WireName: "access_configs",
-			Kind: "list",
-			Fields: BetaInstance_NetworkInterfaces_AccessConfigsFields,
-		},
-		"AliasIpRanges": ubx.FieldSpec{
-			WireName: "alias_ip_ranges",
-			Kind: "list",
-			Fields: BetaInstance_NetworkInterfaces_AliasIpRangesFields,
-		},
-		"AliasIpv6Ranges": ubx.FieldSpec{
-			WireName: "alias_ipv6_ranges",
-			Kind: "list",
-			Fields: BetaInstance_NetworkInterfaces_AliasIpRangesFields,
-		},
-		"EnableVpcScopedDns": ubx.FieldSpec{WireName: "enable_vpc_scoped_dns"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"IgmpQuery": ubx.FieldSpec{WireName: "igmp_query"},
-		"InternalIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
-		"Ipv6AccessConfigs": ubx.FieldSpec{
-			WireName: "ipv6_access_configs",
-			Kind: "list",
-			Fields: BetaInstance_NetworkInterfaces_AccessConfigsFields,
-		},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MacAddress": ubx.FieldSpec{WireName: "mac_address"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"NetworkIp": ubx.FieldSpec{WireName: "network_ip"},
-		"NicType": ubx.FieldSpec{WireName: "nic_type"},
-		"ParentNicName": ubx.FieldSpec{WireName: "parent_nic_name"},
-		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
-		"ServiceClassId": ubx.FieldSpec{WireName: "service_class_id"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
-	}
+	"AccessConfigs": ubx.FieldSpec{
+		WireName: "access_configs",
+		Kind:     "list",
+		Fields:   BetaInstance_NetworkInterfaces_AccessConfigsFields,
+	},
+	"AliasIpRanges": ubx.FieldSpec{
+		WireName: "alias_ip_ranges",
+		Kind:     "list",
+		Fields:   BetaInstance_NetworkInterfaces_AliasIpRangesFields,
+	},
+	"AliasIpv6Ranges": ubx.FieldSpec{
+		WireName: "alias_ipv6_ranges",
+		Kind:     "list",
+		Fields:   BetaInstance_NetworkInterfaces_AliasIpRangesFields,
+	},
+	"EnableVpcScopedDns":       ubx.FieldSpec{WireName: "enable_vpc_scoped_dns"},
+	"Fingerprint":              ubx.FieldSpec{WireName: "fingerprint"},
+	"IgmpQuery":                ubx.FieldSpec{WireName: "igmp_query"},
+	"InternalIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
+	"Ipv6AccessConfigs": ubx.FieldSpec{
+		WireName: "ipv6_access_configs",
+		Kind:     "list",
+		Fields:   BetaInstance_NetworkInterfaces_AccessConfigsFields,
+	},
+	"Ipv6AccessType":    ubx.FieldSpec{WireName: "ipv6_access_type"},
+	"Ipv6Address":       ubx.FieldSpec{WireName: "ipv6_address"},
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"MacAddress":        ubx.FieldSpec{WireName: "mac_address"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	"NetworkIp":         ubx.FieldSpec{WireName: "network_ip"},
+	"NicType":           ubx.FieldSpec{WireName: "nic_type"},
+	"ParentNicName":     ubx.FieldSpec{WireName: "parent_nic_name"},
+	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
+	"ServiceClassId":    ubx.FieldSpec{WireName: "service_class_id"},
+	"StackType":         ubx.FieldSpec{WireName: "stack_type"},
+	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
+	"Vlan":              ubx.FieldSpec{WireName: "vlan"},
+}
 
 var BetaInstance_NetworkPerformanceConfigFields = ubx.FieldMap{
-		"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
-	}
+	"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
+}
 
 var BetaInstance_Params_RequestValidForDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var BetaInstance_ParamsFields = ubx.FieldMap{
-		"RequestValidForDuration": ubx.FieldSpec{
-			WireName: "request_valid_for_duration",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"RequestValidForDuration": ubx.FieldSpec{
+		WireName: "request_valid_for_duration",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var BetaInstance_PartnerMetadataFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{WireName: "entries"},
-	}
+	"Entries": ubx.FieldSpec{WireName: "entries"},
+}
 
 var BetaInstance_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var BetaInstance_ResourceStatus_EffectiveInstanceMetadataFields = ubx.FieldMap{
-		"BlockProjectSshKeysMetadataValue": ubx.FieldSpec{WireName: "block_project_ssh_keys_metadata_value"},
-		"EnableGuestAttributesMetadataValue": ubx.FieldSpec{WireName: "enable_guest_attributes_metadata_value"},
-		"EnableOsInventoryMetadataValue": ubx.FieldSpec{WireName: "enable_os_inventory_metadata_value"},
-		"EnableOsconfigMetadataValue": ubx.FieldSpec{WireName: "enable_osconfig_metadata_value"},
-		"EnableOsloginMetadataValue": ubx.FieldSpec{WireName: "enable_oslogin_metadata_value"},
-		"GceContainerDeclarationMetadataValue": ubx.FieldSpec{WireName: "gce_container_declaration_metadata_value"},
-		"SerialPortEnableMetadataValue": ubx.FieldSpec{WireName: "serial_port_enable_metadata_value"},
-		"SerialPortLoggingEnableMetadataValue": ubx.FieldSpec{WireName: "serial_port_logging_enable_metadata_value"},
-		"VmDnsSettingMetadataValue": ubx.FieldSpec{WireName: "vm_dns_setting_metadata_value"},
-	}
+	"BlockProjectSshKeysMetadataValue":     ubx.FieldSpec{WireName: "block_project_ssh_keys_metadata_value"},
+	"EnableGuestAttributesMetadataValue":   ubx.FieldSpec{WireName: "enable_guest_attributes_metadata_value"},
+	"EnableOsInventoryMetadataValue":       ubx.FieldSpec{WireName: "enable_os_inventory_metadata_value"},
+	"EnableOsconfigMetadataValue":          ubx.FieldSpec{WireName: "enable_osconfig_metadata_value"},
+	"EnableOsloginMetadataValue":           ubx.FieldSpec{WireName: "enable_oslogin_metadata_value"},
+	"GceContainerDeclarationMetadataValue": ubx.FieldSpec{WireName: "gce_container_declaration_metadata_value"},
+	"SerialPortEnableMetadataValue":        ubx.FieldSpec{WireName: "serial_port_enable_metadata_value"},
+	"SerialPortLoggingEnableMetadataValue": ubx.FieldSpec{WireName: "serial_port_logging_enable_metadata_value"},
+	"VmDnsSettingMetadataValue":            ubx.FieldSpec{WireName: "vm_dns_setting_metadata_value"},
+}
 
 var BetaInstance_ResourceStatus_PhysicalHostTopology_AdditionalAttributesFields = ubx.FieldMap{
-		"AcceleratorTopologyIds": ubx.FieldSpec{WireName: "accelerator_topology_ids"},
-		"NetworkTopologyIds": ubx.FieldSpec{WireName: "network_topology_ids"},
-	}
+	"AcceleratorTopologyIds": ubx.FieldSpec{WireName: "accelerator_topology_ids"},
+	"NetworkTopologyIds":     ubx.FieldSpec{WireName: "network_topology_ids"},
+}
 
 var BetaInstance_ResourceStatus_PhysicalHostTopologyFields = ubx.FieldMap{
-		"AdditionalAttributes": ubx.FieldSpec{
-			WireName: "additional_attributes",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_PhysicalHostTopology_AdditionalAttributesFields,
-		},
-		"Block": ubx.FieldSpec{WireName: "block"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Subblock": ubx.FieldSpec{WireName: "subblock"},
-	}
+	"AdditionalAttributes": ubx.FieldSpec{
+		WireName: "additional_attributes",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_PhysicalHostTopology_AdditionalAttributesFields,
+	},
+	"Block":    ubx.FieldSpec{WireName: "block"},
+	"Cluster":  ubx.FieldSpec{WireName: "cluster"},
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Subblock": ubx.FieldSpec{WireName: "subblock"},
+}
 
 var BetaInstance_ResourceStatus_ReservationConsumptionInfoFields = ubx.FieldMap{
-		"ConsumedReservation": ubx.FieldSpec{WireName: "consumed_reservation"},
-		"ConsumedReservationBlock": ubx.FieldSpec{WireName: "consumed_reservation_block"},
-		"ConsumedReservationSubBlock": ubx.FieldSpec{WireName: "consumed_reservation_sub_block"},
-	}
+	"ConsumedReservation":         ubx.FieldSpec{WireName: "consumed_reservation"},
+	"ConsumedReservationBlock":    ubx.FieldSpec{WireName: "consumed_reservation_block"},
+	"ConsumedReservationSubBlock": ubx.FieldSpec{WireName: "consumed_reservation_sub_block"},
+}
 
 var BetaInstance_ResourceStatus_SchedulingFields = ubx.FieldMap{
-		"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
-		"GracefulShutdownTimestamp": ubx.FieldSpec{WireName: "graceful_shutdown_timestamp"},
-		"TerminationTimestamp": ubx.FieldSpec{WireName: "termination_timestamp"},
-	}
+	"AvailabilityDomain":        ubx.FieldSpec{WireName: "availability_domain"},
+	"GracefulShutdownTimestamp": ubx.FieldSpec{WireName: "graceful_shutdown_timestamp"},
+	"TerminationTimestamp":      ubx.FieldSpec{WireName: "termination_timestamp"},
+}
 
 var BetaInstance_ResourceStatus_ShutdownDetailsFields = ubx.FieldMap{
-		"MaxDuration": ubx.FieldSpec{
-			WireName: "max_duration",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-		"RequestTimestamp": ubx.FieldSpec{WireName: "request_timestamp"},
-		"StopState": ubx.FieldSpec{WireName: "stop_state"},
-		"TargetState": ubx.FieldSpec{WireName: "target_state"},
-	}
+	"MaxDuration": ubx.FieldSpec{
+		WireName: "max_duration",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+	"RequestTimestamp": ubx.FieldSpec{WireName: "request_timestamp"},
+	"StopState":        ubx.FieldSpec{WireName: "stop_state"},
+	"TargetState":      ubx.FieldSpec{WireName: "target_state"},
+}
 
 var BetaInstance_ResourceStatus_UpcomingMaintenanceFields = ubx.FieldMap{
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-		"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
-		"MaintenanceReasons": ubx.FieldSpec{WireName: "maintenance_reasons"},
-		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
-		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
-	}
+	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
+	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+	"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
+	"MaintenanceReasons":    ubx.FieldSpec{WireName: "maintenance_reasons"},
+	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+	"WindowEndTime":         ubx.FieldSpec{WireName: "window_end_time"},
+	"WindowStartTime":       ubx.FieldSpec{WireName: "window_start_time"},
+}
 
 var BetaInstance_ResourceStatusFields = ubx.FieldMap{
-		"EffectiveInstanceMetadata": ubx.FieldSpec{
-			WireName: "effective_instance_metadata",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_EffectiveInstanceMetadataFields,
-		},
-		"PhysicalHost": ubx.FieldSpec{WireName: "physical_host"},
-		"PhysicalHostTopology": ubx.FieldSpec{
-			WireName: "physical_host_topology",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_PhysicalHostTopologyFields,
-		},
-		"ReservationConsumptionInfo": ubx.FieldSpec{
-			WireName: "reservation_consumption_info",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_ReservationConsumptionInfoFields,
-		},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_SchedulingFields,
-		},
-		"ShutdownDetails": ubx.FieldSpec{
-			WireName: "shutdown_details",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_ShutdownDetailsFields,
-		},
-		"UpcomingMaintenance": ubx.FieldSpec{
-			WireName: "upcoming_maintenance",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatus_UpcomingMaintenanceFields,
-		},
-	}
+	"EffectiveInstanceMetadata": ubx.FieldSpec{
+		WireName: "effective_instance_metadata",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_EffectiveInstanceMetadataFields,
+	},
+	"PhysicalHost": ubx.FieldSpec{WireName: "physical_host"},
+	"PhysicalHostTopology": ubx.FieldSpec{
+		WireName: "physical_host_topology",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_PhysicalHostTopologyFields,
+	},
+	"ReservationConsumptionInfo": ubx.FieldSpec{
+		WireName: "reservation_consumption_info",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_ReservationConsumptionInfoFields,
+	},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_SchedulingFields,
+	},
+	"ShutdownDetails": ubx.FieldSpec{
+		WireName: "shutdown_details",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_ShutdownDetailsFields,
+	},
+	"UpcomingMaintenance": ubx.FieldSpec{
+		WireName: "upcoming_maintenance",
+		Kind:     "object",
+		Fields:   BetaInstance_ResourceStatus_UpcomingMaintenanceFields,
+	},
+}
 
 var BetaInstance_Scheduling_GracefulShutdownFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxDuration": ubx.FieldSpec{
-			WireName: "max_duration",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"MaxDuration": ubx.FieldSpec{
+		WireName: "max_duration",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+}
 
 var BetaInstance_Scheduling_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var BetaInstance_Scheduling_OnInstanceStopActionFields = ubx.FieldMap{
-		"DiscardLocalSsd": ubx.FieldSpec{WireName: "discard_local_ssd"},
-	}
+	"DiscardLocalSsd": ubx.FieldSpec{WireName: "discard_local_ssd"},
+}
 
 var BetaInstance_SchedulingFields = ubx.FieldMap{
-		"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
-		"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
-		"GracefulShutdown": ubx.FieldSpec{
-			WireName: "graceful_shutdown",
-			Kind: "object",
-			Fields: BetaInstance_Scheduling_GracefulShutdownFields,
-		},
-		"HostErrorTimeoutSeconds": ubx.FieldSpec{WireName: "host_error_timeout_seconds"},
-		"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
-		"LocalSsdRecoveryTimeout": ubx.FieldSpec{
-			WireName: "local_ssd_recovery_timeout",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
-		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MaxRunDuration": ubx.FieldSpec{
-			WireName: "max_run_duration",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: BetaInstance_Scheduling_NodeAffinitiesFields,
-		},
-		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-		"OnInstanceStopAction": ubx.FieldSpec{
-			WireName: "on_instance_stop_action",
-			Kind: "object",
-			Fields: BetaInstance_Scheduling_OnInstanceStopActionFields,
-		},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"PreemptionNoticeDuration": ubx.FieldSpec{
-			WireName: "preemption_notice_duration",
-			Kind: "object",
-			Fields: BetaInstance_Params_RequestValidForDurationFields,
-		},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-		"SkipGuestOsShutdown": ubx.FieldSpec{WireName: "skip_guest_os_shutdown"},
-		"TerminationTime": ubx.FieldSpec{WireName: "termination_time"},
-	}
+	"AutomaticRestart":   ubx.FieldSpec{WireName: "automatic_restart"},
+	"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
+	"GracefulShutdown": ubx.FieldSpec{
+		WireName: "graceful_shutdown",
+		Kind:     "object",
+		Fields:   BetaInstance_Scheduling_GracefulShutdownFields,
+	},
+	"HostErrorTimeoutSeconds":   ubx.FieldSpec{WireName: "host_error_timeout_seconds"},
+	"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
+	"LocalSsdRecoveryTimeout": ubx.FieldSpec{
+		WireName: "local_ssd_recovery_timeout",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+	"LocationHint":                   ubx.FieldSpec{WireName: "location_hint"},
+	"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
+	"MaintenanceInterval":            ubx.FieldSpec{WireName: "maintenance_interval"},
+	"MaxRunDuration": ubx.FieldSpec{
+		WireName: "max_run_duration",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+	"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   BetaInstance_Scheduling_NodeAffinitiesFields,
+	},
+	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+	"OnInstanceStopAction": ubx.FieldSpec{
+		WireName: "on_instance_stop_action",
+		Kind:     "object",
+		Fields:   BetaInstance_Scheduling_OnInstanceStopActionFields,
+	},
+	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+	"PreemptionNoticeDuration": ubx.FieldSpec{
+		WireName: "preemption_notice_duration",
+		Kind:     "object",
+		Fields:   BetaInstance_Params_RequestValidForDurationFields,
+	},
+	"ProvisioningModel":   ubx.FieldSpec{WireName: "provisioning_model"},
+	"SkipGuestOsShutdown": ubx.FieldSpec{WireName: "skip_guest_os_shutdown"},
+	"TerminationTime":     ubx.FieldSpec{WireName: "termination_time"},
+}
 
 var BetaInstance_ServiceAccountsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var BetaInstance_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var BetaInstance_ShieldedInstanceIntegrityPolicyFields = ubx.FieldMap{
-		"UpdateAutoLearnPolicy": ubx.FieldSpec{WireName: "update_auto_learn_policy"},
-	}
+	"UpdateAutoLearnPolicy": ubx.FieldSpec{WireName: "update_auto_learn_policy"},
+}
 
 var BetaInstance_TagsFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"Items":       ubx.FieldSpec{WireName: "items"},
+}
 
 var BetaInstance_WorkloadIdentityConfigFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"IdentityCertificateEnabled": ubx.FieldSpec{WireName: "identity_certificate_enabled"},
-	}
+	"Identity":                   ubx.FieldSpec{WireName: "identity"},
+	"IdentityCertificateEnabled": ubx.FieldSpec{WireName: "identity_certificate_enabled"},
+}
 
 type BetaInstanceConfig struct {
 	// Specifies options for controlling advanced machine features. Options that would traditionally be configured in a BIOS belong here. Features that require operating system support may have corresponding entries in the GuestOsFeatures of anImage (e.g., whether or not the OS in theImage supports nested virtualization being enabled or disabled).
@@ -824,10 +824,6 @@ type BetaInstanceConfig struct {
 	CanIpForward any
 	// A set of Confidential Instance options.
 	ConfidentialInstanceConfig any
-	// Output only. [Output Only] The CPU platform used by this instance.
-	CpuPlatform any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Whether the resource should be protected against deletion.
 	DeletionProtection any
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -843,24 +839,14 @@ type BetaInstanceConfig struct {
 	// A list of the type and count of accelerator cards attached to the instance.
 	GuestAccelerators any
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
-	Hostname any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Hostname              any
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
 	KeyRevocationActionType any
-	// Output only. [Output Only] Type of the resource. Always compute#instance for instances.
-	Kind any
 	// A fingerprint for this request, which is essentially a hash of the label's contents and used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the instance.
 	LabelFingerprint any
 	// Labels to apply to this instance. These can be later modified by the setLabels method.
 	Labels any
-	// Output only. [Output Only] Last start timestamp inRFC3339 text format.
-	LastStartTimestamp any
-	// Output only. [Output Only] Last stop timestamp inRFC3339 text format.
-	LastStopTimestamp any
-	// Output only. [Output Only] Last suspended timestamp inRFC3339 text format.
-	LastSuspendedTimestamp any
 	// Specifies which method should be used for encrypting the Local SSDs attached to the VM.
 	LocalSsdEncryptionMode any
 	// Full or partial URL of the machine type resource to use for this instance, in the format:zones/zone/machineTypes/machine-type. This is provided by the client when the instance is created. For example, the following is a valid partial url to a predefined machine type: zones/us-central1-f/machineTypes/n1-standard-1 To create acustom machine type, provide a URL to a machine type in the following format, where CPUS is 1 or an even number up to 32 (2, 4, 6, ... 24, etc), and MEMORY is the total memory for this instance. Memory must be a multiple of 256 MB and must be supplied in MB (e.g. 5 GB of memory is 5120 MB): zones/zone/machineTypes/custom-CPUS-MEMORY For example: zones/us-central1-f/machineTypes/custom-4-5120 For a full list of restrictions, read theSpecifications for custom machine types.
@@ -872,7 +858,7 @@ type BetaInstanceConfig struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces any
+	NetworkInterfaces        any
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -888,14 +874,8 @@ type BetaInstanceConfig struct {
 	ResourcePolicies any
 	// Contains output only fields. Use this sub-message for actual values set on Instance attributes as compared to the value requested by the user (intent) in their instance CRUD calls.
 	ResourceStatus any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
 	// Sets the scheduling options for an Instance.
 	Scheduling any
-	// Output only. [Output Only] Server-defined URL for this resource.
-	SelfLink any
 	// A list of service accounts, with their specified scopes, authorized for this instance. Only one service account per VM instance is supported. Service accounts generate access tokens that can be accessed through the metadata server and used to authenticate applications on the instance. SeeService Accounts for more information.
 	ServiceAccounts any
 	// A set of Shielded Instance options.
@@ -907,19 +887,11 @@ type BetaInstanceConfig struct {
 	// The policy describes the baseline against which VM instance boot integrity is measured.
 	ShieldedVmIntegrityPolicy any
 	// Source machine image
-	SourceMachineImage any
+	SourceMachineImage              any
 	SourceMachineImageEncryptionKey any
-	// Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
-	StartRestricted any
-	// Output only. [Output Only] The status of the instance. One of the following values: PROVISIONING, STAGING,RUNNING, STOPPING, SUSPENDING,SUSPENDED, REPAIRING, andTERMINATED. For more information about the status of the instance, see Instance life cycle.
-	Status any
-	// Output only. [Output Only] An optional, human-readable explanation of the status.
-	StatusMessage any
 	// A set of instance tags.
-	Tags any
+	Tags                   any
 	WorkloadIdentityConfig any
-	// Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Zone any
 }
 
 type BetaInstanceAttrs struct {
@@ -950,7 +922,7 @@ type BetaInstanceAttrs struct {
 	// Specifies the hostname of the instance. The specified hostname must be RFC1035 compliant. If hostname is not specified, the default hostname is [INSTANCE_NAME].c.[PROJECT_ID].internal when using the global DNS, and [INSTANCE_NAME].[ZONE].c.[PROJECT_ID].internal when using zonal DNS.
 	Hostname any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Id                    any
 	InstanceEncryptionKey any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
 	KeyRevocationActionType any
@@ -977,7 +949,7 @@ type BetaInstanceAttrs struct {
 	// The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// An array of network configurations for this instance. These specify how interfaces are configured to interact with other network services, such as connecting to the internet. Multiple interfaces are supported per instance.
-	NetworkInterfaces any
+	NetworkInterfaces        any
 	NetworkPerformanceConfig any
 	// Additional instance params.
 	Params any
@@ -1012,7 +984,7 @@ type BetaInstanceAttrs struct {
 	// The policy describes the baseline against which VM instance boot integrity is measured.
 	ShieldedVmIntegrityPolicy any
 	// Source machine image
-	SourceMachineImage any
+	SourceMachineImage              any
 	SourceMachineImageEncryptionKey any
 	// Output only. [Output Only] Whether a VM has been restricted for start because Compute Engine has detected suspicious activity.
 	StartRestricted any
@@ -1021,7 +993,7 @@ type BetaInstanceAttrs struct {
 	// Output only. [Output Only] An optional, human-readable explanation of the status.
 	StatusMessage any
 	// A set of instance tags.
-	Tags any
+	Tags                   any
 	WorkloadIdentityConfig any
 	// Output only. [Output Only] URL of the zone where the instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Zone any
@@ -1032,144 +1004,130 @@ var BetaInstance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedMachineFeatures": ubx.FieldSpec{
 			WireName: "advanced_machine_features",
-			Kind: "object",
-			Fields: BetaInstance_AdvancedMachineFeaturesFields,
+			Kind:     "object",
+			Fields:   BetaInstance_AdvancedMachineFeaturesFields,
 		},
 		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
 		"ConfidentialInstanceConfig": ubx.FieldSpec{
 			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: BetaInstance_ConfidentialInstanceConfigFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ConfidentialInstanceConfigFields,
 		},
-		"CpuPlatform": ubx.FieldSpec{WireName: "cpu_platform"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"Disks": ubx.FieldSpec{
 			WireName: "disks",
-			Kind: "list",
-			Fields: BetaInstance_DisksFields,
+			Kind:     "list",
+			Fields:   BetaInstance_DisksFields,
 		},
 		"DisplayDevice": ubx.FieldSpec{
 			WireName: "display_device",
-			Kind: "object",
-			Fields: BetaInstance_DisplayDeviceFields,
+			Kind:     "object",
+			Fields:   BetaInstance_DisplayDeviceFields,
 		},
 		"EraseWindowsVssSignature": ubx.FieldSpec{WireName: "erase_windows_vss_signature"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Fingerprint":              ubx.FieldSpec{WireName: "fingerprint"},
 		"GuestAccelerators": ubx.FieldSpec{
 			WireName: "guest_accelerators",
-			Kind: "list",
-			Fields: BetaInstance_GuestAcceleratorsFields,
+			Kind:     "list",
+			Fields:   BetaInstance_GuestAcceleratorsFields,
 		},
 		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceEncryptionKey": ubx.FieldSpec{
 			WireName: "instance_encryption_key",
-			Kind: "object",
-			Fields: BetaInstance_Disks_DiskEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   BetaInstance_Disks_DiskEncryptionKeyFields,
 		},
 		"KeyRevocationActionType": ubx.FieldSpec{WireName: "key_revocation_action_type"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastStartTimestamp": ubx.FieldSpec{WireName: "last_start_timestamp"},
-		"LastStopTimestamp": ubx.FieldSpec{WireName: "last_stop_timestamp"},
-		"LastSuspendedTimestamp": ubx.FieldSpec{WireName: "last_suspended_timestamp"},
-		"LocalSsdEncryptionMode": ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"LabelFingerprint":        ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels":                  ubx.FieldSpec{WireName: "labels"},
+		"LocalSsdEncryptionMode":  ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
+		"MachineType":             ubx.FieldSpec{WireName: "machine_type"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: BetaInstance_MetadataFields,
+			Kind:     "object",
+			Fields:   BetaInstance_MetadataFields,
 		},
 		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"NetworkInterfaces": ubx.FieldSpec{
 			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: BetaInstance_NetworkInterfacesFields,
+			Kind:     "list",
+			Fields:   BetaInstance_NetworkInterfacesFields,
 		},
 		"NetworkPerformanceConfig": ubx.FieldSpec{
 			WireName: "network_performance_config",
-			Kind: "object",
-			Fields: BetaInstance_NetworkPerformanceConfigFields,
+			Kind:     "object",
+			Fields:   BetaInstance_NetworkPerformanceConfigFields,
 		},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaInstance_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ParamsFields,
 		},
 		"PartnerMetadata": ubx.FieldSpec{
 			WireName: "partner_metadata",
-			Kind: "map",
-			Fields: BetaInstance_PartnerMetadataFields,
+			Kind:     "map",
+			Fields:   BetaInstance_PartnerMetadataFields,
 		},
 		"PostKeyRevocationActionType": ubx.FieldSpec{WireName: "post_key_revocation_action_type"},
-		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
+		"PrivateIpv6GoogleAccess":     ubx.FieldSpec{WireName: "private_ipv6_google_access"},
 		"ReservationAffinity": ubx.FieldSpec{
 			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: BetaInstance_ReservationAffinityFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ReservationAffinityFields,
 		},
 		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: BetaInstance_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ResourceStatusFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"Scheduling": ubx.FieldSpec{
 			WireName: "scheduling",
-			Kind: "object",
-			Fields: BetaInstance_SchedulingFields,
+			Kind:     "object",
+			Fields:   BetaInstance_SchedulingFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ServiceAccounts": ubx.FieldSpec{
 			WireName: "service_accounts",
-			Kind: "list",
-			Fields: BetaInstance_ServiceAccountsFields,
+			Kind:     "list",
+			Fields:   BetaInstance_ServiceAccountsFields,
 		},
 		"ShieldedInstanceConfig": ubx.FieldSpec{
 			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: BetaInstance_ShieldedInstanceConfigFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ShieldedInstanceConfigFields,
 		},
 		"ShieldedInstanceIntegrityPolicy": ubx.FieldSpec{
 			WireName: "shielded_instance_integrity_policy",
-			Kind: "object",
-			Fields: BetaInstance_ShieldedInstanceIntegrityPolicyFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ShieldedInstanceIntegrityPolicyFields,
 		},
 		"ShieldedVmConfig": ubx.FieldSpec{
 			WireName: "shielded_vm_config",
-			Kind: "object",
-			Fields: BetaInstance_ShieldedInstanceConfigFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ShieldedInstanceConfigFields,
 		},
 		"ShieldedVmIntegrityPolicy": ubx.FieldSpec{
 			WireName: "shielded_vm_integrity_policy",
-			Kind: "object",
-			Fields: BetaInstance_ShieldedInstanceIntegrityPolicyFields,
+			Kind:     "object",
+			Fields:   BetaInstance_ShieldedInstanceIntegrityPolicyFields,
 		},
 		"SourceMachineImage": ubx.FieldSpec{WireName: "source_machine_image"},
 		"SourceMachineImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_machine_image_encryption_key",
-			Kind: "object",
-			Fields: BetaInstance_Disks_DiskEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   BetaInstance_Disks_DiskEncryptionKeyFields,
 		},
-		"StartRestricted": ubx.FieldSpec{WireName: "start_restricted"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
 		"Tags": ubx.FieldSpec{
 			WireName: "tags",
-			Kind: "object",
-			Fields: BetaInstance_TagsFields,
+			Kind:     "object",
+			Fields:   BetaInstance_TagsFields,
 		},
 		"WorkloadIdentityConfig": ubx.FieldSpec{
 			WireName: "workload_identity_config",
-			Kind: "object",
-			Fields: BetaInstance_WorkloadIdentityConfigFields,
+			Kind:     "object",
+			Fields:   BetaInstance_WorkloadIdentityConfigFields,
 		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

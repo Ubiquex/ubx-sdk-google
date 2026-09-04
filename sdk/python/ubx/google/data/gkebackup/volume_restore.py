@@ -15,7 +15,7 @@ class VolumeRestore_TargetPvc:
 
 @dataclasses.dataclass
 class VolumeRestoreConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class VolumeRestoreAttrs:
@@ -46,6 +46,5 @@ class VolumeRestoreAttrs:
 VolumeRestore = ubx.DataSourceBinding(
     wire_type="google_gkebackup_volume_restore",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

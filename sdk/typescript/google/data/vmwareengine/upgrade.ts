@@ -58,7 +58,6 @@ export interface Upgrade_Schedule {
 }
 
 export interface UpgradeConfig {
-  name: string | Computed<string>;
 }
 
 export interface UpgradeAttrs {
@@ -96,6 +95,5 @@ export interface UpgradeAttrs {
 export const Upgrade: DataSourceBinding<UpgradeConfig, UpgradeAttrs> = {
   wireType: "google_vmwareengine_upgrade",
   fields: {
-    name: "name",
   },
 };

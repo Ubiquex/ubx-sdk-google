@@ -14,8 +14,6 @@ const Connector_SubnetFields: FieldMap = {
 };
 
 export interface ConnectorConfig {
-  /** Output only. List of projects using the connector. */
-  connectedProjects?: string[] | Computed<string[]>;
   /** Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`. */
   ipCidrRange?: string | Computed<string>;
   /** Machine type of VM Instance underlying connector. Default is e2-micro */
@@ -32,8 +30,6 @@ export interface ConnectorConfig {
   name?: string | Computed<string>;
   /** Optional. Name of a VPC network. */
   network?: string | Computed<string>;
-  /** Output only. State of the VPC access connector. */
-  state?: string | Computed<string>;
   /** The subnet in which to house the connector */
   subnet?: Connector_Subnet | Computed<Connector_Subnet>;
 }
@@ -66,7 +62,6 @@ export interface ConnectorAttrs {
 export const Connector: ResourceBinding<ConnectorConfig, ConnectorAttrs> = {
   wireType: "google_vpcaccess_connector",
   fields: {
-    connectedProjects: "connected_projects",
     ipCidrRange: "ip_cidr_range",
     machineType: "machine_type",
     maxInstances: "max_instances",
@@ -75,7 +70,6 @@ export const Connector: ResourceBinding<ConnectorConfig, ConnectorAttrs> = {
     minThroughput: "min_throughput",
     name: "name",
     network: "network",
-    state: "state",
     subnet: {
       wireName: "subnet",
       kind: "object",

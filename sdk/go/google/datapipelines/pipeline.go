@@ -144,120 +144,114 @@ type Pipeline_Workload struct {
 }
 
 var Pipeline_ScheduleInfoFields = ubx.FieldMap{
-		"NextJobTime": ubx.FieldSpec{WireName: "next_job_time"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"NextJobTime": ubx.FieldSpec{WireName: "next_job_time"},
+	"Schedule":    ubx.FieldSpec{WireName: "schedule"},
+	"TimeZone":    ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameter_EnvironmentFields = ubx.FieldMap{
-		"AdditionalExperiments": ubx.FieldSpec{WireName: "additional_experiments"},
-		"AdditionalUserLabels": ubx.FieldSpec{WireName: "additional_user_labels"},
-		"EnableStreamingEngine": ubx.FieldSpec{WireName: "enable_streaming_engine"},
-		"FlexrsGoal": ubx.FieldSpec{WireName: "flexrs_goal"},
-		"IpConfiguration": ubx.FieldSpec{WireName: "ip_configuration"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxWorkers": ubx.FieldSpec{WireName: "max_workers"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NumWorkers": ubx.FieldSpec{WireName: "num_workers"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TempLocation": ubx.FieldSpec{WireName: "temp_location"},
-		"WorkerRegion": ubx.FieldSpec{WireName: "worker_region"},
-		"WorkerZone": ubx.FieldSpec{WireName: "worker_zone"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AdditionalExperiments": ubx.FieldSpec{WireName: "additional_experiments"},
+	"AdditionalUserLabels":  ubx.FieldSpec{WireName: "additional_user_labels"},
+	"EnableStreamingEngine": ubx.FieldSpec{WireName: "enable_streaming_engine"},
+	"FlexrsGoal":            ubx.FieldSpec{WireName: "flexrs_goal"},
+	"IpConfiguration":       ubx.FieldSpec{WireName: "ip_configuration"},
+	"KmsKeyName":            ubx.FieldSpec{WireName: "kms_key_name"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MaxWorkers":            ubx.FieldSpec{WireName: "max_workers"},
+	"Network":               ubx.FieldSpec{WireName: "network"},
+	"NumWorkers":            ubx.FieldSpec{WireName: "num_workers"},
+	"ServiceAccountEmail":   ubx.FieldSpec{WireName: "service_account_email"},
+	"Subnetwork":            ubx.FieldSpec{WireName: "subnetwork"},
+	"TempLocation":          ubx.FieldSpec{WireName: "temp_location"},
+	"WorkerRegion":          ubx.FieldSpec{WireName: "worker_region"},
+	"WorkerZone":            ubx.FieldSpec{WireName: "worker_zone"},
+	"Zone":                  ubx.FieldSpec{WireName: "zone"},
+}
 
 var Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameterFields = ubx.FieldMap{
-		"ContainerSpecGcsPath": ubx.FieldSpec{WireName: "container_spec_gcs_path"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameter_EnvironmentFields,
-		},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"LaunchOptions": ubx.FieldSpec{WireName: "launch_options"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"TransformNameMappings": ubx.FieldSpec{WireName: "transform_name_mappings"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
+	"ContainerSpecGcsPath": ubx.FieldSpec{WireName: "container_spec_gcs_path"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameter_EnvironmentFields,
+	},
+	"JobName":               ubx.FieldSpec{WireName: "job_name"},
+	"LaunchOptions":         ubx.FieldSpec{WireName: "launch_options"},
+	"Parameters":            ubx.FieldSpec{WireName: "parameters"},
+	"TransformNameMappings": ubx.FieldSpec{WireName: "transform_name_mappings"},
+	"Update":                ubx.FieldSpec{WireName: "update"},
+}
 
 var Pipeline_Workload_DataflowFlexTemplateRequestFields = ubx.FieldMap{
-		"LaunchParameter": ubx.FieldSpec{
-			WireName: "launch_parameter",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameterFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ValidateOnly": ubx.FieldSpec{WireName: "validate_only"},
-	}
+	"LaunchParameter": ubx.FieldSpec{
+		WireName: "launch_parameter",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowFlexTemplateRequest_LaunchParameterFields,
+	},
+	"Location":     ubx.FieldSpec{WireName: "location"},
+	"ProjectId":    ubx.FieldSpec{WireName: "project_id"},
+	"ValidateOnly": ubx.FieldSpec{WireName: "validate_only"},
+}
 
 var Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParameters_EnvironmentFields = ubx.FieldMap{
-		"AdditionalExperiments": ubx.FieldSpec{WireName: "additional_experiments"},
-		"AdditionalUserLabels": ubx.FieldSpec{WireName: "additional_user_labels"},
-		"BypassTempDirValidation": ubx.FieldSpec{WireName: "bypass_temp_dir_validation"},
-		"EnableStreamingEngine": ubx.FieldSpec{WireName: "enable_streaming_engine"},
-		"IpConfiguration": ubx.FieldSpec{WireName: "ip_configuration"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxWorkers": ubx.FieldSpec{WireName: "max_workers"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NumWorkers": ubx.FieldSpec{WireName: "num_workers"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TempLocation": ubx.FieldSpec{WireName: "temp_location"},
-		"WorkerRegion": ubx.FieldSpec{WireName: "worker_region"},
-		"WorkerZone": ubx.FieldSpec{WireName: "worker_zone"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AdditionalExperiments":   ubx.FieldSpec{WireName: "additional_experiments"},
+	"AdditionalUserLabels":    ubx.FieldSpec{WireName: "additional_user_labels"},
+	"BypassTempDirValidation": ubx.FieldSpec{WireName: "bypass_temp_dir_validation"},
+	"EnableStreamingEngine":   ubx.FieldSpec{WireName: "enable_streaming_engine"},
+	"IpConfiguration":         ubx.FieldSpec{WireName: "ip_configuration"},
+	"KmsKeyName":              ubx.FieldSpec{WireName: "kms_key_name"},
+	"MachineType":             ubx.FieldSpec{WireName: "machine_type"},
+	"MaxWorkers":              ubx.FieldSpec{WireName: "max_workers"},
+	"Network":                 ubx.FieldSpec{WireName: "network"},
+	"NumWorkers":              ubx.FieldSpec{WireName: "num_workers"},
+	"ServiceAccountEmail":     ubx.FieldSpec{WireName: "service_account_email"},
+	"Subnetwork":              ubx.FieldSpec{WireName: "subnetwork"},
+	"TempLocation":            ubx.FieldSpec{WireName: "temp_location"},
+	"WorkerRegion":            ubx.FieldSpec{WireName: "worker_region"},
+	"WorkerZone":              ubx.FieldSpec{WireName: "worker_zone"},
+	"Zone":                    ubx.FieldSpec{WireName: "zone"},
+}
 
 var Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParametersFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParameters_EnvironmentFields,
-		},
-		"JobName": ubx.FieldSpec{WireName: "job_name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"TransformNameMapping": ubx.FieldSpec{WireName: "transform_name_mapping"},
-		"Update": ubx.FieldSpec{WireName: "update"},
-	}
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParameters_EnvironmentFields,
+	},
+	"JobName":              ubx.FieldSpec{WireName: "job_name"},
+	"Parameters":           ubx.FieldSpec{WireName: "parameters"},
+	"TransformNameMapping": ubx.FieldSpec{WireName: "transform_name_mapping"},
+	"Update":               ubx.FieldSpec{WireName: "update"},
+}
 
 var Pipeline_Workload_DataflowLaunchTemplateRequestFields = ubx.FieldMap{
-		"GcsPath": ubx.FieldSpec{WireName: "gcs_path"},
-		"LaunchParameters": ubx.FieldSpec{
-			WireName: "launch_parameters",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParametersFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ValidateOnly": ubx.FieldSpec{WireName: "validate_only"},
-	}
+	"GcsPath": ubx.FieldSpec{WireName: "gcs_path"},
+	"LaunchParameters": ubx.FieldSpec{
+		WireName: "launch_parameters",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowLaunchTemplateRequest_LaunchParametersFields,
+	},
+	"Location":     ubx.FieldSpec{WireName: "location"},
+	"ProjectId":    ubx.FieldSpec{WireName: "project_id"},
+	"ValidateOnly": ubx.FieldSpec{WireName: "validate_only"},
+}
 
 var Pipeline_WorkloadFields = ubx.FieldMap{
-		"DataflowFlexTemplateRequest": ubx.FieldSpec{
-			WireName: "dataflow_flex_template_request",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowFlexTemplateRequestFields,
-		},
-		"DataflowLaunchTemplateRequest": ubx.FieldSpec{
-			WireName: "dataflow_launch_template_request",
-			Kind: "object",
-			Fields: Pipeline_Workload_DataflowLaunchTemplateRequestFields,
-		},
-	}
+	"DataflowFlexTemplateRequest": ubx.FieldSpec{
+		WireName: "dataflow_flex_template_request",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowFlexTemplateRequestFields,
+	},
+	"DataflowLaunchTemplateRequest": ubx.FieldSpec{
+		WireName: "dataflow_launch_template_request",
+		Kind:     "object",
+		Fields:   Pipeline_Workload_DataflowLaunchTemplateRequestFields,
+	},
+}
 
 type PipelineConfig struct {
-	// Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service.
-	CreateTime any
 	// Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_).
 	DisplayName any
-	// Output only. Number of jobs.
-	JobCount any
-	// Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service.
-	LastUpdateTime any
 	// The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location.
 	Name any
 	// Immutable. The sources of the pipeline (for example, Knowledge Catalog). The keys and values are set by the corresponding sources during pipeline creation.
@@ -302,24 +296,21 @@ type PipelineAttrs struct {
 var Pipeline = ubx.ResourceBinding{
 	WireType: "google_datapipelines_pipeline",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"JobCount": ubx.FieldSpec{WireName: "job_count"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"PipelineSources": ubx.FieldSpec{WireName: "pipeline_sources"},
 		"ScheduleInfo": ubx.FieldSpec{
 			WireName: "schedule_info",
-			Kind: "object",
-			Fields: Pipeline_ScheduleInfoFields,
+			Kind:     "object",
+			Fields:   Pipeline_ScheduleInfoFields,
 		},
 		"SchedulerServiceAccountEmail": ubx.FieldSpec{WireName: "scheduler_service_account_email"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"State":                        ubx.FieldSpec{WireName: "state"},
+		"Type":                         ubx.FieldSpec{WireName: "type"},
 		"Workload": ubx.FieldSpec{
 			WireName: "workload",
-			Kind: "object",
-			Fields: Pipeline_WorkloadFields,
+			Kind:     "object",
+			Fields:   Pipeline_WorkloadFields,
 		},
 	},
 }

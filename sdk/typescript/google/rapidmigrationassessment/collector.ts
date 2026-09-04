@@ -11,14 +11,8 @@ const Collector_GuestOsScanFields: FieldMap = {
 };
 
 export interface CollectorConfig {
-  /** Output only. Store cloud storage bucket name (which is a guid) created with this Collector. */
-  bucket?: string | Computed<string>;
-  /** Output only. Client version. */
-  clientVersion?: string | Computed<string>;
   /** How many days to collect data. */
   collectionDays?: number | Computed<number>;
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** User specified description of the Collector. */
   description?: string | Computed<string>;
   /** User specified name of the Collector. */
@@ -35,10 +29,6 @@ export interface CollectorConfig {
   name?: string | Computed<string>;
   /** Service Account email used to ingest data to this Collector. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. State of the Collector. */
-  state?: string | Computed<string>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
   /** Message describing a MC Source of type VSphere Scan. */
   vsphereScan?: Collector_GuestOsScan | Computed<Collector_GuestOsScan>;
 }
@@ -79,10 +69,7 @@ export interface CollectorAttrs {
 export const Collector: ResourceBinding<CollectorConfig, CollectorAttrs> = {
   wireType: "google_rapidmigrationassessment_collector",
   fields: {
-    bucket: "bucket",
-    clientVersion: "client_version",
     collectionDays: "collection_days",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     eulaUri: "eula_uri",
@@ -95,8 +82,6 @@ export const Collector: ResourceBinding<CollectorConfig, CollectorAttrs> = {
     labels: "labels",
     name: "name",
     serviceAccount: "service_account",
-    state: "state",
-    updateTime: "update_time",
     vsphereScan: {
       wireName: "vsphere_scan",
       kind: "object",

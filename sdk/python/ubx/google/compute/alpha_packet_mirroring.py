@@ -59,17 +59,11 @@ _AlphaPacketMirroring_MirroredResourcesFields = {
 @dataclasses.dataclass
 class AlphaPacketMirroringConfig:
     collector_ilb: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE.
     enable: Any = None
     filter: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings.
-    kind: Any = None
     mirrored_resources: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
@@ -78,10 +72,6 @@ class AlphaPacketMirroringConfig:
     priority: Any = None
     # [Output Only] URI of the region where the packetMirroring resides.
     region: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
 
 @dataclasses.dataclass
 class AlphaPacketMirroringAttrs:
@@ -118,7 +108,6 @@ AlphaPacketMirroring = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaPacketMirroring_CollectorIlbFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable": ubx.FieldSpec(wire_name="enable"),
         "filter": ubx.FieldSpec(
@@ -126,8 +115,6 @@ AlphaPacketMirroring = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaPacketMirroring_FilterFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "mirrored_resources": ubx.FieldSpec(
             wire_name="mirrored_resources",
             kind="object",
@@ -141,7 +128,5 @@ AlphaPacketMirroring = ubx.ResourceBinding(
         ),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
     },
 )

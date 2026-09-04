@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_BrokerDetails struct {
 	BrokerIndex any
-	NodeId any
-	Rack any
+	NodeId      any
+	Rack        any
 }
 
 type Cluster_CapacityConfig struct {
@@ -58,96 +58,76 @@ type Cluster_UpdateOptions struct {
 	AllowBrokerDownscaleOnClusterUpscale any
 }
 
-var Cluster_BrokerDetailsFields = ubx.FieldMap{
-		"BrokerIndex": ubx.FieldSpec{WireName: "broker_index"},
-		"NodeId": ubx.FieldSpec{WireName: "node_id"},
-		"Rack": ubx.FieldSpec{WireName: "rack"},
-	}
-
 var Cluster_CapacityConfigFields = ubx.FieldMap{
-		"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
-		"VcpuCount": ubx.FieldSpec{WireName: "vcpu_count"},
-	}
+	"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
+	"VcpuCount":   ubx.FieldSpec{WireName: "vcpu_count"},
+}
 
 var Cluster_GcpConfig_AccessConfig_NetworkConfigsFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-	}
+	"Subnet": ubx.FieldSpec{WireName: "subnet"},
+}
 
 var Cluster_GcpConfig_AccessConfigFields = ubx.FieldMap{
-		"NetworkConfigs": ubx.FieldSpec{
-			WireName: "network_configs",
-			Kind: "list",
-			Fields: Cluster_GcpConfig_AccessConfig_NetworkConfigsFields,
-		},
-	}
+	"NetworkConfigs": ubx.FieldSpec{
+		WireName: "network_configs",
+		Kind:     "list",
+		Fields:   Cluster_GcpConfig_AccessConfig_NetworkConfigsFields,
+	},
+}
 
 var Cluster_GcpConfigFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: Cluster_GcpConfig_AccessConfigFields,
-		},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"AccessConfig": ubx.FieldSpec{
+		WireName: "access_config",
+		Kind:     "object",
+		Fields:   Cluster_GcpConfig_AccessConfigFields,
+	},
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Cluster_RebalanceConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_TlsConfig_TrustConfig_CasConfigsFields = ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-	}
+	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+}
 
 var Cluster_TlsConfig_TrustConfigFields = ubx.FieldMap{
-		"CasConfigs": ubx.FieldSpec{
-			WireName: "cas_configs",
-			Kind: "list",
-			Fields: Cluster_TlsConfig_TrustConfig_CasConfigsFields,
-		},
-	}
+	"CasConfigs": ubx.FieldSpec{
+		WireName: "cas_configs",
+		Kind:     "list",
+		Fields:   Cluster_TlsConfig_TrustConfig_CasConfigsFields,
+	},
+}
 
 var Cluster_TlsConfigFields = ubx.FieldMap{
-		"SslPrincipalMappingRules": ubx.FieldSpec{WireName: "ssl_principal_mapping_rules"},
-		"TrustConfig": ubx.FieldSpec{
-			WireName: "trust_config",
-			Kind: "object",
-			Fields: Cluster_TlsConfig_TrustConfigFields,
-		},
-	}
+	"SslPrincipalMappingRules": ubx.FieldSpec{WireName: "ssl_principal_mapping_rules"},
+	"TrustConfig": ubx.FieldSpec{
+		WireName: "trust_config",
+		Kind:     "object",
+		Fields:   Cluster_TlsConfig_TrustConfigFields,
+	},
+}
 
 var Cluster_UpdateOptionsFields = ubx.FieldMap{
-		"AllowBrokerDownscaleOnClusterUpscale": ubx.FieldSpec{WireName: "allow_broker_downscale_on_cluster_upscale"},
-	}
+	"AllowBrokerDownscaleOnClusterUpscale": ubx.FieldSpec{WireName: "allow_broker_downscale_on_cluster_upscale"},
+}
 
 type ClusterConfig struct {
-	// Output only. Only populated when FULL view is requested. Details of each broker in the cluster.
-	BrokerDetails any
 	// A capacity configuration of a Kafka cluster.
 	CapacityConfig any
-	// Output only. The time when the cluster was created.
-	CreateTime any
 	// Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
 	GcpConfig any
-	// Output only. Only populated when FULL view is requested. The Kafka version of the cluster.
-	KafkaVersion any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Identifier. The name of the cluster. Structured like: projects/{project_number}/locations/{location}/clusters/{cluster_id}
 	Name any
 	// Defines rebalancing behavior of a Kafka cluster.
 	RebalanceConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The current state of the cluster.
-	State any
 	// The TLS configuration for the Kafka cluster.
 	TlsConfig any
 	// UpdateOptions specifies options that influence how a cluster update is applied. These options control the behavior of the update process, rather than defining the desired end-state of a cluster.
 	UpdateOptions any
-	// Output only. The time when the cluster was last updated.
-	UpdateTime any
 }
 
 type ClusterAttrs struct {
@@ -184,43 +164,32 @@ type ClusterAttrs struct {
 var Cluster = ubx.ResourceBinding{
 	WireType: "google_managedkafka_cluster",
 	Fields: ubx.FieldMap{
-		"BrokerDetails": ubx.FieldSpec{
-			WireName: "broker_details",
-			Kind: "list",
-			Fields: Cluster_BrokerDetailsFields,
-		},
 		"CapacityConfig": ubx.FieldSpec{
 			WireName: "capacity_config",
-			Kind: "object",
-			Fields: Cluster_CapacityConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_CapacityConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"GcpConfig": ubx.FieldSpec{
 			WireName: "gcp_config",
-			Kind: "object",
-			Fields: Cluster_GcpConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_GcpConfigFields,
 		},
-		"KafkaVersion": ubx.FieldSpec{WireName: "kafka_version"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"RebalanceConfig": ubx.FieldSpec{
 			WireName: "rebalance_config",
-			Kind: "object",
-			Fields: Cluster_RebalanceConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_RebalanceConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"TlsConfig": ubx.FieldSpec{
 			WireName: "tls_config",
-			Kind: "object",
-			Fields: Cluster_TlsConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_TlsConfigFields,
 		},
 		"UpdateOptions": ubx.FieldSpec{
 			WireName: "update_options",
-			Kind: "object",
-			Fields: Cluster_UpdateOptionsFields,
+			Kind:     "object",
+			Fields:   Cluster_UpdateOptionsFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

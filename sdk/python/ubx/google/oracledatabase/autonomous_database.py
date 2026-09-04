@@ -491,16 +491,10 @@ class AutonomousDatabaseConfig:
     admin_password_secret_version: Any = None
     # Optional. Immutable. The subnet CIDR range for the Autonomous Database.
     cidr: Any = None
-    # Output only. The date and time that the Autonomous Database was created.
-    create_time: Any = None
     # Optional. Immutable. The name of the Autonomous Database. The database name must be unique in the project. The name must begin with a letter and can contain a maximum of 30 alphanumeric characters.
     database: Any = None
-    # Output only. List of supported GCP region to clone the Autonomous Database for disaster recovery. Format: `project/{project}/locations/{location}`.
-    disaster_recovery_supported_locations: Any = None
     # Optional. Immutable. The display name for the Autonomous Database. The name does not have to be unique within your project.
     display_name: Any = None
-    # Output only. The ID of the subscription entitlement associated with the Autonomous Database.
-    entitlement_id: Any = None
     # Optional. The labels or tags associated with the Autonomous Database.
     labels: Any = None
     # Identifier. The name of the Autonomous Database resource in the following format: projects/{project}/locations/{region}/autonomousDatabases/{autonomous_database}
@@ -511,8 +505,6 @@ class AutonomousDatabaseConfig:
     odb_network: Any = None
     # Optional. Immutable. The name of the OdbSubnet associated with the Autonomous Database. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
     odb_subnet: Any = None
-    # Output only. The peer Autonomous Database names of the given Autonomous Database.
-    peer_autonomous_databases: Any = None
     # The properties of an Autonomous Database.
     properties: Any = None
     # The source configuration for the standby Autonomous Database.
@@ -559,17 +551,13 @@ AutonomousDatabase = ubx.ResourceBinding(
         "admin_password": ubx.FieldSpec(wire_name="admin_password"),
         "admin_password_secret_version": ubx.FieldSpec(wire_name="admin_password_secret_version"),
         "cidr": ubx.FieldSpec(wire_name="cidr"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database": ubx.FieldSpec(wire_name="database"),
-        "disaster_recovery_supported_locations": ubx.FieldSpec(wire_name="disaster_recovery_supported_locations"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "odb_network": ubx.FieldSpec(wire_name="odb_network"),
         "odb_subnet": ubx.FieldSpec(wire_name="odb_subnet"),
-        "peer_autonomous_databases": ubx.FieldSpec(wire_name="peer_autonomous_databases"),
         "properties": ubx.FieldSpec(
             wire_name="properties",
             kind="object",

@@ -11,14 +11,14 @@ type Instance_AccessLoggingConfig struct {
 }
 
 type Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type Instance_MaintenanceUpdatePolicy_MaintenanceWindows struct {
-	Day any
+	Day       any
 	StartTime any
 }
 
@@ -35,60 +35,52 @@ type Instance_ScheduledMaintenance struct {
 }
 
 var Instance_AccessLoggingConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Filter":  ubx.FieldSpec{WireName: "filter"},
+}
 
 var Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields,
-		},
-	}
+	"Day": ubx.FieldSpec{WireName: "day"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields,
+	},
+}
 
 var Instance_MaintenanceUpdatePolicyFields = ubx.FieldMap{
-		"MaintenanceChannel": ubx.FieldSpec{WireName: "maintenance_channel"},
-		"MaintenanceWindows": ubx.FieldSpec{
-			WireName: "maintenance_windows",
-			Kind: "list",
-			Fields: Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
-		},
-	}
+	"MaintenanceChannel": ubx.FieldSpec{WireName: "maintenance_channel"},
+	"MaintenanceWindows": ubx.FieldSpec{
+		WireName: "maintenance_windows",
+		Kind:     "list",
+		Fields:   Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
+	},
+}
 
 var Instance_ScheduledMaintenanceFields = ubx.FieldMap{
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type InstanceConfig struct {
 	// Access logging configuration enables customers to ship the access logs from the tenant projects to their own project's cloud logging. The feature is at the instance level ad disabled by default. It can be enabled during CreateInstance or UpdateInstance.
 	AccessLoggingConfig any
 	// Optional. Customer accept list represents the list of projects (id/number) on customer side that can privately connect to the service attachment. It is an optional field which the customers can provide during the instance creation. By default, the customer project associated with the Apigee organization will be included to the list.
 	ConsumerAcceptList any
-	// Output only. Time the instance was created in milliseconds since epoch.
-	CreatedAt any
 	// Optional. Description of the instance.
 	Description any
 	// Optional. Customer Managed Encryption Key (CMEK) used for disk and volume encryption. If not specified, a Google-Managed encryption key will be used. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`
 	DiskEncryptionKeyName any
 	// Optional. Display name for the instance.
 	DisplayName any
-	// Output only. Internal hostname or IP address of the Apigee endpoint used by clients to connect to the service.
-	Host any
 	// Optional. Comma-separated list of CIDR blocks of length 22 and/or 28 used to create the Apigee instance. Providing CIDR ranges is optional. You can provide just /22 or /28 or both (or neither). Ranges you provide should be freely available as part of a larger named range you have allocated to the Service Networking peering. If this parameter is not provided, Apigee automatically requests an available /22 and /28 CIDR block from Service Networking. Use the /22 CIDR block for configuring your firewall needs to allow traffic from Apigee. Input formats: `a.b.c.d/22` or `e.f.g.h/28` or `a.b.c.d/22,e.f.g.h/28`
 	IpRange any
-	// Output only. Indicates whether the instance is version locked. If true, the instance will not be updated by automated runtime rollouts. This is only supported for Apigee X instances.
-	IsVersionLocked any
-	// Output only. Time the instance was last modified in milliseconds since epoch.
-	LastModifiedAt any
 	// Required. Compute Engine location where the instance resides.
 	Location any
 	// MaintenanceUpdatePolicy specifies the preferred window to perform maintenance on the instance (day of the week and time of day).
@@ -97,16 +89,8 @@ type InstanceConfig struct {
 	Name any
 	// Optional. Size of the CIDR block range that will be reserved by the instance. PAID organizations support `SLASH_16` to `SLASH_20` and defaults to `SLASH_16`. Evaluation organizations support only `SLASH_23`.
 	PeeringCidrRange any
-	// Output only. Port number of the exposed Apigee endpoint.
-	Port any
-	// Output only. Version of the runtime system running in the instance. The runtime system is the set of components that serve the API Proxy traffic in your Environments.
-	RuntimeVersion any
 	// Scheduled maintenance information for an instance.
 	ScheduledMaintenance any
-	// Output only. Resource name of the service attachment created for the instance in the format: `projects/*/regions/*/serviceAttachments/*` Apigee customers can privately forward traffic to this service attachment using the PSC endpoints.
-	ServiceAttachment any
-	// Output only. State of the instance. Values other than `ACTIVE` means the resource is not ready to use.
-	State any
 }
 
 type InstanceAttrs struct {
@@ -155,34 +139,26 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessLoggingConfig": ubx.FieldSpec{
 			WireName: "access_logging_config",
-			Kind: "object",
-			Fields: Instance_AccessLoggingConfigFields,
+			Kind:     "object",
+			Fields:   Instance_AccessLoggingConfigFields,
 		},
-		"ConsumerAcceptList": ubx.FieldSpec{WireName: "consumer_accept_list"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"ConsumerAcceptList":    ubx.FieldSpec{WireName: "consumer_accept_list"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionKeyName": ubx.FieldSpec{WireName: "disk_encryption_key_name"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"IsVersionLocked": ubx.FieldSpec{WireName: "is_version_locked"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+		"IpRange":               ubx.FieldSpec{WireName: "ip_range"},
+		"Location":              ubx.FieldSpec{WireName: "location"},
 		"MaintenanceUpdatePolicy": ubx.FieldSpec{
 			WireName: "maintenance_update_policy",
-			Kind: "object",
-			Fields: Instance_MaintenanceUpdatePolicyFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenanceUpdatePolicyFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"PeeringCidrRange": ubx.FieldSpec{WireName: "peering_cidr_range"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
 		"ScheduledMaintenance": ubx.FieldSpec{
 			WireName: "scheduled_maintenance",
-			Kind: "object",
-			Fields: Instance_ScheduledMaintenanceFields,
+			Kind:     "object",
+			Fields:   Instance_ScheduledMaintenanceFields,
 		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

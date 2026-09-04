@@ -306,8 +306,6 @@ const Dashboard_RootContainerFields: FieldMap = {
 };
 
 export interface DashboardConfig {
-  /** Output only. Dashboard creation time. */
-  createTime?: string | Computed<string>;
   /** Date range configuration for dashboard charts. */
   dateRangeConfig?: Dashboard_DateRangeConfig | Computed<Dashboard_DateRangeConfig>;
   /** Dashboard description */
@@ -318,12 +316,8 @@ export interface DashboardConfig {
   filter?: string | Computed<string>;
   /** Identifier. Dashboard resource name. Format: projects/{project}/locations/{location}/dashboards/{dashboard} */
   name?: string | Computed<string>;
-  /** Output only. Whether the dashboard is read-only. All predefined dashboards are read-only and cannot be modified by the user. */
-  readOnly?: boolean | Computed<boolean>;
   /** Configurable dashboard's container. Container can contain multiple widgets. */
   rootContainer?: Dashboard_RootContainer | Computed<Dashboard_RootContainer>;
-  /** Output only. Dashboard last update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DashboardAttrs {
@@ -350,7 +344,6 @@ export interface DashboardAttrs {
 export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
   wireType: "google_contactcenterinsights_dashboard",
   fields: {
-    createTime: "create_time",
     dateRangeConfig: {
       wireName: "date_range_config",
       kind: "object",
@@ -360,12 +353,10 @@ export const Dashboard: ResourceBinding<DashboardConfig, DashboardAttrs> = {
     displayName: "display_name",
     filter: "filter",
     name: "name",
-    readOnly: "read_only",
     rootContainer: {
       wireName: "root_container",
       kind: "object",
       fields: Dashboard_RootContainerFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -4,7 +4,7 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type FirewallEndpoint_Associations struct {
-	Name any
+	Name    any
 	Network any
 }
 
@@ -13,24 +13,13 @@ type FirewallEndpoint_EndpointSettings struct {
 	JumboFramesEnabled any
 }
 
-var FirewallEndpoint_AssociationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
-
 var FirewallEndpoint_EndpointSettingsFields = ubx.FieldMap{
-		"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
-	}
+	"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
+}
 
 type FirewallEndpointConfig struct {
-	// Output only. Deprecated: List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}.
-	AssociatedNetworks any
-	// Output only. List of FirewallEndpointAssociations that are associated to this endpoint. An association will only appear in this list after traffic routing is fully configured.
-	Associations any
 	// Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.
 	BillingProjectId any
-	// Output only. Create time stamp.
-	CreateTime any
 	// Optional. Description of the firewall endpoint. Max length 2048 characters.
 	Description any
 	// Settings for the endpoint.
@@ -39,16 +28,6 @@ type FirewallEndpointConfig struct {
 	Labels any
 	// Immutable. Identifier. Name of resource.
 	Name any
-	// Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128.
-	Reconciling any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Current state of the endpoint.
-	State any
-	// Output only. Update time stamp
-	UpdateTime any
 }
 
 type FirewallEndpointAttrs struct {
@@ -83,26 +62,14 @@ type FirewallEndpointAttrs struct {
 var FirewallEndpoint = ubx.ResourceBinding{
 	WireType: "google_networksecurity_firewall_endpoint",
 	Fields: ubx.FieldMap{
-		"AssociatedNetworks": ubx.FieldSpec{WireName: "associated_networks"},
-		"Associations": ubx.FieldSpec{
-			WireName: "associations",
-			Kind: "list",
-			Fields: FirewallEndpoint_AssociationsFields,
-		},
 		"BillingProjectId": ubx.FieldSpec{WireName: "billing_project_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EndpointSettings": ubx.FieldSpec{
 			WireName: "endpoint_settings",
-			Kind: "object",
-			Fields: FirewallEndpoint_EndpointSettingsFields,
+			Kind:     "object",
+			Fields:   FirewallEndpoint_EndpointSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

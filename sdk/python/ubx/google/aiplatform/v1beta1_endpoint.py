@@ -329,371 +329,6 @@ _V1beta1Endpoint_ClientConnectionConfigFields = {
     "inference_timeout": ubx.FieldSpec(wire_name="inference_timeout"),
 }
 
-_V1beta1Endpoint_DeployedModels_AutomaticResourcesFields = {
-    "max_replica_count": ubx.FieldSpec(wire_name="max_replica_count"),
-    "min_replica_count": ubx.FieldSpec(wire_name="min_replica_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields = {
-    "metric_name": ubx.FieldSpec(wire_name="metric_name"),
-    "monitored_resource_labels": ubx.FieldSpec(wire_name="monitored_resource_labels"),
-    "target": ubx.FieldSpec(wire_name="target"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResources_FlexStartFields = {
-    "max_runtime_duration": ubx.FieldSpec(wire_name="max_runtime_duration"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields = {
-    "key": ubx.FieldSpec(wire_name="key"),
-    "reservation_affinity_type": ubx.FieldSpec(wire_name="reservation_affinity_type"),
-    "values": ubx.FieldSpec(wire_name="values"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpecFields = {
-    "accelerator_count": ubx.FieldSpec(wire_name="accelerator_count"),
-    "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
-    "gpu_partition_size": ubx.FieldSpec(wire_name="gpu_partition_size"),
-    "machine_type": ubx.FieldSpec(wire_name="machine_type"),
-    "min_gpu_driver_version": ubx.FieldSpec(wire_name="min_gpu_driver_version"),
-    "multihost_gpu_node_count": ubx.FieldSpec(wire_name="multihost_gpu_node_count"),
-    "reservation_affinity": ubx.FieldSpec(
-        wire_name="reservation_affinity",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields,
-    ),
-    "tpu_topology": ubx.FieldSpec(wire_name="tpu_topology"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResources_ScaleToZeroSpecFields = {
-    "idle_scaledown_period": ubx.FieldSpec(wire_name="idle_scaledown_period"),
-    "min_scaleup_period": ubx.FieldSpec(wire_name="min_scaleup_period"),
-}
-
-_V1beta1Endpoint_DeployedModels_DedicatedResourcesFields = {
-    "autoscaling_metric_specs": ubx.FieldSpec(
-        wire_name="autoscaling_metric_specs",
-        kind="list",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields,
-    ),
-    "flex_start": ubx.FieldSpec(
-        wire_name="flex_start",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResources_FlexStartFields,
-    ),
-    "initial_replica_count": ubx.FieldSpec(wire_name="initial_replica_count"),
-    "machine_spec": ubx.FieldSpec(
-        wire_name="machine_spec",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpecFields,
-    ),
-    "max_replica_count": ubx.FieldSpec(wire_name="max_replica_count"),
-    "min_replica_count": ubx.FieldSpec(wire_name="min_replica_count"),
-    "required_replica_count": ubx.FieldSpec(wire_name="required_replica_count"),
-    "scale_to_zero_spec": ubx.FieldSpec(
-        wire_name="scale_to_zero_spec",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResources_ScaleToZeroSpecFields,
-    ),
-    "spot": ubx.FieldSpec(wire_name="spot"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = {
-    "max_value": ubx.FieldSpec(wire_name="max_value"),
-    "min_value": ubx.FieldSpec(wire_name="min_value"),
-    "original_mean": ubx.FieldSpec(wire_name="original_mean"),
-    "original_stddev": ubx.FieldSpec(wire_name="original_stddev"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields = {
-    "clip_percent_lowerbound": ubx.FieldSpec(wire_name="clip_percent_lowerbound"),
-    "clip_percent_upperbound": ubx.FieldSpec(wire_name="clip_percent_upperbound"),
-    "color_map": ubx.FieldSpec(wire_name="color_map"),
-    "overlay_type": ubx.FieldSpec(wire_name="overlay_type"),
-    "polarity": ubx.FieldSpec(wire_name="polarity"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields = {
-    "dense_shape_tensor_name": ubx.FieldSpec(wire_name="dense_shape_tensor_name"),
-    "encoded_baselines": ubx.FieldSpec(wire_name="encoded_baselines"),
-    "encoded_tensor_name": ubx.FieldSpec(wire_name="encoded_tensor_name"),
-    "encoding": ubx.FieldSpec(wire_name="encoding"),
-    "feature_value_domain": ubx.FieldSpec(
-        wire_name="feature_value_domain",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-    ),
-    "group_name": ubx.FieldSpec(wire_name="group_name"),
-    "index_feature_mapping": ubx.FieldSpec(wire_name="index_feature_mapping"),
-    "indices_tensor_name": ubx.FieldSpec(wire_name="indices_tensor_name"),
-    "input_baselines": ubx.FieldSpec(wire_name="input_baselines"),
-    "input_tensor_name": ubx.FieldSpec(wire_name="input_tensor_name"),
-    "modality": ubx.FieldSpec(wire_name="modality"),
-    "visualization": ubx.FieldSpec(
-        wire_name="visualization",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields = {
-    "display_name_mapping_key": ubx.FieldSpec(wire_name="display_name_mapping_key"),
-    "index_display_name_mapping": ubx.FieldSpec(wire_name="index_display_name_mapping"),
-    "output_tensor_name": ubx.FieldSpec(wire_name="output_tensor_name"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_MetadataFields = {
-    "feature_attributions_schema_uri": ubx.FieldSpec(wire_name="feature_attributions_schema_uri"),
-    "inputs": ubx.FieldSpec(
-        wire_name="inputs",
-        kind="map",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields,
-    ),
-    "latent_space_source": ubx.FieldSpec(wire_name="latent_space_source"),
-    "outputs": ubx.FieldSpec(
-        wire_name="outputs",
-        kind="map",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = {
-    "uris": ubx.FieldSpec(wire_name="uris"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = {
-    "data_format": ubx.FieldSpec(wire_name="data_format"),
-    "gcs_source": ubx.FieldSpec(
-        wire_name="gcs_source",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields = {
-    "modality": ubx.FieldSpec(wire_name="modality"),
-    "query": ubx.FieldSpec(wire_name="query"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields = {
-    "example_gcs_source": ubx.FieldSpec(
-        wire_name="example_gcs_source",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-    ),
-    "gcs_source": ubx.FieldSpec(
-        wire_name="gcs_source",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-    ),
-    "nearest_neighbor_search_config": ubx.FieldSpec(wire_name="nearest_neighbor_search_config"),
-    "neighbor_count": ubx.FieldSpec(wire_name="neighbor_count"),
-    "presets": ubx.FieldSpec(
-        wire_name="presets",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = {
-    "max_blur_sigma": ubx.FieldSpec(wire_name="max_blur_sigma"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "sigma": ubx.FieldSpec(wire_name="sigma"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = {
-    "noise_sigma": ubx.FieldSpec(
-        wire_name="noise_sigma",
-        kind="list",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = {
-    "feature_noise_sigma": ubx.FieldSpec(
-        wire_name="feature_noise_sigma",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-    ),
-    "noise_sigma": ubx.FieldSpec(wire_name="noise_sigma"),
-    "noisy_sample_count": ubx.FieldSpec(wire_name="noisy_sample_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = {
-    "blur_baseline_config": ubx.FieldSpec(
-        wire_name="blur_baseline_config",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-    ),
-    "smooth_grad_config": ubx.FieldSpec(
-        wire_name="smooth_grad_config",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-    ),
-    "step_count": ubx.FieldSpec(wire_name="step_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields = {
-    "path_count": ubx.FieldSpec(wire_name="path_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpec_ParametersFields = {
-    "examples": ubx.FieldSpec(
-        wire_name="examples",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields,
-    ),
-    "integrated_gradients_attribution": ubx.FieldSpec(
-        wire_name="integrated_gradients_attribution",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-    ),
-    "output_indices": ubx.FieldSpec(wire_name="output_indices"),
-    "sampled_shapley_attribution": ubx.FieldSpec(
-        wire_name="sampled_shapley_attribution",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-    ),
-    "top_k": ubx.FieldSpec(wire_name="top_k"),
-    "xrai_attribution": ubx.FieldSpec(
-        wire_name="xrai_attribution",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_ExplanationSpecFields = {
-    "metadata": ubx.FieldSpec(
-        wire_name="metadata",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_MetadataFields,
-    ),
-    "parameters": ubx.FieldSpec(
-        wire_name="parameters",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpec_ParametersFields,
-    ),
-}
-
-_V1beta1Endpoint_DeployedModels_FasterDeploymentConfigFields = {
-    "fast_tryout_enabled": ubx.FieldSpec(wire_name="fast_tryout_enabled"),
-}
-
-_V1beta1Endpoint_DeployedModels_FullFineTunedResourcesFields = {
-    "deployment_type": ubx.FieldSpec(wire_name="deployment_type"),
-    "model_inference_unit_count": ubx.FieldSpec(wire_name="model_inference_unit_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_PrivateEndpointsFields = {
-    "explain_http_uri": ubx.FieldSpec(wire_name="explain_http_uri"),
-    "health_http_uri": ubx.FieldSpec(wire_name="health_http_uri"),
-    "predict_http_uri": ubx.FieldSpec(wire_name="predict_http_uri"),
-    "service_attachment": ubx.FieldSpec(wire_name="service_attachment"),
-}
-
-_V1beta1Endpoint_DeployedModels_RolloutOptionsFields = {
-    "max_surge_percentage": ubx.FieldSpec(wire_name="max_surge_percentage"),
-    "max_surge_replicas": ubx.FieldSpec(wire_name="max_surge_replicas"),
-    "max_unavailable_percentage": ubx.FieldSpec(wire_name="max_unavailable_percentage"),
-    "max_unavailable_replicas": ubx.FieldSpec(wire_name="max_unavailable_replicas"),
-    "previous_deployed_model": ubx.FieldSpec(wire_name="previous_deployed_model"),
-    "revision_number": ubx.FieldSpec(wire_name="revision_number"),
-}
-
-_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields = {
-    "draft_model": ubx.FieldSpec(wire_name="draft_model"),
-}
-
-_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields = {
-    "ngram_size": ubx.FieldSpec(wire_name="ngram_size"),
-}
-
-_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpecFields = {
-    "draft_model_speculation": ubx.FieldSpec(
-        wire_name="draft_model_speculation",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields,
-    ),
-    "ngram_speculation": ubx.FieldSpec(
-        wire_name="ngram_speculation",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields,
-    ),
-    "speculative_token_count": ubx.FieldSpec(wire_name="speculative_token_count"),
-}
-
-_V1beta1Endpoint_DeployedModels_StatusFields = {
-    "available_replica_count": ubx.FieldSpec(wire_name="available_replica_count"),
-    "last_update_time": ubx.FieldSpec(wire_name="last_update_time"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_V1beta1Endpoint_DeployedModelsFields = {
-    "automatic_resources": ubx.FieldSpec(
-        wire_name="automatic_resources",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_AutomaticResourcesFields,
-    ),
-    "checkpoint_id": ubx.FieldSpec(wire_name="checkpoint_id"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "dedicated_resources": ubx.FieldSpec(
-        wire_name="dedicated_resources",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_DedicatedResourcesFields,
-    ),
-    "disable_container_logging": ubx.FieldSpec(wire_name="disable_container_logging"),
-    "disable_explanations": ubx.FieldSpec(wire_name="disable_explanations"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "enable_access_logging": ubx.FieldSpec(wire_name="enable_access_logging"),
-    "enable_container_logging": ubx.FieldSpec(wire_name="enable_container_logging"),
-    "explanation_spec": ubx.FieldSpec(
-        wire_name="explanation_spec",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_ExplanationSpecFields,
-    ),
-    "faster_deployment_config": ubx.FieldSpec(
-        wire_name="faster_deployment_config",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_FasterDeploymentConfigFields,
-    ),
-    "full_fine_tuned_resources": ubx.FieldSpec(
-        wire_name="full_fine_tuned_resources",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_FullFineTunedResourcesFields,
-    ),
-    "gdc_connected_model": ubx.FieldSpec(wire_name="gdc_connected_model"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "model": ubx.FieldSpec(wire_name="model"),
-    "model_version_id": ubx.FieldSpec(wire_name="model_version_id"),
-    "private_endpoints": ubx.FieldSpec(
-        wire_name="private_endpoints",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_PrivateEndpointsFields,
-    ),
-    "rollout_options": ubx.FieldSpec(
-        wire_name="rollout_options",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_RolloutOptionsFields,
-    ),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-    "shared_resources": ubx.FieldSpec(wire_name="shared_resources"),
-    "speculative_decoding_spec": ubx.FieldSpec(
-        wire_name="speculative_decoding_spec",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpecFields,
-    ),
-    "status": ubx.FieldSpec(
-        wire_name="status",
-        kind="object",
-        fields=_V1beta1Endpoint_DeployedModels_StatusFields,
-    ),
-    "system_labels": ubx.FieldSpec(wire_name="system_labels"),
-}
-
 _V1beta1Endpoint_EncryptionSpecFields = {
     "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
 }
@@ -784,14 +419,8 @@ _V1beta1Endpoint_PublisherModelConfigFields = {
 class V1beta1EndpointConfig:
     # Configurations (e.g. inference timeout) that are applied on your endpoints.
     client_connection_config: Any = None
-    # Output only. Timestamp when this Endpoint was created.
-    create_time: Any = None
-    # Output only. DNS of the dedicated endpoint. Will only be populated if dedicated_endpoint_enabled is true. Depending on the features enabled, uid might be a random number or a string. For example, if fast_tryout is enabled, uid will be fasttryout. Format: `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
-    dedicated_endpoint_dns: Any = None
     # If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon.
     dedicated_endpoint_enabled: Any = None
-    # Output only. The models deployed in this Endpoint. To add or remove DeployedModels use EndpointService.DeployModel and EndpointService.UndeployModel respectively.
-    deployed_models: Any = None
     # The description of the Endpoint.
     description: Any = None
     # Required. The display name of the Endpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -808,8 +437,6 @@ class V1beta1EndpointConfig:
     gen_ai_advanced_features_config: Any = None
     # The labels with user-defined metadata to organize your Endpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
     labels: Any = None
-    # Output only. Resource name of the Model Monitoring job associated with this Endpoint if monitoring is enabled by JobService.CreateModelDeploymentMonitoringJob. Format: `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
-    model_deployment_monitoring_job: Any = None
     # Identifier. The resource name of the Endpoint.
     name: Any = None
     # Optional. The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the Endpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. Only one of the fields, network or enable_private_service_connect, can be set. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where `{project}` is a project number, as in `12345`, and `{network}` is network name.
@@ -820,14 +447,8 @@ class V1beta1EndpointConfig:
     private_service_connect_config: Any = None
     # This message contains configs of a publisher model.
     publisher_model_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # A map from a DeployedModel's ID to the percentage of this Endpoint's traffic that should be forwarded to that DeployedModel. If a DeployedModel's ID is not listed in this map, then it receives no traffic. The traffic percentage values must add up to 100, or map must be empty if the Endpoint is to not accept any traffic at a moment.
     traffic_split: Any = None
-    # Output only. Timestamp when this Endpoint was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1EndpointAttrs:
@@ -886,14 +507,7 @@ V1beta1Endpoint = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Endpoint_ClientConnectionConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "dedicated_endpoint_dns": ubx.FieldSpec(wire_name="dedicated_endpoint_dns"),
         "dedicated_endpoint_enabled": ubx.FieldSpec(wire_name="dedicated_endpoint_enabled"),
-        "deployed_models": ubx.FieldSpec(
-            wire_name="deployed_models",
-            kind="list",
-            fields=_V1beta1Endpoint_DeployedModelsFields,
-        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enable_private_service_connect": ubx.FieldSpec(wire_name="enable_private_service_connect"),
@@ -914,7 +528,6 @@ V1beta1Endpoint = ubx.ResourceBinding(
             fields=_V1beta1Endpoint_GenAiAdvancedFeaturesConfigFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "model_deployment_monitoring_job": ubx.FieldSpec(wire_name="model_deployment_monitoring_job"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "predict_request_response_logging_config": ubx.FieldSpec(
@@ -932,9 +545,6 @@ V1beta1Endpoint = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Endpoint_PublisherModelConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "traffic_split": ubx.FieldSpec(wire_name="traffic_split"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

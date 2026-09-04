@@ -32,20 +32,12 @@ _AssistantSession_MessagesFields = {
 
 @dataclasses.dataclass
 class AssistantSessionConfig:
-    # Output only. The time the session was created.
-    create_time: Any = None
     # Optional. The display name of the session.
     display_name: Any = None
     # Optional. History of messages in the session.
     messages: Any = None
     # Identifier. Resource name of the session. Format: projects/{project}/locations/{location}/assistantSessions/{assistant_session}
     name: Any = None
-    # Output only. The user who initiated the session.
-    requester: Any = None
-    # Output only. The status of the session.
-    state: Any = None
-    # Output only. The time the session was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AssistantSessionAttrs:
@@ -67,7 +59,6 @@ class AssistantSessionAttrs:
 AssistantSession = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_assistant_session",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "messages": ubx.FieldSpec(
             wire_name="messages",
@@ -75,8 +66,5 @@ AssistantSession = ubx.ResourceBinding(
             fields=_AssistantSession_MessagesFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "requester": ubx.FieldSpec(wire_name="requester"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

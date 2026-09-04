@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances_OsPolicyResourceCompliances_ConfigSteps struct {
 	ErrorMessage any
-	Outcome any
-	Type any
+	Outcome      any
+	Type         any
 }
 
 type V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances_OsPolicyResourceCompliances_ExecResourceOutput struct {
@@ -14,21 +14,20 @@ type V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances_OsPolicyResourceCom
 }
 
 type V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances_OsPolicyResourceCompliances struct {
-	ConfigSteps any
+	ConfigSteps        any
 	ExecResourceOutput any
 	OsPolicyResourceId any
-	State any
+	State              any
 }
 
 type V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances struct {
-	OsPolicyAssignment any
-	OsPolicyId any
+	OsPolicyAssignment          any
+	OsPolicyId                  any
 	OsPolicyResourceCompliances any
-	State any
+	State                       any
 }
 
 type V1alphaInstanceOspoliciesComplianceConfig struct {
-	Name any
 }
 
 type V1alphaInstanceOspoliciesComplianceAttrs struct {
@@ -42,7 +41,7 @@ type V1alphaInstanceOspoliciesComplianceAttrs struct {
 	LastComplianceCheckTime any
 	// Output only. Unique identifier for the last compliance run. This id will be logged by the OS config agent during a compliance run and can be used for debugging and tracing purpose.
 	LastComplianceRunId any
-	Name any
+	Name                any
 	// Output only. Compliance data for each `OSPolicy` that is applied to the VM.
 	OsPolicyCompliances any
 	// Output only. Compliance state of the VM.
@@ -51,7 +50,5 @@ type V1alphaInstanceOspoliciesComplianceAttrs struct {
 
 var V1alphaInstanceOspoliciesCompliance = ubx.DataSourceBinding{
 	WireType: "google_osconfig_v1alpha_instance_ospolicies_compliance",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

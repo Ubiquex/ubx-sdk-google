@@ -4,27 +4,26 @@ package bigquerydatatransfer
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataSource_Parameters struct {
-	AllowedValues any
-	Deprecated any
-	Description any
-	DisplayName any
-	Fields any
-	Immutable any
-	MaxListSize any
-	MaxValue any
-	MinValue any
-	ParamId any
-	Recurse any
-	Repeated any
-	Required any
-	Type any
+	AllowedValues         any
+	Deprecated            any
+	Description           any
+	DisplayName           any
+	Fields                any
+	Immutable             any
+	MaxListSize           any
+	MaxValue              any
+	MinValue              any
+	ParamId               any
+	Recurse               any
+	Repeated              any
+	Required              any
+	Type                  any
 	ValidationDescription any
-	ValidationHelpUrl any
-	ValidationRegex any
+	ValidationHelpUrl     any
+	ValidationRegex       any
 }
 
 type DataSourceConfig struct {
-	Name any
 }
 
 type DataSourceAttrs struct {
@@ -50,7 +49,7 @@ type DataSourceAttrs struct {
 	ManualRunsDisabled any
 	// The minimum interval for scheduler to schedule runs.
 	MinimumScheduleInterval any
-	Name any
+	Name                    any
 	// Data source parameters.
 	Parameters any
 	// Api auth scopes for which refresh token needs to be obtained. These are scopes needed by a data source to prepare data and ingest them into BigQuery, e.g., https://www.googleapis.com/auth/bigquery
@@ -67,7 +66,5 @@ type DataSourceAttrs struct {
 
 var DataSource = ubx.DataSourceBinding{
 	WireType: "google_bigquerydatatransfer_data_source",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -4,16 +4,12 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1GatewaySecurityPolicyConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. Free-text description of the resource.
 	Description any
 	// Required. Name of the resource. Name is of the form projects/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_security_policy} gateway_security_policy should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
 	Name any
 	// Optional. Name of a TLS Inspection Policy resource that defines how TLS inspection will be performed for any rule(s) which enables it.
 	TlsInspectionPolicy any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type V1beta1GatewaySecurityPolicyAttrs struct {
@@ -32,10 +28,8 @@ type V1beta1GatewaySecurityPolicyAttrs struct {
 var V1beta1GatewaySecurityPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_gateway_security_policy",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"TlsInspectionPolicy": ubx.FieldSpec{WireName: "tls_inspection_policy"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

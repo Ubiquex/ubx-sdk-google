@@ -79,8 +79,6 @@ const ExternalApi_DocumentationFields: FieldMap = {
 export interface ExternalApiConfig {
   /** Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource. */
   attributes?: Record<string, ExternalApi_Attributes> | Computed<Record<string, ExternalApi_Attributes>>;
-  /** Output only. Creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the external API. Max length is 2000 characters (Unicode Code Points). */
   description?: string | Computed<string>;
   /** Required. Display name of the external API. Max length is 63 characters (Unicode Code Points). */
@@ -93,8 +91,6 @@ export interface ExternalApiConfig {
   name?: string | Computed<string>;
   /** Optional. List of paths served by this API. */
   paths?: string[] | Computed<string[]>;
-  /** Output only. Last update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExternalApiAttrs {
@@ -126,7 +122,6 @@ export const ExternalApi: ResourceBinding<ExternalApiConfig, ExternalApiAttrs> =
       kind: "map",
       fields: ExternalApi_AttributesFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     documentation: {
@@ -137,6 +132,5 @@ export const ExternalApi: ResourceBinding<ExternalApiConfig, ExternalApiAttrs> =
     endpoints: "endpoints",
     name: "name",
     paths: "paths",
-    updateTime: "update_time",
   },
 };

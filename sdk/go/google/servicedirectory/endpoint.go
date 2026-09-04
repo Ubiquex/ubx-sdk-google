@@ -14,8 +14,6 @@ type EndpointConfig struct {
 	Network any
 	// Optional. Service Directory rejects values outside of `[0, 65535]`.
 	Port any
-	// Output only. The globally unique identifier of the endpoint in the UUID4 format.
-	Uid any
 }
 
 type EndpointAttrs struct {
@@ -36,11 +34,10 @@ type EndpointAttrs struct {
 var Endpoint = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_endpoint",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
+		"Address":     ubx.FieldSpec{WireName: "address"},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
+		"Port":        ubx.FieldSpec{WireName: "port"},
 	},
 }

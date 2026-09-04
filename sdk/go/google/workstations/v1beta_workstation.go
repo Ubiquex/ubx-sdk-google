@@ -4,19 +4,19 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaWorkstation_BoostConfigs struct {
-	Id any
+	Id      any
 	Running any
 }
 
 type V1betaWorkstation_Conditions struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V1betaWorkstation_PersistentDirectories struct {
 	MountPath any
-	SizeGb any
+	SizeGb    any
 }
 
 type V1betaWorkstation_RuntimeHost_GceInstanceHost struct {
@@ -33,83 +33,44 @@ type V1betaWorkstation_RuntimeHost struct {
 	GceInstanceHost any
 }
 
-var V1betaWorkstation_BoostConfigsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Running": ubx.FieldSpec{WireName: "running"},
-	}
-
-var V1betaWorkstation_ConditionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
 var V1betaWorkstation_PersistentDirectoriesFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"SizeGb":    ubx.FieldSpec{WireName: "size_gb"},
+}
 
 var V1betaWorkstation_RuntimeHost_GceInstanceHostFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1betaWorkstation_RuntimeHostFields = ubx.FieldMap{
-		"GceInstanceHost": ubx.FieldSpec{
-			WireName: "gce_instance_host",
-			Kind: "object",
-			Fields: V1betaWorkstation_RuntimeHost_GceInstanceHostFields,
-		},
-	}
+	"GceInstanceHost": ubx.FieldSpec{
+		WireName: "gce_instance_host",
+		Kind:     "object",
+		Fields:   V1betaWorkstation_RuntimeHost_GceInstanceHostFields,
+	},
+}
 
 type V1betaWorkstationConfig_ struct {
 	// Optional. Client-specified annotations.
 	Annotations any
-	// Output only. List of available boost configuration IDs that this workstation can be boosted up to.
-	BoostConfigs any
-	// Output only. Status conditions describing the workstation's current state.
-	Conditions any
-	// Output only. Time when this workstation was created.
-	CreateTime any
-	// Output only. Whether this workstation is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the workstation.
-	Degraded any
-	// Output only. Time when this workstation was soft-deleted.
-	DeleteTime any
 	// Optional. Human-readable name for this workstation.
 	DisplayName any
 	// Optional. Environment variables passed to the workstation container's entrypoint.
 	Env any
 	// Optional. Checksum computed by the server. May be sent on update and delete requests to make sure that the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. Host to which clients can send HTTPS traffic that will be received by the workstation. Authorized traffic will be received to the workstation as HTTP on port 80. To send traffic to a different port, clients may prefix the host with the destination port in the format `{port}-{host}`.
-	Host any
-	// Output only. The name of the Google Cloud KMS encryption key used to encrypt this workstation. The KMS key can only be configured in the WorkstationConfig. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-	KmsKey any
 	// Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation and that are also propagated to the underlying Compute Engine resources.
 	Labels any
 	// Identifier. Full name of this workstation.
 	Name any
 	// Optional. Directories to persist across workstation sessions.
 	PersistentDirectories any
-	// Output only. Indicates whether this workstation is currently being updated to match its intended state.
-	Reconciling any
 	// Runtime host for the workstation.
 	RuntimeHost any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Optional. The source workstation from which this workstation's persistent directories were cloned on creation.
 	SourceWorkstation any
-	// Output only. Time when this workstation was most recently successfully started, regardless of the workstation's initial state.
-	StartTime any
-	// Output only. Current state of the workstation.
-	State any
-	// Output only. A system-assigned unique identifier for this workstation.
-	Uid any
-	// Output only. Time when this workstation was most recently updated.
-	UpdateTime any
 }
 
 type V1betaWorkstationAttrs struct {
@@ -165,43 +126,21 @@ var V1betaWorkstation = ubx.ResourceBinding{
 	WireType: "google_workstations_v1beta_workstation",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"BoostConfigs": ubx.FieldSpec{
-			WireName: "boost_configs",
-			Kind: "list",
-			Fields: V1betaWorkstation_BoostConfigsFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1betaWorkstation_ConditionsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Degraded": ubx.FieldSpec{WireName: "degraded"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Env":         ubx.FieldSpec{WireName: "env"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PersistentDirectories": ubx.FieldSpec{
 			WireName: "persistent_directories",
-			Kind: "list",
-			Fields: V1betaWorkstation_PersistentDirectoriesFields,
+			Kind:     "list",
+			Fields:   V1betaWorkstation_PersistentDirectoriesFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
 		"RuntimeHost": ubx.FieldSpec{
 			WireName: "runtime_host",
-			Kind: "object",
-			Fields: V1betaWorkstation_RuntimeHostFields,
+			Kind:     "object",
+			Fields:   V1betaWorkstation_RuntimeHostFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SourceWorkstation": ubx.FieldSpec{WireName: "source_workstation"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

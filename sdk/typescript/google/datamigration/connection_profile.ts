@@ -654,8 +654,6 @@ export interface ConnectionProfileConfig {
   alloydb?: ConnectionProfile_Alloydb | Computed<ConnectionProfile_Alloydb>;
   /** Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance. */
   cloudsql?: ConnectionProfile_Cloudsql | Computed<ConnectionProfile_Cloudsql>;
-  /** Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  createTime?: string | Computed<string>;
   /** The connection profile display name. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -674,16 +672,10 @@ export interface ConnectionProfileConfig {
   provider?: string | Computed<string>;
   /** Optional. The connection profile role. */
   role?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Specifies connection parameters required specifically for SQL Server databases. */
   sqlserver?: ConnectionProfile_Sqlserver | Computed<ConnectionProfile_Sqlserver>;
   /** The current connection profile state (e.g. DRAFT, READY, or FAILED). */
   state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectionProfileAttrs {
@@ -736,7 +728,6 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
       kind: "object",
       fields: ConnectionProfile_CloudsqlFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
@@ -762,14 +753,11 @@ export const ConnectionProfile: ResourceBinding<ConnectionProfileConfig, Connect
     },
     provider: "provider",
     role: "role",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     sqlserver: {
       wireName: "sqlserver",
       kind: "object",
       fields: ConnectionProfile_SqlserverFields,
     },
     state: "state",
-    updateTime: "update_time",
   },
 };

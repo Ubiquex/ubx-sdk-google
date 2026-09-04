@@ -210,8 +210,6 @@ _ProvisioningConfig_VolumesFields = {
 
 @dataclasses.dataclass
 class ProvisioningConfigConfig:
-    # Output only. URI to Cloud Console UI view of this provisioning config.
-    cloud_console_uri: Any = None
     # Optional. The user-defined identifier of the provisioning config.
     custom_id: Any = None
     # Email provided to send a confirmation with provisioning config to. Deprecated in favour of email field in request messages.
@@ -222,20 +220,14 @@ class ProvisioningConfigConfig:
     instances: Any = None
     # Optional. Location name of this ProvisioningConfig. It is optional only for Intake UI transition period.
     location: Any = None
-    # Output only. The system-generated name of the provisioning config. This follows the UUID format.
-    name: Any = None
     # Networks to be created.
     networks: Any = None
     # Optional. Pod name. Pod is an independent part of infrastructure. Instance can be connected to the assets (networks, volumes, nfsshares) allocated in the same pod only.
     pod: Any = None
-    # Output only. State of ProvisioningConfig.
-    state: Any = None
     # Optional status messages associated with the FAILED state.
     status_message: Any = None
     # A generated ticket id to track provisioning request.
     ticket_id: Any = None
-    # Output only. Last update timestamp.
-    update_time: Any = None
     # Volumes to be created.
     volumes: Any = None
     # If true, VPC SC is enabled for the cluster.
@@ -277,7 +269,6 @@ class ProvisioningConfigAttrs:
 ProvisioningConfig = ubx.ResourceBinding(
     wire_type="google_baremetalsolution_provisioning_config",
     fields={
-        "cloud_console_uri": ubx.FieldSpec(wire_name="cloud_console_uri"),
         "custom_id": ubx.FieldSpec(wire_name="custom_id"),
         "email": ubx.FieldSpec(wire_name="email"),
         "handover_service_account": ubx.FieldSpec(wire_name="handover_service_account"),
@@ -287,17 +278,14 @@ ProvisioningConfig = ubx.ResourceBinding(
             fields=_ProvisioningConfig_InstancesFields,
         ),
         "location": ubx.FieldSpec(wire_name="location"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "networks": ubx.FieldSpec(
             wire_name="networks",
             kind="list",
             fields=_ProvisioningConfig_NetworksFields,
         ),
         "pod": ubx.FieldSpec(wire_name="pod"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status_message": ubx.FieldSpec(wire_name="status_message"),
         "ticket_id": ubx.FieldSpec(wire_name="ticket_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "volumes": ubx.FieldSpec(
             wire_name="volumes",
             kind="list",

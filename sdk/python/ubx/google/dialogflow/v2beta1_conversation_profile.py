@@ -433,7 +433,6 @@ _V2beta1ConversationProfile_TtsConfigFields = {
 @dataclasses.dataclass
 class V2beta1ConversationProfileConfig:
     automated_agent_config: Any = None
-    create_time: Any = None
     display_name: Any = None
     human_agent_assistant_config: Any = None
     human_agent_handoff_config: Any = None
@@ -448,7 +447,6 @@ class V2beta1ConversationProfileConfig:
     stt_config: Any = None
     time_zone: Any = None
     tts_config: Any = None
-    update_time: Any = None
     use_bidi_streaming: Any = None
 
 @dataclasses.dataclass
@@ -480,7 +478,6 @@ V2beta1ConversationProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1ConversationProfile_AutomatedAgentConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "human_agent_assistant_config": ubx.FieldSpec(
             wire_name="human_agent_assistant_config",
@@ -531,7 +528,6 @@ V2beta1ConversationProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1ConversationProfile_TtsConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "use_bidi_streaming": ubx.FieldSpec(wire_name="use_bidi_streaming"),
     },
 )

@@ -2,10 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GlossaryConfig {
-  /** Output only. The number of GlossaryCategories in the Glossary. */
-  categoryCount?: number | Computed<number>;
-  /** Output only. The time at which the Glossary was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The user-mutable description of the Glossary. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name of the Glossary. This is user-mutable. This will be same as the GlossaryId, if not specified. */
@@ -14,14 +10,6 @@ export interface GlossaryConfig {
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the Glossary. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The resource name of the Glossary. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id} */
-  name?: string | Computed<string>;
-  /** Output only. The number of GlossaryTerms in the Glossary. */
-  termCount?: number | Computed<number>;
-  /** Output only. System generated unique id for the Glossary. This ID will be different if the Glossary is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which the Glossary was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GlossaryAttrs {
@@ -50,15 +38,9 @@ export interface GlossaryAttrs {
 export const Glossary: ResourceBinding<GlossaryConfig, GlossaryAttrs> = {
   wireType: "google_dataplex_glossary",
   fields: {
-    categoryCount: "category_count",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
-    termCount: "term_count",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

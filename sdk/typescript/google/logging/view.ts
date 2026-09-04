@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ViewConfig {
-  /** Output only. The creation timestamp of the view. */
-  createTime?: string | Computed<string>;
   /** Optional. Describes this view. */
   description?: string | Computed<string>;
   /** Optional. Filter that restricts which log entries in a bucket are visible in this view.Filters must be logical conjunctions that use the AND operator, and they can use any of the following qualifiers: SOURCE(), which specifies a project, folder, organization, or billing account of origin. resource.type, which specifies the resource type. LOG_ID(), which identifies the log.They can also use the negations of these qualifiers with the NOT operator.For example:SOURCE("projects/myproject") AND resource.type = "gce_instance" AND NOT LOG_ID("stdout") */
   filter?: string | Computed<string>;
-  /** Output only. The resource name of the view.For example:projects/my-project/locations/global/buckets/my-bucket/views/my-view */
-  name?: string | Computed<string>;
-  /** Output only. The last update timestamp of the view. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ViewAttrs {
@@ -30,10 +24,7 @@ export interface ViewAttrs {
 export const View: ResourceBinding<ViewConfig, ViewAttrs> = {
   wireType: "google_logging_view",
   fields: {
-    createTime: "create_time",
     description: "description",
     filter: "filter",
-    name: "name",
-    updateTime: "update_time",
   },
 };

@@ -94,7 +94,6 @@ export interface V1alphaInventory_OsInfo {
 }
 
 export interface V1alphaInventoryConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -112,7 +111,6 @@ export interface V1alphaInventoryAttrs {
 export const V1alphaInventory: DataSourceBinding<V1alphaInventoryConfig, V1alphaInventoryAttrs> = {
   wireType: "google_osconfig_v1alpha_inventory",
   fields: {
-    name: "name",
     view: "view",
   },
 };

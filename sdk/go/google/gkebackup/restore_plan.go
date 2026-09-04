@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKinds struct {
 	ResourceGroup any
-	ResourceKind any
+	ResourceKind  any
 }
 
 type RestorePlan_RestoreConfig_ClusterResourceRestoreScope struct {
@@ -25,7 +25,7 @@ type RestorePlan_RestoreConfig_ExcludedNamespaces struct {
 }
 
 type RestorePlan_RestoreConfig_RestoreOrder_GroupKindDependencies struct {
-	Requiring any
+	Requiring  any
 	Satisfying any
 }
 
@@ -35,7 +35,7 @@ type RestorePlan_RestoreConfig_RestoreOrder struct {
 }
 
 type RestorePlan_RestoreConfig_SelectedApplications_NamespacedNames struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
@@ -45,34 +45,34 @@ type RestorePlan_RestoreConfig_SelectedApplications struct {
 }
 
 type RestorePlan_RestoreConfig_SubstitutionRules struct {
-	NewValue any
+	NewValue             any
 	OriginalValuePattern any
-	TargetGroupKinds any
-	TargetJsonPath any
-	TargetNamespaces any
+	TargetGroupKinds     any
+	TargetJsonPath       any
+	TargetNamespaces     any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules_FieldActions struct {
 	FromPath any
-	Op any
-	Path any
-	Value any
+	Op       any
+	Path     any
+	Value    any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules_ResourceFilter struct {
 	GroupKinds any
-	JsonPath any
+	JsonPath   any
 	Namespaces any
 }
 
 type RestorePlan_RestoreConfig_TransformationRules struct {
-	Description any
-	FieldActions any
+	Description    any
+	FieldActions   any
 	ResourceFilter any
 }
 
 type RestorePlan_RestoreConfig_VolumeDataRestorePolicyBindings struct {
-	Policy any
+	Policy     any
 	VolumeType any
 }
 
@@ -106,186 +106,170 @@ type RestorePlan_RestoreConfig struct {
 }
 
 var RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields = ubx.FieldMap{
-		"ResourceGroup": ubx.FieldSpec{WireName: "resource_group"},
-		"ResourceKind": ubx.FieldSpec{WireName: "resource_kind"},
-	}
+	"ResourceGroup": ubx.FieldSpec{WireName: "resource_group"},
+	"ResourceKind":  ubx.FieldSpec{WireName: "resource_kind"},
+}
 
 var RestorePlan_RestoreConfig_ClusterResourceRestoreScopeFields = ubx.FieldMap{
-		"AllGroupKinds": ubx.FieldSpec{WireName: "all_group_kinds"},
-		"ExcludedGroupKinds": ubx.FieldSpec{
-			WireName: "excluded_group_kinds",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-		"NoGroupKinds": ubx.FieldSpec{WireName: "no_group_kinds"},
-		"SelectedGroupKinds": ubx.FieldSpec{
-			WireName: "selected_group_kinds",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-	}
+	"AllGroupKinds": ubx.FieldSpec{WireName: "all_group_kinds"},
+	"ExcludedGroupKinds": ubx.FieldSpec{
+		WireName: "excluded_group_kinds",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+	"NoGroupKinds": ubx.FieldSpec{WireName: "no_group_kinds"},
+	"SelectedGroupKinds": ubx.FieldSpec{
+		WireName: "selected_group_kinds",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+}
 
 var RestorePlan_RestoreConfig_ExcludedNamespacesFields = ubx.FieldMap{
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var RestorePlan_RestoreConfig_RestoreOrder_GroupKindDependenciesFields = ubx.FieldMap{
-		"Requiring": ubx.FieldSpec{
-			WireName: "requiring",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-		"Satisfying": ubx.FieldSpec{
-			WireName: "satisfying",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-	}
+	"Requiring": ubx.FieldSpec{
+		WireName: "requiring",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+	"Satisfying": ubx.FieldSpec{
+		WireName: "satisfying",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+}
 
 var RestorePlan_RestoreConfig_RestoreOrderFields = ubx.FieldMap{
-		"GroupKindDependencies": ubx.FieldSpec{
-			WireName: "group_kind_dependencies",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_RestoreOrder_GroupKindDependenciesFields,
-		},
-	}
+	"GroupKindDependencies": ubx.FieldSpec{
+		WireName: "group_kind_dependencies",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_RestoreOrder_GroupKindDependenciesFields,
+	},
+}
 
 var RestorePlan_RestoreConfig_SelectedApplications_NamespacedNamesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var RestorePlan_RestoreConfig_SelectedApplicationsFields = ubx.FieldMap{
-		"NamespacedNames": ubx.FieldSpec{
-			WireName: "namespaced_names",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_SelectedApplications_NamespacedNamesFields,
-		},
-	}
+	"NamespacedNames": ubx.FieldSpec{
+		WireName: "namespaced_names",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_SelectedApplications_NamespacedNamesFields,
+	},
+}
 
 var RestorePlan_RestoreConfig_SubstitutionRulesFields = ubx.FieldMap{
-		"NewValue": ubx.FieldSpec{WireName: "new_value"},
-		"OriginalValuePattern": ubx.FieldSpec{WireName: "original_value_pattern"},
-		"TargetGroupKinds": ubx.FieldSpec{
-			WireName: "target_group_kinds",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-		"TargetJsonPath": ubx.FieldSpec{WireName: "target_json_path"},
-		"TargetNamespaces": ubx.FieldSpec{WireName: "target_namespaces"},
-	}
+	"NewValue":             ubx.FieldSpec{WireName: "new_value"},
+	"OriginalValuePattern": ubx.FieldSpec{WireName: "original_value_pattern"},
+	"TargetGroupKinds": ubx.FieldSpec{
+		WireName: "target_group_kinds",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+	"TargetJsonPath":   ubx.FieldSpec{WireName: "target_json_path"},
+	"TargetNamespaces": ubx.FieldSpec{WireName: "target_namespaces"},
+}
 
 var RestorePlan_RestoreConfig_TransformationRules_FieldActionsFields = ubx.FieldMap{
-		"FromPath": ubx.FieldSpec{WireName: "from_path"},
-		"Op": ubx.FieldSpec{WireName: "op"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FromPath": ubx.FieldSpec{WireName: "from_path"},
+	"Op":       ubx.FieldSpec{WireName: "op"},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var RestorePlan_RestoreConfig_TransformationRules_ResourceFilterFields = ubx.FieldMap{
-		"GroupKinds": ubx.FieldSpec{
-			WireName: "group_kinds",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
-		},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"GroupKinds": ubx.FieldSpec{
+		WireName: "group_kinds",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScope_ExcludedGroupKindsFields,
+	},
+	"JsonPath":   ubx.FieldSpec{WireName: "json_path"},
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var RestorePlan_RestoreConfig_TransformationRulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FieldActions": ubx.FieldSpec{
-			WireName: "field_actions",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_TransformationRules_FieldActionsFields,
-		},
-		"ResourceFilter": ubx.FieldSpec{
-			WireName: "resource_filter",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_TransformationRules_ResourceFilterFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FieldActions": ubx.FieldSpec{
+		WireName: "field_actions",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_TransformationRules_FieldActionsFields,
+	},
+	"ResourceFilter": ubx.FieldSpec{
+		WireName: "resource_filter",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_TransformationRules_ResourceFilterFields,
+	},
+}
 
 var RestorePlan_RestoreConfig_VolumeDataRestorePolicyBindingsFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Policy":     ubx.FieldSpec{WireName: "policy"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var RestorePlan_RestoreConfigFields = ubx.FieldMap{
-		"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
-		"ClusterResourceConflictPolicy": ubx.FieldSpec{WireName: "cluster_resource_conflict_policy"},
-		"ClusterResourceRestoreScope": ubx.FieldSpec{
-			WireName: "cluster_resource_restore_scope",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_ClusterResourceRestoreScopeFields,
-		},
-		"ExcludedNamespaces": ubx.FieldSpec{
-			WireName: "excluded_namespaces",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_ExcludedNamespacesFields,
-		},
-		"NamespacedResourceRestoreMode": ubx.FieldSpec{WireName: "namespaced_resource_restore_mode"},
-		"NoNamespaces": ubx.FieldSpec{WireName: "no_namespaces"},
-		"RestoreOrder": ubx.FieldSpec{
-			WireName: "restore_order",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_RestoreOrderFields,
-		},
-		"SelectedApplications": ubx.FieldSpec{
-			WireName: "selected_applications",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_SelectedApplicationsFields,
-		},
-		"SelectedNamespaces": ubx.FieldSpec{
-			WireName: "selected_namespaces",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfig_ExcludedNamespacesFields,
-		},
-		"SubstitutionRules": ubx.FieldSpec{
-			WireName: "substitution_rules",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_SubstitutionRulesFields,
-		},
-		"TransformationRules": ubx.FieldSpec{
-			WireName: "transformation_rules",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_TransformationRulesFields,
-		},
-		"VolumeDataRestorePolicy": ubx.FieldSpec{WireName: "volume_data_restore_policy"},
-		"VolumeDataRestorePolicyBindings": ubx.FieldSpec{
-			WireName: "volume_data_restore_policy_bindings",
-			Kind: "list",
-			Fields: RestorePlan_RestoreConfig_VolumeDataRestorePolicyBindingsFields,
-		},
-	}
+	"AllNamespaces":                 ubx.FieldSpec{WireName: "all_namespaces"},
+	"ClusterResourceConflictPolicy": ubx.FieldSpec{WireName: "cluster_resource_conflict_policy"},
+	"ClusterResourceRestoreScope": ubx.FieldSpec{
+		WireName: "cluster_resource_restore_scope",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_ClusterResourceRestoreScopeFields,
+	},
+	"ExcludedNamespaces": ubx.FieldSpec{
+		WireName: "excluded_namespaces",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_ExcludedNamespacesFields,
+	},
+	"NamespacedResourceRestoreMode": ubx.FieldSpec{WireName: "namespaced_resource_restore_mode"},
+	"NoNamespaces":                  ubx.FieldSpec{WireName: "no_namespaces"},
+	"RestoreOrder": ubx.FieldSpec{
+		WireName: "restore_order",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_RestoreOrderFields,
+	},
+	"SelectedApplications": ubx.FieldSpec{
+		WireName: "selected_applications",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_SelectedApplicationsFields,
+	},
+	"SelectedNamespaces": ubx.FieldSpec{
+		WireName: "selected_namespaces",
+		Kind:     "object",
+		Fields:   RestorePlan_RestoreConfig_ExcludedNamespacesFields,
+	},
+	"SubstitutionRules": ubx.FieldSpec{
+		WireName: "substitution_rules",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_SubstitutionRulesFields,
+	},
+	"TransformationRules": ubx.FieldSpec{
+		WireName: "transformation_rules",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_TransformationRulesFields,
+	},
+	"VolumeDataRestorePolicy": ubx.FieldSpec{WireName: "volume_data_restore_policy"},
+	"VolumeDataRestorePolicyBindings": ubx.FieldSpec{
+		WireName: "volume_data_restore_policy_bindings",
+		Kind:     "list",
+		Fields:   RestorePlan_RestoreConfig_VolumeDataRestorePolicyBindingsFields,
+	},
+}
 
 type RestorePlanConfig struct {
 	// Required. Immutable. A reference to the BackupPlan from which Backups may be used as the source for Restores created via this RestorePlan. Format: `projects/*/locations/*/backupPlans/*`.
 	BackupPlan any
 	// Required. Immutable. The target cluster into which Restores created via this RestorePlan will restore data. NOTE: the cluster's region must be the same as the RestorePlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`
 	Cluster any
-	// Output only. The timestamp when this RestorePlan resource was created.
-	CreateTime any
 	// Optional. User specified descriptive string for this RestorePlan.
 	Description any
-	// Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestorePlan`, and systems are expected to put that etag in the request to `UpdateRestorePlan` or `DeleteRestorePlan` to ensure that their change will be applied to the same version of the resource.
-	Etag any
 	// Optional. A set of custom labels supplied by user.
 	Labels any
-	// Output only. Identifier. The full name of the RestorePlan resource. Format: `projects/*/locations/*/restorePlans/*`.
-	Name any
-	// Output only. The fully qualified name of the RestoreChannel to be used to create a RestorePlan. This field is set only if the `backup_plan` is in a different project than the RestorePlan. Format: `projects/*/locations/*/restoreChannels/*`
-	RestoreChannel any
 	// Configuration of a restore.
 	RestoreConfig any
-	// Output only. State of the RestorePlan. This State field reflects the various stages a RestorePlan can be in during the Create operation.
-	State any
-	// Output only. Human-readable description of why RestorePlan is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-	StateReason any
-	// Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-	Uid any
-	// Output only. The timestamp when this RestorePlan resource was last updated.
-	UpdateTime any
 }
 
 type RestorePlanAttrs struct {
@@ -320,22 +304,14 @@ type RestorePlanAttrs struct {
 var RestorePlan = ubx.ResourceBinding{
 	WireType: "google_gkebackup_restore_plan",
 	Fields: ubx.FieldMap{
-		"BackupPlan": ubx.FieldSpec{WireName: "backup_plan"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"BackupPlan":  ubx.FieldSpec{WireName: "backup_plan"},
+		"Cluster":     ubx.FieldSpec{WireName: "cluster"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RestoreChannel": ubx.FieldSpec{WireName: "restore_channel"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"RestoreConfig": ubx.FieldSpec{
 			WireName: "restore_config",
-			Kind: "object",
-			Fields: RestorePlan_RestoreConfigFields,
+			Kind:     "object",
+			Fields:   RestorePlan_RestoreConfigFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateReason": ubx.FieldSpec{WireName: "state_reason"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -8,9 +8,9 @@ type V1alphaWorkload_Attributes_BusinessOwners_Channel struct {
 }
 
 type V1alphaWorkload_Attributes_BusinessOwners struct {
-	Channel any
+	Channel     any
 	DisplayName any
-	Email any
+	Email       any
 }
 
 type V1alphaWorkload_Attributes_Criticality struct {
@@ -72,96 +72,94 @@ type V1alphaWorkload_WorkloadProperties struct {
 }
 
 var V1alphaWorkload_Attributes_BusinessOwners_ChannelFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaWorkload_Attributes_BusinessOwnersFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{
-			WireName: "channel",
-			Kind: "object",
-			Fields: V1alphaWorkload_Attributes_BusinessOwners_ChannelFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Channel": ubx.FieldSpec{
+		WireName: "channel",
+		Kind:     "object",
+		Fields:   V1alphaWorkload_Attributes_BusinessOwners_ChannelFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var V1alphaWorkload_Attributes_CriticalityFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Level":           ubx.FieldSpec{WireName: "level"},
+	"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaWorkload_Attributes_EnvironmentFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaWorkload_AttributesFields = ubx.FieldMap{
-		"BusinessOwners": ubx.FieldSpec{
-			WireName: "business_owners",
-			Kind: "list",
-			Fields: V1alphaWorkload_Attributes_BusinessOwnersFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "object",
-			Fields: V1alphaWorkload_Attributes_CriticalityFields,
-		},
-		"DeveloperOwners": ubx.FieldSpec{
-			WireName: "developer_owners",
-			Kind: "list",
-			Fields: V1alphaWorkload_Attributes_BusinessOwnersFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: V1alphaWorkload_Attributes_EnvironmentFields,
-		},
-		"OperatorOwners": ubx.FieldSpec{
-			WireName: "operator_owners",
-			Kind: "list",
-			Fields: V1alphaWorkload_Attributes_BusinessOwnersFields,
-		},
-	}
+	"BusinessOwners": ubx.FieldSpec{
+		WireName: "business_owners",
+		Kind:     "list",
+		Fields:   V1alphaWorkload_Attributes_BusinessOwnersFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "object",
+		Fields:   V1alphaWorkload_Attributes_CriticalityFields,
+	},
+	"DeveloperOwners": ubx.FieldSpec{
+		WireName: "developer_owners",
+		Kind:     "list",
+		Fields:   V1alphaWorkload_Attributes_BusinessOwnersFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   V1alphaWorkload_Attributes_EnvironmentFields,
+	},
+	"OperatorOwners": ubx.FieldSpec{
+		WireName: "operator_owners",
+		Kind:     "list",
+		Fields:   V1alphaWorkload_Attributes_BusinessOwnersFields,
+	},
+}
 
 var V1alphaWorkload_WorkloadProperties_ExtendedMetadataFields = ubx.FieldMap{
-		"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
-	}
+	"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
+}
 
 var V1alphaWorkload_WorkloadProperties_FunctionalTypeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaWorkload_WorkloadProperties_IdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var V1alphaWorkload_WorkloadPropertiesFields = ubx.FieldMap{
-		"ExtendedMetadata": ubx.FieldSpec{
-			WireName: "extended_metadata",
-			Kind: "map",
-			Fields: V1alphaWorkload_WorkloadProperties_ExtendedMetadataFields,
-		},
-		"FunctionalType": ubx.FieldSpec{
-			WireName: "functional_type",
-			Kind: "object",
-			Fields: V1alphaWorkload_WorkloadProperties_FunctionalTypeFields,
-		},
-		"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "object",
-			Fields: V1alphaWorkload_WorkloadProperties_IdentityFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ExtendedMetadata": ubx.FieldSpec{
+		WireName: "extended_metadata",
+		Kind:     "map",
+		Fields:   V1alphaWorkload_WorkloadProperties_ExtendedMetadataFields,
+	},
+	"FunctionalType": ubx.FieldSpec{
+		WireName: "functional_type",
+		Kind:     "object",
+		Fields:   V1alphaWorkload_WorkloadProperties_FunctionalTypeFields,
+	},
+	"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "object",
+		Fields:   V1alphaWorkload_WorkloadProperties_IdentityFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Zone":     ubx.FieldSpec{WireName: "zone"},
+}
 
 type V1alphaWorkloadConfig struct {
 	// Consumer provided attributes.
 	Attributes any
-	// Output only. Create time.
-	CreateTime any
 	// Optional. User-defined description of a Workload. Can have a maximum length of 2048 characters.
 	Description any
 	// Required. Immutable. The resource name of the original discovered workload.
@@ -170,12 +168,6 @@ type V1alphaWorkloadConfig struct {
 	DisplayName any
 	// Identifier. The resource name of the Workload. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
 	Name any
-	// Output only. Workload state.
-	State any
-	// Output only. A universally unique identifier (UUID) for the `Workload` in the UUID4 format.
-	Uid any
-	// Output only. Update time.
-	UpdateTime any
 	// Properties of an underlying compute resource represented by the Workload.
 	WorkloadProperties any
 	// Reference of an underlying compute resource represented by the Workload.
@@ -212,26 +204,22 @@ var V1alphaWorkload = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: V1alphaWorkload_AttributesFields,
+			Kind:     "object",
+			Fields:   V1alphaWorkload_AttributesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"DiscoveredWorkload": ubx.FieldSpec{WireName: "discovered_workload"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"WorkloadProperties": ubx.FieldSpec{
 			WireName: "workload_properties",
-			Kind: "object",
-			Fields: V1alphaWorkload_WorkloadPropertiesFields,
+			Kind:     "object",
+			Fields:   V1alphaWorkload_WorkloadPropertiesFields,
 		},
 		"WorkloadReference": ubx.FieldSpec{
 			WireName: "workload_reference",
-			Kind: "object",
-			Fields: V1alphaWorkload_Attributes_BusinessOwners_ChannelFields,
+			Kind:     "object",
+			Fields:   V1alphaWorkload_Attributes_BusinessOwners_ChannelFields,
 		},
 	},
 }

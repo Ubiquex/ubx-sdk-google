@@ -22,18 +22,18 @@ type AlphaRollout_WaveDetails_OrchestratedWaveDetails_LocationStatus struct {
 }
 
 type AlphaRollout_WaveDetails_OrchestratedWaveDetails struct {
-	CompletedResourcesCount any
-	EstimatedCompletionTime any
+	CompletedResourcesCount      any
+	EstimatedCompletionTime      any
 	EstimatedTotalResourcesCount any
-	FailedLocations any
-	FailedResourcesCount any
-	LocationStatus any
+	FailedLocations              any
+	FailedResourcesCount         any
+	LocationStatus               any
 }
 
 type AlphaRollout_WaveDetails struct {
 	OrchestratedWaveDetails any
-	WaveDisplayName any
-	WaveNumber any
+	WaveDisplayName         any
+	WaveNumber              any
 }
 
 type AlphaRolloutConfig struct {
@@ -62,10 +62,10 @@ type AlphaRolloutAttrs struct {
 	Name any
 	// Output only. The timestamp at which the Rollout was paused.
 	PauseTime any
-	Project any
+	Project   any
 	// Output only. The timestamp at which the Rollout was resumed.
 	ResumeTime any
-	Rollout any
+	Rollout    any
 	// Specifications of the resource to roll out.
 	RolloutEntity any
 	// Required. Rollout Plan used to model the Rollout. Ex. compute.googleapis.com/v1/projects/1234/rolloutPlans/rp1

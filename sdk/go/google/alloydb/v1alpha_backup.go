@@ -23,36 +23,24 @@ type V1alphaBackup_ExpiryQuantity struct {
 }
 
 var V1alphaBackup_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1alphaBackup_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
+}
 
 var V1alphaBackup_ExpiryQuantityFields = ubx.FieldMap{
-		"RetentionCount": ubx.FieldSpec{WireName: "retention_count"},
-		"TotalRetentionCount": ubx.FieldSpec{WireName: "total_retention_count"},
-	}
+	"RetentionCount":      ubx.FieldSpec{WireName: "retention_count"},
+	"TotalRetentionCount": ubx.FieldSpec{WireName: "total_retention_count"},
+}
 
 type V1alphaBackupConfig struct {
 	// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
 	Annotations any
-	// Output only. Set to true if the cluster corresponding to this backup is deleted. This field is only populated for when using the BACKUP_VIEW_CLUSTER_DELETED view.
-	ClusterDeleted any
 	// Required. The full resource name of the backup source cluster (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
 	ClusterName any
-	// Output only. The system-generated UID of the cluster which was used to create this resource.
-	ClusterUid any
-	// Output only. Timestamp when the resource finished being created.
-	CreateCompletionTime any
-	// Output only. Create time stamp
-	CreateTime any
-	// Output only. The database engine major version of the cluster this backup was created from. Any restored cluster created from this backup will have the same database version.
-	DatabaseVersion any
-	// Output only. Delete time stamp
-	DeleteTime any
 	// User-provided description of the backup.
 	Description any
 	// User-settable and human-readable display name for the Backup.
@@ -65,30 +53,12 @@ type V1alphaBackupConfig struct {
 	Etag any
 	// A backup's position in a quantity-based retention queue, of backups with the same source cluster and type, with length, retention, specified by the backup's retention policy. Once the position is greater than the retention, the backup is eligible to be garbage collected. Example: 5 backups from the same source cluster and type with a quantity-based retention of 3 and denoted by backup_id (position, retention). Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3). Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3)
 	ExpiryQuantity any
-	// Output only. The time at which after the backup is eligible to be garbage collected. It is the duration specified by the backup's retention policy, added to the backup's create_time.
-	ExpiryTime any
 	// Labels as key value pairs
 	Labels any
-	// Output only. The name of the backup resource with the format: * projects/{project}/locations/{region}/backups/{backup_id} where the cluster and backup ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the backup resource name is the name of the parent resource: * projects/{project}/locations/{region}
-	Name any
-	// Output only. Reconciling (https://google.aip.dev/128#reconciliation), if true, indicates that the service is actively updating the resource. This can happen due to user-triggered updates or system actions like failover or maintenance.
-	Reconciling any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The size of the backup in bytes.
-	SizeBytes any
-	// Output only. The current state of the backup.
-	State any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ```
 	Tags any
 	// The backup type, which suggests the trigger for the backup.
 	Type any
-	// Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-	Uid any
-	// Output only. Update time stamp Users should not infer any meaning from this field. Its value is generally unrelated to the timing of the backup creation operation.
-	UpdateTime any
 }
 
 type V1alphaBackupAttrs struct {
@@ -150,42 +120,27 @@ var V1alphaBackup = ubx.ResourceBinding{
 	WireType: "google_alloydb_v1alpha_backup",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"ClusterDeleted": ubx.FieldSpec{WireName: "cluster_deleted"},
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"ClusterUid": ubx.FieldSpec{WireName: "cluster_uid"},
-		"CreateCompletionTime": ubx.FieldSpec{WireName: "create_completion_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1alphaBackup_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   V1alphaBackup_EncryptionConfigFields,
 		},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: V1alphaBackup_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   V1alphaBackup_EncryptionInfoFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"ExpiryQuantity": ubx.FieldSpec{
 			WireName: "expiry_quantity",
-			Kind: "object",
-			Fields: V1alphaBackup_ExpiryQuantityFields,
+			Kind:     "object",
+			Fields:   V1alphaBackup_ExpiryQuantityFields,
 		},
-		"ExpiryTime": ubx.FieldSpec{WireName: "expiry_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

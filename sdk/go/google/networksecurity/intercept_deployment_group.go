@@ -9,51 +9,23 @@ type InterceptDeploymentGroup_ConnectedEndpointGroups struct {
 
 type InterceptDeploymentGroup_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type InterceptDeploymentGroup_NestedDeployments struct {
-	Name any
+	Name  any
 	State any
 }
 
-var InterceptDeploymentGroup_ConnectedEndpointGroupsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
-var InterceptDeploymentGroup_LocationsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var InterceptDeploymentGroup_NestedDeploymentsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
 type InterceptDeploymentGroupConfig struct {
-	// Output only. The list of endpoint groups that are connected to this resource.
-	ConnectedEndpointGroups any
-	// Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-	CreateTime any
 	// Optional. User-provided description of the deployment group. Used as additional context for the deployment group.
 	Description any
 	// Optional. Labels are key/value pairs that help to organize and filter resources.
 	Labels any
-	// Output only. The list of locations where the deployment group is present.
-	Locations any
 	// Immutable. Identifier. The resource name of this deployment group, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/122 for more details.
 	Name any
-	// Output only. The list of Intercept Deployments that belong to this group.
-	NestedDeployments any
 	// Required. Immutable. The network that will be used for all child deployments, for example: `projects/{project}/global/networks/{network}`. See https://google.aip.dev/124.
 	Network any
-	// Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new deployment to the group) See https://google.aip.dev/128.
-	Reconciling any
-	// Output only. The current state of the deployment group. See https://google.aip.dev/216.
-	State any
-	// Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-	UpdateTime any
 }
 
 type InterceptDeploymentGroupAttrs struct {
@@ -84,28 +56,9 @@ type InterceptDeploymentGroupAttrs struct {
 var InterceptDeploymentGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_intercept_deployment_group",
 	Fields: ubx.FieldMap{
-		"ConnectedEndpointGroups": ubx.FieldSpec{
-			WireName: "connected_endpoint_groups",
-			Kind: "list",
-			Fields: InterceptDeploymentGroup_ConnectedEndpointGroupsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "list",
-			Fields: InterceptDeploymentGroup_LocationsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NestedDeployments": ubx.FieldSpec{
-			WireName: "nested_deployments",
-			Kind: "list",
-			Fields: InterceptDeploymentGroup_NestedDeploymentsFields,
-		},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 	},
 }

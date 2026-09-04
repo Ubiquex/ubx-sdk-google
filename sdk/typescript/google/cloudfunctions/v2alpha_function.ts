@@ -356,12 +356,6 @@ const V2alphaFunction_ServiceConfigFields: FieldMap = {
   vpcConnectorEgressSettings: "vpc_connector_egress_settings",
 };
 
-const V2alphaFunction_StateMessagesFields: FieldMap = {
-  message: "message",
-  severity: "severity",
-  type: "type",
-};
-
 const V2alphaFunction_UpgradeInfoFields: FieldMap = {
   buildConfig: {
     wireName: "build_config",
@@ -384,8 +378,6 @@ const V2alphaFunction_UpgradeInfoFields: FieldMap = {
 export interface V2alphaFunctionConfig {
   /** Describes the Build step of the function that builds a container from the given source. */
   buildConfig?: V2alphaFunction_BuildConfig | Computed<V2alphaFunction_BuildConfig>;
-  /** Output only. The create timestamp of a Cloud Function. This is only applicable to 2nd Gen functions. */
-  createTime?: string | Computed<string>;
   /** User-provided description of a function. */
   description?: string | Computed<string>;
   /** Describe whether the function is 1st Gen or 2nd Gen. */
@@ -398,22 +390,10 @@ export interface V2alphaFunctionConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** A user-defined name of the function. Function names must be unique globally and match pattern `projects/* /locations/* /functions/*` */
   name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Describes the Service being deployed. Currently Supported : Cloud Run (fully managed). */
   serviceConfig?: V2alphaFunction_ServiceConfig | Computed<V2alphaFunction_ServiceConfig>;
-  /** Output only. State of the function. */
-  state?: string | Computed<string>;
-  /** Output only. State Messages for this Cloud Function. */
-  stateMessages?: V2alphaFunction_StateMessages[] | Computed<V2alphaFunction_StateMessages[]>;
-  /** Output only. The last update timestamp of a Cloud Function. */
-  updateTime?: string | Computed<string>;
   /** Information related to: * A function's eligibility for 1st Gen to 2nd Gen migration. * Current state of migration for function undergoing migration. */
   upgradeInfo?: V2alphaFunction_UpgradeInfo | Computed<V2alphaFunction_UpgradeInfo>;
-  /** Output only. The deployed url for the function. */
-  url?: string | Computed<string>;
 }
 
 export interface V2alphaFunctionAttrs {
@@ -459,7 +439,6 @@ export const V2alphaFunction: ResourceBinding<V2alphaFunctionConfig, V2alphaFunc
       kind: "object",
       fields: V2alphaFunction_BuildConfigFields,
     },
-    createTime: "create_time",
     description: "description",
     environment: "environment",
     eventTrigger: {
@@ -470,25 +449,15 @@ export const V2alphaFunction: ResourceBinding<V2alphaFunctionConfig, V2alphaFunc
     kmsKeyName: "kms_key_name",
     labels: "labels",
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     serviceConfig: {
       wireName: "service_config",
       kind: "object",
       fields: V2alphaFunction_ServiceConfigFields,
     },
-    state: "state",
-    stateMessages: {
-      wireName: "state_messages",
-      kind: "list",
-      fields: V2alphaFunction_StateMessagesFields,
-    },
-    updateTime: "update_time",
     upgradeInfo: {
       wireName: "upgrade_info",
       kind: "object",
       fields: V2alphaFunction_UpgradeInfoFields,
     },
-    url: "url",
   },
 };

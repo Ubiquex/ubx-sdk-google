@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1NasTrialDetail_SearchTrial_FinalMeasurement_Metrics struct {
 	MetricId any
-	Value any
+	Value    any
 }
 
 type V1beta1NasTrialDetail_SearchTrial_FinalMeasurement struct {
@@ -31,7 +31,6 @@ type V1beta1NasTrialDetail_SearchTrial struct {
 }
 
 type V1beta1NasTrialDetailConfig struct {
-	Name any
 }
 
 type V1beta1NasTrialDetailAttrs struct {
@@ -46,7 +45,5 @@ type V1beta1NasTrialDetailAttrs struct {
 
 var V1beta1NasTrialDetail = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_v1beta1_nas_trial_detail",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

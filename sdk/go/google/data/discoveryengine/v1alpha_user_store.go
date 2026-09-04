@@ -16,7 +16,7 @@ type V1alphaUserStoreAttrs struct {
 	EnableExpiredLicenseAutoUpdate any
 	// Optional. Whether to enable license auto register for users in this User Store. If true, new users will automatically register under the default license config as long as the default license config has seats left.
 	EnableLicenseAutoRegister any
-	Name any
+	Name                      any
 }
 
 var V1alphaUserStore = ubx.DataSourceBinding{

@@ -202,8 +202,6 @@ class PluginConfig:
     actions_config: Any = None
     # ConfigTemplate represents the configuration template for a plugin.
     config_template: Any = None
-    # Output only. Timestamp indicating when the plugin was created.
-    create_time: Any = None
     # Optional. The plugin description. Max length is 2000 characters (Unicode code points).
     description: Any = None
     # Required. The display name of the plugin. Max length is 50 characters (Unicode code points).
@@ -216,16 +214,10 @@ class PluginConfig:
     hosting_service: Any = None
     # Identifier. The name of the plugin. Format: `projects/{project}/locations/{location}/plugins/{plugin}`
     name: Any = None
-    # Output only. The type of the plugin, indicating whether it is 'SYSTEM_OWNED' or 'USER_OWNED'.
-    ownership_type: Any = None
     # Optional. The category of the plugin, identifying its primary category or purpose. This field is required for all plugins.
     plugin_category: Any = None
-    # Output only. Represents the state of the plugin. Note this field will not be set for plugins developed via plugin framework as the state will be managed at plugin instance level.
-    state: Any = None
     # The attribute values associated with resource.
     type: Any = None
-    # Output only. Timestamp indicating when the plugin was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PluginAttrs:
@@ -271,7 +263,6 @@ Plugin = ubx.ResourceBinding(
             kind="object",
             fields=_Plugin_ConfigTemplateFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "documentation": ubx.FieldSpec(
@@ -286,14 +277,11 @@ Plugin = ubx.ResourceBinding(
             fields=_Plugin_HostingServiceFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "ownership_type": ubx.FieldSpec(wire_name="ownership_type"),
         "plugin_category": ubx.FieldSpec(wire_name="plugin_category"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(
             wire_name="type",
             kind="object",
             fields=_Plugin_TypeFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

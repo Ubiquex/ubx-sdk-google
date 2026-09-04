@@ -8,43 +8,43 @@ type Instance_Actions_CurationConfig_CustomCuration struct {
 }
 
 type Instance_Actions_CurationConfig struct {
-	CurationType any
+	CurationType   any
 	CustomCuration any
 }
 
 type Instance_Actions_HubInstanceAction_LastExecution struct {
-	EndTime any
-	ErrorMessage any
-	Result any
+	EndTime        any
+	ErrorMessage   any
+	Result         any
 	ResultMetadata any
-	StartTime any
+	StartTime      any
 }
 
 type Instance_Actions_HubInstanceAction struct {
 	CurrentExecutionState any
-	LastExecution any
+	LastExecution         any
 }
 
 type Instance_Actions_ResourceConfig struct {
-	ActionType any
+	ActionType  any
 	PubsubTopic any
 }
 
 type Instance_Actions struct {
-	ActionId any
-	CurationConfig any
-	HubInstanceAction any
-	ResourceConfig any
+	ActionId               any
+	CurationConfig         any
+	HubInstanceAction      any
+	ResourceConfig         any
 	ScheduleCronExpression any
-	ScheduleTimeZone any
-	ServiceAccount any
-	State any
+	ScheduleTimeZone       any
+	ServiceAccount         any
+	State                  any
 }
 
 type Instance_AdditionalConfig_EnumValue struct {
 	Description any
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type Instance_AdditionalConfig_MultiIntValues struct {
@@ -64,15 +64,15 @@ type Instance_AdditionalConfig_SecretValue struct {
 }
 
 type Instance_AdditionalConfig struct {
-	BoolValue any
-	EnumValue any
-	IntValue any
-	Key any
-	MultiIntValues any
+	BoolValue         any
+	EnumValue         any
+	IntValue          any
+	Key               any
+	MultiIntValues    any
 	MultiSelectValues any
 	MultiStringValues any
-	SecretValue any
-	StringValue any
+	SecretValue       any
+	StringValue       any
 }
 
 type Instance_AuthConfig_ApiKeyConfig struct {
@@ -117,190 +117,190 @@ type Instance_AuthConfig struct {
 }
 
 type Instance_SourceEnvironmentsConfig struct {
-	CreateTime any
-	SourceEnvironment any
+	CreateTime           any
+	SourceEnvironment    any
 	SourceEnvironmentUri any
-	UpdateTime any
+	UpdateTime           any
 }
 
 var Instance_Actions_CurationConfig_CustomCurationFields = ubx.FieldMap{
-		"Curation": ubx.FieldSpec{WireName: "curation"},
-	}
+	"Curation": ubx.FieldSpec{WireName: "curation"},
+}
 
 var Instance_Actions_CurationConfigFields = ubx.FieldMap{
-		"CurationType": ubx.FieldSpec{WireName: "curation_type"},
-		"CustomCuration": ubx.FieldSpec{
-			WireName: "custom_curation",
-			Kind: "object",
-			Fields: Instance_Actions_CurationConfig_CustomCurationFields,
-		},
-	}
+	"CurationType": ubx.FieldSpec{WireName: "curation_type"},
+	"CustomCuration": ubx.FieldSpec{
+		WireName: "custom_curation",
+		Kind:     "object",
+		Fields:   Instance_Actions_CurationConfig_CustomCurationFields,
+	},
+}
 
 var Instance_Actions_HubInstanceAction_LastExecutionFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"ResultMetadata": ubx.FieldSpec{WireName: "result_metadata"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":        ubx.FieldSpec{WireName: "end_time"},
+	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
+	"Result":         ubx.FieldSpec{WireName: "result"},
+	"ResultMetadata": ubx.FieldSpec{WireName: "result_metadata"},
+	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Instance_Actions_HubInstanceActionFields = ubx.FieldMap{
-		"CurrentExecutionState": ubx.FieldSpec{WireName: "current_execution_state"},
-		"LastExecution": ubx.FieldSpec{
-			WireName: "last_execution",
-			Kind: "object",
-			Fields: Instance_Actions_HubInstanceAction_LastExecutionFields,
-		},
-	}
+	"CurrentExecutionState": ubx.FieldSpec{WireName: "current_execution_state"},
+	"LastExecution": ubx.FieldSpec{
+		WireName: "last_execution",
+		Kind:     "object",
+		Fields:   Instance_Actions_HubInstanceAction_LastExecutionFields,
+	},
+}
 
 var Instance_Actions_ResourceConfigFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"ActionType":  ubx.FieldSpec{WireName: "action_type"},
+	"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var Instance_ActionsFields = ubx.FieldMap{
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
-		"CurationConfig": ubx.FieldSpec{
-			WireName: "curation_config",
-			Kind: "object",
-			Fields: Instance_Actions_CurationConfigFields,
-		},
-		"HubInstanceAction": ubx.FieldSpec{
-			WireName: "hub_instance_action",
-			Kind: "object",
-			Fields: Instance_Actions_HubInstanceActionFields,
-		},
-		"ResourceConfig": ubx.FieldSpec{
-			WireName: "resource_config",
-			Kind: "object",
-			Fields: Instance_Actions_ResourceConfigFields,
-		},
-		"ScheduleCronExpression": ubx.FieldSpec{WireName: "schedule_cron_expression"},
-		"ScheduleTimeZone": ubx.FieldSpec{WireName: "schedule_time_zone"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ActionId": ubx.FieldSpec{WireName: "action_id"},
+	"CurationConfig": ubx.FieldSpec{
+		WireName: "curation_config",
+		Kind:     "object",
+		Fields:   Instance_Actions_CurationConfigFields,
+	},
+	"HubInstanceAction": ubx.FieldSpec{
+		WireName: "hub_instance_action",
+		Kind:     "object",
+		Fields:   Instance_Actions_HubInstanceActionFields,
+	},
+	"ResourceConfig": ubx.FieldSpec{
+		WireName: "resource_config",
+		Kind:     "object",
+		Fields:   Instance_Actions_ResourceConfigFields,
+	},
+	"ScheduleCronExpression": ubx.FieldSpec{WireName: "schedule_cron_expression"},
+	"ScheduleTimeZone":       ubx.FieldSpec{WireName: "schedule_time_zone"},
+	"ServiceAccount":         ubx.FieldSpec{WireName: "service_account"},
+	"State":                  ubx.FieldSpec{WireName: "state"},
+}
 
 var Instance_AdditionalConfig_EnumValueFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+}
 
 var Instance_AdditionalConfig_MultiIntValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Instance_AdditionalConfig_MultiSelectValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Instance_AdditionalConfig_EnumValueFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Instance_AdditionalConfig_EnumValueFields,
+	},
+}
 
 var Instance_AdditionalConfig_MultiStringValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Instance_AdditionalConfig_SecretValueFields = ubx.FieldMap{
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var Instance_AdditionalConfigFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"EnumValue": ubx.FieldSpec{
-			WireName: "enum_value",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_EnumValueFields,
-		},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"MultiIntValues": ubx.FieldSpec{
-			WireName: "multi_int_values",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_MultiIntValuesFields,
-		},
-		"MultiSelectValues": ubx.FieldSpec{
-			WireName: "multi_select_values",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_MultiSelectValuesFields,
-		},
-		"MultiStringValues": ubx.FieldSpec{
-			WireName: "multi_string_values",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_MultiStringValuesFields,
-		},
-		"SecretValue": ubx.FieldSpec{
-			WireName: "secret_value",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_SecretValueFields,
-		},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+	"EnumValue": ubx.FieldSpec{
+		WireName: "enum_value",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_EnumValueFields,
+	},
+	"IntValue": ubx.FieldSpec{WireName: "int_value"},
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"MultiIntValues": ubx.FieldSpec{
+		WireName: "multi_int_values",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_MultiIntValuesFields,
+	},
+	"MultiSelectValues": ubx.FieldSpec{
+		WireName: "multi_select_values",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_MultiSelectValuesFields,
+	},
+	"MultiStringValues": ubx.FieldSpec{
+		WireName: "multi_string_values",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_MultiStringValuesFields,
+	},
+	"SecretValue": ubx.FieldSpec{
+		WireName: "secret_value",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_SecretValueFields,
+	},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Instance_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{
-			WireName: "api_key",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_SecretValueFields,
-		},
-		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKey": ubx.FieldSpec{
+		WireName: "api_key",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_SecretValueFields,
+	},
+	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+}
 
 var Instance_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Instance_AuthConfig_Oauth2ClientCredentialsConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_SecretValueFields,
-		},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_SecretValueFields,
+	},
+}
 
 var Instance_AuthConfig_UserPasswordConfigFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{
-			WireName: "password",
-			Kind: "object",
-			Fields: Instance_AdditionalConfig_SecretValueFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{
+		WireName: "password",
+		Kind:     "object",
+		Fields:   Instance_AdditionalConfig_SecretValueFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var Instance_AuthConfigFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: Instance_AuthConfig_ApiKeyConfigFields,
-		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"GoogleServiceAccountConfig": ubx.FieldSpec{
-			WireName: "google_service_account_config",
-			Kind: "object",
-			Fields: Instance_AuthConfig_GoogleServiceAccountConfigFields,
-		},
-		"Oauth2ClientCredentialsConfig": ubx.FieldSpec{
-			WireName: "oauth2_client_credentials_config",
-			Kind: "object",
-			Fields: Instance_AuthConfig_Oauth2ClientCredentialsConfigFields,
-		},
-		"UserPasswordConfig": ubx.FieldSpec{
-			WireName: "user_password_config",
-			Kind: "object",
-			Fields: Instance_AuthConfig_UserPasswordConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   Instance_AuthConfig_ApiKeyConfigFields,
+	},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"GoogleServiceAccountConfig": ubx.FieldSpec{
+		WireName: "google_service_account_config",
+		Kind:     "object",
+		Fields:   Instance_AuthConfig_GoogleServiceAccountConfigFields,
+	},
+	"Oauth2ClientCredentialsConfig": ubx.FieldSpec{
+		WireName: "oauth2_client_credentials_config",
+		Kind:     "object",
+		Fields:   Instance_AuthConfig_Oauth2ClientCredentialsConfigFields,
+	},
+	"UserPasswordConfig": ubx.FieldSpec{
+		WireName: "user_password_config",
+		Kind:     "object",
+		Fields:   Instance_AuthConfig_UserPasswordConfigFields,
+	},
+}
 
 var Instance_SourceEnvironmentsConfigFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"SourceEnvironment": ubx.FieldSpec{WireName: "source_environment"},
-		"SourceEnvironmentUri": ubx.FieldSpec{WireName: "source_environment_uri"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":           ubx.FieldSpec{WireName: "create_time"},
+	"SourceEnvironment":    ubx.FieldSpec{WireName: "source_environment"},
+	"SourceEnvironmentUri": ubx.FieldSpec{WireName: "source_environment_uri"},
+	"UpdateTime":           ubx.FieldSpec{WireName: "update_time"},
+}
 
 type InstanceConfig struct {
 	// Required. The action status for the plugin instance.
@@ -309,22 +309,14 @@ type InstanceConfig struct {
 	AdditionalConfig any
 	// AuthConfig represents the authentication information.
 	AuthConfig any
-	// Output only. Timestamp indicating when the plugin instance was created.
-	CreateTime any
 	// Required. The display name for this plugin instance. Max length is 255 characters.
 	DisplayName any
-	// Output only. Error message describing the failure, if any, during Create, Delete or ApplyConfig operation corresponding to the plugin instance.This field will only be populated if the plugin instance is in the ERROR or FAILED state.
-	ErrorMessage any
 	// Identifier. The unique name of the plugin instance resource. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
 	Name any
 	// Optional. The source environment's config present in the gateway instance linked to the plugin instance. The key is the `source_environment` name from the SourceEnvironment message.
 	SourceEnvironmentsConfig any
 	// Optional. The source project id of the plugin instance. This will be the id of runtime project in case of Google Cloud based plugins and org id in case of non-Google Cloud based plugins. This field will be a required field for Google provided on-ramp plugins.
 	SourceProjectId any
-	// Output only. The current state of the plugin instance (e.g., enabled, disabled, provisioning).
-	State any
-	// Output only. Timestamp indicating when the plugin instance was last updated.
-	UpdateTime any
 }
 
 type InstanceAttrs struct {
@@ -357,30 +349,26 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Instance_ActionsFields,
+			Kind:     "list",
+			Fields:   Instance_ActionsFields,
 		},
 		"AdditionalConfig": ubx.FieldSpec{
 			WireName: "additional_config",
-			Kind: "map",
-			Fields: Instance_AdditionalConfigFields,
+			Kind:     "map",
+			Fields:   Instance_AdditionalConfigFields,
 		},
 		"AuthConfig": ubx.FieldSpec{
 			WireName: "auth_config",
-			Kind: "object",
-			Fields: Instance_AuthConfigFields,
+			Kind:     "object",
+			Fields:   Instance_AuthConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SourceEnvironmentsConfig": ubx.FieldSpec{
 			WireName: "source_environments_config",
-			Kind: "map",
-			Fields: Instance_SourceEnvironmentsConfigFields,
+			Kind:     "map",
+			Fields:   Instance_SourceEnvironmentsConfigFields,
 		},
 		"SourceProjectId": ubx.FieldSpec{WireName: "source_project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

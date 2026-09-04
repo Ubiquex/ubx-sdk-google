@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SacAttachmentConfig:
-    # Output only. Timestamp when the attachment was created.
-    create_time: Any = None
     # Optional. Optional list of labels applied to the resource.
     labels: Any = None
     # Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.
@@ -18,10 +16,6 @@ class SacAttachmentConfig:
     ncc_gateway: Any = None
     # Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`.
     sac_realm: Any = None
-    # Output only. State of the attachment.
-    state: Any = None
-    # Output only. Timestamp when the attachment was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SacAttachmentAttrs:
@@ -43,12 +37,9 @@ class SacAttachmentAttrs:
 SacAttachment = ubx.ResourceBinding(
     wire_type="google_networksecurity_sac_attachment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "ncc_gateway": ubx.FieldSpec(wire_name="ncc_gateway"),
         "sac_realm": ubx.FieldSpec(wire_name="sac_realm"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

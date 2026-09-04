@@ -35,28 +35,16 @@ class BackupVaultConfig:
     backup_retention_policy: Any = None
     # Optional. Type of backup vault to be created. Default is IN_REGION.
     backup_vault_type: Any = None
-    # Output only. The crypto key version used to encrypt the backup vault. Format: `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}`
-    backups_crypto_key_version: Any = None
-    # Output only. Create time of the backup vault.
-    create_time: Any = None
     # Description of the backup vault.
     description: Any = None
-    # Output only. Name of the Backup vault created in backup region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
-    destination_backup_vault: Any = None
-    # Output only. Field indicating encryption state of CMEK backups.
-    encryption_state: Any = None
     # Optional. Specifies the Key Management System (KMS) configuration to be used for backup encryption. Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
     kms_config: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
     # Identifier. The resource name of the backup vault. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`.
     name: Any = None
-    # Output only. Name of the Backup vault created in source region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`
-    source_backup_vault: Any = None
     # Optional. Region in which the backup vault is created. Format: `projects/{project_id}/locations/{location}`
     source_region: Any = None
-    # Output only. The backup vault state.
-    state: Any = None
 
 @dataclasses.dataclass
 class BackupVaultAttrs:
@@ -99,16 +87,10 @@ BackupVault = ubx.ResourceBinding(
             fields=_BackupVault_BackupRetentionPolicyFields,
         ),
         "backup_vault_type": ubx.FieldSpec(wire_name="backup_vault_type"),
-        "backups_crypto_key_version": ubx.FieldSpec(wire_name="backups_crypto_key_version"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "destination_backup_vault": ubx.FieldSpec(wire_name="destination_backup_vault"),
-        "encryption_state": ubx.FieldSpec(wire_name="encryption_state"),
         "kms_config": ubx.FieldSpec(wire_name="kms_config"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "source_backup_vault": ubx.FieldSpec(wire_name="source_backup_vault"),
         "source_region": ubx.FieldSpec(wire_name="source_region"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

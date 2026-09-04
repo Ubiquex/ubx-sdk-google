@@ -68,8 +68,6 @@ _V1beta1LbRouteExtension_ExtensionChainsFields = {
 
 @dataclasses.dataclass
 class V1beta1LbRouteExtensionConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource.
@@ -84,8 +82,6 @@ class V1beta1LbRouteExtensionConfig:
     metadata: Any = None
     # Required. Identifier. Name of the `LbRouteExtension` resource in the following format: `projects/{project}/locations/{location}/lbRouteExtensions/{lb_route_extension}`.
     name: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1LbRouteExtensionAttrs:
@@ -111,7 +107,6 @@ class V1beta1LbRouteExtensionAttrs:
 V1beta1LbRouteExtension = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_lb_route_extension",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "extension_chains": ubx.FieldSpec(
             wire_name="extension_chains",
@@ -123,6 +118,5 @@ V1beta1LbRouteExtension = ubx.ResourceBinding(
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

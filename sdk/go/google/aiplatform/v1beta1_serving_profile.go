@@ -14,22 +14,20 @@ type V1beta1ServingProfile_CmekConfig struct {
 }
 
 var V1beta1ServingProfile_CmekConfig_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1ServingProfile_CmekConfigFields = ubx.FieldMap{
-		"EncryptionSpec": ubx.FieldSpec{
-			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1ServingProfile_CmekConfig_EncryptionSpecFields,
-		},
-	}
+	"EncryptionSpec": ubx.FieldSpec{
+		WireName: "encryption_spec",
+		Kind:     "object",
+		Fields:   V1beta1ServingProfile_CmekConfig_EncryptionSpecFields,
+	},
+}
 
 type V1beta1ServingProfileConfig struct {
 	// Configuration for Customer-Managed Encryption Keys (CMEK).
 	CmekConfig any
-	// Output only. Timestamp when the ServingProfile was created.
-	CreateTime any
 	// Optional. The description of the ServingProfile.
 	Description any
 	// Required. The display name of the ServingProfile. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -38,8 +36,6 @@ type V1beta1ServingProfileConfig struct {
 	Name any
 	// Required. The specific API this ServingProfile applies to.
 	Scope any
-	// Output only. Timestamp when the ServingProfile was last updated.
-	UpdateTime any
 }
 
 type V1beta1ServingProfileAttrs struct {
@@ -64,14 +60,12 @@ var V1beta1ServingProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: V1beta1ServingProfile_CmekConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1ServingProfile_CmekConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Scope":       ubx.FieldSpec{WireName: "scope"},
 	},
 }

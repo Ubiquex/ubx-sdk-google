@@ -200,7 +200,6 @@ class ToolConfig:
     function_spec: Any = None
     name: Any = None
     open_api_spec: Any = None
-    tool_type: Any = None
 
 @dataclasses.dataclass
 class ToolAttrs:
@@ -233,6 +232,5 @@ Tool = ubx.ResourceBinding(
             kind="object",
             fields=_Tool_OpenApiSpecFields,
         ),
-        "tool_type": ubx.FieldSpec(wire_name="tool_type"),
     },
 )

@@ -70,7 +70,6 @@ export interface Conversation_Turns {
 
 export interface ConversationConfig {
   name: string | Computed<string>;
-  source?: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -106,7 +105,6 @@ export const Conversation: DataSourceBinding<ConversationConfig, ConversationAtt
   wireType: "google_ces_conversation",
   fields: {
     name: "name",
-    source: "source",
     view: "view",
   },
 };

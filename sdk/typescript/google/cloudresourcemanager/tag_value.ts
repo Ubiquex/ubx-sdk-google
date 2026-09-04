@@ -2,22 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TagValueConfig {
-  /** Output only. Creation time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-assigned description of the TagValue. Must not exceed 256 characters. Read-write. */
   description?: string | Computed<string>;
   /** Optional. Entity tag which users can pass to prevent race conditions. This field is always set in server responses. See UpdateTagValueRequest for details. */
   etag?: string | Computed<string>;
   /** Immutable. Resource name for TagValue in the format `tagValues/456`. */
   name?: string | Computed<string>;
-  /** Output only. The namespaced name of the TagValue. Can be in the form `{organization_id}/{tag_key_short_name}/{tag_value_short_name}` or `{project_id}/{tag_key_short_name}/{tag_value_short_name}` or `{project_number}/{tag_key_short_name}/{tag_value_short_name}`. */
-  namespacedName?: string | Computed<string>;
   /** Immutable. The resource name of the new TagValue's parent TagKey. Must be of the form `tagKeys/{tag_key_id}`. */
   parent?: string | Computed<string>;
   /** Required. Immutable. User-assigned short name for TagValue. The short name should be unique for TagValues within the same parent TagKey. The short name must be 256 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between. */
   shortName?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TagValueAttrs {
@@ -42,13 +36,10 @@ export interface TagValueAttrs {
 export const TagValue: ResourceBinding<TagValueConfig, TagValueAttrs> = {
   wireType: "google_cloudresourcemanager_tag_value",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     name: "name",
-    namespacedName: "namespaced_name",
     parent: "parent",
     shortName: "short_name",
-    updateTime: "update_time",
   },
 };

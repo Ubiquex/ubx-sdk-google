@@ -18,22 +18,16 @@ _Appgroup_AttributesFields = {
 
 @dataclasses.dataclass
 class AppgroupConfig:
-    # Output only. Internal identifier that cannot be edited
-    app_group_id: Any = None
     # A list of attributes
     attributes: Any = None
     # channel identifier identifies the owner maintaing this grouping.
     channel_id: Any = None
     # A reference to the associated storefront/marketplace.
     channel_uri: Any = None
-    # Output only. Created time as milliseconds since epoch.
-    created_at: Any = None
     # app group name displayed in the UI
     display_name: Any = None
     # Optional. Email of the AppGroup.
     email: Any = None
-    # Output only. Modified time as milliseconds since epoch.
-    last_modified_at: Any = None
     # Immutable. Name of the AppGroup. Characters you can use in the name are restricted to: A-Z0-9._\-$ %.
     name: Any = None
     # Immutable. the org the app group is created
@@ -69,7 +63,6 @@ class AppgroupAttrs:
 Appgroup = ubx.ResourceBinding(
     wire_type="google_apigee_appgroup",
     fields={
-        "app_group_id": ubx.FieldSpec(wire_name="app_group_id"),
         "attributes": ubx.FieldSpec(
             wire_name="attributes",
             kind="list",
@@ -77,10 +70,8 @@ Appgroup = ubx.ResourceBinding(
         ),
         "channel_id": ubx.FieldSpec(wire_name="channel_id"),
         "channel_uri": ubx.FieldSpec(wire_name="channel_uri"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "email": ubx.FieldSpec(wire_name="email"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "name": ubx.FieldSpec(wire_name="name"),
         "organization": ubx.FieldSpec(wire_name="organization"),
         "status": ubx.FieldSpec(wire_name="status"),

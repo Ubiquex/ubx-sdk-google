@@ -71,16 +71,12 @@ const Repository_WorkspaceCompilationOverridesFields: FieldMap = {
 export interface RepositoryConfig {
   /** Optional. The name of the containing folder of the repository. The field is immutable and it can be modified via a MoveRepository operation. Format: `projects/* /locations/* /folders/*`. or `projects/* /locations/* /teamFolders/*`. */
   containingFolder?: string | Computed<string>;
-  /** Output only. The timestamp of when the repository was created. */
-  createTime?: string | Computed<string>;
   /** Describes encryption state of a resource. */
   dataEncryptionState?: Repository_DataEncryptionState | Computed<Repository_DataEncryptionState>;
   /** Optional. The repository's user-friendly name. */
   displayName?: string | Computed<string>;
   /** Controls Git remote configuration for a repository. */
   gitRemoteSettings?: Repository_GitRemoteSettings | Computed<Repository_GitRemoteSettings>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Optional. The reference to a KMS encryption key. If provided, it will be used to encrypt user data in the repository and all child resources. It is not possible to add or update the encryption key after the repository is created. Example: `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}` */
   kmsKeyName?: string | Computed<string>;
   /** Optional. Repository user labels. */
@@ -93,8 +89,6 @@ export interface RepositoryConfig {
   serviceAccount?: string | Computed<string>;
   /** Optional. Input only. If set to true, the authenticated user will be granted the roles/dataform.admin role on the created repository. */
   setAuthenticatedUserAdmin?: boolean | Computed<boolean>;
-  /** Output only. The resource name of the TeamFolder that this Repository is associated with. This should take the format: projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this is not set, the Repository is not associated with a TeamFolder. */
-  teamFolderName?: string | Computed<string>;
   /** Configures workspace compilation overrides for a repository. */
   workspaceCompilationOverrides?: Repository_WorkspaceCompilationOverrides | Computed<Repository_WorkspaceCompilationOverrides>;
 }
@@ -134,7 +128,6 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
   wireType: "google_dataform_repository",
   fields: {
     containingFolder: "containing_folder",
-    createTime: "create_time",
     dataEncryptionState: {
       wireName: "data_encryption_state",
       kind: "object",
@@ -146,14 +139,12 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
       kind: "object",
       fields: Repository_GitRemoteSettingsFields,
     },
-    internalMetadata: "internal_metadata",
     kmsKeyName: "kms_key_name",
     labels: "labels",
     name: "name",
     npmrcEnvironmentVariablesSecretVersion: "npmrc_environment_variables_secret_version",
     serviceAccount: "service_account",
     setAuthenticatedUserAdmin: "set_authenticated_user_admin",
-    teamFolderName: "team_folder_name",
     workspaceCompilationOverrides: {
       wireName: "workspace_compilation_overrides",
       kind: "object",

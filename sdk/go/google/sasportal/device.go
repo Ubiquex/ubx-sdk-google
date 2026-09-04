@@ -79,12 +79,12 @@ type Device_ActiveConfig struct {
 
 type Device_CurrentChannels_FrequencyRange struct {
 	HighFrequencyMhz any
-	LowFrequencyMhz any
+	LowFrequencyMhz  any
 }
 
 type Device_CurrentChannels struct {
 	FrequencyRange any
-	Score any
+	Score          any
 }
 
 type Device_DeviceMetadata_NrqzValidation struct {
@@ -114,145 +114,134 @@ type Device_DeviceMetadata struct {
 }
 
 type Device_Grants_MoveList struct {
-	DpaId any
+	DpaId          any
 	FrequencyRange any
 }
 
 type Device_Grants struct {
-	ChannelType any
-	ExpireTime any
-	FrequencyRange any
-	GrantId any
+	ChannelType                     any
+	ExpireTime                      any
+	FrequencyRange                  any
+	GrantId                         any
 	LastHeartbeatTransmitExpireTime any
-	MaxEirp any
-	MoveList any
-	State any
-	SuspensionReason any
+	MaxEirp                         any
+	MoveList                        any
+	State                           any
+	SuspensionReason                any
 }
 
 var Device_ActiveConfig_AirInterfaceFields = ubx.FieldMap{
-		"RadioTechnology": ubx.FieldSpec{WireName: "radio_technology"},
-		"SupportedSpec": ubx.FieldSpec{WireName: "supported_spec"},
-	}
+	"RadioTechnology": ubx.FieldSpec{WireName: "radio_technology"},
+	"SupportedSpec":   ubx.FieldSpec{WireName: "supported_spec"},
+}
 
 var Device_ActiveConfig_InstallationParamsFields = ubx.FieldMap{
-		"AntennaAzimuth": ubx.FieldSpec{WireName: "antenna_azimuth"},
-		"AntennaBeamwidth": ubx.FieldSpec{WireName: "antenna_beamwidth"},
-		"AntennaDowntilt": ubx.FieldSpec{WireName: "antenna_downtilt"},
-		"AntennaGain": ubx.FieldSpec{WireName: "antenna_gain"},
-		"AntennaModel": ubx.FieldSpec{WireName: "antenna_model"},
-		"CpeCbsdIndication": ubx.FieldSpec{WireName: "cpe_cbsd_indication"},
-		"EirpCapability": ubx.FieldSpec{WireName: "eirp_capability"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"HeightType": ubx.FieldSpec{WireName: "height_type"},
-		"HorizontalAccuracy": ubx.FieldSpec{WireName: "horizontal_accuracy"},
-		"IndoorDeployment": ubx.FieldSpec{WireName: "indoor_deployment"},
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-		"VerticalAccuracy": ubx.FieldSpec{WireName: "vertical_accuracy"},
-	}
+	"AntennaAzimuth":     ubx.FieldSpec{WireName: "antenna_azimuth"},
+	"AntennaBeamwidth":   ubx.FieldSpec{WireName: "antenna_beamwidth"},
+	"AntennaDowntilt":    ubx.FieldSpec{WireName: "antenna_downtilt"},
+	"AntennaGain":        ubx.FieldSpec{WireName: "antenna_gain"},
+	"AntennaModel":       ubx.FieldSpec{WireName: "antenna_model"},
+	"CpeCbsdIndication":  ubx.FieldSpec{WireName: "cpe_cbsd_indication"},
+	"EirpCapability":     ubx.FieldSpec{WireName: "eirp_capability"},
+	"Height":             ubx.FieldSpec{WireName: "height"},
+	"HeightType":         ubx.FieldSpec{WireName: "height_type"},
+	"HorizontalAccuracy": ubx.FieldSpec{WireName: "horizontal_accuracy"},
+	"IndoorDeployment":   ubx.FieldSpec{WireName: "indoor_deployment"},
+	"Latitude":           ubx.FieldSpec{WireName: "latitude"},
+	"Longitude":          ubx.FieldSpec{WireName: "longitude"},
+	"VerticalAccuracy":   ubx.FieldSpec{WireName: "vertical_accuracy"},
+}
 
 var Device_ActiveConfig_ModelFields = ubx.FieldMap{
-		"FirmwareVersion": ubx.FieldSpec{WireName: "firmware_version"},
-		"HardwareVersion": ubx.FieldSpec{WireName: "hardware_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SoftwareVersion": ubx.FieldSpec{WireName: "software_version"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
-	}
+	"FirmwareVersion": ubx.FieldSpec{WireName: "firmware_version"},
+	"HardwareVersion": ubx.FieldSpec{WireName: "hardware_version"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SoftwareVersion": ubx.FieldSpec{WireName: "software_version"},
+	"Vendor":          ubx.FieldSpec{WireName: "vendor"},
+}
 
 var Device_ActiveConfigFields = ubx.FieldMap{
-		"AirInterface": ubx.FieldSpec{
-			WireName: "air_interface",
-			Kind: "object",
-			Fields: Device_ActiveConfig_AirInterfaceFields,
-		},
-		"CallSign": ubx.FieldSpec{WireName: "call_sign"},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"InstallationParams": ubx.FieldSpec{
-			WireName: "installation_params",
-			Kind: "object",
-			Fields: Device_ActiveConfig_InstallationParamsFields,
-		},
-		"IsSigned": ubx.FieldSpec{WireName: "is_signed"},
-		"MeasurementCapabilities": ubx.FieldSpec{WireName: "measurement_capabilities"},
-		"Model": ubx.FieldSpec{
-			WireName: "model",
-			Kind: "object",
-			Fields: Device_ActiveConfig_ModelFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
-
-var Device_CurrentChannels_FrequencyRangeFields = ubx.FieldMap{
-		"HighFrequencyMhz": ubx.FieldSpec{WireName: "high_frequency_mhz"},
-		"LowFrequencyMhz": ubx.FieldSpec{WireName: "low_frequency_mhz"},
-	}
-
-var Device_CurrentChannelsFields = ubx.FieldMap{
-		"FrequencyRange": ubx.FieldSpec{
-			WireName: "frequency_range",
-			Kind: "object",
-			Fields: Device_CurrentChannels_FrequencyRangeFields,
-		},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"AirInterface": ubx.FieldSpec{
+		WireName: "air_interface",
+		Kind:     "object",
+		Fields:   Device_ActiveConfig_AirInterfaceFields,
+	},
+	"CallSign": ubx.FieldSpec{WireName: "call_sign"},
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"InstallationParams": ubx.FieldSpec{
+		WireName: "installation_params",
+		Kind:     "object",
+		Fields:   Device_ActiveConfig_InstallationParamsFields,
+	},
+	"IsSigned":                ubx.FieldSpec{WireName: "is_signed"},
+	"MeasurementCapabilities": ubx.FieldSpec{WireName: "measurement_capabilities"},
+	"Model": ubx.FieldSpec{
+		WireName: "model",
+		Kind:     "object",
+		Fields:   Device_ActiveConfig_ModelFields,
+	},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"UserId":     ubx.FieldSpec{WireName: "user_id"},
+}
 
 var Device_DeviceMetadata_NrqzValidationFields = ubx.FieldMap{
-		"CaseId": ubx.FieldSpec{WireName: "case_id"},
-		"CpiId": ubx.FieldSpec{WireName: "cpi_id"},
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"CaseId":    ubx.FieldSpec{WireName: "case_id"},
+	"CpiId":     ubx.FieldSpec{WireName: "cpi_id"},
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 var Device_DeviceMetadataFields = ubx.FieldMap{
-		"AntennaModel": ubx.FieldSpec{WireName: "antenna_model"},
-		"CommonChannelGroup": ubx.FieldSpec{WireName: "common_channel_group"},
-		"InterferenceCoordinationGroup": ubx.FieldSpec{WireName: "interference_coordination_group"},
-		"NrqzValidated": ubx.FieldSpec{WireName: "nrqz_validated"},
-		"NrqzValidation": ubx.FieldSpec{
-			WireName: "nrqz_validation",
-			Kind: "object",
-			Fields: Device_DeviceMetadata_NrqzValidationFields,
-		},
-	}
+	"AntennaModel":                  ubx.FieldSpec{WireName: "antenna_model"},
+	"CommonChannelGroup":            ubx.FieldSpec{WireName: "common_channel_group"},
+	"InterferenceCoordinationGroup": ubx.FieldSpec{WireName: "interference_coordination_group"},
+	"NrqzValidated":                 ubx.FieldSpec{WireName: "nrqz_validated"},
+	"NrqzValidation": ubx.FieldSpec{
+		WireName: "nrqz_validation",
+		Kind:     "object",
+		Fields:   Device_DeviceMetadata_NrqzValidationFields,
+	},
+}
+
+var Device_CurrentChannels_FrequencyRangeFields = ubx.FieldMap{
+	"HighFrequencyMhz": ubx.FieldSpec{WireName: "high_frequency_mhz"},
+	"LowFrequencyMhz":  ubx.FieldSpec{WireName: "low_frequency_mhz"},
+}
 
 var Device_Grants_MoveListFields = ubx.FieldMap{
-		"DpaId": ubx.FieldSpec{WireName: "dpa_id"},
-		"FrequencyRange": ubx.FieldSpec{
-			WireName: "frequency_range",
-			Kind: "object",
-			Fields: Device_CurrentChannels_FrequencyRangeFields,
-		},
-	}
+	"DpaId": ubx.FieldSpec{WireName: "dpa_id"},
+	"FrequencyRange": ubx.FieldSpec{
+		WireName: "frequency_range",
+		Kind:     "object",
+		Fields:   Device_CurrentChannels_FrequencyRangeFields,
+	},
+}
 
 var Device_GrantsFields = ubx.FieldMap{
-		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"FrequencyRange": ubx.FieldSpec{
-			WireName: "frequency_range",
-			Kind: "object",
-			Fields: Device_CurrentChannels_FrequencyRangeFields,
-		},
-		"GrantId": ubx.FieldSpec{WireName: "grant_id"},
-		"LastHeartbeatTransmitExpireTime": ubx.FieldSpec{WireName: "last_heartbeat_transmit_expire_time"},
-		"MaxEirp": ubx.FieldSpec{WireName: "max_eirp"},
-		"MoveList": ubx.FieldSpec{
-			WireName: "move_list",
-			Kind: "list",
-			Fields: Device_Grants_MoveListFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SuspensionReason": ubx.FieldSpec{WireName: "suspension_reason"},
-	}
+	"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
+	"ExpireTime":  ubx.FieldSpec{WireName: "expire_time"},
+	"FrequencyRange": ubx.FieldSpec{
+		WireName: "frequency_range",
+		Kind:     "object",
+		Fields:   Device_CurrentChannels_FrequencyRangeFields,
+	},
+	"GrantId":                         ubx.FieldSpec{WireName: "grant_id"},
+	"LastHeartbeatTransmitExpireTime": ubx.FieldSpec{WireName: "last_heartbeat_transmit_expire_time"},
+	"MaxEirp":                         ubx.FieldSpec{WireName: "max_eirp"},
+	"MoveList": ubx.FieldSpec{
+		WireName: "move_list",
+		Kind:     "list",
+		Fields:   Device_Grants_MoveListFields,
+	},
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"SuspensionReason": ubx.FieldSpec{WireName: "suspension_reason"},
+}
 
 type DeviceConfig struct {
 	// Information about the device configuration.
 	ActiveConfig any
-	// Output only. Current channels with scores.
-	CurrentChannels any
 	// Device data overridable by both SAS Portal and registration requests.
 	DeviceMetadata any
 	// Device display name.
@@ -303,38 +292,33 @@ var Device = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActiveConfig": ubx.FieldSpec{
 			WireName: "active_config",
-			Kind: "object",
-			Fields: Device_ActiveConfigFields,
-		},
-		"CurrentChannels": ubx.FieldSpec{
-			WireName: "current_channels",
-			Kind: "list",
-			Fields: Device_CurrentChannelsFields,
+			Kind:     "object",
+			Fields:   Device_ActiveConfigFields,
 		},
 		"DeviceMetadata": ubx.FieldSpec{
 			WireName: "device_metadata",
-			Kind: "object",
-			Fields: Device_DeviceMetadataFields,
+			Kind:     "object",
+			Fields:   Device_DeviceMetadataFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FccId": ubx.FieldSpec{WireName: "fcc_id"},
+		"FccId":       ubx.FieldSpec{WireName: "fcc_id"},
 		"GrantRangeAllowlists": ubx.FieldSpec{
 			WireName: "grant_range_allowlists",
-			Kind: "list",
-			Fields: Device_CurrentChannels_FrequencyRangeFields,
+			Kind:     "list",
+			Fields:   Device_CurrentChannels_FrequencyRangeFields,
 		},
 		"Grants": ubx.FieldSpec{
 			WireName: "grants",
-			Kind: "list",
-			Fields: Device_GrantsFields,
+			Kind:     "list",
+			Fields:   Device_GrantsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PreloadedConfig": ubx.FieldSpec{
 			WireName: "preloaded_config",
-			Kind: "object",
-			Fields: Device_ActiveConfigFields,
+			Kind:     "object",
+			Fields:   Device_ActiveConfigFields,
 		},
 		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":        ubx.FieldSpec{WireName: "state"},
 	},
 }

@@ -5,22 +5,22 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta4Connect_DnsNames struct {
 	ConnectionType any
-	DnsScope any
-	Name any
-	RecordManager any
+	DnsScope       any
+	Name           any
+	RecordManager  any
 }
 
 type V1beta4Connect_IpAddresses struct {
-	IpAddress any
+	IpAddress    any
 	TimeToRetire any
-	Type any
+	Type         any
 }
 
 type V1beta4Connect_Nodes struct {
-	DnsName any
-	DnsNames any
+	DnsName     any
+	DnsNames    any
 	IpAddresses any
-	Name any
+	Name        any
 }
 
 type V1beta4Connect_ServerCaCert struct {
@@ -46,7 +46,7 @@ type V1beta4Connect_ServerCaCert struct {
 
 type V1beta4ConnectConfig struct {
 	Instance any
-	Project any
+	Project  any
 	ReadTime any
 }
 
@@ -73,11 +73,11 @@ type V1beta4ConnectAttrs struct {
 	// The number of read pool nodes in a read pool.
 	NodeCount any
 	// Output only. Entries containing information about each read pool node of the read pool.
-	Nodes any
+	Nodes   any
 	Project any
 	// Whether PSC connectivity is enabled for this instance.
 	PscEnabled any
-	ReadTime any
+	ReadTime   any
 	// The cloud region for the instance. e.g. `us-central1`, `europe-west1`. The region cannot be changed after instance creation.
 	Region any
 	// SslCerts Resource
@@ -90,7 +90,7 @@ var V1beta4Connect = ubx.DataSourceBinding{
 	WireType: "google_sqladmin_v1beta4_connect",
 	Fields: ubx.FieldMap{
 		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":  ubx.FieldSpec{WireName: "project"},
 		"ReadTime": ubx.FieldSpec{WireName: "read_time"},
 	},
 }

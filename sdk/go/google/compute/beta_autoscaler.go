@@ -11,11 +11,11 @@ type BetaAutoscaler_AutoscalingPolicy_CpuUtilization struct {
 }
 
 type BetaAutoscaler_AutoscalingPolicy_CustomMetricUtilizations struct {
-	Filter any
-	Metric any
+	Filter                   any
+	Metric                   any
 	SingleInstanceAssignment any
-	UtilizationTarget any
-	UtilizationTargetType any
+	UtilizationTarget        any
+	UtilizationTargetType    any
 }
 
 type BetaAutoscaler_AutoscalingPolicy_LoadBalancingUtilization struct {
@@ -47,12 +47,12 @@ type BetaAutoscaler_AutoscalingPolicy_ScaleInControl struct {
 }
 
 type BetaAutoscaler_AutoscalingPolicy_ScalingSchedules struct {
-	Description any
-	Disabled any
-	DurationSec any
+	Description         any
+	Disabled            any
+	DurationSec         any
 	MinRequiredReplicas any
-	Schedule any
-	TimeZone any
+	Schedule            any
+	TimeZone            any
 }
 
 type BetaAutoscaler_AutoscalingPolicy struct {
@@ -83,132 +83,114 @@ type BetaAutoscaler_AutoscalingPolicy struct {
 type BetaAutoscaler_ScalingScheduleStatus struct {
 	LastStartTime any
 	NextStartTime any
-	State any
+	State         any
 }
 
 type BetaAutoscaler_StatusDetails struct {
 	Message any
-	Type any
+	Type    any
 }
 
 var BetaAutoscaler_AutoscalingPolicy_CpuUtilizationFields = ubx.FieldMap{
-		"PredictiveMethod": ubx.FieldSpec{WireName: "predictive_method"},
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-	}
+	"PredictiveMethod":  ubx.FieldSpec{WireName: "predictive_method"},
+	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-		"UtilizationTargetType": ubx.FieldSpec{WireName: "utilization_target_type"},
-	}
+	"Filter":                   ubx.FieldSpec{WireName: "filter"},
+	"Metric":                   ubx.FieldSpec{WireName: "metric"},
+	"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
+	"UtilizationTarget":        ubx.FieldSpec{WireName: "utilization_target"},
+	"UtilizationTargetType":    ubx.FieldSpec{WireName: "utilization_target_type"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields = ubx.FieldMap{
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-	}
+	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields = ubx.FieldMap{
-		"Calculated": ubx.FieldSpec{WireName: "calculated"},
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Calculated": ubx.FieldSpec{WireName: "calculated"},
+	"Fixed":      ubx.FieldSpec{WireName: "fixed"},
+	"Percent":    ubx.FieldSpec{WireName: "percent"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_ScaleDownControlFields = ubx.FieldMap{
-		"MaxScaledDownReplicas": ubx.FieldSpec{
-			WireName: "max_scaled_down_replicas",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
-		},
-		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-	}
+	"MaxScaledDownReplicas": ubx.FieldSpec{
+		WireName: "max_scaled_down_replicas",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
+	},
+	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_ScaleInControlFields = ubx.FieldMap{
-		"MaxScaledInReplicas": ubx.FieldSpec{
-			WireName: "max_scaled_in_replicas",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
-		},
-		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-	}
+	"MaxScaledInReplicas": ubx.FieldSpec{
+		WireName: "max_scaled_in_replicas",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
+	},
+	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+}
 
 var BetaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DurationSec": ubx.FieldSpec{WireName: "duration_sec"},
-		"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"Disabled":            ubx.FieldSpec{WireName: "disabled"},
+	"DurationSec":         ubx.FieldSpec{WireName: "duration_sec"},
+	"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
+	"Schedule":            ubx.FieldSpec{WireName: "schedule"},
+	"TimeZone":            ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var BetaAutoscaler_AutoscalingPolicyFields = ubx.FieldMap{
-		"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
-		"CpuUtilization": ubx.FieldSpec{
-			WireName: "cpu_utilization",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
-		},
-		"CustomMetricUtilizations": ubx.FieldSpec{
-			WireName: "custom_metric_utilizations",
-			Kind: "list",
-			Fields: BetaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
-		},
-		"LoadBalancingUtilization": ubx.FieldSpec{
-			WireName: "load_balancing_utilization",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
-		},
-		"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
-		"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ScaleDownControl": ubx.FieldSpec{
-			WireName: "scale_down_control",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_ScaleDownControlFields,
-		},
-		"ScaleInControl": ubx.FieldSpec{
-			WireName: "scale_in_control",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicy_ScaleInControlFields,
-		},
-		"ScalingSchedules": ubx.FieldSpec{
-			WireName: "scaling_schedules",
-			Kind: "map",
-			Fields: BetaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
-		},
-		"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
-	}
-
-var BetaAutoscaler_ScalingScheduleStatusFields = ubx.FieldMap{
-		"LastStartTime": ubx.FieldSpec{WireName: "last_start_time"},
-		"NextStartTime": ubx.FieldSpec{WireName: "next_start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
+	"CpuUtilization": ubx.FieldSpec{
+		WireName: "cpu_utilization",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
+	},
+	"CustomMetricUtilizations": ubx.FieldSpec{
+		WireName: "custom_metric_utilizations",
+		Kind:     "list",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
+	},
+	"LoadBalancingUtilization": ubx.FieldSpec{
+		WireName: "load_balancing_utilization",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
+	},
+	"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
+	"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
+	"Mode":           ubx.FieldSpec{WireName: "mode"},
+	"ScaleDownControl": ubx.FieldSpec{
+		WireName: "scale_down_control",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_ScaleDownControlFields,
+	},
+	"ScaleInControl": ubx.FieldSpec{
+		WireName: "scale_in_control",
+		Kind:     "object",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_ScaleInControlFields,
+	},
+	"ScalingSchedules": ubx.FieldSpec{
+		WireName: "scaling_schedules",
+		Kind:     "map",
+		Fields:   BetaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
+	},
+	"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
+}
 
 var BetaAutoscaler_StatusDetailsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Message": ubx.FieldSpec{WireName: "message"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type BetaAutoscalerConfig struct {
 	// Cloud Autoscaler policy.
 	AutoscalingPolicy any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
-	RecommendedSize any
-	// Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope).
-	Region any
-	// Output only. [Output Only] Status information of existing scaling schedules.
-	ScalingScheduleStatus any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
@@ -217,8 +199,6 @@ type BetaAutoscalerConfig struct {
 	StatusDetails any
 	// URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
 	Target any
-	// Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope).
-	Zone any
 }
 
 type BetaAutoscalerAttrs struct {
@@ -257,29 +237,18 @@ var BetaAutoscaler = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind: "object",
-			Fields: BetaAutoscaler_AutoscalingPolicyFields,
+			Kind:     "object",
+			Fields:   BetaAutoscaler_AutoscalingPolicyFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecommendedSize": ubx.FieldSpec{WireName: "recommended_size"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ScalingScheduleStatus": ubx.FieldSpec{
-			WireName: "scaling_schedule_status",
-			Kind: "map",
-			Fields: BetaAutoscaler_ScalingScheduleStatusFields,
-		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
+		"Status":      ubx.FieldSpec{WireName: "status"},
 		"StatusDetails": ubx.FieldSpec{
 			WireName: "status_details",
-			Kind: "list",
-			Fields: BetaAutoscaler_StatusDetailsFields,
+			Kind:     "list",
+			Fields:   BetaAutoscaler_StatusDetailsFields,
 		},
 		"Target": ubx.FieldSpec{WireName: "target"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

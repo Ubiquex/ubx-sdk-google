@@ -16,46 +16,38 @@ type Bucket_CmekSettings struct {
 
 type Bucket_IndexConfigs struct {
 	CreateTime any
-	FieldPath any
-	Type any
+	FieldPath  any
+	Type       any
 }
 
 var Bucket_CmekSettingsFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	}
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ServiceAccountId":  ubx.FieldSpec{WireName: "service_account_id"},
+}
 
 var Bucket_IndexConfigsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"FieldPath":  ubx.FieldSpec{WireName: "field_path"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type BucketConfig struct {
 	// Optional. Whether log analytics is enabled for this bucket.Once enabled, log analytics features cannot be disabled.
 	AnalyticsEnabled any
 	// Describes the customer-managed encryption key (CMEK) settings associated with a project, folder, organization, billing account, or flexible resource.Note: CMEK for the Log Router can currently only be configured for Google Cloud organizations. Once configured, it applies to all projects and folders in the Google Cloud organization.See Configure CMEK for Cloud Logging (https://docs.cloud.google.com/logging/docs/routing/managed-encryption) for more information.
 	CmekSettings any
-	// Output only. The creation timestamp of the bucket. This is not set for any of the default buckets.
-	CreateTime any
 	// Optional. Describes this bucket.
 	Description any
 	// Optional. A list of indexed fields and related configuration data.
 	IndexConfigs any
-	// Output only. The bucket lifecycle state.
-	LifecycleState any
 	// Optional. Whether the bucket is locked.The retention period on a locked bucket cannot be changed. Locked buckets may only be deleted if they are empty.
 	Locked any
-	// Output only. The resource name of the bucket.For example:projects/my-project/locations/global/buckets/my-bucketFor a list of supported locations, see Supported Regions (https://docs.cloud.google.com/logging/docs/region-support)For the location of global it is unspecified where log entries are actually stored.After a bucket has been created, the location cannot be changed.
-	Name any
 	// Optional. Log entry field paths that are denied access in this bucket.The following fields and their children are eligible: textPayload, jsonPayload, protoPayload, httpRequest, labels, sourceLocation.Restricting a repeated field will restrict all values. Adding a parent will block all child fields. (e.g. foo.bar will block foo.bar.baz)
 	RestrictedFields any
 	// Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
 	RetentionDays any
-	// Output only. The last update timestamp of the bucket.
-	UpdateTime any
 }
 
 type BucketAttrs struct {
@@ -89,21 +81,17 @@ var Bucket = ubx.ResourceBinding{
 		"AnalyticsEnabled": ubx.FieldSpec{WireName: "analytics_enabled"},
 		"CmekSettings": ubx.FieldSpec{
 			WireName: "cmek_settings",
-			Kind: "object",
-			Fields: Bucket_CmekSettingsFields,
+			Kind:     "object",
+			Fields:   Bucket_CmekSettingsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IndexConfigs": ubx.FieldSpec{
 			WireName: "index_configs",
-			Kind: "list",
-			Fields: Bucket_IndexConfigsFields,
+			Kind:     "list",
+			Fields:   Bucket_IndexConfigsFields,
 		},
-		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Locked":           ubx.FieldSpec{WireName: "locked"},
 		"RestrictedFields": ubx.FieldSpec{WireName: "restricted_fields"},
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"RetentionDays":    ubx.FieldSpec{WireName: "retention_days"},
 	},
 }

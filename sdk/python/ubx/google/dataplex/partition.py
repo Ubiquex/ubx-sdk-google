@@ -12,8 +12,6 @@ class PartitionConfig:
     etag: Any = None
     # Required. Immutable. The location of the entity data within the partition, for example, gs://bucket/path/to/entity/key1=value1/key2=value2. Or projects//datasets//tables/
     location: Any = None
-    # Output only. Partition values used in the HTTP URL must be double encoded. For example, url_encode(url_encode(value)) can be used to encode "US:CA/CA#Sunnyvale so that the request URL ends with "/partitions/US%253ACA/CA%2523Sunnyvale". The name field in the response retains the encoded format.
-    name: Any = None
     # Required. Immutable. The set of values representing the partition, which correspond to the partition schema defined in the parent entity.
     values: Any = None
 
@@ -33,7 +31,6 @@ Partition = ubx.ResourceBinding(
     fields={
         "etag": ubx.FieldSpec(wire_name="etag"),
         "location": ubx.FieldSpec(wire_name="location"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "values": ubx.FieldSpec(wire_name="values"),
     },
 )

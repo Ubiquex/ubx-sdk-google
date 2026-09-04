@@ -254,16 +254,12 @@ const V1beta1SecurityProfile_WildfireAnalysisProfileFields: FieldMap = {
 };
 
 export interface V1beta1SecurityProfileConfig {
-  /** Output only. Resource creation timestamp. */
-  createTime?: string | Computed<string>;
   /** CustomInterceptProfile defines in-band integration behavior (intercept). It is used by firewall rules with an APPLY_SECURITY_PROFILE_GROUP action. */
   customInterceptProfile?: V1beta1SecurityProfile_CustomInterceptProfile | Computed<V1beta1SecurityProfile_CustomInterceptProfile>;
   /** CustomMirroringProfile defines out-of-band integration behavior (mirroring). It is used by mirroring rules with a MIRROR action. */
   customMirroringProfile?: V1beta1SecurityProfile_CustomMirroringProfile | Computed<V1beta1SecurityProfile_CustomMirroringProfile>;
   /** Optional. An optional description of the profile. Max length 512 characters. */
   description?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. Name of the SecurityProfile resource. It matches pattern `projects|organizations/* /locations/{location}/securityProfiles/{security_profile}`. */
@@ -272,8 +268,6 @@ export interface V1beta1SecurityProfileConfig {
   threatPreventionProfile?: V1beta1SecurityProfile_ThreatPreventionProfile | Computed<V1beta1SecurityProfile_ThreatPreventionProfile>;
   /** Immutable. The single ProfileType that the SecurityProfile resource configures. */
   type?: string | Computed<string>;
-  /** Output only. Last resource update timestamp. */
-  updateTime?: string | Computed<string>;
   /** UrlFilteringProfile defines filters based on URL. */
   urlFilteringProfile?: V1beta1SecurityProfile_UrlFilteringProfile | Computed<V1beta1SecurityProfile_UrlFilteringProfile>;
   /** WildfireAnalysisProfile defines Palo Alto Networks WildFire behavior. */
@@ -310,7 +304,6 @@ export interface V1beta1SecurityProfileAttrs {
 export const V1beta1SecurityProfile: ResourceBinding<V1beta1SecurityProfileConfig, V1beta1SecurityProfileAttrs> = {
   wireType: "google_networksecurity_v1beta1_security_profile",
   fields: {
-    createTime: "create_time",
     customInterceptProfile: {
       wireName: "custom_intercept_profile",
       kind: "object",
@@ -322,7 +315,6 @@ export const V1beta1SecurityProfile: ResourceBinding<V1beta1SecurityProfileConfi
       fields: V1beta1SecurityProfile_CustomMirroringProfileFields,
     },
     description: "description",
-    etag: "etag",
     labels: "labels",
     name: "name",
     threatPreventionProfile: {
@@ -331,7 +323,6 @@ export const V1beta1SecurityProfile: ResourceBinding<V1beta1SecurityProfileConfi
       fields: V1beta1SecurityProfile_ThreatPreventionProfileFields,
     },
     type: "type",
-    updateTime: "update_time",
     urlFilteringProfile: {
       wireName: "url_filtering_profile",
       kind: "object",

@@ -32,8 +32,6 @@ _V1beta1ServingProfile_CmekConfigFields = {
 class V1beta1ServingProfileConfig:
     # Configuration for Customer-Managed Encryption Keys (CMEK).
     cmek_config: Any = None
-    # Output only. Timestamp when the ServingProfile was created.
-    create_time: Any = None
     # Optional. The description of the ServingProfile.
     description: Any = None
     # Required. The display name of the ServingProfile. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -42,8 +40,6 @@ class V1beta1ServingProfileConfig:
     name: Any = None
     # Required. The specific API this ServingProfile applies to.
     scope: Any = None
-    # Output only. Timestamp when the ServingProfile was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ServingProfileAttrs:
@@ -70,11 +66,9 @@ V1beta1ServingProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ServingProfile_CmekConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "scope": ubx.FieldSpec(wire_name="scope"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

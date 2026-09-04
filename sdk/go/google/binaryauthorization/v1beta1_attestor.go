@@ -4,15 +4,15 @@ package binaryauthorization
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Attestor_UserOwnedDrydockNote_PublicKeys_PkixPublicKey struct {
-	PublicKeyPem any
+	PublicKeyPem       any
 	SignatureAlgorithm any
 }
 
 type V1beta1Attestor_UserOwnedDrydockNote_PublicKeys struct {
 	AsciiArmoredPgpPublicKey any
-	Comment any
-	Id any
-	PkixPublicKey any
+	Comment                  any
+	Id                       any
+	PkixPublicKey            any
 }
 
 type V1beta1Attestor_UserOwnedDrydockNote struct {
@@ -25,30 +25,30 @@ type V1beta1Attestor_UserOwnedDrydockNote struct {
 }
 
 var V1beta1Attestor_UserOwnedDrydockNote_PublicKeys_PkixPublicKeyFields = ubx.FieldMap{
-		"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
-		"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
-	}
+	"PublicKeyPem":       ubx.FieldSpec{WireName: "public_key_pem"},
+	"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
+}
 
 var V1beta1Attestor_UserOwnedDrydockNote_PublicKeysFields = ubx.FieldMap{
-		"AsciiArmoredPgpPublicKey": ubx.FieldSpec{WireName: "ascii_armored_pgp_public_key"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"PkixPublicKey": ubx.FieldSpec{
-			WireName: "pkix_public_key",
-			Kind: "object",
-			Fields: V1beta1Attestor_UserOwnedDrydockNote_PublicKeys_PkixPublicKeyFields,
-		},
-	}
+	"AsciiArmoredPgpPublicKey": ubx.FieldSpec{WireName: "ascii_armored_pgp_public_key"},
+	"Comment":                  ubx.FieldSpec{WireName: "comment"},
+	"Id":                       ubx.FieldSpec{WireName: "id"},
+	"PkixPublicKey": ubx.FieldSpec{
+		WireName: "pkix_public_key",
+		Kind:     "object",
+		Fields:   V1beta1Attestor_UserOwnedDrydockNote_PublicKeys_PkixPublicKeyFields,
+	},
+}
 
 var V1beta1Attestor_UserOwnedDrydockNoteFields = ubx.FieldMap{
-		"DelegationServiceAccountEmail": ubx.FieldSpec{WireName: "delegation_service_account_email"},
-		"NoteReference": ubx.FieldSpec{WireName: "note_reference"},
-		"PublicKeys": ubx.FieldSpec{
-			WireName: "public_keys",
-			Kind: "list",
-			Fields: V1beta1Attestor_UserOwnedDrydockNote_PublicKeysFields,
-		},
-	}
+	"DelegationServiceAccountEmail": ubx.FieldSpec{WireName: "delegation_service_account_email"},
+	"NoteReference":                 ubx.FieldSpec{WireName: "note_reference"},
+	"PublicKeys": ubx.FieldSpec{
+		WireName: "public_keys",
+		Kind:     "list",
+		Fields:   V1beta1Attestor_UserOwnedDrydockNote_PublicKeysFields,
+	},
+}
 
 type V1beta1AttestorConfig struct {
 	// Optional. A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
@@ -57,8 +57,6 @@ type V1beta1AttestorConfig struct {
 	Etag any
 	// Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
 	Name any
-	// Output only. Time when the attestor was last updated.
-	UpdateTime any
 	// An user owned drydock note references a Drydock ATTESTATION_AUTHORITY Note created by the user.
 	UserOwnedDrydockNote any
 }
@@ -80,13 +78,12 @@ var V1beta1Attestor = ubx.ResourceBinding{
 	WireType: "google_binaryauthorization_v1beta1_attestor",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"UserOwnedDrydockNote": ubx.FieldSpec{
 			WireName: "user_owned_drydock_note",
-			Kind: "object",
-			Fields: V1beta1Attestor_UserOwnedDrydockNoteFields,
+			Kind:     "object",
+			Fields:   V1beta1Attestor_UserOwnedDrydockNoteFields,
 		},
 	},
 }

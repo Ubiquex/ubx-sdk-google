@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface GatewayAdvertisedRouteConfig {
-  /** Output only. The time the gateway advertised route was created. */
-  createTime?: string | Computed<string>;
   /** An optional description of the gateway advertised route. */
   description?: string | Computed<string>;
   /** Immutable. This route's advertised IP address range. Must be a valid CIDR-formatted prefix. If an IP address is provided without a subnet mask, it is interpreted as, for IPv4, a `/32` singular IP address range, and, for IPv6, `/128`. */
@@ -16,12 +14,6 @@ export interface GatewayAdvertisedRouteConfig {
   priority?: number | Computed<number>;
   /** Optional. The recipient of this advertised route. */
   recipient?: string | Computed<string>;
-  /** Output only. The current lifecycle state of this gateway advertised route. */
-  state?: string | Computed<string>;
-  /** Output only. The Google-generated UUID for the gateway advertised route. This value is unique across all gateway advertised route resources. If a gateway advertised route is deleted and another with the same name is created, the new route is assigned a different `unique_id`. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. The time the gateway advertised route was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GatewayAdvertisedRouteAttrs {
@@ -50,15 +42,11 @@ export interface GatewayAdvertisedRouteAttrs {
 export const GatewayAdvertisedRoute: ResourceBinding<GatewayAdvertisedRouteConfig, GatewayAdvertisedRouteAttrs> = {
   wireType: "google_networkconnectivity_gateway_advertised_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     ipRange: "ip_range",
     labels: "labels",
     name: "name",
     priority: "priority",
     recipient: "recipient",
-    state: "state",
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

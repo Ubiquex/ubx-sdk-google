@@ -76,7 +76,6 @@ class Conversation_Turns:
 @dataclasses.dataclass
 class ConversationConfig:
     name: Any = None
-    source: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -111,7 +110,6 @@ Conversation = ubx.DataSourceBinding(
     wire_type="google_ces_conversation",
     fields={
         "name": ubx.FieldSpec(wire_name="name"),
-        "source": ubx.FieldSpec(wire_name="source"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

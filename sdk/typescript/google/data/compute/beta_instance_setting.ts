@@ -10,7 +10,6 @@ export interface BetaInstanceSetting_Metadata {
 
 export interface BetaInstanceSettingConfig {
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface BetaInstanceSettingAttrs {
@@ -27,6 +26,5 @@ export const BetaInstanceSetting: DataSourceBinding<BetaInstanceSettingConfig, B
   wireType: "google_compute_beta_instance_setting",
   fields: {
     project: "project",
-    zone: "zone",
   },
 };

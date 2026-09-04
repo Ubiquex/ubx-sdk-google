@@ -20,26 +20,18 @@ _QueryTemplate_RoutineFields = {
 
 @dataclasses.dataclass
 class QueryTemplateConfig:
-    # Output only. Timestamp when the QueryTemplate was created.
-    create_time: Any = None
     # Optional. Short description of the QueryTemplate. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
     description: Any = None
     # Required. Human-readable display name of the QueryTemplate. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces. Default value is an empty string. Max length: 63 bytes.
     display_name: Any = None
     # Optional. Documentation describing the QueryTemplate.
     documentation: Any = None
-    # Output only. The resource name of the QueryTemplate. e.g. `projects/myproject/locations/us/dataExchanges/123/queryTemplates/456`
-    name: Any = None
     # Optional. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes.
     primary_contact: Any = None
     # Optional. Deprecated: Use `primary_contact` instead. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes.
     proposer: Any = None
     # Represents a bigquery routine.
     routine: Any = None
-    # Output only. The QueryTemplate lifecycle state.
-    state: Any = None
-    # Output only. Timestamp when the QueryTemplate was last modified.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class QueryTemplateAttrs:
@@ -67,11 +59,9 @@ class QueryTemplateAttrs:
 QueryTemplate = ubx.ResourceBinding(
     wire_type="google_analyticshub_query_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "documentation": ubx.FieldSpec(wire_name="documentation"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "primary_contact": ubx.FieldSpec(wire_name="primary_contact"),
         "proposer": ubx.FieldSpec(wire_name="proposer"),
         "routine": ubx.FieldSpec(
@@ -79,7 +69,5 @@ QueryTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_QueryTemplate_RoutineFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

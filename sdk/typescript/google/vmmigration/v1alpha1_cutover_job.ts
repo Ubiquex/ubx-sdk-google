@@ -380,99 +380,6 @@ const V1alpha1CutoverJob_ErrorFields: FieldMap = {
   message: "message",
 };
 
-const V1alpha1CutoverJob_Steps_FinalSync_Steps_ReplicatingFields: FieldMap = {
-  lastThirtyMinutesAverageBytesPerSecond: "last_thirty_minutes_average_bytes_per_second",
-  lastTwoMinutesAverageBytesPerSecond: "last_two_minutes_average_bytes_per_second",
-  replicatedBytes: "replicated_bytes",
-  totalBytes: "total_bytes",
-};
-
-const V1alpha1CutoverJob_Steps_FinalSync_StepsFields: FieldMap = {
-  endTime: "end_time",
-  initializingReplication: "initializing_replication",
-  postProcessing: "post_processing",
-  replicating: {
-    wireName: "replicating",
-    kind: "object",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_Steps_ReplicatingFields,
-  },
-  startTime: "start_time",
-};
-
-const V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields: FieldMap = {
-  locale: "locale",
-  message: "message",
-};
-
-const V1alpha1CutoverJob_Steps_FinalSync_Warnings_HelpLinksFields: FieldMap = {
-  description: "description",
-  url: "url",
-};
-
-const V1alpha1CutoverJob_Steps_FinalSync_WarningsFields: FieldMap = {
-  actionItem: {
-    wireName: "action_item",
-    kind: "object",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields,
-  },
-  code: "code",
-  helpLinks: {
-    wireName: "help_links",
-    kind: "list",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_HelpLinksFields,
-  },
-  warningMessage: {
-    wireName: "warning_message",
-    kind: "object",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields,
-  },
-  warningTime: "warning_time",
-};
-
-const V1alpha1CutoverJob_Steps_FinalSyncFields: FieldMap = {
-  cycleNumber: "cycle_number",
-  endTime: "end_time",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: V1alpha1CutoverJob_ErrorFields,
-  },
-  name: "name",
-  progress: "progress",
-  progressPercent: "progress_percent",
-  startTime: "start_time",
-  state: "state",
-  steps: {
-    wireName: "steps",
-    kind: "list",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_StepsFields,
-  },
-  totalPauseDuration: "total_pause_duration",
-  warnings: {
-    wireName: "warnings",
-    kind: "list",
-    fields: V1alpha1CutoverJob_Steps_FinalSync_WarningsFields,
-  },
-};
-
-const V1alpha1CutoverJob_StepsFields: FieldMap = {
-  endTime: "end_time",
-  finalSync: {
-    wireName: "final_sync",
-    kind: "object",
-    fields: V1alpha1CutoverJob_Steps_FinalSyncFields,
-  },
-  instantiatingMigratedVm: "instantiating_migrated_vm",
-  preparingVmDisks: "preparing_vm_disks",
-  previousReplicationCycle: {
-    wireName: "previous_replication_cycle",
-    kind: "object",
-    fields: V1alpha1CutoverJob_Steps_FinalSyncFields,
-  },
-  shuttingDownSourceVm: "shutting_down_source_vm",
-  startTime: "start_time",
-};
-
 export interface V1alpha1CutoverJobConfig {
   /** ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details. */
   computeEngineDisksTargetDetails?: V1alpha1CutoverJob_ComputeEngineDisksTargetDetails | Computed<V1alpha1CutoverJob_ComputeEngineDisksTargetDetails>;
@@ -480,26 +387,8 @@ export interface V1alpha1CutoverJobConfig {
   computeEngineTargetDetails?: V1alpha1CutoverJob_ComputeEngineTargetDetails | Computed<V1alpha1CutoverJob_ComputeEngineTargetDetails>;
   /** TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project. */
   computeEngineVmDetails?: V1alpha1CutoverJob_ComputeEngineVmDetails | Computed<V1alpha1CutoverJob_ComputeEngineVmDetails>;
-  /** Output only. The time the cutover job was created (as an API call, not when it was actually created in the target). */
-  createTime?: string | Computed<string>;
-  /** Output only. The time the cutover job had finished. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1alpha1CutoverJob_Error | Computed<V1alpha1CutoverJob_Error>;
-  /** Output only. The name of the cutover job. */
-  name?: string | Computed<string>;
-  /** Output only. The current progress in percentage of the cutover job. */
-  progress?: number | Computed<number>;
-  /** Output only. The current progress in percentage of the cutover job. */
-  progressPercent?: number | Computed<number>;
-  /** Output only. State of the cutover job. */
-  state?: string | Computed<string>;
-  /** Output only. A message providing possible extra details about the current state. */
-  stateMessage?: string | Computed<string>;
-  /** Output only. The time the state was last updated. */
-  stateTime?: string | Computed<string>;
-  /** Output only. The cutover steps list representing its progress. */
-  steps?: V1alpha1CutoverJob_Steps[] | Computed<V1alpha1CutoverJob_Steps[]>;
   /** TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project. */
   targetDetails?: V1alpha1CutoverJob_ComputeEngineVmDetails | Computed<V1alpha1CutoverJob_ComputeEngineVmDetails>;
 }
@@ -553,23 +442,10 @@ export const V1alpha1CutoverJob: ResourceBinding<V1alpha1CutoverJobConfig, V1alp
       kind: "object",
       fields: V1alpha1CutoverJob_ComputeEngineVmDetailsFields,
     },
-    createTime: "create_time",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1alpha1CutoverJob_ErrorFields,
-    },
-    name: "name",
-    progress: "progress",
-    progressPercent: "progress_percent",
-    state: "state",
-    stateMessage: "state_message",
-    stateTime: "state_time",
-    steps: {
-      wireName: "steps",
-      kind: "list",
-      fields: V1alpha1CutoverJob_StepsFields,
     },
     targetDetails: {
       wireName: "target_details",

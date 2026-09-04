@@ -130,8 +130,6 @@ export interface ProviderConfig {
   disabled?: boolean | Computed<boolean>;
   /** Optional. A display name for the provider. Cannot exceed 32 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Time after which the workforce identity pool provider will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Represents the OAuth 2.0 client credential configuration for retrieving additional user attributes that are not present in the initial authentication credentials from the identity provider, for example, groups. See https://datatracker.ietf.org/doc/html/rfc6749#section-4.4 for more details on client credentials grant flow. */
   extendedAttributesOauth2Client?: Provider_ExtendedAttributesOauth2Client | Computed<Provider_ExtendedAttributesOauth2Client>;
   /** Represents the OAuth 2.0 client credential configuration for retrieving additional user attributes that are not present in the initial authentication credentials from the identity provider, for example, groups. See https://datatracker.ietf.org/doc/html/rfc6749#section-4.4 for more details on client credentials grant flow. */
@@ -144,8 +142,6 @@ export interface ProviderConfig {
   saml?: Provider_Saml | Computed<Provider_Saml>;
   /** Optional. Gemini Enterprise only. Specifies whether the workforce identity pool provider uses SCIM-managed groups instead of the `google.groups` attribute mapping for authorization checks. The `scim_usage` and `extended_attributes_oauth2_client` fields are mutually exclusive. A request that enables both fields on the same workforce identity pool provider will produce an error. */
   scimUsage?: string | Computed<string>;
-  /** Output only. The state of the provider. */
-  state?: string | Computed<string>;
 }
 
 export interface ProviderAttrs {
@@ -188,7 +184,6 @@ export const Provider: ResourceBinding<ProviderConfig, ProviderAttrs> = {
     detailedAuditLogging: "detailed_audit_logging",
     disabled: "disabled",
     displayName: "display_name",
-    expireTime: "expire_time",
     extendedAttributesOauth2Client: {
       wireName: "extended_attributes_oauth2_client",
       kind: "object",
@@ -211,6 +206,5 @@ export const Provider: ResourceBinding<ProviderConfig, ProviderAttrs> = {
       fields: Provider_SamlFields,
     },
     scimUsage: "scim_usage",
-    state: "state",
   },
 };

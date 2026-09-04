@@ -9,7 +9,7 @@ type BackupPlan_BackupConfig_EncryptionKey struct {
 }
 
 type BackupPlan_BackupConfig_SelectedApplications_NamespacedNames struct {
-	Name any
+	Name      any
 	Namespace any
 }
 
@@ -19,7 +19,7 @@ type BackupPlan_BackupConfig_SelectedApplications struct {
 }
 
 type BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabels struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -57,24 +57,24 @@ type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeek struct {
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows struct {
-	Daily any
-	DaysOfWeek any
-	Duration any
+	Daily                any
+	DaysOfWeek           any
+	Duration             any
 	SingleOccurrenceDate any
-	StartTime any
+	StartTime            any
 }
 
 type BackupPlan_BackupSchedule_RpoConfig struct {
@@ -105,170 +105,144 @@ type BackupPlan_RetentionPolicy struct {
 }
 
 var BackupPlan_BackupConfig_EncryptionKeyFields = ubx.FieldMap{
-		"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
-	}
+	"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
+}
 
 var BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var BackupPlan_BackupConfig_SelectedApplicationsFields = ubx.FieldMap{
-		"NamespacedNames": ubx.FieldSpec{
-			WireName: "namespaced_names",
-			Kind: "list",
-			Fields: BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields,
-		},
-	}
+	"NamespacedNames": ubx.FieldSpec{
+		WireName: "namespaced_names",
+		Kind:     "list",
+		Fields:   BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields,
+	},
+}
 
 var BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BackupPlan_BackupConfig_SelectedNamespaceLabelsFields = ubx.FieldMap{
-		"ResourceLabels": ubx.FieldSpec{
-			WireName: "resource_labels",
-			Kind: "list",
-			Fields: BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields,
-		},
-	}
+	"ResourceLabels": ubx.FieldSpec{
+		WireName: "resource_labels",
+		Kind:     "list",
+		Fields:   BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields,
+	},
+}
 
 var BackupPlan_BackupConfig_SelectedNamespacesFields = ubx.FieldMap{
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var BackupPlan_BackupConfigFields = ubx.FieldMap{
-		"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
-		"EncryptionKey": ubx.FieldSpec{
-			WireName: "encryption_key",
-			Kind: "object",
-			Fields: BackupPlan_BackupConfig_EncryptionKeyFields,
-		},
-		"IncludeSecrets": ubx.FieldSpec{WireName: "include_secrets"},
-		"IncludeVolumeData": ubx.FieldSpec{WireName: "include_volume_data"},
-		"PermissiveMode": ubx.FieldSpec{WireName: "permissive_mode"},
-		"SelectedApplications": ubx.FieldSpec{
-			WireName: "selected_applications",
-			Kind: "object",
-			Fields: BackupPlan_BackupConfig_SelectedApplicationsFields,
-		},
-		"SelectedNamespaceLabels": ubx.FieldSpec{
-			WireName: "selected_namespace_labels",
-			Kind: "object",
-			Fields: BackupPlan_BackupConfig_SelectedNamespaceLabelsFields,
-		},
-		"SelectedNamespaces": ubx.FieldSpec{
-			WireName: "selected_namespaces",
-			Kind: "object",
-			Fields: BackupPlan_BackupConfig_SelectedNamespacesFields,
-		},
-	}
+	"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
+	"EncryptionKey": ubx.FieldSpec{
+		WireName: "encryption_key",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupConfig_EncryptionKeyFields,
+	},
+	"IncludeSecrets":    ubx.FieldSpec{WireName: "include_secrets"},
+	"IncludeVolumeData": ubx.FieldSpec{WireName: "include_volume_data"},
+	"PermissiveMode":    ubx.FieldSpec{WireName: "permissive_mode"},
+	"SelectedApplications": ubx.FieldSpec{
+		WireName: "selected_applications",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupConfig_SelectedApplicationsFields,
+	},
+	"SelectedNamespaceLabels": ubx.FieldSpec{
+		WireName: "selected_namespace_labels",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupConfig_SelectedNamespaceLabelsFields,
+	},
+	"SelectedNamespaces": ubx.FieldSpec{
+		WireName: "selected_namespaces",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupConfig_SelectedNamespacesFields,
+	},
+}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields = ubx.FieldMap{
-		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-	}
+	"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields = ubx.FieldMap{
-		"Daily": ubx.FieldSpec{WireName: "daily"},
-		"DaysOfWeek": ubx.FieldSpec{
-			WireName: "days_of_week",
-			Kind: "object",
-			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields,
-		},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"SingleOccurrenceDate": ubx.FieldSpec{
-			WireName: "single_occurrence_date",
-			Kind: "object",
-			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields,
-		},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields,
-		},
-	}
+	"Daily": ubx.FieldSpec{WireName: "daily"},
+	"DaysOfWeek": ubx.FieldSpec{
+		WireName: "days_of_week",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields,
+	},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"SingleOccurrenceDate": ubx.FieldSpec{
+		WireName: "single_occurrence_date",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields,
+	},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields,
+	},
+}
 
 var BackupPlan_BackupSchedule_RpoConfigFields = ubx.FieldMap{
-		"ExclusionWindows": ubx.FieldSpec{
-			WireName: "exclusion_windows",
-			Kind: "list",
-			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields,
-		},
-		"TargetRpoMinutes": ubx.FieldSpec{WireName: "target_rpo_minutes"},
-	}
+	"ExclusionWindows": ubx.FieldSpec{
+		WireName: "exclusion_windows",
+		Kind:     "list",
+		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields,
+	},
+	"TargetRpoMinutes": ubx.FieldSpec{WireName: "target_rpo_minutes"},
+}
 
 var BackupPlan_BackupScheduleFields = ubx.FieldMap{
-		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"NextScheduledBackupTime": ubx.FieldSpec{WireName: "next_scheduled_backup_time"},
-		"Paused": ubx.FieldSpec{WireName: "paused"},
-		"RpoConfig": ubx.FieldSpec{
-			WireName: "rpo_config",
-			Kind: "object",
-			Fields: BackupPlan_BackupSchedule_RpoConfigFields,
-		},
-	}
+	"CronSchedule":            ubx.FieldSpec{WireName: "cron_schedule"},
+	"NextScheduledBackupTime": ubx.FieldSpec{WireName: "next_scheduled_backup_time"},
+	"Paused":                  ubx.FieldSpec{WireName: "paused"},
+	"RpoConfig": ubx.FieldSpec{
+		WireName: "rpo_config",
+		Kind:     "object",
+		Fields:   BackupPlan_BackupSchedule_RpoConfigFields,
+	},
+}
 
 var BackupPlan_RetentionPolicyFields = ubx.FieldMap{
-		"BackupDeleteLockDays": ubx.FieldSpec{WireName: "backup_delete_lock_days"},
-		"BackupRetainDays": ubx.FieldSpec{WireName: "backup_retain_days"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-	}
+	"BackupDeleteLockDays": ubx.FieldSpec{WireName: "backup_delete_lock_days"},
+	"BackupRetainDays":     ubx.FieldSpec{WireName: "backup_retain_days"},
+	"Locked":               ubx.FieldSpec{WireName: "locked"},
+}
 
 type BackupPlanConfig struct {
-	// Output only. The fully qualified name of the BackupChannel to be used to create a backup. This field is set only if the cluster being backed up is in a different project. `projects/*/locations/*/backupChannels/*`
-	BackupChannel any
 	// BackupConfig defines the configuration of Backups created via this BackupPlan.
 	BackupConfig any
 	// Defines scheduling parameters for automatically creating Backups via this BackupPlan.
 	BackupSchedule any
 	// Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`
 	Cluster any
-	// Output only. The timestamp when this BackupPlan resource was created.
-	CreateTime any
 	// Optional. This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False
 	Deactivated any
 	// Optional. User specified descriptive string for this BackupPlan.
 	Description any
-	// Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` or `DeleteBackupPlan` to ensure that their change will be applied to the same version of the resource.
-	Etag any
 	// Optional. A set of custom labels supplied by user.
 	Labels any
-	// Output only. Completion time of the last successful Backup. This is sourced from a successful Backup's complete_time field. This field is added to maintain consistency with BackupPlanBinding to display last successful backup time.
-	LastSuccessfulBackupTime any
-	// Output only. Identifier. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`
-	Name any
-	// Output only. The number of user managed namespaces backed up in the last successful Backup created via this BackupPlan.
-	ProtectedNamespaceCount any
-	// Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
-	ProtectedPodCount any
 	// RetentionPolicy defines a Backup retention policy for a BackupPlan.
 	RetentionPolicy any
-	// Output only. A number that represents the current risk level of this BackupPlan from RPO perspective with 1 being no risk and 5 being highest risk.
-	RpoRiskLevel any
-	// Output only. Human-readable description of why the BackupPlan is in the current rpo_risk_level and action items if any.
-	RpoRiskReason any
-	// Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update
-	State any
-	// Output only. Human-readable description of why BackupPlan is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-	StateReason any
-	// Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-	Uid any
-	// Output only. The timestamp when this BackupPlan resource was last updated.
-	UpdateTime any
 }
 
 type BackupPlanAttrs struct {
@@ -317,37 +291,24 @@ type BackupPlanAttrs struct {
 var BackupPlan = ubx.ResourceBinding{
 	WireType: "google_gkebackup_backup_plan",
 	Fields: ubx.FieldMap{
-		"BackupChannel": ubx.FieldSpec{WireName: "backup_channel"},
 		"BackupConfig": ubx.FieldSpec{
 			WireName: "backup_config",
-			Kind: "object",
-			Fields: BackupPlan_BackupConfigFields,
+			Kind:     "object",
+			Fields:   BackupPlan_BackupConfigFields,
 		},
 		"BackupSchedule": ubx.FieldSpec{
 			WireName: "backup_schedule",
-			Kind: "object",
-			Fields: BackupPlan_BackupScheduleFields,
+			Kind:     "object",
+			Fields:   BackupPlan_BackupScheduleFields,
 		},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Cluster":     ubx.FieldSpec{WireName: "cluster"},
 		"Deactivated": ubx.FieldSpec{WireName: "deactivated"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastSuccessfulBackupTime": ubx.FieldSpec{WireName: "last_successful_backup_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtectedNamespaceCount": ubx.FieldSpec{WireName: "protected_namespace_count"},
-		"ProtectedPodCount": ubx.FieldSpec{WireName: "protected_pod_count"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"RetentionPolicy": ubx.FieldSpec{
 			WireName: "retention_policy",
-			Kind: "object",
-			Fields: BackupPlan_RetentionPolicyFields,
+			Kind:     "object",
+			Fields:   BackupPlan_RetentionPolicyFields,
 		},
-		"RpoRiskLevel": ubx.FieldSpec{WireName: "rpo_risk_level"},
-		"RpoRiskReason": ubx.FieldSpec{WireName: "rpo_risk_reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateReason": ubx.FieldSpec{WireName: "state_reason"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

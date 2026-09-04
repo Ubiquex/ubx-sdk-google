@@ -36,30 +36,28 @@ type V1beta1MigrationJob_VpcPeeringConnectivity struct {
 }
 
 var V1beta1MigrationJob_DestinationDatabaseFields = ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-	}
+	"Engine":   ubx.FieldSpec{WireName: "engine"},
+	"Provider": ubx.FieldSpec{WireName: "provider"},
+}
 
 var V1beta1MigrationJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1MigrationJob_ReverseSshConnectivityFields = ubx.FieldMap{
-		"Vm": ubx.FieldSpec{WireName: "vm"},
-		"VmIp": ubx.FieldSpec{WireName: "vm_ip"},
-		"VmPort": ubx.FieldSpec{WireName: "vm_port"},
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
-	}
+	"Vm":     ubx.FieldSpec{WireName: "vm"},
+	"VmIp":   ubx.FieldSpec{WireName: "vm_ip"},
+	"VmPort": ubx.FieldSpec{WireName: "vm_port"},
+	"Vpc":    ubx.FieldSpec{WireName: "vpc"},
+}
 
 var V1beta1MigrationJob_VpcPeeringConnectivityFields = ubx.FieldMap{
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
-	}
+	"Vpc": ubx.FieldSpec{WireName: "vpc"},
+}
 
 type V1beta1MigrationJobConfig struct {
-	// Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-	CreateTime any
 	// Required. The resource name (URI) of the destination connection profile.
 	Destination any
 	// A message defining the database engine and provider.
@@ -68,18 +66,12 @@ type V1beta1MigrationJobConfig struct {
 	DisplayName any
 	// The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
 	DumpPath any
-	// Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-	Duration any
-	// Output only. If the migration job is completed, the time when it was completed.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
 	Labels any
 	// The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
 	Name any
-	// Output only. The current migration job phase.
-	Phase any
 	// The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1beta1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC.
 	ReverseSshConnectivity any
 	// Required. The resource name (URI) of the source connection profile.
@@ -92,8 +84,6 @@ type V1beta1MigrationJobConfig struct {
 	StaticIpConnectivity any
 	// Required. The migration job type.
 	Type any
-	// Output only. The timestamp when the migration job resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-	UpdateTime any
 	// The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC.
 	VpcPeeringConnectivity any
 }
@@ -142,44 +132,39 @@ type V1beta1MigrationJobAttrs struct {
 var V1beta1MigrationJob = ubx.ResourceBinding{
 	WireType: "google_datamigration_v1beta1_migration_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DestinationDatabase": ubx.FieldSpec{
 			WireName: "destination_database",
-			Kind: "object",
-			Fields: V1beta1MigrationJob_DestinationDatabaseFields,
+			Kind:     "object",
+			Fields:   V1beta1MigrationJob_DestinationDatabaseFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DumpPath": ubx.FieldSpec{WireName: "dump_path"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"DumpPath":    ubx.FieldSpec{WireName: "dump_path"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1MigrationJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1MigrationJob_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phase": ubx.FieldSpec{WireName: "phase"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ReverseSshConnectivity": ubx.FieldSpec{
 			WireName: "reverse_ssh_connectivity",
-			Kind: "object",
-			Fields: V1beta1MigrationJob_ReverseSshConnectivityFields,
+			Kind:     "object",
+			Fields:   V1beta1MigrationJob_ReverseSshConnectivityFields,
 		},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"SourceDatabase": ubx.FieldSpec{
 			WireName: "source_database",
-			Kind: "object",
-			Fields: V1beta1MigrationJob_DestinationDatabaseFields,
+			Kind:     "object",
+			Fields:   V1beta1MigrationJob_DestinationDatabaseFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":                ubx.FieldSpec{WireName: "state"},
 		"StaticIpConnectivity": ubx.FieldSpec{WireName: "static_ip_connectivity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Type":                 ubx.FieldSpec{WireName: "type"},
 		"VpcPeeringConnectivity": ubx.FieldSpec{
 			WireName: "vpc_peering_connectivity",
-			Kind: "object",
-			Fields: V1beta1MigrationJob_VpcPeeringConnectivityFields,
+			Kind:     "object",
+			Fields:   V1beta1MigrationJob_VpcPeeringConnectivityFields,
 		},
 	},
 }

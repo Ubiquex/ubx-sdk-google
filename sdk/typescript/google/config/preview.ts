@@ -119,38 +119,17 @@ const Preview_TerraformBlueprintFields: FieldMap = {
   },
 };
 
-const Preview_TfErrorsFields: FieldMap = {
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: Preview_ErrorStatusFields,
-  },
-  errorDescription: "error_description",
-  httpResponseCode: "http_response_code",
-  resourceAddress: "resource_address",
-};
-
 export interface PreviewConfig {
   /** Optional. Arbitrary key-value metadata storage e.g. to help client tools identify preview during automation. See https://google.aip.dev/148#annotations for details on format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** User-defined location of Cloud Build logs, artifacts, and in Google Cloud Storage. Format: `gs://{bucket}/{folder}` A default bucket will be bootstrapped if the field is not set or empty Default Bucket Format: `gs://--blueprint-config` Constraints: - The bucket needs to be in the same project as the deployment - The path cannot be within the path of `gcs_source` If omitted and deployment resource ref provided has artifacts_gcs_bucket defined, that artifact bucket is used. */
   artifactsGcsBucket?: string | Computed<string>;
-  /** Output only. Cloud Build instance UUID associated with this preview. */
-  build?: string | Computed<string>;
-  /** Output only. Time the preview was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Deployment reference. If specified, the preview will be performed using the provided deployment's current state and use any relevant fields from the deployment unless explicitly specified in the preview create request. */
   deployment?: string | Computed<string>;
-  /** Output only. Code describing any errors that may have occurred. */
-  errorCode?: string | Computed<string>;
-  /** Output only. Link to tf-error.ndjson file, which contains the full list of the errors encountered during a Terraform preview. Format: `gs://{bucket}/{object}`. */
-  errorLogs?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   errorStatus?: Preview_ErrorStatus | Computed<Preview_ErrorStatus>;
   /** Optional. User-defined labels for the preview. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Location of preview logs in `gs://{bucket}/{object}` format. */
-  logs?: string | Computed<string>;
   /** Identifier. Resource name of the preview. Resource name can be user provided or server generated ID if unspecified. Format: `projects/{project}/locations/{location}/previews/{preview}` */
   name?: string | Computed<string>;
   /** Artifacts created by preview. */
@@ -161,14 +140,8 @@ export interface PreviewConfig {
   providerConfig?: Preview_ProviderConfig | Computed<Preview_ProviderConfig>;
   /** Required. User-specified Service Account (SA) credentials to be used when previewing resources. Format: `projects/{projectID}/serviceAccounts/{serviceAccount}` */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Current state of the preview. */
-  state?: string | Computed<string>;
   /** TerraformBlueprint describes the source of a Terraform root module which describes the resources and configs to be deployed. */
   terraformBlueprint?: Preview_TerraformBlueprint | Computed<Preview_TerraformBlueprint>;
-  /** Output only. Summary of errors encountered during Terraform preview. It has a size limit of 10, i.e. only top 10 errors will be summarized here. */
-  tfErrors?: Preview_TfErrors[] | Computed<Preview_TfErrors[]>;
-  /** Output only. The current Terraform version set on the preview. It is in the format of "Major.Minor.Patch", for example, "1.3.10". */
-  tfVersion?: string | Computed<string>;
   /** The user-specified Terraform version constraint. Example: "=1.3.10". */
   tfVersionConstraint?: string | Computed<string>;
   /** The user-specified Worker Pool resource in which the Cloud Build job will execute. Format projects/{project}/locations/{location}/workerPools/{workerPoolId} If this field is unspecified, the default Cloud Build worker pool will be used. If omitted and deployment resource ref provided has worker_pool defined, that worker pool is used. */
@@ -225,18 +198,13 @@ export const Preview: ResourceBinding<PreviewConfig, PreviewAttrs> = {
   fields: {
     annotations: "annotations",
     artifactsGcsBucket: "artifacts_gcs_bucket",
-    build: "build",
-    createTime: "create_time",
     deployment: "deployment",
-    errorCode: "error_code",
-    errorLogs: "error_logs",
     errorStatus: {
       wireName: "error_status",
       kind: "object",
       fields: Preview_ErrorStatusFields,
     },
     labels: "labels",
-    logs: "logs",
     name: "name",
     previewArtifacts: {
       wireName: "preview_artifacts",
@@ -250,18 +218,11 @@ export const Preview: ResourceBinding<PreviewConfig, PreviewAttrs> = {
       fields: Preview_ProviderConfigFields,
     },
     serviceAccount: "service_account",
-    state: "state",
     terraformBlueprint: {
       wireName: "terraform_blueprint",
       kind: "object",
       fields: Preview_TerraformBlueprintFields,
     },
-    tfErrors: {
-      wireName: "tf_errors",
-      kind: "list",
-      fields: Preview_TfErrorsFields,
-    },
-    tfVersion: "tf_version",
     tfVersionConstraint: "tf_version_constraint",
     workerPool: "worker_pool",
   },

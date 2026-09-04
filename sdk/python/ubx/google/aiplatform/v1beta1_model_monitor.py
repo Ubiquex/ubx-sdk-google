@@ -786,8 +786,6 @@ _V1beta1ModelMonitor_TrainingDatasetFields = {
 
 @dataclasses.dataclass
 class V1beta1ModelMonitorConfig:
-    # Output only. Timestamp when this ModelMonitor was created.
-    create_time: Any = None
     # The display name of the ModelMonitor. The name can be up to 128 characters long and can consist of any UTF-8.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -804,16 +802,10 @@ class V1beta1ModelMonitorConfig:
     notification_spec: Any = None
     # Specification for the export destination of monitoring results, including metrics, logs, etc.
     output_spec: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Tabular monitoring objective.
     tabular_objective: Any = None
     # Model monitoring data input spec.
     training_dataset: Any = None
-    # Output only. Timestamp when this ModelMonitor was updated most recently.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ModelMonitorAttrs:
@@ -849,7 +841,6 @@ class V1beta1ModelMonitorAttrs:
 V1beta1ModelMonitor = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_model_monitor",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
@@ -882,8 +873,6 @@ V1beta1ModelMonitor = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ModelMonitor_OutputSpecFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "tabular_objective": ubx.FieldSpec(
             wire_name="tabular_objective",
             kind="object",
@@ -894,6 +883,5 @@ V1beta1ModelMonitor = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ModelMonitor_TrainingDatasetFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

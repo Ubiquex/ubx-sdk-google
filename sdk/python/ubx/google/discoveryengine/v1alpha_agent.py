@@ -126,14 +126,8 @@ class V1alphaAgentConfig:
     adk_agent_definition: Any = None
     # Describes the authorizations required.
     authorization_config: Any = None
-    # Output only. Timestamp when this Agent was created.
-    create_time: Any = None
-    # Output only. The reason why the agent creation (provisioning) failed. Only set if the state is CREATION_FAILED.
-    creation_failure_reason: Any = None
     # Optional. The custom placeholder text that appears in the text box before the user enters any text.
     custom_placeholder_text: Any = None
-    # Output only. The reason why the agent deployment failed. Only set if the state is DEPLOYMENT_FAILED.
-    deployment_failure_reason: Any = None
     # Required. Human-readable description of the agent. This might be used by an LLM to automatically select an agent to respond to a user query.
     description: Any = None
     # Stored definition of an agent that uses a Dialogflow agent.
@@ -150,18 +144,10 @@ class V1alphaAgentConfig:
     name: Any = None
     # Observability config for a resource.
     observability_config: Any = None
-    # Output only. The reason why the agent was rejected. Only set if the state is PRIVATE, and got there via rejection.
-    rejection_reason: Any = None
     # Sharing related configuration.
     sharing_config: Any = None
     # Optional. The starter prompt suggestions to show the user on the landing page of the agent.
     starter_prompts: Any = None
-    # Output only. The lifecycle state of the agent.
-    state: Any = None
-    # Output only. The reason why the agent was suspended. Only set if the state is SUSPENDED.
-    suspension_reason: Any = None
-    # Output only. Timestamp when this Agent was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaAgentAttrs:
@@ -226,10 +212,7 @@ V1alphaAgent = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaAgent_AuthorizationConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creation_failure_reason": ubx.FieldSpec(wire_name="creation_failure_reason"),
         "custom_placeholder_text": ubx.FieldSpec(wire_name="custom_placeholder_text"),
-        "deployment_failure_reason": ubx.FieldSpec(wire_name="deployment_failure_reason"),
         "description": ubx.FieldSpec(wire_name="description"),
         "dialogflow_agent_definition": ubx.FieldSpec(
             wire_name="dialogflow_agent_definition",
@@ -250,7 +233,6 @@ V1alphaAgent = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaAgent_ObservabilityConfigFields,
         ),
-        "rejection_reason": ubx.FieldSpec(wire_name="rejection_reason"),
         "sharing_config": ubx.FieldSpec(
             wire_name="sharing_config",
             kind="object",
@@ -261,8 +243,5 @@ V1alphaAgent = ubx.ResourceBinding(
             kind="list",
             fields=_V1alphaAgent_StarterPromptsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "suspension_reason": ubx.FieldSpec(wire_name="suspension_reason"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

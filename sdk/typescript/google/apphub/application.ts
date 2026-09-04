@@ -64,8 +64,6 @@ const Application_AttributesFields: FieldMap = {
 export interface ApplicationConfig {
   /** Consumer provided attributes. */
   attributes?: Application_Attributes | Computed<Application_Attributes>;
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of an Application. Can have a maximum length of 2048 characters. */
   description?: string | Computed<string>;
   /** Optional. User-defined name for the Application. Can have a maximum length of 63 characters. */
@@ -74,12 +72,6 @@ export interface ApplicationConfig {
   name?: string | Computed<string>;
   /** Scope of an application. */
   scope?: Application_Attributes_Criticality | Computed<Application_Attributes_Criticality>;
-  /** Output only. Application state. */
-  state?: string | Computed<string>;
-  /** Output only. A universally unique identifier (in UUID4 format) for the `Application`. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ApplicationAttrs {
@@ -111,7 +103,6 @@ export const Application: ResourceBinding<ApplicationConfig, ApplicationAttrs> =
       kind: "object",
       fields: Application_AttributesFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -120,8 +111,5 @@ export const Application: ResourceBinding<ApplicationConfig, ApplicationAttrs> =
       kind: "object",
       fields: Application_Attributes_CriticalityFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

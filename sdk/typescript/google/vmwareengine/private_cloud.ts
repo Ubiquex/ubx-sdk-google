@@ -98,34 +98,20 @@ const PrivateCloud_NetworkConfigFields: FieldMap = {
 };
 
 export interface PrivateCloudConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time when the resource was scheduled for deletion. */
-  deleteTime?: string | Computed<string>;
   /** User-provided description for this private cloud. */
   description?: string | Computed<string>;
   /** Encryption configuration for a private cloud. */
   encryptionConfig?: PrivateCloud_EncryptionConfig | Computed<PrivateCloud_EncryptionConfig>;
-  /** Output only. Time when the resource will be irreversibly deleted. */
-  expireTime?: string | Computed<string>;
   /** Details about a HCX Cloud Manager appliance. */
   hcx?: PrivateCloud_Hcx | Computed<PrivateCloud_Hcx>;
   /** Management cluster configuration. */
   managementCluster?: PrivateCloud_ManagementCluster | Computed<PrivateCloud_ManagementCluster>;
-  /** Output only. Identifier. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud` */
-  name?: string | Computed<string>;
   /** Network configuration in the consumer project with which the peering has to be done. */
   networkConfig?: PrivateCloud_NetworkConfig | Computed<PrivateCloud_NetworkConfig>;
   /** Details about a NSX Manager appliance. */
   nsx?: PrivateCloud_Hcx | Computed<PrivateCloud_Hcx>;
-  /** Output only. State of the resource. New values may be added to this enum when appropriate. */
-  state?: string | Computed<string>;
   /** Optional. Type of the private cloud. Defaults to STANDARD. */
   type?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
   /** Details about a vCenter Server management appliance. */
   vcenter?: PrivateCloud_Hcx | Computed<PrivateCloud_Hcx>;
 }
@@ -166,15 +152,12 @@ export interface PrivateCloudAttrs {
 export const PrivateCloud: ResourceBinding<PrivateCloudConfig, PrivateCloudAttrs> = {
   wireType: "google_vmwareengine_private_cloud",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     description: "description",
     encryptionConfig: {
       wireName: "encryption_config",
       kind: "object",
       fields: PrivateCloud_EncryptionConfigFields,
     },
-    expireTime: "expire_time",
     hcx: {
       wireName: "hcx",
       kind: "object",
@@ -185,7 +168,6 @@ export const PrivateCloud: ResourceBinding<PrivateCloudConfig, PrivateCloudAttrs
       kind: "object",
       fields: PrivateCloud_ManagementClusterFields,
     },
-    name: "name",
     networkConfig: {
       wireName: "network_config",
       kind: "object",
@@ -196,10 +178,7 @@ export const PrivateCloud: ResourceBinding<PrivateCloudConfig, PrivateCloudAttrs
       kind: "object",
       fields: PrivateCloud_HcxFields,
     },
-    state: "state",
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
     vcenter: {
       wireName: "vcenter",
       kind: "object",

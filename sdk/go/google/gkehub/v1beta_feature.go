@@ -10,15 +10,15 @@ type V1betaFeature_FleetDefaultMemberConfig_Configmanagement_Binauthz struct {
 
 type V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverrides_Containers struct {
 	ContainerName any
-	CpuLimit any
-	CpuRequest any
-	MemoryLimit any
+	CpuLimit      any
+	CpuRequest    any
+	MemoryLimit   any
 	MemoryRequest any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverrides struct {
-	Containers any
-	DeploymentName any
+	Containers          any
+	DeploymentName      any
 	DeploymentNamespace any
 }
 
@@ -126,13 +126,13 @@ type V1betaFeature_FleetDefaultMemberConfig_Configmanagement struct {
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_AzureadConfig struct {
-	ClientId any
-	ClientSecret any
+	ClientId              any
+	ClientSecret          any
 	EncryptedClientSecret any
-	GroupFormat any
-	KubectlRedirectUri any
-	Tenant any
-	UserClaim any
+	GroupFormat           any
+	KubectlRedirectUri    any
+	Tenant                any
+	UserClaim             any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_GoogleConfig struct {
@@ -140,21 +140,21 @@ type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_GoogleCo
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_Group struct {
-	BaseDn any
-	Filter any
+	BaseDn      any
+	Filter      any
 	IdAttribute any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_Server struct {
 	CertificateAuthorityData any
-	ConnectionType any
-	Host any
+	ConnectionType           any
+	Host                     any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentials struct {
-	Dn any
+	Dn                any
 	EncryptedPassword any
-	Password any
+	Password          any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccount struct {
@@ -162,55 +162,55 @@ type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConf
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_User struct {
-	BaseDn any
-	Filter any
-	IdAttribute any
+	BaseDn         any
+	Filter         any
+	IdAttribute    any
 	LoginAttribute any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig struct {
-	Group any
-	Server any
+	Group          any
+	Server         any
 	ServiceAccount any
-	User any
+	User           any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_OidcConfig struct {
 	CertificateAuthorityData any
-	ClientId any
-	ClientSecret any
-	DeployCloudConsoleProxy any
-	EnableAccessToken any
-	EncryptedClientSecret any
-	ExtraParams any
-	GroupPrefix any
-	GroupsClaim any
-	IssuerUri any
-	KubectlRedirectUri any
-	Scopes any
-	UserClaim any
-	UserPrefix any
+	ClientId                 any
+	ClientSecret             any
+	DeployCloudConsoleProxy  any
+	EnableAccessToken        any
+	EncryptedClientSecret    any
+	ExtraParams              any
+	GroupPrefix              any
+	GroupsClaim              any
+	IssuerUri                any
+	KubectlRedirectUri       any
+	Scopes                   any
+	UserClaim                any
+	UserPrefix               any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_SamlConfig struct {
-	AttributeMapping any
-	GroupPrefix any
-	GroupsAttribute any
+	AttributeMapping             any
+	GroupPrefix                  any
+	GroupsAttribute              any
 	IdentityProviderCertificates any
-	IdentityProviderId any
-	IdentityProviderSsoUri any
-	UserAttribute any
-	UserPrefix any
+	IdentityProviderId           any
+	IdentityProviderSsoUri       any
+	UserAttribute                any
+	UserPrefix                   any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods struct {
 	AzureadConfig any
-	GoogleConfig any
-	LdapConfig any
-	Name any
-	OidcConfig any
-	Proxy any
-	SamlConfig any
+	GoogleConfig  any
+	LdapConfig    any
+	Name          any
+	OidcConfig    any
+	Proxy         any
+	SamlConfig    any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptions_DiagnosticInterface struct {
@@ -244,28 +244,28 @@ type V1betaFeature_FleetDefaultMemberConfig_Mesh struct {
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_Limits struct {
-	Cpu any
+	Cpu    any
 	Memory any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources struct {
-	Limits any
+	Limits   any
 	Requests any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerations struct {
-	Effect any
-	Key any
+	Effect   any
+	Key      any
 	Operator any
-	Value any
+	Value    any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs struct {
 	ContainerResources any
-	PodAffinity any
-	PodAntiAffinity any
-	PodTolerations any
-	ReplicaCount any
+	PodAffinity        any
+	PodAntiAffinity    any
+	PodTolerations     any
+	ReplicaCount       any
 }
 
 type V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_Bundles struct {
@@ -327,7 +327,7 @@ type V1betaFeature_FleetDefaultMemberConfig struct {
 
 type V1betaFeature_MembershipSpecs_Cloudbuild struct {
 	SecurityPolicy any
-	Version any
+	Version        any
 }
 
 type V1betaFeature_MembershipSpecs_Origin struct {
@@ -335,17 +335,17 @@ type V1betaFeature_MembershipSpecs_Origin struct {
 }
 
 type V1betaFeature_MembershipSpecs struct {
-	Cloudbuild any
-	Configmanagement any
+	Cloudbuild         any
+	Configmanagement   any
 	Fleetobservability any
-	Identityservice any
-	Mesh any
-	Origin any
-	Policycontroller any
+	Identityservice    any
+	Mesh               any
+	Origin             any
+	Policycontroller   any
 }
 
 type V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceeded struct {
-	Code any
+	Code        any
 	Description any
 }
 
@@ -355,27 +355,27 @@ type V1betaFeature_MembershipStates_Appdevexperience struct {
 
 type V1betaFeature_MembershipStates_Clusterupgrade_Ignored struct {
 	IgnoredTime any
-	Reason any
+	Reason      any
 }
 
 type V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_Status struct {
-	Code any
-	Reason any
+	Code       any
+	Reason     any
 	UpdateTime any
 }
 
 type V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_Upgrade struct {
-	Name any
+	Name    any
 	Version any
 }
 
 type V1betaFeature_MembershipStates_Clusterupgrade_Upgrades struct {
-	Status any
+	Status  any
 	Upgrade any
 }
 
 type V1betaFeature_MembershipStates_Clusterupgrade struct {
-	Ignored any
+	Ignored  any
 	Upgrades any
 }
 
@@ -389,15 +389,15 @@ type V1betaFeature_MembershipStates_Configmanagement_BinauthzState struct {
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentState struct {
-	AdmissionWebhook any
-	GitSync any
-	Importer any
-	Monitor any
-	OtelCollector any
-	ReconcilerManager any
+	AdmissionWebhook               any
+	GitSync                        any
+	Importer                       any
+	Monitor                        any
+	OtelCollector                  any
+	ReconcilerManager              any
 	ResourceGroupControllerManager any
-	RootReconciler any
-	Syncer any
+	RootReconciler                 any
+	Syncer                         any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_Errors struct {
@@ -405,71 +405,71 @@ type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_Errors stru
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvk struct {
-	Group any
-	Kind any
+	Group   any
+	Kind    any
 	Version any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources struct {
-	ResourceGvk any
-	ResourceName any
+	ResourceGvk       any
+	ResourceName      any
 	ResourceNamespace any
-	SourcePath any
+	SourcePath        any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors struct {
-	Code any
-	ErrorMessage any
+	Code           any
+	ErrorMessage   any
 	ErrorResources any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState struct {
-	Code any
-	Errors any
-	ImportToken any
-	LastSync any
+	Code         any
+	Errors       any
+	ImportToken  any
+	LastSync     any
 	LastSyncTime any
-	SourceToken any
-	SyncToken any
+	SourceToken  any
+	SyncToken    any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState struct {
 	ClusterLevelStopSyncingState any
-	CrCount any
-	DeploymentState any
-	Errors any
-	ReposyncCrd any
-	RootsyncCrd any
-	State any
-	SyncState any
-	Version any
+	CrCount                      any
+	DeploymentState              any
+	Errors                       any
+	ReposyncCrd                  any
+	RootsyncCrd                  any
+	State                        any
+	SyncState                    any
+	Version                      any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerState_State struct {
 	Extension any
-	Hnc any
+	Hnc       any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerState struct {
-	State any
+	State   any
 	Version any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_OperatorState struct {
 	DeploymentState any
-	Errors any
-	Version any
+	Errors          any
+	Version         any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentState struct {
-	GatekeeperAudit any
+	GatekeeperAudit                  any
 	GatekeeperControllerManagerState any
-	GatekeeperMutation any
+	GatekeeperMutation               any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_Migration struct {
 	CopyTime any
-	Stage any
+	Stage    any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_Version struct {
@@ -478,101 +478,101 @@ type V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_Versi
 
 type V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState struct {
 	DeploymentState any
-	Migration any
-	Version any
+	Migration       any
+	Version         any
 }
 
 type V1betaFeature_MembershipStates_Configmanagement struct {
-	BinauthzState any
-	ClusterName any
-	ConfigSyncState any
-	HierarchyControllerState any
+	BinauthzState              any
+	ClusterName                any
+	ConfigSyncState            any
+	HierarchyControllerState   any
 	KubernetesApiServerVersion any
-	MembershipSpec any
-	OperatorState any
-	PolicyControllerState any
+	MembershipSpec             any
+	OperatorState              any
+	PolicyControllerState      any
 }
 
 type V1betaFeature_MembershipStates_Identityservice struct {
-	FailureReason any
+	FailureReason    any
 	InstalledVersion any
-	MemberConfig any
-	State any
+	MemberConfig     any
+	State            any
 }
 
 type V1betaFeature_MembershipStates_Metering struct {
-	LastMeasurementTime any
+	LastMeasurementTime                    any
 	PreciseLastMeasuredClusterVcpuCapacity any
 }
 
 type V1betaFeature_MembershipStates_Policycontroller_ComponentStates struct {
 	Details any
-	State any
+	State   any
 }
 
 type V1betaFeature_MembershipStates_Policycontroller_PolicyContentState struct {
-	BundleStates any
+	BundleStates               any
 	ReferentialSyncConfigState any
-	TemplateLibraryState any
+	TemplateLibraryState       any
 }
 
 type V1betaFeature_MembershipStates_Policycontroller struct {
-	ComponentStates any
+	ComponentStates    any
 	PolicyContentState any
-	State any
+	State              any
 }
 
 type V1betaFeature_MembershipStates_Servicemesh_Conditions struct {
-	Code any
-	Details any
+	Code              any
+	Details           any
 	DocumentationLink any
-	Severity any
+	Severity          any
 }
 
 type V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_Details struct {
-	Code any
+	Code    any
 	Details any
 }
 
 type V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagement struct {
-	Details any
+	Details        any
 	Implementation any
-	State any
+	State          any
 }
 
 type V1betaFeature_MembershipStates_Servicemesh_DataPlaneManagement struct {
 	Details any
-	State any
+	State   any
 }
 
 type V1betaFeature_MembershipStates_Servicemesh struct {
-	Conditions any
+	Conditions             any
 	ControlPlaneManagement any
-	DataPlaneManagement any
+	DataPlaneManagement    any
 }
 
 type V1betaFeature_MembershipStates_State struct {
-	Code any
+	Code        any
 	Description any
-	UpdateTime any
+	UpdateTime  any
 }
 
 type V1betaFeature_MembershipStates_Workloadidentity struct {
-	Description any
+	Description                  any
 	IdentityProviderStateDetails any
 }
 
 type V1betaFeature_MembershipStates struct {
-	Appdevexperience any
-	Clusterupgrade any
-	Configmanagement any
+	Appdevexperience   any
+	Clusterupgrade     any
+	Configmanagement   any
 	Fleetobservability any
-	Identityservice any
-	Metering any
-	Policycontroller any
-	Servicemesh any
-	State any
-	Workloadidentity any
+	Identityservice    any
+	Metering           any
+	Policycontroller   any
+	Servicemesh        any
+	State              any
+	Workloadidentity   any
 }
 
 type V1betaFeature_ResourceState struct {
@@ -590,7 +590,7 @@ type V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditions struct
 
 type V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides struct {
 	PostConditions any
-	Upgrade any
+	Upgrade        any
 }
 
 type V1betaFeature_Spec_Clusterupgrade struct {
@@ -668,15 +668,15 @@ type V1betaFeature_Spec struct {
 }
 
 type V1betaFeature_State_Clusterupgrade_GkeState_Conditions struct {
-	Reason any
-	Status any
-	Type any
+	Reason     any
+	Status     any
+	Type       any
 	UpdateTime any
 }
 
 type V1betaFeature_State_Clusterupgrade_GkeState_UpgradeState struct {
-	Stats any
-	Status any
+	Stats   any
+	Status  any
 	Upgrade any
 }
 
@@ -758,1166 +758,771 @@ type V1betaFeature_State struct {
 }
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_BinauthzFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverrides_ContainersFields = ubx.FieldMap{
-		"ContainerName": ubx.FieldSpec{WireName: "container_name"},
-		"CpuLimit": ubx.FieldSpec{WireName: "cpu_limit"},
-		"CpuRequest": ubx.FieldSpec{WireName: "cpu_request"},
-		"MemoryLimit": ubx.FieldSpec{WireName: "memory_limit"},
-		"MemoryRequest": ubx.FieldSpec{WireName: "memory_request"},
-	}
+	"ContainerName": ubx.FieldSpec{WireName: "container_name"},
+	"CpuLimit":      ubx.FieldSpec{WireName: "cpu_limit"},
+	"CpuRequest":    ubx.FieldSpec{WireName: "cpu_request"},
+	"MemoryLimit":   ubx.FieldSpec{WireName: "memory_limit"},
+	"MemoryRequest": ubx.FieldSpec{WireName: "memory_request"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverridesFields = ubx.FieldMap{
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverrides_ContainersFields,
-		},
-		"DeploymentName": ubx.FieldSpec{WireName: "deployment_name"},
-		"DeploymentNamespace": ubx.FieldSpec{WireName: "deployment_namespace"},
-	}
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverrides_ContainersFields,
+	},
+	"DeploymentName":      ubx.FieldSpec{WireName: "deployment_name"},
+	"DeploymentNamespace": ubx.FieldSpec{WireName: "deployment_namespace"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_GitFields = ubx.FieldMap{
-		"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
-		"HttpsProxy": ubx.FieldSpec{WireName: "https_proxy"},
-		"PolicyDir": ubx.FieldSpec{WireName: "policy_dir"},
-		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
-		"SyncBranch": ubx.FieldSpec{WireName: "sync_branch"},
-		"SyncRepo": ubx.FieldSpec{WireName: "sync_repo"},
-		"SyncRev": ubx.FieldSpec{WireName: "sync_rev"},
-		"SyncWaitSecs": ubx.FieldSpec{WireName: "sync_wait_secs"},
-	}
+	"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
+	"HttpsProxy":             ubx.FieldSpec{WireName: "https_proxy"},
+	"PolicyDir":              ubx.FieldSpec{WireName: "policy_dir"},
+	"SecretType":             ubx.FieldSpec{WireName: "secret_type"},
+	"SyncBranch":             ubx.FieldSpec{WireName: "sync_branch"},
+	"SyncRepo":               ubx.FieldSpec{WireName: "sync_repo"},
+	"SyncRev":                ubx.FieldSpec{WireName: "sync_rev"},
+	"SyncWaitSecs":           ubx.FieldSpec{WireName: "sync_wait_secs"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_OciFields = ubx.FieldMap{
-		"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
-		"PolicyDir": ubx.FieldSpec{WireName: "policy_dir"},
-		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
-		"SyncRepo": ubx.FieldSpec{WireName: "sync_repo"},
-		"SyncWaitSecs": ubx.FieldSpec{WireName: "sync_wait_secs"},
-	}
+	"GcpServiceAccountEmail": ubx.FieldSpec{WireName: "gcp_service_account_email"},
+	"PolicyDir":              ubx.FieldSpec{WireName: "policy_dir"},
+	"SecretType":             ubx.FieldSpec{WireName: "secret_type"},
+	"SyncRepo":               ubx.FieldSpec{WireName: "sync_repo"},
+	"SyncWaitSecs":           ubx.FieldSpec{WireName: "sync_wait_secs"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSyncFields = ubx.FieldMap{
-		"DeploymentOverrides": ubx.FieldSpec{
-			WireName: "deployment_overrides",
-			Kind: "list",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverridesFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_GitFields,
-		},
-		"MetricsGcpServiceAccountEmail": ubx.FieldSpec{WireName: "metrics_gcp_service_account_email"},
-		"Oci": ubx.FieldSpec{
-			WireName: "oci",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_OciFields,
-		},
-		"PreventDrift": ubx.FieldSpec{WireName: "prevent_drift"},
-		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
-		"StopSyncing": ubx.FieldSpec{WireName: "stop_syncing"},
-	}
+	"DeploymentOverrides": ubx.FieldSpec{
+		WireName: "deployment_overrides",
+		Kind:     "list",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_DeploymentOverridesFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_GitFields,
+	},
+	"MetricsGcpServiceAccountEmail": ubx.FieldSpec{WireName: "metrics_gcp_service_account_email"},
+	"Oci": ubx.FieldSpec{
+		WireName: "oci",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSync_OciFields,
+	},
+	"PreventDrift": ubx.FieldSpec{WireName: "prevent_drift"},
+	"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
+	"StopSyncing":  ubx.FieldSpec{WireName: "stop_syncing"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_HierarchyControllerFields = ubx.FieldMap{
-		"EnableHierarchicalResourceQuota": ubx.FieldSpec{WireName: "enable_hierarchical_resource_quota"},
-		"EnablePodTreeLabels": ubx.FieldSpec{WireName: "enable_pod_tree_labels"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"EnableHierarchicalResourceQuota": ubx.FieldSpec{WireName: "enable_hierarchical_resource_quota"},
+	"EnablePodTreeLabels":             ubx.FieldSpec{WireName: "enable_pod_tree_labels"},
+	"Enabled":                         ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyController_MonitoringFields = ubx.FieldMap{
-		"Backends": ubx.FieldSpec{WireName: "backends"},
-	}
+	"Backends": ubx.FieldSpec{WireName: "backends"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyControllerFields = ubx.FieldMap{
-		"AuditIntervalSeconds": ubx.FieldSpec{WireName: "audit_interval_seconds"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExemptableNamespaces": ubx.FieldSpec{WireName: "exemptable_namespaces"},
-		"LogDeniesEnabled": ubx.FieldSpec{WireName: "log_denies_enabled"},
-		"Monitoring": ubx.FieldSpec{
-			WireName: "monitoring",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyController_MonitoringFields,
-		},
-		"MutationEnabled": ubx.FieldSpec{WireName: "mutation_enabled"},
-		"ReferentialRulesEnabled": ubx.FieldSpec{WireName: "referential_rules_enabled"},
-		"TemplateLibraryInstalled": ubx.FieldSpec{WireName: "template_library_installed"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AuditIntervalSeconds": ubx.FieldSpec{WireName: "audit_interval_seconds"},
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"ExemptableNamespaces": ubx.FieldSpec{WireName: "exemptable_namespaces"},
+	"LogDeniesEnabled":     ubx.FieldSpec{WireName: "log_denies_enabled"},
+	"Monitoring": ubx.FieldSpec{
+		WireName: "monitoring",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyController_MonitoringFields,
+	},
+	"MutationEnabled":          ubx.FieldSpec{WireName: "mutation_enabled"},
+	"ReferentialRulesEnabled":  ubx.FieldSpec{WireName: "referential_rules_enabled"},
+	"TemplateLibraryInstalled": ubx.FieldSpec{WireName: "template_library_installed"},
+	"UpdateTime":               ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields = ubx.FieldMap{
-		"Binauthz": ubx.FieldSpec{
-			WireName: "binauthz",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_BinauthzFields,
-		},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"ConfigSync": ubx.FieldSpec{
-			WireName: "config_sync",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSyncFields,
-		},
-		"HierarchyController": ubx.FieldSpec{
-			WireName: "hierarchy_controller",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_HierarchyControllerFields,
-		},
-		"Management": ubx.FieldSpec{WireName: "management"},
-		"PolicyController": ubx.FieldSpec{
-			WireName: "policy_controller",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyControllerFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Binauthz": ubx.FieldSpec{
+		WireName: "binauthz",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_BinauthzFields,
+	},
+	"Cluster": ubx.FieldSpec{WireName: "cluster"},
+	"ConfigSync": ubx.FieldSpec{
+		WireName: "config_sync",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_ConfigSyncFields,
+	},
+	"HierarchyController": ubx.FieldSpec{
+		WireName: "hierarchy_controller",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_HierarchyControllerFields,
+	},
+	"Management": ubx.FieldSpec{WireName: "management"},
+	"PolicyController": ubx.FieldSpec{
+		WireName: "policy_controller",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyControllerFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_AzureadConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"EncryptedClientSecret": ubx.FieldSpec{WireName: "encrypted_client_secret"},
-		"GroupFormat": ubx.FieldSpec{WireName: "group_format"},
-		"KubectlRedirectUri": ubx.FieldSpec{WireName: "kubectl_redirect_uri"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"UserClaim": ubx.FieldSpec{WireName: "user_claim"},
-	}
+	"ClientId":              ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":          ubx.FieldSpec{WireName: "client_secret"},
+	"EncryptedClientSecret": ubx.FieldSpec{WireName: "encrypted_client_secret"},
+	"GroupFormat":           ubx.FieldSpec{WireName: "group_format"},
+	"KubectlRedirectUri":    ubx.FieldSpec{WireName: "kubectl_redirect_uri"},
+	"Tenant":                ubx.FieldSpec{WireName: "tenant"},
+	"UserClaim":             ubx.FieldSpec{WireName: "user_claim"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_GoogleConfigFields = ubx.FieldMap{
-		"Disable": ubx.FieldSpec{WireName: "disable"},
-	}
+	"Disable": ubx.FieldSpec{WireName: "disable"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_GroupFields = ubx.FieldMap{
-		"BaseDn": ubx.FieldSpec{WireName: "base_dn"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"IdAttribute": ubx.FieldSpec{WireName: "id_attribute"},
-	}
+	"BaseDn":      ubx.FieldSpec{WireName: "base_dn"},
+	"Filter":      ubx.FieldSpec{WireName: "filter"},
+	"IdAttribute": ubx.FieldSpec{WireName: "id_attribute"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServerFields = ubx.FieldMap{
-		"CertificateAuthorityData": ubx.FieldSpec{WireName: "certificate_authority_data"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-	}
+	"CertificateAuthorityData": ubx.FieldSpec{WireName: "certificate_authority_data"},
+	"ConnectionType":           ubx.FieldSpec{WireName: "connection_type"},
+	"Host":                     ubx.FieldSpec{WireName: "host"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentialsFields = ubx.FieldMap{
-		"Dn": ubx.FieldSpec{WireName: "dn"},
-		"EncryptedPassword": ubx.FieldSpec{WireName: "encrypted_password"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-	}
+	"Dn":                ubx.FieldSpec{WireName: "dn"},
+	"EncryptedPassword": ubx.FieldSpec{WireName: "encrypted_password"},
+	"Password":          ubx.FieldSpec{WireName: "password"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccountFields = ubx.FieldMap{
-		"SimpleBindCredentials": ubx.FieldSpec{
-			WireName: "simple_bind_credentials",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentialsFields,
-		},
-	}
+	"SimpleBindCredentials": ubx.FieldSpec{
+		WireName: "simple_bind_credentials",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccount_SimpleBindCredentialsFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_UserFields = ubx.FieldMap{
-		"BaseDn": ubx.FieldSpec{WireName: "base_dn"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"IdAttribute": ubx.FieldSpec{WireName: "id_attribute"},
-		"LoginAttribute": ubx.FieldSpec{WireName: "login_attribute"},
-	}
+	"BaseDn":         ubx.FieldSpec{WireName: "base_dn"},
+	"Filter":         ubx.FieldSpec{WireName: "filter"},
+	"IdAttribute":    ubx.FieldSpec{WireName: "id_attribute"},
+	"LoginAttribute": ubx.FieldSpec{WireName: "login_attribute"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfigFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{
-			WireName: "group",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_GroupFields,
-		},
-		"Server": ubx.FieldSpec{
-			WireName: "server",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServerFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccountFields,
-		},
-		"User": ubx.FieldSpec{
-			WireName: "user",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_UserFields,
-		},
-	}
+	"Group": ubx.FieldSpec{
+		WireName: "group",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_GroupFields,
+	},
+	"Server": ubx.FieldSpec{
+		WireName: "server",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServerFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_ServiceAccountFields,
+	},
+	"User": ubx.FieldSpec{
+		WireName: "user",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfig_UserFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_OidcConfigFields = ubx.FieldMap{
-		"CertificateAuthorityData": ubx.FieldSpec{WireName: "certificate_authority_data"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"DeployCloudConsoleProxy": ubx.FieldSpec{WireName: "deploy_cloud_console_proxy"},
-		"EnableAccessToken": ubx.FieldSpec{WireName: "enable_access_token"},
-		"EncryptedClientSecret": ubx.FieldSpec{WireName: "encrypted_client_secret"},
-		"ExtraParams": ubx.FieldSpec{WireName: "extra_params"},
-		"GroupPrefix": ubx.FieldSpec{WireName: "group_prefix"},
-		"GroupsClaim": ubx.FieldSpec{WireName: "groups_claim"},
-		"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
-		"KubectlRedirectUri": ubx.FieldSpec{WireName: "kubectl_redirect_uri"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"UserClaim": ubx.FieldSpec{WireName: "user_claim"},
-		"UserPrefix": ubx.FieldSpec{WireName: "user_prefix"},
-	}
+	"CertificateAuthorityData": ubx.FieldSpec{WireName: "certificate_authority_data"},
+	"ClientId":                 ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":             ubx.FieldSpec{WireName: "client_secret"},
+	"DeployCloudConsoleProxy":  ubx.FieldSpec{WireName: "deploy_cloud_console_proxy"},
+	"EnableAccessToken":        ubx.FieldSpec{WireName: "enable_access_token"},
+	"EncryptedClientSecret":    ubx.FieldSpec{WireName: "encrypted_client_secret"},
+	"ExtraParams":              ubx.FieldSpec{WireName: "extra_params"},
+	"GroupPrefix":              ubx.FieldSpec{WireName: "group_prefix"},
+	"GroupsClaim":              ubx.FieldSpec{WireName: "groups_claim"},
+	"IssuerUri":                ubx.FieldSpec{WireName: "issuer_uri"},
+	"KubectlRedirectUri":       ubx.FieldSpec{WireName: "kubectl_redirect_uri"},
+	"Scopes":                   ubx.FieldSpec{WireName: "scopes"},
+	"UserClaim":                ubx.FieldSpec{WireName: "user_claim"},
+	"UserPrefix":               ubx.FieldSpec{WireName: "user_prefix"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_SamlConfigFields = ubx.FieldMap{
-		"AttributeMapping": ubx.FieldSpec{WireName: "attribute_mapping"},
-		"GroupPrefix": ubx.FieldSpec{WireName: "group_prefix"},
-		"GroupsAttribute": ubx.FieldSpec{WireName: "groups_attribute"},
-		"IdentityProviderCertificates": ubx.FieldSpec{WireName: "identity_provider_certificates"},
-		"IdentityProviderId": ubx.FieldSpec{WireName: "identity_provider_id"},
-		"IdentityProviderSsoUri": ubx.FieldSpec{WireName: "identity_provider_sso_uri"},
-		"UserAttribute": ubx.FieldSpec{WireName: "user_attribute"},
-		"UserPrefix": ubx.FieldSpec{WireName: "user_prefix"},
-	}
+	"AttributeMapping":             ubx.FieldSpec{WireName: "attribute_mapping"},
+	"GroupPrefix":                  ubx.FieldSpec{WireName: "group_prefix"},
+	"GroupsAttribute":              ubx.FieldSpec{WireName: "groups_attribute"},
+	"IdentityProviderCertificates": ubx.FieldSpec{WireName: "identity_provider_certificates"},
+	"IdentityProviderId":           ubx.FieldSpec{WireName: "identity_provider_id"},
+	"IdentityProviderSsoUri":       ubx.FieldSpec{WireName: "identity_provider_sso_uri"},
+	"UserAttribute":                ubx.FieldSpec{WireName: "user_attribute"},
+	"UserPrefix":                   ubx.FieldSpec{WireName: "user_prefix"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethodsFields = ubx.FieldMap{
-		"AzureadConfig": ubx.FieldSpec{
-			WireName: "azuread_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_AzureadConfigFields,
-		},
-		"GoogleConfig": ubx.FieldSpec{
-			WireName: "google_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_GoogleConfigFields,
-		},
-		"LdapConfig": ubx.FieldSpec{
-			WireName: "ldap_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OidcConfig": ubx.FieldSpec{
-			WireName: "oidc_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_OidcConfigFields,
-		},
-		"Proxy": ubx.FieldSpec{WireName: "proxy"},
-		"SamlConfig": ubx.FieldSpec{
-			WireName: "saml_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_SamlConfigFields,
-		},
-	}
+	"AzureadConfig": ubx.FieldSpec{
+		WireName: "azuread_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_AzureadConfigFields,
+	},
+	"GoogleConfig": ubx.FieldSpec{
+		WireName: "google_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_GoogleConfigFields,
+	},
+	"LdapConfig": ubx.FieldSpec{
+		WireName: "ldap_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_LdapConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OidcConfig": ubx.FieldSpec{
+		WireName: "oidc_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_OidcConfigFields,
+	},
+	"Proxy": ubx.FieldSpec{WireName: "proxy"},
+	"SamlConfig": ubx.FieldSpec{
+		WireName: "saml_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethods_SamlConfigFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptions_DiagnosticInterfaceFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-	}
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptionsFields = ubx.FieldMap{
-		"DiagnosticInterface": ubx.FieldSpec{
-			WireName: "diagnostic_interface",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptions_DiagnosticInterfaceFields,
-		},
-		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
-	}
+	"DiagnosticInterface": ubx.FieldSpec{
+		WireName: "diagnostic_interface",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptions_DiagnosticInterfaceFields,
+	},
+	"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields = ubx.FieldMap{
-		"AuthMethods": ubx.FieldSpec{
-			WireName: "auth_methods",
-			Kind: "list",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethodsFields,
-		},
-		"IdentityServiceOptions": ubx.FieldSpec{
-			WireName: "identity_service_options",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptionsFields,
-		},
-	}
+	"AuthMethods": ubx.FieldSpec{
+		WireName: "auth_methods",
+		Kind:     "list",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_AuthMethodsFields,
+	},
+	"IdentityServiceOptions": ubx.FieldSpec{
+		WireName: "identity_service_options",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Identityservice_IdentityServiceOptionsFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_MeshFields = ubx.FieldMap{
-		"ConfigApi": ubx.FieldSpec{WireName: "config_api"},
-		"ControlPlane": ubx.FieldSpec{WireName: "control_plane"},
-		"Management": ubx.FieldSpec{WireName: "management"},
-	}
+	"ConfigApi":    ubx.FieldSpec{WireName: "config_api"},
+	"ControlPlane": ubx.FieldSpec{WireName: "control_plane"},
+	"Management":   ubx.FieldSpec{WireName: "management"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_LimitsFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-	}
+	"Cpu":    ubx.FieldSpec{WireName: "cpu"},
+	"Memory": ubx.FieldSpec{WireName: "memory"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResourcesFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_LimitsFields,
-		},
-		"Requests": ubx.FieldSpec{
-			WireName: "requests",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_LimitsFields,
-		},
-	}
+	"Limits": ubx.FieldSpec{
+		WireName: "limits",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_LimitsFields,
+	},
+	"Requests": ubx.FieldSpec{
+		WireName: "requests",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResources_LimitsFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerationsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect":   ubx.FieldSpec{WireName: "effect"},
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigsFields = ubx.FieldMap{
-		"ContainerResources": ubx.FieldSpec{
-			WireName: "container_resources",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResourcesFields,
-		},
-		"PodAffinity": ubx.FieldSpec{WireName: "pod_affinity"},
-		"PodAntiAffinity": ubx.FieldSpec{WireName: "pod_anti_affinity"},
-		"PodTolerations": ubx.FieldSpec{
-			WireName: "pod_tolerations",
-			Kind: "list",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerationsFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-	}
+	"ContainerResources": ubx.FieldSpec{
+		WireName: "container_resources",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_ContainerResourcesFields,
+	},
+	"PodAffinity":     ubx.FieldSpec{WireName: "pod_affinity"},
+	"PodAntiAffinity": ubx.FieldSpec{WireName: "pod_anti_affinity"},
+	"PodTolerations": ubx.FieldSpec{
+		WireName: "pod_tolerations",
+		Kind:     "list",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigs_PodTolerationsFields,
+	},
+	"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_BundlesFields = ubx.FieldMap{
-		"ExemptedNamespaces": ubx.FieldSpec{WireName: "exempted_namespaces"},
-	}
+	"ExemptedNamespaces": ubx.FieldSpec{WireName: "exempted_namespaces"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_TemplateLibraryFields = ubx.FieldMap{
-		"Installation": ubx.FieldSpec{WireName: "installation"},
-	}
+	"Installation": ubx.FieldSpec{WireName: "installation"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContentFields = ubx.FieldMap{
-		"Bundles": ubx.FieldSpec{
-			WireName: "bundles",
-			Kind: "map",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_BundlesFields,
-		},
-		"TemplateLibrary": ubx.FieldSpec{
-			WireName: "template_library",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_TemplateLibraryFields,
-		},
-	}
+	"Bundles": ubx.FieldSpec{
+		WireName: "bundles",
+		Kind:     "map",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_BundlesFields,
+	},
+	"TemplateLibrary": ubx.FieldSpec{
+		WireName: "template_library",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContent_TemplateLibraryFields,
+	},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfigFields = ubx.FieldMap{
-		"AuditIntervalSeconds": ubx.FieldSpec{WireName: "audit_interval_seconds"},
-		"ConstraintViolationLimit": ubx.FieldSpec{WireName: "constraint_violation_limit"},
-		"DeploymentConfigs": ubx.FieldSpec{
-			WireName: "deployment_configs",
-			Kind: "map",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigsFields,
-		},
-		"ExemptableNamespaces": ubx.FieldSpec{WireName: "exemptable_namespaces"},
-		"InstallSpec": ubx.FieldSpec{WireName: "install_spec"},
-		"LogDeniesEnabled": ubx.FieldSpec{WireName: "log_denies_enabled"},
-		"Monitoring": ubx.FieldSpec{
-			WireName: "monitoring",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyController_MonitoringFields,
-		},
-		"MutationEnabled": ubx.FieldSpec{WireName: "mutation_enabled"},
-		"PolicyContent": ubx.FieldSpec{
-			WireName: "policy_content",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContentFields,
-		},
-		"ReferentialRulesEnabled": ubx.FieldSpec{WireName: "referential_rules_enabled"},
-	}
+	"AuditIntervalSeconds":     ubx.FieldSpec{WireName: "audit_interval_seconds"},
+	"ConstraintViolationLimit": ubx.FieldSpec{WireName: "constraint_violation_limit"},
+	"DeploymentConfigs": ubx.FieldSpec{
+		WireName: "deployment_configs",
+		Kind:     "map",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_DeploymentConfigsFields,
+	},
+	"ExemptableNamespaces": ubx.FieldSpec{WireName: "exemptable_namespaces"},
+	"InstallSpec":          ubx.FieldSpec{WireName: "install_spec"},
+	"LogDeniesEnabled":     ubx.FieldSpec{WireName: "log_denies_enabled"},
+	"Monitoring": ubx.FieldSpec{
+		WireName: "monitoring",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Configmanagement_PolicyController_MonitoringFields,
+	},
+	"MutationEnabled": ubx.FieldSpec{WireName: "mutation_enabled"},
+	"PolicyContent": ubx.FieldSpec{
+		WireName: "policy_content",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfig_PolicyContentFields,
+	},
+	"ReferentialRulesEnabled": ubx.FieldSpec{WireName: "referential_rules_enabled"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfig_PolicycontrollerFields = ubx.FieldMap{
-		"PolicyControllerHubConfig": ubx.FieldSpec{
-			WireName: "policy_controller_hub_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"PolicyControllerHubConfig": ubx.FieldSpec{
+		WireName: "policy_controller_hub_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_Policycontroller_PolicyControllerHubConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaFeature_FleetDefaultMemberConfigFields = ubx.FieldMap{
-		"Configmanagement": ubx.FieldSpec{
-			WireName: "configmanagement",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
-		},
-		"Identityservice": ubx.FieldSpec{
-			WireName: "identityservice",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
-		},
-		"Mesh": ubx.FieldSpec{
-			WireName: "mesh",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_MeshFields,
-		},
-		"Policycontroller": ubx.FieldSpec{
-			WireName: "policycontroller",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_PolicycontrollerFields,
-		},
-	}
+	"Configmanagement": ubx.FieldSpec{
+		WireName: "configmanagement",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
+	},
+	"Identityservice": ubx.FieldSpec{
+		WireName: "identityservice",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
+	},
+	"Mesh": ubx.FieldSpec{
+		WireName: "mesh",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_MeshFields,
+	},
+	"Policycontroller": ubx.FieldSpec{
+		WireName: "policycontroller",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_PolicycontrollerFields,
+	},
+}
 
 var V1betaFeature_MembershipSpecs_CloudbuildFields = ubx.FieldMap{
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
+	"Version":        ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaFeature_MembershipSpecs_OriginFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaFeature_MembershipSpecsFields = ubx.FieldMap{
-		"Cloudbuild": ubx.FieldSpec{
-			WireName: "cloudbuild",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipSpecs_CloudbuildFields,
-		},
-		"Configmanagement": ubx.FieldSpec{
-			WireName: "configmanagement",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
-		},
-		"Fleetobservability": ubx.FieldSpec{WireName: "fleetobservability"},
-		"Identityservice": ubx.FieldSpec{
-			WireName: "identityservice",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
-		},
-		"Mesh": ubx.FieldSpec{
-			WireName: "mesh",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_MeshFields,
-		},
-		"Origin": ubx.FieldSpec{
-			WireName: "origin",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipSpecs_OriginFields,
-		},
-		"Policycontroller": ubx.FieldSpec{
-			WireName: "policycontroller",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_PolicycontrollerFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
-
-var V1betaFeature_MembershipStates_AppdevexperienceFields = ubx.FieldMap{
-		"NetworkingInstallSucceeded": ubx.FieldSpec{
-			WireName: "networking_install_succeeded",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Clusterupgrade_IgnoredFields = ubx.FieldMap{
-		"IgnoredTime": ubx.FieldSpec{WireName: "ignored_time"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
-
-var V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
-
-var V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
-
-var V1betaFeature_MembershipStates_Clusterupgrade_UpgradesFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-		},
-		"Upgrade": ubx.FieldSpec{
-			WireName: "upgrade",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_ClusterupgradeFields = ubx.FieldMap{
-		"Ignored": ubx.FieldSpec{
-			WireName: "ignored",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-		},
-		"Upgrades": ubx.FieldSpec{
-			WireName: "upgrades",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_UpgradesFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields = ubx.FieldMap{
-		"WebhookVersion": ubx.FieldSpec{WireName: "webhook_version"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_BinauthzStateFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_BinauthzState_VersionFields,
-		},
-		"Webhook": ubx.FieldSpec{WireName: "webhook"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields = ubx.FieldMap{
-		"AdmissionWebhook": ubx.FieldSpec{WireName: "admission_webhook"},
-		"GitSync": ubx.FieldSpec{WireName: "git_sync"},
-		"Importer": ubx.FieldSpec{WireName: "importer"},
-		"Monitor": ubx.FieldSpec{WireName: "monitor"},
-		"OtelCollector": ubx.FieldSpec{WireName: "otel_collector"},
-		"ReconcilerManager": ubx.FieldSpec{WireName: "reconciler_manager"},
-		"ResourceGroupControllerManager": ubx.FieldSpec{WireName: "resource_group_controller_manager"},
-		"RootReconciler": ubx.FieldSpec{WireName: "root_reconciler"},
-		"Syncer": ubx.FieldSpec{WireName: "syncer"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields = ubx.FieldMap{
-		"ResourceGvk": ubx.FieldSpec{
-			WireName: "resource_gvk",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResources_ResourceGvkFields,
-		},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"ResourceNamespace": ubx.FieldSpec{WireName: "resource_namespace"},
-		"SourcePath": ubx.FieldSpec{WireName: "source_path"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ErrorResources": ubx.FieldSpec{
-			WireName: "error_resources",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_Errors_ErrorResourcesFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncState_ErrorsFields,
-		},
-		"ImportToken": ubx.FieldSpec{WireName: "import_token"},
-		"LastSync": ubx.FieldSpec{WireName: "last_sync"},
-		"LastSyncTime": ubx.FieldSpec{WireName: "last_sync_time"},
-		"SourceToken": ubx.FieldSpec{WireName: "source_token"},
-		"SyncToken": ubx.FieldSpec{WireName: "sync_token"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields = ubx.FieldMap{
-		"ClusterLevelStopSyncingState": ubx.FieldSpec{WireName: "cluster_level_stop_syncing_state"},
-		"CrCount": ubx.FieldSpec{WireName: "cr_count"},
-		"DeploymentState": ubx.FieldSpec{
-			WireName: "deployment_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-		},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-		},
-		"ReposyncCrd": ubx.FieldSpec{WireName: "reposync_crd"},
-		"RootsyncCrd": ubx.FieldSpec{WireName: "rootsync_crd"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SyncState": ubx.FieldSpec{
-			WireName: "sync_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_SyncStateFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_DeploymentStateFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields = ubx.FieldMap{
-		"Extension": ubx.FieldSpec{WireName: "extension"},
-		"Hnc": ubx.FieldSpec{WireName: "hnc"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerState_StateFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_OperatorStateFields = ubx.FieldMap{
-		"DeploymentState": ubx.FieldSpec{WireName: "deployment_state"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncState_ErrorsFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields = ubx.FieldMap{
-		"GatekeeperAudit": ubx.FieldSpec{WireName: "gatekeeper_audit"},
-		"GatekeeperControllerManagerState": ubx.FieldSpec{WireName: "gatekeeper_controller_manager_state"},
-		"GatekeeperMutation": ubx.FieldSpec{WireName: "gatekeeper_mutation"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields = ubx.FieldMap{
-		"CopyTime": ubx.FieldSpec{WireName: "copy_time"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
-
-var V1betaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields = ubx.FieldMap{
-		"DeploymentState": ubx.FieldSpec{
-			WireName: "deployment_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_DeploymentStateFields,
-		},
-		"Migration": ubx.FieldSpec{
-			WireName: "migration",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_MigrationFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_PolicyControllerState_VersionFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_ConfigmanagementFields = ubx.FieldMap{
-		"BinauthzState": ubx.FieldSpec{
-			WireName: "binauthz_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_BinauthzStateFields,
-		},
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"ConfigSyncState": ubx.FieldSpec{
-			WireName: "config_sync_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_ConfigSyncStateFields,
-		},
-		"HierarchyControllerState": ubx.FieldSpec{
-			WireName: "hierarchy_controller_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_HierarchyControllerStateFields,
-		},
-		"KubernetesApiServerVersion": ubx.FieldSpec{WireName: "kubernetes_api_server_version"},
-		"MembershipSpec": ubx.FieldSpec{
-			WireName: "membership_spec",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
-		},
-		"OperatorState": ubx.FieldSpec{
-			WireName: "operator_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_OperatorStateFields,
-		},
-		"PolicyControllerState": ubx.FieldSpec{
-			WireName: "policy_controller_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Configmanagement_PolicyControllerStateFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_IdentityserviceFields = ubx.FieldMap{
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"InstalledVersion": ubx.FieldSpec{WireName: "installed_version"},
-		"MemberConfig": ubx.FieldSpec{
-			WireName: "member_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_MembershipStates_MeteringFields = ubx.FieldMap{
-		"LastMeasurementTime": ubx.FieldSpec{WireName: "last_measurement_time"},
-		"PreciseLastMeasuredClusterVcpuCapacity": ubx.FieldSpec{WireName: "precise_last_measured_cluster_vcpu_capacity"},
-	}
-
-var V1betaFeature_MembershipStates_Policycontroller_ComponentStatesFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_MembershipStates_Policycontroller_PolicyContentStateFields = ubx.FieldMap{
-		"BundleStates": ubx.FieldSpec{
-			WireName: "bundle_states",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-		},
-		"ReferentialSyncConfigState": ubx.FieldSpec{
-			WireName: "referential_sync_config_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-		},
-		"TemplateLibraryState": ubx.FieldSpec{
-			WireName: "template_library_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_PolicycontrollerFields = ubx.FieldMap{
-		"ComponentStates": ubx.FieldSpec{
-			WireName: "component_states",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Policycontroller_ComponentStatesFields,
-		},
-		"PolicyContentState": ubx.FieldSpec{
-			WireName: "policy_content_state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Policycontroller_PolicyContentStateFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_MembershipStates_Servicemesh_ConditionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
-
-var V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-	}
-
-var V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{
-			WireName: "details",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-		},
-		"Implementation": ubx.FieldSpec{WireName: "implementation"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{
-			WireName: "details",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagement_DetailsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_MembershipStates_ServicemeshFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_ConditionsFields,
-		},
-		"ControlPlaneManagement": ubx.FieldSpec{
-			WireName: "control_plane_management",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_ControlPlaneManagementFields,
-		},
-		"DataPlaneManagement": ubx.FieldSpec{
-			WireName: "data_plane_management",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_DataPlaneManagementFields,
-		},
-	}
-
-var V1betaFeature_MembershipStates_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
-
-var V1betaFeature_MembershipStates_WorkloadidentityFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IdentityProviderStateDetails": ubx.FieldSpec{
-			WireName: "identity_provider_state_details",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-		},
-	}
-
-var V1betaFeature_MembershipStatesFields = ubx.FieldMap{
-		"Appdevexperience": ubx.FieldSpec{
-			WireName: "appdevexperience",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_AppdevexperienceFields,
-		},
-		"Clusterupgrade": ubx.FieldSpec{
-			WireName: "clusterupgrade",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_ClusterupgradeFields,
-		},
-		"Configmanagement": ubx.FieldSpec{
-			WireName: "configmanagement",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_ConfigmanagementFields,
-		},
-		"Fleetobservability": ubx.FieldSpec{WireName: "fleetobservability"},
-		"Identityservice": ubx.FieldSpec{
-			WireName: "identityservice",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_IdentityserviceFields,
-		},
-		"Metering": ubx.FieldSpec{
-			WireName: "metering",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_MeteringFields,
-		},
-		"Policycontroller": ubx.FieldSpec{
-			WireName: "policycontroller",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_PolicycontrollerFields,
-		},
-		"Servicemesh": ubx.FieldSpec{
-			WireName: "servicemesh",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_ServicemeshFields,
-		},
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_StateFields,
-		},
-		"Workloadidentity": ubx.FieldSpec{
-			WireName: "workloadidentity",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_WorkloadidentityFields,
-		},
-	}
+	"Cloudbuild": ubx.FieldSpec{
+		WireName: "cloudbuild",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipSpecs_CloudbuildFields,
+	},
+	"Configmanagement": ubx.FieldSpec{
+		WireName: "configmanagement",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_ConfigmanagementFields,
+	},
+	"Fleetobservability": ubx.FieldSpec{WireName: "fleetobservability"},
+	"Identityservice": ubx.FieldSpec{
+		WireName: "identityservice",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_IdentityserviceFields,
+	},
+	"Mesh": ubx.FieldSpec{
+		WireName: "mesh",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_MeshFields,
+	},
+	"Origin": ubx.FieldSpec{
+		WireName: "origin",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipSpecs_OriginFields,
+	},
+	"Policycontroller": ubx.FieldSpec{
+		WireName: "policycontroller",
+		Kind:     "object",
+		Fields:   V1betaFeature_FleetDefaultMemberConfig_PolicycontrollerFields,
+	},
+}
 
 var V1betaFeature_ResourceStateFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1betaFeature_ScopeStatesFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_StateFields,
-		},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields = ubx.FieldMap{
-		"Soaking": ubx.FieldSpec{WireName: "soaking"},
-	}
+	"Soaking": ubx.FieldSpec{WireName: "soaking"},
+}
+
+var V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields = ubx.FieldMap{
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverridesFields = ubx.FieldMap{
-		"PostConditions": ubx.FieldSpec{
-			WireName: "post_conditions",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields,
-		},
-		"Upgrade": ubx.FieldSpec{
-			WireName: "upgrade",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-		},
-	}
+	"PostConditions": ubx.FieldSpec{
+		WireName: "post_conditions",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields,
+	},
+	"Upgrade": ubx.FieldSpec{
+		WireName: "upgrade",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
+	},
+}
 
 var V1betaFeature_Spec_ClusterupgradeFields = ubx.FieldMap{
-		"GkeUpgradeOverrides": ubx.FieldSpec{
-			WireName: "gke_upgrade_overrides",
-			Kind: "list",
-			Fields: V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverridesFields,
-		},
-		"PostConditions": ubx.FieldSpec{
-			WireName: "post_conditions",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields,
-		},
-		"UpstreamFleets": ubx.FieldSpec{WireName: "upstream_fleets"},
-	}
+	"GkeUpgradeOverrides": ubx.FieldSpec{
+		WireName: "gke_upgrade_overrides",
+		Kind:     "list",
+		Fields:   V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverridesFields,
+	},
+	"PostConditions": ubx.FieldSpec{
+		WireName: "post_conditions",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Clusterupgrade_GkeUpgradeOverrides_PostConditionsFields,
+	},
+	"UpstreamFleets": ubx.FieldSpec{WireName: "upstream_fleets"},
+}
 
 var V1betaFeature_Spec_Dataplanev2Fields = ubx.FieldMap{
-		"EnableEncryption": ubx.FieldSpec{WireName: "enable_encryption"},
-	}
+	"EnableEncryption": ubx.FieldSpec{WireName: "enable_encryption"},
+}
 
 var V1betaFeature_Spec_Fleetobservability_LoggingConfig_DefaultConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaFeature_Spec_Fleetobservability_LoggingConfigFields = ubx.FieldMap{
-		"DefaultConfig": ubx.FieldSpec{
-			WireName: "default_config",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Fleetobservability_LoggingConfig_DefaultConfigFields,
-		},
-		"FleetScopeLogsConfig": ubx.FieldSpec{
-			WireName: "fleet_scope_logs_config",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Fleetobservability_LoggingConfig_DefaultConfigFields,
-		},
-	}
+	"DefaultConfig": ubx.FieldSpec{
+		WireName: "default_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Fleetobservability_LoggingConfig_DefaultConfigFields,
+	},
+	"FleetScopeLogsConfig": ubx.FieldSpec{
+		WireName: "fleet_scope_logs_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Fleetobservability_LoggingConfig_DefaultConfigFields,
+	},
+}
 
 var V1betaFeature_Spec_FleetobservabilityFields = ubx.FieldMap{
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Fleetobservability_LoggingConfigFields,
-		},
-	}
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Fleetobservability_LoggingConfigFields,
+	},
+}
 
 var V1betaFeature_Spec_MeshFields = ubx.FieldMap{
-		"ModernizationCompatibility": ubx.FieldSpec{WireName: "modernization_compatibility"},
-		"ModernizationStrategy": ubx.FieldSpec{WireName: "modernization_strategy"},
-	}
+	"ModernizationCompatibility": ubx.FieldSpec{WireName: "modernization_compatibility"},
+	"ModernizationStrategy":      ubx.FieldSpec{WireName: "modernization_strategy"},
+}
 
 var V1betaFeature_Spec_MulticlusteringressFields = ubx.FieldMap{
-		"Billing": ubx.FieldSpec{WireName: "billing"},
-		"ConfigMembership": ubx.FieldSpec{WireName: "config_membership"},
-	}
+	"Billing":          ubx.FieldSpec{WireName: "billing"},
+	"ConfigMembership": ubx.FieldSpec{WireName: "config_membership"},
+}
 
 var V1betaFeature_Spec_RbacrolebindingactuationFields = ubx.FieldMap{
-		"AllowedCustomRoles": ubx.FieldSpec{WireName: "allowed_custom_roles"},
-	}
+	"AllowedCustomRoles": ubx.FieldSpec{WireName: "allowed_custom_roles"},
+}
 
 var V1betaFeature_Spec_WorkloadidentityFields = ubx.FieldMap{
-		"ScopeTenancyPool": ubx.FieldSpec{WireName: "scope_tenancy_pool"},
-	}
+	"ScopeTenancyPool": ubx.FieldSpec{WireName: "scope_tenancy_pool"},
+}
 
 var V1betaFeature_SpecFields = ubx.FieldMap{
-		"Appdevexperience": ubx.FieldSpec{WireName: "appdevexperience"},
-		"Clusterupgrade": ubx.FieldSpec{
-			WireName: "clusterupgrade",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_ClusterupgradeFields,
-		},
-		"Dataplanev2": ubx.FieldSpec{
-			WireName: "dataplanev2",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_Dataplanev2Fields,
-		},
-		"Fleetobservability": ubx.FieldSpec{
-			WireName: "fleetobservability",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_FleetobservabilityFields,
-		},
-		"Mesh": ubx.FieldSpec{
-			WireName: "mesh",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_MeshFields,
-		},
-		"Multiclusteringress": ubx.FieldSpec{
-			WireName: "multiclusteringress",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_MulticlusteringressFields,
-		},
-		"Rbacrolebindingactuation": ubx.FieldSpec{
-			WireName: "rbacrolebindingactuation",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_RbacrolebindingactuationFields,
-		},
-		"Workloadidentity": ubx.FieldSpec{
-			WireName: "workloadidentity",
-			Kind: "object",
-			Fields: V1betaFeature_Spec_WorkloadidentityFields,
-		},
-	}
+	"Appdevexperience": ubx.FieldSpec{WireName: "appdevexperience"},
+	"Clusterupgrade": ubx.FieldSpec{
+		WireName: "clusterupgrade",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_ClusterupgradeFields,
+	},
+	"Dataplanev2": ubx.FieldSpec{
+		WireName: "dataplanev2",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_Dataplanev2Fields,
+	},
+	"Fleetobservability": ubx.FieldSpec{
+		WireName: "fleetobservability",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_FleetobservabilityFields,
+	},
+	"Mesh": ubx.FieldSpec{
+		WireName: "mesh",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_MeshFields,
+	},
+	"Multiclusteringress": ubx.FieldSpec{
+		WireName: "multiclusteringress",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_MulticlusteringressFields,
+	},
+	"Rbacrolebindingactuation": ubx.FieldSpec{
+		WireName: "rbacrolebindingactuation",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_RbacrolebindingactuationFields,
+	},
+	"Workloadidentity": ubx.FieldSpec{
+		WireName: "workloadidentity",
+		Kind:     "object",
+		Fields:   V1betaFeature_Spec_WorkloadidentityFields,
+	},
+}
+
+var V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields = ubx.FieldMap{
+	"Code":        ubx.FieldSpec{WireName: "code"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+}
+
+var V1betaFeature_MembershipStates_AppdevexperienceFields = ubx.FieldMap{
+	"NetworkingInstallSucceeded": ubx.FieldSpec{
+		WireName: "networking_install_succeeded",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+	},
+}
 
 var V1betaFeature_State_Clusterupgrade_GkeState_ConditionsFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Reason":     ubx.FieldSpec{WireName: "reason"},
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
+
+var V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields = ubx.FieldMap{
+	"Code":       ubx.FieldSpec{WireName: "code"},
+	"Reason":     ubx.FieldSpec{WireName: "reason"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1betaFeature_State_Clusterupgrade_GkeState_UpgradeStateFields = ubx.FieldMap{
-		"Stats": ubx.FieldSpec{WireName: "stats"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
-		},
-		"Upgrade": ubx.FieldSpec{
-			WireName: "upgrade",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
-		},
-	}
+	"Stats": ubx.FieldSpec{WireName: "stats"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_StatusFields,
+	},
+	"Upgrade": ubx.FieldSpec{
+		WireName: "upgrade",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_Clusterupgrade_Upgrades_UpgradeFields,
+	},
+}
 
 var V1betaFeature_State_Clusterupgrade_GkeStateFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1betaFeature_State_Clusterupgrade_GkeState_ConditionsFields,
-		},
-		"UpgradeState": ubx.FieldSpec{
-			WireName: "upgrade_state",
-			Kind: "list",
-			Fields: V1betaFeature_State_Clusterupgrade_GkeState_UpgradeStateFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   V1betaFeature_State_Clusterupgrade_GkeState_ConditionsFields,
+	},
+	"UpgradeState": ubx.FieldSpec{
+		WireName: "upgrade_state",
+		Kind:     "list",
+		Fields:   V1betaFeature_State_Clusterupgrade_GkeState_UpgradeStateFields,
+	},
+}
+
+var V1betaFeature_MembershipStates_Clusterupgrade_IgnoredFields = ubx.FieldMap{
+	"IgnoredTime": ubx.FieldSpec{WireName: "ignored_time"},
+	"Reason":      ubx.FieldSpec{WireName: "reason"},
+}
 
 var V1betaFeature_State_ClusterupgradeFields = ubx.FieldMap{
-		"DownstreamFleets": ubx.FieldSpec{WireName: "downstream_fleets"},
-		"GkeState": ubx.FieldSpec{
-			WireName: "gke_state",
-			Kind: "object",
-			Fields: V1betaFeature_State_Clusterupgrade_GkeStateFields,
-		},
-		"Ignored": ubx.FieldSpec{
-			WireName: "ignored",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
-		},
-	}
+	"DownstreamFleets": ubx.FieldSpec{WireName: "downstream_fleets"},
+	"GkeState": ubx.FieldSpec{
+		WireName: "gke_state",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Clusterupgrade_GkeStateFields,
+	},
+	"Ignored": ubx.FieldSpec{
+		WireName: "ignored",
+		Kind:     "map",
+		Fields:   V1betaFeature_MembershipStates_Clusterupgrade_IgnoredFields,
+	},
+}
 
 var V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-		},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+	},
+}
 
 var V1betaFeature_State_Fleetobservability_LoggingFields = ubx.FieldMap{
-		"DefaultLog": ubx.FieldSpec{
-			WireName: "default_log",
-			Kind: "object",
-			Fields: V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
-		},
-		"ScopeLog": ubx.FieldSpec{
-			WireName: "scope_log",
-			Kind: "object",
-			Fields: V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
-		},
-	}
+	"DefaultLog": ubx.FieldSpec{
+		WireName: "default_log",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
+	},
+	"ScopeLog": ubx.FieldSpec{
+		WireName: "scope_log",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
+	},
+}
 
 var V1betaFeature_State_Fleetobservability_MonitoringFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
-		},
-	}
+	"State": ubx.FieldSpec{
+		WireName: "state",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Fleetobservability_Logging_DefaultLogFields,
+	},
+}
 
 var V1betaFeature_State_FleetobservabilityFields = ubx.FieldMap{
-		"Logging": ubx.FieldSpec{
-			WireName: "logging",
-			Kind: "object",
-			Fields: V1betaFeature_State_Fleetobservability_LoggingFields,
-		},
-		"Monitoring": ubx.FieldSpec{
-			WireName: "monitoring",
-			Kind: "object",
-			Fields: V1betaFeature_State_Fleetobservability_MonitoringFields,
-		},
-	}
+	"Logging": ubx.FieldSpec{
+		WireName: "logging",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Fleetobservability_LoggingFields,
+	},
+	"Monitoring": ubx.FieldSpec{
+		WireName: "monitoring",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_Fleetobservability_MonitoringFields,
+	},
+}
+
+var V1betaFeature_MembershipStates_Servicemesh_ConditionsFields = ubx.FieldMap{
+	"Code":              ubx.FieldSpec{WireName: "code"},
+	"Details":           ubx.FieldSpec{WireName: "details"},
+	"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
+	"Severity":          ubx.FieldSpec{WireName: "severity"},
+}
 
 var V1betaFeature_State_ServicemeshFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1betaFeature_MembershipStates_Servicemesh_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   V1betaFeature_MembershipStates_Servicemesh_ConditionsFields,
+	},
+}
+
+var V1betaFeature_MembershipStates_StateFields = ubx.FieldMap{
+	"Code":        ubx.FieldSpec{WireName: "code"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1betaFeature_State_WorkloadidentityFields = ubx.FieldMap{
-		"NamespaceStateDetails": ubx.FieldSpec{
-			WireName: "namespace_state_details",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-		},
-		"NamespaceStates": ubx.FieldSpec{WireName: "namespace_states"},
-		"ScopeTenancyWorkloadIdentityPool": ubx.FieldSpec{WireName: "scope_tenancy_workload_identity_pool"},
-		"WorkloadIdentityPool": ubx.FieldSpec{WireName: "workload_identity_pool"},
-		"WorkloadIdentityPoolStateDetails": ubx.FieldSpec{
-			WireName: "workload_identity_pool_state_details",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
-		},
-	}
+	"NamespaceStateDetails": ubx.FieldSpec{
+		WireName: "namespace_state_details",
+		Kind:     "map",
+		Fields:   V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+	},
+	"NamespaceStates":                  ubx.FieldSpec{WireName: "namespace_states"},
+	"ScopeTenancyWorkloadIdentityPool": ubx.FieldSpec{WireName: "scope_tenancy_workload_identity_pool"},
+	"WorkloadIdentityPool":             ubx.FieldSpec{WireName: "workload_identity_pool"},
+	"WorkloadIdentityPoolStateDetails": ubx.FieldSpec{
+		WireName: "workload_identity_pool_state_details",
+		Kind:     "map",
+		Fields:   V1betaFeature_MembershipStates_Appdevexperience_NetworkingInstallSucceededFields,
+	},
+}
 
 var V1betaFeature_StateFields = ubx.FieldMap{
-		"Appdevexperience": ubx.FieldSpec{
-			WireName: "appdevexperience",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_AppdevexperienceFields,
-		},
-		"Clusterupgrade": ubx.FieldSpec{
-			WireName: "clusterupgrade",
-			Kind: "object",
-			Fields: V1betaFeature_State_ClusterupgradeFields,
-		},
-		"Fleetobservability": ubx.FieldSpec{
-			WireName: "fleetobservability",
-			Kind: "object",
-			Fields: V1betaFeature_State_FleetobservabilityFields,
-		},
-		"Rbacrolebindingactuation": ubx.FieldSpec{WireName: "rbacrolebindingactuation"},
-		"Servicemesh": ubx.FieldSpec{
-			WireName: "servicemesh",
-			Kind: "object",
-			Fields: V1betaFeature_State_ServicemeshFields,
-		},
-		"State": ubx.FieldSpec{
-			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_MembershipStates_StateFields,
-		},
-		"Workloadidentity": ubx.FieldSpec{
-			WireName: "workloadidentity",
-			Kind: "object",
-			Fields: V1betaFeature_State_WorkloadidentityFields,
-		},
-	}
+	"Appdevexperience": ubx.FieldSpec{
+		WireName: "appdevexperience",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_AppdevexperienceFields,
+	},
+	"Clusterupgrade": ubx.FieldSpec{
+		WireName: "clusterupgrade",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_ClusterupgradeFields,
+	},
+	"Fleetobservability": ubx.FieldSpec{
+		WireName: "fleetobservability",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_FleetobservabilityFields,
+	},
+	"Rbacrolebindingactuation": ubx.FieldSpec{WireName: "rbacrolebindingactuation"},
+	"Servicemesh": ubx.FieldSpec{
+		WireName: "servicemesh",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_ServicemeshFields,
+	},
+	"State": ubx.FieldSpec{
+		WireName: "state",
+		Kind:     "object",
+		Fields:   V1betaFeature_MembershipStates_StateFields,
+	},
+	"Workloadidentity": ubx.FieldSpec{
+		WireName: "workloadidentity",
+		Kind:     "object",
+		Fields:   V1betaFeature_State_WorkloadidentityFields,
+	},
+}
 
 type V1betaFeatureConfig struct {
-	// Output only. When the Feature resource was created.
-	CreateTime any
-	// Output only. When the Feature resource was deleted.
-	DeleteTime any
 	// CommonFleetDefaultMemberConfigSpec contains default configuration information for memberships of a fleet
 	FleetDefaultMemberConfig any
 	// Labels for this Feature.
 	Labels any
 	// Optional. Membership-specific configuration for this Feature. If this Feature does not support any per-Membership configuration, this field may be unused. The keys indicate which Membership the configuration is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Membership is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature.
 	MembershipSpecs any
-	// Output only. Membership-specific Feature status. If this Feature does report any per-Membership status, this field may be unused. The keys indicate which Membership the state is for, in the form: `projects/{p}/locations/{l}/memberships/{m}` Where {p} is the project number, {l} is a valid location and {m} is a valid Membership in this project at that location. {p} MUST match the Feature's project number.
-	MembershipStates any
-	// Output only. The full, unique name of this Feature resource in the format `projects/*/locations/*/features/*`.
-	Name any
 	// FeatureResourceState describes the state of a Feature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the Feature in the Fleet and across Memberships.
 	ResourceState any
 	// Optional. Scope-specific configuration for this Feature. If this Feature does not support any per-Scope configuration, this field may be unused. The keys indicate which Scope the configuration is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project. {p} will always be returned as the project number, but the project ID is also accepted during input. If the same Scope is specified in the map twice (using the project ID form, and the project number form), exactly ONE of the entries will be saved, with no guarantees as to which. For this reason, it is recommended the same format be used for all entries when mutating a Feature.
 	ScopeSpecs any
-	// Output only. Scope-specific Feature status. If this Feature does report any per-Scope status, this field may be unused. The keys indicate which Scope the state is for, in the form: `projects/{p}/locations/global/scopes/{s}` Where {p} is the project, {s} is a valid Scope in this project. {p} WILL match the Feature's project.
-	ScopeStates any
 	// CommonFeatureSpec contains Fleet-wide configuration information
 	Spec any
 	// CommonFeatureState contains Fleet-wide Feature status information.
 	State any
-	// Output only. List of locations that could not be reached while fetching this feature.
-	Unreachable any
-	// Output only. When the Feature resource was last updated.
-	UpdateTime any
 }
 
 type V1betaFeatureAttrs struct {
@@ -1954,47 +1559,32 @@ type V1betaFeatureAttrs struct {
 var V1betaFeature = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_feature",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"FleetDefaultMemberConfig": ubx.FieldSpec{
 			WireName: "fleet_default_member_config",
-			Kind: "object",
-			Fields: V1betaFeature_FleetDefaultMemberConfigFields,
+			Kind:     "object",
+			Fields:   V1betaFeature_FleetDefaultMemberConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MembershipSpecs": ubx.FieldSpec{
 			WireName: "membership_specs",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipSpecsFields,
+			Kind:     "map",
+			Fields:   V1betaFeature_MembershipSpecsFields,
 		},
-		"MembershipStates": ubx.FieldSpec{
-			WireName: "membership_states",
-			Kind: "map",
-			Fields: V1betaFeature_MembershipStatesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceState": ubx.FieldSpec{
 			WireName: "resource_state",
-			Kind: "object",
-			Fields: V1betaFeature_ResourceStateFields,
+			Kind:     "object",
+			Fields:   V1betaFeature_ResourceStateFields,
 		},
 		"ScopeSpecs": ubx.FieldSpec{WireName: "scope_specs"},
-		"ScopeStates": ubx.FieldSpec{
-			WireName: "scope_states",
-			Kind: "map",
-			Fields: V1betaFeature_ScopeStatesFields,
-		},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1betaFeature_SpecFields,
+			Kind:     "object",
+			Fields:   V1betaFeature_SpecFields,
 		},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFeature_StateFields,
+			Kind:     "object",
+			Fields:   V1betaFeature_StateFields,
 		},
-		"Unreachable": ubx.FieldSpec{WireName: "unreachable"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

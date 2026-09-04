@@ -61,106 +61,12 @@ class V1alpha1ReportExportJob_SignedUriDestination:
     # Required. The file format to export.
     file_format: Any = None
 
-_V1alpha1ReportExportJob_RecentExecutions_Result_ErrorFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields = {
-    "file": ubx.FieldSpec(wire_name="file"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields = {
-    "columns_count": ubx.FieldSpec(wire_name="columns_count"),
-    "row_count": ubx.FieldSpec(wire_name="row_count"),
-    "signed_uri": ubx.FieldSpec(
-        wire_name="signed_uri",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields = {
-    "signed_uri": ubx.FieldSpec(
-        wire_name="signed_uri",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_EntriesFields = {
-    "csv_output_file": ubx.FieldSpec(
-        wire_name="csv_output_file",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields,
-    ),
-    "file_size_bytes": ubx.FieldSpec(wire_name="file_size_bytes"),
-    "xlsx_output_file": ubx.FieldSpec(
-        wire_name="xlsx_output_file",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFilesFields = {
-    "entries": ubx.FieldSpec(
-        wire_name="entries",
-        kind="list",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_EntriesFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_Result_SignedUrisFields = {
-    "signed_uris": ubx.FieldSpec(
-        wire_name="signed_uris",
-        kind="list",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutions_ResultFields = {
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_ErrorFields,
-    ),
-    "output_files": ubx.FieldSpec(
-        wire_name="output_files",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_OutputFilesFields,
-    ),
-    "signed_uris": ubx.FieldSpec(
-        wire_name="signed_uris",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_Result_SignedUrisFields,
-    ),
-}
-
-_V1alpha1ReportExportJob_RecentExecutionsFields = {
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "execution_id": ubx.FieldSpec(wire_name="execution_id"),
-    "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-    "progress_percentage": ubx.FieldSpec(wire_name="progress_percentage"),
-    "result": ubx.FieldSpec(
-        wire_name="result",
-        kind="object",
-        fields=_V1alpha1ReportExportJob_RecentExecutions_ResultFields,
-    ),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
 _V1alpha1ReportExportJob_SignedUriDestinationFields = {
     "file_format": ubx.FieldSpec(wire_name="file_format"),
 }
 
 @dataclasses.dataclass
 class V1alpha1ReportExportJobConfig:
-    # Output only. Identifier. Resource name.
-    name: Any = None
-    # Output only. Recent not expired executions of the export report job.
-    recent_executions: Any = None
     # Signed URI destination configuration.
     signed_uri_destination: Any = None
 
@@ -176,12 +82,6 @@ class V1alpha1ReportExportJobAttrs:
 V1alpha1ReportExportJob = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_report_export_job",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
-        "recent_executions": ubx.FieldSpec(
-            wire_name="recent_executions",
-            kind="list",
-            fields=_V1alpha1ReportExportJob_RecentExecutionsFields,
-        ),
         "signed_uri_destination": ubx.FieldSpec(
             wire_name="signed_uri_destination",
             kind="object",

@@ -29,43 +29,31 @@ type PrivateConnection_VpcPeeringConfig struct {
 }
 
 var PrivateConnection_ErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
-		"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Details":   ubx.FieldSpec{WireName: "details"},
+	"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
+	"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var PrivateConnection_PscInterfaceConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var PrivateConnection_VpcPeeringConfigFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
-	}
+	"Subnet": ubx.FieldSpec{WireName: "subnet"},
+	"Vpc":    ubx.FieldSpec{WireName: "vpc"},
+}
 
 type PrivateConnectionConfig struct {
-	// Output only. The create time of the resource.
-	CreateTime any
 	// Required. Display name.
 	DisplayName any
 	// Represent a user-facing Error.
 	Error any
 	// Labels.
 	Labels any
-	// Output only. Identifier. The resource's name.
-	Name any
 	// The PSC Interface configuration is used to create PSC Interface between Datastream and the consumer's PSC.
 	PscInterfaceConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The state of the Private Connection.
-	State any
-	// Output only. The update time of the resource.
-	UpdateTime any
 	// The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC.
 	VpcPeeringConfig any
 }
@@ -98,28 +86,22 @@ type PrivateConnectionAttrs struct {
 var PrivateConnection = ubx.ResourceBinding{
 	WireType: "google_datastream_private_connection",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: PrivateConnection_ErrorFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: PrivateConnection_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_PscInterfaceConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VpcPeeringConfig": ubx.FieldSpec{
 			WireName: "vpc_peering_config",
-			Kind: "object",
-			Fields: PrivateConnection_VpcPeeringConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_VpcPeeringConfigFields,
 		},
 	},
 }

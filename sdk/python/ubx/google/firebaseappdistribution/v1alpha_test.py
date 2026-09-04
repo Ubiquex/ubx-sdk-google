@@ -420,8 +420,6 @@ _V1alphaTest_LoginCredentialFields = {
 @dataclasses.dataclass
 class V1alphaTestConfig:
     ai_instructions: Any = None
-    # Output only. Timestamp when the test was run.
-    create_time: Any = None
     # Required. The results of the test on each device.
     device_executions: Any = None
     # Optional. Display name of the release test. Required if the release test is created with multiple goals.
@@ -434,8 +432,6 @@ class V1alphaTestConfig:
     results_bucket: Any = None
     # Optional. The test case that was used to generate this release test. Note: The test case may have changed or been deleted since the release test was created. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}`
     test_case: Any = None
-    # Output only. The state of the release test.
-    test_state: Any = None
 
 @dataclasses.dataclass
 class V1alphaTestAttrs:
@@ -465,7 +461,6 @@ V1alphaTest = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaTest_AiInstructionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "device_executions": ubx.FieldSpec(
             wire_name="device_executions",
             kind="list",
@@ -480,6 +475,5 @@ V1alphaTest = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "results_bucket": ubx.FieldSpec(wire_name="results_bucket"),
         "test_case": ubx.FieldSpec(wire_name="test_case"),
-        "test_state": ubx.FieldSpec(wire_name="test_state"),
     },
 )

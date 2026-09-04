@@ -29,12 +29,8 @@ _GoldengateConnectionAssignment_PropertiesFields = {
 
 @dataclasses.dataclass
 class GoldengateConnectionAssignmentConfig:
-    # Output only. The time when the connection assignment was created.
-    create_time: Any = None
     # Optional. The display name for the GoldengateConnectionAssignment.
     display_name: Any = None
-    # Output only. The OCID of the entitlement linked to this resource.
-    entitlement_id: Any = None
     # Optional. The labels or tags associated with the GoldengateConnectionAssignment.
     labels: Any = None
     # Identifier. The name of the GoldengateConnectionAssignment resource in the following format: projects/{project}/locations/{region}/goldengateConnectionAssignments/{goldengate_connection_assignment}
@@ -60,9 +56,7 @@ class GoldengateConnectionAssignmentAttrs:
 GoldengateConnectionAssignment = ubx.ResourceBinding(
     wire_type="google_oracledatabase_goldengate_connection_assignment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "properties": ubx.FieldSpec(

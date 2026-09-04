@@ -227,12 +227,8 @@ _Chart_DateRangeConfigFields = {
 class ChartConfig:
     # The action to be taken when the chart is clicked.
     action: Any = None
-    # Output only. Chart type.
-    chart_type: Any = None
     # Chart visualization type.
     chart_visualization_type: Any = None
-    # Output only. Chart create time.
-    create_time: Any = None
     # The request data for visualizing the dataset in the chart.
     data_source: Any = None
     # Date range configuration for dashboard charts.
@@ -247,8 +243,6 @@ class ChartConfig:
     height: Any = None
     # Identifier. Chart resource name. Format: projects/{project}/locations/{location}/dashboards/{dashboard}/charts/{chart}
     name: Any = None
-    # Output only. Chart last update time.
-    update_time: Any = None
     # The width of the chart in grid units.
     width: Any = None
 
@@ -289,9 +283,7 @@ Chart = ubx.ResourceBinding(
             kind="object",
             fields=_Chart_ActionFields,
         ),
-        "chart_type": ubx.FieldSpec(wire_name="chart_type"),
         "chart_visualization_type": ubx.FieldSpec(wire_name="chart_visualization_type"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_source": ubx.FieldSpec(
             wire_name="data_source",
             kind="object",
@@ -307,7 +299,6 @@ Chart = ubx.ResourceBinding(
         "filter": ubx.FieldSpec(wire_name="filter"),
         "height": ubx.FieldSpec(wire_name="height"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "width": ubx.FieldSpec(wire_name="width"),
     },
 )

@@ -66,8 +66,6 @@ _AuthorizationPolicy_RulesFields = {
 class AuthorizationPolicyConfig:
     # Required. The action to take when a rule match is found. Possible values are "ALLOW" or "DENY".
     action: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. Free-text description of the resource.
     description: Any = None
     # Optional. Set of label tags associated with the AuthorizationPolicy resource.
@@ -76,8 +74,6 @@ class AuthorizationPolicyConfig:
     name: Any = None
     # Optional. List of rules to match. Note that at least one of the rules must match in order for the action specified in the 'action' field to be taken. A rule is a match if there is a matching source and destination. If left blank, the action specified in the `action` field will be applied on every request.
     rules: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AuthorizationPolicyAttrs:
@@ -100,7 +96,6 @@ AuthorizationPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_authorization_policy",
     fields={
         "action": ubx.FieldSpec(wire_name="action"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -109,6 +104,5 @@ AuthorizationPolicy = ubx.ResourceBinding(
             kind="list",
             fields=_AuthorizationPolicy_RulesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

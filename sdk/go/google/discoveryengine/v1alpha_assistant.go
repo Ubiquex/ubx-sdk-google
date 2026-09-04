@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaAssistant_CustomerPolicy_BannedPhrases struct {
 	IgnoreDiacritics any
-	MatchType any
-	Phrase any
+	MatchType        any
+	Phrase           any
 }
 
 type V1alphaAssistant_CustomerPolicy_DataProtectionPolicy_SensitiveDataProtectionPolicy struct {
@@ -39,7 +39,7 @@ type V1alphaAssistant_CustomerPolicy struct {
 
 type V1alphaAssistant_EnabledTools_ToolInfo struct {
 	ToolDisplayName any
-	ToolName any
+	ToolName        any
 }
 
 type V1alphaAssistant_EnabledTools struct {
@@ -63,78 +63,76 @@ type V1alphaAssistant_GenerationConfig struct {
 }
 
 var V1alphaAssistant_CustomerPolicy_BannedPhrasesFields = ubx.FieldMap{
-		"IgnoreDiacritics": ubx.FieldSpec{WireName: "ignore_diacritics"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-		"Phrase": ubx.FieldSpec{WireName: "phrase"},
-	}
+	"IgnoreDiacritics": ubx.FieldSpec{WireName: "ignore_diacritics"},
+	"MatchType":        ubx.FieldSpec{WireName: "match_type"},
+	"Phrase":           ubx.FieldSpec{WireName: "phrase"},
+}
 
 var V1alphaAssistant_CustomerPolicy_DataProtectionPolicy_SensitiveDataProtectionPolicyFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var V1alphaAssistant_CustomerPolicy_DataProtectionPolicyFields = ubx.FieldMap{
-		"SensitiveDataProtectionPolicy": ubx.FieldSpec{
-			WireName: "sensitive_data_protection_policy",
-			Kind: "object",
-			Fields: V1alphaAssistant_CustomerPolicy_DataProtectionPolicy_SensitiveDataProtectionPolicyFields,
-		},
-	}
+	"SensitiveDataProtectionPolicy": ubx.FieldSpec{
+		WireName: "sensitive_data_protection_policy",
+		Kind:     "object",
+		Fields:   V1alphaAssistant_CustomerPolicy_DataProtectionPolicy_SensitiveDataProtectionPolicyFields,
+	},
+}
 
 var V1alphaAssistant_CustomerPolicy_ModelArmorConfigFields = ubx.FieldMap{
-		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
-		"ResponseTemplate": ubx.FieldSpec{WireName: "response_template"},
-		"UserPromptTemplate": ubx.FieldSpec{WireName: "user_prompt_template"},
-	}
+	"FailureMode":        ubx.FieldSpec{WireName: "failure_mode"},
+	"ResponseTemplate":   ubx.FieldSpec{WireName: "response_template"},
+	"UserPromptTemplate": ubx.FieldSpec{WireName: "user_prompt_template"},
+}
 
 var V1alphaAssistant_CustomerPolicyFields = ubx.FieldMap{
-		"BannedPhrases": ubx.FieldSpec{
-			WireName: "banned_phrases",
-			Kind: "list",
-			Fields: V1alphaAssistant_CustomerPolicy_BannedPhrasesFields,
-		},
-		"DataProtectionPolicy": ubx.FieldSpec{
-			WireName: "data_protection_policy",
-			Kind: "object",
-			Fields: V1alphaAssistant_CustomerPolicy_DataProtectionPolicyFields,
-		},
-		"ModelArmorConfig": ubx.FieldSpec{
-			WireName: "model_armor_config",
-			Kind: "object",
-			Fields: V1alphaAssistant_CustomerPolicy_ModelArmorConfigFields,
-		},
-	}
+	"BannedPhrases": ubx.FieldSpec{
+		WireName: "banned_phrases",
+		Kind:     "list",
+		Fields:   V1alphaAssistant_CustomerPolicy_BannedPhrasesFields,
+	},
+	"DataProtectionPolicy": ubx.FieldSpec{
+		WireName: "data_protection_policy",
+		Kind:     "object",
+		Fields:   V1alphaAssistant_CustomerPolicy_DataProtectionPolicyFields,
+	},
+	"ModelArmorConfig": ubx.FieldSpec{
+		WireName: "model_armor_config",
+		Kind:     "object",
+		Fields:   V1alphaAssistant_CustomerPolicy_ModelArmorConfigFields,
+	},
+}
 
 var V1alphaAssistant_EnabledTools_ToolInfoFields = ubx.FieldMap{
-		"ToolDisplayName": ubx.FieldSpec{WireName: "tool_display_name"},
-		"ToolName": ubx.FieldSpec{WireName: "tool_name"},
-	}
+	"ToolDisplayName": ubx.FieldSpec{WireName: "tool_display_name"},
+	"ToolName":        ubx.FieldSpec{WireName: "tool_name"},
+}
 
 var V1alphaAssistant_EnabledToolsFields = ubx.FieldMap{
-		"ToolInfo": ubx.FieldSpec{
-			WireName: "tool_info",
-			Kind: "list",
-			Fields: V1alphaAssistant_EnabledTools_ToolInfoFields,
-		},
-	}
+	"ToolInfo": ubx.FieldSpec{
+		WireName: "tool_info",
+		Kind:     "list",
+		Fields:   V1alphaAssistant_EnabledTools_ToolInfoFields,
+	},
+}
 
 var V1alphaAssistant_GenerationConfig_SystemInstructionFields = ubx.FieldMap{
-		"AdditionalSystemInstruction": ubx.FieldSpec{WireName: "additional_system_instruction"},
-	}
+	"AdditionalSystemInstruction": ubx.FieldSpec{WireName: "additional_system_instruction"},
+}
 
 var V1alphaAssistant_GenerationConfigFields = ubx.FieldMap{
-		"AllowedModelIds": ubx.FieldSpec{WireName: "allowed_model_ids"},
-		"DefaultLanguage": ubx.FieldSpec{WireName: "default_language"},
-		"DefaultModelId": ubx.FieldSpec{WireName: "default_model_id"},
-		"SystemInstruction": ubx.FieldSpec{
-			WireName: "system_instruction",
-			Kind: "object",
-			Fields: V1alphaAssistant_GenerationConfig_SystemInstructionFields,
-		},
-	}
+	"AllowedModelIds": ubx.FieldSpec{WireName: "allowed_model_ids"},
+	"DefaultLanguage": ubx.FieldSpec{WireName: "default_language"},
+	"DefaultModelId":  ubx.FieldSpec{WireName: "default_model_id"},
+	"SystemInstruction": ubx.FieldSpec{
+		WireName: "system_instruction",
+		Kind:     "object",
+		Fields:   V1alphaAssistant_GenerationConfig_SystemInstructionFields,
+	},
+}
 
 type V1alphaAssistantConfig struct {
-	// Output only. Represents the time when this Assistant was created.
-	CreateTime any
 	// Customer-defined policy for the assistant.
 	CustomerPolicy any
 	// Optional. This field controls the default web grounding toggle for end users if `web_grounding_type` is set to `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`. By default, this field is set to false. If `web_grounding_type` is `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`, end users will have web grounding enabled by default on UI. If true, grounding toggle will be disabled by default on UI. End users can still enable web grounding in the UI if web grounding is enabled.
@@ -151,8 +149,6 @@ type V1alphaAssistantConfig struct {
 	GenerationConfig any
 	// Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters.
 	Name any
-	// Output only. Represents the time when this Assistant was most recently updated.
-	UpdateTime any
 	// Optional. The type of web grounding to use.
 	WebGroundingType any
 }
@@ -185,28 +181,26 @@ type V1alphaAssistantAttrs struct {
 var V1alphaAssistant = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_assistant",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomerPolicy": ubx.FieldSpec{
 			WireName: "customer_policy",
-			Kind: "object",
-			Fields: V1alphaAssistant_CustomerPolicyFields,
+			Kind:     "object",
+			Fields:   V1alphaAssistant_CustomerPolicyFields,
 		},
 		"DefaultWebGroundingToggleOff": ubx.FieldSpec{WireName: "default_web_grounding_toggle_off"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableLocationContext": ubx.FieldSpec{WireName: "disable_location_context"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"DisableLocationContext":       ubx.FieldSpec{WireName: "disable_location_context"},
+		"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
 		"EnabledTools": ubx.FieldSpec{
 			WireName: "enabled_tools",
-			Kind: "map",
-			Fields: V1alphaAssistant_EnabledToolsFields,
+			Kind:     "map",
+			Fields:   V1alphaAssistant_EnabledToolsFields,
 		},
 		"GenerationConfig": ubx.FieldSpec{
 			WireName: "generation_config",
-			Kind: "object",
-			Fields: V1alphaAssistant_GenerationConfigFields,
+			Kind:     "object",
+			Fields:   V1alphaAssistant_GenerationConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"WebGroundingType": ubx.FieldSpec{WireName: "web_grounding_type"},
 	},
 }

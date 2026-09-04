@@ -272,8 +272,6 @@ export interface RoutineConfig {
   arguments?: Routine_Arguments[] | Computed<Routine_Arguments[]>;
   /** The status of a routine build. */
   buildStatus?: Routine_BuildStatus | Computed<Routine_BuildStatus>;
-  /** Output only. The time when this routine was created, in milliseconds since the epoch. */
-  creationTime?: string | Computed<string>;
   /** Optional. If set to `DATA_MASKING`, the function is validated and made available as a masking function. For more information, see [Create custom masking routines](https://cloud.google.com/bigquery/docs/user-defined-functions#custom-mask). */
   dataGovernanceType?: string | Computed<string>;
   /** Required. The body of the routine. For functions, this is the expression in the AS clause. If `language = "SQL"`, it is the substring inside (but excluding) the parentheses. For example, for the function created with the following statement: `CREATE FUNCTION JoinLines(x string, y string) as (concat(x, "\n", y))` The definition_body is `concat(x, "\n", y)` (\n is not replaced with linebreak). If `language="JAVASCRIPT"`, it is the evaluated string in the AS clause. For example, for the function created with the following statement: `CREATE FUNCTION f() RETURNS STRING LANGUAGE js AS 'return "\n";\n'` The definition_body is `return "\n";\n` Note that both \n are replaced with linebreaks. If `definition_body` references another routine, then that routine must be fully qualified with its project ID. */
@@ -282,16 +280,12 @@ export interface RoutineConfig {
   description?: string | Computed<string>;
   /** Optional. The determinism level of the JavaScript UDF, if defined. */
   determinismLevel?: string | Computed<string>;
-  /** Output only. A hash of this resource. */
-  etag?: string | Computed<string>;
   /** Options for the runtime of the external system. */
   externalRuntimeOptions?: Routine_ExternalRuntimeOptions | Computed<Routine_ExternalRuntimeOptions>;
   /** Optional. If language = "JAVASCRIPT", this field stores the path of the imported JAVASCRIPT libraries. */
   importedLibraries?: string[] | Computed<string[]>;
   /** Optional. Defaults to "SQL" if remote_function_options field is absent, not set otherwise. */
   language?: string | Computed<string>;
-  /** Output only. The time when this routine was last modified, in milliseconds since the epoch. */
-  lastModifiedTime?: string | Computed<string>;
   /** Options for a user-defined Python function. */
   pythonOptions?: Routine_PythonOptions | Computed<Routine_PythonOptions>;
   /** Options for a remote user-defined function. */
@@ -370,12 +364,10 @@ export const Routine: ResourceBinding<RoutineConfig, RoutineAttrs> = {
       kind: "object",
       fields: Routine_BuildStatusFields,
     },
-    creationTime: "creation_time",
     dataGovernanceType: "data_governance_type",
     definitionBody: "definition_body",
     description: "description",
     determinismLevel: "determinism_level",
-    etag: "etag",
     externalRuntimeOptions: {
       wireName: "external_runtime_options",
       kind: "object",
@@ -383,7 +375,6 @@ export const Routine: ResourceBinding<RoutineConfig, RoutineAttrs> = {
     },
     importedLibraries: "imported_libraries",
     language: "language",
-    lastModifiedTime: "last_modified_time",
     pythonOptions: {
       wireName: "python_options",
       kind: "object",

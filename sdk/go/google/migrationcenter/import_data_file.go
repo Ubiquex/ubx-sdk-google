@@ -13,22 +13,16 @@ type ImportDataFile_UploadFileInfo struct {
 }
 
 var ImportDataFile_UploadFileInfoFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"SignedUri": ubx.FieldSpec{WireName: "signed_uri"},
-		"UriExpirationTime": ubx.FieldSpec{WireName: "uri_expiration_time"},
-	}
+	"Headers":           ubx.FieldSpec{WireName: "headers"},
+	"SignedUri":         ubx.FieldSpec{WireName: "signed_uri"},
+	"UriExpirationTime": ubx.FieldSpec{WireName: "uri_expiration_time"},
+}
 
 type ImportDataFileConfig struct {
-	// Output only. The timestamp when the file was created.
-	CreateTime any
 	// Optional. User-friendly display name. Maximum length is 63 characters.
 	DisplayName any
 	// Required. The payload format.
 	Format any
-	// Output only. The name of the file.
-	Name any
-	// Output only. The state of the import data file.
-	State any
 	// A resource that contains a URI to which a data file can be uploaded.
 	UploadFileInfo any
 }
@@ -51,15 +45,12 @@ type ImportDataFileAttrs struct {
 var ImportDataFile = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_import_data_file",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
 		"UploadFileInfo": ubx.FieldSpec{
 			WireName: "upload_file_info",
-			Kind: "object",
-			Fields: ImportDataFile_UploadFileInfoFields,
+			Kind:     "object",
+			Fields:   ImportDataFile_UploadFileInfoFields,
 		},
 	},
 }

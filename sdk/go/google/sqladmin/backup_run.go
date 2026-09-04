@@ -27,26 +27,24 @@ type BackupRun_Error struct {
 }
 
 var BackupRun_DiskEncryptionConfigurationFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var BackupRun_DiskEncryptionStatusFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var BackupRun_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Kind":    ubx.FieldSpec{WireName: "kind"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type BackupRunConfig struct {
 	// Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
 	BackupKind any
-	// Output only. The instance database version at the time this backup was made.
-	DatabaseVersion any
 	// The description of this run, only applicable to on-demand backups.
 	Description any
 	// Disk encryption configuration for an instance.
@@ -67,8 +65,6 @@ type BackupRunConfig struct {
 	Kind any
 	// Location of the backups.
 	Location any
-	// Output only. The maximum chargeable bytes for the backup.
-	MaxChargeableBytes any
 	// The URI of this resource.
 	SelfLink any
 	// The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
@@ -127,36 +123,34 @@ type BackupRunAttrs struct {
 var BackupRun = ubx.ResourceBinding{
 	WireType: "google_sqladmin_backup_run",
 	Fields: ubx.FieldMap{
-		"BackupKind": ubx.FieldSpec{WireName: "backup_kind"},
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
+		"BackupKind":  ubx.FieldSpec{WireName: "backup_kind"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "disk_encryption_configuration",
-			Kind: "object",
-			Fields: BackupRun_DiskEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   BackupRun_DiskEncryptionConfigurationFields,
 		},
 		"DiskEncryptionStatus": ubx.FieldSpec{
 			WireName: "disk_encryption_status",
-			Kind: "object",
-			Fields: BackupRun_DiskEncryptionStatusFields,
+			Kind:     "object",
+			Fields:   BackupRun_DiskEncryptionStatusFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"EndTime":      ubx.FieldSpec{WireName: "end_time"},
 		"EnqueuedTime": ubx.FieldSpec{WireName: "enqueued_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: BackupRun_ErrorFields,
+			Kind:     "object",
+			Fields:   BackupRun_ErrorFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MaxChargeableBytes": ubx.FieldSpec{WireName: "max_chargeable_bytes"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Id":              ubx.FieldSpec{WireName: "id"},
+		"Instance":        ubx.FieldSpec{WireName: "instance"},
+		"Kind":            ubx.FieldSpec{WireName: "kind"},
+		"Location":        ubx.FieldSpec{WireName: "location"},
+		"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+		"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+		"Status":          ubx.FieldSpec{WireName: "status"},
+		"TimeZone":        ubx.FieldSpec{WireName: "time_zone"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
 	},
 }

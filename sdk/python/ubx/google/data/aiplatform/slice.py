@@ -53,7 +53,7 @@ class Slice_Slice:
 
 @dataclasses.dataclass
 class SliceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class SliceAttrs:
@@ -72,6 +72,5 @@ class SliceAttrs:
 Slice = ubx.DataSourceBinding(
     wire_type="google_aiplatform_slice",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

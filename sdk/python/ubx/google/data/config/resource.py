@@ -21,7 +21,7 @@ class Resource_TerraformInfo:
 
 @dataclasses.dataclass
 class ResourceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ResourceAttrs:
@@ -38,6 +38,5 @@ class ResourceAttrs:
 Resource = ubx.DataSourceBinding(
     wire_type="google_config_resource",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

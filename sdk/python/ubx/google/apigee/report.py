@@ -46,22 +46,14 @@ class ReportConfig:
     chart_type: Any = None
     # Legacy field: not used. This field contains a list of comments associated with custom report
     comments: Any = None
-    # Output only. Unix time when the app was created json key: createdAt
-    created_at: Any = None
     # This contains the list of dimensions for the report
     dimensions: Any = None
     # This is the display name for the report
     display_name: Any = None
-    # Output only. Environment name
-    environment: Any = None
     # This field contains the filter expression
     filter: Any = None
     # Legacy field: not used. Contains the from time for the report
     from_time: Any = None
-    # Output only. Modified time of this entity as milliseconds since epoch. json key: lastModifiedAt
-    last_modified_at: Any = None
-    # Output only. Last viewed time of this entity as milliseconds since epoch
-    last_viewed_at: Any = None
     # Legacy field: not used This field contains the limit for the result retrieved
     limit: Any = None
     # Required. This contains the list of metrics
@@ -70,8 +62,6 @@ class ReportConfig:
     name: Any = None
     # Legacy field: not used. This field contains the offset for the data
     offset: Any = None
-    # Output only. Organization name
-    organization: Any = None
     # This field contains report properties such as ui metadata etc.
     properties: Any = None
     # Legacy field: not used much. Contains the list of sort by columns
@@ -139,14 +129,10 @@ Report = ubx.ResourceBinding(
     fields={
         "chart_type": ubx.FieldSpec(wire_name="chart_type"),
         "comments": ubx.FieldSpec(wire_name="comments"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "dimensions": ubx.FieldSpec(wire_name="dimensions"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "environment": ubx.FieldSpec(wire_name="environment"),
         "filter": ubx.FieldSpec(wire_name="filter"),
         "from_time": ubx.FieldSpec(wire_name="from_time"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
-        "last_viewed_at": ubx.FieldSpec(wire_name="last_viewed_at"),
         "limit": ubx.FieldSpec(wire_name="limit"),
         "metrics": ubx.FieldSpec(
             wire_name="metrics",
@@ -155,7 +141,6 @@ Report = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "offset": ubx.FieldSpec(wire_name="offset"),
-        "organization": ubx.FieldSpec(wire_name="organization"),
         "properties": ubx.FieldSpec(
             wire_name="properties",
             kind="list",

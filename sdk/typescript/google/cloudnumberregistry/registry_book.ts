@@ -27,16 +27,10 @@ export interface RegistryBookConfig {
   aggregatedData?: RegistryBook_AggregatedData | Computed<RegistryBook_AggregatedData>;
   /** Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once. */
   claimedScopes?: string[] | Computed<string[]>;
-  /** Output only. The time at which the RegistryBook was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Whether the RegistryBook is the default one. */
-  isDefault?: boolean | Computed<boolean>;
   /** Optional. User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Identifier. The resource name of the RegistryBook. */
   name?: string | Computed<string>;
-  /** Output only. The time at which the RegistryBook was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface RegistryBookAttrs {
@@ -65,10 +59,7 @@ export const RegistryBook: ResourceBinding<RegistryBookConfig, RegistryBookAttrs
       fields: RegistryBook_AggregatedDataFields,
     },
     claimedScopes: "claimed_scopes",
-    createTime: "create_time",
-    isDefault: "is_default",
     labels: "labels",
     name: "name",
-    updateTime: "update_time",
   },
 };

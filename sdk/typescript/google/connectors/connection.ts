@@ -709,22 +709,14 @@ export interface ConnectionConfig {
   billingConfig?: Connection_BillingConfig | Computed<Connection_BillingConfig>;
   /** Optional. Configuration for configuring the connection with an external system. */
   configVariables?: Connection_AuthConfig_AdditionalVariables[] | Computed<Connection_AuthConfig_AdditionalVariables[]>;
-  /** Output only. Connection revision. This field is only updated when the connection is created or updated by User. */
-  connectionRevision?: string | Computed<string>;
   /** Required. Connector version on which the connection is created. The format is: projects/* /locations/* /providers/* /connectors/* /versions/* Only global location is supported for ConnectorVersion resource. */
   connectorVersion?: string | Computed<string>;
   /** This configuration provides infra configs like rate limit threshold which need to be configurable for every connector version */
   connectorVersionInfraConfig?: Connection_ConnectorVersionInfraConfig | Computed<Connection_ConnectorVersionInfraConfig>;
-  /** Output only. Flag to mark the version indicating the launch stage. */
-  connectorVersionLaunchStage?: string | Computed<string>;
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Configuration of the Connector's destination. Only accepted for Connectors that accepts user defined destination(s). */
   destinationConfigs?: Connection_DestinationConfigs[] | Computed<Connection_DestinationConfigs[]>;
-  /** Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName} */
-  envoyImageLocation?: string | Computed<string>;
   /** AuthConfig defines details of a authentication type. */
   euaOauthAuthConfig?: Connection_AuthConfig | Computed<Connection_AuthConfig>;
   /** Eventing Configuration of a connection next: 21 */
@@ -735,40 +727,24 @@ export interface ConnectionConfig {
   eventingRuntimeData?: Connection_EventingRuntimeData | Computed<Connection_EventingRuntimeData>;
   /** Optional. Fallback on admin credentials for the connection. If this both auth_override_enabled and fallback_on_admin_credentials are set to true, the connection will use the admin credentials if the dynamic auth header is not present during auth override. */
   fallbackOnAdminCredentials?: boolean | Computed<boolean>;
-  /** Output only. The name of the Hostname of the Service Directory service with TLS. */
-  host?: string | Computed<string>;
-  /** Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName} */
-  imageLocation?: string | Computed<string>;
-  /** Output only. Is trusted tester program enabled for the project. */
-  isTrustedTester?: boolean | Computed<boolean>;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Determines whether or no a connection is locked. If locked, a reason must be specified. */
   lockConfig?: Connection_LockConfig | Computed<Connection_LockConfig>;
   /** Log configuration for the connection. */
   logConfig?: Connection_LogConfig | Computed<Connection_LogConfig>;
-  /** Output only. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection} */
-  name?: string | Computed<string>;
   /** Node configuration for the connection. */
   nodeConfig?: Connection_NodeConfig | Computed<Connection_NodeConfig>;
   /** Optional. Service account needed for runtime plane to access Google Cloud resources. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors" */
-  serviceDirectory?: string | Computed<string>;
   /** SSL Configuration of a connection */
   sslConfig?: Connection_EventingConfig_SslConfig | Computed<Connection_EventingConfig_SslConfig>;
   /** ConnectionStatus indicates the state of the connection. */
   status?: Connection_Status | Computed<Connection_Status>;
-  /** Output only. This subscription type enum states the subscription type of the project. */
-  subscriptionType?: string | Computed<string>;
   /** Optional. Suspended indicates if a user has suspended a connection or not. */
   suspended?: boolean | Computed<boolean>;
-  /** Output only. The name of the Service Directory service with TLS. */
-  tlsServiceDirectory?: string | Computed<string>;
   /** Optional. Traffic shaping configuration for the connection. */
   trafficShapingConfigs?: Connection_TrafficShapingConfigs[] | Computed<Connection_TrafficShapingConfigs[]>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectionAttrs {
@@ -871,22 +847,18 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "list",
       fields: Connection_AuthConfig_AdditionalVariablesFields,
     },
-    connectionRevision: "connection_revision",
     connectorVersion: "connector_version",
     connectorVersionInfraConfig: {
       wireName: "connector_version_infra_config",
       kind: "object",
       fields: Connection_ConnectorVersionInfraConfigFields,
     },
-    connectorVersionLaunchStage: "connector_version_launch_stage",
-    createTime: "create_time",
     description: "description",
     destinationConfigs: {
       wireName: "destination_configs",
       kind: "list",
       fields: Connection_DestinationConfigsFields,
     },
-    envoyImageLocation: "envoy_image_location",
     euaOauthAuthConfig: {
       wireName: "eua_oauth_auth_config",
       kind: "object",
@@ -904,9 +876,6 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       fields: Connection_EventingRuntimeDataFields,
     },
     fallbackOnAdminCredentials: "fallback_on_admin_credentials",
-    host: "host",
-    imageLocation: "image_location",
-    isTrustedTester: "is_trusted_tester",
     labels: "labels",
     lockConfig: {
       wireName: "lock_config",
@@ -918,14 +887,12 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "object",
       fields: Connection_LogConfigFields,
     },
-    name: "name",
     nodeConfig: {
       wireName: "node_config",
       kind: "object",
       fields: Connection_NodeConfigFields,
     },
     serviceAccount: "service_account",
-    serviceDirectory: "service_directory",
     sslConfig: {
       wireName: "ssl_config",
       kind: "object",
@@ -936,14 +903,11 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "object",
       fields: Connection_StatusFields,
     },
-    subscriptionType: "subscription_type",
     suspended: "suspended",
-    tlsServiceDirectory: "tls_service_directory",
     trafficShapingConfigs: {
       wireName: "traffic_shaping_configs",
       kind: "list",
       fields: Connection_TrafficShapingConfigsFields,
     },
-    updateTime: "update_time",
   },
 };

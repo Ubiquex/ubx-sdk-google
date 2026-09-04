@@ -36,7 +36,6 @@ type Connector_MarketplaceConnectorDetails struct {
 }
 
 type ConnectorConfig struct {
-	Name any
 }
 
 type ConnectorAttrs struct {
@@ -62,7 +61,7 @@ type ConnectorAttrs struct {
 	LaunchStage any
 	// Marketplace connector details.
 	MarketplaceConnectorDetails any
-	Name any
+	Name                        any
 	// Output only. Tags of the connector.
 	Tags any
 	// Output only. Updated time.
@@ -73,7 +72,5 @@ type ConnectorAttrs struct {
 
 var Connector = ubx.DataSourceBinding{
 	WireType: "google_connectors_connector",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

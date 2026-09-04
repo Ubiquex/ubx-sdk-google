@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaWireGroup_Endpoints_Interconnects struct {
 	Interconnect any
-	VlanTags any
+	VlanTags     any
 }
 
 type AlphaWireGroup_Endpoints struct {
@@ -18,7 +18,7 @@ type AlphaWireGroup_ServiceLevel struct {
 }
 
 type AlphaWireGroup_Topology_Endpoints struct {
-	City any
+	City  any
 	Label any
 }
 
@@ -34,122 +34,91 @@ type AlphaWireGroup_WireGroupProperties struct {
 
 type AlphaWireGroup_WireInputs_WirePropertyOverrides struct {
 	BandwidthAllocation any
-	BandwidthMetered any
-	BandwidthUnmetered any
-	FaultResponse any
-	FlowManagement any
+	BandwidthMetered    any
+	BandwidthUnmetered  any
+	FaultResponse       any
+	FlowManagement      any
 	NetworkServiceClass any
 }
 
 type AlphaWireGroup_WireInputs struct {
-	AdminEnabled any
+	AdminEnabled          any
 	WirePropertyOverrides any
 }
 
 type AlphaWireGroup_Wires_Endpoints struct {
 	Interconnect any
-	VlanTag any
+	VlanTag      any
 }
 
 type AlphaWireGroup_Wires struct {
-	AdminEnabled any
-	Endpoints any
-	Label any
+	AdminEnabled   any
+	Endpoints      any
+	Label          any
 	WireProperties any
 }
 
 var AlphaWireGroup_Endpoints_InterconnectsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"VlanTags": ubx.FieldSpec{WireName: "vlan_tags"},
-	}
+	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+	"VlanTags":     ubx.FieldSpec{WireName: "vlan_tags"},
+}
 
 var AlphaWireGroup_EndpointsFields = ubx.FieldMap{
-		"Interconnects": ubx.FieldSpec{
-			WireName: "interconnects",
-			Kind: "map",
-			Fields: AlphaWireGroup_Endpoints_InterconnectsFields,
-		},
-	}
+	"Interconnects": ubx.FieldSpec{
+		WireName: "interconnects",
+		Kind:     "map",
+		Fields:   AlphaWireGroup_Endpoints_InterconnectsFields,
+	},
+}
 
 var AlphaWireGroup_ServiceLevelFields = ubx.FieldMap{
-		"AvailabilityClass": ubx.FieldSpec{WireName: "availability_class"},
-	}
+	"AvailabilityClass": ubx.FieldSpec{WireName: "availability_class"},
+}
 
 var AlphaWireGroup_Topology_EndpointsFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{WireName: "city"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"City":  ubx.FieldSpec{WireName: "city"},
+	"Label": ubx.FieldSpec{WireName: "label"},
+}
 
 var AlphaWireGroup_TopologyFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "list",
-			Fields: AlphaWireGroup_Topology_EndpointsFields,
-		},
-	}
+	"Endpoints": ubx.FieldSpec{
+		WireName: "endpoints",
+		Kind:     "list",
+		Fields:   AlphaWireGroup_Topology_EndpointsFields,
+	},
+}
 
 var AlphaWireGroup_WireGroupPropertiesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaWireGroup_WireInputs_WirePropertyOverridesFields = ubx.FieldMap{
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-		"BandwidthMetered": ubx.FieldSpec{WireName: "bandwidth_metered"},
-		"BandwidthUnmetered": ubx.FieldSpec{WireName: "bandwidth_unmetered"},
-		"FaultResponse": ubx.FieldSpec{WireName: "fault_response"},
-		"FlowManagement": ubx.FieldSpec{WireName: "flow_management"},
-		"NetworkServiceClass": ubx.FieldSpec{WireName: "network_service_class"},
-	}
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+	"BandwidthMetered":    ubx.FieldSpec{WireName: "bandwidth_metered"},
+	"BandwidthUnmetered":  ubx.FieldSpec{WireName: "bandwidth_unmetered"},
+	"FaultResponse":       ubx.FieldSpec{WireName: "fault_response"},
+	"FlowManagement":      ubx.FieldSpec{WireName: "flow_management"},
+	"NetworkServiceClass": ubx.FieldSpec{WireName: "network_service_class"},
+}
 
 var AlphaWireGroup_WireInputsFields = ubx.FieldMap{
-		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"WirePropertyOverrides": ubx.FieldSpec{
-			WireName: "wire_property_overrides",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-		},
-	}
-
-var AlphaWireGroup_Wires_EndpointsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"VlanTag": ubx.FieldSpec{WireName: "vlan_tag"},
-	}
-
-var AlphaWireGroup_WiresFields = ubx.FieldMap{
-		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "list",
-			Fields: AlphaWireGroup_Wires_EndpointsFields,
-		},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"WireProperties": ubx.FieldSpec{
-			WireName: "wire_properties",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-		},
-	}
+	"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
+	"WirePropertyOverrides": ubx.FieldSpec{
+		WireName: "wire_property_overrides",
+		Kind:     "object",
+		Fields:   AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
+	},
+}
 
 type AlphaWireGroupConfig struct {
 	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
 	AdminEnabled any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of the wire group.
 	Description any
 	// A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object.
 	Endpoints any
-	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
-	Reconciling any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	SelfLinkWithId any
 	// Service level details determined for the wire group configuration.
 	ServiceLevel any
 	// Topology details for the wire group.
@@ -160,8 +129,6 @@ type AlphaWireGroupConfig struct {
 	WireInputs any
 	// The properties of a wire.
 	WireProperties any
-	// Output only. The single/redundant wire(s) managed by the wire group.
-	Wires any
 }
 
 type AlphaWireGroupAttrs struct {
@@ -182,7 +149,7 @@ type AlphaWireGroupAttrs struct {
 	// Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
 	Reconciling any
 	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
+	SelfLink       any
 	SelfLinkWithId any
 	// Service level details determined for the wire group configuration.
 	ServiceLevel any
@@ -202,48 +169,37 @@ var AlphaWireGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_wire_group",
 	Fields: ubx.FieldMap{
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "map",
-			Fields: AlphaWireGroup_EndpointsFields,
+			Kind:     "map",
+			Fields:   AlphaWireGroup_EndpointsFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"ServiceLevel": ubx.FieldSpec{
 			WireName: "service_level",
-			Kind: "object",
-			Fields: AlphaWireGroup_ServiceLevelFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_ServiceLevelFields,
 		},
 		"Topology": ubx.FieldSpec{
 			WireName: "topology",
-			Kind: "object",
-			Fields: AlphaWireGroup_TopologyFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_TopologyFields,
 		},
 		"WireGroupProperties": ubx.FieldSpec{
 			WireName: "wire_group_properties",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireGroupPropertiesFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_WireGroupPropertiesFields,
 		},
 		"WireInputs": ubx.FieldSpec{
 			WireName: "wire_inputs",
-			Kind: "map",
-			Fields: AlphaWireGroup_WireInputsFields,
+			Kind:     "map",
+			Fields:   AlphaWireGroup_WireInputsFields,
 		},
 		"WireProperties": ubx.FieldSpec{
 			WireName: "wire_properties",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-		},
-		"Wires": ubx.FieldSpec{
-			WireName: "wires",
-			Kind: "list",
-			Fields: AlphaWireGroup_WiresFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
 		},
 	},
 }

@@ -61,7 +61,6 @@ export interface V1alphaInsight_Rows {
 }
 
 export interface V1alphaInsightConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -79,7 +78,6 @@ export interface V1alphaInsightAttrs {
 export const V1alphaInsight: DataSourceBinding<V1alphaInsightConfig, V1alphaInsightAttrs> = {
   wireType: "google_beyondcorp_v1alpha_insight",
   fields: {
-    name: "name",
     view: "view",
   },
 };

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1RepositoryConfig {
-  /** Output only. The time when the repository was created. */
-  createTime?: string | Computed<string>;
   /** The user-provided description of the repository. */
   description?: string | Computed<string>;
   /** Optional. The format of packages that are stored in the repository. */
@@ -14,14 +12,6 @@ export interface V1beta1RepositoryConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique. */
   name?: string | Computed<string>;
-  /** Output only. Whether or not this repository satisfies PZI. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Whether or not this repository satisfies PZS. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs. */
-  sizeBytes?: string | Computed<string>;
-  /** Output only. The time when the repository was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1RepositoryAttrs {
@@ -50,15 +40,10 @@ export interface V1beta1RepositoryAttrs {
 export const V1beta1Repository: ResourceBinding<V1beta1RepositoryConfig, V1beta1RepositoryAttrs> = {
   wireType: "google_artifactregistry_v1beta1_repository",
   fields: {
-    createTime: "create_time",
     description: "description",
     format: "format",
     kmsKeyName: "kms_key_name",
     labels: "labels",
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    sizeBytes: "size_bytes",
-    updateTime: "update_time",
   },
 };

@@ -75,40 +75,40 @@ type V1beta1BatchPredictionJob_Error struct {
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Metadata struct {
@@ -160,7 +160,7 @@ type V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAtt
 }
 
 type V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -274,14 +274,14 @@ type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_Explanatio
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline struct {
-	Bigquery any
-	Gcs any
+	Bigquery         any
+	Gcs              any
 	PredictionFormat any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig struct {
 	EnableFeatureAttributes any
-	ExplanationBaseline any
+	ExplanationBaseline     any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholds struct {
@@ -290,8 +290,8 @@ type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_Prediction
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig struct {
 	AttributionScoreDriftThresholds any
-	DefaultDriftThreshold any
-	DriftThresholds any
+	DefaultDriftThreshold           any
+	DriftThresholds                 any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategy_RandomSampleConfig struct {
@@ -303,24 +303,24 @@ type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDa
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset struct {
-	BigquerySource any
-	DataFormat any
-	Dataset any
-	GcsSource any
+	BigquerySource          any
+	DataFormat              any
+	Dataset                 any
+	GcsSource               any
 	LoggingSamplingStrategy any
-	TargetField any
+	TargetField             any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingPredictionSkewDetectionConfig struct {
 	AttributionScoreSkewThresholds any
-	DefaultSkewThreshold any
-	SkewThresholds any
+	DefaultSkewThreshold           any
+	SkewThresholds                 any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs struct {
-	ExplanationConfig any
-	PredictionDriftDetectionConfig any
-	TrainingDataset any
+	ExplanationConfig                     any
+	PredictionDriftDetectionConfig        any
+	TrainingDataset                       any
 	TrainingPredictionSkewDetectionConfig any
 }
 
@@ -337,26 +337,26 @@ type V1beta1BatchPredictionJob_ModelMonitoringConfig struct {
 
 type V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStats struct {
 	AnomalyDetectionThreshold any
-	AnomalyUri any
-	DistributionDeviation any
-	EndTime any
-	Score any
-	StartTime any
-	StatsUri any
+	AnomalyUri                any
+	DistributionDeviation     any
+	EndTime                   any
+	Score                     any
+	StartTime                 any
+	StatsUri                  any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats struct {
 	FeatureDisplayName any
-	PredictionStats any
-	Threshold any
-	TrainingStats any
+	PredictionStats    any
+	Threshold          any
+	TrainingStats      any
 }
 
 type V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies struct {
-	AnomalyCount any
+	AnomalyCount    any
 	DeployedModelId any
-	FeatureStats any
-	Objective any
+	FeatureStats    any
+	Objective       any
 }
 
 type V1beta1BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestination struct {
@@ -394,7 +394,7 @@ type V1beta1BatchPredictionJob_ResourcesConsumed struct {
 }
 
 type V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -505,650 +505,648 @@ type V1beta1BatchPredictionJob_UnmanagedContainerModel struct {
 }
 
 var V1beta1BatchPredictionJob_CompletionStatsFields = ubx.FieldMap{
-		"FailedCount": ubx.FieldSpec{WireName: "failed_count"},
-		"IncompleteCount": ubx.FieldSpec{WireName: "incomplete_count"},
-		"SuccessfulCount": ubx.FieldSpec{WireName: "successful_count"},
-		"SuccessfulForecastPointCount": ubx.FieldSpec{WireName: "successful_forecast_point_count"},
-	}
+	"FailedCount":                  ubx.FieldSpec{WireName: "failed_count"},
+	"IncompleteCount":              ubx.FieldSpec{WireName: "incomplete_count"},
+	"SuccessfulCount":              ubx.FieldSpec{WireName: "successful_count"},
+	"SuccessfulForecastPointCount": ubx.FieldSpec{WireName: "successful_forecast_point_count"},
+}
 
 var V1beta1BatchPredictionJob_DedicatedResources_FlexStartFields = ubx.FieldMap{
-		"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
-	}
+	"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
+}
 
 var V1beta1BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1BatchPredictionJob_DedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1BatchPredictionJob_DedicatedResourcesFields = ubx.FieldMap{
-		"FlexStart": ubx.FieldSpec{
-			WireName: "flex_start",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_DedicatedResources_FlexStartFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_DedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-		"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
-	}
+	"FlexStart": ubx.FieldSpec{
+		WireName: "flex_start",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_DedicatedResources_FlexStartFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_DedicatedResources_MachineSpecFields,
+	},
+	"MaxReplicaCount":      ubx.FieldSpec{WireName: "max_replica_count"},
+	"Spot":                 ubx.FieldSpec{WireName: "spot"},
+	"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
+}
 
 var V1beta1BatchPredictionJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1BatchPredictionJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_ParametersFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_InputConfig_BigquerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var V1beta1BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields = ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-	}
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+}
 
 var V1beta1BatchPredictionJob_InputConfigFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_InputConfig_BigquerySourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"InstancesFormat": ubx.FieldSpec{WireName: "instances_format"},
-		"VertexMultimodalDatasetSource": ubx.FieldSpec{
-			WireName: "vertex_multimodal_dataset_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields,
-		},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_InputConfig_BigquerySourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"InstancesFormat": ubx.FieldSpec{WireName: "instances_format"},
+	"VertexMultimodalDatasetSource": ubx.FieldSpec{
+		WireName: "vertex_multimodal_dataset_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_InstanceConfigFields = ubx.FieldMap{
-		"ExcludedFields": ubx.FieldSpec{WireName: "excluded_fields"},
-		"IncludedFields": ubx.FieldSpec{WireName: "included_fields"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KeyField": ubx.FieldSpec{WireName: "key_field"},
-	}
+	"ExcludedFields": ubx.FieldSpec{WireName: "excluded_fields"},
+	"IncludedFields": ubx.FieldSpec{WireName: "included_fields"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"KeyField":       ubx.FieldSpec{WireName: "key_field"},
+}
 
 var V1beta1BatchPredictionJob_ManualBatchTuningParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfig_EmailAlertConfigFields = ubx.FieldMap{
-		"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
-	}
+	"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfigFields = ubx.FieldMap{
-		"EmailAlertConfig": ubx.FieldSpec{
-			WireName: "email_alert_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfig_EmailAlertConfigFields,
-		},
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"NotificationChannels": ubx.FieldSpec{WireName: "notification_channels"},
-	}
+	"EmailAlertConfig": ubx.FieldSpec{
+		WireName: "email_alert_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfig_EmailAlertConfigFields,
+	},
+	"EnableLogging":        ubx.FieldSpec{WireName: "enable_logging"},
+	"NotificationChannels": ubx.FieldSpec{WireName: "notification_channels"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaselineFields = ubx.FieldMap{
-		"Bigquery": ubx.FieldSpec{
-			WireName: "bigquery",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
-		},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
-		},
-		"PredictionFormat": ubx.FieldSpec{WireName: "prediction_format"},
-	}
+	"Bigquery": ubx.FieldSpec{
+		WireName: "bigquery",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
+	},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
+	},
+	"PredictionFormat": ubx.FieldSpec{WireName: "prediction_format"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfigFields = ubx.FieldMap{
-		"EnableFeatureAttributes": ubx.FieldSpec{WireName: "enable_feature_attributes"},
-		"ExplanationBaseline": ubx.FieldSpec{
-			WireName: "explanation_baseline",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaselineFields,
-		},
-	}
+	"EnableFeatureAttributes": ubx.FieldSpec{WireName: "enable_feature_attributes"},
+	"ExplanationBaseline": ubx.FieldSpec{
+		WireName: "explanation_baseline",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaselineFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfigFields = ubx.FieldMap{
-		"AttributionScoreDriftThresholds": ubx.FieldSpec{
-			WireName: "attribution_score_drift_thresholds",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DefaultDriftThreshold": ubx.FieldSpec{
-			WireName: "default_drift_threshold",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DriftThresholds": ubx.FieldSpec{
-			WireName: "drift_thresholds",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-	}
+	"AttributionScoreDriftThresholds": ubx.FieldSpec{
+		WireName: "attribution_score_drift_thresholds",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DefaultDriftThreshold": ubx.FieldSpec{
+		WireName: "default_drift_threshold",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DriftThresholds": ubx.FieldSpec{
+		WireName: "drift_thresholds",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategy_RandomSampleConfigFields = ubx.FieldMap{
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategyFields = ubx.FieldMap{
-		"RandomSampleConfig": ubx.FieldSpec{
-			WireName: "random_sample_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategy_RandomSampleConfigFields,
-		},
-	}
+	"RandomSampleConfig": ubx.FieldSpec{
+		WireName: "random_sample_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategy_RandomSampleConfigFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDatasetFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_InputConfig_BigquerySourceFields,
-		},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"LoggingSamplingStrategy": ubx.FieldSpec{
-			WireName: "logging_sampling_strategy",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategyFields,
-		},
-		"TargetField": ubx.FieldSpec{WireName: "target_field"},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_InputConfig_BigquerySourceFields,
+	},
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"Dataset":    ubx.FieldSpec{WireName: "dataset"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"LoggingSamplingStrategy": ubx.FieldSpec{
+		WireName: "logging_sampling_strategy",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDataset_LoggingSamplingStrategyFields,
+	},
+	"TargetField": ubx.FieldSpec{WireName: "target_field"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingPredictionSkewDetectionConfigFields = ubx.FieldMap{
-		"AttributionScoreSkewThresholds": ubx.FieldSpec{
-			WireName: "attribution_score_skew_thresholds",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DefaultSkewThreshold": ubx.FieldSpec{
-			WireName: "default_skew_threshold",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"SkewThresholds": ubx.FieldSpec{
-			WireName: "skew_thresholds",
-			Kind: "map",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-	}
+	"AttributionScoreSkewThresholds": ubx.FieldSpec{
+		WireName: "attribution_score_skew_thresholds",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DefaultSkewThreshold": ubx.FieldSpec{
+		WireName: "default_skew_threshold",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"SkewThresholds": ubx.FieldSpec{
+		WireName: "skew_thresholds",
+		Kind:     "map",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigsFields = ubx.FieldMap{
-		"ExplanationConfig": ubx.FieldSpec{
-			WireName: "explanation_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfigFields,
-		},
-		"PredictionDriftDetectionConfig": ubx.FieldSpec{
-			WireName: "prediction_drift_detection_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfigFields,
-		},
-		"TrainingDataset": ubx.FieldSpec{
-			WireName: "training_dataset",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDatasetFields,
-		},
-		"TrainingPredictionSkewDetectionConfig": ubx.FieldSpec{
-			WireName: "training_prediction_skew_detection_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingPredictionSkewDetectionConfigFields,
-		},
-	}
+	"ExplanationConfig": ubx.FieldSpec{
+		WireName: "explanation_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfigFields,
+	},
+	"PredictionDriftDetectionConfig": ubx.FieldSpec{
+		WireName: "prediction_drift_detection_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfigFields,
+	},
+	"TrainingDataset": ubx.FieldSpec{
+		WireName: "training_dataset",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingDatasetFields,
+	},
+	"TrainingPredictionSkewDetectionConfig": ubx.FieldSpec{
+		WireName: "training_prediction_skew_detection_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_TrainingPredictionSkewDetectionConfigFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringConfigFields = ubx.FieldMap{
-		"AlertConfig": ubx.FieldSpec{
-			WireName: "alert_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfigFields,
-		},
-		"AnalysisInstanceSchemaUri": ubx.FieldSpec{WireName: "analysis_instance_schema_uri"},
-		"ObjectiveConfigs": ubx.FieldSpec{
-			WireName: "objective_configs",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigsFields,
-		},
-		"StatsAnomaliesBaseDirectory": ubx.FieldSpec{
-			WireName: "stats_anomalies_base_directory",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
-		},
-	}
+	"AlertConfig": ubx.FieldSpec{
+		WireName: "alert_config",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_AlertConfigFields,
+	},
+	"AnalysisInstanceSchemaUri": ubx.FieldSpec{WireName: "analysis_instance_schema_uri"},
+	"ObjectiveConfigs": ubx.FieldSpec{
+		WireName: "objective_configs",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigsFields,
+	},
+	"StatsAnomaliesBaseDirectory": ubx.FieldSpec{
+		WireName: "stats_anomalies_base_directory",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStatsFields = ubx.FieldMap{
-		"AnomalyDetectionThreshold": ubx.FieldSpec{WireName: "anomaly_detection_threshold"},
-		"AnomalyUri": ubx.FieldSpec{WireName: "anomaly_uri"},
-		"DistributionDeviation": ubx.FieldSpec{WireName: "distribution_deviation"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"StatsUri": ubx.FieldSpec{WireName: "stats_uri"},
-	}
+	"AnomalyDetectionThreshold": ubx.FieldSpec{WireName: "anomaly_detection_threshold"},
+	"AnomalyUri":                ubx.FieldSpec{WireName: "anomaly_uri"},
+	"DistributionDeviation":     ubx.FieldSpec{WireName: "distribution_deviation"},
+	"EndTime":                   ubx.FieldSpec{WireName: "end_time"},
+	"Score":                     ubx.FieldSpec{WireName: "score"},
+	"StartTime":                 ubx.FieldSpec{WireName: "start_time"},
+	"StatsUri":                  ubx.FieldSpec{WireName: "stats_uri"},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStatsFields = ubx.FieldMap{
-		"FeatureDisplayName": ubx.FieldSpec{WireName: "feature_display_name"},
-		"PredictionStats": ubx.FieldSpec{
-			WireName: "prediction_stats",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStatsFields,
-		},
-		"Threshold": ubx.FieldSpec{
-			WireName: "threshold",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"TrainingStats": ubx.FieldSpec{
-			WireName: "training_stats",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStatsFields,
-		},
-	}
+	"FeatureDisplayName": ubx.FieldSpec{WireName: "feature_display_name"},
+	"PredictionStats": ubx.FieldSpec{
+		WireName: "prediction_stats",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStatsFields,
+	},
+	"Threshold": ubx.FieldSpec{
+		WireName: "threshold",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"TrainingStats": ubx.FieldSpec{
+		WireName: "training_stats",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStats_PredictionStatsFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_ModelMonitoringStatsAnomaliesFields = ubx.FieldMap{
-		"AnomalyCount": ubx.FieldSpec{WireName: "anomaly_count"},
-		"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
-		"FeatureStats": ubx.FieldSpec{
-			WireName: "feature_stats",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStatsFields,
-		},
-		"Objective": ubx.FieldSpec{WireName: "objective"},
-	}
+	"AnomalyCount":    ubx.FieldSpec{WireName: "anomaly_count"},
+	"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
+	"FeatureStats": ubx.FieldSpec{
+		WireName: "feature_stats",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringStatsAnomalies_FeatureStatsFields,
+	},
+	"Objective": ubx.FieldSpec{WireName: "objective"},
+}
 
 var V1beta1BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var V1beta1BatchPredictionJob_OutputConfigFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
-		},
-		"GcsDestination": ubx.FieldSpec{
-			WireName: "gcs_destination",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
-		},
-		"PredictionsFormat": ubx.FieldSpec{WireName: "predictions_format"},
-		"VertexMultimodalDatasetDestination": ubx.FieldSpec{
-			WireName: "vertex_multimodal_dataset_destination",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields,
-		},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_BigqueryFields,
+	},
+	"GcsDestination": ubx.FieldSpec{
+		WireName: "gcs_destination",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfig_ObjectiveConfigs_ExplanationConfig_ExplanationBaseline_GcsFields,
+	},
+	"PredictionsFormat": ubx.FieldSpec{WireName: "predictions_format"},
+	"VertexMultimodalDatasetDestination": ubx.FieldSpec{
+		WireName: "vertex_multimodal_dataset_destination",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_OutputInfoFields = ubx.FieldMap{
-		"BigqueryOutputDataset": ubx.FieldSpec{WireName: "bigquery_output_dataset"},
-		"BigqueryOutputTable": ubx.FieldSpec{WireName: "bigquery_output_table"},
-		"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
-		"VertexMultimodalDatasetName": ubx.FieldSpec{WireName: "vertex_multimodal_dataset_name"},
-	}
+	"BigqueryOutputDataset":       ubx.FieldSpec{WireName: "bigquery_output_dataset"},
+	"BigqueryOutputTable":         ubx.FieldSpec{WireName: "bigquery_output_table"},
+	"GcsOutputDirectory":          ubx.FieldSpec{WireName: "gcs_output_directory"},
+	"VertexMultimodalDatasetName": ubx.FieldSpec{WireName: "vertex_multimodal_dataset_name"},
+}
 
 var V1beta1BatchPredictionJob_ResourcesConsumedFields = ubx.FieldMap{
-		"ReplicaHours": ubx.FieldSpec{WireName: "replica_hours"},
-	}
+	"ReplicaHours": ubx.FieldSpec{WireName: "replica_hours"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
+	},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+	"Port":   ubx.FieldSpec{WireName: "port"},
+	"Scheme": ubx.FieldSpec{WireName: "scheme"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields,
-		},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields,
-		},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields,
+	},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"SuccessThreshold":    ubx.FieldSpec{WireName: "success_threshold"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields,
+	},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
-		},
-		"GrpcPorts": ubx.FieldSpec{
-			WireName: "grpc_ports",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
-		},
-		"HealthProbe": ubx.FieldSpec{
-			WireName: "health_probe",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-		"HealthRoute": ubx.FieldSpec{WireName: "health_route"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
-		},
-		"PredictRoute": ubx.FieldSpec{WireName: "predict_route"},
-		"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-	}
+	"Args":              ubx.FieldSpec{WireName: "args"},
+	"Command":           ubx.FieldSpec{WireName: "command"},
+	"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
+	},
+	"GrpcPorts": ubx.FieldSpec{
+		WireName: "grpc_ports",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
+	},
+	"HealthProbe": ubx.FieldSpec{
+		WireName: "health_probe",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+	"HealthRoute":       ubx.FieldSpec{WireName: "health_route"},
+	"ImageUri":          ubx.FieldSpec{WireName: "image_uri"},
+	"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
+	},
+	"PredictRoute":       ubx.FieldSpec{WireName: "predict_route"},
+	"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields = ubx.FieldMap{
-		"InstanceSchemaUri": ubx.FieldSpec{WireName: "instance_schema_uri"},
-		"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
-		"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
-	}
+	"InstanceSchemaUri":   ubx.FieldSpec{WireName: "instance_schema_uri"},
+	"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
+	"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
+}
 
 var V1beta1BatchPredictionJob_UnmanagedContainerModelFields = ubx.FieldMap{
-		"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields,
-		},
-		"PredictSchemata": ubx.FieldSpec{
-			WireName: "predict_schemata",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields,
-		},
-	}
+	"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields,
+	},
+	"PredictSchemata": ubx.FieldSpec{
+		WireName: "predict_schemata",
+		Kind:     "object",
+		Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields,
+	},
+}
 
 type V1beta1BatchPredictionJobConfig struct {
 	// Success and error statistics of processing multiple entities (for example, DataItems or structured data rows) in batch.
 	CompletionStats any
-	// Output only. Time when the BatchPredictionJob was created.
-	CreateTime any
 	// A description of resources that are used for performing batch operations, are dedicated to a Model, and need manual configuration.
 	DedicatedResources any
 	// For custom-trained Models and AutoML Tabular Models, the container of the DeployedModel instances will send `stderr` and `stdout` streams to Cloud Logging by default. Please note that the logs incur cost, which are subject to [Cloud Logging pricing](https://cloud.google.com/logging/pricing). User can disable container logging by setting this flag to true.
@@ -1157,8 +1155,6 @@ type V1beta1BatchPredictionJobConfig struct {
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the BatchPredictionJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-	EndTime any
 	// For Bring-Your-Own-Endpoint (BYOE), the name of the Endpoint resource that produces the predictions via this job, must share the same ancestor Location. Exactly one of model, unmanaged_container_model, or endpoint must be set. Example: `projects/193595526740/locations/us-central1/endpoints/4203439000301600768`
 	Endpoint any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -1185,32 +1181,16 @@ type V1beta1BatchPredictionJobConfig struct {
 	ModelMonitoringStatus any
 	// The parameters that govern the predictions. The schema of the parameters may be specified via the Model's PredictSchemata's parameters_schema_uri.
 	ModelParameters any
-	// Output only. The version ID of the Model that produces the predictions via this job.
-	ModelVersionId any
-	// Output only. Resource name of the BatchPredictionJob.
-	Name any
 	// Configures the output of BatchPredictionJob. See Model.supported_output_storage_formats for supported output formats, and how predictions are expressed via any of them.
 	OutputConfig any
 	// Further describes this job's output. Supplements output_config.
 	OutputInfo any
-	// Output only. Partial failures encountered. For example, single files that can't be read. This field never exceeds 20 entries. Status details fields contain standard Google Cloud error details.
-	PartialFailures any
 	// Statistics information about resource consumption.
 	ResourcesConsumed any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// The service account that the DeployedModel's container runs as. If not specified, a system generated one will be used, which has minimal permissions and the custom container, if used, may not have enough permission to access other Google Cloud resources. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
 	ServiceAccount any
-	// Output only. Time when the BatchPredictionJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
 	// Contains model information necessary to perform batch prediction without requiring a full model import.
 	UnmanagedContainerModel any
-	// Output only. Time when the BatchPredictionJob was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1BatchPredictionJobAttrs struct {
@@ -1287,100 +1267,86 @@ var V1beta1BatchPredictionJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompletionStats": ubx.FieldSpec{
 			WireName: "completion_stats",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_CompletionStatsFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_CompletionStatsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DedicatedResources": ubx.FieldSpec{
 			WireName: "dedicated_resources",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_DedicatedResourcesFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_DedicatedResourcesFields,
 		},
 		"DisableContainerLogging": ubx.FieldSpec{WireName: "disable_container_logging"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ErrorFields,
 		},
 		"ExplanationSpec": ubx.FieldSpec{
 			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ExplanationSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ExplanationSpecFields,
 		},
 		"GenerateExplanation": ubx.FieldSpec{WireName: "generate_explanation"},
 		"InputConfig": ubx.FieldSpec{
 			WireName: "input_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_InputConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_InputConfigFields,
 		},
 		"InstanceConfig": ubx.FieldSpec{
 			WireName: "instance_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_InstanceConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_InstanceConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManualBatchTuningParameters": ubx.FieldSpec{
 			WireName: "manual_batch_tuning_parameters",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ManualBatchTuningParametersFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ManualBatchTuningParametersFields,
 		},
 		"Model": ubx.FieldSpec{WireName: "model"},
 		"ModelMonitoringConfig": ubx.FieldSpec{
 			WireName: "model_monitoring_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ModelMonitoringConfigFields,
 		},
 		"ModelMonitoringStatsAnomalies": ubx.FieldSpec{
 			WireName: "model_monitoring_stats_anomalies",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ModelMonitoringStatsAnomaliesFields,
+			Kind:     "list",
+			Fields:   V1beta1BatchPredictionJob_ModelMonitoringStatsAnomaliesFields,
 		},
 		"ModelMonitoringStatus": ubx.FieldSpec{
 			WireName: "model_monitoring_status",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ErrorFields,
 		},
 		"ModelParameters": ubx.FieldSpec{WireName: "model_parameters"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutputConfig": ubx.FieldSpec{
 			WireName: "output_config",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_OutputConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_OutputConfigFields,
 		},
 		"OutputInfo": ubx.FieldSpec{
 			WireName: "output_info",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_OutputInfoFields,
-		},
-		"PartialFailures": ubx.FieldSpec{
-			WireName: "partial_failures",
-			Kind: "list",
-			Fields: V1beta1BatchPredictionJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_OutputInfoFields,
 		},
 		"ResourcesConsumed": ubx.FieldSpec{
 			WireName: "resources_consumed",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_ResourcesConsumedFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_ResourcesConsumedFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"UnmanagedContainerModel": ubx.FieldSpec{
 			WireName: "unmanaged_container_model",
-			Kind: "object",
-			Fields: V1beta1BatchPredictionJob_UnmanagedContainerModelFields,
+			Kind:     "object",
+			Fields:   V1beta1BatchPredictionJob_UnmanagedContainerModelFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

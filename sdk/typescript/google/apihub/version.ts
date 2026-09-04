@@ -96,36 +96,13 @@ const Version_DocumentationFields: FieldMap = {
   externalUri: "external_uri",
 };
 
-const Version_SourceMetadata_PluginInstanceActionSourceFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
-const Version_SourceMetadataFields: FieldMap = {
-  originalResourceCreateTime: "original_resource_create_time",
-  originalResourceId: "original_resource_id",
-  originalResourceUpdateTime: "original_resource_update_time",
-  pluginInstanceActionSource: {
-    wireName: "plugin_instance_action_source",
-    kind: "object",
-    fields: Version_SourceMetadata_PluginInstanceActionSourceFields,
-  },
-  sourceType: "source_type",
-};
-
 export interface VersionConfig {
   /** The attribute values associated with resource. */
   accreditation?: Version_Accreditation | Computed<Version_Accreditation>;
-  /** Output only. The operations contained in the API version. These operations will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}` */
-  apiOperations?: string[] | Computed<string[]>;
   /** Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource. */
   attributes?: Record<string, Version_Accreditation> | Computed<Record<string, Version_Accreditation>>;
   /** The attribute values associated with resource. */
   compliance?: Version_Accreditation | Computed<Version_Accreditation>;
-  /** Output only. The time at which the version was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The definitions contained in the API version. These definitions will be added to the version when a new spec is added or when an existing spec is updated. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/definitions/{definition}` */
-  definitions?: string[] | Computed<string[]>;
   /** Optional. The deployments linked directly to this API version. Only directly-linked deployments are returned; deployments linked to this version's specs or operations are not included. Note: A particular API version could be deployed to multiple deployments (for dev deployment, UAT deployment, etc) Format is `projects/{project}/locations/{location}/deployments/{deployment}` */
   deployments?: string[] | Computed<string[]>;
   /** Optional. The description of the version. */
@@ -140,12 +117,6 @@ export interface VersionConfig {
   name?: string | Computed<string>;
   /** Optional. The selected deployment for a Version resource. This can be used when special handling is needed on client side for a particular deployment linked to the version. Format is `projects/{project}/locations/{location}/deployments/{deployment}` */
   selectedDeployment?: string | Computed<string>;
-  /** Output only. The list of sources and metadata from the sources of the version. */
-  sourceMetadata?: Version_SourceMetadata[] | Computed<Version_SourceMetadata[]>;
-  /** Output only. The specs associated with this version. Note that an API version can be associated with multiple specs. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` */
-  specs?: string[] | Computed<string[]>;
-  /** Output only. The time at which the version was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface VersionAttrs {
@@ -191,7 +162,6 @@ export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
       kind: "object",
       fields: Version_AccreditationFields,
     },
-    apiOperations: "api_operations",
     attributes: {
       wireName: "attributes",
       kind: "map",
@@ -202,8 +172,6 @@ export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
       kind: "object",
       fields: Version_AccreditationFields,
     },
-    createTime: "create_time",
-    definitions: "definitions",
     deployments: "deployments",
     description: "description",
     displayName: "display_name",
@@ -219,12 +187,5 @@ export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
     },
     name: "name",
     selectedDeployment: "selected_deployment",
-    sourceMetadata: {
-      wireName: "source_metadata",
-      kind: "list",
-      fields: Version_SourceMetadataFields,
-    },
-    specs: "specs",
-    updateTime: "update_time",
   },
 };

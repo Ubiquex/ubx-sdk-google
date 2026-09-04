@@ -6,16 +6,10 @@ export interface ChannelConnectionConfig {
   activationToken?: string | Computed<string>;
   /** Required. The name of the connected subscriber Channel. This is a weak reference to avoid cross project and cross accounts references. This must be in `projects/{project}/location/{location}/channels/{channel_id}` format. */
   channel?: string | Computed<string>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
   /** Optional. Resource labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. The name of the connection. */
   name?: string | Computed<string>;
-  /** Output only. Server assigned ID of the resource. The server guarantees uniqueness and immutability until deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ChannelConnectionAttrs {
@@ -40,10 +34,7 @@ export const ChannelConnection: ResourceBinding<ChannelConnectionConfig, Channel
   fields: {
     activationToken: "activation_token",
     channel: "channel",
-    createTime: "create_time",
     labels: "labels",
     name: "name",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

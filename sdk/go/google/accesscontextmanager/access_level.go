@@ -4,22 +4,22 @@ package accesscontextmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessLevel_Basic_Conditions_DevicePolicy_OsConstraints struct {
-	MinimumVersion any
-	OsType any
+	MinimumVersion          any
+	OsType                  any
 	RequireVerifiedChromeOs any
 }
 
 type AccessLevel_Basic_Conditions_DevicePolicy struct {
 	AllowedDeviceManagementLevels any
-	AllowedEncryptionStatuses any
-	OsConstraints any
-	RequireAdminApproval any
-	RequireCorpOwned any
-	RequireScreenlock any
+	AllowedEncryptionStatuses     any
+	OsConstraints                 any
+	RequireAdminApproval          any
+	RequireCorpOwned              any
+	RequireScreenlock             any
 }
 
 type AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetwork struct {
-	Network any
+	Network          any
 	VpcIpSubnetworks any
 }
 
@@ -28,13 +28,13 @@ type AccessLevel_Basic_Conditions_VpcNetworkSources struct {
 }
 
 type AccessLevel_Basic_Conditions struct {
-	DevicePolicy any
-	IpSubnetworks any
-	Members any
-	Negate any
-	Regions any
+	DevicePolicy         any
+	IpSubnetworks        any
+	Members              any
+	Negate               any
+	Regions              any
 	RequiredAccessLevels any
-	VpcNetworkSources any
+	VpcNetworkSources    any
 }
 
 type AccessLevel_Basic struct {
@@ -61,78 +61,78 @@ type AccessLevel_Custom struct {
 }
 
 var AccessLevel_Basic_Conditions_DevicePolicy_OsConstraintsFields = ubx.FieldMap{
-		"MinimumVersion": ubx.FieldSpec{WireName: "minimum_version"},
-		"OsType": ubx.FieldSpec{WireName: "os_type"},
-		"RequireVerifiedChromeOs": ubx.FieldSpec{WireName: "require_verified_chrome_os"},
-	}
+	"MinimumVersion":          ubx.FieldSpec{WireName: "minimum_version"},
+	"OsType":                  ubx.FieldSpec{WireName: "os_type"},
+	"RequireVerifiedChromeOs": ubx.FieldSpec{WireName: "require_verified_chrome_os"},
+}
 
 var AccessLevel_Basic_Conditions_DevicePolicyFields = ubx.FieldMap{
-		"AllowedDeviceManagementLevels": ubx.FieldSpec{WireName: "allowed_device_management_levels"},
-		"AllowedEncryptionStatuses": ubx.FieldSpec{WireName: "allowed_encryption_statuses"},
-		"OsConstraints": ubx.FieldSpec{
-			WireName: "os_constraints",
-			Kind: "list",
-			Fields: AccessLevel_Basic_Conditions_DevicePolicy_OsConstraintsFields,
-		},
-		"RequireAdminApproval": ubx.FieldSpec{WireName: "require_admin_approval"},
-		"RequireCorpOwned": ubx.FieldSpec{WireName: "require_corp_owned"},
-		"RequireScreenlock": ubx.FieldSpec{WireName: "require_screenlock"},
-	}
+	"AllowedDeviceManagementLevels": ubx.FieldSpec{WireName: "allowed_device_management_levels"},
+	"AllowedEncryptionStatuses":     ubx.FieldSpec{WireName: "allowed_encryption_statuses"},
+	"OsConstraints": ubx.FieldSpec{
+		WireName: "os_constraints",
+		Kind:     "list",
+		Fields:   AccessLevel_Basic_Conditions_DevicePolicy_OsConstraintsFields,
+	},
+	"RequireAdminApproval": ubx.FieldSpec{WireName: "require_admin_approval"},
+	"RequireCorpOwned":     ubx.FieldSpec{WireName: "require_corp_owned"},
+	"RequireScreenlock":    ubx.FieldSpec{WireName: "require_screenlock"},
+}
 
 var AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetworkFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"VpcIpSubnetworks": ubx.FieldSpec{WireName: "vpc_ip_subnetworks"},
-	}
+	"Network":          ubx.FieldSpec{WireName: "network"},
+	"VpcIpSubnetworks": ubx.FieldSpec{WireName: "vpc_ip_subnetworks"},
+}
 
 var AccessLevel_Basic_Conditions_VpcNetworkSourcesFields = ubx.FieldMap{
-		"VpcSubnetwork": ubx.FieldSpec{
-			WireName: "vpc_subnetwork",
-			Kind: "object",
-			Fields: AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetworkFields,
-		},
-	}
+	"VpcSubnetwork": ubx.FieldSpec{
+		WireName: "vpc_subnetwork",
+		Kind:     "object",
+		Fields:   AccessLevel_Basic_Conditions_VpcNetworkSources_VpcSubnetworkFields,
+	},
+}
 
 var AccessLevel_Basic_ConditionsFields = ubx.FieldMap{
-		"DevicePolicy": ubx.FieldSpec{
-			WireName: "device_policy",
-			Kind: "object",
-			Fields: AccessLevel_Basic_Conditions_DevicePolicyFields,
-		},
-		"IpSubnetworks": ubx.FieldSpec{WireName: "ip_subnetworks"},
-		"Members": ubx.FieldSpec{WireName: "members"},
-		"Negate": ubx.FieldSpec{WireName: "negate"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"RequiredAccessLevels": ubx.FieldSpec{WireName: "required_access_levels"},
-		"VpcNetworkSources": ubx.FieldSpec{
-			WireName: "vpc_network_sources",
-			Kind: "list",
-			Fields: AccessLevel_Basic_Conditions_VpcNetworkSourcesFields,
-		},
-	}
+	"DevicePolicy": ubx.FieldSpec{
+		WireName: "device_policy",
+		Kind:     "object",
+		Fields:   AccessLevel_Basic_Conditions_DevicePolicyFields,
+	},
+	"IpSubnetworks":        ubx.FieldSpec{WireName: "ip_subnetworks"},
+	"Members":              ubx.FieldSpec{WireName: "members"},
+	"Negate":               ubx.FieldSpec{WireName: "negate"},
+	"Regions":              ubx.FieldSpec{WireName: "regions"},
+	"RequiredAccessLevels": ubx.FieldSpec{WireName: "required_access_levels"},
+	"VpcNetworkSources": ubx.FieldSpec{
+		WireName: "vpc_network_sources",
+		Kind:     "list",
+		Fields:   AccessLevel_Basic_Conditions_VpcNetworkSourcesFields,
+	},
+}
 
 var AccessLevel_BasicFields = ubx.FieldMap{
-		"CombiningFunction": ubx.FieldSpec{WireName: "combining_function"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: AccessLevel_Basic_ConditionsFields,
-		},
-	}
+	"CombiningFunction": ubx.FieldSpec{WireName: "combining_function"},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   AccessLevel_Basic_ConditionsFields,
+	},
+}
 
 var AccessLevel_Custom_ExprFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var AccessLevel_CustomFields = ubx.FieldMap{
-		"Expr": ubx.FieldSpec{
-			WireName: "expr",
-			Kind: "object",
-			Fields: AccessLevel_Custom_ExprFields,
-		},
-	}
+	"Expr": ubx.FieldSpec{
+		WireName: "expr",
+		Kind:     "object",
+		Fields:   AccessLevel_Custom_ExprFields,
+	},
+}
 
 type AccessLevelConfig struct {
 	// `BasicLevel` is an `AccessLevel` using a set of recommended features.
@@ -165,16 +165,16 @@ var AccessLevel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Basic": ubx.FieldSpec{
 			WireName: "basic",
-			Kind: "object",
-			Fields: AccessLevel_BasicFields,
+			Kind:     "object",
+			Fields:   AccessLevel_BasicFields,
 		},
 		"Custom": ubx.FieldSpec{
 			WireName: "custom",
-			Kind: "object",
-			Fields: AccessLevel_CustomFields,
+			Kind:     "object",
+			Fields:   AccessLevel_CustomFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Title":       ubx.FieldSpec{WireName: "title"},
 	},
 }

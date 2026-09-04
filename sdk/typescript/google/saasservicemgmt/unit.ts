@@ -25,25 +25,6 @@ export interface Unit_Maintenance {
   pinnedUntilTime?: string | Computed<string>;
 }
 
-const Unit_ConditionsFields: FieldMap = {
-  lastTransitionTime: "last_transition_time",
-  message: "message",
-  reason: "reason",
-  status: "status",
-  type: "type",
-};
-
-const Unit_DependenciesFields: FieldMap = {
-  alias: "alias",
-  unit: "unit",
-};
-
-const Unit_InputVariablesFields: FieldMap = {
-  type: "type",
-  value: "value",
-  variable: "variable",
-};
-
 const Unit_MaintenanceFields: FieldMap = {
   pinnedUntilTime: "pinned_until_time",
 };
@@ -51,20 +32,6 @@ const Unit_MaintenanceFields: FieldMap = {
 export interface UnitConfig {
   /** Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Optional. Output only. A set of conditions which indicate the various conditions this resource can have. */
-  conditions?: Unit_Conditions[] | Computed<Unit_Conditions[]>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
-  /** Optional. Output only. Set of dependencies for this unit. Maximum 10. */
-  dependencies?: Unit_Dependencies[] | Computed<Unit_Dependencies[]>;
-  /** Optional. Output only. List of Units that depend on this unit. Unit can only be deprovisioned if this list is empty. Maximum 1000. */
-  dependents?: Unit_Dependencies[] | Computed<Unit_Dependencies[]>;
-  /** Output only. An opaque value that uniquely identifies a version or generation of a resource. It can be used to confirm that the client and server agree on the ordering of a resource being written. */
-  etag?: string | Computed<string>;
-  /** Optional. Output only. Flag revisions used by this Unit. */
-  flagRevisions?: string[] | Computed<string[]>;
-  /** Optional. Output only. Indicates the current input variables deployed by the unit */
-  inputVariables?: Unit_InputVariables[] | Computed<Unit_InputVariables[]>;
   /** Optional. The labels on the resource, which can be used for categorization. similar to Kubernetes resource labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Captures requested directives for performing future maintenance on the unit. This includes a request for the unit to skip maintenance for a period of time and remain pinned to its current release as well as controls for postponing maintenance scheduled in future. */
@@ -73,34 +40,10 @@ export interface UnitConfig {
   managementMode?: string | Computed<string>;
   /** Identifier. The resource name (full URI of the resource) following the standard naming scheme: "projects/{project}/locations/{location}/units/{unit}" */
   name?: string | Computed<string>;
-  /** Optional. Output only. List of concurrent UnitOperations that are operating on this Unit. */
-  ongoingOperations?: string[] | Computed<string[]>;
-  /** Optional. Output only. Set of key/value pairs corresponding to output variables from execution of actuation templates. The variables are declared in actuation configs (e.g in helm chart or terraform) and the values are fetched and returned by the actuation engine upon completion of execution. */
-  outputVariables?: Unit_InputVariables[] | Computed<Unit_InputVariables[]>;
-  /** Optional. Output only. List of pending (wait to be executed) UnitOperations for this unit. */
-  pendingOperations?: string[] | Computed<string[]>;
-  /** Optional. Output only. The current Release object for this Unit. */
-  release?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Indicates whether the resource location satisfies Zone Separation constraints. This is false by default. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Optional. Output only. List of scheduled UnitOperations for this unit. */
-  scheduledOperations?: string[] | Computed<string[]>;
-  /** Optional. Output only. Current lifecycle state of the resource (e.g. if it's being created or ready to use). */
-  state?: string | Computed<string>;
-  /** Optional. Output only. If set, indicates the time when the system will start removing the unit. */
-  systemCleanupAt?: string | Computed<string>;
-  /** Optional. Output only. Indicates the system managed state of the unit. */
-  systemManagedState?: string | Computed<string>;
   /** Optional. Reference to the Saas Tenant resource this unit belongs to. This for example informs the maintenance policies to use for scheduling future updates on a unit. (optional and immutable once created) */
   tenant?: string | Computed<string>;
-  /** Output only. The unique identifier of the resource. UID is unique in the time and space for this resource within the scope of the service. It is typically generated by the server on successful creation of a resource and must not be changed. UID is used to uniquely identify resources with resource name reuses. This should be a UUID4. */
-  uid?: string | Computed<string>;
   /** Optional. Reference to the UnitKind this Unit belongs to. Immutable once set. */
   unitKind?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was last updated. Any change to the resource made by users must refresh this value. Changes to a resource made by the service should refresh this value. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface UnitAttrs {
@@ -162,29 +105,6 @@ export const Unit: ResourceBinding<UnitConfig, UnitAttrs> = {
   wireType: "google_saasservicemgmt_unit",
   fields: {
     annotations: "annotations",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: Unit_ConditionsFields,
-    },
-    createTime: "create_time",
-    dependencies: {
-      wireName: "dependencies",
-      kind: "list",
-      fields: Unit_DependenciesFields,
-    },
-    dependents: {
-      wireName: "dependents",
-      kind: "list",
-      fields: Unit_DependenciesFields,
-    },
-    etag: "etag",
-    flagRevisions: "flag_revisions",
-    inputVariables: {
-      wireName: "input_variables",
-      kind: "list",
-      fields: Unit_InputVariablesFields,
-    },
     labels: "labels",
     maintenance: {
       wireName: "maintenance",
@@ -193,23 +113,7 @@ export const Unit: ResourceBinding<UnitConfig, UnitAttrs> = {
     },
     managementMode: "management_mode",
     name: "name",
-    ongoingOperations: "ongoing_operations",
-    outputVariables: {
-      wireName: "output_variables",
-      kind: "list",
-      fields: Unit_InputVariablesFields,
-    },
-    pendingOperations: "pending_operations",
-    release: "release",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    scheduledOperations: "scheduled_operations",
-    state: "state",
-    systemCleanupAt: "system_cleanup_at",
-    systemManagedState: "system_managed_state",
     tenant: "tenant",
-    uid: "uid",
     unitKind: "unit_kind",
-    updateTime: "update_time",
   },
 };

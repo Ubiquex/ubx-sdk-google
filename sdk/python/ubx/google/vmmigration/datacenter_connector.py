@@ -86,30 +86,14 @@ _DatacenterConnector_UpgradeStatusFields = {
 
 @dataclasses.dataclass
 class DatacenterConnectorConfig:
-    # Output only. Appliance OVA version. This is the OVA which is manually installed by the user and contains the infrastructure for the automatically updatable components on the appliance.
-    appliance_infrastructure_version: Any = None
-    # Output only. Appliance last installed update bundle version. This is the version of the automatically updatable components on the appliance.
-    appliance_software_version: Any = None
     # Holds information about the available versions for upgrade.
     available_versions: Any = None
-    # Output only. The communication channel between the datacenter connector and Google Cloud.
-    bucket: Any = None
-    # Output only. The time the connector was created (as an API call, not when it was actually installed).
-    create_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. The connector's name.
-    name: Any = None
     # Immutable. A unique key for this connector. This key is internal to the OVA connector and is supplied with its creation during the registration process and can not be modified.
     registration_id: Any = None
     # The service account to use in the connector when communicating with the cloud.
     service_account: Any = None
-    # Output only. State of the DatacenterConnector, as determined by the health checks.
-    state: Any = None
-    # Output only. The time the state was last set.
-    state_time: Any = None
-    # Output only. The last time the connector was updated with an API call.
-    update_time: Any = None
     # UpgradeStatus contains information about upgradeAppliance operation.
     upgrade_status: Any = None
     # The version running in the DatacenterConnector. This is supplied by the OVA connector during the registration process and can not be modified.
@@ -149,26 +133,18 @@ class DatacenterConnectorAttrs:
 DatacenterConnector = ubx.ResourceBinding(
     wire_type="google_vmmigration_datacenter_connector",
     fields={
-        "appliance_infrastructure_version": ubx.FieldSpec(wire_name="appliance_infrastructure_version"),
-        "appliance_software_version": ubx.FieldSpec(wire_name="appliance_software_version"),
         "available_versions": ubx.FieldSpec(
             wire_name="available_versions",
             kind="object",
             fields=_DatacenterConnector_AvailableVersionsFields,
         ),
-        "bucket": ubx.FieldSpec(wire_name="bucket"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_DatacenterConnector_ErrorFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "registration_id": ubx.FieldSpec(wire_name="registration_id"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upgrade_status": ubx.FieldSpec(
             wire_name="upgrade_status",
             kind="object",

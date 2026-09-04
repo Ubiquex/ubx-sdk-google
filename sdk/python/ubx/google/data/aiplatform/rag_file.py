@@ -81,7 +81,7 @@ class RagFile_SlackSource:
 
 @dataclasses.dataclass
 class RagFileConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RagFileAttrs:
@@ -114,6 +114,5 @@ class RagFileAttrs:
 RagFile = ubx.DataSourceBinding(
     wire_type="google_aiplatform_rag_file",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

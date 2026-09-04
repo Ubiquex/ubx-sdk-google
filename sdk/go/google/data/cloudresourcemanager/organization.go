@@ -4,7 +4,6 @@ package cloudresourcemanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OrganizationConfig struct {
-	Name any
 }
 
 type OrganizationAttrs struct {
@@ -27,7 +26,5 @@ type OrganizationAttrs struct {
 
 var Organization = ubx.DataSourceBinding{
 	WireType: "google_cloudresourcemanager_organization",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

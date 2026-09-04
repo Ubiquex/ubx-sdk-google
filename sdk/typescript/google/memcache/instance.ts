@@ -101,44 +101,21 @@ const Instance_MaintenanceScheduleFields: FieldMap = {
   startTime: "start_time",
 };
 
-const Instance_MemcacheNodes_ParametersFields: FieldMap = {
-  id: "id",
-  params: "params",
-};
-
-const Instance_MemcacheNodesFields: FieldMap = {
-  host: "host",
-  memcacheFullVersion: "memcache_full_version",
-  memcacheVersion: "memcache_version",
-  nodeId: "node_id",
-  parameters: {
-    wireName: "parameters",
-    kind: "object",
-    fields: Instance_MemcacheNodes_ParametersFields,
-  },
-  port: "port",
-  state: "state",
-  zone: "zone",
-};
-
 const Instance_NodeConfigFields: FieldMap = {
   cpuCount: "cpu_count",
   memorySizeMb: "memory_size_mb",
 };
 
+const Instance_MemcacheNodes_ParametersFields: FieldMap = {
+  id: "id",
+  params: "params",
+};
+
 export interface InstanceConfig {
   /** The full name of the Google Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the instance is connected. If left unspecified, the `default` network will be used. */
   authorizedNetwork?: string | Computed<string>;
-  /** Output only. The available maintenance versions that can be applied to the instance. */
-  availableMaintenanceVersions?: string[] | Computed<string[]>;
-  /** Output only. The time the instance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Endpoint for the Discovery API. */
-  discoveryEndpoint?: string | Computed<string>;
   /** User provided name for the instance, which is only used for display purposes. Cannot be more than 80 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. The effective maintenance version of the instance. */
-  effectiveMaintenanceVersion?: string | Computed<string>;
   /** List of messages that describe the current state of the Memcached instance. */
   instanceMessages?: Instance_InstanceMessages[] | Computed<Instance_InstanceMessages[]>;
   /** Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
@@ -149,10 +126,6 @@ export interface InstanceConfig {
   maintenanceSchedule?: Instance_MaintenanceSchedule | Computed<Instance_MaintenanceSchedule>;
   /** Optional. Last self service update maintenance version triggered by the customer. If it is empty, it means that the maintenance version is not set by the user. */
   maintenanceVersion?: string | Computed<string>;
-  /** Output only. The full version of memcached server running on this instance. System automatically determines the full memcached version for an instance based on the input MemcacheVersion. The full version format will be "memcached-1.5.16". */
-  memcacheFullVersion?: string | Computed<string>;
-  /** Output only. List of Memcached nodes. Refer to Node message for more details. */
-  memcacheNodes?: Instance_MemcacheNodes[] | Computed<Instance_MemcacheNodes[]>;
   /** The major version of Memcached software. If not provided, latest supported version will be used. Currently the latest supported major version is `MEMCACHE_1_5`. The minor version will be automatically determined by our system based on the latest supported minor version. */
   memcacheVersion?: string | Computed<string>;
   /** Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Memcached instances are managed and addressed at the regional level so `location_id` here refers to a Google Cloud region; however, users may choose which zones Memcached nodes should be provisioned in within an instance. Refer to zones field for more details. */
@@ -164,14 +137,6 @@ export interface InstanceConfig {
   parameters?: Instance_MemcacheNodes_Parameters | Computed<Instance_MemcacheNodes_Parameters>;
   /** Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29. */
   reservedIpRangeId?: string[] | Computed<string[]>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of this Memcached instance. */
-  state?: string | Computed<string>;
-  /** Output only. The time the instance was updated. */
-  updateTime?: string | Computed<string>;
   /** Zones in which Memcached nodes should be provisioned. Memcached nodes will be equally distributed across these zones. If not provided, the service will by default create nodes in all zones in the region for the instance. */
   zones?: string[] | Computed<string[]>;
 }
@@ -230,11 +195,7 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
   wireType: "google_memcache_instance",
   fields: {
     authorizedNetwork: "authorized_network",
-    availableMaintenanceVersions: "available_maintenance_versions",
-    createTime: "create_time",
-    discoveryEndpoint: "discovery_endpoint",
     displayName: "display_name",
-    effectiveMaintenanceVersion: "effective_maintenance_version",
     instanceMessages: {
       wireName: "instance_messages",
       kind: "list",
@@ -252,12 +213,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_MaintenanceScheduleFields,
     },
     maintenanceVersion: "maintenance_version",
-    memcacheFullVersion: "memcache_full_version",
-    memcacheNodes: {
-      wireName: "memcache_nodes",
-      kind: "list",
-      fields: Instance_MemcacheNodesFields,
-    },
     memcacheVersion: "memcache_version",
     name: "name",
     nodeConfig: {
@@ -272,10 +227,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_MemcacheNodes_ParametersFields,
     },
     reservedIpRangeId: "reserved_ip_range_id",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
     zones: "zones",
   },
 };

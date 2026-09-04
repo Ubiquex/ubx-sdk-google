@@ -174,8 +174,6 @@ class V1alpha1SourceConfig:
     aws: Any = None
     # AzureSourceDetails message describes a specific source details for the Azure source type.
     azure: Any = None
-    # Output only. The create time timestamp.
-    create_time: Any = None
     # User-provided description of the source.
     description: Any = None
     # Encryption message describes the details of the applied encryption.
@@ -184,10 +182,6 @@ class V1alpha1SourceConfig:
     error: Any = None
     # The labels of the source.
     labels: Any = None
-    # Output only. The Source name.
-    name: Any = None
-    # Output only. The update time timestamp.
-    update_time: Any = None
     # VmwareSourceDetails message describes a specific source details for the vmware source type.
     vmware: Any = None
 
@@ -227,7 +221,6 @@ V1alpha1Source = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1Source_AzureFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encryption": ubx.FieldSpec(
             wire_name="encryption",
@@ -240,8 +233,6 @@ V1alpha1Source = ubx.ResourceBinding(
             fields=_V1alpha1Source_Aws_ErrorFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vmware": ubx.FieldSpec(
             wire_name="vmware",
             kind="object",

@@ -29,30 +29,18 @@ export interface V1beta1BackupVaultConfig {
   backupRetentionPolicy?: V1beta1BackupVault_BackupRetentionPolicy | Computed<V1beta1BackupVault_BackupRetentionPolicy>;
   /** Optional. Type of backup vault to be created. Default is IN_REGION. */
   backupVaultType?: string | Computed<string>;
-  /** Output only. The crypto key version used to encrypt the backup vault. Format: `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}/cryptoKeyVersions/{crypto_key_version}` */
-  backupsCryptoKeyVersion?: string | Computed<string>;
-  /** Output only. Create time of the backup vault. */
-  createTime?: string | Computed<string>;
   /** Optional. Indicates if the backup vault is a cross project vault. */
   crossProjectVault?: boolean | Computed<boolean>;
   /** Description of the backup vault. */
   description?: string | Computed<string>;
-  /** Output only. Name of the Backup vault created in backup region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}` */
-  destinationBackupVault?: string | Computed<string>;
-  /** Output only. Field indicating encryption state of CMEK backups. */
-  encryptionState?: string | Computed<string>;
   /** Optional. Specifies the Key Management System (KMS) configuration to be used for backup encryption. Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}` */
   kmsConfig?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the backup vault. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}`. */
   name?: string | Computed<string>;
-  /** Output only. Name of the Backup vault created in source region. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}` */
-  sourceBackupVault?: string | Computed<string>;
   /** Optional. Region in which the backup vault is created. Format: `projects/{project_id}/locations/{location}` */
   sourceRegion?: string | Computed<string>;
-  /** Output only. The backup vault state. */
-  state?: string | Computed<string>;
 }
 
 export interface V1beta1BackupVaultAttrs {
@@ -98,17 +86,11 @@ export const V1beta1BackupVault: ResourceBinding<V1beta1BackupVaultConfig, V1bet
       fields: V1beta1BackupVault_BackupRetentionPolicyFields,
     },
     backupVaultType: "backup_vault_type",
-    backupsCryptoKeyVersion: "backups_crypto_key_version",
-    createTime: "create_time",
     crossProjectVault: "cross_project_vault",
     description: "description",
-    destinationBackupVault: "destination_backup_vault",
-    encryptionState: "encryption_state",
     kmsConfig: "kms_config",
     labels: "labels",
     name: "name",
-    sourceBackupVault: "source_backup_vault",
     sourceRegion: "source_region",
-    state: "state",
   },
 };

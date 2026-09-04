@@ -2,12 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1MetadataSchemaConfig {
-  /** Output only. Timestamp when this MetadataSchema was created. */
-  createTime?: string | Computed<string>;
   /** Description of the Metadata Schema */
   description?: string | Computed<string>;
-  /** Output only. The resource name of the MetadataSchema. */
-  name?: string | Computed<string>;
   /** Required. The raw YAML string representation of the MetadataSchema. The combination of [MetadataSchema.version] and the schema name given by `title` in [MetadataSchema.schema] must be unique within a MetadataStore. The schema is defined as an OpenAPI 3.0.2 [MetadataSchema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject) */
   schema?: string | Computed<string>;
   /** The type of the MetadataSchema. This is a property that identifies which metadata types will use the MetadataSchema. */
@@ -34,9 +30,7 @@ export interface V1beta1MetadataSchemaAttrs {
 export const V1beta1MetadataSchema: ResourceBinding<V1beta1MetadataSchemaConfig, V1beta1MetadataSchemaAttrs> = {
   wireType: "google_aiplatform_v1beta1_metadata_schema",
   fields: {
-    createTime: "create_time",
     description: "description",
-    name: "name",
     schema: "schema",
     schemaType: "schema_type",
     schemaVersion: "schema_version",

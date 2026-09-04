@@ -38,10 +38,6 @@ _V1alphaTestCase_AiInstructionsFields = {
 @dataclasses.dataclass
 class V1alphaTestCaseConfig:
     ai_instructions: Any = None
-    # Output only. Timestamp when the test case was created
-    create_time: Any = None
-    # Output only. Other test cases that depend on this test case as a prerequisite.
-    dependent_test_cases: Any = None
     # Required. Display name of the test case.
     display_name: Any = None
     # Identifier. The name of the test case resource. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}`
@@ -71,8 +67,6 @@ V1alphaTestCase = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaTestCase_AiInstructionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "dependent_test_cases": ubx.FieldSpec(wire_name="dependent_test_cases"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "prerequisite_test_case": ubx.FieldSpec(wire_name="prerequisite_test_case"),

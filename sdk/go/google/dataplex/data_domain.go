@@ -4,7 +4,7 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataDomain_Contacts_Identities struct {
-	ContactId any
+	ContactId   any
 	ContactName any
 	ContactRole any
 }
@@ -22,29 +22,27 @@ type DataDomain_PolicyMember struct {
 }
 
 var DataDomain_Contacts_IdentitiesFields = ubx.FieldMap{
-		"ContactId": ubx.FieldSpec{WireName: "contact_id"},
-		"ContactName": ubx.FieldSpec{WireName: "contact_name"},
-		"ContactRole": ubx.FieldSpec{WireName: "contact_role"},
-	}
+	"ContactId":   ubx.FieldSpec{WireName: "contact_id"},
+	"ContactName": ubx.FieldSpec{WireName: "contact_name"},
+	"ContactRole": ubx.FieldSpec{WireName: "contact_role"},
+}
 
 var DataDomain_ContactsFields = ubx.FieldMap{
-		"Identities": ubx.FieldSpec{
-			WireName: "identities",
-			Kind: "list",
-			Fields: DataDomain_Contacts_IdentitiesFields,
-		},
-	}
+	"Identities": ubx.FieldSpec{
+		WireName: "identities",
+		Kind:     "list",
+		Fields:   DataDomain_Contacts_IdentitiesFields,
+	},
+}
 
 var DataDomain_PolicyMemberFields = ubx.FieldMap{
-		"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
-		"IamPolicyUidPrincipal": ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
-	}
+	"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
+	"IamPolicyUidPrincipal":  ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
+}
 
 type DataDomainConfig struct {
 	// Business contacts part of business context of a Data Domain. Corresponds to the Contacts Aspect in Dataplex Universal Catalog.
 	Contacts any
-	// Output only. The time at which the DataDomain was created.
-	CreateTime any
 	// Optional. User-provided description of the DataDomain.
 	Description any
 	// Required. User-friendly display name.
@@ -57,10 +55,6 @@ type DataDomainConfig struct {
 	ParentDataDomain any
 	// Output-only policy member strings of a Google Cloud resource's built-in identity.
 	PolicyMember any
-	// Output only. System-generated globally unique ID for the DataDomain.
-	Uid any
-	// Output only. The time at which the DataDomain was last updated.
-	UpdateTime any
 }
 
 type DataDomainAttrs struct {
@@ -91,21 +85,18 @@ var DataDomain = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Contacts": ubx.FieldSpec{
 			WireName: "contacts",
-			Kind: "object",
-			Fields: DataDomain_ContactsFields,
+			Kind:     "object",
+			Fields:   DataDomain_ContactsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ParentDataDomain": ubx.FieldSpec{WireName: "parent_data_domain"},
 		"PolicyMember": ubx.FieldSpec{
 			WireName: "policy_member",
-			Kind: "object",
-			Fields: DataDomain_PolicyMemberFields,
+			Kind:     "object",
+			Fields:   DataDomain_PolicyMemberFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -49,7 +49,7 @@ type AlphaReservationSlot_Resource struct {
 	// Output only. [Output Only] The type of resource. Alwayscompute#reservationSlot for reservation slots.
 	Kind any
 	// Output only. [Output Only] The name of the reservation slot.
-	Name any
+	Name             any
 	PhysicalTopology any
 	// Output only. [Output Only] A server-defined fully-qualified URL for this resource.
 	SelfLink any
@@ -58,34 +58,34 @@ type AlphaReservationSlot_Resource struct {
 	// The share setting for reservations and sole tenancy node groups.
 	ShareSettings any
 	// Output only. [Output Only] The state of the reservation slot.
-	State any
+	State  any
 	Status any
 	// Output only. [Output Only] The zone in which the reservation slot resides.
 	Zone any
 }
 
 type AlphaReservationSlotConfig struct {
-	ParentName any
-	Project any
+	ParentName      any
+	Project         any
 	ReservationSlot any
-	Zone any
+	Zone            any
 }
 
 type AlphaReservationSlotAttrs struct {
-	ParentName any
-	Project any
+	ParentName      any
+	Project         any
 	ReservationSlot any
 	// Represents a reservation slot resource.
 	Resource any
-	Zone any
+	Zone     any
 }
 
 var AlphaReservationSlot = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_reservation_slot",
 	Fields: ubx.FieldMap{
-		"ParentName": ubx.FieldSpec{WireName: "parent_name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"ParentName":      ubx.FieldSpec{WireName: "parent_name"},
+		"Project":         ubx.FieldSpec{WireName: "project"},
 		"ReservationSlot": ubx.FieldSpec{WireName: "reservation_slot"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":            ubx.FieldSpec{WireName: "zone"},
 	},
 }

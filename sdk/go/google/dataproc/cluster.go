@@ -9,61 +9,61 @@ type Cluster_Config_AutoscalingConfig struct {
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators struct {
-	AcceleratorCount any
+	AcceleratorCount   any
 	AcceleratorTypeUri any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs struct {
-	DiskSizeGb any
-	DiskType any
-	ProvisionedIops any
+	DiskSizeGb            any
+	DiskType              any
+	ProvisionedIops       any
 	ProvisionedThroughput any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig struct {
-	AttachedDiskConfigs any
-	BootDiskProvisionedIops any
+	AttachedDiskConfigs           any
+	BootDiskProvisionedIops       any
 	BootDiskProvisionedThroughput any
-	BootDiskSizeGb any
-	BootDiskType any
-	LocalSsdInterface any
-	NumLocalSsds any
+	BootDiskSizeGb                any
+	BootDiskType                  any
+	LocalSsdInterface             any
+	NumLocalSsds                  any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList struct {
-	DiskConfig any
+	DiskConfig   any
 	MachineTypes any
-	Rank any
+	Rank         any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults struct {
 	MachineType any
-	VmCount any
+	VmCount     any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
-	StandardCapacityBase any
+	StandardCapacityBase             any
 	StandardCapacityPercentAboveBase any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy struct {
-	InstanceMachineTypes any
-	InstanceSelectionList any
+	InstanceMachineTypes     any
+	InstanceSelectionList    any
 	InstanceSelectionResults any
-	ProvisioningModelMix any
+	ProvisioningModelMix     any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences struct {
-	InstanceId any
-	InstanceName any
+	InstanceId     any
+	InstanceName   any
 	PublicEciesKey any
-	PublicKey any
+	PublicKey      any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig struct {
 	InstanceGroupManagerName any
-	InstanceGroupManagerUri any
-	InstanceTemplateName any
+	InstanceGroupManagerUri  any
+	InstanceTemplateName     any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig struct {
@@ -71,37 +71,37 @@ type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig 
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig struct {
-	Accelerators any
-	DiskConfig any
-	ImageUri any
+	Accelerators              any
+	DiskConfig                any
+	ImageUri                  any
 	InstanceFlexibilityPolicy any
-	InstanceNames any
-	InstanceReferences any
-	IsPreemptible any
-	MachineTypeUri any
-	ManagedGroupConfig any
-	MinCpuPlatform any
-	MinNumInstances any
-	NumInstances any
-	Preemptibility any
-	StartupConfig any
+	InstanceNames             any
+	InstanceReferences        any
+	IsPreemptible             any
+	MachineTypeUri            any
+	ManagedGroupConfig        any
+	MinCpuPlatform            any
+	MinNumInstances           any
+	NumInstances              any
+	Preemptibility            any
+	StartupConfig             any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups_NodeGroup struct {
-	Labels any
-	Name any
+	Labels          any
+	Name            any
 	NodeGroupConfig any
-	Roles any
+	Roles           any
 }
 
 type Cluster_Config_AuxiliaryNodeGroups struct {
-	NodeGroup any
+	NodeGroup   any
 	NodeGroupId any
 }
 
 type Cluster_Config_DataprocMetricConfig_Metrics struct {
 	MetricOverrides any
-	MetricSource any
+	MetricSource    any
 }
 
 type Cluster_Config_DataprocMetricConfig struct {
@@ -200,31 +200,31 @@ type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Autoscaling s
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 	GpuPartitionSize any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config struct {
-	Accelerators any
+	Accelerators   any
 	BootDiskKmsKey any
-	LocalSsdCount any
-	MachineType any
+	LocalSsdCount  any
+	MachineType    any
 	MinCpuPlatform any
-	Preemptible any
+	Preemptible    any
 	ServiceAccount any
-	Spot any
+	Spot           any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig struct {
 	Autoscaling any
-	Config any
-	Locations any
+	Config      any
+	Locations   any
 }
 
 type Cluster_Config_GkeClusterConfig_NodePoolTarget struct {
-	NodePool any
+	NodePool       any
 	NodePoolConfig any
-	Roles any
+	Roles          any
 }
 
 type Cluster_Config_GkeClusterConfig struct {
@@ -237,7 +237,7 @@ type Cluster_Config_GkeClusterConfig struct {
 }
 
 type Cluster_Config_InitializationActions struct {
-	ExecutableFile any
+	ExecutableFile   any
 	ExecutionTimeout any
 }
 
@@ -420,511 +420,509 @@ type Cluster_VirtualClusterConfig struct {
 }
 
 var Cluster_Config_AutoscalingConfigFields = ubx.FieldMap{
-		"PolicyUri": ubx.FieldSpec{WireName: "policy_uri"},
-	}
+	"PolicyUri": ubx.FieldSpec{WireName: "policy_uri"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
-	}
+	"AcceleratorCount":   ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-	}
+	"DiskSizeGb":            ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":              ubx.FieldSpec{WireName: "disk_type"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields = ubx.FieldMap{
-		"AttachedDiskConfigs": ubx.FieldSpec{
-			WireName: "attached_disk_configs",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
-		},
-		"BootDiskProvisionedIops": ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
-		"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-		"LocalSsdInterface": ubx.FieldSpec{WireName: "local_ssd_interface"},
-		"NumLocalSsds": ubx.FieldSpec{WireName: "num_local_ssds"},
-	}
+	"AttachedDiskConfigs": ubx.FieldSpec{
+		WireName: "attached_disk_configs",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
+	},
+	"BootDiskProvisionedIops":       ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
+	"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
+	"BootDiskSizeGb":                ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":                  ubx.FieldSpec{WireName: "boot_disk_type"},
+	"LocalSsdInterface":             ubx.FieldSpec{WireName: "local_ssd_interface"},
+	"NumLocalSsds":                  ubx.FieldSpec{WireName: "num_local_ssds"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields = ubx.FieldMap{
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
+	"Rank":         ubx.FieldSpec{WireName: "rank"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"VmCount": ubx.FieldSpec{WireName: "vm_count"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"VmCount":     ubx.FieldSpec{WireName: "vm_count"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields = ubx.FieldMap{
-		"StandardCapacityBase": ubx.FieldSpec{WireName: "standard_capacity_base"},
-		"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
-	}
+	"StandardCapacityBase":             ubx.FieldSpec{WireName: "standard_capacity_base"},
+	"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
-		"InstanceSelectionList": ubx.FieldSpec{
-			WireName: "instance_selection_list",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
-		},
-		"InstanceSelectionResults": ubx.FieldSpec{
-			WireName: "instance_selection_results",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
-		},
-		"ProvisioningModelMix": ubx.FieldSpec{
-			WireName: "provisioning_model_mix",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
-		},
-	}
+	"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
+	"InstanceSelectionList": ubx.FieldSpec{
+		WireName: "instance_selection_list",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
+	},
+	"InstanceSelectionResults": ubx.FieldSpec{
+		WireName: "instance_selection_results",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
+	},
+	"ProvisioningModelMix": ubx.FieldSpec{
+		WireName: "provisioning_model_mix",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
+	},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields = ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-	}
+	"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
+	"InstanceName":   ubx.FieldSpec{WireName: "instance_name"},
+	"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
+	"PublicKey":      ubx.FieldSpec{WireName: "public_key"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields = ubx.FieldMap{
-		"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
-		"InstanceGroupManagerUri": ubx.FieldSpec{WireName: "instance_group_manager_uri"},
-		"InstanceTemplateName": ubx.FieldSpec{WireName: "instance_template_name"},
-	}
+	"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
+	"InstanceGroupManagerUri":  ubx.FieldSpec{WireName: "instance_group_manager_uri"},
+	"InstanceTemplateName":     ubx.FieldSpec{WireName: "instance_template_name"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields = ubx.FieldMap{
-		"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
-	}
+	"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields,
-		},
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InstanceFlexibilityPolicy": ubx.FieldSpec{
-			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
-		},
-		"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
-		"InstanceReferences": ubx.FieldSpec{
-			WireName: "instance_references",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields,
-		},
-		"IsPreemptible": ubx.FieldSpec{WireName: "is_preemptible"},
-		"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
-		"ManagedGroupConfig": ubx.FieldSpec{
-			WireName: "managed_group_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
-		},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
-		"NumInstances": ubx.FieldSpec{WireName: "num_instances"},
-		"Preemptibility": ubx.FieldSpec{WireName: "preemptibility"},
-		"StartupConfig": ubx.FieldSpec{
-			WireName: "startup_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields,
-		},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields,
+	},
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"InstanceFlexibilityPolicy": ubx.FieldSpec{
+		WireName: "instance_flexibility_policy",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
+	},
+	"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
+	"InstanceReferences": ubx.FieldSpec{
+		WireName: "instance_references",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields,
+	},
+	"IsPreemptible":  ubx.FieldSpec{WireName: "is_preemptible"},
+	"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
+	"ManagedGroupConfig": ubx.FieldSpec{
+		WireName: "managed_group_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
+	},
+	"MinCpuPlatform":  ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
+	"NumInstances":    ubx.FieldSpec{WireName: "num_instances"},
+	"Preemptibility":  ubx.FieldSpec{WireName: "preemptibility"},
+	"StartupConfig": ubx.FieldSpec{
+		WireName: "startup_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields,
+	},
+}
 
 var Cluster_Config_AuxiliaryNodeGroups_NodeGroupFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeGroupConfig": ubx.FieldSpec{
-			WireName: "node_group_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"NodeGroupConfig": ubx.FieldSpec{
+		WireName: "node_group_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"Roles": ubx.FieldSpec{WireName: "roles"},
+}
 
 var Cluster_Config_AuxiliaryNodeGroupsFields = ubx.FieldMap{
-		"NodeGroup": ubx.FieldSpec{
-			WireName: "node_group",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroupFields,
-		},
-		"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
-	}
+	"NodeGroup": ubx.FieldSpec{
+		WireName: "node_group",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroupFields,
+	},
+	"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
+}
 
 var Cluster_Config_DataprocMetricConfig_MetricsFields = ubx.FieldMap{
-		"MetricOverrides": ubx.FieldSpec{WireName: "metric_overrides"},
-		"MetricSource": ubx.FieldSpec{WireName: "metric_source"},
-	}
+	"MetricOverrides": ubx.FieldSpec{WireName: "metric_overrides"},
+	"MetricSource":    ubx.FieldSpec{WireName: "metric_source"},
+}
 
 var Cluster_Config_DataprocMetricConfigFields = ubx.FieldMap{
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Cluster_Config_DataprocMetricConfig_MetricsFields,
-		},
-	}
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Cluster_Config_DataprocMetricConfig_MetricsFields,
+	},
+}
 
 var Cluster_Config_EncryptionConfigFields = ubx.FieldMap{
-		"GcePdKmsKeyName": ubx.FieldSpec{WireName: "gce_pd_kms_key_name"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"GcePdKmsKeyName": ubx.FieldSpec{WireName: "gce_pd_kms_key_name"},
+	"KmsKey":          ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Cluster_Config_EndpointConfigFields = ubx.FieldMap{
-		"EnableHttpPortAccess": ubx.FieldSpec{WireName: "enable_http_port_access"},
-		"HttpPorts": ubx.FieldSpec{WireName: "http_ports"},
-	}
+	"EnableHttpPortAccess": ubx.FieldSpec{WireName: "enable_http_port_access"},
+	"HttpPorts":            ubx.FieldSpec{WireName: "http_ports"},
+}
 
 var Cluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-	}
+	"ConfidentialInstanceType":  ubx.FieldSpec{WireName: "confidential_instance_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+}
 
 var Cluster_Config_GceClusterConfig_NodeGroupAffinityFields = ubx.FieldMap{
-		"NodeGroupUri": ubx.FieldSpec{WireName: "node_group_uri"},
-	}
+	"NodeGroupUri": ubx.FieldSpec{WireName: "node_group_uri"},
+}
 
 var Cluster_Config_GceClusterConfig_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var Cluster_Config_GceClusterConfig_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var Cluster_Config_GceClusterConfigFields = ubx.FieldMap{
-		"AutoZoneExcludeZoneUris": ubx.FieldSpec{WireName: "auto_zone_exclude_zone_uris"},
-		"ConfidentialInstanceConfig": ubx.FieldSpec{
-			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: Cluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields,
-		},
-		"InternalIpOnly": ubx.FieldSpec{WireName: "internal_ip_only"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"NodeGroupAffinity": ubx.FieldSpec{
-			WireName: "node_group_affinity",
-			Kind: "object",
-			Fields: Cluster_Config_GceClusterConfig_NodeGroupAffinityFields,
-		},
-		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: Cluster_Config_GceClusterConfig_ReservationAffinityFields,
-		},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServiceAccountScopes": ubx.FieldSpec{WireName: "service_account_scopes"},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: Cluster_Config_GceClusterConfig_ShieldedInstanceConfigFields,
-		},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"ZoneUri": ubx.FieldSpec{WireName: "zone_uri"},
-	}
+	"AutoZoneExcludeZoneUris": ubx.FieldSpec{WireName: "auto_zone_exclude_zone_uris"},
+	"ConfidentialInstanceConfig": ubx.FieldSpec{
+		WireName: "confidential_instance_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields,
+	},
+	"InternalIpOnly": ubx.FieldSpec{WireName: "internal_ip_only"},
+	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
+	"NetworkUri":     ubx.FieldSpec{WireName: "network_uri"},
+	"NodeGroupAffinity": ubx.FieldSpec{
+		WireName: "node_group_affinity",
+		Kind:     "object",
+		Fields:   Cluster_Config_GceClusterConfig_NodeGroupAffinityFields,
+	},
+	"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   Cluster_Config_GceClusterConfig_ReservationAffinityFields,
+	},
+	"ResourceManagerTags":  ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ServiceAccount":       ubx.FieldSpec{WireName: "service_account"},
+	"ServiceAccountScopes": ubx.FieldSpec{WireName: "service_account_scopes"},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GceClusterConfig_ShieldedInstanceConfigFields,
+	},
+	"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
+	"Tags":          ubx.FieldSpec{WireName: "tags"},
+	"ZoneUri":       ubx.FieldSpec{WireName: "zone_uri"},
+}
 
 var Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields = ubx.FieldMap{
-		"ClusterNamespace": ubx.FieldSpec{WireName: "cluster_namespace"},
-		"TargetGkeCluster": ubx.FieldSpec{WireName: "target_gke_cluster"},
-	}
+	"ClusterNamespace": ubx.FieldSpec{WireName: "cluster_namespace"},
+	"TargetGkeCluster": ubx.FieldSpec{WireName: "target_gke_cluster"},
+}
 
 var Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields = ubx.FieldMap{
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-	}
+	"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
+}
 
 var Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+}
 
 var Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields,
-		},
-		"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
-		"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields,
+	},
+	"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
+	"LocalSsdCount":  ubx.FieldSpec{WireName: "local_ssd_count"},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"Preemptible":    ubx.FieldSpec{WireName: "preemptible"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Spot":           ubx.FieldSpec{WireName: "spot"},
+}
 
 var Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields = ubx.FieldMap{
-		"Autoscaling": ubx.FieldSpec{
-			WireName: "autoscaling",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields,
-		},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields,
-		},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-	}
+	"Autoscaling": ubx.FieldSpec{
+		WireName: "autoscaling",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields,
+	},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields,
+	},
+	"Locations": ubx.FieldSpec{WireName: "locations"},
+}
 
 var Cluster_Config_GkeClusterConfig_NodePoolTargetFields = ubx.FieldMap{
-		"NodePool": ubx.FieldSpec{WireName: "node_pool"},
-		"NodePoolConfig": ubx.FieldSpec{
-			WireName: "node_pool_config",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields,
-		},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"NodePool": ubx.FieldSpec{WireName: "node_pool"},
+	"NodePoolConfig": ubx.FieldSpec{
+		WireName: "node_pool_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields,
+	},
+	"Roles": ubx.FieldSpec{WireName: "roles"},
+}
 
 var Cluster_Config_GkeClusterConfigFields = ubx.FieldMap{
-		"GkeClusterTarget": ubx.FieldSpec{WireName: "gke_cluster_target"},
-		"NamespacedGkeDeploymentTarget": ubx.FieldSpec{
-			WireName: "namespaced_gke_deployment_target",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields,
-		},
-		"NodePoolTarget": ubx.FieldSpec{
-			WireName: "node_pool_target",
-			Kind: "list",
-			Fields: Cluster_Config_GkeClusterConfig_NodePoolTargetFields,
-		},
-	}
+	"GkeClusterTarget": ubx.FieldSpec{WireName: "gke_cluster_target"},
+	"NamespacedGkeDeploymentTarget": ubx.FieldSpec{
+		WireName: "namespaced_gke_deployment_target",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields,
+	},
+	"NodePoolTarget": ubx.FieldSpec{
+		WireName: "node_pool_target",
+		Kind:     "list",
+		Fields:   Cluster_Config_GkeClusterConfig_NodePoolTargetFields,
+	},
+}
 
 var Cluster_Config_InitializationActionsFields = ubx.FieldMap{
-		"ExecutableFile": ubx.FieldSpec{WireName: "executable_file"},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-	}
+	"ExecutableFile":   ubx.FieldSpec{WireName: "executable_file"},
+	"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
+}
 
 var Cluster_Config_LifecycleConfigFields = ubx.FieldMap{
-		"AutoDeleteTime": ubx.FieldSpec{WireName: "auto_delete_time"},
-		"AutoDeleteTtl": ubx.FieldSpec{WireName: "auto_delete_ttl"},
-		"AutoStopTime": ubx.FieldSpec{WireName: "auto_stop_time"},
-		"AutoStopTtl": ubx.FieldSpec{WireName: "auto_stop_ttl"},
-		"IdleDeleteTtl": ubx.FieldSpec{WireName: "idle_delete_ttl"},
-		"IdleStartTime": ubx.FieldSpec{WireName: "idle_start_time"},
-		"IdleStopTtl": ubx.FieldSpec{WireName: "idle_stop_ttl"},
-	}
+	"AutoDeleteTime": ubx.FieldSpec{WireName: "auto_delete_time"},
+	"AutoDeleteTtl":  ubx.FieldSpec{WireName: "auto_delete_ttl"},
+	"AutoStopTime":   ubx.FieldSpec{WireName: "auto_stop_time"},
+	"AutoStopTtl":    ubx.FieldSpec{WireName: "auto_stop_ttl"},
+	"IdleDeleteTtl":  ubx.FieldSpec{WireName: "idle_delete_ttl"},
+	"IdleStartTime":  ubx.FieldSpec{WireName: "idle_start_time"},
+	"IdleStopTtl":    ubx.FieldSpec{WireName: "idle_stop_ttl"},
+}
 
 var Cluster_Config_MetastoreConfigFields = ubx.FieldMap{
-		"DataprocMetastoreService": ubx.FieldSpec{WireName: "dataproc_metastore_service"},
-	}
+	"DataprocMetastoreService": ubx.FieldSpec{WireName: "dataproc_metastore_service"},
+}
 
 var Cluster_Config_SecurityConfig_IdentityConfigFields = ubx.FieldMap{
-		"EnableSsh": ubx.FieldSpec{WireName: "enable_ssh"},
-		"UserServiceAccountMapping": ubx.FieldSpec{WireName: "user_service_account_mapping"},
-	}
+	"EnableSsh":                 ubx.FieldSpec{WireName: "enable_ssh"},
+	"UserServiceAccountMapping": ubx.FieldSpec{WireName: "user_service_account_mapping"},
+}
 
 var Cluster_Config_SecurityConfig_KerberosConfigFields = ubx.FieldMap{
-		"CrossRealmTrustAdminServer": ubx.FieldSpec{WireName: "cross_realm_trust_admin_server"},
-		"CrossRealmTrustKdc": ubx.FieldSpec{WireName: "cross_realm_trust_kdc"},
-		"CrossRealmTrustRealm": ubx.FieldSpec{WireName: "cross_realm_trust_realm"},
-		"CrossRealmTrustSharedPasswordUri": ubx.FieldSpec{WireName: "cross_realm_trust_shared_password_uri"},
-		"EnableKerberos": ubx.FieldSpec{WireName: "enable_kerberos"},
-		"KdcDbKeyUri": ubx.FieldSpec{WireName: "kdc_db_key_uri"},
-		"KeyPasswordUri": ubx.FieldSpec{WireName: "key_password_uri"},
-		"KeystorePasswordUri": ubx.FieldSpec{WireName: "keystore_password_uri"},
-		"KeystoreUri": ubx.FieldSpec{WireName: "keystore_uri"},
-		"KmsKeyUri": ubx.FieldSpec{WireName: "kms_key_uri"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
-		"RootPrincipalPasswordUri": ubx.FieldSpec{WireName: "root_principal_password_uri"},
-		"TgtLifetimeHours": ubx.FieldSpec{WireName: "tgt_lifetime_hours"},
-		"TruststorePasswordUri": ubx.FieldSpec{WireName: "truststore_password_uri"},
-		"TruststoreUri": ubx.FieldSpec{WireName: "truststore_uri"},
-	}
+	"CrossRealmTrustAdminServer":       ubx.FieldSpec{WireName: "cross_realm_trust_admin_server"},
+	"CrossRealmTrustKdc":               ubx.FieldSpec{WireName: "cross_realm_trust_kdc"},
+	"CrossRealmTrustRealm":             ubx.FieldSpec{WireName: "cross_realm_trust_realm"},
+	"CrossRealmTrustSharedPasswordUri": ubx.FieldSpec{WireName: "cross_realm_trust_shared_password_uri"},
+	"EnableKerberos":                   ubx.FieldSpec{WireName: "enable_kerberos"},
+	"KdcDbKeyUri":                      ubx.FieldSpec{WireName: "kdc_db_key_uri"},
+	"KeyPasswordUri":                   ubx.FieldSpec{WireName: "key_password_uri"},
+	"KeystorePasswordUri":              ubx.FieldSpec{WireName: "keystore_password_uri"},
+	"KeystoreUri":                      ubx.FieldSpec{WireName: "keystore_uri"},
+	"KmsKeyUri":                        ubx.FieldSpec{WireName: "kms_key_uri"},
+	"Realm":                            ubx.FieldSpec{WireName: "realm"},
+	"RootPrincipalPasswordUri":         ubx.FieldSpec{WireName: "root_principal_password_uri"},
+	"TgtLifetimeHours":                 ubx.FieldSpec{WireName: "tgt_lifetime_hours"},
+	"TruststorePasswordUri":            ubx.FieldSpec{WireName: "truststore_password_uri"},
+	"TruststoreUri":                    ubx.FieldSpec{WireName: "truststore_uri"},
+}
 
 var Cluster_Config_SecurityConfigFields = ubx.FieldMap{
-		"IdentityConfig": ubx.FieldSpec{
-			WireName: "identity_config",
-			Kind: "object",
-			Fields: Cluster_Config_SecurityConfig_IdentityConfigFields,
-		},
-		"KerberosConfig": ubx.FieldSpec{
-			WireName: "kerberos_config",
-			Kind: "object",
-			Fields: Cluster_Config_SecurityConfig_KerberosConfigFields,
-		},
-	}
+	"IdentityConfig": ubx.FieldSpec{
+		WireName: "identity_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_SecurityConfig_IdentityConfigFields,
+	},
+	"KerberosConfig": ubx.FieldSpec{
+		WireName: "kerberos_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_SecurityConfig_KerberosConfigFields,
+	},
+}
 
 var Cluster_Config_SoftwareConfigFields = ubx.FieldMap{
-		"ImageVersion": ubx.FieldSpec{WireName: "image_version"},
-		"OptionalComponents": ubx.FieldSpec{WireName: "optional_components"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"ImageVersion":       ubx.FieldSpec{WireName: "image_version"},
+	"OptionalComponents": ubx.FieldSpec{WireName: "optional_components"},
+	"Properties":         ubx.FieldSpec{WireName: "properties"},
+}
 
 var Cluster_ConfigFields = ubx.FieldMap{
-		"AutoscalingConfig": ubx.FieldSpec{
-			WireName: "autoscaling_config",
-			Kind: "object",
-			Fields: Cluster_Config_AutoscalingConfigFields,
-		},
-		"AuxiliaryNodeGroups": ubx.FieldSpec{
-			WireName: "auxiliary_node_groups",
-			Kind: "list",
-			Fields: Cluster_Config_AuxiliaryNodeGroupsFields,
-		},
-		"ClusterTier": ubx.FieldSpec{WireName: "cluster_tier"},
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
-		"ConfigBucket": ubx.FieldSpec{WireName: "config_bucket"},
-		"DataprocMetricConfig": ubx.FieldSpec{
-			WireName: "dataproc_metric_config",
-			Kind: "object",
-			Fields: Cluster_Config_DataprocMetricConfigFields,
-		},
-		"DiagnosticBucket": ubx.FieldSpec{WireName: "diagnostic_bucket"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Cluster_Config_EncryptionConfigFields,
-		},
-		"EndpointConfig": ubx.FieldSpec{
-			WireName: "endpoint_config",
-			Kind: "object",
-			Fields: Cluster_Config_EndpointConfigFields,
-		},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"GceClusterConfig": ubx.FieldSpec{
-			WireName: "gce_cluster_config",
-			Kind: "object",
-			Fields: Cluster_Config_GceClusterConfigFields,
-		},
-		"GkeClusterConfig": ubx.FieldSpec{
-			WireName: "gke_cluster_config",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfigFields,
-		},
-		"InitializationActions": ubx.FieldSpec{
-			WireName: "initialization_actions",
-			Kind: "list",
-			Fields: Cluster_Config_InitializationActionsFields,
-		},
-		"LifecycleConfig": ubx.FieldSpec{
-			WireName: "lifecycle_config",
-			Kind: "object",
-			Fields: Cluster_Config_LifecycleConfigFields,
-		},
-		"MasterConfig": ubx.FieldSpec{
-			WireName: "master_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"MetastoreConfig": ubx.FieldSpec{
-			WireName: "metastore_config",
-			Kind: "object",
-			Fields: Cluster_Config_MetastoreConfigFields,
-		},
-		"SecondaryWorkerConfig": ubx.FieldSpec{
-			WireName: "secondary_worker_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"SecurityConfig": ubx.FieldSpec{
-			WireName: "security_config",
-			Kind: "object",
-			Fields: Cluster_Config_SecurityConfigFields,
-		},
-		"SoftwareConfig": ubx.FieldSpec{
-			WireName: "software_config",
-			Kind: "object",
-			Fields: Cluster_Config_SoftwareConfigFields,
-		},
-		"TempBucket": ubx.FieldSpec{WireName: "temp_bucket"},
-		"WorkerConfig": ubx.FieldSpec{
-			WireName: "worker_config",
-			Kind: "object",
-			Fields: Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-	}
+	"AutoscalingConfig": ubx.FieldSpec{
+		WireName: "autoscaling_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AutoscalingConfigFields,
+	},
+	"AuxiliaryNodeGroups": ubx.FieldSpec{
+		WireName: "auxiliary_node_groups",
+		Kind:     "list",
+		Fields:   Cluster_Config_AuxiliaryNodeGroupsFields,
+	},
+	"ClusterTier":  ubx.FieldSpec{WireName: "cluster_tier"},
+	"ClusterType":  ubx.FieldSpec{WireName: "cluster_type"},
+	"ConfigBucket": ubx.FieldSpec{WireName: "config_bucket"},
+	"DataprocMetricConfig": ubx.FieldSpec{
+		WireName: "dataproc_metric_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_DataprocMetricConfigFields,
+	},
+	"DiagnosticBucket": ubx.FieldSpec{WireName: "diagnostic_bucket"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_EncryptionConfigFields,
+	},
+	"EndpointConfig": ubx.FieldSpec{
+		WireName: "endpoint_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_EndpointConfigFields,
+	},
+	"Engine": ubx.FieldSpec{WireName: "engine"},
+	"GceClusterConfig": ubx.FieldSpec{
+		WireName: "gce_cluster_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GceClusterConfigFields,
+	},
+	"GkeClusterConfig": ubx.FieldSpec{
+		WireName: "gke_cluster_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfigFields,
+	},
+	"InitializationActions": ubx.FieldSpec{
+		WireName: "initialization_actions",
+		Kind:     "list",
+		Fields:   Cluster_Config_InitializationActionsFields,
+	},
+	"LifecycleConfig": ubx.FieldSpec{
+		WireName: "lifecycle_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_LifecycleConfigFields,
+	},
+	"MasterConfig": ubx.FieldSpec{
+		WireName: "master_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"MetastoreConfig": ubx.FieldSpec{
+		WireName: "metastore_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_MetastoreConfigFields,
+	},
+	"SecondaryWorkerConfig": ubx.FieldSpec{
+		WireName: "secondary_worker_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"SecurityConfig": ubx.FieldSpec{
+		WireName: "security_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_SecurityConfigFields,
+	},
+	"SoftwareConfig": ubx.FieldSpec{
+		WireName: "software_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_SoftwareConfigFields,
+	},
+	"TempBucket": ubx.FieldSpec{WireName: "temp_bucket"},
+	"WorkerConfig": ubx.FieldSpec{
+		WireName: "worker_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+}
 
 var Cluster_MetricsFields = ubx.FieldMap{
-		"HdfsMetrics": ubx.FieldSpec{WireName: "hdfs_metrics"},
-		"YarnMetrics": ubx.FieldSpec{WireName: "yarn_metrics"},
-	}
+	"HdfsMetrics": ubx.FieldSpec{WireName: "hdfs_metrics"},
+	"YarnMetrics": ubx.FieldSpec{WireName: "yarn_metrics"},
+}
 
 var Cluster_StatusFields = ubx.FieldMap{
-		"Detail": ubx.FieldSpec{WireName: "detail"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateStartTime": ubx.FieldSpec{WireName: "state_start_time"},
-		"Substate": ubx.FieldSpec{WireName: "substate"},
-	}
+	"Detail":         ubx.FieldSpec{WireName: "detail"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+	"StateStartTime": ubx.FieldSpec{WireName: "state_start_time"},
+	"Substate":       ubx.FieldSpec{WireName: "substate"},
+}
 
 var Cluster_VirtualClusterConfig_AuxiliaryServicesConfig_SparkHistoryServerConfigFields = ubx.FieldMap{
-		"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
-	}
+	"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
+}
 
 var Cluster_VirtualClusterConfig_AuxiliaryServicesConfigFields = ubx.FieldMap{
-		"MetastoreConfig": ubx.FieldSpec{
-			WireName: "metastore_config",
-			Kind: "object",
-			Fields: Cluster_Config_MetastoreConfigFields,
-		},
-		"SparkHistoryServerConfig": ubx.FieldSpec{
-			WireName: "spark_history_server_config",
-			Kind: "object",
-			Fields: Cluster_VirtualClusterConfig_AuxiliaryServicesConfig_SparkHistoryServerConfigFields,
-		},
-	}
+	"MetastoreConfig": ubx.FieldSpec{
+		WireName: "metastore_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_MetastoreConfigFields,
+	},
+	"SparkHistoryServerConfig": ubx.FieldSpec{
+		WireName: "spark_history_server_config",
+		Kind:     "object",
+		Fields:   Cluster_VirtualClusterConfig_AuxiliaryServicesConfig_SparkHistoryServerConfigFields,
+	},
+}
 
 var Cluster_VirtualClusterConfig_KubernetesClusterConfig_KubernetesSoftwareConfigFields = ubx.FieldMap{
-		"ComponentVersion": ubx.FieldSpec{WireName: "component_version"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"ComponentVersion": ubx.FieldSpec{WireName: "component_version"},
+	"Properties":       ubx.FieldSpec{WireName: "properties"},
+}
 
 var Cluster_VirtualClusterConfig_KubernetesClusterConfigFields = ubx.FieldMap{
-		"GkeClusterConfig": ubx.FieldSpec{
-			WireName: "gke_cluster_config",
-			Kind: "object",
-			Fields: Cluster_Config_GkeClusterConfigFields,
-		},
-		"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
-		"KubernetesSoftwareConfig": ubx.FieldSpec{
-			WireName: "kubernetes_software_config",
-			Kind: "object",
-			Fields: Cluster_VirtualClusterConfig_KubernetesClusterConfig_KubernetesSoftwareConfigFields,
-		},
-	}
+	"GkeClusterConfig": ubx.FieldSpec{
+		WireName: "gke_cluster_config",
+		Kind:     "object",
+		Fields:   Cluster_Config_GkeClusterConfigFields,
+	},
+	"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
+	"KubernetesSoftwareConfig": ubx.FieldSpec{
+		WireName: "kubernetes_software_config",
+		Kind:     "object",
+		Fields:   Cluster_VirtualClusterConfig_KubernetesClusterConfig_KubernetesSoftwareConfigFields,
+	},
+}
 
 var Cluster_VirtualClusterConfigFields = ubx.FieldMap{
-		"AuxiliaryServicesConfig": ubx.FieldSpec{
-			WireName: "auxiliary_services_config",
-			Kind: "object",
-			Fields: Cluster_VirtualClusterConfig_AuxiliaryServicesConfigFields,
-		},
-		"KubernetesClusterConfig": ubx.FieldSpec{
-			WireName: "kubernetes_cluster_config",
-			Kind: "object",
-			Fields: Cluster_VirtualClusterConfig_KubernetesClusterConfigFields,
-		},
-		"StagingBucket": ubx.FieldSpec{WireName: "staging_bucket"},
-	}
+	"AuxiliaryServicesConfig": ubx.FieldSpec{
+		WireName: "auxiliary_services_config",
+		Kind:     "object",
+		Fields:   Cluster_VirtualClusterConfig_AuxiliaryServicesConfigFields,
+	},
+	"KubernetesClusterConfig": ubx.FieldSpec{
+		WireName: "kubernetes_cluster_config",
+		Kind:     "object",
+		Fields:   Cluster_VirtualClusterConfig_KubernetesClusterConfigFields,
+	},
+	"StagingBucket": ubx.FieldSpec{WireName: "staging_bucket"},
+}
 
 type ClusterConfig struct {
 	// Required. The cluster name, which must be unique within a project. The name must start with a lowercase letter, and can contain up to 51 lowercase letters, numbers, and hyphens. It cannot end with a hyphen. The name of a deleted cluster can be reused.
 	ClusterName any
-	// Output only. A cluster UUID (Unique Universal Identifier). The service generates this value when it creates the cluster.
-	ClusterUuid any
 	// The cluster config.
 	Config any
 	// Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster.
@@ -935,8 +933,6 @@ type ClusterConfig struct {
 	ProjectId any
 	// The status of a cluster and its instances.
 	Status any
-	// Output only. The previous cluster status.
-	StatusHistory any
 	// The cluster config for a cluster that does not directly control the underlying compute resources, such as a GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
 	VirtualClusterConfig any
 }
@@ -966,33 +962,27 @@ var Cluster = ubx.ResourceBinding{
 	WireType: "google_dataproc_cluster",
 	Fields: ubx.FieldMap{
 		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"ClusterUuid": ubx.FieldSpec{WireName: "cluster_uuid"},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Cluster_ConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "object",
-			Fields: Cluster_MetricsFields,
+			Kind:     "object",
+			Fields:   Cluster_MetricsFields,
 		},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Cluster_StatusFields,
-		},
-		"StatusHistory": ubx.FieldSpec{
-			WireName: "status_history",
-			Kind: "list",
-			Fields: Cluster_StatusFields,
+			Kind:     "object",
+			Fields:   Cluster_StatusFields,
 		},
 		"VirtualClusterConfig": ubx.FieldSpec{
 			WireName: "virtual_cluster_config",
-			Kind: "object",
-			Fields: Cluster_VirtualClusterConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_VirtualClusterConfigFields,
 		},
 	},
 }

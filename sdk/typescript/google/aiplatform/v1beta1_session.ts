@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1SessionConfig {
-  /** Output only. Timestamp when the session was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The display name of the session. */
   displayName?: string | Computed<string>;
   /** Optional. Timestamp of when this session is considered expired. This is *always* provided on output, regardless of what was sent on input. The minimum value is 24 hours from the time of creation. */
@@ -16,8 +14,6 @@ export interface V1beta1SessionConfig {
   sessionState?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Optional. Input only. The TTL for this session. The minimum value is 24 hours. */
   ttl?: string | Computed<string>;
-  /** Output only. Timestamp when the session was updated. */
-  updateTime?: string | Computed<string>;
   /** Required. Immutable. String id provided by the user */
   userId?: string | Computed<string>;
 }
@@ -46,14 +42,12 @@ export interface V1beta1SessionAttrs {
 export const V1beta1Session: ResourceBinding<V1beta1SessionConfig, V1beta1SessionAttrs> = {
   wireType: "google_aiplatform_v1beta1_session",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     expireTime: "expire_time",
     labels: "labels",
     name: "name",
     sessionState: "session_state",
     ttl: "ttl",
-    updateTime: "update_time",
     userId: "user_id",
   },
 };

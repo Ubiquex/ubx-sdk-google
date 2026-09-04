@@ -6,34 +6,15 @@ export interface V1beta3Processor_ProcessorVersionAliases {
   processorVersion?: string | Computed<string>;
 }
 
-const V1beta3Processor_ProcessorVersionAliasesFields: FieldMap = {
-  alias: "alias",
-  processorVersion: "processor_version",
-};
-
 export interface V1beta3ProcessorConfig {
   /** Optional. SchemaVersion used by the Processor. It is the same as Processor's DatasetSchema.schema_version Format is `projects/{project}/locations/{location}/schemas/{schema}/schemaVersions/{schema_version}. */
   activeSchemaVersion?: string | Computed<string>;
-  /** Output only. The time the processor was created. */
-  createTime?: string | Computed<string>;
   /** The default processor version. */
   defaultProcessorVersion?: string | Computed<string>;
   /** The display name of the processor. */
   displayName?: string | Computed<string>;
   /** The [KMS key](https://cloud.google.com/security-key-management) used for encryption and decryption in CMEK scenarios. */
   kmsKeyName?: string | Computed<string>;
-  /** Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}` */
-  name?: string | Computed<string>;
-  /** Output only. Immutable. The http endpoint that can be called to invoke processing. */
-  processEndpoint?: string | Computed<string>;
-  /** Output only. The processor version aliases. */
-  processorVersionAliases?: V1beta3Processor_ProcessorVersionAliases[] | Computed<V1beta3Processor_ProcessorVersionAliases[]>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of the processor. */
-  state?: string | Computed<string>;
   /** The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`. To get a list of processor types, see FetchProcessorTypes. */
   type?: string | Computed<string>;
 }
@@ -69,20 +50,9 @@ export const V1beta3Processor: ResourceBinding<V1beta3ProcessorConfig, V1beta3Pr
   wireType: "google_documentai_v1beta3_processor",
   fields: {
     activeSchemaVersion: "active_schema_version",
-    createTime: "create_time",
     defaultProcessorVersion: "default_processor_version",
     displayName: "display_name",
     kmsKeyName: "kms_key_name",
-    name: "name",
-    processEndpoint: "process_endpoint",
-    processorVersionAliases: {
-      wireName: "processor_version_aliases",
-      kind: "list",
-      fields: V1beta3Processor_ProcessorVersionAliasesFields,
-    },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
     type: "type",
   },
 };

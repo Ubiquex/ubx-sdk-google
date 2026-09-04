@@ -172,12 +172,8 @@ const CloudExadataInfrastructure_PropertiesFields: FieldMap = {
 };
 
 export interface CloudExadataInfrastructureConfig {
-  /** Output only. The date and time that the Exadata Infrastructure was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User friendly name for this resource. */
   displayName?: string | Computed<string>;
-  /** Output only. Entitlement ID of the private offer against which this infrastructure resource is provisioned. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
   gcpOracleZone?: string | Computed<string>;
   /** Optional. Labels or tags associated with the resource. */
@@ -208,9 +204,7 @@ export interface CloudExadataInfrastructureAttrs {
 export const CloudExadataInfrastructure: ResourceBinding<CloudExadataInfrastructureConfig, CloudExadataInfrastructureAttrs> = {
   wireType: "google_oracledatabase_cloud_exadata_infrastructure",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",
     name: "name",

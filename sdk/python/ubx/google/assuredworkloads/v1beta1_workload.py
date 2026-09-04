@@ -111,11 +111,6 @@ _V1beta1Workload_ResourceSettingsFields = {
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
 }
 
-_V1beta1Workload_ResourcesFields = {
-    "resource_id": ubx.FieldSpec(wire_name="resource_id"),
-    "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-}
-
 _V1beta1Workload_SaaEnrollmentResponseFields = {
     "setup_errors": ubx.FieldSpec(wire_name="setup_errors"),
     "setup_status": ubx.FieldSpec(wire_name="setup_status"),
@@ -127,8 +122,6 @@ _V1beta1Workload_WorkloadOptionsFields = {
 
 @dataclasses.dataclass
 class V1beta1WorkloadConfig:
-    # Output only. The number of updates available for the workload.
-    available_updates: Any = None
     # Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
     billing_account: Any = None
     # Settings specific to resources needed for CJIS.
@@ -137,12 +130,6 @@ class V1beta1WorkloadConfig:
     compliance_regime: Any = None
     # Represents the Compliance Status of this workload
     compliance_status: Any = None
-    # Output only. Indicates whether the compliance updates feature is enabled for a workload. The compliance updates feature can be enabled via the EnableComplianceUpdates endpoint.
-    compliance_updates_enabled: Any = None
-    # Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment.
-    compliant_but_disallowed_services: Any = None
-    # Output only. Immutable. The Workload creation timestamp.
-    create_time: Any = None
     # Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
     display_name: Any = None
     # External key management systems(EKM) Provisioning response
@@ -157,8 +144,6 @@ class V1beta1WorkloadConfig:
     fedramp_moderate_settings: Any = None
     # Settings specific to resources needed for IL4.
     il4_settings: Any = None
-    # Output only. Represents the KAJ enrollment state of the given workload.
-    kaj_enrollment_state: Any = None
     # Settings specific to the Key Management Service.
     kms_settings: Any = None
     # Optional. Labels applied to the workload.
@@ -173,12 +158,8 @@ class V1beta1WorkloadConfig:
     partner_services_billing_account: Any = None
     # Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
     provisioned_resources_parent: Any = None
-    # Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload.
-    resource_monitoring_enabled: Any = None
     # Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
     resource_settings: Any = None
-    # Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
-    resources: Any = None
     # Signed Access Approvals (SAA) enrollment response.
     saa_enrollment_response: Any = None
     # Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
@@ -250,7 +231,6 @@ class V1beta1WorkloadAttrs:
 V1beta1Workload = ubx.ResourceBinding(
     wire_type="google_assuredworkloads_v1beta1_workload",
     fields={
-        "available_updates": ubx.FieldSpec(wire_name="available_updates"),
         "billing_account": ubx.FieldSpec(wire_name="billing_account"),
         "cjis_settings": ubx.FieldSpec(
             wire_name="cjis_settings",
@@ -263,9 +243,6 @@ V1beta1Workload = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Workload_ComplianceStatusFields,
         ),
-        "compliance_updates_enabled": ubx.FieldSpec(wire_name="compliance_updates_enabled"),
-        "compliant_but_disallowed_services": ubx.FieldSpec(wire_name="compliant_but_disallowed_services"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "ekm_provisioning_response": ubx.FieldSpec(
             wire_name="ekm_provisioning_response",
@@ -289,7 +266,6 @@ V1beta1Workload = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Workload_CjisSettingsFields,
         ),
-        "kaj_enrollment_state": ubx.FieldSpec(wire_name="kaj_enrollment_state"),
         "kms_settings": ubx.FieldSpec(
             wire_name="kms_settings",
             kind="object",
@@ -305,16 +281,10 @@ V1beta1Workload = ubx.ResourceBinding(
         ),
         "partner_services_billing_account": ubx.FieldSpec(wire_name="partner_services_billing_account"),
         "provisioned_resources_parent": ubx.FieldSpec(wire_name="provisioned_resources_parent"),
-        "resource_monitoring_enabled": ubx.FieldSpec(wire_name="resource_monitoring_enabled"),
         "resource_settings": ubx.FieldSpec(
             wire_name="resource_settings",
             kind="list",
             fields=_V1beta1Workload_ResourceSettingsFields,
-        ),
-        "resources": ubx.FieldSpec(
-            wire_name="resources",
-            kind="list",
-            fields=_V1beta1Workload_ResourcesFields,
         ),
         "saa_enrollment_response": ubx.FieldSpec(
             wire_name="saa_enrollment_response",

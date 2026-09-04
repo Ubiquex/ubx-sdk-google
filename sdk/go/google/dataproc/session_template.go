@@ -88,95 +88,91 @@ type SessionTemplate_RuntimeConfig struct {
 }
 
 var SessionTemplate_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields = ubx.FieldMap{
-		"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
-	}
+	"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
+}
 
 var SessionTemplate_EnvironmentConfig_ExecutionConfigFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{
-			WireName: "authentication_config",
-			Kind: "object",
-			Fields: SessionTemplate_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
-		},
-		"IdleTtl": ubx.FieldSpec{WireName: "idle_ttl"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StagingBucket": ubx.FieldSpec{WireName: "staging_bucket"},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{
+		WireName: "authentication_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
+	},
+	"IdleTtl":             ubx.FieldSpec{WireName: "idle_ttl"},
+	"KmsKey":              ubx.FieldSpec{WireName: "kms_key"},
+	"NetworkTags":         ubx.FieldSpec{WireName: "network_tags"},
+	"NetworkUri":          ubx.FieldSpec{WireName: "network_uri"},
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ServiceAccount":      ubx.FieldSpec{WireName: "service_account"},
+	"StagingBucket":       ubx.FieldSpec{WireName: "staging_bucket"},
+	"SubnetworkUri":       ubx.FieldSpec{WireName: "subnetwork_uri"},
+	"Ttl":                 ubx.FieldSpec{WireName: "ttl"},
+}
 
 var SessionTemplate_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields = ubx.FieldMap{
-		"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
-	}
+	"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
+}
 
 var SessionTemplate_EnvironmentConfig_PeripheralsConfigFields = ubx.FieldMap{
-		"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
-		"SparkHistoryServerConfig": ubx.FieldSpec{
-			WireName: "spark_history_server_config",
-			Kind: "object",
-			Fields: SessionTemplate_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
-		},
-	}
+	"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
+	"SparkHistoryServerConfig": ubx.FieldSpec{
+		WireName: "spark_history_server_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
+	},
+}
 
 var SessionTemplate_EnvironmentConfigFields = ubx.FieldMap{
-		"ExecutionConfig": ubx.FieldSpec{
-			WireName: "execution_config",
-			Kind: "object",
-			Fields: SessionTemplate_EnvironmentConfig_ExecutionConfigFields,
-		},
-		"PeripheralsConfig": ubx.FieldSpec{
-			WireName: "peripherals_config",
-			Kind: "object",
-			Fields: SessionTemplate_EnvironmentConfig_PeripheralsConfigFields,
-		},
-	}
+	"ExecutionConfig": ubx.FieldSpec{
+		WireName: "execution_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_EnvironmentConfig_ExecutionConfigFields,
+	},
+	"PeripheralsConfig": ubx.FieldSpec{
+		WireName: "peripherals_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_EnvironmentConfig_PeripheralsConfigFields,
+	},
+}
 
 var SessionTemplate_JupyterSessionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Kernel": ubx.FieldSpec{WireName: "kernel"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Kernel":      ubx.FieldSpec{WireName: "kernel"},
+}
 
 var SessionTemplate_RuntimeConfig_AutotuningConfigFields = ubx.FieldMap{
-		"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
-	}
+	"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
+}
 
 var SessionTemplate_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields = ubx.FieldMap{
-		"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
-	}
+	"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
+}
 
 var SessionTemplate_RuntimeConfig_RepositoryConfigFields = ubx.FieldMap{
-		"PypiRepositoryConfig": ubx.FieldSpec{
-			WireName: "pypi_repository_config",
-			Kind: "object",
-			Fields: SessionTemplate_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
-		},
-	}
+	"PypiRepositoryConfig": ubx.FieldSpec{
+		WireName: "pypi_repository_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
+	},
+}
 
 var SessionTemplate_RuntimeConfigFields = ubx.FieldMap{
-		"AutotuningConfig": ubx.FieldSpec{
-			WireName: "autotuning_config",
-			Kind: "object",
-			Fields: SessionTemplate_RuntimeConfig_AutotuningConfigFields,
-		},
-		"Cohort": ubx.FieldSpec{WireName: "cohort"},
-		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"RepositoryConfig": ubx.FieldSpec{
-			WireName: "repository_config",
-			Kind: "object",
-			Fields: SessionTemplate_RuntimeConfig_RepositoryConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AutotuningConfig": ubx.FieldSpec{
+		WireName: "autotuning_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_RuntimeConfig_AutotuningConfigFields,
+	},
+	"Cohort":         ubx.FieldSpec{WireName: "cohort"},
+	"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+	"RepositoryConfig": ubx.FieldSpec{
+		WireName: "repository_config",
+		Kind:     "object",
+		Fields:   SessionTemplate_RuntimeConfig_RepositoryConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type SessionTemplateConfig struct {
-	// Output only. The time when the template was created.
-	CreateTime any
-	// Output only. The email address of the user who created the template.
-	Creator any
 	// Optional. Brief description of the template.
 	Description any
 	// Environment configuration for a workload.
@@ -191,10 +187,6 @@ type SessionTemplateConfig struct {
 	RuntimeConfig any
 	// Spark connect configuration for an interactive session.
 	SparkConnectSession any
-	// Output only. The time the template was last updated.
-	UpdateTime any
-	// Output only. A session template UUID (Unique Universal Identifier). The service generates this value when it creates the session template.
-	Uuid any
 }
 
 type SessionTemplateAttrs struct {
@@ -225,28 +217,24 @@ type SessionTemplateAttrs struct {
 var SessionTemplate = ubx.ResourceBinding{
 	WireType: "google_dataproc_session_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EnvironmentConfig": ubx.FieldSpec{
 			WireName: "environment_config",
-			Kind: "object",
-			Fields: SessionTemplate_EnvironmentConfigFields,
+			Kind:     "object",
+			Fields:   SessionTemplate_EnvironmentConfigFields,
 		},
 		"JupyterSession": ubx.FieldSpec{
 			WireName: "jupyter_session",
-			Kind: "object",
-			Fields: SessionTemplate_JupyterSessionFields,
+			Kind:     "object",
+			Fields:   SessionTemplate_JupyterSessionFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"RuntimeConfig": ubx.FieldSpec{
 			WireName: "runtime_config",
-			Kind: "object",
-			Fields: SessionTemplate_RuntimeConfigFields,
+			Kind:     "object",
+			Fields:   SessionTemplate_RuntimeConfigFields,
 		},
 		"SparkConnectSession": ubx.FieldSpec{WireName: "spark_connect_session"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
 	},
 }

@@ -502,20 +502,12 @@ const V1alphaBackup_ServiceRevisionFields: FieldMap = {
 };
 
 export interface V1alphaBackupConfig {
-  /** Output only. The time when the backup was started. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the backup. */
   description?: string | Computed<string>;
-  /** Output only. The time when the backup finished creating. */
-  endTime?: string | Computed<string>;
   /** Immutable. Identifier. The relative resource name of the backup, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id} */
   name?: string | Computed<string>;
-  /** Output only. Services that are restoring from the backup. */
-  restoringServices?: string[] | Computed<string[]>;
   /** A managed metastore service that serves metadata queries. */
   serviceRevision?: V1alphaBackup_ServiceRevision | Computed<V1alphaBackup_ServiceRevision>;
-  /** Output only. The current state of the backup. */
-  state?: string | Computed<string>;
 }
 
 export interface V1alphaBackupAttrs {
@@ -538,16 +530,12 @@ export interface V1alphaBackupAttrs {
 export const V1alphaBackup: ResourceBinding<V1alphaBackupConfig, V1alphaBackupAttrs> = {
   wireType: "google_metastore_v1alpha_backup",
   fields: {
-    createTime: "create_time",
     description: "description",
-    endTime: "end_time",
     name: "name",
-    restoringServices: "restoring_services",
     serviceRevision: {
       wireName: "service_revision",
       kind: "object",
       fields: V1alphaBackup_ServiceRevisionFields,
     },
-    state: "state",
   },
 };

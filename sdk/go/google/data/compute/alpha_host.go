@@ -22,43 +22,41 @@ type AlphaHost_Status struct {
 
 type AlphaHostConfig struct {
 	Association any
-	Host any
-	Project any
-	Zone any
+	Host        any
+	Project     any
 }
 
 type AlphaHostAttrs struct {
 	// Output only. All aliases for this resource. e.g. projects/123/zones/us-centra1-a/reservation/r1/reservationBlock/b1/hosts/h1
-	AliasLinks any
+	AliasLinks  any
 	Association any
 	// Output only. The creation timestamp, formatted asRFC3339 text.
 	CreationTimestamp any
 	// An optional description of this resource.
 	Description any
-	Host any
+	Host        any
 	// Output only. The unique identifier for this resource. This identifier is defined by the server.
 	Id any
 	// Output only. The type of resource. Alwayscompute#host for hosts.
 	Kind any
 	// Output only. The name of the host.
-	Name any
+	Name    any
 	Project any
 	// Output only. The self link of the host.
 	SelfLink any
 	// Output only. The self link with id of the host.
 	SelfLinkWithId any
 	// Output only. The state of the host.
-	State any
+	State  any
 	Status any
-	Zone any
+	Zone   any
 }
 
 var AlphaHost = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_host",
 	Fields: ubx.FieldMap{
 		"Association": ubx.FieldSpec{WireName: "association"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Host":        ubx.FieldSpec{WireName: "host"},
+		"Project":     ubx.FieldSpec{WireName: "project"},
 	},
 }

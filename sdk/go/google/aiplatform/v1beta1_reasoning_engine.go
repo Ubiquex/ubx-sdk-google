@@ -8,68 +8,68 @@ type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_Co
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription struct {
 	SpeakerLabel any
-	Text any
-	Words any
+	Text         any
+	Words        any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult struct {
-	Id any
+	Id      any
 	Outcome any
-	Output any
+	Output  any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode struct {
-	Code any
-	Id any
+	Code     any
+	Id       any
 	Language any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData struct {
 	DisplayName any
-	FileUri any
-	MimeType any
+	FileUri     any
+	MimeType    any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs struct {
-	BoolValue any
-	JsonPath any
-	NullValue any
-	NumberValue any
-	StringValue any
+	BoolValue    any
+	JsonPath     any
+	NullValue    any
+	NumberValue  any
+	StringValue  any
 	WillContinue any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall struct {
-	Args any
-	Id any
-	Name any
-	PartialArgs any
+	Args         any
+	Id           any
+	Name         any
+	PartialArgs  any
 	WillContinue any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData struct {
-	Data any
+	Data        any
 	DisplayName any
-	MimeType any
+	MimeType    any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts struct {
-	FileData any
+	FileData   any
 	InlineData any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse struct {
-	Id any
-	Name any
-	Parts any
-	Response any
+	Id         any
+	Name       any
+	Parts      any
+	Response   any
 	Scheduling any
 }
 
@@ -78,30 +78,30 @@ type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_Ge
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata struct {
-	EndOffset any
-	Fps any
+	EndOffset   any
+	Fps         any
 	StartOffset any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts struct {
-	AudioTranscription any
+	AudioTranscription  any
 	CodeExecutionResult any
-	ExecutableCode any
-	FileData any
-	FunctionCall any
-	FunctionResponse any
-	InlineData any
-	MediaProcessing any
-	MediaResolution any
-	Text any
-	Thought any
-	ThoughtSignature any
-	VideoMetadata any
+	ExecutableCode      any
+	FileData            any
+	FunctionCall        any
+	FunctionResponse    any
+	InlineData          any
+	MediaProcessing     any
+	MediaResolution     any
+	Text                any
+	Thought             any
+	ThoughtSignature    any
+	VideoMetadata       any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content struct {
 	Parts any
-	Role any
+	Role  any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events struct {
@@ -114,22 +114,22 @@ type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_Ge
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics struct {
 	CustomMemoryTopicLabel any
-	ManagedMemoryTopic any
+	ManagedMemoryTopic     any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories struct {
-	Fact any
+	Fact   any
 	Topics any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples struct {
 	ConversationSource any
-	GeneratedMemories any
+	GeneratedMemories  any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic struct {
 	Description any
-	Label any
+	Label       any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic struct {
@@ -137,17 +137,17 @@ type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_Me
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics struct {
-	CustomMemoryTopic any
+	CustomMemoryTopic  any
 	ManagedMemoryTopic any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs struct {
-	ConsolidationConfig any
+	ConsolidationConfig            any
 	DisableNaturalLanguageMemories any
-	EnableThirdPersonMemories any
-	GenerateMemoriesExamples any
-	MemoryTopics any
-	ScopeKeys any
+	EnableThirdPersonMemories      any
+	GenerateMemoriesExamples       any
+	MemoryTopics                   any
+	ScopeKeys                      any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRule struct {
@@ -180,42 +180,42 @@ type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfig 
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigs_Schema struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Example any
-	Format any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	Nullable any
-	Pattern any
-	Properties any
-	PropertyOrdering any
-	Ref any
-	Required any
-	Title any
-	Type any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Example              any
+	Format               any
+	Items                any
+	MaxItems             any
+	MaxLength            any
+	MaxProperties        any
+	Maximum              any
+	MinItems             any
+	MinLength            any
+	MinProperties        any
+	Minimum              any
+	Nullable             any
+	Pattern              any
+	Properties           any
+	PropertyOrdering     any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigs struct {
-	Id any
+	Id         any
 	JsonSchema any
 	MemoryType any
-	Schema any
+	Schema     any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs struct {
 	SchemaConfigs any
-	ScopeKeys any
+	ScopeKeys     any
 }
 
 type V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfig struct {
@@ -288,7 +288,7 @@ type V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig struct {
 }
 
 type V1beta1ReasoningEngine_Spec_DeploymentSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -307,7 +307,7 @@ type V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe struct {
 }
 
 type V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -320,12 +320,12 @@ type V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig struct {
 }
 
 type V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef struct {
-	Secret any
+	Secret  any
 	Version any
 }
 
 type V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnv struct {
-	Name any
+	Name      any
 	SecretRef any
 }
 
@@ -449,7 +449,7 @@ type V1beta1ReasoningEngine_Spec struct {
 }
 
 type V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManual_Targets struct {
-	Percent any
+	Percent             any
 	RuntimeRevisionName any
 }
 
@@ -466,635 +466,633 @@ type V1beta1ReasoningEngine_TrafficConfig struct {
 }
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields = ubx.FieldMap{
-		"RevisionsPerCandidateCount": ubx.FieldSpec{WireName: "revisions_per_candidate_count"},
-	}
+	"RevisionsPerCandidateCount": ubx.FieldSpec{WireName: "revisions_per_candidate_count"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-		"Word": ubx.FieldSpec{WireName: "word"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+	"Word":        ubx.FieldSpec{WireName: "word"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields = ubx.FieldMap{
-		"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Words": ubx.FieldSpec{
-			WireName: "words",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields,
-		},
-	}
+	"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"Words": ubx.FieldSpec{
+		WireName: "words",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FileUri":     ubx.FieldSpec{WireName: "file_uri"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"BoolValue":    ubx.FieldSpec{WireName: "bool_value"},
+	"JsonPath":     ubx.FieldSpec{WireName: "json_path"},
+	"NullValue":    ubx.FieldSpec{WireName: "null_value"},
+	"NumberValue":  ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartialArgs": ubx.FieldSpec{
-			WireName: "partial_args",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields,
-		},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PartialArgs": ubx.FieldSpec{
+		WireName: "partial_args",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields,
+	},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields = ubx.FieldMap{
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-	}
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields,
-		},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields,
+	},
+	"Response":   ubx.FieldSpec{WireName: "response"},
+	"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"Fps": ubx.FieldSpec{WireName: "fps"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"Fps":         ubx.FieldSpec{WireName: "fps"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields = ubx.FieldMap{
-		"AudioTranscription": ubx.FieldSpec{
-			WireName: "audio_transcription",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields,
-		},
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields,
-		},
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
-		},
-		"FunctionCall": ubx.FieldSpec{
-			WireName: "function_call",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields,
-		},
-		"FunctionResponse": ubx.FieldSpec{
-			WireName: "function_response",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-		"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
-		"MediaResolution": ubx.FieldSpec{
-			WireName: "media_resolution",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-		"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
-		"VideoMetadata": ubx.FieldSpec{
-			WireName: "video_metadata",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields,
-		},
-	}
+	"AudioTranscription": ubx.FieldSpec{
+		WireName: "audio_transcription",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields,
+	},
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields,
+	},
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
+	},
+	"FunctionCall": ubx.FieldSpec{
+		WireName: "function_call",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields,
+	},
+	"FunctionResponse": ubx.FieldSpec{
+		WireName: "function_response",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+	"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
+	"MediaResolution": ubx.FieldSpec{
+		WireName: "media_resolution",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields,
+	},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+	"Thought":          ubx.FieldSpec{WireName: "thought"},
+	"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
+	"VideoMetadata": ubx.FieldSpec{
+		WireName: "video_metadata",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields = ubx.FieldMap{
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields,
-		},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields,
-		},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields = ubx.FieldMap{
-		"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
-		"ManagedMemoryTopic": ubx.FieldSpec{WireName: "managed_memory_topic"},
-	}
+	"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
+	"ManagedMemoryTopic":     ubx.FieldSpec{WireName: "managed_memory_topic"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields = ubx.FieldMap{
-		"Fact": ubx.FieldSpec{WireName: "fact"},
-		"Topics": ubx.FieldSpec{
-			WireName: "topics",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields,
-		},
-	}
+	"Fact": ubx.FieldSpec{WireName: "fact"},
+	"Topics": ubx.FieldSpec{
+		WireName: "topics",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields = ubx.FieldMap{
-		"ConversationSource": ubx.FieldSpec{
-			WireName: "conversation_source",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields,
-		},
-		"GeneratedMemories": ubx.FieldSpec{
-			WireName: "generated_memories",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields,
-		},
-	}
+	"ConversationSource": ubx.FieldSpec{
+		WireName: "conversation_source",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields,
+	},
+	"GeneratedMemories": ubx.FieldSpec{
+		WireName: "generated_memories",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Label":       ubx.FieldSpec{WireName: "label"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields = ubx.FieldMap{
-		"ManagedTopicEnum": ubx.FieldSpec{WireName: "managed_topic_enum"},
-	}
+	"ManagedTopicEnum": ubx.FieldSpec{WireName: "managed_topic_enum"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields = ubx.FieldMap{
-		"CustomMemoryTopic": ubx.FieldSpec{
-			WireName: "custom_memory_topic",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields,
-		},
-		"ManagedMemoryTopic": ubx.FieldSpec{
-			WireName: "managed_memory_topic",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields,
-		},
-	}
+	"CustomMemoryTopic": ubx.FieldSpec{
+		WireName: "custom_memory_topic",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields,
+	},
+	"ManagedMemoryTopic": ubx.FieldSpec{
+		WireName: "managed_memory_topic",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields = ubx.FieldMap{
-		"ConsolidationConfig": ubx.FieldSpec{
-			WireName: "consolidation_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields,
-		},
-		"DisableNaturalLanguageMemories": ubx.FieldSpec{WireName: "disable_natural_language_memories"},
-		"EnableThirdPersonMemories": ubx.FieldSpec{WireName: "enable_third_person_memories"},
-		"GenerateMemoriesExamples": ubx.FieldSpec{
-			WireName: "generate_memories_examples",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields,
-		},
-		"MemoryTopics": ubx.FieldSpec{
-			WireName: "memory_topics",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields,
-		},
-		"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
-	}
+	"ConsolidationConfig": ubx.FieldSpec{
+		WireName: "consolidation_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields,
+	},
+	"DisableNaturalLanguageMemories": ubx.FieldSpec{WireName: "disable_natural_language_memories"},
+	"EnableThirdPersonMemories":      ubx.FieldSpec{WireName: "enable_third_person_memories"},
+	"GenerateMemoriesExamples": ubx.FieldSpec{
+		WireName: "generate_memories_examples",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields,
+	},
+	"MemoryTopics": ubx.FieldSpec{
+		WireName: "memory_topics",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields,
+	},
+	"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields = ubx.FieldMap{
-		"EventCount": ubx.FieldSpec{WireName: "event_count"},
-		"FixedInterval": ubx.FieldSpec{WireName: "fixed_interval"},
-		"IdleDuration": ubx.FieldSpec{WireName: "idle_duration"},
-		"OverlapEventCount": ubx.FieldSpec{WireName: "overlap_event_count"},
-	}
+	"EventCount":        ubx.FieldSpec{WireName: "event_count"},
+	"FixedInterval":     ubx.FieldSpec{WireName: "fixed_interval"},
+	"IdleDuration":      ubx.FieldSpec{WireName: "idle_duration"},
+	"OverlapEventCount": ubx.FieldSpec{WireName: "overlap_event_count"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields = ubx.FieldMap{
-		"GenerationRule": ubx.FieldSpec{
-			WireName: "generation_rule",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields,
-		},
-	}
+	"GenerationRule": ubx.FieldSpec{
+		WireName: "generation_rule",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields = ubx.FieldMap{
-		"GenerationTriggerConfig": ubx.FieldSpec{
-			WireName: "generation_trigger_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields,
-		},
-		"Model": ubx.FieldSpec{WireName: "model"},
-	}
+	"GenerationTriggerConfig": ubx.FieldSpec{
+		WireName: "generation_trigger_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields,
+	},
+	"Model": ubx.FieldSpec{WireName: "model"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields = ubx.FieldMap{
-		"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
-	}
+	"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigs_SchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Example":              ubx.FieldSpec{WireName: "example"},
+	"Format":               ubx.FieldSpec{WireName: "format"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
+	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
+	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"MemoryType": ubx.FieldSpec{WireName: "memory_type"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigs_SchemaFields,
-		},
-	}
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
+	"MemoryType": ubx.FieldSpec{WireName: "memory_type"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigs_SchemaFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigsFields = ubx.FieldMap{
-		"SchemaConfigs": ubx.FieldSpec{
-			WireName: "schema_configs",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigsFields,
-		},
-		"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
-	}
+	"SchemaConfigs": ubx.FieldSpec{
+		WireName: "schema_configs",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigs_SchemaConfigsFields,
+	},
+	"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields = ubx.FieldMap{
-		"CreateTtl": ubx.FieldSpec{WireName: "create_ttl"},
-		"GenerateCreatedTtl": ubx.FieldSpec{WireName: "generate_created_ttl"},
-		"GenerateUpdatedTtl": ubx.FieldSpec{WireName: "generate_updated_ttl"},
-	}
+	"CreateTtl":          ubx.FieldSpec{WireName: "create_ttl"},
+	"GenerateCreatedTtl": ubx.FieldSpec{WireName: "generate_created_ttl"},
+	"GenerateUpdatedTtl": ubx.FieldSpec{WireName: "generate_updated_ttl"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields = ubx.FieldMap{
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"GranularTtlConfig": ubx.FieldSpec{
-			WireName: "granular_ttl_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields,
-		},
-		"MemoryRevisionDefaultTtl": ubx.FieldSpec{WireName: "memory_revision_default_ttl"},
-	}
+	"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
+	"GranularTtlConfig": ubx.FieldSpec{
+		WireName: "granular_ttl_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields,
+	},
+	"MemoryRevisionDefaultTtl": ubx.FieldSpec{WireName: "memory_revision_default_ttl"},
+}
 
 var V1beta1ReasoningEngine_ContextSpec_MemoryBankConfigFields = ubx.FieldMap{
-		"CustomizationConfigs": ubx.FieldSpec{
-			WireName: "customization_configs",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields,
-		},
-		"DisableMemoryRevisions": ubx.FieldSpec{WireName: "disable_memory_revisions"},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields,
-		},
-		"SimilaritySearchConfig": ubx.FieldSpec{
-			WireName: "similarity_search_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields,
-		},
-		"StructuredMemoryConfigs": ubx.FieldSpec{
-			WireName: "structured_memory_configs",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigsFields,
-		},
-		"TtlConfig": ubx.FieldSpec{
-			WireName: "ttl_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields,
-		},
-	}
+	"CustomizationConfigs": ubx.FieldSpec{
+		WireName: "customization_configs",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields,
+	},
+	"DisableMemoryRevisions": ubx.FieldSpec{WireName: "disable_memory_revisions"},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields,
+	},
+	"SimilaritySearchConfig": ubx.FieldSpec{
+		WireName: "similarity_search_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields,
+	},
+	"StructuredMemoryConfigs": ubx.FieldSpec{
+		WireName: "structured_memory_configs",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_StructuredMemoryConfigsFields,
+	},
+	"TtlConfig": ubx.FieldSpec{
+		WireName: "ttl_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields,
+	},
+}
 
 var V1beta1ReasoningEngine_ContextSpecFields = ubx.FieldMap{
-		"MemoryBankConfig": ubx.FieldSpec{
-			WireName: "memory_bank_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpec_MemoryBankConfigFields,
-		},
-	}
+	"MemoryBankConfig": ubx.FieldSpec{
+		WireName: "memory_bank_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_ContextSpec_MemoryBankConfigFields,
+	},
+}
 
 var V1beta1ReasoningEngine_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1ReasoningEngine_Spec_BuildSpecFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"WorkerPool":     ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var V1beta1ReasoningEngine_Spec_ContainerSpecFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields = ubx.FieldMap{
-		"AgentGateway": ubx.FieldSpec{WireName: "agent_gateway"},
-	}
+	"AgentGateway": ubx.FieldSpec{WireName: "agent_gateway"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields = ubx.FieldMap{
-		"AgentToAnywhereConfig": ubx.FieldSpec{
-			WireName: "agent_to_anywhere_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
-		},
-		"ClientToAgentConfig": ubx.FieldSpec{
-			WireName: "client_to_agent_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
-		},
-	}
+	"AgentToAnywhereConfig": ubx.FieldSpec{
+		WireName: "agent_to_anywhere_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
+	},
+	"ClientToAgentConfig": ubx.FieldSpec{
+		WireName: "client_to_agent_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
+	},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields = ubx.FieldMap{
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields,
-		},
-		"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
-	}
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields,
+	},
+	"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields = ubx.FieldMap{
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Secret":  ubx.FieldSpec{WireName: "secret"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields,
+	},
+}
 
 var V1beta1ReasoningEngine_Spec_DeploymentSpecFields = ubx.FieldMap{
-		"AgentGatewayConfig": ubx.FieldSpec{
-			WireName: "agent_gateway_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields,
-		},
-		"AgentServerMode": ubx.FieldSpec{WireName: "agent_server_mode"},
-		"ContainerConcurrency": ubx.FieldSpec{WireName: "container_concurrency"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_EnvFields,
-		},
-		"KeepAliveProbe": ubx.FieldSpec{
-			WireName: "keep_alive_probe",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields,
-		},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields,
-		},
-		"ResourceLimits": ubx.FieldSpec{WireName: "resource_limits"},
-		"SecretEnv": ubx.FieldSpec{
-			WireName: "secret_env",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields,
-		},
-	}
+	"AgentGatewayConfig": ubx.FieldSpec{
+		WireName: "agent_gateway_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields,
+	},
+	"AgentServerMode":      ubx.FieldSpec{WireName: "agent_server_mode"},
+	"ContainerConcurrency": ubx.FieldSpec{WireName: "container_concurrency"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_EnvFields,
+	},
+	"KeepAliveProbe": ubx.FieldSpec{
+		WireName: "keep_alive_probe",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields,
+	},
+	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+	"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields,
+	},
+	"ResourceLimits": ubx.FieldSpec{WireName: "resource_limits"},
+	"SecretEnv": ubx.FieldSpec{
+		WireName: "secret_env",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields,
+	},
+}
 
 var V1beta1ReasoningEngine_Spec_PackageSpecFields = ubx.FieldMap{
-		"DependencyFilesGcsUri": ubx.FieldSpec{WireName: "dependency_files_gcs_uri"},
-		"PickleObjectGcsUri": ubx.FieldSpec{WireName: "pickle_object_gcs_uri"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"RequirementsGcsUri": ubx.FieldSpec{WireName: "requirements_gcs_uri"},
-	}
+	"DependencyFilesGcsUri": ubx.FieldSpec{WireName: "dependency_files_gcs_uri"},
+	"PickleObjectGcsUri":    ubx.FieldSpec{WireName: "pickle_object_gcs_uri"},
+	"PythonVersion":         ubx.FieldSpec{WireName: "python_version"},
+	"RequirementsGcsUri":    ubx.FieldSpec{WireName: "requirements_gcs_uri"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields = ubx.FieldMap{
-		"JsonConfig": ubx.FieldSpec{WireName: "json_config"},
-	}
+	"JsonConfig": ubx.FieldSpec{WireName: "json_config"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields = ubx.FieldMap{
-		"SourceArchive": ubx.FieldSpec{WireName: "source_archive"},
-	}
+	"SourceArchive": ubx.FieldSpec{WireName: "source_archive"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields = ubx.FieldMap{
-		"AdkConfig": ubx.FieldSpec{
-			WireName: "adk_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields,
-		},
-		"InlineSource": ubx.FieldSpec{
-			WireName: "inline_source",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
-		},
-	}
+	"AdkConfig": ubx.FieldSpec{
+		WireName: "adk_config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields,
+	},
+	"InlineSource": ubx.FieldSpec{
+		WireName: "inline_source",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
+	},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields = ubx.FieldMap{
-		"Dir": ubx.FieldSpec{WireName: "dir"},
-		"GitRepositoryLink": ubx.FieldSpec{WireName: "git_repository_link"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Dir":               ubx.FieldSpec{WireName: "dir"},
+	"GitRepositoryLink": ubx.FieldSpec{WireName: "git_repository_link"},
+	"Revision":          ubx.FieldSpec{WireName: "revision"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields,
+	},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields = ubx.FieldMap{
-		"BuildArgs": ubx.FieldSpec{WireName: "build_args"},
-	}
+	"BuildArgs": ubx.FieldSpec{WireName: "build_args"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields = ubx.FieldMap{
-		"EntrypointModule": ubx.FieldSpec{WireName: "entrypoint_module"},
-		"EntrypointObject": ubx.FieldSpec{WireName: "entrypoint_object"},
-		"RequirementsFile": ubx.FieldSpec{WireName: "requirements_file"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"EntrypointModule": ubx.FieldSpec{WireName: "entrypoint_module"},
+	"EntrypointObject": ubx.FieldSpec{WireName: "entrypoint_object"},
+	"RequirementsFile": ubx.FieldSpec{WireName: "requirements_file"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1ReasoningEngine_Spec_SourceCodeSpecFields = ubx.FieldMap{
-		"AgentConfigSource": ubx.FieldSpec{
-			WireName: "agent_config_source",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields,
-		},
-		"DeveloperConnectSource": ubx.FieldSpec{
-			WireName: "developer_connect_source",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields,
-		},
-		"ImageSpec": ubx.FieldSpec{
-			WireName: "image_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields,
-		},
-		"InlineSource": ubx.FieldSpec{
-			WireName: "inline_source",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
-		},
-		"PythonSpec": ubx.FieldSpec{
-			WireName: "python_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields,
-		},
-	}
+	"AgentConfigSource": ubx.FieldSpec{
+		WireName: "agent_config_source",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields,
+	},
+	"DeveloperConnectSource": ubx.FieldSpec{
+		WireName: "developer_connect_source",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields,
+	},
+	"ImageSpec": ubx.FieldSpec{
+		WireName: "image_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields,
+	},
+	"InlineSource": ubx.FieldSpec{
+		WireName: "inline_source",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
+	},
+	"PythonSpec": ubx.FieldSpec{
+		WireName: "python_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields,
+	},
+}
 
 var V1beta1ReasoningEngine_SpecFields = ubx.FieldMap{
-		"AgentCard": ubx.FieldSpec{WireName: "agent_card"},
-		"AgentFramework": ubx.FieldSpec{WireName: "agent_framework"},
-		"BuildSpec": ubx.FieldSpec{
-			WireName: "build_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_BuildSpecFields,
-		},
-		"ClassMethods": ubx.FieldSpec{WireName: "class_methods"},
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_ContainerSpecFields,
-		},
-		"DeploymentSpec": ubx.FieldSpec{
-			WireName: "deployment_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_DeploymentSpecFields,
-		},
-		"EffectiveIdentity": ubx.FieldSpec{WireName: "effective_identity"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"PackageSpec": ubx.FieldSpec{
-			WireName: "package_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_PackageSpecFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SourceCodeSpec": ubx.FieldSpec{
-			WireName: "source_code_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_Spec_SourceCodeSpecFields,
-		},
-	}
+	"AgentCard":      ubx.FieldSpec{WireName: "agent_card"},
+	"AgentFramework": ubx.FieldSpec{WireName: "agent_framework"},
+	"BuildSpec": ubx.FieldSpec{
+		WireName: "build_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_BuildSpecFields,
+	},
+	"ClassMethods": ubx.FieldSpec{WireName: "class_methods"},
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_ContainerSpecFields,
+	},
+	"DeploymentSpec": ubx.FieldSpec{
+		WireName: "deployment_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_DeploymentSpecFields,
+	},
+	"EffectiveIdentity": ubx.FieldSpec{WireName: "effective_identity"},
+	"IdentityType":      ubx.FieldSpec{WireName: "identity_type"},
+	"PackageSpec": ubx.FieldSpec{
+		WireName: "package_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_PackageSpecFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"SourceCodeSpec": ubx.FieldSpec{
+		WireName: "source_code_spec",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_Spec_SourceCodeSpecFields,
+	},
+}
 
 var V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManual_TargetsFields = ubx.FieldMap{
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-		"RuntimeRevisionName": ubx.FieldSpec{WireName: "runtime_revision_name"},
-	}
+	"Percent":             ubx.FieldSpec{WireName: "percent"},
+	"RuntimeRevisionName": ubx.FieldSpec{WireName: "runtime_revision_name"},
+}
 
 var V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManualFields = ubx.FieldMap{
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManual_TargetsFields,
-		},
-	}
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManual_TargetsFields,
+	},
+}
 
 var V1beta1ReasoningEngine_TrafficConfigFields = ubx.FieldMap{
-		"TrafficSplitAlwaysLatest": ubx.FieldSpec{WireName: "traffic_split_always_latest"},
-		"TrafficSplitManual": ubx.FieldSpec{
-			WireName: "traffic_split_manual",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManualFields,
-		},
-	}
+	"TrafficSplitAlwaysLatest": ubx.FieldSpec{WireName: "traffic_split_always_latest"},
+	"TrafficSplitManual": ubx.FieldSpec{
+		WireName: "traffic_split_manual",
+		Kind:     "object",
+		Fields:   V1beta1ReasoningEngine_TrafficConfig_TrafficSplitManualFields,
+	},
+}
 
 type V1beta1ReasoningEngineConfig struct {
 	// Configuration for how Agent Engine sub-resources should manage context.
 	ContextSpec any
-	// Output only. Timestamp when this ReasoningEngine was created.
-	CreateTime any
 	// Optional. The description of the ReasoningEngine.
 	Description any
 	// Required. The display name of the ReasoningEngine.
@@ -1111,8 +1109,6 @@ type V1beta1ReasoningEngineConfig struct {
 	Spec any
 	// Traffic distribution configuration.
 	TrafficConfig any
-	// Output only. Timestamp when this ReasoningEngine was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1ReasoningEngineAttrs struct {
@@ -1145,30 +1141,28 @@ var V1beta1ReasoningEngine = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContextSpec": ubx.FieldSpec{
 			WireName: "context_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_ContextSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ReasoningEngine_ContextSpecFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ReasoningEngine_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_SpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ReasoningEngine_SpecFields,
 		},
 		"TrafficConfig": ubx.FieldSpec{
 			WireName: "traffic_config",
-			Kind: "object",
-			Fields: V1beta1ReasoningEngine_TrafficConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1ReasoningEngine_TrafficConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

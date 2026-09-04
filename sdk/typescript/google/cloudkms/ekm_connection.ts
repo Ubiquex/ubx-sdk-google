@@ -44,16 +44,12 @@ const EkmConnection_ServiceResolversFields: FieldMap = {
 };
 
 export interface EkmConnectionConfig {
-  /** Output only. The time at which the EkmConnection was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Identifies the EKM Crypto Space that this EkmConnection maps to. Note: This field is required if KeyManagementMode is CLOUD_KMS. */
   cryptoSpacePath?: string | Computed<string>;
   /** Optional. Etag of the currently stored EkmConnection. */
   etag?: string | Computed<string>;
   /** Optional. Describes who can perform control plane operations on the EKM. If unset, this defaults to MANUAL. */
   keyManagementMode?: string | Computed<string>;
-  /** Output only. The resource name for the EkmConnection in the format `projects/* /locations/* /ekmConnections/*`. */
-  name?: string | Computed<string>;
   /** Optional. A list of ServiceResolvers where the EKM can be reached. There should be one ServiceResolver per EKM replica. Currently, only a single ServiceResolver is supported. */
   serviceResolvers?: EkmConnection_ServiceResolvers[] | Computed<EkmConnection_ServiceResolvers[]>;
 }
@@ -76,11 +72,9 @@ export interface EkmConnectionAttrs {
 export const EkmConnection: ResourceBinding<EkmConnectionConfig, EkmConnectionAttrs> = {
   wireType: "google_cloudkms_ekm_connection",
   fields: {
-    createTime: "create_time",
     cryptoSpacePath: "crypto_space_path",
     etag: "etag",
     keyManagementMode: "key_management_mode",
-    name: "name",
     serviceResolvers: {
       wireName: "service_resolvers",
       kind: "list",

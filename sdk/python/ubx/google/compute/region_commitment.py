@@ -22,13 +22,11 @@ class RegionCommitment_Params:
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_AdvancedDeploymentControl:
-    # The operational mode for the reservation. Valid values are ALL_CAPACITY (all capacity is provisioned immediately), HIGHLY_AVAILABLE_CAPACITY (capacity is distributed to support high availability), and RESERVATION_OPERATIONAL_MODE_UNSPECIFIED (mode not set, defaults to ALL_CAPACITY). (AI-inferred)
     reservation_operational_mode: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_AggregateReservation_InUseResources_Accelerator:
     accelerator_count: Any = None
-    # Specifies the type of accelerator (GPU) used by the resources currently in use within the aggregate reservation. This value corresponds to the acceleratorType in the machine type, such as 'nvidia-tesla-t4'. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
@@ -38,23 +36,17 @@ class RegionCommitment_Reservations_AggregateReservation_InUseResources:
 @dataclasses.dataclass
 class RegionCommitment_Reservations_AggregateReservation:
     in_use_resources: Any = None
-    # Specifies the resources included in this aggregate reservation. Each entry defines a resource type and the amount to reserve. (AI-inferred)
     reserved_resources: Any = None
-    # The family of TPU VMs to reserve capacity for. Valid values include VM_FAMILY_CLOUD_TPU_DEVICE_CT3, VM_FAMILY_CLOUD_TPU_LITE_DEVICE_CT5L, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT5LP, VM_FAMILY_CLOUD_TPU_LITE_POD_SLICE_CT6E, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT3P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT4P, VM_FAMILY_CLOUD_TPU_POD_SLICE_CT5P, and VM_FAMILY_CLOUD_TPU_POD_SLICE_TPU7X. (AI-inferred)
     vm_family: Any = None
-    # The workload type of the aggregate reservation. Valid values are BATCH, SERVING, or UNSPECIFIED. This determines how the reservation is used for batch or serving workloads. (AI-inferred)
     workload_type: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_DeleteAfterDuration:
-    # The duration's sub-second component in nanoseconds, ranging from 0 to 999,999,999. (AI-inferred)
     nanos: Any = None
-    # The number of seconds in the duration after which the reservation is automatically deleted. Must be a string representation of an integer from 0 to 315,576,000,000 inclusive. (AI-inferred)
     seconds: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ReservationSharingPolicy:
-    # Specifies the sharing type for this reservation, controlling which services can use it. ALLOW_ALL permits all services, DISALLOW_ALL blocks all services, and SERVICE_SHARE_TYPE_UNSPECIFIED is the default unspecified value. (AI-inferred)
     service_share_type: Any = None
 
 @dataclasses.dataclass
@@ -64,158 +56,104 @@ class RegionCommitment_Reservations_ResourceMetadata:
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ResourceStatus_HealthInfo:
-    # The number of blocks that are degraded in the resource, as reported in its health information. This value indicates the extent of storage degradation for the resource. (AI-inferred)
     degraded_block_count: Any = None
-    # The health status of the resource. Possible values: DEGRADED, HEALTHY, HEALTH_STATUS_UNSPECIFIED. (AI-inferred)
     health_status: Any = None
-    # The number of healthy blocks in the reservation's resource health status. (AI-inferred)
     healthy_block_count: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance:
-    # Indicates whether the upcoming group maintenance event can be rescheduled. (AI-inferred)
     can_reschedule: Any = None
-    # The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred)
     latest_window_start_time: Any = None
     maintenance_on_shutdown: Any = None
     maintenance_reasons: Any = None
-    # The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred)
     maintenance_status: Any = None
-    # The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred)
     type: Any = None
-    # The end time of the maintenance window for the upcoming group maintenance event, expressed as a timestamp string. (AI-inferred)
     window_end_time: Any = None
-    # The start time of the maintenance window for an upcoming maintenance event on the reservation, as a timestamp. (AI-inferred)
     window_start_time: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance:
-    # The number of instances in the reservation that are currently undergoing maintenance, as reported in the reservation maintenance status. (AI-inferred)
     instance_maintenance_ongoing_count: Any = None
-    # The number of instances in this reservation that have maintenance pending. (AI-inferred)
     instance_maintenance_pending_count: Any = None
-    # The number of resources within this reservation that are currently undergoing maintenance. (AI-inferred)
     maintenance_ongoing_count: Any = None
-    # The number of instances in this reservation that have a pending maintenance event. (AI-inferred)
     maintenance_pending_count: Any = None
-    # The maintenance scheduling type for the reservation. Possible values are: 'GROUPED' (maintenance is grouped for the reservation), 'INDEPENDENT' (maintenance is handled independently), and 'GROUP_MAINTENANCE_TYPE_UNSPECIFIED' (the type is not specified). (AI-inferred)
     scheduling_type: Any = None
-    # The number of ongoing maintenance operations for the subblock infrastructure within the reservation. (AI-inferred)
     subblock_infra_maintenance_ongoing_count: Any = None
-    # The number of pending maintenance items for the subblock infrastructure, as reported in the reservation maintenance status. (AI-inferred)
     subblock_infra_maintenance_pending_count: Any = None
-    # Upcoming maintenance information for the entire reservation group, shown in the resource status. (AI-inferred)
     upcoming_group_maintenance: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocation:
-    # The ID of the instance template used to specify the machine type and other properties for this specific SKU allocation in the reservation. (AI-inferred)
     source_instance_template_id: Any = None
-    # The utilization of the specific SKU reservation, keyed by resource type (e.g., memory). Each value is a fraction of the total capacity of that resource. (AI-inferred)
     utilizations: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ResourceStatus:
     health_info: Any = None
-    # The number of capacity blocks that this reservation uses. (AI-inferred)
     reservation_block_count: Any = None
-    # An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred)
     reservation_maintenance: Any = None
     specific_sku_allocation: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ShareSettings_ProjectMap:
-    # The ID of the Google Cloud project that has shared access to the commitment reservation. This is the key for the project_map entry. (AI-inferred)
     project_id: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_ShareSettings:
-    # A map of project IDs to project-specific configuration, used to specify which projects can share this commitment's reservations as part of the sharing settings. (AI-inferred)
     project_map: Any = None
-    # Defines the sharing type for this reservation. Allowed values are: LOCAL (only within the owning project), SPECIFIC_PROJECTS (shared with a list of specific projects), ORGANIZATION (shared with all projects in the organization), and SHARE_TYPE_UNSPECIFIED (default, indicating the field is not set). (AI-inferred)
     share_type: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsds:
-    # The size of the local SSD disk in gigabytes (GB), expressed as a string. (AI-inferred)
     disk_size_gb: Any = None
-    # The interface type for the local SSD. Supported values are `NVME` and `SCSI`. (AI-inferred)
     interface: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_SpecificReservation_InstanceProperties:
-    # A list of guest accelerator (GPU) configurations to attach to instances created from this reservation. Each object defines an accelerator type and the number of accelerators. (AI-inferred)
     guest_accelerators: Any = None
-    # A list of local SSD configurations to attach to instances in this specific reservation. (AI-inferred)
     local_ssds: Any = None
-    # Optional location hint for the reserved instances, used by Compute Engine to optimize physical placement. (AI-inferred)
     location_hint: Any = None
-    # Specifies the machine type for the VM instances in this specific reservation. (AI-inferred)
     machine_type: Any = None
-    # Specifies the minimum CPU platform allowed for VM instances in the specific reservation. The value must be a valid CPU platform name (e.g., 'Intel Skylake' or 'AMD Milan') and instances will be guaranteed to use a CPU platform at least as recent as the specified one. (AI-inferred)
     min_cpu_platform: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations_SpecificReservation:
-    # The number of virtual machine instances that are guaranteed to be available in this specific reservation. This value must be less than or equal to the total 'count' of the reservation. (AI-inferred)
     assured_count: Any = None
-    # The number of virtual machine instances to reserve in the specific reservation. The value must be a positive integer. (AI-inferred)
     count: Any = None
-    # Number of reserved instances from this specific reservation that are currently in use. (AI-inferred)
     in_use_count: Any = None
-    # The properties of the virtual machines to be reserved in this specific reservation, including machine type, minimum CPU platform, accelerator configuration, and local SSD count. (AI-inferred)
     instance_properties: Any = None
-    # The self-link of an instance template that defines the properties of the instances to be reserved. When specified, the specific reservation is created based on the template's configuration. (AI-inferred)
     source_instance_template: Any = None
 
 @dataclasses.dataclass
 class RegionCommitment_Reservations:
     advanced_deployment_control: Any = None
-    # The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred)
     aggregate_reservation: Any = None
     commitment: Any = None
-    # Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred)
     confidential_compute_type: Any = None
-    # Creation timestamp in RFC3339 text format. (AI-inferred)
     creation_timestamp: Any = None
-    # A duration (seconds and optional nanos) after which the reservation is automatically deleted. If unset, the reservation persists until the commitment ends. (AI-inferred)
     delete_after_duration: Any = None
-    # The time at which the reservation will be automatically deleted, in RFC3339 format. (AI-inferred)
     delete_at_time: Any = None
-    # The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred)
     deployment_type: Any = None
     description: Any = None
-    # Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred)
     early_access_maintenance: Any = None
-    # Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred)
     enable_emergent_maintenance: Any = None
     id: Any = None
-    # The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred)
     kind: Any = None
-    # List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred)
     linked_commitments: Any = None
     name: Any = None
     params: Any = None
-    # The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred)
     protection_tier: Any = None
     reservation_sharing_policy: Any = None
     resource_metadata: Any = None
     resource_policies: Any = None
     resource_status: Any = None
-    # Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred)
     satisfies_pzs: Any = None
-    # The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred)
     scheduling_type: Any = None
     self_link: Any = None
-    # Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred)
     share_settings: Any = None
-    # Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred)
     specific_reservation: Any = None
-    # Indicates whether the reservation is a specific reservation (for a specific instance type) or a non-specific reservation (for an instance family). When true, the reservation is specific; when false, it is non-specific. (AI-inferred)
     specific_reservation_required: Any = None
-    # The current status of the reservation, indicating its lifecycle state. Possible values are CREATING, DELETING, INVALID, READY, and UPDATING. (AI-inferred)
     status: Any = None
-    # The zone in which the reservation is created, within the commitment's region. (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
@@ -225,11 +163,8 @@ class RegionCommitment_ResourceStatus:
 
 @dataclasses.dataclass
 class RegionCommitment_Resources:
-    # The type of accelerator (GPU) to include in the commitment, e.g., 'nvidia-tesla-v100'. Must be a valid accelerator type available in the region. (AI-inferred)
     accelerator_type: Any = None
-    # The quantity of the resource type (e.g., VCPU, MEMORY) to reserve in the commitment. (AI-inferred)
     amount: Any = None
-    # The type of resource to commit to. Allowed values are `VCPU`, `MEMORY`, `LOCAL_SSD`, `ACCELERATOR`, and `UNSPECIFIED`. (AI-inferred)
     type: Any = None
 
 _RegionCommitment_LicenseResourceFields = {
@@ -474,20 +409,11 @@ class RegionCommitmentConfig:
     auto_renew: Any = None
     # The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
     category: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
     custom_end_timestamp: Any = None
     # An optional description of the commitment. You can provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] Commitment end time inRFC3339 text format.
-    end_timestamp: Any = None
-    # The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
     existing_reservations: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#commitment for commitments.
-    kind: Any = None
     # Commitment for a particular license resource.
     license_resource: Any = None
     # The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
@@ -498,24 +424,14 @@ class RegionCommitmentConfig:
     params: Any = None
     # The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
     plan: Any = None
-    # Output only. [Output Only] URL of the region where the commitment and committed resources are located.
-    region: Any = None
     # The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
     reservations: Any = None
     # [Output Only] Contains output only fields.
     resource_status: Any = None
     # The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
     resources: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
     # The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
     split_source_commitment: Any = None
-    # Output only. [Output Only] Commitment start time inRFC3339 text format.
-    start_timestamp: Any = None
-    # Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
-    status: Any = None
-    # Output only. [Output Only] An optional, human-readable explanation of the status.
-    status_message: Any = None
     # The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
     type: Any = None
 
@@ -533,7 +449,6 @@ class RegionCommitmentAttrs:
     description: Any = None
     # Output only. [Output Only] Commitment end time inRFC3339 text format.
     end_timestamp: Any = None
-    # The list of existing reservations that are automatically included in this region commitment. This field is output-only and is determined by Google Cloud based on the commitment's resources. (AI-inferred)
     existing_reservations: Any = None
     # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
@@ -575,13 +490,9 @@ RegionCommitment = ubx.ResourceBinding(
     fields={
         "auto_renew": ubx.FieldSpec(wire_name="auto_renew"),
         "category": ubx.FieldSpec(wire_name="category"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "custom_end_timestamp": ubx.FieldSpec(wire_name="custom_end_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "end_timestamp": ubx.FieldSpec(wire_name="end_timestamp"),
         "existing_reservations": ubx.FieldSpec(wire_name="existing_reservations"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "license_resource": ubx.FieldSpec(
             wire_name="license_resource",
             kind="object",
@@ -595,7 +506,6 @@ RegionCommitment = ubx.ResourceBinding(
             fields=_RegionCommitment_ParamsFields,
         ),
         "plan": ubx.FieldSpec(wire_name="plan"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "reservations": ubx.FieldSpec(
             wire_name="reservations",
             kind="list",
@@ -611,11 +521,7 @@ RegionCommitment = ubx.ResourceBinding(
             kind="list",
             fields=_RegionCommitment_ResourcesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "split_source_commitment": ubx.FieldSpec(wire_name="split_source_commitment"),
-        "start_timestamp": ubx.FieldSpec(wire_name="start_timestamp"),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

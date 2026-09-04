@@ -25,15 +25,15 @@ type Toolset_ConnectorToolset_AuthConfig struct {
 }
 
 type Toolset_ConnectorToolset_ConnectorActions_EntityOperation struct {
-	EntityId any
+	EntityId  any
 	Operation any
 }
 
 type Toolset_ConnectorToolset_ConnectorActions struct {
 	ConnectionActionId any
-	EntityOperation any
-	InputFields any
-	OutputFields any
+	EntityOperation    any
+	InputFields        any
+	OutputFields       any
 }
 
 type Toolset_ConnectorToolset struct {
@@ -98,7 +98,7 @@ type Toolset_McpToolset_ServiceDirectoryConfig struct {
 }
 
 type Toolset_McpToolset_TlsConfig_CaCerts struct {
-	Cert any
+	Cert        any
 	DisplayName any
 }
 
@@ -109,37 +109,37 @@ type Toolset_McpToolset_TlsConfig struct {
 
 type Toolset_McpToolset_ToolOverrides_Snapshot_InputSchema struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Items any
-	MaxItems any
-	Maximum any
-	MinItems any
-	Minimum any
-	Nullable any
-	PrefixItems any
-	Properties any
-	Ref any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Items                any
+	MaxItems             any
+	Maximum              any
+	MinItems             any
+	Minimum              any
+	Nullable             any
+	PrefixItems          any
+	Properties           any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
+	UniqueItems          any
 }
 
 type Toolset_McpToolset_ToolOverrides_Snapshot struct {
-	Description any
-	InputSchema any
+	Description  any
+	InputSchema  any
 	OutputSchema any
 }
 
 type Toolset_McpToolset_ToolOverrides struct {
 	DescriptionOverride any
-	NameOverride any
-	Snapshot any
-	Tool any
+	NameOverride        any
+	Snapshot            any
+	Tool                any
 }
 
 type Toolset_McpToolset struct {
@@ -185,233 +185,231 @@ type Toolset_ToolFakeConfig struct {
 }
 
 var Toolset_ConnectorToolset_AuthConfig_Oauth2AuthCodeConfigFields = ubx.FieldMap{
-		"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
-	}
+	"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
+}
 
 var Toolset_ConnectorToolset_AuthConfig_Oauth2JwtBearerConfigFields = ubx.FieldMap{
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"ClientKey": ubx.FieldSpec{WireName: "client_key"},
+	"Issuer":    ubx.FieldSpec{WireName: "issuer"},
+	"Subject":   ubx.FieldSpec{WireName: "subject"},
+}
 
 var Toolset_ConnectorToolset_AuthConfigFields = ubx.FieldMap{
-		"Oauth2AuthCodeConfig": ubx.FieldSpec{
-			WireName: "oauth2_auth_code_config",
-			Kind: "object",
-			Fields: Toolset_ConnectorToolset_AuthConfig_Oauth2AuthCodeConfigFields,
-		},
-		"Oauth2JwtBearerConfig": ubx.FieldSpec{
-			WireName: "oauth2_jwt_bearer_config",
-			Kind: "object",
-			Fields: Toolset_ConnectorToolset_AuthConfig_Oauth2JwtBearerConfigFields,
-		},
-	}
+	"Oauth2AuthCodeConfig": ubx.FieldSpec{
+		WireName: "oauth2_auth_code_config",
+		Kind:     "object",
+		Fields:   Toolset_ConnectorToolset_AuthConfig_Oauth2AuthCodeConfigFields,
+	},
+	"Oauth2JwtBearerConfig": ubx.FieldSpec{
+		WireName: "oauth2_jwt_bearer_config",
+		Kind:     "object",
+		Fields:   Toolset_ConnectorToolset_AuthConfig_Oauth2JwtBearerConfigFields,
+	},
+}
 
 var Toolset_ConnectorToolset_ConnectorActions_EntityOperationFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-	}
+	"EntityId":  ubx.FieldSpec{WireName: "entity_id"},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+}
 
 var Toolset_ConnectorToolset_ConnectorActionsFields = ubx.FieldMap{
-		"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
-		"EntityOperation": ubx.FieldSpec{
-			WireName: "entity_operation",
-			Kind: "object",
-			Fields: Toolset_ConnectorToolset_ConnectorActions_EntityOperationFields,
-		},
-		"InputFields": ubx.FieldSpec{WireName: "input_fields"},
-		"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
-	}
+	"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
+	"EntityOperation": ubx.FieldSpec{
+		WireName: "entity_operation",
+		Kind:     "object",
+		Fields:   Toolset_ConnectorToolset_ConnectorActions_EntityOperationFields,
+	},
+	"InputFields":  ubx.FieldSpec{WireName: "input_fields"},
+	"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
+}
 
 var Toolset_ConnectorToolsetFields = ubx.FieldMap{
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: Toolset_ConnectorToolset_AuthConfigFields,
-		},
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"ConnectorActions": ubx.FieldSpec{
-			WireName: "connector_actions",
-			Kind: "list",
-			Fields: Toolset_ConnectorToolset_ConnectorActionsFields,
-		},
-	}
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   Toolset_ConnectorToolset_AuthConfigFields,
+	},
+	"Connection": ubx.FieldSpec{WireName: "connection"},
+	"ConnectorActions": ubx.FieldSpec{
+		WireName: "connector_actions",
+		Kind:     "list",
+		Fields:   Toolset_ConnectorToolset_ConnectorActionsFields,
+	},
+}
 
 var Toolset_McpToolset_ApiAuthentication_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"RequestLocation": ubx.FieldSpec{WireName: "request_location"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"KeyName":             ubx.FieldSpec{WireName: "key_name"},
+	"RequestLocation":     ubx.FieldSpec{WireName: "request_location"},
+}
 
 var Toolset_McpToolset_ApiAuthentication_BearerTokenConfigFields = ubx.FieldMap{
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"Token": ubx.FieldSpec{WireName: "token"},
+}
 
 var Toolset_McpToolset_ApiAuthentication_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
-		"OauthGrantType": ubx.FieldSpec{WireName: "oauth_grant_type"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":            ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
+	"OauthGrantType":      ubx.FieldSpec{WireName: "oauth_grant_type"},
+	"Scopes":              ubx.FieldSpec{WireName: "scopes"},
+	"TokenEndpoint":       ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Toolset_McpToolset_ApiAuthentication_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"Scopes":         ubx.FieldSpec{WireName: "scopes"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Toolset_McpToolset_ApiAuthenticationFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthentication_ApiKeyConfigFields,
-		},
-		"BearerTokenConfig": ubx.FieldSpec{
-			WireName: "bearer_token_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthentication_BearerTokenConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthentication_OauthConfigFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthentication_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthentication_ApiKeyConfigFields,
+	},
+	"BearerTokenConfig": ubx.FieldSpec{
+		WireName: "bearer_token_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthentication_BearerTokenConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthentication_OauthConfigFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthentication_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
+}
 
 var Toolset_McpToolset_ServiceDirectoryConfigFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Toolset_McpToolset_TlsConfig_CaCertsFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{WireName: "cert"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"Cert":        ubx.FieldSpec{WireName: "cert"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var Toolset_McpToolset_TlsConfigFields = ubx.FieldMap{
-		"CaCerts": ubx.FieldSpec{
-			WireName: "ca_certs",
-			Kind: "list",
-			Fields: Toolset_McpToolset_TlsConfig_CaCertsFields,
-		},
-	}
+	"CaCerts": ubx.FieldSpec{
+		WireName: "ca_certs",
+		Kind:     "list",
+		Fields:   Toolset_McpToolset_TlsConfig_CaCertsFields,
+	},
+}
 
 var Toolset_McpToolset_ToolOverrides_Snapshot_InputSchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"PrefixItems": ubx.FieldSpec{WireName: "prefix_items"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UniqueItems": ubx.FieldSpec{WireName: "unique_items"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"PrefixItems":          ubx.FieldSpec{WireName: "prefix_items"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+	"UniqueItems":          ubx.FieldSpec{WireName: "unique_items"},
+}
 
 var Toolset_McpToolset_ToolOverrides_SnapshotFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ToolOverrides_Snapshot_InputSchemaFields,
-		},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ToolOverrides_Snapshot_InputSchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ToolOverrides_Snapshot_InputSchemaFields,
+	},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ToolOverrides_Snapshot_InputSchemaFields,
+	},
+}
 
 var Toolset_McpToolset_ToolOverridesFields = ubx.FieldMap{
-		"DescriptionOverride": ubx.FieldSpec{WireName: "description_override"},
-		"NameOverride": ubx.FieldSpec{WireName: "name_override"},
-		"Snapshot": ubx.FieldSpec{
-			WireName: "snapshot",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ToolOverrides_SnapshotFields,
-		},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"DescriptionOverride": ubx.FieldSpec{WireName: "description_override"},
+	"NameOverride":        ubx.FieldSpec{WireName: "name_override"},
+	"Snapshot": ubx.FieldSpec{
+		WireName: "snapshot",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ToolOverrides_SnapshotFields,
+	},
+	"Tool": ubx.FieldSpec{WireName: "tool"},
+}
 
 var Toolset_McpToolsetFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthenticationFields,
-		},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
-		"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_TlsConfigFields,
-		},
-		"ToolOverrides": ubx.FieldSpec{
-			WireName: "tool_overrides",
-			Kind: "list",
-			Fields: Toolset_McpToolset_ToolOverridesFields,
-		},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthenticationFields,
+	},
+	"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+	"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_TlsConfigFields,
+	},
+	"ToolOverrides": ubx.FieldSpec{
+		WireName: "tool_overrides",
+		Kind:     "list",
+		Fields:   Toolset_McpToolset_ToolOverridesFields,
+	},
+}
 
 var Toolset_OpenApiToolsetFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ApiAuthenticationFields,
-		},
-		"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
-		"OpenApiSchema": ubx.FieldSpec{WireName: "open_api_schema"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Toolset_McpToolset_TlsConfigFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ApiAuthenticationFields,
+	},
+	"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
+	"OpenApiSchema":       ubx.FieldSpec{WireName: "open_api_schema"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Toolset_McpToolset_TlsConfigFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Toolset_ToolFakeConfig_CodeBlockFields = ubx.FieldMap{
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Toolset_ToolFakeConfigFields = ubx.FieldMap{
-		"CodeBlock": ubx.FieldSpec{
-			WireName: "code_block",
-			Kind: "object",
-			Fields: Toolset_ToolFakeConfig_CodeBlockFields,
-		},
-		"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
-	}
+	"CodeBlock": ubx.FieldSpec{
+		WireName: "code_block",
+		Kind:     "object",
+		Fields:   Toolset_ToolFakeConfig_CodeBlockFields,
+	},
+	"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
+}
 
 type ToolsetConfig struct {
 	// A toolset that generates tools from an Integration Connectors Connection.
 	ConnectorToolset any
-	// Output only. Timestamp when the toolset was created.
-	CreateTime any
 	// Optional. The description of the toolset.
 	Description any
 	// Optional. The display name of the toolset. Must be unique within the same app.
@@ -430,8 +428,6 @@ type ToolsetConfig struct {
 	Timeout any
 	// Configuration for tool behavior in fake mode.
 	ToolFakeConfig any
-	// Output only. Timestamp when the toolset was last updated.
-	UpdateTime any
 }
 
 type ToolsetAttrs struct {
@@ -466,31 +462,29 @@ var Toolset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectorToolset": ubx.FieldSpec{
 			WireName: "connector_toolset",
-			Kind: "object",
-			Fields: Toolset_ConnectorToolsetFields,
+			Kind:     "object",
+			Fields:   Toolset_ConnectorToolsetFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
 		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
 		"McpToolset": ubx.FieldSpec{
 			WireName: "mcp_toolset",
-			Kind: "object",
-			Fields: Toolset_McpToolsetFields,
+			Kind:     "object",
+			Fields:   Toolset_McpToolsetFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OpenApiToolset": ubx.FieldSpec{
 			WireName: "open_api_toolset",
-			Kind: "object",
-			Fields: Toolset_OpenApiToolsetFields,
+			Kind:     "object",
+			Fields:   Toolset_OpenApiToolsetFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 		"ToolFakeConfig": ubx.FieldSpec{
 			WireName: "tool_fake_config",
-			Kind: "object",
-			Fields: Toolset_ToolFakeConfigFields,
+			Kind:     "object",
+			Fields:   Toolset_ToolFakeConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

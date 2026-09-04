@@ -8,7 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1AnnotationSpecConfig:
-    name: Any = None
     read_mask: Any = None
 
 @dataclasses.dataclass
@@ -27,7 +26,6 @@ class V1beta1AnnotationSpecAttrs:
 V1beta1AnnotationSpec = ubx.DataSourceBinding(
     wire_type="google_aiplatform_v1beta1_annotation_spec",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "read_mask": ubx.FieldSpec(wire_name="read_mask"),
     },
 )

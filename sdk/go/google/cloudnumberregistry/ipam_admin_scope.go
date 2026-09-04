@@ -4,8 +4,6 @@ package cloudnumberregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type IpamAdminScopeConfig struct {
-	// Output only. The time at which the IpamAdminScope was created.
-	CreateTime any
 	// Required. Add-on platforms that are enabled for this IpamAdminScope. Cloud Number Registry only discovers the IP addresses from the enabled platforms.
 	EnabledAddonPlatforms any
 	// Optional. User-defined labels.
@@ -14,10 +12,6 @@ type IpamAdminScopeConfig struct {
 	Name any
 	// Required. Administrative scopes enabled for IP address discovery and management. For example, "organizations/1234567890". Minimum of 1 scope is required. In preview, only one organization scope is allowed.
 	Scopes any
-	// Output only. State of resource discovery pipeline.
-	State any
-	// Output only. The time at which the IpamAdminScope was last updated.
-	UpdateTime any
 }
 
 type IpamAdminScopeAttrs struct {
@@ -40,12 +34,9 @@ type IpamAdminScopeAttrs struct {
 var IpamAdminScope = ubx.ResourceBinding{
 	WireType: "google_cloudnumberregistry_ipam_admin_scope",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EnabledAddonPlatforms": ubx.FieldSpec{WireName: "enabled_addon_platforms"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Scopes":                ubx.FieldSpec{WireName: "scopes"},
 	},
 }

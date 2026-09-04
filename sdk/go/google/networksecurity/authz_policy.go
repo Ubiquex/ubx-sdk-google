@@ -21,15 +21,15 @@ type AuthzPolicy_HttpRules_From_NotSources_IpBlocks struct {
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Principals_Principal struct {
-	Contains any
-	Exact any
+	Contains   any
+	Exact      any
 	IgnoreCase any
-	Prefix any
-	Suffix any
+	Prefix     any
+	Suffix     any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources_Principals struct {
-	Principal any
+	Principal         any
 	PrincipalSelector any
 }
 
@@ -39,22 +39,22 @@ type AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSet struct {
 
 type AuthzPolicy_HttpRules_From_NotSources_Resources struct {
 	IamServiceAccount any
-	TagValueIdSet any
+	TagValueIdSet     any
 }
 
 type AuthzPolicy_HttpRules_From_NotSources struct {
-	IpBlocks any
+	IpBlocks   any
 	Principals any
-	Resources any
+	Resources  any
 }
 
 type AuthzPolicy_HttpRules_From struct {
 	NotSources any
-	Sources any
+	Sources    any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -63,32 +63,32 @@ type AuthzPolicy_HttpRules_To_NotOperations_HeaderSet struct {
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_Mcp_Methods struct {
-	Name any
+	Name   any
 	Params any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations_Mcp struct {
 	BaseProtocolMethodsOption any
-	Methods any
+	Methods                   any
 }
 
 type AuthzPolicy_HttpRules_To_NotOperations struct {
 	HeaderSet any
-	Hosts any
-	Mcp any
-	Methods any
-	Paths any
-	Snis any
+	Hosts     any
+	Mcp       any
+	Methods   any
+	Paths     any
+	Snis      any
 }
 
 type AuthzPolicy_HttpRules_To struct {
 	NotOperations any
-	Operations any
+	Operations    any
 }
 
 type AuthzPolicy_HttpRules struct {
 	From any
-	To any
+	To   any
 	When any
 }
 
@@ -100,189 +100,187 @@ type AuthzPolicy_Target struct {
 }
 
 var AuthzPolicy_CustomProvider_AuthzExtensionFields = ubx.FieldMap{
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-	}
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+}
 
 var AuthzPolicy_CustomProviderFields = ubx.FieldMap{
-		"AuthzExtension": ubx.FieldSpec{
-			WireName: "authz_extension",
-			Kind: "object",
-			Fields: AuthzPolicy_CustomProvider_AuthzExtensionFields,
-		},
-		"CloudIap": ubx.FieldSpec{WireName: "cloud_iap"},
-	}
+	"AuthzExtension": ubx.FieldSpec{
+		WireName: "authz_extension",
+		Kind:     "object",
+		Fields:   AuthzPolicy_CustomProvider_AuthzExtensionFields,
+	},
+	"CloudIap": ubx.FieldSpec{WireName: "cloud_iap"},
+}
 
 var AuthzPolicy_HttpRules_From_NotSources_IpBlocksFields = ubx.FieldMap{
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-	}
+	"Length": ubx.FieldSpec{WireName: "length"},
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+}
 
 var AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields = ubx.FieldMap{
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Contains":   ubx.FieldSpec{WireName: "contains"},
+	"Exact":      ubx.FieldSpec{WireName: "exact"},
+	"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
+	"Prefix":     ubx.FieldSpec{WireName: "prefix"},
+	"Suffix":     ubx.FieldSpec{WireName: "suffix"},
+}
 
 var AuthzPolicy_HttpRules_From_NotSources_PrincipalsFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-		"PrincipalSelector": ubx.FieldSpec{WireName: "principal_selector"},
-	}
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+	"PrincipalSelector": ubx.FieldSpec{WireName: "principal_selector"},
+}
 
 var AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSetFields = ubx.FieldMap{
-		"Ids": ubx.FieldSpec{WireName: "ids"},
-	}
+	"Ids": ubx.FieldSpec{WireName: "ids"},
+}
 
 var AuthzPolicy_HttpRules_From_NotSources_ResourcesFields = ubx.FieldMap{
-		"IamServiceAccount": ubx.FieldSpec{
-			WireName: "iam_service_account",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-		"TagValueIdSet": ubx.FieldSpec{
-			WireName: "tag_value_id_set",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSetFields,
-		},
-	}
+	"IamServiceAccount": ubx.FieldSpec{
+		WireName: "iam_service_account",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+	"TagValueIdSet": ubx.FieldSpec{
+		WireName: "tag_value_id_set",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Resources_TagValueIdSetFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_From_NotSourcesFields = ubx.FieldMap{
-		"IpBlocks": ubx.FieldSpec{
-			WireName: "ip_blocks",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_IpBlocksFields,
-		},
-		"Principals": ubx.FieldSpec{
-			WireName: "principals",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_PrincipalsFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_ResourcesFields,
-		},
-	}
+	"IpBlocks": ubx.FieldSpec{
+		WireName: "ip_blocks",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_IpBlocksFields,
+	},
+	"Principals": ubx.FieldSpec{
+		WireName: "principals",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_PrincipalsFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_ResourcesFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_FromFields = ubx.FieldMap{
-		"NotSources": ubx.FieldSpec{
-			WireName: "not_sources",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSourcesFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSourcesFields,
-		},
-	}
+	"NotSources": ubx.FieldSpec{
+		WireName: "not_sources",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSourcesFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSourcesFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_HeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_To_NotOperations_HeaderSetFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_HeadersFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperations_HeaderSet_HeadersFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_To_NotOperations_Mcp_MethodsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Params": ubx.FieldSpec{
-			WireName: "params",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Params": ubx.FieldSpec{
+		WireName: "params",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_To_NotOperations_McpFields = ubx.FieldMap{
-		"BaseProtocolMethodsOption": ubx.FieldSpec{WireName: "base_protocol_methods_option"},
-		"Methods": ubx.FieldSpec{
-			WireName: "methods",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_To_NotOperations_Mcp_MethodsFields,
-		},
-	}
+	"BaseProtocolMethodsOption": ubx.FieldSpec{WireName: "base_protocol_methods_option"},
+	"Methods": ubx.FieldSpec{
+		WireName: "methods",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperations_Mcp_MethodsFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_To_NotOperationsFields = ubx.FieldMap{
-		"HeaderSet": ubx.FieldSpec{
-			WireName: "header_set",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_To_NotOperations_HeaderSetFields,
-		},
-		"Hosts": ubx.FieldSpec{
-			WireName: "hosts",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-		"Mcp": ubx.FieldSpec{
-			WireName: "mcp",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_To_NotOperations_McpFields,
-		},
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Paths": ubx.FieldSpec{
-			WireName: "paths",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-		"Snis": ubx.FieldSpec{
-			WireName: "snis",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
-		},
-	}
+	"HeaderSet": ubx.FieldSpec{
+		WireName: "header_set",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperations_HeaderSetFields,
+	},
+	"Hosts": ubx.FieldSpec{
+		WireName: "hosts",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+	"Mcp": ubx.FieldSpec{
+		WireName: "mcp",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperations_McpFields,
+	},
+	"Methods": ubx.FieldSpec{WireName: "methods"},
+	"Paths": ubx.FieldSpec{
+		WireName: "paths",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+	"Snis": ubx.FieldSpec{
+		WireName: "snis",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_From_NotSources_Principals_PrincipalFields,
+	},
+}
 
 var AuthzPolicy_HttpRules_ToFields = ubx.FieldMap{
-		"NotOperations": ubx.FieldSpec{
-			WireName: "not_operations",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_To_NotOperationsFields,
-		},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRules_To_NotOperationsFields,
-		},
-	}
+	"NotOperations": ubx.FieldSpec{
+		WireName: "not_operations",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperationsFields,
+	},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   AuthzPolicy_HttpRules_To_NotOperationsFields,
+	},
+}
 
 var AuthzPolicy_HttpRulesFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{
-			WireName: "from",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_FromFields,
-		},
-		"To": ubx.FieldSpec{
-			WireName: "to",
-			Kind: "object",
-			Fields: AuthzPolicy_HttpRules_ToFields,
-		},
-		"When": ubx.FieldSpec{WireName: "when"},
-	}
+	"From": ubx.FieldSpec{
+		WireName: "from",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_FromFields,
+	},
+	"To": ubx.FieldSpec{
+		WireName: "to",
+		Kind:     "object",
+		Fields:   AuthzPolicy_HttpRules_ToFields,
+	},
+	"When": ubx.FieldSpec{WireName: "when"},
+}
 
 var AuthzPolicy_TargetFields = ubx.FieldMap{
-		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-	}
+	"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
+	"Resources":           ubx.FieldSpec{WireName: "resources"},
+}
 
 type AuthzPolicyConfig struct {
 	// Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`. When the action is `CUSTOM`, `customProvider` must be specified. When the action is `ALLOW`, only requests matching the policy will be allowed. When the action is `DENY`, only requests matching the policy will be denied. When a request arrives, the policies are evaluated in the following order: 1. If there is a `CUSTOM` policy that matches the request, the `CUSTOM` policy is evaluated using the custom authorization providers and the request is denied if the provider rejects the request. 2. If there are any `DENY` policies that match the request, the request is denied. 3. If there are no `ALLOW` policies for the resource or if any of the `ALLOW` policies match the request, the request is allowed. 4. Else the request is denied by default if none of the configured AuthzPolicies with `ALLOW` action match the request.
 	Action any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Allows delegating authorization decisions to Cloud IAP or to Service Extensions.
 	CustomProvider any
 	// Optional. A human-readable description of the resource.
@@ -299,8 +297,6 @@ type AuthzPolicyConfig struct {
 	PolicyProfile any
 	// Specifies the set of targets to which this policy should be applied to.
 	Target any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type AuthzPolicyAttrs struct {
@@ -332,31 +328,29 @@ var AuthzPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_authz_policy",
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{WireName: "action"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomProvider": ubx.FieldSpec{
 			WireName: "custom_provider",
-			Kind: "object",
-			Fields: AuthzPolicy_CustomProviderFields,
+			Kind:     "object",
+			Fields:   AuthzPolicy_CustomProviderFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"HttpRules": ubx.FieldSpec{
 			WireName: "http_rules",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRulesFields,
+			Kind:     "list",
+			Fields:   AuthzPolicy_HttpRulesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NetworkRules": ubx.FieldSpec{
 			WireName: "network_rules",
-			Kind: "list",
-			Fields: AuthzPolicy_HttpRulesFields,
+			Kind:     "list",
+			Fields:   AuthzPolicy_HttpRulesFields,
 		},
 		"PolicyProfile": ubx.FieldSpec{WireName: "policy_profile"},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: AuthzPolicy_TargetFields,
+			Kind:     "object",
+			Fields:   AuthzPolicy_TargetFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

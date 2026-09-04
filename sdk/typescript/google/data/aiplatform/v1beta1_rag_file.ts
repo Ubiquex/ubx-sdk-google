@@ -75,7 +75,6 @@ export interface V1beta1RagFile_SlackSource {
 }
 
 export interface V1beta1RagFileConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1RagFileAttrs {
@@ -113,6 +112,5 @@ export interface V1beta1RagFileAttrs {
 export const V1beta1RagFile: DataSourceBinding<V1beta1RagFileConfig, V1beta1RagFileAttrs> = {
   wireType: "google_aiplatform_v1beta1_rag_file",
   fields: {
-    name: "name",
   },
 };

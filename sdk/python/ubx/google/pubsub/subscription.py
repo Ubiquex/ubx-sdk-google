@@ -314,14 +314,10 @@ class SubscriptionConfig:
     retain_acked_messages: Any = None
     # A policy that specifies how Pub/Sub retries message delivery. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. RetryPolicy will be triggered on NACKs or acknowledgment deadline exceeded events for a given message. Retry Policy is implemented on a best effort basis. At times, the delay between consecutive deliveries may not match the configuration. That is, delay can be more or less than configured backoff.
     retry_policy: Any = None
-    # Output only. An output-only field indicating whether or not the subscription can receive messages.
-    state: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources.
     tags: Any = None
     # Required. The name of the topic from which this subscription is receiving messages. Format is `projects/{project}/topics/{topic}`. The value of this field will be `_deleted-topic_` if the topic has been deleted.
     topic: Any = None
-    # Output only. Indicates the minimum duration for which a message is retained after it is published to the subscription's topic. If this field is set, messages published to the subscription's topic in the last `topic_message_retention_duration` are always available to subscribers. See the `message_retention_duration` field in `Topic`. This field is set only in responses from the server; it is ignored if it is set in any requests.
-    topic_message_retention_duration: Any = None
 
 @dataclasses.dataclass
 class SubscriptionAttrs:
@@ -427,9 +423,7 @@ Subscription = ubx.ResourceBinding(
             kind="object",
             fields=_Subscription_RetryPolicyFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "topic": ubx.FieldSpec(wire_name="topic"),
-        "topic_message_retention_duration": ubx.FieldSpec(wire_name="topic_message_retention_duration"),
     },
 )

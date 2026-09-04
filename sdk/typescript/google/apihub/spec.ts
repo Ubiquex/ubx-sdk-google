@@ -116,23 +116,6 @@ export interface Spec_SourceMetadata {
   sourceType?: string | Computed<string>;
 }
 
-const Spec_AdditionalSpecContents_SpecContentsFields: FieldMap = {
-  contents: "contents",
-  mimeType: "mime_type",
-};
-
-const Spec_AdditionalSpecContentsFields: FieldMap = {
-  createTime: "create_time",
-  labels: "labels",
-  specContentType: "spec_content_type",
-  specContents: {
-    wireName: "spec_contents",
-    kind: "object",
-    fields: Spec_AdditionalSpecContents_SpecContentsFields,
-  },
-  updateTime: "update_time",
-};
-
 const Spec_Attributes_EnumValues_ValuesFields: FieldMap = {
   description: "description",
   displayName: "display_name",
@@ -174,6 +157,11 @@ const Spec_AttributesFields: FieldMap = {
     kind: "object",
     fields: Spec_Attributes_JsonValuesFields,
   },
+};
+
+const Spec_AdditionalSpecContents_SpecContentsFields: FieldMap = {
+  contents: "contents",
+  mimeType: "mime_type",
 };
 
 const Spec_Details_OpenApiSpecDetails_OwnerFields: FieldMap = {
@@ -256,32 +244,11 @@ const Spec_LintResponseFields: FieldMap = {
   },
 };
 
-const Spec_SourceMetadata_PluginInstanceActionSourceFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
-const Spec_SourceMetadataFields: FieldMap = {
-  originalResourceCreateTime: "original_resource_create_time",
-  originalResourceId: "original_resource_id",
-  originalResourceUpdateTime: "original_resource_update_time",
-  pluginInstanceActionSource: {
-    wireName: "plugin_instance_action_source",
-    kind: "object",
-    fields: Spec_SourceMetadata_PluginInstanceActionSourceFields,
-  },
-  sourceType: "source_type",
-};
-
 export interface SpecConfig {
-  /** Output only. The additional spec contents for the spec. */
-  additionalSpecContents?: Spec_AdditionalSpecContents[] | Computed<Spec_AdditionalSpecContents[]>;
   /** Optional. The list of user defined attributes associated with the spec. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource. */
   attributes?: Record<string, Spec_Attributes> | Computed<Record<string, Spec_Attributes>>;
   /** The spec contents. */
   contents?: Spec_AdditionalSpecContents_SpecContents | Computed<Spec_AdditionalSpecContents_SpecContents>;
-  /** Output only. The time at which the spec was created. */
-  createTime?: string | Computed<string>;
   /** SpecDetails contains the details parsed from supported spec types. */
   details?: Spec_Details | Computed<Spec_Details>;
   /** Required. The display name of the spec. This can contain the file name of the spec. */
@@ -294,14 +261,10 @@ export interface SpecConfig {
   name?: string | Computed<string>;
   /** Optional. Input only. Enum specifying the parsing mode for OpenAPI Specification (OAS) parsing. */
   parsingMode?: string | Computed<string>;
-  /** Output only. The list of sources and metadata from the sources of the spec. */
-  sourceMetadata?: Spec_SourceMetadata[] | Computed<Spec_SourceMetadata[]>;
   /** Optional. The URI of the spec source in case file is uploaded from an external version control system. */
   sourceUri?: string | Computed<string>;
   /** The attribute values associated with resource. */
   specType?: Spec_Attributes | Computed<Spec_Attributes>;
-  /** Output only. The time at which the spec was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SpecAttrs {
@@ -338,11 +301,6 @@ export interface SpecAttrs {
 export const Spec: ResourceBinding<SpecConfig, SpecAttrs> = {
   wireType: "google_apihub_spec",
   fields: {
-    additionalSpecContents: {
-      wireName: "additional_spec_contents",
-      kind: "list",
-      fields: Spec_AdditionalSpecContentsFields,
-    },
     attributes: {
       wireName: "attributes",
       kind: "map",
@@ -353,7 +311,6 @@ export const Spec: ResourceBinding<SpecConfig, SpecAttrs> = {
       kind: "object",
       fields: Spec_AdditionalSpecContents_SpecContentsFields,
     },
-    createTime: "create_time",
     details: {
       wireName: "details",
       kind: "object",
@@ -372,17 +329,11 @@ export const Spec: ResourceBinding<SpecConfig, SpecAttrs> = {
     },
     name: "name",
     parsingMode: "parsing_mode",
-    sourceMetadata: {
-      wireName: "source_metadata",
-      kind: "list",
-      fields: Spec_SourceMetadataFields,
-    },
     sourceUri: "source_uri",
     specType: {
       wireName: "spec_type",
       kind: "object",
       fields: Spec_AttributesFields,
     },
-    updateTime: "update_time",
   },
 };

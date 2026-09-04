@@ -20,7 +20,7 @@ type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthoritie
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities struct {
-	DisplayName any
+	DisplayName  any
 	PublicKeySet any
 }
 
@@ -29,8 +29,8 @@ type Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck struct {
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeys struct {
-	KeyId any
-	PublicKeyPem any
+	KeyId              any
+	PublicKeyPem       any
 	SignatureAlgorithm any
 }
 
@@ -39,12 +39,12 @@ type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_Attestation
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators struct {
-	DisplayName any
+	DisplayName      any
 	PkixPublicKeySet any
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck struct {
-	AttestationAuthenticators any
+	AttestationAuthenticators            any
 	ContainerAnalysisAttestationProjects any
 }
 
@@ -53,10 +53,10 @@ type Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSource struct 
 }
 
 type Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules struct {
-	AttestationSource any
-	ConfigBasedBuildRequired any
-	CustomConstraints any
-	TrustedBuilder any
+	AttestationSource         any
+	ConfigBasedBuildRequired  any
+	CustomConstraints         any
+	TrustedBuilder            any
 	TrustedSourceRepoPatterns any
 }
 
@@ -69,35 +69,35 @@ type Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheck struct {
 }
 
 type Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheck struct {
-	AllowedCves any
-	BlockedCves any
+	AllowedCves                            any
+	BlockedCves                            any
 	ContainerAnalysisVulnerabilityProjects any
-	MaximumFixableSeverity any
-	MaximumUnfixableSeverity any
+	MaximumFixableSeverity                 any
+	MaximumUnfixableSeverity               any
 }
 
 type Policy_GkePolicy_CheckSets_Checks struct {
-	AlwaysDeny any
-	DisplayName any
-	ImageAllowlist any
-	ImageFreshnessCheck any
-	SigstoreSignatureCheck any
+	AlwaysDeny                    any
+	DisplayName                   any
+	ImageAllowlist                any
+	ImageFreshnessCheck           any
+	SigstoreSignatureCheck        any
 	SimpleSigningAttestationCheck any
-	SlsaCheck any
-	TrustedDirectoryCheck any
-	VulnerabilityCheck any
+	SlsaCheck                     any
+	TrustedDirectoryCheck         any
+	VulnerabilityCheck            any
 }
 
 type Policy_GkePolicy_CheckSets_Scope struct {
-	KubernetesNamespace any
+	KubernetesNamespace      any
 	KubernetesServiceAccount any
 }
 
 type Policy_GkePolicy_CheckSets struct {
-	Checks any
-	DisplayName any
+	Checks         any
+	DisplayName    any
 	ImageAllowlist any
-	Scope any
+	Scope          any
 }
 
 type Policy_GkePolicy struct {
@@ -108,186 +108,186 @@ type Policy_GkePolicy struct {
 }
 
 var Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields = ubx.FieldMap{
-		"AllowPattern": ubx.FieldSpec{WireName: "allow_pattern"},
-	}
+	"AllowPattern": ubx.FieldSpec{WireName: "allow_pattern"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheckFields = ubx.FieldMap{
-		"MaxUploadAgeDays": ubx.FieldSpec{WireName: "max_upload_age_days"},
-	}
+	"MaxUploadAgeDays": ubx.FieldSpec{WireName: "max_upload_age_days"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeysFields = ubx.FieldMap{
-		"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
-	}
+	"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySetFields = ubx.FieldMap{
-		"PublicKeys": ubx.FieldSpec{
-			WireName: "public_keys",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeysFields,
-		},
-	}
+	"PublicKeys": ubx.FieldSpec{
+		WireName: "public_keys",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySet_PublicKeysFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthoritiesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"PublicKeySet": ubx.FieldSpec{
-			WireName: "public_key_set",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySetFields,
-		},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"PublicKeySet": ubx.FieldSpec{
+		WireName: "public_key_set",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthorities_PublicKeySetFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheckFields = ubx.FieldMap{
-		"SigstoreAuthorities": ubx.FieldSpec{
-			WireName: "sigstore_authorities",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthoritiesFields,
-		},
-	}
+	"SigstoreAuthorities": ubx.FieldSpec{
+		WireName: "sigstore_authorities",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheck_SigstoreAuthoritiesFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeysFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
-		"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
-	}
+	"KeyId":              ubx.FieldSpec{WireName: "key_id"},
+	"PublicKeyPem":       ubx.FieldSpec{WireName: "public_key_pem"},
+	"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySetFields = ubx.FieldMap{
-		"PkixPublicKeys": ubx.FieldSpec{
-			WireName: "pkix_public_keys",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeysFields,
-		},
-	}
+	"PkixPublicKeys": ubx.FieldSpec{
+		WireName: "pkix_public_keys",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySet_PkixPublicKeysFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticatorsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"PkixPublicKeySet": ubx.FieldSpec{
-			WireName: "pkix_public_key_set",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySetFields,
-		},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"PkixPublicKeySet": ubx.FieldSpec{
+		WireName: "pkix_public_key_set",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticators_PkixPublicKeySetFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheckFields = ubx.FieldMap{
-		"AttestationAuthenticators": ubx.FieldSpec{
-			WireName: "attestation_authenticators",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticatorsFields,
-		},
-		"ContainerAnalysisAttestationProjects": ubx.FieldSpec{WireName: "container_analysis_attestation_projects"},
-	}
+	"AttestationAuthenticators": ubx.FieldSpec{
+		WireName: "attestation_authenticators",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheck_AttestationAuthenticatorsFields,
+	},
+	"ContainerAnalysisAttestationProjects": ubx.FieldSpec{WireName: "container_analysis_attestation_projects"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSourceFields = ubx.FieldMap{
-		"ContainerAnalysisAttestationProjects": ubx.FieldSpec{WireName: "container_analysis_attestation_projects"},
-	}
+	"ContainerAnalysisAttestationProjects": ubx.FieldSpec{WireName: "container_analysis_attestation_projects"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SlsaCheck_RulesFields = ubx.FieldMap{
-		"AttestationSource": ubx.FieldSpec{
-			WireName: "attestation_source",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSourceFields,
-		},
-		"ConfigBasedBuildRequired": ubx.FieldSpec{WireName: "config_based_build_required"},
-		"CustomConstraints": ubx.FieldSpec{WireName: "custom_constraints"},
-		"TrustedBuilder": ubx.FieldSpec{WireName: "trusted_builder"},
-		"TrustedSourceRepoPatterns": ubx.FieldSpec{WireName: "trusted_source_repo_patterns"},
-	}
+	"AttestationSource": ubx.FieldSpec{
+		WireName: "attestation_source",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SlsaCheck_Rules_AttestationSourceFields,
+	},
+	"ConfigBasedBuildRequired":  ubx.FieldSpec{WireName: "config_based_build_required"},
+	"CustomConstraints":         ubx.FieldSpec{WireName: "custom_constraints"},
+	"TrustedBuilder":            ubx.FieldSpec{WireName: "trusted_builder"},
+	"TrustedSourceRepoPatterns": ubx.FieldSpec{WireName: "trusted_source_repo_patterns"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_SlsaCheckFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SlsaCheck_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SlsaCheck_RulesFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheckFields = ubx.FieldMap{
-		"TrustedDirPatterns": ubx.FieldSpec{WireName: "trusted_dir_patterns"},
-	}
+	"TrustedDirPatterns": ubx.FieldSpec{WireName: "trusted_dir_patterns"},
+}
 
 var Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheckFields = ubx.FieldMap{
-		"AllowedCves": ubx.FieldSpec{WireName: "allowed_cves"},
-		"BlockedCves": ubx.FieldSpec{WireName: "blocked_cves"},
-		"ContainerAnalysisVulnerabilityProjects": ubx.FieldSpec{WireName: "container_analysis_vulnerability_projects"},
-		"MaximumFixableSeverity": ubx.FieldSpec{WireName: "maximum_fixable_severity"},
-		"MaximumUnfixableSeverity": ubx.FieldSpec{WireName: "maximum_unfixable_severity"},
-	}
+	"AllowedCves":                            ubx.FieldSpec{WireName: "allowed_cves"},
+	"BlockedCves":                            ubx.FieldSpec{WireName: "blocked_cves"},
+	"ContainerAnalysisVulnerabilityProjects": ubx.FieldSpec{WireName: "container_analysis_vulnerability_projects"},
+	"MaximumFixableSeverity":                 ubx.FieldSpec{WireName: "maximum_fixable_severity"},
+	"MaximumUnfixableSeverity":               ubx.FieldSpec{WireName: "maximum_unfixable_severity"},
+}
 
 var Policy_GkePolicy_CheckSets_ChecksFields = ubx.FieldMap{
-		"AlwaysDeny": ubx.FieldSpec{WireName: "always_deny"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ImageAllowlist": ubx.FieldSpec{
-			WireName: "image_allowlist",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
-		},
-		"ImageFreshnessCheck": ubx.FieldSpec{
-			WireName: "image_freshness_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheckFields,
-		},
-		"SigstoreSignatureCheck": ubx.FieldSpec{
-			WireName: "sigstore_signature_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheckFields,
-		},
-		"SimpleSigningAttestationCheck": ubx.FieldSpec{
-			WireName: "simple_signing_attestation_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheckFields,
-		},
-		"SlsaCheck": ubx.FieldSpec{
-			WireName: "slsa_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_SlsaCheckFields,
-		},
-		"TrustedDirectoryCheck": ubx.FieldSpec{
-			WireName: "trusted_directory_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheckFields,
-		},
-		"VulnerabilityCheck": ubx.FieldSpec{
-			WireName: "vulnerability_check",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheckFields,
-		},
-	}
+	"AlwaysDeny":  ubx.FieldSpec{WireName: "always_deny"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ImageAllowlist": ubx.FieldSpec{
+		WireName: "image_allowlist",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
+	},
+	"ImageFreshnessCheck": ubx.FieldSpec{
+		WireName: "image_freshness_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_ImageFreshnessCheckFields,
+	},
+	"SigstoreSignatureCheck": ubx.FieldSpec{
+		WireName: "sigstore_signature_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SigstoreSignatureCheckFields,
+	},
+	"SimpleSigningAttestationCheck": ubx.FieldSpec{
+		WireName: "simple_signing_attestation_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SimpleSigningAttestationCheckFields,
+	},
+	"SlsaCheck": ubx.FieldSpec{
+		WireName: "slsa_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_SlsaCheckFields,
+	},
+	"TrustedDirectoryCheck": ubx.FieldSpec{
+		WireName: "trusted_directory_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_TrustedDirectoryCheckFields,
+	},
+	"VulnerabilityCheck": ubx.FieldSpec{
+		WireName: "vulnerability_check",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_VulnerabilityCheckFields,
+	},
+}
 
 var Policy_GkePolicy_CheckSets_ScopeFields = ubx.FieldMap{
-		"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
-		"KubernetesServiceAccount": ubx.FieldSpec{WireName: "kubernetes_service_account"},
-	}
+	"KubernetesNamespace":      ubx.FieldSpec{WireName: "kubernetes_namespace"},
+	"KubernetesServiceAccount": ubx.FieldSpec{WireName: "kubernetes_service_account"},
+}
 
 var Policy_GkePolicy_CheckSetsFields = ubx.FieldMap{
-		"Checks": ubx.FieldSpec{
-			WireName: "checks",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSets_ChecksFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ImageAllowlist": ubx.FieldSpec{
-			WireName: "image_allowlist",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
-		},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_ScopeFields,
-		},
-	}
+	"Checks": ubx.FieldSpec{
+		WireName: "checks",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSets_ChecksFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ImageAllowlist": ubx.FieldSpec{
+		WireName: "image_allowlist",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
+	},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_ScopeFields,
+	},
+}
 
 var Policy_GkePolicyFields = ubx.FieldMap{
-		"CheckSets": ubx.FieldSpec{
-			WireName: "check_sets",
-			Kind: "list",
-			Fields: Policy_GkePolicy_CheckSetsFields,
-		},
-		"ImageAllowlist": ubx.FieldSpec{
-			WireName: "image_allowlist",
-			Kind: "object",
-			Fields: Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
-		},
-	}
+	"CheckSets": ubx.FieldSpec{
+		WireName: "check_sets",
+		Kind:     "list",
+		Fields:   Policy_GkePolicy_CheckSetsFields,
+	},
+	"ImageAllowlist": ubx.FieldSpec{
+		WireName: "image_allowlist",
+		Kind:     "object",
+		Fields:   Policy_GkePolicy_CheckSets_Checks_ImageAllowlistFields,
+	},
+}
 
 type PolicyConfig struct {
 	// Optional. A description comment about the policy.
@@ -296,10 +296,6 @@ type PolicyConfig struct {
 	Etag any
 	// A Binary Authorization policy for a GKE cluster. This is one type of policy that can occur as a `PlatformPolicy`.
 	GkePolicy any
-	// Output only. The relative resource name of the Binary Authorization platform policy, in the form of `projects/*/platforms/*/policies/*`.
-	Name any
-	// Output only. Time when the policy was last updated.
-	UpdateTime any
 }
 
 type PolicyAttrs struct {
@@ -319,13 +315,11 @@ var Policy = ubx.ResourceBinding{
 	WireType: "google_binaryauthorization_policy",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"GkePolicy": ubx.FieldSpec{
 			WireName: "gke_policy",
-			Kind: "object",
-			Fields: Policy_GkePolicyFields,
+			Kind:     "object",
+			Fields:   Policy_GkePolicyFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

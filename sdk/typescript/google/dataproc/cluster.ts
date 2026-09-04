@@ -921,8 +921,6 @@ const Cluster_VirtualClusterConfigFields: FieldMap = {
 export interface ClusterConfig {
   /** Required. The cluster name, which must be unique within a project. The name must start with a lowercase letter, and can contain up to 51 lowercase letters, numbers, and hyphens. It cannot end with a hyphen. The name of a deleted cluster can be reused. */
   clusterName?: string | Computed<string>;
-  /** Output only. A cluster UUID (Unique Universal Identifier). The service generates this value when it creates the cluster. */
-  clusterUuid?: string | Computed<string>;
   /** The cluster config. */
   config?: Cluster_Config | Computed<Cluster_Config>;
   /** Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster. */
@@ -933,8 +931,6 @@ export interface ClusterConfig {
   projectId?: string | Computed<string>;
   /** The status of a cluster and its instances. */
   status?: Cluster_Status | Computed<Cluster_Status>;
-  /** Output only. The previous cluster status. */
-  statusHistory?: Cluster_Status[] | Computed<Cluster_Status[]>;
   /** The cluster config for a cluster that does not directly control the underlying compute resources, such as a GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview). */
   virtualClusterConfig?: Cluster_VirtualClusterConfig | Computed<Cluster_VirtualClusterConfig>;
 }
@@ -964,7 +960,6 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
   wireType: "google_dataproc_cluster",
   fields: {
     clusterName: "cluster_name",
-    clusterUuid: "cluster_uuid",
     config: {
       wireName: "config",
       kind: "object",
@@ -980,11 +975,6 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
     status: {
       wireName: "status",
       kind: "object",
-      fields: Cluster_StatusFields,
-    },
-    statusHistory: {
-      wireName: "status_history",
-      kind: "list",
       fields: Cluster_StatusFields,
     },
     virtualClusterConfig: {

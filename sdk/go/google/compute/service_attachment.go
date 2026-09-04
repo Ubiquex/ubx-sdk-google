@@ -4,70 +4,46 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceAttachment_ConnectedEndpoints struct {
-	// The URL of the consumer network that is connected to this service attachment, e.g. projects/{project}/global/networks/{network}. (AI-inferred)
-	ConsumerNetwork any
-	// The URL of the consumer endpoint (for example, a forwarding rule) that is connected to the service attachment. (AI-inferred)
-	Endpoint any
-	EndpointWithId any
-	// The list of NAT IP addresses allocated for the consumer endpoint. (AI-inferred)
-	NatIps any
-	// The number of connections that have been propagated to the consumer network from the producer network for this connected endpoint. (AI-inferred)
+	ConsumerNetwork           any
+	Endpoint                  any
+	EndpointWithId            any
+	NatIps                    any
 	PropagatedConnectionCount any
-	// The unique identifier for the Private Service Connect connection associated with this connected endpoint. (AI-inferred)
-	PscConnectionId any
-	// The current status of the connected endpoint. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
-	Status any
+	PscConnectionId           any
+	Status                    any
 }
 
 type ServiceAttachment_ConsumerAcceptLists struct {
-	// The maximum number of connections allowed for the consumer in the accept list. A value of 0 means no limit. (AI-inferred)
 	ConnectionLimit any
-	EndpointUrl any
-	// The URL of the network that is allowed to connect to this service attachment. (AI-inferred)
-	NetworkUrl any
-	// The project ID or project number of a consumer project that is allowed to connect to the service attachment. Used in the consumer accept list to identify the allowed project. (AI-inferred)
-	ProjectIdOrNum any
+	EndpointUrl     any
+	NetworkUrl      any
+	ProjectIdOrNum  any
 }
 
 type ServiceAttachment_PscServiceAttachmentId struct {
 	High any
-	// The lower 32 bits of the 64-bit PSC service attachment ID, represented as a decimal string. (AI-inferred)
-	Low any
+	Low  any
 }
 
-var ServiceAttachment_ConnectedEndpointsFields = ubx.FieldMap{
-		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"EndpointWithId": ubx.FieldSpec{WireName: "endpoint_with_id"},
-		"NatIps": ubx.FieldSpec{WireName: "nat_ips"},
-		"PropagatedConnectionCount": ubx.FieldSpec{WireName: "propagated_connection_count"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
-
 var ServiceAttachment_ConsumerAcceptListsFields = ubx.FieldMap{
-		"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
-		"EndpointUrl": ubx.FieldSpec{WireName: "endpoint_url"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-		"ProjectIdOrNum": ubx.FieldSpec{WireName: "project_id_or_num"},
-	}
+	"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
+	"EndpointUrl":     ubx.FieldSpec{WireName: "endpoint_url"},
+	"NetworkUrl":      ubx.FieldSpec{WireName: "network_url"},
+	"ProjectIdOrNum":  ubx.FieldSpec{WireName: "project_id_or_num"},
+}
 
 var ServiceAttachment_PscServiceAttachmentIdFields = ubx.FieldMap{
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-	}
+	"High": ubx.FieldSpec{WireName: "high"},
+	"Low":  ubx.FieldSpec{WireName: "low"},
+}
 
 type ServiceAttachmentConfig struct {
-	// Output only. [Output Only] An array of connections for all the consumers connected to this service attachment.
-	ConnectedEndpoints any
 	// The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
 	ConnectionPreference any
 	// Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
 	ConsumerAcceptLists any
 	// Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
 	ConsumerRejectLists any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
@@ -76,10 +52,6 @@ type ServiceAttachmentConfig struct {
 	EnableProxyProtocol any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
 	Fingerprint any
-	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
-	Kind any
 	// Metadata of the service attachment.
 	Metadata any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -92,13 +64,9 @@ type ServiceAttachmentConfig struct {
 	ProducerForwardingRule any
 	// The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
 	PropagatedConnectionLimit any
-	PscServiceAttachmentId any
+	PscServiceAttachmentId    any
 	// This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
 	ReconcileConnections any
-	// Output only. [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 	// The URL of a service serving the endpoint identified by this service attachment.
 	TargetService any
 }
@@ -138,7 +106,7 @@ type ServiceAttachmentAttrs struct {
 	ProducerForwardingRule any
 	// The number of consumer spokes that connected Private Service Connect endpoints can be propagated to through Network Connectivity Center. This limit lets the service producer limit how many propagated Private Service Connect connections can be established to this service attachment from a single consumer. If the connection preference of the service attachment is ACCEPT_MANUAL, the limit applies to each project or network that is listed in the consumer accept list. If the connection preference of the service attachment is ACCEPT_AUTOMATIC, the limit applies to each project that contains a connected endpoint. If unspecified, the default propagated connection limit is 250.
 	PropagatedConnectionLimit any
-	PscServiceAttachmentId any
+	PscServiceAttachmentId    any
 	// This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
 	ReconcileConnections any
 	// Output only. [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
@@ -152,39 +120,29 @@ type ServiceAttachmentAttrs struct {
 var ServiceAttachment = ubx.ResourceBinding{
 	WireType: "google_compute_service_attachment",
 	Fields: ubx.FieldMap{
-		"ConnectedEndpoints": ubx.FieldSpec{
-			WireName: "connected_endpoints",
-			Kind: "list",
-			Fields: ServiceAttachment_ConnectedEndpointsFields,
-		},
 		"ConnectionPreference": ubx.FieldSpec{WireName: "connection_preference"},
 		"ConsumerAcceptLists": ubx.FieldSpec{
 			WireName: "consumer_accept_lists",
-			Kind: "list",
-			Fields: ServiceAttachment_ConsumerAcceptListsFields,
+			Kind:     "list",
+			Fields:   ServiceAttachment_ConsumerAcceptListsFields,
 		},
-		"ConsumerRejectLists": ubx.FieldSpec{WireName: "consumer_reject_lists"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainNames": ubx.FieldSpec{WireName: "domain_names"},
-		"EnableProxyProtocol": ubx.FieldSpec{WireName: "enable_proxy_protocol"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatIpsPerEndpoint": ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
-		"NatSubnets": ubx.FieldSpec{WireName: "nat_subnets"},
-		"ProducerForwardingRule": ubx.FieldSpec{WireName: "producer_forwarding_rule"},
+		"ConsumerRejectLists":       ubx.FieldSpec{WireName: "consumer_reject_lists"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"DomainNames":               ubx.FieldSpec{WireName: "domain_names"},
+		"EnableProxyProtocol":       ubx.FieldSpec{WireName: "enable_proxy_protocol"},
+		"Fingerprint":               ubx.FieldSpec{WireName: "fingerprint"},
+		"Metadata":                  ubx.FieldSpec{WireName: "metadata"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"NatIpsPerEndpoint":         ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
+		"NatSubnets":                ubx.FieldSpec{WireName: "nat_subnets"},
+		"ProducerForwardingRule":    ubx.FieldSpec{WireName: "producer_forwarding_rule"},
 		"PropagatedConnectionLimit": ubx.FieldSpec{WireName: "propagated_connection_limit"},
 		"PscServiceAttachmentId": ubx.FieldSpec{
 			WireName: "psc_service_attachment_id",
-			Kind: "object",
-			Fields: ServiceAttachment_PscServiceAttachmentIdFields,
+			Kind:     "object",
+			Fields:   ServiceAttachment_PscServiceAttachmentIdFields,
 		},
 		"ReconcileConnections": ubx.FieldSpec{WireName: "reconcile_connections"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"TargetService": ubx.FieldSpec{WireName: "target_service"},
+		"TargetService":        ubx.FieldSpec{WireName: "target_service"},
 	},
 }

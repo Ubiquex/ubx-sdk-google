@@ -8,8 +8,6 @@ export interface OauthClientConfig {
   allowedRedirectUris?: string[] | Computed<string[]>;
   /** Required. The list of scopes that the OauthClient is allowed to request during OAuth flows. The following scopes are supported: * `https://www.googleapis.com/auth/cloud-platform`: See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account. */
   allowedScopes?: string[] | Computed<string[]>;
-  /** Output only. The system-generated OauthClient id. */
-  clientId?: string | Computed<string>;
   /** Immutable. The type of OauthClient. Either public or private. For private clients, the client secret can be managed using the dedicated OauthClientCredential resource. */
   clientType?: string | Computed<string>;
   /** Optional. A user-specified description of the OauthClient. Cannot exceed 256 characters. */
@@ -18,12 +16,8 @@ export interface OauthClientConfig {
   disabled?: boolean | Computed<boolean>;
   /** Optional. A user-specified display name of the OauthClient. Cannot exceed 32 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Time after which the OauthClient will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Immutable. Identifier. The resource name of the OauthClient. Format:`projects/{project}/locations/{location}/oauthClients/{oauth_client}`. */
   name?: string | Computed<string>;
-  /** Output only. The state of the OauthClient. */
-  state?: string | Computed<string>;
 }
 
 export interface OauthClientAttrs {
@@ -57,13 +51,10 @@ export const OauthClient: ResourceBinding<OauthClientConfig, OauthClientAttrs> =
     allowedGrantTypes: "allowed_grant_types",
     allowedRedirectUris: "allowed_redirect_uris",
     allowedScopes: "allowed_scopes",
-    clientId: "client_id",
     clientType: "client_type",
     description: "description",
     disabled: "disabled",
     displayName: "display_name",
-    expireTime: "expire_time",
     name: "name",
-    state: "state",
   },
 };

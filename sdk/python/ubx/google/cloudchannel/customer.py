@@ -124,30 +124,22 @@ class CustomerConfig:
     alternate_email: Any = None
     # Cloud Identity ID of the customer's channel partner. Populated only if a channel partner exists for this customer.
     channel_partner_id: Any = None
-    # Output only. The customer's Cloud Identity ID if the customer has a Cloud Identity resource.
-    cloud_identity_id: Any = None
     # Cloud Identity information for the Cloud Channel Customer.
     cloud_identity_info: Any = None
     # Optional. External CRM ID for the customer. Populated only if a CRM ID exists for this customer.
     correlation_id: Any = None
-    # Output only. Time when the customer was created.
-    create_time: Any = None
     # Optional. Indicate if a customer is attesting about the correctness of provided information. Only required if creating a GCP Entitlement. NOTE: This field will be mandatory for all new GCP customers starting Aug 31st, 2026 and this field will also be required for all existing customers purchasing new GCP Entitlements.
     customer_attestation_state: Any = None
     # Required. The customer's primary domain. Must match the primary contact email's domain.
     domain: Any = None
     # Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
     language_code: Any = None
-    # Output only. Resource name of the customer. Format: accounts/{account_id}/customers/{customer_id}
-    name: Any = None
     # Required. Name of the organization that the customer entity represents.
     org_display_name: Any = None
     # Represents a postal address, such as for postal delivery or payments addresses. With a postal address, a postal service can deliver items to a premise, P.O. box, or similar. A postal address is not intended to model geographical locations like roads, towns, or mountains. In typical usage, an address would be created by user input or from importing existing data, depending on the type of process. Advice on address input or editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput. - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, see: https://support.google.com/business/answer/6397478.
     org_postal_address: Any = None
     # Contact information for a customer account.
     primary_contact_info: Any = None
-    # Output only. Time when the customer was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomerAttrs:
@@ -185,18 +177,15 @@ Customer = ubx.ResourceBinding(
     fields={
         "alternate_email": ubx.FieldSpec(wire_name="alternate_email"),
         "channel_partner_id": ubx.FieldSpec(wire_name="channel_partner_id"),
-        "cloud_identity_id": ubx.FieldSpec(wire_name="cloud_identity_id"),
         "cloud_identity_info": ubx.FieldSpec(
             wire_name="cloud_identity_info",
             kind="object",
             fields=_Customer_CloudIdentityInfoFields,
         ),
         "correlation_id": ubx.FieldSpec(wire_name="correlation_id"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_attestation_state": ubx.FieldSpec(wire_name="customer_attestation_state"),
         "domain": ubx.FieldSpec(wire_name="domain"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "org_display_name": ubx.FieldSpec(wire_name="org_display_name"),
         "org_postal_address": ubx.FieldSpec(
             wire_name="org_postal_address",
@@ -208,6 +197,5 @@ Customer = ubx.ResourceBinding(
             kind="object",
             fields=_Customer_PrimaryContactInfoFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

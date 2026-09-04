@@ -652,7 +652,6 @@ class Asset_PerformanceData:
 
 @dataclasses.dataclass
 class AssetConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -693,7 +692,6 @@ class AssetAttrs:
 Asset = ubx.DataSourceBinding(
     wire_type="google_migrationcenter_asset",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

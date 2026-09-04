@@ -178,12 +178,8 @@ _CloudExadataInfrastructure_PropertiesFields = {
 
 @dataclasses.dataclass
 class CloudExadataInfrastructureConfig:
-    # Output only. The date and time that the Exadata Infrastructure was created.
-    create_time: Any = None
     # Optional. User friendly name for this resource.
     display_name: Any = None
-    # Output only. Entitlement ID of the private offer against which this infrastructure resource is provisioned.
-    entitlement_id: Any = None
     # Optional. The GCP Oracle zone where Oracle Exadata Infrastructure is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
     gcp_oracle_zone: Any = None
     # Optional. Labels or tags associated with the resource.
@@ -213,9 +209,7 @@ class CloudExadataInfrastructureAttrs:
 CloudExadataInfrastructure = ubx.ResourceBinding(
     wire_type="google_oracledatabase_cloud_exadata_infrastructure",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
         "gcp_oracle_zone": ubx.FieldSpec(wire_name="gcp_oracle_zone"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),

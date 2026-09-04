@@ -88,8 +88,6 @@ _DocumentSchema_PropertyDefinitionsFields = {
 
 @dataclasses.dataclass
 class DocumentSchemaConfig:
-    # Output only. The time when the document schema is created.
-    create_time: Any = None
     # Schema description.
     description: Any = None
     # Required. Name of the schema given by the user. Must be unique per project.
@@ -100,8 +98,6 @@ class DocumentSchemaConfig:
     name: Any = None
     # Document details.
     property_definitions: Any = None
-    # Output only. The time when the document schema is last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DocumentSchemaAttrs:
@@ -123,7 +119,6 @@ class DocumentSchemaAttrs:
 DocumentSchema = ubx.ResourceBinding(
     wire_type="google_contentwarehouse_document_schema",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "document_is_folder": ubx.FieldSpec(wire_name="document_is_folder"),
@@ -133,6 +128,5 @@ DocumentSchema = ubx.ResourceBinding(
             kind="list",
             fields=_DocumentSchema_PropertyDefinitionsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

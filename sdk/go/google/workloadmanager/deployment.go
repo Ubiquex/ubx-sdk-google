@@ -70,7 +70,7 @@ type Deployment_SapSystemS4Config_Location struct {
 	DnsZone any
 	// Optional. DNS zone name suffix.
 	DnsZoneNameSuffix any
-	InternetAccess any
+	InternetAccess    any
 	// Optional. Network project.
 	NetworkProject any
 	// Required. Region name.
@@ -229,165 +229,163 @@ type Deployment_TerraformVariables struct {
 }
 
 var Deployment_SapSystemS4Config_AppFields = ubx.FieldMap{
-		"AppInstanceId": ubx.FieldSpec{WireName: "app_instance_id"},
-		"AppServiceAccount": ubx.FieldSpec{WireName: "app_service_account"},
-		"AppVmNames": ubx.FieldSpec{WireName: "app_vm_names"},
-		"AscsImage": ubx.FieldSpec{WireName: "ascs_image"},
-		"AscsInstanceId": ubx.FieldSpec{WireName: "ascs_instance_id"},
-		"AscsMachineType": ubx.FieldSpec{WireName: "ascs_machine_type"},
-		"AscsServiceAccount": ubx.FieldSpec{WireName: "ascs_service_account"},
-		"AscsVm": ubx.FieldSpec{WireName: "ascs_vm"},
-		"ErsInstanceId": ubx.FieldSpec{WireName: "ers_instance_id"},
-		"ErsVm": ubx.FieldSpec{WireName: "ers_vm"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
-		"SharedStorage": ubx.FieldSpec{WireName: "shared_storage"},
-		"Sid": ubx.FieldSpec{WireName: "sid"},
-		"VmsMultiplier": ubx.FieldSpec{WireName: "vms_multiplier"},
-	}
+	"AppInstanceId":       ubx.FieldSpec{WireName: "app_instance_id"},
+	"AppServiceAccount":   ubx.FieldSpec{WireName: "app_service_account"},
+	"AppVmNames":          ubx.FieldSpec{WireName: "app_vm_names"},
+	"AscsImage":           ubx.FieldSpec{WireName: "ascs_image"},
+	"AscsInstanceId":      ubx.FieldSpec{WireName: "ascs_instance_id"},
+	"AscsMachineType":     ubx.FieldSpec{WireName: "ascs_machine_type"},
+	"AscsServiceAccount":  ubx.FieldSpec{WireName: "ascs_service_account"},
+	"AscsVm":              ubx.FieldSpec{WireName: "ascs_vm"},
+	"ErsInstanceId":       ubx.FieldSpec{WireName: "ers_instance_id"},
+	"ErsVm":               ubx.FieldSpec{WireName: "ers_vm"},
+	"Image":               ubx.FieldSpec{WireName: "image"},
+	"MachineType":         ubx.FieldSpec{WireName: "machine_type"},
+	"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
+	"SharedStorage":       ubx.FieldSpec{WireName: "shared_storage"},
+	"Sid":                 ubx.FieldSpec{WireName: "sid"},
+	"VmsMultiplier":       ubx.FieldSpec{WireName: "vms_multiplier"},
+}
 
 var Deployment_SapSystemS4Config_DatabaseFields = ubx.FieldMap{
-		"DatabaseServiceAccount": ubx.FieldSpec{WireName: "database_service_account"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"PrimaryDbVm": ubx.FieldSpec{WireName: "primary_db_vm"},
-		"SecondaryDbVm": ubx.FieldSpec{WireName: "secondary_db_vm"},
-		"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
-		"Sid": ubx.FieldSpec{WireName: "sid"},
-	}
+	"DatabaseServiceAccount": ubx.FieldSpec{WireName: "database_service_account"},
+	"DiskType":               ubx.FieldSpec{WireName: "disk_type"},
+	"Image":                  ubx.FieldSpec{WireName: "image"},
+	"InstanceId":             ubx.FieldSpec{WireName: "instance_id"},
+	"MachineType":            ubx.FieldSpec{WireName: "machine_type"},
+	"PrimaryDbVm":            ubx.FieldSpec{WireName: "primary_db_vm"},
+	"SecondaryDbVm":          ubx.FieldSpec{WireName: "secondary_db_vm"},
+	"SecretManagerSecret":    ubx.FieldSpec{WireName: "secret_manager_secret"},
+	"Sid":                    ubx.FieldSpec{WireName: "sid"},
+}
 
 var Deployment_SapSystemS4Config_LocationFields = ubx.FieldMap{
-		"CreateCommsFirewall": ubx.FieldSpec{WireName: "create_comms_firewall"},
-		"CustomTags": ubx.FieldSpec{WireName: "custom_tags"},
-		"DeploymentDnsEnabled": ubx.FieldSpec{WireName: "deployment_dns_enabled"},
-		"DnsZone": ubx.FieldSpec{WireName: "dns_zone"},
-		"DnsZoneNameSuffix": ubx.FieldSpec{WireName: "dns_zone_name_suffix"},
-		"InternetAccess": ubx.FieldSpec{WireName: "internet_access"},
-		"NetworkProject": ubx.FieldSpec{WireName: "network_project"},
-		"RegionName": ubx.FieldSpec{WireName: "region_name"},
-		"SubnetName": ubx.FieldSpec{WireName: "subnet_name"},
-		"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
-		"Zone1Name": ubx.FieldSpec{WireName: "zone1_name"},
-		"Zone2Name": ubx.FieldSpec{WireName: "zone2_name"},
-	}
+	"CreateCommsFirewall":  ubx.FieldSpec{WireName: "create_comms_firewall"},
+	"CustomTags":           ubx.FieldSpec{WireName: "custom_tags"},
+	"DeploymentDnsEnabled": ubx.FieldSpec{WireName: "deployment_dns_enabled"},
+	"DnsZone":              ubx.FieldSpec{WireName: "dns_zone"},
+	"DnsZoneNameSuffix":    ubx.FieldSpec{WireName: "dns_zone_name_suffix"},
+	"InternetAccess":       ubx.FieldSpec{WireName: "internet_access"},
+	"NetworkProject":       ubx.FieldSpec{WireName: "network_project"},
+	"RegionName":           ubx.FieldSpec{WireName: "region_name"},
+	"SubnetName":           ubx.FieldSpec{WireName: "subnet_name"},
+	"VpcName":              ubx.FieldSpec{WireName: "vpc_name"},
+	"Zone1Name":            ubx.FieldSpec{WireName: "zone1_name"},
+	"Zone2Name":            ubx.FieldSpec{WireName: "zone2_name"},
+}
 
 var Deployment_SapSystemS4ConfigFields = ubx.FieldMap{
-		"AllowStoppingForUpdate": ubx.FieldSpec{WireName: "allow_stopping_for_update"},
-		"AnsibleRunnerServiceAccount": ubx.FieldSpec{WireName: "ansible_runner_service_account"},
-		"App": ubx.FieldSpec{
-			WireName: "app",
-			Kind: "object",
-			Fields: Deployment_SapSystemS4Config_AppFields,
-		},
-		"Database": ubx.FieldSpec{
-			WireName: "database",
-			Kind: "object",
-			Fields: Deployment_SapSystemS4Config_DatabaseFields,
-		},
-		"DeploymentModel": ubx.FieldSpec{WireName: "deployment_model"},
-		"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
-		"GcpProjectId": ubx.FieldSpec{WireName: "gcp_project_id"},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Deployment_SapSystemS4Config_LocationFields,
-		},
-		"MediaBucketName": ubx.FieldSpec{WireName: "media_bucket_name"},
-		"SapBootDiskImage": ubx.FieldSpec{WireName: "sap_boot_disk_image"},
-		"ScalingMethod": ubx.FieldSpec{WireName: "scaling_method"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"VmPrefix": ubx.FieldSpec{WireName: "vm_prefix"},
-	}
+	"AllowStoppingForUpdate":      ubx.FieldSpec{WireName: "allow_stopping_for_update"},
+	"AnsibleRunnerServiceAccount": ubx.FieldSpec{WireName: "ansible_runner_service_account"},
+	"App": ubx.FieldSpec{
+		WireName: "app",
+		Kind:     "object",
+		Fields:   Deployment_SapSystemS4Config_AppFields,
+	},
+	"Database": ubx.FieldSpec{
+		WireName: "database",
+		Kind:     "object",
+		Fields:   Deployment_SapSystemS4Config_DatabaseFields,
+	},
+	"DeploymentModel": ubx.FieldSpec{WireName: "deployment_model"},
+	"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
+	"GcpProjectId":    ubx.FieldSpec{WireName: "gcp_project_id"},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Deployment_SapSystemS4Config_LocationFields,
+	},
+	"MediaBucketName":  ubx.FieldSpec{WireName: "media_bucket_name"},
+	"SapBootDiskImage": ubx.FieldSpec{WireName: "sap_boot_disk_image"},
+	"ScalingMethod":    ubx.FieldSpec{WireName: "scaling_method"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+	"VmPrefix":         ubx.FieldSpec{WireName: "vm_prefix"},
+}
 
 var Deployment_SqlServerWorkload_ActiveDirectoryFields = ubx.FieldMap{
-		"DnsAddress": ubx.FieldSpec{WireName: "dns_address"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"DomainUsername": ubx.FieldSpec{WireName: "domain_username"},
-		"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DnsAddress":          ubx.FieldSpec{WireName: "dns_address"},
+	"Domain":              ubx.FieldSpec{WireName: "domain"},
+	"DomainUsername":      ubx.FieldSpec{WireName: "domain_username"},
+	"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
+	"Type":                ubx.FieldSpec{WireName: "type"},
+}
 
 var Deployment_SqlServerWorkload_DatabaseFields = ubx.FieldMap{
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"FloatingIpAddress": ubx.FieldSpec{WireName: "floating_ip_address"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"SecondarySoleTenantNode": ubx.FieldSpec{WireName: "secondary_sole_tenant_node"},
-		"SecondarySoleTenantNodeType": ubx.FieldSpec{WireName: "secondary_sole_tenant_node_type"},
-		"SecretManagerSecret": ubx.FieldSpec{WireName: "secret_manager_secret"},
-		"Smt": ubx.FieldSpec{WireName: "smt"},
-		"SoleTenantNode": ubx.FieldSpec{WireName: "sole_tenant_node"},
-		"SoleTenantNodeType": ubx.FieldSpec{WireName: "sole_tenant_node_type"},
-		"TempdbOnSsd": ubx.FieldSpec{WireName: "tempdb_on_ssd"},
-		"TenancyModel": ubx.FieldSpec{WireName: "tenancy_model"},
-	}
+	"DiskType":                    ubx.FieldSpec{WireName: "disk_type"},
+	"FloatingIpAddress":           ubx.FieldSpec{WireName: "floating_ip_address"},
+	"MachineType":                 ubx.FieldSpec{WireName: "machine_type"},
+	"SecondarySoleTenantNode":     ubx.FieldSpec{WireName: "secondary_sole_tenant_node"},
+	"SecondarySoleTenantNodeType": ubx.FieldSpec{WireName: "secondary_sole_tenant_node_type"},
+	"SecretManagerSecret":         ubx.FieldSpec{WireName: "secret_manager_secret"},
+	"Smt":                         ubx.FieldSpec{WireName: "smt"},
+	"SoleTenantNode":              ubx.FieldSpec{WireName: "sole_tenant_node"},
+	"SoleTenantNodeType":          ubx.FieldSpec{WireName: "sole_tenant_node_type"},
+	"TempdbOnSsd":                 ubx.FieldSpec{WireName: "tempdb_on_ssd"},
+	"TenancyModel":                ubx.FieldSpec{WireName: "tenancy_model"},
+}
 
 var Deployment_SqlServerWorkload_LocationFields = ubx.FieldMap{
-		"DnsZone": ubx.FieldSpec{WireName: "dns_zone"},
-		"GcpProjectId": ubx.FieldSpec{WireName: "gcp_project_id"},
-		"InternetAccess": ubx.FieldSpec{WireName: "internet_access"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PrimaryZone": ubx.FieldSpec{WireName: "primary_zone"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SecondaryZone": ubx.FieldSpec{WireName: "secondary_zone"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TertiaryZone": ubx.FieldSpec{WireName: "tertiary_zone"},
-	}
+	"DnsZone":        ubx.FieldSpec{WireName: "dns_zone"},
+	"GcpProjectId":   ubx.FieldSpec{WireName: "gcp_project_id"},
+	"InternetAccess": ubx.FieldSpec{WireName: "internet_access"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"PrimaryZone":    ubx.FieldSpec{WireName: "primary_zone"},
+	"Region":         ubx.FieldSpec{WireName: "region"},
+	"SecondaryZone":  ubx.FieldSpec{WireName: "secondary_zone"},
+	"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
+	"TertiaryZone":   ubx.FieldSpec{WireName: "tertiary_zone"},
+}
 
 var Deployment_SqlServerWorkload_PacemakerFields = ubx.FieldMap{
-		"BucketNameNodeCertificates": ubx.FieldSpec{WireName: "bucket_name_node_certificates"},
-		"PacemakerCluster": ubx.FieldSpec{WireName: "pacemaker_cluster"},
-		"PacemakerClusterSecret": ubx.FieldSpec{WireName: "pacemaker_cluster_secret"},
-		"PacemakerClusterUsername": ubx.FieldSpec{WireName: "pacemaker_cluster_username"},
-		"SqlPacemakerSecret": ubx.FieldSpec{WireName: "sql_pacemaker_secret"},
-		"SqlPacemakerUsername": ubx.FieldSpec{WireName: "sql_pacemaker_username"},
-	}
+	"BucketNameNodeCertificates": ubx.FieldSpec{WireName: "bucket_name_node_certificates"},
+	"PacemakerCluster":           ubx.FieldSpec{WireName: "pacemaker_cluster"},
+	"PacemakerClusterSecret":     ubx.FieldSpec{WireName: "pacemaker_cluster_secret"},
+	"PacemakerClusterUsername":   ubx.FieldSpec{WireName: "pacemaker_cluster_username"},
+	"SqlPacemakerSecret":         ubx.FieldSpec{WireName: "sql_pacemaker_secret"},
+	"SqlPacemakerUsername":       ubx.FieldSpec{WireName: "sql_pacemaker_username"},
+}
 
 var Deployment_SqlServerWorkloadFields = ubx.FieldMap{
-		"ActiveDirectory": ubx.FieldSpec{
-			WireName: "active_directory",
-			Kind: "object",
-			Fields: Deployment_SqlServerWorkload_ActiveDirectoryFields,
-		},
-		"ComputeEngineServiceAccount": ubx.FieldSpec{WireName: "compute_engine_service_account"},
-		"Database": ubx.FieldSpec{
-			WireName: "database",
-			Kind: "object",
-			Fields: Deployment_SqlServerWorkload_DatabaseFields,
-		},
-		"DeploymentModel": ubx.FieldSpec{WireName: "deployment_model"},
-		"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
-		"FciType": ubx.FieldSpec{WireName: "fci_type"},
-		"HaType": ubx.FieldSpec{WireName: "ha_type"},
-		"IsSqlPayg": ubx.FieldSpec{WireName: "is_sql_payg"},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Deployment_SqlServerWorkload_LocationFields,
-		},
-		"MediaBucket": ubx.FieldSpec{WireName: "media_bucket"},
-		"OperatingSystemType": ubx.FieldSpec{WireName: "operating_system_type"},
-		"OsImage": ubx.FieldSpec{WireName: "os_image"},
-		"OsImageType": ubx.FieldSpec{WireName: "os_image_type"},
-		"Pacemaker": ubx.FieldSpec{
-			WireName: "pacemaker",
-			Kind: "object",
-			Fields: Deployment_SqlServerWorkload_PacemakerFields,
-		},
-		"SqlServerEdition": ubx.FieldSpec{WireName: "sql_server_edition"},
-		"SqlServerVersion": ubx.FieldSpec{WireName: "sql_server_version"},
-		"VmPrefix": ubx.FieldSpec{WireName: "vm_prefix"},
-	}
+	"ActiveDirectory": ubx.FieldSpec{
+		WireName: "active_directory",
+		Kind:     "object",
+		Fields:   Deployment_SqlServerWorkload_ActiveDirectoryFields,
+	},
+	"ComputeEngineServiceAccount": ubx.FieldSpec{WireName: "compute_engine_service_account"},
+	"Database": ubx.FieldSpec{
+		WireName: "database",
+		Kind:     "object",
+		Fields:   Deployment_SqlServerWorkload_DatabaseFields,
+	},
+	"DeploymentModel": ubx.FieldSpec{WireName: "deployment_model"},
+	"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
+	"FciType":         ubx.FieldSpec{WireName: "fci_type"},
+	"HaType":          ubx.FieldSpec{WireName: "ha_type"},
+	"IsSqlPayg":       ubx.FieldSpec{WireName: "is_sql_payg"},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Deployment_SqlServerWorkload_LocationFields,
+	},
+	"MediaBucket":         ubx.FieldSpec{WireName: "media_bucket"},
+	"OperatingSystemType": ubx.FieldSpec{WireName: "operating_system_type"},
+	"OsImage":             ubx.FieldSpec{WireName: "os_image"},
+	"OsImageType":         ubx.FieldSpec{WireName: "os_image_type"},
+	"Pacemaker": ubx.FieldSpec{
+		WireName: "pacemaker",
+		Kind:     "object",
+		Fields:   Deployment_SqlServerWorkload_PacemakerFields,
+	},
+	"SqlServerEdition": ubx.FieldSpec{WireName: "sql_server_edition"},
+	"SqlServerVersion": ubx.FieldSpec{WireName: "sql_server_version"},
+	"VmPrefix":         ubx.FieldSpec{WireName: "vm_prefix"},
+}
 
 var Deployment_TerraformVariablesFields = ubx.FieldMap{
-		"InputValue": ubx.FieldSpec{WireName: "input_value"},
-	}
+	"InputValue": ubx.FieldSpec{WireName: "input_value"},
+}
 
 type DeploymentConfig struct {
-	// Output only. Create time stamp.
-	CreateTime any
 	// Description of the deployment.
 	Description any
 	// The name of the deployment resource. The format is 'projects/{project_id}/locations/{location_id}/deployments/{deployment_id}'.
@@ -398,12 +396,8 @@ type DeploymentConfig struct {
 	ServiceAccount any
 	// Message for MS SQL workload.
 	SqlServerWorkload any
-	// Output only. Current state of the deployment.
-	State any
 	// Optional. terraform_variables represents all the Terraform variables for the deployment workload. The key is the name of the Terraform variable, and the value is the TerraformVariable. For example: { "project_id": { "input_value": { "string_value": "my-project-id" } }, "zone": { "input_value": { "string_value": "us-central1-a" } } }
 	TerraformVariables any
-	// Output only. Update time stamp.
-	UpdateTime any
 	// Optional. The user-specified Cloud Build worker pool resource in which the Cloud Build job will execute. Format: `projects/{project}/locations/{location}/workerPools/{workerPoolId}`. If this field is unspecified, the default Cloud Build worker pool will be used.
 	WorkerPool any
 	// Optional. Workload type of the deployment.
@@ -438,28 +432,25 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "google_workloadmanager_deployment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SapSystemS4Config": ubx.FieldSpec{
 			WireName: "sap_system_s4_config",
-			Kind: "object",
-			Fields: Deployment_SapSystemS4ConfigFields,
+			Kind:     "object",
+			Fields:   Deployment_SapSystemS4ConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"SqlServerWorkload": ubx.FieldSpec{
 			WireName: "sql_server_workload",
-			Kind: "object",
-			Fields: Deployment_SqlServerWorkloadFields,
+			Kind:     "object",
+			Fields:   Deployment_SqlServerWorkloadFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"TerraformVariables": ubx.FieldSpec{
 			WireName: "terraform_variables",
-			Kind: "map",
-			Fields: Deployment_TerraformVariablesFields,
+			Kind:     "map",
+			Fields:   Deployment_TerraformVariablesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+		"WorkerPool":   ubx.FieldSpec{WireName: "worker_pool"},
 		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
 	},
 }

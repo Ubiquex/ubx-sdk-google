@@ -171,12 +171,8 @@ export interface EntityConfig {
   access?: Entity_Access | Computed<Entity_Access>;
   /** Required. Immutable. The ID of the asset associated with the storage location containing the entity data. The entity must be with in the same zone with the asset. */
   asset?: string | Computed<string>;
-  /** Output only. The name of the associated Data Catalog entry. */
-  catalogEntry?: string | Computed<string>;
   /** Provides compatibility information for various metadata stores. */
   compatibility?: Entity_Compatibility | Computed<Entity_Compatibility>;
-  /** Output only. The time when the entity was created. */
-  createTime?: string | Computed<string>;
   /** Required. Immutable. The storage path of the entity data. For Cloud Storage data, this is the fully-qualified path to the entity, such as gs://bucket/path/to/data. For BigQuery data, this is the name of the table resource, such as projects/project_id/datasets/dataset_id/tables/table_id. */
   dataPath?: string | Computed<string>;
   /** Optional. The set of items within the data path constituting the data in the entity, represented as a glob path. Example: gs://bucket/path/to/data/** /*.csv. */
@@ -191,18 +187,12 @@ export interface EntityConfig {
   format?: Entity_Format | Computed<Entity_Format>;
   /** Required. A user-provided entity ID. It is mutable, and will be used as the published table name. Specifying a new ID in an update entity request will override the existing value. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores, and consist of 256 or fewer characters. */
   id?: string | Computed<string>;
-  /** Output only. The resource name of the entity, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{id}. */
-  name?: string | Computed<string>;
   /** Schema information describing the structure and layout of the data. */
   schema?: Entity_Schema | Computed<Entity_Schema>;
   /** Required. Immutable. Identifies the storage system of the entity data. */
   system?: string | Computed<string>;
   /** Required. Immutable. The type of entity. */
   type?: string | Computed<string>;
-  /** Output only. System generated unique ID for the Entity. This ID will be different if the Entity is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the entity was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntityAttrs {
@@ -253,13 +243,11 @@ export const Entity: ResourceBinding<EntityConfig, EntityAttrs> = {
       fields: Entity_AccessFields,
     },
     asset: "asset",
-    catalogEntry: "catalog_entry",
     compatibility: {
       wireName: "compatibility",
       kind: "object",
       fields: Entity_CompatibilityFields,
     },
-    createTime: "create_time",
     dataPath: "data_path",
     dataPathPattern: "data_path_pattern",
     description: "description",
@@ -271,7 +259,6 @@ export const Entity: ResourceBinding<EntityConfig, EntityAttrs> = {
       fields: Entity_FormatFields,
     },
     id: "id",
-    name: "name",
     schema: {
       wireName: "schema",
       kind: "object",
@@ -279,7 +266,5 @@ export const Entity: ResourceBinding<EntityConfig, EntityAttrs> = {
     },
     system: "system",
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

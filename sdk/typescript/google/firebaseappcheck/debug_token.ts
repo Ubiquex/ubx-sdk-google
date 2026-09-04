@@ -10,8 +10,6 @@ export interface DebugTokenConfig {
   name?: string | Computed<string>;
   /** Required. Input only. Immutable. The secret token itself. Must be provided during creation, and must be a UUID4, case insensitive. This field is immutable once set, and cannot be provided during a UpdateDebugToken request. You can, however, delete this debug token using DeleteDebugToken to revoke it. For security reasons, this field will never be populated in any response. */
   token?: string | Computed<string>;
-  /** Output only. Timestamp when this debug token was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DebugTokenAttrs {
@@ -34,6 +32,5 @@ export const DebugToken: ResourceBinding<DebugTokenConfig, DebugTokenAttrs> = {
     etag: "etag",
     name: "name",
     token: "token",
-    updateTime: "update_time",
   },
 };

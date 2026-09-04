@@ -14,8 +14,6 @@ class ActiveDirectoryConfig:
     aes_encryption: Any = None
     # Optional. Users to be added to the Built-in Backup Operator active directory group.
     backup_operators: Any = None
-    # Output only. Create time of the active directory.
-    create_time: Any = None
     # Description of the active directory.
     description: Any = None
     # Required. Comma separated list of DNS server IP addresses for the Active Directory domain.
@@ -46,10 +44,6 @@ class ActiveDirectoryConfig:
     security_operators: Any = None
     # The Active Directory site the service will limit Domain Controller discovery too.
     site: Any = None
-    # Output only. The state of the AD.
-    state: Any = None
-    # Output only. The state details of the Active Directory.
-    state_details: Any = None
     # Required. Username of the Active Directory domain administrator.
     username: Any = None
 
@@ -106,7 +100,6 @@ ActiveDirectory = ubx.ResourceBinding(
         "administrators": ubx.FieldSpec(wire_name="administrators"),
         "aes_encryption": ubx.FieldSpec(wire_name="aes_encryption"),
         "backup_operators": ubx.FieldSpec(wire_name="backup_operators"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "dns": ubx.FieldSpec(wire_name="dns"),
         "domain": ubx.FieldSpec(wire_name="domain"),
@@ -122,8 +115,6 @@ ActiveDirectory = ubx.ResourceBinding(
         "password": ubx.FieldSpec(wire_name="password"),
         "security_operators": ubx.FieldSpec(wire_name="security_operators"),
         "site": ubx.FieldSpec(wire_name="site"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
         "username": ubx.FieldSpec(wire_name="username"),
     },
 )

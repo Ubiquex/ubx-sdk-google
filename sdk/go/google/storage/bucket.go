@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Bucket_Acl_ProjectTeam struct {
 	ProjectNumber any
-	Team any
+	Team          any
 }
 
 type Bucket_Acl struct {
-	Bucket any
-	Domain any
-	Email any
-	Entity any
-	EntityId any
-	Etag any
-	Id any
-	Kind any
+	Bucket      any
+	Domain      any
+	Email       any
+	Entity      any
+	EntityId    any
+	Etag        any
+	Id          any
+	Kind        any
 	ProjectTeam any
-	Role any
-	SelfLink any
+	Role        any
+	SelfLink    any
 }
 
 type Bucket_Autoclass struct {
@@ -39,9 +39,9 @@ type Bucket_Billing struct {
 }
 
 type Bucket_Cors struct {
-	MaxAgeSeconds any
-	Method any
-	Origin any
+	MaxAgeSeconds  any
+	Method         any
+	Origin         any
 	ResponseHeader any
 }
 
@@ -51,19 +51,19 @@ type Bucket_CustomPlacementConfig struct {
 }
 
 type Bucket_DefaultObjectAcl struct {
-	Bucket any
-	Domain any
-	Email any
-	Entity any
-	EntityId any
-	Etag any
-	Generation any
-	Id any
-	Kind any
-	Object any
+	Bucket      any
+	Domain      any
+	Email       any
+	Entity      any
+	EntityId    any
+	Etag        any
+	Generation  any
+	Id          any
+	Kind        any
+	Object      any
 	ProjectTeam any
-	Role any
-	SelfLink any
+	Role        any
+	SelfLink    any
 }
 
 type Bucket_Encryption_CustomerManagedEncryptionEnforcementConfig struct {
@@ -112,7 +112,7 @@ type Bucket_IpFilter_PublicNetworkSource struct {
 
 type Bucket_IpFilter_VpcNetworkSources struct {
 	AllowedIpCidrRanges any
-	Network any
+	Network             any
 }
 
 type Bucket_IpFilter struct {
@@ -130,28 +130,28 @@ type Bucket_IpFilter struct {
 
 type Bucket_Lifecycle_Rule_Action struct {
 	StorageClass any
-	Type any
+	Type         any
 }
 
 type Bucket_Lifecycle_Rule_Condition struct {
-	Age any
-	CreatedBefore any
-	CustomTimeBefore any
-	DaysSinceCustomTime any
+	Age                     any
+	CreatedBefore           any
+	CustomTimeBefore        any
+	DaysSinceCustomTime     any
 	DaysSinceNoncurrentTime any
-	IsLive any
-	MatchesPattern any
-	MatchesPrefix any
-	MatchesStorageClass any
-	MatchesSuffix any
-	NoncurrentTimeBefore any
-	NumNewerVersions any
-	SizeAboveBytes any
-	SizeBelowBytes any
+	IsLive                  any
+	MatchesPattern          any
+	MatchesPrefix           any
+	MatchesStorageClass     any
+	MatchesSuffix           any
+	NoncurrentTimeBefore    any
+	NumNewerVersions        any
+	SizeAboveBytes          any
+	SizeBelowBytes          any
 }
 
 type Bucket_Lifecycle_Rule struct {
-	Action any
+	Action    any
 	Condition any
 }
 
@@ -203,214 +203,214 @@ type Bucket_Website struct {
 }
 
 var Bucket_Acl_ProjectTeamFields = ubx.FieldMap{
-		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
-		"Team": ubx.FieldSpec{WireName: "team"},
-	}
+	"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
+	"Team":          ubx.FieldSpec{WireName: "team"},
+}
 
 var Bucket_AclFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ProjectTeam": ubx.FieldSpec{
-			WireName: "project_team",
-			Kind: "object",
-			Fields: Bucket_Acl_ProjectTeamFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-	}
+	"Bucket":   ubx.FieldSpec{WireName: "bucket"},
+	"Domain":   ubx.FieldSpec{WireName: "domain"},
+	"Email":    ubx.FieldSpec{WireName: "email"},
+	"Entity":   ubx.FieldSpec{WireName: "entity"},
+	"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+	"Etag":     ubx.FieldSpec{WireName: "etag"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Kind":     ubx.FieldSpec{WireName: "kind"},
+	"ProjectTeam": ubx.FieldSpec{
+		WireName: "project_team",
+		Kind:     "object",
+		Fields:   Bucket_Acl_ProjectTeamFields,
+	},
+	"Role":     ubx.FieldSpec{WireName: "role"},
+	"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+}
 
 var Bucket_AutoclassFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"TerminalStorageClass": ubx.FieldSpec{WireName: "terminal_storage_class"},
-		"TerminalStorageClassUpdateTime": ubx.FieldSpec{WireName: "terminal_storage_class_update_time"},
-		"ToggleTime": ubx.FieldSpec{WireName: "toggle_time"},
-	}
+	"Enabled":                        ubx.FieldSpec{WireName: "enabled"},
+	"TerminalStorageClass":           ubx.FieldSpec{WireName: "terminal_storage_class"},
+	"TerminalStorageClassUpdateTime": ubx.FieldSpec{WireName: "terminal_storage_class_update_time"},
+	"ToggleTime":                     ubx.FieldSpec{WireName: "toggle_time"},
+}
 
 var Bucket_BillingFields = ubx.FieldMap{
-		"RequesterPays": ubx.FieldSpec{WireName: "requester_pays"},
-	}
+	"RequesterPays": ubx.FieldSpec{WireName: "requester_pays"},
+}
 
 var Bucket_CorsFields = ubx.FieldMap{
-		"MaxAgeSeconds": ubx.FieldSpec{WireName: "max_age_seconds"},
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"ResponseHeader": ubx.FieldSpec{WireName: "response_header"},
-	}
+	"MaxAgeSeconds":  ubx.FieldSpec{WireName: "max_age_seconds"},
+	"Method":         ubx.FieldSpec{WireName: "method"},
+	"Origin":         ubx.FieldSpec{WireName: "origin"},
+	"ResponseHeader": ubx.FieldSpec{WireName: "response_header"},
+}
 
 var Bucket_CustomPlacementConfigFields = ubx.FieldMap{
-		"DataLocations": ubx.FieldSpec{WireName: "data_locations"},
-	}
+	"DataLocations": ubx.FieldSpec{WireName: "data_locations"},
+}
 
 var Bucket_DefaultObjectAclFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"ProjectTeam": ubx.FieldSpec{
-			WireName: "project_team",
-			Kind: "object",
-			Fields: Bucket_Acl_ProjectTeamFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Domain":     ubx.FieldSpec{WireName: "domain"},
+	"Email":      ubx.FieldSpec{WireName: "email"},
+	"Entity":     ubx.FieldSpec{WireName: "entity"},
+	"EntityId":   ubx.FieldSpec{WireName: "entity_id"},
+	"Etag":       ubx.FieldSpec{WireName: "etag"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+	"ProjectTeam": ubx.FieldSpec{
+		WireName: "project_team",
+		Kind:     "object",
+		Fields:   Bucket_Acl_ProjectTeamFields,
+	},
+	"Role":     ubx.FieldSpec{WireName: "role"},
+	"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+}
 
 var Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"RestrictionMode": ubx.FieldSpec{WireName: "restriction_mode"},
-	}
+	"EffectiveTime":   ubx.FieldSpec{WireName: "effective_time"},
+	"RestrictionMode": ubx.FieldSpec{WireName: "restriction_mode"},
+}
 
 var Bucket_EncryptionFields = ubx.FieldMap{
-		"CustomerManagedEncryptionEnforcementConfig": ubx.FieldSpec{
-			WireName: "customer_managed_encryption_enforcement_config",
-			Kind: "object",
-			Fields: Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
-		},
-		"CustomerSuppliedEncryptionEnforcementConfig": ubx.FieldSpec{
-			WireName: "customer_supplied_encryption_enforcement_config",
-			Kind: "object",
-			Fields: Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
-		},
-		"DefaultKmsKeyName": ubx.FieldSpec{WireName: "default_kms_key_name"},
-		"GoogleManagedEncryptionEnforcementConfig": ubx.FieldSpec{
-			WireName: "google_managed_encryption_enforcement_config",
-			Kind: "object",
-			Fields: Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
-		},
-	}
+	"CustomerManagedEncryptionEnforcementConfig": ubx.FieldSpec{
+		WireName: "customer_managed_encryption_enforcement_config",
+		Kind:     "object",
+		Fields:   Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
+	},
+	"CustomerSuppliedEncryptionEnforcementConfig": ubx.FieldSpec{
+		WireName: "customer_supplied_encryption_enforcement_config",
+		Kind:     "object",
+		Fields:   Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
+	},
+	"DefaultKmsKeyName": ubx.FieldSpec{WireName: "default_kms_key_name"},
+	"GoogleManagedEncryptionEnforcementConfig": ubx.FieldSpec{
+		WireName: "google_managed_encryption_enforcement_config",
+		Kind:     "object",
+		Fields:   Bucket_Encryption_CustomerManagedEncryptionEnforcementConfigFields,
+	},
+}
 
 var Bucket_HierarchicalNamespaceFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Bucket_IamConfiguration_BucketPolicyOnlyFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LockedTime": ubx.FieldSpec{WireName: "locked_time"},
-	}
+	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
+	"LockedTime": ubx.FieldSpec{WireName: "locked_time"},
+}
 
 var Bucket_IamConfigurationFields = ubx.FieldMap{
-		"BucketPolicyOnly": ubx.FieldSpec{
-			WireName: "bucket_policy_only",
-			Kind: "object",
-			Fields: Bucket_IamConfiguration_BucketPolicyOnlyFields,
-		},
-		"PublicAccessPrevention": ubx.FieldSpec{WireName: "public_access_prevention"},
-		"UniformBucketLevelAccess": ubx.FieldSpec{
-			WireName: "uniform_bucket_level_access",
-			Kind: "object",
-			Fields: Bucket_IamConfiguration_BucketPolicyOnlyFields,
-		},
-	}
+	"BucketPolicyOnly": ubx.FieldSpec{
+		WireName: "bucket_policy_only",
+		Kind:     "object",
+		Fields:   Bucket_IamConfiguration_BucketPolicyOnlyFields,
+	},
+	"PublicAccessPrevention": ubx.FieldSpec{WireName: "public_access_prevention"},
+	"UniformBucketLevelAccess": ubx.FieldSpec{
+		WireName: "uniform_bucket_level_access",
+		Kind:     "object",
+		Fields:   Bucket_IamConfiguration_BucketPolicyOnlyFields,
+	},
+}
 
 var Bucket_IpFilter_PublicNetworkSourceFields = ubx.FieldMap{
-		"AllowedIpCidrRanges": ubx.FieldSpec{WireName: "allowed_ip_cidr_ranges"},
-	}
+	"AllowedIpCidrRanges": ubx.FieldSpec{WireName: "allowed_ip_cidr_ranges"},
+}
 
 var Bucket_IpFilter_VpcNetworkSourcesFields = ubx.FieldMap{
-		"AllowedIpCidrRanges": ubx.FieldSpec{WireName: "allowed_ip_cidr_ranges"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
+	"AllowedIpCidrRanges": ubx.FieldSpec{WireName: "allowed_ip_cidr_ranges"},
+	"Network":             ubx.FieldSpec{WireName: "network"},
+}
 
 var Bucket_IpFilterFields = ubx.FieldMap{
-		"AllowAllServiceAgentAccess": ubx.FieldSpec{WireName: "allow_all_service_agent_access"},
-		"AllowCrossOrgVpcs": ubx.FieldSpec{WireName: "allow_cross_org_vpcs"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PublicNetworkSource": ubx.FieldSpec{
-			WireName: "public_network_source",
-			Kind: "object",
-			Fields: Bucket_IpFilter_PublicNetworkSourceFields,
-		},
-		"VpcNetworkSources": ubx.FieldSpec{
-			WireName: "vpc_network_sources",
-			Kind: "list",
-			Fields: Bucket_IpFilter_VpcNetworkSourcesFields,
-		},
-	}
+	"AllowAllServiceAgentAccess": ubx.FieldSpec{WireName: "allow_all_service_agent_access"},
+	"AllowCrossOrgVpcs":          ubx.FieldSpec{WireName: "allow_cross_org_vpcs"},
+	"Mode":                       ubx.FieldSpec{WireName: "mode"},
+	"PublicNetworkSource": ubx.FieldSpec{
+		WireName: "public_network_source",
+		Kind:     "object",
+		Fields:   Bucket_IpFilter_PublicNetworkSourceFields,
+	},
+	"VpcNetworkSources": ubx.FieldSpec{
+		WireName: "vpc_network_sources",
+		Kind:     "list",
+		Fields:   Bucket_IpFilter_VpcNetworkSourcesFields,
+	},
+}
 
 var Bucket_Lifecycle_Rule_ActionFields = ubx.FieldMap{
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var Bucket_Lifecycle_Rule_ConditionFields = ubx.FieldMap{
-		"Age": ubx.FieldSpec{WireName: "age"},
-		"CreatedBefore": ubx.FieldSpec{WireName: "created_before"},
-		"CustomTimeBefore": ubx.FieldSpec{WireName: "custom_time_before"},
-		"DaysSinceCustomTime": ubx.FieldSpec{WireName: "days_since_custom_time"},
-		"DaysSinceNoncurrentTime": ubx.FieldSpec{WireName: "days_since_noncurrent_time"},
-		"IsLive": ubx.FieldSpec{WireName: "is_live"},
-		"MatchesPattern": ubx.FieldSpec{WireName: "matches_pattern"},
-		"MatchesPrefix": ubx.FieldSpec{WireName: "matches_prefix"},
-		"MatchesStorageClass": ubx.FieldSpec{WireName: "matches_storage_class"},
-		"MatchesSuffix": ubx.FieldSpec{WireName: "matches_suffix"},
-		"NoncurrentTimeBefore": ubx.FieldSpec{WireName: "noncurrent_time_before"},
-		"NumNewerVersions": ubx.FieldSpec{WireName: "num_newer_versions"},
-		"SizeAboveBytes": ubx.FieldSpec{WireName: "size_above_bytes"},
-		"SizeBelowBytes": ubx.FieldSpec{WireName: "size_below_bytes"},
-	}
+	"Age":                     ubx.FieldSpec{WireName: "age"},
+	"CreatedBefore":           ubx.FieldSpec{WireName: "created_before"},
+	"CustomTimeBefore":        ubx.FieldSpec{WireName: "custom_time_before"},
+	"DaysSinceCustomTime":     ubx.FieldSpec{WireName: "days_since_custom_time"},
+	"DaysSinceNoncurrentTime": ubx.FieldSpec{WireName: "days_since_noncurrent_time"},
+	"IsLive":                  ubx.FieldSpec{WireName: "is_live"},
+	"MatchesPattern":          ubx.FieldSpec{WireName: "matches_pattern"},
+	"MatchesPrefix":           ubx.FieldSpec{WireName: "matches_prefix"},
+	"MatchesStorageClass":     ubx.FieldSpec{WireName: "matches_storage_class"},
+	"MatchesSuffix":           ubx.FieldSpec{WireName: "matches_suffix"},
+	"NoncurrentTimeBefore":    ubx.FieldSpec{WireName: "noncurrent_time_before"},
+	"NumNewerVersions":        ubx.FieldSpec{WireName: "num_newer_versions"},
+	"SizeAboveBytes":          ubx.FieldSpec{WireName: "size_above_bytes"},
+	"SizeBelowBytes":          ubx.FieldSpec{WireName: "size_below_bytes"},
+}
 
 var Bucket_Lifecycle_RuleFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: Bucket_Lifecycle_Rule_ActionFields,
-		},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Bucket_Lifecycle_Rule_ConditionFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   Bucket_Lifecycle_Rule_ActionFields,
+	},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Bucket_Lifecycle_Rule_ConditionFields,
+	},
+}
 
 var Bucket_LifecycleFields = ubx.FieldMap{
-		"Rule": ubx.FieldSpec{
-			WireName: "rule",
-			Kind: "list",
-			Fields: Bucket_Lifecycle_RuleFields,
-		},
-	}
+	"Rule": ubx.FieldSpec{
+		WireName: "rule",
+		Kind:     "list",
+		Fields:   Bucket_Lifecycle_RuleFields,
+	},
+}
 
 var Bucket_LoggingFields = ubx.FieldMap{
-		"LogBucket": ubx.FieldSpec{WireName: "log_bucket"},
-		"LogObjectPrefix": ubx.FieldSpec{WireName: "log_object_prefix"},
-	}
+	"LogBucket":       ubx.FieldSpec{WireName: "log_bucket"},
+	"LogObjectPrefix": ubx.FieldSpec{WireName: "log_object_prefix"},
+}
 
 var Bucket_ObjectRetentionFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Bucket_OwnerFields = ubx.FieldMap{
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-	}
+	"Entity":   ubx.FieldSpec{WireName: "entity"},
+	"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+}
 
 var Bucket_RetentionPolicyFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"IsLocked": ubx.FieldSpec{WireName: "is_locked"},
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-	}
+	"EffectiveTime":   ubx.FieldSpec{WireName: "effective_time"},
+	"IsLocked":        ubx.FieldSpec{WireName: "is_locked"},
+	"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+}
 
 var Bucket_SoftDeletePolicyFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"RetentionDurationSeconds": ubx.FieldSpec{WireName: "retention_duration_seconds"},
-	}
+	"EffectiveTime":            ubx.FieldSpec{WireName: "effective_time"},
+	"RetentionDurationSeconds": ubx.FieldSpec{WireName: "retention_duration_seconds"},
+}
 
 var Bucket_WebsiteFields = ubx.FieldMap{
-		"MainPageSuffix": ubx.FieldSpec{WireName: "main_page_suffix"},
-		"NotFoundPage": ubx.FieldSpec{WireName: "not_found_page"},
-	}
+	"MainPageSuffix": ubx.FieldSpec{WireName: "main_page_suffix"},
+	"NotFoundPage":   ubx.FieldSpec{WireName: "not_found_page"},
+}
 
 type BucketConfig struct {
 	// Access controls on the bucket.
@@ -575,113 +575,113 @@ var Bucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Acl": ubx.FieldSpec{
 			WireName: "acl",
-			Kind: "list",
-			Fields: Bucket_AclFields,
+			Kind:     "list",
+			Fields:   Bucket_AclFields,
 		},
 		"Autoclass": ubx.FieldSpec{
 			WireName: "autoclass",
-			Kind: "object",
-			Fields: Bucket_AutoclassFields,
+			Kind:     "object",
+			Fields:   Bucket_AutoclassFields,
 		},
 		"Billing": ubx.FieldSpec{
 			WireName: "billing",
-			Kind: "object",
-			Fields: Bucket_BillingFields,
+			Kind:     "object",
+			Fields:   Bucket_BillingFields,
 		},
 		"Cors": ubx.FieldSpec{
 			WireName: "cors",
-			Kind: "list",
-			Fields: Bucket_CorsFields,
+			Kind:     "list",
+			Fields:   Bucket_CorsFields,
 		},
 		"CustomPlacementConfig": ubx.FieldSpec{
 			WireName: "custom_placement_config",
-			Kind: "object",
-			Fields: Bucket_CustomPlacementConfigFields,
+			Kind:     "object",
+			Fields:   Bucket_CustomPlacementConfigFields,
 		},
 		"DefaultEventBasedHold": ubx.FieldSpec{WireName: "default_event_based_hold"},
 		"DefaultObjectAcl": ubx.FieldSpec{
 			WireName: "default_object_acl",
-			Kind: "list",
-			Fields: Bucket_DefaultObjectAclFields,
+			Kind:     "list",
+			Fields:   Bucket_DefaultObjectAclFields,
 		},
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: Bucket_EncryptionFields,
+			Kind:     "object",
+			Fields:   Bucket_EncryptionFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
+		"Etag":           ubx.FieldSpec{WireName: "etag"},
+		"Generation":     ubx.FieldSpec{WireName: "generation"},
 		"HardDeleteTime": ubx.FieldSpec{WireName: "hard_delete_time"},
 		"HierarchicalNamespace": ubx.FieldSpec{
 			WireName: "hierarchical_namespace",
-			Kind: "object",
-			Fields: Bucket_HierarchicalNamespaceFields,
+			Kind:     "object",
+			Fields:   Bucket_HierarchicalNamespaceFields,
 		},
 		"IamConfiguration": ubx.FieldSpec{
 			WireName: "iam_configuration",
-			Kind: "object",
-			Fields: Bucket_IamConfigurationFields,
+			Kind:     "object",
+			Fields:   Bucket_IamConfigurationFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"IpFilter": ubx.FieldSpec{
 			WireName: "ip_filter",
-			Kind: "object",
-			Fields: Bucket_IpFilterFields,
+			Kind:     "object",
+			Fields:   Bucket_IpFilterFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":   ubx.FieldSpec{WireName: "kind"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Lifecycle": ubx.FieldSpec{
 			WireName: "lifecycle",
-			Kind: "object",
-			Fields: Bucket_LifecycleFields,
+			Kind:     "object",
+			Fields:   Bucket_LifecycleFields,
 		},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"Location":     ubx.FieldSpec{WireName: "location"},
 		"LocationType": ubx.FieldSpec{WireName: "location_type"},
 		"Logging": ubx.FieldSpec{
 			WireName: "logging",
-			Kind: "object",
-			Fields: Bucket_LoggingFields,
+			Kind:     "object",
+			Fields:   Bucket_LoggingFields,
 		},
 		"Metageneration": ubx.FieldSpec{WireName: "metageneration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ObjectRetention": ubx.FieldSpec{
 			WireName: "object_retention",
-			Kind: "object",
-			Fields: Bucket_ObjectRetentionFields,
+			Kind:     "object",
+			Fields:   Bucket_ObjectRetentionFields,
 		},
 		"Owner": ubx.FieldSpec{
 			WireName: "owner",
-			Kind: "object",
-			Fields: Bucket_OwnerFields,
+			Kind:     "object",
+			Fields:   Bucket_OwnerFields,
 		},
 		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
 		"RetentionPolicy": ubx.FieldSpec{
 			WireName: "retention_policy",
-			Kind: "object",
-			Fields: Bucket_RetentionPolicyFields,
+			Kind:     "object",
+			Fields:   Bucket_RetentionPolicyFields,
 		},
-		"Rpo": ubx.FieldSpec{WireName: "rpo"},
+		"Rpo":          ubx.FieldSpec{WireName: "rpo"},
 		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
 		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":     ubx.FieldSpec{WireName: "self_link"},
 		"SoftDeletePolicy": ubx.FieldSpec{
 			WireName: "soft_delete_policy",
-			Kind: "object",
-			Fields: Bucket_SoftDeletePolicyFields,
+			Kind:     "object",
+			Fields:   Bucket_SoftDeletePolicyFields,
 		},
 		"SoftDeleteTime": ubx.FieldSpec{WireName: "soft_delete_time"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"TimeCreated": ubx.FieldSpec{WireName: "time_created"},
-		"Updated": ubx.FieldSpec{WireName: "updated"},
+		"StorageClass":   ubx.FieldSpec{WireName: "storage_class"},
+		"TimeCreated":    ubx.FieldSpec{WireName: "time_created"},
+		"Updated":        ubx.FieldSpec{WireName: "updated"},
 		"Versioning": ubx.FieldSpec{
 			WireName: "versioning",
-			Kind: "object",
-			Fields: Bucket_HierarchicalNamespaceFields,
+			Kind:     "object",
+			Fields:   Bucket_HierarchicalNamespaceFields,
 		},
 		"Website": ubx.FieldSpec{
 			WireName: "website",
-			Kind: "object",
-			Fields: Bucket_WebsiteFields,
+			Kind:     "object",
+			Fields:   Bucket_WebsiteFields,
 		},
 	},
 }

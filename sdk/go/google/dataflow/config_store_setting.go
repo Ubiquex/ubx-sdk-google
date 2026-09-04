@@ -11,9 +11,9 @@ type ConfigStoreSetting_Value struct {
 }
 
 var ConfigStoreSetting_ValueFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BoolValue":   ubx.FieldSpec{WireName: "bool_value"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 type ConfigStoreSettingConfig struct {
 	// Identifier. The resource name of the setting.
@@ -35,8 +35,8 @@ var ConfigStoreSetting = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Value": ubx.FieldSpec{
 			WireName: "value",
-			Kind: "object",
-			Fields: ConfigStoreSetting_ValueFields,
+			Kind:     "object",
+			Fields:   ConfigStoreSetting_ValueFields,
 		},
 	},
 }

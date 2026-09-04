@@ -21,8 +21,6 @@ export interface ConnectorConfig {
   configs?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the connector. Structured like: projects/{project}/locations/{location}/connectClusters/{connect_cluster}/connectors/{connector} */
   name?: string | Computed<string>;
-  /** Output only. The current state of the connector. */
-  state?: string | Computed<string>;
   /** Task Retry Policy is implemented on a best-effort basis. The default policy retries tasks with a minimum_backoff of 60 seconds, and a maximum_backoff of 12 hours. You can disable the policy by setting the task_retry_disabled field to true. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. Note that the delay between consecutive task restarts may not always precisely match the configured settings. This can happen when the ConnectCluster is in rebalancing state or if the ConnectCluster is unresponsive etc. The default values for minimum and maximum backoffs are 60 seconds and 12 hours respectively. */
   taskRestartPolicy?: Connector_TaskRestartPolicy | Computed<Connector_TaskRestartPolicy>;
 }
@@ -43,7 +41,6 @@ export const Connector: ResourceBinding<ConnectorConfig, ConnectorAttrs> = {
   fields: {
     configs: "configs",
     name: "name",
-    state: "state",
     taskRestartPolicy: {
       wireName: "task_restart_policy",
       kind: "object",

@@ -4,7 +4,7 @@ package artifactregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2File_Hashes struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -17,7 +17,7 @@ type V1beta2FileAttrs struct {
 	CreateTime any
 	// The hashes of the file content.
 	Hashes any
-	Name any
+	Name   any
 	// The name of the Package or Version that owns this file, if any.
 	Owner any
 	// The size of the File in bytes.

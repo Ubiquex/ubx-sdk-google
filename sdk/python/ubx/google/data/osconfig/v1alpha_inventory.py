@@ -100,7 +100,6 @@ class V1alphaInventory_OsInfo:
 
 @dataclasses.dataclass
 class V1alphaInventoryConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -117,7 +116,6 @@ class V1alphaInventoryAttrs:
 V1alphaInventory = ubx.DataSourceBinding(
     wire_type="google_osconfig_v1alpha_inventory",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

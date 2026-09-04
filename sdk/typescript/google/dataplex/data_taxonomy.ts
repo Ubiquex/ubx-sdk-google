@@ -2,12 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DataTaxonomyConfig {
-  /** Output only. The number of attributes in the DataTaxonomy. */
-  attributeCount?: number | Computed<number>;
-  /** Output only. The number of classes in the DataTaxonomy. */
-  classCount?: number | Computed<number>;
-  /** Output only. The time when the DataTaxonomy was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the DataTaxonomy. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
@@ -16,12 +10,6 @@ export interface DataTaxonomyConfig {
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the DataTaxonomy. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the DataTaxonomy, of the form: projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}. */
-  name?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the dataTaxonomy. This ID will be different if the DataTaxonomy is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the DataTaxonomy was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DataTaxonomyAttrs {
@@ -50,15 +38,9 @@ export interface DataTaxonomyAttrs {
 export const DataTaxonomy: ResourceBinding<DataTaxonomyConfig, DataTaxonomyAttrs> = {
   wireType: "google_dataplex_data_taxonomy",
   fields: {
-    attributeCount: "attribute_count",
-    classCount: "class_count",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

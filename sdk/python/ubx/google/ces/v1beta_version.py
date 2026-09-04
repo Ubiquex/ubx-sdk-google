@@ -2664,16 +2664,10 @@ _V1betaVersion_SnapshotFields = {
 
 @dataclasses.dataclass
 class V1betaVersionConfig:
-    # Output only. Timestamp when the app version was created.
-    create_time: Any = None
-    # Output only. Email of the user who created the app version.
-    creator: Any = None
     # Optional. The description of the app version.
     description: Any = None
     # Optional. The display name of the app version.
     display_name: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
     # Identifier. The unique identifier of the app version. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
     name: Any = None
     # A snapshot of the app.
@@ -2699,11 +2693,8 @@ class V1betaVersionAttrs:
 V1betaVersion = ubx.ResourceBinding(
     wire_type="google_ces_v1beta_version",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
         "snapshot": ubx.FieldSpec(
             wire_name="snapshot",

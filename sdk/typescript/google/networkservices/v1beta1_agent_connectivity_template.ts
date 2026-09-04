@@ -42,8 +42,6 @@ export interface V1beta1AgentConnectivityTemplateConfig {
   accessTypes?: string[] | Computed<string[]>;
   /** Optional. The compute environment where the agent is hosted. Exactly one type of compute must be chosen. */
   agentCompute?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Required. The deployment model for the gateway. */
   deploymentModel?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
@@ -55,8 +53,6 @@ export interface V1beta1AgentConnectivityTemplateConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the AgentConnectivityTemplate resource. It matches pattern `projects/* /locations/* /agentConnectivityTemplates/`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1AgentConnectivityTemplateAttrs {
@@ -89,7 +85,6 @@ export const V1beta1AgentConnectivityTemplate: ResourceBinding<V1beta1AgentConne
     accessPath: "access_path",
     accessTypes: "access_types",
     agentCompute: "agent_compute",
-    createTime: "create_time",
     deploymentModel: "deployment_model",
     description: "description",
     egressNetworkConfig: {
@@ -100,6 +95,5 @@ export const V1beta1AgentConnectivityTemplate: ResourceBinding<V1beta1AgentConne
     etag: "etag",
     labels: "labels",
     name: "name",
-    updateTime: "update_time",
   },
 };

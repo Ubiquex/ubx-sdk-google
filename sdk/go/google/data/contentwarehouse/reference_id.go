@@ -4,21 +4,21 @@ package contentwarehouse
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ReferenceId_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpan struct {
-	PageEnd any
+	PageEnd   any
 	PageStart any
 }
 
 type ReferenceId_CloudAiDocument_ChunkedDocument_Chunks_PageFooters struct {
 	PageSpan any
-	Text any
+	Text     any
 }
 
 type ReferenceId_CloudAiDocument_ChunkedDocument_Chunks struct {
-	ChunkId any
-	Content any
-	PageFooters any
-	PageHeaders any
-	PageSpan any
+	ChunkId        any
+	Content        any
+	PageFooters    any
+	PageHeaders    any
+	PageSpan       any
 	SourceBlockIds any
 }
 
@@ -33,11 +33,11 @@ type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntries str
 
 type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_ListBlock struct {
 	ListEntries any
-	Type any
+	Type        any
 }
 
 type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_Cells struct {
-	Blocks any
+	Blocks  any
 	ColSpan any
 	RowSpan any
 }
@@ -47,23 +47,23 @@ type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows struc
 }
 
 type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_TableBlock struct {
-	BodyRows any
-	Caption any
+	BodyRows   any
+	Caption    any
 	HeaderRows any
 }
 
 type ReferenceId_CloudAiDocument_DocumentLayout_Blocks_TextBlock struct {
 	Blocks any
-	Text any
-	Type any
+	Text   any
+	Type   any
 }
 
 type ReferenceId_CloudAiDocument_DocumentLayout_Blocks struct {
-	BlockId any
-	ListBlock any
-	PageSpan any
+	BlockId    any
+	ListBlock  any
+	PageSpan   any
 	TableBlock any
-	TextBlock any
+	TextBlock  any
 }
 
 type ReferenceId_CloudAiDocument_DocumentLayout struct {
@@ -72,57 +72,57 @@ type ReferenceId_CloudAiDocument_DocumentLayout struct {
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue_AddressValue struct {
-	AddressLines any
+	AddressLines       any
 	AdministrativeArea any
-	LanguageCode any
-	Locality any
-	Organization any
-	PostalCode any
-	Recipients any
-	RegionCode any
-	Revision any
-	SortingCode any
-	Sublocality any
+	LanguageCode       any
+	Locality           any
+	Organization       any
+	PostalCode         any
+	Recipients         any
+	RegionCode         any
+	Revision           any
+	SortingCode        any
+	Sublocality        any
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue_DateValue struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZone struct {
-	Id any
+	Id      any
 	Version any
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue_DatetimeValue struct {
-	Day any
-	Hours any
-	Minutes any
-	Month any
-	Nanos any
-	Seconds any
-	TimeZone any
+	Day       any
+	Hours     any
+	Minutes   any
+	Month     any
+	Nanos     any
+	Seconds   any
+	TimeZone  any
 	UtcOffset any
-	Year any
+	Year      any
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue_MoneyValue struct {
 	CurrencyCode any
-	Nanos any
-	Units any
+	Nanos        any
+	Units        any
 }
 
 type ReferenceId_CloudAiDocument_Entities_NormalizedValue struct {
-	AddressValue any
-	BooleanValue any
-	DateValue any
+	AddressValue  any
+	BooleanValue  any
+	DateValue     any
 	DatetimeValue any
-	FloatValue any
-	IntegerValue any
-	MoneyValue any
-	Text any
+	FloatValue    any
+	IntegerValue  any
+	MoneyValue    any
+	Text          any
 }
 
 type ReferenceId_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVertices struct {
@@ -132,15 +132,15 @@ type ReferenceId_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_Norma
 
 type ReferenceId_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly struct {
 	NormalizedVertices any
-	Vertices any
+	Vertices           any
 }
 
 type ReferenceId_CloudAiDocument_Entities_PageAnchor_PageRefs struct {
 	BoundingPoly any
-	Confidence any
-	LayoutId any
-	LayoutType any
-	Page any
+	Confidence   any
+	LayoutId     any
+	LayoutType   any
+	Page         any
 }
 
 type ReferenceId_CloudAiDocument_Entities_PageAnchor struct {
@@ -148,45 +148,45 @@ type ReferenceId_CloudAiDocument_Entities_PageAnchor struct {
 }
 
 type ReferenceId_CloudAiDocument_Entities_Provenance_Parents struct {
-	Id any
-	Index any
+	Id       any
+	Index    any
 	Revision any
 }
 
 type ReferenceId_CloudAiDocument_Entities_Provenance struct {
-	Id any
-	Parents any
+	Id       any
+	Parents  any
 	Revision any
-	Type any
+	Type     any
 }
 
 type ReferenceId_CloudAiDocument_Entities_TextAnchor_TextSegments struct {
-	EndIndex any
+	EndIndex   any
 	StartIndex any
 }
 
 type ReferenceId_CloudAiDocument_Entities_TextAnchor struct {
-	Content any
+	Content      any
 	TextSegments any
 }
 
 type ReferenceId_CloudAiDocument_Entities struct {
-	Confidence any
-	Id any
-	MentionId any
-	MentionText any
+	Confidence      any
+	Id              any
+	MentionId       any
+	MentionText     any
 	NormalizedValue any
-	PageAnchor any
-	Properties any
-	Provenance any
-	Redacted any
-	TextAnchor any
-	Type any
+	PageAnchor      any
+	Properties      any
+	Provenance      any
+	Redacted        any
+	TextAnchor      any
+	Type            any
 }
 
 type ReferenceId_CloudAiDocument_EntityRelations struct {
-	ObjectId any
-	Relation any
+	ObjectId  any
+	Relation  any
 	SubjectId any
 }
 
@@ -200,78 +200,78 @@ type ReferenceId_CloudAiDocument_Error struct {
 }
 
 type ReferenceId_CloudAiDocument_Pages_Blocks_DetectedLanguages struct {
-	Confidence any
+	Confidence   any
 	LanguageCode any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Blocks_Layout struct {
 	BoundingPoly any
-	Confidence any
-	Orientation any
-	TextAnchor any
+	Confidence   any
+	Orientation  any
+	TextAnchor   any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Blocks struct {
 	DetectedLanguages any
-	Layout any
-	Provenance any
+	Layout            any
+	Provenance        any
 }
 
 type ReferenceId_CloudAiDocument_Pages_DetectedBarcodes_Barcode struct {
-	Format any
-	RawValue any
+	Format      any
+	RawValue    any
 	ValueFormat any
 }
 
 type ReferenceId_CloudAiDocument_Pages_DetectedBarcodes struct {
 	Barcode any
-	Layout any
+	Layout  any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Dimension struct {
 	Height any
-	Unit any
-	Width any
+	Unit   any
+	Width  any
 }
 
 type ReferenceId_CloudAiDocument_Pages_FormFields struct {
-	CorrectedKeyText any
-	CorrectedValueText any
-	FieldName any
-	FieldValue any
-	NameDetectedLanguages any
-	Provenance any
+	CorrectedKeyText       any
+	CorrectedValueText     any
+	FieldName              any
+	FieldValue             any
+	NameDetectedLanguages  any
+	Provenance             any
 	ValueDetectedLanguages any
-	ValueType any
+	ValueType              any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Image struct {
-	Content any
-	Height any
+	Content  any
+	Height   any
 	MimeType any
-	Width any
+	Width    any
 }
 
 type ReferenceId_CloudAiDocument_Pages_ImageQualityScores_DetectedDefects struct {
 	Confidence any
-	Type any
+	Type       any
 }
 
 type ReferenceId_CloudAiDocument_Pages_ImageQualityScores struct {
 	DetectedDefects any
-	QualityScore any
+	QualityScore    any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Symbols struct {
 	DetectedLanguages any
-	Layout any
+	Layout            any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tables_BodyRows_Cells struct {
-	ColSpan any
+	ColSpan           any
 	DetectedLanguages any
-	Layout any
-	RowSpan any
+	Layout            any
+	RowSpan           any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tables_BodyRows struct {
@@ -279,11 +279,11 @@ type ReferenceId_CloudAiDocument_Pages_Tables_BodyRows struct {
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tables struct {
-	BodyRows any
+	BodyRows          any
 	DetectedLanguages any
-	HeaderRows any
-	Layout any
-	Provenance any
+	HeaderRows        any
+	Layout            any
+	Provenance        any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tokens_DetectedBreak struct {
@@ -292,35 +292,35 @@ type ReferenceId_CloudAiDocument_Pages_Tokens_DetectedBreak struct {
 
 type ReferenceId_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColor struct {
 	Alpha any
-	Blue any
+	Blue  any
 	Green any
-	Red any
+	Red   any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tokens_StyleInfo struct {
 	BackgroundColor any
-	Bold any
-	FontSize any
-	FontType any
-	FontWeight any
-	Handwritten any
-	Italic any
-	LetterSpacing any
-	PixelFontSize any
-	Smallcaps any
-	Strikeout any
-	Subscript any
-	Superscript any
-	TextColor any
-	Underlined any
+	Bold            any
+	FontSize        any
+	FontType        any
+	FontWeight      any
+	Handwritten     any
+	Italic          any
+	LetterSpacing   any
+	PixelFontSize   any
+	Smallcaps       any
+	Strikeout       any
+	Subscript       any
+	Superscript     any
+	TextColor       any
+	Underlined      any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Tokens struct {
-	DetectedBreak any
+	DetectedBreak     any
 	DetectedLanguages any
-	Layout any
-	Provenance any
-	StyleInfo any
+	Layout            any
+	Provenance        any
+	StyleInfo         any
 }
 
 type ReferenceId_CloudAiDocument_Pages_Transforms struct {
@@ -332,43 +332,43 @@ type ReferenceId_CloudAiDocument_Pages_Transforms struct {
 
 type ReferenceId_CloudAiDocument_Pages_VisualElements struct {
 	DetectedLanguages any
-	Layout any
-	Type any
+	Layout            any
+	Type              any
 }
 
 type ReferenceId_CloudAiDocument_Pages struct {
-	Blocks any
-	DetectedBarcodes any
-	DetectedLanguages any
-	Dimension any
-	FormFields any
-	Image any
+	Blocks             any
+	DetectedBarcodes   any
+	DetectedLanguages  any
+	Dimension          any
+	FormFields         any
+	Image              any
 	ImageQualityScores any
-	Layout any
-	Lines any
-	PageNumber any
-	Paragraphs any
-	Provenance any
-	Symbols any
-	Tables any
-	Tokens any
-	Transforms any
-	VisualElements any
+	Layout             any
+	Lines              any
+	PageNumber         any
+	Paragraphs         any
+	Provenance         any
+	Symbols            any
+	Tables             any
+	Tokens             any
+	Transforms         any
+	VisualElements     any
 }
 
 type ReferenceId_CloudAiDocument_Revisions_HumanReview struct {
-	State any
+	State        any
 	StateMessage any
 }
 
 type ReferenceId_CloudAiDocument_Revisions struct {
-	Agent any
-	CreateTime any
+	Agent       any
+	CreateTime  any
 	HumanReview any
-	Id any
-	Parent any
-	ParentIds any
-	Processor any
+	Id          any
+	Parent      any
+	ParentIds   any
+	Processor   any
 }
 
 type ReferenceId_CloudAiDocument_ShardInfo struct {
@@ -382,8 +382,8 @@ type ReferenceId_CloudAiDocument_ShardInfo struct {
 
 type ReferenceId_CloudAiDocument_TextChanges struct {
 	ChangedText any
-	Provenance any
-	TextAnchor any
+	Provenance  any
+	TextAnchor  any
 }
 
 type ReferenceId_CloudAiDocument_TextStyles_FontSize struct {
@@ -393,13 +393,13 @@ type ReferenceId_CloudAiDocument_TextStyles_FontSize struct {
 
 type ReferenceId_CloudAiDocument_TextStyles struct {
 	BackgroundColor any
-	Color any
-	FontFamily any
-	FontSize any
-	FontWeight any
-	TextAnchor any
-	TextDecoration any
-	TextStyle any
+	Color           any
+	FontFamily      any
+	FontSize        any
+	FontWeight      any
+	TextAnchor      any
+	TextDecoration  any
+	TextStyle       any
 }
 
 type ReferenceId_CloudAiDocument struct {
@@ -450,17 +450,17 @@ type ReferenceId_Properties_MapProperty_Fields_EnumValue struct {
 }
 
 type ReferenceId_Properties_MapProperty_Fields_TimestampValue struct {
-	TextValue any
+	TextValue      any
 	TimestampValue any
 }
 
 type ReferenceId_Properties_MapProperty_Fields struct {
-	BooleanValue any
-	DatetimeValue any
-	EnumValue any
-	FloatValue any
-	IntValue any
-	StringValue any
+	BooleanValue   any
+	DatetimeValue  any
+	EnumValue      any
+	FloatValue     any
+	IntValue       any
+	StringValue    any
 	TimestampValue any
 }
 
@@ -477,14 +477,14 @@ type ReferenceId_Properties_TimestampValues struct {
 }
 
 type ReferenceId_Properties struct {
-	DateTimeValues any
-	EnumValues any
-	FloatValues any
-	IntegerValues any
-	MapProperty any
-	Name any
-	PropertyValues any
-	TextValues any
+	DateTimeValues  any
+	EnumValues      any
+	FloatValues     any
+	IntegerValues   any
+	MapProperty     any
+	Name            any
+	PropertyValues  any
+	TextValues      any
 	TimestampValues any
 }
 
@@ -513,7 +513,7 @@ type ReferenceIdAttrs struct {
 	InlineRawDocument any
 	// Output only. Indicates if the document has a legal hold on it.
 	LegalHold any
-	Name any
+	Name      any
 	// Other document format, such as PPTX, XLXS
 	PlainText any
 	// List of values that are user supplied metadata.

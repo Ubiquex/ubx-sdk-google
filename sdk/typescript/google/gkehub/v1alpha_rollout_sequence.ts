@@ -69,40 +69,20 @@ const V1alphaRolloutSequence_StagesFields: FieldMap = {
 export interface V1alphaRolloutSequenceConfig {
   /** Configuration for automatic upgrades. */
   autoUpgradeConfig?: V1alphaRolloutSequence_AutoUpgradeConfig | Computed<V1alphaRolloutSequence_AutoUpgradeConfig>;
-  /** Output only. The computed release channel used for the Rollout Sequence. */
-  computedReleaseChannel?: string | Computed<string>;
-  /** Output only. The timestamp at which the Rollout Sequence was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The timestamp at the Rollout Sequence was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human readable display name of the Rollout Sequence. */
   displayName?: string | Computed<string>;
   /** Configuration for automatic upgrades. */
   effectiveAutoUpgradeConfig?: V1alphaRolloutSequence_AutoUpgradeConfig | Computed<V1alphaRolloutSequence_AutoUpgradeConfig>;
-  /** Output only. etag of the Rollout Sequence Ex. abc1234 */
-  etag?: string | Computed<string>;
   /** Selector for clusters. */
   ignoredClustersSelector?: V1alphaRolloutSequence_IgnoredClustersSelector | Computed<V1alphaRolloutSequence_IgnoredClustersSelector>;
   /** Optional. Labels for this Rollout Sequence. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The last qualified control plane version. */
-  lastQualifiedControlPlaneVersion?: string | Computed<string>;
-  /** Output only. The last qualified node version. */
-  lastQualifiedNodeVersion?: string | Computed<string>;
   /** Identifier. Name of the rollout sequence in the format of: projects/{PROJECT_ID}/locations/global/rolloutSequences/{NAME} */
   name?: string | Computed<string>;
   /** Operational state of the Rollout Sequence. */
   operationalState?: V1alphaRolloutSequence_OperationalState | Computed<V1alphaRolloutSequence_OperationalState>;
   /** Required. Ordered list of stages that constitutes this Rollout. */
   stages?: V1alphaRolloutSequence_Stages[] | Computed<V1alphaRolloutSequence_Stages[]>;
-  /** Output only. The target control plane version of the Rollout Sequence. */
-  targetControlPlaneVersion?: string | Computed<string>;
-  /** Output only. The target node version of the Rollout Sequence. */
-  targetNodeVersion?: string | Computed<string>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Rollout Sequence resources. If a Rollout Sequence resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp at which the Rollout Sequence was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaRolloutSequenceAttrs {
@@ -152,24 +132,18 @@ export const V1alphaRolloutSequence: ResourceBinding<V1alphaRolloutSequenceConfi
       kind: "object",
       fields: V1alphaRolloutSequence_AutoUpgradeConfigFields,
     },
-    computedReleaseChannel: "computed_release_channel",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     effectiveAutoUpgradeConfig: {
       wireName: "effective_auto_upgrade_config",
       kind: "object",
       fields: V1alphaRolloutSequence_AutoUpgradeConfigFields,
     },
-    etag: "etag",
     ignoredClustersSelector: {
       wireName: "ignored_clusters_selector",
       kind: "object",
       fields: V1alphaRolloutSequence_IgnoredClustersSelectorFields,
     },
     labels: "labels",
-    lastQualifiedControlPlaneVersion: "last_qualified_control_plane_version",
-    lastQualifiedNodeVersion: "last_qualified_node_version",
     name: "name",
     operationalState: {
       wireName: "operational_state",
@@ -181,9 +155,5 @@ export const V1alphaRolloutSequence: ResourceBinding<V1alphaRolloutSequenceConfi
       kind: "list",
       fields: V1alphaRolloutSequence_StagesFields,
     },
-    targetControlPlaneVersion: "target_control_plane_version",
-    targetNodeVersion: "target_node_version",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

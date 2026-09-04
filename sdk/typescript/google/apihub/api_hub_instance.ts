@@ -38,20 +38,12 @@ const ApiHubInstance_ConfigFields: FieldMap = {
 export interface ApiHubInstanceConfig {
   /** Available configurations to provision an ApiHub Instance. */
   config?: ApiHubInstance_Config | Computed<ApiHubInstance_Config>;
-  /** Output only. Creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the ApiHub instance. */
   description?: string | Computed<string>;
   /** Optional. Instance labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Format: `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the ApiHub instance. */
-  state?: string | Computed<string>;
-  /** Output only. Extra information about ApiHub instance state. Currently the message would be populated when state is `FAILED`. */
-  stateMessage?: string | Computed<string>;
-  /** Output only. Last update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ApiHubInstanceAttrs {
@@ -81,12 +73,8 @@ export const ApiHubInstance: ResourceBinding<ApiHubInstanceConfig, ApiHubInstanc
       kind: "object",
       fields: ApiHubInstance_ConfigFields,
     },
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
-    state: "state",
-    stateMessage: "state_message",
-    updateTime: "update_time",
   },
 };

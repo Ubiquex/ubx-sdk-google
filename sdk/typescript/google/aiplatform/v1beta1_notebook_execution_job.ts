@@ -231,8 +231,6 @@ const V1beta1NotebookExecutionJob_WorkbenchRuntimeFields: FieldMap = {
 };
 
 export interface V1beta1NotebookExecutionJobConfig {
-  /** Output only. Timestamp when this NotebookExecutionJob was created. */
-  createTime?: string | Computed<string>;
   /** Compute configuration to use for an execution job. */
   customEnvironmentSpec?: V1beta1NotebookExecutionJob_CustomEnvironmentSpec | Computed<V1beta1NotebookExecutionJob_CustomEnvironmentSpec>;
   /** The Dataform Repository containing the input notebook. */
@@ -251,14 +249,10 @@ export interface V1beta1NotebookExecutionJobConfig {
   gcsNotebookSource?: V1beta1NotebookExecutionJob_GcsNotebookSource | Computed<V1beta1NotebookExecutionJob_GcsNotebookSource>;
   /** The Cloud Storage location to upload the result to. Format: `gs://bucket-name` */
   gcsOutputUri?: string | Computed<string>;
-  /** Output only. The state of the NotebookExecutionJob. */
-  jobState?: string | Computed<string>;
   /** The name of the kernel to use during notebook execution. If unset, the default kernel is used. */
   kernelName?: string | Computed<string>;
   /** The labels with user-defined metadata to organize NotebookExecutionJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of this NotebookExecutionJob. Format: `projects/{project_id}/locations/{location}/notebookExecutionJobs/{job_id}` */
-  name?: string | Computed<string>;
   /** The NotebookRuntimeTemplate to source compute configuration from. */
   notebookRuntimeTemplateResourceName?: string | Computed<string>;
   /** The Schedule resource name if this job is triggered by one. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}` */
@@ -267,8 +261,6 @@ export interface V1beta1NotebookExecutionJobConfig {
   serviceAccount?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   status?: V1beta1NotebookExecutionJob_Status | Computed<V1beta1NotebookExecutionJob_Status>;
-  /** Output only. Timestamp when this NotebookExecutionJob was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Configuration for a Workbench Instances-based environment. */
   workbenchRuntime?: V1beta1NotebookExecutionJob_WorkbenchRuntime | Computed<V1beta1NotebookExecutionJob_WorkbenchRuntime>;
 }
@@ -319,7 +311,6 @@ export interface V1beta1NotebookExecutionJobAttrs {
 export const V1beta1NotebookExecutionJob: ResourceBinding<V1beta1NotebookExecutionJobConfig, V1beta1NotebookExecutionJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_notebook_execution_job",
   fields: {
-    createTime: "create_time",
     customEnvironmentSpec: {
       wireName: "custom_environment_spec",
       kind: "object",
@@ -349,10 +340,8 @@ export const V1beta1NotebookExecutionJob: ResourceBinding<V1beta1NotebookExecuti
       fields: V1beta1NotebookExecutionJob_GcsNotebookSourceFields,
     },
     gcsOutputUri: "gcs_output_uri",
-    jobState: "job_state",
     kernelName: "kernel_name",
     labels: "labels",
-    name: "name",
     notebookRuntimeTemplateResourceName: "notebook_runtime_template_resource_name",
     scheduleResourceName: "schedule_resource_name",
     serviceAccount: "service_account",
@@ -361,7 +350,6 @@ export const V1beta1NotebookExecutionJob: ResourceBinding<V1beta1NotebookExecuti
       kind: "object",
       fields: V1beta1NotebookExecutionJob_StatusFields,
     },
-    updateTime: "update_time",
     workbenchRuntime: {
       wireName: "workbench_runtime",
       kind: "object",

@@ -6,26 +6,16 @@ export interface RegionalEndpointConfig {
   accessType?: string | Computed<string>;
   /** Optional. The IP Address of the Regional Endpoint. When no address is provided, an IP from the subnetwork is allocated. Use one of the following formats: * IPv4 address as in `10.0.0.1` * Address resource URI as in `projects/{project}/regions/{region}/addresses/{address_name}` for an IPv4 or IPv6 address. */
   address?: string | Computed<string>;
-  /** Output only. Time when the RegionalEndpoint was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of this resource. */
   description?: string | Computed<string>;
-  /** Output only. The literal IP address of the PSC Forwarding Rule created on behalf of the customer. This field is deprecated. Use address instead. */
-  ipAddress?: string | Computed<string>;
   /** User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The name of a RegionalEndpoint. Pattern: `projects/{project}/locations/{location}/regionalEndpoints/^[-a-z0-9](?:[-a-z0-9]{0,44})[a-z0-9]$`. */
-  name?: string | Computed<string>;
   /** Optional. The name of the VPC network for this private regional endpoint. Format: `projects/{project}/global/networks/{network}` */
   network?: string | Computed<string>;
-  /** Output only. The resource reference of the PSC Forwarding Rule created on behalf of the customer. Format: `//compute.googleapis.com/projects/{project}/regions/{region}/forwardingRules/{forwarding_rule_name}` */
-  pscForwardingRule?: string | Computed<string>;
   /** Optional. The name of the subnetwork from which the IP address will be allocated. Format: `projects/{project}/regions/{region}/subnetworks/{subnetwork}` */
   subnetwork?: string | Computed<string>;
   /** Required. The service endpoint this private regional endpoint connects to. Format: `{apiname}.{region}.p.rep.googleapis.com` Example: "cloudkms.us-central1.p.rep.googleapis.com". */
   targetGoogleApi?: string | Computed<string>;
-  /** Output only. Time when the RegionalEndpoint was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface RegionalEndpointAttrs {
@@ -60,15 +50,10 @@ export const RegionalEndpoint: ResourceBinding<RegionalEndpointConfig, RegionalE
   fields: {
     accessType: "access_type",
     address: "address",
-    createTime: "create_time",
     description: "description",
-    ipAddress: "ip_address",
     labels: "labels",
-    name: "name",
     network: "network",
-    pscForwardingRule: "psc_forwarding_rule",
     subnetwork: "subnetwork",
     targetGoogleApi: "target_google_api",
-    updateTime: "update_time",
   },
 };

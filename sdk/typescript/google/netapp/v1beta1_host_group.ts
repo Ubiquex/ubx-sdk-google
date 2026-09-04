@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1HostGroupConfig {
-  /** Output only. Create time of the host group. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the host group. */
   description?: string | Computed<string>;
   /** Required. The list of hosts associated with the host group. */
@@ -14,8 +12,6 @@ export interface V1beta1HostGroupConfig {
   name?: string | Computed<string>;
   /** Required. The OS type of the host group. It indicates the type of operating system used by all of the hosts in the HostGroup. All hosts in a HostGroup must be of the same OS type. This can be set only when creating a HostGroup. */
   osType?: string | Computed<string>;
-  /** Output only. State of the host group. */
-  state?: string | Computed<string>;
   /** Required. Type of the host group. */
   type?: string | Computed<string>;
 }
@@ -42,13 +38,11 @@ export interface V1beta1HostGroupAttrs {
 export const V1beta1HostGroup: ResourceBinding<V1beta1HostGroupConfig, V1beta1HostGroupAttrs> = {
   wireType: "google_netapp_v1beta1_host_group",
   fields: {
-    createTime: "create_time",
     description: "description",
     hosts: "hosts",
     labels: "labels",
     name: "name",
     osType: "os_type",
-    state: "state",
     type: "type",
   },
 };

@@ -47,8 +47,6 @@ _DataDomain_PolicyMemberFields = {
 class DataDomainConfig:
     # Business contacts part of business context of a Data Domain. Corresponds to the Contacts Aspect in Dataplex Universal Catalog.
     contacts: Any = None
-    # Output only. The time at which the DataDomain was created.
-    create_time: Any = None
     # Optional. User-provided description of the DataDomain.
     description: Any = None
     # Required. User-friendly display name.
@@ -61,10 +59,6 @@ class DataDomainConfig:
     parent_data_domain: Any = None
     # Output-only policy member strings of a Google Cloud resource's built-in identity.
     policy_member: Any = None
-    # Output only. System-generated globally unique ID for the DataDomain.
-    uid: Any = None
-    # Output only. The time at which the DataDomain was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DataDomainAttrs:
@@ -97,7 +91,6 @@ DataDomain = ubx.ResourceBinding(
             kind="object",
             fields=_DataDomain_ContactsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -108,7 +101,5 @@ DataDomain = ubx.ResourceBinding(
             kind="object",
             fields=_DataDomain_PolicyMemberFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

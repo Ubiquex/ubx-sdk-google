@@ -4,16 +4,6 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HcxActivationKeyConfig struct {
-	// Output only. HCX activation key.
-	ActivationKey any
-	// Output only. Creation time of HCX activation key.
-	CreateTime any
-	// Output only. The resource name of this HcxActivationKey. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/privateClouds/my-cloud/hcxActivationKeys/my-key`
-	Name any
-	// Output only. State of HCX activation key.
-	State any
-	// Output only. System-generated unique identifier for the resource.
-	Uid any
 }
 
 type HcxActivationKeyAttrs struct {
@@ -31,11 +21,5 @@ type HcxActivationKeyAttrs struct {
 
 var HcxActivationKey = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_hcx_activation_key",
-	Fields: ubx.FieldMap{
-		"ActivationKey": ubx.FieldSpec{WireName: "activation_key"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	},
+	Fields:   ubx.FieldMap{},
 }

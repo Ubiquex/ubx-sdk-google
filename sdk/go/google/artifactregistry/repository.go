@@ -4,23 +4,23 @@ package artifactregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Repository_CleanupPolicies_Condition struct {
-	NewerThan any
-	OlderThan any
+	NewerThan           any
+	OlderThan           any
 	PackageNamePrefixes any
-	TagPrefixes any
-	TagState any
+	TagPrefixes         any
+	TagState            any
 	VersionNamePrefixes any
 }
 
 type Repository_CleanupPolicies_MostRecentVersions struct {
-	KeepCount any
+	KeepCount           any
 	PackageNamePrefixes any
 }
 
 type Repository_CleanupPolicies struct {
-	Action any
-	Condition any
-	Id any
+	Action             any
+	Condition          any
+	Id                 any
 	MostRecentVersions any
 }
 
@@ -107,8 +107,8 @@ type Repository_RemoteRepositoryConfig struct {
 }
 
 type Repository_VirtualRepositoryConfig_UpstreamPolicies struct {
-	Id any
-	Priority any
+	Id         any
+	Priority   any
 	Repository any
 }
 
@@ -129,166 +129,164 @@ type Repository_VulnerabilityScanningConfig struct {
 }
 
 var Repository_CleanupPolicies_ConditionFields = ubx.FieldMap{
-		"NewerThan": ubx.FieldSpec{WireName: "newer_than"},
-		"OlderThan": ubx.FieldSpec{WireName: "older_than"},
-		"PackageNamePrefixes": ubx.FieldSpec{WireName: "package_name_prefixes"},
-		"TagPrefixes": ubx.FieldSpec{WireName: "tag_prefixes"},
-		"TagState": ubx.FieldSpec{WireName: "tag_state"},
-		"VersionNamePrefixes": ubx.FieldSpec{WireName: "version_name_prefixes"},
-	}
+	"NewerThan":           ubx.FieldSpec{WireName: "newer_than"},
+	"OlderThan":           ubx.FieldSpec{WireName: "older_than"},
+	"PackageNamePrefixes": ubx.FieldSpec{WireName: "package_name_prefixes"},
+	"TagPrefixes":         ubx.FieldSpec{WireName: "tag_prefixes"},
+	"TagState":            ubx.FieldSpec{WireName: "tag_state"},
+	"VersionNamePrefixes": ubx.FieldSpec{WireName: "version_name_prefixes"},
+}
 
 var Repository_CleanupPolicies_MostRecentVersionsFields = ubx.FieldMap{
-		"KeepCount": ubx.FieldSpec{WireName: "keep_count"},
-		"PackageNamePrefixes": ubx.FieldSpec{WireName: "package_name_prefixes"},
-	}
+	"KeepCount":           ubx.FieldSpec{WireName: "keep_count"},
+	"PackageNamePrefixes": ubx.FieldSpec{WireName: "package_name_prefixes"},
+}
 
 var Repository_CleanupPoliciesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Repository_CleanupPolicies_ConditionFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MostRecentVersions": ubx.FieldSpec{
-			WireName: "most_recent_versions",
-			Kind: "object",
-			Fields: Repository_CleanupPolicies_MostRecentVersionsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Repository_CleanupPolicies_ConditionFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"MostRecentVersions": ubx.FieldSpec{
+		WireName: "most_recent_versions",
+		Kind:     "object",
+		Fields:   Repository_CleanupPolicies_MostRecentVersionsFields,
+	},
+}
 
 var Repository_DockerConfigFields = ubx.FieldMap{
-		"ImmutableTags": ubx.FieldSpec{WireName: "immutable_tags"},
-	}
+	"ImmutableTags": ubx.FieldSpec{WireName: "immutable_tags"},
+}
 
 var Repository_MavenConfigFields = ubx.FieldMap{
-		"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
-		"VersionPolicy": ubx.FieldSpec{WireName: "version_policy"},
-	}
+	"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
+	"VersionPolicy":           ubx.FieldSpec{WireName: "version_policy"},
+}
 
 var Repository_PlatformLogsConfigFields = ubx.FieldMap{
-		"LoggingState": ubx.FieldSpec{WireName: "logging_state"},
-		"SeverityLevel": ubx.FieldSpec{WireName: "severity_level"},
-	}
+	"LoggingState":  ubx.FieldSpec{WireName: "logging_state"},
+	"SeverityLevel": ubx.FieldSpec{WireName: "severity_level"},
+}
 
 var Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Repository_RemoteRepositoryConfig_AptRepository_PublicRepositoryFields = ubx.FieldMap{
-		"RepositoryBase": ubx.FieldSpec{WireName: "repository_base"},
-		"RepositoryPath": ubx.FieldSpec{WireName: "repository_path"},
-	}
+	"RepositoryBase": ubx.FieldSpec{WireName: "repository_base"},
+	"RepositoryPath": ubx.FieldSpec{WireName: "repository_path"},
+}
 
 var Repository_RemoteRepositoryConfig_AptRepositoryFields = ubx.FieldMap{
-		"CustomRepository": ubx.FieldSpec{
-			WireName: "custom_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
-		},
-		"PublicRepository": ubx.FieldSpec{
-			WireName: "public_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepository_PublicRepositoryFields,
-		},
-	}
+	"CustomRepository": ubx.FieldSpec{
+		WireName: "custom_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
+	},
+	"PublicRepository": ubx.FieldSpec{
+		WireName: "public_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepository_PublicRepositoryFields,
+	},
+}
 
 var Repository_RemoteRepositoryConfig_DockerRepositoryFields = ubx.FieldMap{
-		"CustomRepository": ubx.FieldSpec{
-			WireName: "custom_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
-		},
-		"PublicRepository": ubx.FieldSpec{WireName: "public_repository"},
-	}
+	"CustomRepository": ubx.FieldSpec{
+		WireName: "custom_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
+	},
+	"PublicRepository": ubx.FieldSpec{WireName: "public_repository"},
+}
 
 var Repository_RemoteRepositoryConfig_UpstreamCredentials_UsernamePasswordCredentialsFields = ubx.FieldMap{
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+}
 
 var Repository_RemoteRepositoryConfig_UpstreamCredentialsFields = ubx.FieldMap{
-		"UsernamePasswordCredentials": ubx.FieldSpec{
-			WireName: "username_password_credentials",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_UpstreamCredentials_UsernamePasswordCredentialsFields,
-		},
-	}
+	"UsernamePasswordCredentials": ubx.FieldSpec{
+		WireName: "username_password_credentials",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_UpstreamCredentials_UsernamePasswordCredentialsFields,
+	},
+}
 
 var Repository_RemoteRepositoryConfigFields = ubx.FieldMap{
-		"AptRepository": ubx.FieldSpec{
-			WireName: "apt_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepositoryFields,
-		},
-		"CommonRepository": ubx.FieldSpec{
-			WireName: "common_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableUpstreamValidation": ubx.FieldSpec{WireName: "disable_upstream_validation"},
-		"DockerRepository": ubx.FieldSpec{
-			WireName: "docker_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_DockerRepositoryFields,
-		},
-		"MavenRepository": ubx.FieldSpec{
-			WireName: "maven_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_DockerRepositoryFields,
-		},
-		"NoCache": ubx.FieldSpec{WireName: "no_cache"},
-		"NpmRepository": ubx.FieldSpec{
-			WireName: "npm_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_DockerRepositoryFields,
-		},
-		"PythonRepository": ubx.FieldSpec{
-			WireName: "python_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_DockerRepositoryFields,
-		},
-		"UpstreamCredentials": ubx.FieldSpec{
-			WireName: "upstream_credentials",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_UpstreamCredentialsFields,
-		},
-		"YumRepository": ubx.FieldSpec{
-			WireName: "yum_repository",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfig_AptRepositoryFields,
-		},
-	}
+	"AptRepository": ubx.FieldSpec{
+		WireName: "apt_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepositoryFields,
+	},
+	"CommonRepository": ubx.FieldSpec{
+		WireName: "common_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepository_CustomRepositoryFields,
+	},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DisableUpstreamValidation": ubx.FieldSpec{WireName: "disable_upstream_validation"},
+	"DockerRepository": ubx.FieldSpec{
+		WireName: "docker_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_DockerRepositoryFields,
+	},
+	"MavenRepository": ubx.FieldSpec{
+		WireName: "maven_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_DockerRepositoryFields,
+	},
+	"NoCache": ubx.FieldSpec{WireName: "no_cache"},
+	"NpmRepository": ubx.FieldSpec{
+		WireName: "npm_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_DockerRepositoryFields,
+	},
+	"PythonRepository": ubx.FieldSpec{
+		WireName: "python_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_DockerRepositoryFields,
+	},
+	"UpstreamCredentials": ubx.FieldSpec{
+		WireName: "upstream_credentials",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_UpstreamCredentialsFields,
+	},
+	"YumRepository": ubx.FieldSpec{
+		WireName: "yum_repository",
+		Kind:     "object",
+		Fields:   Repository_RemoteRepositoryConfig_AptRepositoryFields,
+	},
+}
 
 var Repository_VirtualRepositoryConfig_UpstreamPoliciesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Priority":   ubx.FieldSpec{WireName: "priority"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var Repository_VirtualRepositoryConfigFields = ubx.FieldMap{
-		"UpstreamPolicies": ubx.FieldSpec{
-			WireName: "upstream_policies",
-			Kind: "list",
-			Fields: Repository_VirtualRepositoryConfig_UpstreamPoliciesFields,
-		},
-	}
+	"UpstreamPolicies": ubx.FieldSpec{
+		WireName: "upstream_policies",
+		Kind:     "list",
+		Fields:   Repository_VirtualRepositoryConfig_UpstreamPoliciesFields,
+	},
+}
 
 var Repository_VulnerabilityScanningConfigFields = ubx.FieldMap{
-		"EnablementConfig": ubx.FieldSpec{WireName: "enablement_config"},
-		"EnablementState": ubx.FieldSpec{WireName: "enablement_state"},
-		"EnablementStateReason": ubx.FieldSpec{WireName: "enablement_state_reason"},
-		"LastEnableTime": ubx.FieldSpec{WireName: "last_enable_time"},
-	}
+	"EnablementConfig":      ubx.FieldSpec{WireName: "enablement_config"},
+	"EnablementState":       ubx.FieldSpec{WireName: "enablement_state"},
+	"EnablementStateReason": ubx.FieldSpec{WireName: "enablement_state_reason"},
+	"LastEnableTime":        ubx.FieldSpec{WireName: "last_enable_time"},
+}
 
 type RepositoryConfig struct {
 	// Optional. Cleanup policies for this repository. Cleanup policies indicate when certain package versions can be automatically deleted. Map keys are policy IDs supplied by users during policy creation. They must unique within a repository and be under 128 characters in length.
 	CleanupPolicies any
 	// Optional. If true, the cleanup pipeline is prevented from deleting versions in this repository.
 	CleanupPolicyDryRun any
-	// Output only. The time when the repository was created.
-	CreateTime any
 	// The user-provided description of the repository.
 	Description any
 	// Optional. If this is true, an unspecified repo type will be treated as error rather than defaulting to standard.
@@ -309,18 +307,8 @@ type RepositoryConfig struct {
 	Name any
 	// The platform logs config for a project or a repository.
 	PlatformLogsConfig any
-	// Output only. The repository endpoint, for example: `us-docker.pkg.dev/my-proj/my-repo`.
-	RegistryUri any
 	// Remote repository configuration.
 	RemoteRepositoryConfig any
-	// Output only. Whether or not this repository satisfies PZI.
-	SatisfiesPzi any
-	// Output only. Whether or not this repository satisfies PZS.
-	SatisfiesPzs any
-	// Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
-	SizeBytes any
-	// Output only. The time when the repository was last updated.
-	UpdateTime any
 	// Virtual repository configuration.
 	VirtualRepositoryConfig any
 	// Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state.
@@ -377,52 +365,46 @@ var Repository = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CleanupPolicies": ubx.FieldSpec{
 			WireName: "cleanup_policies",
-			Kind: "map",
-			Fields: Repository_CleanupPoliciesFields,
+			Kind:     "map",
+			Fields:   Repository_CleanupPoliciesFields,
 		},
-		"CleanupPolicyDryRun": ubx.FieldSpec{WireName: "cleanup_policy_dry_run"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CleanupPolicyDryRun":     ubx.FieldSpec{WireName: "cleanup_policy_dry_run"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
 		"DisallowUnspecifiedMode": ubx.FieldSpec{WireName: "disallow_unspecified_mode"},
 		"DockerConfig": ubx.FieldSpec{
 			WireName: "docker_config",
-			Kind: "object",
-			Fields: Repository_DockerConfigFields,
+			Kind:     "object",
+			Fields:   Repository_DockerConfigFields,
 		},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":     ubx.FieldSpec{WireName: "format"},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
 		"MavenConfig": ubx.FieldSpec{
 			WireName: "maven_config",
-			Kind: "object",
-			Fields: Repository_MavenConfigFields,
+			Kind:     "object",
+			Fields:   Repository_MavenConfigFields,
 		},
 		"Mode": ubx.FieldSpec{WireName: "mode"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PlatformLogsConfig": ubx.FieldSpec{
 			WireName: "platform_logs_config",
-			Kind: "object",
-			Fields: Repository_PlatformLogsConfigFields,
+			Kind:     "object",
+			Fields:   Repository_PlatformLogsConfigFields,
 		},
-		"RegistryUri": ubx.FieldSpec{WireName: "registry_uri"},
 		"RemoteRepositoryConfig": ubx.FieldSpec{
 			WireName: "remote_repository_config",
-			Kind: "object",
-			Fields: Repository_RemoteRepositoryConfigFields,
+			Kind:     "object",
+			Fields:   Repository_RemoteRepositoryConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VirtualRepositoryConfig": ubx.FieldSpec{
 			WireName: "virtual_repository_config",
-			Kind: "object",
-			Fields: Repository_VirtualRepositoryConfigFields,
+			Kind:     "object",
+			Fields:   Repository_VirtualRepositoryConfigFields,
 		},
 		"VulnerabilityScanningConfig": ubx.FieldSpec{
 			WireName: "vulnerability_scanning_config",
-			Kind: "object",
-			Fields: Repository_VulnerabilityScanningConfigFields,
+			Kind:     "object",
+			Fields:   Repository_VulnerabilityScanningConfigFields,
 		},
 	},
 }

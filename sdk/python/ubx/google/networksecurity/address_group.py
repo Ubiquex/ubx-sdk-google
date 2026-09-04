@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class AddressGroupConfig:
     # Required. Capacity of the Address Group
     capacity: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. Free-text description of the resource.
     description: Any = None
     # Optional. List of items.
@@ -22,12 +20,8 @@ class AddressGroupConfig:
     name: Any = None
     # Optional. List of supported purposes of the Address Group.
     purpose: Any = None
-    # Output only. Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
     # Required. The type of the Address Group. Possible values are "IPv4" or "IPV6".
     type: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AddressGroupAttrs:
@@ -56,14 +50,11 @@ AddressGroup = ubx.ResourceBinding(
     wire_type="google_networksecurity_address_group",
     fields={
         "capacity": ubx.FieldSpec(wire_name="capacity"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "items": ubx.FieldSpec(wire_name="items"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "purpose": ubx.FieldSpec(wire_name="purpose"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

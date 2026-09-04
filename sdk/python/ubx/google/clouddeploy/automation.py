@@ -241,16 +241,12 @@ _Automation_SelectorFields = {
 class AutomationConfig:
     # Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. Annotations must meet the following constraints: * Annotations are key/value pairs. * Valid annotation keys have two segments: an optional prefix and name, separated by a slash (`/`). * The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. * The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots(`.`), not longer than 253 characters in total, followed by a slash (`/`). See https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set for more details.
     annotations: Any = None
-    # Output only. Time at which the automation was created.
-    create_time: Any = None
     # Optional. Description of the `Automation`. Max length is 255 characters.
     description: Any = None
     # Optional. The weak etag of the `Automation` resource. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
     etag: Any = None
     # Optional. Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 63 characters.
     labels: Any = None
-    # Output only. Name of the `Automation`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{delivery_pipeline}/automations/{automation}`.
-    name: Any = None
     # Required. List of Automation rules associated with the Automation resource. Must have at least one rule and limited to 250 rules per Delivery Pipeline. Note: the order of the rules here is not the same as the order of execution.
     rules: Any = None
     # AutomationResourceSelector contains the information to select the resources to which an Automation is going to be applied.
@@ -259,10 +255,6 @@ class AutomationConfig:
     service_account: Any = None
     # Optional. When Suspended, automation is deactivated from execution.
     suspended: Any = None
-    # Output only. Unique identifier of the `Automation`.
-    uid: Any = None
-    # Output only. Time at which the automation was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AutomationAttrs:
@@ -295,11 +287,9 @@ Automation = ubx.ResourceBinding(
     wire_type="google_clouddeploy_automation",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "rules": ubx.FieldSpec(
             wire_name="rules",
             kind="list",
@@ -312,7 +302,5 @@ Automation = ubx.ResourceBinding(
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "suspended": ubx.FieldSpec(wire_name="suspended"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -244,8 +244,6 @@ export interface V3beta1AgentConfig {
   locked?: boolean | Computed<boolean>;
   name?: string | Computed<string>;
   personalizationSettings?: V3beta1Agent_PersonalizationSettings | Computed<V3beta1Agent_PersonalizationSettings>;
-  satisfiesPzi?: boolean | Computed<boolean>;
-  satisfiesPzs?: boolean | Computed<boolean>;
   securitySettings?: string | Computed<string>;
   speechToTextSettings?: V3beta1Agent_SpeechToTextSettings | Computed<V3beta1Agent_SpeechToTextSettings>;
   startFlow?: string | Computed<string>;
@@ -330,8 +328,6 @@ export const V3beta1Agent: ResourceBinding<V3beta1AgentConfig, V3beta1AgentAttrs
       kind: "object",
       fields: V3beta1Agent_PersonalizationSettingsFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     securitySettings: "security_settings",
     speechToTextSettings: {
       wireName: "speech_to_text_settings",

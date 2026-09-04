@@ -4,48 +4,22 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MirroringEndpointGroup_Associations struct {
-	Name any
+	Name    any
 	Network any
-	State any
+	State   any
 }
 
 type V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups struct {
 	Locations any
-	Name any
+	Name      any
 }
 
-var V1beta1MirroringEndpointGroup_AssociationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_LocationsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1beta1MirroringEndpointGroup_ConnectedDeploymentGroupsFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "list",
-			Fields: V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_LocationsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
-
 type V1beta1MirroringEndpointGroupConfig struct {
-	// Output only. List of associations to this endpoint group.
-	Associations any
-	// Output only. List of details about the connected deployment groups to this endpoint group.
-	ConnectedDeploymentGroups any
-	// Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-	CreateTime any
 	// Optional. User-provided description of the endpoint group. Used as additional context for the endpoint group.
 	Description any
 	// Optional. Labels are key/value pairs that help to organize and filter resources.
@@ -54,14 +28,8 @@ type V1beta1MirroringEndpointGroupConfig struct {
 	MirroringDeploymentGroup any
 	// Immutable. Identifier. The resource name of this endpoint group, for example: `projects/123456789/locations/global/mirroringEndpointGroups/my-eg`. See https://google.aip.dev/122 for more details.
 	Name any
-	// Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new association to the group). See https://google.aip.dev/128.
-	Reconciling any
-	// Output only. The current state of the endpoint group. See https://google.aip.dev/216.
-	State any
 	// Immutable. The type of the endpoint group. If left unspecified, defaults to DIRECT.
 	Type any
-	// Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-	UpdateTime any
 }
 
 type V1beta1MirroringEndpointGroupAttrs struct {
@@ -92,24 +60,10 @@ type V1beta1MirroringEndpointGroupAttrs struct {
 var V1beta1MirroringEndpointGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_mirroring_endpoint_group",
 	Fields: ubx.FieldMap{
-		"Associations": ubx.FieldSpec{
-			WireName: "associations",
-			Kind: "list",
-			Fields: V1beta1MirroringEndpointGroup_AssociationsFields,
-		},
-		"ConnectedDeploymentGroups": ubx.FieldSpec{
-			WireName: "connected_deployment_groups",
-			Kind: "list",
-			Fields: V1beta1MirroringEndpointGroup_ConnectedDeploymentGroupsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MirroringDeploymentGroup": ubx.FieldSpec{WireName: "mirroring_deployment_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Type":                     ubx.FieldSpec{WireName: "type"},
 	},
 }

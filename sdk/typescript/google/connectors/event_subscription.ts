@@ -144,8 +144,6 @@ const EventSubscription_StatusFields: FieldMap = {
 };
 
 export interface EventSubscriptionConfig {
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Message for EventSubscription Destination to act on receiving an event */
   destinations?: EventSubscription_Destinations | Computed<EventSubscription_Destinations>;
   /** Optional. Event type id of the event of current EventSubscription. */
@@ -164,8 +162,6 @@ export interface EventSubscriptionConfig {
   subscriberLink?: string | Computed<string>;
   /** Optional. Configuration for configuring the trigger */
   triggerConfigVariables?: EventSubscription_Destinations_Pubsub_ConfigVariables[] | Computed<EventSubscription_Destinations_Pubsub_ConfigVariables[]>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EventSubscriptionAttrs {
@@ -196,7 +192,6 @@ export interface EventSubscriptionAttrs {
 export const EventSubscription: ResourceBinding<EventSubscriptionConfig, EventSubscriptionAttrs> = {
   wireType: "google_connectors_event_subscription",
   fields: {
-    createTime: "create_time",
     destinations: {
       wireName: "destinations",
       kind: "object",
@@ -222,6 +217,5 @@ export const EventSubscription: ResourceBinding<EventSubscriptionConfig, EventSu
       kind: "list",
       fields: EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
     },
-    updateTime: "update_time",
   },
 };

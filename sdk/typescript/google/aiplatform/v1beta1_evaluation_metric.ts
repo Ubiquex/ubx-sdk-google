@@ -856,8 +856,6 @@ const V1beta1EvaluationMetric_MetricFields: FieldMap = {
 };
 
 export interface V1beta1EvaluationMetricConfig {
-  /** Output only. The time when the EvaluationMetric was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of the EvaluationMetric. */
   description?: string | Computed<string>;
   /** Required. The user-friendly display name for the EvaluationMetric. */
@@ -872,8 +870,6 @@ export interface V1beta1EvaluationMetricConfig {
   metric?: V1beta1EvaluationMetric_Metric | Computed<V1beta1EvaluationMetric_Metric>;
   /** Identifier. The resource name of the EvaluationMetric. Format: `projects/{project}/locations/{location}/evaluationMetrics/{evaluation_metric}` */
   name?: string | Computed<string>;
-  /** Output only. The time when the EvaluationMetric was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EvaluationMetricAttrs {
@@ -900,7 +896,6 @@ export interface V1beta1EvaluationMetricAttrs {
 export const V1beta1EvaluationMetric: ResourceBinding<V1beta1EvaluationMetricConfig, V1beta1EvaluationMetricAttrs> = {
   wireType: "google_aiplatform_v1beta1_evaluation_metric",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -916,6 +911,5 @@ export const V1beta1EvaluationMetric: ResourceBinding<V1beta1EvaluationMetricCon
       fields: V1beta1EvaluationMetric_MetricFields,
     },
     name: "name",
-    updateTime: "update_time",
   },
 };

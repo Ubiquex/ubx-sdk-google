@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs struct {
 	ExemptedMembers any
-	LogType any
+	LogType         any
 }
 
 type Replay_Config_PolicyOverlay_AuditConfigs struct {
 	AuditLogConfigs any
-	Service any
+	Service         any
 }
 
 type Replay_Config_PolicyOverlay_Bindings_Condition struct {
 	Description any
-	Expression any
-	Location any
-	Title any
+	Expression  any
+	Location    any
+	Title       any
 }
 
 type Replay_Config_PolicyOverlay_Bindings struct {
 	Condition any
-	Members any
-	Role any
+	Members   any
+	Role      any
 }
 
 type Replay_Config_PolicyOverlay struct {
 	AuditConfigs any
-	Bindings any
-	Etag any
-	Version any
+	Bindings     any
+	Etag         any
+	Version      any
 }
 
 type Replay_Config struct {
@@ -65,92 +65,88 @@ type Replay_ResultsSummary struct {
 }
 
 var Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields = ubx.FieldMap{
-		"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
-		"LogType": ubx.FieldSpec{WireName: "log_type"},
-	}
+	"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
+	"LogType":         ubx.FieldSpec{WireName: "log_type"},
+}
 
 var Replay_Config_PolicyOverlay_AuditConfigsFields = ubx.FieldMap{
-		"AuditLogConfigs": ubx.FieldSpec{
-			WireName: "audit_log_configs",
-			Kind: "list",
-			Fields: Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"AuditLogConfigs": ubx.FieldSpec{
+		WireName: "audit_log_configs",
+		Kind:     "list",
+		Fields:   Replay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Replay_Config_PolicyOverlay_Bindings_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Replay_Config_PolicyOverlay_BindingsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Replay_Config_PolicyOverlay_Bindings_ConditionFields,
-		},
-		"Members": ubx.FieldSpec{WireName: "members"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Replay_Config_PolicyOverlay_Bindings_ConditionFields,
+	},
+	"Members": ubx.FieldSpec{WireName: "members"},
+	"Role":    ubx.FieldSpec{WireName: "role"},
+}
 
 var Replay_Config_PolicyOverlayFields = ubx.FieldMap{
-		"AuditConfigs": ubx.FieldSpec{
-			WireName: "audit_configs",
-			Kind: "list",
-			Fields: Replay_Config_PolicyOverlay_AuditConfigsFields,
-		},
-		"Bindings": ubx.FieldSpec{
-			WireName: "bindings",
-			Kind: "list",
-			Fields: Replay_Config_PolicyOverlay_BindingsFields,
-		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AuditConfigs": ubx.FieldSpec{
+		WireName: "audit_configs",
+		Kind:     "list",
+		Fields:   Replay_Config_PolicyOverlay_AuditConfigsFields,
+	},
+	"Bindings": ubx.FieldSpec{
+		WireName: "bindings",
+		Kind:     "list",
+		Fields:   Replay_Config_PolicyOverlay_BindingsFields,
+	},
+	"Etag":    ubx.FieldSpec{WireName: "etag"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Replay_ConfigFields = ubx.FieldMap{
-		"LogSource": ubx.FieldSpec{WireName: "log_source"},
-		"PolicyOverlay": ubx.FieldSpec{
-			WireName: "policy_overlay",
-			Kind: "map",
-			Fields: Replay_Config_PolicyOverlayFields,
-		},
-	}
+	"LogSource": ubx.FieldSpec{WireName: "log_source"},
+	"PolicyOverlay": ubx.FieldSpec{
+		WireName: "policy_overlay",
+		Kind:     "map",
+		Fields:   Replay_Config_PolicyOverlayFields,
+	},
+}
 
 var Replay_ResultsSummary_NewestDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var Replay_ResultsSummaryFields = ubx.FieldMap{
-		"DifferenceCount": ubx.FieldSpec{WireName: "difference_count"},
-		"ErrorCount": ubx.FieldSpec{WireName: "error_count"},
-		"LogCount": ubx.FieldSpec{WireName: "log_count"},
-		"NewestDate": ubx.FieldSpec{
-			WireName: "newest_date",
-			Kind: "object",
-			Fields: Replay_ResultsSummary_NewestDateFields,
-		},
-		"OldestDate": ubx.FieldSpec{
-			WireName: "oldest_date",
-			Kind: "object",
-			Fields: Replay_ResultsSummary_NewestDateFields,
-		},
-		"UnchangedCount": ubx.FieldSpec{WireName: "unchanged_count"},
-	}
+	"DifferenceCount": ubx.FieldSpec{WireName: "difference_count"},
+	"ErrorCount":      ubx.FieldSpec{WireName: "error_count"},
+	"LogCount":        ubx.FieldSpec{WireName: "log_count"},
+	"NewestDate": ubx.FieldSpec{
+		WireName: "newest_date",
+		Kind:     "object",
+		Fields:   Replay_ResultsSummary_NewestDateFields,
+	},
+	"OldestDate": ubx.FieldSpec{
+		WireName: "oldest_date",
+		Kind:     "object",
+		Fields:   Replay_ResultsSummary_NewestDateFields,
+	},
+	"UnchangedCount": ubx.FieldSpec{WireName: "unchanged_count"},
+}
 
 type ReplayConfig struct {
 	// The configuration used for a Replay.
 	Config any
-	// Output only. The resource name of the `Replay`, which has the following format: `{projects|folders|organizations}/{resource-id}/locations/global/replays/{replay-id}`, where `{resource-id}` is the ID of the project, folder, or organization that owns the Replay. Example: `projects/my-example-project/locations/global/replays/506a5f7f-38ce-4d7d-8e03-479ce1833c36`
-	Name any
 	// Summary statistics about the replayed log entries.
 	ResultsSummary any
-	// Output only. The current state of the `Replay`.
-	State any
 }
 
 type ReplayAttrs struct {
@@ -169,15 +165,13 @@ var Replay = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Replay_ConfigFields,
+			Kind:     "object",
+			Fields:   Replay_ConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResultsSummary": ubx.FieldSpec{
 			WireName: "results_summary",
-			Kind: "object",
-			Fields: Replay_ResultsSummaryFields,
+			Kind:     "object",
+			Fields:   Replay_ResultsSummaryFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

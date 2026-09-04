@@ -26,7 +26,7 @@ type CaPool_IssuancePolicy_AllowedKeyTypes_Rsa struct {
 
 type CaPool_IssuancePolicy_AllowedKeyTypes struct {
 	EllipticCurve any
-	Rsa any
+	Rsa           any
 }
 
 type CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId struct {
@@ -36,7 +36,7 @@ type CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectId struct {
 type CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions struct {
 	Critical any
 	ObjectId any
-	Value any
+	Value    any
 }
 
 type CaPool_IssuancePolicy_BaselineValues_CaOptions struct {
@@ -183,197 +183,197 @@ type CaPool_PublishingOptions struct {
 }
 
 var CaPool_EncryptionSpecFields = ubx.FieldMap{
-		"CloudKmsKey": ubx.FieldSpec{WireName: "cloud_kms_key"},
-	}
+	"CloudKmsKey": ubx.FieldSpec{WireName: "cloud_kms_key"},
+}
 
 var CaPool_IssuancePolicy_AllowedIssuanceModesFields = ubx.FieldMap{
-		"AllowConfigBasedIssuance": ubx.FieldSpec{WireName: "allow_config_based_issuance"},
-		"AllowCsrBasedIssuance": ubx.FieldSpec{WireName: "allow_csr_based_issuance"},
-	}
+	"AllowConfigBasedIssuance": ubx.FieldSpec{WireName: "allow_config_based_issuance"},
+	"AllowCsrBasedIssuance":    ubx.FieldSpec{WireName: "allow_csr_based_issuance"},
+}
 
 var CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurveFields = ubx.FieldMap{
-		"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
-	}
+	"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
+}
 
 var CaPool_IssuancePolicy_AllowedKeyTypes_RsaFields = ubx.FieldMap{
-		"MaxModulusSize": ubx.FieldSpec{WireName: "max_modulus_size"},
-		"MinModulusSize": ubx.FieldSpec{WireName: "min_modulus_size"},
-	}
+	"MaxModulusSize": ubx.FieldSpec{WireName: "max_modulus_size"},
+	"MinModulusSize": ubx.FieldSpec{WireName: "min_modulus_size"},
+}
 
 var CaPool_IssuancePolicy_AllowedKeyTypesFields = ubx.FieldMap{
-		"EllipticCurve": ubx.FieldSpec{
-			WireName: "elliptic_curve",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurveFields,
-		},
-		"Rsa": ubx.FieldSpec{
-			WireName: "rsa",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_AllowedKeyTypes_RsaFields,
-		},
-	}
+	"EllipticCurve": ubx.FieldSpec{
+		WireName: "elliptic_curve",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_AllowedKeyTypes_EllipticCurveFields,
+	},
+	"Rsa": ubx.FieldSpec{
+		WireName: "rsa",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_AllowedKeyTypes_RsaFields,
+	},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields = ubx.FieldMap{
-		"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
-	}
+	"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_AdditionalExtensionsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ObjectId": ubx.FieldSpec{
-			WireName: "object_id",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Critical": ubx.FieldSpec{WireName: "critical"},
+	"ObjectId": ubx.FieldSpec{
+		WireName: "object_id",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_CaOptionsFields = ubx.FieldMap{
-		"IsCa": ubx.FieldSpec{WireName: "is_ca"},
-		"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
-	}
+	"IsCa":                ubx.FieldSpec{WireName: "is_ca"},
+	"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_KeyUsage_BaseKeyUsageFields = ubx.FieldMap{
-		"CertSign": ubx.FieldSpec{WireName: "cert_sign"},
-		"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
-		"CrlSign": ubx.FieldSpec{WireName: "crl_sign"},
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-	}
+	"CertSign":          ubx.FieldSpec{WireName: "cert_sign"},
+	"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
+	"CrlSign":           ubx.FieldSpec{WireName: "crl_sign"},
+	"DataEncipherment":  ubx.FieldSpec{WireName: "data_encipherment"},
+	"DecipherOnly":      ubx.FieldSpec{WireName: "decipher_only"},
+	"DigitalSignature":  ubx.FieldSpec{WireName: "digital_signature"},
+	"EncipherOnly":      ubx.FieldSpec{WireName: "encipher_only"},
+	"KeyAgreement":      ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyEncipherment":   ubx.FieldSpec{WireName: "key_encipherment"},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_KeyUsage_ExtendedKeyUsageFields = ubx.FieldMap{
-		"ClientAuth": ubx.FieldSpec{WireName: "client_auth"},
-		"CodeSigning": ubx.FieldSpec{WireName: "code_signing"},
-		"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
-		"OcspSigning": ubx.FieldSpec{WireName: "ocsp_signing"},
-		"ServerAuth": ubx.FieldSpec{WireName: "server_auth"},
-		"TimeStamping": ubx.FieldSpec{WireName: "time_stamping"},
-	}
+	"ClientAuth":      ubx.FieldSpec{WireName: "client_auth"},
+	"CodeSigning":     ubx.FieldSpec{WireName: "code_signing"},
+	"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
+	"OcspSigning":     ubx.FieldSpec{WireName: "ocsp_signing"},
+	"ServerAuth":      ubx.FieldSpec{WireName: "server_auth"},
+	"TimeStamping":    ubx.FieldSpec{WireName: "time_stamping"},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_KeyUsageFields = ubx.FieldMap{
-		"BaseKeyUsage": ubx.FieldSpec{
-			WireName: "base_key_usage",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_KeyUsage_BaseKeyUsageFields,
-		},
-		"ExtendedKeyUsage": ubx.FieldSpec{
-			WireName: "extended_key_usage",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_KeyUsage_ExtendedKeyUsageFields,
-		},
-		"UnknownExtendedKeyUsages": ubx.FieldSpec{
-			WireName: "unknown_extended_key_usages",
-			Kind: "list",
-			Fields: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
-		},
-	}
+	"BaseKeyUsage": ubx.FieldSpec{
+		WireName: "base_key_usage",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_KeyUsage_BaseKeyUsageFields,
+	},
+	"ExtendedKeyUsage": ubx.FieldSpec{
+		WireName: "extended_key_usage",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_KeyUsage_ExtendedKeyUsageFields,
+	},
+	"UnknownExtendedKeyUsages": ubx.FieldSpec{
+		WireName: "unknown_extended_key_usages",
+		Kind:     "list",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
+	},
+}
 
 var CaPool_IssuancePolicy_BaselineValues_NameConstraintsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ExcludedDnsNames": ubx.FieldSpec{WireName: "excluded_dns_names"},
-		"ExcludedEmailAddresses": ubx.FieldSpec{WireName: "excluded_email_addresses"},
-		"ExcludedIpRanges": ubx.FieldSpec{WireName: "excluded_ip_ranges"},
-		"ExcludedUris": ubx.FieldSpec{WireName: "excluded_uris"},
-		"PermittedDnsNames": ubx.FieldSpec{WireName: "permitted_dns_names"},
-		"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
-		"PermittedIpRanges": ubx.FieldSpec{WireName: "permitted_ip_ranges"},
-		"PermittedUris": ubx.FieldSpec{WireName: "permitted_uris"},
-	}
+	"Critical":                ubx.FieldSpec{WireName: "critical"},
+	"ExcludedDnsNames":        ubx.FieldSpec{WireName: "excluded_dns_names"},
+	"ExcludedEmailAddresses":  ubx.FieldSpec{WireName: "excluded_email_addresses"},
+	"ExcludedIpRanges":        ubx.FieldSpec{WireName: "excluded_ip_ranges"},
+	"ExcludedUris":            ubx.FieldSpec{WireName: "excluded_uris"},
+	"PermittedDnsNames":       ubx.FieldSpec{WireName: "permitted_dns_names"},
+	"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
+	"PermittedIpRanges":       ubx.FieldSpec{WireName: "permitted_ip_ranges"},
+	"PermittedUris":           ubx.FieldSpec{WireName: "permitted_uris"},
+}
 
 var CaPool_IssuancePolicy_BaselineValuesFields = ubx.FieldMap{
-		"AdditionalExtensions": ubx.FieldSpec{
-			WireName: "additional_extensions",
-			Kind: "list",
-			Fields: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensionsFields,
-		},
-		"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
-		"CaOptions": ubx.FieldSpec{
-			WireName: "ca_options",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_CaOptionsFields,
-		},
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_KeyUsageFields,
-		},
-		"NameConstraints": ubx.FieldSpec{
-			WireName: "name_constraints",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValues_NameConstraintsFields,
-		},
-		"PolicyIds": ubx.FieldSpec{
-			WireName: "policy_ids",
-			Kind: "list",
-			Fields: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
-		},
-	}
+	"AdditionalExtensions": ubx.FieldSpec{
+		WireName: "additional_extensions",
+		Kind:     "list",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_AdditionalExtensionsFields,
+	},
+	"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
+	"CaOptions": ubx.FieldSpec{
+		WireName: "ca_options",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_CaOptionsFields,
+	},
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_KeyUsageFields,
+	},
+	"NameConstraints": ubx.FieldSpec{
+		WireName: "name_constraints",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_NameConstraintsFields,
+	},
+	"PolicyIds": ubx.FieldSpec{
+		WireName: "policy_ids",
+		Kind:     "list",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
+	},
+}
 
 var CaPool_IssuancePolicy_IdentityConstraints_CelExpressionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var CaPool_IssuancePolicy_IdentityConstraintsFields = ubx.FieldMap{
-		"AllowSubjectAltNamesPassthrough": ubx.FieldSpec{WireName: "allow_subject_alt_names_passthrough"},
-		"AllowSubjectPassthrough": ubx.FieldSpec{WireName: "allow_subject_passthrough"},
-		"CelExpression": ubx.FieldSpec{
-			WireName: "cel_expression",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_IdentityConstraints_CelExpressionFields,
-		},
-	}
+	"AllowSubjectAltNamesPassthrough": ubx.FieldSpec{WireName: "allow_subject_alt_names_passthrough"},
+	"AllowSubjectPassthrough":         ubx.FieldSpec{WireName: "allow_subject_passthrough"},
+	"CelExpression": ubx.FieldSpec{
+		WireName: "cel_expression",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_IdentityConstraints_CelExpressionFields,
+	},
+}
 
 var CaPool_IssuancePolicy_PassthroughExtensionsFields = ubx.FieldMap{
-		"AdditionalExtensions": ubx.FieldSpec{
-			WireName: "additional_extensions",
-			Kind: "list",
-			Fields: CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
-		},
-		"KnownExtensions": ubx.FieldSpec{WireName: "known_extensions"},
-	}
+	"AdditionalExtensions": ubx.FieldSpec{
+		WireName: "additional_extensions",
+		Kind:     "list",
+		Fields:   CaPool_IssuancePolicy_BaselineValues_AdditionalExtensions_ObjectIdFields,
+	},
+	"KnownExtensions": ubx.FieldSpec{WireName: "known_extensions"},
+}
 
 var CaPool_IssuancePolicyFields = ubx.FieldMap{
-		"AllowRequesterSpecifiedNotBeforeTime": ubx.FieldSpec{WireName: "allow_requester_specified_not_before_time"},
-		"AllowedIssuanceModes": ubx.FieldSpec{
-			WireName: "allowed_issuance_modes",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_AllowedIssuanceModesFields,
-		},
-		"AllowedKeyTypes": ubx.FieldSpec{
-			WireName: "allowed_key_types",
-			Kind: "list",
-			Fields: CaPool_IssuancePolicy_AllowedKeyTypesFields,
-		},
-		"BackdateDuration": ubx.FieldSpec{WireName: "backdate_duration"},
-		"BaselineValues": ubx.FieldSpec{
-			WireName: "baseline_values",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_BaselineValuesFields,
-		},
-		"IdentityConstraints": ubx.FieldSpec{
-			WireName: "identity_constraints",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_IdentityConstraintsFields,
-		},
-		"MaximumLifetime": ubx.FieldSpec{WireName: "maximum_lifetime"},
-		"PassthroughExtensions": ubx.FieldSpec{
-			WireName: "passthrough_extensions",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicy_PassthroughExtensionsFields,
-		},
-	}
+	"AllowRequesterSpecifiedNotBeforeTime": ubx.FieldSpec{WireName: "allow_requester_specified_not_before_time"},
+	"AllowedIssuanceModes": ubx.FieldSpec{
+		WireName: "allowed_issuance_modes",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_AllowedIssuanceModesFields,
+	},
+	"AllowedKeyTypes": ubx.FieldSpec{
+		WireName: "allowed_key_types",
+		Kind:     "list",
+		Fields:   CaPool_IssuancePolicy_AllowedKeyTypesFields,
+	},
+	"BackdateDuration": ubx.FieldSpec{WireName: "backdate_duration"},
+	"BaselineValues": ubx.FieldSpec{
+		WireName: "baseline_values",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_BaselineValuesFields,
+	},
+	"IdentityConstraints": ubx.FieldSpec{
+		WireName: "identity_constraints",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_IdentityConstraintsFields,
+	},
+	"MaximumLifetime": ubx.FieldSpec{WireName: "maximum_lifetime"},
+	"PassthroughExtensions": ubx.FieldSpec{
+		WireName: "passthrough_extensions",
+		Kind:     "object",
+		Fields:   CaPool_IssuancePolicy_PassthroughExtensionsFields,
+	},
+}
 
 var CaPool_PublishingOptionsFields = ubx.FieldMap{
-		"EncodingFormat": ubx.FieldSpec{WireName: "encoding_format"},
-		"PublishCaCert": ubx.FieldSpec{WireName: "publish_ca_cert"},
-		"PublishCrl": ubx.FieldSpec{WireName: "publish_crl"},
-	}
+	"EncodingFormat": ubx.FieldSpec{WireName: "encoding_format"},
+	"PublishCaCert":  ubx.FieldSpec{WireName: "publish_ca_cert"},
+	"PublishCrl":     ubx.FieldSpec{WireName: "publish_crl"},
+}
 
 type CaPoolConfig struct {
 	// The configuration used for encrypting data at rest.
@@ -410,20 +410,20 @@ var CaPool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: CaPool_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   CaPool_EncryptionSpecFields,
 		},
 		"IssuancePolicy": ubx.FieldSpec{
 			WireName: "issuance_policy",
-			Kind: "object",
-			Fields: CaPool_IssuancePolicyFields,
+			Kind:     "object",
+			Fields:   CaPool_IssuancePolicyFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PublishingOptions": ubx.FieldSpec{
 			WireName: "publishing_options",
-			Kind: "object",
-			Fields: CaPool_PublishingOptionsFields,
+			Kind:     "object",
+			Fields:   CaPool_PublishingOptionsFields,
 		},
 		"Tier": ubx.FieldSpec{WireName: "tier"},
 	},

@@ -32,8 +32,6 @@ const MetadataFeed_ScopeFields: FieldMap = {
 };
 
 export interface MetadataFeedConfig {
-  /** Output only. The time when the feed was created. */
-  createTime?: string | Computed<string>;
   /** Filters defines the type of changes that you want to listen to. You can have multiple entry type filters and multiple aspect type filters. All of the entry type filters are OR'ed together. All of the aspect type filters are OR'ed together. All of the entry type filters and aspect type filters are AND'ed together. */
   filters?: MetadataFeed_Filters | Computed<MetadataFeed_Filters>;
   /** Optional. User-defined labels. */
@@ -44,10 +42,6 @@ export interface MetadataFeedConfig {
   pubsubTopic?: string | Computed<string>;
   /** Scope defines the scope of the metadata feed. Scopes are exclusive. Only one of the scopes can be specified. */
   scope?: MetadataFeed_Scope | Computed<MetadataFeed_Scope>;
-  /** Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the feed was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MetadataFeedAttrs {
@@ -72,7 +66,6 @@ export interface MetadataFeedAttrs {
 export const MetadataFeed: ResourceBinding<MetadataFeedConfig, MetadataFeedAttrs> = {
   wireType: "google_dataplex_metadata_feed",
   fields: {
-    createTime: "create_time",
     filters: {
       wireName: "filters",
       kind: "object",
@@ -86,7 +79,5 @@ export const MetadataFeed: ResourceBinding<MetadataFeedConfig, MetadataFeedAttrs
       kind: "object",
       fields: MetadataFeed_ScopeFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

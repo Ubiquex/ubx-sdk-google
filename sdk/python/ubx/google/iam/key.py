@@ -29,14 +29,10 @@ _Key_KeyDataFields = {
 
 @dataclasses.dataclass
 class KeyConfig:
-    # Output only. The time after which the key will be permanently deleted and cannot be recovered. Note that the key may get purged before this time if the total limit of keys per provider is exceeded.
-    expire_time: Any = None
     # Represents a public key data along with its format.
     key_data: Any = None
     # Identifier. The resource name of the key. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}/keys/{key_id}`
     name: Any = None
-    # Output only. The state of the key.
-    state: Any = None
     # Required. The purpose of the key.
     use: Any = None
 
@@ -56,14 +52,12 @@ class KeyAttrs:
 Key = ubx.ResourceBinding(
     wire_type="google_iam_key",
     fields={
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "key_data": ubx.FieldSpec(
             wire_name="key_data",
             kind="object",
             fields=_Key_KeyDataFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "use": ubx.FieldSpec(wire_name="use"),
     },
 )

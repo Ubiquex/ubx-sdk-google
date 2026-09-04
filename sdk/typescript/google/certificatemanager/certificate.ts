@@ -146,17 +146,9 @@ const Certificate_SelfManagedFields: FieldMap = {
   pemPrivateKey: "pem_private_key",
 };
 
-const Certificate_UsedByFields: FieldMap = {
-  name: "name",
-};
-
 export interface CertificateConfig {
-  /** Output only. The creation timestamp of a Certificate. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a certificate. */
   description?: string | Computed<string>;
-  /** Output only. The expiry timestamp of a Certificate. */
-  expireTime?: string | Computed<string>;
   /** Optional. Set of labels associated with a Certificate. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Configuration and state of a Managed Certificate. Certificate Manager provisions and renews Managed Certificates automatically, for as long as it's authorized to do so. */
@@ -165,20 +157,12 @@ export interface CertificateConfig {
   managedIdentity?: Certificate_ManagedIdentity | Computed<Certificate_ManagedIdentity>;
   /** Identifier. A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/* /locations/* /certificates/*`. */
   name?: string | Computed<string>;
-  /** Output only. The PEM-encoded certificate chain. */
-  pemCertificate?: string | Computed<string>;
-  /** Output only. The list of Subject Alternative Names of dnsName type defined in the certificate (see RFC 5280 4.2.1.6). Managed certificates that haven't been provisioned yet have this field populated with a value of the managed.domains field. */
-  sanDnsnames?: string[] | Computed<string[]>;
   /** Optional. Immutable. The scope of the certificate. */
   scope?: string | Computed<string>;
   /** Certificate data for a SelfManaged Certificate. SelfManaged Certificates are uploaded by the user. Updating such certificates before they expire remains the user's responsibility. */
   selfManaged?: Certificate_SelfManaged | Computed<Certificate_SelfManaged>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The last update timestamp of a Certificate. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The list of resources that use this Certificate. */
-  usedBy?: Certificate_UsedBy[] | Computed<Certificate_UsedBy[]>;
 }
 
 export interface CertificateAttrs {
@@ -215,9 +199,7 @@ export interface CertificateAttrs {
 export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> = {
   wireType: "google_certificatemanager_certificate",
   fields: {
-    createTime: "create_time",
     description: "description",
-    expireTime: "expire_time",
     labels: "labels",
     managed: {
       wireName: "managed",
@@ -230,8 +212,6 @@ export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> =
       fields: Certificate_ManagedIdentityFields,
     },
     name: "name",
-    pemCertificate: "pem_certificate",
-    sanDnsnames: "san_dnsnames",
     scope: "scope",
     selfManaged: {
       wireName: "self_managed",
@@ -239,11 +219,5 @@ export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> =
       fields: Certificate_SelfManagedFields,
     },
     tags: "tags",
-    updateTime: "update_time",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: Certificate_UsedByFields,
-    },
   },
 };

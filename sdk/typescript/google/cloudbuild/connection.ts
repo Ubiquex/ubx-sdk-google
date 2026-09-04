@@ -177,8 +177,6 @@ export interface ConnectionConfig {
   bitbucketCloudConfig?: Connection_BitbucketCloudConfig | Computed<Connection_BitbucketCloudConfig>;
   /** Configuration for connections to Bitbucket Data Center. */
   bitbucketDataCenterConfig?: Connection_BitbucketDataCenterConfig | Computed<Connection_BitbucketDataCenterConfig>;
-  /** Output only. Server assigned timestamp for when the connection was created. */
-  createTime?: string | Computed<string>;
   /** Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. */
   disabled?: boolean | Computed<boolean>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -193,10 +191,6 @@ export interface ConnectionConfig {
   installationState?: Connection_InstallationState | Computed<Connection_InstallationState>;
   /** Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`. */
   name?: string | Computed<string>;
-  /** Output only. Set to true when the connection is being set up or updated in the background. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Server assigned timestamp for when the connection was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectionAttrs {
@@ -242,7 +236,6 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "object",
       fields: Connection_BitbucketDataCenterConfigFields,
     },
-    createTime: "create_time",
     disabled: "disabled",
     etag: "etag",
     githubConfig: {
@@ -266,7 +259,5 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       fields: Connection_InstallationStateFields,
     },
     name: "name",
-    reconciling: "reconciling",
-    updateTime: "update_time",
   },
 };

@@ -225,8 +225,6 @@ const NotebookExecutionJob_WorkbenchRuntimeFields: FieldMap = {
 };
 
 export interface NotebookExecutionJobConfig {
-  /** Output only. Timestamp when this NotebookExecutionJob was created. */
-  createTime?: string | Computed<string>;
   /** Compute configuration to use for an execution job. */
   customEnvironmentSpec?: NotebookExecutionJob_CustomEnvironmentSpec | Computed<NotebookExecutionJob_CustomEnvironmentSpec>;
   /** The Dataform Repository containing the input notebook. */
@@ -245,14 +243,10 @@ export interface NotebookExecutionJobConfig {
   gcsNotebookSource?: NotebookExecutionJob_GcsNotebookSource | Computed<NotebookExecutionJob_GcsNotebookSource>;
   /** The Cloud Storage location to upload the result to. Format: `gs://bucket-name` */
   gcsOutputUri?: string | Computed<string>;
-  /** Output only. The state of the NotebookExecutionJob. */
-  jobState?: string | Computed<string>;
   /** The name of the kernel to use during notebook execution. If unset, the default kernel is used. */
   kernelName?: string | Computed<string>;
   /** The labels with user-defined metadata to organize NotebookExecutionJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of this NotebookExecutionJob. Format: `projects/{project_id}/locations/{location}/notebookExecutionJobs/{job_id}` */
-  name?: string | Computed<string>;
   /** The NotebookRuntimeTemplate to source compute configuration from. */
   notebookRuntimeTemplateResourceName?: string | Computed<string>;
   /** The Schedule resource name if this job is triggered by one. Format: `projects/{project_id}/locations/{location}/schedules/{schedule_id}` */
@@ -261,8 +255,6 @@ export interface NotebookExecutionJobConfig {
   serviceAccount?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   status?: NotebookExecutionJob_Status | Computed<NotebookExecutionJob_Status>;
-  /** Output only. Timestamp when this NotebookExecutionJob was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Configuration for a Workbench Instances-based environment. */
   workbenchRuntime?: NotebookExecutionJob_WorkbenchRuntime | Computed<NotebookExecutionJob_WorkbenchRuntime>;
 }
@@ -313,7 +305,6 @@ export interface NotebookExecutionJobAttrs {
 export const NotebookExecutionJob: ResourceBinding<NotebookExecutionJobConfig, NotebookExecutionJobAttrs> = {
   wireType: "google_aiplatform_notebook_execution_job",
   fields: {
-    createTime: "create_time",
     customEnvironmentSpec: {
       wireName: "custom_environment_spec",
       kind: "object",
@@ -343,10 +334,8 @@ export const NotebookExecutionJob: ResourceBinding<NotebookExecutionJobConfig, N
       fields: NotebookExecutionJob_GcsNotebookSourceFields,
     },
     gcsOutputUri: "gcs_output_uri",
-    jobState: "job_state",
     kernelName: "kernel_name",
     labels: "labels",
-    name: "name",
     notebookRuntimeTemplateResourceName: "notebook_runtime_template_resource_name",
     scheduleResourceName: "schedule_resource_name",
     serviceAccount: "service_account",
@@ -355,7 +344,6 @@ export const NotebookExecutionJob: ResourceBinding<NotebookExecutionJobConfig, N
       kind: "object",
       fields: NotebookExecutionJob_StatusFields,
     },
-    updateTime: "update_time",
     workbenchRuntime: {
       wireName: "workbench_runtime",
       kind: "object",

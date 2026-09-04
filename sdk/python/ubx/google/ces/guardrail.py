@@ -250,8 +250,6 @@ class GuardrailConfig:
     code_callback: Any = None
     # Guardrail that bans certain content from being used in the conversation.
     content_filter: Any = None
-    # Output only. Timestamp when the guardrail was created.
-    create_time: Any = None
     # Optional. Description of the guardrail.
     description: Any = None
     # Required. Display name of the guardrail.
@@ -268,8 +266,6 @@ class GuardrailConfig:
     model_safety: Any = None
     # Identifier. The unique identifier of the guardrail. Format: `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}`
     name: Any = None
-    # Output only. Timestamp when the guardrail was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class GuardrailAttrs:
@@ -318,7 +314,6 @@ Guardrail = ubx.ResourceBinding(
             kind="object",
             fields=_Guardrail_ContentFilterFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enabled": ubx.FieldSpec(wire_name="enabled"),
@@ -339,6 +334,5 @@ Guardrail = ubx.ResourceBinding(
             fields=_Guardrail_ModelSafetyFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

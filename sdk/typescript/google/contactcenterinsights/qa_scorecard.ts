@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QaScorecardConfig {
-  /** Output only. The time at which this scorecard was created. */
-  createTime?: string | Computed<string>;
   /** A text description explaining the intent of the scorecard. */
   description?: string | Computed<string>;
   /** The user-specified display name of the scorecard. */
@@ -12,10 +10,6 @@ export interface QaScorecardConfig {
   isDefault?: boolean | Computed<boolean>;
   /** Identifier. The scorecard name. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard} */
   name?: string | Computed<string>;
-  /** Output only. The source of the scorecard. */
-  source?: string | Computed<string>;
-  /** Output only. The most recent time at which the scorecard was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface QaScorecardAttrs {
@@ -38,12 +32,9 @@ export interface QaScorecardAttrs {
 export const QaScorecard: ResourceBinding<QaScorecardConfig, QaScorecardAttrs> = {
   wireType: "google_contactcenterinsights_qa_scorecard",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     isDefault: "is_default",
     name: "name",
-    source: "source",
-    updateTime: "update_time",
   },
 };

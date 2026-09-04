@@ -24,14 +24,8 @@ const MulticloudDataTransferConfig_ServicesFields: FieldMap = {
 };
 
 export interface MulticloudDataTransferConfigConfig {
-  /** Output only. Time when the `MulticloudDataTransferConfig` resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of this resource. */
   description?: string | Computed<string>;
-  /** Output only. The number of `Destination` resources in use with the `MulticloudDataTransferConfig` resource. */
-  destinationsActiveCount?: number | Computed<number>;
-  /** Output only. The number of `Destination` resources configured for the `MulticloudDataTransferConfig` resource. */
-  destinationsCount?: number | Computed<number>;
   /** The etag is computed by the server, and might be sent with update and delete requests so that the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
   /** Optional. User-defined labels. */
@@ -40,10 +34,6 @@ export interface MulticloudDataTransferConfigConfig {
   name?: string | Computed<string>;
   /** Optional. Maps services to their current or planned states. Service names are keys, and the associated values describe the state of the service. If a state change is expected, the value is either `ADDING` or `DELETING`, depending on the actions taken. Sample output: "services": { "big-query": { "states": [ { "effectiveTime": "2024-12-12T08:00:00Z" "state": "ADDING", }, ] }, "cloud-storage": { "states": [ { "state": "ACTIVE", } ] } } */
   services?: Record<string, MulticloudDataTransferConfig_Services> | Computed<Record<string, MulticloudDataTransferConfig_Services>>;
-  /** Output only. The Google-generated unique ID for the `MulticloudDataTransferConfig` resource. This value is unique across all `MulticloudDataTransferConfig` resources. If a resource is deleted and another with the same name is created, the new resource is assigned a different and unique ID. */
-  uid?: string | Computed<string>;
-  /** Output only. Time when the `MulticloudDataTransferConfig` resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MulticloudDataTransferConfigAttrs {
@@ -72,10 +62,7 @@ export interface MulticloudDataTransferConfigAttrs {
 export const MulticloudDataTransferConfig: ResourceBinding<MulticloudDataTransferConfigConfig, MulticloudDataTransferConfigAttrs> = {
   wireType: "google_networkconnectivity_multicloud_data_transfer_config",
   fields: {
-    createTime: "create_time",
     description: "description",
-    destinationsActiveCount: "destinations_active_count",
-    destinationsCount: "destinations_count",
     etag: "etag",
     labels: "labels",
     name: "name",
@@ -84,7 +71,5 @@ export const MulticloudDataTransferConfig: ResourceBinding<MulticloudDataTransfe
       kind: "map",
       fields: MulticloudDataTransferConfig_ServicesFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

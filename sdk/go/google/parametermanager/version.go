@@ -9,22 +9,16 @@ type Version_Payload struct {
 }
 
 var Version_PayloadFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+}
 
 type VersionConfig struct {
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Optional. Disabled boolean to determine if a ParameterVersion acts as a metadata only resource (payload is never returned if disabled is true). If true any calls will always default to BASIC view even if the user explicitly passes FULL view as part of the request. A render call on a disabled resource fails with an error. Default value is False.
 	Disabled any
-	// Optional. Output only. [Output only] The resource name of the KMS key version used to encrypt the ParameterVersion payload. This field is populated only if the Parameter resource has customer managed encryption key (CMEK) configured.
-	KmsKeyVersion any
 	// Identifier. [Output only] The resource name of the ParameterVersion in the format `projects/*/locations/*/parameters/*/versions/*`.
 	Name any
 	// Message for storing a ParameterVersion resource's payload data
 	Payload any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 }
 
 type VersionAttrs struct {
@@ -45,15 +39,12 @@ type VersionAttrs struct {
 var Version = ubx.ResourceBinding{
 	WireType: "google_parametermanager_version",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Payload": ubx.FieldSpec{
 			WireName: "payload",
-			Kind: "object",
-			Fields: Version_PayloadFields,
+			Kind:     "object",
+			Fields:   Version_PayloadFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -4,18 +4,12 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface RepositoryConfig {
   /** Optional. Allows clients to store small amounts of arbitrary data. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Server assigned timestamp for when the connection was created. */
-  createTime?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
   /** Immutable. Resource name of the repository, in the format `projects/* /locations/* /connections/* /repositories/*`. */
   name?: string | Computed<string>;
   /** Required. Git Clone HTTPS URI. */
   remoteUri?: string | Computed<string>;
-  /** Output only. Server assigned timestamp for when the connection was updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. External ID of the webhook created for the repository. */
-  webhookId?: string | Computed<string>;
 }
 
 export interface RepositoryAttrs {
@@ -39,11 +33,8 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
   wireType: "google_cloudbuild_repository",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     etag: "etag",
     name: "name",
     remoteUri: "remote_uri",
-    updateTime: "update_time",
-    webhookId: "webhook_id",
   },
 };

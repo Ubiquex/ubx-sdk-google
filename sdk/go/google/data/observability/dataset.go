@@ -16,7 +16,7 @@ type DatasetAttrs struct {
 	Description any
 	// Optional. User friendly display name.
 	DisplayName any
-	Name any
+	Name        any
 	// Output only. Timestamp when the dataset in soft-deleted state is purged.
 	PurgeTime any
 }

@@ -27,23 +27,23 @@ type IdentityMappingStore_CmekConfig struct {
 }
 
 var IdentityMappingStore_CmekConfig_SingleRegionKeysFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var IdentityMappingStore_CmekConfigFields = ubx.FieldMap{
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NotebooklmState": ubx.FieldSpec{WireName: "notebooklm_state"},
-		"SingleRegionKeys": ubx.FieldSpec{
-			WireName: "single_region_keys",
-			Kind: "list",
-			Fields: IdentityMappingStore_CmekConfig_SingleRegionKeysFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"IsDefault":                   ubx.FieldSpec{WireName: "is_default"},
+	"KmsKey":                      ubx.FieldSpec{WireName: "kms_key"},
+	"KmsKeyVersion":               ubx.FieldSpec{WireName: "kms_key_version"},
+	"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
+	"Name":                        ubx.FieldSpec{WireName: "name"},
+	"NotebooklmState":             ubx.FieldSpec{WireName: "notebooklm_state"},
+	"SingleRegionKeys": ubx.FieldSpec{
+		WireName: "single_region_keys",
+		Kind:     "list",
+		Fields:   IdentityMappingStore_CmekConfig_SingleRegionKeysFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type IdentityMappingStoreConfig struct {
 	// Configurations used to enable CMEK data encryption with Cloud KMS keys.
@@ -68,10 +68,10 @@ var IdentityMappingStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: IdentityMappingStore_CmekConfigFields,
+			Kind:     "object",
+			Fields:   IdentityMappingStore_CmekConfigFields,
 		},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 	},
 }

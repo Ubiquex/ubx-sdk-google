@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionHealthCheckServiceConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthCheckService. An up-to-date fingerprint must be provided in order to patch/update the HealthCheckService; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthCheckService. */
@@ -12,20 +10,12 @@ export interface RegionHealthCheckServiceConfig {
   healthChecks?: string[] | Computed<string[]>;
   /** Optional. Policy for how the results from multiple health checks for the same endpoint are aggregated. Defaults to NO_AGGREGATION if unspecified. - NO_AGGREGATION. An EndpointHealth message is returned for each pair in the health check service. - AND. If any health check of an endpoint reportsUNHEALTHY, then UNHEALTHY is theHealthState of the endpoint. If all health checks reportHEALTHY, the HealthState of the endpoint isHEALTHY. . This is only allowed with regional HealthCheckService. */
   healthStatusAggregationPolicy?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services. */
-  kind?: string | Computed<string>;
   /** Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regionalHealthCheckService, NEGs must be in zones in the region of the HealthCheckService. For globalHealthCheckServices, the NetworkEndpointGroups must be global INTERNET_IP_PORT. */
   networkEndpointGroups?: string[] | Computed<string[]>;
   /** A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regionalHealthCheckService,NotificationEndpoint must be regional and in the same region. For global HealthCheckService,NotificationEndpoint must be global. */
   notificationEndpoints?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] URL of the region where the health check service resides. This field is not applicable to global health check services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface RegionHealthCheckServiceAttrs {
@@ -58,17 +48,12 @@ export interface RegionHealthCheckServiceAttrs {
 export const RegionHealthCheckService: ResourceBinding<RegionHealthCheckServiceConfig, RegionHealthCheckServiceAttrs> = {
   wireType: "google_compute_region_health_check_service",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     fingerprint: "fingerprint",
     healthChecks: "health_checks",
     healthStatusAggregationPolicy: "health_status_aggregation_policy",
-    id: "id",
-    kind: "kind",
     name: "name",
     networkEndpointGroups: "network_endpoint_groups",
     notificationEndpoints: "notification_endpoints",
-    region: "region",
-    selfLink: "self_link",
   },
 };

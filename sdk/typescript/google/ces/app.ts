@@ -592,6 +592,10 @@ const App_ModelSettingsFields: FieldMap = {
   temperature: "temperature",
 };
 
+const App_TimeZoneSettingsFields: FieldMap = {
+  timeZone: "time_zone",
+};
+
 const App_PredefinedVariableDeclarations_SchemaFields: FieldMap = {
   additionalProperties: "additional_properties",
   anyOf: "any_of",
@@ -624,10 +628,6 @@ const App_PredefinedVariableDeclarationsFields: FieldMap = {
   },
 };
 
-const App_TimeZoneSettingsFields: FieldMap = {
-  timeZone: "time_zone",
-};
-
 const App_VpcScSettingsFields: FieldMap = {
   allowedOrigins: "allowed_origins",
 };
@@ -637,22 +637,16 @@ export interface AppConfig {
   audioProcessingConfig?: App_AudioProcessingConfig | Computed<App_AudioProcessingConfig>;
   /** Settings for custom client certificates. */
   clientCertificateSettings?: App_ClientCertificateSettings | Computed<App_ClientCertificateSettings>;
-  /** Output only. Timestamp when the app was created. */
-  createTime?: string | Computed<string>;
   /** Data store related settings for the app. */
   dataStoreSettings?: App_DataStoreSettings | Computed<App_DataStoreSettings>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
   defaultChannelProfile?: App_DefaultChannelProfile | Computed<App_DefaultChannelProfile>;
-  /** Output only. Number of deployments in the app. */
-  deploymentCount?: number | Computed<number>;
   /** Optional. Human-readable description of the app. */
   description?: string | Computed<string>;
   /** Required. Display name of the app. */
   displayName?: string | Computed<string>;
   /** Settings to describe how errors should be handled in the app. */
   errorHandlingSettings?: App_ErrorHandlingSettings | Computed<App_ErrorHandlingSettings>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Threshold settings for metrics in an Evaluation. */
   evaluationMetricsThresholds?: App_EvaluationMetricsThresholds | Computed<App_EvaluationMetricsThresholds>;
   /** Optional. Instructions for all the agents in the app. You can use this instruction to set up a stable identity or personality across all the agents. */
@@ -673,18 +667,12 @@ export interface AppConfig {
   name?: string | Computed<string>;
   /** Optional. Whether the app is pinned in the app list. */
   pinned?: boolean | Computed<boolean>;
-  /** Output only. The declarations of predefined variables for the app. */
-  predefinedVariableDeclarations?: App_PredefinedVariableDeclarations[] | Computed<App_PredefinedVariableDeclarations[]>;
   /** Optional. The root agent is the entry point of the app. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}` */
   rootAgent?: string | Computed<string>;
   /** TimeZone settings of the app. */
   timeZoneSettings?: App_TimeZoneSettings | Computed<App_TimeZoneSettings>;
   /** Optional. The tool execution mode for the app. If not provided, will default to PARALLEL. */
   toolExecutionMode?: string | Computed<string>;
-  /** Output only. Timestamp when the app was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. Misconfigurations or warnings in the app. */
-  validationErrors?: string[] | Computed<string[]>;
   /** Optional. The declarations of the variables. */
   variableDeclarations?: App_PredefinedVariableDeclarations[] | Computed<App_PredefinedVariableDeclarations[]>;
   /** VPC-SC settings for the app. */
@@ -763,7 +751,6 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       kind: "object",
       fields: App_ClientCertificateSettingsFields,
     },
-    createTime: "create_time",
     dataStoreSettings: {
       wireName: "data_store_settings",
       kind: "object",
@@ -774,7 +761,6 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       kind: "object",
       fields: App_DefaultChannelProfileFields,
     },
-    deploymentCount: "deployment_count",
     description: "description",
     displayName: "display_name",
     errorHandlingSettings: {
@@ -782,7 +768,6 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       kind: "object",
       fields: App_ErrorHandlingSettingsFields,
     },
-    etag: "etag",
     evaluationMetricsThresholds: {
       wireName: "evaluation_metrics_thresholds",
       kind: "object",
@@ -809,11 +794,6 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
     },
     name: "name",
     pinned: "pinned",
-    predefinedVariableDeclarations: {
-      wireName: "predefined_variable_declarations",
-      kind: "list",
-      fields: App_PredefinedVariableDeclarationsFields,
-    },
     rootAgent: "root_agent",
     timeZoneSettings: {
       wireName: "time_zone_settings",
@@ -821,8 +801,6 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       fields: App_TimeZoneSettingsFields,
     },
     toolExecutionMode: "tool_execution_mode",
-    updateTime: "update_time",
-    validationErrors: "validation_errors",
     variableDeclarations: {
       wireName: "variable_declarations",
       kind: "list",

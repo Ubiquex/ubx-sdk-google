@@ -329,8 +329,6 @@ const V1betaGuestPolicy_RecipesFields: FieldMap = {
 export interface V1betaGuestPolicyConfig {
   /** An assignment represents the group or groups of VM instances that the policy applies to. If an assignment is empty, it applies to all VM instances. Otherwise, the targeted VM instances must meet all the criteria specified. So if both labels and zones are specified, the policy applies to VM instances with those labels and in those zones. */
   assignment?: V1betaGuestPolicy_Assignment | Computed<V1betaGuestPolicy_Assignment>;
-  /** Output only. Time this guest policy was created. */
-  createTime?: string | Computed<string>;
   /** Description of the guest policy. Length of the description is limited to 1024 characters. */
   description?: string | Computed<string>;
   /** The etag for this guest policy. If this is provided on update, it must match the server's etag. */
@@ -343,8 +341,6 @@ export interface V1betaGuestPolicyConfig {
   packages?: V1betaGuestPolicy_Packages[] | Computed<V1betaGuestPolicy_Packages[]>;
   /** A list of Recipes to install on the VM instance. */
   recipes?: V1betaGuestPolicy_Recipes[] | Computed<V1betaGuestPolicy_Recipes[]>;
-  /** Output only. Last time this guest policy was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaGuestPolicyAttrs {
@@ -376,7 +372,6 @@ export const V1betaGuestPolicy: ResourceBinding<V1betaGuestPolicyConfig, V1betaG
       kind: "object",
       fields: V1betaGuestPolicy_AssignmentFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     name: "name",
@@ -395,6 +390,5 @@ export const V1betaGuestPolicy: ResourceBinding<V1betaGuestPolicyConfig, V1betaG
       kind: "list",
       fields: V1betaGuestPolicy_RecipesFields,
     },
-    updateTime: "update_time",
   },
 };

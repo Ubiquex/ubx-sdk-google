@@ -29,49 +29,37 @@ type Datastore_NfsDatastore struct {
 }
 
 var Datastore_NfsDatastore_GoogleFileServiceFields = ubx.FieldMap{
-		"FilestoreInstance": ubx.FieldSpec{WireName: "filestore_instance"},
-		"NetappVolume": ubx.FieldSpec{WireName: "netapp_volume"},
-	}
+	"FilestoreInstance": ubx.FieldSpec{WireName: "filestore_instance"},
+	"NetappVolume":      ubx.FieldSpec{WireName: "netapp_volume"},
+}
 
 var Datastore_NfsDatastore_ThirdPartyFileServiceFields = ubx.FieldMap{
-		"FileShare": ubx.FieldSpec{WireName: "file_share"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Servers": ubx.FieldSpec{WireName: "servers"},
-	}
+	"FileShare": ubx.FieldSpec{WireName: "file_share"},
+	"Network":   ubx.FieldSpec{WireName: "network"},
+	"Servers":   ubx.FieldSpec{WireName: "servers"},
+}
 
 var Datastore_NfsDatastoreFields = ubx.FieldMap{
-		"GoogleFileService": ubx.FieldSpec{
-			WireName: "google_file_service",
-			Kind: "object",
-			Fields: Datastore_NfsDatastore_GoogleFileServiceFields,
-		},
-		"GoogleVmwareFileService": ubx.FieldSpec{WireName: "google_vmware_file_service"},
-		"ThirdPartyFileService": ubx.FieldSpec{
-			WireName: "third_party_file_service",
-			Kind: "object",
-			Fields: Datastore_NfsDatastore_ThirdPartyFileServiceFields,
-		},
-	}
+	"GoogleFileService": ubx.FieldSpec{
+		WireName: "google_file_service",
+		Kind:     "object",
+		Fields:   Datastore_NfsDatastore_GoogleFileServiceFields,
+	},
+	"GoogleVmwareFileService": ubx.FieldSpec{WireName: "google_vmware_file_service"},
+	"ThirdPartyFileService": ubx.FieldSpec{
+		WireName: "third_party_file_service",
+		Kind:     "object",
+		Fields:   Datastore_NfsDatastore_ThirdPartyFileServiceFields,
+	},
+}
 
 type DatastoreConfig struct {
-	// Output only. Clusters to which the datastore is attached.
-	Clusters any
-	// Output only. Creation time of this resource.
-	CreateTime any
 	// Optional. User-provided description for this datastore
 	Description any
 	// Optional. Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request.
 	Etag any
-	// Output only. Identifier. The resource name of this datastore. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/datastores/datastore`
-	Name any
 	// The NFS datastore configuration.
 	NfsDatastore any
-	// Output only. The state of the Datastore.
-	State any
-	// Output only. System-generated unique identifier for the resource.
-	Uid any
-	// Output only. Last update time of this resource.
-	UpdateTime any
 }
 
 type DatastoreAttrs struct {
@@ -98,18 +86,12 @@ type DatastoreAttrs struct {
 var Datastore = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_datastore",
 	Fields: ubx.FieldMap{
-		"Clusters": ubx.FieldSpec{WireName: "clusters"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"NfsDatastore": ubx.FieldSpec{
 			WireName: "nfs_datastore",
-			Kind: "object",
-			Fields: Datastore_NfsDatastoreFields,
+			Kind:     "object",
+			Fields:   Datastore_NfsDatastoreFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -89,8 +89,6 @@ const V1alphaSkill_InitialRevisionFields: FieldMap = {
 };
 
 export interface V1alphaSkillConfig {
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. The full resource name of the revision currently served by default (floating track). Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}` */
   defaultRevision?: string | Computed<string>;
   /** Optional. Brief summary describing the capabilities of the skill. Maximum length is 2048 characters. */
@@ -105,18 +103,10 @@ export interface V1alphaSkillConfig {
   name?: string | Computed<string>;
   /** Optional. The publisher resource associated with this skill. Format: `projects/{project}/locations/{location}/publishers/{publisher}` The publisher dictates the allowed namespace prefixes for the skill's name and logical `skill_id` (e.g., Publisher `google` authorizes the `google-*` prefix). */
   publisher?: string | Computed<string>;
-  /** Output only. A stable, globally unique logical identifier for the skill. It is securely constructed by the backend by combining the associated `publisher`'s verified namespace and the skill's resource ID to enforce strict ownership. For example, the prefix `google-` is reserved exclusively for first-party Google publishers to prevent namespace squatting. Example: `urn:skill:google-workspace:create-docs` */
-  skillId?: string | Computed<string>;
-  /** Output only. The system-managed state of the skill. */
-  state?: string | Computed<string>;
   /** Required. User-managed target state of the skill. */
   targetState?: string | Computed<string>;
   /** Required. Structural deployment type (SIMPLE leaf vs COMPOSITE bundle). */
   type?: string | Computed<string>;
-  /** Output only. Universally unique identifier (UUID4) for the logical container. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaSkillAttrs {
@@ -153,7 +143,6 @@ export interface V1alphaSkillAttrs {
 export const V1alphaSkill: ResourceBinding<V1alphaSkillConfig, V1alphaSkillAttrs> = {
   wireType: "google_agentregistry_v1alpha_skill",
   fields: {
-    createTime: "create_time",
     defaultRevision: "default_revision",
     description: "description",
     displayName: "display_name",
@@ -169,11 +158,7 @@ export const V1alphaSkill: ResourceBinding<V1alphaSkillConfig, V1alphaSkillAttrs
     },
     name: "name",
     publisher: "publisher",
-    skillId: "skill_id",
-    state: "state",
     targetState: "target_state",
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -46,22 +46,12 @@ class V1betaTargetSiteConfig:
     exact_match: Any = None
     # Site search indexing failure reasons.
     failure_reason: Any = None
-    # Output only. This is system-generated based on the provided_uri_pattern.
-    generated_uri_pattern: Any = None
-    # Output only. Indexing status.
-    indexing_status: Any = None
-    # Output only. The fully qualified resource name of the target site. `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/targetSites/{target_site}` The `target_site_id` is system-generated.
-    name: Any = None
     # Required. Input only. The user provided URI pattern from which the `generated_uri_pattern` is generated.
     provided_uri_pattern: Any = None
-    # Output only. Root domain of the provided_uri_pattern.
-    root_domain_uri: Any = None
     # Verification information for target sites in advanced site search.
     site_verification_info: Any = None
     # The type of the target site, e.g., whether the site is to be included or excluded.
     type: Any = None
-    # Output only. The target site's last updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaTargetSiteAttrs:
@@ -95,17 +85,12 @@ V1betaTargetSite = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaTargetSite_FailureReasonFields,
         ),
-        "generated_uri_pattern": ubx.FieldSpec(wire_name="generated_uri_pattern"),
-        "indexing_status": ubx.FieldSpec(wire_name="indexing_status"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "provided_uri_pattern": ubx.FieldSpec(wire_name="provided_uri_pattern"),
-        "root_domain_uri": ubx.FieldSpec(wire_name="root_domain_uri"),
         "site_verification_info": ubx.FieldSpec(
             wire_name="site_verification_info",
             kind="object",
             fields=_V1betaTargetSite_SiteVerificationInfoFields,
         ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -2,11 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules {
-  /** A list of HTTP status codes that this error response rule matches. When a backend returns one of these response codes, the custom error response is used. For example, "404" or "500". (AI-inferred) */
   matchResponseCodes?: string[] | Computed<string[]>;
-  /** The HTTP status code that the URL Map should return to the client when the error occurs. The value must be between 100 and 599. If not specified, the original error code is returned. (AI-inferred) */
   overrideResponseCode?: number | Computed<number>;
-  /** The path to the custom error page for this error response rule. This is typically a relative URL path (e.g., '/custom-error.html') that serves the error response from the backend or a static content bucket. (AI-inferred) */
   path?: string | Computed<string>;
 }
 
@@ -42,9 +39,7 @@ export interface RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl {
 }
 
 export interface RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy {
-  /** HTTP status code for which the negative caching policy applies. (AI-inferred) */
   code?: number | Computed<number>;
-  /** The duration for which a negative cache entry is retained. This is a Duration object containing 'seconds' and 'nanos' fields. (AI-inferred) */
   ttl?: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl | Computed<RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl>;
 }
 
@@ -146,31 +141,21 @@ export interface RegionUrlMap_DefaultRouteAction_UrlRewrite {
 }
 
 export interface RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd {
-  /** The name of the HTTP header to add to the request. Must be a valid header name, typically containing only letters, digits, and hyphens (e.g., 'X-Forwarded-For'). (AI-inferred) */
   headerName?: string | Computed<string>;
-  /** The value of the request header to add. This value is sent to the backend service along with the header name. (AI-inferred) */
   headerValue?: string | Computed<string>;
-  /** If true, the header value replaces an existing header with the same name. If false, the header is added as an additional header. (AI-inferred) */
   replace?: boolean | Computed<boolean>;
 }
 
 export interface RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction {
-  /** The list of headers to be added to the request before it is forwarded to the backend service for this weighted backend service configuration. (AI-inferred) */
   requestHeadersToAdd?: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd[] | Computed<RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd[]>;
-  /** A list of HTTP request header names to remove from the request before forwarding to the backend service. (AI-inferred) */
   requestHeadersToRemove?: string[] | Computed<string[]>;
-  /** A list of response headers to add, with each item specifying a header name and value. These headers are added to HTTP responses sent to the client when the request is served by this weighted backend service. (AI-inferred) */
   responseHeadersToAdd?: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd[] | Computed<RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd[]>;
-  /** Specifies a list of response header names to remove before sending the response back to the client. (AI-inferred) */
   responseHeadersToRemove?: string[] | Computed<string[]>;
 }
 
 export interface RegionUrlMap_DefaultRouteAction_WeightedBackendServices {
-  /** The name of the backend service that receives traffic for this weighted backend service entry. (AI-inferred) */
   backendService?: string | Computed<string>;
-  /** Defines the header modifications to apply to requests and responses for the corresponding weighted backend service in the region URL map. (AI-inferred) */
   headerAction?: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction | Computed<RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction>;
-  /** Specifies the relative weight for this backend service. Traffic is distributed proportionally to the weights of all backend services in the weighted_backend_services list. (AI-inferred) */
   weight?: number | Computed<number>;
 }
 
@@ -212,147 +197,92 @@ export interface RegionUrlMap_DefaultUrlRedirect {
 
 export interface RegionUrlMap_HostRules {
   description?: string | Computed<string>;
-  /** The list of host patterns to match. The request's Host header must match one of these patterns (e.g., 'example.com' or '*.example.com') for this host rule to apply. (AI-inferred) */
   hosts?: string[] | Computed<string[]>;
-  /** The name of the path matcher to use for this host rule. This must match the name of a path matcher defined in the region URL map's path_matchers list. (AI-inferred) */
   pathMatcher?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_PathRules {
-  /** The custom error response policy for this path rule. It defines how to customize responses for specific HTTP error codes, such as the error page content and response code to serve. (AI-inferred) */
   customErrorResponsePolicy?: RegionUrlMap_DefaultCustomErrorResponsePolicy | Computed<RegionUrlMap_DefaultCustomErrorResponsePolicy>;
-  /** List of path patterns to match against the incoming request path. Each path can contain a single trailing * wildcard. If the request path matches any of these patterns, the specified route action is applied. (AI-inferred) */
   paths?: string[] | Computed<string[]>;
-  /** Specifies the route action to take for requests that match this path rule, such as forwarding to a backend service, configuring weighted backend services, URL rewrite, or setting timeouts. (AI-inferred) */
   routeAction?: RegionUrlMap_DefaultRouteAction | Computed<RegionUrlMap_DefaultRouteAction>;
-  /** The backend service or backend bucket to use when the path matches this rule. Specify the self_link or name of a regional backend service or backend bucket. (AI-inferred) */
   service?: string | Computed<string>;
-  /** Specifies a redirect for requests that match this path rule. When set, matched requests are redirected according to the configured redirect behavior instead of being forwarded to a backend service. (AI-inferred) */
   urlRedirect?: RegionUrlMap_DefaultUrlRedirect | Computed<RegionUrlMap_DefaultUrlRedirect>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch {
-  /** The inclusive end of the integer range used to match a header value. The header value must be less than or equal to this number to match. (AI-inferred) */
   rangeEnd?: string | Computed<string>;
-  /** The start of the range (inclusive) to match for the header value. (AI-inferred) */
   rangeStart?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches {
-  /** Specifies the exact header value that must match for the request to satisfy the match condition. (AI-inferred) */
   exactMatch?: string | Computed<string>;
-  /** The name of the HTTP header to match. (AI-inferred) */
   headerName?: string | Computed<string>;
-  /** If set to true, the match condition is inverted, meaning the request matches when the header value does NOT equal the specified value. For example, with invert_match true and a specified value of 'foo', the match succeeds only if the header value is not 'foo'. (AI-inferred) */
   invertMatch?: boolean | Computed<boolean>;
-  /** Specifies a prefix match for the header value. The header value must start with this prefix. (AI-inferred) */
   prefixMatch?: string | Computed<string>;
-  /** When set to true, the match is successful only if the header is present. This is an alternative to using exact_match, prefix_match, suffix_match, and regex_match. (AI-inferred) */
   presentMatch?: boolean | Computed<boolean>;
-  /** Defines an inclusive numeric range that the header value must fall within to match. The object contains integer fields rangeStart and rangeEnd. (AI-inferred) */
   rangeMatch?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch>;
-  /** The regular expression pattern that the value of the header must match for the match rule to apply. It is used to match the header value against a regular expression, as an alternative to exact matching. (AI-inferred) */
   regexMatch?: string | Computed<string>;
-  /** The suffix that the header value must end with for the match to be considered successful. The match is case-sensitive. (AI-inferred) */
   suffixMatch?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels {
-  /** The key of the metadata filter label. This specifies the label name to match against when filtering requests. For example, in a filter label 'env=prod', the name is 'env'. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the metadata filter label. This value is matched against the corresponding metadata header value (e.g., x-goog-meta- prefixed header) for the request, and the request is considered matched when the header value equals this value. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters {
-  /** Specifies a list of metadata label filters, each containing a key (name) and value (value), used to match incoming request metadata for this routing rule. (AI-inferred) */
   filterLabels?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels[]>;
-  /** Specifies how the filter labels are combined: MATCH_ALL requires all specified labels to match, MATCH_ANY requires at least one to match, and NOT_SET indicates the field is not configured. (AI-inferred) */
   filterMatchCriteria?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches {
-  /** The exact value to match against the query parameter's value. The match rule is satisfied only when the query parameter value equals this string exactly. (AI-inferred) */
   exactMatch?: string | Computed<string>;
-  /** The name of the query parameter to match. (AI-inferred) */
   name?: string | Computed<string>;
-  /** When set to true, the match requires the query parameter to be present in the request, regardless of its value. (AI-inferred) */
   presentMatch?: boolean | Computed<boolean>;
-  /** The regular expression (RE2 syntax) that the query parameter value must match. This is mutually exclusive with exact_match. (AI-inferred) */
   regexMatch?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules_MatchRules {
-  /** Specifies the full request path that must exactly match for this match rule to apply. This is an exact match on the entire path, as opposed to prefix or regex matching. (AI-inferred) */
   fullPathMatch?: string | Computed<string>;
-  /** Defines a list of HTTP header match conditions. The request must satisfy all specified header conditions for the match rule to be considered a match. (AI-inferred) */
   headerMatches?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches[]>;
-  /** Indicates whether to ignore case when matching the request path. When set to true, the match is case-insensitive. (AI-inferred) */
   ignoreCase?: boolean | Computed<boolean>;
-  /** A list of metadata filters that requests must match. Each filter specifies a list of labels and a match criterion (MATCH_ALL or MATCH_ANY) to determine whether all or any labels must match. (AI-inferred) */
   metadataFilters?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters[]>;
-  /** Specifies a path template to match against the request path. The template can include variables in curly braces (e.g., /users/{id}) that match any value in that segment, enabling flexible path-based routing. (AI-inferred) */
   pathTemplateMatch?: string | Computed<string>;
-  /** Specifies the prefix of the request path to match. The path must begin with this prefix, and the match is case-sensitive. (AI-inferred) */
   prefixMatch?: string | Computed<string>;
-  /** A list of query parameter match criteria for this match rule. Each entry specifies a query parameter name and value to match, with an optional exactMatch flag to control whether the match is exact or uses regular expressions. (AI-inferred) */
   queryParameterMatches?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches[]>;
-  /** A regular expression that the entire request path must match. This is used to determine if the route rule applies. (AI-inferred) */
   regexMatch?: string | Computed<string>;
 }
 
 export interface RegionUrlMap_PathMatchers_RouteRules {
-  /** The custom_error_response_policy block configures custom error responses for this route rule, allowing you to define custom error pages or redirects for specific HTTP error codes returned by the load balancer. (AI-inferred) */
   customErrorResponsePolicy?: RegionUrlMap_DefaultCustomErrorResponsePolicy | Computed<RegionUrlMap_DefaultCustomErrorResponsePolicy>;
-  /** An optional, human-readable description of this route rule. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Defines the header actions for this route rule, including adding and removing request and response headers. (AI-inferred) */
   headerAction?: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction | Computed<RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction>;
-  /** List of match rules that define the conditions under which incoming requests are matched to this route rule. Each match rule can specify path matching criteria (such as full path, prefix, or regex), header and query parameter matches, and case sensitivity. (AI-inferred) */
   matchRules?: RegionUrlMap_PathMatchers_RouteRules_MatchRules[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules[]>;
-  /** The priority for this route rule, as an integer from 0 to 2147483647. Lower values are evaluated first, and priorities must be unique within the path matcher. (AI-inferred) */
   priority?: number | Computed<number>;
-  /** The action to be performed when a request matches this route rule, which may include URL rewriting, routing to weighted backend services, or other routing policies. (AI-inferred) */
   routeAction?: RegionUrlMap_DefaultRouteAction | Computed<RegionUrlMap_DefaultRouteAction>;
-  /** The full or partial URL (or name) of the backend service to which traffic matching this rule is routed. (AI-inferred) */
   service?: string | Computed<string>;
-  /** A block that defines a URL redirect action for this route rule. When specified, requests matching this rule are redirected to the URL specified by the redirect parameters. If url_redirect is set, neither the service nor the urlRewrite action may be set for the same rule. (AI-inferred) */
   urlRedirect?: RegionUrlMap_DefaultUrlRedirect | Computed<RegionUrlMap_DefaultUrlRedirect>;
 }
 
 export interface RegionUrlMap_PathMatchers {
-  /** Defines the default custom error response policy for this path matcher, controlling how errors from backend services are customized, such as serving a custom error page or redirecting. If this policy is not set, the URL map's default custom error response policy is used. (AI-inferred) */
   defaultCustomErrorResponsePolicy?: RegionUrlMap_DefaultCustomErrorResponsePolicy | Computed<RegionUrlMap_DefaultCustomErrorResponsePolicy>;
-  /** The default route action for the path matcher, applied when no path rule matches the request. (AI-inferred) */
   defaultRouteAction?: RegionUrlMap_DefaultRouteAction | Computed<RegionUrlMap_DefaultRouteAction>;
-  /** The default BackendService that receives traffic for this path matcher when the request path does not match any pathRule. Specify the full or partial URL to a BackendService resource. (AI-inferred) */
   defaultService?: string | Computed<string>;
-  /** Default redirect configuration for requests that don't match any path rules in this path matcher. When set, unmatched requests are redirected according to this object instead of being forwarded to a default service. (AI-inferred) */
   defaultUrlRedirect?: RegionUrlMap_DefaultUrlRedirect | Computed<RegionUrlMap_DefaultUrlRedirect>;
-  /** An optional description of the path matcher. (AI-inferred) */
   description?: string | Computed<string>;
-  /** Configures the request header modifications (additions or removals) applied to requests that match this path matcher, before they are forwarded to the backend service. (AI-inferred) */
   headerAction?: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction | Computed<RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction>;
-  /** The name of the path matcher. (AI-inferred) */
   name?: string | Computed<string>;
-  /** Path rules within a path matcher. Each rule contains a list of paths and the corresponding service (backend) to which traffic matching those paths should be routed. (AI-inferred) */
   pathRules?: RegionUrlMap_PathMatchers_PathRules[] | Computed<RegionUrlMap_PathMatchers_PathRules[]>;
-  /** List of route rules that define how requests are matched and routed to backend services within the path matcher. Each route rule specifies match criteria and a corresponding service. (AI-inferred) */
   routeRules?: RegionUrlMap_PathMatchers_RouteRules[] | Computed<RegionUrlMap_PathMatchers_RouteRules[]>;
 }
 
 export interface RegionUrlMap_Tests {
-  /** An optional description for a test case in the URL map, used to provide additional context or document the test's purpose. (AI-inferred) */
   description?: string | Computed<string>;
   expectedOutputUrl?: string | Computed<string>;
   expectedRedirectResponseCode?: number | Computed<number>;
-  /** A list of HTTP request headers that must be present for the URL map test to match. Each item in the list is an object with a header name and value. (AI-inferred) */
   headers?: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels[] | Computed<RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels[]>;
-  /** The hostname or host pattern to match in the test request for validating URL map routing rules. (AI-inferred) */
   host?: string | Computed<string>;
-  /** The URL path to be used in the test request. For example, '/path'. (AI-inferred) */
   path?: string | Computed<string>;
-  /** A reference to the backend service that the test expects to handle requests for the specified host and path. (AI-inferred) */
   service?: string | Computed<string>;
 }
 
@@ -761,11 +691,8 @@ const RegionUrlMap_TestsFields: FieldMap = {
 };
 
 export interface RegionUrlMapConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error. */
   defaultCustomErrorResponsePolicy?: RegionUrlMap_DefaultCustomErrorResponsePolicy | Computed<RegionUrlMap_DefaultCustomErrorResponsePolicy>;
-  /** Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred) */
   defaultRouteAction?: RegionUrlMap_DefaultRouteAction | Computed<RegionUrlMap_DefaultRouteAction>;
   /** The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true. */
   defaultService?: string | Computed<string>;
@@ -781,14 +708,10 @@ export interface RegionUrlMapConfig {
   hostRules?: RegionUrlMap_HostRules[] | Computed<RegionUrlMap_HostRules[]>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** The list of named PathMatchers to use against the URL. */
   pathMatchers?: RegionUrlMap_PathMatchers[] | Computed<RegionUrlMap_PathMatchers[]>;
-  /** Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
   /** The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true. */
@@ -800,7 +723,6 @@ export interface RegionUrlMapAttrs {
   creationTimestamp: string;
   /** Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error. */
   defaultCustomErrorResponsePolicy: RegionUrlMap_DefaultCustomErrorResponsePolicy;
-  /** Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred) */
   defaultRouteAction: RegionUrlMap_DefaultRouteAction;
   /** The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true. */
   defaultService: string;
@@ -833,7 +755,6 @@ export interface RegionUrlMapAttrs {
 export const RegionUrlMap: ResourceBinding<RegionUrlMapConfig, RegionUrlMapAttrs> = {
   wireType: "google_compute_region_url_map",
   fields: {
-    creationTimestamp: "creation_timestamp",
     defaultCustomErrorResponsePolicy: {
       wireName: "default_custom_error_response_policy",
       kind: "object",
@@ -863,14 +784,12 @@ export const RegionUrlMap: ResourceBinding<RegionUrlMapConfig, RegionUrlMapAttrs
       fields: RegionUrlMap_HostRulesFields,
     },
     id: "id",
-    kind: "kind",
     name: "name",
     pathMatchers: {
       wireName: "path_matchers",
       kind: "list",
       fields: RegionUrlMap_PathMatchersFields,
     },
-    region: "region",
     selfLink: "self_link",
     tests: {
       wireName: "tests",

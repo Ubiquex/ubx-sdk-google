@@ -97,14 +97,10 @@ class V1betaDocumentConfig:
     acl_info: Any = None
     # Unstructured data linked to this document.
     content: Any = None
-    # Output only. This field is OUTPUT_ONLY. It contains derived data that are not in the original input document.
-    derived_struct_data: Any = None
     # Immutable. The identifier of the document. Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 128 characters.
     id: Any = None
     # Index status of the document.
     index_status: Any = None
-    # Output only. The time when the document was last indexed. If this field is populated, it means the document has been indexed. While documents typically become searchable within seconds of indexing, it can sometimes take up to a few hours. If this field is not populated, it means the document has never been indexed.
-    index_time: Any = None
     # The JSON string representation of the document. It should conform to the registered Schema or an `INVALID_ARGUMENT` error is thrown.
     json_data: Any = None
     # Immutable. The full resource name of the document. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -154,14 +150,12 @@ V1betaDocument = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaDocument_ContentFields,
         ),
-        "derived_struct_data": ubx.FieldSpec(wire_name="derived_struct_data"),
         "id": ubx.FieldSpec(wire_name="id"),
         "index_status": ubx.FieldSpec(
             wire_name="index_status",
             kind="object",
             fields=_V1betaDocument_IndexStatusFields,
         ),
-        "index_time": ubx.FieldSpec(wire_name="index_time"),
         "json_data": ubx.FieldSpec(wire_name="json_data"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent_document_id": ubx.FieldSpec(wire_name="parent_document_id"),

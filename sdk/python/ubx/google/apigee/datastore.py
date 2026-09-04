@@ -29,18 +29,10 @@ _Datastore_DatastoreConfigFields = {
 
 @dataclasses.dataclass
 class DatastoreConfig:
-    # Output only. Datastore create time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
-    create_time: Any = None
     # Configuration detail for datastore
     datastore_config: Any = None
     # Required. Display name in UI
     display_name: Any = None
-    # Output only. Datastore last update time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
-    last_update_time: Any = None
-    # Output only. Organization that the datastore belongs to
-    org: Any = None
-    # Output only. Resource link of Datastore. Example: `/organizations/{org}/analytics/datastores/{uuid}`
-    self: Any = None
     # Destination storage type. Supported types `gcs` or `bigquery`.
     target_type: Any = None
 
@@ -64,16 +56,12 @@ class DatastoreAttrs:
 Datastore = ubx.ResourceBinding(
     wire_type="google_apigee_datastore",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "datastore_config": ubx.FieldSpec(
             wire_name="datastore_config",
             kind="object",
             fields=_Datastore_DatastoreConfigFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "last_update_time": ubx.FieldSpec(wire_name="last_update_time"),
-        "org": ubx.FieldSpec(wire_name="org"),
-        "self": ubx.FieldSpec(wire_name="self"),
         "target_type": ubx.FieldSpec(wire_name="target_type"),
     },
 )

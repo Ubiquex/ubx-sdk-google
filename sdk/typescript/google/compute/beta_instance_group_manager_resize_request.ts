@@ -251,33 +251,17 @@ const BetaInstanceGroupManagerResizeRequest_StatusFields: FieldMap = {
 export interface BetaInstanceGroupManagerResizeRequestConfig {
   /** This field is deprecated, please use resize_by instead. The count of instances to create as part of this resize request. */
   count?: number | Computed<number>;
-  /** Output only. The creation timestamp for this resize request inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
-  /** Output only. A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
   /** The names of instances to be created by this resize request. The number of names specified determines the number of instances to create. The group's target size will be increased by this number. This field cannot be used together with 'resize_by'. */
   instances?: BetaInstanceGroupManagerResizeRequest_Instances[] | Computed<BetaInstanceGroupManagerResizeRequest_Instances[]>;
-  /** Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests. */
-  kind?: string | Computed<string>;
   /** The name of this resize request. The name must be 1-63 characters long, and comply withRFC1035. */
   name?: string | Computed<string>;
-  /** Output only. The URL of a region where the resize request is located. Populated only for regional resize requests. */
-  region?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   requestedRunDuration?: BetaInstanceGroupManagerResizeRequest_RequestedRunDuration | Computed<BetaInstanceGroupManagerResizeRequest_RequestedRunDuration>;
   /** The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'. */
   resizeBy?: number | Computed<number>;
-  /** Output only. The URL for this resize request. The server defines this URL. */
-  selfLink?: string | Computed<string>;
-  /** Output only. Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. Current state of the request. */
-  state?: string | Computed<string>;
   status?: BetaInstanceGroupManagerResizeRequest_Status | Computed<BetaInstanceGroupManagerResizeRequest_Status>;
-  /** Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests. */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaInstanceGroupManagerResizeRequestAttrs {
@@ -316,31 +300,23 @@ export const BetaInstanceGroupManagerResizeRequest: ResourceBinding<BetaInstance
   wireType: "google_compute_beta_instance_group_manager_resize_request",
   fields: {
     count: "count",
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
     instances: {
       wireName: "instances",
       kind: "list",
       fields: BetaInstanceGroupManagerResizeRequest_InstancesFields,
     },
-    kind: "kind",
     name: "name",
-    region: "region",
     requestedRunDuration: {
       wireName: "requested_run_duration",
       kind: "object",
       fields: BetaInstanceGroupManagerResizeRequest_RequestedRunDurationFields,
     },
     resizeBy: "resize_by",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
       fields: BetaInstanceGroupManagerResizeRequest_StatusFields,
     },
-    zone: "zone",
   },
 };

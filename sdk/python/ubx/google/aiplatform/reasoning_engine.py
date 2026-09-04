@@ -955,8 +955,6 @@ _ReasoningEngine_SpecFields = {
 class ReasoningEngineConfig:
     # Configuration for how Agent Engine sub-resources should manage context.
     context_spec: Any = None
-    # Output only. Timestamp when this ReasoningEngine was created.
-    create_time: Any = None
     # Optional. The description of the ReasoningEngine.
     description: Any = None
     # Required. The display name of the ReasoningEngine.
@@ -971,8 +969,6 @@ class ReasoningEngineConfig:
     name: Any = None
     # ReasoningEngine configurations
     spec: Any = None
-    # Output only. Timestamp when this ReasoningEngine was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ReasoningEngineAttrs:
@@ -1005,7 +1001,6 @@ ReasoningEngine = ubx.ResourceBinding(
             kind="object",
             fields=_ReasoningEngine_ContextSpecFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -1021,6 +1016,5 @@ ReasoningEngine = ubx.ResourceBinding(
             kind="object",
             fields=_ReasoningEngine_SpecFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

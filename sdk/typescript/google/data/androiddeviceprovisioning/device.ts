@@ -38,7 +38,6 @@ export interface Device_DeviceMetadata {
 }
 
 export interface DeviceConfig {
-  name: string | Computed<string>;
 }
 
 export interface DeviceAttrs {
@@ -58,6 +57,5 @@ export interface DeviceAttrs {
 export const Device: DataSourceBinding<DeviceConfig, DeviceAttrs> = {
   wireType: "google_androiddeviceprovisioning_device",
   fields: {
-    name: "name",
   },
 };

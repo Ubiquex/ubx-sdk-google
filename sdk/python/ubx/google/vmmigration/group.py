@@ -8,18 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GroupConfig:
-    # Output only. The create time timestamp.
-    create_time: Any = None
     # User-provided description of the group.
     description: Any = None
     # Display name is a user defined name for this group which can be updated.
     display_name: Any = None
     # Immutable. The target type of this group.
     migration_target_type: Any = None
-    # Output only. The Group name.
-    name: Any = None
-    # Output only. The update time timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class GroupAttrs:
@@ -39,11 +33,8 @@ class GroupAttrs:
 Group = ubx.ResourceBinding(
     wire_type="google_vmmigration_group",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "migration_target_type": ubx.FieldSpec(wire_name="migration_target_type"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

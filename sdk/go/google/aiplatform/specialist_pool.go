@@ -8,12 +8,8 @@ type SpecialistPoolConfig struct {
 	DisplayName any
 	// Required. The resource name of the SpecialistPool.
 	Name any
-	// Output only. The resource name of the pending data labeling jobs.
-	PendingDataLabelingJobs any
 	// The email addresses of the managers in the SpecialistPool.
 	SpecialistManagerEmails any
-	// Output only. The number of managers in this SpecialistPool.
-	SpecialistManagersCount any
 	// The email addresses of workers in the SpecialistPool.
 	SpecialistWorkerEmails any
 }
@@ -36,11 +32,9 @@ type SpecialistPoolAttrs struct {
 var SpecialistPool = ubx.ResourceBinding{
 	WireType: "google_aiplatform_specialist_pool",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PendingDataLabelingJobs": ubx.FieldSpec{WireName: "pending_data_labeling_jobs"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"SpecialistManagerEmails": ubx.FieldSpec{WireName: "specialist_manager_emails"},
-		"SpecialistManagersCount": ubx.FieldSpec{WireName: "specialist_managers_count"},
-		"SpecialistWorkerEmails": ubx.FieldSpec{WireName: "specialist_worker_emails"},
+		"SpecialistWorkerEmails":  ubx.FieldSpec{WireName: "specialist_worker_emails"},
 	},
 }

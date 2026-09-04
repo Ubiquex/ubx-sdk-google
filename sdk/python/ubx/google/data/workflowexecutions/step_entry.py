@@ -40,7 +40,6 @@ class StepEntry_VariableData:
 
 @dataclasses.dataclass
 class StepEntryConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -73,7 +72,6 @@ class StepEntryAttrs:
 StepEntry = ubx.DataSourceBinding(
     wire_type="google_workflowexecutions_step_entry",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

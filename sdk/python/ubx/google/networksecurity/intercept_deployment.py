@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InterceptDeploymentConfig:
-    # Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-    create_time: Any = None
     # Optional. User-provided description of the deployment. Used as additional context for the deployment.
     description: Any = None
     # Required. Immutable. The regional forwarding rule that fronts the interceptors, for example: `projects/123456789/regions/us-central1/forwardingRules/my-rule`. See https://google.aip.dev/124.
@@ -20,12 +18,6 @@ class InterceptDeploymentConfig:
     labels: Any = None
     # Immutable. Identifier. The resource name of this deployment, for example: `projects/123456789/locations/us-central1-a/interceptDeployments/my-dep`. See https://google.aip.dev/122 for more details.
     name: Any = None
-    # Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. linking a new association to the parent group). See https://google.aip.dev/128.
-    reconciling: Any = None
-    # Output only. The current state of the deployment. See https://google.aip.dev/216.
-    state: Any = None
-    # Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class InterceptDeploymentAttrs:
@@ -51,14 +43,10 @@ class InterceptDeploymentAttrs:
 InterceptDeployment = ubx.ResourceBinding(
     wire_type="google_networksecurity_intercept_deployment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "forwarding_rule": ubx.FieldSpec(wire_name="forwarding_rule"),
         "intercept_deployment_group": ubx.FieldSpec(wire_name="intercept_deployment_group"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

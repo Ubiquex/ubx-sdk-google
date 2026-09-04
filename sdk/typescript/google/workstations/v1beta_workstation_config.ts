@@ -168,12 +168,6 @@ const V1betaWorkstationConfig_AllowedPortsFields: FieldMap = {
   last: "last",
 };
 
-const V1betaWorkstationConfig_ConditionsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
 const V1betaWorkstationConfig_ContainerFields: FieldMap = {
   args: "args",
   command: "command",
@@ -341,16 +335,8 @@ export interface V1betaWorkstationConfigConfig {
   allowedPorts?: V1betaWorkstationConfig_AllowedPorts[] | Computed<V1betaWorkstationConfig_AllowedPorts[]>;
   /** Optional. Client-specified annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Status conditions describing the workstation configuration's current state. */
-  conditions?: V1betaWorkstationConfig_Conditions[] | Computed<V1betaWorkstationConfig_Conditions[]>;
   /** A Docker container. */
   container?: V1betaWorkstationConfig_Container | Computed<V1betaWorkstationConfig_Container>;
-  /** Output only. Time when this workstation configuration was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Whether this workstation configuration is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the configuration. */
-  degraded?: boolean | Computed<boolean>;
-  /** Output only. Time when this workstation configuration was soft-deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Disables support for plain TCP connections in the workstation. By default the service supports TCP connections through a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain TCP connections, such as SSH. When enabled, all communication must occur over HTTPS or WSS. */
   disableTcpConnections?: boolean | Computed<boolean>;
   /** Optional. Human-readable name for this workstation configuration. */
@@ -385,20 +371,10 @@ export interface V1betaWorkstationConfigConfig {
   persistentDirectories?: V1betaWorkstationConfig_PersistentDirectories[] | Computed<V1betaWorkstationConfig_PersistentDirectories[]>;
   /** Optional. Readiness checks to perform when starting a workstation using this workstation configuration. Mark a workstation as running only after all specified readiness checks return 200 status codes. */
   readinessChecks?: V1betaWorkstationConfig_ReadinessChecks[] | Computed<V1betaWorkstationConfig_ReadinessChecks[]>;
-  /** Output only. Indicates whether this workstation configuration is currently being updated to match its intended state. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. Immutable. Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`. If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created. */
   replicaZones?: string[] | Computed<string[]>;
   /** Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates. */
   runningTimeout?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. A system-assigned unique identifier for this workstation configuration. */
-  uid?: string | Computed<string>;
-  /** Output only. Time when this workstation configuration was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaWorkstationConfigAttrs {
@@ -475,19 +451,11 @@ export const V1betaWorkstationConfig: ResourceBinding<V1betaWorkstationConfigCon
       fields: V1betaWorkstationConfig_AllowedPortsFields,
     },
     annotations: "annotations",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: V1betaWorkstationConfig_ConditionsFields,
-    },
     container: {
       wireName: "container",
       kind: "object",
       fields: V1betaWorkstationConfig_ContainerFields,
     },
-    createTime: "create_time",
-    degraded: "degraded",
-    deleteTime: "delete_time",
     disableTcpConnections: "disable_tcp_connections",
     displayName: "display_name",
     enableAuditAgent: "enable_audit_agent",
@@ -529,12 +497,7 @@ export const V1betaWorkstationConfig: ResourceBinding<V1betaWorkstationConfigCon
       kind: "list",
       fields: V1betaWorkstationConfig_ReadinessChecksFields,
     },
-    reconciling: "reconciling",
     replicaZones: "replica_zones",
     runningTimeout: "running_timeout",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

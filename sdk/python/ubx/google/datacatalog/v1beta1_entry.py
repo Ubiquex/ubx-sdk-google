@@ -177,12 +177,8 @@ class V1beta1EntryConfig:
     display_name: Any = None
     # Describes a Cloud Storage fileset entry.
     gcs_fileset_spec: Any = None
-    # Output only. This field indicates the entry's source system that Data Catalog integrates with, such as BigQuery or Pub/Sub.
-    integrated_system: Any = None
     # The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [full name of the resource](https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty string.
     linked_resource: Any = None
-    # Output only. Identifier. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
-    name: Any = None
     # Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema).
     schema: Any = None
     # Timestamps about this resource according to a particular system.
@@ -247,9 +243,7 @@ V1beta1Entry = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Entry_GcsFilesetSpecFields,
         ),
-        "integrated_system": ubx.FieldSpec(wire_name="integrated_system"),
         "linked_resource": ubx.FieldSpec(wire_name="linked_resource"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "schema": ubx.FieldSpec(
             wire_name="schema",
             kind="object",

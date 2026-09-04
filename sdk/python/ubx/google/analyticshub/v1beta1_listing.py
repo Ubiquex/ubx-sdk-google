@@ -60,8 +60,6 @@ class V1beta1ListingConfig:
     documentation: Any = None
     # Optional. Base64 encoded image representing the listing. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the contents of the field are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
     icon: Any = None
-    # Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`
-    name: Any = None
     # Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
     primary_contact: Any = None
     # Contains details of the listing publisher.
@@ -70,8 +68,6 @@ class V1beta1ListingConfig:
     request_access: Any = None
     # Restricted export config, used to configure restricted export on linked dataset.
     restricted_export_config: Any = None
-    # Output only. Current state of the listing.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1beta1ListingAttrs:
@@ -123,7 +119,6 @@ V1beta1Listing = ubx.ResourceBinding(
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "documentation": ubx.FieldSpec(wire_name="documentation"),
         "icon": ubx.FieldSpec(wire_name="icon"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "primary_contact": ubx.FieldSpec(wire_name="primary_contact"),
         "publisher": ubx.FieldSpec(
             wire_name="publisher",
@@ -136,6 +131,5 @@ V1beta1Listing = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Listing_RestrictedExportConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

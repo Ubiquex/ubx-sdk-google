@@ -73,11 +73,6 @@ class Service_Schemas:
     uid: Any = None
     update_time: Any = None
 
-_Service_Connectors_ClientCacheFields = {
-    "entity_id_included": ubx.FieldSpec(wire_name="entity_id_included"),
-    "strict_validation_enabled": ubx.FieldSpec(wire_name="strict_validation_enabled"),
-}
-
 _Service_Connectors_Source_FilesFields = {
     "content": ubx.FieldSpec(wire_name="content"),
     "path": ubx.FieldSpec(wire_name="path"),
@@ -91,113 +86,18 @@ _Service_Connectors_SourceFields = {
     ),
 }
 
-_Service_ConnectorsFields = {
-    "annotations": ubx.FieldSpec(wire_name="annotations"),
-    "client_cache": ubx.FieldSpec(
-        wire_name="client_cache",
-        kind="object",
-        fields=_Service_Connectors_ClientCacheFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "etag": ubx.FieldSpec(wire_name="etag"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-    "source": ubx.FieldSpec(
-        wire_name="source",
-        kind="object",
-        fields=_Service_Connectors_SourceFields,
-    ),
-    "uid": ubx.FieldSpec(wire_name="uid"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
-_Service_Schemas_Datasources_HttpGraphqlFields = {
-    "timeout": ubx.FieldSpec(wire_name="timeout"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
-}
-
-_Service_Schemas_Datasources_Postgresql_CloudSqlFields = {
-    "edition": ubx.FieldSpec(wire_name="edition"),
-    "instance": ubx.FieldSpec(wire_name="instance"),
-}
-
-_Service_Schemas_Datasources_PostgresqlFields = {
-    "cloud_sql": ubx.FieldSpec(
-        wire_name="cloud_sql",
-        kind="object",
-        fields=_Service_Schemas_Datasources_Postgresql_CloudSqlFields,
-    ),
-    "database": ubx.FieldSpec(wire_name="database"),
-    "ephemeral": ubx.FieldSpec(wire_name="ephemeral"),
-    "schema": ubx.FieldSpec(wire_name="schema"),
-    "schema_migration": ubx.FieldSpec(wire_name="schema_migration"),
-    "schema_validation": ubx.FieldSpec(wire_name="schema_validation"),
-    "unlinked": ubx.FieldSpec(wire_name="unlinked"),
-}
-
-_Service_Schemas_DatasourcesFields = {
-    "http_graphql": ubx.FieldSpec(
-        wire_name="http_graphql",
-        kind="object",
-        fields=_Service_Schemas_Datasources_HttpGraphqlFields,
-    ),
-    "postgresql": ubx.FieldSpec(
-        wire_name="postgresql",
-        kind="object",
-        fields=_Service_Schemas_Datasources_PostgresqlFields,
-    ),
-}
-
-_Service_SchemasFields = {
-    "annotations": ubx.FieldSpec(wire_name="annotations"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "datasources": ubx.FieldSpec(
-        wire_name="datasources",
-        kind="list",
-        fields=_Service_Schemas_DatasourcesFields,
-    ),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "etag": ubx.FieldSpec(wire_name="etag"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-    "source": ubx.FieldSpec(
-        wire_name="source",
-        kind="object",
-        fields=_Service_Connectors_SourceFields,
-    ),
-    "uid": ubx.FieldSpec(wire_name="uid"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 @dataclasses.dataclass
 class ServiceConfig:
     # Optional. Stores small amounts of arbitrary data.
     annotations: Any = None
-    # Output only. The list of connectors in this service.
-    connectors: Any = None
-    # Output only. [Output only] Create time stamp.
-    create_time: Any = None
     # Optional. Mutable human-readable name. 63 character limit.
     display_name: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154)
-    etag: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Identifier. The relative resource name of the Firebase SQL Connect service, in the format: ``` projects/{project}/locations/{location}/services/{service} ``` Note that the service ID is specific to Firebase SQL Connect and does not correspond to any of the instance IDs of the underlying data source connections.
     name: Any = None
-    # Output only. A field that if true, indicates that the system is working update the service.
-    reconciling: Any = None
-    # Output only. The list of schemas in this service.
-    schemas: Any = None
     # Used to represent a set of source files.
     source: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. [Output only] Update time stamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServiceAttrs:
@@ -230,28 +130,13 @@ Service = ubx.ResourceBinding(
     wire_type="google_firebasedataconnect_service",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "connectors": ubx.FieldSpec(
-            wire_name="connectors",
-            kind="list",
-            fields=_Service_ConnectorsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "schemas": ubx.FieldSpec(
-            wire_name="schemas",
-            kind="list",
-            fields=_Service_SchemasFields,
-        ),
         "source": ubx.FieldSpec(
             wire_name="source",
             kind="object",
             fields=_Service_Connectors_SourceFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

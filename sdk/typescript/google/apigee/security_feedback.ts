@@ -14,20 +14,14 @@ const SecurityFeedback_FeedbackContextsFields: FieldMap = {
 export interface SecurityFeedbackConfig {
   /** Optional. Optional text the user can provide for additional, unstructured context. */
   comment?: string | Computed<string>;
-  /** Output only. The time when this specific feedback id was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The display name of the feedback. */
   displayName?: string | Computed<string>;
   /** Required. One or more attribute/value pairs for constraining the feedback. */
   feedbackContexts?: SecurityFeedback_FeedbackContexts[] | Computed<SecurityFeedback_FeedbackContexts[]>;
   /** Required. The type of feedback being submitted. */
   feedbackType?: string | Computed<string>;
-  /** Output only. Identifier. The feedback name is intended to be a system-generated uuid. */
-  name?: string | Computed<string>;
   /** Optional. The reason for the feedback. */
   reason?: string | Computed<string>;
-  /** Output only. The time when this specific feedback id was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SecurityFeedbackAttrs {
@@ -53,7 +47,6 @@ export const SecurityFeedback: ResourceBinding<SecurityFeedbackConfig, SecurityF
   wireType: "google_apigee_security_feedback",
   fields: {
     comment: "comment",
-    createTime: "create_time",
     displayName: "display_name",
     feedbackContexts: {
       wireName: "feedback_contexts",
@@ -61,8 +54,6 @@ export const SecurityFeedback: ResourceBinding<SecurityFeedbackConfig, SecurityF
       fields: SecurityFeedback_FeedbackContextsFields,
     },
     feedbackType: "feedback_type",
-    name: "name",
     reason: "reason",
-    updateTime: "update_time",
   },
 };

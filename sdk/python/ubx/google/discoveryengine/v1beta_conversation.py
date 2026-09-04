@@ -234,14 +234,10 @@ _V1betaConversation_MessagesFields = {
 
 @dataclasses.dataclass
 class V1betaConversationConfig:
-    # Output only. The time the conversation finished.
-    end_time: Any = None
     # Conversation messages.
     messages: Any = None
     # Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/dataStore/*/conversations/*` or `projects/{project}/locations/global/collections/{collection}/engines/*/conversations/*`.
     name: Any = None
-    # Output only. The time the conversation started.
-    start_time: Any = None
     # The state of the Conversation.
     state: Any = None
     # A unique identifier for tracking users.
@@ -265,14 +261,12 @@ class V1betaConversationAttrs:
 V1betaConversation = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1beta_conversation",
     fields={
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "messages": ubx.FieldSpec(
             wire_name="messages",
             kind="list",
             fields=_V1betaConversation_MessagesFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
         "state": ubx.FieldSpec(wire_name="state"),
         "user_pseudo_id": ubx.FieldSpec(wire_name="user_pseudo_id"),
     },

@@ -19,7 +19,7 @@ class Attachment_Creator:
 
 @dataclasses.dataclass
 class AttachmentConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class AttachmentAttrs:
@@ -38,6 +38,5 @@ class AttachmentAttrs:
 Attachment = ubx.DataSourceBinding(
     wire_type="google_cloudsupport_attachment",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -36,7 +36,6 @@ class WireGroup_WireProperties:
 
 @dataclasses.dataclass
 class WireGroup_Wires_Endpoints:
-    # The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred)
     interconnect: Any = None
     vlan_tag: Any = None
 
@@ -79,52 +78,20 @@ _WireGroup_WirePropertiesFields = {
     "fault_response": ubx.FieldSpec(wire_name="fault_response"),
 }
 
-_WireGroup_Wires_EndpointsFields = {
-    "interconnect": ubx.FieldSpec(wire_name="interconnect"),
-    "vlan_tag": ubx.FieldSpec(wire_name="vlan_tag"),
-}
-
-_WireGroup_WiresFields = {
-    "admin_enabled": ubx.FieldSpec(wire_name="admin_enabled"),
-    "endpoints": ubx.FieldSpec(
-        wire_name="endpoints",
-        kind="list",
-        fields=_WireGroup_Wires_EndpointsFields,
-    ),
-    "label": ubx.FieldSpec(wire_name="label"),
-    "wire_properties": ubx.FieldSpec(
-        wire_name="wire_properties",
-        kind="object",
-        fields=_WireGroup_WirePropertiesFields,
-    ),
-}
-
 @dataclasses.dataclass
 class WireGroupConfig:
     # Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
     admin_enabled: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of the wire group.
     description: Any = None
     # A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object.
     endpoints: Any = None
-    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Indicates whether there are wire changes yet to be processed.
-    reconciling: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
     # Topology details for the wire group.
     topology: Any = None
     # The properties of a wire.
     wire_properties: Any = None
-    # Output only. The single/redundant wire(s) managed by the wire group.
-    wires: Any = None
 
 @dataclasses.dataclass
 class WireGroupAttrs:
@@ -157,18 +124,13 @@ WireGroup = ubx.ResourceBinding(
     wire_type="google_compute_wire_group",
     fields={
         "admin_enabled": ubx.FieldSpec(wire_name="admin_enabled"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "endpoints": ubx.FieldSpec(
             wire_name="endpoints",
             kind="map",
             fields=_WireGroup_EndpointsFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "topology": ubx.FieldSpec(
             wire_name="topology",
             kind="object",
@@ -178,11 +140,6 @@ WireGroup = ubx.ResourceBinding(
             wire_name="wire_properties",
             kind="object",
             fields=_WireGroup_WirePropertiesFields,
-        ),
-        "wires": ubx.FieldSpec(
-            wire_name="wires",
-            kind="list",
-            fields=_WireGroup_WiresFields,
         ),
     },
 )

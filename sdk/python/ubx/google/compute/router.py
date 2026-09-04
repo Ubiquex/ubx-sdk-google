@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class Router_Bgp_AdvertisedIpRanges:
     description: Any = None
-    # The IP range in CIDR notation (e.g., 192.168.0.0/16) that the router advertises to BGP peers. (AI-inferred)
     range: Any = None
 
 @dataclasses.dataclass
@@ -29,185 +28,112 @@ class Router_Bgp:
 
 @dataclasses.dataclass
 class Router_BgpPeers_Bfd:
-    # The minimum interval, in milliseconds, between received BFD control packets for this BGP peer. This setting controls how quickly the router detects a peer failure. (AI-inferred)
     min_receive_interval: Any = None
-    # The minimum interval (in milliseconds) between BFD transmissions for this BGP peer. The value must be between 100 and 30000 milliseconds. (AI-inferred)
     min_transmit_interval: Any = None
-    # The number of consecutive BFD control packets that must be missed before BFD declares the peer down. (AI-inferred)
     multiplier: Any = None
-    # The BFD session initialization mode. Valid values are ACTIVE, DISABLED, and PASSIVE. ACTIVE initiates the BFD session, PASSIVE waits for the peer to initiate, and DISABLED disables BFD. (AI-inferred)
     session_initialization_mode: Any = None
 
 @dataclasses.dataclass
 class Router_BgpPeers_CustomLearnedIpRanges:
-    # The IP range in CIDR notation to use as a custom learned IP range for the BGP peer. (AI-inferred)
     range: Any = None
 
 @dataclasses.dataclass
 class Router_BgpPeers:
-    # The route advertisement mode for the BGP peer. Use DEFAULT to advertise the provider's default route set, or CUSTOM to define specific routes via the advertised_ip_ranges field. (AI-inferred)
     advertise_mode: Any = None
-    # Specifies the list of prefix groups to advertise in custom mode. Valid values are 'ALL_SUBNETS', 'ALL_VPC_SUBNETS', and 'ALL_PEER_SUBNETS'. This field can only be populated when advertise_mode is 'CUSTOM'. (AI-inferred)
     advertised_groups: Any = None
-    # A list of custom IP ranges to advertise to the BGP peer. Each object contains a CIDR 'range' (required) and an optional 'description'. (AI-inferred)
     advertised_ip_ranges: Any = None
-    # The priority of routes advertised to this BGP peer. In the case of multiple BGP peers advertising the same route, the route with the lowest priority is preferred. (AI-inferred)
     advertised_route_priority: Any = None
-    # Configures Bidirectional Forwarding Detection (BFD) settings for this BGP peer. (AI-inferred)
     bfd: Any = None
-    # A list of custom learned route IP address ranges for this BGP peer. (AI-inferred)
     custom_learned_ip_ranges: Any = None
-    # User-specified priority for routes learned from this BGP peer. Must be between 0 and 65535 inclusive, defaults to 100. (AI-inferred)
     custom_learned_route_priority: Any = None
-    # Indicates whether the BGP peer is enabled. The allowed values are TRUE and FALSE. (AI-inferred)
     enable: Any = None
-    # Enables IPv4 on the BGP peer. This flag is set to true by default. (AI-inferred)
     enable_ipv4: Any = None
-    # Enables IPv6 for the BGP peer. Set to true to allow the BGP peer to exchange IPv6 routes. (AI-inferred)
     enable_ipv6: Any = None
-    # List of names of Cloud Router route policies to apply to outgoing routes advertised to this BGP peer. (AI-inferred)
     export_policies: Any = None
-    # A list of Cloud Router route policy names that this BGP peer applies to incoming routes. These policies control which routes are accepted from the BGP peer. (AI-inferred)
     import_policies: Any = None
-    # The name of the router interface the BGP peer is associated with. This must match the name of an existing interface on the same Compute Router. (AI-inferred)
     interface_name: Any = None
     ip_address: Any = None
-    # The IPv4 address that this BGP peer uses as the next hop for advertised routes. (AI-inferred)
     ipv4_nexthop_address: Any = None
-    # The IPv6 address used as the next-hop for routes advertised to this BGP peer. If not specified, the default IPv6 next-hop (typically the interface's address) is used. (AI-inferred)
     ipv6_nexthop_address: Any = None
-    # The management type of the BGP peer, which indicates whether the peer is managed by the associated attachment or by the user. Valid values are 'MANAGED_BY_ATTACHMENT' and 'MANAGED_BY_USER'. (AI-inferred)
     management_type: Any = None
-    # The name of the MD5 authentication key to use for this BGP peer. The key must be defined in the router's BGP configuration. (AI-inferred)
     md5_authentication_key_name: Any = None
     name: Any = None
-    # The autonomous system number (ASN) of the BGP peer. Required when configuring a BGP peer on a Compute Router. (AI-inferred)
     peer_asn: Any = None
-    # The IP address of the BGP peer that this router will establish a BGP session with. (AI-inferred)
     peer_ip_address: Any = None
-    # The IPv4 address of the BGP peer, used as the next hop for routes learned from this peer. (AI-inferred)
     peer_ipv4_nexthop_address: Any = None
     peer_ipv6_nexthop_address: Any = None
-    # The URI of the VM instance that is the router appliance for this BGP peer. (AI-inferred)
     router_appliance_instance: Any = None
 
 @dataclasses.dataclass
 class Router_Interfaces:
-    # The IP address and range for the router interface, used for BGP sessions. This can be a single IP address or a CIDR range in the form of 'IP/30'. If not specified, GCP will assign an IP address automatically. (AI-inferred)
     ip_range: Any = None
-    # The IP version used by this interface. Valid values are IPV4 and IPV6. (AI-inferred)
     ip_version: Any = None
-    # The URL of the interconnect attachment to link with this router interface. This is used when the interface is for a VLAN attachment on an Interconnect. (AI-inferred)
     linked_interconnect_attachment: Any = None
-    # The name of the VPN tunnel that this interface is linked to. Use this when the interface is of type 'tunnel'. (AI-inferred)
     linked_vpn_tunnel: Any = None
-    # Indicates who manages this interface: MANAGED_BY_ATTACHMENT means the interface is managed by a VLAN attachment (Cloud Interconnect), while MANAGED_BY_USER means it is configured by the user. (AI-inferred)
     management_type: Any = None
     name: Any = None
-    # The private IP address of the Compute Router interface. (AI-inferred)
     private_ip_address: Any = None
-    # The name of another interface in the same router that serves as the redundancy pair for this interface. When set, this interface is configured as part of a redundant BGP session. (AI-inferred)
     redundant_interface: Any = None
-    # The name or self-link of the subnetwork to which this router interface is attached. This field is used when the interface is associated with a subnetwork, such as for router appliance interfaces. (AI-inferred)
     subnetwork: Any = None
 
 @dataclasses.dataclass
 class Router_Md5AuthenticationKeys:
-    # The shared secret key used for MD5 authentication in the BGP session. This value is provided to the peer to authenticate the router. (AI-inferred)
     key: Any = None
-    # The name of the MD5 authentication key. It uniquely identifies the key within the router's BGP configuration. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Router_Nats_LogConfig:
-    # Whether to enable logging for the NAT gateway. When set to true, logs are generated according to the filter specified in the log_config block. (AI-inferred)
     enable: Any = None
-    # Determines which NAT logs are exported. Valid values: ALL (log all NAT traffic), ERRORS_ONLY (log only failed translations), TRANSLATIONS_ONLY (log successful translations only). (AI-inferred)
     filter: Any = None
 
 @dataclasses.dataclass
 class Router_Nats_Nat64Subnetworks:
-    # The name of the subnetwork to use for NAT64. (AI-inferred)
     name: Any = None
 
 @dataclasses.dataclass
 class Router_Nats_Rules_Action:
-    # The list of IP addresses to use as source NAT IPs for active connections when this NAT rule is applied. (AI-inferred)
     source_nat_active_ips: Any = None
-    # The list of source NAT IP ranges (in CIDR format) to use as the active NAT addresses for packets matching this rule. Required for the action block of a NAT rule. (AI-inferred)
     source_nat_active_ranges: Any = None
-    # List of source NAT IP addresses to be drained. These IPs will not be used for new connections, but existing connections will continue to use them until they are removed or connections terminate. (AI-inferred)
     source_nat_drain_ips: Any = None
-    # A list of source NAT IP ranges to be drained. These ranges are used to gracefully terminate existing connections during a migration or deactivation of NAT IPs. (AI-inferred)
     source_nat_drain_ranges: Any = None
 
 @dataclasses.dataclass
 class Router_Nats_Rules:
-    # The action configuration for this NAT rule, defining how traffic matching the rule's match condition is NATed. It specifies the source NAT IPs (active and drain) to use. (AI-inferred)
     action: Any = None
-    # A user-defined, human-readable description for the NAT rule. (AI-inferred)
     description: Any = None
-    # An expression in Common Expression Language (CEL) that defines which traffic this NAT rule applies to. It can match on packet attributes like source or destination IP, protocol, and ports, e.g., `inIpRange(destination.ip, '203.0.113.0/24')`. (AI-inferred)
     match: Any = None
-    # The unique number assigned to this NAT rule. Rules are evaluated in ascending order, and this number must be unique within the NAT configuration. (AI-inferred)
     rule_number: Any = None
 
 @dataclasses.dataclass
 class Router_Nats_Subnetworks:
-    # The name of the subnetwork to include in the NAT configuration for this router NAT. (AI-inferred)
     name: Any = None
-    # List of the secondary ranges of the subnetwork that are allowed to use NAT. This can be provided only when 'LIST_OF_SECONDARY_IP_RANGES' is used for source_ip_ranges_to_nat. (AI-inferred)
     secondary_ip_range_names: Any = None
-    # List of source IP ranges in the subnetwork that should be NATed. Valid values are 'ALL_IP_RANGES', 'PRIMARY_IP_RANGE', and 'LIST_OF_SECONDARY_IP_RANGES'. If 'LIST_OF_SECONDARY_IP_RANGES' is used, you must also specify `secondary_ip_range_names`. (AI-inferred)
     source_ip_ranges_to_nat: Any = None
 
 @dataclasses.dataclass
 class Router_Nats:
-    # Specifies the network tier for the NAT. Allowed values are FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred)
     auto_network_tier: Any = None
-    # A list of external IP addresses to be drained from the NAT. These IPs will no longer be used for new connections but will continue to serve existing connections until they are closed. (AI-inferred)
     drain_nat_ips: Any = None
-    # The effective TCP TIME_WAIT timeout in seconds for Cloud NAT connections, reflecting the actual value in use (either the configured value or the default). (AI-inferred)
     effective_tcp_time_wait_timeout_sec: Any = None
-    # If set to true, the NAT gateway dynamically allocates ports for each VM from a shared pool instead of using static port allocation. Defaults to false. (AI-inferred)
     enable_dynamic_port_allocation: Any = None
-    # Whether to enable endpoint independent mapping for the NAT gateway. When enabled, the NAT gateway maps each internal IP and port pair to a unique external IP and port, independent of the destination. (AI-inferred)
     enable_endpoint_independent_mapping: Any = None
-    # The list of endpoint types supported by this NAT configuration, controlling which types of network endpoints can use the NAT. (AI-inferred)
     endpoint_types: Any = None
-    # The idle timeout for ICMP connections in seconds. This controls how long an ICMP session is kept alive in the NAT without traffic before being closed. (AI-inferred)
     icmp_idle_timeout_sec: Any = None
-    # Configuration for NAT logging. This block allows enabling or disabling logging for the NAT gateway and specifying a filter to determine which connections are logged. (AI-inferred)
     log_config: Any = None
-    # Maximum number of ports per VM used by the NAT configuration, per subnet. Defaults to 2048, with an allowed range of 64 to 65536. (AI-inferred)
     max_ports_per_vm: Any = None
-    # The minimum number of ports allocated to each VM in the NAT configuration. (AI-inferred)
     min_ports_per_vm: Any = None
-    # The name of the Cloud NAT. This name must be unique within the parent router. (AI-inferred)
     name: Any = None
-    # A list of subnetworks (self-links) to be used for NAT64. NAT64 enables IPv6-only resources to communicate with IPv4-only services by mapping IPv6 addresses to IPv4 addresses. Each listed subnetwork must be configured with an IPv6 address range. (AI-inferred)
     nat64_subnetworks: Any = None
-    # Specifies how NAT IP addresses are allocated. AUTO_ONLY automatically allocates NAT IPs; MANUAL_ONLY requires you to specify them in nat_ips. (AI-inferred)
     nat_ip_allocate_option: Any = None
-    # List of self-links of external IP addresses to be used for NAT. Only valid when nat_ip_allocate_option is set to MANUAL_ONLY; if empty, an automatically allocated IP is used. (AI-inferred)
     nat_ips: Any = None
-    # A list of custom NAT rules. Each rule specifies a rule number, a match expression, and an action (e.g., translation or no translation) to control how traffic is routed through the NAT. (AI-inferred)
     rules: Any = None
-    # Specifies which IP ranges of the subnets are eligible for NAT. Valid values are: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, and LIST_OF_SUBNETWORKS. (AI-inferred)
     source_subnetwork_ip_ranges_to_nat: Any = None
-    # Controls which IPv6 subnetwork IP ranges are eligible for NAT64. Set to ALL_IPV6_SUBNETWORKS to use all IPv6 subnets in the region, or LIST_OF_IPV6_SUBNETWORKS to use only the specific subnets listed in the associated subnetwork configuration. (AI-inferred)
     source_subnetwork_ip_ranges_to_nat64: Any = None
-    # The list of subnetworks that this NAT configuration applies to. Each object specifies a subnetwork and its NAT settings. (AI-inferred)
     subnetworks: Any = None
-    # Timeout in seconds for established TCP connections before they are considered idle and closed. Defaults to 1200 seconds. (AI-inferred)
     tcp_established_idle_timeout_sec: Any = None
-    # Timeout for TCP connections in the TIME_WAIT state, specified in seconds, within the router's NAT configuration. (AI-inferred)
     tcp_time_wait_timeout_sec: Any = None
-    # The timeout in seconds for TCP transitory idle connections. A transitory connection is one that is in the process of being established (e.g., during the TCP handshake); if no traffic is seen within this timeout, the connection is dropped. Defaults to 30 seconds. (AI-inferred)
     tcp_transitory_idle_timeout_sec: Any = None
-    # The type of NAT configuration. Valid values are `PRIVATE` and `PUBLIC`. (AI-inferred)
     type: Any = None
-    # The timeout (in seconds) for UDP connections through the NAT. Defaults to 30 seconds if not specified. (AI-inferred)
     udp_idle_timeout_sec: Any = None
 
 @dataclasses.dataclass
@@ -381,12 +307,9 @@ _Router_ParamsFields = {
 
 @dataclasses.dataclass
 class RouterConfig:
-    # BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred)
     bgp: Any = None
     # BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
     bgp_peers: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
@@ -395,8 +318,6 @@ class RouterConfig:
     id: Any = None
     # Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
     interfaces: Any = None
-    # Output only. [Output Only] Type of resource. Always compute#router for routers.
-    kind: Any = None
     # Keys used for MD5 authentication.
     md5_authentication_keys: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -416,7 +337,6 @@ class RouterConfig:
 
 @dataclasses.dataclass
 class RouterAttrs:
-    # BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred)
     bgp: Any = None
     # BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
     bgp_peers: Any = None
@@ -462,7 +382,6 @@ Router = ubx.ResourceBinding(
             kind="list",
             fields=_Router_BgpPeersFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encrypted_interconnect_router": ubx.FieldSpec(wire_name="encrypted_interconnect_router"),
         "id": ubx.FieldSpec(wire_name="id"),
@@ -471,7 +390,6 @@ Router = ubx.ResourceBinding(
             kind="list",
             fields=_Router_InterfacesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "md5_authentication_keys": ubx.FieldSpec(
             wire_name="md5_authentication_keys",
             kind="list",

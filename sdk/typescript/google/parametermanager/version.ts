@@ -11,18 +11,12 @@ const Version_PayloadFields: FieldMap = {
 };
 
 export interface VersionConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Disabled boolean to determine if a ParameterVersion acts as a metadata only resource (payload is never returned if disabled is true). If true any calls will always default to BASIC view even if the user explicitly passes FULL view as part of the request. A render call on a disabled resource fails with an error. Default value is False. */
   disabled?: boolean | Computed<boolean>;
-  /** Optional. Output only. [Output only] The resource name of the KMS key version used to encrypt the ParameterVersion payload. This field is populated only if the Parameter resource has customer managed encryption key (CMEK) configured. */
-  kmsKeyVersion?: string | Computed<string>;
   /** Identifier. [Output only] The resource name of the ParameterVersion in the format `projects/* /locations/* /parameters/* /versions/*`. */
   name?: string | Computed<string>;
   /** Message for storing a ParameterVersion resource's payload data */
   payload?: Version_Payload | Computed<Version_Payload>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface VersionAttrs {
@@ -43,15 +37,12 @@ export interface VersionAttrs {
 export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
   wireType: "google_parametermanager_version",
   fields: {
-    createTime: "create_time",
     disabled: "disabled",
-    kmsKeyVersion: "kms_key_version",
     name: "name",
     payload: {
       wireName: "payload",
       kind: "object",
       fields: Version_PayloadFields,
     },
-    updateTime: "update_time",
   },
 };

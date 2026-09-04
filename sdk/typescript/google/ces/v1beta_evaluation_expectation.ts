@@ -11,20 +11,14 @@ const V1betaEvaluationExpectation_LlmCriteriaFields: FieldMap = {
 };
 
 export interface V1betaEvaluationExpectationConfig {
-  /** Output only. Timestamp when the evaluation expectation was created. */
-  createTime?: string | Computed<string>;
   /** Required. User-defined display name. Must be unique within the app. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Configuration for LLM-based evaluation criteria. */
   llmCriteria?: V1betaEvaluationExpectation_LlmCriteria | Computed<V1betaEvaluationExpectation_LlmCriteria>;
   /** Identifier. The unique identifier of this evaluation expectation. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationExpectations/{evaluation_expectation}` */
   name?: string | Computed<string>;
   /** Optional. User-defined tags for expectations. Can be used to filter expectations. */
   tags?: string[] | Computed<string[]>;
-  /** Output only. Timestamp when the evaluation expectation was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaEvaluationExpectationAttrs {
@@ -47,9 +41,7 @@ export interface V1betaEvaluationExpectationAttrs {
 export const V1betaEvaluationExpectation: ResourceBinding<V1betaEvaluationExpectationConfig, V1betaEvaluationExpectationAttrs> = {
   wireType: "google_ces_v1beta_evaluation_expectation",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     llmCriteria: {
       wireName: "llm_criteria",
       kind: "object",
@@ -57,6 +49,5 @@ export const V1betaEvaluationExpectation: ResourceBinding<V1betaEvaluationExpect
     },
     name: "name",
     tags: "tags",
-    updateTime: "update_time",
   },
 };

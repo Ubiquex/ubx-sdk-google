@@ -28,8 +28,6 @@ const ApimServiceExtension_NetworkConfigsFields: FieldMap = {
 };
 
 export interface ApimServiceExtensionConfig {
-  /** Output only. The time that this resource was created on the server. */
-  createTime?: string | Computed<string>;
   /** Required. Name of the proxy deployed in the Apigee X instance. */
   extensionProcessor?: string | Computed<string>;
   /** Optional. List of extensions that are part of the service extension. Refer to https://cloud.google.com/service-extensions/docs/quotas#limits for any limits. */
@@ -42,10 +40,6 @@ export interface ApimServiceExtensionConfig {
   network?: string | Computed<string>;
   /** Required. List of network configurations for the APIM service extension. */
   networkConfigs?: ApimServiceExtension_NetworkConfigs[] | Computed<ApimServiceExtension_NetworkConfigs[]>;
-  /** Output only. State of the APIM service extension. Values other than `ACTIVE` mean the resource is not ready to use. */
-  state?: string | Computed<string>;
-  /** Output only. The time that this resource was updated on the server. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ApimServiceExtensionAttrs {
@@ -72,7 +66,6 @@ export interface ApimServiceExtensionAttrs {
 export const ApimServiceExtension: ResourceBinding<ApimServiceExtensionConfig, ApimServiceExtensionAttrs> = {
   wireType: "google_apigee_apim_service_extension",
   fields: {
-    createTime: "create_time",
     extensionProcessor: "extension_processor",
     extensions: {
       wireName: "extensions",
@@ -87,7 +80,5 @@ export const ApimServiceExtension: ResourceBinding<ApimServiceExtensionConfig, A
       kind: "list",
       fields: ApimServiceExtension_NetworkConfigsFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

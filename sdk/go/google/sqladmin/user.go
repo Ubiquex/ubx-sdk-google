@@ -31,26 +31,26 @@ type User_SqlserverUserDetails struct {
 }
 
 var User_PasswordPolicy_StatusFields = ubx.FieldMap{
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"PasswordExpirationTime": ubx.FieldSpec{WireName: "password_expiration_time"},
-	}
+	"Locked":                 ubx.FieldSpec{WireName: "locked"},
+	"PasswordExpirationTime": ubx.FieldSpec{WireName: "password_expiration_time"},
+}
 
 var User_PasswordPolicyFields = ubx.FieldMap{
-		"AllowedFailedAttempts": ubx.FieldSpec{WireName: "allowed_failed_attempts"},
-		"EnableFailedAttemptsCheck": ubx.FieldSpec{WireName: "enable_failed_attempts_check"},
-		"EnablePasswordVerification": ubx.FieldSpec{WireName: "enable_password_verification"},
-		"PasswordExpirationDuration": ubx.FieldSpec{WireName: "password_expiration_duration"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: User_PasswordPolicy_StatusFields,
-		},
-	}
+	"AllowedFailedAttempts":      ubx.FieldSpec{WireName: "allowed_failed_attempts"},
+	"EnableFailedAttemptsCheck":  ubx.FieldSpec{WireName: "enable_failed_attempts_check"},
+	"EnablePasswordVerification": ubx.FieldSpec{WireName: "enable_password_verification"},
+	"PasswordExpirationDuration": ubx.FieldSpec{WireName: "password_expiration_duration"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   User_PasswordPolicy_StatusFields,
+	},
+}
 
 var User_SqlserverUserDetailsFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ServerRoles": ubx.FieldSpec{WireName: "server_roles"},
-	}
+	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+	"ServerRoles": ubx.FieldSpec{WireName: "server_roles"},
+}
 
 type UserConfig struct {
 	// Optional. Role memberships of the user
@@ -121,27 +121,27 @@ type UserAttrs struct {
 var User = ubx.ResourceBinding{
 	WireType: "google_sqladmin_user",
 	Fields: ubx.FieldMap{
-		"DatabaseRoles": ubx.FieldSpec{WireName: "database_roles"},
+		"DatabaseRoles":    ubx.FieldSpec{WireName: "database_roles"},
 		"DualPasswordType": ubx.FieldSpec{WireName: "dual_password_type"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"IamEmail": ubx.FieldSpec{WireName: "iam_email"},
-		"IamStatus": ubx.FieldSpec{WireName: "iam_status"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
+		"Etag":             ubx.FieldSpec{WireName: "etag"},
+		"Host":             ubx.FieldSpec{WireName: "host"},
+		"IamEmail":         ubx.FieldSpec{WireName: "iam_email"},
+		"IamStatus":        ubx.FieldSpec{WireName: "iam_status"},
+		"Instance":         ubx.FieldSpec{WireName: "instance"},
+		"Kind":             ubx.FieldSpec{WireName: "kind"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Password":         ubx.FieldSpec{WireName: "password"},
 		"PasswordPolicy": ubx.FieldSpec{
 			WireName: "password_policy",
-			Kind: "object",
-			Fields: User_PasswordPolicyFields,
+			Kind:     "object",
+			Fields:   User_PasswordPolicyFields,
 		},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":     ubx.FieldSpec{WireName: "project"},
 		"ServerRoles": ubx.FieldSpec{WireName: "server_roles"},
 		"SqlserverUserDetails": ubx.FieldSpec{
 			WireName: "sqlserver_user_details",
-			Kind: "object",
-			Fields: User_SqlserverUserDetailsFields,
+			Kind:     "object",
+			Fields:   User_SqlserverUserDetailsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

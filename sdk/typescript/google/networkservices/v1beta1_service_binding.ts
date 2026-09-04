@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1ServiceBindingConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Set of label tags associated with the ServiceBinding resource. */
@@ -12,10 +10,6 @@ export interface V1beta1ServiceBindingConfig {
   name?: string | Computed<string>;
   /** Optional. The full Service Directory Service name of the format `projects/* /locations/* /namespaces/* /services/*`. This field is for Service Directory integration which will be deprecated soon. */
   service?: string | Computed<string>;
-  /** Output only. The unique identifier of the Service Directory Service against which the ServiceBinding resource is validated. This is populated when the Service Binding resource is used in another resource (like Backend Service). This is of the UUID4 format. This field is for Service Directory integration which will be deprecated soon. */
-  serviceId?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ServiceBindingAttrs {
@@ -38,12 +32,9 @@ export interface V1beta1ServiceBindingAttrs {
 export const V1beta1ServiceBinding: ResourceBinding<V1beta1ServiceBindingConfig, V1beta1ServiceBindingAttrs> = {
   wireType: "google_networkservices_v1beta1_service_binding",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
     service: "service",
-    serviceId: "service_id",
-    updateTime: "update_time",
   },
 };

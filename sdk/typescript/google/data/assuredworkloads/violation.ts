@@ -42,7 +42,6 @@ export interface Violation_Remediation {
 }
 
 export interface ViolationConfig {
-  name: string | Computed<string>;
 }
 
 export interface ViolationAttrs {
@@ -90,6 +89,5 @@ export interface ViolationAttrs {
 export const Violation: DataSourceBinding<ViolationConfig, ViolationAttrs> = {
   wireType: "google_assuredworkloads_violation",
   fields: {
-    name: "name",
   },
 };

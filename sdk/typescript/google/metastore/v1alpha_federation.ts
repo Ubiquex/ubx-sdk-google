@@ -14,24 +14,12 @@ const V1alphaFederation_BackendMetastoresFields: FieldMap = {
 export interface V1alphaFederationConfig {
   /** A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number. */
   backendMetastores?: Record<string, V1alphaFederation_BackendMetastores> | Computed<Record<string, V1alphaFederation_BackendMetastores>>;
-  /** Output only. The time when the metastore federation was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The federation endpoint. */
-  endpointUri?: string | Computed<string>;
   /** User-defined labels for the metastore federation. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The relative resource name of the federation, of the form: projects/{project_number}/locations/{location_id}/federations/{federation_id}`. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the federation. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current state of the metastore federation, if available. */
-  stateMessage?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The globally unique resource identifier of the metastore federation. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the metastore federation was last updated. */
-  updateTime?: string | Computed<string>;
   /** Immutable. The Apache Hive metastore version of the federation. All backend metastore versions must be compatible with the federation version. */
   version?: string | Computed<string>;
 }
@@ -69,15 +57,9 @@ export const V1alphaFederation: ResourceBinding<V1alphaFederationConfig, V1alpha
       kind: "map",
       fields: V1alphaFederation_BackendMetastoresFields,
     },
-    createTime: "create_time",
-    endpointUri: "endpoint_uri",
     labels: "labels",
     name: "name",
-    state: "state",
-    stateMessage: "state_message",
     tags: "tags",
-    uid: "uid",
-    updateTime: "update_time",
     version: "version",
   },
 };

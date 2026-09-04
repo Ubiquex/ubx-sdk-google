@@ -12,8 +12,6 @@ class V1beta1RuleConfig:
     application_matcher: Any = None
     # Required. Profile which tells what the primitive action should be.
     basic_profile: Any = None
-    # Output only. Time when the rule was created.
-    create_time: Any = None
     # Optional. Free-text description of the resource.
     description: Any = None
     # Required. Whether the rule is enforced.
@@ -26,8 +24,6 @@ class V1beta1RuleConfig:
     session_matcher: Any = None
     # Optional. Flag to enable TLS inspection of traffic matching on , can only be true if the parent GatewaySecurityPolicy references a TLSInspectionConfig.
     tls_inspection_enabled: Any = None
-    # Output only. Time when the rule was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1RuleAttrs:
@@ -57,13 +53,11 @@ V1beta1Rule = ubx.ResourceBinding(
     fields={
         "application_matcher": ubx.FieldSpec(wire_name="application_matcher"),
         "basic_profile": ubx.FieldSpec(wire_name="basic_profile"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enabled": ubx.FieldSpec(wire_name="enabled"),
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "session_matcher": ubx.FieldSpec(wire_name="session_matcher"),
         "tls_inspection_enabled": ubx.FieldSpec(wire_name="tls_inspection_enabled"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -37,8 +37,8 @@ type Metric_BucketOptions struct {
 
 type Metric_MetricDescriptor_Labels struct {
 	Description any
-	Key any
-	ValueType any
+	Key         any
+	ValueType   any
 }
 
 type Metric_MetricDescriptor_Metadata struct {
@@ -78,81 +78,79 @@ type Metric_MetricDescriptor struct {
 }
 
 var Metric_BucketOptions_ExplicitBucketsFields = ubx.FieldMap{
-		"Bounds": ubx.FieldSpec{WireName: "bounds"},
-	}
+	"Bounds": ubx.FieldSpec{WireName: "bounds"},
+}
 
 var Metric_BucketOptions_ExponentialBucketsFields = ubx.FieldMap{
-		"GrowthFactor": ubx.FieldSpec{WireName: "growth_factor"},
-		"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"GrowthFactor":     ubx.FieldSpec{WireName: "growth_factor"},
+	"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
+	"Scale":            ubx.FieldSpec{WireName: "scale"},
+}
 
 var Metric_BucketOptions_LinearBucketsFields = ubx.FieldMap{
-		"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
+	"Offset":           ubx.FieldSpec{WireName: "offset"},
+	"Width":            ubx.FieldSpec{WireName: "width"},
+}
 
 var Metric_BucketOptionsFields = ubx.FieldMap{
-		"ExplicitBuckets": ubx.FieldSpec{
-			WireName: "explicit_buckets",
-			Kind: "object",
-			Fields: Metric_BucketOptions_ExplicitBucketsFields,
-		},
-		"ExponentialBuckets": ubx.FieldSpec{
-			WireName: "exponential_buckets",
-			Kind: "object",
-			Fields: Metric_BucketOptions_ExponentialBucketsFields,
-		},
-		"LinearBuckets": ubx.FieldSpec{
-			WireName: "linear_buckets",
-			Kind: "object",
-			Fields: Metric_BucketOptions_LinearBucketsFields,
-		},
-	}
+	"ExplicitBuckets": ubx.FieldSpec{
+		WireName: "explicit_buckets",
+		Kind:     "object",
+		Fields:   Metric_BucketOptions_ExplicitBucketsFields,
+	},
+	"ExponentialBuckets": ubx.FieldSpec{
+		WireName: "exponential_buckets",
+		Kind:     "object",
+		Fields:   Metric_BucketOptions_ExponentialBucketsFields,
+	},
+	"LinearBuckets": ubx.FieldSpec{
+		WireName: "linear_buckets",
+		Kind:     "object",
+		Fields:   Metric_BucketOptions_LinearBucketsFields,
+	},
+}
 
 var Metric_MetricDescriptor_LabelsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"ValueType":   ubx.FieldSpec{WireName: "value_type"},
+}
 
 var Metric_MetricDescriptor_MetadataFields = ubx.FieldMap{
-		"IngestDelay": ubx.FieldSpec{WireName: "ingest_delay"},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"SamplePeriod": ubx.FieldSpec{WireName: "sample_period"},
-		"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
-	}
+	"IngestDelay":                      ubx.FieldSpec{WireName: "ingest_delay"},
+	"LaunchStage":                      ubx.FieldSpec{WireName: "launch_stage"},
+	"SamplePeriod":                     ubx.FieldSpec{WireName: "sample_period"},
+	"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
+}
 
 var Metric_MetricDescriptorFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: Metric_MetricDescriptor_LabelsFields,
-		},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Metric_MetricDescriptor_MetadataFields,
-		},
-		"MetricKind": ubx.FieldSpec{WireName: "metric_kind"},
-		"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   Metric_MetricDescriptor_LabelsFields,
+	},
+	"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Metric_MetricDescriptor_MetadataFields,
+	},
+	"MetricKind":             ubx.FieldSpec{WireName: "metric_kind"},
+	"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+	"Unit":                   ubx.FieldSpec{WireName: "unit"},
+	"ValueType":              ubx.FieldSpec{WireName: "value_type"},
+}
 
 type MetricConfig struct {
 	// Optional. The resource name of the Log Bucket that owns the Log Metric. Only Log Buckets in projects are supported. The bucket has to be in the same project as the metric.For example:projects/my-project/locations/global/buckets/my-bucketIf empty, then the Log Metric is considered a non-Bucket Log Metric.
 	BucketName any
 	// BucketOptions describes the bucket boundaries used to create a histogram for the distribution. The buckets can be in a linear sequence, an exponential sequence, or each bucket can be specified explicitly. BucketOptions does not include the number of values in each bucket.A bucket has an inclusive lower bound and exclusive upper bound for the values that are counted for that bucket. The upper bound of a bucket must be strictly greater than the lower bound. The sequence of N buckets for a distribution consists of an underflow bucket (number 0), zero or more finite buckets (number 1 through N - 2) and an overflow bucket (number N - 1). The buckets are contiguous: the lower bound of bucket i (i > 0) is the same as the upper bound of bucket i - 1. The buckets span the whole range of finite values: lower bound of the underflow bucket is -infinity and the upper bound of the overflow bucket is +infinity. The finite buckets are so-called because both bounds are finite.
 	BucketOptions any
-	// Output only. The creation timestamp of the metric.This field may not be present for older metrics.
-	CreateTime any
 	// Optional. A description of this metric, which is used in documentation. The maximum length of the description is 8000 characters.
 	Description any
 	// Optional. If set to True, then this metric is disabled and it does not generate any points.
@@ -165,10 +163,6 @@ type MetricConfig struct {
 	MetricDescriptor any
 	// Required. The client-assigned metric identifier. Examples: "error_count", "nginx/requests".Metric identifiers are limited to 100 characters and can include only the following characters: A-Z, a-z, 0-9, and the special characters _-.,+!*',()%/. The forward-slash character (/) denotes a hierarchy of name pieces, and it cannot be the first character of the name.This field is the [METRIC_ID] part of a metric resource name in the format "projects/PROJECT_ID/metrics/METRIC_ID". Example: If the resource name of a metric is "projects/my-project/metrics/nginx%2Frequests", this field's value is "nginx/requests".
 	Name any
-	// Output only. The resource name of the metric: "projects/[PROJECT_ID]/metrics/[METRIC_ID]"
-	ResourceName any
-	// Output only. The last update timestamp of the metric.This field may not be present for older metrics.
-	UpdateTime any
 	// Optional. A value_extractor is required when using a distribution logs-based metric to extract the values to record from a log entry. Two functions are supported for value extraction: EXTRACT(field) or REGEXP_EXTRACT(field, regex). The arguments are: field: The name of the log entry field from which the value is to be extracted. regex: A regular expression using the Google RE2 syntax (https://github.com/google/re2/wiki/Syntax) with a single capture group to extract data from the specified log entry field. The value of the field is converted to a string before applying the regex. It is an error to specify a regex that does not include exactly one capture group.The result of the extraction must be convertible to a double type, as the distribution always records double values. If either the extraction or the conversion to double fails, then those values are not recorded in the distribution.Example: REGEXP_EXTRACT(jsonPayload.request, ".*quantity=(\d+).*")
 	ValueExtractor any
 	// Deprecated. The API version that created or updated this metric. The v2 format is used by default and cannot be changed.
@@ -210,23 +204,20 @@ var Metric = ubx.ResourceBinding{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"BucketOptions": ubx.FieldSpec{
 			WireName: "bucket_options",
-			Kind: "object",
-			Fields: Metric_BucketOptionsFields,
+			Kind:     "object",
+			Fields:   Metric_BucketOptionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Disabled":        ubx.FieldSpec{WireName: "disabled"},
+		"Filter":          ubx.FieldSpec{WireName: "filter"},
 		"LabelExtractors": ubx.FieldSpec{WireName: "label_extractors"},
 		"MetricDescriptor": ubx.FieldSpec{
 			WireName: "metric_descriptor",
-			Kind: "object",
-			Fields: Metric_MetricDescriptorFields,
+			Kind:     "object",
+			Fields:   Metric_MetricDescriptorFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ValueExtractor": ubx.FieldSpec{WireName: "value_extractor"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Version":        ubx.FieldSpec{WireName: "version"},
 	},
 }

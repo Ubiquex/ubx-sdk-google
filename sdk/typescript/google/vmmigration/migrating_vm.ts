@@ -750,161 +750,6 @@ const MigratingVm_PolicyFields: FieldMap = {
   skipOsAdaptation: "skip_os_adaptation",
 };
 
-const MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_DisksFields: FieldMap = {
-  diskUri: "disk_uri",
-  sourceDiskNumber: "source_disk_number",
-};
-
-const MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetailsFields: FieldMap = {
-  vmUri: "vm_uri",
-};
-
-const MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields: FieldMap = {
-  disks: {
-    wireName: "disks",
-    kind: "list",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_DisksFields,
-  },
-  disksTargetDetails: "disks_target_details",
-  vmTargetDetails: {
-    wireName: "vm_target_details",
-    kind: "object",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
-  },
-};
-
-const MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields: FieldMap = {
-  adaptationModifiers: {
-    wireName: "adaptation_modifiers",
-    kind: "list",
-    fields: MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiersFields,
-  },
-  additionalLicenses: "additional_licenses",
-  appliedLicense: {
-    wireName: "applied_license",
-    kind: "object",
-    fields: MigratingVm_ComputeEngineTargetDefaults_AppliedLicenseFields,
-  },
-  bootConversion: "boot_conversion",
-  bootOption: "boot_option",
-  computeScheduling: {
-    wireName: "compute_scheduling",
-    kind: "object",
-    fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
-  },
-  diskReplicaZones: "disk_replica_zones",
-  diskType: "disk_type",
-  enableIntegrityMonitoring: "enable_integrity_monitoring",
-  enableVtpm: "enable_vtpm",
-  encryption: {
-    wireName: "encryption",
-    kind: "object",
-    fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-  },
-  hostname: "hostname",
-  labels: "labels",
-  licenseType: "license_type",
-  machineType: "machine_type",
-  machineTypeSeries: "machine_type_series",
-  metadata: "metadata",
-  networkInterfaces: {
-    wireName: "network_interfaces",
-    kind: "list",
-    fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
-  },
-  networkTags: "network_tags",
-  project: "project",
-  secureBoot: "secure_boot",
-  serviceAccount: "service_account",
-  storagePool: "storage_pool",
-  vmName: "vm_name",
-  zone: "zone",
-};
-
-const MigratingVm_RecentCloneJobs_StepsFields: FieldMap = {
-  adaptingOs: "adapting_os",
-  endTime: "end_time",
-  instantiatingMigratedVm: "instantiating_migrated_vm",
-  preparingVmDisks: "preparing_vm_disks",
-  startTime: "start_time",
-};
-
-const MigratingVm_RecentCloneJobsFields: FieldMap = {
-  computeEngineDisksTargetDetails: {
-    wireName: "compute_engine_disks_target_details",
-    kind: "object",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields,
-  },
-  computeEngineTargetDetails: {
-    wireName: "compute_engine_target_details",
-    kind: "object",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields,
-  },
-  createTime: "create_time",
-  endTime: "end_time",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: MigratingVm_CurrentSyncInfo_ErrorFields,
-  },
-  name: "name",
-  state: "state",
-  stateTime: "state_time",
-  steps: {
-    wireName: "steps",
-    kind: "list",
-    fields: MigratingVm_RecentCloneJobs_StepsFields,
-  },
-};
-
-const MigratingVm_RecentCutoverJobs_StepsFields: FieldMap = {
-  endTime: "end_time",
-  finalSync: {
-    wireName: "final_sync",
-    kind: "object",
-    fields: MigratingVm_CurrentSyncInfoFields,
-  },
-  instantiatingMigratedVm: "instantiating_migrated_vm",
-  preparingVmDisks: "preparing_vm_disks",
-  previousReplicationCycle: {
-    wireName: "previous_replication_cycle",
-    kind: "object",
-    fields: MigratingVm_CurrentSyncInfoFields,
-  },
-  shuttingDownSourceVm: "shutting_down_source_vm",
-  startTime: "start_time",
-};
-
-const MigratingVm_RecentCutoverJobsFields: FieldMap = {
-  computeEngineDisksTargetDetails: {
-    wireName: "compute_engine_disks_target_details",
-    kind: "object",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields,
-  },
-  computeEngineTargetDetails: {
-    wireName: "compute_engine_target_details",
-    kind: "object",
-    fields: MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields,
-  },
-  createTime: "create_time",
-  endTime: "end_time",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: MigratingVm_CurrentSyncInfo_ErrorFields,
-  },
-  name: "name",
-  progressPercent: "progress_percent",
-  state: "state",
-  stateMessage: "state_message",
-  stateTime: "state_time",
-  steps: {
-    wireName: "steps",
-    kind: "list",
-    fields: MigratingVm_RecentCutoverJobs_StepsFields,
-  },
-};
-
 const MigratingVm_VmwareSourceVmDetails_DisksFields: FieldMap = {
   diskNumber: "disk_number",
   label: "label",
@@ -936,8 +781,6 @@ export interface MigratingVmConfig {
   computeEngineDisksTargetDefaults?: MigratingVm_ComputeEngineDisksTargetDefaults | Computed<MigratingVm_ComputeEngineDisksTargetDefaults>;
   /** ComputeEngineTargetDefaults is a collection of details for creating a VM in a target Compute Engine project. */
   computeEngineTargetDefaults?: MigratingVm_ComputeEngineTargetDefaults | Computed<MigratingVm_ComputeEngineTargetDefaults>;
-  /** Output only. The time the migrating VM was created (this refers to this resource and not to the time it was installed in the source). */
-  createTime?: string | Computed<string>;
   /** ReplicationCycle contains information about the current replication cycle status. */
   currentSyncInfo?: MigratingVm_CurrentSyncInfo | Computed<MigratingVm_CurrentSyncInfo>;
   /** CutoverForecast holds information about future CutoverJobs of a MigratingVm. */
@@ -950,30 +793,16 @@ export interface MigratingVmConfig {
   error?: MigratingVm_CurrentSyncInfo_Error | Computed<MigratingVm_CurrentSyncInfo_Error>;
   /** Expiration holds information about the expiration of a MigratingVm. */
   expiration?: MigratingVm_Expiration | Computed<MigratingVm_Expiration>;
-  /** Output only. The group this migrating vm is included in, if any. The group is represented by the full path of the appropriate Group resource. */
-  group?: string | Computed<string>;
   /** The labels of the migrating VM. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** ReplicationCycle contains information about the current replication cycle status. */
   lastReplicationCycle?: MigratingVm_CurrentSyncInfo | Computed<MigratingVm_CurrentSyncInfo>;
   /** ReplicationSync contain information about the last replica sync to the cloud. */
   lastSync?: MigratingVm_LastSync | Computed<MigratingVm_LastSync>;
-  /** Output only. The identifier of the MigratingVm. */
-  name?: string | Computed<string>;
   /** A policy for scheduling replications. */
   policy?: MigratingVm_Policy | Computed<MigratingVm_Policy>;
-  /** Output only. The recent clone jobs performed on the migrating VM. This field holds the vm's last completed clone job and the vm's running clone job, if one exists. Note: To have this field populated you need to explicitly request it via the "view" parameter of the Get/List request. */
-  recentCloneJobs?: MigratingVm_RecentCloneJobs[] | Computed<MigratingVm_RecentCloneJobs[]>;
-  /** Output only. The recent cutover jobs performed on the migrating VM. This field holds the vm's last completed cutover job and the vm's running cutover job, if one exists. Note: To have this field populated you need to explicitly request it via the "view" parameter of the Get/List request. */
-  recentCutoverJobs?: MigratingVm_RecentCutoverJobs[] | Computed<MigratingVm_RecentCutoverJobs[]>;
   /** The unique ID of the VM in the source. The VM's name in vSphere can be changed, so this is not the VM's name but rather its moRef id. This id is of the form vm-. */
   sourceVmId?: string | Computed<string>;
-  /** Output only. State of the MigratingVm. */
-  state?: string | Computed<string>;
-  /** Output only. The last time the migrating VM state was updated. */
-  stateTime?: string | Computed<string>;
-  /** Output only. The last time the migrating VM resource was updated. */
-  updateTime?: string | Computed<string>;
   /** Represent the source Vmware VM details. */
   vmwareSourceVmDetails?: MigratingVm_VmwareSourceVmDetails | Computed<MigratingVm_VmwareSourceVmDetails>;
 }
@@ -1052,7 +881,6 @@ export const MigratingVm: ResourceBinding<MigratingVmConfig, MigratingVmAttrs> =
       kind: "object",
       fields: MigratingVm_ComputeEngineTargetDefaultsFields,
     },
-    createTime: "create_time",
     currentSyncInfo: {
       wireName: "current_sync_info",
       kind: "object",
@@ -1075,7 +903,6 @@ export const MigratingVm: ResourceBinding<MigratingVmConfig, MigratingVmAttrs> =
       kind: "object",
       fields: MigratingVm_ExpirationFields,
     },
-    group: "group",
     labels: "labels",
     lastReplicationCycle: {
       wireName: "last_replication_cycle",
@@ -1087,26 +914,12 @@ export const MigratingVm: ResourceBinding<MigratingVmConfig, MigratingVmAttrs> =
       kind: "object",
       fields: MigratingVm_LastSyncFields,
     },
-    name: "name",
     policy: {
       wireName: "policy",
       kind: "object",
       fields: MigratingVm_PolicyFields,
     },
-    recentCloneJobs: {
-      wireName: "recent_clone_jobs",
-      kind: "list",
-      fields: MigratingVm_RecentCloneJobsFields,
-    },
-    recentCutoverJobs: {
-      wireName: "recent_cutover_jobs",
-      kind: "list",
-      fields: MigratingVm_RecentCutoverJobsFields,
-    },
     sourceVmId: "source_vm_id",
-    state: "state",
-    stateTime: "state_time",
-    updateTime: "update_time",
     vmwareSourceVmDetails: {
       wireName: "vmware_source_vm_details",
       kind: "object",

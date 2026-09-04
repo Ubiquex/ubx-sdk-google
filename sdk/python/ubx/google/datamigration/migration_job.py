@@ -408,8 +408,6 @@ class MigrationJobConfig:
     cmek_key_name: Any = None
     # A conversion workspace's version.
     conversion_workspace: Any = None
-    # Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    create_time: Any = None
     # Required. The resource name (URI) of the destination connection profile.
     destination: Any = None
     # A message defining the database engine and provider.
@@ -422,10 +420,6 @@ class MigrationJobConfig:
     dump_path: Any = None
     # Optional. The type of the data dump. Supported for MySQL to CloudSQL for MySQL migrations only.
     dump_type: Any = None
-    # Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    duration: Any = None
-    # Output only. If the migration job is completed, the time when it was completed.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # This field can be used to select the entities to migrate as part of the migration job. It uses AIP-160 notation to select a subset of the entities configured on the associated conversion-workspace. This field should not be set on migration-jobs that are not associated with a conversion workspace.
@@ -444,20 +438,12 @@ class MigrationJobConfig:
     original_migration_name: Any = None
     # Performance configuration definition.
     performance_config: Any = None
-    # Output only. The current migration job phase.
-    phase: Any = None
     # Configuration for PostgreSQL to PostgreSQL migrations.
     postgres_homogeneous_config: Any = None
     # Configuration for heterogeneous failback migrations from **PostgreSQL to SQL Server**.
     postgres_to_sqlserver_config: Any = None
-    # Output only. Migration job mode. Migration jobs can be standard forward jobs or failback migration jobs.
-    purpose: Any = None
     # The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC.
     reverse_ssh_connectivity: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Required. The resource name (URI) of the source connection profile.
     source: Any = None
     # A message defining the database engine and provider.
@@ -472,8 +458,6 @@ class MigrationJobConfig:
     static_ip_connectivity: Any = None
     # Required. The migration job type.
     type: Any = None
-    # Output only. The timestamp when the migration job resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    update_time: Any = None
     # The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC.
     vpc_peering_connectivity: Any = None
 
@@ -561,7 +545,6 @@ MigrationJob = ubx.ResourceBinding(
             kind="object",
             fields=_MigrationJob_ConversionWorkspaceFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination": ubx.FieldSpec(wire_name="destination"),
         "destination_database": ubx.FieldSpec(
             wire_name="destination_database",
@@ -576,8 +559,6 @@ MigrationJob = ubx.ResourceBinding(
         ),
         "dump_path": ubx.FieldSpec(wire_name="dump_path"),
         "dump_type": ubx.FieldSpec(wire_name="dump_type"),
-        "duration": ubx.FieldSpec(wire_name="duration"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -607,7 +588,6 @@ MigrationJob = ubx.ResourceBinding(
             kind="object",
             fields=_MigrationJob_PerformanceConfigFields,
         ),
-        "phase": ubx.FieldSpec(wire_name="phase"),
         "postgres_homogeneous_config": ubx.FieldSpec(
             wire_name="postgres_homogeneous_config",
             kind="object",
@@ -618,14 +598,11 @@ MigrationJob = ubx.ResourceBinding(
             kind="object",
             fields=_MigrationJob_PostgresToSqlserverConfigFields,
         ),
-        "purpose": ubx.FieldSpec(wire_name="purpose"),
         "reverse_ssh_connectivity": ubx.FieldSpec(
             wire_name="reverse_ssh_connectivity",
             kind="object",
             fields=_MigrationJob_ReverseSshConnectivityFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "source": ubx.FieldSpec(wire_name="source"),
         "source_database": ubx.FieldSpec(
             wire_name="source_database",
@@ -645,7 +622,6 @@ MigrationJob = ubx.ResourceBinding(
         "state": ubx.FieldSpec(wire_name="state"),
         "static_ip_connectivity": ubx.FieldSpec(wire_name="static_ip_connectivity"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vpc_peering_connectivity": ubx.FieldSpec(
             wire_name="vpc_peering_connectivity",
             kind="object",

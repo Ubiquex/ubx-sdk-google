@@ -2549,10 +2549,6 @@ const V1beta1EvaluationRun_InferenceConfigsFields: FieldMap = {
 };
 
 export interface V1beta1EvaluationRunConfig {
-  /** Output only. Time when the evaluation run was completed. */
-  completionTime?: string | Computed<string>;
-  /** Output only. Time when the evaluation run was created. */
-  createTime?: string | Computed<string>;
   /** The data source for the evaluation run. */
   dataSource?: V1beta1EvaluationRun_DataSource | Computed<V1beta1EvaluationRun_DataSource>;
   /** Required. The display name of the Evaluation Run. */
@@ -2565,8 +2561,6 @@ export interface V1beta1EvaluationRunConfig {
   evaluationConfig?: V1beta1EvaluationRun_EvaluationConfig | Computed<V1beta1EvaluationRun_EvaluationConfig>;
   /** The results of the evaluation run. */
   evaluationResults?: V1beta1EvaluationRun_EvaluationResults | Computed<V1beta1EvaluationRun_EvaluationResults>;
-  /** Output only. The specific evaluation set of the evaluation run. For runs with an evaluation set input, this will be that same set. For runs with BigQuery input, it's the sampled BigQuery dataset. */
-  evaluationSetSnapshot?: string | Computed<string>;
   /** Optional. The candidate to inference config map for the evaluation run. The candidate can be up to 128 characters long and can consist of any UTF-8 characters. */
   inferenceConfigs?: Record<string, V1beta1EvaluationRun_InferenceConfigs> | Computed<Record<string, V1beta1EvaluationRun_InferenceConfigs>>;
   /** Optional. Labels for the evaluation run. */
@@ -2575,8 +2569,6 @@ export interface V1beta1EvaluationRunConfig {
   metadata?: unknown | Computed<unknown>;
   /** Identifier. The resource name of the EvaluationRun. This is a unique identifier. Format: `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the evaluation run. */
-  state?: string | Computed<string>;
 }
 
 export interface V1beta1EvaluationRunAttrs {
@@ -2613,8 +2605,6 @@ export interface V1beta1EvaluationRunAttrs {
 export const V1beta1EvaluationRun: ResourceBinding<V1beta1EvaluationRunConfig, V1beta1EvaluationRunAttrs> = {
   wireType: "google_aiplatform_v1beta1_evaluation_run",
   fields: {
-    completionTime: "completion_time",
-    createTime: "create_time",
     dataSource: {
       wireName: "data_source",
       kind: "object",
@@ -2641,7 +2631,6 @@ export const V1beta1EvaluationRun: ResourceBinding<V1beta1EvaluationRunConfig, V
       kind: "object",
       fields: V1beta1EvaluationRun_EvaluationResultsFields,
     },
-    evaluationSetSnapshot: "evaluation_set_snapshot",
     inferenceConfigs: {
       wireName: "inference_configs",
       kind: "map",
@@ -2650,6 +2639,5 @@ export const V1beta1EvaluationRun: ResourceBinding<V1beta1EvaluationRunConfig, V
     labels: "labels",
     metadata: "metadata",
     name: "name",
-    state: "state",
   },
 };

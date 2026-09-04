@@ -21,7 +21,7 @@ type Node_BootDiskConfig struct {
 }
 
 type Node_DataDisks struct {
-	Mode any
+	Mode       any
 	SourceDisk any
 }
 
@@ -44,8 +44,8 @@ type Node_NetworkEndpoints_AccessConfig struct {
 
 type Node_NetworkEndpoints struct {
 	AccessConfig any
-	IpAddress any
-	Port any
+	IpAddress    any
+	Port         any
 }
 
 type Node_SchedulingConfig struct {
@@ -70,10 +70,10 @@ type Node_ShieldedInstanceConfig struct {
 }
 
 type Node_Symptoms struct {
-	CreateTime any
-	Details any
+	CreateTime  any
+	Details     any
 	SymptomType any
-	WorkerId any
+	WorkerId    any
 }
 
 type Node_UpcomingMaintenance struct {
@@ -92,119 +92,82 @@ type Node_UpcomingMaintenance struct {
 }
 
 var Node_AcceleratorConfigFields = ubx.FieldMap{
-		"Topology": ubx.FieldSpec{WireName: "topology"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Topology": ubx.FieldSpec{WireName: "topology"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Node_BootDiskConfig_CustomerEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Node_BootDiskConfigFields = ubx.FieldMap{
-		"CustomerEncryptionKey": ubx.FieldSpec{
-			WireName: "customer_encryption_key",
-			Kind: "object",
-			Fields: Node_BootDiskConfig_CustomerEncryptionKeyFields,
-		},
-	}
+	"CustomerEncryptionKey": ubx.FieldSpec{
+		WireName: "customer_encryption_key",
+		Kind:     "object",
+		Fields:   Node_BootDiskConfig_CustomerEncryptionKeyFields,
+	},
+}
 
 var Node_DataDisksFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
-	}
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
+}
 
 var Node_NetworkConfigFields = ubx.FieldMap{
-		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
-		"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
-
-var Node_NetworkEndpoints_AccessConfigFields = ubx.FieldMap{
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-	}
-
-var Node_NetworkEndpointsFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: Node_NetworkEndpoints_AccessConfigFields,
-		},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"CanIpForward":      ubx.FieldSpec{WireName: "can_ip_forward"},
+	"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
+	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var Node_SchedulingConfigFields = ubx.FieldMap{
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"Reserved": ubx.FieldSpec{WireName: "reserved"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
+	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+	"Reserved":    ubx.FieldSpec{WireName: "reserved"},
+	"Spot":        ubx.FieldSpec{WireName: "spot"},
+}
 
 var Node_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+}
 
 var Node_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-	}
-
-var Node_SymptomsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"SymptomType": ubx.FieldSpec{WireName: "symptom_type"},
-		"WorkerId": ubx.FieldSpec{WireName: "worker_id"},
-	}
+	"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+}
 
 var Node_UpcomingMaintenanceFields = ubx.FieldMap{
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
-		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
-	}
+	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
+	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+	"WindowEndTime":         ubx.FieldSpec{WireName: "window_end_time"},
+	"WindowStartTime":       ubx.FieldSpec{WireName: "window_start_time"},
+}
 
 type NodeConfig struct {
 	// A TPU accelerator configuration.
 	AcceleratorConfig any
 	// Optional. The type of hardware accelerators associated with this node.
 	AcceleratorType any
-	// Output only. The API version that created this Node.
-	ApiVersion any
 	// Sets the boot disk configuration for the TPU node.
 	BootDiskConfig any
 	// The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.
 	CidrBlock any
-	// Output only. The time when the node was created.
-	CreateTime any
 	// The additional data disks for the Node.
 	DataDisks any
 	// The user-supplied description of the TPU. Maximum of 512 characters.
 	Description any
 	// The health status of the TPU node.
 	Health any
-	// Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy.
-	HealthDescription any
-	// Output only. The unique identifier for the TPU Node.
-	Id any
 	// Resource labels to represent user-provided metadata.
 	Labels any
 	// Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script
 	Metadata any
-	// Output only. Whether the Node belongs to a Multislice group.
-	MultisliceNode any
-	// Output only. Immutable. The name of the TPU.
-	Name any
 	// Network related configurations.
 	NetworkConfig any
 	// Optional. Repeated network configurations for the TPU node. This field is used to specify multiple networks configs for the TPU node. network_config and network_configs are mutually exclusive, you can only specify one of them. If both are specified, an error will be returned.
 	NetworkConfigs any
-	// Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that runtime clients of the node reach out to the 0th entry in this map first.
-	NetworkEndpoints any
-	// Output only. The qualified name of the QueuedResource that requested this Node.
-	QueuedResource any
 	// Required. The runtime version running in the Node.
 	RuntimeVersion any
 	// Sets the scheduling options for this node.
@@ -213,10 +176,6 @@ type NodeConfig struct {
 	ServiceAccount any
 	// A set of Shielded Instance options.
 	ShieldedInstanceConfig any
-	// Output only. The current state for the TPU Node.
-	State any
-	// Output only. The Symptoms that have occurred to the TPU Node.
-	Symptoms any
 	// Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls.
 	Tags any
 	// Upcoming Maintenance notification information.
@@ -285,74 +244,56 @@ var Node = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AcceleratorConfig": ubx.FieldSpec{
 			WireName: "accelerator_config",
-			Kind: "object",
-			Fields: Node_AcceleratorConfigFields,
+			Kind:     "object",
+			Fields:   Node_AcceleratorConfigFields,
 		},
 		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
 		"BootDiskConfig": ubx.FieldSpec{
 			WireName: "boot_disk_config",
-			Kind: "object",
-			Fields: Node_BootDiskConfigFields,
+			Kind:     "object",
+			Fields:   Node_BootDiskConfigFields,
 		},
 		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataDisks": ubx.FieldSpec{
 			WireName: "data_disks",
-			Kind: "list",
-			Fields: Node_DataDisksFields,
+			Kind:     "list",
+			Fields:   Node_DataDisksFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Health": ubx.FieldSpec{WireName: "health"},
-		"HealthDescription": ubx.FieldSpec{WireName: "health_description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MultisliceNode": ubx.FieldSpec{WireName: "multislice_node"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Health":      ubx.FieldSpec{WireName: "health"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Metadata":    ubx.FieldSpec{WireName: "metadata"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: Node_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   Node_NetworkConfigFields,
 		},
 		"NetworkConfigs": ubx.FieldSpec{
 			WireName: "network_configs",
-			Kind: "list",
-			Fields: Node_NetworkConfigFields,
+			Kind:     "list",
+			Fields:   Node_NetworkConfigFields,
 		},
-		"NetworkEndpoints": ubx.FieldSpec{
-			WireName: "network_endpoints",
-			Kind: "list",
-			Fields: Node_NetworkEndpointsFields,
-		},
-		"QueuedResource": ubx.FieldSpec{WireName: "queued_resource"},
 		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
 		"SchedulingConfig": ubx.FieldSpec{
 			WireName: "scheduling_config",
-			Kind: "object",
-			Fields: Node_SchedulingConfigFields,
+			Kind:     "object",
+			Fields:   Node_SchedulingConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{
 			WireName: "service_account",
-			Kind: "object",
-			Fields: Node_ServiceAccountFields,
+			Kind:     "object",
+			Fields:   Node_ServiceAccountFields,
 		},
 		"ShieldedInstanceConfig": ubx.FieldSpec{
 			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: Node_ShieldedInstanceConfigFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Symptoms": ubx.FieldSpec{
-			WireName: "symptoms",
-			Kind: "list",
-			Fields: Node_SymptomsFields,
+			Kind:     "object",
+			Fields:   Node_ShieldedInstanceConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"UpcomingMaintenance": ubx.FieldSpec{
 			WireName: "upcoming_maintenance",
-			Kind: "object",
-			Fields: Node_UpcomingMaintenanceFields,
+			Kind:     "object",
+			Fields:   Node_UpcomingMaintenanceFields,
 		},
 	},
 }

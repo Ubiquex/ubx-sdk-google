@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AlphaTargetInstanceConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
   /** A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance */
   instance?: string | Computed<string>;
-  /** Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance. */
@@ -22,10 +18,6 @@ export interface AlphaTargetInstanceConfig {
   securityPolicy?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the zone where the target instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  zone?: string | Computed<string>;
 }
 
 export interface AlphaTargetInstanceAttrs {
@@ -58,17 +50,13 @@ export interface AlphaTargetInstanceAttrs {
 export const AlphaTargetInstance: ResourceBinding<AlphaTargetInstanceConfig, AlphaTargetInstanceAttrs> = {
   wireType: "google_compute_alpha_target_instance",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     id: "id",
     instance: "instance",
-    kind: "kind",
     name: "name",
     natPolicy: "nat_policy",
     network: "network",
     securityPolicy: "security_policy",
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    zone: "zone",
   },
 };

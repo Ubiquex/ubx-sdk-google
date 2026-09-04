@@ -39,12 +39,8 @@ class CustomerConfig:
     customer_onboarding_state: Any = None
     # Required. Display name for the customer
     display_name: Any = None
-    # Output only. Indicates whether a customer is fully onboarded
-    is_onboarded: Any = None
     # Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}`
     name: Any = None
-    # Output only. The customer organization domain, extracted from CRM Organization’s display_name field. e.g. "google.com"
-    organization_domain: Any = None
 
 @dataclasses.dataclass
 class CustomerAttrs:
@@ -68,8 +64,6 @@ Customer = ubx.ResourceBinding(
             fields=_Customer_CustomerOnboardingStateFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "is_onboarded": ubx.FieldSpec(wire_name="is_onboarded"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "organization_domain": ubx.FieldSpec(wire_name="organization_domain"),
     },
 )

@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1VpcFlowLogsConfigConfig struct {
 	// Optional. The aggregation interval for the logs. Default value is INTERVAL_5_SEC.
 	AggregationInterval any
-	// Output only. The time the config was created.
-	CreateTime any
 	// Optional. Determines whether to include cross project annotations in the logs. This field is available only for organization configurations. If not specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
 	CrossProjectMetadata any
 	// Optional. The user-supplied description of the VPC Flow Logs configuration. Maximum of 512 characters.
@@ -32,10 +30,6 @@ type V1beta1VpcFlowLogsConfigConfig struct {
 	State any
 	// Traffic will be logged from VMs within the subnetwork. Format: projects/{project_id}/regions/{region}/subnetworks/{name}
 	Subnet any
-	// Output only. Describes the state of the configured target resource for diagnostic purposes.
-	TargetResourceState any
-	// Output only. The time the config was updated.
-	UpdateTime any
 	// Traffic will be logged from the VPN Tunnel. Format: projects/{project_id}/regions/{region}/vpnTunnels/{name}
 	VpnTunnel any
 }
@@ -80,22 +74,19 @@ type V1beta1VpcFlowLogsConfigAttrs struct {
 var V1beta1VpcFlowLogsConfig = ubx.ResourceBinding{
 	WireType: "google_networkmanagement_v1beta1_vpc_flow_logs_config",
 	Fields: ubx.FieldMap{
-		"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CrossProjectMetadata": ubx.FieldSpec{WireName: "cross_project_metadata"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FilterExpr": ubx.FieldSpec{WireName: "filter_expr"},
-		"FlowSampling": ubx.FieldSpec{WireName: "flow_sampling"},
+		"AggregationInterval":    ubx.FieldSpec{WireName: "aggregation_interval"},
+		"CrossProjectMetadata":   ubx.FieldSpec{WireName: "cross_project_metadata"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"FilterExpr":             ubx.FieldSpec{WireName: "filter_expr"},
+		"FlowSampling":           ubx.FieldSpec{WireName: "flow_sampling"},
 		"InterconnectAttachment": ubx.FieldSpec{WireName: "interconnect_attachment"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MetadataFields": ubx.FieldSpec{WireName: "metadata_fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"TargetResourceState": ubx.FieldSpec{WireName: "target_resource_state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VpnTunnel": ubx.FieldSpec{WireName: "vpn_tunnel"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Metadata":               ubx.FieldSpec{WireName: "metadata"},
+		"MetadataFields":         ubx.FieldSpec{WireName: "metadata_fields"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Network":                ubx.FieldSpec{WireName: "network"},
+		"State":                  ubx.FieldSpec{WireName: "state"},
+		"Subnet":                 ubx.FieldSpec{WireName: "subnet"},
+		"VpnTunnel":              ubx.FieldSpec{WireName: "vpn_tunnel"},
 	},
 }

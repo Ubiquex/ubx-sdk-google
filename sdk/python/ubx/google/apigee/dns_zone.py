@@ -20,8 +20,6 @@ _DnsZone_PeeringConfigFields = {
 
 @dataclasses.dataclass
 class DnsZoneConfig:
-    # Output only. The time that this resource was created on the server.
-    create_time: Any = None
     # Required. Description of the resource. String of at most 1024 characters associated with this resource for the user's convenience.
     description: Any = None
     # Required. The domain name for hosts in this private zone, for instance "example.com.".
@@ -30,10 +28,6 @@ class DnsZoneConfig:
     name: Any = None
     # Fields for DNS PEERING zone.
     peering_config: Any = None
-    # Output only. State of the DNS Peering. Values other than `ACTIVE` mean the resource is not ready to use.
-    state: Any = None
-    # Output only. The time that this resource was updated on the server.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DnsZoneAttrs:
@@ -55,7 +49,6 @@ class DnsZoneAttrs:
 DnsZone = ubx.ResourceBinding(
     wire_type="google_apigee_dns_zone",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "domain": ubx.FieldSpec(wire_name="domain"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -64,7 +57,5 @@ DnsZone = ubx.ResourceBinding(
             kind="object",
             fields=_DnsZone_PeeringConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

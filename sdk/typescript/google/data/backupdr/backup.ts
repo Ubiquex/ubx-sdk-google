@@ -285,7 +285,6 @@ export interface Backup_GcpResource {
 }
 
 export interface BackupConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -347,7 +346,6 @@ export interface BackupAttrs {
 export const Backup: DataSourceBinding<BackupConfig, BackupAttrs> = {
   wireType: "google_backupdr_backup",
   fields: {
-    name: "name",
     view: "view",
   },
 };

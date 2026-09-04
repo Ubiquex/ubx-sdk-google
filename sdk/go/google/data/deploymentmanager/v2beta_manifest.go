@@ -10,36 +10,36 @@ type V2betaManifest_Config struct {
 
 type V2betaManifest_Imports struct {
 	Content any
-	Name any
+	Name    any
 }
 
 type V2betaManifestConfig struct {
-	Deployment any
+	Deployment                any
 	HeaderBypassBillingFilter any
-	Manifest any
-	Project any
+	Manifest                  any
+	Project                   any
 }
 
 type V2betaManifestAttrs struct {
-	Config any
+	Config     any
 	Deployment any
 	// Output only. The fully-expanded configuration file, including any templates and references.
-	ExpandedConfig any
+	ExpandedConfig            any
 	HeaderBypassBillingFilter any
-	Id any
+	Id                        any
 	// Output only. The imported files for this manifest.
 	Imports any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Output only. The YAML layout for this manifest.
-	Layout any
+	Layout   any
 	Manifest any
 	// Output only. The computed size of the fully expanded manifest.
 	ManifestSizeBytes any
 	// Output only. The size limit for expanded manifests in the project.
 	ManifestSizeLimitBytes any
 	// Output only. The name of the manifest.
-	Name any
+	Name    any
 	Project any
 	// Output only. Self link for the manifest.
 	SelfLink any
@@ -48,9 +48,9 @@ type V2betaManifestAttrs struct {
 var V2betaManifest = ubx.DataSourceBinding{
 	WireType: "google_deploymentmanager_v2beta_manifest",
 	Fields: ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
+		"Deployment":                ubx.FieldSpec{WireName: "deployment"},
 		"HeaderBypassBillingFilter": ubx.FieldSpec{WireName: "header_bypass_billing_filter"},
-		"Manifest": ubx.FieldSpec{WireName: "manifest"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Manifest":                  ubx.FieldSpec{WireName: "manifest"},
+		"Project":                   ubx.FieldSpec{WireName: "project"},
 	},
 }

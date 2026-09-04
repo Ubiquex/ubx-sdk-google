@@ -4,10 +4,10 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Agent_AfterAgentCallbacks struct {
-	Description any
-	Disabled any
+	Description               any
+	Disabled                  any
 	ProactiveExecutionEnabled any
-	PythonCode any
+	PythonCode                any
 }
 
 type Agent_ModelSettings struct {
@@ -57,82 +57,82 @@ type Agent_TransferRules_DisablePlannerTransfer struct {
 }
 
 type Agent_TransferRules struct {
-	ChildAgent any
-	DeterministicTransfer any
-	Direction any
+	ChildAgent             any
+	DeterministicTransfer  any
+	Direction              any
 	DisablePlannerTransfer any
 }
 
 var Agent_AfterAgentCallbacksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Disabled":                  ubx.FieldSpec{WireName: "disabled"},
+	"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
+	"PythonCode":                ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Agent_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var Agent_RemoteDialogflowAgentFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
-		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
-		"LanguageCodeVariable": ubx.FieldSpec{WireName: "language_code_variable"},
-		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
-		"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
-	}
+	"Agent":                               ubx.FieldSpec{WireName: "agent"},
+	"EnvironmentId":                       ubx.FieldSpec{WireName: "environment_id"},
+	"FlowId":                              ubx.FieldSpec{WireName: "flow_id"},
+	"InputVariableMapping":                ubx.FieldSpec{WireName: "input_variable_mapping"},
+	"LanguageCodeVariable":                ubx.FieldSpec{WireName: "language_code_variable"},
+	"OutputVariableMapping":               ubx.FieldSpec{WireName: "output_variable_mapping"},
+	"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
+}
 
 var Agent_ToolsetsFields = ubx.FieldMap{
-		"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields = ubx.FieldMap{
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Agent_TransferRules_DeterministicTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-		"PythonCodeCondition": ubx.FieldSpec{
-			WireName: "python_code_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+	"PythonCodeCondition": ubx.FieldSpec{
+		WireName: "python_code_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
+	},
+}
 
 var Agent_TransferRules_DisablePlannerTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+}
 
 var Agent_TransferRulesFields = ubx.FieldMap{
-		"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
-		"DeterministicTransfer": ubx.FieldSpec{
-			WireName: "deterministic_transfer",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransferFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DisablePlannerTransfer": ubx.FieldSpec{
-			WireName: "disable_planner_transfer",
-			Kind: "object",
-			Fields: Agent_TransferRules_DisablePlannerTransferFields,
-		},
-	}
+	"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
+	"DeterministicTransfer": ubx.FieldSpec{
+		WireName: "deterministic_transfer",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransferFields,
+	},
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"DisablePlannerTransfer": ubx.FieldSpec{
+		WireName: "disable_planner_transfer",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DisablePlannerTransferFields,
+	},
+}
 
 type AgentConfig struct {
 	// Optional. The callbacks to execute after the agent is called. The provided callbacks are executed sequentially in the exact order they are given in the list. If a callback returns an overridden response, execution stops and any remaining callbacks are skipped.
@@ -149,16 +149,12 @@ type AgentConfig struct {
 	BeforeToolCallbacks any
 	// Optional. List of child agents in the agent tree. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
 	ChildAgents any
-	// Output only. Timestamp when the agent was created.
-	CreateTime any
 	// Optional. Human-readable description of the agent.
 	Description any
 	// Required. Display name of the agent.
 	DisplayName any
 	// Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
 	Etag any
-	// Output only. If the agent is generated by the LLM assistant, this field contains a descriptive summary of the generation.
-	GeneratedSummary any
 	// Optional. List of guardrails for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}`
 	Guardrails any
 	// Optional. Instructions for the LLM model to guide the agent's behavior.
@@ -177,10 +173,6 @@ type AgentConfig struct {
 	Toolsets any
 	// Optional. Agent transfer rules. If multiple rules match, the first one in the list will be used.
 	TransferRules any
-	// Output only. Timestamp when the agent was last updated.
-	UpdateTime any
-	// Output only. Misconfigurations or errors in the agent that may affect agent quality.
-	ValidationErrors any
 }
 
 type AgentAttrs struct {
@@ -237,66 +229,62 @@ var Agent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AfterAgentCallbacks": ubx.FieldSpec{
 			WireName: "after_agent_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"AfterModelCallbacks": ubx.FieldSpec{
 			WireName: "after_model_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"AfterToolCallbacks": ubx.FieldSpec{
 			WireName: "after_tool_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeAgentCallbacks": ubx.FieldSpec{
 			WireName: "before_agent_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeModelCallbacks": ubx.FieldSpec{
 			WireName: "before_model_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeToolCallbacks": ubx.FieldSpec{
 			WireName: "before_tool_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"ChildAgents": ubx.FieldSpec{WireName: "child_agents"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
-		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Guardrails":  ubx.FieldSpec{WireName: "guardrails"},
 		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"LlmAgent": ubx.FieldSpec{WireName: "llm_agent"},
+		"LlmAgent":    ubx.FieldSpec{WireName: "llm_agent"},
 		"ModelSettings": ubx.FieldSpec{
 			WireName: "model_settings",
-			Kind: "object",
-			Fields: Agent_ModelSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_ModelSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RemoteDialogflowAgent": ubx.FieldSpec{
 			WireName: "remote_dialogflow_agent",
-			Kind: "object",
-			Fields: Agent_RemoteDialogflowAgentFields,
+			Kind:     "object",
+			Fields:   Agent_RemoteDialogflowAgentFields,
 		},
 		"Tools": ubx.FieldSpec{WireName: "tools"},
 		"Toolsets": ubx.FieldSpec{
 			WireName: "toolsets",
-			Kind: "list",
-			Fields: Agent_ToolsetsFields,
+			Kind:     "list",
+			Fields:   Agent_ToolsetsFields,
 		},
 		"TransferRules": ubx.FieldSpec{
 			WireName: "transfer_rules",
-			Kind: "list",
-			Fields: Agent_TransferRulesFields,
+			Kind:     "list",
+			Fields:   Agent_TransferRulesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValidationErrors": ubx.FieldSpec{WireName: "validation_errors"},
 	},
 }

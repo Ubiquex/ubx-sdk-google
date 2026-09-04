@@ -150,8 +150,6 @@ const SandboxEnvironmentTemplate_IngressControlConfigFields: FieldMap = {
 };
 
 export interface SandboxEnvironmentTemplateConfig {
-  /** Output only. The timestamp when this SandboxEnvironmentTemplate was created. */
-  createTime?: string | Computed<string>;
   /** The customized sandbox runtime environment for BYOC. */
   customContainerEnvironment?: SandboxEnvironmentTemplate_CustomContainerEnvironment | Computed<SandboxEnvironmentTemplate_CustomContainerEnvironment>;
   /** The default sandbox runtime environment for default container workloads. */
@@ -164,10 +162,6 @@ export interface SandboxEnvironmentTemplateConfig {
   ingressControlConfig?: SandboxEnvironmentTemplate_IngressControlConfig | Computed<SandboxEnvironmentTemplate_IngressControlConfig>;
   /** Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the sandbox environment template. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SandboxEnvironmentTemplateAttrs {
@@ -194,7 +188,6 @@ export interface SandboxEnvironmentTemplateAttrs {
 export const SandboxEnvironmentTemplate: ResourceBinding<SandboxEnvironmentTemplateConfig, SandboxEnvironmentTemplateAttrs> = {
   wireType: "google_aiplatform_sandbox_environment_template",
   fields: {
-    createTime: "create_time",
     customContainerEnvironment: {
       wireName: "custom_container_environment",
       kind: "object",
@@ -217,7 +210,5 @@ export const SandboxEnvironmentTemplate: ResourceBinding<SandboxEnvironmentTempl
       fields: SandboxEnvironmentTemplate_IngressControlConfigFields,
     },
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

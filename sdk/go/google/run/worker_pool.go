@@ -13,21 +13,21 @@ type WorkerPool_BinaryAuthorization struct {
 }
 
 type WorkerPool_Conditions struct {
-	ExecutionReason any
-	InstanceReason any
+	ExecutionReason    any
+	InstanceReason     any
 	LastTransitionTime any
-	Message any
-	Reason any
-	RevisionReason any
-	Severity any
-	State any
-	Type any
+	Message            any
+	Reason             any
+	RevisionReason     any
+	Severity           any
+	State              any
+	Type               any
 }
 
 type WorkerPool_InstanceSplitStatuses struct {
-	Percent any
+	Percent  any
 	Revision any
-	Type any
+	Type     any
 }
 
 type WorkerPool_Scaling struct {
@@ -41,7 +41,7 @@ type WorkerPool_Template_Containers_BuildInfo struct {
 }
 
 type WorkerPool_Template_Containers_Env_ValueSource_SecretKeyRef struct {
-	Secret any
+	Secret  any
 	Version any
 }
 
@@ -50,25 +50,25 @@ type WorkerPool_Template_Containers_Env_ValueSource struct {
 }
 
 type WorkerPool_Template_Containers_Env struct {
-	Name any
-	Value any
+	Name        any
+	Value       any
 	ValueSource any
 }
 
 type WorkerPool_Template_Containers_LivenessProbe_Grpc struct {
-	Port any
+	Port    any
 	Service any
 }
 
 type WorkerPool_Template_Containers_LivenessProbe_HttpGet_HttpHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type WorkerPool_Template_Containers_LivenessProbe_HttpGet struct {
 	HttpHeaders any
-	Path any
-	Port any
+	Path        any
+	Port        any
 }
 
 type WorkerPool_Template_Containers_LivenessProbe_TcpSocket struct {
@@ -76,34 +76,34 @@ type WorkerPool_Template_Containers_LivenessProbe_TcpSocket struct {
 }
 
 type WorkerPool_Template_Containers_LivenessProbe struct {
-	FailureThreshold any
-	Grpc any
-	HttpGet any
+	FailureThreshold    any
+	Grpc                any
+	HttpGet             any
 	InitialDelaySeconds any
-	PeriodSeconds any
-	TcpSocket any
-	TimeoutSeconds any
+	PeriodSeconds       any
+	TcpSocket           any
+	TimeoutSeconds      any
 }
 
 type WorkerPool_Template_Containers_Ports struct {
 	ContainerPort any
-	Name any
+	Name          any
 }
 
 type WorkerPool_Template_Containers_Resources struct {
-	CpuIdle any
-	Limits any
+	CpuIdle         any
+	Limits          any
 	StartupCpuBoost any
 }
 
 type WorkerPool_Template_Containers_SourceCode_CloudStorageSource struct {
-	Bucket any
+	Bucket     any
 	Generation any
-	Object any
+	Object     any
 }
 
 type WorkerPool_Template_Containers_SourceCode_InlinedSource_Sources struct {
-	Content any
+	Content  any
 	Filename any
 }
 
@@ -113,33 +113,33 @@ type WorkerPool_Template_Containers_SourceCode_InlinedSource struct {
 
 type WorkerPool_Template_Containers_SourceCode struct {
 	CloudStorageSource any
-	InlinedSource any
+	InlinedSource      any
 }
 
 type WorkerPool_Template_Containers_VolumeMounts struct {
 	MountPath any
-	Name any
-	SubPath any
+	Name      any
+	SubPath   any
 }
 
 type WorkerPool_Template_Containers struct {
-	Args any
-	BaseImageUri any
-	BuildInfo any
-	Command any
-	DependsOn any
-	Env any
-	Image any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	Resources any
+	Args            any
+	BaseImageUri    any
+	BuildInfo       any
+	Command         any
+	DependsOn       any
+	Env             any
+	Image           any
+	LivenessProbe   any
+	Name            any
+	Ports           any
+	ReadinessProbe  any
+	Resources       any
 	SandboxLauncher any
-	SourceCode any
-	StartupProbe any
-	VolumeMounts any
-	WorkingDir any
+	SourceCode      any
+	StartupProbe    any
+	VolumeMounts    any
+	WorkingDir      any
 }
 
 type WorkerPool_Template_NodeSelector struct {
@@ -157,47 +157,47 @@ type WorkerPool_Template_Volumes_CloudSqlInstance struct {
 }
 
 type WorkerPool_Template_Volumes_EmptyDir struct {
-	Medium any
+	Medium    any
 	SizeLimit any
 }
 
 type WorkerPool_Template_Volumes_Gcs struct {
-	Bucket any
+	Bucket       any
 	MountOptions any
-	ReadOnly any
+	ReadOnly     any
 }
 
 type WorkerPool_Template_Volumes_Nfs struct {
-	Path any
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
 type WorkerPool_Template_Volumes_Secret_Items struct {
-	Mode any
-	Path any
+	Mode    any
+	Path    any
 	Version any
 }
 
 type WorkerPool_Template_Volumes_Secret struct {
 	DefaultMode any
-	Items any
-	Secret any
+	Items       any
+	Secret      any
 }
 
 type WorkerPool_Template_Volumes struct {
 	CloudSqlInstance any
-	EmptyDir any
-	Gcs any
-	Name any
-	Nfs any
-	Secret any
+	EmptyDir         any
+	Gcs              any
+	Name             any
+	Nfs              any
+	Secret           any
 }
 
 type WorkerPool_Template_VpcAccess_NetworkInterfaces struct {
-	Network any
+	Network    any
 	Subnetwork any
-	Tags any
+	Tags       any
 }
 
 type WorkerPool_Template_VpcAccess struct {
@@ -243,339 +243,339 @@ type WorkerPool_Template struct {
 }
 
 var WorkerPool_BinaryAuthorizationFields = ubx.FieldMap{
-		"BreakglassJustification": ubx.FieldSpec{WireName: "breakglass_justification"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"UseDefault": ubx.FieldSpec{WireName: "use_default"},
-	}
-
-var WorkerPool_ConditionsFields = ubx.FieldMap{
-		"ExecutionReason": ubx.FieldSpec{WireName: "execution_reason"},
-		"InstanceReason": ubx.FieldSpec{WireName: "instance_reason"},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"RevisionReason": ubx.FieldSpec{WireName: "revision_reason"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"BreakglassJustification": ubx.FieldSpec{WireName: "breakglass_justification"},
+	"Policy":                  ubx.FieldSpec{WireName: "policy"},
+	"UseDefault":              ubx.FieldSpec{WireName: "use_default"},
+}
 
 var WorkerPool_InstanceSplitStatusesFields = ubx.FieldMap{
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Percent":  ubx.FieldSpec{WireName: "percent"},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var WorkerPool_ScalingFields = ubx.FieldMap{
-		"ManualInstanceCount": ubx.FieldSpec{WireName: "manual_instance_count"},
-	}
+	"ManualInstanceCount": ubx.FieldSpec{WireName: "manual_instance_count"},
+}
 
 var WorkerPool_Template_Containers_BuildInfoFields = ubx.FieldMap{
-		"FunctionTarget": ubx.FieldSpec{WireName: "function_target"},
-		"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
-	}
+	"FunctionTarget": ubx.FieldSpec{WireName: "function_target"},
+	"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
+}
 
 var WorkerPool_Template_Containers_Env_ValueSource_SecretKeyRefFields = ubx.FieldMap{
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Secret":  ubx.FieldSpec{WireName: "secret"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var WorkerPool_Template_Containers_Env_ValueSourceFields = ubx.FieldMap{
-		"SecretKeyRef": ubx.FieldSpec{
-			WireName: "secret_key_ref",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_Env_ValueSource_SecretKeyRefFields,
-		},
-	}
+	"SecretKeyRef": ubx.FieldSpec{
+		WireName: "secret_key_ref",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_Env_ValueSource_SecretKeyRefFields,
+	},
+}
 
 var WorkerPool_Template_Containers_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueSource": ubx.FieldSpec{
-			WireName: "value_source",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_Env_ValueSourceFields,
-		},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+	"ValueSource": ubx.FieldSpec{
+		WireName: "value_source",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_Env_ValueSourceFields,
+	},
+}
 
 var WorkerPool_Template_Containers_LivenessProbe_GrpcFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var WorkerPool_Template_Containers_LivenessProbe_HttpGet_HttpHeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var WorkerPool_Template_Containers_LivenessProbe_HttpGetFields = ubx.FieldMap{
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: WorkerPool_Template_Containers_LivenessProbe_HttpGet_HttpHeadersFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Containers_LivenessProbe_HttpGet_HttpHeadersFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var WorkerPool_Template_Containers_LivenessProbe_TcpSocketFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var WorkerPool_Template_Containers_LivenessProbeFields = ubx.FieldMap{
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbe_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbe_TcpSocketFields,
-		},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbe_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbe_TcpSocketFields,
+	},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var WorkerPool_Template_Containers_PortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var WorkerPool_Template_Containers_ResourcesFields = ubx.FieldMap{
-		"CpuIdle": ubx.FieldSpec{WireName: "cpu_idle"},
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"StartupCpuBoost": ubx.FieldSpec{WireName: "startup_cpu_boost"},
-	}
+	"CpuIdle":         ubx.FieldSpec{WireName: "cpu_idle"},
+	"Limits":          ubx.FieldSpec{WireName: "limits"},
+	"StartupCpuBoost": ubx.FieldSpec{WireName: "startup_cpu_boost"},
+}
 
 var WorkerPool_Template_Containers_SourceCode_CloudStorageSourceFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+}
 
 var WorkerPool_Template_Containers_SourceCode_InlinedSource_SourcesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"Filename": ubx.FieldSpec{WireName: "filename"},
+}
 
 var WorkerPool_Template_Containers_SourceCode_InlinedSourceFields = ubx.FieldMap{
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: WorkerPool_Template_Containers_SourceCode_InlinedSource_SourcesFields,
-		},
-	}
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Containers_SourceCode_InlinedSource_SourcesFields,
+	},
+}
 
 var WorkerPool_Template_Containers_SourceCodeFields = ubx.FieldMap{
-		"CloudStorageSource": ubx.FieldSpec{
-			WireName: "cloud_storage_source",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_SourceCode_CloudStorageSourceFields,
-		},
-		"InlinedSource": ubx.FieldSpec{
-			WireName: "inlined_source",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_SourceCode_InlinedSourceFields,
-		},
-	}
+	"CloudStorageSource": ubx.FieldSpec{
+		WireName: "cloud_storage_source",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_SourceCode_CloudStorageSourceFields,
+	},
+	"InlinedSource": ubx.FieldSpec{
+		WireName: "inlined_source",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_SourceCode_InlinedSourceFields,
+	},
+}
 
 var WorkerPool_Template_Containers_VolumeMountsFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SubPath": ubx.FieldSpec{WireName: "sub_path"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SubPath":   ubx.FieldSpec{WireName: "sub_path"},
+}
 
 var WorkerPool_Template_ContainersFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"BaseImageUri": ubx.FieldSpec{WireName: "base_image_uri"},
-		"BuildInfo": ubx.FieldSpec{
-			WireName: "build_info",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_BuildInfoFields,
-		},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: WorkerPool_Template_Containers_EnvFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbeFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: WorkerPool_Template_Containers_PortsFields,
-		},
-		"ReadinessProbe": ubx.FieldSpec{
-			WireName: "readiness_probe",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbeFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_ResourcesFields,
-		},
-		"SandboxLauncher": ubx.FieldSpec{WireName: "sandbox_launcher"},
-		"SourceCode": ubx.FieldSpec{
-			WireName: "source_code",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_SourceCodeFields,
-		},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: WorkerPool_Template_Containers_LivenessProbeFields,
-		},
-		"VolumeMounts": ubx.FieldSpec{
-			WireName: "volume_mounts",
-			Kind: "list",
-			Fields: WorkerPool_Template_Containers_VolumeMountsFields,
-		},
-		"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
-	}
+	"Args":         ubx.FieldSpec{WireName: "args"},
+	"BaseImageUri": ubx.FieldSpec{WireName: "base_image_uri"},
+	"BuildInfo": ubx.FieldSpec{
+		WireName: "build_info",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_BuildInfoFields,
+	},
+	"Command":   ubx.FieldSpec{WireName: "command"},
+	"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Containers_EnvFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbeFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Containers_PortsFields,
+	},
+	"ReadinessProbe": ubx.FieldSpec{
+		WireName: "readiness_probe",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbeFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_ResourcesFields,
+	},
+	"SandboxLauncher": ubx.FieldSpec{WireName: "sandbox_launcher"},
+	"SourceCode": ubx.FieldSpec{
+		WireName: "source_code",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_SourceCodeFields,
+	},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Containers_LivenessProbeFields,
+	},
+	"VolumeMounts": ubx.FieldSpec{
+		WireName: "volume_mounts",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Containers_VolumeMountsFields,
+	},
+	"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
+}
 
 var WorkerPool_Template_NodeSelectorFields = ubx.FieldMap{
-		"Accelerator": ubx.FieldSpec{WireName: "accelerator"},
-	}
+	"Accelerator": ubx.FieldSpec{WireName: "accelerator"},
+}
 
 var WorkerPool_Template_ServiceMeshFields = ubx.FieldMap{
-		"Mesh": ubx.FieldSpec{WireName: "mesh"},
-	}
+	"Mesh": ubx.FieldSpec{WireName: "mesh"},
+}
 
 var WorkerPool_Template_Volumes_CloudSqlInstanceFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{WireName: "instances"},
-	}
+	"Instances": ubx.FieldSpec{WireName: "instances"},
+}
 
 var WorkerPool_Template_Volumes_EmptyDirFields = ubx.FieldMap{
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
-	}
+	"Medium":    ubx.FieldSpec{WireName: "medium"},
+	"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
+}
 
 var WorkerPool_Template_Volumes_GcsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"Bucket":       ubx.FieldSpec{WireName: "bucket"},
+	"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
+	"ReadOnly":     ubx.FieldSpec{WireName: "read_only"},
+}
 
 var WorkerPool_Template_Volumes_NfsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Server":   ubx.FieldSpec{WireName: "server"},
+}
 
 var WorkerPool_Template_Volumes_Secret_ItemsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Mode":    ubx.FieldSpec{WireName: "mode"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var WorkerPool_Template_Volumes_SecretFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: WorkerPool_Template_Volumes_Secret_ItemsFields,
-		},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_Volumes_Secret_ItemsFields,
+	},
+	"Secret": ubx.FieldSpec{WireName: "secret"},
+}
 
 var WorkerPool_Template_VolumesFields = ubx.FieldMap{
-		"CloudSqlInstance": ubx.FieldSpec{
-			WireName: "cloud_sql_instance",
-			Kind: "object",
-			Fields: WorkerPool_Template_Volumes_CloudSqlInstanceFields,
-		},
-		"EmptyDir": ubx.FieldSpec{
-			WireName: "empty_dir",
-			Kind: "object",
-			Fields: WorkerPool_Template_Volumes_EmptyDirFields,
-		},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: WorkerPool_Template_Volumes_GcsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: WorkerPool_Template_Volumes_NfsFields,
-		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
-			Kind: "object",
-			Fields: WorkerPool_Template_Volumes_SecretFields,
-		},
-	}
+	"CloudSqlInstance": ubx.FieldSpec{
+		WireName: "cloud_sql_instance",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Volumes_CloudSqlInstanceFields,
+	},
+	"EmptyDir": ubx.FieldSpec{
+		WireName: "empty_dir",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Volumes_EmptyDirFields,
+	},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Volumes_GcsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Volumes_NfsFields,
+	},
+	"Secret": ubx.FieldSpec{
+		WireName: "secret",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_Volumes_SecretFields,
+	},
+}
 
 var WorkerPool_Template_VpcAccess_NetworkInterfacesFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	"Tags":       ubx.FieldSpec{WireName: "tags"},
+}
 
 var WorkerPool_Template_VpcAccessFields = ubx.FieldMap{
-		"Connector": ubx.FieldSpec{WireName: "connector"},
-		"Egress": ubx.FieldSpec{WireName: "egress"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: WorkerPool_Template_VpcAccess_NetworkInterfacesFields,
-		},
-	}
+	"Connector": ubx.FieldSpec{WireName: "connector"},
+	"Egress":    ubx.FieldSpec{WireName: "egress"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_VpcAccess_NetworkInterfacesFields,
+	},
+}
 
 var WorkerPool_TemplateFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Client": ubx.FieldSpec{WireName: "client"},
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"Containers": ubx.FieldSpec{
-			WireName: "containers",
-			Kind: "list",
-			Fields: WorkerPool_Template_ContainersFields,
-		},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
-		"EncryptionKeyRevocationAction": ubx.FieldSpec{WireName: "encryption_key_revocation_action"},
-		"EncryptionKeyShutdownDuration": ubx.FieldSpec{WireName: "encryption_key_shutdown_duration"},
-		"GpuZonalRedundancyDisabled": ubx.FieldSpec{WireName: "gpu_zonal_redundancy_disabled"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"NodeSelector": ubx.FieldSpec{
-			WireName: "node_selector",
-			Kind: "object",
-			Fields: WorkerPool_Template_NodeSelectorFields,
-		},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServiceMesh": ubx.FieldSpec{
-			WireName: "service_mesh",
-			Kind: "object",
-			Fields: WorkerPool_Template_ServiceMeshFields,
-		},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: WorkerPool_Template_VolumesFields,
-		},
-		"VpcAccess": ubx.FieldSpec{
-			WireName: "vpc_access",
-			Kind: "object",
-			Fields: WorkerPool_Template_VpcAccessFields,
-		},
-	}
+	"Annotations":   ubx.FieldSpec{WireName: "annotations"},
+	"Client":        ubx.FieldSpec{WireName: "client"},
+	"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
+	"Containers": ubx.FieldSpec{
+		WireName: "containers",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_ContainersFields,
+	},
+	"EncryptionKey":                 ubx.FieldSpec{WireName: "encryption_key"},
+	"EncryptionKeyRevocationAction": ubx.FieldSpec{WireName: "encryption_key_revocation_action"},
+	"EncryptionKeyShutdownDuration": ubx.FieldSpec{WireName: "encryption_key_shutdown_duration"},
+	"GpuZonalRedundancyDisabled":    ubx.FieldSpec{WireName: "gpu_zonal_redundancy_disabled"},
+	"Labels":                        ubx.FieldSpec{WireName: "labels"},
+	"NodeSelector": ubx.FieldSpec{
+		WireName: "node_selector",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_NodeSelectorFields,
+	},
+	"Revision":       ubx.FieldSpec{WireName: "revision"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"ServiceMesh": ubx.FieldSpec{
+		WireName: "service_mesh",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_ServiceMeshFields,
+	},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   WorkerPool_Template_VolumesFields,
+	},
+	"VpcAccess": ubx.FieldSpec{
+		WireName: "vpc_access",
+		Kind:     "object",
+		Fields:   WorkerPool_Template_VpcAccessFields,
+	},
+}
+
+var WorkerPool_ConditionsFields = ubx.FieldMap{
+	"ExecutionReason":    ubx.FieldSpec{WireName: "execution_reason"},
+	"InstanceReason":     ubx.FieldSpec{WireName: "instance_reason"},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"RevisionReason":     ubx.FieldSpec{WireName: "revision_reason"},
+	"Severity":           ubx.FieldSpec{WireName: "severity"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkerPoolConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected in new resources. All system annotations in v1 now have a corresponding field in v2 WorkerPool. This field follows Kubernetes annotations' namespacing, limits, and rules.
@@ -586,58 +586,26 @@ type WorkerPoolConfig struct {
 	Client any
 	// Arbitrary version identifier for the API client.
 	ClientVersion any
-	// Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the WorkerPool does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-	Conditions any
-	// Output only. The creation time.
-	CreateTime any
-	// Output only. Email address of the authenticated creator.
-	Creator any
 	// Deprecated: Not supported, and ignored by Cloud Run.
 	CustomAudiences any
-	// Output only. The deletion time. It is only populated as a response to a Delete request.
-	DeleteTime any
 	// User-provided description of the WorkerPool. This field currently has a 512-character limit.
 	Description any
 	// Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
 	Etag any
-	// Output only. For a deleted resource, the time after which it will be permamently deleted.
-	ExpireTime any
-	// Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-	Generation any
-	// Output only. Detailed status information for corresponding instance splits. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-	InstanceSplitStatuses any
 	// Optional. Specifies how to distribute instances over a collection of Revisions belonging to the WorkerPool. If instance split is empty or not provided, defaults to 100% instances assigned to the latest `Ready` Revision.
 	InstanceSplits any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 WorkerPool.
 	Labels any
-	// Output only. Email address of the last authenticated modifier.
-	LastModifier any
-	// Output only. Name of the last created revision. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-	LatestCreatedRevision any
-	// Output only. Name of the latest revision that is serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-	LatestReadyRevision any
 	// Optional. The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
 	LaunchStage any
 	// The fully qualified name of this WorkerPool. In CreateWorkerPoolRequest, this field is ignored, and instead composed from CreateWorkerPoolRequest.parent and CreateWorkerPoolRequest.worker_id. Format: `projects/{project}/locations/{location}/workerPools/{worker_id}`
 	Name any
-	// Output only. The generation of this WorkerPool currently serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-	ObservedGeneration any
-	// Output only. Returns true if the WorkerPool is currently being acted upon by the system to bring it into the desired state. When a new WorkerPool is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the WorkerPool to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation`, `latest_ready_revison`, `instance_split_statuses`, and `uri` will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the serving state matches the WorkerPool, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `instance_splits` and `instance_split_statuses`, `observed_generation` and `generation`, `latest_ready_revision` and `latest_created_revision`. If reconciliation failed, `instance_split_statuses`, `observed_generation`, and `latest_ready_revision` will have the state of the last serving revision, or empty for newly created WorkerPools. Additional information on the failure can be found in `terminal_condition` and `conditions`.
-	Reconciling any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Worker pool scaling settings.
 	Scaling any
 	// WorkerPoolRevisionTemplate describes the data a worker pool revision should have when created from a template.
 	Template any
 	// Defines a status condition for a resource.
 	TerminalCondition any
-	// Output only. Indicates whether Cloud Run Threat Detection monitoring is enabled for the parent project of this worker pool.
-	ThreatDetectionEnabled any
-	// Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type WorkerPoolAttrs struct {
@@ -709,60 +677,36 @@ var WorkerPool = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"BinaryAuthorization": ubx.FieldSpec{
 			WireName: "binary_authorization",
-			Kind: "object",
-			Fields: WorkerPool_BinaryAuthorizationFields,
+			Kind:     "object",
+			Fields:   WorkerPool_BinaryAuthorizationFields,
 		},
-		"Client": ubx.FieldSpec{WireName: "client"},
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: WorkerPool_ConditionsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
+		"Client":          ubx.FieldSpec{WireName: "client"},
+		"ClientVersion":   ubx.FieldSpec{WireName: "client_version"},
 		"CustomAudiences": ubx.FieldSpec{WireName: "custom_audiences"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"InstanceSplitStatuses": ubx.FieldSpec{
-			WireName: "instance_split_statuses",
-			Kind: "list",
-			Fields: WorkerPool_InstanceSplitStatusesFields,
-		},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Etag":            ubx.FieldSpec{WireName: "etag"},
 		"InstanceSplits": ubx.FieldSpec{
 			WireName: "instance_splits",
-			Kind: "list",
-			Fields: WorkerPool_InstanceSplitStatusesFields,
+			Kind:     "list",
+			Fields:   WorkerPool_InstanceSplitStatusesFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastModifier": ubx.FieldSpec{WireName: "last_modifier"},
-		"LatestCreatedRevision": ubx.FieldSpec{WireName: "latest_created_revision"},
-		"LatestReadyRevision": ubx.FieldSpec{WireName: "latest_ready_revision"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObservedGeneration": ubx.FieldSpec{WireName: "observed_generation"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Scaling": ubx.FieldSpec{
 			WireName: "scaling",
-			Kind: "object",
-			Fields: WorkerPool_ScalingFields,
+			Kind:     "object",
+			Fields:   WorkerPool_ScalingFields,
 		},
 		"Template": ubx.FieldSpec{
 			WireName: "template",
-			Kind: "object",
-			Fields: WorkerPool_TemplateFields,
+			Kind:     "object",
+			Fields:   WorkerPool_TemplateFields,
 		},
 		"TerminalCondition": ubx.FieldSpec{
 			WireName: "terminal_condition",
-			Kind: "object",
-			Fields: WorkerPool_ConditionsFields,
+			Kind:     "object",
+			Fields:   WorkerPool_ConditionsFields,
 		},
-		"ThreatDetectionEnabled": ubx.FieldSpec{WireName: "threat_detection_enabled"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

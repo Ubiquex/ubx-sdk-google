@@ -324,44 +324,18 @@ const Restore_VolumeDataRestorePolicyOverridesFields: FieldMap = {
 export interface RestoreConfig {
   /** Required. Immutable. A reference to the Backup used as the source from which this Restore will restore. Note that this Backup must be a sub-resource of the RestorePlan's backup_plan. Format: `projects/* /locations/* /backupPlans/* /backups/*`. */
   backup?: string | Computed<string>;
-  /** Output only. The target cluster into which this Restore will restore data. Valid formats: - `projects/* /locations/* /clusters/*` - `projects/* /zones/* /clusters/*` Inherited from parent RestorePlan's cluster value. */
-  cluster?: string | Computed<string>;
-  /** Output only. Timestamp of when the restore operation completed. */
-  completeTime?: string | Computed<string>;
-  /** Output only. The timestamp when this Restore resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User specified descriptive string for this Restore. */
   description?: string | Computed<string>;
-  /** Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestore`, and systems are expected to put that etag in the request to `UpdateRestore` or `DeleteRestore` to ensure that their change will be applied to the same version of the resource. */
-  etag?: string | Computed<string>;
   /** Defines the filter for `Restore`. This filter can be used to further refine the resource selection of the `Restore` beyond the coarse-grained scope defined in the `RestorePlan`. `exclusion_filters` take precedence over `inclusion_filters`. If a resource matches both `inclusion_filters` and `exclusion_filters`, it will not be restored. */
   filter?: Restore_Filter | Computed<Restore_Filter>;
   /** A set of custom labels supplied by user. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The full name of the Restore resource. Format: `projects/* /locations/* /restorePlans/* /restores/*` */
-  name?: string | Computed<string>;
-  /** Output only. Number of resources excluded during the restore execution. */
-  resourcesExcludedCount?: number | Computed<number>;
-  /** Output only. Number of resources that failed to be restored during the restore execution. */
-  resourcesFailedCount?: number | Computed<number>;
-  /** Output only. Number of resources restored during the restore execution. */
-  resourcesRestoredCount?: number | Computed<number>;
   /** Configuration of a restore. */
   restoreConfig?: Restore_RestoreConfig | Computed<Restore_RestoreConfig>;
-  /** Output only. The current state of the Restore. */
-  state?: string | Computed<string>;
-  /** Output only. Human-readable description of why the Restore is in its current state. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent. */
-  stateReason?: string | Computed<string>;
   /** Stores information about troubleshooting doc for debugging a particular state of an operation (eg - backup/restore). This will be used by the end user to debug their operation failure scenario easily. */
   troubleshootingInfo?: Restore_TroubleshootingInfo | Computed<Restore_TroubleshootingInfo>;
-  /** Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when this Restore resource was last updated. */
-  updateTime?: string | Computed<string>;
   /** Optional. Immutable. Overrides the volume data restore policies selected in the Restore Config for override-scoped resources. */
   volumeDataRestorePolicyOverrides?: Restore_VolumeDataRestorePolicyOverrides[] | Computed<Restore_VolumeDataRestorePolicyOverrides[]>;
-  /** Output only. Number of volumes restored during the restore execution. */
-  volumesRestoredCount?: number | Computed<number>;
 }
 
 export interface RestoreAttrs {
@@ -411,40 +385,27 @@ export const Restore: ResourceBinding<RestoreConfig, RestoreAttrs> = {
   wireType: "google_gkebackup_restore",
   fields: {
     backup: "backup",
-    cluster: "cluster",
-    completeTime: "complete_time",
-    createTime: "create_time",
     description: "description",
-    etag: "etag",
     filter: {
       wireName: "filter",
       kind: "object",
       fields: Restore_FilterFields,
     },
     labels: "labels",
-    name: "name",
-    resourcesExcludedCount: "resources_excluded_count",
-    resourcesFailedCount: "resources_failed_count",
-    resourcesRestoredCount: "resources_restored_count",
     restoreConfig: {
       wireName: "restore_config",
       kind: "object",
       fields: Restore_RestoreConfigFields,
     },
-    state: "state",
-    stateReason: "state_reason",
     troubleshootingInfo: {
       wireName: "troubleshooting_info",
       kind: "object",
       fields: Restore_TroubleshootingInfoFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     volumeDataRestorePolicyOverrides: {
       wireName: "volume_data_restore_policy_overrides",
       kind: "list",
       fields: Restore_VolumeDataRestorePolicyOverridesFields,
     },
-    volumesRestoredCount: "volumes_restored_count",
   },
 };

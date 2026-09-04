@@ -878,7 +878,6 @@ class V1alpha1ErrorFrame_Violations:
 
 @dataclasses.dataclass
 class V1alpha1ErrorFrameConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -895,7 +894,6 @@ class V1alpha1ErrorFrameAttrs:
 V1alpha1ErrorFrame = ubx.DataSourceBinding(
     wire_type="google_migrationcenter_v1alpha1_error_frame",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

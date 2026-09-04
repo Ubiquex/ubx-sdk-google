@@ -15,14 +15,10 @@ export interface NamespaceConfig {
   description?: string | Computed<string>;
   /** Optional. Whether the namespace is disabled. If disabled, credentials may no longer be issued for identities within this namespace, however existing credentials will still be accepted until they expire. */
   disabled?: boolean | Computed<boolean>;
-  /** Output only. Time after which the namespace will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Identifier. The resource name of the namespace. */
   name?: string | Computed<string>;
   /** The Google Cloud service that owns this namespace. */
   ownerService?: Namespace_OwnerService | Computed<Namespace_OwnerService>;
-  /** Output only. The state of the namespace. */
-  state?: string | Computed<string>;
 }
 
 export interface NamespaceAttrs {
@@ -45,13 +41,11 @@ export const Namespace: ResourceBinding<NamespaceConfig, NamespaceAttrs> = {
   fields: {
     description: "description",
     disabled: "disabled",
-    expireTime: "expire_time",
     name: "name",
     ownerService: {
       wireName: "owner_service",
       kind: "object",
       fields: Namespace_OwnerServiceFields,
     },
-    state: "state",
   },
 };

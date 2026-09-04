@@ -18,20 +18,18 @@ type V1alpha1InternalRange_Migration struct {
 }
 
 var V1alpha1InternalRange_AllocationOptionsFields = ubx.FieldMap{
-		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
-		"FirstAvailableRangesLookupSize": ubx.FieldSpec{WireName: "first_available_ranges_lookup_size"},
-	}
+	"AllocationStrategy":             ubx.FieldSpec{WireName: "allocation_strategy"},
+	"FirstAvailableRangesLookupSize": ubx.FieldSpec{WireName: "first_available_ranges_lookup_size"},
+}
 
 var V1alpha1InternalRange_MigrationFields = ubx.FieldMap{
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 type V1alpha1InternalRangeConfig struct {
 	// Range auto-allocation options, to be optionally used when CIDR block is not explicitly set.
 	AllocationOptions any
-	// Output only. Time when the internal range was created.
-	CreateTime any
 	// Optional. A description of this resource.
 	Description any
 	// Optional. ExcludeCidrRanges flag. Specifies a set of CIDR blocks that allows exclusion of particular CIDR ranges from the auto-allocation process, without having to reserve these blocks
@@ -54,16 +52,10 @@ type V1alpha1InternalRangeConfig struct {
 	Peering any
 	// Optional. An alternative to ip_cidr_range. Can be set when trying to create an IPv4 reservation that automatically finds a free range of the given size. If both ip_cidr_range and prefix_length are set, there is an error if the range sizes do not match. Can also be used during updates to change the range size. NOTE: For IPv6 this field only works if ip_cidr_range is set as well, and both fields must match. In other words, with IPv6 this field only works as a redundant parameter.
 	PrefixLength any
-	// Output only. Status of the Internal Range.
-	RangeStatus any
 	// Optional. Can be set to narrow down or pick a different address space while searching for a free range. If not set, defaults to the ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"] address space (for auto-mode networks, the "10.0.0.0/9" range is used instead of "10.0.0.0/8"). This can be used to target the search in other rfc-1918 address spaces like "172.16.0.0/12" and "192.168.0.0/16" or non-rfc-1918 address spaces used in the VPC.
 	TargetCidrRange any
-	// Output only. Time when the internal range was updated.
-	UpdateTime any
 	// Optional. The type of usage set for this internal range.
 	Usage any
-	// Output only. The list of resources that refer to this internal range. Resources that use the internal range for their range allocation are referred to as users of the range. Other resources mark themselves as users while doing so by creating a reference to this internal range. Having a user, based on this reference, prevents deletion of the internal range that is referred to. Can be empty.
-	Users any
 }
 
 type V1alpha1InternalRangeAttrs struct {
@@ -110,29 +102,25 @@ var V1alpha1InternalRange = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllocationOptions": ubx.FieldSpec{
 			WireName: "allocation_options",
-			Kind: "object",
-			Fields: V1alpha1InternalRange_AllocationOptionsFields,
+			Kind:     "object",
+			Fields:   V1alpha1InternalRange_AllocationOptionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"ExcludeCidrRanges": ubx.FieldSpec{WireName: "exclude_cidr_ranges"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Immutable":         ubx.FieldSpec{WireName: "immutable"},
+		"IpCidrRange":       ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
 		"Migration": ubx.FieldSpec{
 			WireName: "migration",
-			Kind: "object",
-			Fields: V1alpha1InternalRange_MigrationFields,
+			Kind:     "object",
+			Fields:   V1alpha1InternalRange_MigrationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Overlaps": ubx.FieldSpec{WireName: "overlaps"},
-		"Peering": ubx.FieldSpec{WireName: "peering"},
-		"PrefixLength": ubx.FieldSpec{WireName: "prefix_length"},
-		"RangeStatus": ubx.FieldSpec{WireName: "range_status"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Network":         ubx.FieldSpec{WireName: "network"},
+		"Overlaps":        ubx.FieldSpec{WireName: "overlaps"},
+		"Peering":         ubx.FieldSpec{WireName: "peering"},
+		"PrefixLength":    ubx.FieldSpec{WireName: "prefix_length"},
 		"TargetCidrRange": ubx.FieldSpec{WireName: "target_cidr_range"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Usage": ubx.FieldSpec{WireName: "usage"},
-		"Users": ubx.FieldSpec{WireName: "users"},
+		"Usage":           ubx.FieldSpec{WireName: "usage"},
 	},
 }

@@ -11,7 +11,7 @@ type Environment_CompletionTime struct {
 }
 
 type Environment_DimensionValue struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -75,14 +75,14 @@ type Environment_EnvironmentResult_TestSuiteOverviews_XmlSource struct {
 }
 
 type Environment_EnvironmentResult_TestSuiteOverviews struct {
-	ElapsedTime any
-	ErrorCount any
+	ElapsedTime  any
+	ErrorCount   any
 	FailureCount any
-	FlakyCount any
-	Name any
+	FlakyCount   any
+	Name         any
 	SkippedCount any
-	TotalCount any
-	XmlSource any
+	TotalCount   any
+	XmlSource    any
 }
 
 type Environment_EnvironmentResult struct {
@@ -102,15 +102,15 @@ type Environment_ResultsStorage struct {
 }
 
 type Environment_ShardSummaries struct {
-	Runs any
+	Runs        any
 	ShardResult any
 }
 
 type EnvironmentConfig struct {
 	EnvironmentId any
-	ExecutionId any
-	HistoryId any
-	ProjectId any
+	ExecutionId   any
+	HistoryId     any
+	ProjectId     any
 }
 
 type EnvironmentAttrs struct {
@@ -121,13 +121,13 @@ type EnvironmentAttrs struct {
 	// Dimension values describing the environment. Dimension values always consist of "Model", "Version", "Locale", and "Orientation". - In response: always set - In create request: always set - In update request: never set
 	DimensionValue any
 	// A short human-readable name to display in the UI. Maximum of 100 characters. For example: Nexus 5, API 27.
-	DisplayName any
+	DisplayName   any
 	EnvironmentId any
 	// Merged test result for environment. If the environment has only one step (no reruns or shards), then the merged result is the same as the step result. If the environment has multiple shards and/or reruns, then the results of shards and reruns that belong to the same environment are merged into one environment result.
 	EnvironmentResult any
-	ExecutionId any
-	HistoryId any
-	ProjectId any
+	ExecutionId       any
+	HistoryId         any
+	ProjectId         any
 	// The storage for test results.
 	ResultsStorage any
 	// Output only. Summaries of shards. Only one shard will present unless sharding feature is enabled in TestExecutionService.
@@ -138,8 +138,8 @@ var Environment = ubx.DataSourceBinding{
 	WireType: "google_toolresults_environment",
 	Fields: ubx.FieldMap{
 		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ExecutionId":   ubx.FieldSpec{WireName: "execution_id"},
+		"HistoryId":     ubx.FieldSpec{WireName: "history_id"},
+		"ProjectId":     ubx.FieldSpec{WireName: "project_id"},
 	},
 }

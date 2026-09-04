@@ -12,10 +12,6 @@ type V1beta1DataExchangeConfig struct {
 	Documentation any
 	// Optional. Base64 encoded image representing the data exchange. Max Size: 3.0MiB Expected image dimensions are 512x512 pixels, however the API only performs validation on size of the encoded data. Note: For byte fields, the content of the fields are base64-encoded (which increases the size of the data by 33-36%) when using JSON on the wire.
 	Icon any
-	// Output only. Number of listings contained in the data exchange.
-	ListingCount any
-	// Output only. The resource name of the data exchange. e.g. `projects/myproject/locations/us/dataExchanges/123`.
-	Name any
 	// Optional. Email or URL of the primary point of contact of the data exchange. Max Length: 1000 bytes.
 	PrimaryContact any
 }
@@ -40,12 +36,10 @@ type V1beta1DataExchangeAttrs struct {
 var V1beta1DataExchange = ubx.ResourceBinding{
 	WireType: "google_analyticshub_v1beta1_data_exchange",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"ListingCount": ubx.FieldSpec{WireName: "listing_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
+		"Icon":           ubx.FieldSpec{WireName: "icon"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
 	},
 }

@@ -15,7 +15,7 @@ type V1beta2Version_ReplicationStatus_Automatic struct {
 
 type V1beta2Version_ReplicationStatus_UserManaged_Replicas struct {
 	CustomerManagedEncryption any
-	Location any
+	Location                  any
 }
 
 type V1beta2Version_ReplicationStatus_UserManaged struct {
@@ -31,7 +31,6 @@ type V1beta2Version_ReplicationStatus struct {
 }
 
 type V1beta2VersionConfig struct {
-	Name any
 }
 
 type V1beta2VersionAttrs struct {
@@ -56,7 +55,5 @@ type V1beta2VersionAttrs struct {
 
 var V1beta2Version = ubx.DataSourceBinding{
 	WireType: "google_secretmanager_v1beta2_version",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

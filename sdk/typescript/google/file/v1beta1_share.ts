@@ -26,20 +26,14 @@ export interface V1beta1ShareConfig {
   backup?: string | Computed<string>;
   /** File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. */
   capacityGb?: string | Computed<string>;
-  /** Output only. The time when the share was created. */
-  createTime?: string | Computed<string>;
   /** A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The mount name of the share. Must be 63 characters or less and consist of uppercase or lowercase letters, numbers, and underscores. */
   mountName?: string | Computed<string>;
-  /** Output only. The resource name of the share, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/shares/{share_id}`. */
-  name?: string | Computed<string>;
   /** Nfs Export Options. There is a limit of 10 export options per file share. */
   nfsExportOptions?: V1beta1Share_NfsExportOptions[] | Computed<V1beta1Share_NfsExportOptions[]>;
-  /** Output only. The share state. */
-  state?: string | Computed<string>;
 }
 
 export interface V1beta1ShareAttrs {
@@ -68,16 +62,13 @@ export const V1beta1Share: ResourceBinding<V1beta1ShareConfig, V1beta1ShareAttrs
   fields: {
     backup: "backup",
     capacityGb: "capacity_gb",
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     mountName: "mount_name",
-    name: "name",
     nfsExportOptions: {
       wireName: "nfs_export_options",
       kind: "list",
       fields: V1beta1Share_NfsExportOptionsFields,
     },
-    state: "state",
   },
 };

@@ -105,7 +105,6 @@ export interface Object_SourceObject {
 }
 
 export interface ObjectConfig {
-  name: string | Computed<string>;
 }
 
 export interface ObjectAttrs {
@@ -129,6 +128,5 @@ export interface ObjectAttrs {
 export const Object: DataSourceBinding<ObjectConfig, ObjectAttrs> = {
   wireType: "google_datastream_object",
   fields: {
-    name: "name",
   },
 };

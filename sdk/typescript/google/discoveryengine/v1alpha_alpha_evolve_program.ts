@@ -100,18 +100,12 @@ const V1alphaAlphaEvolveProgram_EvaluationFields: FieldMap = {
 export interface V1alphaAlphaEvolveProgramConfig {
   /** A self-contained message containing the content of a program. Can represent a collection of files. */
   content?: V1alphaAlphaEvolveProgram_Content | Computed<V1alphaAlphaEvolveProgram_Content>;
-  /** Output only. Time when the program was created. */
-  createTime?: string | Computed<string>;
   /** Evaluation results for a program candidate. */
   evaluation?: V1alphaAlphaEvolveProgram_Evaluation | Computed<V1alphaAlphaEvolveProgram_Evaluation>;
   /** Optional. Lock token for the program. */
   lockToken?: string | Computed<string>;
   /** Identifier. Unique identifier for the program. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}` */
   name?: string | Computed<string>;
-  /** Output only. Optionally specifies which parent programs this program was evolved from. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}` */
-  parentPrograms?: string[] | Computed<string[]>;
-  /** Output only. State of the program. */
-  state?: string | Computed<string>;
 }
 
 export interface V1alphaAlphaEvolveProgramAttrs {
@@ -139,7 +133,6 @@ export const V1alphaAlphaEvolveProgram: ResourceBinding<V1alphaAlphaEvolveProgra
       kind: "object",
       fields: V1alphaAlphaEvolveProgram_ContentFields,
     },
-    createTime: "create_time",
     evaluation: {
       wireName: "evaluation",
       kind: "object",
@@ -147,7 +140,5 @@ export const V1alphaAlphaEvolveProgram: ResourceBinding<V1alphaAlphaEvolveProgra
     },
     lockToken: "lock_token",
     name: "name",
-    parentPrograms: "parent_programs",
-    state: "state",
   },
 };

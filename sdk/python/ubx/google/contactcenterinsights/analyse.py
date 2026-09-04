@@ -527,12 +527,8 @@ class AnalyseConfig:
     analysis_result: Any = None
     # Selector of all available annotators and phrase matchers to run.
     annotator_selector: Any = None
-    # Output only. The time at which the analysis was created, which occurs when the long-running operation completes.
-    create_time: Any = None
     # Immutable. The resource name of the analysis. Format: projects/{project}/locations/{location}/conversations/{conversation}/analyses/{analysis}
     name: Any = None
-    # Output only. The time at which the analysis was requested.
-    request_time: Any = None
 
 @dataclasses.dataclass
 class AnalyseAttrs:
@@ -560,8 +556,6 @@ Analyse = ubx.ResourceBinding(
             kind="object",
             fields=_Analyse_AnnotatorSelectorFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "request_time": ubx.FieldSpec(wire_name="request_time"),
     },
 )

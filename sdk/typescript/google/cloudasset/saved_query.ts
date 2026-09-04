@@ -124,18 +124,10 @@ const SavedQuery_ContentFields: FieldMap = {
 export interface SavedQueryConfig {
   /** The query content. */
   content?: SavedQuery_Content | Computed<SavedQuery_Content>;
-  /** Output only. The create time of this saved query. */
-  createTime?: string | Computed<string>;
-  /** Output only. The account's email address who has created this saved query. */
-  creator?: string | Computed<string>;
   /** The description of this saved query. This value should be fewer than 255 characters. */
   description?: string | Computed<string>;
   /** Labels applied on the resource. This value should not contain more than 10 entries. The key and value of each entry must be non-empty and fewer than 64 characters. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The last update time of this saved query. */
-  lastUpdateTime?: string | Computed<string>;
-  /** Output only. The account's email address who has updated this saved query most recently. */
-  lastUpdater?: string | Computed<string>;
   /** The resource name of the saved query. The format must be: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id */
   name?: string | Computed<string>;
 }
@@ -167,12 +159,8 @@ export const SavedQuery: ResourceBinding<SavedQueryConfig, SavedQueryAttrs> = {
       kind: "object",
       fields: SavedQuery_ContentFields,
     },
-    createTime: "create_time",
-    creator: "creator",
     description: "description",
     labels: "labels",
-    lastUpdateTime: "last_update_time",
-    lastUpdater: "last_updater",
     name: "name",
   },
 };

@@ -144,140 +144,138 @@ type V1betaEngine_SearchEngineConfig struct {
 }
 
 var V1betaEngine_AgentGatewaySetting_DefaultEgressAgentGatewayFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaEngine_AgentGatewaySettingFields = ubx.FieldMap{
-		"DefaultEgressAgentGateway": ubx.FieldSpec{
-			WireName: "default_egress_agent_gateway",
-			Kind: "object",
-			Fields: V1betaEngine_AgentGatewaySetting_DefaultEgressAgentGatewayFields,
-		},
-	}
+	"DefaultEgressAgentGateway": ubx.FieldSpec{
+		WireName: "default_egress_agent_gateway",
+		Kind:     "object",
+		Fields:   V1betaEngine_AgentGatewaySetting_DefaultEgressAgentGatewayFields,
+	},
+}
 
 var V1betaEngine_ChatEngineConfig_AgentCreationConfigFields = ubx.FieldMap{
-		"Business": ubx.FieldSpec{WireName: "business"},
-		"DefaultLanguageCode": ubx.FieldSpec{WireName: "default_language_code"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Business":            ubx.FieldSpec{WireName: "business"},
+	"DefaultLanguageCode": ubx.FieldSpec{WireName: "default_language_code"},
+	"Location":            ubx.FieldSpec{WireName: "location"},
+	"TimeZone":            ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var V1betaEngine_ChatEngineConfigFields = ubx.FieldMap{
-		"AgentCreationConfig": ubx.FieldSpec{
-			WireName: "agent_creation_config",
-			Kind: "object",
-			Fields: V1betaEngine_ChatEngineConfig_AgentCreationConfigFields,
-		},
-		"AllowCrossRegion": ubx.FieldSpec{WireName: "allow_cross_region"},
-		"DialogflowAgentToLink": ubx.FieldSpec{WireName: "dialogflow_agent_to_link"},
-	}
+	"AgentCreationConfig": ubx.FieldSpec{
+		WireName: "agent_creation_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_ChatEngineConfig_AgentCreationConfigFields,
+	},
+	"AllowCrossRegion":      ubx.FieldSpec{WireName: "allow_cross_region"},
+	"DialogflowAgentToLink": ubx.FieldSpec{WireName: "dialogflow_agent_to_link"},
+}
 
 var V1betaEngine_ChatEngineMetadataFields = ubx.FieldMap{
-		"DialogflowAgent": ubx.FieldSpec{WireName: "dialogflow_agent"},
-	}
+	"DialogflowAgent": ubx.FieldSpec{WireName: "dialogflow_agent"},
+}
 
 var V1betaEngine_CmekConfig_SingleRegionKeysFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var V1betaEngine_CmekConfigFields = ubx.FieldMap{
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NotebooklmState": ubx.FieldSpec{WireName: "notebooklm_state"},
-		"SingleRegionKeys": ubx.FieldSpec{
-			WireName: "single_region_keys",
-			Kind: "list",
-			Fields: V1betaEngine_CmekConfig_SingleRegionKeysFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"IsDefault":                   ubx.FieldSpec{WireName: "is_default"},
+	"KmsKey":                      ubx.FieldSpec{WireName: "kms_key"},
+	"KmsKeyVersion":               ubx.FieldSpec{WireName: "kms_key_version"},
+	"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
+	"Name":                        ubx.FieldSpec{WireName: "name"},
+	"NotebooklmState":             ubx.FieldSpec{WireName: "notebooklm_state"},
+	"SingleRegionKeys": ubx.FieldSpec{
+		WireName: "single_region_keys",
+		Kind:     "list",
+		Fields:   V1betaEngine_CmekConfig_SingleRegionKeysFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var V1betaEngine_CommonConfigFields = ubx.FieldMap{
-		"CompanyName": ubx.FieldSpec{WireName: "company_name"},
-	}
+	"CompanyName": ubx.FieldSpec{WireName: "company_name"},
+}
 
 var V1betaEngine_KnowledgeGraphConfig_FeatureConfigFields = ubx.FieldMap{
-		"DisablePrivateKgAutoComplete": ubx.FieldSpec{WireName: "disable_private_kg_auto_complete"},
-		"DisablePrivateKgEnrichment": ubx.FieldSpec{WireName: "disable_private_kg_enrichment"},
-		"DisablePrivateKgQueryUiChips": ubx.FieldSpec{WireName: "disable_private_kg_query_ui_chips"},
-		"DisablePrivateKgQueryUnderstanding": ubx.FieldSpec{WireName: "disable_private_kg_query_understanding"},
-	}
+	"DisablePrivateKgAutoComplete":       ubx.FieldSpec{WireName: "disable_private_kg_auto_complete"},
+	"DisablePrivateKgEnrichment":         ubx.FieldSpec{WireName: "disable_private_kg_enrichment"},
+	"DisablePrivateKgQueryUiChips":       ubx.FieldSpec{WireName: "disable_private_kg_query_ui_chips"},
+	"DisablePrivateKgQueryUnderstanding": ubx.FieldSpec{WireName: "disable_private_kg_query_understanding"},
+}
 
 var V1betaEngine_KnowledgeGraphConfigFields = ubx.FieldMap{
-		"CloudKnowledgeGraphTypes": ubx.FieldSpec{WireName: "cloud_knowledge_graph_types"},
-		"EnableCloudKnowledgeGraph": ubx.FieldSpec{WireName: "enable_cloud_knowledge_graph"},
-		"EnablePrivateKnowledgeGraph": ubx.FieldSpec{WireName: "enable_private_knowledge_graph"},
-		"FeatureConfig": ubx.FieldSpec{
-			WireName: "feature_config",
-			Kind: "object",
-			Fields: V1betaEngine_KnowledgeGraphConfig_FeatureConfigFields,
-		},
-		"PrivateKnowledgeGraphTypes": ubx.FieldSpec{WireName: "private_knowledge_graph_types"},
-	}
+	"CloudKnowledgeGraphTypes":    ubx.FieldSpec{WireName: "cloud_knowledge_graph_types"},
+	"EnableCloudKnowledgeGraph":   ubx.FieldSpec{WireName: "enable_cloud_knowledge_graph"},
+	"EnablePrivateKnowledgeGraph": ubx.FieldSpec{WireName: "enable_private_knowledge_graph"},
+	"FeatureConfig": ubx.FieldSpec{
+		WireName: "feature_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_KnowledgeGraphConfig_FeatureConfigFields,
+	},
+	"PrivateKnowledgeGraphTypes": ubx.FieldSpec{WireName: "private_knowledge_graph_types"},
+}
 
 var V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_MostPopularConfigFields = ubx.FieldMap{
-		"TimeWindowDays": ubx.FieldSpec{WireName: "time_window_days"},
-	}
+	"TimeWindowDays": ubx.FieldSpec{WireName: "time_window_days"},
+}
 
 var V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_RecommendedForYouConfigFields = ubx.FieldMap{
-		"ContextEventType": ubx.FieldSpec{WireName: "context_event_type"},
-	}
+	"ContextEventType": ubx.FieldSpec{WireName: "context_event_type"},
+}
 
 var V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfigFields = ubx.FieldMap{
-		"MostPopularConfig": ubx.FieldSpec{
-			WireName: "most_popular_config",
-			Kind: "object",
-			Fields: V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_MostPopularConfigFields,
-		},
-		"RecommendedForYouConfig": ubx.FieldSpec{
-			WireName: "recommended_for_you_config",
-			Kind: "object",
-			Fields: V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_RecommendedForYouConfigFields,
-		},
-	}
+	"MostPopularConfig": ubx.FieldSpec{
+		WireName: "most_popular_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_MostPopularConfigFields,
+	},
+	"RecommendedForYouConfig": ubx.FieldSpec{
+		WireName: "recommended_for_you_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfig_RecommendedForYouConfigFields,
+	},
+}
 
 var V1betaEngine_MediaRecommendationEngineConfig_OptimizationObjectiveConfigFields = ubx.FieldMap{
-		"TargetField": ubx.FieldSpec{WireName: "target_field"},
-		"TargetFieldValueFloat": ubx.FieldSpec{WireName: "target_field_value_float"},
-	}
+	"TargetField":           ubx.FieldSpec{WireName: "target_field"},
+	"TargetFieldValueFloat": ubx.FieldSpec{WireName: "target_field_value_float"},
+}
 
 var V1betaEngine_MediaRecommendationEngineConfigFields = ubx.FieldMap{
-		"EngineFeaturesConfig": ubx.FieldSpec{
-			WireName: "engine_features_config",
-			Kind: "object",
-			Fields: V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfigFields,
-		},
-		"OptimizationObjective": ubx.FieldSpec{WireName: "optimization_objective"},
-		"OptimizationObjectiveConfig": ubx.FieldSpec{
-			WireName: "optimization_objective_config",
-			Kind: "object",
-			Fields: V1betaEngine_MediaRecommendationEngineConfig_OptimizationObjectiveConfigFields,
-		},
-		"TrainingState": ubx.FieldSpec{WireName: "training_state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"EngineFeaturesConfig": ubx.FieldSpec{
+		WireName: "engine_features_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_MediaRecommendationEngineConfig_EngineFeaturesConfigFields,
+	},
+	"OptimizationObjective": ubx.FieldSpec{WireName: "optimization_objective"},
+	"OptimizationObjectiveConfig": ubx.FieldSpec{
+		WireName: "optimization_objective_config",
+		Kind:     "object",
+		Fields:   V1betaEngine_MediaRecommendationEngineConfig_OptimizationObjectiveConfigFields,
+	},
+	"TrainingState": ubx.FieldSpec{WireName: "training_state"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaEngine_ObservabilityConfigFields = ubx.FieldMap{
-		"ObservabilityEnabled": ubx.FieldSpec{WireName: "observability_enabled"},
-		"SensitiveLoggingEnabled": ubx.FieldSpec{WireName: "sensitive_logging_enabled"},
-	}
+	"ObservabilityEnabled":    ubx.FieldSpec{WireName: "observability_enabled"},
+	"SensitiveLoggingEnabled": ubx.FieldSpec{WireName: "sensitive_logging_enabled"},
+}
 
 var V1betaEngine_SearchEngineConfigFields = ubx.FieldMap{
-		"RequiredSubscriptionTier": ubx.FieldSpec{WireName: "required_subscription_tier"},
-		"SearchAddOns": ubx.FieldSpec{WireName: "search_add_ons"},
-		"SearchTier": ubx.FieldSpec{WireName: "search_tier"},
-	}
+	"RequiredSubscriptionTier": ubx.FieldSpec{WireName: "required_subscription_tier"},
+	"SearchAddOns":             ubx.FieldSpec{WireName: "search_add_ons"},
+	"SearchTier":               ubx.FieldSpec{WireName: "search_tier"},
+}
 
 type V1betaEngineConfig struct {
 	// Agent Gateway setting, which may be attached to Gemini Enterprise resources for egress control of Gemini Enterprise agents to agents and tools outside of Gemini Enterprise.
 	AgentGatewaySetting any
 	// Optional. Immutable. This the application type which this engine resource represents. NOTE: this is a new concept independ of existing industry vertical or solution type.
 	AppType any
-	// Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry.
-	AssociatedAgentRegistry any
 	// Configurations for a Chat Engine.
 	ChatEngineConfig any
 	// Additional information of a Chat Engine. Fields in this message are output only.
@@ -290,8 +288,6 @@ type V1betaEngineConfig struct {
 	ConfigurableBillingApproach any
 	// Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to tenant-specific information required for that connector. The structure of the tenant information string is connector-dependent.
 	ConnectorTenantInfo any
-	// Output only. Timestamp the Recommendation Engine was created at.
-	CreateTime any
 	// Optional. The data stores associated with this engine. For SOLUTION_TYPE_SEARCH and SOLUTION_TYPE_RECOMMENDATION type of engines, they can only associate with at most one data store. If solution_type is SOLUTION_TYPE_CHAT, multiple DataStores in the same Collection can be associated here. Note that when used in CreateEngineRequest, one DataStore id must be provided as the system will use it for necessary initializations.
 	DataStoreIds any
 	// Optional. Whether to disable analytics for searches performed on this engine.
@@ -320,8 +316,6 @@ type V1betaEngineConfig struct {
 	SearchEngineConfig any
 	// Required. The solutions of the engine.
 	SolutionType any
-	// Output only. Timestamp the Recommendation Engine was last updated.
-	UpdateTime any
 }
 
 type V1betaEngineAttrs struct {
@@ -382,64 +376,61 @@ var V1betaEngine = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentGatewaySetting": ubx.FieldSpec{
 			WireName: "agent_gateway_setting",
-			Kind: "object",
-			Fields: V1betaEngine_AgentGatewaySettingFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_AgentGatewaySettingFields,
 		},
 		"AppType": ubx.FieldSpec{WireName: "app_type"},
-		"AssociatedAgentRegistry": ubx.FieldSpec{WireName: "associated_agent_registry"},
 		"ChatEngineConfig": ubx.FieldSpec{
 			WireName: "chat_engine_config",
-			Kind: "object",
-			Fields: V1betaEngine_ChatEngineConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_ChatEngineConfigFields,
 		},
 		"ChatEngineMetadata": ubx.FieldSpec{
 			WireName: "chat_engine_metadata",
-			Kind: "object",
-			Fields: V1betaEngine_ChatEngineMetadataFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_ChatEngineMetadataFields,
 		},
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: V1betaEngine_CmekConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_CmekConfigFields,
 		},
 		"CommonConfig": ubx.FieldSpec{
 			WireName: "common_config",
-			Kind: "object",
-			Fields: V1betaEngine_CommonConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_CommonConfigFields,
 		},
 		"ConfigurableBillingApproach": ubx.FieldSpec{WireName: "configurable_billing_approach"},
-		"ConnectorTenantInfo": ubx.FieldSpec{WireName: "connector_tenant_info"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataStoreIds": ubx.FieldSpec{WireName: "data_store_ids"},
-		"DisableAnalytics": ubx.FieldSpec{WireName: "disable_analytics"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Features": ubx.FieldSpec{WireName: "features"},
-		"IndustryVertical": ubx.FieldSpec{WireName: "industry_vertical"},
+		"ConnectorTenantInfo":         ubx.FieldSpec{WireName: "connector_tenant_info"},
+		"DataStoreIds":                ubx.FieldSpec{WireName: "data_store_ids"},
+		"DisableAnalytics":            ubx.FieldSpec{WireName: "disable_analytics"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
+		"Features":                    ubx.FieldSpec{WireName: "features"},
+		"IndustryVertical":            ubx.FieldSpec{WireName: "industry_vertical"},
 		"KnowledgeGraphConfig": ubx.FieldSpec{
 			WireName: "knowledge_graph_config",
-			Kind: "object",
-			Fields: V1betaEngine_KnowledgeGraphConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_KnowledgeGraphConfigFields,
 		},
 		"MarketplaceAgentVisibility": ubx.FieldSpec{WireName: "marketplace_agent_visibility"},
 		"MediaRecommendationEngineConfig": ubx.FieldSpec{
 			WireName: "media_recommendation_engine_config",
-			Kind: "object",
-			Fields: V1betaEngine_MediaRecommendationEngineConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_MediaRecommendationEngineConfigFields,
 		},
 		"ModelConfigs": ubx.FieldSpec{WireName: "model_configs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"ObservabilityConfig": ubx.FieldSpec{
 			WireName: "observability_config",
-			Kind: "object",
-			Fields: V1betaEngine_ObservabilityConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_ObservabilityConfigFields,
 		},
 		"ProcurementContactEmails": ubx.FieldSpec{WireName: "procurement_contact_emails"},
 		"SearchEngineConfig": ubx.FieldSpec{
 			WireName: "search_engine_config",
-			Kind: "object",
-			Fields: V1betaEngine_SearchEngineConfigFields,
+			Kind:     "object",
+			Fields:   V1betaEngine_SearchEngineConfigFields,
 		},
 		"SolutionType": ubx.FieldSpec{WireName: "solution_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

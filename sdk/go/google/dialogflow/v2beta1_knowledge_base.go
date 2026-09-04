@@ -4,22 +4,22 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1KnowledgeBaseConfig struct {
-	DisplayName any
+	DisplayName  any
 	LanguageCode any
-	Name any
+	Name         any
 }
 
 type V2beta1KnowledgeBaseAttrs struct {
-	DisplayName any
+	DisplayName  any
 	LanguageCode any
-	Name any
+	Name         any
 }
 
 var V2beta1KnowledgeBase = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_knowledge_base",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

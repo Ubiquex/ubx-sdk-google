@@ -2,12 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AttachmentConfig {
-  /** Output only. The time at which the environment group attachment was created as milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** Required. ID of the attached environment. */
   environment?: string | Computed<string>;
-  /** Output only. ID of the environment group. */
-  environmentGroupId?: string | Computed<string>;
   /** ID of the environment group attachment. */
   name?: string | Computed<string>;
 }
@@ -26,9 +22,7 @@ export interface AttachmentAttrs {
 export const Attachment: ResourceBinding<AttachmentConfig, AttachmentAttrs> = {
   wireType: "google_apigee_attachment",
   fields: {
-    createdAt: "created_at",
     environment: "environment",
-    environmentGroupId: "environment_group_id",
     name: "name",
   },
 };

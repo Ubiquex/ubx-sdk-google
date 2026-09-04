@@ -49,8 +49,6 @@ _BackupRun_ErrorFields = {
 class BackupRunConfig:
     # Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
     backup_kind: Any = None
-    # Output only. The instance database version at the time this backup was made.
-    database_version: Any = None
     # The description of this run, only applicable to on-demand backups.
     description: Any = None
     # Disk encryption configuration for an instance.
@@ -71,8 +69,6 @@ class BackupRunConfig:
     kind: Any = None
     # Location of the backups.
     location: Any = None
-    # Output only. The maximum chargeable bytes for the backup.
-    max_chargeable_bytes: Any = None
     # The URI of this resource.
     self_link: Any = None
     # The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
@@ -131,7 +127,6 @@ BackupRun = ubx.ResourceBinding(
     wire_type="google_sqladmin_backup_run",
     fields={
         "backup_kind": ubx.FieldSpec(wire_name="backup_kind"),
-        "database_version": ubx.FieldSpec(wire_name="database_version"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_encryption_configuration": ubx.FieldSpec(
             wire_name="disk_encryption_configuration",
@@ -154,7 +149,6 @@ BackupRun = ubx.ResourceBinding(
         "instance": ubx.FieldSpec(wire_name="instance"),
         "kind": ubx.FieldSpec(wire_name="kind"),
         "location": ubx.FieldSpec(wire_name="location"),
-        "max_chargeable_bytes": ubx.FieldSpec(wire_name="max_chargeable_bytes"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
         "status": ubx.FieldSpec(wire_name="status"),

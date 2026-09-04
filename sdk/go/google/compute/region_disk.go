@@ -32,7 +32,6 @@ type RegionDisk_DiskEncryptionKey struct {
 }
 
 type RegionDisk_GuestOsFeatures struct {
-	// The type of guest OS feature to enable on the disk. Valid values include BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, and WINDOWS. (AI-inferred)
 	Type any
 }
 
@@ -42,96 +41,72 @@ type RegionDisk_Params struct {
 }
 
 type RegionDisk_ResourceStatus_AsyncPrimaryDisk struct {
-	// The current state of the asynchronous primary disk, which can be one of the following: ACTIVE, CREATED, STARTING, STATE_UNSPECIFIED, STOPPED, or STOPPING. (AI-inferred)
 	State any
 }
 
 type RegionDisk_ResourceStatus struct {
-	// The primary disk in an asynchronous replication configuration. This object contains the URL of the source regional persistent disk for the replication. (AI-inferred)
 	AsyncPrimaryDisk any
 	// Key: disk, value: AsyncReplicationStatus message
 	AsyncSecondaryDisks any
 }
 
 var RegionDisk_AsyncPrimaryDiskFields = ubx.FieldMap{
-		"ConsistencyGroupPolicy": ubx.FieldSpec{WireName: "consistency_group_policy"},
-		"ConsistencyGroupPolicyId": ubx.FieldSpec{WireName: "consistency_group_policy_id"},
-		"Disk": ubx.FieldSpec{WireName: "disk"},
-		"DiskId": ubx.FieldSpec{WireName: "disk_id"},
-	}
-
-var RegionDisk_AsyncSecondaryDisksFields = ubx.FieldMap{
-		"AsyncReplicationDisk": ubx.FieldSpec{
-			WireName: "async_replication_disk",
-			Kind: "object",
-			Fields: RegionDisk_AsyncPrimaryDiskFields,
-		},
-	}
+	"ConsistencyGroupPolicy":   ubx.FieldSpec{WireName: "consistency_group_policy"},
+	"ConsistencyGroupPolicyId": ubx.FieldSpec{WireName: "consistency_group_policy_id"},
+	"Disk":                     ubx.FieldSpec{WireName: "disk"},
+	"DiskId":                   ubx.FieldSpec{WireName: "disk_id"},
+}
 
 var RegionDisk_DiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var RegionDisk_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var RegionDisk_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var RegionDisk_ResourceStatus_AsyncPrimaryDiskFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var RegionDisk_ResourceStatusFields = ubx.FieldMap{
-		"AsyncPrimaryDisk": ubx.FieldSpec{
-			WireName: "async_primary_disk",
-			Kind: "object",
-			Fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
-		},
-		"AsyncSecondaryDisks": ubx.FieldSpec{
-			WireName: "async_secondary_disks",
-			Kind: "map",
-			Fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
-		},
-	}
+	"AsyncPrimaryDisk": ubx.FieldSpec{
+		WireName: "async_primary_disk",
+		Kind:     "object",
+		Fields:   RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+	},
+	"AsyncSecondaryDisks": ubx.FieldSpec{
+		WireName: "async_secondary_disks",
+		Kind:     "map",
+		Fields:   RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+	},
+}
 
 type RegionDiskConfig struct {
 	// The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
 	AccessMode any
 	// The architecture of the disk. Valid values are ARM64 or X86_64.
-	Architecture any
-	// The async_primary_disk object holds the reference to the primary disk in an asynchronous replication configuration. This field is computed and output-only, reflecting the primary disk associated with this regional disk. (AI-inferred)
+	Architecture     any
 	AsyncPrimaryDisk any
-	// Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
-	AsyncSecondaryDisks any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description any
-	// The disk encryption key for the regional persistent disk. This field is computed and output-only, meaning it is populated by the cloud provider when the disk is created or imported, and it contains the details of the encryption key used to protect the disk's contents. (AI-inferred)
+	Description       any
 	DiskEncryptionKey any
 	// Whether this disk is using confidential compute mode.
 	EnableConfidentialCompute any
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. Read Enabling guest operating system features to see a list of available options.
 	GuestOsFeatures any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#disk for disks.
-	Kind any
 	// A fingerprint for the labels being applied to this disk, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a disk.
 	LabelFingerprint any
 	// Labels to apply to this disk. These can be later modified by the setLabels method.
 	Labels any
-	// Output only. [Output Only] Last attach timestamp inRFC3339 text format.
-	LastAttachTimestamp any
-	// Output only. [Output Only] Last detach timestamp inRFC3339 text format.
-	LastDetachTimestamp any
 	// Integer license codes indicating which licenses are attached to this disk.
 	LicenseCodes any
 	// A list of publicly visible licenses. Reserved for Google's use.
@@ -150,73 +125,43 @@ type RegionDiskConfig struct {
 	ProvisionedIops any
 	// Indicates how much throughput to provision for the disk. This sets the number of throughput mb per second that the disk can handle. Values must be greater than or equal to 1.
 	ProvisionedThroughput any
-	// Output only. [Output Only] URL of the region where the disk resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// URLs of the zones where the disk should be replicated to. Only applicable for regional resources.
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-	SelfLink any
+	ResourceStatus   any
 	// Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0.
 	SizeGb any
-	// Output only. [Output Only] URL of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
-	SourceConsistencyGroupPolicy any
-	// Output only. [Output Only] ID of the DiskConsistencyGroupPolicy for a secondary disk that was created using a consistency group.
-	SourceConsistencyGroupPolicyId any
 	// The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
 	SourceDisk any
-	// Output only. [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
-	SourceDiskId any
 	// The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
-	SourceImage any
-	// The customer-supplied encryption key for the source image used to create this disk. This field is computed and output only, reporting the encryption key details when the source image was encrypted with a customer-supplied key. (AI-inferred)
+	SourceImage              any
 	SourceImageEncryptionKey any
-	// Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
-	SourceImageId any
 	// The source instant snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
 	SourceInstantSnapshot any
-	// Output only. [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
-	SourceInstantSnapshotId any
 	// The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
-	SourceSnapshot any
-	// The source snapshot's encryption key, used when creating a region disk from an encrypted snapshot. This field is computed and output-only, providing the key details of the source snapshot as returned by the API. (AI-inferred)
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
-	// Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
-	SourceSnapshotId any
 	// The full Google Cloud Storage URI where the disk image is stored. This file must be a gzip-compressed tarball whose name ends in .tar.gz or virtual machine disk whose name ends in vmdk. Valid URIs may start with gs:// or https://storage.googleapis.com/. This flag is not optimized for creating multiple disks from a source storage object. To create many disks from a source storage object, use gcloud compute images import instead.
 	SourceStorageObject any
-	// Output only. [Output Only] The status of disk creation. - CREATING: Disk is provisioning. - RESTORING: Source data is being copied into the disk. - FAILED: Disk creation failed. - READY: Disk is ready for use. - DELETING: Disk is deleting.
-	Status any
 	// The storage pool in which the new disk is created. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/storagePools/storagePool - projects/project/zones/zone/storagePools/storagePool - zones/zone/storagePools/storagePool
 	StoragePool any
 	// URL of the disk type resource describing which disk type to use to create the disk. Provide this when creating the disk. For example:projects/project/zones/zone/diskTypes/pd-ssd. See Persistent disk types.
 	Type any
-	// Output only. [Output Only] Links to the users of the disk (attached instances) in form:projects/project/zones/zone/instances/instance
-	Users any
-	// Output only. [Output Only] URL of the zone where the disk resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Zone any
 }
 
 type RegionDiskAttrs struct {
 	// The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
 	AccessMode any
 	// The architecture of the disk. Valid values are ARM64 or X86_64.
-	Architecture any
-	// The async_primary_disk object holds the reference to the primary disk in an asynchronous replication configuration. This field is computed and output-only, reflecting the primary disk associated with this regional disk. (AI-inferred)
+	Architecture     any
 	AsyncPrimaryDisk any
 	// Output only. [Output Only] A list of disks this disk is asynchronously replicated to.
 	AsyncSecondaryDisks any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
-	Description any
-	// The disk encryption key for the regional persistent disk. This field is computed and output-only, meaning it is populated by the cloud provider when the disk is created or imported, and it contains the details of the encryption key used to protect the disk's contents. (AI-inferred)
+	Description       any
 	DiskEncryptionKey any
 	// Whether this disk is using confidential compute mode.
 	EnableConfidentialCompute any
@@ -258,7 +203,7 @@ type RegionDiskAttrs struct {
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus any
+	ResourceStatus   any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. [Output Only] Reserved for future use.
@@ -276,8 +221,7 @@ type RegionDiskAttrs struct {
 	// Output only. [Output Only] The unique ID of the disk used to create this disk. This value identifies the exact disk that was used to create this persistent disk. For example, if you created the persistent disk from a disk that was later deleted and recreated under the same name, the source disk ID would identify the exact version of the disk that was used.
 	SourceDiskId any
 	// The source image used to create this disk. If the source image is deleted, this field will not be set. To create a disk with one of the public operating system images, specify the image by its family name. For example, specifyfamily/debian-9 to use the latest Debian 9 image: projects/debian-cloud/global/images/family/debian-9 Alternatively, use a specific version of a public operating system image: projects/debian-cloud/global/images/debian-9-stretch-vYYYYMMDD To create a disk with a custom image that you created, specify the image name in the following format: global/images/my-custom-image You can also specify a custom image by its image family, which returns the latest version of the image in that family. Replace the image name with family/family-name: global/images/family/my-image-family
-	SourceImage any
-	// The customer-supplied encryption key for the source image used to create this disk. This field is computed and output only, reporting the encryption key details when the source image was encrypted with a customer-supplied key. (AI-inferred)
+	SourceImage              any
 	SourceImageEncryptionKey any
 	// Output only. [Output Only] The ID value of the image used to create this disk. This value identifies the exact image that was used to create this persistent disk. For example, if you created the persistent disk from an image that was later deleted and recreated under the same name, the source image ID would identify the exact version of the image that was used.
 	SourceImageId any
@@ -286,8 +230,7 @@ type RegionDiskAttrs struct {
 	// Output only. [Output Only] The unique ID of the instant snapshot used to create this disk. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact version of the instant snapshot that was used.
 	SourceInstantSnapshotId any
 	// The source snapshot used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/global/snapshots/snapshot - projects/project/global/snapshots/snapshot - global/snapshots/snapshot
-	SourceSnapshot any
-	// The source snapshot's encryption key, used when creating a region disk from an encrypted snapshot. This field is computed and output-only, providing the key details of the source snapshot as returned by the API. (AI-inferred)
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the snapshot used to create this disk. This value identifies the exact snapshot that was used to create this persistent disk. For example, if you created the persistent disk from a snapshot that was later deleted and recreated under the same name, the source snapshot ID would identify the exact version of the snapshot that was used.
 	SourceSnapshotId any
@@ -308,87 +251,64 @@ type RegionDiskAttrs struct {
 var RegionDisk = ubx.ResourceBinding{
 	WireType: "google_compute_region_disk",
 	Fields: ubx.FieldMap{
-		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
+		"AccessMode":   ubx.FieldSpec{WireName: "access_mode"},
 		"Architecture": ubx.FieldSpec{WireName: "architecture"},
 		"AsyncPrimaryDisk": ubx.FieldSpec{
 			WireName: "async_primary_disk",
-			Kind: "object",
-			Fields: RegionDisk_AsyncPrimaryDiskFields,
+			Kind:     "object",
+			Fields:   RegionDisk_AsyncPrimaryDiskFields,
 		},
-		"AsyncSecondaryDisks": ubx.FieldSpec{
-			WireName: "async_secondary_disks",
-			Kind: "map",
-			Fields: RegionDisk_AsyncSecondaryDisksFields,
-		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionKey": ubx.FieldSpec{
 			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: RegionDisk_DiskEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   RegionDisk_DiskEncryptionKeyFields,
 		},
 		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
 		"GuestOsFeatures": ubx.FieldSpec{
 			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: RegionDisk_GuestOsFeaturesFields,
+			Kind:     "list",
+			Fields:   RegionDisk_GuestOsFeaturesFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastAttachTimestamp": ubx.FieldSpec{WireName: "last_attach_timestamp"},
-		"LastDetachTimestamp": ubx.FieldSpec{WireName: "last_detach_timestamp"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{WireName: "options"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes":     ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses":         ubx.FieldSpec{WireName: "licenses"},
+		"LocationHint":     ubx.FieldSpec{WireName: "location_hint"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Options":          ubx.FieldSpec{WireName: "options"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: RegionDisk_ParamsFields,
+			Kind:     "object",
+			Fields:   RegionDisk_ParamsFields,
 		},
 		"PhysicalBlockSizeBytes": ubx.FieldSpec{WireName: "physical_block_size_bytes"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
+		"ProvisionedIops":        ubx.FieldSpec{WireName: "provisioned_iops"},
+		"ProvisionedThroughput":  ubx.FieldSpec{WireName: "provisioned_throughput"},
+		"ReplicaZones":           ubx.FieldSpec{WireName: "replica_zones"},
+		"ResourcePolicies":       ubx.FieldSpec{WireName: "resource_policies"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: RegionDisk_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   RegionDisk_ResourceStatusFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"SourceConsistencyGroupPolicy": ubx.FieldSpec{WireName: "source_consistency_group_policy"},
-		"SourceConsistencyGroupPolicyId": ubx.FieldSpec{WireName: "source_consistency_group_policy_id"},
-		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
-		"SourceDiskId": ubx.FieldSpec{WireName: "source_disk_id"},
+		"SizeGb":      ubx.FieldSpec{WireName: "size_gb"},
+		"SourceDisk":  ubx.FieldSpec{WireName: "source_disk"},
 		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
 		"SourceImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: RegionDisk_DiskEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   RegionDisk_DiskEncryptionKeyFields,
 		},
-		"SourceImageId": ubx.FieldSpec{WireName: "source_image_id"},
 		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"SourceInstantSnapshotId": ubx.FieldSpec{WireName: "source_instant_snapshot_id"},
-		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+		"SourceSnapshot":        ubx.FieldSpec{WireName: "source_snapshot"},
 		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: RegionDisk_DiskEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   RegionDisk_DiskEncryptionKeyFields,
 		},
-		"SourceSnapshotId": ubx.FieldSpec{WireName: "source_snapshot_id"},
 		"SourceStorageObject": ubx.FieldSpec{WireName: "source_storage_object"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Users": ubx.FieldSpec{WireName: "users"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"StoragePool":         ubx.FieldSpec{WireName: "storage_pool"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
 	},
 }

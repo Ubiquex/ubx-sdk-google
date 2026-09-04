@@ -92,8 +92,6 @@ class AgentGatewayConfig:
     agent_connectivity_template: Any = None
     # AgentGatewayOutputCard contains informational output-only fields
     agent_gateway_card: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
@@ -112,8 +110,6 @@ class AgentGatewayConfig:
     registries: Any = None
     # Configuration for Self Managed deployment mode. Attach to existing Application Load Balancers or Secure Web Proxies.
     self_managed: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AgentGatewayAttrs:
@@ -153,7 +149,6 @@ AgentGateway = ubx.ResourceBinding(
             kind="object",
             fields=_AgentGateway_AgentGatewayCardFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "google_managed": ubx.FieldSpec(
@@ -175,6 +170,5 @@ AgentGateway = ubx.ResourceBinding(
             kind="object",
             fields=_AgentGateway_SelfManagedFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

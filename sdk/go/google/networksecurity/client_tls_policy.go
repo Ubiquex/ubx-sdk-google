@@ -21,31 +21,29 @@ type ClientTlsPolicy_ClientCertificate struct {
 }
 
 var ClientTlsPolicy_ClientCertificate_CertificateProviderInstanceFields = ubx.FieldMap{
-		"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
-	}
+	"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
+}
 
 var ClientTlsPolicy_ClientCertificate_GrpcEndpointFields = ubx.FieldMap{
-		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-	}
+	"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
+}
 
 var ClientTlsPolicy_ClientCertificateFields = ubx.FieldMap{
-		"CertificateProviderInstance": ubx.FieldSpec{
-			WireName: "certificate_provider_instance",
-			Kind: "object",
-			Fields: ClientTlsPolicy_ClientCertificate_CertificateProviderInstanceFields,
-		},
-		"GrpcEndpoint": ubx.FieldSpec{
-			WireName: "grpc_endpoint",
-			Kind: "object",
-			Fields: ClientTlsPolicy_ClientCertificate_GrpcEndpointFields,
-		},
-	}
+	"CertificateProviderInstance": ubx.FieldSpec{
+		WireName: "certificate_provider_instance",
+		Kind:     "object",
+		Fields:   ClientTlsPolicy_ClientCertificate_CertificateProviderInstanceFields,
+	},
+	"GrpcEndpoint": ubx.FieldSpec{
+		WireName: "grpc_endpoint",
+		Kind:     "object",
+		Fields:   ClientTlsPolicy_ClientCertificate_GrpcEndpointFields,
+	},
+}
 
 type ClientTlsPolicyConfig struct {
 	// Specification of certificate provider. Defines the mechanism to obtain the certificate and private key for peer to peer authentication.
 	ClientCertificate any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. Free-text description of the resource.
 	Description any
 	// Optional. Set of label tags associated with the resource.
@@ -56,8 +54,6 @@ type ClientTlsPolicyConfig struct {
 	ServerValidationCa any
 	// Optional. Server Name Indication string to present to the server during TLS handshake. E.g: "secure.example.com".
 	Sni any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type ClientTlsPolicyAttrs struct {
@@ -84,19 +80,17 @@ var ClientTlsPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientCertificate": ubx.FieldSpec{
 			WireName: "client_certificate",
-			Kind: "object",
-			Fields: ClientTlsPolicy_ClientCertificateFields,
+			Kind:     "object",
+			Fields:   ClientTlsPolicy_ClientCertificateFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ServerValidationCa": ubx.FieldSpec{
 			WireName: "server_validation_ca",
-			Kind: "list",
-			Fields: ClientTlsPolicy_ClientCertificateFields,
+			Kind:     "list",
+			Fields:   ClientTlsPolicy_ClientCertificateFields,
 		},
 		"Sni": ubx.FieldSpec{WireName: "sni"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type McpServer_Interfaces struct {
 	ProtocolBinding any
-	Url any
+	Url             any
 }
 
 type McpServer_Tools_Annotations struct {
 	DestructiveHint any
-	IdempotentHint any
-	OpenWorldHint any
-	ReadOnlyHint any
-	Title any
+	IdempotentHint  any
+	OpenWorldHint   any
+	ReadOnlyHint    any
+	Title           any
 }
 
 type McpServer_Tools struct {
 	Annotations any
 	Description any
-	Name any
+	Name        any
 }
 
 type McpServerConfig struct {
@@ -39,7 +39,7 @@ type McpServerAttrs struct {
 	Interfaces any
 	// Output only. A stable, globally unique identifier for MCP Servers.
 	McpServerId any
-	Name any
+	Name        any
 	// Output only. Tools provided by the MCP Server.
 	Tools any
 	// Output only. Update time.

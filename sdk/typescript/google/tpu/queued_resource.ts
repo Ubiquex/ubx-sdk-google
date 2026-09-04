@@ -407,12 +407,8 @@ const QueuedResource_TpuFields: FieldMap = {
 };
 
 export interface QueuedResourceConfig {
-  /** Output only. The time when the QueuedResource was created. */
-  createTime?: string | Computed<string>;
   /** Guaranteed tier definition. */
   guaranteed?: QueuedResource_Guaranteed | Computed<QueuedResource_Guaranteed>;
-  /** Output only. Immutable. The name of the QueuedResource. */
-  name?: string | Computed<string>;
   /** Defines the policy of the QueuedRequest. */
   queueingPolicy?: QueuedResource_QueueingPolicy | Computed<QueuedResource_QueueingPolicy>;
   /** Optional. Name of the reservation in which the resource should be provisioned. Format: projects/{project}/locations/{zone}/reservations/{reservation} */
@@ -447,13 +443,11 @@ export interface QueuedResourceAttrs {
 export const QueuedResource: ResourceBinding<QueuedResourceConfig, QueuedResourceAttrs> = {
   wireType: "google_tpu_queued_resource",
   fields: {
-    createTime: "create_time",
     guaranteed: {
       wireName: "guaranteed",
       kind: "object",
       fields: QueuedResource_GuaranteedFields,
     },
-    name: "name",
     queueingPolicy: {
       wireName: "queueing_policy",
       kind: "object",

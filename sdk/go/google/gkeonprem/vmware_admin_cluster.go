@@ -65,12 +65,12 @@ type VmwareAdminCluster_LoadBalancer_ManualLbConfig struct {
 
 type VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_Ips struct {
 	Hostname any
-	Ip any
+	Ip       any
 }
 
 type VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks struct {
 	Gateway any
-	Ips any
+	Ips     any
 	Netmask any
 }
 
@@ -98,7 +98,7 @@ type VmwareAdminCluster_LoadBalancer_VipConfig struct {
 
 type VmwareAdminCluster_LoadBalancer struct {
 	// VmwareAdminF5BigIpConfig represents configuration parameters for an F5 BIG-IP load balancer.
-	F5Config any
+	F5Config       any
 	ManualLbConfig any
 	// VmwareAdminMetalLbConfig represents configuration parameters for a MetalLB load balancer. For admin clusters, currently no configurations is needed.
 	MetalLbConfig any
@@ -146,14 +146,14 @@ type VmwareAdminCluster_NetworkConfig struct {
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status_Conditions struct {
 	LastTransitionTime any
-	Message any
-	Reason any
-	State any
-	Type any
+	Message            any
+	Reason             any
+	State              any
+	Type               any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_Versions struct {
-	Count any
+	Count   any
 	Version any
 }
 
@@ -162,14 +162,14 @@ type VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions struct {
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles_Status struct {
-	Conditions any
+	Conditions   any
 	ErrorMessage any
-	Version any
-	Versions any
+	Version      any
+	Versions     any
 }
 
 type VmwareAdminCluster_PlatformConfig_Bundles struct {
-	Status any
+	Status  any
 	Version any
 }
 
@@ -199,11 +199,11 @@ type VmwareAdminCluster_Proxy struct {
 }
 
 type VmwareAdminCluster_ValidationCheck_Status_Result struct {
-	Category any
+	Category    any
 	Description any
-	Details any
-	Reason any
-	State any
+	Details     any
+	Reason      any
+	State       any
 }
 
 type VmwareAdminCluster_ValidationCheck_Status struct {
@@ -242,273 +242,273 @@ type VmwareAdminCluster_Vcenter struct {
 }
 
 var VmwareAdminCluster_AddonNode_AutoResizeConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var VmwareAdminCluster_AddonNodeFields = ubx.FieldMap{
-		"AutoResizeConfig": ubx.FieldSpec{
-			WireName: "auto_resize_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
-		},
-	}
+	"AutoResizeConfig": ubx.FieldSpec{
+		WireName: "auto_resize_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
+	},
+}
 
 var VmwareAdminCluster_AntiAffinityGroupsFields = ubx.FieldMap{
-		"AagConfigDisabled": ubx.FieldSpec{WireName: "aag_config_disabled"},
-	}
+	"AagConfigDisabled": ubx.FieldSpec{WireName: "aag_config_disabled"},
+}
 
 var VmwareAdminCluster_Authorization_ViewerUsersFields = ubx.FieldMap{
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var VmwareAdminCluster_AuthorizationFields = ubx.FieldMap{
-		"ViewerUsers": ubx.FieldSpec{
-			WireName: "viewer_users",
-			Kind: "list",
-			Fields: VmwareAdminCluster_Authorization_ViewerUsersFields,
-		},
-	}
+	"ViewerUsers": ubx.FieldSpec{
+		WireName: "viewer_users",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_Authorization_ViewerUsersFields,
+	},
+}
 
 var VmwareAdminCluster_ControlPlaneNodeFields = ubx.FieldMap{
-		"Cpus": ubx.FieldSpec{WireName: "cpus"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-		"Replicas": ubx.FieldSpec{WireName: "replicas"},
-	}
+	"Cpus":     ubx.FieldSpec{WireName: "cpus"},
+	"Memory":   ubx.FieldSpec{WireName: "memory"},
+	"Replicas": ubx.FieldSpec{WireName: "replicas"},
+}
 
 var VmwareAdminCluster_FleetFields = ubx.FieldMap{
-		"Membership": ubx.FieldSpec{WireName: "membership"},
-	}
+	"Membership": ubx.FieldSpec{WireName: "membership"},
+}
 
 var VmwareAdminCluster_LoadBalancer_F5ConfigFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Partition": ubx.FieldSpec{WireName: "partition"},
-		"SnatPool": ubx.FieldSpec{WireName: "snat_pool"},
-	}
+	"Address":   ubx.FieldSpec{WireName: "address"},
+	"Partition": ubx.FieldSpec{WireName: "partition"},
+	"SnatPool":  ubx.FieldSpec{WireName: "snat_pool"},
+}
 
 var VmwareAdminCluster_LoadBalancer_ManualLbConfigFields = ubx.FieldMap{
-		"AddonsNodePort": ubx.FieldSpec{WireName: "addons_node_port"},
-		"ControlPlaneNodePort": ubx.FieldSpec{WireName: "control_plane_node_port"},
-		"IngressHttpNodePort": ubx.FieldSpec{WireName: "ingress_http_node_port"},
-		"IngressHttpsNodePort": ubx.FieldSpec{WireName: "ingress_https_node_port"},
-		"KonnectivityServerNodePort": ubx.FieldSpec{WireName: "konnectivity_server_node_port"},
-	}
+	"AddonsNodePort":             ubx.FieldSpec{WireName: "addons_node_port"},
+	"ControlPlaneNodePort":       ubx.FieldSpec{WireName: "control_plane_node_port"},
+	"IngressHttpNodePort":        ubx.FieldSpec{WireName: "ingress_http_node_port"},
+	"IngressHttpsNodePort":       ubx.FieldSpec{WireName: "ingress_https_node_port"},
+	"KonnectivityServerNodePort": ubx.FieldSpec{WireName: "konnectivity_server_node_port"},
+}
 
 var VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_IpsFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Ip":       ubx.FieldSpec{WireName: "ip"},
+}
 
 var VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields = ubx.FieldMap{
-		"Gateway": ubx.FieldSpec{WireName: "gateway"},
-		"Ips": ubx.FieldSpec{
-			WireName: "ips",
-			Kind: "list",
-			Fields: VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_IpsFields,
-		},
-		"Netmask": ubx.FieldSpec{WireName: "netmask"},
-	}
+	"Gateway": ubx.FieldSpec{WireName: "gateway"},
+	"Ips": ubx.FieldSpec{
+		WireName: "ips",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocks_IpsFields,
+	},
+	"Netmask": ubx.FieldSpec{WireName: "netmask"},
+}
 
 var VmwareAdminCluster_LoadBalancer_SeesawConfigFields = ubx.FieldMap{
-		"EnableHa": ubx.FieldSpec{WireName: "enable_ha"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"IpBlocks": ubx.FieldSpec{
-			WireName: "ip_blocks",
-			Kind: "list",
-			Fields: VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
-		},
-		"MasterIp": ubx.FieldSpec{WireName: "master_ip"},
-		"StackdriverName": ubx.FieldSpec{WireName: "stackdriver_name"},
-		"Vms": ubx.FieldSpec{WireName: "vms"},
-	}
+	"EnableHa": ubx.FieldSpec{WireName: "enable_ha"},
+	"Group":    ubx.FieldSpec{WireName: "group"},
+	"IpBlocks": ubx.FieldSpec{
+		WireName: "ip_blocks",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
+	},
+	"MasterIp":        ubx.FieldSpec{WireName: "master_ip"},
+	"StackdriverName": ubx.FieldSpec{WireName: "stackdriver_name"},
+	"Vms":             ubx.FieldSpec{WireName: "vms"},
+}
 
 var VmwareAdminCluster_LoadBalancer_VipConfigFields = ubx.FieldMap{
-		"AddonsVip": ubx.FieldSpec{WireName: "addons_vip"},
-		"ControlPlaneVip": ubx.FieldSpec{WireName: "control_plane_vip"},
-	}
+	"AddonsVip":       ubx.FieldSpec{WireName: "addons_vip"},
+	"ControlPlaneVip": ubx.FieldSpec{WireName: "control_plane_vip"},
+}
 
 var VmwareAdminCluster_LoadBalancerFields = ubx.FieldMap{
-		"F5Config": ubx.FieldSpec{
-			WireName: "f5_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancer_F5ConfigFields,
-		},
-		"ManualLbConfig": ubx.FieldSpec{
-			WireName: "manual_lb_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancer_ManualLbConfigFields,
-		},
-		"MetalLbConfig": ubx.FieldSpec{
-			WireName: "metal_lb_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
-		},
-		"SeesawConfig": ubx.FieldSpec{
-			WireName: "seesaw_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancer_SeesawConfigFields,
-		},
-		"VipConfig": ubx.FieldSpec{
-			WireName: "vip_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancer_VipConfigFields,
-		},
-	}
+	"F5Config": ubx.FieldSpec{
+		WireName: "f5_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_LoadBalancer_F5ConfigFields,
+	},
+	"ManualLbConfig": ubx.FieldSpec{
+		WireName: "manual_lb_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_LoadBalancer_ManualLbConfigFields,
+	},
+	"MetalLbConfig": ubx.FieldSpec{
+		WireName: "metal_lb_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
+	},
+	"SeesawConfig": ubx.FieldSpec{
+		WireName: "seesaw_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_LoadBalancer_SeesawConfigFields,
+	},
+	"VipConfig": ubx.FieldSpec{
+		WireName: "vip_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_LoadBalancer_VipConfigFields,
+	},
+}
 
 var VmwareAdminCluster_NetworkConfig_HaControlPlaneConfigFields = ubx.FieldMap{
-		"ControlPlaneIpBlock": ubx.FieldSpec{
-			WireName: "control_plane_ip_block",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
-		},
-	}
+	"ControlPlaneIpBlock": ubx.FieldSpec{
+		WireName: "control_plane_ip_block",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
+	},
+}
 
 var VmwareAdminCluster_NetworkConfig_HostConfigFields = ubx.FieldMap{
-		"DnsSearchDomains": ubx.FieldSpec{WireName: "dns_search_domains"},
-		"DnsServers": ubx.FieldSpec{WireName: "dns_servers"},
-		"NtpServers": ubx.FieldSpec{WireName: "ntp_servers"},
-	}
+	"DnsSearchDomains": ubx.FieldSpec{WireName: "dns_search_domains"},
+	"DnsServers":       ubx.FieldSpec{WireName: "dns_servers"},
+	"NtpServers":       ubx.FieldSpec{WireName: "ntp_servers"},
+}
 
 var VmwareAdminCluster_NetworkConfig_StaticIpConfigFields = ubx.FieldMap{
-		"IpBlocks": ubx.FieldSpec{
-			WireName: "ip_blocks",
-			Kind: "list",
-			Fields: VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
-		},
-	}
+	"IpBlocks": ubx.FieldSpec{
+		WireName: "ip_blocks",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_LoadBalancer_SeesawConfig_IpBlocksFields,
+	},
+}
 
 var VmwareAdminCluster_NetworkConfigFields = ubx.FieldMap{
-		"DhcpIpConfig": ubx.FieldSpec{
-			WireName: "dhcp_ip_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
-		},
-		"HaControlPlaneConfig": ubx.FieldSpec{
-			WireName: "ha_control_plane_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_NetworkConfig_HaControlPlaneConfigFields,
-		},
-		"HostConfig": ubx.FieldSpec{
-			WireName: "host_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_NetworkConfig_HostConfigFields,
-		},
-		"PodAddressCidrBlocks": ubx.FieldSpec{WireName: "pod_address_cidr_blocks"},
-		"ServiceAddressCidrBlocks": ubx.FieldSpec{WireName: "service_address_cidr_blocks"},
-		"StaticIpConfig": ubx.FieldSpec{
-			WireName: "static_ip_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_NetworkConfig_StaticIpConfigFields,
-		},
-		"VcenterNetwork": ubx.FieldSpec{WireName: "vcenter_network"},
-	}
+	"DhcpIpConfig": ubx.FieldSpec{
+		WireName: "dhcp_ip_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
+	},
+	"HaControlPlaneConfig": ubx.FieldSpec{
+		WireName: "ha_control_plane_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_NetworkConfig_HaControlPlaneConfigFields,
+	},
+	"HostConfig": ubx.FieldSpec{
+		WireName: "host_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_NetworkConfig_HostConfigFields,
+	},
+	"PodAddressCidrBlocks":     ubx.FieldSpec{WireName: "pod_address_cidr_blocks"},
+	"ServiceAddressCidrBlocks": ubx.FieldSpec{WireName: "service_address_cidr_blocks"},
+	"StaticIpConfig": ubx.FieldSpec{
+		WireName: "static_ip_config",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_NetworkConfig_StaticIpConfigFields,
+	},
+	"VcenterNetwork": ubx.FieldSpec{WireName: "vcenter_network"},
+}
 
 var VmwareAdminCluster_PlatformConfig_Bundles_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_VersionsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var VmwareAdminCluster_PlatformConfig_Bundles_Status_VersionsFields = ubx.FieldMap{
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_VersionsFields,
-		},
-	}
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_PlatformConfig_Bundles_Status_Versions_VersionsFields,
+	},
+}
 
 var VmwareAdminCluster_PlatformConfig_Bundles_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_Status_ConditionsFields,
-		},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_Status_VersionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_PlatformConfig_Bundles_Status_ConditionsFields,
+	},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"Version":      ubx.FieldSpec{WireName: "version"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_PlatformConfig_Bundles_Status_VersionsFields,
+	},
+}
 
 var VmwareAdminCluster_PlatformConfig_BundlesFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var VmwareAdminCluster_PlatformConfigFields = ubx.FieldMap{
-		"Bundles": ubx.FieldSpec{
-			WireName: "bundles",
-			Kind: "list",
-			Fields: VmwareAdminCluster_PlatformConfig_BundlesFields,
-		},
-		"PlatformVersion": ubx.FieldSpec{WireName: "platform_version"},
-		"RequiredPlatformVersion": ubx.FieldSpec{WireName: "required_platform_version"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
-		},
-	}
+	"Bundles": ubx.FieldSpec{
+		WireName: "bundles",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_PlatformConfig_BundlesFields,
+	},
+	"PlatformVersion":         ubx.FieldSpec{WireName: "platform_version"},
+	"RequiredPlatformVersion": ubx.FieldSpec{WireName: "required_platform_version"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
+	},
+}
 
 var VmwareAdminCluster_PrivateRegistryConfigFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"CaCert": ubx.FieldSpec{WireName: "ca_cert"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"CaCert":  ubx.FieldSpec{WireName: "ca_cert"},
+}
 
 var VmwareAdminCluster_ProxyFields = ubx.FieldMap{
-		"NoProxy": ubx.FieldSpec{WireName: "no_proxy"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"NoProxy": ubx.FieldSpec{WireName: "no_proxy"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 var VmwareAdminCluster_ValidationCheck_Status_ResultFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Category":    ubx.FieldSpec{WireName: "category"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Details":     ubx.FieldSpec{WireName: "details"},
+	"Reason":      ubx.FieldSpec{WireName: "reason"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var VmwareAdminCluster_ValidationCheck_StatusFields = ubx.FieldMap{
-		"Result": ubx.FieldSpec{
-			WireName: "result",
-			Kind: "list",
-			Fields: VmwareAdminCluster_ValidationCheck_Status_ResultFields,
-		},
-	}
+	"Result": ubx.FieldSpec{
+		WireName: "result",
+		Kind:     "list",
+		Fields:   VmwareAdminCluster_ValidationCheck_Status_ResultFields,
+	},
+}
 
 var VmwareAdminCluster_ValidationCheckFields = ubx.FieldMap{
-		"Option": ubx.FieldSpec{WireName: "option"},
-		"Scenario": ubx.FieldSpec{WireName: "scenario"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: VmwareAdminCluster_ValidationCheck_StatusFields,
-		},
-	}
+	"Option":   ubx.FieldSpec{WireName: "option"},
+	"Scenario": ubx.FieldSpec{WireName: "scenario"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   VmwareAdminCluster_ValidationCheck_StatusFields,
+	},
+}
 
 var VmwareAdminCluster_VcenterFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"CaCertData": ubx.FieldSpec{WireName: "ca_cert_data"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"DataDisk": ubx.FieldSpec{WireName: "data_disk"},
-		"Datacenter": ubx.FieldSpec{WireName: "datacenter"},
-		"Datastore": ubx.FieldSpec{WireName: "datastore"},
-		"Folder": ubx.FieldSpec{WireName: "folder"},
-		"ResourcePool": ubx.FieldSpec{WireName: "resource_pool"},
-		"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
-	}
+	"Address":           ubx.FieldSpec{WireName: "address"},
+	"CaCertData":        ubx.FieldSpec{WireName: "ca_cert_data"},
+	"Cluster":           ubx.FieldSpec{WireName: "cluster"},
+	"DataDisk":          ubx.FieldSpec{WireName: "data_disk"},
+	"Datacenter":        ubx.FieldSpec{WireName: "datacenter"},
+	"Datastore":         ubx.FieldSpec{WireName: "datastore"},
+	"Folder":            ubx.FieldSpec{WireName: "folder"},
+	"ResourcePool":      ubx.FieldSpec{WireName: "resource_pool"},
+	"StoragePolicyName": ubx.FieldSpec{WireName: "storage_policy_name"},
+}
 
 type VmwareAdminClusterConfig struct {
 	// VmwareAdminAddonNodeConfig contains add-on node configurations for VMware admin cluster.
@@ -525,14 +525,10 @@ type VmwareAdminClusterConfig struct {
 	BootstrapClusterMembership any
 	// VmwareAdminControlPlaneNodeConfig contains control plane node configuration for VMware admin cluster.
 	ControlPlaneNode any
-	// Output only. The time at which VMware admin cluster was created.
-	CreateTime any
 	// A human readable description of this VMware admin cluster.
 	Description any
 	// Enable advanced cluster.
 	EnableAdvancedCluster any
-	// Output only. The DNS name of VMware admin cluster's API server.
-	Endpoint any
 	// This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
 	Etag any
 	// Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
@@ -541,8 +537,6 @@ type VmwareAdminClusterConfig struct {
 	ImageType any
 	// VmwareAdminLoadBalancerConfig contains load balancer configuration for VMware admin cluster.
 	LoadBalancer any
-	// Output only. The object name of the VMware OnPremAdminCluster custom resource. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs.
-	LocalName any
 	// Immutable. The VMware admin cluster resource name.
 	Name any
 	// VmwareAdminNetworkConfig contains network configuration for VMware admin cluster.
@@ -557,16 +551,8 @@ type VmwareAdminClusterConfig struct {
 	PrivateRegistryConfig any
 	// VmwareAdminProxy represents configuration for admin cluster proxy.
 	Proxy any
-	// Output only. If set, there are currently changes in flight to the VMware admin cluster.
-	Reconciling any
-	// Output only. The current state of VMware admin cluster.
-	State any
 	// ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
 	Status any
-	// Output only. The unique identifier of the VMware admin cluster.
-	Uid any
-	// Output only. The time at which VMware admin cluster was last updated.
-	UpdateTime any
 	// ValidationCheck represents the result of preflight check.
 	ValidationCheck any
 	// VmwareAdminVCenterConfig contains VCenter configuration for VMware admin cluster.
@@ -641,93 +627,86 @@ var VmwareAdminCluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddonNode": ubx.FieldSpec{
 			WireName: "addon_node",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNodeFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_AddonNodeFields,
 		},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AntiAffinityGroups": ubx.FieldSpec{
 			WireName: "anti_affinity_groups",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AntiAffinityGroupsFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_AntiAffinityGroupsFields,
 		},
 		"Authorization": ubx.FieldSpec{
 			WireName: "authorization",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AuthorizationFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_AuthorizationFields,
 		},
 		"AutoRepairConfig": ubx.FieldSpec{
 			WireName: "auto_repair_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
 		},
 		"BootstrapClusterMembership": ubx.FieldSpec{WireName: "bootstrap_cluster_membership"},
 		"ControlPlaneNode": ubx.FieldSpec{
 			WireName: "control_plane_node",
-			Kind: "object",
-			Fields: VmwareAdminCluster_ControlPlaneNodeFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_ControlPlaneNodeFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"EnableAdvancedCluster": ubx.FieldSpec{WireName: "enable_advanced_cluster"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":                  ubx.FieldSpec{WireName: "etag"},
 		"Fleet": ubx.FieldSpec{
 			WireName: "fleet",
-			Kind: "object",
-			Fields: VmwareAdminCluster_FleetFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_FleetFields,
 		},
 		"ImageType": ubx.FieldSpec{WireName: "image_type"},
 		"LoadBalancer": ubx.FieldSpec{
 			WireName: "load_balancer",
-			Kind: "object",
-			Fields: VmwareAdminCluster_LoadBalancerFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_LoadBalancerFields,
 		},
-		"LocalName": ubx.FieldSpec{WireName: "local_name"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_NetworkConfigFields,
 		},
 		"OnPremVersion": ubx.FieldSpec{WireName: "on_prem_version"},
 		"PlatformConfig": ubx.FieldSpec{
 			WireName: "platform_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PlatformConfigFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_PlatformConfigFields,
 		},
 		"PreparedSecrets": ubx.FieldSpec{
 			WireName: "prepared_secrets",
-			Kind: "object",
-			Fields: VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_AddonNode_AutoResizeConfigFields,
 		},
 		"PrivateRegistryConfig": ubx.FieldSpec{
 			WireName: "private_registry_config",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PrivateRegistryConfigFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_PrivateRegistryConfigFields,
 		},
 		"Proxy": ubx.FieldSpec{
 			WireName: "proxy",
-			Kind: "object",
-			Fields: VmwareAdminCluster_ProxyFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_ProxyFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_PlatformConfig_Bundles_StatusFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"ValidationCheck": ubx.FieldSpec{
 			WireName: "validation_check",
-			Kind: "object",
-			Fields: VmwareAdminCluster_ValidationCheckFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_ValidationCheckFields,
 		},
 		"Vcenter": ubx.FieldSpec{
 			WireName: "vcenter",
-			Kind: "object",
-			Fields: VmwareAdminCluster_VcenterFields,
+			Kind:     "object",
+			Fields:   VmwareAdminCluster_VcenterFields,
 		},
 	},
 }

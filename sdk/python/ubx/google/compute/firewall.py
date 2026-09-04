@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Firewall_Allowed:
-    # The IP protocol to which this rule applies. Valid values are 'tcp', 'udp', 'icmp', 'esp', 'ah', 'sctp', or 'all'. (AI-inferred)
     ipprotocol: Any = None
-    # An optional list of ports or port ranges (e.g., '80' or '8000-9000') to which this rule applies. Only valid for TCP and UDP protocols; if omitted, the rule applies to all ports. (AI-inferred)
     ports: Any = None
 
 @dataclasses.dataclass
@@ -43,8 +41,6 @@ _Firewall_ParamsFields = {
 class FirewallConfig:
     # The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection.
     allowed: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
     denied: Any = None
     # An optional description of this resource. Provide this field when you create the resource.
@@ -55,10 +51,6 @@ class FirewallConfig:
     direction: Any = None
     # Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
     disabled: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#firewall for firewall rules.
-    kind: Any = None
     # The available logging options for a firewall rule.
     log_config: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -133,7 +125,6 @@ Firewall = ubx.ResourceBinding(
             kind="list",
             fields=_Firewall_AllowedFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "denied": ubx.FieldSpec(
             wire_name="denied",
             kind="list",
@@ -143,8 +134,6 @@ Firewall = ubx.ResourceBinding(
         "destination_ranges": ubx.FieldSpec(wire_name="destination_ranges"),
         "direction": ubx.FieldSpec(wire_name="direction"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "log_config": ubx.FieldSpec(
             wire_name="log_config",
             kind="object",

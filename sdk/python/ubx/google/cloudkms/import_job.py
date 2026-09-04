@@ -56,28 +56,14 @@ _ImportJob_PublicKeyFields = {
 class ImportJobConfig:
     # Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
     attestation: Any = None
-    # Output only. The time at which this ImportJob was created.
-    create_time: Any = None
     # Immutable. The resource name of the backend environment where the key material for the wrapping key resides and where all related cryptographic operations are performed. Currently, this field is only populated for keys stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future. Supported resources: * `"projects/*/locations/*/singleTenantHsmInstances/*"`
     crypto_key_backend: Any = None
-    # Output only. The time this ImportJob expired. Only present if state is EXPIRED.
-    expire_event_time: Any = None
-    # Output only. The time at which this ImportJob is scheduled for expiration and can no longer be used to import key material.
-    expire_time: Any = None
-    # Output only. The time this ImportJob's key material was generated.
-    generate_time: Any = None
     # Required. Immutable. The wrapping method to be used for incoming key material.
     import_method: Any = None
-    # Output only. The resource name for this ImportJob in the format `projects/*/locations/*/keyRings/*/importJobs/*`.
-    name: Any = None
     # Required. Immutable. The protection level of the ImportJob. This must match the protection_level of the version_template on the CryptoKey you attempt to import into.
     protection_level: Any = None
     # The public key component of the wrapping key. For details of the type of key this public key corresponds to, see the ImportMethod.
     public_key: Any = None
-    # Output only. Specifies the WrappingPublicKey format provided by the customer in the KeyManagementService.GetImportJob request.
-    public_key_format: Any = None
-    # Output only. The current state of the ImportJob, indicating if it can be used.
-    state: Any = None
 
 @dataclasses.dataclass
 class ImportJobAttrs:
@@ -114,20 +100,13 @@ ImportJob = ubx.ResourceBinding(
             kind="object",
             fields=_ImportJob_AttestationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_backend": ubx.FieldSpec(wire_name="crypto_key_backend"),
-        "expire_event_time": ubx.FieldSpec(wire_name="expire_event_time"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generate_time": ubx.FieldSpec(wire_name="generate_time"),
         "import_method": ubx.FieldSpec(wire_name="import_method"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "protection_level": ubx.FieldSpec(wire_name="protection_level"),
         "public_key": ubx.FieldSpec(
             wire_name="public_key",
             kind="object",
             fields=_ImportJob_PublicKeyFields,
         ),
-        "public_key_format": ubx.FieldSpec(wire_name="public_key_format"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

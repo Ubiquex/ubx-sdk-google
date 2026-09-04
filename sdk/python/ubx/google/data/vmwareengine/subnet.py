@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SubnetConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class SubnetAttrs:
@@ -27,6 +27,5 @@ class SubnetAttrs:
 Subnet = ubx.DataSourceBinding(
     wire_type="google_vmwareengine_subnet",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

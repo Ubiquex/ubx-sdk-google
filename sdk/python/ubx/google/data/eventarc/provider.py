@@ -22,7 +22,7 @@ class Provider_EventTypes:
 
 @dataclasses.dataclass
 class ProviderConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ProviderAttrs:
@@ -35,6 +35,5 @@ class ProviderAttrs:
 Provider = ubx.DataSourceBinding(
     wire_type="google_eventarc_provider",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

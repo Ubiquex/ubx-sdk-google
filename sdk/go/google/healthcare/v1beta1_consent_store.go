@@ -28,9 +28,9 @@ type V1beta1ConsentStoreAttrs struct {
 var V1beta1ConsentStore = ubx.ResourceBinding{
 	WireType: "google_healthcare_v1beta1_consent_store",
 	Fields: ubx.FieldMap{
-		"DefaultConsentTtl": ubx.FieldSpec{WireName: "default_consent_ttl"},
+		"DefaultConsentTtl":           ubx.FieldSpec{WireName: "default_consent_ttl"},
 		"EnableConsentCreateOnUpdate": ubx.FieldSpec{WireName: "enable_consent_create_on_update"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":                      ubx.FieldSpec{WireName: "labels"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 	},
 }

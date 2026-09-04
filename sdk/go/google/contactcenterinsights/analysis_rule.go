@@ -54,47 +54,47 @@ type AnalysisRule_AnnotatorSelector struct {
 }
 
 var AnalysisRule_AnnotatorSelector_QaConfig_ScorecardListFields = ubx.FieldMap{
-		"QaScorecardRevisions": ubx.FieldSpec{WireName: "qa_scorecard_revisions"},
-	}
+	"QaScorecardRevisions": ubx.FieldSpec{WireName: "qa_scorecard_revisions"},
+}
 
 var AnalysisRule_AnnotatorSelector_QaConfigFields = ubx.FieldMap{
-		"ScorecardList": ubx.FieldSpec{
-			WireName: "scorecard_list",
-			Kind: "object",
-			Fields: AnalysisRule_AnnotatorSelector_QaConfig_ScorecardListFields,
-		},
-	}
+	"ScorecardList": ubx.FieldSpec{
+		WireName: "scorecard_list",
+		Kind:     "object",
+		Fields:   AnalysisRule_AnnotatorSelector_QaConfig_ScorecardListFields,
+	},
+}
 
 var AnalysisRule_AnnotatorSelector_SummarizationConfigFields = ubx.FieldMap{
-		"ConversationProfile": ubx.FieldSpec{WireName: "conversation_profile"},
-		"Generator": ubx.FieldSpec{WireName: "generator"},
-		"SummarizationModel": ubx.FieldSpec{WireName: "summarization_model"},
-	}
+	"ConversationProfile": ubx.FieldSpec{WireName: "conversation_profile"},
+	"Generator":           ubx.FieldSpec{WireName: "generator"},
+	"SummarizationModel":  ubx.FieldSpec{WireName: "summarization_model"},
+}
 
 var AnalysisRule_AnnotatorSelectorFields = ubx.FieldMap{
-		"IssueModels": ubx.FieldSpec{WireName: "issue_models"},
-		"PhraseMatchers": ubx.FieldSpec{WireName: "phrase_matchers"},
-		"QaConfig": ubx.FieldSpec{
-			WireName: "qa_config",
-			Kind: "object",
-			Fields: AnalysisRule_AnnotatorSelector_QaConfigFields,
-		},
-		"RunAutoLabelingAnnotator": ubx.FieldSpec{WireName: "run_auto_labeling_annotator"},
-		"RunEntityAnnotator": ubx.FieldSpec{WireName: "run_entity_annotator"},
-		"RunIntentAnnotator": ubx.FieldSpec{WireName: "run_intent_annotator"},
-		"RunInterruptionAnnotator": ubx.FieldSpec{WireName: "run_interruption_annotator"},
-		"RunIssueModelAnnotator": ubx.FieldSpec{WireName: "run_issue_model_annotator"},
-		"RunPhraseMatcherAnnotator": ubx.FieldSpec{WireName: "run_phrase_matcher_annotator"},
-		"RunQaAnnotator": ubx.FieldSpec{WireName: "run_qa_annotator"},
-		"RunSentimentAnnotator": ubx.FieldSpec{WireName: "run_sentiment_annotator"},
-		"RunSilenceAnnotator": ubx.FieldSpec{WireName: "run_silence_annotator"},
-		"RunSummarizationAnnotator": ubx.FieldSpec{WireName: "run_summarization_annotator"},
-		"SummarizationConfig": ubx.FieldSpec{
-			WireName: "summarization_config",
-			Kind: "object",
-			Fields: AnalysisRule_AnnotatorSelector_SummarizationConfigFields,
-		},
-	}
+	"IssueModels":    ubx.FieldSpec{WireName: "issue_models"},
+	"PhraseMatchers": ubx.FieldSpec{WireName: "phrase_matchers"},
+	"QaConfig": ubx.FieldSpec{
+		WireName: "qa_config",
+		Kind:     "object",
+		Fields:   AnalysisRule_AnnotatorSelector_QaConfigFields,
+	},
+	"RunAutoLabelingAnnotator":  ubx.FieldSpec{WireName: "run_auto_labeling_annotator"},
+	"RunEntityAnnotator":        ubx.FieldSpec{WireName: "run_entity_annotator"},
+	"RunIntentAnnotator":        ubx.FieldSpec{WireName: "run_intent_annotator"},
+	"RunInterruptionAnnotator":  ubx.FieldSpec{WireName: "run_interruption_annotator"},
+	"RunIssueModelAnnotator":    ubx.FieldSpec{WireName: "run_issue_model_annotator"},
+	"RunPhraseMatcherAnnotator": ubx.FieldSpec{WireName: "run_phrase_matcher_annotator"},
+	"RunQaAnnotator":            ubx.FieldSpec{WireName: "run_qa_annotator"},
+	"RunSentimentAnnotator":     ubx.FieldSpec{WireName: "run_sentiment_annotator"},
+	"RunSilenceAnnotator":       ubx.FieldSpec{WireName: "run_silence_annotator"},
+	"RunSummarizationAnnotator": ubx.FieldSpec{WireName: "run_summarization_annotator"},
+	"SummarizationConfig": ubx.FieldSpec{
+		WireName: "summarization_config",
+		Kind:     "object",
+		Fields:   AnalysisRule_AnnotatorSelector_SummarizationConfigFields,
+	},
+}
 
 type AnalysisRuleConfig struct {
 	// If true, apply this rule to conversations. Otherwise, this rule is inactive and saved as a draft.
@@ -105,14 +105,10 @@ type AnalysisRuleConfig struct {
 	AnnotatorSelector any
 	// Filter for the conversations that should apply this analysis rule. An empty filter means this analysis rule applies to all conversations. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details.
 	ConversationFilter any
-	// Output only. The time at which this analysis rule was created.
-	CreateTime any
 	// Display Name of the analysis rule.
 	DisplayName any
 	// Identifier. The resource name of the analysis rule. Format: projects/{project}/locations/{location}/analysisRules/{analysis_rule}
 	Name any
-	// Output only. The most recent time at which this analysis rule was updated.
-	UpdateTime any
 }
 
 type AnalysisRuleAttrs struct {
@@ -137,17 +133,15 @@ type AnalysisRuleAttrs struct {
 var AnalysisRule = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_analysis_rule",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
+		"Active":             ubx.FieldSpec{WireName: "active"},
 		"AnalysisPercentage": ubx.FieldSpec{WireName: "analysis_percentage"},
 		"AnnotatorSelector": ubx.FieldSpec{
 			WireName: "annotator_selector",
-			Kind: "object",
-			Fields: AnalysisRule_AnnotatorSelectorFields,
+			Kind:     "object",
+			Fields:   AnalysisRule_AnnotatorSelectorFields,
 		},
 		"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 	},
 }

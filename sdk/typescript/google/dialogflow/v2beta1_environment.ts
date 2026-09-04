@@ -119,10 +119,7 @@ export interface V2beta1EnvironmentConfig {
   agentVersion?: string | Computed<string>;
   description?: string | Computed<string>;
   fulfillment?: V2beta1Environment_Fulfillment | Computed<V2beta1Environment_Fulfillment>;
-  name?: string | Computed<string>;
-  state?: string | Computed<string>;
   textToSpeechSettings?: V2beta1Environment_TextToSpeechSettings | Computed<V2beta1Environment_TextToSpeechSettings>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface V2beta1EnvironmentAttrs {
@@ -145,13 +142,10 @@ export const V2beta1Environment: ResourceBinding<V2beta1EnvironmentConfig, V2bet
       kind: "object",
       fields: V2beta1Environment_FulfillmentFields,
     },
-    name: "name",
-    state: "state",
     textToSpeechSettings: {
       wireName: "text_to_speech_settings",
       kind: "object",
       fields: V2beta1Environment_TextToSpeechSettingsFields,
     },
-    updateTime: "update_time",
   },
 };

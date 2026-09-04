@@ -6,22 +6,14 @@ export interface TransportConfig {
   advertisedRoutes?: string[] | Computed<string[]>;
   /** Optional. Bandwidth of the Transport. This must be one of the supported bandwidths for the remote profile, and must be set when no activation key is being provided. */
   bandwidth?: string | Computed<string>;
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the Transport. */
   description?: string | Computed<string>;
-  /** Output only. Google-generated activation key. This is only output if the selected profile supports an OUTPUT key flow. Inputting this to the provider is only valid while the resource is in a PENDING_KEY state. Once the provider has accepted the key, the resource will move to the CONFIGURING state. */
-  generatedActivationKey?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The maximum transmission unit (MTU) of a packet that can be sent over this transport. */
-  mtuLimit?: number | Computed<number>;
   /** Identifier. Name of the resource. */
   name?: string | Computed<string>;
   /** Optional. Immutable. Resource URI of the Network that will be peered with this Transport. This field must be provided during resource creation and cannot be changed. */
   network?: string | Computed<string>;
-  /** Output only. VPC Network URI that was created for the VPC Peering connection to the provided `network`. If VPC Peering is disconnected, this can be used to re-establish. */
-  peeringNetwork?: string | Computed<string>;
   /** Optional. Immutable. Key used for establishing a connection with the remote transport. This key can only be provided if the profile supports an INPUT key flow and the resource is in the PENDING_KEY state. */
   providedActivationKey?: string | Computed<string>;
   /** Optional. Immutable. The user supplied account id for the CSP associated with the remote profile. */
@@ -30,10 +22,6 @@ export interface TransportConfig {
   remoteProfile?: string | Computed<string>;
   /** Optional. IP version stack for the established connectivity. */
   stackType?: string | Computed<string>;
-  /** Output only. State of the underlying connectivity. */
-  state?: string | Computed<string>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TransportAttrs {
@@ -76,19 +64,13 @@ export const Transport: ResourceBinding<TransportConfig, TransportAttrs> = {
   fields: {
     advertisedRoutes: "advertised_routes",
     bandwidth: "bandwidth",
-    createTime: "create_time",
     description: "description",
-    generatedActivationKey: "generated_activation_key",
     labels: "labels",
-    mtuLimit: "mtu_limit",
     name: "name",
     network: "network",
-    peeringNetwork: "peering_network",
     providedActivationKey: "provided_activation_key",
     remoteAccountId: "remote_account_id",
     remoteProfile: "remote_profile",
     stackType: "stack_type",
-    state: "state",
-    updateTime: "update_time",
   },
 };

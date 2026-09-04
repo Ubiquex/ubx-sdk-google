@@ -6,10 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type BrandConfig struct {
 	// Application name displayed on OAuth consent screen.
 	ApplicationTitle any
-	// Output only. Identifier of the brand. NOTE: GCP project number achieves the same brand identification purpose as only one brand per project can be created.
-	Name any
-	// Output only. Whether the brand is only intended for usage inside the G Suite organization only.
-	OrgInternalOnly any
 	// Support email displayed on the OAuth consent screen.
 	SupportEmail any
 }
@@ -29,8 +25,6 @@ var Brand = ubx.ResourceBinding{
 	WireType: "google_iap_brand",
 	Fields: ubx.FieldMap{
 		"ApplicationTitle": ubx.FieldSpec{WireName: "application_title"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrgInternalOnly": ubx.FieldSpec{WireName: "org_internal_only"},
-		"SupportEmail": ubx.FieldSpec{WireName: "support_email"},
+		"SupportEmail":     ubx.FieldSpec{WireName: "support_email"},
 	},
 }

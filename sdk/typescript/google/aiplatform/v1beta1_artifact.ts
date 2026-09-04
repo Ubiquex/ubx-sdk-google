@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1ArtifactConfig {
-  /** Output only. Timestamp when this Artifact was created. */
-  createTime?: string | Computed<string>;
   /** Description of the Artifact */
   description?: string | Computed<string>;
   /** User provided display name of the Artifact. May be up to 128 Unicode characters. */
@@ -14,16 +12,12 @@ export interface V1beta1ArtifactConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Properties of the Artifact. Top level metadata keys' heading and trailing spaces will be trimmed. The size of this field should not exceed 200KB. */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  /** Output only. The resource name of the Artifact. */
-  name?: string | Computed<string>;
   /** The title of the schema describing the metadata. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store. */
   schemaTitle?: string | Computed<string>;
   /** The version of the schema in schema_name to use. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store. */
   schemaVersion?: string | Computed<string>;
   /** The state of this Artifact. This is a property of the Artifact, and does not imply or capture any ongoing process. This property is managed by clients (such as Vertex AI Pipelines), and the system does not prescribe or check the validity of state transitions. */
   state?: string | Computed<string>;
-  /** Output only. Timestamp when this Artifact was last updated. */
-  updateTime?: string | Computed<string>;
   /** The uniform resource identifier of the artifact file. May be empty if there is no actual artifact file. */
   uri?: string | Computed<string>;
 }
@@ -58,17 +52,14 @@ export interface V1beta1ArtifactAttrs {
 export const V1beta1Artifact: ResourceBinding<V1beta1ArtifactConfig, V1beta1ArtifactAttrs> = {
   wireType: "google_aiplatform_v1beta1_artifact",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
     metadata: "metadata",
-    name: "name",
     schemaTitle: "schema_title",
     schemaVersion: "schema_version",
     state: "state",
-    updateTime: "update_time",
     uri: "uri",
   },
 };

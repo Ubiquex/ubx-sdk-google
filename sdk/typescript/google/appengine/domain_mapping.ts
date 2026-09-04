@@ -16,12 +16,6 @@ export interface DomainMapping_SslSettings {
   sslManagementType?: string | Computed<string>;
 }
 
-const DomainMapping_ResourceRecordsFields: FieldMap = {
-  name: "name",
-  rrdata: "rrdata",
-  type: "type",
-};
-
 const DomainMapping_SslSettingsFields: FieldMap = {
   certificateId: "certificate_id",
   pendingManagedCertificateId: "pending_managed_certificate_id",
@@ -31,10 +25,6 @@ const DomainMapping_SslSettingsFields: FieldMap = {
 export interface DomainMappingConfig {
   /** Relative name of the domain serving the application. Example: example.com. */
   id?: string | Computed<string>;
-  /** Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly */
-  name?: string | Computed<string>;
-  /** Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly */
-  resourceRecords?: DomainMapping_ResourceRecords[] | Computed<DomainMapping_ResourceRecords[]>;
   /** SSL configuration for a DomainMapping resource. */
   sslSettings?: DomainMapping_SslSettings | Computed<DomainMapping_SslSettings>;
 }
@@ -54,12 +44,6 @@ export const DomainMapping: ResourceBinding<DomainMappingConfig, DomainMappingAt
   wireType: "google_appengine_domain_mapping",
   fields: {
     id: "id",
-    name: "name",
-    resourceRecords: {
-      wireName: "resource_records",
-      kind: "list",
-      fields: DomainMapping_ResourceRecordsFields,
-    },
     sslSettings: {
       wireName: "ssl_settings",
       kind: "object",

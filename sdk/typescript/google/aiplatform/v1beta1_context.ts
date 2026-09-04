@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1ContextConfig {
-  /** Output only. Timestamp when this Context was created. */
-  createTime?: string | Computed<string>;
   /** Description of the Context */
   description?: string | Computed<string>;
   /** User provided display name of the Context. May be up to 128 Unicode characters. */
@@ -16,14 +14,10 @@ export interface V1beta1ContextConfig {
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Immutable. The resource name of the Context. */
   name?: string | Computed<string>;
-  /** Output only. A list of resource names of Contexts that are parents of this Context. A Context may have at most 10 parent_contexts. */
-  parentContexts?: string[] | Computed<string[]>;
   /** The title of the schema describing the metadata. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store. */
   schemaTitle?: string | Computed<string>;
   /** The version of the schema in schema_name to use. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store. */
   schemaVersion?: string | Computed<string>;
-  /** Output only. Timestamp when this Context was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ContextAttrs {
@@ -54,16 +48,13 @@ export interface V1beta1ContextAttrs {
 export const V1beta1Context: ResourceBinding<V1beta1ContextConfig, V1beta1ContextAttrs> = {
   wireType: "google_aiplatform_v1beta1_context",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
     metadata: "metadata",
     name: "name",
-    parentContexts: "parent_contexts",
     schemaTitle: "schema_title",
     schemaVersion: "schema_version",
-    updateTime: "update_time",
   },
 };

@@ -20,33 +20,29 @@ type V1beta1Secret_Replication struct {
 }
 
 var V1beta1Secret_Replication_UserManaged_ReplicasFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var V1beta1Secret_Replication_UserManagedFields = ubx.FieldMap{
-		"Replicas": ubx.FieldSpec{
-			WireName: "replicas",
-			Kind: "list",
-			Fields: V1beta1Secret_Replication_UserManaged_ReplicasFields,
-		},
-	}
+	"Replicas": ubx.FieldSpec{
+		WireName: "replicas",
+		Kind:     "list",
+		Fields:   V1beta1Secret_Replication_UserManaged_ReplicasFields,
+	},
+}
 
 var V1beta1Secret_ReplicationFields = ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{WireName: "automatic"},
-		"UserManaged": ubx.FieldSpec{
-			WireName: "user_managed",
-			Kind: "object",
-			Fields: V1beta1Secret_Replication_UserManagedFields,
-		},
-	}
+	"Automatic": ubx.FieldSpec{WireName: "automatic"},
+	"UserManaged": ubx.FieldSpec{
+		WireName: "user_managed",
+		Kind:     "object",
+		Fields:   V1beta1Secret_Replication_UserManagedFields,
+	},
+}
 
 type V1beta1SecretConfig struct {
-	// Output only. The time at which the Secret was created.
-	CreateTime any
 	// The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
 	Labels any
-	// Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-	Name any
 	// A policy that defines the replication configuration of data.
 	Replication any
 	// Optional. Input only. Immutable. Mapping of Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" Tags are used to organize and group resources. Tags can be used to control policy evaluation for the resource.
@@ -69,13 +65,11 @@ type V1beta1SecretAttrs struct {
 var V1beta1Secret = ubx.ResourceBinding{
 	WireType: "google_secretmanager_v1beta1_secret",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Replication": ubx.FieldSpec{
 			WireName: "replication",
-			Kind: "object",
-			Fields: V1beta1Secret_ReplicationFields,
+			Kind:     "object",
+			Fields:   V1beta1Secret_ReplicationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

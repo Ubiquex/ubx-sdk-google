@@ -361,12 +361,6 @@ _V2alphaFunction_ServiceConfigFields = {
     "vpc_connector_egress_settings": ubx.FieldSpec(wire_name="vpc_connector_egress_settings"),
 }
 
-_V2alphaFunction_StateMessagesFields = {
-    "message": ubx.FieldSpec(wire_name="message"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _V2alphaFunction_UpgradeInfoFields = {
     "build_config": ubx.FieldSpec(
         wire_name="build_config",
@@ -390,8 +384,6 @@ _V2alphaFunction_UpgradeInfoFields = {
 class V2alphaFunctionConfig:
     # Describes the Build step of the function that builds a container from the given source.
     build_config: Any = None
-    # Output only. The create timestamp of a Cloud Function. This is only applicable to 2nd Gen functions.
-    create_time: Any = None
     # User-provided description of a function.
     description: Any = None
     # Describe whether the function is 1st Gen or 2nd Gen.
@@ -404,22 +396,10 @@ class V2alphaFunctionConfig:
     labels: Any = None
     # A user-defined name of the function. Function names must be unique globally and match pattern `projects/*/locations/*/functions/*`
     name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Describes the Service being deployed. Currently Supported : Cloud Run (fully managed).
     service_config: Any = None
-    # Output only. State of the function.
-    state: Any = None
-    # Output only. State Messages for this Cloud Function.
-    state_messages: Any = None
-    # Output only. The last update timestamp of a Cloud Function.
-    update_time: Any = None
     # Information related to: * A function's eligibility for 1st Gen to 2nd Gen migration. * Current state of migration for function undergoing migration.
     upgrade_info: Any = None
-    # Output only. The deployed url for the function.
-    url: Any = None
 
 @dataclasses.dataclass
 class V2alphaFunctionAttrs:
@@ -464,7 +444,6 @@ V2alphaFunction = ubx.ResourceBinding(
             kind="object",
             fields=_V2alphaFunction_BuildConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "environment": ubx.FieldSpec(wire_name="environment"),
         "event_trigger": ubx.FieldSpec(
@@ -475,25 +454,15 @@ V2alphaFunction = ubx.ResourceBinding(
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_config": ubx.FieldSpec(
             wire_name="service_config",
             kind="object",
             fields=_V2alphaFunction_ServiceConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_messages": ubx.FieldSpec(
-            wire_name="state_messages",
-            kind="list",
-            fields=_V2alphaFunction_StateMessagesFields,
-        ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upgrade_info": ubx.FieldSpec(
             wire_name="upgrade_info",
             kind="object",
             fields=_V2alphaFunction_UpgradeInfoFields,
         ),
-        "url": ubx.FieldSpec(wire_name="url"),
     },
 )

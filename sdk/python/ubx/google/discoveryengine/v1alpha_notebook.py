@@ -113,148 +113,14 @@ _V1alphaNotebook_MetadataFields = {
     "last_viewed": ubx.FieldSpec(wire_name="last_viewed"),
 }
 
-_V1alphaNotebook_Sources_Metadata_AgentspaceMetadataFields = {
-    "document_name": ubx.FieldSpec(wire_name="document_name"),
-    "document_title": ubx.FieldSpec(wire_name="document_title"),
-}
-
-_V1alphaNotebook_Sources_Metadata_GoogleDocsMetadataFields = {
-    "document_id": ubx.FieldSpec(wire_name="document_id"),
-    "revision_id": ubx.FieldSpec(wire_name="revision_id"),
-}
-
-_V1alphaNotebook_Sources_Metadata_YoutubeMetadataFields = {
-    "channel_name": ubx.FieldSpec(wire_name="channel_name"),
-    "video_id": ubx.FieldSpec(wire_name="video_id"),
-}
-
-_V1alphaNotebook_Sources_MetadataFields = {
-    "agentspace_metadata": ubx.FieldSpec(
-        wire_name="agentspace_metadata",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Metadata_AgentspaceMetadataFields,
-    ),
-    "google_docs_metadata": ubx.FieldSpec(
-        wire_name="google_docs_metadata",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Metadata_GoogleDocsMetadataFields,
-    ),
-    "source_added_timestamp": ubx.FieldSpec(wire_name="source_added_timestamp"),
-    "token_count": ubx.FieldSpec(wire_name="token_count"),
-    "word_count": ubx.FieldSpec(wire_name="word_count"),
-    "youtube_metadata": ubx.FieldSpec(
-        wire_name="youtube_metadata",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Metadata_YoutubeMetadataFields,
-    ),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReason_AudioTranscriptionErrorFields = {
-    "language_detection_failed": ubx.FieldSpec(wire_name="language_detection_failed"),
-    "no_audio_detected": ubx.FieldSpec(wire_name="no_audio_detected"),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReason_GoogleDriveErrorFields = {
-    "download_prevented": ubx.FieldSpec(wire_name="download_prevented"),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReason_SourceTooLongFields = {
-    "word_count": ubx.FieldSpec(wire_name="word_count"),
-    "word_limit": ubx.FieldSpec(wire_name="word_limit"),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReason_SourceUnreachableFields = {
-    "error_details": ubx.FieldSpec(wire_name="error_details"),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReason_YoutubeErrorFields = {
-    "video_deleted": ubx.FieldSpec(wire_name="video_deleted"),
-}
-
-_V1alphaNotebook_Sources_Settings_FailureReasonFields = {
-    "audio_transcription_error": ubx.FieldSpec(
-        wire_name="audio_transcription_error",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReason_AudioTranscriptionErrorFields,
-    ),
-    "domain_blocked": ubx.FieldSpec(wire_name="domain_blocked"),
-    "google_drive_error": ubx.FieldSpec(
-        wire_name="google_drive_error",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReason_GoogleDriveErrorFields,
-    ),
-    "ingestion_error": ubx.FieldSpec(wire_name="ingestion_error"),
-    "mime_type_blocked": ubx.FieldSpec(wire_name="mime_type_blocked"),
-    "paywall_error": ubx.FieldSpec(wire_name="paywall_error"),
-    "policy_check_failed": ubx.FieldSpec(wire_name="policy_check_failed"),
-    "source_empty": ubx.FieldSpec(wire_name="source_empty"),
-    "source_limit_exceeded": ubx.FieldSpec(wire_name="source_limit_exceeded"),
-    "source_too_long": ubx.FieldSpec(
-        wire_name="source_too_long",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReason_SourceTooLongFields,
-    ),
-    "source_unreachable": ubx.FieldSpec(
-        wire_name="source_unreachable",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReason_SourceUnreachableFields,
-    ),
-    "unknown": ubx.FieldSpec(wire_name="unknown"),
-    "upload_error": ubx.FieldSpec(wire_name="upload_error"),
-    "youtube_error": ubx.FieldSpec(
-        wire_name="youtube_error",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReason_YoutubeErrorFields,
-    ),
-}
-
-_V1alphaNotebook_Sources_SettingsFields = {
-    "failure_reason": ubx.FieldSpec(
-        wire_name="failure_reason",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_Settings_FailureReasonFields,
-    ),
-    "status": ubx.FieldSpec(wire_name="status"),
-}
-
-_V1alphaNotebook_Sources_SourceIdFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-}
-
-_V1alphaNotebook_SourcesFields = {
-    "metadata": ubx.FieldSpec(
-        wire_name="metadata",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_MetadataFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "settings": ubx.FieldSpec(
-        wire_name="settings",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_SettingsFields,
-    ),
-    "source_id": ubx.FieldSpec(
-        wire_name="source_id",
-        kind="object",
-        fields=_V1alphaNotebook_Sources_SourceIdFields,
-    ),
-    "title": ubx.FieldSpec(wire_name="title"),
-}
-
 @dataclasses.dataclass
 class V1alphaNotebookConfig:
     # Customer-managed encryption configuration for Notebooks.
     cmek_config: Any = None
-    # Output only. The emoji of the notebook.
-    emoji: Any = None
     # Metadata for a notebook.
     metadata: Any = None
     # Identifier. The identifier of the notebook. Format: `projects/{project}/locations/{location}/notebooks/{notebook_id}`. This field must be a UTF-8 encoded string.
     name: Any = None
-    # Output only. Notebook id, which is the last segment of the notebook's resource name.
-    notebook_id: Any = None
-    # Output only. List of sources in the notebook. This is an output only field.
-    sources: Any = None
     # Optional. The title of the notebook.
     title: Any = None
 
@@ -283,19 +149,12 @@ V1alphaNotebook = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaNotebook_CmekConfigFields,
         ),
-        "emoji": ubx.FieldSpec(wire_name="emoji"),
         "metadata": ubx.FieldSpec(
             wire_name="metadata",
             kind="object",
             fields=_V1alphaNotebook_MetadataFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "notebook_id": ubx.FieldSpec(wire_name="notebook_id"),
-        "sources": ubx.FieldSpec(
-            wire_name="sources",
-            kind="list",
-            fields=_V1alphaNotebook_SourcesFields,
-        ),
         "title": ubx.FieldSpec(wire_name="title"),
     },
 )

@@ -70,90 +70,84 @@ type PreferenceSet_VirtualMachinePreferences struct {
 }
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields = ubx.FieldMap{
-		"AllowedMachineSeries": ubx.FieldSpec{
-			WireName: "allowed_machine_series",
-			Kind: "list",
-			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields,
-		},
-	}
+	"AllowedMachineSeries": ubx.FieldSpec{
+		WireName: "allowed_machine_series",
+		Kind:     "list",
+		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields,
+	},
+}
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields = ubx.FieldMap{
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"MachinePreferences": ubx.FieldSpec{
-			WireName: "machine_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
-		},
-		"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
-	}
+	"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+	"MachinePreferences": ubx.FieldSpec{
+		WireName: "machine_preferences",
+		Kind:     "object",
+		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
+	},
+	"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
+}
 
 var PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields = ubx.FieldMap{
-		"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
-	}
+	"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
+}
 
 var PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields = ubx.FieldMap{
-		"NodeName": ubx.FieldSpec{WireName: "node_name"},
-	}
+	"NodeName": ubx.FieldSpec{WireName: "node_name"},
+}
 
 var PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-		"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
-		"NodeTypes": ubx.FieldSpec{
-			WireName: "node_types",
-			Kind: "list",
-			Fields: PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields,
-		},
-	}
+	"CommitmentPlan":        ubx.FieldSpec{WireName: "commitment_plan"},
+	"CpuOvercommitRatio":    ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+	"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
+	"NodeTypes": ubx.FieldSpec{
+		WireName: "node_types",
+		Kind:     "list",
+		Fields:   PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields,
+	},
+}
 
 var PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-		"MemoryOvercommitRatio": ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
-		"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
-	}
+	"CommitmentPlan":                       ubx.FieldSpec{WireName: "commitment_plan"},
+	"CpuOvercommitRatio":                   ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+	"MemoryOvercommitRatio":                ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
+	"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
+}
 
 var PreferenceSet_VirtualMachinePreferencesFields = ubx.FieldMap{
-		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-		"ComputeEnginePreferences": ubx.FieldSpec{
-			WireName: "compute_engine_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields,
-		},
-		"RegionPreferences": ubx.FieldSpec{
-			WireName: "region_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields,
-		},
-		"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
-		"SoleTenancyPreferences": ubx.FieldSpec{
-			WireName: "sole_tenancy_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields,
-		},
-		"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
-		"VmwareEnginePreferences": ubx.FieldSpec{
-			WireName: "vmware_engine_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields,
-		},
-	}
+	"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+	"ComputeEnginePreferences": ubx.FieldSpec{
+		WireName: "compute_engine_preferences",
+		Kind:     "object",
+		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields,
+	},
+	"RegionPreferences": ubx.FieldSpec{
+		WireName: "region_preferences",
+		Kind:     "object",
+		Fields:   PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields,
+	},
+	"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
+	"SoleTenancyPreferences": ubx.FieldSpec{
+		WireName: "sole_tenancy_preferences",
+		Kind:     "object",
+		Fields:   PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields,
+	},
+	"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
+	"VmwareEnginePreferences": ubx.FieldSpec{
+		WireName: "vmware_engine_preferences",
+		Kind:     "object",
+		Fields:   PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields,
+	},
+}
 
 type PreferenceSetConfig struct {
-	// Output only. The timestamp when the preference set was created.
-	CreateTime any
 	// A description of the preference set.
 	Description any
 	// User-friendly display name. Maximum length is 63 characters.
 	DisplayName any
-	// Output only. Name of the preference set.
-	Name any
-	// Output only. The timestamp when the preference set was last updated.
-	UpdateTime any
 	// VirtualMachinePreferences enables you to create sets of assumptions, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets.
 	VirtualMachinePreferences any
 }
@@ -176,15 +170,12 @@ type PreferenceSetAttrs struct {
 var PreferenceSet = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_preference_set",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VirtualMachinePreferences": ubx.FieldSpec{
 			WireName: "virtual_machine_preferences",
-			Kind: "object",
-			Fields: PreferenceSet_VirtualMachinePreferencesFields,
+			Kind:     "object",
+			Fields:   PreferenceSet_VirtualMachinePreferencesFields,
 		},
 	},
 }

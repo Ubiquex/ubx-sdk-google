@@ -4,14 +4,10 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaTargetTcpProxyConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#targetTcpProxy for target TCP proxies.
-	Kind any
 	// Specifies the type of load balancing scheme used by this target proxy.
 	LoadBalancingScheme any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -20,8 +16,6 @@ type BetaTargetTcpProxyConfig struct {
 	ProxyBind any
 	// Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
 	ProxyHeader any
-	// Output only. [Output Only] URL of the region where the regional TCP proxy resides. This field is not applicable to global TCP proxy.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// URL to the BackendService resource.
@@ -56,16 +50,13 @@ type BetaTargetTcpProxyAttrs struct {
 var BetaTargetTcpProxy = ubx.ResourceBinding{
 	WireType: "google_compute_beta_target_tcp_proxy",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyBind": ubx.FieldSpec{WireName: "proxy_bind"},
-		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"ProxyBind":           ubx.FieldSpec{WireName: "proxy_bind"},
+		"ProxyHeader":         ubx.FieldSpec{WireName: "proxy_header"},
+		"SelfLink":            ubx.FieldSpec{WireName: "self_link"},
+		"Service":             ubx.FieldSpec{WireName: "service"},
 	},
 }

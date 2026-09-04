@@ -2,16 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AnnotationConfig {
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** name of resource. */
   name?: string | Computed<string>;
   /** Type of an annotation. */
   type?: string | Computed<string>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AnnotationAttrs {
@@ -30,10 +26,8 @@ export interface AnnotationAttrs {
 export const Annotation: ResourceBinding<AnnotationConfig, AnnotationAttrs> = {
   wireType: "google_rapidmigrationassessment_annotation",
   fields: {
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     type: "type",
-    updateTime: "update_time",
   },
 };

@@ -55,14 +55,8 @@ _Assessment_AgentInfoFields = {
 class AssessmentConfig:
     # Information about an agent involved in the conversation.
     agent_info: Any = None
-    # Output only. The time at which the assessment was created.
-    create_time: Any = None
     # Identifier. The resource name of the assessment. Format: projects/{project}/locations/{location}/conversations/{conversation}/assessments/{assessment}
     name: Any = None
-    # Output only. The state of the assessment.
-    state: Any = None
-    # Output only. The time at which the assessment was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AssessmentAttrs:
@@ -85,9 +79,6 @@ Assessment = ubx.ResourceBinding(
             kind="object",
             fields=_Assessment_AgentInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

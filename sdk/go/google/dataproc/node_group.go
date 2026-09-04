@@ -4,14 +4,14 @@ package dataproc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NodeGroup_NodeGroupConfig_Accelerators struct {
-	AcceleratorCount any
+	AcceleratorCount   any
 	AcceleratorTypeUri any
 }
 
 type NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs struct {
-	DiskSizeGb any
-	DiskType any
-	ProvisionedIops any
+	DiskSizeGb            any
+	DiskType              any
+	ProvisionedIops       any
 	ProvisionedThroughput any
 }
 
@@ -33,14 +33,14 @@ type NodeGroup_NodeGroupConfig_DiskConfig struct {
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList struct {
-	DiskConfig any
+	DiskConfig   any
 	MachineTypes any
-	Rank any
+	Rank         any
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults struct {
 	MachineType any
-	VmCount any
+	VmCount     any
 }
 
 type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
@@ -62,10 +62,10 @@ type NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy struct {
 }
 
 type NodeGroup_NodeGroupConfig_InstanceReferences struct {
-	InstanceId any
-	InstanceName any
+	InstanceId     any
+	InstanceName   any
 	PublicEciesKey any
-	PublicKey any
+	PublicKey      any
 }
 
 type NodeGroup_NodeGroupConfig_ManagedGroupConfig struct {
@@ -114,127 +114,127 @@ type NodeGroup_NodeGroupConfig struct {
 }
 
 var NodeGroup_NodeGroupConfig_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
-	}
+	"AcceleratorCount":   ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
+}
 
 var NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-	}
+	"DiskSizeGb":            ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":              ubx.FieldSpec{WireName: "disk_type"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+}
 
 var NodeGroup_NodeGroupConfig_DiskConfigFields = ubx.FieldMap{
-		"AttachedDiskConfigs": ubx.FieldSpec{
-			WireName: "attached_disk_configs",
-			Kind: "list",
-			Fields: NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
-		},
-		"BootDiskProvisionedIops": ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
-		"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-		"LocalSsdInterface": ubx.FieldSpec{WireName: "local_ssd_interface"},
-		"NumLocalSsds": ubx.FieldSpec{WireName: "num_local_ssds"},
-	}
+	"AttachedDiskConfigs": ubx.FieldSpec{
+		WireName: "attached_disk_configs",
+		Kind:     "list",
+		Fields:   NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
+	},
+	"BootDiskProvisionedIops":       ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
+	"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
+	"BootDiskSizeGb":                ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":                  ubx.FieldSpec{WireName: "boot_disk_type"},
+	"LocalSsdInterface":             ubx.FieldSpec{WireName: "local_ssd_interface"},
+	"NumLocalSsds":                  ubx.FieldSpec{WireName: "num_local_ssds"},
+}
 
 var NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields = ubx.FieldMap{
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
+	"Rank":         ubx.FieldSpec{WireName: "rank"},
+}
 
 var NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"VmCount": ubx.FieldSpec{WireName: "vm_count"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"VmCount":     ubx.FieldSpec{WireName: "vm_count"},
+}
 
 var NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields = ubx.FieldMap{
-		"StandardCapacityBase": ubx.FieldSpec{WireName: "standard_capacity_base"},
-		"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
-	}
+	"StandardCapacityBase":             ubx.FieldSpec{WireName: "standard_capacity_base"},
+	"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
+}
 
 var NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
-		"InstanceSelectionList": ubx.FieldSpec{
-			WireName: "instance_selection_list",
-			Kind: "list",
-			Fields: NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
-		},
-		"InstanceSelectionResults": ubx.FieldSpec{
-			WireName: "instance_selection_results",
-			Kind: "list",
-			Fields: NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
-		},
-		"ProvisioningModelMix": ubx.FieldSpec{
-			WireName: "provisioning_model_mix",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
-		},
-	}
+	"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
+	"InstanceSelectionList": ubx.FieldSpec{
+		WireName: "instance_selection_list",
+		Kind:     "list",
+		Fields:   NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
+	},
+	"InstanceSelectionResults": ubx.FieldSpec{
+		WireName: "instance_selection_results",
+		Kind:     "list",
+		Fields:   NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
+	},
+	"ProvisioningModelMix": ubx.FieldSpec{
+		WireName: "provisioning_model_mix",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
+	},
+}
 
 var NodeGroup_NodeGroupConfig_InstanceReferencesFields = ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-	}
+	"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
+	"InstanceName":   ubx.FieldSpec{WireName: "instance_name"},
+	"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
+	"PublicKey":      ubx.FieldSpec{WireName: "public_key"},
+}
 
 var NodeGroup_NodeGroupConfig_ManagedGroupConfigFields = ubx.FieldMap{
-		"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
-		"InstanceGroupManagerUri": ubx.FieldSpec{WireName: "instance_group_manager_uri"},
-		"InstanceTemplateName": ubx.FieldSpec{WireName: "instance_template_name"},
-	}
+	"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
+	"InstanceGroupManagerUri":  ubx.FieldSpec{WireName: "instance_group_manager_uri"},
+	"InstanceTemplateName":     ubx.FieldSpec{WireName: "instance_template_name"},
+}
 
 var NodeGroup_NodeGroupConfig_StartupConfigFields = ubx.FieldMap{
-		"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
-	}
+	"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
+}
 
 var NodeGroup_NodeGroupConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: NodeGroup_NodeGroupConfig_AcceleratorsFields,
-		},
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InstanceFlexibilityPolicy": ubx.FieldSpec{
-			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
-		},
-		"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
-		"InstanceReferences": ubx.FieldSpec{
-			WireName: "instance_references",
-			Kind: "list",
-			Fields: NodeGroup_NodeGroupConfig_InstanceReferencesFields,
-		},
-		"IsPreemptible": ubx.FieldSpec{WireName: "is_preemptible"},
-		"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
-		"ManagedGroupConfig": ubx.FieldSpec{
-			WireName: "managed_group_config",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
-		},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
-		"NumInstances": ubx.FieldSpec{WireName: "num_instances"},
-		"Preemptibility": ubx.FieldSpec{WireName: "preemptibility"},
-		"StartupConfig": ubx.FieldSpec{
-			WireName: "startup_config",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfig_StartupConfigFields,
-		},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   NodeGroup_NodeGroupConfig_AcceleratorsFields,
+	},
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"InstanceFlexibilityPolicy": ubx.FieldSpec{
+		WireName: "instance_flexibility_policy",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
+	},
+	"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
+	"InstanceReferences": ubx.FieldSpec{
+		WireName: "instance_references",
+		Kind:     "list",
+		Fields:   NodeGroup_NodeGroupConfig_InstanceReferencesFields,
+	},
+	"IsPreemptible":  ubx.FieldSpec{WireName: "is_preemptible"},
+	"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
+	"ManagedGroupConfig": ubx.FieldSpec{
+		WireName: "managed_group_config",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
+	},
+	"MinCpuPlatform":  ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
+	"NumInstances":    ubx.FieldSpec{WireName: "num_instances"},
+	"Preemptibility":  ubx.FieldSpec{WireName: "preemptibility"},
+	"StartupConfig": ubx.FieldSpec{
+		WireName: "startup_config",
+		Kind:     "object",
+		Fields:   NodeGroup_NodeGroupConfig_StartupConfigFields,
+	},
+}
 
 type NodeGroupConfig struct {
 	// Optional. Node group labels. Label keys must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty. If specified, they must consist of from 1 to 63 characters and conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). The node group must have no more than 32 labels.
@@ -262,11 +262,11 @@ var NodeGroup = ubx.ResourceBinding{
 	WireType: "google_dataproc_node_group",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NodeGroupConfig": ubx.FieldSpec{
 			WireName: "node_group_config",
-			Kind: "object",
-			Fields: NodeGroup_NodeGroupConfigFields,
+			Kind:     "object",
+			Fields:   NodeGroup_NodeGroupConfigFields,
 		},
 		"Roles": ubx.FieldSpec{WireName: "roles"},
 	},

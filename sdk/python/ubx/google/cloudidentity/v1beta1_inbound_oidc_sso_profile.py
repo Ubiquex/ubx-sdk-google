@@ -41,8 +41,6 @@ class V1beta1InboundOidcSsoProfileConfig:
     display_name: Any = None
     # OIDC IDP (identity provider) configuration.
     idp_config: Any = None
-    # Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the OIDC SSO profile.
-    name: Any = None
     # OIDC RP (relying party) configuration.
     rp_config: Any = None
 
@@ -69,7 +67,6 @@ V1beta1InboundOidcSsoProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1InboundOidcSsoProfile_IdpConfigFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "rp_config": ubx.FieldSpec(
             wire_name="rp_config",
             kind="object",

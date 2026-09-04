@@ -12,56 +12,54 @@ type V1beta1TagTemplate_Fields_Type_EnumType struct {
 }
 
 type V1beta1TagTemplate_Fields_Type struct {
-	EnumType any
+	EnumType      any
 	PrimitiveType any
 }
 
 type V1beta1TagTemplate_Fields struct {
 	Description any
 	DisplayName any
-	IsRequired any
-	Name any
-	Order any
-	Type any
+	IsRequired  any
+	Name        any
+	Order       any
+	Type        any
 }
 
 var V1beta1TagTemplate_Fields_Type_EnumType_AllowedValuesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var V1beta1TagTemplate_Fields_Type_EnumTypeFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{
-			WireName: "allowed_values",
-			Kind: "list",
-			Fields: V1beta1TagTemplate_Fields_Type_EnumType_AllowedValuesFields,
-		},
-	}
+	"AllowedValues": ubx.FieldSpec{
+		WireName: "allowed_values",
+		Kind:     "list",
+		Fields:   V1beta1TagTemplate_Fields_Type_EnumType_AllowedValuesFields,
+	},
+}
 
 var V1beta1TagTemplate_Fields_TypeFields = ubx.FieldMap{
-		"EnumType": ubx.FieldSpec{
-			WireName: "enum_type",
-			Kind: "object",
-			Fields: V1beta1TagTemplate_Fields_Type_EnumTypeFields,
-		},
-		"PrimitiveType": ubx.FieldSpec{WireName: "primitive_type"},
-	}
+	"EnumType": ubx.FieldSpec{
+		WireName: "enum_type",
+		Kind:     "object",
+		Fields:   V1beta1TagTemplate_Fields_Type_EnumTypeFields,
+	},
+	"PrimitiveType": ubx.FieldSpec{WireName: "primitive_type"},
+}
 
 var V1beta1TagTemplate_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Order": ubx.FieldSpec{WireName: "order"},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "object",
-			Fields: V1beta1TagTemplate_Fields_TypeFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"IsRequired":  ubx.FieldSpec{WireName: "is_required"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Order":       ubx.FieldSpec{WireName: "order"},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "object",
+		Fields:   V1beta1TagTemplate_Fields_TypeFields,
+	},
+}
 
 type V1beta1TagTemplateConfig struct {
-	// Output only. Transfer status of the TagTemplate
-	DataplexTransferStatus any
 	// The display name for this template. Defaults to an empty string.
 	DisplayName any
 	// Required. Map of tag template field IDs to the settings for the field. This map is an exhaustive list of the allowed fields. This map must contain at least one field and at most 500 fields. The keys to this map are tag template field IDs. Field IDs can contain letters (both uppercase and lowercase), numbers (0-9) and underscores (_). Field IDs must be at least 1 character long and at most 64 characters long. Field IDs must start with a letter or underscore.
@@ -84,12 +82,11 @@ type V1beta1TagTemplateAttrs struct {
 var V1beta1TagTemplate = ubx.ResourceBinding{
 	WireType: "google_datacatalog_v1beta1_tag_template",
 	Fields: ubx.FieldMap{
-		"DataplexTransferStatus": ubx.FieldSpec{WireName: "dataplex_transfer_status"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "map",
-			Fields: V1beta1TagTemplate_FieldsFields,
+			Kind:     "map",
+			Fields:   V1beta1TagTemplate_FieldsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

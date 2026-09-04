@@ -4,42 +4,42 @@ package batch
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_AllocationPolicy_Instances_Policy_Accelerators struct {
-	Count any
-	DriverVersion any
+	Count             any
+	DriverVersion     any
 	InstallGpuDrivers any
-	Type any
+	Type              any
 }
 
 type Job_AllocationPolicy_Instances_Policy_BootDisk struct {
 	DiskInterface any
-	Image any
-	SizeGb any
-	Snapshot any
-	Type any
+	Image         any
+	SizeGb        any
+	Snapshot      any
+	Type          any
 }
 
 type Job_AllocationPolicy_Instances_Policy_Disks struct {
-	DeviceName any
+	DeviceName   any
 	ExistingDisk any
-	NewDisk any
+	NewDisk      any
 }
 
 type Job_AllocationPolicy_Instances_Policy struct {
-	Accelerators any
-	BootDisk any
-	Disks any
-	MachineType any
-	MinCpuPlatform any
+	Accelerators      any
+	BootDisk          any
+	Disks             any
+	MachineType       any
+	MinCpuPlatform    any
 	ProvisioningModel any
-	Reservation any
+	Reservation       any
 }
 
 type Job_AllocationPolicy_Instances struct {
 	BlockProjectSshKeys any
-	InstallGpuDrivers any
-	InstallOpsAgent any
-	InstanceTemplate any
-	Policy any
+	InstallGpuDrivers   any
+	InstallOpsAgent     any
+	InstanceTemplate    any
+	Policy              any
 }
 
 type Job_AllocationPolicy_Location struct {
@@ -48,10 +48,10 @@ type Job_AllocationPolicy_Location struct {
 }
 
 type Job_AllocationPolicy_Network_NetworkInterfaces struct {
-	Network any
-	NicType any
+	Network             any
+	NicType             any
 	NoExternalIpAddress any
-	Subnetwork any
+	Subnetwork          any
 }
 
 type Job_AllocationPolicy_Network struct {
@@ -77,7 +77,7 @@ type Job_AllocationPolicy struct {
 	// Describe instances that can be created by this AllocationPolicy. Only instances[0] is supported now.
 	Instances any
 	// Custom labels to apply to the job and all the Compute Engine resources that both are created by this allocation policy and support labels. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
-	Labels any
+	Labels   any
 	Location any
 	// NetworkPolicy describes VM instance network configurations.
 	Network any
@@ -104,13 +104,13 @@ type Job_LogsPolicy struct {
 }
 
 type Job_Notifications_Message struct {
-	NewJobState any
+	NewJobState  any
 	NewTaskState any
-	Type any
+	Type         any
 }
 
 type Job_Notifications struct {
-	Message any
+	Message     any
 	PubsubTopic any
 }
 
@@ -119,22 +119,22 @@ type Job_Status_StatusEvents_TaskExecution struct {
 }
 
 type Job_Status_StatusEvents struct {
-	Description any
-	EventTime any
+	Description   any
+	EventTime     any
 	TaskExecution any
-	TaskState any
-	Type any
+	TaskState     any
+	Type          any
 }
 
 type Job_Status_TaskGroups_Instances struct {
-	BootDisk any
-	MachineType any
+	BootDisk          any
+	MachineType       any
 	ProvisioningModel any
-	TaskPack any
+	TaskPack          any
 }
 
 type Job_Status_TaskGroups struct {
-	Counts any
+	Counts    any
 	Instances any
 }
 
@@ -151,19 +151,19 @@ type Job_Status struct {
 
 type Job_TaskGroups_TaskEnvironments_EncryptedVariables struct {
 	CipherText any
-	KeyName any
+	KeyName    any
 }
 
 type Job_TaskGroups_TaskEnvironments struct {
 	EncryptedVariables any
-	SecretVariables any
-	Variables any
+	SecretVariables    any
+	Variables          any
 }
 
 type Job_TaskGroups_TaskSpec_ComputeResource struct {
 	BootDiskMib any
-	CpuMilli any
-	MemoryMib any
+	CpuMilli    any
+	MemoryMib   any
 }
 
 type Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition struct {
@@ -171,7 +171,7 @@ type Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionCondition struct {
 }
 
 type Job_TaskGroups_TaskSpec_LifecyclePolicies struct {
-	Action any
+	Action          any
 	ActionCondition any
 }
 
@@ -181,14 +181,14 @@ type Job_TaskGroups_TaskSpec_Runnables_Barrier struct {
 
 type Job_TaskGroups_TaskSpec_Runnables_Container struct {
 	BlockExternalNetwork any
-	Commands any
+	Commands             any
 	EnableImageStreaming any
-	Entrypoint any
-	ImageUri any
-	Options any
-	Password any
-	Username any
-	Volumes any
+	Entrypoint           any
+	ImageUri             any
+	Options              any
+	Password             any
+	Username             any
+	Volumes              any
 }
 
 type Job_TaskGroups_TaskSpec_Runnables_Script struct {
@@ -197,16 +197,16 @@ type Job_TaskGroups_TaskSpec_Runnables_Script struct {
 }
 
 type Job_TaskGroups_TaskSpec_Runnables struct {
-	AlwaysRun any
-	Background any
-	Barrier any
-	Container any
-	DisplayName any
-	Environment any
+	AlwaysRun        any
+	Background       any
+	Barrier          any
+	Container        any
+	DisplayName      any
+	Environment      any
 	IgnoreExitStatus any
-	Labels any
-	Script any
-	Timeout any
+	Labels           any
+	Script           any
+	Timeout          any
 }
 
 type Job_TaskGroups_TaskSpec_Volumes_Gcs struct {
@@ -215,411 +215,407 @@ type Job_TaskGroups_TaskSpec_Volumes_Gcs struct {
 
 type Job_TaskGroups_TaskSpec_Volumes_Nfs struct {
 	RemotePath any
-	Server any
+	Server     any
 }
 
 type Job_TaskGroups_TaskSpec_Volumes struct {
-	DeviceName any
-	Gcs any
+	DeviceName   any
+	Gcs          any
 	MountOptions any
-	MountPath any
-	Nfs any
+	MountPath    any
+	Nfs          any
 }
 
 type Job_TaskGroups_TaskSpec struct {
-	ComputeResource any
-	Environment any
-	Environments any
+	ComputeResource   any
+	Environment       any
+	Environments      any
 	LifecyclePolicies any
-	MaxRetryCount any
-	MaxRunDuration any
-	Runnables any
-	Volumes any
+	MaxRetryCount     any
+	MaxRunDuration    any
+	Runnables         any
+	Volumes           any
 }
 
 type Job_TaskGroups struct {
-	Name any
-	Parallelism any
-	PermissiveSsh any
+	Name             any
+	Parallelism      any
+	PermissiveSsh    any
 	RequireHostsFile any
-	RunAsNonRoot any
+	RunAsNonRoot     any
 	SchedulingPolicy any
-	TaskCount any
+	TaskCount        any
 	TaskCountPerNode any
 	TaskEnvironments any
-	TaskSpec any
+	TaskSpec         any
 }
 
 var Job_AllocationPolicy_Instances_Policy_AcceleratorsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"DriverVersion": ubx.FieldSpec{WireName: "driver_version"},
-		"InstallGpuDrivers": ubx.FieldSpec{WireName: "install_gpu_drivers"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Count":             ubx.FieldSpec{WireName: "count"},
+	"DriverVersion":     ubx.FieldSpec{WireName: "driver_version"},
+	"InstallGpuDrivers": ubx.FieldSpec{WireName: "install_gpu_drivers"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_AllocationPolicy_Instances_Policy_BootDiskFields = ubx.FieldMap{
-		"DiskInterface": ubx.FieldSpec{WireName: "disk_interface"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"Snapshot": ubx.FieldSpec{WireName: "snapshot"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DiskInterface": ubx.FieldSpec{WireName: "disk_interface"},
+	"Image":         ubx.FieldSpec{WireName: "image"},
+	"SizeGb":        ubx.FieldSpec{WireName: "size_gb"},
+	"Snapshot":      ubx.FieldSpec{WireName: "snapshot"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_AllocationPolicy_Instances_Policy_DisksFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"ExistingDisk": ubx.FieldSpec{WireName: "existing_disk"},
-		"NewDisk": ubx.FieldSpec{
-			WireName: "new_disk",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_Instances_Policy_BootDiskFields,
-		},
-	}
+	"DeviceName":   ubx.FieldSpec{WireName: "device_name"},
+	"ExistingDisk": ubx.FieldSpec{WireName: "existing_disk"},
+	"NewDisk": ubx.FieldSpec{
+		WireName: "new_disk",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_Instances_Policy_BootDiskFields,
+	},
+}
 
 var Job_AllocationPolicy_Instances_PolicyFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: Job_AllocationPolicy_Instances_Policy_AcceleratorsFields,
-		},
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_Instances_Policy_BootDiskFields,
-		},
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: Job_AllocationPolicy_Instances_Policy_DisksFields,
-		},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-		"Reservation": ubx.FieldSpec{WireName: "reservation"},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   Job_AllocationPolicy_Instances_Policy_AcceleratorsFields,
+	},
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_Instances_Policy_BootDiskFields,
+	},
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   Job_AllocationPolicy_Instances_Policy_DisksFields,
+	},
+	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
+	"MinCpuPlatform":    ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
+	"Reservation":       ubx.FieldSpec{WireName: "reservation"},
+}
 
 var Job_AllocationPolicy_InstancesFields = ubx.FieldMap{
-		"BlockProjectSshKeys": ubx.FieldSpec{WireName: "block_project_ssh_keys"},
-		"InstallGpuDrivers": ubx.FieldSpec{WireName: "install_gpu_drivers"},
-		"InstallOpsAgent": ubx.FieldSpec{WireName: "install_ops_agent"},
-		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_Instances_PolicyFields,
-		},
-	}
+	"BlockProjectSshKeys": ubx.FieldSpec{WireName: "block_project_ssh_keys"},
+	"InstallGpuDrivers":   ubx.FieldSpec{WireName: "install_gpu_drivers"},
+	"InstallOpsAgent":     ubx.FieldSpec{WireName: "install_ops_agent"},
+	"InstanceTemplate":    ubx.FieldSpec{WireName: "instance_template"},
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_Instances_PolicyFields,
+	},
+}
 
 var Job_AllocationPolicy_LocationFields = ubx.FieldMap{
-		"AllowedLocations": ubx.FieldSpec{WireName: "allowed_locations"},
-	}
+	"AllowedLocations": ubx.FieldSpec{WireName: "allowed_locations"},
+}
 
 var Job_AllocationPolicy_Network_NetworkInterfacesFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NicType": ubx.FieldSpec{WireName: "nic_type"},
-		"NoExternalIpAddress": ubx.FieldSpec{WireName: "no_external_ip_address"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"Network":             ubx.FieldSpec{WireName: "network"},
+	"NicType":             ubx.FieldSpec{WireName: "nic_type"},
+	"NoExternalIpAddress": ubx.FieldSpec{WireName: "no_external_ip_address"},
+	"Subnetwork":          ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var Job_AllocationPolicy_NetworkFields = ubx.FieldMap{
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Job_AllocationPolicy_Network_NetworkInterfacesFields,
-		},
-	}
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   Job_AllocationPolicy_Network_NetworkInterfacesFields,
+	},
+}
 
 var Job_AllocationPolicy_PlacementFields = ubx.FieldMap{
-		"Collocation": ubx.FieldSpec{WireName: "collocation"},
-		"MaxDistance": ubx.FieldSpec{WireName: "max_distance"},
-	}
+	"Collocation": ubx.FieldSpec{WireName: "collocation"},
+	"MaxDistance": ubx.FieldSpec{WireName: "max_distance"},
+}
 
 var Job_AllocationPolicy_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Job_AllocationPolicyFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: Job_AllocationPolicy_InstancesFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_LocationFields,
-		},
-		"Network": ubx.FieldSpec{
-			WireName: "network",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_NetworkFields,
-		},
-		"Placement": ubx.FieldSpec{
-			WireName: "placement",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_PlacementFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_ServiceAccountFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   Job_AllocationPolicy_InstancesFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_LocationFields,
+	},
+	"Network": ubx.FieldSpec{
+		WireName: "network",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_NetworkFields,
+	},
+	"Placement": ubx.FieldSpec{
+		WireName: "placement",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_PlacementFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_ServiceAccountFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var Job_LogsPolicy_CloudLoggingOptionFields = ubx.FieldMap{
-		"UseGenericTaskMonitoredResource": ubx.FieldSpec{WireName: "use_generic_task_monitored_resource"},
-	}
+	"UseGenericTaskMonitoredResource": ubx.FieldSpec{WireName: "use_generic_task_monitored_resource"},
+}
 
 var Job_LogsPolicyFields = ubx.FieldMap{
-		"CloudLoggingOption": ubx.FieldSpec{
-			WireName: "cloud_logging_option",
-			Kind: "object",
-			Fields: Job_LogsPolicy_CloudLoggingOptionFields,
-		},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"LogsPath": ubx.FieldSpec{WireName: "logs_path"},
-	}
+	"CloudLoggingOption": ubx.FieldSpec{
+		WireName: "cloud_logging_option",
+		Kind:     "object",
+		Fields:   Job_LogsPolicy_CloudLoggingOptionFields,
+	},
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"LogsPath":    ubx.FieldSpec{WireName: "logs_path"},
+}
 
 var Job_Notifications_MessageFields = ubx.FieldMap{
-		"NewJobState": ubx.FieldSpec{WireName: "new_job_state"},
-		"NewTaskState": ubx.FieldSpec{WireName: "new_task_state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"NewJobState":  ubx.FieldSpec{WireName: "new_job_state"},
+	"NewTaskState": ubx.FieldSpec{WireName: "new_task_state"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_NotificationsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: Job_Notifications_MessageFields,
-		},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-	}
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   Job_Notifications_MessageFields,
+	},
+	"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
+}
 
 var Job_Status_StatusEvents_TaskExecutionFields = ubx.FieldMap{
-		"ExitCode": ubx.FieldSpec{WireName: "exit_code"},
-	}
+	"ExitCode": ubx.FieldSpec{WireName: "exit_code"},
+}
 
 var Job_Status_StatusEventsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"TaskExecution": ubx.FieldSpec{
-			WireName: "task_execution",
-			Kind: "object",
-			Fields: Job_Status_StatusEvents_TaskExecutionFields,
-		},
-		"TaskState": ubx.FieldSpec{WireName: "task_state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"EventTime":   ubx.FieldSpec{WireName: "event_time"},
+	"TaskExecution": ubx.FieldSpec{
+		WireName: "task_execution",
+		Kind:     "object",
+		Fields:   Job_Status_StatusEvents_TaskExecutionFields,
+	},
+	"TaskState": ubx.FieldSpec{WireName: "task_state"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Status_TaskGroups_InstancesFields = ubx.FieldMap{
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: Job_AllocationPolicy_Instances_Policy_BootDiskFields,
-		},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-		"TaskPack": ubx.FieldSpec{WireName: "task_pack"},
-	}
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   Job_AllocationPolicy_Instances_Policy_BootDiskFields,
+	},
+	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
+	"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
+	"TaskPack":          ubx.FieldSpec{WireName: "task_pack"},
+}
 
 var Job_Status_TaskGroupsFields = ubx.FieldMap{
-		"Counts": ubx.FieldSpec{WireName: "counts"},
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: Job_Status_TaskGroups_InstancesFields,
-		},
-	}
+	"Counts": ubx.FieldSpec{WireName: "counts"},
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   Job_Status_TaskGroups_InstancesFields,
+	},
+}
 
 var Job_StatusFields = ubx.FieldMap{
-		"RunDuration": ubx.FieldSpec{WireName: "run_duration"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StatusEvents": ubx.FieldSpec{
-			WireName: "status_events",
-			Kind: "list",
-			Fields: Job_Status_StatusEventsFields,
-		},
-		"TaskGroups": ubx.FieldSpec{
-			WireName: "task_groups",
-			Kind: "map",
-			Fields: Job_Status_TaskGroupsFields,
-		},
-	}
+	"RunDuration": ubx.FieldSpec{WireName: "run_duration"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"StatusEvents": ubx.FieldSpec{
+		WireName: "status_events",
+		Kind:     "list",
+		Fields:   Job_Status_StatusEventsFields,
+	},
+	"TaskGroups": ubx.FieldSpec{
+		WireName: "task_groups",
+		Kind:     "map",
+		Fields:   Job_Status_TaskGroupsFields,
+	},
+}
 
 var Job_TaskGroups_TaskEnvironments_EncryptedVariablesFields = ubx.FieldMap{
-		"CipherText": ubx.FieldSpec{WireName: "cipher_text"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-	}
+	"CipherText": ubx.FieldSpec{WireName: "cipher_text"},
+	"KeyName":    ubx.FieldSpec{WireName: "key_name"},
+}
 
 var Job_TaskGroups_TaskEnvironmentsFields = ubx.FieldMap{
-		"EncryptedVariables": ubx.FieldSpec{
-			WireName: "encrypted_variables",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskEnvironments_EncryptedVariablesFields,
-		},
-		"SecretVariables": ubx.FieldSpec{WireName: "secret_variables"},
-		"Variables": ubx.FieldSpec{WireName: "variables"},
-	}
+	"EncryptedVariables": ubx.FieldSpec{
+		WireName: "encrypted_variables",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskEnvironments_EncryptedVariablesFields,
+	},
+	"SecretVariables": ubx.FieldSpec{WireName: "secret_variables"},
+	"Variables":       ubx.FieldSpec{WireName: "variables"},
+}
 
 var Job_TaskGroups_TaskSpec_ComputeResourceFields = ubx.FieldMap{
-		"BootDiskMib": ubx.FieldSpec{WireName: "boot_disk_mib"},
-		"CpuMilli": ubx.FieldSpec{WireName: "cpu_milli"},
-		"MemoryMib": ubx.FieldSpec{WireName: "memory_mib"},
-	}
+	"BootDiskMib": ubx.FieldSpec{WireName: "boot_disk_mib"},
+	"CpuMilli":    ubx.FieldSpec{WireName: "cpu_milli"},
+	"MemoryMib":   ubx.FieldSpec{WireName: "memory_mib"},
+}
 
 var Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionConditionFields = ubx.FieldMap{
-		"ExitCodes": ubx.FieldSpec{WireName: "exit_codes"},
-	}
+	"ExitCodes": ubx.FieldSpec{WireName: "exit_codes"},
+}
 
 var Job_TaskGroups_TaskSpec_LifecyclePoliciesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ActionCondition": ubx.FieldSpec{
-			WireName: "action_condition",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionConditionFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"ActionCondition": ubx.FieldSpec{
+		WireName: "action_condition",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_LifecyclePolicies_ActionConditionFields,
+	},
+}
 
 var Job_TaskGroups_TaskSpec_Runnables_BarrierFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Job_TaskGroups_TaskSpec_Runnables_ContainerFields = ubx.FieldMap{
-		"BlockExternalNetwork": ubx.FieldSpec{WireName: "block_external_network"},
-		"Commands": ubx.FieldSpec{WireName: "commands"},
-		"EnableImageStreaming": ubx.FieldSpec{WireName: "enable_image_streaming"},
-		"Entrypoint": ubx.FieldSpec{WireName: "entrypoint"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"Volumes": ubx.FieldSpec{WireName: "volumes"},
-	}
+	"BlockExternalNetwork": ubx.FieldSpec{WireName: "block_external_network"},
+	"Commands":             ubx.FieldSpec{WireName: "commands"},
+	"EnableImageStreaming": ubx.FieldSpec{WireName: "enable_image_streaming"},
+	"Entrypoint":           ubx.FieldSpec{WireName: "entrypoint"},
+	"ImageUri":             ubx.FieldSpec{WireName: "image_uri"},
+	"Options":              ubx.FieldSpec{WireName: "options"},
+	"Password":             ubx.FieldSpec{WireName: "password"},
+	"Username":             ubx.FieldSpec{WireName: "username"},
+	"Volumes":              ubx.FieldSpec{WireName: "volumes"},
+}
 
 var Job_TaskGroups_TaskSpec_Runnables_ScriptFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Job_TaskGroups_TaskSpec_RunnablesFields = ubx.FieldMap{
-		"AlwaysRun": ubx.FieldSpec{WireName: "always_run"},
-		"Background": ubx.FieldSpec{WireName: "background"},
-		"Barrier": ubx.FieldSpec{
-			WireName: "barrier",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_Runnables_BarrierFields,
-		},
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_Runnables_ContainerFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskEnvironmentsFields,
-		},
-		"IgnoreExitStatus": ubx.FieldSpec{WireName: "ignore_exit_status"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Script": ubx.FieldSpec{
-			WireName: "script",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_Runnables_ScriptFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"AlwaysRun":  ubx.FieldSpec{WireName: "always_run"},
+	"Background": ubx.FieldSpec{WireName: "background"},
+	"Barrier": ubx.FieldSpec{
+		WireName: "barrier",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_Runnables_BarrierFields,
+	},
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_Runnables_ContainerFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskEnvironmentsFields,
+	},
+	"IgnoreExitStatus": ubx.FieldSpec{WireName: "ignore_exit_status"},
+	"Labels":           ubx.FieldSpec{WireName: "labels"},
+	"Script": ubx.FieldSpec{
+		WireName: "script",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_Runnables_ScriptFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var Job_TaskGroups_TaskSpec_Volumes_GcsFields = ubx.FieldMap{
-		"RemotePath": ubx.FieldSpec{WireName: "remote_path"},
-	}
+	"RemotePath": ubx.FieldSpec{WireName: "remote_path"},
+}
 
 var Job_TaskGroups_TaskSpec_Volumes_NfsFields = ubx.FieldMap{
-		"RemotePath": ubx.FieldSpec{WireName: "remote_path"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"RemotePath": ubx.FieldSpec{WireName: "remote_path"},
+	"Server":     ubx.FieldSpec{WireName: "server"},
+}
 
 var Job_TaskGroups_TaskSpec_VolumesFields = ubx.FieldMap{
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_Volumes_GcsFields,
-		},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_Volumes_NfsFields,
-		},
-	}
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_Volumes_GcsFields,
+	},
+	"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
+	"MountPath":    ubx.FieldSpec{WireName: "mount_path"},
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_Volumes_NfsFields,
+	},
+}
 
 var Job_TaskGroups_TaskSpecFields = ubx.FieldMap{
-		"ComputeResource": ubx.FieldSpec{
-			WireName: "compute_resource",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpec_ComputeResourceFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskEnvironmentsFields,
-		},
-		"Environments": ubx.FieldSpec{WireName: "environments"},
-		"LifecyclePolicies": ubx.FieldSpec{
-			WireName: "lifecycle_policies",
-			Kind: "list",
-			Fields: Job_TaskGroups_TaskSpec_LifecyclePoliciesFields,
-		},
-		"MaxRetryCount": ubx.FieldSpec{WireName: "max_retry_count"},
-		"MaxRunDuration": ubx.FieldSpec{WireName: "max_run_duration"},
-		"Runnables": ubx.FieldSpec{
-			WireName: "runnables",
-			Kind: "list",
-			Fields: Job_TaskGroups_TaskSpec_RunnablesFields,
-		},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: Job_TaskGroups_TaskSpec_VolumesFields,
-		},
-	}
+	"ComputeResource": ubx.FieldSpec{
+		WireName: "compute_resource",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpec_ComputeResourceFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskEnvironmentsFields,
+	},
+	"Environments": ubx.FieldSpec{WireName: "environments"},
+	"LifecyclePolicies": ubx.FieldSpec{
+		WireName: "lifecycle_policies",
+		Kind:     "list",
+		Fields:   Job_TaskGroups_TaskSpec_LifecyclePoliciesFields,
+	},
+	"MaxRetryCount":  ubx.FieldSpec{WireName: "max_retry_count"},
+	"MaxRunDuration": ubx.FieldSpec{WireName: "max_run_duration"},
+	"Runnables": ubx.FieldSpec{
+		WireName: "runnables",
+		Kind:     "list",
+		Fields:   Job_TaskGroups_TaskSpec_RunnablesFields,
+	},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   Job_TaskGroups_TaskSpec_VolumesFields,
+	},
+}
 
 var Job_TaskGroupsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parallelism": ubx.FieldSpec{WireName: "parallelism"},
-		"PermissiveSsh": ubx.FieldSpec{WireName: "permissive_ssh"},
-		"RequireHostsFile": ubx.FieldSpec{WireName: "require_hosts_file"},
-		"RunAsNonRoot": ubx.FieldSpec{WireName: "run_as_non_root"},
-		"SchedulingPolicy": ubx.FieldSpec{WireName: "scheduling_policy"},
-		"TaskCount": ubx.FieldSpec{WireName: "task_count"},
-		"TaskCountPerNode": ubx.FieldSpec{WireName: "task_count_per_node"},
-		"TaskEnvironments": ubx.FieldSpec{
-			WireName: "task_environments",
-			Kind: "list",
-			Fields: Job_TaskGroups_TaskEnvironmentsFields,
-		},
-		"TaskSpec": ubx.FieldSpec{
-			WireName: "task_spec",
-			Kind: "object",
-			Fields: Job_TaskGroups_TaskSpecFields,
-		},
-	}
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Parallelism":      ubx.FieldSpec{WireName: "parallelism"},
+	"PermissiveSsh":    ubx.FieldSpec{WireName: "permissive_ssh"},
+	"RequireHostsFile": ubx.FieldSpec{WireName: "require_hosts_file"},
+	"RunAsNonRoot":     ubx.FieldSpec{WireName: "run_as_non_root"},
+	"SchedulingPolicy": ubx.FieldSpec{WireName: "scheduling_policy"},
+	"TaskCount":        ubx.FieldSpec{WireName: "task_count"},
+	"TaskCountPerNode": ubx.FieldSpec{WireName: "task_count_per_node"},
+	"TaskEnvironments": ubx.FieldSpec{
+		WireName: "task_environments",
+		Kind:     "list",
+		Fields:   Job_TaskGroups_TaskEnvironmentsFields,
+	},
+	"TaskSpec": ubx.FieldSpec{
+		WireName: "task_spec",
+		Kind:     "object",
+		Fields:   Job_TaskGroups_TaskSpecFields,
+	},
+}
 
 type JobConfig struct {
 	// A Job's resource allocation policy describes when, where, and how compute resources should be allocated for the Job.
 	AllocationPolicy any
-	// Output only. When the Job was created.
-	CreateTime any
 	// Custom labels to apply to the job and any Cloud Logging [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry) that it generates. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
 	Labels any
 	// LogsPolicy describes if and how a job's logs are preserved. Logs include information that is automatically written by the Batch service agent and any information that you configured the job's runnables to write to the `stdout` or `stderr` streams.
 	LogsPolicy any
-	// Output only. Job name. For example: "projects/123456/locations/us-central1/jobs/job01".
-	Name any
 	// Notification configurations.
 	Notifications any
 	// Priority of the Job. The valid value range is [0, 100). Default value is 0. Higher value indicates higher priority. A job with higher priority value is more likely to run earlier if all other requirements are satisfied.
@@ -628,10 +624,6 @@ type JobConfig struct {
 	Status any
 	// Required. TaskGroups in the Job. Only one TaskGroup is supported now.
 	TaskGroups any
-	// Output only. A system generated unique ID for the Job.
-	Uid any
-	// Output only. The last time the Job was updated.
-	UpdateTime any
 }
 
 type JobAttrs struct {
@@ -664,34 +656,30 @@ var Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllocationPolicy": ubx.FieldSpec{
 			WireName: "allocation_policy",
-			Kind: "object",
-			Fields: Job_AllocationPolicyFields,
+			Kind:     "object",
+			Fields:   Job_AllocationPolicyFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LogsPolicy": ubx.FieldSpec{
 			WireName: "logs_policy",
-			Kind: "object",
-			Fields: Job_LogsPolicyFields,
+			Kind:     "object",
+			Fields:   Job_LogsPolicyFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Notifications": ubx.FieldSpec{
 			WireName: "notifications",
-			Kind: "list",
-			Fields: Job_NotificationsFields,
+			Kind:     "list",
+			Fields:   Job_NotificationsFields,
 		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Job_StatusFields,
+			Kind:     "object",
+			Fields:   Job_StatusFields,
 		},
 		"TaskGroups": ubx.FieldSpec{
 			WireName: "task_groups",
-			Kind: "list",
-			Fields: Job_TaskGroupsFields,
+			Kind:     "list",
+			Fields:   Job_TaskGroupsFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

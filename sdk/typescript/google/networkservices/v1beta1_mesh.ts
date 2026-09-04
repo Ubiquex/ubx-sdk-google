@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1MeshConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers. */
@@ -14,10 +12,6 @@ export interface V1beta1MeshConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the Mesh resource. It matches pattern `projects/* /locations/* /meshes/`. */
   name?: string | Computed<string>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1MeshAttrs {
@@ -42,13 +36,10 @@ export interface V1beta1MeshAttrs {
 export const V1beta1Mesh: ResourceBinding<V1beta1MeshConfig, V1beta1MeshAttrs> = {
   wireType: "google_networkservices_v1beta1_mesh",
   fields: {
-    createTime: "create_time",
     description: "description",
     envoyHeaders: "envoy_headers",
     interceptionPort: "interception_port",
     labels: "labels",
     name: "name",
-    selfLink: "self_link",
-    updateTime: "update_time",
   },
 };

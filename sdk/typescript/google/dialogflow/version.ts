@@ -14,12 +14,10 @@ const Version_NluSettingsFields: FieldMap = {
 };
 
 export interface VersionConfig {
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   name?: string | Computed<string>;
   nluSettings?: Version_NluSettings | Computed<Version_NluSettings>;
-  state?: string | Computed<string>;
 }
 
 export interface VersionAttrs {
@@ -34,7 +32,6 @@ export interface VersionAttrs {
 export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
   wireType: "google_dialogflow_version",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -43,6 +40,5 @@ export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
       kind: "object",
       fields: Version_NluSettingsFields,
     },
-    state: "state",
   },
 };

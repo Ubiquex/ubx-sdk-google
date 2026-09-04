@@ -16,8 +16,6 @@ export interface AutoLabelingRuleConfig {
   active?: boolean | Computed<boolean>;
   /** Conditions to apply for auto-labeling the label_key. Representing sequential block of if .. else if .. else statements. The value of the first matching condition will be used. */
   conditions?: AutoLabelingRule_Conditions[] | Computed<AutoLabelingRule_Conditions[]>;
-  /** Output only. The time at which this rule was created. */
-  createTime?: string | Computed<string>;
   /** The description of the rule. */
   description?: string | Computed<string>;
   /** The user-provided display name of the rule. */
@@ -28,8 +26,6 @@ export interface AutoLabelingRuleConfig {
   labelKeyType?: string | Computed<string>;
   /** Identifier. The resource name of the auto-labeling rule. Format: projects/{project}/locations/{location}/autoLabelingRules/{auto_labeling_rule} */
   name?: string | Computed<string>;
-  /** Output only. The most recent time at which the rule was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AutoLabelingRuleAttrs {
@@ -62,12 +58,10 @@ export const AutoLabelingRule: ResourceBinding<AutoLabelingRuleConfig, AutoLabel
       kind: "list",
       fields: AutoLabelingRule_ConditionsFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     labelKey: "label_key",
     labelKeyType: "label_key_type",
     name: "name",
-    updateTime: "update_time",
   },
 };

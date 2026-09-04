@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class V1beta1AllowlistedDomainConfig:
     # Required. Immutable. Name of the domain that is in the allowlist. e.g. "google.com"
     domain: Any = None
-    # Output only. Identifier. Resource name of the domain in the allowlist e.g. "allowlistedDomains/0184mhaj1smlusv"
-    name: Any = None
 
 @dataclasses.dataclass
 class V1beta1AllowlistedDomainAttrs:
@@ -24,6 +22,5 @@ V1beta1AllowlistedDomain = ubx.ResourceBinding(
     wire_type="google_cloudidentity_v1beta1_allowlisted_domain",
     fields={
         "domain": ubx.FieldSpec(wire_name="domain"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

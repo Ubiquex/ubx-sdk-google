@@ -9,7 +9,6 @@ export interface ClientState_KeyValuePairs {
 
 export interface ClientStateConfig {
   customer?: string | Computed<string>;
-  name: string | Computed<string>;
 }
 
 export interface ClientStateAttrs {
@@ -43,6 +42,5 @@ export const ClientState: DataSourceBinding<ClientStateConfig, ClientStateAttrs>
   wireType: "google_cloudidentity_client_state",
   fields: {
     customer: "customer",
-    name: "name",
   },
 };

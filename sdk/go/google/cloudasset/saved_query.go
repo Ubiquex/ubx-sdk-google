@@ -61,83 +61,75 @@ type SavedQuery_Content struct {
 }
 
 var SavedQuery_Content_IamPolicyAnalysisQuery_AccessSelectorFields = ubx.FieldMap{
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	"Roles":       ubx.FieldSpec{WireName: "roles"},
+}
 
 var SavedQuery_Content_IamPolicyAnalysisQuery_ConditionContextFields = ubx.FieldMap{
-		"AccessTime": ubx.FieldSpec{WireName: "access_time"},
-	}
+	"AccessTime": ubx.FieldSpec{WireName: "access_time"},
+}
 
 var SavedQuery_Content_IamPolicyAnalysisQuery_IdentitySelectorFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-	}
+	"Identity": ubx.FieldSpec{WireName: "identity"},
+}
 
 var SavedQuery_Content_IamPolicyAnalysisQuery_OptionsFields = ubx.FieldMap{
-		"AnalyzeServiceAccountImpersonation": ubx.FieldSpec{WireName: "analyze_service_account_impersonation"},
-		"ExpandGroups": ubx.FieldSpec{WireName: "expand_groups"},
-		"ExpandResources": ubx.FieldSpec{WireName: "expand_resources"},
-		"ExpandRoles": ubx.FieldSpec{WireName: "expand_roles"},
-		"OutputGroupEdges": ubx.FieldSpec{WireName: "output_group_edges"},
-		"OutputResourceEdges": ubx.FieldSpec{WireName: "output_resource_edges"},
-	}
+	"AnalyzeServiceAccountImpersonation": ubx.FieldSpec{WireName: "analyze_service_account_impersonation"},
+	"ExpandGroups":                       ubx.FieldSpec{WireName: "expand_groups"},
+	"ExpandResources":                    ubx.FieldSpec{WireName: "expand_resources"},
+	"ExpandRoles":                        ubx.FieldSpec{WireName: "expand_roles"},
+	"OutputGroupEdges":                   ubx.FieldSpec{WireName: "output_group_edges"},
+	"OutputResourceEdges":                ubx.FieldSpec{WireName: "output_resource_edges"},
+}
 
 var SavedQuery_Content_IamPolicyAnalysisQuery_ResourceSelectorFields = ubx.FieldMap{
-		"FullResourceName": ubx.FieldSpec{WireName: "full_resource_name"},
-	}
+	"FullResourceName": ubx.FieldSpec{WireName: "full_resource_name"},
+}
 
 var SavedQuery_Content_IamPolicyAnalysisQueryFields = ubx.FieldMap{
-		"AccessSelector": ubx.FieldSpec{
-			WireName: "access_selector",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQuery_AccessSelectorFields,
-		},
-		"ConditionContext": ubx.FieldSpec{
-			WireName: "condition_context",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQuery_ConditionContextFields,
-		},
-		"IdentitySelector": ubx.FieldSpec{
-			WireName: "identity_selector",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQuery_IdentitySelectorFields,
-		},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQuery_OptionsFields,
-		},
-		"ResourceSelector": ubx.FieldSpec{
-			WireName: "resource_selector",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQuery_ResourceSelectorFields,
-		},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"AccessSelector": ubx.FieldSpec{
+		WireName: "access_selector",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQuery_AccessSelectorFields,
+	},
+	"ConditionContext": ubx.FieldSpec{
+		WireName: "condition_context",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQuery_ConditionContextFields,
+	},
+	"IdentitySelector": ubx.FieldSpec{
+		WireName: "identity_selector",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQuery_IdentitySelectorFields,
+	},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQuery_OptionsFields,
+	},
+	"ResourceSelector": ubx.FieldSpec{
+		WireName: "resource_selector",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQuery_ResourceSelectorFields,
+	},
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+}
 
 var SavedQuery_ContentFields = ubx.FieldMap{
-		"IamPolicyAnalysisQuery": ubx.FieldSpec{
-			WireName: "iam_policy_analysis_query",
-			Kind: "object",
-			Fields: SavedQuery_Content_IamPolicyAnalysisQueryFields,
-		},
-	}
+	"IamPolicyAnalysisQuery": ubx.FieldSpec{
+		WireName: "iam_policy_analysis_query",
+		Kind:     "object",
+		Fields:   SavedQuery_Content_IamPolicyAnalysisQueryFields,
+	},
+}
 
 type SavedQueryConfig struct {
 	// The query content.
 	Content any
-	// Output only. The create time of this saved query.
-	CreateTime any
-	// Output only. The account's email address who has created this saved query.
-	Creator any
 	// The description of this saved query. This value should be fewer than 255 characters.
 	Description any
 	// Labels applied on the resource. This value should not contain more than 10 entries. The key and value of each entry must be non-empty and fewer than 64 characters.
 	Labels any
-	// Output only. The last update time of this saved query.
-	LastUpdateTime any
-	// Output only. The account's email address who has updated this saved query most recently.
-	LastUpdater any
 	// The resource name of the saved query. The format must be: * projects/project_number/savedQueries/saved_query_id * folders/folder_number/savedQueries/saved_query_id * organizations/organization_number/savedQueries/saved_query_id
 	Name any
 }
@@ -166,15 +158,11 @@ var SavedQuery = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: SavedQuery_ContentFields,
+			Kind:     "object",
+			Fields:   SavedQuery_ContentFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"LastUpdater": ubx.FieldSpec{WireName: "last_updater"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

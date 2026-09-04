@@ -144,7 +144,6 @@ export interface V1alpha1ImageImportJob_Warnings {
 }
 
 export interface V1alpha1ImageImportJobConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1alpha1ImageImportJobAttrs {
@@ -174,6 +173,5 @@ export interface V1alpha1ImageImportJobAttrs {
 export const V1alpha1ImageImportJob: DataSourceBinding<V1alpha1ImageImportJobConfig, V1alpha1ImageImportJobAttrs> = {
   wireType: "google_vmmigration_v1alpha1_image_import_job",
   fields: {
-    name: "name",
   },
 };

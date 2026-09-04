@@ -32,8 +32,6 @@ _CertificateIssuanceConfig_CertificateAuthorityConfigFields = {
 class CertificateIssuanceConfigConfig:
     # The CA that issues the workload certificate. It includes CA address, type, authentication to CA service, etc.
     certificate_authority_config: Any = None
-    # Output only. The creation timestamp of a CertificateIssuanceConfig.
-    create_time: Any = None
     # Optional. One or more paragraphs of text description of a CertificateIssuanceConfig.
     description: Any = None
     # Required. The key algorithm to use when generating the private key.
@@ -48,8 +46,6 @@ class CertificateIssuanceConfigConfig:
     rotation_window_percentage: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
     tags: Any = None
-    # Output only. The last update timestamp of a CertificateIssuanceConfig.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CertificateIssuanceConfigAttrs:
@@ -82,7 +78,6 @@ CertificateIssuanceConfig = ubx.ResourceBinding(
             kind="object",
             fields=_CertificateIssuanceConfig_CertificateAuthorityConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "key_algorithm": ubx.FieldSpec(wire_name="key_algorithm"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -90,6 +85,5 @@ CertificateIssuanceConfig = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "rotation_window_percentage": ubx.FieldSpec(wire_name="rotation_window_percentage"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

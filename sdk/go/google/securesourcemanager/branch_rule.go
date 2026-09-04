@@ -8,16 +8,14 @@ type BranchRule_RequiredStatusChecks struct {
 }
 
 var BranchRule_RequiredStatusChecksFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
-	}
+	"Context": ubx.FieldSpec{WireName: "context"},
+}
 
 type BranchRuleConfig struct {
 	// Optional. Determines if allow stale reviews or approvals before merging to the branch.
 	AllowStaleReviews any
 	// Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
 	Annotations any
-	// Output only. Create timestamp.
-	CreateTime any
 	// Optional. Determines if the branch rule is disabled or not.
 	Disabled any
 	// Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -40,10 +38,6 @@ type BranchRuleConfig struct {
 	RequirePullRequest any
 	// Optional. List of required status checks before merging to the branch.
 	RequiredStatusChecks any
-	// Output only. Unique identifier of the repository.
-	Uid any
-	// Output only. Update timestamp.
-	UpdateTime any
 }
 
 type BranchRuleAttrs struct {
@@ -84,25 +78,22 @@ type BranchRuleAttrs struct {
 var BranchRule = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_branch_rule",
 	Fields: ubx.FieldMap{
-		"AllowStaleReviews": ubx.FieldSpec{WireName: "allow_stale_reviews"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"IncludePattern": ubx.FieldSpec{WireName: "include_pattern"},
-		"MinimumApprovalsCount": ubx.FieldSpec{WireName: "minimum_approvals_count"},
-		"MinimumReviewsCount": ubx.FieldSpec{WireName: "minimum_reviews_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AllowStaleReviews":        ubx.FieldSpec{WireName: "allow_stale_reviews"},
+		"Annotations":              ubx.FieldSpec{WireName: "annotations"},
+		"Disabled":                 ubx.FieldSpec{WireName: "disabled"},
+		"Etag":                     ubx.FieldSpec{WireName: "etag"},
+		"IncludePattern":           ubx.FieldSpec{WireName: "include_pattern"},
+		"MinimumApprovalsCount":    ubx.FieldSpec{WireName: "minimum_approvals_count"},
+		"MinimumReviewsCount":      ubx.FieldSpec{WireName: "minimum_reviews_count"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"RequireCodeOwnerApproval": ubx.FieldSpec{WireName: "require_code_owner_approval"},
-		"RequireCommentsResolved": ubx.FieldSpec{WireName: "require_comments_resolved"},
-		"RequireLinearHistory": ubx.FieldSpec{WireName: "require_linear_history"},
-		"RequirePullRequest": ubx.FieldSpec{WireName: "require_pull_request"},
+		"RequireCommentsResolved":  ubx.FieldSpec{WireName: "require_comments_resolved"},
+		"RequireLinearHistory":     ubx.FieldSpec{WireName: "require_linear_history"},
+		"RequirePullRequest":       ubx.FieldSpec{WireName: "require_pull_request"},
 		"RequiredStatusChecks": ubx.FieldSpec{
 			WireName: "required_status_checks",
-			Kind: "list",
-			Fields: BranchRule_RequiredStatusChecksFields,
+			Kind:     "list",
+			Fields:   BranchRule_RequiredStatusChecksFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

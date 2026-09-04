@@ -91,9 +91,9 @@ type V1betaResult_EvaluationMetricsThresholds struct {
 
 type V1betaResult_GoldenResult_EvaluationExpectationResults struct {
 	EvaluationExpectation any
-	Explanation any
-	Outcome any
-	Prompt any
+	Explanation           any
+	Outcome               any
+	Prompt                any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_AgentTransfer struct {
@@ -102,48 +102,48 @@ type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall struct {
-	Args any
+	Args        any
 	DisplayName any
-	Id any
-	Tool any
+	Id          any
+	Tool        any
 	ToolsetTool any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolResponse struct {
 	DisplayName any
-	Id any
-	Response any
-	Tool any
+	Id          any
+	Response    any
+	Tool        any
 	ToolsetTool any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponseHallucinationMetricsConfigOverride struct {
@@ -155,89 +155,89 @@ type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation struct {
-	AgentResponse any
-	AgentResponseHallucinationMetricsConfigOverride any
+	AgentResponse                                        any
+	AgentResponseHallucinationMetricsConfigOverride      any
 	AgentResponseSemanticSimilarityMetricsConfigOverride any
-	AgentTransfer any
-	ComparisonType any
-	ExpectationLevelMetricsThresholdsOverride any
-	MockToolResponse any
-	NoToolCalls any
-	Note any
-	SkipEvaluation any
-	ToolCall any
-	ToolResponse any
-	UpdatedVariables any
+	AgentTransfer                                        any
+	ComparisonType                                       any
+	ExpectationLevelMetricsThresholdsOverride            any
+	MockToolResponse                                     any
+	NoToolCalls                                          any
+	Note                                                 any
+	SkipEvaluation                                       any
+	ToolCall                                             any
+	ToolResponse                                         any
+	UpdatedVariables                                     any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_SemanticSimilarityResult struct {
 	Explanation any
-	Label any
-	Outcome any
-	Score any
+	Label       any
+	Outcome     any
+	Score       any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_ToolInvocationResult struct {
-	Explanation any
-	Outcome any
+	Explanation               any
+	Outcome                   any
 	ParameterCorrectnessScore any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome struct {
-	Expectation any
-	ObservedAgentResponse any
-	ObservedAgentTransfer any
-	ObservedPayload any
-	ObservedToolCall any
-	ObservedToolResponse any
-	Outcome any
+	Expectation              any
+	ObservedAgentResponse    any
+	ObservedAgentTransfer    any
+	ObservedPayload          any
+	ObservedToolCall         any
+	ObservedToolResponse     any
+	Outcome                  any
 	SemanticSimilarityResult any
-	ToolInvocationResult any
+	ToolInvocationResult     any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_HallucinationResult struct {
 	Explanation any
-	Label any
-	Score any
+	Label       any
+	Score       any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_OverallToolInvocationResult struct {
-	Outcome any
+	Outcome             any
 	ToolInvocationScore any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_SpanLatencies struct {
-	Callback any
-	DisplayName any
-	EndTime any
+	Callback         any
+	DisplayName      any
+	EndTime          any
 	ExecutionLatency any
-	Model any
-	Resource any
-	StartTime any
-	Toolset any
-	Type any
+	Model            any
+	Resource         any
+	StartTime        any
+	Toolset          any
+	Type             any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults_ToolCallLatencies struct {
-	DisplayName any
-	EndTime any
+	DisplayName      any
+	EndTime          any
 	ExecutionLatency any
-	StartTime any
-	Tool any
+	StartTime        any
+	Tool             any
 }
 
 type V1betaResult_GoldenResult_TurnReplayResults struct {
-	Conversation any
-	ErrorInfo any
-	ExpectationOutcome any
-	HallucinationResult any
+	Conversation                any
+	ErrorInfo                   any
+	ExpectationOutcome          any
+	HallucinationResult         any
 	OverallToolInvocationResult any
-	SemanticSimilarityResult any
-	SpanLatencies any
-	ToolCallLatencies any
-	ToolInvocationScore any
-	ToolOrderedInvocationScore any
-	TurnLatency any
+	SemanticSimilarityResult    any
+	SpanLatencies               any
+	ToolCallLatencies           any
+	ToolInvocationScore         any
+	ToolOrderedInvocationScore  any
+	TurnLatency                 any
 }
 
 type V1betaResult_GoldenResult struct {
@@ -290,30 +290,30 @@ type V1betaResult_ScenarioResult_ExpectationOutcomes_Expectation_ToolExpectation
 }
 
 type V1betaResult_ScenarioResult_ExpectationOutcomes_Expectation struct {
-	AgentResponse any
+	AgentResponse   any
 	ToolExpectation any
 }
 
 type V1betaResult_ScenarioResult_ExpectationOutcomes_ObservedToolCall struct {
-	ToolCall any
+	ToolCall     any
 	ToolResponse any
 }
 
 type V1betaResult_ScenarioResult_ExpectationOutcomes struct {
-	Expectation any
+	Expectation           any
 	ObservedAgentResponse any
-	ObservedToolCall any
-	Outcome any
+	ObservedToolCall      any
+	Outcome               any
 }
 
 type V1betaResult_ScenarioResult_RubricOutcomes struct {
-	Rubric any
-	Score any
+	Rubric           any
+	Score            any
 	ScoreExplanation any
 }
 
 type V1betaResult_ScenarioResult_UserFacts struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -383,7 +383,7 @@ type V1betaResultAttrs struct {
 	GoldenRunMethod any
 	// Output only. The user who initiated the evaluation run that resulted in this result.
 	InitiatedBy any
-	Name any
+	Name        any
 	// Output only. The outcome metadata of the evaluation. Only populated if execution_state is COMPLETE.
 	OutcomeMetadata any
 	// A persona represents an end user in an evaluation.

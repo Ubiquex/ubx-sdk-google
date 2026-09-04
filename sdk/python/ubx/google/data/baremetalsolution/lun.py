@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LunConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class LunAttrs:
@@ -39,6 +39,5 @@ class LunAttrs:
 Lun = ubx.DataSourceBinding(
     wire_type="google_baremetalsolution_lun",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

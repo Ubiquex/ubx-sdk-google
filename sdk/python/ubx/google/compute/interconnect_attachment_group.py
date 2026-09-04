@@ -12,26 +12,17 @@ class InterconnectAttachmentGroup_Attachments:
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers:
-    # List of interconnect attachments that are configured as intended blockers for the availability SLA. (AI-inferred)
     attachments: Any = None
-    # The type of blocker preventing the intended SLA from being met. Possible values include: BLOCKER_TYPE_UNSPECIFIED, INCOMPATIBLE_METROS, INCOMPATIBLE_REGIONS, MISSING_GLOBAL_ROUTING, NO_ATTACHMENTS, NO_ATTACHMENTS_IN_METRO_AND_ZONE, and OTHER. (AI-inferred)
     blocker_type: Any = None
-    # A URL to documentation describing this intended SLA blocker. (AI-inferred)
     documentation_link: Any = None
-    # A human-readable explanation of the intended SLA blocker, describing why it might prevent meeting the availability SLA. (AI-inferred)
     explanation: Any = None
-    # List of metro locations that are excluded from the availability SLA, as they are considered blockers. (AI-inferred)
     metros: Any = None
-    # The list of regions designated as intended SLA blockers. These regions are excluded from the availability SLA calculation, so the SLA guarantee does not apply to attachments located in them. (AI-inferred)
     regions: Any = None
-    # A list of zone names that are intended to be treated as SLA blockers in the configured availability SLA. (AI-inferred)
     zones: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_Configured_AvailabilitySla:
-    # The effective Service Level Agreement (SLA) for the interconnect attachment group, computed by the provider. Possible values: EFFECTIVE_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL. (AI-inferred)
     effective_sla: Any = None
-    # Computed list of blockers that would prevent the configured availability SLA from being met. (AI-inferred)
     intended_sla_blockers: Any = None
 
 @dataclasses.dataclass
@@ -41,38 +32,30 @@ class InterconnectAttachmentGroup_Configured:
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_Intent:
-    # The availability SLA (service level agreement) for this interconnect attachment. Valid values are: AVAILABILITY_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, and PRODUCTION_NON_CRITICAL. (AI-inferred)
     availability_sla: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones:
     attachments: Any = None
-    # The availability zone within the facility, typically in the form `<region>-<zone>` (e.g., us-central1-a). (AI-inferred)
     zone: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities:
-    # The name of the physical facility (data center) within the metro where the interconnect attachment is located. (AI-inferred)
     facility: Any = None
-    # A list of zones within the facility. Each zone represents an availability zone in the facility where the interconnect attachment group operates. (AI-inferred)
     zones: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_LogicalStructure_Regions_Metros:
-    # A list of physical data center facilities available in the metro for this interconnect attachment group. (AI-inferred)
     facilities: Any = None
-    # The name of a metropolitan area (metro) that is associated with a specific region in the logical structure of an Interconnect attachment group. (AI-inferred)
     metro: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_LogicalStructure_Regions:
     metros: Any = None
-    # The Google Cloud region for this logical structure entry. Must be a valid region name, e.g., 'us-central1'. (AI-inferred)
     region: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroup_LogicalStructure:
-    # A list of regions where the interconnect attachment group is available, along with the status of the group in each region. (AI-inferred)
     regions: Any = None
 
 _InterconnectAttachmentGroup_AttachmentsFields = {
@@ -156,26 +139,18 @@ class InterconnectAttachmentGroupConfig:
     attachments: Any = None
     # [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup.
     configured: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described byAIP 154.
     etag: Any = None
-    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-    id: Any = None
     # The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation.
     intent: Any = None
     # The URL of an InterconnectGroup that groups these Attachments' Interconnects. Customers do not need to set this unless directed by Google Support.
     interconnect_group: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#interconnectAttachmentGroup.
-    kind: Any = None
     # [Output Only] An analysis of the logical layout of Attachments in this group. Every Attachment in the group is shown once in this structure.
     logical_structure: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttachmentGroupAttrs:
@@ -217,23 +192,19 @@ InterconnectAttachmentGroup = ubx.ResourceBinding(
             kind="object",
             fields=_InterconnectAttachmentGroup_ConfiguredFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "intent": ubx.FieldSpec(
             wire_name="intent",
             kind="object",
             fields=_InterconnectAttachmentGroup_IntentFields,
         ),
         "interconnect_group": ubx.FieldSpec(wire_name="interconnect_group"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "logical_structure": ubx.FieldSpec(
             wire_name="logical_structure",
             kind="object",
             fields=_InterconnectAttachmentGroup_LogicalStructureFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
     },
 )

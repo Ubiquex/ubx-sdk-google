@@ -4,14 +4,13 @@ package cloudidentity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ClientState_KeyValuePairs struct {
-	BoolValue any
+	BoolValue   any
 	NumberValue any
 	StringValue any
 }
 
 type V1beta1ClientStateConfig struct {
 	Customer any
-	Name any
 }
 
 type V1beta1ClientStateAttrs struct {
@@ -34,7 +33,7 @@ type V1beta1ClientStateAttrs struct {
 	LastUpdateTime any
 	// The management state of the resource as specified by the API client.
 	Managed any
-	Name any
+	Name    any
 	// Output only. The owner of the ClientState
 	OwnerType any
 	// A descriptive cause of the health score.
@@ -45,6 +44,5 @@ var V1beta1ClientState = ubx.DataSourceBinding{
 	WireType: "google_cloudidentity_v1beta1_client_state",
 	Fields: ubx.FieldMap{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

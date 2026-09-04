@@ -489,22 +489,16 @@ const V1beta1PipelineJob_TemplateMetadataFields: FieldMap = {
 };
 
 export interface V1beta1PipelineJobConfig {
-  /** Output only. Pipeline creation time. */
-  createTime?: string | Computed<string>;
   /** The display name of the Pipeline. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1PipelineJob_EncryptionSpec | Computed<V1beta1PipelineJob_EncryptionSpec>;
-  /** Output only. Pipeline end time. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1PipelineJob_Error | Computed<V1beta1PipelineJob_Error>;
   /** The runtime detail of PipelineJob. */
   jobDetail?: V1beta1PipelineJob_JobDetail | Computed<V1beta1PipelineJob_JobDetail>;
   /** The labels with user-defined metadata to organize PipelineJob. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. Note there is some reserved label key for Vertex AI Pipelines. - `vertex-ai-pipelines-run-billing-id`, user set value will get overrided. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the PipelineJob. */
-  name?: string | Computed<string>;
   /** The full name of the Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the Pipeline Job's workload should be peered. For example, `projects/12345/global/networks/myVPC`. [Format](/compute/docs/reference/rest/v1/networks/insert) is of the form `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in `12345`, and {network} is a network name. Private services access must already be configured for the network. Pipeline job will apply the network configuration to the Google Cloud resources being launched, if applied, such as Vertex AI Training or Dataflow job. If left unspecified, the workload is not peered with any network. */
   network?: string | Computed<string>;
   /** Optional. The original pipeline job id if this pipeline job is a rerun of a previous pipeline job. */
@@ -521,24 +515,12 @@ export interface V1beta1PipelineJobConfig {
   reservedIpRanges?: string[] | Computed<string[]>;
   /** The runtime config of a PipelineJob. */
   runtimeConfig?: V1beta1PipelineJob_RuntimeConfig | Computed<V1beta1PipelineJob_RuntimeConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The schedule resource name. Only returned if the Pipeline is created by Schedule API. */
-  scheduleName?: string | Computed<string>;
   /** The service account that the pipeline workload runs as. If not specified, the Compute Engine default service account in the project will be used. See https://cloud.google.com/compute/docs/access/service-accounts#default_service_account Users starting the pipeline must have the `iam.serviceAccounts.actAs` permission on this service account. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Pipeline start time. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
   /** Pipeline template metadata if PipelineJob.template_uri is from supported template registry. Currently, the only supported registry is Artifact Registry. */
   templateMetadata?: V1beta1PipelineJob_TemplateMetadata | Computed<V1beta1PipelineJob_TemplateMetadata>;
   /** A template uri from where the PipelineJob.pipeline_spec, if empty, will be downloaded. Currently, only uri from Vertex Template Registry & Gallery is supported. Reference to https://cloud.google.com/vertex-ai/docs/pipelines/create-pipeline-template. */
   templateUri?: string | Computed<string>;
-  /** Output only. Timestamp when this PipelineJob was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1PipelineJobAttrs {
@@ -597,14 +579,12 @@ export interface V1beta1PipelineJobAttrs {
 export const V1beta1PipelineJob: ResourceBinding<V1beta1PipelineJobConfig, V1beta1PipelineJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_pipeline_job",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
       kind: "object",
       fields: V1beta1PipelineJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -616,7 +596,6 @@ export const V1beta1PipelineJob: ResourceBinding<V1beta1PipelineJobConfig, V1bet
       fields: V1beta1PipelineJob_JobDetailFields,
     },
     labels: "labels",
-    name: "name",
     network: "network",
     originalPipelineJobId: "original_pipeline_job_id",
     pipelineSpec: "pipeline_spec",
@@ -637,18 +616,12 @@ export const V1beta1PipelineJob: ResourceBinding<V1beta1PipelineJobConfig, V1bet
       kind: "object",
       fields: V1beta1PipelineJob_RuntimeConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    scheduleName: "schedule_name",
     serviceAccount: "service_account",
-    startTime: "start_time",
-    state: "state",
     templateMetadata: {
       wireName: "template_metadata",
       kind: "object",
       fields: V1beta1PipelineJob_TemplateMetadataFields,
     },
     templateUri: "template_uri",
-    updateTime: "update_time",
   },
 };

@@ -25,31 +25,13 @@ const DeviceSession_AndroidDeviceFields: FieldMap = {
   orientation: "orientation",
 };
 
-const DeviceSession_StateHistoriesFields: FieldMap = {
-  eventTime: "event_time",
-  sessionState: "session_state",
-  stateMessage: "state_message",
-};
-
 export interface DeviceSessionConfig {
-  /** Output only. The timestamp that the session first became ACTIVE. */
-  activeStartTime?: string | Computed<string>;
   /** A single Android device. */
   androidDevice?: DeviceSession_AndroidDevice | Computed<DeviceSession_AndroidDevice>;
-  /** Output only. The time that the Session was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The title of the DeviceSession to be presented in the UI. */
-  displayName?: string | Computed<string>;
   /** Optional. If the device is still in use at this time, any connections will be ended and the SessionState will transition from ACTIVE to FINISHED. */
   expireTime?: string | Computed<string>;
-  /** Output only. The interval of time that this device must be interacted with before it transitions from ACTIVE to TIMEOUT_INACTIVITY. */
-  inactivityTimeout?: string | Computed<string>;
   /** Optional. Name of the DeviceSession, e.g. "projects/{project_id}/deviceSessions/{session_id}" */
   name?: string | Computed<string>;
-  /** Output only. Current state of the DeviceSession. */
-  state?: string | Computed<string>;
-  /** Output only. The historical state transitions of the session_state message including the current session state. */
-  stateHistories?: DeviceSession_StateHistories[] | Computed<DeviceSession_StateHistories[]>;
   /** Optional. The amount of time that a device will be initially allocated for. This can eventually be extended with the UpdateDeviceSession RPC. Default: 15 minutes. */
   ttl?: string | Computed<string>;
 }
@@ -80,23 +62,13 @@ export interface DeviceSessionAttrs {
 export const DeviceSession: ResourceBinding<DeviceSessionConfig, DeviceSessionAttrs> = {
   wireType: "google_testing_device_session",
   fields: {
-    activeStartTime: "active_start_time",
     androidDevice: {
       wireName: "android_device",
       kind: "object",
       fields: DeviceSession_AndroidDeviceFields,
     },
-    createTime: "create_time",
-    displayName: "display_name",
     expireTime: "expire_time",
-    inactivityTimeout: "inactivity_timeout",
     name: "name",
-    state: "state",
-    stateHistories: {
-      wireName: "state_histories",
-      kind: "list",
-      fields: DeviceSession_StateHistoriesFields,
-    },
     ttl: "ttl",
   },
 };

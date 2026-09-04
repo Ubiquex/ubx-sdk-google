@@ -19,7 +19,7 @@ class Volume_SnapshotReservationDetail:
 
 @dataclasses.dataclass
 class VolumeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class VolumeAttrs:
@@ -74,6 +74,5 @@ class VolumeAttrs:
 Volume = ubx.DataSourceBinding(
     wire_type="google_baremetalsolution_volume",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

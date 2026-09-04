@@ -12,45 +12,18 @@ export interface BetaNetworkAttachment_ConnectionEndpoints {
   subnetworkCidrRange?: string | Computed<string>;
 }
 
-const BetaNetworkAttachment_ConnectionEndpointsFields: FieldMap = {
-  ipAddress: "ip_address",
-  ipv6Address: "ipv6_address",
-  projectIdOrNum: "project_id_or_num",
-  secondaryIpCidrRanges: "secondary_ip_cidr_ranges",
-  serviceClassId: "service_class_id",
-  status: "status",
-  subnetwork: "subnetwork",
-  subnetworkCidrRange: "subnetwork_cidr_range",
-};
-
 export interface BetaNetworkAttachmentConfig {
-  /** Output only. [Output Only] An array of connections for all the producers connected to this network attachment. */
-  connectionEndpoints?: BetaNetworkAttachment_ConnectionEndpoints[] | Computed<BetaNetworkAttachment_ConnectionEndpoints[]>;
   connectionPreference?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. An up-to-date fingerprint must be provided in order to patch. */
   fingerprint?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] The URL of the network which the Network Attachment belongs to. Practically it is inferred by fetching the network of the first subnetwork associated. Because it is required that all the subnetworks must be from the same network, it is assured that the Network Attachment belongs to the same network as all the subnetworks. */
-  network?: string | Computed<string>;
   /** Projects or service class ids that are allowed to connect to this network attachment. The project can be specified using its id or number. Service class id can be specified as "serviceclasses/{service_class_id}". */
   producerAcceptLists?: string[] | Computed<string[]>;
   /** Projects or service class ids that are not allowed to connect to this network attachment. The project can be specified using its id or number. Service class id can be specified as "serviceclasses/{service_class_id}". */
   producerRejectLists?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] URL of the region where the network attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** An array of URLs where each entry is the URL of a subnet provided by the service consumer to use for endpoints in the producers that connect to this network attachment. */
   subnetworks?: string[] | Computed<string[]>;
 }
@@ -90,24 +63,12 @@ export interface BetaNetworkAttachmentAttrs {
 export const BetaNetworkAttachment: ResourceBinding<BetaNetworkAttachmentConfig, BetaNetworkAttachmentAttrs> = {
   wireType: "google_compute_beta_network_attachment",
   fields: {
-    connectionEndpoints: {
-      wireName: "connection_endpoints",
-      kind: "list",
-      fields: BetaNetworkAttachment_ConnectionEndpointsFields,
-    },
     connectionPreference: "connection_preference",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     fingerprint: "fingerprint",
-    id: "id",
-    kind: "kind",
     name: "name",
-    network: "network",
     producerAcceptLists: "producer_accept_lists",
     producerRejectLists: "producer_reject_lists",
-    region: "region",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     subnetworks: "subnetworks",
   },
 };

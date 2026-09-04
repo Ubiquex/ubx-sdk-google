@@ -194,12 +194,6 @@ const Instance_ReplicationFields: FieldMap = {
 };
 
 export interface InstanceConfig {
-  /** Output only. The incremental increase or decrease in capacity, designated in some number of GB. */
-  capacityStepSizeGb?: string | Computed<string>;
-  /** Output only. The time when the instance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Indicates whether this instance supports configuring its performance. If true, the user can configure the instance's performance by using the 'performance_config' field. */
-  customPerformanceSupported?: boolean | Computed<boolean>;
   /** Optional. Indicates whether the instance is protected against deletion. */
   deletionProtectionEnabled?: boolean | Computed<boolean>;
   /** Optional. The reason for enabling deletion protection. */
@@ -216,12 +210,6 @@ export interface InstanceConfig {
   kmsKeyName?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The maximum capacity of the instance in GB. */
-  maxCapacityGb?: string | Computed<string>;
-  /** Output only. The minimum capacity of the instance in GB. */
-  minCapacityGb?: string | Computed<string>;
-  /** Output only. The resource name of the instance, in the format `projects/{project}/locations/{location}/instances/{instance}`. */
-  name?: string | Computed<string>;
   /** VPC networks to which the instance is connected. For this version, only a single network is supported. */
   networks?: Instance_Networks[] | Computed<Instance_Networks[]>;
   /** Used for setting the performance configuration. If the user doesn't specify PerformanceConfig, automatically provision the default performance settings as described in https://cloud.google.com/filestore/docs/performance. Larger instances will be linearly set to more IOPS. If the instance's capacity is increased or decreased, its performance will be automatically adjusted upwards or downwards accordingly (respectively). */
@@ -232,16 +220,6 @@ export interface InstanceConfig {
   protocol?: string | Computed<string>;
   /** Optional. The configuration used to replicate an instance. */
   replication?: Instance_Replication | Computed<Instance_Replication>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The instance state. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the instance state, if available. */
-  statusMessage?: string | Computed<string>;
-  /** Output only. Field indicates all the reasons the instance is in "SUSPENDED" state. */
-  suspensionReasons?: string[] | Computed<string[]>;
   /** Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value */
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** The service tier of the instance. */
@@ -306,9 +284,6 @@ export interface InstanceAttrs {
 export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
   wireType: "google_file_instance",
   fields: {
-    capacityStepSizeGb: "capacity_step_size_gb",
-    createTime: "create_time",
-    customPerformanceSupported: "custom_performance_supported",
     deletionProtectionEnabled: "deletion_protection_enabled",
     deletionProtectionReason: "deletion_protection_reason",
     description: "description",
@@ -325,9 +300,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
     },
     kmsKeyName: "kms_key_name",
     labels: "labels",
-    maxCapacityGb: "max_capacity_gb",
-    minCapacityGb: "min_capacity_gb",
-    name: "name",
     networks: {
       wireName: "networks",
       kind: "list",
@@ -349,11 +321,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_ReplicationFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    statusMessage: "status_message",
-    suspensionReasons: "suspension_reasons",
     tags: "tags",
     tier: "tier",
   },

@@ -598,22 +598,14 @@ export interface BareMetalAdminClusterConfig {
   clusterOperations?: BareMetalAdminCluster_ClusterOperations | Computed<BareMetalAdminCluster_ClusterOperations>;
   /** BareMetalAdminControlPlaneConfig specifies the control plane configuration. */
   controlPlane?: BareMetalAdminCluster_ControlPlane | Computed<BareMetalAdminCluster_ControlPlane>;
-  /** Output only. The time at which this bare metal admin cluster was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which this bare metal admin cluster was deleted. If the resource is not deleted, this must be empty */
-  deleteTime?: string | Computed<string>;
   /** A human readable description of this bare metal admin cluster. */
   description?: string | Computed<string>;
-  /** Output only. The IP address name of bare metal admin cluster's API server. */
-  endpoint?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
   etag?: string | Computed<string>;
   /** Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ## */
   fleet?: BareMetalAdminCluster_Fleet | Computed<BareMetalAdminCluster_Fleet>;
   /** BareMetalAdminLoadBalancerConfig specifies the load balancer configuration. */
   loadBalancer?: BareMetalAdminCluster_LoadBalancer | Computed<BareMetalAdminCluster_LoadBalancer>;
-  /** Output only. The object name of the bare metal cluster custom resource. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs. */
-  localName?: string | Computed<string>;
   /** BareMetalAdminMaintenanceConfig specifies configurations to put bare metal Admin cluster CRs nodes in and out of maintenance. */
   maintenanceConfig?: BareMetalAdminCluster_MaintenanceConfig | Computed<BareMetalAdminCluster_MaintenanceConfig>;
   /** BareMetalAdminMaintenanceStatus represents the maintenance status for bare metal Admin cluster CR's nodes. */
@@ -630,20 +622,12 @@ export interface BareMetalAdminClusterConfig {
   osEnvironmentConfig?: BareMetalAdminCluster_OsEnvironmentConfig | Computed<BareMetalAdminCluster_OsEnvironmentConfig>;
   /** BareMetalAdminProxyConfig specifies the cluster proxy configuration. */
   proxy?: BareMetalAdminCluster_Proxy | Computed<BareMetalAdminCluster_Proxy>;
-  /** Output only. If set, there are currently changes in flight to the bare metal Admin Cluster. */
-  reconciling?: boolean | Computed<boolean>;
   /** Specifies the security related settings for the bare metal admin cluster. */
   securityConfig?: BareMetalAdminCluster_SecurityConfig | Computed<BareMetalAdminCluster_SecurityConfig>;
-  /** Output only. The current state of the bare metal admin cluster. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: BareMetalAdminCluster_Status | Computed<BareMetalAdminCluster_Status>;
   /** BareMetalAdminStorageConfig specifies the cluster storage configuration. */
   storage?: BareMetalAdminCluster_Storage | Computed<BareMetalAdminCluster_Storage>;
-  /** Output only. The unique identifier of the bare metal admin cluster. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which this bare metal admin cluster was last updated. */
-  updateTime?: string | Computed<string>;
   /** ValidationCheck represents the result of preflight check. */
   validationCheck?: BareMetalAdminCluster_ValidationCheck | Computed<BareMetalAdminCluster_ValidationCheck>;
 }
@@ -729,10 +713,7 @@ export const BareMetalAdminCluster: ResourceBinding<BareMetalAdminClusterConfig,
       kind: "object",
       fields: BareMetalAdminCluster_ControlPlaneFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     description: "description",
-    endpoint: "endpoint",
     etag: "etag",
     fleet: {
       wireName: "fleet",
@@ -744,7 +725,6 @@ export const BareMetalAdminCluster: ResourceBinding<BareMetalAdminClusterConfig,
       kind: "object",
       fields: BareMetalAdminCluster_LoadBalancerFields,
     },
-    localName: "local_name",
     maintenanceConfig: {
       wireName: "maintenance_config",
       kind: "object",
@@ -781,13 +761,11 @@ export const BareMetalAdminCluster: ResourceBinding<BareMetalAdminClusterConfig,
       kind: "object",
       fields: BareMetalAdminCluster_ProxyFields,
     },
-    reconciling: "reconciling",
     securityConfig: {
       wireName: "security_config",
       kind: "object",
       fields: BareMetalAdminCluster_SecurityConfigFields,
     },
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
@@ -798,8 +776,6 @@ export const BareMetalAdminCluster: ResourceBinding<BareMetalAdminClusterConfig,
       kind: "object",
       fields: BareMetalAdminCluster_StorageFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     validationCheck: {
       wireName: "validation_check",
       kind: "object",

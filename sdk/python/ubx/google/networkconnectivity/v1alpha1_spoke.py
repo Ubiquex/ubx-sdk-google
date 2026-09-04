@@ -36,10 +36,6 @@ class V1alpha1SpokeConfig:
     linked_vpn_tunnels: Any = None
     # Immutable. The name of a Spoke resource.
     name: Any = None
-    # Output only. The current lifecycle state of this Hub.
-    state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all Spoke resources. If a Spoke resource is deleted and another with the same name is created, it gets a different unique_id.
-    unique_id: Any = None
     # The time when the Spoke was updated.
     update_time: Any = None
 
@@ -83,8 +79,6 @@ V1alpha1Spoke = ubx.ResourceBinding(
         ),
         "linked_vpn_tunnels": ubx.FieldSpec(wire_name="linked_vpn_tunnels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
         "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

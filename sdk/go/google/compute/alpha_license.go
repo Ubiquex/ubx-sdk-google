@@ -23,18 +23,18 @@ type AlphaLicense_ResourceRequirements struct {
 }
 
 var AlphaLicense_MinimumRetentionFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AlphaLicense_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaLicense_ResourceRequirementsFields = ubx.FieldMap{
-		"MinGuestCpuCount": ubx.FieldSpec{WireName: "min_guest_cpu_count"},
-		"MinMemoryMb": ubx.FieldSpec{WireName: "min_memory_mb"},
-	}
+	"MinGuestCpuCount": ubx.FieldSpec{WireName: "min_guest_cpu_count"},
+	"MinMemoryMb":      ubx.FieldSpec{WireName: "min_memory_mb"},
+}
 
 type AlphaLicenseConfig struct {
 	// Specifies licenseCodes of licenses that can replace this license. Note: such replacements are allowed even if removable_from_disk is false.
@@ -43,16 +43,12 @@ type AlphaLicenseConfig struct {
 	AppendableToDisk any
 	// [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee.
 	ChargesUseFee any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional textual description of the resource; provided by the client when the resource is created.
 	Description any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image.
 	IncompatibleLicenses any
-	// Output only. [Output Only] Type of resource. Always compute#license for licenses.
-	Kind any
 	// [Output Only] The unique code used to attach this license to images, snapshots, and disks.
 	LicenseCode any
 	// A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
@@ -69,17 +65,11 @@ type AlphaLicenseConfig struct {
 	RemovableFromDisk any
 	// Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
 	RequiredCoattachedLicenses any
-	ResourceRequirements any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
+	ResourceRequirements       any
 	// If true, this license can only be used on VMs on sole tenant nodes.
 	SoleTenantOnly any
 	// If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk.
 	Transferable any
-	// Output only. [Output Only] Last update timestamp inRFC3339 text format.
-	UpdateTimestamp any
 }
 
 type AlphaLicenseAttrs struct {
@@ -115,7 +105,7 @@ type AlphaLicenseAttrs struct {
 	RemovableFromDisk any
 	// Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
 	RequiredCoattachedLicenses any
-	ResourceRequirements any
+	ResourceRequirements       any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
@@ -132,38 +122,33 @@ var AlphaLicense = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_license",
 	Fields: ubx.FieldMap{
 		"AllowedReplacementLicenses": ubx.FieldSpec{WireName: "allowed_replacement_licenses"},
-		"AppendableToDisk": ubx.FieldSpec{WireName: "appendable_to_disk"},
-		"ChargesUseFee": ubx.FieldSpec{WireName: "charges_use_fee"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IncompatibleLicenses": ubx.FieldSpec{WireName: "incompatible_licenses"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LicenseCode": ubx.FieldSpec{WireName: "license_code"},
+		"AppendableToDisk":           ubx.FieldSpec{WireName: "appendable_to_disk"},
+		"ChargesUseFee":              ubx.FieldSpec{WireName: "charges_use_fee"},
+		"Description":                ubx.FieldSpec{WireName: "description"},
+		"Id":                         ubx.FieldSpec{WireName: "id"},
+		"IncompatibleLicenses":       ubx.FieldSpec{WireName: "incompatible_licenses"},
+		"LicenseCode":                ubx.FieldSpec{WireName: "license_code"},
 		"MinimumRetention": ubx.FieldSpec{
 			WireName: "minimum_retention",
-			Kind: "object",
-			Fields: AlphaLicense_MinimumRetentionFields,
+			Kind:     "object",
+			Fields:   AlphaLicense_MinimumRetentionFields,
 		},
 		"MultiTenantOnly": ubx.FieldSpec{WireName: "multi_tenant_only"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OsLicense": ubx.FieldSpec{WireName: "os_license"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"OsLicense":       ubx.FieldSpec{WireName: "os_license"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaLicense_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaLicense_ParamsFields,
 		},
-		"RemovableFromDisk": ubx.FieldSpec{WireName: "removable_from_disk"},
+		"RemovableFromDisk":          ubx.FieldSpec{WireName: "removable_from_disk"},
 		"RequiredCoattachedLicenses": ubx.FieldSpec{WireName: "required_coattached_licenses"},
 		"ResourceRequirements": ubx.FieldSpec{
 			WireName: "resource_requirements",
-			Kind: "object",
-			Fields: AlphaLicense_ResourceRequirementsFields,
+			Kind:     "object",
+			Fields:   AlphaLicense_ResourceRequirementsFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"SoleTenantOnly": ubx.FieldSpec{WireName: "sole_tenant_only"},
-		"Transferable": ubx.FieldSpec{WireName: "transferable"},
-		"UpdateTimestamp": ubx.FieldSpec{WireName: "update_timestamp"},
+		"Transferable":   ubx.FieldSpec{WireName: "transferable"},
 	},
 }

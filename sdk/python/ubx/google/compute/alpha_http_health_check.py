@@ -20,8 +20,6 @@ class AlphaHttpHealthCheckConfig:
     host: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#httpHealthCheck for HTTP health checks.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # The TCP port number for the HTTP health check request. The default value is80.
@@ -30,8 +28,6 @@ class AlphaHttpHealthCheckConfig:
     request_path: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # How long (in seconds) to wait before claiming failure. The default value is5 seconds. It is invalid for timeoutSec to have greater value than checkIntervalSec.
     timeout_sec: Any = None
     # A so-far healthy instance will be marked unhealthy after this many consecutive failures. The default value is 2.
@@ -77,12 +73,10 @@ AlphaHttpHealthCheck = ubx.ResourceBinding(
         "healthy_threshold": ubx.FieldSpec(wire_name="healthy_threshold"),
         "host": ubx.FieldSpec(wire_name="host"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "port": ubx.FieldSpec(wire_name="port"),
         "request_path": ubx.FieldSpec(wire_name="request_path"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "timeout_sec": ubx.FieldSpec(wire_name="timeout_sec"),
         "unhealthy_threshold": ubx.FieldSpec(wire_name="unhealthy_threshold"),
     },

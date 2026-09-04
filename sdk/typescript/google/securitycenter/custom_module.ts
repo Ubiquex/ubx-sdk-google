@@ -2,16 +2,13 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomModuleConfig {
-  ancestorModule?: string | Computed<string>;
   cloudProvider?: string | Computed<string>;
   config?: Record<string, unknown> | Computed<Record<string, unknown>>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   enablementState?: string | Computed<string>;
-  lastEditor?: string | Computed<string>;
   name?: string | Computed<string>;
   type?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomModuleAttrs {
@@ -30,15 +27,12 @@ export interface CustomModuleAttrs {
 export const CustomModule: ResourceBinding<CustomModuleConfig, CustomModuleAttrs> = {
   wireType: "google_securitycenter_custom_module",
   fields: {
-    ancestorModule: "ancestor_module",
     cloudProvider: "cloud_provider",
     config: "config",
     description: "description",
     displayName: "display_name",
     enablementState: "enablement_state",
-    lastEditor: "last_editor",
     name: "name",
     type: "type",
-    updateTime: "update_time",
   },
 };

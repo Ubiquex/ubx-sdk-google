@@ -8,16 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LogScopeConfig:
-    # Output only. The creation timestamp of the log scope.
-    create_time: Any = None
     # Optional. Describes this log scope.The maximum length of the description is 8000 characters.
     description: Any = None
-    # Output only. The resource name of the log scope.Log scopes are only available in the global location. For example:projects/my-project/locations/global/logScopes/my-log-scope
-    name: Any = None
     # Required. Names of one or more parent resources (organizations and folders are not supported.): projects/[PROJECT_ID]May alternatively be one or more views: projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]A log scope can include a maximum of 5 projects and a maximum of 100 resources in total.
     resource_names: Any = None
-    # Output only. The last update timestamp of the log scope.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class LogScopeAttrs:
@@ -35,10 +29,7 @@ class LogScopeAttrs:
 LogScope = ubx.ResourceBinding(
     wire_type="google_logging_log_scope",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "resource_names": ubx.FieldSpec(wire_name="resource_names"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -46,59 +46,53 @@ type BetaNodeGroup_ShareSettings struct {
 }
 
 var BetaNodeGroup_AutoscalingPolicyFields = ubx.FieldMap{
-		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
-		"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
+	"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
+	"Mode":     ubx.FieldSpec{WireName: "mode"},
+}
 
 var BetaNodeGroup_MaintenanceWindow_MaintenanceDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var BetaNodeGroup_MaintenanceWindowFields = ubx.FieldMap{
-		"MaintenanceDuration": ubx.FieldSpec{
-			WireName: "maintenance_duration",
-			Kind: "object",
-			Fields: BetaNodeGroup_MaintenanceWindow_MaintenanceDurationFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"MaintenanceDuration": ubx.FieldSpec{
+		WireName: "maintenance_duration",
+		Kind:     "object",
+		Fields:   BetaNodeGroup_MaintenanceWindow_MaintenanceDurationFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var BetaNodeGroup_ShareSettings_FolderMapFields = ubx.FieldMap{
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-	}
+	"FolderId": ubx.FieldSpec{WireName: "folder_id"},
+}
 
 var BetaNodeGroup_ShareSettings_ProjectMapFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var BetaNodeGroup_ShareSettingsFields = ubx.FieldMap{
-		"FolderMap": ubx.FieldSpec{
-			WireName: "folder_map",
-			Kind: "map",
-			Fields: BetaNodeGroup_ShareSettings_FolderMapFields,
-		},
-		"ProjectMap": ubx.FieldSpec{
-			WireName: "project_map",
-			Kind: "map",
-			Fields: BetaNodeGroup_ShareSettings_ProjectMapFields,
-		},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-		"ShareType": ubx.FieldSpec{WireName: "share_type"},
-	}
+	"FolderMap": ubx.FieldSpec{
+		WireName: "folder_map",
+		Kind:     "map",
+		Fields:   BetaNodeGroup_ShareSettings_FolderMapFields,
+	},
+	"ProjectMap": ubx.FieldSpec{
+		WireName: "project_map",
+		Kind:     "map",
+		Fields:   BetaNodeGroup_ShareSettings_ProjectMapFields,
+	},
+	"Projects":  ubx.FieldSpec{WireName: "projects"},
+	"ShareType": ubx.FieldSpec{WireName: "share_type"},
+}
 
 type BetaNodeGroupConfig struct {
 	AutoscalingPolicy any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	Fingerprint any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
-	Kind any
 	// An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
 	LocationHint any
 	// Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
@@ -111,15 +105,8 @@ type BetaNodeGroupConfig struct {
 	Name any
 	// URL of the node template to create the node group from.
 	NodeTemplate any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 	// The share setting for reservations and sole tenancy node groups.
 	ShareSettings any
-	// Output only. [Output Only] The total number of nodes in the node group.
-	Size any
-	Status any
-	// Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a.
-	Zone any
 }
 
 type BetaNodeGroupAttrs struct {
@@ -150,7 +137,7 @@ type BetaNodeGroupAttrs struct {
 	// The share setting for reservations and sole tenancy node groups.
 	ShareSettings any
 	// Output only. [Output Only] The total number of nodes in the node group.
-	Size any
+	Size   any
 	Status any
 	// Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a.
 	Zone any
@@ -161,32 +148,25 @@ var BetaNodeGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind: "object",
-			Fields: BetaNodeGroup_AutoscalingPolicyFields,
+			Kind:     "object",
+			Fields:   BetaNodeGroup_AutoscalingPolicyFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":         ubx.FieldSpec{WireName: "fingerprint"},
+		"LocationHint":        ubx.FieldSpec{WireName: "location_hint"},
 		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MaintenancePolicy": ubx.FieldSpec{WireName: "maintenance_policy"},
+		"MaintenancePolicy":   ubx.FieldSpec{WireName: "maintenance_policy"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: BetaNodeGroup_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   BetaNodeGroup_MaintenanceWindowFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"NodeTemplate": ubx.FieldSpec{WireName: "node_template"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind: "object",
-			Fields: BetaNodeGroup_ShareSettingsFields,
+			Kind:     "object",
+			Fields:   BetaNodeGroup_ShareSettingsFields,
 		},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

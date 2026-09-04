@@ -14,22 +14,18 @@ type Workspace_PrivateResourceMetadata struct {
 }
 
 var Workspace_DataEncryptionStateFields = ubx.FieldMap{
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var Workspace_PrivateResourceMetadataFields = ubx.FieldMap{
-		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-	}
+	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+}
 
 type WorkspaceConfig struct {
-	// Output only. The timestamp of when the workspace was created.
-	CreateTime any
 	// Describes encryption state of a resource.
 	DataEncryptionState any
 	// Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
 	DisableMoves any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Identifier. The workspace's name.
 	Name any
 	// Metadata used to identify if a resource is user scoped.
@@ -54,19 +50,17 @@ type WorkspaceAttrs struct {
 var Workspace = ubx.ResourceBinding{
 	WireType: "google_dataform_workspace",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind: "object",
-			Fields: Workspace_DataEncryptionStateFields,
+			Kind:     "object",
+			Fields:   Workspace_DataEncryptionStateFields,
 		},
 		"DisableMoves": ubx.FieldSpec{WireName: "disable_moves"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind: "object",
-			Fields: Workspace_PrivateResourceMetadataFields,
+			Kind:     "object",
+			Fields:   Workspace_PrivateResourceMetadataFields,
 		},
 	},
 }

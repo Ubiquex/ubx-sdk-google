@@ -8,40 +8,32 @@ type AssistantSession_Messages_Chunks struct {
 }
 
 type AssistantSession_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 var AssistantSession_Messages_ChunksFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var AssistantSession_MessagesFields = ubx.FieldMap{
-		"Chunks": ubx.FieldSpec{
-			WireName: "chunks",
-			Kind: "list",
-			Fields: AssistantSession_Messages_ChunksFields,
-		},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Chunks": ubx.FieldSpec{
+		WireName: "chunks",
+		Kind:     "list",
+		Fields:   AssistantSession_Messages_ChunksFields,
+	},
+	"EventTime": ubx.FieldSpec{WireName: "event_time"},
+	"Role":      ubx.FieldSpec{WireName: "role"},
+}
 
 type AssistantSessionConfig struct {
-	// Output only. The time the session was created.
-	CreateTime any
 	// Optional. The display name of the session.
 	DisplayName any
 	// Optional. History of messages in the session.
 	Messages any
 	// Identifier. Resource name of the session. Format: projects/{project}/locations/{location}/assistantSessions/{assistant_session}
 	Name any
-	// Output only. The user who initiated the session.
-	Requester any
-	// Output only. The status of the session.
-	State any
-	// Output only. The time the session was last updated.
-	UpdateTime any
 }
 
 type AssistantSessionAttrs struct {
@@ -64,16 +56,12 @@ type AssistantSessionAttrs struct {
 var AssistantSession = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_assistant_session",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Messages": ubx.FieldSpec{
 			WireName: "messages",
-			Kind: "list",
-			Fields: AssistantSession_MessagesFields,
+			Kind:     "list",
+			Fields:   AssistantSession_MessagesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Requester": ubx.FieldSpec{WireName: "requester"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

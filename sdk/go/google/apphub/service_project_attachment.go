@@ -4,16 +4,10 @@ package apphub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceProjectAttachmentConfig struct {
-	// Output only. Create time.
-	CreateTime any
 	// Identifier. The resource name of a ServiceProjectAttachment. Format: `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
 	Name any
 	// Required. Immutable. Service project name in the format: `"projects/abc"` or `"projects/123"`. As input, project name with either project id or number are accepted. As output, this field will contain project number.
 	ServiceProject any
-	// Output only. ServiceProjectAttachment state.
-	State any
-	// Output only. A globally unique identifier (in UUID4 format) for the `ServiceProjectAttachment`.
-	Uid any
 }
 
 type ServiceProjectAttachmentAttrs struct {
@@ -32,10 +26,7 @@ type ServiceProjectAttachmentAttrs struct {
 var ServiceProjectAttachment = ubx.ResourceBinding{
 	WireType: "google_apphub_service_project_attachment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ServiceProject": ubx.FieldSpec{WireName: "service_project"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 	},
 }

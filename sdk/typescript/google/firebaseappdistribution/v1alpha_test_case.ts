@@ -32,10 +32,6 @@ const V1alphaTestCase_AiInstructionsFields: FieldMap = {
 
 export interface V1alphaTestCaseConfig {
   aiInstructions?: V1alphaTestCase_AiInstructions | Computed<V1alphaTestCase_AiInstructions>;
-  /** Output only. Timestamp when the test case was created */
-  createTime?: string | Computed<string>;
-  /** Output only. Other test cases that depend on this test case as a prerequisite. */
-  dependentTestCases?: string[] | Computed<string[]>;
   /** Required. Display name of the test case. */
   displayName?: string | Computed<string>;
   /** Identifier. The name of the test case resource. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}` */
@@ -66,8 +62,6 @@ export const V1alphaTestCase: ResourceBinding<V1alphaTestCaseConfig, V1alphaTest
       kind: "object",
       fields: V1alphaTestCase_AiInstructionsFields,
     },
-    createTime: "create_time",
-    dependentTestCases: "dependent_test_cases",
     displayName: "display_name",
     name: "name",
     prerequisiteTestCase: "prerequisite_test_case",

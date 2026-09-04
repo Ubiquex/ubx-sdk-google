@@ -36,7 +36,7 @@ type ScanRunAttrs struct {
 	ExecutionState any
 	// Output only. Whether the scan run has found any vulnerabilities.
 	HasVulnerabilities any
-	Name any
+	Name               any
 	// Output only. The percentage of total completion ranging from 0 to 100. If the scan is in queue, the value is 0. If the scan is running, the value ranges from 0 to 100. If the scan is finished, the value is 100.
 	ProgressPercent any
 	// Output only. The result state of the ScanRun. This field is only available after the execution state reaches "FINISHED".

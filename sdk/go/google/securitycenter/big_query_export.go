@@ -4,37 +4,29 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BigQueryExportConfig struct {
-	CreateTime any
-	Dataset any
+	Dataset     any
 	Description any
-	Filter any
-	MostRecentEditor any
-	Name any
-	Principal any
-	UpdateTime any
+	Filter      any
+	Name        any
 }
 
 type BigQueryExportAttrs struct {
-	CreateTime any
-	Dataset any
-	Description any
-	Filter any
+	CreateTime       any
+	Dataset          any
+	Description      any
+	Filter           any
 	MostRecentEditor any
-	Name any
-	Principal any
-	UpdateTime any
+	Name             any
+	Principal        any
+	UpdateTime       any
 }
 
 var BigQueryExport = ubx.ResourceBinding{
 	WireType: "google_securitycenter_big_query_export",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
+		"Dataset":     ubx.FieldSpec{WireName: "dataset"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MostRecentEditor": ubx.FieldSpec{WireName: "most_recent_editor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

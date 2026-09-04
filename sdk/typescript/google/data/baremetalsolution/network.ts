@@ -41,7 +41,6 @@ export interface Network_Vrf {
 }
 
 export interface NetworkConfig {
-  name: string | Computed<string>;
 }
 
 export interface NetworkAttrs {
@@ -83,6 +82,5 @@ export interface NetworkAttrs {
 export const Network: DataSourceBinding<NetworkConfig, NetworkAttrs> = {
   wireType: "google_baremetalsolution_network",
   fields: {
-    name: "name",
   },
 };

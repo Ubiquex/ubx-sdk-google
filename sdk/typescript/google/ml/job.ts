@@ -425,8 +425,6 @@ export interface JobConfig {
   etag?: string | Computed<string>;
   /** Required. The user-specified id of the job. */
   jobId?: string | Computed<string>;
-  /** Output only. It's only effect when the job is in QUEUED state. If it's positive, it indicates the job's position in the job scheduler. It's 0 when the job is already scheduled. */
-  jobPosition?: string | Computed<string>;
   /** Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Represents input parameters for a prediction job. */
@@ -480,7 +478,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     errorMessage: "error_message",
     etag: "etag",
     jobId: "job_id",
-    jobPosition: "job_position",
     labels: "labels",
     predictionInput: {
       wireName: "prediction_input",

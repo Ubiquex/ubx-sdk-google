@@ -4,8 +4,6 @@ package translate
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AdaptiveMtDatasetConfig struct {
-	// Output only. Timestamp when this dataset was created.
-	CreateTime any
 	// The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9.
 	DisplayName any
 	// The number of examples in the dataset.
@@ -16,8 +14,6 @@ type AdaptiveMtDatasetConfig struct {
 	SourceLanguageCode any
 	// The BCP-47 language code of the target language.
 	TargetLanguageCode any
-	// Output only. Timestamp when this dataset was last updated.
-	UpdateTime any
 }
 
 type AdaptiveMtDatasetAttrs struct {
@@ -40,12 +36,10 @@ type AdaptiveMtDatasetAttrs struct {
 var AdaptiveMtDataset = ubx.ResourceBinding{
 	WireType: "google_translate_adaptive_mt_dataset",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExampleCount": ubx.FieldSpec{WireName: "example_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"ExampleCount":       ubx.FieldSpec{WireName: "example_count"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
 		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

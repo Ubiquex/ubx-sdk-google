@@ -98,24 +98,16 @@ _Proposal_UpgradeKeyTrustFields = {
 class ProposalConfig:
     # Add a quorum member to the SingleTenantHsmInstance. This will increase the total_approver_count by 1. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
     add_quorum_member: Any = None
-    # Output only. The time at which the SingleTenantHsmInstanceProposal was created.
-    create_time: Any = None
     # Delete the SingleTenantHsmInstance. Deleting a SingleTenantHsmInstance will make all CryptoKeys attached to the SingleTenantHsmInstance unusable. The SingleTenantHsmInstance must not be in the DELETING or DELETED state to perform this operation.
     delete_single_tenant_hsm_instance: Any = None
-    # Output only. The time at which the SingleTenantHsmInstanceProposal was deleted.
-    delete_time: Any = None
     # Disable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
     disable_single_tenant_hsm_instance: Any = None
     # Enable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the DISABLED state to perform this operation.
     enable_single_tenant_hsm_instance: Any = None
     # The time at which the SingleTenantHsmInstanceProposal will expire if not approved and executed.
     expire_time: Any = None
-    # Output only. The root cause of the most recent failure. Only present if state is FAILED.
-    failure_reason: Any = None
     # Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/*/locations/*/singleTenantHsmInstances/*/proposals/*`.
     name: Any = None
-    # Output only. The time at which the soft-deleted SingleTenantHsmInstanceProposal will be permanently purged. This field is only populated when the state is DELETED and will be set a time after expiration of the proposal, i.e. >= expire_time or (create_time + ttl).
-    purge_time: Any = None
     # Parameters of quorum approval for the SingleTenantHsmInstanceProposal.
     quorum_parameters: Any = None
     # Refreshes the SingleTenantHsmInstance. This operation must be performed periodically to keep the SingleTenantHsmInstance active. This operation must be performed before unrefreshed_duration_until_disable has passed. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
@@ -126,8 +118,6 @@ class ProposalConfig:
     remove_quorum_member: Any = None
     # Parameters for an approval that has both required challenges and a quorum.
     required_action_quorum_parameters: Any = None
-    # Output only. The state of the SingleTenantHsmInstanceProposal.
-    state: Any = None
     # Input only. The TTL for the SingleTenantHsmInstanceProposal. Proposals will expire after this duration.
     ttl: Any = None
     # Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key. The key must be in the ACTIVE state to perform this operation.
@@ -180,15 +170,11 @@ Proposal = ubx.ResourceBinding(
             kind="object",
             fields=_Proposal_AddQuorumMemberFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "delete_single_tenant_hsm_instance": ubx.FieldSpec(wire_name="delete_single_tenant_hsm_instance"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "disable_single_tenant_hsm_instance": ubx.FieldSpec(wire_name="disable_single_tenant_hsm_instance"),
         "enable_single_tenant_hsm_instance": ubx.FieldSpec(wire_name="enable_single_tenant_hsm_instance"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "failure_reason": ubx.FieldSpec(wire_name="failure_reason"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "purge_time": ubx.FieldSpec(wire_name="purge_time"),
         "quorum_parameters": ubx.FieldSpec(
             wire_name="quorum_parameters",
             kind="object",
@@ -210,7 +196,6 @@ Proposal = ubx.ResourceBinding(
             kind="object",
             fields=_Proposal_RequiredActionQuorumParametersFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
         "upgrade_key_trust": ubx.FieldSpec(
             wire_name="upgrade_key_trust",

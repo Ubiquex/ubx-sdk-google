@@ -316,7 +316,6 @@ class Device_ThunderboltInfo:
 
 @dataclasses.dataclass
 class DeviceConfig:
-    name: Any = None
     read_mask: Any = None
 
 @dataclasses.dataclass
@@ -381,7 +380,6 @@ class DeviceAttrs:
 Device = ubx.DataSourceBinding(
     wire_type="google_chromemanagement_device",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "read_mask": ubx.FieldSpec(wire_name="read_mask"),
     },
 )

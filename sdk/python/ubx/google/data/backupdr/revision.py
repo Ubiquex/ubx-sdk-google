@@ -98,7 +98,7 @@ class Revision_BackupPlanSnapshot:
 
 @dataclasses.dataclass
 class RevisionConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RevisionAttrs:
@@ -115,6 +115,5 @@ class RevisionAttrs:
 Revision = ubx.DataSourceBinding(
     wire_type="google_backupdr_revision",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

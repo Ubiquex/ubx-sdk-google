@@ -41,28 +41,18 @@ class AlphaSslCertificateConfig:
     creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] Expire time of the certificate. RFC3339
-    expire_time: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates.
-    kind: Any = None
     # Configuration and status of a managed SSL certificate.
     managed: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field.
     private_key: Any = None
-    # Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate.
-    region: Any = None
     # [Output only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # Configuration and status of a self-managed SSL certificate.
     self_managed: Any = None
-    # Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name.
-    subject_alternative_names: Any = None
     # (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used.
     type: Any = None
 
@@ -105,9 +95,7 @@ AlphaSslCertificate = ubx.ResourceBinding(
         "certificate": ubx.FieldSpec(wire_name="certificate"),
         "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "managed": ubx.FieldSpec(
             wire_name="managed",
             kind="object",
@@ -115,15 +103,12 @@ AlphaSslCertificate = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "private_key": ubx.FieldSpec(wire_name="private_key"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "self_managed": ubx.FieldSpec(
             wire_name="self_managed",
             kind="object",
             fields=_AlphaSslCertificate_SelfManagedFields,
         ),
-        "subject_alternative_names": ubx.FieldSpec(wire_name="subject_alternative_names"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

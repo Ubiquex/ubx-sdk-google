@@ -632,62 +632,11 @@ const HyperparameterTuningJob_TrialJobSpecFields: FieldMap = {
   },
 };
 
-const HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields: FieldMap = {
-  metricId: "metric_id",
-  value: "value",
-};
-
-const HyperparameterTuningJob_Trials_FinalMeasurementFields: FieldMap = {
-  elapsedDuration: "elapsed_duration",
-  metrics: {
-    wireName: "metrics",
-    kind: "list",
-    fields: HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields,
-  },
-  stepCount: "step_count",
-};
-
-const HyperparameterTuningJob_Trials_ParametersFields: FieldMap = {
-  parameterId: "parameter_id",
-  value: "value",
-};
-
-const HyperparameterTuningJob_TrialsFields: FieldMap = {
-  clientId: "client_id",
-  customJob: "custom_job",
-  endTime: "end_time",
-  finalMeasurement: {
-    wireName: "final_measurement",
-    kind: "object",
-    fields: HyperparameterTuningJob_Trials_FinalMeasurementFields,
-  },
-  id: "id",
-  infeasibleReason: "infeasible_reason",
-  measurements: {
-    wireName: "measurements",
-    kind: "list",
-    fields: HyperparameterTuningJob_Trials_FinalMeasurementFields,
-  },
-  name: "name",
-  parameters: {
-    wireName: "parameters",
-    kind: "list",
-    fields: HyperparameterTuningJob_Trials_ParametersFields,
-  },
-  startTime: "start_time",
-  state: "state",
-  webAccessUris: "web_access_uris",
-};
-
 export interface HyperparameterTuningJobConfig {
-  /** Output only. Time when the HyperparameterTuningJob was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the HyperparameterTuningJob. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: HyperparameterTuningJob_EncryptionSpec | Computed<HyperparameterTuningJob_EncryptionSpec>;
-  /** Output only. Time when the HyperparameterTuningJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: HyperparameterTuningJob_Error | Computed<HyperparameterTuningJob_Error>;
   /** The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
@@ -696,26 +645,12 @@ export interface HyperparameterTuningJobConfig {
   maxFailedTrialCount?: number | Computed<number>;
   /** Required. The desired total number of Trials. */
   maxTrialCount?: number | Computed<number>;
-  /** Output only. Resource name of the HyperparameterTuningJob. */
-  name?: string | Computed<string>;
   /** Required. The desired number of Trials to run in parallel. */
   parallelTrialCount?: number | Computed<number>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
   /** Represents specification of a Study. */
   studySpec?: HyperparameterTuningJob_StudySpec | Computed<HyperparameterTuningJob_StudySpec>;
   /** Represents the spec of a CustomJob. */
   trialJobSpec?: HyperparameterTuningJob_TrialJobSpec | Computed<HyperparameterTuningJob_TrialJobSpec>;
-  /** Output only. Trials of the HyperparameterTuningJob. */
-  trials?: HyperparameterTuningJob_Trials[] | Computed<HyperparameterTuningJob_Trials[]>;
-  /** Output only. Time when the HyperparameterTuningJob was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface HyperparameterTuningJobAttrs {
@@ -760,14 +695,12 @@ export interface HyperparameterTuningJobAttrs {
 export const HyperparameterTuningJob: ResourceBinding<HyperparameterTuningJobConfig, HyperparameterTuningJobAttrs> = {
   wireType: "google_aiplatform_hyperparameter_tuning_job",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
       kind: "object",
       fields: HyperparameterTuningJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -776,12 +709,7 @@ export const HyperparameterTuningJob: ResourceBinding<HyperparameterTuningJobCon
     labels: "labels",
     maxFailedTrialCount: "max_failed_trial_count",
     maxTrialCount: "max_trial_count",
-    name: "name",
     parallelTrialCount: "parallel_trial_count",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    startTime: "start_time",
-    state: "state",
     studySpec: {
       wireName: "study_spec",
       kind: "object",
@@ -792,11 +720,5 @@ export const HyperparameterTuningJob: ResourceBinding<HyperparameterTuningJobCon
       kind: "object",
       fields: HyperparameterTuningJob_TrialJobSpecFields,
     },
-    trials: {
-      wireName: "trials",
-      kind: "list",
-      fields: HyperparameterTuningJob_TrialsFields,
-    },
-    updateTime: "update_time",
   },
 };

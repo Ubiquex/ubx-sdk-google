@@ -4,12 +4,8 @@ package beyondcorp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaSubscriptionConfig struct {
-	// Output only. Represents that, if subscription will renew or end when the term ends.
-	AutoRenewEnabled any
 	// Optional. Name of the billing account in the format. e.g. billingAccounts/123456-123456-123456 Required if Subscription is of Paid type.
 	BillingAccount any
-	// Output only. Create time of the subscription.
-	CreateTime any
 	// Optional. Whether the subscription is being created as part of the Citrix flow. If this field is set to true, the subscription should have both the start_time and end_time set in the request and the billing account used will be the Citrix master billing account regardless of what its set to in the request. This field can only be set to true in create requests.
 	CsgCustomer any
 	// Optional. End time of the subscription.
@@ -24,10 +20,6 @@ type V1alphaSubscriptionConfig struct {
 	Sku any
 	// Optional. Start time of the subscription.
 	StartTime any
-	// Output only. The current state of the subscription.
-	State any
-	// Output only. Type of subscriber.
-	SubscriberType any
 	// Required. Type of subscription.
 	Type any
 }
@@ -64,18 +56,14 @@ type V1alphaSubscriptionAttrs struct {
 var V1alphaSubscription = ubx.ResourceBinding{
 	WireType: "google_beyondcorp_v1alpha_subscription",
 	Fields: ubx.FieldMap{
-		"AutoRenewEnabled": ubx.FieldSpec{WireName: "auto_renew_enabled"},
 		"BillingAccount": ubx.FieldSpec{WireName: "billing_account"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CsgCustomer": ubx.FieldSpec{WireName: "csg_customer"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SeatCount": ubx.FieldSpec{WireName: "seat_count"},
-		"SignupSource": ubx.FieldSpec{WireName: "signup_source"},
-		"Sku": ubx.FieldSpec{WireName: "sku"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SubscriberType": ubx.FieldSpec{WireName: "subscriber_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"CsgCustomer":    ubx.FieldSpec{WireName: "csg_customer"},
+		"EndTime":        ubx.FieldSpec{WireName: "end_time"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"SeatCount":      ubx.FieldSpec{WireName: "seat_count"},
+		"SignupSource":   ubx.FieldSpec{WireName: "signup_source"},
+		"Sku":            ubx.FieldSpec{WireName: "sku"},
+		"StartTime":      ubx.FieldSpec{WireName: "start_time"},
+		"Type":           ubx.FieldSpec{WireName: "type"},
 	},
 }

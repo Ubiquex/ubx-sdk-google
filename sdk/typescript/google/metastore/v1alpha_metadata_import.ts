@@ -20,20 +20,12 @@ const V1alphaMetadataImport_DatabaseDumpFields: FieldMap = {
 };
 
 export interface V1alphaMetadataImportConfig {
-  /** Output only. The time when the metadata import was started. */
-  createTime?: string | Computed<string>;
   /** A specification of the location of and metadata about a database dump from a relational database management system. */
   databaseDump?: V1alphaMetadataImport_DatabaseDump | Computed<V1alphaMetadataImport_DatabaseDump>;
   /** Optional. The description of the metadata import. */
   description?: string | Computed<string>;
-  /** Output only. The time when the metadata import finished. */
-  endTime?: string | Computed<string>;
   /** Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the metadata import. */
-  state?: string | Computed<string>;
-  /** Output only. The time when the metadata import was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaMetadataImportAttrs {
@@ -56,16 +48,12 @@ export interface V1alphaMetadataImportAttrs {
 export const V1alphaMetadataImport: ResourceBinding<V1alphaMetadataImportConfig, V1alphaMetadataImportAttrs> = {
   wireType: "google_metastore_v1alpha_metadata_import",
   fields: {
-    createTime: "create_time",
     databaseDump: {
       wireName: "database_dump",
       kind: "object",
       fields: V1alphaMetadataImport_DatabaseDumpFields,
     },
     description: "description",
-    endTime: "end_time",
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

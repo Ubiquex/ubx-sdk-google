@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface RetiredResourceConfig {
-  name: string | Computed<string>;
 }
 
 export interface RetiredResourceAttrs {
@@ -18,6 +17,5 @@ export interface RetiredResourceAttrs {
 export const RetiredResource: DataSourceBinding<RetiredResourceConfig, RetiredResourceAttrs> = {
   wireType: "google_cloudkms_retired_resource",
   fields: {
-    name: "name",
   },
 };

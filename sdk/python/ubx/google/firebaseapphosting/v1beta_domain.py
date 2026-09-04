@@ -134,34 +134,18 @@ _V1betaDomain_ServeFields = {
 class V1betaDomainConfig:
     # Optional. Annotations as key value pairs.
     annotations: Any = None
-    # Output only. Time at which the domain was created.
-    create_time: Any = None
     # The status of a custom domain's linkage to a backend.
     custom_domain_status: Any = None
-    # Output only. Time at which the domain was deleted.
-    delete_time: Any = None
     # Optional. Whether the domain is disabled. Defaults to false.
     disabled: Any = None
     # Optional. Mutable human-readable name for the domain. 63 character limit. e.g. `prod domain`.
     display_name: Any = None
-    # Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-    etag: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Identifier. The resource name of the domain, e.g. `/projects/p/locations/l/backends/b/domains/foo.com`
     name: Any = None
-    # Output only. Time at which a soft-deleted domain will be purged, rendering in permanently deleted.
-    purge_time: Any = None
-    # Output only. A field that, if true, indicates that the build has an ongoing LRO.
-    reconciling: Any = None
     # Indicates whether App Hosting will serve content on the domain.
     serve: Any = None
-    # Output only. The type of the domain.
-    type: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. Time at which the domain was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaDomainAttrs:
@@ -200,27 +184,19 @@ V1betaDomain = ubx.ResourceBinding(
     wire_type="google_firebaseapphosting_v1beta_domain",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_domain_status": ubx.FieldSpec(
             wire_name="custom_domain_status",
             kind="object",
             fields=_V1betaDomain_CustomDomainStatusFields,
         ),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "purge_time": ubx.FieldSpec(wire_name="purge_time"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "serve": ubx.FieldSpec(
             wire_name="serve",
             kind="object",
             fields=_V1betaDomain_ServeFields,
         ),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

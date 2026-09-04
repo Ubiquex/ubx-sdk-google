@@ -9,52 +9,41 @@ type AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfig str
 
 type AlphaAcceleratorPodController_ManagementInterfaces struct {
 	AuthenticationConfig any
-	Ipv4Address any
-	Ipv6Address any
-	Network any
-	State any
-	Subnetwork any
-	Type any
+	Ipv4Address          any
+	Ipv6Address          any
+	Network              any
+	State                any
+	Subnetwork           any
+	Type                 any
 }
 
 var AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields = ubx.FieldMap{
-		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
-	}
+	"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
+}
 
 var AlphaAcceleratorPodController_ManagementInterfacesFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{
-			WireName: "authentication_config",
-			Kind: "object",
-			Fields: AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields,
-		},
-		"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{
+		WireName: "authentication_config",
+		Kind:     "object",
+		Fields:   AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields,
+	},
+	"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 type AlphaAcceleratorPodControllerConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	Kind any
 	// Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long.
 	ManagementInterfaces any
 	// Required. The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for the resource with the resource ID.
-	SelfLinkWithId any
 	// Required. The target accelerator domain this controller manages. This must be a resolvable identifier for the specific NVLink Domain or TPU system (e.g., a Reservation Sub-block URI). Example: "projects/my-project/reservations/my-reservation/subBlocks/subblock-1".
 	Target any
-	// Output only. [Output Only] URL of the zone where the accelerator pod controller resides.
-	Zone any
 }
 
 type AlphaAcceleratorPodControllerAttrs struct {
@@ -63,7 +52,7 @@ type AlphaAcceleratorPodControllerAttrs struct {
 	// An optional description of this resource.
 	Description any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Id   any
 	Kind any
 	// Map of management interfaces. Keys must be valid RFC1035 names and at most 63 characters long.
 	ManagementInterfaces any
@@ -82,19 +71,13 @@ type AlphaAcceleratorPodControllerAttrs struct {
 var AlphaAcceleratorPodController = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_accelerator_pod_controller",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"ManagementInterfaces": ubx.FieldSpec{
 			WireName: "management_interfaces",
-			Kind: "map",
-			Fields: AlphaAcceleratorPodController_ManagementInterfacesFields,
+			Kind:     "map",
+			Fields:   AlphaAcceleratorPodController_ManagementInterfacesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Target": ubx.FieldSpec{WireName: "target"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Extension_ExtensionOperations_FunctionDeclaration_Parameters struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Example any
-	Format any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	Nullable any
-	Pattern any
-	Properties any
-	PropertyOrdering any
-	Ref any
-	Required any
-	Title any
-	Type any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Example              any
+	Format               any
+	Items                any
+	MaxItems             any
+	MaxLength            any
+	MaxProperties        any
+	Maximum              any
+	MinItems             any
+	MinLength            any
+	MinProperties        any
+	Minimum              any
+	Nullable             any
+	Pattern              any
+	Properties           any
+	PropertyOrdering     any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
 }
 
 type V1beta1Extension_ExtensionOperations_FunctionDeclaration struct {
-	Behavior any
-	Description any
-	Name any
-	Parameters any
+	Behavior             any
+	Description          any
+	Name                 any
+	Parameters           any
 	ParametersJsonSchema any
-	Response any
-	ResponseJsonSchema any
+	Response             any
+	ResponseJsonSchema   any
 }
 
 type V1beta1Extension_ExtensionOperations struct {
 	FunctionDeclaration any
-	OperationId any
+	OperationId         any
 }
 
 type V1beta1Extension_Manifest_ApiSpec struct {
@@ -136,212 +136,153 @@ type V1beta1Extension_RuntimeConfig_VertexAiSearchRuntimeConfig struct {
 type V1beta1Extension_RuntimeConfig struct {
 	CodeInterpreterRuntimeConfig any
 	// Optional. Default parameters that will be set for all the execution of this extension. If specified, the parameter values can be overridden by values in [[ExecuteExtensionRequest.operation_params]] at request time. The struct should be in a form of map with param name as the key and actual param value as the value. E.g. If this operation requires a param "name" to be set to "abc". you can set this to something like {"name": "abc"}.
-	DefaultParams any
+	DefaultParams               any
 	VertexAiSearchRuntimeConfig any
 }
 
 type V1beta1Extension_ToolUseExamples_ExtensionOperation struct {
-	Extension any
+	Extension   any
 	OperationId any
 }
 
 type V1beta1Extension_ToolUseExamples struct {
-	DisplayName any
+	DisplayName        any
 	ExtensionOperation any
-	FunctionName any
-	Query any
-	RequestParams any
-	ResponseParams any
-	ResponseSummary any
+	FunctionName       any
+	Query              any
+	RequestParams      any
+	ResponseParams     any
+	ResponseSummary    any
 }
 
-var V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
-var V1beta1Extension_ExtensionOperations_FunctionDeclarationFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-		},
-		"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-	}
-
-var V1beta1Extension_ExtensionOperationsFields = ubx.FieldMap{
-		"FunctionDeclaration": ubx.FieldSpec{
-			WireName: "function_declaration",
-			Kind: "object",
-			Fields: V1beta1Extension_ExtensionOperations_FunctionDeclarationFields,
-		},
-		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
-	}
-
 var V1beta1Extension_Manifest_ApiSpecFields = ubx.FieldMap{
-		"OpenApiGcsUri": ubx.FieldSpec{WireName: "open_api_gcs_uri"},
-		"OpenApiYaml": ubx.FieldSpec{WireName: "open_api_yaml"},
-	}
+	"OpenApiGcsUri": ubx.FieldSpec{WireName: "open_api_gcs_uri"},
+	"OpenApiYaml":   ubx.FieldSpec{WireName: "open_api_yaml"},
+}
 
 var V1beta1Extension_Manifest_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKeySecret":        ubx.FieldSpec{WireName: "api_key_secret"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1Extension_Manifest_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1Extension_Manifest_AuthConfig_HttpBasicAuthConfigFields = ubx.FieldMap{
-		"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
-	}
+	"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
+}
 
 var V1beta1Extension_Manifest_AuthConfig_OauthConfigFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1Extension_Manifest_AuthConfig_OidcConfigFields = ubx.FieldMap{
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"IdToken":        ubx.FieldSpec{WireName: "id_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1Extension_Manifest_AuthConfigFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfig_ApiKeyConfigFields,
-		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"GoogleServiceAccountConfig": ubx.FieldSpec{
-			WireName: "google_service_account_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfig_GoogleServiceAccountConfigFields,
-		},
-		"HttpBasicAuthConfig": ubx.FieldSpec{
-			WireName: "http_basic_auth_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfig_HttpBasicAuthConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfig_OauthConfigFields,
-		},
-		"OidcConfig": ubx.FieldSpec{
-			WireName: "oidc_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfig_OidcConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfig_ApiKeyConfigFields,
+	},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"GoogleServiceAccountConfig": ubx.FieldSpec{
+		WireName: "google_service_account_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfig_GoogleServiceAccountConfigFields,
+	},
+	"HttpBasicAuthConfig": ubx.FieldSpec{
+		WireName: "http_basic_auth_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfig_HttpBasicAuthConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfig_OauthConfigFields,
+	},
+	"OidcConfig": ubx.FieldSpec{
+		WireName: "oidc_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfig_OidcConfigFields,
+	},
+}
 
 var V1beta1Extension_ManifestFields = ubx.FieldMap{
-		"ApiSpec": ubx.FieldSpec{
-			WireName: "api_spec",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_ApiSpecFields,
-		},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: V1beta1Extension_Manifest_AuthConfigFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiSpec": ubx.FieldSpec{
+		WireName: "api_spec",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_ApiSpecFields,
+	},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_Manifest_AuthConfigFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1Extension_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"ServiceDirectory": ubx.FieldSpec{WireName: "service_directory"},
-	}
+	"ServiceDirectory": ubx.FieldSpec{WireName: "service_directory"},
+}
 
 var V1beta1Extension_RuntimeConfig_CodeInterpreterRuntimeConfigFields = ubx.FieldMap{
-		"FileInputGcsBucket": ubx.FieldSpec{WireName: "file_input_gcs_bucket"},
-		"FileOutputGcsBucket": ubx.FieldSpec{WireName: "file_output_gcs_bucket"},
-	}
+	"FileInputGcsBucket":  ubx.FieldSpec{WireName: "file_input_gcs_bucket"},
+	"FileOutputGcsBucket": ubx.FieldSpec{WireName: "file_output_gcs_bucket"},
+}
 
 var V1beta1Extension_RuntimeConfig_VertexAiSearchRuntimeConfigFields = ubx.FieldMap{
-		"EngineId": ubx.FieldSpec{WireName: "engine_id"},
-		"ServingConfigName": ubx.FieldSpec{WireName: "serving_config_name"},
-	}
+	"EngineId":          ubx.FieldSpec{WireName: "engine_id"},
+	"ServingConfigName": ubx.FieldSpec{WireName: "serving_config_name"},
+}
 
 var V1beta1Extension_RuntimeConfigFields = ubx.FieldMap{
-		"CodeInterpreterRuntimeConfig": ubx.FieldSpec{
-			WireName: "code_interpreter_runtime_config",
-			Kind: "object",
-			Fields: V1beta1Extension_RuntimeConfig_CodeInterpreterRuntimeConfigFields,
-		},
-		"DefaultParams": ubx.FieldSpec{WireName: "default_params"},
-		"VertexAiSearchRuntimeConfig": ubx.FieldSpec{
-			WireName: "vertex_ai_search_runtime_config",
-			Kind: "object",
-			Fields: V1beta1Extension_RuntimeConfig_VertexAiSearchRuntimeConfigFields,
-		},
-	}
+	"CodeInterpreterRuntimeConfig": ubx.FieldSpec{
+		WireName: "code_interpreter_runtime_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_RuntimeConfig_CodeInterpreterRuntimeConfigFields,
+	},
+	"DefaultParams": ubx.FieldSpec{WireName: "default_params"},
+	"VertexAiSearchRuntimeConfig": ubx.FieldSpec{
+		WireName: "vertex_ai_search_runtime_config",
+		Kind:     "object",
+		Fields:   V1beta1Extension_RuntimeConfig_VertexAiSearchRuntimeConfigFields,
+	},
+}
 
 var V1beta1Extension_ToolUseExamples_ExtensionOperationFields = ubx.FieldMap{
-		"Extension": ubx.FieldSpec{WireName: "extension"},
-		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
-	}
+	"Extension":   ubx.FieldSpec{WireName: "extension"},
+	"OperationId": ubx.FieldSpec{WireName: "operation_id"},
+}
 
 var V1beta1Extension_ToolUseExamplesFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExtensionOperation": ubx.FieldSpec{
-			WireName: "extension_operation",
-			Kind: "object",
-			Fields: V1beta1Extension_ToolUseExamples_ExtensionOperationFields,
-		},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RequestParams": ubx.FieldSpec{WireName: "request_params"},
-		"ResponseParams": ubx.FieldSpec{WireName: "response_params"},
-		"ResponseSummary": ubx.FieldSpec{WireName: "response_summary"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ExtensionOperation": ubx.FieldSpec{
+		WireName: "extension_operation",
+		Kind:     "object",
+		Fields:   V1beta1Extension_ToolUseExamples_ExtensionOperationFields,
+	},
+	"FunctionName":    ubx.FieldSpec{WireName: "function_name"},
+	"Query":           ubx.FieldSpec{WireName: "query"},
+	"RequestParams":   ubx.FieldSpec{WireName: "request_params"},
+	"ResponseParams":  ubx.FieldSpec{WireName: "response_params"},
+	"ResponseSummary": ubx.FieldSpec{WireName: "response_summary"},
+}
 
 type V1beta1ExtensionConfig struct {
-	// Output only. Timestamp when this Extension was created.
-	CreateTime any
 	// Optional. The description of the Extension.
 	Description any
 	// Required. The display name of the Extension. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
 	Etag any
-	// Output only. Supported operations.
-	ExtensionOperations any
 	// Manifest spec of an Extension needed for runtime execution.
 	Manifest any
 	// Identifier. The resource name of the Extension.
@@ -350,14 +291,8 @@ type V1beta1ExtensionConfig struct {
 	PrivateServiceConnectConfig any
 	// Runtime configuration to run the extension.
 	RuntimeConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Optional. Examples to illustrate the usage of the extension as a tool.
 	ToolUseExamples any
-	// Output only. Timestamp when this Extension was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1ExtensionAttrs struct {
@@ -392,38 +327,29 @@ type V1beta1ExtensionAttrs struct {
 var V1beta1Extension = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_extension",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExtensionOperations": ubx.FieldSpec{
-			WireName: "extension_operations",
-			Kind: "list",
-			Fields: V1beta1Extension_ExtensionOperationsFields,
-		},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Manifest": ubx.FieldSpec{
 			WireName: "manifest",
-			Kind: "object",
-			Fields: V1beta1Extension_ManifestFields,
+			Kind:     "object",
+			Fields:   V1beta1Extension_ManifestFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivateServiceConnectConfig": ubx.FieldSpec{
 			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: V1beta1Extension_PrivateServiceConnectConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Extension_PrivateServiceConnectConfigFields,
 		},
 		"RuntimeConfig": ubx.FieldSpec{
 			WireName: "runtime_config",
-			Kind: "object",
-			Fields: V1beta1Extension_RuntimeConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Extension_RuntimeConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ToolUseExamples": ubx.FieldSpec{
 			WireName: "tool_use_examples",
-			Kind: "list",
-			Fields: V1beta1Extension_ToolUseExamplesFields,
+			Kind:     "list",
+			Fields:   V1beta1Extension_ToolUseExamplesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

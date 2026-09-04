@@ -168,10 +168,6 @@ export interface VmwareNodePoolConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Parameters that describe the configuration of all nodes within a given node pool. */
   config?: VmwareNodePool_Config | Computed<VmwareNodePool_Config>;
-  /** Output only. The time at which this node pool was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which this node pool was deleted. If the resource is not deleted, this must be empty */
-  deleteTime?: string | Computed<string>;
   /** The display name for the node pool. */
   displayName?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
@@ -182,16 +178,8 @@ export interface VmwareNodePoolConfig {
   nodePoolAutoscaling?: VmwareNodePool_NodePoolAutoscaling | Computed<VmwareNodePool_NodePoolAutoscaling>;
   /** Anthos version for the node pool. Defaults to the user cluster version. */
   onPremVersion?: string | Computed<string>;
-  /** Output only. If set, there are currently changes in flight to the node pool. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the node pool. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: VmwareNodePool_Status | Computed<VmwareNodePool_Status>;
-  /** Output only. The unique identifier of the node pool. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which this node pool was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface VmwareNodePoolAttrs {
@@ -234,8 +222,6 @@ export const VmwareNodePool: ResourceBinding<VmwareNodePoolConfig, VmwareNodePoo
       kind: "object",
       fields: VmwareNodePool_ConfigFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
     name: "name",
@@ -245,14 +231,10 @@ export const VmwareNodePool: ResourceBinding<VmwareNodePoolConfig, VmwareNodePoo
       fields: VmwareNodePool_NodePoolAutoscalingFields,
     },
     onPremVersion: "on_prem_version",
-    reconciling: "reconciling",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
       fields: VmwareNodePool_StatusFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

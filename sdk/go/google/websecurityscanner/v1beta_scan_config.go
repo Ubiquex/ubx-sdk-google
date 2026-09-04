@@ -91,91 +91,91 @@ type V1betaScanConfig_Schedule struct {
 }
 
 var V1betaScanConfig_Authentication_CustomAccountFields = ubx.FieldMap{
-		"LoginUrl": ubx.FieldSpec{WireName: "login_url"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"LoginUrl": ubx.FieldSpec{WireName: "login_url"},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var V1betaScanConfig_Authentication_GoogleAccountFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var V1betaScanConfig_Authentication_IapCredential_IapTestServiceAccountInfoFields = ubx.FieldMap{
-		"TargetAudienceClientId": ubx.FieldSpec{WireName: "target_audience_client_id"},
-	}
+	"TargetAudienceClientId": ubx.FieldSpec{WireName: "target_audience_client_id"},
+}
 
 var V1betaScanConfig_Authentication_IapCredentialFields = ubx.FieldMap{
-		"IapTestServiceAccountInfo": ubx.FieldSpec{
-			WireName: "iap_test_service_account_info",
-			Kind: "object",
-			Fields: V1betaScanConfig_Authentication_IapCredential_IapTestServiceAccountInfoFields,
-		},
-	}
+	"IapTestServiceAccountInfo": ubx.FieldSpec{
+		WireName: "iap_test_service_account_info",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_Authentication_IapCredential_IapTestServiceAccountInfoFields,
+	},
+}
 
 var V1betaScanConfig_AuthenticationFields = ubx.FieldMap{
-		"CustomAccount": ubx.FieldSpec{
-			WireName: "custom_account",
-			Kind: "object",
-			Fields: V1betaScanConfig_Authentication_CustomAccountFields,
-		},
-		"GoogleAccount": ubx.FieldSpec{
-			WireName: "google_account",
-			Kind: "object",
-			Fields: V1betaScanConfig_Authentication_GoogleAccountFields,
-		},
-		"IapCredential": ubx.FieldSpec{
-			WireName: "iap_credential",
-			Kind: "object",
-			Fields: V1betaScanConfig_Authentication_IapCredentialFields,
-		},
-	}
+	"CustomAccount": ubx.FieldSpec{
+		WireName: "custom_account",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_Authentication_CustomAccountFields,
+	},
+	"GoogleAccount": ubx.FieldSpec{
+		WireName: "google_account",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_Authentication_GoogleAccountFields,
+	},
+	"IapCredential": ubx.FieldSpec{
+		WireName: "iap_credential",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_Authentication_IapCredentialFields,
+	},
+}
 
 var V1betaScanConfig_LatestRun_ErrorTrace_ScanConfigErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-	}
+	"Code":      ubx.FieldSpec{WireName: "code"},
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+}
 
 var V1betaScanConfig_LatestRun_ErrorTraceFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"MostCommonHttpErrorCode": ubx.FieldSpec{WireName: "most_common_http_error_code"},
-		"ScanConfigError": ubx.FieldSpec{
-			WireName: "scan_config_error",
-			Kind: "object",
-			Fields: V1betaScanConfig_LatestRun_ErrorTrace_ScanConfigErrorFields,
-		},
-	}
+	"Code":                    ubx.FieldSpec{WireName: "code"},
+	"MostCommonHttpErrorCode": ubx.FieldSpec{WireName: "most_common_http_error_code"},
+	"ScanConfigError": ubx.FieldSpec{
+		WireName: "scan_config_error",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_LatestRun_ErrorTrace_ScanConfigErrorFields,
+	},
+}
 
 var V1betaScanConfig_LatestRun_WarningTracesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 var V1betaScanConfig_LatestRunFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ErrorTrace": ubx.FieldSpec{
-			WireName: "error_trace",
-			Kind: "object",
-			Fields: V1betaScanConfig_LatestRun_ErrorTraceFields,
-		},
-		"ExecutionState": ubx.FieldSpec{WireName: "execution_state"},
-		"HasVulnerabilities": ubx.FieldSpec{WireName: "has_vulnerabilities"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
-		"ResultState": ubx.FieldSpec{WireName: "result_state"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"UrlsCrawledCount": ubx.FieldSpec{WireName: "urls_crawled_count"},
-		"UrlsTestedCount": ubx.FieldSpec{WireName: "urls_tested_count"},
-		"WarningTraces": ubx.FieldSpec{
-			WireName: "warning_traces",
-			Kind: "list",
-			Fields: V1betaScanConfig_LatestRun_WarningTracesFields,
-		},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"ErrorTrace": ubx.FieldSpec{
+		WireName: "error_trace",
+		Kind:     "object",
+		Fields:   V1betaScanConfig_LatestRun_ErrorTraceFields,
+	},
+	"ExecutionState":     ubx.FieldSpec{WireName: "execution_state"},
+	"HasVulnerabilities": ubx.FieldSpec{WireName: "has_vulnerabilities"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"ProgressPercent":    ubx.FieldSpec{WireName: "progress_percent"},
+	"ResultState":        ubx.FieldSpec{WireName: "result_state"},
+	"StartTime":          ubx.FieldSpec{WireName: "start_time"},
+	"UrlsCrawledCount":   ubx.FieldSpec{WireName: "urls_crawled_count"},
+	"UrlsTestedCount":    ubx.FieldSpec{WireName: "urls_tested_count"},
+	"WarningTraces": ubx.FieldSpec{
+		WireName: "warning_traces",
+		Kind:     "list",
+		Fields:   V1betaScanConfig_LatestRun_WarningTracesFields,
+	},
+}
 
 var V1betaScanConfig_ScheduleFields = ubx.FieldMap{
-		"IntervalDurationDays": ubx.FieldSpec{WireName: "interval_duration_days"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-	}
+	"IntervalDurationDays": ubx.FieldSpec{WireName: "interval_duration_days"},
+	"ScheduleTime":         ubx.FieldSpec{WireName: "schedule_time"},
+}
 
 type V1betaScanConfigConfig struct {
 	// Scan authentication configuration.
@@ -248,30 +248,30 @@ var V1betaScanConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authentication": ubx.FieldSpec{
 			WireName: "authentication",
-			Kind: "object",
-			Fields: V1betaScanConfig_AuthenticationFields,
+			Kind:     "object",
+			Fields:   V1betaScanConfig_AuthenticationFields,
 		},
-		"BlacklistPatterns": ubx.FieldSpec{WireName: "blacklist_patterns"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"BlacklistPatterns":             ubx.FieldSpec{WireName: "blacklist_patterns"},
+		"DisplayName":                   ubx.FieldSpec{WireName: "display_name"},
 		"ExportToSecurityCommandCenter": ubx.FieldSpec{WireName: "export_to_security_command_center"},
-		"IgnoreHttpStatusErrors": ubx.FieldSpec{WireName: "ignore_http_status_errors"},
+		"IgnoreHttpStatusErrors":        ubx.FieldSpec{WireName: "ignore_http_status_errors"},
 		"LatestRun": ubx.FieldSpec{
 			WireName: "latest_run",
-			Kind: "object",
-			Fields: V1betaScanConfig_LatestRunFields,
+			Kind:     "object",
+			Fields:   V1betaScanConfig_LatestRunFields,
 		},
 		"ManagedScan": ubx.FieldSpec{WireName: "managed_scan"},
-		"MaxQps": ubx.FieldSpec{WireName: "max_qps"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RiskLevel": ubx.FieldSpec{WireName: "risk_level"},
+		"MaxQps":      ubx.FieldSpec{WireName: "max_qps"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"RiskLevel":   ubx.FieldSpec{WireName: "risk_level"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind: "object",
-			Fields: V1betaScanConfig_ScheduleFields,
+			Kind:     "object",
+			Fields:   V1betaScanConfig_ScheduleFields,
 		},
-		"StartingUrls": ubx.FieldSpec{WireName: "starting_urls"},
-		"StaticIpScan": ubx.FieldSpec{WireName: "static_ip_scan"},
+		"StartingUrls":    ubx.FieldSpec{WireName: "starting_urls"},
+		"StaticIpScan":    ubx.FieldSpec{WireName: "static_ip_scan"},
 		"TargetPlatforms": ubx.FieldSpec{WireName: "target_platforms"},
-		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
+		"UserAgent":       ubx.FieldSpec{WireName: "user_agent"},
 	},
 }

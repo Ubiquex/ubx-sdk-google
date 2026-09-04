@@ -4,15 +4,15 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day any
-	Duration any
+	Day       any
+	Duration  any
 	StartTime any
 }
 
@@ -39,7 +39,7 @@ type V1beta1Instance_MaintenanceSchedule struct {
 }
 
 type V1beta1Instance_Nodes struct {
-	Id any
+	Id   any
 	Zone any
 }
 
@@ -55,67 +55,54 @@ type V1beta1Instance_PersistenceConfig struct {
 }
 
 type V1beta1Instance_ServerCaCerts struct {
-	Cert any
-	CreateTime any
-	ExpireTime any
-	SerialNumber any
+	Cert            any
+	CreateTime      any
+	ExpireTime      any
+	SerialNumber    any
 	Sha1Fingerprint any
 }
 
 var V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
-		},
-	}
+	"Day":      ubx.FieldSpec{WireName: "day"},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
+	},
+}
 
 var V1beta1Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WeeklyMaintenanceWindow": ubx.FieldSpec{
-			WireName: "weekly_maintenance_window",
-			Kind: "list",
-			Fields: V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
-		},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+	"WeeklyMaintenanceWindow": ubx.FieldSpec{
+		WireName: "weekly_maintenance_window",
+		Kind:     "list",
+		Fields:   V1beta1Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
+	},
+}
 
 var V1beta1Instance_MaintenanceScheduleFields = ubx.FieldMap{
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
-
-var V1beta1Instance_NodesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"CanReschedule":        ubx.FieldSpec{WireName: "can_reschedule"},
+	"EndTime":              ubx.FieldSpec{WireName: "end_time"},
+	"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
+	"StartTime":            ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1Instance_PersistenceConfigFields = ubx.FieldMap{
-		"PersistenceMode": ubx.FieldSpec{WireName: "persistence_mode"},
-		"RdbNextSnapshotTime": ubx.FieldSpec{WireName: "rdb_next_snapshot_time"},
-		"RdbSnapshotPeriod": ubx.FieldSpec{WireName: "rdb_snapshot_period"},
-		"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
-	}
-
-var V1beta1Instance_ServerCaCertsFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{WireName: "cert"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
-	}
+	"PersistenceMode":      ubx.FieldSpec{WireName: "persistence_mode"},
+	"RdbNextSnapshotTime":  ubx.FieldSpec{WireName: "rdb_next_snapshot_time"},
+	"RdbSnapshotPeriod":    ubx.FieldSpec{WireName: "rdb_snapshot_period"},
+	"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
+}
 
 type V1beta1InstanceConfig struct {
 	// Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in [location_id]. Additional nodes beyond the first 2 will be placed in zones selected by the service.
@@ -128,16 +115,10 @@ type V1beta1InstanceConfig struct {
 	AvailableMaintenanceVersions any
 	// Optional. The network connect mode of the Redis instance. If not provided, the connect mode defaults to DIRECT_PEERING.
 	ConnectMode any
-	// Output only. The time the instance was created.
-	CreateTime any
-	// Output only. The current zone where the Redis primary node is located. In basic tier, this will always be the same as [location_id]. In standard tier, this can be the zone of any node in the instance.
-	CurrentLocationId any
 	// Optional. The KMS key reference that the customer provides when trying to create the instance.
 	CustomerManagedKey any
 	// An arbitrary and optional user-provided name for the instance.
 	DisplayName any
-	// Output only. Hostname or IP address of the exposed Redis endpoint used by clients to connect to the service.
-	Host any
 	// Resource labels to represent user provided metadata
 	Labels any
 	// Optional. The zone where the instance will be provisioned. If not provided, the service will choose a zone from the specified region for the instance. For standard tier, additional nodes will be added across multiple zones for protection against zonal failures. If specified, at least one node will be provisioned in this zone.
@@ -152,18 +133,8 @@ type V1beta1InstanceConfig struct {
 	MemorySizeGb any
 	// Required. Unique name of the resource in this scope including project and location using the form: `projects/{project_id}/locations/{location_id}/instances/{instance_id}` Note: Redis instances are managed and addressed at regional level so location_id here refers to a GCP region; however, users may choose which specific zone (or collection of zones for cross-zone instances) an instance should be provisioned in. Refer to location_id and alternative_location_id fields for more details.
 	Name any
-	// Output only. Info per node.
-	Nodes any
 	// Configuration of the persistence functionality.
 	PersistenceConfig any
-	// Output only. Cloud IAM identity used by import / export operations to transfer data to/from Cloud Storage. Format is "serviceAccount:". The value may change over time for a given instance so should be checked before each import/export operation.
-	PersistenceIamIdentity any
-	// Output only. The port number of the exposed Redis endpoint.
-	Port any
-	// Output only. Hostname or IP address of the exposed readonly Redis endpoint. Standard tier only. Targets all healthy replica nodes in instance. Replication is asynchronous and replica nodes will exhibit some lag behind the primary. Write requests must target 'host'.
-	ReadEndpoint any
-	// Output only. The port number of the exposed readonly redis endpoint. Standard tier only. Write requests should target 'port'.
-	ReadEndpointPort any
 	// Optional. Read replicas mode for the instance. Defaults to READ_REPLICAS_DISABLED.
 	ReadReplicasMode any
 	// Optional. Redis configuration parameters, according to [Redis configuration](https://redis.io/docs/latest/operate/oss_and_stack/management/config/). Currently, the only supported parameters are: Redis version 3.2 and newer: * maxmemory-policy * notify-keyspace-events Redis version 4.0 and newer: * activedefrag * lfu-decay-time * lfu-log-factor * maxmemory-gb Redis version 5.0 and newer: * stream-node-max-bytes * stream-node-max-entries
@@ -174,18 +145,8 @@ type V1beta1InstanceConfig struct {
 	ReplicaCount any
 	// Optional. For DIRECT_PEERING mode, the CIDR range of internal addresses that are reserved for this instance. Range must be unique and non-overlapping with existing subnets in an authorized network. For PRIVATE_SERVICE_ACCESS mode, the name of one allocated IP address ranges associated with this private service access connection. If not provided, the service will choose an unused /29 block, for example, 10.0.0.0/29 or 192.168.0.0/29. For READ_REPLICAS_ENABLED the default block size is /28.
 	ReservedIpRange any
-	// Optional. Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Optional. Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Optional. Additional IP range for node placement. Required when enabling read replicas on an existing instance. For DIRECT_PEERING mode value must be a CIDR range of size /28, or "auto". For PRIVATE_SERVICE_ACCESS mode value must be the name of an allocated address range associated with the private service access connection, or "auto".
 	SecondaryIpRange any
-	// Output only. List of server CA certificates for the instance.
-	ServerCaCerts any
-	// Output only. The current state of this instance.
-	State any
-	// Output only. Additional information about the current status of this instance, if available.
-	StatusMessage any
 	// Optional. reasons that causes instance in "SUSPENDED" state.
 	SuspensionReasons any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
@@ -278,63 +239,42 @@ type V1beta1InstanceAttrs struct {
 var V1beta1Instance = ubx.ResourceBinding{
 	WireType: "google_redis_v1beta1_instance",
 	Fields: ubx.FieldMap{
-		"AlternativeLocationId": ubx.FieldSpec{WireName: "alternative_location_id"},
-		"AuthEnabled": ubx.FieldSpec{WireName: "auth_enabled"},
-		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
+		"AlternativeLocationId":        ubx.FieldSpec{WireName: "alternative_location_id"},
+		"AuthEnabled":                  ubx.FieldSpec{WireName: "auth_enabled"},
+		"AuthorizedNetwork":            ubx.FieldSpec{WireName: "authorized_network"},
 		"AvailableMaintenanceVersions": ubx.FieldSpec{WireName: "available_maintenance_versions"},
-		"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CurrentLocationId": ubx.FieldSpec{WireName: "current_location_id"},
-		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LocationId": ubx.FieldSpec{WireName: "location_id"},
+		"ConnectMode":                  ubx.FieldSpec{WireName: "connect_mode"},
+		"CustomerManagedKey":           ubx.FieldSpec{WireName: "customer_managed_key"},
+		"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
+		"Labels":                       ubx.FieldSpec{WireName: "labels"},
+		"LocationId":                   ubx.FieldSpec{WireName: "location_id"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_MaintenancePolicyFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_MaintenanceScheduleFields,
 		},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
-		"MemorySizeGb": ubx.FieldSpec{WireName: "memory_size_gb"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nodes": ubx.FieldSpec{
-			WireName: "nodes",
-			Kind: "list",
-			Fields: V1beta1Instance_NodesFields,
-		},
+		"MemorySizeGb":       ubx.FieldSpec{WireName: "memory_size_gb"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"PersistenceConfig": ubx.FieldSpec{
 			WireName: "persistence_config",
-			Kind: "object",
-			Fields: V1beta1Instance_PersistenceConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_PersistenceConfigFields,
 		},
-		"PersistenceIamIdentity": ubx.FieldSpec{WireName: "persistence_iam_identity"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ReadEndpoint": ubx.FieldSpec{WireName: "read_endpoint"},
-		"ReadEndpointPort": ubx.FieldSpec{WireName: "read_endpoint_port"},
-		"ReadReplicasMode": ubx.FieldSpec{WireName: "read_replicas_mode"},
-		"RedisConfigs": ubx.FieldSpec{WireName: "redis_configs"},
-		"RedisVersion": ubx.FieldSpec{WireName: "redis_version"},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SecondaryIpRange": ubx.FieldSpec{WireName: "secondary_ip_range"},
-		"ServerCaCerts": ubx.FieldSpec{
-			WireName: "server_ca_certs",
-			Kind: "list",
-			Fields: V1beta1Instance_ServerCaCertsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"SuspensionReasons": ubx.FieldSpec{WireName: "suspension_reasons"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
+		"ReadReplicasMode":      ubx.FieldSpec{WireName: "read_replicas_mode"},
+		"RedisConfigs":          ubx.FieldSpec{WireName: "redis_configs"},
+		"RedisVersion":          ubx.FieldSpec{WireName: "redis_version"},
+		"ReplicaCount":          ubx.FieldSpec{WireName: "replica_count"},
+		"ReservedIpRange":       ubx.FieldSpec{WireName: "reserved_ip_range"},
+		"SecondaryIpRange":      ubx.FieldSpec{WireName: "secondary_ip_range"},
+		"SuspensionReasons":     ubx.FieldSpec{WireName: "suspension_reasons"},
+		"Tags":                  ubx.FieldSpec{WireName: "tags"},
+		"Tier":                  ubx.FieldSpec{WireName: "tier"},
 		"TransitEncryptionMode": ubx.FieldSpec{WireName: "transit_encryption_mode"},
 	},
 }

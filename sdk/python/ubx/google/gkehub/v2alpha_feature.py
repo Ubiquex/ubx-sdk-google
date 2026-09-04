@@ -1615,22 +1615,14 @@ _V2alphaFeature_StateFields = {
 
 @dataclasses.dataclass
 class V2alphaFeatureConfig:
-    # Output only. When the MembershipFeature resource was created.
-    create_time: Any = None
-    # Output only. When the MembershipFeature resource was deleted.
-    delete_time: Any = None
     # Google Cloud labels for this MembershipFeature.
     labels: Any = None
     # LifecycleState describes the state of a MembershipFeature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the MembershipFeature.
     lifecycle_state: Any = None
-    # Output only. The resource name of the membershipFeature, in the format: `projects/{project}/locations/{location}/memberships/{membership}/features/{feature}`. Note that `membershipFeatures` is shortened to `features` in the resource name. (see http://go/aip/122#collection-identifiers)
-    name: Any = None
     # FeatureSpec contains user input per-feature spec information.
     spec: Any = None
     # FeatureState contains high-level state information and per-feature state information for this MembershipFeature.
     state: Any = None
-    # Output only. When the MembershipFeature resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2alphaFeatureAttrs:
@@ -1654,15 +1646,12 @@ class V2alphaFeatureAttrs:
 V2alphaFeature = ubx.ResourceBinding(
     wire_type="google_gkehub_v2alpha_feature",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "lifecycle_state": ubx.FieldSpec(
             wire_name="lifecycle_state",
             kind="object",
             fields=_V2alphaFeature_LifecycleStateFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "spec": ubx.FieldSpec(
             wire_name="spec",
             kind="object",
@@ -1673,6 +1662,5 @@ V2alphaFeature = ubx.ResourceBinding(
             kind="object",
             fields=_V2alphaFeature_StateFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

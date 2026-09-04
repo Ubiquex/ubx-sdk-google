@@ -829,8 +829,6 @@ _BatchPredictionJob_UnmanagedContainerModelFields = {
 class BatchPredictionJobConfig:
     # Success and error statistics of processing multiple entities (for example, DataItems or structured data rows) in batch.
     completion_stats: Any = None
-    # Output only. Time when the BatchPredictionJob was created.
-    create_time: Any = None
     # A description of resources that are used for performing batch operations, are dedicated to a Model, and need manual configuration.
     dedicated_resources: Any = None
     # For custom-trained Models and AutoML Tabular Models, the container of the DeployedModel instances will send `stderr` and `stdout` streams to Cloud Logging by default. Please note that the logs incur cost, which are subject to [Cloud Logging pricing](https://cloud.google.com/logging/pricing). User can disable container logging by setting this flag to true.
@@ -839,8 +837,6 @@ class BatchPredictionJobConfig:
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the BatchPredictionJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # Specification of Model explanation.
@@ -859,32 +855,16 @@ class BatchPredictionJobConfig:
     model: Any = None
     # The parameters that govern the predictions. The schema of the parameters may be specified via the Model's PredictSchemata's parameters_schema_uri.
     model_parameters: Any = None
-    # Output only. The version ID of the Model that produces the predictions via this job.
-    model_version_id: Any = None
-    # Output only. Resource name of the BatchPredictionJob.
-    name: Any = None
     # Configures the output of BatchPredictionJob. See Model.supported_output_storage_formats for supported output formats, and how predictions are expressed via any of them.
     output_config: Any = None
     # Further describes this job's output. Supplements output_config.
     output_info: Any = None
-    # Output only. Partial failures encountered. For example, single files that can't be read. This field never exceeds 20 entries. Status details fields contain standard Google Cloud error details.
-    partial_failures: Any = None
     # Statistics information about resource consumption.
     resources_consumed: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # The service account that the DeployedModel's container runs as. If not specified, a system generated one will be used, which has minimal permissions and the custom container, if used, may not have enough permission to access other Google Cloud resources. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
     service_account: Any = None
-    # Output only. Time when the BatchPredictionJob for the first time entered the `JOB_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the job.
-    state: Any = None
     # Contains model information necessary to perform batch prediction without requiring a full model import.
     unmanaged_container_model: Any = None
-    # Output only. Time when the BatchPredictionJob was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BatchPredictionJobAttrs:
@@ -955,7 +935,6 @@ BatchPredictionJob = ubx.ResourceBinding(
             kind="object",
             fields=_BatchPredictionJob_CompletionStatsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dedicated_resources": ubx.FieldSpec(
             wire_name="dedicated_resources",
             kind="object",
@@ -968,7 +947,6 @@ BatchPredictionJob = ubx.ResourceBinding(
             kind="object",
             fields=_BatchPredictionJob_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -998,8 +976,6 @@ BatchPredictionJob = ubx.ResourceBinding(
         ),
         "model": ubx.FieldSpec(wire_name="model"),
         "model_parameters": ubx.FieldSpec(wire_name="model_parameters"),
-        "model_version_id": ubx.FieldSpec(wire_name="model_version_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "output_config": ubx.FieldSpec(
             wire_name="output_config",
             kind="object",
@@ -1010,26 +986,16 @@ BatchPredictionJob = ubx.ResourceBinding(
             kind="object",
             fields=_BatchPredictionJob_OutputInfoFields,
         ),
-        "partial_failures": ubx.FieldSpec(
-            wire_name="partial_failures",
-            kind="list",
-            fields=_BatchPredictionJob_ErrorFields,
-        ),
         "resources_consumed": ubx.FieldSpec(
             wire_name="resources_consumed",
             kind="object",
             fields=_BatchPredictionJob_ResourcesConsumedFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "unmanaged_container_model": ubx.FieldSpec(
             wire_name="unmanaged_container_model",
             kind="object",
             fields=_BatchPredictionJob_UnmanagedContainerModelFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

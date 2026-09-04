@@ -30,11 +30,6 @@ export interface Hub_SpokeSummary {
   spokeTypeCounts?: Hub_SpokeSummary_SpokeTypeCounts[] | Computed<Hub_SpokeSummary_SpokeTypeCounts[]>;
 }
 
-const Hub_RoutingVpcsFields: FieldMap = {
-  requiredForNewSiteToSiteDataTransferSpokes: "required_for_new_site_to_site_data_transfer_spokes",
-  uri: "uri",
-};
-
 const Hub_SpokeSummary_SpokeStateCountsFields: FieldMap = {
   count: "count",
   state: "state",
@@ -69,8 +64,6 @@ const Hub_SpokeSummaryFields: FieldMap = {
 };
 
 export interface HubConfig {
-  /** Output only. The time the hub was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An optional description of the hub. */
   description?: string | Computed<string>;
   /** Optional. Whether Private Service Connect connection propagation is enabled for the hub. If true, Private Service Connect endpoints in VPC spokes attached to the hub are made accessible to other VPC spokes attached to the hub. The default value is false. */
@@ -83,18 +76,8 @@ export interface HubConfig {
   policyMode?: string | Computed<string>;
   /** Optional. The topology implemented in this hub. Currently, this field is only used when policy_mode = PRESET. The available preset topologies are MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET, the preset_topology defaults to MESH. When policy_mode = CUSTOM, the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED. */
   presetTopology?: string | Computed<string>;
-  /** Output only. The route tables that belong to this hub. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}` This field is read-only. Network Connectivity Center automatically populates it based on the route tables nested under the hub. */
-  routeTables?: string[] | Computed<string[]>;
-  /** Output only. The VPC networks associated with this hub's spokes. This field is read-only. Network Connectivity Center automatically populates it based on the set of spokes attached to the hub. */
-  routingVpcs?: Hub_RoutingVpcs[] | Computed<Hub_RoutingVpcs[]>;
   /** Summarizes information about the spokes associated with a hub. The summary includes a count of spokes according to type and according to state. If any spokes are inactive, the summary also lists the reasons they are inactive, including a count for each reason. */
   spokeSummary?: Hub_SpokeSummary | Computed<Hub_SpokeSummary>;
-  /** Output only. The current lifecycle state of this hub. */
-  state?: string | Computed<string>;
-  /** Output only. The Google-generated UUID for the hub. This value is unique across all hub resources. If a hub is deleted and another with the same name is created, the new hub is assigned a different unique_id. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. The time the hub was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface HubAttrs {
@@ -129,26 +112,16 @@ export interface HubAttrs {
 export const Hub: ResourceBinding<HubConfig, HubAttrs> = {
   wireType: "google_networkconnectivity_hub",
   fields: {
-    createTime: "create_time",
     description: "description",
     exportPsc: "export_psc",
     labels: "labels",
     name: "name",
     policyMode: "policy_mode",
     presetTopology: "preset_topology",
-    routeTables: "route_tables",
-    routingVpcs: {
-      wireName: "routing_vpcs",
-      kind: "list",
-      fields: Hub_RoutingVpcsFields,
-    },
     spokeSummary: {
       wireName: "spoke_summary",
       kind: "object",
       fields: Hub_SpokeSummaryFields,
     },
-    state: "state",
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

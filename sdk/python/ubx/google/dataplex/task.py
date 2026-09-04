@@ -240,8 +240,6 @@ _Task_TriggerSpecFields = {
 
 @dataclasses.dataclass
 class TaskConfig:
-    # Output only. The time when the task was created.
-    create_time: Any = None
     # Optional. Description of the task.
     description: Any = None
     # Optional. User friendly display name.
@@ -252,20 +250,12 @@ class TaskConfig:
     execution_status: Any = None
     # Optional. User-defined labels for the task.
     labels: Any = None
-    # Output only. The relative resource name of the task, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/ tasks/{task_id}.
-    name: Any = None
     # Config for running scheduled notebooks.
     notebook: Any = None
     # User-specified config for running a Spark task.
     spark: Any = None
-    # Output only. Current state of the task.
-    state: Any = None
     # Task scheduling and trigger settings.
     trigger_spec: Any = None
-    # Output only. System generated globally unique ID for the task. This ID will be different if the task is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the task was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TaskAttrs:
@@ -299,7 +289,6 @@ class TaskAttrs:
 Task = ubx.ResourceBinding(
     wire_type="google_dataplex_task",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "execution_spec": ubx.FieldSpec(
@@ -313,7 +302,6 @@ Task = ubx.ResourceBinding(
             fields=_Task_ExecutionStatusFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "notebook": ubx.FieldSpec(
             wire_name="notebook",
             kind="object",
@@ -324,13 +312,10 @@ Task = ubx.ResourceBinding(
             kind="object",
             fields=_Task_SparkFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "trigger_spec": ubx.FieldSpec(
             wire_name="trigger_spec",
             kind="object",
             fields=_Task_TriggerSpecFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -174,10 +174,6 @@ class VmwareNodePoolConfig:
     annotations: Any = None
     # Parameters that describe the configuration of all nodes within a given node pool.
     config: Any = None
-    # Output only. The time at which this node pool was created.
-    create_time: Any = None
-    # Output only. The time at which this node pool was deleted. If the resource is not deleted, this must be empty
-    delete_time: Any = None
     # The display name for the node pool.
     display_name: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
@@ -188,16 +184,8 @@ class VmwareNodePoolConfig:
     node_pool_autoscaling: Any = None
     # Anthos version for the node pool. Defaults to the user cluster version.
     on_prem_version: Any = None
-    # Output only. If set, there are currently changes in flight to the node pool.
-    reconciling: Any = None
-    # Output only. The current state of the node pool.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
-    # Output only. The unique identifier of the node pool.
-    uid: Any = None
-    # Output only. The time at which this node pool was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class VmwareNodePoolAttrs:
@@ -239,8 +227,6 @@ VmwareNodePool = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareNodePool_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -250,14 +236,10 @@ VmwareNodePool = ubx.ResourceBinding(
             fields=_VmwareNodePool_NodePoolAutoscalingFields,
         ),
         "on_prem_version": ubx.FieldSpec(wire_name="on_prem_version"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_VmwareNodePool_StatusFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

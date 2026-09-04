@@ -378,18 +378,12 @@ const V1alphaService_TelemetryConfigFields: FieldMap = {
 };
 
 export interface V1alphaServiceConfig {
-  /** Output only. A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored. */
-  artifactGcsUri?: string | Computed<string>;
-  /** Output only. The time when the metastore service was created. */
-  createTime?: string | Computed<string>;
   /** Immutable. The database type that the Metastore service stores its data. */
   databaseType?: string | Computed<string>;
   /** Optional. Indicates if the dataproc metastore should be protected against accidental deletions. */
   deletionProtection?: boolean | Computed<boolean>;
   /** Encryption settings for the service. */
   encryptionConfig?: V1alphaService_EncryptionConfig | Computed<V1alphaService_EncryptionConfig>;
-  /** Output only. The URI of the endpoint used to access the metastore service. */
-  endpointUri?: string | Computed<string>;
   /** Specifies configuration information specific to running Hive metastore software as the metastore service. */
   hiveMetastoreConfig?: V1alphaService_HiveMetastoreConfig | Computed<V1alphaService_HiveMetastoreConfig>;
   /** User-defined labels for the metastore service. */
@@ -416,20 +410,12 @@ export interface V1alphaServiceConfig {
   scalingConfig?: V1alphaService_ScalingConfig | Computed<V1alphaService_ScalingConfig>;
   /** This specifies the configuration of scheduled backup. */
   scheduledBackup?: V1alphaService_ScheduledBackup | Computed<V1alphaService_ScheduledBackup>;
-  /** Output only. The current state of the metastore service. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current state of the metastore service, if available. */
-  stateMessage?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** Telemetry Configuration for the Dataproc Metastore service. */
   telemetryConfig?: V1alphaService_TelemetryConfig | Computed<V1alphaService_TelemetryConfig>;
   /** Optional. The tier of the service. */
   tier?: string | Computed<string>;
-  /** Output only. The globally unique resource identifier of the metastore service. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the metastore service was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaServiceAttrs {
@@ -490,8 +476,6 @@ export interface V1alphaServiceAttrs {
 export const V1alphaService: ResourceBinding<V1alphaServiceConfig, V1alphaServiceAttrs> = {
   wireType: "google_metastore_v1alpha_service",
   fields: {
-    artifactGcsUri: "artifact_gcs_uri",
-    createTime: "create_time",
     databaseType: "database_type",
     deletionProtection: "deletion_protection",
     encryptionConfig: {
@@ -499,7 +483,6 @@ export const V1alphaService: ResourceBinding<V1alphaServiceConfig, V1alphaServic
       kind: "object",
       fields: V1alphaService_EncryptionConfigFields,
     },
-    endpointUri: "endpoint_uri",
     hiveMetastoreConfig: {
       wireName: "hive_metastore_config",
       kind: "object",
@@ -545,8 +528,6 @@ export const V1alphaService: ResourceBinding<V1alphaServiceConfig, V1alphaServic
       kind: "object",
       fields: V1alphaService_ScheduledBackupFields,
     },
-    state: "state",
-    stateMessage: "state_message",
     tags: "tags",
     telemetryConfig: {
       wireName: "telemetry_config",
@@ -554,7 +535,5 @@ export const V1alphaService: ResourceBinding<V1alphaServiceConfig, V1alphaServic
       fields: V1alphaService_TelemetryConfigFields,
     },
     tier: "tier",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -156,7 +156,6 @@ export interface V3beta1EnvironmentConfig {
   displayName?: string | Computed<string>;
   name?: string | Computed<string>;
   testCasesConfig?: V3beta1Environment_TestCasesConfig | Computed<V3beta1Environment_TestCasesConfig>;
-  updateTime?: string | Computed<string>;
   versionConfigs?: V3beta1Environment_VersionConfigs[] | Computed<V3beta1Environment_VersionConfigs[]>;
   webhookConfig?: V3beta1Environment_WebhookConfig | Computed<V3beta1Environment_WebhookConfig>;
 }
@@ -182,7 +181,6 @@ export const V3beta1Environment: ResourceBinding<V3beta1EnvironmentConfig, V3bet
       kind: "object",
       fields: V3beta1Environment_TestCasesConfigFields,
     },
-    updateTime: "update_time",
     versionConfigs: {
       wireName: "version_configs",
       kind: "list",

@@ -2,18 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface TeamFolderConfig {
-  /** Output only. The timestamp of when the TeamFolder was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The IAM principal identifier of the creator of the TeamFolder. */
-  creatorIamPrincipal?: string | Computed<string>;
   /** Required. The TeamFolder's user-friendly name. */
   displayName?: string | Computed<string>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Identifier. The TeamFolder's name. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp of when the TeamFolder was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TeamFolderAttrs {
@@ -34,11 +26,7 @@ export interface TeamFolderAttrs {
 export const TeamFolder: ResourceBinding<TeamFolderConfig, TeamFolderAttrs> = {
   wireType: "google_dataform_team_folder",
   fields: {
-    createTime: "create_time",
-    creatorIamPrincipal: "creator_iam_principal",
     displayName: "display_name",
-    internalMetadata: "internal_metadata",
     name: "name",
-    updateTime: "update_time",
   },
 };

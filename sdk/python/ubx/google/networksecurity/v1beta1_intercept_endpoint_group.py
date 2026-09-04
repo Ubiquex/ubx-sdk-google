@@ -24,12 +24,6 @@ class V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup:
     # Output only. The connected deployment group's resource name, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/124.
     name: Any = None
 
-_V1beta1InterceptEndpointGroup_AssociationsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "network": ubx.FieldSpec(wire_name="network"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 _V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields = {
     "location": ubx.FieldSpec(wire_name="location"),
     "state": ubx.FieldSpec(wire_name="state"),
@@ -46,12 +40,8 @@ _V1beta1InterceptEndpointGroup_ConnectedDeploymentGroupFields = {
 
 @dataclasses.dataclass
 class V1beta1InterceptEndpointGroupConfig:
-    # Output only. List of associations to this endpoint group.
-    associations: Any = None
     # The endpoint group's view of a connected deployment group.
     connected_deployment_group: Any = None
-    # Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-    create_time: Any = None
     # Optional. User-provided description of the endpoint group. Used as additional context for the endpoint group.
     description: Any = None
     # Required. Immutable. The deployment group that this endpoint group is connected to, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/124.
@@ -60,12 +50,6 @@ class V1beta1InterceptEndpointGroupConfig:
     labels: Any = None
     # Immutable. Identifier. The resource name of this endpoint group, for example: `projects/123456789/locations/global/interceptEndpointGroups/my-eg`. See https://google.aip.dev/122 for more details.
     name: Any = None
-    # Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new association to the group). See https://google.aip.dev/128.
-    reconciling: Any = None
-    # Output only. The current state of the endpoint group. See https://google.aip.dev/216.
-    state: Any = None
-    # Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1InterceptEndpointGroupAttrs:
@@ -93,23 +77,14 @@ class V1beta1InterceptEndpointGroupAttrs:
 V1beta1InterceptEndpointGroup = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_intercept_endpoint_group",
     fields={
-        "associations": ubx.FieldSpec(
-            wire_name="associations",
-            kind="list",
-            fields=_V1beta1InterceptEndpointGroup_AssociationsFields,
-        ),
         "connected_deployment_group": ubx.FieldSpec(
             wire_name="connected_deployment_group",
             kind="object",
             fields=_V1beta1InterceptEndpointGroup_ConnectedDeploymentGroupFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "intercept_deployment_group": ubx.FieldSpec(wire_name="intercept_deployment_group"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

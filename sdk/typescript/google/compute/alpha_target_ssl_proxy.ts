@@ -4,14 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface AlphaTargetSslProxyConfig {
   /** URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}. */
   certificateMap?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE. */
@@ -55,10 +51,8 @@ export const AlphaTargetSslProxy: ResourceBinding<AlphaTargetSslProxyConfig, Alp
   wireType: "google_compute_alpha_target_ssl_proxy",
   fields: {
     certificateMap: "certificate_map",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     id: "id",
-    kind: "kind",
     name: "name",
     proxyHeader: "proxy_header",
     selfLink: "self_link",

@@ -26,12 +26,6 @@ class V1beta1Index_IndexStats:
     # Output only. The number of dense vectors in the Index.
     vectors_count: Any = None
 
-_V1beta1Index_DeployedIndexesFields = {
-    "deployed_index_id": ubx.FieldSpec(wire_name="deployed_index_id"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "index_endpoint": ubx.FieldSpec(wire_name="index_endpoint"),
-}
-
 _V1beta1Index_EncryptionSpecFields = {
     "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
 }
@@ -44,10 +38,6 @@ _V1beta1Index_IndexStatsFields = {
 
 @dataclasses.dataclass
 class V1beta1IndexConfig:
-    # Output only. Timestamp when this Index was created.
-    create_time: Any = None
-    # Output only. The pointers to DeployedIndexes created from this Index. An Index can be only deleted if all its DeployedIndexes had been undeployed first.
-    deployed_indexes: Any = None
     # The description of the Index.
     description: Any = None
     # Required. The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -66,14 +56,6 @@ class V1beta1IndexConfig:
     metadata: Any = None
     # Immutable. Points to a YAML file stored on Google Cloud Storage describing additional information about the Index, that is specific to it. Unset if the Index does not have any additional information. The schema is defined as an OpenAPI 3.0.2 [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject). Note: The URI given on output will be immutable and probably different, including the URI scheme, than the one given on input. The output URI will point to a location where the user only has a read access.
     metadata_schema_uri: Any = None
-    # Output only. The resource name of the Index.
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this Index was most recently updated. This also includes any update to the contents of the Index. Note that Operations working on this Index may have their Operations.metadata.generic_metadata.update_time a little after the value of this timestamp, yet that does not mean their results are not already reflected in the Index. Result of any successfully completed Operation on the Index is reflected in it.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1IndexAttrs:
@@ -111,12 +93,6 @@ class V1beta1IndexAttrs:
 V1beta1Index = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_index",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "deployed_indexes": ubx.FieldSpec(
-            wire_name="deployed_indexes",
-            kind="list",
-            fields=_V1beta1Index_DeployedIndexesFields,
-        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -134,9 +110,5 @@ V1beta1Index = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "metadata_schema_uri": ubx.FieldSpec(wire_name="metadata_schema_uri"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

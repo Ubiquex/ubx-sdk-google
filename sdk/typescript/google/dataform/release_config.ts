@@ -100,22 +100,6 @@ const ReleaseConfig_CodeCompilationConfigFields: FieldMap = {
   vars: "vars",
 };
 
-const ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const ReleaseConfig_RecentScheduledReleaseRecordsFields: FieldMap = {
-  compilationResult: "compilation_result",
-  errorStatus: {
-    wireName: "error_status",
-    kind: "object",
-    fields: ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields,
-  },
-  releaseTime: "release_time",
-};
-
 export interface ReleaseConfigConfig {
   /** Configures various aspects of Dataform code compilation. */
   codeCompilationConfig?: ReleaseConfig_CodeCompilationConfig | Computed<ReleaseConfig_CodeCompilationConfig>;
@@ -125,12 +109,8 @@ export interface ReleaseConfigConfig {
   disabled?: boolean | Computed<boolean>;
   /** Required. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1` */
   gitCommitish?: string | Computed<string>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Identifier. The release config's name. */
   name?: string | Computed<string>;
-  /** Output only. Records of the 10 most recent scheduled release attempts, ordered in descending order of `release_time`. Updated whenever automatic creation of a compilation result is triggered by cron_schedule. */
-  recentScheduledReleaseRecords?: ReleaseConfig_RecentScheduledReleaseRecords[] | Computed<ReleaseConfig_RecentScheduledReleaseRecords[]>;
   /** Optional. The name of the currently released compilation result for this release config. This value is updated when a compilation result is automatically created from this release config (using cron_schedule), or when this resource is updated by API call (perhaps to roll back to an earlier release). The compilation result must have been created using this release config. Must be in the format `projects/* /locations/* /repositories/* /compilationResults/*`. */
   releaseCompilationResult?: string | Computed<string>;
   /** Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`. */
@@ -169,13 +149,7 @@ export const ReleaseConfig: ResourceBinding<ReleaseConfigConfig, ReleaseConfigAt
     cronSchedule: "cron_schedule",
     disabled: "disabled",
     gitCommitish: "git_commitish",
-    internalMetadata: "internal_metadata",
     name: "name",
-    recentScheduledReleaseRecords: {
-      wireName: "recent_scheduled_release_records",
-      kind: "list",
-      fields: ReleaseConfig_RecentScheduledReleaseRecordsFields,
-    },
     releaseCompilationResult: "release_compilation_result",
     timeZone: "time_zone",
   },

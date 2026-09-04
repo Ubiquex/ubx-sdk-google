@@ -49,8 +49,6 @@ class V1alphaCannedQueryConfig:
     display_name: Any = None
     # Whether this canned query is enabled.
     enabled: Any = None
-    # Output only. Whether this is a Google-defined, read-only canned query.
-    google_defined: Any = None
     # Optional. The translations of the text attributes. The keys should be BCP-47 language codes.
     localized_texts: Any = None
     # Immutable. Resource name of the canned query. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}/cannedQueries/{canned_query}` It must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -85,7 +83,6 @@ V1alphaCannedQuery = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enabled": ubx.FieldSpec(wire_name="enabled"),
-        "google_defined": ubx.FieldSpec(wire_name="google_defined"),
         "localized_texts": ubx.FieldSpec(
             wire_name="localized_texts",
             kind="map",

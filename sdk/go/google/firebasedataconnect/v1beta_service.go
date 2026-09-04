@@ -4,13 +4,13 @@ package firebasedataconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaService_Connectors_ClientCache struct {
-	EntityIdIncluded any
+	EntityIdIncluded        any
 	StrictValidationEnabled any
 }
 
 type V1betaService_Connectors_Source_Files struct {
 	Content any
-	Path any
+	Path    any
 }
 
 type V1betaService_Connectors_Source struct {
@@ -20,180 +20,80 @@ type V1betaService_Connectors_Source struct {
 type V1betaService_Connectors struct {
 	Annotations any
 	ClientCache any
-	CreateTime any
+	CreateTime  any
 	DisplayName any
-	Etag any
-	Labels any
-	Name any
+	Etag        any
+	Labels      any
+	Name        any
 	Reconciling any
-	Source any
-	Uid any
-	UpdateTime any
+	Source      any
+	Uid         any
+	UpdateTime  any
 }
 
 type V1betaService_Schemas_Datasources_HttpGraphql struct {
 	Timeout any
-	Uri any
+	Uri     any
 }
 
 type V1betaService_Schemas_Datasources_Postgresql_CloudSql struct {
-	Edition any
+	Edition  any
 	Instance any
 }
 
 type V1betaService_Schemas_Datasources_Postgresql struct {
-	CloudSql any
-	Database any
-	Ephemeral any
-	Schema any
-	SchemaMigration any
+	CloudSql         any
+	Database         any
+	Ephemeral        any
+	Schema           any
+	SchemaMigration  any
 	SchemaValidation any
-	Unlinked any
+	Unlinked         any
 }
 
 type V1betaService_Schemas_Datasources struct {
 	HttpGraphql any
-	Postgresql any
+	Postgresql  any
 }
 
 type V1betaService_Schemas struct {
 	Annotations any
-	CreateTime any
+	CreateTime  any
 	Datasources any
 	DisplayName any
-	Etag any
-	Labels any
-	Name any
+	Etag        any
+	Labels      any
+	Name        any
 	Reconciling any
-	Source any
-	Uid any
-	UpdateTime any
+	Source      any
+	Uid         any
+	UpdateTime  any
 }
 
-var V1betaService_Connectors_ClientCacheFields = ubx.FieldMap{
-		"EntityIdIncluded": ubx.FieldSpec{WireName: "entity_id_included"},
-		"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
-	}
-
 var V1betaService_Connectors_Source_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+}
 
 var V1betaService_Connectors_SourceFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: V1betaService_Connectors_Source_FilesFields,
-		},
-	}
-
-var V1betaService_ConnectorsFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"ClientCache": ubx.FieldSpec{
-			WireName: "client_cache",
-			Kind: "object",
-			Fields: V1betaService_Connectors_ClientCacheFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V1betaService_Connectors_SourceFields,
-		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
-
-var V1betaService_Schemas_Datasources_HttpGraphqlFields = ubx.FieldMap{
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
-
-var V1betaService_Schemas_Datasources_Postgresql_CloudSqlFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-	}
-
-var V1betaService_Schemas_Datasources_PostgresqlFields = ubx.FieldMap{
-		"CloudSql": ubx.FieldSpec{
-			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: V1betaService_Schemas_Datasources_Postgresql_CloudSqlFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Ephemeral": ubx.FieldSpec{WireName: "ephemeral"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SchemaMigration": ubx.FieldSpec{WireName: "schema_migration"},
-		"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
-		"Unlinked": ubx.FieldSpec{WireName: "unlinked"},
-	}
-
-var V1betaService_Schemas_DatasourcesFields = ubx.FieldMap{
-		"HttpGraphql": ubx.FieldSpec{
-			WireName: "http_graphql",
-			Kind: "object",
-			Fields: V1betaService_Schemas_Datasources_HttpGraphqlFields,
-		},
-		"Postgresql": ubx.FieldSpec{
-			WireName: "postgresql",
-			Kind: "object",
-			Fields: V1betaService_Schemas_Datasources_PostgresqlFields,
-		},
-	}
-
-var V1betaService_SchemasFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Datasources": ubx.FieldSpec{
-			WireName: "datasources",
-			Kind: "list",
-			Fields: V1betaService_Schemas_DatasourcesFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V1betaService_Connectors_SourceFields,
-		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   V1betaService_Connectors_Source_FilesFields,
+	},
+}
 
 type V1betaServiceConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
 	Annotations any
-	// Output only. The list of connectors in this service.
-	Connectors any
-	// Output only. [Output only] Create time stamp.
-	CreateTime any
 	// Optional. Mutable human-readable name. 63 character limit.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154)
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Identifier. The relative resource name of the Firebase SQL Connect service, in the format: ``` projects/{project}/locations/{location}/services/{service} ``` Note that the service ID is specific to Firebase SQL Connect and does not correspond to any of the instance IDs of the underlying data source connections.
 	Name any
-	// Output only. A field that if true, indicates that the system is working update the service.
-	Reconciling any
-	// Output only. The list of schemas in this service.
-	Schemas any
 	// Used to represent a set of source files.
 	Source any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. [Output only] Update time stamp.
-	UpdateTime any
 }
 
 type V1betaServiceAttrs struct {
@@ -227,28 +127,13 @@ var V1betaService = ubx.ResourceBinding{
 	WireType: "google_firebasedataconnect_v1beta_service",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Connectors": ubx.FieldSpec{
-			WireName: "connectors",
-			Kind: "list",
-			Fields: V1betaService_ConnectorsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Schemas": ubx.FieldSpec{
-			WireName: "schemas",
-			Kind: "list",
-			Fields: V1betaService_SchemasFields,
-		},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: V1betaService_Connectors_SourceFields,
+			Kind:     "object",
+			Fields:   V1betaService_Connectors_SourceFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -241,14 +241,6 @@ _V1alpha1Stream_DestinationConfigFields = {
     ),
 }
 
-_V1alpha1Stream_ErrorsFields = {
-    "details": ubx.FieldSpec(wire_name="details"),
-    "error_time": ubx.FieldSpec(wire_name="error_time"),
-    "error_uuid": ubx.FieldSpec(wire_name="error_uuid"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-}
-
 _V1alpha1Stream_SourceConfig_MysqlSourceConfigFields = {
     "allowlist": ubx.FieldSpec(
         wire_name="allowlist",
@@ -296,26 +288,18 @@ class V1alpha1StreamConfig:
     backfill_all: Any = None
     # Backfill strategy to disable automatic backfill for the Stream's objects.
     backfill_none: Any = None
-    # Output only. The creation time of the stream.
-    create_time: Any = None
     # Immutable. A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be encrypted using an internal Stream-specific encryption key provisioned through KMS.
     customer_managed_encryption_key: Any = None
     # The configuration of the stream destination.
     destination_config: Any = None
     # Required. Display name.
     display_name: Any = None
-    # Output only. Errors on the Stream.
-    errors: Any = None
     # Labels.
     labels: Any = None
-    # Output only. The stream's name.
-    name: Any = None
     # The configuration of the stream source.
     source_config: Any = None
     # The state of the stream.
     state: Any = None
-    # Output only. The last update time of the stream.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1StreamAttrs:
@@ -353,7 +337,6 @@ V1alpha1Stream = ubx.ResourceBinding(
             fields=_V1alpha1Stream_BackfillAllFields,
         ),
         "backfill_none": ubx.FieldSpec(wire_name="backfill_none"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_managed_encryption_key": ubx.FieldSpec(wire_name="customer_managed_encryption_key"),
         "destination_config": ubx.FieldSpec(
             wire_name="destination_config",
@@ -361,19 +344,12 @@ V1alpha1Stream = ubx.ResourceBinding(
             fields=_V1alpha1Stream_DestinationConfigFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "errors": ubx.FieldSpec(
-            wire_name="errors",
-            kind="list",
-            fields=_V1alpha1Stream_ErrorsFields,
-        ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "source_config": ubx.FieldSpec(
             wire_name="source_config",
             kind="object",
             fields=_V1alpha1Stream_SourceConfigFields,
         ),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

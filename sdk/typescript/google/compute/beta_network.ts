@@ -61,54 +61,6 @@ const BetaNetwork_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const BetaNetwork_Peerings_ConnectionStatus_ConsensusStateFields: FieldMap = {
-  deleteStatus: "delete_status",
-  updateStatus: "update_status",
-};
-
-const BetaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields: FieldMap = {
-  exportCustomRoutesToPeer: "export_custom_routes_to_peer",
-  exportSubnetRoutesWithPublicIpToPeer: "export_subnet_routes_with_public_ip_to_peer",
-  importCustomRoutesFromPeer: "import_custom_routes_from_peer",
-  importSubnetRoutesWithPublicIpFromPeer: "import_subnet_routes_with_public_ip_from_peer",
-  stackType: "stack_type",
-};
-
-const BetaNetwork_Peerings_ConnectionStatusFields: FieldMap = {
-  consensusState: {
-    wireName: "consensus_state",
-    kind: "object",
-    fields: BetaNetwork_Peerings_ConnectionStatus_ConsensusStateFields,
-  },
-  trafficConfiguration: {
-    wireName: "traffic_configuration",
-    kind: "object",
-    fields: BetaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields,
-  },
-  updateStrategy: "update_strategy",
-};
-
-const BetaNetwork_PeeringsFields: FieldMap = {
-  autoCreateRoutes: "auto_create_routes",
-  connectionStatus: {
-    wireName: "connection_status",
-    kind: "object",
-    fields: BetaNetwork_Peerings_ConnectionStatusFields,
-  },
-  exchangeSubnetRoutes: "exchange_subnet_routes",
-  exportCustomRoutes: "export_custom_routes",
-  exportSubnetRoutesWithPublicIp: "export_subnet_routes_with_public_ip",
-  importCustomRoutes: "import_custom_routes",
-  importSubnetRoutesWithPublicIp: "import_subnet_routes_with_public_ip",
-  name: "name",
-  network: "network",
-  peerMtu: "peer_mtu",
-  stackType: "stack_type",
-  state: "state",
-  stateDetails: "state_details",
-  updateStrategy: "update_strategy",
-};
-
 const BetaNetwork_RoutingConfigFields: FieldMap = {
   bgpAlwaysCompareMed: "bgp_always_compare_med",
   bgpBestPathSelectionMode: "bgp_best_path_selection_mode",
@@ -121,24 +73,16 @@ const BetaNetwork_RoutingConfigFields: FieldMap = {
 export interface BetaNetworkConfig {
   /** Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method. */
   autoCreateSubnetworks?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this field when you create the resource. */
   description?: string | Computed<string>;
   /** Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. . */
   enableUlaInternalIpv6?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] URL of the firewall policy the network is associated with. */
-  firewallPolicy?: string | Computed<string>;
   /** [Output Only] The gateway address for default routing out of the network, selected by Google Cloud. */
   gatewayIpv4?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
   /** When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. . */
   internalIpv6Range?: string | Computed<string>;
   /** Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created. */
   ipv4Range?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#network for networks. */
-  kind?: string | Computed<string>;
   /** Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460. */
   mtu?: number | Computed<number>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
@@ -149,14 +93,10 @@ export interface BetaNetworkConfig {
   networkProfile?: string | Computed<string>;
   /** Additional network parameters. */
   params?: BetaNetwork_Params | Computed<BetaNetwork_Params>;
-  /** Output only. [Output Only] A list of network peerings for the resource. */
-  peerings?: BetaNetwork_Peerings[] | Computed<BetaNetwork_Peerings[]>;
   /** A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide. */
   routingConfig?: BetaNetwork_RoutingConfig | Computed<BetaNetwork_RoutingConfig>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network. */
   subnetworks?: string[] | Computed<string[]>;
 }
@@ -208,15 +148,11 @@ export const BetaNetwork: ResourceBinding<BetaNetworkConfig, BetaNetworkAttrs> =
   wireType: "google_compute_beta_network",
   fields: {
     autoCreateSubnetworks: "auto_create_subnetworks",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     enableUlaInternalIpv6: "enable_ula_internal_ipv6",
-    firewallPolicy: "firewall_policy",
     gatewayIpv4: "gateway_ipv4",
-    id: "id",
     internalIpv6Range: "internal_ipv6_range",
     ipv4Range: "ipv4_range",
-    kind: "kind",
     mtu: "mtu",
     name: "name",
     networkFirewallPolicyEnforcementOrder: "network_firewall_policy_enforcement_order",
@@ -226,18 +162,12 @@ export const BetaNetwork: ResourceBinding<BetaNetworkConfig, BetaNetworkAttrs> =
       kind: "object",
       fields: BetaNetwork_ParamsFields,
     },
-    peerings: {
-      wireName: "peerings",
-      kind: "list",
-      fields: BetaNetwork_PeeringsFields,
-    },
     routingConfig: {
       wireName: "routing_config",
       kind: "object",
       fields: BetaNetwork_RoutingConfigFields,
     },
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     subnetworks: "subnetworks",
   },
 };

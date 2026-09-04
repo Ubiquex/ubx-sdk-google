@@ -30,10 +30,6 @@ export interface V1alpha1SpokeConfig {
   linkedVpnTunnels?: string[] | Computed<string[]>;
   /** Immutable. The name of a Spoke resource. */
   name?: string | Computed<string>;
-  /** Output only. The current lifecycle state of this Hub. */
-  state?: string | Computed<string>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Spoke resources. If a Spoke resource is deleted and another with the same name is created, it gets a different unique_id. */
-  uniqueId?: string | Computed<string>;
   /** The time when the Spoke was updated. */
   updateTime?: string | Computed<string>;
 }
@@ -78,8 +74,6 @@ export const V1alpha1Spoke: ResourceBinding<V1alpha1SpokeConfig, V1alpha1SpokeAt
     },
     linkedVpnTunnels: "linked_vpn_tunnels",
     name: "name",
-    state: "state",
-    uniqueId: "unique_id",
     updateTime: "update_time",
   },
 };

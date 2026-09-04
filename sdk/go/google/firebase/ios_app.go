@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IosAppConfig struct {
 	// The globally unique, Google-assigned identifier (UID) for the Firebase API key associated with the `IosApp`. Be aware that this value is the UID of the API key, _not_ the [`keyString`](https://cloud.google.com/api-keys/docs/reference/rest/v2/projects.locations.keys#Key.FIELDS.key_string) of the API key. The `keyString` is the value that can be found in the App's [configuration artifact](../../rest/v1beta1/projects.iosApps/getConfig). If `api_key_id` is not set in requests to [`iosApps.Create`](../../rest/v1beta1/projects.iosApps/create), then Firebase automatically associates an `api_key_id` with the `IosApp`. This auto-associated key may be an existing valid key or, if no valid key exists, a new one will be provisioned. In patch requests, `api_key_id` cannot be set to an empty value, and the new UID must have no restrictions or only have restrictions that are valid for the associated `IosApp`. We recommend using the [Google Cloud Console](https://console.cloud.google.com/apis/credentials) to manage API keys.
 	ApiKeyId any
-	// Output only. Immutable. The globally unique, Firebase-assigned identifier for the `IosApp`. This identifier should be treated as an opaque token, as the data format is not specified.
-	AppId any
 	// The automatically generated Apple ID assigned to the iOS app by Apple in the iOS App Store.
 	AppStoreId any
 	// Immutable. The canonical bundle ID of the iOS app as it would appear in the iOS AppStore.
@@ -16,14 +14,8 @@ type IosAppConfig struct {
 	DisplayName any
 	// This checksum is computed by the server based on the value of other fields, and it may be sent with update requests to ensure the client has an up-to-date value before proceeding. Learn more about `etag` in Google's [AIP-154 standard](https://google.aip.dev/154#declarative-friendly-resources). This etag is strongly validated.
 	Etag any
-	// Output only. If the App has been removed from the Project, this is the timestamp of when the App is considered expired and will be permanently deleted. After this time, the App cannot be undeleted (that is, restored to the Project). This value is only provided if the App is in the `DELETED` state.
-	ExpireTime any
 	// The resource name of the IosApp, in the format: projects/PROJECT_IDENTIFIER /iosApps/APP_ID * PROJECT_IDENTIFIER: the parent Project's [`ProjectNumber`](../projects#FirebaseProject.FIELDS.project_number) ***(recommended)*** or its [`ProjectId`](../projects#FirebaseProject.FIELDS.project_id). Learn more about using project identifiers in Google's [AIP 2510 standard](https://google.aip.dev/cloud/2510). Note that the value for PROJECT_IDENTIFIER in any response body will be the `ProjectId`. * APP_ID: the globally unique, Firebase-assigned identifier for the App (see [`appId`](../projects.iosApps#IosApp.FIELDS.app_id)).
 	Name any
-	// Output only. Immutable. A user-assigned unique identifier of the parent FirebaseProject for the `IosApp`.
-	ProjectId any
-	// Output only. The lifecycle state of the App.
-	State any
 	// The Apple Developer Team ID associated with the App in the App Store.
 	TeamId any
 }
@@ -56,16 +48,12 @@ type IosAppAttrs struct {
 var IosApp = ubx.ResourceBinding{
 	WireType: "google_firebase_ios_app",
 	Fields: ubx.FieldMap{
-		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"AppStoreId": ubx.FieldSpec{WireName: "app_store_id"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+		"ApiKeyId":    ubx.FieldSpec{WireName: "api_key_id"},
+		"AppStoreId":  ubx.FieldSpec{WireName: "app_store_id"},
+		"BundleId":    ubx.FieldSpec{WireName: "bundle_id"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"TeamId":      ubx.FieldSpec{WireName: "team_id"},
 	},
 }

@@ -334,20 +334,6 @@ _V1beta1Cluster_CrossClusterReplicationConfigFields = {
     "update_time": ubx.FieldSpec(wire_name="update_time"),
 }
 
-_V1beta1Cluster_DiscoveryEndpoints_PscConfigFields = {
-    "network": ubx.FieldSpec(wire_name="network"),
-}
-
-_V1beta1Cluster_DiscoveryEndpointsFields = {
-    "address": ubx.FieldSpec(wire_name="address"),
-    "port": ubx.FieldSpec(wire_name="port"),
-    "psc_config": ubx.FieldSpec(
-        wire_name="psc_config",
-        kind="object",
-        fields=_V1beta1Cluster_DiscoveryEndpoints_PscConfigFields,
-    ),
-}
-
 _V1beta1Cluster_EncryptionInfoFields = {
     "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
     "kms_key_primary_state": ubx.FieldSpec(wire_name="kms_key_primary_state"),
@@ -410,9 +396,8 @@ _V1beta1Cluster_PersistenceConfigFields = {
     ),
 }
 
-_V1beta1Cluster_PscServiceAttachmentsFields = {
-    "connection_type": ubx.FieldSpec(wire_name="connection_type"),
-    "service_attachment": ubx.FieldSpec(wire_name="service_attachment"),
+_V1beta1Cluster_DiscoveryEndpoints_PscConfigFields = {
+    "network": ubx.FieldSpec(wire_name="network"),
 }
 
 _V1beta1Cluster_StateInfo_UpdateInfoFields = {
@@ -439,8 +424,6 @@ _V1beta1Cluster_ZoneDistributionConfigFields = {
 class V1beta1ClusterConfig:
     # Optional. The ACL policy to be applied to the cluster.
     acl_policy: Any = None
-    # Optional. Output only. Deprecated: Indicates whether the ACL rules applied to the cluster are in sync.
-    acl_policy_in_sync: Any = None
     # Details of the applied ACL policy.
     acl_policy_info: Any = None
     # Optional. Immutable. Deprecated, do not use.
@@ -451,22 +434,12 @@ class V1beta1ClusterConfig:
     authorization_mode: Any = None
     # The automated backup config for a cluster.
     automated_backup_config: Any = None
-    # Output only. This field is used to determine the available maintenance versions for the self service update.
-    available_maintenance_versions: Any = None
-    # Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection}
-    backup_collection: Any = None
     # Optional. A list of cluster endpoints.
     cluster_endpoints: Any = None
-    # Output only. The timestamp associated with the cluster creation request.
-    create_time: Any = None
     # Cross cluster replication config.
     cross_cluster_replication_config: Any = None
     # Optional. The delete operation will fail when the value is set to true.
     deletion_protection_enabled: Any = None
-    # Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
-    discovery_endpoints: Any = None
-    # Output only. This field represents the actual maintenance version of the cluster.
-    effective_maintenance_version: Any = None
     # EncryptionInfo describes the encryption information of a cluster or a backup.
     encryption_info: Any = None
     # Backups stored in Cloud Storage buckets. The Cloud Storage buckets need to be the same region as the clusters.
@@ -491,24 +464,14 @@ class V1beta1ClusterConfig:
     ondemand_maintenance: Any = None
     # Configuration of the persistence functionality.
     persistence_config: Any = None
-    # Output only. Precise value of redis memory size in GB for the entire cluster.
-    precise_size_gb: Any = None
     # Optional. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
     psc_configs: Any = None
-    # Output only. The list of PSC connections that are auto-created through service connectivity automation.
-    psc_connections: Any = None
-    # Output only. Service attachment details to configure Psc connections
-    psc_service_attachments: Any = None
     # Optional. Key/Value pairs of customer overrides for mutable Redis Configs
     redis_configs: Any = None
     # Optional. The number of replica nodes per shard.
     replica_count: Any = None
     # Optional. Input only. Rotate the server certificates.
     rotate_server_certificate: Any = None
-    # Optional. Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Optional. Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Optional. Server CA mode for the cluster.
     server_ca_mode: Any = None
     # Optional. Customer-managed CA pool for the cluster. Only applicable for BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA. Format: "projects/{project}/locations/{region}/caPools/{ca_pool}".
@@ -517,16 +480,10 @@ class V1beta1ClusterConfig:
     shard_count: Any = None
     # Optional. Input only. Simulate a maintenance event.
     simulate_maintenance_event: Any = None
-    # Output only. Redis memory size in GB for the entire cluster rounded up to the next integer.
-    size_gb: Any = None
-    # Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED
-    state: Any = None
     # Represents additional information about the state of the cluster.
     state_info: Any = None
     # Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster.
     transit_encryption_mode: Any = None
-    # Output only. System assigned, unique identifier for the cluster.
-    uid: Any = None
     # Zone distribution config for allocation of cluster resources.
     zone_distribution_config: Any = None
 
@@ -629,7 +586,6 @@ V1beta1Cluster = ubx.ResourceBinding(
     wire_type="google_redis_v1beta1_cluster",
     fields={
         "acl_policy": ubx.FieldSpec(wire_name="acl_policy"),
-        "acl_policy_in_sync": ubx.FieldSpec(wire_name="acl_policy_in_sync"),
         "acl_policy_info": ubx.FieldSpec(
             wire_name="acl_policy_info",
             kind="object",
@@ -643,26 +599,17 @@ V1beta1Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Cluster_AutomatedBackupConfigFields,
         ),
-        "available_maintenance_versions": ubx.FieldSpec(wire_name="available_maintenance_versions"),
-        "backup_collection": ubx.FieldSpec(wire_name="backup_collection"),
         "cluster_endpoints": ubx.FieldSpec(
             wire_name="cluster_endpoints",
             kind="list",
             fields=_V1beta1Cluster_ClusterEndpointsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "cross_cluster_replication_config": ubx.FieldSpec(
             wire_name="cross_cluster_replication_config",
             kind="object",
             fields=_V1beta1Cluster_CrossClusterReplicationConfigFields,
         ),
         "deletion_protection_enabled": ubx.FieldSpec(wire_name="deletion_protection_enabled"),
-        "discovery_endpoints": ubx.FieldSpec(
-            wire_name="discovery_endpoints",
-            kind="list",
-            fields=_V1beta1Cluster_DiscoveryEndpointsFields,
-        ),
-        "effective_maintenance_version": ubx.FieldSpec(wire_name="effective_maintenance_version"),
         "encryption_info": ubx.FieldSpec(
             wire_name="encryption_info",
             kind="object",
@@ -699,40 +646,24 @@ V1beta1Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Cluster_PersistenceConfigFields,
         ),
-        "precise_size_gb": ubx.FieldSpec(wire_name="precise_size_gb"),
         "psc_configs": ubx.FieldSpec(
             wire_name="psc_configs",
             kind="list",
             fields=_V1beta1Cluster_DiscoveryEndpoints_PscConfigFields,
         ),
-        "psc_connections": ubx.FieldSpec(
-            wire_name="psc_connections",
-            kind="list",
-            fields=_V1beta1Cluster_ClusterEndpoints_Connections_PscConnectionFields,
-        ),
-        "psc_service_attachments": ubx.FieldSpec(
-            wire_name="psc_service_attachments",
-            kind="list",
-            fields=_V1beta1Cluster_PscServiceAttachmentsFields,
-        ),
         "redis_configs": ubx.FieldSpec(wire_name="redis_configs"),
         "replica_count": ubx.FieldSpec(wire_name="replica_count"),
         "rotate_server_certificate": ubx.FieldSpec(wire_name="rotate_server_certificate"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "server_ca_mode": ubx.FieldSpec(wire_name="server_ca_mode"),
         "server_ca_pool": ubx.FieldSpec(wire_name="server_ca_pool"),
         "shard_count": ubx.FieldSpec(wire_name="shard_count"),
         "simulate_maintenance_event": ubx.FieldSpec(wire_name="simulate_maintenance_event"),
-        "size_gb": ubx.FieldSpec(wire_name="size_gb"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "state_info": ubx.FieldSpec(
             wire_name="state_info",
             kind="object",
             fields=_V1beta1Cluster_StateInfoFields,
         ),
         "transit_encryption_mode": ubx.FieldSpec(wire_name="transit_encryption_mode"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
         "zone_distribution_config": ubx.FieldSpec(
             wire_name="zone_distribution_config",
             kind="object",

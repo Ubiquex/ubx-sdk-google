@@ -10,12 +10,6 @@ export interface V1alpha1HubConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The name of a Hub resource. */
   name?: string | Computed<string>;
-  /** Output only. A list of the URIs of all attached spokes. This field is deprecated and will not be included in future API versions. Call ListSpokes on each region instead. */
-  spokes?: string[] | Computed<string[]>;
-  /** Output only. The current lifecycle state of this Hub. */
-  state?: string | Computed<string>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Hub resources. If a Hub resource is deleted and another with the same name is created, it gets a different unique_id. */
-  uniqueId?: string | Computed<string>;
   /** Time when the Hub was updated. */
   updateTime?: string | Computed<string>;
 }
@@ -46,9 +40,6 @@ export const V1alpha1Hub: ResourceBinding<V1alpha1HubConfig, V1alpha1HubAttrs> =
     description: "description",
     labels: "labels",
     name: "name",
-    spokes: "spokes",
-    state: "state",
-    uniqueId: "unique_id",
     updateTime: "update_time",
   },
 };

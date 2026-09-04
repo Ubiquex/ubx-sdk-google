@@ -136,22 +136,6 @@ const Build_ConfigFields: FieldMap = {
   },
 };
 
-const Build_Errors_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const Build_ErrorsFields: FieldMap = {
-  cloudResource: "cloud_resource",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: Build_Errors_ErrorFields,
-  },
-  errorSource: "error_source",
-};
-
 const Build_Source_Archive_AuthorFields: FieldMap = {
   displayName: "display_name",
   email: "email",
@@ -211,38 +195,16 @@ const Build_SourceFields: FieldMap = {
 export interface BuildConfig {
   /** Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The location of the [Cloud Build logs](https://cloud.google.com/build/docs/view-build-results) for the build process. */
-  buildLogsUri?: string | Computed<string>;
   /** Additional configuration of the backend for this build. */
   config?: Build_Config | Computed<Build_Config>;
-  /** Output only. Time at which the build was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the build was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. The environment name of the backend when this build was created. */
-  environment?: string | Computed<string>;
-  /** Output only. A list of all errors that occurred during an App Hosting build. */
-  errors?: Build_Errors[] | Computed<Build_Errors[]>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
-  /** Output only. The Artifact Registry [container image](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages) URI, used by the Cloud Run [`revision`](https://cloud.google.com/run/docs/reference/rest/v2/projects.locations.services.revisions) for this build. */
-  image?: string | Computed<string>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the build. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/builds/{buildId}`. */
   name?: string | Computed<string>;
-  /** Output only. A field that, if true, indicates that the build has an ongoing LRO. */
-  reconciling?: boolean | Computed<boolean>;
   /** The source for the build. */
   source?: Build_Source | Computed<Build_Source>;
-  /** Output only. The state of the build. */
-  state?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the build was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BuildAttrs {
@@ -286,33 +248,18 @@ export const Build: ResourceBinding<BuildConfig, BuildAttrs> = {
   wireType: "google_firebaseapphosting_build",
   fields: {
     annotations: "annotations",
-    buildLogsUri: "build_logs_uri",
     config: {
       wireName: "config",
       kind: "object",
       fields: Build_ConfigFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
-    environment: "environment",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: Build_ErrorsFields,
-    },
-    etag: "etag",
-    image: "image",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     source: {
       wireName: "source",
       kind: "object",
       fields: Build_SourceFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

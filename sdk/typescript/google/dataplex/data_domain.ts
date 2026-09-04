@@ -41,8 +41,6 @@ const DataDomain_PolicyMemberFields: FieldMap = {
 export interface DataDomainConfig {
   /** Business contacts part of business context of a Data Domain. Corresponds to the Contacts Aspect in Dataplex Universal Catalog. */
   contacts?: DataDomain_Contacts | Computed<DataDomain_Contacts>;
-  /** Output only. The time at which the DataDomain was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description of the DataDomain. */
   description?: string | Computed<string>;
   /** Required. User-friendly display name. */
@@ -55,10 +53,6 @@ export interface DataDomainConfig {
   parentDataDomain?: string | Computed<string>;
   /** Output-only policy member strings of a Google Cloud resource's built-in identity. */
   policyMember?: DataDomain_PolicyMember | Computed<DataDomain_PolicyMember>;
-  /** Output only. System-generated globally unique ID for the DataDomain. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which the DataDomain was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DataDomainAttrs {
@@ -92,7 +86,6 @@ export const DataDomain: ResourceBinding<DataDomainConfig, DataDomainAttrs> = {
       kind: "object",
       fields: DataDomain_ContactsFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     labels: "labels",
@@ -103,7 +96,5 @@ export const DataDomain: ResourceBinding<DataDomainConfig, DataDomainAttrs> = {
       kind: "object",
       fields: DataDomain_PolicyMemberFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

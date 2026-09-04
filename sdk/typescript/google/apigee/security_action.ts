@@ -79,8 +79,6 @@ export interface SecurityActionConfig {
   apiProxies?: string[] | Computed<string[]>;
   /** The following are a list of conditions. A valid SecurityAction must contain at least one condition. Within a condition, each element is ORed. Across conditions elements are ANDed. For example if a SecurityAction has the following: ip_address_ranges: ["ip1", "ip2"] and bot_reasons: ["Flooder", "Robot Abuser"] then this is interpreted as: enforce the action if the incoming request has ((ip_address_ranges = "ip1" OR ip_address_ranges = "ip2") AND (bot_reasons="Flooder" OR bot_reasons="Robot Abuser")). Conditions other than ip_address_ranges and bot_reasons cannot be ANDed. */
   conditionConfig?: SecurityAction_ConditionConfig | Computed<SecurityAction_ConditionConfig>;
-  /** Output only. The create time for this SecurityAction. */
-  createTime?: string | Computed<string>;
   /** Message that should be set in case of a Deny Action. */
   deny?: SecurityAction_Deny | Computed<SecurityAction_Deny>;
   /** Optional. An optional user provided description of the SecurityAction. */
@@ -95,8 +93,6 @@ export interface SecurityActionConfig {
   state?: string | Computed<string>;
   /** Input only. The TTL for this SecurityAction. */
   ttl?: string | Computed<string>;
-  /** Output only. The update time for this SecurityAction. This reflects when this SecurityAction changed states. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SecurityActionAttrs {
@@ -136,7 +132,6 @@ export const SecurityAction: ResourceBinding<SecurityActionConfig, SecurityActio
       kind: "object",
       fields: SecurityAction_ConditionConfigFields,
     },
-    createTime: "create_time",
     deny: {
       wireName: "deny",
       kind: "object",
@@ -152,6 +147,5 @@ export const SecurityAction: ResourceBinding<SecurityActionConfig, SecurityActio
     name: "name",
     state: "state",
     ttl: "ttl",
-    updateTime: "update_time",
   },
 };

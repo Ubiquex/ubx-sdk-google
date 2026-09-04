@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Instance_LogicalInterfaces_LogicalNetworkInterfaces struct {
 	DefaultGateway any
-	Id any
-	IpAddress any
-	Network any
-	NetworkType any
+	Id             any
+	IpAddress      any
+	Network        any
+	NetworkType    any
 }
 
 type Instance_LogicalInterfaces struct {
-	InterfaceIndex any
+	InterfaceIndex           any
 	LogicalNetworkInterfaces any
-	Name any
+	Name                     any
 }
 
 type Instance_Luns struct {
-	BootLun any
-	ExpireTime any
-	Id any
-	Instances any
+	BootLun           any
+	ExpireTime        any
+	Id                any
+	Instances         any
 	MultiprotocolType any
-	Name any
-	Shareable any
-	SizeGb any
-	State any
-	StorageType any
-	StorageVolume any
-	Wwid any
+	Name              any
+	Shareable         any
+	SizeGb            any
+	State             any
+	StorageType       any
+	StorageVolume     any
+	Wwid              any
 }
 
 type Instance_Networks_MountPoints struct {
-	DefaultGateway any
-	Instance any
-	IpAddress any
+	DefaultGateway   any
+	Instance         any
+	IpAddress        any
 	LogicalInterface any
 }
 
 type Instance_Networks_Reservations struct {
-	EndAddress any
-	Note any
+	EndAddress   any
+	Note         any
 	StartAddress any
 }
 
@@ -50,74 +50,74 @@ type Instance_Networks_Vrf_QosPolicy struct {
 }
 
 type Instance_Networks_Vrf_VlanAttachments struct {
-	Id any
+	Id                     any
 	InterconnectAttachment any
-	PairingKey any
-	PeerIp any
-	PeerVlanId any
-	QosPolicy any
-	RouterIp any
+	PairingKey             any
+	PeerIp                 any
+	PeerVlanId             any
+	QosPolicy              any
+	RouterIp               any
 }
 
 type Instance_Networks_Vrf struct {
-	Name any
-	QosPolicy any
-	State any
+	Name            any
+	QosPolicy       any
+	State           any
 	VlanAttachments any
 }
 
 type Instance_Networks struct {
-	Cidr any
-	GatewayIp any
-	Id any
-	IpAddress any
+	Cidr               any
+	GatewayIp          any
+	Id                 any
+	IpAddress          any
 	JumboFramesEnabled any
-	Labels any
-	MacAddress any
-	MountPoints any
-	Name any
-	Pod any
-	Reservations any
-	ServicesCidr any
-	State any
-	Type any
-	VlanId any
-	Vrf any
-	VrfAttachment any
+	Labels             any
+	MacAddress         any
+	MountPoints        any
+	Name               any
+	Pod                any
+	Reservations       any
+	ServicesCidr       any
+	State              any
+	Type               any
+	VlanId             any
+	Vrf                any
+	VrfAttachment      any
 }
 
 type Instance_Volumes_SnapshotReservationDetail struct {
-	ReservedSpaceGib any
-	ReservedSpacePercent any
+	ReservedSpaceGib          any
+	ReservedSpacePercent      any
 	ReservedSpaceRemainingGib any
-	ReservedSpaceUsedPercent any
+	ReservedSpaceUsedPercent  any
 }
 
 type Instance_Volumes struct {
-	Attached any
-	AutoGrownSizeGib any
-	BootVolume any
-	CurrentSizeGib any
-	EmergencySizeGib any
-	ExpireTime any
-	Id any
-	Instances any
-	Labels any
-	MaxSizeGib any
-	Name any
-	Notes any
+	Attached                   any
+	AutoGrownSizeGib           any
+	BootVolume                 any
+	CurrentSizeGib             any
+	EmergencySizeGib           any
+	ExpireTime                 any
+	Id                         any
+	Instances                  any
+	Labels                     any
+	MaxSizeGib                 any
+	Name                       any
+	Notes                      any
 	OriginallyRequestedSizeGib any
-	PerformanceTier any
-	Pod any
-	Protocol any
-	RemainingSpaceGib any
-	RequestedSizeGib any
+	PerformanceTier            any
+	Pod                        any
+	Protocol                   any
+	RemainingSpaceGib          any
+	RequestedSizeGib           any
 	SnapshotAutoDeleteBehavior any
-	SnapshotEnabled any
-	SnapshotReservationDetail any
-	State any
-	StorageType any
-	WorkloadProfile any
+	SnapshotEnabled            any
+	SnapshotReservationDetail  any
+	State                      any
+	StorageType                any
+	WorkloadProfile            any
 }
 
 type InstanceConfig struct {
@@ -147,7 +147,7 @@ type InstanceAttrs struct {
 	Luns any
 	// Immutable. The server type. [Available server types](https://cloud.google.com/bare-metal/docs/bms-planning#server_configurations)
 	MachineType any
-	Name any
+	Name        any
 	// Instance network template name. For eg, bondaa-bondaa, bondab-nic, etc. Generally, the template name follows the syntax of "bond" or "nic".
 	NetworkTemplate any
 	// Output only. List of networks associated with this server.

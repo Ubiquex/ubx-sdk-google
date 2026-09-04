@@ -16,12 +16,12 @@ type AlphaDiskSetting_AccessLocation struct {
 
 type AlphaDiskSetting_DefaultResourcePolicies struct {
 	ExcludedDiskTypes any
-	ResourcePolicy any
+	ResourcePolicy    any
 }
 
 type AlphaDiskSettingConfig struct {
 	Project any
-	Zone any
+	Zone    any
 }
 
 type AlphaDiskSettingAttrs struct {
@@ -29,14 +29,14 @@ type AlphaDiskSettingAttrs struct {
 	AccessLocation any
 	// An optional parameter for storing the default resource policies that will be used for the Disks created in the given scope. The Key is a string type, provided by customers to uniquely identify the default Resource Policy entry. The Value is a Default ResourcePolicyDetails Object used to represent the detailed information of the Resource Policy entry.
 	DefaultResourcePolicies any
-	Project any
-	Zone any
+	Project                 any
+	Zone                    any
 }
 
 var AlphaDiskSetting = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_disk_setting",
 	Fields: ubx.FieldMap{
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":    ubx.FieldSpec{WireName: "zone"},
 	},
 }

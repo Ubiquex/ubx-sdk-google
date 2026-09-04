@@ -22,7 +22,7 @@ type Source_Aws_Error struct {
 }
 
 type Source_Aws_InventoryTagList struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -90,98 +90,92 @@ type Source_Vmware struct {
 }
 
 var Source_Aws_AccessKeyCredsFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
-		"SessionToken": ubx.FieldSpec{WireName: "session_token"},
-	}
+	"AccessKeyId":     ubx.FieldSpec{WireName: "access_key_id"},
+	"SecretAccessKey": ubx.FieldSpec{WireName: "secret_access_key"},
+	"SessionToken":    ubx.FieldSpec{WireName: "session_token"},
+}
 
 var Source_Aws_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Source_Aws_InventoryTagListFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Source_AwsFields = ubx.FieldMap{
-		"AccessKeyCreds": ubx.FieldSpec{
-			WireName: "access_key_creds",
-			Kind: "object",
-			Fields: Source_Aws_AccessKeyCredsFields,
-		},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Source_Aws_ErrorFields,
-		},
-		"InventorySecurityGroupNames": ubx.FieldSpec{WireName: "inventory_security_group_names"},
-		"InventoryTagList": ubx.FieldSpec{
-			WireName: "inventory_tag_list",
-			Kind: "list",
-			Fields: Source_Aws_InventoryTagListFields,
-		},
-		"MigrationResourcesUserTags": ubx.FieldSpec{WireName: "migration_resources_user_tags"},
-		"PublicIp": ubx.FieldSpec{WireName: "public_ip"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AccessKeyCreds": ubx.FieldSpec{
+		WireName: "access_key_creds",
+		Kind:     "object",
+		Fields:   Source_Aws_AccessKeyCredsFields,
+	},
+	"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Source_Aws_ErrorFields,
+	},
+	"InventorySecurityGroupNames": ubx.FieldSpec{WireName: "inventory_security_group_names"},
+	"InventoryTagList": ubx.FieldSpec{
+		WireName: "inventory_tag_list",
+		Kind:     "list",
+		Fields:   Source_Aws_InventoryTagListFields,
+	},
+	"MigrationResourcesUserTags": ubx.FieldSpec{WireName: "migration_resources_user_tags"},
+	"PublicIp":                   ubx.FieldSpec{WireName: "public_ip"},
+	"State":                      ubx.FieldSpec{WireName: "state"},
+}
 
 var Source_Azure_ClientSecretCredsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"TenantId":     ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var Source_AzureFields = ubx.FieldMap{
-		"AzureLocation": ubx.FieldSpec{WireName: "azure_location"},
-		"ClientSecretCreds": ubx.FieldSpec{
-			WireName: "client_secret_creds",
-			Kind: "object",
-			Fields: Source_Azure_ClientSecretCredsFields,
-		},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Source_Aws_ErrorFields,
-		},
-		"MigrationResourcesUserTags": ubx.FieldSpec{WireName: "migration_resources_user_tags"},
-		"ResourceGroupId": ubx.FieldSpec{WireName: "resource_group_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SubscriptionId": ubx.FieldSpec{WireName: "subscription_id"},
-	}
+	"AzureLocation": ubx.FieldSpec{WireName: "azure_location"},
+	"ClientSecretCreds": ubx.FieldSpec{
+		WireName: "client_secret_creds",
+		Kind:     "object",
+		Fields:   Source_Azure_ClientSecretCredsFields,
+	},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Source_Aws_ErrorFields,
+	},
+	"MigrationResourcesUserTags": ubx.FieldSpec{WireName: "migration_resources_user_tags"},
+	"ResourceGroupId":            ubx.FieldSpec{WireName: "resource_group_id"},
+	"State":                      ubx.FieldSpec{WireName: "state"},
+	"SubscriptionId":             ubx.FieldSpec{WireName: "subscription_id"},
+}
 
 var Source_EncryptionFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Source_VmwareFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ResolvedVcenterHost": ubx.FieldSpec{WireName: "resolved_vcenter_host"},
-		"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"VcenterIp": ubx.FieldSpec{WireName: "vcenter_ip"},
-	}
+	"Password":            ubx.FieldSpec{WireName: "password"},
+	"ResolvedVcenterHost": ubx.FieldSpec{WireName: "resolved_vcenter_host"},
+	"Thumbprint":          ubx.FieldSpec{WireName: "thumbprint"},
+	"Username":            ubx.FieldSpec{WireName: "username"},
+	"VcenterIp":           ubx.FieldSpec{WireName: "vcenter_ip"},
+}
 
 type SourceConfig struct {
 	// AwsSourceDetails message describes a specific source details for the AWS source type.
 	Aws any
 	// AzureSourceDetails message describes a specific source details for the Azure source type.
 	Azure any
-	// Output only. The create time timestamp.
-	CreateTime any
 	// User-provided description of the source.
 	Description any
 	// Encryption message describes the details of the applied encryption.
 	Encryption any
 	// The labels of the source.
 	Labels any
-	// Output only. The Source name.
-	Name any
-	// Output only. The update time timestamp.
-	UpdateTime any
 	// VmwareSourceDetails message describes a specific source details for the vmware source type.
 	Vmware any
 }
@@ -212,28 +206,25 @@ var Source = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aws": ubx.FieldSpec{
 			WireName: "aws",
-			Kind: "object",
-			Fields: Source_AwsFields,
+			Kind:     "object",
+			Fields:   Source_AwsFields,
 		},
 		"Azure": ubx.FieldSpec{
 			WireName: "azure",
-			Kind: "object",
-			Fields: Source_AzureFields,
+			Kind:     "object",
+			Fields:   Source_AzureFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: Source_EncryptionFields,
+			Kind:     "object",
+			Fields:   Source_EncryptionFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Vmware": ubx.FieldSpec{
 			WireName: "vmware",
-			Kind: "object",
-			Fields: Source_VmwareFields,
+			Kind:     "object",
+			Fields:   Source_VmwareFields,
 		},
 	},
 }

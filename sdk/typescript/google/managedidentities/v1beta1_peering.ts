@@ -4,20 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1PeeringConfig {
   /** Required. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail. */
   authorizedNetwork?: string | Computed<string>;
-  /** Output only. The time the instance was created. */
-  createTime?: string | Computed<string>;
   /** Required. Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form: `projects/{project_id}/locations/global/domains/{domain_name}` */
   domainResource?: string | Computed<string>;
   /** Optional. Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Unique name of the peering in this scope including projects and location using the form: `projects/{project_id}/locations/global/peerings/{peering_id}`. */
-  name?: string | Computed<string>;
-  /** Output only. The current state of this Peering. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information about the current status of this peering, if available. */
-  statusMessage?: string | Computed<string>;
-  /** Output only. Last update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1PeeringAttrs {
@@ -43,12 +33,7 @@ export const V1beta1Peering: ResourceBinding<V1beta1PeeringConfig, V1beta1Peerin
   wireType: "google_managedidentities_v1beta1_peering",
   fields: {
     authorizedNetwork: "authorized_network",
-    createTime: "create_time",
     domainResource: "domain_resource",
     labels: "labels",
-    name: "name",
-    state: "state",
-    statusMessage: "status_message",
-    updateTime: "update_time",
   },
 };

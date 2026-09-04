@@ -11,9 +11,9 @@ type SchemaRegistry_SchemaRegistry struct {
 }
 
 var SchemaRegistry_SchemaRegistryFields = ubx.FieldMap{
-		"Contexts": ubx.FieldSpec{WireName: "contexts"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Contexts": ubx.FieldSpec{WireName: "contexts"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 type SchemaRegistryConfig struct {
 	// SchemaRegistry is a schema registry instance.
@@ -38,8 +38,8 @@ var SchemaRegistry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"SchemaRegistry": ubx.FieldSpec{
 			WireName: "schema_registry",
-			Kind: "object",
-			Fields: SchemaRegistry_SchemaRegistryFields,
+			Kind:     "object",
+			Fields:   SchemaRegistry_SchemaRegistryFields,
 		},
 		"SchemaRegistryId": ubx.FieldSpec{WireName: "schema_registry_id"},
 	},

@@ -2,11 +2,7 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V2beta1VersionConfig {
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
-  name?: string | Computed<string>;
-  status?: string | Computed<string>;
-  versionNumber?: number | Computed<number>;
 }
 
 export interface V2beta1VersionAttrs {
@@ -20,10 +16,6 @@ export interface V2beta1VersionAttrs {
 export const V2beta1Version: ResourceBinding<V2beta1VersionConfig, V2beta1VersionAttrs> = {
   wireType: "google_dialogflow_v2beta1_version",
   fields: {
-    createTime: "create_time",
     description: "description",
-    name: "name",
-    status: "status",
-    versionNumber: "version_number",
   },
 };

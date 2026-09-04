@@ -34,7 +34,7 @@ type SecurityAction_Deny struct {
 }
 
 type SecurityAction_Flag_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -44,35 +44,35 @@ type SecurityAction_Flag struct {
 }
 
 var SecurityAction_ConditionConfigFields = ubx.FieldMap{
-		"AccessTokens": ubx.FieldSpec{WireName: "access_tokens"},
-		"ApiKeys": ubx.FieldSpec{WireName: "api_keys"},
-		"ApiProducts": ubx.FieldSpec{WireName: "api_products"},
-		"Asns": ubx.FieldSpec{WireName: "asns"},
-		"BotReasons": ubx.FieldSpec{WireName: "bot_reasons"},
-		"DeveloperApps": ubx.FieldSpec{WireName: "developer_apps"},
-		"Developers": ubx.FieldSpec{WireName: "developers"},
-		"HttpMethods": ubx.FieldSpec{WireName: "http_methods"},
-		"IpAddressRanges": ubx.FieldSpec{WireName: "ip_address_ranges"},
-		"RegionCodes": ubx.FieldSpec{WireName: "region_codes"},
-		"UserAgents": ubx.FieldSpec{WireName: "user_agents"},
-	}
+	"AccessTokens":    ubx.FieldSpec{WireName: "access_tokens"},
+	"ApiKeys":         ubx.FieldSpec{WireName: "api_keys"},
+	"ApiProducts":     ubx.FieldSpec{WireName: "api_products"},
+	"Asns":            ubx.FieldSpec{WireName: "asns"},
+	"BotReasons":      ubx.FieldSpec{WireName: "bot_reasons"},
+	"DeveloperApps":   ubx.FieldSpec{WireName: "developer_apps"},
+	"Developers":      ubx.FieldSpec{WireName: "developers"},
+	"HttpMethods":     ubx.FieldSpec{WireName: "http_methods"},
+	"IpAddressRanges": ubx.FieldSpec{WireName: "ip_address_ranges"},
+	"RegionCodes":     ubx.FieldSpec{WireName: "region_codes"},
+	"UserAgents":      ubx.FieldSpec{WireName: "user_agents"},
+}
 
 var SecurityAction_DenyFields = ubx.FieldMap{
-		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
-	}
+	"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
+}
 
 var SecurityAction_Flag_HeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var SecurityAction_FlagFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: SecurityAction_Flag_HeadersFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   SecurityAction_Flag_HeadersFields,
+	},
+}
 
 type SecurityActionConfig struct {
 	// Message that should be set in case of an Allow Action. This does not have any fields.
@@ -81,8 +81,6 @@ type SecurityActionConfig struct {
 	ApiProxies any
 	// The following are a list of conditions. A valid SecurityAction must contain at least one condition. Within a condition, each element is ORed. Across conditions elements are ANDed. For example if a SecurityAction has the following: ip_address_ranges: ["ip1", "ip2"] and bot_reasons: ["Flooder", "Robot Abuser"] then this is interpreted as: enforce the action if the incoming request has ((ip_address_ranges = "ip1" OR ip_address_ranges = "ip2") AND (bot_reasons="Flooder" OR bot_reasons="Robot Abuser")). Conditions other than ip_address_ranges and bot_reasons cannot be ANDed.
 	ConditionConfig any
-	// Output only. The create time for this SecurityAction.
-	CreateTime any
 	// Message that should be set in case of a Deny Action.
 	Deny any
 	// Optional. An optional user provided description of the SecurityAction.
@@ -97,8 +95,6 @@ type SecurityActionConfig struct {
 	State any
 	// Input only. The TTL for this SecurityAction.
 	Ttl any
-	// Output only. The update time for this SecurityAction. This reflects when this SecurityAction changed states.
-	UpdateTime any
 }
 
 type SecurityActionAttrs struct {
@@ -131,29 +127,27 @@ type SecurityActionAttrs struct {
 var SecurityAction = ubx.ResourceBinding{
 	WireType: "google_apigee_security_action",
 	Fields: ubx.FieldMap{
-		"Allow": ubx.FieldSpec{WireName: "allow"},
+		"Allow":      ubx.FieldSpec{WireName: "allow"},
 		"ApiProxies": ubx.FieldSpec{WireName: "api_proxies"},
 		"ConditionConfig": ubx.FieldSpec{
 			WireName: "condition_config",
-			Kind: "object",
-			Fields: SecurityAction_ConditionConfigFields,
+			Kind:     "object",
+			Fields:   SecurityAction_ConditionConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Deny": ubx.FieldSpec{
 			WireName: "deny",
-			Kind: "object",
-			Fields: SecurityAction_DenyFields,
+			Kind:     "object",
+			Fields:   SecurityAction_DenyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"ExpireTime":  ubx.FieldSpec{WireName: "expire_time"},
 		"Flag": ubx.FieldSpec{
 			WireName: "flag",
-			Kind: "object",
-			Fields: SecurityAction_FlagFields,
+			Kind:     "object",
+			Fields:   SecurityAction_FlagFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"State": ubx.FieldSpec{WireName: "state"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Ttl":   ubx.FieldSpec{WireName: "ttl"},
 	},
 }

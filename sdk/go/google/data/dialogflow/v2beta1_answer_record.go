@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1AnswerRecord_AgentAssistantRecord_ArticleSuggestionAnswer struct {
 	AnswerRecord any
-	Metadata any
-	Snippets any
-	Title any
-	Uri any
+	Metadata     any
+	Snippets     any
+	Title        any
+	Uri          any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_IntentSuggestion struct {
 	Description any
 	DisplayName any
-	IntentV2 any
+	IntentV2    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BasicCard_Buttons_OpenUriAction struct {
@@ -23,62 +23,62 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BasicCard_Buttons struct {
 	OpenUriAction any
-	Title any
+	Title         any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BasicCard_Image struct {
 	AccessibilityText any
-	ImageUri any
+	ImageUri          any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BasicCard struct {
-	Buttons any
+	Buttons       any
 	FormattedText any
-	Image any
-	Subtitle any
-	Title any
+	Image         any
+	Subtitle      any
+	Title         any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BrowseCarouselCard_Items_OpenUriAction struct {
-	Url any
+	Url         any
 	UrlTypeHint any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BrowseCarouselCard_Items struct {
-	Description any
-	Footer any
-	Image any
+	Description   any
+	Footer        any
+	Image         any
 	OpenUriAction any
-	Title any
+	Title         any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_BrowseCarouselCard struct {
 	ImageDisplayOptions any
-	Items any
+	Items               any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_Card_Buttons struct {
 	Postback any
-	Text any
+	Text     any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_Card struct {
-	Buttons any
+	Buttons  any
 	ImageUri any
 	Subtitle any
-	Title any
+	Title    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_CarouselSelect_Items_Info struct {
-	Key any
+	Key      any
 	Synonyms any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_CarouselSelect_Items struct {
 	Description any
-	Image any
-	Info any
-	Title any
+	Image       any
+	Info        any
+	Title       any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_CarouselSelect struct {
@@ -87,36 +87,36 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_LinkOutSuggestion struct {
 	DestinationName any
-	Uri any
+	Uri             any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_ListSelect struct {
-	Items any
+	Items    any
 	Subtitle any
-	Title any
+	Title    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_MediaContent_MediaObjects struct {
-	ContentUrl any
+	ContentUrl  any
 	Description any
-	Icon any
-	LargeImage any
-	Name any
+	Icon        any
+	LargeImage  any
+	Name        any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_MediaContent struct {
 	MediaObjects any
-	MediaType any
+	MediaType    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_QuickReplies struct {
 	QuickReplies any
-	Title any
+	Title        any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard_CardContents_Media struct {
-	FileUri any
-	Height any
+	FileUri      any
+	Height       any
 	ThumbnailUri any
 }
 
@@ -125,49 +125,49 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard_CardContents_Suggestions_Action struct {
-	Dial any
-	OpenUrl any
-	PostbackData any
+	Dial          any
+	OpenUrl       any
+	PostbackData  any
 	ShareLocation any
-	Text any
+	Text          any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard_CardContents_Suggestions_Reply struct {
 	PostbackData any
-	Text any
+	Text         any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard_CardContents_Suggestions struct {
 	Action any
-	Reply any
+	Reply  any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard_CardContents struct {
 	Description any
-	Media any
+	Media       any
 	Suggestions any
-	Title any
+	Title       any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmCarouselRichCard struct {
 	CardContents any
-	CardWidth any
+	CardWidth    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmStandaloneRichCard struct {
-	CardContent any
-	CardOrientation any
+	CardContent             any
+	CardOrientation         any
 	ThumbnailImageAlignment any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_RbmText struct {
 	RbmSuggestion any
-	Text any
+	Text          any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_SimpleResponses_SimpleResponses struct {
-	DisplayText any
-	Ssml any
+	DisplayText  any
+	Ssml         any
 	TextToSpeech any
 }
 
@@ -184,7 +184,7 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_TableCard_ColumnProperties struct {
-	Header any
+	Header              any
 	HorizontalAlignment any
 }
 
@@ -193,17 +193,17 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_TableCard_Rows struct {
-	Cells any
+	Cells        any
 	DividerAfter any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_TableCard struct {
-	Buttons any
+	Buttons          any
 	ColumnProperties any
-	Image any
-	Rows any
-	Subtitle any
-	Title any
+	Image            any
+	Rows             any
+	Subtitle         any
+	Title            any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages_TelephonyPlayAudio struct {
@@ -220,95 +220,95 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_FulfillmentMessages struct {
-	BasicCard any
-	BrowseCarouselCard any
-	Card any
-	CarouselSelect any
-	Image any
-	LinkOutSuggestion any
-	ListSelect any
-	MediaContent any
-	Payload any
-	Platform any
-	QuickReplies any
-	RbmCarouselRichCard any
-	RbmStandaloneRichCard any
-	RbmText any
-	SimpleResponses any
-	Suggestions any
-	TableCard any
-	TelephonyPlayAudio any
+	BasicCard                 any
+	BrowseCarouselCard        any
+	Card                      any
+	CarouselSelect            any
+	Image                     any
+	LinkOutSuggestion         any
+	ListSelect                any
+	MediaContent              any
+	Payload                   any
+	Platform                  any
+	QuickReplies              any
+	RbmCarouselRichCard       any
+	RbmStandaloneRichCard     any
+	RbmText                   any
+	SimpleResponses           any
+	Suggestions               any
+	TableCard                 any
+	TelephonyPlayAudio        any
 	TelephonySynthesizeSpeech any
-	TelephonyTransferCall any
-	Text any
+	TelephonyTransferCall     any
+	Text                      any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent_FollowupIntentInfo struct {
-	FollowupIntentName any
+	FollowupIntentName       any
 	ParentFollowupIntentName any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent_OutputContexts struct {
 	LifespanCount any
-	Name any
-	Parameters any
+	Name          any
+	Parameters    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent_Parameters struct {
-	DefaultValue any
-	DisplayName any
+	DefaultValue          any
+	DisplayName           any
 	EntityTypeDisplayName any
-	IsList any
-	Mandatory any
-	Name any
-	Prompts any
-	Value any
+	IsList                any
+	Mandatory             any
+	Name                  any
+	Prompts               any
+	Value                 any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent_TrainingPhrases_Parts struct {
-	Alias any
-	EntityType any
-	Text any
+	Alias       any
+	EntityType  any
+	Text        any
 	UserDefined any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent_TrainingPhrases struct {
-	Name any
-	Parts any
+	Name            any
+	Parts           any
 	TimesAddedCount any
-	Type any
+	Type            any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_Intent struct {
-	Action any
+	Action                   any
 	DefaultResponsePlatforms any
-	DisplayName any
-	EndInteraction any
-	Events any
-	FollowupIntentInfo any
-	InputContextNames any
-	IsFallback any
-	LiveAgentHandoff any
-	Messages any
-	MlDisabled any
-	MlEnabled any
-	Name any
-	OutputContexts any
-	Parameters any
+	DisplayName              any
+	EndInteraction           any
+	Events                   any
+	FollowupIntentInfo       any
+	InputContextNames        any
+	IsFallback               any
+	LiveAgentHandoff         any
+	Messages                 any
+	MlDisabled               any
+	MlEnabled                any
+	Name                     any
+	OutputContexts           any
+	Parameters               any
 	ParentFollowupIntentName any
-	Priority any
-	ResetContexts any
-	RootFollowupIntentName any
-	TrainingPhrases any
-	WebhookState any
+	Priority                 any
+	ResetContexts            any
+	RootFollowupIntentName   any
+	TrainingPhrases          any
+	WebhookState             any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_KnowledgeAnswers_Answers struct {
-	Answer any
-	FaqQuestion any
-	MatchConfidence any
+	Answer               any
+	FaqQuestion          any
+	MatchConfidence      any
 	MatchConfidenceLevel any
-	Source any
+	Source               any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_KnowledgeAnswers struct {
@@ -317,7 +317,7 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_SentimentAnalysisResult_QueryTextSentiment struct {
 	Magnitude any
-	Score any
+	Score     any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult_SentimentAnalysisResult struct {
@@ -325,38 +325,38 @@ type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer_QueryResult struct {
-	Action any
-	AllRequiredParamsPresent any
-	CancelsSlotFilling any
-	DiagnosticInfo any
-	FulfillmentMessages any
-	FulfillmentText any
-	Intent any
-	IntentDetectionConfidence any
-	KnowledgeAnswers any
-	LanguageCode any
-	OutputContexts any
-	Parameters any
-	QueryText any
-	SentimentAnalysisResult any
+	Action                      any
+	AllRequiredParamsPresent    any
+	CancelsSlotFilling          any
+	DiagnosticInfo              any
+	FulfillmentMessages         any
+	FulfillmentText             any
+	Intent                      any
+	IntentDetectionConfidence   any
+	KnowledgeAnswers            any
+	LanguageCode                any
+	OutputContexts              any
+	Parameters                  any
+	QueryText                   any
+	SentimentAnalysisResult     any
 	SpeechRecognitionConfidence any
-	WebhookPayload any
-	WebhookSource any
+	WebhookPayload              any
+	WebhookSource               any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_DialogflowAssistAnswer struct {
-	AnswerRecord any
+	AnswerRecord     any
 	IntentSuggestion any
-	QueryResult any
+	QueryResult      any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_FaqAnswer struct {
-	Answer any
+	Answer       any
 	AnswerRecord any
-	Confidence any
-	Metadata any
-	Question any
-	Source any
+	Confidence   any
+	Metadata     any
+	Question     any
+	Source       any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_Sources struct {
@@ -364,9 +364,9 @@ type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingS
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions struct {
-	AnswerRecord any
+	AnswerRecord    any
 	SimilarityScore any
-	Sources any
+	Sources         any
 	SuggestionIndex any
 }
 
@@ -375,13 +375,13 @@ type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingS
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_AgentActionSuggestions struct {
-	AgentAction any
+	AgentAction          any
 	DuplicateCheckResult any
-	Sources any
+	Sources              any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_ApplicableInstructions_DuplicateCheckResult_DuplicateSuggestions struct {
-	AnswerRecord any
+	AnswerRecord    any
 	SimilarityScore any
 	SuggestionIndex any
 }
@@ -391,25 +391,25 @@ type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingS
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_ApplicableInstructions struct {
-	AgentAction any
-	Condition any
-	DisplayDetails any
-	DisplayName any
+	AgentAction          any
+	Condition            any
+	DisplayDetails       any
+	DisplayName          any
 	DuplicateCheckResult any
-	SystemAction any
-	TriggeringEvent any
+	SystemAction         any
+	TriggeringEvent      any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion_SampleResponses struct {
 	DuplicateCheckResult any
-	ResponseText any
-	Sources any
+	ResponseText         any
+	Sources              any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_AgentCoachingSuggestion struct {
 	AgentActionSuggestions any
 	ApplicableInstructions any
-	SampleResponses any
+	SampleResponses        any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_FreeFormSuggestion struct {
@@ -426,84 +426,84 @@ type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_SummarySuggest
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_ToolCallInfo_ToolCall struct {
-	Action any
-	AnswerRecord any
-	CesApp any
-	CesTool any
-	CesToolset any
-	CreateTime any
-	InputParameters any
-	State any
-	Tool any
+	Action             any
+	AnswerRecord       any
+	CesApp             any
+	CesTool            any
+	CesToolset         any
+	CreateTime         any
+	InputParameters    any
+	State              any
+	Tool               any
 	ToolDisplayDetails any
-	ToolDisplayName any
+	ToolDisplayName    any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_ToolCallInfo_ToolCallResult_Error struct {
-	Message any
+	Message   any
 	Retryable any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_ToolCallInfo_ToolCallResult struct {
-	Action any
+	Action       any
 	AnswerRecord any
-	CesApp any
-	CesTool any
-	CesToolset any
-	Content any
-	CreateTime any
-	Error any
-	RawContent any
-	Tool any
+	CesApp       any
+	CesTool      any
+	CesToolset   any
+	Content      any
+	CreateTime   any
+	Error        any
+	RawContent   any
+	Tool         any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion_ToolCallInfo struct {
-	ToolCall any
+	ToolCall       any
 	ToolCallResult any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord_GeneratorSuggestion struct {
 	AgentCoachingSuggestion any
-	FreeFormSuggestion any
-	SummarySuggestion any
-	ToolCallInfo any
+	FreeFormSuggestion      any
+	SummarySuggestion       any
+	ToolCallInfo            any
 }
 
 type V2beta1AnswerRecord_AgentAssistantRecord struct {
 	ArticleSuggestionAnswer any
-	DialogflowAssistAnswer any
-	FaqAnswer any
-	GeneratorSuggestion any
+	DialogflowAssistAnswer  any
+	FaqAnswer               any
+	GeneratorSuggestion     any
 }
 
 type V2beta1AnswerRecord_AnswerFeedback_AgentAssistantDetailFeedback_KnowledgeAssistFeedback struct {
 	AnswerCopied any
-	ClickedUris any
+	ClickedUris  any
 }
 
 type V2beta1AnswerRecord_AnswerFeedback_AgentAssistantDetailFeedback_SummarizationFeedback struct {
-	StartTimestamp any
+	StartTimestamp  any
 	SubmitTimestamp any
-	SummaryText any
-	TextSections any
+	SummaryText     any
+	TextSections    any
 }
 
 type V2beta1AnswerRecord_AnswerFeedback_AgentAssistantDetailFeedback struct {
-	AnswerRelevance any
-	DocumentCorrectness any
-	DocumentEfficiency any
+	AnswerRelevance         any
+	DocumentCorrectness     any
+	DocumentEfficiency      any
 	KnowledgeAssistFeedback any
 	KnowledgeSearchFeedback any
-	SummarizationFeedback any
+	SummarizationFeedback   any
 }
 
 type V2beta1AnswerRecord_AnswerFeedback struct {
 	AgentAssistantDetailFeedback any
-	ClickTime any
-	Clicked any
-	CorrectnessLevel any
-	DisplayTime any
-	Displayed any
+	ClickTime                    any
+	Clicked                      any
+	CorrectnessLevel             any
+	DisplayTime                  any
+	Displayed                    any
 }
 
 type V2beta1AnswerRecordConfig struct {
@@ -512,8 +512,8 @@ type V2beta1AnswerRecordConfig struct {
 
 type V2beta1AnswerRecordAttrs struct {
 	AgentAssistantRecord any
-	AnswerFeedback any
-	Name any
+	AnswerFeedback       any
+	Name                 any
 }
 
 var V2beta1AnswerRecord = ubx.DataSourceBinding{

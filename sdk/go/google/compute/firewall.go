@@ -4,10 +4,8 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Firewall_Allowed struct {
-	// The IP protocol to which this rule applies. Valid values are 'tcp', 'udp', 'icmp', 'esp', 'ah', 'sctp', or 'all'. (AI-inferred)
 	Ipprotocol any
-	// An optional list of ports or port ranges (e.g., '80' or '8000-9000') to which this rule applies. Only valid for TCP and UDP protocols; if omitted, the rule applies to all ports. (AI-inferred)
-	Ports any
+	Ports      any
 }
 
 type Firewall_LogConfig struct {
@@ -23,24 +21,22 @@ type Firewall_Params struct {
 }
 
 var Firewall_AllowedFields = ubx.FieldMap{
-		"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
+	"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
+	"Ports":      ubx.FieldSpec{WireName: "ports"},
+}
 
 var Firewall_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Enable":   ubx.FieldSpec{WireName: "enable"},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var Firewall_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type FirewallConfig struct {
 	// The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection.
 	Allowed any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection.
 	Denied any
 	// An optional description of this resource. Provide this field when you create the resource.
@@ -51,10 +47,6 @@ type FirewallConfig struct {
 	Direction any
 	// Denotes whether the firewall rule is disabled. When set to true, the firewall rule is not enforced and the network behaves as if it did not exist. If this is unspecified, the firewall rule will be enabled.
 	Disabled any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#firewall for firewall rules.
-	Kind any
 	// The available logging options for a firewall rule.
 	LogConfig any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -127,39 +119,36 @@ var Firewall = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Allowed": ubx.FieldSpec{
 			WireName: "allowed",
-			Kind: "list",
-			Fields: Firewall_AllowedFields,
+			Kind:     "list",
+			Fields:   Firewall_AllowedFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Denied": ubx.FieldSpec{
 			WireName: "denied",
-			Kind: "list",
-			Fields: Firewall_AllowedFields,
+			Kind:     "list",
+			Fields:   Firewall_AllowedFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DestinationRanges": ubx.FieldSpec{WireName: "destination_ranges"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Direction":         ubx.FieldSpec{WireName: "direction"},
+		"Disabled":          ubx.FieldSpec{WireName: "disabled"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: Firewall_LogConfigFields,
+			Kind:     "object",
+			Fields:   Firewall_LogConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Firewall_ParamsFields,
+			Kind:     "object",
+			Fields:   Firewall_ParamsFields,
 		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SourceRanges": ubx.FieldSpec{WireName: "source_ranges"},
+		"Priority":              ubx.FieldSpec{WireName: "priority"},
+		"SelfLink":              ubx.FieldSpec{WireName: "self_link"},
+		"SourceRanges":          ubx.FieldSpec{WireName: "source_ranges"},
 		"SourceServiceAccounts": ubx.FieldSpec{WireName: "source_service_accounts"},
-		"SourceTags": ubx.FieldSpec{WireName: "source_tags"},
+		"SourceTags":            ubx.FieldSpec{WireName: "source_tags"},
 		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-		"TargetTags": ubx.FieldSpec{WireName: "target_tags"},
+		"TargetTags":            ubx.FieldSpec{WireName: "target_tags"},
 	},
 }

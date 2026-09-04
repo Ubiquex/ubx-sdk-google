@@ -21,8 +21,6 @@ export interface ProductSetConfig {
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   indexError?: ProductSet_IndexError | Computed<ProductSet_IndexError>;
-  /** Output only. The time at which this ProductSet was last indexed. Query results will reflect all updates before this time. If this ProductSet has never been indexed, this timestamp is the default value "1970-01-01T00:00:00Z". This field is ignored when creating a ProductSet. */
-  indexTime?: string | Computed<string>;
   /** The resource name of the ProductSet. Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`. This field is ignored when creating a ProductSet. */
   name?: string | Computed<string>;
 }
@@ -47,7 +45,6 @@ export const ProductSet: ResourceBinding<ProductSetConfig, ProductSetAttrs> = {
       kind: "object",
       fields: ProductSet_IndexErrorFields,
     },
-    indexTime: "index_time",
     name: "name",
   },
 };

@@ -9,8 +9,8 @@ type Rollout_TrafficPercentStrategy struct {
 }
 
 var Rollout_TrafficPercentStrategyFields = ubx.FieldMap{
-		"Percentages": ubx.FieldSpec{WireName: "percentages"},
-	}
+	"Percentages": ubx.FieldSpec{WireName: "percentages"},
+}
 
 type RolloutConfig struct {
 	// Creation time of the rollout. Readonly.
@@ -49,16 +49,16 @@ type RolloutAttrs struct {
 var Rollout = ubx.ResourceBinding{
 	WireType: "google_servicemanagement_rollout",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"CreateTime":            ubx.FieldSpec{WireName: "create_time"},
+		"CreatedBy":             ubx.FieldSpec{WireName: "created_by"},
 		"DeleteServiceStrategy": ubx.FieldSpec{WireName: "delete_service_strategy"},
-		"RolloutId": ubx.FieldSpec{WireName: "rollout_id"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"RolloutId":             ubx.FieldSpec{WireName: "rollout_id"},
+		"ServiceName":           ubx.FieldSpec{WireName: "service_name"},
+		"Status":                ubx.FieldSpec{WireName: "status"},
 		"TrafficPercentStrategy": ubx.FieldSpec{
 			WireName: "traffic_percent_strategy",
-			Kind: "object",
-			Fields: Rollout_TrafficPercentStrategyFields,
+			Kind:     "object",
+			Fields:   Rollout_TrafficPercentStrategyFields,
 		},
 	},
 }

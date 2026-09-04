@@ -18,19 +18,19 @@ type Table_ChangeStreamConfig struct {
 }
 
 type Table_ClusterStates_EncryptionInfo_EncryptionStatus struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Table_ClusterStates_EncryptionInfo struct {
 	EncryptionStatus any
-	EncryptionType any
-	KmsKeyVersion any
+	EncryptionType   any
+	KmsKeyVersion    any
 }
 
 type Table_ClusterStates struct {
-	EncryptionInfo any
+	EncryptionInfo   any
 	ReplicationState any
 }
 
@@ -39,27 +39,27 @@ type Table_ColumnFamilies_GcRule_Intersection struct {
 }
 
 type Table_ColumnFamilies_GcRule struct {
-	Intersection any
-	MaxAge any
+	Intersection   any
+	MaxAge         any
 	MaxNumVersions any
-	Union any
+	Union          any
 }
 
 type Table_ColumnFamilies_Stats struct {
 	AverageCellsPerColumn any
-	AverageColumnsPerRow any
-	LogicalDataBytes any
-	LogicalDataHddBytes any
-	LogicalDataSsdBytes any
+	AverageColumnsPerRow  any
+	LogicalDataBytes      any
+	LogicalDataHddBytes   any
+	LogicalDataSsdBytes   any
 }
 
 type Table_ColumnFamilies_ValueType_AggregateType struct {
 	HllppUniqueCount any
-	InputType any
-	Max any
-	Min any
-	StateType any
-	Sum any
+	InputType        any
+	Max              any
+	Min              any
+	StateType        any
+	Sum              any
 }
 
 type Table_ColumnFamilies_ValueType_ArrayType struct {
@@ -83,12 +83,12 @@ type Table_ColumnFamilies_ValueType_BytesType struct {
 }
 
 type Table_ColumnFamilies_ValueType_EnumType struct {
-	EnumName any
+	EnumName       any
 	SchemaBundleId any
 }
 
 type Table_ColumnFamilies_ValueType_Int32Type_Encoding struct {
-	BigEndianBytes any
+	BigEndianBytes   any
 	OrderedCodeBytes any
 }
 
@@ -101,7 +101,7 @@ type Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytes struct {
 }
 
 type Table_ColumnFamilies_ValueType_Int64Type_Encoding struct {
-	BigEndianBytes any
+	BigEndianBytes   any
 	OrderedCodeBytes any
 }
 
@@ -110,12 +110,12 @@ type Table_ColumnFamilies_ValueType_Int64Type struct {
 }
 
 type Table_ColumnFamilies_ValueType_MapType struct {
-	KeyType any
+	KeyType   any
 	ValueType any
 }
 
 type Table_ColumnFamilies_ValueType_ProtoType struct {
-	MessageName any
+	MessageName    any
 	SchemaBundleId any
 }
 
@@ -125,7 +125,7 @@ type Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8Bytes struct {
 
 type Table_ColumnFamilies_ValueType_StringType_Encoding struct {
 	Utf8Bytes any
-	Utf8Raw any
+	Utf8Raw   any
 }
 
 type Table_ColumnFamilies_ValueType_StringType struct {
@@ -137,19 +137,19 @@ type Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytes struct {
 }
 
 type Table_ColumnFamilies_ValueType_StructType_Encoding struct {
-	DelimitedBytes any
+	DelimitedBytes   any
 	OrderedCodeBytes any
-	Singleton any
+	Singleton        any
 }
 
 type Table_ColumnFamilies_ValueType_StructType_Fields struct {
 	FieldName any
-	Type any
+	Type      any
 }
 
 type Table_ColumnFamilies_ValueType_StructType struct {
 	Encoding any
-	Fields any
+	Fields   any
 }
 
 type Table_ColumnFamilies_ValueType_TimestampType_Encoding struct {
@@ -162,26 +162,26 @@ type Table_ColumnFamilies_ValueType_TimestampType struct {
 
 type Table_ColumnFamilies_ValueType struct {
 	AggregateType any
-	ArrayType any
-	BoolType any
-	BytesType any
-	DateType any
-	EnumType any
-	Float32Type any
-	Float64Type any
+	ArrayType     any
+	BoolType      any
+	BytesType     any
+	DateType      any
+	EnumType      any
+	Float32Type   any
+	Float64Type   any
 	GeographyType any
-	Int32Type any
-	Int64Type any
-	MapType any
-	ProtoType any
-	StringType any
-	StructType any
+	Int32Type     any
+	Int64Type     any
+	MapType       any
+	ProtoType     any
+	StringType    any
+	StructType    any
 	TimestampType any
 }
 
 type Table_ColumnFamilies struct {
-	GcRule any
-	Stats any
+	GcRule    any
+	Stats     any
 	ValueType any
 }
 
@@ -211,26 +211,26 @@ type Table_RestoreInfo struct {
 
 type Table_RowKeySchema_Fields_Type struct {
 	AggregateType any
-	ArrayType any
-	BoolType any
-	BytesType any
-	DateType any
-	EnumType any
-	Float32Type any
-	Float64Type any
+	ArrayType     any
+	BoolType      any
+	BytesType     any
+	DateType      any
+	EnumType      any
+	Float32Type   any
+	Float64Type   any
 	GeographyType any
-	Int32Type any
-	Int64Type any
-	MapType any
-	ProtoType any
-	StringType any
-	StructType any
+	Int32Type     any
+	Int64Type     any
+	MapType       any
+	ProtoType     any
+	StringType    any
+	StructType    any
 	TimestampType any
 }
 
 type Table_RowKeySchema_Fields struct {
 	FieldName any
-	Type any
+	Type      any
 }
 
 type Table_RowKeySchema struct {
@@ -287,481 +287,481 @@ type Table_Table struct {
 }
 
 var Table_InitialSplitsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var Table_AutomatedBackupPolicyFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-	}
+	"Frequency":       ubx.FieldSpec{WireName: "frequency"},
+	"Locations":       ubx.FieldSpec{WireName: "locations"},
+	"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+}
 
 var Table_ChangeStreamConfigFields = ubx.FieldMap{
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-	}
+	"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+}
 
 var Table_ClusterStates_EncryptionInfo_EncryptionStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Table_ClusterStates_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionStatus": ubx.FieldSpec{
-			WireName: "encryption_status",
-			Kind: "object",
-			Fields: Table_ClusterStates_EncryptionInfo_EncryptionStatusFields,
-		},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-	}
+	"EncryptionStatus": ubx.FieldSpec{
+		WireName: "encryption_status",
+		Kind:     "object",
+		Fields:   Table_ClusterStates_EncryptionInfo_EncryptionStatusFields,
+	},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersion":  ubx.FieldSpec{WireName: "kms_key_version"},
+}
 
 var Table_ClusterStatesFields = ubx.FieldMap{
-		"EncryptionInfo": ubx.FieldSpec{
-			WireName: "encryption_info",
-			Kind: "list",
-			Fields: Table_ClusterStates_EncryptionInfoFields,
-		},
-		"ReplicationState": ubx.FieldSpec{WireName: "replication_state"},
-	}
+	"EncryptionInfo": ubx.FieldSpec{
+		WireName: "encryption_info",
+		Kind:     "list",
+		Fields:   Table_ClusterStates_EncryptionInfoFields,
+	},
+	"ReplicationState": ubx.FieldSpec{WireName: "replication_state"},
+}
 
 var Table_ColumnFamilies_GcRule_IntersectionFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{WireName: "rules"},
-	}
+	"Rules": ubx.FieldSpec{WireName: "rules"},
+}
 
 var Table_ColumnFamilies_GcRuleFields = ubx.FieldMap{
-		"Intersection": ubx.FieldSpec{
-			WireName: "intersection",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_GcRule_IntersectionFields,
-		},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-		"MaxNumVersions": ubx.FieldSpec{WireName: "max_num_versions"},
-		"Union": ubx.FieldSpec{
-			WireName: "union",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_GcRule_IntersectionFields,
-		},
-	}
+	"Intersection": ubx.FieldSpec{
+		WireName: "intersection",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_GcRule_IntersectionFields,
+	},
+	"MaxAge":         ubx.FieldSpec{WireName: "max_age"},
+	"MaxNumVersions": ubx.FieldSpec{WireName: "max_num_versions"},
+	"Union": ubx.FieldSpec{
+		WireName: "union",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_GcRule_IntersectionFields,
+	},
+}
 
 var Table_ColumnFamilies_StatsFields = ubx.FieldMap{
-		"AverageCellsPerColumn": ubx.FieldSpec{WireName: "average_cells_per_column"},
-		"AverageColumnsPerRow": ubx.FieldSpec{WireName: "average_columns_per_row"},
-		"LogicalDataBytes": ubx.FieldSpec{WireName: "logical_data_bytes"},
-		"LogicalDataHddBytes": ubx.FieldSpec{WireName: "logical_data_hdd_bytes"},
-		"LogicalDataSsdBytes": ubx.FieldSpec{WireName: "logical_data_ssd_bytes"},
-	}
+	"AverageCellsPerColumn": ubx.FieldSpec{WireName: "average_cells_per_column"},
+	"AverageColumnsPerRow":  ubx.FieldSpec{WireName: "average_columns_per_row"},
+	"LogicalDataBytes":      ubx.FieldSpec{WireName: "logical_data_bytes"},
+	"LogicalDataHddBytes":   ubx.FieldSpec{WireName: "logical_data_hdd_bytes"},
+	"LogicalDataSsdBytes":   ubx.FieldSpec{WireName: "logical_data_ssd_bytes"},
+}
 
 var Table_ColumnFamilies_ValueType_AggregateTypeFields = ubx.FieldMap{
-		"HllppUniqueCount": ubx.FieldSpec{WireName: "hllpp_unique_count"},
-		"InputType": ubx.FieldSpec{WireName: "input_type"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"StateType": ubx.FieldSpec{WireName: "state_type"},
-		"Sum": ubx.FieldSpec{WireName: "sum"},
-	}
+	"HllppUniqueCount": ubx.FieldSpec{WireName: "hllpp_unique_count"},
+	"InputType":        ubx.FieldSpec{WireName: "input_type"},
+	"Max":              ubx.FieldSpec{WireName: "max"},
+	"Min":              ubx.FieldSpec{WireName: "min"},
+	"StateType":        ubx.FieldSpec{WireName: "state_type"},
+	"Sum":              ubx.FieldSpec{WireName: "sum"},
+}
 
 var Table_ColumnFamilies_ValueType_ArrayTypeFields = ubx.FieldMap{
-		"ElementType": ubx.FieldSpec{WireName: "element_type"},
-	}
+	"ElementType": ubx.FieldSpec{WireName: "element_type"},
+}
 
 var Table_ColumnFamilies_ValueType_BoolTypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Table_ColumnFamilies_ValueType_BytesType_Encoding_RawFields = ubx.FieldMap{
-		"EscapeNulls": ubx.FieldSpec{WireName: "escape_nulls"},
-	}
+	"EscapeNulls": ubx.FieldSpec{WireName: "escape_nulls"},
+}
 
 var Table_ColumnFamilies_ValueType_BytesType_EncodingFields = ubx.FieldMap{
-		"Raw": ubx.FieldSpec{
-			WireName: "raw",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BytesType_Encoding_RawFields,
-		},
-	}
+	"Raw": ubx.FieldSpec{
+		WireName: "raw",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BytesType_Encoding_RawFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_BytesTypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BytesType_EncodingFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BytesType_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_EnumTypeFields = ubx.FieldMap{
-		"EnumName": ubx.FieldSpec{WireName: "enum_name"},
-		"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
-	}
+	"EnumName":       ubx.FieldSpec{WireName: "enum_name"},
+	"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
+}
 
 var Table_ColumnFamilies_ValueType_Int32Type_EncodingFields = ubx.FieldMap{
-		"BigEndianBytes": ubx.FieldSpec{WireName: "big_endian_bytes"},
-		"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
-	}
+	"BigEndianBytes":   ubx.FieldSpec{WireName: "big_endian_bytes"},
+	"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
+}
 
 var Table_ColumnFamilies_ValueType_Int32TypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int32Type_EncodingFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int32Type_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytesFields = ubx.FieldMap{
-		"BytesType": ubx.FieldSpec{
-			WireName: "bytes_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BytesTypeFields,
-		},
-	}
+	"BytesType": ubx.FieldSpec{
+		WireName: "bytes_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BytesTypeFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_Int64Type_EncodingFields = ubx.FieldMap{
-		"BigEndianBytes": ubx.FieldSpec{
-			WireName: "big_endian_bytes",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytesFields,
-		},
-		"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
-	}
+	"BigEndianBytes": ubx.FieldSpec{
+		WireName: "big_endian_bytes",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int64Type_Encoding_BigEndianBytesFields,
+	},
+	"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
+}
 
 var Table_ColumnFamilies_ValueType_Int64TypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int64Type_EncodingFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int64Type_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_MapTypeFields = ubx.FieldMap{
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"KeyType":   ubx.FieldSpec{WireName: "key_type"},
+	"ValueType": ubx.FieldSpec{WireName: "value_type"},
+}
 
 var Table_ColumnFamilies_ValueType_ProtoTypeFields = ubx.FieldMap{
-		"MessageName": ubx.FieldSpec{WireName: "message_name"},
-		"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
-	}
+	"MessageName":    ubx.FieldSpec{WireName: "message_name"},
+	"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
+}
 
 var Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8BytesFields = ubx.FieldMap{
-		"NullEscapeChar": ubx.FieldSpec{WireName: "null_escape_char"},
-	}
+	"NullEscapeChar": ubx.FieldSpec{WireName: "null_escape_char"},
+}
 
 var Table_ColumnFamilies_ValueType_StringType_EncodingFields = ubx.FieldMap{
-		"Utf8Bytes": ubx.FieldSpec{
-			WireName: "utf8_bytes",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8BytesFields,
-		},
-		"Utf8Raw": ubx.FieldSpec{WireName: "utf8_raw"},
-	}
+	"Utf8Bytes": ubx.FieldSpec{
+		WireName: "utf8_bytes",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StringType_Encoding_Utf8BytesFields,
+	},
+	"Utf8Raw": ubx.FieldSpec{WireName: "utf8_raw"},
+}
 
 var Table_ColumnFamilies_ValueType_StringTypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StringType_EncodingFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StringType_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytesFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-	}
+	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+}
 
 var Table_ColumnFamilies_ValueType_StructType_EncodingFields = ubx.FieldMap{
-		"DelimitedBytes": ubx.FieldSpec{
-			WireName: "delimited_bytes",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytesFields,
-		},
-		"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
-		"Singleton": ubx.FieldSpec{WireName: "singleton"},
-	}
+	"DelimitedBytes": ubx.FieldSpec{
+		WireName: "delimited_bytes",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StructType_Encoding_DelimitedBytesFields,
+	},
+	"OrderedCodeBytes": ubx.FieldSpec{WireName: "ordered_code_bytes"},
+	"Singleton":        ubx.FieldSpec{WireName: "singleton"},
+}
 
 var Table_ColumnFamilies_ValueType_StructType_FieldsFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_ColumnFamilies_ValueType_StructTypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StructType_EncodingFields,
-		},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_ColumnFamilies_ValueType_StructType_FieldsFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StructType_EncodingFields,
+	},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_ColumnFamilies_ValueType_StructType_FieldsFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_TimestampType_EncodingFields = ubx.FieldMap{
-		"UnixMicrosInt64": ubx.FieldSpec{
-			WireName: "unix_micros_int64",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int64Type_EncodingFields,
-		},
-	}
+	"UnixMicrosInt64": ubx.FieldSpec{
+		WireName: "unix_micros_int64",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int64Type_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueType_TimestampTypeFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_TimestampType_EncodingFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_TimestampType_EncodingFields,
+	},
+}
 
 var Table_ColumnFamilies_ValueTypeFields = ubx.FieldMap{
-		"AggregateType": ubx.FieldSpec{
-			WireName: "aggregate_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_AggregateTypeFields,
-		},
-		"ArrayType": ubx.FieldSpec{
-			WireName: "array_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_ArrayTypeFields,
-		},
-		"BoolType": ubx.FieldSpec{
-			WireName: "bool_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BoolTypeFields,
-		},
-		"BytesType": ubx.FieldSpec{
-			WireName: "bytes_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BytesTypeFields,
-		},
-		"DateType": ubx.FieldSpec{WireName: "date_type"},
-		"EnumType": ubx.FieldSpec{
-			WireName: "enum_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_EnumTypeFields,
-		},
-		"Float32Type": ubx.FieldSpec{WireName: "float32_type"},
-		"Float64Type": ubx.FieldSpec{WireName: "float64_type"},
-		"GeographyType": ubx.FieldSpec{WireName: "geography_type"},
-		"Int32Type": ubx.FieldSpec{
-			WireName: "int32_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int32TypeFields,
-		},
-		"Int64Type": ubx.FieldSpec{
-			WireName: "int64_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int64TypeFields,
-		},
-		"MapType": ubx.FieldSpec{
-			WireName: "map_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_MapTypeFields,
-		},
-		"ProtoType": ubx.FieldSpec{
-			WireName: "proto_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_ProtoTypeFields,
-		},
-		"StringType": ubx.FieldSpec{
-			WireName: "string_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StringTypeFields,
-		},
-		"StructType": ubx.FieldSpec{
-			WireName: "struct_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StructTypeFields,
-		},
-		"TimestampType": ubx.FieldSpec{
-			WireName: "timestamp_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_TimestampTypeFields,
-		},
-	}
+	"AggregateType": ubx.FieldSpec{
+		WireName: "aggregate_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_AggregateTypeFields,
+	},
+	"ArrayType": ubx.FieldSpec{
+		WireName: "array_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_ArrayTypeFields,
+	},
+	"BoolType": ubx.FieldSpec{
+		WireName: "bool_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BoolTypeFields,
+	},
+	"BytesType": ubx.FieldSpec{
+		WireName: "bytes_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BytesTypeFields,
+	},
+	"DateType": ubx.FieldSpec{WireName: "date_type"},
+	"EnumType": ubx.FieldSpec{
+		WireName: "enum_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_EnumTypeFields,
+	},
+	"Float32Type":   ubx.FieldSpec{WireName: "float32_type"},
+	"Float64Type":   ubx.FieldSpec{WireName: "float64_type"},
+	"GeographyType": ubx.FieldSpec{WireName: "geography_type"},
+	"Int32Type": ubx.FieldSpec{
+		WireName: "int32_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int32TypeFields,
+	},
+	"Int64Type": ubx.FieldSpec{
+		WireName: "int64_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int64TypeFields,
+	},
+	"MapType": ubx.FieldSpec{
+		WireName: "map_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_MapTypeFields,
+	},
+	"ProtoType": ubx.FieldSpec{
+		WireName: "proto_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_ProtoTypeFields,
+	},
+	"StringType": ubx.FieldSpec{
+		WireName: "string_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StringTypeFields,
+	},
+	"StructType": ubx.FieldSpec{
+		WireName: "struct_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StructTypeFields,
+	},
+	"TimestampType": ubx.FieldSpec{
+		WireName: "timestamp_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_TimestampTypeFields,
+	},
+}
 
 var Table_ColumnFamiliesFields = ubx.FieldMap{
-		"GcRule": ubx.FieldSpec{
-			WireName: "gc_rule",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_GcRuleFields,
-		},
-		"Stats": ubx.FieldSpec{
-			WireName: "stats",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_StatsFields,
-		},
-		"ValueType": ubx.FieldSpec{
-			WireName: "value_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueTypeFields,
-		},
-	}
+	"GcRule": ubx.FieldSpec{
+		WireName: "gc_rule",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_GcRuleFields,
+	},
+	"Stats": ubx.FieldSpec{
+		WireName: "stats",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_StatsFields,
+	},
+	"ValueType": ubx.FieldSpec{
+		WireName: "value_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueTypeFields,
+	},
+}
 
 var Table_RestoreInfo_BackupInfoFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{WireName: "backup"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"SourceBackup": ubx.FieldSpec{WireName: "source_backup"},
-		"SourceTable": ubx.FieldSpec{WireName: "source_table"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Backup":       ubx.FieldSpec{WireName: "backup"},
+	"EndTime":      ubx.FieldSpec{WireName: "end_time"},
+	"SourceBackup": ubx.FieldSpec{WireName: "source_backup"},
+	"SourceTable":  ubx.FieldSpec{WireName: "source_table"},
+	"StartTime":    ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Table_RestoreInfoFields = ubx.FieldMap{
-		"BackupInfo": ubx.FieldSpec{
-			WireName: "backup_info",
-			Kind: "object",
-			Fields: Table_RestoreInfo_BackupInfoFields,
-		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"BackupInfo": ubx.FieldSpec{
+		WireName: "backup_info",
+		Kind:     "object",
+		Fields:   Table_RestoreInfo_BackupInfoFields,
+	},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var Table_RowKeySchema_Fields_TypeFields = ubx.FieldMap{
-		"AggregateType": ubx.FieldSpec{
-			WireName: "aggregate_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_AggregateTypeFields,
-		},
-		"ArrayType": ubx.FieldSpec{
-			WireName: "array_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_ArrayTypeFields,
-		},
-		"BoolType": ubx.FieldSpec{
-			WireName: "bool_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BoolTypeFields,
-		},
-		"BytesType": ubx.FieldSpec{
-			WireName: "bytes_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_BytesTypeFields,
-		},
-		"DateType": ubx.FieldSpec{WireName: "date_type"},
-		"EnumType": ubx.FieldSpec{
-			WireName: "enum_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_EnumTypeFields,
-		},
-		"Float32Type": ubx.FieldSpec{WireName: "float32_type"},
-		"Float64Type": ubx.FieldSpec{WireName: "float64_type"},
-		"GeographyType": ubx.FieldSpec{WireName: "geography_type"},
-		"Int32Type": ubx.FieldSpec{
-			WireName: "int32_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int32TypeFields,
-		},
-		"Int64Type": ubx.FieldSpec{
-			WireName: "int64_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_Int64TypeFields,
-		},
-		"MapType": ubx.FieldSpec{
-			WireName: "map_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_MapTypeFields,
-		},
-		"ProtoType": ubx.FieldSpec{
-			WireName: "proto_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_ProtoTypeFields,
-		},
-		"StringType": ubx.FieldSpec{
-			WireName: "string_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StringTypeFields,
-		},
-		"StructType": ubx.FieldSpec{WireName: "struct_type"},
-		"TimestampType": ubx.FieldSpec{
-			WireName: "timestamp_type",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_TimestampTypeFields,
-		},
-	}
+	"AggregateType": ubx.FieldSpec{
+		WireName: "aggregate_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_AggregateTypeFields,
+	},
+	"ArrayType": ubx.FieldSpec{
+		WireName: "array_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_ArrayTypeFields,
+	},
+	"BoolType": ubx.FieldSpec{
+		WireName: "bool_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BoolTypeFields,
+	},
+	"BytesType": ubx.FieldSpec{
+		WireName: "bytes_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_BytesTypeFields,
+	},
+	"DateType": ubx.FieldSpec{WireName: "date_type"},
+	"EnumType": ubx.FieldSpec{
+		WireName: "enum_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_EnumTypeFields,
+	},
+	"Float32Type":   ubx.FieldSpec{WireName: "float32_type"},
+	"Float64Type":   ubx.FieldSpec{WireName: "float64_type"},
+	"GeographyType": ubx.FieldSpec{WireName: "geography_type"},
+	"Int32Type": ubx.FieldSpec{
+		WireName: "int32_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int32TypeFields,
+	},
+	"Int64Type": ubx.FieldSpec{
+		WireName: "int64_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_Int64TypeFields,
+	},
+	"MapType": ubx.FieldSpec{
+		WireName: "map_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_MapTypeFields,
+	},
+	"ProtoType": ubx.FieldSpec{
+		WireName: "proto_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_ProtoTypeFields,
+	},
+	"StringType": ubx.FieldSpec{
+		WireName: "string_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StringTypeFields,
+	},
+	"StructType": ubx.FieldSpec{WireName: "struct_type"},
+	"TimestampType": ubx.FieldSpec{
+		WireName: "timestamp_type",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_TimestampTypeFields,
+	},
+}
 
 var Table_RowKeySchema_FieldsFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "object",
-			Fields: Table_RowKeySchema_Fields_TypeFields,
-		},
-	}
+	"FieldName": ubx.FieldSpec{WireName: "field_name"},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "object",
+		Fields:   Table_RowKeySchema_Fields_TypeFields,
+	},
+}
 
 var Table_RowKeySchemaFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{
-			WireName: "encoding",
-			Kind: "object",
-			Fields: Table_ColumnFamilies_ValueType_StructType_EncodingFields,
-		},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_RowKeySchema_FieldsFields,
-		},
-	}
+	"Encoding": ubx.FieldSpec{
+		WireName: "encoding",
+		Kind:     "object",
+		Fields:   Table_ColumnFamilies_ValueType_StructType_EncodingFields,
+	},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_RowKeySchema_FieldsFields,
+	},
+}
 
 var Table_StatsFields = ubx.FieldMap{
-		"AverageCellsPerColumn": ubx.FieldSpec{WireName: "average_cells_per_column"},
-		"AverageColumnsPerRow": ubx.FieldSpec{WireName: "average_columns_per_row"},
-		"LogicalDataBytes": ubx.FieldSpec{WireName: "logical_data_bytes"},
-		"RowCount": ubx.FieldSpec{WireName: "row_count"},
-	}
+	"AverageCellsPerColumn": ubx.FieldSpec{WireName: "average_cells_per_column"},
+	"AverageColumnsPerRow":  ubx.FieldSpec{WireName: "average_columns_per_row"},
+	"LogicalDataBytes":      ubx.FieldSpec{WireName: "logical_data_bytes"},
+	"RowCount":              ubx.FieldSpec{WireName: "row_count"},
+}
 
 var Table_Table_TieredStorageConfig_InfrequentAccessFields = ubx.FieldMap{
-		"IncludeIfOlderThan": ubx.FieldSpec{WireName: "include_if_older_than"},
-	}
+	"IncludeIfOlderThan": ubx.FieldSpec{WireName: "include_if_older_than"},
+}
 
 var Table_Table_TieredStorageConfigFields = ubx.FieldMap{
-		"InfrequentAccess": ubx.FieldSpec{
-			WireName: "infrequent_access",
-			Kind: "object",
-			Fields: Table_Table_TieredStorageConfig_InfrequentAccessFields,
-		},
-	}
+	"InfrequentAccess": ubx.FieldSpec{
+		WireName: "infrequent_access",
+		Kind:     "object",
+		Fields:   Table_Table_TieredStorageConfig_InfrequentAccessFields,
+	},
+}
 
 var Table_TableFields = ubx.FieldMap{
-		"AutomatedBackupPolicy": ubx.FieldSpec{
-			WireName: "automated_backup_policy",
-			Kind: "object",
-			Fields: Table_AutomatedBackupPolicyFields,
-		},
-		"ChangeStreamConfig": ubx.FieldSpec{
-			WireName: "change_stream_config",
-			Kind: "object",
-			Fields: Table_ChangeStreamConfigFields,
-		},
-		"ClusterStates": ubx.FieldSpec{
-			WireName: "cluster_states",
-			Kind: "map",
-			Fields: Table_ClusterStatesFields,
-		},
-		"ColumnFamilies": ubx.FieldSpec{
-			WireName: "column_families",
-			Kind: "map",
-			Fields: Table_ColumnFamiliesFields,
-		},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RestoreInfo": ubx.FieldSpec{
-			WireName: "restore_info",
-			Kind: "object",
-			Fields: Table_RestoreInfoFields,
-		},
-		"RowKeySchema": ubx.FieldSpec{
-			WireName: "row_key_schema",
-			Kind: "object",
-			Fields: Table_RowKeySchemaFields,
-		},
-		"Stats": ubx.FieldSpec{
-			WireName: "stats",
-			Kind: "object",
-			Fields: Table_StatsFields,
-		},
-		"TieredStorageConfig": ubx.FieldSpec{
-			WireName: "tiered_storage_config",
-			Kind: "object",
-			Fields: Table_Table_TieredStorageConfigFields,
-		},
-	}
+	"AutomatedBackupPolicy": ubx.FieldSpec{
+		WireName: "automated_backup_policy",
+		Kind:     "object",
+		Fields:   Table_AutomatedBackupPolicyFields,
+	},
+	"ChangeStreamConfig": ubx.FieldSpec{
+		WireName: "change_stream_config",
+		Kind:     "object",
+		Fields:   Table_ChangeStreamConfigFields,
+	},
+	"ClusterStates": ubx.FieldSpec{
+		WireName: "cluster_states",
+		Kind:     "map",
+		Fields:   Table_ClusterStatesFields,
+	},
+	"ColumnFamilies": ubx.FieldSpec{
+		WireName: "column_families",
+		Kind:     "map",
+		Fields:   Table_ColumnFamiliesFields,
+	},
+	"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
+	"Granularity":        ubx.FieldSpec{WireName: "granularity"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"RestoreInfo": ubx.FieldSpec{
+		WireName: "restore_info",
+		Kind:     "object",
+		Fields:   Table_RestoreInfoFields,
+	},
+	"RowKeySchema": ubx.FieldSpec{
+		WireName: "row_key_schema",
+		Kind:     "object",
+		Fields:   Table_RowKeySchemaFields,
+	},
+	"Stats": ubx.FieldSpec{
+		WireName: "stats",
+		Kind:     "object",
+		Fields:   Table_StatsFields,
+	},
+	"TieredStorageConfig": ubx.FieldSpec{
+		WireName: "tiered_storage_config",
+		Kind:     "object",
+		Fields:   Table_Table_TieredStorageConfigFields,
+	},
+}
 
 type TableConfig struct {
 	// The optional list of row keys that will be used to initially split the table into several tablets (tablets are similar to HBase regions). Given two split keys, `s1` and `s2`, three tablets will be created, spanning the key ranges: `[, s1), [s1, s2), [s2, )`. Example: * Row keys := `["a", "apple", "custom", "customer_1", "customer_2",` `"other", "zz"]` * initial_split_keys := `["apple", "customer_1", "customer_2", "other"]` * Key assignment: - Tablet 1 `[, apple) => {"a"}.` - Tablet 2 `[apple, customer_1) => {"apple", "custom"}.` - Tablet 3 `[customer_1, customer_2) => {"customer_1"}.` - Tablet 4 `[customer_2, other) => {"customer_2"}.` - Tablet 5 `[other, ) => {"other", "zz"}.`
@@ -808,13 +808,13 @@ var Table = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InitialSplits": ubx.FieldSpec{
 			WireName: "initial_splits",
-			Kind: "list",
-			Fields: Table_InitialSplitsFields,
+			Kind:     "list",
+			Fields:   Table_InitialSplitsFields,
 		},
 		"Table": ubx.FieldSpec{
 			WireName: "table",
-			Kind: "object",
-			Fields: Table_TableFields,
+			Kind:     "object",
+			Fields:   Table_TableFields,
 		},
 		"TableId": ubx.FieldSpec{WireName: "table_id"},
 	},

@@ -544,16 +544,10 @@ _TransferJob_TransferSpecFields = {
 
 @dataclasses.dataclass
 class TransferJobConfig:
-    # Output only. The time that the transfer job was created.
-    creation_time: Any = None
-    # Output only. The time that the transfer job was deleted.
-    deletion_time: Any = None
     # A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded.
     description: Any = None
     # Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files.
     event_stream: Any = None
-    # Output only. The time that the transfer job was last modified.
-    last_modification_time: Any = None
     # The name of the most recently started TransferOperation of this JobConfig. Present if a TransferOperation has been created for this JobConfig.
     latest_operation_name: Any = None
     # Specifies the logging behavior for transfer operations. Logs can be sent to Cloud Logging for all transfer types. See [Read transfer logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for details.
@@ -611,15 +605,12 @@ class TransferJobAttrs:
 TransferJob = ubx.ResourceBinding(
     wire_type="google_storagetransfer_transfer_job",
     fields={
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
-        "deletion_time": ubx.FieldSpec(wire_name="deletion_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "event_stream": ubx.FieldSpec(
             wire_name="event_stream",
             kind="object",
             fields=_TransferJob_EventStreamFields,
         ),
-        "last_modification_time": ubx.FieldSpec(wire_name="last_modification_time"),
         "latest_operation_name": ubx.FieldSpec(wire_name="latest_operation_name"),
         "logging_config": ubx.FieldSpec(
             wire_name="logging_config",

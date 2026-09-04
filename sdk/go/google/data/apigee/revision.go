@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RevisionConfig struct {
 	Format any
-	Name any
+	Name   any
 }
 
 type RevisionAttrs struct {
@@ -15,14 +15,14 @@ type RevisionAttrs struct {
 	Data any
 	// Application specific response metadata. Must be set in the first response for streaming APIs.
 	Extensions any
-	Format any
-	Name any
+	Format     any
+	Name       any
 }
 
 var Revision = ubx.DataSourceBinding{
 	WireType: "google_apigee_revision",
 	Fields: ubx.FieldMap{
 		"Format": ubx.FieldSpec{WireName: "format"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

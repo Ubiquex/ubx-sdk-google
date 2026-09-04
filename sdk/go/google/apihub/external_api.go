@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type ExternalApi_Attributes_EnumValues_Values struct {
 	Description any
 	DisplayName any
-	Id any
-	Immutable any
+	Id          any
+	Immutable   any
 }
 
 type ExternalApi_Attributes_EnumValues struct {
@@ -19,11 +19,11 @@ type ExternalApi_Attributes_JsonValues struct {
 }
 
 type ExternalApi_Attributes struct {
-	Attribute any
-	EnumValues any
-	JsonValues any
+	Attribute    any
+	EnumValues   any
+	JsonValues   any
 	StringValues any
-	UriValues any
+	UriValues    any
 }
 
 type ExternalApi_Documentation struct {
@@ -32,57 +32,55 @@ type ExternalApi_Documentation struct {
 }
 
 var ExternalApi_Attributes_EnumValues_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 var ExternalApi_Attributes_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: ExternalApi_Attributes_EnumValues_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   ExternalApi_Attributes_EnumValues_ValuesFields,
+	},
+}
 
 var ExternalApi_Attributes_JsonValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var ExternalApi_AttributesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: ExternalApi_Attributes_EnumValuesFields,
-		},
-		"JsonValues": ubx.FieldSpec{
-			WireName: "json_values",
-			Kind: "object",
-			Fields: ExternalApi_Attributes_JsonValuesFields,
-		},
-		"StringValues": ubx.FieldSpec{
-			WireName: "string_values",
-			Kind: "object",
-			Fields: ExternalApi_Attributes_JsonValuesFields,
-		},
-		"UriValues": ubx.FieldSpec{
-			WireName: "uri_values",
-			Kind: "object",
-			Fields: ExternalApi_Attributes_JsonValuesFields,
-		},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   ExternalApi_Attributes_EnumValuesFields,
+	},
+	"JsonValues": ubx.FieldSpec{
+		WireName: "json_values",
+		Kind:     "object",
+		Fields:   ExternalApi_Attributes_JsonValuesFields,
+	},
+	"StringValues": ubx.FieldSpec{
+		WireName: "string_values",
+		Kind:     "object",
+		Fields:   ExternalApi_Attributes_JsonValuesFields,
+	},
+	"UriValues": ubx.FieldSpec{
+		WireName: "uri_values",
+		Kind:     "object",
+		Fields:   ExternalApi_Attributes_JsonValuesFields,
+	},
+}
 
 var ExternalApi_DocumentationFields = ubx.FieldMap{
-		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-	}
+	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+}
 
 type ExternalApiConfig struct {
 	// Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
 	Attributes any
-	// Output only. Creation timestamp.
-	CreateTime any
 	// Optional. Description of the external API. Max length is 2000 characters (Unicode Code Points).
 	Description any
 	// Required. Display name of the external API. Max length is 63 characters (Unicode Code Points).
@@ -95,8 +93,6 @@ type ExternalApiConfig struct {
 	Name any
 	// Optional. List of paths served by this API.
 	Paths any
-	// Output only. Last update timestamp.
-	UpdateTime any
 }
 
 type ExternalApiAttrs struct {
@@ -125,20 +121,18 @@ var ExternalApi = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "map",
-			Fields: ExternalApi_AttributesFields,
+			Kind:     "map",
+			Fields:   ExternalApi_AttributesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: ExternalApi_DocumentationFields,
+			Kind:     "object",
+			Fields:   ExternalApi_DocumentationFields,
 		},
 		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Paths":     ubx.FieldSpec{WireName: "paths"},
 	},
 }

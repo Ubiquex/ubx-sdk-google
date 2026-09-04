@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface SubnetConfig {
-  name: string | Computed<string>;
 }
 
 export interface SubnetAttrs {
@@ -22,6 +21,5 @@ export interface SubnetAttrs {
 export const Subnet: DataSourceBinding<SubnetConfig, SubnetAttrs> = {
   wireType: "google_vmwareengine_subnet",
   fields: {
-    name: "name",
   },
 };

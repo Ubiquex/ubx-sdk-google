@@ -6,26 +6,12 @@ export interface GitRepositoryLinkConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Git Clone URI. */
   cloneUri?: string | Computed<string>;
-  /** Output only. [Output only] Create timestamp */
-  createTime?: string | Computed<string>;
-  /** Output only. [Output only] Delete timestamp */
-  deleteTime?: string | Computed<string>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. URI to access the linked repository through the Git Proxy. This field is only populated if the git proxy is enabled for the connection. */
-  gitProxyUri?: string | Computed<string>;
   /** Optional. Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Resource name of the repository, in the format `projects/* /locations/* /connections/* /gitRepositoryLinks/*`. */
   name?: string | Computed<string>;
-  /** Output only. Set to true when the connection is being set up or updated in the background. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. A system-assigned unique identifier for the GitRepositoryLink. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update timestamp */
-  updateTime?: string | Computed<string>;
-  /** Output only. External ID of the webhook created for the repository. */
-  webhookId?: string | Computed<string>;
 }
 
 export interface GitRepositoryLinkAttrs {
@@ -60,15 +46,8 @@ export const GitRepositoryLink: ResourceBinding<GitRepositoryLinkConfig, GitRepo
   fields: {
     annotations: "annotations",
     cloneUri: "clone_uri",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     etag: "etag",
-    gitProxyUri: "git_proxy_uri",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    uid: "uid",
-    updateTime: "update_time",
-    webhookId: "webhook_id",
   },
 };

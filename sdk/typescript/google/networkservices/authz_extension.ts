@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface AuthzExtensionConfig {
   /** Optional. The `:authority` header in the gRPC request sent from Envoy to the extension service. It is required when the `service` field points to a backend service. */
   authority?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Determines how the proxy behaves if the call to the extension fails or times out. When set to `TRUE`, request or response processing continues without error. Any subsequent extensions in the extension chain are also executed. When set to `FALSE` or the default setting of `FALSE` is used, one of the following happens: * If response headers have not been delivered to the downstream client, a generic 500 error is returned to the client. The error response can be tailored by configuring a custom error response in the load balancer. * If response headers have been delivered, then the HTTP stream to the downstream client is reset. */
@@ -26,8 +24,6 @@ export interface AuthzExtensionConfig {
   service?: string | Computed<string>;
   /** Required. Specifies the timeout for each individual message on the stream. The timeout must be between 10-10000 milliseconds. */
   timeout?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
   /** Optional. The format of communication supported by the callout extension. This field is supported only for regional `AuthzExtension` resources. If not specified, the default value `EXT_PROC_GRPC` is used. Global `AuthzExtension` resources use the `EXT_PROC_GRPC` wire format. */
   wireFormat?: string | Computed<string>;
 }
@@ -67,7 +63,6 @@ export const AuthzExtension: ResourceBinding<AuthzExtensionConfig, AuthzExtensio
   wireType: "google_networkservices_authz_extension",
   fields: {
     authority: "authority",
-    createTime: "create_time",
     description: "description",
     failOpen: "fail_open",
     forwardAttributes: "forward_attributes",
@@ -78,7 +73,6 @@ export const AuthzExtension: ResourceBinding<AuthzExtensionConfig, AuthzExtensio
     name: "name",
     service: "service",
     timeout: "timeout",
-    updateTime: "update_time",
     wireFormat: "wire_format",
   },
 };

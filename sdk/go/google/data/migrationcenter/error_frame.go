@@ -10,19 +10,19 @@ type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_AggregatedStats struct {
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Plugins struct {
 	Enabled any
-	Plugin any
+	Plugin  any
 	Version any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Properties struct {
-	Enabled any
+	Enabled      any
 	NumericValue any
-	Property any
+	Property     any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Variables struct {
 	Category any
-	Value any
+	Value    any
 	Variable any
 }
 
@@ -38,13 +38,13 @@ type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql struct {
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql_Settings struct {
-	BoolValue any
-	IntValue any
-	RealValue any
-	Setting any
-	Source any
+	BoolValue   any
+	IntValue    any
+	RealValue   any
+	Setting     any
+	Source      any
 	StringValue any
-	Unit any
+	Unit        any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql struct {
@@ -55,18 +55,18 @@ type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql struct {
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_Features struct {
-	Enabled any
+	Enabled     any
 	FeatureName any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_ServerFlags struct {
 	ServerFlagName any
-	Value any
-	ValueInUse any
+	Value          any
+	ValueInUse     any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_TraceFlags struct {
-	Scope any
+	Scope         any
 	TraceFlagName any
 }
 
@@ -80,15 +80,15 @@ type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer struct {
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology_Instances_Network struct {
-	HostNames any
-	IpAddresses any
+	HostNames         any
+	IpAddresses       any
 	PrimaryMacAddress any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology_Instances struct {
 	InstanceName any
-	Network any
-	Role any
+	Network      any
+	Role         any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology struct {
@@ -144,8 +144,8 @@ type ErrorFrame_OriginalFrame_DatabaseDetails_ParentDatabaseDeployment struct {
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql_StorageEngines struct {
 	EncryptedTableCount any
-	Engine any
-	TableCount any
+	Engine              any
+	TableCount          any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql struct {
@@ -154,16 +154,16 @@ type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql struct {
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Objects struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Postgresql_PostgresqlExtensions struct {
 	Extension any
-	Version any
+	Version   any
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Postgresql struct {
-	ForeignTablesCount any
+	ForeignTablesCount   any
 	PostgresqlExtensions any
 }
 
@@ -172,11 +172,11 @@ type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_SqlServer struct {
 }
 
 type ErrorFrame_OriginalFrame_DatabaseDetails_Schemas struct {
-	Mysql any
-	Objects any
-	Postgresql any
-	SchemaName any
-	SqlServer any
+	Mysql           any
+	Objects         any
+	Postgresql      any
+	SchemaName      any
+	SqlServer       any
 	TablesSizeBytes any
 }
 
@@ -238,12 +238,12 @@ type ErrorFrame_OriginalFrame_MachineDetails_Architecture struct {
 
 type ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions_Partitions_Entries struct {
 	CapacityBytes any
-	FileSystem any
-	FreeBytes any
-	MountPoint any
+	FileSystem    any
+	FreeBytes     any
+	MountPoint    any
 	SubPartitions any
-	Type any
-	Uuid any
+	Type          any
+	Uuid          any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions_Partitions struct {
@@ -261,21 +261,21 @@ type ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions struct {
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_Disks_Disks_Entries_Vmware struct {
-	BackingType any
+	BackingType      any
 	RdmCompatibility any
-	Shared any
-	VmdkMode any
+	Shared           any
+	VmdkMode         any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_Disks_Disks_Entries struct {
 	CapacityBytes any
-	DiskLabel any
+	DiskLabel     any
 	DiskLabelType any
-	FreeBytes any
-	HwAddress any
+	FreeBytes     any
+	HwAddress     any
 	InterfaceType any
-	Partitions any
-	Vmware any
+	Partitions    any
+	Vmware        any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_Disks_Disks struct {
@@ -293,11 +293,11 @@ type ErrorFrame_OriginalFrame_MachineDetails_Disks struct {
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Fstab_Entries struct {
-	File any
-	Freq any
-	Mntops any
-	Passno any
-	Spec any
+	File    any
+	Freq    any
+	Mntops  any
+	Passno  any
+	Spec    any
 	Vfstype any
 }
 
@@ -308,7 +308,7 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Fstab struct {
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts_Entries struct {
 	HostNames any
-	Ip any
+	Ip        any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts struct {
@@ -318,7 +318,7 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts struct {
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_NfsExports_Entries struct {
 	ExportDirectory any
-	Hosts any
+	Hosts           any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_NfsExports struct {
@@ -341,11 +341,11 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config struct {
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_InstalledApps_Entries struct {
 	ApplicationName any
-	InstallTime any
-	Licenses any
-	Path any
-	Vendor any
-	Version any
+	InstallTime     any
+	Licenses        any
+	Path            any
+	Vendor          any
+	Version         any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_InstalledApps struct {
@@ -354,14 +354,14 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_InstalledApps struc
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Network_Connections_Entries struct {
-	LocalIpAddress any
-	LocalPort any
-	Pid any
-	ProcessName any
-	Protocol any
+	LocalIpAddress  any
+	LocalPort       any
+	Pid             any
+	ProcessName     any
+	Protocol        any
 	RemoteIpAddress any
-	RemotePort any
-	State any
+	RemotePort      any
+	State           any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Network_Connections struct {
@@ -377,10 +377,10 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Network struct {
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileList_Entries struct {
-	Command any
+	Command  any
 	FilePath any
 	FileType any
-	User any
+	User     any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileList struct {
@@ -390,10 +390,10 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileList struct
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes_Entries struct {
 	Attributes any
-	Cmdline any
-	ExePath any
-	Pid any
-	User any
+	Cmdline    any
+	ExePath    any
+	Pid        any
+	User       any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes struct {
@@ -402,12 +402,12 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes struct {
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Services_Entries struct {
-	Cmdline any
-	ExePath any
-	Pid any
+	Cmdline     any
+	ExePath     any
+	Pid         any
 	ServiceName any
-	StartMode any
-	State any
+	StartMode   any
+	State       any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Services struct {
@@ -449,9 +449,9 @@ type ErrorFrame_OriginalFrame_MachineDetails_GuestOs struct {
 
 type ErrorFrame_OriginalFrame_MachineDetails_Network_Adapters_Entries_Addresses_Entries struct {
 	Assignment any
-	Bcast any
-	Fqdn any
-	IpAddress any
+	Bcast      any
+	Fqdn       any
+	IpAddress  any
 	SubnetMask any
 }
 
@@ -461,8 +461,8 @@ type ErrorFrame_OriginalFrame_MachineDetails_Network_Adapters_Entries_Addresses 
 
 type ErrorFrame_OriginalFrame_MachineDetails_Network_Adapters_Entries struct {
 	AdapterType any
-	Addresses any
-	MacAddress any
+	Addresses   any
+	MacAddress  any
 }
 
 type ErrorFrame_OriginalFrame_MachineDetails_Network_Adapters struct {
@@ -572,21 +572,21 @@ type ErrorFrame_OriginalFrame_PerformanceSamples_Cpu struct {
 }
 
 type ErrorFrame_OriginalFrame_PerformanceSamples_Disk struct {
-	AverageIops any
-	AverageReadIops any
+	AverageIops      any
+	AverageReadIops  any
 	AverageWriteIops any
 }
 
 type ErrorFrame_OriginalFrame_PerformanceSamples_Network struct {
-	AverageEgressBps any
+	AverageEgressBps  any
 	AverageIngressBps any
 }
 
 type ErrorFrame_OriginalFrame_PerformanceSamples struct {
-	Cpu any
-	Disk any
-	Memory any
-	Network any
+	Cpu        any
+	Disk       any
+	Memory     any
+	Network    any
 	SampleTime any
 }
 
@@ -612,22 +612,21 @@ type ErrorFrame_OriginalFrame struct {
 }
 
 type ErrorFrame_Violations struct {
-	Field any
+	Field     any
 	Violation any
 }
 
 type ErrorFrameConfig struct {
-	Name any
 	View any
 }
 
 type ErrorFrameAttrs struct {
 	// Output only. Frame ingestion time.
 	IngestionTime any
-	Name any
+	Name          any
 	// Contains data reported from an inventory source on an asset.
 	OriginalFrame any
-	View any
+	View          any
 	// Output only. All the violations that were detected for the frame.
 	Violations any
 }
@@ -635,7 +634,6 @@ type ErrorFrameAttrs struct {
 var ErrorFrame = ubx.DataSourceBinding{
 	WireType: "google_migrationcenter_error_frame",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

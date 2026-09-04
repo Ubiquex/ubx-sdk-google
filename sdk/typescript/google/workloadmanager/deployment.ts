@@ -384,8 +384,6 @@ const Deployment_TerraformVariablesFields: FieldMap = {
 };
 
 export interface DeploymentConfig {
-  /** Output only. Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Description of the deployment. */
   description?: string | Computed<string>;
   /** The name of the deployment resource. The format is 'projects/{project_id}/locations/{location_id}/deployments/{deployment_id}'. */
@@ -396,12 +394,8 @@ export interface DeploymentConfig {
   serviceAccount?: string | Computed<string>;
   /** Message for MS SQL workload. */
   sqlServerWorkload?: Deployment_SqlServerWorkload | Computed<Deployment_SqlServerWorkload>;
-  /** Output only. Current state of the deployment. */
-  state?: string | Computed<string>;
   /** Optional. terraform_variables represents all the Terraform variables for the deployment workload. The key is the name of the Terraform variable, and the value is the TerraformVariable. For example: { "project_id": { "input_value": { "string_value": "my-project-id" } }, "zone": { "input_value": { "string_value": "us-central1-a" } } } */
   terraformVariables?: Record<string, Deployment_TerraformVariables> | Computed<Record<string, Deployment_TerraformVariables>>;
-  /** Output only. Update time stamp. */
-  updateTime?: string | Computed<string>;
   /** Optional. The user-specified Cloud Build worker pool resource in which the Cloud Build job will execute. Format: `projects/{project}/locations/{location}/workerPools/{workerPoolId}`. If this field is unspecified, the default Cloud Build worker pool will be used. */
   workerPool?: string | Computed<string>;
   /** Optional. Workload type of the deployment. */
@@ -436,7 +430,6 @@ export interface DeploymentAttrs {
 export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
   wireType: "google_workloadmanager_deployment",
   fields: {
-    createTime: "create_time",
     description: "description",
     name: "name",
     sapSystemS4Config: {
@@ -450,13 +443,11 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
       kind: "object",
       fields: Deployment_SqlServerWorkloadFields,
     },
-    state: "state",
     terraformVariables: {
       wireName: "terraform_variables",
       kind: "map",
       fields: Deployment_TerraformVariablesFields,
     },
-    updateTime: "update_time",
     workerPool: "worker_pool",
     workloadType: "workload_type",
   },

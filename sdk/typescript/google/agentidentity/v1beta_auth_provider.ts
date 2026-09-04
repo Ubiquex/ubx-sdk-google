@@ -89,22 +89,12 @@ export interface V1betaAuthProviderConfig {
   authProviderTypeParams?: V1betaAuthProvider_AuthProviderTypeParams | Computed<V1betaAuthProvider_AuthProviderTypeParams>;
   /** Optional. List of scopes that are blocked from being requested for this auth provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200. */
   blockedScopes?: string[] | Computed<string[]>;
-  /** Output only. The creation timestamp. */
-  createTime?: string | Computed<string>;
-  /** Output only. Set to `true` if the auth provider is deleted. */
-  deleted?: boolean | Computed<boolean>;
   /** Optional. Description of the resource. Must be less than 256 characters. */
   description?: string | Computed<string>;
-  /** Output only. The time when the auth provider will expire. */
-  expireTime?: string | Computed<string>;
   /** Optional. Labels as key-value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The full resource name of the auth provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider} */
   name?: string | Computed<string>;
-  /** Output only. The state of the auth provider. */
-  state?: string | Computed<string>;
-  /** Output only. The update timestamp. */
-  updateTime?: string | Computed<string>;
   /** Optional. Input only. Identifiers for the agents that will use this auth provider, starting with `principal://`. For example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}` */
   workloadIds?: string[] | Computed<string[]>;
 }
@@ -146,14 +136,9 @@ export const V1betaAuthProvider: ResourceBinding<V1betaAuthProviderConfig, V1bet
       fields: V1betaAuthProvider_AuthProviderTypeParamsFields,
     },
     blockedScopes: "blocked_scopes",
-    createTime: "create_time",
-    deleted: "deleted",
     description: "description",
-    expireTime: "expire_time",
     labels: "labels",
     name: "name",
-    state: "state",
-    updateTime: "update_time",
     workloadIds: "workload_ids",
   },
 };

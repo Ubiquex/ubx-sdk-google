@@ -136,7 +136,7 @@ class Evaluation_ModelExplanation:
 
 @dataclasses.dataclass
 class EvaluationConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class EvaluationAttrs:
@@ -165,6 +165,5 @@ class EvaluationAttrs:
 Evaluation = ubx.DataSourceBinding(
     wire_type="google_aiplatform_evaluation",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -73,59 +73,6 @@ const ServiceConnectionMap_ConsumerPscConfigsFields: FieldMap = {
   state: "state",
 };
 
-const ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatusFields: FieldMap = {
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields,
-  },
-  fqdn: "fqdn",
-  state: "state",
-};
-
-const ServiceConnectionMap_ConsumerPscConnections_ErrorInfoFields: FieldMap = {
-  domain: "domain",
-  metadata: "metadata",
-  reason: "reason",
-};
-
-const ServiceConnectionMap_ConsumerPscConnectionsFields: FieldMap = {
-  dnsAutomationStatus: {
-    wireName: "dns_automation_status",
-    kind: "object",
-    fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatusFields,
-  },
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields,
-  },
-  errorInfo: {
-    wireName: "error_info",
-    kind: "object",
-    fields: ServiceConnectionMap_ConsumerPscConnections_ErrorInfoFields,
-  },
-  errorType: "error_type",
-  forwardingRule: "forwarding_rule",
-  gceOperation: "gce_operation",
-  ip: "ip",
-  ipVersion: "ip_version",
-  network: "network",
-  producerInstanceId: "producer_instance_id",
-  producerInstanceMetadata: "producer_instance_metadata",
-  project: "project",
-  pscConnectionId: "psc_connection_id",
-  selectedSubnetwork: "selected_subnetwork",
-  serviceAttachmentUri: "service_attachment_uri",
-  state: "state",
-};
-
 const ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields: FieldMap = {
   dnsSuffix: "dns_suffix",
   hostname: "hostname",
@@ -144,16 +91,10 @@ const ServiceConnectionMap_ProducerPscConfigsFields: FieldMap = {
 export interface ServiceConnectionMapConfig {
   /** The PSC configurations on consumer side. */
   consumerPscConfigs?: ServiceConnectionMap_ConsumerPscConfigs[] | Computed<ServiceConnectionMap_ConsumerPscConfigs[]>;
-  /** Output only. PSC connection details on consumer side. */
-  consumerPscConnections?: ServiceConnectionMap_ConsumerPscConnections[] | Computed<ServiceConnectionMap_ConsumerPscConnections[]>;
-  /** Output only. Time when the ServiceConnectionMap was created. */
-  createTime?: string | Computed<string>;
   /** A description of this resource. */
   description?: string | Computed<string>;
   /** Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. The infrastructure used for connections between consumers/producers. */
-  infrastructure?: string | Computed<string>;
   /** User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The name of a ServiceConnectionMap. Format: projects/{project}/locations/{location}/serviceConnectionMaps/{service_connection_map} See: https://google.aip.dev/122#fields-representing-resource-names */
@@ -162,12 +103,8 @@ export interface ServiceConnectionMapConfig {
   producerPscConfigs?: ServiceConnectionMap_ProducerPscConfigs[] | Computed<ServiceConnectionMap_ProducerPscConfigs[]>;
   /** The service class identifier this ServiceConnectionMap is for. The user of ServiceConnectionMap create API needs to have networkconnectivity.serviceClasses.use IAM permission for the service class. */
   serviceClass?: string | Computed<string>;
-  /** Output only. The service class uri this ServiceConnectionMap is for. */
-  serviceClassUri?: string | Computed<string>;
   /** The token provided by the consumer. This token authenticates that the consumer can create a connection within the specified project and network. */
   token?: string | Computed<string>;
-  /** Output only. Time when the ServiceConnectionMap was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServiceConnectionMapAttrs {
@@ -207,15 +144,8 @@ export const ServiceConnectionMap: ResourceBinding<ServiceConnectionMapConfig, S
       kind: "list",
       fields: ServiceConnectionMap_ConsumerPscConfigsFields,
     },
-    consumerPscConnections: {
-      wireName: "consumer_psc_connections",
-      kind: "list",
-      fields: ServiceConnectionMap_ConsumerPscConnectionsFields,
-    },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
-    infrastructure: "infrastructure",
     labels: "labels",
     name: "name",
     producerPscConfigs: {
@@ -224,8 +154,6 @@ export const ServiceConnectionMap: ResourceBinding<ServiceConnectionMapConfig, S
       fields: ServiceConnectionMap_ProducerPscConfigsFields,
     },
     serviceClass: "service_class",
-    serviceClassUri: "service_class_uri",
     token: "token",
-    updateTime: "update_time",
   },
 };

@@ -159,7 +159,6 @@ export interface V1beta1Evaluation_ModelExplanation {
 }
 
 export interface V1beta1EvaluationConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1EvaluationAttrs {
@@ -187,6 +186,5 @@ export interface V1beta1EvaluationAttrs {
 export const V1beta1Evaluation: DataSourceBinding<V1beta1EvaluationConfig, V1beta1EvaluationAttrs> = {
   wireType: "google_aiplatform_v1beta1_evaluation",
   fields: {
-    name: "name",
   },
 };

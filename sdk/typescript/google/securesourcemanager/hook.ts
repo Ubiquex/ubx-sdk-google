@@ -11,8 +11,6 @@ const Hook_PushOptionFields: FieldMap = {
 };
 
 export interface HookConfig {
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Determines if the hook disabled or not. Set to true to stop sending traffic. */
   disabled?: boolean | Computed<boolean>;
   /** Optional. The events that trigger hook on. */
@@ -24,10 +22,6 @@ export interface HookConfig {
   sensitiveQueryString?: string | Computed<string>;
   /** Required. The target URI to which the payloads will be delivered. */
   targetUri?: string | Computed<string>;
-  /** Output only. Unique identifier of the hook. */
-  uid?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface HookAttrs {
@@ -53,7 +47,6 @@ export interface HookAttrs {
 export const Hook: ResourceBinding<HookConfig, HookAttrs> = {
   wireType: "google_securesourcemanager_hook",
   fields: {
-    createTime: "create_time",
     disabled: "disabled",
     events: "events",
     name: "name",
@@ -64,7 +57,5 @@ export const Hook: ResourceBinding<HookConfig, HookAttrs> = {
     },
     sensitiveQueryString: "sensitive_query_string",
     targetUri: "target_uri",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

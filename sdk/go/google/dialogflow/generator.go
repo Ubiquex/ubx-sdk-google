@@ -4,19 +4,19 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Generator_LlmModelSettings struct {
-	Model any
+	Model      any
 	PromptText any
 }
 
 type Generator_ModelParameter struct {
 	MaxDecodeSteps any
-	Temperature any
-	TopK any
-	TopP any
+	Temperature    any
+	TopK           any
+	TopP           any
 }
 
 type Generator_Placeholders struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -25,42 +25,42 @@ type Generator_PromptText struct {
 }
 
 var Generator_LlmModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
-	}
+	"Model":      ubx.FieldSpec{WireName: "model"},
+	"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
+}
 
 var Generator_ModelParameterFields = ubx.FieldMap{
-		"MaxDecodeSteps": ubx.FieldSpec{WireName: "max_decode_steps"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxDecodeSteps": ubx.FieldSpec{WireName: "max_decode_steps"},
+	"Temperature":    ubx.FieldSpec{WireName: "temperature"},
+	"TopK":           ubx.FieldSpec{WireName: "top_k"},
+	"TopP":           ubx.FieldSpec{WireName: "top_p"},
+}
 
 var Generator_PlaceholdersFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Generator_PromptTextFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 type GeneratorConfig struct {
-	DisplayName any
+	DisplayName      any
 	LlmModelSettings any
-	ModelParameter any
-	Name any
-	Placeholders any
-	PromptText any
+	ModelParameter   any
+	Name             any
+	Placeholders     any
+	PromptText       any
 }
 
 type GeneratorAttrs struct {
-	DisplayName any
+	DisplayName      any
 	LlmModelSettings any
-	ModelParameter any
-	Name any
-	Placeholders any
-	PromptText any
+	ModelParameter   any
+	Name             any
+	Placeholders     any
+	PromptText       any
 }
 
 var Generator = ubx.ResourceBinding{
@@ -69,24 +69,24 @@ var Generator = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LlmModelSettings": ubx.FieldSpec{
 			WireName: "llm_model_settings",
-			Kind: "object",
-			Fields: Generator_LlmModelSettingsFields,
+			Kind:     "object",
+			Fields:   Generator_LlmModelSettingsFields,
 		},
 		"ModelParameter": ubx.FieldSpec{
 			WireName: "model_parameter",
-			Kind: "object",
-			Fields: Generator_ModelParameterFields,
+			Kind:     "object",
+			Fields:   Generator_ModelParameterFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Placeholders": ubx.FieldSpec{
 			WireName: "placeholders",
-			Kind: "list",
-			Fields: Generator_PlaceholdersFields,
+			Kind:     "list",
+			Fields:   Generator_PlaceholdersFields,
 		},
 		"PromptText": ubx.FieldSpec{
 			WireName: "prompt_text",
-			Kind: "object",
-			Fields: Generator_PromptTextFields,
+			Kind:     "object",
+			Fields:   Generator_PromptTextFields,
 		},
 	},
 }

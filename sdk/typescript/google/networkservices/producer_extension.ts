@@ -20,8 +20,6 @@ const ProducerExtension_ExtensionSettingsFields: FieldMap = {
 };
 
 export interface ProducerExtensionConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
@@ -34,8 +32,6 @@ export interface ProducerExtensionConfig {
   name?: string | Computed<string>;
   /** Required. The phase in which this `ProducerExtension` should execute. */
   phase?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ProducerExtensionAttrs {
@@ -60,7 +56,6 @@ export interface ProducerExtensionAttrs {
 export const ProducerExtension: ResourceBinding<ProducerExtensionConfig, ProducerExtensionAttrs> = {
   wireType: "google_networkservices_producer_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     extensionSettings: {
@@ -71,6 +66,5 @@ export const ProducerExtension: ResourceBinding<ProducerExtensionConfig, Produce
     labels: "labels",
     name: "name",
     phase: "phase",
-    updateTime: "update_time",
   },
 };

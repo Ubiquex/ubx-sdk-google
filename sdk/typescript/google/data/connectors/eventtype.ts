@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface EventtypeConfig {
-  name: string | Computed<string>;
 }
 
 export interface EventtypeAttrs {
@@ -26,6 +25,5 @@ export interface EventtypeAttrs {
 export const Eventtype: DataSourceBinding<EventtypeConfig, EventtypeAttrs> = {
   wireType: "google_connectors_eventtype",
   fields: {
-    name: "name",
   },
 };

@@ -48,28 +48,16 @@ _V1beta1Featurestore_OnlineServingConfigFields = {
 
 @dataclasses.dataclass
 class V1beta1FeaturestoreConfig:
-    # Output only. Timestamp when this Featurestore was created.
-    create_time: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
     # Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
     etag: Any = None
     # Optional. The labels with user-defined metadata to organize your Featurestore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Featurestore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
     labels: Any = None
-    # Output only. Name of the Featurestore. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}`
-    name: Any = None
     # OnlineServingConfig specifies the details for provisioning online serving resources.
     online_serving_config: Any = None
     # Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days
     online_storage_ttl_days: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. State of the featurestore.
-    state: Any = None
-    # Output only. Timestamp when this Featurestore was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1FeaturestoreAttrs:
@@ -99,7 +87,6 @@ class V1beta1FeaturestoreAttrs:
 V1beta1Featurestore = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_featurestore",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
             kind="object",
@@ -107,16 +94,11 @@ V1beta1Featurestore = ubx.ResourceBinding(
         ),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "online_serving_config": ubx.FieldSpec(
             wire_name="online_serving_config",
             kind="object",
             fields=_V1beta1Featurestore_OnlineServingConfigFields,
         ),
         "online_storage_ttl_days": ubx.FieldSpec(wire_name="online_storage_ttl_days"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface KeystoreConfig {
-  /** Output only. Aliases in this keystore. */
-  aliases?: string[] | Computed<string[]>;
   /** Required. Resource ID for this keystore. Values must match the regular expression `[\w[:space:].-]{1,255}`. */
   name?: string | Computed<string>;
 }
@@ -18,7 +16,6 @@ export interface KeystoreAttrs {
 export const Keystore: ResourceBinding<KeystoreConfig, KeystoreAttrs> = {
   wireType: "google_apigee_keystore",
   fields: {
-    aliases: "aliases",
     name: "name",
   },
 };

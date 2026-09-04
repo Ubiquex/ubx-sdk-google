@@ -30,8 +30,6 @@ const V1betaSampleQuery_QueryEntryFields: FieldMap = {
 };
 
 export interface V1betaSampleQueryConfig {
-  /** Output only. Timestamp the SampleQuery was created at. */
-  createTime?: string | Computed<string>;
   /** Identifier. The full resource name of the sample query, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sample_query_set}/sampleQueries/{sample_query}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters. */
   name?: string | Computed<string>;
   /** Query Entry captures metadata to be used for search evaluation. */
@@ -50,7 +48,6 @@ export interface V1betaSampleQueryAttrs {
 export const V1betaSampleQuery: ResourceBinding<V1betaSampleQueryConfig, V1betaSampleQueryAttrs> = {
   wireType: "google_discoveryengine_v1beta_sample_query",
   fields: {
-    createTime: "create_time",
     name: "name",
     queryEntry: {
       wireName: "query_entry",

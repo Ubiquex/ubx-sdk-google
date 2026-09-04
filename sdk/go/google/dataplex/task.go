@@ -130,114 +130,112 @@ type Task_TriggerSpec struct {
 }
 
 var Task_ExecutionSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"MaxJobExecutionLifetime": ubx.FieldSpec{WireName: "max_job_execution_lifetime"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"Args":                    ubx.FieldSpec{WireName: "args"},
+	"KmsKey":                  ubx.FieldSpec{WireName: "kms_key"},
+	"MaxJobExecutionLifetime": ubx.FieldSpec{WireName: "max_job_execution_lifetime"},
+	"Project":                 ubx.FieldSpec{WireName: "project"},
+	"ServiceAccount":          ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Task_ExecutionStatus_LatestJobFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ExecutionSpec": ubx.FieldSpec{
-			WireName: "execution_spec",
-			Kind: "object",
-			Fields: Task_ExecutionSpecFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetryCount": ubx.FieldSpec{WireName: "retry_count"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceJob": ubx.FieldSpec{WireName: "service_job"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Trigger": ubx.FieldSpec{WireName: "trigger"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"ExecutionSpec": ubx.FieldSpec{
+		WireName: "execution_spec",
+		Kind:     "object",
+		Fields:   Task_ExecutionSpecFields,
+	},
+	"Labels":     ubx.FieldSpec{WireName: "labels"},
+	"Message":    ubx.FieldSpec{WireName: "message"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"RetryCount": ubx.FieldSpec{WireName: "retry_count"},
+	"Service":    ubx.FieldSpec{WireName: "service"},
+	"ServiceJob": ubx.FieldSpec{WireName: "service_job"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"Trigger":    ubx.FieldSpec{WireName: "trigger"},
+	"Uid":        ubx.FieldSpec{WireName: "uid"},
+}
 
 var Task_ExecutionStatusFields = ubx.FieldMap{
-		"LatestJob": ubx.FieldSpec{
-			WireName: "latest_job",
-			Kind: "object",
-			Fields: Task_ExecutionStatus_LatestJobFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"LatestJob": ubx.FieldSpec{
+		WireName: "latest_job",
+		Kind:     "object",
+		Fields:   Task_ExecutionStatus_LatestJobFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Task_Notebook_InfrastructureSpec_BatchFields = ubx.FieldMap{
-		"ExecutorsCount": ubx.FieldSpec{WireName: "executors_count"},
-		"MaxExecutorsCount": ubx.FieldSpec{WireName: "max_executors_count"},
-	}
+	"ExecutorsCount":    ubx.FieldSpec{WireName: "executors_count"},
+	"MaxExecutorsCount": ubx.FieldSpec{WireName: "max_executors_count"},
+}
 
 var Task_Notebook_InfrastructureSpec_ContainerImageFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"JavaJars": ubx.FieldSpec{WireName: "java_jars"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PythonPackages": ubx.FieldSpec{WireName: "python_packages"},
-	}
+	"Image":          ubx.FieldSpec{WireName: "image"},
+	"JavaJars":       ubx.FieldSpec{WireName: "java_jars"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+	"PythonPackages": ubx.FieldSpec{WireName: "python_packages"},
+}
 
 var Task_Notebook_InfrastructureSpec_VpcNetworkFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"SubNetwork": ubx.FieldSpec{WireName: "sub_network"},
-	}
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+	"SubNetwork":  ubx.FieldSpec{WireName: "sub_network"},
+}
 
 var Task_Notebook_InfrastructureSpecFields = ubx.FieldMap{
-		"Batch": ubx.FieldSpec{
-			WireName: "batch",
-			Kind: "object",
-			Fields: Task_Notebook_InfrastructureSpec_BatchFields,
-		},
-		"ContainerImage": ubx.FieldSpec{
-			WireName: "container_image",
-			Kind: "object",
-			Fields: Task_Notebook_InfrastructureSpec_ContainerImageFields,
-		},
-		"VpcNetwork": ubx.FieldSpec{
-			WireName: "vpc_network",
-			Kind: "object",
-			Fields: Task_Notebook_InfrastructureSpec_VpcNetworkFields,
-		},
-	}
+	"Batch": ubx.FieldSpec{
+		WireName: "batch",
+		Kind:     "object",
+		Fields:   Task_Notebook_InfrastructureSpec_BatchFields,
+	},
+	"ContainerImage": ubx.FieldSpec{
+		WireName: "container_image",
+		Kind:     "object",
+		Fields:   Task_Notebook_InfrastructureSpec_ContainerImageFields,
+	},
+	"VpcNetwork": ubx.FieldSpec{
+		WireName: "vpc_network",
+		Kind:     "object",
+		Fields:   Task_Notebook_InfrastructureSpec_VpcNetworkFields,
+	},
+}
 
 var Task_NotebookFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"InfrastructureSpec": ubx.FieldSpec{
-			WireName: "infrastructure_spec",
-			Kind: "object",
-			Fields: Task_Notebook_InfrastructureSpecFields,
-		},
-		"Notebook": ubx.FieldSpec{WireName: "notebook"},
-	}
+	"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+	"FileUris":    ubx.FieldSpec{WireName: "file_uris"},
+	"InfrastructureSpec": ubx.FieldSpec{
+		WireName: "infrastructure_spec",
+		Kind:     "object",
+		Fields:   Task_Notebook_InfrastructureSpecFields,
+	},
+	"Notebook": ubx.FieldSpec{WireName: "notebook"},
+}
 
 var Task_SparkFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"InfrastructureSpec": ubx.FieldSpec{
-			WireName: "infrastructure_spec",
-			Kind: "object",
-			Fields: Task_Notebook_InfrastructureSpecFields,
-		},
-		"MainClass": ubx.FieldSpec{WireName: "main_class"},
-		"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
-		"PythonScriptFile": ubx.FieldSpec{WireName: "python_script_file"},
-		"SqlScript": ubx.FieldSpec{WireName: "sql_script"},
-		"SqlScriptFile": ubx.FieldSpec{WireName: "sql_script_file"},
-	}
+	"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+	"FileUris":    ubx.FieldSpec{WireName: "file_uris"},
+	"InfrastructureSpec": ubx.FieldSpec{
+		WireName: "infrastructure_spec",
+		Kind:     "object",
+		Fields:   Task_Notebook_InfrastructureSpecFields,
+	},
+	"MainClass":        ubx.FieldSpec{WireName: "main_class"},
+	"MainJarFileUri":   ubx.FieldSpec{WireName: "main_jar_file_uri"},
+	"PythonScriptFile": ubx.FieldSpec{WireName: "python_script_file"},
+	"SqlScript":        ubx.FieldSpec{WireName: "sql_script"},
+	"SqlScriptFile":    ubx.FieldSpec{WireName: "sql_script_file"},
+}
 
 var Task_TriggerSpecFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Disabled":   ubx.FieldSpec{WireName: "disabled"},
+	"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
+	"Schedule":   ubx.FieldSpec{WireName: "schedule"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type TaskConfig struct {
-	// Output only. The time when the task was created.
-	CreateTime any
 	// Optional. Description of the task.
 	Description any
 	// Optional. User friendly display name.
@@ -248,20 +246,12 @@ type TaskConfig struct {
 	ExecutionStatus any
 	// Optional. User-defined labels for the task.
 	Labels any
-	// Output only. The relative resource name of the task, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/ tasks/{task_id}.
-	Name any
 	// Config for running scheduled notebooks.
 	Notebook any
 	// User-specified config for running a Spark task.
 	Spark any
-	// Output only. Current state of the task.
-	State any
 	// Task scheduling and trigger settings.
 	TriggerSpec any
-	// Output only. System generated globally unique ID for the task. This ID will be different if the task is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the task was last updated.
-	UpdateTime any
 }
 
 type TaskAttrs struct {
@@ -296,38 +286,33 @@ type TaskAttrs struct {
 var Task = ubx.ResourceBinding{
 	WireType: "google_dataplex_task",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ExecutionSpec": ubx.FieldSpec{
 			WireName: "execution_spec",
-			Kind: "object",
-			Fields: Task_ExecutionSpecFields,
+			Kind:     "object",
+			Fields:   Task_ExecutionSpecFields,
 		},
 		"ExecutionStatus": ubx.FieldSpec{
 			WireName: "execution_status",
-			Kind: "object",
-			Fields: Task_ExecutionStatusFields,
+			Kind:     "object",
+			Fields:   Task_ExecutionStatusFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Notebook": ubx.FieldSpec{
 			WireName: "notebook",
-			Kind: "object",
-			Fields: Task_NotebookFields,
+			Kind:     "object",
+			Fields:   Task_NotebookFields,
 		},
 		"Spark": ubx.FieldSpec{
 			WireName: "spark",
-			Kind: "object",
-			Fields: Task_SparkFields,
+			Kind:     "object",
+			Fields:   Task_SparkFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"TriggerSpec": ubx.FieldSpec{
 			WireName: "trigger_spec",
-			Kind: "object",
-			Fields: Task_TriggerSpecFields,
+			Kind:     "object",
+			Fields:   Task_TriggerSpecFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

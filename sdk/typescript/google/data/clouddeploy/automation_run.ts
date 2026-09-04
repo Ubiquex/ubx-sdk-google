@@ -196,7 +196,6 @@ export interface AutomationRun_TimedPromoteReleaseOperation {
 }
 
 export interface AutomationRunConfig {
-  name: string | Computed<string>;
 }
 
 export interface AutomationRunAttrs {
@@ -242,6 +241,5 @@ export interface AutomationRunAttrs {
 export const AutomationRun: DataSourceBinding<AutomationRunConfig, AutomationRunAttrs> = {
   wireType: "google_clouddeploy_automation_run",
   fields: {
-    name: "name",
   },
 };

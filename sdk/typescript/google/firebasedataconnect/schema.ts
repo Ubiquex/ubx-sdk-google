@@ -89,26 +89,16 @@ const Schema_SourceFields: FieldMap = {
 export interface SchemaConfig {
   /** Optional. Stores small amounts of arbitrary data. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. [Output only] Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Required. The data sources linked in the schema. */
   datasources?: Schema_Datasources[] | Computed<Schema_Datasources[]>;
   /** Optional. Mutable human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154) */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The relative resource name of the schema, in the format: ``` projects/{project}/locations/{location}/services/{service}/schemas/{schema} ``` Right now, the only supported schema is "main". */
   name?: string | Computed<string>;
-  /** Output only. A field that if true, indicates that the system is working to compile and deploy the schema. */
-  reconciling?: boolean | Computed<boolean>;
   /** Used to represent a set of source files. */
   source?: Schema_Source | Computed<Schema_Source>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SchemaAttrs {
@@ -140,23 +130,18 @@ export const Schema: ResourceBinding<SchemaConfig, SchemaAttrs> = {
   wireType: "google_firebasedataconnect_schema",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     datasources: {
       wireName: "datasources",
       kind: "list",
       fields: Schema_DatasourcesFields,
     },
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     source: {
       wireName: "source",
       kind: "object",
       fields: Schema_SourceFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

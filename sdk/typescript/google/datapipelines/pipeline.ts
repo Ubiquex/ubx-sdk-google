@@ -248,14 +248,8 @@ const Pipeline_WorkloadFields: FieldMap = {
 };
 
 export interface PipelineConfig {
-  /** Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_). */
   displayName?: string | Computed<string>;
-  /** Output only. Number of jobs. */
-  jobCount?: number | Computed<number>;
-  /** Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service. */
-  lastUpdateTime?: string | Computed<string>;
   /** The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location. */
   name?: string | Computed<string>;
   /** Immutable. The sources of the pipeline (for example, Knowledge Catalog). The keys and values are set by the corresponding sources during pipeline creation. */
@@ -300,10 +294,7 @@ export interface PipelineAttrs {
 export const Pipeline: ResourceBinding<PipelineConfig, PipelineAttrs> = {
   wireType: "google_datapipelines_pipeline",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    jobCount: "job_count",
-    lastUpdateTime: "last_update_time",
     name: "name",
     pipelineSources: "pipeline_sources",
     scheduleInfo: {

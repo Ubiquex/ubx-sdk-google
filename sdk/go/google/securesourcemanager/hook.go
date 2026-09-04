@@ -9,27 +9,21 @@ type Hook_PushOption struct {
 }
 
 var Hook_PushOptionFields = ubx.FieldMap{
-		"BranchFilter": ubx.FieldSpec{WireName: "branch_filter"},
-	}
+	"BranchFilter": ubx.FieldSpec{WireName: "branch_filter"},
+}
 
 type HookConfig struct {
-	// Output only. Create timestamp.
-	CreateTime any
 	// Optional. Determines if the hook disabled or not. Set to true to stop sending traffic.
 	Disabled any
 	// Optional. The events that trigger hook on.
 	Events any
 	// Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
-	Name any
+	Name       any
 	PushOption any
 	// Optional. The sensitive query string to be appended to the target URI.
 	SensitiveQueryString any
 	// Required. The target URI to which the payloads will be delivered.
 	TargetUri any
-	// Output only. Unique identifier of the hook.
-	Uid any
-	// Output only. Update timestamp.
-	UpdateTime any
 }
 
 type HookAttrs struct {
@@ -40,7 +34,7 @@ type HookAttrs struct {
 	// Optional. The events that trigger hook on.
 	Events any
 	// Identifier. A unique identifier for a Hook. The name should be of the format: `projects/{project}/locations/{location_id}/repositories/{repository_id}/hooks/{hook_id}`
-	Name any
+	Name       any
 	PushOption any
 	// Optional. The sensitive query string to be appended to the target URI.
 	SensitiveQueryString any
@@ -55,18 +49,15 @@ type HookAttrs struct {
 var Hook = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_hook",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Events": ubx.FieldSpec{WireName: "events"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Events":   ubx.FieldSpec{WireName: "events"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"PushOption": ubx.FieldSpec{
 			WireName: "push_option",
-			Kind: "object",
-			Fields: Hook_PushOptionFields,
+			Kind:     "object",
+			Fields:   Hook_PushOptionFields,
 		},
 		"SensitiveQueryString": ubx.FieldSpec{WireName: "sensitive_query_string"},
-		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"TargetUri":            ubx.FieldSpec{WireName: "target_uri"},
 	},
 }

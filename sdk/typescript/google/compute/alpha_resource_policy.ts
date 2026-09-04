@@ -300,32 +300,19 @@ const AlphaResourcePolicy_WorkloadPolicyFields: FieldMap = {
 };
 
 export interface AlphaResourcePolicyConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   description?: string | Computed<string>;
   /** Resource policy for disk consistency groups. */
   diskConsistencyGroupPolicy?: unknown | Computed<unknown>;
   /** A GroupPlacementPolicy specifies resource placement configuration. It specifies the failure bucket separation */
   groupPlacementPolicy?: AlphaResourcePolicy_GroupPlacementPolicy | Computed<AlphaResourcePolicy_GroupPlacementPolicy>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
   /** An InstanceSchedulePolicy specifies when and how frequent certain operations are performed on the instance. */
   instanceSchedulePolicy?: AlphaResourcePolicy_InstanceSchedulePolicy | Computed<AlphaResourcePolicy_InstanceSchedulePolicy>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#resource_policies for resource policies. */
-  kind?: string | Computed<string>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  region?: string | Computed<string>;
   /** Contains output only fields. Use this sub-message for all output fields set on ResourcePolicy. The internal structure of this "status" field should mimic the structure of ResourcePolicy proto specification. */
   resourceStatus?: AlphaResourcePolicy_ResourceStatus | Computed<AlphaResourcePolicy_ResourceStatus>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** A snapshot schedule policy specifies when and how frequently snapshots are to be created for the target disk. Also specifies how many and how long these scheduled snapshots should be retained. */
   snapshotSchedulePolicy?: AlphaResourcePolicy_SnapshotSchedulePolicy | Computed<AlphaResourcePolicy_SnapshotSchedulePolicy>;
-  /** Output only. [Output Only] The status of resource policy creation. */
-  status?: string | Computed<string>;
   vmMaintenancePolicy?: AlphaResourcePolicy_VmMaintenancePolicy | Computed<AlphaResourcePolicy_VmMaintenancePolicy>;
   /** Represents the workload policy. */
   workloadPolicy?: AlphaResourcePolicy_WorkloadPolicy | Computed<AlphaResourcePolicy_WorkloadPolicy>;
@@ -366,7 +353,6 @@ export interface AlphaResourcePolicyAttrs {
 export const AlphaResourcePolicy: ResourceBinding<AlphaResourcePolicyConfig, AlphaResourcePolicyAttrs> = {
   wireType: "google_compute_alpha_resource_policy",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     diskConsistencyGroupPolicy: "disk_consistency_group_policy",
     groupPlacementPolicy: {
@@ -374,28 +360,22 @@ export const AlphaResourcePolicy: ResourceBinding<AlphaResourcePolicyConfig, Alp
       kind: "object",
       fields: AlphaResourcePolicy_GroupPlacementPolicyFields,
     },
-    id: "id",
     instanceSchedulePolicy: {
       wireName: "instance_schedule_policy",
       kind: "object",
       fields: AlphaResourcePolicy_InstanceSchedulePolicyFields,
     },
-    kind: "kind",
     name: "name",
-    region: "region",
     resourceStatus: {
       wireName: "resource_status",
       kind: "object",
       fields: AlphaResourcePolicy_ResourceStatusFields,
     },
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     snapshotSchedulePolicy: {
       wireName: "snapshot_schedule_policy",
       kind: "object",
       fields: AlphaResourcePolicy_SnapshotSchedulePolicyFields,
     },
-    status: "status",
     vmMaintenancePolicy: {
       wireName: "vm_maintenance_policy",
       kind: "object",

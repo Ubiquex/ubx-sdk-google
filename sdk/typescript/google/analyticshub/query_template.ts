@@ -14,26 +14,18 @@ const QueryTemplate_RoutineFields: FieldMap = {
 };
 
 export interface QueryTemplateConfig {
-  /** Output only. Timestamp when the QueryTemplate was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Short description of the QueryTemplate. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes. */
   description?: string | Computed<string>;
   /** Required. Human-readable display name of the QueryTemplate. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces. Default value is an empty string. Max length: 63 bytes. */
   displayName?: string | Computed<string>;
   /** Optional. Documentation describing the QueryTemplate. */
   documentation?: string | Computed<string>;
-  /** Output only. The resource name of the QueryTemplate. e.g. `projects/myproject/locations/us/dataExchanges/123/queryTemplates/456` */
-  name?: string | Computed<string>;
   /** Optional. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes. */
   primaryContact?: string | Computed<string>;
   /** Optional. Deprecated: Use `primary_contact` instead. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes. */
   proposer?: string | Computed<string>;
   /** Represents a bigquery routine. */
   routine?: QueryTemplate_Routine | Computed<QueryTemplate_Routine>;
-  /** Output only. The QueryTemplate lifecycle state. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when the QueryTemplate was last modified. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface QueryTemplateAttrs {
@@ -62,11 +54,9 @@ export interface QueryTemplateAttrs {
 export const QueryTemplate: ResourceBinding<QueryTemplateConfig, QueryTemplateAttrs> = {
   wireType: "google_analyticshub_query_template",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     documentation: "documentation",
-    name: "name",
     primaryContact: "primary_contact",
     proposer: "proposer",
     routine: {
@@ -74,7 +64,5 @@ export const QueryTemplate: ResourceBinding<QueryTemplateConfig, QueryTemplateAt
       kind: "object",
       fields: QueryTemplate_RoutineFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

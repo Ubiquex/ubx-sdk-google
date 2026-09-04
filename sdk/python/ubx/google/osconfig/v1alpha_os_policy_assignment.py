@@ -421,10 +421,6 @@ _V1alphaOsPolicyAssignment_RolloutFields = {
 
 @dataclasses.dataclass
 class V1alphaOsPolicyAssignmentConfig:
-    # Output only. Indicates that this revision has been successfully rolled out in this zone and new VMs will be assigned OS policies from this revision. For a given OS policy assignment, there is only one revision with a value of `true` for this field.
-    baseline: Any = None
-    # Output only. Indicates that this revision deletes the OS policy assignment.
-    deleted: Any = None
     # OS policy assignment description. Length of the description is limited to 1024 characters.
     description: Any = None
     # The etag for this OS policy assignment. If this is provided on update, it must match the server's etag.
@@ -435,18 +431,8 @@ class V1alphaOsPolicyAssignmentConfig:
     name: Any = None
     # Required. List of OS policies to be applied to the VMs.
     os_policies: Any = None
-    # Output only. Indicates that reconciliation is in progress for the revision. This value is `true` when the `rollout_state` is one of: * IN_PROGRESS * CANCELLING
-    reconciling: Any = None
-    # Output only. The timestamp that the revision was created.
-    revision_create_time: Any = None
-    # Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for a OS policy assignment
-    revision_id: Any = None
     # Message to configure the rollout at the zonal level for the OS policy assignment.
     rollout: Any = None
-    # Output only. OS policy assignment rollout state
-    rollout_state: Any = None
-    # Output only. Server generated unique id for the OS policy assignment resource.
-    uid: Any = None
 
 @dataclasses.dataclass
 class V1alphaOsPolicyAssignmentAttrs:
@@ -480,8 +466,6 @@ class V1alphaOsPolicyAssignmentAttrs:
 V1alphaOsPolicyAssignment = ubx.ResourceBinding(
     wire_type="google_osconfig_v1alpha_os_policy_assignment",
     fields={
-        "baseline": ubx.FieldSpec(wire_name="baseline"),
-        "deleted": ubx.FieldSpec(wire_name="deleted"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "instance_filter": ubx.FieldSpec(
@@ -495,15 +479,10 @@ V1alphaOsPolicyAssignment = ubx.ResourceBinding(
             kind="list",
             fields=_V1alphaOsPolicyAssignment_OsPoliciesFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "revision_create_time": ubx.FieldSpec(wire_name="revision_create_time"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "rollout": ubx.FieldSpec(
             wire_name="rollout",
             kind="object",
             fields=_V1alphaOsPolicyAssignment_RolloutFields,
         ),
-        "rollout_state": ubx.FieldSpec(wire_name="rollout_state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class V1beta1TlsInspectionPolicyConfig:
     # Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
     ca_pool: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
     custom_tls_features: Any = None
     # Optional. Free-text description of the resource.
@@ -26,8 +24,6 @@ class V1beta1TlsInspectionPolicyConfig:
     tls_feature_profile: Any = None
     # Optional. A TrustConfig resource used when making a connection to the TLS server. This is a relative resource path following the form "projects/{project}/locations/{location}/trustConfigs/{trust_config}". This is necessary to intercept TLS connections to servers with certificates signed by a private CA or self-signed certificates. Note that Secure Web Proxy does not yet honor this field.
     trust_config: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1TlsInspectionPolicyAttrs:
@@ -56,7 +52,6 @@ V1beta1TlsInspectionPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_tls_inspection_policy",
     fields={
         "ca_pool": ubx.FieldSpec(wire_name="ca_pool"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_tls_features": ubx.FieldSpec(wire_name="custom_tls_features"),
         "description": ubx.FieldSpec(wire_name="description"),
         "exclude_public_ca_set": ubx.FieldSpec(wire_name="exclude_public_ca_set"),
@@ -64,6 +59,5 @@ V1beta1TlsInspectionPolicy = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "tls_feature_profile": ubx.FieldSpec(wire_name="tls_feature_profile"),
         "trust_config": ubx.FieldSpec(wire_name="trust_config"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

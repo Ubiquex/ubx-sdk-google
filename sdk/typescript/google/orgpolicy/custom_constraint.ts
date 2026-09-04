@@ -16,8 +16,6 @@ export interface CustomConstraintConfig {
   name?: string | Computed<string>;
   /** Immutable. The resource instance type on which this policy applies. Format will be of the form : `/` Example: * `compute.googleapis.com/Instance`. */
   resourceTypes?: string[] | Computed<string[]>;
-  /** Output only. The last time this custom constraint was updated. This represents the last time that the `CreateCustomConstraint` or `UpdateCustomConstraint` methods were called. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomConstraintAttrs {
@@ -49,6 +47,5 @@ export const CustomConstraint: ResourceBinding<CustomConstraintConfig, CustomCon
     methodTypes: "method_types",
     name: "name",
     resourceTypes: "resource_types",
-    updateTime: "update_time",
   },
 };

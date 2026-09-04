@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class TraceScopeConfig:
-    # Output only. The creation timestamp of the trace scope.
-    create_time: Any = None
     # Optional. Describes this trace scope. The maximum length of the description is 8000 characters.
     description: Any = None
     # Identifier. The resource name of the trace scope. For example: projects/my-project/locations/global/traceScopes/my-trace-scope
     name: Any = None
     # Required. Names of the projects that are included in this trace scope. * `projects/[PROJECT_ID]` A trace scope can include a maximum of 20 projects.
     resource_names: Any = None
-    # Output only. The last update timestamp of the trace scope.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TraceScopeAttrs:
@@ -35,10 +31,8 @@ class TraceScopeAttrs:
 TraceScope = ubx.ResourceBinding(
     wire_type="google_observability_trace_scope",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource_names": ubx.FieldSpec(wire_name="resource_names"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

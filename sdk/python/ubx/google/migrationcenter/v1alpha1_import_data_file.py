@@ -23,16 +23,10 @@ _V1alpha1ImportDataFile_UploadFileInfoFields = {
 
 @dataclasses.dataclass
 class V1alpha1ImportDataFileConfig:
-    # Output only. The timestamp when the file was created.
-    create_time: Any = None
     # Optional. User-friendly display name. Maximum length is 256 characters.
     display_name: Any = None
     # Required. The payload format.
     format: Any = None
-    # Output only. The name of the file.
-    name: Any = None
-    # Output only. The state of the import data file.
-    state: Any = None
     # A resource that contains a URI to which a data file can be uploaded.
     upload_file_info: Any = None
 
@@ -54,11 +48,8 @@ class V1alpha1ImportDataFileAttrs:
 V1alpha1ImportDataFile = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_import_data_file",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "format": ubx.FieldSpec(wire_name="format"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "upload_file_info": ubx.FieldSpec(
             wire_name="upload_file_info",
             kind="object",

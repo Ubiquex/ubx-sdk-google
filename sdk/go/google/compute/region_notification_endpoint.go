@@ -24,39 +24,29 @@ type RegionNotificationEndpoint_GrpcSettings struct {
 }
 
 var RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var RegionNotificationEndpoint_GrpcSettingsFields = ubx.FieldMap{
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"PayloadName": ubx.FieldSpec{WireName: "payload_name"},
-		"ResendInterval": ubx.FieldSpec{
-			WireName: "resend_interval",
-			Kind: "object",
-			Fields: RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields,
-		},
-		"RetryDurationSec": ubx.FieldSpec{WireName: "retry_duration_sec"},
-	}
+	"Authority":   ubx.FieldSpec{WireName: "authority"},
+	"Endpoint":    ubx.FieldSpec{WireName: "endpoint"},
+	"PayloadName": ubx.FieldSpec{WireName: "payload_name"},
+	"ResendInterval": ubx.FieldSpec{
+		WireName: "resend_interval",
+		Kind:     "object",
+		Fields:   RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields,
+	},
+	"RetryDurationSec": ubx.FieldSpec{WireName: "retry_duration_sec"},
+}
 
 type RegionNotificationEndpointConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Represents a gRPC setting that describes one gRPC notification endpoint and the retry duration attempting to send notification to this endpoint.
 	GrpcSettings any
-	// Output only. [Output Only] A unique identifier for this resource type. The server generates this identifier.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#notificationEndpoint for notification endpoints.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] URL of the region where the notification endpoint resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 }
 
 type RegionNotificationEndpointAttrs struct {
@@ -81,17 +71,12 @@ type RegionNotificationEndpointAttrs struct {
 var RegionNotificationEndpoint = ubx.ResourceBinding{
 	WireType: "google_compute_region_notification_endpoint",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GrpcSettings": ubx.FieldSpec{
 			WireName: "grpc_settings",
-			Kind: "object",
-			Fields: RegionNotificationEndpoint_GrpcSettingsFields,
+			Kind:     "object",
+			Fields:   RegionNotificationEndpoint_GrpcSettingsFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

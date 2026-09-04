@@ -565,14 +565,10 @@ class VersionConfig:
     build_env_variables: Any = None
     # Time that this version was created.@OutputOnly
     create_time: Any = None
-    # Output only. Email address of the user who created this version.@OutputOnly
-    created_by: Any = None
     # Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.
     default_expiration: Any = None
     # Code and application artifacts used to deploy a version to App Engine.
     deployment: Any = None
-    # Output only. Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
-    disk_usage_bytes: Any = None
     # Google Cloud Endpoints (https://cloud.google.com/endpoints) configuration. The Endpoints API Service provides tooling for serving Open API and gRPC endpoints via an NGINX proxy. Only valid for App Engine Flexible environment deployments.The fields here refer to the name and configuration ID of a "service" resource in the Service Management API (https://cloud.google.com/service-management/overview).
     endpoints_api_service: Any = None
     # The entrypoint for the application.
@@ -603,8 +599,6 @@ class VersionConfig:
     liveness_check: Any = None
     # A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.
     manual_scaling: Any = None
-    # Output only. Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
-    name: Any = None
     # Extra network settings. Only applicable in the App Engine flexible environment.
     network: Any = None
     # Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
@@ -627,8 +621,6 @@ class VersionConfig:
     serving_status: Any = None
     # Whether multiple requests can be dispatched to this version at once.
     threadsafe: Any = None
-    # Output only. Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
-    version_url: Any = None
     # Whether to deploy this version in a container on a virtual machine.
     vm: Any = None
     # VPC access connector specification.
@@ -748,14 +740,12 @@ Version = ubx.ResourceBinding(
         "beta_settings": ubx.FieldSpec(wire_name="beta_settings"),
         "build_env_variables": ubx.FieldSpec(wire_name="build_env_variables"),
         "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "created_by": ubx.FieldSpec(wire_name="created_by"),
         "default_expiration": ubx.FieldSpec(wire_name="default_expiration"),
         "deployment": ubx.FieldSpec(
             wire_name="deployment",
             kind="object",
             fields=_Version_DeploymentFields,
         ),
-        "disk_usage_bytes": ubx.FieldSpec(wire_name="disk_usage_bytes"),
         "endpoints_api_service": ubx.FieldSpec(
             wire_name="endpoints_api_service",
             kind="object",
@@ -807,7 +797,6 @@ Version = ubx.ResourceBinding(
             kind="object",
             fields=_Version_ManualScalingFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(
             wire_name="network",
             kind="object",
@@ -831,7 +820,6 @@ Version = ubx.ResourceBinding(
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "serving_status": ubx.FieldSpec(wire_name="serving_status"),
         "threadsafe": ubx.FieldSpec(wire_name="threadsafe"),
-        "version_url": ubx.FieldSpec(wire_name="version_url"),
         "vm": ubx.FieldSpec(wire_name="vm"),
         "vpc_access_connector": ubx.FieldSpec(
             wire_name="vpc_access_connector",

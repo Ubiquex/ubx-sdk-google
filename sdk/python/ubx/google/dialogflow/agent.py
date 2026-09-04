@@ -217,8 +217,6 @@ class AgentConfig:
     locked: Any = None
     name: Any = None
     personalization_settings: Any = None
-    satisfies_pzi: Any = None
-    satisfies_pzs: Any = None
     security_settings: Any = None
     speech_to_text_settings: Any = None
     start_flow: Any = None
@@ -296,8 +294,6 @@ Agent = ubx.ResourceBinding(
             kind="object",
             fields=_Agent_PersonalizationSettingsFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "security_settings": ubx.FieldSpec(wire_name="security_settings"),
         "speech_to_text_settings": ubx.FieldSpec(
             wire_name="speech_to_text_settings",

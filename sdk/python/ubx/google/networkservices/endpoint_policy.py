@@ -60,8 +60,6 @@ class EndpointPolicyConfig:
     authorization_policy: Any = None
     # Optional. Deprecated: This field is not used and is a no-op. A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy can be set to specify the authentication for traffic from the proxy to the actual endpoints. More specifically, it is applied to the outgoing traffic from the proxy to the endpoint. This is typically used for sidecar model where the proxy identifies itself as endpoint to the control plane, with the connection between sidecar and endpoint requiring authentication. If this field is not set, authentication is disabled(open). Applicable only when EndpointPolicyType is SIDECAR_PROXY.
     client_tls_policy: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # A definition of a matcher that selects endpoints to which the policies should be applied.
@@ -76,8 +74,6 @@ class EndpointPolicyConfig:
     traffic_port_selector: Any = None
     # Required. The type of endpoint policy. This is primarily used to validate the configuration.
     type: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EndpointPolicyAttrs:
@@ -109,7 +105,6 @@ EndpointPolicy = ubx.ResourceBinding(
     fields={
         "authorization_policy": ubx.FieldSpec(wire_name="authorization_policy"),
         "client_tls_policy": ubx.FieldSpec(wire_name="client_tls_policy"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "endpoint_matcher": ubx.FieldSpec(
             wire_name="endpoint_matcher",
@@ -125,6 +120,5 @@ EndpointPolicy = ubx.ResourceBinding(
             fields=_EndpointPolicy_TrafficPortSelectorFields,
         ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

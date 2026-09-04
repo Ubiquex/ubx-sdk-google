@@ -27,8 +27,8 @@ type CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondi
 }
 
 type CustomerRepricingConfig_RepricingConfig_ConditionalOverrides struct {
-	Adjustment any
-	RebillingBasis any
+	Adjustment         any
+	RebillingBasis     any
 	RepricingCondition any
 }
 
@@ -62,93 +62,89 @@ type CustomerRepricingConfig_RepricingConfig struct {
 }
 
 var CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustment_PercentageFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustmentFields = ubx.FieldMap{
-		"Percentage": ubx.FieldSpec{
-			WireName: "percentage",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustment_PercentageFields,
-		},
-	}
+	"Percentage": ubx.FieldSpec{
+		WireName: "percentage",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustment_PercentageFields,
+	},
+}
 
 var CustomerRepricingConfig_RepricingConfig_AdjustmentFields = ubx.FieldMap{
-		"PercentageAdjustment": ubx.FieldSpec{
-			WireName: "percentage_adjustment",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustmentFields,
-		},
-	}
+	"PercentageAdjustment": ubx.FieldSpec{
+		WireName: "percentage_adjustment",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_Adjustment_PercentageAdjustmentFields,
+	},
+}
 
 var CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupConditionFields = ubx.FieldMap{
-		"SkuGroup": ubx.FieldSpec{WireName: "sku_group"},
-	}
+	"SkuGroup": ubx.FieldSpec{WireName: "sku_group"},
+}
 
 var CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingConditionFields = ubx.FieldMap{
-		"SkuGroupCondition": ubx.FieldSpec{
-			WireName: "sku_group_condition",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupConditionFields,
-		},
-	}
+	"SkuGroupCondition": ubx.FieldSpec{
+		WireName: "sku_group_condition",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingCondition_SkuGroupConditionFields,
+	},
+}
 
 var CustomerRepricingConfig_RepricingConfig_ConditionalOverridesFields = ubx.FieldMap{
-		"Adjustment": ubx.FieldSpec{
-			WireName: "adjustment",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_AdjustmentFields,
-		},
-		"RebillingBasis": ubx.FieldSpec{WireName: "rebilling_basis"},
-		"RepricingCondition": ubx.FieldSpec{
-			WireName: "repricing_condition",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingConditionFields,
-		},
-	}
+	"Adjustment": ubx.FieldSpec{
+		WireName: "adjustment",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_AdjustmentFields,
+	},
+	"RebillingBasis": ubx.FieldSpec{WireName: "rebilling_basis"},
+	"RepricingCondition": ubx.FieldSpec{
+		WireName: "repricing_condition",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_ConditionalOverrides_RepricingConditionFields,
+	},
+}
 
 var CustomerRepricingConfig_RepricingConfig_EffectiveInvoiceMonthFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var CustomerRepricingConfig_RepricingConfig_EntitlementGranularityFields = ubx.FieldMap{
-		"Entitlement": ubx.FieldSpec{WireName: "entitlement"},
-	}
+	"Entitlement": ubx.FieldSpec{WireName: "entitlement"},
+}
 
 var CustomerRepricingConfig_RepricingConfigFields = ubx.FieldMap{
-		"Adjustment": ubx.FieldSpec{
-			WireName: "adjustment",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_AdjustmentFields,
-		},
-		"ChannelPartnerGranularity": ubx.FieldSpec{WireName: "channel_partner_granularity"},
-		"ConditionalOverrides": ubx.FieldSpec{
-			WireName: "conditional_overrides",
-			Kind: "list",
-			Fields: CustomerRepricingConfig_RepricingConfig_ConditionalOverridesFields,
-		},
-		"EffectiveInvoiceMonth": ubx.FieldSpec{
-			WireName: "effective_invoice_month",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_EffectiveInvoiceMonthFields,
-		},
-		"EntitlementGranularity": ubx.FieldSpec{
-			WireName: "entitlement_granularity",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfig_EntitlementGranularityFields,
-		},
-		"RebillingBasis": ubx.FieldSpec{WireName: "rebilling_basis"},
-	}
+	"Adjustment": ubx.FieldSpec{
+		WireName: "adjustment",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_AdjustmentFields,
+	},
+	"ChannelPartnerGranularity": ubx.FieldSpec{WireName: "channel_partner_granularity"},
+	"ConditionalOverrides": ubx.FieldSpec{
+		WireName: "conditional_overrides",
+		Kind:     "list",
+		Fields:   CustomerRepricingConfig_RepricingConfig_ConditionalOverridesFields,
+	},
+	"EffectiveInvoiceMonth": ubx.FieldSpec{
+		WireName: "effective_invoice_month",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_EffectiveInvoiceMonthFields,
+	},
+	"EntitlementGranularity": ubx.FieldSpec{
+		WireName: "entitlement_granularity",
+		Kind:     "object",
+		Fields:   CustomerRepricingConfig_RepricingConfig_EntitlementGranularityFields,
+	},
+	"RebillingBasis": ubx.FieldSpec{WireName: "rebilling_basis"},
+}
 
 type CustomerRepricingConfigConfig struct {
-	// Output only. Resource name of the CustomerRepricingConfig. Format: accounts/{account_id}/customers/{customer_id}/customerRepricingConfigs/{id}.
-	Name any
 	// Configuration for repricing a Google bill over a period of time.
 	RepricingConfig any
-	// Output only. Timestamp of an update to the repricing rule. If `update_time` is after RepricingConfig.effective_invoice_month then it indicates this was set mid-month.
-	UpdateTime any
 }
 
 type CustomerRepricingConfigAttrs struct {
@@ -163,12 +159,10 @@ type CustomerRepricingConfigAttrs struct {
 var CustomerRepricingConfig = ubx.ResourceBinding{
 	WireType: "google_cloudchannel_customer_repricing_config",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"RepricingConfig": ubx.FieldSpec{
 			WireName: "repricing_config",
-			Kind: "object",
-			Fields: CustomerRepricingConfig_RepricingConfigFields,
+			Kind:     "object",
+			Fields:   CustomerRepricingConfig_RepricingConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

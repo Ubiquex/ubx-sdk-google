@@ -9,7 +9,6 @@ export interface VolumeBackup_SourcePvc {
 }
 
 export interface VolumeBackupConfig {
-  name: string | Computed<string>;
 }
 
 export interface VolumeBackupAttrs {
@@ -47,6 +46,5 @@ export interface VolumeBackupAttrs {
 export const VolumeBackup: DataSourceBinding<VolumeBackupConfig, VolumeBackupAttrs> = {
   wireType: "google_gkebackup_volume_backup",
   fields: {
-    name: "name",
   },
 };

@@ -1165,8 +1165,6 @@ _EvaluationItem_EvaluationResponseFields = {
 
 @dataclasses.dataclass
 class EvaluationItemConfig:
-    # Output only. Timestamp when this item was created.
-    create_time: Any = None
     # Required. The display name of the EvaluationItem.
     display_name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -1212,7 +1210,6 @@ class EvaluationItemAttrs:
 EvaluationItem = ubx.ResourceBinding(
     wire_type="google_aiplatform_evaluation_item",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",

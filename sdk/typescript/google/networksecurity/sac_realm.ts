@@ -14,8 +14,6 @@ const SacRealm_PairingKeyFields: FieldMap = {
 };
 
 export interface SacRealmConfig {
-  /** Output only. Timestamp when the realm was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional list of labels applied to the resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`. */
@@ -24,10 +22,6 @@ export interface SacRealmConfig {
   pairingKey?: SacRealm_PairingKey | Computed<SacRealm_PairingKey>;
   /** Immutable. SSE service provider associated with the realm. */
   securityService?: string | Computed<string>;
-  /** Output only. State of the realm. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when the realm was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SacRealmAttrs {
@@ -50,7 +44,6 @@ export interface SacRealmAttrs {
 export const SacRealm: ResourceBinding<SacRealmConfig, SacRealmAttrs> = {
   wireType: "google_networksecurity_sac_realm",
   fields: {
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     pairingKey: {
@@ -59,7 +52,5 @@ export const SacRealm: ResourceBinding<SacRealmConfig, SacRealmAttrs> = {
       fields: SacRealm_PairingKeyFields,
     },
     securityService: "security_service",
-    state: "state",
-    updateTime: "update_time",
   },
 };

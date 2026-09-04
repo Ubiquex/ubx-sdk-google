@@ -110,7 +110,6 @@ export interface NotebookRuntime_SoftwareConfig {
 }
 
 export interface NotebookRuntimeConfig {
-  name: string | Computed<string>;
 }
 
 export interface NotebookRuntimeAttrs {
@@ -174,6 +173,5 @@ export interface NotebookRuntimeAttrs {
 export const NotebookRuntime: DataSourceBinding<NotebookRuntimeConfig, NotebookRuntimeAttrs> = {
   wireType: "google_aiplatform_notebook_runtime",
   fields: {
-    name: "name",
   },
 };

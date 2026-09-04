@@ -10,8 +10,6 @@ export interface ResourcePolicyConfig {
   name?: string | Computed<string>;
   /** Required. Service specific name of the resource object to which this policy applies, in the format: * **iOS OAuth clients** (Google Identity for iOS): `//oauth2.googleapis.com/projects/{project_number}/oauthClients/{oauth_client_id}` Note that the resource must belong to the service specified in the `name` and be from the same project as this policy, but the resource is allowed to be missing at the time of creation of this policy; in that case, we make a best-effort attempt at respecting this policy, but it may not have any effect until the resource is fully created. */
   targetResource?: string | Computed<string>;
-  /** Output only. Timestamp when this resource policy configuration object was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ResourcePolicyAttrs {
@@ -34,6 +32,5 @@ export const ResourcePolicy: ResourceBinding<ResourcePolicyConfig, ResourcePolic
     etag: "etag",
     name: "name",
     targetResource: "target_resource",
-    updateTime: "update_time",
   },
 };

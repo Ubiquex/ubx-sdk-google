@@ -133,26 +133,18 @@ export interface BetaInterconnectAttachmentGroupConfig {
   attachments?: Record<string, BetaInterconnectAttachmentGroup_Attachments> | Computed<Record<string, BetaInterconnectAttachmentGroup_Attachments>>;
   /** [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup. */
   configured?: BetaInterconnectAttachmentGroup_Configured | Computed<BetaInterconnectAttachmentGroup_Configured>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described byAIP 154. */
   etag?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
   /** The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation. */
   intent?: BetaInterconnectAttachmentGroup_Intent | Computed<BetaInterconnectAttachmentGroup_Intent>;
   /** The URL of an InterconnectGroup that groups these Attachments' Interconnects. Customers do not need to set this unless directed by Google Support. */
   interconnectGroup?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#interconnectAttachmentGroup. */
-  kind?: string | Computed<string>;
   /** [Output Only] An analysis of the logical layout of Attachments in this group. Every Attachment in the group is shown once in this structure. */
   logicalStructure?: BetaInterconnectAttachmentGroup_LogicalStructure | Computed<BetaInterconnectAttachmentGroup_LogicalStructure>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface BetaInterconnectAttachmentGroupAttrs {
@@ -195,23 +187,19 @@ export const BetaInterconnectAttachmentGroup: ResourceBinding<BetaInterconnectAt
       kind: "object",
       fields: BetaInterconnectAttachmentGroup_ConfiguredFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     etag: "etag",
-    id: "id",
     intent: {
       wireName: "intent",
       kind: "object",
       fields: BetaInterconnectAttachmentGroup_IntentFields,
     },
     interconnectGroup: "interconnect_group",
-    kind: "kind",
     logicalStructure: {
       wireName: "logical_structure",
       kind: "object",
       fields: BetaInterconnectAttachmentGroup_LogicalStructureFields,
     },
     name: "name",
-    selfLink: "self_link",
   },
 };

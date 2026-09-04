@@ -15,7 +15,7 @@ type ImageImport_DiskImageTargetDefaults_Encryption struct {
 
 type ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiers struct {
 	Modifier any
-	Value any
+	Value    any
 }
 
 type ImageImport_DiskImageTargetDefaults_OsAdaptationParameters struct {
@@ -58,11 +58,11 @@ type ImageImport_MachineImageTargetDefaults_MachineImageParametersOverrides stru
 }
 
 type ImageImport_MachineImageTargetDefaults_NetworkInterfaces struct {
-	ExternalIp any
-	InternalIp any
-	Network any
+	ExternalIp  any
+	InternalIp  any
+	Network     any
 	NetworkTier any
-	Subnetwork any
+	Subnetwork  any
 }
 
 type ImageImport_MachineImageTargetDefaults_ServiceAccount struct {
@@ -113,259 +113,174 @@ type ImageImport_MachineImageTargetDefaults struct {
 }
 
 type ImageImport_RecentImageImportJobs_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type ImageImport_RecentImageImportJobs_Steps struct {
-	AdaptingOs any
-	CreatingImage any
-	EndTime any
-	Initializing any
+	AdaptingOs         any
+	CreatingImage      any
+	EndTime            any
+	Initializing       any
 	LoadingSourceFiles any
-	StartTime any
+	StartTime          any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings_ActionItem struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings_HelpLinks struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type ImageImport_RecentImageImportJobs_Warnings struct {
-	ActionItem any
-	Code any
-	HelpLinks any
+	ActionItem     any
+	Code           any
+	HelpLinks      any
 	WarningMessage any
-	WarningTime any
+	WarningTime    any
 }
 
 type ImageImport_RecentImageImportJobs struct {
-	CloudStorageUri any
-	CreateTime any
-	CreatedResources any
-	DiskImageTargetDetails any
-	EndTime any
-	Errors any
+	CloudStorageUri           any
+	CreateTime                any
+	CreatedResources          any
+	DiskImageTargetDetails    any
+	EndTime                   any
+	Errors                    any
 	MachineImageTargetDetails any
-	Name any
-	State any
-	Steps any
-	Warnings any
+	Name                      any
+	State                     any
+	Steps                     any
+	Warnings                  any
 }
 
 var ImageImport_DiskImageTargetDefaults_DataDiskImageImportFields = ubx.FieldMap{
-		"GuestOsFeatures": ubx.FieldSpec{WireName: "guest_os_features"},
-	}
+	"GuestOsFeatures": ubx.FieldSpec{WireName: "guest_os_features"},
+}
 
 var ImageImport_DiskImageTargetDefaults_EncryptionFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiersFields = ubx.FieldMap{
-		"Modifier": ubx.FieldSpec{WireName: "modifier"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Modifier": ubx.FieldSpec{WireName: "modifier"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var ImageImport_DiskImageTargetDefaults_OsAdaptationParametersFields = ubx.FieldMap{
-		"AdaptationModifiers": ubx.FieldSpec{
-			WireName: "adaptation_modifiers",
-			Kind: "list",
-			Fields: ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiersFields,
-		},
-		"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
-		"Generalize": ubx.FieldSpec{WireName: "generalize"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-	}
+	"AdaptationModifiers": ubx.FieldSpec{
+		WireName: "adaptation_modifiers",
+		Kind:     "list",
+		Fields:   ImageImport_DiskImageTargetDefaults_OsAdaptationParameters_AdaptationModifiersFields,
+	},
+	"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
+	"Generalize":     ubx.FieldSpec{WireName: "generalize"},
+	"LicenseType":    ubx.FieldSpec{WireName: "license_type"},
+}
 
 var ImageImport_DiskImageTargetDefaultsFields = ubx.FieldMap{
-		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-		"DataDiskImageImport": ubx.FieldSpec{
-			WireName: "data_disk_image_import",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_DataDiskImageImportFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_EncryptionFields,
-		},
-		"FamilyName": ubx.FieldSpec{WireName: "family_name"},
-		"ImageName": ubx.FieldSpec{WireName: "image_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"OsAdaptationParameters": ubx.FieldSpec{
-			WireName: "os_adaptation_parameters",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_OsAdaptationParametersFields,
-		},
-		"SingleRegionStorage": ubx.FieldSpec{WireName: "single_region_storage"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+	"DataDiskImageImport": ubx.FieldSpec{
+		WireName: "data_disk_image_import",
+		Kind:     "object",
+		Fields:   ImageImport_DiskImageTargetDefaults_DataDiskImageImportFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   ImageImport_DiskImageTargetDefaults_EncryptionFields,
+	},
+	"FamilyName": ubx.FieldSpec{WireName: "family_name"},
+	"ImageName":  ubx.FieldSpec{WireName: "image_name"},
+	"Labels":     ubx.FieldSpec{WireName: "labels"},
+	"OsAdaptationParameters": ubx.FieldSpec{
+		WireName: "os_adaptation_parameters",
+		Kind:     "object",
+		Fields:   ImageImport_DiskImageTargetDefaults_OsAdaptationParametersFields,
+	},
+	"SingleRegionStorage": ubx.FieldSpec{WireName: "single_region_storage"},
+	"TargetProject":       ubx.FieldSpec{WireName: "target_project"},
+}
 
 var ImageImport_MachineImageTargetDefaults_MachineImageParametersOverridesFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+}
 
 var ImageImport_MachineImageTargetDefaults_NetworkInterfacesFields = ubx.FieldMap{
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"ExternalIp":  ubx.FieldSpec{WireName: "external_ip"},
+	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var ImageImport_MachineImageTargetDefaults_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var ImageImport_MachineImageTargetDefaults_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+	"SecureBoot":                ubx.FieldSpec{WireName: "secure_boot"},
+}
 
 var ImageImport_MachineImageTargetDefaultsFields = ubx.FieldMap{
-		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_EncryptionFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MachineImageName": ubx.FieldSpec{WireName: "machine_image_name"},
-		"MachineImageParametersOverrides": ubx.FieldSpec{
-			WireName: "machine_image_parameters_overrides",
-			Kind: "object",
-			Fields: ImageImport_MachineImageTargetDefaults_MachineImageParametersOverridesFields,
-		},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: ImageImport_MachineImageTargetDefaults_NetworkInterfacesFields,
-		},
-		"OsAdaptationParameters": ubx.FieldSpec{
-			WireName: "os_adaptation_parameters",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_OsAdaptationParametersFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: ImageImport_MachineImageTargetDefaults_ServiceAccountFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: ImageImport_MachineImageTargetDefaults_ShieldedInstanceConfigFields,
-		},
-		"SingleRegionStorage": ubx.FieldSpec{WireName: "single_region_storage"},
-		"SkipOsAdaptation": ubx.FieldSpec{WireName: "skip_os_adaptation"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
-
-var ImageImport_RecentImageImportJobs_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var ImageImport_RecentImageImportJobs_StepsFields = ubx.FieldMap{
-		"AdaptingOs": ubx.FieldSpec{WireName: "adapting_os"},
-		"CreatingImage": ubx.FieldSpec{WireName: "creating_image"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Initializing": ubx.FieldSpec{WireName: "initializing"},
-		"LoadingSourceFiles": ubx.FieldSpec{WireName: "loading_source_files"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
-
-var ImageImport_RecentImageImportJobs_Warnings_ActionItemFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
-
-var ImageImport_RecentImageImportJobs_WarningsFields = ubx.FieldMap{
-		"ActionItem": ubx.FieldSpec{
-			WireName: "action_item",
-			Kind: "object",
-			Fields: ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-		},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"HelpLinks": ubx.FieldSpec{
-			WireName: "help_links",
-			Kind: "list",
-			Fields: ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields,
-		},
-		"WarningMessage": ubx.FieldSpec{
-			WireName: "warning_message",
-			Kind: "object",
-			Fields: ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-		},
-		"WarningTime": ubx.FieldSpec{WireName: "warning_time"},
-	}
-
-var ImageImport_RecentImageImportJobsFields = ubx.FieldMap{
-		"CloudStorageUri": ubx.FieldSpec{WireName: "cloud_storage_uri"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatedResources": ubx.FieldSpec{WireName: "created_resources"},
-		"DiskImageTargetDetails": ubx.FieldSpec{
-			WireName: "disk_image_target_details",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaultsFields,
-		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: ImageImport_RecentImageImportJobs_ErrorsFields,
-		},
-		"MachineImageTargetDetails": ubx.FieldSpec{
-			WireName: "machine_image_target_details",
-			Kind: "object",
-			Fields: ImageImport_MachineImageTargetDefaultsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: ImageImport_RecentImageImportJobs_StepsFields,
-		},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: ImageImport_RecentImageImportJobs_WarningsFields,
-		},
-	}
+	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   ImageImport_DiskImageTargetDefaults_EncryptionFields,
+	},
+	"Labels":           ubx.FieldSpec{WireName: "labels"},
+	"MachineImageName": ubx.FieldSpec{WireName: "machine_image_name"},
+	"MachineImageParametersOverrides": ubx.FieldSpec{
+		WireName: "machine_image_parameters_overrides",
+		Kind:     "object",
+		Fields:   ImageImport_MachineImageTargetDefaults_MachineImageParametersOverridesFields,
+	},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   ImageImport_MachineImageTargetDefaults_NetworkInterfacesFields,
+	},
+	"OsAdaptationParameters": ubx.FieldSpec{
+		WireName: "os_adaptation_parameters",
+		Kind:     "object",
+		Fields:   ImageImport_DiskImageTargetDefaults_OsAdaptationParametersFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   ImageImport_MachineImageTargetDefaults_ServiceAccountFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   ImageImport_MachineImageTargetDefaults_ShieldedInstanceConfigFields,
+	},
+	"SingleRegionStorage": ubx.FieldSpec{WireName: "single_region_storage"},
+	"SkipOsAdaptation":    ubx.FieldSpec{WireName: "skip_os_adaptation"},
+	"Tags":                ubx.FieldSpec{WireName: "tags"},
+	"TargetProject":       ubx.FieldSpec{WireName: "target_project"},
+}
 
 type ImageImportConfig struct {
 	// Immutable. The path to the Cloud Storage file from which the image should be imported.
 	CloudStorageUri any
-	// Output only. The time the image import was created.
-	CreateTime any
 	// The target details of the image resource that will be created by the import job.
 	DiskImageTargetDefaults any
 	// Encryption message describes the details of the applied encryption.
 	Encryption any
 	// The target details of the machine image resource that will be created by the image import job.
 	MachineImageTargetDefaults any
-	// Output only. The resource path of the ImageImport.
-	Name any
-	// Output only. The result of the most recent runs for this ImageImport. All jobs for this ImageImport can be listed via ListImageImportJobs.
-	RecentImageImportJobs any
 }
 
 type ImageImportAttrs struct {
@@ -389,27 +304,20 @@ var ImageImport = ubx.ResourceBinding{
 	WireType: "google_vmmigration_image_import",
 	Fields: ubx.FieldMap{
 		"CloudStorageUri": ubx.FieldSpec{WireName: "cloud_storage_uri"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DiskImageTargetDefaults": ubx.FieldSpec{
 			WireName: "disk_image_target_defaults",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaultsFields,
+			Kind:     "object",
+			Fields:   ImageImport_DiskImageTargetDefaultsFields,
 		},
 		"Encryption": ubx.FieldSpec{
 			WireName: "encryption",
-			Kind: "object",
-			Fields: ImageImport_DiskImageTargetDefaults_EncryptionFields,
+			Kind:     "object",
+			Fields:   ImageImport_DiskImageTargetDefaults_EncryptionFields,
 		},
 		"MachineImageTargetDefaults": ubx.FieldSpec{
 			WireName: "machine_image_target_defaults",
-			Kind: "object",
-			Fields: ImageImport_MachineImageTargetDefaultsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecentImageImportJobs": ubx.FieldSpec{
-			WireName: "recent_image_import_jobs",
-			Kind: "list",
-			Fields: ImageImport_RecentImageImportJobsFields,
+			Kind:     "object",
+			Fields:   ImageImport_MachineImageTargetDefaultsFields,
 		},
 	},
 }

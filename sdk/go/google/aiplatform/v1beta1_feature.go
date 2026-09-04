@@ -4,14 +4,14 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Feature_FeatureStatsAndAnomaly struct {
-	DistributionDeviation any
-	DriftDetected any
+	DistributionDeviation   any
+	DriftDetected           any
 	DriftDetectionThreshold any
-	FeatureId any
-	FeatureMonitorId any
-	FeatureMonitorJobId any
-	FeatureStats any
-	StatsTime any
+	FeatureId               any
+	FeatureMonitorId        any
+	FeatureMonitorJobId     any
+	FeatureStats            any
+	StatsTime               any
 }
 
 type V1beta1Feature_MonitoringConfig_CategoricalThresholdConfig struct {
@@ -50,113 +50,73 @@ type V1beta1Feature_MonitoringConfig struct {
 
 type V1beta1Feature_MonitoringStats struct {
 	AnomalyDetectionThreshold any
-	AnomalyUri any
-	DistributionDeviation any
-	EndTime any
-	Score any
-	StartTime any
-	StatsUri any
+	AnomalyUri                any
+	DistributionDeviation     any
+	EndTime                   any
+	Score                     any
+	StartTime                 any
+	StatsUri                  any
 }
 
 type V1beta1Feature_MonitoringStatsAnomalies struct {
 	FeatureStatsAnomaly any
-	Objective any
+	Objective           any
 }
 
-var V1beta1Feature_FeatureStatsAndAnomalyFields = ubx.FieldMap{
-		"DistributionDeviation": ubx.FieldSpec{WireName: "distribution_deviation"},
-		"DriftDetected": ubx.FieldSpec{WireName: "drift_detected"},
-		"DriftDetectionThreshold": ubx.FieldSpec{WireName: "drift_detection_threshold"},
-		"FeatureId": ubx.FieldSpec{WireName: "feature_id"},
-		"FeatureMonitorId": ubx.FieldSpec{WireName: "feature_monitor_id"},
-		"FeatureMonitorJobId": ubx.FieldSpec{WireName: "feature_monitor_job_id"},
-		"FeatureStats": ubx.FieldSpec{WireName: "feature_stats"},
-		"StatsTime": ubx.FieldSpec{WireName: "stats_time"},
-	}
-
 var V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields = ubx.FieldMap{
-		"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
+	"State":                    ubx.FieldSpec{WireName: "state"},
+}
 
 var V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"MonitoringInterval": ubx.FieldSpec{WireName: "monitoring_interval"},
-		"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
-		"StalenessDays": ubx.FieldSpec{WireName: "staleness_days"},
-	}
+	"Disabled":               ubx.FieldSpec{WireName: "disabled"},
+	"MonitoringInterval":     ubx.FieldSpec{WireName: "monitoring_interval"},
+	"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
+	"StalenessDays":          ubx.FieldSpec{WireName: "staleness_days"},
+}
 
 var V1beta1Feature_MonitoringConfigFields = ubx.FieldMap{
-		"CategoricalThresholdConfig": ubx.FieldSpec{
-			WireName: "categorical_threshold_config",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
-		},
-		"ImportFeaturesAnalysis": ubx.FieldSpec{
-			WireName: "import_features_analysis",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields,
-		},
-		"NumericalThresholdConfig": ubx.FieldSpec{
-			WireName: "numerical_threshold_config",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
-		},
-		"SnapshotAnalysis": ubx.FieldSpec{
-			WireName: "snapshot_analysis",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields,
-		},
-	}
-
-var V1beta1Feature_MonitoringStatsFields = ubx.FieldMap{
-		"AnomalyDetectionThreshold": ubx.FieldSpec{WireName: "anomaly_detection_threshold"},
-		"AnomalyUri": ubx.FieldSpec{WireName: "anomaly_uri"},
-		"DistributionDeviation": ubx.FieldSpec{WireName: "distribution_deviation"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"StatsUri": ubx.FieldSpec{WireName: "stats_uri"},
-	}
-
-var V1beta1Feature_MonitoringStatsAnomaliesFields = ubx.FieldMap{
-		"FeatureStatsAnomaly": ubx.FieldSpec{
-			WireName: "feature_stats_anomaly",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringStatsFields,
-		},
-		"Objective": ubx.FieldSpec{WireName: "objective"},
-	}
+	"CategoricalThresholdConfig": ubx.FieldSpec{
+		WireName: "categorical_threshold_config",
+		Kind:     "object",
+		Fields:   V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
+	},
+	"ImportFeaturesAnalysis": ubx.FieldSpec{
+		WireName: "import_features_analysis",
+		Kind:     "object",
+		Fields:   V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields,
+	},
+	"NumericalThresholdConfig": ubx.FieldSpec{
+		WireName: "numerical_threshold_config",
+		Kind:     "object",
+		Fields:   V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
+	},
+	"SnapshotAnalysis": ubx.FieldSpec{
+		WireName: "snapshot_analysis",
+		Kind:     "object",
+		Fields:   V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields,
+	},
+}
 
 type V1beta1FeatureConfig struct {
-	// Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was created.
-	CreateTime any
 	// Description of the Feature.
 	Description any
 	// Optional. Only applicable for Vertex AI Feature Store (Legacy). If not set, use the monitoring_config defined for the EntityType this Feature belongs to. Only Features with type (Feature.ValueType) BOOL, STRING, DOUBLE or INT64 can enable monitoring. If set to true, all types of data monitoring are disabled despite the config on EntityType.
 	DisableMonitoring any
 	// Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
 	Etag any
-	// Output only. Only applicable for Vertex AI Feature Store. The list of historical stats and anomalies.
-	FeatureStatsAndAnomaly any
 	// Optional. The labels with user-defined metadata to organize your Features. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Feature (System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
 	Labels any
 	// Configuration of how features in Featurestore are monitored.
 	MonitoringConfig any
-	// Output only. Only applicable for Vertex AI Feature Store (Legacy). A list of historical SnapshotAnalysis stats requested by user, sorted by FeatureStatsAnomaly.start_time descending.
-	MonitoringStats any
-	// Output only. Only applicable for Vertex AI Feature Store (Legacy). The list of historical stats and anomalies with specified objectives.
-	MonitoringStatsAnomalies any
 	// Immutable. Name of the Feature. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}` `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}` The last part feature is assigned by the client. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type.
 	Name any
 	// Entity responsible for maintaining this feature. Can be comma separated list of email addresses or URIs.
 	PointOfContact any
-	// Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was most recently updated.
-	UpdateTime any
 	// Immutable. Only applicable for Vertex AI Feature Store (Legacy). Type of Feature value.
 	ValueType any
 	// Only applicable for Vertex AI Feature Store. The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use feature_id.
@@ -197,35 +157,18 @@ type V1beta1FeatureAttrs struct {
 var V1beta1Feature = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_feature",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DisableMonitoring": ubx.FieldSpec{WireName: "disable_monitoring"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FeatureStatsAndAnomaly": ubx.FieldSpec{
-			WireName: "feature_stats_and_anomaly",
-			Kind: "list",
-			Fields: V1beta1Feature_FeatureStatsAndAnomalyFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind: "object",
-			Fields: V1beta1Feature_MonitoringConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Feature_MonitoringConfigFields,
 		},
-		"MonitoringStats": ubx.FieldSpec{
-			WireName: "monitoring_stats",
-			Kind: "list",
-			Fields: V1beta1Feature_MonitoringStatsFields,
-		},
-		"MonitoringStatsAnomalies": ubx.FieldSpec{
-			WireName: "monitoring_stats_anomalies",
-			Kind: "list",
-			Fields: V1beta1Feature_MonitoringStatsAnomaliesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PointOfContact": ubx.FieldSpec{WireName: "point_of_contact"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"PointOfContact":    ubx.FieldSpec{WireName: "point_of_contact"},
+		"ValueType":         ubx.FieldSpec{WireName: "value_type"},
 		"VersionColumnName": ubx.FieldSpec{WireName: "version_column_name"},
 	},
 }

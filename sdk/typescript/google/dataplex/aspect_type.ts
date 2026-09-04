@@ -107,8 +107,6 @@ const AspectType_MetadataTemplateFields: FieldMap = {
 export interface AspectTypeConfig {
   /** Authorization for an AspectType. */
   authorization?: AspectType_Authorization | Computed<AspectType_Authorization>;
-  /** Output only. The time when the AspectType was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Immutable. Stores data classification of the aspect. */
   dataClassification?: string | Computed<string>;
   /** Optional. Description of the AspectType. */
@@ -121,14 +119,6 @@ export interface AspectTypeConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** MetadataTemplate definition for an AspectType. */
   metadataTemplate?: AspectType_MetadataTemplate | Computed<AspectType_MetadataTemplate>;
-  /** Output only. The relative resource name of the AspectType, of the form: projects/{project_number}/locations/{location_id}/aspectTypes/{aspect_type_id}. */
-  name?: string | Computed<string>;
-  /** Output only. Denotes the transfer status of the Aspect Type. It is unspecified for Aspect Types created from Dataplex API. */
-  transferStatus?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the AspectType. If you delete and recreate the AspectType with the same name, then this ID will be different. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the AspectType was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AspectTypeAttrs {
@@ -166,7 +156,6 @@ export const AspectType: ResourceBinding<AspectTypeConfig, AspectTypeAttrs> = {
       kind: "object",
       fields: AspectType_AuthorizationFields,
     },
-    createTime: "create_time",
     dataClassification: "data_classification",
     description: "description",
     displayName: "display_name",
@@ -177,9 +166,5 @@ export const AspectType: ResourceBinding<AspectTypeConfig, AspectTypeAttrs> = {
       kind: "object",
       fields: AspectType_MetadataTemplateFields,
     },
-    name: "name",
-    transferStatus: "transfer_status",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

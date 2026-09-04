@@ -480,20 +480,12 @@ export interface CertificateConfig {
   certificateTemplate?: string | Computed<string>;
   /** A CertificateConfig describes an X.509 certificate or CSR that is to be created, as an alternative to using ASN.1. */
   config?: Certificate_Config | Computed<Certificate_Config>;
-  /** Output only. The time at which this Certificate was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The resource name of the issuing CertificateAuthority in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`. */
-  issuerCertificateAuthority?: string | Computed<string>;
   /** Optional. Labels with user-defined metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Immutable. The desired lifetime of a certificate. Used to create the "not_before_time" and "not_after_time" fields inside an X.509 certificate. Note that the lifetime may be truncated if it would extend past the life of any certificate authority in the issuing chain. */
   lifetime?: string | Computed<string>;
   /** Identifier. The resource name for this Certificate in the format `projects/* /locations/* /caPools/* /certificates/*`. */
   name?: string | Computed<string>;
-  /** Output only. The pem-encoded, signed X.509 certificate. */
-  pemCertificate?: string | Computed<string>;
-  /** Output only. The chain that may be used to verify the X.509 certificate. Expected to be in issuer-to-root order according to RFC 5246. */
-  pemCertificateChain?: string[] | Computed<string[]>;
   /** Immutable. A pem-encoded X.509 certificate signing request (CSR). */
   pemCsr?: string | Computed<string>;
   /** Optional. The requested not_before_time of this Certificate. This field may only be set if the CaPool.IssuancePolicy.allow_requester_specified_not_before_time field is set to true for the issuing CaPool. If this field is specified, the certificate will be issued with this 'not_before_time'. If this is not specified, the 'not_before_time' will be set to the issuance time or issuance time minus backdate_duration depending on the CaPool configuration. */
@@ -502,8 +494,6 @@ export interface CertificateConfig {
   revocationDetails?: Certificate_RevocationDetails | Computed<Certificate_RevocationDetails>;
   /** Immutable. Specifies how the Certificate's identity fields are to be decided. If this is omitted, the `DEFAULT` subject mode will be used. */
   subjectMode?: string | Computed<string>;
-  /** Output only. The time at which this Certificate was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CertificateAttrs {
@@ -553,13 +543,9 @@ export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> =
       kind: "object",
       fields: Certificate_ConfigFields,
     },
-    createTime: "create_time",
-    issuerCertificateAuthority: "issuer_certificate_authority",
     labels: "labels",
     lifetime: "lifetime",
     name: "name",
-    pemCertificate: "pem_certificate",
-    pemCertificateChain: "pem_certificate_chain",
     pemCsr: "pem_csr",
     requestedNotBeforeTime: "requested_not_before_time",
     revocationDetails: {
@@ -568,6 +554,5 @@ export const Certificate: ResourceBinding<CertificateConfig, CertificateAttrs> =
       fields: Certificate_RevocationDetailsFields,
     },
     subjectMode: "subject_mode",
-    updateTime: "update_time",
   },
 };

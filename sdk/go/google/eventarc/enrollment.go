@@ -8,24 +8,16 @@ type EnrollmentConfig struct {
 	Annotations any
 	// Required. A CEL expression identifying which messages this enrollment applies to.
 	CelMatch any
-	// Output only. The creation time.
-	CreateTime any
 	// Required. Destination is the Pipeline that the Enrollment is delivering to. It must point to the full resource name of a Pipeline. Format: "projects/{PROJECT_ID}/locations/{region}/pipelines/{PIPELINE_ID)"
 	Destination any
 	// Optional. Resource display name.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. Resource labels.
 	Labels any
 	// Required. Immutable. Resource name of the message bus identifying the source of the messages. It matches the form projects/{project}/locations/{location}/messageBuses/{messageBus}.
 	MessageBus any
 	// Identifier. Resource name of the form projects/{project}/locations/{location}/enrollments/{enrollment}
 	Name any
-	// Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type EnrollmentAttrs struct {
@@ -57,15 +49,11 @@ var Enrollment = ubx.ResourceBinding{
 	WireType: "google_eventarc_enrollment",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CelMatch": ubx.FieldSpec{WireName: "cel_match"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"CelMatch":    ubx.FieldSpec{WireName: "cel_match"},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MessageBus": ubx.FieldSpec{WireName: "message_bus"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"MessageBus":  ubx.FieldSpec{WireName: "message_bus"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

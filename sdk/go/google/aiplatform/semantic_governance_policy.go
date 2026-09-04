@@ -5,21 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SemanticGovernancePolicy_McpTools struct {
 	McpServer any
-	Tools any
+	Tools     any
 }
 
 var SemanticGovernancePolicy_McpToolsFields = ubx.FieldMap{
-		"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
-		"Tools": ubx.FieldSpec{WireName: "tools"},
-	}
+	"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
+	"Tools":     ubx.FieldSpec{WireName: "tools"},
+}
 
 type SemanticGovernancePolicyConfig struct {
 	// Required. The name of the agent in Agent Registry that is affected by this policy.
 	Agent any
-	// Output only. Represents the principal of the agent, used by the Policy Decision Point (PDP) for governance checks. For more information, see https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity Format: `principal://TRUST_DOMAIN/NAMESPACE/AGENT_NAME` Example: `principal://agents.global.org-ORGANIZATION_ID.system.id.goog/resources/aiplatform/projects/PROJECT_NUMBER/locations/LOCATION/reasoningEngines/AGENT_ENGINE_ID`
-	AgentIdentity any
-	// Output only. Timestamp when this SemanticGovernancePolicy was created.
-	CreateTime any
 	// Optional. The description of the SemanticGovernancePolicy.
 	Description any
 	// Optional. The user-defined name of the SemanticGovernancePolicy.
@@ -32,8 +28,6 @@ type SemanticGovernancePolicyConfig struct {
 	Name any
 	// Required. The natural language constraint of the SemanticGovernancePolicy.
 	NaturalLanguageConstraint any
-	// Output only. Timestamp when this SemanticGovernancePolicy was last updated.
-	UpdateTime any
 }
 
 type SemanticGovernancePolicyAttrs struct {
@@ -62,19 +56,16 @@ type SemanticGovernancePolicyAttrs struct {
 var SemanticGovernancePolicy = ubx.ResourceBinding{
 	WireType: "google_aiplatform_semantic_governance_policy",
 	Fields: ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"AgentIdentity": ubx.FieldSpec{WireName: "agent_identity"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Agent":       ubx.FieldSpec{WireName: "agent"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"McpTools": ubx.FieldSpec{
 			WireName: "mcp_tools",
-			Kind: "list",
-			Fields: SemanticGovernancePolicy_McpToolsFields,
+			Kind:     "list",
+			Fields:   SemanticGovernancePolicy_McpToolsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"NaturalLanguageConstraint": ubx.FieldSpec{WireName: "natural_language_constraint"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

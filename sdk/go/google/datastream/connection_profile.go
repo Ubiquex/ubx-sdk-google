@@ -48,7 +48,7 @@ type ConnectionProfile_GcsProfile struct {
 
 type ConnectionProfile_MongodbProfile_HostAddresses struct {
 	Hostname any
-	Port any
+	Port     any
 }
 
 type ConnectionProfile_MongodbProfile_SslConfig struct {
@@ -324,308 +324,306 @@ type ConnectionProfile_WorkdayProfile struct {
 }
 
 var ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields = ubx.FieldMap{
-		"RawValue": ubx.FieldSpec{WireName: "raw_value"},
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"RawValue":      ubx.FieldSpec{WireName: "raw_value"},
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var ConnectionProfile_DataverseProfile_OauthClientCredentialsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
-		},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
+	},
+}
 
 var ConnectionProfile_DataverseProfileFields = ubx.FieldMap{
-		"EnvironmentUrl": ubx.FieldSpec{WireName: "environment_url"},
-		"OauthClientCredentials": ubx.FieldSpec{
-			WireName: "oauth_client_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
-		},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"EnvironmentUrl": ubx.FieldSpec{WireName: "environment_url"},
+	"OauthClientCredentials": ubx.FieldSpec{
+		WireName: "oauth_client_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
+	},
+	"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var ConnectionProfile_ForwardSshConnectivityFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Hostname":   ubx.FieldSpec{WireName: "hostname"},
+	"Password":   ubx.FieldSpec{WireName: "password"},
+	"Port":       ubx.FieldSpec{WireName: "port"},
+	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+	"Username":   ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_GcsProfileFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"RootPath": ubx.FieldSpec{WireName: "root_path"},
-	}
+	"Bucket":   ubx.FieldSpec{WireName: "bucket"},
+	"RootPath": ubx.FieldSpec{WireName: "root_path"},
+}
 
 var ConnectionProfile_MongodbProfile_HostAddressesFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var ConnectionProfile_MongodbProfile_SslConfigFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"CaCertificateSet": ubx.FieldSpec{WireName: "ca_certificate_set"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientCertificateSet": ubx.FieldSpec{WireName: "client_certificate_set"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"ClientKeySet": ubx.FieldSpec{WireName: "client_key_set"},
-		"SecretManagerStoredClientKey": ubx.FieldSpec{WireName: "secret_manager_stored_client_key"},
-	}
+	"CaCertificate":                ubx.FieldSpec{WireName: "ca_certificate"},
+	"CaCertificateSet":             ubx.FieldSpec{WireName: "ca_certificate_set"},
+	"ClientCertificate":            ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientCertificateSet":         ubx.FieldSpec{WireName: "client_certificate_set"},
+	"ClientKey":                    ubx.FieldSpec{WireName: "client_key"},
+	"ClientKeySet":                 ubx.FieldSpec{WireName: "client_key_set"},
+	"SecretManagerStoredClientKey": ubx.FieldSpec{WireName: "secret_manager_stored_client_key"},
+}
 
 var ConnectionProfile_MongodbProfile_StandardConnectionFormatFields = ubx.FieldMap{
-		"DirectConnection": ubx.FieldSpec{WireName: "direct_connection"},
-	}
+	"DirectConnection": ubx.FieldSpec{WireName: "direct_connection"},
+}
 
 var ConnectionProfile_MongodbProfileFields = ubx.FieldMap{
-		"AdditionalOptions": ubx.FieldSpec{WireName: "additional_options"},
-		"HostAddresses": ubx.FieldSpec{
-			WireName: "host_addresses",
-			Kind: "list",
-			Fields: ConnectionProfile_MongodbProfile_HostAddressesFields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"ReplicaSet": ubx.FieldSpec{WireName: "replica_set"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"SrvConnectionFormat": ubx.FieldSpec{WireName: "srv_connection_format"},
-		"SslConfig": ubx.FieldSpec{
-			WireName: "ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_MongodbProfile_SslConfigFields,
-		},
-		"StandardConnectionFormat": ubx.FieldSpec{
-			WireName: "standard_connection_format",
-			Kind: "object",
-			Fields: ConnectionProfile_MongodbProfile_StandardConnectionFormatFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AdditionalOptions": ubx.FieldSpec{WireName: "additional_options"},
+	"HostAddresses": ubx.FieldSpec{
+		WireName: "host_addresses",
+		Kind:     "list",
+		Fields:   ConnectionProfile_MongodbProfile_HostAddressesFields,
+	},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"ReplicaSet":                  ubx.FieldSpec{WireName: "replica_set"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"SrvConnectionFormat":         ubx.FieldSpec{WireName: "srv_connection_format"},
+	"SslConfig": ubx.FieldSpec{
+		WireName: "ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_MongodbProfile_SslConfigFields,
+	},
+	"StandardConnectionFormat": ubx.FieldSpec{
+		WireName: "standard_connection_format",
+		Kind:     "object",
+		Fields:   ConnectionProfile_MongodbProfile_StandardConnectionFormatFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_MysqlProfile_SslConfigFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"CaCertificateSet": ubx.FieldSpec{WireName: "ca_certificate_set"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientCertificateSet": ubx.FieldSpec{WireName: "client_certificate_set"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"ClientKeySet": ubx.FieldSpec{WireName: "client_key_set"},
-	}
+	"CaCertificate":        ubx.FieldSpec{WireName: "ca_certificate"},
+	"CaCertificateSet":     ubx.FieldSpec{WireName: "ca_certificate_set"},
+	"ClientCertificate":    ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientCertificateSet": ubx.FieldSpec{WireName: "client_certificate_set"},
+	"ClientKey":            ubx.FieldSpec{WireName: "client_key"},
+	"ClientKeySet":         ubx.FieldSpec{WireName: "client_key_set"},
+}
 
 var ConnectionProfile_MysqlProfileFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"SslConfig": ubx.FieldSpec{
-			WireName: "ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_MysqlProfile_SslConfigFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Hostname":                    ubx.FieldSpec{WireName: "hostname"},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"SslConfig": ubx.FieldSpec{
+		WireName: "ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_MysqlProfile_SslConfigFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_OracleProfile_OracleAsmConfig_OracleSslConfigFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"CaCertificateSet": ubx.FieldSpec{WireName: "ca_certificate_set"},
-		"ServerCertificateDistinguishedName": ubx.FieldSpec{WireName: "server_certificate_distinguished_name"},
-	}
+	"CaCertificate":                      ubx.FieldSpec{WireName: "ca_certificate"},
+	"CaCertificateSet":                   ubx.FieldSpec{WireName: "ca_certificate_set"},
+	"ServerCertificateDistinguishedName": ubx.FieldSpec{WireName: "server_certificate_distinguished_name"},
+}
 
 var ConnectionProfile_OracleProfile_OracleAsmConfigFields = ubx.FieldMap{
-		"AsmService": ubx.FieldSpec{WireName: "asm_service"},
-		"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"OracleSslConfig": ubx.FieldSpec{
-			WireName: "oracle_ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_OracleProfile_OracleAsmConfig_OracleSslConfigFields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AsmService":           ubx.FieldSpec{WireName: "asm_service"},
+	"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
+	"Hostname":             ubx.FieldSpec{WireName: "hostname"},
+	"OracleSslConfig": ubx.FieldSpec{
+		WireName: "oracle_ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_OracleProfile_OracleAsmConfig_OracleSslConfigFields,
+	},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"Username":                    ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_OracleProfileFields = ubx.FieldMap{
-		"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
-		"DatabaseService": ubx.FieldSpec{WireName: "database_service"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"OracleAsmConfig": ubx.FieldSpec{
-			WireName: "oracle_asm_config",
-			Kind: "object",
-			Fields: ConnectionProfile_OracleProfile_OracleAsmConfigFields,
-		},
-		"OracleSslConfig": ubx.FieldSpec{
-			WireName: "oracle_ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_OracleProfile_OracleAsmConfig_OracleSslConfigFields,
-		},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
+	"DatabaseService":      ubx.FieldSpec{WireName: "database_service"},
+	"Hostname":             ubx.FieldSpec{WireName: "hostname"},
+	"OracleAsmConfig": ubx.FieldSpec{
+		WireName: "oracle_asm_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_OracleProfile_OracleAsmConfigFields,
+	},
+	"OracleSslConfig": ubx.FieldSpec{
+		WireName: "oracle_ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_OracleProfile_OracleAsmConfig_OracleSslConfigFields,
+	},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"Username":                    ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_PostgresqlProfile_SslConfig_ServerAndClientVerificationFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"ServerCertificateHostname": ubx.FieldSpec{WireName: "server_certificate_hostname"},
-	}
+	"CaCertificate":             ubx.FieldSpec{WireName: "ca_certificate"},
+	"ClientCertificate":         ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientKey":                 ubx.FieldSpec{WireName: "client_key"},
+	"ServerCertificateHostname": ubx.FieldSpec{WireName: "server_certificate_hostname"},
+}
 
 var ConnectionProfile_PostgresqlProfile_SslConfig_ServerVerificationFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"ServerCertificateHostname": ubx.FieldSpec{WireName: "server_certificate_hostname"},
-	}
+	"CaCertificate":             ubx.FieldSpec{WireName: "ca_certificate"},
+	"ServerCertificateHostname": ubx.FieldSpec{WireName: "server_certificate_hostname"},
+}
 
 var ConnectionProfile_PostgresqlProfile_SslConfigFields = ubx.FieldMap{
-		"ServerAndClientVerification": ubx.FieldSpec{
-			WireName: "server_and_client_verification",
-			Kind: "object",
-			Fields: ConnectionProfile_PostgresqlProfile_SslConfig_ServerAndClientVerificationFields,
-		},
-		"ServerVerification": ubx.FieldSpec{
-			WireName: "server_verification",
-			Kind: "object",
-			Fields: ConnectionProfile_PostgresqlProfile_SslConfig_ServerVerificationFields,
-		},
-	}
+	"ServerAndClientVerification": ubx.FieldSpec{
+		WireName: "server_and_client_verification",
+		Kind:     "object",
+		Fields:   ConnectionProfile_PostgresqlProfile_SslConfig_ServerAndClientVerificationFields,
+	},
+	"ServerVerification": ubx.FieldSpec{
+		WireName: "server_verification",
+		Kind:     "object",
+		Fields:   ConnectionProfile_PostgresqlProfile_SslConfig_ServerVerificationFields,
+	},
+}
 
 var ConnectionProfile_PostgresqlProfileFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"SslConfig": ubx.FieldSpec{
-			WireName: "ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_PostgresqlProfile_SslConfigFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Database":                    ubx.FieldSpec{WireName: "database"},
+	"Hostname":                    ubx.FieldSpec{WireName: "hostname"},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"SslConfig": ubx.FieldSpec{
+		WireName: "ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_PostgresqlProfile_SslConfigFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_PrivateConnectivityFields = ubx.FieldMap{
-		"PrivateConnection": ubx.FieldSpec{WireName: "private_connection"},
-	}
+	"PrivateConnection": ubx.FieldSpec{WireName: "private_connection"},
+}
 
 var ConnectionProfile_SalesforceMarketingCloudProfileFields = ubx.FieldMap{
-		"OauthClientCredentials": ubx.FieldSpec{
-			WireName: "oauth_client_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
-		},
-		"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
-	}
+	"OauthClientCredentials": ubx.FieldSpec{
+		WireName: "oauth_client_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
+	},
+	"Subdomain": ubx.FieldSpec{WireName: "subdomain"},
+}
 
 var ConnectionProfile_SalesforceProfile_Oauth2ClientCredentialsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"SecretManagerStoredClientSecret": ubx.FieldSpec{WireName: "secret_manager_stored_client_secret"},
-	}
+	"ClientId":                        ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                    ubx.FieldSpec{WireName: "client_secret"},
+	"SecretManagerStoredClientSecret": ubx.FieldSpec{WireName: "secret_manager_stored_client_secret"},
+}
 
 var ConnectionProfile_SalesforceProfile_UserCredentialsFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"SecretManagerStoredSecurityToken": ubx.FieldSpec{WireName: "secret_manager_stored_security_token"},
-		"SecurityToken": ubx.FieldSpec{WireName: "security_token"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password":                         ubx.FieldSpec{WireName: "password"},
+	"SecretManagerStoredPassword":      ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"SecretManagerStoredSecurityToken": ubx.FieldSpec{WireName: "secret_manager_stored_security_token"},
+	"SecurityToken":                    ubx.FieldSpec{WireName: "security_token"},
+	"Username":                         ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_SalesforceProfileFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Oauth2ClientCredentials": ubx.FieldSpec{
-			WireName: "oauth2_client_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_SalesforceProfile_Oauth2ClientCredentialsFields,
-		},
-		"UserCredentials": ubx.FieldSpec{
-			WireName: "user_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_SalesforceProfile_UserCredentialsFields,
-		},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+	"Oauth2ClientCredentials": ubx.FieldSpec{
+		WireName: "oauth2_client_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_SalesforceProfile_Oauth2ClientCredentialsFields,
+	},
+	"UserCredentials": ubx.FieldSpec{
+		WireName: "user_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_SalesforceProfile_UserCredentialsFields,
+	},
+}
 
 var ConnectionProfile_ServiceNowProfile_UserPasswordCredentialsFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{
-			WireName: "password",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{
+		WireName: "password",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_ServiceNowProfileFields = ubx.FieldMap{
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"OauthClientCredentials": ubx.FieldSpec{
-			WireName: "oauth_client_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
-		},
-		"UserPasswordCredentials": ubx.FieldSpec{
-			WireName: "user_password_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_ServiceNowProfile_UserPasswordCredentialsFields,
-		},
-	}
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"OauthClientCredentials": ubx.FieldSpec{
+		WireName: "oauth_client_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
+	},
+	"UserPasswordCredentials": ubx.FieldSpec{
+		WireName: "user_password_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_ServiceNowProfile_UserPasswordCredentialsFields,
+	},
+}
 
 var ConnectionProfile_SpannerProfileFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Host":     ubx.FieldSpec{WireName: "host"},
+}
 
 var ConnectionProfile_SqlServerProfile_SslConfigFields = ubx.FieldMap{
-		"BasicEncryption": ubx.FieldSpec{WireName: "basic_encryption"},
-		"EncryptionAndServerValidation": ubx.FieldSpec{
-			WireName: "encryption_and_server_validation",
-			Kind: "object",
-			Fields: ConnectionProfile_PostgresqlProfile_SslConfig_ServerVerificationFields,
-		},
-		"EncryptionNotEnforced": ubx.FieldSpec{WireName: "encryption_not_enforced"},
-	}
+	"BasicEncryption": ubx.FieldSpec{WireName: "basic_encryption"},
+	"EncryptionAndServerValidation": ubx.FieldSpec{
+		WireName: "encryption_and_server_validation",
+		Kind:     "object",
+		Fields:   ConnectionProfile_PostgresqlProfile_SslConfig_ServerVerificationFields,
+	},
+	"EncryptionNotEnforced": ubx.FieldSpec{WireName: "encryption_not_enforced"},
+}
 
 var ConnectionProfile_SqlServerProfileFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
-		"SslConfig": ubx.FieldSpec{
-			WireName: "ssl_config",
-			Kind: "object",
-			Fields: ConnectionProfile_SqlServerProfile_SslConfigFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Database":                    ubx.FieldSpec{WireName: "database"},
+	"Hostname":                    ubx.FieldSpec{WireName: "hostname"},
+	"Password":                    ubx.FieldSpec{WireName: "password"},
+	"Port":                        ubx.FieldSpec{WireName: "port"},
+	"SecretManagerStoredPassword": ubx.FieldSpec{WireName: "secret_manager_stored_password"},
+	"SslConfig": ubx.FieldSpec{
+		WireName: "ssl_config",
+		Kind:     "object",
+		Fields:   ConnectionProfile_SqlServerProfile_SslConfigFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var ConnectionProfile_WorkdayProfile_OauthRefreshTokenCredentialsFields = ubx.FieldMap{
-		"OauthClientCredentials": ubx.FieldSpec{
-			WireName: "oauth_client_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
-		},
-		"RefreshToken": ubx.FieldSpec{
-			WireName: "refresh_token",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
-		},
-	}
+	"OauthClientCredentials": ubx.FieldSpec{
+		WireName: "oauth_client_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentialsFields,
+	},
+	"RefreshToken": ubx.FieldSpec{
+		WireName: "refresh_token",
+		Kind:     "object",
+		Fields:   ConnectionProfile_DataverseProfile_OauthClientCredentials_ClientSecretFields,
+	},
+}
 
 var ConnectionProfile_WorkdayProfileFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"OauthRefreshTokenCredentials": ubx.FieldSpec{
-			WireName: "oauth_refresh_token_credentials",
-			Kind: "object",
-			Fields: ConnectionProfile_WorkdayProfile_OauthRefreshTokenCredentialsFields,
-		},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"OauthRefreshTokenCredentials": ubx.FieldSpec{
+		WireName: "oauth_refresh_token_credentials",
+		Kind:     "object",
+		Fields:   ConnectionProfile_WorkdayProfile_OauthRefreshTokenCredentialsFields,
+	},
+	"Tenant": ubx.FieldSpec{WireName: "tenant"},
+}
 
 type ConnectionProfileConfig struct {
 	// Profile for connecting to a BigQuery destination.
 	BigqueryProfile any
-	// Output only. The create time of the resource.
-	CreateTime any
 	// Profile for connecting to a Dataverse source.
 	DataverseProfile any
 	// Required. Display name.
@@ -640,8 +638,6 @@ type ConnectionProfileConfig struct {
 	MongodbProfile any
 	// Profile for connecting to a MySQL source.
 	MysqlProfile any
-	// Output only. Identifier. The resource's name.
-	Name any
 	// Profile for connecting to an Oracle source.
 	OracleProfile any
 	// Profile for connecting to a PostgreSQL source.
@@ -652,10 +648,6 @@ type ConnectionProfileConfig struct {
 	SalesforceMarketingCloudProfile any
 	// Profile for connecting to a Salesforce source.
 	SalesforceProfile any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Profile for connecting to a ServiceNow source.
 	ServiceNowProfile any
 	// Profile for connecting to a Spanner source.
@@ -664,8 +656,6 @@ type ConnectionProfileConfig struct {
 	SqlServerProfile any
 	// Static IP address connectivity. Used when the source database is configured to allow incoming connections from the Datastream public IP addresses for the region specified in the connection profile.
 	StaticServiceIpConnectivity any
-	// Output only. The update time of the resource.
-	UpdateTime any
 	// Profile for connecting to a Workday source.
 	WorkdayProfile any
 }
@@ -723,83 +713,78 @@ var ConnectionProfile = ubx.ResourceBinding{
 	WireType: "google_datastream_connection_profile",
 	Fields: ubx.FieldMap{
 		"BigqueryProfile": ubx.FieldSpec{WireName: "bigquery_profile"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataverseProfile": ubx.FieldSpec{
 			WireName: "dataverse_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_DataverseProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_DataverseProfileFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ForwardSshConnectivity": ubx.FieldSpec{
 			WireName: "forward_ssh_connectivity",
-			Kind: "object",
-			Fields: ConnectionProfile_ForwardSshConnectivityFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_ForwardSshConnectivityFields,
 		},
 		"GcsProfile": ubx.FieldSpec{
 			WireName: "gcs_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_GcsProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_GcsProfileFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MongodbProfile": ubx.FieldSpec{
 			WireName: "mongodb_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_MongodbProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_MongodbProfileFields,
 		},
 		"MysqlProfile": ubx.FieldSpec{
 			WireName: "mysql_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_MysqlProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_MysqlProfileFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OracleProfile": ubx.FieldSpec{
 			WireName: "oracle_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_OracleProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_OracleProfileFields,
 		},
 		"PostgresqlProfile": ubx.FieldSpec{
 			WireName: "postgresql_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_PostgresqlProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_PostgresqlProfileFields,
 		},
 		"PrivateConnectivity": ubx.FieldSpec{
 			WireName: "private_connectivity",
-			Kind: "object",
-			Fields: ConnectionProfile_PrivateConnectivityFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_PrivateConnectivityFields,
 		},
 		"SalesforceMarketingCloudProfile": ubx.FieldSpec{
 			WireName: "salesforce_marketing_cloud_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_SalesforceMarketingCloudProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_SalesforceMarketingCloudProfileFields,
 		},
 		"SalesforceProfile": ubx.FieldSpec{
 			WireName: "salesforce_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_SalesforceProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_SalesforceProfileFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceNowProfile": ubx.FieldSpec{
 			WireName: "service_now_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_ServiceNowProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_ServiceNowProfileFields,
 		},
 		"SpannerProfile": ubx.FieldSpec{
 			WireName: "spanner_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_SpannerProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_SpannerProfileFields,
 		},
 		"SqlServerProfile": ubx.FieldSpec{
 			WireName: "sql_server_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_SqlServerProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_SqlServerProfileFields,
 		},
 		"StaticServiceIpConnectivity": ubx.FieldSpec{WireName: "static_service_ip_connectivity"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"WorkdayProfile": ubx.FieldSpec{
 			WireName: "workday_profile",
-			Kind: "object",
-			Fields: ConnectionProfile_WorkdayProfileFields,
+			Kind:     "object",
+			Fields:   ConnectionProfile_WorkdayProfileFields,
 		},
 	},
 }

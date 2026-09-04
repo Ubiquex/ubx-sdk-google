@@ -82,8 +82,6 @@ const DocumentSchema_PropertyDefinitionsFields: FieldMap = {
 };
 
 export interface DocumentSchemaConfig {
-  /** Output only. The time when the document schema is created. */
-  createTime?: string | Computed<string>;
   /** Schema description. */
   description?: string | Computed<string>;
   /** Required. Name of the schema given by the user. Must be unique per project. */
@@ -94,8 +92,6 @@ export interface DocumentSchemaConfig {
   name?: string | Computed<string>;
   /** Document details. */
   propertyDefinitions?: DocumentSchema_PropertyDefinitions[] | Computed<DocumentSchema_PropertyDefinitions[]>;
-  /** Output only. The time when the document schema is last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DocumentSchemaAttrs {
@@ -118,7 +114,6 @@ export interface DocumentSchemaAttrs {
 export const DocumentSchema: ResourceBinding<DocumentSchemaConfig, DocumentSchemaAttrs> = {
   wireType: "google_contentwarehouse_document_schema",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     documentIsFolder: "document_is_folder",
@@ -128,6 +123,5 @@ export const DocumentSchema: ResourceBinding<DocumentSchemaConfig, DocumentSchem
       kind: "list",
       fields: DocumentSchema_PropertyDefinitionsFields,
     },
-    updateTime: "update_time",
   },
 };

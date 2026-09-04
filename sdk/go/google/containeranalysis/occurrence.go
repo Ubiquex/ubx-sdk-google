@@ -4,15 +4,15 @@ package containeranalysis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Occurrence_AiSkillAnalysis_Findings_Location struct {
-	FilePath any
+	FilePath   any
 	LineNumber any
 }
 
 type Occurrence_AiSkillAnalysis_Findings struct {
 	Category any
-	Details any
+	Details  any
 	Location any
-	Scanner any
+	Scanner  any
 	Severity any
 }
 
@@ -45,7 +45,7 @@ type Occurrence_AiSkillAnalysis struct {
 	// Findings produced by the analysis.
 	Findings any
 	// Maximum severity found among findings. Per scanner verdict details.
-	MaxSeverity any
+	MaxSeverity       any
 	PerScannerVerdict any
 	// Name of the skill that produced this analysis.
 	SkillName any
@@ -57,7 +57,7 @@ type Occurrence_Attestation_Jwts struct {
 
 type Occurrence_Attestation_Signatures struct {
 	PublicKeyId any
-	Signature any
+	Signature   any
 }
 
 type Occurrence_Attestation struct {
@@ -70,57 +70,57 @@ type Occurrence_Attestation struct {
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependencies struct {
-	Annotations any
-	Content any
-	Digest any
+	Annotations      any
+	Content          any
+	Digest           any
 	DownloadLocation any
-	MediaType any
-	Name any
-	Uri any
+	MediaType        any
+	Name             any
+	Uri              any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition struct {
-	BuildType any
-	ExternalParameters any
-	InternalParameters any
+	BuildType            any
+	ExternalParameters   any
+	InternalParameters   any
 	ResolvedDependencies any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Builder struct {
 	BuilderDependencies any
-	Id any
-	Version any
+	Id                  any
+	Version             any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_Metadata struct {
-	FinishedOn any
+	FinishedOn   any
 	InvocationId any
-	StartedOn any
+	StartedOn    any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails struct {
-	Builder any
+	Builder    any
 	Byproducts any
-	Metadata any
+	Metadata   any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Predicate struct {
 	BuildDefinition any
-	RunDetails any
+	RunDetails      any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1_Subject struct {
 	Digest any
-	Name any
+	Name   any
 }
 
 type Occurrence_Build_InTotoSlsaProvenanceV1 struct {
 	// InToto spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement
 	Type any
 	// Keep in sync with schema at https://github.com/slsa-framework/slsa/blob/main/docs/provenance/schema/v1/provenance.proto Builder renamed to ProvenanceBuilder because of Java conflicts.
-	Predicate any
+	Predicate     any
 	PredicateType any
-	Subject any
+	Subject       any
 }
 
 type Occurrence_Build_IntotoProvenance_BuilderConfig struct {
@@ -174,7 +174,7 @@ type Occurrence_Build_IntotoProvenance struct {
 
 type Occurrence_Build_IntotoStatement_SlsaProvenance_Materials struct {
 	Digest any
-	Uri any
+	Uri    any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenance_Recipe struct {
@@ -201,28 +201,28 @@ type Occurrence_Build_IntotoStatement_SlsaProvenance struct {
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSource struct {
-	Digest any
+	Digest     any
 	EntryPoint any
-	Uri any
+	Uri        any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation struct {
 	// Describes where the config file that kicked off the build came from. This is effectively a pointer to the source where buildConfig came from.
 	ConfigSource any
-	Environment any
-	Parameters any
+	Environment  any
+	Parameters   any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_Completeness struct {
 	Environment any
-	Materials any
-	Parameters any
+	Materials   any
+	Parameters  any
 }
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata struct {
-	BuildFinishedOn any
+	BuildFinishedOn   any
 	BuildInvocationId any
-	BuildStartedOn any
+	BuildStartedOn    any
 	// Indicates that the builder claims certain fields in this message to be complete.
 	Completeness any
 	Reproducible any
@@ -230,12 +230,12 @@ type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata struct {
 
 type Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo struct {
 	BuildConfig any
-	BuildType any
+	BuildType   any
 	// Identifies the entity that executed the recipe, which is trusted to have correctly performed the operation and populated this provenance.
 	Builder any
 	// Identifies the event that kicked off the build.
 	Invocation any
-	Materials any
+	Materials  any
 	// Other properties of the build.
 	Metadata any
 }
@@ -244,26 +244,26 @@ type Occurrence_Build_IntotoStatement struct {
 	// Always `https://in-toto.io/Statement/v0.1`.
 	Type any
 	// `https://slsa.dev/provenance/v0.1` for SlsaProvenance.
-	PredicateType any
-	Provenance any
+	PredicateType  any
+	Provenance     any
 	SlsaProvenance any
 	// See full explanation of fields at slsa.dev/provenance/v0.2.
 	SlsaProvenanceZeroTwo any
-	Subject any
+	Subject               any
 }
 
 type Occurrence_Build_Provenance_BuiltArtifacts struct {
 	Checksum any
-	Id any
-	Names any
+	Id       any
+	Names    any
 }
 
 type Occurrence_Build_Provenance_Commands struct {
-	Args any
-	Dir any
-	Env any
-	Id any
-	Name any
+	Args    any
+	Dir     any
+	Env     any
+	Id      any
+	Name    any
 	WaitFor any
 }
 
@@ -274,41 +274,41 @@ type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_A
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoId struct {
 	ProjectId any
-	RepoName any
+	RepoName  any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId struct {
 	ProjectRepoId any
-	Uid any
+	Uid           any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo struct {
 	AliasContext any
-	RepoId any
-	RevisionId any
+	RepoId       any
+	RevisionId   any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Gerrit struct {
-	AliasContext any
+	AliasContext  any
 	GerritProject any
-	HostUri any
-	RevisionId any
+	HostUri       any
+	RevisionId    any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_Git struct {
 	RevisionId any
-	Url any
+	Url        any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts struct {
 	CloudRepo any
-	Gerrit any
-	Git any
-	Labels any
+	Gerrit    any
+	Git       any
+	Labels    any
 }
 
 type Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHash struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -358,7 +358,7 @@ type Occurrence_Build_Provenance struct {
 
 type Occurrence_Build struct {
 	InTotoSlsaProvenanceV1 any
-	IntotoProvenance any
+	IntotoProvenance       any
 	// Spec defined at https://github.com/in-toto/attestation/tree/main/spec#statement The serialized InTotoStatement will be stored as Envelope.payload. Envelope.payloadType is always "application/vnd.in-toto+json".
 	IntotoStatement any
 	// Provenance of a build. Contains all information needed to verify the full details about the build from source to completion.
@@ -369,8 +369,8 @@ type Occurrence_Build struct {
 
 type Occurrence_Compliance_NonCompliantFiles struct {
 	DisplayCommand any
-	Path any
-	Reason any
+	Path           any
+	Reason         any
 }
 
 type Occurrence_Compliance_Version struct {
@@ -384,7 +384,7 @@ type Occurrence_Compliance_Version struct {
 
 type Occurrence_Compliance struct {
 	NonComplianceReason any
-	NonCompliantFiles any
+	NonCompliantFiles   any
 	// Describes the CIS benchmark version that is applicable to a given OS and os version.
 	Version any
 }
@@ -411,7 +411,7 @@ type Occurrence_Discovery_AnalysisCompleted struct {
 }
 
 type Occurrence_Discovery_AnalysisError struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -450,13 +450,13 @@ type Occurrence_Discovery struct {
 
 type Occurrence_DsseAttestation_Envelope_Signatures struct {
 	Keyid any
-	Sig any
+	Sig   any
 }
 
 type Occurrence_DsseAttestation_Envelope struct {
-	Payload any
+	Payload     any
 	PayloadType any
-	Signatures any
+	Signatures  any
 }
 
 type Occurrence_DsseAttestation struct {
@@ -499,17 +499,17 @@ type Occurrence_Package_License struct {
 }
 
 type Occurrence_Package_Location_Version struct {
-	Epoch any
-	FullName any
+	Epoch     any
+	FullName  any
 	Inclusive any
-	Kind any
-	Name any
-	Revision any
+	Kind      any
+	Name      any
+	Revision  any
 }
 
 type Occurrence_Package_Location struct {
-	CpeUri any
-	Path any
+	CpeUri  any
+	Path    any
 	Version any
 }
 
@@ -563,23 +563,23 @@ type Occurrence_SbomReference struct {
 
 type Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImages struct {
 	LayerCount any
-	Name any
-	Registry any
+	Name       any
+	Registry   any
 	Repository any
 }
 
 type Occurrence_Secret_Locations_FileLocation_LayerDetails struct {
 	BaseImages any
-	ChainId any
-	Command any
-	DiffId any
-	Index any
+	ChainId    any
+	Command    any
+	DiffId     any
+	Index      any
 }
 
 type Occurrence_Secret_Locations_FileLocation struct {
-	FilePath any
+	FilePath     any
 	LayerDetails any
-	LineNumber any
+	LineNumber   any
 }
 
 type Occurrence_Secret_Locations struct {
@@ -587,8 +587,8 @@ type Occurrence_Secret_Locations struct {
 }
 
 type Occurrence_Secret_Statuses struct {
-	Message any
-	Status any
+	Message    any
+	Status     any
 	UpdateTime any
 }
 
@@ -614,7 +614,7 @@ type Occurrence_Upgrade_Distribution struct {
 
 type Occurrence_Upgrade_WindowsUpdate_Categories struct {
 	CategoryId any
-	Name any
+	Name       any
 }
 
 type Occurrence_Upgrade_WindowsUpdate_Identity struct {
@@ -668,9 +668,9 @@ type Occurrence_Vulnerability_CvssV2 struct {
 	// Confidentiality Impact (C). Defined in CVSS v2, v3.
 	ConfidentialityImpact any
 	// Exploit Maturity (E). Defined in CVSS v4.
-	ExploitMaturity any
+	ExploitMaturity     any
 	ExploitabilityScore any
-	ImpactScore any
+	ImpactScore         any
 	// Integrity Impact (I). Defined in CVSS v2, v3.
 	IntegrityImpact any
 	// Privileges Required (PR). Defined in CVSS v3, v4.
@@ -694,21 +694,21 @@ type Occurrence_Vulnerability_CvssV2 struct {
 }
 
 type Occurrence_Vulnerability_PackageIssue struct {
-	AffectedCpeUri any
-	AffectedPackage any
-	AffectedVersion any
+	AffectedCpeUri    any
+	AffectedPackage   any
+	AffectedVersion   any
 	EffectiveSeverity any
-	FileLocation any
-	FixAvailable any
-	FixedCpeUri any
-	FixedPackage any
-	FixedVersion any
-	PackageType any
+	FileLocation      any
+	FixAvailable      any
+	FixedCpeUri       any
+	FixedPackage      any
+	FixedVersion      any
+	PackageType       any
 }
 
 type Occurrence_Vulnerability_RelatedUrls struct {
 	Label any
-	Url any
+	Url   any
 }
 
 type Occurrence_Vulnerability_Risk_CisaKev struct {
@@ -725,7 +725,7 @@ type Occurrence_Vulnerability_Risk_Epss struct {
 
 type Occurrence_Vulnerability_Risk struct {
 	CisaKev any
-	Epss any
+	Epss    any
 }
 
 type Occurrence_Vulnerability_VexAssessment_Justification struct {
@@ -736,9 +736,9 @@ type Occurrence_Vulnerability_VexAssessment_Justification struct {
 }
 
 type Occurrence_Vulnerability_VexAssessment_Remediations struct {
-	Details any
+	Details         any
 	RemediationType any
-	RemediationUri any
+	RemediationUri  any
 }
 
 type Occurrence_Vulnerability_VexAssessment struct {
@@ -783,7 +783,7 @@ type Occurrence_Vulnerability struct {
 	PackageIssue any
 	// Output only. URLs related to this vulnerability.
 	RelatedUrls any
-	Risk any
+	Risk        any
 	// Output only. The note provider assigned severity of this vulnerability.
 	Severity any
 	// Output only. A one sentence description of this vulnerability.
@@ -795,1008 +795,1008 @@ type Occurrence_Vulnerability struct {
 }
 
 var Occurrence_AiSkillAnalysis_Findings_LocationFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"LineNumber": ubx.FieldSpec{WireName: "line_number"},
-	}
+	"FilePath":   ubx.FieldSpec{WireName: "file_path"},
+	"LineNumber": ubx.FieldSpec{WireName: "line_number"},
+}
 
 var Occurrence_AiSkillAnalysis_FindingsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_Findings_LocationFields,
-		},
-		"Scanner": ubx.FieldSpec{WireName: "scanner"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Details":  ubx.FieldSpec{WireName: "details"},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_Findings_LocationFields,
+	},
+	"Scanner":  ubx.FieldSpec{WireName: "scanner"},
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+}
 
 var Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields = ubx.FieldMap{
-		"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
-		"ScanStatus": ubx.FieldSpec{WireName: "scan_status"},
-	}
+	"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
+	"ScanStatus":  ubx.FieldSpec{WireName: "scan_status"},
+}
 
 var Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScanFields = ubx.FieldMap{
-		"ScanStatus": ubx.FieldSpec{WireName: "scan_status"},
-		"Verdict": ubx.FieldSpec{WireName: "verdict"},
-	}
+	"ScanStatus": ubx.FieldSpec{WireName: "scan_status"},
+	"Verdict":    ubx.FieldSpec{WireName: "verdict"},
+}
 
 var Occurrence_AiSkillAnalysis_PerScannerVerdictFields = ubx.FieldMap{
-		"MaliciousContentLlmResult": ubx.FieldSpec{
-			WireName: "malicious_content_llm_result",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
-		},
-		"MaliciousContentStaticResult": ubx.FieldSpec{
-			WireName: "malicious_content_static_result",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
-		},
-		"MalwareScan": ubx.FieldSpec{
-			WireName: "malware_scan",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScanFields,
-		},
-		"WorkspacePolicy": ubx.FieldSpec{
-			WireName: "workspace_policy",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScanFields,
-		},
-	}
+	"MaliciousContentLlmResult": ubx.FieldSpec{
+		WireName: "malicious_content_llm_result",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
+	},
+	"MaliciousContentStaticResult": ubx.FieldSpec{
+		WireName: "malicious_content_static_result",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
+	},
+	"MalwareScan": ubx.FieldSpec{
+		WireName: "malware_scan",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScanFields,
+	},
+	"WorkspacePolicy": ubx.FieldSpec{
+		WireName: "workspace_policy",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScanFields,
+	},
+}
 
 var Occurrence_AiSkillAnalysisFields = ubx.FieldMap{
-		"Findings": ubx.FieldSpec{
-			WireName: "findings",
-			Kind: "list",
-			Fields: Occurrence_AiSkillAnalysis_FindingsFields,
-		},
-		"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
-		"PerScannerVerdict": ubx.FieldSpec{
-			WireName: "per_scanner_verdict",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysis_PerScannerVerdictFields,
-		},
-		"SkillName": ubx.FieldSpec{WireName: "skill_name"},
-	}
+	"Findings": ubx.FieldSpec{
+		WireName: "findings",
+		Kind:     "list",
+		Fields:   Occurrence_AiSkillAnalysis_FindingsFields,
+	},
+	"MaxSeverity": ubx.FieldSpec{WireName: "max_severity"},
+	"PerScannerVerdict": ubx.FieldSpec{
+		WireName: "per_scanner_verdict",
+		Kind:     "object",
+		Fields:   Occurrence_AiSkillAnalysis_PerScannerVerdictFields,
+	},
+	"SkillName": ubx.FieldSpec{WireName: "skill_name"},
+}
 
 var Occurrence_Attestation_JwtsFields = ubx.FieldMap{
-		"CompactJwt": ubx.FieldSpec{WireName: "compact_jwt"},
-	}
+	"CompactJwt": ubx.FieldSpec{WireName: "compact_jwt"},
+}
 
 var Occurrence_Attestation_SignaturesFields = ubx.FieldMap{
-		"PublicKeyId": ubx.FieldSpec{WireName: "public_key_id"},
-		"Signature": ubx.FieldSpec{WireName: "signature"},
-	}
+	"PublicKeyId": ubx.FieldSpec{WireName: "public_key_id"},
+	"Signature":   ubx.FieldSpec{WireName: "signature"},
+}
 
 var Occurrence_AttestationFields = ubx.FieldMap{
-		"Jwts": ubx.FieldSpec{
-			WireName: "jwts",
-			Kind: "list",
-			Fields: Occurrence_Attestation_JwtsFields,
-		},
-		"SerializedPayload": ubx.FieldSpec{WireName: "serialized_payload"},
-		"Signatures": ubx.FieldSpec{
-			WireName: "signatures",
-			Kind: "list",
-			Fields: Occurrence_Attestation_SignaturesFields,
-		},
-	}
+	"Jwts": ubx.FieldSpec{
+		WireName: "jwts",
+		Kind:     "list",
+		Fields:   Occurrence_Attestation_JwtsFields,
+	},
+	"SerializedPayload": ubx.FieldSpec{WireName: "serialized_payload"},
+	"Signatures": ubx.FieldSpec{
+		WireName: "signatures",
+		Kind:     "list",
+		Fields:   Occurrence_Attestation_SignaturesFields,
+	},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"DownloadLocation": ubx.FieldSpec{WireName: "download_location"},
-		"MediaType": ubx.FieldSpec{WireName: "media_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Annotations":      ubx.FieldSpec{WireName: "annotations"},
+	"Content":          ubx.FieldSpec{WireName: "content"},
+	"Digest":           ubx.FieldSpec{WireName: "digest"},
+	"DownloadLocation": ubx.FieldSpec{WireName: "download_location"},
+	"MediaType":        ubx.FieldSpec{WireName: "media_type"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinitionFields = ubx.FieldMap{
-		"BuildType": ubx.FieldSpec{WireName: "build_type"},
-		"ExternalParameters": ubx.FieldSpec{WireName: "external_parameters"},
-		"InternalParameters": ubx.FieldSpec{WireName: "internal_parameters"},
-		"ResolvedDependencies": ubx.FieldSpec{
-			WireName: "resolved_dependencies",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
-		},
-	}
+	"BuildType":          ubx.FieldSpec{WireName: "build_type"},
+	"ExternalParameters": ubx.FieldSpec{WireName: "external_parameters"},
+	"InternalParameters": ubx.FieldSpec{WireName: "internal_parameters"},
+	"ResolvedDependencies": ubx.FieldSpec{
+		WireName: "resolved_dependencies",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
+	},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_BuilderFields = ubx.FieldMap{
-		"BuilderDependencies": ubx.FieldSpec{
-			WireName: "builder_dependencies",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"BuilderDependencies": ubx.FieldSpec{
+		WireName: "builder_dependencies",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
+	},
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_MetadataFields = ubx.FieldMap{
-		"FinishedOn": ubx.FieldSpec{WireName: "finished_on"},
-		"InvocationId": ubx.FieldSpec{WireName: "invocation_id"},
-		"StartedOn": ubx.FieldSpec{WireName: "started_on"},
-	}
+	"FinishedOn":   ubx.FieldSpec{WireName: "finished_on"},
+	"InvocationId": ubx.FieldSpec{WireName: "invocation_id"},
+	"StartedOn":    ubx.FieldSpec{WireName: "started_on"},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetailsFields = ubx.FieldMap{
-		"Builder": ubx.FieldSpec{
-			WireName: "builder",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_BuilderFields,
-		},
-		"Byproducts": ubx.FieldSpec{
-			WireName: "byproducts",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_MetadataFields,
-		},
-	}
+	"Builder": ubx.FieldSpec{
+		WireName: "builder",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_BuilderFields,
+	},
+	"Byproducts": ubx.FieldSpec{
+		WireName: "byproducts",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinition_ResolvedDependenciesFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetails_MetadataFields,
+	},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_PredicateFields = ubx.FieldMap{
-		"BuildDefinition": ubx.FieldSpec{
-			WireName: "build_definition",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinitionFields,
-		},
-		"RunDetails": ubx.FieldSpec{
-			WireName: "run_details",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetailsFields,
-		},
-	}
+	"BuildDefinition": ubx.FieldSpec{
+		WireName: "build_definition",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_BuildDefinitionFields,
+	},
+	"RunDetails": ubx.FieldSpec{
+		WireName: "run_details",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_Predicate_RunDetailsFields,
+	},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields = ubx.FieldMap{
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Digest": ubx.FieldSpec{WireName: "digest"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var Occurrence_Build_InTotoSlsaProvenanceV1Fields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "_type"},
-		"Predicate": ubx.FieldSpec{
-			WireName: "predicate",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_PredicateFields,
-		},
-		"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
-		},
-	}
+	"Type": ubx.FieldSpec{WireName: "_type"},
+	"Predicate": ubx.FieldSpec{
+		WireName: "predicate",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_PredicateFields,
+	},
+	"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
+	"Subject": ubx.FieldSpec{
+		WireName: "subject",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
+	},
+}
 
 var Occurrence_Build_IntotoProvenance_BuilderConfigFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+}
 
 var Occurrence_Build_IntotoProvenance_Metadata_CompletenessFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Materials": ubx.FieldSpec{WireName: "materials"},
-	}
+	"Arguments":   ubx.FieldSpec{WireName: "arguments"},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Materials":   ubx.FieldSpec{WireName: "materials"},
+}
 
 var Occurrence_Build_IntotoProvenance_MetadataFields = ubx.FieldMap{
-		"BuildFinishedOn": ubx.FieldSpec{WireName: "build_finished_on"},
-		"BuildInvocationId": ubx.FieldSpec{WireName: "build_invocation_id"},
-		"BuildStartedOn": ubx.FieldSpec{WireName: "build_started_on"},
-		"Completeness": ubx.FieldSpec{
-			WireName: "completeness",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_Metadata_CompletenessFields,
-		},
-		"Reproducible": ubx.FieldSpec{WireName: "reproducible"},
-	}
+	"BuildFinishedOn":   ubx.FieldSpec{WireName: "build_finished_on"},
+	"BuildInvocationId": ubx.FieldSpec{WireName: "build_invocation_id"},
+	"BuildStartedOn":    ubx.FieldSpec{WireName: "build_started_on"},
+	"Completeness": ubx.FieldSpec{
+		WireName: "completeness",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_Metadata_CompletenessFields,
+	},
+	"Reproducible": ubx.FieldSpec{WireName: "reproducible"},
+}
 
 var Occurrence_Build_IntotoProvenance_RecipeFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"DefinedInMaterial": ubx.FieldSpec{WireName: "defined_in_material"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Arguments":         ubx.FieldSpec{WireName: "arguments"},
+	"DefinedInMaterial": ubx.FieldSpec{WireName: "defined_in_material"},
+	"EntryPoint":        ubx.FieldSpec{WireName: "entry_point"},
+	"Environment":       ubx.FieldSpec{WireName: "environment"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var Occurrence_Build_IntotoProvenanceFields = ubx.FieldMap{
-		"BuilderConfig": ubx.FieldSpec{
-			WireName: "builder_config",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_BuilderConfigFields,
-		},
-		"Materials": ubx.FieldSpec{WireName: "materials"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_MetadataFields,
-		},
-		"Recipe": ubx.FieldSpec{
-			WireName: "recipe",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_RecipeFields,
-		},
-	}
+	"BuilderConfig": ubx.FieldSpec{
+		WireName: "builder_config",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_BuilderConfigFields,
+	},
+	"Materials": ubx.FieldSpec{WireName: "materials"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_MetadataFields,
+	},
+	"Recipe": ubx.FieldSpec{
+		WireName: "recipe",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_RecipeFields,
+	},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenance_MaterialsFields = ubx.FieldMap{
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Digest": ubx.FieldSpec{WireName: "digest"},
+	"Uri":    ubx.FieldSpec{WireName: "uri"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenance_RecipeFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"DefinedInMaterial": ubx.FieldSpec{WireName: "defined_in_material"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Arguments":         ubx.FieldSpec{WireName: "arguments"},
+	"DefinedInMaterial": ubx.FieldSpec{WireName: "defined_in_material"},
+	"EntryPoint":        ubx.FieldSpec{WireName: "entry_point"},
+	"Environment":       ubx.FieldSpec{WireName: "environment"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceFields = ubx.FieldMap{
-		"Builder": ubx.FieldSpec{
-			WireName: "builder",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_BuilderConfigFields,
-		},
-		"Materials": ubx.FieldSpec{
-			WireName: "materials",
-			Kind: "list",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenance_MaterialsFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_MetadataFields,
-		},
-		"Recipe": ubx.FieldSpec{
-			WireName: "recipe",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenance_RecipeFields,
-		},
-	}
+	"Builder": ubx.FieldSpec{
+		WireName: "builder",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_BuilderConfigFields,
+	},
+	"Materials": ubx.FieldSpec{
+		WireName: "materials",
+		Kind:     "list",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenance_MaterialsFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_MetadataFields,
+	},
+	"Recipe": ubx.FieldSpec{
+		WireName: "recipe",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenance_RecipeFields,
+	},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSourceFields = ubx.FieldMap{
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Digest":     ubx.FieldSpec{WireName: "digest"},
+	"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_InvocationFields = ubx.FieldMap{
-		"ConfigSource": ubx.FieldSpec{
-			WireName: "config_source",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSourceFields,
-		},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"ConfigSource": ubx.FieldSpec{
+		WireName: "config_source",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Invocation_ConfigSourceFields,
+	},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_CompletenessFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Materials": ubx.FieldSpec{WireName: "materials"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Materials":   ubx.FieldSpec{WireName: "materials"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_MetadataFields = ubx.FieldMap{
-		"BuildFinishedOn": ubx.FieldSpec{WireName: "build_finished_on"},
-		"BuildInvocationId": ubx.FieldSpec{WireName: "build_invocation_id"},
-		"BuildStartedOn": ubx.FieldSpec{WireName: "build_started_on"},
-		"Completeness": ubx.FieldSpec{
-			WireName: "completeness",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_CompletenessFields,
-		},
-		"Reproducible": ubx.FieldSpec{WireName: "reproducible"},
-	}
+	"BuildFinishedOn":   ubx.FieldSpec{WireName: "build_finished_on"},
+	"BuildInvocationId": ubx.FieldSpec{WireName: "build_invocation_id"},
+	"BuildStartedOn":    ubx.FieldSpec{WireName: "build_started_on"},
+	"Completeness": ubx.FieldSpec{
+		WireName: "completeness",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_Metadata_CompletenessFields,
+	},
+	"Reproducible": ubx.FieldSpec{WireName: "reproducible"},
+}
 
 var Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwoFields = ubx.FieldMap{
-		"BuildConfig": ubx.FieldSpec{WireName: "build_config"},
-		"BuildType": ubx.FieldSpec{WireName: "build_type"},
-		"Builder": ubx.FieldSpec{
-			WireName: "builder",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenance_BuilderConfigFields,
-		},
-		"Invocation": ubx.FieldSpec{
-			WireName: "invocation",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_InvocationFields,
-		},
-		"Materials": ubx.FieldSpec{
-			WireName: "materials",
-			Kind: "list",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenance_MaterialsFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_MetadataFields,
-		},
-	}
+	"BuildConfig": ubx.FieldSpec{WireName: "build_config"},
+	"BuildType":   ubx.FieldSpec{WireName: "build_type"},
+	"Builder": ubx.FieldSpec{
+		WireName: "builder",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenance_BuilderConfigFields,
+	},
+	"Invocation": ubx.FieldSpec{
+		WireName: "invocation",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_InvocationFields,
+	},
+	"Materials": ubx.FieldSpec{
+		WireName: "materials",
+		Kind:     "list",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenance_MaterialsFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwo_MetadataFields,
+	},
+}
 
 var Occurrence_Build_IntotoStatementFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "_type"},
-		"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
-		"Provenance": ubx.FieldSpec{
-			WireName: "provenance",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenanceFields,
-		},
-		"SlsaProvenance": ubx.FieldSpec{
-			WireName: "slsa_provenance",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceFields,
-		},
-		"SlsaProvenanceZeroTwo": ubx.FieldSpec{
-			WireName: "slsa_provenance_zero_two",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwoFields,
-		},
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
-		},
-	}
+	"Type":          ubx.FieldSpec{WireName: "_type"},
+	"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
+	"Provenance": ubx.FieldSpec{
+		WireName: "provenance",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenanceFields,
+	},
+	"SlsaProvenance": ubx.FieldSpec{
+		WireName: "slsa_provenance",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceFields,
+	},
+	"SlsaProvenanceZeroTwo": ubx.FieldSpec{
+		WireName: "slsa_provenance_zero_two",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatement_SlsaProvenanceZeroTwoFields,
+	},
+	"Subject": ubx.FieldSpec{
+		WireName: "subject",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
+	},
+}
 
 var Occurrence_Build_Provenance_BuiltArtifactsFields = ubx.FieldMap{
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Names": ubx.FieldSpec{WireName: "names"},
-	}
+	"Checksum": ubx.FieldSpec{WireName: "checksum"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Names":    ubx.FieldSpec{WireName: "names"},
+}
 
 var Occurrence_Build_Provenance_CommandsFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Dir": ubx.FieldSpec{WireName: "dir"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"WaitFor": ubx.FieldSpec{WireName: "wait_for"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Dir":     ubx.FieldSpec{WireName: "dir"},
+	"Env":     ubx.FieldSpec{WireName: "env"},
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"WaitFor": ubx.FieldSpec{WireName: "wait_for"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContextFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoIdFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RepoName": ubx.FieldSpec{WireName: "repo_name"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"RepoName":  ubx.FieldSpec{WireName: "repo_name"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoIdFields = ubx.FieldMap{
-		"ProjectRepoId": ubx.FieldSpec{
-			WireName: "project_repo_id",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoIdFields,
-		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ProjectRepoId": ubx.FieldSpec{
+		WireName: "project_repo_id",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoId_ProjectRepoIdFields,
+	},
+	"Uid": ubx.FieldSpec{WireName: "uid"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepoFields = ubx.FieldMap{
-		"AliasContext": ubx.FieldSpec{
-			WireName: "alias_context",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContextFields,
-		},
-		"RepoId": ubx.FieldSpec{
-			WireName: "repo_id",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoIdFields,
-		},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-	}
+	"AliasContext": ubx.FieldSpec{
+		WireName: "alias_context",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContextFields,
+	},
+	"RepoId": ubx.FieldSpec{
+		WireName: "repo_id",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_RepoIdFields,
+	},
+	"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GerritFields = ubx.FieldMap{
-		"AliasContext": ubx.FieldSpec{
-			WireName: "alias_context",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContextFields,
-		},
-		"GerritProject": ubx.FieldSpec{WireName: "gerrit_project"},
-		"HostUri": ubx.FieldSpec{WireName: "host_uri"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-	}
+	"AliasContext": ubx.FieldSpec{
+		WireName: "alias_context",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepo_AliasContextFields,
+	},
+	"GerritProject": ubx.FieldSpec{WireName: "gerrit_project"},
+	"HostUri":       ubx.FieldSpec{WireName: "host_uri"},
+	"RevisionId":    ubx.FieldSpec{WireName: "revision_id"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GitFields = ubx.FieldMap{
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+	"Url":        ubx.FieldSpec{WireName: "url"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_AdditionalContextsFields = ubx.FieldMap{
-		"CloudRepo": ubx.FieldSpec{
-			WireName: "cloud_repo",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepoFields,
-		},
-		"Gerrit": ubx.FieldSpec{
-			WireName: "gerrit",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GerritFields,
-		},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GitFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"CloudRepo": ubx.FieldSpec{
+		WireName: "cloud_repo",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_CloudRepoFields,
+	},
+	"Gerrit": ubx.FieldSpec{
+		WireName: "gerrit",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GerritFields,
+	},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContexts_GitFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHashFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Occurrence_Build_Provenance_SourceProvenance_FileHashesFields = ubx.FieldMap{
-		"FileHash": ubx.FieldSpec{
-			WireName: "file_hash",
-			Kind: "list",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHashFields,
-		},
-	}
+	"FileHash": ubx.FieldSpec{
+		WireName: "file_hash",
+		Kind:     "list",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_FileHashes_FileHashFields,
+	},
+}
 
 var Occurrence_Build_Provenance_SourceProvenanceFields = ubx.FieldMap{
-		"AdditionalContexts": ubx.FieldSpec{
-			WireName: "additional_contexts",
-			Kind: "list",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContextsFields,
-		},
-		"ArtifactStorageSourceUri": ubx.FieldSpec{WireName: "artifact_storage_source_uri"},
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_AdditionalContextsFields,
-		},
-		"FileHashes": ubx.FieldSpec{
-			WireName: "file_hashes",
-			Kind: "map",
-			Fields: Occurrence_Build_Provenance_SourceProvenance_FileHashesFields,
-		},
-	}
+	"AdditionalContexts": ubx.FieldSpec{
+		WireName: "additional_contexts",
+		Kind:     "list",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContextsFields,
+	},
+	"ArtifactStorageSourceUri": ubx.FieldSpec{WireName: "artifact_storage_source_uri"},
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_AdditionalContextsFields,
+	},
+	"FileHashes": ubx.FieldSpec{
+		WireName: "file_hashes",
+		Kind:     "map",
+		Fields:   Occurrence_Build_Provenance_SourceProvenance_FileHashesFields,
+	},
+}
 
 var Occurrence_Build_ProvenanceFields = ubx.FieldMap{
-		"BuildOptions": ubx.FieldSpec{WireName: "build_options"},
-		"BuilderVersion": ubx.FieldSpec{WireName: "builder_version"},
-		"BuiltArtifacts": ubx.FieldSpec{
-			WireName: "built_artifacts",
-			Kind: "list",
-			Fields: Occurrence_Build_Provenance_BuiltArtifactsFields,
-		},
-		"Commands": ubx.FieldSpec{
-			WireName: "commands",
-			Kind: "list",
-			Fields: Occurrence_Build_Provenance_CommandsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LogsUri": ubx.FieldSpec{WireName: "logs_uri"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"SourceProvenance": ubx.FieldSpec{
-			WireName: "source_provenance",
-			Kind: "object",
-			Fields: Occurrence_Build_Provenance_SourceProvenanceFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
-	}
+	"BuildOptions":   ubx.FieldSpec{WireName: "build_options"},
+	"BuilderVersion": ubx.FieldSpec{WireName: "builder_version"},
+	"BuiltArtifacts": ubx.FieldSpec{
+		WireName: "built_artifacts",
+		Kind:     "list",
+		Fields:   Occurrence_Build_Provenance_BuiltArtifactsFields,
+	},
+	"Commands": ubx.FieldSpec{
+		WireName: "commands",
+		Kind:     "list",
+		Fields:   Occurrence_Build_Provenance_CommandsFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Creator":    ubx.FieldSpec{WireName: "creator"},
+	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"LogsUri":    ubx.FieldSpec{WireName: "logs_uri"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+	"SourceProvenance": ubx.FieldSpec{
+		WireName: "source_provenance",
+		Kind:     "object",
+		Fields:   Occurrence_Build_Provenance_SourceProvenanceFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
+}
 
 var Occurrence_BuildFields = ubx.FieldMap{
-		"InTotoSlsaProvenanceV1": ubx.FieldSpec{
-			WireName: "in_toto_slsa_provenance_v1",
-			Kind: "object",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1Fields,
-		},
-		"IntotoProvenance": ubx.FieldSpec{
-			WireName: "intoto_provenance",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoProvenanceFields,
-		},
-		"IntotoStatement": ubx.FieldSpec{
-			WireName: "intoto_statement",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatementFields,
-		},
-		"Provenance": ubx.FieldSpec{
-			WireName: "provenance",
-			Kind: "object",
-			Fields: Occurrence_Build_ProvenanceFields,
-		},
-		"ProvenanceBytes": ubx.FieldSpec{WireName: "provenance_bytes"},
-	}
+	"InTotoSlsaProvenanceV1": ubx.FieldSpec{
+		WireName: "in_toto_slsa_provenance_v1",
+		Kind:     "object",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1Fields,
+	},
+	"IntotoProvenance": ubx.FieldSpec{
+		WireName: "intoto_provenance",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoProvenanceFields,
+	},
+	"IntotoStatement": ubx.FieldSpec{
+		WireName: "intoto_statement",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatementFields,
+	},
+	"Provenance": ubx.FieldSpec{
+		WireName: "provenance",
+		Kind:     "object",
+		Fields:   Occurrence_Build_ProvenanceFields,
+	},
+	"ProvenanceBytes": ubx.FieldSpec{WireName: "provenance_bytes"},
+}
 
 var Occurrence_Compliance_NonCompliantFilesFields = ubx.FieldMap{
-		"DisplayCommand": ubx.FieldSpec{WireName: "display_command"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"DisplayCommand": ubx.FieldSpec{WireName: "display_command"},
+	"Path":           ubx.FieldSpec{WireName: "path"},
+	"Reason":         ubx.FieldSpec{WireName: "reason"},
+}
 
 var Occurrence_Compliance_VersionFields = ubx.FieldMap{
-		"BenchmarkDocument": ubx.FieldSpec{WireName: "benchmark_document"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"BenchmarkDocument": ubx.FieldSpec{WireName: "benchmark_document"},
+	"CpeUri":            ubx.FieldSpec{WireName: "cpe_uri"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 var Occurrence_ComplianceFields = ubx.FieldMap{
-		"NonComplianceReason": ubx.FieldSpec{WireName: "non_compliance_reason"},
-		"NonCompliantFiles": ubx.FieldSpec{
-			WireName: "non_compliant_files",
-			Kind: "list",
-			Fields: Occurrence_Compliance_NonCompliantFilesFields,
-		},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: Occurrence_Compliance_VersionFields,
-		},
-	}
+	"NonComplianceReason": ubx.FieldSpec{WireName: "non_compliance_reason"},
+	"NonCompliantFiles": ubx.FieldSpec{
+		WireName: "non_compliant_files",
+		Kind:     "list",
+		Fields:   Occurrence_Compliance_NonCompliantFilesFields,
+	},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Occurrence_Compliance_VersionFields,
+	},
+}
 
 var Occurrence_DeploymentFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"DeployTime": ubx.FieldSpec{WireName: "deploy_time"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"UndeployTime": ubx.FieldSpec{WireName: "undeploy_time"},
-		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
-	}
+	"Address":      ubx.FieldSpec{WireName: "address"},
+	"Config":       ubx.FieldSpec{WireName: "config"},
+	"DeployTime":   ubx.FieldSpec{WireName: "deploy_time"},
+	"Platform":     ubx.FieldSpec{WireName: "platform"},
+	"ResourceUri":  ubx.FieldSpec{WireName: "resource_uri"},
+	"UndeployTime": ubx.FieldSpec{WireName: "undeploy_time"},
+	"UserEmail":    ubx.FieldSpec{WireName: "user_email"},
+}
 
 var Occurrence_Discovery_AnalysisCompletedFields = ubx.FieldMap{
-		"AnalysisType": ubx.FieldSpec{WireName: "analysis_type"},
-	}
+	"AnalysisType": ubx.FieldSpec{WireName: "analysis_type"},
+}
 
 var Occurrence_Discovery_AnalysisErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Occurrence_Discovery_SbomStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{WireName: "error"},
-		"SbomState": ubx.FieldSpec{WireName: "sbom_state"},
-	}
+	"Error":     ubx.FieldSpec{WireName: "error"},
+	"SbomState": ubx.FieldSpec{WireName: "sbom_state"},
+}
 
 var Occurrence_DiscoveryFields = ubx.FieldMap{
-		"AnalysisCompleted": ubx.FieldSpec{
-			WireName: "analysis_completed",
-			Kind: "object",
-			Fields: Occurrence_Discovery_AnalysisCompletedFields,
-		},
-		"AnalysisError": ubx.FieldSpec{
-			WireName: "analysis_error",
-			Kind: "list",
-			Fields: Occurrence_Discovery_AnalysisErrorFields,
-		},
-		"AnalysisStatus": ubx.FieldSpec{WireName: "analysis_status"},
-		"AnalysisStatusError": ubx.FieldSpec{
-			WireName: "analysis_status_error",
-			Kind: "object",
-			Fields: Occurrence_Discovery_AnalysisErrorFields,
-		},
-		"ArchiveTime": ubx.FieldSpec{WireName: "archive_time"},
-		"ContinuousAnalysis": ubx.FieldSpec{WireName: "continuous_analysis"},
-		"Cpe": ubx.FieldSpec{WireName: "cpe"},
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
-		},
-		"LastScanTime": ubx.FieldSpec{WireName: "last_scan_time"},
-		"LastVulnerabilityUpdateTime": ubx.FieldSpec{WireName: "last_vulnerability_update_time"},
-		"SbomStatus": ubx.FieldSpec{
-			WireName: "sbom_status",
-			Kind: "object",
-			Fields: Occurrence_Discovery_SbomStatusFields,
-		},
-	}
+	"AnalysisCompleted": ubx.FieldSpec{
+		WireName: "analysis_completed",
+		Kind:     "object",
+		Fields:   Occurrence_Discovery_AnalysisCompletedFields,
+	},
+	"AnalysisError": ubx.FieldSpec{
+		WireName: "analysis_error",
+		Kind:     "list",
+		Fields:   Occurrence_Discovery_AnalysisErrorFields,
+	},
+	"AnalysisStatus": ubx.FieldSpec{WireName: "analysis_status"},
+	"AnalysisStatusError": ubx.FieldSpec{
+		WireName: "analysis_status_error",
+		Kind:     "object",
+		Fields:   Occurrence_Discovery_AnalysisErrorFields,
+	},
+	"ArchiveTime":        ubx.FieldSpec{WireName: "archive_time"},
+	"ContinuousAnalysis": ubx.FieldSpec{WireName: "continuous_analysis"},
+	"Cpe":                ubx.FieldSpec{WireName: "cpe"},
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
+	},
+	"LastScanTime":                ubx.FieldSpec{WireName: "last_scan_time"},
+	"LastVulnerabilityUpdateTime": ubx.FieldSpec{WireName: "last_vulnerability_update_time"},
+	"SbomStatus": ubx.FieldSpec{
+		WireName: "sbom_status",
+		Kind:     "object",
+		Fields:   Occurrence_Discovery_SbomStatusFields,
+	},
+}
 
 var Occurrence_DsseAttestation_Envelope_SignaturesFields = ubx.FieldMap{
-		"Keyid": ubx.FieldSpec{WireName: "keyid"},
-		"Sig": ubx.FieldSpec{WireName: "sig"},
-	}
+	"Keyid": ubx.FieldSpec{WireName: "keyid"},
+	"Sig":   ubx.FieldSpec{WireName: "sig"},
+}
 
 var Occurrence_DsseAttestation_EnvelopeFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"Signatures": ubx.FieldSpec{
-			WireName: "signatures",
-			Kind: "list",
-			Fields: Occurrence_DsseAttestation_Envelope_SignaturesFields,
-		},
-	}
+	"Payload":     ubx.FieldSpec{WireName: "payload"},
+	"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	"Signatures": ubx.FieldSpec{
+		WireName: "signatures",
+		Kind:     "list",
+		Fields:   Occurrence_DsseAttestation_Envelope_SignaturesFields,
+	},
+}
 
 var Occurrence_DsseAttestationFields = ubx.FieldMap{
-		"Envelope": ubx.FieldSpec{
-			WireName: "envelope",
-			Kind: "object",
-			Fields: Occurrence_DsseAttestation_EnvelopeFields,
-		},
-		"Statement": ubx.FieldSpec{
-			WireName: "statement",
-			Kind: "object",
-			Fields: Occurrence_Build_IntotoStatementFields,
-		},
-	}
+	"Envelope": ubx.FieldSpec{
+		WireName: "envelope",
+		Kind:     "object",
+		Fields:   Occurrence_DsseAttestation_EnvelopeFields,
+	},
+	"Statement": ubx.FieldSpec{
+		WireName: "statement",
+		Kind:     "object",
+		Fields:   Occurrence_Build_IntotoStatementFields,
+	},
+}
 
 var Occurrence_Image_FingerprintFields = ubx.FieldMap{
-		"V1Name": ubx.FieldSpec{WireName: "v1_name"},
-		"V2Blob": ubx.FieldSpec{WireName: "v2_blob"},
-		"V2Name": ubx.FieldSpec{WireName: "v2_name"},
-	}
+	"V1Name": ubx.FieldSpec{WireName: "v1_name"},
+	"V2Blob": ubx.FieldSpec{WireName: "v2_blob"},
+	"V2Name": ubx.FieldSpec{WireName: "v2_name"},
+}
 
 var Occurrence_Image_LayerInfoFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"Directive": ubx.FieldSpec{WireName: "directive"},
-	}
+	"Arguments": ubx.FieldSpec{WireName: "arguments"},
+	"Directive": ubx.FieldSpec{WireName: "directive"},
+}
 
 var Occurrence_ImageFields = ubx.FieldMap{
-		"BaseResourceUrl": ubx.FieldSpec{WireName: "base_resource_url"},
-		"Distance": ubx.FieldSpec{WireName: "distance"},
-		"Fingerprint": ubx.FieldSpec{
-			WireName: "fingerprint",
-			Kind: "object",
-			Fields: Occurrence_Image_FingerprintFields,
-		},
-		"LayerInfo": ubx.FieldSpec{
-			WireName: "layer_info",
-			Kind: "list",
-			Fields: Occurrence_Image_LayerInfoFields,
-		},
-	}
+	"BaseResourceUrl": ubx.FieldSpec{WireName: "base_resource_url"},
+	"Distance":        ubx.FieldSpec{WireName: "distance"},
+	"Fingerprint": ubx.FieldSpec{
+		WireName: "fingerprint",
+		Kind:     "object",
+		Fields:   Occurrence_Image_FingerprintFields,
+	},
+	"LayerInfo": ubx.FieldSpec{
+		WireName: "layer_info",
+		Kind:     "list",
+		Fields:   Occurrence_Image_LayerInfoFields,
+	},
+}
 
 var Occurrence_Package_LicenseFields = ubx.FieldMap{
-		"Comments": ubx.FieldSpec{WireName: "comments"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Comments":   ubx.FieldSpec{WireName: "comments"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Occurrence_Package_Location_VersionFields = ubx.FieldMap{
-		"Epoch": ubx.FieldSpec{WireName: "epoch"},
-		"FullName": ubx.FieldSpec{WireName: "full_name"},
-		"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Epoch":     ubx.FieldSpec{WireName: "epoch"},
+	"FullName":  ubx.FieldSpec{WireName: "full_name"},
+	"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
+	"Kind":      ubx.FieldSpec{WireName: "kind"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Revision":  ubx.FieldSpec{WireName: "revision"},
+}
 
 var Occurrence_Package_LocationFields = ubx.FieldMap{
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: Occurrence_Package_Location_VersionFields,
-		},
-	}
+	"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Occurrence_Package_Location_VersionFields,
+	},
+}
 
 var Occurrence_PackageFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"License": ubx.FieldSpec{
-			WireName: "license",
-			Kind: "object",
-			Fields: Occurrence_Package_LicenseFields,
-		},
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "list",
-			Fields: Occurrence_Package_LocationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: Occurrence_Package_Location_VersionFields,
-		},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"CpeUri":       ubx.FieldSpec{WireName: "cpe_uri"},
+	"License": ubx.FieldSpec{
+		WireName: "license",
+		Kind:     "object",
+		Fields:   Occurrence_Package_LicenseFields,
+	},
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "list",
+		Fields:   Occurrence_Package_LocationFields,
+	},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PackageType": ubx.FieldSpec{WireName: "package_type"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   Occurrence_Package_Location_VersionFields,
+	},
+}
 
 var Occurrence_SbomReference_Payload_PredicateFields = ubx.FieldMap{
-		"Digest": ubx.FieldSpec{WireName: "digest"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"ReferrerId": ubx.FieldSpec{WireName: "referrer_id"},
-	}
+	"Digest":     ubx.FieldSpec{WireName: "digest"},
+	"Location":   ubx.FieldSpec{WireName: "location"},
+	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+	"ReferrerId": ubx.FieldSpec{WireName: "referrer_id"},
+}
 
 var Occurrence_SbomReference_PayloadFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "_type"},
-		"Predicate": ubx.FieldSpec{
-			WireName: "predicate",
-			Kind: "object",
-			Fields: Occurrence_SbomReference_Payload_PredicateFields,
-		},
-		"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "list",
-			Fields: Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
-		},
-	}
+	"Type": ubx.FieldSpec{WireName: "_type"},
+	"Predicate": ubx.FieldSpec{
+		WireName: "predicate",
+		Kind:     "object",
+		Fields:   Occurrence_SbomReference_Payload_PredicateFields,
+	},
+	"PredicateType": ubx.FieldSpec{WireName: "predicate_type"},
+	"Subject": ubx.FieldSpec{
+		WireName: "subject",
+		Kind:     "list",
+		Fields:   Occurrence_Build_InTotoSlsaProvenanceV1_SubjectFields,
+	},
+}
 
 var Occurrence_SbomReferenceFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{
-			WireName: "payload",
-			Kind: "object",
-			Fields: Occurrence_SbomReference_PayloadFields,
-		},
-		"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
-		"Signatures": ubx.FieldSpec{
-			WireName: "signatures",
-			Kind: "list",
-			Fields: Occurrence_DsseAttestation_Envelope_SignaturesFields,
-		},
-	}
+	"Payload": ubx.FieldSpec{
+		WireName: "payload",
+		Kind:     "object",
+		Fields:   Occurrence_SbomReference_PayloadFields,
+	},
+	"PayloadType": ubx.FieldSpec{WireName: "payload_type"},
+	"Signatures": ubx.FieldSpec{
+		WireName: "signatures",
+		Kind:     "list",
+		Fields:   Occurrence_DsseAttestation_Envelope_SignaturesFields,
+	},
+}
 
 var Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImagesFields = ubx.FieldMap{
-		"LayerCount": ubx.FieldSpec{WireName: "layer_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Registry": ubx.FieldSpec{WireName: "registry"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"LayerCount": ubx.FieldSpec{WireName: "layer_count"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Registry":   ubx.FieldSpec{WireName: "registry"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var Occurrence_Secret_Locations_FileLocation_LayerDetailsFields = ubx.FieldMap{
-		"BaseImages": ubx.FieldSpec{
-			WireName: "base_images",
-			Kind: "list",
-			Fields: Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImagesFields,
-		},
-		"ChainId": ubx.FieldSpec{WireName: "chain_id"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DiffId": ubx.FieldSpec{WireName: "diff_id"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-	}
+	"BaseImages": ubx.FieldSpec{
+		WireName: "base_images",
+		Kind:     "list",
+		Fields:   Occurrence_Secret_Locations_FileLocation_LayerDetails_BaseImagesFields,
+	},
+	"ChainId": ubx.FieldSpec{WireName: "chain_id"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"DiffId":  ubx.FieldSpec{WireName: "diff_id"},
+	"Index":   ubx.FieldSpec{WireName: "index"},
+}
 
 var Occurrence_Secret_Locations_FileLocationFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"LayerDetails": ubx.FieldSpec{
-			WireName: "layer_details",
-			Kind: "object",
-			Fields: Occurrence_Secret_Locations_FileLocation_LayerDetailsFields,
-		},
-		"LineNumber": ubx.FieldSpec{WireName: "line_number"},
-	}
+	"FilePath": ubx.FieldSpec{WireName: "file_path"},
+	"LayerDetails": ubx.FieldSpec{
+		WireName: "layer_details",
+		Kind:     "object",
+		Fields:   Occurrence_Secret_Locations_FileLocation_LayerDetailsFields,
+	},
+	"LineNumber": ubx.FieldSpec{WireName: "line_number"},
+}
 
 var Occurrence_Secret_LocationsFields = ubx.FieldMap{
-		"FileLocation": ubx.FieldSpec{
-			WireName: "file_location",
-			Kind: "object",
-			Fields: Occurrence_Secret_Locations_FileLocationFields,
-		},
-	}
+	"FileLocation": ubx.FieldSpec{
+		WireName: "file_location",
+		Kind:     "object",
+		Fields:   Occurrence_Secret_Locations_FileLocationFields,
+	},
+}
 
 var Occurrence_Secret_StatusesFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Message":    ubx.FieldSpec{WireName: "message"},
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Occurrence_SecretFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "list",
-			Fields: Occurrence_Secret_LocationsFields,
-		},
-		"Statuses": ubx.FieldSpec{
-			WireName: "statuses",
-			Kind: "list",
-			Fields: Occurrence_Secret_StatusesFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Locations": ubx.FieldSpec{
+		WireName: "locations",
+		Kind:     "list",
+		Fields:   Occurrence_Secret_LocationsFields,
+	},
+	"Statuses": ubx.FieldSpec{
+		WireName: "statuses",
+		Kind:     "list",
+		Fields:   Occurrence_Secret_StatusesFields,
+	},
+}
 
 var Occurrence_Upgrade_DistributionFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Cve": ubx.FieldSpec{WireName: "cve"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"CpeUri":         ubx.FieldSpec{WireName: "cpe_uri"},
+	"Cve":            ubx.FieldSpec{WireName: "cve"},
+	"Severity":       ubx.FieldSpec{WireName: "severity"},
+}
 
 var Occurrence_Upgrade_WindowsUpdate_CategoriesFields = ubx.FieldMap{
-		"CategoryId": ubx.FieldSpec{WireName: "category_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CategoryId": ubx.FieldSpec{WireName: "category_id"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var Occurrence_Upgrade_WindowsUpdate_IdentityFields = ubx.FieldMap{
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"UpdateId": ubx.FieldSpec{WireName: "update_id"},
-	}
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+	"UpdateId": ubx.FieldSpec{WireName: "update_id"},
+}
 
 var Occurrence_Upgrade_WindowsUpdateFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{
-			WireName: "categories",
-			Kind: "list",
-			Fields: Occurrence_Upgrade_WindowsUpdate_CategoriesFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "object",
-			Fields: Occurrence_Upgrade_WindowsUpdate_IdentityFields,
-		},
-		"KbArticleIds": ubx.FieldSpec{WireName: "kb_article_ids"},
-		"LastPublishedTimestamp": ubx.FieldSpec{WireName: "last_published_timestamp"},
-		"SupportUrl": ubx.FieldSpec{WireName: "support_url"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Categories": ubx.FieldSpec{
+		WireName: "categories",
+		Kind:     "list",
+		Fields:   Occurrence_Upgrade_WindowsUpdate_CategoriesFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "object",
+		Fields:   Occurrence_Upgrade_WindowsUpdate_IdentityFields,
+	},
+	"KbArticleIds":           ubx.FieldSpec{WireName: "kb_article_ids"},
+	"LastPublishedTimestamp": ubx.FieldSpec{WireName: "last_published_timestamp"},
+	"SupportUrl":             ubx.FieldSpec{WireName: "support_url"},
+	"Title":                  ubx.FieldSpec{WireName: "title"},
+}
 
 var Occurrence_UpgradeFields = ubx.FieldMap{
-		"Distribution": ubx.FieldSpec{
-			WireName: "distribution",
-			Kind: "object",
-			Fields: Occurrence_Upgrade_DistributionFields,
-		},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"ParsedVersion": ubx.FieldSpec{
-			WireName: "parsed_version",
-			Kind: "object",
-			Fields: Occurrence_Package_Location_VersionFields,
-		},
-		"WindowsUpdate": ubx.FieldSpec{
-			WireName: "windows_update",
-			Kind: "object",
-			Fields: Occurrence_Upgrade_WindowsUpdateFields,
-		},
-	}
+	"Distribution": ubx.FieldSpec{
+		WireName: "distribution",
+		Kind:     "object",
+		Fields:   Occurrence_Upgrade_DistributionFields,
+	},
+	"Package": ubx.FieldSpec{WireName: "package"},
+	"ParsedVersion": ubx.FieldSpec{
+		WireName: "parsed_version",
+		Kind:     "object",
+		Fields:   Occurrence_Package_Location_VersionFields,
+	},
+	"WindowsUpdate": ubx.FieldSpec{
+		WireName: "windows_update",
+		Kind:     "object",
+		Fields:   Occurrence_Upgrade_WindowsUpdateFields,
+	},
+}
 
 var Occurrence_Vulnerability_CvssV2Fields = ubx.FieldMap{
-		"AttackComplexity": ubx.FieldSpec{WireName: "attack_complexity"},
-		"AttackRequirements": ubx.FieldSpec{WireName: "attack_requirements"},
-		"AttackVector": ubx.FieldSpec{WireName: "attack_vector"},
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
-		"AvailabilityImpact": ubx.FieldSpec{WireName: "availability_impact"},
-		"BaseScore": ubx.FieldSpec{WireName: "base_score"},
-		"ConfidentialityImpact": ubx.FieldSpec{WireName: "confidentiality_impact"},
-		"ExploitMaturity": ubx.FieldSpec{WireName: "exploit_maturity"},
-		"ExploitabilityScore": ubx.FieldSpec{WireName: "exploitability_score"},
-		"ImpactScore": ubx.FieldSpec{WireName: "impact_score"},
-		"IntegrityImpact": ubx.FieldSpec{WireName: "integrity_impact"},
-		"PrivilegesRequired": ubx.FieldSpec{WireName: "privileges_required"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SubsequentSystemAvailabilityImpact": ubx.FieldSpec{WireName: "subsequent_system_availability_impact"},
-		"SubsequentSystemConfidentialityImpact": ubx.FieldSpec{WireName: "subsequent_system_confidentiality_impact"},
-		"SubsequentSystemIntegrityImpact": ubx.FieldSpec{WireName: "subsequent_system_integrity_impact"},
-		"UserInteraction": ubx.FieldSpec{WireName: "user_interaction"},
-		"VulnerableSystemAvailabilityImpact": ubx.FieldSpec{WireName: "vulnerable_system_availability_impact"},
-		"VulnerableSystemConfidentialityImpact": ubx.FieldSpec{WireName: "vulnerable_system_confidentiality_impact"},
-		"VulnerableSystemIntegrityImpact": ubx.FieldSpec{WireName: "vulnerable_system_integrity_impact"},
-	}
+	"AttackComplexity":                      ubx.FieldSpec{WireName: "attack_complexity"},
+	"AttackRequirements":                    ubx.FieldSpec{WireName: "attack_requirements"},
+	"AttackVector":                          ubx.FieldSpec{WireName: "attack_vector"},
+	"Authentication":                        ubx.FieldSpec{WireName: "authentication"},
+	"AvailabilityImpact":                    ubx.FieldSpec{WireName: "availability_impact"},
+	"BaseScore":                             ubx.FieldSpec{WireName: "base_score"},
+	"ConfidentialityImpact":                 ubx.FieldSpec{WireName: "confidentiality_impact"},
+	"ExploitMaturity":                       ubx.FieldSpec{WireName: "exploit_maturity"},
+	"ExploitabilityScore":                   ubx.FieldSpec{WireName: "exploitability_score"},
+	"ImpactScore":                           ubx.FieldSpec{WireName: "impact_score"},
+	"IntegrityImpact":                       ubx.FieldSpec{WireName: "integrity_impact"},
+	"PrivilegesRequired":                    ubx.FieldSpec{WireName: "privileges_required"},
+	"Scope":                                 ubx.FieldSpec{WireName: "scope"},
+	"SubsequentSystemAvailabilityImpact":    ubx.FieldSpec{WireName: "subsequent_system_availability_impact"},
+	"SubsequentSystemConfidentialityImpact": ubx.FieldSpec{WireName: "subsequent_system_confidentiality_impact"},
+	"SubsequentSystemIntegrityImpact":       ubx.FieldSpec{WireName: "subsequent_system_integrity_impact"},
+	"UserInteraction":                       ubx.FieldSpec{WireName: "user_interaction"},
+	"VulnerableSystemAvailabilityImpact":    ubx.FieldSpec{WireName: "vulnerable_system_availability_impact"},
+	"VulnerableSystemConfidentialityImpact": ubx.FieldSpec{WireName: "vulnerable_system_confidentiality_impact"},
+	"VulnerableSystemIntegrityImpact":       ubx.FieldSpec{WireName: "vulnerable_system_integrity_impact"},
+}
 
 var Occurrence_Vulnerability_PackageIssueFields = ubx.FieldMap{
-		"AffectedCpeUri": ubx.FieldSpec{WireName: "affected_cpe_uri"},
-		"AffectedPackage": ubx.FieldSpec{WireName: "affected_package"},
-		"AffectedVersion": ubx.FieldSpec{
-			WireName: "affected_version",
-			Kind: "object",
-			Fields: Occurrence_Package_Location_VersionFields,
-		},
-		"EffectiveSeverity": ubx.FieldSpec{WireName: "effective_severity"},
-		"FileLocation": ubx.FieldSpec{
-			WireName: "file_location",
-			Kind: "list",
-			Fields: Occurrence_Secret_Locations_FileLocationFields,
-		},
-		"FixAvailable": ubx.FieldSpec{WireName: "fix_available"},
-		"FixedCpeUri": ubx.FieldSpec{WireName: "fixed_cpe_uri"},
-		"FixedPackage": ubx.FieldSpec{WireName: "fixed_package"},
-		"FixedVersion": ubx.FieldSpec{
-			WireName: "fixed_version",
-			Kind: "object",
-			Fields: Occurrence_Package_Location_VersionFields,
-		},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-	}
+	"AffectedCpeUri":  ubx.FieldSpec{WireName: "affected_cpe_uri"},
+	"AffectedPackage": ubx.FieldSpec{WireName: "affected_package"},
+	"AffectedVersion": ubx.FieldSpec{
+		WireName: "affected_version",
+		Kind:     "object",
+		Fields:   Occurrence_Package_Location_VersionFields,
+	},
+	"EffectiveSeverity": ubx.FieldSpec{WireName: "effective_severity"},
+	"FileLocation": ubx.FieldSpec{
+		WireName: "file_location",
+		Kind:     "list",
+		Fields:   Occurrence_Secret_Locations_FileLocationFields,
+	},
+	"FixAvailable": ubx.FieldSpec{WireName: "fix_available"},
+	"FixedCpeUri":  ubx.FieldSpec{WireName: "fixed_cpe_uri"},
+	"FixedPackage": ubx.FieldSpec{WireName: "fixed_package"},
+	"FixedVersion": ubx.FieldSpec{
+		WireName: "fixed_version",
+		Kind:     "object",
+		Fields:   Occurrence_Package_Location_VersionFields,
+	},
+	"PackageType": ubx.FieldSpec{WireName: "package_type"},
+}
 
 var Occurrence_Vulnerability_RelatedUrlsFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Url":   ubx.FieldSpec{WireName: "url"},
+}
 
 var Occurrence_Vulnerability_Risk_CisaKevFields = ubx.FieldMap{
-		"KnownRansomwareCampaignUse": ubx.FieldSpec{WireName: "known_ransomware_campaign_use"},
-	}
+	"KnownRansomwareCampaignUse": ubx.FieldSpec{WireName: "known_ransomware_campaign_use"},
+}
 
 var Occurrence_Vulnerability_Risk_EpssFields = ubx.FieldMap{
-		"Percentile": ubx.FieldSpec{WireName: "percentile"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Percentile": ubx.FieldSpec{WireName: "percentile"},
+	"Score":      ubx.FieldSpec{WireName: "score"},
+}
 
 var Occurrence_Vulnerability_RiskFields = ubx.FieldMap{
-		"CisaKev": ubx.FieldSpec{
-			WireName: "cisa_kev",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_Risk_CisaKevFields,
-		},
-		"Epss": ubx.FieldSpec{
-			WireName: "epss",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_Risk_EpssFields,
-		},
-	}
+	"CisaKev": ubx.FieldSpec{
+		WireName: "cisa_kev",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_Risk_CisaKevFields,
+	},
+	"Epss": ubx.FieldSpec{
+		WireName: "epss",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_Risk_EpssFields,
+	},
+}
 
 var Occurrence_Vulnerability_VexAssessment_JustificationFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"JustificationType": ubx.FieldSpec{WireName: "justification_type"},
-	}
+	"Details":           ubx.FieldSpec{WireName: "details"},
+	"JustificationType": ubx.FieldSpec{WireName: "justification_type"},
+}
 
 var Occurrence_Vulnerability_VexAssessment_RemediationsFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"RemediationType": ubx.FieldSpec{WireName: "remediation_type"},
-		"RemediationUri": ubx.FieldSpec{
-			WireName: "remediation_uri",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_RelatedUrlsFields,
-		},
-	}
+	"Details":         ubx.FieldSpec{WireName: "details"},
+	"RemediationType": ubx.FieldSpec{WireName: "remediation_type"},
+	"RemediationUri": ubx.FieldSpec{
+		WireName: "remediation_uri",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_RelatedUrlsFields,
+	},
+}
 
 var Occurrence_Vulnerability_VexAssessmentFields = ubx.FieldMap{
-		"Cve": ubx.FieldSpec{WireName: "cve"},
-		"Impacts": ubx.FieldSpec{WireName: "impacts"},
-		"Justification": ubx.FieldSpec{
-			WireName: "justification",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_VexAssessment_JustificationFields,
-		},
-		"NoteName": ubx.FieldSpec{WireName: "note_name"},
-		"RelatedUris": ubx.FieldSpec{
-			WireName: "related_uris",
-			Kind: "list",
-			Fields: Occurrence_Vulnerability_RelatedUrlsFields,
-		},
-		"Remediations": ubx.FieldSpec{
-			WireName: "remediations",
-			Kind: "list",
-			Fields: Occurrence_Vulnerability_VexAssessment_RemediationsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"VulnerabilityId": ubx.FieldSpec{WireName: "vulnerability_id"},
-	}
+	"Cve":     ubx.FieldSpec{WireName: "cve"},
+	"Impacts": ubx.FieldSpec{WireName: "impacts"},
+	"Justification": ubx.FieldSpec{
+		WireName: "justification",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_VexAssessment_JustificationFields,
+	},
+	"NoteName": ubx.FieldSpec{WireName: "note_name"},
+	"RelatedUris": ubx.FieldSpec{
+		WireName: "related_uris",
+		Kind:     "list",
+		Fields:   Occurrence_Vulnerability_RelatedUrlsFields,
+	},
+	"Remediations": ubx.FieldSpec{
+		WireName: "remediations",
+		Kind:     "list",
+		Fields:   Occurrence_Vulnerability_VexAssessment_RemediationsFields,
+	},
+	"State":           ubx.FieldSpec{WireName: "state"},
+	"VulnerabilityId": ubx.FieldSpec{WireName: "vulnerability_id"},
+}
 
 var Occurrence_VulnerabilityFields = ubx.FieldMap{
-		"CvssScore": ubx.FieldSpec{WireName: "cvss_score"},
-		"CvssV2": ubx.FieldSpec{
-			WireName: "cvss_v2",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_CvssV2Fields,
-		},
-		"CvssV4": ubx.FieldSpec{
-			WireName: "cvss_v4",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_CvssV2Fields,
-		},
-		"CvssVersion": ubx.FieldSpec{WireName: "cvss_version"},
-		"Cvssv3": ubx.FieldSpec{
-			WireName: "cvssv3",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_CvssV2Fields,
-		},
-		"EffectiveSeverity": ubx.FieldSpec{WireName: "effective_severity"},
-		"ExtraDetails": ubx.FieldSpec{WireName: "extra_details"},
-		"FixAvailable": ubx.FieldSpec{WireName: "fix_available"},
-		"LongDescription": ubx.FieldSpec{WireName: "long_description"},
-		"PackageIssue": ubx.FieldSpec{
-			WireName: "package_issue",
-			Kind: "list",
-			Fields: Occurrence_Vulnerability_PackageIssueFields,
-		},
-		"RelatedUrls": ubx.FieldSpec{
-			WireName: "related_urls",
-			Kind: "list",
-			Fields: Occurrence_Vulnerability_RelatedUrlsFields,
-		},
-		"Risk": ubx.FieldSpec{
-			WireName: "risk",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_RiskFields,
-		},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VexAssessment": ubx.FieldSpec{
-			WireName: "vex_assessment",
-			Kind: "object",
-			Fields: Occurrence_Vulnerability_VexAssessmentFields,
-		},
-	}
+	"CvssScore": ubx.FieldSpec{WireName: "cvss_score"},
+	"CvssV2": ubx.FieldSpec{
+		WireName: "cvss_v2",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_CvssV2Fields,
+	},
+	"CvssV4": ubx.FieldSpec{
+		WireName: "cvss_v4",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_CvssV2Fields,
+	},
+	"CvssVersion": ubx.FieldSpec{WireName: "cvss_version"},
+	"Cvssv3": ubx.FieldSpec{
+		WireName: "cvssv3",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_CvssV2Fields,
+	},
+	"EffectiveSeverity": ubx.FieldSpec{WireName: "effective_severity"},
+	"ExtraDetails":      ubx.FieldSpec{WireName: "extra_details"},
+	"FixAvailable":      ubx.FieldSpec{WireName: "fix_available"},
+	"LongDescription":   ubx.FieldSpec{WireName: "long_description"},
+	"PackageIssue": ubx.FieldSpec{
+		WireName: "package_issue",
+		Kind:     "list",
+		Fields:   Occurrence_Vulnerability_PackageIssueFields,
+	},
+	"RelatedUrls": ubx.FieldSpec{
+		WireName: "related_urls",
+		Kind:     "list",
+		Fields:   Occurrence_Vulnerability_RelatedUrlsFields,
+	},
+	"Risk": ubx.FieldSpec{
+		WireName: "risk",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_RiskFields,
+	},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+	"VexAssessment": ubx.FieldSpec{
+		WireName: "vex_assessment",
+		Kind:     "object",
+		Fields:   Occurrence_Vulnerability_VexAssessmentFields,
+	},
+}
 
 type OccurrenceConfig struct {
 	// The time this advisory was published by the source.
@@ -1898,80 +1898,80 @@ var Occurrence = ubx.ResourceBinding{
 		"AdvisoryPublishTime": ubx.FieldSpec{WireName: "advisory_publish_time"},
 		"AiSkillAnalysis": ubx.FieldSpec{
 			WireName: "ai_skill_analysis",
-			Kind: "object",
-			Fields: Occurrence_AiSkillAnalysisFields,
+			Kind:     "object",
+			Fields:   Occurrence_AiSkillAnalysisFields,
 		},
 		"Attestation": ubx.FieldSpec{
 			WireName: "attestation",
-			Kind: "object",
-			Fields: Occurrence_AttestationFields,
+			Kind:     "object",
+			Fields:   Occurrence_AttestationFields,
 		},
 		"Build": ubx.FieldSpec{
 			WireName: "build",
-			Kind: "object",
-			Fields: Occurrence_BuildFields,
+			Kind:     "object",
+			Fields:   Occurrence_BuildFields,
 		},
 		"Compliance": ubx.FieldSpec{
 			WireName: "compliance",
-			Kind: "object",
-			Fields: Occurrence_ComplianceFields,
+			Kind:     "object",
+			Fields:   Occurrence_ComplianceFields,
 		},
 		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Deployment": ubx.FieldSpec{
 			WireName: "deployment",
-			Kind: "object",
-			Fields: Occurrence_DeploymentFields,
+			Kind:     "object",
+			Fields:   Occurrence_DeploymentFields,
 		},
 		"Discovery": ubx.FieldSpec{
 			WireName: "discovery",
-			Kind: "object",
-			Fields: Occurrence_DiscoveryFields,
+			Kind:     "object",
+			Fields:   Occurrence_DiscoveryFields,
 		},
 		"DsseAttestation": ubx.FieldSpec{
 			WireName: "dsse_attestation",
-			Kind: "object",
-			Fields: Occurrence_DsseAttestationFields,
+			Kind:     "object",
+			Fields:   Occurrence_DsseAttestationFields,
 		},
 		"Envelope": ubx.FieldSpec{
 			WireName: "envelope",
-			Kind: "object",
-			Fields: Occurrence_DsseAttestation_EnvelopeFields,
+			Kind:     "object",
+			Fields:   Occurrence_DsseAttestation_EnvelopeFields,
 		},
 		"Image": ubx.FieldSpec{
 			WireName: "image",
-			Kind: "object",
-			Fields: Occurrence_ImageFields,
+			Kind:     "object",
+			Fields:   Occurrence_ImageFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"NoteName": ubx.FieldSpec{WireName: "note_name"},
 		"Package": ubx.FieldSpec{
 			WireName: "package",
-			Kind: "object",
-			Fields: Occurrence_PackageFields,
+			Kind:     "object",
+			Fields:   Occurrence_PackageFields,
 		},
 		"Remediation": ubx.FieldSpec{WireName: "remediation"},
 		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
 		"SbomReference": ubx.FieldSpec{
 			WireName: "sbom_reference",
-			Kind: "object",
-			Fields: Occurrence_SbomReferenceFields,
+			Kind:     "object",
+			Fields:   Occurrence_SbomReferenceFields,
 		},
 		"Secret": ubx.FieldSpec{
 			WireName: "secret",
-			Kind: "object",
-			Fields: Occurrence_SecretFields,
+			Kind:     "object",
+			Fields:   Occurrence_SecretFields,
 		},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Upgrade": ubx.FieldSpec{
 			WireName: "upgrade",
-			Kind: "object",
-			Fields: Occurrence_UpgradeFields,
+			Kind:     "object",
+			Fields:   Occurrence_UpgradeFields,
 		},
 		"Vulnerability": ubx.FieldSpec{
 			WireName: "vulnerability",
-			Kind: "object",
-			Fields: Occurrence_VulnerabilityFields,
+			Kind:     "object",
+			Fields:   Occurrence_VulnerabilityFields,
 		},
 	},
 }

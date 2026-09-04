@@ -156,8 +156,6 @@ _SandboxEnvironmentTemplate_IngressControlConfigFields = {
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplateConfig:
-    # Output only. The timestamp when this SandboxEnvironmentTemplate was created.
-    create_time: Any = None
     # The customized sandbox runtime environment for BYOC.
     custom_container_environment: Any = None
     # The default sandbox runtime environment for default container workloads.
@@ -170,10 +168,6 @@ class SandboxEnvironmentTemplateConfig:
     ingress_control_config: Any = None
     # Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}`
     name: Any = None
-    # Output only. The state of the sandbox environment template.
-    state: Any = None
-    # Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplateAttrs:
@@ -199,7 +193,6 @@ class SandboxEnvironmentTemplateAttrs:
 SandboxEnvironmentTemplate = ubx.ResourceBinding(
     wire_type="google_aiplatform_sandbox_environment_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_container_environment": ubx.FieldSpec(
             wire_name="custom_container_environment",
             kind="object",
@@ -222,7 +215,5 @@ SandboxEnvironmentTemplate = ubx.ResourceBinding(
             fields=_SandboxEnvironmentTemplate_IngressControlConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

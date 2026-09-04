@@ -222,21 +222,6 @@ _Job_DeleteObjectFields = {
     "permanent_object_deletion_enabled": ubx.FieldSpec(wire_name="permanent_object_deletion_enabled"),
 }
 
-_Job_ErrorSummaries_ErrorLogEntriesFields = {
-    "error_details": ubx.FieldSpec(wire_name="error_details"),
-    "object_uri": ubx.FieldSpec(wire_name="object_uri"),
-}
-
-_Job_ErrorSummariesFields = {
-    "error_code": ubx.FieldSpec(wire_name="error_code"),
-    "error_count": ubx.FieldSpec(wire_name="error_count"),
-    "error_log_entries": ubx.FieldSpec(
-        wire_name="error_log_entries",
-        kind="list",
-        fields=_Job_ErrorSummaries_ErrorLogEntriesFields,
-    ),
-}
-
 _Job_LoggingConfigFields = {
     "log_action_states": ubx.FieldSpec(wire_name="log_action_states"),
     "log_actions": ubx.FieldSpec(wire_name="log_actions"),
@@ -354,22 +339,14 @@ _Job_UpdateObjectCustomContextFields = {
 class JobConfig:
     # Describes list of buckets and their objects to be transformed.
     bucket_list: Any = None
-    # Output only. The time that the job was completed.
-    complete_time: Any = None
     # Describes details about the progress of the job.
     counters: Any = None
-    # Output only. The time that the job was created.
-    create_time: Any = None
     # Describes options to delete an object.
     delete_object: Any = None
     # Optional. A user-provided description for the job. Maximum length: 1024 bytes when unicode-encoded.
     description: Any = None
     # Optional. If true, the job runs in dry run mode, returning the total object count and, if the object configuration is a prefix list, the bytes found from source. No transformations are performed.
     dry_run: Any = None
-    # Output only. Summarizes errors encountered with sample error log entries.
-    error_summaries: Any = None
-    # Output only. If true, this job operates on multiple buckets. Multi-bucket jobs are subject to different quota limits than single-bucket jobs.
-    is_multi_bucket_job: Any = None
     # Specifies the Cloud Logging behavior.
     logging_config: Any = None
     # Identifier. The resource name of the job. Format: `projects/{project_id}/locations/global/jobs/{job_id}`. For example: `projects/123456/locations/global/jobs/job01`. `job_id` is unique in a given project.
@@ -382,12 +359,8 @@ class JobConfig:
     put_object_hold: Any = None
     # Describes options for object rewrite.
     rewrite_object: Any = None
-    # Output only. The time that the job was scheduled.
-    schedule_time: Any = None
     # Describes options for setting object ACLs.
     set_object_acls: Any = None
-    # Output only. State of the job.
-    state: Any = None
     # Describes options to update object custom contexts.
     update_object_custom_context: Any = None
 
@@ -440,13 +413,11 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_BucketListFields,
         ),
-        "complete_time": ubx.FieldSpec(wire_name="complete_time"),
         "counters": ubx.FieldSpec(
             wire_name="counters",
             kind="object",
             fields=_Job_CountersFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "delete_object": ubx.FieldSpec(
             wire_name="delete_object",
             kind="object",
@@ -454,12 +425,6 @@ Job = ubx.ResourceBinding(
         ),
         "description": ubx.FieldSpec(wire_name="description"),
         "dry_run": ubx.FieldSpec(wire_name="dry_run"),
-        "error_summaries": ubx.FieldSpec(
-            wire_name="error_summaries",
-            kind="list",
-            fields=_Job_ErrorSummariesFields,
-        ),
-        "is_multi_bucket_job": ubx.FieldSpec(wire_name="is_multi_bucket_job"),
         "logging_config": ubx.FieldSpec(
             wire_name="logging_config",
             kind="object",
@@ -486,13 +451,11 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_RewriteObjectFields,
         ),
-        "schedule_time": ubx.FieldSpec(wire_name="schedule_time"),
         "set_object_acls": ubx.FieldSpec(
             wire_name="set_object_acls",
             kind="object",
             fields=_Job_SetObjectAclsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "update_object_custom_context": ubx.FieldSpec(
             wire_name="update_object_custom_context",
             kind="object",

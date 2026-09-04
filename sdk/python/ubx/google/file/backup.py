@@ -8,36 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BackupConfig:
-    # Output only. Capacity of the source file share when the backup was created.
-    capacity_gb: Any = None
-    # Output only. The time when the backup was created.
-    create_time: Any = None
     # A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
-    # Output only. Amount of bytes that will be downloaded if the backup is restored. This may be different than storage bytes, since sequential backups of the same disk will share storage.
-    download_bytes: Any = None
-    # Output only. The file system protocol of the source Filestore instance that this backup is created from.
-    file_system_protocol: Any = None
     # Immutable. KMS key name used for data encryption.
     kms_key: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
-    # Output only. The resource name of the backup, in the format `projects/{project_number}/locations/{location_id}/backups/{backup_id}`.
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Name of the file share in the source Filestore instance that the backup is created from.
     source_file_share: Any = None
     # The resource name of the source Filestore instance, in the format `projects/{project_number}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
     source_instance: Any = None
-    # Output only. The service tier of the source Filestore instance that this backup is created from.
-    source_instance_tier: Any = None
-    # Output only. The backup state.
-    state: Any = None
-    # Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
-    storage_bytes: Any = None
     # Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
     tags: Any = None
 
@@ -79,21 +59,11 @@ class BackupAttrs:
 Backup = ubx.ResourceBinding(
     wire_type="google_file_backup",
     fields={
-        "capacity_gb": ubx.FieldSpec(wire_name="capacity_gb"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "download_bytes": ubx.FieldSpec(wire_name="download_bytes"),
-        "file_system_protocol": ubx.FieldSpec(wire_name="file_system_protocol"),
         "kms_key": ubx.FieldSpec(wire_name="kms_key"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "source_file_share": ubx.FieldSpec(wire_name="source_file_share"),
         "source_instance": ubx.FieldSpec(wire_name="source_instance"),
-        "source_instance_tier": ubx.FieldSpec(wire_name="source_instance_tier"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "storage_bytes": ubx.FieldSpec(wire_name="storage_bytes"),
         "tags": ubx.FieldSpec(wire_name="tags"),
     },
 )

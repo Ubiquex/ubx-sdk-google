@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1AllowlistedDomainConfig {
   /** Required. Immutable. Name of the domain that is in the allowlist. e.g. "google.com" */
   domain?: string | Computed<string>;
-  /** Output only. Identifier. Resource name of the domain in the allowlist e.g. "allowlistedDomains/0184mhaj1smlusv" */
-  name?: string | Computed<string>;
 }
 
 export interface V1beta1AllowlistedDomainAttrs {
@@ -19,6 +17,5 @@ export const V1beta1AllowlistedDomain: ResourceBinding<V1beta1AllowlistedDomainC
   wireType: "google_cloudidentity_v1beta1_allowlisted_domain",
   fields: {
     domain: "domain",
-    name: "name",
   },
 };

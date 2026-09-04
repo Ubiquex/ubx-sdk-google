@@ -102,97 +102,97 @@ type Task_Task struct {
 }
 
 var Task_AppEngineHttpRequest_AppEngineRoutingFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"Service":  ubx.FieldSpec{WireName: "service"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var Task_AppEngineHttpRequestFields = ubx.FieldMap{
-		"AppEngineRouting": ubx.FieldSpec{
-			WireName: "app_engine_routing",
-			Kind: "object",
-			Fields: Task_AppEngineHttpRequest_AppEngineRoutingFields,
-		},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"RelativeUri": ubx.FieldSpec{WireName: "relative_uri"},
-	}
+	"AppEngineRouting": ubx.FieldSpec{
+		WireName: "app_engine_routing",
+		Kind:     "object",
+		Fields:   Task_AppEngineHttpRequest_AppEngineRoutingFields,
+	},
+	"Body":        ubx.FieldSpec{WireName: "body"},
+	"Headers":     ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod":  ubx.FieldSpec{WireName: "http_method"},
+	"RelativeUri": ubx.FieldSpec{WireName: "relative_uri"},
+}
 
 var Task_FirstAttempt_ResponseStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Task_FirstAttemptFields = ubx.FieldMap{
-		"DispatchTime": ubx.FieldSpec{WireName: "dispatch_time"},
-		"ResponseStatus": ubx.FieldSpec{
-			WireName: "response_status",
-			Kind: "object",
-			Fields: Task_FirstAttempt_ResponseStatusFields,
-		},
-		"ResponseTime": ubx.FieldSpec{WireName: "response_time"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-	}
+	"DispatchTime": ubx.FieldSpec{WireName: "dispatch_time"},
+	"ResponseStatus": ubx.FieldSpec{
+		WireName: "response_status",
+		Kind:     "object",
+		Fields:   Task_FirstAttempt_ResponseStatusFields,
+	},
+	"ResponseTime": ubx.FieldSpec{WireName: "response_time"},
+	"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
+}
 
 var Task_HttpRequest_OauthTokenFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Scope":               ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var Task_HttpRequest_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var Task_HttpRequestFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthToken": ubx.FieldSpec{
-			WireName: "oauth_token",
-			Kind: "object",
-			Fields: Task_HttpRequest_OauthTokenFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: Task_HttpRequest_OidcTokenFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Body":       ubx.FieldSpec{WireName: "body"},
+	"Headers":    ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+	"OauthToken": ubx.FieldSpec{
+		WireName: "oauth_token",
+		Kind:     "object",
+		Fields:   Task_HttpRequest_OauthTokenFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   Task_HttpRequest_OidcTokenFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Task_TaskFields = ubx.FieldMap{
-		"AppEngineHttpRequest": ubx.FieldSpec{
-			WireName: "app_engine_http_request",
-			Kind: "object",
-			Fields: Task_AppEngineHttpRequestFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DispatchCount": ubx.FieldSpec{WireName: "dispatch_count"},
-		"DispatchDeadline": ubx.FieldSpec{WireName: "dispatch_deadline"},
-		"FirstAttempt": ubx.FieldSpec{
-			WireName: "first_attempt",
-			Kind: "object",
-			Fields: Task_FirstAttemptFields,
-		},
-		"HttpRequest": ubx.FieldSpec{
-			WireName: "http_request",
-			Kind: "object",
-			Fields: Task_HttpRequestFields,
-		},
-		"LastAttempt": ubx.FieldSpec{
-			WireName: "last_attempt",
-			Kind: "object",
-			Fields: Task_FirstAttemptFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResponseCount": ubx.FieldSpec{WireName: "response_count"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-		"View": ubx.FieldSpec{WireName: "view"},
-	}
+	"AppEngineHttpRequest": ubx.FieldSpec{
+		WireName: "app_engine_http_request",
+		Kind:     "object",
+		Fields:   Task_AppEngineHttpRequestFields,
+	},
+	"CreateTime":       ubx.FieldSpec{WireName: "create_time"},
+	"DispatchCount":    ubx.FieldSpec{WireName: "dispatch_count"},
+	"DispatchDeadline": ubx.FieldSpec{WireName: "dispatch_deadline"},
+	"FirstAttempt": ubx.FieldSpec{
+		WireName: "first_attempt",
+		Kind:     "object",
+		Fields:   Task_FirstAttemptFields,
+	},
+	"HttpRequest": ubx.FieldSpec{
+		WireName: "http_request",
+		Kind:     "object",
+		Fields:   Task_HttpRequestFields,
+	},
+	"LastAttempt": ubx.FieldSpec{
+		WireName: "last_attempt",
+		Kind:     "object",
+		Fields:   Task_FirstAttemptFields,
+	},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"ResponseCount": ubx.FieldSpec{WireName: "response_count"},
+	"ScheduleTime":  ubx.FieldSpec{WireName: "schedule_time"},
+	"View":          ubx.FieldSpec{WireName: "view"},
+}
 
 type TaskConfig struct {
 	// The response_view specifies which subset of the Task will be returned. By default response_view is BASIC; not all information is retrieved by default because some data, such as payloads, might be desirable to return only when needed because of its large size or because of the sensitivity of data that it contains. Authorization for FULL requires `cloudtasks.tasks.fullView` [Google IAM](https://cloud.google.com/iam/) permission on the Task resource.
@@ -236,8 +236,8 @@ var Task = ubx.ResourceBinding{
 		"ResponseView": ubx.FieldSpec{WireName: "response_view"},
 		"Task": ubx.FieldSpec{
 			WireName: "task",
-			Kind: "object",
-			Fields: Task_TaskFields,
+			Kind:     "object",
+			Fields:   Task_TaskFields,
 		},
 	},
 }

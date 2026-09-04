@@ -52,8 +52,6 @@ _Lake_MetastoreStatusFields = {
 class LakeConfig:
     # Aggregated status of the underlying assets of a lake or zone.
     asset_status: Any = None
-    # Output only. The time when the lake was created.
-    create_time: Any = None
     # Optional. Description of the lake.
     description: Any = None
     # Optional. User friendly display name.
@@ -64,16 +62,6 @@ class LakeConfig:
     metastore: Any = None
     # Status of Lake and Dataproc Metastore service instance association.
     metastore_status: Any = None
-    # Output only. The relative resource name of the lake, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
-    name: Any = None
-    # Output only. Service account associated with this lake. This service account must be authorized to access or operate on resources managed by the lake.
-    service_account: Any = None
-    # Output only. Current state of the lake.
-    state: Any = None
-    # Output only. System generated globally unique ID for the lake. This ID will be different if the lake is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the lake was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class LakeAttrs:
@@ -110,7 +98,6 @@ Lake = ubx.ResourceBinding(
             kind="object",
             fields=_Lake_AssetStatusFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -124,10 +111,5 @@ Lake = ubx.ResourceBinding(
             kind="object",
             fields=_Lake_MetastoreStatusFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

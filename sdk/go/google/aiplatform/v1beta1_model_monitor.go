@@ -9,40 +9,40 @@ type V1beta1ModelMonitor_EncryptionSpec struct {
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Metadata struct {
@@ -94,7 +94,7 @@ type V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributi
 }
 
 type V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -150,7 +150,7 @@ type V1beta1ModelMonitor_ExplanationSpec struct {
 
 type V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFields struct {
 	DataType any
-	Name any
+	Name     any
 	Repeated any
 }
 
@@ -352,438 +352,436 @@ type V1beta1ModelMonitor_TrainingDataset struct {
 }
 
 var V1beta1ModelMonitor_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var V1beta1ModelMonitor_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var V1beta1ModelMonitor_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ExplanationSpec_ParametersFields,
+	},
+}
 
 var V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Repeated": ubx.FieldSpec{WireName: "repeated"},
-	}
+	"DataType": ubx.FieldSpec{WireName: "data_type"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Repeated": ubx.FieldSpec{WireName: "repeated"},
+}
 
 var V1beta1ModelMonitor_ModelMonitoringSchemaFields = ubx.FieldMap{
-		"FeatureFields": ubx.FieldSpec{
-			WireName: "feature_fields",
-			Kind: "list",
-			Fields: V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
-		},
-		"GroundTruthFields": ubx.FieldSpec{
-			WireName: "ground_truth_fields",
-			Kind: "list",
-			Fields: V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
-		},
-		"PredictionFields": ubx.FieldSpec{
-			WireName: "prediction_fields",
-			Kind: "list",
-			Fields: V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
-		},
-	}
+	"FeatureFields": ubx.FieldSpec{
+		WireName: "feature_fields",
+		Kind:     "list",
+		Fields:   V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
+	},
+	"GroundTruthFields": ubx.FieldSpec{
+		WireName: "ground_truth_fields",
+		Kind:     "list",
+		Fields:   V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
+	},
+	"PredictionFields": ubx.FieldSpec{
+		WireName: "prediction_fields",
+		Kind:     "list",
+		Fields:   V1beta1ModelMonitor_ModelMonitoringSchema_FeatureFieldsFields,
+	},
+}
 
 var V1beta1ModelMonitor_ModelMonitoringTarget_VertexModelFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-	}
+	"Model":          ubx.FieldSpec{WireName: "model"},
+	"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
+}
 
 var V1beta1ModelMonitor_ModelMonitoringTargetFields = ubx.FieldMap{
-		"VertexModel": ubx.FieldSpec{
-			WireName: "vertex_model",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ModelMonitoringTarget_VertexModelFields,
-		},
-	}
+	"VertexModel": ubx.FieldSpec{
+		WireName: "vertex_model",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_ModelMonitoringTarget_VertexModelFields,
+	},
+}
 
 var V1beta1ModelMonitor_NotificationSpec_EmailConfigFields = ubx.FieldMap{
-		"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
-	}
+	"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
+}
 
 var V1beta1ModelMonitor_NotificationSpec_NotificationChannelConfigsFields = ubx.FieldMap{
-		"NotificationChannel": ubx.FieldSpec{WireName: "notification_channel"},
-	}
+	"NotificationChannel": ubx.FieldSpec{WireName: "notification_channel"},
+}
 
 var V1beta1ModelMonitor_NotificationSpecFields = ubx.FieldMap{
-		"EmailConfig": ubx.FieldSpec{
-			WireName: "email_config",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_NotificationSpec_EmailConfigFields,
-		},
-		"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
-		"NotificationChannelConfigs": ubx.FieldSpec{
-			WireName: "notification_channel_configs",
-			Kind: "list",
-			Fields: V1beta1ModelMonitor_NotificationSpec_NotificationChannelConfigsFields,
-		},
-	}
+	"EmailConfig": ubx.FieldSpec{
+		WireName: "email_config",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_NotificationSpec_EmailConfigFields,
+	},
+	"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
+	"NotificationChannelConfigs": ubx.FieldSpec{
+		WireName: "notification_channel_configs",
+		Kind:     "list",
+		Fields:   V1beta1ModelMonitor_NotificationSpec_NotificationChannelConfigsFields,
+	},
+}
 
 var V1beta1ModelMonitor_OutputSpec_GcsBaseDirectoryFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1ModelMonitor_OutputSpecFields = ubx.FieldMap{
-		"GcsBaseDirectory": ubx.FieldSpec{
-			WireName: "gcs_base_directory",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_OutputSpec_GcsBaseDirectoryFields,
-		},
-	}
+	"GcsBaseDirectory": ubx.FieldSpec{
+		WireName: "gcs_base_directory",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_OutputSpec_GcsBaseDirectoryFields,
+	},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields = ubx.FieldMap{
-		"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
-	}
+	"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields = ubx.FieldMap{
-		"FlexStart": ubx.FieldSpec{
-			WireName: "flex_start",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-		"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
-	}
+	"FlexStart": ubx.FieldSpec{
+		WireName: "flex_start",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
+	},
+	"MaxReplicaCount":      ubx.FieldSpec{WireName: "max_replica_count"},
+	"Spot":                 ubx.FieldSpec{WireName: "spot"},
+	"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields = ubx.FieldMap{
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpecFields = ubx.FieldMap{
-		"BatchExplanationDedicatedResources": ubx.FieldSpec{
-			WireName: "batch_explanation_dedicated_resources",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields,
-		},
-		"DefaultAlertCondition": ubx.FieldSpec{
-			WireName: "default_alert_condition",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"FeatureAlertConditions": ubx.FieldSpec{
-			WireName: "feature_alert_conditions",
-			Kind: "map",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"Features": ubx.FieldSpec{WireName: "features"},
-	}
+	"BatchExplanationDedicatedResources": ubx.FieldSpec{
+		WireName: "batch_explanation_dedicated_resources",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields,
+	},
+	"DefaultAlertCondition": ubx.FieldSpec{
+		WireName: "default_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"FeatureAlertConditions": ubx.FieldSpec{
+		WireName: "feature_alert_conditions",
+		Kind:     "map",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"Features": ubx.FieldSpec{WireName: "features"},
+}
 
 var V1beta1ModelMonitor_TabularObjective_FeatureDriftSpecFields = ubx.FieldMap{
-		"CategoricalMetricType": ubx.FieldSpec{WireName: "categorical_metric_type"},
-		"DefaultCategoricalAlertCondition": ubx.FieldSpec{
-			WireName: "default_categorical_alert_condition",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"DefaultNumericAlertCondition": ubx.FieldSpec{
-			WireName: "default_numeric_alert_condition",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"FeatureAlertConditions": ubx.FieldSpec{
-			WireName: "feature_alert_conditions",
-			Kind: "map",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"Features": ubx.FieldSpec{WireName: "features"},
-		"NumericMetricType": ubx.FieldSpec{WireName: "numeric_metric_type"},
-	}
+	"CategoricalMetricType": ubx.FieldSpec{WireName: "categorical_metric_type"},
+	"DefaultCategoricalAlertCondition": ubx.FieldSpec{
+		WireName: "default_categorical_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"DefaultNumericAlertCondition": ubx.FieldSpec{
+		WireName: "default_numeric_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"FeatureAlertConditions": ubx.FieldSpec{
+		WireName: "feature_alert_conditions",
+		Kind:     "map",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"Features":          ubx.FieldSpec{WireName: "features"},
+	"NumericMetricType": ubx.FieldSpec{WireName: "numeric_metric_type"},
+}
 
 var V1beta1ModelMonitor_TabularObjectiveFields = ubx.FieldMap{
-		"FeatureAttributionSpec": ubx.FieldSpec{
-			WireName: "feature_attribution_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpecFields,
-		},
-		"FeatureDriftSpec": ubx.FieldSpec{
-			WireName: "feature_drift_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureDriftSpecFields,
-		},
-		"PredictionOutputDriftSpec": ubx.FieldSpec{
-			WireName: "prediction_output_drift_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjective_FeatureDriftSpecFields,
-		},
-	}
+	"FeatureAttributionSpec": ubx.FieldSpec{
+		WireName: "feature_attribution_spec",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureAttributionSpecFields,
+	},
+	"FeatureDriftSpec": ubx.FieldSpec{
+		WireName: "feature_drift_spec",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureDriftSpecFields,
+	},
+	"PredictionOutputDriftSpec": ubx.FieldSpec{
+		WireName: "prediction_output_drift_spec",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TabularObjective_FeatureDriftSpecFields,
+	},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_BatchPredictionOutputFields = ubx.FieldMap{
-		"BatchPredictionJob": ubx.FieldSpec{WireName: "batch_prediction_job"},
-	}
+	"BatchPredictionJob": ubx.FieldSpec{WireName: "batch_prediction_job"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_BigquerySourceFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"TableUri": ubx.FieldSpec{WireName: "table_uri"},
-	}
+	"Query":    ubx.FieldSpec{WireName: "query"},
+	"TableUri": ubx.FieldSpec{WireName: "table_uri"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_GcsSourceFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_ColumnizedDatasetFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_BigquerySourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_GcsSourceFields,
-		},
-		"TimestampField": ubx.FieldSpec{WireName: "timestamp_field"},
-		"VertexDataset": ubx.FieldSpec{WireName: "vertex_dataset"},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_BigquerySourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_ColumnizedDataset_GcsSourceFields,
+	},
+	"TimestampField": ubx.FieldSpec{WireName: "timestamp_field"},
+	"VertexDataset":  ubx.FieldSpec{WireName: "vertex_dataset"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_TimeIntervalFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_TimeOffsetFields = ubx.FieldMap{
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Window": ubx.FieldSpec{WireName: "window"},
-	}
+	"Offset": ubx.FieldSpec{WireName: "offset"},
+	"Window": ubx.FieldSpec{WireName: "window"},
+}
 
 var V1beta1ModelMonitor_TrainingDataset_VertexEndpointLogsFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-	}
+	"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
+}
 
 var V1beta1ModelMonitor_TrainingDatasetFields = ubx.FieldMap{
-		"BatchPredictionOutput": ubx.FieldSpec{
-			WireName: "batch_prediction_output",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_BatchPredictionOutputFields,
-		},
-		"ColumnizedDataset": ubx.FieldSpec{
-			WireName: "columnized_dataset",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_ColumnizedDatasetFields,
-		},
-		"TimeInterval": ubx.FieldSpec{
-			WireName: "time_interval",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_TimeIntervalFields,
-		},
-		"TimeOffset": ubx.FieldSpec{
-			WireName: "time_offset",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_TimeOffsetFields,
-		},
-		"VertexEndpointLogs": ubx.FieldSpec{
-			WireName: "vertex_endpoint_logs",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDataset_VertexEndpointLogsFields,
-		},
-	}
+	"BatchPredictionOutput": ubx.FieldSpec{
+		WireName: "batch_prediction_output",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_BatchPredictionOutputFields,
+	},
+	"ColumnizedDataset": ubx.FieldSpec{
+		WireName: "columnized_dataset",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_ColumnizedDatasetFields,
+	},
+	"TimeInterval": ubx.FieldSpec{
+		WireName: "time_interval",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_TimeIntervalFields,
+	},
+	"TimeOffset": ubx.FieldSpec{
+		WireName: "time_offset",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_TimeOffsetFields,
+	},
+	"VertexEndpointLogs": ubx.FieldSpec{
+		WireName: "vertex_endpoint_logs",
+		Kind:     "object",
+		Fields:   V1beta1ModelMonitor_TrainingDataset_VertexEndpointLogsFields,
+	},
+}
 
 type V1beta1ModelMonitorConfig struct {
-	// Output only. Timestamp when this ModelMonitor was created.
-	CreateTime any
 	// The display name of the ModelMonitor. The name can be up to 128 characters long and can consist of any UTF-8.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -800,16 +798,10 @@ type V1beta1ModelMonitorConfig struct {
 	NotificationSpec any
 	// Specification for the export destination of monitoring results, including metrics, logs, etc.
 	OutputSpec any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Tabular monitoring objective.
 	TabularObjective any
 	// Model monitoring data input spec.
 	TrainingDataset any
-	// Output only. Timestamp when this ModelMonitor was updated most recently.
-	UpdateTime any
 }
 
 type V1beta1ModelMonitorAttrs struct {
@@ -846,51 +838,47 @@ type V1beta1ModelMonitorAttrs struct {
 var V1beta1ModelMonitor = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_model_monitor",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_EncryptionSpecFields,
 		},
 		"ExplanationSpec": ubx.FieldSpec{
 			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ExplanationSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_ExplanationSpecFields,
 		},
 		"ModelMonitoringSchema": ubx.FieldSpec{
 			WireName: "model_monitoring_schema",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ModelMonitoringSchemaFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_ModelMonitoringSchemaFields,
 		},
 		"ModelMonitoringTarget": ubx.FieldSpec{
 			WireName: "model_monitoring_target",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_ModelMonitoringTargetFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_ModelMonitoringTargetFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NotificationSpec": ubx.FieldSpec{
 			WireName: "notification_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_NotificationSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_NotificationSpecFields,
 		},
 		"OutputSpec": ubx.FieldSpec{
 			WireName: "output_spec",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_OutputSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_OutputSpecFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"TabularObjective": ubx.FieldSpec{
 			WireName: "tabular_objective",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TabularObjectiveFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_TabularObjectiveFields,
 		},
 		"TrainingDataset": ubx.FieldSpec{
 			WireName: "training_dataset",
-			Kind: "object",
-			Fields: V1beta1ModelMonitor_TrainingDatasetFields,
+			Kind:     "object",
+			Fields:   V1beta1ModelMonitor_TrainingDatasetFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

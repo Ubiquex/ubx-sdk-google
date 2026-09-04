@@ -306,14 +306,6 @@ _V1beta1Volume_LargeCapacityConfigFields = {
     "constituent_count": ubx.FieldSpec(wire_name="constituent_count"),
 }
 
-_V1beta1Volume_MountOptionsFields = {
-    "export": ubx.FieldSpec(wire_name="export"),
-    "export_full": ubx.FieldSpec(wire_name="export_full"),
-    "instructions": ubx.FieldSpec(wire_name="instructions"),
-    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-    "protocol": ubx.FieldSpec(wire_name="protocol"),
-}
-
 _V1beta1Volume_RestoreParametersFields = {
     "source_backup": ubx.FieldSpec(wire_name="source_backup"),
     "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
@@ -376,8 +368,6 @@ _V1beta1Volume_TieringPolicyFields = {
 
 @dataclasses.dataclass
 class V1beta1VolumeConfig:
-    # Output only. Specifies the ActiveDirectory name of a SMB volume.
-    active_directory: Any = None
     # BackupConfig contains backup related config on a volume.
     backup_config: Any = None
     # Optional. Block devices for the volume. Currently, only one block device is permitted per Volume.
@@ -388,56 +378,32 @@ class V1beta1VolumeConfig:
     capacity_gib: Any = None
     # Details about a clone volume.
     clone_details: Any = None
-    # Output only. Size of the volume cold tier data rounded down to the nearest GiB.
-    cold_tier_size_gib: Any = None
-    # Output only. Create time of the volume
-    create_time: Any = None
     # Optional. Description of the volume
     description: Any = None
-    # Output only. Specified the current volume encryption key source.
-    encryption_type: Any = None
     # Defines the export policy for the volume.
     export_policy: Any = None
-    # Output only. Indicates whether the volume is part of a replication relationship.
-    has_replication: Any = None
-    # Output only. Total hot tier data rounded down to the nearest GiB used by the Volume. This field is only used for flex Service Level
-    hot_tier_size_used_gib: Any = None
     # The Hybrid Replication parameters for the volume.
     hybrid_replication_parameters: Any = None
     # Optional. Flag indicating if the volume is a kerberos volume or not, export policy rules control kerberos security modes (krb5, krb5i, krb5p).
     kerberos_enabled: Any = None
-    # Output only. Specifies the KMS config to be used for volume encryption.
-    kms_config: Any = None
     # Optional. Labels as key value pairs
     labels: Any = None
     # Optional. Flag indicating if the volume will be a large capacity volume or a regular volume. This field is used for legacy FILE pools. For Unified pools, use the `large_capacity_config` field instead. This field and `large_capacity_config` are mutually exclusive.
     large_capacity: Any = None
     # Configuration for a Large Capacity Volume. A Large Capacity Volume supports sizes ranging from 4.8 TiB to 20 PiB; it is composed of multiple internal constituents, and must be created in a large capacity pool.
     large_capacity_config: Any = None
-    # Output only. Flag indicating if the volume is NFS LDAP enabled or not.
-    ldap_enabled: Any = None
-    # Output only. Mount options of this volume
-    mount_options: Any = None
     # Optional. Flag indicating if the volume will have an IP address per node for volumes supporting multiple IP endpoints. Only the volume with large_capacity will be allowed to have multiple endpoints.
     multiple_endpoints: Any = None
     # Identifier. Name of the volume
     name: Any = None
-    # Output only. VPC Network name. Format: projects/{project}/global/networks/{network}
-    network: Any = None
     # Required. Protocols required for the volume
     protocols: Any = None
-    # Output only. This field is not implemented. The values provided in this field are ignored.
-    psa_range: Any = None
-    # Output only. Specifies the replica zone for regional volume.
-    replica_zone: Any = None
     # The RestoreParameters if volume is created from a snapshot or backup.
     restore_parameters: Any = None
     # Optional. List of actions that are restricted on this volume.
     restricted_actions: Any = None
     # Optional. Security Style of the Volume
     security_style: Any = None
-    # Output only. Service level of the volume
-    service_level: Any = None
     # Required. Share name of the volume
     share_name: Any = None
     # Optional. SMB share settings for the volume.
@@ -448,10 +414,6 @@ class V1beta1VolumeConfig:
     snapshot_directory: Any = None
     # Snapshot Policy for a volume.
     snapshot_policy: Any = None
-    # Output only. State of the volume
-    state: Any = None
-    # Output only. State details of the volume
-    state_details: Any = None
     # Required. StoragePool name of the volume
     storage_pool: Any = None
     # Optional. Throughput of the volume (in MiB/s)
@@ -460,10 +422,6 @@ class V1beta1VolumeConfig:
     tiering_policy: Any = None
     # Optional. Default unix style permission (e.g. 777) the mount point will be created with. Applicable for NFS protocol types only.
     unix_permissions: Any = None
-    # Output only. Used capacity in GIB of the volume. This is computed periodically and it does not represent the realtime usage.
-    used_gib: Any = None
-    # Output only. Specifies the active zone for regional volume.
-    zone: Any = None
 
 @dataclasses.dataclass
 class V1beta1VolumeAttrs:
@@ -559,7 +517,6 @@ class V1beta1VolumeAttrs:
 V1beta1Volume = ubx.ResourceBinding(
     wire_type="google_netapp_v1beta1_volume",
     fields={
-        "active_directory": ubx.FieldSpec(wire_name="active_directory"),
         "backup_config": ubx.FieldSpec(
             wire_name="backup_config",
             kind="object",
@@ -581,24 +538,18 @@ V1beta1Volume = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Volume_CloneDetailsFields,
         ),
-        "cold_tier_size_gib": ubx.FieldSpec(wire_name="cold_tier_size_gib"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
         "export_policy": ubx.FieldSpec(
             wire_name="export_policy",
             kind="object",
             fields=_V1beta1Volume_ExportPolicyFields,
         ),
-        "has_replication": ubx.FieldSpec(wire_name="has_replication"),
-        "hot_tier_size_used_gib": ubx.FieldSpec(wire_name="hot_tier_size_used_gib"),
         "hybrid_replication_parameters": ubx.FieldSpec(
             wire_name="hybrid_replication_parameters",
             kind="object",
             fields=_V1beta1Volume_HybridReplicationParametersFields,
         ),
         "kerberos_enabled": ubx.FieldSpec(wire_name="kerberos_enabled"),
-        "kms_config": ubx.FieldSpec(wire_name="kms_config"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "large_capacity": ubx.FieldSpec(wire_name="large_capacity"),
         "large_capacity_config": ubx.FieldSpec(
@@ -606,18 +557,9 @@ V1beta1Volume = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Volume_LargeCapacityConfigFields,
         ),
-        "ldap_enabled": ubx.FieldSpec(wire_name="ldap_enabled"),
-        "mount_options": ubx.FieldSpec(
-            wire_name="mount_options",
-            kind="list",
-            fields=_V1beta1Volume_MountOptionsFields,
-        ),
         "multiple_endpoints": ubx.FieldSpec(wire_name="multiple_endpoints"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "network": ubx.FieldSpec(wire_name="network"),
         "protocols": ubx.FieldSpec(wire_name="protocols"),
-        "psa_range": ubx.FieldSpec(wire_name="psa_range"),
-        "replica_zone": ubx.FieldSpec(wire_name="replica_zone"),
         "restore_parameters": ubx.FieldSpec(
             wire_name="restore_parameters",
             kind="object",
@@ -625,7 +567,6 @@ V1beta1Volume = ubx.ResourceBinding(
         ),
         "restricted_actions": ubx.FieldSpec(wire_name="restricted_actions"),
         "security_style": ubx.FieldSpec(wire_name="security_style"),
-        "service_level": ubx.FieldSpec(wire_name="service_level"),
         "share_name": ubx.FieldSpec(wire_name="share_name"),
         "smb_settings": ubx.FieldSpec(wire_name="smb_settings"),
         "snap_reserve": ubx.FieldSpec(wire_name="snap_reserve"),
@@ -635,8 +576,6 @@ V1beta1Volume = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Volume_SnapshotPolicyFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
         "storage_pool": ubx.FieldSpec(wire_name="storage_pool"),
         "throughput_mibps": ubx.FieldSpec(wire_name="throughput_mibps"),
         "tiering_policy": ubx.FieldSpec(
@@ -645,7 +584,5 @@ V1beta1Volume = ubx.ResourceBinding(
             fields=_V1beta1Volume_TieringPolicyFields,
         ),
         "unix_permissions": ubx.FieldSpec(wire_name="unix_permissions"),
-        "used_gib": ubx.FieldSpec(wire_name="used_gib"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

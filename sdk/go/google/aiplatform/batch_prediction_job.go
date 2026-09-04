@@ -62,40 +62,40 @@ type BatchPredictionJob_Error struct {
 }
 
 type BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type BatchPredictionJob_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type BatchPredictionJob_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type BatchPredictionJob_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type BatchPredictionJob_ExplanationSpec_Metadata struct {
@@ -145,7 +145,7 @@ type BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributio
 }
 
 type BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -281,7 +281,7 @@ type BatchPredictionJob_ResourcesConsumed struct {
 }
 
 type BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -392,441 +392,439 @@ type BatchPredictionJob_UnmanagedContainerModel struct {
 }
 
 var BatchPredictionJob_CompletionStatsFields = ubx.FieldMap{
-		"FailedCount": ubx.FieldSpec{WireName: "failed_count"},
-		"IncompleteCount": ubx.FieldSpec{WireName: "incomplete_count"},
-		"SuccessfulCount": ubx.FieldSpec{WireName: "successful_count"},
-		"SuccessfulForecastPointCount": ubx.FieldSpec{WireName: "successful_forecast_point_count"},
-	}
+	"FailedCount":                  ubx.FieldSpec{WireName: "failed_count"},
+	"IncompleteCount":              ubx.FieldSpec{WireName: "incomplete_count"},
+	"SuccessfulCount":              ubx.FieldSpec{WireName: "successful_count"},
+	"SuccessfulForecastPointCount": ubx.FieldSpec{WireName: "successful_forecast_point_count"},
+}
 
 var BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var BatchPredictionJob_DedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":      ubx.FieldSpec{WireName: "machine_type"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_DedicatedResources_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var BatchPredictionJob_DedicatedResourcesFields = ubx.FieldMap{
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: BatchPredictionJob_DedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
-	}
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_DedicatedResources_MachineSpecFields,
+	},
+	"MaxReplicaCount":      ubx.FieldSpec{WireName: "max_replica_count"},
+	"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
+}
 
 var BatchPredictionJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var BatchPredictionJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var BatchPredictionJob_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: BatchPredictionJob_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   BatchPredictionJob_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   BatchPredictionJob_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var BatchPredictionJob_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var BatchPredictionJob_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_ParametersFields,
+	},
+}
 
 var BatchPredictionJob_InputConfig_BigquerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields = ubx.FieldMap{
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-	}
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+}
 
 var BatchPredictionJob_InputConfigFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: BatchPredictionJob_InputConfig_BigquerySourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"InstancesFormat": ubx.FieldSpec{WireName: "instances_format"},
-		"VertexMultimodalDatasetSource": ubx.FieldSpec{
-			WireName: "vertex_multimodal_dataset_source",
-			Kind: "object",
-			Fields: BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields,
-		},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_InputConfig_BigquerySourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"InstancesFormat": ubx.FieldSpec{WireName: "instances_format"},
+	"VertexMultimodalDatasetSource": ubx.FieldSpec{
+		WireName: "vertex_multimodal_dataset_source",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_InputConfig_VertexMultimodalDatasetSourceFields,
+	},
+}
 
 var BatchPredictionJob_InstanceConfigFields = ubx.FieldMap{
-		"ExcludedFields": ubx.FieldSpec{WireName: "excluded_fields"},
-		"IncludedFields": ubx.FieldSpec{WireName: "included_fields"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"KeyField": ubx.FieldSpec{WireName: "key_field"},
-	}
+	"ExcludedFields": ubx.FieldSpec{WireName: "excluded_fields"},
+	"IncludedFields": ubx.FieldSpec{WireName: "included_fields"},
+	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
+	"KeyField":       ubx.FieldSpec{WireName: "key_field"},
+}
 
 var BatchPredictionJob_ManualBatchTuningParametersFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-	}
+	"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
+}
 
 var BatchPredictionJob_OutputConfig_BigqueryDestinationFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var BatchPredictionJob_OutputConfig_GcsDestinationFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputConfig_BigqueryDestinationFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_OutputConfig_BigqueryDestinationFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var BatchPredictionJob_OutputConfigFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputConfig_BigqueryDestinationFields,
-		},
-		"GcsDestination": ubx.FieldSpec{
-			WireName: "gcs_destination",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputConfig_GcsDestinationFields,
-		},
-		"PredictionsFormat": ubx.FieldSpec{WireName: "predictions_format"},
-		"VertexMultimodalDatasetDestination": ubx.FieldSpec{
-			WireName: "vertex_multimodal_dataset_destination",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields,
-		},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_OutputConfig_BigqueryDestinationFields,
+	},
+	"GcsDestination": ubx.FieldSpec{
+		WireName: "gcs_destination",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_OutputConfig_GcsDestinationFields,
+	},
+	"PredictionsFormat": ubx.FieldSpec{WireName: "predictions_format"},
+	"VertexMultimodalDatasetDestination": ubx.FieldSpec{
+		WireName: "vertex_multimodal_dataset_destination",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_OutputConfig_VertexMultimodalDatasetDestinationFields,
+	},
+}
 
 var BatchPredictionJob_OutputInfoFields = ubx.FieldMap{
-		"BigqueryOutputDataset": ubx.FieldSpec{WireName: "bigquery_output_dataset"},
-		"BigqueryOutputTable": ubx.FieldSpec{WireName: "bigquery_output_table"},
-		"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
-		"VertexMultimodalDatasetName": ubx.FieldSpec{WireName: "vertex_multimodal_dataset_name"},
-	}
+	"BigqueryOutputDataset":       ubx.FieldSpec{WireName: "bigquery_output_dataset"},
+	"BigqueryOutputTable":         ubx.FieldSpec{WireName: "bigquery_output_table"},
+	"GcsOutputDirectory":          ubx.FieldSpec{WireName: "gcs_output_directory"},
+	"VertexMultimodalDatasetName": ubx.FieldSpec{WireName: "vertex_multimodal_dataset_name"},
+}
 
 var BatchPredictionJob_ResourcesConsumedFields = ubx.FieldMap{
-		"ReplicaHours": ubx.FieldSpec{WireName: "replica_hours"},
-	}
+	"ReplicaHours": ubx.FieldSpec{WireName: "replica_hours"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
+	},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+	"Port":   ubx.FieldSpec{WireName: "port"},
+	"Scheme": ubx.FieldSpec{WireName: "scheme"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields,
-		},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields,
-		},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_ExecFields,
+	},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"SuccessThreshold":    ubx.FieldSpec{WireName: "success_threshold"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbe_TcpSocketFields,
+	},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
-		},
-		"GrpcPorts": ubx.FieldSpec{
-			WireName: "grpc_ports",
-			Kind: "list",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
-		},
-		"HealthProbe": ubx.FieldSpec{
-			WireName: "health_probe",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-		"HealthRoute": ubx.FieldSpec{WireName: "health_route"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
-		},
-		"PredictRoute": ubx.FieldSpec{WireName: "predict_route"},
-		"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
-		},
-	}
+	"Args":              ubx.FieldSpec{WireName: "args"},
+	"Command":           ubx.FieldSpec{WireName: "command"},
+	"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_EnvFields,
+	},
+	"GrpcPorts": ubx.FieldSpec{
+		WireName: "grpc_ports",
+		Kind:     "list",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
+	},
+	"HealthProbe": ubx.FieldSpec{
+		WireName: "health_probe",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+	"HealthRoute":       ubx.FieldSpec{WireName: "health_route"},
+	"ImageUri":          ubx.FieldSpec{WireName: "image_uri"},
+	"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_GrpcPortsFields,
+	},
+	"PredictRoute":       ubx.FieldSpec{WireName: "predict_route"},
+	"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpec_HealthProbeFields,
+	},
+}
 
 var BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields = ubx.FieldMap{
-		"InstanceSchemaUri": ubx.FieldSpec{WireName: "instance_schema_uri"},
-		"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
-		"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
-	}
+	"InstanceSchemaUri":   ubx.FieldSpec{WireName: "instance_schema_uri"},
+	"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
+	"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
+}
 
 var BatchPredictionJob_UnmanagedContainerModelFields = ubx.FieldMap{
-		"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields,
-		},
-		"PredictSchemata": ubx.FieldSpec{
-			WireName: "predict_schemata",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields,
-		},
-	}
+	"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_ContainerSpecFields,
+	},
+	"PredictSchemata": ubx.FieldSpec{
+		WireName: "predict_schemata",
+		Kind:     "object",
+		Fields:   BatchPredictionJob_UnmanagedContainerModel_PredictSchemataFields,
+	},
+}
 
 type BatchPredictionJobConfig struct {
 	// Success and error statistics of processing multiple entities (for example, DataItems or structured data rows) in batch.
 	CompletionStats any
-	// Output only. Time when the BatchPredictionJob was created.
-	CreateTime any
 	// A description of resources that are used for performing batch operations, are dedicated to a Model, and need manual configuration.
 	DedicatedResources any
 	// For custom-trained Models and AutoML Tabular Models, the container of the DeployedModel instances will send `stderr` and `stdout` streams to Cloud Logging by default. Please note that the logs incur cost, which are subject to [Cloud Logging pricing](https://cloud.google.com/logging/pricing). User can disable container logging by setting this flag to true.
@@ -835,8 +833,6 @@ type BatchPredictionJobConfig struct {
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the BatchPredictionJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// Specification of Model explanation.
@@ -855,32 +851,16 @@ type BatchPredictionJobConfig struct {
 	Model any
 	// The parameters that govern the predictions. The schema of the parameters may be specified via the Model's PredictSchemata's parameters_schema_uri.
 	ModelParameters any
-	// Output only. The version ID of the Model that produces the predictions via this job.
-	ModelVersionId any
-	// Output only. Resource name of the BatchPredictionJob.
-	Name any
 	// Configures the output of BatchPredictionJob. See Model.supported_output_storage_formats for supported output formats, and how predictions are expressed via any of them.
 	OutputConfig any
 	// Further describes this job's output. Supplements output_config.
 	OutputInfo any
-	// Output only. Partial failures encountered. For example, single files that can't be read. This field never exceeds 20 entries. Status details fields contain standard Google Cloud error details.
-	PartialFailures any
 	// Statistics information about resource consumption.
 	ResourcesConsumed any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// The service account that the DeployedModel's container runs as. If not specified, a system generated one will be used, which has minimal permissions and the custom container, if used, may not have enough permission to access other Google Cloud resources. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account.
 	ServiceAccount any
-	// Output only. Time when the BatchPredictionJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
 	// Contains model information necessary to perform batch prediction without requiring a full model import.
 	UnmanagedContainerModel any
-	// Output only. Time when the BatchPredictionJob was most recently updated.
-	UpdateTime any
 }
 
 type BatchPredictionJobAttrs struct {
@@ -949,84 +929,70 @@ var BatchPredictionJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompletionStats": ubx.FieldSpec{
 			WireName: "completion_stats",
-			Kind: "object",
-			Fields: BatchPredictionJob_CompletionStatsFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_CompletionStatsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DedicatedResources": ubx.FieldSpec{
 			WireName: "dedicated_resources",
-			Kind: "object",
-			Fields: BatchPredictionJob_DedicatedResourcesFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_DedicatedResourcesFields,
 		},
 		"DisableContainerLogging": ubx.FieldSpec{WireName: "disable_container_logging"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: BatchPredictionJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: BatchPredictionJob_ErrorFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_ErrorFields,
 		},
 		"ExplanationSpec": ubx.FieldSpec{
 			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: BatchPredictionJob_ExplanationSpecFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_ExplanationSpecFields,
 		},
 		"GenerateExplanation": ubx.FieldSpec{WireName: "generate_explanation"},
 		"InputConfig": ubx.FieldSpec{
 			WireName: "input_config",
-			Kind: "object",
-			Fields: BatchPredictionJob_InputConfigFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_InputConfigFields,
 		},
 		"InstanceConfig": ubx.FieldSpec{
 			WireName: "instance_config",
-			Kind: "object",
-			Fields: BatchPredictionJob_InstanceConfigFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_InstanceConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManualBatchTuningParameters": ubx.FieldSpec{
 			WireName: "manual_batch_tuning_parameters",
-			Kind: "object",
-			Fields: BatchPredictionJob_ManualBatchTuningParametersFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_ManualBatchTuningParametersFields,
 		},
-		"Model": ubx.FieldSpec{WireName: "model"},
+		"Model":           ubx.FieldSpec{WireName: "model"},
 		"ModelParameters": ubx.FieldSpec{WireName: "model_parameters"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutputConfig": ubx.FieldSpec{
 			WireName: "output_config",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputConfigFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_OutputConfigFields,
 		},
 		"OutputInfo": ubx.FieldSpec{
 			WireName: "output_info",
-			Kind: "object",
-			Fields: BatchPredictionJob_OutputInfoFields,
-		},
-		"PartialFailures": ubx.FieldSpec{
-			WireName: "partial_failures",
-			Kind: "list",
-			Fields: BatchPredictionJob_ErrorFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_OutputInfoFields,
 		},
 		"ResourcesConsumed": ubx.FieldSpec{
 			WireName: "resources_consumed",
-			Kind: "object",
-			Fields: BatchPredictionJob_ResourcesConsumedFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_ResourcesConsumedFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"UnmanagedContainerModel": ubx.FieldSpec{
 			WireName: "unmanaged_container_model",
-			Kind: "object",
-			Fields: BatchPredictionJob_UnmanagedContainerModelFields,
+			Kind:     "object",
+			Fields:   BatchPredictionJob_UnmanagedContainerModelFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -45,26 +45,14 @@ const Trial_ParametersFields: FieldMap = {
 };
 
 export interface TrialConfig {
-  /** Output only. The identifier of the client that originally requested this trial. */
-  clientId?: string | Computed<string>;
-  /** Output only. Time at which the trial's status changed to COMPLETED. */
-  endTime?: string | Computed<string>;
   /** A message representing a measurement. */
   finalMeasurement?: Trial_FinalMeasurement | Computed<Trial_FinalMeasurement>;
-  /** Output only. A human readable string describing why the trial is infeasible. This should only be set if trial_infeasible is true. */
-  infeasibleReason?: string | Computed<string>;
   /** A list of measurements that are strictly lexicographically ordered by their induced tuples (steps, elapsed_time). These are used for early stopping computations. */
   measurements?: Trial_FinalMeasurement[] | Computed<Trial_FinalMeasurement[]>;
-  /** Output only. Name of the trial assigned by the service. */
-  name?: string | Computed<string>;
   /** The parameters of the trial. */
   parameters?: Trial_Parameters[] | Computed<Trial_Parameters[]>;
-  /** Output only. Time at which the trial was started. */
-  startTime?: string | Computed<string>;
   /** The detailed state of a trial. */
   state?: string | Computed<string>;
-  /** Output only. If true, the parameters in this trial are not attempted again. */
-  trialInfeasible?: boolean | Computed<boolean>;
 }
 
 export interface TrialAttrs {
@@ -93,27 +81,21 @@ export interface TrialAttrs {
 export const Trial: ResourceBinding<TrialConfig, TrialAttrs> = {
   wireType: "google_ml_trial",
   fields: {
-    clientId: "client_id",
-    endTime: "end_time",
     finalMeasurement: {
       wireName: "final_measurement",
       kind: "object",
       fields: Trial_FinalMeasurementFields,
     },
-    infeasibleReason: "infeasible_reason",
     measurements: {
       wireName: "measurements",
       kind: "list",
       fields: Trial_FinalMeasurementFields,
     },
-    name: "name",
     parameters: {
       wireName: "parameters",
       kind: "list",
       fields: Trial_ParametersFields,
     },
-    startTime: "start_time",
     state: "state",
-    trialInfeasible: "trial_infeasible",
   },
 };

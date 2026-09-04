@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Project_Quota_WhitelistedKeySpecs struct {
 	Algorithm any
 	KeyLength any
-	KeyType any
-	Kind any
+	KeyType   any
+	Kind      any
 }
 
 type Project_Quota struct {
@@ -18,11 +18,11 @@ type Project_Quota struct {
 	// Maximum allowed number of GKE clusters per policy.
 	GkeClustersPerPolicy any
 	// Maximum allowed number of GKE clusters per response policy.
-	GkeClustersPerResponsePolicy any
+	GkeClustersPerResponsePolicy       any
 	InternetHealthChecksPerManagedZone any
 	// Maximum allowed number of items per routing policy.
 	ItemsPerRoutingPolicy any
-	Kind any
+	Kind                  any
 	// Maximum allowed number of managed zones in the project.
 	ManagedZones any
 	// Maximum allowed number of managed zones which can be attached to a GKE cluster.
@@ -65,16 +65,16 @@ type Project_Quota struct {
 
 type ProjectConfig struct {
 	ClientOperationId any
-	Project any
+	Project           any
 }
 
 type ProjectAttrs struct {
 	ClientOperationId any
 	// User assigned unique identifier for the resource (output only).
-	Id any
+	Id   any
 	Kind any
 	// Unique numeric identifier for the resource; defined by the server (output only).
-	Number any
+	Number  any
 	Project any
 	// Limits associated with a Project.
 	Quota any
@@ -84,6 +84,6 @@ var Project = ubx.DataSourceBinding{
 	WireType: "google_dns_project",
 	Fields: ubx.FieldMap{
 		"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":           ubx.FieldSpec{WireName: "project"},
 	},
 }

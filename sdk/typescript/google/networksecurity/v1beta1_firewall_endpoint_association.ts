@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1FirewallEndpointAssociationConfig {
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Whether the association is disabled. True indicates that traffic won't be intercepted */
   disabled?: boolean | Computed<boolean>;
   /** Required. The URL of the FirewallEndpoint that is being associated. */
@@ -14,14 +12,8 @@ export interface V1beta1FirewallEndpointAssociationConfig {
   name?: string | Computed<string>;
   /** Required. The URL of the network that is being associated. */
   network?: string | Computed<string>;
-  /** Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Current state of the association. */
-  state?: string | Computed<string>;
   /** Optional. The URL of the TlsInspectionPolicy that is being associated. */
   tlsInspectionPolicy?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1FirewallEndpointAssociationAttrs {
@@ -50,15 +42,11 @@ export interface V1beta1FirewallEndpointAssociationAttrs {
 export const V1beta1FirewallEndpointAssociation: ResourceBinding<V1beta1FirewallEndpointAssociationConfig, V1beta1FirewallEndpointAssociationAttrs> = {
   wireType: "google_networksecurity_v1beta1_firewall_endpoint_association",
   fields: {
-    createTime: "create_time",
     disabled: "disabled",
     firewallEndpoint: "firewall_endpoint",
     labels: "labels",
     name: "name",
     network: "network",
-    reconciling: "reconciling",
-    state: "state",
     tlsInspectionPolicy: "tls_inspection_policy",
-    updateTime: "update_time",
   },
 };

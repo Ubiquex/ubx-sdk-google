@@ -4,20 +4,12 @@ package apigateway
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaApiConfig struct {
-	// Output only. Created time.
-	CreateTime any
 	// Optional. Display name.
 	DisplayName any
 	// Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
 	Labels any
 	// Optional. Immutable. The name of a Google Managed Service ( https://cloud.google.com/service-infrastructure/docs/glossary#managed). If not specified, a new Service will automatically be created in the same project as this API.
 	ManagedService any
-	// Output only. Resource name of the API. Format: projects/{project}/locations/global/apis/{api}
-	Name any
-	// Output only. State of the API.
-	State any
-	// Output only. Updated time.
-	UpdateTime any
 }
 
 type V1betaApiAttrs struct {
@@ -40,12 +32,8 @@ type V1betaApiAttrs struct {
 var V1betaApi = ubx.ResourceBinding{
 	WireType: "google_apigateway_v1beta_api",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 		"ManagedService": ubx.FieldSpec{WireName: "managed_service"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

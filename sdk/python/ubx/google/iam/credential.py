@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CredentialConfig:
-    # Output only. The system-generated OAuth client secret. The client secret must be stored securely. If the client secret is leaked, you must delete and re-create the client credential. To learn more, see [OAuth client and credential security risks and mitigations](https://cloud.google.com/iam/docs/workforce-oauth-app#security)
-    client_secret: Any = None
     # Optional. Whether the OauthClientCredential is disabled. You cannot use a disabled OauthClientCredential.
     disabled: Any = None
     # Optional. A user-specified display name of the OauthClientCredential. Cannot exceed 32 characters.
@@ -31,7 +29,6 @@ class CredentialAttrs:
 Credential = ubx.ResourceBinding(
     wire_type="google_iam_credential",
     fields={
-        "client_secret": ubx.FieldSpec(wire_name="client_secret"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),

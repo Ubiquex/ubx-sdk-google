@@ -251,18 +251,6 @@ _WorkerPool_BinaryAuthorizationFields = {
     "use_default": ubx.FieldSpec(wire_name="use_default"),
 }
 
-_WorkerPool_ConditionsFields = {
-    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
-    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
-    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _WorkerPool_InstanceSplitStatusesFields = {
     "percent": ubx.FieldSpec(wire_name="percent"),
     "revision": ubx.FieldSpec(wire_name="revision"),
@@ -580,6 +568,18 @@ _WorkerPool_TemplateFields = {
     ),
 }
 
+_WorkerPool_ConditionsFields = {
+    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
+    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
+    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 @dataclasses.dataclass
 class WorkerPoolConfig:
     # Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected in new resources. All system annotations in v1 now have a corresponding field in v2 WorkerPool. This field follows Kubernetes annotations' namespacing, limits, and rules.
@@ -590,58 +590,26 @@ class WorkerPoolConfig:
     client: Any = None
     # Arbitrary version identifier for the API client.
     client_version: Any = None
-    # Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the WorkerPool does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    conditions: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
-    # Output only. Email address of the authenticated creator.
-    creator: Any = None
     # Deprecated: Not supported, and ignored by Cloud Run.
     custom_audiences: Any = None
-    # Output only. The deletion time. It is only populated as a response to a Delete request.
-    delete_time: Any = None
     # User-provided description of the WorkerPool. This field currently has a 512-character limit.
     description: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
-    # Output only. For a deleted resource, the time after which it will be permamently deleted.
-    expire_time: Any = None
-    # Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    generation: Any = None
-    # Output only. Detailed status information for corresponding instance splits. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    instance_split_statuses: Any = None
     # Optional. Specifies how to distribute instances over a collection of Revisions belonging to the WorkerPool. If instance split is empty or not provided, defaults to 100% instances assigned to the latest `Ready` Revision.
     instance_splits: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 WorkerPool.
     labels: Any = None
-    # Output only. Email address of the last authenticated modifier.
-    last_modifier: Any = None
-    # Output only. Name of the last created revision. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    latest_created_revision: Any = None
-    # Output only. Name of the latest revision that is serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    latest_ready_revision: Any = None
     # Optional. The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
     launch_stage: Any = None
     # The fully qualified name of this WorkerPool. In CreateWorkerPoolRequest, this field is ignored, and instead composed from CreateWorkerPoolRequest.parent and CreateWorkerPoolRequest.worker_id. Format: `projects/{project}/locations/{location}/workerPools/{worker_id}`
     name: Any = None
-    # Output only. The generation of this WorkerPool currently serving workloads. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    observed_generation: Any = None
-    # Output only. Returns true if the WorkerPool is currently being acted upon by the system to bring it into the desired state. When a new WorkerPool is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the WorkerPool to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation`, `latest_ready_revison`, `instance_split_statuses`, and `uri` will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the serving state matches the WorkerPool, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `instance_splits` and `instance_split_statuses`, `observed_generation` and `generation`, `latest_ready_revision` and `latest_created_revision`. If reconciliation failed, `instance_split_statuses`, `observed_generation`, and `latest_ready_revision` will have the state of the last serving revision, or empty for newly created WorkerPools. Additional information on the failure can be found in `terminal_condition` and `conditions`.
-    reconciling: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Worker pool scaling settings.
     scaling: Any = None
     # WorkerPoolRevisionTemplate describes the data a worker pool revision should have when created from a template.
     template: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None
-    # Output only. Indicates whether Cloud Run Threat Detection monitoring is enabled for the parent project of this worker pool.
-    threat_detection_enabled: Any = None
-    # Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class WorkerPoolAttrs:
@@ -717,38 +685,17 @@ WorkerPool = ubx.ResourceBinding(
         ),
         "client": ubx.FieldSpec(wire_name="client"),
         "client_version": ubx.FieldSpec(wire_name="client_version"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="list",
-            fields=_WorkerPool_ConditionsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "custom_audiences": ubx.FieldSpec(wire_name="custom_audiences"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generation": ubx.FieldSpec(wire_name="generation"),
-        "instance_split_statuses": ubx.FieldSpec(
-            wire_name="instance_split_statuses",
-            kind="list",
-            fields=_WorkerPool_InstanceSplitStatusesFields,
-        ),
         "instance_splits": ubx.FieldSpec(
             wire_name="instance_splits",
             kind="list",
             fields=_WorkerPool_InstanceSplitStatusesFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modifier": ubx.FieldSpec(wire_name="last_modifier"),
-        "latest_created_revision": ubx.FieldSpec(wire_name="latest_created_revision"),
-        "latest_ready_revision": ubx.FieldSpec(wire_name="latest_ready_revision"),
         "launch_stage": ubx.FieldSpec(wire_name="launch_stage"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "observed_generation": ubx.FieldSpec(wire_name="observed_generation"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "scaling": ubx.FieldSpec(
             wire_name="scaling",
             kind="object",
@@ -764,8 +711,5 @@ WorkerPool = ubx.ResourceBinding(
             kind="object",
             fields=_WorkerPool_ConditionsFields,
         ),
-        "threat_detection_enabled": ubx.FieldSpec(wire_name="threat_detection_enabled"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

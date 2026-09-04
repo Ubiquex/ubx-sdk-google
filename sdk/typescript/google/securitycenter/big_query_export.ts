@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BigQueryExportConfig {
-  createTime?: string | Computed<string>;
   dataset?: string | Computed<string>;
   description?: string | Computed<string>;
   filter?: string | Computed<string>;
-  mostRecentEditor?: string | Computed<string>;
   name?: string | Computed<string>;
-  principal?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface BigQueryExportAttrs {
@@ -26,13 +22,9 @@ export interface BigQueryExportAttrs {
 export const BigQueryExport: ResourceBinding<BigQueryExportConfig, BigQueryExportAttrs> = {
   wireType: "google_securitycenter_big_query_export",
   fields: {
-    createTime: "create_time",
     dataset: "dataset",
     description: "description",
     filter: "filter",
-    mostRecentEditor: "most_recent_editor",
     name: "name",
-    principal: "principal",
-    updateTime: "update_time",
   },
 };

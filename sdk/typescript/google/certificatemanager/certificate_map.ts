@@ -12,36 +12,15 @@ export interface CertificateMap_GclbTargets {
   targetSslProxy?: string | Computed<string>;
 }
 
-const CertificateMap_GclbTargets_IpConfigsFields: FieldMap = {
-  ipAddress: "ip_address",
-  ports: "ports",
-};
-
-const CertificateMap_GclbTargetsFields: FieldMap = {
-  ipConfigs: {
-    wireName: "ip_configs",
-    kind: "list",
-    fields: CertificateMap_GclbTargets_IpConfigsFields,
-  },
-  targetHttpsProxy: "target_https_proxy",
-  targetSslProxy: "target_ssl_proxy",
-};
-
 export interface CertificateMapConfig {
-  /** Output only. The creation timestamp of a Certificate Map. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a certificate map. */
   description?: string | Computed<string>;
-  /** Output only. A list of GCLB targets that use this Certificate Map. A Target Proxy is only present on this list if it's attached to a Forwarding Rule. */
-  gclbTargets?: CertificateMap_GclbTargets[] | Computed<CertificateMap_GclbTargets[]>;
   /** Optional. Set of labels associated with a Certificate Map. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. A user-defined name of the Certificate Map. Certificate Map names must be unique globally and match pattern `projects/* /locations/* /certificateMaps/*`. */
   name?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The update timestamp of a Certificate Map. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CertificateMapAttrs {
@@ -64,16 +43,9 @@ export interface CertificateMapAttrs {
 export const CertificateMap: ResourceBinding<CertificateMapConfig, CertificateMapAttrs> = {
   wireType: "google_certificatemanager_certificate_map",
   fields: {
-    createTime: "create_time",
     description: "description",
-    gclbTargets: {
-      wireName: "gclb_targets",
-      kind: "list",
-      fields: CertificateMap_GclbTargetsFields,
-    },
     labels: "labels",
     name: "name",
     tags: "tags",
-    updateTime: "update_time",
   },
 };

@@ -4,12 +4,10 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FeedbackEntryConfig struct {
-	// Output only. The time at which the entry was created.
-	CreateTime any
 	// Optional. Additional key-value metadata associated with the feedback.
 	CustomMetadata any
 	// Required. The ID of the event within the session that the feedback relates to.
-	EventId any
+	EventId        any
 	FeedbackLabels any
 	// Optional. Qualitative free-form comments provided by the user.
 	FeedbackText any
@@ -21,8 +19,6 @@ type V1beta1FeedbackEntryConfig struct {
 	SessionId any
 	// Optional. The surface that the feedback originated from.
 	Source any
-	// Output only. The time at which the entry was most recently updated.
-	UpdateTime any
 	// Optional. A caller-supplied identifier for the user who provided the feedback. The semantics of this field (for example whether it is an opaque token, a hashed value, or a user-visible identifier) are determined by the calling application.
 	UserId any
 }
@@ -33,7 +29,7 @@ type V1beta1FeedbackEntryAttrs struct {
 	// Optional. Additional key-value metadata associated with the feedback.
 	CustomMetadata any
 	// Required. The ID of the event within the session that the feedback relates to.
-	EventId any
+	EventId        any
 	FeedbackLabels any
 	// Optional. Qualitative free-form comments provided by the user.
 	FeedbackText any
@@ -54,16 +50,14 @@ type V1beta1FeedbackEntryAttrs struct {
 var V1beta1FeedbackEntry = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_feedback_entry",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomMetadata": ubx.FieldSpec{WireName: "custom_metadata"},
-		"EventId": ubx.FieldSpec{WireName: "event_id"},
+		"EventId":        ubx.FieldSpec{WireName: "event_id"},
 		"FeedbackLabels": ubx.FieldSpec{WireName: "feedback_labels"},
-		"FeedbackText": ubx.FieldSpec{WireName: "feedback_text"},
-		"FeedbackType": ubx.FieldSpec{WireName: "feedback_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"FeedbackText":   ubx.FieldSpec{WireName: "feedback_text"},
+		"FeedbackType":   ubx.FieldSpec{WireName: "feedback_type"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"SessionId":      ubx.FieldSpec{WireName: "session_id"},
+		"Source":         ubx.FieldSpec{WireName: "source"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

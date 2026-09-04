@@ -11,13 +11,11 @@ type DnsZone_PeeringConfig struct {
 }
 
 var DnsZone_PeeringConfigFields = ubx.FieldMap{
-		"TargetNetworkId": ubx.FieldSpec{WireName: "target_network_id"},
-		"TargetProjectId": ubx.FieldSpec{WireName: "target_project_id"},
-	}
+	"TargetNetworkId": ubx.FieldSpec{WireName: "target_network_id"},
+	"TargetProjectId": ubx.FieldSpec{WireName: "target_project_id"},
+}
 
 type DnsZoneConfig struct {
-	// Output only. The time that this resource was created on the server.
-	CreateTime any
 	// Required. Description of the resource. String of at most 1024 characters associated with this resource for the user's convenience.
 	Description any
 	// Required. The domain name for hosts in this private zone, for instance "example.com.".
@@ -26,10 +24,6 @@ type DnsZoneConfig struct {
 	Name any
 	// Fields for DNS PEERING zone.
 	PeeringConfig any
-	// Output only. State of the DNS Peering. Values other than `ACTIVE` mean the resource is not ready to use.
-	State any
-	// Output only. The time that this resource was updated on the server.
-	UpdateTime any
 }
 
 type DnsZoneAttrs struct {
@@ -52,16 +46,13 @@ type DnsZoneAttrs struct {
 var DnsZone = ubx.ResourceBinding{
 	WireType: "google_apigee_dns_zone",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PeeringConfig": ubx.FieldSpec{
 			WireName: "peering_config",
-			Kind: "object",
-			Fields: DnsZone_PeeringConfigFields,
+			Kind:     "object",
+			Fields:   DnsZone_PeeringConfigFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

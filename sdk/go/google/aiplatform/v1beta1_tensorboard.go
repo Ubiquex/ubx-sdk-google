@@ -9,14 +9,10 @@ type V1beta1Tensorboard_EncryptionSpec struct {
 }
 
 var V1beta1Tensorboard_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 type V1beta1TensorboardConfig struct {
-	// Output only. Consumer project Cloud Storage path prefix used to store blob data, which can either be a bucket or directory. Does not end with a '/'.
-	BlobStoragePathPrefix any
-	// Output only. Timestamp when this Tensorboard was created.
-	CreateTime any
 	// Description of this Tensorboard.
 	Description any
 	// Required. User provided name of this Tensorboard.
@@ -29,16 +25,6 @@ type V1beta1TensorboardConfig struct {
 	IsDefault any
 	// The labels with user-defined metadata to organize your Tensorboards. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Tensorboard (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
 	Labels any
-	// Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
-	Name any
-	// Output only. The number of Runs stored in this Tensorboard.
-	RunCount any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Timestamp when this Tensorboard was last updated.
-	UpdateTime any
 }
 
 type V1beta1TensorboardAttrs struct {
@@ -73,22 +59,15 @@ type V1beta1TensorboardAttrs struct {
 var V1beta1Tensorboard = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_tensorboard",
 	Fields: ubx.FieldMap{
-		"BlobStoragePathPrefix": ubx.FieldSpec{WireName: "blob_storage_path_prefix"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Tensorboard_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Tensorboard_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":      ubx.FieldSpec{WireName: "etag"},
 		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RunCount": ubx.FieldSpec{WireName: "run_count"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":    ubx.FieldSpec{WireName: "labels"},
 	},
 }

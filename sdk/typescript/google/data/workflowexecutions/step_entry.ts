@@ -34,7 +34,6 @@ export interface StepEntry_VariableData {
 }
 
 export interface StepEntryConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -68,7 +67,6 @@ export interface StepEntryAttrs {
 export const StepEntry: DataSourceBinding<StepEntryConfig, StepEntryAttrs> = {
   wireType: "google_workflowexecutions_step_entry",
   fields: {
-    name: "name",
     view: "view",
   },
 };

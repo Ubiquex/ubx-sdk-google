@@ -525,19 +525,11 @@ class AlphaRegionCommitmentConfig:
     auto_renew: Any = None
     # The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to.
     category: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration.
     custom_end_timestamp: Any = None
     # An optional description of the commitment. You can provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] Commitment end time inRFC3339 text format.
-    end_timestamp: Any = None
     existing_reservations: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#commitment for commitments.
-    kind: Any = None
     # Commitment for a particular license resource.
     license_resource: Any = None
     # The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments.
@@ -550,26 +542,14 @@ class AlphaRegionCommitmentConfig:
     persistent_disk_resources: Any = None
     # The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years).
     plan: Any = None
-    # Output only. [Output Only] URL of the region where the commitment and committed resources are located.
-    region: Any = None
     # The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead.
     reservations: Any = None
     # [Output Only] Contains output only fields.
     resource_status: Any = None
     # The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type.
     resources: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments.
     split_source_commitment: Any = None
-    # Output only. [Output Only] Commitment start time inRFC3339 text format.
-    start_timestamp: Any = None
-    # Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED.
-    status: Any = None
-    # Output only. [Output Only] An optional, human-readable explanation of the status.
-    status_message: Any = None
     # The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series.
     type: Any = None
 
@@ -632,13 +612,9 @@ AlphaRegionCommitment = ubx.ResourceBinding(
     fields={
         "auto_renew": ubx.FieldSpec(wire_name="auto_renew"),
         "category": ubx.FieldSpec(wire_name="category"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "custom_end_timestamp": ubx.FieldSpec(wire_name="custom_end_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "end_timestamp": ubx.FieldSpec(wire_name="end_timestamp"),
         "existing_reservations": ubx.FieldSpec(wire_name="existing_reservations"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "license_resource": ubx.FieldSpec(
             wire_name="license_resource",
             kind="object",
@@ -657,7 +633,6 @@ AlphaRegionCommitment = ubx.ResourceBinding(
             fields=_AlphaRegionCommitment_PersistentDiskResourcesFields,
         ),
         "plan": ubx.FieldSpec(wire_name="plan"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "reservations": ubx.FieldSpec(
             wire_name="reservations",
             kind="list",
@@ -673,12 +648,7 @@ AlphaRegionCommitment = ubx.ResourceBinding(
             kind="list",
             fields=_AlphaRegionCommitment_ResourcesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "split_source_commitment": ubx.FieldSpec(wire_name="split_source_commitment"),
-        "start_timestamp": ubx.FieldSpec(wire_name="start_timestamp"),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

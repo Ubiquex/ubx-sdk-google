@@ -35,7 +35,7 @@ type ReleaseAttrs struct {
 	FirebaseConsoleUri any
 	// Output only. Number of testers who have downloaded this release.
 	InstallationCount any
-	Name any
+	Name              any
 	// Output only. Number of testers who were invited (incl. expired invitations), but did not (yet) accept the invitation.
 	OpenInvitationCount any
 	// Notes that belong to a release.

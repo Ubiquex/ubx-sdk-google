@@ -13,14 +13,8 @@ const Link_BigqueryDatasetFields: FieldMap = {
 export interface LinkConfig {
   /** Describes a BigQuery dataset that was created by a link. */
   bigqueryDataset?: Link_BigqueryDataset | Computed<Link_BigqueryDataset>;
-  /** Output only. The creation timestamp of the link. */
-  createTime?: string | Computed<string>;
   /** Optional. Describes this link.The maximum length of the description is 8000 characters. */
   description?: string | Computed<string>;
-  /** Output only. The resource lifecycle state. */
-  lifecycleState?: string | Computed<string>;
-  /** Output only. The resource name of the link. The name can have up to 100 characters. A valid link id (at the end of the link name) must only have alphanumeric characters and underscores within it. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" For example:`projects/my-project/locations/global/buckets/my-bucket/links/my_link */
-  name?: string | Computed<string>;
 }
 
 export interface LinkAttrs {
@@ -44,9 +38,6 @@ export const Link: ResourceBinding<LinkConfig, LinkAttrs> = {
       kind: "object",
       fields: Link_BigqueryDatasetFields,
     },
-    createTime: "create_time",
     description: "description",
-    lifecycleState: "lifecycle_state",
-    name: "name",
   },
 };

@@ -29,8 +29,6 @@ const V1beta1SacRealm_SymantecOptionsFields: FieldMap = {
 };
 
 export interface V1beta1SacRealmConfig {
-  /** Output only. Timestamp when the realm was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional list of labels applied to the resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`. */
@@ -39,12 +37,8 @@ export interface V1beta1SacRealmConfig {
   pairingKey?: V1beta1SacRealm_PairingKey | Computed<V1beta1SacRealm_PairingKey>;
   /** Immutable. SSE service provider associated with the realm. */
   securityService?: string | Computed<string>;
-  /** Output only. State of the realm. */
-  state?: string | Computed<string>;
   /** Fields specific to realms using Symantec Cloud SWG. */
   symantecOptions?: V1beta1SacRealm_SymantecOptions | Computed<V1beta1SacRealm_SymantecOptions>;
-  /** Output only. Timestamp when the realm was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1SacRealmAttrs {
@@ -69,7 +63,6 @@ export interface V1beta1SacRealmAttrs {
 export const V1beta1SacRealm: ResourceBinding<V1beta1SacRealmConfig, V1beta1SacRealmAttrs> = {
   wireType: "google_networksecurity_v1beta1_sac_realm",
   fields: {
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     pairingKey: {
@@ -78,12 +71,10 @@ export const V1beta1SacRealm: ResourceBinding<V1beta1SacRealmConfig, V1beta1SacR
       fields: V1beta1SacRealm_PairingKeyFields,
     },
     securityService: "security_service",
-    state: "state",
     symantecOptions: {
       wireName: "symantec_options",
       kind: "object",
       fields: V1beta1SacRealm_SymantecOptionsFields,
     },
-    updateTime: "update_time",
   },
 };

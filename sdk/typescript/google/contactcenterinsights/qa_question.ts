@@ -81,8 +81,6 @@ export interface QaQuestionConfig {
   answerChoices?: QaQuestion_AnswerChoices[] | Computed<QaQuestion_AnswerChoices[]>;
   /** Instructions describing how to determine the answer. */
   answerInstructions?: string | Computed<string>;
-  /** Output only. The time at which this question was created. */
-  createTime?: string | Computed<string>;
   /** A wrapper representing metrics calculated against a test-set on a LLM that was fine tuned for this question. */
   metrics?: QaQuestion_Metrics | Computed<QaQuestion_Metrics>;
   /** Identifier. The resource name of the question. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}/qaQuestions/{qa_question} */
@@ -101,8 +99,6 @@ export interface QaQuestionConfig {
   tags?: string[] | Computed<string[]>;
   /** Metadata about the tuning operation for the question. Will only be set if a scorecard containing this question has been tuned. */
   tuningMetadata?: QaQuestion_TuningMetadata | Computed<QaQuestion_TuningMetadata>;
-  /** Output only. The most recent time at which the question was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface QaQuestionAttrs {
@@ -146,7 +142,6 @@ export const QaQuestion: ResourceBinding<QaQuestionConfig, QaQuestionAttrs> = {
       fields: QaQuestion_AnswerChoicesFields,
     },
     answerInstructions: "answer_instructions",
-    createTime: "create_time",
     metrics: {
       wireName: "metrics",
       kind: "object",
@@ -172,6 +167,5 @@ export const QaQuestion: ResourceBinding<QaQuestionConfig, QaQuestionAttrs> = {
       kind: "object",
       fields: QaQuestion_TuningMetadataFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -283,20 +283,14 @@ const DbSystem_PropertiesFields: FieldMap = {
 };
 
 export interface DbSystemConfig {
-  /** Output only. The date and time that the DbSystem was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name for the System db. The name does not have to be unique within your project. */
   displayName?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the DbSystem */
-  entitlementId?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where Oracle DbSystem is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
   gcpOracleZone?: string | Computed<string>;
   /** Optional. The labels or tags associated with the DbSystem. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the DbSystem resource in the following format: projects/{project}/locations/{region}/dbSystems/{db_system} */
   name?: string | Computed<string>;
-  /** Output only. HTTPS link to OCI resources exposed to Customer via UI Interface. */
-  ociUrl?: string | Computed<string>;
   /** Optional. The name of the OdbNetwork associated with the DbSystem. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network} It is optional but if specified, this should match the parent ODBNetwork of the OdbSubnet. */
   odbNetwork?: string | Computed<string>;
   /** Required. The name of the OdbSubnet associated with the DbSystem for IP allocation. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet} */
@@ -331,13 +325,10 @@ export interface DbSystemAttrs {
 export const DbSystem: ResourceBinding<DbSystemConfig, DbSystemAttrs> = {
   wireType: "google_oracledatabase_db_system",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",
     name: "name",
-    ociUrl: "oci_url",
     odbNetwork: "odb_network",
     odbSubnet: "odb_subnet",
     properties: {

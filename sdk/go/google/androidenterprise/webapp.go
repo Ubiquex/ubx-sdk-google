@@ -8,8 +8,8 @@ type Webapp_Icons struct {
 }
 
 var Webapp_IconsFields = ubx.FieldMap{
-		"ImageData": ubx.FieldSpec{WireName: "image_data"},
-	}
+	"ImageData": ubx.FieldSpec{WireName: "image_data"},
+}
 
 type WebappConfig struct {
 	// The display mode of the web app. Possible values include: - "minimalUi", the device's status bar, navigation bar, the app's URL, and a refresh button are visible when the app is open. For HTTP URLs, you can only select this option. - "standalone", the device's status bar and navigation bar are visible when the app is open. - "fullScreen", the app opens in full screen mode, hiding the device's status and navigation bars. All browser UI elements, page URL, system status bar and back button are not visible, and the web app takes up the entirety of the available display area.
@@ -51,13 +51,13 @@ var Webapp = ubx.ResourceBinding{
 		"DisplayMode": ubx.FieldSpec{WireName: "display_mode"},
 		"Icons": ubx.FieldSpec{
 			WireName: "icons",
-			Kind: "list",
-			Fields: Webapp_IconsFields,
+			Kind:     "list",
+			Fields:   Webapp_IconsFields,
 		},
 		"IsPublished": ubx.FieldSpec{WireName: "is_published"},
-		"StartUrl": ubx.FieldSpec{WireName: "start_url"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"StartUrl":    ubx.FieldSpec{WireName: "start_url"},
+		"Title":       ubx.FieldSpec{WireName: "title"},
 		"VersionCode": ubx.FieldSpec{WireName: "version_code"},
-		"WebAppId": ubx.FieldSpec{WireName: "web_app_id"},
+		"WebAppId":    ubx.FieldSpec{WireName: "web_app_id"},
 	},
 }

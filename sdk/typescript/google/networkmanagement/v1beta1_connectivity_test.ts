@@ -1233,14 +1233,10 @@ const V1beta1ConnectivityTest_ReachabilityDetailsFields: FieldMap = {
 export interface V1beta1ConnectivityTestConfig {
   /** Whether the analysis should skip firewall checking. Default value is false. */
   bypassFirewallChecks?: boolean | Computed<boolean>;
-  /** Output only. The time the test was created. */
-  createTime?: string | Computed<string>;
   /** The user-supplied description of the Connectivity Test. Maximum of 512 characters. */
   description?: string | Computed<string>;
   /** Source or destination of the Connectivity Test. */
   destination?: V1beta1ConnectivityTest_Destination | Computed<V1beta1ConnectivityTest_Destination>;
-  /** Output only. The display name of a Connectivity Test. */
-  displayName?: string | Computed<string>;
   /** Resource labels to represent user-provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test}` */
@@ -1259,8 +1255,6 @@ export interface V1beta1ConnectivityTestConfig {
   roundTrip?: boolean | Computed<boolean>;
   /** Source or destination of the Connectivity Test. */
   source?: V1beta1ConnectivityTest_Destination | Computed<V1beta1ConnectivityTest_Destination>;
-  /** Output only. The time the test's configuration was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ConnectivityTestAttrs {
@@ -1300,14 +1294,12 @@ export const V1beta1ConnectivityTest: ResourceBinding<V1beta1ConnectivityTestCon
   wireType: "google_networkmanagement_v1beta1_connectivity_test",
   fields: {
     bypassFirewallChecks: "bypass_firewall_checks",
-    createTime: "create_time",
     description: "description",
     destination: {
       wireName: "destination",
       kind: "object",
       fields: V1beta1ConnectivityTest_DestinationFields,
     },
-    displayName: "display_name",
     labels: "labels",
     name: "name",
     probingDetails: {
@@ -1333,6 +1325,5 @@ export const V1beta1ConnectivityTest: ResourceBinding<V1beta1ConnectivityTestCon
       kind: "object",
       fields: V1beta1ConnectivityTest_DestinationFields,
     },
-    updateTime: "update_time",
   },
 };

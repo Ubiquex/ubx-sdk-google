@@ -637,10 +637,6 @@ const BetaRegionBackendService_TlsSettingsFields: FieldMap = {
   },
 };
 
-const BetaRegionBackendService_UsedByFields: FieldMap = {
-  reference: "reference",
-};
-
 export interface BetaRegionBackendServiceConfig {
   /** Lifetime of cookies in seconds. This setting is applicable to Application Load Balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. */
   affinityCookieTtlSec?: number | Computed<number>;
@@ -658,8 +654,6 @@ export interface BetaRegionBackendServiceConfig {
   connectionTrackingPolicy?: BetaRegionBackendService_ConnectionTrackingPolicy | Computed<BetaRegionBackendService_ConnectionTrackingPolicy>;
   /** This message defines settings for a consistent hash style load balancer. */
   consistentHash?: BetaRegionBackendService_ConsistentHash | Computed<BetaRegionBackendService_ConsistentHash>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** List of custom metrics that are used for theWEIGHTED_ROUND_ROBIN locality_lb_policy. */
   customMetrics?: BetaRegionBackendService_CustomMetrics[] | Computed<BetaRegionBackendService_CustomMetrics[]>;
   /** Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers). */
@@ -691,8 +685,6 @@ export interface BetaRegionBackendServiceConfig {
   id?: string | Computed<string>;
   /** Specifies a preference for traffic sent from the proxy to the backend (or from the client to the backend for proxyless gRPC). The possible values are: - IPV4_ONLY: Only send IPv4 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv4 health checks are used to check the health of the backends. This is the default setting. - PREFER_IPV6: Prioritize the connection to the endpoint's IPv6 address over its IPv4 address (provided there is a healthy IPv6 address). - IPV6_ONLY: Only send IPv6 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv6 health checks are used to check the health of the backends. This field is applicable to either: - Advanced global external Application Load Balancer (load balancing scheme EXTERNAL_MANAGED), - Regional external Application Load Balancer, - Internal proxy Network Load Balancer (load balancing scheme INTERNAL_MANAGED), - Regional internal Application Load Balancer (load balancing scheme INTERNAL_MANAGED), - Traffic Director with Envoy proxies and proxyless gRPC (load balancing scheme INTERNAL_SELF_MANAGED). */
   ipAddressSelectionPolicy?: string | Computed<string>;
-  /** Output only. [Output Only] Type of resource. Always compute#backendService for backend services. */
-  kind?: string | Computed<string>;
   /** Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Backend services product and scheme table. */
   loadBalancingScheme?: string | Computed<string>;
   /** A list of locality load-balancing policies to be used in order of preference. When you use localityLbPolicies, you must set at least one value for either the localityLbPolicies[].policy or the localityLbPolicies[].customPolicy field. localityLbPolicies overrides any value set in the localityLbPolicy field. For an example of how to use this field, seeDefine a list of preferred policies. Caution: This field and its children are intended for use in a service mesh that includes gRPC clients only. Envoy proxies can't use backend services that have this configuration. */
@@ -722,8 +714,6 @@ export interface BetaRegionBackendServiceConfig {
   portName?: string | Computed<string>;
   /** The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP, GRPC, or UNSPECIFIED, depending on the chosen load balancer or Traffic Director configuration. Refer to Load balancing features for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy. */
   protocol?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] The resource URL for the security policy associated with this backend service. */
   securityPolicy?: string | Computed<string>;
   /** The authentication and authorization settings for a BackendService. */
@@ -743,8 +733,6 @@ export interface BetaRegionBackendServiceConfig {
   /** The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration. */
   timeoutSec?: number | Computed<number>;
   tlsSettings?: BetaRegionBackendService_TlsSettings | Computed<BetaRegionBackendService_TlsSettings>;
-  /** Output only. [Output Only] List of resources referencing given backend service. */
-  usedBy?: BetaRegionBackendService_UsedBy[] | Computed<BetaRegionBackendService_UsedBy[]>;
 }
 
 export interface BetaRegionBackendServiceAttrs {
@@ -888,7 +876,6 @@ export const BetaRegionBackendService: ResourceBinding<BetaRegionBackendServiceC
       kind: "object",
       fields: BetaRegionBackendService_ConsistentHashFields,
     },
-    creationTimestamp: "creation_timestamp",
     customMetrics: {
       wireName: "custom_metrics",
       kind: "list",
@@ -925,7 +912,6 @@ export const BetaRegionBackendService: ResourceBinding<BetaRegionBackendServiceC
     },
     id: "id",
     ipAddressSelectionPolicy: "ip_address_selection_policy",
-    kind: "kind",
     loadBalancingScheme: "load_balancing_scheme",
     localityLbPolicies: {
       wireName: "locality_lb_policies",
@@ -969,7 +955,6 @@ export const BetaRegionBackendService: ResourceBinding<BetaRegionBackendServiceC
     port: "port",
     portName: "port_name",
     protocol: "protocol",
-    region: "region",
     securityPolicy: "security_policy",
     securitySettings: {
       wireName: "security_settings",
@@ -995,11 +980,6 @@ export const BetaRegionBackendService: ResourceBinding<BetaRegionBackendServiceC
       wireName: "tls_settings",
       kind: "object",
       fields: BetaRegionBackendService_TlsSettingsFields,
-    },
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: BetaRegionBackendService_UsedByFields,
     },
   },
 };

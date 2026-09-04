@@ -25,22 +25,14 @@ _Canaryevaluation_MetricLabelsFields = {
 class CanaryevaluationConfig:
     # Required. The stable version that is serving requests.
     control: Any = None
-    # Output only. Create time of the canary evaluation.
-    create_time: Any = None
     # Required. End time for the evaluation's analysis.
     end_time: Any = None
     # Labels that can be used to filter Apigee metrics.
     metric_labels: Any = None
-    # Output only. Name of the canary evalution.
-    name: Any = None
     # Required. Start time for the canary evaluation's analysis.
     start_time: Any = None
-    # Output only. The current state of the canary evaluation.
-    state: Any = None
     # Required. The newer version that is serving requests.
     treatment: Any = None
-    # Output only. The resulting verdict of the canary evaluations: NONE, PASS, or FAIL.
-    verdict: Any = None
 
 @dataclasses.dataclass
 class CanaryevaluationAttrs:
@@ -67,17 +59,13 @@ Canaryevaluation = ubx.ResourceBinding(
     wire_type="google_apigee_canaryevaluation",
     fields={
         "control": ubx.FieldSpec(wire_name="control"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "end_time": ubx.FieldSpec(wire_name="end_time"),
         "metric_labels": ubx.FieldSpec(
             wire_name="metric_labels",
             kind="object",
             fields=_Canaryevaluation_MetricLabelsFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "treatment": ubx.FieldSpec(wire_name="treatment"),
-        "verdict": ubx.FieldSpec(wire_name="verdict"),
     },
 )

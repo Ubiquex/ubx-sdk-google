@@ -4,25 +4,25 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Data_Point_Results_AccessList_Get struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Data_Point_Results_AccessList_Remove struct {
-	Name any
+	Name    any
 	Success any
 }
 
 type Data_Point_Results_AccessList_Set struct {
-	Name any
+	Name    any
 	Success any
-	Value any
+	Value   any
 }
 
 type Data_Point_Results_AccessList struct {
-	Get any
+	Get    any
 	Remove any
-	Set any
+	Set    any
 }
 
 type Data_Point_Results_Properties struct {
@@ -30,20 +30,20 @@ type Data_Point_Results_Properties struct {
 }
 
 type Data_Point_Results struct {
-	AccessList any
+	AccessList   any
 	ActionResult any
-	Content any
-	Headers any
-	Properties any
+	Content      any
+	Headers      any
+	Properties   any
 	ReasonPhrase any
-	StatusCode any
-	Timestamp any
-	URi any
-	Verb any
+	StatusCode   any
+	Timestamp    any
+	URi          any
+	Verb         any
 }
 
 type Data_Point struct {
-	Id any
+	Id      any
 	Results any
 }
 
@@ -54,7 +54,7 @@ type DataConfig struct {
 type DataAttrs struct {
 	// Flag indicating whether a transaction is completed or not
 	Completed any
-	Name any
+	Name      any
 	// List of debug data collected by runtime plane at various defined points in the flow.
 	Point any
 }

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ScimTenantConfig {
-  /** Output only. Gemini Enterprise only. Represents the base URI as defined in [RFC 7644, Section 1.3](https://datatracker.ietf.org/doc/html/rfc7644#section-1.3). Clients must use this as the root address for managing resources under the tenant. Format: https://iamscim.googleapis.com/{version}/{tenant_id}/ */
-  baseUri?: string | Computed<string>;
   /** Required. Immutable. Gemini Enterprise only. Maps SCIM attributes to Google attributes. This mapping is used to associate the attributes synced via SCIM with the Google Cloud attributes used in IAM policies for Workforce Identity Federation. SCIM-managed user and group attributes are mapped to `google.subject` and `google.group` respectively. Each key must be a string specifying the Google Cloud IAM attribute to map to. The supported keys are as follows: * `google.subject`: The principal IAM is authenticating. You can reference this value in IAM bindings. This is also the subject that appears in Cloud Logging logs. This is a required field and the mapped subject cannot exceed 127 bytes. * `google.group`: Group the authenticating user belongs to. You can grant group access to resources using an IAM `principalSet` binding; access applies to all members of the group. Each value must be a [Common Expression Language] (https://opensource.google/projects/cel) expression that maps SCIM user or group attribute to the normalized attribute specified by the corresponding map key. Example: To map the SCIM user's `externalId` to `google.subject` and the SCIM group's `externalId` to `google.group`: ``` { "google.subject": "user.externalId", "google.group": "group.externalId" } ``` */
   claimMapping?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Gemini Enterprise only. The description of the SCIM tenant. Cannot exceed 256 characters. */
@@ -12,12 +10,6 @@ export interface ScimTenantConfig {
   displayName?: string | Computed<string>;
   /** Identifier. Gemini Enterprise only. The resource name of the SCIM Tenant. Format: `locations/{location}/workforcePools/{workforce_pool}/providers/ {workforce_pool_provider}/scimTenants/{scim_tenant}` */
   name?: string | Computed<string>;
-  /** Output only. Gemini Enterprise only. The timestamp that represents the time when the SCIM tenant is purged. */
-  purgeTime?: string | Computed<string>;
-  /** Output only. Service Agent created by SCIM Tenant API. SCIM tokens created under this tenant will be attached to this service agent. */
-  serviceAgent?: string | Computed<string>;
-  /** Output only. Gemini Enterprise only. The state of the tenant. */
-  state?: string | Computed<string>;
 }
 
 export interface ScimTenantAttrs {
@@ -42,13 +34,9 @@ export interface ScimTenantAttrs {
 export const ScimTenant: ResourceBinding<ScimTenantConfig, ScimTenantAttrs> = {
   wireType: "google_iam_scim_tenant",
   fields: {
-    baseUri: "base_uri",
     claimMapping: "claim_mapping",
     description: "description",
     displayName: "display_name",
     name: "name",
-    purgeTime: "purge_time",
-    serviceAgent: "service_agent",
-    state: "state",
   },
 };

@@ -4,11 +4,11 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecuritySetting_AudioExportSettings struct {
-	AudioExportPattern any
-	AudioFormat any
+	AudioExportPattern   any
+	AudioFormat          any
 	EnableAudioRedaction any
-	GcsBucket any
-	StoreTtsAudio any
+	GcsBucket            any
+	StoreTtsAudio        any
 }
 
 type SecuritySetting_InsightsExportSettings struct {
@@ -16,43 +16,43 @@ type SecuritySetting_InsightsExportSettings struct {
 }
 
 var SecuritySetting_AudioExportSettingsFields = ubx.FieldMap{
-		"AudioExportPattern": ubx.FieldSpec{WireName: "audio_export_pattern"},
-		"AudioFormat": ubx.FieldSpec{WireName: "audio_format"},
-		"EnableAudioRedaction": ubx.FieldSpec{WireName: "enable_audio_redaction"},
-		"GcsBucket": ubx.FieldSpec{WireName: "gcs_bucket"},
-		"StoreTtsAudio": ubx.FieldSpec{WireName: "store_tts_audio"},
-	}
+	"AudioExportPattern":   ubx.FieldSpec{WireName: "audio_export_pattern"},
+	"AudioFormat":          ubx.FieldSpec{WireName: "audio_format"},
+	"EnableAudioRedaction": ubx.FieldSpec{WireName: "enable_audio_redaction"},
+	"GcsBucket":            ubx.FieldSpec{WireName: "gcs_bucket"},
+	"StoreTtsAudio":        ubx.FieldSpec{WireName: "store_tts_audio"},
+}
 
 var SecuritySetting_InsightsExportSettingsFields = ubx.FieldMap{
-		"EnableInsightsExport": ubx.FieldSpec{WireName: "enable_insights_export"},
-	}
+	"EnableInsightsExport": ubx.FieldSpec{WireName: "enable_insights_export"},
+}
 
 type SecuritySettingConfig struct {
-	AudioExportSettings any
-	DeidentifyTemplate any
-	DisplayName any
+	AudioExportSettings    any
+	DeidentifyTemplate     any
+	DisplayName            any
 	InsightsExportSettings any
-	InspectTemplate any
-	Name any
-	PurgeDataTypes any
-	RedactionScope any
-	RedactionStrategy any
-	RetentionStrategy any
-	RetentionWindowDays any
+	InspectTemplate        any
+	Name                   any
+	PurgeDataTypes         any
+	RedactionScope         any
+	RedactionStrategy      any
+	RetentionStrategy      any
+	RetentionWindowDays    any
 }
 
 type SecuritySettingAttrs struct {
-	AudioExportSettings any
-	DeidentifyTemplate any
-	DisplayName any
+	AudioExportSettings    any
+	DeidentifyTemplate     any
+	DisplayName            any
 	InsightsExportSettings any
-	InspectTemplate any
-	Name any
-	PurgeDataTypes any
-	RedactionScope any
-	RedactionStrategy any
-	RetentionStrategy any
-	RetentionWindowDays any
+	InspectTemplate        any
+	Name                   any
+	PurgeDataTypes         any
+	RedactionScope         any
+	RedactionStrategy      any
+	RetentionStrategy      any
+	RetentionWindowDays    any
 }
 
 var SecuritySetting = ubx.ResourceBinding{
@@ -60,22 +60,22 @@ var SecuritySetting = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AudioExportSettings": ubx.FieldSpec{
 			WireName: "audio_export_settings",
-			Kind: "object",
-			Fields: SecuritySetting_AudioExportSettingsFields,
+			Kind:     "object",
+			Fields:   SecuritySetting_AudioExportSettingsFields,
 		},
 		"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
 		"InsightsExportSettings": ubx.FieldSpec{
 			WireName: "insights_export_settings",
-			Kind: "object",
-			Fields: SecuritySetting_InsightsExportSettingsFields,
+			Kind:     "object",
+			Fields:   SecuritySetting_InsightsExportSettingsFields,
 		},
-		"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PurgeDataTypes": ubx.FieldSpec{WireName: "purge_data_types"},
-		"RedactionScope": ubx.FieldSpec{WireName: "redaction_scope"},
-		"RedactionStrategy": ubx.FieldSpec{WireName: "redaction_strategy"},
-		"RetentionStrategy": ubx.FieldSpec{WireName: "retention_strategy"},
+		"InspectTemplate":     ubx.FieldSpec{WireName: "inspect_template"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"PurgeDataTypes":      ubx.FieldSpec{WireName: "purge_data_types"},
+		"RedactionScope":      ubx.FieldSpec{WireName: "redaction_scope"},
+		"RedactionStrategy":   ubx.FieldSpec{WireName: "redaction_strategy"},
+		"RetentionStrategy":   ubx.FieldSpec{WireName: "retention_strategy"},
 		"RetentionWindowDays": ubx.FieldSpec{WireName: "retention_window_days"},
 	},
 }

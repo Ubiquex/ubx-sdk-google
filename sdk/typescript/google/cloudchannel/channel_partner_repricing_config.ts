@@ -141,12 +141,8 @@ const ChannelPartnerRepricingConfig_RepricingConfigFields: FieldMap = {
 };
 
 export interface ChannelPartnerRepricingConfigConfig {
-  /** Output only. Resource name of the ChannelPartnerRepricingConfig. Format: accounts/{account_id}/channelPartnerLinks/{channel_partner_id}/channelPartnerRepricingConfigs/{id}. */
-  name?: string | Computed<string>;
   /** Configuration for repricing a Google bill over a period of time. */
   repricingConfig?: ChannelPartnerRepricingConfig_RepricingConfig | Computed<ChannelPartnerRepricingConfig_RepricingConfig>;
-  /** Output only. Timestamp of an update to the repricing rule. If `update_time` is after RepricingConfig.effective_invoice_month then it indicates this was set mid-month. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ChannelPartnerRepricingConfigAttrs {
@@ -161,12 +157,10 @@ export interface ChannelPartnerRepricingConfigAttrs {
 export const ChannelPartnerRepricingConfig: ResourceBinding<ChannelPartnerRepricingConfigConfig, ChannelPartnerRepricingConfigAttrs> = {
   wireType: "google_cloudchannel_channel_partner_repricing_config",
   fields: {
-    name: "name",
     repricingConfig: {
       wireName: "repricing_config",
       kind: "object",
       fields: ChannelPartnerRepricingConfig_RepricingConfigFields,
     },
-    updateTime: "update_time",
   },
 };

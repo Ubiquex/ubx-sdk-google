@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class ConfigurationConfig:
     # Required. The name of the organization. Zero-touch enrollment shows this organization name to device users during device provisioning.
     company_name: Any = None
-    # Output only. The ID of the configuration. Assigned by the server.
-    configuration_id: Any = None
     # Required. A short name that describes the configuration's purpose. For example, _Sales team_ or _Temporary employees_. The zero-touch enrollment portal displays this name to IT admins.
     configuration_name: Any = None
     # Required. The email address that device users can contact to get help. Zero-touch enrollment shows this email address to device users before device provisioning. The value is validated on input.
@@ -28,8 +26,6 @@ class ConfigurationConfig:
     forced_reset_time: Any = None
     # Required. Whether this is the default configuration that zero-touch enrollment applies to any new devices the organization purchases in the future. Only one customer configuration can be the default. Setting this value to `true`, changes the previous default configuration's `isDefault` value to `false`.
     is_default: Any = None
-    # Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server.
-    name: Any = None
 
 @dataclasses.dataclass
 class ConfigurationAttrs:
@@ -60,7 +56,6 @@ Configuration = ubx.ResourceBinding(
     wire_type="google_androiddeviceprovisioning_configuration",
     fields={
         "company_name": ubx.FieldSpec(wire_name="company_name"),
-        "configuration_id": ubx.FieldSpec(wire_name="configuration_id"),
         "configuration_name": ubx.FieldSpec(wire_name="configuration_name"),
         "contact_email": ubx.FieldSpec(wire_name="contact_email"),
         "contact_phone": ubx.FieldSpec(wire_name="contact_phone"),
@@ -69,6 +64,5 @@ Configuration = ubx.ResourceBinding(
         "dpc_resource_path": ubx.FieldSpec(wire_name="dpc_resource_path"),
         "forced_reset_time": ubx.FieldSpec(wire_name="forced_reset_time"),
         "is_default": ubx.FieldSpec(wire_name="is_default"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

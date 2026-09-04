@@ -8,12 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatacollectorConfig:
-    # Output only. The time at which the data collector was created in milliseconds since the epoch.
-    created_at: Any = None
     # A description of the data collector.
     description: Any = None
-    # Output only. The time at which the Data Collector was last updated in milliseconds since the epoch.
-    last_modified_at: Any = None
     # ID of the data collector. Must begin with `dc_`.
     name: Any = None
     # Immutable. The type of data this data collector will collect.
@@ -35,9 +31,7 @@ class DatacollectorAttrs:
 Datacollector = ubx.ResourceBinding(
     wire_type="google_apigee_datacollector",
     fields={
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "name": ubx.FieldSpec(wire_name="name"),
         "type": ubx.FieldSpec(wire_name="type"),
     },

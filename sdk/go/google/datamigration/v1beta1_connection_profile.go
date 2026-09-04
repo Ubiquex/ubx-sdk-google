@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworks struct {
 	ExpireTime any
-	Label any
-	Ttl any
-	Value any
+	Label      any
+	Ttl        any
+	Value      any
 }
 
 type V1beta1ConnectionProfile_Cloudsql_Settings_IpConfig struct {
@@ -101,87 +101,85 @@ type V1beta1ConnectionProfile_Mysql struct {
 }
 
 var V1beta1ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworksFields = ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"Label":      ubx.FieldSpec{WireName: "label"},
+	"Ttl":        ubx.FieldSpec{WireName: "ttl"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1ConnectionProfile_Cloudsql_Settings_IpConfigFields = ubx.FieldMap{
-		"AuthorizedNetworks": ubx.FieldSpec{
-			WireName: "authorized_networks",
-			Kind: "list",
-			Fields: V1beta1ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworksFields,
-		},
-		"EnableIpv4": ubx.FieldSpec{WireName: "enable_ipv4"},
-		"PrivateNetwork": ubx.FieldSpec{WireName: "private_network"},
-		"RequireSsl": ubx.FieldSpec{WireName: "require_ssl"},
-	}
+	"AuthorizedNetworks": ubx.FieldSpec{
+		WireName: "authorized_networks",
+		Kind:     "list",
+		Fields:   V1beta1ConnectionProfile_Cloudsql_Settings_IpConfig_AuthorizedNetworksFields,
+	},
+	"EnableIpv4":     ubx.FieldSpec{WireName: "enable_ipv4"},
+	"PrivateNetwork": ubx.FieldSpec{WireName: "private_network"},
+	"RequireSsl":     ubx.FieldSpec{WireName: "require_ssl"},
+}
 
 var V1beta1ConnectionProfile_Cloudsql_SettingsFields = ubx.FieldMap{
-		"ActivationPolicy": ubx.FieldSpec{WireName: "activation_policy"},
-		"AutoStorageIncrease": ubx.FieldSpec{WireName: "auto_storage_increase"},
-		"DataDiskSizeGb": ubx.FieldSpec{WireName: "data_disk_size_gb"},
-		"DataDiskType": ubx.FieldSpec{WireName: "data_disk_type"},
-		"DatabaseFlags": ubx.FieldSpec{WireName: "database_flags"},
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
-		"IpConfig": ubx.FieldSpec{
-			WireName: "ip_config",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_Cloudsql_Settings_IpConfigFields,
-		},
-		"RootPassword": ubx.FieldSpec{WireName: "root_password"},
-		"RootPasswordSet": ubx.FieldSpec{WireName: "root_password_set"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"StorageAutoResizeLimit": ubx.FieldSpec{WireName: "storage_auto_resize_limit"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ActivationPolicy":    ubx.FieldSpec{WireName: "activation_policy"},
+	"AutoStorageIncrease": ubx.FieldSpec{WireName: "auto_storage_increase"},
+	"DataDiskSizeGb":      ubx.FieldSpec{WireName: "data_disk_size_gb"},
+	"DataDiskType":        ubx.FieldSpec{WireName: "data_disk_type"},
+	"DatabaseFlags":       ubx.FieldSpec{WireName: "database_flags"},
+	"DatabaseVersion":     ubx.FieldSpec{WireName: "database_version"},
+	"IpConfig": ubx.FieldSpec{
+		WireName: "ip_config",
+		Kind:     "object",
+		Fields:   V1beta1ConnectionProfile_Cloudsql_Settings_IpConfigFields,
+	},
+	"RootPassword":           ubx.FieldSpec{WireName: "root_password"},
+	"RootPasswordSet":        ubx.FieldSpec{WireName: "root_password_set"},
+	"SourceId":               ubx.FieldSpec{WireName: "source_id"},
+	"StorageAutoResizeLimit": ubx.FieldSpec{WireName: "storage_auto_resize_limit"},
+	"Tier":                   ubx.FieldSpec{WireName: "tier"},
+	"UserLabels":             ubx.FieldSpec{WireName: "user_labels"},
+	"Zone":                   ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1beta1ConnectionProfile_CloudsqlFields = ubx.FieldMap{
-		"CloudSqlId": ubx.FieldSpec{WireName: "cloud_sql_id"},
-		"PrivateIp": ubx.FieldSpec{WireName: "private_ip"},
-		"PublicIp": ubx.FieldSpec{WireName: "public_ip"},
-		"Settings": ubx.FieldSpec{
-			WireName: "settings",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_Cloudsql_SettingsFields,
-		},
-	}
+	"CloudSqlId": ubx.FieldSpec{WireName: "cloud_sql_id"},
+	"PrivateIp":  ubx.FieldSpec{WireName: "private_ip"},
+	"PublicIp":   ubx.FieldSpec{WireName: "public_ip"},
+	"Settings": ubx.FieldSpec{
+		WireName: "settings",
+		Kind:     "object",
+		Fields:   V1beta1ConnectionProfile_Cloudsql_SettingsFields,
+	},
+}
 
 var V1beta1ConnectionProfile_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1ConnectionProfile_Mysql_SslFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CaCertificate":     ubx.FieldSpec{WireName: "ca_certificate"},
+	"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientKey":         ubx.FieldSpec{WireName: "client_key"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1ConnectionProfile_MysqlFields = ubx.FieldMap{
-		"CloudSqlId": ubx.FieldSpec{WireName: "cloud_sql_id"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSet": ubx.FieldSpec{WireName: "password_set"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Ssl": ubx.FieldSpec{
-			WireName: "ssl",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_Mysql_SslFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"CloudSqlId":  ubx.FieldSpec{WireName: "cloud_sql_id"},
+	"Host":        ubx.FieldSpec{WireName: "host"},
+	"Password":    ubx.FieldSpec{WireName: "password"},
+	"PasswordSet": ubx.FieldSpec{WireName: "password_set"},
+	"Port":        ubx.FieldSpec{WireName: "port"},
+	"Ssl": ubx.FieldSpec{
+		WireName: "ssl",
+		Kind:     "object",
+		Fields:   V1beta1ConnectionProfile_Mysql_SslFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 type V1beta1ConnectionProfileConfig struct {
 	// Specifies required connection parameters, and, optionally, the parameters required to create a Cloud SQL destination database instance.
 	Cloudsql any
-	// Output only. The timestamp when the resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-	CreateTime any
 	// The connection profile display name.
 	DisplayName any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -196,8 +194,6 @@ type V1beta1ConnectionProfileConfig struct {
 	Provider any
 	// The current connection profile state (e.g. DRAFT, READY, or FAILED).
 	State any
-	// Output only. The timestamp when the resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-	UpdateTime any
 }
 
 type V1beta1ConnectionProfileAttrs struct {
@@ -228,25 +224,23 @@ var V1beta1ConnectionProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Cloudsql": ubx.FieldSpec{
 			WireName: "cloudsql",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_CloudsqlFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectionProfile_CloudsqlFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectionProfile_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Mysql": ubx.FieldSpec{
 			WireName: "mysql",
-			Kind: "object",
-			Fields: V1beta1ConnectionProfile_MysqlFields,
+			Kind:     "object",
+			Fields:   V1beta1ConnectionProfile_MysqlFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"State":    ubx.FieldSpec{WireName: "state"},
 	},
 }

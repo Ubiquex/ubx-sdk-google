@@ -8,10 +8,6 @@ type TokenConfig struct {
 	DisplayName any
 	// Identifier. Gemini Enterprise only. The resource name of the SCIM Token. Format: `locations/{location}/workforcePools/{workforce_pool}/providers/ {workforce_pool_provider}/scimTenants/{scim_tenant}/tokens/{token}`
 	Name any
-	// Output only. Gemini Enterprise only. The token string. Provide this to the IdP for authentication. Will be set only during creation.
-	SecurityToken any
-	// Output only. Gemini Enterprise only. The state of the token.
-	State any
 }
 
 type TokenAttrs struct {
@@ -29,8 +25,6 @@ var Token = ubx.ResourceBinding{
 	WireType: "google_iam_token",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecurityToken": ubx.FieldSpec{WireName: "security_token"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

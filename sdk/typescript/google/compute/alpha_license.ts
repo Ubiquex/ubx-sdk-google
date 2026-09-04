@@ -41,16 +41,12 @@ export interface AlphaLicenseConfig {
   appendableToDisk?: boolean | Computed<boolean>;
   /** [Output Only] Deprecated. This field no longer reflects whether a license charges a usage fee. */
   chargesUseFee?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional textual description of the resource; provided by the client when the resource is created. */
   description?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
   /** Specifies licenseCodes of licenses that are incompatible with this license. If a license is incompatible with this license, it cannot be attached to the same disk or image. */
   incompatibleLicenses?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] Type of resource. Always compute#license for licenses. */
-  kind?: string | Computed<string>;
   /** [Output Only] The unique code used to attach this license to images, snapshots, and disks. */
   licenseCode?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
@@ -68,16 +64,10 @@ export interface AlphaLicenseConfig {
   /** Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license. */
   requiredCoattachedLicenses?: string[] | Computed<string[]>;
   resourceRequirements?: AlphaLicense_ResourceRequirements | Computed<AlphaLicense_ResourceRequirements>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** If true, this license can only be used on VMs on sole tenant nodes. */
   soleTenantOnly?: boolean | Computed<boolean>;
   /** If false, licenses will not be copied from the source resource when creating an image from a disk, disk from snapshot, or snapshot from disk. */
   transferable?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Last update timestamp inRFC3339 text format. */
-  updateTimestamp?: string | Computed<string>;
 }
 
 export interface AlphaLicenseAttrs {
@@ -132,11 +122,9 @@ export const AlphaLicense: ResourceBinding<AlphaLicenseConfig, AlphaLicenseAttrs
     allowedReplacementLicenses: "allowed_replacement_licenses",
     appendableToDisk: "appendable_to_disk",
     chargesUseFee: "charges_use_fee",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     id: "id",
     incompatibleLicenses: "incompatible_licenses",
-    kind: "kind",
     licenseCode: "license_code",
     minimumRetention: {
       wireName: "minimum_retention",
@@ -158,10 +146,7 @@ export const AlphaLicense: ResourceBinding<AlphaLicenseConfig, AlphaLicenseAttrs
       kind: "object",
       fields: AlphaLicense_ResourceRequirementsFields,
     },
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     soleTenantOnly: "sole_tenant_only",
     transferable: "transferable",
-    updateTimestamp: "update_timestamp",
   },
 };

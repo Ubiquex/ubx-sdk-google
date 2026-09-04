@@ -846,182 +846,6 @@ _V1alpha1MigratingVm_PolicyFields = {
     "skip_os_adaptation": ubx.FieldSpec(wire_name="skip_os_adaptation"),
 }
 
-_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_DisksFields = {
-    "disk_uri": ubx.FieldSpec(wire_name="disk_uri"),
-    "source_disk_number": ubx.FieldSpec(wire_name="source_disk_number"),
-}
-
-_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetailsFields = {
-    "vm_uri": ubx.FieldSpec(wire_name="vm_uri"),
-}
-
-_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields = {
-    "disks": ubx.FieldSpec(
-        wire_name="disks",
-        kind="list",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_DisksFields,
-    ),
-    "disks_target_details": ubx.FieldSpec(wire_name="disks_target_details"),
-    "vm_target_details": ubx.FieldSpec(
-        wire_name="vm_target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
-    ),
-}
-
-_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields = {
-    "adaptation_modifiers": ubx.FieldSpec(
-        wire_name="adaptation_modifiers",
-        kind="list",
-        fields=_V1alpha1MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiersFields,
-    ),
-    "additional_licenses": ubx.FieldSpec(wire_name="additional_licenses"),
-    "applied_license": ubx.FieldSpec(
-        wire_name="applied_license",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineTargetDefaults_AppliedLicenseFields,
-    ),
-    "boot_conversion": ubx.FieldSpec(wire_name="boot_conversion"),
-    "boot_option": ubx.FieldSpec(wire_name="boot_option"),
-    "compute_scheduling": ubx.FieldSpec(
-        wire_name="compute_scheduling",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
-    ),
-    "disk_replica_zones": ubx.FieldSpec(wire_name="disk_replica_zones"),
-    "disk_type": ubx.FieldSpec(wire_name="disk_type"),
-    "enable_integrity_monitoring": ubx.FieldSpec(wire_name="enable_integrity_monitoring"),
-    "enable_vtpm": ubx.FieldSpec(wire_name="enable_vtpm"),
-    "encryption": ubx.FieldSpec(
-        wire_name="encryption",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-    ),
-    "hostname": ubx.FieldSpec(wire_name="hostname"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "license_type": ubx.FieldSpec(wire_name="license_type"),
-    "machine_type": ubx.FieldSpec(wire_name="machine_type"),
-    "machine_type_series": ubx.FieldSpec(wire_name="machine_type_series"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "network_interfaces": ubx.FieldSpec(
-        wire_name="network_interfaces",
-        kind="list",
-        fields=_V1alpha1MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
-    ),
-    "network_tags": ubx.FieldSpec(wire_name="network_tags"),
-    "project": ubx.FieldSpec(wire_name="project"),
-    "secure_boot": ubx.FieldSpec(wire_name="secure_boot"),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-    "storage_pool": ubx.FieldSpec(wire_name="storage_pool"),
-    "vm_name": ubx.FieldSpec(wire_name="vm_name"),
-    "zone": ubx.FieldSpec(wire_name="zone"),
-}
-
-_V1alpha1MigratingVm_RecentCloneJobs_StepsFields = {
-    "adapting_os": ubx.FieldSpec(wire_name="adapting_os"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "instantiating_migrated_vm": ubx.FieldSpec(wire_name="instantiating_migrated_vm"),
-    "preparing_vm_disks": ubx.FieldSpec(wire_name="preparing_vm_disks"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
-_V1alpha1MigratingVm_RecentCloneJobsFields = {
-    "compute_engine_disks_target_details": ubx.FieldSpec(
-        wire_name="compute_engine_disks_target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields,
-    ),
-    "compute_engine_target_details": ubx.FieldSpec(
-        wire_name="compute_engine_target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields,
-    ),
-    "compute_engine_vm_details": ubx.FieldSpec(
-        wire_name="compute_engine_vm_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_V1alpha1MigratingVm_CurrentSyncInfo_ErrorFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_time": ubx.FieldSpec(wire_name="state_time"),
-    "steps": ubx.FieldSpec(
-        wire_name="steps",
-        kind="list",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_StepsFields,
-    ),
-    "target_details": ubx.FieldSpec(
-        wire_name="target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
-    ),
-}
-
-_V1alpha1MigratingVm_RecentCutoverJobs_StepsFields = {
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "final_sync": ubx.FieldSpec(
-        wire_name="final_sync",
-        kind="object",
-        fields=_V1alpha1MigratingVm_CurrentSyncInfoFields,
-    ),
-    "instantiating_migrated_vm": ubx.FieldSpec(wire_name="instantiating_migrated_vm"),
-    "preparing_vm_disks": ubx.FieldSpec(wire_name="preparing_vm_disks"),
-    "previous_replication_cycle": ubx.FieldSpec(
-        wire_name="previous_replication_cycle",
-        kind="object",
-        fields=_V1alpha1MigratingVm_CurrentSyncInfoFields,
-    ),
-    "shutting_down_source_vm": ubx.FieldSpec(wire_name="shutting_down_source_vm"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
-_V1alpha1MigratingVm_RecentCutoverJobsFields = {
-    "compute_engine_disks_target_details": ubx.FieldSpec(
-        wire_name="compute_engine_disks_target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineDisksTargetDetailsFields,
-    ),
-    "compute_engine_target_details": ubx.FieldSpec(
-        wire_name="compute_engine_target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_RecentCloneJobs_ComputeEngineTargetDetailsFields,
-    ),
-    "compute_engine_vm_details": ubx.FieldSpec(
-        wire_name="compute_engine_vm_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_V1alpha1MigratingVm_CurrentSyncInfo_ErrorFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "progress": ubx.FieldSpec(wire_name="progress"),
-    "progress_percent": ubx.FieldSpec(wire_name="progress_percent"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_message": ubx.FieldSpec(wire_name="state_message"),
-    "state_time": ubx.FieldSpec(wire_name="state_time"),
-    "steps": ubx.FieldSpec(
-        wire_name="steps",
-        kind="list",
-        fields=_V1alpha1MigratingVm_RecentCutoverJobs_StepsFields,
-    ),
-    "target_details": ubx.FieldSpec(
-        wire_name="target_details",
-        kind="object",
-        fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
-    ),
-}
-
 _V1alpha1MigratingVm_VmwareSourceVmDetails_DisksFields = {
     "disk_number": ubx.FieldSpec(wire_name="disk_number"),
     "label": ubx.FieldSpec(wire_name="label"),
@@ -1056,8 +880,6 @@ class V1alpha1MigratingVmConfig:
     compute_engine_target_defaults: Any = None
     # TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
     compute_engine_vm_defaults: Any = None
-    # Output only. The time the migrating VM was created (this refers to this resource and not to the time it was installed in the source).
-    create_time: Any = None
     # ReplicationCycle contains information about the current replication cycle status.
     current_sync_info: Any = None
     # CutoverForecast holds information about future CutoverJobs of a MigratingVm.
@@ -1070,32 +892,18 @@ class V1alpha1MigratingVmConfig:
     error: Any = None
     # Expiration holds information about the expiration of a MigratingVm.
     expiration: Any = None
-    # Output only. The group this migrating vm is included in, if any. The group is represented by the full path of the appropriate Group resource.
-    group: Any = None
     # The labels of the migrating VM.
     labels: Any = None
     # ReplicationCycle contains information about the current replication cycle status.
     last_replication_cycle: Any = None
     # ReplicationSync contain information about the last replica sync to the cloud.
     last_sync: Any = None
-    # Output only. The identifier of the MigratingVm.
-    name: Any = None
     # A policy for scheduling replications.
     policy: Any = None
-    # Output only. The recent clone jobs performed on the migrating VM. This field holds the vm's last completed clone job and the vm's running clone job, if one exists. Note: To have this field populated you need to explicitly request it via the "view" parameter of the Get/List request.
-    recent_clone_jobs: Any = None
-    # Output only. The recent cutover jobs performed on the migrating VM. This field holds the vm's last completed cutover job and the vm's running cutover job, if one exists. Note: To have this field populated you need to explicitly request it via the "view" parameter of the Get/List request.
-    recent_cutover_jobs: Any = None
     # The unique ID of the VM in the source. The VM's name in vSphere can be changed, so this is not the VM's name but rather its moRef id. This id is of the form vm-.
     source_vm_id: Any = None
-    # Output only. State of the MigratingVm.
-    state: Any = None
-    # Output only. The last time the migrating VM state was updated.
-    state_time: Any = None
     # TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
     target_defaults: Any = None
-    # Output only. The last time the migrating VM resource was updated.
-    update_time: Any = None
     # Represent the source Vmware VM details.
     vmware_source_vm_details: Any = None
 
@@ -1182,7 +990,6 @@ V1alpha1MigratingVm = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "current_sync_info": ubx.FieldSpec(
             wire_name="current_sync_info",
             kind="object",
@@ -1205,7 +1012,6 @@ V1alpha1MigratingVm = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1MigratingVm_ExpirationFields,
         ),
-        "group": ubx.FieldSpec(wire_name="group"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "last_replication_cycle": ubx.FieldSpec(
             wire_name="last_replication_cycle",
@@ -1217,31 +1023,17 @@ V1alpha1MigratingVm = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1MigratingVm_LastSyncFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "policy": ubx.FieldSpec(
             wire_name="policy",
             kind="object",
             fields=_V1alpha1MigratingVm_PolicyFields,
         ),
-        "recent_clone_jobs": ubx.FieldSpec(
-            wire_name="recent_clone_jobs",
-            kind="list",
-            fields=_V1alpha1MigratingVm_RecentCloneJobsFields,
-        ),
-        "recent_cutover_jobs": ubx.FieldSpec(
-            wire_name="recent_cutover_jobs",
-            kind="list",
-            fields=_V1alpha1MigratingVm_RecentCutoverJobsFields,
-        ),
         "source_vm_id": ubx.FieldSpec(wire_name="source_vm_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
         "target_defaults": ubx.FieldSpec(
             wire_name="target_defaults",
             kind="object",
             fields=_V1alpha1MigratingVm_ComputeEngineVmDefaultsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vmware_source_vm_details": ubx.FieldSpec(
             wire_name="vmware_source_vm_details",
             kind="object",

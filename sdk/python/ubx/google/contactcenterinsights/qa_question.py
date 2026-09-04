@@ -87,8 +87,6 @@ class QaQuestionConfig:
     answer_choices: Any = None
     # Instructions describing how to determine the answer.
     answer_instructions: Any = None
-    # Output only. The time at which this question was created.
-    create_time: Any = None
     # A wrapper representing metrics calculated against a test-set on a LLM that was fine tuned for this question.
     metrics: Any = None
     # Identifier. The resource name of the question. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}/qaQuestions/{qa_question}
@@ -107,8 +105,6 @@ class QaQuestionConfig:
     tags: Any = None
     # Metadata about the tuning operation for the question. Will only be set if a scorecard containing this question has been tuned.
     tuning_metadata: Any = None
-    # Output only. The most recent time at which the question was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class QaQuestionAttrs:
@@ -151,7 +147,6 @@ QaQuestion = ubx.ResourceBinding(
             fields=_QaQuestion_AnswerChoicesFields,
         ),
         "answer_instructions": ubx.FieldSpec(wire_name="answer_instructions"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "metrics": ubx.FieldSpec(
             wire_name="metrics",
             kind="object",
@@ -177,6 +172,5 @@ QaQuestion = ubx.ResourceBinding(
             kind="object",
             fields=_QaQuestion_TuningMetadataFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

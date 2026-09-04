@@ -10,26 +10,26 @@ type ReferenceImage_BoundingPolys_NormalizedVertices struct {
 
 type ReferenceImage_BoundingPolys struct {
 	NormalizedVertices any
-	Vertices any
+	Vertices           any
 }
 
 var ReferenceImage_BoundingPolys_NormalizedVerticesFields = ubx.FieldMap{
-		"X": ubx.FieldSpec{WireName: "x"},
-		"Y": ubx.FieldSpec{WireName: "y"},
-	}
+	"X": ubx.FieldSpec{WireName: "x"},
+	"Y": ubx.FieldSpec{WireName: "y"},
+}
 
 var ReferenceImage_BoundingPolysFields = ubx.FieldMap{
-		"NormalizedVertices": ubx.FieldSpec{
-			WireName: "normalized_vertices",
-			Kind: "list",
-			Fields: ReferenceImage_BoundingPolys_NormalizedVerticesFields,
-		},
-		"Vertices": ubx.FieldSpec{
-			WireName: "vertices",
-			Kind: "list",
-			Fields: ReferenceImage_BoundingPolys_NormalizedVerticesFields,
-		},
-	}
+	"NormalizedVertices": ubx.FieldSpec{
+		WireName: "normalized_vertices",
+		Kind:     "list",
+		Fields:   ReferenceImage_BoundingPolys_NormalizedVerticesFields,
+	},
+	"Vertices": ubx.FieldSpec{
+		WireName: "vertices",
+		Kind:     "list",
+		Fields:   ReferenceImage_BoundingPolys_NormalizedVerticesFields,
+	},
+}
 
 type ReferenceImageConfig struct {
 	// Optional. Bounding polygons around the areas of interest in the reference image. If this field is empty, the system will try to detect regions of interest. At most 10 bounding polygons will be used. The provided shape is converted into a non-rotated rectangle. Once converted, the small edge of the rectangle must be greater than or equal to 300 pixels. The aspect ratio must be 1:4 or less (i.e. 1:3 is ok; 1:5 is not).
@@ -54,10 +54,10 @@ var ReferenceImage = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BoundingPolys": ubx.FieldSpec{
 			WireName: "bounding_polys",
-			Kind: "list",
-			Fields: ReferenceImage_BoundingPolysFields,
+			Kind:     "list",
+			Fields:   ReferenceImage_BoundingPolysFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"Uri":  ubx.FieldSpec{WireName: "uri"},
 	},
 }

@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkflowConfig_InvocationConfig_IncludedTargets struct {
 	Database any
-	Name any
-	Schema any
+	Name     any
+	Schema   any
 }
 
 type WorkflowConfig_InvocationConfig struct {
@@ -27,74 +27,50 @@ type WorkflowConfig_InvocationConfig struct {
 }
 
 type WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatus struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type WorkflowConfig_RecentScheduledExecutionRecords struct {
-	ErrorStatus any
-	ExecutionTime any
+	ErrorStatus        any
+	ExecutionTime      any
 	WorkflowInvocation any
 }
 
 var WorkflowConfig_InvocationConfig_IncludedTargetsFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Schema":   ubx.FieldSpec{WireName: "schema"},
+}
 
 var WorkflowConfig_InvocationConfigFields = ubx.FieldMap{
-		"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
-		"IncludedTags": ubx.FieldSpec{WireName: "included_tags"},
-		"IncludedTargets": ubx.FieldSpec{
-			WireName: "included_targets",
-			Kind: "list",
-			Fields: WorkflowConfig_InvocationConfig_IncludedTargetsFields,
-		},
-		"QueryPriority": ubx.FieldSpec{WireName: "query_priority"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
-		"TransitiveDependentsIncluded": ubx.FieldSpec{WireName: "transitive_dependents_included"},
-	}
-
-var WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var WorkflowConfig_RecentScheduledExecutionRecordsFields = ubx.FieldMap{
-		"ErrorStatus": ubx.FieldSpec{
-			WireName: "error_status",
-			Kind: "object",
-			Fields: WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields,
-		},
-		"ExecutionTime": ubx.FieldSpec{WireName: "execution_time"},
-		"WorkflowInvocation": ubx.FieldSpec{WireName: "workflow_invocation"},
-	}
+	"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
+	"IncludedTags":                         ubx.FieldSpec{WireName: "included_tags"},
+	"IncludedTargets": ubx.FieldSpec{
+		WireName: "included_targets",
+		Kind:     "list",
+		Fields:   WorkflowConfig_InvocationConfig_IncludedTargetsFields,
+	},
+	"QueryPriority":                  ubx.FieldSpec{WireName: "query_priority"},
+	"ServiceAccount":                 ubx.FieldSpec{WireName: "service_account"},
+	"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
+	"TransitiveDependentsIncluded":   ubx.FieldSpec{WireName: "transitive_dependents_included"},
+}
 
 type WorkflowConfigConfig struct {
-	// Output only. The timestamp of when the WorkflowConfig was created.
-	CreateTime any
 	// Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
 	CronSchedule any
 	// Optional. Disables automatic creation of workflow invocations.
 	Disabled any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included.
 	InvocationConfig any
 	// Identifier. The workflow config's name.
 	Name any
-	// Output only. Records of the 10 most recent scheduled execution attempts, ordered in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule.
-	RecentScheduledExecutionRecords any
 	// Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
 	ReleaseConfig any
 	// Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`.
 	TimeZone any
-	// Output only. The timestamp of when the WorkflowConfig was last updated.
-	UpdateTime any
 }
 
 type WorkflowConfigAttrs struct {
@@ -123,23 +99,15 @@ type WorkflowConfigAttrs struct {
 var WorkflowConfig = ubx.ResourceBinding{
 	WireType: "google_dataform_workflow_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
+		"Disabled":     ubx.FieldSpec{WireName: "disabled"},
 		"InvocationConfig": ubx.FieldSpec{
 			WireName: "invocation_config",
-			Kind: "object",
-			Fields: WorkflowConfig_InvocationConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowConfig_InvocationConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecentScheduledExecutionRecords": ubx.FieldSpec{
-			WireName: "recent_scheduled_execution_records",
-			Kind: "list",
-			Fields: WorkflowConfig_RecentScheduledExecutionRecordsFields,
-		},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"ReleaseConfig": ubx.FieldSpec{WireName: "release_config"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"TimeZone":      ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

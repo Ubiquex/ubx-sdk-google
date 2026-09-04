@@ -35,8 +35,6 @@ _V1beta1SacRealm_SymantecOptionsFields = {
 
 @dataclasses.dataclass
 class V1beta1SacRealmConfig:
-    # Output only. Timestamp when the realm was created.
-    create_time: Any = None
     # Optional. Optional list of labels applied to the resource.
     labels: Any = None
     # Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.
@@ -45,12 +43,8 @@ class V1beta1SacRealmConfig:
     pairing_key: Any = None
     # Immutable. SSE service provider associated with the realm.
     security_service: Any = None
-    # Output only. State of the realm.
-    state: Any = None
     # Fields specific to realms using Symantec Cloud SWG.
     symantec_options: Any = None
-    # Output only. Timestamp when the realm was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1SacRealmAttrs:
@@ -74,7 +68,6 @@ class V1beta1SacRealmAttrs:
 V1beta1SacRealm = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_sac_realm",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "pairing_key": ubx.FieldSpec(
@@ -83,12 +76,10 @@ V1beta1SacRealm = ubx.ResourceBinding(
             fields=_V1beta1SacRealm_PairingKeyFields,
         ),
         "security_service": ubx.FieldSpec(wire_name="security_service"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "symantec_options": ubx.FieldSpec(
             wire_name="symantec_options",
             kind="object",
             fields=_V1beta1SacRealm_SymantecOptionsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

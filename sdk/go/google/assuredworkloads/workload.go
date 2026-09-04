@@ -42,13 +42,13 @@ type Workload_PartnerPermissions struct {
 }
 
 type Workload_ResourceSettings struct {
-	DisplayName any
-	ResourceId any
+	DisplayName  any
+	ResourceId   any
 	ResourceType any
 }
 
 type Workload_Resources struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
@@ -65,49 +65,44 @@ type Workload_WorkloadOptions struct {
 }
 
 var Workload_ComplianceStatusFields = ubx.FieldMap{
-		"AcknowledgedResourceViolationCount": ubx.FieldSpec{WireName: "acknowledged_resource_violation_count"},
-		"AcknowledgedViolationCount": ubx.FieldSpec{WireName: "acknowledged_violation_count"},
-		"ActiveResourceViolationCount": ubx.FieldSpec{WireName: "active_resource_violation_count"},
-		"ActiveViolationCount": ubx.FieldSpec{WireName: "active_violation_count"},
-	}
+	"AcknowledgedResourceViolationCount": ubx.FieldSpec{WireName: "acknowledged_resource_violation_count"},
+	"AcknowledgedViolationCount":         ubx.FieldSpec{WireName: "acknowledged_violation_count"},
+	"ActiveResourceViolationCount":       ubx.FieldSpec{WireName: "active_resource_violation_count"},
+	"ActiveViolationCount":               ubx.FieldSpec{WireName: "active_violation_count"},
+}
 
 var Workload_EkmProvisioningResponseFields = ubx.FieldMap{
-		"EkmProvisioningErrorDomain": ubx.FieldSpec{WireName: "ekm_provisioning_error_domain"},
-		"EkmProvisioningErrorMapping": ubx.FieldSpec{WireName: "ekm_provisioning_error_mapping"},
-		"EkmProvisioningState": ubx.FieldSpec{WireName: "ekm_provisioning_state"},
-	}
+	"EkmProvisioningErrorDomain":  ubx.FieldSpec{WireName: "ekm_provisioning_error_domain"},
+	"EkmProvisioningErrorMapping": ubx.FieldSpec{WireName: "ekm_provisioning_error_mapping"},
+	"EkmProvisioningState":        ubx.FieldSpec{WireName: "ekm_provisioning_state"},
+}
 
 var Workload_KmsSettingsFields = ubx.FieldMap{
-		"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
-		"RotationPeriod": ubx.FieldSpec{WireName: "rotation_period"},
-	}
+	"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
+	"RotationPeriod":   ubx.FieldSpec{WireName: "rotation_period"},
+}
 
 var Workload_PartnerPermissionsFields = ubx.FieldMap{
-		"AccessTransparencyLogsSupportCaseViewer": ubx.FieldSpec{WireName: "access_transparency_logs_support_case_viewer"},
-		"AssuredWorkloadsMonitoring": ubx.FieldSpec{WireName: "assured_workloads_monitoring"},
-		"DataLogsViewer": ubx.FieldSpec{WireName: "data_logs_viewer"},
-		"ServiceAccessApprover": ubx.FieldSpec{WireName: "service_access_approver"},
-	}
+	"AccessTransparencyLogsSupportCaseViewer": ubx.FieldSpec{WireName: "access_transparency_logs_support_case_viewer"},
+	"AssuredWorkloadsMonitoring":              ubx.FieldSpec{WireName: "assured_workloads_monitoring"},
+	"DataLogsViewer":                          ubx.FieldSpec{WireName: "data_logs_viewer"},
+	"ServiceAccessApprover":                   ubx.FieldSpec{WireName: "service_access_approver"},
+}
 
 var Workload_ResourceSettingsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
-
-var Workload_ResourcesFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var Workload_SaaEnrollmentResponseFields = ubx.FieldMap{
-		"SetupErrors": ubx.FieldSpec{WireName: "setup_errors"},
-		"SetupStatus": ubx.FieldSpec{WireName: "setup_status"},
-	}
+	"SetupErrors": ubx.FieldSpec{WireName: "setup_errors"},
+	"SetupStatus": ubx.FieldSpec{WireName: "setup_status"},
+}
 
 var Workload_WorkloadOptionsFields = ubx.FieldMap{
-		"KajEnrollmentType": ubx.FieldSpec{WireName: "kaj_enrollment_type"},
-	}
+	"KajEnrollmentType": ubx.FieldSpec{WireName: "kaj_enrollment_type"},
+}
 
 type WorkloadConfig struct {
 	// Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
@@ -116,10 +111,6 @@ type WorkloadConfig struct {
 	ComplianceRegime any
 	// Represents the Compliance Status of this workload
 	ComplianceStatus any
-	// Output only. Urls for services which are compliant for this Assured Workload, but which are currently disallowed by the ResourceUsageRestriction org policy. Invoke RestrictAllowedResources endpoint to allow your project developers to use these services in their environment.
-	CompliantButDisallowedServices any
-	// Output only. Immutable. The Workload creation timestamp.
-	CreateTime any
 	// Required. The user-assigned display name of the Workload. When present it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, and spaces. Example: My Workload
 	DisplayName any
 	// External key management systems(EKM) Provisioning response
@@ -128,8 +119,6 @@ type WorkloadConfig struct {
 	EnableSovereignControls any
 	// Optional. ETag of the workload, it is calculated on the basis of the Workload contents. It will be used in Update & Delete operations.
 	Etag any
-	// Output only. Represents the KAJ enrollment state of the given workload.
-	KajEnrollmentState any
 	// Settings specific to the Key Management Service.
 	KmsSettings any
 	// Optional. Labels applied to the workload.
@@ -144,12 +133,8 @@ type WorkloadConfig struct {
 	PartnerServicesBillingAccount any
 	// Input only. The parent resource for the resources managed by this Assured Workload. May be either empty or a folder resource which is a child of the Workload parent. If not specified all resources are created under the parent organization. Format: folders/{folder_id}
 	ProvisionedResourcesParent any
-	// Output only. Indicates whether resource monitoring is enabled for workload or not. It is true when Resource feed is subscribed to AWM topic and AWM Service Agent Role is binded to AW Service Account for resource Assured workload.
-	ResourceMonitoringEnabled any
 	// Input only. Resource properties that are used to customize workload resources. These properties (such as custom project id) will be used to create workload resources if possible. This field is optional.
 	ResourceSettings any
-	// Output only. The resources associated with this workload. These resources will be created when creating the workload. If any of the projects already exist, the workload creation will fail. Always read only.
-	Resources any
 	// Signed Access Approvals (SAA) enrollment response.
 	SaaEnrollmentResponse any
 	// Optional. Indicates whether the e-mail notification for a violation is enabled for a workload. This value will be by default True, and if not present will be considered as true. This should only be updated via updateWorkload call. Any Changes to this field during the createWorkload call will not be honored. This will always be true while creating the workload.
@@ -210,60 +195,51 @@ type WorkloadAttrs struct {
 var Workload = ubx.ResourceBinding{
 	WireType: "google_assuredworkloads_workload",
 	Fields: ubx.FieldMap{
-		"BillingAccount": ubx.FieldSpec{WireName: "billing_account"},
+		"BillingAccount":   ubx.FieldSpec{WireName: "billing_account"},
 		"ComplianceRegime": ubx.FieldSpec{WireName: "compliance_regime"},
 		"ComplianceStatus": ubx.FieldSpec{
 			WireName: "compliance_status",
-			Kind: "object",
-			Fields: Workload_ComplianceStatusFields,
+			Kind:     "object",
+			Fields:   Workload_ComplianceStatusFields,
 		},
-		"CompliantButDisallowedServices": ubx.FieldSpec{WireName: "compliant_but_disallowed_services"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EkmProvisioningResponse": ubx.FieldSpec{
 			WireName: "ekm_provisioning_response",
-			Kind: "object",
-			Fields: Workload_EkmProvisioningResponseFields,
+			Kind:     "object",
+			Fields:   Workload_EkmProvisioningResponseFields,
 		},
 		"EnableSovereignControls": ubx.FieldSpec{WireName: "enable_sovereign_controls"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"KajEnrollmentState": ubx.FieldSpec{WireName: "kaj_enrollment_state"},
+		"Etag":                    ubx.FieldSpec{WireName: "etag"},
 		"KmsSettings": ubx.FieldSpec{
 			WireName: "kms_settings",
-			Kind: "object",
-			Fields: Workload_KmsSettingsFields,
+			Kind:     "object",
+			Fields:   Workload_KmsSettingsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Partner": ubx.FieldSpec{WireName: "partner"},
 		"PartnerPermissions": ubx.FieldSpec{
 			WireName: "partner_permissions",
-			Kind: "object",
-			Fields: Workload_PartnerPermissionsFields,
+			Kind:     "object",
+			Fields:   Workload_PartnerPermissionsFields,
 		},
 		"PartnerServicesBillingAccount": ubx.FieldSpec{WireName: "partner_services_billing_account"},
-		"ProvisionedResourcesParent": ubx.FieldSpec{WireName: "provisioned_resources_parent"},
-		"ResourceMonitoringEnabled": ubx.FieldSpec{WireName: "resource_monitoring_enabled"},
+		"ProvisionedResourcesParent":    ubx.FieldSpec{WireName: "provisioned_resources_parent"},
 		"ResourceSettings": ubx.FieldSpec{
 			WireName: "resource_settings",
-			Kind: "list",
-			Fields: Workload_ResourceSettingsFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: Workload_ResourcesFields,
+			Kind:     "list",
+			Fields:   Workload_ResourceSettingsFields,
 		},
 		"SaaEnrollmentResponse": ubx.FieldSpec{
 			WireName: "saa_enrollment_response",
-			Kind: "object",
-			Fields: Workload_SaaEnrollmentResponseFields,
+			Kind:     "object",
+			Fields:   Workload_SaaEnrollmentResponseFields,
 		},
 		"ViolationNotificationsEnabled": ubx.FieldSpec{WireName: "violation_notifications_enabled"},
 		"WorkloadOptions": ubx.FieldSpec{
 			WireName: "workload_options",
-			Kind: "object",
-			Fields: Workload_WorkloadOptionsFields,
+			Kind:     "object",
+			Fields:   Workload_WorkloadOptionsFields,
 		},
 	},
 }

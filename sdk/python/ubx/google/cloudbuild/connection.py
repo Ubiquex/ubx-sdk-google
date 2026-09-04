@@ -183,8 +183,6 @@ class ConnectionConfig:
     bitbucket_cloud_config: Any = None
     # Configuration for connections to Bitbucket Data Center.
     bitbucket_data_center_config: Any = None
-    # Output only. Server assigned timestamp for when the connection was created.
-    create_time: Any = None
     # Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
     disabled: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -199,10 +197,6 @@ class ConnectionConfig:
     installation_state: Any = None
     # Immutable. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.
     name: Any = None
-    # Output only. Set to true when the connection is being set up or updated in the background.
-    reconciling: Any = None
-    # Output only. Server assigned timestamp for when the connection was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConnectionAttrs:
@@ -247,7 +241,6 @@ Connection = ubx.ResourceBinding(
             kind="object",
             fields=_Connection_BitbucketDataCenterConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "github_config": ubx.FieldSpec(
@@ -271,7 +264,5 @@ Connection = ubx.ResourceBinding(
             fields=_Connection_InstallationStateFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -13,8 +13,6 @@ const ChangeStream_CollectionGroupScopeFields: FieldMap = {
 export interface ChangeStreamConfig {
   /** The change stream is scoped to a collection group. Only events associated with the given collection group are visible to the Change Stream. Only a single change stream can be enabled per collection group. */
   collectionGroupScope?: ChangeStream_CollectionGroupScope | Computed<ChangeStream_CollectionGroupScope>;
-  /** Output only. The time the Change Stream was created. */
-  createTime?: string | Computed<string>;
   /** The change stream is scoped to the entire database. All events in the database are visible to the Change Stream. One Database scope Change Stream is allowed per database. */
   databaseScope?: unknown | Computed<unknown>;
   /** Optional. An etag used to determine which version of the configuration is being edited. */
@@ -23,10 +21,6 @@ export interface ChangeStreamConfig {
   name?: string | Computed<string>;
   /** Required. The retention period of the change stream. This is the amount of time a change event is available on the change stream. Must be from 1 to 7 days, inclusive. The retention_period must be in day granularity, i.e. it must be a multiple of 24 hours. */
   retentionPeriod?: string | Computed<string>;
-  /** Output only. The time the Change Stream started recording events. */
-  startTime?: string | Computed<string>;
-  /** Output only. The time the Change Stream was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ChangeStreamAttrs {
@@ -56,12 +50,9 @@ export const ChangeStream: ResourceBinding<ChangeStreamConfig, ChangeStreamAttrs
       kind: "object",
       fields: ChangeStream_CollectionGroupScopeFields,
     },
-    createTime: "create_time",
     databaseScope: "database_scope",
     etag: "etag",
     name: "name",
     retentionPeriod: "retention_period",
-    startTime: "start_time",
-    updateTime: "update_time",
   },
 };

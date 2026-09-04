@@ -4,8 +4,6 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MeshConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
@@ -16,10 +14,6 @@ type V1beta1MeshConfig struct {
 	Labels any
 	// Identifier. Name of the Mesh resource. It matches pattern `projects/*/locations/*/meshes/`.
 	Name any
-	// Output only. Server-defined URL of this resource
-	SelfLink any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type V1beta1MeshAttrs struct {
@@ -44,13 +38,10 @@ type V1beta1MeshAttrs struct {
 var V1beta1Mesh = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_mesh",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvoyHeaders": ubx.FieldSpec{WireName: "envoy_headers"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"EnvoyHeaders":     ubx.FieldSpec{WireName: "envoy_headers"},
 		"InterceptionPort": ubx.FieldSpec{WireName: "interception_port"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 	},
 }

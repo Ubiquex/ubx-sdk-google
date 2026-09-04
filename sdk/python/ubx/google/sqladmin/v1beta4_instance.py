@@ -574,13 +574,6 @@ _V1beta4Instance_DiskEncryptionStatusFields = {
     "kms_key_version_name": ubx.FieldSpec(wire_name="kms_key_version_name"),
 }
 
-_V1beta4Instance_DnsNamesFields = {
-    "connection_type": ubx.FieldSpec(wire_name="connection_type"),
-    "dns_scope": ubx.FieldSpec(wire_name="dns_scope"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "record_manager": ubx.FieldSpec(wire_name="record_manager"),
-}
-
 _V1beta4Instance_FailoverReplicaFields = {
     "available": ubx.FieldSpec(wire_name="available"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -599,41 +592,6 @@ _V1beta4Instance_IpAddressesFields = {
     "ip_address": ubx.FieldSpec(wire_name="ip_address"),
     "time_to_retire": ubx.FieldSpec(wire_name="time_to_retire"),
     "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_V1beta4Instance_Nodes_PscAutoConnectionsFields = {
-    "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
-    "consumer_network_status": ubx.FieldSpec(wire_name="consumer_network_status"),
-    "consumer_project": ubx.FieldSpec(wire_name="consumer_project"),
-    "instance_auto_dns_status": ubx.FieldSpec(wire_name="instance_auto_dns_status"),
-    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-    "service_connection_policy": ubx.FieldSpec(wire_name="service_connection_policy"),
-    "service_connection_policy_creation_result": ubx.FieldSpec(wire_name="service_connection_policy_creation_result"),
-    "status": ubx.FieldSpec(wire_name="status"),
-    "write_endpoint_auto_dns_status": ubx.FieldSpec(wire_name="write_endpoint_auto_dns_status"),
-}
-
-_V1beta4Instance_NodesFields = {
-    "dns_name": ubx.FieldSpec(wire_name="dns_name"),
-    "dns_names": ubx.FieldSpec(
-        wire_name="dns_names",
-        kind="list",
-        fields=_V1beta4Instance_DnsNamesFields,
-    ),
-    "gce_zone": ubx.FieldSpec(wire_name="gce_zone"),
-    "ip_addresses": ubx.FieldSpec(
-        wire_name="ip_addresses",
-        kind="list",
-        fields=_V1beta4Instance_IpAddressesFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "psc_auto_connections": ubx.FieldSpec(
-        wire_name="psc_auto_connections",
-        kind="list",
-        fields=_V1beta4Instance_Nodes_PscAutoConnectionsFields,
-    ),
-    "psc_service_attachment_link": ubx.FieldSpec(wire_name="psc_service_attachment_link"),
-    "state": ubx.FieldSpec(wire_name="state"),
 }
 
 _V1beta4Instance_OnPremisesConfiguration_SelectedObjectsFields = {
@@ -810,6 +768,18 @@ _V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworksFields = {
     "kind": ubx.FieldSpec(wire_name="kind"),
     "name": ubx.FieldSpec(wire_name="name"),
     "value": ubx.FieldSpec(wire_name="value"),
+}
+
+_V1beta4Instance_Nodes_PscAutoConnectionsFields = {
+    "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
+    "consumer_network_status": ubx.FieldSpec(wire_name="consumer_network_status"),
+    "consumer_project": ubx.FieldSpec(wire_name="consumer_project"),
+    "instance_auto_dns_status": ubx.FieldSpec(wire_name="instance_auto_dns_status"),
+    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "service_connection_policy": ubx.FieldSpec(wire_name="service_connection_policy"),
+    "service_connection_policy_creation_result": ubx.FieldSpec(wire_name="service_connection_policy_creation_result"),
+    "status": ubx.FieldSpec(wire_name="status"),
+    "write_endpoint_auto_dns_status": ubx.FieldSpec(wire_name="write_endpoint_auto_dns_status"),
 }
 
 _V1beta4Instance_Settings_IpConfiguration_PscConfigFields = {
@@ -1033,38 +1003,22 @@ _V1beta4Instance_SettingsFields = {
     "user_labels": ubx.FieldSpec(wire_name="user_labels"),
 }
 
-_V1beta4Instance_UpgradableDatabaseVersionsFields = {
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "major_version": ubx.FieldSpec(wire_name="major_version"),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 @dataclasses.dataclass
 class V1beta4InstanceConfig:
-    # Output only. List all maintenance versions applicable on the instance
-    available_maintenance_versions: Any = None
     # The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type.
     backend_type: Any = None
     # Connection name of the Cloud SQL instance used in connection strings.
     connection_name: Any = None
-    # Output only. The time when the instance was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`.
-    create_time: Any = None
     # The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details.
     current_disk_size: Any = None
     # Optional. If true, instance metadata is sent to the Database Center. If false, instance metadata is not sent to the Database Center.
     database_center_integration_enabled: Any = None
-    # Output only. Stores the current database version running on the instance including minor version such as `MYSQL_8_0_18`.
-    database_installed_version: Any = None
     # The database engine type and version. The `databaseVersion` field cannot be changed after instance creation.
     database_version: Any = None
     # Disk encryption configuration for an instance.
     disk_encryption_configuration: Any = None
     # Disk encryption status for an instance.
     disk_encryption_status: Any = None
-    # Output only. The dns name of the instance.
-    dns_name: Any = None
-    # Output only. The list of DNS names used by this instance.
-    dns_names: Any = None
     # This field is deprecated and will be removed from a future version of the API. Use the `settings.settingsVersion` field instead.
     etag: Any = None
     # The name and status of the failover replica.
@@ -1093,18 +1047,12 @@ class V1beta4InstanceConfig:
     name: Any = None
     # The number of read pool nodes in a read pool.
     node_count: Any = None
-    # Output only. Entries containing information about each read pool node of the read pool.
-    nodes: Any = None
     # On-premises instance configuration.
     on_premises_configuration: Any = None
     # This message wraps up the information written by out-of-disk detection job.
     out_of_disk_report: Any = None
-    # Output only. DEPRECATED: please use write_endpoint instead.
-    primary_dns_name: Any = None
     # The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable.
     project: Any = None
-    # Output only. The link to service attachment of PSC instance.
-    psc_service_attachment_link: Any = None
     # The geographical region of the Cloud SQL instance. It can be one of the [regions](https://cloud.google.com/sql/docs/mysql/locations#location-r) where Cloud SQL operates: For example, `asia-east1`, `europe-west1`, and `us-central1`. The default value is `us-central1`.
     region: Any = None
     # Read-replica configuration for connecting to the primary instance.
@@ -1115,8 +1063,6 @@ class V1beta4InstanceConfig:
     replication_cluster: Any = None
     # Initial root password. Use only on creation. You must set root passwords before you can connect to PostgreSQL instances.
     root_password: Any = None
-    # Output only. This status indicates whether the instance satisfies PZI. The status is reserved for future use.
-    satisfies_pzi: Any = None
     # This status indicates whether the instance satisfies PZS. The status is reserved for future use.
     satisfies_pzs: Any = None
     # Any scheduled maintenance for this instance.
@@ -1141,10 +1087,6 @@ class V1beta4InstanceConfig:
     switch_transaction_logs_to_cloud_storage_enabled: Any = None
     # Optional. Input only. Immutable. Tag keys and tag values that are bound to this instance. You must represent each item in the map as: `"" : ""`. For example, a single resource can have the following tags: ``` "123/environment": "production", "123/costCenter": "marketing", ``` For more information on tag creation and management, see https://cloud.google.com/resource-manager/docs/tags/tags-overview.
     tags: Any = None
-    # Output only. All database versions that are available for upgrade.
-    upgradable_database_versions: Any = None
-    # Output only. The dns name of the primary instance in a replication group.
-    write_endpoint: Any = None
 
 @dataclasses.dataclass
 class V1beta4InstanceAttrs:
@@ -1256,13 +1198,10 @@ class V1beta4InstanceAttrs:
 V1beta4Instance = ubx.ResourceBinding(
     wire_type="google_sqladmin_v1beta4_instance",
     fields={
-        "available_maintenance_versions": ubx.FieldSpec(wire_name="available_maintenance_versions"),
         "backend_type": ubx.FieldSpec(wire_name="backend_type"),
         "connection_name": ubx.FieldSpec(wire_name="connection_name"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "current_disk_size": ubx.FieldSpec(wire_name="current_disk_size"),
         "database_center_integration_enabled": ubx.FieldSpec(wire_name="database_center_integration_enabled"),
-        "database_installed_version": ubx.FieldSpec(wire_name="database_installed_version"),
         "database_version": ubx.FieldSpec(wire_name="database_version"),
         "disk_encryption_configuration": ubx.FieldSpec(
             wire_name="disk_encryption_configuration",
@@ -1273,12 +1212,6 @@ V1beta4Instance = ubx.ResourceBinding(
             wire_name="disk_encryption_status",
             kind="object",
             fields=_V1beta4Instance_DiskEncryptionStatusFields,
-        ),
-        "dns_name": ubx.FieldSpec(wire_name="dns_name"),
-        "dns_names": ubx.FieldSpec(
-            wire_name="dns_names",
-            kind="list",
-            fields=_V1beta4Instance_DnsNamesFields,
         ),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "failover_replica": ubx.FieldSpec(
@@ -1306,11 +1239,6 @@ V1beta4Instance = ubx.ResourceBinding(
         "max_disk_size": ubx.FieldSpec(wire_name="max_disk_size"),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_count": ubx.FieldSpec(wire_name="node_count"),
-        "nodes": ubx.FieldSpec(
-            wire_name="nodes",
-            kind="list",
-            fields=_V1beta4Instance_NodesFields,
-        ),
         "on_premises_configuration": ubx.FieldSpec(
             wire_name="on_premises_configuration",
             kind="object",
@@ -1321,9 +1249,7 @@ V1beta4Instance = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta4Instance_OutOfDiskReportFields,
         ),
-        "primary_dns_name": ubx.FieldSpec(wire_name="primary_dns_name"),
         "project": ubx.FieldSpec(wire_name="project"),
-        "psc_service_attachment_link": ubx.FieldSpec(wire_name="psc_service_attachment_link"),
         "region": ubx.FieldSpec(wire_name="region"),
         "replica_configuration": ubx.FieldSpec(
             wire_name="replica_configuration",
@@ -1337,7 +1263,6 @@ V1beta4Instance = ubx.ResourceBinding(
             fields=_V1beta4Instance_ReplicationClusterFields,
         ),
         "root_password": ubx.FieldSpec(wire_name="root_password"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
         "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "scheduled_maintenance": ubx.FieldSpec(
             wire_name="scheduled_maintenance",
@@ -1362,11 +1287,5 @@ V1beta4Instance = ubx.ResourceBinding(
         "suspension_reason": ubx.FieldSpec(wire_name="suspension_reason"),
         "switch_transaction_logs_to_cloud_storage_enabled": ubx.FieldSpec(wire_name="switch_transaction_logs_to_cloud_storage_enabled"),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "upgradable_database_versions": ubx.FieldSpec(
-            wire_name="upgradable_database_versions",
-            kind="list",
-            fields=_V1beta4Instance_UpgradableDatabaseVersionsFields,
-        ),
-        "write_endpoint": ubx.FieldSpec(wire_name="write_endpoint"),
     },
 )

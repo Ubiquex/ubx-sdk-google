@@ -8,12 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AttachmentConfig:
-    # Output only. The time at which the environment group attachment was created as milliseconds since epoch.
-    created_at: Any = None
     # Required. ID of the attached environment.
     environment: Any = None
-    # Output only. ID of the environment group.
-    environment_group_id: Any = None
     # ID of the environment group attachment.
     name: Any = None
 
@@ -31,9 +27,7 @@ class AttachmentAttrs:
 Attachment = ubx.ResourceBinding(
     wire_type="google_apigee_attachment",
     fields={
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "environment": ubx.FieldSpec(wire_name="environment"),
-        "environment_group_id": ubx.FieldSpec(wire_name="environment_group_id"),
         "name": ubx.FieldSpec(wire_name="name"),
     },
 )

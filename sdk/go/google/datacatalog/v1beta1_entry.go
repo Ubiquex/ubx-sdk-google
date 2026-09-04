@@ -38,9 +38,9 @@ type V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestamps struct {
 }
 
 type V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs struct {
-	FilePath any
+	FilePath      any
 	GcsTimestamps any
-	SizeBytes any
+	SizeBytes     any
 }
 
 type V1beta1Entry_GcsFilesetSpec struct {
@@ -51,11 +51,11 @@ type V1beta1Entry_GcsFilesetSpec struct {
 }
 
 type V1beta1Entry_Schema_Columns struct {
-	Column any
+	Column      any
 	Description any
-	Mode any
-	Subcolumns any
-	Type any
+	Mode        any
+	Subcolumns  any
+	Type        any
 }
 
 type V1beta1Entry_Schema struct {
@@ -64,10 +64,10 @@ type V1beta1Entry_Schema struct {
 }
 
 type V1beta1Entry_UsageSignal_UsageWithinTimeRange struct {
-	TotalCancellations any
-	TotalCompletions any
+	TotalCancellations                     any
+	TotalCompletions                       any
 	TotalExecutionTimeForCompletionsMillis any
-	TotalFailures any
+	TotalFailures                          any
 }
 
 type V1beta1Entry_UsageSignal struct {
@@ -78,89 +78,89 @@ type V1beta1Entry_UsageSignal struct {
 }
 
 var V1beta1Entry_BigqueryDateShardedSpecFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-	}
+	"Dataset":     ubx.FieldSpec{WireName: "dataset"},
+	"ShardCount":  ubx.FieldSpec{WireName: "shard_count"},
+	"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
+}
 
 var V1beta1Entry_BigqueryTableSpec_TableSpecFields = ubx.FieldMap{
-		"GroupedEntry": ubx.FieldSpec{WireName: "grouped_entry"},
-	}
+	"GroupedEntry": ubx.FieldSpec{WireName: "grouped_entry"},
+}
 
 var V1beta1Entry_BigqueryTableSpec_ViewSpecFields = ubx.FieldMap{
-		"ViewQuery": ubx.FieldSpec{WireName: "view_query"},
-	}
+	"ViewQuery": ubx.FieldSpec{WireName: "view_query"},
+}
 
 var V1beta1Entry_BigqueryTableSpecFields = ubx.FieldMap{
-		"TableSourceType": ubx.FieldSpec{WireName: "table_source_type"},
-		"TableSpec": ubx.FieldSpec{
-			WireName: "table_spec",
-			Kind: "object",
-			Fields: V1beta1Entry_BigqueryTableSpec_TableSpecFields,
-		},
-		"ViewSpec": ubx.FieldSpec{
-			WireName: "view_spec",
-			Kind: "object",
-			Fields: V1beta1Entry_BigqueryTableSpec_ViewSpecFields,
-		},
-	}
+	"TableSourceType": ubx.FieldSpec{WireName: "table_source_type"},
+	"TableSpec": ubx.FieldSpec{
+		WireName: "table_spec",
+		Kind:     "object",
+		Fields:   V1beta1Entry_BigqueryTableSpec_TableSpecFields,
+	},
+	"ViewSpec": ubx.FieldSpec{
+		WireName: "view_spec",
+		Kind:     "object",
+		Fields:   V1beta1Entry_BigqueryTableSpec_ViewSpecFields,
+	},
+}
 
 var V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecsFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"GcsTimestamps": ubx.FieldSpec{
-			WireName: "gcs_timestamps",
-			Kind: "object",
-			Fields: V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
-		},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-	}
+	"FilePath": ubx.FieldSpec{WireName: "file_path"},
+	"GcsTimestamps": ubx.FieldSpec{
+		WireName: "gcs_timestamps",
+		Kind:     "object",
+		Fields:   V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
+	},
+	"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
+}
 
 var V1beta1Entry_GcsFilesetSpecFields = ubx.FieldMap{
-		"FilePatterns": ubx.FieldSpec{WireName: "file_patterns"},
-		"SampleGcsFileSpecs": ubx.FieldSpec{
-			WireName: "sample_gcs_file_specs",
-			Kind: "list",
-			Fields: V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecsFields,
-		},
-	}
+	"FilePatterns": ubx.FieldSpec{WireName: "file_patterns"},
+	"SampleGcsFileSpecs": ubx.FieldSpec{
+		WireName: "sample_gcs_file_specs",
+		Kind:     "list",
+		Fields:   V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecsFields,
+	},
+}
 
 var V1beta1Entry_Schema_ColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Subcolumns": ubx.FieldSpec{WireName: "subcolumns"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Column":      ubx.FieldSpec{WireName: "column"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Mode":        ubx.FieldSpec{WireName: "mode"},
+	"Subcolumns":  ubx.FieldSpec{WireName: "subcolumns"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1Entry_SchemaFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: V1beta1Entry_Schema_ColumnsFields,
-		},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   V1beta1Entry_Schema_ColumnsFields,
+	},
+}
 
 var V1beta1Entry_UsageSignal_UsageWithinTimeRangeFields = ubx.FieldMap{
-		"TotalCancellations": ubx.FieldSpec{WireName: "total_cancellations"},
-		"TotalCompletions": ubx.FieldSpec{WireName: "total_completions"},
-		"TotalExecutionTimeForCompletionsMillis": ubx.FieldSpec{WireName: "total_execution_time_for_completions_millis"},
-		"TotalFailures": ubx.FieldSpec{WireName: "total_failures"},
-	}
+	"TotalCancellations":                     ubx.FieldSpec{WireName: "total_cancellations"},
+	"TotalCompletions":                       ubx.FieldSpec{WireName: "total_completions"},
+	"TotalExecutionTimeForCompletionsMillis": ubx.FieldSpec{WireName: "total_execution_time_for_completions_millis"},
+	"TotalFailures":                          ubx.FieldSpec{WireName: "total_failures"},
+}
 
 var V1beta1Entry_UsageSignalFields = ubx.FieldMap{
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UsageWithinTimeRange": ubx.FieldSpec{
-			WireName: "usage_within_time_range",
-			Kind: "map",
-			Fields: V1beta1Entry_UsageSignal_UsageWithinTimeRangeFields,
-		},
-	}
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"UsageWithinTimeRange": ubx.FieldSpec{
+		WireName: "usage_within_time_range",
+		Kind:     "map",
+		Fields:   V1beta1Entry_UsageSignal_UsageWithinTimeRangeFields,
+	},
+}
 
 type V1beta1EntryConfig struct {
 	// Spec for a group of BigQuery tables with name pattern `[prefix]YYYYMMDD`. Context: https://cloud.google.com/bigquery/docs/partitioned-tables#partitioning_versus_sharding
@@ -173,12 +173,8 @@ type V1beta1EntryConfig struct {
 	DisplayName any
 	// Describes a Cloud Storage fileset entry.
 	GcsFilesetSpec any
-	// Output only. This field indicates the entry's source system that Data Catalog integrates with, such as BigQuery or Pub/Sub.
-	IntegratedSystem any
 	// The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [full name of the resource](https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty string.
 	LinkedResource any
-	// Output only. Identifier. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name.
-	Name any
 	// Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema).
 	Schema any
 	// Timestamps about this resource according to a particular system.
@@ -229,41 +225,39 @@ var V1beta1Entry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryDateShardedSpec": ubx.FieldSpec{
 			WireName: "bigquery_date_sharded_spec",
-			Kind: "object",
-			Fields: V1beta1Entry_BigqueryDateShardedSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_BigqueryDateShardedSpecFields,
 		},
 		"BigqueryTableSpec": ubx.FieldSpec{
 			WireName: "bigquery_table_spec",
-			Kind: "object",
-			Fields: V1beta1Entry_BigqueryTableSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_BigqueryTableSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GcsFilesetSpec": ubx.FieldSpec{
 			WireName: "gcs_fileset_spec",
-			Kind: "object",
-			Fields: V1beta1Entry_GcsFilesetSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_GcsFilesetSpecFields,
 		},
-		"IntegratedSystem": ubx.FieldSpec{WireName: "integrated_system"},
 		"LinkedResource": ubx.FieldSpec{WireName: "linked_resource"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: V1beta1Entry_SchemaFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_SchemaFields,
 		},
 		"SourceSystemTimestamps": ubx.FieldSpec{
 			WireName: "source_system_timestamps",
-			Kind: "object",
-			Fields: V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_GcsFilesetSpec_SampleGcsFileSpecs_GcsTimestampsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"UsageSignal": ubx.FieldSpec{
 			WireName: "usage_signal",
-			Kind: "object",
-			Fields: V1beta1Entry_UsageSignalFields,
+			Kind:     "object",
+			Fields:   V1beta1Entry_UsageSignalFields,
 		},
 		"UserSpecifiedSystem": ubx.FieldSpec{WireName: "user_specified_system"},
-		"UserSpecifiedType": ubx.FieldSpec{WireName: "user_specified_type"},
+		"UserSpecifiedType":   ubx.FieldSpec{WireName: "user_specified_type"},
 	},
 }

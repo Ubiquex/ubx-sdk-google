@@ -25,47 +25,35 @@ type V1beta1Featurestore_OnlineServingConfig struct {
 }
 
 var V1beta1Featurestore_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1Featurestore_OnlineServingConfig_ScalingFields = ubx.FieldMap{
-		"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-	}
+	"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
+	"MaxNodeCount":         ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount":         ubx.FieldSpec{WireName: "min_node_count"},
+}
 
 var V1beta1Featurestore_OnlineServingConfigFields = ubx.FieldMap{
-		"FixedNodeCount": ubx.FieldSpec{WireName: "fixed_node_count"},
-		"Scaling": ubx.FieldSpec{
-			WireName: "scaling",
-			Kind: "object",
-			Fields: V1beta1Featurestore_OnlineServingConfig_ScalingFields,
-		},
-	}
+	"FixedNodeCount": ubx.FieldSpec{WireName: "fixed_node_count"},
+	"Scaling": ubx.FieldSpec{
+		WireName: "scaling",
+		Kind:     "object",
+		Fields:   V1beta1Featurestore_OnlineServingConfig_ScalingFields,
+	},
+}
 
 type V1beta1FeaturestoreConfig struct {
-	// Output only. Timestamp when this Featurestore was created.
-	CreateTime any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
 	Etag any
 	// Optional. The labels with user-defined metadata to organize your Featurestore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Featurestore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
 	Labels any
-	// Output only. Name of the Featurestore. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}`
-	Name any
 	// OnlineServingConfig specifies the details for provisioning online serving resources.
 	OnlineServingConfig any
 	// Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days
 	OnlineStorageTtlDays any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. State of the featurestore.
-	State any
-	// Output only. Timestamp when this Featurestore was last updated.
-	UpdateTime any
 }
 
 type V1beta1FeaturestoreAttrs struct {
@@ -96,24 +84,18 @@ type V1beta1FeaturestoreAttrs struct {
 var V1beta1Featurestore = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_featurestore",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Featurestore_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Featurestore_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OnlineServingConfig": ubx.FieldSpec{
 			WireName: "online_serving_config",
-			Kind: "object",
-			Fields: V1beta1Featurestore_OnlineServingConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Featurestore_OnlineServingConfigFields,
 		},
 		"OnlineStorageTtlDays": ubx.FieldSpec{WireName: "online_storage_ttl_days"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

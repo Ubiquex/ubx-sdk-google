@@ -13,28 +13,18 @@ type SingleTenantHsmInstance_QuorumAuth struct {
 }
 
 var SingleTenantHsmInstance_QuorumAuthFields = ubx.FieldMap{
-		"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
-		"TotalApproverCount": ubx.FieldSpec{WireName: "total_approver_count"},
-		"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
-	}
+	"RequiredApproverCount":  ubx.FieldSpec{WireName: "required_approver_count"},
+	"TotalApproverCount":     ubx.FieldSpec{WireName: "total_approver_count"},
+	"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
+}
 
 type SingleTenantHsmInstanceConfig struct {
-	// Output only. The time at which the SingleTenantHsmInstance was created.
-	CreateTime any
-	// Output only. The time at which the SingleTenantHsmInstance was deleted.
-	DeleteTime any
-	// Output only. The time at which the instance will be automatically disabled if not refreshed. This field is updated upon creation and after each successful refresh operation and enable. A RefreshSingleTenantHsmInstance operation must be made via a SingleTenantHsmInstanceProposal before this time otherwise the SingleTenantHsmInstance will become disabled.
-	DisableTime any
 	// Optional. Immutable. Indicates whether key portability is enabled for the SingleTenantHsmInstance. This can only be set at creation time. Key portability features are disabled by default.
 	KeyPortabilityEnabled any
 	// Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/*/locations/*/singleTenantHsmInstances/*`.
 	Name any
 	// Configuration for M of N quorum auth.
 	QuorumAuth any
-	// Output only. The state of the SingleTenantHsmInstance.
-	State any
-	// Output only. The system-defined duration that an instance can remain unrefreshed until it is automatically disabled. This will have a value of 730 days.
-	UnrefreshedDurationUntilDisable any
 }
 
 type SingleTenantHsmInstanceAttrs struct {
@@ -59,17 +49,12 @@ type SingleTenantHsmInstanceAttrs struct {
 var SingleTenantHsmInstance = ubx.ResourceBinding{
 	WireType: "google_cloudkms_single_tenant_hsm_instance",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"DisableTime": ubx.FieldSpec{WireName: "disable_time"},
 		"KeyPortabilityEnabled": ubx.FieldSpec{WireName: "key_portability_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"QuorumAuth": ubx.FieldSpec{
 			WireName: "quorum_auth",
-			Kind: "object",
-			Fields: SingleTenantHsmInstance_QuorumAuthFields,
+			Kind:     "object",
+			Fields:   SingleTenantHsmInstance_QuorumAuthFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UnrefreshedDurationUntilDisable": ubx.FieldSpec{WireName: "unrefreshed_duration_until_disable"},
 	},
 }

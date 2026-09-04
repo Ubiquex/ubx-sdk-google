@@ -174,18 +174,9 @@ const Dataset_RestrictionsFields: FieldMap = {
   type: "type",
 };
 
-const Dataset_TagsFields: FieldMap = {
-  tagKey: "tag_key",
-  tagValue: "tag_value",
-};
-
 export interface DatasetConfig {
   /** Optional. An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER; If you patch a dataset, then this field is overwritten by the patched dataset's access field. To add entities, you must supply the entire existing access array in addition to any new entities that you want to add. */
   access?: Dataset_Access[] | Computed<Dataset_Access[]>;
-  /** Output only. The origin of the dataset, one of: * (Unset) - Native BigQuery Dataset * BIGLAKE - Dataset is backed by a namespace stored natively in Biglake */
-  catalogSource?: string | Computed<string>;
-  /** Output only. The time when this dataset was created, in milliseconds since the epoch. */
-  creationTime?: string | Computed<string>;
   /** Identifier for a dataset. */
   datasetReference?: Dataset_Access_Dataset_Dataset | Computed<Dataset_Access_Dataset_Dataset>;
   /** Optional. Defines the default collation specification of future tables created in the dataset. If a table is created in this dataset without table-level default collation, then the table inherits the dataset default collation, which is applied to the string fields that do not have explicit collation specified. A change to this field affects only tables created afterwards, and does not alter the existing tables. The following values are supported: * 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to case-sensitive behavior. */
@@ -200,24 +191,16 @@ export interface DatasetConfig {
   defaultTableExpirationMs?: string | Computed<string>;
   /** Optional. A user-friendly description of the dataset. */
   description?: string | Computed<string>;
-  /** Output only. A hash of the resource. */
-  etag?: string | Computed<string>;
   /** Options defining open source compatible datasets living in the BigQuery catalog. Contains metadata of open source database, schema, or namespace represented by the current dataset. */
   externalCatalogDatasetOptions?: Dataset_ExternalCatalogDatasetOptions | Computed<Dataset_ExternalCatalogDatasetOptions>;
   /** Configures the access a dataset defined in an external metadata storage. */
   externalDatasetReference?: Dataset_ExternalDatasetReference | Computed<Dataset_ExternalDatasetReference>;
   /** Optional. A descriptive name for the dataset. */
   friendlyName?: string | Computed<string>;
-  /** Output only. The fully-qualified unique name of the dataset in the format projectId:datasetId. The dataset name without the project name is given in the datasetId field. When creating a new dataset, leave this field blank, and instead specify the datasetId field. */
-  id?: string | Computed<string>;
   /** Optional. TRUE if the dataset and its table names are case-insensitive, otherwise FALSE. By default, this is FALSE, which means the dataset and its table names are case-sensitive. This field does not affect routine references. */
   isCaseInsensitive?: boolean | Computed<boolean>;
-  /** Output only. The resource type. */
-  kind?: string | Computed<string>;
   /** The labels associated with this dataset. You can use these to organize and group your datasets. You can set this property when inserting or updating a dataset. See [Creating and Updating Dataset Labels](https://cloud.google.com/bigquery/docs/creating-managing-labels#creating_and_updating_dataset_labels) for more information. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The date when this dataset was last modified, in milliseconds since the epoch. */
-  lastModifiedTime?: string | Computed<string>;
   /** Metadata about the Linked Dataset. */
   linkedDatasetMetadata?: Dataset_LinkedDatasetMetadata | Computed<Dataset_LinkedDatasetMetadata>;
   /** A dataset source type which refers to another BigQuery dataset. */
@@ -229,18 +212,8 @@ export interface DatasetConfig {
   /** Optional. The [tags](https://cloud.google.com/bigquery/docs/tags) attached to this dataset. Tag keys are globally unique. Tag key is expected to be in the namespaced format, for example "123456789012/environment" where 123456789012 is the ID of the parent organization or project resource for this tag key. Tag value is expected to be the short name, for example "Production". See [Tag definitions](https://cloud.google.com/iam/docs/tags-access-control#definitions) for more details. */
   resourceTags?: Record<string, string> | Computed<Record<string, string>>;
   restrictions?: Dataset_Restrictions | Computed<Dataset_Restrictions>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. A URL that can be used to access the resource again. You can use this URL in Get or Update requests to the resource. */
-  selfLink?: string | Computed<string>;
   /** Optional. Updates storage_billing_model for the dataset. */
   storageBillingModel?: string | Computed<string>;
-  /** Output only. Tags for the dataset. To provide tags as inputs, use the `resourceTags` field. */
-  tags?: Dataset_Tags[] | Computed<Dataset_Tags[]>;
-  /** Output only. Same as `type` in `ListFormatDataset`. The type of the dataset, one of: * DEFAULT - only accessible by owner and authorized accounts, * PUBLIC - accessible by everyone, * LINKED - linked dataset, * EXTERNAL - dataset with definition in external metadata catalog, * BIGLAKE_ICEBERG - a Biglake dataset accessible through the Iceberg API, * BIGLAKE_HIVE - a Biglake dataset accessible through the Hive API. */
-  type?: string | Computed<string>;
 }
 
 export interface DatasetAttrs {
@@ -315,8 +288,6 @@ export const Dataset: ResourceBinding<DatasetConfig, DatasetAttrs> = {
       kind: "list",
       fields: Dataset_AccessFields,
     },
-    catalogSource: "catalog_source",
-    creationTime: "creation_time",
     datasetReference: {
       wireName: "dataset_reference",
       kind: "object",
@@ -332,7 +303,6 @@ export const Dataset: ResourceBinding<DatasetConfig, DatasetAttrs> = {
     defaultRoundingMode: "default_rounding_mode",
     defaultTableExpirationMs: "default_table_expiration_ms",
     description: "description",
-    etag: "etag",
     externalCatalogDatasetOptions: {
       wireName: "external_catalog_dataset_options",
       kind: "object",
@@ -344,11 +314,8 @@ export const Dataset: ResourceBinding<DatasetConfig, DatasetAttrs> = {
       fields: Dataset_ExternalDatasetReferenceFields,
     },
     friendlyName: "friendly_name",
-    id: "id",
     isCaseInsensitive: "is_case_insensitive",
-    kind: "kind",
     labels: "labels",
-    lastModifiedTime: "last_modified_time",
     linkedDatasetMetadata: {
       wireName: "linked_dataset_metadata",
       kind: "object",
@@ -367,15 +334,6 @@ export const Dataset: ResourceBinding<DatasetConfig, DatasetAttrs> = {
       kind: "object",
       fields: Dataset_RestrictionsFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    selfLink: "self_link",
     storageBillingModel: "storage_billing_model",
-    tags: {
-      wireName: "tags",
-      kind: "list",
-      fields: Dataset_TagsFields,
-    },
-    type: "type",
   },
 };

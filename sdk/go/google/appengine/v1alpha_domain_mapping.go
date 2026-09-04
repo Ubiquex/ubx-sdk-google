@@ -4,9 +4,9 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaDomainMapping_ResourceRecords struct {
-	Name any
+	Name   any
 	Rrdata any
-	Type any
+	Type   any
 }
 
 type V1alphaDomainMapping_SslSettings struct {
@@ -16,24 +16,14 @@ type V1alphaDomainMapping_SslSettings struct {
 	IsManagedCertificate any
 }
 
-var V1alphaDomainMapping_ResourceRecordsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rrdata": ubx.FieldSpec{WireName: "rrdata"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
 var V1alphaDomainMapping_SslSettingsFields = ubx.FieldMap{
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"IsManagedCertificate": ubx.FieldSpec{WireName: "is_managed_certificate"},
-	}
+	"CertificateId":        ubx.FieldSpec{WireName: "certificate_id"},
+	"IsManagedCertificate": ubx.FieldSpec{WireName: "is_managed_certificate"},
+}
 
 type V1alphaDomainMappingConfig struct {
 	// Relative name of the domain serving the application. Example: example.com.
 	Id any
-	// Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly
-	Name any
-	// Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly
-	ResourceRecords any
 	// SSL configuration for a DomainMapping resource.
 	SslSettings any
 }
@@ -53,16 +43,10 @@ var V1alphaDomainMapping = ubx.ResourceBinding{
 	WireType: "google_appengine_v1alpha_domain_mapping",
 	Fields: ubx.FieldMap{
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceRecords": ubx.FieldSpec{
-			WireName: "resource_records",
-			Kind: "list",
-			Fields: V1alphaDomainMapping_ResourceRecordsFields,
-		},
 		"SslSettings": ubx.FieldSpec{
 			WireName: "ssl_settings",
-			Kind: "object",
-			Fields: V1alphaDomainMapping_SslSettingsFields,
+			Kind:     "object",
+			Fields:   V1alphaDomainMapping_SslSettingsFields,
 		},
 	},
 }

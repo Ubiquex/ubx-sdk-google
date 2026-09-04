@@ -2,14 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SpaceConfig {
-  /** Output only. Create timestamp of the space. */
-  createTime?: string | Computed<string>;
   /** Optional. Display name of the space. */
   displayName?: string | Computed<string>;
-  /** Output only. Identifier. Id of the space. This field is used as the resource name, and must follow [AIP-122](https://google.aip.dev/122) guidelines. */
-  name?: string | Computed<string>;
-  /** Output only. Last modified timestamp of the space. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SpaceAttrs {
@@ -26,9 +20,6 @@ export interface SpaceAttrs {
 export const Space: ResourceBinding<SpaceConfig, SpaceAttrs> = {
   wireType: "google_apigee_space",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    name: "name",
-    updateTime: "update_time",
   },
 };

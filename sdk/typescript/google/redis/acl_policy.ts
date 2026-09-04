@@ -18,44 +18,16 @@ export interface AclPolicy_Rules {
   username?: string | Computed<string>;
 }
 
-const AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields: FieldMap = {
-  aclPolicyRevision: "acl_policy_revision",
-  aclPolicyRevisionNumber: "acl_policy_revision_number",
-  errorMessage: "error_message",
-  state: "state",
-};
-
-const AclPolicy_ClusterAclPolicyAttachmentsFields: FieldMap = {
-  aclPolicyRevisionStatuses: {
-    wireName: "acl_policy_revision_statuses",
-    kind: "list",
-    fields: AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields,
-  },
-  cluster: "cluster",
-};
-
 const AclPolicy_RulesFields: FieldMap = {
   rule: "rule",
   username: "username",
 };
 
 export interface AclPolicyConfig {
-  /** Output only. The ACL policy attachment status for each attached cluster. */
-  clusterAclPolicyAttachments?: AclPolicy_ClusterAclPolicyAttachments[] | Computed<AclPolicy_ClusterAclPolicyAttachments[]>;
-  /** Output only. The timestamp that the ACL policy was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Etag for the ACL policy. */
-  etag?: string | Computed<string>;
   /** Identifier. Full resource path of the ACL policy. */
   name?: string | Computed<string>;
   /** Required. The ACL rules within the ACL policy. */
   rules?: AclPolicy_Rules[] | Computed<AclPolicy_Rules[]>;
-  /** Output only. The state of the ACL policy. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp that the ACL policy was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. Deprecated: Used in drift resolution. */
-  version?: string | Computed<string>;
 }
 
 export interface AclPolicyAttrs {
@@ -80,21 +52,11 @@ export interface AclPolicyAttrs {
 export const AclPolicy: ResourceBinding<AclPolicyConfig, AclPolicyAttrs> = {
   wireType: "google_redis_acl_policy",
   fields: {
-    clusterAclPolicyAttachments: {
-      wireName: "cluster_acl_policy_attachments",
-      kind: "list",
-      fields: AclPolicy_ClusterAclPolicyAttachmentsFields,
-    },
-    createTime: "create_time",
-    etag: "etag",
     name: "name",
     rules: {
       wireName: "rules",
       kind: "list",
       fields: AclPolicy_RulesFields,
     },
-    state: "state",
-    updateTime: "update_time",
-    version: "version",
   },
 };

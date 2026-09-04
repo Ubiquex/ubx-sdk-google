@@ -32,28 +32,26 @@ type PrivateConnection_VpcPeeringConfig struct {
 }
 
 var PrivateConnection_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PrivateConnection_PscInterfaceConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var PrivateConnection_ReservedPublicIpConfigFields = ubx.FieldMap{
-		"EgressPublicIps": ubx.FieldSpec{WireName: "egress_public_ips"},
-		"NatIpsCount": ubx.FieldSpec{WireName: "nat_ips_count"},
-	}
+	"EgressPublicIps": ubx.FieldSpec{WireName: "egress_public_ips"},
+	"NatIpsCount":     ubx.FieldSpec{WireName: "nat_ips_count"},
+}
 
 var PrivateConnection_VpcPeeringConfigFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
-	}
+	"Subnet":  ubx.FieldSpec{WireName: "subnet"},
+	"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
+}
 
 type PrivateConnectionConfig struct {
-	// Output only. The create time of the resource.
-	CreateTime any
 	// The private connection display name.
 	DisplayName any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -66,14 +64,6 @@ type PrivateConnectionConfig struct {
 	PscInterfaceConfig any
 	// Reserved Public IP configuration.
 	ReservedPublicIpConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The state of the private connection.
-	State any
-	// Output only. The last update time of the resource.
-	UpdateTime any
 	// The VPC peering configuration is used to create VPC peering with the consumer's VPC.
 	VpcPeeringConfig any
 }
@@ -108,33 +98,28 @@ type PrivateConnectionAttrs struct {
 var PrivateConnection = ubx.ResourceBinding{
 	WireType: "google_datamigration_private_connection",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: PrivateConnection_ErrorFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: PrivateConnection_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_PscInterfaceConfigFields,
 		},
 		"ReservedPublicIpConfig": ubx.FieldSpec{
 			WireName: "reserved_public_ip_config",
-			Kind: "object",
-			Fields: PrivateConnection_ReservedPublicIpConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ReservedPublicIpConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VpcPeeringConfig": ubx.FieldSpec{
 			WireName: "vpc_peering_config",
-			Kind: "object",
-			Fields: PrivateConnection_VpcPeeringConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_VpcPeeringConfigFields,
 		},
 	},
 }

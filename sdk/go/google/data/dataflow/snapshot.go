@@ -4,14 +4,14 @@ package dataflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Snapshot_PubsubMetadata struct {
-	ExpireTime any
+	ExpireTime   any
 	SnapshotName any
-	TopicName any
+	TopicName    any
 }
 
 type SnapshotConfig struct {
-	Location any
-	ProjectId any
+	Location   any
+	ProjectId  any
 	SnapshotId any
 }
 
@@ -23,13 +23,13 @@ type SnapshotAttrs struct {
 	// The disk byte size of the snapshot. Only available for snapshots in READY state.
 	DiskSizeBytes any
 	// The unique ID of this snapshot.
-	Id any
-	Location any
+	Id        any
+	Location  any
 	ProjectId any
 	// Pub/Sub snapshot metadata.
 	PubsubMetadata any
 	// Cloud region where this snapshot lives in, e.g., "us-central1".
-	Region any
+	Region     any
 	SnapshotId any
 	// The job this snapshot was created from.
 	SourceJobId any
@@ -42,8 +42,8 @@ type SnapshotAttrs struct {
 var Snapshot = ubx.DataSourceBinding{
 	WireType: "google_dataflow_snapshot",
 	Fields: ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"Location":   ubx.FieldSpec{WireName: "location"},
+		"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
 		"SnapshotId": ubx.FieldSpec{WireName: "snapshot_id"},
 	},
 }

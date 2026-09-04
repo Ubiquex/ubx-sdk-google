@@ -113,23 +113,6 @@ _Api_OwnerFields = {
     "email": ubx.FieldSpec(wire_name="email"),
 }
 
-_Api_SourceMetadata_PluginInstanceActionSourceFields = {
-    "action_id": ubx.FieldSpec(wire_name="action_id"),
-    "plugin_instance": ubx.FieldSpec(wire_name="plugin_instance"),
-}
-
-_Api_SourceMetadataFields = {
-    "original_resource_create_time": ubx.FieldSpec(wire_name="original_resource_create_time"),
-    "original_resource_id": ubx.FieldSpec(wire_name="original_resource_id"),
-    "original_resource_update_time": ubx.FieldSpec(wire_name="original_resource_update_time"),
-    "plugin_instance_action_source": ubx.FieldSpec(
-        wire_name="plugin_instance_action_source",
-        kind="object",
-        fields=_Api_SourceMetadata_PluginInstanceActionSourceFields,
-    ),
-    "source_type": ubx.FieldSpec(wire_name="source_type"),
-}
-
 @dataclasses.dataclass
 class ApiConfig:
     # The attribute values associated with resource.
@@ -144,8 +127,6 @@ class ApiConfig:
     attributes: Any = None
     # The attribute values associated with resource.
     business_unit: Any = None
-    # Output only. The time at which the API resource was created.
-    create_time: Any = None
     # Optional. The description of the API resource.
     description: Any = None
     # Required. The display name of the API resource.
@@ -162,16 +143,10 @@ class ApiConfig:
     owner: Any = None
     # Optional. The selected version for an API resource. This can be used when special handling is needed on client side for particular version of the API. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
     selected_version: Any = None
-    # Output only. The list of sources and metadata from the sources of the API resource.
-    source_metadata: Any = None
     # The attribute values associated with resource.
     target_user: Any = None
     # The attribute values associated with resource.
     team: Any = None
-    # Output only. The time at which the API resource was last updated.
-    update_time: Any = None
-    # Output only. The list of versions present in an API resource. Note: An API resource can be associated with more than 1 version. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
-    versions: Any = None
 
 @dataclasses.dataclass
 class ApiAttrs:
@@ -249,7 +224,6 @@ Api = ubx.ResourceBinding(
             kind="object",
             fields=_Api_ApiFunctionalRequirementsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "documentation": ubx.FieldSpec(
@@ -270,11 +244,6 @@ Api = ubx.ResourceBinding(
             fields=_Api_OwnerFields,
         ),
         "selected_version": ubx.FieldSpec(wire_name="selected_version"),
-        "source_metadata": ubx.FieldSpec(
-            wire_name="source_metadata",
-            kind="list",
-            fields=_Api_SourceMetadataFields,
-        ),
         "target_user": ubx.FieldSpec(
             wire_name="target_user",
             kind="object",
@@ -285,7 +254,5 @@ Api = ubx.ResourceBinding(
             kind="object",
             fields=_Api_ApiFunctionalRequirementsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "versions": ubx.FieldSpec(wire_name="versions"),
     },
 )

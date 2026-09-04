@@ -160,9 +160,9 @@ type Batch_RuntimeInfo_CurrentUsage struct {
 }
 
 type Batch_RuntimeInfo_PropertiesInfo_AutotuningProperties struct {
-	Annotation any
+	Annotation      any
 	OverriddenValue any
-	Value any
+	Value           any
 }
 
 type Batch_RuntimeInfo_PropertiesInfo struct {
@@ -223,219 +223,205 @@ type Batch_SparkSqlBatch struct {
 }
 
 type Batch_StateHistory struct {
-	State any
-	StateMessage any
+	State          any
+	StateMessage   any
 	StateStartTime any
 }
 
 var Batch_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields = ubx.FieldMap{
-		"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
-	}
+	"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
+}
 
 var Batch_EnvironmentConfig_ExecutionConfigFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{
-			WireName: "authentication_config",
-			Kind: "object",
-			Fields: Batch_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
-		},
-		"IdleTtl": ubx.FieldSpec{WireName: "idle_ttl"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StagingBucket": ubx.FieldSpec{WireName: "staging_bucket"},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{
+		WireName: "authentication_config",
+		Kind:     "object",
+		Fields:   Batch_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
+	},
+	"IdleTtl":             ubx.FieldSpec{WireName: "idle_ttl"},
+	"KmsKey":              ubx.FieldSpec{WireName: "kms_key"},
+	"NetworkTags":         ubx.FieldSpec{WireName: "network_tags"},
+	"NetworkUri":          ubx.FieldSpec{WireName: "network_uri"},
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ServiceAccount":      ubx.FieldSpec{WireName: "service_account"},
+	"StagingBucket":       ubx.FieldSpec{WireName: "staging_bucket"},
+	"SubnetworkUri":       ubx.FieldSpec{WireName: "subnetwork_uri"},
+	"Ttl":                 ubx.FieldSpec{WireName: "ttl"},
+}
 
 var Batch_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields = ubx.FieldMap{
-		"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
-	}
+	"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
+}
 
 var Batch_EnvironmentConfig_PeripheralsConfigFields = ubx.FieldMap{
-		"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
-		"SparkHistoryServerConfig": ubx.FieldSpec{
-			WireName: "spark_history_server_config",
-			Kind: "object",
-			Fields: Batch_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
-		},
-	}
+	"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
+	"SparkHistoryServerConfig": ubx.FieldSpec{
+		WireName: "spark_history_server_config",
+		Kind:     "object",
+		Fields:   Batch_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
+	},
+}
 
 var Batch_EnvironmentConfigFields = ubx.FieldMap{
-		"ExecutionConfig": ubx.FieldSpec{
-			WireName: "execution_config",
-			Kind: "object",
-			Fields: Batch_EnvironmentConfig_ExecutionConfigFields,
-		},
-		"PeripheralsConfig": ubx.FieldSpec{
-			WireName: "peripherals_config",
-			Kind: "object",
-			Fields: Batch_EnvironmentConfig_PeripheralsConfigFields,
-		},
-	}
+	"ExecutionConfig": ubx.FieldSpec{
+		WireName: "execution_config",
+		Kind:     "object",
+		Fields:   Batch_EnvironmentConfig_ExecutionConfigFields,
+	},
+	"PeripheralsConfig": ubx.FieldSpec{
+		WireName: "peripherals_config",
+		Kind:     "object",
+		Fields:   Batch_EnvironmentConfig_PeripheralsConfigFields,
+	},
+}
 
 var Batch_PysparkBatchFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"MainPythonFileUri": ubx.FieldSpec{WireName: "main_python_file_uri"},
-		"PythonFileUris": ubx.FieldSpec{WireName: "python_file_uris"},
-	}
+	"ArchiveUris":       ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":              ubx.FieldSpec{WireName: "args"},
+	"FileUris":          ubx.FieldSpec{WireName: "file_uris"},
+	"JarFileUris":       ubx.FieldSpec{WireName: "jar_file_uris"},
+	"MainPythonFileUri": ubx.FieldSpec{WireName: "main_python_file_uri"},
+	"PythonFileUris":    ubx.FieldSpec{WireName: "python_file_uris"},
+}
 
 var Batch_PysparkNotebookBatchFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"NotebookFileUri": ubx.FieldSpec{WireName: "notebook_file_uri"},
-		"Params": ubx.FieldSpec{WireName: "params"},
-		"PythonFileUris": ubx.FieldSpec{WireName: "python_file_uris"},
-	}
+	"ArchiveUris":     ubx.FieldSpec{WireName: "archive_uris"},
+	"FileUris":        ubx.FieldSpec{WireName: "file_uris"},
+	"JarFileUris":     ubx.FieldSpec{WireName: "jar_file_uris"},
+	"NotebookFileUri": ubx.FieldSpec{WireName: "notebook_file_uri"},
+	"Params":          ubx.FieldSpec{WireName: "params"},
+	"PythonFileUris":  ubx.FieldSpec{WireName: "python_file_uris"},
+}
 
 var Batch_RuntimeConfig_AutotuningConfigFields = ubx.FieldMap{
-		"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
-	}
+	"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
+}
 
 var Batch_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields = ubx.FieldMap{
-		"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
-	}
+	"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
+}
 
 var Batch_RuntimeConfig_RepositoryConfigFields = ubx.FieldMap{
-		"PypiRepositoryConfig": ubx.FieldSpec{
-			WireName: "pypi_repository_config",
-			Kind: "object",
-			Fields: Batch_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
-		},
-	}
+	"PypiRepositoryConfig": ubx.FieldSpec{
+		WireName: "pypi_repository_config",
+		Kind:     "object",
+		Fields:   Batch_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
+	},
+}
 
 var Batch_RuntimeConfigFields = ubx.FieldMap{
-		"AutotuningConfig": ubx.FieldSpec{
-			WireName: "autotuning_config",
-			Kind: "object",
-			Fields: Batch_RuntimeConfig_AutotuningConfigFields,
-		},
-		"Cohort": ubx.FieldSpec{WireName: "cohort"},
-		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"RepositoryConfig": ubx.FieldSpec{
-			WireName: "repository_config",
-			Kind: "object",
-			Fields: Batch_RuntimeConfig_RepositoryConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AutotuningConfig": ubx.FieldSpec{
+		WireName: "autotuning_config",
+		Kind:     "object",
+		Fields:   Batch_RuntimeConfig_AutotuningConfigFields,
+	},
+	"Cohort":         ubx.FieldSpec{WireName: "cohort"},
+	"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+	"RepositoryConfig": ubx.FieldSpec{
+		WireName: "repository_config",
+		Kind:     "object",
+		Fields:   Batch_RuntimeConfig_RepositoryConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Batch_RuntimeInfo_ApproximateUsageFields = ubx.FieldMap{
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"MilliAcceleratorSeconds": ubx.FieldSpec{WireName: "milli_accelerator_seconds"},
-		"MilliAcceleratorSecondsA10040": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10040"},
-		"MilliAcceleratorSecondsA10080": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10080"},
-		"MilliAcceleratorSecondsL4": ubx.FieldSpec{WireName: "milli_accelerator_seconds_l4"},
-		"MilliDcuSeconds": ubx.FieldSpec{WireName: "milli_dcu_seconds"},
-		"ShuffleStorageGbSeconds": ubx.FieldSpec{WireName: "shuffle_storage_gb_seconds"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AcceleratorType":               ubx.FieldSpec{WireName: "accelerator_type"},
+	"MilliAcceleratorSeconds":       ubx.FieldSpec{WireName: "milli_accelerator_seconds"},
+	"MilliAcceleratorSecondsA10040": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10040"},
+	"MilliAcceleratorSecondsA10080": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10080"},
+	"MilliAcceleratorSecondsL4":     ubx.FieldSpec{WireName: "milli_accelerator_seconds_l4"},
+	"MilliDcuSeconds":               ubx.FieldSpec{WireName: "milli_dcu_seconds"},
+	"ShuffleStorageGbSeconds":       ubx.FieldSpec{WireName: "shuffle_storage_gb_seconds"},
+	"UpdateTime":                    ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Batch_RuntimeInfo_CohortInfoFields = ubx.FieldMap{
-		"Cohort": ubx.FieldSpec{WireName: "cohort"},
-		"CohortSource": ubx.FieldSpec{WireName: "cohort_source"},
-	}
+	"Cohort":       ubx.FieldSpec{WireName: "cohort"},
+	"CohortSource": ubx.FieldSpec{WireName: "cohort_source"},
+}
 
 var Batch_RuntimeInfo_CurrentUsageFields = ubx.FieldMap{
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"MilliAccelerator": ubx.FieldSpec{WireName: "milli_accelerator"},
-		"MilliAcceleratorA10040": ubx.FieldSpec{WireName: "milli_accelerator_a10040"},
-		"MilliAcceleratorA10080": ubx.FieldSpec{WireName: "milli_accelerator_a10080"},
-		"MilliAcceleratorL4": ubx.FieldSpec{WireName: "milli_accelerator_l4"},
-		"MilliDcu": ubx.FieldSpec{WireName: "milli_dcu"},
-		"MilliDcuPremium": ubx.FieldSpec{WireName: "milli_dcu_premium"},
-		"ShuffleStorageGb": ubx.FieldSpec{WireName: "shuffle_storage_gb"},
-		"ShuffleStorageGbPremium": ubx.FieldSpec{WireName: "shuffle_storage_gb_premium"},
-		"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
-	}
+	"AcceleratorType":         ubx.FieldSpec{WireName: "accelerator_type"},
+	"MilliAccelerator":        ubx.FieldSpec{WireName: "milli_accelerator"},
+	"MilliAcceleratorA10040":  ubx.FieldSpec{WireName: "milli_accelerator_a10040"},
+	"MilliAcceleratorA10080":  ubx.FieldSpec{WireName: "milli_accelerator_a10080"},
+	"MilliAcceleratorL4":      ubx.FieldSpec{WireName: "milli_accelerator_l4"},
+	"MilliDcu":                ubx.FieldSpec{WireName: "milli_dcu"},
+	"MilliDcuPremium":         ubx.FieldSpec{WireName: "milli_dcu_premium"},
+	"ShuffleStorageGb":        ubx.FieldSpec{WireName: "shuffle_storage_gb"},
+	"ShuffleStorageGbPremium": ubx.FieldSpec{WireName: "shuffle_storage_gb_premium"},
+	"SnapshotTime":            ubx.FieldSpec{WireName: "snapshot_time"},
+}
 
 var Batch_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields = ubx.FieldMap{
-		"Annotation": ubx.FieldSpec{WireName: "annotation"},
-		"OverriddenValue": ubx.FieldSpec{WireName: "overridden_value"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Annotation":      ubx.FieldSpec{WireName: "annotation"},
+	"OverriddenValue": ubx.FieldSpec{WireName: "overridden_value"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Batch_RuntimeInfo_PropertiesInfoFields = ubx.FieldMap{
-		"AutotuningProperties": ubx.FieldSpec{
-			WireName: "autotuning_properties",
-			Kind: "map",
-			Fields: Batch_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields,
-		},
-	}
+	"AutotuningProperties": ubx.FieldSpec{
+		WireName: "autotuning_properties",
+		Kind:     "map",
+		Fields:   Batch_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields,
+	},
+}
 
 var Batch_RuntimeInfoFields = ubx.FieldMap{
-		"ApproximateUsage": ubx.FieldSpec{
-			WireName: "approximate_usage",
-			Kind: "object",
-			Fields: Batch_RuntimeInfo_ApproximateUsageFields,
-		},
-		"CohortInfo": ubx.FieldSpec{
-			WireName: "cohort_info",
-			Kind: "object",
-			Fields: Batch_RuntimeInfo_CohortInfoFields,
-		},
-		"CurrentUsage": ubx.FieldSpec{
-			WireName: "current_usage",
-			Kind: "object",
-			Fields: Batch_RuntimeInfo_CurrentUsageFields,
-		},
-		"DiagnosticOutputUri": ubx.FieldSpec{WireName: "diagnostic_output_uri"},
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-		"PropertiesInfo": ubx.FieldSpec{
-			WireName: "properties_info",
-			Kind: "object",
-			Fields: Batch_RuntimeInfo_PropertiesInfoFields,
-		},
-	}
+	"ApproximateUsage": ubx.FieldSpec{
+		WireName: "approximate_usage",
+		Kind:     "object",
+		Fields:   Batch_RuntimeInfo_ApproximateUsageFields,
+	},
+	"CohortInfo": ubx.FieldSpec{
+		WireName: "cohort_info",
+		Kind:     "object",
+		Fields:   Batch_RuntimeInfo_CohortInfoFields,
+	},
+	"CurrentUsage": ubx.FieldSpec{
+		WireName: "current_usage",
+		Kind:     "object",
+		Fields:   Batch_RuntimeInfo_CurrentUsageFields,
+	},
+	"DiagnosticOutputUri": ubx.FieldSpec{WireName: "diagnostic_output_uri"},
+	"Endpoints":           ubx.FieldSpec{WireName: "endpoints"},
+	"OutputUri":           ubx.FieldSpec{WireName: "output_uri"},
+	"PropertiesInfo": ubx.FieldSpec{
+		WireName: "properties_info",
+		Kind:     "object",
+		Fields:   Batch_RuntimeInfo_PropertiesInfoFields,
+	},
+}
 
 var Batch_SparkBatchFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"MainClass": ubx.FieldSpec{WireName: "main_class"},
-		"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
-	}
+	"ArchiveUris":    ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":           ubx.FieldSpec{WireName: "args"},
+	"FileUris":       ubx.FieldSpec{WireName: "file_uris"},
+	"JarFileUris":    ubx.FieldSpec{WireName: "jar_file_uris"},
+	"MainClass":      ubx.FieldSpec{WireName: "main_class"},
+	"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
+}
 
 var Batch_SparkRbatchFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"MainRfileUri": ubx.FieldSpec{WireName: "main_rfile_uri"},
-	}
+	"ArchiveUris":  ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":         ubx.FieldSpec{WireName: "args"},
+	"FileUris":     ubx.FieldSpec{WireName: "file_uris"},
+	"MainRfileUri": ubx.FieldSpec{WireName: "main_rfile_uri"},
+}
 
 var Batch_SparkSqlBatchFields = ubx.FieldMap{
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
-		"QueryVariables": ubx.FieldSpec{WireName: "query_variables"},
-	}
-
-var Batch_StateHistoryFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateStartTime": ubx.FieldSpec{WireName: "state_start_time"},
-	}
+	"JarFileUris":    ubx.FieldSpec{WireName: "jar_file_uris"},
+	"QueryFileUri":   ubx.FieldSpec{WireName: "query_file_uri"},
+	"QueryVariables": ubx.FieldSpec{WireName: "query_variables"},
+}
 
 type BatchConfig struct {
-	// Output only. The time when the batch was created.
-	CreateTime any
-	// Output only. The email address of the user who created the batch.
-	Creator any
 	// Environment configuration for a workload.
 	EnvironmentConfig any
 	// Optional. The labels to associate with this batch. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a batch.
 	Labels any
-	// Output only. The resource name of the batch.
-	Name any
-	// Output only. The resource name of the operation associated with this batch.
-	Operation any
 	// A configuration for running an Apache PySpark (https://spark.apache.org/docs/latest/api/python/getting_started/quickstart.html) batch workload.
 	PysparkBatch any
 	// A configuration for running a PySpark Notebook batch workload.
@@ -450,16 +436,6 @@ type BatchConfig struct {
 	SparkRbatch any
 	// A configuration for running Apache Spark SQL (https://spark.apache.org/sql/) queries as a batch workload.
 	SparkSqlBatch any
-	// Output only. The state of the batch.
-	State any
-	// Output only. Historical state information for the batch.
-	StateHistory any
-	// Output only. Batch state details, such as a failure description if the state is FAILED.
-	StateMessage any
-	// Output only. The time when the batch entered a current state.
-	StateTime any
-	// Output only. A batch UUID (Unique Universal Identifier). The service generates this value when it creates the batch.
-	Uuid any
 }
 
 type BatchAttrs struct {
@@ -504,59 +480,46 @@ type BatchAttrs struct {
 var Batch = ubx.ResourceBinding{
 	WireType: "google_dataproc_batch",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
 		"EnvironmentConfig": ubx.FieldSpec{
 			WireName: "environment_config",
-			Kind: "object",
-			Fields: Batch_EnvironmentConfigFields,
+			Kind:     "object",
+			Fields:   Batch_EnvironmentConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
 		"PysparkBatch": ubx.FieldSpec{
 			WireName: "pyspark_batch",
-			Kind: "object",
-			Fields: Batch_PysparkBatchFields,
+			Kind:     "object",
+			Fields:   Batch_PysparkBatchFields,
 		},
 		"PysparkNotebookBatch": ubx.FieldSpec{
 			WireName: "pyspark_notebook_batch",
-			Kind: "object",
-			Fields: Batch_PysparkNotebookBatchFields,
+			Kind:     "object",
+			Fields:   Batch_PysparkNotebookBatchFields,
 		},
 		"RuntimeConfig": ubx.FieldSpec{
 			WireName: "runtime_config",
-			Kind: "object",
-			Fields: Batch_RuntimeConfigFields,
+			Kind:     "object",
+			Fields:   Batch_RuntimeConfigFields,
 		},
 		"RuntimeInfo": ubx.FieldSpec{
 			WireName: "runtime_info",
-			Kind: "object",
-			Fields: Batch_RuntimeInfoFields,
+			Kind:     "object",
+			Fields:   Batch_RuntimeInfoFields,
 		},
 		"SparkBatch": ubx.FieldSpec{
 			WireName: "spark_batch",
-			Kind: "object",
-			Fields: Batch_SparkBatchFields,
+			Kind:     "object",
+			Fields:   Batch_SparkBatchFields,
 		},
 		"SparkRbatch": ubx.FieldSpec{
 			WireName: "spark_rbatch",
-			Kind: "object",
-			Fields: Batch_SparkRbatchFields,
+			Kind:     "object",
+			Fields:   Batch_SparkRbatchFields,
 		},
 		"SparkSqlBatch": ubx.FieldSpec{
 			WireName: "spark_sql_batch",
-			Kind: "object",
-			Fields: Batch_SparkSqlBatchFields,
+			Kind:     "object",
+			Fields:   Batch_SparkSqlBatchFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateHistory": ubx.FieldSpec{
-			WireName: "state_history",
-			Kind: "list",
-			Fields: Batch_StateHistoryFields,
-		},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateTime": ubx.FieldSpec{WireName: "state_time"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
 	},
 }

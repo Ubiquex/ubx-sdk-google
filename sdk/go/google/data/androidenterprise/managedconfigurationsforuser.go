@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Managedconfigurationsforuser_ConfigurationVariables_VariableSet struct {
 	Placeholder any
-	UserValue any
+	UserValue   any
 }
 
 type Managedconfigurationsforuser_ConfigurationVariables struct {
@@ -20,40 +20,40 @@ type Managedconfigurationsforuser_ManagedProperty_ValueBundle struct {
 }
 
 type Managedconfigurationsforuser_ManagedProperty struct {
-	Key any
-	ValueBool any
-	ValueBundle any
+	Key              any
+	ValueBool        any
+	ValueBundle      any
 	ValueBundleArray any
-	ValueInteger any
-	ValueString any
+	ValueInteger     any
+	ValueString      any
 	ValueStringArray any
 }
 
 type ManagedconfigurationsforuserConfig struct {
-	EnterpriseId any
+	EnterpriseId                  any
 	ManagedConfigurationForUserId any
-	UserId any
+	UserId                        any
 }
 
 type ManagedconfigurationsforuserAttrs struct {
 	// A configuration variables resource contains the managed configuration settings ID to be applied to a single user, as well as the variable set that is attributed to the user. The variable set will be used to replace placeholders in the managed configuration settings.
 	ConfigurationVariables any
-	EnterpriseId any
+	EnterpriseId           any
 	// Deprecated.
-	Kind any
+	Kind                          any
 	ManagedConfigurationForUserId any
 	// The set of managed properties for this configuration.
 	ManagedProperty any
 	// The ID of the product that the managed configuration is for, e.g. "app:com.google.android.gm".
 	ProductId any
-	UserId any
+	UserId    any
 }
 
 var Managedconfigurationsforuser = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_managedconfigurationsforuser",
 	Fields: ubx.FieldMap{
-		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
+		"EnterpriseId":                  ubx.FieldSpec{WireName: "enterprise_id"},
 		"ManagedConfigurationForUserId": ubx.FieldSpec{WireName: "managed_configuration_for_user_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":                        ubx.FieldSpec{WireName: "user_id"},
 	},
 }

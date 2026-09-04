@@ -4,9 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRanges struct {
-	// The maximum value of the range of allowed BGP peer ASN (Autonomous System Number) values. This defines the upper bound for the ASN range that can be configured for the BGP peer. (AI-inferred)
 	Max any
-	// The minimum (lower bound) of a BGP peer ASN range. The range is inclusive of this value. (AI-inferred)
 	Min any
 }
 
@@ -18,17 +16,14 @@ type InterconnectAttachment_ConfigurationConstraints struct {
 }
 
 type InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappings struct {
-	// The IP address of the appliance associated with the inner VLAN in this mapping. (AI-inferred)
 	InnerApplianceIpAddress any
-	// A list of inner VLAN tags that are mapped to an appliance in the L2 forwarding appliance mapping. These tags are used to classify traffic for routing to the specified appliance. (AI-inferred)
-	InnerVlanTags any
+	InnerVlanTags           any
 }
 
 type InterconnectAttachment_L2Forwarding_ApplianceMappings struct {
-	// IP address of the appliance inside the customer's network, used for this VLAN attachment mapping. (AI-inferred)
-	ApplianceIpAddress any
+	ApplianceIpAddress           any
 	InnerVlanToApplianceMappings any
-	Name any
+	Name                         any
 }
 
 type InterconnectAttachment_L2Forwarding_GeneveHeader struct {
@@ -69,73 +64,71 @@ type InterconnectAttachment_PrivateInterconnectInfo struct {
 }
 
 var InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var InterconnectAttachment_ConfigurationConstraintsFields = ubx.FieldMap{
-		"BgpMd5": ubx.FieldSpec{WireName: "bgp_md5"},
-		"BgpPeerAsnRanges": ubx.FieldSpec{
-			WireName: "bgp_peer_asn_ranges",
-			Kind: "list",
-			Fields: InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields,
-		},
-	}
+	"BgpMd5": ubx.FieldSpec{WireName: "bgp_md5"},
+	"BgpPeerAsnRanges": ubx.FieldSpec{
+		WireName: "bgp_peer_asn_ranges",
+		Kind:     "list",
+		Fields:   InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields,
+	},
+}
 
 var InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields = ubx.FieldMap{
-		"InnerApplianceIpAddress": ubx.FieldSpec{WireName: "inner_appliance_ip_address"},
-		"InnerVlanTags": ubx.FieldSpec{WireName: "inner_vlan_tags"},
-	}
+	"InnerApplianceIpAddress": ubx.FieldSpec{WireName: "inner_appliance_ip_address"},
+	"InnerVlanTags":           ubx.FieldSpec{WireName: "inner_vlan_tags"},
+}
 
 var InterconnectAttachment_L2Forwarding_ApplianceMappingsFields = ubx.FieldMap{
-		"ApplianceIpAddress": ubx.FieldSpec{WireName: "appliance_ip_address"},
-		"InnerVlanToApplianceMappings": ubx.FieldSpec{
-			WireName: "inner_vlan_to_appliance_mappings",
-			Kind: "list",
-			Fields: InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApplianceIpAddress": ubx.FieldSpec{WireName: "appliance_ip_address"},
+	"InnerVlanToApplianceMappings": ubx.FieldSpec{
+		WireName: "inner_vlan_to_appliance_mappings",
+		Kind:     "list",
+		Fields:   InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var InterconnectAttachment_L2Forwarding_GeneveHeaderFields = ubx.FieldMap{
-		"Vni": ubx.FieldSpec{WireName: "vni"},
-	}
+	"Vni": ubx.FieldSpec{WireName: "vni"},
+}
 
 var InterconnectAttachment_L2ForwardingFields = ubx.FieldMap{
-		"ApplianceMappings": ubx.FieldSpec{
-			WireName: "appliance_mappings",
-			Kind: "map",
-			Fields: InterconnectAttachment_L2Forwarding_ApplianceMappingsFields,
-		},
-		"DefaultApplianceIpAddress": ubx.FieldSpec{WireName: "default_appliance_ip_address"},
-		"GeneveHeader": ubx.FieldSpec{
-			WireName: "geneve_header",
-			Kind: "object",
-			Fields: InterconnectAttachment_L2Forwarding_GeneveHeaderFields,
-		},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"TunnelEndpointIpAddress": ubx.FieldSpec{WireName: "tunnel_endpoint_ip_address"},
-	}
+	"ApplianceMappings": ubx.FieldSpec{
+		WireName: "appliance_mappings",
+		Kind:     "map",
+		Fields:   InterconnectAttachment_L2Forwarding_ApplianceMappingsFields,
+	},
+	"DefaultApplianceIpAddress": ubx.FieldSpec{WireName: "default_appliance_ip_address"},
+	"GeneveHeader": ubx.FieldSpec{
+		WireName: "geneve_header",
+		Kind:     "object",
+		Fields:   InterconnectAttachment_L2Forwarding_GeneveHeaderFields,
+	},
+	"Network":                 ubx.FieldSpec{WireName: "network"},
+	"TunnelEndpointIpAddress": ubx.FieldSpec{WireName: "tunnel_endpoint_ip_address"},
+}
 
 var InterconnectAttachment_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var InterconnectAttachment_PartnerMetadataFields = ubx.FieldMap{
-		"InterconnectName": ubx.FieldSpec{WireName: "interconnect_name"},
-		"PartnerName": ubx.FieldSpec{WireName: "partner_name"},
-		"PortalUrl": ubx.FieldSpec{WireName: "portal_url"},
-	}
+	"InterconnectName": ubx.FieldSpec{WireName: "interconnect_name"},
+	"PartnerName":      ubx.FieldSpec{WireName: "partner_name"},
+	"PortalUrl":        ubx.FieldSpec{WireName: "portal_url"},
+}
 
 var InterconnectAttachment_PrivateInterconnectInfoFields = ubx.FieldMap{
-		"Tag8021q": ubx.FieldSpec{WireName: "tag8021q"},
-	}
+	"Tag8021q": ubx.FieldSpec{WireName: "tag8021q"},
+}
 
 type InterconnectAttachmentConfig struct {
 	// Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
 	AdminEnabled any
-	// Output only. [Output Only] URL of the AttachmentGroup that includes this Attachment.
-	AttachmentGroup any
 	// Provisioned bandwidth capacity for the interconnect attachment. For attachments of type DEDICATED, the user can set the bandwidth. For attachments of type PARTNER, the Google Partner that is operating the interconnect must set the bandwidth. Output only for PARTNER type, mutable for PARTNER_PROVIDER and DEDICATED, and can take one of the following values: - BPS_50M: 50 Mbit/s - BPS_100M: 100 Mbit/s - BPS_200M: 200 Mbit/s - BPS_300M: 300 Mbit/s - BPS_400M: 400 Mbit/s - BPS_500M: 500 Mbit/s - BPS_1G: 1 Gbit/s - BPS_2G: 2 Gbit/s - BPS_5G: 5 Gbit/s - BPS_10G: 10 Gbit/s - BPS_20G: 20 Gbit/s - BPS_50G: 50 Gbit/s - BPS_100G: 100 Gbit/s - BPS_400G: 400 Gbit/s
 	Bandwidth any
 	// Single IPv4 address + prefix length to be configured on the cloud router interface for this interconnect attachment. - Both candidate_cloud_router_ip_address and candidate_customer_router_ip_address fields must be set or both must be unset. - Prefix length of both candidate_cloud_router_ip_address and candidate_customer_router_ip_address must be the same. - Max prefix length is 31.
@@ -150,39 +143,21 @@ type InterconnectAttachmentConfig struct {
 	CandidateIpv6Subnets any
 	// Input only. Up to 16 candidate prefixes that can be used to restrict the allocation of cloudRouterIpAddress and customerRouterIpAddress for this attachment. All prefixes must be within link-local address space (169.254.0.0/16) and must be /29 or shorter (/28, /27, etc). Google will attempt to select an unused /29 from the supplied candidate prefix(es). The request will fail if all possible /29s are in use on Google's edge. If not supplied, Google will randomly select an unused /29 from all of link-local space.
 	CandidateSubnets any
-	// Output only. [Output Only] IPv4 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
-	CloudRouterIpAddress any
-	// Output only. [Output Only] IPv6 address + prefix length to be configured on Cloud Router Interface for this interconnect attachment.
-	CloudRouterIpv6Address any
 	// This field is not available.
 	CloudRouterIpv6InterfaceId any
-	ConfigurationConstraints any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
-	// Output only. [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
-	CustomerRouterIpAddress any
-	// Output only. [Output Only] IPv6 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
-	CustomerRouterIpv6Address any
+	ConfigurationConstraints   any
 	// This field is not available.
 	CustomerRouterIpv6InterfaceId any
-	// Output only. [Output Only] Dataplane version for this InterconnectAttachment. This field is only present for Dataplane version 2 and higher. Absence of this field in the API output indicates that the Dataplane is version 1.
-	DataplaneVersion any
 	// An optional description of this resource.
 	Description any
 	// Input only. Desired availability domain for the attachment. Only available for type PARTNER, at creation time, and can take one of the following values: - AVAILABILITY_DOMAIN_ANY - AVAILABILITY_DOMAIN_1 - AVAILABILITY_DOMAIN_2 For improved reliability, customers should configure a pair of attachments, one per availability domain. The selected availability domain will be provided to the Partner via the pairing key, so that the provisioned circuit will lie in the specified domain. If not specified, the value will default to AVAILABILITY_DOMAIN_ANY.
 	EdgeAvailabilityDomain any
 	// Indicates the user-supplied encryption option of this VLAN attachment (interconnectAttachment). Can only be specified at attachment creation for PARTNER or DEDICATED attachments. Possible values are: - NONE - This is the default value, which means that the VLAN attachment carries unencrypted traffic. VMs are able to send traffic to, or receive traffic from, such a VLAN attachment. - IPSEC - The VLAN attachment carries only encrypted traffic that is encrypted by an IPsec device, such as an HA VPN gateway or third-party IPsec VPN. VMs cannot directly send traffic to, or receive traffic from, such a VLAN attachment. To use *HA VPN over Cloud Interconnect*, the VLAN attachment must be created with this option.
 	Encryption any
-	// Output only. [Output Only] Google reference ID, to be used when raising support tickets with Google or otherwise to debug backend connectivity issues. [Deprecated] This field is not used.
-	GoogleReferenceId any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// URL of the underlying Interconnect object that this attachment's traffic will traverse through.
 	Interconnect any
 	// A list of URLs of addresses that have been reserved for the VLAN attachment. Used only for the VLAN attachment that has the encryption option as IPSEC. The addresses must be regional internal IP address ranges. When creating an HA VPN gateway over the VLAN attachment, if the attachment is configured to use a regional internal IP address, then the VPN gateway's IP address is allocated from the IP address range specified here. For example, if the HA VPN gateway's interface 0 is paired to this VLAN attachment, then a regional internal IP address for the VPN gateway interface 0 will be allocated from the IP address specified for this VLAN attachment. If this field is not specified when creating the VLAN attachment, then later on when creating an HA VPN gateway on this VLAN attachment, the HA VPN gateway's IP address is allocated from the regional external IP address pool.
 	IpsecInternalAddresses any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#interconnectAttachment for interconnect attachments.
-	Kind any
 	// L2 Interconnect Attachment related configuration.
 	L2Forwarding any
 	// A fingerprint for the labels being applied to this InterconnectAttachment, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InterconnectAttachment.
@@ -193,8 +168,6 @@ type InterconnectAttachmentConfig struct {
 	Mtu any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
-	// Output only. [Output Only] The current status of whether or not this interconnect attachment is functional, which can take one of the following values: - OS_ACTIVE: The attachment has been turned up and is ready to use. - OS_UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete.
-	OperationalStatus any
 	// [Output only for type PARTNER. Input only for PARTNER_PROVIDER. Not present for DEDICATED]. The opaque identifier of a PARTNER attachment used to initiate provisioning with a selected partner. Of the form "XXXXX/region/domain"
 	PairingKey any
 	// Additional interconnect attachment parameters.
@@ -205,20 +178,10 @@ type InterconnectAttachmentConfig struct {
 	PartnerMetadata any
 	// Information for an interconnect attachment when this belongs to an interconnect of type DEDICATED.
 	PrivateInterconnectInfo any
-	// Output only. [Output Only] URL of the region where the regional interconnect attachment resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output Only] If the attachment is on a Cross-Cloud Interconnect connection, this field contains the interconnect's remote location service provider. Example values: "Amazon Web Services" "Microsoft Azure". The field is set only for attachments on Cross-Cloud Interconnect connections. Its value is copied from the InterconnectRemoteLocation remoteService field.
-	RemoteService any
 	// URL of the Cloud Router to be used for dynamic routing. This router must be in the same region as this InterconnectAttachment. The InterconnectAttachment will automatically connect the Interconnect to the network & region within which the Cloud Router is configured.
 	Router any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 	// The stack type for this interconnect attachment to identify whether the IPv6 feature is enabled or not. If not specified, IPV4_ONLY will be used. This field can be both set at interconnect attachments creation and update interconnect attachment operations.
 	StackType any
-	// Output only. [Output Only] The current state of this attachment's functionality. Enum values ACTIVE and UNPROVISIONED are shared by DEDICATED/PRIVATE, PARTNER, and PARTNER_PROVIDER interconnect attachments, while enum values PENDING_PARTNER, PARTNER_REQUEST_RECEIVED, and PENDING_CUSTOMER are used for only PARTNER and PARTNER_PROVIDER interconnect attachments. This state can take one of the following values: - ACTIVE: The attachment has been turned up and is ready to use. - UNPROVISIONED: The attachment is not ready to use yet, because turnup is not complete. - PENDING_PARTNER: A newly-created PARTNER attachment that has not yet been configured on the Partner side. - PARTNER_REQUEST_RECEIVED: A PARTNER attachment is in the process of provisioning after a PARTNER_PROVIDER attachment was created that references it. - PENDING_CUSTOMER: A PARTNER or PARTNER_PROVIDER attachment that is waiting for a customer to activate it. - DEFUNCT: The attachment was deleted externally and is no longer functional. This could be because the associated Interconnect was removed, or because the other side of a Partner attachment was deleted.
-	State any
 	// Input only. Length of the IPv4 subnet mask. Allowed values: - 29 (default) - 30 The default value is 29, except for Cross-Cloud Interconnect connections that use an InterconnectRemoteLocation with a constraints.subnetLengthRange.min equal to 30. For example, connections that use an Azure remote location fall into this category. In these cases, the default value is 30, and requesting 29 returns an error. Where both 29 and 30 are allowed, 29 is preferred, because it gives Google Cloud Support more debugging visibility.
 	SubnetLength any
 	// The type of interconnect attachment this is, which can take one of the following values: - DEDICATED: an attachment to a Dedicated Interconnect. - PARTNER: an attachment to a Partner Interconnect, created by the customer. - PARTNER_PROVIDER: an attachment to a Partner Interconnect, created by the partner. - L2_DEDICATED: a L2 attachment to a Dedicated Interconnect.
@@ -252,7 +215,7 @@ type InterconnectAttachmentAttrs struct {
 	CloudRouterIpv6Address any
 	// This field is not available.
 	CloudRouterIpv6InterfaceId any
-	ConfigurationConstraints any
+	ConfigurationConstraints   any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// Output only. [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
@@ -326,72 +289,56 @@ type InterconnectAttachmentAttrs struct {
 var InterconnectAttachment = ubx.ResourceBinding{
 	WireType: "google_compute_interconnect_attachment",
 	Fields: ubx.FieldMap{
-		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"AttachmentGroup": ubx.FieldSpec{WireName: "attachment_group"},
-		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
-		"CandidateCloudRouterIpAddress": ubx.FieldSpec{WireName: "candidate_cloud_router_ip_address"},
-		"CandidateCloudRouterIpv6Address": ubx.FieldSpec{WireName: "candidate_cloud_router_ipv6_address"},
-		"CandidateCustomerRouterIpAddress": ubx.FieldSpec{WireName: "candidate_customer_router_ip_address"},
+		"AdminEnabled":                       ubx.FieldSpec{WireName: "admin_enabled"},
+		"Bandwidth":                          ubx.FieldSpec{WireName: "bandwidth"},
+		"CandidateCloudRouterIpAddress":      ubx.FieldSpec{WireName: "candidate_cloud_router_ip_address"},
+		"CandidateCloudRouterIpv6Address":    ubx.FieldSpec{WireName: "candidate_cloud_router_ipv6_address"},
+		"CandidateCustomerRouterIpAddress":   ubx.FieldSpec{WireName: "candidate_customer_router_ip_address"},
 		"CandidateCustomerRouterIpv6Address": ubx.FieldSpec{WireName: "candidate_customer_router_ipv6_address"},
-		"CandidateIpv6Subnets": ubx.FieldSpec{WireName: "candidate_ipv6_subnets"},
-		"CandidateSubnets": ubx.FieldSpec{WireName: "candidate_subnets"},
-		"CloudRouterIpAddress": ubx.FieldSpec{WireName: "cloud_router_ip_address"},
-		"CloudRouterIpv6Address": ubx.FieldSpec{WireName: "cloud_router_ipv6_address"},
-		"CloudRouterIpv6InterfaceId": ubx.FieldSpec{WireName: "cloud_router_ipv6_interface_id"},
+		"CandidateIpv6Subnets":               ubx.FieldSpec{WireName: "candidate_ipv6_subnets"},
+		"CandidateSubnets":                   ubx.FieldSpec{WireName: "candidate_subnets"},
+		"CloudRouterIpv6InterfaceId":         ubx.FieldSpec{WireName: "cloud_router_ipv6_interface_id"},
 		"ConfigurationConstraints": ubx.FieldSpec{
 			WireName: "configuration_constraints",
-			Kind: "object",
-			Fields: InterconnectAttachment_ConfigurationConstraintsFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_ConfigurationConstraintsFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"CustomerRouterIpAddress": ubx.FieldSpec{WireName: "customer_router_ip_address"},
-		"CustomerRouterIpv6Address": ubx.FieldSpec{WireName: "customer_router_ipv6_address"},
 		"CustomerRouterIpv6InterfaceId": ubx.FieldSpec{WireName: "customer_router_ipv6_interface_id"},
-		"DataplaneVersion": ubx.FieldSpec{WireName: "dataplane_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EdgeAvailabilityDomain": ubx.FieldSpec{WireName: "edge_availability_domain"},
-		"Encryption": ubx.FieldSpec{WireName: "encryption"},
-		"GoogleReferenceId": ubx.FieldSpec{WireName: "google_reference_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"IpsecInternalAddresses": ubx.FieldSpec{WireName: "ipsec_internal_addresses"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"EdgeAvailabilityDomain":        ubx.FieldSpec{WireName: "edge_availability_domain"},
+		"Encryption":                    ubx.FieldSpec{WireName: "encryption"},
+		"Interconnect":                  ubx.FieldSpec{WireName: "interconnect"},
+		"IpsecInternalAddresses":        ubx.FieldSpec{WireName: "ipsec_internal_addresses"},
 		"L2Forwarding": ubx.FieldSpec{
 			WireName: "l2_forwarding",
-			Kind: "object",
-			Fields: InterconnectAttachment_L2ForwardingFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_L2ForwardingFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperationalStatus": ubx.FieldSpec{WireName: "operational_status"},
-		"PairingKey": ubx.FieldSpec{WireName: "pairing_key"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Mtu":              ubx.FieldSpec{WireName: "mtu"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"PairingKey":       ubx.FieldSpec{WireName: "pairing_key"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: InterconnectAttachment_ParamsFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_ParamsFields,
 		},
 		"PartnerAsn": ubx.FieldSpec{WireName: "partner_asn"},
 		"PartnerMetadata": ubx.FieldSpec{
 			WireName: "partner_metadata",
-			Kind: "object",
-			Fields: InterconnectAttachment_PartnerMetadataFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_PartnerMetadataFields,
 		},
 		"PrivateInterconnectInfo": ubx.FieldSpec{
 			WireName: "private_interconnect_info",
-			Kind: "object",
-			Fields: InterconnectAttachment_PrivateInterconnectInfoFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_PrivateInterconnectInfoFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RemoteService": ubx.FieldSpec{WireName: "remote_service"},
-		"Router": ubx.FieldSpec{WireName: "router"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Router":       ubx.FieldSpec{WireName: "router"},
+		"StackType":    ubx.FieldSpec{WireName: "stack_type"},
 		"SubnetLength": ubx.FieldSpec{WireName: "subnet_length"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 		"VlanTag8021q": ubx.FieldSpec{WireName: "vlan_tag8021q"},
 	},
 }

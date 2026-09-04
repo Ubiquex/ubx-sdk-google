@@ -245,12 +245,6 @@ _AlphaRegionAutoscaler_AutoscalingPolicyFields = {
     "stabilization_period_sec": ubx.FieldSpec(wire_name="stabilization_period_sec"),
 }
 
-_AlphaRegionAutoscaler_ScalingScheduleStatusFields = {
-    "last_start_time": ubx.FieldSpec(wire_name="last_start_time"),
-    "next_start_time": ubx.FieldSpec(wire_name="next_start_time"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 _AlphaRegionAutoscaler_StatusDetailsFields = {
     "message": ubx.FieldSpec(wire_name="message"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -260,34 +254,18 @@ _AlphaRegionAutoscaler_StatusDetailsFields = {
 class AlphaRegionAutoscalerConfig:
     # Cloud Autoscaler policy.
     autoscaling_policy: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
-    recommended_size: Any = None
-    # Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope).
-    region: Any = None
-    # Output only. [Output Only] Status information of existing scaling schedules.
-    scaling_schedule_status: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
     status: Any = None
     # [Output Only] Human-readable details about the current state of the autoscaler. Read the documentation forCommonly returned status messages for examples of status messages you might encounter.
     status_details: Any = None
     # URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
     target: Any = None
-    # Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope).
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaRegionAutoscalerAttrs:
@@ -330,20 +308,9 @@ AlphaRegionAutoscaler = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaRegionAutoscaler_AutoscalingPolicyFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "recommended_size": ubx.FieldSpec(wire_name="recommended_size"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scaling_schedule_status": ubx.FieldSpec(
-            wire_name="scaling_schedule_status",
-            kind="map",
-            fields=_AlphaRegionAutoscaler_ScalingScheduleStatusFields,
-        ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "status": ubx.FieldSpec(wire_name="status"),
         "status_details": ubx.FieldSpec(
             wire_name="status_details",
@@ -351,6 +318,5 @@ AlphaRegionAutoscaler = ubx.ResourceBinding(
             fields=_AlphaRegionAutoscaler_StatusDetailsFields,
         ),
         "target": ubx.FieldSpec(wire_name="target"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

@@ -30,8 +30,8 @@ type BetaSnapshotSettingConfig struct {
 }
 
 type BetaSnapshotSettingAttrs struct {
-	AccessLocation any
-	Project any
+	AccessLocation  any
+	Project         any
 	StorageLocation any
 }
 

@@ -315,8 +315,6 @@ export interface TopicConfig {
   satisfiesPzs?: boolean | Computed<boolean>;
   /** Settings for validating messages published against a schema. */
   schemaSettings?: Topic_SchemaSettings | Computed<Topic_SchemaSettings>;
-  /** Output only. An output-only field indicating the state of the topic. */
-  state?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" See https://{$universe.dns_names.final_documentation_domain}/pubsub/docs/tags for more information on using tags with Pub/Sub resources. */
   tags?: Record<string, string> | Computed<Record<string, string>>;
 }
@@ -374,7 +372,6 @@ export const Topic: ResourceBinding<TopicConfig, TopicAttrs> = {
       kind: "object",
       fields: Topic_SchemaSettingsFields,
     },
-    state: "state",
     tags: "tags",
   },
 };

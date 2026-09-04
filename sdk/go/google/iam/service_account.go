@@ -25,16 +25,16 @@ type ServiceAccount_ServiceAccount struct {
 }
 
 var ServiceAccount_ServiceAccountFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Oauth2ClientId": ubx.FieldSpec{WireName: "oauth2_client_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-	}
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"Disabled":       ubx.FieldSpec{WireName: "disabled"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"Email":          ubx.FieldSpec{WireName: "email"},
+	"Etag":           ubx.FieldSpec{WireName: "etag"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Oauth2ClientId": ubx.FieldSpec{WireName: "oauth2_client_id"},
+	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
+	"UniqueId":       ubx.FieldSpec{WireName: "unique_id"},
+}
 
 type ServiceAccountConfig struct {
 	// Required. The account id that is used to generate the service account email address and a stable unique id. It is unique within a project, must be 6-30 characters long, and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])` to comply with RFC1035.
@@ -74,8 +74,8 @@ var ServiceAccount = ubx.ResourceBinding{
 		"AccountId": ubx.FieldSpec{WireName: "account_id"},
 		"ServiceAccount": ubx.FieldSpec{
 			WireName: "service_account",
-			Kind: "object",
-			Fields: ServiceAccount_ServiceAccountFields,
+			Kind:     "object",
+			Fields:   ServiceAccount_ServiceAccountFields,
 		},
 	},
 }

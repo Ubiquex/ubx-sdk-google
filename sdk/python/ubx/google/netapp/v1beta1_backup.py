@@ -23,38 +23,18 @@ _V1beta1Backup_OntapSourceFields = {
 
 @dataclasses.dataclass
 class V1beta1BackupConfig:
-    # Output only. Region in which backup is stored. Format: `projects/{project_id}/locations/{location}`
-    backup_region: Any = None
-    # Output only. Type of backup, manually created or created by a backup policy.
-    backup_type: Any = None
-    # Output only. Total size of all backups in a chain in bytes = baseline backup size + sum(incremental backup size)
-    chain_storage_bytes: Any = None
-    # Output only. The time when the backup was created.
-    create_time: Any = None
     # A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
-    # Output only. The time until which the backup is not deletable.
-    enforced_retention_end_time: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
     # Identifier. The resource name of the backup. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`.
     name: Any = None
     # Represents ONTAP source details.
     ontap_source: Any = None
-    # Output only. Reserved for future use
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use
-    satisfies_pzs: Any = None
     # If specified, backup will be created from the given snapshot. If not specified, there will be a new snapshot taken to initiate the backup creation. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`
     source_snapshot: Any = None
     # The resource name of the volume that this backup belongs to. You must provide either `source_volume` or `ontap_source`. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}`
     source_volume: Any = None
-    # Output only. The backup state.
-    state: Any = None
-    # Output only. Region of the volume from which the backup was created. Format: `projects/{project_id}/locations/{location}`
-    volume_region: Any = None
-    # Output only. Size of the file system when the backup was created. When creating a new volume from the backup, the volume capacity will have to be at least as big.
-    volume_usage_bytes: Any = None
 
 @dataclasses.dataclass
 class V1beta1BackupAttrs:
@@ -94,12 +74,7 @@ class V1beta1BackupAttrs:
 V1beta1Backup = ubx.ResourceBinding(
     wire_type="google_netapp_v1beta1_backup",
     fields={
-        "backup_region": ubx.FieldSpec(wire_name="backup_region"),
-        "backup_type": ubx.FieldSpec(wire_name="backup_type"),
-        "chain_storage_bytes": ubx.FieldSpec(wire_name="chain_storage_bytes"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "enforced_retention_end_time": ubx.FieldSpec(wire_name="enforced_retention_end_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "ontap_source": ubx.FieldSpec(
@@ -107,12 +82,7 @@ V1beta1Backup = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Backup_OntapSourceFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "source_snapshot": ubx.FieldSpec(wire_name="source_snapshot"),
         "source_volume": ubx.FieldSpec(wire_name="source_volume"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "volume_region": ubx.FieldSpec(wire_name="volume_region"),
-        "volume_usage_bytes": ubx.FieldSpec(wire_name="volume_usage_bytes"),
     },
 )

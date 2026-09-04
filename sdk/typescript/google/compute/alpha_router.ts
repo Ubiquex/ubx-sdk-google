@@ -314,8 +314,6 @@ export interface AlphaRouterConfig {
   bgp?: AlphaRouter_Bgp | Computed<AlphaRouter_Bgp>;
   /** BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273. */
   bgpPeers?: AlphaRouter_BgpPeers[] | Computed<AlphaRouter_BgpPeers[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments). */
@@ -326,8 +324,6 @@ export interface AlphaRouterConfig {
   id?: string | Computed<string>;
   /** Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface. */
   interfaces?: AlphaRouter_Interfaces[] | Computed<AlphaRouter_Interfaces[]>;
-  /** Output only. [Output Only] Type of resource. Always compute#router for routers. */
-  kind?: string | Computed<string>;
   /** Keys used for MD5 authentication. */
   md5AuthenticationKeys?: AlphaRouter_Md5AuthenticationKeys[] | Computed<AlphaRouter_Md5AuthenticationKeys[]>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
@@ -344,8 +340,6 @@ export interface AlphaRouterConfig {
   region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
 }
 
 export interface AlphaRouterAttrs {
@@ -399,7 +393,6 @@ export const AlphaRouter: ResourceBinding<AlphaRouterConfig, AlphaRouterAttrs> =
       kind: "list",
       fields: AlphaRouter_BgpPeersFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     encryptedInterconnectRouter: "encrypted_interconnect_router",
     etag: "etag",
@@ -409,7 +402,6 @@ export const AlphaRouter: ResourceBinding<AlphaRouterConfig, AlphaRouterAttrs> =
       kind: "list",
       fields: AlphaRouter_InterfacesFields,
     },
-    kind: "kind",
     md5AuthenticationKeys: {
       wireName: "md5_authentication_keys",
       kind: "list",
@@ -430,6 +422,5 @@ export const AlphaRouter: ResourceBinding<AlphaRouterConfig, AlphaRouterAttrs> =
     },
     region: "region",
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
   },
 };

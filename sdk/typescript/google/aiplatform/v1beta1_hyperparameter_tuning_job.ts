@@ -683,62 +683,11 @@ const V1beta1HyperparameterTuningJob_TrialJobSpecFields: FieldMap = {
   },
 };
 
-const V1beta1HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields: FieldMap = {
-  metricId: "metric_id",
-  value: "value",
-};
-
-const V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields: FieldMap = {
-  elapsedDuration: "elapsed_duration",
-  metrics: {
-    wireName: "metrics",
-    kind: "list",
-    fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurement_MetricsFields,
-  },
-  stepCount: "step_count",
-};
-
-const V1beta1HyperparameterTuningJob_Trials_ParametersFields: FieldMap = {
-  parameterId: "parameter_id",
-  value: "value",
-};
-
-const V1beta1HyperparameterTuningJob_TrialsFields: FieldMap = {
-  clientId: "client_id",
-  customJob: "custom_job",
-  endTime: "end_time",
-  finalMeasurement: {
-    wireName: "final_measurement",
-    kind: "object",
-    fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields,
-  },
-  id: "id",
-  infeasibleReason: "infeasible_reason",
-  measurements: {
-    wireName: "measurements",
-    kind: "list",
-    fields: V1beta1HyperparameterTuningJob_Trials_FinalMeasurementFields,
-  },
-  name: "name",
-  parameters: {
-    wireName: "parameters",
-    kind: "list",
-    fields: V1beta1HyperparameterTuningJob_Trials_ParametersFields,
-  },
-  startTime: "start_time",
-  state: "state",
-  webAccessUris: "web_access_uris",
-};
-
 export interface V1beta1HyperparameterTuningJobConfig {
-  /** Output only. Time when the HyperparameterTuningJob was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the HyperparameterTuningJob. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1HyperparameterTuningJob_EncryptionSpec | Computed<V1beta1HyperparameterTuningJob_EncryptionSpec>;
-  /** Output only. Time when the HyperparameterTuningJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1HyperparameterTuningJob_Error | Computed<V1beta1HyperparameterTuningJob_Error>;
   /** The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
@@ -747,26 +696,12 @@ export interface V1beta1HyperparameterTuningJobConfig {
   maxFailedTrialCount?: number | Computed<number>;
   /** Required. The desired total number of Trials. */
   maxTrialCount?: number | Computed<number>;
-  /** Output only. Resource name of the HyperparameterTuningJob. */
-  name?: string | Computed<string>;
   /** Required. The desired number of Trials to run in parallel. */
   parallelTrialCount?: number | Computed<number>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
   /** Represents specification of a Study. */
   studySpec?: V1beta1HyperparameterTuningJob_StudySpec | Computed<V1beta1HyperparameterTuningJob_StudySpec>;
   /** Represents the spec of a CustomJob. */
   trialJobSpec?: V1beta1HyperparameterTuningJob_TrialJobSpec | Computed<V1beta1HyperparameterTuningJob_TrialJobSpec>;
-  /** Output only. Trials of the HyperparameterTuningJob. */
-  trials?: V1beta1HyperparameterTuningJob_Trials[] | Computed<V1beta1HyperparameterTuningJob_Trials[]>;
-  /** Output only. Time when the HyperparameterTuningJob was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1HyperparameterTuningJobAttrs {
@@ -811,14 +746,12 @@ export interface V1beta1HyperparameterTuningJobAttrs {
 export const V1beta1HyperparameterTuningJob: ResourceBinding<V1beta1HyperparameterTuningJobConfig, V1beta1HyperparameterTuningJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_hyperparameter_tuning_job",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
       kind: "object",
       fields: V1beta1HyperparameterTuningJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -827,12 +760,7 @@ export const V1beta1HyperparameterTuningJob: ResourceBinding<V1beta1Hyperparamet
     labels: "labels",
     maxFailedTrialCount: "max_failed_trial_count",
     maxTrialCount: "max_trial_count",
-    name: "name",
     parallelTrialCount: "parallel_trial_count",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    startTime: "start_time",
-    state: "state",
     studySpec: {
       wireName: "study_spec",
       kind: "object",
@@ -843,11 +771,5 @@ export const V1beta1HyperparameterTuningJob: ResourceBinding<V1beta1Hyperparamet
       kind: "object",
       fields: V1beta1HyperparameterTuningJob_TrialJobSpecFields,
     },
-    trials: {
-      wireName: "trials",
-      kind: "list",
-      fields: V1beta1HyperparameterTuningJob_TrialsFields,
-    },
-    updateTime: "update_time",
   },
 };

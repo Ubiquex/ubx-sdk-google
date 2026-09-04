@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alpha1RouteConfig:
-    # Output only. The create time of the resource.
-    create_time: Any = None
     # Required. Destination address for connection
     destination_address: Any = None
     # Destination port for connection
@@ -18,10 +16,6 @@ class V1alpha1RouteConfig:
     display_name: Any = None
     # Labels.
     labels: Any = None
-    # Output only. The resource's name.
-    name: Any = None
-    # Output only. The update time of the resource.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1RouteAttrs:
@@ -43,12 +37,9 @@ class V1alpha1RouteAttrs:
 V1alpha1Route = ubx.ResourceBinding(
     wire_type="google_datastream_v1alpha1_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination_address": ubx.FieldSpec(wire_name="destination_address"),
         "destination_port": ubx.FieldSpec(wire_name="destination_port"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

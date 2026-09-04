@@ -32,36 +32,23 @@ type Actuation_DeploymentOutput struct {
 }
 
 var Actuation_ActuationOutputFields = ubx.FieldMap{
-		"ActuateLogs": ubx.FieldSpec{WireName: "actuate_logs"},
-		"AnsibleError": ubx.FieldSpec{WireName: "ansible_error"},
-		"AnsibleFailedTask": ubx.FieldSpec{WireName: "ansible_failed_task"},
-		"BlueprintId": ubx.FieldSpec{WireName: "blueprint_id"},
-		"CloudbuildId": ubx.FieldSpec{WireName: "cloudbuild_id"},
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorLogs": ubx.FieldSpec{WireName: "error_logs"},
-		"HasUserFacingErrorMsg": ubx.FieldSpec{WireName: "has_user_facing_error_msg"},
-		"TerraformError": ubx.FieldSpec{WireName: "terraform_error"},
-		"TerraformTemplate": ubx.FieldSpec{WireName: "terraform_template"},
-	}
-
-var Actuation_DeploymentOutputFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ActuateLogs":           ubx.FieldSpec{WireName: "actuate_logs"},
+	"AnsibleError":          ubx.FieldSpec{WireName: "ansible_error"},
+	"AnsibleFailedTask":     ubx.FieldSpec{WireName: "ansible_failed_task"},
+	"BlueprintId":           ubx.FieldSpec{WireName: "blueprint_id"},
+	"CloudbuildId":          ubx.FieldSpec{WireName: "cloudbuild_id"},
+	"ErrorCode":             ubx.FieldSpec{WireName: "error_code"},
+	"ErrorLogs":             ubx.FieldSpec{WireName: "error_logs"},
+	"HasUserFacingErrorMsg": ubx.FieldSpec{WireName: "has_user_facing_error_msg"},
+	"TerraformError":        ubx.FieldSpec{WireName: "terraform_error"},
+	"TerraformTemplate":     ubx.FieldSpec{WireName: "terraform_template"},
+}
 
 type ActuationConfig struct {
 	// Message for output of actuation.
 	ActuationOutput any
-	// Output only. Deployment output.
-	DeploymentOutput any
-	// Output only. End time stamp.
-	EndTime any
 	// The name of the actuation resource. The format is projects/{project}/locations/{location}/deployments/{deployment}/actuations/{actuation}.
 	Name any
-	// Output only. Start time stamp.
-	StartTime any
-	// Output only. Actuation state.
-	State any
 }
 
 type ActuationAttrs struct {
@@ -84,17 +71,9 @@ var Actuation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActuationOutput": ubx.FieldSpec{
 			WireName: "actuation_output",
-			Kind: "object",
-			Fields: Actuation_ActuationOutputFields,
+			Kind:     "object",
+			Fields:   Actuation_ActuationOutputFields,
 		},
-		"DeploymentOutput": ubx.FieldSpec{
-			WireName: "deployment_output",
-			Kind: "list",
-			Fields: Actuation_DeploymentOutputFields,
-		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

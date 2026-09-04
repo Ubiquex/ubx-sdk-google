@@ -23,7 +23,6 @@ class NodeType_Deprecated:
 class NodeTypeConfig:
     node_type: Any = None
     project: Any = None
-    zone: Any = None
 
 @dataclasses.dataclass
 class NodeTypeAttrs:
@@ -60,6 +59,5 @@ NodeType = ubx.DataSourceBinding(
     fields={
         "node_type": ubx.FieldSpec(wire_name="node_type"),
         "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

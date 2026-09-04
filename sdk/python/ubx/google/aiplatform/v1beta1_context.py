@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1ContextConfig:
-    # Output only. Timestamp when this Context was created.
-    create_time: Any = None
     # Description of the Context
     description: Any = None
     # User provided display name of the Context. May be up to 128 Unicode characters.
@@ -22,14 +20,10 @@ class V1beta1ContextConfig:
     metadata: Any = None
     # Immutable. The resource name of the Context.
     name: Any = None
-    # Output only. A list of resource names of Contexts that are parents of this Context. A Context may have at most 10 parent_contexts.
-    parent_contexts: Any = None
     # The title of the schema describing the metadata. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
     schema_title: Any = None
     # The version of the schema in schema_name to use. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
     schema_version: Any = None
-    # Output only. Timestamp when this Context was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ContextAttrs:
@@ -59,16 +53,13 @@ class V1beta1ContextAttrs:
 V1beta1Context = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_context",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "parent_contexts": ubx.FieldSpec(wire_name="parent_contexts"),
         "schema_title": ubx.FieldSpec(wire_name="schema_title"),
         "schema_version": ubx.FieldSpec(wire_name="schema_version"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

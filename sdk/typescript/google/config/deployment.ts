@@ -127,48 +127,17 @@ const Deployment_TerraformBlueprintFields: FieldMap = {
   },
 };
 
-const Deployment_TfErrors_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const Deployment_TfErrorsFields: FieldMap = {
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: Deployment_TfErrors_ErrorFields,
-  },
-  errorDescription: "error_description",
-  httpResponseCode: "http_response_code",
-  resourceAddress: "resource_address",
-};
-
 export interface DeploymentConfig {
   /** Optional. Arbitrary key-value metadata storage e.g. to help client tools identify deployments during automation. See https://google.aip.dev/148#annotations for details on format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** User-defined location of Cloud Build logs and artifacts in Google Cloud Storage. Format: `gs://{bucket}/{folder}` A default bucket will be bootstrapped if the field is not set or empty. Default bucket format: `gs://--blueprint-config` Constraints: - The bucket needs to be in the same project as the deployment - The path cannot be within the path of `gcs_source` - The field cannot be updated, including changing its presence */
   artifactsGcsBucket?: string | Computed<string>;
-  /** Output only. Time when the deployment was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Cloud Build instance UUID associated with deleting this deployment. */
-  deleteBuild?: string | Computed<string>;
-  /** Output only. Location of Cloud Build logs in Google Cloud Storage, populated when deleting this deployment. Format: `gs://{bucket}/{object}`. */
-  deleteLogs?: string | Computed<string>;
   /** Outputs and artifacts from applying a deployment. */
   deleteResults?: Deployment_DeleteResults | Computed<Deployment_DeleteResults>;
-  /** Output only. Error code describing errors that may have occurred. */
-  errorCode?: string | Computed<string>;
-  /** Output only. Location of Terraform error logs in Google Cloud Storage. Format: `gs://{bucket}/{object}`. */
-  errorLogs?: string | Computed<string>;
   /** By default, Infra Manager will return a failure when Terraform encounters a 409 code (resource conflict error) during actuation. If this flag is set to true, Infra Manager will instead attempt to automatically import the resource into the Terraform state (for supported resource types) and continue actuation. Not all resource types are supported, refer to documentation. */
   importExistingResources?: boolean | Computed<boolean>;
   /** Optional. User-defined metadata for the deployment. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Revision name that was most recently applied. Format: `projects/{project}/locations/{location}/deployments/{deployment}/ revisions/{revision}` */
-  latestRevision?: string | Computed<string>;
-  /** Output only. Current lock state of the deployment. */
-  lockState?: string | Computed<string>;
   /** Identifier. Resource name of the deployment. Format: `projects/{project}/locations/{location}/deployments/{deployment}` */
   name?: string | Computed<string>;
   /** ProviderConfig contains the provider configurations. */
@@ -177,20 +146,10 @@ export interface DeploymentConfig {
   quotaValidation?: string | Computed<string>;
   /** Required. User-specified Service Account (SA) credentials to be used when actuating resources. Format: `projects/{projectID}/serviceAccounts/{serviceAccount}` */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Current state of the deployment. */
-  state?: string | Computed<string>;
-  /** Output only. Additional information regarding the current state. */
-  stateDetail?: string | Computed<string>;
   /** TerraformBlueprint describes the source of a Terraform root module which describes the resources and configs to be deployed. */
   terraformBlueprint?: Deployment_TerraformBlueprint | Computed<Deployment_TerraformBlueprint>;
-  /** Output only. Errors encountered when deleting this deployment. Errors are truncated to 10 entries, see `delete_results` and `error_logs` for full details. */
-  tfErrors?: Deployment_TfErrors[] | Computed<Deployment_TfErrors[]>;
-  /** Output only. The current Terraform version set on the deployment. It is in the format of "Major.Minor.Patch", for example, "1.3.10". */
-  tfVersion?: string | Computed<string>;
   /** The user-specified Terraform version constraint. Example: "=1.3.10". */
   tfVersionConstraint?: string | Computed<string>;
-  /** Output only. Time when the deployment was last modified. */
-  updateTime?: string | Computed<string>;
   /** The user-specified Cloud Build worker pool resource in which the Cloud Build job will execute. Format: `projects/{project}/locations/{location}/workerPools/{workerPoolId}`. If this field is unspecified, the default Cloud Build worker pool will be used. */
   workerPool?: string | Computed<string>;
 }
@@ -251,20 +210,13 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
   fields: {
     annotations: "annotations",
     artifactsGcsBucket: "artifacts_gcs_bucket",
-    createTime: "create_time",
-    deleteBuild: "delete_build",
-    deleteLogs: "delete_logs",
     deleteResults: {
       wireName: "delete_results",
       kind: "object",
       fields: Deployment_DeleteResultsFields,
     },
-    errorCode: "error_code",
-    errorLogs: "error_logs",
     importExistingResources: "import_existing_resources",
     labels: "labels",
-    latestRevision: "latest_revision",
-    lockState: "lock_state",
     name: "name",
     providerConfig: {
       wireName: "provider_config",
@@ -273,21 +225,12 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
     },
     quotaValidation: "quota_validation",
     serviceAccount: "service_account",
-    state: "state",
-    stateDetail: "state_detail",
     terraformBlueprint: {
       wireName: "terraform_blueprint",
       kind: "object",
       fields: Deployment_TerraformBlueprintFields,
     },
-    tfErrors: {
-      wireName: "tf_errors",
-      kind: "list",
-      fields: Deployment_TfErrorsFields,
-    },
-    tfVersion: "tf_version",
     tfVersionConstraint: "tf_version_constraint",
-    updateTime: "update_time",
     workerPool: "worker_pool",
   },
 };

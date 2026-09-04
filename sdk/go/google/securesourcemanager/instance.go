@@ -35,32 +35,30 @@ type Instance_WorkforceIdentityFederationConfig struct {
 }
 
 var Instance_HostConfigFields = ubx.FieldMap{
-		"Api": ubx.FieldSpec{WireName: "api"},
-		"GitHttp": ubx.FieldSpec{WireName: "git_http"},
-		"GitSsh": ubx.FieldSpec{WireName: "git_ssh"},
-		"Html": ubx.FieldSpec{WireName: "html"},
-	}
+	"Api":     ubx.FieldSpec{WireName: "api"},
+	"GitHttp": ubx.FieldSpec{WireName: "git_http"},
+	"GitSsh":  ubx.FieldSpec{WireName: "git_ssh"},
+	"Html":    ubx.FieldSpec{WireName: "html"},
+}
 
 var Instance_PrivateConfigFields = ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-		"CustomHostConfig": ubx.FieldSpec{
-			WireName: "custom_host_config",
-			Kind: "object",
-			Fields: Instance_HostConfigFields,
-		},
-		"HttpServiceAttachment": ubx.FieldSpec{WireName: "http_service_attachment"},
-		"IsPrivate": ubx.FieldSpec{WireName: "is_private"},
-		"PscAllowedProjects": ubx.FieldSpec{WireName: "psc_allowed_projects"},
-		"SshServiceAttachment": ubx.FieldSpec{WireName: "ssh_service_attachment"},
-	}
+	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+	"CustomHostConfig": ubx.FieldSpec{
+		WireName: "custom_host_config",
+		Kind:     "object",
+		Fields:   Instance_HostConfigFields,
+	},
+	"HttpServiceAttachment": ubx.FieldSpec{WireName: "http_service_attachment"},
+	"IsPrivate":             ubx.FieldSpec{WireName: "is_private"},
+	"PscAllowedProjects":    ubx.FieldSpec{WireName: "psc_allowed_projects"},
+	"SshServiceAttachment":  ubx.FieldSpec{WireName: "ssh_service_attachment"},
+}
 
 var Instance_WorkforceIdentityFederationConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 type InstanceConfig struct {
-	// Output only. Create timestamp.
-	CreateTime any
 	// HostConfig has different instance endpoints.
 	HostConfig any
 	// Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.
@@ -71,16 +69,6 @@ type InstanceConfig struct {
 	Name any
 	// PrivateConfig includes settings for private instance.
 	PrivateConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Current state of the instance.
-	State any
-	// Output only. An optional field providing information about the current instance state.
-	StateNote any
-	// Output only. Update timestamp.
-	UpdateTime any
 	// WorkforceIdentityFederationConfig allows this instance to support users from external identity providers.
 	WorkforceIdentityFederationConfig any
 }
@@ -115,29 +103,23 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_instance",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"HostConfig": ubx.FieldSpec{
 			WireName: "host_config",
-			Kind: "object",
-			Fields: Instance_HostConfigFields,
+			Kind:     "object",
+			Fields:   Instance_HostConfigFields,
 		},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PrivateConfig": ubx.FieldSpec{
 			WireName: "private_config",
-			Kind: "object",
-			Fields: Instance_PrivateConfigFields,
+			Kind:     "object",
+			Fields:   Instance_PrivateConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateNote": ubx.FieldSpec{WireName: "state_note"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"WorkforceIdentityFederationConfig": ubx.FieldSpec{
 			WireName: "workforce_identity_federation_config",
-			Kind: "object",
-			Fields: Instance_WorkforceIdentityFederationConfigFields,
+			Kind:     "object",
+			Fields:   Instance_WorkforceIdentityFederationConfigFields,
 		},
 	},
 }

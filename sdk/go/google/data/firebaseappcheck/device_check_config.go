@@ -10,7 +10,7 @@ type DeviceCheckConfigConfig struct {
 type DeviceCheckConfigAttrs struct {
 	// Required. The key identifier of a private key enabled with DeviceCheck, created in your Apple Developer account.
 	KeyId any
-	Name any
+	Name  any
 	// Required. Input only. The contents of the private key (`.p8`) file associated with the key specified by `key_id`. For security reasons, this field will never be populated in any response.
 	PrivateKey any
 	// Output only. Whether the `private_key` field was previously set. Since we will never return the `private_key` field, this field is the only way to find out whether it was previously set.

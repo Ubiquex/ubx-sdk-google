@@ -37,16 +37,12 @@ _GoogleApiSource_ProjectSubscriptionsFields = {
 class GoogleApiSourceConfig:
     # Optional. Resource annotations.
     annotations: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
     # Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
     crypto_key_name: Any = None
     # Required. Destination is the message bus that the GoogleApiSource is delivering to. It must be point to the full resource name of a MessageBus. Format: "projects/{PROJECT_ID}/locations/{region}/messagesBuses/{MESSAGE_BUS_ID)
     destination: Any = None
     # Optional. Resource display name.
     display_name: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Optional. Resource labels.
     labels: Any = None
     # The configuration for Platform Telemetry logging for Eventarc Advanced resources.
@@ -57,10 +53,6 @@ class GoogleApiSourceConfig:
     organization_subscription: Any = None
     # Config to enable subscribing to all events from a list of projects.
     project_subscriptions: Any = None
-    # Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class GoogleApiSourceAttrs:
@@ -95,11 +87,9 @@ GoogleApiSource = ubx.ResourceBinding(
     wire_type="google_eventarc_google_api_source",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_name": ubx.FieldSpec(wire_name="crypto_key_name"),
         "destination": ubx.FieldSpec(wire_name="destination"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "logging_config": ubx.FieldSpec(
             wire_name="logging_config",
@@ -117,7 +107,5 @@ GoogleApiSource = ubx.ResourceBinding(
             kind="object",
             fields=_GoogleApiSource_ProjectSubscriptionsFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

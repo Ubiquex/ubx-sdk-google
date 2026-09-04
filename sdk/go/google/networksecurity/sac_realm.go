@@ -11,13 +11,11 @@ type SacRealm_PairingKey struct {
 }
 
 var SacRealm_PairingKeyFields = ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+}
 
 type SacRealmConfig struct {
-	// Output only. Timestamp when the realm was created.
-	CreateTime any
 	// Optional. Optional list of labels applied to the resource.
 	Labels any
 	// Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.
@@ -26,10 +24,6 @@ type SacRealmConfig struct {
 	PairingKey any
 	// Immutable. SSE service provider associated with the realm.
 	SecurityService any
-	// Output only. State of the realm.
-	State any
-	// Output only. Timestamp when the realm was last updated.
-	UpdateTime any
 }
 
 type SacRealmAttrs struct {
@@ -52,16 +46,13 @@ type SacRealmAttrs struct {
 var SacRealm = ubx.ResourceBinding{
 	WireType: "google_networksecurity_sac_realm",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PairingKey": ubx.FieldSpec{
 			WireName: "pairing_key",
-			Kind: "object",
-			Fields: SacRealm_PairingKeyFields,
+			Kind:     "object",
+			Fields:   SacRealm_PairingKeyFields,
 		},
 		"SecurityService": ubx.FieldSpec{WireName: "security_service"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

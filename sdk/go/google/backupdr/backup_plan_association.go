@@ -14,72 +14,39 @@ type BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationProperties struc
 }
 
 type BackupPlanAssociation_RulesConfigInfo_LastBackupError struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type BackupPlanAssociation_RulesConfigInfo struct {
-	LastBackupError any
-	LastBackupState any
+	LastBackupError                     any
+	LastBackupState                     any
 	LastSuccessfulBackupConsistencyTime any
-	RuleId any
+	RuleId                              any
 }
 
 var BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields = ubx.FieldMap{
-		"ClusterUid": ubx.FieldSpec{WireName: "cluster_uid"},
-	}
+	"ClusterUid": ubx.FieldSpec{WireName: "cluster_uid"},
+}
 
 var BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields = ubx.FieldMap{
-		"InstanceCreateTime": ubx.FieldSpec{WireName: "instance_create_time"},
-	}
-
-var BackupPlanAssociation_RulesConfigInfo_LastBackupErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var BackupPlanAssociation_RulesConfigInfoFields = ubx.FieldMap{
-		"LastBackupError": ubx.FieldSpec{
-			WireName: "last_backup_error",
-			Kind: "object",
-			Fields: BackupPlanAssociation_RulesConfigInfo_LastBackupErrorFields,
-		},
-		"LastBackupState": ubx.FieldSpec{WireName: "last_backup_state"},
-		"LastSuccessfulBackupConsistencyTime": ubx.FieldSpec{WireName: "last_successful_backup_consistency_time"},
-		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
-	}
+	"InstanceCreateTime": ubx.FieldSpec{WireName: "instance_create_time"},
+}
 
 type BackupPlanAssociationConfig struct {
 	// Properties for an AlloyDB cluster backup plan association.
 	AlloydbClusterBackupPlanAssociationProperties any
 	// Required. Resource name of backup plan which needs to be applied on workload. Format: projects/{project}/locations/{location}/backupPlans/{backupPlanId}
 	BackupPlan any
-	// Output only. The user friendly revision ID of the `BackupPlanRevision`. Example: v0, v1, v2, etc.
-	BackupPlanRevisionId any
-	// Output only. The resource id of the `BackupPlanRevision`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
-	BackupPlanRevisionName any
 	// Cloud SQL instance's BPA properties.
 	CloudSqlInstanceBackupPlanAssociationProperties any
-	// Output only. The time when the instance was created.
-	CreateTime any
-	// Output only. Resource name of data source which will be used as storage location for backups taken. Format : projects/{project}/locations/{location}/backupVaults/{backupvault}/dataSources/{datasource}
-	DataSource any
 	// Filestore instance's BPA properties.
 	FilestoreInstanceBackupPlanAssociationProperties any
-	// Output only. Identifier. The resource name of BackupPlanAssociation in below format Format : projects/{project}/locations/{location}/backupPlanAssociations/{backupPlanAssociationId}
-	Name any
 	// Required. Immutable. Resource name of workload on which the backup plan is applied. The format can either be the resource name (e.g., "projects/my-project/zones/us-central1-a/instances/my-instance") or the full resource URI (e.g., "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
 	Resource any
 	// Required. Immutable. Resource type of workload on which backupplan is applied
 	ResourceType any
-	// Output only. The config info related to backup rules.
-	RulesConfigInfo any
-	// Output only. The BackupPlanAssociation resource state.
-	State any
-	// Output only. The time when the instance was updated.
-	UpdateTime any
 }
 
 type BackupPlanAssociationAttrs struct {
@@ -118,33 +85,21 @@ var BackupPlanAssociation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlloydbClusterBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "alloydb_cluster_backup_plan_association_properties",
-			Kind: "object",
-			Fields: BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields,
+			Kind:     "object",
+			Fields:   BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields,
 		},
 		"BackupPlan": ubx.FieldSpec{WireName: "backup_plan"},
-		"BackupPlanRevisionId": ubx.FieldSpec{WireName: "backup_plan_revision_id"},
-		"BackupPlanRevisionName": ubx.FieldSpec{WireName: "backup_plan_revision_name"},
 		"CloudSqlInstanceBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "cloud_sql_instance_backup_plan_association_properties",
-			Kind: "object",
-			Fields: BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
+			Kind:     "object",
+			Fields:   BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
 		"FilestoreInstanceBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "filestore_instance_backup_plan_association_properties",
-			Kind: "object",
-			Fields: BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
+			Kind:     "object",
+			Fields:   BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Resource":     ubx.FieldSpec{WireName: "resource"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"RulesConfigInfo": ubx.FieldSpec{
-			WireName: "rules_config_info",
-			Kind: "list",
-			Fields: BackupPlanAssociation_RulesConfigInfoFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

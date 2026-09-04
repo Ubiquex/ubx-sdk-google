@@ -31,16 +31,12 @@ const GoogleApiSource_ProjectSubscriptionsFields: FieldMap = {
 export interface GoogleApiSourceConfig {
   /** Optional. Resource annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
   /** Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
   cryptoKeyName?: string | Computed<string>;
   /** Required. Destination is the message bus that the GoogleApiSource is delivering to. It must be point to the full resource name of a MessageBus. Format: "projects/{PROJECT_ID}/locations/{region}/messagesBuses/{MESSAGE_BUS_ID) */
   destination?: string | Computed<string>;
   /** Optional. Resource display name. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. Resource labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The configuration for Platform Telemetry logging for Eventarc Advanced resources. */
@@ -51,10 +47,6 @@ export interface GoogleApiSourceConfig {
   organizationSubscription?: GoogleApiSource_OrganizationSubscription | Computed<GoogleApiSource_OrganizationSubscription>;
   /** Config to enable subscribing to all events from a list of projects. */
   projectSubscriptions?: GoogleApiSource_ProjectSubscriptions | Computed<GoogleApiSource_ProjectSubscriptions>;
-  /** Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GoogleApiSourceAttrs {
@@ -90,11 +82,9 @@ export const GoogleApiSource: ResourceBinding<GoogleApiSourceConfig, GoogleApiSo
   wireType: "google_eventarc_google_api_source",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     cryptoKeyName: "crypto_key_name",
     destination: "destination",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     loggingConfig: {
       wireName: "logging_config",
@@ -112,7 +102,5 @@ export const GoogleApiSource: ResourceBinding<GoogleApiSourceConfig, GoogleApiSo
       kind: "object",
       fields: GoogleApiSource_ProjectSubscriptionsFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

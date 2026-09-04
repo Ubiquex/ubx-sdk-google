@@ -149,7 +149,6 @@ export interface DataSource_DataSourceGcpResource {
 }
 
 export interface DataSourceConfig {
-  name: string | Computed<string>;
 }
 
 export interface DataSourceAttrs {
@@ -183,6 +182,5 @@ export interface DataSourceAttrs {
 export const DataSource: DataSourceBinding<DataSourceConfig, DataSourceAttrs> = {
   wireType: "google_backupdr_data_source",
   fields: {
-    name: "name",
   },
 };

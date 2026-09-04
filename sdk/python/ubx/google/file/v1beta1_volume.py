@@ -20,8 +20,6 @@ _V1beta1Volume_MountPointFields = {
 
 @dataclasses.dataclass
 class V1beta1VolumeConfig:
-    # Output only. The time when the volume was created.
-    create_time: Any = None
     # Optional. A description of the volume with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
     # Optional. Resource labels to represent user provided metadata.
@@ -47,7 +45,6 @@ class V1beta1VolumeAttrs:
 V1beta1Volume = ubx.ResourceBinding(
     wire_type="google_file_v1beta1_volume",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "mount_point": ubx.FieldSpec(

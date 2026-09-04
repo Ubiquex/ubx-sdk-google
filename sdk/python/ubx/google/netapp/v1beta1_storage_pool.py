@@ -12,28 +12,18 @@ class V1beta1StoragePoolConfig:
     active_directory: Any = None
     # Optional. True if the storage pool supports Auto Tiering enabled volumes. Default is false. Auto-tiering can be enabled after storage pool creation but it can't be disabled once enabled.
     allow_auto_tiering: Any = None
-    # Output only. Available throughput of the storage pool (in MiB/s).
-    available_throughput_mibps: Any = None
     # Required. Capacity in GIB of the pool
     capacity_gib: Any = None
-    # Output only. Total cold tier data rounded down to the nearest GiB used by the storage pool.
-    cold_tier_size_used_gib: Any = None
-    # Output only. Create time of the storage pool
-    create_time: Any = None
     # Optional. True if using Independent Scaling of capacity and performance (Hyperdisk) By default set to false
     custom_performance_enabled: Any = None
     # Optional. Description of the storage pool
     description: Any = None
     # Optional. Flag indicating that the hot-tier threshold will be auto-increased by 10% of the hot-tier when it hits 100%. Default is true. The increment will kick in only if the new size after increment is still less than or equal to storage pool size.
     enable_hot_tier_auto_resize: Any = None
-    # Output only. Specifies the current pool encryption key source.
-    encryption_type: Any = None
     # Deprecated. Used to allow SO pool to access AD or DNS server from other regions.
     global_access_allowed: Any = None
     # Optional. Total hot tier capacity for the Storage Pool. It is applicable only to Flex service level. It should be less than the minimum storage pool size and cannot be more than the current storage pool size. It cannot be decreased once set.
     hot_tier_size_gib: Any = None
-    # Output only. Total hot tier data rounded down to the nearest GiB used by the storage pool.
-    hot_tier_size_used_gib: Any = None
     # Optional. Specifies the KMS config to be used for volume encryption.
     kms_config: Any = None
     # Optional. Labels as key value pairs
@@ -52,30 +42,18 @@ class V1beta1StoragePoolConfig:
     qos_type: Any = None
     # Optional. Specifies the replica zone for regional storagePool.
     replica_zone: Any = None
-    # Output only. Reserved for future use
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use
-    satisfies_pzs: Any = None
     # Optional. Deprecated: Use scale_type instead. The effective scale tier of the storage pool. If `scale_tier` is not specified during creation, this defaults to `SCALE_TIER_STANDARD`.
     scale_tier: Any = None
     # Optional. The scale type of the storage pool. Defaults to `SCALE_TYPE_DEFAULT` if not specified.
     scale_type: Any = None
     # Required. Service level of the storage pool
     service_level: Any = None
-    # Output only. State of the storage pool
-    state: Any = None
-    # Output only. State details of the storage pool
-    state_details: Any = None
     # Optional. Custom Performance Total IOPS of the pool if not provided, it will be calculated based on the total_throughput_mibps
     total_iops: Any = None
     # Optional. Custom Performance Total Throughput of the pool (in MiBps)
     total_throughput_mibps: Any = None
     # Optional. Type of the storage pool. This field is used to control whether the pool supports `FILE` based volumes only or `UNIFIED` (both `FILE` and `BLOCK`) volumes. If not specified during creation, it defaults to `FILE`.
     type: Any = None
-    # Output only. Allocated size of all volumes in GIB in the storage pool
-    volume_capacity_gib: Any = None
-    # Output only. Volume count of the storage pool
-    volume_count: Any = None
     # Optional. Specifies the active zone for regional storagePool.
     zone: Any = None
 
@@ -157,17 +135,12 @@ V1beta1StoragePool = ubx.ResourceBinding(
     fields={
         "active_directory": ubx.FieldSpec(wire_name="active_directory"),
         "allow_auto_tiering": ubx.FieldSpec(wire_name="allow_auto_tiering"),
-        "available_throughput_mibps": ubx.FieldSpec(wire_name="available_throughput_mibps"),
         "capacity_gib": ubx.FieldSpec(wire_name="capacity_gib"),
-        "cold_tier_size_used_gib": ubx.FieldSpec(wire_name="cold_tier_size_used_gib"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_performance_enabled": ubx.FieldSpec(wire_name="custom_performance_enabled"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_hot_tier_auto_resize": ubx.FieldSpec(wire_name="enable_hot_tier_auto_resize"),
-        "encryption_type": ubx.FieldSpec(wire_name="encryption_type"),
         "global_access_allowed": ubx.FieldSpec(wire_name="global_access_allowed"),
         "hot_tier_size_gib": ubx.FieldSpec(wire_name="hot_tier_size_gib"),
-        "hot_tier_size_used_gib": ubx.FieldSpec(wire_name="hot_tier_size_used_gib"),
         "kms_config": ubx.FieldSpec(wire_name="kms_config"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "ldap_enabled": ubx.FieldSpec(wire_name="ldap_enabled"),
@@ -177,18 +150,12 @@ V1beta1StoragePool = ubx.ResourceBinding(
         "psa_range": ubx.FieldSpec(wire_name="psa_range"),
         "qos_type": ubx.FieldSpec(wire_name="qos_type"),
         "replica_zone": ubx.FieldSpec(wire_name="replica_zone"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "scale_tier": ubx.FieldSpec(wire_name="scale_tier"),
         "scale_type": ubx.FieldSpec(wire_name="scale_type"),
         "service_level": ubx.FieldSpec(wire_name="service_level"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
         "total_iops": ubx.FieldSpec(wire_name="total_iops"),
         "total_throughput_mibps": ubx.FieldSpec(wire_name="total_throughput_mibps"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "volume_capacity_gib": ubx.FieldSpec(wire_name="volume_capacity_gib"),
-        "volume_count": ubx.FieldSpec(wire_name="volume_count"),
         "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

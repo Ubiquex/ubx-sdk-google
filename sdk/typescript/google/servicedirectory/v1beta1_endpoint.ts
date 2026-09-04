@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1EndpointConfig {
   /** Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like: * `8.8.8` * `8.8.8.8:53` * `test:bad:address` * `[::1]` * `[::1]:8080` Limited to 45 characters. */
   address?: string | Computed<string>;
-  /** Output only. The timestamp when the endpoint was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Metadata for the endpoint. This data can be consumed by service clients. Restrictions: * The entire metadata dictionary may contain up to 512 characters, spread accoss all key-value pairs. Metadata that goes beyond this limit are rejected * Valid metadata keys have two segments: an optional prefix and name, separated by a slash (/). The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots (.), not longer than 253 characters in total, followed by a slash (/). Metadata that fails to meet these requirements are rejected Note: This field is equivalent to the `annotations` field in the v1 API. They have the same syntax and read/write to the same location in Service Directory. */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The resource name for the endpoint in the format `projects/* /locations/* /namespaces/* /services/* /endpoints/*`. */
@@ -14,10 +12,6 @@ export interface V1beta1EndpointConfig {
   network?: string | Computed<string>;
   /** Optional. Service Directory rejects values outside of `[0, 65535]`. */
   port?: number | Computed<number>;
-  /** Output only. A globally unique identifier (in UUID4 format) for this endpoint. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when the endpoint was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EndpointAttrs {
@@ -43,12 +37,9 @@ export const V1beta1Endpoint: ResourceBinding<V1beta1EndpointConfig, V1beta1Endp
   wireType: "google_servicedirectory_v1beta1_endpoint",
   fields: {
     address: "address",
-    createTime: "create_time",
     metadata: "metadata",
     name: "name",
     network: "network",
     port: "port",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

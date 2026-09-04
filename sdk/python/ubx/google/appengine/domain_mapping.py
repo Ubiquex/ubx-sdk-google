@@ -21,12 +21,6 @@ class DomainMapping_SslSettings:
     # SSL management type for this domain. If AUTOMATIC, a managed certificate is automatically provisioned. If MANUAL, certificate_id must be manually specified in order to configure SSL for this domain.
     ssl_management_type: Any = None
 
-_DomainMapping_ResourceRecordsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "rrdata": ubx.FieldSpec(wire_name="rrdata"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _DomainMapping_SslSettingsFields = {
     "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
     "pending_managed_certificate_id": ubx.FieldSpec(wire_name="pending_managed_certificate_id"),
@@ -37,10 +31,6 @@ _DomainMapping_SslSettingsFields = {
 class DomainMappingConfig:
     # Relative name of the domain serving the application. Example: example.com.
     id: Any = None
-    # Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly
-    name: Any = None
-    # Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly
-    resource_records: Any = None
     # SSL configuration for a DomainMapping resource.
     ssl_settings: Any = None
 
@@ -59,12 +49,6 @@ DomainMapping = ubx.ResourceBinding(
     wire_type="google_appengine_domain_mapping",
     fields={
         "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "resource_records": ubx.FieldSpec(
-            wire_name="resource_records",
-            kind="list",
-            fields=_DomainMapping_ResourceRecordsFields,
-        ),
         "ssl_settings": ubx.FieldSpec(
             wire_name="ssl_settings",
             kind="object",

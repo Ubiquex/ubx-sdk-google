@@ -105,22 +105,14 @@ class DependencyConfig:
     attributes: Any = None
     # Reference to an entity participating in a dependency.
     consumer: Any = None
-    # Output only. The time at which the dependency was created.
-    create_time: Any = None
     # Optional. Human readable description corresponding of the dependency.
     description: Any = None
-    # Output only. Discovery mode of the dependency.
-    discovery_mode: Any = None
     # Details describing error condition of a dependency.
     error_detail: Any = None
     # Identifier. The name of the dependency in the API Hub. Format: `projects/{project}/locations/{location}/dependencies/{dependency}`
     name: Any = None
-    # Output only. State of the dependency.
-    state: Any = None
     # Reference to an entity participating in a dependency.
     supplier: Any = None
-    # Output only. The time at which the dependency was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DependencyAttrs:
@@ -158,21 +150,17 @@ Dependency = ubx.ResourceBinding(
             kind="object",
             fields=_Dependency_ConsumerFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "discovery_mode": ubx.FieldSpec(wire_name="discovery_mode"),
         "error_detail": ubx.FieldSpec(
             wire_name="error_detail",
             kind="object",
             fields=_Dependency_ErrorDetailFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "supplier": ubx.FieldSpec(
             wire_name="supplier",
             kind="object",
             fields=_Dependency_ConsumerFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

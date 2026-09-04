@@ -73,12 +73,8 @@ const ExascaleDbStorageVault_PropertiesFields: FieldMap = {
 };
 
 export interface ExascaleDbStorageVaultConfig {
-  /** Output only. The date and time when the ExascaleDbStorageVault was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name for the ExascaleDbStorageVault. The name does not have to be unique within your project. The name must be 1-255 characters long and can only contain alphanumeric characters. */
   displayName?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the ExascaleDbStorageVault. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The Exadata Infrastructure resource on which ExascaleDbStorageVault resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure} */
   exadataInfrastructure?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
@@ -113,9 +109,7 @@ export interface ExascaleDbStorageVaultAttrs {
 export const ExascaleDbStorageVault: ResourceBinding<ExascaleDbStorageVaultConfig, ExascaleDbStorageVaultAttrs> = {
   wireType: "google_oracledatabase_exascale_db_storage_vault",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     exadataInfrastructure: "exadata_infrastructure",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",

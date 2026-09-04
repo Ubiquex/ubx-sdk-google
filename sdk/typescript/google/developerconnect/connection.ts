@@ -293,12 +293,8 @@ export interface ConnectionConfig {
   bitbucketCloudConfig?: Connection_BitbucketCloudConfig | Computed<Connection_BitbucketCloudConfig>;
   /** Configuration for connections to an instance of Bitbucket Data Center. */
   bitbucketDataCenterConfig?: Connection_BitbucketDataCenterConfig | Computed<Connection_BitbucketDataCenterConfig>;
-  /** Output only. [Output only] Create timestamp */
-  createTime?: string | Computed<string>;
   /** The crypto key configuration. This field is used by the Customer-managed encryption keys (CMEK) feature. */
   cryptoKeyConfig?: Connection_CryptoKeyConfig | Computed<Connection_CryptoKeyConfig>;
-  /** Output only. [Output only] Delete timestamp */
-  deleteTime?: string | Computed<string>;
   /** Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled. */
   disabled?: boolean | Computed<boolean>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -321,14 +317,8 @@ export interface ConnectionConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`. */
   name?: string | Computed<string>;
-  /** Output only. Set to true when the connection is being set up or updated in the background. */
-  reconciling?: boolean | Computed<boolean>;
   /** Configuration for connections to Secure Source Manager instance */
   secureSourceManagerInstanceConfig?: Connection_SecureSourceManagerInstanceConfig | Computed<Connection_SecureSourceManagerInstanceConfig>;
-  /** Output only. A system-assigned unique identifier for the Connection. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update timestamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectionAttrs {
@@ -390,13 +380,11 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "object",
       fields: Connection_BitbucketDataCenterConfigFields,
     },
-    createTime: "create_time",
     cryptoKeyConfig: {
       wireName: "crypto_key_config",
       kind: "object",
       fields: Connection_CryptoKeyConfigFields,
     },
-    deleteTime: "delete_time",
     disabled: "disabled",
     etag: "etag",
     gitProxyConfig: {
@@ -436,13 +424,10 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
     },
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     secureSourceManagerInstanceConfig: {
       wireName: "secure_source_manager_instance_config",
       kind: "object",
       fields: Connection_SecureSourceManagerInstanceConfigFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

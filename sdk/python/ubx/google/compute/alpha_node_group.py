@@ -97,15 +97,9 @@ _AlphaNodeGroup_ShareSettingsFields = {
 @dataclasses.dataclass
 class AlphaNodeGroupConfig:
     autoscaling_policy: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     fingerprint: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group.
-    kind: Any = None
     # An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate.
     location_hint: Any = None
     # Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`.
@@ -118,17 +112,8 @@ class AlphaNodeGroupConfig:
     name: Any = None
     # URL of the node template to create the node group from.
     node_template: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
-    # Output only. [Output Only] The total number of nodes in the node group.
-    size: Any = None
-    status: Any = None
-    # Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a.
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaNodeGroupAttrs:
@@ -174,11 +159,8 @@ AlphaNodeGroup = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaNodeGroup_AutoscalingPolicyFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "location_hint": ubx.FieldSpec(wire_name="location_hint"),
         "maintenance_interval": ubx.FieldSpec(wire_name="maintenance_interval"),
         "maintenance_policy": ubx.FieldSpec(wire_name="maintenance_policy"),
@@ -189,15 +171,10 @@ AlphaNodeGroup = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_template": ubx.FieldSpec(wire_name="node_template"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "share_settings": ubx.FieldSpec(
             wire_name="share_settings",
             kind="object",
             fields=_AlphaNodeGroup_ShareSettingsFields,
         ),
-        "size": ubx.FieldSpec(wire_name="size"),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

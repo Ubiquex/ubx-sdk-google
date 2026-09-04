@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta3SchemaConfig:
-    # Output only. The time when the Schema was created.
-    create_time: Any = None
     # Required. The user-defined name of the Schema.
     display_name: Any = None
     # Optional. The {{gcp_name_short}} labels for the Schema.
     labels: Any = None
     # Identifier. The resource name of the Schema. Format: `projects/{project}/locations/{location}/schemas/{schema}`
     name: Any = None
-    # Output only. The time when the Schema was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta3SchemaAttrs:
@@ -35,10 +31,8 @@ class V1beta3SchemaAttrs:
 V1beta3Schema = ubx.ResourceBinding(
     wire_type="google_documentai_v1beta3_schema",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

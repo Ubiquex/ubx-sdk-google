@@ -11,31 +11,20 @@ export interface Key_Attributes {
   value?: string | Computed<string>;
 }
 
-const Key_ApiProductsFields: FieldMap = {
-  apiproduct: "apiproduct",
-  status: "status",
-};
-
 const Key_AttributesFields: FieldMap = {
   name: "name",
   value: "value",
 };
 
 export interface KeyConfig {
-  /** Output only. List of API products and its status for which the credential can be used. **Note**: Use UpdateAppGroupAppKeyApiProductRequest API to make the association after the consumer key and secret are created. */
-  apiProducts?: Key_ApiProducts[] | Computed<Key_ApiProducts[]>;
   /** List of attributes associated with the credential. */
   attributes?: Key_Attributes[] | Computed<Key_Attributes[]>;
   /** Immutable. Consumer key. */
   consumerKey?: string | Computed<string>;
   /** Secret key. */
   consumerSecret?: string | Computed<string>;
-  /** Output only. Time the AppGroup app expires in milliseconds since epoch. */
-  expiresAt?: string | Computed<string>;
   /** Immutable. Expiration time, in seconds, for the consumer key. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set. */
   expiresInSeconds?: string | Computed<string>;
-  /** Output only. Time the AppGroup app was created in milliseconds since epoch. */
-  issuedAt?: string | Computed<string>;
   /** Scopes to apply to the app. The specified scope names must already be defined for the API product that you associate with the app. */
   scopes?: string[] | Computed<string[]>;
   /** Status of the credential. Valid values include `approved` or `revoked`. */
@@ -66,11 +55,6 @@ export interface KeyAttrs {
 export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
   wireType: "google_apigee_key",
   fields: {
-    apiProducts: {
-      wireName: "api_products",
-      kind: "list",
-      fields: Key_ApiProductsFields,
-    },
     attributes: {
       wireName: "attributes",
       kind: "list",
@@ -78,9 +62,7 @@ export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
     },
     consumerKey: "consumer_key",
     consumerSecret: "consumer_secret",
-    expiresAt: "expires_at",
     expiresInSeconds: "expires_in_seconds",
-    issuedAt: "issued_at",
     scopes: "scopes",
     status: "status",
   },

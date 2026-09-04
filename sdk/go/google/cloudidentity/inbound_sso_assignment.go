@@ -19,22 +19,20 @@ type InboundSsoAssignment_SignInBehavior struct {
 }
 
 var InboundSsoAssignment_OidcSsoInfoFields = ubx.FieldMap{
-		"InboundOidcSsoProfile": ubx.FieldSpec{WireName: "inbound_oidc_sso_profile"},
-	}
+	"InboundOidcSsoProfile": ubx.FieldSpec{WireName: "inbound_oidc_sso_profile"},
+}
 
 var InboundSsoAssignment_SamlSsoInfoFields = ubx.FieldMap{
-		"InboundSamlSsoProfile": ubx.FieldSpec{WireName: "inbound_saml_sso_profile"},
-	}
+	"InboundSamlSsoProfile": ubx.FieldSpec{WireName: "inbound_saml_sso_profile"},
+}
 
 var InboundSsoAssignment_SignInBehaviorFields = ubx.FieldMap{
-		"RedirectCondition": ubx.FieldSpec{WireName: "redirect_condition"},
-	}
+	"RedirectCondition": ubx.FieldSpec{WireName: "redirect_condition"},
+}
 
 type InboundSsoAssignmentConfig struct {
 	// Immutable. The customer. For example: `customers/C0123abc`.
 	Customer any
-	// Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment.
-	Name any
 	// Details that are applicable when `sso_mode` is set to `OIDC_SSO`.
 	OidcSsoInfo any
 	// Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set.
@@ -76,25 +74,24 @@ var InboundSsoAssignment = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_inbound_sso_assignment",
 	Fields: ubx.FieldMap{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OidcSsoInfo": ubx.FieldSpec{
 			WireName: "oidc_sso_info",
-			Kind: "object",
-			Fields: InboundSsoAssignment_OidcSsoInfoFields,
+			Kind:     "object",
+			Fields:   InboundSsoAssignment_OidcSsoInfoFields,
 		},
 		"Rank": ubx.FieldSpec{WireName: "rank"},
 		"SamlSsoInfo": ubx.FieldSpec{
 			WireName: "saml_sso_info",
-			Kind: "object",
-			Fields: InboundSsoAssignment_SamlSsoInfoFields,
+			Kind:     "object",
+			Fields:   InboundSsoAssignment_SamlSsoInfoFields,
 		},
 		"SignInBehavior": ubx.FieldSpec{
 			WireName: "sign_in_behavior",
-			Kind: "object",
-			Fields: InboundSsoAssignment_SignInBehaviorFields,
+			Kind:     "object",
+			Fields:   InboundSsoAssignment_SignInBehaviorFields,
 		},
-		"SsoMode": ubx.FieldSpec{WireName: "sso_mode"},
-		"TargetGroup": ubx.FieldSpec{WireName: "target_group"},
+		"SsoMode":       ubx.FieldSpec{WireName: "sso_mode"},
+		"TargetGroup":   ubx.FieldSpec{WireName: "target_group"},
 		"TargetOrgUnit": ubx.FieldSpec{WireName: "target_org_unit"},
 	},
 }

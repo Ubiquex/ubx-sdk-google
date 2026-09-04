@@ -4,8 +4,6 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FirewallEndpointAssociationConfig struct {
-	// Output only. Create time stamp
-	CreateTime any
 	// Optional. Whether the association is disabled. True indicates that traffic won't be intercepted
 	Disabled any
 	// Required. The URL of the FirewallEndpoint that is being associated.
@@ -16,14 +14,8 @@ type V1beta1FirewallEndpointAssociationConfig struct {
 	Name any
 	// Required. The URL of the network that is being associated.
 	Network any
-	// Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128.
-	Reconciling any
-	// Output only. Current state of the association.
-	State any
 	// Optional. The URL of the TlsInspectionPolicy that is being associated.
 	TlsInspectionPolicy any
-	// Output only. Update time stamp
-	UpdateTime any
 }
 
 type V1beta1FirewallEndpointAssociationAttrs struct {
@@ -52,15 +44,11 @@ type V1beta1FirewallEndpointAssociationAttrs struct {
 var V1beta1FirewallEndpointAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_firewall_endpoint_association",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"FirewallEndpoint": ubx.FieldSpec{WireName: "firewall_endpoint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Disabled":            ubx.FieldSpec{WireName: "disabled"},
+		"FirewallEndpoint":    ubx.FieldSpec{WireName: "firewall_endpoint"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Network":             ubx.FieldSpec{WireName: "network"},
 		"TlsInspectionPolicy": ubx.FieldSpec{WireName: "tls_inspection_policy"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

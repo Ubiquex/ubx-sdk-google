@@ -22,7 +22,6 @@ export interface HostConfig {
   association: string | Computed<string>;
   host: string | Computed<string>;
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface HostAttrs {
@@ -57,6 +56,5 @@ export const Host: DataSourceBinding<HostConfig, HostAttrs> = {
     association: "association",
     host: "host",
     project: "project",
-    zone: "zone",
   },
 };

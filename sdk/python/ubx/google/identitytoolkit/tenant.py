@@ -334,8 +334,6 @@ class TenantConfig:
     mobile_links_config: Any = None
     # Configuration related to monitoring project activity.
     monitoring: Any = None
-    # Output only. Resource name of a tenant. For example: "projects/{project-id}/tenants/{tenant-id}"
-    name: Any = None
     # The configuration for the password policy on the project.
     password_policy_config: Any = None
     # The reCAPTCHA Enterprise integration config.
@@ -428,7 +426,6 @@ Tenant = ubx.ResourceBinding(
             kind="object",
             fields=_Tenant_MonitoringFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "password_policy_config": ubx.FieldSpec(
             wire_name="password_policy_config",
             kind="object",

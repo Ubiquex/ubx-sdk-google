@@ -35,8 +35,6 @@ const FeedbackLabel_QaAnswerLabelFields: FieldMap = {
 };
 
 export interface FeedbackLabelConfig {
-  /** Output only. Create time of the label. */
-  createTime?: string | Computed<string>;
   /** String label used for Topic Modeling. */
   label?: string | Computed<string>;
   /** Name of the resource to be labeled. Supported resources are: * `projects/{project}/locations/{location}/qaScorecards/{scorecard}/revisions/{revision}/qaQuestions/{question}` * `projects/{project}/locations/{location}/issueModels/{issue_model}` * `projects/{project}/locations/{location}/generators/{generator_id}` */
@@ -45,8 +43,6 @@ export interface FeedbackLabelConfig {
   name?: string | Computed<string>;
   /** Message for holding the value of a QaAnswer. QaQuestion.AnswerChoice defines the possible answer values for a question. */
   qaAnswerLabel?: FeedbackLabel_QaAnswerLabel | Computed<FeedbackLabel_QaAnswerLabel>;
-  /** Output only. Update time of the label. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface FeedbackLabelAttrs {
@@ -67,7 +63,6 @@ export interface FeedbackLabelAttrs {
 export const FeedbackLabel: ResourceBinding<FeedbackLabelConfig, FeedbackLabelAttrs> = {
   wireType: "google_contactcenterinsights_feedback_label",
   fields: {
-    createTime: "create_time",
     label: "label",
     labeledResource: "labeled_resource",
     name: "name",
@@ -76,6 +71,5 @@ export const FeedbackLabel: ResourceBinding<FeedbackLabelConfig, FeedbackLabelAt
       kind: "object",
       fields: FeedbackLabel_QaAnswerLabelFields,
     },
-    updateTime: "update_time",
   },
 };

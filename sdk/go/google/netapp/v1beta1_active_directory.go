@@ -10,8 +10,6 @@ type V1beta1ActiveDirectoryConfig struct {
 	AesEncryption any
 	// Optional. Users to be added to the Built-in Backup Operator active directory group.
 	BackupOperators any
-	// Output only. Create time of the active directory.
-	CreateTime any
 	// Description of the active directory.
 	Description any
 	// Required. Comma separated list of DNS server IP addresses for the Active Directory domain.
@@ -42,10 +40,6 @@ type V1beta1ActiveDirectoryConfig struct {
 	SecurityOperators any
 	// The Active Directory site the service will limit Domain Controller discovery too.
 	Site any
-	// Output only. The state of the AD.
-	State any
-	// Output only. The state details of the Active Directory.
-	StateDetails any
 	// Required. Username of the Active Directory domain administrator.
 	Username any
 }
@@ -100,27 +94,24 @@ type V1beta1ActiveDirectoryAttrs struct {
 var V1beta1ActiveDirectory = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_active_directory",
 	Fields: ubx.FieldMap{
-		"Administrators": ubx.FieldSpec{WireName: "administrators"},
-		"AesEncryption": ubx.FieldSpec{WireName: "aes_encryption"},
-		"BackupOperators": ubx.FieldSpec{WireName: "backup_operators"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Dns": ubx.FieldSpec{WireName: "dns"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"Administrators":       ubx.FieldSpec{WireName: "administrators"},
+		"AesEncryption":        ubx.FieldSpec{WireName: "aes_encryption"},
+		"BackupOperators":      ubx.FieldSpec{WireName: "backup_operators"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Dns":                  ubx.FieldSpec{WireName: "dns"},
+		"Domain":               ubx.FieldSpec{WireName: "domain"},
 		"EncryptDcConnections": ubx.FieldSpec{WireName: "encrypt_dc_connections"},
-		"KdcHostname": ubx.FieldSpec{WireName: "kdc_hostname"},
-		"KdcIp": ubx.FieldSpec{WireName: "kdc_ip"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LdapSigning": ubx.FieldSpec{WireName: "ldap_signing"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetBiosPrefix": ubx.FieldSpec{WireName: "net_bios_prefix"},
-		"NfsUsersWithLdap": ubx.FieldSpec{WireName: "nfs_users_with_ldap"},
-		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"SecurityOperators": ubx.FieldSpec{WireName: "security_operators"},
-		"Site": ubx.FieldSpec{WireName: "site"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"Username": ubx.FieldSpec{WireName: "username"},
+		"KdcHostname":          ubx.FieldSpec{WireName: "kdc_hostname"},
+		"KdcIp":                ubx.FieldSpec{WireName: "kdc_ip"},
+		"Labels":               ubx.FieldSpec{WireName: "labels"},
+		"LdapSigning":          ubx.FieldSpec{WireName: "ldap_signing"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"NetBiosPrefix":        ubx.FieldSpec{WireName: "net_bios_prefix"},
+		"NfsUsersWithLdap":     ubx.FieldSpec{WireName: "nfs_users_with_ldap"},
+		"OrganizationalUnit":   ubx.FieldSpec{WireName: "organizational_unit"},
+		"Password":             ubx.FieldSpec{WireName: "password"},
+		"SecurityOperators":    ubx.FieldSpec{WireName: "security_operators"},
+		"Site":                 ubx.FieldSpec{WireName: "site"},
+		"Username":             ubx.FieldSpec{WireName: "username"},
 	},
 }

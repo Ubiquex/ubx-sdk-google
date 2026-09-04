@@ -13,18 +13,16 @@ type EntryType_RequiredAspects struct {
 }
 
 var EntryType_AuthorizationFields = ubx.FieldMap{
-		"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
-	}
+	"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
+}
 
 var EntryType_RequiredAspectsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EntryTypeConfig struct {
 	// Authorization for an Entry Type.
 	Authorization any
-	// Output only. The time when the EntryType was created.
-	CreateTime any
 	// Optional. Description of the EntryType.
 	Description any
 	// Optional. User friendly display name.
@@ -33,8 +31,6 @@ type EntryTypeConfig struct {
 	Etag any
 	// Optional. User-defined labels for the EntryType.
 	Labels any
-	// Output only. The relative resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}.
-	Name any
 	// Optional. The platform that Entries of this type belongs to.
 	Platform any
 	// AspectInfo for the entry type.
@@ -43,10 +39,6 @@ type EntryTypeConfig struct {
 	System any
 	// Optional. Indicates the classes this Entry Type belongs to, for example, TABLE, DATABASE, MODEL.
 	TypeAliases any
-	// Output only. System generated globally unique ID for the EntryType. This ID will be different if the EntryType is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the EntryType was last updated.
-	UpdateTime any
 }
 
 type EntryTypeAttrs struct {
@@ -83,24 +75,20 @@ var EntryType = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authorization": ubx.FieldSpec{
 			WireName: "authorization",
-			Kind: "object",
-			Fields: EntryType_AuthorizationFields,
+			Kind:     "object",
+			Fields:   EntryType_AuthorizationFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Platform":    ubx.FieldSpec{WireName: "platform"},
 		"RequiredAspects": ubx.FieldSpec{
 			WireName: "required_aspects",
-			Kind: "list",
-			Fields: EntryType_RequiredAspectsFields,
+			Kind:     "list",
+			Fields:   EntryType_RequiredAspectsFields,
 		},
-		"System": ubx.FieldSpec{WireName: "system"},
+		"System":      ubx.FieldSpec{WireName: "system"},
 		"TypeAliases": ubx.FieldSpec{WireName: "type_aliases"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

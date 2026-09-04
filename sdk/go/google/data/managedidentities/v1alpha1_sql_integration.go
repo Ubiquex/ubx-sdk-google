@@ -10,7 +10,7 @@ type V1alpha1SqlIntegrationConfig struct {
 type V1alpha1SqlIntegrationAttrs struct {
 	// Output only. The time the instance was created.
 	CreateTime any
-	Name any
+	Name       any
 	// The full resource name of an integrated sql instance
 	SqlInstance any
 	// Output only. The current state of the managed OU.

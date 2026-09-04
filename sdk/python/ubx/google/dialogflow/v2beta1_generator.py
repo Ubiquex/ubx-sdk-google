@@ -491,18 +491,15 @@ class V2beta1GeneratorConfig:
     agent_coaching_context: Any = None
     ces_app_specs: Any = None
     ces_tool_specs: Any = None
-    create_time: Any = None
     description: Any = None
     free_form_context: Any = None
     inference_parameter: Any = None
-    name: Any = None
     published_model: Any = None
     suggestion_deduping_config: Any = None
     summarization_context: Any = None
     tools: Any = None
     toolset_tools: Any = None
     trigger_event: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2beta1GeneratorAttrs:
@@ -540,7 +537,6 @@ V2beta1Generator = ubx.ResourceBinding(
             kind="list",
             fields=_V2beta1Generator_CesToolSpecsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "free_form_context": ubx.FieldSpec(
             wire_name="free_form_context",
@@ -552,7 +548,6 @@ V2beta1Generator = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1Generator_InferenceParameterFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "published_model": ubx.FieldSpec(wire_name="published_model"),
         "suggestion_deduping_config": ubx.FieldSpec(
             wire_name="suggestion_deduping_config",
@@ -571,6 +566,5 @@ V2beta1Generator = ubx.ResourceBinding(
             fields=_V2beta1Generator_ToolsetToolsFields,
         ),
         "trigger_event": ubx.FieldSpec(wire_name="trigger_event"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

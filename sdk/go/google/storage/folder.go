@@ -9,8 +9,8 @@ type Folder_PendingRenameInfo struct {
 }
 
 var Folder_PendingRenameInfoFields = ubx.FieldMap{
-		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
-	}
+	"OperationId": ubx.FieldSpec{WireName: "operation_id"},
+}
 
 type FolderConfig struct {
 	// The name of the bucket containing this folder.
@@ -57,18 +57,18 @@ type FolderAttrs struct {
 var Folder = ubx.ResourceBinding{
 	WireType: "google_storage_folder",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Bucket":         ubx.FieldSpec{WireName: "bucket"},
+		"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Kind":           ubx.FieldSpec{WireName: "kind"},
 		"Metageneration": ubx.FieldSpec{WireName: "metageneration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"PendingRenameInfo": ubx.FieldSpec{
 			WireName: "pending_rename_info",
-			Kind: "object",
-			Fields: Folder_PendingRenameInfoFields,
+			Kind:     "object",
+			Fields:   Folder_PendingRenameInfoFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":   ubx.FieldSpec{WireName: "self_link"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

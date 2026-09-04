@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlertPolicy_AlertStrategy_NotificationChannelStrategy struct {
 	NotificationChannelNames any
-	RenotifyInterval any
+	RenotifyInterval         any
 }
 
 type AlertPolicy_AlertStrategy_NotificationRateLimit struct {
@@ -25,44 +25,44 @@ type AlertPolicy_AlertStrategy struct {
 }
 
 type AlertPolicy_Conditions_ConditionAbsent_Aggregations struct {
-	AlignmentPeriod any
+	AlignmentPeriod    any
 	CrossSeriesReducer any
-	GroupByFields any
-	PerSeriesAligner any
+	GroupByFields      any
+	PerSeriesAligner   any
 }
 
 type AlertPolicy_Conditions_ConditionAbsent_Trigger struct {
-	Count any
+	Count   any
 	Percent any
 }
 
 type AlertPolicy_Conditions_ConditionAbsent struct {
 	Aggregations any
-	Duration any
-	Filter any
-	Trigger any
+	Duration     any
+	Filter       any
+	Trigger      any
 }
 
 type AlertPolicy_Conditions_ConditionMatchedLog struct {
-	Filter any
+	Filter          any
 	LabelExtractors any
 }
 
 type AlertPolicy_Conditions_ConditionMonitoringQueryLanguage struct {
-	Duration any
+	Duration              any
 	EvaluationMissingData any
-	Query any
-	Trigger any
+	Query                 any
+	Trigger               any
 }
 
 type AlertPolicy_Conditions_ConditionPrometheusQueryLanguage struct {
-	AlertRule any
+	AlertRule               any
 	DisableMetricValidation any
-	Duration any
-	EvaluationInterval any
-	Labels any
-	Query any
-	RuleGroup any
+	Duration                any
+	EvaluationInterval      any
+	Labels                  any
+	Query                   any
+	RuleGroup               any
 }
 
 type AlertPolicy_Conditions_ConditionSql_BooleanTest struct {
@@ -70,20 +70,20 @@ type AlertPolicy_Conditions_ConditionSql_BooleanTest struct {
 }
 
 type AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Daily struct {
 	ExecutionTime any
-	Periodicity any
+	Periodicity   any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Hourly struct {
 	MinuteOffset any
-	Periodicity any
+	Periodicity  any
 }
 
 type AlertPolicy_Conditions_ConditionSql_Minutes struct {
@@ -92,15 +92,15 @@ type AlertPolicy_Conditions_ConditionSql_Minutes struct {
 
 type AlertPolicy_Conditions_ConditionSql_RowCountTest struct {
 	Comparison any
-	Threshold any
+	Threshold  any
 }
 
 type AlertPolicy_Conditions_ConditionSql struct {
-	BooleanTest any
-	Daily any
-	Hourly any
-	Minutes any
-	Query any
+	BooleanTest  any
+	Daily        any
+	Hourly       any
+	Minutes      any
+	Query        any
 	RowCountTest any
 }
 
@@ -109,27 +109,27 @@ type AlertPolicy_Conditions_ConditionThreshold_ForecastOptions struct {
 }
 
 type AlertPolicy_Conditions_ConditionThreshold struct {
-	Aggregations any
-	Comparison any
+	Aggregations            any
+	Comparison              any
 	DenominatorAggregations any
-	DenominatorFilter any
-	Duration any
-	EvaluationMissingData any
-	Filter any
-	ForecastOptions any
-	ThresholdValue any
-	Trigger any
+	DenominatorFilter       any
+	Duration                any
+	EvaluationMissingData   any
+	Filter                  any
+	ForecastOptions         any
+	ThresholdValue          any
+	Trigger                 any
 }
 
 type AlertPolicy_Conditions struct {
-	ConditionAbsent any
-	ConditionMatchedLog any
+	ConditionAbsent                  any
+	ConditionMatchedLog              any
 	ConditionMonitoringQueryLanguage any
 	ConditionPrometheusQueryLanguage any
-	ConditionSql any
-	ConditionThreshold any
-	DisplayName any
-	Name any
+	ConditionSql                     any
+	ConditionThreshold               any
+	DisplayName                      any
+	Name                             any
 }
 
 type AlertPolicy_CreationRecord struct {
@@ -141,7 +141,7 @@ type AlertPolicy_CreationRecord struct {
 
 type AlertPolicy_Documentation_Links struct {
 	DisplayName any
-	Url any
+	Url         any
 }
 
 type AlertPolicy_Documentation struct {
@@ -165,239 +165,239 @@ type AlertPolicy_Validity struct {
 }
 
 var AlertPolicy_AlertStrategy_NotificationChannelStrategyFields = ubx.FieldMap{
-		"NotificationChannelNames": ubx.FieldSpec{WireName: "notification_channel_names"},
-		"RenotifyInterval": ubx.FieldSpec{WireName: "renotify_interval"},
-	}
+	"NotificationChannelNames": ubx.FieldSpec{WireName: "notification_channel_names"},
+	"RenotifyInterval":         ubx.FieldSpec{WireName: "renotify_interval"},
+}
 
 var AlertPolicy_AlertStrategy_NotificationRateLimitFields = ubx.FieldMap{
-		"Period": ubx.FieldSpec{WireName: "period"},
-	}
+	"Period": ubx.FieldSpec{WireName: "period"},
+}
 
 var AlertPolicy_AlertStrategyFields = ubx.FieldMap{
-		"AutoClose": ubx.FieldSpec{WireName: "auto_close"},
-		"NotificationChannelStrategy": ubx.FieldSpec{
-			WireName: "notification_channel_strategy",
-			Kind: "list",
-			Fields: AlertPolicy_AlertStrategy_NotificationChannelStrategyFields,
-		},
-		"NotificationPrompts": ubx.FieldSpec{WireName: "notification_prompts"},
-		"NotificationRateLimit": ubx.FieldSpec{
-			WireName: "notification_rate_limit",
-			Kind: "object",
-			Fields: AlertPolicy_AlertStrategy_NotificationRateLimitFields,
-		},
-	}
+	"AutoClose": ubx.FieldSpec{WireName: "auto_close"},
+	"NotificationChannelStrategy": ubx.FieldSpec{
+		WireName: "notification_channel_strategy",
+		Kind:     "list",
+		Fields:   AlertPolicy_AlertStrategy_NotificationChannelStrategyFields,
+	},
+	"NotificationPrompts": ubx.FieldSpec{WireName: "notification_prompts"},
+	"NotificationRateLimit": ubx.FieldSpec{
+		WireName: "notification_rate_limit",
+		Kind:     "object",
+		Fields:   AlertPolicy_AlertStrategy_NotificationRateLimitFields,
+	},
+}
 
 var AlertPolicy_Conditions_ConditionAbsent_AggregationsFields = ubx.FieldMap{
-		"AlignmentPeriod": ubx.FieldSpec{WireName: "alignment_period"},
-		"CrossSeriesReducer": ubx.FieldSpec{WireName: "cross_series_reducer"},
-		"GroupByFields": ubx.FieldSpec{WireName: "group_by_fields"},
-		"PerSeriesAligner": ubx.FieldSpec{WireName: "per_series_aligner"},
-	}
+	"AlignmentPeriod":    ubx.FieldSpec{WireName: "alignment_period"},
+	"CrossSeriesReducer": ubx.FieldSpec{WireName: "cross_series_reducer"},
+	"GroupByFields":      ubx.FieldSpec{WireName: "group_by_fields"},
+	"PerSeriesAligner":   ubx.FieldSpec{WireName: "per_series_aligner"},
+}
 
 var AlertPolicy_Conditions_ConditionAbsent_TriggerFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Percent": ubx.FieldSpec{WireName: "percent"},
+}
 
 var AlertPolicy_Conditions_ConditionAbsentFields = ubx.FieldMap{
-		"Aggregations": ubx.FieldSpec{
-			WireName: "aggregations",
-			Kind: "list",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
-		},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
-		},
-	}
+	"Aggregations": ubx.FieldSpec{
+		WireName: "aggregations",
+		Kind:     "list",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
+	},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Filter":   ubx.FieldSpec{WireName: "filter"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
+	},
+}
 
 var AlertPolicy_Conditions_ConditionMatchedLogFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"LabelExtractors": ubx.FieldSpec{WireName: "label_extractors"},
-	}
+	"Filter":          ubx.FieldSpec{WireName: "filter"},
+	"LabelExtractors": ubx.FieldSpec{WireName: "label_extractors"},
+}
 
 var AlertPolicy_Conditions_ConditionMonitoringQueryLanguageFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EvaluationMissingData": ubx.FieldSpec{WireName: "evaluation_missing_data"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
-		},
-	}
+	"Duration":              ubx.FieldSpec{WireName: "duration"},
+	"EvaluationMissingData": ubx.FieldSpec{WireName: "evaluation_missing_data"},
+	"Query":                 ubx.FieldSpec{WireName: "query"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
+	},
+}
 
 var AlertPolicy_Conditions_ConditionPrometheusQueryLanguageFields = ubx.FieldMap{
-		"AlertRule": ubx.FieldSpec{WireName: "alert_rule"},
-		"DisableMetricValidation": ubx.FieldSpec{WireName: "disable_metric_validation"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EvaluationInterval": ubx.FieldSpec{WireName: "evaluation_interval"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RuleGroup": ubx.FieldSpec{WireName: "rule_group"},
-	}
+	"AlertRule":               ubx.FieldSpec{WireName: "alert_rule"},
+	"DisableMetricValidation": ubx.FieldSpec{WireName: "disable_metric_validation"},
+	"Duration":                ubx.FieldSpec{WireName: "duration"},
+	"EvaluationInterval":      ubx.FieldSpec{WireName: "evaluation_interval"},
+	"Labels":                  ubx.FieldSpec{WireName: "labels"},
+	"Query":                   ubx.FieldSpec{WireName: "query"},
+	"RuleGroup":               ubx.FieldSpec{WireName: "rule_group"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_BooleanTestFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-	}
+	"Column": ubx.FieldSpec{WireName: "column"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_DailyFields = ubx.FieldMap{
-		"ExecutionTime": ubx.FieldSpec{
-			WireName: "execution_time",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTimeFields,
-		},
-		"Periodicity": ubx.FieldSpec{WireName: "periodicity"},
-	}
+	"ExecutionTime": ubx.FieldSpec{
+		WireName: "execution_time",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_Daily_ExecutionTimeFields,
+	},
+	"Periodicity": ubx.FieldSpec{WireName: "periodicity"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_HourlyFields = ubx.FieldMap{
-		"MinuteOffset": ubx.FieldSpec{WireName: "minute_offset"},
-		"Periodicity": ubx.FieldSpec{WireName: "periodicity"},
-	}
+	"MinuteOffset": ubx.FieldSpec{WireName: "minute_offset"},
+	"Periodicity":  ubx.FieldSpec{WireName: "periodicity"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_MinutesFields = ubx.FieldMap{
-		"Periodicity": ubx.FieldSpec{WireName: "periodicity"},
-	}
+	"Periodicity": ubx.FieldSpec{WireName: "periodicity"},
+}
 
 var AlertPolicy_Conditions_ConditionSql_RowCountTestFields = ubx.FieldMap{
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"Threshold":  ubx.FieldSpec{WireName: "threshold"},
+}
 
 var AlertPolicy_Conditions_ConditionSqlFields = ubx.FieldMap{
-		"BooleanTest": ubx.FieldSpec{
-			WireName: "boolean_test",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_BooleanTestFields,
-		},
-		"Daily": ubx.FieldSpec{
-			WireName: "daily",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_DailyFields,
-		},
-		"Hourly": ubx.FieldSpec{
-			WireName: "hourly",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_HourlyFields,
-		},
-		"Minutes": ubx.FieldSpec{
-			WireName: "minutes",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_MinutesFields,
-		},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RowCountTest": ubx.FieldSpec{
-			WireName: "row_count_test",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSql_RowCountTestFields,
-		},
-	}
+	"BooleanTest": ubx.FieldSpec{
+		WireName: "boolean_test",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_BooleanTestFields,
+	},
+	"Daily": ubx.FieldSpec{
+		WireName: "daily",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_DailyFields,
+	},
+	"Hourly": ubx.FieldSpec{
+		WireName: "hourly",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_HourlyFields,
+	},
+	"Minutes": ubx.FieldSpec{
+		WireName: "minutes",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_MinutesFields,
+	},
+	"Query": ubx.FieldSpec{WireName: "query"},
+	"RowCountTest": ubx.FieldSpec{
+		WireName: "row_count_test",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSql_RowCountTestFields,
+	},
+}
 
 var AlertPolicy_Conditions_ConditionThreshold_ForecastOptionsFields = ubx.FieldMap{
-		"ForecastHorizon": ubx.FieldSpec{WireName: "forecast_horizon"},
-	}
+	"ForecastHorizon": ubx.FieldSpec{WireName: "forecast_horizon"},
+}
 
 var AlertPolicy_Conditions_ConditionThresholdFields = ubx.FieldMap{
-		"Aggregations": ubx.FieldSpec{
-			WireName: "aggregations",
-			Kind: "list",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
-		},
-		"Comparison": ubx.FieldSpec{WireName: "comparison"},
-		"DenominatorAggregations": ubx.FieldSpec{
-			WireName: "denominator_aggregations",
-			Kind: "list",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
-		},
-		"DenominatorFilter": ubx.FieldSpec{WireName: "denominator_filter"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EvaluationMissingData": ubx.FieldSpec{WireName: "evaluation_missing_data"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"ForecastOptions": ubx.FieldSpec{
-			WireName: "forecast_options",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionThreshold_ForecastOptionsFields,
-		},
-		"ThresholdValue": ubx.FieldSpec{WireName: "threshold_value"},
-		"Trigger": ubx.FieldSpec{
-			WireName: "trigger",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
-		},
-	}
+	"Aggregations": ubx.FieldSpec{
+		WireName: "aggregations",
+		Kind:     "list",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
+	},
+	"Comparison": ubx.FieldSpec{WireName: "comparison"},
+	"DenominatorAggregations": ubx.FieldSpec{
+		WireName: "denominator_aggregations",
+		Kind:     "list",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_AggregationsFields,
+	},
+	"DenominatorFilter":     ubx.FieldSpec{WireName: "denominator_filter"},
+	"Duration":              ubx.FieldSpec{WireName: "duration"},
+	"EvaluationMissingData": ubx.FieldSpec{WireName: "evaluation_missing_data"},
+	"Filter":                ubx.FieldSpec{WireName: "filter"},
+	"ForecastOptions": ubx.FieldSpec{
+		WireName: "forecast_options",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionThreshold_ForecastOptionsFields,
+	},
+	"ThresholdValue": ubx.FieldSpec{WireName: "threshold_value"},
+	"Trigger": ubx.FieldSpec{
+		WireName: "trigger",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionAbsent_TriggerFields,
+	},
+}
 
 var AlertPolicy_ConditionsFields = ubx.FieldMap{
-		"ConditionAbsent": ubx.FieldSpec{
-			WireName: "condition_absent",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionAbsentFields,
-		},
-		"ConditionMatchedLog": ubx.FieldSpec{
-			WireName: "condition_matched_log",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionMatchedLogFields,
-		},
-		"ConditionMonitoringQueryLanguage": ubx.FieldSpec{
-			WireName: "condition_monitoring_query_language",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionMonitoringQueryLanguageFields,
-		},
-		"ConditionPrometheusQueryLanguage": ubx.FieldSpec{
-			WireName: "condition_prometheus_query_language",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionPrometheusQueryLanguageFields,
-		},
-		"ConditionSql": ubx.FieldSpec{
-			WireName: "condition_sql",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionSqlFields,
-		},
-		"ConditionThreshold": ubx.FieldSpec{
-			WireName: "condition_threshold",
-			Kind: "object",
-			Fields: AlertPolicy_Conditions_ConditionThresholdFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ConditionAbsent": ubx.FieldSpec{
+		WireName: "condition_absent",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionAbsentFields,
+	},
+	"ConditionMatchedLog": ubx.FieldSpec{
+		WireName: "condition_matched_log",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionMatchedLogFields,
+	},
+	"ConditionMonitoringQueryLanguage": ubx.FieldSpec{
+		WireName: "condition_monitoring_query_language",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionMonitoringQueryLanguageFields,
+	},
+	"ConditionPrometheusQueryLanguage": ubx.FieldSpec{
+		WireName: "condition_prometheus_query_language",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionPrometheusQueryLanguageFields,
+	},
+	"ConditionSql": ubx.FieldSpec{
+		WireName: "condition_sql",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionSqlFields,
+	},
+	"ConditionThreshold": ubx.FieldSpec{
+		WireName: "condition_threshold",
+		Kind:     "object",
+		Fields:   AlertPolicy_Conditions_ConditionThresholdFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var AlertPolicy_CreationRecordFields = ubx.FieldMap{
-		"MutateTime": ubx.FieldSpec{WireName: "mutate_time"},
-		"MutatedBy": ubx.FieldSpec{WireName: "mutated_by"},
-	}
+	"MutateTime": ubx.FieldSpec{WireName: "mutate_time"},
+	"MutatedBy":  ubx.FieldSpec{WireName: "mutated_by"},
+}
 
 var AlertPolicy_Documentation_LinksFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var AlertPolicy_DocumentationFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: AlertPolicy_Documentation_LinksFields,
-		},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   AlertPolicy_Documentation_LinksFields,
+	},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	"Subject":  ubx.FieldSpec{WireName: "subject"},
+}
 
 var AlertPolicy_ValidityFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type AlertPolicyConfig struct {
 	// Control over how the notification channels in notification_channels are notified when this alert fires.
@@ -462,40 +462,40 @@ var AlertPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlertStrategy": ubx.FieldSpec{
 			WireName: "alert_strategy",
-			Kind: "object",
-			Fields: AlertPolicy_AlertStrategyFields,
+			Kind:     "object",
+			Fields:   AlertPolicy_AlertStrategyFields,
 		},
 		"Combiner": ubx.FieldSpec{WireName: "combiner"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: AlertPolicy_ConditionsFields,
+			Kind:     "list",
+			Fields:   AlertPolicy_ConditionsFields,
 		},
 		"CreationRecord": ubx.FieldSpec{
 			WireName: "creation_record",
-			Kind: "object",
-			Fields: AlertPolicy_CreationRecordFields,
+			Kind:     "object",
+			Fields:   AlertPolicy_CreationRecordFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: AlertPolicy_DocumentationFields,
+			Kind:     "object",
+			Fields:   AlertPolicy_DocumentationFields,
 		},
 		"Enabled": ubx.FieldSpec{WireName: "enabled"},
 		"MutationRecord": ubx.FieldSpec{
 			WireName: "mutation_record",
-			Kind: "object",
-			Fields: AlertPolicy_CreationRecordFields,
+			Kind:     "object",
+			Fields:   AlertPolicy_CreationRecordFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"NotificationChannels": ubx.FieldSpec{WireName: "notification_channels"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
+		"Severity":             ubx.FieldSpec{WireName: "severity"},
+		"UserLabels":           ubx.FieldSpec{WireName: "user_labels"},
 		"Validity": ubx.FieldSpec{
 			WireName: "validity",
-			Kind: "object",
-			Fields: AlertPolicy_ValidityFields,
+			Kind:     "object",
+			Fields:   AlertPolicy_ValidityFields,
 		},
 	},
 }

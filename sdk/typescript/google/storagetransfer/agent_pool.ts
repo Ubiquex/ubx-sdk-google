@@ -17,8 +17,6 @@ export interface AgentPoolConfig {
   displayName?: string | Computed<string>;
   /** Required. Specifies a unique string that identifies the agent pool. Format: `projects/{project_id}/agentPools/{agent_pool_id}` */
   name?: string | Computed<string>;
-  /** Output only. Specifies the state of the AgentPool. */
-  state?: string | Computed<string>;
 }
 
 export interface AgentPoolAttrs {
@@ -42,6 +40,5 @@ export const AgentPool: ResourceBinding<AgentPoolConfig, AgentPoolAttrs> = {
     },
     displayName: "display_name",
     name: "name",
-    state: "state",
   },
 };

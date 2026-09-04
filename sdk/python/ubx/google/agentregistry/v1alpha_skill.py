@@ -95,8 +95,6 @@ _V1alphaSkill_InitialRevisionFields = {
 
 @dataclasses.dataclass
 class V1alphaSkillConfig:
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. The full resource name of the revision currently served by default (floating track). Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}`
     default_revision: Any = None
     # Optional. Brief summary describing the capabilities of the skill. Maximum length is 2048 characters.
@@ -111,18 +109,10 @@ class V1alphaSkillConfig:
     name: Any = None
     # Optional. The publisher resource associated with this skill. Format: `projects/{project}/locations/{location}/publishers/{publisher}` The publisher dictates the allowed namespace prefixes for the skill's name and logical `skill_id` (e.g., Publisher `google` authorizes the `google-*` prefix).
     publisher: Any = None
-    # Output only. A stable, globally unique logical identifier for the skill. It is securely constructed by the backend by combining the associated `publisher`'s verified namespace and the skill's resource ID to enforce strict ownership. For example, the prefix `google-` is reserved exclusively for first-party Google publishers to prevent namespace squatting. Example: `urn:skill:google-workspace:create-docs`
-    skill_id: Any = None
-    # Output only. The system-managed state of the skill.
-    state: Any = None
     # Required. User-managed target state of the skill.
     target_state: Any = None
     # Required. Structural deployment type (SIMPLE leaf vs COMPOSITE bundle).
     type: Any = None
-    # Output only. Universally unique identifier (UUID4) for the logical container.
-    uid: Any = None
-    # Output only. Update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaSkillAttrs:
@@ -158,7 +148,6 @@ class V1alphaSkillAttrs:
 V1alphaSkill = ubx.ResourceBinding(
     wire_type="google_agentregistry_v1alpha_skill",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "default_revision": ubx.FieldSpec(wire_name="default_revision"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -174,11 +163,7 @@ V1alphaSkill = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "publisher": ubx.FieldSpec(wire_name="publisher"),
-        "skill_id": ubx.FieldSpec(wire_name="skill_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "target_state": ubx.FieldSpec(wire_name="target_state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

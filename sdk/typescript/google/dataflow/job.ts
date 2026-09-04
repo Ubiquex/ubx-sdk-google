@@ -752,8 +752,6 @@ export interface JobConfig {
   location?: string | Computed<string>;
   /** Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?` */
   name?: string | Computed<string>;
-  /** Output only. Indicates whether the job can be paused. */
-  pausable?: boolean | Computed<boolean>;
   /** A descriptive representation of submitted pipeline as well as the executed form. This data is provided by the Dataflow service for ease of visualizing the pipeline and interpreting Dataflow provided metrics. */
   pipelineDescription?: Job_PipelineDescription | Computed<Job_PipelineDescription>;
   /** The ID of the Google Cloud project that the job belongs to. */
@@ -766,8 +764,6 @@ export interface JobConfig {
   requestedState?: string | Computed<string>;
   /** Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation. */
   runtimeUpdatableParams?: Job_RuntimeUpdatableParams | Computed<Job_RuntimeUpdatableParams>;
-  /** Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests. */
-  satisfiesPzi?: boolean | Computed<boolean>;
   /** Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests. */
   satisfiesPzs?: boolean | Computed<boolean>;
   /** Resources used by the Dataflow Service to run the job. */
@@ -876,7 +872,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     labels: "labels",
     location: "location",
     name: "name",
-    pausable: "pausable",
     pipelineDescription: {
       wireName: "pipeline_description",
       kind: "object",
@@ -891,7 +886,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_RuntimeUpdatableParamsFields,
     },
-    satisfiesPzi: "satisfies_pzi",
     satisfiesPzs: "satisfies_pzs",
     serviceResources: {
       wireName: "service_resources",

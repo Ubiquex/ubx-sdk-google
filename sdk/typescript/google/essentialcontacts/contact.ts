@@ -6,14 +6,8 @@ export interface ContactConfig {
   email?: string | Computed<string>;
   /** Required. The preferred language for notifications, as a ISO 639-1 language code. See [Supported languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages) for a list of supported languages. */
   languageTag?: string | Computed<string>;
-  /** Output only. The identifier for the contact. Format: {resource_type}/{resource_id}/contacts/{contact_id} */
-  name?: string | Computed<string>;
   /** Required. The categories of notifications that the contact will receive communications for. */
   notificationCategorySubscriptions?: string[] | Computed<string[]>;
-  /** Output only. The last time the validation_state was updated, either manually or automatically. A contact is considered stale if its validation state was updated more than 1 year ago. */
-  validateTime?: string | Computed<string>;
-  /** Output only. The validity of the contact. A contact is considered valid if it is the correct recipient for notifications for a particular resource. */
-  validationState?: string | Computed<string>;
 }
 
 export interface ContactAttrs {
@@ -36,9 +30,6 @@ export const Contact: ResourceBinding<ContactConfig, ContactAttrs> = {
   fields: {
     email: "email",
     languageTag: "language_tag",
-    name: "name",
     notificationCategorySubscriptions: "notification_category_subscriptions",
-    validateTime: "validate_time",
-    validationState: "validation_state",
   },
 };

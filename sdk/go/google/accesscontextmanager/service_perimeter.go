@@ -10,59 +10,59 @@ type ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpoint struct 
 type ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources struct {
 	AccessLevel any
 	PscEndpoint any
-	Resource any
+	Resource    any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressFrom struct {
-	Identities any
-	IdentityType any
+	Identities        any
+	IdentityType      any
 	SourceRestriction any
-	Sources any
+	Sources           any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectors struct {
-	Method any
+	Method     any
 	Permission any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations struct {
 	MethodSelectors any
-	ServiceName any
+	ServiceName     any
 }
 
 type ServicePerimeter_Spec_EgressPolicies_EgressTo struct {
 	ExternalResources any
-	Operations any
-	Resources any
-	Roles any
+	Operations        any
+	Resources         any
+	Roles             any
 }
 
 type ServicePerimeter_Spec_EgressPolicies struct {
 	EgressFrom any
-	EgressTo any
-	Title any
+	EgressTo   any
+	Title      any
 }
 
 type ServicePerimeter_Spec_IngressPolicies_IngressFrom struct {
-	Identities any
+	Identities   any
 	IdentityType any
-	Sources any
+	Sources      any
 }
 
 type ServicePerimeter_Spec_IngressPolicies_IngressTo struct {
 	Operations any
-	Resources any
-	Roles any
+	Resources  any
+	Roles      any
 }
 
 type ServicePerimeter_Spec_IngressPolicies struct {
 	IngressFrom any
-	IngressTo any
-	Title any
+	IngressTo   any
+	Title       any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeader struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -72,8 +72,8 @@ type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifier
 
 type ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns struct {
 	Modifiers any
-	Pattern any
-	Service any
+	Pattern   any
+	Service   any
 }
 
 type ServicePerimeter_Spec_VpcAccessibleServices struct {
@@ -103,157 +103,157 @@ type ServicePerimeter_Spec struct {
 }
 
 var ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpointFields = ubx.FieldMap{
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-	}
+	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+}
 
 var ServicePerimeter_Spec_EgressPolicies_EgressFrom_SourcesFields = ubx.FieldMap{
-		"AccessLevel": ubx.FieldSpec{WireName: "access_level"},
-		"PscEndpoint": ubx.FieldSpec{
-			WireName: "psc_endpoint",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpointFields,
-		},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"AccessLevel": ubx.FieldSpec{WireName: "access_level"},
+	"PscEndpoint": ubx.FieldSpec{
+		WireName: "psc_endpoint",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressFrom_Sources_PscEndpointFields,
+	},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var ServicePerimeter_Spec_EgressPolicies_EgressFromFields = ubx.FieldMap{
-		"Identities": ubx.FieldSpec{WireName: "identities"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"SourceRestriction": ubx.FieldSpec{WireName: "source_restriction"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressFrom_SourcesFields,
-		},
-	}
+	"Identities":        ubx.FieldSpec{WireName: "identities"},
+	"IdentityType":      ubx.FieldSpec{WireName: "identity_type"},
+	"SourceRestriction": ubx.FieldSpec{WireName: "source_restriction"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressFrom_SourcesFields,
+	},
+}
 
 var ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectorsFields = ubx.FieldMap{
-		"Method": ubx.FieldSpec{WireName: "method"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"Method":     ubx.FieldSpec{WireName: "method"},
+	"Permission": ubx.FieldSpec{WireName: "permission"},
+}
 
 var ServicePerimeter_Spec_EgressPolicies_EgressTo_OperationsFields = ubx.FieldMap{
-		"MethodSelectors": ubx.FieldSpec{
-			WireName: "method_selectors",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectorsFields,
-		},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"MethodSelectors": ubx.FieldSpec{
+		WireName: "method_selectors",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressTo_Operations_MethodSelectorsFields,
+	},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var ServicePerimeter_Spec_EgressPolicies_EgressToFields = ubx.FieldMap{
-		"ExternalResources": ubx.FieldSpec{WireName: "external_resources"},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressTo_OperationsFields,
-		},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"ExternalResources": ubx.FieldSpec{WireName: "external_resources"},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressTo_OperationsFields,
+	},
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+	"Roles":     ubx.FieldSpec{WireName: "roles"},
+}
 
 var ServicePerimeter_Spec_EgressPoliciesFields = ubx.FieldMap{
-		"EgressFrom": ubx.FieldSpec{
-			WireName: "egress_from",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressFromFields,
-		},
-		"EgressTo": ubx.FieldSpec{
-			WireName: "egress_to",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressToFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"EgressFrom": ubx.FieldSpec{
+		WireName: "egress_from",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressFromFields,
+	},
+	"EgressTo": ubx.FieldSpec{
+		WireName: "egress_to",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressToFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var ServicePerimeter_Spec_IngressPolicies_IngressFromFields = ubx.FieldMap{
-		"Identities": ubx.FieldSpec{WireName: "identities"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressFrom_SourcesFields,
-		},
-	}
+	"Identities":   ubx.FieldSpec{WireName: "identities"},
+	"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressFrom_SourcesFields,
+	},
+}
 
 var ServicePerimeter_Spec_IngressPolicies_IngressToFields = ubx.FieldMap{
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPolicies_EgressTo_OperationsFields,
-		},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPolicies_EgressTo_OperationsFields,
+	},
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+	"Roles":     ubx.FieldSpec{WireName: "roles"},
+}
 
 var ServicePerimeter_Spec_IngressPoliciesFields = ubx.FieldMap{
-		"IngressFrom": ubx.FieldSpec{
-			WireName: "ingress_from",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_IngressPolicies_IngressFromFields,
-		},
-		"IngressTo": ubx.FieldSpec{
-			WireName: "ingress_to",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_IngressPolicies_IngressToFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"IngressFrom": ubx.FieldSpec{
+		WireName: "ingress_from",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_IngressPolicies_IngressFromFields,
+	},
+	"IngressTo": ubx.FieldSpec{
+		WireName: "ingress_to",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_IngressPolicies_IngressToFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeaderFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_ModifiersFields = ubx.FieldMap{
-		"AddRequestHeader": ubx.FieldSpec{
-			WireName: "add_request_header",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeaderFields,
-		},
-	}
+	"AddRequestHeader": ubx.FieldSpec{
+		WireName: "add_request_header",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_Modifiers_AddRequestHeaderFields,
+	},
+}
 
 var ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatternsFields = ubx.FieldMap{
-		"Modifiers": ubx.FieldSpec{
-			WireName: "modifiers",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_ModifiersFields,
-		},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Modifiers": ubx.FieldSpec{
+		WireName: "modifiers",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatterns_ModifiersFields,
+	},
+	"Pattern": ubx.FieldSpec{WireName: "pattern"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var ServicePerimeter_Spec_VpcAccessibleServicesFields = ubx.FieldMap{
-		"AllowedServicePatterns": ubx.FieldSpec{
-			WireName: "allowed_service_patterns",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatternsFields,
-		},
-		"AllowedServices": ubx.FieldSpec{WireName: "allowed_services"},
-		"EnableRestriction": ubx.FieldSpec{WireName: "enable_restriction"},
-		"ServicePatternsEnforcementScopes": ubx.FieldSpec{WireName: "service_patterns_enforcement_scopes"},
-	}
+	"AllowedServicePatterns": ubx.FieldSpec{
+		WireName: "allowed_service_patterns",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_VpcAccessibleServices_AllowedServicePatternsFields,
+	},
+	"AllowedServices":                  ubx.FieldSpec{WireName: "allowed_services"},
+	"EnableRestriction":                ubx.FieldSpec{WireName: "enable_restriction"},
+	"ServicePatternsEnforcementScopes": ubx.FieldSpec{WireName: "service_patterns_enforcement_scopes"},
+}
 
 var ServicePerimeter_SpecFields = ubx.FieldMap{
-		"AccessLevels": ubx.FieldSpec{WireName: "access_levels"},
-		"EgressPolicies": ubx.FieldSpec{
-			WireName: "egress_policies",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_EgressPoliciesFields,
-		},
-		"IngressPolicies": ubx.FieldSpec{
-			WireName: "ingress_policies",
-			Kind: "list",
-			Fields: ServicePerimeter_Spec_IngressPoliciesFields,
-		},
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"RestrictedServices": ubx.FieldSpec{WireName: "restricted_services"},
-		"VpcAccessibleServices": ubx.FieldSpec{
-			WireName: "vpc_accessible_services",
-			Kind: "object",
-			Fields: ServicePerimeter_Spec_VpcAccessibleServicesFields,
-		},
-	}
+	"AccessLevels": ubx.FieldSpec{WireName: "access_levels"},
+	"EgressPolicies": ubx.FieldSpec{
+		WireName: "egress_policies",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_EgressPoliciesFields,
+	},
+	"IngressPolicies": ubx.FieldSpec{
+		WireName: "ingress_policies",
+		Kind:     "list",
+		Fields:   ServicePerimeter_Spec_IngressPoliciesFields,
+	},
+	"Resources":          ubx.FieldSpec{WireName: "resources"},
+	"RestrictedServices": ubx.FieldSpec{WireName: "restricted_services"},
+	"VpcAccessibleServices": ubx.FieldSpec{
+		WireName: "vpc_accessible_services",
+		Kind:     "object",
+		Fields:   ServicePerimeter_Spec_VpcAccessibleServicesFields,
+	},
+}
 
 type ServicePerimeterConfig struct {
 	// Description of the `ServicePerimeter` and its use. Does not affect behavior.
@@ -296,21 +296,21 @@ type ServicePerimeterAttrs struct {
 var ServicePerimeter = ubx.ResourceBinding{
 	WireType: "google_accesscontextmanager_service_perimeter",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"PerimeterType": ubx.FieldSpec{WireName: "perimeter_type"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: ServicePerimeter_SpecFields,
+			Kind:     "object",
+			Fields:   ServicePerimeter_SpecFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ServicePerimeter_SpecFields,
+			Kind:     "object",
+			Fields:   ServicePerimeter_SpecFields,
 		},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":                 ubx.FieldSpec{WireName: "title"},
 		"UseExplicitDryRunSpec": ubx.FieldSpec{WireName: "use_explicit_dry_run_spec"},
 	},
 }

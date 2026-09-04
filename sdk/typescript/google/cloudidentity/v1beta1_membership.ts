@@ -62,22 +62,12 @@ const V1beta1Membership_RolesFields: FieldMap = {
 };
 
 export interface V1beta1MembershipConfig {
-  /** Output only. The time when the `Membership` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Delivery setting associated with the membership. */
-  deliverySetting?: string | Computed<string>;
   /** A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s. */
   memberKey?: V1beta1Membership_MemberKey | Computed<V1beta1Membership_MemberKey>;
-  /** Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group_id}/memberships/{membership_id}`. */
-  name?: string | Computed<string>;
   /** A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s. */
   preferredMemberKey?: V1beta1Membership_MemberKey | Computed<V1beta1Membership_MemberKey>;
   /** The `MembershipRole`s that apply to the `Membership`. If unspecified, defaults to a single `MembershipRole` with `name` `MEMBER`. Must not contain duplicate `MembershipRole`s with the same `name`. */
   roles?: V1beta1Membership_Roles[] | Computed<V1beta1Membership_Roles[]>;
-  /** Output only. The type of the membership. */
-  type?: string | Computed<string>;
-  /** Output only. The time when the `Membership` was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1MembershipAttrs {
@@ -102,14 +92,11 @@ export interface V1beta1MembershipAttrs {
 export const V1beta1Membership: ResourceBinding<V1beta1MembershipConfig, V1beta1MembershipAttrs> = {
   wireType: "google_cloudidentity_v1beta1_membership",
   fields: {
-    createTime: "create_time",
-    deliverySetting: "delivery_setting",
     memberKey: {
       wireName: "member_key",
       kind: "object",
       fields: V1beta1Membership_MemberKeyFields,
     },
-    name: "name",
     preferredMemberKey: {
       wireName: "preferred_member_key",
       kind: "object",
@@ -120,7 +107,5 @@ export const V1beta1Membership: ResourceBinding<V1beta1MembershipConfig, V1beta1
       kind: "list",
       fields: V1beta1Membership_RolesFields,
     },
-    type: "type",
-    updateTime: "update_time",
   },
 };

@@ -2,20 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1SnapshotConfig {
-  /** Output only. The time when the snapshot was created. */
-  createTime?: string | Computed<string>;
   /** A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the snapshot. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`. */
   name?: string | Computed<string>;
-  /** Output only. The snapshot state. */
-  state?: string | Computed<string>;
-  /** Output only. State details of the storage pool */
-  stateDetails?: string | Computed<string>;
-  /** Output only. Current storage usage for the snapshot in bytes. */
-  usedBytes?: number | Computed<number>;
 }
 
 export interface V1beta1SnapshotAttrs {
@@ -38,12 +30,8 @@ export interface V1beta1SnapshotAttrs {
 export const V1beta1Snapshot: ResourceBinding<V1beta1SnapshotConfig, V1beta1SnapshotAttrs> = {
   wireType: "google_netapp_v1beta1_snapshot",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
-    state: "state",
-    stateDetails: "state_details",
-    usedBytes: "used_bytes",
   },
 };

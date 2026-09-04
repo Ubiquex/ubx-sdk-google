@@ -923,8 +923,6 @@ class AlphaRegionInstanceGroupManagerConfig:
     auto_healing_policies: Any = None
     # The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
     base_instance_name: Any = None
-    # Output only. The creation timestamp for this managed instance group inRFC3339 text format.
-    creation_timestamp: Any = None
     current_actions: Any = None
     # An optional description of this resource.
     description: Any = None
@@ -933,16 +931,10 @@ class AlphaRegionInstanceGroupManagerConfig:
     failover_action: Any = None
     # Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
     fingerprint: Any = None
-    # Output only. A unique identifier for this resource type. The server generates this identifier.
-    id: Any = None
     instance_flexibility_policy: Any = None
-    # Output only. The URL of the Instance Group resource.
-    instance_group: Any = None
     instance_lifecycle_policy: Any = None
     # The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
     instance_template: Any = None
-    # Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
-    kind: Any = None
     # Pagination behavior of the listManagedInstances API method for this managed instance group.
     list_managed_instances_results: Any = None
     # URL to the multi-MIG that this Managed Instance Group belongs to.
@@ -953,17 +945,7 @@ class AlphaRegionInstanceGroupManagerConfig:
     named_ports: Any = None
     # Input only additional params for instance group manager creation.
     params: Any = None
-    # Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
-    region: Any = None
     resource_policies: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The URL for this managed instance group. The server defines this URL.
-    self_link: Any = None
-    # Output only. Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # The service account to be used as credentials for all operations performed by the managed instance group on instances. The service accounts needs all permissions required to create and delete instances. By default, the service account {projectNumber}@cloudservices.gserviceaccount.com is used.
     service_account: Any = None
     standby_policy: Any = None
@@ -983,8 +965,6 @@ class AlphaRegionInstanceGroupManagerConfig:
     update_policy: Any = None
     # Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
     versions: Any = None
-    # Output only. The URL of azone where the managed instance group is located (for zonal resources).
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaRegionInstanceGroupManagerAttrs:
@@ -1070,7 +1050,6 @@ AlphaRegionInstanceGroupManager = ubx.ResourceBinding(
             fields=_AlphaRegionInstanceGroupManager_AutoHealingPoliciesFields,
         ),
         "base_instance_name": ubx.FieldSpec(wire_name="base_instance_name"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "current_actions": ubx.FieldSpec(
             wire_name="current_actions",
             kind="object",
@@ -1084,20 +1063,17 @@ AlphaRegionInstanceGroupManager = ubx.ResourceBinding(
         ),
         "failover_action": ubx.FieldSpec(wire_name="failover_action"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_flexibility_policy": ubx.FieldSpec(
             wire_name="instance_flexibility_policy",
             kind="object",
             fields=_AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicyFields,
         ),
-        "instance_group": ubx.FieldSpec(wire_name="instance_group"),
         "instance_lifecycle_policy": ubx.FieldSpec(
             wire_name="instance_lifecycle_policy",
             kind="object",
             fields=_AlphaRegionInstanceGroupManager_InstanceLifecyclePolicyFields,
         ),
         "instance_template": ubx.FieldSpec(wire_name="instance_template"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "list_managed_instances_results": ubx.FieldSpec(wire_name="list_managed_instances_results"),
         "multi_mig": ubx.FieldSpec(wire_name="multi_mig"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -1111,16 +1087,11 @@ AlphaRegionInstanceGroupManager = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaRegionInstanceGroupManager_ParamsFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_policies": ubx.FieldSpec(
             wire_name="resource_policies",
             kind="object",
             fields=_AlphaRegionInstanceGroupManager_ResourcePoliciesFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "standby_policy": ubx.FieldSpec(
             wire_name="standby_policy",
@@ -1157,6 +1128,5 @@ AlphaRegionInstanceGroupManager = ubx.ResourceBinding(
             kind="list",
             fields=_AlphaRegionInstanceGroupManager_VersionsFields,
         ),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

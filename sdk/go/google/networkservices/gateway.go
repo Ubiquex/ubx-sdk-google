@@ -12,8 +12,6 @@ type GatewayConfig struct {
 	AllowGlobalAccess any
 	// Optional. A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection. This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
 	CertificateUrls any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
@@ -34,16 +32,12 @@ type GatewayConfig struct {
 	RoutingMode any
 	// Optional. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single configuration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
 	Scope any
-	// Output only. Server-defined URL of this resource
-	SelfLink any
 	// Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled.
 	ServerTlsPolicy any
 	// Optional. The relative resource name identifying the subnetwork in which this SWG is allocated. For example: `projects/*/regions/us-central1/subnetworks/network-1` Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
 	Subnetwork any
 	// Immutable. The type of the customer managed gateway. This field is required. If unspecified, an error is returned.
 	Type any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type GatewayAttrs struct {
@@ -92,25 +86,22 @@ type GatewayAttrs struct {
 var Gateway = ubx.ResourceBinding{
 	WireType: "google_networkservices_gateway",
 	Fields: ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{WireName: "addresses"},
-		"AllPorts": ubx.FieldSpec{WireName: "all_ports"},
-		"AllowGlobalAccess": ubx.FieldSpec{WireName: "allow_global_access"},
-		"CertificateUrls": ubx.FieldSpec{WireName: "certificate_urls"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvoyHeaders": ubx.FieldSpec{WireName: "envoy_headers"},
+		"Addresses":             ubx.FieldSpec{WireName: "addresses"},
+		"AllPorts":              ubx.FieldSpec{WireName: "all_ports"},
+		"AllowGlobalAccess":     ubx.FieldSpec{WireName: "allow_global_access"},
+		"CertificateUrls":       ubx.FieldSpec{WireName: "certificate_urls"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"EnvoyHeaders":          ubx.FieldSpec{WireName: "envoy_headers"},
 		"GatewaySecurityPolicy": ubx.FieldSpec{WireName: "gateway_security_policy"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"ServerTlsPolicy": ubx.FieldSpec{WireName: "server_tls_policy"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"IpVersion":             ubx.FieldSpec{WireName: "ip_version"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Network":               ubx.FieldSpec{WireName: "network"},
+		"Ports":                 ubx.FieldSpec{WireName: "ports"},
+		"RoutingMode":           ubx.FieldSpec{WireName: "routing_mode"},
+		"Scope":                 ubx.FieldSpec{WireName: "scope"},
+		"ServerTlsPolicy":       ubx.FieldSpec{WireName: "server_tls_policy"},
+		"Subnetwork":            ubx.FieldSpec{WireName: "subnetwork"},
+		"Type":                  ubx.FieldSpec{WireName: "type"},
 	},
 }

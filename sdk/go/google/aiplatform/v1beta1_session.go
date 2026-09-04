@@ -4,8 +4,6 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1SessionConfig struct {
-	// Output only. Timestamp when the session was created.
-	CreateTime any
 	// Optional. The display name of the session.
 	DisplayName any
 	// Optional. Timestamp of when this session is considered expired. This is *always* provided on output, regardless of what was sent on input. The minimum value is 24 hours from the time of creation.
@@ -18,8 +16,6 @@ type V1beta1SessionConfig struct {
 	SessionState any
 	// Optional. Input only. The TTL for this session. The minimum value is 24 hours.
 	Ttl any
-	// Output only. Timestamp when the session was updated.
-	UpdateTime any
 	// Required. Immutable. String id provided by the user
 	UserId any
 }
@@ -48,14 +44,12 @@ type V1beta1SessionAttrs struct {
 var V1beta1Session = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_session",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime":   ubx.FieldSpec{WireName: "expire_time"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"SessionState": ubx.FieldSpec{WireName: "session_state"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"Ttl":          ubx.FieldSpec{WireName: "ttl"},
+		"UserId":       ubx.FieldSpec{WireName: "user_id"},
 	},
 }

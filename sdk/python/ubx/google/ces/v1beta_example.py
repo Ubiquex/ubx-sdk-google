@@ -140,8 +140,6 @@ _V1betaExample_MessagesFields = {
 
 @dataclasses.dataclass
 class V1betaExampleConfig:
-    # Output only. Timestamp when the example was created.
-    create_time: Any = None
     # Optional. Human-readable description of the example.
     description: Any = None
     # Required. Display name of the example.
@@ -150,14 +148,10 @@ class V1betaExampleConfig:
     entry_agent: Any = None
     # Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
     etag: Any = None
-    # Output only. The example may become invalid if referencing resources are deleted. Invalid examples will not be used as few-shot examples.
-    invalid: Any = None
     # Optional. The collection of messages that make up the conversation.
     messages: Any = None
     # Identifier. The unique identifier of the example. Format: `projects/{project}/locations/{location}/apps/{app}/examples/{example}`
     name: Any = None
-    # Output only. Timestamp when the example was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaExampleAttrs:
@@ -183,18 +177,15 @@ class V1betaExampleAttrs:
 V1betaExample = ubx.ResourceBinding(
     wire_type="google_ces_v1beta_example",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "entry_agent": ubx.FieldSpec(wire_name="entry_agent"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "invalid": ubx.FieldSpec(wire_name="invalid"),
         "messages": ubx.FieldSpec(
             wire_name="messages",
             kind="list",
             fields=_V1betaExample_MessagesFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

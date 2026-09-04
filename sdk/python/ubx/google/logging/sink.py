@@ -40,8 +40,6 @@ _Sink_ExclusionsFields = {
 class SinkConfig:
     # Options that change functionality of a sink exporting data to BigQuery.
     bigquery_options: Any = None
-    # Output only. The creation timestamp of the sink.This field may not be present for older sinks.
-    create_time: Any = None
     # Optional. A description of this sink.The maximum length of the description is 8000 characters.
     description: Any = None
     # Required. The export destination: "storage.googleapis.com/[GCS_BUCKET]" "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]" "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]" "logging.googleapis.com/projects/[PROJECT_ID]" "logging.googleapis.com/projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" The sink's writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Route logs to supported destinations (https://docs.cloud.google.com/logging/docs/export/configure_export_v2).
@@ -60,12 +58,6 @@ class SinkConfig:
     name: Any = None
     # Deprecated. This field is unused.
     output_version_format: Any = None
-    # Output only. The resource name of the sink. "projects/[PROJECT_ID]/sinks/[SINK_NAME] "organizations/[ORGANIZATION_ID]/sinks/[SINK_NAME] "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_NAME] "folders/[FOLDER_ID]/sinks/[SINK_NAME] For example: projects/my_project/sinks/SINK_NAME
-    resource_name: Any = None
-    # Output only. The last update timestamp of the sink.This field may not be present for older sinks.
-    update_time: Any = None
-    # Output only. An IAM identity—a service account or group—under which Cloud Logging writes the exported log entries to the sink's destination. This field is either set by specifying custom_writer_identity or set automatically by sinks.create and sinks.update based on the value of unique_writer_identity in those methods.Until you grant this identity write-access to the destination, log entry exports from this sink will fail. For more information, see Manage access to projects, folders, and organizations (https://docs.cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource). Consult the destination service's documentation to determine the appropriate IAM roles to assign to the identity.Sinks that have a destination that is a log bucket in the same project as the sink cannot have a writer_identity and no additional permissions are required.
-    writer_identity: Any = None
 
 @dataclasses.dataclass
 class SinkAttrs:
@@ -106,7 +98,6 @@ Sink = ubx.ResourceBinding(
             kind="object",
             fields=_Sink_BigqueryOptionsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "destination": ubx.FieldSpec(wire_name="destination"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
@@ -120,8 +111,5 @@ Sink = ubx.ResourceBinding(
         "intercept_children": ubx.FieldSpec(wire_name="intercept_children"),
         "name": ubx.FieldSpec(wire_name="name"),
         "output_version_format": ubx.FieldSpec(wire_name="output_version_format"),
-        "resource_name": ubx.FieldSpec(wire_name="resource_name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "writer_identity": ubx.FieldSpec(wire_name="writer_identity"),
     },
 )

@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ViewConfig {
-  /** Output only. The time at which this view was created. */
-  createTime?: string | Computed<string>;
   /** The human-readable display name of the view. */
   displayName?: string | Computed<string>;
   /** Immutable. The resource name of the view. Format: projects/{project}/locations/{location}/views/{view} */
   name?: string | Computed<string>;
-  /** Output only. The most recent time at which the view was updated. */
-  updateTime?: string | Computed<string>;
   /** A filter to reduce conversation results to a specific subset. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details. */
   value?: string | Computed<string>;
 }
@@ -30,10 +26,8 @@ export interface ViewAttrs {
 export const View: ResourceBinding<ViewConfig, ViewAttrs> = {
   wireType: "google_contactcenterinsights_view",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     name: "name",
-    updateTime: "update_time",
     value: "value",
   },
 };

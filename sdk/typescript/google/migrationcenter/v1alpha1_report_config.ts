@@ -12,18 +12,12 @@ const V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields: FieldMap = {
 };
 
 export interface V1alpha1ReportConfigConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Free-text description. */
   description?: string | Computed<string>;
   /** User-friendly display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
   /** Required. Collection of combinations of groups and preference sets. */
   groupPreferencesetAssignments?: V1alpha1ReportConfig_GroupPreferencesetAssignments[] | Computed<V1alpha1ReportConfig_GroupPreferencesetAssignments[]>;
-  /** Output only. Name of resource. */
-  name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1ReportConfigAttrs {
@@ -44,7 +38,6 @@ export interface V1alpha1ReportConfigAttrs {
 export const V1alpha1ReportConfig: ResourceBinding<V1alpha1ReportConfigConfig, V1alpha1ReportConfigAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_report_config",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     groupPreferencesetAssignments: {
@@ -52,7 +45,5 @@ export const V1alpha1ReportConfig: ResourceBinding<V1alpha1ReportConfigConfig, V
       kind: "list",
       fields: V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
     },
-    name: "name",
-    updateTime: "update_time",
   },
 };

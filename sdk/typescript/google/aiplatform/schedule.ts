@@ -802,24 +802,16 @@ const Schedule_LastScheduledRunResponseFields: FieldMap = {
 export interface ScheduleConfig {
   /** Optional. Whether new scheduled runs can be queued when max_concurrent_runs limit is reached. If set to true, new runs will be queued instead of skipped. Default to false. */
   allowQueueing?: boolean | Computed<boolean>;
-  /** Output only. Whether to backfill missed runs when the schedule is resumed from PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled after the backfill is complete. Default to false. */
-  catchUp?: boolean | Computed<boolean>;
   /** Request message for [NotebookService.CreateNotebookExecutionJob] */
   createNotebookExecutionJobRequest?: Schedule_CreateNotebookExecutionJobRequest | Computed<Schedule_CreateNotebookExecutionJobRequest>;
   /** Request message for PipelineService.CreatePipelineJob. */
   createPipelineJobRequest?: Schedule_CreatePipelineJobRequest | Computed<Schedule_CreatePipelineJobRequest>;
-  /** Output only. Timestamp when this Schedule was created. */
-  createTime?: string | Computed<string>;
   /** Cron schedule (https://en.wikipedia.org/wiki/Cron) to launch scheduled runs. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *". */
   cron?: string | Computed<string>;
   /** Required. User provided name of the Schedule. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Optional. Timestamp after which no new runs can be scheduled. If specified, The schedule will be completed when either end_time is reached or when scheduled_run_count >= max_run_count. If not specified, new runs will keep getting scheduled until this Schedule is paused or deleted. Already scheduled runs will be allowed to complete. Unset if not specified. */
   endTime?: string | Computed<string>;
-  /** Output only. Timestamp when this Schedule was last paused. Unset if never paused. */
-  lastPauseTime?: string | Computed<string>;
-  /** Output only. Timestamp when this Schedule was last resumed. Unset if never resumed from pause. */
-  lastResumeTime?: string | Computed<string>;
   /** Status of a scheduled run. */
   lastScheduledRunResponse?: Schedule_LastScheduledRunResponse | Computed<Schedule_LastScheduledRunResponse>;
   /** Optional. Specifies the maximum number of active runs that can be executed concurrently for this Schedule. This limits the number of runs that can be in a non-terminal state at the same time. Currently, this field is only supported for requests of type CreatePipelineJobRequest. */
@@ -830,16 +822,8 @@ export interface ScheduleConfig {
   maxRunCount?: string | Computed<string>;
   /** Immutable. The resource name of the Schedule. */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when this Schedule should schedule the next run. Having a next_run_time in the past means the runs are being started behind schedule. */
-  nextRunTime?: string | Computed<string>;
   /** Optional. Timestamp after which the first run can be scheduled. Default to Schedule create time if not specified. */
   startTime?: string | Computed<string>;
-  /** Output only. The number of runs started by this schedule. */
-  startedRunCount?: string | Computed<string>;
-  /** Output only. The state of this Schedule. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this Schedule was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ScheduleAttrs {
@@ -889,7 +873,6 @@ export const Schedule: ResourceBinding<ScheduleConfig, ScheduleAttrs> = {
   wireType: "google_aiplatform_schedule",
   fields: {
     allowQueueing: "allow_queueing",
-    catchUp: "catch_up",
     createNotebookExecutionJobRequest: {
       wireName: "create_notebook_execution_job_request",
       kind: "object",
@@ -900,12 +883,9 @@ export const Schedule: ResourceBinding<ScheduleConfig, ScheduleAttrs> = {
       kind: "object",
       fields: Schedule_CreatePipelineJobRequestFields,
     },
-    createTime: "create_time",
     cron: "cron",
     displayName: "display_name",
     endTime: "end_time",
-    lastPauseTime: "last_pause_time",
-    lastResumeTime: "last_resume_time",
     lastScheduledRunResponse: {
       wireName: "last_scheduled_run_response",
       kind: "object",
@@ -915,10 +895,6 @@ export const Schedule: ResourceBinding<ScheduleConfig, ScheduleAttrs> = {
     maxConcurrentRunCount: "max_concurrent_run_count",
     maxRunCount: "max_run_count",
     name: "name",
-    nextRunTime: "next_run_time",
     startTime: "start_time",
-    startedRunCount: "started_run_count",
-    state: "state",
-    updateTime: "update_time",
   },
 };

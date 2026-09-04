@@ -121,119 +121,117 @@ type ServingConfig_MediaConfig struct {
 }
 
 var ServingConfig_AnswerGenerationSpec_UserDefinedClassifierSpecFields = ubx.FieldMap{
-		"EnableUserDefinedClassifier": ubx.FieldSpec{WireName: "enable_user_defined_classifier"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Preamble": ubx.FieldSpec{WireName: "preamble"},
-		"Seed": ubx.FieldSpec{WireName: "seed"},
-		"TaskMarker": ubx.FieldSpec{WireName: "task_marker"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"EnableUserDefinedClassifier": ubx.FieldSpec{WireName: "enable_user_defined_classifier"},
+	"ModelId":                     ubx.FieldSpec{WireName: "model_id"},
+	"Preamble":                    ubx.FieldSpec{WireName: "preamble"},
+	"Seed":                        ubx.FieldSpec{WireName: "seed"},
+	"TaskMarker":                  ubx.FieldSpec{WireName: "task_marker"},
+	"Temperature":                 ubx.FieldSpec{WireName: "temperature"},
+	"TopK":                        ubx.FieldSpec{WireName: "top_k"},
+	"TopP":                        ubx.FieldSpec{WireName: "top_p"},
+}
 
 var ServingConfig_AnswerGenerationSpecFields = ubx.FieldMap{
-		"UserDefinedClassifierSpec": ubx.FieldSpec{
-			WireName: "user_defined_classifier_spec",
-			Kind: "object",
-			Fields: ServingConfig_AnswerGenerationSpec_UserDefinedClassifierSpecFields,
-		},
-	}
+	"UserDefinedClassifierSpec": ubx.FieldSpec{
+		WireName: "user_defined_classifier_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_AnswerGenerationSpec_UserDefinedClassifierSpecFields,
+	},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_ChunkSpecFields = ubx.FieldMap{
-		"NumNextChunks": ubx.FieldSpec{WireName: "num_next_chunks"},
-		"NumPreviousChunks": ubx.FieldSpec{WireName: "num_previous_chunks"},
-	}
+	"NumNextChunks":     ubx.FieldSpec{WireName: "num_next_chunks"},
+	"NumPreviousChunks": ubx.FieldSpec{WireName: "num_previous_chunks"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_ExtractiveContentSpecFields = ubx.FieldMap{
-		"MaxExtractiveAnswerCount": ubx.FieldSpec{WireName: "max_extractive_answer_count"},
-		"MaxExtractiveSegmentCount": ubx.FieldSpec{WireName: "max_extractive_segment_count"},
-		"NumNextSegments": ubx.FieldSpec{WireName: "num_next_segments"},
-		"NumPreviousSegments": ubx.FieldSpec{WireName: "num_previous_segments"},
-		"ReturnExtractiveSegmentScore": ubx.FieldSpec{WireName: "return_extractive_segment_score"},
-	}
+	"MaxExtractiveAnswerCount":     ubx.FieldSpec{WireName: "max_extractive_answer_count"},
+	"MaxExtractiveSegmentCount":    ubx.FieldSpec{WireName: "max_extractive_segment_count"},
+	"NumNextSegments":              ubx.FieldSpec{WireName: "num_next_segments"},
+	"NumPreviousSegments":          ubx.FieldSpec{WireName: "num_previous_segments"},
+	"ReturnExtractiveSegmentScore": ubx.FieldSpec{WireName: "return_extractive_segment_score"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_SnippetSpecFields = ubx.FieldMap{
-		"MaxSnippetCount": ubx.FieldSpec{WireName: "max_snippet_count"},
-		"ReferenceOnly": ubx.FieldSpec{WireName: "reference_only"},
-		"ReturnSnippet": ubx.FieldSpec{WireName: "return_snippet"},
-	}
+	"MaxSnippetCount": ubx.FieldSpec{WireName: "max_snippet_count"},
+	"ReferenceOnly":   ubx.FieldSpec{WireName: "reference_only"},
+	"ReturnSnippet":   ubx.FieldSpec{WireName: "return_snippet"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelPromptSpecFields = ubx.FieldMap{
-		"Preamble": ubx.FieldSpec{WireName: "preamble"},
-	}
+	"Preamble": ubx.FieldSpec{WireName: "preamble"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelSpecFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpec_SummarySpecFields = ubx.FieldMap{
-		"IgnoreAdversarialQuery": ubx.FieldSpec{WireName: "ignore_adversarial_query"},
-		"IgnoreJailBreakingQuery": ubx.FieldSpec{WireName: "ignore_jail_breaking_query"},
-		"IgnoreLowRelevantContent": ubx.FieldSpec{WireName: "ignore_low_relevant_content"},
-		"IgnoreNonSummarySeekingQuery": ubx.FieldSpec{WireName: "ignore_non_summary_seeking_query"},
-		"IncludeCitations": ubx.FieldSpec{WireName: "include_citations"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"ModelPromptSpec": ubx.FieldSpec{
-			WireName: "model_prompt_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelPromptSpecFields,
-		},
-		"ModelSpec": ubx.FieldSpec{
-			WireName: "model_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelSpecFields,
-		},
-		"SummaryResultCount": ubx.FieldSpec{WireName: "summary_result_count"},
-		"UseSemanticChunks": ubx.FieldSpec{WireName: "use_semantic_chunks"},
-	}
+	"IgnoreAdversarialQuery":       ubx.FieldSpec{WireName: "ignore_adversarial_query"},
+	"IgnoreJailBreakingQuery":      ubx.FieldSpec{WireName: "ignore_jail_breaking_query"},
+	"IgnoreLowRelevantContent":     ubx.FieldSpec{WireName: "ignore_low_relevant_content"},
+	"IgnoreNonSummarySeekingQuery": ubx.FieldSpec{WireName: "ignore_non_summary_seeking_query"},
+	"IncludeCitations":             ubx.FieldSpec{WireName: "include_citations"},
+	"LanguageCode":                 ubx.FieldSpec{WireName: "language_code"},
+	"ModelPromptSpec": ubx.FieldSpec{
+		WireName: "model_prompt_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelPromptSpecFields,
+	},
+	"ModelSpec": ubx.FieldSpec{
+		WireName: "model_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_SummarySpec_ModelSpecFields,
+	},
+	"SummaryResultCount": ubx.FieldSpec{WireName: "summary_result_count"},
+	"UseSemanticChunks":  ubx.FieldSpec{WireName: "use_semantic_chunks"},
+}
 
 var ServingConfig_GenericConfig_ContentSearchSpecFields = ubx.FieldMap{
-		"ChunkSpec": ubx.FieldSpec{
-			WireName: "chunk_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_ChunkSpecFields,
-		},
-		"ExtractiveContentSpec": ubx.FieldSpec{
-			WireName: "extractive_content_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_ExtractiveContentSpecFields,
-		},
-		"SearchResultMode": ubx.FieldSpec{WireName: "search_result_mode"},
-		"SnippetSpec": ubx.FieldSpec{
-			WireName: "snippet_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_SnippetSpecFields,
-		},
-		"SummarySpec": ubx.FieldSpec{
-			WireName: "summary_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpec_SummarySpecFields,
-		},
-	}
+	"ChunkSpec": ubx.FieldSpec{
+		WireName: "chunk_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_ChunkSpecFields,
+	},
+	"ExtractiveContentSpec": ubx.FieldSpec{
+		WireName: "extractive_content_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_ExtractiveContentSpecFields,
+	},
+	"SearchResultMode": ubx.FieldSpec{WireName: "search_result_mode"},
+	"SnippetSpec": ubx.FieldSpec{
+		WireName: "snippet_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_SnippetSpecFields,
+	},
+	"SummarySpec": ubx.FieldSpec{
+		WireName: "summary_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpec_SummarySpecFields,
+	},
+}
 
 var ServingConfig_GenericConfigFields = ubx.FieldMap{
-		"ContentSearchSpec": ubx.FieldSpec{
-			WireName: "content_search_spec",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfig_ContentSearchSpecFields,
-		},
-	}
+	"ContentSearchSpec": ubx.FieldSpec{
+		WireName: "content_search_spec",
+		Kind:     "object",
+		Fields:   ServingConfig_GenericConfig_ContentSearchSpecFields,
+	},
+}
 
 var ServingConfig_MediaConfigFields = ubx.FieldMap{
-		"ContentFreshnessCutoffDays": ubx.FieldSpec{WireName: "content_freshness_cutoff_days"},
-		"ContentWatchedPercentageThreshold": ubx.FieldSpec{WireName: "content_watched_percentage_threshold"},
-		"ContentWatchedSecondsThreshold": ubx.FieldSpec{WireName: "content_watched_seconds_threshold"},
-		"DemoteContentWatchedPastDays": ubx.FieldSpec{WireName: "demote_content_watched_past_days"},
-		"DemotionEventType": ubx.FieldSpec{WireName: "demotion_event_type"},
-	}
+	"ContentFreshnessCutoffDays":        ubx.FieldSpec{WireName: "content_freshness_cutoff_days"},
+	"ContentWatchedPercentageThreshold": ubx.FieldSpec{WireName: "content_watched_percentage_threshold"},
+	"ContentWatchedSecondsThreshold":    ubx.FieldSpec{WireName: "content_watched_seconds_threshold"},
+	"DemoteContentWatchedPastDays":      ubx.FieldSpec{WireName: "demote_content_watched_past_days"},
+	"DemotionEventType":                 ubx.FieldSpec{WireName: "demotion_event_type"},
+}
 
 type ServingConfigConfig struct {
 	// The specification for answer generation.
 	AnswerGenerationSpec any
 	// Boost controls to use in serving path. All triggered boost controls will be applied. Boost controls must be in the same data store as the serving config. Maximum of 20 boost controls.
 	BoostControlIds any
-	// Output only. ServingConfig created timestamp.
-	CreateTime any
 	// Required. The human readable serving config display name. Used in Discovery UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
 	DisplayName any
 	// Condition do not associate specifications. If multiple do not associate conditions match, all matching do not associate controls in the list will execute. Order does not matter. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
@@ -266,8 +264,6 @@ type ServingConfigConfig struct {
 	SolutionType any
 	// Condition synonyms specifications. If multiple synonyms conditions match, all matching synonyms controls in the list will execute. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
 	SynonymsControlIds any
-	// Output only. ServingConfig updated timestamp.
-	UpdateTime any
 }
 
 type ServingConfigAttrs struct {
@@ -318,35 +314,33 @@ var ServingConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnswerGenerationSpec": ubx.FieldSpec{
 			WireName: "answer_generation_spec",
-			Kind: "object",
-			Fields: ServingConfig_AnswerGenerationSpecFields,
+			Kind:     "object",
+			Fields:   ServingConfig_AnswerGenerationSpecFields,
 		},
-		"BoostControlIds": ubx.FieldSpec{WireName: "boost_control_ids"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"BoostControlIds":      ubx.FieldSpec{WireName: "boost_control_ids"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
 		"DissociateControlIds": ubx.FieldSpec{WireName: "dissociate_control_ids"},
-		"DiversityLevel": ubx.FieldSpec{WireName: "diversity_level"},
-		"FilterControlIds": ubx.FieldSpec{WireName: "filter_control_ids"},
+		"DiversityLevel":       ubx.FieldSpec{WireName: "diversity_level"},
+		"FilterControlIds":     ubx.FieldSpec{WireName: "filter_control_ids"},
 		"GenericConfig": ubx.FieldSpec{
 			WireName: "generic_config",
-			Kind: "object",
-			Fields: ServingConfig_GenericConfigFields,
+			Kind:     "object",
+			Fields:   ServingConfig_GenericConfigFields,
 		},
 		"IgnoreControlIds": ubx.FieldSpec{WireName: "ignore_control_ids"},
 		"MediaConfig": ubx.FieldSpec{
 			WireName: "media_config",
-			Kind: "object",
-			Fields: ServingConfig_MediaConfigFields,
+			Kind:     "object",
+			Fields:   ServingConfig_MediaConfigFields,
 		},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ModelId":                  ubx.FieldSpec{WireName: "model_id"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"OnewaySynonymsControlIds": ubx.FieldSpec{WireName: "oneway_synonyms_control_ids"},
-		"PromoteControlIds": ubx.FieldSpec{WireName: "promote_control_ids"},
-		"RankingExpression": ubx.FieldSpec{WireName: "ranking_expression"},
-		"RedirectControlIds": ubx.FieldSpec{WireName: "redirect_control_ids"},
-		"ReplacementControlIds": ubx.FieldSpec{WireName: "replacement_control_ids"},
-		"SolutionType": ubx.FieldSpec{WireName: "solution_type"},
-		"SynonymsControlIds": ubx.FieldSpec{WireName: "synonyms_control_ids"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"PromoteControlIds":        ubx.FieldSpec{WireName: "promote_control_ids"},
+		"RankingExpression":        ubx.FieldSpec{WireName: "ranking_expression"},
+		"RedirectControlIds":       ubx.FieldSpec{WireName: "redirect_control_ids"},
+		"ReplacementControlIds":    ubx.FieldSpec{WireName: "replacement_control_ids"},
+		"SolutionType":             ubx.FieldSpec{WireName: "solution_type"},
+		"SynonymsControlIds":       ubx.FieldSpec{WireName: "synonyms_control_ids"},
 	},
 }

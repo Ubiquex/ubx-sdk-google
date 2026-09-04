@@ -20,15 +20,15 @@ type Taxonomy_TaxonomyTimestamps struct {
 }
 
 var Taxonomy_ServiceFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Identity": ubx.FieldSpec{WireName: "identity"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Taxonomy_TaxonomyTimestampsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type TaxonomyConfig struct {
 	// Optional. A list of policy types that are activated for this taxonomy. If not set, defaults to an empty list.
@@ -39,8 +39,6 @@ type TaxonomyConfig struct {
 	DisplayName any
 	// Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs.
 	Name any
-	// Output only. Number of policy tags in this taxonomy.
-	PolicyTagCount any
 	// The source system of the Taxonomy.
 	Service any
 	// Timestamps associated with this resource in a particular system.
@@ -68,19 +66,18 @@ var Taxonomy = ubx.ResourceBinding{
 	WireType: "google_datacatalog_taxonomy",
 	Fields: ubx.FieldMap{
 		"ActivatedPolicyTypes": ubx.FieldSpec{WireName: "activated_policy_types"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyTagCount": ubx.FieldSpec{WireName: "policy_tag_count"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"Service": ubx.FieldSpec{
 			WireName: "service",
-			Kind: "object",
-			Fields: Taxonomy_ServiceFields,
+			Kind:     "object",
+			Fields:   Taxonomy_ServiceFields,
 		},
 		"TaxonomyTimestamps": ubx.FieldSpec{
 			WireName: "taxonomy_timestamps",
-			Kind: "object",
-			Fields: Taxonomy_TaxonomyTimestampsFields,
+			Kind:     "object",
+			Fields:   Taxonomy_TaxonomyTimestampsFields,
 		},
 	},
 }

@@ -930,8 +930,6 @@ export interface EntryConfig {
   gcsFilesetSpec?: Entry_GcsFilesetSpec | Computed<Entry_GcsFilesetSpec>;
   /** Specification that applies to a graph. */
   graphSpec?: Entry_GraphSpec | Computed<Entry_GraphSpec>;
-  /** Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore. */
-  integratedSystem?: string | Computed<string>;
   /** Cloud labels attached to the entry. In Data Catalog, you can create and modify labels attached only to custom entries. Synced entries have unmodifiable labels that come from the source system. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8. */
@@ -940,8 +938,6 @@ export interface EntryConfig {
   lookerSystemSpec?: Entry_LookerSystemSpec | Computed<Entry_LookerSystemSpec>;
   /** Specification that applies to a model. Valid only for entries with the `MODEL` type. */
   modelSpec?: Entry_ModelSpec | Computed<Entry_ModelSpec>;
-  /** Output only. Identifier. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name. */
-  name?: string | Computed<string>;
   /** Entry metadata relevant only to the user and private to them. */
   personalDetails?: Entry_PersonalDetails | Computed<Entry_PersonalDetails>;
   /** Specification that applies to a routine. Valid only for entries with the `ROUTINE` type. */
@@ -1099,7 +1095,6 @@ export const Entry: ResourceBinding<EntryConfig, EntryAttrs> = {
       kind: "object",
       fields: Entry_GraphSpecFields,
     },
-    integratedSystem: "integrated_system",
     labels: "labels",
     linkedResource: "linked_resource",
     lookerSystemSpec: {
@@ -1112,7 +1107,6 @@ export const Entry: ResourceBinding<EntryConfig, EntryAttrs> = {
       kind: "object",
       fields: Entry_ModelSpecFields,
     },
-    name: "name",
     personalDetails: {
       wireName: "personal_details",
       kind: "object",

@@ -279,8 +279,6 @@ const AuthzPolicy_TargetFields: FieldMap = {
 export interface AuthzPolicyConfig {
   /** Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`. When the action is `CUSTOM`, `customProvider` must be specified. When the action is `ALLOW`, only requests matching the policy will be allowed. When the action is `DENY`, only requests matching the policy will be denied. When a request arrives, the policies are evaluated in the following order: 1. If there is a `CUSTOM` policy that matches the request, the `CUSTOM` policy is evaluated using the custom authorization providers and the request is denied if the provider rejects the request. 2. If there are any `DENY` policies that match the request, the request is denied. 3. If there are no `ALLOW` policies for the resource or if any of the `ALLOW` policies match the request, the request is allowed. 4. Else the request is denied by default if none of the configured AuthzPolicies with `ALLOW` action match the request. */
   action?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Allows delegating authorization decisions to Cloud IAP or to Service Extensions. */
   customProvider?: AuthzPolicy_CustomProvider | Computed<AuthzPolicy_CustomProvider>;
   /** Optional. A human-readable description of the resource. */
@@ -297,8 +295,6 @@ export interface AuthzPolicyConfig {
   policyProfile?: string | Computed<string>;
   /** Specifies the set of targets to which this policy should be applied to. */
   target?: AuthzPolicy_Target | Computed<AuthzPolicy_Target>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AuthzPolicyAttrs {
@@ -330,7 +326,6 @@ export const AuthzPolicy: ResourceBinding<AuthzPolicyConfig, AuthzPolicyAttrs> =
   wireType: "google_networksecurity_authz_policy",
   fields: {
     action: "action",
-    createTime: "create_time",
     customProvider: {
       wireName: "custom_provider",
       kind: "object",
@@ -355,6 +350,5 @@ export const AuthzPolicy: ResourceBinding<AuthzPolicyConfig, AuthzPolicyAttrs> =
       kind: "object",
       fields: AuthzPolicy_TargetFields,
     },
-    updateTime: "update_time",
   },
 };

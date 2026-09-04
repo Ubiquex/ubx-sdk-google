@@ -166,28 +166,18 @@ class JobConfig:
     description: Any = None
     # Http target. The job will be pushed to the job handler by means of an HTTP request via an http_method such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP response code in the range [200 - 299]. A failure to receive a response constitutes a failed execution. For a redirected request, the response returned by the redirected request is considered.
     http_target: Any = None
-    # Output only. The time the last job attempt started.
-    last_attempt_time: Any = None
     # Optionally caller-specified in CreateJob, after which it becomes output only. The job name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/jobs/JOB_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the job's location. The list of available locations can be obtained by calling [locations.list](/scheduler/docs/reference/rest/v1/projects.locations/list). For more information, see [Cloud Scheduler locations](/scheduler/docs/locations). * `JOB_ID` can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), or underscores (_). The maximum length is 500 characters.
     name: Any = None
     # Pub/Sub target. The job will be delivered by publishing a message to the given Pub/Sub topic.
     pubsub_target: Any = None
     # Settings that determine the retry behavior. For more information, see [Retry jobs](/scheduler/docs/configuring/retry-jobs). By default, if a job does not complete successfully (meaning that an acknowledgement is not received from the handler, then it will be retried with exponential backoff according to the settings in RetryConfig.
     retry_config: Any = None
-    # Output only. Whether or not this Job satisfies the requirements of physical zone separation
-    satisfies_pzs: Any = None
     # Required, except when used with UpdateJob. Describes the schedule on which the job will be executed. The schedule can be either of the following types: * [Crontab](https://en.wikipedia.org/wiki/Cron#Overview) * English-like [schedule](/scheduler/docs/configuring/cron-job-schedules) As a general rule, execution `n + 1` of a job will not begin until execution `n` has finished. Cloud Scheduler will never allow two simultaneously outstanding executions. For example, this implies that if the `n+1`th execution is scheduled to run at 16:00 but the `n`th execution takes until 16:15, the `n+1`th execution will not start until `16:15`. A scheduled start time will be delayed if the previous execution has not ended when its scheduled time occurs. If retry_count > 0 and a job attempt fails, the job will be tried a total of retry_count times, with exponential backoff, until the next scheduled start time. If retry_count is 0, a job attempt will not be retried if it fails. Instead the Cloud Scheduler system will wait for the next scheduled execution time. Setting retry_count to 0 does not prevent failed jobs from running according to schedule after the failure.
     schedule: Any = None
-    # Output only. The next time the job is scheduled. Note that this may be a retry of a previously failed attempt or the next execution time according to the schedule.
-    schedule_time: Any = None
-    # Output only. State of the job.
-    state: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     status: Any = None
     # Specifies the time zone to be used in interpreting schedule. The value of this field must be a time zone name from the [tz database](http://en.wikipedia.org/wiki/Tz_database). Note that some time zones include a provision for daylight savings time. The rules for daylight saving time are determined by the chosen tz. For UTC use the string "utc". If a time zone is not specified, the default will be in UTC (also known as GMT).
     time_zone: Any = None
-    # Output only. The creation time of the job.
-    user_update_time: Any = None
 
 @dataclasses.dataclass
 class JobAttrs:
@@ -237,7 +227,6 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_HttpTargetFields,
         ),
-        "last_attempt_time": ubx.FieldSpec(wire_name="last_attempt_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "pubsub_target": ubx.FieldSpec(
             wire_name="pubsub_target",
@@ -249,16 +238,12 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_RetryConfigFields,
         ),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "schedule": ubx.FieldSpec(wire_name="schedule"),
-        "schedule_time": ubx.FieldSpec(wire_name="schedule_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_Job_StatusFields,
         ),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-        "user_update_time": ubx.FieldSpec(wire_name="user_update_time"),
     },
 )

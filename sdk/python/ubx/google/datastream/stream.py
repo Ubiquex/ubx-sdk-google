@@ -881,14 +881,6 @@ _Stream_DestinationConfigFields = {
     ),
 }
 
-_Stream_ErrorsFields = {
-    "details": ubx.FieldSpec(wire_name="details"),
-    "error_time": ubx.FieldSpec(wire_name="error_time"),
-    "error_uuid": ubx.FieldSpec(wire_name="error_uuid"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-}
-
 _Stream_RuleSets_CustomizationRules_BigqueryClusteringFields = {
     "columns": ubx.FieldSpec(wire_name="columns"),
 }
@@ -1248,34 +1240,20 @@ class StreamConfig:
     backfill_all: Any = None
     # Backfill strategy to disable automatic backfill for the Stream's objects.
     backfill_none: Any = None
-    # Output only. The creation time of the stream.
-    create_time: Any = None
     # Immutable. A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be encrypted using an internal Stream-specific encryption key provisioned through KMS.
     customer_managed_encryption_key: Any = None
     # The configuration of the stream destination.
     destination_config: Any = None
     # Required. Display name.
     display_name: Any = None
-    # Output only. Errors on the Stream.
-    errors: Any = None
     # Labels.
     labels: Any = None
-    # Output only. If the stream was recovered, the time of the last recovery. Note: This field is currently experimental.
-    last_recovery_time: Any = None
-    # Output only. Identifier. The stream's name.
-    name: Any = None
     # Optional. Rule sets to apply to the stream.
     rule_sets: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # The configuration of the stream source.
     source_config: Any = None
     # The state of the stream.
     state: Any = None
-    # Output only. The last update time of the stream.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class StreamAttrs:
@@ -1321,7 +1299,6 @@ Stream = ubx.ResourceBinding(
             fields=_Stream_BackfillAllFields,
         ),
         "backfill_none": ubx.FieldSpec(wire_name="backfill_none"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_managed_encryption_key": ubx.FieldSpec(wire_name="customer_managed_encryption_key"),
         "destination_config": ubx.FieldSpec(
             wire_name="destination_config",
@@ -1329,27 +1306,17 @@ Stream = ubx.ResourceBinding(
             fields=_Stream_DestinationConfigFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "errors": ubx.FieldSpec(
-            wire_name="errors",
-            kind="list",
-            fields=_Stream_ErrorsFields,
-        ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_recovery_time": ubx.FieldSpec(wire_name="last_recovery_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "rule_sets": ubx.FieldSpec(
             wire_name="rule_sets",
             kind="list",
             fields=_Stream_RuleSetsFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "source_config": ubx.FieldSpec(
             wire_name="source_config",
             kind="object",
             fields=_Stream_SourceConfigFields,
         ),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

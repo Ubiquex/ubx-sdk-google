@@ -4,23 +4,23 @@ package datastream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumns struct {
-	Collation any
-	ColumnName any
-	DataType any
-	Length any
-	Nullable any
+	Collation       any
+	ColumnName      any
+	DataType        any
+	Length          any
+	Nullable        any
 	OrdinalPosition any
-	PrimaryKey any
+	PrimaryKey      any
 }
 
 type V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables struct {
 	MysqlColumns any
-	TableName any
+	TableName    any
 }
 
 type V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases struct {
 	DatabaseName any
-	MysqlTables any
+	MysqlTables  any
 }
 
 type V1alpha1Stream_BackfillAll_MysqlExcludedObjects struct {
@@ -29,25 +29,25 @@ type V1alpha1Stream_BackfillAll_MysqlExcludedObjects struct {
 }
 
 type V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumns struct {
-	ColumnName any
-	DataType any
-	Encoding any
-	Length any
-	Nullable any
+	ColumnName      any
+	DataType        any
+	Encoding        any
+	Length          any
+	Nullable        any
 	OrdinalPosition any
-	Precision any
-	PrimaryKey any
-	Scale any
+	Precision       any
+	PrimaryKey      any
+	Scale           any
 }
 
 type V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables struct {
 	OracleColumns any
-	TableName any
+	TableName     any
 }
 
 type V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas struct {
 	OracleTables any
-	SchemaName any
+	SchemaName   any
 }
 
 type V1alpha1Stream_BackfillAll_OracleExcludedObjects struct {
@@ -92,11 +92,11 @@ type V1alpha1Stream_DestinationConfig struct {
 }
 
 type V1alpha1Stream_Errors struct {
-	Details any
+	Details   any
 	ErrorTime any
 	ErrorUuid any
-	Message any
-	Reason any
+	Message   any
+	Reason    any
 }
 
 type V1alpha1Stream_SourceConfig_MysqlSourceConfig struct {
@@ -125,193 +125,177 @@ type V1alpha1Stream_SourceConfig struct {
 }
 
 var V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields = ubx.FieldMap{
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-	}
+	"Collation":       ubx.FieldSpec{WireName: "collation"},
+	"ColumnName":      ubx.FieldSpec{WireName: "column_name"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"Nullable":        ubx.FieldSpec{WireName: "nullable"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"PrimaryKey":      ubx.FieldSpec{WireName: "primary_key"},
+}
 
 var V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields = ubx.FieldMap{
-		"MysqlColumns": ubx.FieldSpec{
-			WireName: "mysql_columns",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"MysqlColumns": ubx.FieldSpec{
+		WireName: "mysql_columns",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields = ubx.FieldMap{
-		"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
-		"MysqlTables": ubx.FieldSpec{
-			WireName: "mysql_tables",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields,
-		},
-	}
+	"DatabaseName": ubx.FieldSpec{WireName: "database_name"},
+	"MysqlTables": ubx.FieldSpec{
+		WireName: "mysql_tables",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields,
+	},
+}
 
 var V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields = ubx.FieldMap{
-		"MysqlDatabases": ubx.FieldSpec{
-			WireName: "mysql_databases",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields,
-		},
-	}
+	"MysqlDatabases": ubx.FieldSpec{
+		WireName: "mysql_databases",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields,
+	},
+}
 
 var V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields = ubx.FieldMap{
-		"ColumnName": ubx.FieldSpec{WireName: "column_name"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"ColumnName":      ubx.FieldSpec{WireName: "column_name"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"Encoding":        ubx.FieldSpec{WireName: "encoding"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"Nullable":        ubx.FieldSpec{WireName: "nullable"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"Precision":       ubx.FieldSpec{WireName: "precision"},
+	"PrimaryKey":      ubx.FieldSpec{WireName: "primary_key"},
+	"Scale":           ubx.FieldSpec{WireName: "scale"},
+}
 
 var V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields = ubx.FieldMap{
-		"OracleColumns": ubx.FieldSpec{
-			WireName: "oracle_columns",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields,
-		},
-		"TableName": ubx.FieldSpec{WireName: "table_name"},
-	}
+	"OracleColumns": ubx.FieldSpec{
+		WireName: "oracle_columns",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields,
+	},
+	"TableName": ubx.FieldSpec{WireName: "table_name"},
+}
 
 var V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields = ubx.FieldMap{
-		"OracleTables": ubx.FieldSpec{
-			WireName: "oracle_tables",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields,
-		},
-		"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
-	}
+	"OracleTables": ubx.FieldSpec{
+		WireName: "oracle_tables",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields,
+	},
+	"SchemaName": ubx.FieldSpec{WireName: "schema_name"},
+}
 
 var V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields = ubx.FieldMap{
-		"OracleSchemas": ubx.FieldSpec{
-			WireName: "oracle_schemas",
-			Kind: "list",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields,
-		},
-	}
+	"OracleSchemas": ubx.FieldSpec{
+		WireName: "oracle_schemas",
+		Kind:     "list",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields,
+	},
+}
 
 var V1alpha1Stream_BackfillAllFields = ubx.FieldMap{
-		"MysqlExcludedObjects": ubx.FieldSpec{
-			WireName: "mysql_excluded_objects",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-		"OracleExcludedObjects": ubx.FieldSpec{
-			WireName: "oracle_excluded_objects",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-	}
+	"MysqlExcludedObjects": ubx.FieldSpec{
+		WireName: "mysql_excluded_objects",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+	"OracleExcludedObjects": ubx.FieldSpec{
+		WireName: "oracle_excluded_objects",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+}
 
 var V1alpha1Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields = ubx.FieldMap{
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"SchemaFileFormat": ubx.FieldSpec{WireName: "schema_file_format"},
-	}
+	"Compression":      ubx.FieldSpec{WireName: "compression"},
+	"SchemaFileFormat": ubx.FieldSpec{WireName: "schema_file_format"},
+}
 
 var V1alpha1Stream_DestinationConfig_GcsDestinationConfigFields = ubx.FieldMap{
-		"AvroFileFormat": ubx.FieldSpec{WireName: "avro_file_format"},
-		"FileRotationInterval": ubx.FieldSpec{WireName: "file_rotation_interval"},
-		"FileRotationMb": ubx.FieldSpec{WireName: "file_rotation_mb"},
-		"GcsFileFormat": ubx.FieldSpec{WireName: "gcs_file_format"},
-		"JsonFileFormat": ubx.FieldSpec{
-			WireName: "json_file_format",
-			Kind: "object",
-			Fields: V1alpha1Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"AvroFileFormat":       ubx.FieldSpec{WireName: "avro_file_format"},
+	"FileRotationInterval": ubx.FieldSpec{WireName: "file_rotation_interval"},
+	"FileRotationMb":       ubx.FieldSpec{WireName: "file_rotation_mb"},
+	"GcsFileFormat":        ubx.FieldSpec{WireName: "gcs_file_format"},
+	"JsonFileFormat": ubx.FieldSpec{
+		WireName: "json_file_format",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var V1alpha1Stream_DestinationConfigFields = ubx.FieldMap{
-		"DestinationConnectionProfileName": ubx.FieldSpec{WireName: "destination_connection_profile_name"},
-		"GcsDestinationConfig": ubx.FieldSpec{
-			WireName: "gcs_destination_config",
-			Kind: "object",
-			Fields: V1alpha1Stream_DestinationConfig_GcsDestinationConfigFields,
-		},
-	}
-
-var V1alpha1Stream_ErrorsFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
-		"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"DestinationConnectionProfileName": ubx.FieldSpec{WireName: "destination_connection_profile_name"},
+	"GcsDestinationConfig": ubx.FieldSpec{
+		WireName: "gcs_destination_config",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_DestinationConfig_GcsDestinationConfigFields,
+	},
+}
 
 var V1alpha1Stream_SourceConfig_MysqlSourceConfigFields = ubx.FieldMap{
-		"Allowlist": ubx.FieldSpec{
-			WireName: "allowlist",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-		"Rejectlist": ubx.FieldSpec{
-			WireName: "rejectlist",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-	}
+	"Allowlist": ubx.FieldSpec{
+		WireName: "allowlist",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+	"Rejectlist": ubx.FieldSpec{
+		WireName: "rejectlist",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+}
 
 var V1alpha1Stream_SourceConfig_OracleSourceConfigFields = ubx.FieldMap{
-		"Allowlist": ubx.FieldSpec{
-			WireName: "allowlist",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-		"DropLargeObjects": ubx.FieldSpec{WireName: "drop_large_objects"},
-		"Rejectlist": ubx.FieldSpec{
-			WireName: "rejectlist",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-	}
+	"Allowlist": ubx.FieldSpec{
+		WireName: "allowlist",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+	"DropLargeObjects": ubx.FieldSpec{WireName: "drop_large_objects"},
+	"Rejectlist": ubx.FieldSpec{
+		WireName: "rejectlist",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+}
 
 var V1alpha1Stream_SourceConfigFields = ubx.FieldMap{
-		"MysqlSourceConfig": ubx.FieldSpec{
-			WireName: "mysql_source_config",
-			Kind: "object",
-			Fields: V1alpha1Stream_SourceConfig_MysqlSourceConfigFields,
-		},
-		"OracleSourceConfig": ubx.FieldSpec{
-			WireName: "oracle_source_config",
-			Kind: "object",
-			Fields: V1alpha1Stream_SourceConfig_OracleSourceConfigFields,
-		},
-		"SourceConnectionProfileName": ubx.FieldSpec{WireName: "source_connection_profile_name"},
-	}
+	"MysqlSourceConfig": ubx.FieldSpec{
+		WireName: "mysql_source_config",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_SourceConfig_MysqlSourceConfigFields,
+	},
+	"OracleSourceConfig": ubx.FieldSpec{
+		WireName: "oracle_source_config",
+		Kind:     "object",
+		Fields:   V1alpha1Stream_SourceConfig_OracleSourceConfigFields,
+	},
+	"SourceConnectionProfileName": ubx.FieldSpec{WireName: "source_connection_profile_name"},
+}
 
 type V1alpha1StreamConfig struct {
 	// Backfill strategy to automatically backfill the Stream's objects. Specific objects can be excluded.
 	BackfillAll any
 	// Backfill strategy to disable automatic backfill for the Stream's objects.
 	BackfillNone any
-	// Output only. The creation time of the stream.
-	CreateTime any
 	// Immutable. A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be encrypted using an internal Stream-specific encryption key provisioned through KMS.
 	CustomerManagedEncryptionKey any
 	// The configuration of the stream destination.
 	DestinationConfig any
 	// Required. Display name.
 	DisplayName any
-	// Output only. Errors on the Stream.
-	Errors any
 	// Labels.
 	Labels any
-	// Output only. The stream's name.
-	Name any
 	// The configuration of the stream source.
 	SourceConfig any
 	// The state of the stream.
 	State any
-	// Output only. The last update time of the stream.
-	UpdateTime any
 }
 
 type V1alpha1StreamAttrs struct {
@@ -346,31 +330,23 @@ var V1alpha1Stream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackfillAll": ubx.FieldSpec{
 			WireName: "backfill_all",
-			Kind: "object",
-			Fields: V1alpha1Stream_BackfillAllFields,
+			Kind:     "object",
+			Fields:   V1alpha1Stream_BackfillAllFields,
 		},
-		"BackfillNone": ubx.FieldSpec{WireName: "backfill_none"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"BackfillNone":                 ubx.FieldSpec{WireName: "backfill_none"},
 		"CustomerManagedEncryptionKey": ubx.FieldSpec{WireName: "customer_managed_encryption_key"},
 		"DestinationConfig": ubx.FieldSpec{
 			WireName: "destination_config",
-			Kind: "object",
-			Fields: V1alpha1Stream_DestinationConfigFields,
+			Kind:     "object",
+			Fields:   V1alpha1Stream_DestinationConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1alpha1Stream_ErrorsFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"SourceConfig": ubx.FieldSpec{
 			WireName: "source_config",
-			Kind: "object",
-			Fields: V1alpha1Stream_SourceConfigFields,
+			Kind:     "object",
+			Fields:   V1alpha1Stream_SourceConfigFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

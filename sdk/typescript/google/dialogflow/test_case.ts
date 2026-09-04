@@ -888,7 +888,6 @@ const TestCase_TestConfigFields: FieldMap = {
 };
 
 export interface TestCaseConfig {
-  creationTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   lastTestResult?: TestCase_LastTestResult | Computed<TestCase_LastTestResult>;
   name?: string | Computed<string>;
@@ -912,7 +911,6 @@ export interface TestCaseAttrs {
 export const TestCase: ResourceBinding<TestCaseConfig, TestCaseAttrs> = {
   wireType: "google_dialogflow_test_case",
   fields: {
-    creationTime: "creation_time",
     displayName: "display_name",
     lastTestResult: {
       wireName: "last_test_result",

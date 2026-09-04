@@ -15,75 +15,75 @@ type Endpoint_DeployedModels_AutomaticResources struct {
 
 type Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecs struct {
 	MetricName any
-	Target any
+	Target     any
 }
 
 type Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type Endpoint_DeployedModels_DedicatedResources_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
+	AcceleratorCount    any
+	AcceleratorType     any
+	GpuPartitionSize    any
+	MachineType         any
 	ReservationAffinity any
-	TpuTopology any
+	TpuTopology         any
 }
 
 type Endpoint_DeployedModels_DedicatedResources struct {
 	AutoscalingMetricSpecs any
-	MachineSpec any
-	MaxReplicaCount any
-	MinReplicaCount any
-	RequiredReplicaCount any
-	Spot any
+	MachineSpec            any
+	MaxReplicaCount        any
+	MinReplicaCount        any
+	RequiredReplicaCount   any
+	Spot                   any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Metadata struct {
 	FeatureAttributionsSchemaUri any
-	Inputs any
-	LatentSpaceSource any
-	Outputs any
+	Inputs                       any
+	LatentSpaceSource            any
+	Outputs                      any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSource struct {
@@ -92,19 +92,19 @@ type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourc
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource struct {
 	DataFormat any
-	GcsSource any
+	GcsSource  any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_Presets struct {
 	Modality any
-	Query any
+	Query    any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples struct {
-	ExampleGcsSource any
+	ExampleGcsSource            any
 	NearestNeighborSearchConfig any
-	NeighborCount any
-	Presets any
+	NeighborCount               any
+	Presets                     any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfig struct {
@@ -112,7 +112,7 @@ type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttri
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -122,14 +122,14 @@ type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttri
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig struct {
 	FeatureNoiseSigma any
-	NoiseSigma any
-	NoisySampleCount any
+	NoiseSigma        any
+	NoisySampleCount  any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution struct {
 	BlurBaselineConfig any
-	SmoothGradConfig any
-	StepCount any
+	SmoothGradConfig   any
+	StepCount          any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttribution struct {
@@ -137,16 +137,16 @@ type Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributio
 }
 
 type Endpoint_DeployedModels_ExplanationSpec_Parameters struct {
-	Examples any
+	Examples                       any
 	IntegratedGradientsAttribution any
-	OutputIndices any
-	SampledShapleyAttribution any
-	TopK any
-	XraiAttribution any
+	OutputIndices                  any
+	SampledShapleyAttribution      any
+	TopK                           any
+	XraiAttribution                any
 }
 
 type Endpoint_DeployedModels_ExplanationSpec struct {
-	Metadata any
+	Metadata   any
 	Parameters any
 }
 
@@ -155,9 +155,9 @@ type Endpoint_DeployedModels_FasterDeploymentConfig struct {
 }
 
 type Endpoint_DeployedModels_PrivateEndpoints struct {
-	ExplainHttpUri any
-	HealthHttpUri any
-	PredictHttpUri any
+	ExplainHttpUri    any
+	HealthHttpUri     any
+	PredictHttpUri    any
 	ServiceAttachment any
 }
 
@@ -171,37 +171,37 @@ type Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculation struct {
 
 type Endpoint_DeployedModels_SpeculativeDecodingSpec struct {
 	DraftModelSpeculation any
-	NgramSpeculation any
+	NgramSpeculation      any
 	SpeculativeTokenCount any
 }
 
 type Endpoint_DeployedModels_Status struct {
 	AvailableReplicaCount any
-	LastUpdateTime any
-	Message any
+	LastUpdateTime        any
+	Message               any
 }
 
 type Endpoint_DeployedModels struct {
-	AutomaticResources any
-	CheckpointId any
-	CreateTime any
-	DedicatedResources any
+	AutomaticResources      any
+	CheckpointId            any
+	CreateTime              any
+	DedicatedResources      any
 	DisableContainerLogging any
-	DisableExplanations any
-	DisplayName any
-	EnableAccessLogging any
-	ExplanationSpec any
-	FasterDeploymentConfig any
-	GdcConnectedModel any
-	Id any
-	Model any
-	ModelVersionId any
-	PrivateEndpoints any
-	ServiceAccount any
-	SharedResources any
+	DisableExplanations     any
+	DisplayName             any
+	EnableAccessLogging     any
+	ExplanationSpec         any
+	FasterDeploymentConfig  any
+	GdcConnectedModel       any
+	Id                      any
+	Model                   any
+	ModelVersionId          any
+	PrivateEndpoints        any
+	ServiceAccount          any
+	SharedResources         any
 	SpeculativeDecodingSpec any
-	Status any
-	SystemLabels any
+	Status                  any
+	SystemLabels            any
 }
 
 type Endpoint_EncryptionSpec struct {
@@ -239,12 +239,12 @@ type Endpoint_PredictRequestResponseLoggingConfig struct {
 }
 
 type Endpoint_PrivateServiceConnectConfig_PscAutomationConfigs struct {
-	ErrorMessage any
+	ErrorMessage   any
 	ForwardingRule any
-	IpAddress any
-	Network any
-	ProjectId any
-	State any
+	IpAddress      any
+	Network        any
+	ProjectId      any
+	State          any
 }
 
 type Endpoint_PrivateServiceConnectConfig struct {
@@ -259,386 +259,68 @@ type Endpoint_PrivateServiceConnectConfig struct {
 }
 
 var Endpoint_ClientConnectionConfigFields = ubx.FieldMap{
-		"InferenceTimeout": ubx.FieldSpec{WireName: "inference_timeout"},
-	}
-
-var Endpoint_DeployedModels_AutomaticResourcesFields = ubx.FieldMap{
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-	}
-
-var Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
-
-var Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var Endpoint_DeployedModels_DedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
-
-var Endpoint_DeployedModels_DedicatedResourcesFields = ubx.FieldMap{
-		"AutoscalingMetricSpecs": ubx.FieldSpec{
-			WireName: "autoscaling_metric_specs",
-			Kind: "list",
-			Fields: Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_DedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-		"RequiredReplicaCount": ubx.FieldSpec{WireName: "required_replica_count"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
-
-var Endpoint_DeployedModels_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpec_ParametersFields,
-		},
-	}
-
-var Endpoint_DeployedModels_FasterDeploymentConfigFields = ubx.FieldMap{
-		"FastTryoutEnabled": ubx.FieldSpec{WireName: "fast_tryout_enabled"},
-	}
-
-var Endpoint_DeployedModels_PrivateEndpointsFields = ubx.FieldMap{
-		"ExplainHttpUri": ubx.FieldSpec{WireName: "explain_http_uri"},
-		"HealthHttpUri": ubx.FieldSpec{WireName: "health_http_uri"},
-		"PredictHttpUri": ubx.FieldSpec{WireName: "predict_http_uri"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
-
-var Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields = ubx.FieldMap{
-		"DraftModel": ubx.FieldSpec{WireName: "draft_model"},
-	}
-
-var Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields = ubx.FieldMap{
-		"NgramSize": ubx.FieldSpec{WireName: "ngram_size"},
-	}
-
-var Endpoint_DeployedModels_SpeculativeDecodingSpecFields = ubx.FieldMap{
-		"DraftModelSpeculation": ubx.FieldSpec{
-			WireName: "draft_model_speculation",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields,
-		},
-		"NgramSpeculation": ubx.FieldSpec{
-			WireName: "ngram_speculation",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields,
-		},
-		"SpeculativeTokenCount": ubx.FieldSpec{WireName: "speculative_token_count"},
-	}
-
-var Endpoint_DeployedModels_StatusFields = ubx.FieldMap{
-		"AvailableReplicaCount": ubx.FieldSpec{WireName: "available_replica_count"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var Endpoint_DeployedModelsFields = ubx.FieldMap{
-		"AutomaticResources": ubx.FieldSpec{
-			WireName: "automatic_resources",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_AutomaticResourcesFields,
-		},
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DedicatedResources": ubx.FieldSpec{
-			WireName: "dedicated_resources",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_DedicatedResourcesFields,
-		},
-		"DisableContainerLogging": ubx.FieldSpec{WireName: "disable_container_logging"},
-		"DisableExplanations": ubx.FieldSpec{WireName: "disable_explanations"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EnableAccessLogging": ubx.FieldSpec{WireName: "enable_access_logging"},
-		"ExplanationSpec": ubx.FieldSpec{
-			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_ExplanationSpecFields,
-		},
-		"FasterDeploymentConfig": ubx.FieldSpec{
-			WireName: "faster_deployment_config",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_FasterDeploymentConfigFields,
-		},
-		"GdcConnectedModel": ubx.FieldSpec{WireName: "gdc_connected_model"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"ModelVersionId": ubx.FieldSpec{WireName: "model_version_id"},
-		"PrivateEndpoints": ubx.FieldSpec{
-			WireName: "private_endpoints",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_PrivateEndpointsFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SharedResources": ubx.FieldSpec{WireName: "shared_resources"},
-		"SpeculativeDecodingSpec": ubx.FieldSpec{
-			WireName: "speculative_decoding_spec",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_SpeculativeDecodingSpecFields,
-		},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: Endpoint_DeployedModels_StatusFields,
-		},
-		"SystemLabels": ubx.FieldSpec{WireName: "system_labels"},
-	}
+	"InferenceTimeout": ubx.FieldSpec{WireName: "inference_timeout"},
+}
 
 var Endpoint_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Endpoint_GdcConfigFields = ubx.FieldMap{
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields = ubx.FieldMap{
-		"EnableRag": ubx.FieldSpec{WireName: "enable_rag"},
-	}
+	"EnableRag": ubx.FieldSpec{WireName: "enable_rag"},
+}
 
 var Endpoint_GenAiAdvancedFeaturesConfigFields = ubx.FieldMap{
-		"RagConfig": ubx.FieldSpec{
-			WireName: "rag_config",
-			Kind: "object",
-			Fields: Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields,
-		},
-	}
+	"RagConfig": ubx.FieldSpec{
+		WireName: "rag_config",
+		Kind:     "object",
+		Fields:   Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields,
+	},
+}
 
 var Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var Endpoint_PredictRequestResponseLoggingConfigFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields,
+	},
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
+}
 
 var Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
+	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 var Endpoint_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
-		"PscAutomationConfigs": ubx.FieldSpec{
-			WireName: "psc_automation_configs",
-			Kind: "list",
-			Fields: Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
+	"ProjectAllowlist":            ubx.FieldSpec{WireName: "project_allowlist"},
+	"PscAutomationConfigs": ubx.FieldSpec{
+		WireName: "psc_automation_configs",
+		Kind:     "list",
+		Fields:   Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 type EndpointConfig struct {
 	// Configurations (e.g. inference timeout) that are applied on your endpoints.
 	ClientConnectionConfig any
-	// Output only. Timestamp when this Endpoint was created.
-	CreateTime any
-	// Output only. DNS of the dedicated endpoint. Will only be populated if dedicated_endpoint_enabled is true. Depending on the features enabled, uid might be a random number or a string. For example, if fast_tryout is enabled, uid will be fasttryout. Format: `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`.
-	DedicatedEndpointDns any
 	// If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon.
 	DedicatedEndpointEnabled any
-	// Output only. The models deployed in this Endpoint. To add or remove DeployedModels use EndpointService.DeployModel and EndpointService.UndeployModel respectively.
-	DeployedModels any
 	// The description of the Endpoint.
 	Description any
 	// Required. The display name of the Endpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -655,8 +337,6 @@ type EndpointConfig struct {
 	GenAiAdvancedFeaturesConfig any
 	// The labels with user-defined metadata to organize your Endpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
-	// Output only. Resource name of the Model Monitoring job associated with this Endpoint if monitoring is enabled by JobService.CreateModelDeploymentMonitoringJob. Format: `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}`
-	ModelDeploymentMonitoringJob any
 	// Identifier. The resource name of the Endpoint.
 	Name any
 	// Optional. The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the Endpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. Only one of the fields, network or enable_private_service_connect, can be set. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where `{project}` is a project number, as in `12345`, and `{network}` is network name.
@@ -665,14 +345,8 @@ type EndpointConfig struct {
 	PredictRequestResponseLoggingConfig any
 	// Represents configuration for private service connect.
 	PrivateServiceConnectConfig any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// A map from a DeployedModel's ID to the percentage of this Endpoint's traffic that should be forwarded to that DeployedModel. If a DeployedModel's ID is not listed in this map, then it receives no traffic. The traffic percentage values must add up to 100, or map must be empty if the Endpoint is to not accept any traffic at a moment.
 	TrafficSplit any
-	// Output only. Timestamp when this Endpoint was last updated.
-	UpdateTime any
 }
 
 type EndpointAttrs struct {
@@ -727,53 +401,42 @@ var Endpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientConnectionConfig": ubx.FieldSpec{
 			WireName: "client_connection_config",
-			Kind: "object",
-			Fields: Endpoint_ClientConnectionConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_ClientConnectionConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DedicatedEndpointDns": ubx.FieldSpec{WireName: "dedicated_endpoint_dns"},
-		"DedicatedEndpointEnabled": ubx.FieldSpec{WireName: "dedicated_endpoint_enabled"},
-		"DeployedModels": ubx.FieldSpec{
-			WireName: "deployed_models",
-			Kind: "list",
-			Fields: Endpoint_DeployedModelsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DedicatedEndpointEnabled":    ubx.FieldSpec{WireName: "dedicated_endpoint_enabled"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: Endpoint_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   Endpoint_EncryptionSpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GdcConfig": ubx.FieldSpec{
 			WireName: "gdc_config",
-			Kind: "object",
-			Fields: Endpoint_GdcConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_GdcConfigFields,
 		},
 		"GenAiAdvancedFeaturesConfig": ubx.FieldSpec{
 			WireName: "gen_ai_advanced_features_config",
-			Kind: "object",
-			Fields: Endpoint_GenAiAdvancedFeaturesConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_GenAiAdvancedFeaturesConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ModelDeploymentMonitoringJob": ubx.FieldSpec{WireName: "model_deployment_monitoring_job"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PredictRequestResponseLoggingConfig": ubx.FieldSpec{
 			WireName: "predict_request_response_logging_config",
-			Kind: "object",
-			Fields: Endpoint_PredictRequestResponseLoggingConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_PredictRequestResponseLoggingConfigFields,
 		},
 		"PrivateServiceConnectConfig": ubx.FieldSpec{
 			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: Endpoint_PrivateServiceConnectConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_PrivateServiceConnectConfigFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"TrafficSplit": ubx.FieldSpec{WireName: "traffic_split"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

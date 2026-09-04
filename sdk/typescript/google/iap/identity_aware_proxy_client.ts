@@ -4,10 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface IdentityAwareProxyClientConfig {
   /** Human-friendly name given to the OAuth client. */
   displayName?: string | Computed<string>;
-  /** Output only. Unique identifier of the OAuth client. */
-  name?: string | Computed<string>;
-  /** Output only. Client secret of the OAuth client. */
-  secret?: string | Computed<string>;
 }
 
 export interface IdentityAwareProxyClientAttrs {
@@ -23,7 +19,5 @@ export const IdentityAwareProxyClient: ResourceBinding<IdentityAwareProxyClientC
   wireType: "google_iap_identity_aware_proxy_client",
   fields: {
     displayName: "display_name",
-    name: "name",
-    secret: "secret",
   },
 };

@@ -758,8 +758,6 @@ class JobConfig:
     location: Any = None
     # Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
     name: Any = None
-    # Output only. Indicates whether the job can be paused.
-    pausable: Any = None
     # A descriptive representation of submitted pipeline as well as the executed form. This data is provided by the Dataflow service for ease of visualizing the pipeline and interpreting Dataflow provided metrics.
     pipeline_description: Any = None
     # The ID of the Google Cloud project that the job belongs to.
@@ -772,8 +770,6 @@ class JobConfig:
     requested_state: Any = None
     # Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation.
     runtime_updatable_params: Any = None
-    # Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
-    satisfies_pzi: Any = None
     # Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
     satisfies_pzs: Any = None
     # Resources used by the Dataflow Service to run the job.
@@ -881,7 +877,6 @@ Job = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "location": ubx.FieldSpec(wire_name="location"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pausable": ubx.FieldSpec(wire_name="pausable"),
         "pipeline_description": ubx.FieldSpec(
             wire_name="pipeline_description",
             kind="object",
@@ -896,7 +891,6 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_RuntimeUpdatableParamsFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
         "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_resources": ubx.FieldSpec(
             wire_name="service_resources",

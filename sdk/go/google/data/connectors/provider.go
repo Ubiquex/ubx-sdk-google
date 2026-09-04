@@ -4,7 +4,6 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ProviderConfig struct {
-	Name any
 }
 
 type ProviderAttrs struct {
@@ -22,7 +21,7 @@ type ProviderAttrs struct {
 	Labels any
 	// Output only. Flag to mark the version indicating the launch stage.
 	LaunchStage any
-	Name any
+	Name        any
 	// Output only. Updated time.
 	UpdateTime any
 	// Output only. Cloud storage location of icons etc consumed by UI.
@@ -31,7 +30,5 @@ type ProviderAttrs struct {
 
 var Provider = ubx.DataSourceBinding{
 	WireType: "google_connectors_provider",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

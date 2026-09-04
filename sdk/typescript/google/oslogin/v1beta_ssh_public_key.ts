@@ -4,12 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1betaSshPublicKeyConfig {
   /** An expiration time in microseconds since epoch. */
   expirationTimeUsec?: string | Computed<string>;
-  /** Output only. The SHA-256 fingerprint of the SSH public key. */
-  fingerprint?: string | Computed<string>;
   /** Required. Public key text in SSH format, defined by [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6. */
   key?: string | Computed<string>;
-  /** Output only. The canonical resource name. */
-  name?: string | Computed<string>;
 }
 
 export interface V1betaSshPublicKeyAttrs {
@@ -27,8 +23,6 @@ export const V1betaSshPublicKey: ResourceBinding<V1betaSshPublicKeyConfig, V1bet
   wireType: "google_oslogin_v1beta_ssh_public_key",
   fields: {
     expirationTimeUsec: "expiration_time_usec",
-    fingerprint: "fingerprint",
     key: "key",
-    name: "name",
   },
 };

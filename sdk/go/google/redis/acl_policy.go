@@ -4,60 +4,32 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision any
+	AclPolicyRevision       any
 	AclPolicyRevisionNumber any
-	ErrorMessage any
-	State any
+	ErrorMessage            any
+	State                   any
 }
 
 type AclPolicy_ClusterAclPolicyAttachments struct {
 	AclPolicyRevisionStatuses any
-	Cluster any
+	Cluster                   any
 }
 
 type AclPolicy_Rules struct {
-	Rule any
+	Rule     any
 	Username any
 }
 
-var AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields = ubx.FieldMap{
-		"AclPolicyRevision": ubx.FieldSpec{WireName: "acl_policy_revision"},
-		"AclPolicyRevisionNumber": ubx.FieldSpec{WireName: "acl_policy_revision_number"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var AclPolicy_ClusterAclPolicyAttachmentsFields = ubx.FieldMap{
-		"AclPolicyRevisionStatuses": ubx.FieldSpec{
-			WireName: "acl_policy_revision_statuses",
-			Kind: "list",
-			Fields: AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields,
-		},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-	}
-
 var AclPolicy_RulesFields = ubx.FieldMap{
-		"Rule": ubx.FieldSpec{WireName: "rule"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Rule":     ubx.FieldSpec{WireName: "rule"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 type AclPolicyConfig struct {
-	// Output only. The ACL policy attachment status for each attached cluster.
-	ClusterAclPolicyAttachments any
-	// Output only. The timestamp that the ACL policy was created.
-	CreateTime any
-	// Output only. Etag for the ACL policy.
-	Etag any
 	// Identifier. Full resource path of the ACL policy.
 	Name any
 	// Required. The ACL rules within the ACL policy.
 	Rules any
-	// Output only. The state of the ACL policy.
-	State any
-	// Output only. The timestamp that the ACL policy was last updated.
-	UpdateTime any
-	// Output only. Deprecated: Used in drift resolution.
-	Version any
 }
 
 type AclPolicyAttrs struct {
@@ -82,21 +54,11 @@ type AclPolicyAttrs struct {
 var AclPolicy = ubx.ResourceBinding{
 	WireType: "google_redis_acl_policy",
 	Fields: ubx.FieldMap{
-		"ClusterAclPolicyAttachments": ubx.FieldSpec{
-			WireName: "cluster_acl_policy_attachments",
-			Kind: "list",
-			Fields: AclPolicy_ClusterAclPolicyAttachmentsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: AclPolicy_RulesFields,
+			Kind:     "list",
+			Fields:   AclPolicy_RulesFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

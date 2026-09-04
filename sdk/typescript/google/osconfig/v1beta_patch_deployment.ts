@@ -380,16 +380,12 @@ const V1betaPatchDeployment_RolloutFields: FieldMap = {
 };
 
 export interface V1betaPatchDeploymentConfig {
-  /** Output only. Time the patch deployment was created. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the patch deployment. Length of the description is limited to 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Duration of the patch. After the duration ends, the patch times out. */
   duration?: string | Computed<string>;
   /** A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones. */
   instanceFilter?: V1betaPatchDeployment_InstanceFilter | Computed<V1betaPatchDeployment_InstanceFilter>;
-  /** Output only. The last time a patch job was started by this deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. */
-  lastExecuteTime?: string | Computed<string>;
   /** Unique name for the patch deployment resource in a project. The patch deployment name is in the form: `projects/{project_id}/patchDeployments/{patch_deployment_id}`. This field is ignored when you create a new patch deployment. */
   name?: string | Computed<string>;
   /** Sets the time for a one time patch deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. */
@@ -400,10 +396,6 @@ export interface V1betaPatchDeploymentConfig {
   recurringSchedule?: V1betaPatchDeployment_RecurringSchedule | Computed<V1betaPatchDeployment_RecurringSchedule>;
   /** Patch rollout configuration specifications. Contains details on the concurrency control when applying patch(es) to all targeted VMs. */
   rollout?: V1betaPatchDeployment_Rollout | Computed<V1betaPatchDeployment_Rollout>;
-  /** Output only. Current state of the patch deployment. */
-  state?: string | Computed<string>;
-  /** Output only. Time the patch deployment was last updated. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaPatchDeploymentAttrs {
@@ -436,7 +428,6 @@ export interface V1betaPatchDeploymentAttrs {
 export const V1betaPatchDeployment: ResourceBinding<V1betaPatchDeploymentConfig, V1betaPatchDeploymentAttrs> = {
   wireType: "google_osconfig_v1beta_patch_deployment",
   fields: {
-    createTime: "create_time",
     description: "description",
     duration: "duration",
     instanceFilter: {
@@ -444,7 +435,6 @@ export const V1betaPatchDeployment: ResourceBinding<V1betaPatchDeploymentConfig,
       kind: "object",
       fields: V1betaPatchDeployment_InstanceFilterFields,
     },
-    lastExecuteTime: "last_execute_time",
     name: "name",
     oneTimeSchedule: {
       wireName: "one_time_schedule",
@@ -466,7 +456,5 @@ export const V1betaPatchDeployment: ResourceBinding<V1betaPatchDeploymentConfig,
       kind: "object",
       fields: V1betaPatchDeployment_RolloutFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

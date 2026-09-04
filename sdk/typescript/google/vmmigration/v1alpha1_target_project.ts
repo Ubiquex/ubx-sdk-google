@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha1TargetProjectConfig {
-  /** Output only. The time this target project resource was created (not related to when the Compute Engine project it points to was created). */
-  createTime?: string | Computed<string>;
   /** The target project's description. */
   description?: string | Computed<string>;
-  /** Output only. The name of the target project. */
-  name?: string | Computed<string>;
   /** Required. The target project ID (number) or project name. */
   project?: string | Computed<string>;
-  /** Output only. The last time the target project resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1TargetProjectAttrs {
@@ -30,10 +24,7 @@ export interface V1alpha1TargetProjectAttrs {
 export const V1alpha1TargetProject: ResourceBinding<V1alpha1TargetProjectConfig, V1alpha1TargetProjectAttrs> = {
   wireType: "google_vmmigration_v1alpha1_target_project",
   fields: {
-    createTime: "create_time",
     description: "description",
-    name: "name",
     project: "project",
-    updateTime: "update_time",
   },
 };

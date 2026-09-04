@@ -2,14 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CustomConnectorConfig {
-  /** Output only. Active connector versions. */
-  activeConnectorVersions?: string[] | Computed<string[]>;
-  /** Output only. All connector versions. */
-  allConnectorVersions?: string[] | Computed<string[]>;
-  /** Output only. All marketplace versions. */
-  allMarketplaceVersions?: string[] | Computed<string[]>;
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Required. Type of the custom connector. */
   customConnectorType?: string | Computed<string>;
   /** Optional. Description of the resource. */
@@ -22,10 +14,6 @@ export interface CustomConnectorConfig {
   logo?: string | Computed<string>;
   /** Identifier. Resource name of the CustomConnector. Format: projects/{project}/locations/{location}/customConnectors/{connector} */
   name?: string | Computed<string>;
-  /** Output only. Published marketplace versions. */
-  publishedMarketplaceVersions?: string[] | Computed<string[]>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomConnectorAttrs {
@@ -58,17 +46,11 @@ export interface CustomConnectorAttrs {
 export const CustomConnector: ResourceBinding<CustomConnectorConfig, CustomConnectorAttrs> = {
   wireType: "google_connectors_custom_connector",
   fields: {
-    activeConnectorVersions: "active_connector_versions",
-    allConnectorVersions: "all_connector_versions",
-    allMarketplaceVersions: "all_marketplace_versions",
-    createTime: "create_time",
     customConnectorType: "custom_connector_type",
     description: "description",
     displayName: "display_name",
     labels: "labels",
     logo: "logo",
     name: "name",
-    publishedMarketplaceVersions: "published_marketplace_versions",
-    updateTime: "update_time",
   },
 };

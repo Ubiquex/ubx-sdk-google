@@ -19,20 +19,12 @@ const Bucket_CmekSettingsFields: FieldMap = {
 export interface BucketConfig {
   /** Settings for configuring CMEK for a bucket. */
   cmekSettings?: Bucket_CmekSettings | Computed<Bucket_CmekSettings>;
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
-  /** Output only. Delete timestamp. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Description of the bucket. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
   displayName?: string | Computed<string>;
   /** Identifier. Name of the bucket. The format is: projects/[PROJECT_ID]/locations/[LOCATION]/buckets/[BUCKET_ID] */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the bucket in soft-deleted state is purged. */
-  purgeTime?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BucketAttrs {
@@ -62,12 +54,8 @@ export const Bucket: ResourceBinding<BucketConfig, BucketAttrs> = {
       kind: "object",
       fields: Bucket_CmekSettingsFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     description: "description",
     displayName: "display_name",
     name: "name",
-    purgeTime: "purge_time",
-    updateTime: "update_time",
   },
 };

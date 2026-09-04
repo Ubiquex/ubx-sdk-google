@@ -11,8 +11,6 @@ const MulticastConsumerAssociation_StateFields: FieldMap = {
 };
 
 export interface MulticastConsumerAssociationConfig {
-  /** Output only. [Output only] The timestamp when the multicast consumer association was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An optional text description of the multicast consumer association. */
   description?: string | Computed<string>;
   /** Optional. Labels as key-value pairs */
@@ -23,16 +21,8 @@ export interface MulticastConsumerAssociationConfig {
   name?: string | Computed<string>;
   /** Required. The resource name of the multicast consumer VPC network. Use following format: `projects/{project}/locations/global/networks/{network}`. */
   network?: string | Computed<string>;
-  /** Output only. [Output only] A Compute Engine (placement policy)[https://cloud.google.com/compute/docs/instances/placement-policies-overview] that can be used to place virtual machine (VM) instances as multicast consumers close to the multicast infrastructure created for this domain, on a best effort basis. */
-  placementPolicy?: string | Computed<string>;
-  /** Output only. [Deprecated] The resource state of the multicast consumer association. Use the state field instead. */
-  resourceState?: string | Computed<string>;
   /** The multicast resource's state. */
   state?: MulticastConsumerAssociation_State | Computed<MulticastConsumerAssociation_State>;
-  /** Output only. [Output only] The Google-generated UUID for the resource. This value is unique across all multicast consumer association resources. If a consumer association is deleted and another with the same name is created, the new consumer association is assigned a different unique_id. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. [Output only] The timestamp when the Multicast Consumer Association was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MulticastConsumerAssociationAttrs {
@@ -63,20 +53,15 @@ export interface MulticastConsumerAssociationAttrs {
 export const MulticastConsumerAssociation: ResourceBinding<MulticastConsumerAssociationConfig, MulticastConsumerAssociationAttrs> = {
   wireType: "google_networkservices_multicast_consumer_association",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     multicastDomainActivation: "multicast_domain_activation",
     name: "name",
     network: "network",
-    placementPolicy: "placement_policy",
-    resourceState: "resource_state",
     state: {
       wireName: "state",
       kind: "object",
       fields: MulticastConsumerAssociation_StateFields,
     },
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

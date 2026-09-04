@@ -244,8 +244,6 @@ export interface GuardrailConfig {
   codeCallback?: Guardrail_CodeCallback | Computed<Guardrail_CodeCallback>;
   /** Guardrail that bans certain content from being used in the conversation. */
   contentFilter?: Guardrail_ContentFilter | Computed<Guardrail_ContentFilter>;
-  /** Output only. Timestamp when the guardrail was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the guardrail. */
   description?: string | Computed<string>;
   /** Required. Display name of the guardrail. */
@@ -262,8 +260,6 @@ export interface GuardrailConfig {
   modelSafety?: Guardrail_ModelSafety | Computed<Guardrail_ModelSafety>;
   /** Identifier. The unique identifier of the guardrail. Format: `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the guardrail was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GuardrailAttrs {
@@ -313,7 +309,6 @@ export const Guardrail: ResourceBinding<GuardrailConfig, GuardrailAttrs> = {
       kind: "object",
       fields: Guardrail_ContentFilterFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     enabled: "enabled",
@@ -334,6 +329,5 @@ export const Guardrail: ResourceBinding<GuardrailConfig, GuardrailAttrs> = {
       fields: Guardrail_ModelSafetyFields,
     },
     name: "name",
-    updateTime: "update_time",
   },
 };

@@ -27,28 +27,12 @@ const BetaRegionInstantSnapshotGroup_ResourceStatusFields: FieldMap = {
 };
 
 export interface BetaRegionInstantSnapshotGroupConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** Optional. An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#instantSnapshotGroup for InstantSnapshotGroup resources. */
-  kind?: string | Computed<string>;
   /** Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   resourceStatus?: BetaRegionInstantSnapshotGroup_ResourceStatus | Computed<BetaRegionInstantSnapshotGroup_ResourceStatus>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
-  selfLinkWithId?: string | Computed<string>;
   sourceConsistencyGroup?: string | Computed<string>;
-  /** Output only. [Output Only] */
-  status?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the zone where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaRegionInstantSnapshotGroupAttrs {
@@ -79,21 +63,13 @@ export interface BetaRegionInstantSnapshotGroupAttrs {
 export const BetaRegionInstantSnapshotGroup: ResourceBinding<BetaRegionInstantSnapshotGroupConfig, BetaRegionInstantSnapshotGroupAttrs> = {
   wireType: "google_compute_beta_region_instant_snapshot_group",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
     resourceStatus: {
       wireName: "resource_status",
       kind: "object",
       fields: BetaRegionInstantSnapshotGroup_ResourceStatusFields,
     },
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     sourceConsistencyGroup: "source_consistency_group",
-    status: "status",
-    zone: "zone",
   },
 };

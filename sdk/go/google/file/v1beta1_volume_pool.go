@@ -4,16 +4,16 @@ package file
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1VolumePool_InstanceTemplate_Networks_PscConfig struct {
-	EndpointProject any
+	EndpointProject    any
 	RequestedIpAddress any
 }
 
 type V1beta1VolumePool_InstanceTemplate_Networks struct {
-	ConnectMode any
-	IpAddresses any
-	Modes any
-	Network any
-	PscConfig any
+	ConnectMode     any
+	IpAddresses     any
+	Modes           any
+	Network         any
+	PscConfig       any
 	ReservedIpRange any
 }
 
@@ -54,66 +54,64 @@ type V1beta1VolumePool_InstanceTemplate struct {
 }
 
 var V1beta1VolumePool_InstanceTemplate_Networks_PscConfigFields = ubx.FieldMap{
-		"EndpointProject": ubx.FieldSpec{WireName: "endpoint_project"},
-		"RequestedIpAddress": ubx.FieldSpec{WireName: "requested_ip_address"},
-	}
+	"EndpointProject":    ubx.FieldSpec{WireName: "endpoint_project"},
+	"RequestedIpAddress": ubx.FieldSpec{WireName: "requested_ip_address"},
+}
 
 var V1beta1VolumePool_InstanceTemplate_NetworksFields = ubx.FieldMap{
-		"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
-		"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
-		"Modes": ubx.FieldSpec{WireName: "modes"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PscConfig": ubx.FieldSpec{
-			WireName: "psc_config",
-			Kind: "object",
-			Fields: V1beta1VolumePool_InstanceTemplate_Networks_PscConfigFields,
-		},
-		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
-	}
+	"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
+	"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
+	"Modes":       ubx.FieldSpec{WireName: "modes"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"PscConfig": ubx.FieldSpec{
+		WireName: "psc_config",
+		Kind:     "object",
+		Fields:   V1beta1VolumePool_InstanceTemplate_Networks_PscConfigFields,
+	},
+	"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
+}
 
 var V1beta1VolumePool_InstanceTemplate_PerformanceConfig_FixedIopsFields = ubx.FieldMap{
-		"MaxIops": ubx.FieldSpec{WireName: "max_iops"},
-	}
+	"MaxIops": ubx.FieldSpec{WireName: "max_iops"},
+}
 
 var V1beta1VolumePool_InstanceTemplate_PerformanceConfig_IopsPerTbFields = ubx.FieldMap{
-		"MaxIopsPerTb": ubx.FieldSpec{WireName: "max_iops_per_tb"},
-	}
+	"MaxIopsPerTb": ubx.FieldSpec{WireName: "max_iops_per_tb"},
+}
 
 var V1beta1VolumePool_InstanceTemplate_PerformanceConfigFields = ubx.FieldMap{
-		"FixedIops": ubx.FieldSpec{
-			WireName: "fixed_iops",
-			Kind: "object",
-			Fields: V1beta1VolumePool_InstanceTemplate_PerformanceConfig_FixedIopsFields,
-		},
-		"IopsPerTb": ubx.FieldSpec{
-			WireName: "iops_per_tb",
-			Kind: "object",
-			Fields: V1beta1VolumePool_InstanceTemplate_PerformanceConfig_IopsPerTbFields,
-		},
-	}
+	"FixedIops": ubx.FieldSpec{
+		WireName: "fixed_iops",
+		Kind:     "object",
+		Fields:   V1beta1VolumePool_InstanceTemplate_PerformanceConfig_FixedIopsFields,
+	},
+	"IopsPerTb": ubx.FieldSpec{
+		WireName: "iops_per_tb",
+		Kind:     "object",
+		Fields:   V1beta1VolumePool_InstanceTemplate_PerformanceConfig_IopsPerTbFields,
+	},
+}
 
 var V1beta1VolumePool_InstanceTemplateFields = ubx.FieldMap{
-		"BackendType": ubx.FieldSpec{WireName: "backend_type"},
-		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Networks": ubx.FieldSpec{
-			WireName: "networks",
-			Kind: "list",
-			Fields: V1beta1VolumePool_InstanceTemplate_NetworksFields,
-		},
-		"PerformanceConfig": ubx.FieldSpec{
-			WireName: "performance_config",
-			Kind: "object",
-			Fields: V1beta1VolumePool_InstanceTemplate_PerformanceConfigFields,
-		},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"RequestOverrides": ubx.FieldSpec{WireName: "request_overrides"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-	}
+	"BackendType": ubx.FieldSpec{WireName: "backend_type"},
+	"CapacityGb":  ubx.FieldSpec{WireName: "capacity_gb"},
+	"Labels":      ubx.FieldSpec{WireName: "labels"},
+	"Networks": ubx.FieldSpec{
+		WireName: "networks",
+		Kind:     "list",
+		Fields:   V1beta1VolumePool_InstanceTemplate_NetworksFields,
+	},
+	"PerformanceConfig": ubx.FieldSpec{
+		WireName: "performance_config",
+		Kind:     "object",
+		Fields:   V1beta1VolumePool_InstanceTemplate_PerformanceConfigFields,
+	},
+	"Protocol":         ubx.FieldSpec{WireName: "protocol"},
+	"RequestOverrides": ubx.FieldSpec{WireName: "request_overrides"},
+	"Tier":             ubx.FieldSpec{WireName: "tier"},
+}
 
 type V1beta1VolumePoolConfig struct {
-	// Output only. The time when the volume pool was created.
-	CreateTime any
 	// Optional. A description of the volume pool with 2048 characters or less.
 	Description any
 	// Optional. The page size to use when listing instances.
@@ -146,10 +144,6 @@ type V1beta1VolumePoolConfig struct {
 	NegbaInstanceRatio any
 	// Optional. The maximum number of operations to poll in a single reconciliation run.
 	OperationPollLimit any
-	// Output only. The volume pool state.
-	State any
-	// Output only. Unique ID of the resource, as defined by CCFE.
-	UniqueId any
 	// Optional. The number of volumes to create in a single batch.
 	VolumeBatchSize any
 	// Optional. Volume size in MiB.
@@ -204,30 +198,27 @@ type V1beta1VolumePoolAttrs struct {
 var V1beta1VolumePool = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_volume_pool",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"InstanceListPageSize": ubx.FieldSpec{WireName: "instance_list_page_size"},
-		"InstanceNamePrefix": ubx.FieldSpec{WireName: "instance_name_prefix"},
+		"InstanceNamePrefix":   ubx.FieldSpec{WireName: "instance_name_prefix"},
 		"InstanceTemplate": ubx.FieldSpec{
 			WireName: "instance_template",
-			Kind: "object",
-			Fields: V1beta1VolumePool_InstanceTemplateFields,
+			Kind:     "object",
+			Fields:   V1beta1VolumePool_InstanceTemplateFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MaxAcquireCandidates": ubx.FieldSpec{WireName: "max_acquire_candidates"},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MaxPendingInstanceCreations": ubx.FieldSpec{WireName: "max_pending_instance_creations"},
+		"Labels":                               ubx.FieldSpec{WireName: "labels"},
+		"MaxAcquireCandidates":                 ubx.FieldSpec{WireName: "max_acquire_candidates"},
+		"MaxInstances":                         ubx.FieldSpec{WireName: "max_instances"},
+		"MaxPendingInstanceCreations":          ubx.FieldSpec{WireName: "max_pending_instance_creations"},
 		"MaxPendingVolumeCreationsPerInstance": ubx.FieldSpec{WireName: "max_pending_volume_creations_per_instance"},
 		"MaxPendingVolumeDeletionsPerInstance": ubx.FieldSpec{WireName: "max_pending_volume_deletions_per_instance"},
-		"MaxVolumesPerInstance": ubx.FieldSpec{WireName: "max_volumes_per_instance"},
-		"MinAvailableVolumes": ubx.FieldSpec{WireName: "min_available_volumes"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NegbaInstanceRatio": ubx.FieldSpec{WireName: "negba_instance_ratio"},
-		"OperationPollLimit": ubx.FieldSpec{WireName: "operation_poll_limit"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"VolumeBatchSize": ubx.FieldSpec{WireName: "volume_batch_size"},
-		"VolumeSizeMb": ubx.FieldSpec{WireName: "volume_size_mb"},
+		"MaxVolumesPerInstance":                ubx.FieldSpec{WireName: "max_volumes_per_instance"},
+		"MinAvailableVolumes":                  ubx.FieldSpec{WireName: "min_available_volumes"},
+		"MinInstances":                         ubx.FieldSpec{WireName: "min_instances"},
+		"Name":                                 ubx.FieldSpec{WireName: "name"},
+		"NegbaInstanceRatio":                   ubx.FieldSpec{WireName: "negba_instance_ratio"},
+		"OperationPollLimit":                   ubx.FieldSpec{WireName: "operation_poll_limit"},
+		"VolumeBatchSize":                      ubx.FieldSpec{WireName: "volume_batch_size"},
+		"VolumeSizeMb":                         ubx.FieldSpec{WireName: "volume_size_mb"},
 	},
 }

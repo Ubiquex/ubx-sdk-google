@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GatewayAdvertisedRouteConfig:
-    # Output only. The time the gateway advertised route was created.
-    create_time: Any = None
     # An optional description of the gateway advertised route.
     description: Any = None
     # Immutable. This route's advertised IP address range. Must be a valid CIDR-formatted prefix. If an IP address is provided without a subnet mask, it is interpreted as, for IPv4, a `/32` singular IP address range, and, for IPv6, `/128`.
@@ -22,12 +20,6 @@ class GatewayAdvertisedRouteConfig:
     priority: Any = None
     # Optional. The recipient of this advertised route.
     recipient: Any = None
-    # Output only. The current lifecycle state of this gateway advertised route.
-    state: Any = None
-    # Output only. The Google-generated UUID for the gateway advertised route. This value is unique across all gateway advertised route resources. If a gateway advertised route is deleted and another with the same name is created, the new route is assigned a different `unique_id`.
-    unique_id: Any = None
-    # Output only. The time the gateway advertised route was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class GatewayAdvertisedRouteAttrs:
@@ -55,15 +47,11 @@ class GatewayAdvertisedRouteAttrs:
 GatewayAdvertisedRoute = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_gateway_advertised_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "ip_range": ubx.FieldSpec(wire_name="ip_range"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "recipient": ubx.FieldSpec(wire_name="recipient"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

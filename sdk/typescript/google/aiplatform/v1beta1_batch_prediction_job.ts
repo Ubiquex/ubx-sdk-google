@@ -1145,8 +1145,6 @@ const V1beta1BatchPredictionJob_UnmanagedContainerModelFields: FieldMap = {
 export interface V1beta1BatchPredictionJobConfig {
   /** Success and error statistics of processing multiple entities (for example, DataItems or structured data rows) in batch. */
   completionStats?: V1beta1BatchPredictionJob_CompletionStats | Computed<V1beta1BatchPredictionJob_CompletionStats>;
-  /** Output only. Time when the BatchPredictionJob was created. */
-  createTime?: string | Computed<string>;
   /** A description of resources that are used for performing batch operations, are dedicated to a Model, and need manual configuration. */
   dedicatedResources?: V1beta1BatchPredictionJob_DedicatedResources | Computed<V1beta1BatchPredictionJob_DedicatedResources>;
   /** For custom-trained Models and AutoML Tabular Models, the container of the DeployedModel instances will send `stderr` and `stdout` streams to Cloud Logging by default. Please note that the logs incur cost, which are subject to [Cloud Logging pricing](https://cloud.google.com/logging/pricing). User can disable container logging by setting this flag to true. */
@@ -1155,8 +1153,6 @@ export interface V1beta1BatchPredictionJobConfig {
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1BatchPredictionJob_EncryptionSpec | Computed<V1beta1BatchPredictionJob_EncryptionSpec>;
-  /** Output only. Time when the BatchPredictionJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`. */
-  endTime?: string | Computed<string>;
   /** For Bring-Your-Own-Endpoint (BYOE), the name of the Endpoint resource that produces the predictions via this job, must share the same ancestor Location. Exactly one of model, unmanaged_container_model, or endpoint must be set. Example: `projects/193595526740/locations/us-central1/endpoints/4203439000301600768` */
   endpoint?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -1183,32 +1179,16 @@ export interface V1beta1BatchPredictionJobConfig {
   modelMonitoringStatus?: V1beta1BatchPredictionJob_Error | Computed<V1beta1BatchPredictionJob_Error>;
   /** The parameters that govern the predictions. The schema of the parameters may be specified via the Model's PredictSchemata's parameters_schema_uri. */
   modelParameters?: unknown | Computed<unknown>;
-  /** Output only. The version ID of the Model that produces the predictions via this job. */
-  modelVersionId?: string | Computed<string>;
-  /** Output only. Resource name of the BatchPredictionJob. */
-  name?: string | Computed<string>;
   /** Configures the output of BatchPredictionJob. See Model.supported_output_storage_formats for supported output formats, and how predictions are expressed via any of them. */
   outputConfig?: V1beta1BatchPredictionJob_OutputConfig | Computed<V1beta1BatchPredictionJob_OutputConfig>;
   /** Further describes this job's output. Supplements output_config. */
   outputInfo?: V1beta1BatchPredictionJob_OutputInfo | Computed<V1beta1BatchPredictionJob_OutputInfo>;
-  /** Output only. Partial failures encountered. For example, single files that can't be read. This field never exceeds 20 entries. Status details fields contain standard Google Cloud error details. */
-  partialFailures?: V1beta1BatchPredictionJob_Error[] | Computed<V1beta1BatchPredictionJob_Error[]>;
   /** Statistics information about resource consumption. */
   resourcesConsumed?: V1beta1BatchPredictionJob_ResourcesConsumed | Computed<V1beta1BatchPredictionJob_ResourcesConsumed>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The service account that the DeployedModel's container runs as. If not specified, a system generated one will be used, which has minimal permissions and the custom container, if used, may not have enough permission to access other Google Cloud resources. Users deploying the Model must have the `iam.serviceAccounts.actAs` permission on this service account. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Time when the BatchPredictionJob for the first time entered the `JOB_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
   /** Contains model information necessary to perform batch prediction without requiring a full model import. */
   unmanagedContainerModel?: V1beta1BatchPredictionJob_UnmanagedContainerModel | Computed<V1beta1BatchPredictionJob_UnmanagedContainerModel>;
-  /** Output only. Time when the BatchPredictionJob was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1BatchPredictionJobAttrs {
@@ -1288,7 +1268,6 @@ export const V1beta1BatchPredictionJob: ResourceBinding<V1beta1BatchPredictionJo
       kind: "object",
       fields: V1beta1BatchPredictionJob_CompletionStatsFields,
     },
-    createTime: "create_time",
     dedicatedResources: {
       wireName: "dedicated_resources",
       kind: "object",
@@ -1301,7 +1280,6 @@ export const V1beta1BatchPredictionJob: ResourceBinding<V1beta1BatchPredictionJo
       kind: "object",
       fields: V1beta1BatchPredictionJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     endpoint: "endpoint",
     error: {
       wireName: "error",
@@ -1347,8 +1325,6 @@ export const V1beta1BatchPredictionJob: ResourceBinding<V1beta1BatchPredictionJo
       fields: V1beta1BatchPredictionJob_ErrorFields,
     },
     modelParameters: "model_parameters",
-    modelVersionId: "model_version_id",
-    name: "name",
     outputConfig: {
       wireName: "output_config",
       kind: "object",
@@ -1359,26 +1335,16 @@ export const V1beta1BatchPredictionJob: ResourceBinding<V1beta1BatchPredictionJo
       kind: "object",
       fields: V1beta1BatchPredictionJob_OutputInfoFields,
     },
-    partialFailures: {
-      wireName: "partial_failures",
-      kind: "list",
-      fields: V1beta1BatchPredictionJob_ErrorFields,
-    },
     resourcesConsumed: {
       wireName: "resources_consumed",
       kind: "object",
       fields: V1beta1BatchPredictionJob_ResourcesConsumedFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     serviceAccount: "service_account",
-    startTime: "start_time",
-    state: "state",
     unmanagedContainerModel: {
       wireName: "unmanaged_container_model",
       kind: "object",
       fields: V1beta1BatchPredictionJob_UnmanagedContainerModelFields,
     },
-    updateTime: "update_time",
   },
 };

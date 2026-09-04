@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Endpoint_Interfaces struct {
 	ProtocolBinding any
-	Url any
+	Url             any
 }
 
 type EndpointConfig struct {
@@ -25,7 +25,7 @@ type EndpointAttrs struct {
 	EndpointId any
 	// Required. The connection details for the Endpoint.
 	Interfaces any
-	Name any
+	Name       any
 	// Output only. Update time.
 	UpdateTime any
 }

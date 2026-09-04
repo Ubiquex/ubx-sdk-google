@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ProviderConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ProviderAttrs:
@@ -35,6 +35,5 @@ class ProviderAttrs:
 Provider = ubx.DataSourceBinding(
     wire_type="google_connectors_provider",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -211,20 +211,10 @@ _OrgPolicyViolationsPreview_ResourceCountsFields = {
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreviewConfig:
-    # Output only. Time when this `OrgPolicyViolationsPreview` was created.
-    create_time: Any = None
-    # Output only. The names of the constraints against which all `OrgPolicyViolations` were evaluated. If `OrgPolicyOverlay` only contains `PolicyOverlay` then it contains the name of the configured custom constraint, applicable to the specified policies. Otherwise it contains the name of the constraint specified in `CustomConstraintOverlay`. Format: `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms`
-    custom_constraints: Any = None
-    # Output only. The resource name of the `OrgPolicyViolationsPreview`. It has the following format: `organizations/{organization}/locations/{location}/orgPolicyViolationsPreviews/{orgPolicyViolationsPreview}` Example: `organizations/my-example-org/locations/global/orgPolicyViolationsPreviews/506a5f7f`
-    name: Any = None
     # The proposed changes to OrgPolicy.
     overlay: Any = None
     # A summary of the state of all resources scanned for compliance with the changed OrgPolicy.
     resource_counts: Any = None
-    # Output only. The state of the `OrgPolicyViolationsPreview`.
-    state: Any = None
-    # Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints.
-    violations_count: Any = None
 
 @dataclasses.dataclass
 class OrgPolicyViolationsPreviewAttrs:
@@ -246,9 +236,6 @@ class OrgPolicyViolationsPreviewAttrs:
 OrgPolicyViolationsPreview = ubx.ResourceBinding(
     wire_type="google_policysimulator_org_policy_violations_preview",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "custom_constraints": ubx.FieldSpec(wire_name="custom_constraints"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "overlay": ubx.FieldSpec(
             wire_name="overlay",
             kind="object",
@@ -259,7 +246,5 @@ OrgPolicyViolationsPreview = ubx.ResourceBinding(
             kind="object",
             fields=_OrgPolicyViolationsPreview_ResourceCountsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "violations_count": ubx.FieldSpec(wire_name="violations_count"),
     },
 )

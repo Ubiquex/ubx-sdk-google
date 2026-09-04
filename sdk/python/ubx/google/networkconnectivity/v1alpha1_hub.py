@@ -16,12 +16,6 @@ class V1alpha1HubConfig:
     labels: Any = None
     # Immutable. The name of a Hub resource.
     name: Any = None
-    # Output only. A list of the URIs of all attached spokes. This field is deprecated and will not be included in future API versions. Call ListSpokes on each region instead.
-    spokes: Any = None
-    # Output only. The current lifecycle state of this Hub.
-    state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all Hub resources. If a Hub resource is deleted and another with the same name is created, it gets a different unique_id.
-    unique_id: Any = None
     # Time when the Hub was updated.
     update_time: Any = None
 
@@ -51,9 +45,6 @@ V1alpha1Hub = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "spokes": ubx.FieldSpec(wire_name="spokes"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
         "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -19,9 +19,9 @@ type V1betaCluster_AutomatedBackupPolicy_TimeBasedRetention struct {
 }
 
 type V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimes struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
@@ -150,19 +150,19 @@ type V1betaCluster_MaintenanceSchedule struct {
 }
 
 type V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Time any
+	Time      any
 }
 
 type V1betaCluster_MaintenanceUpdatePolicy_MaintenanceWindows struct {
-	Day any
+	Day       any
 	StartTime any
 }
 
@@ -225,224 +225,224 @@ type V1betaCluster_TrialMetadata struct {
 }
 
 var V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1betaCluster_AutomatedBackupPolicy_QuantityBasedRetentionFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+}
 
 var V1betaCluster_AutomatedBackupPolicy_TimeBasedRetentionFields = ubx.FieldMap{
-		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-	}
+	"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
+}
 
 var V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var V1betaCluster_AutomatedBackupPolicy_WeeklyScheduleFields = ubx.FieldMap{
-		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-		"StartTimes": ubx.FieldSpec{
-			WireName: "start_times",
-			Kind: "list",
-			Fields: V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
-		},
-	}
+	"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+	"StartTimes": ubx.FieldSpec{
+		WireName: "start_times",
+		Kind:     "list",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
+	},
+}
 
 var V1betaCluster_AutomatedBackupPolicyFields = ubx.FieldMap{
-		"BackupWindow": ubx.FieldSpec{WireName: "backup_window"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"QuantityBasedRetention": ubx.FieldSpec{
-			WireName: "quantity_based_retention",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_QuantityBasedRetentionFields,
-		},
-		"TimeBasedRetention": ubx.FieldSpec{
-			WireName: "time_based_retention",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_TimeBasedRetentionFields,
-		},
-		"WeeklySchedule": ubx.FieldSpec{
-			WireName: "weekly_schedule",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_WeeklyScheduleFields,
-		},
-	}
+	"BackupWindow": ubx.FieldSpec{WireName: "backup_window"},
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
+	},
+	"Labels":   ubx.FieldSpec{WireName: "labels"},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"QuantityBasedRetention": ubx.FieldSpec{
+		WireName: "quantity_based_retention",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_QuantityBasedRetentionFields,
+	},
+	"TimeBasedRetention": ubx.FieldSpec{
+		WireName: "time_based_retention",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_TimeBasedRetentionFields,
+	},
+	"WeeklySchedule": ubx.FieldSpec{
+		WireName: "weekly_schedule",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_WeeklyScheduleFields,
+	},
+}
 
 var V1betaCluster_BackupSourceFields = ubx.FieldMap{
-		"BackupName": ubx.FieldSpec{WireName: "backup_name"},
-		"BackupUid": ubx.FieldSpec{WireName: "backup_uid"},
-	}
+	"BackupName": ubx.FieldSpec{WireName: "backup_name"},
+	"BackupUid":  ubx.FieldSpec{WireName: "backup_uid"},
+}
 
 var V1betaCluster_BackupdrBackupSourceFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{WireName: "backup"},
-	}
+	"Backup": ubx.FieldSpec{WireName: "backup"},
+}
 
 var V1betaCluster_BackupdrInfo_CurrentWindowFields = ubx.FieldMap{
-		"AutomatedBackupPreviouslyEnabled": ubx.FieldSpec{WireName: "automated_backup_previously_enabled"},
-		"BackupPlanAssociation": ubx.FieldSpec{WireName: "backup_plan_association"},
-		"ContinuousBackupPreviousRecoveryWindowDays": ubx.FieldSpec{WireName: "continuous_backup_previous_recovery_window_days"},
-		"ContinuousBackupPreviouslyEnabled": ubx.FieldSpec{WireName: "continuous_backup_previously_enabled"},
-		"ContinuousBackupPreviouslyEnabledTime": ubx.FieldSpec{WireName: "continuous_backup_previously_enabled_time"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-		"DisabledTime": ubx.FieldSpec{WireName: "disabled_time"},
-		"EnabledTime": ubx.FieldSpec{WireName: "enabled_time"},
-		"LogRetentionPeriod": ubx.FieldSpec{WireName: "log_retention_period"},
-	}
+	"AutomatedBackupPreviouslyEnabled":           ubx.FieldSpec{WireName: "automated_backup_previously_enabled"},
+	"BackupPlanAssociation":                      ubx.FieldSpec{WireName: "backup_plan_association"},
+	"ContinuousBackupPreviousRecoveryWindowDays": ubx.FieldSpec{WireName: "continuous_backup_previous_recovery_window_days"},
+	"ContinuousBackupPreviouslyEnabled":          ubx.FieldSpec{WireName: "continuous_backup_previously_enabled"},
+	"ContinuousBackupPreviouslyEnabledTime":      ubx.FieldSpec{WireName: "continuous_backup_previously_enabled_time"},
+	"DataSource":                                 ubx.FieldSpec{WireName: "data_source"},
+	"DisabledTime":                               ubx.FieldSpec{WireName: "disabled_time"},
+	"EnabledTime":                                ubx.FieldSpec{WireName: "enabled_time"},
+	"LogRetentionPeriod":                         ubx.FieldSpec{WireName: "log_retention_period"},
+}
 
 var V1betaCluster_BackupdrInfoFields = ubx.FieldMap{
-		"CurrentWindow": ubx.FieldSpec{
-			WireName: "current_window",
-			Kind: "object",
-			Fields: V1betaCluster_BackupdrInfo_CurrentWindowFields,
-		},
-		"PreviousWindows": ubx.FieldSpec{
-			WireName: "previous_windows",
-			Kind: "list",
-			Fields: V1betaCluster_BackupdrInfo_CurrentWindowFields,
-		},
-	}
+	"CurrentWindow": ubx.FieldSpec{
+		WireName: "current_window",
+		Kind:     "object",
+		Fields:   V1betaCluster_BackupdrInfo_CurrentWindowFields,
+	},
+	"PreviousWindows": ubx.FieldSpec{
+		WireName: "previous_windows",
+		Kind:     "list",
+		Fields:   V1betaCluster_BackupdrInfo_CurrentWindowFields,
+	},
+}
 
 var V1betaCluster_CloudsqlBackupRunSourceFields = ubx.FieldMap{
-		"BackupRunId": ubx.FieldSpec{WireName: "backup_run_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"BackupRunId": ubx.FieldSpec{WireName: "backup_run_id"},
+	"InstanceId":  ubx.FieldSpec{WireName: "instance_id"},
+	"Project":     ubx.FieldSpec{WireName: "project"},
+}
 
 var V1betaCluster_ContinuousBackupConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
-		},
-		"RecoveryWindowDays": ubx.FieldSpec{WireName: "recovery_window_days"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
+	},
+	"RecoveryWindowDays": ubx.FieldSpec{WireName: "recovery_window_days"},
+}
 
 var V1betaCluster_ContinuousBackupInfo_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
+}
 
 var V1betaCluster_ContinuousBackupInfoFields = ubx.FieldMap{
-		"EarliestRestorableTime": ubx.FieldSpec{WireName: "earliest_restorable_time"},
-		"EnabledTime": ubx.FieldSpec{WireName: "enabled_time"},
-		"EncryptionInfo": ubx.FieldSpec{
-			WireName: "encryption_info",
-			Kind: "object",
-			Fields: V1betaCluster_ContinuousBackupInfo_EncryptionInfoFields,
-		},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-	}
+	"EarliestRestorableTime": ubx.FieldSpec{WireName: "earliest_restorable_time"},
+	"EnabledTime":            ubx.FieldSpec{WireName: "enabled_time"},
+	"EncryptionInfo": ubx.FieldSpec{
+		WireName: "encryption_info",
+		Kind:     "object",
+		Fields:   V1betaCluster_ContinuousBackupInfo_EncryptionInfoFields,
+	},
+	"Schedule": ubx.FieldSpec{WireName: "schedule"},
+}
 
 var V1betaCluster_DataplexConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1betaCluster_GeminiConfigFields = ubx.FieldMap{
-		"Entitled": ubx.FieldSpec{WireName: "entitled"},
-	}
+	"Entitled": ubx.FieldSpec{WireName: "entitled"},
+}
 
 var V1betaCluster_InitialUserFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"User":     ubx.FieldSpec{WireName: "user"},
+}
 
 var V1betaCluster_MaintenanceScheduleFields = ubx.FieldMap{
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriodsFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{
-			WireName: "end_date",
-			Kind: "object",
-			Fields: V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDateFields,
-		},
-		"StartDate": ubx.FieldSpec{
-			WireName: "start_date",
-			Kind: "object",
-			Fields: V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDateFields,
-		},
-		"Time": ubx.FieldSpec{
-			WireName: "time",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
-		},
-	}
+	"EndDate": ubx.FieldSpec{
+		WireName: "end_date",
+		Kind:     "object",
+		Fields:   V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDateFields,
+	},
+	"StartDate": ubx.FieldSpec{
+		WireName: "start_date",
+		Kind:     "object",
+		Fields:   V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriods_EndDateFields,
+	},
+	"Time": ubx.FieldSpec{
+		WireName: "time",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
+	},
+}
 
 var V1betaCluster_MaintenanceUpdatePolicy_MaintenanceWindowsFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
-		},
-	}
+	"Day": ubx.FieldSpec{WireName: "day"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   V1betaCluster_AutomatedBackupPolicy_WeeklySchedule_StartTimesFields,
+	},
+}
 
 var V1betaCluster_MaintenanceUpdatePolicyFields = ubx.FieldMap{
-		"DenyMaintenancePeriods": ubx.FieldSpec{
-			WireName: "deny_maintenance_periods",
-			Kind: "list",
-			Fields: V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriodsFields,
-		},
-		"MaintenanceWindows": ubx.FieldSpec{
-			WireName: "maintenance_windows",
-			Kind: "list",
-			Fields: V1betaCluster_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
-		},
-	}
+	"DenyMaintenancePeriods": ubx.FieldSpec{
+		WireName: "deny_maintenance_periods",
+		Kind:     "list",
+		Fields:   V1betaCluster_MaintenanceUpdatePolicy_DenyMaintenancePeriodsFields,
+	},
+	"MaintenanceWindows": ubx.FieldSpec{
+		WireName: "maintenance_windows",
+		Kind:     "list",
+		Fields:   V1betaCluster_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
+	},
+}
 
 var V1betaCluster_MigrationSourceFields = ubx.FieldMap{
-		"HostPort": ubx.FieldSpec{WireName: "host_port"},
-		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"HostPort":    ubx.FieldSpec{WireName: "host_port"},
+	"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
+	"SourceType":  ubx.FieldSpec{WireName: "source_type"},
+}
 
 var V1betaCluster_NetworkConfigFields = ubx.FieldMap{
-		"AllocatedIpRange": ubx.FieldSpec{WireName: "allocated_ip_range"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
+	"AllocatedIpRange": ubx.FieldSpec{WireName: "allocated_ip_range"},
+	"Network":          ubx.FieldSpec{WireName: "network"},
+}
 
 var V1betaCluster_PrimaryConfigFields = ubx.FieldMap{
-		"SecondaryClusterNames": ubx.FieldSpec{WireName: "secondary_cluster_names"},
-	}
+	"SecondaryClusterNames": ubx.FieldSpec{WireName: "secondary_cluster_names"},
+}
 
 var V1betaCluster_PscConfigFields = ubx.FieldMap{
-		"PscEnabled": ubx.FieldSpec{WireName: "psc_enabled"},
-		"ServiceOwnedProjectNumber": ubx.FieldSpec{WireName: "service_owned_project_number"},
-	}
+	"PscEnabled":                ubx.FieldSpec{WireName: "psc_enabled"},
+	"ServiceOwnedProjectNumber": ubx.FieldSpec{WireName: "service_owned_project_number"},
+}
 
 var V1betaCluster_SecondaryConfigFields = ubx.FieldMap{
-		"PrimaryClusterName": ubx.FieldSpec{WireName: "primary_cluster_name"},
-	}
+	"PrimaryClusterName": ubx.FieldSpec{WireName: "primary_cluster_name"},
+}
 
 var V1betaCluster_SslConfigFields = ubx.FieldMap{
-		"CaSource": ubx.FieldSpec{WireName: "ca_source"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"CaSource": ubx.FieldSpec{WireName: "ca_source"},
+	"SslMode":  ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var V1betaCluster_TrialMetadataFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"GraceEndTime": ubx.FieldSpec{WireName: "grace_end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"UpgradeTime": ubx.FieldSpec{WireName: "upgrade_time"},
-	}
+	"EndTime":      ubx.FieldSpec{WireName: "end_time"},
+	"GraceEndTime": ubx.FieldSpec{WireName: "grace_end_time"},
+	"StartTime":    ubx.FieldSpec{WireName: "start_time"},
+	"UpgradeTime":  ubx.FieldSpec{WireName: "upgrade_time"},
+}
 
 type V1betaClusterConfig struct {
 	// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
@@ -457,20 +457,14 @@ type V1betaClusterConfig struct {
 	BackupdrInfo any
 	// The source CloudSQL backup resource.
 	CloudsqlBackupRunSource any
-	// Output only. The type of the cluster. This is an output-only field and it's populated at the Cluster creation time or the Cluster promotion time. The cluster type is determined by which RPC was used to create the cluster (i.e. `CreateCluster` vs. `CreateSecondaryCluster`
-	ClusterType any
 	// ContinuousBackupConfig describes the continuous backups recovery configurations of a cluster.
 	ContinuousBackupConfig any
 	// ContinuousBackupInfo describes the continuous backup properties of a cluster.
 	ContinuousBackupInfo any
-	// Output only. Create time stamp
-	CreateTime any
 	// Optional. The database engine major version. This is an optional field and it is populated at the Cluster creation time. If a database version is not supplied at cluster creation time, then a default database version will be used.
 	DatabaseVersion any
 	// Configuration for Dataplex integration.
 	DataplexConfig any
-	// Output only. Delete time stamp
-	DeleteTime any
 	// User-settable and human-readable display name for the Cluster.
 	DisplayName any
 	// EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
@@ -493,8 +487,6 @@ type V1betaClusterConfig struct {
 	MaintenanceVersionSelectionPolicy any
 	// Subset of the source instance configuration that is available when reading the cluster resource.
 	MigrationSource any
-	// Output only. The name of the cluster resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id} where the cluster ID segment should satisfy the regex expression `[a-z0-9-]+`. For more details see https://google.aip.dev/122. The prefix of the cluster resource name is the name of the parent resource: * projects/{project}/locations/{region}
-	Name any
 	// Required. The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP. The network must belong to the same project as the cluster. It is specified in the form: `projects/{project}/global/networks/{network_id}`. This is required to create a cluster. Deprecated, use network_config.network instead.
 	Network any
 	// Metadata related to network configuration.
@@ -503,28 +495,16 @@ type V1betaClusterConfig struct {
 	PrimaryConfig any
 	// PscConfig contains PSC related configuration at a cluster level.
 	PscConfig any
-	// Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Cluster does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
-	Reconciling any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Configuration information for the secondary cluster. This should be set if and only if the cluster is of type SECONDARY.
 	SecondaryConfig any
-	// Output only. AlloyDB per-cluster service account. This service account is created per-cluster per-project, and is different from the per-project service account. The per-cluster service account naming format is subject to change.
-	ServiceAccountEmail any
 	// SSL configuration.
 	SslConfig any
-	// Output only. The current serving state of the cluster.
-	State any
 	// Optional. Subscription type of the cluster.
 	SubscriptionType any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ```
 	Tags any
 	// Contains information and all metadata related to TRIAL clusters.
 	TrialMetadata any
-	// Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-	Uid any
-	// Output only. Update time stamp
-	UpdateTime any
 }
 
 type V1betaClusterAttrs struct {
@@ -616,126 +596,116 @@ var V1betaCluster = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AutomatedBackupPolicy": ubx.FieldSpec{
 			WireName: "automated_backup_policy",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicyFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_AutomatedBackupPolicyFields,
 		},
 		"BackupSource": ubx.FieldSpec{
 			WireName: "backup_source",
-			Kind: "object",
-			Fields: V1betaCluster_BackupSourceFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_BackupSourceFields,
 		},
 		"BackupdrBackupSource": ubx.FieldSpec{
 			WireName: "backupdr_backup_source",
-			Kind: "object",
-			Fields: V1betaCluster_BackupdrBackupSourceFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_BackupdrBackupSourceFields,
 		},
 		"BackupdrInfo": ubx.FieldSpec{
 			WireName: "backupdr_info",
-			Kind: "object",
-			Fields: V1betaCluster_BackupdrInfoFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_BackupdrInfoFields,
 		},
 		"CloudsqlBackupRunSource": ubx.FieldSpec{
 			WireName: "cloudsql_backup_run_source",
-			Kind: "object",
-			Fields: V1betaCluster_CloudsqlBackupRunSourceFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_CloudsqlBackupRunSourceFields,
 		},
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
 		"ContinuousBackupConfig": ubx.FieldSpec{
 			WireName: "continuous_backup_config",
-			Kind: "object",
-			Fields: V1betaCluster_ContinuousBackupConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_ContinuousBackupConfigFields,
 		},
 		"ContinuousBackupInfo": ubx.FieldSpec{
 			WireName: "continuous_backup_info",
-			Kind: "object",
-			Fields: V1betaCluster_ContinuousBackupInfoFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_ContinuousBackupInfoFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
 		"DataplexConfig": ubx.FieldSpec{
 			WireName: "dataplex_config",
-			Kind: "object",
-			Fields: V1betaCluster_DataplexConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_DataplexConfigFields,
 		},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_AutomatedBackupPolicy_EncryptionConfigFields,
 		},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: V1betaCluster_ContinuousBackupInfo_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_ContinuousBackupInfo_EncryptionInfoFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GeminiConfig": ubx.FieldSpec{
 			WireName: "gemini_config",
-			Kind: "object",
-			Fields: V1betaCluster_GeminiConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_GeminiConfigFields,
 		},
 		"InitialUser": ubx.FieldSpec{
 			WireName: "initial_user",
-			Kind: "object",
-			Fields: V1betaCluster_InitialUserFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_InitialUserFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: V1betaCluster_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_MaintenanceScheduleFields,
 		},
 		"MaintenanceUpdatePolicy": ubx.FieldSpec{
 			WireName: "maintenance_update_policy",
-			Kind: "object",
-			Fields: V1betaCluster_MaintenanceUpdatePolicyFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_MaintenanceUpdatePolicyFields,
 		},
 		"MaintenanceVersionSelectionPolicy": ubx.FieldSpec{WireName: "maintenance_version_selection_policy"},
 		"MigrationSource": ubx.FieldSpec{
 			WireName: "migration_source",
-			Kind: "object",
-			Fields: V1betaCluster_MigrationSourceFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_MigrationSourceFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: V1betaCluster_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_NetworkConfigFields,
 		},
 		"PrimaryConfig": ubx.FieldSpec{
 			WireName: "primary_config",
-			Kind: "object",
-			Fields: V1betaCluster_PrimaryConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_PrimaryConfigFields,
 		},
 		"PscConfig": ubx.FieldSpec{
 			WireName: "psc_config",
-			Kind: "object",
-			Fields: V1betaCluster_PscConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_PscConfigFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SecondaryConfig": ubx.FieldSpec{
 			WireName: "secondary_config",
-			Kind: "object",
-			Fields: V1betaCluster_SecondaryConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_SecondaryConfigFields,
 		},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
 		"SslConfig": ubx.FieldSpec{
 			WireName: "ssl_config",
-			Kind: "object",
-			Fields: V1betaCluster_SslConfigFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_SslConfigFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"SubscriptionType": ubx.FieldSpec{WireName: "subscription_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":             ubx.FieldSpec{WireName: "tags"},
 		"TrialMetadata": ubx.FieldSpec{
 			WireName: "trial_metadata",
-			Kind: "object",
-			Fields: V1betaCluster_TrialMetadataFields,
+			Kind:     "object",
+			Fields:   V1betaCluster_TrialMetadataFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

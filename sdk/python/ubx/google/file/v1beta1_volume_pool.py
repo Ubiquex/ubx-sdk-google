@@ -116,8 +116,6 @@ _V1beta1VolumePool_InstanceTemplateFields = {
 
 @dataclasses.dataclass
 class V1beta1VolumePoolConfig:
-    # Output only. The time when the volume pool was created.
-    create_time: Any = None
     # Optional. A description of the volume pool with 2048 characters or less.
     description: Any = None
     # Optional. The page size to use when listing instances.
@@ -150,10 +148,6 @@ class V1beta1VolumePoolConfig:
     negba_instance_ratio: Any = None
     # Optional. The maximum number of operations to poll in a single reconciliation run.
     operation_poll_limit: Any = None
-    # Output only. The volume pool state.
-    state: Any = None
-    # Output only. Unique ID of the resource, as defined by CCFE.
-    unique_id: Any = None
     # Optional. The number of volumes to create in a single batch.
     volume_batch_size: Any = None
     # Optional. Volume size in MiB.
@@ -207,7 +201,6 @@ class V1beta1VolumePoolAttrs:
 V1beta1VolumePool = ubx.ResourceBinding(
     wire_type="google_file_v1beta1_volume_pool",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "instance_list_page_size": ubx.FieldSpec(wire_name="instance_list_page_size"),
         "instance_name_prefix": ubx.FieldSpec(wire_name="instance_name_prefix"),
@@ -228,8 +221,6 @@ V1beta1VolumePool = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "negba_instance_ratio": ubx.FieldSpec(wire_name="negba_instance_ratio"),
         "operation_poll_limit": ubx.FieldSpec(wire_name="operation_poll_limit"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
         "volume_batch_size": ubx.FieldSpec(wire_name="volume_batch_size"),
         "volume_size_mb": ubx.FieldSpec(wire_name="volume_size_mb"),
     },

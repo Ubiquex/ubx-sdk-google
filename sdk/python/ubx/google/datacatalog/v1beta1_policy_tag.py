@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1PolicyTagConfig:
-    # Output only. Resource names of child policy tags of this policy tag.
-    child_policy_tags: Any = None
     # Description of this policy tag. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description. If not set, defaults to an empty description.
     description: Any = None
     # Required. User defined name of this policy tag. It must: be unique within the parent taxonomy; contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.
@@ -35,7 +33,6 @@ class V1beta1PolicyTagAttrs:
 V1beta1PolicyTag = ubx.ResourceBinding(
     wire_type="google_datacatalog_v1beta1_policy_tag",
     fields={
-        "child_policy_tags": ubx.FieldSpec(wire_name="child_policy_tags"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),

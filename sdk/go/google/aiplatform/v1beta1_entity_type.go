@@ -38,47 +38,45 @@ type V1beta1EntityType_MonitoringConfig struct {
 }
 
 var V1beta1EntityType_MonitoringConfig_CategoricalThresholdConfigFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1EntityType_MonitoringConfig_ImportFeaturesAnalysisFields = ubx.FieldMap{
-		"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
+	"State":                    ubx.FieldSpec{WireName: "state"},
+}
 
 var V1beta1EntityType_MonitoringConfig_SnapshotAnalysisFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"MonitoringInterval": ubx.FieldSpec{WireName: "monitoring_interval"},
-		"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
-		"StalenessDays": ubx.FieldSpec{WireName: "staleness_days"},
-	}
+	"Disabled":               ubx.FieldSpec{WireName: "disabled"},
+	"MonitoringInterval":     ubx.FieldSpec{WireName: "monitoring_interval"},
+	"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
+	"StalenessDays":          ubx.FieldSpec{WireName: "staleness_days"},
+}
 
 var V1beta1EntityType_MonitoringConfigFields = ubx.FieldMap{
-		"CategoricalThresholdConfig": ubx.FieldSpec{
-			WireName: "categorical_threshold_config",
-			Kind: "object",
-			Fields: V1beta1EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
-		},
-		"ImportFeaturesAnalysis": ubx.FieldSpec{
-			WireName: "import_features_analysis",
-			Kind: "object",
-			Fields: V1beta1EntityType_MonitoringConfig_ImportFeaturesAnalysisFields,
-		},
-		"NumericalThresholdConfig": ubx.FieldSpec{
-			WireName: "numerical_threshold_config",
-			Kind: "object",
-			Fields: V1beta1EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
-		},
-		"SnapshotAnalysis": ubx.FieldSpec{
-			WireName: "snapshot_analysis",
-			Kind: "object",
-			Fields: V1beta1EntityType_MonitoringConfig_SnapshotAnalysisFields,
-		},
-	}
+	"CategoricalThresholdConfig": ubx.FieldSpec{
+		WireName: "categorical_threshold_config",
+		Kind:     "object",
+		Fields:   V1beta1EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
+	},
+	"ImportFeaturesAnalysis": ubx.FieldSpec{
+		WireName: "import_features_analysis",
+		Kind:     "object",
+		Fields:   V1beta1EntityType_MonitoringConfig_ImportFeaturesAnalysisFields,
+	},
+	"NumericalThresholdConfig": ubx.FieldSpec{
+		WireName: "numerical_threshold_config",
+		Kind:     "object",
+		Fields:   V1beta1EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
+	},
+	"SnapshotAnalysis": ubx.FieldSpec{
+		WireName: "snapshot_analysis",
+		Kind:     "object",
+		Fields:   V1beta1EntityType_MonitoringConfig_SnapshotAnalysisFields,
+	},
+}
 
 type V1beta1EntityTypeConfig struct {
-	// Output only. Timestamp when this EntityType was created.
-	CreateTime any
 	// Optional. Description of the EntityType.
 	Description any
 	// Optional. Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -91,12 +89,6 @@ type V1beta1EntityTypeConfig struct {
 	Name any
 	// Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
 	OfflineStorageTtlDays any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Timestamp when this EntityType was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1EntityTypeAttrs struct {
@@ -125,19 +117,15 @@ type V1beta1EntityTypeAttrs struct {
 var V1beta1EntityType = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_entity_type",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind: "object",
-			Fields: V1beta1EntityType_MonitoringConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1EntityType_MonitoringConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"OfflineStorageTtlDays": ubx.FieldSpec{WireName: "offline_storage_ttl_days"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

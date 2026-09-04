@@ -20,10 +20,6 @@ _V1beta1SemanticGovernancePolicy_McpToolsFields = {
 class V1beta1SemanticGovernancePolicyConfig:
     # Required. The name of the agent in Agent Registry that is affected by this policy.
     agent: Any = None
-    # Output only. Represents the principal of the agent, used by the Policy Decision Point (PDP) for governance checks. For more information, see https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity Format: `principal://TRUST_DOMAIN/NAMESPACE/AGENT_NAME` Example: `principal://agents.global.org-ORGANIZATION_ID.system.id.goog/resources/aiplatform/projects/PROJECT_NUMBER/locations/LOCATION/reasoningEngines/AGENT_ENGINE_ID`
-    agent_identity: Any = None
-    # Output only. Timestamp when this SemanticGovernancePolicy was created.
-    create_time: Any = None
     # Optional. The description of the SemanticGovernancePolicy.
     description: Any = None
     # Optional. The user-defined name of the SemanticGovernancePolicy.
@@ -36,8 +32,6 @@ class V1beta1SemanticGovernancePolicyConfig:
     name: Any = None
     # Required. The natural language constraint of the SemanticGovernancePolicy.
     natural_language_constraint: Any = None
-    # Output only. Timestamp when this SemanticGovernancePolicy was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1SemanticGovernancePolicyAttrs:
@@ -66,8 +60,6 @@ V1beta1SemanticGovernancePolicy = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_semantic_governance_policy",
     fields={
         "agent": ubx.FieldSpec(wire_name="agent"),
-        "agent_identity": ubx.FieldSpec(wire_name="agent_identity"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
@@ -78,6 +70,5 @@ V1beta1SemanticGovernancePolicy = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "natural_language_constraint": ubx.FieldSpec(wire_name="natural_language_constraint"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

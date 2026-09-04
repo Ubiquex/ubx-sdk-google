@@ -14,8 +14,6 @@ const V1beta1Project_ParentFields: FieldMap = {
 };
 
 export interface V1beta1ProjectConfig {
-  /** Output only. If this project is a Management Project, list of capabilities configured on the parent folder. Note, presence of any capability implies that this is a Management Project. Example: `folders/123/capabilities/app-management`. OUTPUT ONLY. */
-  configuredCapabilities?: string[] | Computed<string[]>;
   /** Creation time. Read-only. */
   createTime?: string | Computed<string>;
   /** The labels associated with this Project. Label keys must be between 1 and 63 characters long and must conform to the following regular expression: a-z{0,62}. Label values must be between 0 and 63 characters long and must conform to the regular expression [a-z0-9_-]{0,63}. A label value can be empty. No more than 256 labels can be associated with a given resource. Clients should store labels in a representation such as JSON that does not depend on specific characters being disallowed. Example: `"environment" : "dev"` Read-write. */
@@ -54,7 +52,6 @@ export interface V1beta1ProjectAttrs {
 export const V1beta1Project: ResourceBinding<V1beta1ProjectConfig, V1beta1ProjectAttrs> = {
   wireType: "google_cloudresourcemanager_v1beta1_project",
   fields: {
-    configuredCapabilities: "configured_capabilities",
     createTime: "create_time",
     labels: "labels",
     lifecycleState: "lifecycle_state",

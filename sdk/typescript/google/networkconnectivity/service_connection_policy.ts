@@ -69,54 +69,13 @@ const ServiceConnectionPolicy_PscConfigFields: FieldMap = {
   subnetworks: "subnetworks",
 };
 
-const ServiceConnectionPolicy_PscConnections_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const ServiceConnectionPolicy_PscConnections_ErrorInfoFields: FieldMap = {
-  domain: "domain",
-  metadata: "metadata",
-  reason: "reason",
-};
-
-const ServiceConnectionPolicy_PscConnectionsFields: FieldMap = {
-  consumerAddress: "consumer_address",
-  consumerForwardingRule: "consumer_forwarding_rule",
-  consumerTargetProject: "consumer_target_project",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: ServiceConnectionPolicy_PscConnections_ErrorFields,
-  },
-  errorInfo: {
-    wireName: "error_info",
-    kind: "object",
-    fields: ServiceConnectionPolicy_PscConnections_ErrorInfoFields,
-  },
-  errorType: "error_type",
-  gceOperation: "gce_operation",
-  ipVersion: "ip_version",
-  producerInstanceId: "producer_instance_id",
-  producerInstanceMetadata: "producer_instance_metadata",
-  pscConnectionId: "psc_connection_id",
-  selectedSubnetwork: "selected_subnetwork",
-  serviceClass: "service_class",
-  state: "state",
-};
-
 export interface ServiceConnectionPolicyConfig {
   /** Information for the automatically created subnetwork and its associated IR. */
   autoCreatedSubnetInfo?: ServiceConnectionPolicy_AutoCreatedSubnetInfo | Computed<ServiceConnectionPolicy_AutoCreatedSubnetInfo>;
-  /** Output only. Time when the ServiceConnectionPolicy was created. */
-  createTime?: string | Computed<string>;
   /** A description of this resource. */
   description?: string | Computed<string>;
   /** Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. The type of underlying resources used to create the connection. */
-  infrastructure?: string | Computed<string>;
   /** User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names */
@@ -125,12 +84,8 @@ export interface ServiceConnectionPolicyConfig {
   network?: string | Computed<string>;
   /** Configuration used for Private Service Connect connections. Used when Infrastructure is PSC. */
   pscConfig?: ServiceConnectionPolicy_PscConfig | Computed<ServiceConnectionPolicy_PscConfig>;
-  /** Output only. [Output only] Information about each Private Service Connect connection. */
-  pscConnections?: ServiceConnectionPolicy_PscConnections[] | Computed<ServiceConnectionPolicy_PscConnections[]>;
   /** The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass. It is provided by the Service Producer. Google services have a prefix of gcp or google-cloud. For example, gcp-memorystore-redis or google-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx. */
   serviceClass?: string | Computed<string>;
-  /** Output only. Time when the ServiceConnectionPolicy was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServiceConnectionPolicyAttrs {
@@ -168,10 +123,8 @@ export const ServiceConnectionPolicy: ResourceBinding<ServiceConnectionPolicyCon
       kind: "object",
       fields: ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
-    infrastructure: "infrastructure",
     labels: "labels",
     name: "name",
     network: "network",
@@ -180,12 +133,6 @@ export const ServiceConnectionPolicy: ResourceBinding<ServiceConnectionPolicyCon
       kind: "object",
       fields: ServiceConnectionPolicy_PscConfigFields,
     },
-    pscConnections: {
-      wireName: "psc_connections",
-      kind: "list",
-      fields: ServiceConnectionPolicy_PscConnectionsFields,
-    },
     serviceClass: "service_class",
-    updateTime: "update_time",
   },
 };

@@ -6,26 +6,17 @@ export interface InterconnectAttachmentGroup_Attachments {
 }
 
 export interface InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers {
-  /** List of interconnect attachments that are configured as intended blockers for the availability SLA. (AI-inferred) */
   attachments?: string[] | Computed<string[]>;
-  /** The type of blocker preventing the intended SLA from being met. Possible values include: BLOCKER_TYPE_UNSPECIFIED, INCOMPATIBLE_METROS, INCOMPATIBLE_REGIONS, MISSING_GLOBAL_ROUTING, NO_ATTACHMENTS, NO_ATTACHMENTS_IN_METRO_AND_ZONE, and OTHER. (AI-inferred) */
   blockerType?: string | Computed<string>;
-  /** A URL to documentation describing this intended SLA blocker. (AI-inferred) */
   documentationLink?: string | Computed<string>;
-  /** A human-readable explanation of the intended SLA blocker, describing why it might prevent meeting the availability SLA. (AI-inferred) */
   explanation?: string | Computed<string>;
-  /** List of metro locations that are excluded from the availability SLA, as they are considered blockers. (AI-inferred) */
   metros?: string[] | Computed<string[]>;
-  /** The list of regions designated as intended SLA blockers. These regions are excluded from the availability SLA calculation, so the SLA guarantee does not apply to attachments located in them. (AI-inferred) */
   regions?: string[] | Computed<string[]>;
-  /** A list of zone names that are intended to be treated as SLA blockers in the configured availability SLA. (AI-inferred) */
   zones?: string[] | Computed<string[]>;
 }
 
 export interface InterconnectAttachmentGroup_Configured_AvailabilitySla {
-  /** The effective Service Level Agreement (SLA) for the interconnect attachment group, computed by the provider. Possible values: EFFECTIVE_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL. (AI-inferred) */
   effectiveSla?: string | Computed<string>;
-  /** Computed list of blockers that would prevent the configured availability SLA from being met. (AI-inferred) */
   intendedSlaBlockers?: InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers[] | Computed<InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers[]>;
 }
 
@@ -35,38 +26,30 @@ export interface InterconnectAttachmentGroup_Configured {
 }
 
 export interface InterconnectAttachmentGroup_Intent {
-  /** The availability SLA (service level agreement) for this interconnect attachment. Valid values are: AVAILABILITY_SLA_UNSPECIFIED, NO_SLA, PRODUCTION_CRITICAL, and PRODUCTION_NON_CRITICAL. (AI-inferred) */
   availabilitySla?: string | Computed<string>;
 }
 
 export interface InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones {
   attachments?: string[] | Computed<string[]>;
-  /** The availability zone within the facility, typically in the form `<region>-<zone>` (e.g., us-central1-a). (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
 export interface InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities {
-  /** The name of the physical facility (data center) within the metro where the interconnect attachment is located. (AI-inferred) */
   facility?: string | Computed<string>;
-  /** A list of zones within the facility. Each zone represents an availability zone in the facility where the interconnect attachment group operates. (AI-inferred) */
   zones?: InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones[] | Computed<InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones[]>;
 }
 
 export interface InterconnectAttachmentGroup_LogicalStructure_Regions_Metros {
-  /** A list of physical data center facilities available in the metro for this interconnect attachment group. (AI-inferred) */
   facilities?: InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities[] | Computed<InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities[]>;
-  /** The name of a metropolitan area (metro) that is associated with a specific region in the logical structure of an Interconnect attachment group. (AI-inferred) */
   metro?: string | Computed<string>;
 }
 
 export interface InterconnectAttachmentGroup_LogicalStructure_Regions {
   metros?: InterconnectAttachmentGroup_LogicalStructure_Regions_Metros[] | Computed<InterconnectAttachmentGroup_LogicalStructure_Regions_Metros[]>;
-  /** The Google Cloud region for this logical structure entry. Must be a valid region name, e.g., 'us-central1'. (AI-inferred) */
   region?: string | Computed<string>;
 }
 
 export interface InterconnectAttachmentGroup_LogicalStructure {
-  /** A list of regions where the interconnect attachment group is available, along with the status of the group in each region. (AI-inferred) */
   regions?: InterconnectAttachmentGroup_LogicalStructure_Regions[] | Computed<InterconnectAttachmentGroup_LogicalStructure_Regions[]>;
 }
 
@@ -150,26 +133,18 @@ export interface InterconnectAttachmentGroupConfig {
   attachments?: Record<string, InterconnectAttachmentGroup_Attachments> | Computed<Record<string, InterconnectAttachmentGroup_Attachments>>;
   /** [Output Only] The redundancy this group is configured to support. The way a user queries what SLA their Attachment gets is by looking at this field of the Attachment's AttachmentGroup. */
   configured?: InterconnectAttachmentGroup_Configured | Computed<InterconnectAttachmentGroup_Configured>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described byAIP 154. */
   etag?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
   /** The user's intent for this AttachmentGroup. This is the only required field besides the name that must be specified on group creation. */
   intent?: InterconnectAttachmentGroup_Intent | Computed<InterconnectAttachmentGroup_Intent>;
   /** The URL of an InterconnectGroup that groups these Attachments' Interconnects. Customers do not need to set this unless directed by Google Support. */
   interconnectGroup?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#interconnectAttachmentGroup. */
-  kind?: string | Computed<string>;
   /** [Output Only] An analysis of the logical layout of Attachments in this group. Every Attachment in the group is shown once in this structure. */
   logicalStructure?: InterconnectAttachmentGroup_LogicalStructure | Computed<InterconnectAttachmentGroup_LogicalStructure>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface InterconnectAttachmentGroupAttrs {
@@ -212,23 +187,19 @@ export const InterconnectAttachmentGroup: ResourceBinding<InterconnectAttachment
       kind: "object",
       fields: InterconnectAttachmentGroup_ConfiguredFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     etag: "etag",
-    id: "id",
     intent: {
       wireName: "intent",
       kind: "object",
       fields: InterconnectAttachmentGroup_IntentFields,
     },
     interconnectGroup: "interconnect_group",
-    kind: "kind",
     logicalStructure: {
       wireName: "logical_structure",
       kind: "object",
       fields: InterconnectAttachmentGroup_LogicalStructureFields,
     },
     name: "name",
-    selfLink: "self_link",
   },
 };

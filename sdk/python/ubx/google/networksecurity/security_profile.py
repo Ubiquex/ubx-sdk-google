@@ -110,16 +110,12 @@ _SecurityProfile_UrlFilteringProfileFields = {
 
 @dataclasses.dataclass
 class SecurityProfileConfig:
-    # Output only. Resource creation timestamp.
-    create_time: Any = None
     # CustomInterceptProfile defines in-band integration behavior (intercept). It is used by firewall rules with an APPLY_SECURITY_PROFILE_GROUP action.
     custom_intercept_profile: Any = None
     # CustomMirroringProfile defines out-of-band integration behavior (mirroring). It is used by mirroring rules with a MIRROR action.
     custom_mirroring_profile: Any = None
     # Optional. An optional description of the profile. Max length 512 characters.
     description: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Immutable. Identifier. Name of the SecurityProfile resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfiles/{security_profile}`.
@@ -128,8 +124,6 @@ class SecurityProfileConfig:
     threat_prevention_profile: Any = None
     # Immutable. The single ProfileType that the SecurityProfile resource configures.
     type: Any = None
-    # Output only. Last resource update timestamp.
-    update_time: Any = None
     # UrlFilteringProfile defines filters based on URL.
     url_filtering_profile: Any = None
 
@@ -161,7 +155,6 @@ class SecurityProfileAttrs:
 SecurityProfile = ubx.ResourceBinding(
     wire_type="google_networksecurity_security_profile",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_intercept_profile": ubx.FieldSpec(
             wire_name="custom_intercept_profile",
             kind="object",
@@ -173,7 +166,6 @@ SecurityProfile = ubx.ResourceBinding(
             fields=_SecurityProfile_CustomMirroringProfileFields,
         ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "threat_prevention_profile": ubx.FieldSpec(
@@ -182,7 +174,6 @@ SecurityProfile = ubx.ResourceBinding(
             fields=_SecurityProfile_ThreatPreventionProfileFields,
         ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "url_filtering_profile": ubx.FieldSpec(
             wire_name="url_filtering_profile",
             kind="object",

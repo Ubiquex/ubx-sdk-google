@@ -25,59 +25,31 @@ class V1alpha1Node_Symptoms:
     symptom_type: Any = None
     worker_id: Any = None
 
-_V1alpha1Node_NetworkEndpointsFields = {
-    "ip_address": ubx.FieldSpec(wire_name="ip_address"),
-    "port": ubx.FieldSpec(wire_name="port"),
-}
-
 _V1alpha1Node_SchedulingConfigFields = {
     "preemptible": ubx.FieldSpec(wire_name="preemptible"),
     "reserved": ubx.FieldSpec(wire_name="reserved"),
-}
-
-_V1alpha1Node_SymptomsFields = {
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "symptom_type": ubx.FieldSpec(wire_name="symptom_type"),
-    "worker_id": ubx.FieldSpec(wire_name="worker_id"),
 }
 
 @dataclasses.dataclass
 class V1alpha1NodeConfig:
     # Required. The type of hardware accelerators associated with this node.
     accelerator_type: Any = None
-    # Output only. The API version that created this Node.
-    api_version: Any = None
     # The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block.
     cidr_block: Any = None
-    # Output only. The time when the node was created.
-    create_time: Any = None
     # The user-supplied description of the TPU. Maximum of 512 characters.
     description: Any = None
     # The health status of the TPU node.
     health: Any = None
-    # Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy.
-    health_description: Any = None
     # Output only. DEPRECATED! Use network_endpoints instead. The network address for the TPU Node as visible to Compute Engine instances.
     ip_address: Any = None
     # Resource labels to represent user-provided metadata.
     labels: Any = None
-    # Output only. Immutable. The name of the TPU
-    name: Any = None
     # The name of a network they wish to peer the TPU node to. It must be a preexisting Compute Engine network inside of the project on which this API has been activated. If none is provided, "default" will be used.
     network: Any = None
-    # Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that Tensorflow clients of the node reach out to the 0th entry in this map first.
-    network_endpoints: Any = None
     # Output only. DEPRECATED! Use network_endpoints instead. The network port for the TPU Node as visible to Compute Engine instances.
     port: Any = None
     # DEPRECATED: Please use TPU API v2alpha1 instead. Sets the scheduling options for this node.
     scheduling_config: Any = None
-    # Output only. The service account used to run the tensor flow services within the node. To share resources, including Google Cloud Storage data, with the Tensorflow job running in the Node, this account must have permissions to that data.
-    service_account: Any = None
-    # Output only. The current state for the TPU Node.
-    state: Any = None
-    # Output only. The Symptoms that have occurred to the TPU Node.
-    symptoms: Any = None
     # Required. The version of Tensorflow running in the Node.
     tensorflow_version: Any = None
     # Whether the VPC peering for the node is set up through Service Networking API. The VPC Peering should be set up before provisioning the node. If this field is set, cidr_block field should not be specified. If the network, that you want to peer the TPU Node to, is Shared VPC networks, the node must be created with this this field enabled.
@@ -128,33 +100,17 @@ V1alpha1Node = ubx.ResourceBinding(
     wire_type="google_tpu_v1alpha1_node",
     fields={
         "accelerator_type": ubx.FieldSpec(wire_name="accelerator_type"),
-        "api_version": ubx.FieldSpec(wire_name="api_version"),
         "cidr_block": ubx.FieldSpec(wire_name="cidr_block"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "health": ubx.FieldSpec(wire_name="health"),
-        "health_description": ubx.FieldSpec(wire_name="health_description"),
         "ip_address": ubx.FieldSpec(wire_name="ip_address"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
-        "network_endpoints": ubx.FieldSpec(
-            wire_name="network_endpoints",
-            kind="list",
-            fields=_V1alpha1Node_NetworkEndpointsFields,
-        ),
         "port": ubx.FieldSpec(wire_name="port"),
         "scheduling_config": ubx.FieldSpec(
             wire_name="scheduling_config",
             kind="object",
             fields=_V1alpha1Node_SchedulingConfigFields,
-        ),
-        "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "symptoms": ubx.FieldSpec(
-            wire_name="symptoms",
-            kind="list",
-            fields=_V1alpha1Node_SymptomsFields,
         ),
         "tensorflow_version": ubx.FieldSpec(wire_name="tensorflow_version"),
         "use_service_networking": ubx.FieldSpec(wire_name="use_service_networking"),

@@ -23,18 +23,10 @@ const Datastore_DatastoreConfigFields: FieldMap = {
 };
 
 export interface DatastoreConfig {
-  /** Output only. Datastore create time, in milliseconds since the epoch of 1970-01-01T00:00:00Z */
-  createTime?: string | Computed<string>;
   /** Configuration detail for datastore */
   datastoreConfig?: Datastore_DatastoreConfig | Computed<Datastore_DatastoreConfig>;
   /** Required. Display name in UI */
   displayName?: string | Computed<string>;
-  /** Output only. Datastore last update time, in milliseconds since the epoch of 1970-01-01T00:00:00Z */
-  lastUpdateTime?: string | Computed<string>;
-  /** Output only. Organization that the datastore belongs to */
-  org?: string | Computed<string>;
-  /** Output only. Resource link of Datastore. Example: `/organizations/{org}/analytics/datastores/{uuid}` */
-  self?: string | Computed<string>;
   /** Destination storage type. Supported types `gcs` or `bigquery`. */
   targetType?: string | Computed<string>;
 }
@@ -59,16 +51,12 @@ export interface DatastoreAttrs {
 export const Datastore: ResourceBinding<DatastoreConfig, DatastoreAttrs> = {
   wireType: "google_apigee_datastore",
   fields: {
-    createTime: "create_time",
     datastoreConfig: {
       wireName: "datastore_config",
       kind: "object",
       fields: Datastore_DatastoreConfigFields,
     },
     displayName: "display_name",
-    lastUpdateTime: "last_update_time",
-    org: "org",
-    self: "self",
     targetType: "target_type",
   },
 };

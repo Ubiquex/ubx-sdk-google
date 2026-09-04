@@ -291,16 +291,8 @@ const Study_StudySpecFields: FieldMap = {
 };
 
 export interface StudyConfig {
-  /** Output only. Time at which the study was created. */
-  createTime?: string | Computed<string>;
   /** Required. Describes the Study, default value is empty string. */
   displayName?: string | Computed<string>;
-  /** Output only. A human readable reason why the Study is inactive. This should be empty if a study is ACTIVE or COMPLETED. */
-  inactiveReason?: string | Computed<string>;
-  /** Output only. The name of a study. The study's globally unique identifier. Format: `projects/{project}/locations/{location}/studies/{study}` */
-  name?: string | Computed<string>;
-  /** Output only. The detailed state of a Study. */
-  state?: string | Computed<string>;
   /** Represents specification of a Study. */
   studySpec?: Study_StudySpec | Computed<Study_StudySpec>;
 }
@@ -323,11 +315,7 @@ export interface StudyAttrs {
 export const Study: ResourceBinding<StudyConfig, StudyAttrs> = {
   wireType: "google_aiplatform_study",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    inactiveReason: "inactive_reason",
-    name: "name",
-    state: "state",
     studySpec: {
       wireName: "study_spec",
       kind: "object",

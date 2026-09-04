@@ -2,28 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alpha1SourceConfig {
-  /** Output only. The timestamp when the source was created. */
-  createTime?: string | Computed<string>;
   /** Free-text description. */
   description?: string | Computed<string>;
   /** User-friendly display name. */
   displayName?: string | Computed<string>;
-  /** Output only. The number of frames that were reported by the source and contained errors. */
-  errorFrameCount?: number | Computed<number>;
   /** If `true`, the source is managed by other service(s). */
   isManaged?: boolean | Computed<boolean>;
-  /** Output only. The full name of the source. */
-  name?: string | Computed<string>;
-  /** Output only. Number of frames that are still being processed. */
-  pendingFrameCount?: number | Computed<number>;
   /** The information confidence of the source. The higher the value, the higher the confidence. */
   priority?: number | Computed<number>;
-  /** Output only. The state of the source. */
-  state?: string | Computed<string>;
   /** Data source type. */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the source was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1SourceAttrs {
@@ -54,16 +42,10 @@ export interface V1alpha1SourceAttrs {
 export const V1alpha1Source: ResourceBinding<V1alpha1SourceConfig, V1alpha1SourceAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_source",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
-    errorFrameCount: "error_frame_count",
     isManaged: "is_managed",
-    name: "name",
-    pendingFrameCount: "pending_frame_count",
     priority: "priority",
-    state: "state",
     type: "type",
-    updateTime: "update_time",
   },
 };

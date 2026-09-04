@@ -6,12 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1betaSshPublicKeyConfig struct {
 	// An expiration time in microseconds since epoch.
 	ExpirationTimeUsec any
-	// Output only. The SHA-256 fingerprint of the SSH public key.
-	Fingerprint any
 	// Required. Public key text in SSH format, defined by [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
 	Key any
-	// Output only. The canonical resource name.
-	Name any
 }
 
 type V1betaSshPublicKeyAttrs struct {
@@ -29,8 +25,6 @@ var V1betaSshPublicKey = ubx.ResourceBinding{
 	WireType: "google_oslogin_v1beta_ssh_public_key",
 	Fields: ubx.FieldMap{
 		"ExpirationTimeUsec": ubx.FieldSpec{WireName: "expiration_time_usec"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Key":                ubx.FieldSpec{WireName: "key"},
 	},
 }

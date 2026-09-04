@@ -26,18 +26,6 @@ _Backend_CodebaseFields = {
     "root_directory": ubx.FieldSpec(wire_name="root_directory"),
 }
 
-_Backend_ManagedResources_RunServiceFields = {
-    "service": ubx.FieldSpec(wire_name="service"),
-}
-
-_Backend_ManagedResourcesFields = {
-    "run_service": ubx.FieldSpec(
-        wire_name="run_service",
-        kind="object",
-        fields=_Backend_ManagedResources_RunServiceFields,
-    ),
-}
-
 @dataclasses.dataclass
 class BackendConfig:
     # Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -46,38 +34,22 @@ class BackendConfig:
     app_id: Any = None
     # The connection to an external source repository to watch for event-driven updates to the backend.
     codebase: Any = None
-    # Output only. Time at which the backend was created.
-    create_time: Any = None
-    # Output only. Time at which the backend was deleted.
-    delete_time: Any = None
     # Optional. Human-readable name. 63 character limit.
     display_name: Any = None
     # Optional. The environment name of the backend, used to load environment variables from environment specific configuration.
     environment: Any = None
-    # Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-    etag: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects.
     labels: Any = None
-    # Output only. A list of the resources managed by this backend.
-    managed_resources: Any = None
     # Optional. Deprecated: Use `environment` instead.
     mode: Any = None
     # Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`.
     name: Any = None
-    # Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO.
-    reconciling: Any = None
     # Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default.
     request_logs_disabled: Any = None
     # Required. The name of the service account used for Cloud Build and Cloud Run. Should have the role roles/firebaseapphosting.computeRunner or equivalent permissions.
     service_account: Any = None
     # Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS).
     serving_locality: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. Time at which the backend was last updated.
-    update_time: Any = None
-    # Output only. The primary URI to communicate with the backend.
-    uri: Any = None
 
 @dataclasses.dataclass
 class BackendAttrs:
@@ -130,25 +102,13 @@ Backend = ubx.ResourceBinding(
             kind="object",
             fields=_Backend_CodebaseFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "environment": ubx.FieldSpec(wire_name="environment"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "managed_resources": ubx.FieldSpec(
-            wire_name="managed_resources",
-            kind="list",
-            fields=_Backend_ManagedResourcesFields,
-        ),
         "mode": ubx.FieldSpec(wire_name="mode"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "request_logs_disabled": ubx.FieldSpec(wire_name="request_logs_disabled"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "serving_locality": ubx.FieldSpec(wire_name="serving_locality"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "uri": ubx.FieldSpec(wire_name="uri"),
     },
 )

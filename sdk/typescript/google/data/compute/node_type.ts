@@ -17,7 +17,6 @@ export interface NodeType_Deprecated {
 export interface NodeTypeConfig {
   nodeType: string | Computed<string>;
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface NodeTypeAttrs {
@@ -55,6 +54,5 @@ export const NodeType: DataSourceBinding<NodeTypeConfig, NodeTypeAttrs> = {
   fields: {
     nodeType: "node_type",
     project: "project",
-    zone: "zone",
   },
 };

@@ -88,15 +88,9 @@ const BetaNodeGroup_ShareSettingsFields: FieldMap = {
 
 export interface BetaNodeGroupConfig {
   autoscalingPolicy?: BetaNodeGroup_AutoscalingPolicy | Computed<BetaNodeGroup_AutoscalingPolicy>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   fingerprint?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] The type of the resource. Alwayscompute#nodeGroup for node group. */
-  kind?: string | Computed<string>;
   /** An opaque location hint used to place the Node close to other resources. This field is for use by internal tools that use the public API. The location hint here on the NodeGroup overrides any location_hint present in the NodeTemplate. */
   locationHint?: string | Computed<string>;
   /** Specifies the frequency of planned maintenance events. The accepted values are: `AS_NEEDED` and `RECURRENT`. */
@@ -109,15 +103,8 @@ export interface BetaNodeGroupConfig {
   name?: string | Computed<string>;
   /** URL of the node template to create the node group from. */
   nodeTemplate?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
   /** The share setting for reservations and sole tenancy node groups. */
   shareSettings?: BetaNodeGroup_ShareSettings | Computed<BetaNodeGroup_ShareSettings>;
-  /** Output only. [Output Only] The total number of nodes in the node group. */
-  size?: number | Computed<number>;
-  status?: string | Computed<string>;
-  /** Output only. [Output Only] The name of the zone where the node group resides, such as us-central1-a. */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaNodeGroupAttrs {
@@ -162,11 +149,8 @@ export const BetaNodeGroup: ResourceBinding<BetaNodeGroupConfig, BetaNodeGroupAt
       kind: "object",
       fields: BetaNodeGroup_AutoscalingPolicyFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     fingerprint: "fingerprint",
-    id: "id",
-    kind: "kind",
     locationHint: "location_hint",
     maintenanceInterval: "maintenance_interval",
     maintenancePolicy: "maintenance_policy",
@@ -177,14 +161,10 @@ export const BetaNodeGroup: ResourceBinding<BetaNodeGroupConfig, BetaNodeGroupAt
     },
     name: "name",
     nodeTemplate: "node_template",
-    selfLink: "self_link",
     shareSettings: {
       wireName: "share_settings",
       kind: "object",
       fields: BetaNodeGroup_ShareSettingsFields,
     },
-    size: "size",
-    status: "status",
-    zone: "zone",
   },
 };

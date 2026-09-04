@@ -2,18 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IssueConfig {
-  /** Output only. The time at which this issue was created. */
-  createTime?: string | Computed<string>;
   /** Representative description of the issue. */
   displayDescription?: string | Computed<string>;
   /** The representative name for the issue. */
   displayName?: string | Computed<string>;
   /** Immutable. The resource name of the issue. Format: projects/{project}/locations/{location}/issueModels/{issue_model}/issues/{issue} */
   name?: string | Computed<string>;
-  /** Output only. Resource names of the sample representative utterances that match to this issue. */
-  sampleUtterances?: string[] | Computed<string[]>;
-  /** Output only. The most recent time that this issue was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface IssueAttrs {
@@ -34,11 +28,8 @@ export interface IssueAttrs {
 export const Issue: ResourceBinding<IssueConfig, IssueAttrs> = {
   wireType: "google_contactcenterinsights_issue",
   fields: {
-    createTime: "create_time",
     displayDescription: "display_description",
     displayName: "display_name",
     name: "name",
-    sampleUtterances: "sample_utterances",
-    updateTime: "update_time",
   },
 };

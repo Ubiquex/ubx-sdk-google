@@ -36,17 +36,17 @@ type Entitlement_CommitmentSettings struct {
 }
 
 type Entitlement_Entitlement_Parameters_Value struct {
-	BoolValue any
+	BoolValue   any
 	DoubleValue any
-	Int64Value any
-	ProtoValue any
+	Int64Value  any
+	ProtoValue  any
 	StringValue any
 }
 
 type Entitlement_Entitlement_Parameters struct {
 	Editable any
-	Name any
-	Value any
+	Name     any
+	Value    any
 }
 
 type Entitlement_Entitlement_ProvisionedService struct {
@@ -97,100 +97,100 @@ type Entitlement_Entitlement struct {
 }
 
 var Entitlement_AssociationInfoFields = ubx.FieldMap{
-		"BaseEntitlement": ubx.FieldSpec{WireName: "base_entitlement"},
-	}
+	"BaseEntitlement": ubx.FieldSpec{WireName: "base_entitlement"},
+}
 
 var Entitlement_CommitmentSettings_RenewalSettings_PaymentCycleFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"PeriodType": ubx.FieldSpec{WireName: "period_type"},
-	}
+	"Duration":   ubx.FieldSpec{WireName: "duration"},
+	"PeriodType": ubx.FieldSpec{WireName: "period_type"},
+}
 
 var Entitlement_CommitmentSettings_RenewalSettingsFields = ubx.FieldMap{
-		"EnableRenewal": ubx.FieldSpec{WireName: "enable_renewal"},
-		"PaymentCycle": ubx.FieldSpec{
-			WireName: "payment_cycle",
-			Kind: "object",
-			Fields: Entitlement_CommitmentSettings_RenewalSettings_PaymentCycleFields,
-		},
-		"PaymentPlan": ubx.FieldSpec{WireName: "payment_plan"},
-		"ResizeUnitCount": ubx.FieldSpec{WireName: "resize_unit_count"},
-	}
+	"EnableRenewal": ubx.FieldSpec{WireName: "enable_renewal"},
+	"PaymentCycle": ubx.FieldSpec{
+		WireName: "payment_cycle",
+		Kind:     "object",
+		Fields:   Entitlement_CommitmentSettings_RenewalSettings_PaymentCycleFields,
+	},
+	"PaymentPlan":     ubx.FieldSpec{WireName: "payment_plan"},
+	"ResizeUnitCount": ubx.FieldSpec{WireName: "resize_unit_count"},
+}
 
 var Entitlement_CommitmentSettingsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"RenewalSettings": ubx.FieldSpec{
-			WireName: "renewal_settings",
-			Kind: "object",
-			Fields: Entitlement_CommitmentSettings_RenewalSettingsFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"RenewalSettings": ubx.FieldSpec{
+		WireName: "renewal_settings",
+		Kind:     "object",
+		Fields:   Entitlement_CommitmentSettings_RenewalSettingsFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Entitlement_Entitlement_Parameters_ValueFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"Int64Value": ubx.FieldSpec{WireName: "int64_value"},
-		"ProtoValue": ubx.FieldSpec{WireName: "proto_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BoolValue":   ubx.FieldSpec{WireName: "bool_value"},
+	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+	"Int64Value":  ubx.FieldSpec{WireName: "int64_value"},
+	"ProtoValue":  ubx.FieldSpec{WireName: "proto_value"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var Entitlement_Entitlement_ParametersFields = ubx.FieldMap{
-		"Editable": ubx.FieldSpec{WireName: "editable"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Entitlement_Entitlement_Parameters_ValueFields,
-		},
-	}
+	"Editable": ubx.FieldSpec{WireName: "editable"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Entitlement_Entitlement_Parameters_ValueFields,
+	},
+}
 
 var Entitlement_Entitlement_ProvisionedServiceFields = ubx.FieldMap{
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
-		"ProvisioningId": ubx.FieldSpec{WireName: "provisioning_id"},
-		"SkuId": ubx.FieldSpec{WireName: "sku_id"},
-	}
+	"ProductId":      ubx.FieldSpec{WireName: "product_id"},
+	"ProvisioningId": ubx.FieldSpec{WireName: "provisioning_id"},
+	"SkuId":          ubx.FieldSpec{WireName: "sku_id"},
+}
 
 var Entitlement_Entitlement_TrialSettingsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Trial": ubx.FieldSpec{WireName: "trial"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"Trial":   ubx.FieldSpec{WireName: "trial"},
+}
 
 var Entitlement_EntitlementFields = ubx.FieldMap{
-		"AssociationInfo": ubx.FieldSpec{
-			WireName: "association_info",
-			Kind: "object",
-			Fields: Entitlement_AssociationInfoFields,
-		},
-		"BillingAccount": ubx.FieldSpec{WireName: "billing_account"},
-		"CommitmentSettings": ubx.FieldSpec{
-			WireName: "commitment_settings",
-			Kind: "object",
-			Fields: Entitlement_CommitmentSettingsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offer": ubx.FieldSpec{WireName: "offer"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Entitlement_Entitlement_ParametersFields,
-		},
-		"PriceReferenceId": ubx.FieldSpec{WireName: "price_reference_id"},
-		"ProvisionedService": ubx.FieldSpec{
-			WireName: "provisioned_service",
-			Kind: "object",
-			Fields: Entitlement_Entitlement_ProvisionedServiceFields,
-		},
-		"ProvisioningState": ubx.FieldSpec{WireName: "provisioning_state"},
-		"PurchaseOrderId": ubx.FieldSpec{WireName: "purchase_order_id"},
-		"SuspensionReasons": ubx.FieldSpec{WireName: "suspension_reasons"},
-		"TrialSettings": ubx.FieldSpec{
-			WireName: "trial_settings",
-			Kind: "object",
-			Fields: Entitlement_Entitlement_TrialSettingsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AssociationInfo": ubx.FieldSpec{
+		WireName: "association_info",
+		Kind:     "object",
+		Fields:   Entitlement_AssociationInfoFields,
+	},
+	"BillingAccount": ubx.FieldSpec{WireName: "billing_account"},
+	"CommitmentSettings": ubx.FieldSpec{
+		WireName: "commitment_settings",
+		Kind:     "object",
+		Fields:   Entitlement_CommitmentSettingsFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Offer":      ubx.FieldSpec{WireName: "offer"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Entitlement_Entitlement_ParametersFields,
+	},
+	"PriceReferenceId": ubx.FieldSpec{WireName: "price_reference_id"},
+	"ProvisionedService": ubx.FieldSpec{
+		WireName: "provisioned_service",
+		Kind:     "object",
+		Fields:   Entitlement_Entitlement_ProvisionedServiceFields,
+	},
+	"ProvisioningState": ubx.FieldSpec{WireName: "provisioning_state"},
+	"PurchaseOrderId":   ubx.FieldSpec{WireName: "purchase_order_id"},
+	"SuspensionReasons": ubx.FieldSpec{WireName: "suspension_reasons"},
+	"TrialSettings": ubx.FieldSpec{
+		WireName: "trial_settings",
+		Kind:     "object",
+		Fields:   Entitlement_Entitlement_TrialSettingsFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type EntitlementConfig struct {
 	// An entitlement is a representation of a customer's ability to use a service.
@@ -239,8 +239,8 @@ var Entitlement = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Entitlement": ubx.FieldSpec{
 			WireName: "entitlement",
-			Kind: "object",
-			Fields: Entitlement_EntitlementFields,
+			Kind:     "object",
+			Fields:   Entitlement_EntitlementFields,
 		},
 		"RequestId": ubx.FieldSpec{WireName: "request_id"},
 	},

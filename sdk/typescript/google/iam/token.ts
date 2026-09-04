@@ -6,10 +6,6 @@ export interface TokenConfig {
   displayName?: string | Computed<string>;
   /** Identifier. Gemini Enterprise only. The resource name of the SCIM Token. Format: `locations/{location}/workforcePools/{workforce_pool}/providers/ {workforce_pool_provider}/scimTenants/{scim_tenant}/tokens/{token}` */
   name?: string | Computed<string>;
-  /** Output only. Gemini Enterprise only. The token string. Provide this to the IdP for authentication. Will be set only during creation. */
-  securityToken?: string | Computed<string>;
-  /** Output only. Gemini Enterprise only. The state of the token. */
-  state?: string | Computed<string>;
 }
 
 export interface TokenAttrs {
@@ -28,7 +24,5 @@ export const Token: ResourceBinding<TokenConfig, TokenAttrs> = {
   fields: {
     displayName: "display_name",
     name: "name",
-    securityToken: "security_token",
-    state: "state",
   },
 };

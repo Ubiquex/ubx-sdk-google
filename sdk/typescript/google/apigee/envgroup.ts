@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EnvgroupConfig {
-  /** Output only. The time at which the environment group was created as milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** Required. Host names for this environment group. */
   hostnames?: string[] | Computed<string[]>;
-  /** Output only. The time at which the environment group was last updated as milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** ID of the environment group. */
   name?: string | Computed<string>;
-  /** Output only. State of the environment group. Values other than ACTIVE means the resource is not ready to use. */
-  state?: string | Computed<string>;
 }
 
 export interface EnvgroupAttrs {
@@ -30,10 +24,7 @@ export interface EnvgroupAttrs {
 export const Envgroup: ResourceBinding<EnvgroupConfig, EnvgroupAttrs> = {
   wireType: "google_apigee_envgroup",
   fields: {
-    createdAt: "created_at",
     hostnames: "hostnames",
-    lastModifiedAt: "last_modified_at",
     name: "name",
-    state: "state",
   },
 };

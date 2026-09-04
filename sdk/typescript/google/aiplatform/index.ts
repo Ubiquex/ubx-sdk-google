@@ -21,12 +21,6 @@ export interface Index_IndexStats {
   vectorsCount?: string | Computed<string>;
 }
 
-const Index_DeployedIndexesFields: FieldMap = {
-  deployedIndexId: "deployed_index_id",
-  displayName: "display_name",
-  indexEndpoint: "index_endpoint",
-};
-
 const Index_EncryptionSpecFields: FieldMap = {
   kmsKeyName: "kms_key_name",
 };
@@ -38,10 +32,6 @@ const Index_IndexStatsFields: FieldMap = {
 };
 
 export interface IndexConfig {
-  /** Output only. Timestamp when this Index was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The pointers to DeployedIndexes created from this Index. An Index can be only deleted if all its DeployedIndexes had been undeployed first. */
-  deployedIndexes?: Index_DeployedIndexes[] | Computed<Index_DeployedIndexes[]>;
   /** The description of the Index. */
   description?: string | Computed<string>;
   /** Required. The display name of the Index. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
@@ -60,14 +50,6 @@ export interface IndexConfig {
   metadata?: unknown | Computed<unknown>;
   /** Immutable. Points to a YAML file stored on Google Cloud Storage describing additional information about the Index, that is specific to it. Unset if the Index does not have any additional information. The schema is defined as an OpenAPI 3.0.2 [Schema Object](https://github.com/OAI/OpenAPI-Specification/blob/main/versions/3.0.2.md#schemaObject). Note: The URI given on output will be immutable and probably different, including the URI scheme, than the one given on input. The output URI will point to a location where the user only has a read access. */
   metadataSchemaUri?: string | Computed<string>;
-  /** Output only. The resource name of the Index. */
-  name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this Index was most recently updated. This also includes any update to the contents of the Index. Note that Operations working on this Index may have their Operations.metadata.generic_metadata.update_time a little after the value of this timestamp, yet that does not mean their results are not already reflected in the Index. Result of any successfully completed Operation on the Index is reflected in it. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface IndexAttrs {
@@ -106,12 +88,6 @@ export interface IndexAttrs {
 export const Index: ResourceBinding<IndexConfig, IndexAttrs> = {
   wireType: "google_aiplatform_index",
   fields: {
-    createTime: "create_time",
-    deployedIndexes: {
-      wireName: "deployed_indexes",
-      kind: "list",
-      fields: Index_DeployedIndexesFields,
-    },
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -129,9 +105,5 @@ export const Index: ResourceBinding<IndexConfig, IndexAttrs> = {
     labels: "labels",
     metadata: "metadata",
     metadataSchemaUri: "metadata_schema_uri",
-    name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
   },
 };

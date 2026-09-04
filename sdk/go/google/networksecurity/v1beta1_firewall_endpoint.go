@@ -4,7 +4,7 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FirewallEndpoint_Associations struct {
-	Name any
+	Name    any
 	Network any
 }
 
@@ -39,44 +39,33 @@ type V1beta1FirewallEndpoint_WildfireSettings struct {
 	WildfireRegion any
 }
 
-var V1beta1FirewallEndpoint_AssociationsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
-
 var V1beta1FirewallEndpoint_EndpointSettingsFields = ubx.FieldMap{
-		"ContentCloudRegion": ubx.FieldSpec{WireName: "content_cloud_region"},
-		"HttpPartialResponseBlocked": ubx.FieldSpec{WireName: "http_partial_response_blocked"},
-		"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
-	}
+	"ContentCloudRegion":         ubx.FieldSpec{WireName: "content_cloud_region"},
+	"HttpPartialResponseBlocked": ubx.FieldSpec{WireName: "http_partial_response_blocked"},
+	"JumboFramesEnabled":         ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
+}
 
 var V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields = ubx.FieldMap{
-		"MaxAnalysisDuration": ubx.FieldSpec{WireName: "max_analysis_duration"},
-		"SubmissionTimeoutLoggingDisabled": ubx.FieldSpec{WireName: "submission_timeout_logging_disabled"},
-		"TimeoutAction": ubx.FieldSpec{WireName: "timeout_action"},
-	}
+	"MaxAnalysisDuration":              ubx.FieldSpec{WireName: "max_analysis_duration"},
+	"SubmissionTimeoutLoggingDisabled": ubx.FieldSpec{WireName: "submission_timeout_logging_disabled"},
+	"TimeoutAction":                    ubx.FieldSpec{WireName: "timeout_action"},
+}
 
 var V1beta1FirewallEndpoint_WildfireSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"WildfireInlineCloudAnalysisSettings": ubx.FieldSpec{
-			WireName: "wildfire_inline_cloud_analysis_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields,
-		},
-		"WildfireRealtimeLookupDuration": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_duration"},
-		"WildfireRealtimeLookupTimeoutAction": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_timeout_action"},
-		"WildfireRegion": ubx.FieldSpec{WireName: "wildfire_region"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"WildfireInlineCloudAnalysisSettings": ubx.FieldSpec{
+		WireName: "wildfire_inline_cloud_analysis_settings",
+		Kind:     "object",
+		Fields:   V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields,
+	},
+	"WildfireRealtimeLookupDuration":      ubx.FieldSpec{WireName: "wildfire_realtime_lookup_duration"},
+	"WildfireRealtimeLookupTimeoutAction": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_timeout_action"},
+	"WildfireRegion":                      ubx.FieldSpec{WireName: "wildfire_region"},
+}
 
 type V1beta1FirewallEndpointConfig struct {
-	// Output only. Deprecated: List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}.
-	AssociatedNetworks any
-	// Output only. List of FirewallEndpointAssociations that are associated to this endpoint. An association will only appear in this list after traffic routing is fully configured.
-	Associations any
 	// Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.
 	BillingProjectId any
-	// Output only. Create time stamp.
-	CreateTime any
 	// Optional. Description of the firewall endpoint. Max length 2048 characters.
 	Description any
 	// Settings for the endpoint.
@@ -85,16 +74,6 @@ type V1beta1FirewallEndpointConfig struct {
 	Labels any
 	// Immutable. Identifier. Name of resource.
 	Name any
-	// Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128.
-	Reconciling any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Current state of the endpoint.
-	State any
-	// Output only. Update time stamp
-	UpdateTime any
 	// Settings for WildFire analysis.
 	WildfireSettings any
 }
@@ -133,31 +112,19 @@ type V1beta1FirewallEndpointAttrs struct {
 var V1beta1FirewallEndpoint = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_firewall_endpoint",
 	Fields: ubx.FieldMap{
-		"AssociatedNetworks": ubx.FieldSpec{WireName: "associated_networks"},
-		"Associations": ubx.FieldSpec{
-			WireName: "associations",
-			Kind: "list",
-			Fields: V1beta1FirewallEndpoint_AssociationsFields,
-		},
 		"BillingProjectId": ubx.FieldSpec{WireName: "billing_project_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EndpointSettings": ubx.FieldSpec{
 			WireName: "endpoint_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_EndpointSettingsFields,
+			Kind:     "object",
+			Fields:   V1beta1FirewallEndpoint_EndpointSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"WildfireSettings": ubx.FieldSpec{
 			WireName: "wildfire_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_WildfireSettingsFields,
+			Kind:     "object",
+			Fields:   V1beta1FirewallEndpoint_WildfireSettingsFields,
 		},
 	},
 }

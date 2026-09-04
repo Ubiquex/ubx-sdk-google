@@ -8,22 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alpha1BackupConfig:
-    # Output only. The time the backups was created.
-    create_time: Any = None
     # Optional. A short description of the backup.
     description: Any = None
     # Optional. Resource labels to represent user provided metadata.
     labels: Any = None
-    # Output only. The unique name of the Backup in the form of projects/{project_id}/locations/global/domains/{domain_name}/backups/{name}
-    name: Any = None
-    # Output only. The current state of the backup.
-    state: Any = None
-    # Output only. Additional information about the current status of this backup, if available.
-    status_message: Any = None
-    # Output only. Indicates whether it’s an on-demand backup or scheduled.
-    type: Any = None
-    # Output only. Last update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1BackupAttrs:
@@ -47,13 +35,7 @@ class V1alpha1BackupAttrs:
 V1alpha1Backup = ubx.ResourceBinding(
     wire_type="google_managedidentities_v1alpha1_backup",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

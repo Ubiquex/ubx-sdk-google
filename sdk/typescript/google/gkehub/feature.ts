@@ -1609,22 +1609,14 @@ const Feature_StateFields: FieldMap = {
 };
 
 export interface FeatureConfig {
-  /** Output only. When the MembershipFeature resource was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the MembershipFeature resource was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Google Cloud labels for this MembershipFeature. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** LifecycleState describes the state of a MembershipFeature *resource* in the GkeHub API. See `FeatureState` for the "running state" of the MembershipFeature. */
   lifecycleState?: Feature_LifecycleState | Computed<Feature_LifecycleState>;
-  /** Output only. The resource name of the membershipFeature, in the format: `projects/{project}/locations/{location}/memberships/{membership}/features/{feature}`. Note that `membershipFeatures` is shortened to `features` in the resource name. (see http://go/aip/122#collection-identifiers) */
-  name?: string | Computed<string>;
   /** FeatureSpec contains user input per-feature spec information. */
   spec?: Feature_Spec | Computed<Feature_Spec>;
   /** FeatureState contains high-level state information and per-feature state information for this MembershipFeature. */
   state?: Feature_State | Computed<Feature_State>;
-  /** Output only. When the MembershipFeature resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface FeatureAttrs {
@@ -1649,15 +1641,12 @@ export interface FeatureAttrs {
 export const Feature: ResourceBinding<FeatureConfig, FeatureAttrs> = {
   wireType: "google_gkehub_feature",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     labels: "labels",
     lifecycleState: {
       wireName: "lifecycle_state",
       kind: "object",
       fields: Feature_LifecycleStateFields,
     },
-    name: "name",
     spec: {
       wireName: "spec",
       kind: "object",
@@ -1668,6 +1657,5 @@ export const Feature: ResourceBinding<FeatureConfig, FeatureAttrs> = {
       kind: "object",
       fields: Feature_StateFields,
     },
-    updateTime: "update_time",
   },
 };

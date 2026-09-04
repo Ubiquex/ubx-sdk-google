@@ -36,34 +36,32 @@ type Repository_Uris struct {
 }
 
 var Repository_InitialConfigFields = ubx.FieldMap{
-		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
-		"Gitignores": ubx.FieldSpec{WireName: "gitignores"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"Readme": ubx.FieldSpec{WireName: "readme"},
-	}
+	"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
+	"Gitignores":    ubx.FieldSpec{WireName: "gitignores"},
+	"License":       ubx.FieldSpec{WireName: "license"},
+	"Readme":        ubx.FieldSpec{WireName: "readme"},
+}
 
 var Repository_ScanConfig_SecretScanConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
-	}
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+	"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
+}
 
 var Repository_ScanConfigFields = ubx.FieldMap{
-		"SecretScanConfig": ubx.FieldSpec{
-			WireName: "secret_scan_config",
-			Kind: "object",
-			Fields: Repository_ScanConfig_SecretScanConfigFields,
-		},
-	}
+	"SecretScanConfig": ubx.FieldSpec{
+		WireName: "secret_scan_config",
+		Kind:     "object",
+		Fields:   Repository_ScanConfig_SecretScanConfigFields,
+	},
+}
 
 var Repository_UrisFields = ubx.FieldMap{
-		"Api": ubx.FieldSpec{WireName: "api"},
-		"GitHttps": ubx.FieldSpec{WireName: "git_https"},
-		"Html": ubx.FieldSpec{WireName: "html"},
-	}
+	"Api":      ubx.FieldSpec{WireName: "api"},
+	"GitHttps": ubx.FieldSpec{WireName: "git_https"},
+	"Html":     ubx.FieldSpec{WireName: "html"},
+}
 
 type RepositoryConfig struct {
-	// Output only. Create timestamp.
-	CreateTime any
 	// Optional. Description of the repository, which cannot exceed 500 characters.
 	Description any
 	// Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -78,10 +76,6 @@ type RepositoryConfig struct {
 	ScanConfig any
 	// Optional. Repository level service account (BYOSA).
 	ServiceAccount any
-	// Output only. Unique identifier of the repository.
-	Uid any
-	// Output only. Update timestamp.
-	UpdateTime any
 	// URIs for the repository.
 	Uris any
 }
@@ -114,28 +108,25 @@ type RepositoryAttrs struct {
 var Repository = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_repository",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"InitialConfig": ubx.FieldSpec{
 			WireName: "initial_config",
-			Kind: "object",
-			Fields: Repository_InitialConfigFields,
+			Kind:     "object",
+			Fields:   Repository_InitialConfigFields,
 		},
 		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"ScanConfig": ubx.FieldSpec{
 			WireName: "scan_config",
-			Kind: "object",
-			Fields: Repository_ScanConfigFields,
+			Kind:     "object",
+			Fields:   Repository_ScanConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Uris": ubx.FieldSpec{
 			WireName: "uris",
-			Kind: "object",
-			Fields: Repository_UrisFields,
+			Kind:     "object",
+			Fields:   Repository_UrisFields,
 		},
 	},
 }

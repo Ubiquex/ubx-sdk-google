@@ -207,23 +207,6 @@ _Instance_BinaryAuthorizationFields = {
     "use_default": ubx.FieldSpec(wire_name="use_default"),
 }
 
-_Instance_ConditionsFields = {
-    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
-    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
-    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_Instance_ContainerStatusesFields = {
-    "image_digest": ubx.FieldSpec(wire_name="image_digest"),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 _Instance_Containers_BuildInfoFields = {
     "function_target": ubx.FieldSpec(wire_name="function_target"),
     "source_location": ubx.FieldSpec(wire_name="source_location"),
@@ -407,6 +390,18 @@ _Instance_NodeSelectorFields = {
     "accelerator": ubx.FieldSpec(wire_name="accelerator"),
 }
 
+_Instance_ConditionsFields = {
+    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
+    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
+    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 _Instance_Volumes_CloudSqlInstanceFields = {
     "instances": ubx.FieldSpec(wire_name="instances"),
 }
@@ -498,20 +493,10 @@ class InstanceConfig:
     client: Any = None
     # Arbitrary version identifier for the API client.
     client_version: Any = None
-    # Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Instance does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    conditions: Any = None
-    # Output only. Status information for each of the specified containers. The status includes the resolved digest for specified images.
-    container_statuses: Any = None
     # Required. Holds the single container that defines the unit of execution for this Instance.
     containers: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
-    # Output only. Email address of the authenticated creator.
-    creator: Any = None
     # Optional. Disables public resolution of the default URI of this Instance.
     default_uri_disabled: Any = None
-    # Output only. The deletion time.
-    delete_time: Any = None
     # User-provided description of the Instance. This field currently has a 512-character limit.
     description: Any = None
     # A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek
@@ -522,10 +507,6 @@ class InstanceConfig:
     encryption_key_shutdown_duration: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
-    # Output only. For a deleted resource, the time after which it will be permamently deleted.
-    expire_time: Any = None
-    # Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an `int64` value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    generation: Any = None
     # Optional. True if GPU zonal redundancy is disabled on this instance.
     gpu_zonal_redundancy_disabled: Any = None
     # Optional. IAP settings on the Instance.
@@ -535,33 +516,17 @@ class InstanceConfig:
     # Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check.
     invoker_iam_disabled: Any = None
     labels: Any = None
-    # Output only. Email address of the last authenticated modifier.
-    last_modifier: Any = None
     # The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output.
     launch_stage: Any = None
-    # Output only. The Google Console URI to obtain logs for the Instance.
-    log_uri: Any = None
     # The fully qualified name of this Instance. In `CreateInstanceRequest`, this field is ignored, and instead composed from `CreateInstanceRequest.parent` and `CreateInstanceRequest.instance_id`.
     name: Any = None
     # Hardware constraints configuration.
     node_selector: Any = None
-    # Output only. The generation of this Instance currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an `int64` value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    observed_generation: Any = None
-    # Output only. Returns `true` if the Instance is currently being acted upon by the system to bring it into the desired state. When a new Instance is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Instance to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation` will have a transient value that might mismatch the intended state. Once reconciliation is over (and this field is `false`), there are two possible outcomes: reconciliation succeeded and the serving state matches the Instance, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`.
-    reconciling: Any = None
     # Optional. Restart policy for the Instance.
     restart_policy: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     service_account: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None
-    # Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
-    # Output only. All URLs serving traffic for this Instance.
-    urls: Any = None
     # A list of Volumes to make available to containers.
     volumes: Any = None
     # VPC Access settings. For more information on sending traffic to a VPC network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc.
@@ -656,59 +621,36 @@ Instance = ubx.ResourceBinding(
         ),
         "client": ubx.FieldSpec(wire_name="client"),
         "client_version": ubx.FieldSpec(wire_name="client_version"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="list",
-            fields=_Instance_ConditionsFields,
-        ),
-        "container_statuses": ubx.FieldSpec(
-            wire_name="container_statuses",
-            kind="list",
-            fields=_Instance_ContainerStatusesFields,
-        ),
         "containers": ubx.FieldSpec(
             wire_name="containers",
             kind="list",
             fields=_Instance_ContainersFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "default_uri_disabled": ubx.FieldSpec(wire_name="default_uri_disabled"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encryption_key": ubx.FieldSpec(wire_name="encryption_key"),
         "encryption_key_revocation_action": ubx.FieldSpec(wire_name="encryption_key_revocation_action"),
         "encryption_key_shutdown_duration": ubx.FieldSpec(wire_name="encryption_key_shutdown_duration"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generation": ubx.FieldSpec(wire_name="generation"),
         "gpu_zonal_redundancy_disabled": ubx.FieldSpec(wire_name="gpu_zonal_redundancy_disabled"),
         "iap_enabled": ubx.FieldSpec(wire_name="iap_enabled"),
         "ingress": ubx.FieldSpec(wire_name="ingress"),
         "invoker_iam_disabled": ubx.FieldSpec(wire_name="invoker_iam_disabled"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modifier": ubx.FieldSpec(wire_name="last_modifier"),
         "launch_stage": ubx.FieldSpec(wire_name="launch_stage"),
-        "log_uri": ubx.FieldSpec(wire_name="log_uri"),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_selector": ubx.FieldSpec(
             wire_name="node_selector",
             kind="object",
             fields=_Instance_NodeSelectorFields,
         ),
-        "observed_generation": ubx.FieldSpec(wire_name="observed_generation"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "restart_policy": ubx.FieldSpec(wire_name="restart_policy"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "terminal_condition": ubx.FieldSpec(
             wire_name="terminal_condition",
             kind="object",
             fields=_Instance_ConditionsFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "urls": ubx.FieldSpec(wire_name="urls"),
         "volumes": ubx.FieldSpec(
             wire_name="volumes",
             kind="list",

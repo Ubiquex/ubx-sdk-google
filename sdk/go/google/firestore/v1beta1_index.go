@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Index_Fields struct {
 	FieldPath any
-	Mode any
+	Mode      any
 }
 
 var V1beta1Index_FieldsFields = ubx.FieldMap{
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"FieldPath": ubx.FieldSpec{WireName: "field_path"},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+}
 
 type V1beta1IndexConfig struct {
 	// The collection ID to which this index applies. Required.
@@ -41,10 +41,10 @@ var V1beta1Index = ubx.ResourceBinding{
 		"CollectionId": ubx.FieldSpec{WireName: "collection_id"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "list",
-			Fields: V1beta1Index_FieldsFields,
+			Kind:     "list",
+			Fields:   V1beta1Index_FieldsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

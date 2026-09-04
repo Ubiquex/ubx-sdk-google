@@ -270,100 +270,15 @@ const ImageImport_MachineImageTargetDefaultsFields: FieldMap = {
   targetProject: "target_project",
 };
 
-const ImageImport_RecentImageImportJobs_ErrorsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const ImageImport_RecentImageImportJobs_StepsFields: FieldMap = {
-  adaptingOs: "adapting_os",
-  creatingImage: "creating_image",
-  endTime: "end_time",
-  initializing: "initializing",
-  loadingSourceFiles: "loading_source_files",
-  startTime: "start_time",
-};
-
-const ImageImport_RecentImageImportJobs_Warnings_ActionItemFields: FieldMap = {
-  locale: "locale",
-  message: "message",
-};
-
-const ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields: FieldMap = {
-  description: "description",
-  url: "url",
-};
-
-const ImageImport_RecentImageImportJobs_WarningsFields: FieldMap = {
-  actionItem: {
-    wireName: "action_item",
-    kind: "object",
-    fields: ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-  },
-  code: "code",
-  helpLinks: {
-    wireName: "help_links",
-    kind: "list",
-    fields: ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields,
-  },
-  warningMessage: {
-    wireName: "warning_message",
-    kind: "object",
-    fields: ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-  },
-  warningTime: "warning_time",
-};
-
-const ImageImport_RecentImageImportJobsFields: FieldMap = {
-  cloudStorageUri: "cloud_storage_uri",
-  createTime: "create_time",
-  createdResources: "created_resources",
-  diskImageTargetDetails: {
-    wireName: "disk_image_target_details",
-    kind: "object",
-    fields: ImageImport_DiskImageTargetDefaultsFields,
-  },
-  endTime: "end_time",
-  errors: {
-    wireName: "errors",
-    kind: "list",
-    fields: ImageImport_RecentImageImportJobs_ErrorsFields,
-  },
-  machineImageTargetDetails: {
-    wireName: "machine_image_target_details",
-    kind: "object",
-    fields: ImageImport_MachineImageTargetDefaultsFields,
-  },
-  name: "name",
-  state: "state",
-  steps: {
-    wireName: "steps",
-    kind: "list",
-    fields: ImageImport_RecentImageImportJobs_StepsFields,
-  },
-  warnings: {
-    wireName: "warnings",
-    kind: "list",
-    fields: ImageImport_RecentImageImportJobs_WarningsFields,
-  },
-};
-
 export interface ImageImportConfig {
   /** Immutable. The path to the Cloud Storage file from which the image should be imported. */
   cloudStorageUri?: string | Computed<string>;
-  /** Output only. The time the image import was created. */
-  createTime?: string | Computed<string>;
   /** The target details of the image resource that will be created by the import job. */
   diskImageTargetDefaults?: ImageImport_DiskImageTargetDefaults | Computed<ImageImport_DiskImageTargetDefaults>;
   /** Encryption message describes the details of the applied encryption. */
   encryption?: ImageImport_DiskImageTargetDefaults_Encryption | Computed<ImageImport_DiskImageTargetDefaults_Encryption>;
   /** The target details of the machine image resource that will be created by the image import job. */
   machineImageTargetDefaults?: ImageImport_MachineImageTargetDefaults | Computed<ImageImport_MachineImageTargetDefaults>;
-  /** Output only. The resource path of the ImageImport. */
-  name?: string | Computed<string>;
-  /** Output only. The result of the most recent runs for this ImageImport. All jobs for this ImageImport can be listed via ListImageImportJobs. */
-  recentImageImportJobs?: ImageImport_RecentImageImportJobs[] | Computed<ImageImport_RecentImageImportJobs[]>;
 }
 
 export interface ImageImportAttrs {
@@ -387,7 +302,6 @@ export const ImageImport: ResourceBinding<ImageImportConfig, ImageImportAttrs> =
   wireType: "google_vmmigration_image_import",
   fields: {
     cloudStorageUri: "cloud_storage_uri",
-    createTime: "create_time",
     diskImageTargetDefaults: {
       wireName: "disk_image_target_defaults",
       kind: "object",
@@ -402,12 +316,6 @@ export const ImageImport: ResourceBinding<ImageImportConfig, ImageImportAttrs> =
       wireName: "machine_image_target_defaults",
       kind: "object",
       fields: ImageImport_MachineImageTargetDefaultsFields,
-    },
-    name: "name",
-    recentImageImportJobs: {
-      wireName: "recent_image_import_jobs",
-      kind: "list",
-      fields: ImageImport_RecentImageImportJobsFields,
     },
   },
 };

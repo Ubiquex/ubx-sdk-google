@@ -532,8 +532,6 @@ const VmwareCluster_VcenterFields: FieldMap = {
 export interface VmwareClusterConfig {
   /** Required. The admin cluster this VMware user cluster belongs to. This is the full resource name of the admin cluster's fleet membership. In the future, references to other resource types might be allowed if admin clusters are modeled as their own resources. */
   adminClusterMembership?: string | Computed<string>;
-  /** Output only. The resource name of the VMware admin cluster hosting this user cluster. */
-  adminClusterName?: string | Computed<string>;
   /** Annotations on the VMware user cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Specifies anti affinity group config for the VMware user cluster. */
@@ -546,12 +544,8 @@ export interface VmwareClusterConfig {
   binaryAuthorization?: VmwareCluster_BinaryAuthorization | Computed<VmwareCluster_BinaryAuthorization>;
   /** Specifies control plane node config for the VMware user cluster. */
   controlPlaneNode?: VmwareCluster_ControlPlaneNode | Computed<VmwareCluster_ControlPlaneNode>;
-  /** Output only. The time at which VMware user cluster was created. */
-  createTime?: string | Computed<string>;
   /** Contains configurations for Dataplane V2, which is optimized dataplane for Kubernetes networking. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2 */
   dataplaneV2?: VmwareCluster_DataplaneV2 | Computed<VmwareCluster_DataplaneV2>;
-  /** Output only. The time at which VMware user cluster was deleted. */
-  deleteTime?: string | Computed<string>;
   /** A human readable description of this VMware user cluster. */
   description?: string | Computed<string>;
   /** Disable bundled ingress. */
@@ -560,34 +554,22 @@ export interface VmwareClusterConfig {
   enableAdvancedCluster?: boolean | Computed<boolean>;
   /** Enable control plane V2. Default to false. */
   enableControlPlaneV2?: boolean | Computed<boolean>;
-  /** Output only. The DNS name of VMware user cluster's API server. */
-  endpoint?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
   etag?: string | Computed<string>;
   /** Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ## */
   fleet?: VmwareCluster_Fleet | Computed<VmwareCluster_Fleet>;
   /** Specifies the locad balancer config for the VMware user cluster. */
   loadBalancer?: VmwareCluster_LoadBalancer | Computed<VmwareCluster_LoadBalancer>;
-  /** Output only. The object name of the VMware OnPremUserCluster custom resource on the associated admin cluster. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs. */
-  localName?: string | Computed<string>;
   /** Immutable. The VMware user cluster resource name. */
   name?: string | Computed<string>;
   /** Specifies network config for the VMware user cluster. */
   networkConfig?: VmwareCluster_NetworkConfig | Computed<VmwareCluster_NetworkConfig>;
   /** Required. The Anthos clusters on the VMware version for your user cluster. */
   onPremVersion?: string | Computed<string>;
-  /** Output only. If set, there are currently changes in flight to the VMware user cluster. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of VMware user cluster. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: VmwareCluster_Status | Computed<VmwareCluster_Status>;
   /** Specifies vSphere CSI components deployment config in the VMware user cluster. */
   storage?: VmwareCluster_Storage | Computed<VmwareCluster_Storage>;
-  /** Output only. The unique identifier of the VMware user cluster. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which VMware user cluster was last updated. */
-  updateTime?: string | Computed<string>;
   /** VmwareClusterUpgradePolicy defines the cluster upgrade policy. */
   upgradePolicy?: VmwareCluster_UpgradePolicy | Computed<VmwareCluster_UpgradePolicy>;
   /** ValidationCheck represents the result of preflight check. */
@@ -671,7 +653,6 @@ export const VmwareCluster: ResourceBinding<VmwareClusterConfig, VmwareClusterAt
   wireType: "google_gkeonprem_vmware_cluster",
   fields: {
     adminClusterMembership: "admin_cluster_membership",
-    adminClusterName: "admin_cluster_name",
     annotations: "annotations",
     antiAffinityGroups: {
       wireName: "anti_affinity_groups",
@@ -698,18 +679,15 @@ export const VmwareCluster: ResourceBinding<VmwareClusterConfig, VmwareClusterAt
       kind: "object",
       fields: VmwareCluster_ControlPlaneNodeFields,
     },
-    createTime: "create_time",
     dataplaneV2: {
       wireName: "dataplane_v2",
       kind: "object",
       fields: VmwareCluster_DataplaneV2Fields,
     },
-    deleteTime: "delete_time",
     description: "description",
     disableBundledIngress: "disable_bundled_ingress",
     enableAdvancedCluster: "enable_advanced_cluster",
     enableControlPlaneV2: "enable_control_plane_v2",
-    endpoint: "endpoint",
     etag: "etag",
     fleet: {
       wireName: "fleet",
@@ -721,7 +699,6 @@ export const VmwareCluster: ResourceBinding<VmwareClusterConfig, VmwareClusterAt
       kind: "object",
       fields: VmwareCluster_LoadBalancerFields,
     },
-    localName: "local_name",
     name: "name",
     networkConfig: {
       wireName: "network_config",
@@ -729,8 +706,6 @@ export const VmwareCluster: ResourceBinding<VmwareClusterConfig, VmwareClusterAt
       fields: VmwareCluster_NetworkConfigFields,
     },
     onPremVersion: "on_prem_version",
-    reconciling: "reconciling",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
@@ -741,8 +716,6 @@ export const VmwareCluster: ResourceBinding<VmwareClusterConfig, VmwareClusterAt
       kind: "object",
       fields: VmwareCluster_StorageFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     upgradePolicy: {
       wireName: "upgrade_policy",
       kind: "object",

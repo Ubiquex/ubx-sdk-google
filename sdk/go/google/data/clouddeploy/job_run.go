@@ -12,15 +12,15 @@ type JobRun_AdvanceChildRolloutJobRun struct {
 
 type JobRun_AnalysisJobRun_AlertPolicyAnalyses_FailedAlertPolicies struct {
 	AlertPolicy any
-	Alerts any
+	Alerts      any
 }
 
 type JobRun_AnalysisJobRun_AlertPolicyAnalyses struct {
-	AlertPolicies any
+	AlertPolicies       any
 	FailedAlertPolicies any
-	FailureMessage any
-	Id any
-	Labels any
+	FailureMessage      any
+	Id                  any
+	Labels              any
 }
 
 type JobRun_AnalysisJobRun_CustomCheckAnalyses_Metadata struct {
@@ -28,10 +28,10 @@ type JobRun_AnalysisJobRun_CustomCheckAnalyses_Metadata struct {
 }
 
 type JobRun_AnalysisJobRun_CustomCheckAnalyses_Task_Container struct {
-	Args any
+	Args    any
 	Command any
-	Env any
-	Image any
+	Env     any
+	Image   any
 }
 
 type JobRun_AnalysisJobRun_CustomCheckAnalyses_Task struct {
@@ -39,13 +39,13 @@ type JobRun_AnalysisJobRun_CustomCheckAnalyses_Task struct {
 }
 
 type JobRun_AnalysisJobRun_CustomCheckAnalyses struct {
-	FailureCause any
+	FailureCause   any
 	FailureMessage any
-	Frequency any
-	Id any
-	LatestBuild any
-	Metadata any
-	Task any
+	Frequency      any
+	Id             any
+	LatestBuild    any
+	Metadata       any
+	Task           any
 }
 
 type JobRun_AnalysisJobRun struct {
@@ -138,7 +138,6 @@ type JobRun_VerifyJobRun struct {
 }
 
 type JobRunConfig struct {
-	Name any
 }
 
 type JobRunAttrs struct {
@@ -158,7 +157,7 @@ type JobRunAttrs struct {
 	Etag any
 	// Output only. ID of the `Rollout` job this `JobRun` corresponds to.
 	JobId any
-	Name any
+	Name  any
 	// Output only. ID of the `Rollout` phase this `JobRun` belongs in.
 	PhaseId any
 	// PostdeployJobRun contains information specific to a postdeploy `JobRun`.
@@ -177,7 +176,5 @@ type JobRunAttrs struct {
 
 var JobRun = ubx.DataSourceBinding{
 	WireType: "google_clouddeploy_job_run",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

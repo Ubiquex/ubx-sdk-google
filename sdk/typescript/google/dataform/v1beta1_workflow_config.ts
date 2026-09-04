@@ -91,16 +91,6 @@ const V1beta1WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields: F
   message: "message",
 };
 
-const V1beta1WorkflowConfig_RecentScheduledExecutionRecordsFields: FieldMap = {
-  errorStatus: {
-    wireName: "error_status",
-    kind: "object",
-    fields: V1beta1WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields,
-  },
-  executionTime: "execution_time",
-  workflowInvocation: "workflow_invocation",
-};
-
 const V1beta1WorkflowConfig_WorkflowTriggerConfig_RecentTriggerEvaluationRecordsFields: FieldMap = {
   evaluationTime: "evaluation_time",
   status: {
@@ -145,26 +135,18 @@ const V1beta1WorkflowConfig_WorkflowTriggerConfigFields: FieldMap = {
 };
 
 export interface V1beta1WorkflowConfigConfig {
-  /** Output only. The timestamp of when the WorkflowConfig was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional schedule (in cron format) for automatic execution of this workflow config. */
   cronSchedule?: string | Computed<string>;
   /** Optional. Disables automatic creation of workflow invocations. */
   disabled?: boolean | Computed<boolean>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included. */
   invocationConfig?: V1beta1WorkflowConfig_InvocationConfig | Computed<V1beta1WorkflowConfig_InvocationConfig>;
   /** Identifier. The workflow config's name. */
   name?: string | Computed<string>;
-  /** Output only. Records of the 10 most recent scheduled execution attempts, ordered in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule. */
-  recentScheduledExecutionRecords?: V1beta1WorkflowConfig_RecentScheduledExecutionRecords[] | Computed<V1beta1WorkflowConfig_RecentScheduledExecutionRecords[]>;
   /** Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/* /locations/* /repositories/* /releaseConfigs/*`. */
   releaseConfig?: string | Computed<string>;
   /** Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`. */
   timeZone?: string | Computed<string>;
-  /** Output only. The timestamp of when the WorkflowConfig was last updated. */
-  updateTime?: string | Computed<string>;
   /** Represents a trigger configuration for a workflow. */
   workflowTriggerConfig?: V1beta1WorkflowConfig_WorkflowTriggerConfig | Computed<V1beta1WorkflowConfig_WorkflowTriggerConfig>;
 }
@@ -197,24 +179,16 @@ export interface V1beta1WorkflowConfigAttrs {
 export const V1beta1WorkflowConfig: ResourceBinding<V1beta1WorkflowConfigConfig, V1beta1WorkflowConfigAttrs> = {
   wireType: "google_dataform_v1beta1_workflow_config",
   fields: {
-    createTime: "create_time",
     cronSchedule: "cron_schedule",
     disabled: "disabled",
-    internalMetadata: "internal_metadata",
     invocationConfig: {
       wireName: "invocation_config",
       kind: "object",
       fields: V1beta1WorkflowConfig_InvocationConfigFields,
     },
     name: "name",
-    recentScheduledExecutionRecords: {
-      wireName: "recent_scheduled_execution_records",
-      kind: "list",
-      fields: V1beta1WorkflowConfig_RecentScheduledExecutionRecordsFields,
-    },
     releaseConfig: "release_config",
     timeZone: "time_zone",
-    updateTime: "update_time",
     workflowTriggerConfig: {
       wireName: "workflow_trigger_config",
       kind: "object",

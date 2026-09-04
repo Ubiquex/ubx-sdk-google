@@ -8,8 +8,6 @@ type V1alphaUserConfig struct {
 	DatabaseRoles any
 	// Input only. If the user already exists and it has additional roles, keep them granted.
 	KeepExtraRoles any
-	// Output only. Name of the resource in the form of projects/{project}/locations/{location}/cluster/{cluster}/users/{user}.
-	Name any
 	// Input only. Password for the user.
 	Password any
 	// Optional. Type of this user.
@@ -32,10 +30,9 @@ type V1alphaUserAttrs struct {
 var V1alphaUser = ubx.ResourceBinding{
 	WireType: "google_alloydb_v1alpha_user",
 	Fields: ubx.FieldMap{
-		"DatabaseRoles": ubx.FieldSpec{WireName: "database_roles"},
+		"DatabaseRoles":  ubx.FieldSpec{WireName: "database_roles"},
 		"KeepExtraRoles": ubx.FieldSpec{WireName: "keep_extra_roles"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"UserType": ubx.FieldSpec{WireName: "user_type"},
+		"Password":       ubx.FieldSpec{WireName: "password"},
+		"UserType":       ubx.FieldSpec{WireName: "user_type"},
 	},
 }

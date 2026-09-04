@@ -108,46 +108,15 @@ const AlphaWireGroup_WireInputsFields: FieldMap = {
   },
 };
 
-const AlphaWireGroup_Wires_EndpointsFields: FieldMap = {
-  interconnect: "interconnect",
-  vlanTag: "vlan_tag",
-};
-
-const AlphaWireGroup_WiresFields: FieldMap = {
-  adminEnabled: "admin_enabled",
-  endpoints: {
-    wireName: "endpoints",
-    kind: "list",
-    fields: AlphaWireGroup_Wires_EndpointsFields,
-  },
-  label: "label",
-  wireProperties: {
-    wireName: "wire_properties",
-    kind: "object",
-    fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-  },
-};
-
 export interface AlphaWireGroupConfig {
   /** Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true. */
   adminEnabled?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of the wire group. */
   description?: string | Computed<string>;
   /** A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object. */
   endpoints?: Record<string, AlphaWireGroup_Endpoints> | Computed<Record<string, AlphaWireGroup_Endpoints>>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Indicates whether there are wire changes yet to be processed. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  selfLinkWithId?: string | Computed<string>;
   /** Service level details determined for the wire group configuration. */
   serviceLevel?: AlphaWireGroup_ServiceLevel | Computed<AlphaWireGroup_ServiceLevel>;
   /** Topology details for the wire group. */
@@ -158,8 +127,6 @@ export interface AlphaWireGroupConfig {
   wireInputs?: Record<string, AlphaWireGroup_WireInputs> | Computed<Record<string, AlphaWireGroup_WireInputs>>;
   /** The properties of a wire. */
   wireProperties?: AlphaWireGroup_WireInputs_WirePropertyOverrides | Computed<AlphaWireGroup_WireInputs_WirePropertyOverrides>;
-  /** Output only. The single/redundant wire(s) managed by the wire group. */
-  wires?: AlphaWireGroup_Wires[] | Computed<AlphaWireGroup_Wires[]>;
 }
 
 export interface AlphaWireGroupAttrs {
@@ -200,19 +167,13 @@ export const AlphaWireGroup: ResourceBinding<AlphaWireGroupConfig, AlphaWireGrou
   wireType: "google_compute_alpha_wire_group",
   fields: {
     adminEnabled: "admin_enabled",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     endpoints: {
       wireName: "endpoints",
       kind: "map",
       fields: AlphaWireGroup_EndpointsFields,
     },
-    id: "id",
-    kind: "kind",
     name: "name",
-    reconciling: "reconciling",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     serviceLevel: {
       wireName: "service_level",
       kind: "object",
@@ -237,11 +198,6 @@ export const AlphaWireGroup: ResourceBinding<AlphaWireGroupConfig, AlphaWireGrou
       wireName: "wire_properties",
       kind: "object",
       fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-    },
-    wires: {
-      wireName: "wires",
-      kind: "list",
-      fields: AlphaWireGroup_WiresFields,
     },
   },
 };

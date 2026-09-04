@@ -322,17 +322,7 @@ const Session_RuntimeInfoFields: FieldMap = {
   },
 };
 
-const Session_StateHistoryFields: FieldMap = {
-  state: "state",
-  stateMessage: "state_message",
-  stateStartTime: "state_start_time",
-};
-
 export interface SessionConfig {
-  /** Output only. The time when the session was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The email address of the user who created the session. */
-  creator?: string | Computed<string>;
   /** Environment configuration for a workload. */
   environmentConfig?: Session_EnvironmentConfig | Computed<Session_EnvironmentConfig>;
   /** Jupyter configuration for an interactive session. */
@@ -349,18 +339,8 @@ export interface SessionConfig {
   sessionTemplate?: string | Computed<string>;
   /** Spark connect configuration for an interactive session. */
   sparkConnectSession?: unknown | Computed<unknown>;
-  /** Output only. A state of the session. */
-  state?: string | Computed<string>;
-  /** Output only. Historical state information for the session. */
-  stateHistory?: Session_StateHistory[] | Computed<Session_StateHistory[]>;
-  /** Output only. Session state details, such as the failure description if the state is FAILED. */
-  stateMessage?: string | Computed<string>;
-  /** Output only. The time when the session entered the current state. */
-  stateTime?: string | Computed<string>;
   /** Optional. The email address of the user who owns the session. */
   user?: string | Computed<string>;
-  /** Output only. A session UUID (Unique Universal Identifier). The service generates this value when it creates the session. */
-  uuid?: string | Computed<string>;
 }
 
 export interface SessionAttrs {
@@ -401,8 +381,6 @@ export interface SessionAttrs {
 export const Session: ResourceBinding<SessionConfig, SessionAttrs> = {
   wireType: "google_dataproc_session",
   fields: {
-    createTime: "create_time",
-    creator: "creator",
     environmentConfig: {
       wireName: "environment_config",
       kind: "object",
@@ -427,15 +405,6 @@ export const Session: ResourceBinding<SessionConfig, SessionAttrs> = {
     },
     sessionTemplate: "session_template",
     sparkConnectSession: "spark_connect_session",
-    state: "state",
-    stateHistory: {
-      wireName: "state_history",
-      kind: "list",
-      fields: Session_StateHistoryFields,
-    },
-    stateMessage: "state_message",
-    stateTime: "state_time",
     user: "user",
-    uuid: "uuid",
   },
 };

@@ -4,26 +4,26 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Apiproduct_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs_Operations struct {
-	Operation any
+	Operation      any
 	OperationTypes any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs_Quota struct {
 	Interval any
-	Limit any
+	Limit    any
 	TimeUnit any
 }
 
 type Apiproduct_GraphqlOperationGroup_OperationConfigs struct {
-	ApiSource any
+	ApiSource  any
 	Attributes any
 	Operations any
-	Quota any
+	Quota      any
 }
 
 type Apiproduct_GraphqlOperationGroup struct {
@@ -34,11 +34,11 @@ type Apiproduct_GraphqlOperationGroup struct {
 }
 
 type Apiproduct_GrpcOperationGroup_OperationConfigs struct {
-	ApiSource any
+	ApiSource  any
 	Attributes any
-	Methods any
-	Quota any
-	Service any
+	Methods    any
+	Quota      any
+	Service    any
 }
 
 type Apiproduct_GrpcOperationGroup struct {
@@ -47,14 +47,14 @@ type Apiproduct_GrpcOperationGroup struct {
 }
 
 type Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperations struct {
-	Methods any
-	Model any
+	Methods  any
+	Model    any
 	Resource any
 }
 
 type Apiproduct_LlmOperationGroup_OperationConfigs struct {
-	ApiSource any
-	Attributes any
+	ApiSource     any
+	Attributes    any
 	LlmOperations any
 	LlmTokenQuota any
 }
@@ -65,15 +65,15 @@ type Apiproduct_LlmOperationGroup struct {
 }
 
 type Apiproduct_OperationGroup_OperationConfigs_Operations struct {
-	Methods any
+	Methods  any
 	Resource any
 }
 
 type Apiproduct_OperationGroup_OperationConfigs struct {
-	ApiSource any
+	ApiSource  any
 	Attributes any
 	Operations any
-	Quota any
+	Quota      any
 }
 
 type Apiproduct_OperationGroup struct {
@@ -88,10 +88,10 @@ type Apiproduct_PayloadOperationGroup_OperationConfigs_Operations struct {
 }
 
 type Apiproduct_PayloadOperationGroup_OperationConfigs struct {
-	ApiSource any
+	ApiSource  any
 	Attributes any
 	Operations any
-	Quota any
+	Quota      any
 }
 
 type Apiproduct_PayloadOperationGroup struct {
@@ -100,169 +100,169 @@ type Apiproduct_PayloadOperationGroup struct {
 }
 
 var Apiproduct_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Apiproduct_GraphqlOperationGroup_OperationConfigs_OperationsFields = ubx.FieldMap{
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"OperationTypes": ubx.FieldSpec{WireName: "operation_types"},
-	}
+	"Operation":      ubx.FieldSpec{WireName: "operation"},
+	"OperationTypes": ubx.FieldSpec{WireName: "operation_types"},
+}
 
 var Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields = ubx.FieldMap{
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-	}
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Limit":    ubx.FieldSpec{WireName: "limit"},
+	"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
+}
 
 var Apiproduct_GraphqlOperationGroup_OperationConfigsFields = ubx.FieldMap{
-		"ApiSource": ubx.FieldSpec{WireName: "api_source"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
-		},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_OperationsFields,
-		},
-		"Quota": ubx.FieldSpec{
-			WireName: "quota",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
-		},
-	}
+	"ApiSource": ubx.FieldSpec{WireName: "api_source"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Apiproduct_AttributesFields,
+	},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_OperationsFields,
+	},
+	"Quota": ubx.FieldSpec{
+		WireName: "quota",
+		Kind:     "object",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
+	},
+}
 
 var Apiproduct_GraphqlOperationGroupFields = ubx.FieldMap{
-		"OperationConfigType": ubx.FieldSpec{WireName: "operation_config_type"},
-		"OperationConfigs": ubx.FieldSpec{
-			WireName: "operation_configs",
-			Kind: "list",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigsFields,
-		},
-	}
+	"OperationConfigType": ubx.FieldSpec{WireName: "operation_config_type"},
+	"OperationConfigs": ubx.FieldSpec{
+		WireName: "operation_configs",
+		Kind:     "list",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigsFields,
+	},
+}
 
 var Apiproduct_GrpcOperationGroup_OperationConfigsFields = ubx.FieldMap{
-		"ApiSource": ubx.FieldSpec{WireName: "api_source"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
-		},
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Quota": ubx.FieldSpec{
-			WireName: "quota",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"ApiSource": ubx.FieldSpec{WireName: "api_source"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Apiproduct_AttributesFields,
+	},
+	"Methods": ubx.FieldSpec{WireName: "methods"},
+	"Quota": ubx.FieldSpec{
+		WireName: "quota",
+		Kind:     "object",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Apiproduct_GrpcOperationGroupFields = ubx.FieldMap{
-		"OperationConfigs": ubx.FieldSpec{
-			WireName: "operation_configs",
-			Kind: "list",
-			Fields: Apiproduct_GrpcOperationGroup_OperationConfigsFields,
-		},
-	}
+	"OperationConfigs": ubx.FieldSpec{
+		WireName: "operation_configs",
+		Kind:     "list",
+		Fields:   Apiproduct_GrpcOperationGroup_OperationConfigsFields,
+	},
+}
 
 var Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperationsFields = ubx.FieldMap{
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Methods":  ubx.FieldSpec{WireName: "methods"},
+	"Model":    ubx.FieldSpec{WireName: "model"},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var Apiproduct_LlmOperationGroup_OperationConfigsFields = ubx.FieldMap{
-		"ApiSource": ubx.FieldSpec{WireName: "api_source"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
-		},
-		"LlmOperations": ubx.FieldSpec{
-			WireName: "llm_operations",
-			Kind: "list",
-			Fields: Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperationsFields,
-		},
-		"LlmTokenQuota": ubx.FieldSpec{
-			WireName: "llm_token_quota",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
-		},
-	}
+	"ApiSource": ubx.FieldSpec{WireName: "api_source"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Apiproduct_AttributesFields,
+	},
+	"LlmOperations": ubx.FieldSpec{
+		WireName: "llm_operations",
+		Kind:     "list",
+		Fields:   Apiproduct_LlmOperationGroup_OperationConfigs_LlmOperationsFields,
+	},
+	"LlmTokenQuota": ubx.FieldSpec{
+		WireName: "llm_token_quota",
+		Kind:     "object",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
+	},
+}
 
 var Apiproduct_LlmOperationGroupFields = ubx.FieldMap{
-		"OperationConfigs": ubx.FieldSpec{
-			WireName: "operation_configs",
-			Kind: "list",
-			Fields: Apiproduct_LlmOperationGroup_OperationConfigsFields,
-		},
-	}
+	"OperationConfigs": ubx.FieldSpec{
+		WireName: "operation_configs",
+		Kind:     "list",
+		Fields:   Apiproduct_LlmOperationGroup_OperationConfigsFields,
+	},
+}
 
 var Apiproduct_OperationGroup_OperationConfigs_OperationsFields = ubx.FieldMap{
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-	}
+	"Methods":  ubx.FieldSpec{WireName: "methods"},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+}
 
 var Apiproduct_OperationGroup_OperationConfigsFields = ubx.FieldMap{
-		"ApiSource": ubx.FieldSpec{WireName: "api_source"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
-		},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: Apiproduct_OperationGroup_OperationConfigs_OperationsFields,
-		},
-		"Quota": ubx.FieldSpec{
-			WireName: "quota",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
-		},
-	}
+	"ApiSource": ubx.FieldSpec{WireName: "api_source"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Apiproduct_AttributesFields,
+	},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   Apiproduct_OperationGroup_OperationConfigs_OperationsFields,
+	},
+	"Quota": ubx.FieldSpec{
+		WireName: "quota",
+		Kind:     "object",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
+	},
+}
 
 var Apiproduct_OperationGroupFields = ubx.FieldMap{
-		"OperationConfigType": ubx.FieldSpec{WireName: "operation_config_type"},
-		"OperationConfigs": ubx.FieldSpec{
-			WireName: "operation_configs",
-			Kind: "list",
-			Fields: Apiproduct_OperationGroup_OperationConfigsFields,
-		},
-	}
+	"OperationConfigType": ubx.FieldSpec{WireName: "operation_config_type"},
+	"OperationConfigs": ubx.FieldSpec{
+		WireName: "operation_configs",
+		Kind:     "list",
+		Fields:   Apiproduct_OperationGroup_OperationConfigsFields,
+	},
+}
 
 var Apiproduct_PayloadOperationGroup_OperationConfigs_OperationsFields = ubx.FieldMap{
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-	}
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+}
 
 var Apiproduct_PayloadOperationGroup_OperationConfigsFields = ubx.FieldMap{
-		"ApiSource": ubx.FieldSpec{WireName: "api_source"},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
-		},
-		"Operations": ubx.FieldSpec{
-			WireName: "operations",
-			Kind: "list",
-			Fields: Apiproduct_PayloadOperationGroup_OperationConfigs_OperationsFields,
-		},
-		"Quota": ubx.FieldSpec{
-			WireName: "quota",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
-		},
-	}
+	"ApiSource": ubx.FieldSpec{WireName: "api_source"},
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   Apiproduct_AttributesFields,
+	},
+	"Operations": ubx.FieldSpec{
+		WireName: "operations",
+		Kind:     "list",
+		Fields:   Apiproduct_PayloadOperationGroup_OperationConfigs_OperationsFields,
+	},
+	"Quota": ubx.FieldSpec{
+		WireName: "quota",
+		Kind:     "object",
+		Fields:   Apiproduct_GraphqlOperationGroup_OperationConfigs_QuotaFields,
+	},
+}
 
 var Apiproduct_PayloadOperationGroupFields = ubx.FieldMap{
-		"OperationConfigs": ubx.FieldSpec{
-			WireName: "operation_configs",
-			Kind: "list",
-			Fields: Apiproduct_PayloadOperationGroup_OperationConfigsFields,
-		},
-	}
+	"OperationConfigs": ubx.FieldSpec{
+		WireName: "operation_configs",
+		Kind:     "list",
+		Fields:   Apiproduct_PayloadOperationGroup_OperationConfigsFields,
+	},
+}
 
 type ApiproductConfig struct {
 	// Comma-separated list of API resources to be bundled in the API product. By default, the resource paths are mapped from the `proxy.pathsuffix` variable. The proxy path suffix is defined as the URI fragment following the ProxyEndpoint base path. For example, if the `apiResources` element is defined to be `/forecastrss` and the base path defined for the API proxy is `/weather`, then only requests to `/weather/forecastrss` are permitted by the API product. You can select a specific path, or you can select all subpaths with the following wildcard: - `/**`: Indicates that all sub-URIs are included. - `/*` : Indicates that only URIs one level down are included. By default, / supports the same resources as /** as well as the base path defined by the API proxy. For example, if the base path of the API proxy is `/v1/weatherapikey`, then the API product supports requests to `/v1/weatherapikey` and to any sub-URIs, such as `/v1/weatherapikey/forecastrss`, `/v1/weatherapikey/region/CA`, and so on. For more information, see Managing API products.
@@ -373,49 +373,49 @@ var Apiproduct = ubx.ResourceBinding{
 		"ApprovalType": ubx.FieldSpec{WireName: "approval_type"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Apiproduct_AttributesFields,
+			Kind:     "list",
+			Fields:   Apiproduct_AttributesFields,
 		},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CreatedAt":    ubx.FieldSpec{WireName: "created_at"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
 		"Environments": ubx.FieldSpec{WireName: "environments"},
 		"GraphqlOperationGroup": ubx.FieldSpec{
 			WireName: "graphql_operation_group",
-			Kind: "object",
-			Fields: Apiproduct_GraphqlOperationGroupFields,
+			Kind:     "object",
+			Fields:   Apiproduct_GraphqlOperationGroupFields,
 		},
 		"GrpcOperationGroup": ubx.FieldSpec{
 			WireName: "grpc_operation_group",
-			Kind: "object",
-			Fields: Apiproduct_GrpcOperationGroupFields,
+			Kind:     "object",
+			Fields:   Apiproduct_GrpcOperationGroupFields,
 		},
 		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
 		"LlmOperationGroup": ubx.FieldSpec{
 			WireName: "llm_operation_group",
-			Kind: "object",
-			Fields: Apiproduct_LlmOperationGroupFields,
+			Kind:     "object",
+			Fields:   Apiproduct_LlmOperationGroupFields,
 		},
-		"LlmQuota": ubx.FieldSpec{WireName: "llm_quota"},
+		"LlmQuota":         ubx.FieldSpec{WireName: "llm_quota"},
 		"LlmQuotaInterval": ubx.FieldSpec{WireName: "llm_quota_interval"},
 		"LlmQuotaTimeUnit": ubx.FieldSpec{WireName: "llm_quota_time_unit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"OperationGroup": ubx.FieldSpec{
 			WireName: "operation_group",
-			Kind: "object",
-			Fields: Apiproduct_OperationGroupFields,
+			Kind:     "object",
+			Fields:   Apiproduct_OperationGroupFields,
 		},
 		"PayloadOperationGroup": ubx.FieldSpec{
 			WireName: "payload_operation_group",
-			Kind: "object",
-			Fields: Apiproduct_PayloadOperationGroupFields,
+			Kind:     "object",
+			Fields:   Apiproduct_PayloadOperationGroupFields,
 		},
-		"Proxies": ubx.FieldSpec{WireName: "proxies"},
-		"Quota": ubx.FieldSpec{WireName: "quota"},
+		"Proxies":           ubx.FieldSpec{WireName: "proxies"},
+		"Quota":             ubx.FieldSpec{WireName: "quota"},
 		"QuotaCounterScope": ubx.FieldSpec{WireName: "quota_counter_scope"},
-		"QuotaInterval": ubx.FieldSpec{WireName: "quota_interval"},
-		"QuotaTimeUnit": ubx.FieldSpec{WireName: "quota_time_unit"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Space": ubx.FieldSpec{WireName: "space"},
+		"QuotaInterval":     ubx.FieldSpec{WireName: "quota_interval"},
+		"QuotaTimeUnit":     ubx.FieldSpec{WireName: "quota_time_unit"},
+		"Scopes":            ubx.FieldSpec{WireName: "scopes"},
+		"Space":             ubx.FieldSpec{WireName: "space"},
 	},
 }

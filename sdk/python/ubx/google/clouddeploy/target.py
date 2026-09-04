@@ -134,8 +134,6 @@ class TargetConfig:
     anthos_cluster: Any = None
     # Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
     associated_entities: Any = None
-    # Output only. Time at which the `Target` was created.
-    create_time: Any = None
     # Information specifying a Custom Target.
     custom_target: Any = None
     # Optional. The deploy parameters to use for this target.
@@ -158,12 +156,6 @@ class TargetConfig:
     require_approval: Any = None
     # Information specifying where to deploy a Cloud Run Service.
     run: Any = None
-    # Output only. Resource id of the `Target`.
-    target_id: Any = None
-    # Output only. Unique identifier of the `Target`.
-    uid: Any = None
-    # Output only. Most recent time at which the `Target` was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TargetAttrs:
@@ -218,7 +210,6 @@ Target = ubx.ResourceBinding(
             kind="map",
             fields=_Target_AssociatedEntitiesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_target": ubx.FieldSpec(
             wire_name="custom_target",
             kind="object",
@@ -250,8 +241,5 @@ Target = ubx.ResourceBinding(
             kind="object",
             fields=_Target_RunFields,
         ),
-        "target_id": ubx.FieldSpec(wire_name="target_id"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

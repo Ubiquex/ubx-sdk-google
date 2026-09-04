@@ -148,8 +148,6 @@ _BetaNetworkFirewallPolicy_PacketMirroringRulesFields = {
 class BetaNetworkFirewallPolicyConfig:
     # A list of associations that belong to this firewall policy.
     associations: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -158,28 +156,18 @@ class BetaNetworkFirewallPolicyConfig:
     fingerprint: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
-    kind: Any = None
     # Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
     name: Any = None
     # A list of packet mirroring rules that belong to this policy.
     packet_mirroring_rules: Any = None
-    # Output only. [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
-    parent: Any = None
     # Indicates the source of this Firewall Policy. This field is optional on creation and defaults to USER_DEFINED. The USER_DEFINED value indicates a regular firewall policy. The SYSTEM value indicates a system-level policy managed by an internal service like GKE. This SYSTEM value is reserved for internal services and cannot be set by users during policy creation. Policies with a SYSTEM source cannot be modified or deleted by users.
     policy_source: Any = None
     # The type of the firewall policy. This field can be one of VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY. Note: if not specified then VPC_POLICY will be used.
     policy_type: Any = None
-    # Output only. [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
-    # Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
-    rule_tuple_count: Any = None
     # A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
     rules: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     short_name: Any = None
 
@@ -230,30 +218,24 @@ BetaNetworkFirewallPolicy = ubx.ResourceBinding(
             kind="list",
             fields=_BetaNetworkFirewallPolicy_AssociationsFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "packet_mirroring_rules": ubx.FieldSpec(
             wire_name="packet_mirroring_rules",
             kind="list",
             fields=_BetaNetworkFirewallPolicy_PacketMirroringRulesFields,
         ),
-        "parent": ubx.FieldSpec(wire_name="parent"),
         "policy_source": ubx.FieldSpec(wire_name="policy_source"),
         "policy_type": ubx.FieldSpec(wire_name="policy_type"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "rule_tuple_count": ubx.FieldSpec(wire_name="rule_tuple_count"),
         "rules": ubx.FieldSpec(
             wire_name="rules",
             kind="list",
             fields=_BetaNetworkFirewallPolicy_PacketMirroringRulesFields,
         ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "short_name": ubx.FieldSpec(wire_name="short_name"),
     },
 )

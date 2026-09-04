@@ -6,8 +6,6 @@ export interface UserConfig {
   databaseRoles?: string[] | Computed<string[]>;
   /** Input only. If the user already exists and it has additional roles, keep them granted. */
   keepExtraRoles?: boolean | Computed<boolean>;
-  /** Output only. Name of the resource in the form of projects/{project}/locations/{location}/cluster/{cluster}/users/{user}. */
-  name?: string | Computed<string>;
   /** Input only. Password for the user. */
   password?: string | Computed<string>;
   /** Optional. Type of this user. */
@@ -32,7 +30,6 @@ export const User: ResourceBinding<UserConfig, UserAttrs> = {
   fields: {
     databaseRoles: "database_roles",
     keepExtraRoles: "keep_extra_roles",
-    name: "name",
     password: "password",
     userType: "user_type",
   },

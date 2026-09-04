@@ -9,15 +9,10 @@ export interface Autoscaler_AutoscalingPolicy_CpuUtilization {
 }
 
 export interface Autoscaler_AutoscalingPolicy_CustomMetricUtilizations {
-  /** Filter string to identify a specific time series for the custom metric. Used to select which resource's metric data to scale on, often with conditions like resource.type or metric labels. (AI-inferred) */
   filter?: string | Computed<string>;
-  /** The identifier (name) of the Cloud Monitoring metric to use for autoscaling. For example, compute.googleapis.com/instance/network/received_bytes_count. (AI-inferred) */
   metric?: string | Computed<string>;
-  /** The target value of the custom metric that a single instance should handle. This is used as a per-instance scaling target to determine the number of instances needed. (AI-inferred) */
   singleInstanceAssignment?: number | Computed<number>;
-  /** The target value of the custom metric that the autoscaler maintains. The autoscaler adjusts the number of instances to keep the metric value close to this target. (AI-inferred) */
   utilizationTarget?: number | Computed<number>;
-  /** Specifies whether the utilization target is a gauge, delta per second, or delta per minute. Allowed values are DELTA_PER_MINUTE, DELTA_PER_SECOND, and GAUGE. (AI-inferred) */
   utilizationTargetType?: string | Computed<string>;
 }
 
@@ -44,15 +39,10 @@ export interface Autoscaler_AutoscalingPolicy_ScaleInControl {
 
 export interface Autoscaler_AutoscalingPolicy_ScalingSchedules {
   description?: string | Computed<string>;
-  /** Whether the scaling schedule is disabled. When set to true, the schedule is inactive and its scaling actions are not applied, even if the scheduled time occurs. (AI-inferred) */
   disabled?: boolean | Computed<boolean>;
-  /** The duration of the scaling schedule in seconds. Must be between 1 and 86400 seconds inclusive. (AI-inferred) */
   durationSec?: number | Computed<number>;
-  /** The minimum number of replicas that must be running for the autoscaler to apply this scaling schedule. If the current number of replicas is below this value, the autoscaler first scales to it. (AI-inferred) */
   minRequiredReplicas?: number | Computed<number>;
-  /** The cron-style schedule expression that determines when the scaling schedule is active. It uses standard cron syntax (e.g., '0 9 * * *' for daily at 9 AM). (AI-inferred) */
   schedule?: string | Computed<string>;
-  /** The time zone to use when interpreting the schedule. Must be a time zone name from the IANA time zone database (e.g., 'America/New_York'). (AI-inferred) */
   timeZone?: string | Computed<string>;
 }
 
@@ -80,17 +70,13 @@ export interface Autoscaler_AutoscalingPolicy {
 }
 
 export interface Autoscaler_ScalingScheduleStatus {
-  /** The timestamp of the most recent start of this scaling schedule. (AI-inferred) */
   lastStartTime?: string | Computed<string>;
   nextStartTime?: string | Computed<string>;
-  /** The state of the scaling schedule, which can be ACTIVE, OBSOLETE, or DELETED. (AI-inferred) */
   state?: string | Computed<string>;
 }
 
 export interface Autoscaler_StatusDetails {
-  /** The human-readable status message that provides additional details about the autoscaler's current state. (AI-inferred) */
   message?: string | Computed<string>;
-  /** The type of the autoscaler status detail, indicating a specific scaling condition or issue. Valid values include: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred) */
   type?: string | Computed<string>;
 }
 
@@ -168,12 +154,6 @@ const Autoscaler_AutoscalingPolicyFields: FieldMap = {
   stabilizationPeriodSec: "stabilization_period_sec",
 };
 
-const Autoscaler_ScalingScheduleStatusFields: FieldMap = {
-  lastStartTime: "last_start_time",
-  nextStartTime: "next_start_time",
-  state: "state",
-};
-
 const Autoscaler_StatusDetailsFields: FieldMap = {
   message: "message",
   type: "type",
@@ -182,22 +162,10 @@ const Autoscaler_StatusDetailsFields: FieldMap = {
 export interface AutoscalerConfig {
   /** Cloud Autoscaler policy. */
   autoscalingPolicy?: Autoscaler_AutoscalingPolicy | Computed<Autoscaler_AutoscalingPolicy>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction. */
-  recommendedSize?: number | Computed<number>;
-  /** Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope). */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Status information of existing scaling schedules. */
-  scalingScheduleStatus?: Record<string, Autoscaler_ScalingScheduleStatus> | Computed<Record<string, Autoscaler_ScalingScheduleStatus>>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
   /** [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future. */
@@ -206,8 +174,6 @@ export interface AutoscalerConfig {
   statusDetails?: Autoscaler_StatusDetails[] | Computed<Autoscaler_StatusDetails[]>;
   /** URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler. */
   target?: string | Computed<string>;
-  /** Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope). */
-  zone?: string | Computed<string>;
 }
 
 export interface AutoscalerAttrs {
@@ -249,18 +215,8 @@ export const Autoscaler: ResourceBinding<AutoscalerConfig, AutoscalerAttrs> = {
       kind: "object",
       fields: Autoscaler_AutoscalingPolicyFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     name: "name",
-    recommendedSize: "recommended_size",
-    region: "region",
-    scalingScheduleStatus: {
-      wireName: "scaling_schedule_status",
-      kind: "map",
-      fields: Autoscaler_ScalingScheduleStatusFields,
-    },
     selfLink: "self_link",
     status: "status",
     statusDetails: {
@@ -269,6 +225,5 @@ export const Autoscaler: ResourceBinding<AutoscalerConfig, AutoscalerAttrs> = {
       fields: Autoscaler_StatusDetailsFields,
     },
     target: "target",
-    zone: "zone",
   },
 };

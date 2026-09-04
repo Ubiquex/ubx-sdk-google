@@ -13,10 +13,10 @@ type EntryGroup_DataCatalogTimestamps struct {
 }
 
 var EntryGroup_DataCatalogTimestampsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type EntryGroupConfig struct {
 	// Timestamps associated with this resource in a particular system.
@@ -49,12 +49,12 @@ var EntryGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataCatalogTimestamps": ubx.FieldSpec{
 			WireName: "data_catalog_timestamps",
-			Kind: "object",
-			Fields: EntryGroup_DataCatalogTimestampsFields,
+			Kind:     "object",
+			Fields:   EntryGroup_DataCatalogTimestampsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"TransferredToDataplex": ubx.FieldSpec{WireName: "transferred_to_dataplex"},
 	},
 }

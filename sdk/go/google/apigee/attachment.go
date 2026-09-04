@@ -4,12 +4,8 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AttachmentConfig struct {
-	// Output only. The time at which the environment group attachment was created as milliseconds since epoch.
-	CreatedAt any
 	// Required. ID of the attached environment.
 	Environment any
-	// Output only. ID of the environment group.
-	EnvironmentGroupId any
 	// ID of the environment group attachment.
 	Name any
 }
@@ -28,9 +24,7 @@ type AttachmentAttrs struct {
 var Attachment = ubx.ResourceBinding{
 	WireType: "google_apigee_attachment",
 	Fields: ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
 		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"EnvironmentGroupId": ubx.FieldSpec{WireName: "environment_group_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

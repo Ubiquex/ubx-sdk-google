@@ -4,28 +4,20 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1VersionConfig struct {
-	CreateTime any
 	Description any
-	Name any
-	Status any
-	VersionNumber any
 }
 
 type V2beta1VersionAttrs struct {
-	CreateTime any
-	Description any
-	Name any
-	Status any
+	CreateTime    any
+	Description   any
+	Name          any
+	Status        any
 	VersionNumber any
 }
 
 var V2beta1Version = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_version",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
 	},
 }

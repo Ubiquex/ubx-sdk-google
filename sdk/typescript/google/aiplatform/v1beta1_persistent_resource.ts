@@ -274,8 +274,6 @@ const V1beta1PersistentResource_ResourceRuntimeSpecFields: FieldMap = {
 };
 
 export interface V1beta1PersistentResourceConfig {
-  /** Output only. Time when the PersistentResource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The display name of the PersistentResource. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
@@ -298,16 +296,6 @@ export interface V1beta1PersistentResourceConfig {
   resourceRuntime?: V1beta1PersistentResource_ResourceRuntime | Computed<V1beta1PersistentResource_ResourceRuntime>;
   /** Configuration for the runtime on a PersistentResource instance, including but not limited to: * Service accounts used to run the workloads. * Whether to make it a dedicated Ray Cluster. */
   resourceRuntimeSpec?: V1beta1PersistentResource_ResourceRuntimeSpec | Computed<V1beta1PersistentResource_ResourceRuntimeSpec>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Time when the PersistentResource for the first time entered the `RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of a Study. */
-  state?: string | Computed<string>;
-  /** Output only. Time when the PersistentResource was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1PersistentResourceAttrs {
@@ -350,7 +338,6 @@ export interface V1beta1PersistentResourceAttrs {
 export const V1beta1PersistentResource: ResourceBinding<V1beta1PersistentResourceConfig, V1beta1PersistentResourceAttrs> = {
   wireType: "google_aiplatform_v1beta1_persistent_resource",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
@@ -386,10 +373,5 @@ export const V1beta1PersistentResource: ResourceBinding<V1beta1PersistentResourc
       kind: "object",
       fields: V1beta1PersistentResource_ResourceRuntimeSpecFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    startTime: "start_time",
-    state: "state",
-    updateTime: "update_time",
   },
 };

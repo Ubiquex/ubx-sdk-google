@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RuntimeProjectAttachmentConfig:
-    # Output only. Create time.
-    create_time: Any = None
     # Identifier. The resource name of a runtime project attachment. Format: "projects/{project}/locations/{location}/runtimeProjectAttachments/{runtime_project_attachment}".
     name: Any = None
     # Required. Immutable. Google cloud project name in the format: "projects/abc" or "projects/123". As input, project name with either project id or number are accepted. As output, this field will contain project number.
@@ -27,7 +25,6 @@ class RuntimeProjectAttachmentAttrs:
 RuntimeProjectAttachment = ubx.ResourceBinding(
     wire_type="google_apihub_runtime_project_attachment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "runtime_project": ubx.FieldSpec(wire_name="runtime_project"),
     },
