@@ -80,7 +80,7 @@ Depends on the shared runtime: [ubx-sdk-go](https://github.com/ubiquex/ubx-sdk-g
 [`ubx-sdk`](https://pypi.org/project/ubx-sdk/) (Python, imported as `ubx_sdk`).
 
 <!-- README-GEN:BEGIN -->
-**Real, current counts** (`ubx sdk gen --dump-ir`): 1546 resource types, 792 data source types.
+**Real, current counts** (`ubx sdk gen --dump-ir`): 1566 resource types, 418 data source types.
 
 **Real, current published versions:**
 - Go: `v1.2.0`
