@@ -77,19 +77,19 @@ type ServiceConnectionPolicy_PscConnections struct {
 }
 
 var ServiceConnectionPolicy_AutoCreatedSubnetInfoFields = ubx.FieldMap{
-		"Delinked": ubx.FieldSpec{WireName: "delinked"},
-		"InternalRange": ubx.FieldSpec{WireName: "internal_range"},
-		"InternalRangeRef": ubx.FieldSpec{WireName: "internal_range_ref"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"SubnetworkRef": ubx.FieldSpec{WireName: "subnetwork_ref"},
-	}
+	"Delinked":         ubx.FieldSpec{WireName: "delinked"},
+	"InternalRange":    ubx.FieldSpec{WireName: "internal_range"},
+	"InternalRangeRef": ubx.FieldSpec{WireName: "internal_range_ref"},
+	"Subnetwork":       ubx.FieldSpec{WireName: "subnetwork"},
+	"SubnetworkRef":    ubx.FieldSpec{WireName: "subnetwork_ref"},
+}
 
 var ServiceConnectionPolicy_PscConfigFields = ubx.FieldMap{
-		"AllowedGoogleProducersResourceHierarchyLevel": ubx.FieldSpec{WireName: "allowed_google_producers_resource_hierarchy_level"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"ProducerInstanceLocation": ubx.FieldSpec{WireName: "producer_instance_location"},
-		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
-	}
+	"AllowedGoogleProducersResourceHierarchyLevel": ubx.FieldSpec{WireName: "allowed_google_producers_resource_hierarchy_level"},
+	"Limit":                    ubx.FieldSpec{WireName: "limit"},
+	"ProducerInstanceLocation": ubx.FieldSpec{WireName: "producer_instance_location"},
+	"Subnetworks":              ubx.FieldSpec{WireName: "subnetworks"},
+}
 
 type ServiceConnectionPolicyConfig struct {
 	// Information for the automatically created subnetwork and its associated IR.
@@ -142,18 +142,18 @@ var ServiceConnectionPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoCreatedSubnetInfo": ubx.FieldSpec{
 			WireName: "auto_created_subnet_info",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
+			Kind:     "object",
+			Fields:   ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 		"PscConfig": ubx.FieldSpec{
 			WireName: "psc_config",
-			Kind: "object",
-			Fields: ServiceConnectionPolicy_PscConfigFields,
+			Kind:     "object",
+			Fields:   ServiceConnectionPolicy_PscConfigFields,
 		},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
 	},

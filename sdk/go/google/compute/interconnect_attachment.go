@@ -26,9 +26,9 @@ type InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceM
 
 type InterconnectAttachment_L2Forwarding_ApplianceMappings struct {
 	// IP address of the appliance inside the customer's network, used for this VLAN attachment mapping. (AI-inferred)
-	ApplianceIpAddress any
+	ApplianceIpAddress           any
 	InnerVlanToApplianceMappings any
-	Name any
+	Name                         any
 }
 
 type InterconnectAttachment_L2Forwarding_GeneveHeader struct {
@@ -69,67 +69,67 @@ type InterconnectAttachment_PrivateInterconnectInfo struct {
 }
 
 var InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-	}
+	"Max": ubx.FieldSpec{WireName: "max"},
+	"Min": ubx.FieldSpec{WireName: "min"},
+}
 
 var InterconnectAttachment_ConfigurationConstraintsFields = ubx.FieldMap{
-		"BgpMd5": ubx.FieldSpec{WireName: "bgp_md5"},
-		"BgpPeerAsnRanges": ubx.FieldSpec{
-			WireName: "bgp_peer_asn_ranges",
-			Kind: "list",
-			Fields: InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields,
-		},
-	}
+	"BgpMd5": ubx.FieldSpec{WireName: "bgp_md5"},
+	"BgpPeerAsnRanges": ubx.FieldSpec{
+		WireName: "bgp_peer_asn_ranges",
+		Kind:     "list",
+		Fields:   InterconnectAttachment_ConfigurationConstraints_BgpPeerAsnRangesFields,
+	},
+}
 
 var InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields = ubx.FieldMap{
-		"InnerApplianceIpAddress": ubx.FieldSpec{WireName: "inner_appliance_ip_address"},
-		"InnerVlanTags": ubx.FieldSpec{WireName: "inner_vlan_tags"},
-	}
+	"InnerApplianceIpAddress": ubx.FieldSpec{WireName: "inner_appliance_ip_address"},
+	"InnerVlanTags":           ubx.FieldSpec{WireName: "inner_vlan_tags"},
+}
 
 var InterconnectAttachment_L2Forwarding_ApplianceMappingsFields = ubx.FieldMap{
-		"ApplianceIpAddress": ubx.FieldSpec{WireName: "appliance_ip_address"},
-		"InnerVlanToApplianceMappings": ubx.FieldSpec{
-			WireName: "inner_vlan_to_appliance_mappings",
-			Kind: "list",
-			Fields: InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApplianceIpAddress": ubx.FieldSpec{WireName: "appliance_ip_address"},
+	"InnerVlanToApplianceMappings": ubx.FieldSpec{
+		WireName: "inner_vlan_to_appliance_mappings",
+		Kind:     "list",
+		Fields:   InterconnectAttachment_L2Forwarding_ApplianceMappings_InnerVlanToApplianceMappingsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var InterconnectAttachment_L2Forwarding_GeneveHeaderFields = ubx.FieldMap{
-		"Vni": ubx.FieldSpec{WireName: "vni"},
-	}
+	"Vni": ubx.FieldSpec{WireName: "vni"},
+}
 
 var InterconnectAttachment_L2ForwardingFields = ubx.FieldMap{
-		"ApplianceMappings": ubx.FieldSpec{
-			WireName: "appliance_mappings",
-			Kind: "map",
-			Fields: InterconnectAttachment_L2Forwarding_ApplianceMappingsFields,
-		},
-		"DefaultApplianceIpAddress": ubx.FieldSpec{WireName: "default_appliance_ip_address"},
-		"GeneveHeader": ubx.FieldSpec{
-			WireName: "geneve_header",
-			Kind: "object",
-			Fields: InterconnectAttachment_L2Forwarding_GeneveHeaderFields,
-		},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"TunnelEndpointIpAddress": ubx.FieldSpec{WireName: "tunnel_endpoint_ip_address"},
-	}
+	"ApplianceMappings": ubx.FieldSpec{
+		WireName: "appliance_mappings",
+		Kind:     "map",
+		Fields:   InterconnectAttachment_L2Forwarding_ApplianceMappingsFields,
+	},
+	"DefaultApplianceIpAddress": ubx.FieldSpec{WireName: "default_appliance_ip_address"},
+	"GeneveHeader": ubx.FieldSpec{
+		WireName: "geneve_header",
+		Kind:     "object",
+		Fields:   InterconnectAttachment_L2Forwarding_GeneveHeaderFields,
+	},
+	"Network":                 ubx.FieldSpec{WireName: "network"},
+	"TunnelEndpointIpAddress": ubx.FieldSpec{WireName: "tunnel_endpoint_ip_address"},
+}
 
 var InterconnectAttachment_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var InterconnectAttachment_PartnerMetadataFields = ubx.FieldMap{
-		"InterconnectName": ubx.FieldSpec{WireName: "interconnect_name"},
-		"PartnerName": ubx.FieldSpec{WireName: "partner_name"},
-		"PortalUrl": ubx.FieldSpec{WireName: "portal_url"},
-	}
+	"InterconnectName": ubx.FieldSpec{WireName: "interconnect_name"},
+	"PartnerName":      ubx.FieldSpec{WireName: "partner_name"},
+	"PortalUrl":        ubx.FieldSpec{WireName: "portal_url"},
+}
 
 var InterconnectAttachment_PrivateInterconnectInfoFields = ubx.FieldMap{
-		"Tag8021q": ubx.FieldSpec{WireName: "tag8021q"},
-	}
+	"Tag8021q": ubx.FieldSpec{WireName: "tag8021q"},
+}
 
 type InterconnectAttachmentConfig struct {
 	// Determines whether this Attachment will carry packets. Not present for PARTNER_PROVIDER.
@@ -150,7 +150,7 @@ type InterconnectAttachmentConfig struct {
 	CandidateSubnets any
 	// This field is not available.
 	CloudRouterIpv6InterfaceId any
-	ConfigurationConstraints any
+	ConfigurationConstraints   any
 	// This field is not available.
 	CustomerRouterIpv6InterfaceId any
 	// An optional description of this resource.
@@ -220,7 +220,7 @@ type InterconnectAttachmentAttrs struct {
 	CloudRouterIpv6Address any
 	// This field is not available.
 	CloudRouterIpv6InterfaceId any
-	ConfigurationConstraints any
+	ConfigurationConstraints   any
 	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
 	// Output only. [Output Only] IPv4 address + prefix length to be configured on the customer router subinterface for this interconnect attachment.
@@ -294,56 +294,56 @@ type InterconnectAttachmentAttrs struct {
 var InterconnectAttachment = ubx.ResourceBinding{
 	WireType: "google_compute_interconnect_attachment",
 	Fields: ubx.FieldMap{
-		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
-		"CandidateCloudRouterIpAddress": ubx.FieldSpec{WireName: "candidate_cloud_router_ip_address"},
-		"CandidateCloudRouterIpv6Address": ubx.FieldSpec{WireName: "candidate_cloud_router_ipv6_address"},
-		"CandidateCustomerRouterIpAddress": ubx.FieldSpec{WireName: "candidate_customer_router_ip_address"},
+		"AdminEnabled":                       ubx.FieldSpec{WireName: "admin_enabled"},
+		"Bandwidth":                          ubx.FieldSpec{WireName: "bandwidth"},
+		"CandidateCloudRouterIpAddress":      ubx.FieldSpec{WireName: "candidate_cloud_router_ip_address"},
+		"CandidateCloudRouterIpv6Address":    ubx.FieldSpec{WireName: "candidate_cloud_router_ipv6_address"},
+		"CandidateCustomerRouterIpAddress":   ubx.FieldSpec{WireName: "candidate_customer_router_ip_address"},
 		"CandidateCustomerRouterIpv6Address": ubx.FieldSpec{WireName: "candidate_customer_router_ipv6_address"},
-		"CandidateIpv6Subnets": ubx.FieldSpec{WireName: "candidate_ipv6_subnets"},
-		"CandidateSubnets": ubx.FieldSpec{WireName: "candidate_subnets"},
-		"CloudRouterIpv6InterfaceId": ubx.FieldSpec{WireName: "cloud_router_ipv6_interface_id"},
+		"CandidateIpv6Subnets":               ubx.FieldSpec{WireName: "candidate_ipv6_subnets"},
+		"CandidateSubnets":                   ubx.FieldSpec{WireName: "candidate_subnets"},
+		"CloudRouterIpv6InterfaceId":         ubx.FieldSpec{WireName: "cloud_router_ipv6_interface_id"},
 		"ConfigurationConstraints": ubx.FieldSpec{
 			WireName: "configuration_constraints",
-			Kind: "object",
-			Fields: InterconnectAttachment_ConfigurationConstraintsFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_ConfigurationConstraintsFields,
 		},
 		"CustomerRouterIpv6InterfaceId": ubx.FieldSpec{WireName: "customer_router_ipv6_interface_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EdgeAvailabilityDomain": ubx.FieldSpec{WireName: "edge_availability_domain"},
-		"Encryption": ubx.FieldSpec{WireName: "encryption"},
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"IpsecInternalAddresses": ubx.FieldSpec{WireName: "ipsec_internal_addresses"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"EdgeAvailabilityDomain":        ubx.FieldSpec{WireName: "edge_availability_domain"},
+		"Encryption":                    ubx.FieldSpec{WireName: "encryption"},
+		"Interconnect":                  ubx.FieldSpec{WireName: "interconnect"},
+		"IpsecInternalAddresses":        ubx.FieldSpec{WireName: "ipsec_internal_addresses"},
 		"L2Forwarding": ubx.FieldSpec{
 			WireName: "l2_forwarding",
-			Kind: "object",
-			Fields: InterconnectAttachment_L2ForwardingFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_L2ForwardingFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PairingKey": ubx.FieldSpec{WireName: "pairing_key"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Mtu":              ubx.FieldSpec{WireName: "mtu"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"PairingKey":       ubx.FieldSpec{WireName: "pairing_key"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: InterconnectAttachment_ParamsFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_ParamsFields,
 		},
 		"PartnerAsn": ubx.FieldSpec{WireName: "partner_asn"},
 		"PartnerMetadata": ubx.FieldSpec{
 			WireName: "partner_metadata",
-			Kind: "object",
-			Fields: InterconnectAttachment_PartnerMetadataFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_PartnerMetadataFields,
 		},
 		"PrivateInterconnectInfo": ubx.FieldSpec{
 			WireName: "private_interconnect_info",
-			Kind: "object",
-			Fields: InterconnectAttachment_PrivateInterconnectInfoFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachment_PrivateInterconnectInfoFields,
 		},
-		"Router": ubx.FieldSpec{WireName: "router"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
+		"Router":       ubx.FieldSpec{WireName: "router"},
+		"StackType":    ubx.FieldSpec{WireName: "stack_type"},
 		"SubnetLength": ubx.FieldSpec{WireName: "subnet_length"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 		"VlanTag8021q": ubx.FieldSpec{WireName: "vlan_tag8021q"},
 	},
 }

@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaPublicAdvertisedPrefix_PublicDelegatedPrefixs struct {
 	IpRange any
-	Name any
+	Name    any
 	Project any
-	Region any
-	Status any
+	Region  any
+	Status  any
 }
 
 type BetaPublicAdvertisedPrefixConfig struct {
@@ -72,15 +72,15 @@ type BetaPublicAdvertisedPrefixAttrs struct {
 var BetaPublicAdvertisedPrefix = ubx.ResourceBinding{
 	WireType: "google_compute_beta_public_advertised_prefix",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DnsVerificationIp": ubx.FieldSpec{WireName: "dns_verification_ip"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"PdpScope": ubx.FieldSpec{WireName: "pdp_scope"},
-		"SharedSecret": ubx.FieldSpec{WireName: "shared_secret"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Fingerprint":       ubx.FieldSpec{WireName: "fingerprint"},
+		"IpCidrRange":       ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"Ipv6AccessType":    ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"NetworkTier":       ubx.FieldSpec{WireName: "network_tier"},
+		"PdpScope":          ubx.FieldSpec{WireName: "pdp_scope"},
+		"SharedSecret":      ubx.FieldSpec{WireName: "shared_secret"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
 	},
 }

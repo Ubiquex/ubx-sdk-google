@@ -12,7 +12,7 @@ type NodeTemplate_Accelerators struct {
 
 type NodeTemplate_Disks struct {
 	// The number of disks of the specified type to attach to the node template. (AI-inferred)
-	DiskCount any
+	DiskCount  any
 	DiskSizeGb any
 	// The type of disk to attach to the node, such as 'local-ssd'. Defaults to 'local-ssd'. (AI-inferred)
 	DiskType any
@@ -20,7 +20,7 @@ type NodeTemplate_Disks struct {
 
 type NodeTemplate_NodeTypeFlexibility struct {
 	// The number of virtual CPUs to allocate for the node template. Provide a specific integer value as a string (e.g., "8") or use "any" to allow flexible selection based on available resources. (AI-inferred)
-	Cpus any
+	Cpus     any
 	LocalSsd any
 	// Specifies the amount of memory (in MB) that the flexible node type must have. This is used to define a custom node type for the node template. (AI-inferred)
 	Memory any
@@ -32,25 +32,25 @@ type NodeTemplate_ServerBinding struct {
 }
 
 var NodeTemplate_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+}
 
 var NodeTemplate_DisksFields = ubx.FieldMap{
-		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-	}
+	"DiskCount":  ubx.FieldSpec{WireName: "disk_count"},
+	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
+}
 
 var NodeTemplate_NodeTypeFlexibilityFields = ubx.FieldMap{
-		"Cpus": ubx.FieldSpec{WireName: "cpus"},
-		"LocalSsd": ubx.FieldSpec{WireName: "local_ssd"},
-		"Memory": ubx.FieldSpec{WireName: "memory"},
-	}
+	"Cpus":     ubx.FieldSpec{WireName: "cpus"},
+	"LocalSsd": ubx.FieldSpec{WireName: "local_ssd"},
+	"Memory":   ubx.FieldSpec{WireName: "memory"},
+}
 
 var NodeTemplate_ServerBindingFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type NodeTemplateConfig struct {
 	// A list of accelerator configurations (e.g., GPUs) for the node template. Each object specifies the accelerator type and count. This field is output-only, so it is populated by the API and reflects the actual accelerators associated with the node template. (AI-inferred)
@@ -113,28 +113,28 @@ var NodeTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Accelerators": ubx.FieldSpec{
 			WireName: "accelerators",
-			Kind: "list",
-			Fields: NodeTemplate_AcceleratorsFields,
+			Kind:     "list",
+			Fields:   NodeTemplate_AcceleratorsFields,
 		},
 		"CpuOvercommitType": ubx.FieldSpec{WireName: "cpu_overcommit_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"Disks": ubx.FieldSpec{
 			WireName: "disks",
-			Kind: "list",
-			Fields: NodeTemplate_DisksFields,
+			Kind:     "list",
+			Fields:   NodeTemplate_DisksFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"NodeAffinityLabels": ubx.FieldSpec{WireName: "node_affinity_labels"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
+		"NodeType":           ubx.FieldSpec{WireName: "node_type"},
 		"NodeTypeFlexibility": ubx.FieldSpec{
 			WireName: "node_type_flexibility",
-			Kind: "object",
-			Fields: NodeTemplate_NodeTypeFlexibilityFields,
+			Kind:     "object",
+			Fields:   NodeTemplate_NodeTypeFlexibilityFields,
 		},
 		"ServerBinding": ubx.FieldSpec{
 			WireName: "server_binding",
-			Kind: "object",
-			Fields: NodeTemplate_ServerBindingFields,
+			Kind:     "object",
+			Fields:   NodeTemplate_ServerBindingFields,
 		},
 	},
 }

@@ -9,8 +9,8 @@ type UserCred_ResourceIdentity struct {
 }
 
 var UserCred_ResourceIdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 type UserCredConfig struct {
 	// Identifier. The resource name of the UserCreds. Format: `projects/{project}/databases/{database}/userCreds/{user_creds}`
@@ -40,8 +40,8 @@ var UserCred = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceIdentity": ubx.FieldSpec{
 			WireName: "resource_identity",
-			Kind: "object",
-			Fields: UserCred_ResourceIdentityFields,
+			Kind:     "object",
+			Fields:   UserCred_ResourceIdentityFields,
 		},
 	},
 }

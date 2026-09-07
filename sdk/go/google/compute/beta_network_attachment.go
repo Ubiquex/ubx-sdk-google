@@ -4,14 +4,14 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaNetworkAttachment_ConnectionEndpoints struct {
-	IpAddress any
-	Ipv6Address any
-	ProjectIdOrNum any
+	IpAddress             any
+	Ipv6Address           any
+	ProjectIdOrNum        any
 	SecondaryIpCidrRanges any
-	ServiceClassId any
-	Status any
-	Subnetwork any
-	SubnetworkCidrRange any
+	ServiceClassId        any
+	Status                any
+	Subnetwork            any
+	SubnetworkCidrRange   any
 }
 
 type BetaNetworkAttachmentConfig struct {
@@ -68,11 +68,11 @@ var BetaNetworkAttachment = ubx.ResourceBinding{
 	WireType: "google_compute_beta_network_attachment",
 	Fields: ubx.FieldMap{
 		"ConnectionPreference": ubx.FieldSpec{WireName: "connection_preference"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProducerAcceptLists": ubx.FieldSpec{WireName: "producer_accept_lists"},
-		"ProducerRejectLists": ubx.FieldSpec{WireName: "producer_reject_lists"},
-		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":          ubx.FieldSpec{WireName: "fingerprint"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"ProducerAcceptLists":  ubx.FieldSpec{WireName: "producer_accept_lists"},
+		"ProducerRejectLists":  ubx.FieldSpec{WireName: "producer_reject_lists"},
+		"Subnetworks":          ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

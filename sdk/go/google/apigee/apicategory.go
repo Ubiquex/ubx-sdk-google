@@ -49,9 +49,9 @@ type ApicategoryAttrs struct {
 var Apicategory = ubx.ResourceBinding{
 	WireType: "google_apigee_apicategory",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SiteId": ubx.FieldSpec{WireName: "site_id"},
+		"Id":         ubx.FieldSpec{WireName: "id"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"SiteId":     ubx.FieldSpec{WireName: "site_id"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

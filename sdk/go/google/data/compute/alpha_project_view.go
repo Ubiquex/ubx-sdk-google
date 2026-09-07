@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaProjectViewConfig struct {
 	Project any
-	Region any
+	Region  any
 }
 
 type AlphaProjectViewAttrs struct {
 	Project any
-	Region any
+	Region  any
 }
 
 var AlphaProjectView = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_project_view",
 	Fields: ubx.FieldMap{
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":  ubx.FieldSpec{WireName: "region"},
 	},
 }

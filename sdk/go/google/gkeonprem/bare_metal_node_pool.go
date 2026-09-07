@@ -90,90 +90,90 @@ type BareMetalNodePool_UpgradePolicy struct {
 }
 
 var BareMetalNodePool_NodePoolConfig_KubeletConfigFields = ubx.FieldMap{
-		"RegistryBurst": ubx.FieldSpec{WireName: "registry_burst"},
-		"RegistryPullQps": ubx.FieldSpec{WireName: "registry_pull_qps"},
-		"SerializeImagePullsDisabled": ubx.FieldSpec{WireName: "serialize_image_pulls_disabled"},
-	}
+	"RegistryBurst":               ubx.FieldSpec{WireName: "registry_burst"},
+	"RegistryPullQps":             ubx.FieldSpec{WireName: "registry_pull_qps"},
+	"SerializeImagePullsDisabled": ubx.FieldSpec{WireName: "serialize_image_pulls_disabled"},
+}
 
 var BareMetalNodePool_NodePoolConfig_NodeConfigsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
+}
 
 var BareMetalNodePool_NodePoolConfig_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect": ubx.FieldSpec{WireName: "effect"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var BareMetalNodePool_NodePoolConfigFields = ubx.FieldMap{
-		"KubeletConfig": ubx.FieldSpec{
-			WireName: "kubelet_config",
-			Kind: "object",
-			Fields: BareMetalNodePool_NodePoolConfig_KubeletConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"NodeConfigs": ubx.FieldSpec{
-			WireName: "node_configs",
-			Kind: "list",
-			Fields: BareMetalNodePool_NodePoolConfig_NodeConfigsFields,
-		},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"Taints": ubx.FieldSpec{
-			WireName: "taints",
-			Kind: "list",
-			Fields: BareMetalNodePool_NodePoolConfig_TaintsFields,
-		},
-	}
+	"KubeletConfig": ubx.FieldSpec{
+		WireName: "kubelet_config",
+		Kind:     "object",
+		Fields:   BareMetalNodePool_NodePoolConfig_KubeletConfigFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"NodeConfigs": ubx.FieldSpec{
+		WireName: "node_configs",
+		Kind:     "list",
+		Fields:   BareMetalNodePool_NodePoolConfig_NodeConfigsFields,
+	},
+	"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+	"Taints": ubx.FieldSpec{
+		WireName: "taints",
+		Kind:     "list",
+		Fields:   BareMetalNodePool_NodePoolConfig_TaintsFields,
+	},
+}
 
 var BareMetalNodePool_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var BareMetalNodePool_Status_Versions_VersionsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var BareMetalNodePool_Status_VersionsFields = ubx.FieldMap{
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: BareMetalNodePool_Status_Versions_VersionsFields,
-		},
-	}
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   BareMetalNodePool_Status_Versions_VersionsFields,
+	},
+}
 
 var BareMetalNodePool_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: BareMetalNodePool_Status_ConditionsFields,
-		},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "object",
-			Fields: BareMetalNodePool_Status_VersionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   BareMetalNodePool_Status_ConditionsFields,
+	},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"Version":      ubx.FieldSpec{WireName: "version"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "object",
+		Fields:   BareMetalNodePool_Status_VersionsFields,
+	},
+}
 
 var BareMetalNodePool_UpgradePolicy_ParallelUpgradeConfigFields = ubx.FieldMap{
-		"ConcurrentNodes": ubx.FieldSpec{WireName: "concurrent_nodes"},
-		"MinimumAvailableNodes": ubx.FieldSpec{WireName: "minimum_available_nodes"},
-	}
+	"ConcurrentNodes":       ubx.FieldSpec{WireName: "concurrent_nodes"},
+	"MinimumAvailableNodes": ubx.FieldSpec{WireName: "minimum_available_nodes"},
+}
 
 var BareMetalNodePool_UpgradePolicyFields = ubx.FieldMap{
-		"ParallelUpgradeConfig": ubx.FieldSpec{
-			WireName: "parallel_upgrade_config",
-			Kind: "object",
-			Fields: BareMetalNodePool_UpgradePolicy_ParallelUpgradeConfigFields,
-		},
-	}
+	"ParallelUpgradeConfig": ubx.FieldSpec{
+		WireName: "parallel_upgrade_config",
+		Kind:     "object",
+		Fields:   BareMetalNodePool_UpgradePolicy_ParallelUpgradeConfigFields,
+	},
+}
 
 type BareMetalNodePoolConfig struct {
 	// Annotations on the bare metal node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.
@@ -226,22 +226,22 @@ var BareMetalNodePool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"NodePoolConfig": ubx.FieldSpec{
 			WireName: "node_pool_config",
-			Kind: "object",
-			Fields: BareMetalNodePool_NodePoolConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalNodePool_NodePoolConfigFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: BareMetalNodePool_StatusFields,
+			Kind:     "object",
+			Fields:   BareMetalNodePool_StatusFields,
 		},
 		"UpgradePolicy": ubx.FieldSpec{
 			WireName: "upgrade_policy",
-			Kind: "object",
-			Fields: BareMetalNodePool_UpgradePolicyFields,
+			Kind:     "object",
+			Fields:   BareMetalNodePool_UpgradePolicyFields,
 		},
 	},
 }

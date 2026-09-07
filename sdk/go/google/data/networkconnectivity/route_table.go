@@ -14,7 +14,7 @@ type RouteTableAttrs struct {
 	Description any
 	// Optional labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
 	Labels any
-	Name any
+	Name   any
 	// Output only. The current lifecycle state of this route table.
 	State any
 	// Output only. The Google-generated UUID for the route table. This value is unique across all route table resources. If a route table is deleted and another with the same name is created, the new route table is assigned a different `uid`.

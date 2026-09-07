@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AcceleratorType_AcceleratorConfigs struct {
 	Topology any
-	Type any
+	Type     any
 }
 
 type AcceleratorTypeConfig struct {
@@ -15,7 +15,7 @@ type AcceleratorTypeConfig struct {
 type AcceleratorTypeAttrs struct {
 	// The accelerator config.
 	AcceleratorConfigs any
-	Name any
+	Name               any
 	// The accelerator type.
 	Type any
 }

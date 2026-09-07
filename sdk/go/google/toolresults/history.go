@@ -28,9 +28,9 @@ type HistoryAttrs struct {
 var History = ubx.ResourceBinding{
 	WireType: "google_toolresults_history",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"HistoryId":    ubx.FieldSpec{WireName: "history_id"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"TestPlatform": ubx.FieldSpec{WireName: "test_platform"},
 	},
 }

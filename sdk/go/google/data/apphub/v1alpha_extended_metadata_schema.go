@@ -10,7 +10,7 @@ type V1alphaExtendedMetadataSchemaConfig struct {
 type V1alphaExtendedMetadataSchemaAttrs struct {
 	// Output only. The JSON schema as a string.
 	JsonSchema any
-	Name any
+	Name       any
 	// Output only. The version of the schema. New versions are required to be backwards compatible.
 	SchemaVersion any
 }

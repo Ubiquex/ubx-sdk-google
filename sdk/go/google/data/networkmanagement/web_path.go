@@ -11,9 +11,9 @@ type WebPath_DestinationGeoLocation struct {
 }
 
 type WebPath_ProviderTags struct {
-	Category any
+	Category     any
 	ResourceType any
-	Value any
+	Value        any
 }
 
 type WebPathConfig struct {
@@ -39,7 +39,7 @@ type WebPathAttrs struct {
 	MonitoringPolicyId any
 	// Output only. The monitoring status of the WebPath.
 	MonitoringStatus any
-	Name any
+	Name             any
 	// Output only. The provider tags of the web path.
 	ProviderTags any
 	// Output only. Link to provider's UI; link shows the WebPath.

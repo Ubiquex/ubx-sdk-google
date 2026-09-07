@@ -58,51 +58,51 @@ type Backup_TroubleshootingInfo struct {
 }
 
 var Backup_ClusterMetadataFields = ubx.FieldMap{
-		"AnthosVersion": ubx.FieldSpec{WireName: "anthos_version"},
-		"BackupCrdVersions": ubx.FieldSpec{WireName: "backup_crd_versions"},
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"GkeVersion": ubx.FieldSpec{WireName: "gke_version"},
-		"K8sVersion": ubx.FieldSpec{WireName: "k8s_version"},
-	}
+	"AnthosVersion":     ubx.FieldSpec{WireName: "anthos_version"},
+	"BackupCrdVersions": ubx.FieldSpec{WireName: "backup_crd_versions"},
+	"Cluster":           ubx.FieldSpec{WireName: "cluster"},
+	"GkeVersion":        ubx.FieldSpec{WireName: "gke_version"},
+	"K8sVersion":        ubx.FieldSpec{WireName: "k8s_version"},
+}
 
 var Backup_EncryptionKeyFields = ubx.FieldMap{
-		"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
-	}
+	"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
+}
 
 var Backup_SelectedApplications_NamespacedNamesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var Backup_SelectedApplicationsFields = ubx.FieldMap{
-		"NamespacedNames": ubx.FieldSpec{
-			WireName: "namespaced_names",
-			Kind: "list",
-			Fields: Backup_SelectedApplications_NamespacedNamesFields,
-		},
-	}
+	"NamespacedNames": ubx.FieldSpec{
+		WireName: "namespaced_names",
+		Kind:     "list",
+		Fields:   Backup_SelectedApplications_NamespacedNamesFields,
+	},
+}
 
 var Backup_SelectedNamespaceLabels_ResourceLabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Backup_SelectedNamespaceLabelsFields = ubx.FieldMap{
-		"ResourceLabels": ubx.FieldSpec{
-			WireName: "resource_labels",
-			Kind: "list",
-			Fields: Backup_SelectedNamespaceLabels_ResourceLabelsFields,
-		},
-	}
+	"ResourceLabels": ubx.FieldSpec{
+		WireName: "resource_labels",
+		Kind:     "list",
+		Fields:   Backup_SelectedNamespaceLabels_ResourceLabelsFields,
+	},
+}
 
 var Backup_SelectedNamespacesFields = ubx.FieldMap{
-		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-	}
+	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+}
 
 var Backup_TroubleshootingInfoFields = ubx.FieldMap{
-		"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
-		"StateReasonUri": ubx.FieldSpec{WireName: "state_reason_uri"},
-	}
+	"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
+	"StateReasonUri":  ubx.FieldSpec{WireName: "state_reason_uri"},
+}
 
 type BackupConfig struct {
 	// Information about the GKE cluster from which this Backup was created.
@@ -201,37 +201,37 @@ var Backup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterMetadata": ubx.FieldSpec{
 			WireName: "cluster_metadata",
-			Kind: "object",
-			Fields: Backup_ClusterMetadataFields,
+			Kind:     "object",
+			Fields:   Backup_ClusterMetadataFields,
 		},
 		"DeleteLockDays": ubx.FieldSpec{WireName: "delete_lock_days"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
 		"EncryptionKey": ubx.FieldSpec{
 			WireName: "encryption_key",
-			Kind: "object",
-			Fields: Backup_EncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Backup_EncryptionKeyFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
 		"RetainDays": ubx.FieldSpec{WireName: "retain_days"},
 		"SelectedApplications": ubx.FieldSpec{
 			WireName: "selected_applications",
-			Kind: "object",
-			Fields: Backup_SelectedApplicationsFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedApplicationsFields,
 		},
 		"SelectedNamespaceLabels": ubx.FieldSpec{
 			WireName: "selected_namespace_labels",
-			Kind: "object",
-			Fields: Backup_SelectedNamespaceLabelsFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedNamespaceLabelsFields,
 		},
 		"SelectedNamespaces": ubx.FieldSpec{
 			WireName: "selected_namespaces",
-			Kind: "object",
-			Fields: Backup_SelectedNamespacesFields,
+			Kind:     "object",
+			Fields:   Backup_SelectedNamespacesFields,
 		},
 		"TroubleshootingInfo": ubx.FieldSpec{
 			WireName: "troubleshooting_info",
-			Kind: "object",
-			Fields: Backup_TroubleshootingInfoFields,
+			Kind:     "object",
+			Fields:   Backup_TroubleshootingInfoFields,
 		},
 	},
 }

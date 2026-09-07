@@ -4,7 +4,7 @@ package cloudidentity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ClientState_KeyValuePairs struct {
-	BoolValue any
+	BoolValue   any
 	NumberValue any
 	StringValue any
 }
@@ -33,7 +33,7 @@ type ClientStateAttrs struct {
 	LastUpdateTime any
 	// The management state of the resource as specified by the API client.
 	Managed any
-	Name any
+	Name    any
 	// Output only. The owner of the ClientState
 	OwnerType any
 	// A descriptive cause of the health score.

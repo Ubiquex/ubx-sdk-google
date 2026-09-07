@@ -24,17 +24,17 @@ type Bucket_IndexConfigs struct {
 }
 
 var Bucket_CmekSettingsFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	}
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"ServiceAccountId":  ubx.FieldSpec{WireName: "service_account_id"},
+}
 
 var Bucket_IndexConfigsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"FieldPath":  ubx.FieldSpec{WireName: "field_path"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type BucketConfig struct {
 	// Optional. Whether log analytics is enabled for this bucket.Once enabled, log analytics features cannot be disabled.
@@ -84,17 +84,17 @@ var Bucket = ubx.ResourceBinding{
 		"AnalyticsEnabled": ubx.FieldSpec{WireName: "analytics_enabled"},
 		"CmekSettings": ubx.FieldSpec{
 			WireName: "cmek_settings",
-			Kind: "object",
-			Fields: Bucket_CmekSettingsFields,
+			Kind:     "object",
+			Fields:   Bucket_CmekSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"IndexConfigs": ubx.FieldSpec{
 			WireName: "index_configs",
-			Kind: "list",
-			Fields: Bucket_IndexConfigsFields,
+			Kind:     "list",
+			Fields:   Bucket_IndexConfigsFields,
 		},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
+		"Locked":           ubx.FieldSpec{WireName: "locked"},
 		"RestrictedFields": ubx.FieldSpec{WireName: "restricted_fields"},
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
+		"RetentionDays":    ubx.FieldSpec{WireName: "retention_days"},
 	},
 }

@@ -11,9 +11,9 @@ type QueryTemplate_Routine struct {
 }
 
 var QueryTemplate_RoutineFields = ubx.FieldMap{
-		"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
-		"RoutineType": ubx.FieldSpec{WireName: "routine_type"},
-	}
+	"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
+	"RoutineType":    ubx.FieldSpec{WireName: "routine_type"},
+}
 
 type QueryTemplateConfig struct {
 	// Optional. Short description of the QueryTemplate. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
@@ -56,15 +56,15 @@ type QueryTemplateAttrs struct {
 var QueryTemplate = ubx.ResourceBinding{
 	WireType: "google_analyticshub_query_template",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
-		"Proposer": ubx.FieldSpec{WireName: "proposer"},
+		"Proposer":       ubx.FieldSpec{WireName: "proposer"},
 		"Routine": ubx.FieldSpec{
 			WireName: "routine",
-			Kind: "object",
-			Fields: QueryTemplate_RoutineFields,
+			Kind:     "object",
+			Fields:   QueryTemplate_RoutineFields,
 		},
 	},
 }

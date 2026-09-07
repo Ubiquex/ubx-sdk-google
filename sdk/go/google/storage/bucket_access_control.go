@@ -11,9 +11,9 @@ type BucketAccessControl_ProjectTeam struct {
 }
 
 var BucketAccessControl_ProjectTeamFields = ubx.FieldMap{
-		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
-		"Team": ubx.FieldSpec{WireName: "team"},
-	}
+	"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
+	"Team":          ubx.FieldSpec{WireName: "team"},
+}
 
 type BucketAccessControlConfig struct {
 	// The name of the bucket.
@@ -68,20 +68,20 @@ type BucketAccessControlAttrs struct {
 var BucketAccessControl = ubx.ResourceBinding{
 	WireType: "google_storage_bucket_access_control",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Entity": ubx.FieldSpec{WireName: "entity"},
+		"Bucket":   ubx.FieldSpec{WireName: "bucket"},
+		"Domain":   ubx.FieldSpec{WireName: "domain"},
+		"Email":    ubx.FieldSpec{WireName: "email"},
+		"Entity":   ubx.FieldSpec{WireName: "entity"},
 		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Etag":     ubx.FieldSpec{WireName: "etag"},
+		"Id":       ubx.FieldSpec{WireName: "id"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
 		"ProjectTeam": ubx.FieldSpec{
 			WireName: "project_team",
-			Kind: "object",
-			Fields: BucketAccessControl_ProjectTeamFields,
+			Kind:     "object",
+			Fields:   BucketAccessControl_ProjectTeamFields,
 		},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"Role":     ubx.FieldSpec{WireName: "role"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

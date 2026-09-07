@@ -20,19 +20,19 @@ type Customer_CustomerOnboardingState struct {
 }
 
 var Customer_CustomerOnboardingState_OnboardingStepsFields = ubx.FieldMap{
-		"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
-		"CompletionTime": ubx.FieldSpec{WireName: "completion_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
+	"CompletionTime":  ubx.FieldSpec{WireName: "completion_time"},
+	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+	"Step":            ubx.FieldSpec{WireName: "step"},
+}
 
 var Customer_CustomerOnboardingStateFields = ubx.FieldMap{
-		"OnboardingSteps": ubx.FieldSpec{
-			WireName: "onboarding_steps",
-			Kind: "list",
-			Fields: Customer_CustomerOnboardingState_OnboardingStepsFields,
-		},
-	}
+	"OnboardingSteps": ubx.FieldSpec{
+		WireName: "onboarding_steps",
+		Kind:     "list",
+		Fields:   Customer_CustomerOnboardingState_OnboardingStepsFields,
+	},
+}
 
 type CustomerConfig struct {
 	// Container for customer onboarding steps
@@ -61,10 +61,10 @@ var Customer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomerOnboardingState": ubx.FieldSpec{
 			WireName: "customer_onboarding_state",
-			Kind: "object",
-			Fields: Customer_CustomerOnboardingStateFields,
+			Kind:     "object",
+			Fields:   Customer_CustomerOnboardingStateFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

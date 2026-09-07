@@ -34,8 +34,8 @@ type V1beta1NodePool_BestEffortProvisioning struct {
 
 type V1beta1NodePool_Conditions struct {
 	CanonicalCode any
-	Code any
-	Message any
+	Code          any
+	Message       any
 }
 
 type V1beta1NodePool_Config_Accelerators_GpuDriverInstallationConfig struct {
@@ -43,17 +43,17 @@ type V1beta1NodePool_Config_Accelerators_GpuDriverInstallationConfig struct {
 }
 
 type V1beta1NodePool_Config_Accelerators_GpuSharingConfig struct {
-	GpuSharingStrategy any
+	GpuSharingStrategy     any
 	MaxSharedClientsPerGpu any
 }
 
 type V1beta1NodePool_Config_Accelerators struct {
-	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorCount            any
+	AcceleratorType             any
 	GpuDriverInstallationConfig any
-	GpuPartitionSize any
-	GpuSharingConfig any
-	MaxTimeSharedClientsPerGpu any
+	GpuPartitionSize            any
+	GpuSharingConfig            any
+	MaxTimeSharedClientsPerGpu  any
 }
 
 type V1beta1NodePool_Config_AdvancedMachineFeatures struct {
@@ -88,7 +88,7 @@ type V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_Certifi
 }
 
 type V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig struct {
-	Fqdns any
+	Fqdns                             any
 	GcpSecretManagerCertificateConfig any
 }
 
@@ -105,26 +105,26 @@ type V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Ca struct {
 
 type V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Client struct {
 	Cert any
-	Key any
+	Key  any
 }
 
 type V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_Header struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts struct {
-	Ca any
+	Ca           any
 	Capabilities any
-	Client any
-	DialTimeout any
-	Header any
-	Host any
+	Client       any
+	DialTimeout  any
+	Header       any
+	Host         any
 	OverridePath any
 }
 
 type V1beta1NodePool_Config_ContainerdConfig_RegistryHosts struct {
-	Hosts any
+	Hosts  any
 	Server any
 }
 
@@ -386,7 +386,7 @@ type V1beta1NodePool_Config_SandboxConfig struct {
 
 type V1beta1NodePool_Config_SecondaryBootDisks struct {
 	DiskImage any
-	Mode any
+	Mode      any
 }
 
 type V1beta1NodePool_Config_ShieldedInstanceConfig struct {
@@ -397,9 +397,9 @@ type V1beta1NodePool_Config_ShieldedInstanceConfig struct {
 }
 
 type V1beta1NodePool_Config_SoleTenantConfig_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type V1beta1NodePool_Config_SoleTenantConfig struct {
@@ -416,8 +416,8 @@ type V1beta1NodePool_Config_TaintConfig struct {
 
 type V1beta1NodePool_Config_Taints struct {
 	Effect any
-	Key any
-	Value any
+	Key    any
+	Value  any
 }
 
 type V1beta1NodePool_Config_WindowsNodeConfig struct {
@@ -580,15 +580,15 @@ type V1beta1NodePool_MaxPodsConstraint struct {
 }
 
 type V1beta1NodePool_NetworkConfig_AdditionalNodeNetworkConfigs struct {
-	Network any
+	Network    any
 	Subnetwork any
 }
 
 type V1beta1NodePool_NetworkConfig_AdditionalPodNetworkConfigs struct {
-	MaxPodsPerNode any
+	MaxPodsPerNode    any
 	NetworkAttachment any
 	SecondaryPodRange any
-	Subnetwork any
+	Subnetwork        any
 }
 
 type V1beta1NodePool_NetworkConfig_NetworkPerformanceConfig struct {
@@ -761,870 +761,870 @@ type V1beta1NodePool_NodePool struct {
 }
 
 var V1beta1NodePool_AutopilotConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1beta1NodePool_AutoscalingFields = ubx.FieldMap{
-		"Autoprovisioned": ubx.FieldSpec{WireName: "autoprovisioned"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LocationPolicy": ubx.FieldSpec{WireName: "location_policy"},
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-		"TotalMaxNodeCount": ubx.FieldSpec{WireName: "total_max_node_count"},
-		"TotalMinNodeCount": ubx.FieldSpec{WireName: "total_min_node_count"},
-	}
+	"Autoprovisioned":   ubx.FieldSpec{WireName: "autoprovisioned"},
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+	"LocationPolicy":    ubx.FieldSpec{WireName: "location_policy"},
+	"MaxNodeCount":      ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount":      ubx.FieldSpec{WireName: "min_node_count"},
+	"TotalMaxNodeCount": ubx.FieldSpec{WireName: "total_max_node_count"},
+	"TotalMinNodeCount": ubx.FieldSpec{WireName: "total_min_node_count"},
+}
 
 var V1beta1NodePool_BestEffortProvisioningFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MinProvisionNodes": ubx.FieldSpec{WireName: "min_provision_nodes"},
-	}
+	"Enabled":           ubx.FieldSpec{WireName: "enabled"},
+	"MinProvisionNodes": ubx.FieldSpec{WireName: "min_provision_nodes"},
+}
 
 var V1beta1NodePool_ConditionsFields = ubx.FieldMap{
-		"CanonicalCode": ubx.FieldSpec{WireName: "canonical_code"},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"CanonicalCode": ubx.FieldSpec{WireName: "canonical_code"},
+	"Code":          ubx.FieldSpec{WireName: "code"},
+	"Message":       ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1NodePool_Config_Accelerators_GpuDriverInstallationConfigFields = ubx.FieldMap{
-		"GpuDriverVersion": ubx.FieldSpec{WireName: "gpu_driver_version"},
-	}
+	"GpuDriverVersion": ubx.FieldSpec{WireName: "gpu_driver_version"},
+}
 
 var V1beta1NodePool_Config_Accelerators_GpuSharingConfigFields = ubx.FieldMap{
-		"GpuSharingStrategy": ubx.FieldSpec{WireName: "gpu_sharing_strategy"},
-		"MaxSharedClientsPerGpu": ubx.FieldSpec{WireName: "max_shared_clients_per_gpu"},
-	}
+	"GpuSharingStrategy":     ubx.FieldSpec{WireName: "gpu_sharing_strategy"},
+	"MaxSharedClientsPerGpu": ubx.FieldSpec{WireName: "max_shared_clients_per_gpu"},
+}
 
 var V1beta1NodePool_Config_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuDriverInstallationConfig": ubx.FieldSpec{
-			WireName: "gpu_driver_installation_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_Accelerators_GpuDriverInstallationConfigFields,
-		},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"GpuSharingConfig": ubx.FieldSpec{
-			WireName: "gpu_sharing_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_Accelerators_GpuSharingConfigFields,
-		},
-		"MaxTimeSharedClientsPerGpu": ubx.FieldSpec{WireName: "max_time_shared_clients_per_gpu"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuDriverInstallationConfig": ubx.FieldSpec{
+		WireName: "gpu_driver_installation_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_Accelerators_GpuDriverInstallationConfigFields,
+	},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"GpuSharingConfig": ubx.FieldSpec{
+		WireName: "gpu_sharing_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_Accelerators_GpuSharingConfigFields,
+	},
+	"MaxTimeSharedClientsPerGpu": ubx.FieldSpec{WireName: "max_time_shared_clients_per_gpu"},
+}
 
 var V1beta1NodePool_Config_AdvancedMachineFeaturesFields = ubx.FieldMap{
-		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-		"PerformanceMonitoringUnit": ubx.FieldSpec{WireName: "performance_monitoring_unit"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-	}
+	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+	"PerformanceMonitoringUnit":  ubx.FieldSpec{WireName: "performance_monitoring_unit"},
+	"ThreadsPerCore":             ubx.FieldSpec{WireName: "threads_per_core"},
+}
 
 var V1beta1NodePool_Config_BootDiskFields = ubx.FieldMap{
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-	}
+	"DiskType":              ubx.FieldSpec{WireName: "disk_type"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"SizeGb":                ubx.FieldSpec{WireName: "size_gb"},
+}
 
 var V1beta1NodePool_Config_ConfidentialNodesFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfigFields = ubx.FieldMap{
-		"SecretUri": ubx.FieldSpec{WireName: "secret_uri"},
-	}
+	"SecretUri": ubx.FieldSpec{WireName: "secret_uri"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfigFields = ubx.FieldMap{
-		"Fqdns": ubx.FieldSpec{WireName: "fqdns"},
-		"GcpSecretManagerCertificateConfig": ubx.FieldSpec{
-			WireName: "gcp_secret_manager_certificate_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfigFields,
-		},
-	}
+	"Fqdns": ubx.FieldSpec{WireName: "fqdns"},
+	"GcpSecretManagerCertificateConfig": ubx.FieldSpec{
+		WireName: "gcp_secret_manager_certificate_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfig_GcpSecretManagerCertificateConfigFields,
+	},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfigFields = ubx.FieldMap{
-		"CertificateAuthorityDomainConfig": ubx.FieldSpec{
-			WireName: "certificate_authority_domain_config",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfigFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CertificateAuthorityDomainConfig": ubx.FieldSpec{
+		WireName: "certificate_authority_domain_config",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfig_CertificateAuthorityDomainConfigFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields = ubx.FieldMap{
-		"GcpSecretManagerSecretUri": ubx.FieldSpec{WireName: "gcp_secret_manager_secret_uri"},
-	}
+	"GcpSecretManagerSecretUri": ubx.FieldSpec{WireName: "gcp_secret_manager_secret_uri"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_ClientFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{
-			WireName: "cert",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
-		},
-		"Key": ubx.FieldSpec{
-			WireName: "key",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
-		},
-	}
+	"Cert": ubx.FieldSpec{
+		WireName: "cert",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
+	},
+	"Key": ubx.FieldSpec{
+		WireName: "key",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
+	},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_HeaderFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_HostsFields = ubx.FieldMap{
-		"Ca": ubx.FieldSpec{
-			WireName: "ca",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
-		},
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"Client": ubx.FieldSpec{
-			WireName: "client",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_ClientFields,
-		},
-		"DialTimeout": ubx.FieldSpec{WireName: "dial_timeout"},
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_HeaderFields,
-		},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"OverridePath": ubx.FieldSpec{WireName: "override_path"},
-	}
+	"Ca": ubx.FieldSpec{
+		WireName: "ca",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_CaFields,
+	},
+	"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
+	"Client": ubx.FieldSpec{
+		WireName: "client",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_ClientFields,
+	},
+	"DialTimeout": ubx.FieldSpec{WireName: "dial_timeout"},
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_Hosts_HeaderFields,
+	},
+	"Host":         ubx.FieldSpec{WireName: "host"},
+	"OverridePath": ubx.FieldSpec{WireName: "override_path"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfig_RegistryHostsFields = ubx.FieldMap{
-		"Hosts": ubx.FieldSpec{
-			WireName: "hosts",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_HostsFields,
-		},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"Hosts": ubx.FieldSpec{
+		WireName: "hosts",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHosts_HostsFields,
+	},
+	"Server": ubx.FieldSpec{WireName: "server"},
+}
 
 var V1beta1NodePool_Config_ContainerdConfigFields = ubx.FieldMap{
-		"PrivateRegistryAccessConfig": ubx.FieldSpec{
-			WireName: "private_registry_access_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfigFields,
-		},
-		"RegistryHosts": ubx.FieldSpec{
-			WireName: "registry_hosts",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_ContainerdConfig_RegistryHostsFields,
-		},
-		"WritableCgroups": ubx.FieldSpec{
-			WireName: "writable_cgroups",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-	}
+	"PrivateRegistryAccessConfig": ubx.FieldSpec{
+		WireName: "private_registry_access_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_PrivateRegistryAccessConfigFields,
+	},
+	"RegistryHosts": ubx.FieldSpec{
+		WireName: "registry_hosts",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_ContainerdConfig_RegistryHostsFields,
+	},
+	"WritableCgroups": ubx.FieldSpec{
+		WireName: "writable_cgroups",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+}
 
 var V1beta1NodePool_Config_EphemeralStorageConfigFields = ubx.FieldMap{
-		"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
-	}
+	"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
+}
 
 var V1beta1NodePool_Config_EphemeralStorageLocalSsdConfigFields = ubx.FieldMap{
-		"DataCacheCount": ubx.FieldSpec{WireName: "data_cache_count"},
-		"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
-	}
+	"DataCacheCount": ubx.FieldSpec{WireName: "data_cache_count"},
+	"LocalSsdCount":  ubx.FieldSpec{WireName: "local_ssd_count"},
+}
 
 var V1beta1NodePool_Config_GpuDirectConfigFields = ubx.FieldMap{
-		"GpuDirectStrategy": ubx.FieldSpec{WireName: "gpu_direct_strategy"},
-	}
+	"GpuDirectStrategy": ubx.FieldSpec{WireName: "gpu_direct_strategy"},
+}
 
 var V1beta1NodePool_Config_HostMaintenancePolicy_OpportunisticMaintenanceStrategyFields = ubx.FieldMap{
-		"MaintenanceAvailabilityWindow": ubx.FieldSpec{WireName: "maintenance_availability_window"},
-		"MinNodesPerPool": ubx.FieldSpec{WireName: "min_nodes_per_pool"},
-		"NodeIdleTimeWindow": ubx.FieldSpec{WireName: "node_idle_time_window"},
-	}
+	"MaintenanceAvailabilityWindow": ubx.FieldSpec{WireName: "maintenance_availability_window"},
+	"MinNodesPerPool":               ubx.FieldSpec{WireName: "min_nodes_per_pool"},
+	"NodeIdleTimeWindow":            ubx.FieldSpec{WireName: "node_idle_time_window"},
+}
 
 var V1beta1NodePool_Config_HostMaintenancePolicyFields = ubx.FieldMap{
-		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"OpportunisticMaintenanceStrategy": ubx.FieldSpec{
-			WireName: "opportunistic_maintenance_strategy",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_HostMaintenancePolicy_OpportunisticMaintenanceStrategyFields,
-		},
-	}
+	"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
+	"OpportunisticMaintenanceStrategy": ubx.FieldSpec{
+		WireName: "opportunistic_maintenance_strategy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_HostMaintenancePolicy_OpportunisticMaintenanceStrategyFields,
+	},
+}
 
 var V1beta1NodePool_Config_KubeletConfig_CrashLoopBackOffFields = ubx.FieldMap{
-		"MaxContainerRestartPeriod": ubx.FieldSpec{WireName: "max_container_restart_period"},
-	}
+	"MaxContainerRestartPeriod": ubx.FieldSpec{WireName: "max_container_restart_period"},
+}
 
 var V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields = ubx.FieldMap{
-		"ImagefsAvailable": ubx.FieldSpec{WireName: "imagefs_available"},
-		"ImagefsInodesFree": ubx.FieldSpec{WireName: "imagefs_inodes_free"},
-		"MemoryAvailable": ubx.FieldSpec{WireName: "memory_available"},
-		"NodefsAvailable": ubx.FieldSpec{WireName: "nodefs_available"},
-		"NodefsInodesFree": ubx.FieldSpec{WireName: "nodefs_inodes_free"},
-		"PidAvailable": ubx.FieldSpec{WireName: "pid_available"},
-	}
+	"ImagefsAvailable":  ubx.FieldSpec{WireName: "imagefs_available"},
+	"ImagefsInodesFree": ubx.FieldSpec{WireName: "imagefs_inodes_free"},
+	"MemoryAvailable":   ubx.FieldSpec{WireName: "memory_available"},
+	"NodefsAvailable":   ubx.FieldSpec{WireName: "nodefs_available"},
+	"NodefsInodesFree":  ubx.FieldSpec{WireName: "nodefs_inodes_free"},
+	"PidAvailable":      ubx.FieldSpec{WireName: "pid_available"},
+}
 
 var V1beta1NodePool_Config_KubeletConfig_MemoryManagerFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var V1beta1NodePool_Config_KubeletConfig_TopologyManagerFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+	"Scope":  ubx.FieldSpec{WireName: "scope"},
+}
 
 var V1beta1NodePool_Config_KubeletConfigFields = ubx.FieldMap{
-		"AllowedUnsafeSysctls": ubx.FieldSpec{WireName: "allowed_unsafe_sysctls"},
-		"ContainerLogMaxFiles": ubx.FieldSpec{WireName: "container_log_max_files"},
-		"ContainerLogMaxSize": ubx.FieldSpec{WireName: "container_log_max_size"},
-		"CpuCfsQuota": ubx.FieldSpec{WireName: "cpu_cfs_quota"},
-		"CpuCfsQuotaPeriod": ubx.FieldSpec{WireName: "cpu_cfs_quota_period"},
-		"CpuManagerPolicy": ubx.FieldSpec{WireName: "cpu_manager_policy"},
-		"CrashLoopBackOff": ubx.FieldSpec{
-			WireName: "crash_loop_back_off",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_CrashLoopBackOffFields,
-		},
-		"EvictionMaxPodGracePeriodSeconds": ubx.FieldSpec{WireName: "eviction_max_pod_grace_period_seconds"},
-		"EvictionMinimumReclaim": ubx.FieldSpec{
-			WireName: "eviction_minimum_reclaim",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
-		},
-		"EvictionSoft": ubx.FieldSpec{
-			WireName: "eviction_soft",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
-		},
-		"EvictionSoftGracePeriod": ubx.FieldSpec{
-			WireName: "eviction_soft_grace_period",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
-		},
-		"ImageGcHighThresholdPercent": ubx.FieldSpec{WireName: "image_gc_high_threshold_percent"},
-		"ImageGcLowThresholdPercent": ubx.FieldSpec{WireName: "image_gc_low_threshold_percent"},
-		"ImageMaximumGcAge": ubx.FieldSpec{WireName: "image_maximum_gc_age"},
-		"ImageMinimumGcAge": ubx.FieldSpec{WireName: "image_minimum_gc_age"},
-		"InsecureKubeletReadonlyPortEnabled": ubx.FieldSpec{WireName: "insecure_kubelet_readonly_port_enabled"},
-		"MaxParallelImagePulls": ubx.FieldSpec{WireName: "max_parallel_image_pulls"},
-		"MemoryManager": ubx.FieldSpec{
-			WireName: "memory_manager",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_MemoryManagerFields,
-		},
-		"PodPidsLimit": ubx.FieldSpec{WireName: "pod_pids_limit"},
-		"ShutdownGracePeriodCriticalPodsSeconds": ubx.FieldSpec{WireName: "shutdown_grace_period_critical_pods_seconds"},
-		"ShutdownGracePeriodSeconds": ubx.FieldSpec{WireName: "shutdown_grace_period_seconds"},
-		"SingleProcessOomKill": ubx.FieldSpec{WireName: "single_process_oom_kill"},
-		"TopologyManager": ubx.FieldSpec{
-			WireName: "topology_manager",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_TopologyManagerFields,
-		},
-	}
+	"AllowedUnsafeSysctls": ubx.FieldSpec{WireName: "allowed_unsafe_sysctls"},
+	"ContainerLogMaxFiles": ubx.FieldSpec{WireName: "container_log_max_files"},
+	"ContainerLogMaxSize":  ubx.FieldSpec{WireName: "container_log_max_size"},
+	"CpuCfsQuota":          ubx.FieldSpec{WireName: "cpu_cfs_quota"},
+	"CpuCfsQuotaPeriod":    ubx.FieldSpec{WireName: "cpu_cfs_quota_period"},
+	"CpuManagerPolicy":     ubx.FieldSpec{WireName: "cpu_manager_policy"},
+	"CrashLoopBackOff": ubx.FieldSpec{
+		WireName: "crash_loop_back_off",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_CrashLoopBackOffFields,
+	},
+	"EvictionMaxPodGracePeriodSeconds": ubx.FieldSpec{WireName: "eviction_max_pod_grace_period_seconds"},
+	"EvictionMinimumReclaim": ubx.FieldSpec{
+		WireName: "eviction_minimum_reclaim",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
+	},
+	"EvictionSoft": ubx.FieldSpec{
+		WireName: "eviction_soft",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
+	},
+	"EvictionSoftGracePeriod": ubx.FieldSpec{
+		WireName: "eviction_soft_grace_period",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_EvictionMinimumReclaimFields,
+	},
+	"ImageGcHighThresholdPercent":        ubx.FieldSpec{WireName: "image_gc_high_threshold_percent"},
+	"ImageGcLowThresholdPercent":         ubx.FieldSpec{WireName: "image_gc_low_threshold_percent"},
+	"ImageMaximumGcAge":                  ubx.FieldSpec{WireName: "image_maximum_gc_age"},
+	"ImageMinimumGcAge":                  ubx.FieldSpec{WireName: "image_minimum_gc_age"},
+	"InsecureKubeletReadonlyPortEnabled": ubx.FieldSpec{WireName: "insecure_kubelet_readonly_port_enabled"},
+	"MaxParallelImagePulls":              ubx.FieldSpec{WireName: "max_parallel_image_pulls"},
+	"MemoryManager": ubx.FieldSpec{
+		WireName: "memory_manager",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_MemoryManagerFields,
+	},
+	"PodPidsLimit":                           ubx.FieldSpec{WireName: "pod_pids_limit"},
+	"ShutdownGracePeriodCriticalPodsSeconds": ubx.FieldSpec{WireName: "shutdown_grace_period_critical_pods_seconds"},
+	"ShutdownGracePeriodSeconds":             ubx.FieldSpec{WireName: "shutdown_grace_period_seconds"},
+	"SingleProcessOomKill":                   ubx.FieldSpec{WireName: "single_process_oom_kill"},
+	"TopologyManager": ubx.FieldSpec{
+		WireName: "topology_manager",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_TopologyManagerFields,
+	},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_AccurateTimeConfigFields = ubx.FieldMap{
-		"EnablePtpKvmTimeSync": ubx.FieldSpec{WireName: "enable_ptp_kvm_time_sync"},
-	}
+	"EnablePtpKvmTimeSync": ubx.FieldSpec{WireName: "enable_ptp_kvm_time_sync"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInit_InitScriptFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"GcpSecretManagerSecretUri": ubx.FieldSpec{WireName: "gcp_secret_manager_secret_uri"},
-		"GcsGeneration": ubx.FieldSpec{WireName: "gcs_generation"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-	}
+	"Args":                      ubx.FieldSpec{WireName: "args"},
+	"GcpSecretManagerSecretUri": ubx.FieldSpec{WireName: "gcp_secret_manager_secret_uri"},
+	"GcsGeneration":             ubx.FieldSpec{WireName: "gcs_generation"},
+	"GcsUri":                    ubx.FieldSpec{WireName: "gcs_uri"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInitFields = ubx.FieldMap{
-		"InitScript": ubx.FieldSpec{
-			WireName: "init_script",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInit_InitScriptFields,
-		},
-	}
+	"InitScript": ubx.FieldSpec{
+		WireName: "init_script",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInit_InitScriptFields,
+	},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_DiskIoSchedulerFields = ubx.FieldMap{
-		"NodeAttachedDiskIoScheduler": ubx.FieldSpec{WireName: "node_attached_disk_io_scheduler"},
-		"NodeSystemIoScheduler": ubx.FieldSpec{WireName: "node_system_io_scheduler"},
-	}
+	"NodeAttachedDiskIoScheduler": ubx.FieldSpec{WireName: "node_attached_disk_io_scheduler"},
+	"NodeSystemIoScheduler":       ubx.FieldSpec{WireName: "node_system_io_scheduler"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_HugepagesFields = ubx.FieldMap{
-		"HugepageSize1g": ubx.FieldSpec{WireName: "hugepage_size1g"},
-		"HugepageSize2m": ubx.FieldSpec{WireName: "hugepage_size2m"},
-	}
+	"HugepageSize1g": ubx.FieldSpec{WireName: "hugepage_size1g"},
+	"HugepageSize2m": ubx.FieldSpec{WireName: "hugepage_size2m"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_NodeVfioConfigFields = ubx.FieldMap{
-		"DmaEntryLimit": ubx.FieldSpec{WireName: "dma_entry_limit"},
-	}
+	"DmaEntryLimit": ubx.FieldSpec{WireName: "dma_entry_limit"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_BootDiskProfileFields = ubx.FieldMap{
-		"SwapSizeGib": ubx.FieldSpec{WireName: "swap_size_gib"},
-		"SwapSizePercent": ubx.FieldSpec{WireName: "swap_size_percent"},
-	}
+	"SwapSizeGib":     ubx.FieldSpec{WireName: "swap_size_gib"},
+	"SwapSizePercent": ubx.FieldSpec{WireName: "swap_size_percent"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfileFields = ubx.FieldMap{
-		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
-	}
+	"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_EncryptionConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfig_SwapConfigFields = ubx.FieldMap{
-		"BootDiskProfile": ubx.FieldSpec{
-			WireName: "boot_disk_profile",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_BootDiskProfileFields,
-		},
-		"DedicatedLocalSsdProfile": ubx.FieldSpec{
-			WireName: "dedicated_local_ssd_profile",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfileFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_EncryptionConfigFields,
-		},
-		"EphemeralLocalSsdProfile": ubx.FieldSpec{
-			WireName: "ephemeral_local_ssd_profile",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_BootDiskProfileFields,
-		},
-	}
+	"BootDiskProfile": ubx.FieldSpec{
+		WireName: "boot_disk_profile",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_BootDiskProfileFields,
+	},
+	"DedicatedLocalSsdProfile": ubx.FieldSpec{
+		WireName: "dedicated_local_ssd_profile",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_DedicatedLocalSsdProfileFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_EncryptionConfigFields,
+	},
+	"EphemeralLocalSsdProfile": ubx.FieldSpec{
+		WireName: "ephemeral_local_ssd_profile",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_SwapConfig_BootDiskProfileFields,
+	},
+}
 
 var V1beta1NodePool_Config_LinuxNodeConfigFields = ubx.FieldMap{
-		"AccurateTimeConfig": ubx.FieldSpec{
-			WireName: "accurate_time_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_AccurateTimeConfigFields,
-		},
-		"CgroupMode": ubx.FieldSpec{WireName: "cgroup_mode"},
-		"CustomNodeInit": ubx.FieldSpec{
-			WireName: "custom_node_init",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInitFields,
-		},
-		"DiskIoScheduler": ubx.FieldSpec{
-			WireName: "disk_io_scheduler",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_DiskIoSchedulerFields,
-		},
-		"Hugepages": ubx.FieldSpec{
-			WireName: "hugepages",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_HugepagesFields,
-		},
-		"NodeKernelModuleLoading": ubx.FieldSpec{
-			WireName: "node_kernel_module_loading",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfig_MemoryManagerFields,
-		},
-		"NodeVfioConfig": ubx.FieldSpec{
-			WireName: "node_vfio_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_NodeVfioConfigFields,
-		},
-		"SwapConfig": ubx.FieldSpec{
-			WireName: "swap_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfig_SwapConfigFields,
-		},
-		"Sysctls": ubx.FieldSpec{WireName: "sysctls"},
-		"TransparentHugepageDefrag": ubx.FieldSpec{WireName: "transparent_hugepage_defrag"},
-		"TransparentHugepageEnabled": ubx.FieldSpec{WireName: "transparent_hugepage_enabled"},
-	}
+	"AccurateTimeConfig": ubx.FieldSpec{
+		WireName: "accurate_time_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_AccurateTimeConfigFields,
+	},
+	"CgroupMode": ubx.FieldSpec{WireName: "cgroup_mode"},
+	"CustomNodeInit": ubx.FieldSpec{
+		WireName: "custom_node_init",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_CustomNodeInitFields,
+	},
+	"DiskIoScheduler": ubx.FieldSpec{
+		WireName: "disk_io_scheduler",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_DiskIoSchedulerFields,
+	},
+	"Hugepages": ubx.FieldSpec{
+		WireName: "hugepages",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_HugepagesFields,
+	},
+	"NodeKernelModuleLoading": ubx.FieldSpec{
+		WireName: "node_kernel_module_loading",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfig_MemoryManagerFields,
+	},
+	"NodeVfioConfig": ubx.FieldSpec{
+		WireName: "node_vfio_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_NodeVfioConfigFields,
+	},
+	"SwapConfig": ubx.FieldSpec{
+		WireName: "swap_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfig_SwapConfigFields,
+	},
+	"Sysctls":                    ubx.FieldSpec{WireName: "sysctls"},
+	"TransparentHugepageDefrag":  ubx.FieldSpec{WireName: "transparent_hugepage_defrag"},
+	"TransparentHugepageEnabled": ubx.FieldSpec{WireName: "transparent_hugepage_enabled"},
+}
 
 var V1beta1NodePool_Config_LoggingConfig_VariantConfigFields = ubx.FieldMap{
-		"Variant": ubx.FieldSpec{WireName: "variant"},
-	}
+	"Variant": ubx.FieldSpec{WireName: "variant"},
+}
 
 var V1beta1NodePool_Config_LoggingConfigFields = ubx.FieldMap{
-		"VariantConfig": ubx.FieldSpec{
-			WireName: "variant_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LoggingConfig_VariantConfigFields,
-		},
-	}
+	"VariantConfig": ubx.FieldSpec{
+		WireName: "variant_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LoggingConfig_VariantConfigFields,
+	},
+}
 
 var V1beta1NodePool_Config_NodeImageConfigFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"ImageProject": ubx.FieldSpec{WireName: "image_project"},
-	}
+	"Image":        ubx.FieldSpec{WireName: "image"},
+	"ImageProject": ubx.FieldSpec{WireName: "image_project"},
+}
 
 var V1beta1NodePool_Config_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1NodePool_Config_ResourceManagerTagsFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var V1beta1NodePool_Config_SandboxConfigFields = ubx.FieldMap{
-		"SandboxType": ubx.FieldSpec{WireName: "sandbox_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"SandboxType": ubx.FieldSpec{WireName: "sandbox_type"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1NodePool_Config_SecondaryBootDisksFields = ubx.FieldMap{
-		"DiskImage": ubx.FieldSpec{WireName: "disk_image"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DiskImage": ubx.FieldSpec{WireName: "disk_image"},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1beta1NodePool_Config_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+}
 
 var V1beta1NodePool_Config_SoleTenantConfig_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1NodePool_Config_SoleTenantConfigFields = ubx.FieldMap{
-		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_SoleTenantConfig_NodeAffinitiesFields,
-		},
-	}
+	"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_SoleTenantConfig_NodeAffinitiesFields,
+	},
+}
 
 var V1beta1NodePool_Config_TaintConfigFields = ubx.FieldMap{
-		"ArchitectureTaintBehavior": ubx.FieldSpec{WireName: "architecture_taint_behavior"},
-	}
+	"ArchitectureTaintBehavior": ubx.FieldSpec{WireName: "architecture_taint_behavior"},
+}
 
 var V1beta1NodePool_Config_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect": ubx.FieldSpec{WireName: "effect"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1NodePool_Config_WindowsNodeConfigFields = ubx.FieldMap{
-		"OsVersion": ubx.FieldSpec{WireName: "os_version"},
-	}
+	"OsVersion": ubx.FieldSpec{WireName: "os_version"},
+}
 
 var V1beta1NodePool_Config_WorkloadMetadataConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"NodeMetadata": ubx.FieldSpec{WireName: "node_metadata"},
-	}
+	"Mode":         ubx.FieldSpec{WireName: "mode"},
+	"NodeMetadata": ubx.FieldSpec{WireName: "node_metadata"},
+}
 
 var V1beta1NodePool_ConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_AcceleratorsFields,
-		},
-		"AdvancedMachineFeatures": ubx.FieldSpec{
-			WireName: "advanced_machine_features",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_AdvancedMachineFeaturesFields,
-		},
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_BootDiskFields,
-		},
-		"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
-		"ConfidentialNodes": ubx.FieldSpec{
-			WireName: "confidential_nodes",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ConfidentialNodesFields,
-		},
-		"ConsolidationDelay": ubx.FieldSpec{WireName: "consolidation_delay"},
-		"ContainerdConfig": ubx.FieldSpec{
-			WireName: "containerd_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ContainerdConfigFields,
-		},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"EffectiveCgroupMode": ubx.FieldSpec{WireName: "effective_cgroup_mode"},
-		"EnableConfidentialStorage": ubx.FieldSpec{WireName: "enable_confidential_storage"},
-		"EphemeralStorageConfig": ubx.FieldSpec{
-			WireName: "ephemeral_storage_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_EphemeralStorageConfigFields,
-		},
-		"EphemeralStorageLocalSsdConfig": ubx.FieldSpec{
-			WireName: "ephemeral_storage_local_ssd_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_EphemeralStorageLocalSsdConfigFields,
-		},
-		"FastSocket": ubx.FieldSpec{
-			WireName: "fast_socket",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-		"FlexStart": ubx.FieldSpec{WireName: "flex_start"},
-		"GcfsConfig": ubx.FieldSpec{
-			WireName: "gcfs_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-		"GpuDirectConfig": ubx.FieldSpec{
-			WireName: "gpu_direct_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_GpuDirectConfigFields,
-		},
-		"Gvnic": ubx.FieldSpec{
-			WireName: "gvnic",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-		"HostMaintenancePolicy": ubx.FieldSpec{
-			WireName: "host_maintenance_policy",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_HostMaintenancePolicyFields,
-		},
-		"ImageType": ubx.FieldSpec{WireName: "image_type"},
-		"KubeletConfig": ubx.FieldSpec{
-			WireName: "kubelet_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_KubeletConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LinuxNodeConfig": ubx.FieldSpec{
-			WireName: "linux_node_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LinuxNodeConfigFields,
-		},
-		"LocalNvmeSsdBlockConfig": ubx.FieldSpec{
-			WireName: "local_nvme_ssd_block_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_EphemeralStorageConfigFields,
-		},
-		"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
-		"LocalSsdEncryptionMode": ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_LoggingConfigFields,
-		},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxRunDuration": ubx.FieldSpec{WireName: "max_run_duration"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"NodeGroup": ubx.FieldSpec{WireName: "node_group"},
-		"NodeImageConfig": ubx.FieldSpec{
-			WireName: "node_image_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_NodeImageConfigFields,
-		},
-		"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ReservationAffinityFields,
-		},
-		"ResourceLabels": ubx.FieldSpec{WireName: "resource_labels"},
-		"ResourceManagerTags": ubx.FieldSpec{
-			WireName: "resource_manager_tags",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ResourceManagerTagsFields,
-		},
-		"SandboxConfig": ubx.FieldSpec{
-			WireName: "sandbox_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_SandboxConfigFields,
-		},
-		"SecondaryBootDiskUpdateStrategy": ubx.FieldSpec{WireName: "secondary_boot_disk_update_strategy"},
-		"SecondaryBootDisks": ubx.FieldSpec{
-			WireName: "secondary_boot_disks",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_SecondaryBootDisksFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_ShieldedInstanceConfigFields,
-		},
-		"SoleTenantConfig": ubx.FieldSpec{
-			WireName: "sole_tenant_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_SoleTenantConfigFields,
-		},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-		"StoragePools": ubx.FieldSpec{WireName: "storage_pools"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TaintConfig": ubx.FieldSpec{
-			WireName: "taint_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_TaintConfigFields,
-		},
-		"Taints": ubx.FieldSpec{
-			WireName: "taints",
-			Kind: "list",
-			Fields: V1beta1NodePool_Config_TaintsFields,
-		},
-		"WindowsNodeConfig": ubx.FieldSpec{
-			WireName: "windows_node_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_WindowsNodeConfigFields,
-		},
-		"WorkloadMetadataConfig": ubx.FieldSpec{
-			WireName: "workload_metadata_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_Config_WorkloadMetadataConfigFields,
-		},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_AcceleratorsFields,
+	},
+	"AdvancedMachineFeatures": ubx.FieldSpec{
+		WireName: "advanced_machine_features",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_AdvancedMachineFeaturesFields,
+	},
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_BootDiskFields,
+	},
+	"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
+	"ConfidentialNodes": ubx.FieldSpec{
+		WireName: "confidential_nodes",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ConfidentialNodesFields,
+	},
+	"ConsolidationDelay": ubx.FieldSpec{WireName: "consolidation_delay"},
+	"ContainerdConfig": ubx.FieldSpec{
+		WireName: "containerd_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ContainerdConfigFields,
+	},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
+	"EffectiveCgroupMode":       ubx.FieldSpec{WireName: "effective_cgroup_mode"},
+	"EnableConfidentialStorage": ubx.FieldSpec{WireName: "enable_confidential_storage"},
+	"EphemeralStorageConfig": ubx.FieldSpec{
+		WireName: "ephemeral_storage_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_EphemeralStorageConfigFields,
+	},
+	"EphemeralStorageLocalSsdConfig": ubx.FieldSpec{
+		WireName: "ephemeral_storage_local_ssd_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_EphemeralStorageLocalSsdConfigFields,
+	},
+	"FastSocket": ubx.FieldSpec{
+		WireName: "fast_socket",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+	"FlexStart": ubx.FieldSpec{WireName: "flex_start"},
+	"GcfsConfig": ubx.FieldSpec{
+		WireName: "gcfs_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+	"GpuDirectConfig": ubx.FieldSpec{
+		WireName: "gpu_direct_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_GpuDirectConfigFields,
+	},
+	"Gvnic": ubx.FieldSpec{
+		WireName: "gvnic",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+	"HostMaintenancePolicy": ubx.FieldSpec{
+		WireName: "host_maintenance_policy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_HostMaintenancePolicyFields,
+	},
+	"ImageType": ubx.FieldSpec{WireName: "image_type"},
+	"KubeletConfig": ubx.FieldSpec{
+		WireName: "kubelet_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_KubeletConfigFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"LinuxNodeConfig": ubx.FieldSpec{
+		WireName: "linux_node_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LinuxNodeConfigFields,
+	},
+	"LocalNvmeSsdBlockConfig": ubx.FieldSpec{
+		WireName: "local_nvme_ssd_block_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_EphemeralStorageConfigFields,
+	},
+	"LocalSsdCount":          ubx.FieldSpec{WireName: "local_ssd_count"},
+	"LocalSsdEncryptionMode": ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_LoggingConfigFields,
+	},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+	"MaxRunDuration": ubx.FieldSpec{WireName: "max_run_duration"},
+	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"NodeGroup":      ubx.FieldSpec{WireName: "node_group"},
+	"NodeImageConfig": ubx.FieldSpec{
+		WireName: "node_image_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_NodeImageConfigFields,
+	},
+	"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
+	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ReservationAffinityFields,
+	},
+	"ResourceLabels": ubx.FieldSpec{WireName: "resource_labels"},
+	"ResourceManagerTags": ubx.FieldSpec{
+		WireName: "resource_manager_tags",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ResourceManagerTagsFields,
+	},
+	"SandboxConfig": ubx.FieldSpec{
+		WireName: "sandbox_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_SandboxConfigFields,
+	},
+	"SecondaryBootDiskUpdateStrategy": ubx.FieldSpec{WireName: "secondary_boot_disk_update_strategy"},
+	"SecondaryBootDisks": ubx.FieldSpec{
+		WireName: "secondary_boot_disks",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_SecondaryBootDisksFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_ShieldedInstanceConfigFields,
+	},
+	"SoleTenantConfig": ubx.FieldSpec{
+		WireName: "sole_tenant_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_SoleTenantConfigFields,
+	},
+	"Spot":         ubx.FieldSpec{WireName: "spot"},
+	"StoragePools": ubx.FieldSpec{WireName: "storage_pools"},
+	"Tags":         ubx.FieldSpec{WireName: "tags"},
+	"TaintConfig": ubx.FieldSpec{
+		WireName: "taint_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_TaintConfigFields,
+	},
+	"Taints": ubx.FieldSpec{
+		WireName: "taints",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_Config_TaintsFields,
+	},
+	"WindowsNodeConfig": ubx.FieldSpec{
+		WireName: "windows_node_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_WindowsNodeConfigFields,
+	},
+	"WorkloadMetadataConfig": ubx.FieldSpec{
+		WireName: "workload_metadata_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Config_WorkloadMetadataConfigFields,
+	},
+}
 
 var V1beta1NodePool_KubeletCertInfoFields = ubx.FieldMap{
-		"NonTpmBootstrapCertExpireTime": ubx.FieldSpec{WireName: "non_tpm_bootstrap_cert_expire_time"},
-		"TpmBootstrapCertExpireTime": ubx.FieldSpec{WireName: "tpm_bootstrap_cert_expire_time"},
-	}
+	"NonTpmBootstrapCertExpireTime": ubx.FieldSpec{WireName: "non_tpm_bootstrap_cert_expire_time"},
+	"TpmBootstrapCertExpireTime":    ubx.FieldSpec{WireName: "tpm_bootstrap_cert_expire_time"},
+}
 
 var V1beta1NodePool_MaintenancePolicy_ExclusionUntilEndOfSupportFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1NodePool_MaintenancePolicyFields = ubx.FieldMap{
-		"ExclusionUntilEndOfSupport": ubx.FieldSpec{
-			WireName: "exclusion_until_end_of_support",
-			Kind: "object",
-			Fields: V1beta1NodePool_MaintenancePolicy_ExclusionUntilEndOfSupportFields,
-		},
-	}
+	"ExclusionUntilEndOfSupport": ubx.FieldSpec{
+		WireName: "exclusion_until_end_of_support",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_MaintenancePolicy_ExclusionUntilEndOfSupportFields,
+	},
+}
 
 var V1beta1NodePool_Management_UpgradeOptionsFields = ubx.FieldMap{
-		"AutoUpgradeStartTime": ubx.FieldSpec{WireName: "auto_upgrade_start_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"AutoUpgradeStartTime": ubx.FieldSpec{WireName: "auto_upgrade_start_time"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+}
 
 var V1beta1NodePool_ManagementFields = ubx.FieldMap{
-		"AutoRepair": ubx.FieldSpec{WireName: "auto_repair"},
-		"AutoUpgrade": ubx.FieldSpec{WireName: "auto_upgrade"},
-		"UpgradeOptions": ubx.FieldSpec{
-			WireName: "upgrade_options",
-			Kind: "object",
-			Fields: V1beta1NodePool_Management_UpgradeOptionsFields,
-		},
-	}
+	"AutoRepair":  ubx.FieldSpec{WireName: "auto_repair"},
+	"AutoUpgrade": ubx.FieldSpec{WireName: "auto_upgrade"},
+	"UpgradeOptions": ubx.FieldSpec{
+		WireName: "upgrade_options",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_Management_UpgradeOptionsFields,
+	},
+}
 
 var V1beta1NodePool_MaxPodsConstraintFields = ubx.FieldMap{
-		"MaxPodsPerNode": ubx.FieldSpec{WireName: "max_pods_per_node"},
-	}
+	"MaxPodsPerNode": ubx.FieldSpec{WireName: "max_pods_per_node"},
+}
 
 var V1beta1NodePool_NetworkConfig_AdditionalNodeNetworkConfigsFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V1beta1NodePool_NetworkConfig_AdditionalPodNetworkConfigsFields = ubx.FieldMap{
-		"MaxPodsPerNode": ubx.FieldSpec{
-			WireName: "max_pods_per_node",
-			Kind: "object",
-			Fields: V1beta1NodePool_MaxPodsConstraintFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"SecondaryPodRange": ubx.FieldSpec{WireName: "secondary_pod_range"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"MaxPodsPerNode": ubx.FieldSpec{
+		WireName: "max_pods_per_node",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_MaxPodsConstraintFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	"SecondaryPodRange": ubx.FieldSpec{WireName: "secondary_pod_range"},
+	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V1beta1NodePool_NetworkConfig_NetworkPerformanceConfigFields = ubx.FieldMap{
-		"ExternalIpEgressBandwidthTier": ubx.FieldSpec{WireName: "external_ip_egress_bandwidth_tier"},
-		"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
-	}
+	"ExternalIpEgressBandwidthTier": ubx.FieldSpec{WireName: "external_ip_egress_bandwidth_tier"},
+	"TotalEgressBandwidthTier":      ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
+}
 
 var V1beta1NodePool_NetworkConfig_NetworkTierConfigFields = ubx.FieldMap{
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-	}
+	"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+}
 
 var V1beta1NodePool_NetworkConfig_PodCidrOverprovisionConfigFields = ubx.FieldMap{
-		"Disable": ubx.FieldSpec{WireName: "disable"},
-	}
+	"Disable": ubx.FieldSpec{WireName: "disable"},
+}
 
 var V1beta1NodePool_NetworkConfigFields = ubx.FieldMap{
-		"AcceleratorNetworkProfile": ubx.FieldSpec{WireName: "accelerator_network_profile"},
-		"AdditionalNodeNetworkConfigs": ubx.FieldSpec{
-			WireName: "additional_node_network_configs",
-			Kind: "list",
-			Fields: V1beta1NodePool_NetworkConfig_AdditionalNodeNetworkConfigsFields,
-		},
-		"AdditionalPodNetworkConfigs": ubx.FieldSpec{
-			WireName: "additional_pod_network_configs",
-			Kind: "list",
-			Fields: V1beta1NodePool_NetworkConfig_AdditionalPodNetworkConfigsFields,
-		},
-		"CreatePodRange": ubx.FieldSpec{WireName: "create_pod_range"},
-		"EnablePrivateNodes": ubx.FieldSpec{WireName: "enable_private_nodes"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkPerformanceConfig": ubx.FieldSpec{
-			WireName: "network_performance_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_NetworkConfig_NetworkPerformanceConfigFields,
-		},
-		"NetworkTierConfig": ubx.FieldSpec{
-			WireName: "network_tier_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_NetworkConfig_NetworkTierConfigFields,
-		},
-		"PodCidrOverprovisionConfig": ubx.FieldSpec{
-			WireName: "pod_cidr_overprovision_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_NetworkConfig_PodCidrOverprovisionConfigFields,
-		},
-		"PodIpv4CidrBlock": ubx.FieldSpec{WireName: "pod_ipv4_cidr_block"},
-		"PodIpv4RangeUtilization": ubx.FieldSpec{WireName: "pod_ipv4_range_utilization"},
-		"PodRange": ubx.FieldSpec{WireName: "pod_range"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"AcceleratorNetworkProfile": ubx.FieldSpec{WireName: "accelerator_network_profile"},
+	"AdditionalNodeNetworkConfigs": ubx.FieldSpec{
+		WireName: "additional_node_network_configs",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_NetworkConfig_AdditionalNodeNetworkConfigsFields,
+	},
+	"AdditionalPodNetworkConfigs": ubx.FieldSpec{
+		WireName: "additional_pod_network_configs",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_NetworkConfig_AdditionalPodNetworkConfigsFields,
+	},
+	"CreatePodRange":     ubx.FieldSpec{WireName: "create_pod_range"},
+	"EnablePrivateNodes": ubx.FieldSpec{WireName: "enable_private_nodes"},
+	"Network":            ubx.FieldSpec{WireName: "network"},
+	"NetworkPerformanceConfig": ubx.FieldSpec{
+		WireName: "network_performance_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NetworkConfig_NetworkPerformanceConfigFields,
+	},
+	"NetworkTierConfig": ubx.FieldSpec{
+		WireName: "network_tier_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NetworkConfig_NetworkTierConfigFields,
+	},
+	"PodCidrOverprovisionConfig": ubx.FieldSpec{
+		WireName: "pod_cidr_overprovision_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NetworkConfig_PodCidrOverprovisionConfigFields,
+	},
+	"PodIpv4CidrBlock":        ubx.FieldSpec{WireName: "pod_ipv4_cidr_block"},
+	"PodIpv4RangeUtilization": ubx.FieldSpec{WireName: "pod_ipv4_range_utilization"},
+	"PodRange":                ubx.FieldSpec{WireName: "pod_range"},
+	"Subnetwork":              ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V1beta1NodePool_NodeDrainConfigFields = ubx.FieldMap{
-		"GraceTerminationDuration": ubx.FieldSpec{WireName: "grace_termination_duration"},
-		"PdbTimeoutDuration": ubx.FieldSpec{WireName: "pdb_timeout_duration"},
-		"RespectPdbDuringNodePoolDeletion": ubx.FieldSpec{WireName: "respect_pdb_during_node_pool_deletion"},
-	}
+	"GraceTerminationDuration":         ubx.FieldSpec{WireName: "grace_termination_duration"},
+	"PdbTimeoutDuration":               ubx.FieldSpec{WireName: "pdb_timeout_duration"},
+	"RespectPdbDuringNodePoolDeletion": ubx.FieldSpec{WireName: "respect_pdb_during_node_pool_deletion"},
+}
 
 var V1beta1NodePool_NodePool_PlacementPolicyFields = ubx.FieldMap{
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"PolicyName":  ubx.FieldSpec{WireName: "policy_name"},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1NodePool_NodePool_UpdateInfo_BlueGreenInfoFields = ubx.FieldMap{
-		"BlueInstanceGroupUrls": ubx.FieldSpec{WireName: "blue_instance_group_urls"},
-		"BluePoolDeletionStartTime": ubx.FieldSpec{WireName: "blue_pool_deletion_start_time"},
-		"GreenInstanceGroupUrls": ubx.FieldSpec{WireName: "green_instance_group_urls"},
-		"GreenPoolVersion": ubx.FieldSpec{WireName: "green_pool_version"},
-		"Phase": ubx.FieldSpec{WireName: "phase"},
-	}
+	"BlueInstanceGroupUrls":     ubx.FieldSpec{WireName: "blue_instance_group_urls"},
+	"BluePoolDeletionStartTime": ubx.FieldSpec{WireName: "blue_pool_deletion_start_time"},
+	"GreenInstanceGroupUrls":    ubx.FieldSpec{WireName: "green_instance_group_urls"},
+	"GreenPoolVersion":          ubx.FieldSpec{WireName: "green_pool_version"},
+	"Phase":                     ubx.FieldSpec{WireName: "phase"},
+}
 
 var V1beta1NodePool_NodePool_UpdateInfoFields = ubx.FieldMap{
-		"BlueGreenInfo": ubx.FieldSpec{
-			WireName: "blue_green_info",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpdateInfo_BlueGreenInfoFields,
-		},
-	}
+	"BlueGreenInfo": ubx.FieldSpec{
+		WireName: "blue_green_info",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpdateInfo_BlueGreenInfoFields,
+	},
+}
 
 var V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_AutoscaledRolloutPolicyFields = ubx.FieldMap{
-		"WaitForDrainDuration": ubx.FieldSpec{WireName: "wait_for_drain_duration"},
-	}
+	"WaitForDrainDuration": ubx.FieldSpec{WireName: "wait_for_drain_duration"},
+}
 
 var V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_StandardRolloutPolicyFields = ubx.FieldMap{
-		"BatchNodeCount": ubx.FieldSpec{WireName: "batch_node_count"},
-		"BatchPercentage": ubx.FieldSpec{WireName: "batch_percentage"},
-		"BatchSoakDuration": ubx.FieldSpec{WireName: "batch_soak_duration"},
-	}
+	"BatchNodeCount":    ubx.FieldSpec{WireName: "batch_node_count"},
+	"BatchPercentage":   ubx.FieldSpec{WireName: "batch_percentage"},
+	"BatchSoakDuration": ubx.FieldSpec{WireName: "batch_soak_duration"},
+}
 
 var V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettingsFields = ubx.FieldMap{
-		"AutoscaledRolloutPolicy": ubx.FieldSpec{
-			WireName: "autoscaled_rollout_policy",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_AutoscaledRolloutPolicyFields,
-		},
-		"NodePoolSoakDuration": ubx.FieldSpec{WireName: "node_pool_soak_duration"},
-		"StandardRolloutPolicy": ubx.FieldSpec{
-			WireName: "standard_rollout_policy",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_StandardRolloutPolicyFields,
-		},
-	}
+	"AutoscaledRolloutPolicy": ubx.FieldSpec{
+		WireName: "autoscaled_rollout_policy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_AutoscaledRolloutPolicyFields,
+	},
+	"NodePoolSoakDuration": ubx.FieldSpec{WireName: "node_pool_soak_duration"},
+	"StandardRolloutPolicy": ubx.FieldSpec{
+		WireName: "standard_rollout_policy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettings_StandardRolloutPolicyFields,
+	},
+}
 
 var V1beta1NodePool_NodePool_UpgradeSettingsFields = ubx.FieldMap{
-		"BlueGreenSettings": ubx.FieldSpec{
-			WireName: "blue_green_settings",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettingsFields,
-		},
-		"MaxSurge": ubx.FieldSpec{WireName: "max_surge"},
-		"MaxUnavailable": ubx.FieldSpec{WireName: "max_unavailable"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-	}
+	"BlueGreenSettings": ubx.FieldSpec{
+		WireName: "blue_green_settings",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpgradeSettings_BlueGreenSettingsFields,
+	},
+	"MaxSurge":       ubx.FieldSpec{WireName: "max_surge"},
+	"MaxUnavailable": ubx.FieldSpec{WireName: "max_unavailable"},
+	"Strategy":       ubx.FieldSpec{WireName: "strategy"},
+}
 
 var V1beta1NodePool_NodePoolFields = ubx.FieldMap{
-		"AutopilotConfig": ubx.FieldSpec{
-			WireName: "autopilot_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-		"Autoscaling": ubx.FieldSpec{
-			WireName: "autoscaling",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutoscalingFields,
-		},
-		"BestEffortProvisioning": ubx.FieldSpec{
-			WireName: "best_effort_provisioning",
-			Kind: "object",
-			Fields: V1beta1NodePool_BestEffortProvisioningFields,
-		},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: V1beta1NodePool_ConditionsFields,
-		},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: V1beta1NodePool_ConfigFields,
-		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"InitialNodeCount": ubx.FieldSpec{WireName: "initial_node_count"},
-		"InstanceGroupUrls": ubx.FieldSpec{WireName: "instance_group_urls"},
-		"KubeletCertInfo": ubx.FieldSpec{
-			WireName: "kubelet_cert_info",
-			Kind: "object",
-			Fields: V1beta1NodePool_KubeletCertInfoFields,
-		},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"MaintenancePolicy": ubx.FieldSpec{
-			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: V1beta1NodePool_MaintenancePolicyFields,
-		},
-		"Management": ubx.FieldSpec{
-			WireName: "management",
-			Kind: "object",
-			Fields: V1beta1NodePool_ManagementFields,
-		},
-		"MaxPodsConstraint": ubx.FieldSpec{
-			WireName: "max_pods_constraint",
-			Kind: "object",
-			Fields: V1beta1NodePool_MaxPodsConstraintFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_NetworkConfigFields,
-		},
-		"NodeDrainConfig": ubx.FieldSpec{
-			WireName: "node_drain_config",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodeDrainConfigFields,
-		},
-		"PlacementPolicy": ubx.FieldSpec{
-			WireName: "placement_policy",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_PlacementPolicyFields,
-		},
-		"PodIpv4CidrSize": ubx.FieldSpec{WireName: "pod_ipv4_cidr_size"},
-		"QueuedProvisioning": ubx.FieldSpec{
-			WireName: "queued_provisioning",
-			Kind: "object",
-			Fields: V1beta1NodePool_AutopilotConfigFields,
-		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"UpdateInfo": ubx.FieldSpec{
-			WireName: "update_info",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpdateInfoFields,
-		},
-		"UpgradeSettings": ubx.FieldSpec{
-			WireName: "upgrade_settings",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePool_UpgradeSettingsFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AutopilotConfig": ubx.FieldSpec{
+		WireName: "autopilot_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+	"Autoscaling": ubx.FieldSpec{
+		WireName: "autoscaling",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutoscalingFields,
+	},
+	"BestEffortProvisioning": ubx.FieldSpec{
+		WireName: "best_effort_provisioning",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_BestEffortProvisioningFields,
+	},
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   V1beta1NodePool_ConditionsFields,
+	},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_ConfigFields,
+	},
+	"Etag":              ubx.FieldSpec{WireName: "etag"},
+	"InitialNodeCount":  ubx.FieldSpec{WireName: "initial_node_count"},
+	"InstanceGroupUrls": ubx.FieldSpec{WireName: "instance_group_urls"},
+	"KubeletCertInfo": ubx.FieldSpec{
+		WireName: "kubelet_cert_info",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_KubeletCertInfoFields,
+	},
+	"Locations": ubx.FieldSpec{WireName: "locations"},
+	"MaintenancePolicy": ubx.FieldSpec{
+		WireName: "maintenance_policy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_MaintenancePolicyFields,
+	},
+	"Management": ubx.FieldSpec{
+		WireName: "management",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_ManagementFields,
+	},
+	"MaxPodsConstraint": ubx.FieldSpec{
+		WireName: "max_pods_constraint",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_MaxPodsConstraintFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NetworkConfigFields,
+	},
+	"NodeDrainConfig": ubx.FieldSpec{
+		WireName: "node_drain_config",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodeDrainConfigFields,
+	},
+	"PlacementPolicy": ubx.FieldSpec{
+		WireName: "placement_policy",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_PlacementPolicyFields,
+	},
+	"PodIpv4CidrSize": ubx.FieldSpec{WireName: "pod_ipv4_cidr_size"},
+	"QueuedProvisioning": ubx.FieldSpec{
+		WireName: "queued_provisioning",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_AutopilotConfigFields,
+	},
+	"SelfLink":      ubx.FieldSpec{WireName: "self_link"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
+	"UpdateInfo": ubx.FieldSpec{
+		WireName: "update_info",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpdateInfoFields,
+	},
+	"UpgradeSettings": ubx.FieldSpec{
+		WireName: "upgrade_settings",
+		Kind:     "object",
+		Fields:   V1beta1NodePool_NodePool_UpgradeSettingsFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type V1beta1NodePoolConfig struct {
 	// Deprecated. The name of the cluster. This field has been deprecated and replaced by the parent field.
@@ -1708,11 +1708,11 @@ var V1beta1NodePool = ubx.ResourceBinding{
 		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
 		"NodePool": ubx.FieldSpec{
 			WireName: "node_pool",
-			Kind: "object",
-			Fields: V1beta1NodePool_NodePoolFields,
+			Kind:     "object",
+			Fields:   V1beta1NodePool_NodePoolFields,
 		},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Parent":    ubx.FieldSpec{WireName: "parent"},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":      ubx.FieldSpec{WireName: "zone"},
 	},
 }

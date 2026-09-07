@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaZoneVmExtensionPolicy_ExtensionPolicies struct {
 	PinnedVersion any
-	StringConfig any
+	StringConfig  any
 }
 
 type BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
@@ -17,21 +17,21 @@ type BetaZoneVmExtensionPolicy_InstanceSelectors struct {
 }
 
 var BetaZoneVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
-		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
-	}
+	"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
+	"StringConfig":  ubx.FieldSpec{WireName: "string_config"},
+}
 
 var BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-	}
+	"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
+}
 
 var BetaZoneVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
-		},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
+	},
+}
 
 type BetaZoneVmExtensionPolicyConfig struct {
 	// An optional description of this resource.
@@ -83,15 +83,15 @@ var BetaZoneVmExtensionPolicy = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "map",
-			Fields: BetaZoneVmExtensionPolicy_ExtensionPoliciesFields,
+			Kind:     "map",
+			Fields:   BetaZoneVmExtensionPolicy_ExtensionPoliciesFields,
 		},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
-			Kind: "list",
-			Fields: BetaZoneVmExtensionPolicy_InstanceSelectorsFields,
+			Kind:     "list",
+			Fields:   BetaZoneVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 	},
 }

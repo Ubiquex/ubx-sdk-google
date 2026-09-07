@@ -20,7 +20,7 @@ type V1alphaFinding_ViolatingResource struct {
 }
 
 type V1alphaFinding_VulnerableHeaders_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -62,7 +62,7 @@ type V1alphaFindingAttrs struct {
 	FuzzedUrl any
 	// The http method of the request that triggered the vulnerability, in uppercase.
 	HttpMethod any
-	Name any
+	Name       any
 	// Information reported for an outdated library.
 	OutdatedLibrary any
 	// The URL containing human-readable payload that user can leverage to reproduce the vulnerability.

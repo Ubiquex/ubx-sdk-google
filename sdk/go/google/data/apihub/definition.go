@@ -6,8 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Definition_Attributes_EnumValues_Values struct {
 	Description any
 	DisplayName any
-	Id any
-	Immutable any
+	Id          any
+	Immutable   any
 }
 
 type Definition_Attributes_EnumValues struct {
@@ -19,11 +19,11 @@ type Definition_Attributes_JsonValues struct {
 }
 
 type Definition_Attributes struct {
-	Attribute any
-	EnumValues any
-	JsonValues any
+	Attribute    any
+	EnumValues   any
+	JsonValues   any
 	StringValues any
-	UriValues any
+	UriValues    any
 }
 
 type Definition_Schema struct {
@@ -42,7 +42,7 @@ type DefinitionAttrs struct {
 	Attributes any
 	// Output only. The time at which the definition was created.
 	CreateTime any
-	Name any
+	Name       any
 	// The schema details derived from the spec. Currently, this entity is supported for OpenAPI spec only. For OpenAPI spec, this maps to the schema defined in the `definitions` section for OpenAPI 2.0 version and in `components.schemas` section for OpenAPI 3.0 and 3.1 version.
 	Schema any
 	// Output only. The name of the spec from where the definition was parsed. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`

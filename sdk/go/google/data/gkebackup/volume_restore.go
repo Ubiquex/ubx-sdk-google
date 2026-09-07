@@ -41,6 +41,5 @@ type VolumeRestoreAttrs struct {
 
 var VolumeRestore = ubx.DataSourceBinding{
 	WireType: "google_gkebackup_volume_restore",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

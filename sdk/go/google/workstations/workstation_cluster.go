@@ -34,19 +34,19 @@ type WorkstationCluster_PrivateClusterConfig struct {
 }
 
 var WorkstationCluster_DomainConfigFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var WorkstationCluster_GatewayConfigFields = ubx.FieldMap{
-		"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
-	}
+	"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
+}
 
 var WorkstationCluster_PrivateClusterConfigFields = ubx.FieldMap{
-		"AllowedProjects": ubx.FieldSpec{WireName: "allowed_projects"},
-		"ClusterHostname": ubx.FieldSpec{WireName: "cluster_hostname"},
-		"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
-		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-	}
+	"AllowedProjects":       ubx.FieldSpec{WireName: "allowed_projects"},
+	"ClusterHostname":       ubx.FieldSpec{WireName: "cluster_hostname"},
+	"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
+	"ServiceAttachmentUri":  ubx.FieldSpec{WireName: "service_attachment_uri"},
+}
 
 type WorkstationClusterConfig struct {
 	// Optional. Client-specified annotations.
@@ -129,26 +129,26 @@ var WorkstationCluster = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DomainConfig": ubx.FieldSpec{
 			WireName: "domain_config",
-			Kind: "object",
-			Fields: WorkstationCluster_DomainConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_DomainConfigFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind: "object",
-			Fields: WorkstationCluster_GatewayConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_GatewayConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateClusterConfig": ubx.FieldSpec{
 			WireName: "private_cluster_config",
-			Kind: "object",
-			Fields: WorkstationCluster_PrivateClusterConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_PrivateClusterConfigFields,
 		},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Subnetwork":                  ubx.FieldSpec{WireName: "subnetwork"},
+		"Tags":                        ubx.FieldSpec{WireName: "tags"},
 		"WorkstationAuthorizationUrl": ubx.FieldSpec{WireName: "workstation_authorization_url"},
-		"WorkstationLaunchUrl": ubx.FieldSpec{WireName: "workstation_launch_url"},
+		"WorkstationLaunchUrl":        ubx.FieldSpec{WireName: "workstation_launch_url"},
 	},
 }

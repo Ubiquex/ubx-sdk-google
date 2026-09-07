@@ -191,9 +191,9 @@ type InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error
 }
 
 type InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors struct {
-	Code any
+	Code         any
 	ErrorDetails any
-	Location any
+	Location     any
 	// The human-readable error message describing the issue with this accelerator topology state detail. (AI-inferred)
 	Message any
 }
@@ -213,13 +213,13 @@ type InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails struc
 type InstanceGroupManager_Status_AppliedAcceleratorTopologies struct {
 	AcceleratorTopology any
 	// The lifecycle state of the applied accelerator topology. Possible values are ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred)
-	State any
+	State        any
 	StateDetails any
 }
 
 type InstanceGroupManager_Status_BulkInstanceOperation struct {
 	// Output only. Informs whether bulk instance operation is in progress.
-	InProgress any
+	InProgress        any
 	LastProgressCheck any
 }
 
@@ -329,337 +329,337 @@ type InstanceGroupManager_Versions struct {
 }
 
 var InstanceGroupManager_AllInstancesConfig_PropertiesFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Labels":   ubx.FieldSpec{WireName: "labels"},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var InstanceGroupManager_AllInstancesConfigFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: InstanceGroupManager_AllInstancesConfig_PropertiesFields,
-		},
-	}
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_AllInstancesConfig_PropertiesFields,
+	},
+}
 
 var InstanceGroupManager_AutoHealingPoliciesFields = ubx.FieldMap{
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-		"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
-	}
+	"HealthCheck":     ubx.FieldSpec{WireName: "health_check"},
+	"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
+}
 
 var InstanceGroupManager_CurrentActionsFields = ubx.FieldMap{
-		"Abandoning": ubx.FieldSpec{WireName: "abandoning"},
-		"Creating": ubx.FieldSpec{WireName: "creating"},
-		"CreatingWithoutRetries": ubx.FieldSpec{WireName: "creating_without_retries"},
-		"Deleting": ubx.FieldSpec{WireName: "deleting"},
-		"None": ubx.FieldSpec{WireName: "none"},
-		"Recreating": ubx.FieldSpec{WireName: "recreating"},
-		"Refreshing": ubx.FieldSpec{WireName: "refreshing"},
-		"Restarting": ubx.FieldSpec{WireName: "restarting"},
-		"Resuming": ubx.FieldSpec{WireName: "resuming"},
-		"Starting": ubx.FieldSpec{WireName: "starting"},
-		"Stopping": ubx.FieldSpec{WireName: "stopping"},
-		"Suspending": ubx.FieldSpec{WireName: "suspending"},
-		"Verifying": ubx.FieldSpec{WireName: "verifying"},
-	}
+	"Abandoning":             ubx.FieldSpec{WireName: "abandoning"},
+	"Creating":               ubx.FieldSpec{WireName: "creating"},
+	"CreatingWithoutRetries": ubx.FieldSpec{WireName: "creating_without_retries"},
+	"Deleting":               ubx.FieldSpec{WireName: "deleting"},
+	"None":                   ubx.FieldSpec{WireName: "none"},
+	"Recreating":             ubx.FieldSpec{WireName: "recreating"},
+	"Refreshing":             ubx.FieldSpec{WireName: "refreshing"},
+	"Restarting":             ubx.FieldSpec{WireName: "restarting"},
+	"Resuming":               ubx.FieldSpec{WireName: "resuming"},
+	"Starting":               ubx.FieldSpec{WireName: "starting"},
+	"Stopping":               ubx.FieldSpec{WireName: "stopping"},
+	"Suspending":             ubx.FieldSpec{WireName: "suspending"},
+	"Verifying":              ubx.FieldSpec{WireName: "verifying"},
+}
 
 var InstanceGroupManager_DistributionPolicy_ZonesFields = ubx.FieldMap{
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var InstanceGroupManager_DistributionPolicyFields = ubx.FieldMap{
-		"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: InstanceGroupManager_DistributionPolicy_ZonesFields,
-		},
-	}
+	"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   InstanceGroupManager_DistributionPolicy_ZonesFields,
+	},
+}
 
 var InstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionsFields = ubx.FieldMap{
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
+	"Rank":         ubx.FieldSpec{WireName: "rank"},
+}
 
 var InstanceGroupManager_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceSelections": ubx.FieldSpec{
-			WireName: "instance_selections",
-			Kind: "map",
-			Fields: InstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionsFields,
-		},
-	}
+	"InstanceSelections": ubx.FieldSpec{
+		WireName: "instance_selections",
+		Kind:     "map",
+		Fields:   InstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionsFields,
+	},
+}
 
 var InstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields = ubx.FieldMap{
-		"AllowChangingZone": ubx.FieldSpec{WireName: "allow_changing_zone"},
-	}
+	"AllowChangingZone": ubx.FieldSpec{WireName: "allow_changing_zone"},
+}
 
 var InstanceGroupManager_InstanceLifecyclePolicyFields = ubx.FieldMap{
-		"DefaultActionOnFailure": ubx.FieldSpec{WireName: "default_action_on_failure"},
-		"ForceUpdateOnRepair": ubx.FieldSpec{WireName: "force_update_on_repair"},
-		"OnFailedHealthCheck": ubx.FieldSpec{WireName: "on_failed_health_check"},
-		"OnRepair": ubx.FieldSpec{
-			WireName: "on_repair",
-			Kind: "object",
-			Fields: InstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields,
-		},
-	}
+	"DefaultActionOnFailure": ubx.FieldSpec{WireName: "default_action_on_failure"},
+	"ForceUpdateOnRepair":    ubx.FieldSpec{WireName: "force_update_on_repair"},
+	"OnFailedHealthCheck":    ubx.FieldSpec{WireName: "on_failed_health_check"},
+	"OnRepair": ubx.FieldSpec{
+		WireName: "on_repair",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields,
+	},
+}
 
 var InstanceGroupManager_NamedPortsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var InstanceGroupManager_ResourcePoliciesFields = ubx.FieldMap{
-		"WorkloadPolicy": ubx.FieldSpec{WireName: "workload_policy"},
-	}
+	"WorkloadPolicy": ubx.FieldSpec{WireName: "workload_policy"},
+}
 
 var InstanceGroupManager_StandbyPolicyFields = ubx.FieldMap{
-		"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
+	"Mode":            ubx.FieldSpec{WireName: "mode"},
+}
 
 var InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields = ubx.FieldMap{
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-	}
+	"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
+}
 
 var InstanceGroupManager_StatefulPolicy_PreservedStateFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "map",
-			Fields: InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-		"ExternalIps": ubx.FieldSpec{
-			WireName: "external_ips",
-			Kind: "map",
-			Fields: InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-		"InternalIps": ubx.FieldSpec{
-			WireName: "internal_ips",
-			Kind: "map",
-			Fields: InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "map",
+		Fields:   InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+	"ExternalIps": ubx.FieldSpec{
+		WireName: "external_ips",
+		Kind:     "map",
+		Fields:   InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+	"InternalIps": ubx.FieldSpec{
+		WireName: "internal_ips",
+		Kind:     "map",
+		Fields:   InstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+}
 
 var InstanceGroupManager_StatefulPolicyFields = ubx.FieldMap{
-		"PreservedState": ubx.FieldSpec{
-			WireName: "preserved_state",
-			Kind: "object",
-			Fields: InstanceGroupManager_StatefulPolicy_PreservedStateFields,
-		},
-	}
+	"PreservedState": ubx.FieldSpec{
+		WireName: "preserved_state",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_StatefulPolicy_PreservedStateFields,
+	},
+}
 
 var InstanceGroupManager_Status_AllInstancesConfigFields = ubx.FieldMap{
-		"CurrentRevision": ubx.FieldSpec{WireName: "current_revision"},
-		"Effective": ubx.FieldSpec{WireName: "effective"},
-	}
+	"CurrentRevision": ubx.FieldSpec{WireName: "current_revision"},
+	"Effective":       ubx.FieldSpec{WireName: "effective"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields,
+	},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields,
-		},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields,
+	},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var InstanceGroupManager_Status_AppliedAcceleratorTopologiesFields = ubx.FieldMap{
-		"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{
-			WireName: "state_details",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
-		},
-	}
+	"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"StateDetails": ubx.FieldSpec{
+		WireName: "state_details",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+	},
+}
 
 var InstanceGroupManager_Status_BulkInstanceOperationFields = ubx.FieldMap{
-		"InProgress": ubx.FieldSpec{WireName: "in_progress"},
-		"LastProgressCheck": ubx.FieldSpec{
-			WireName: "last_progress_check",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
-		},
-	}
+	"InProgress": ubx.FieldSpec{WireName: "in_progress"},
+	"LastProgressCheck": ubx.FieldSpec{
+		WireName: "last_progress_check",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+	},
+}
 
 var InstanceGroupManager_Status_CurrentInstanceStatusesFields = ubx.FieldMap{
-		"Deprovisioning": ubx.FieldSpec{WireName: "deprovisioning"},
-		"NonExistent": ubx.FieldSpec{WireName: "non_existent"},
-		"Pending": ubx.FieldSpec{WireName: "pending"},
-		"PendingStop": ubx.FieldSpec{WireName: "pending_stop"},
-		"Provisioning": ubx.FieldSpec{WireName: "provisioning"},
-		"Repairing": ubx.FieldSpec{WireName: "repairing"},
-		"Running": ubx.FieldSpec{WireName: "running"},
-		"Staging": ubx.FieldSpec{WireName: "staging"},
-		"Stopped": ubx.FieldSpec{WireName: "stopped"},
-		"Stopping": ubx.FieldSpec{WireName: "stopping"},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
-		"Suspending": ubx.FieldSpec{WireName: "suspending"},
-		"Terminated": ubx.FieldSpec{WireName: "terminated"},
-	}
+	"Deprovisioning": ubx.FieldSpec{WireName: "deprovisioning"},
+	"NonExistent":    ubx.FieldSpec{WireName: "non_existent"},
+	"Pending":        ubx.FieldSpec{WireName: "pending"},
+	"PendingStop":    ubx.FieldSpec{WireName: "pending_stop"},
+	"Provisioning":   ubx.FieldSpec{WireName: "provisioning"},
+	"Repairing":      ubx.FieldSpec{WireName: "repairing"},
+	"Running":        ubx.FieldSpec{WireName: "running"},
+	"Staging":        ubx.FieldSpec{WireName: "staging"},
+	"Stopped":        ubx.FieldSpec{WireName: "stopped"},
+	"Stopping":       ubx.FieldSpec{WireName: "stopping"},
+	"Suspended":      ubx.FieldSpec{WireName: "suspended"},
+	"Suspending":     ubx.FieldSpec{WireName: "suspending"},
+	"Terminated":     ubx.FieldSpec{WireName: "terminated"},
+}
 
 var InstanceGroupManager_Status_Stateful_PerInstanceConfigsFields = ubx.FieldMap{
-		"AllEffective": ubx.FieldSpec{WireName: "all_effective"},
-	}
+	"AllEffective": ubx.FieldSpec{WireName: "all_effective"},
+}
 
 var InstanceGroupManager_Status_StatefulFields = ubx.FieldMap{
-		"HasStatefulConfig": ubx.FieldSpec{WireName: "has_stateful_config"},
-		"PerInstanceConfigs": ubx.FieldSpec{
-			WireName: "per_instance_configs",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_Stateful_PerInstanceConfigsFields,
-		},
-	}
+	"HasStatefulConfig": ubx.FieldSpec{WireName: "has_stateful_config"},
+	"PerInstanceConfigs": ubx.FieldSpec{
+		WireName: "per_instance_configs",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_Stateful_PerInstanceConfigsFields,
+	},
+}
 
 var InstanceGroupManager_Status_VersionTargetFields = ubx.FieldMap{
-		"IsReached": ubx.FieldSpec{WireName: "is_reached"},
-	}
+	"IsReached": ubx.FieldSpec{WireName: "is_reached"},
+}
 
 var InstanceGroupManager_StatusFields = ubx.FieldMap{
-		"AllInstancesConfig": ubx.FieldSpec{
-			WireName: "all_instances_config",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_AllInstancesConfigFields,
-		},
-		"AppliedAcceleratorTopologies": ubx.FieldSpec{
-			WireName: "applied_accelerator_topologies",
-			Kind: "list",
-			Fields: InstanceGroupManager_Status_AppliedAcceleratorTopologiesFields,
-		},
-		"Autoscaler": ubx.FieldSpec{WireName: "autoscaler"},
-		"BulkInstanceOperation": ubx.FieldSpec{
-			WireName: "bulk_instance_operation",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_BulkInstanceOperationFields,
-		},
-		"CurrentInstanceStatuses": ubx.FieldSpec{
-			WireName: "current_instance_statuses",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_CurrentInstanceStatusesFields,
-		},
-		"IsStable": ubx.FieldSpec{WireName: "is_stable"},
-		"Stateful": ubx.FieldSpec{
-			WireName: "stateful",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_StatefulFields,
-		},
-		"VersionTarget": ubx.FieldSpec{
-			WireName: "version_target",
-			Kind: "object",
-			Fields: InstanceGroupManager_Status_VersionTargetFields,
-		},
-	}
+	"AllInstancesConfig": ubx.FieldSpec{
+		WireName: "all_instances_config",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_AllInstancesConfigFields,
+	},
+	"AppliedAcceleratorTopologies": ubx.FieldSpec{
+		WireName: "applied_accelerator_topologies",
+		Kind:     "list",
+		Fields:   InstanceGroupManager_Status_AppliedAcceleratorTopologiesFields,
+	},
+	"Autoscaler": ubx.FieldSpec{WireName: "autoscaler"},
+	"BulkInstanceOperation": ubx.FieldSpec{
+		WireName: "bulk_instance_operation",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_BulkInstanceOperationFields,
+	},
+	"CurrentInstanceStatuses": ubx.FieldSpec{
+		WireName: "current_instance_statuses",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_CurrentInstanceStatusesFields,
+	},
+	"IsStable": ubx.FieldSpec{WireName: "is_stable"},
+	"Stateful": ubx.FieldSpec{
+		WireName: "stateful",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_StatefulFields,
+	},
+	"VersionTarget": ubx.FieldSpec{
+		WireName: "version_target",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_Status_VersionTargetFields,
+	},
+}
 
 var InstanceGroupManager_TargetSizePolicyFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var InstanceGroupManager_UpdatePolicy_MaxSurgeFields = ubx.FieldMap{
-		"Calculated": ubx.FieldSpec{WireName: "calculated"},
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Calculated": ubx.FieldSpec{WireName: "calculated"},
+	"Fixed":      ubx.FieldSpec{WireName: "fixed"},
+	"Percent":    ubx.FieldSpec{WireName: "percent"},
+}
 
 var InstanceGroupManager_UpdatePolicyFields = ubx.FieldMap{
-		"InstanceRedistributionType": ubx.FieldSpec{WireName: "instance_redistribution_type"},
-		"MaxSurge": ubx.FieldSpec{
-			WireName: "max_surge",
-			Kind: "object",
-			Fields: InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
-		},
-		"MaxUnavailable": ubx.FieldSpec{
-			WireName: "max_unavailable",
-			Kind: "object",
-			Fields: InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
-		},
-		"MinimalAction": ubx.FieldSpec{WireName: "minimal_action"},
-		"MostDisruptiveAllowedAction": ubx.FieldSpec{WireName: "most_disruptive_allowed_action"},
-		"ReplacementMethod": ubx.FieldSpec{WireName: "replacement_method"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"InstanceRedistributionType": ubx.FieldSpec{WireName: "instance_redistribution_type"},
+	"MaxSurge": ubx.FieldSpec{
+		WireName: "max_surge",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
+	},
+	"MaxUnavailable": ubx.FieldSpec{
+		WireName: "max_unavailable",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
+	},
+	"MinimalAction":               ubx.FieldSpec{WireName: "minimal_action"},
+	"MostDisruptiveAllowedAction": ubx.FieldSpec{WireName: "most_disruptive_allowed_action"},
+	"ReplacementMethod":           ubx.FieldSpec{WireName: "replacement_method"},
+	"Type":                        ubx.FieldSpec{WireName: "type"},
+}
 
 var InstanceGroupManager_VersionsFields = ubx.FieldMap{
-		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetSize": ubx.FieldSpec{
-			WireName: "target_size",
-			Kind: "object",
-			Fields: InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
-		},
-	}
+	"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"TargetSize": ubx.FieldSpec{
+		WireName: "target_size",
+		Kind:     "object",
+		Fields:   InstanceGroupManager_UpdatePolicy_MaxSurgeFields,
+	},
+}
 
 type InstanceGroupManagerConfig struct {
 	// The all_instances_config block defines metadata and labels that are applied to every instance in the managed instance group. This computed value reflects the group's all-instances configuration. (AI-inferred)
@@ -694,11 +694,11 @@ type InstanceGroupManagerConfig struct {
 	StandbyPolicy any
 	// The stateful policy for the managed instance group, which defines the preserved state (such as disks) for instances in the group. This field is computed by the provider and is output only, reflecting the actual applied stateful configuration. (AI-inferred)
 	StatefulPolicy any
-	Status any
+	Status         any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize any
+	TargetSize       any
 	TargetSizePolicy any
 	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
 	TargetStoppedSize any
@@ -759,11 +759,11 @@ type InstanceGroupManagerAttrs struct {
 	StandbyPolicy any
 	// The stateful policy for the managed instance group, which defines the preserved state (such as disks) for instances in the group. This field is computed by the provider and is output only, reflecting the actual applied stateful configuration. (AI-inferred)
 	StatefulPolicy any
-	Status any
+	Status         any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize any
+	TargetSize       any
 	TargetSizePolicy any
 	// The target number of stopped instances for this managed instance group. This number changes when you: - Stop instance using the stopInstances method or start instances using the startInstances method. - Manually change the targetStoppedSize using the update method.
 	TargetStoppedSize any
@@ -782,83 +782,83 @@ var InstanceGroupManager = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllInstancesConfig": ubx.FieldSpec{
 			WireName: "all_instances_config",
-			Kind: "object",
-			Fields: InstanceGroupManager_AllInstancesConfigFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_AllInstancesConfigFields,
 		},
 		"AutoHealingPolicies": ubx.FieldSpec{
 			WireName: "auto_healing_policies",
-			Kind: "list",
-			Fields: InstanceGroupManager_AutoHealingPoliciesFields,
+			Kind:     "list",
+			Fields:   InstanceGroupManager_AutoHealingPoliciesFields,
 		},
 		"BaseInstanceName": ubx.FieldSpec{WireName: "base_instance_name"},
 		"CurrentActions": ubx.FieldSpec{
 			WireName: "current_actions",
-			Kind: "object",
-			Fields: InstanceGroupManager_CurrentActionsFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_CurrentActionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DistributionPolicy": ubx.FieldSpec{
 			WireName: "distribution_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_DistributionPolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_DistributionPolicyFields,
 		},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"InstanceFlexibilityPolicy": ubx.FieldSpec{
 			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_InstanceFlexibilityPolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_InstanceFlexibilityPolicyFields,
 		},
 		"InstanceLifecyclePolicy": ubx.FieldSpec{
 			WireName: "instance_lifecycle_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_InstanceLifecyclePolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_InstanceLifecyclePolicyFields,
 		},
-		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
+		"InstanceTemplate":            ubx.FieldSpec{WireName: "instance_template"},
 		"ListManagedInstancesResults": ubx.FieldSpec{WireName: "list_managed_instances_results"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"NamedPorts": ubx.FieldSpec{
 			WireName: "named_ports",
-			Kind: "list",
-			Fields: InstanceGroupManager_NamedPortsFields,
+			Kind:     "list",
+			Fields:   InstanceGroupManager_NamedPortsFields,
 		},
 		"ResourcePolicies": ubx.FieldSpec{
 			WireName: "resource_policies",
-			Kind: "object",
-			Fields: InstanceGroupManager_ResourcePoliciesFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_ResourcePoliciesFields,
 		},
 		"StandbyPolicy": ubx.FieldSpec{
 			WireName: "standby_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_StandbyPolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_StandbyPolicyFields,
 		},
 		"StatefulPolicy": ubx.FieldSpec{
 			WireName: "stateful_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_StatefulPolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_StatefulPolicyFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: InstanceGroupManager_StatusFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_StatusFields,
 		},
 		"TargetPools": ubx.FieldSpec{WireName: "target_pools"},
-		"TargetSize": ubx.FieldSpec{WireName: "target_size"},
+		"TargetSize":  ubx.FieldSpec{WireName: "target_size"},
 		"TargetSizePolicy": ubx.FieldSpec{
 			WireName: "target_size_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_TargetSizePolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_TargetSizePolicyFields,
 		},
-		"TargetStoppedSize": ubx.FieldSpec{WireName: "target_stopped_size"},
+		"TargetStoppedSize":   ubx.FieldSpec{WireName: "target_stopped_size"},
 		"TargetSuspendedSize": ubx.FieldSpec{WireName: "target_suspended_size"},
 		"UpdatePolicy": ubx.FieldSpec{
 			WireName: "update_policy",
-			Kind: "object",
-			Fields: InstanceGroupManager_UpdatePolicyFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManager_UpdatePolicyFields,
 		},
 		"Versions": ubx.FieldSpec{
 			WireName: "versions",
-			Kind: "list",
-			Fields: InstanceGroupManager_VersionsFields,
+			Kind:     "list",
+			Fields:   InstanceGroupManager_VersionsFields,
 		},
 	},
 }

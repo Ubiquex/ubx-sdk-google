@@ -89,80 +89,80 @@ type Certificate_UsedBy struct {
 }
 
 var Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_CnameFields = ubx.FieldMap{
-		"ExpectedData": ubx.FieldSpec{WireName: "expected_data"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResolvedData": ubx.FieldSpec{WireName: "resolved_data"},
-	}
+	"ExpectedData": ubx.FieldSpec{WireName: "expected_data"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"ResolvedData": ubx.FieldSpec{WireName: "resolved_data"},
+}
 
 var Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_IpsFields = ubx.FieldMap{
-		"Resolved": ubx.FieldSpec{WireName: "resolved"},
-		"Serving": ubx.FieldSpec{WireName: "serving"},
-		"ServingOnAltPorts": ubx.FieldSpec{WireName: "serving_on_alt_ports"},
-	}
+	"Resolved":          ubx.FieldSpec{WireName: "resolved"},
+	"Serving":           ubx.FieldSpec{WireName: "serving"},
+	"ServingOnAltPorts": ubx.FieldSpec{WireName: "serving_on_alt_ports"},
+}
 
 var Certificate_Managed_AuthorizationAttemptInfo_TroubleshootingFields = ubx.FieldMap{
-		"Cname": ubx.FieldSpec{
-			WireName: "cname",
-			Kind: "object",
-			Fields: Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_CnameFields,
-		},
-		"Ips": ubx.FieldSpec{
-			WireName: "ips",
-			Kind: "object",
-			Fields: Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_IpsFields,
-		},
-		"Issues": ubx.FieldSpec{WireName: "issues"},
-	}
+	"Cname": ubx.FieldSpec{
+		WireName: "cname",
+		Kind:     "object",
+		Fields:   Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_CnameFields,
+	},
+	"Ips": ubx.FieldSpec{
+		WireName: "ips",
+		Kind:     "object",
+		Fields:   Certificate_Managed_AuthorizationAttemptInfo_Troubleshooting_IpsFields,
+	},
+	"Issues": ubx.FieldSpec{WireName: "issues"},
+}
 
 var Certificate_Managed_AuthorizationAttemptInfoFields = ubx.FieldMap{
-		"AttemptTime": ubx.FieldSpec{WireName: "attempt_time"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Troubleshooting": ubx.FieldSpec{
-			WireName: "troubleshooting",
-			Kind: "object",
-			Fields: Certificate_Managed_AuthorizationAttemptInfo_TroubleshootingFields,
-		},
-	}
+	"AttemptTime":   ubx.FieldSpec{WireName: "attempt_time"},
+	"Details":       ubx.FieldSpec{WireName: "details"},
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+	"Troubleshooting": ubx.FieldSpec{
+		WireName: "troubleshooting",
+		Kind:     "object",
+		Fields:   Certificate_Managed_AuthorizationAttemptInfo_TroubleshootingFields,
+	},
+}
 
 var Certificate_Managed_ProvisioningIssueFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Reason":  ubx.FieldSpec{WireName: "reason"},
+}
 
 var Certificate_ManagedFields = ubx.FieldMap{
-		"AuthorizationAttemptInfo": ubx.FieldSpec{
-			WireName: "authorization_attempt_info",
-			Kind: "list",
-			Fields: Certificate_Managed_AuthorizationAttemptInfoFields,
-		},
-		"DnsAuthorizations": ubx.FieldSpec{WireName: "dns_authorizations"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"IssuanceConfig": ubx.FieldSpec{WireName: "issuance_config"},
-		"ProvisioningIssue": ubx.FieldSpec{
-			WireName: "provisioning_issue",
-			Kind: "object",
-			Fields: Certificate_Managed_ProvisioningIssueFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AuthorizationAttemptInfo": ubx.FieldSpec{
+		WireName: "authorization_attempt_info",
+		Kind:     "list",
+		Fields:   Certificate_Managed_AuthorizationAttemptInfoFields,
+	},
+	"DnsAuthorizations": ubx.FieldSpec{WireName: "dns_authorizations"},
+	"Domains":           ubx.FieldSpec{WireName: "domains"},
+	"IssuanceConfig":    ubx.FieldSpec{WireName: "issuance_config"},
+	"ProvisioningIssue": ubx.FieldSpec{
+		WireName: "provisioning_issue",
+		Kind:     "object",
+		Fields:   Certificate_Managed_ProvisioningIssueFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Certificate_ManagedIdentityFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"ProvisioningIssue": ubx.FieldSpec{
-			WireName: "provisioning_issue",
-			Kind: "object",
-			Fields: Certificate_Managed_ProvisioningIssueFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Identity": ubx.FieldSpec{WireName: "identity"},
+	"ProvisioningIssue": ubx.FieldSpec{
+		WireName: "provisioning_issue",
+		Kind:     "object",
+		Fields:   Certificate_Managed_ProvisioningIssueFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Certificate_SelfManagedFields = ubx.FieldMap{
-		"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
-		"PemPrivateKey": ubx.FieldSpec{WireName: "pem_private_key"},
-	}
+	"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
+	"PemPrivateKey":  ubx.FieldSpec{WireName: "pem_private_key"},
+}
 
 type CertificateConfig struct {
 	// Optional. One or more paragraphs of text description of a certificate.
@@ -218,23 +218,23 @@ var Certificate = ubx.ResourceBinding{
 	WireType: "google_certificatemanager_certificate",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"Managed": ubx.FieldSpec{
 			WireName: "managed",
-			Kind: "object",
-			Fields: Certificate_ManagedFields,
+			Kind:     "object",
+			Fields:   Certificate_ManagedFields,
 		},
 		"ManagedIdentity": ubx.FieldSpec{
 			WireName: "managed_identity",
-			Kind: "object",
-			Fields: Certificate_ManagedIdentityFields,
+			Kind:     "object",
+			Fields:   Certificate_ManagedIdentityFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"SelfManaged": ubx.FieldSpec{
 			WireName: "self_managed",
-			Kind: "object",
-			Fields: Certificate_SelfManagedFields,
+			Kind:     "object",
+			Fields:   Certificate_SelfManagedFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

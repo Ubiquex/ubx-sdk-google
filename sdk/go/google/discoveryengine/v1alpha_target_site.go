@@ -21,21 +21,21 @@ type V1alphaTargetSite_SiteVerificationInfo struct {
 }
 
 var V1alphaTargetSite_FailureReason_QuotaFailureFields = ubx.FieldMap{
-		"TotalRequiredQuota": ubx.FieldSpec{WireName: "total_required_quota"},
-	}
+	"TotalRequiredQuota": ubx.FieldSpec{WireName: "total_required_quota"},
+}
 
 var V1alphaTargetSite_FailureReasonFields = ubx.FieldMap{
-		"QuotaFailure": ubx.FieldSpec{
-			WireName: "quota_failure",
-			Kind: "object",
-			Fields: V1alphaTargetSite_FailureReason_QuotaFailureFields,
-		},
-	}
+	"QuotaFailure": ubx.FieldSpec{
+		WireName: "quota_failure",
+		Kind:     "object",
+		Fields:   V1alphaTargetSite_FailureReason_QuotaFailureFields,
+	},
+}
 
 var V1alphaTargetSite_SiteVerificationInfoFields = ubx.FieldMap{
-		"SiteVerificationState": ubx.FieldSpec{WireName: "site_verification_state"},
-		"VerifyTime": ubx.FieldSpec{WireName: "verify_time"},
-	}
+	"SiteVerificationState": ubx.FieldSpec{WireName: "site_verification_state"},
+	"VerifyTime":            ubx.FieldSpec{WireName: "verify_time"},
+}
 
 type V1alphaTargetSiteConfig struct {
 	// Immutable. If set to false, a uri_pattern is generated to include all pages whose address contains the provided_uri_pattern. If set to true, an uri_pattern is generated to try to be an exact match of the provided_uri_pattern or just the specific page if the provided_uri_pattern is a specific one. provided_uri_pattern is always normalized to generate the URI pattern to be used by the search engine.
@@ -79,14 +79,14 @@ var V1alphaTargetSite = ubx.ResourceBinding{
 		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
 		"FailureReason": ubx.FieldSpec{
 			WireName: "failure_reason",
-			Kind: "object",
-			Fields: V1alphaTargetSite_FailureReasonFields,
+			Kind:     "object",
+			Fields:   V1alphaTargetSite_FailureReasonFields,
 		},
 		"ProvidedUriPattern": ubx.FieldSpec{WireName: "provided_uri_pattern"},
 		"SiteVerificationInfo": ubx.FieldSpec{
 			WireName: "site_verification_info",
-			Kind: "object",
-			Fields: V1alphaTargetSite_SiteVerificationInfoFields,
+			Kind:     "object",
+			Fields:   V1alphaTargetSite_SiteVerificationInfoFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

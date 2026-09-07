@@ -17,34 +17,34 @@ type V1beta1WasmPlugin_UsedBy struct {
 }
 
 type V1beta1WasmPlugin_Versions struct {
-	CreateTime any
-	Description any
-	ImageDigest any
-	ImageUri any
-	Labels any
-	PluginConfigData any
+	CreateTime         any
+	Description        any
+	ImageDigest        any
+	ImageUri           any
+	Labels             any
+	PluginConfigData   any
 	PluginConfigDigest any
-	PluginConfigUri any
-	UpdateTime any
+	PluginConfigUri    any
+	UpdateTime         any
 }
 
 var V1beta1WasmPlugin_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"MinLogLevel": ubx.FieldSpec{WireName: "min_log_level"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"Enable":      ubx.FieldSpec{WireName: "enable"},
+	"MinLogLevel": ubx.FieldSpec{WireName: "min_log_level"},
+	"SampleRate":  ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var V1beta1WasmPlugin_VersionsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ImageDigest": ubx.FieldSpec{WireName: "image_digest"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"PluginConfigData": ubx.FieldSpec{WireName: "plugin_config_data"},
-		"PluginConfigDigest": ubx.FieldSpec{WireName: "plugin_config_digest"},
-		"PluginConfigUri": ubx.FieldSpec{WireName: "plugin_config_uri"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":         ubx.FieldSpec{WireName: "create_time"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"ImageDigest":        ubx.FieldSpec{WireName: "image_digest"},
+	"ImageUri":           ubx.FieldSpec{WireName: "image_uri"},
+	"Labels":             ubx.FieldSpec{WireName: "labels"},
+	"PluginConfigData":   ubx.FieldSpec{WireName: "plugin_config_data"},
+	"PluginConfigDigest": ubx.FieldSpec{WireName: "plugin_config_digest"},
+	"PluginConfigUri":    ubx.FieldSpec{WireName: "plugin_config_uri"},
+	"UpdateTime":         ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1beta1WasmPluginConfig struct {
 	// Optional. A human-readable description of the resource.
@@ -92,19 +92,19 @@ var V1beta1WasmPlugin = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_wasm_plugin",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: V1beta1WasmPlugin_LogConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1WasmPlugin_LogConfigFields,
 		},
 		"MainVersionId": ubx.FieldSpec{WireName: "main_version_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"Versions": ubx.FieldSpec{
 			WireName: "versions",
-			Kind: "map",
-			Fields: V1beta1WasmPlugin_VersionsFields,
+			Kind:     "map",
+			Fields:   V1beta1WasmPlugin_VersionsFields,
 		},
 	},
 }

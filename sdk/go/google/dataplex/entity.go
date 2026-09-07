@@ -90,90 +90,90 @@ type Entity_Schema struct {
 }
 
 var Entity_AccessFields = ubx.FieldMap{
-		"Read": ubx.FieldSpec{WireName: "read"},
-	}
+	"Read": ubx.FieldSpec{WireName: "read"},
+}
 
 var Entity_Compatibility_BigqueryFields = ubx.FieldMap{
-		"Compatible": ubx.FieldSpec{WireName: "compatible"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Compatible": ubx.FieldSpec{WireName: "compatible"},
+	"Reason":     ubx.FieldSpec{WireName: "reason"},
+}
 
 var Entity_CompatibilityFields = ubx.FieldMap{
-		"Bigquery": ubx.FieldSpec{
-			WireName: "bigquery",
-			Kind: "object",
-			Fields: Entity_Compatibility_BigqueryFields,
-		},
-		"HiveMetastore": ubx.FieldSpec{
-			WireName: "hive_metastore",
-			Kind: "object",
-			Fields: Entity_Compatibility_BigqueryFields,
-		},
-	}
+	"Bigquery": ubx.FieldSpec{
+		WireName: "bigquery",
+		Kind:     "object",
+		Fields:   Entity_Compatibility_BigqueryFields,
+	},
+	"HiveMetastore": ubx.FieldSpec{
+		WireName: "hive_metastore",
+		Kind:     "object",
+		Fields:   Entity_Compatibility_BigqueryFields,
+	},
+}
 
 var Entity_Format_CsvFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-	}
+	"Delimiter":  ubx.FieldSpec{WireName: "delimiter"},
+	"Encoding":   ubx.FieldSpec{WireName: "encoding"},
+	"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
+	"Quote":      ubx.FieldSpec{WireName: "quote"},
+}
 
 var Entity_Format_IcebergFields = ubx.FieldMap{
-		"MetadataLocation": ubx.FieldSpec{WireName: "metadata_location"},
-	}
+	"MetadataLocation": ubx.FieldSpec{WireName: "metadata_location"},
+}
 
 var Entity_Format_JsonFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Entity_FormatFields = ubx.FieldMap{
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Entity_Format_CsvFields,
-		},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Iceberg": ubx.FieldSpec{
-			WireName: "iceberg",
-			Kind: "object",
-			Fields: Entity_Format_IcebergFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: Entity_Format_JsonFields,
-		},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Entity_Format_CsvFields,
+	},
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Iceberg": ubx.FieldSpec{
+		WireName: "iceberg",
+		Kind:     "object",
+		Fields:   Entity_Format_IcebergFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   Entity_Format_JsonFields,
+	},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var Entity_Schema_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Fields":      ubx.FieldSpec{WireName: "fields"},
+	"Mode":        ubx.FieldSpec{WireName: "mode"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Entity_Schema_PartitionFieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entity_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Entity_Schema_FieldsFields,
-		},
-		"PartitionFields": ubx.FieldSpec{
-			WireName: "partition_fields",
-			Kind: "list",
-			Fields: Entity_Schema_PartitionFieldsFields,
-		},
-		"PartitionStyle": ubx.FieldSpec{WireName: "partition_style"},
-		"UserManaged": ubx.FieldSpec{WireName: "user_managed"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Entity_Schema_FieldsFields,
+	},
+	"PartitionFields": ubx.FieldSpec{
+		WireName: "partition_fields",
+		Kind:     "list",
+		Fields:   Entity_Schema_PartitionFieldsFields,
+	},
+	"PartitionStyle": ubx.FieldSpec{WireName: "partition_style"},
+	"UserManaged":    ubx.FieldSpec{WireName: "user_managed"},
+}
 
 type EntityConfig struct {
 	// Describes the access mechanism of the data within its storage location.
@@ -248,32 +248,32 @@ var Entity = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Access": ubx.FieldSpec{
 			WireName: "access",
-			Kind: "object",
-			Fields: Entity_AccessFields,
+			Kind:     "object",
+			Fields:   Entity_AccessFields,
 		},
 		"Asset": ubx.FieldSpec{WireName: "asset"},
 		"Compatibility": ubx.FieldSpec{
 			WireName: "compatibility",
-			Kind: "object",
-			Fields: Entity_CompatibilityFields,
+			Kind:     "object",
+			Fields:   Entity_CompatibilityFields,
 		},
-		"DataPath": ubx.FieldSpec{WireName: "data_path"},
+		"DataPath":        ubx.FieldSpec{WireName: "data_path"},
 		"DataPathPattern": ubx.FieldSpec{WireName: "data_path_pattern"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Etag":            ubx.FieldSpec{WireName: "etag"},
 		"Format": ubx.FieldSpec{
 			WireName: "format",
-			Kind: "object",
-			Fields: Entity_FormatFields,
+			Kind:     "object",
+			Fields:   Entity_FormatFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Entity_SchemaFields,
+			Kind:     "object",
+			Fields:   Entity_SchemaFields,
 		},
 		"System": ubx.FieldSpec{WireName: "system"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

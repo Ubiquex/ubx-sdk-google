@@ -35,7 +35,7 @@ var V1beta1Folder = ubx.ResourceBinding{
 	WireType: "google_dataform_v1beta1_folder",
 	Fields: ubx.FieldMap{
 		"ContainingFolder": ubx.FieldSpec{WireName: "containing_folder"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 	},
 }

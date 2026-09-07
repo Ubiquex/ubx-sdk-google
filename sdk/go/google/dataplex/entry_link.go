@@ -37,29 +37,29 @@ type EntryLink_EntryReferences struct {
 }
 
 var EntryLink_Aspects_AspectSourceFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataVersion": ubx.FieldSpec{WireName: "data_version"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DataVersion": ubx.FieldSpec{WireName: "data_version"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 var EntryLink_AspectsFields = ubx.FieldMap{
-		"AspectSource": ubx.FieldSpec{
-			WireName: "aspect_source",
-			Kind: "object",
-			Fields: EntryLink_Aspects_AspectSourceFields,
-		},
-		"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AspectSource": ubx.FieldSpec{
+		WireName: "aspect_source",
+		Kind:     "object",
+		Fields:   EntryLink_Aspects_AspectSourceFields,
+	},
+	"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Data":       ubx.FieldSpec{WireName: "data"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var EntryLink_EntryReferencesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EntryLinkConfig struct {
 	// Optional. The aspects that are attached to the entry link. The format of the aspect key has to be the following: {project_id_or_number}.{location_id}.{aspect_type_id} Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
@@ -90,14 +90,14 @@ var EntryLink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aspects": ubx.FieldSpec{
 			WireName: "aspects",
-			Kind: "map",
-			Fields: EntryLink_AspectsFields,
+			Kind:     "map",
+			Fields:   EntryLink_AspectsFields,
 		},
 		"EntryLinkType": ubx.FieldSpec{WireName: "entry_link_type"},
 		"EntryReferences": ubx.FieldSpec{
 			WireName: "entry_references",
-			Kind: "list",
-			Fields: EntryLink_EntryReferencesFields,
+			Kind:     "list",
+			Fields:   EntryLink_EntryReferencesFields,
 		},
 	},
 }

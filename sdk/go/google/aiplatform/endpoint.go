@@ -374,62 +374,62 @@ type Endpoint_PrivateServiceConnectConfig struct {
 }
 
 var Endpoint_ClientConnectionConfigFields = ubx.FieldMap{
-		"InferenceTimeout": ubx.FieldSpec{WireName: "inference_timeout"},
-	}
+	"InferenceTimeout": ubx.FieldSpec{WireName: "inference_timeout"},
+}
 
 var Endpoint_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Endpoint_GdcConfigFields = ubx.FieldMap{
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields = ubx.FieldMap{
-		"EnableRag": ubx.FieldSpec{WireName: "enable_rag"},
-	}
+	"EnableRag": ubx.FieldSpec{WireName: "enable_rag"},
+}
 
 var Endpoint_GenAiAdvancedFeaturesConfigFields = ubx.FieldMap{
-		"RagConfig": ubx.FieldSpec{
-			WireName: "rag_config",
-			Kind: "object",
-			Fields: Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields,
-		},
-	}
+	"RagConfig": ubx.FieldSpec{
+		WireName: "rag_config",
+		Kind:     "object",
+		Fields:   Endpoint_GenAiAdvancedFeaturesConfig_RagConfigFields,
+	},
+}
 
 var Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var Endpoint_PredictRequestResponseLoggingConfigFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   Endpoint_PredictRequestResponseLoggingConfig_BigqueryDestinationFields,
+	},
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"SamplingRate": ubx.FieldSpec{WireName: "sampling_rate"},
+}
 
 var Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
+	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 var Endpoint_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
-		"PscAutomationConfigs": ubx.FieldSpec{
-			WireName: "psc_automation_configs",
-			Kind: "list",
-			Fields: Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
+	"ProjectAllowlist":            ubx.FieldSpec{WireName: "project_allowlist"},
+	"PscAutomationConfigs": ubx.FieldSpec{
+		WireName: "psc_automation_configs",
+		Kind:     "list",
+		Fields:   Endpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 type EndpointConfig struct {
 	// Configurations (e.g. inference timeout) that are applied on your endpoints.
@@ -516,41 +516,41 @@ var Endpoint = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientConnectionConfig": ubx.FieldSpec{
 			WireName: "client_connection_config",
-			Kind: "object",
-			Fields: Endpoint_ClientConnectionConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_ClientConnectionConfigFields,
 		},
-		"DedicatedEndpointEnabled": ubx.FieldSpec{WireName: "dedicated_endpoint_enabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DedicatedEndpointEnabled":    ubx.FieldSpec{WireName: "dedicated_endpoint_enabled"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: Endpoint_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   Endpoint_EncryptionSpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GdcConfig": ubx.FieldSpec{
 			WireName: "gdc_config",
-			Kind: "object",
-			Fields: Endpoint_GdcConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_GdcConfigFields,
 		},
 		"GenAiAdvancedFeaturesConfig": ubx.FieldSpec{
 			WireName: "gen_ai_advanced_features_config",
-			Kind: "object",
-			Fields: Endpoint_GenAiAdvancedFeaturesConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_GenAiAdvancedFeaturesConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PredictRequestResponseLoggingConfig": ubx.FieldSpec{
 			WireName: "predict_request_response_logging_config",
-			Kind: "object",
-			Fields: Endpoint_PredictRequestResponseLoggingConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_PredictRequestResponseLoggingConfigFields,
 		},
 		"PrivateServiceConnectConfig": ubx.FieldSpec{
 			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: Endpoint_PrivateServiceConnectConfigFields,
+			Kind:     "object",
+			Fields:   Endpoint_PrivateServiceConnectConfigFields,
 		},
 		"TrafficSplit": ubx.FieldSpec{WireName: "traffic_split"},
 	},

@@ -132,149 +132,149 @@ type Automation_Selector struct {
 }
 
 var Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentConditionFields = ubx.FieldMap{
-		"MissingTargets": ubx.FieldSpec{WireName: "missing_targets"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"MissingTargets": ubx.FieldSpec{WireName: "missing_targets"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+	"UpdateTime":     ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsListFields = ubx.FieldMap{
-		"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
-		"SourceTargetId": ubx.FieldSpec{WireName: "source_target_id"},
-	}
+	"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
+	"SourceTargetId":      ubx.FieldSpec{WireName: "source_target_id"},
+}
 
 var Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseConditionFields = ubx.FieldMap{
-		"NextPromotionTime": ubx.FieldSpec{WireName: "next_promotion_time"},
-		"TargetsList": ubx.FieldSpec{
-			WireName: "targets_list",
-			Kind: "list",
-			Fields: Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsListFields,
-		},
-	}
+	"NextPromotionTime": ubx.FieldSpec{WireName: "next_promotion_time"},
+	"TargetsList": ubx.FieldSpec{
+		WireName: "targets_list",
+		Kind:     "list",
+		Fields:   Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsListFields,
+	},
+}
 
 var Automation_Rules_AdvanceRolloutRule_ConditionFields = ubx.FieldMap{
-		"TargetsPresentCondition": ubx.FieldSpec{
-			WireName: "targets_present_condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentConditionFields,
-		},
-		"TimedPromoteReleaseCondition": ubx.FieldSpec{
-			WireName: "timed_promote_release_condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseConditionFields,
-		},
-	}
+	"TargetsPresentCondition": ubx.FieldSpec{
+		WireName: "targets_present_condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_Condition_TargetsPresentConditionFields,
+	},
+	"TimedPromoteReleaseCondition": ubx.FieldSpec{
+		WireName: "timed_promote_release_condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseConditionFields,
+	},
+}
 
 var Automation_Rules_AdvanceRolloutRuleFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_ConditionFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SourcePhases": ubx.FieldSpec{WireName: "source_phases"},
-		"Wait": ubx.FieldSpec{WireName: "wait"},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_ConditionFields,
+	},
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"SourcePhases": ubx.FieldSpec{WireName: "source_phases"},
+	"Wait":         ubx.FieldSpec{WireName: "wait"},
+}
 
 var Automation_Rules_PromoteReleaseRuleFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_ConditionFields,
-		},
-		"DestinationPhase": ubx.FieldSpec{WireName: "destination_phase"},
-		"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Wait": ubx.FieldSpec{WireName: "wait"},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_ConditionFields,
+	},
+	"DestinationPhase":    ubx.FieldSpec{WireName: "destination_phase"},
+	"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"Wait":                ubx.FieldSpec{WireName: "wait"},
+}
 
 var Automation_Rules_RepairRolloutRule_RepairPhases_RetryFields = ubx.FieldMap{
-		"Attempts": ubx.FieldSpec{WireName: "attempts"},
-		"BackoffMode": ubx.FieldSpec{WireName: "backoff_mode"},
-		"Wait": ubx.FieldSpec{WireName: "wait"},
-	}
+	"Attempts":    ubx.FieldSpec{WireName: "attempts"},
+	"BackoffMode": ubx.FieldSpec{WireName: "backoff_mode"},
+	"Wait":        ubx.FieldSpec{WireName: "wait"},
+}
 
 var Automation_Rules_RepairRolloutRule_RepairPhases_RollbackFields = ubx.FieldMap{
-		"DestinationPhase": ubx.FieldSpec{WireName: "destination_phase"},
-		"DisableRollbackIfRolloutPending": ubx.FieldSpec{WireName: "disable_rollback_if_rollout_pending"},
-	}
+	"DestinationPhase":                ubx.FieldSpec{WireName: "destination_phase"},
+	"DisableRollbackIfRolloutPending": ubx.FieldSpec{WireName: "disable_rollback_if_rollout_pending"},
+}
 
 var Automation_Rules_RepairRolloutRule_RepairPhasesFields = ubx.FieldMap{
-		"Retry": ubx.FieldSpec{
-			WireName: "retry",
-			Kind: "object",
-			Fields: Automation_Rules_RepairRolloutRule_RepairPhases_RetryFields,
-		},
-		"Rollback": ubx.FieldSpec{
-			WireName: "rollback",
-			Kind: "object",
-			Fields: Automation_Rules_RepairRolloutRule_RepairPhases_RollbackFields,
-		},
-	}
+	"Retry": ubx.FieldSpec{
+		WireName: "retry",
+		Kind:     "object",
+		Fields:   Automation_Rules_RepairRolloutRule_RepairPhases_RetryFields,
+	},
+	"Rollback": ubx.FieldSpec{
+		WireName: "rollback",
+		Kind:     "object",
+		Fields:   Automation_Rules_RepairRolloutRule_RepairPhases_RollbackFields,
+	},
+}
 
 var Automation_Rules_RepairRolloutRuleFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_ConditionFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Jobs": ubx.FieldSpec{WireName: "jobs"},
-		"Phases": ubx.FieldSpec{WireName: "phases"},
-		"RepairPhases": ubx.FieldSpec{
-			WireName: "repair_phases",
-			Kind: "list",
-			Fields: Automation_Rules_RepairRolloutRule_RepairPhasesFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_ConditionFields,
+	},
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Jobs":   ubx.FieldSpec{WireName: "jobs"},
+	"Phases": ubx.FieldSpec{WireName: "phases"},
+	"RepairPhases": ubx.FieldSpec{
+		WireName: "repair_phases",
+		Kind:     "list",
+		Fields:   Automation_Rules_RepairRolloutRule_RepairPhasesFields,
+	},
+}
 
 var Automation_Rules_TimedPromoteReleaseRuleFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRule_ConditionFields,
-		},
-		"DestinationPhase": ubx.FieldSpec{WireName: "destination_phase"},
-		"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRule_ConditionFields,
+	},
+	"DestinationPhase":    ubx.FieldSpec{WireName: "destination_phase"},
+	"DestinationTargetId": ubx.FieldSpec{WireName: "destination_target_id"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"Schedule":            ubx.FieldSpec{WireName: "schedule"},
+	"TimeZone":            ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Automation_RulesFields = ubx.FieldMap{
-		"AdvanceRolloutRule": ubx.FieldSpec{
-			WireName: "advance_rollout_rule",
-			Kind: "object",
-			Fields: Automation_Rules_AdvanceRolloutRuleFields,
-		},
-		"PromoteReleaseRule": ubx.FieldSpec{
-			WireName: "promote_release_rule",
-			Kind: "object",
-			Fields: Automation_Rules_PromoteReleaseRuleFields,
-		},
-		"RepairRolloutRule": ubx.FieldSpec{
-			WireName: "repair_rollout_rule",
-			Kind: "object",
-			Fields: Automation_Rules_RepairRolloutRuleFields,
-		},
-		"TimedPromoteReleaseRule": ubx.FieldSpec{
-			WireName: "timed_promote_release_rule",
-			Kind: "object",
-			Fields: Automation_Rules_TimedPromoteReleaseRuleFields,
-		},
-	}
+	"AdvanceRolloutRule": ubx.FieldSpec{
+		WireName: "advance_rollout_rule",
+		Kind:     "object",
+		Fields:   Automation_Rules_AdvanceRolloutRuleFields,
+	},
+	"PromoteReleaseRule": ubx.FieldSpec{
+		WireName: "promote_release_rule",
+		Kind:     "object",
+		Fields:   Automation_Rules_PromoteReleaseRuleFields,
+	},
+	"RepairRolloutRule": ubx.FieldSpec{
+		WireName: "repair_rollout_rule",
+		Kind:     "object",
+		Fields:   Automation_Rules_RepairRolloutRuleFields,
+	},
+	"TimedPromoteReleaseRule": ubx.FieldSpec{
+		WireName: "timed_promote_release_rule",
+		Kind:     "object",
+		Fields:   Automation_Rules_TimedPromoteReleaseRuleFields,
+	},
+}
 
 var Automation_Selector_TargetsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var Automation_SelectorFields = ubx.FieldMap{
-		"Targets": ubx.FieldSpec{
-			WireName: "targets",
-			Kind: "list",
-			Fields: Automation_Selector_TargetsFields,
-		},
-	}
+	"Targets": ubx.FieldSpec{
+		WireName: "targets",
+		Kind:     "list",
+		Fields:   Automation_Selector_TargetsFields,
+	},
+}
 
 type AutomationConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. Annotations must meet the following constraints: * Annotations are key/value pairs. * Valid annotation keys have two segments: an optional prefix and name, separated by a slash (`/`). * The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. * The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots(`.`), not longer than 253 characters in total, followed by a slash (`/`). See https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set for more details.
@@ -327,19 +327,19 @@ var Automation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: Automation_RulesFields,
+			Kind:     "list",
+			Fields:   Automation_RulesFields,
 		},
 		"Selector": ubx.FieldSpec{
 			WireName: "selector",
-			Kind: "object",
-			Fields: Automation_SelectorFields,
+			Kind:     "object",
+			Fields:   Automation_SelectorFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
+		"Suspended":      ubx.FieldSpec{WireName: "suspended"},
 	},
 }

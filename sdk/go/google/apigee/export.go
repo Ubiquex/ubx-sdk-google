@@ -11,9 +11,9 @@ type Export_DateRange struct {
 }
 
 var Export_DateRangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 type ExportConfig struct {
 	// Optional. Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\t`).
@@ -60,15 +60,15 @@ type ExportAttrs struct {
 var Export = ubx.ResourceBinding{
 	WireType: "google_apigee_export",
 	Fields: ubx.FieldMap{
-		"CsvDelimiter": ubx.FieldSpec{WireName: "csv_delimiter"},
+		"CsvDelimiter":  ubx.FieldSpec{WireName: "csv_delimiter"},
 		"DatastoreName": ubx.FieldSpec{WireName: "datastore_name"},
 		"DateRange": ubx.FieldSpec{
 			WireName: "date_range",
-			Kind: "object",
-			Fields: Export_DateRangeFields,
+			Kind:     "object",
+			Fields:   Export_DateRangeFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
 	},
 }

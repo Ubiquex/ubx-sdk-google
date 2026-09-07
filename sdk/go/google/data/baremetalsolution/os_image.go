@@ -13,13 +13,12 @@ type OsImageAttrs struct {
 	Code any
 	// OS Image description.
 	Description any
-	Name any
+	Name        any
 	// Network templates that can be used with this OS Image.
 	SupportedNetworkTemplates any
 }
 
 var OsImage = ubx.DataSourceBinding{
 	WireType: "google_baremetalsolution_os_image",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

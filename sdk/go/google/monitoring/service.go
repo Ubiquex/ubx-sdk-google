@@ -101,69 +101,69 @@ type Service_Telemetry struct {
 }
 
 var Service_AppEngineFields = ubx.FieldMap{
-		"ModuleId": ubx.FieldSpec{WireName: "module_id"},
-	}
+	"ModuleId": ubx.FieldSpec{WireName: "module_id"},
+}
 
 var Service_BasicServiceFields = ubx.FieldMap{
-		"ServiceLabels": ubx.FieldSpec{WireName: "service_labels"},
-		"ServiceType": ubx.FieldSpec{WireName: "service_type"},
-	}
+	"ServiceLabels": ubx.FieldSpec{WireName: "service_labels"},
+	"ServiceType":   ubx.FieldSpec{WireName: "service_type"},
+}
 
 var Service_CloudEndpointsFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Service_CloudRunFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+}
 
 var Service_ClusterIstioFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
-	}
+	"ClusterName":      ubx.FieldSpec{WireName: "cluster_name"},
+	"Location":         ubx.FieldSpec{WireName: "location"},
+	"ServiceName":      ubx.FieldSpec{WireName: "service_name"},
+	"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
+}
 
 var Service_GkeNamespaceFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ClusterName":   ubx.FieldSpec{WireName: "cluster_name"},
+	"Location":      ubx.FieldSpec{WireName: "location"},
+	"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
+	"ProjectId":     ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Service_GkeServiceFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	}
+	"ClusterName":   ubx.FieldSpec{WireName: "cluster_name"},
+	"Location":      ubx.FieldSpec{WireName: "location"},
+	"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
+	"ProjectId":     ubx.FieldSpec{WireName: "project_id"},
+	"ServiceName":   ubx.FieldSpec{WireName: "service_name"},
+}
 
 var Service_GkeWorkloadFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"NamespaceName": ubx.FieldSpec{WireName: "namespace_name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TopLevelControllerName": ubx.FieldSpec{WireName: "top_level_controller_name"},
-		"TopLevelControllerType": ubx.FieldSpec{WireName: "top_level_controller_type"},
-	}
+	"ClusterName":            ubx.FieldSpec{WireName: "cluster_name"},
+	"Location":               ubx.FieldSpec{WireName: "location"},
+	"NamespaceName":          ubx.FieldSpec{WireName: "namespace_name"},
+	"ProjectId":              ubx.FieldSpec{WireName: "project_id"},
+	"TopLevelControllerName": ubx.FieldSpec{WireName: "top_level_controller_name"},
+	"TopLevelControllerType": ubx.FieldSpec{WireName: "top_level_controller_type"},
+}
 
 var Service_IstioCanonicalServiceFields = ubx.FieldMap{
-		"CanonicalService": ubx.FieldSpec{WireName: "canonical_service"},
-		"CanonicalServiceNamespace": ubx.FieldSpec{WireName: "canonical_service_namespace"},
-		"MeshUid": ubx.FieldSpec{WireName: "mesh_uid"},
-	}
+	"CanonicalService":          ubx.FieldSpec{WireName: "canonical_service"},
+	"CanonicalServiceNamespace": ubx.FieldSpec{WireName: "canonical_service_namespace"},
+	"MeshUid":                   ubx.FieldSpec{WireName: "mesh_uid"},
+}
 
 var Service_MeshIstioFields = ubx.FieldMap{
-		"MeshUid": ubx.FieldSpec{WireName: "mesh_uid"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
-	}
+	"MeshUid":          ubx.FieldSpec{WireName: "mesh_uid"},
+	"ServiceName":      ubx.FieldSpec{WireName: "service_name"},
+	"ServiceNamespace": ubx.FieldSpec{WireName: "service_namespace"},
+}
 
 var Service_TelemetryFields = ubx.FieldMap{
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-	}
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+}
 
 type ServiceConfig struct {
 	// App Engine service. Learn more at https://cloud.google.com/appengine.
@@ -236,61 +236,61 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppEngine": ubx.FieldSpec{
 			WireName: "app_engine",
-			Kind: "object",
-			Fields: Service_AppEngineFields,
+			Kind:     "object",
+			Fields:   Service_AppEngineFields,
 		},
 		"BasicService": ubx.FieldSpec{
 			WireName: "basic_service",
-			Kind: "object",
-			Fields: Service_BasicServiceFields,
+			Kind:     "object",
+			Fields:   Service_BasicServiceFields,
 		},
 		"CloudEndpoints": ubx.FieldSpec{
 			WireName: "cloud_endpoints",
-			Kind: "object",
-			Fields: Service_CloudEndpointsFields,
+			Kind:     "object",
+			Fields:   Service_CloudEndpointsFields,
 		},
 		"CloudRun": ubx.FieldSpec{
 			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Service_CloudRunFields,
+			Kind:     "object",
+			Fields:   Service_CloudRunFields,
 		},
 		"ClusterIstio": ubx.FieldSpec{
 			WireName: "cluster_istio",
-			Kind: "object",
-			Fields: Service_ClusterIstioFields,
+			Kind:     "object",
+			Fields:   Service_ClusterIstioFields,
 		},
-		"Custom": ubx.FieldSpec{WireName: "custom"},
+		"Custom":      ubx.FieldSpec{WireName: "custom"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GkeNamespace": ubx.FieldSpec{
 			WireName: "gke_namespace",
-			Kind: "object",
-			Fields: Service_GkeNamespaceFields,
+			Kind:     "object",
+			Fields:   Service_GkeNamespaceFields,
 		},
 		"GkeService": ubx.FieldSpec{
 			WireName: "gke_service",
-			Kind: "object",
-			Fields: Service_GkeServiceFields,
+			Kind:     "object",
+			Fields:   Service_GkeServiceFields,
 		},
 		"GkeWorkload": ubx.FieldSpec{
 			WireName: "gke_workload",
-			Kind: "object",
-			Fields: Service_GkeWorkloadFields,
+			Kind:     "object",
+			Fields:   Service_GkeWorkloadFields,
 		},
 		"IstioCanonicalService": ubx.FieldSpec{
 			WireName: "istio_canonical_service",
-			Kind: "object",
-			Fields: Service_IstioCanonicalServiceFields,
+			Kind:     "object",
+			Fields:   Service_IstioCanonicalServiceFields,
 		},
 		"MeshIstio": ubx.FieldSpec{
 			WireName: "mesh_istio",
-			Kind: "object",
-			Fields: Service_MeshIstioFields,
+			Kind:     "object",
+			Fields:   Service_MeshIstioFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Telemetry": ubx.FieldSpec{
 			WireName: "telemetry",
-			Kind: "object",
-			Fields: Service_TelemetryFields,
+			Kind:     "object",
+			Fields:   Service_TelemetryFields,
 		},
 		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
 	},

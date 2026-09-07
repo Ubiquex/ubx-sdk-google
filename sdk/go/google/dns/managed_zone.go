@@ -113,102 +113,102 @@ type ManagedZone_ServiceDirectoryConfig struct {
 }
 
 var ManagedZone_CloudLoggingConfigFields = ubx.FieldMap{
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
+	"Kind":          ubx.FieldSpec{WireName: "kind"},
+}
 
 var ManagedZone_DnssecConfig_DefaultKeySpecsFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"KeyLength": ubx.FieldSpec{WireName: "key_length"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"KeyLength": ubx.FieldSpec{WireName: "key_length"},
+	"KeyType":   ubx.FieldSpec{WireName: "key_type"},
+	"Kind":      ubx.FieldSpec{WireName: "kind"},
+}
 
 var ManagedZone_DnssecConfigFields = ubx.FieldMap{
-		"DefaultKeySpecs": ubx.FieldSpec{
-			WireName: "default_key_specs",
-			Kind: "list",
-			Fields: ManagedZone_DnssecConfig_DefaultKeySpecsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"NonExistence": ubx.FieldSpec{WireName: "non_existence"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"DefaultKeySpecs": ubx.FieldSpec{
+		WireName: "default_key_specs",
+		Kind:     "list",
+		Fields:   ManagedZone_DnssecConfig_DefaultKeySpecsFields,
+	},
+	"Kind":         ubx.FieldSpec{WireName: "kind"},
+	"NonExistence": ubx.FieldSpec{WireName: "non_existence"},
+	"State":        ubx.FieldSpec{WireName: "state"},
+}
 
 var ManagedZone_ForwardingConfig_TargetNameServersFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"ForwardingPath": ubx.FieldSpec{WireName: "forwarding_path"},
-		"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+	"ForwardingPath": ubx.FieldSpec{WireName: "forwarding_path"},
+	"Ipv4Address":    ubx.FieldSpec{WireName: "ipv4_address"},
+	"Ipv6Address":    ubx.FieldSpec{WireName: "ipv6_address"},
+	"Kind":           ubx.FieldSpec{WireName: "kind"},
+}
 
 var ManagedZone_ForwardingConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"TargetNameServers": ubx.FieldSpec{
-			WireName: "target_name_servers",
-			Kind: "list",
-			Fields: ManagedZone_ForwardingConfig_TargetNameServersFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"TargetNameServers": ubx.FieldSpec{
+		WireName: "target_name_servers",
+		Kind:     "list",
+		Fields:   ManagedZone_ForwardingConfig_TargetNameServersFields,
+	},
+}
 
 var ManagedZone_PeeringConfig_TargetNetworkFields = ubx.FieldMap{
-		"DeactivateTime": ubx.FieldSpec{WireName: "deactivate_time"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-	}
+	"DeactivateTime": ubx.FieldSpec{WireName: "deactivate_time"},
+	"Kind":           ubx.FieldSpec{WireName: "kind"},
+	"NetworkUrl":     ubx.FieldSpec{WireName: "network_url"},
+}
 
 var ManagedZone_PeeringConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"TargetNetwork": ubx.FieldSpec{
-			WireName: "target_network",
-			Kind: "object",
-			Fields: ManagedZone_PeeringConfig_TargetNetworkFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"TargetNetwork": ubx.FieldSpec{
+		WireName: "target_network",
+		Kind:     "object",
+		Fields:   ManagedZone_PeeringConfig_TargetNetworkFields,
+	},
+}
 
 var ManagedZone_PrivateVisibilityConfig_GkeClustersFields = ubx.FieldMap{
-		"GkeClusterName": ubx.FieldSpec{WireName: "gke_cluster_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"GkeClusterName": ubx.FieldSpec{WireName: "gke_cluster_name"},
+	"Kind":           ubx.FieldSpec{WireName: "kind"},
+}
 
 var ManagedZone_PrivateVisibilityConfig_NetworksFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-	}
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
+}
 
 var ManagedZone_PrivateVisibilityConfigFields = ubx.FieldMap{
-		"GkeClusters": ubx.FieldSpec{
-			WireName: "gke_clusters",
-			Kind: "list",
-			Fields: ManagedZone_PrivateVisibilityConfig_GkeClustersFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Networks": ubx.FieldSpec{
-			WireName: "networks",
-			Kind: "list",
-			Fields: ManagedZone_PrivateVisibilityConfig_NetworksFields,
-		},
-	}
+	"GkeClusters": ubx.FieldSpec{
+		WireName: "gke_clusters",
+		Kind:     "list",
+		Fields:   ManagedZone_PrivateVisibilityConfig_GkeClustersFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Networks": ubx.FieldSpec{
+		WireName: "networks",
+		Kind:     "list",
+		Fields:   ManagedZone_PrivateVisibilityConfig_NetworksFields,
+	},
+}
 
 var ManagedZone_ReverseLookupConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var ManagedZone_ServiceDirectoryConfig_NamespaceFields = ubx.FieldMap{
-		"DeletionTime": ubx.FieldSpec{WireName: "deletion_time"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"NamespaceUrl": ubx.FieldSpec{WireName: "namespace_url"},
-	}
+	"DeletionTime": ubx.FieldSpec{WireName: "deletion_time"},
+	"Kind":         ubx.FieldSpec{WireName: "kind"},
+	"NamespaceUrl": ubx.FieldSpec{WireName: "namespace_url"},
+}
 
 var ManagedZone_ServiceDirectoryConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Namespace": ubx.FieldSpec{
-			WireName: "namespace",
-			Kind: "object",
-			Fields: ManagedZone_ServiceDirectoryConfig_NamespaceFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Namespace": ubx.FieldSpec{
+		WireName: "namespace",
+		Kind:     "object",
+		Fields:   ManagedZone_ServiceDirectoryConfig_NamespaceFields,
+	},
+}
 
 type ManagedZoneConfig struct {
 	// Cloud Logging configurations for publicly visible zones.
@@ -289,47 +289,47 @@ var ManagedZone = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudLoggingConfig": ubx.FieldSpec{
 			WireName: "cloud_logging_config",
-			Kind: "object",
-			Fields: ManagedZone_CloudLoggingConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_CloudLoggingConfigFields,
 		},
 		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DnsName":      ubx.FieldSpec{WireName: "dns_name"},
 		"DnssecConfig": ubx.FieldSpec{
 			WireName: "dnssec_config",
-			Kind: "object",
-			Fields: ManagedZone_DnssecConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_DnssecConfigFields,
 		},
 		"ForwardingConfig": ubx.FieldSpec{
 			WireName: "forwarding_config",
-			Kind: "object",
-			Fields: ManagedZone_ForwardingConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_ForwardingConfigFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":            ubx.FieldSpec{WireName: "id"},
+		"Kind":          ubx.FieldSpec{WireName: "kind"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"NameServerSet": ubx.FieldSpec{WireName: "name_server_set"},
-		"NameServers": ubx.FieldSpec{WireName: "name_servers"},
+		"NameServers":   ubx.FieldSpec{WireName: "name_servers"},
 		"PeeringConfig": ubx.FieldSpec{
 			WireName: "peering_config",
-			Kind: "object",
-			Fields: ManagedZone_PeeringConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_PeeringConfigFields,
 		},
 		"PrivateVisibilityConfig": ubx.FieldSpec{
 			WireName: "private_visibility_config",
-			Kind: "object",
-			Fields: ManagedZone_PrivateVisibilityConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_PrivateVisibilityConfigFields,
 		},
 		"ReverseLookupConfig": ubx.FieldSpec{
 			WireName: "reverse_lookup_config",
-			Kind: "object",
-			Fields: ManagedZone_ReverseLookupConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_ReverseLookupConfigFields,
 		},
 		"ServiceDirectoryConfig": ubx.FieldSpec{
 			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: ManagedZone_ServiceDirectoryConfigFields,
+			Kind:     "object",
+			Fields:   ManagedZone_ServiceDirectoryConfigFields,
 		},
 		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 	},

@@ -4,11 +4,11 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceChange_PropertyChanges struct {
-	After any
-	AfterSensitivePaths any
-	Before any
+	After                any
+	AfterSensitivePaths  any
+	Before               any
 	BeforeSensitivePaths any
-	Path any
+	Path                 any
 }
 
 type ResourceChange_TerraformInfo struct {
@@ -31,7 +31,7 @@ type ResourceChangeConfig struct {
 type ResourceChangeAttrs struct {
 	// Output only. The intent of the resource change.
 	Intent any
-	Name any
+	Name   any
 	// Output only. The property changes of the resource change.
 	PropertyChanges any
 	// Terraform info of a ResourceChange.

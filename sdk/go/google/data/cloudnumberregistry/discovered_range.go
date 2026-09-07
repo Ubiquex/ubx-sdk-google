@@ -4,7 +4,7 @@ package cloudnumberregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DiscoveredRange_Attributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -48,7 +48,7 @@ type DiscoveredRangeAttrs struct {
 	Ipv6CidrRange any
 	// Optional. User-defined labels.
 	Labels any
-	Name any
+	Name   any
 	// Optional. The resource name of the parent DiscoveredRange, in the format `projects/{project}/locations/{location}/discoveredRanges/{discovered_range}`.
 	ParentRange any
 	// Optional. The Realm of the DiscoveredRange.

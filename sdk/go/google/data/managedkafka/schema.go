@@ -4,13 +4,13 @@ package managedkafka
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_References struct {
-	Name any
+	Name    any
 	Subject any
 	Version any
 }
 
 type SchemaConfig struct {
-	Name any
+	Name    any
 	Subject any
 }
 
@@ -22,13 +22,13 @@ type SchemaAttrs struct {
 	Schema any
 	// Optional. The schema type of the schema.
 	SchemaType any
-	Subject any
+	Subject    any
 }
 
 var Schema = ubx.DataSourceBinding{
 	WireType: "google_managedkafka_schema",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Subject": ubx.FieldSpec{WireName: "subject"},
 	},
 }

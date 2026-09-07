@@ -11,9 +11,9 @@ type Schema_CompiledProtoSchema struct {
 }
 
 var Schema_CompiledProtoSchemaFields = ubx.FieldMap{
-		"CompiledBytes": ubx.FieldSpec{WireName: "compiled_bytes"},
-		"RootMessage": ubx.FieldSpec{WireName: "root_message"},
-	}
+	"CompiledBytes": ubx.FieldSpec{WireName: "compiled_bytes"},
+	"RootMessage":   ubx.FieldSpec{WireName: "root_message"},
+}
 
 type SchemaConfig struct {
 	// Configuration specific to compiled Protocol Buffer schemas.
@@ -46,11 +46,11 @@ var Schema = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompiledProtoSchema": ubx.FieldSpec{
 			WireName: "compiled_proto_schema",
-			Kind: "object",
-			Fields: Schema_CompiledProtoSchemaFields,
+			Kind:     "object",
+			Fields:   Schema_CompiledProtoSchemaFields,
 		},
 		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

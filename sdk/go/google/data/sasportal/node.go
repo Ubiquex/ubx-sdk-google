@@ -10,7 +10,7 @@ type NodeConfig struct {
 type NodeAttrs struct {
 	// The node's display name.
 	DisplayName any
-	Name any
+	Name        any
 	// User ids used by the devices belonging to this node.
 	SasUserIds any
 }

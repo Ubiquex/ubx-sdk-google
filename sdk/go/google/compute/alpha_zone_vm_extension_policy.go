@@ -13,8 +13,8 @@ type AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector stru
 
 type AlphaZoneVmExtensionPolicy_ExtensionPolicies struct {
 	InstalledSoftwareSelector any
-	PinnedVersion any
-	StringConfig any
+	PinnedVersion             any
+	StringConfig              any
 }
 
 type AlphaZoneVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
@@ -26,38 +26,38 @@ type AlphaZoneVmExtensionPolicy_InstanceSelectors struct {
 }
 
 var AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields = ubx.FieldMap{
-		"AllOfSelectors": ubx.FieldSpec{WireName: "all_of_selectors"},
-	}
+	"AllOfSelectors": ubx.FieldSpec{WireName: "all_of_selectors"},
+}
 
 var AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields = ubx.FieldMap{
-		"AnyOfSelectors": ubx.FieldSpec{
-			WireName: "any_of_selectors",
-			Kind: "map",
-			Fields: AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields,
-		},
-	}
+	"AnyOfSelectors": ubx.FieldSpec{
+		WireName: "any_of_selectors",
+		Kind:     "map",
+		Fields:   AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields,
+	},
+}
 
 var AlphaZoneVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"InstalledSoftwareSelector": ubx.FieldSpec{
-			WireName: "installed_software_selector",
-			Kind: "object",
-			Fields: AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields,
-		},
-		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
-		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
-	}
+	"InstalledSoftwareSelector": ubx.FieldSpec{
+		WireName: "installed_software_selector",
+		Kind:     "object",
+		Fields:   AlphaZoneVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields,
+	},
+	"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
+	"StringConfig":  ubx.FieldSpec{WireName: "string_config"},
+}
 
 var AlphaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-	}
+	"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
+}
 
 var AlphaZoneVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: AlphaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
-		},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   AlphaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
+	},
+}
 
 type AlphaZoneVmExtensionPolicyConfig struct {
 	// An optional description of this resource.
@@ -109,15 +109,15 @@ var AlphaZoneVmExtensionPolicy = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "map",
-			Fields: AlphaZoneVmExtensionPolicy_ExtensionPoliciesFields,
+			Kind:     "map",
+			Fields:   AlphaZoneVmExtensionPolicy_ExtensionPoliciesFields,
 		},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
-			Kind: "list",
-			Fields: AlphaZoneVmExtensionPolicy_InstanceSelectorsFields,
+			Kind:     "list",
+			Fields:   AlphaZoneVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 	},
 }

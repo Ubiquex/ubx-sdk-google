@@ -27,8 +27,8 @@ type AlphaDiskType_Deprecated struct {
 
 type AlphaDiskTypeConfig struct {
 	DiskType any
-	Project any
-	Zone any
+	Project  any
+	Zone     any
 }
 
 type AlphaDiskTypeAttrs struct {
@@ -40,13 +40,13 @@ type AlphaDiskTypeAttrs struct {
 	Deprecated any
 	// [Output Only] An optional description of this resource.
 	Description any
-	DiskType any
+	DiskType    any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. [Output Only] Type of the resource. Always compute#diskType for disk types.
 	Kind any
 	// [Output Only] Name of the resource.
-	Name any
+	Name    any
 	Project any
 	// [Output Only] URL of the region where the disk type resides. Only applicable for regional resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any
@@ -56,14 +56,14 @@ type AlphaDiskTypeAttrs struct {
 	SelfLinkWithId any
 	// [Output Only] An optional textual description of the valid disk size, such as "10GB-10TB".
 	ValidDiskSize any
-	Zone any
+	Zone          any
 }
 
 var AlphaDiskType = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_disk_type",
 	Fields: ubx.FieldMap{
 		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Project":  ubx.FieldSpec{WireName: "project"},
+		"Zone":     ubx.FieldSpec{WireName: "zone"},
 	},
 }

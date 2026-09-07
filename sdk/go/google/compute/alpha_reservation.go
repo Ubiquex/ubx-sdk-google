@@ -10,7 +10,7 @@ type AlphaReservation_AdvancedDeploymentControl struct {
 
 type AlphaReservation_AggregateReservation_InUseResources_Accelerator struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 }
 
 type AlphaReservation_AggregateReservation_InUseResources struct {
@@ -67,7 +67,7 @@ type AlphaReservation_ResourceStatus_HealthInfo struct {
 
 type AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance_StartTimeWindow struct {
 	Earliest any
-	Latest any
+	Latest   any
 }
 
 type AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance struct {
@@ -83,7 +83,7 @@ type AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMainten
 	MaintenanceOnShutdown any
 	// The reasons for the maintenance. Only valid for vms.
 	MaintenanceReasons any
-	MaintenanceStatus any
+	MaintenanceStatus  any
 	// Represents a window of time using two timestamps: `earliest` and `latest`.
 	StartTimeWindow any
 	// [Output Only] The time when the maintenance will take place. This value is inRFC3339 text format. DEPRECATED: Use window_start_time instead.
@@ -156,7 +156,7 @@ type AlphaReservation_ShareSettings struct {
 
 type AlphaReservation_SpecificReservation_InstanceProperties_LocalSsds struct {
 	DiskSizeGb any
-	Interface any
+	Interface  any
 }
 
 type AlphaReservation_SpecificReservation_InstanceProperties struct {
@@ -190,188 +190,188 @@ type AlphaReservation_SpecificReservation struct {
 }
 
 var AlphaReservation_AdvancedDeploymentControlFields = ubx.FieldMap{
-		"ReservationOperationalMode": ubx.FieldSpec{WireName: "reservation_operational_mode"},
-	}
+	"ReservationOperationalMode": ubx.FieldSpec{WireName: "reservation_operational_mode"},
+}
 
 var AlphaReservation_AggregateReservation_InUseResources_AcceleratorFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+}
 
 var AlphaReservation_AggregateReservation_InUseResourcesFields = ubx.FieldMap{
-		"Accelerator": ubx.FieldSpec{
-			WireName: "accelerator",
-			Kind: "object",
-			Fields: AlphaReservation_AggregateReservation_InUseResources_AcceleratorFields,
-		},
-	}
+	"Accelerator": ubx.FieldSpec{
+		WireName: "accelerator",
+		Kind:     "object",
+		Fields:   AlphaReservation_AggregateReservation_InUseResources_AcceleratorFields,
+	},
+}
 
 var AlphaReservation_AggregateReservationFields = ubx.FieldMap{
-		"HostCount": ubx.FieldSpec{WireName: "host_count"},
-		"InUseHostCount": ubx.FieldSpec{WireName: "in_use_host_count"},
-		"InUseInstanceCount": ubx.FieldSpec{WireName: "in_use_instance_count"},
-		"InUseResources": ubx.FieldSpec{
-			WireName: "in_use_resources",
-			Kind: "list",
-			Fields: AlphaReservation_AggregateReservation_InUseResourcesFields,
-		},
-		"ReservedResources": ubx.FieldSpec{
-			WireName: "reserved_resources",
-			Kind: "list",
-			Fields: AlphaReservation_AggregateReservation_InUseResourcesFields,
-		},
-		"VmFamily": ubx.FieldSpec{WireName: "vm_family"},
-		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
-	}
+	"HostCount":          ubx.FieldSpec{WireName: "host_count"},
+	"InUseHostCount":     ubx.FieldSpec{WireName: "in_use_host_count"},
+	"InUseInstanceCount": ubx.FieldSpec{WireName: "in_use_instance_count"},
+	"InUseResources": ubx.FieldSpec{
+		WireName: "in_use_resources",
+		Kind:     "list",
+		Fields:   AlphaReservation_AggregateReservation_InUseResourcesFields,
+	},
+	"ReservedResources": ubx.FieldSpec{
+		WireName: "reserved_resources",
+		Kind:     "list",
+		Fields:   AlphaReservation_AggregateReservation_InUseResourcesFields,
+	},
+	"VmFamily":     ubx.FieldSpec{WireName: "vm_family"},
+	"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
+}
 
 var AlphaReservation_DeleteAfterDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AlphaReservation_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaReservation_ReservationSharingPolicyFields = ubx.FieldMap{
-		"ServiceShareType": ubx.FieldSpec{WireName: "service_share_type"},
-	}
+	"ServiceShareType": ubx.FieldSpec{WireName: "service_share_type"},
+}
 
 var AlphaReservation_ResourceStatus_AggregateAllocationFields = ubx.FieldMap{
-		"Utilizations": ubx.FieldSpec{WireName: "utilizations"},
-	}
+	"Utilizations": ubx.FieldSpec{WireName: "utilizations"},
+}
 
 var AlphaReservation_ResourceStatus_HealthInfoFields = ubx.FieldMap{
-		"DegradedBlockCount": ubx.FieldSpec{WireName: "degraded_block_count"},
-		"HealthStatus": ubx.FieldSpec{WireName: "health_status"},
-		"HealthyBlockCount": ubx.FieldSpec{WireName: "healthy_block_count"},
-	}
+	"DegradedBlockCount": ubx.FieldSpec{WireName: "degraded_block_count"},
+	"HealthStatus":       ubx.FieldSpec{WireName: "health_status"},
+	"HealthyBlockCount":  ubx.FieldSpec{WireName: "healthy_block_count"},
+}
 
 var AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance_StartTimeWindowFields = ubx.FieldMap{
-		"Earliest": ubx.FieldSpec{WireName: "earliest"},
-		"Latest": ubx.FieldSpec{WireName: "latest"},
-	}
+	"Earliest": ubx.FieldSpec{WireName: "earliest"},
+	"Latest":   ubx.FieldSpec{WireName: "latest"},
+}
 
 var AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields = ubx.FieldMap{
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"Date": ubx.FieldSpec{WireName: "date"},
-		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-		"MaintenanceMethod": ubx.FieldSpec{WireName: "maintenance_method"},
-		"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
-		"MaintenanceReasons": ubx.FieldSpec{WireName: "maintenance_reasons"},
-		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
-		"StartTimeWindow": ubx.FieldSpec{
-			WireName: "start_time_window",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance_StartTimeWindowFields,
-		},
-		"Time": ubx.FieldSpec{WireName: "time"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
-		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
-	}
+	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
+	"Date":                  ubx.FieldSpec{WireName: "date"},
+	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+	"MaintenanceMethod":     ubx.FieldSpec{WireName: "maintenance_method"},
+	"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
+	"MaintenanceReasons":    ubx.FieldSpec{WireName: "maintenance_reasons"},
+	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
+	"StartTimeWindow": ubx.FieldSpec{
+		WireName: "start_time_window",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenance_StartTimeWindowFields,
+	},
+	"Time":            ubx.FieldSpec{WireName: "time"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+	"WindowEndTime":   ubx.FieldSpec{WireName: "window_end_time"},
+	"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
+}
 
 var AlphaReservation_ResourceStatus_ReservationMaintenanceFields = ubx.FieldMap{
-		"InstanceMaintenanceOngoingCount": ubx.FieldSpec{WireName: "instance_maintenance_ongoing_count"},
-		"InstanceMaintenancePendingCount": ubx.FieldSpec{WireName: "instance_maintenance_pending_count"},
-		"MaintenanceOngoingCount": ubx.FieldSpec{WireName: "maintenance_ongoing_count"},
-		"MaintenancePendingCount": ubx.FieldSpec{WireName: "maintenance_pending_count"},
-		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
-		"SubblockInfraMaintenanceOngoingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_ongoing_count"},
-		"SubblockInfraMaintenancePendingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_pending_count"},
-		"UpcomingGroupMaintenance": ubx.FieldSpec{
-			WireName: "upcoming_group_maintenance",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
-		},
-	}
+	"InstanceMaintenanceOngoingCount":      ubx.FieldSpec{WireName: "instance_maintenance_ongoing_count"},
+	"InstanceMaintenancePendingCount":      ubx.FieldSpec{WireName: "instance_maintenance_pending_count"},
+	"MaintenanceOngoingCount":              ubx.FieldSpec{WireName: "maintenance_ongoing_count"},
+	"MaintenancePendingCount":              ubx.FieldSpec{WireName: "maintenance_pending_count"},
+	"SchedulingType":                       ubx.FieldSpec{WireName: "scheduling_type"},
+	"SubblockInfraMaintenanceOngoingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_ongoing_count"},
+	"SubblockInfraMaintenancePendingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_pending_count"},
+	"UpcomingGroupMaintenance": ubx.FieldSpec{
+		WireName: "upcoming_group_maintenance",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
+	},
+}
 
 var AlphaReservation_ResourceStatus_SpecificSkuAllocationFields = ubx.FieldMap{
-		"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
-		"Utilizations": ubx.FieldSpec{WireName: "utilizations"},
-	}
+	"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
+	"Utilizations":             ubx.FieldSpec{WireName: "utilizations"},
+}
 
 var AlphaReservation_ResourceStatusFields = ubx.FieldMap{
-		"AggregateAllocation": ubx.FieldSpec{
-			WireName: "aggregate_allocation",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_AggregateAllocationFields,
-		},
-		"HealthInfo": ubx.FieldSpec{
-			WireName: "health_info",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_HealthInfoFields,
-		},
-		"ReservationBlockCount": ubx.FieldSpec{WireName: "reservation_block_count"},
-		"ReservationMaintenance": ubx.FieldSpec{
-			WireName: "reservation_maintenance",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_ReservationMaintenanceFields,
-		},
-		"SpecificSkuAllocation": ubx.FieldSpec{
-			WireName: "specific_sku_allocation",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatus_SpecificSkuAllocationFields,
-		},
-	}
+	"AggregateAllocation": ubx.FieldSpec{
+		WireName: "aggregate_allocation",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_AggregateAllocationFields,
+	},
+	"HealthInfo": ubx.FieldSpec{
+		WireName: "health_info",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_HealthInfoFields,
+	},
+	"ReservationBlockCount": ubx.FieldSpec{WireName: "reservation_block_count"},
+	"ReservationMaintenance": ubx.FieldSpec{
+		WireName: "reservation_maintenance",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_ReservationMaintenanceFields,
+	},
+	"SpecificSkuAllocation": ubx.FieldSpec{
+		WireName: "specific_sku_allocation",
+		Kind:     "object",
+		Fields:   AlphaReservation_ResourceStatus_SpecificSkuAllocationFields,
+	},
+}
 
 var AlphaReservation_ShareSettings_FolderMapFields = ubx.FieldMap{
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-	}
+	"FolderId": ubx.FieldSpec{WireName: "folder_id"},
+}
 
 var AlphaReservation_ShareSettings_ProjectMapFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var AlphaReservation_ShareSettingsFields = ubx.FieldMap{
-		"FolderMap": ubx.FieldSpec{
-			WireName: "folder_map",
-			Kind: "map",
-			Fields: AlphaReservation_ShareSettings_FolderMapFields,
-		},
-		"ProjectMap": ubx.FieldSpec{
-			WireName: "project_map",
-			Kind: "map",
-			Fields: AlphaReservation_ShareSettings_ProjectMapFields,
-		},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-		"ShareType": ubx.FieldSpec{WireName: "share_type"},
-	}
+	"FolderMap": ubx.FieldSpec{
+		WireName: "folder_map",
+		Kind:     "map",
+		Fields:   AlphaReservation_ShareSettings_FolderMapFields,
+	},
+	"ProjectMap": ubx.FieldSpec{
+		WireName: "project_map",
+		Kind:     "map",
+		Fields:   AlphaReservation_ShareSettings_ProjectMapFields,
+	},
+	"Projects":  ubx.FieldSpec{WireName: "projects"},
+	"ShareType": ubx.FieldSpec{WireName: "share_type"},
+}
 
 var AlphaReservation_SpecificReservation_InstanceProperties_LocalSsdsFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-	}
+	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+	"Interface":  ubx.FieldSpec{WireName: "interface"},
+}
 
 var AlphaReservation_SpecificReservation_InstancePropertiesFields = ubx.FieldMap{
-		"GuestAccelerators": ubx.FieldSpec{
-			WireName: "guest_accelerators",
-			Kind: "list",
-			Fields: AlphaReservation_AggregateReservation_InUseResources_AcceleratorFields,
-		},
-		"LocalSsds": ubx.FieldSpec{
-			WireName: "local_ssds",
-			Kind: "list",
-			Fields: AlphaReservation_SpecificReservation_InstanceProperties_LocalSsdsFields,
-		},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
-		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-	}
+	"GuestAccelerators": ubx.FieldSpec{
+		WireName: "guest_accelerators",
+		Kind:     "list",
+		Fields:   AlphaReservation_AggregateReservation_InUseResources_AcceleratorFields,
+	},
+	"LocalSsds": ubx.FieldSpec{
+		WireName: "local_ssds",
+		Kind:     "list",
+		Fields:   AlphaReservation_SpecificReservation_InstanceProperties_LocalSsdsFields,
+	},
+	"LocationHint":                   ubx.FieldSpec{WireName: "location_hint"},
+	"MachineType":                    ubx.FieldSpec{WireName: "machine_type"},
+	"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
+	"MaintenanceInterval":            ubx.FieldSpec{WireName: "maintenance_interval"},
+	"MinCpuPlatform":                 ubx.FieldSpec{WireName: "min_cpu_platform"},
+}
 
 var AlphaReservation_SpecificReservationFields = ubx.FieldMap{
-		"AssuredCount": ubx.FieldSpec{WireName: "assured_count"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"InUseCount": ubx.FieldSpec{WireName: "in_use_count"},
-		"InstanceProperties": ubx.FieldSpec{
-			WireName: "instance_properties",
-			Kind: "object",
-			Fields: AlphaReservation_SpecificReservation_InstancePropertiesFields,
-		},
-		"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
-	}
+	"AssuredCount": ubx.FieldSpec{WireName: "assured_count"},
+	"Count":        ubx.FieldSpec{WireName: "count"},
+	"InUseCount":   ubx.FieldSpec{WireName: "in_use_count"},
+	"InstanceProperties": ubx.FieldSpec{
+		WireName: "instance_properties",
+		Kind:     "object",
+		Fields:   AlphaReservation_SpecificReservation_InstancePropertiesFields,
+	},
+	"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
+}
 
 type AlphaReservationConfig struct {
 	// Advance control for cluster management, applicable only to DENSE deployment type reservations.
@@ -397,7 +397,7 @@ type AlphaReservationConfig struct {
 	// Additional reservation params.
 	Params any
 	// Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
-	ProtectionTier any
+	ProtectionTier           any
 	ReservationSharingPolicy any
 	// Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
 	ResourcePolicies any
@@ -451,7 +451,7 @@ type AlphaReservationAttrs struct {
 	// Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
 	ProtectionTier any
 	// Output only. [Output only] Indicates the reservation mode of the reservation.
-	ReservationMode any
+	ReservationMode          any
 	ReservationSharingPolicy any
 	// Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
 	ResourcePolicies any
@@ -482,55 +482,55 @@ var AlphaReservation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedDeploymentControl": ubx.FieldSpec{
 			WireName: "advanced_deployment_control",
-			Kind: "object",
-			Fields: AlphaReservation_AdvancedDeploymentControlFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_AdvancedDeploymentControlFields,
 		},
 		"AggregateReservation": ubx.FieldSpec{
 			WireName: "aggregate_reservation",
-			Kind: "object",
-			Fields: AlphaReservation_AggregateReservationFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_AggregateReservationFields,
 		},
 		"ConfidentialComputeType": ubx.FieldSpec{WireName: "confidential_compute_type"},
 		"DeleteAfterDuration": ubx.FieldSpec{
 			WireName: "delete_after_duration",
-			Kind: "object",
-			Fields: AlphaReservation_DeleteAfterDurationFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_DeleteAfterDurationFields,
 		},
-		"DeleteAtTime": ubx.FieldSpec{WireName: "delete_at_time"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EarlyAccessMaintenance": ubx.FieldSpec{WireName: "early_access_maintenance"},
+		"DeleteAtTime":              ubx.FieldSpec{WireName: "delete_at_time"},
+		"DeploymentType":            ubx.FieldSpec{WireName: "deployment_type"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"EarlyAccessMaintenance":    ubx.FieldSpec{WireName: "early_access_maintenance"},
 		"EnableEmergentMaintenance": ubx.FieldSpec{WireName: "enable_emergent_maintenance"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaReservation_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_ParamsFields,
 		},
 		"ProtectionTier": ubx.FieldSpec{WireName: "protection_tier"},
 		"ReservationSharingPolicy": ubx.FieldSpec{
 			WireName: "reservation_sharing_policy",
-			Kind: "object",
-			Fields: AlphaReservation_ReservationSharingPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_ReservationSharingPolicyFields,
 		},
 		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: AlphaReservation_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_ResourceStatusFields,
 		},
 		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind: "object",
-			Fields: AlphaReservation_ShareSettingsFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_ShareSettingsFields,
 		},
 		"SpecificReservation": ubx.FieldSpec{
 			WireName: "specific_reservation",
-			Kind: "object",
-			Fields: AlphaReservation_SpecificReservationFields,
+			Kind:     "object",
+			Fields:   AlphaReservation_SpecificReservationFields,
 		},
 		"SpecificReservationRequired": ubx.FieldSpec{WireName: "specific_reservation_required"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":                        ubx.FieldSpec{WireName: "zone"},
 	},
 }

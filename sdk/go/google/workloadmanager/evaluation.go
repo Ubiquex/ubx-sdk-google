@@ -32,28 +32,28 @@ type Evaluation_ResourceStatus struct {
 }
 
 var Evaluation_BigQueryDestinationFields = ubx.FieldMap{
-		"CreateNewResultsTable": ubx.FieldSpec{WireName: "create_new_results_table"},
-		"DestinationDataset": ubx.FieldSpec{WireName: "destination_dataset"},
-	}
+	"CreateNewResultsTable": ubx.FieldSpec{WireName: "create_new_results_table"},
+	"DestinationDataset":    ubx.FieldSpec{WireName: "destination_dataset"},
+}
 
 var Evaluation_ResourceFilter_GceInstanceFilterFields = ubx.FieldMap{
-		"ServiceAccounts": ubx.FieldSpec{WireName: "service_accounts"},
-	}
+	"ServiceAccounts": ubx.FieldSpec{WireName: "service_accounts"},
+}
 
 var Evaluation_ResourceFilterFields = ubx.FieldMap{
-		"GceInstanceFilter": ubx.FieldSpec{
-			WireName: "gce_instance_filter",
-			Kind: "object",
-			Fields: Evaluation_ResourceFilter_GceInstanceFilterFields,
-		},
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-		"ResourceIdPatterns": ubx.FieldSpec{WireName: "resource_id_patterns"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"GceInstanceFilter": ubx.FieldSpec{
+		WireName: "gce_instance_filter",
+		Kind:     "object",
+		Fields:   Evaluation_ResourceFilter_GceInstanceFilterFields,
+	},
+	"InclusionLabels":    ubx.FieldSpec{WireName: "inclusion_labels"},
+	"ResourceIdPatterns": ubx.FieldSpec{WireName: "resource_id_patterns"},
+	"Scopes":             ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Evaluation_ResourceStatusFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type EvaluationConfig struct {
 	// BigQuery destination for evaluation results.
@@ -114,26 +114,26 @@ var Evaluation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigQueryDestination": ubx.FieldSpec{
 			WireName: "big_query_destination",
-			Kind: "object",
-			Fields: Evaluation_BigQueryDestinationFields,
+			Kind:     "object",
+			Fields:   Evaluation_BigQueryDestinationFields,
 		},
 		"CustomRulesBucket": ubx.FieldSpec{WireName: "custom_rules_bucket"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EvaluationType": ubx.FieldSpec{WireName: "evaluation_type"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"EvaluationType":    ubx.FieldSpec{WireName: "evaluation_type"},
+		"KmsKey":            ubx.FieldSpec{WireName: "kms_key"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ResourceFilter": ubx.FieldSpec{
 			WireName: "resource_filter",
-			Kind: "object",
-			Fields: Evaluation_ResourceFilterFields,
+			Kind:     "object",
+			Fields:   Evaluation_ResourceFilterFields,
 		},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: Evaluation_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   Evaluation_ResourceStatusFields,
 		},
 		"RuleNames": ubx.FieldSpec{WireName: "rule_names"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"Schedule":  ubx.FieldSpec{WireName: "schedule"},
 	},
 }

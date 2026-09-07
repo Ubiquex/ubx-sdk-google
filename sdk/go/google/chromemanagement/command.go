@@ -13,10 +13,10 @@ type Command_CommandResult struct {
 }
 
 var Command_CommandResultFields = ubx.FieldMap{
-		"ClientExecutionTime": ubx.FieldSpec{WireName: "client_execution_time"},
-		"ResultCode": ubx.FieldSpec{WireName: "result_code"},
-		"ResultType": ubx.FieldSpec{WireName: "result_type"},
-	}
+	"ClientExecutionTime": ubx.FieldSpec{WireName: "client_execution_time"},
+	"ResultCode":          ubx.FieldSpec{WireName: "result_code"},
+	"ResultType":          ubx.FieldSpec{WireName: "result_type"},
+}
 
 type CommandConfig struct {
 	// Result of the execution of a command.
@@ -51,11 +51,11 @@ var Command = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CommandResult": ubx.FieldSpec{
 			WireName: "command_result",
-			Kind: "object",
-			Fields: Command_CommandResultFields,
+			Kind:     "object",
+			Fields:   Command_CommandResultFields,
 		},
 		"CommandType": ubx.FieldSpec{WireName: "command_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Payload":     ubx.FieldSpec{WireName: "payload"},
 	},
 }

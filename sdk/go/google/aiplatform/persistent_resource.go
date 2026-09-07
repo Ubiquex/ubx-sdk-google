@@ -140,136 +140,136 @@ type PersistentResource_ResourceRuntimeSpec struct {
 }
 
 var PersistentResource_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var PersistentResource_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var PersistentResource_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var PersistentResource_ResourcePools_AutoscalingSpecFields = ubx.FieldMap{
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-	}
+	"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
+	"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
+}
 
 var PersistentResource_ResourcePools_DiskSpecFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var PersistentResource_ResourcePools_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":      ubx.FieldSpec{WireName: "machine_type"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var PersistentResource_ResourcePoolsFields = ubx.FieldMap{
-		"AutoscalingSpec": ubx.FieldSpec{
-			WireName: "autoscaling_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourcePools_AutoscalingSpecFields,
-		},
-		"DiskSpec": ubx.FieldSpec{
-			WireName: "disk_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourcePools_DiskSpecFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourcePools_MachineSpecFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-		"UsedReplicaCount": ubx.FieldSpec{WireName: "used_replica_count"},
-	}
+	"AutoscalingSpec": ubx.FieldSpec{
+		WireName: "autoscaling_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourcePools_AutoscalingSpecFields,
+	},
+	"DiskSpec": ubx.FieldSpec{
+		WireName: "disk_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourcePools_DiskSpecFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourcePools_MachineSpecFields,
+	},
+	"ReplicaCount":     ubx.FieldSpec{WireName: "replica_count"},
+	"UsedReplicaCount": ubx.FieldSpec{WireName: "used_replica_count"},
+}
 
 var PersistentResource_ResourceRuntimeFields = ubx.FieldMap{
-		"AccessUris": ubx.FieldSpec{WireName: "access_uris"},
-	}
+	"AccessUris": ubx.FieldSpec{WireName: "access_uris"},
+}
 
 var PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields = ubx.FieldMap{
-		"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
-		"UpscalingSpeed": ubx.FieldSpec{WireName: "upscaling_speed"},
-	}
+	"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
+	"UpscalingSpeed":     ubx.FieldSpec{WireName: "upscaling_speed"},
+}
 
 var PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"EnableUsageStatsCollection": ubx.FieldSpec{WireName: "enable_usage_stats_collection"},
-	}
+	"Disabled":                   ubx.FieldSpec{WireName: "disabled"},
+	"EnableUsageStatsCollection": ubx.FieldSpec{WireName: "enable_usage_stats_collection"},
+}
 
 var PersistentResource_ResourceRuntimeSpec_RaySpecFields = ubx.FieldMap{
-		"HeadNodeResourcePoolId": ubx.FieldSpec{WireName: "head_node_resource_pool_id"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"RayClusterAutoscalingSpec": ubx.FieldSpec{
-			WireName: "ray_cluster_autoscaling_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields,
-		},
-		"RayLogsSpec": ubx.FieldSpec{
-			WireName: "ray_logs_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields,
-		},
-		"RayMetricSpec": ubx.FieldSpec{
-			WireName: "ray_metric_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields,
-		},
-		"ResourcePoolImages": ubx.FieldSpec{WireName: "resource_pool_images"},
-	}
+	"HeadNodeResourcePoolId": ubx.FieldSpec{WireName: "head_node_resource_pool_id"},
+	"ImageUri":               ubx.FieldSpec{WireName: "image_uri"},
+	"RayClusterAutoscalingSpec": ubx.FieldSpec{
+		WireName: "ray_cluster_autoscaling_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields,
+	},
+	"RayLogsSpec": ubx.FieldSpec{
+		WireName: "ray_logs_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields,
+	},
+	"RayMetricSpec": ubx.FieldSpec{
+		WireName: "ray_metric_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields,
+	},
+	"ResourcePoolImages": ubx.FieldSpec{WireName: "resource_pool_images"},
+}
 
 var PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields = ubx.FieldMap{
-		"EnableCustomServiceAccount": ubx.FieldSpec{WireName: "enable_custom_service_account"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"EnableCustomServiceAccount": ubx.FieldSpec{WireName: "enable_custom_service_account"},
+	"ServiceAccount":             ubx.FieldSpec{WireName: "service_account"},
+}
 
 var PersistentResource_ResourceRuntimeSpecFields = ubx.FieldMap{
-		"RaySpec": ubx.FieldSpec{
-			WireName: "ray_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpec_RaySpecFields,
-		},
-		"ServiceAccountSpec": ubx.FieldSpec{
-			WireName: "service_account_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields,
-		},
-	}
+	"RaySpec": ubx.FieldSpec{
+		WireName: "ray_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourceRuntimeSpec_RaySpecFields,
+	},
+	"ServiceAccountSpec": ubx.FieldSpec{
+		WireName: "service_account_spec",
+		Kind:     "object",
+		Fields:   PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields,
+	},
+}
 
 type PersistentResourceConfig struct {
 	// Optional. The display name of the PersistentResource. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -339,37 +339,37 @@ var PersistentResource = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: PersistentResource_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   PersistentResource_EncryptionSpecFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: PersistentResource_ErrorFields,
+			Kind:     "object",
+			Fields:   PersistentResource_ErrorFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: PersistentResource_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   PersistentResource_PscInterfaceConfigFields,
 		},
 		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
 		"ResourcePools": ubx.FieldSpec{
 			WireName: "resource_pools",
-			Kind: "list",
-			Fields: PersistentResource_ResourcePoolsFields,
+			Kind:     "list",
+			Fields:   PersistentResource_ResourcePoolsFields,
 		},
 		"ResourceRuntime": ubx.FieldSpec{
 			WireName: "resource_runtime",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeFields,
+			Kind:     "object",
+			Fields:   PersistentResource_ResourceRuntimeFields,
 		},
 		"ResourceRuntimeSpec": ubx.FieldSpec{
 			WireName: "resource_runtime_spec",
-			Kind: "object",
-			Fields: PersistentResource_ResourceRuntimeSpecFields,
+			Kind:     "object",
+			Fields:   PersistentResource_ResourceRuntimeSpecFields,
 		},
 	},
 }

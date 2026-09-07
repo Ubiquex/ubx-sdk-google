@@ -4,13 +4,13 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaSslPolicy_Warnings_Data struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BetaSslPolicy_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
@@ -65,12 +65,12 @@ type BetaSslPolicyAttrs struct {
 var BetaSslPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_beta_ssl_policy",
 	Fields: ubx.FieldMap{
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CustomFeatures":         ubx.FieldSpec{WireName: "custom_features"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
+		"MinTlsVersion":          ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PostQuantumKeyExchange": ubx.FieldSpec{WireName: "post_quantum_key_exchange"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
+		"Profile":                ubx.FieldSpec{WireName: "profile"},
 	},
 }

@@ -27,14 +27,14 @@ type Index_IndexStats struct {
 }
 
 var Index_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Index_IndexStatsFields = ubx.FieldMap{
-		"ShardsCount": ubx.FieldSpec{WireName: "shards_count"},
-		"SparseVectorsCount": ubx.FieldSpec{WireName: "sparse_vectors_count"},
-		"VectorsCount": ubx.FieldSpec{WireName: "vectors_count"},
-	}
+	"ShardsCount":        ubx.FieldSpec{WireName: "shards_count"},
+	"SparseVectorsCount": ubx.FieldSpec{WireName: "sparse_vectors_count"},
+	"VectorsCount":       ubx.FieldSpec{WireName: "vectors_count"},
+}
 
 type IndexConfig struct {
 	// The description of the Index.
@@ -97,18 +97,18 @@ var Index = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: Index_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   Index_EncryptionSpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"IndexStats": ubx.FieldSpec{
 			WireName: "index_stats",
-			Kind: "object",
-			Fields: Index_IndexStatsFields,
+			Kind:     "object",
+			Fields:   Index_IndexStatsFields,
 		},
 		"IndexUpdateMethod": ubx.FieldSpec{WireName: "index_update_method"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
 	},
 }

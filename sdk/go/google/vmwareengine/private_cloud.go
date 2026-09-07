@@ -58,48 +58,48 @@ type PrivateCloud_NetworkConfig struct {
 }
 
 var PrivateCloud_EncryptionConfigFields = ubx.FieldMap{
-		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var PrivateCloud_HcxFields = ubx.FieldMap{
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Fqdn":       ubx.FieldSpec{WireName: "fqdn"},
+	"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"Version":    ubx.FieldSpec{WireName: "version"},
+}
 
 var PrivateCloud_ManagementCluster_NodeTypeConfigsFields = ubx.FieldMap{
-		"CustomCoreCount": ubx.FieldSpec{WireName: "custom_core_count"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-	}
+	"CustomCoreCount": ubx.FieldSpec{WireName: "custom_core_count"},
+	"NodeCount":       ubx.FieldSpec{WireName: "node_count"},
+}
 
 var PrivateCloud_ManagementCluster_StretchedClusterConfigFields = ubx.FieldMap{
-		"PreferredLocation": ubx.FieldSpec{WireName: "preferred_location"},
-		"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
-	}
+	"PreferredLocation": ubx.FieldSpec{WireName: "preferred_location"},
+	"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
+}
 
 var PrivateCloud_ManagementClusterFields = ubx.FieldMap{
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"NodeTypeConfigs": ubx.FieldSpec{
-			WireName: "node_type_configs",
-			Kind: "map",
-			Fields: PrivateCloud_ManagementCluster_NodeTypeConfigsFields,
-		},
-		"StretchedClusterConfig": ubx.FieldSpec{
-			WireName: "stretched_cluster_config",
-			Kind: "object",
-			Fields: PrivateCloud_ManagementCluster_StretchedClusterConfigFields,
-		},
-	}
+	"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
+	"NodeTypeConfigs": ubx.FieldSpec{
+		WireName: "node_type_configs",
+		Kind:     "map",
+		Fields:   PrivateCloud_ManagementCluster_NodeTypeConfigsFields,
+	},
+	"StretchedClusterConfig": ubx.FieldSpec{
+		WireName: "stretched_cluster_config",
+		Kind:     "object",
+		Fields:   PrivateCloud_ManagementCluster_StretchedClusterConfigFields,
+	},
+}
 
 var PrivateCloud_NetworkConfigFields = ubx.FieldMap{
-		"DnsServerIp": ubx.FieldSpec{WireName: "dns_server_ip"},
-		"ManagementCidr": ubx.FieldSpec{WireName: "management_cidr"},
-		"ManagementIpAddressLayoutVersion": ubx.FieldSpec{WireName: "management_ip_address_layout_version"},
-		"VmwareEngineNetwork": ubx.FieldSpec{WireName: "vmware_engine_network"},
-		"VmwareEngineNetworkCanonical": ubx.FieldSpec{WireName: "vmware_engine_network_canonical"},
-	}
+	"DnsServerIp":                      ubx.FieldSpec{WireName: "dns_server_ip"},
+	"ManagementCidr":                   ubx.FieldSpec{WireName: "management_cidr"},
+	"ManagementIpAddressLayoutVersion": ubx.FieldSpec{WireName: "management_ip_address_layout_version"},
+	"VmwareEngineNetwork":              ubx.FieldSpec{WireName: "vmware_engine_network"},
+	"VmwareEngineNetworkCanonical":     ubx.FieldSpec{WireName: "vmware_engine_network_canonical"},
+}
 
 type PrivateCloudConfig struct {
 	// User-provided description for this private cloud.
@@ -159,34 +159,34 @@ var PrivateCloud = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: PrivateCloud_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_EncryptionConfigFields,
 		},
 		"Hcx": ubx.FieldSpec{
 			WireName: "hcx",
-			Kind: "object",
-			Fields: PrivateCloud_HcxFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_HcxFields,
 		},
 		"ManagementCluster": ubx.FieldSpec{
 			WireName: "management_cluster",
-			Kind: "object",
-			Fields: PrivateCloud_ManagementClusterFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_ManagementClusterFields,
 		},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: PrivateCloud_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_NetworkConfigFields,
 		},
 		"Nsx": ubx.FieldSpec{
 			WireName: "nsx",
-			Kind: "object",
-			Fields: PrivateCloud_HcxFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_HcxFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"Vcenter": ubx.FieldSpec{
 			WireName: "vcenter",
-			Kind: "object",
-			Fields: PrivateCloud_HcxFields,
+			Kind:     "object",
+			Fields:   PrivateCloud_HcxFields,
 		},
 	},
 }

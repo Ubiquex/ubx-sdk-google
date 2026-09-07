@@ -52,11 +52,11 @@ type EndpointAttrs struct {
 var Endpoint = ubx.ResourceBinding{
 	WireType: "google_ids_endpoint",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Network":          ubx.FieldSpec{WireName: "network"},
+		"Severity":         ubx.FieldSpec{WireName: "severity"},
 		"ThreatExceptions": ubx.FieldSpec{WireName: "threat_exceptions"},
-		"TrafficLogs": ubx.FieldSpec{WireName: "traffic_logs"},
+		"TrafficLogs":      ubx.FieldSpec{WireName: "traffic_logs"},
 	},
 }

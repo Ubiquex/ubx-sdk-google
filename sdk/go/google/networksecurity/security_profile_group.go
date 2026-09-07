@@ -48,12 +48,12 @@ type SecurityProfileGroupAttrs struct {
 var SecurityProfileGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_security_profile_group",
 	Fields: ubx.FieldMap{
-		"CustomInterceptProfile": ubx.FieldSpec{WireName: "custom_intercept_profile"},
-		"CustomMirroringProfile": ubx.FieldSpec{WireName: "custom_mirroring_profile"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CustomInterceptProfile":  ubx.FieldSpec{WireName: "custom_intercept_profile"},
+		"CustomMirroringProfile":  ubx.FieldSpec{WireName: "custom_mirroring_profile"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Labels":                  ubx.FieldSpec{WireName: "labels"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"ThreatPreventionProfile": ubx.FieldSpec{WireName: "threat_prevention_profile"},
-		"UrlFilteringProfile": ubx.FieldSpec{WireName: "url_filtering_profile"},
+		"UrlFilteringProfile":     ubx.FieldSpec{WireName: "url_filtering_profile"},
 	},
 }

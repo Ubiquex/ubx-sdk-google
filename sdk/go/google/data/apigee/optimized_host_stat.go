@@ -27,60 +27,60 @@ type OptimizedHostStat_Response struct {
 }
 
 type OptimizedHostStatConfig struct {
-	Accuracy any
+	Accuracy         any
 	EnvgroupHostname any
-	Filter any
-	Limit any
-	Name any
-	Offset any
-	Realtime any
-	Select any
-	Sort any
-	Sortby any
-	TimeRange any
-	TimeUnit any
-	Topk any
-	TsAscending any
-	Tzo any
+	Filter           any
+	Limit            any
+	Name             any
+	Offset           any
+	Realtime         any
+	Select           any
+	Sort             any
+	Sortby           any
+	TimeRange        any
+	TimeUnit         any
+	Topk             any
+	TsAscending      any
+	Tzo              any
 }
 
 type OptimizedHostStatAttrs struct {
-	Accuracy any
+	Accuracy         any
 	EnvgroupHostname any
-	Filter any
-	Limit any
-	Name any
-	Offset any
-	Realtime any
+	Filter           any
+	Limit            any
+	Name             any
+	Offset           any
+	Realtime         any
 	// Encapsulates a response format for JavaScript Optimized Scenario.
-	Response any
-	Select any
-	Sort any
-	Sortby any
-	TimeRange any
-	TimeUnit any
-	Topk any
+	Response    any
+	Select      any
+	Sort        any
+	Sortby      any
+	TimeRange   any
+	TimeUnit    any
+	Topk        any
 	TsAscending any
-	Tzo any
+	Tzo         any
 }
 
 var OptimizedHostStat = ubx.DataSourceBinding{
 	WireType: "google_apigee_optimized_host_stat",
 	Fields: ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
+		"Accuracy":         ubx.FieldSpec{WireName: "accuracy"},
 		"EnvgroupHostname": ubx.FieldSpec{WireName: "envgroup_hostname"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Realtime": ubx.FieldSpec{WireName: "realtime"},
-		"Select": ubx.FieldSpec{WireName: "select"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Sortby": ubx.FieldSpec{WireName: "sortby"},
-		"TimeRange": ubx.FieldSpec{WireName: "time_range"},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-		"Topk": ubx.FieldSpec{WireName: "topk"},
-		"TsAscending": ubx.FieldSpec{WireName: "ts_ascending"},
-		"Tzo": ubx.FieldSpec{WireName: "tzo"},
+		"Filter":           ubx.FieldSpec{WireName: "filter"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Offset":           ubx.FieldSpec{WireName: "offset"},
+		"Realtime":         ubx.FieldSpec{WireName: "realtime"},
+		"Select":           ubx.FieldSpec{WireName: "select"},
+		"Sort":             ubx.FieldSpec{WireName: "sort"},
+		"Sortby":           ubx.FieldSpec{WireName: "sortby"},
+		"TimeRange":        ubx.FieldSpec{WireName: "time_range"},
+		"TimeUnit":         ubx.FieldSpec{WireName: "time_unit"},
+		"Topk":             ubx.FieldSpec{WireName: "topk"},
+		"TsAscending":      ubx.FieldSpec{WireName: "ts_ascending"},
+		"Tzo":              ubx.FieldSpec{WireName: "tzo"},
 	},
 }

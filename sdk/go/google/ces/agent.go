@@ -23,19 +23,19 @@ type Agent_ModelSettings struct {
 
 type Agent_RemoteA2aAgent_A2aConfig_AgentCard_Skills struct {
 	Description any
-	Examples any
-	Id any
-	InputModes any
-	Name any
+	Examples    any
+	Id          any
+	InputModes  any
+	Name        any
 	OutputModes any
-	Tags any
+	Tags        any
 }
 
 type Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces struct {
 	ProtocolBinding any
 	ProtocolVersion any
-	Tenant any
-	Url any
+	Tenant          any
+	Url             any
 }
 
 type Agent_RemoteA2aAgent_A2aConfig_AgentCard struct {
@@ -178,181 +178,181 @@ type Agent_TransferRules struct {
 }
 
 var Agent_AfterAgentCallbacksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Disabled":                  ubx.FieldSpec{WireName: "disabled"},
+	"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
+	"PythonCode":                ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Agent_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputModes": ubx.FieldSpec{WireName: "input_modes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Examples":    ubx.FieldSpec{WireName: "examples"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"InputModes":  ubx.FieldSpec{WireName: "input_modes"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
+	"Tags":        ubx.FieldSpec{WireName: "tags"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields = ubx.FieldMap{
-		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+	"Tenant":          ubx.FieldSpec{WireName: "tenant"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_AgentCardFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Skills": ubx.FieldSpec{
-			WireName: "skills",
-			Kind: "list",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
-		},
-		"SupportedInterfaces": ubx.FieldSpec{
-			WireName: "supported_interfaces",
-			Kind: "list",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Skills": ubx.FieldSpec{
+		WireName: "skills",
+		Kind:     "list",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+	},
+	"SupportedInterfaces": ubx.FieldSpec{
+		WireName: "supported_interfaces",
+		Kind:     "list",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"RequestLocation": ubx.FieldSpec{WireName: "request_location"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"KeyName":             ubx.FieldSpec{WireName: "key_name"},
+	"RequestLocation":     ubx.FieldSpec{WireName: "request_location"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields = ubx.FieldMap{
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"Token": ubx.FieldSpec{WireName: "token"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
-		"OauthGrantType": ubx.FieldSpec{WireName: "oauth_grant_type"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":            ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
+	"OauthGrantType":      ubx.FieldSpec{WireName: "oauth_grant_type"},
+	"Scopes":              ubx.FieldSpec{WireName: "scopes"},
+	"TokenEndpoint":       ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"Scopes":         ubx.FieldSpec{WireName: "scopes"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
-		},
-		"BearerTokenConfig": ubx.FieldSpec{
-			WireName: "bearer_token_config",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+	},
+	"BearerTokenConfig": ubx.FieldSpec{
+		WireName: "bearer_token_config",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
+}
 
 var Agent_RemoteA2aAgent_A2aConfigFields = ubx.FieldMap{
-		"AgentCard": ubx.FieldSpec{
-			WireName: "agent_card",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_AgentCardFields,
-		},
-		"AgentRegistry": ubx.FieldSpec{WireName: "agent_registry"},
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
-		},
-		"ContextId": ubx.FieldSpec{WireName: "context_id"},
-		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
-		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
-		"StreamingEnabled": ubx.FieldSpec{WireName: "streaming_enabled"},
-	}
+	"AgentCard": ubx.FieldSpec{
+		WireName: "agent_card",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_AgentCardFields,
+	},
+	"AgentRegistry": ubx.FieldSpec{WireName: "agent_registry"},
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+	},
+	"ContextId":             ubx.FieldSpec{WireName: "context_id"},
+	"InputVariableMapping":  ubx.FieldSpec{WireName: "input_variable_mapping"},
+	"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
+	"StreamingEnabled":      ubx.FieldSpec{WireName: "streaming_enabled"},
+}
 
 var Agent_RemoteA2aAgentFields = ubx.FieldMap{
-		"A2aConfig": ubx.FieldSpec{
-			WireName: "a2a_config",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgent_A2aConfigFields,
-		},
-	}
+	"A2aConfig": ubx.FieldSpec{
+		WireName: "a2a_config",
+		Kind:     "object",
+		Fields:   Agent_RemoteA2aAgent_A2aConfigFields,
+	},
+}
 
 var Agent_RemoteDialogflowAgentFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
-		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
-		"LanguageCodeVariable": ubx.FieldSpec{WireName: "language_code_variable"},
-		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
-		"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
-	}
+	"Agent":                               ubx.FieldSpec{WireName: "agent"},
+	"EnvironmentId":                       ubx.FieldSpec{WireName: "environment_id"},
+	"FlowId":                              ubx.FieldSpec{WireName: "flow_id"},
+	"InputVariableMapping":                ubx.FieldSpec{WireName: "input_variable_mapping"},
+	"LanguageCodeVariable":                ubx.FieldSpec{WireName: "language_code_variable"},
+	"OutputVariableMapping":               ubx.FieldSpec{WireName: "output_variable_mapping"},
+	"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
+}
 
 var Agent_ToolsetsFields = ubx.FieldMap{
-		"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields = ubx.FieldMap{
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Agent_TransferRules_DeterministicTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-		"PythonCodeCondition": ubx.FieldSpec{
-			WireName: "python_code_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+	"PythonCodeCondition": ubx.FieldSpec{
+		WireName: "python_code_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
+	},
+}
 
 var Agent_TransferRules_DisablePlannerTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+}
 
 var Agent_TransferRulesFields = ubx.FieldMap{
-		"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
-		"DeterministicTransfer": ubx.FieldSpec{
-			WireName: "deterministic_transfer",
-			Kind: "object",
-			Fields: Agent_TransferRules_DeterministicTransferFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DisablePlannerTransfer": ubx.FieldSpec{
-			WireName: "disable_planner_transfer",
-			Kind: "object",
-			Fields: Agent_TransferRules_DisablePlannerTransferFields,
-		},
-	}
+	"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
+	"DeterministicTransfer": ubx.FieldSpec{
+		WireName: "deterministic_transfer",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DeterministicTransferFields,
+	},
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"DisablePlannerTransfer": ubx.FieldSpec{
+		WireName: "disable_planner_transfer",
+		Kind:     "object",
+		Fields:   Agent_TransferRules_DisablePlannerTransferFields,
+	},
+}
 
 type AgentConfig struct {
 	// Optional. The callbacks to execute after the agent is called. The provided callbacks are executed sequentially in the exact order they are given in the list. If a callback returns an overridden response, execution stops and any remaining callbacks are skipped.
@@ -453,67 +453,67 @@ var Agent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AfterAgentCallbacks": ubx.FieldSpec{
 			WireName: "after_agent_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"AfterModelCallbacks": ubx.FieldSpec{
 			WireName: "after_model_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"AfterToolCallbacks": ubx.FieldSpec{
 			WireName: "after_tool_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeAgentCallbacks": ubx.FieldSpec{
 			WireName: "before_agent_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeModelCallbacks": ubx.FieldSpec{
 			WireName: "before_model_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"BeforeToolCallbacks": ubx.FieldSpec{
 			WireName: "before_tool_callbacks",
-			Kind: "list",
-			Fields: Agent_AfterAgentCallbacksFields,
+			Kind:     "list",
+			Fields:   Agent_AfterAgentCallbacksFields,
 		},
 		"ChildAgents": ubx.FieldSpec{WireName: "child_agents"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Guardrails":  ubx.FieldSpec{WireName: "guardrails"},
 		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"LlmAgent": ubx.FieldSpec{WireName: "llm_agent"},
+		"LlmAgent":    ubx.FieldSpec{WireName: "llm_agent"},
 		"ModelSettings": ubx.FieldSpec{
 			WireName: "model_settings",
-			Kind: "object",
-			Fields: Agent_ModelSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_ModelSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RemoteA2aAgent": ubx.FieldSpec{
 			WireName: "remote_a2a_agent",
-			Kind: "object",
-			Fields: Agent_RemoteA2aAgentFields,
+			Kind:     "object",
+			Fields:   Agent_RemoteA2aAgentFields,
 		},
 		"RemoteDialogflowAgent": ubx.FieldSpec{
 			WireName: "remote_dialogflow_agent",
-			Kind: "object",
-			Fields: Agent_RemoteDialogflowAgentFields,
+			Kind:     "object",
+			Fields:   Agent_RemoteDialogflowAgentFields,
 		},
 		"Tools": ubx.FieldSpec{WireName: "tools"},
 		"Toolsets": ubx.FieldSpec{
 			WireName: "toolsets",
-			Kind: "list",
-			Fields: Agent_ToolsetsFields,
+			Kind:     "list",
+			Fields:   Agent_ToolsetsFields,
 		},
 		"TransferRules": ubx.FieldSpec{
 			WireName: "transfer_rules",
-			Kind: "list",
-			Fields: Agent_TransferRulesFields,
+			Kind:     "list",
+			Fields:   Agent_TransferRulesFields,
 		},
 	},
 }

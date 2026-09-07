@@ -25,23 +25,23 @@ type Subscription_ExportConfig struct {
 }
 
 var Subscription_DeliveryConfigFields = ubx.FieldMap{
-		"DeliveryRequirement": ubx.FieldSpec{WireName: "delivery_requirement"},
-	}
+	"DeliveryRequirement": ubx.FieldSpec{WireName: "delivery_requirement"},
+}
 
 var Subscription_ExportConfig_PubsubConfigFields = ubx.FieldMap{
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Topic": ubx.FieldSpec{WireName: "topic"},
+}
 
 var Subscription_ExportConfigFields = ubx.FieldMap{
-		"CurrentState": ubx.FieldSpec{WireName: "current_state"},
-		"DeadLetterTopic": ubx.FieldSpec{WireName: "dead_letter_topic"},
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"PubsubConfig": ubx.FieldSpec{
-			WireName: "pubsub_config",
-			Kind: "object",
-			Fields: Subscription_ExportConfig_PubsubConfigFields,
-		},
-	}
+	"CurrentState":    ubx.FieldSpec{WireName: "current_state"},
+	"DeadLetterTopic": ubx.FieldSpec{WireName: "dead_letter_topic"},
+	"DesiredState":    ubx.FieldSpec{WireName: "desired_state"},
+	"PubsubConfig": ubx.FieldSpec{
+		WireName: "pubsub_config",
+		Kind:     "object",
+		Fields:   Subscription_ExportConfig_PubsubConfigFields,
+	},
+}
 
 type SubscriptionConfig struct {
 	// The settings for a subscription's message delivery.
@@ -70,15 +70,15 @@ var Subscription = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeliveryConfig": ubx.FieldSpec{
 			WireName: "delivery_config",
-			Kind: "object",
-			Fields: Subscription_DeliveryConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_DeliveryConfigFields,
 		},
 		"ExportConfig": ubx.FieldSpec{
 			WireName: "export_config",
-			Kind: "object",
-			Fields: Subscription_ExportConfigFields,
+			Kind:     "object",
+			Fields:   Subscription_ExportConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Topic": ubx.FieldSpec{WireName: "topic"},
 	},
 }

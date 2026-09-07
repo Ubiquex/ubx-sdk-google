@@ -50,7 +50,7 @@ type ViolationAttrs struct {
 	Description any
 	// The folder_id of the violation
 	FolderId any
-	Name any
+	Name     any
 	// Output only. Immutable. Name of the OrgPolicy which was modified with non-compliant change and resulted this violation. Format: `projects/{project_number}/policies/{constraint_name}` `folders/{folder_id}/policies/{constraint_name}` `organizations/{organization_id}/policies/{constraint_name}`
 	NonCompliantOrgPolicy any
 	// Represents remediation guidance to resolve compliance violation for AssuredWorkload

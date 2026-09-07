@@ -16,17 +16,17 @@ type MulticloudDataTransferConfig_Services struct {
 }
 
 var MulticloudDataTransferConfig_Services_StatesFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+}
 
 var MulticloudDataTransferConfig_ServicesFields = ubx.FieldMap{
-		"States": ubx.FieldSpec{
-			WireName: "states",
-			Kind: "list",
-			Fields: MulticloudDataTransferConfig_Services_StatesFields,
-		},
-	}
+	"States": ubx.FieldSpec{
+		WireName: "states",
+		Kind:     "list",
+		Fields:   MulticloudDataTransferConfig_Services_StatesFields,
+	},
+}
 
 type MulticloudDataTransferConfigConfig struct {
 	// Optional. A description of this resource.
@@ -68,13 +68,13 @@ var MulticloudDataTransferConfig = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_multicloud_data_transfer_config",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Services": ubx.FieldSpec{
 			WireName: "services",
-			Kind: "map",
-			Fields: MulticloudDataTransferConfig_ServicesFields,
+			Kind:     "map",
+			Fields:   MulticloudDataTransferConfig_ServicesFields,
 		},
 	},
 }

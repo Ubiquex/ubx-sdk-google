@@ -50,13 +50,13 @@ type V1beta1ContextAttrs struct {
 var V1beta1Context = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_context",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
 	},
 }

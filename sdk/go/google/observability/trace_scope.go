@@ -28,8 +28,8 @@ type TraceScopeAttrs struct {
 var TraceScope = ubx.ResourceBinding{
 	WireType: "google_observability_trace_scope",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
 	},
 }

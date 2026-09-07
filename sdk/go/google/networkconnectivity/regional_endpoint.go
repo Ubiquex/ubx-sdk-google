@@ -50,12 +50,12 @@ type RegionalEndpointAttrs struct {
 var RegionalEndpoint = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_regional_endpoint",
 	Fields: ubx.FieldMap{
-		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+		"AccessType":      ubx.FieldSpec{WireName: "access_type"},
+		"Address":         ubx.FieldSpec{WireName: "address"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Network":         ubx.FieldSpec{WireName: "network"},
+		"Subnetwork":      ubx.FieldSpec{WireName: "subnetwork"},
 		"TargetGoogleApi": ubx.FieldSpec{WireName: "target_google_api"},
 	},
 }

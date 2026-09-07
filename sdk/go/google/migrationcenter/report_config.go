@@ -11,9 +11,9 @@ type ReportConfig_GroupPreferencesetAssignments struct {
 }
 
 var ReportConfig_GroupPreferencesetAssignmentsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
-	}
+	"Group":         ubx.FieldSpec{WireName: "group"},
+	"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
+}
 
 type ReportConfigConfig struct {
 	// Free-text description.
@@ -46,8 +46,8 @@ var ReportConfig = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GroupPreferencesetAssignments": ubx.FieldSpec{
 			WireName: "group_preferenceset_assignments",
-			Kind: "list",
-			Fields: ReportConfig_GroupPreferencesetAssignmentsFields,
+			Kind:     "list",
+			Fields:   ReportConfig_GroupPreferencesetAssignmentsFields,
 		},
 	},
 }

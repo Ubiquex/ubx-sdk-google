@@ -52,14 +52,14 @@ type V1beta1TlsInspectionPolicyAttrs struct {
 var V1beta1TlsInspectionPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_tls_inspection_policy",
 	Fields: ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+		"CaPool":                  ubx.FieldSpec{WireName: "ca_pool"},
 		"CertificateIssuanceMode": ubx.FieldSpec{WireName: "certificate_issuance_mode"},
-		"CustomTlsFeatures": ubx.FieldSpec{WireName: "custom_tls_features"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExcludePublicCaSet": ubx.FieldSpec{WireName: "exclude_public_ca_set"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TlsFeatureProfile": ubx.FieldSpec{WireName: "tls_feature_profile"},
-		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
+		"CustomTlsFeatures":       ubx.FieldSpec{WireName: "custom_tls_features"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"ExcludePublicCaSet":      ubx.FieldSpec{WireName: "exclude_public_ca_set"},
+		"MinTlsVersion":           ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"TlsFeatureProfile":       ubx.FieldSpec{WireName: "tls_feature_profile"},
+		"TrustConfig":             ubx.FieldSpec{WireName: "trust_config"},
 	},
 }

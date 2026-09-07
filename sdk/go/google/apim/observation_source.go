@@ -16,17 +16,17 @@ type ObservationSource_GclbObservationSource struct {
 }
 
 var ObservationSource_GclbObservationSource_PscNetworkConfigsFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var ObservationSource_GclbObservationSourceFields = ubx.FieldMap{
-		"PscNetworkConfigs": ubx.FieldSpec{
-			WireName: "psc_network_configs",
-			Kind: "list",
-			Fields: ObservationSource_GclbObservationSource_PscNetworkConfigsFields,
-		},
-	}
+	"PscNetworkConfigs": ubx.FieldSpec{
+		WireName: "psc_network_configs",
+		Kind:     "list",
+		Fields:   ObservationSource_GclbObservationSource_PscNetworkConfigsFields,
+	},
+}
 
 type ObservationSourceConfig struct {
 	// The GCLB observation source.
@@ -53,8 +53,8 @@ var ObservationSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GclbObservationSource": ubx.FieldSpec{
 			WireName: "gclb_observation_source",
-			Kind: "object",
-			Fields: ObservationSource_GclbObservationSourceFields,
+			Kind:     "object",
+			Fields:   ObservationSource_GclbObservationSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

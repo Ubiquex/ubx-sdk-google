@@ -14,34 +14,34 @@ type BetaNetwork_Peerings_ConnectionStatus_ConsensusState struct {
 }
 
 type BetaNetwork_Peerings_ConnectionStatus_TrafficConfiguration struct {
-	ExportCustomRoutesToPeer any
-	ExportSubnetRoutesWithPublicIpToPeer any
-	ImportCustomRoutesFromPeer any
+	ExportCustomRoutesToPeer               any
+	ExportSubnetRoutesWithPublicIpToPeer   any
+	ImportCustomRoutesFromPeer             any
 	ImportSubnetRoutesWithPublicIpFromPeer any
-	StackType any
+	StackType                              any
 }
 
 type BetaNetwork_Peerings_ConnectionStatus struct {
-	ConsensusState any
+	ConsensusState       any
 	TrafficConfiguration any
-	UpdateStrategy any
+	UpdateStrategy       any
 }
 
 type BetaNetwork_Peerings struct {
-	AutoCreateRoutes any
-	ConnectionStatus any
-	ExchangeSubnetRoutes any
-	ExportCustomRoutes any
+	AutoCreateRoutes               any
+	ConnectionStatus               any
+	ExchangeSubnetRoutes           any
+	ExportCustomRoutes             any
 	ExportSubnetRoutesWithPublicIp any
-	ImportCustomRoutes any
+	ImportCustomRoutes             any
 	ImportSubnetRoutesWithPublicIp any
-	Name any
-	Network any
-	PeerMtu any
-	StackType any
-	State any
-	StateDetails any
-	UpdateStrategy any
+	Name                           any
+	Network                        any
+	PeerMtu                        any
+	StackType                      any
+	State                          any
+	StateDetails                   any
+	UpdateStrategy                 any
 }
 
 type BetaNetwork_RoutingConfig struct {
@@ -60,17 +60,17 @@ type BetaNetwork_RoutingConfig struct {
 }
 
 var BetaNetwork_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var BetaNetwork_RoutingConfigFields = ubx.FieldMap{
-		"BgpAlwaysCompareMed": ubx.FieldSpec{WireName: "bgp_always_compare_med"},
-		"BgpBestPathSelectionMode": ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
-		"BgpInterRegionCost": ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
-		"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
-		"EffectiveBgpInterRegionCost": ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-	}
+	"BgpAlwaysCompareMed":          ubx.FieldSpec{WireName: "bgp_always_compare_med"},
+	"BgpBestPathSelectionMode":     ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
+	"BgpInterRegionCost":           ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
+	"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
+	"EffectiveBgpInterRegionCost":  ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
+	"RoutingMode":                  ubx.FieldSpec{WireName: "routing_mode"},
+}
 
 type BetaNetworkConfig struct {
 	// Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
@@ -149,27 +149,27 @@ type BetaNetworkAttrs struct {
 var BetaNetwork = ubx.ResourceBinding{
 	WireType: "google_compute_beta_network",
 	Fields: ubx.FieldMap{
-		"AutoCreateSubnetworks": ubx.FieldSpec{WireName: "auto_create_subnetworks"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableUlaInternalIpv6": ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
-		"GatewayIpv4": ubx.FieldSpec{WireName: "gateway_ipv4"},
-		"InternalIpv6Range": ubx.FieldSpec{WireName: "internal_ipv6_range"},
-		"Ipv4Range": ubx.FieldSpec{WireName: "ipv4_range"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AutoCreateSubnetworks":                 ubx.FieldSpec{WireName: "auto_create_subnetworks"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"EnableUlaInternalIpv6":                 ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
+		"GatewayIpv4":                           ubx.FieldSpec{WireName: "gateway_ipv4"},
+		"InternalIpv6Range":                     ubx.FieldSpec{WireName: "internal_ipv6_range"},
+		"Ipv4Range":                             ubx.FieldSpec{WireName: "ipv4_range"},
+		"Mtu":                                   ubx.FieldSpec{WireName: "mtu"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
 		"NetworkFirewallPolicyEnforcementOrder": ubx.FieldSpec{WireName: "network_firewall_policy_enforcement_order"},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+		"NetworkProfile":                        ubx.FieldSpec{WireName: "network_profile"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaNetwork_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaNetwork_ParamsFields,
 		},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: BetaNetwork_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   BetaNetwork_RoutingConfigFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
 		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

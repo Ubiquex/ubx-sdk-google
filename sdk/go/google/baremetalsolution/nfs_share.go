@@ -23,15 +23,15 @@ type NfsShare_AllowedClients struct {
 }
 
 var NfsShare_AllowedClientsFields = ubx.FieldMap{
-		"AllowDev": ubx.FieldSpec{WireName: "allow_dev"},
-		"AllowSuid": ubx.FieldSpec{WireName: "allow_suid"},
-		"AllowedClientsCidr": ubx.FieldSpec{WireName: "allowed_clients_cidr"},
-		"MountPermissions": ubx.FieldSpec{WireName: "mount_permissions"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NfsPath": ubx.FieldSpec{WireName: "nfs_path"},
-		"NoRootSquash": ubx.FieldSpec{WireName: "no_root_squash"},
-		"ShareIp": ubx.FieldSpec{WireName: "share_ip"},
-	}
+	"AllowDev":           ubx.FieldSpec{WireName: "allow_dev"},
+	"AllowSuid":          ubx.FieldSpec{WireName: "allow_suid"},
+	"AllowedClientsCidr": ubx.FieldSpec{WireName: "allowed_clients_cidr"},
+	"MountPermissions":   ubx.FieldSpec{WireName: "mount_permissions"},
+	"Network":            ubx.FieldSpec{WireName: "network"},
+	"NfsPath":            ubx.FieldSpec{WireName: "nfs_path"},
+	"NoRootSquash":       ubx.FieldSpec{WireName: "no_root_squash"},
+	"ShareIp":            ubx.FieldSpec{WireName: "share_ip"},
+}
 
 type NfsShareConfig struct {
 	// List of allowed access points.
@@ -76,13 +76,13 @@ var NfsShare = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowedClients": ubx.FieldSpec{
 			WireName: "allowed_clients",
-			Kind: "list",
-			Fields: NfsShare_AllowedClientsFields,
+			Kind:     "list",
+			Fields:   NfsShare_AllowedClientsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pod": ubx.FieldSpec{WireName: "pod"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Pod":              ubx.FieldSpec{WireName: "pod"},
 		"RequestedSizeGib": ubx.FieldSpec{WireName: "requested_size_gib"},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+		"StorageType":      ubx.FieldSpec{WireName: "storage_type"},
 	},
 }

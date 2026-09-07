@@ -40,10 +40,10 @@ type MirroringDeploymentAttrs struct {
 var MirroringDeployment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_mirroring_deployment",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"ForwardingRule":           ubx.FieldSpec{WireName: "forwarding_rule"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MirroringDeploymentGroup": ubx.FieldSpec{WireName: "mirroring_deployment_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 	},
 }

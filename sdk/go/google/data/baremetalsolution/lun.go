@@ -17,7 +17,7 @@ type LunAttrs struct {
 	Instances any
 	// The LUN multiprotocol type ensures the characteristics of the LUN are optimized for each operating system.
 	MultiprotocolType any
-	Name any
+	Name              any
 	// Display if this LUN can be shared between multiple physical servers.
 	Shareable any
 	// The size of this LUN, in GiB.
@@ -34,6 +34,5 @@ type LunAttrs struct {
 
 var Lun = ubx.DataSourceBinding{
 	WireType: "google_baremetalsolution_lun",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

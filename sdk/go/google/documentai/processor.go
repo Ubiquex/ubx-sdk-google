@@ -53,10 +53,10 @@ type ProcessorAttrs struct {
 var Processor = ubx.ResourceBinding{
 	WireType: "google_documentai_processor",
 	Fields: ubx.FieldMap{
-		"ActiveSchemaVersion": ubx.FieldSpec{WireName: "active_schema_version"},
+		"ActiveSchemaVersion":     ubx.FieldSpec{WireName: "active_schema_version"},
 		"DefaultProcessorVersion": ubx.FieldSpec{WireName: "default_processor_version"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
+		"KmsKeyName":              ubx.FieldSpec{WireName: "kms_key_name"},
+		"Type":                    ubx.FieldSpec{WireName: "type"},
 	},
 }

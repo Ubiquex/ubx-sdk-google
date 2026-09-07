@@ -11,9 +11,9 @@ type UserDataMapping_ResourceAttributes struct {
 }
 
 var UserDataMapping_ResourceAttributesFields = ubx.FieldMap{
-		"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
+	"Values":                ubx.FieldSpec{WireName: "values"},
+}
 
 type UserDataMappingConfig struct {
 	// Required. A unique identifier for the mapped resource.
@@ -45,11 +45,11 @@ var UserDataMapping = ubx.ResourceBinding{
 	WireType: "google_healthcare_user_data_mapping",
 	Fields: ubx.FieldMap{
 		"DataId": ubx.FieldSpec{WireName: "data_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ResourceAttributes": ubx.FieldSpec{
 			WireName: "resource_attributes",
-			Kind: "list",
-			Fields: UserDataMapping_ResourceAttributesFields,
+			Kind:     "list",
+			Fields:   UserDataMapping_ResourceAttributesFields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},

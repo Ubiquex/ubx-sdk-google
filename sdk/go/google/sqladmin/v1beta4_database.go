@@ -11,9 +11,9 @@ type V1beta4Database_SqlserverDatabaseDetails struct {
 }
 
 var V1beta4Database_SqlserverDatabaseDetailsFields = ubx.FieldMap{
-		"CompatibilityLevel": ubx.FieldSpec{WireName: "compatibility_level"},
-		"RecoveryModel": ubx.FieldSpec{WireName: "recovery_model"},
-	}
+	"CompatibilityLevel": ubx.FieldSpec{WireName: "compatibility_level"},
+	"RecoveryModel":      ubx.FieldSpec{WireName: "recovery_model"},
+}
 
 type V1beta4DatabaseConfig struct {
 	// The Cloud SQL charset value.
@@ -60,18 +60,18 @@ type V1beta4DatabaseAttrs struct {
 var V1beta4Database = ubx.ResourceBinding{
 	WireType: "google_sqladmin_v1beta4_database",
 	Fields: ubx.FieldMap{
-		"Charset": ubx.FieldSpec{WireName: "charset"},
+		"Charset":   ubx.FieldSpec{WireName: "charset"},
 		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Etag":      ubx.FieldSpec{WireName: "etag"},
+		"Instance":  ubx.FieldSpec{WireName: "instance"},
+		"Kind":      ubx.FieldSpec{WireName: "kind"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Project":   ubx.FieldSpec{WireName: "project"},
+		"SelfLink":  ubx.FieldSpec{WireName: "self_link"},
 		"SqlserverDatabaseDetails": ubx.FieldSpec{
 			WireName: "sqlserver_database_details",
-			Kind: "object",
-			Fields: V1beta4Database_SqlserverDatabaseDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta4Database_SqlserverDatabaseDetailsFields,
 		},
 	},
 }

@@ -54,42 +54,42 @@ type WorkflowInvocation_PrivateResourceMetadata struct {
 }
 
 var WorkflowInvocation_DataEncryptionStateFields = ubx.FieldMap{
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var WorkflowInvocation_InvocationConfig_IncludedTargetsFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Schema":   ubx.FieldSpec{WireName: "schema"},
+}
 
 var WorkflowInvocation_InvocationConfigFields = ubx.FieldMap{
-		"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
-		"IncludedTags": ubx.FieldSpec{WireName: "included_tags"},
-		"IncludedTargets": ubx.FieldSpec{
-			WireName: "included_targets",
-			Kind: "list",
-			Fields: WorkflowInvocation_InvocationConfig_IncludedTargetsFields,
-		},
-		"QueryPriority": ubx.FieldSpec{WireName: "query_priority"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
-		"TransitiveDependentsIncluded": ubx.FieldSpec{WireName: "transitive_dependents_included"},
-	}
+	"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
+	"IncludedTags":                         ubx.FieldSpec{WireName: "included_tags"},
+	"IncludedTargets": ubx.FieldSpec{
+		WireName: "included_targets",
+		Kind:     "list",
+		Fields:   WorkflowInvocation_InvocationConfig_IncludedTargetsFields,
+	},
+	"QueryPriority":                  ubx.FieldSpec{WireName: "query_priority"},
+	"ServiceAccount":                 ubx.FieldSpec{WireName: "service_account"},
+	"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
+	"TransitiveDependentsIncluded":   ubx.FieldSpec{WireName: "transitive_dependents_included"},
+}
 
 var WorkflowInvocation_InvocationTimingFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var WorkflowInvocation_PipelineConfigFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
-	}
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+}
 
 var WorkflowInvocation_PrivateResourceMetadataFields = ubx.FieldMap{
-		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-	}
+	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+}
 
 type WorkflowInvocationConfig struct {
 	// Immutable. The name of the compilation result to use for this invocation. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
@@ -139,28 +139,28 @@ var WorkflowInvocation = ubx.ResourceBinding{
 		"CompilationResult": ubx.FieldSpec{WireName: "compilation_result"},
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind: "object",
-			Fields: WorkflowInvocation_DataEncryptionStateFields,
+			Kind:     "object",
+			Fields:   WorkflowInvocation_DataEncryptionStateFields,
 		},
 		"InvocationConfig": ubx.FieldSpec{
 			WireName: "invocation_config",
-			Kind: "object",
-			Fields: WorkflowInvocation_InvocationConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowInvocation_InvocationConfigFields,
 		},
 		"InvocationTiming": ubx.FieldSpec{
 			WireName: "invocation_timing",
-			Kind: "object",
-			Fields: WorkflowInvocation_InvocationTimingFields,
+			Kind:     "object",
+			Fields:   WorkflowInvocation_InvocationTimingFields,
 		},
 		"PipelineConfig": ubx.FieldSpec{
 			WireName: "pipeline_config",
-			Kind: "object",
-			Fields: WorkflowInvocation_PipelineConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowInvocation_PipelineConfigFields,
 		},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind: "object",
-			Fields: WorkflowInvocation_PrivateResourceMetadataFields,
+			Kind:     "object",
+			Fields:   WorkflowInvocation_PrivateResourceMetadataFields,
 		},
 		"WorkflowConfig": ubx.FieldSpec{WireName: "workflow_config"},
 	},

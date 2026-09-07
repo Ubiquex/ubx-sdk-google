@@ -17,39 +17,39 @@ type Field_IndexConfig_Indexes_Fields_SearchConfig_TextSpec struct {
 }
 
 type Field_IndexConfig_Indexes_Fields_SearchConfig struct {
-	GeoSpec any
+	GeoSpec  any
 	TextSpec any
 }
 
 type Field_IndexConfig_Indexes_Fields_VectorConfig struct {
 	Dimension any
-	Flat any
+	Flat      any
 }
 
 type Field_IndexConfig_Indexes_Fields struct {
-	ArrayConfig any
-	FieldPath any
-	Order any
+	ArrayConfig  any
+	FieldPath    any
+	Order        any
 	SearchConfig any
 	VectorConfig any
 }
 
 type Field_IndexConfig_Indexes_SearchIndexOptions struct {
-	TextLanguage any
+	TextLanguage                  any
 	TextLanguageOverrideFieldPath any
 }
 
 type Field_IndexConfig_Indexes struct {
-	ApiScope any
-	Density any
-	Fields any
-	Multikey any
-	Name any
-	QueryScope any
+	ApiScope           any
+	Density            any
+	Fields             any
+	Multikey           any
+	Name               any
+	QueryScope         any
 	SearchIndexOptions any
-	ShardCount any
-	State any
-	Unique any
+	ShardCount         any
+	State              any
+	Unique             any
 }
 
 type Field_IndexConfig struct {
@@ -77,7 +77,7 @@ type FieldConfig struct {
 type FieldAttrs struct {
 	// The index configuration for this field.
 	IndexConfig any
-	Name any
+	Name        any
 	// The TTL (time-to-live) configuration for documents that have this `Field` set. A timestamp stored in a TTL-enabled field will be used to determine the expiration time of the document. The expiration time is the sum of the timestamp value and the `expiration_offset`. For Enterprise edition databases, the timestamp value may alternatively be stored in an array value in the TTL-enabled field. An expiration time in the past indicates that the document is eligible for immediate expiration. Using any other data type or leaving the field absent will disable expiration for the individual document.
 	TtlConfig any
 }

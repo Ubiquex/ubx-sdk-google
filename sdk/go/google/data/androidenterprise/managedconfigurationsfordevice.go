@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Managedconfigurationsfordevice_ConfigurationVariables_VariableSet struct {
 	Placeholder any
-	UserValue any
+	UserValue   any
 }
 
 type Managedconfigurationsfordevice_ConfigurationVariables struct {
@@ -20,43 +20,43 @@ type Managedconfigurationsfordevice_ManagedProperty_ValueBundle struct {
 }
 
 type Managedconfigurationsfordevice_ManagedProperty struct {
-	Key any
-	ValueBool any
-	ValueBundle any
+	Key              any
+	ValueBool        any
+	ValueBundle      any
 	ValueBundleArray any
-	ValueInteger any
-	ValueString any
+	ValueInteger     any
+	ValueString      any
 	ValueStringArray any
 }
 
 type ManagedconfigurationsfordeviceConfig struct {
-	DeviceId any
-	EnterpriseId any
+	DeviceId                        any
+	EnterpriseId                    any
 	ManagedConfigurationForDeviceId any
-	UserId any
+	UserId                          any
 }
 
 type ManagedconfigurationsfordeviceAttrs struct {
 	// A configuration variables resource contains the managed configuration settings ID to be applied to a single user, as well as the variable set that is attributed to the user. The variable set will be used to replace placeholders in the managed configuration settings.
 	ConfigurationVariables any
-	DeviceId any
-	EnterpriseId any
+	DeviceId               any
+	EnterpriseId           any
 	// Deprecated.
-	Kind any
+	Kind                            any
 	ManagedConfigurationForDeviceId any
 	// The set of managed properties for this configuration.
 	ManagedProperty any
 	// The ID of the product that the managed configuration is for, e.g. "app:com.google.android.gm".
 	ProductId any
-	UserId any
+	UserId    any
 }
 
 var Managedconfigurationsfordevice = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_managedconfigurationsfordevice",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
+		"DeviceId":                        ubx.FieldSpec{WireName: "device_id"},
+		"EnterpriseId":                    ubx.FieldSpec{WireName: "enterprise_id"},
 		"ManagedConfigurationForDeviceId": ubx.FieldSpec{WireName: "managed_configuration_for_device_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":                          ubx.FieldSpec{WireName: "user_id"},
 	},
 }

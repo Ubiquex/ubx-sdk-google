@@ -48,10 +48,10 @@ type PrivateConnectionAttrs struct {
 var PrivateConnection = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_private_connection",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-		"ServiceNetwork": ubx.FieldSpec{WireName: "service_network"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"RoutingMode":         ubx.FieldSpec{WireName: "routing_mode"},
+		"ServiceNetwork":      ubx.FieldSpec{WireName: "service_network"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
 		"VmwareEngineNetwork": ubx.FieldSpec{WireName: "vmware_engine_network"},
 	},
 }

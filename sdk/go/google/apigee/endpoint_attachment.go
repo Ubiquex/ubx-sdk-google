@@ -30,8 +30,8 @@ type EndpointAttachmentAttrs struct {
 var EndpointAttachment = ubx.ResourceBinding{
 	WireType: "google_apigee_endpoint_attachment",
 	Fields: ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
 	},
 }

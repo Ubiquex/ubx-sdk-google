@@ -11,9 +11,9 @@ type Process_Origin struct {
 }
 
 var Process_OriginFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 type ProcessConfig struct {
 	// Optional. The attributes of the process. Should only be used for the purpose of non-semantic management (classifying, describing or labeling the process). Up to 100 attributes are allowed.
@@ -40,13 +40,13 @@ type ProcessAttrs struct {
 var Process = ubx.ResourceBinding{
 	WireType: "google_datalineage_process",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Origin": ubx.FieldSpec{
 			WireName: "origin",
-			Kind: "object",
-			Fields: Process_OriginFields,
+			Kind:     "object",
+			Fields:   Process_OriginFields,
 		},
 	},
 }

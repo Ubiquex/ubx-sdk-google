@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Revision_Snapshot_DeploymentUnits struct {
 	Dependencies any
-	Deployment any
-	Id any
+	Deployment   any
+	Id           any
 }
 
 type Revision_Snapshot_ProvisioningError struct {
@@ -52,7 +52,7 @@ type RevisionAttrs struct {
 	AlternativeIds any
 	// Output only. Time when the deployment group revision was created.
 	CreateTime any
-	Name any
+	Name       any
 	// A DeploymentGroup is a collection of DeploymentUnits that in a DAG-like structure.
 	Snapshot any
 }

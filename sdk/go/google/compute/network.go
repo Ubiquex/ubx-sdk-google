@@ -50,7 +50,7 @@ type Network_Peerings struct {
 	ImportCustomRoutes any
 	// Whether to import subnet routes with public IP addresses from the peer network. When false, only private subnet routes are imported. Defaults to false. (AI-inferred)
 	ImportSubnetRoutesWithPublicIp any
-	Name any
+	Name                           any
 	// The name or self_link of the peer network to create the peering with. This can be a network in the same project or in a different project, and must be specified as a URL if cross-project. (AI-inferred)
 	Network any
 	// The Maximum Transmission Unit (MTU) for the VPC network peering connection, specified in bytes. This is the MTU of the peer network and determines the maximum size of packets that can be sent over the peering link without fragmentation. (AI-inferred)
@@ -81,17 +81,17 @@ type Network_RoutingConfig struct {
 }
 
 var Network_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Network_RoutingConfigFields = ubx.FieldMap{
-		"BgpAlwaysCompareMed": ubx.FieldSpec{WireName: "bgp_always_compare_med"},
-		"BgpBestPathSelectionMode": ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
-		"BgpInterRegionCost": ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
-		"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
-		"EffectiveBgpInterRegionCost": ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-	}
+	"BgpAlwaysCompareMed":          ubx.FieldSpec{WireName: "bgp_always_compare_med"},
+	"BgpBestPathSelectionMode":     ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
+	"BgpInterRegionCost":           ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
+	"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
+	"EffectiveBgpInterRegionCost":  ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
+	"RoutingMode":                  ubx.FieldSpec{WireName: "routing_mode"},
+}
 
 type NetworkConfig struct {
 	// Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
@@ -170,27 +170,27 @@ type NetworkAttrs struct {
 var Network = ubx.ResourceBinding{
 	WireType: "google_compute_network",
 	Fields: ubx.FieldMap{
-		"AutoCreateSubnetworks": ubx.FieldSpec{WireName: "auto_create_subnetworks"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableUlaInternalIpv6": ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
-		"GatewayIpv4": ubx.FieldSpec{WireName: "gateway_ipv4"},
-		"InternalIpv6Range": ubx.FieldSpec{WireName: "internal_ipv6_range"},
-		"Ipv4Range": ubx.FieldSpec{WireName: "ipv4_range"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AutoCreateSubnetworks":                 ubx.FieldSpec{WireName: "auto_create_subnetworks"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"EnableUlaInternalIpv6":                 ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
+		"GatewayIpv4":                           ubx.FieldSpec{WireName: "gateway_ipv4"},
+		"InternalIpv6Range":                     ubx.FieldSpec{WireName: "internal_ipv6_range"},
+		"Ipv4Range":                             ubx.FieldSpec{WireName: "ipv4_range"},
+		"Mtu":                                   ubx.FieldSpec{WireName: "mtu"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
 		"NetworkFirewallPolicyEnforcementOrder": ubx.FieldSpec{WireName: "network_firewall_policy_enforcement_order"},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+		"NetworkProfile":                        ubx.FieldSpec{WireName: "network_profile"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Network_ParamsFields,
+			Kind:     "object",
+			Fields:   Network_ParamsFields,
 		},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: Network_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   Network_RoutingConfigFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
 		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

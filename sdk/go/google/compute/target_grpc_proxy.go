@@ -42,10 +42,10 @@ type TargetGrpcProxyAttrs struct {
 var TargetGrpcProxy = ubx.ResourceBinding{
 	WireType: "google_compute_target_grpc_proxy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UrlMap": ubx.FieldSpec{WireName: "url_map"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":          ubx.FieldSpec{WireName: "fingerprint"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"UrlMap":               ubx.FieldSpec{WireName: "url_map"},
 		"ValidateForProxyless": ubx.FieldSpec{WireName: "validate_for_proxyless"},
 	},
 }

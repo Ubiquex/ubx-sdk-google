@@ -21,9 +21,9 @@ type Backend_ManagedResources struct {
 }
 
 var Backend_CodebaseFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-	}
+	"Repository":    ubx.FieldSpec{WireName: "repository"},
+	"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+}
 
 type BackendConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -95,19 +95,19 @@ var Backend = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_backend",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppId":       ubx.FieldSpec{WireName: "app_id"},
 		"Codebase": ubx.FieldSpec{
 			WireName: "codebase",
-			Kind: "object",
-			Fields: Backend_CodebaseFields,
+			Kind:     "object",
+			Fields:   Backend_CodebaseFields,
 		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Environment":         ubx.FieldSpec{WireName: "environment"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Mode":                ubx.FieldSpec{WireName: "mode"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"RequestLogsDisabled": ubx.FieldSpec{WireName: "request_logs_disabled"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServingLocality": ubx.FieldSpec{WireName: "serving_locality"},
+		"ServiceAccount":      ubx.FieldSpec{WireName: "service_account"},
+		"ServingLocality":     ubx.FieldSpec{WireName: "serving_locality"},
 	},
 }

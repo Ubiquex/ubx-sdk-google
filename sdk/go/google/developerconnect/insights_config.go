@@ -84,31 +84,31 @@ type InsightsConfig_RuntimeConfigs struct {
 }
 
 var InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysisFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var InsightsConfig_ArtifactConfigs_GoogleArtifactRegistryFields = ubx.FieldMap{
-		"ArtifactRegistryPackage": ubx.FieldSpec{WireName: "artifact_registry_package"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ArtifactRegistryPackage": ubx.FieldSpec{WireName: "artifact_registry_package"},
+	"ProjectId":               ubx.FieldSpec{WireName: "project_id"},
+}
 
 var InsightsConfig_ArtifactConfigsFields = ubx.FieldMap{
-		"GoogleArtifactAnalysis": ubx.FieldSpec{
-			WireName: "google_artifact_analysis",
-			Kind: "object",
-			Fields: InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysisFields,
-		},
-		"GoogleArtifactRegistry": ubx.FieldSpec{
-			WireName: "google_artifact_registry",
-			Kind: "object",
-			Fields: InsightsConfig_ArtifactConfigs_GoogleArtifactRegistryFields,
-		},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"GoogleArtifactAnalysis": ubx.FieldSpec{
+		WireName: "google_artifact_analysis",
+		Kind:     "object",
+		Fields:   InsightsConfig_ArtifactConfigs_GoogleArtifactAnalysisFields,
+	},
+	"GoogleArtifactRegistry": ubx.FieldSpec{
+		WireName: "google_artifact_registry",
+		Kind:     "object",
+		Fields:   InsightsConfig_ArtifactConfigs_GoogleArtifactRegistryFields,
+	},
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var InsightsConfig_ProjectsFields = ubx.FieldMap{
-		"ProjectIds": ubx.FieldSpec{WireName: "project_ids"},
-	}
+	"ProjectIds": ubx.FieldSpec{WireName: "project_ids"},
+}
 
 type InsightsConfigConfig struct {
 	// Optional. User specified annotations. See https://google.aip.dev/148#annotations for more details such as format and size limitations.
@@ -157,19 +157,19 @@ type InsightsConfigAttrs struct {
 var InsightsConfig = ubx.ResourceBinding{
 	WireType: "google_developerconnect_insights_config",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":       ubx.FieldSpec{WireName: "annotations"},
 		"AppHubApplication": ubx.FieldSpec{WireName: "app_hub_application"},
 		"ArtifactConfigs": ubx.FieldSpec{
 			WireName: "artifact_configs",
-			Kind: "list",
-			Fields: InsightsConfig_ArtifactConfigsFields,
+			Kind:     "list",
+			Fields:   InsightsConfig_ArtifactConfigsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Projects": ubx.FieldSpec{
 			WireName: "projects",
-			Kind: "object",
-			Fields: InsightsConfig_ProjectsFields,
+			Kind:     "object",
+			Fields:   InsightsConfig_ProjectsFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

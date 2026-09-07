@@ -30,8 +30,8 @@ type BillingAccountAttrs struct {
 var BillingAccount = ubx.ResourceBinding{
 	WireType: "google_cloudbilling_billing_account",
 	Fields: ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CurrencyCode":         ubx.FieldSpec{WireName: "currency_code"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
 		"MasterBillingAccount": ubx.FieldSpec{WireName: "master_billing_account"},
 	},
 }

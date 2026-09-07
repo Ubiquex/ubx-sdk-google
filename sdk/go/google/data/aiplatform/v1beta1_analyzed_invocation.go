@@ -4,12 +4,12 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1AnalyzedInvocation_Assessment_DetectorFindings struct {
-	DetectorId any
-	DisplayName any
-	Explanation any
-	Probability any
+	DetectorId      any
+	DisplayName     any
+	Explanation     any
+	Probability     any
 	Recommendations any
-	Severity any
+	Severity        any
 }
 
 type V1beta1AnalyzedInvocation_Assessment struct {
@@ -28,7 +28,7 @@ type V1beta1AnalyzedInvocationAttrs struct {
 	InvocationId any
 	// Output only. The state of the invocation.
 	InvocationState any
-	Name any
+	Name            any
 }
 
 var V1beta1AnalyzedInvocation = ubx.DataSourceBinding{

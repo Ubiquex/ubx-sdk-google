@@ -29,21 +29,21 @@ type PrivateConnection_VpcPeeringConfig struct {
 }
 
 var PrivateConnection_ErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
-		"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Details":   ubx.FieldSpec{WireName: "details"},
+	"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
+	"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var PrivateConnection_PscInterfaceConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var PrivateConnection_VpcPeeringConfigFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"Vpc": ubx.FieldSpec{WireName: "vpc"},
-	}
+	"Subnet": ubx.FieldSpec{WireName: "subnet"},
+	"Vpc":    ubx.FieldSpec{WireName: "vpc"},
+}
 
 type PrivateConnectionConfig struct {
 	// Required. Display name.
@@ -89,19 +89,19 @@ var PrivateConnection = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: PrivateConnection_ErrorFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: PrivateConnection_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_PscInterfaceConfigFields,
 		},
 		"VpcPeeringConfig": ubx.FieldSpec{
 			WireName: "vpc_peering_config",
-			Kind: "object",
-			Fields: PrivateConnection_VpcPeeringConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_VpcPeeringConfigFields,
 		},
 	},
 }

@@ -13,10 +13,10 @@ type ProductSet_IndexError struct {
 }
 
 var ProductSet_IndexErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type ProductSetConfig struct {
 	// The user-provided name for this ProductSet. Must not be empty. Must be at most 4096 characters long.
@@ -44,8 +44,8 @@ var ProductSet = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IndexError": ubx.FieldSpec{
 			WireName: "index_error",
-			Kind: "object",
-			Fields: ProductSet_IndexErrorFields,
+			Kind:     "object",
+			Fields:   ProductSet_IndexErrorFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

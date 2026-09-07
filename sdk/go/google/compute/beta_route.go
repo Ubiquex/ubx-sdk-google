@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaRoute_AsPaths struct {
-	AsLists any
+	AsLists         any
 	PathSegmentType any
 }
 
@@ -14,19 +14,19 @@ type BetaRoute_Params struct {
 }
 
 type BetaRoute_Warnings_Data struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type BetaRoute_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
 var BetaRoute_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type BetaRouteConfig struct {
 	// An optional description of this resource. Provide this field when you create the resource.
@@ -121,24 +121,24 @@ type BetaRouteAttrs struct {
 var BetaRoute = ubx.ResourceBinding{
 	WireType: "google_compute_beta_route",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NextHopGateway": ubx.FieldSpec{WireName: "next_hop_gateway"},
-		"NextHopIlb": ubx.FieldSpec{WireName: "next_hop_ilb"},
-		"NextHopInstance": ubx.FieldSpec{WireName: "next_hop_instance"},
-		"NextHopIp": ubx.FieldSpec{WireName: "next_hop_ip"},
-		"NextHopNetwork": ubx.FieldSpec{WireName: "next_hop_network"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DestRange":        ubx.FieldSpec{WireName: "dest_range"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Network":          ubx.FieldSpec{WireName: "network"},
+		"NextHopGateway":   ubx.FieldSpec{WireName: "next_hop_gateway"},
+		"NextHopIlb":       ubx.FieldSpec{WireName: "next_hop_ilb"},
+		"NextHopInstance":  ubx.FieldSpec{WireName: "next_hop_instance"},
+		"NextHopIp":        ubx.FieldSpec{WireName: "next_hop_ip"},
+		"NextHopNetwork":   ubx.FieldSpec{WireName: "next_hop_network"},
 		"NextHopVpnTunnel": ubx.FieldSpec{WireName: "next_hop_vpn_tunnel"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaRoute_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaRoute_ParamsFields,
 		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
 		"RouteStatus": ubx.FieldSpec{WireName: "route_status"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 	},
 }

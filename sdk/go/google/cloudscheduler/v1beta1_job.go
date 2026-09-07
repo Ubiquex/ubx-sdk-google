@@ -88,70 +88,70 @@ type V1beta1Job_Status struct {
 }
 
 var V1beta1Job_AppEngineHttpTarget_AppEngineRoutingFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"Service":  ubx.FieldSpec{WireName: "service"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1Job_AppEngineHttpTargetFields = ubx.FieldMap{
-		"AppEngineRouting": ubx.FieldSpec{
-			WireName: "app_engine_routing",
-			Kind: "object",
-			Fields: V1beta1Job_AppEngineHttpTarget_AppEngineRoutingFields,
-		},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"RelativeUri": ubx.FieldSpec{WireName: "relative_uri"},
-	}
+	"AppEngineRouting": ubx.FieldSpec{
+		WireName: "app_engine_routing",
+		Kind:     "object",
+		Fields:   V1beta1Job_AppEngineHttpTarget_AppEngineRoutingFields,
+	},
+	"Body":        ubx.FieldSpec{WireName: "body"},
+	"Headers":     ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod":  ubx.FieldSpec{WireName: "http_method"},
+	"RelativeUri": ubx.FieldSpec{WireName: "relative_uri"},
+}
 
 var V1beta1Job_HttpTarget_OauthTokenFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Scope":               ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V1beta1Job_HttpTarget_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V1beta1Job_HttpTargetFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthToken": ubx.FieldSpec{
-			WireName: "oauth_token",
-			Kind: "object",
-			Fields: V1beta1Job_HttpTarget_OauthTokenFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: V1beta1Job_HttpTarget_OidcTokenFields,
-		},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Body":       ubx.FieldSpec{WireName: "body"},
+	"Headers":    ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+	"OauthToken": ubx.FieldSpec{
+		WireName: "oauth_token",
+		Kind:     "object",
+		Fields:   V1beta1Job_HttpTarget_OauthTokenFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   V1beta1Job_HttpTarget_OidcTokenFields,
+	},
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1Job_PubsubTargetFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"TopicName": ubx.FieldSpec{WireName: "topic_name"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"Data":       ubx.FieldSpec{WireName: "data"},
+	"TopicName":  ubx.FieldSpec{WireName: "topic_name"},
+}
 
 var V1beta1Job_RetryConfigFields = ubx.FieldMap{
-		"MaxBackoffDuration": ubx.FieldSpec{WireName: "max_backoff_duration"},
-		"MaxDoublings": ubx.FieldSpec{WireName: "max_doublings"},
-		"MaxRetryDuration": ubx.FieldSpec{WireName: "max_retry_duration"},
-		"MinBackoffDuration": ubx.FieldSpec{WireName: "min_backoff_duration"},
-		"RetryCount": ubx.FieldSpec{WireName: "retry_count"},
-	}
+	"MaxBackoffDuration": ubx.FieldSpec{WireName: "max_backoff_duration"},
+	"MaxDoublings":       ubx.FieldSpec{WireName: "max_doublings"},
+	"MaxRetryDuration":   ubx.FieldSpec{WireName: "max_retry_duration"},
+	"MinBackoffDuration": ubx.FieldSpec{WireName: "min_backoff_duration"},
+	"RetryCount":         ubx.FieldSpec{WireName: "retry_count"},
+}
 
 var V1beta1Job_StatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type V1beta1JobConfig struct {
 	// App Engine target. The job will be pushed to a job handler by means of an HTTP request via an http_method such as HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP response code in the range [200 - 299]. Error 503 is considered an App Engine system error instead of an application error. Requests returning error 503 will be retried regardless of retry configuration and not counted against retry counts. Any other response code, or a failure to receive a response before the deadline, constitutes a failed attempt.
@@ -218,33 +218,33 @@ var V1beta1Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppEngineHttpTarget": ubx.FieldSpec{
 			WireName: "app_engine_http_target",
-			Kind: "object",
-			Fields: V1beta1Job_AppEngineHttpTargetFields,
+			Kind:     "object",
+			Fields:   V1beta1Job_AppEngineHttpTargetFields,
 		},
 		"AttemptDeadline": ubx.FieldSpec{WireName: "attempt_deadline"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"HttpTarget": ubx.FieldSpec{
 			WireName: "http_target",
-			Kind: "object",
-			Fields: V1beta1Job_HttpTargetFields,
+			Kind:     "object",
+			Fields:   V1beta1Job_HttpTargetFields,
 		},
 		"LegacyAppEngineCron": ubx.FieldSpec{WireName: "legacy_app_engine_cron"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"PubsubTarget": ubx.FieldSpec{
 			WireName: "pubsub_target",
-			Kind: "object",
-			Fields: V1beta1Job_PubsubTargetFields,
+			Kind:     "object",
+			Fields:   V1beta1Job_PubsubTargetFields,
 		},
 		"RetryConfig": ubx.FieldSpec{
 			WireName: "retry_config",
-			Kind: "object",
-			Fields: V1beta1Job_RetryConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Job_RetryConfigFields,
 		},
 		"Schedule": ubx.FieldSpec{WireName: "schedule"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1Job_StatusFields,
+			Kind:     "object",
+			Fields:   V1beta1Job_StatusFields,
 		},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},

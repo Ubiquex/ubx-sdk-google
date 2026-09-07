@@ -43,39 +43,39 @@ type Policy_Networks struct {
 }
 
 var Policy_AlternativeNameServerConfig_TargetNameServersFields = ubx.FieldMap{
-		"ForwardingPath": ubx.FieldSpec{WireName: "forwarding_path"},
-		"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"ForwardingPath": ubx.FieldSpec{WireName: "forwarding_path"},
+	"Ipv4Address":    ubx.FieldSpec{WireName: "ipv4_address"},
+	"Ipv6Address":    ubx.FieldSpec{WireName: "ipv6_address"},
+	"Kind":           ubx.FieldSpec{WireName: "kind"},
+}
 
 var Policy_AlternativeNameServerConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"TargetNameServers": ubx.FieldSpec{
-			WireName: "target_name_servers",
-			Kind: "list",
-			Fields: Policy_AlternativeNameServerConfig_TargetNameServersFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"TargetNameServers": ubx.FieldSpec{
+		WireName: "target_name_servers",
+		Kind:     "list",
+		Fields:   Policy_AlternativeNameServerConfig_TargetNameServersFields,
+	},
+}
 
 var Policy_Dns64Config_ScopeFields = ubx.FieldMap{
-		"AllQueries": ubx.FieldSpec{WireName: "all_queries"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"AllQueries": ubx.FieldSpec{WireName: "all_queries"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+}
 
 var Policy_Dns64ConfigFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: Policy_Dns64Config_ScopeFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   Policy_Dns64Config_ScopeFields,
+	},
+}
 
 var Policy_NetworksFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-	}
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
+}
 
 type PolicyConfig struct {
 	// Overrides the default upstream name server(s) this private zone forwards unresolvable queries to. (AI-inferred)
@@ -124,24 +124,24 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlternativeNameServerConfig": ubx.FieldSpec{
 			WireName: "alternative_name_server_config",
-			Kind: "object",
-			Fields: Policy_AlternativeNameServerConfigFields,
+			Kind:     "object",
+			Fields:   Policy_AlternativeNameServerConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Dns64Config": ubx.FieldSpec{
 			WireName: "dns64_config",
-			Kind: "object",
-			Fields: Policy_Dns64ConfigFields,
+			Kind:     "object",
+			Fields:   Policy_Dns64ConfigFields,
 		},
 		"EnableInboundForwarding": ubx.FieldSpec{WireName: "enable_inbound_forwarding"},
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"EnableLogging":           ubx.FieldSpec{WireName: "enable_logging"},
+		"Id":                      ubx.FieldSpec{WireName: "id"},
+		"Kind":                    ubx.FieldSpec{WireName: "kind"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind: "list",
-			Fields: Policy_NetworksFields,
+			Kind:     "list",
+			Fields:   Policy_NetworksFields,
 		},
 	},
 }

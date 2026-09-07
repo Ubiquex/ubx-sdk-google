@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaWireGroup_Endpoints_Interconnects struct {
 	Interconnect any
-	VlanTags any
+	VlanTags     any
 }
 
 type BetaWireGroup_Endpoints struct {
@@ -13,7 +13,7 @@ type BetaWireGroup_Endpoints struct {
 }
 
 type BetaWireGroup_Topology_Endpoints struct {
-	City any
+	City  any
 	Label any
 }
 
@@ -38,51 +38,51 @@ type BetaWireGroup_WireProperties struct {
 
 type BetaWireGroup_Wires_Endpoints struct {
 	Interconnect any
-	VlanTag any
+	VlanTag      any
 }
 
 type BetaWireGroup_Wires struct {
-	AdminEnabled any
-	Endpoints any
-	Label any
+	AdminEnabled   any
+	Endpoints      any
+	Label          any
 	WireProperties any
 }
 
 var BetaWireGroup_Endpoints_InterconnectsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"VlanTags": ubx.FieldSpec{WireName: "vlan_tags"},
-	}
+	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+	"VlanTags":     ubx.FieldSpec{WireName: "vlan_tags"},
+}
 
 var BetaWireGroup_EndpointsFields = ubx.FieldMap{
-		"Interconnects": ubx.FieldSpec{
-			WireName: "interconnects",
-			Kind: "map",
-			Fields: BetaWireGroup_Endpoints_InterconnectsFields,
-		},
-	}
+	"Interconnects": ubx.FieldSpec{
+		WireName: "interconnects",
+		Kind:     "map",
+		Fields:   BetaWireGroup_Endpoints_InterconnectsFields,
+	},
+}
 
 var BetaWireGroup_Topology_EndpointsFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{WireName: "city"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"City":  ubx.FieldSpec{WireName: "city"},
+	"Label": ubx.FieldSpec{WireName: "label"},
+}
 
 var BetaWireGroup_TopologyFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "list",
-			Fields: BetaWireGroup_Topology_EndpointsFields,
-		},
-	}
+	"Endpoints": ubx.FieldSpec{
+		WireName: "endpoints",
+		Kind:     "list",
+		Fields:   BetaWireGroup_Topology_EndpointsFields,
+	},
+}
 
 var BetaWireGroup_WireGroupPropertiesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var BetaWireGroup_WirePropertiesFields = ubx.FieldMap{
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-		"BandwidthUnmetered": ubx.FieldSpec{WireName: "bandwidth_unmetered"},
-		"FaultResponse": ubx.FieldSpec{WireName: "fault_response"},
-	}
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+	"BandwidthUnmetered":  ubx.FieldSpec{WireName: "bandwidth_unmetered"},
+	"FaultResponse":       ubx.FieldSpec{WireName: "fault_response"},
+}
 
 type BetaWireGroupConfig struct {
 	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
@@ -134,27 +134,27 @@ var BetaWireGroup = ubx.ResourceBinding{
 	WireType: "google_compute_beta_wire_group",
 	Fields: ubx.FieldMap{
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "map",
-			Fields: BetaWireGroup_EndpointsFields,
+			Kind:     "map",
+			Fields:   BetaWireGroup_EndpointsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Topology": ubx.FieldSpec{
 			WireName: "topology",
-			Kind: "object",
-			Fields: BetaWireGroup_TopologyFields,
+			Kind:     "object",
+			Fields:   BetaWireGroup_TopologyFields,
 		},
 		"WireGroupProperties": ubx.FieldSpec{
 			WireName: "wire_group_properties",
-			Kind: "object",
-			Fields: BetaWireGroup_WireGroupPropertiesFields,
+			Kind:     "object",
+			Fields:   BetaWireGroup_WireGroupPropertiesFields,
 		},
 		"WireProperties": ubx.FieldSpec{
 			WireName: "wire_properties",
-			Kind: "object",
-			Fields: BetaWireGroup_WirePropertiesFields,
+			Kind:     "object",
+			Fields:   BetaWireGroup_WirePropertiesFields,
 		},
 	},
 }

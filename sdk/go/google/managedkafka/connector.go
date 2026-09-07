@@ -13,10 +13,10 @@ type Connector_TaskRestartPolicy struct {
 }
 
 var Connector_TaskRestartPolicyFields = ubx.FieldMap{
-		"MaximumBackoff": ubx.FieldSpec{WireName: "maximum_backoff"},
-		"MinimumBackoff": ubx.FieldSpec{WireName: "minimum_backoff"},
-		"TaskRetryDisabled": ubx.FieldSpec{WireName: "task_retry_disabled"},
-	}
+	"MaximumBackoff":    ubx.FieldSpec{WireName: "maximum_backoff"},
+	"MinimumBackoff":    ubx.FieldSpec{WireName: "minimum_backoff"},
+	"TaskRetryDisabled": ubx.FieldSpec{WireName: "task_retry_disabled"},
+}
 
 type ConnectorConfig struct {
 	// Optional. Connector config as keys/values. The keys of the map are connector property names, for example: `connector.class`, `tasks.max`, `key.converter`.
@@ -42,11 +42,11 @@ var Connector = ubx.ResourceBinding{
 	WireType: "google_managedkafka_connector",
 	Fields: ubx.FieldMap{
 		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"TaskRestartPolicy": ubx.FieldSpec{
 			WireName: "task_restart_policy",
-			Kind: "object",
-			Fields: Connector_TaskRestartPolicyFields,
+			Kind:     "object",
+			Fields:   Connector_TaskRestartPolicyFields,
 		},
 	},
 }

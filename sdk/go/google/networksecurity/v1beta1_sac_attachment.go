@@ -11,9 +11,9 @@ type V1beta1SacAttachment_SymantecOptions struct {
 }
 
 var V1beta1SacAttachment_SymantecOptionsFields = ubx.FieldMap{
-		"SymantecLocationName": ubx.FieldSpec{WireName: "symantec_location_name"},
-		"SymantecSite": ubx.FieldSpec{WireName: "symantec_site"},
-	}
+	"SymantecLocationName": ubx.FieldSpec{WireName: "symantec_location_name"},
+	"SymantecSite":         ubx.FieldSpec{WireName: "symantec_site"},
+}
 
 type V1beta1SacAttachmentConfig struct {
 	// Optional. Case-insensitive ISO-3166 alpha-2 country code used for localization. Only valid for Symantec attachments.
@@ -58,15 +58,15 @@ type V1beta1SacAttachmentAttrs struct {
 var V1beta1SacAttachment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_sac_attachment",
 	Fields: ubx.FieldMap{
-		"Country": ubx.FieldSpec{WireName: "country"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Country":    ubx.FieldSpec{WireName: "country"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"SacRealm": ubx.FieldSpec{WireName: "sac_realm"},
+		"SacRealm":   ubx.FieldSpec{WireName: "sac_realm"},
 		"SymantecOptions": ubx.FieldSpec{
 			WireName: "symantec_options",
-			Kind: "object",
-			Fields: V1beta1SacAttachment_SymantecOptionsFields,
+			Kind:     "object",
+			Fields:   V1beta1SacAttachment_SymantecOptionsFields,
 		},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},

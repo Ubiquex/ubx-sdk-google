@@ -5,28 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Result_ConversationTurns_UserInput_Input_Audio_Config_BargeInConfig struct {
 	NoBargeInDuration any
-	TotalDuration any
+	TotalDuration     any
 }
 
 type Result_ConversationTurns_UserInput_Input_Audio_Config struct {
-	AudioEncoding any
-	BargeInConfig any
-	EnableWordInfo any
-	Model any
-	ModelVariant any
+	AudioEncoding                 any
+	BargeInConfig                 any
+	EnableWordInfo                any
+	Model                         any
+	ModelVariant                  any
 	OptOutConformerModelMigration any
-	PhraseHints any
-	SampleRateHertz any
-	SingleUtterance any
+	PhraseHints                   any
+	SampleRateHertz               any
+	SingleUtterance               any
 }
 
 type Result_ConversationTurns_UserInput_Input_Audio struct {
-	Audio any
+	Audio  any
 	Config any
 }
 
 type Result_ConversationTurns_UserInput_Input_Dtmf struct {
-	Digits any
+	Digits      any
 	FinishDigit any
 }
 
@@ -47,27 +47,27 @@ type Result_ConversationTurns_UserInput_Input_ToolCallResult_Error struct {
 }
 
 type Result_ConversationTurns_UserInput_Input_ToolCallResult struct {
-	Action any
-	Error any
+	Action           any
+	Error            any
 	OutputParameters any
-	Tool any
+	Tool             any
 }
 
 type Result_ConversationTurns_UserInput_Input struct {
-	Audio any
-	Dtmf any
-	Event any
-	Intent any
-	LanguageCode any
-	Text any
+	Audio          any
+	Dtmf           any
+	Event          any
+	Intent         any
+	LanguageCode   any
+	Text           any
 	ToolCallResult any
 }
 
 type Result_ConversationTurns_UserInput struct {
 	EnableSentimentAnalysis any
-	InjectedParameters any
-	Input any
-	IsWebhookEnabled any
+	InjectedParameters      any
+	Input                   any
+	IsWebhookEnabled        any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_AudioExportGcsDestination struct {
@@ -75,31 +75,31 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_Au
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_DtmfSettings struct {
-	Enabled any
+	Enabled                    any
 	EndpointingTimeoutDuration any
-	FinishDigit any
-	InterdigitTimeoutDuration any
-	MaxDigits any
+	FinishDigit                any
+	InterdigitTimeoutDuration  any
+	MaxDigits                  any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_LoggingSettings struct {
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging any
-	EnableStackdriverLogging any
+	EnableInteractionLogging    any
+	EnableStackdriverLogging    any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity any
-	Models any
-	NoSpeechTimeout any
+	EndpointerSensitivity      any
+	Models                     any
+	NoSpeechTimeout            any
 	UseTimeoutBasedEndpointing any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_AdvancedSettings struct {
 	AudioExportGcsDestination any
-	DtmfSettings any
-	LoggingSettings any
-	SpeechSettings any
+	DtmfSettings              any
+	LoggingSettings           any
+	SpeechSettings            any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
@@ -108,8 +108,8 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Co
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
 	AllowPlaybackInterruption any
-	Audio any
-	Uri any
+	Audio                     any
+	Uri                       any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
@@ -118,13 +118,13 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Co
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
 	AllowPlaybackInterruption any
-	Ssml any
-	Text any
+	Ssml                      any
+	Text                      any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
 	AllowPlaybackInterruption any
-	AudioUri any
+	AudioUri                  any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
@@ -133,39 +133,39 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Co
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
 	AllowPlaybackInterruption any
-	Text any
+	Text                      any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action any
+	Action          any
 	InputParameters any
-	Tool any
+	Tool            any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel any
-	ConversationSuccess any
-	EndInteraction any
-	KnowledgeInfoCard any
-	LiveAgentHandoff any
-	MixedAudio any
-	OutputAudioText any
-	Payload any
-	PlayAudio any
-	ResponseType any
+	Channel               any
+	ConversationSuccess   any
+	EndInteraction        any
+	KnowledgeInfoCard     any
+	LiveAgentHandoff      any
+	MixedAudio            any
+	OutputAudioText       any
+	Payload               any
+	PlayAudio             any
+	ResponseType          any
 	TelephonyTransferCall any
-	Text any
-	ToolCall any
+	Text                  any
+	ToolCall              any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases_CaseContent struct {
 	AdditionalCases any
-	Message any
+	Message         any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases_Cases struct {
 	CaseContent any
-	Condition any
+	Condition   any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_ConditionalCases struct {
@@ -173,52 +173,52 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Co
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_Generators struct {
-	Generator any
+	Generator       any
 	InputParameters any
 	OutputParameter any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment_SetParameterActions struct {
 	Parameter any
-	Value any
+	Value     any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EntryFulfillment struct {
-	AdvancedSettings any
-	CodeBlockFunction any
-	ConditionalCases any
+	AdvancedSettings         any
+	CodeBlockFunction        any
+	ConditionalCases         any
 	EnableGenerativeFallback any
-	Generators any
-	Messages any
-	ReturnPartialResponses any
-	SetParameterActions any
-	Tag any
-	Webhook any
+	Generators               any
+	Messages                 any
+	ReturnPartialResponses   any
+	SetParameterActions      any
+	Tag                      any
+	Webhook                  any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_EventHandlers struct {
-	Event any
-	Name any
-	TargetFlow any
-	TargetPage any
-	TargetPlaybook any
+	Event              any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
+	TargetPlaybook     any
 	TriggerFulfillment any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters_FillBehavior struct {
 	InitialPromptFulfillment any
-	RepromptEventHandlers any
+	RepromptEventHandlers    any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_Form_Parameters struct {
 	AdvancedSettings any
-	DefaultValue any
-	DisplayName any
-	EntityType any
-	FillBehavior any
-	IsList any
-	Redact any
-	Required any
+	DefaultValue     any
+	DisplayName      any
+	EntityType       any
+	FillBehavior     any
+	IsList           any
+	Redact           any
+	Required         any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_Form struct {
@@ -226,95 +226,95 @@ type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_Form struct {
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings_DataStoreConnections struct {
-	DataStore any
-	DataStoreType any
+	DataStore              any
+	DataStoreType          any
 	DocumentProcessingMode any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_KnowledgeConnectorSettings struct {
 	DataStoreConnections any
-	Enabled any
-	TargetFlow any
-	TargetPage any
-	TriggerFulfillment any
+	Enabled              any
+	TargetFlow           any
+	TargetPage           any
+	TriggerFulfillment   any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage_TransitionRoutes struct {
-	Condition any
-	Description any
-	Intent any
-	Name any
-	TargetFlow any
-	TargetPage any
+	Condition          any
+	Description        any
+	Intent             any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
 	TriggerFulfillment any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_CurrentPage struct {
-	AdvancedSettings any
-	Description any
-	DisplayName any
-	EntryFulfillment any
-	EventHandlers any
-	Form any
+	AdvancedSettings           any
+	Description                any
+	DisplayName                any
+	EntryFulfillment           any
+	EventHandlers              any
+	Form                       any
 	KnowledgeConnectorSettings any
-	Name any
-	TransitionRouteGroups any
-	TransitionRoutes any
+	Name                       any
+	TransitionRouteGroups      any
+	TransitionRoutes           any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_Differences struct {
 	Description any
-	Type any
+	Type        any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_Status struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_TriggeredIntent_Parameters struct {
 	EntityType any
-	Id any
-	IsList any
-	Redact any
+	Id         any
+	IsList     any
+	Redact     any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases_Parts struct {
 	ParameterId any
-	Text any
+	Text        any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_TriggeredIntent_TrainingPhrases struct {
-	Id any
-	Parts any
+	Id          any
+	Parts       any
 	RepeatCount any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput_TriggeredIntent struct {
-	Description any
-	DisplayName any
-	DtmfPattern any
-	IsFallback any
-	Labels any
-	Name any
-	Parameters any
-	Priority any
+	Description     any
+	DisplayName     any
+	DtmfPattern     any
+	IsFallback      any
+	Labels          any
+	Name            any
+	Parameters      any
+	Priority        any
 	TrainingPhrases any
 }
 
 type Result_ConversationTurns_VirtualAgentOutput struct {
-	CurrentPage any
-	DiagnosticInfo any
-	Differences any
+	CurrentPage       any
+	DiagnosticInfo    any
+	Differences       any
 	SessionParameters any
-	Status any
-	TextResponses any
-	TriggeredIntent any
+	Status            any
+	TextResponses     any
+	TriggeredIntent   any
 }
 
 type Result_ConversationTurns struct {
-	UserInput any
+	UserInput          any
 	VirtualAgentOutput any
 }
 
@@ -324,10 +324,10 @@ type ResultConfig struct {
 
 type ResultAttrs struct {
 	ConversationTurns any
-	Environment any
-	Name any
-	TestResult any
-	TestTime any
+	Environment       any
+	Name              any
+	TestResult        any
+	TestTime          any
 }
 
 var Result = ubx.DataSourceBinding{

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Trial_FinalMeasurement_Metrics struct {
 	MetricId any
-	Value any
+	Value    any
 }
 
 type V1beta1Trial_FinalMeasurement struct {
@@ -19,23 +19,23 @@ type V1beta1Trial_FinalMeasurement struct {
 
 type V1beta1Trial_Parameters struct {
 	ParameterId any
-	Value any
+	Value       any
 }
 
 var V1beta1Trial_FinalMeasurement_MetricsFields = ubx.FieldMap{
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1Trial_FinalMeasurementFields = ubx.FieldMap{
-		"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: V1beta1Trial_FinalMeasurement_MetricsFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   V1beta1Trial_FinalMeasurement_MetricsFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 type V1beta1TrialConfig struct {
 	// A message representing a Measurement of a Trial. A Measurement contains the Metrics got by executing a Trial using suggested hyperparameter values.
@@ -74,8 +74,8 @@ var V1beta1Trial = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FinalMeasurement": ubx.FieldSpec{
 			WireName: "final_measurement",
-			Kind: "object",
-			Fields: V1beta1Trial_FinalMeasurementFields,
+			Kind:     "object",
+			Fields:   V1beta1Trial_FinalMeasurementFields,
 		},
 	},
 }

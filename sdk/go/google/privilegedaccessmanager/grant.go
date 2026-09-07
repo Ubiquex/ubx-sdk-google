@@ -100,110 +100,110 @@ type Grant_Timeline struct {
 }
 
 var Grant_AuditTrailFields = ubx.FieldMap{
-		"AccessGrantTime": ubx.FieldSpec{WireName: "access_grant_time"},
-		"AccessRemoveTime": ubx.FieldSpec{WireName: "access_remove_time"},
-	}
+	"AccessGrantTime":  ubx.FieldSpec{WireName: "access_grant_time"},
+	"AccessRemoveTime": ubx.FieldSpec{WireName: "access_remove_time"},
+}
 
 var Grant_JustificationFields = ubx.FieldMap{
-		"UnstructuredJustification": ubx.FieldSpec{WireName: "unstructured_justification"},
-	}
+	"UnstructuredJustification": ubx.FieldSpec{WireName: "unstructured_justification"},
+}
 
 var Grant_PrivilegedAccess_GcpIamAccess_RoleBindingsFields = ubx.FieldMap{
-		"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"ConditionExpression": ubx.FieldSpec{WireName: "condition_expression"},
+	"Role":                ubx.FieldSpec{WireName: "role"},
+}
 
 var Grant_PrivilegedAccess_GcpIamAccessFields = ubx.FieldMap{
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"RoleBindings": ubx.FieldSpec{
-			WireName: "role_bindings",
-			Kind: "list",
-			Fields: Grant_PrivilegedAccess_GcpIamAccess_RoleBindingsFields,
-		},
-	}
+	"Resource":     ubx.FieldSpec{WireName: "resource"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	"RoleBindings": ubx.FieldSpec{
+		WireName: "role_bindings",
+		Kind:     "list",
+		Fields:   Grant_PrivilegedAccess_GcpIamAccess_RoleBindingsFields,
+	},
+}
 
 var Grant_PrivilegedAccessFields = ubx.FieldMap{
-		"GcpIamAccess": ubx.FieldSpec{
-			WireName: "gcp_iam_access",
-			Kind: "object",
-			Fields: Grant_PrivilegedAccess_GcpIamAccessFields,
-		},
-	}
+	"GcpIamAccess": ubx.FieldSpec{
+		WireName: "gcp_iam_access",
+		Kind:     "object",
+		Fields:   Grant_PrivilegedAccess_GcpIamAccessFields,
+	},
+}
 
 var Grant_Timeline_Events_ActivationFailed_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Grant_Timeline_Events_ActivationFailedFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ActivationFailed_ErrorFields,
-		},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ActivationFailed_ErrorFields,
+	},
+}
 
 var Grant_Timeline_Events_ApprovedFields = ubx.FieldMap{
-		"Actor": ubx.FieldSpec{WireName: "actor"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Actor":  ubx.FieldSpec{WireName: "actor"},
+	"Reason": ubx.FieldSpec{WireName: "reason"},
+}
 
 var Grant_Timeline_Events_RequestedFields = ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-	}
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+}
 
 var Grant_Timeline_Events_ScheduledFields = ubx.FieldMap{
-		"ScheduledActivationTime": ubx.FieldSpec{WireName: "scheduled_activation_time"},
-	}
+	"ScheduledActivationTime": ubx.FieldSpec{WireName: "scheduled_activation_time"},
+}
 
 var Grant_Timeline_EventsFields = ubx.FieldMap{
-		"Activated": ubx.FieldSpec{WireName: "activated"},
-		"ActivationFailed": ubx.FieldSpec{
-			WireName: "activation_failed",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ActivationFailedFields,
-		},
-		"Approved": ubx.FieldSpec{
-			WireName: "approved",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ApprovedFields,
-		},
-		"Denied": ubx.FieldSpec{
-			WireName: "denied",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ApprovedFields,
-		},
-		"Ended": ubx.FieldSpec{WireName: "ended"},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Expired": ubx.FieldSpec{WireName: "expired"},
-		"ExternallyModified": ubx.FieldSpec{WireName: "externally_modified"},
-		"Requested": ubx.FieldSpec{
-			WireName: "requested",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_RequestedFields,
-		},
-		"Revoked": ubx.FieldSpec{
-			WireName: "revoked",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ApprovedFields,
-		},
-		"Scheduled": ubx.FieldSpec{
-			WireName: "scheduled",
-			Kind: "object",
-			Fields: Grant_Timeline_Events_ScheduledFields,
-		},
-		"Withdrawn": ubx.FieldSpec{WireName: "withdrawn"},
-	}
+	"Activated": ubx.FieldSpec{WireName: "activated"},
+	"ActivationFailed": ubx.FieldSpec{
+		WireName: "activation_failed",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ActivationFailedFields,
+	},
+	"Approved": ubx.FieldSpec{
+		WireName: "approved",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ApprovedFields,
+	},
+	"Denied": ubx.FieldSpec{
+		WireName: "denied",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ApprovedFields,
+	},
+	"Ended":              ubx.FieldSpec{WireName: "ended"},
+	"EventTime":          ubx.FieldSpec{WireName: "event_time"},
+	"Expired":            ubx.FieldSpec{WireName: "expired"},
+	"ExternallyModified": ubx.FieldSpec{WireName: "externally_modified"},
+	"Requested": ubx.FieldSpec{
+		WireName: "requested",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_RequestedFields,
+	},
+	"Revoked": ubx.FieldSpec{
+		WireName: "revoked",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ApprovedFields,
+	},
+	"Scheduled": ubx.FieldSpec{
+		WireName: "scheduled",
+		Kind:     "object",
+		Fields:   Grant_Timeline_Events_ScheduledFields,
+	},
+	"Withdrawn": ubx.FieldSpec{WireName: "withdrawn"},
+}
 
 var Grant_TimelineFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: Grant_Timeline_EventsFields,
-		},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   Grant_Timeline_EventsFields,
+	},
+}
 
 type GrantConfig struct {
 	// Optional. Additional email addresses to notify for all the actions performed on the grant.
@@ -255,25 +255,25 @@ var Grant = ubx.ResourceBinding{
 		"AdditionalEmailRecipients": ubx.FieldSpec{WireName: "additional_email_recipients"},
 		"AuditTrail": ubx.FieldSpec{
 			WireName: "audit_trail",
-			Kind: "object",
-			Fields: Grant_AuditTrailFields,
+			Kind:     "object",
+			Fields:   Grant_AuditTrailFields,
 		},
 		"Justification": ubx.FieldSpec{
 			WireName: "justification",
-			Kind: "object",
-			Fields: Grant_JustificationFields,
+			Kind:     "object",
+			Fields:   Grant_JustificationFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivilegedAccess": ubx.FieldSpec{
 			WireName: "privileged_access",
-			Kind: "object",
-			Fields: Grant_PrivilegedAccessFields,
+			Kind:     "object",
+			Fields:   Grant_PrivilegedAccessFields,
 		},
 		"RequestedDuration": ubx.FieldSpec{WireName: "requested_duration"},
 		"Timeline": ubx.FieldSpec{
 			WireName: "timeline",
-			Kind: "object",
-			Fields: Grant_TimelineFields,
+			Kind:     "object",
+			Fields:   Grant_TimelineFields,
 		},
 	},
 }

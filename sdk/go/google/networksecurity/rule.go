@@ -48,13 +48,13 @@ type RuleAttrs struct {
 var Rule = ubx.ResourceBinding{
 	WireType: "google_networksecurity_rule",
 	Fields: ubx.FieldMap{
-		"ApplicationMatcher": ubx.FieldSpec{WireName: "application_matcher"},
-		"BasicProfile": ubx.FieldSpec{WireName: "basic_profile"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SessionMatcher": ubx.FieldSpec{WireName: "session_matcher"},
+		"ApplicationMatcher":   ubx.FieldSpec{WireName: "application_matcher"},
+		"BasicProfile":         ubx.FieldSpec{WireName: "basic_profile"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Priority":             ubx.FieldSpec{WireName: "priority"},
+		"SessionMatcher":       ubx.FieldSpec{WireName: "session_matcher"},
 		"TlsInspectionEnabled": ubx.FieldSpec{WireName: "tls_inspection_enabled"},
 	},
 }

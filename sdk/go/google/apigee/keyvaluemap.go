@@ -24,8 +24,8 @@ type KeyvaluemapAttrs struct {
 var Keyvaluemap = ubx.ResourceBinding{
 	WireType: "google_apigee_keyvaluemap",
 	Fields: ubx.FieldMap{
-		"Encrypted": ubx.FieldSpec{WireName: "encrypted"},
+		"Encrypted":    ubx.FieldSpec{WireName: "encrypted"},
 		"MaskedValues": ubx.FieldSpec{WireName: "masked_values"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

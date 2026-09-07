@@ -9,8 +9,8 @@ type DataAsset_AccessGroupConfigs struct {
 }
 
 var DataAsset_AccessGroupConfigsFields = ubx.FieldMap{
-		"IamRoles": ubx.FieldSpec{WireName: "iam_roles"},
-	}
+	"IamRoles": ubx.FieldSpec{WireName: "iam_roles"},
+}
 
 type DataAssetConfig struct {
 	// Optional. Access groups configurations for this data asset.The key is DataProduct.AccessGroup.id and the value is AccessGroupConfig.Example: { "analyst": { "iamRoles": ["roles/bigquery.dataViewer"] } } Currently, at most one IAM role is allowed per access group. For providing multiple predefined IAM roles, wrap them in a custom IAM role as per https://cloud.google.com/iam/docs/creating-custom-roles.
@@ -49,12 +49,12 @@ var DataAsset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessGroupConfigs": ubx.FieldSpec{
 			WireName: "access_group_configs",
-			Kind: "map",
-			Fields: DataAsset_AccessGroupConfigsFields,
+			Kind:     "map",
+			Fields:   DataAsset_AccessGroupConfigsFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":     ubx.FieldSpec{WireName: "etag"},
+		"Labels":   ubx.FieldSpec{WireName: "labels"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Resource": ubx.FieldSpec{WireName: "resource"},
 	},
 }

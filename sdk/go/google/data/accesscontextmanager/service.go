@@ -4,7 +4,7 @@ package accesscontextmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Service_SupportedMethods struct {
-	Method any
+	Method     any
 	Permission any
 }
 
@@ -17,7 +17,7 @@ type ServiceAttrs struct {
 	AvailableOnRestrictedVip any
 	// True if the service is supported with some limitations. Check [documentation](https://cloud.google.com/vpc-service-controls/docs/supported-products) for details.
 	KnownLimitations any
-	Name any
+	Name             any
 	// The support stage of the service.
 	ServiceSupportStage any
 	// The support stage of the service.

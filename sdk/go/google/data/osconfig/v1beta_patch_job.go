@@ -184,7 +184,7 @@ type V1betaPatchJobAttrs struct {
 	InstanceDetailsSummary any
 	// A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones.
 	InstanceFilter any
-	Name any
+	Name           any
 	// Patch configuration specifications. Contains details on how to apply the patch(es) to a VM instance.
 	PatchConfig any
 	// Output only. Name of the patch deployment that created this patch job.

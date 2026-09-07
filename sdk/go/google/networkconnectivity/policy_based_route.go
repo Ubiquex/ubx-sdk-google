@@ -34,19 +34,19 @@ type PolicyBasedRoute_Warnings struct {
 }
 
 var PolicyBasedRoute_FilterFields = ubx.FieldMap{
-		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-		"SrcRange": ubx.FieldSpec{WireName: "src_range"},
-	}
+	"DestRange":       ubx.FieldSpec{WireName: "dest_range"},
+	"IpProtocol":      ubx.FieldSpec{WireName: "ip_protocol"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+	"SrcRange":        ubx.FieldSpec{WireName: "src_range"},
+}
 
 var PolicyBasedRoute_InterconnectAttachmentFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var PolicyBasedRoute_VirtualMachineFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 type PolicyBasedRouteConfig struct {
 	// Optional. An optional description of this resource. Provide this field when you create the resource.
@@ -110,24 +110,24 @@ var PolicyBasedRoute = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: PolicyBasedRoute_FilterFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_FilterFields,
 		},
 		"InterconnectAttachment": ubx.FieldSpec{
 			WireName: "interconnect_attachment",
-			Kind: "object",
-			Fields: PolicyBasedRoute_InterconnectAttachmentFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_InterconnectAttachmentFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NextHopIlbIp": ubx.FieldSpec{WireName: "next_hop_ilb_ip"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Network":            ubx.FieldSpec{WireName: "network"},
+		"NextHopIlbIp":       ubx.FieldSpec{WireName: "next_hop_ilb_ip"},
 		"NextHopOtherRoutes": ubx.FieldSpec{WireName: "next_hop_other_routes"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Priority":           ubx.FieldSpec{WireName: "priority"},
 		"VirtualMachine": ubx.FieldSpec{
 			WireName: "virtual_machine",
-			Kind: "object",
-			Fields: PolicyBasedRoute_VirtualMachineFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_VirtualMachineFields,
 		},
 	},
 }

@@ -101,74 +101,74 @@ type Instance_NetworkConfig struct {
 }
 
 var Instance_CryptoKeyConfigFields = ubx.FieldMap{
-		"KeyReference": ubx.FieldSpec{WireName: "key_reference"},
-	}
+	"KeyReference": ubx.FieldSpec{WireName: "key_reference"},
+}
 
 var Instance_EventPublishConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Topic":   ubx.FieldSpec{WireName: "topic"},
+}
 
 var Instance_LoggingConfigFields = ubx.FieldMap{
-		"EnableInstanceV2Logs": ubx.FieldSpec{WireName: "enable_instance_v2_logs"},
-		"InstanceCloudLoggingDisabled": ubx.FieldSpec{WireName: "instance_cloud_logging_disabled"},
-	}
+	"EnableInstanceV2Logs":         ubx.FieldSpec{WireName: "enable_instance_v2_logs"},
+	"InstanceCloudLoggingDisabled": ubx.FieldSpec{WireName: "instance_cloud_logging_disabled"},
+}
 
 var Instance_MaintenancePolicy_MaintenanceExclusionWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields = ubx.FieldMap{
-		"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
-		"Window": ubx.FieldSpec{
-			WireName: "window",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
-		},
-	}
+	"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
+	"Window": ubx.FieldSpec{
+		WireName: "window",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
+	},
+}
 
 var Instance_MaintenancePolicy_MaintenanceWindowFields = ubx.FieldMap{
-		"RecurringTimeWindow": ubx.FieldSpec{
-			WireName: "recurring_time_window",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields,
-		},
-	}
+	"RecurringTimeWindow": ubx.FieldSpec{
+		WireName: "recurring_time_window",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields,
+	},
+}
 
 var Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"MaintenanceExclusionWindow": ubx.FieldSpec{
-			WireName: "maintenance_exclusion_window",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
-		},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_MaintenanceWindowFields,
-		},
-	}
+	"MaintenanceExclusionWindow": ubx.FieldSpec{
+		WireName: "maintenance_exclusion_window",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
+	},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_MaintenanceWindowFields,
+	},
+}
 
 var Instance_MonitoringConfigFields = ubx.FieldMap{
-		"EnableInstanceV2Metrics": ubx.FieldSpec{WireName: "enable_instance_v2_metrics"},
-	}
+	"EnableInstanceV2Metrics": ubx.FieldSpec{WireName: "enable_instance_v2_metrics"},
+}
 
 var Instance_NetworkConfig_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"EffectiveUnreachableCidrBlock": ubx.FieldSpec{WireName: "effective_unreachable_cidr_block"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"UnreachableCidrBlock": ubx.FieldSpec{WireName: "unreachable_cidr_block"},
-	}
+	"EffectiveUnreachableCidrBlock": ubx.FieldSpec{WireName: "effective_unreachable_cidr_block"},
+	"NetworkAttachment":             ubx.FieldSpec{WireName: "network_attachment"},
+	"UnreachableCidrBlock":          ubx.FieldSpec{WireName: "unreachable_cidr_block"},
+}
 
 var Instance_NetworkConfigFields = ubx.FieldMap{
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"IpAllocation": ubx.FieldSpec{WireName: "ip_allocation"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PrivateServiceConnectConfig": ubx.FieldSpec{
-			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: Instance_NetworkConfig_PrivateServiceConnectConfigFields,
-		},
-	}
+	"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
+	"IpAllocation":   ubx.FieldSpec{WireName: "ip_allocation"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"PrivateServiceConnectConfig": ubx.FieldSpec{
+		WireName: "private_service_connect_config",
+		Kind:     "object",
+		Fields:   Instance_NetworkConfig_PrivateServiceConnectConfigFields,
+	},
+}
 
 type InstanceConfig struct {
 	// The crypto key configuration. This field is used by the Customer-managed encryption keys (CMEK) feature.
@@ -303,48 +303,48 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CryptoKeyConfig": ubx.FieldSpec{
 			WireName: "crypto_key_config",
-			Kind: "object",
-			Fields: Instance_CryptoKeyConfigFields,
+			Kind:     "object",
+			Fields:   Instance_CryptoKeyConfigFields,
 		},
 		"DataplexDataLineageIntegrationEnabled": ubx.FieldSpec{WireName: "dataplex_data_lineage_integration_enabled"},
-		"DataprocServiceAccount": ubx.FieldSpec{WireName: "dataproc_service_account"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EnableRbac": ubx.FieldSpec{WireName: "enable_rbac"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-		"EnableStackdriverMonitoring": ubx.FieldSpec{WireName: "enable_stackdriver_monitoring"},
+		"DataprocServiceAccount":                ubx.FieldSpec{WireName: "dataproc_service_account"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                           ubx.FieldSpec{WireName: "display_name"},
+		"EnableRbac":                            ubx.FieldSpec{WireName: "enable_rbac"},
+		"EnableStackdriverLogging":              ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+		"EnableStackdriverMonitoring":           ubx.FieldSpec{WireName: "enable_stackdriver_monitoring"},
 		"EventPublishConfig": ubx.FieldSpec{
 			WireName: "event_publish_config",
-			Kind: "object",
-			Fields: Instance_EventPublishConfigFields,
+			Kind:     "object",
+			Fields:   Instance_EventPublishConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: Instance_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   Instance_LoggingConfigFields,
 		},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenancePolicyFields,
 		},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind: "object",
-			Fields: Instance_MonitoringConfigFields,
+			Kind:     "object",
+			Fields:   Instance_MonitoringConfigFields,
 		},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: Instance_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   Instance_NetworkConfigFields,
 		},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"PatchRevision": ubx.FieldSpec{WireName: "patch_revision"},
+		"Options":         ubx.FieldSpec{WireName: "options"},
+		"PatchRevision":   ubx.FieldSpec{WireName: "patch_revision"},
 		"PrivateInstance": ubx.FieldSpec{WireName: "private_instance"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
+		"Version":         ubx.FieldSpec{WireName: "version"},
+		"Zone":            ubx.FieldSpec{WireName: "zone"},
 	},
 }

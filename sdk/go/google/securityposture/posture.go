@@ -165,186 +165,186 @@ type Posture_PolicySets struct {
 }
 
 var Posture_PolicySets_Policies_ComplianceStandardsFields = ubx.FieldMap{
-		"Control": ubx.FieldSpec{WireName: "control"},
-		"Standard": ubx.FieldSpec{WireName: "standard"},
-	}
+	"Control":  ubx.FieldSpec{WireName: "control"},
+	"Standard": ubx.FieldSpec{WireName: "standard"},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypesFields = ubx.FieldMap{
-		"Included": ubx.FieldSpec{WireName: "included"},
-	}
+	"Included": ubx.FieldSpec{WireName: "included"},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ValuesFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"DeniedValues": ubx.FieldSpec{WireName: "denied_values"},
-	}
+	"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
+	"DeniedValues":  ubx.FieldSpec{WireName: "denied_values"},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRulesFields = ubx.FieldMap{
-		"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
-		},
-		"DenyAll": ubx.FieldSpec{WireName: "deny_all"},
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"ResourceTypes": ubx.FieldSpec{
-			WireName: "resource_types",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypesFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ValuesFields,
-		},
-	}
+	"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
+	},
+	"DenyAll":    ubx.FieldSpec{WireName: "deny_all"},
+	"Enforce":    ubx.FieldSpec{WireName: "enforce"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"ResourceTypes": ubx.FieldSpec{
+		WireName: "resource_types",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypesFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ValuesFields,
+	},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintFields = ubx.FieldMap{
-		"CannedConstraintId": ubx.FieldSpec{WireName: "canned_constraint_id"},
-		"PolicyRules": ubx.FieldSpec{
-			WireName: "policy_rules",
-			Kind: "list",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRulesFields,
-		},
-	}
+	"CannedConstraintId": ubx.FieldSpec{WireName: "canned_constraint_id"},
+	"PolicyRules": ubx.FieldSpec{
+		WireName: "policy_rules",
+		Kind:     "list",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRulesFields,
+	},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraintFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MethodTypes": ubx.FieldSpec{WireName: "method_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ActionType":    ubx.FieldSpec{WireName: "action_type"},
+	"Condition":     ubx.FieldSpec{WireName: "condition"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"MethodTypes":   ubx.FieldSpec{WireName: "method_types"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustomFields = ubx.FieldMap{
-		"CustomConstraint": ubx.FieldSpec{
-			WireName: "custom_constraint",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraintFields,
-		},
-		"PolicyRules": ubx.FieldSpec{
-			WireName: "policy_rules",
-			Kind: "list",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRulesFields,
-		},
-	}
+	"CustomConstraint": ubx.FieldSpec{
+		WireName: "custom_constraint",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraintFields,
+	},
+	"PolicyRules": ubx.FieldSpec{
+		WireName: "policy_rules",
+		Kind:     "list",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRulesFields,
+	},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_PropertiesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ValueExpression": ubx.FieldSpec{
-			WireName: "value_expression",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ValueExpression": ubx.FieldSpec{
+		WireName: "value_expression",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
+	},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutputFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "list",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_PropertiesFields,
-		},
-	}
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "list",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_PropertiesFields,
+	},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelectorFields = ubx.FieldMap{
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_ConfigFields = ubx.FieldMap{
-		"CustomOutput": ubx.FieldSpec{
-			WireName: "custom_output",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutputFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Predicate": ubx.FieldSpec{
-			WireName: "predicate",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
-		},
-		"Recommendation": ubx.FieldSpec{WireName: "recommendation"},
-		"ResourceSelector": ubx.FieldSpec{
-			WireName: "resource_selector",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelectorFields,
-		},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"CustomOutput": ubx.FieldSpec{
+		WireName: "custom_output",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutputFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Predicate": ubx.FieldSpec{
+		WireName: "predicate",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ConditionFields,
+	},
+	"Recommendation": ubx.FieldSpec{WireName: "recommendation"},
+	"ResourceSelector": ubx.FieldSpec{
+		WireName: "resource_selector",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_ResourceSelectorFields,
+	},
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModuleFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_ConfigFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ModuleEnablementState": ubx.FieldSpec{WireName: "module_enablement_state"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_ConfigFields,
+	},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"Id":                    ubx.FieldSpec{WireName: "id"},
+	"ModuleEnablementState": ubx.FieldSpec{WireName: "module_enablement_state"},
+}
 
 var Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModuleFields = ubx.FieldMap{
-		"ModuleEnablementState": ubx.FieldSpec{WireName: "module_enablement_state"},
-		"ModuleName": ubx.FieldSpec{WireName: "module_name"},
-	}
+	"ModuleEnablementState": ubx.FieldSpec{WireName: "module_enablement_state"},
+	"ModuleName":            ubx.FieldSpec{WireName: "module_name"},
+}
 
 var Posture_PolicySets_Policies_ConstraintFields = ubx.FieldMap{
-		"OrgPolicyConstraint": ubx.FieldSpec{
-			WireName: "org_policy_constraint",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintFields,
-		},
-		"OrgPolicyConstraintCustom": ubx.FieldSpec{
-			WireName: "org_policy_constraint_custom",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustomFields,
-		},
-		"SecurityHealthAnalyticsCustomModule": ubx.FieldSpec{
-			WireName: "security_health_analytics_custom_module",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModuleFields,
-		},
-		"SecurityHealthAnalyticsModule": ubx.FieldSpec{
-			WireName: "security_health_analytics_module",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModuleFields,
-		},
-	}
+	"OrgPolicyConstraint": ubx.FieldSpec{
+		WireName: "org_policy_constraint",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintFields,
+	},
+	"OrgPolicyConstraintCustom": ubx.FieldSpec{
+		WireName: "org_policy_constraint_custom",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_OrgPolicyConstraintCustomFields,
+	},
+	"SecurityHealthAnalyticsCustomModule": ubx.FieldSpec{
+		WireName: "security_health_analytics_custom_module",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModuleFields,
+	},
+	"SecurityHealthAnalyticsModule": ubx.FieldSpec{
+		WireName: "security_health_analytics_module",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModuleFields,
+	},
+}
 
 var Posture_PolicySets_PoliciesFields = ubx.FieldMap{
-		"ComplianceStandards": ubx.FieldSpec{
-			WireName: "compliance_standards",
-			Kind: "list",
-			Fields: Posture_PolicySets_Policies_ComplianceStandardsFields,
-		},
-		"Constraint": ubx.FieldSpec{
-			WireName: "constraint",
-			Kind: "object",
-			Fields: Posture_PolicySets_Policies_ConstraintFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-	}
+	"ComplianceStandards": ubx.FieldSpec{
+		WireName: "compliance_standards",
+		Kind:     "list",
+		Fields:   Posture_PolicySets_Policies_ComplianceStandardsFields,
+	},
+	"Constraint": ubx.FieldSpec{
+		WireName: "constraint",
+		Kind:     "object",
+		Fields:   Posture_PolicySets_Policies_ConstraintFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"PolicyId":    ubx.FieldSpec{WireName: "policy_id"},
+}
 
 var Posture_PolicySetsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "list",
-			Fields: Posture_PolicySets_PoliciesFields,
-		},
-		"PolicySetId": ubx.FieldSpec{WireName: "policy_set_id"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "list",
+		Fields:   Posture_PolicySets_PoliciesFields,
+	},
+	"PolicySetId": ubx.FieldSpec{WireName: "policy_set_id"},
+}
 
 type PostureConfig struct {
 	// Optional. The user-specified annotations for the posture. For details about the values you can use in an annotation, see [AIP-148: Standard fields](https://google.aip.dev/148#annotations).
@@ -391,12 +391,12 @@ var Posture = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PolicySets": ubx.FieldSpec{
 			WireName: "policy_sets",
-			Kind: "list",
-			Fields: Posture_PolicySetsFields,
+			Kind:     "list",
+			Fields:   Posture_PolicySetsFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

@@ -27,6 +27,6 @@ var Group = ubx.ResourceBinding{
 	WireType: "google_firebaseappdistribution_group",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

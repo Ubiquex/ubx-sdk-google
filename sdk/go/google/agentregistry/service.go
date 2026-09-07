@@ -18,14 +18,14 @@ type Service_Interfaces struct {
 }
 
 var Service_AgentSpecFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_InterfacesFields = ubx.FieldMap{
-		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 type ServiceConfig struct {
 	// The spec of the agent.
@@ -72,25 +72,25 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentSpec": ubx.FieldSpec{
 			WireName: "agent_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EndpointSpec": ubx.FieldSpec{
 			WireName: "endpoint_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
 		"Interfaces": ubx.FieldSpec{
 			WireName: "interfaces",
-			Kind: "list",
-			Fields: Service_InterfacesFields,
+			Kind:     "list",
+			Fields:   Service_InterfacesFields,
 		},
 		"McpServerSpec": ubx.FieldSpec{
 			WireName: "mcp_server_spec",
-			Kind: "object",
-			Fields: Service_AgentSpecFields,
+			Kind:     "object",
+			Fields:   Service_AgentSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

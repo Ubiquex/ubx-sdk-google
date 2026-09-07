@@ -10,7 +10,7 @@ type AlphaResource_AccessControl struct {
 
 type AlphaResource_LastUsedCredential_BasicAuth struct {
 	Password any
-	User any
+	User     any
 }
 
 type AlphaResource_LastUsedCredential_ServiceAccount struct {
@@ -28,19 +28,19 @@ type AlphaResource_LastUsedCredential struct {
 }
 
 type AlphaResource_Update_Error_Errors_DebugInfo struct {
-	Detail any
+	Detail       any
 	StackEntries any
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails_Help struct {
@@ -48,33 +48,33 @@ type AlphaResource_Update_Error_Errors_ErrorDetails_Help struct {
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaResource_Update_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaResource_Update_Error_Errors struct {
-	Arguments any
-	Code any
-	DebugInfo any
+	Arguments    any
+	Code         any
+	DebugInfo    any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaResource_Update_Error struct {
@@ -83,13 +83,13 @@ type AlphaResource_Update_Error struct {
 }
 
 type AlphaResource_Update_Warnings_Data struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AlphaResource_Update_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
@@ -117,20 +117,20 @@ type AlphaResource_Update struct {
 }
 
 type AlphaResourceConfig struct {
-	Deployment any
+	Deployment                any
 	HeaderBypassBillingFilter any
-	Project any
-	Resource any
+	Project                   any
+	Resource                  any
 }
 
 type AlphaResourceAttrs struct {
 	// The access controls set on the resource.
 	AccessControl any
-	Deployment any
+	Deployment    any
 	// Output only. The evaluated properties of the resource with references expanded. Returned as serialized YAML.
-	FinalProperties any
+	FinalProperties           any
 	HeaderBypassBillingFilter any
-	Id any
+	Id                        any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// The credential used by Deployment Manager and TypeProvider. Only one of the options is permitted.
@@ -138,15 +138,15 @@ type AlphaResourceAttrs struct {
 	// Output only. URL of the manifest representing the current configuration of this resource.
 	Manifest any
 	// Output only. The name of the resource as it appears in the YAML config.
-	Name any
+	Name    any
 	Project any
 	// Output only. The current properties of the resource before any references have been filled in. Returned as serialized YAML.
 	Properties any
-	Resource any
+	Resource   any
 	// Output only. In case this is an action, it will show the runtimePolicies on which this action will run in the deployment
 	RuntimePolicies any
 	// Output only. The type of the resource, for example `compute.v1.instance`, or `cloudfunctions.v1beta1.function`.
-	Type any
+	Type   any
 	Update any
 	// Output only. Update timestamp in RFC3339 text format.
 	UpdateTime any
@@ -159,9 +159,9 @@ type AlphaResourceAttrs struct {
 var AlphaResource = ubx.DataSourceBinding{
 	WireType: "google_deploymentmanager_alpha_resource",
 	Fields: ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
+		"Deployment":                ubx.FieldSpec{WireName: "deployment"},
 		"HeaderBypassBillingFilter": ubx.FieldSpec{WireName: "header_bypass_billing_filter"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Project":                   ubx.FieldSpec{WireName: "project"},
+		"Resource":                  ubx.FieldSpec{WireName: "resource"},
 	},
 }

@@ -36,11 +36,11 @@ type RunAttrs struct {
 var Run = ubx.ResourceBinding{
 	WireType: "google_datalineage_run",
 	Fields: ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"StartTime":   ubx.FieldSpec{WireName: "start_time"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 	},
 }

@@ -41,9 +41,9 @@ var ServiceConnectionToken = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_service_connection_token",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 	},
 }

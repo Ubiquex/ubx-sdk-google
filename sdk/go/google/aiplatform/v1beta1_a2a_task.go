@@ -4,96 +4,96 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1A2aTask_Artifacts_Parts struct {
-	Data any
-	Filename any
+	Data      any
+	Filename  any
 	MediaType any
-	Metadata any
-	Raw any
-	Text any
-	Url any
+	Metadata  any
+	Raw       any
+	Text      any
+	Url       any
 }
 
 type V1beta1A2aTask_Artifacts struct {
-	ArtifactId any
+	ArtifactId  any
 	Description any
 	DisplayName any
-	Extensions any
-	Metadata any
-	Parts any
+	Extensions  any
+	Metadata    any
+	Parts       any
 }
 
 type V1beta1A2aTask_History struct {
-	Extensions any
-	MessageId any
-	Metadata any
-	Parts any
+	Extensions       any
+	MessageId        any
+	Metadata         any
+	Parts            any
 	ReferenceTaskIds any
-	Role any
+	Role             any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_Words struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription struct {
 	SpeakerLabel any
-	Text any
-	Words any
+	Text         any
+	Words        any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_CodeExecutionResult struct {
-	Id any
+	Id      any
 	Outcome any
-	Output any
+	Output  any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_ExecutableCode struct {
-	Code any
-	Id any
+	Code     any
+	Id       any
 	Language any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FileData struct {
 	DisplayName any
-	FileUri any
-	MimeType any
+	FileUri     any
+	MimeType    any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FunctionCall_PartialArgs struct {
-	BoolValue any
-	JsonPath any
-	NullValue any
-	NumberValue any
-	StringValue any
+	BoolValue    any
+	JsonPath     any
+	NullValue    any
+	NumberValue  any
+	StringValue  any
 	WillContinue any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FunctionCall struct {
-	Args any
-	Id any
-	Name any
-	PartialArgs any
+	Args         any
+	Id           any
+	Name         any
+	PartialArgs  any
 	WillContinue any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineData struct {
-	Data any
+	Data        any
 	DisplayName any
-	MimeType any
+	MimeType    any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts struct {
-	FileData any
+	FileData   any
 	InlineData any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse struct {
-	Id any
-	Name any
-	Parts any
-	Response any
+	Id         any
+	Name       any
+	Parts      any
+	Response   any
 	Scheduling any
 }
 
@@ -102,33 +102,33 @@ type V1beta1A2aTask_Output_Artifacts_Parts_MediaResolution struct {
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts_VideoMetadata struct {
-	EndOffset any
-	Fps any
+	EndOffset   any
+	Fps         any
 	StartOffset any
 }
 
 type V1beta1A2aTask_Output_Artifacts_Parts struct {
-	AudioTranscription any
+	AudioTranscription  any
 	CodeExecutionResult any
-	ExecutableCode any
-	FileData any
-	FunctionCall any
-	FunctionResponse any
-	InlineData any
-	MediaProcessing any
-	MediaResolution any
-	Text any
-	Thought any
-	ThoughtSignature any
-	VideoMetadata any
+	ExecutableCode      any
+	FileData            any
+	FunctionCall        any
+	FunctionResponse    any
+	InlineData          any
+	MediaProcessing     any
+	MediaResolution     any
+	Text                any
+	Thought             any
+	ThoughtSignature    any
+	VideoMetadata       any
 }
 
 type V1beta1A2aTask_Output_Artifacts struct {
-	ArtifactId any
+	ArtifactId  any
 	Description any
 	DisplayName any
-	Metadata any
-	Parts any
+	Metadata    any
+	Parts       any
 }
 
 type V1beta1A2aTask_Output struct {
@@ -162,224 +162,224 @@ type V1beta1A2aTask_StatusDetails struct {
 }
 
 var V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_WordsFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-		"Word": ubx.FieldSpec{WireName: "word"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+	"Word":        ubx.FieldSpec{WireName: "word"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscriptionFields = ubx.FieldMap{
-		"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Words": ubx.FieldSpec{
-			WireName: "words",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_WordsFields,
-		},
-	}
+	"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"Words": ubx.FieldSpec{
+		WireName: "words",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_WordsFields,
+	},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_CodeExecutionResultFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FileDataFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FileUri":     ubx.FieldSpec{WireName: "file_uri"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FunctionCall_PartialArgsFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"BoolValue":    ubx.FieldSpec{WireName: "bool_value"},
+	"JsonPath":     ubx.FieldSpec{WireName: "json_path"},
+	"NullValue":    ubx.FieldSpec{WireName: "null_value"},
+	"NumberValue":  ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FunctionCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartialArgs": ubx.FieldSpec{
-			WireName: "partial_args",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionCall_PartialArgsFields,
-		},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PartialArgs": ubx.FieldSpec{
+		WireName: "partial_args",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionCall_PartialArgsFields,
+	},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_PartsFields = ubx.FieldMap{
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FileDataFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-	}
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FileDataFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponseFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_PartsFields,
-		},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_PartsFields,
+	},
+	"Response":   ubx.FieldSpec{WireName: "response"},
+	"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_MediaResolutionFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_Parts_VideoMetadataFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"Fps": ubx.FieldSpec{WireName: "fps"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"Fps":         ubx.FieldSpec{WireName: "fps"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+}
 
 var V1beta1A2aTask_Output_Artifacts_PartsFields = ubx.FieldMap{
-		"AudioTranscription": ubx.FieldSpec{
-			WireName: "audio_transcription",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscriptionFields,
-		},
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_ExecutableCodeFields,
-		},
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FileDataFields,
-		},
-		"FunctionCall": ubx.FieldSpec{
-			WireName: "function_call",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionCallFields,
-		},
-		"FunctionResponse": ubx.FieldSpec{
-			WireName: "function_response",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponseFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-		"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
-		"MediaResolution": ubx.FieldSpec{
-			WireName: "media_resolution",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_MediaResolutionFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-		"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
-		"VideoMetadata": ubx.FieldSpec{
-			WireName: "video_metadata",
-			Kind: "object",
-			Fields: V1beta1A2aTask_Output_Artifacts_Parts_VideoMetadataFields,
-		},
-	}
+	"AudioTranscription": ubx.FieldSpec{
+		WireName: "audio_transcription",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscriptionFields,
+	},
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_ExecutableCodeFields,
+	},
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FileDataFields,
+	},
+	"FunctionCall": ubx.FieldSpec{
+		WireName: "function_call",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionCallFields,
+	},
+	"FunctionResponse": ubx.FieldSpec{
+		WireName: "function_response",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponseFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+	"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
+	"MediaResolution": ubx.FieldSpec{
+		WireName: "media_resolution",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_MediaResolutionFields,
+	},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+	"Thought":          ubx.FieldSpec{WireName: "thought"},
+	"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
+	"VideoMetadata": ubx.FieldSpec{
+		WireName: "video_metadata",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_Output_Artifacts_Parts_VideoMetadataFields,
+	},
+}
 
 var V1beta1A2aTask_Output_ArtifactsFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_Artifacts_PartsFields,
-		},
-	}
+	"ArtifactId":  ubx.FieldSpec{WireName: "artifact_id"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Metadata":    ubx.FieldSpec{WireName: "metadata"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_Artifacts_PartsFields,
+	},
+}
 
 var V1beta1A2aTask_OutputFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_ArtifactsFields,
-		},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_ArtifactsFields,
+	},
+}
 
 var V1beta1A2aTask_Artifacts_PartsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"MediaType": ubx.FieldSpec{WireName: "media_type"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Raw": ubx.FieldSpec{WireName: "raw"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Data":      ubx.FieldSpec{WireName: "data"},
+	"Filename":  ubx.FieldSpec{WireName: "filename"},
+	"MediaType": ubx.FieldSpec{WireName: "media_type"},
+	"Metadata":  ubx.FieldSpec{WireName: "metadata"},
+	"Raw":       ubx.FieldSpec{WireName: "raw"},
+	"Text":      ubx.FieldSpec{WireName: "text"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 var V1beta1A2aTask_HistoryFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{WireName: "extensions"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Artifacts_PartsFields,
-		},
-		"ReferenceTaskIds": ubx.FieldSpec{WireName: "reference_task_ids"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Extensions": ubx.FieldSpec{WireName: "extensions"},
+	"MessageId":  ubx.FieldSpec{WireName: "message_id"},
+	"Metadata":   ubx.FieldSpec{WireName: "metadata"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Artifacts_PartsFields,
+	},
+	"ReferenceTaskIds": ubx.FieldSpec{WireName: "reference_task_ids"},
+	"Role":             ubx.FieldSpec{WireName: "role"},
+}
 
 var V1beta1A2aTask_StatusFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: V1beta1A2aTask_HistoryFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_HistoryFields,
+	},
+	"State":     ubx.FieldSpec{WireName: "state"},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var V1beta1A2aTask_StatusDetails_TaskMessageFields = ubx.FieldMap{
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1A2aTask_Output_Artifacts_PartsFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"MessageId": ubx.FieldSpec{WireName: "message_id"},
+	"Metadata":  ubx.FieldSpec{WireName: "metadata"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTask_Output_Artifacts_PartsFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var V1beta1A2aTask_StatusDetailsFields = ubx.FieldMap{
-		"TaskMessage": ubx.FieldSpec{
-			WireName: "task_message",
-			Kind: "object",
-			Fields: V1beta1A2aTask_StatusDetails_TaskMessageFields,
-		},
-	}
+	"TaskMessage": ubx.FieldSpec{
+		WireName: "task_message",
+		Kind:     "object",
+		Fields:   V1beta1A2aTask_StatusDetails_TaskMessageFields,
+	},
+}
 
 type V1beta1A2aTaskConfig struct {
 	// Optional. Agent application which created the task.
@@ -444,27 +444,27 @@ type V1beta1A2aTaskAttrs struct {
 var V1beta1A2aTask = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_a2a_task",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"ContextId": ubx.FieldSpec{WireName: "context_id"},
+		"AppId":      ubx.FieldSpec{WireName: "app_id"},
+		"ContextId":  ubx.FieldSpec{WireName: "context_id"},
 		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Metadata":   ubx.FieldSpec{WireName: "metadata"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"Output": ubx.FieldSpec{
 			WireName: "output",
-			Kind: "object",
-			Fields: V1beta1A2aTask_OutputFields,
+			Kind:     "object",
+			Fields:   V1beta1A2aTask_OutputFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1A2aTask_StatusFields,
+			Kind:     "object",
+			Fields:   V1beta1A2aTask_StatusFields,
 		},
 		"StatusDetails": ubx.FieldSpec{
 			WireName: "status_details",
-			Kind: "object",
-			Fields: V1beta1A2aTask_StatusDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta1A2aTask_StatusDetailsFields,
 		},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"Ttl":    ubx.FieldSpec{WireName: "ttl"},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

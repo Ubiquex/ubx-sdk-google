@@ -20,7 +20,7 @@ type V1beta3ProcessorTypeAttrs struct {
 	Category any
 	// Launch stage of the processor type
 	LaunchStage any
-	Name any
+	Name        any
 	// A set of Cloud Storage URIs of sample documents for this processor.
 	SampleDocumentUris any
 	// The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`.

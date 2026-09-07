@@ -39,14 +39,14 @@ type V1beta1FhirStore_NotificationConfig struct {
 }
 
 type V1beta1FhirStore_NotificationConfigs struct {
-	PubsubTopic any
-	SendFullResource any
+	PubsubTopic                  any
+	SendFullResource             any
 	SendPreviousResourceOnDelete any
 }
 
 type V1beta1FhirStore_SearchConfig_SearchParameters struct {
 	CanonicalUrl any
-	Parameter any
+	Parameter    any
 }
 
 type V1beta1FhirStore_SearchConfig struct {
@@ -60,21 +60,21 @@ type V1beta1FhirStore_StreamConfigs_BigqueryDestination_ChangeDataCaptureConfig 
 
 type V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig struct {
 	ExpirationMs any
-	Type any
+	Type         any
 }
 
 type V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig struct {
 	LastUpdatedPartitionConfig any
-	RecursiveStructureDepth any
-	SchemaType any
+	RecursiveStructureDepth    any
+	SchemaType                 any
 }
 
 type V1beta1FhirStore_StreamConfigs_BigqueryDestination struct {
 	ChangeDataCaptureConfig any
-	DatasetUri any
-	Force any
-	SchemaConfig any
-	WriteDisposition any
+	DatasetUri              any
+	Force                   any
+	SchemaConfig            any
+	WriteDisposition        any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList struct {
@@ -82,66 +82,66 @@ type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_Ke
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom struct {
-	FilterProfile any
-	KeepList any
-	RemoveList any
+	FilterProfile   any
+	KeepList        any
+	RemoveList      any
 	SkipIdRedaction any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTag_CustomRegexes struct {
 	GroupIndexes any
-	Pattern any
+	Pattern      any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTag struct {
 	AdditionalInfoTypes any
-	CustomRegexes any
-	ExcludeInfoTypes any
-	TextRedactionMode any
+	CustomRegexes       any
+	ExcludeInfoTypes    any
+	TextRedactionMode   any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions struct {
 	CleanImageTag any
-	CleanTextTag any
-	DeleteTag any
-	KeepTag any
-	Queries any
-	RecurseTag any
-	RegenUidTag any
-	RemoveTag any
-	ResetTag any
+	CleanTextTag  any
+	DeleteTag     any
+	KeepTag       any
+	Queries       any
+	RecurseTag    any
+	RegenUidTag   any
+	RemoveTag     any
+	ResetTag      any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Options struct {
 	CleanDescriptors any
-	CleanImage any
-	PrimaryIds any
+	CleanImage       any
+	PrimaryIds       any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig struct {
-	Actions any
-	Options any
+	Actions     any
+	Options     any
 	ProfileType any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList struct {
 	Action any
-	Paths any
+	Paths  any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir struct {
 	DefaultKeepExtensions any
-	FieldMetadataList any
+	FieldMetadataList     any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_FieldMetadataList struct {
 	CharacterMaskField any
-	CleanTextField any
-	CryptoHashField any
-	DateShiftField any
-	KeepField any
-	Paths any
-	RemoveField any
+	CleanTextField     any
+	CryptoHashField    any
+	DateShiftField     any
+	KeepField          any
+	Paths              any
+	RemoveField        any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfig struct {
@@ -149,27 +149,27 @@ type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFiel
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfig_KmsWrapped struct {
-	CryptoKey any
+	CryptoKey  any
 	WrappedKey any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfig struct {
-	CryptoKey any
+	CryptoKey  any
 	KmsWrapped any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options struct {
 	CharacterMaskConfig any
-	ContextualDeid any
-	CryptoHashConfig any
-	DateShiftConfig any
-	KeepExtensions any
+	ContextualDeid      any
+	CryptoHashConfig    any
+	DateShiftConfig     any
+	KeepExtensions      any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig struct {
 	FieldMetadataList any
-	Options any
-	ProfileType any
+	Options           any
+	ProfileType       any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadata_FhirOutput struct {
@@ -181,41 +181,41 @@ type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Operatio
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations struct {
-	CharacterMaskConfig any
-	CryptoHashConfig any
-	DateShiftConfig any
-	InfoTypes any
-	RedactConfig any
+	CharacterMaskConfig       any
+	CryptoHashConfig          any
+	DateShiftConfig           any
+	InfoTypes                 any
+	RedactConfig              any
 	ReplaceWithInfoTypeConfig any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text struct {
 	AdditionalTransformations any
-	ExcludeInfoTypes any
-	ProfileType any
-	Transformations any
+	ExcludeInfoTypes          any
+	ProfileType               any
+	Transformations           any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config struct {
-	Dicom any
-	DicomTagConfig any
-	Fhir any
-	FhirFieldConfig any
-	Image any
-	OperationMetadata any
-	Text any
+	Dicom                     any
+	DicomTagConfig            any
+	Fhir                      any
+	FhirFieldConfig           any
+	Image                     any
+	OperationMetadata         any
+	Text                      any
 	UseRegionalDataProcessing any
 }
 
 type V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination struct {
 	Config any
-	Store any
+	Store  any
 }
 
 type V1beta1FhirStore_StreamConfigs struct {
-	BigqueryDestination any
+	BigqueryDestination          any
 	DeidentifiedStoreDestination any
-	ResourceTypes any
+	ResourceTypes                any
 }
 
 type V1beta1FhirStore_ValidationConfig struct {
@@ -234,361 +234,361 @@ type V1beta1FhirStore_ValidationConfig struct {
 }
 
 var V1beta1FhirStore_BulkExportGcsDestinationFields = ubx.FieldMap{
-		"UriPrefix": ubx.FieldSpec{WireName: "uri_prefix"},
-	}
+	"UriPrefix": ubx.FieldSpec{WireName: "uri_prefix"},
+}
 
 var V1beta1FhirStore_ConsentConfig_AccessDeterminationLogConfigFields = ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
+	"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+}
 
 var V1beta1FhirStore_ConsentConfig_ConsentHeaderHandlingFields = ubx.FieldMap{
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-	}
+	"Profile": ubx.FieldSpec{WireName: "profile"},
+}
 
 var V1beta1FhirStore_ConsentConfigFields = ubx.FieldMap{
-		"AccessDeterminationLogConfig": ubx.FieldSpec{
-			WireName: "access_determination_log_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_ConsentConfig_AccessDeterminationLogConfigFields,
-		},
-		"AccessEnforced": ubx.FieldSpec{WireName: "access_enforced"},
-		"ConsentHeaderHandling": ubx.FieldSpec{
-			WireName: "consent_header_handling",
-			Kind: "object",
-			Fields: V1beta1FhirStore_ConsentConfig_ConsentHeaderHandlingFields,
-		},
-		"EnforcedAdminConsents": ubx.FieldSpec{WireName: "enforced_admin_consents"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AccessDeterminationLogConfig": ubx.FieldSpec{
+		WireName: "access_determination_log_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_ConsentConfig_AccessDeterminationLogConfigFields,
+	},
+	"AccessEnforced": ubx.FieldSpec{WireName: "access_enforced"},
+	"ConsentHeaderHandling": ubx.FieldSpec{
+		WireName: "consent_header_handling",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_ConsentConfig_ConsentHeaderHandlingFields,
+	},
+	"EnforcedAdminConsents": ubx.FieldSpec{WireName: "enforced_admin_consents"},
+	"Version":               ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1FhirStore_NotificationConfigFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
-	}
+	"PubsubTopic":       ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
+}
 
 var V1beta1FhirStore_NotificationConfigsFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendFullResource": ubx.FieldSpec{WireName: "send_full_resource"},
-		"SendPreviousResourceOnDelete": ubx.FieldSpec{WireName: "send_previous_resource_on_delete"},
-	}
+	"PubsubTopic":                  ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendFullResource":             ubx.FieldSpec{WireName: "send_full_resource"},
+	"SendPreviousResourceOnDelete": ubx.FieldSpec{WireName: "send_previous_resource_on_delete"},
+}
 
 var V1beta1FhirStore_SearchConfig_SearchParametersFields = ubx.FieldMap{
-		"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-	}
+	"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
+	"Parameter":    ubx.FieldSpec{WireName: "parameter"},
+}
 
 var V1beta1FhirStore_SearchConfigFields = ubx.FieldMap{
-		"SearchParameters": ubx.FieldSpec{
-			WireName: "search_parameters",
-			Kind: "list",
-			Fields: V1beta1FhirStore_SearchConfig_SearchParametersFields,
-		},
-	}
+	"SearchParameters": ubx.FieldSpec{
+		WireName: "search_parameters",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_SearchConfig_SearchParametersFields,
+	},
+}
 
 var V1beta1FhirStore_StreamConfigs_BigqueryDestination_ChangeDataCaptureConfigFields = ubx.FieldMap{
-		"HistoryMode": ubx.FieldSpec{WireName: "history_mode"},
-	}
+	"HistoryMode": ubx.FieldSpec{WireName: "history_mode"},
+}
 
 var V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields = ubx.FieldMap{
-		"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields = ubx.FieldMap{
-		"LastUpdatedPartitionConfig": ubx.FieldSpec{
-			WireName: "last_updated_partition_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields,
-		},
-		"RecursiveStructureDepth": ubx.FieldSpec{WireName: "recursive_structure_depth"},
-		"SchemaType": ubx.FieldSpec{WireName: "schema_type"},
-	}
+	"LastUpdatedPartitionConfig": ubx.FieldSpec{
+		WireName: "last_updated_partition_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields,
+	},
+	"RecursiveStructureDepth": ubx.FieldSpec{WireName: "recursive_structure_depth"},
+	"SchemaType":              ubx.FieldSpec{WireName: "schema_type"},
+}
 
 var V1beta1FhirStore_StreamConfigs_BigqueryDestinationFields = ubx.FieldMap{
-		"ChangeDataCaptureConfig": ubx.FieldSpec{
-			WireName: "change_data_capture_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_BigqueryDestination_ChangeDataCaptureConfigFields,
-		},
-		"DatasetUri": ubx.FieldSpec{WireName: "dataset_uri"},
-		"Force": ubx.FieldSpec{WireName: "force"},
-		"SchemaConfig": ubx.FieldSpec{
-			WireName: "schema_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields,
-		},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"ChangeDataCaptureConfig": ubx.FieldSpec{
+		WireName: "change_data_capture_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_BigqueryDestination_ChangeDataCaptureConfigFields,
+	},
+	"DatasetUri": ubx.FieldSpec{WireName: "dataset_uri"},
+	"Force":      ubx.FieldSpec{WireName: "force"},
+	"SchemaConfig": ubx.FieldSpec{
+		WireName: "schema_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields,
+	},
+	"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields = ubx.FieldMap{
-		"FilterProfile": ubx.FieldSpec{WireName: "filter_profile"},
-		"KeepList": ubx.FieldSpec{
-			WireName: "keep_list",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
-		},
-		"RemoveList": ubx.FieldSpec{
-			WireName: "remove_list",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
-		},
-		"SkipIdRedaction": ubx.FieldSpec{WireName: "skip_id_redaction"},
-	}
+	"FilterProfile": ubx.FieldSpec{WireName: "filter_profile"},
+	"KeepList": ubx.FieldSpec{
+		WireName: "keep_list",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
+	},
+	"RemoveList": ubx.FieldSpec{
+		WireName: "remove_list",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
+	},
+	"SkipIdRedaction": ubx.FieldSpec{WireName: "skip_id_redaction"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTag_CustomRegexesFields = ubx.FieldMap{
-		"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
+	"Pattern":      ubx.FieldSpec{WireName: "pattern"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields = ubx.FieldMap{
-		"AdditionalInfoTypes": ubx.FieldSpec{WireName: "additional_info_types"},
-		"CustomRegexes": ubx.FieldSpec{
-			WireName: "custom_regexes",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTag_CustomRegexesFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
-		"TextRedactionMode": ubx.FieldSpec{WireName: "text_redaction_mode"},
-	}
+	"AdditionalInfoTypes": ubx.FieldSpec{WireName: "additional_info_types"},
+	"CustomRegexes": ubx.FieldSpec{
+		WireName: "custom_regexes",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTag_CustomRegexesFields,
+	},
+	"ExcludeInfoTypes":  ubx.FieldSpec{WireName: "exclude_info_types"},
+	"TextRedactionMode": ubx.FieldSpec{WireName: "text_redaction_mode"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_ActionsFields = ubx.FieldMap{
-		"CleanImageTag": ubx.FieldSpec{
-			WireName: "clean_image_tag",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
-		},
-		"CleanTextTag": ubx.FieldSpec{WireName: "clean_text_tag"},
-		"DeleteTag": ubx.FieldSpec{WireName: "delete_tag"},
-		"KeepTag": ubx.FieldSpec{WireName: "keep_tag"},
-		"Queries": ubx.FieldSpec{WireName: "queries"},
-		"RecurseTag": ubx.FieldSpec{WireName: "recurse_tag"},
-		"RegenUidTag": ubx.FieldSpec{WireName: "regen_uid_tag"},
-		"RemoveTag": ubx.FieldSpec{WireName: "remove_tag"},
-		"ResetTag": ubx.FieldSpec{WireName: "reset_tag"},
-	}
+	"CleanImageTag": ubx.FieldSpec{
+		WireName: "clean_image_tag",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
+	},
+	"CleanTextTag": ubx.FieldSpec{WireName: "clean_text_tag"},
+	"DeleteTag":    ubx.FieldSpec{WireName: "delete_tag"},
+	"KeepTag":      ubx.FieldSpec{WireName: "keep_tag"},
+	"Queries":      ubx.FieldSpec{WireName: "queries"},
+	"RecurseTag":   ubx.FieldSpec{WireName: "recurse_tag"},
+	"RegenUidTag":  ubx.FieldSpec{WireName: "regen_uid_tag"},
+	"RemoveTag":    ubx.FieldSpec{WireName: "remove_tag"},
+	"ResetTag":     ubx.FieldSpec{WireName: "reset_tag"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_OptionsFields = ubx.FieldMap{
-		"CleanDescriptors": ubx.FieldSpec{WireName: "clean_descriptors"},
-		"CleanImage": ubx.FieldSpec{
-			WireName: "clean_image",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
-		},
-		"PrimaryIds": ubx.FieldSpec{WireName: "primary_ids"},
-	}
+	"CleanDescriptors": ubx.FieldSpec{WireName: "clean_descriptors"},
+	"CleanImage": ubx.FieldSpec{
+		WireName: "clean_image",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
+	},
+	"PrimaryIds": ubx.FieldSpec{WireName: "primary_ids"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfigFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_ActionsFields,
-		},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_OptionsFields,
-		},
-		"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_ActionsFields,
+	},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_OptionsFields,
+	},
+	"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Paths":  ubx.FieldSpec{WireName: "paths"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields = ubx.FieldMap{
-		"DefaultKeepExtensions": ubx.FieldSpec{WireName: "default_keep_extensions"},
-		"FieldMetadataList": ubx.FieldSpec{
-			WireName: "field_metadata_list",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields,
-		},
-	}
+	"DefaultKeepExtensions": ubx.FieldSpec{WireName: "default_keep_extensions"},
+	"FieldMetadataList": ubx.FieldSpec{
+		WireName: "field_metadata_list",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields,
+	},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_FieldMetadataListFields = ubx.FieldMap{
-		"CharacterMaskField": ubx.FieldSpec{WireName: "character_mask_field"},
-		"CleanTextField": ubx.FieldSpec{WireName: "clean_text_field"},
-		"CryptoHashField": ubx.FieldSpec{WireName: "crypto_hash_field"},
-		"DateShiftField": ubx.FieldSpec{WireName: "date_shift_field"},
-		"KeepField": ubx.FieldSpec{WireName: "keep_field"},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"RemoveField": ubx.FieldSpec{WireName: "remove_field"},
-	}
+	"CharacterMaskField": ubx.FieldSpec{WireName: "character_mask_field"},
+	"CleanTextField":     ubx.FieldSpec{WireName: "clean_text_field"},
+	"CryptoHashField":    ubx.FieldSpec{WireName: "crypto_hash_field"},
+	"DateShiftField":     ubx.FieldSpec{WireName: "date_shift_field"},
+	"KeepField":          ubx.FieldSpec{WireName: "keep_field"},
+	"Paths":              ubx.FieldSpec{WireName: "paths"},
+	"RemoveField":        ubx.FieldSpec{WireName: "remove_field"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfigFields = ubx.FieldMap{
-		"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
-	}
+	"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfig_KmsWrappedFields = ubx.FieldMap{
-		"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
-		"WrappedKey": ubx.FieldSpec{WireName: "wrapped_key"},
-	}
+	"CryptoKey":  ubx.FieldSpec{WireName: "crypto_key"},
+	"WrappedKey": ubx.FieldSpec{WireName: "wrapped_key"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields = ubx.FieldMap{
-		"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
-		"KmsWrapped": ubx.FieldSpec{
-			WireName: "kms_wrapped",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfig_KmsWrappedFields,
-		},
-	}
+	"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
+	"KmsWrapped": ubx.FieldSpec{
+		WireName: "kms_wrapped",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfig_KmsWrappedFields,
+	},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_OptionsFields = ubx.FieldMap{
-		"CharacterMaskConfig": ubx.FieldSpec{
-			WireName: "character_mask_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfigFields,
-		},
-		"ContextualDeid": ubx.FieldSpec{WireName: "contextual_deid"},
-		"CryptoHashConfig": ubx.FieldSpec{
-			WireName: "crypto_hash_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
-		},
-		"DateShiftConfig": ubx.FieldSpec{
-			WireName: "date_shift_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
-		},
-		"KeepExtensions": ubx.FieldSpec{WireName: "keep_extensions"},
-	}
+	"CharacterMaskConfig": ubx.FieldSpec{
+		WireName: "character_mask_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfigFields,
+	},
+	"ContextualDeid": ubx.FieldSpec{WireName: "contextual_deid"},
+	"CryptoHashConfig": ubx.FieldSpec{
+		WireName: "crypto_hash_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
+	},
+	"DateShiftConfig": ubx.FieldSpec{
+		WireName: "date_shift_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
+	},
+	"KeepExtensions": ubx.FieldSpec{WireName: "keep_extensions"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfigFields = ubx.FieldMap{
-		"FieldMetadataList": ubx.FieldSpec{
-			WireName: "field_metadata_list",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_FieldMetadataListFields,
-		},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_OptionsFields,
-		},
-		"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
-	}
+	"FieldMetadataList": ubx.FieldSpec{
+		WireName: "field_metadata_list",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_FieldMetadataListFields,
+	},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_OptionsFields,
+	},
+	"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadata_FhirOutputFields = ubx.FieldMap{
-		"FhirStore": ubx.FieldSpec{WireName: "fhir_store"},
-	}
+	"FhirStore": ubx.FieldSpec{WireName: "fhir_store"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadataFields = ubx.FieldMap{
-		"FhirOutput": ubx.FieldSpec{
-			WireName: "fhir_output",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadata_FhirOutputFields,
-		},
-	}
+	"FhirOutput": ubx.FieldSpec{
+		WireName: "fhir_output",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadata_FhirOutputFields,
+	},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields = ubx.FieldMap{
-		"CharacterMaskConfig": ubx.FieldSpec{
-			WireName: "character_mask_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfigFields,
-		},
-		"CryptoHashConfig": ubx.FieldSpec{
-			WireName: "crypto_hash_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
-		},
-		"DateShiftConfig": ubx.FieldSpec{
-			WireName: "date_shift_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
-		},
-		"InfoTypes": ubx.FieldSpec{WireName: "info_types"},
-		"RedactConfig": ubx.FieldSpec{WireName: "redact_config"},
-		"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
-	}
+	"CharacterMaskConfig": ubx.FieldSpec{
+		WireName: "character_mask_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CharacterMaskConfigFields,
+	},
+	"CryptoHashConfig": ubx.FieldSpec{
+		WireName: "crypto_hash_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
+	},
+	"DateShiftConfig": ubx.FieldSpec{
+		WireName: "date_shift_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfig_Options_CryptoHashConfigFields,
+	},
+	"InfoTypes":                 ubx.FieldSpec{WireName: "info_types"},
+	"RedactConfig":              ubx.FieldSpec{WireName: "redact_config"},
+	"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields = ubx.FieldMap{
-		"AdditionalTransformations": ubx.FieldSpec{
-			WireName: "additional_transformations",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
-		"ProfileType": ubx.FieldSpec{WireName: "profile_type"},
-		"Transformations": ubx.FieldSpec{
-			WireName: "transformations",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
-		},
-	}
+	"AdditionalTransformations": ubx.FieldSpec{
+		WireName: "additional_transformations",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
+	"ProfileType":      ubx.FieldSpec{WireName: "profile_type"},
+	"Transformations": ubx.FieldSpec{
+		WireName: "transformations",
+		Kind:     "list",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
+	},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields = ubx.FieldMap{
-		"Dicom": ubx.FieldSpec{
-			WireName: "dicom",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields,
-		},
-		"DicomTagConfig": ubx.FieldSpec{
-			WireName: "dicom_tag_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfigFields,
-		},
-		"Fhir": ubx.FieldSpec{
-			WireName: "fhir",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields,
-		},
-		"FhirFieldConfig": ubx.FieldSpec{
-			WireName: "fhir_field_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfigFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
-		},
-		"OperationMetadata": ubx.FieldSpec{
-			WireName: "operation_metadata",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadataFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields,
-		},
-		"UseRegionalDataProcessing": ubx.FieldSpec{WireName: "use_regional_data_processing"},
-	}
+	"Dicom": ubx.FieldSpec{
+		WireName: "dicom",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields,
+	},
+	"DicomTagConfig": ubx.FieldSpec{
+		WireName: "dicom_tag_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfigFields,
+	},
+	"Fhir": ubx.FieldSpec{
+		WireName: "fhir",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields,
+	},
+	"FhirFieldConfig": ubx.FieldSpec{
+		WireName: "fhir_field_config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFieldConfigFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomTagConfig_Actions_CleanImageTagFields,
+	},
+	"OperationMetadata": ubx.FieldSpec{
+		WireName: "operation_metadata",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_OperationMetadataFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields,
+	},
+	"UseRegionalDataProcessing": ubx.FieldSpec{WireName: "use_regional_data_processing"},
+}
 
 var V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields,
-		},
-		"Store": ubx.FieldSpec{WireName: "store"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields,
+	},
+	"Store": ubx.FieldSpec{WireName: "store"},
+}
 
 var V1beta1FhirStore_StreamConfigsFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_BigqueryDestinationFields,
-		},
-		"DeidentifiedStoreDestination": ubx.FieldSpec{
-			WireName: "deidentified_store_destination",
-			Kind: "object",
-			Fields: V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields,
-		},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_BigqueryDestinationFields,
+	},
+	"DeidentifiedStoreDestination": ubx.FieldSpec{
+		WireName: "deidentified_store_destination",
+		Kind:     "object",
+		Fields:   V1beta1FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields,
+	},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var V1beta1FhirStore_ValidationConfigFields = ubx.FieldMap{
-		"DisableFhirpathValidation": ubx.FieldSpec{WireName: "disable_fhirpath_validation"},
-		"DisableProfileValidation": ubx.FieldSpec{WireName: "disable_profile_validation"},
-		"DisableReferenceTypeValidation": ubx.FieldSpec{WireName: "disable_reference_type_validation"},
-		"DisableRequiredFieldValidation": ubx.FieldSpec{WireName: "disable_required_field_validation"},
-		"EnableFhirpathProfileValidation": ubx.FieldSpec{WireName: "enable_fhirpath_profile_validation"},
-		"EnabledImplementationGuides": ubx.FieldSpec{WireName: "enabled_implementation_guides"},
-	}
+	"DisableFhirpathValidation":       ubx.FieldSpec{WireName: "disable_fhirpath_validation"},
+	"DisableProfileValidation":        ubx.FieldSpec{WireName: "disable_profile_validation"},
+	"DisableReferenceTypeValidation":  ubx.FieldSpec{WireName: "disable_reference_type_validation"},
+	"DisableRequiredFieldValidation":  ubx.FieldSpec{WireName: "disable_required_field_validation"},
+	"EnableFhirpathProfileValidation": ubx.FieldSpec{WireName: "enable_fhirpath_profile_validation"},
+	"EnabledImplementationGuides":     ubx.FieldSpec{WireName: "enabled_implementation_guides"},
+}
 
 type V1beta1FhirStoreConfig struct {
 	// The configuration for exporting to Cloud Storage using the bulk export API.
@@ -665,46 +665,46 @@ var V1beta1FhirStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BulkExportGcsDestination": ubx.FieldSpec{
 			WireName: "bulk_export_gcs_destination",
-			Kind: "object",
-			Fields: V1beta1FhirStore_BulkExportGcsDestinationFields,
+			Kind:     "object",
+			Fields:   V1beta1FhirStore_BulkExportGcsDestinationFields,
 		},
 		"ComplexDataTypeReferenceParsing": ubx.FieldSpec{WireName: "complex_data_type_reference_parsing"},
 		"ConsentConfig": ubx.FieldSpec{
 			WireName: "consent_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_ConsentConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FhirStore_ConsentConfigFields,
 		},
 		"DefaultSearchHandlingStrict": ubx.FieldSpec{WireName: "default_search_handling_strict"},
 		"DisableReferentialIntegrity": ubx.FieldSpec{WireName: "disable_referential_integrity"},
-		"DisableResourceVersioning": ubx.FieldSpec{WireName: "disable_resource_versioning"},
-		"EnableHistoryModifications": ubx.FieldSpec{WireName: "enable_history_modifications"},
-		"EnableUpdateCreate": ubx.FieldSpec{WireName: "enable_update_create"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisableResourceVersioning":   ubx.FieldSpec{WireName: "disable_resource_versioning"},
+		"EnableHistoryModifications":  ubx.FieldSpec{WireName: "enable_history_modifications"},
+		"EnableUpdateCreate":          ubx.FieldSpec{WireName: "enable_update_create"},
+		"Labels":                      ubx.FieldSpec{WireName: "labels"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"NotificationConfig": ubx.FieldSpec{
 			WireName: "notification_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_NotificationConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FhirStore_NotificationConfigFields,
 		},
 		"NotificationConfigs": ubx.FieldSpec{
 			WireName: "notification_configs",
-			Kind: "list",
-			Fields: V1beta1FhirStore_NotificationConfigsFields,
+			Kind:     "list",
+			Fields:   V1beta1FhirStore_NotificationConfigsFields,
 		},
 		"SearchConfig": ubx.FieldSpec{
 			WireName: "search_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_SearchConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FhirStore_SearchConfigFields,
 		},
 		"StreamConfigs": ubx.FieldSpec{
 			WireName: "stream_configs",
-			Kind: "list",
-			Fields: V1beta1FhirStore_StreamConfigsFields,
+			Kind:     "list",
+			Fields:   V1beta1FhirStore_StreamConfigsFields,
 		},
 		"ValidationConfig": ubx.FieldSpec{
 			WireName: "validation_config",
-			Kind: "object",
-			Fields: V1beta1FhirStore_ValidationConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FhirStore_ValidationConfigFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

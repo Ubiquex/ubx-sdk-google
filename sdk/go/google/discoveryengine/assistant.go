@@ -57,57 +57,57 @@ type Assistant_GenerationConfig struct {
 }
 
 var Assistant_CustomerPolicy_BannedPhrasesFields = ubx.FieldMap{
-		"IgnoreDiacritics": ubx.FieldSpec{WireName: "ignore_diacritics"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-		"Phrase": ubx.FieldSpec{WireName: "phrase"},
-	}
+	"IgnoreDiacritics": ubx.FieldSpec{WireName: "ignore_diacritics"},
+	"MatchType":        ubx.FieldSpec{WireName: "match_type"},
+	"Phrase":           ubx.FieldSpec{WireName: "phrase"},
+}
 
 var Assistant_CustomerPolicy_ModelArmorConfigFields = ubx.FieldMap{
-		"FailureMode": ubx.FieldSpec{WireName: "failure_mode"},
-		"ResponseTemplate": ubx.FieldSpec{WireName: "response_template"},
-		"UserPromptTemplate": ubx.FieldSpec{WireName: "user_prompt_template"},
-	}
+	"FailureMode":        ubx.FieldSpec{WireName: "failure_mode"},
+	"ResponseTemplate":   ubx.FieldSpec{WireName: "response_template"},
+	"UserPromptTemplate": ubx.FieldSpec{WireName: "user_prompt_template"},
+}
 
 var Assistant_CustomerPolicyFields = ubx.FieldMap{
-		"BannedPhrases": ubx.FieldSpec{
-			WireName: "banned_phrases",
-			Kind: "list",
-			Fields: Assistant_CustomerPolicy_BannedPhrasesFields,
-		},
-		"ModelArmorConfig": ubx.FieldSpec{
-			WireName: "model_armor_config",
-			Kind: "object",
-			Fields: Assistant_CustomerPolicy_ModelArmorConfigFields,
-		},
-	}
+	"BannedPhrases": ubx.FieldSpec{
+		WireName: "banned_phrases",
+		Kind:     "list",
+		Fields:   Assistant_CustomerPolicy_BannedPhrasesFields,
+	},
+	"ModelArmorConfig": ubx.FieldSpec{
+		WireName: "model_armor_config",
+		Kind:     "object",
+		Fields:   Assistant_CustomerPolicy_ModelArmorConfigFields,
+	},
+}
 
 var Assistant_EnabledTools_ToolInfoFields = ubx.FieldMap{
-		"ToolDisplayName": ubx.FieldSpec{WireName: "tool_display_name"},
-		"ToolName": ubx.FieldSpec{WireName: "tool_name"},
-	}
+	"ToolDisplayName": ubx.FieldSpec{WireName: "tool_display_name"},
+	"ToolName":        ubx.FieldSpec{WireName: "tool_name"},
+}
 
 var Assistant_EnabledToolsFields = ubx.FieldMap{
-		"ToolInfo": ubx.FieldSpec{
-			WireName: "tool_info",
-			Kind: "list",
-			Fields: Assistant_EnabledTools_ToolInfoFields,
-		},
-	}
+	"ToolInfo": ubx.FieldSpec{
+		WireName: "tool_info",
+		Kind:     "list",
+		Fields:   Assistant_EnabledTools_ToolInfoFields,
+	},
+}
 
 var Assistant_GenerationConfig_SystemInstructionFields = ubx.FieldMap{
-		"AdditionalSystemInstruction": ubx.FieldSpec{WireName: "additional_system_instruction"},
-	}
+	"AdditionalSystemInstruction": ubx.FieldSpec{WireName: "additional_system_instruction"},
+}
 
 var Assistant_GenerationConfigFields = ubx.FieldMap{
-		"AllowedModelIds": ubx.FieldSpec{WireName: "allowed_model_ids"},
-		"DefaultLanguage": ubx.FieldSpec{WireName: "default_language"},
-		"DefaultModelId": ubx.FieldSpec{WireName: "default_model_id"},
-		"SystemInstruction": ubx.FieldSpec{
-			WireName: "system_instruction",
-			Kind: "object",
-			Fields: Assistant_GenerationConfig_SystemInstructionFields,
-		},
-	}
+	"AllowedModelIds": ubx.FieldSpec{WireName: "allowed_model_ids"},
+	"DefaultLanguage": ubx.FieldSpec{WireName: "default_language"},
+	"DefaultModelId":  ubx.FieldSpec{WireName: "default_model_id"},
+	"SystemInstruction": ubx.FieldSpec{
+		WireName: "system_instruction",
+		Kind:     "object",
+		Fields:   Assistant_GenerationConfig_SystemInstructionFields,
+	},
+}
 
 type AssistantConfig struct {
 	// Customer-defined policy for the assistant.
@@ -156,23 +156,23 @@ var Assistant = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomerPolicy": ubx.FieldSpec{
 			WireName: "customer_policy",
-			Kind: "object",
-			Fields: Assistant_CustomerPolicyFields,
+			Kind:     "object",
+			Fields:   Assistant_CustomerPolicyFields,
 		},
 		"DefaultWebGroundingToggleOff": ubx.FieldSpec{WireName: "default_web_grounding_toggle_off"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
 		"EnabledTools": ubx.FieldSpec{
 			WireName: "enabled_tools",
-			Kind: "map",
-			Fields: Assistant_EnabledToolsFields,
+			Kind:     "map",
+			Fields:   Assistant_EnabledToolsFields,
 		},
 		"GenerationConfig": ubx.FieldSpec{
 			WireName: "generation_config",
-			Kind: "object",
-			Fields: Assistant_GenerationConfigFields,
+			Kind:     "object",
+			Fields:   Assistant_GenerationConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"WebGroundingType": ubx.FieldSpec{WireName: "web_grounding_type"},
 	},
 }

@@ -30,23 +30,23 @@ type AppProfile_StandardIsolation struct {
 }
 
 var AppProfile_DataBoostIsolationReadOnlyFields = ubx.FieldMap{
-		"ComputeBillingOwner": ubx.FieldSpec{WireName: "compute_billing_owner"},
-	}
+	"ComputeBillingOwner": ubx.FieldSpec{WireName: "compute_billing_owner"},
+}
 
 var AppProfile_MultiClusterRoutingUseAnyFields = ubx.FieldMap{
-		"ClusterIds": ubx.FieldSpec{WireName: "cluster_ids"},
-		"RowAffinity": ubx.FieldSpec{WireName: "row_affinity"},
-	}
+	"ClusterIds":  ubx.FieldSpec{WireName: "cluster_ids"},
+	"RowAffinity": ubx.FieldSpec{WireName: "row_affinity"},
+}
 
 var AppProfile_SingleClusterRoutingFields = ubx.FieldMap{
-		"AllowTransactionalWrites": ubx.FieldSpec{WireName: "allow_transactional_writes"},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-	}
+	"AllowTransactionalWrites": ubx.FieldSpec{WireName: "allow_transactional_writes"},
+	"ClusterId":                ubx.FieldSpec{WireName: "cluster_id"},
+}
 
 var AppProfile_StandardIsolationFields = ubx.FieldMap{
-		"MemoryConfig": ubx.FieldSpec{WireName: "memory_config"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"MemoryConfig": ubx.FieldSpec{WireName: "memory_config"},
+	"Priority":     ubx.FieldSpec{WireName: "priority"},
+}
 
 type AppProfileConfig struct {
 	// Data Boost is a serverless compute capability that lets you run high-throughput read jobs and queries on your Bigtable data, without impacting the performance of the clusters that handle your application traffic. Data Boost supports read-only use cases with single-cluster routing.
@@ -91,27 +91,27 @@ var AppProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataBoostIsolationReadOnly": ubx.FieldSpec{
 			WireName: "data_boost_isolation_read_only",
-			Kind: "object",
-			Fields: AppProfile_DataBoostIsolationReadOnlyFields,
+			Kind:     "object",
+			Fields:   AppProfile_DataBoostIsolationReadOnlyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"MultiClusterRoutingUseAny": ubx.FieldSpec{
 			WireName: "multi_cluster_routing_use_any",
-			Kind: "object",
-			Fields: AppProfile_MultiClusterRoutingUseAnyFields,
+			Kind:     "object",
+			Fields:   AppProfile_MultiClusterRoutingUseAnyFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SingleClusterRouting": ubx.FieldSpec{
 			WireName: "single_cluster_routing",
-			Kind: "object",
-			Fields: AppProfile_SingleClusterRoutingFields,
+			Kind:     "object",
+			Fields:   AppProfile_SingleClusterRoutingFields,
 		},
 		"StandardIsolation": ubx.FieldSpec{
 			WireName: "standard_isolation",
-			Kind: "object",
-			Fields: AppProfile_StandardIsolationFields,
+			Kind:     "object",
+			Fields:   AppProfile_StandardIsolationFields,
 		},
 	},
 }

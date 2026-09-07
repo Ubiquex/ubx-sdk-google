@@ -40,9 +40,9 @@ type V1betaGatewayAttrs struct {
 var V1betaGateway = ubx.ResourceBinding{
 	WireType: "google_apigateway_v1beta_gateway",
 	Fields: ubx.FieldMap{
-		"ApiConfig": ubx.FieldSpec{WireName: "api_config"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ApiConfig":     ubx.FieldSpec{WireName: "api_config"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"StreamingMode": ubx.FieldSpec{WireName: "streaming_mode"},
 	},
 }

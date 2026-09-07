@@ -14,12 +14,12 @@ type EntryType_RequiredAspects struct {
 }
 
 var EntryType_AuthorizationFields = ubx.FieldMap{
-		"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
-	}
+	"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
+}
 
 var EntryType_RequiredAspectsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type EntryTypeConfig struct {
 	// Authorization for an Entry Type.
@@ -76,20 +76,20 @@ var EntryType = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authorization": ubx.FieldSpec{
 			WireName: "authorization",
-			Kind: "object",
-			Fields: EntryType_AuthorizationFields,
+			Kind:     "object",
+			Fields:   EntryType_AuthorizationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Platform":    ubx.FieldSpec{WireName: "platform"},
 		"RequiredAspects": ubx.FieldSpec{
 			WireName: "required_aspects",
-			Kind: "list",
-			Fields: EntryType_RequiredAspectsFields,
+			Kind:     "list",
+			Fields:   EntryType_RequiredAspectsFields,
 		},
-		"System": ubx.FieldSpec{WireName: "system"},
+		"System":      ubx.FieldSpec{WireName: "system"},
 		"TypeAliases": ubx.FieldSpec{WireName: "type_aliases"},
 	},
 }

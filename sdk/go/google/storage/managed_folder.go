@@ -16,17 +16,17 @@ type ManagedFolder_RapidCacheConfig struct {
 }
 
 var ManagedFolder_RapidCacheConfig_PoliciesFields = ubx.FieldMap{
-		"IngestOnWrite": ubx.FieldSpec{WireName: "ingest_on_write"},
-		"RapidCacheId": ubx.FieldSpec{WireName: "rapid_cache_id"},
-	}
+	"IngestOnWrite": ubx.FieldSpec{WireName: "ingest_on_write"},
+	"RapidCacheId":  ubx.FieldSpec{WireName: "rapid_cache_id"},
+}
 
 var ManagedFolder_RapidCacheConfigFields = ubx.FieldMap{
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "map",
-			Fields: ManagedFolder_RapidCacheConfig_PoliciesFields,
-		},
-	}
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "map",
+		Fields:   ManagedFolder_RapidCacheConfig_PoliciesFields,
+	},
+}
 
 type ManagedFolderConfig struct {
 	// The name of the bucket containing this managed folder.
@@ -73,18 +73,18 @@ type ManagedFolderAttrs struct {
 var ManagedFolder = ubx.ResourceBinding{
 	WireType: "google_storage_managed_folder",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Bucket":         ubx.FieldSpec{WireName: "bucket"},
+		"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Kind":           ubx.FieldSpec{WireName: "kind"},
 		"Metageneration": ubx.FieldSpec{WireName: "metageneration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"RapidCacheConfig": ubx.FieldSpec{
 			WireName: "rapid_cache_config",
-			Kind: "object",
-			Fields: ManagedFolder_RapidCacheConfigFields,
+			Kind:     "object",
+			Fields:   ManagedFolder_RapidCacheConfigFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":   ubx.FieldSpec{WireName: "self_link"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

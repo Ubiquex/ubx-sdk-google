@@ -60,12 +60,12 @@ type V1beta1BackupAttrs struct {
 var V1beta1Backup = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_backup",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"KmsKeyName":      ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
 		"SourceFileShare": ubx.FieldSpec{WireName: "source_file_share"},
-		"SourceInstance": ubx.FieldSpec{WireName: "source_instance"},
-		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"SourceInstance":  ubx.FieldSpec{WireName: "source_instance"},
+		"SourceVolume":    ubx.FieldSpec{WireName: "source_volume"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
 	},
 }

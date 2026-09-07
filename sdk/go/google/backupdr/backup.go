@@ -26,12 +26,12 @@ type Backup_BackupApplianceBackupProperties struct {
 }
 
 type Backup_BackupApplianceLocks_BackupApplianceLockInfo struct {
-	BackupApplianceId any
+	BackupApplianceId   any
 	BackupApplianceName any
-	BackupImage any
-	JobName any
-	LockReason any
-	SlaId any
+	BackupImage         any
+	JobName             any
+	LockReason          any
+	SlaId               any
 }
 
 type Backup_BackupApplianceLocks_ServiceLockInfo struct {
@@ -40,8 +40,8 @@ type Backup_BackupApplianceLocks_ServiceLockInfo struct {
 
 type Backup_BackupApplianceLocks struct {
 	BackupApplianceLockInfo any
-	LockUntilTime any
-	ServiceLockInfo any
+	LockUntilTime           any
+	ServiceLockInfo         any
 }
 
 type Backup_CloudSqlInstanceBackupProperties struct {
@@ -60,10 +60,10 @@ type Backup_CloudSqlInstanceBackupProperties struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKey struct {
-	KmsKeyName any
+	KmsKeyName           any
 	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
+	RawKey               any
+	RsaEncryptedKey      any
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeature struct {
@@ -71,37 +71,37 @@ type Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeature struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_InitializeParams struct {
-	DiskName any
+	DiskName     any
 	ReplicaZones any
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk struct {
-	AutoDelete any
-	Boot any
-	DeviceName any
-	DiskEncryptionKey any
-	DiskInterface any
-	DiskSizeGb any
-	DiskType any
+	AutoDelete         any
+	Boot               any
+	DeviceName         any
+	DiskEncryptionKey  any
+	DiskInterface      any
+	DiskSizeGb         any
+	DiskType           any
 	DiskTypeDeprecated any
-	GuestOsFeature any
-	Index any
-	InitializeParams any
-	Kind any
-	License any
-	Mode any
-	SavedState any
-	Source any
-	Type any
+	GuestOsFeature     any
+	Index              any
+	InitializeParams   any
+	Kind               any
+	License            any
+	Mode               any
+	SavedState         any
+	Source             any
+	Type               any
 }
 
 type Backup_ComputeInstanceBackupProperties_GuestAccelerator struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 }
 
 type Backup_ComputeInstanceBackupProperties_Metadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -111,36 +111,36 @@ type Backup_ComputeInstanceBackupProperties_Metadata struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigs struct {
-	ExternalIpv6 any
+	ExternalIpv6             any
 	ExternalIpv6PrefixLength any
-	Name any
-	NatIp any
-	NetworkTier any
-	PublicPtrDomainName any
-	SetPublicPtr any
-	Type any
+	Name                     any
+	NatIp                    any
+	NetworkTier              any
+	PublicPtrDomainName      any
+	SetPublicPtr             any
+	Type                     any
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface_AliasIpRanges struct {
-	IpCidrRange any
+	IpCidrRange         any
 	SubnetworkRangeName any
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface struct {
-	AccessConfigs any
-	AliasIpRanges any
+	AccessConfigs            any
+	AliasIpRanges            any
 	InternalIpv6PrefixLength any
-	Ipv6AccessConfigs any
-	Ipv6AccessType any
-	Ipv6Address any
-	Name any
-	Network any
-	NetworkAttachment any
-	NetworkIp any
-	NicType any
-	QueueCount any
-	StackType any
-	Subnetwork any
+	Ipv6AccessConfigs        any
+	Ipv6AccessType           any
+	Ipv6Address              any
+	Name                     any
+	Network                  any
+	NetworkAttachment        any
+	NetworkIp                any
+	NicType                  any
+	QueueCount               any
+	StackType                any
+	Subnetwork               any
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeout struct {
@@ -151,9 +151,9 @@ type Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeout s
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling struct {
@@ -176,7 +176,7 @@ type Backup_ComputeInstanceBackupProperties_Scheduling struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_ServiceAccount struct {
-	Email any
+	Email  any
 	Scopes any
 }
 
@@ -446,318 +446,318 @@ type Backup_RegionDiskTargetEnvironment struct {
 }
 
 var Backup_ComputeInstanceRestoreProperties_AdvancedMachineFeaturesFields = ubx.FieldMap{
-		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-		"EnableUefiNetworking": ubx.FieldSpec{WireName: "enable_uefi_networking"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-		"VisibleCoreCount": ubx.FieldSpec{WireName: "visible_core_count"},
-	}
+	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+	"EnableUefiNetworking":       ubx.FieldSpec{WireName: "enable_uefi_networking"},
+	"ThreadsPerCore":             ubx.FieldSpec{WireName: "threads_per_core"},
+	"VisibleCoreCount":           ubx.FieldSpec{WireName: "visible_core_count"},
+}
 
 var Backup_ComputeInstanceRestoreProperties_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-	}
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeatureFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Disk_InitializeParamsFields = ubx.FieldMap{
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-	}
+	"DiskName":     ubx.FieldSpec{WireName: "disk_name"},
+	"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
+}
 
 var Backup_ComputeInstanceBackupProperties_DiskFields = ubx.FieldMap{
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"Boot": ubx.FieldSpec{WireName: "boot"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"DiskEncryptionKey": ubx.FieldSpec{
-			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
-		},
-		"DiskInterface": ubx.FieldSpec{WireName: "disk_interface"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"DiskTypeDeprecated": ubx.FieldSpec{WireName: "disk_type_deprecated"},
-		"GuestOsFeature": ubx.FieldSpec{
-			WireName: "guest_os_feature",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeatureFields,
-		},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"InitializeParams": ubx.FieldSpec{
-			WireName: "initialize_params",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_InitializeParamsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SavedState": ubx.FieldSpec{WireName: "saved_state"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
+	"Boot":       ubx.FieldSpec{WireName: "boot"},
+	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	"DiskEncryptionKey": ubx.FieldSpec{
+		WireName: "disk_encryption_key",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
+	},
+	"DiskInterface":      ubx.FieldSpec{WireName: "disk_interface"},
+	"DiskSizeGb":         ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":           ubx.FieldSpec{WireName: "disk_type"},
+	"DiskTypeDeprecated": ubx.FieldSpec{WireName: "disk_type_deprecated"},
+	"GuestOsFeature": ubx.FieldSpec{
+		WireName: "guest_os_feature",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeatureFields,
+	},
+	"Index": ubx.FieldSpec{WireName: "index"},
+	"InitializeParams": ubx.FieldSpec{
+		WireName: "initialize_params",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_InitializeParamsFields,
+	},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"License":    ubx.FieldSpec{WireName: "license"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SavedState": ubx.FieldSpec{WireName: "saved_state"},
+	"Source":     ubx.FieldSpec{WireName: "source"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var Backup_ComputeInstanceRestoreProperties_DisplayDeviceFields = ubx.FieldMap{
-		"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
-	}
+	"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
+}
 
 var Backup_ComputeInstanceBackupProperties_GuestAcceleratorFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Metadata_ItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Backup_ComputeInstanceBackupProperties_MetadataFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_Metadata_ItemsFields,
-		},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_Metadata_ItemsFields,
+	},
+}
 
 var Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigsFields = ubx.FieldMap{
-		"ExternalIpv6": ubx.FieldSpec{WireName: "external_ipv6"},
-		"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatIp": ubx.FieldSpec{WireName: "nat_ip"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"PublicPtrDomainName": ubx.FieldSpec{WireName: "public_ptr_domain_name"},
-		"SetPublicPtr": ubx.FieldSpec{WireName: "set_public_ptr"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExternalIpv6":             ubx.FieldSpec{WireName: "external_ipv6"},
+	"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"NatIp":                    ubx.FieldSpec{WireName: "nat_ip"},
+	"NetworkTier":              ubx.FieldSpec{WireName: "network_tier"},
+	"PublicPtrDomainName":      ubx.FieldSpec{WireName: "public_ptr_domain_name"},
+	"SetPublicPtr":             ubx.FieldSpec{WireName: "set_public_ptr"},
+	"Type":                     ubx.FieldSpec{WireName: "type"},
+}
 
 var Backup_ComputeInstanceBackupProperties_NetworkInterface_AliasIpRangesFields = ubx.FieldMap{
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"SubnetworkRangeName": ubx.FieldSpec{WireName: "subnetwork_range_name"},
-	}
+	"IpCidrRange":         ubx.FieldSpec{WireName: "ip_cidr_range"},
+	"SubnetworkRangeName": ubx.FieldSpec{WireName: "subnetwork_range_name"},
+}
 
 var Backup_ComputeInstanceBackupProperties_NetworkInterfaceFields = ubx.FieldMap{
-		"AccessConfigs": ubx.FieldSpec{
-			WireName: "access_configs",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigsFields,
-		},
-		"AliasIpRanges": ubx.FieldSpec{
-			WireName: "alias_ip_ranges",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_NetworkInterface_AliasIpRangesFields,
-		},
-		"InternalIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
-		"Ipv6AccessConfigs": ubx.FieldSpec{
-			WireName: "ipv6_access_configs",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigsFields,
-		},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"NetworkIp": ubx.FieldSpec{WireName: "network_ip"},
-		"NicType": ubx.FieldSpec{WireName: "nic_type"},
-		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"AccessConfigs": ubx.FieldSpec{
+		WireName: "access_configs",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigsFields,
+	},
+	"AliasIpRanges": ubx.FieldSpec{
+		WireName: "alias_ip_ranges",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_NetworkInterface_AliasIpRangesFields,
+	},
+	"InternalIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
+	"Ipv6AccessConfigs": ubx.FieldSpec{
+		WireName: "ipv6_access_configs",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigsFields,
+	},
+	"Ipv6AccessType":    ubx.FieldSpec{WireName: "ipv6_access_type"},
+	"Ipv6Address":       ubx.FieldSpec{WireName: "ipv6_address"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	"NetworkIp":         ubx.FieldSpec{WireName: "network_ip"},
+	"NicType":           ubx.FieldSpec{WireName: "nic_type"},
+	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
+	"StackType":         ubx.FieldSpec{WireName: "stack_type"},
+	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var Backup_ComputeInstanceRestoreProperties_NetworkPerformanceConfigFields = ubx.FieldMap{
-		"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
-	}
+	"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
+}
 
 var Backup_ComputeInstanceRestoreProperties_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Backup_ComputeInstanceRestoreProperties_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeoutFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Backup_ComputeInstanceBackupProperties_Scheduling_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var Backup_ComputeInstanceBackupProperties_SchedulingFields = ubx.FieldMap{
-		"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
-		"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
-		"LocalSsdRecoveryTimeout": ubx.FieldSpec{
-			WireName: "local_ssd_recovery_timeout",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeoutFields,
-		},
-		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_Scheduling_NodeAffinitiesFields,
-		},
-		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-	}
+	"AutomaticRestart":          ubx.FieldSpec{WireName: "automatic_restart"},
+	"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
+	"LocalSsdRecoveryTimeout": ubx.FieldSpec{
+		WireName: "local_ssd_recovery_timeout",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeoutFields,
+	},
+	"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_Scheduling_NodeAffinitiesFields,
+	},
+	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+	"Preemptible":       ubx.FieldSpec{WireName: "preemptible"},
+	"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
+}
 
 var Backup_ComputeInstanceBackupProperties_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Backup_ComputeInstanceBackupProperties_TagsFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{WireName: "items"},
-	}
+	"Items": ubx.FieldSpec{WireName: "items"},
+}
 
 var Backup_ComputeInstanceRestorePropertiesFields = ubx.FieldMap{
-		"AdvancedMachineFeatures": ubx.FieldSpec{
-			WireName: "advanced_machine_features",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_AdvancedMachineFeaturesFields,
-		},
-		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
-		"ConfidentialInstanceConfig": ubx.FieldSpec{
-			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_ConfidentialInstanceConfigFields,
-		},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_DiskFields,
-		},
-		"DisplayDevice": ubx.FieldSpec{
-			WireName: "display_device",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_DisplayDeviceFields,
-		},
-		"GuestAccelerators": ubx.FieldSpec{
-			WireName: "guest_accelerators",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_GuestAcceleratorFields,
-		},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"InstanceEncryptionKey": ubx.FieldSpec{
-			WireName: "instance_encryption_key",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
-		},
-		"KeyRevocationActionType": ubx.FieldSpec{WireName: "key_revocation_action_type"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_MetadataFields,
-		},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_NetworkInterfaceFields,
-		},
-		"NetworkPerformanceConfig": ubx.FieldSpec{
-			WireName: "network_performance_config",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_NetworkPerformanceConfigFields,
-		},
-		"Params": ubx.FieldSpec{
-			WireName: "params",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_ParamsFields,
-		},
-		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestoreProperties_ReservationAffinityFields,
-		},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_SchedulingFields,
-		},
-		"ServiceAccounts": ubx.FieldSpec{
-			WireName: "service_accounts",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_ServiceAccountFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_TagsFields,
-		},
-	}
+	"AdvancedMachineFeatures": ubx.FieldSpec{
+		WireName: "advanced_machine_features",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_AdvancedMachineFeaturesFields,
+	},
+	"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
+	"ConfidentialInstanceConfig": ubx.FieldSpec{
+		WireName: "confidential_instance_config",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_ConfidentialInstanceConfigFields,
+	},
+	"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_DiskFields,
+	},
+	"DisplayDevice": ubx.FieldSpec{
+		WireName: "display_device",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_DisplayDeviceFields,
+	},
+	"GuestAccelerators": ubx.FieldSpec{
+		WireName: "guest_accelerators",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_GuestAcceleratorFields,
+	},
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"InstanceEncryptionKey": ubx.FieldSpec{
+		WireName: "instance_encryption_key",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
+	},
+	"KeyRevocationActionType": ubx.FieldSpec{WireName: "key_revocation_action_type"},
+	"Labels":                  ubx.FieldSpec{WireName: "labels"},
+	"MachineType":             ubx.FieldSpec{WireName: "machine_type"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_MetadataFields,
+	},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_NetworkInterfaceFields,
+	},
+	"NetworkPerformanceConfig": ubx.FieldSpec{
+		WireName: "network_performance_config",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_NetworkPerformanceConfigFields,
+	},
+	"Params": ubx.FieldSpec{
+		WireName: "params",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_ParamsFields,
+	},
+	"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceRestoreProperties_ReservationAffinityFields,
+	},
+	"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_SchedulingFields,
+	},
+	"ServiceAccounts": ubx.FieldSpec{
+		WireName: "service_accounts",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_ServiceAccountFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_TagsFields,
+	},
+}
 
 var Backup_ComputeInstanceTargetEnvironmentFields = ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"UseProjectServiceAccount": ubx.FieldSpec{WireName: "use_project_service_account"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Project":                  ubx.FieldSpec{WireName: "project"},
+	"UseProjectServiceAccount": ubx.FieldSpec{WireName: "use_project_service_account"},
+	"Zone":                     ubx.FieldSpec{WireName: "zone"},
+}
 
 var Backup_DiskRestoreProperties_InstanceBackupSourceFields = ubx.FieldMap{
-		"BootDisk": ubx.FieldSpec{WireName: "boot_disk"},
-		"SourceDeviceName": ubx.FieldSpec{WireName: "source_device_name"},
-	}
+	"BootDisk":         ubx.FieldSpec{WireName: "boot_disk"},
+	"SourceDeviceName": ubx.FieldSpec{WireName: "source_device_name"},
+}
 
 var Backup_DiskRestorePropertiesFields = ubx.FieldMap{
-		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskEncryptionKey": ubx.FieldSpec{
-			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
-		},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"GuestOsFeature": ubx.FieldSpec{
-			WireName: "guest_os_feature",
-			Kind: "list",
-			Fields: Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeatureFields,
-		},
-		"InstanceBackupSource": ubx.FieldSpec{
-			WireName: "instance_backup_source",
-			Kind: "object",
-			Fields: Backup_DiskRestoreProperties_InstanceBackupSourceFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PhysicalBlockSizeBytes": ubx.FieldSpec{WireName: "physical_block_size_bytes"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ResourcePolicy": ubx.FieldSpec{WireName: "resource_policy"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AccessMode":   ubx.FieldSpec{WireName: "access_mode"},
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"DiskEncryptionKey": ubx.FieldSpec{
+		WireName: "disk_encryption_key",
+		Kind:     "object",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKeyFields,
+	},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	"GuestOsFeature": ubx.FieldSpec{
+		WireName: "guest_os_feature",
+		Kind:     "list",
+		Fields:   Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeatureFields,
+	},
+	"InstanceBackupSource": ubx.FieldSpec{
+		WireName: "instance_backup_source",
+		Kind:     "object",
+		Fields:   Backup_DiskRestoreProperties_InstanceBackupSourceFields,
+	},
+	"Labels":                 ubx.FieldSpec{WireName: "labels"},
+	"Licenses":               ubx.FieldSpec{WireName: "licenses"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"PhysicalBlockSizeBytes": ubx.FieldSpec{WireName: "physical_block_size_bytes"},
+	"ProvisionedIops":        ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput":  ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"ResourceManagerTags":    ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ResourcePolicy":         ubx.FieldSpec{WireName: "resource_policy"},
+	"SizeGb":                 ubx.FieldSpec{WireName: "size_gb"},
+	"StoragePool":            ubx.FieldSpec{WireName: "storage_pool"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var Backup_RegionDiskTargetEnvironmentFields = ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"UseProjectServiceAccount": ubx.FieldSpec{WireName: "use_project_service_account"},
-	}
+	"Project":                  ubx.FieldSpec{WireName: "project"},
+	"Region":                   ubx.FieldSpec{WireName: "region"},
+	"ReplicaZones":             ubx.FieldSpec{WireName: "replica_zones"},
+	"UseProjectServiceAccount": ubx.FieldSpec{WireName: "use_project_service_account"},
+}
 
 type BackupConfig struct {
 	// Optional. A field mask used to clear server-side default values for fields within the `instance_properties` oneof. When a field in this mask is cleared, the server will not apply its default logic (like inheriting a value from the source) for that field. The most common current use case is clearing default encryption keys. Examples of field mask paths: - Compute Instance Disks: `compute_instance_restore_properties.disks.*.disk_encryption_key` - Single Disk: `disk_restore_properties.disk_encryption_key`
@@ -851,28 +851,28 @@ var Backup = ubx.ResourceBinding{
 		"ClearOverridesFieldMask": ubx.FieldSpec{WireName: "clear_overrides_field_mask"},
 		"ComputeInstanceRestoreProperties": ubx.FieldSpec{
 			WireName: "compute_instance_restore_properties",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceRestorePropertiesFields,
+			Kind:     "object",
+			Fields:   Backup_ComputeInstanceRestorePropertiesFields,
 		},
 		"ComputeInstanceTargetEnvironment": ubx.FieldSpec{
 			WireName: "compute_instance_target_environment",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceTargetEnvironmentFields,
+			Kind:     "object",
+			Fields:   Backup_ComputeInstanceTargetEnvironmentFields,
 		},
 		"DiskRestoreProperties": ubx.FieldSpec{
 			WireName: "disk_restore_properties",
-			Kind: "object",
-			Fields: Backup_DiskRestorePropertiesFields,
+			Kind:     "object",
+			Fields:   Backup_DiskRestorePropertiesFields,
 		},
 		"DiskTargetEnvironment": ubx.FieldSpec{
 			WireName: "disk_target_environment",
-			Kind: "object",
-			Fields: Backup_ComputeInstanceTargetEnvironmentFields,
+			Kind:     "object",
+			Fields:   Backup_ComputeInstanceTargetEnvironmentFields,
 		},
 		"RegionDiskTargetEnvironment": ubx.FieldSpec{
 			WireName: "region_disk_target_environment",
-			Kind: "object",
-			Fields: Backup_RegionDiskTargetEnvironmentFields,
+			Kind:     "object",
+			Fields:   Backup_RegionDiskTargetEnvironmentFields,
 		},
 		"RequestId": ubx.FieldSpec{WireName: "request_id"},
 	},

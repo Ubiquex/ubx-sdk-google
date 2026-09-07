@@ -20,19 +20,19 @@ type V1beta2Subscription_PushConfig struct {
 }
 
 var V1beta2Subscription_PushConfig_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V1beta2Subscription_PushConfigFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: V1beta2Subscription_PushConfig_OidcTokenFields,
-		},
-		"PushEndpoint": ubx.FieldSpec{WireName: "push_endpoint"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   V1beta2Subscription_PushConfig_OidcTokenFields,
+	},
+	"PushEndpoint": ubx.FieldSpec{WireName: "push_endpoint"},
+}
 
 type V1beta2SubscriptionConfig struct {
 	// This value is the maximum time after a subscriber receives a message before the subscriber should acknowledge the message. After message delivery but before the ack deadline expires and before the message is acknowledged, it is an outstanding message and will not be delivered again during that time (on a best-effort basis). For pull subscriptions, this value is used as the initial value for the ack deadline. To override this value for a given message, call `ModifyAckDeadline` with the corresponding `ack_id` if using pull. The maximum custom deadline you can specify is 600 seconds (10 minutes). For push delivery, this value is also used to set the request timeout for the call to the push endpoint. If the subscriber never acknowledges the message, the Pub/Sub system will eventually redeliver the message. If this parameter is 0, a default value of 10 seconds is used.
@@ -60,11 +60,11 @@ var V1beta2Subscription = ubx.ResourceBinding{
 	WireType: "google_pubsub_v1beta2_subscription",
 	Fields: ubx.FieldMap{
 		"AckDeadlineSeconds": ubx.FieldSpec{WireName: "ack_deadline_seconds"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"PushConfig": ubx.FieldSpec{
 			WireName: "push_config",
-			Kind: "object",
-			Fields: V1beta2Subscription_PushConfigFields,
+			Kind:     "object",
+			Fields:   V1beta2Subscription_PushConfigFields,
 		},
 		"Topic": ubx.FieldSpec{WireName: "topic"},
 	},

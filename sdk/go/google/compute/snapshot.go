@@ -27,16 +27,16 @@ type Snapshot_SnapshotEncryptionKey struct {
 }
 
 var Snapshot_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Snapshot_SnapshotEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 type SnapshotConfig struct {
 	// Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
@@ -161,36 +161,36 @@ type SnapshotAttrs struct {
 var Snapshot = ubx.ResourceBinding{
 	WireType: "google_compute_snapshot",
 	Fields: ubx.FieldMap{
-		"ChainName": ubx.FieldSpec{WireName: "chain_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
+		"ChainName":        ubx.FieldSpec{WireName: "chain_name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"GuestFlush":       ubx.FieldSpec{WireName: "guest_flush"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"LocationHint":     ubx.FieldSpec{WireName: "location_hint"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Snapshot_ParamsFields,
+			Kind:     "object",
+			Fields:   Snapshot_ParamsFields,
 		},
 		"SnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "snapshot_encryption_key",
-			Kind: "object",
-			Fields: Snapshot_SnapshotEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Snapshot_SnapshotEncryptionKeyFields,
 		},
 		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
-		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
+		"SourceDisk":   ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind: "object",
-			Fields: Snapshot_SnapshotEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Snapshot_SnapshotEncryptionKeyFields,
 		},
 		"SourceDiskForRecoveryCheckpoint": ubx.FieldSpec{WireName: "source_disk_for_recovery_checkpoint"},
-		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
+		"SourceInstantSnapshot":           ubx.FieldSpec{WireName: "source_instant_snapshot"},
 		"SourceInstantSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_instant_snapshot_encryption_key",
-			Kind: "object",
-			Fields: Snapshot_SnapshotEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Snapshot_SnapshotEncryptionKeyFields,
 		},
 		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},

@@ -23,18 +23,18 @@ type V1betaBackup_ExpiryQuantity struct {
 }
 
 var V1betaBackup_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1betaBackup_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
+}
 
 var V1betaBackup_ExpiryQuantityFields = ubx.FieldMap{
-		"RetentionCount": ubx.FieldSpec{WireName: "retention_count"},
-		"TotalRetentionCount": ubx.FieldSpec{WireName: "total_retention_count"},
-	}
+	"RetentionCount":      ubx.FieldSpec{WireName: "retention_count"},
+	"TotalRetentionCount": ubx.FieldSpec{WireName: "total_retention_count"},
+}
 
 type V1betaBackupConfig struct {
 	// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
@@ -123,22 +123,22 @@ var V1betaBackup = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: V1betaBackup_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   V1betaBackup_EncryptionConfigFields,
 		},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: V1betaBackup_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   V1betaBackup_EncryptionInfoFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"ExpiryQuantity": ubx.FieldSpec{
 			WireName: "expiry_quantity",
-			Kind: "object",
-			Fields: V1betaBackup_ExpiryQuantityFields,
+			Kind:     "object",
+			Fields:   V1betaBackup_ExpiryQuantityFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

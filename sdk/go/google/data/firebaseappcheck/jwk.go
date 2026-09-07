@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Jwk_Keys struct {
 	Alg any
-	E any
+	E   any
 	Kid any
 	Kty any
-	N any
+	N   any
 	Use any
 }
 

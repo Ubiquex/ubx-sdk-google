@@ -37,6 +37,6 @@ var DatasetVersion = ubx.ResourceBinding{
 	WireType: "google_aiplatform_dataset_version",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 	},
 }

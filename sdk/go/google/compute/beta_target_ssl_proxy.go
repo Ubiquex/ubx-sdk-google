@@ -52,14 +52,14 @@ type BetaTargetSslProxyAttrs struct {
 var BetaTargetSslProxy = ubx.ResourceBinding{
 	WireType: "google_compute_beta_target_ssl_proxy",
 	Fields: ubx.FieldMap{
-		"CertificateMap": ubx.FieldSpec{WireName: "certificate_map"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"CertificateMap":  ubx.FieldSpec{WireName: "certificate_map"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Id":              ubx.FieldSpec{WireName: "id"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"ProxyHeader":     ubx.FieldSpec{WireName: "proxy_header"},
+		"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+		"Service":         ubx.FieldSpec{WireName: "service"},
 		"SslCertificates": ubx.FieldSpec{WireName: "ssl_certificates"},
-		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
+		"SslPolicy":       ubx.FieldSpec{WireName: "ssl_policy"},
 	},
 }

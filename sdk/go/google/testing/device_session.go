@@ -24,11 +24,11 @@ type DeviceSession_StateHistories struct {
 }
 
 var DeviceSession_AndroidDeviceFields = ubx.FieldMap{
-		"AndroidModelId": ubx.FieldSpec{WireName: "android_model_id"},
-		"AndroidVersionId": ubx.FieldSpec{WireName: "android_version_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-	}
+	"AndroidModelId":   ubx.FieldSpec{WireName: "android_model_id"},
+	"AndroidVersionId": ubx.FieldSpec{WireName: "android_version_id"},
+	"Locale":           ubx.FieldSpec{WireName: "locale"},
+	"Orientation":      ubx.FieldSpec{WireName: "orientation"},
+}
 
 type DeviceSessionConfig struct {
 	// A single Android device.
@@ -69,11 +69,11 @@ var DeviceSession = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AndroidDevice": ubx.FieldSpec{
 			WireName: "android_device",
-			Kind: "object",
-			Fields: DeviceSession_AndroidDeviceFields,
+			Kind:     "object",
+			Fields:   DeviceSession_AndroidDeviceFields,
 		},
 		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Ttl":        ubx.FieldSpec{WireName: "ttl"},
 	},
 }

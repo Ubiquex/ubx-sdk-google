@@ -10,7 +10,7 @@ type AuthTokenConfig struct {
 type AuthTokenAttrs struct {
 	// Output only. Create time of the auth token.
 	CreateTime any
-	Name any
+	Name       any
 	// Output only. State of the auth token.
 	State any
 	// Output only. The service generated authentication token used to connect to the Redis cluster.

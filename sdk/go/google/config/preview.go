@@ -73,61 +73,61 @@ type Preview_TfErrors struct {
 }
 
 var Preview_ErrorStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Preview_PreviewArtifactsFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{WireName: "artifacts"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Artifacts": ubx.FieldSpec{WireName: "artifacts"},
+	"Content":   ubx.FieldSpec{WireName: "content"},
+}
 
 var Preview_ProviderConfigFields = ubx.FieldMap{
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var Preview_TerraformBlueprint_ExternalValues_DeploymentSourceFields = ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"OutputName": ubx.FieldSpec{WireName: "output_name"},
-	}
+	"Deployment": ubx.FieldSpec{WireName: "deployment"},
+	"OutputName": ubx.FieldSpec{WireName: "output_name"},
+}
 
 var Preview_TerraformBlueprint_ExternalValuesFields = ubx.FieldMap{
-		"DeploymentSource": ubx.FieldSpec{
-			WireName: "deployment_source",
-			Kind: "object",
-			Fields: Preview_TerraformBlueprint_ExternalValues_DeploymentSourceFields,
-		},
-	}
+	"DeploymentSource": ubx.FieldSpec{
+		WireName: "deployment_source",
+		Kind:     "object",
+		Fields:   Preview_TerraformBlueprint_ExternalValues_DeploymentSourceFields,
+	},
+}
 
 var Preview_TerraformBlueprint_GitSourceFields = ubx.FieldMap{
-		"Directory": ubx.FieldSpec{WireName: "directory"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repo": ubx.FieldSpec{WireName: "repo"},
-	}
+	"Directory": ubx.FieldSpec{WireName: "directory"},
+	"Ref":       ubx.FieldSpec{WireName: "ref"},
+	"Repo":      ubx.FieldSpec{WireName: "repo"},
+}
 
 var Preview_TerraformBlueprint_InputValuesFields = ubx.FieldMap{
-		"InputValue": ubx.FieldSpec{WireName: "input_value"},
-	}
+	"InputValue": ubx.FieldSpec{WireName: "input_value"},
+}
 
 var Preview_TerraformBlueprintFields = ubx.FieldMap{
-		"ExternalValues": ubx.FieldSpec{
-			WireName: "external_values",
-			Kind: "map",
-			Fields: Preview_TerraformBlueprint_ExternalValuesFields,
-		},
-		"GcsSource": ubx.FieldSpec{WireName: "gcs_source"},
-		"GitSource": ubx.FieldSpec{
-			WireName: "git_source",
-			Kind: "object",
-			Fields: Preview_TerraformBlueprint_GitSourceFields,
-		},
-		"InputValues": ubx.FieldSpec{
-			WireName: "input_values",
-			Kind: "map",
-			Fields: Preview_TerraformBlueprint_InputValuesFields,
-		},
-	}
+	"ExternalValues": ubx.FieldSpec{
+		WireName: "external_values",
+		Kind:     "map",
+		Fields:   Preview_TerraformBlueprint_ExternalValuesFields,
+	},
+	"GcsSource": ubx.FieldSpec{WireName: "gcs_source"},
+	"GitSource": ubx.FieldSpec{
+		WireName: "git_source",
+		Kind:     "object",
+		Fields:   Preview_TerraformBlueprint_GitSourceFields,
+	},
+	"InputValues": ubx.FieldSpec{
+		WireName: "input_values",
+		Kind:     "map",
+		Fields:   Preview_TerraformBlueprint_InputValuesFields,
+	},
+}
 
 type PreviewConfig struct {
 	// Optional. Arbitrary key-value metadata storage e.g. to help client tools identify preview during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
@@ -206,34 +206,34 @@ type PreviewAttrs struct {
 var Preview = ubx.ResourceBinding{
 	WireType: "google_config_preview",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":        ubx.FieldSpec{WireName: "annotations"},
 		"ArtifactsGcsBucket": ubx.FieldSpec{WireName: "artifacts_gcs_bucket"},
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
+		"Deployment":         ubx.FieldSpec{WireName: "deployment"},
 		"ErrorStatus": ubx.FieldSpec{
 			WireName: "error_status",
-			Kind: "object",
-			Fields: Preview_ErrorStatusFields,
+			Kind:     "object",
+			Fields:   Preview_ErrorStatusFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PreviewArtifacts": ubx.FieldSpec{
 			WireName: "preview_artifacts",
-			Kind: "object",
-			Fields: Preview_PreviewArtifactsFields,
+			Kind:     "object",
+			Fields:   Preview_PreviewArtifactsFields,
 		},
 		"PreviewMode": ubx.FieldSpec{WireName: "preview_mode"},
 		"ProviderConfig": ubx.FieldSpec{
 			WireName: "provider_config",
-			Kind: "object",
-			Fields: Preview_ProviderConfigFields,
+			Kind:     "object",
+			Fields:   Preview_ProviderConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"TerraformBlueprint": ubx.FieldSpec{
 			WireName: "terraform_blueprint",
-			Kind: "object",
-			Fields: Preview_TerraformBlueprintFields,
+			Kind:     "object",
+			Fields:   Preview_TerraformBlueprintFields,
 		},
 		"TfVersionConstraint": ubx.FieldSpec{WireName: "tf_version_constraint"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+		"WorkerPool":          ubx.FieldSpec{WireName: "worker_pool"},
 	},
 }

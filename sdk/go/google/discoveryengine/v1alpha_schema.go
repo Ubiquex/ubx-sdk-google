@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaSchema_FieldConfigs struct {
 	AdvancedSiteSearchDataSources any
-	CompletableOption any
-	DynamicFacetableOption any
-	FieldPath any
-	FieldType any
-	IndexableOption any
-	KeyPropertyType any
-	MetatagName any
-	RecsFilterableOption any
-	RetrievableOption any
-	SchemaOrgPaths any
-	SearchableFieldImportance any
-	SearchableOption any
+	CompletableOption             any
+	DynamicFacetableOption        any
+	FieldPath                     any
+	FieldType                     any
+	IndexableOption               any
+	KeyPropertyType               any
+	MetatagName                   any
+	RecsFilterableOption          any
+	RetrievableOption             any
+	SchemaOrgPaths                any
+	SearchableFieldImportance     any
+	SearchableOption              any
 }
 
 type V1alphaSchemaConfig struct {
@@ -42,8 +42,8 @@ type V1alphaSchemaAttrs struct {
 var V1alphaSchema = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_schema",
 	Fields: ubx.FieldMap{
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JsonSchema":   ubx.FieldSpec{WireName: "json_schema"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
 	},
 }

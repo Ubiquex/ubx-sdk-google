@@ -25,6 +25,6 @@ var SshPublicKey = ubx.ResourceBinding{
 	WireType: "google_oslogin_ssh_public_key",
 	Fields: ubx.FieldMap{
 		"ExpirationTimeUsec": ubx.FieldSpec{WireName: "expiration_time_usec"},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":                ubx.FieldSpec{WireName: "key"},
 	},
 }

@@ -16,7 +16,7 @@ type RemoteTransportProfileAttrs struct {
 	Flow any
 	// Output only. Labels as key value pairs.
 	Labels any
-	Name any
+	Name   any
 	// Output only. Order state for this profile.
 	OrderState any
 	// Output only. Name of the provider on the other end of this profile. E.g. “Amazon Web Services” or “Microsoft Azure”.

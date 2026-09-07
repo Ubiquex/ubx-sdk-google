@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_Assignments struct {
 	Members any
-	Role any
+	Role    any
 }
 
 type PolicyConfig struct {
@@ -20,6 +20,5 @@ type PolicyAttrs struct {
 
 var Policy = ubx.DataSourceBinding{
 	WireType: "google_sasportal_policy",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

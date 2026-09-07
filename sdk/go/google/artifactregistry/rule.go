@@ -15,11 +15,11 @@ type Rule_Condition struct {
 }
 
 var Rule_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 type RuleConfig struct {
 	// The action this rule takes.
@@ -53,10 +53,10 @@ var Rule = ubx.ResourceBinding{
 		"Action": ubx.FieldSpec{WireName: "action"},
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: Rule_ConditionFields,
+			Kind:     "object",
+			Fields:   Rule_ConditionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Operation": ubx.FieldSpec{WireName: "operation"},
 		"PackageId": ubx.FieldSpec{WireName: "package_id"},
 	},

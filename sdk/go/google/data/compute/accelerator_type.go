@@ -25,8 +25,8 @@ type AcceleratorType_ResourceMetadata struct {
 
 type AcceleratorTypeConfig struct {
 	AcceleratorType any
-	Project any
-	Zone any
+	Project         any
+	Zone            any
 }
 
 type AcceleratorTypeAttrs struct {
@@ -44,20 +44,20 @@ type AcceleratorTypeAttrs struct {
 	// [Output Only] Maximum number of accelerator cards allowed per instance.
 	MaximumCardsPerInstance any
 	// [Output Only] Name of the resource.
-	Name any
+	Name    any
 	Project any
 	// Standardized resource metadata common to all compute resources.
 	ResourceMetadata any
 	// Output only. [Output Only] Server-defined, fully qualified URL for this resource.
 	SelfLink any
-	Zone any
+	Zone     any
 }
 
 var AcceleratorType = ubx.DataSourceBinding{
 	WireType: "google_compute_accelerator_type",
 	Fields: ubx.FieldMap{
 		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Project":         ubx.FieldSpec{WireName: "project"},
+		"Zone":            ubx.FieldSpec{WireName: "zone"},
 	},
 }

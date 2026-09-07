@@ -24,27 +24,27 @@ type V1beta1RagDataSchema_SchemaDetails struct {
 }
 
 var V1beta1RagDataSchema_SchemaDetails_ListConfigFields = ubx.FieldMap{
-		"ValueSchema": ubx.FieldSpec{WireName: "value_schema"},
-	}
+	"ValueSchema": ubx.FieldSpec{WireName: "value_schema"},
+}
 
 var V1beta1RagDataSchema_SchemaDetails_SearchStrategyFields = ubx.FieldMap{
-		"SearchStrategyType": ubx.FieldSpec{WireName: "search_strategy_type"},
-	}
+	"SearchStrategyType": ubx.FieldSpec{WireName: "search_strategy_type"},
+}
 
 var V1beta1RagDataSchema_SchemaDetailsFields = ubx.FieldMap{
-		"Granularity": ubx.FieldSpec{WireName: "granularity"},
-		"ListConfig": ubx.FieldSpec{
-			WireName: "list_config",
-			Kind: "object",
-			Fields: V1beta1RagDataSchema_SchemaDetails_ListConfigFields,
-		},
-		"SearchStrategy": ubx.FieldSpec{
-			WireName: "search_strategy",
-			Kind: "object",
-			Fields: V1beta1RagDataSchema_SchemaDetails_SearchStrategyFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Granularity": ubx.FieldSpec{WireName: "granularity"},
+	"ListConfig": ubx.FieldSpec{
+		WireName: "list_config",
+		Kind:     "object",
+		Fields:   V1beta1RagDataSchema_SchemaDetails_ListConfigFields,
+	},
+	"SearchStrategy": ubx.FieldSpec{
+		WireName: "search_strategy",
+		Kind:     "object",
+		Fields:   V1beta1RagDataSchema_SchemaDetails_SearchStrategyFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type V1beta1RagDataSchemaConfig struct {
 	// Required. The key of this data schema. This key should be matching the key of user specified metadata and unique inside corpus. This value can be up to 63 characters, and valid characters are /a-z-/. The first character must be a letter, the last could be a letter or a number.
@@ -67,12 +67,12 @@ type V1beta1RagDataSchemaAttrs struct {
 var V1beta1RagDataSchema = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_rag_data_schema",
 	Fields: ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":  ubx.FieldSpec{WireName: "key"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SchemaDetails": ubx.FieldSpec{
 			WireName: "schema_details",
-			Kind: "object",
-			Fields: V1beta1RagDataSchema_SchemaDetailsFields,
+			Kind:     "object",
+			Fields:   V1beta1RagDataSchema_SchemaDetailsFields,
 		},
 	},
 }

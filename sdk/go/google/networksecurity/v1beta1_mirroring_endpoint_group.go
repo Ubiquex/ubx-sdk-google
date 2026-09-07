@@ -4,19 +4,19 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MirroringEndpointGroup_Associations struct {
-	Name any
+	Name    any
 	Network any
-	State any
+	State   any
 }
 
 type V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups struct {
 	Locations any
-	Name any
+	Name      any
 }
 
 type V1beta1MirroringEndpointGroupConfig struct {
@@ -60,10 +60,10 @@ type V1beta1MirroringEndpointGroupAttrs struct {
 var V1beta1MirroringEndpointGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_mirroring_endpoint_group",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MirroringDeploymentGroup": ubx.FieldSpec{WireName: "mirroring_deployment_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Type":                     ubx.FieldSpec{WireName: "type"},
 	},
 }

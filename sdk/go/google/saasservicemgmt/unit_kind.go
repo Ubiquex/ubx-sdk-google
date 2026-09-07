@@ -36,34 +36,34 @@ type UnitKind_InputVariableMappings struct {
 }
 
 var UnitKind_DependenciesFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
-	}
+	"Alias":    ubx.FieldSpec{WireName: "alias"},
+	"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
+}
 
 var UnitKind_InputVariableMappings_FromFields = ubx.FieldMap{
-		"Dependency": ubx.FieldSpec{WireName: "dependency"},
-		"OutputVariable": ubx.FieldSpec{WireName: "output_variable"},
-	}
+	"Dependency":     ubx.FieldSpec{WireName: "dependency"},
+	"OutputVariable": ubx.FieldSpec{WireName: "output_variable"},
+}
 
 var UnitKind_InputVariableMappings_ToFields = ubx.FieldMap{
-		"Dependency": ubx.FieldSpec{WireName: "dependency"},
-		"IgnoreForLookup": ubx.FieldSpec{WireName: "ignore_for_lookup"},
-		"InputVariable": ubx.FieldSpec{WireName: "input_variable"},
-	}
+	"Dependency":      ubx.FieldSpec{WireName: "dependency"},
+	"IgnoreForLookup": ubx.FieldSpec{WireName: "ignore_for_lookup"},
+	"InputVariable":   ubx.FieldSpec{WireName: "input_variable"},
+}
 
 var UnitKind_InputVariableMappingsFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{
-			WireName: "from",
-			Kind: "object",
-			Fields: UnitKind_InputVariableMappings_FromFields,
-		},
-		"To": ubx.FieldSpec{
-			WireName: "to",
-			Kind: "object",
-			Fields: UnitKind_InputVariableMappings_ToFields,
-		},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"From": ubx.FieldSpec{
+		WireName: "from",
+		Kind:     "object",
+		Fields:   UnitKind_InputVariableMappings_FromFields,
+	},
+	"To": ubx.FieldSpec{
+		WireName: "to",
+		Kind:     "object",
+		Fields:   UnitKind_InputVariableMappings_ToFields,
+	},
+	"Variable": ubx.FieldSpec{WireName: "variable"},
+}
 
 type UnitKindConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -120,25 +120,25 @@ type UnitKindAttrs struct {
 var UnitKind = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_unit_kind",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":          ubx.FieldSpec{WireName: "annotations"},
 		"DefaultFlagRevisions": ubx.FieldSpec{WireName: "default_flag_revisions"},
-		"DefaultRelease": ubx.FieldSpec{WireName: "default_release"},
+		"DefaultRelease":       ubx.FieldSpec{WireName: "default_release"},
 		"Dependencies": ubx.FieldSpec{
 			WireName: "dependencies",
-			Kind: "list",
-			Fields: UnitKind_DependenciesFields,
+			Kind:     "list",
+			Fields:   UnitKind_DependenciesFields,
 		},
 		"InputVariableMappings": ubx.FieldSpec{
 			WireName: "input_variable_mappings",
-			Kind: "list",
-			Fields: UnitKind_InputVariableMappingsFields,
+			Kind:     "list",
+			Fields:   UnitKind_InputVariableMappingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"OutputVariableMappings": ubx.FieldSpec{
 			WireName: "output_variable_mappings",
-			Kind: "list",
-			Fields: UnitKind_InputVariableMappingsFields,
+			Kind:     "list",
+			Fields:   UnitKind_InputVariableMappingsFields,
 		},
 		"Saas": ubx.FieldSpec{WireName: "saas"},
 	},

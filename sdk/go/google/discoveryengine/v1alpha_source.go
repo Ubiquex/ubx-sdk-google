@@ -112,19 +112,19 @@ type V1alphaSource_SourceId struct {
 }
 
 type V1alphaSource_UserContents_AgentspaceContent struct {
-	DocumentName any
-	EngineName any
+	DocumentName      any
+	EngineName        any
 	IdeaforgeIdeaName any
 }
 
 type V1alphaSource_UserContents_GoogleDriveContent struct {
 	DocumentId any
-	MimeType any
+	MimeType   any
 	SourceName any
 }
 
 type V1alphaSource_UserContents_TextContent struct {
-	Content any
+	Content    any
 	SourceName any
 }
 
@@ -134,70 +134,70 @@ type V1alphaSource_UserContents_VideoContent struct {
 
 type V1alphaSource_UserContents_WebContent struct {
 	SourceName any
-	Url any
+	Url        any
 }
 
 type V1alphaSource_UserContents struct {
-	AgentspaceContent any
+	AgentspaceContent  any
 	GoogleDriveContent any
-	TextContent any
-	VideoContent any
-	WebContent any
+	TextContent        any
+	VideoContent       any
+	WebContent         any
 }
 
 var V1alphaSource_UserContents_AgentspaceContentFields = ubx.FieldMap{
-		"DocumentName": ubx.FieldSpec{WireName: "document_name"},
-		"EngineName": ubx.FieldSpec{WireName: "engine_name"},
-		"IdeaforgeIdeaName": ubx.FieldSpec{WireName: "ideaforge_idea_name"},
-	}
+	"DocumentName":      ubx.FieldSpec{WireName: "document_name"},
+	"EngineName":        ubx.FieldSpec{WireName: "engine_name"},
+	"IdeaforgeIdeaName": ubx.FieldSpec{WireName: "ideaforge_idea_name"},
+}
 
 var V1alphaSource_UserContents_GoogleDriveContentFields = ubx.FieldMap{
-		"DocumentId": ubx.FieldSpec{WireName: "document_id"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"DocumentId": ubx.FieldSpec{WireName: "document_id"},
+	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+	"SourceName": ubx.FieldSpec{WireName: "source_name"},
+}
 
 var V1alphaSource_UserContents_TextContentFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-	}
+	"Content":    ubx.FieldSpec{WireName: "content"},
+	"SourceName": ubx.FieldSpec{WireName: "source_name"},
+}
 
 var V1alphaSource_UserContents_VideoContentFields = ubx.FieldMap{
-		"YoutubeUrl": ubx.FieldSpec{WireName: "youtube_url"},
-	}
+	"YoutubeUrl": ubx.FieldSpec{WireName: "youtube_url"},
+}
 
 var V1alphaSource_UserContents_WebContentFields = ubx.FieldMap{
-		"SourceName": ubx.FieldSpec{WireName: "source_name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"SourceName": ubx.FieldSpec{WireName: "source_name"},
+	"Url":        ubx.FieldSpec{WireName: "url"},
+}
 
 var V1alphaSource_UserContentsFields = ubx.FieldMap{
-		"AgentspaceContent": ubx.FieldSpec{
-			WireName: "agentspace_content",
-			Kind: "object",
-			Fields: V1alphaSource_UserContents_AgentspaceContentFields,
-		},
-		"GoogleDriveContent": ubx.FieldSpec{
-			WireName: "google_drive_content",
-			Kind: "object",
-			Fields: V1alphaSource_UserContents_GoogleDriveContentFields,
-		},
-		"TextContent": ubx.FieldSpec{
-			WireName: "text_content",
-			Kind: "object",
-			Fields: V1alphaSource_UserContents_TextContentFields,
-		},
-		"VideoContent": ubx.FieldSpec{
-			WireName: "video_content",
-			Kind: "object",
-			Fields: V1alphaSource_UserContents_VideoContentFields,
-		},
-		"WebContent": ubx.FieldSpec{
-			WireName: "web_content",
-			Kind: "object",
-			Fields: V1alphaSource_UserContents_WebContentFields,
-		},
-	}
+	"AgentspaceContent": ubx.FieldSpec{
+		WireName: "agentspace_content",
+		Kind:     "object",
+		Fields:   V1alphaSource_UserContents_AgentspaceContentFields,
+	},
+	"GoogleDriveContent": ubx.FieldSpec{
+		WireName: "google_drive_content",
+		Kind:     "object",
+		Fields:   V1alphaSource_UserContents_GoogleDriveContentFields,
+	},
+	"TextContent": ubx.FieldSpec{
+		WireName: "text_content",
+		Kind:     "object",
+		Fields:   V1alphaSource_UserContents_TextContentFields,
+	},
+	"VideoContent": ubx.FieldSpec{
+		WireName: "video_content",
+		Kind:     "object",
+		Fields:   V1alphaSource_UserContents_VideoContentFields,
+	},
+	"WebContent": ubx.FieldSpec{
+		WireName: "web_content",
+		Kind:     "object",
+		Fields:   V1alphaSource_UserContents_WebContentFields,
+	},
+}
 
 type V1alphaSourceConfig struct {
 	// Required. The UserContents to be uploaded.
@@ -224,8 +224,8 @@ var V1alphaSource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"UserContents": ubx.FieldSpec{
 			WireName: "user_contents",
-			Kind: "list",
-			Fields: V1alphaSource_UserContentsFields,
+			Kind:     "list",
+			Fields:   V1alphaSource_UserContentsFields,
 		},
 	},
 }

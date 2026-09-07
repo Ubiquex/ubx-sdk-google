@@ -42,10 +42,10 @@ type WebAppAttrs struct {
 var WebApp = ubx.ResourceBinding{
 	WireType: "google_firebase_web_app",
 	Fields: ubx.FieldMap{
-		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
-		"AppUrls": ubx.FieldSpec{WireName: "app_urls"},
+		"ApiKeyId":    ubx.FieldSpec{WireName: "api_key_id"},
+		"AppUrls":     ubx.FieldSpec{WireName: "app_urls"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

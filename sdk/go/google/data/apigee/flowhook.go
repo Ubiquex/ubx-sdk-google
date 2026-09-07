@@ -14,7 +14,7 @@ type FlowhookAttrs struct {
 	Description any
 	// Output only. Where in the API call flow the flow hook is invoked. Must be one of `PreProxyFlowHook`, `PostProxyFlowHook`, `PreTargetFlowHook`, or `PostTargetFlowHook`.
 	FlowHookPoint any
-	Name any
+	Name          any
 	// Shared flow attached to this flow hook, or empty if there is none attached.
 	SharedFlow any
 }

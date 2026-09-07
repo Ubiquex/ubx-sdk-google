@@ -4,16 +4,16 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceConfig struct {
-	AppsId any
+	AppsId      any
 	InstancesId any
-	ServicesId any
-	VersionsId any
+	ServicesId  any
+	VersionsId  any
 }
 
 type InstanceAttrs struct {
 	// Output only. App Engine release this instance is running on.
 	AppEngineRelease any
-	AppsId any
+	AppsId           any
 	// Output only. Availability of the instance.
 	Availability any
 	// Output only. Average latency (ms) over the last minute.
@@ -21,7 +21,7 @@ type InstanceAttrs struct {
 	// Output only. Number of errors since this instance was started.
 	Errors any
 	// Output only. Relative name of the instance within the version. Example: instance-1.
-	Id any
+	Id          any
 	InstancesId any
 	// Output only. Total memory in use (bytes).
 	MemoryUsage any
@@ -30,10 +30,10 @@ type InstanceAttrs struct {
 	// Output only. Average queries per second (QPS) over the last minute.
 	Qps any
 	// Output only. Number of requests since this instance was started.
-	Requests any
+	Requests   any
 	ServicesId any
 	// Output only. Time that this instance was started.@OutputOnly
-	StartTime any
+	StartTime  any
 	VersionsId any
 	// Output only. Whether this instance is in debug mode. Only applicable for instances in App Engine flexible environment.
 	VmDebugEnabled any
@@ -54,9 +54,9 @@ type InstanceAttrs struct {
 var Instance = ubx.DataSourceBinding{
 	WireType: "google_appengine_instance",
 	Fields: ubx.FieldMap{
-		"AppsId": ubx.FieldSpec{WireName: "apps_id"},
+		"AppsId":      ubx.FieldSpec{WireName: "apps_id"},
 		"InstancesId": ubx.FieldSpec{WireName: "instances_id"},
-		"ServicesId": ubx.FieldSpec{WireName: "services_id"},
-		"VersionsId": ubx.FieldSpec{WireName: "versions_id"},
+		"ServicesId":  ubx.FieldSpec{WireName: "services_id"},
+		"VersionsId":  ubx.FieldSpec{WireName: "versions_id"},
 	},
 }

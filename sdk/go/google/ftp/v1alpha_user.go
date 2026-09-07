@@ -4,30 +4,30 @@ package ftp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaUser_StorageDirectoryMappings struct {
-	Bucket any
+	Bucket       any
 	BucketPrefix any
-	Directory any
-	Permission any
+	Directory    any
+	Permission   any
 }
 
 type V1alphaUser_UserCredentials struct {
-	CredentialName any
-	CredentialType any
+	CredentialName   any
+	CredentialType   any
 	SshPublicKeyBody any
 }
 
 var V1alphaUser_StorageDirectoryMappingsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-		"Directory": ubx.FieldSpec{WireName: "directory"},
-		"Permission": ubx.FieldSpec{WireName: "permission"},
-	}
+	"Bucket":       ubx.FieldSpec{WireName: "bucket"},
+	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+	"Directory":    ubx.FieldSpec{WireName: "directory"},
+	"Permission":   ubx.FieldSpec{WireName: "permission"},
+}
 
 var V1alphaUser_UserCredentialsFields = ubx.FieldMap{
-		"CredentialName": ubx.FieldSpec{WireName: "credential_name"},
-		"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
-		"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
-	}
+	"CredentialName":   ubx.FieldSpec{WireName: "credential_name"},
+	"CredentialType":   ubx.FieldSpec{WireName: "credential_type"},
+	"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
+}
 
 type V1alphaUserConfig struct {
 	// Required. Service account in customer project attached to this SFTP User.
@@ -67,17 +67,17 @@ var V1alphaUser = ubx.ResourceBinding{
 	WireType: "google_ftp_v1alpha_user",
 	Fields: ubx.FieldMap{
 		"CustomerServiceAccount": ubx.FieldSpec{WireName: "customer_service_account"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"StorageDirectoryMappings": ubx.FieldSpec{
 			WireName: "storage_directory_mappings",
-			Kind: "list",
-			Fields: V1alphaUser_StorageDirectoryMappingsFields,
+			Kind:     "list",
+			Fields:   V1alphaUser_StorageDirectoryMappingsFields,
 		},
 		"UserCredentials": ubx.FieldSpec{
 			WireName: "user_credentials",
-			Kind: "list",
-			Fields: V1alphaUser_UserCredentialsFields,
+			Kind:     "list",
+			Fields:   V1alphaUser_UserCredentialsFields,
 		},
 	},
 }

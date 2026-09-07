@@ -11,9 +11,9 @@ type V1beta1Volume_MountPoint struct {
 }
 
 var V1beta1Volume_MountPointFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"MountName": ubx.FieldSpec{WireName: "mount_name"},
-	}
+	"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+	"MountName": ubx.FieldSpec{WireName: "mount_name"},
+}
 
 type V1beta1VolumeConfig struct {
 	// Optional. A description of the volume with 2048 characters or less. Requests with longer descriptions will be rejected.
@@ -43,11 +43,11 @@ var V1beta1Volume = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_volume",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MountPoint": ubx.FieldSpec{
 			WireName: "mount_point",
-			Kind: "object",
-			Fields: V1beta1Volume_MountPointFields,
+			Kind:     "object",
+			Fields:   V1beta1Volume_MountPointFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

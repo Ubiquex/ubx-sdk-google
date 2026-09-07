@@ -29,7 +29,7 @@ var AuthorizedView = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_authorized_view",
 	Fields: ubx.FieldMap{
 		"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -9,55 +9,55 @@ type V1beta1AuthorizationPolicy_Rules_Destinations_HttpHeaderMatch struct {
 }
 
 type V1beta1AuthorizationPolicy_Rules_Destinations struct {
-	Hosts any
+	Hosts           any
 	HttpHeaderMatch any
-	Methods any
-	Ports any
+	Methods         any
+	Ports           any
 }
 
 type V1beta1AuthorizationPolicy_Rules_Sources struct {
-	IpBlocks any
+	IpBlocks   any
 	Principals any
 }
 
 type V1beta1AuthorizationPolicy_Rules struct {
 	Destinations any
-	Sources any
+	Sources      any
 }
 
 var V1beta1AuthorizationPolicy_Rules_Destinations_HttpHeaderMatchFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-	}
+	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+	"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+}
 
 var V1beta1AuthorizationPolicy_Rules_DestinationsFields = ubx.FieldMap{
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"HttpHeaderMatch": ubx.FieldSpec{
-			WireName: "http_header_match",
-			Kind: "object",
-			Fields: V1beta1AuthorizationPolicy_Rules_Destinations_HttpHeaderMatchFields,
-		},
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
+	"Hosts": ubx.FieldSpec{WireName: "hosts"},
+	"HttpHeaderMatch": ubx.FieldSpec{
+		WireName: "http_header_match",
+		Kind:     "object",
+		Fields:   V1beta1AuthorizationPolicy_Rules_Destinations_HttpHeaderMatchFields,
+	},
+	"Methods": ubx.FieldSpec{WireName: "methods"},
+	"Ports":   ubx.FieldSpec{WireName: "ports"},
+}
 
 var V1beta1AuthorizationPolicy_Rules_SourcesFields = ubx.FieldMap{
-		"IpBlocks": ubx.FieldSpec{WireName: "ip_blocks"},
-		"Principals": ubx.FieldSpec{WireName: "principals"},
-	}
+	"IpBlocks":   ubx.FieldSpec{WireName: "ip_blocks"},
+	"Principals": ubx.FieldSpec{WireName: "principals"},
+}
 
 var V1beta1AuthorizationPolicy_RulesFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: V1beta1AuthorizationPolicy_Rules_DestinationsFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: V1beta1AuthorizationPolicy_Rules_SourcesFields,
-		},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   V1beta1AuthorizationPolicy_Rules_DestinationsFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   V1beta1AuthorizationPolicy_Rules_SourcesFields,
+	},
+}
 
 type V1beta1AuthorizationPolicyConfig struct {
 	// Required. The action to take when a rule match is found. Possible values are "ALLOW" or "DENY".
@@ -92,14 +92,14 @@ type V1beta1AuthorizationPolicyAttrs struct {
 var V1beta1AuthorizationPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_authorization_policy",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: V1beta1AuthorizationPolicy_RulesFields,
+			Kind:     "list",
+			Fields:   V1beta1AuthorizationPolicy_RulesFields,
 		},
 	},
 }

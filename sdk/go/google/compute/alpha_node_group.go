@@ -48,48 +48,48 @@ type AlphaNodeGroup_ShareSettings struct {
 }
 
 var AlphaNodeGroup_AutoscalingPolicyFields = ubx.FieldMap{
-		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
-		"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
+	"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
+	"Mode":     ubx.FieldSpec{WireName: "mode"},
+}
 
 var AlphaNodeGroup_MaintenanceWindow_MaintenanceDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AlphaNodeGroup_MaintenanceWindowFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"MaintenanceDuration": ubx.FieldSpec{
-			WireName: "maintenance_duration",
-			Kind: "object",
-			Fields: AlphaNodeGroup_MaintenanceWindow_MaintenanceDurationFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"MaintenanceDuration": ubx.FieldSpec{
+		WireName: "maintenance_duration",
+		Kind:     "object",
+		Fields:   AlphaNodeGroup_MaintenanceWindow_MaintenanceDurationFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var AlphaNodeGroup_ShareSettings_FolderMapFields = ubx.FieldMap{
-		"FolderId": ubx.FieldSpec{WireName: "folder_id"},
-	}
+	"FolderId": ubx.FieldSpec{WireName: "folder_id"},
+}
 
 var AlphaNodeGroup_ShareSettings_ProjectMapFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var AlphaNodeGroup_ShareSettingsFields = ubx.FieldMap{
-		"FolderMap": ubx.FieldSpec{
-			WireName: "folder_map",
-			Kind: "map",
-			Fields: AlphaNodeGroup_ShareSettings_FolderMapFields,
-		},
-		"ProjectMap": ubx.FieldSpec{
-			WireName: "project_map",
-			Kind: "map",
-			Fields: AlphaNodeGroup_ShareSettings_ProjectMapFields,
-		},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-		"ShareType": ubx.FieldSpec{WireName: "share_type"},
-	}
+	"FolderMap": ubx.FieldSpec{
+		WireName: "folder_map",
+		Kind:     "map",
+		Fields:   AlphaNodeGroup_ShareSettings_FolderMapFields,
+	},
+	"ProjectMap": ubx.FieldSpec{
+		WireName: "project_map",
+		Kind:     "map",
+		Fields:   AlphaNodeGroup_ShareSettings_ProjectMapFields,
+	},
+	"Projects":  ubx.FieldSpec{WireName: "projects"},
+	"ShareType": ubx.FieldSpec{WireName: "share_type"},
+}
 
 type AlphaNodeGroupConfig struct {
 	AutoscalingPolicy any
@@ -156,25 +156,25 @@ var AlphaNodeGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind: "object",
-			Fields: AlphaNodeGroup_AutoscalingPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaNodeGroup_AutoscalingPolicyFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":         ubx.FieldSpec{WireName: "fingerprint"},
+		"LocationHint":        ubx.FieldSpec{WireName: "location_hint"},
 		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MaintenancePolicy": ubx.FieldSpec{WireName: "maintenance_policy"},
+		"MaintenancePolicy":   ubx.FieldSpec{WireName: "maintenance_policy"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: AlphaNodeGroup_MaintenanceWindowFields,
+			Kind:     "object",
+			Fields:   AlphaNodeGroup_MaintenanceWindowFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"NodeTemplate": ubx.FieldSpec{WireName: "node_template"},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind: "object",
-			Fields: AlphaNodeGroup_ShareSettingsFields,
+			Kind:     "object",
+			Fields:   AlphaNodeGroup_ShareSettingsFields,
 		},
 	},
 }

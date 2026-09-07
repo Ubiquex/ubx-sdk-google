@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaApplication_EndpointMatchers struct {
 	Hostname any
-	Ports any
+	Ports    any
 }
 
 type V1alphaApplication_Upstreams_EgressPolicy struct {
@@ -14,7 +14,7 @@ type V1alphaApplication_Upstreams_EgressPolicy struct {
 
 type V1alphaApplication_Upstreams_External_Endpoints struct {
 	Hostname any
-	Port any
+	Port     any
 }
 
 type V1alphaApplication_Upstreams_External struct {
@@ -30,116 +30,116 @@ type V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfo str
 }
 
 type V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders struct {
-	DeviceInfo any
+	DeviceInfo   any
 	DispatchInfo any
-	GroupInfo any
-	OutputType any
-	UserInfo any
+	GroupInfo    any
+	OutputType   any
+	UserInfo     any
 }
 
 type V1alphaApplication_Upstreams_ProxyProtocol struct {
 	AllowedClientHeaders any
-	ClientIp any
-	ContextualHeaders any
-	GatewayIdentity any
-	MetadataHeaders any
+	ClientIp             any
+	ContextualHeaders    any
+	GatewayIdentity      any
+	MetadataHeaders      any
 }
 
 type V1alphaApplication_Upstreams struct {
-	EgressPolicy any
-	External any
-	Network any
+	EgressPolicy  any
+	External      any
+	Network       any
 	ProxyProtocol any
 }
 
 var V1alphaApplication_EndpointMatchersFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Ports":    ubx.FieldSpec{WireName: "ports"},
+}
 
 var V1alphaApplication_Upstreams_EgressPolicyFields = ubx.FieldMap{
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-	}
+	"Regions": ubx.FieldSpec{WireName: "regions"},
+}
 
 var V1alphaApplication_Upstreams_External_EndpointsFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var V1alphaApplication_Upstreams_ExternalFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "list",
-			Fields: V1alphaApplication_Upstreams_External_EndpointsFields,
-		},
-	}
+	"Endpoints": ubx.FieldSpec{
+		WireName: "endpoints",
+		Kind:     "list",
+		Fields:   V1alphaApplication_Upstreams_External_EndpointsFields,
+	},
+}
 
 var V1alphaApplication_Upstreams_NetworkFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields = ubx.FieldMap{
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
-	}
+	"OutputType": ubx.FieldSpec{WireName: "output_type"},
+}
 
 var V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeadersFields = ubx.FieldMap{
-		"DeviceInfo": ubx.FieldSpec{
-			WireName: "device_info",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
-		},
-		"DispatchInfo": ubx.FieldSpec{
-			WireName: "dispatch_info",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
-		},
-		"GroupInfo": ubx.FieldSpec{
-			WireName: "group_info",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
-		},
-		"OutputType": ubx.FieldSpec{WireName: "output_type"},
-		"UserInfo": ubx.FieldSpec{
-			WireName: "user_info",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
-		},
-	}
+	"DeviceInfo": ubx.FieldSpec{
+		WireName: "device_info",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
+	},
+	"DispatchInfo": ubx.FieldSpec{
+		WireName: "dispatch_info",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
+	},
+	"GroupInfo": ubx.FieldSpec{
+		WireName: "group_info",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
+	},
+	"OutputType": ubx.FieldSpec{WireName: "output_type"},
+	"UserInfo": ubx.FieldSpec{
+		WireName: "user_info",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeaders_DeviceInfoFields,
+	},
+}
 
 var V1alphaApplication_Upstreams_ProxyProtocolFields = ubx.FieldMap{
-		"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
-		"ClientIp": ubx.FieldSpec{WireName: "client_ip"},
-		"ContextualHeaders": ubx.FieldSpec{
-			WireName: "contextual_headers",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeadersFields,
-		},
-		"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
-		"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
-	}
+	"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
+	"ClientIp":             ubx.FieldSpec{WireName: "client_ip"},
+	"ContextualHeaders": ubx.FieldSpec{
+		WireName: "contextual_headers",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocol_ContextualHeadersFields,
+	},
+	"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
+	"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
+}
 
 var V1alphaApplication_UpstreamsFields = ubx.FieldMap{
-		"EgressPolicy": ubx.FieldSpec{
-			WireName: "egress_policy",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_EgressPolicyFields,
-		},
-		"External": ubx.FieldSpec{
-			WireName: "external",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ExternalFields,
-		},
-		"Network": ubx.FieldSpec{
-			WireName: "network",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_NetworkFields,
-		},
-		"ProxyProtocol": ubx.FieldSpec{
-			WireName: "proxy_protocol",
-			Kind: "object",
-			Fields: V1alphaApplication_Upstreams_ProxyProtocolFields,
-		},
-	}
+	"EgressPolicy": ubx.FieldSpec{
+		WireName: "egress_policy",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_EgressPolicyFields,
+	},
+	"External": ubx.FieldSpec{
+		WireName: "external",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ExternalFields,
+	},
+	"Network": ubx.FieldSpec{
+		WireName: "network",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_NetworkFields,
+	},
+	"ProxyProtocol": ubx.FieldSpec{
+		WireName: "proxy_protocol",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Upstreams_ProxyProtocolFields,
+	},
+}
 
 type V1alphaApplicationConfig struct {
 	// Optional. An arbitrary user-provided name for the application resource. Cannot exceed 64 characters.
@@ -177,15 +177,15 @@ var V1alphaApplication = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EndpointMatchers": ubx.FieldSpec{
 			WireName: "endpoint_matchers",
-			Kind: "list",
-			Fields: V1alphaApplication_EndpointMatchersFields,
+			Kind:     "list",
+			Fields:   V1alphaApplication_EndpointMatchersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{WireName: "schema"},
 		"Upstreams": ubx.FieldSpec{
 			WireName: "upstreams",
-			Kind: "list",
-			Fields: V1alphaApplication_UpstreamsFields,
+			Kind:     "list",
+			Fields:   V1alphaApplication_UpstreamsFields,
 		},
 	},
 }

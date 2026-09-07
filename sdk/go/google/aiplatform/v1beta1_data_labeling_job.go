@@ -52,45 +52,45 @@ type V1beta1DataLabelingJob_Error struct {
 }
 
 var V1beta1DataLabelingJob_ActiveLearningConfig_SampleConfigFields = ubx.FieldMap{
-		"FollowingBatchSamplePercentage": ubx.FieldSpec{WireName: "following_batch_sample_percentage"},
-		"InitialBatchSamplePercentage": ubx.FieldSpec{WireName: "initial_batch_sample_percentage"},
-		"SampleStrategy": ubx.FieldSpec{WireName: "sample_strategy"},
-	}
+	"FollowingBatchSamplePercentage": ubx.FieldSpec{WireName: "following_batch_sample_percentage"},
+	"InitialBatchSamplePercentage":   ubx.FieldSpec{WireName: "initial_batch_sample_percentage"},
+	"SampleStrategy":                 ubx.FieldSpec{WireName: "sample_strategy"},
+}
 
 var V1beta1DataLabelingJob_ActiveLearningConfig_TrainingConfigFields = ubx.FieldMap{
-		"TimeoutTrainingMilliHours": ubx.FieldSpec{WireName: "timeout_training_milli_hours"},
-	}
+	"TimeoutTrainingMilliHours": ubx.FieldSpec{WireName: "timeout_training_milli_hours"},
+}
 
 var V1beta1DataLabelingJob_ActiveLearningConfigFields = ubx.FieldMap{
-		"MaxDataItemCount": ubx.FieldSpec{WireName: "max_data_item_count"},
-		"MaxDataItemPercentage": ubx.FieldSpec{WireName: "max_data_item_percentage"},
-		"SampleConfig": ubx.FieldSpec{
-			WireName: "sample_config",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_ActiveLearningConfig_SampleConfigFields,
-		},
-		"TrainingConfig": ubx.FieldSpec{
-			WireName: "training_config",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_ActiveLearningConfig_TrainingConfigFields,
-		},
-	}
+	"MaxDataItemCount":      ubx.FieldSpec{WireName: "max_data_item_count"},
+	"MaxDataItemPercentage": ubx.FieldSpec{WireName: "max_data_item_percentage"},
+	"SampleConfig": ubx.FieldSpec{
+		WireName: "sample_config",
+		Kind:     "object",
+		Fields:   V1beta1DataLabelingJob_ActiveLearningConfig_SampleConfigFields,
+	},
+	"TrainingConfig": ubx.FieldSpec{
+		WireName: "training_config",
+		Kind:     "object",
+		Fields:   V1beta1DataLabelingJob_ActiveLearningConfig_TrainingConfigFields,
+	},
+}
 
 var V1beta1DataLabelingJob_CurrentSpendFields = ubx.FieldMap{
-		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Units": ubx.FieldSpec{WireName: "units"},
-	}
+	"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+	"Nanos":        ubx.FieldSpec{WireName: "nanos"},
+	"Units":        ubx.FieldSpec{WireName: "units"},
+}
 
 var V1beta1DataLabelingJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1DataLabelingJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type V1beta1DataLabelingJobConfig struct {
 	// Parameters that configure the active learning pipeline. Active learning will label the data incrementally by several iterations. For every iteration, it will select a batch of data based on the sampling strategy.
@@ -165,32 +165,32 @@ var V1beta1DataLabelingJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActiveLearningConfig": ubx.FieldSpec{
 			WireName: "active_learning_config",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_ActiveLearningConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1DataLabelingJob_ActiveLearningConfigFields,
 		},
 		"AnnotationLabels": ubx.FieldSpec{WireName: "annotation_labels"},
 		"CurrentSpend": ubx.FieldSpec{
 			WireName: "current_spend",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_CurrentSpendFields,
+			Kind:     "object",
+			Fields:   V1beta1DataLabelingJob_CurrentSpendFields,
 		},
-		"Datasets": ubx.FieldSpec{WireName: "datasets"},
+		"Datasets":    ubx.FieldSpec{WireName: "datasets"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1DataLabelingJob_EncryptionSpecFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1DataLabelingJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1DataLabelingJob_ErrorFields,
 		},
-		"Inputs": ubx.FieldSpec{WireName: "inputs"},
+		"Inputs":          ubx.FieldSpec{WireName: "inputs"},
 		"InputsSchemaUri": ubx.FieldSpec{WireName: "inputs_schema_uri"},
-		"InstructionUri": ubx.FieldSpec{WireName: "instruction_uri"},
-		"LabelerCount": ubx.FieldSpec{WireName: "labeler_count"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"InstructionUri":  ubx.FieldSpec{WireName: "instruction_uri"},
+		"LabelerCount":    ubx.FieldSpec{WireName: "labeler_count"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
 		"SpecialistPools": ubx.FieldSpec{WireName: "specialist_pools"},
 	},
 }

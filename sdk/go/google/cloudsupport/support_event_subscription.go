@@ -32,7 +32,7 @@ type SupportEventSubscriptionAttrs struct {
 var SupportEventSubscription = ubx.ResourceBinding{
 	WireType: "google_cloudsupport_support_event_subscription",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PubSubTopic": ubx.FieldSpec{WireName: "pub_sub_topic"},
 	},
 }

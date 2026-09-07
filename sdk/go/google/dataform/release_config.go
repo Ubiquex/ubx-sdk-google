@@ -68,45 +68,45 @@ type ReleaseConfig_RecentScheduledReleaseRecords struct {
 }
 
 var ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields = ubx.FieldMap{
-		"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
-	}
+	"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
+}
 
 var ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields = ubx.FieldMap{
-		"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
-		"GcsOutputBucket": ubx.FieldSpec{WireName: "gcs_output_bucket"},
-		"GcsRepositorySnapshotDestination": ubx.FieldSpec{
-			WireName: "gcs_repository_snapshot_destination",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
-		},
-	}
+	"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
+	"GcsOutputBucket":                   ubx.FieldSpec{WireName: "gcs_output_bucket"},
+	"GcsRepositorySnapshotDestination": ubx.FieldSpec{
+		WireName: "gcs_repository_snapshot_destination",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
+	},
+}
 
 var ReleaseConfig_CodeCompilationConfig_PipelineConfigFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
-	}
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+}
 
 var ReleaseConfig_CodeCompilationConfigFields = ubx.FieldMap{
-		"AssertionSchema": ubx.FieldSpec{WireName: "assertion_schema"},
-		"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
-		"DatabaseSuffix": ubx.FieldSpec{WireName: "database_suffix"},
-		"DefaultDatabase": ubx.FieldSpec{WireName: "default_database"},
-		"DefaultLocation": ubx.FieldSpec{WireName: "default_location"},
-		"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
-			WireName: "default_notebook_runtime_options",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
-		},
-		"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
-		"PipelineConfig": ubx.FieldSpec{
-			WireName: "pipeline_config",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_PipelineConfigFields,
-		},
-		"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-		"Vars": ubx.FieldSpec{WireName: "vars"},
-	}
+	"AssertionSchema":            ubx.FieldSpec{WireName: "assertion_schema"},
+	"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
+	"DatabaseSuffix":             ubx.FieldSpec{WireName: "database_suffix"},
+	"DefaultDatabase":            ubx.FieldSpec{WireName: "default_database"},
+	"DefaultLocation":            ubx.FieldSpec{WireName: "default_location"},
+	"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
+		WireName: "default_notebook_runtime_options",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
+	},
+	"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
+	"PipelineConfig": ubx.FieldSpec{
+		WireName: "pipeline_config",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_PipelineConfigFields,
+	},
+	"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
+	"TablePrefix":  ubx.FieldSpec{WireName: "table_prefix"},
+	"Vars":         ubx.FieldSpec{WireName: "vars"},
+}
 
 type ReleaseConfigConfig struct {
 	// Configures various aspects of Dataform code compilation.
@@ -151,14 +151,14 @@ var ReleaseConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CodeCompilationConfig": ubx.FieldSpec{
 			WireName: "code_compilation_config",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfigFields,
+			Kind:     "object",
+			Fields:   ReleaseConfig_CodeCompilationConfigFields,
 		},
-		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"GitCommitish": ubx.FieldSpec{WireName: "git_commitish"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CronSchedule":             ubx.FieldSpec{WireName: "cron_schedule"},
+		"Disabled":                 ubx.FieldSpec{WireName: "disabled"},
+		"GitCommitish":             ubx.FieldSpec{WireName: "git_commitish"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"ReleaseCompilationResult": ubx.FieldSpec{WireName: "release_compilation_result"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

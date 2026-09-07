@@ -20,7 +20,7 @@ type EntryAttrs struct {
 var Entry = ubx.ResourceBinding{
 	WireType: "google_apigee_entry",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	},
 }

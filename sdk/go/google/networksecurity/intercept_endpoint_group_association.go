@@ -50,8 +50,8 @@ var InterceptEndpointGroupAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_intercept_endpoint_group_association",
 	Fields: ubx.FieldMap{
 		"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Network":                ubx.FieldSpec{WireName: "network"},
 	},
 }

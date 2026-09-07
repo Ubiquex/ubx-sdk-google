@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaWorkload_WorkloadOnboardingState_OnboardingSteps struct {
 	CompletionState any
-	CompletionTime any
-	StartTime any
-	Step any
+	CompletionTime  any
+	StartTime       any
+	Step            any
 }
 
 type V1betaWorkload_WorkloadOnboardingState struct {
@@ -32,7 +32,7 @@ type V1betaWorkloadAttrs struct {
 	KeyManagementProjectId any
 	// The Google Cloud location of the workload
 	Location any
-	Name any
+	Name     any
 	// Partner associated with this workload.
 	Partner any
 	// Container for workload onboarding steps.

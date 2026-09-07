@@ -34,37 +34,37 @@ type TcpRoute_Rules struct {
 }
 
 var TcpRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var TcpRoute_Rules_ActionFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: TcpRoute_Rules_Action_DestinationsFields,
-		},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   TcpRoute_Rules_Action_DestinationsFields,
+	},
+	"IdleTimeout":         ubx.FieldSpec{WireName: "idle_timeout"},
+	"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
+}
 
 var TcpRoute_Rules_MatchesFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Port":    ubx.FieldSpec{WireName: "port"},
+}
 
 var TcpRoute_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: TcpRoute_Rules_ActionFields,
-		},
-		"Matches": ubx.FieldSpec{
-			WireName: "matches",
-			Kind: "list",
-			Fields: TcpRoute_Rules_MatchesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   TcpRoute_Rules_ActionFields,
+	},
+	"Matches": ubx.FieldSpec{
+		WireName: "matches",
+		Kind:     "list",
+		Fields:   TcpRoute_Rules_MatchesFields,
+	},
+}
 
 type TcpRouteConfig struct {
 	// Optional. A free-text description of the resource. Max length 1024 characters.
@@ -106,14 +106,14 @@ var TcpRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_tcp_route",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways": ubx.FieldSpec{WireName: "gateways"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Meshes": ubx.FieldSpec{WireName: "meshes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: TcpRoute_RulesFields,
+			Kind:     "list",
+			Fields:   TcpRoute_RulesFields,
 		},
 	},
 }

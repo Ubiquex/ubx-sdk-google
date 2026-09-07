@@ -90,82 +90,82 @@ type Cluster_UpdateOptions struct {
 }
 
 var Cluster_BrokerCapacityConfigFields = ubx.FieldMap{
-		"DiskSizeGib": ubx.FieldSpec{WireName: "disk_size_gib"},
-	}
+	"DiskSizeGib": ubx.FieldSpec{WireName: "disk_size_gib"},
+}
 
 var Cluster_CapacityConfigFields = ubx.FieldMap{
-		"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
-		"VcpuCount": ubx.FieldSpec{WireName: "vcpu_count"},
-	}
+	"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
+	"VcpuCount":   ubx.FieldSpec{WireName: "vcpu_count"},
+}
 
 var Cluster_EffectiveCapacityConfigFields = ubx.FieldMap{
-		"BrokerCount": ubx.FieldSpec{WireName: "broker_count"},
-		"BrokerDiskSizeGib": ubx.FieldSpec{WireName: "broker_disk_size_gib"},
-	}
+	"BrokerCount":       ubx.FieldSpec{WireName: "broker_count"},
+	"BrokerDiskSizeGib": ubx.FieldSpec{WireName: "broker_disk_size_gib"},
+}
 
 var Cluster_GcpConfig_AccessConfig_NetworkConfigsFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-	}
+	"Subnet": ubx.FieldSpec{WireName: "subnet"},
+}
 
 var Cluster_GcpConfig_AccessConfig_PublicClusterConfigFields = ubx.FieldMap{
-		"AllowedSourceIpRanges": ubx.FieldSpec{WireName: "allowed_source_ip_ranges"},
-	}
+	"AllowedSourceIpRanges": ubx.FieldSpec{WireName: "allowed_source_ip_ranges"},
+}
 
 var Cluster_GcpConfig_AccessConfigFields = ubx.FieldMap{
-		"NetworkConfigs": ubx.FieldSpec{
-			WireName: "network_configs",
-			Kind: "list",
-			Fields: Cluster_GcpConfig_AccessConfig_NetworkConfigsFields,
-		},
-		"PublicClusterConfig": ubx.FieldSpec{
-			WireName: "public_cluster_config",
-			Kind: "object",
-			Fields: Cluster_GcpConfig_AccessConfig_PublicClusterConfigFields,
-		},
-	}
+	"NetworkConfigs": ubx.FieldSpec{
+		WireName: "network_configs",
+		Kind:     "list",
+		Fields:   Cluster_GcpConfig_AccessConfig_NetworkConfigsFields,
+	},
+	"PublicClusterConfig": ubx.FieldSpec{
+		WireName: "public_cluster_config",
+		Kind:     "object",
+		Fields:   Cluster_GcpConfig_AccessConfig_PublicClusterConfigFields,
+	},
+}
 
 var Cluster_GcpConfigFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: Cluster_GcpConfig_AccessConfigFields,
-		},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"AccessConfig": ubx.FieldSpec{
+		WireName: "access_config",
+		Kind:     "object",
+		Fields:   Cluster_GcpConfig_AccessConfigFields,
+	},
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Cluster_PublicClusterDetailsFields = ubx.FieldMap{
-		"DiscoveryDnsRecords": ubx.FieldSpec{WireName: "discovery_dns_records"},
-		"ExternalIpAddresses": ubx.FieldSpec{WireName: "external_ip_addresses"},
-	}
+	"DiscoveryDnsRecords": ubx.FieldSpec{WireName: "discovery_dns_records"},
+	"ExternalIpAddresses": ubx.FieldSpec{WireName: "external_ip_addresses"},
+}
 
 var Cluster_RebalanceConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var Cluster_TlsConfig_TrustConfig_CasConfigsFields = ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-	}
+	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+}
 
 var Cluster_TlsConfig_TrustConfigFields = ubx.FieldMap{
-		"CasConfigs": ubx.FieldSpec{
-			WireName: "cas_configs",
-			Kind: "list",
-			Fields: Cluster_TlsConfig_TrustConfig_CasConfigsFields,
-		},
-	}
+	"CasConfigs": ubx.FieldSpec{
+		WireName: "cas_configs",
+		Kind:     "list",
+		Fields:   Cluster_TlsConfig_TrustConfig_CasConfigsFields,
+	},
+}
 
 var Cluster_TlsConfigFields = ubx.FieldMap{
-		"SslPrincipalMappingRules": ubx.FieldSpec{WireName: "ssl_principal_mapping_rules"},
-		"TrustConfig": ubx.FieldSpec{
-			WireName: "trust_config",
-			Kind: "object",
-			Fields: Cluster_TlsConfig_TrustConfigFields,
-		},
-	}
+	"SslPrincipalMappingRules": ubx.FieldSpec{WireName: "ssl_principal_mapping_rules"},
+	"TrustConfig": ubx.FieldSpec{
+		WireName: "trust_config",
+		Kind:     "object",
+		Fields:   Cluster_TlsConfig_TrustConfigFields,
+	},
+}
 
 var Cluster_UpdateOptionsFields = ubx.FieldMap{
-		"AllowBrokerDownscaleOnClusterUpscale": ubx.FieldSpec{WireName: "allow_broker_downscale_on_cluster_upscale"},
-	}
+	"AllowBrokerDownscaleOnClusterUpscale": ubx.FieldSpec{WireName: "allow_broker_downscale_on_cluster_upscale"},
+}
 
 type ClusterConfig struct {
 	// Capacity configuration at a per-broker level within the Kafka cluster. The config will be appled to each broker in the cluster.
@@ -234,45 +234,45 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BrokerCapacityConfig": ubx.FieldSpec{
 			WireName: "broker_capacity_config",
-			Kind: "object",
-			Fields: Cluster_BrokerCapacityConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_BrokerCapacityConfigFields,
 		},
 		"CapacityConfig": ubx.FieldSpec{
 			WireName: "capacity_config",
-			Kind: "object",
-			Fields: Cluster_CapacityConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_CapacityConfigFields,
 		},
 		"EffectiveCapacityConfig": ubx.FieldSpec{
 			WireName: "effective_capacity_config",
-			Kind: "object",
-			Fields: Cluster_EffectiveCapacityConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_EffectiveCapacityConfigFields,
 		},
 		"GcpConfig": ubx.FieldSpec{
 			WireName: "gcp_config",
-			Kind: "object",
-			Fields: Cluster_GcpConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_GcpConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PublicClusterDetails": ubx.FieldSpec{
 			WireName: "public_cluster_details",
-			Kind: "object",
-			Fields: Cluster_PublicClusterDetailsFields,
+			Kind:     "object",
+			Fields:   Cluster_PublicClusterDetailsFields,
 		},
 		"RebalanceConfig": ubx.FieldSpec{
 			WireName: "rebalance_config",
-			Kind: "object",
-			Fields: Cluster_RebalanceConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_RebalanceConfigFields,
 		},
 		"TlsConfig": ubx.FieldSpec{
 			WireName: "tls_config",
-			Kind: "object",
-			Fields: Cluster_TlsConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_TlsConfigFields,
 		},
 		"UpdateOptions": ubx.FieldSpec{
 			WireName: "update_options",
-			Kind: "object",
-			Fields: Cluster_UpdateOptionsFields,
+			Kind:     "object",
+			Fields:   Cluster_UpdateOptionsFields,
 		},
 	},
 }

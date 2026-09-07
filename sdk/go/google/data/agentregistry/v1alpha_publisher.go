@@ -12,7 +12,7 @@ type V1alphaPublisherAttrs struct {
 	DisplayName any
 	// Optional. URI pointing to official publisher documentation.
 	DocumentationUri any
-	Name any
+	Name             any
 	// Output only. The curation tier of the publisher.
 	PublisherTier any
 	// Optional. URI pointing to the support portal or email.

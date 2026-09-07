@@ -166,142 +166,142 @@ type Instance_UpgradeHistory struct {
 }
 
 var Instance_GceSetup_AcceleratorConfigsFields = ubx.FieldMap{
-		"CoreCount": ubx.FieldSpec{WireName: "core_count"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CoreCount": ubx.FieldSpec{WireName: "core_count"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Instance_GceSetup_BootDiskFields = ubx.FieldMap{
-		"DiskEncryption": ubx.FieldSpec{WireName: "disk_encryption"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"DiskEncryption": ubx.FieldSpec{WireName: "disk_encryption"},
+	"DiskSizeGb":     ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":       ubx.FieldSpec{WireName: "disk_type"},
+	"KmsKey":         ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Instance_GceSetup_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-	}
+	"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
+}
 
 var Instance_GceSetup_ContainerImageFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-	}
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+	"Tag":        ubx.FieldSpec{WireName: "tag"},
+}
 
 var Instance_GceSetup_DataDisksFields = ubx.FieldMap{
-		"DiskEncryption": ubx.FieldSpec{WireName: "disk_encryption"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-	}
+	"DiskEncryption":   ubx.FieldSpec{WireName: "disk_encryption"},
+	"DiskSizeGb":       ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":         ubx.FieldSpec{WireName: "disk_type"},
+	"KmsKey":           ubx.FieldSpec{WireName: "kms_key"},
+	"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
+}
 
 var Instance_GceSetup_GpuDriverConfigFields = ubx.FieldMap{
-		"CustomGpuDriverPath": ubx.FieldSpec{WireName: "custom_gpu_driver_path"},
-		"EnableGpuDriver": ubx.FieldSpec{WireName: "enable_gpu_driver"},
-	}
+	"CustomGpuDriverPath": ubx.FieldSpec{WireName: "custom_gpu_driver_path"},
+	"EnableGpuDriver":     ubx.FieldSpec{WireName: "enable_gpu_driver"},
+}
 
 var Instance_GceSetup_NetworkInterfaces_AccessConfigsFields = ubx.FieldMap{
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-	}
+	"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
+}
 
 var Instance_GceSetup_NetworkInterfacesFields = ubx.FieldMap{
-		"AccessConfigs": ubx.FieldSpec{
-			WireName: "access_configs",
-			Kind: "list",
-			Fields: Instance_GceSetup_NetworkInterfaces_AccessConfigsFields,
-		},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NicType": ubx.FieldSpec{WireName: "nic_type"},
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-	}
+	"AccessConfigs": ubx.FieldSpec{
+		WireName: "access_configs",
+		Kind:     "list",
+		Fields:   Instance_GceSetup_NetworkInterfaces_AccessConfigsFields,
+	},
+	"Network": ubx.FieldSpec{WireName: "network"},
+	"NicType": ubx.FieldSpec{WireName: "nic_type"},
+	"Subnet":  ubx.FieldSpec{WireName: "subnet"},
+}
 
 var Instance_GceSetup_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var Instance_GceSetup_ServiceAccountsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var Instance_GceSetup_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var Instance_GceSetup_VmImageFields = ubx.FieldMap{
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"ImageDescription": ubx.FieldSpec{WireName: "image_description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Family":           ubx.FieldSpec{WireName: "family"},
+	"ImageDescription": ubx.FieldSpec{WireName: "image_description"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Project":          ubx.FieldSpec{WireName: "project"},
+}
 
 var Instance_GceSetupFields = ubx.FieldMap{
-		"AcceleratorConfigs": ubx.FieldSpec{
-			WireName: "accelerator_configs",
-			Kind: "list",
-			Fields: Instance_GceSetup_AcceleratorConfigsFields,
-		},
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: Instance_GceSetup_BootDiskFields,
-		},
-		"ConfidentialInstanceConfig": ubx.FieldSpec{
-			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: Instance_GceSetup_ConfidentialInstanceConfigFields,
-		},
-		"ContainerImage": ubx.FieldSpec{
-			WireName: "container_image",
-			Kind: "object",
-			Fields: Instance_GceSetup_ContainerImageFields,
-		},
-		"DataDisks": ubx.FieldSpec{
-			WireName: "data_disks",
-			Kind: "list",
-			Fields: Instance_GceSetup_DataDisksFields,
-		},
-		"DisablePublicIp": ubx.FieldSpec{WireName: "disable_public_ip"},
-		"EnableIpForwarding": ubx.FieldSpec{WireName: "enable_ip_forwarding"},
-		"GpuDriverConfig": ubx.FieldSpec{
-			WireName: "gpu_driver_config",
-			Kind: "object",
-			Fields: Instance_GceSetup_GpuDriverConfigFields,
-		},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Instance_GceSetup_NetworkInterfacesFields,
-		},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: Instance_GceSetup_ReservationAffinityFields,
-		},
-		"ServiceAccounts": ubx.FieldSpec{
-			WireName: "service_accounts",
-			Kind: "list",
-			Fields: Instance_GceSetup_ServiceAccountsFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: Instance_GceSetup_ShieldedInstanceConfigFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VmImage": ubx.FieldSpec{
-			WireName: "vm_image",
-			Kind: "object",
-			Fields: Instance_GceSetup_VmImageFields,
-		},
-	}
+	"AcceleratorConfigs": ubx.FieldSpec{
+		WireName: "accelerator_configs",
+		Kind:     "list",
+		Fields:   Instance_GceSetup_AcceleratorConfigsFields,
+	},
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_BootDiskFields,
+	},
+	"ConfidentialInstanceConfig": ubx.FieldSpec{
+		WireName: "confidential_instance_config",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_ConfidentialInstanceConfigFields,
+	},
+	"ContainerImage": ubx.FieldSpec{
+		WireName: "container_image",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_ContainerImageFields,
+	},
+	"DataDisks": ubx.FieldSpec{
+		WireName: "data_disks",
+		Kind:     "list",
+		Fields:   Instance_GceSetup_DataDisksFields,
+	},
+	"DisablePublicIp":    ubx.FieldSpec{WireName: "disable_public_ip"},
+	"EnableIpForwarding": ubx.FieldSpec{WireName: "enable_ip_forwarding"},
+	"GpuDriverConfig": ubx.FieldSpec{
+		WireName: "gpu_driver_config",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_GpuDriverConfigFields,
+	},
+	"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   Instance_GceSetup_NetworkInterfacesFields,
+	},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_ReservationAffinityFields,
+	},
+	"ServiceAccounts": ubx.FieldSpec{
+		WireName: "service_accounts",
+		Kind:     "list",
+		Fields:   Instance_GceSetup_ServiceAccountsFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_ShieldedInstanceConfigFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+	"VmImage": ubx.FieldSpec{
+		WireName: "vm_image",
+		Kind:     "object",
+		Fields:   Instance_GceSetup_VmImageFields,
+	},
+}
 
 type InstanceConfig struct {
 	// Optional. If true, the notebook instance will not register with the proxy.
@@ -366,16 +366,16 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "google_notebooks_instance",
 	Fields: ubx.FieldMap{
-		"DisableProxyAccess": ubx.FieldSpec{WireName: "disable_proxy_access"},
+		"DisableProxyAccess":       ubx.FieldSpec{WireName: "disable_proxy_access"},
 		"EnableDeletionProtection": ubx.FieldSpec{WireName: "enable_deletion_protection"},
-		"EnableManagedEuc": ubx.FieldSpec{WireName: "enable_managed_euc"},
+		"EnableManagedEuc":         ubx.FieldSpec{WireName: "enable_managed_euc"},
 		"EnableThirdPartyIdentity": ubx.FieldSpec{WireName: "enable_third_party_identity"},
 		"GceSetup": ubx.FieldSpec{
 			WireName: "gce_setup",
-			Kind: "object",
-			Fields: Instance_GceSetupFields,
+			Kind:     "object",
+			Fields:   Instance_GceSetupFields,
 		},
 		"InstanceOwners": ubx.FieldSpec{WireName: "instance_owners"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 	},
 }

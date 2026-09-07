@@ -59,43 +59,43 @@ type StoragePool_ShareSettings struct {
 }
 
 var StoragePool_ExapoolProvisionedCapacityGbFields = ubx.FieldMap{
-		"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
-		"ReadOptimized": ubx.FieldSpec{WireName: "read_optimized"},
-		"WriteOptimized": ubx.FieldSpec{WireName: "write_optimized"},
-	}
+	"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
+	"ReadOptimized":     ubx.FieldSpec{WireName: "read_optimized"},
+	"WriteOptimized":    ubx.FieldSpec{WireName: "write_optimized"},
+}
 
 var StoragePool_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var StoragePool_ResourceStatusFields = ubx.FieldMap{
-		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
-		"ExapoolMaxReadIops": ubx.FieldSpec{WireName: "exapool_max_read_iops"},
-		"ExapoolMaxReadThroughput": ubx.FieldSpec{WireName: "exapool_max_read_throughput"},
-		"ExapoolMaxWriteIops": ubx.FieldSpec{WireName: "exapool_max_write_iops"},
-		"ExapoolMaxWriteThroughput": ubx.FieldSpec{WireName: "exapool_max_write_throughput"},
-		"LastResizeTimestamp": ubx.FieldSpec{WireName: "last_resize_timestamp"},
-		"MaxTotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "max_total_provisioned_disk_capacity_gb"},
-		"PoolUsedCapacityBytes": ubx.FieldSpec{WireName: "pool_used_capacity_bytes"},
-		"PoolUsedIops": ubx.FieldSpec{WireName: "pool_used_iops"},
-		"PoolUsedThroughput": ubx.FieldSpec{WireName: "pool_used_throughput"},
-		"PoolUserWrittenBytes": ubx.FieldSpec{WireName: "pool_user_written_bytes"},
-		"TotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "total_provisioned_disk_capacity_gb"},
-		"TotalProvisionedDiskIops": ubx.FieldSpec{WireName: "total_provisioned_disk_iops"},
-		"TotalProvisionedDiskThroughput": ubx.FieldSpec{WireName: "total_provisioned_disk_throughput"},
-	}
+	"DiskCount":                         ubx.FieldSpec{WireName: "disk_count"},
+	"ExapoolMaxReadIops":                ubx.FieldSpec{WireName: "exapool_max_read_iops"},
+	"ExapoolMaxReadThroughput":          ubx.FieldSpec{WireName: "exapool_max_read_throughput"},
+	"ExapoolMaxWriteIops":               ubx.FieldSpec{WireName: "exapool_max_write_iops"},
+	"ExapoolMaxWriteThroughput":         ubx.FieldSpec{WireName: "exapool_max_write_throughput"},
+	"LastResizeTimestamp":               ubx.FieldSpec{WireName: "last_resize_timestamp"},
+	"MaxTotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "max_total_provisioned_disk_capacity_gb"},
+	"PoolUsedCapacityBytes":             ubx.FieldSpec{WireName: "pool_used_capacity_bytes"},
+	"PoolUsedIops":                      ubx.FieldSpec{WireName: "pool_used_iops"},
+	"PoolUsedThroughput":                ubx.FieldSpec{WireName: "pool_used_throughput"},
+	"PoolUserWrittenBytes":              ubx.FieldSpec{WireName: "pool_user_written_bytes"},
+	"TotalProvisionedDiskCapacityGb":    ubx.FieldSpec{WireName: "total_provisioned_disk_capacity_gb"},
+	"TotalProvisionedDiskIops":          ubx.FieldSpec{WireName: "total_provisioned_disk_iops"},
+	"TotalProvisionedDiskThroughput":    ubx.FieldSpec{WireName: "total_provisioned_disk_throughput"},
+}
 
 var StoragePool_ShareSettings_ProjectMapFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var StoragePool_ShareSettingsFields = ubx.FieldMap{
-		"ProjectMap": ubx.FieldSpec{
-			WireName: "project_map",
-			Kind: "map",
-			Fields: StoragePool_ShareSettings_ProjectMapFields,
-		},
-	}
+	"ProjectMap": ubx.FieldSpec{
+		WireName: "project_map",
+		Kind:     "map",
+		Fields:   StoragePool_ShareSettings_ProjectMapFields,
+	},
+}
 
 type StoragePoolConfig struct {
 	// Provisioning type of the byte capacity of the pool.
@@ -181,38 +181,38 @@ var StoragePool = ubx.ResourceBinding{
 	WireType: "google_compute_storage_pool",
 	Fields: ubx.FieldMap{
 		"CapacityProvisioningType": ubx.FieldSpec{WireName: "capacity_provisioning_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
 		"ExapoolProvisionedCapacityGb": ubx.FieldSpec{
 			WireName: "exapool_provisioned_capacity_gb",
-			Kind: "object",
-			Fields: StoragePool_ExapoolProvisionedCapacityGbFields,
+			Kind:     "object",
+			Fields:   StoragePool_ExapoolProvisionedCapacityGbFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: StoragePool_ParamsFields,
+			Kind:     "object",
+			Fields:   StoragePool_ParamsFields,
 		},
 		"PerformanceProvisioningType": ubx.FieldSpec{WireName: "performance_provisioning_type"},
-		"PoolProvisionedCapacityGb": ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
-		"PoolProvisionedIops": ubx.FieldSpec{WireName: "pool_provisioned_iops"},
-		"PoolProvisionedThroughput": ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
+		"PoolProvisionedCapacityGb":   ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
+		"PoolProvisionedIops":         ubx.FieldSpec{WireName: "pool_provisioned_iops"},
+		"PoolProvisionedThroughput":   ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: StoragePool_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   StoragePool_ResourceStatusFields,
 		},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind: "object",
-			Fields: StoragePool_ShareSettingsFields,
+			Kind:     "object",
+			Fields:   StoragePool_ShareSettingsFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: StoragePool_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   StoragePool_ResourceStatusFields,
 		},
 		"StoragePoolType": ubx.FieldSpec{WireName: "storage_pool_type"},
 	},

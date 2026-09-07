@@ -49,10 +49,10 @@ var CustomConnector = ubx.ResourceBinding{
 	WireType: "google_connectors_custom_connector",
 	Fields: ubx.FieldMap{
 		"CustomConnectorType": ubx.FieldSpec{WireName: "custom_connector_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Logo": ubx.FieldSpec{WireName: "logo"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Logo":                ubx.FieldSpec{WireName: "logo"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 	},
 }

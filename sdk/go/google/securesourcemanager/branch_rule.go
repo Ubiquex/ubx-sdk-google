@@ -9,8 +9,8 @@ type BranchRule_RequiredStatusChecks struct {
 }
 
 var BranchRule_RequiredStatusChecksFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
-	}
+	"Context": ubx.FieldSpec{WireName: "context"},
+}
 
 type BranchRuleConfig struct {
 	// Optional. Determines if allow stale reviews or approvals before merging to the branch.
@@ -79,22 +79,22 @@ type BranchRuleAttrs struct {
 var BranchRule = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_branch_rule",
 	Fields: ubx.FieldMap{
-		"AllowStaleReviews": ubx.FieldSpec{WireName: "allow_stale_reviews"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"IncludePattern": ubx.FieldSpec{WireName: "include_pattern"},
-		"MinimumApprovalsCount": ubx.FieldSpec{WireName: "minimum_approvals_count"},
-		"MinimumReviewsCount": ubx.FieldSpec{WireName: "minimum_reviews_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AllowStaleReviews":        ubx.FieldSpec{WireName: "allow_stale_reviews"},
+		"Annotations":              ubx.FieldSpec{WireName: "annotations"},
+		"Disabled":                 ubx.FieldSpec{WireName: "disabled"},
+		"Etag":                     ubx.FieldSpec{WireName: "etag"},
+		"IncludePattern":           ubx.FieldSpec{WireName: "include_pattern"},
+		"MinimumApprovalsCount":    ubx.FieldSpec{WireName: "minimum_approvals_count"},
+		"MinimumReviewsCount":      ubx.FieldSpec{WireName: "minimum_reviews_count"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"RequireCodeOwnerApproval": ubx.FieldSpec{WireName: "require_code_owner_approval"},
-		"RequireCommentsResolved": ubx.FieldSpec{WireName: "require_comments_resolved"},
-		"RequireLinearHistory": ubx.FieldSpec{WireName: "require_linear_history"},
-		"RequirePullRequest": ubx.FieldSpec{WireName: "require_pull_request"},
+		"RequireCommentsResolved":  ubx.FieldSpec{WireName: "require_comments_resolved"},
+		"RequireLinearHistory":     ubx.FieldSpec{WireName: "require_linear_history"},
+		"RequirePullRequest":       ubx.FieldSpec{WireName: "require_pull_request"},
 		"RequiredStatusChecks": ubx.FieldSpec{
 			WireName: "required_status_checks",
-			Kind: "list",
-			Fields: BranchRule_RequiredStatusChecksFields,
+			Kind:     "list",
+			Fields:   BranchRule_RequiredStatusChecksFields,
 		},
 	},
 }

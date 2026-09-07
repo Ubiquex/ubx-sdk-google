@@ -62,8 +62,8 @@ var InterceptDeploymentGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_intercept_deployment_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 	},
 }

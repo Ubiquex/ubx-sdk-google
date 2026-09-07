@@ -21,22 +21,22 @@ type V1alphaCannedQuery_RequiredCapabilities struct {
 }
 
 var V1alphaCannedQuery_DefaultTexts_SuggestedPromptsFields = ubx.FieldMap{
-		"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
-	}
+	"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
+}
 
 var V1alphaCannedQuery_DefaultTextsFields = ubx.FieldMap{
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"SuggestedPrompts": ubx.FieldSpec{
-			WireName: "suggested_prompts",
-			Kind: "list",
-			Fields: V1alphaCannedQuery_DefaultTexts_SuggestedPromptsFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Prefix": ubx.FieldSpec{WireName: "prefix"},
+	"SuggestedPrompts": ubx.FieldSpec{
+		WireName: "suggested_prompts",
+		Kind:     "list",
+		Fields:   V1alphaCannedQuery_DefaultTexts_SuggestedPromptsFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var V1alphaCannedQuery_RequiredCapabilitiesFields = ubx.FieldMap{
-		"ActionName": ubx.FieldSpec{WireName: "action_name"},
-	}
+	"ActionName": ubx.FieldSpec{WireName: "action_name"},
+}
 
 type V1alphaCannedQueryConfig struct {
 	// The text pieces for the canned query, which can be localized.
@@ -75,21 +75,21 @@ var V1alphaCannedQuery = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultTexts": ubx.FieldSpec{
 			WireName: "default_texts",
-			Kind: "object",
-			Fields: V1alphaCannedQuery_DefaultTextsFields,
+			Kind:     "object",
+			Fields:   V1alphaCannedQuery_DefaultTextsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
 		"LocalizedTexts": ubx.FieldSpec{
 			WireName: "localized_texts",
-			Kind: "map",
-			Fields: V1alphaCannedQuery_DefaultTextsFields,
+			Kind:     "map",
+			Fields:   V1alphaCannedQuery_DefaultTextsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RequiredCapabilities": ubx.FieldSpec{
 			WireName: "required_capabilities",
-			Kind: "list",
-			Fields: V1alphaCannedQuery_RequiredCapabilitiesFields,
+			Kind:     "list",
+			Fields:   V1alphaCannedQuery_RequiredCapabilitiesFields,
 		},
 	},
 }

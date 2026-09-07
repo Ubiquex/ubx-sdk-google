@@ -36,10 +36,10 @@ type V1beta1DataExchangeAttrs struct {
 var V1beta1DataExchange = ubx.ResourceBinding{
 	WireType: "google_analyticshub_v1beta1_data_exchange",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
+		"Icon":           ubx.FieldSpec{WireName: "icon"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
 	},
 }

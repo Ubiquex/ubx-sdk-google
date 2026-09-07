@@ -32,36 +32,36 @@ type PhraseMatcher_PhraseMatchRuleGroups struct {
 }
 
 var PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfigFields = ubx.FieldMap{
-		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-	}
+	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+}
 
 var PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_ConfigFields = ubx.FieldMap{
-		"ExactMatchConfig": ubx.FieldSpec{
-			WireName: "exact_match_config",
-			Kind: "object",
-			Fields: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfigFields,
-		},
-		"RegexMatchConfig": ubx.FieldSpec{WireName: "regex_match_config"},
-	}
+	"ExactMatchConfig": ubx.FieldSpec{
+		WireName: "exact_match_config",
+		Kind:     "object",
+		Fields:   PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_Config_ExactMatchConfigFields,
+	},
+	"RegexMatchConfig": ubx.FieldSpec{WireName: "regex_match_config"},
+}
 
 var PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRulesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_ConfigFields,
-		},
-		"Negated": ubx.FieldSpec{WireName: "negated"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRules_ConfigFields,
+	},
+	"Negated": ubx.FieldSpec{WireName: "negated"},
+	"Query":   ubx.FieldSpec{WireName: "query"},
+}
 
 var PhraseMatcher_PhraseMatchRuleGroupsFields = ubx.FieldMap{
-		"PhraseMatchRules": ubx.FieldSpec{
-			WireName: "phrase_match_rules",
-			Kind: "list",
-			Fields: PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRulesFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"PhraseMatchRules": ubx.FieldSpec{
+		WireName: "phrase_match_rules",
+		Kind:     "list",
+		Fields:   PhraseMatcher_PhraseMatchRuleGroups_PhraseMatchRulesFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type PhraseMatcherConfig struct {
 	// Applies the phrase matcher only when it is active.
@@ -108,16 +108,16 @@ type PhraseMatcherAttrs struct {
 var PhraseMatcher = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_phrase_matcher",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
+		"Active":      ubx.FieldSpec{WireName: "active"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PhraseMatchRuleGroups": ubx.FieldSpec{
 			WireName: "phrase_match_rule_groups",
-			Kind: "list",
-			Fields: PhraseMatcher_PhraseMatchRuleGroupsFields,
+			Kind:     "list",
+			Fields:   PhraseMatcher_PhraseMatchRuleGroupsFields,
 		},
-		"RoleMatch": ubx.FieldSpec{WireName: "role_match"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"RoleMatch":  ubx.FieldSpec{WireName: "role_match"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 		"VersionTag": ubx.FieldSpec{WireName: "version_tag"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1InterceptEndpointGroupAssociation_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type V1beta1InterceptEndpointGroupAssociationConfig struct {
@@ -48,8 +48,8 @@ var V1beta1InterceptEndpointGroupAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_intercept_endpoint_group_association",
 	Fields: ubx.FieldMap{
 		"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Network":                ubx.FieldSpec{WireName: "network"},
 	},
 }

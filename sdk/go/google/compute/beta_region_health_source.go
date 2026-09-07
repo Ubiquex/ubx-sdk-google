@@ -48,11 +48,11 @@ type BetaRegionHealthSourceAttrs struct {
 var BetaRegionHealthSource = ubx.ResourceBinding{
 	WireType: "google_compute_beta_region_health_source",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":             ubx.FieldSpec{WireName: "fingerprint"},
 		"HealthAggregationPolicy": ubx.FieldSpec{WireName: "health_aggregation_policy"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Sources": ubx.FieldSpec{WireName: "sources"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"SourceType":              ubx.FieldSpec{WireName: "source_type"},
+		"Sources":                 ubx.FieldSpec{WireName: "sources"},
 	},
 }

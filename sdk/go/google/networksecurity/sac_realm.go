@@ -11,9 +11,9 @@ type SacRealm_PairingKey struct {
 }
 
 var SacRealm_PairingKeyFields = ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+}
 
 type SacRealmConfig struct {
 	// Optional. Optional list of labels applied to the resource.
@@ -47,11 +47,11 @@ var SacRealm = ubx.ResourceBinding{
 	WireType: "google_networksecurity_sac_realm",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PairingKey": ubx.FieldSpec{
 			WireName: "pairing_key",
-			Kind: "object",
-			Fields: SacRealm_PairingKeyFields,
+			Kind:     "object",
+			Fields:   SacRealm_PairingKeyFields,
 		},
 		"SecurityService": ubx.FieldSpec{WireName: "security_service"},
 	},

@@ -20,25 +20,25 @@ type V1beta1Secret_Replication struct {
 }
 
 var V1beta1Secret_Replication_UserManaged_ReplicasFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var V1beta1Secret_Replication_UserManagedFields = ubx.FieldMap{
-		"Replicas": ubx.FieldSpec{
-			WireName: "replicas",
-			Kind: "list",
-			Fields: V1beta1Secret_Replication_UserManaged_ReplicasFields,
-		},
-	}
+	"Replicas": ubx.FieldSpec{
+		WireName: "replicas",
+		Kind:     "list",
+		Fields:   V1beta1Secret_Replication_UserManaged_ReplicasFields,
+	},
+}
 
 var V1beta1Secret_ReplicationFields = ubx.FieldMap{
-		"Automatic": ubx.FieldSpec{WireName: "automatic"},
-		"UserManaged": ubx.FieldSpec{
-			WireName: "user_managed",
-			Kind: "object",
-			Fields: V1beta1Secret_Replication_UserManagedFields,
-		},
-	}
+	"Automatic": ubx.FieldSpec{WireName: "automatic"},
+	"UserManaged": ubx.FieldSpec{
+		WireName: "user_managed",
+		Kind:     "object",
+		Fields:   V1beta1Secret_Replication_UserManagedFields,
+	},
+}
 
 type V1beta1SecretConfig struct {
 	// The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
@@ -68,8 +68,8 @@ var V1beta1Secret = ubx.ResourceBinding{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Replication": ubx.FieldSpec{
 			WireName: "replication",
-			Kind: "object",
-			Fields: V1beta1Secret_ReplicationFields,
+			Kind:     "object",
+			Fields:   V1beta1Secret_ReplicationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

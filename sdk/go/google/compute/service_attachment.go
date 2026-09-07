@@ -7,7 +7,7 @@ type ServiceAttachment_ConnectedEndpoints struct {
 	// The URL of the consumer network that is connected to this service attachment, e.g. projects/{project}/global/networks/{network}. (AI-inferred)
 	ConsumerNetwork any
 	// The URL of the consumer endpoint (for example, a forwarding rule) that is connected to the service attachment. (AI-inferred)
-	Endpoint any
+	Endpoint       any
 	EndpointWithId any
 	// The list of NAT IP addresses allocated for the consumer endpoint. (AI-inferred)
 	NatIps any
@@ -22,7 +22,7 @@ type ServiceAttachment_ConnectedEndpoints struct {
 type ServiceAttachment_ConsumerAcceptLists struct {
 	// The maximum number of connections allowed for the consumer in the accept list. A value of 0 means no limit. (AI-inferred)
 	ConnectionLimit any
-	EndpointUrl any
+	EndpointUrl     any
 	// The URL of the network that is allowed to connect to this service attachment. (AI-inferred)
 	NetworkUrl any
 	// The project ID or project number of a consumer project that is allowed to connect to the service attachment. Used in the consumer accept list to identify the allowed project. (AI-inferred)
@@ -36,16 +36,16 @@ type ServiceAttachment_PscServiceAttachmentId struct {
 }
 
 var ServiceAttachment_ConsumerAcceptListsFields = ubx.FieldMap{
-		"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
-		"EndpointUrl": ubx.FieldSpec{WireName: "endpoint_url"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-		"ProjectIdOrNum": ubx.FieldSpec{WireName: "project_id_or_num"},
-	}
+	"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
+	"EndpointUrl":     ubx.FieldSpec{WireName: "endpoint_url"},
+	"NetworkUrl":      ubx.FieldSpec{WireName: "network_url"},
+	"ProjectIdOrNum":  ubx.FieldSpec{WireName: "project_id_or_num"},
+}
 
 var ServiceAttachment_PscServiceAttachmentIdFields = ubx.FieldMap{
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-	}
+	"High": ubx.FieldSpec{WireName: "high"},
+	"Low":  ubx.FieldSpec{WireName: "low"},
+}
 
 type ServiceAttachmentConfig struct {
 	// The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
@@ -135,26 +135,26 @@ var ServiceAttachment = ubx.ResourceBinding{
 		"ConnectionPreference": ubx.FieldSpec{WireName: "connection_preference"},
 		"ConsumerAcceptLists": ubx.FieldSpec{
 			WireName: "consumer_accept_lists",
-			Kind: "list",
-			Fields: ServiceAttachment_ConsumerAcceptListsFields,
+			Kind:     "list",
+			Fields:   ServiceAttachment_ConsumerAcceptListsFields,
 		},
-		"ConsumerRejectLists": ubx.FieldSpec{WireName: "consumer_reject_lists"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DomainNames": ubx.FieldSpec{WireName: "domain_names"},
-		"EnableProxyProtocol": ubx.FieldSpec{WireName: "enable_proxy_protocol"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatIpsPerEndpoint": ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
-		"NatSubnets": ubx.FieldSpec{WireName: "nat_subnets"},
-		"ProducerForwardingRule": ubx.FieldSpec{WireName: "producer_forwarding_rule"},
+		"ConsumerRejectLists":       ubx.FieldSpec{WireName: "consumer_reject_lists"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"DomainNames":               ubx.FieldSpec{WireName: "domain_names"},
+		"EnableProxyProtocol":       ubx.FieldSpec{WireName: "enable_proxy_protocol"},
+		"Fingerprint":               ubx.FieldSpec{WireName: "fingerprint"},
+		"Metadata":                  ubx.FieldSpec{WireName: "metadata"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"NatIpsPerEndpoint":         ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
+		"NatSubnets":                ubx.FieldSpec{WireName: "nat_subnets"},
+		"ProducerForwardingRule":    ubx.FieldSpec{WireName: "producer_forwarding_rule"},
 		"PropagatedConnectionLimit": ubx.FieldSpec{WireName: "propagated_connection_limit"},
 		"PscServiceAttachmentId": ubx.FieldSpec{
 			WireName: "psc_service_attachment_id",
-			Kind: "object",
-			Fields: ServiceAttachment_PscServiceAttachmentIdFields,
+			Kind:     "object",
+			Fields:   ServiceAttachment_PscServiceAttachmentIdFields,
 		},
 		"ReconcileConnections": ubx.FieldSpec{WireName: "reconcile_connections"},
-		"TargetService": ubx.FieldSpec{WireName: "target_service"},
+		"TargetService":        ubx.FieldSpec{WireName: "target_service"},
 	},
 }

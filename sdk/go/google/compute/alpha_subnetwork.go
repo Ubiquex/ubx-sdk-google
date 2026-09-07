@@ -24,27 +24,27 @@ type AlphaSubnetwork_Params struct {
 }
 
 type AlphaSubnetwork_SecondaryIpRanges struct {
-	IpCidrRange any
-	IpCollection any
-	IpVersion any
-	RangeName any
+	IpCidrRange           any
+	IpCollection          any
+	IpVersion             any
+	RangeName             any
 	ReservedInternalRange any
 }
 
 type AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIp struct {
 	High any
-	Low any
+	Low  any
 }
 
 type AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization struct {
 	TotalAllocatedIp any
-	TotalFreeIp any
+	TotalFreeIp      any
 }
 
 type AlphaSubnetwork_UtilizationDetails_Ipv4Utilizations struct {
-	RangeName any
+	RangeName        any
 	TotalAllocatedIp any
-	TotalFreeIp any
+	TotalFreeIp      any
 }
 
 type AlphaSubnetwork_UtilizationDetails struct {
@@ -59,72 +59,72 @@ type AlphaSubnetwork_UtilizationDetails struct {
 }
 
 var AlphaSubnetwork_LogConfigFields = ubx.FieldMap{
-		"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"FilterExpr": ubx.FieldSpec{WireName: "filter_expr"},
-		"FlowSampling": ubx.FieldSpec{WireName: "flow_sampling"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MetadataFields": ubx.FieldSpec{WireName: "metadata_fields"},
-	}
+	"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
+	"Enable":              ubx.FieldSpec{WireName: "enable"},
+	"FilterExpr":          ubx.FieldSpec{WireName: "filter_expr"},
+	"FlowSampling":        ubx.FieldSpec{WireName: "flow_sampling"},
+	"Metadata":            ubx.FieldSpec{WireName: "metadata"},
+	"MetadataFields":      ubx.FieldSpec{WireName: "metadata_fields"},
+}
 
 var AlphaSubnetwork_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaSubnetwork_SecondaryIpRangesFields = ubx.FieldMap{
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"RangeName": ubx.FieldSpec{WireName: "range_name"},
-		"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
-	}
+	"IpCidrRange":           ubx.FieldSpec{WireName: "ip_cidr_range"},
+	"IpCollection":          ubx.FieldSpec{WireName: "ip_collection"},
+	"IpVersion":             ubx.FieldSpec{WireName: "ip_version"},
+	"RangeName":             ubx.FieldSpec{WireName: "range_name"},
+	"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
+}
 
 var AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields = ubx.FieldMap{
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-	}
+	"High": ubx.FieldSpec{WireName: "high"},
+	"Low":  ubx.FieldSpec{WireName: "low"},
+}
 
 var AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields = ubx.FieldMap{
-		"TotalAllocatedIp": ubx.FieldSpec{
-			WireName: "total_allocated_ip",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
-		},
-		"TotalFreeIp": ubx.FieldSpec{
-			WireName: "total_free_ip",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
-		},
-	}
+	"TotalAllocatedIp": ubx.FieldSpec{
+		WireName: "total_allocated_ip",
+		Kind:     "object",
+		Fields:   AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
+	},
+	"TotalFreeIp": ubx.FieldSpec{
+		WireName: "total_free_ip",
+		Kind:     "object",
+		Fields:   AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
+	},
+}
 
 var AlphaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields = ubx.FieldMap{
-		"RangeName": ubx.FieldSpec{WireName: "range_name"},
-		"TotalAllocatedIp": ubx.FieldSpec{WireName: "total_allocated_ip"},
-		"TotalFreeIp": ubx.FieldSpec{WireName: "total_free_ip"},
-	}
+	"RangeName":        ubx.FieldSpec{WireName: "range_name"},
+	"TotalAllocatedIp": ubx.FieldSpec{WireName: "total_allocated_ip"},
+	"TotalFreeIp":      ubx.FieldSpec{WireName: "total_free_ip"},
+}
 
 var AlphaSubnetwork_UtilizationDetailsFields = ubx.FieldMap{
-		"ExternalIpv6InstanceUtilization": ubx.FieldSpec{
-			WireName: "external_ipv6_instance_utilization",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-		},
-		"ExternalIpv6LbUtilization": ubx.FieldSpec{
-			WireName: "external_ipv6_lb_utilization",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-		},
-		"InternalIpv6Utilization": ubx.FieldSpec{
-			WireName: "internal_ipv6_utilization",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-		},
-		"Ipv4Utilizations": ubx.FieldSpec{
-			WireName: "ipv4_utilizations",
-			Kind: "list",
-			Fields: AlphaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields,
-		},
-	}
+	"ExternalIpv6InstanceUtilization": ubx.FieldSpec{
+		WireName: "external_ipv6_instance_utilization",
+		Kind:     "object",
+		Fields:   AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+	},
+	"ExternalIpv6LbUtilization": ubx.FieldSpec{
+		WireName: "external_ipv6_lb_utilization",
+		Kind:     "object",
+		Fields:   AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+	},
+	"InternalIpv6Utilization": ubx.FieldSpec{
+		WireName: "internal_ipv6_utilization",
+		Kind:     "object",
+		Fields:   AlphaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+	},
+	"Ipv4Utilizations": ubx.FieldSpec{
+		WireName: "ipv4_utilizations",
+		Kind:     "list",
+		Fields:   AlphaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields,
+	},
+}
 
 type AlphaSubnetworkConfig struct {
 	// Can only be specified if VPC flow logging for this subnetwork is enabled. Sets the aggregation interval for collecting flow logs. Increasing the interval time reduces the amount of generated flow logs for long-lasting connections. Default is an interval of 5 seconds per connection. Valid values: INTERVAL_5_SEC, INTERVAL_30_SEC,INTERVAL_1_MIN, INTERVAL_5_MIN,INTERVAL_10_MIN, INTERVAL_15_MIN.
@@ -279,51 +279,51 @@ type AlphaSubnetworkAttrs struct {
 var AlphaSubnetwork = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_subnetwork",
 	Fields: ubx.FieldMap{
-		"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
+		"AggregationInterval":          ubx.FieldSpec{WireName: "aggregation_interval"},
 		"AllowSubnetCidrRoutesOverlap": ubx.FieldSpec{WireName: "allow_subnet_cidr_routes_overlap"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableFlowLogs": ubx.FieldSpec{WireName: "enable_flow_logs"},
-		"EnableL2": ubx.FieldSpec{WireName: "enable_l2"},
-		"EnablePrivateV6Access": ubx.FieldSpec{WireName: "enable_private_v6_access"},
-		"ExternalIpv6Prefix": ubx.FieldSpec{WireName: "external_ipv6_prefix"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"FlowSampling": ubx.FieldSpec{WireName: "flow_sampling"},
-		"InternalIpv6Prefix": ubx.FieldSpec{WireName: "internal_ipv6_prefix"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Ipv6NetworkTier": ubx.FieldSpec{WireName: "ipv6_network_tier"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
+		"EnableFlowLogs":               ubx.FieldSpec{WireName: "enable_flow_logs"},
+		"EnableL2":                     ubx.FieldSpec{WireName: "enable_l2"},
+		"EnablePrivateV6Access":        ubx.FieldSpec{WireName: "enable_private_v6_access"},
+		"ExternalIpv6Prefix":           ubx.FieldSpec{WireName: "external_ipv6_prefix"},
+		"Fingerprint":                  ubx.FieldSpec{WireName: "fingerprint"},
+		"FlowSampling":                 ubx.FieldSpec{WireName: "flow_sampling"},
+		"InternalIpv6Prefix":           ubx.FieldSpec{WireName: "internal_ipv6_prefix"},
+		"IpCidrRange":                  ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"IpCollection":                 ubx.FieldSpec{WireName: "ip_collection"},
+		"Ipv6AccessType":               ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"Ipv6NetworkTier":              ubx.FieldSpec{WireName: "ipv6_network_tier"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: AlphaSubnetwork_LogConfigFields,
+			Kind:     "object",
+			Fields:   AlphaSubnetwork_LogConfigFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Network":  ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaSubnetwork_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaSubnetwork_ParamsFields,
 		},
-		"PrivateIpGoogleAccess": ubx.FieldSpec{WireName: "private_ip_google_access"},
+		"PrivateIpGoogleAccess":   ubx.FieldSpec{WireName: "private_ip_google_access"},
 		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"Purpose": ubx.FieldSpec{WireName: "purpose"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
-		"ResolveSubnetMask": ubx.FieldSpec{WireName: "resolve_subnet_mask"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"Purpose":                 ubx.FieldSpec{WireName: "purpose"},
+		"Region":                  ubx.FieldSpec{WireName: "region"},
+		"ReservedInternalRange":   ubx.FieldSpec{WireName: "reserved_internal_range"},
+		"ResolveSubnetMask":       ubx.FieldSpec{WireName: "resolve_subnet_mask"},
+		"Role":                    ubx.FieldSpec{WireName: "role"},
 		"SecondaryIpRanges": ubx.FieldSpec{
 			WireName: "secondary_ip_ranges",
-			Kind: "list",
-			Fields: AlphaSubnetwork_SecondaryIpRangesFields,
+			Kind:     "list",
+			Fields:   AlphaSubnetwork_SecondaryIpRangesFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":  ubx.FieldSpec{WireName: "self_link"},
 		"StackType": ubx.FieldSpec{WireName: "stack_type"},
 		"UtilizationDetails": ubx.FieldSpec{
 			WireName: "utilization_details",
-			Kind: "object",
-			Fields: AlphaSubnetwork_UtilizationDetailsFields,
+			Kind:     "object",
+			Fields:   AlphaSubnetwork_UtilizationDetailsFields,
 		},
 		"Vlans": ubx.FieldSpec{WireName: "vlans"},
 	},

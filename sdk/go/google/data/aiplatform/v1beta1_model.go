@@ -26,12 +26,12 @@ type V1beta1Model_BaseModelSource struct {
 
 type V1beta1Model_Checkpoints struct {
 	CheckpointId any
-	Epoch any
-	Step any
+	Epoch        any
+	Step         any
 }
 
 type V1beta1Model_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -124,9 +124,9 @@ type V1beta1Model_ContainerSpec struct {
 }
 
 type V1beta1Model_DeployedModels struct {
-	CheckpointId any
+	CheckpointId    any
 	DeployedModelId any
-	Endpoint any
+	Endpoint        any
 }
 
 type V1beta1Model_EncryptionSpec struct {
@@ -135,40 +135,40 @@ type V1beta1Model_EncryptionSpec struct {
 }
 
 type V1beta1Model_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type V1beta1Model_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type V1beta1Model_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type V1beta1Model_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type V1beta1Model_ExplanationSpec_Metadata struct {
@@ -220,7 +220,7 @@ type V1beta1Model_ExplanationSpec_Parameters_IntegratedGradientsAttribution_Blur
 }
 
 type V1beta1Model_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -297,7 +297,7 @@ type V1beta1Model_PredictSchemata struct {
 
 type V1beta1Model_SupportedExportFormats struct {
 	ExportableContents any
-	Id any
+	Id                 any
 }
 
 type V1beta1ModelConfig struct {
@@ -339,7 +339,7 @@ type V1beta1ModelAttrs struct {
 	MetadataSchemaUri any
 	// Detail description of the source information of the model.
 	ModelSourceInfo any
-	Name any
+	Name            any
 	// Contains information about the original Model if this Model is a copy.
 	OriginalModelInfo any
 	// Contains the schemata used in Model's predictions and explanations via PredictionService.Predict, PredictionService.Explain and BatchPredictionJob.

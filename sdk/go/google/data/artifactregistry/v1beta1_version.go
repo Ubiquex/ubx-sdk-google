@@ -4,7 +4,7 @@ package artifactregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Version_RelatedTags struct {
-	Name any
+	Name    any
 	Version any
 }
 
@@ -18,12 +18,12 @@ type V1beta1VersionAttrs struct {
 	CreateTime any
 	// Optional. Description of the version, as specified in its metadata.
 	Description any
-	Name any
+	Name        any
 	// Output only. A list of related tags. Will contain up to 100 tags that reference this version.
 	RelatedTags any
 	// The time when the version was last updated.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var V1beta1Version = ubx.DataSourceBinding{

@@ -13,10 +13,10 @@ type DnsAuthorization_DnsResourceRecord struct {
 }
 
 var DnsAuthorization_DnsResourceRecordFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type DnsAuthorizationConfig struct {
 	// Optional. One or more paragraphs of text description of a DnsAuthorization.
@@ -62,13 +62,13 @@ var DnsAuthorization = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DnsResourceRecord": ubx.FieldSpec{
 			WireName: "dns_resource_record",
-			Kind: "object",
-			Fields: DnsAuthorization_DnsResourceRecordFields,
+			Kind:     "object",
+			Fields:   DnsAuthorization_DnsResourceRecordFields,
 		},
 		"Domain": ubx.FieldSpec{WireName: "domain"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

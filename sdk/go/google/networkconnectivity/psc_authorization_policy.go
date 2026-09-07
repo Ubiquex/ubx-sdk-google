@@ -46,12 +46,12 @@ type PscAuthorizationPolicyAttrs struct {
 var PscAuthorizationPolicy = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_psc_authorization_policy",
 	Fields: ubx.FieldMap{
-		"AuthorizationMode": ubx.FieldSpec{WireName: "authorization_mode"},
+		"AuthorizationMode":         ubx.FieldSpec{WireName: "authorization_mode"},
 		"AuthorizedClientResources": ubx.FieldSpec{WireName: "authorized_client_resources"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetResourceUri": ubx.FieldSpec{WireName: "target_resource_uri"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"Etag":                      ubx.FieldSpec{WireName: "etag"},
+		"Labels":                    ubx.FieldSpec{WireName: "labels"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"TargetResourceUri":         ubx.FieldSpec{WireName: "target_resource_uri"},
 	},
 }

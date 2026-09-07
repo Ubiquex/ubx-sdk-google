@@ -40,11 +40,11 @@ type V1beta1VolumePoolAttrs struct {
 var V1beta1VolumePool = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_volume_pool",
 	Fields: ubx.FieldMap{
-		"ActiveVolumeIops": ubx.FieldSpec{WireName: "active_volume_iops"},
+		"ActiveVolumeIops":      ubx.FieldSpec{WireName: "active_volume_iops"},
 		"DefaultVolumeQuotaMib": ubx.FieldSpec{WireName: "default_volume_quota_mib"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Network":               ubx.FieldSpec{WireName: "network"},
 	},
 }

@@ -430,454 +430,454 @@ type Session_Turns struct {
 }
 
 var Session_Turns_DetailedAnswer_Citations_SourcesFields = ubx.FieldMap{
-		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
-	}
+	"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
+}
 
 var Session_Turns_DetailedAnswer_CitationsFields = ubx.FieldMap{
-		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Citations_SourcesFields,
-		},
-		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-	}
+	"EndIndex": ubx.FieldSpec{WireName: "end_index"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Citations_SourcesFields,
+	},
+	"StartIndex": ubx.FieldSpec{WireName: "start_index"},
+}
 
 var Session_Turns_DetailedAnswer_GroundingSupportsFields = ubx.FieldMap{
-		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
-		"GroundingCheckRequired": ubx.FieldSpec{WireName: "grounding_check_required"},
-		"GroundingScore": ubx.FieldSpec{WireName: "grounding_score"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Citations_SourcesFields,
-		},
-		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-	}
+	"EndIndex":               ubx.FieldSpec{WireName: "end_index"},
+	"GroundingCheckRequired": ubx.FieldSpec{WireName: "grounding_check_required"},
+	"GroundingScore":         ubx.FieldSpec{WireName: "grounding_score"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Citations_SourcesFields,
+	},
+	"StartIndex": ubx.FieldSpec{WireName: "start_index"},
+}
 
 var Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfoFields = ubx.FieldMap{
-		"Positive": ubx.FieldSpec{WireName: "positive"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Positive": ubx.FieldSpec{WireName: "positive"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var Session_Turns_DetailedAnswer_QueryUnderstandingInfoFields = ubx.FieldMap{
-		"QueryClassificationInfo": ubx.FieldSpec{
-			WireName: "query_classification_info",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfoFields,
-		},
-	}
+	"QueryClassificationInfo": ubx.FieldSpec{
+		WireName: "query_classification_info",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_QueryUnderstandingInfo_QueryClassificationInfoFields,
+	},
+}
 
 var Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadataFields = ubx.FieldMap{
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
-		"StructData": ubx.FieldSpec{WireName: "struct_data"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Document":       ubx.FieldSpec{WireName: "document"},
+	"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
+	"StructData":     ubx.FieldSpec{WireName: "struct_data"},
+	"Title":          ubx.FieldSpec{WireName: "title"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAnswer_References_ChunkInfoFields = ubx.FieldMap{
-		"Chunk": ubx.FieldSpec{WireName: "chunk"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"DocumentMetadata": ubx.FieldSpec{
-			WireName: "document_metadata",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadataFields,
-		},
-		"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
-	}
+	"Chunk":   ubx.FieldSpec{WireName: "chunk"},
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"DocumentMetadata": ubx.FieldSpec{
+		WireName: "document_metadata",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_References_ChunkInfo_DocumentMetadataFields,
+	},
+	"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
+}
 
 var Session_Turns_DetailedAnswer_References_StructuredDocumentInfoFields = ubx.FieldMap{
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"StructData": ubx.FieldSpec{WireName: "struct_data"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Document":   ubx.FieldSpec{WireName: "document"},
+	"StructData": ubx.FieldSpec{WireName: "struct_data"},
+	"Title":      ubx.FieldSpec{WireName: "title"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContentsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
-		"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
-	}
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
+	"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
+}
 
 var Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfoFields = ubx.FieldMap{
-		"ChunkContents": ubx.FieldSpec{
-			WireName: "chunk_contents",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContentsFields,
-		},
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"StructData": ubx.FieldSpec{WireName: "struct_data"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ChunkContents": ubx.FieldSpec{
+		WireName: "chunk_contents",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfo_ChunkContentsFields,
+	},
+	"Document":   ubx.FieldSpec{WireName: "document"},
+	"StructData": ubx.FieldSpec{WireName: "struct_data"},
+	"Title":      ubx.FieldSpec{WireName: "title"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAnswer_ReferencesFields = ubx.FieldMap{
-		"ChunkInfo": ubx.FieldSpec{
-			WireName: "chunk_info",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_References_ChunkInfoFields,
-		},
-		"StructuredDocumentInfo": ubx.FieldSpec{
-			WireName: "structured_document_info",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_References_StructuredDocumentInfoFields,
-		},
-		"UnstructuredDocumentInfo": ubx.FieldSpec{
-			WireName: "unstructured_document_info",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfoFields,
-		},
-	}
+	"ChunkInfo": ubx.FieldSpec{
+		WireName: "chunk_info",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_References_ChunkInfoFields,
+	},
+	"StructuredDocumentInfo": ubx.FieldSpec{
+		WireName: "structured_document_info",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_References_StructuredDocumentInfoFields,
+	},
+	"UnstructuredDocumentInfo": ubx.FieldSpec{
+		WireName: "unstructured_document_info",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_References_UnstructuredDocumentInfoFields,
+	},
+}
 
 var Session_Turns_DetailedAnswer_SafetyRatingsFields = ubx.FieldMap{
-		"Blocked": ubx.FieldSpec{WireName: "blocked"},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Probability": ubx.FieldSpec{WireName: "probability"},
-		"ProbabilityScore": ubx.FieldSpec{WireName: "probability_score"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"SeverityScore": ubx.FieldSpec{WireName: "severity_score"},
-	}
+	"Blocked":          ubx.FieldSpec{WireName: "blocked"},
+	"Category":         ubx.FieldSpec{WireName: "category"},
+	"Probability":      ubx.FieldSpec{WireName: "probability"},
+	"ProbabilityScore": ubx.FieldSpec{WireName: "probability_score"},
+	"Severity":         ubx.FieldSpec{WireName: "severity"},
+	"SeverityScore":    ubx.FieldSpec{WireName: "severity_score"},
+}
 
 var Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfoFields = ubx.FieldMap{
-		"Chunk": ubx.FieldSpec{WireName: "chunk"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
-	}
+	"Chunk":          ubx.FieldSpec{WireName: "chunk"},
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"RelevanceScore": ubx.FieldSpec{WireName: "relevance_score"},
+}
 
 var Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfoFields = ubx.FieldMap{
-		"Snippet": ubx.FieldSpec{WireName: "snippet"},
-		"SnippetStatus": ubx.FieldSpec{WireName: "snippet_status"},
-	}
+	"Snippet":       ubx.FieldSpec{WireName: "snippet"},
+	"SnippetStatus": ubx.FieldSpec{WireName: "snippet_status"},
+}
 
 var Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResultsFields = ubx.FieldMap{
-		"ChunkInfo": ubx.FieldSpec{
-			WireName: "chunk_info",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfoFields,
-		},
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"SnippetInfo": ubx.FieldSpec{
-			WireName: "snippet_info",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfoFields,
-		},
-		"StructData": ubx.FieldSpec{WireName: "struct_data"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ChunkInfo": ubx.FieldSpec{
+		WireName: "chunk_info",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_ChunkInfoFields,
+	},
+	"Document": ubx.FieldSpec{WireName: "document"},
+	"SnippetInfo": ubx.FieldSpec{
+		WireName: "snippet_info",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResults_SnippetInfoFields,
+	},
+	"StructData": ubx.FieldSpec{WireName: "struct_data"},
+	"Title":      ubx.FieldSpec{WireName: "title"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAnswer_Steps_Actions_ObservationFields = ubx.FieldMap{
-		"SearchResults": ubx.FieldSpec{
-			WireName: "search_results",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResultsFields,
-		},
-	}
+	"SearchResults": ubx.FieldSpec{
+		WireName: "search_results",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Steps_Actions_Observation_SearchResultsFields,
+	},
+}
 
 var Session_Turns_DetailedAnswer_Steps_Actions_SearchActionFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Query": ubx.FieldSpec{WireName: "query"},
+}
 
 var Session_Turns_DetailedAnswer_Steps_ActionsFields = ubx.FieldMap{
-		"Observation": ubx.FieldSpec{
-			WireName: "observation",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_Steps_Actions_ObservationFields,
-		},
-		"SearchAction": ubx.FieldSpec{
-			WireName: "search_action",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_Steps_Actions_SearchActionFields,
-		},
-	}
+	"Observation": ubx.FieldSpec{
+		WireName: "observation",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_Steps_Actions_ObservationFields,
+	},
+	"SearchAction": ubx.FieldSpec{
+		WireName: "search_action",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_Steps_Actions_SearchActionFields,
+	},
+}
 
 var Session_Turns_DetailedAnswer_StepsFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_Steps_ActionsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_Steps_ActionsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"Thought":     ubx.FieldSpec{WireName: "thought"},
+}
 
 var Session_Turns_DetailedAnswerFields = ubx.FieldMap{
-		"AnswerSkippedReasons": ubx.FieldSpec{WireName: "answer_skipped_reasons"},
-		"AnswerText": ubx.FieldSpec{WireName: "answer_text"},
-		"Citations": ubx.FieldSpec{
-			WireName: "citations",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_CitationsFields,
-		},
-		"CompleteTime": ubx.FieldSpec{WireName: "complete_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"GroundingScore": ubx.FieldSpec{WireName: "grounding_score"},
-		"GroundingSupports": ubx.FieldSpec{
-			WireName: "grounding_supports",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_GroundingSupportsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"QueryUnderstandingInfo": ubx.FieldSpec{
-			WireName: "query_understanding_info",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswer_QueryUnderstandingInfoFields,
-		},
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_ReferencesFields,
-		},
-		"RelatedQuestions": ubx.FieldSpec{WireName: "related_questions"},
-		"SafetyRatings": ubx.FieldSpec{
-			WireName: "safety_ratings",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_SafetyRatingsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAnswer_StepsFields,
-		},
-	}
+	"AnswerSkippedReasons": ubx.FieldSpec{WireName: "answer_skipped_reasons"},
+	"AnswerText":           ubx.FieldSpec{WireName: "answer_text"},
+	"Citations": ubx.FieldSpec{
+		WireName: "citations",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_CitationsFields,
+	},
+	"CompleteTime":   ubx.FieldSpec{WireName: "complete_time"},
+	"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+	"GroundingScore": ubx.FieldSpec{WireName: "grounding_score"},
+	"GroundingSupports": ubx.FieldSpec{
+		WireName: "grounding_supports",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_GroundingSupportsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"QueryUnderstandingInfo": ubx.FieldSpec{
+		WireName: "query_understanding_info",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswer_QueryUnderstandingInfoFields,
+	},
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_ReferencesFields,
+	},
+	"RelatedQuestions": ubx.FieldSpec{WireName: "related_questions"},
+	"SafetyRatings": ubx.FieldSpec{
+		WireName: "safety_ratings",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_SafetyRatingsFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAnswer_StepsFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResultFields = ubx.FieldMap{
-		"BannedPhrases": ubx.FieldSpec{WireName: "banned_phrases"},
-	}
+	"BannedPhrases": ubx.FieldSpec{WireName: "banned_phrases"},
+}
 
 var Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResultFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_ErrorFields,
-		},
-		"ModelArmorViolation": ubx.FieldSpec{WireName: "model_armor_violation"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResult_ErrorFields,
+	},
+	"ModelArmorViolation": ubx.FieldSpec{WireName: "model_armor_violation"},
+}
 
 var Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResultsFields = ubx.FieldMap{
-		"BannedPhraseEnforcementResult": ubx.FieldSpec{
-			WireName: "banned_phrase_enforcement_result",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResultFields,
-		},
-		"ModelArmorEnforcementResult": ubx.FieldSpec{
-			WireName: "model_armor_enforcement_result",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResultFields,
-		},
-	}
+	"BannedPhraseEnforcementResult": ubx.FieldSpec{
+		WireName: "banned_phrase_enforcement_result",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_BannedPhraseEnforcementResultFields,
+	},
+	"ModelArmorEnforcementResult": ubx.FieldSpec{
+		WireName: "model_armor_enforcement_result",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResults_ModelArmorEnforcementResultFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResultFields = ubx.FieldMap{
-		"PolicyResults": ubx.FieldSpec{
-			WireName: "policy_results",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResultsFields,
-		},
-		"Verdict": ubx.FieldSpec{WireName: "verdict"},
-		"ViolationSource": ubx.FieldSpec{WireName: "violation_source"},
-	}
+	"PolicyResults": ubx.FieldSpec{
+		WireName: "policy_results",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResult_PolicyResultsFields,
+	},
+	"Verdict":         ubx.FieldSpec{WireName: "verdict"},
+	"ViolationSource": ubx.FieldSpec{WireName: "violation_source"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_CitationsFields = ubx.FieldMap{
-		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"PublicationDate": ubx.FieldSpec{
-			WireName: "publication_date",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDateFields,
-		},
-		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"EndIndex": ubx.FieldSpec{WireName: "end_index"},
+	"License":  ubx.FieldSpec{WireName: "license"},
+	"PublicationDate": ubx.FieldSpec{
+		WireName: "publication_date",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_Citations_PublicationDateFields,
+	},
+	"StartIndex": ubx.FieldSpec{WireName: "start_index"},
+	"Title":      ubx.FieldSpec{WireName: "title"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadataFields = ubx.FieldMap{
-		"Citations": ubx.FieldSpec{
-			WireName: "citations",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_CitationsFields,
-		},
-	}
+	"Citations": ubx.FieldSpec{
+		WireName: "citations",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadata_CitationsFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResultFields = ubx.FieldMap{
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_FileFields = ubx.FieldMap{
-		"FileId": ubx.FieldSpec{WireName: "file_id"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"FileId":   ubx.FieldSpec{WireName: "file_id"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":     ubx.FieldSpec{WireName: "data"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_ContentFields = ubx.FieldMap{
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCodeFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_FileFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineDataFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-	}
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_ExecutableCodeFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_FileFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_Content_InlineDataFields,
+	},
+	"Role":    ubx.FieldSpec{WireName: "role"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+	"Thought": ubx.FieldSpec{WireName: "thought"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadataFields = ubx.FieldMap{
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Document":       ubx.FieldSpec{WireName: "document"},
+	"Domain":         ubx.FieldSpec{WireName: "domain"},
+	"Language":       ubx.FieldSpec{WireName: "language"},
+	"MimeType":       ubx.FieldSpec{WireName: "mime_type"},
+	"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
+	"Title":          ubx.FieldSpec{WireName: "title"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields = ubx.FieldMap{
-		"ChunkMetadata": ubx.FieldSpec{WireName: "chunk_metadata"},
-		"CodeSnippet": ubx.FieldSpec{WireName: "code_snippet"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"DocumentMetadata": ubx.FieldSpec{
-			WireName: "document_metadata",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadataFields,
-		},
-	}
+	"ChunkMetadata": ubx.FieldSpec{WireName: "chunk_metadata"},
+	"CodeSnippet":   ubx.FieldSpec{WireName: "code_snippet"},
+	"Content":       ubx.FieldSpec{WireName: "content"},
+	"DocumentMetadata": ubx.FieldSpec{
+		WireName: "document_metadata",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_References_DocumentMetadataFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_SegmentsFields = ubx.FieldMap{
-		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
-		"GroundingScore": ubx.FieldSpec{WireName: "grounding_score"},
-		"ReferenceIndices": ubx.FieldSpec{WireName: "reference_indices"},
-		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"EndIndex":         ubx.FieldSpec{WireName: "end_index"},
+	"GroundingScore":   ubx.FieldSpec{WireName: "grounding_score"},
+	"ReferenceIndices": ubx.FieldSpec{WireName: "reference_indices"},
+	"StartIndex":       ubx.FieldSpec{WireName: "start_index"},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegmentsFields = ubx.FieldMap{
-		"ContentId": ubx.FieldSpec{WireName: "content_id"},
-		"ReferenceIndices": ubx.FieldSpec{WireName: "reference_indices"},
-	}
+	"ContentId":        ubx.FieldSpec{WireName: "content_id"},
+	"ReferenceIndices": ubx.FieldSpec{WireName: "reference_indices"},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadataFields = ubx.FieldMap{
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields,
-		},
-		"Segments": ubx.FieldSpec{
-			WireName: "segments",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_SegmentsFields,
-		},
-		"VisualSegments": ubx.FieldSpec{
-			WireName: "visual_segments",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegmentsFields,
-		},
-	}
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_ReferencesFields,
+	},
+	"Segments": ubx.FieldSpec{
+		WireName: "segments",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_SegmentsFields,
+	},
+	"VisualSegments": ubx.FieldSpec{
+		WireName: "visual_segments",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadata_VisualSegmentsFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_Replies_GroundedContentFields = ubx.FieldMap{
-		"CitationMetadata": ubx.FieldSpec{
-			WireName: "citation_metadata",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadataFields,
-		},
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_ContentFields,
-		},
-		"TextGroundingMetadata": ubx.FieldSpec{
-			WireName: "text_grounding_metadata",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadataFields,
-		},
-	}
+	"CitationMetadata": ubx.FieldSpec{
+		WireName: "citation_metadata",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_CitationMetadataFields,
+	},
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_ContentFields,
+	},
+	"TextGroundingMetadata": ubx.FieldSpec{
+		WireName: "text_grounding_metadata",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContent_TextGroundingMetadataFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswer_RepliesFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"GroundedContent": ubx.FieldSpec{
-			WireName: "grounded_content",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_Replies_GroundedContentFields,
-		},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"GroundedContent": ubx.FieldSpec{
+		WireName: "grounded_content",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_Replies_GroundedContentFields,
+	},
+}
 
 var Session_Turns_DetailedAssistAnswerFields = ubx.FieldMap{
-		"AssistSkippedReasons": ubx.FieldSpec{WireName: "assist_skipped_reasons"},
-		"CustomerPolicyEnforcementResult": ubx.FieldSpec{
-			WireName: "customer_policy_enforcement_result",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResultFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Replies": ubx.FieldSpec{
-			WireName: "replies",
-			Kind: "list",
-			Fields: Session_Turns_DetailedAssistAnswer_RepliesFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AssistSkippedReasons": ubx.FieldSpec{WireName: "assist_skipped_reasons"},
+	"CustomerPolicyEnforcementResult": ubx.FieldSpec{
+		WireName: "customer_policy_enforcement_result",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswer_CustomerPolicyEnforcementResultFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Replies": ubx.FieldSpec{
+		WireName: "replies",
+		Kind:     "list",
+		Fields:   Session_Turns_DetailedAssistAnswer_RepliesFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Session_Turns_QueryFields = ubx.FieldMap{
-		"QueryId": ubx.FieldSpec{WireName: "query_id"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"QueryId": ubx.FieldSpec{WireName: "query_id"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+}
 
 var Session_TurnsFields = ubx.FieldMap{
-		"Answer": ubx.FieldSpec{WireName: "answer"},
-		"DetailedAnswer": ubx.FieldSpec{
-			WireName: "detailed_answer",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAnswerFields,
-		},
-		"DetailedAssistAnswer": ubx.FieldSpec{
-			WireName: "detailed_assist_answer",
-			Kind: "object",
-			Fields: Session_Turns_DetailedAssistAnswerFields,
-		},
-		"Live": ubx.FieldSpec{WireName: "live"},
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Session_Turns_QueryFields,
-		},
-		"QueryConfig": ubx.FieldSpec{WireName: "query_config"},
-	}
+	"Answer": ubx.FieldSpec{WireName: "answer"},
+	"DetailedAnswer": ubx.FieldSpec{
+		WireName: "detailed_answer",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAnswerFields,
+	},
+	"DetailedAssistAnswer": ubx.FieldSpec{
+		WireName: "detailed_assist_answer",
+		Kind:     "object",
+		Fields:   Session_Turns_DetailedAssistAnswerFields,
+	},
+	"Live": ubx.FieldSpec{WireName: "live"},
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Session_Turns_QueryFields,
+	},
+	"QueryConfig": ubx.FieldSpec{WireName: "query_config"},
+}
 
 type SessionConfig struct {
 	// Optional. The display name of the session. This field is used to identify the session in the UI. By default, the display name is the first turn query text in the session.
@@ -923,14 +923,14 @@ var Session = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_session",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsPinned": ubx.FieldSpec{WireName: "is_pinned"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"IsPinned":    ubx.FieldSpec{WireName: "is_pinned"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"State":       ubx.FieldSpec{WireName: "state"},
 		"Turns": ubx.FieldSpec{
 			WireName: "turns",
-			Kind: "list",
-			Fields: Session_TurnsFields,
+			Kind:     "list",
+			Fields:   Session_TurnsFields,
 		},
 		"UserPseudoId": ubx.FieldSpec{WireName: "user_pseudo_id"},
 	},

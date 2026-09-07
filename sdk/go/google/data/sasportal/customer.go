@@ -10,7 +10,7 @@ type CustomerConfig struct {
 type CustomerAttrs struct {
 	// Required. Name of the organization that the customer entity represents.
 	DisplayName any
-	Name any
+	Name        any
 	// User IDs used by the devices belonging to this customer.
 	SasUserIds any
 }

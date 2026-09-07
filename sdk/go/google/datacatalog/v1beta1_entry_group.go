@@ -13,10 +13,10 @@ type V1beta1EntryGroup_DataCatalogTimestamps struct {
 }
 
 var V1beta1EntryGroup_DataCatalogTimestampsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1beta1EntryGroupConfig struct {
 	// Timestamps about this resource according to a particular system.
@@ -45,11 +45,11 @@ var V1beta1EntryGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataCatalogTimestamps": ubx.FieldSpec{
 			WireName: "data_catalog_timestamps",
-			Kind: "object",
-			Fields: V1beta1EntryGroup_DataCatalogTimestampsFields,
+			Kind:     "object",
+			Fields:   V1beta1EntryGroup_DataCatalogTimestampsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -5,55 +5,55 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1TlsRoute_Rules_Action_Destinations struct {
 	ServiceName any
-	Weight any
+	Weight      any
 }
 
 type V1beta1TlsRoute_Rules_Action struct {
 	Destinations any
-	IdleTimeout any
+	IdleTimeout  any
 }
 
 type V1beta1TlsRoute_Rules_Matches struct {
-	Alpn any
+	Alpn    any
 	SniHost any
 }
 
 type V1beta1TlsRoute_Rules struct {
-	Action any
+	Action  any
 	Matches any
 }
 
 var V1beta1TlsRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var V1beta1TlsRoute_Rules_ActionFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: V1beta1TlsRoute_Rules_Action_DestinationsFields,
-		},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   V1beta1TlsRoute_Rules_Action_DestinationsFields,
+	},
+	"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+}
 
 var V1beta1TlsRoute_Rules_MatchesFields = ubx.FieldMap{
-		"Alpn": ubx.FieldSpec{WireName: "alpn"},
-		"SniHost": ubx.FieldSpec{WireName: "sni_host"},
-	}
+	"Alpn":    ubx.FieldSpec{WireName: "alpn"},
+	"SniHost": ubx.FieldSpec{WireName: "sni_host"},
+}
 
 var V1beta1TlsRoute_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: V1beta1TlsRoute_Rules_ActionFields,
-		},
-		"Matches": ubx.FieldSpec{
-			WireName: "matches",
-			Kind: "list",
-			Fields: V1beta1TlsRoute_Rules_MatchesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   V1beta1TlsRoute_Rules_ActionFields,
+	},
+	"Matches": ubx.FieldSpec{
+		WireName: "matches",
+		Kind:     "list",
+		Fields:   V1beta1TlsRoute_Rules_MatchesFields,
+	},
+}
 
 type V1beta1TlsRouteConfig struct {
 	// Optional. A free-text description of the resource. Max length 1024 characters.
@@ -99,14 +99,14 @@ var V1beta1TlsRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_tls_route",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways": ubx.FieldSpec{WireName: "gateways"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Meshes": ubx.FieldSpec{WireName: "meshes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: V1beta1TlsRoute_RulesFields,
+			Kind:     "list",
+			Fields:   V1beta1TlsRoute_RulesFields,
 		},
 		"TargetProxies": ubx.FieldSpec{WireName: "target_proxies"},
 	},

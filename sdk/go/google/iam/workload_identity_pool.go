@@ -36,38 +36,38 @@ type WorkloadIdentityPool_InlineTrustConfig struct {
 }
 
 var WorkloadIdentityPool_InlineCertificateIssuanceConfigFields = ubx.FieldMap{
-		"CaPools": ubx.FieldSpec{WireName: "ca_pools"},
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
-		"Lifetime": ubx.FieldSpec{WireName: "lifetime"},
-		"RotationWindowPercentage": ubx.FieldSpec{WireName: "rotation_window_percentage"},
-		"UseDefaultSharedCa": ubx.FieldSpec{WireName: "use_default_shared_ca"},
-	}
+	"CaPools":                  ubx.FieldSpec{WireName: "ca_pools"},
+	"KeyAlgorithm":             ubx.FieldSpec{WireName: "key_algorithm"},
+	"Lifetime":                 ubx.FieldSpec{WireName: "lifetime"},
+	"RotationWindowPercentage": ubx.FieldSpec{WireName: "rotation_window_percentage"},
+	"UseDefaultSharedCa":       ubx.FieldSpec{WireName: "use_default_shared_ca"},
+}
 
 var WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCasFields = ubx.FieldMap{
-		"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
-	}
+	"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
+}
 
 var WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundlesFields = ubx.FieldMap{
-		"IntermediateCas": ubx.FieldSpec{
-			WireName: "intermediate_cas",
-			Kind: "list",
-			Fields: WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCasFields,
-		},
-		"TrustAnchors": ubx.FieldSpec{
-			WireName: "trust_anchors",
-			Kind: "list",
-			Fields: WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCasFields,
-		},
-		"TrustDefaultSharedCa": ubx.FieldSpec{WireName: "trust_default_shared_ca"},
-	}
+	"IntermediateCas": ubx.FieldSpec{
+		WireName: "intermediate_cas",
+		Kind:     "list",
+		Fields:   WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCasFields,
+	},
+	"TrustAnchors": ubx.FieldSpec{
+		WireName: "trust_anchors",
+		Kind:     "list",
+		Fields:   WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundles_IntermediateCasFields,
+	},
+	"TrustDefaultSharedCa": ubx.FieldSpec{WireName: "trust_default_shared_ca"},
+}
 
 var WorkloadIdentityPool_InlineTrustConfigFields = ubx.FieldMap{
-		"AdditionalTrustBundles": ubx.FieldSpec{
-			WireName: "additional_trust_bundles",
-			Kind: "map",
-			Fields: WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundlesFields,
-		},
-	}
+	"AdditionalTrustBundles": ubx.FieldSpec{
+		WireName: "additional_trust_bundles",
+		Kind:     "map",
+		Fields:   WorkloadIdentityPool_InlineTrustConfig_AdditionalTrustBundlesFields,
+	},
+}
 
 type WorkloadIdentityPoolConfig struct {
 	// Optional. A description of the pool. Cannot exceed 256 characters.
@@ -111,17 +111,17 @@ var WorkloadIdentityPool = ubx.ResourceBinding{
 	WireType: "google_iam_workload_identity_pool",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"InlineCertificateIssuanceConfig": ubx.FieldSpec{
 			WireName: "inline_certificate_issuance_config",
-			Kind: "object",
-			Fields: WorkloadIdentityPool_InlineCertificateIssuanceConfigFields,
+			Kind:     "object",
+			Fields:   WorkloadIdentityPool_InlineCertificateIssuanceConfigFields,
 		},
 		"InlineTrustConfig": ubx.FieldSpec{
 			WireName: "inline_trust_config",
-			Kind: "object",
-			Fields: WorkloadIdentityPool_InlineTrustConfigFields,
+			Kind:     "object",
+			Fields:   WorkloadIdentityPool_InlineTrustConfigFields,
 		},
 		"Mode": ubx.FieldSpec{WireName: "mode"},
 		"Name": ubx.FieldSpec{WireName: "name"},

@@ -4,20 +4,20 @@ package memcache
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2Instance_InstanceMessages struct {
-	Code any
+	Code    any
 	Message any
 }
 
 type V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day any
-	Duration any
+	Day       any
+	Duration  any
 	StartTime any
 }
 
@@ -42,20 +42,20 @@ type V1beta2Instance_MaintenanceSchedule struct {
 }
 
 type V1beta2Instance_MemcacheNodes_Parameters struct {
-	Id any
+	Id     any
 	Params any
 }
 
 type V1beta2Instance_MemcacheNodes struct {
-	Host any
+	Host                any
 	MemcacheFullVersion any
-	MemcacheVersion any
-	NodeId any
-	Parameters any
-	Port any
-	State any
-	UpdateAvailable any
-	Zone any
+	MemcacheVersion     any
+	NodeId              any
+	Parameters          any
+	Port                any
+	State               any
+	UpdateAvailable     any
+	Zone                any
 }
 
 type V1beta2Instance_NodeConfig struct {
@@ -66,53 +66,53 @@ type V1beta2Instance_NodeConfig struct {
 }
 
 var V1beta2Instance_InstanceMessagesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
-		},
-	}
+	"Day":      ubx.FieldSpec{WireName: "day"},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
+	},
+}
 
 var V1beta2Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WeeklyMaintenanceWindow": ubx.FieldSpec{
-			WireName: "weekly_maintenance_window",
-			Kind: "list",
-			Fields: V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
-		},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+	"WeeklyMaintenanceWindow": ubx.FieldSpec{
+		WireName: "weekly_maintenance_window",
+		Kind:     "list",
+		Fields:   V1beta2Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
+	},
+}
 
 var V1beta2Instance_MaintenanceScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":              ubx.FieldSpec{WireName: "end_time"},
+	"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
+	"StartTime":            ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta2Instance_NodeConfigFields = ubx.FieldMap{
-		"CpuCount": ubx.FieldSpec{WireName: "cpu_count"},
-		"MemorySizeMb": ubx.FieldSpec{WireName: "memory_size_mb"},
-	}
+	"CpuCount":     ubx.FieldSpec{WireName: "cpu_count"},
+	"MemorySizeMb": ubx.FieldSpec{WireName: "memory_size_mb"},
+}
 
 var V1beta2Instance_MemcacheNodes_ParametersFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Params": ubx.FieldSpec{WireName: "params"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Params": ubx.FieldSpec{WireName: "params"},
+}
 
 type V1beta2InstanceConfig struct {
 	// The full name of the Google Compute Engine [network](https://cloud.google.com/vpc/docs/vpc) to which the instance is connected. If left unspecified, the `default` network will be used.
@@ -136,7 +136,7 @@ type V1beta2InstanceConfig struct {
 	// Configuration for a Memcached Node.
 	NodeConfig any
 	// Required. Number of nodes in the Memcached instance.
-	NodeCount any
+	NodeCount  any
 	Parameters any
 	// Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
 	ReservedIpRangeId any
@@ -178,7 +178,7 @@ type V1beta2InstanceAttrs struct {
 	// Configuration for a Memcached Node.
 	NodeConfig any
 	// Required. Number of nodes in the Memcached instance.
-	NodeCount any
+	NodeCount  any
 	Parameters any
 	// Optional. Contains the id of allocated IP address ranges associated with the private service access connection for example, "test-default" associated with IP range 10.0.0.0/29.
 	ReservedIpRangeId any
@@ -200,38 +200,38 @@ var V1beta2Instance = ubx.ResourceBinding{
 	WireType: "google_memcache_v1beta2_instance",
 	Fields: ubx.FieldMap{
 		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
 		"InstanceMessages": ubx.FieldSpec{
 			WireName: "instance_messages",
-			Kind: "list",
-			Fields: V1beta2Instance_InstanceMessagesFields,
+			Kind:     "list",
+			Fields:   V1beta2Instance_InstanceMessagesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: V1beta2Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   V1beta2Instance_MaintenancePolicyFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: V1beta2Instance_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   V1beta2Instance_MaintenanceScheduleFields,
 		},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
-		"MemcacheVersion": ubx.FieldSpec{WireName: "memcache_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MemcacheVersion":    ubx.FieldSpec{WireName: "memcache_version"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"NodeConfig": ubx.FieldSpec{
 			WireName: "node_config",
-			Kind: "object",
-			Fields: V1beta2Instance_NodeConfigFields,
+			Kind:     "object",
+			Fields:   V1beta2Instance_NodeConfigFields,
 		},
 		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta2Instance_MemcacheNodes_ParametersFields,
+			Kind:     "object",
+			Fields:   V1beta2Instance_MemcacheNodes_ParametersFields,
 		},
 		"ReservedIpRangeId": ubx.FieldSpec{WireName: "reserved_ip_range_id"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
+		"Zones":             ubx.FieldSpec{WireName: "zones"},
 	},
 }

@@ -30,9 +30,9 @@ type AccessPolicyAttrs struct {
 var AccessPolicy = ubx.ResourceBinding{
 	WireType: "google_accesscontextmanager_access_policy",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Parent": ubx.FieldSpec{WireName: "parent"},
 		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Title":  ubx.FieldSpec{WireName: "title"},
 	},
 }

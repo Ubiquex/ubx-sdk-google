@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type PublicAdvertisedPrefix_PublicDelegatedPrefixs struct {
 	// The IP address range of the public delegated prefix, expressed in CIDR notation. (AI-inferred)
 	IpRange any
-	Name any
+	Name    any
 	// The project ID where the public delegated prefix is created, allowing the public advertised prefix to be shared with a different project. (AI-inferred)
 	Project any
 	// The region where this delegated prefix is located. (AI-inferred)
@@ -71,14 +71,14 @@ type PublicAdvertisedPrefixAttrs struct {
 var PublicAdvertisedPrefix = ubx.ResourceBinding{
 	WireType: "google_compute_public_advertised_prefix",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DnsVerificationIp": ubx.FieldSpec{WireName: "dns_verification_ip"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PdpScope": ubx.FieldSpec{WireName: "pdp_scope"},
-		"SharedSecret": ubx.FieldSpec{WireName: "shared_secret"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Fingerprint":       ubx.FieldSpec{WireName: "fingerprint"},
+		"IpCidrRange":       ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"Ipv6AccessType":    ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"PdpScope":          ubx.FieldSpec{WireName: "pdp_scope"},
+		"SharedSecret":      ubx.FieldSpec{WireName: "shared_secret"},
+		"Status":            ubx.FieldSpec{WireName: "status"},
 	},
 }

@@ -29,29 +29,29 @@ type PacketMirroring_MirroredResources struct {
 }
 
 var PacketMirroring_CollectorIlbFields = ubx.FieldMap{
-		"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"CanonicalUrl": ubx.FieldSpec{WireName: "canonical_url"},
+	"Url":          ubx.FieldSpec{WireName: "url"},
+}
 
 var PacketMirroring_FilterFields = ubx.FieldMap{
-		"CidrRanges": ubx.FieldSpec{WireName: "cidr_ranges"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Ipprotocols": ubx.FieldSpec{WireName: "ipprotocols"},
-	}
+	"CidrRanges":  ubx.FieldSpec{WireName: "cidr_ranges"},
+	"Direction":   ubx.FieldSpec{WireName: "direction"},
+	"Ipprotocols": ubx.FieldSpec{WireName: "ipprotocols"},
+}
 
 var PacketMirroring_MirroredResourcesFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: PacketMirroring_CollectorIlbFields,
-		},
-		"Subnetworks": ubx.FieldSpec{
-			WireName: "subnetworks",
-			Kind: "list",
-			Fields: PacketMirroring_CollectorIlbFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   PacketMirroring_CollectorIlbFields,
+	},
+	"Subnetworks": ubx.FieldSpec{
+		WireName: "subnetworks",
+		Kind:     "list",
+		Fields:   PacketMirroring_CollectorIlbFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 type PacketMirroringConfig struct {
 	// The internal load balancer (ILB) used as the collector for mirrored traffic. This output-only field identifies the forwarding rule that receives mirrored packets. (AI-inferred)
@@ -108,28 +108,28 @@ var PacketMirroring = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectorIlb": ubx.FieldSpec{
 			WireName: "collector_ilb",
-			Kind: "object",
-			Fields: PacketMirroring_CollectorIlbFields,
+			Kind:     "object",
+			Fields:   PacketMirroring_CollectorIlbFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Enable":      ubx.FieldSpec{WireName: "enable"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: PacketMirroring_FilterFields,
+			Kind:     "object",
+			Fields:   PacketMirroring_FilterFields,
 		},
 		"MirroredResources": ubx.FieldSpec{
 			WireName: "mirrored_resources",
-			Kind: "object",
-			Fields: PacketMirroring_MirroredResourcesFields,
+			Kind:     "object",
+			Fields:   PacketMirroring_MirroredResourcesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{
 			WireName: "network",
-			Kind: "object",
-			Fields: PacketMirroring_CollectorIlbFields,
+			Kind:     "object",
+			Fields:   PacketMirroring_CollectorIlbFields,
 		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":   ubx.FieldSpec{WireName: "region"},
 	},
 }

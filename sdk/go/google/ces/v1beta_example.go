@@ -9,151 +9,151 @@ type V1betaExample_Messages_Chunks_AgentTransfer struct {
 }
 
 type V1betaExample_Messages_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type V1betaExample_Messages_Chunks_Image struct {
-	AltText any
-	Data any
+	AltText  any
+	Data     any
 	MimeType any
 }
 
 type V1betaExample_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type V1betaExample_Messages_Chunks_ToolCall struct {
-	AgentName any
-	Args any
-	DisplayName any
-	Id any
+	AgentName        any
+	Args             any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Tool any
-	ToolsetTool any
+	Tool             any
+	ToolsetTool      any
 }
 
 type V1betaExample_Messages_Chunks_ToolResponse struct {
-	AgentName any
-	DisplayName any
-	Id any
+	AgentName        any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Response any
-	Tool any
-	ToolsetTool any
+	Response         any
+	Tool             any
+	ToolsetTool      any
 }
 
 type V1betaExample_Messages_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type V1betaExample_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 var V1betaExample_Messages_Chunks_AgentTransferFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
+}
 
 var V1betaExample_Messages_Chunks_BlobFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":     ubx.FieldSpec{WireName: "data"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1betaExample_Messages_Chunks_ImageFields = ubx.FieldMap{
-		"AltText": ubx.FieldSpec{WireName: "alt_text"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"AltText":  ubx.FieldSpec{WireName: "alt_text"},
+	"Data":     ubx.FieldSpec{WireName: "data"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields = ubx.FieldMap{
-		"ToolId": ubx.FieldSpec{WireName: "tool_id"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolId":  ubx.FieldSpec{WireName: "tool_id"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var V1betaExample_Messages_Chunks_ToolCallFields = ubx.FieldMap{
-		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"AgentName":        ubx.FieldSpec{WireName: "agent_name"},
+	"Args":             ubx.FieldSpec{WireName: "args"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
+	"Tool":             ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var V1betaExample_Messages_Chunks_ToolResponseFields = ubx.FieldMap{
-		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"AgentName":        ubx.FieldSpec{WireName: "agent_name"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
+	"Response":         ubx.FieldSpec{WireName: "response"},
+	"Tool":             ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var V1betaExample_Messages_ChunksFields = ubx.FieldMap{
-		"AgentTransfer": ubx.FieldSpec{
-			WireName: "agent_transfer",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_AgentTransferFields,
-		},
-		"Blob": ubx.FieldSpec{
-			WireName: "blob",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_BlobFields,
-		},
-		"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_ImageFields,
-		},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_ToolCallFields,
-		},
-		"ToolResponse": ubx.FieldSpec{
-			WireName: "tool_response",
-			Kind: "object",
-			Fields: V1betaExample_Messages_Chunks_ToolResponseFields,
-		},
-		"Transcript": ubx.FieldSpec{WireName: "transcript"},
-		"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
-	}
+	"AgentTransfer": ubx.FieldSpec{
+		WireName: "agent_transfer",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_AgentTransferFields,
+	},
+	"Blob": ubx.FieldSpec{
+		WireName: "blob",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_BlobFields,
+	},
+	"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_ImageFields,
+	},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_ToolCallFields,
+	},
+	"ToolResponse": ubx.FieldSpec{
+		WireName: "tool_response",
+		Kind:     "object",
+		Fields:   V1betaExample_Messages_Chunks_ToolResponseFields,
+	},
+	"Transcript":       ubx.FieldSpec{WireName: "transcript"},
+	"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
+}
 
 var V1betaExample_MessagesFields = ubx.FieldMap{
-		"Chunks": ubx.FieldSpec{
-			WireName: "chunks",
-			Kind: "list",
-			Fields: V1betaExample_Messages_ChunksFields,
-		},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Chunks": ubx.FieldSpec{
+		WireName: "chunks",
+		Kind:     "list",
+		Fields:   V1betaExample_Messages_ChunksFields,
+	},
+	"EventTime": ubx.FieldSpec{WireName: "event_time"},
+	"Role":      ubx.FieldSpec{WireName: "role"},
+}
 
 type V1betaExampleConfig struct {
 	// Optional. Human-readable description of the example.
@@ -196,12 +196,12 @@ var V1betaExample = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntryAgent": ubx.FieldSpec{WireName: "entry_agent"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"EntryAgent":  ubx.FieldSpec{WireName: "entry_agent"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Messages": ubx.FieldSpec{
 			WireName: "messages",
-			Kind: "list",
-			Fields: V1betaExample_MessagesFields,
+			Kind:     "list",
+			Fields:   V1betaExample_MessagesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

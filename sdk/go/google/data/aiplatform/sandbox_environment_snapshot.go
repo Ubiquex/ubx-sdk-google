@@ -14,7 +14,7 @@ type SandboxEnvironmentSnapshotAttrs struct {
 	DisplayName any
 	// Optional. Timestamp in UTC of when this SandboxEnvironmentSnapshot is considered expired. This is *always* provided on output, regardless of what `expiration` was sent on input.
 	ExpireTime any
-	Name any
+	Name       any
 	// Optional. Owner information for this sandbox snapshot. Different owners will have isolations on snapshot storage and identity. If not set, snapshot will be created as the default owner.
 	Owner any
 	// Output only. The resource name of the parent SandboxEnvironmentSnapshot. Empty if this is a root Snapshot (the first snapshot from a newly created sandbox). Can be used to reconstruct the whole ancestry tree of snapshots.

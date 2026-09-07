@@ -31,42 +31,42 @@ type V1betaRolloutSequence_OperationalState struct {
 
 type V1betaRolloutSequence_Stages struct {
 	ClusterSelector any
-	FleetProjects any
-	SoakDuration any
+	FleetProjects   any
+	SoakDuration    any
 }
 
 var V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields = ubx.FieldMap{
-		"UpgradeTypes": ubx.FieldSpec{WireName: "upgrade_types"},
-	}
+	"UpgradeTypes": ubx.FieldSpec{WireName: "upgrade_types"},
+}
 
 var V1betaRolloutSequence_AutoUpgradeConfigFields = ubx.FieldMap{
-		"EnforcedRollouts": ubx.FieldSpec{WireName: "enforced_rollouts"},
-		"RolloutCreationScope": ubx.FieldSpec{
-			WireName: "rollout_creation_scope",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields,
-		},
-	}
+	"EnforcedRollouts": ubx.FieldSpec{WireName: "enforced_rollouts"},
+	"RolloutCreationScope": ubx.FieldSpec{
+		WireName: "rollout_creation_scope",
+		Kind:     "object",
+		Fields:   V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields,
+	},
+}
 
 var V1betaRolloutSequence_IgnoredClustersSelectorFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-	}
+	"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
+}
 
 var V1betaRolloutSequence_OperationalStateFields = ubx.FieldMap{
-		"Reasons": ubx.FieldSpec{WireName: "reasons"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateChangeTime": ubx.FieldSpec{WireName: "state_change_time"},
-	}
+	"Reasons":         ubx.FieldSpec{WireName: "reasons"},
+	"State":           ubx.FieldSpec{WireName: "state"},
+	"StateChangeTime": ubx.FieldSpec{WireName: "state_change_time"},
+}
 
 var V1betaRolloutSequence_StagesFields = ubx.FieldMap{
-		"ClusterSelector": ubx.FieldSpec{
-			WireName: "cluster_selector",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_IgnoredClustersSelectorFields,
-		},
-		"FleetProjects": ubx.FieldSpec{WireName: "fleet_projects"},
-		"SoakDuration": ubx.FieldSpec{WireName: "soak_duration"},
-	}
+	"ClusterSelector": ubx.FieldSpec{
+		WireName: "cluster_selector",
+		Kind:     "object",
+		Fields:   V1betaRolloutSequence_IgnoredClustersSelectorFields,
+	},
+	"FleetProjects": ubx.FieldSpec{WireName: "fleet_projects"},
+	"SoakDuration":  ubx.FieldSpec{WireName: "soak_duration"},
+}
 
 type V1betaRolloutSequenceConfig struct {
 	// Configuration for automatic upgrades.
@@ -131,31 +131,31 @@ var V1betaRolloutSequence = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoUpgradeConfig": ubx.FieldSpec{
 			WireName: "auto_upgrade_config",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfigFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_AutoUpgradeConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EffectiveAutoUpgradeConfig": ubx.FieldSpec{
 			WireName: "effective_auto_upgrade_config",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfigFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_AutoUpgradeConfigFields,
 		},
 		"IgnoredClustersSelector": ubx.FieldSpec{
 			WireName: "ignored_clusters_selector",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_IgnoredClustersSelectorFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_IgnoredClustersSelectorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"OperationalState": ubx.FieldSpec{
 			WireName: "operational_state",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_OperationalStateFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_OperationalStateFields,
 		},
 		"Stages": ubx.FieldSpec{
 			WireName: "stages",
-			Kind: "list",
-			Fields: V1betaRolloutSequence_StagesFields,
+			Kind:     "list",
+			Fields:   V1betaRolloutSequence_StagesFields,
 		},
 	},
 }

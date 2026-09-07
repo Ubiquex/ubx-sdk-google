@@ -9,9 +9,9 @@ type AlphaInstanceGroup_NamedPorts struct {
 }
 
 var AlphaInstanceGroup_NamedPortsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 type AlphaInstanceGroupConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -59,11 +59,11 @@ var AlphaInstanceGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_instance_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"NamedPorts": ubx.FieldSpec{
 			WireName: "named_ports",
-			Kind: "list",
-			Fields: AlphaInstanceGroup_NamedPortsFields,
+			Kind:     "list",
+			Fields:   AlphaInstanceGroup_NamedPortsFields,
 		},
 		"Network": ubx.FieldSpec{WireName: "network"},
 	},

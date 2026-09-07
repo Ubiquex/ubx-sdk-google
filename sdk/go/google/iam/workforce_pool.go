@@ -16,17 +16,17 @@ type WorkforcePool_AccessRestrictions struct {
 }
 
 var WorkforcePool_AccessRestrictions_AllowedServicesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var WorkforcePool_AccessRestrictionsFields = ubx.FieldMap{
-		"AllowedServices": ubx.FieldSpec{
-			WireName: "allowed_services",
-			Kind: "list",
-			Fields: WorkforcePool_AccessRestrictions_AllowedServicesFields,
-		},
-		"DisableProgrammaticSignin": ubx.FieldSpec{WireName: "disable_programmatic_signin"},
-	}
+	"AllowedServices": ubx.FieldSpec{
+		WireName: "allowed_services",
+		Kind:     "list",
+		Fields:   WorkforcePool_AccessRestrictions_AllowedServicesFields,
+	},
+	"DisableProgrammaticSignin": ubx.FieldSpec{WireName: "disable_programmatic_signin"},
+}
 
 type WorkforcePoolConfig struct {
 	// Access related restrictions on the workforce pool.
@@ -71,14 +71,14 @@ var WorkforcePool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessRestrictions": ubx.FieldSpec{
 			WireName: "access_restrictions",
-			Kind: "object",
-			Fields: WorkforcePool_AccessRestrictionsFields,
+			Kind:     "object",
+			Fields:   WorkforcePool_AccessRestrictionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Disabled":        ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Parent":          ubx.FieldSpec{WireName: "parent"},
 		"SessionDuration": ubx.FieldSpec{WireName: "session_duration"},
 	},
 }

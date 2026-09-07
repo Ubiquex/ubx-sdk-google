@@ -38,8 +38,8 @@ var Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Ttl":         ubx.FieldSpec{WireName: "ttl"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

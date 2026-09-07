@@ -72,50 +72,50 @@ type AlphaStoragePool_ShareSettings struct {
 }
 
 var AlphaStoragePool_ExapoolProvisionedCapacityGbFields = ubx.FieldMap{
-		"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
-		"ReadOptimized": ubx.FieldSpec{WireName: "read_optimized"},
-		"WriteOptimized": ubx.FieldSpec{WireName: "write_optimized"},
-	}
+	"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
+	"ReadOptimized":     ubx.FieldSpec{WireName: "read_optimized"},
+	"WriteOptimized":    ubx.FieldSpec{WireName: "write_optimized"},
+}
 
 var AlphaStoragePool_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaStoragePool_ResourceStatusFields = ubx.FieldMap{
-		"AggregateDiskProvisionedIops": ubx.FieldSpec{WireName: "aggregate_disk_provisioned_iops"},
-		"AggregateDiskSizeGb": ubx.FieldSpec{WireName: "aggregate_disk_size_gb"},
-		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
-		"ExapoolMaxReadIops": ubx.FieldSpec{WireName: "exapool_max_read_iops"},
-		"ExapoolMaxReadThroughput": ubx.FieldSpec{WireName: "exapool_max_read_throughput"},
-		"ExapoolMaxWriteIops": ubx.FieldSpec{WireName: "exapool_max_write_iops"},
-		"ExapoolMaxWriteThroughput": ubx.FieldSpec{WireName: "exapool_max_write_throughput"},
-		"LastResizeTimestamp": ubx.FieldSpec{WireName: "last_resize_timestamp"},
-		"MaxAggregateDiskSizeGb": ubx.FieldSpec{WireName: "max_aggregate_disk_size_gb"},
-		"MaxTotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "max_total_provisioned_disk_capacity_gb"},
-		"NumberOfDisks": ubx.FieldSpec{WireName: "number_of_disks"},
-		"PoolUsedCapacityBytes": ubx.FieldSpec{WireName: "pool_used_capacity_bytes"},
-		"PoolUsedIops": ubx.FieldSpec{WireName: "pool_used_iops"},
-		"PoolUsedThroughput": ubx.FieldSpec{WireName: "pool_used_throughput"},
-		"PoolUserWrittenBytes": ubx.FieldSpec{WireName: "pool_user_written_bytes"},
-		"TotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "total_provisioned_disk_capacity_gb"},
-		"TotalProvisionedDiskIops": ubx.FieldSpec{WireName: "total_provisioned_disk_iops"},
-		"TotalProvisionedDiskThroughput": ubx.FieldSpec{WireName: "total_provisioned_disk_throughput"},
-		"UsedBytes": ubx.FieldSpec{WireName: "used_bytes"},
-		"UsedReducedBytes": ubx.FieldSpec{WireName: "used_reduced_bytes"},
-		"UsedThroughput": ubx.FieldSpec{WireName: "used_throughput"},
-	}
+	"AggregateDiskProvisionedIops":      ubx.FieldSpec{WireName: "aggregate_disk_provisioned_iops"},
+	"AggregateDiskSizeGb":               ubx.FieldSpec{WireName: "aggregate_disk_size_gb"},
+	"DiskCount":                         ubx.FieldSpec{WireName: "disk_count"},
+	"ExapoolMaxReadIops":                ubx.FieldSpec{WireName: "exapool_max_read_iops"},
+	"ExapoolMaxReadThroughput":          ubx.FieldSpec{WireName: "exapool_max_read_throughput"},
+	"ExapoolMaxWriteIops":               ubx.FieldSpec{WireName: "exapool_max_write_iops"},
+	"ExapoolMaxWriteThroughput":         ubx.FieldSpec{WireName: "exapool_max_write_throughput"},
+	"LastResizeTimestamp":               ubx.FieldSpec{WireName: "last_resize_timestamp"},
+	"MaxAggregateDiskSizeGb":            ubx.FieldSpec{WireName: "max_aggregate_disk_size_gb"},
+	"MaxTotalProvisionedDiskCapacityGb": ubx.FieldSpec{WireName: "max_total_provisioned_disk_capacity_gb"},
+	"NumberOfDisks":                     ubx.FieldSpec{WireName: "number_of_disks"},
+	"PoolUsedCapacityBytes":             ubx.FieldSpec{WireName: "pool_used_capacity_bytes"},
+	"PoolUsedIops":                      ubx.FieldSpec{WireName: "pool_used_iops"},
+	"PoolUsedThroughput":                ubx.FieldSpec{WireName: "pool_used_throughput"},
+	"PoolUserWrittenBytes":              ubx.FieldSpec{WireName: "pool_user_written_bytes"},
+	"TotalProvisionedDiskCapacityGb":    ubx.FieldSpec{WireName: "total_provisioned_disk_capacity_gb"},
+	"TotalProvisionedDiskIops":          ubx.FieldSpec{WireName: "total_provisioned_disk_iops"},
+	"TotalProvisionedDiskThroughput":    ubx.FieldSpec{WireName: "total_provisioned_disk_throughput"},
+	"UsedBytes":                         ubx.FieldSpec{WireName: "used_bytes"},
+	"UsedReducedBytes":                  ubx.FieldSpec{WireName: "used_reduced_bytes"},
+	"UsedThroughput":                    ubx.FieldSpec{WireName: "used_throughput"},
+}
 
 var AlphaStoragePool_ShareSettings_ProjectMapFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var AlphaStoragePool_ShareSettingsFields = ubx.FieldMap{
-		"ProjectMap": ubx.FieldSpec{
-			WireName: "project_map",
-			Kind: "map",
-			Fields: AlphaStoragePool_ShareSettings_ProjectMapFields,
-		},
-	}
+	"ProjectMap": ubx.FieldSpec{
+		WireName: "project_map",
+		Kind:     "map",
+		Fields:   AlphaStoragePool_ShareSettings_ProjectMapFields,
+	},
+}
 
 type AlphaStoragePoolConfig struct {
 	// Provisioning type of the byte capacity of the pool.
@@ -213,41 +213,41 @@ var AlphaStoragePool = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_storage_pool",
 	Fields: ubx.FieldMap{
 		"CapacityProvisioningType": ubx.FieldSpec{WireName: "capacity_provisioning_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
 		"ExapoolProvisionedCapacityGb": ubx.FieldSpec{
 			WireName: "exapool_provisioned_capacity_gb",
-			Kind: "object",
-			Fields: AlphaStoragePool_ExapoolProvisionedCapacityGbFields,
+			Kind:     "object",
+			Fields:   AlphaStoragePool_ExapoolProvisionedCapacityGbFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaStoragePool_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaStoragePool_ParamsFields,
 		},
 		"PerformanceProvisioningType": ubx.FieldSpec{WireName: "performance_provisioning_type"},
-		"PoolProvisionedCapacityGb": ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
-		"PoolProvisionedIops": ubx.FieldSpec{WireName: "pool_provisioned_iops"},
-		"PoolProvisionedThroughput": ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+		"PoolProvisionedCapacityGb":   ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
+		"PoolProvisionedIops":         ubx.FieldSpec{WireName: "pool_provisioned_iops"},
+		"PoolProvisionedThroughput":   ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
+		"ProvisionedIops":             ubx.FieldSpec{WireName: "provisioned_iops"},
+		"ProvisionedThroughput":       ubx.FieldSpec{WireName: "provisioned_throughput"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: AlphaStoragePool_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   AlphaStoragePool_ResourceStatusFields,
 		},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind: "object",
-			Fields: AlphaStoragePool_ShareSettingsFields,
+			Kind:     "object",
+			Fields:   AlphaStoragePool_ShareSettingsFields,
 		},
 		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: AlphaStoragePool_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   AlphaStoragePool_ResourceStatusFields,
 		},
 		"StoragePoolType": ubx.FieldSpec{WireName: "storage_pool_type"},
 	},

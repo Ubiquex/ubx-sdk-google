@@ -20,7 +20,7 @@ type V2beta2Queue_AppEngineHttpTarget struct {
 }
 
 type V2beta2Queue_HttpTarget_HeaderOverrides_Header struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -118,114 +118,114 @@ type V2beta2Queue_Stats struct {
 }
 
 var V2beta2Queue_AppEngineHttpTarget_AppEngineRoutingOverrideFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"Service":  ubx.FieldSpec{WireName: "service"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var V2beta2Queue_AppEngineHttpTargetFields = ubx.FieldMap{
-		"AppEngineRoutingOverride": ubx.FieldSpec{
-			WireName: "app_engine_routing_override",
-			Kind: "object",
-			Fields: V2beta2Queue_AppEngineHttpTarget_AppEngineRoutingOverrideFields,
-		},
-	}
+	"AppEngineRoutingOverride": ubx.FieldSpec{
+		WireName: "app_engine_routing_override",
+		Kind:     "object",
+		Fields:   V2beta2Queue_AppEngineHttpTarget_AppEngineRoutingOverrideFields,
+	},
+}
 
 var V2beta2Queue_HttpTarget_HeaderOverrides_HeaderFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V2beta2Queue_HttpTarget_HeaderOverridesFields = ubx.FieldMap{
-		"Header": ubx.FieldSpec{
-			WireName: "header",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_HeaderOverrides_HeaderFields,
-		},
-	}
+	"Header": ubx.FieldSpec{
+		WireName: "header",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_HeaderOverrides_HeaderFields,
+	},
+}
 
 var V2beta2Queue_HttpTarget_OauthTokenFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Scope":               ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V2beta2Queue_HttpTarget_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V2beta2Queue_HttpTarget_UriOverride_PathOverrideFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var V2beta2Queue_HttpTarget_UriOverride_QueryOverrideFields = ubx.FieldMap{
-		"QueryParams": ubx.FieldSpec{WireName: "query_params"},
-	}
+	"QueryParams": ubx.FieldSpec{WireName: "query_params"},
+}
 
 var V2beta2Queue_HttpTarget_UriOverrideFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"PathOverride": ubx.FieldSpec{
-			WireName: "path_override",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_UriOverride_PathOverrideFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"QueryOverride": ubx.FieldSpec{
-			WireName: "query_override",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_UriOverride_QueryOverrideFields,
-		},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-		"UriOverrideEnforceMode": ubx.FieldSpec{WireName: "uri_override_enforce_mode"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"PathOverride": ubx.FieldSpec{
+		WireName: "path_override",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_UriOverride_PathOverrideFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+	"QueryOverride": ubx.FieldSpec{
+		WireName: "query_override",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_UriOverride_QueryOverrideFields,
+	},
+	"Scheme":                 ubx.FieldSpec{WireName: "scheme"},
+	"UriOverrideEnforceMode": ubx.FieldSpec{WireName: "uri_override_enforce_mode"},
+}
 
 var V2beta2Queue_HttpTargetFields = ubx.FieldMap{
-		"HeaderOverrides": ubx.FieldSpec{
-			WireName: "header_overrides",
-			Kind: "list",
-			Fields: V2beta2Queue_HttpTarget_HeaderOverridesFields,
-		},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthToken": ubx.FieldSpec{
-			WireName: "oauth_token",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_OauthTokenFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_OidcTokenFields,
-		},
-		"UriOverride": ubx.FieldSpec{
-			WireName: "uri_override",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTarget_UriOverrideFields,
-		},
-	}
+	"HeaderOverrides": ubx.FieldSpec{
+		WireName: "header_overrides",
+		Kind:     "list",
+		Fields:   V2beta2Queue_HttpTarget_HeaderOverridesFields,
+	},
+	"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+	"OauthToken": ubx.FieldSpec{
+		WireName: "oauth_token",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_OauthTokenFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_OidcTokenFields,
+	},
+	"UriOverride": ubx.FieldSpec{
+		WireName: "uri_override",
+		Kind:     "object",
+		Fields:   V2beta2Queue_HttpTarget_UriOverrideFields,
+	},
+}
 
 var V2beta2Queue_RateLimitsFields = ubx.FieldMap{
-		"MaxBurstSize": ubx.FieldSpec{WireName: "max_burst_size"},
-		"MaxConcurrentTasks": ubx.FieldSpec{WireName: "max_concurrent_tasks"},
-		"MaxTasksDispatchedPerSecond": ubx.FieldSpec{WireName: "max_tasks_dispatched_per_second"},
-	}
+	"MaxBurstSize":                ubx.FieldSpec{WireName: "max_burst_size"},
+	"MaxConcurrentTasks":          ubx.FieldSpec{WireName: "max_concurrent_tasks"},
+	"MaxTasksDispatchedPerSecond": ubx.FieldSpec{WireName: "max_tasks_dispatched_per_second"},
+}
 
 var V2beta2Queue_RetryConfigFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-		"MaxBackoff": ubx.FieldSpec{WireName: "max_backoff"},
-		"MaxDoublings": ubx.FieldSpec{WireName: "max_doublings"},
-		"MaxRetryDuration": ubx.FieldSpec{WireName: "max_retry_duration"},
-		"MinBackoff": ubx.FieldSpec{WireName: "min_backoff"},
-		"UnlimitedAttempts": ubx.FieldSpec{WireName: "unlimited_attempts"},
-	}
+	"MaxAttempts":       ubx.FieldSpec{WireName: "max_attempts"},
+	"MaxBackoff":        ubx.FieldSpec{WireName: "max_backoff"},
+	"MaxDoublings":      ubx.FieldSpec{WireName: "max_doublings"},
+	"MaxRetryDuration":  ubx.FieldSpec{WireName: "max_retry_duration"},
+	"MinBackoff":        ubx.FieldSpec{WireName: "min_backoff"},
+	"UnlimitedAttempts": ubx.FieldSpec{WireName: "unlimited_attempts"},
+}
 
 var V2beta2Queue_StatsFields = ubx.FieldMap{
-		"ConcurrentDispatchesCount": ubx.FieldSpec{WireName: "concurrent_dispatches_count"},
-		"EffectiveExecutionRate": ubx.FieldSpec{WireName: "effective_execution_rate"},
-		"ExecutedLastMinuteCount": ubx.FieldSpec{WireName: "executed_last_minute_count"},
-		"OldestEstimatedArrivalTime": ubx.FieldSpec{WireName: "oldest_estimated_arrival_time"},
-		"TasksCount": ubx.FieldSpec{WireName: "tasks_count"},
-	}
+	"ConcurrentDispatchesCount":  ubx.FieldSpec{WireName: "concurrent_dispatches_count"},
+	"EffectiveExecutionRate":     ubx.FieldSpec{WireName: "effective_execution_rate"},
+	"ExecutedLastMinuteCount":    ubx.FieldSpec{WireName: "executed_last_minute_count"},
+	"OldestEstimatedArrivalTime": ubx.FieldSpec{WireName: "oldest_estimated_arrival_time"},
+	"TasksCount":                 ubx.FieldSpec{WireName: "tasks_count"},
+}
 
 type V2beta2QueueConfig struct {
 	// App Engine HTTP target. The task will be delivered to the App Engine application hostname specified by its AppEngineHttpTarget and AppEngineHttpRequest. The documentation for AppEngineHttpRequest explains how the task's host URL is constructed. Using AppEngineHttpTarget requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform`
@@ -282,34 +282,34 @@ var V2beta2Queue = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppEngineHttpTarget": ubx.FieldSpec{
 			WireName: "app_engine_http_target",
-			Kind: "object",
-			Fields: V2beta2Queue_AppEngineHttpTargetFields,
+			Kind:     "object",
+			Fields:   V2beta2Queue_AppEngineHttpTargetFields,
 		},
 		"HttpTarget": ubx.FieldSpec{
 			WireName: "http_target",
-			Kind: "object",
-			Fields: V2beta2Queue_HttpTargetFields,
+			Kind:     "object",
+			Fields:   V2beta2Queue_HttpTargetFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"PullTarget": ubx.FieldSpec{WireName: "pull_target"},
-		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
+		"PurgeTime":  ubx.FieldSpec{WireName: "purge_time"},
 		"RateLimits": ubx.FieldSpec{
 			WireName: "rate_limits",
-			Kind: "object",
-			Fields: V2beta2Queue_RateLimitsFields,
+			Kind:     "object",
+			Fields:   V2beta2Queue_RateLimitsFields,
 		},
 		"RetryConfig": ubx.FieldSpec{
 			WireName: "retry_config",
-			Kind: "object",
-			Fields: V2beta2Queue_RetryConfigFields,
+			Kind:     "object",
+			Fields:   V2beta2Queue_RetryConfigFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 		"Stats": ubx.FieldSpec{
 			WireName: "stats",
-			Kind: "object",
-			Fields: V2beta2Queue_StatsFields,
+			Kind:     "object",
+			Fields:   V2beta2Queue_StatsFields,
 		},
-		"TaskTtl": ubx.FieldSpec{WireName: "task_ttl"},
+		"TaskTtl":      ubx.FieldSpec{WireName: "task_ttl"},
 		"TombstoneTtl": ubx.FieldSpec{WireName: "tombstone_ttl"},
 	},
 }

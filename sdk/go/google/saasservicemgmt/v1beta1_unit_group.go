@@ -33,7 +33,7 @@ var V1beta1UnitGroup = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_v1beta1_unit_group",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

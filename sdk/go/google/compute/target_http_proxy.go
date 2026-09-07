@@ -50,13 +50,13 @@ type TargetHttpProxyAttrs struct {
 var TargetHttpProxy = ubx.ResourceBinding{
 	WireType: "google_compute_target_http_proxy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":             ubx.FieldSpec{WireName: "fingerprint"},
 		"HttpKeepAliveTimeoutSec": ubx.FieldSpec{WireName: "http_keep_alive_timeout_sec"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyBind": ubx.FieldSpec{WireName: "proxy_bind"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"UrlMap": ubx.FieldSpec{WireName: "url_map"},
+		"Id":                      ubx.FieldSpec{WireName: "id"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"ProxyBind":               ubx.FieldSpec{WireName: "proxy_bind"},
+		"SelfLink":                ubx.FieldSpec{WireName: "self_link"},
+		"UrlMap":                  ubx.FieldSpec{WireName: "url_map"},
 	},
 }

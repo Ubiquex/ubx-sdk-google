@@ -4,74 +4,74 @@ package chromemanagement
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type User_UserDevice_AppReport_UsageData struct {
-	AppId any
-	AppInstanceId any
-	AppType any
+	AppId           any
+	AppInstanceId   any
+	AppType         any
 	RunningDuration any
 }
 
 type User_UserDevice_AppReport struct {
 	ReportTime any
-	UsageData any
+	UsageData  any
 }
 
 type User_UserDevice_AudioStatusReport struct {
-	InputDevice any
-	InputGain any
-	InputMute any
+	InputDevice  any
+	InputGain    any
+	InputMute    any
 	OutputDevice any
-	OutputMute any
+	OutputMute   any
 	OutputVolume any
-	ReportTime any
+	ReportTime   any
 }
 
 type User_UserDevice_DeviceActivityReport struct {
 	DeviceActivityState any
-	ReportTime any
+	ReportTime          any
 }
 
 type User_UserDevice_NetworkBandwidthReport struct {
 	DownloadSpeedKbps any
-	ReportTime any
+	ReportTime        any
 }
 
 type User_UserDevice_PeripheralsReport_UsbPeripheralReport struct {
-	Categories any
-	ClassId any
+	Categories      any
+	ClassId         any
 	FirmwareVersion any
-	Name any
-	Pid any
-	SubclassId any
-	Vendor any
-	Vid any
+	Name            any
+	Pid             any
+	SubclassId      any
+	Vendor          any
+	Vid             any
 }
 
 type User_UserDevice_PeripheralsReport struct {
-	ReportTime any
+	ReportTime          any
 	UsbPeripheralReport any
 }
 
 type User_UserDevice struct {
-	AppReport any
-	AudioStatusReport any
-	DeviceActivityReport any
-	DeviceId any
+	AppReport              any
+	AudioStatusReport      any
+	DeviceActivityReport   any
+	DeviceId               any
 	NetworkBandwidthReport any
-	PeripheralsReport any
+	PeripheralsReport      any
 }
 
 type UserConfig struct {
-	Name any
+	Name     any
 	ReadMask any
 }
 
 type UserAttrs struct {
 	// G Suite Customer whose enterprise enrolled the device.
 	Customer any
-	Name any
+	Name     any
 	// Organization unit of the user.
 	OrgUnitId any
-	ReadMask any
+	ReadMask  any
 	// Telemetry data collected from a managed user and device.
 	UserDevice any
 	// Email address of the user.
@@ -83,7 +83,7 @@ type UserAttrs struct {
 var User = ubx.DataSourceBinding{
 	WireType: "google_chromemanagement_user",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"ReadMask": ubx.FieldSpec{WireName: "read_mask"},
 	},
 }

@@ -13,10 +13,10 @@ type V1alpha1ImportDataFile_UploadFileInfo struct {
 }
 
 var V1alpha1ImportDataFile_UploadFileInfoFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"SignedUri": ubx.FieldSpec{WireName: "signed_uri"},
-		"UriExpirationTime": ubx.FieldSpec{WireName: "uri_expiration_time"},
-	}
+	"Headers":           ubx.FieldSpec{WireName: "headers"},
+	"SignedUri":         ubx.FieldSpec{WireName: "signed_uri"},
+	"UriExpirationTime": ubx.FieldSpec{WireName: "uri_expiration_time"},
+}
 
 type V1alpha1ImportDataFileConfig struct {
 	// Optional. User-friendly display name. Maximum length is 256 characters.
@@ -46,11 +46,11 @@ var V1alpha1ImportDataFile = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_import_data_file",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Format": ubx.FieldSpec{WireName: "format"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
 		"UploadFileInfo": ubx.FieldSpec{
 			WireName: "upload_file_info",
-			Kind: "object",
-			Fields: V1alpha1ImportDataFile_UploadFileInfoFields,
+			Kind:     "object",
+			Fields:   V1alpha1ImportDataFile_UploadFileInfoFields,
 		},
 	},
 }

@@ -8,17 +8,17 @@ type BetaInterconnectAttachmentGroup_Attachments struct {
 }
 
 type BetaInterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockers struct {
-	Attachments any
-	BlockerType any
+	Attachments       any
+	BlockerType       any
 	DocumentationLink any
-	Explanation any
-	Metros any
-	Regions any
-	Zones any
+	Explanation       any
+	Metros            any
+	Regions           any
+	Zones             any
 }
 
 type BetaInterconnectAttachmentGroup_Configured_AvailabilitySla struct {
-	EffectiveSla any
+	EffectiveSla        any
 	IntendedSlaBlockers any
 }
 
@@ -33,17 +33,17 @@ type BetaInterconnectAttachmentGroup_Intent struct {
 
 type BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_Zones struct {
 	Attachments any
-	Zone any
+	Zone        any
 }
 
 type BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities struct {
 	Facility any
-	Zones any
+	Zones    any
 }
 
 type BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros struct {
 	Facilities any
-	Metro any
+	Metro      any
 }
 
 type BetaInterconnectAttachmentGroup_LogicalStructure_Regions struct {
@@ -56,79 +56,79 @@ type BetaInterconnectAttachmentGroup_LogicalStructure struct {
 }
 
 var BetaInterconnectAttachmentGroup_AttachmentsFields = ubx.FieldMap{
-		"Attachment": ubx.FieldSpec{WireName: "attachment"},
-	}
+	"Attachment": ubx.FieldSpec{WireName: "attachment"},
+}
 
 var BetaInterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields = ubx.FieldMap{
-		"Attachments": ubx.FieldSpec{WireName: "attachments"},
-		"BlockerType": ubx.FieldSpec{WireName: "blocker_type"},
-		"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Metros": ubx.FieldSpec{WireName: "metros"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"Attachments":       ubx.FieldSpec{WireName: "attachments"},
+	"BlockerType":       ubx.FieldSpec{WireName: "blocker_type"},
+	"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
+	"Explanation":       ubx.FieldSpec{WireName: "explanation"},
+	"Metros":            ubx.FieldSpec{WireName: "metros"},
+	"Regions":           ubx.FieldSpec{WireName: "regions"},
+	"Zones":             ubx.FieldSpec{WireName: "zones"},
+}
 
 var BetaInterconnectAttachmentGroup_Configured_AvailabilitySlaFields = ubx.FieldMap{
-		"EffectiveSla": ubx.FieldSpec{WireName: "effective_sla"},
-		"IntendedSlaBlockers": ubx.FieldSpec{
-			WireName: "intended_sla_blockers",
-			Kind: "list",
-			Fields: BetaInterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields,
-		},
-	}
+	"EffectiveSla": ubx.FieldSpec{WireName: "effective_sla"},
+	"IntendedSlaBlockers": ubx.FieldSpec{
+		WireName: "intended_sla_blockers",
+		Kind:     "list",
+		Fields:   BetaInterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields,
+	},
+}
 
 var BetaInterconnectAttachmentGroup_ConfiguredFields = ubx.FieldMap{
-		"AvailabilitySla": ubx.FieldSpec{
-			WireName: "availability_sla",
-			Kind: "object",
-			Fields: BetaInterconnectAttachmentGroup_Configured_AvailabilitySlaFields,
-		},
-	}
+	"AvailabilitySla": ubx.FieldSpec{
+		WireName: "availability_sla",
+		Kind:     "object",
+		Fields:   BetaInterconnectAttachmentGroup_Configured_AvailabilitySlaFields,
+	},
+}
 
 var BetaInterconnectAttachmentGroup_IntentFields = ubx.FieldMap{
-		"AvailabilitySla": ubx.FieldSpec{WireName: "availability_sla"},
-	}
+	"AvailabilitySla": ubx.FieldSpec{WireName: "availability_sla"},
+}
 
 var BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields = ubx.FieldMap{
-		"Attachments": ubx.FieldSpec{WireName: "attachments"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Attachments": ubx.FieldSpec{WireName: "attachments"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields = ubx.FieldMap{
-		"Facility": ubx.FieldSpec{WireName: "facility"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields,
-		},
-	}
+	"Facility": ubx.FieldSpec{WireName: "facility"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields,
+	},
+}
 
 var BetaInterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields = ubx.FieldMap{
-		"Facilities": ubx.FieldSpec{
-			WireName: "facilities",
-			Kind: "list",
-			Fields: BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields,
-		},
-		"Metro": ubx.FieldSpec{WireName: "metro"},
-	}
+	"Facilities": ubx.FieldSpec{
+		WireName: "facilities",
+		Kind:     "list",
+		Fields:   BetaInterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields,
+	},
+	"Metro": ubx.FieldSpec{WireName: "metro"},
+}
 
 var BetaInterconnectAttachmentGroup_LogicalStructure_RegionsFields = ubx.FieldMap{
-		"Metros": ubx.FieldSpec{
-			WireName: "metros",
-			Kind: "list",
-			Fields: BetaInterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Metros": ubx.FieldSpec{
+		WireName: "metros",
+		Kind:     "list",
+		Fields:   BetaInterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields,
+	},
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var BetaInterconnectAttachmentGroup_LogicalStructureFields = ubx.FieldMap{
-		"Regions": ubx.FieldSpec{
-			WireName: "regions",
-			Kind: "list",
-			Fields: BetaInterconnectAttachmentGroup_LogicalStructure_RegionsFields,
-		},
-	}
+	"Regions": ubx.FieldSpec{
+		WireName: "regions",
+		Kind:     "list",
+		Fields:   BetaInterconnectAttachmentGroup_LogicalStructure_RegionsFields,
+	},
+}
 
 type BetaInterconnectAttachmentGroupConfig struct {
 	// Attachments in the AttachmentGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Attachments per group" quota.
@@ -181,26 +181,26 @@ var BetaInterconnectAttachmentGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attachments": ubx.FieldSpec{
 			WireName: "attachments",
-			Kind: "map",
-			Fields: BetaInterconnectAttachmentGroup_AttachmentsFields,
+			Kind:     "map",
+			Fields:   BetaInterconnectAttachmentGroup_AttachmentsFields,
 		},
 		"Configured": ubx.FieldSpec{
 			WireName: "configured",
-			Kind: "object",
-			Fields: BetaInterconnectAttachmentGroup_ConfiguredFields,
+			Kind:     "object",
+			Fields:   BetaInterconnectAttachmentGroup_ConfiguredFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Intent": ubx.FieldSpec{
 			WireName: "intent",
-			Kind: "object",
-			Fields: BetaInterconnectAttachmentGroup_IntentFields,
+			Kind:     "object",
+			Fields:   BetaInterconnectAttachmentGroup_IntentFields,
 		},
 		"InterconnectGroup": ubx.FieldSpec{WireName: "interconnect_group"},
 		"LogicalStructure": ubx.FieldSpec{
 			WireName: "logical_structure",
-			Kind: "object",
-			Fields: BetaInterconnectAttachmentGroup_LogicalStructureFields,
+			Kind:     "object",
+			Fields:   BetaInterconnectAttachmentGroup_LogicalStructureFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

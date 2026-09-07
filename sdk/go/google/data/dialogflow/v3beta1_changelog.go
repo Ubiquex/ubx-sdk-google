@@ -8,14 +8,14 @@ type V3beta1ChangelogConfig struct {
 }
 
 type V3beta1ChangelogAttrs struct {
-	Action any
-	CreateTime any
-	DisplayName any
+	Action       any
+	CreateTime   any
+	DisplayName  any
 	LanguageCode any
-	Name any
-	Resource any
-	Type any
-	UserEmail any
+	Name         any
+	Resource     any
+	Type         any
+	UserEmail    any
 }
 
 var V3beta1Changelog = ubx.DataSourceBinding{

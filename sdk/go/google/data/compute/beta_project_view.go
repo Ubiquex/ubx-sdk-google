@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaProjectViewConfig struct {
 	Project any
-	Region any
+	Region  any
 }
 
 type BetaProjectViewAttrs struct {
 	Project any
-	Region any
+	Region  any
 }
 
 var BetaProjectView = ubx.DataSourceBinding{
 	WireType: "google_compute_beta_project_view",
 	Fields: ubx.FieldMap{
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":  ubx.FieldSpec{WireName: "region"},
 	},
 }

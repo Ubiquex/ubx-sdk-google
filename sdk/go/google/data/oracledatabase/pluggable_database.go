@@ -24,8 +24,8 @@ type PluggableDatabase_Properties_DefinedTags struct {
 }
 
 type PluggableDatabase_Properties_PdbNodeLevelDetails struct {
-	NodeName any
-	OpenMode any
+	NodeName            any
+	OpenMode            any
 	PluggableDatabaseId any
 }
 
@@ -65,7 +65,7 @@ type PluggableDatabaseConfig struct {
 type PluggableDatabaseAttrs struct {
 	// Output only. The date and time that the PluggableDatabase was created.
 	CreateTime any
-	Name any
+	Name       any
 	// Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.
 	OciUrl any
 	// The properties of a PluggableDatabase.

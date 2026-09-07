@@ -27,24 +27,24 @@ type DataProduct_AccessGroups struct {
 }
 
 var DataProduct_AccessApprovalConfigFields = ubx.FieldMap{
-		"ApproverEmails": ubx.FieldSpec{WireName: "approver_emails"},
-	}
+	"ApproverEmails": ubx.FieldSpec{WireName: "approver_emails"},
+}
 
 var DataProduct_AccessGroups_PrincipalFields = ubx.FieldMap{
-		"GoogleGroup": ubx.FieldSpec{WireName: "google_group"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"GoogleGroup":    ubx.FieldSpec{WireName: "google_group"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var DataProduct_AccessGroupsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Principal": ubx.FieldSpec{
-			WireName: "principal",
-			Kind: "object",
-			Fields: DataProduct_AccessGroups_PrincipalFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Principal": ubx.FieldSpec{
+		WireName: "principal",
+		Kind:     "object",
+		Fields:   DataProduct_AccessGroups_PrincipalFields,
+	},
+}
 
 type DataProductConfig struct {
 	// Configuration for access approval for the data product.
@@ -101,20 +101,20 @@ var DataProduct = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessApprovalConfig": ubx.FieldSpec{
 			WireName: "access_approval_config",
-			Kind: "object",
-			Fields: DataProduct_AccessApprovalConfigFields,
+			Kind:     "object",
+			Fields:   DataProduct_AccessApprovalConfigFields,
 		},
 		"AccessGroups": ubx.FieldSpec{
 			WireName: "access_groups",
-			Kind: "map",
-			Fields: DataProduct_AccessGroupsFields,
+			Kind:     "map",
+			Fields:   DataProduct_AccessGroupsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Icon":        ubx.FieldSpec{WireName: "icon"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OwnerEmails": ubx.FieldSpec{WireName: "owner_emails"},
 	},
 }

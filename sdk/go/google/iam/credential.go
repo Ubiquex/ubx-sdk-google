@@ -26,8 +26,8 @@ type CredentialAttrs struct {
 var Credential = ubx.ResourceBinding{
 	WireType: "google_iam_credential",
 	Fields: ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

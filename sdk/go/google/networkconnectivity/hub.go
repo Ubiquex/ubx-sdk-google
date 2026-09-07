@@ -41,37 +41,37 @@ type Hub_SpokeSummary struct {
 }
 
 var Hub_SpokeSummary_SpokeStateCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Hub_SpokeSummary_SpokeStateReasonCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
-	}
+	"Count":           ubx.FieldSpec{WireName: "count"},
+	"StateReasonCode": ubx.FieldSpec{WireName: "state_reason_code"},
+}
 
 var Hub_SpokeSummary_SpokeTypeCountsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"SpokeType": ubx.FieldSpec{WireName: "spoke_type"},
-	}
+	"Count":     ubx.FieldSpec{WireName: "count"},
+	"SpokeType": ubx.FieldSpec{WireName: "spoke_type"},
+}
 
 var Hub_SpokeSummaryFields = ubx.FieldMap{
-		"SpokeStateCounts": ubx.FieldSpec{
-			WireName: "spoke_state_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeStateCountsFields,
-		},
-		"SpokeStateReasonCounts": ubx.FieldSpec{
-			WireName: "spoke_state_reason_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeStateReasonCountsFields,
-		},
-		"SpokeTypeCounts": ubx.FieldSpec{
-			WireName: "spoke_type_counts",
-			Kind: "list",
-			Fields: Hub_SpokeSummary_SpokeTypeCountsFields,
-		},
-	}
+	"SpokeStateCounts": ubx.FieldSpec{
+		WireName: "spoke_state_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeStateCountsFields,
+	},
+	"SpokeStateReasonCounts": ubx.FieldSpec{
+		WireName: "spoke_state_reason_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeStateReasonCountsFields,
+	},
+	"SpokeTypeCounts": ubx.FieldSpec{
+		WireName: "spoke_type_counts",
+		Kind:     "list",
+		Fields:   Hub_SpokeSummary_SpokeTypeCountsFields,
+	},
+}
 
 type HubConfig struct {
 	// Optional. An optional description of the hub.
@@ -122,16 +122,16 @@ type HubAttrs struct {
 var Hub = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_hub",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExportPsc": ubx.FieldSpec{WireName: "export_psc"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyMode": ubx.FieldSpec{WireName: "policy_mode"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"ExportPsc":      ubx.FieldSpec{WireName: "export_psc"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"PolicyMode":     ubx.FieldSpec{WireName: "policy_mode"},
 		"PresetTopology": ubx.FieldSpec{WireName: "preset_topology"},
 		"SpokeSummary": ubx.FieldSpec{
 			WireName: "spoke_summary",
-			Kind: "object",
-			Fields: Hub_SpokeSummaryFields,
+			Kind:     "object",
+			Fields:   Hub_SpokeSummaryFields,
 		},
 	},
 }

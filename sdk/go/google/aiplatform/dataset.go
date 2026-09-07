@@ -32,21 +32,21 @@ type Dataset_SavedQueries struct {
 }
 
 var Dataset_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Dataset_SavedQueriesFields = ubx.FieldMap{
-		"AnnotationFilter": ubx.FieldSpec{WireName: "annotation_filter"},
-		"AnnotationSpecCount": ubx.FieldSpec{WireName: "annotation_spec_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProblemType": ubx.FieldSpec{WireName: "problem_type"},
-		"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AnnotationFilter":      ubx.FieldSpec{WireName: "annotation_filter"},
+	"AnnotationSpecCount":   ubx.FieldSpec{WireName: "annotation_spec_count"},
+	"CreateTime":            ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"Etag":                  ubx.FieldSpec{WireName: "etag"},
+	"Metadata":              ubx.FieldSpec{WireName: "metadata"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"ProblemType":           ubx.FieldSpec{WireName: "problem_type"},
+	"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
+	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
+}
 
 type DatasetConfig struct {
 	// The description of the Dataset.
@@ -111,18 +111,18 @@ var Dataset = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: Dataset_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   Dataset_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
-		"ModelReference": ubx.FieldSpec{WireName: "model_reference"},
+		"ModelReference":    ubx.FieldSpec{WireName: "model_reference"},
 		"SavedQueries": ubx.FieldSpec{
 			WireName: "saved_queries",
-			Kind: "list",
-			Fields: Dataset_SavedQueriesFields,
+			Kind:     "list",
+			Fields:   Dataset_SavedQueriesFields,
 		},
 	},
 }

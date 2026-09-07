@@ -70,51 +70,51 @@ type UtilizationReport_Vms struct {
 }
 
 var UtilizationReport_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var UtilizationReport_Vms_UtilizationFields = ubx.FieldMap{
-		"CpuAveragePercent": ubx.FieldSpec{WireName: "cpu_average_percent"},
-		"CpuMaxPercent": ubx.FieldSpec{WireName: "cpu_max_percent"},
-		"DiskIoRateAverageKbps": ubx.FieldSpec{WireName: "disk_io_rate_average_kbps"},
-		"DiskIoRateMaxKbps": ubx.FieldSpec{WireName: "disk_io_rate_max_kbps"},
-		"MemoryAveragePercent": ubx.FieldSpec{WireName: "memory_average_percent"},
-		"MemoryMaxPercent": ubx.FieldSpec{WireName: "memory_max_percent"},
-		"NetworkThroughputAverageKbps": ubx.FieldSpec{WireName: "network_throughput_average_kbps"},
-		"NetworkThroughputMaxKbps": ubx.FieldSpec{WireName: "network_throughput_max_kbps"},
-	}
+	"CpuAveragePercent":            ubx.FieldSpec{WireName: "cpu_average_percent"},
+	"CpuMaxPercent":                ubx.FieldSpec{WireName: "cpu_max_percent"},
+	"DiskIoRateAverageKbps":        ubx.FieldSpec{WireName: "disk_io_rate_average_kbps"},
+	"DiskIoRateMaxKbps":            ubx.FieldSpec{WireName: "disk_io_rate_max_kbps"},
+	"MemoryAveragePercent":         ubx.FieldSpec{WireName: "memory_average_percent"},
+	"MemoryMaxPercent":             ubx.FieldSpec{WireName: "memory_max_percent"},
+	"NetworkThroughputAverageKbps": ubx.FieldSpec{WireName: "network_throughput_average_kbps"},
+	"NetworkThroughputMaxKbps":     ubx.FieldSpec{WireName: "network_throughput_max_kbps"},
+}
 
 var UtilizationReport_Vms_VmwareVmDetailsFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
-		"CommittedStorageMb": ubx.FieldSpec{WireName: "committed_storage_mb"},
-		"CpuCount": ubx.FieldSpec{WireName: "cpu_count"},
-		"DatacenterDescription": ubx.FieldSpec{WireName: "datacenter_description"},
-		"DatacenterId": ubx.FieldSpec{WireName: "datacenter_id"},
-		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GuestDescription": ubx.FieldSpec{WireName: "guest_description"},
-		"MemoryMb": ubx.FieldSpec{WireName: "memory_mb"},
-		"PowerState": ubx.FieldSpec{WireName: "power_state"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
-		"VmId": ubx.FieldSpec{WireName: "vm_id"},
-	}
+	"Architecture":          ubx.FieldSpec{WireName: "architecture"},
+	"BootOption":            ubx.FieldSpec{WireName: "boot_option"},
+	"CommittedStorageMb":    ubx.FieldSpec{WireName: "committed_storage_mb"},
+	"CpuCount":              ubx.FieldSpec{WireName: "cpu_count"},
+	"DatacenterDescription": ubx.FieldSpec{WireName: "datacenter_description"},
+	"DatacenterId":          ubx.FieldSpec{WireName: "datacenter_id"},
+	"DiskCount":             ubx.FieldSpec{WireName: "disk_count"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"GuestDescription":      ubx.FieldSpec{WireName: "guest_description"},
+	"MemoryMb":              ubx.FieldSpec{WireName: "memory_mb"},
+	"PowerState":            ubx.FieldSpec{WireName: "power_state"},
+	"Uuid":                  ubx.FieldSpec{WireName: "uuid"},
+	"VmId":                  ubx.FieldSpec{WireName: "vm_id"},
+}
 
 var UtilizationReport_VmsFields = ubx.FieldMap{
-		"Utilization": ubx.FieldSpec{
-			WireName: "utilization",
-			Kind: "object",
-			Fields: UtilizationReport_Vms_UtilizationFields,
-		},
-		"VmId": ubx.FieldSpec{WireName: "vm_id"},
-		"VmwareVmDetails": ubx.FieldSpec{
-			WireName: "vmware_vm_details",
-			Kind: "object",
-			Fields: UtilizationReport_Vms_VmwareVmDetailsFields,
-		},
-	}
+	"Utilization": ubx.FieldSpec{
+		WireName: "utilization",
+		Kind:     "object",
+		Fields:   UtilizationReport_Vms_UtilizationFields,
+	},
+	"VmId": ubx.FieldSpec{WireName: "vm_id"},
+	"VmwareVmDetails": ubx.FieldSpec{
+		WireName: "vmware_vm_details",
+		Kind:     "object",
+		Fields:   UtilizationReport_Vms_VmwareVmDetailsFields,
+	},
+}
 
 type UtilizationReportConfig struct {
 	// The report display name, as assigned by the user.
@@ -156,14 +156,14 @@ var UtilizationReport = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: UtilizationReport_ErrorFields,
+			Kind:     "object",
+			Fields:   UtilizationReport_ErrorFields,
 		},
 		"TimeFrame": ubx.FieldSpec{WireName: "time_frame"},
 		"Vms": ubx.FieldSpec{
 			WireName: "vms",
-			Kind: "list",
-			Fields: UtilizationReport_VmsFields,
+			Kind:     "list",
+			Fields:   UtilizationReport_VmsFields,
 		},
 	},
 }

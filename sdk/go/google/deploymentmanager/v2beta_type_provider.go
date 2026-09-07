@@ -9,45 +9,45 @@ type V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptions_
 }
 
 type V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptions struct {
-	Diagnostics any
-	FailCondition any
+	Diagnostics     any
+	FailCondition   any
 	FinishCondition any
-	PollingLink any
-	TargetLink any
+	PollingLink     any
+	TargetLink      any
 }
 
 type V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions struct {
-	MethodMatch any
+	MethodMatch    any
 	PollingOptions any
 }
 
 type V2betaTypeProvider_CollectionOverrides_Options_InputMappings struct {
-	FieldName any
-	Location any
+	FieldName   any
+	Location    any
 	MethodMatch any
-	Value any
+	Value       any
 }
 
 type V2betaTypeProvider_CollectionOverrides_Options_ValidationOptions struct {
-	SchemaValidation any
+	SchemaValidation     any
 	UndeclaredProperties any
 }
 
 type V2betaTypeProvider_CollectionOverrides_Options struct {
-	AsyncOptions any
-	InputMappings any
+	AsyncOptions      any
+	InputMappings     any
 	ValidationOptions any
 	VirtualProperties any
 }
 
 type V2betaTypeProvider_CollectionOverrides struct {
 	Collection any
-	Options any
+	Options    any
 }
 
 type V2betaTypeProvider_Credential_BasicAuth struct {
 	Password any
-	User any
+	User     any
 }
 
 type V2betaTypeProvider_Credential_ServiceAccount struct {
@@ -65,24 +65,24 @@ type V2betaTypeProvider_Credential struct {
 }
 
 type V2betaTypeProvider_Labels struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_DebugInfo struct {
-	Detail any
+	Detail       any
 	StackEntries any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help struct {
@@ -90,33 +90,33 @@ type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help struct {
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type V2betaTypeProvider_Operation_Error_Errors struct {
-	Arguments any
-	Code any
-	DebugInfo any
+	Arguments    any
+	Code         any
+	DebugInfo    any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type V2betaTypeProvider_Operation_Error struct {
@@ -141,11 +141,11 @@ type V2betaTypeProvider_Operation_GetVersionOperationMetadata struct {
 }
 
 type V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus struct {
-	CreatedVmCount any
-	DeletedVmCount any
+	CreatedVmCount        any
+	DeletedVmCount        any
 	FailedToCreateVmCount any
-	Status any
-	TargetVmCount any
+	Status                any
+	TargetVmCount         any
 }
 
 type V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadata struct {
@@ -163,7 +163,7 @@ type V2betaTypeProvider_Operation_SetAutoscalerLinkOperationMetadata struct {
 }
 
 type V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -181,8 +181,8 @@ type V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata str
 }
 
 type V2betaTypeProvider_Operation_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
@@ -196,9 +196,9 @@ type V2betaTypeProvider_Operation struct {
 	// [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
 	EndTime any
 	// [Output Only] If errors are generated during processing of the operation, this field will be populated.
-	Error any
+	Error                               any
 	FirewallPolicyRuleOperationMetadata any
-	GetVersionOperationMetadata any
+	GetVersionOperationMetadata         any
 	// [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
 	HttpErrorMessage any
 	// [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
@@ -206,7 +206,7 @@ type V2betaTypeProvider_Operation struct {
 	// [Output Only] The unique identifier for the operation. This identifier is defined by the server.
 	Id any
 	// [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-	InsertTime any
+	InsertTime                           any
 	InstancesBulkInsertOperationMetadata any
 	// Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
 	Kind any
@@ -223,8 +223,8 @@ type V2betaTypeProvider_Operation struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	SetAutoscalerLinkOperationMetadata any
+	SelfLinkWithId                             any
+	SetAutoscalerLinkOperationMetadata         any
 	SetCommonInstanceMetadataOperationMetadata any
 	// [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
 	StartTime any
@@ -245,318 +245,318 @@ type V2betaTypeProvider_Operation struct {
 }
 
 var V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptions_DiagnosticsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptionsFields = ubx.FieldMap{
-		"Diagnostics": ubx.FieldSpec{
-			WireName: "diagnostics",
-			Kind: "list",
-			Fields: V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptions_DiagnosticsFields,
-		},
-		"FailCondition": ubx.FieldSpec{WireName: "fail_condition"},
-		"FinishCondition": ubx.FieldSpec{WireName: "finish_condition"},
-		"PollingLink": ubx.FieldSpec{WireName: "polling_link"},
-		"TargetLink": ubx.FieldSpec{WireName: "target_link"},
-	}
+	"Diagnostics": ubx.FieldSpec{
+		WireName: "diagnostics",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptions_DiagnosticsFields,
+	},
+	"FailCondition":   ubx.FieldSpec{WireName: "fail_condition"},
+	"FinishCondition": ubx.FieldSpec{WireName: "finish_condition"},
+	"PollingLink":     ubx.FieldSpec{WireName: "polling_link"},
+	"TargetLink":      ubx.FieldSpec{WireName: "target_link"},
+}
 
 var V2betaTypeProvider_CollectionOverrides_Options_AsyncOptionsFields = ubx.FieldMap{
-		"MethodMatch": ubx.FieldSpec{WireName: "method_match"},
-		"PollingOptions": ubx.FieldSpec{
-			WireName: "polling_options",
-			Kind: "object",
-			Fields: V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptionsFields,
-		},
-	}
+	"MethodMatch": ubx.FieldSpec{WireName: "method_match"},
+	"PollingOptions": ubx.FieldSpec{
+		WireName: "polling_options",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_CollectionOverrides_Options_AsyncOptions_PollingOptionsFields,
+	},
+}
 
 var V2betaTypeProvider_CollectionOverrides_Options_InputMappingsFields = ubx.FieldMap{
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MethodMatch": ubx.FieldSpec{WireName: "method_match"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FieldName":   ubx.FieldSpec{WireName: "field_name"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"MethodMatch": ubx.FieldSpec{WireName: "method_match"},
+	"Value":       ubx.FieldSpec{WireName: "value"},
+}
 
 var V2betaTypeProvider_CollectionOverrides_Options_ValidationOptionsFields = ubx.FieldMap{
-		"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
-		"UndeclaredProperties": ubx.FieldSpec{WireName: "undeclared_properties"},
-	}
+	"SchemaValidation":     ubx.FieldSpec{WireName: "schema_validation"},
+	"UndeclaredProperties": ubx.FieldSpec{WireName: "undeclared_properties"},
+}
 
 var V2betaTypeProvider_CollectionOverrides_OptionsFields = ubx.FieldMap{
-		"AsyncOptions": ubx.FieldSpec{
-			WireName: "async_options",
-			Kind: "list",
-			Fields: V2betaTypeProvider_CollectionOverrides_Options_AsyncOptionsFields,
-		},
-		"InputMappings": ubx.FieldSpec{
-			WireName: "input_mappings",
-			Kind: "list",
-			Fields: V2betaTypeProvider_CollectionOverrides_Options_InputMappingsFields,
-		},
-		"ValidationOptions": ubx.FieldSpec{
-			WireName: "validation_options",
-			Kind: "object",
-			Fields: V2betaTypeProvider_CollectionOverrides_Options_ValidationOptionsFields,
-		},
-		"VirtualProperties": ubx.FieldSpec{WireName: "virtual_properties"},
-	}
+	"AsyncOptions": ubx.FieldSpec{
+		WireName: "async_options",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_CollectionOverrides_Options_AsyncOptionsFields,
+	},
+	"InputMappings": ubx.FieldSpec{
+		WireName: "input_mappings",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_CollectionOverrides_Options_InputMappingsFields,
+	},
+	"ValidationOptions": ubx.FieldSpec{
+		WireName: "validation_options",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_CollectionOverrides_Options_ValidationOptionsFields,
+	},
+	"VirtualProperties": ubx.FieldSpec{WireName: "virtual_properties"},
+}
 
 var V2betaTypeProvider_CollectionOverridesFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{WireName: "collection"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "object",
-			Fields: V2betaTypeProvider_CollectionOverrides_OptionsFields,
-		},
-	}
+	"Collection": ubx.FieldSpec{WireName: "collection"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_CollectionOverrides_OptionsFields,
+	},
+}
 
 var V2betaTypeProvider_Credential_BasicAuthFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"User":     ubx.FieldSpec{WireName: "user"},
+}
 
 var V2betaTypeProvider_Credential_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var V2betaTypeProvider_CredentialFields = ubx.FieldMap{
-		"BasicAuth": ubx.FieldSpec{
-			WireName: "basic_auth",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Credential_BasicAuthFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Credential_ServiceAccountFields,
-		},
-		"UseProjectDefault": ubx.FieldSpec{WireName: "use_project_default"},
-	}
+	"BasicAuth": ubx.FieldSpec{
+		WireName: "basic_auth",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Credential_BasicAuthFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Credential_ServiceAccountFields,
+	},
+	"UseProjectDefault": ubx.FieldSpec{WireName: "use_project_default"},
+}
 
 var V2betaTypeProvider_LabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_DebugInfoFields = ubx.FieldMap{
-		"Detail": ubx.FieldSpec{WireName: "detail"},
-		"StackEntries": ubx.FieldSpec{WireName: "stack_entries"},
-	}
+	"Detail":       ubx.FieldSpec{WireName: "detail"},
+	"StackEntries": ubx.FieldSpec{WireName: "stack_entries"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var V2betaTypeProvider_Operation_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_Error_ErrorsFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"DebugInfo": ubx.FieldSpec{
-			WireName: "debug_info",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_DebugInfoFields,
-		},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: V2betaTypeProvider_Operation_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Arguments": ubx.FieldSpec{WireName: "arguments"},
+	"Code":      ubx.FieldSpec{WireName: "code"},
+	"DebugInfo": ubx.FieldSpec{
+		WireName: "debug_info",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_DebugInfoFields,
+	},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_Operation_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var V2betaTypeProvider_Operation_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V2betaTypeProvider_Operation_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_Operation_Error_ErrorsFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_FirewallPolicyRuleOperationMetadataFields = ubx.FieldMap{
-		"AllocatedPriority": ubx.FieldSpec{WireName: "allocated_priority"},
-	}
+	"AllocatedPriority": ubx.FieldSpec{WireName: "allocated_priority"},
+}
 
 var V2betaTypeProvider_Operation_GetVersionOperationMetadata_InlineSbomInfoFields = ubx.FieldMap{
-		"CurrentComponentVersions": ubx.FieldSpec{WireName: "current_component_versions"},
-		"TargetComponentVersions": ubx.FieldSpec{WireName: "target_component_versions"},
-	}
+	"CurrentComponentVersions": ubx.FieldSpec{WireName: "current_component_versions"},
+	"TargetComponentVersions":  ubx.FieldSpec{WireName: "target_component_versions"},
+}
 
 var V2betaTypeProvider_Operation_GetVersionOperationMetadataFields = ubx.FieldMap{
-		"InlineSbomInfo": ubx.FieldSpec{
-			WireName: "inline_sbom_info",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_GetVersionOperationMetadata_InlineSbomInfoFields,
-		},
-	}
+	"InlineSbomInfo": ubx.FieldSpec{
+		WireName: "inline_sbom_info",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_GetVersionOperationMetadata_InlineSbomInfoFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields = ubx.FieldMap{
-		"CreatedVmCount": ubx.FieldSpec{WireName: "created_vm_count"},
-		"DeletedVmCount": ubx.FieldSpec{WireName: "deleted_vm_count"},
-		"FailedToCreateVmCount": ubx.FieldSpec{WireName: "failed_to_create_vm_count"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetVmCount": ubx.FieldSpec{WireName: "target_vm_count"},
-	}
+	"CreatedVmCount":        ubx.FieldSpec{WireName: "created_vm_count"},
+	"DeletedVmCount":        ubx.FieldSpec{WireName: "deleted_vm_count"},
+	"FailedToCreateVmCount": ubx.FieldSpec{WireName: "failed_to_create_vm_count"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"TargetVmCount":         ubx.FieldSpec{WireName: "target_vm_count"},
+}
 
 var V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadataFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"PerLocationStatus": ubx.FieldSpec{
-			WireName: "per_location_status",
-			Kind: "map",
-			Fields: V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields,
-		},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"PerLocationStatus": ubx.FieldSpec{
+		WireName: "per_location_status",
+		Kind:     "map",
+		Fields:   V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_SetAutoscalerLinkOperationMetadataFields = ubx.FieldMap{
-		"ZonalIgmIds": ubx.FieldSpec{WireName: "zonal_igm_ids"},
-		"ZoneToIgmIds": ubx.FieldSpec{WireName: "zone_to_igm_ids"},
-	}
+	"ZonalIgmIds":  ubx.FieldSpec{WireName: "zonal_igm_ids"},
+	"ZoneToIgmIds": ubx.FieldSpec{WireName: "zone_to_igm_ids"},
+}
 
 var V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadataFields = ubx.FieldMap{
-		"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
-		"PerLocationOperations": ubx.FieldSpec{
-			WireName: "per_location_operations",
-			Kind: "map",
-			Fields: V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields,
-		},
-	}
+	"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
+	"PerLocationOperations": ubx.FieldSpec{
+		WireName: "per_location_operations",
+		Kind:     "map",
+		Fields:   V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields,
+	},
+}
 
 var V2betaTypeProvider_Operation_WarningsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: V2betaTypeProvider_LabelsFields,
-		},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_LabelsFields,
+	},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2betaTypeProvider_OperationFields = ubx.FieldMap{
-		"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_ErrorFields,
-		},
-		"FirewallPolicyRuleOperationMetadata": ubx.FieldSpec{
-			WireName: "firewall_policy_rule_operation_metadata",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_FirewallPolicyRuleOperationMetadataFields,
-		},
-		"GetVersionOperationMetadata": ubx.FieldSpec{
-			WireName: "get_version_operation_metadata",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_GetVersionOperationMetadataFields,
-		},
-		"HttpErrorMessage": ubx.FieldSpec{WireName: "http_error_message"},
-		"HttpErrorStatusCode": ubx.FieldSpec{WireName: "http_error_status_code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsertTime": ubx.FieldSpec{WireName: "insert_time"},
-		"InstancesBulkInsertOperationMetadata": ubx.FieldSpec{
-			WireName: "instances_bulk_insert_operation_metadata",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadataFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperationGroupId": ubx.FieldSpec{WireName: "operation_group_id"},
-		"OperationType": ubx.FieldSpec{WireName: "operation_type"},
-		"Progress": ubx.FieldSpec{WireName: "progress"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"SetAutoscalerLinkOperationMetadata": ubx.FieldSpec{
-			WireName: "set_autoscaler_link_operation_metadata",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_SetAutoscalerLinkOperationMetadataFields,
-		},
-		"SetCommonInstanceMetadataOperationMetadata": ubx.FieldSpec{
-			WireName: "set_common_instance_metadata_operation_metadata",
-			Kind: "object",
-			Fields: V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadataFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"TargetLink": ubx.FieldSpec{WireName: "target_link"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: V2betaTypeProvider_Operation_WarningsFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
+	"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"EndTime":           ubx.FieldSpec{WireName: "end_time"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_ErrorFields,
+	},
+	"FirewallPolicyRuleOperationMetadata": ubx.FieldSpec{
+		WireName: "firewall_policy_rule_operation_metadata",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_FirewallPolicyRuleOperationMetadataFields,
+	},
+	"GetVersionOperationMetadata": ubx.FieldSpec{
+		WireName: "get_version_operation_metadata",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_GetVersionOperationMetadataFields,
+	},
+	"HttpErrorMessage":    ubx.FieldSpec{WireName: "http_error_message"},
+	"HttpErrorStatusCode": ubx.FieldSpec{WireName: "http_error_status_code"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"InsertTime":          ubx.FieldSpec{WireName: "insert_time"},
+	"InstancesBulkInsertOperationMetadata": ubx.FieldSpec{
+		WireName: "instances_bulk_insert_operation_metadata",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_InstancesBulkInsertOperationMetadataFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"OperationGroupId": ubx.FieldSpec{WireName: "operation_group_id"},
+	"OperationType":    ubx.FieldSpec{WireName: "operation_type"},
+	"Progress":         ubx.FieldSpec{WireName: "progress"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"SelfLink":         ubx.FieldSpec{WireName: "self_link"},
+	"SelfLinkWithId":   ubx.FieldSpec{WireName: "self_link_with_id"},
+	"SetAutoscalerLinkOperationMetadata": ubx.FieldSpec{
+		WireName: "set_autoscaler_link_operation_metadata",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_SetAutoscalerLinkOperationMetadataFields,
+	},
+	"SetCommonInstanceMetadataOperationMetadata": ubx.FieldSpec{
+		WireName: "set_common_instance_metadata_operation_metadata",
+		Kind:     "object",
+		Fields:   V2betaTypeProvider_Operation_SetCommonInstanceMetadataOperationMetadataFields,
+	},
+	"StartTime":     ubx.FieldSpec{WireName: "start_time"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
+	"TargetId":      ubx.FieldSpec{WireName: "target_id"},
+	"TargetLink":    ubx.FieldSpec{WireName: "target_link"},
+	"User":          ubx.FieldSpec{WireName: "user"},
+	"Warnings": ubx.FieldSpec{
+		WireName: "warnings",
+		Kind:     "list",
+		Fields:   V2betaTypeProvider_Operation_WarningsFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 type V2betaTypeProviderConfig struct {
 	// Allows resource handling overrides for specific collections
@@ -617,34 +617,34 @@ var V2betaTypeProvider = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectionOverrides": ubx.FieldSpec{
 			WireName: "collection_overrides",
-			Kind: "list",
-			Fields: V2betaTypeProvider_CollectionOverridesFields,
+			Kind:     "list",
+			Fields:   V2betaTypeProvider_CollectionOverridesFields,
 		},
 		"Credential": ubx.FieldSpec{
 			WireName: "credential",
-			Kind: "object",
-			Fields: V2betaTypeProvider_CredentialFields,
+			Kind:     "object",
+			Fields:   V2betaTypeProvider_CredentialFields,
 		},
 		"CustomCertificateAuthorityRoots": ubx.FieldSpec{WireName: "custom_certificate_authority_roots"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DescriptorUrl": ubx.FieldSpec{WireName: "descriptor_url"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsertTime": ubx.FieldSpec{WireName: "insert_time"},
+		"Description":                     ubx.FieldSpec{WireName: "description"},
+		"DescriptorUrl":                   ubx.FieldSpec{WireName: "descriptor_url"},
+		"Id":                              ubx.FieldSpec{WireName: "id"},
+		"InsertTime":                      ubx.FieldSpec{WireName: "insert_time"},
 		"Labels": ubx.FieldSpec{
 			WireName: "labels",
-			Kind: "list",
-			Fields: V2betaTypeProvider_LabelsFields,
+			Kind:     "list",
+			Fields:   V2betaTypeProvider_LabelsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Operation": ubx.FieldSpec{
 			WireName: "operation",
-			Kind: "object",
-			Fields: V2betaTypeProvider_OperationFields,
+			Kind:     "object",
+			Fields:   V2betaTypeProvider_OperationFields,
 		},
 		"Options": ubx.FieldSpec{
 			WireName: "options",
-			Kind: "object",
-			Fields: V2betaTypeProvider_CollectionOverrides_OptionsFields,
+			Kind:     "object",
+			Fields:   V2betaTypeProvider_CollectionOverrides_OptionsFields,
 		},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},

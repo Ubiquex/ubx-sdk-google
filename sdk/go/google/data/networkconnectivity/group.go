@@ -21,7 +21,7 @@ type GroupAttrs struct {
 	Description any
 	// Optional. Labels in key-value pair format. For more information about labels, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements).
 	Labels any
-	Name any
+	Name   any
 	// Output only. The name of the route table that corresponds to this group. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}`
 	RouteTable any
 	// Output only. The current lifecycle state of this group.

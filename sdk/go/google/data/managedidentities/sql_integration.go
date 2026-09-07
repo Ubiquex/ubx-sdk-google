@@ -10,7 +10,7 @@ type SqlIntegrationConfig struct {
 type SqlIntegrationAttrs struct {
 	// Output only. The time the SQL integration was created.
 	CreateTime any
-	Name any
+	Name       any
 	// The full resource name of an integrated SQL instance
 	SqlInstance any
 	// Output only. The current state of the SQL integration.

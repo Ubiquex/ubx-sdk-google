@@ -34,9 +34,9 @@ type SacAttachmentAttrs struct {
 var SacAttachment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_sac_attachment",
 	Fields: ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"SacRealm": ubx.FieldSpec{WireName: "sac_realm"},
+		"SacRealm":   ubx.FieldSpec{WireName: "sac_realm"},
 	},
 }

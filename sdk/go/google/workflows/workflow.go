@@ -11,9 +11,9 @@ type Workflow_StateError struct {
 }
 
 var Workflow_StateErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkflowConfig struct {
 	// Optional. Describes the level of platform logging to apply to calls and call responses during executions of this workflow. If both the workflow and the execution specify a logging level, the execution level takes precedence.
@@ -84,20 +84,20 @@ type WorkflowAttrs struct {
 var Workflow = ubx.ResourceBinding{
 	WireType: "google_workflows_workflow",
 	Fields: ubx.FieldMap{
-		"CallLogLevel": ubx.FieldSpec{WireName: "call_log_level"},
-		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CallLogLevel":          ubx.FieldSpec{WireName: "call_log_level"},
+		"CryptoKeyName":         ubx.FieldSpec{WireName: "crypto_key_name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"ExecutionHistoryLevel": ubx.FieldSpec{WireName: "execution_history_level"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SourceContents": ubx.FieldSpec{WireName: "source_contents"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"ServiceAccount":        ubx.FieldSpec{WireName: "service_account"},
+		"SourceContents":        ubx.FieldSpec{WireName: "source_contents"},
 		"StateError": ubx.FieldSpec{
 			WireName: "state_error",
-			Kind: "object",
-			Fields: Workflow_StateErrorFields,
+			Kind:     "object",
+			Fields:   Workflow_StateErrorFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"UserEnvVars": ubx.FieldSpec{WireName: "user_env_vars"},
 	},
 }

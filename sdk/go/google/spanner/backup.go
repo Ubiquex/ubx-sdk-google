@@ -27,20 +27,20 @@ type Backup_InstancePartitions struct {
 }
 
 var Backup_EncryptionInfo_EncryptionStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Backup_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionStatus": ubx.FieldSpec{
-			WireName: "encryption_status",
-			Kind: "object",
-			Fields: Backup_EncryptionInfo_EncryptionStatusFields,
-		},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-	}
+	"EncryptionStatus": ubx.FieldSpec{
+		WireName: "encryption_status",
+		Kind:     "object",
+		Fields:   Backup_EncryptionInfo_EncryptionStatusFields,
+	},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersion":  ubx.FieldSpec{WireName: "kms_key_version"},
+}
 
 type BackupConfig struct {
 	// Required for the CreateBackup operation. Name of the database from which this backup was created. This needs to be in the same instance as the backup. Values are of the form `projects/{project}/instances/{instance}/databases/{database}`.
@@ -104,11 +104,11 @@ var Backup = ubx.ResourceBinding{
 		"Database": ubx.FieldSpec{WireName: "database"},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: Backup_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   Backup_EncryptionInfoFields,
 		},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ExpireTime":  ubx.FieldSpec{WireName: "expire_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"VersionTime": ubx.FieldSpec{WireName: "version_time"},
 	},
 }

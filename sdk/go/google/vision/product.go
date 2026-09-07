@@ -11,9 +11,9 @@ type Product_ProductLabels struct {
 }
 
 var Product_ProductLabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type ProductConfig struct {
 	// User-provided metadata to be stored with this product. Must be at most 4096 characters long.
@@ -44,14 +44,14 @@ type ProductAttrs struct {
 var Product = ubx.ResourceBinding{
 	WireType: "google_vision_product",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ProductCategory": ubx.FieldSpec{WireName: "product_category"},
 		"ProductLabels": ubx.FieldSpec{
 			WireName: "product_labels",
-			Kind: "list",
-			Fields: Product_ProductLabelsFields,
+			Kind:     "list",
+			Fields:   Product_ProductLabelsFields,
 		},
 	},
 }

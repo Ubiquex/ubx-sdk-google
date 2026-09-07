@@ -23,17 +23,17 @@ type Curation_PluginInstanceActions struct {
 }
 
 var Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields = ubx.FieldMap{
-		"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
+	"Uri":       ubx.FieldSpec{WireName: "uri"},
+}
 
 var Curation_EndpointFields = ubx.FieldMap{
-		"ApplicationIntegrationEndpointDetails": ubx.FieldSpec{
-			WireName: "application_integration_endpoint_details",
-			Kind: "object",
-			Fields: Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields,
-		},
-	}
+	"ApplicationIntegrationEndpointDetails": ubx.FieldSpec{
+		WireName: "application_integration_endpoint_details",
+		Kind:     "object",
+		Fields:   Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields,
+	},
+}
 
 type CurationConfig struct {
 	// Optional. The description of the curation.
@@ -76,8 +76,8 @@ var Curation = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Endpoint": ubx.FieldSpec{
 			WireName: "endpoint",
-			Kind: "object",
-			Fields: Curation_EndpointFields,
+			Kind:     "object",
+			Fields:   Curation_EndpointFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

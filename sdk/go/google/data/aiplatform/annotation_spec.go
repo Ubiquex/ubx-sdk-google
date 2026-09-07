@@ -13,8 +13,8 @@ type AnnotationSpecAttrs struct {
 	// Required. The user-defined name of the AnnotationSpec. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
-	Etag any
-	Name any
+	Etag     any
+	Name     any
 	ReadMask any
 	// Output only. Timestamp when AnnotationSpec was last updated.
 	UpdateTime any

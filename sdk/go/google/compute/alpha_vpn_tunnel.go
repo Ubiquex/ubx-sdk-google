@@ -4,16 +4,16 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaVpnTunnel_CipherSuite_Phase1 struct {
-	Dh any
+	Dh         any
 	Encryption any
-	Integrity any
-	Prf any
+	Integrity  any
+	Prf        any
 }
 
 type AlphaVpnTunnel_CipherSuite_Phase2 struct {
 	Encryption any
-	Integrity any
-	Pfs any
+	Integrity  any
+	Pfs        any
 }
 
 type AlphaVpnTunnel_CipherSuite struct {
@@ -43,53 +43,53 @@ type AlphaVpnTunnel_PqcPhase1 struct {
 }
 
 var AlphaVpnTunnel_CipherSuite_Phase1Fields = ubx.FieldMap{
-		"Dh": ubx.FieldSpec{WireName: "dh"},
-		"Encryption": ubx.FieldSpec{WireName: "encryption"},
-		"Integrity": ubx.FieldSpec{WireName: "integrity"},
-		"Prf": ubx.FieldSpec{WireName: "prf"},
-	}
+	"Dh":         ubx.FieldSpec{WireName: "dh"},
+	"Encryption": ubx.FieldSpec{WireName: "encryption"},
+	"Integrity":  ubx.FieldSpec{WireName: "integrity"},
+	"Prf":        ubx.FieldSpec{WireName: "prf"},
+}
 
 var AlphaVpnTunnel_CipherSuite_Phase2Fields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{WireName: "encryption"},
-		"Integrity": ubx.FieldSpec{WireName: "integrity"},
-		"Pfs": ubx.FieldSpec{WireName: "pfs"},
-	}
+	"Encryption": ubx.FieldSpec{WireName: "encryption"},
+	"Integrity":  ubx.FieldSpec{WireName: "integrity"},
+	"Pfs":        ubx.FieldSpec{WireName: "pfs"},
+}
 
 var AlphaVpnTunnel_CipherSuiteFields = ubx.FieldMap{
-		"Phase1": ubx.FieldSpec{
-			WireName: "phase1",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_CipherSuite_Phase1Fields,
-		},
-		"Phase2": ubx.FieldSpec{
-			WireName: "phase2",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_CipherSuite_Phase2Fields,
-		},
-	}
+	"Phase1": ubx.FieldSpec{
+		WireName: "phase1",
+		Kind:     "object",
+		Fields:   AlphaVpnTunnel_CipherSuite_Phase1Fields,
+	},
+	"Phase2": ubx.FieldSpec{
+		WireName: "phase2",
+		Kind:     "object",
+		Fields:   AlphaVpnTunnel_CipherSuite_Phase2Fields,
+	},
+}
 
 var AlphaVpnTunnel_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaVpnTunnel_PqcPhase1_KeysFields = ubx.FieldMap{
-		"Ke1s": ubx.FieldSpec{WireName: "ke1s"},
-		"Ke2s": ubx.FieldSpec{WireName: "ke2s"},
-		"Ke3s": ubx.FieldSpec{WireName: "ke3s"},
-		"Ke4s": ubx.FieldSpec{WireName: "ke4s"},
-		"Ke5s": ubx.FieldSpec{WireName: "ke5s"},
-		"Ke6s": ubx.FieldSpec{WireName: "ke6s"},
-		"Ke7s": ubx.FieldSpec{WireName: "ke7s"},
-	}
+	"Ke1s": ubx.FieldSpec{WireName: "ke1s"},
+	"Ke2s": ubx.FieldSpec{WireName: "ke2s"},
+	"Ke3s": ubx.FieldSpec{WireName: "ke3s"},
+	"Ke4s": ubx.FieldSpec{WireName: "ke4s"},
+	"Ke5s": ubx.FieldSpec{WireName: "ke5s"},
+	"Ke6s": ubx.FieldSpec{WireName: "ke6s"},
+	"Ke7s": ubx.FieldSpec{WireName: "ke7s"},
+}
 
 var AlphaVpnTunnel_PqcPhase1Fields = ubx.FieldMap{
-		"Keys": ubx.FieldSpec{
-			WireName: "keys",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_PqcPhase1_KeysFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Keys": ubx.FieldSpec{
+		WireName: "keys",
+		Kind:     "object",
+		Fields:   AlphaVpnTunnel_PqcPhase1_KeysFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 type AlphaVpnTunnelConfig struct {
 	// Capacity tier of the VPN tunnel. This is used for IPsec over Interconnect tunnels to indicate different bandwidth limits.
@@ -111,7 +111,7 @@ type AlphaVpnTunnelConfig struct {
 	// Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
 	LocalTrafficSelector any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name   any
 	Params any
 	// URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
 	PeerExternalGateway any
@@ -171,7 +171,7 @@ type AlphaVpnTunnelAttrs struct {
 	// Local traffic selector to use when establishing the VPN tunnel with the peer VPN gateway. The value should be a CIDR formatted string, for example: 192.168.0.0/16. The ranges must be disjoint. Only IPv4 is supported for Classic VPN tunnels. This field is output only for HA VPN tunnels.
 	LocalTrafficSelector any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name   any
 	Params any
 	// URL of the peer side external VPN gateway to which this VPN tunnel is connected. Provided by the client when the VPN tunnel is created. This field is exclusive with the field peerGcpGateway.
 	PeerExternalGateway any
@@ -213,45 +213,45 @@ var AlphaVpnTunnel = ubx.ResourceBinding{
 		"CapacityTier": ubx.FieldSpec{WireName: "capacity_tier"},
 		"CipherSuite": ubx.FieldSpec{
 			WireName: "cipher_suite",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_CipherSuiteFields,
+			Kind:     "object",
+			Fields:   AlphaVpnTunnel_CipherSuiteFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DetailedStatus": ubx.FieldSpec{WireName: "detailed_status"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IkeVersion": ubx.FieldSpec{WireName: "ike_version"},
-		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"DetailedStatus":       ubx.FieldSpec{WireName: "detailed_status"},
+		"Id":                   ubx.FieldSpec{WireName: "id"},
+		"IkeVersion":           ubx.FieldSpec{WireName: "ike_version"},
+		"LabelFingerprint":     ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels":               ubx.FieldSpec{WireName: "labels"},
 		"LocalTrafficSelector": ubx.FieldSpec{WireName: "local_traffic_selector"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaVpnTunnel_ParamsFields,
 		},
-		"PeerExternalGateway": ubx.FieldSpec{WireName: "peer_external_gateway"},
+		"PeerExternalGateway":          ubx.FieldSpec{WireName: "peer_external_gateway"},
 		"PeerExternalGatewayInterface": ubx.FieldSpec{WireName: "peer_external_gateway_interface"},
-		"PeerGcpGateway": ubx.FieldSpec{WireName: "peer_gcp_gateway"},
-		"PeerIp": ubx.FieldSpec{WireName: "peer_ip"},
+		"PeerGcpGateway":               ubx.FieldSpec{WireName: "peer_gcp_gateway"},
+		"PeerIp":                       ubx.FieldSpec{WireName: "peer_ip"},
 		"PqcPhase1": ubx.FieldSpec{
 			WireName: "pqc_phase1",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_PqcPhase1Fields,
+			Kind:     "object",
+			Fields:   AlphaVpnTunnel_PqcPhase1Fields,
 		},
 		"PqcPhase2": ubx.FieldSpec{
 			WireName: "pqc_phase2",
-			Kind: "object",
-			Fields: AlphaVpnTunnel_PqcPhase1Fields,
+			Kind:     "object",
+			Fields:   AlphaVpnTunnel_PqcPhase1Fields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":                ubx.FieldSpec{WireName: "region"},
 		"RemoteTrafficSelector": ubx.FieldSpec{WireName: "remote_traffic_selector"},
-		"Router": ubx.FieldSpec{WireName: "router"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SharedSecret": ubx.FieldSpec{WireName: "shared_secret"},
-		"SharedSecretHash": ubx.FieldSpec{WireName: "shared_secret_hash"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetVpnGateway": ubx.FieldSpec{WireName: "target_vpn_gateway"},
-		"VpnGateway": ubx.FieldSpec{WireName: "vpn_gateway"},
-		"VpnGatewayInterface": ubx.FieldSpec{WireName: "vpn_gateway_interface"},
+		"Router":                ubx.FieldSpec{WireName: "router"},
+		"SelfLink":              ubx.FieldSpec{WireName: "self_link"},
+		"SharedSecret":          ubx.FieldSpec{WireName: "shared_secret"},
+		"SharedSecretHash":      ubx.FieldSpec{WireName: "shared_secret_hash"},
+		"Status":                ubx.FieldSpec{WireName: "status"},
+		"TargetVpnGateway":      ubx.FieldSpec{WireName: "target_vpn_gateway"},
+		"VpnGateway":            ubx.FieldSpec{WireName: "vpn_gateway"},
+		"VpnGatewayInterface":   ubx.FieldSpec{WireName: "vpn_gateway_interface"},
 	},
 }

@@ -59,74 +59,74 @@ type Workload_WorkloadReference struct {
 }
 
 var Workload_Attributes_BusinessOwnersFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var Workload_Attributes_CriticalityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Workload_AttributesFields = ubx.FieldMap{
-		"BusinessOwners": ubx.FieldSpec{
-			WireName: "business_owners",
-			Kind: "list",
-			Fields: Workload_Attributes_BusinessOwnersFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "object",
-			Fields: Workload_Attributes_CriticalityFields,
-		},
-		"DeveloperOwners": ubx.FieldSpec{
-			WireName: "developer_owners",
-			Kind: "list",
-			Fields: Workload_Attributes_BusinessOwnersFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Workload_Attributes_CriticalityFields,
-		},
-		"OperatorOwners": ubx.FieldSpec{
-			WireName: "operator_owners",
-			Kind: "list",
-			Fields: Workload_Attributes_BusinessOwnersFields,
-		},
-	}
+	"BusinessOwners": ubx.FieldSpec{
+		WireName: "business_owners",
+		Kind:     "list",
+		Fields:   Workload_Attributes_BusinessOwnersFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "object",
+		Fields:   Workload_Attributes_CriticalityFields,
+	},
+	"DeveloperOwners": ubx.FieldSpec{
+		WireName: "developer_owners",
+		Kind:     "list",
+		Fields:   Workload_Attributes_BusinessOwnersFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Workload_Attributes_CriticalityFields,
+	},
+	"OperatorOwners": ubx.FieldSpec{
+		WireName: "operator_owners",
+		Kind:     "list",
+		Fields:   Workload_Attributes_BusinessOwnersFields,
+	},
+}
 
 var Workload_WorkloadProperties_ExtendedMetadataFields = ubx.FieldMap{
-		"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
-	}
+	"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
+}
 
 var Workload_WorkloadProperties_IdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Workload_WorkloadPropertiesFields = ubx.FieldMap{
-		"ExtendedMetadata": ubx.FieldSpec{
-			WireName: "extended_metadata",
-			Kind: "map",
-			Fields: Workload_WorkloadProperties_ExtendedMetadataFields,
-		},
-		"FunctionalType": ubx.FieldSpec{
-			WireName: "functional_type",
-			Kind: "object",
-			Fields: Workload_Attributes_CriticalityFields,
-		},
-		"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "object",
-			Fields: Workload_WorkloadProperties_IdentityFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ExtendedMetadata": ubx.FieldSpec{
+		WireName: "extended_metadata",
+		Kind:     "map",
+		Fields:   Workload_WorkloadProperties_ExtendedMetadataFields,
+	},
+	"FunctionalType": ubx.FieldSpec{
+		WireName: "functional_type",
+		Kind:     "object",
+		Fields:   Workload_Attributes_CriticalityFields,
+	},
+	"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "object",
+		Fields:   Workload_WorkloadProperties_IdentityFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Zone":     ubx.FieldSpec{WireName: "zone"},
+}
 
 var Workload_WorkloadReferenceFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 type WorkloadConfig struct {
 	// Consumer provided attributes.
@@ -175,22 +175,22 @@ var Workload = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: Workload_AttributesFields,
+			Kind:     "object",
+			Fields:   Workload_AttributesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"DiscoveredWorkload": ubx.FieldSpec{WireName: "discovered_workload"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"WorkloadProperties": ubx.FieldSpec{
 			WireName: "workload_properties",
-			Kind: "object",
-			Fields: Workload_WorkloadPropertiesFields,
+			Kind:     "object",
+			Fields:   Workload_WorkloadPropertiesFields,
 		},
 		"WorkloadReference": ubx.FieldSpec{
 			WireName: "workload_reference",
-			Kind: "object",
-			Fields: Workload_WorkloadReferenceFields,
+			Kind:     "object",
+			Fields:   Workload_WorkloadReferenceFields,
 		},
 	},
 }

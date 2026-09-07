@@ -13,20 +13,20 @@ type VpnGateway_VpnInterfaces struct {
 	// The Interconnect attachment to use for this VPN interface. This is applicable when using HA VPN over Cloud Interconnect. (AI-inferred)
 	InterconnectAttachment any
 	// The external IP address assigned to this VPN gateway interface. (AI-inferred)
-	IpAddress any
+	IpAddress   any
 	Ipv6Address any
 }
 
 var VpnGateway_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var VpnGateway_VpnInterfacesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InterconnectAttachment": ubx.FieldSpec{WireName: "interconnect_attachment"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-	}
+	"Id":                     ubx.FieldSpec{WireName: "id"},
+	"InterconnectAttachment": ubx.FieldSpec{WireName: "interconnect_attachment"},
+	"IpAddress":              ubx.FieldSpec{WireName: "ip_address"},
+	"Ipv6Address":            ubx.FieldSpec{WireName: "ipv6_address"},
+}
 
 type VpnGatewayConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -41,7 +41,7 @@ type VpnGatewayConfig struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params any
+	Params  any
 	// The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
 	StackType any
 	// The list of VPN interfaces associated with this VPN gateway.
@@ -67,7 +67,7 @@ type VpnGatewayAttrs struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params any
+	Params  any
 	// Output only. [Output Only] URL of the region where the VPN gateway resides.
 	Region any
 	// Output only. [Output Only] Server-defined URL for the resource.
@@ -81,22 +81,22 @@ type VpnGatewayAttrs struct {
 var VpnGateway = ubx.ResourceBinding{
 	WireType: "google_compute_vpn_gateway",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"GatewayIpVersion": ubx.FieldSpec{WireName: "gateway_ip_version"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Network":          ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: VpnGateway_ParamsFields,
+			Kind:     "object",
+			Fields:   VpnGateway_ParamsFields,
 		},
 		"StackType": ubx.FieldSpec{WireName: "stack_type"},
 		"VpnInterfaces": ubx.FieldSpec{
 			WireName: "vpn_interfaces",
-			Kind: "list",
-			Fields: VpnGateway_VpnInterfacesFields,
+			Kind:     "list",
+			Fields:   VpnGateway_VpnInterfacesFields,
 		},
 	},
 }

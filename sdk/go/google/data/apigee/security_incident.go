@@ -18,7 +18,7 @@ type SecurityIncidentAttrs struct {
 	LastDetectedTime any
 	// Output only. The time when the incident observability was last changed.
 	LastObservabilityChangeTime any
-	Name any
+	Name                        any
 	// Optional. Indicates if the user archived this incident.
 	Observability any
 	// Output only. Risk level of the incident.

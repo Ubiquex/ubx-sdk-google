@@ -4,21 +4,21 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstallConfig struct {
-	DeviceId any
+	DeviceId     any
 	EnterpriseId any
-	InstallId any
-	UserId any
+	InstallId    any
+	UserId       any
 }
 
 type InstallAttrs struct {
-	DeviceId any
+	DeviceId     any
 	EnterpriseId any
-	InstallId any
+	InstallId    any
 	// Install state. The state "installPending" means that an install request has recently been made and download to the device is in progress. The state "installed" means that the app has been installed. This field is read-only.
 	InstallState any
 	// The ID of the product that the install is for. For example, "app:com.google.android.gm".
 	ProductId any
-	UserId any
+	UserId    any
 	// The version of the installed product. Guaranteed to be set only if the install state is "installed".
 	VersionCode any
 }
@@ -26,9 +26,9 @@ type InstallAttrs struct {
 var Install = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_install",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":     ubx.FieldSpec{WireName: "device_id"},
 		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
-		"InstallId": ubx.FieldSpec{WireName: "install_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"InstallId":    ubx.FieldSpec{WireName: "install_id"},
+		"UserId":       ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -14,12 +14,12 @@ type MulticastGroupConsumerActivation_State struct {
 }
 
 var MulticastGroupConsumerActivation_LogConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var MulticastGroupConsumerActivation_StateFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type MulticastGroupConsumerActivationConfig struct {
 	// Optional. An optional text description of the multicast group consumer activation.
@@ -71,20 +71,20 @@ var MulticastGroupConsumerActivation = ubx.ResourceBinding{
 	WireType: "google_networkservices_multicast_group_consumer_activation",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: MulticastGroupConsumerActivation_LogConfigFields,
+			Kind:     "object",
+			Fields:   MulticastGroupConsumerActivation_LogConfigFields,
 		},
-		"MulticastConsumerAssociation": ubx.FieldSpec{WireName: "multicast_consumer_association"},
-		"MulticastGroup": ubx.FieldSpec{WireName: "multicast_group"},
+		"MulticastConsumerAssociation":  ubx.FieldSpec{WireName: "multicast_consumer_association"},
+		"MulticastGroup":                ubx.FieldSpec{WireName: "multicast_group"},
 		"MulticastGroupRangeActivation": ubx.FieldSpec{WireName: "multicast_group_range_activation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: MulticastGroupConsumerActivation_StateFields,
+			Kind:     "object",
+			Fields:   MulticastGroupConsumerActivation_StateFields,
 		},
 	},
 }

@@ -35,8 +35,8 @@ var ChannelConnection = ubx.ResourceBinding{
 	WireType: "google_eventarc_channel_connection",
 	Fields: ubx.FieldMap{
 		"ActivationToken": ubx.FieldSpec{WireName: "activation_token"},
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Channel":         ubx.FieldSpec{WireName: "channel"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 	},
 }

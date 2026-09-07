@@ -24,7 +24,7 @@ type BindingAttrs struct {
 var Binding = ubx.ResourceBinding{
 	WireType: "google_dataplex_binding",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Resource": ubx.FieldSpec{WireName: "resource"},
 	},
 }

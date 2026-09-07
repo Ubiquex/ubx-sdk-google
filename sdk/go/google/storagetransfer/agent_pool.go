@@ -9,8 +9,8 @@ type AgentPool_BandwidthLimit struct {
 }
 
 var AgentPool_BandwidthLimitFields = ubx.FieldMap{
-		"LimitMbps": ubx.FieldSpec{WireName: "limit_mbps"},
-	}
+	"LimitMbps": ubx.FieldSpec{WireName: "limit_mbps"},
+}
 
 type AgentPoolConfig struct {
 	// Specifies a bandwidth limit for an agent pool.
@@ -37,10 +37,10 @@ var AgentPool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BandwidthLimit": ubx.FieldSpec{
 			WireName: "bandwidth_limit",
-			Kind: "object",
-			Fields: AgentPool_BandwidthLimitFields,
+			Kind:     "object",
+			Fields:   AgentPool_BandwidthLimitFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

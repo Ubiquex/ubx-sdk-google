@@ -9,31 +9,31 @@ type AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfig str
 
 type AlphaAcceleratorPodController_ManagementInterfaces struct {
 	AuthenticationConfig any
-	Ipv4Address any
-	Ipv6Address any
-	Network any
-	State any
-	Subnetwork any
-	Type any
+	Ipv4Address          any
+	Ipv6Address          any
+	Network              any
+	State                any
+	Subnetwork           any
+	Type                 any
 }
 
 var AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields = ubx.FieldMap{
-		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
-	}
+	"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
+}
 
 var AlphaAcceleratorPodController_ManagementInterfacesFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{
-			WireName: "authentication_config",
-			Kind: "object",
-			Fields: AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields,
-		},
-		"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{
+		WireName: "authentication_config",
+		Kind:     "object",
+		Fields:   AlphaAcceleratorPodController_ManagementInterfaces_AuthenticationConfigFields,
+	},
+	"Ipv4Address": ubx.FieldSpec{WireName: "ipv4_address"},
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 type AlphaAcceleratorPodControllerConfig struct {
 	// An optional description of this resource.
@@ -75,10 +75,10 @@ var AlphaAcceleratorPodController = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ManagementInterfaces": ubx.FieldSpec{
 			WireName: "management_interfaces",
-			Kind: "map",
-			Fields: AlphaAcceleratorPodController_ManagementInterfacesFields,
+			Kind:     "map",
+			Fields:   AlphaAcceleratorPodController_ManagementInterfacesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Target": ubx.FieldSpec{WireName: "target"},
 	},
 }

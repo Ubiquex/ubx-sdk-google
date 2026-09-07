@@ -31,8 +31,8 @@ type V1beta1Release_Blueprint struct {
 }
 
 type V1beta1Release_InputVariableDefaults struct {
-	Type any
-	Value any
+	Type     any
+	Value    any
 	Variable any
 }
 
@@ -42,36 +42,36 @@ type V1beta1Release_ReleaseRequirements struct {
 }
 
 var V1beta1Release_ApplicationTemplateComponent_CompositeRefFields = ubx.FieldMap{
-		"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"SyncOperation": ubx.FieldSpec{WireName: "sync_operation"},
-	}
+	"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
+	"Revision":            ubx.FieldSpec{WireName: "revision"},
+	"SyncOperation":       ubx.FieldSpec{WireName: "sync_operation"},
+}
 
 var V1beta1Release_ApplicationTemplateComponentFields = ubx.FieldMap{
-		"Component": ubx.FieldSpec{WireName: "component"},
-		"CompositeRef": ubx.FieldSpec{
-			WireName: "composite_ref",
-			Kind: "object",
-			Fields: V1beta1Release_ApplicationTemplateComponent_CompositeRefFields,
-		},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Component": ubx.FieldSpec{WireName: "component"},
+	"CompositeRef": ubx.FieldSpec{
+		WireName: "composite_ref",
+		Kind:     "object",
+		Fields:   V1beta1Release_ApplicationTemplateComponent_CompositeRefFields,
+	},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+}
 
 var V1beta1Release_BlueprintFields = ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Engine":  ubx.FieldSpec{WireName: "engine"},
+	"Package": ubx.FieldSpec{WireName: "package"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1Release_InputVariableDefaultsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"Type":     ubx.FieldSpec{WireName: "type"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+	"Variable": ubx.FieldSpec{WireName: "variable"},
+}
 
 var V1beta1Release_ReleaseRequirementsFields = ubx.FieldMap{
-		"UpgradeableFromReleases": ubx.FieldSpec{WireName: "upgradeable_from_releases"},
-	}
+	"UpgradeableFromReleases": ubx.FieldSpec{WireName: "upgradeable_from_releases"},
+}
 
 type V1beta1ReleaseConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -129,25 +129,25 @@ var V1beta1Release = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ApplicationTemplateComponent": ubx.FieldSpec{
 			WireName: "application_template_component",
-			Kind: "object",
-			Fields: V1beta1Release_ApplicationTemplateComponentFields,
+			Kind:     "object",
+			Fields:   V1beta1Release_ApplicationTemplateComponentFields,
 		},
 		"Blueprint": ubx.FieldSpec{
 			WireName: "blueprint",
-			Kind: "object",
-			Fields: V1beta1Release_BlueprintFields,
+			Kind:     "object",
+			Fields:   V1beta1Release_BlueprintFields,
 		},
 		"InputVariableDefaults": ubx.FieldSpec{
 			WireName: "input_variable_defaults",
-			Kind: "list",
-			Fields: V1beta1Release_InputVariableDefaultsFields,
+			Kind:     "list",
+			Fields:   V1beta1Release_InputVariableDefaultsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ReleaseRequirements": ubx.FieldSpec{
 			WireName: "release_requirements",
-			Kind: "object",
-			Fields: V1beta1Release_ReleaseRequirementsFields,
+			Kind:     "object",
+			Fields:   V1beta1Release_ReleaseRequirementsFields,
 		},
 		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 	},

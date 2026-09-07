@@ -42,41 +42,41 @@ type Feed_Feed struct {
 }
 
 var Feed_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Feed_Feed_FeedOutputConfig_PubsubDestinationFields = ubx.FieldMap{
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Topic": ubx.FieldSpec{WireName: "topic"},
+}
 
 var Feed_Feed_FeedOutputConfigFields = ubx.FieldMap{
-		"PubsubDestination": ubx.FieldSpec{
-			WireName: "pubsub_destination",
-			Kind: "object",
-			Fields: Feed_Feed_FeedOutputConfig_PubsubDestinationFields,
-		},
-	}
+	"PubsubDestination": ubx.FieldSpec{
+		WireName: "pubsub_destination",
+		Kind:     "object",
+		Fields:   Feed_Feed_FeedOutputConfig_PubsubDestinationFields,
+	},
+}
 
 var Feed_FeedFields = ubx.FieldMap{
-		"AssetNames": ubx.FieldSpec{WireName: "asset_names"},
-		"AssetTypes": ubx.FieldSpec{WireName: "asset_types"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Feed_ConditionFields,
-		},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"FeedOutputConfig": ubx.FieldSpec{
-			WireName: "feed_output_config",
-			Kind: "object",
-			Fields: Feed_Feed_FeedOutputConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RelationshipTypes": ubx.FieldSpec{WireName: "relationship_types"},
-	}
+	"AssetNames": ubx.FieldSpec{WireName: "asset_names"},
+	"AssetTypes": ubx.FieldSpec{WireName: "asset_types"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Feed_ConditionFields,
+	},
+	"ContentType": ubx.FieldSpec{WireName: "content_type"},
+	"FeedOutputConfig": ubx.FieldSpec{
+		WireName: "feed_output_config",
+		Kind:     "object",
+		Fields:   Feed_Feed_FeedOutputConfigFields,
+	},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"RelationshipTypes": ubx.FieldSpec{WireName: "relationship_types"},
+}
 
 type FeedConfig struct {
 	// An asset feed used to export asset updates to a destinations. An asset feed filter controls what updates are exported. The asset feed must be created within a project, organization, or folder. Supported destinations are: Pub/Sub topics.
@@ -111,8 +111,8 @@ var Feed = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Feed": ubx.FieldSpec{
 			WireName: "feed",
-			Kind: "object",
-			Fields: Feed_FeedFields,
+			Kind:     "object",
+			Fields:   Feed_FeedFields,
 		},
 		"FeedId": ubx.FieldSpec{WireName: "feed_id"},
 	},

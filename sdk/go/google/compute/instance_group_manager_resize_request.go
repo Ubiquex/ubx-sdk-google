@@ -22,7 +22,7 @@ type InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAd
 type InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps struct {
 	// Whether the preserved external IP address should be automatically deleted when the associated instance is deleted, controlling the lifecycle of the IP in the instance's preserved state. (AI-inferred)
 	AutoDelete any
-	IpAddress any
+	IpAddress  any
 }
 
 type InstanceGroupManagerResizeRequest_Instances_PreservedState struct {
@@ -38,7 +38,7 @@ type InstanceGroupManagerResizeRequest_Instances_PreservedState struct {
 
 type InstanceGroupManagerResizeRequest_Instances struct {
 	Fingerprint any
-	Name any
+	Name        any
 	// Configuration for the state to preserve for the instance in the resize request. This block is used to set stateful disks and metadata that should be preserved when the instance is created or deleted. See the preserved_state sub-block for the full structure. (AI-inferred)
 	PreservedState any
 	// The status of the instance in relation to the resize request. Possible values are APPLYING, DELETING, EFFECTIVE, NONE, UNAPPLIED, and UNAPPLIED_DELETION, indicating whether the instance is being applied, deleted, effective, not applicable, unapplied, or scheduled for deletion but not yet applied. (AI-inferred)
@@ -81,7 +81,7 @@ type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Localize
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfo struct {
 	// The quota dimensions (such as region or zone) as key-value pairs. Each key is a dimension name and the value is the dimension value, both as strings. (AI-inferred)
-	Dimensions any
+	Dimensions  any
 	FutureLimit any
 	// The quota limit for the resource, representing the maximum allowed value for the metric in question. (AI-inferred)
 	Limit any
@@ -99,12 +99,12 @@ type InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails struct {
 	Help any
 	// An object containing a localized error message and its locale. Provides a user-readable error description in the user's preferred language. (AI-inferred)
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type InstanceGroupManagerResizeRequest_Status_Error_Errors struct {
 	// The error code for this error entry, typically a machine-readable identifier for the specific error type. (AI-inferred)
-	Code any
+	Code         any
 	ErrorDetails any
 	// The location of the error in the request, such as the path to a specific field or parameter that caused the error. (AI-inferred)
 	Location any
@@ -130,155 +130,155 @@ type InstanceGroupManagerResizeRequest_Status struct {
 }
 
 var InstanceGroupManagerResizeRequest_Instances_PreservedState_DisksFields = ubx.FieldMap{
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"Source":     ubx.FieldSpec{WireName: "source"},
+}
 
 var InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddressFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Literal": ubx.FieldSpec{WireName: "literal"},
-	}
+	"Address": ubx.FieldSpec{WireName: "address"},
+	"Literal": ubx.FieldSpec{WireName: "literal"},
+}
 
 var InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIpsFields = ubx.FieldMap{
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"IpAddress": ubx.FieldSpec{
-			WireName: "ip_address",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddressFields,
-		},
-	}
+	"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
+	"IpAddress": ubx.FieldSpec{
+		WireName: "ip_address",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIps_IpAddressFields,
+	},
+}
 
 var InstanceGroupManagerResizeRequest_Instances_PreservedStateFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "map",
-			Fields: InstanceGroupManagerResizeRequest_Instances_PreservedState_DisksFields,
-		},
-		"ExternalIps": ubx.FieldSpec{
-			WireName: "external_ips",
-			Kind: "map",
-			Fields: InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIpsFields,
-		},
-		"InternalIps": ubx.FieldSpec{
-			WireName: "internal_ips",
-			Kind: "map",
-			Fields: InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIpsFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "map",
+		Fields:   InstanceGroupManagerResizeRequest_Instances_PreservedState_DisksFields,
+	},
+	"ExternalIps": ubx.FieldSpec{
+		WireName: "external_ips",
+		Kind:     "map",
+		Fields:   InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIpsFields,
+	},
+	"InternalIps": ubx.FieldSpec{
+		WireName: "internal_ips",
+		Kind:     "map",
+		Fields:   InstanceGroupManagerResizeRequest_Instances_PreservedState_ExternalIpsFields,
+	},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var InstanceGroupManagerResizeRequest_InstancesFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PreservedState": ubx.FieldSpec{
-			WireName: "preserved_state",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Instances_PreservedStateFields,
-		},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PreservedState": ubx.FieldSpec{
+		WireName: "preserved_state",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Instances_PreservedStateFields,
+	},
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var InstanceGroupManagerResizeRequest_RequestedRunDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var InstanceGroupManagerResizeRequest_Status_Error_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var InstanceGroupManagerResizeRequest_Status_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: InstanceGroupManagerResizeRequest_Status_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   InstanceGroupManagerResizeRequest_Status_Error_ErrorsFields,
+	},
+}
 
 var InstanceGroupManagerResizeRequest_Status_LastAttemptFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_ErrorFields,
-		},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_ErrorFields,
+	},
+}
 
 var InstanceGroupManagerResizeRequest_StatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_ErrorFields,
-		},
-		"LastAttempt": ubx.FieldSpec{
-			WireName: "last_attempt",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_Status_LastAttemptFields,
-		},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_ErrorFields,
+	},
+	"LastAttempt": ubx.FieldSpec{
+		WireName: "last_attempt",
+		Kind:     "object",
+		Fields:   InstanceGroupManagerResizeRequest_Status_LastAttemptFields,
+	},
+}
 
 type InstanceGroupManagerResizeRequestConfig struct {
 	// An optional description of this resource.
@@ -332,20 +332,20 @@ var InstanceGroupManagerResizeRequest = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Instances": ubx.FieldSpec{
 			WireName: "instances",
-			Kind: "list",
-			Fields: InstanceGroupManagerResizeRequest_InstancesFields,
+			Kind:     "list",
+			Fields:   InstanceGroupManagerResizeRequest_InstancesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RequestedRunDuration": ubx.FieldSpec{
 			WireName: "requested_run_duration",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_RequestedRunDurationFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManagerResizeRequest_RequestedRunDurationFields,
 		},
 		"ResizeBy": ubx.FieldSpec{WireName: "resize_by"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: InstanceGroupManagerResizeRequest_StatusFields,
+			Kind:     "object",
+			Fields:   InstanceGroupManagerResizeRequest_StatusFields,
 		},
 	},
 }

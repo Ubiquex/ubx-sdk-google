@@ -28,8 +28,8 @@ type QaQuestionTagAttrs struct {
 var QaQuestionTag = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_qa_question_tag",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"QaQuestionIds": ubx.FieldSpec{WireName: "qa_question_ids"},
 	},
 }
