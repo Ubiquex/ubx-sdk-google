@@ -413,13 +413,19 @@ jobs:
         run: |
           set -euo pipefail
           v="${{ steps.bump.outputs.new_version }}"
+          # Real, live module path from go.mod itself, never a
+          # hardcoded "sdk/go": a module that ever gains a /vN suffix
+          # is served at .../sdk/go/vN/@v/..., and a hardcoded path
+          # 404s and reports a false failure after every publish step
+          # has already succeeded (UBI-185, hit for real on aws).
+          go_module_path="$(head -1 sdk/go/go.mod | awk '{print $2}')"
           live_pypi=""
           live_npm=""
           live_go=""
           for attempt in $(seq 1 10); do
             live_pypi="$(curl -sf https://pypi.org/pypi/ubx-sdk-google/json | python3 -c "import json,sys; print(json.load(sys.stdin)['info']['version'])" || echo "")"
             live_npm="$(curl -sf "https://registry.npmjs.org/@ubx%2fsdk-google/$v" | python3 -c "import json,sys; print(json.load(sys.stdin).get('version') or '')" || echo "")"
-            live_go="$(curl -sf "https://proxy.golang.org/github.com/ubiquex/ubx-sdk-google/sdk/go/@v/v$v.info" | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
+            live_go="$(curl -sf "https://proxy.golang.org/${go_module_path}/@v/v$v.info" | python3 -c "import json,sys; print(json.load(sys.stdin).get('Version','').lstrip('v'))" || echo "")"
             if [ "$live_pypi" = "$v" ] && [ "$live_npm" = "$v" ] && [ "$live_go" = "$v" ]; then
               break
             fi
