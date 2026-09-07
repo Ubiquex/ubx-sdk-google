@@ -33,8 +33,8 @@ var OrgNumberRegistry = ubx.ResourceBinding{
 	WireType: "google_cloudnumberregistry_org_number_registry",
 	Fields: ubx.FieldMap{
 		"AdminProject": ubx.FieldSpec{WireName: "admin_project"},
-		"Labels":       ubx.FieldSpec{WireName: "labels"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TargetScopes": ubx.FieldSpec{WireName: "target_scopes"},
 	},
 }

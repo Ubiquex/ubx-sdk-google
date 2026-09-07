@@ -14,7 +14,31 @@ export interface V1alpha1Occurrence_AiSkillAnalysis_Findings {
   severity?: string | Computed<string>;
 }
 
+export interface V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage {
+  /** Output only. Cache matched tokens for implicit cache. */
+  cacheCount?: string | Computed<string>;
+  /** Output only. Tokens in the model response. */
+  candidateCount?: string | Computed<string>;
+  /** Output only. Tokens in the user request. */
+  promptCount?: string | Computed<string>;
+  /** Output only. Tokens in the thinking output. */
+  thinkingCount?: string | Computed<string>;
+  /** Output only. Prompt tokens for using tools. */
+  toolUsePromptCount?: string | Computed<string>;
+}
+
 export interface V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult {
+  /** Optional. Tracks max severity found. */
+  maxSeverity?: string | Computed<string>;
+  /** Optional. The base name of the model that performed the scan. */
+  modelId?: string | Computed<string>;
+  /** Output only. State of the scan. */
+  scanState?: string | Computed<string>;
+  /** Token usage associated with an AI scan. */
+  tokenUsage?: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage | Computed<V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage>;
+}
+
+export interface V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult {
   /** Optional. Tracks max severity found. */
   maxSeverity?: string | Computed<string>;
   /** Output only. State of the scan. */
@@ -32,7 +56,7 @@ export interface V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict {
   /** Result of Malicious Content LLM scan. */
   maliciousContentLlmResult?: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
   /** Result of Malicious Content Static scan. */
-  maliciousContentStaticResult?: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
+  maliciousContentStaticResult?: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult | Computed<V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult>;
   /** Result of Malware scan. */
   malwareScan?: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan | Computed<V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan>;
   /** Result of Workspace Policy scan. */
@@ -931,7 +955,26 @@ const V1alpha1Occurrence_AiSkillAnalysis_FindingsFields: FieldMap = {
   severity: "severity",
 };
 
+const V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields: FieldMap = {
+  cacheCount: "cache_count",
+  candidateCount: "candidate_count",
+  promptCount: "prompt_count",
+  thinkingCount: "thinking_count",
+  toolUsePromptCount: "tool_use_prompt_count",
+};
+
 const V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields: FieldMap = {
+  maxSeverity: "max_severity",
+  modelId: "model_id",
+  scanState: "scan_state",
+  tokenUsage: {
+    wireName: "token_usage",
+    kind: "object",
+    fields: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields,
+  },
+};
+
+const V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields: FieldMap = {
   maxSeverity: "max_severity",
   scanState: "scan_state",
 };
@@ -950,7 +993,7 @@ const V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdictFields: FieldMap = {
   maliciousContentStaticResult: {
     wireName: "malicious_content_static_result",
     kind: "object",
-    fields: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
+    fields: V1alpha1Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
   },
   malwareScan: {
     wireName: "malware_scan",

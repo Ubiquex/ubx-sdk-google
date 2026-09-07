@@ -151,28 +151,28 @@ type IndexEndpoint_PrivateServiceConnectConfig struct {
 }
 
 var IndexEndpoint_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields = ubx.FieldMap{
-	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
-	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
-	"Network":        ubx.FieldSpec{WireName: "network"},
-	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
-	"State":          ubx.FieldSpec{WireName: "state"},
-}
+		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var IndexEndpoint_PrivateServiceConnectConfigFields = ubx.FieldMap{
-	"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-	"ProjectAllowlist":            ubx.FieldSpec{WireName: "project_allowlist"},
-	"PscAutomationConfigs": ubx.FieldSpec{
-		WireName: "psc_automation_configs",
-		Kind:     "list",
-		Fields:   IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
-	},
-	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
+		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
+		"PscAutomationConfigs": ubx.FieldSpec{
+			WireName: "psc_automation_configs",
+			Kind: "list",
+			Fields: IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
+		},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 type IndexEndpointConfig struct {
 	// The description of the IndexEndpoint.
@@ -233,21 +233,21 @@ type IndexEndpointAttrs struct {
 var IndexEndpoint = ubx.ResourceBinding{
 	WireType: "google_aiplatform_index_endpoint",
 	Fields: ubx.FieldMap{
-		"Description":                 ubx.FieldSpec{WireName: "description"},
-		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   IndexEndpoint_EncryptionSpecFields,
+			Kind: "object",
+			Fields: IndexEndpoint_EncryptionSpecFields,
 		},
-		"Etag":    ubx.FieldSpec{WireName: "etag"},
-		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateServiceConnectConfig": ubx.FieldSpec{
 			WireName: "private_service_connect_config",
-			Kind:     "object",
-			Fields:   IndexEndpoint_PrivateServiceConnectConfigFields,
+			Kind: "object",
+			Fields: IndexEndpoint_PrivateServiceConnectConfigFields,
 		},
 		"PublicEndpointEnabled": ubx.FieldSpec{WireName: "public_endpoint_enabled"},
 	},

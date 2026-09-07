@@ -28,6 +28,8 @@ export interface V1beta1SandboxEnvironment_Spec {
   computerUseEnvironment?: unknown | Computed<unknown>;
   /** The shell environment. */
   shellEnvironment?: unknown | Computed<unknown>;
+  /** Optional. Immutable. Whether to provision the SandboxEnvironment via the GKE TD pool. Immutable. */
+  useGkeTd?: boolean | Computed<boolean>;
 }
 
 const V1beta1SandboxEnvironment_ConnectionInfoFields: FieldMap = {
@@ -51,6 +53,7 @@ const V1beta1SandboxEnvironment_SpecFields: FieldMap = {
   },
   computerUseEnvironment: "computer_use_environment",
   shellEnvironment: "shell_environment",
+  useGkeTd: "use_gke_td",
 };
 
 export interface V1beta1SandboxEnvironmentConfig {

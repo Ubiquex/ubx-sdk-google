@@ -42,9 +42,9 @@ type V1betaWorkflowAttrs struct {
 var V1betaWorkflow = ubx.ResourceBinding{
 	WireType: "google_workflows_v1beta_workflow",
 	Fields: ubx.FieldMap{
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"SourceContents": ubx.FieldSpec{WireName: "source_contents"},
 	},

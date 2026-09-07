@@ -73,58 +73,58 @@ type ExadbVmCluster_Properties struct {
 }
 
 var ExadbVmCluster_IdentityConnectorFields = ubx.FieldMap{
-	"ConnectionState":   ubx.FieldSpec{WireName: "connection_state"},
-	"ServiceAgentEmail": ubx.FieldSpec{WireName: "service_agent_email"},
-}
+		"ConnectionState": ubx.FieldSpec{WireName: "connection_state"},
+		"ServiceAgentEmail": ubx.FieldSpec{WireName: "service_agent_email"},
+	}
 
 var ExadbVmCluster_Properties_DataCollectionOptionsFields = ubx.FieldMap{
-	"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
-	"IsHealthMonitoringEnabled":  ubx.FieldSpec{WireName: "is_health_monitoring_enabled"},
-	"IsIncidentLogsEnabled":      ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
-}
+		"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
+		"IsHealthMonitoringEnabled": ubx.FieldSpec{WireName: "is_health_monitoring_enabled"},
+		"IsIncidentLogsEnabled": ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
+	}
 
 var ExadbVmCluster_Properties_TimeZoneFields = ubx.FieldMap{
-	"Id":      ubx.FieldSpec{WireName: "id"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var ExadbVmCluster_Properties_VmFileSystemStorageFields = ubx.FieldMap{
-	"SizeInGbsPerNode": ubx.FieldSpec{WireName: "size_in_gbs_per_node"},
-}
+		"SizeInGbsPerNode": ubx.FieldSpec{WireName: "size_in_gbs_per_node"},
+	}
 
 var ExadbVmCluster_PropertiesFields = ubx.FieldMap{
-	"AdditionalEcpuCountPerNode": ubx.FieldSpec{WireName: "additional_ecpu_count_per_node"},
-	"ClusterName":                ubx.FieldSpec{WireName: "cluster_name"},
-	"DataCollectionOptions": ubx.FieldSpec{
-		WireName: "data_collection_options",
-		Kind:     "object",
-		Fields:   ExadbVmCluster_Properties_DataCollectionOptionsFields,
-	},
-	"EnabledEcpuCountPerNode": ubx.FieldSpec{WireName: "enabled_ecpu_count_per_node"},
-	"ExascaleDbStorageVault":  ubx.FieldSpec{WireName: "exascale_db_storage_vault"},
-	"GiVersion":               ubx.FieldSpec{WireName: "gi_version"},
-	"GridImageId":             ubx.FieldSpec{WireName: "grid_image_id"},
-	"Hostname":                ubx.FieldSpec{WireName: "hostname"},
-	"HostnamePrefix":          ubx.FieldSpec{WireName: "hostname_prefix"},
-	"LicenseModel":            ubx.FieldSpec{WireName: "license_model"},
-	"LifecycleState":          ubx.FieldSpec{WireName: "lifecycle_state"},
-	"MemorySizeGb":            ubx.FieldSpec{WireName: "memory_size_gb"},
-	"NodeCount":               ubx.FieldSpec{WireName: "node_count"},
-	"OciUri":                  ubx.FieldSpec{WireName: "oci_uri"},
-	"ScanListenerPortTcp":     ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
-	"ShapeAttribute":          ubx.FieldSpec{WireName: "shape_attribute"},
-	"SshPublicKeys":           ubx.FieldSpec{WireName: "ssh_public_keys"},
-	"TimeZone": ubx.FieldSpec{
-		WireName: "time_zone",
-		Kind:     "object",
-		Fields:   ExadbVmCluster_Properties_TimeZoneFields,
-	},
-	"VmFileSystemStorage": ubx.FieldSpec{
-		WireName: "vm_file_system_storage",
-		Kind:     "object",
-		Fields:   ExadbVmCluster_Properties_VmFileSystemStorageFields,
-	},
-}
+		"AdditionalEcpuCountPerNode": ubx.FieldSpec{WireName: "additional_ecpu_count_per_node"},
+		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+		"DataCollectionOptions": ubx.FieldSpec{
+			WireName: "data_collection_options",
+			Kind: "object",
+			Fields: ExadbVmCluster_Properties_DataCollectionOptionsFields,
+		},
+		"EnabledEcpuCountPerNode": ubx.FieldSpec{WireName: "enabled_ecpu_count_per_node"},
+		"ExascaleDbStorageVault": ubx.FieldSpec{WireName: "exascale_db_storage_vault"},
+		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
+		"GridImageId": ubx.FieldSpec{WireName: "grid_image_id"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"HostnamePrefix": ubx.FieldSpec{WireName: "hostname_prefix"},
+		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
+		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
+		"MemorySizeGb": ubx.FieldSpec{WireName: "memory_size_gb"},
+		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+		"OciUri": ubx.FieldSpec{WireName: "oci_uri"},
+		"ScanListenerPortTcp": ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
+		"ShapeAttribute": ubx.FieldSpec{WireName: "shape_attribute"},
+		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
+		"TimeZone": ubx.FieldSpec{
+			WireName: "time_zone",
+			Kind: "object",
+			Fields: ExadbVmCluster_Properties_TimeZoneFields,
+		},
+		"VmFileSystemStorage": ubx.FieldSpec{
+			WireName: "vm_file_system_storage",
+			Kind: "object",
+			Fields: ExadbVmCluster_Properties_VmFileSystemStorageFields,
+		},
+	}
 
 type ExadbVmClusterConfig struct {
 	// Required. Immutable. The name of the backup OdbSubnet associated with the ExadbVmCluster. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
@@ -174,20 +174,20 @@ var ExadbVmCluster = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_exadb_vm_cluster",
 	Fields: ubx.FieldMap{
 		"BackupOdbSubnet": ubx.FieldSpec{WireName: "backup_odb_subnet"},
-		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IdentityConnector": ubx.FieldSpec{
 			WireName: "identity_connector",
-			Kind:     "object",
-			Fields:   ExadbVmCluster_IdentityConnectorFields,
+			Kind: "object",
+			Fields: ExadbVmCluster_IdentityConnectorFields,
 		},
-		"Labels":     ubx.FieldSpec{WireName: "labels"},
-		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet":  ubx.FieldSpec{WireName: "odb_subnet"},
+		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind:     "object",
-			Fields:   ExadbVmCluster_PropertiesFields,
+			Kind: "object",
+			Fields: ExadbVmCluster_PropertiesFields,
 		},
 	},
 }

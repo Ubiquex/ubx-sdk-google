@@ -74,13 +74,13 @@ type FeatureAttrs struct {
 var Feature = ubx.ResourceBinding{
 	WireType: "google_aiplatform_feature",
 	Fields: ubx.FieldMap{
-		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisableMonitoring": ubx.FieldSpec{WireName: "disable_monitoring"},
-		"Etag":              ubx.FieldSpec{WireName: "etag"},
-		"Labels":            ubx.FieldSpec{WireName: "labels"},
-		"Name":              ubx.FieldSpec{WireName: "name"},
-		"PointOfContact":    ubx.FieldSpec{WireName: "point_of_contact"},
-		"ValueType":         ubx.FieldSpec{WireName: "value_type"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PointOfContact": ubx.FieldSpec{WireName: "point_of_contact"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
 		"VersionColumnName": ubx.FieldSpec{WireName: "version_column_name"},
 	},
 }

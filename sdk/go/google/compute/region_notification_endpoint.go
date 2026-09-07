@@ -24,21 +24,21 @@ type RegionNotificationEndpoint_GrpcSettings struct {
 }
 
 var RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields = ubx.FieldMap{
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var RegionNotificationEndpoint_GrpcSettingsFields = ubx.FieldMap{
-	"Authority":   ubx.FieldSpec{WireName: "authority"},
-	"Endpoint":    ubx.FieldSpec{WireName: "endpoint"},
-	"PayloadName": ubx.FieldSpec{WireName: "payload_name"},
-	"ResendInterval": ubx.FieldSpec{
-		WireName: "resend_interval",
-		Kind:     "object",
-		Fields:   RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields,
-	},
-	"RetryDurationSec": ubx.FieldSpec{WireName: "retry_duration_sec"},
-}
+		"Authority": ubx.FieldSpec{WireName: "authority"},
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"PayloadName": ubx.FieldSpec{WireName: "payload_name"},
+		"ResendInterval": ubx.FieldSpec{
+			WireName: "resend_interval",
+			Kind: "object",
+			Fields: RegionNotificationEndpoint_GrpcSettings_ResendIntervalFields,
+		},
+		"RetryDurationSec": ubx.FieldSpec{WireName: "retry_duration_sec"},
+	}
 
 type RegionNotificationEndpointConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -74,8 +74,8 @@ var RegionNotificationEndpoint = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GrpcSettings": ubx.FieldSpec{
 			WireName: "grpc_settings",
-			Kind:     "object",
-			Fields:   RegionNotificationEndpoint_GrpcSettingsFields,
+			Kind: "object",
+			Fields: RegionNotificationEndpoint_GrpcSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -17,22 +17,32 @@ class V1betaExample_Messages_Chunks_Blob:
     mime_type: Any = None
 
 @dataclasses.dataclass
+class V1betaExample_Messages_Chunks_Image:
+    alt_text: Any = None
+    data: Any = None
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class V1betaExample_Messages_Chunks_ToolCall_ToolsetTool:
     tool_id: Any = None
     toolset: Any = None
 
 @dataclasses.dataclass
 class V1betaExample_Messages_Chunks_ToolCall:
+    agent_name: Any = None
     args: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     tool: Any = None
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class V1betaExample_Messages_Chunks_ToolResponse:
+    agent_name: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     response: Any = None
     tool: Any = None
     toolset_tool: Any = None
@@ -66,15 +76,23 @@ _V1betaExample_Messages_Chunks_BlobFields = {
     "mime_type": ubx.FieldSpec(wire_name="mime_type"),
 }
 
+_V1betaExample_Messages_Chunks_ImageFields = {
+    "alt_text": ubx.FieldSpec(wire_name="alt_text"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
+}
+
 _V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields = {
     "tool_id": ubx.FieldSpec(wire_name="tool_id"),
     "toolset": ubx.FieldSpec(wire_name="toolset"),
 }
 
 _V1betaExample_Messages_Chunks_ToolCallFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "args": ubx.FieldSpec(wire_name="args"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
         wire_name="toolset_tool",
@@ -84,8 +102,10 @@ _V1betaExample_Messages_Chunks_ToolCallFields = {
 }
 
 _V1betaExample_Messages_Chunks_ToolResponseFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "response": ubx.FieldSpec(wire_name="response"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
@@ -110,7 +130,7 @@ _V1betaExample_Messages_ChunksFields = {
     "image": ubx.FieldSpec(
         wire_name="image",
         kind="object",
-        fields=_V1betaExample_Messages_Chunks_BlobFields,
+        fields=_V1betaExample_Messages_Chunks_ImageFields,
     ),
     "payload": ubx.FieldSpec(wire_name="payload"),
     "text": ubx.FieldSpec(wire_name="text"),

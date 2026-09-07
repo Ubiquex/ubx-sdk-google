@@ -27,18 +27,18 @@ type InterceptEndpointGroup_ConnectedDeploymentGroup struct {
 }
 
 var InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields = ubx.FieldMap{
-	"Location": ubx.FieldSpec{WireName: "location"},
-	"State":    ubx.FieldSpec{WireName: "state"},
-}
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var InterceptEndpointGroup_ConnectedDeploymentGroupFields = ubx.FieldMap{
-	"Locations": ubx.FieldSpec{
-		WireName: "locations",
-		Kind:     "list",
-		Fields:   InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Locations": ubx.FieldSpec{
+			WireName: "locations",
+			Kind: "list",
+			Fields: InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 type InterceptEndpointGroupConfig struct {
 	// The endpoint group's view of a connected deployment group.
@@ -81,12 +81,12 @@ var InterceptEndpointGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectedDeploymentGroup": ubx.FieldSpec{
 			WireName: "connected_deployment_group",
-			Kind:     "object",
-			Fields:   InterceptEndpointGroup_ConnectedDeploymentGroupFields,
+			Kind: "object",
+			Fields: InterceptEndpointGroup_ConnectedDeploymentGroupFields,
 		},
-		"Description":              ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"InterceptDeploymentGroup": ubx.FieldSpec{WireName: "intercept_deployment_group"},
-		"Labels":                   ubx.FieldSpec{WireName: "labels"},
-		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

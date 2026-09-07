@@ -30,9 +30,9 @@ type V1betaUserAttrs struct {
 var V1betaUser = ubx.ResourceBinding{
 	WireType: "google_alloydb_v1beta_user",
 	Fields: ubx.FieldMap{
-		"DatabaseRoles":  ubx.FieldSpec{WireName: "database_roles"},
+		"DatabaseRoles": ubx.FieldSpec{WireName: "database_roles"},
 		"KeepExtraRoles": ubx.FieldSpec{WireName: "keep_extra_roles"},
-		"Password":       ubx.FieldSpec{WireName: "password"},
-		"UserType":       ubx.FieldSpec{WireName: "user_type"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"UserType": ubx.FieldSpec{WireName: "user_type"},
 	},
 }

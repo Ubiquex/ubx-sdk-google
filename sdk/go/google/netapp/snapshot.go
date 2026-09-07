@@ -33,7 +33,7 @@ var Snapshot = ubx.ResourceBinding{
 	WireType: "google_netapp_snapshot",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

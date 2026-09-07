@@ -8,6 +8,8 @@ export interface V1betaGatewayConfig {
   displayName?: string | Computed<string>;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
+  /** Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with. */
+  streamingMode?: string | Computed<string>;
 }
 
 export interface V1betaGatewayAttrs {
@@ -19,12 +21,16 @@ export interface V1betaGatewayAttrs {
   defaultHostname: string;
   /** Optional. Display name. */
   displayName: string;
+  /** Output only. The streaming mode this gateway is actually served with, which the service resolves at creation from `streaming_mode`, the referenced API Config, and the platform default at the time. Read this rather than `streaming_mode` to determine whether a gateway supports response streaming. */
+  effectiveStreamingMode: string;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels: Record<string, string>;
   /** Output only. Resource name of the Gateway. Format: projects/{project}/locations/{location}/gateways/{gateway} */
   name: string;
   /** Output only. The current state of the Gateway. */
   state: string;
+  /** Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with. */
+  streamingMode: string;
   /** Output only. Updated time. */
   updateTime: string;
 }
@@ -35,5 +41,6 @@ export const V1betaGateway: ResourceBinding<V1betaGatewayConfig, V1betaGatewayAt
     apiConfig: "api_config",
     displayName: "display_name",
     labels: "labels",
+    streamingMode: "streaming_mode",
   },
 };

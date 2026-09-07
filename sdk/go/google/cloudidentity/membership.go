@@ -35,39 +35,39 @@ type Membership_Roles struct {
 }
 
 var Membership_PreferredMemberKeyFields = ubx.FieldMap{
-	"Id":        ubx.FieldSpec{WireName: "id"},
-	"Namespace": ubx.FieldSpec{WireName: "namespace"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	}
 
 var Membership_Roles_ExpiryDetailFields = ubx.FieldMap{
-	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-}
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	}
 
 var Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields = ubx.FieldMap{
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var Membership_Roles_RestrictionEvaluationsFields = ubx.FieldMap{
-	"MemberRestrictionEvaluation": ubx.FieldSpec{
-		WireName: "member_restriction_evaluation",
-		Kind:     "object",
-		Fields:   Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields,
-	},
-}
+		"MemberRestrictionEvaluation": ubx.FieldSpec{
+			WireName: "member_restriction_evaluation",
+			Kind: "object",
+			Fields: Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields,
+		},
+	}
 
 var Membership_RolesFields = ubx.FieldMap{
-	"ExpiryDetail": ubx.FieldSpec{
-		WireName: "expiry_detail",
-		Kind:     "object",
-		Fields:   Membership_Roles_ExpiryDetailFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"RestrictionEvaluations": ubx.FieldSpec{
-		WireName: "restriction_evaluations",
-		Kind:     "object",
-		Fields:   Membership_Roles_RestrictionEvaluationsFields,
-	},
-}
+		"ExpiryDetail": ubx.FieldSpec{
+			WireName: "expiry_detail",
+			Kind: "object",
+			Fields: Membership_Roles_ExpiryDetailFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"RestrictionEvaluations": ubx.FieldSpec{
+			WireName: "restriction_evaluations",
+			Kind: "object",
+			Fields: Membership_Roles_RestrictionEvaluationsFields,
+		},
+	}
 
 type MembershipConfig struct {
 	// A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s.
@@ -98,13 +98,13 @@ var Membership = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PreferredMemberKey": ubx.FieldSpec{
 			WireName: "preferred_member_key",
-			Kind:     "object",
-			Fields:   Membership_PreferredMemberKeyFields,
+			Kind: "object",
+			Fields: Membership_PreferredMemberKeyFields,
 		},
 		"Roles": ubx.FieldSpec{
 			WireName: "roles",
-			Kind:     "list",
-			Fields:   Membership_RolesFields,
+			Kind: "list",
+			Fields: Membership_RolesFields,
 		},
 	},
 }

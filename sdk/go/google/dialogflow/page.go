@@ -281,303 +281,303 @@ type Page_TransitionRoutes struct {
 }
 
 var Page_AdvancedSettings_AudioExportGcsDestinationFields = ubx.FieldMap{
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Page_AdvancedSettings_DtmfSettingsFields = ubx.FieldMap{
-	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
-	"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
-	"FinishDigit":                ubx.FieldSpec{WireName: "finish_digit"},
-	"InterdigitTimeoutDuration":  ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
-	"MaxDigits":                  ubx.FieldSpec{WireName: "max_digits"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
+		"FinishDigit": ubx.FieldSpec{WireName: "finish_digit"},
+		"InterdigitTimeoutDuration": ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
+		"MaxDigits": ubx.FieldSpec{WireName: "max_digits"},
+	}
 
 var Page_AdvancedSettings_LoggingSettingsFields = ubx.FieldMap{
-	"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
-	"EnableInteractionLogging":    ubx.FieldSpec{WireName: "enable_interaction_logging"},
-	"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-}
+		"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
+		"EnableInteractionLogging": ubx.FieldSpec{WireName: "enable_interaction_logging"},
+		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+	}
 
 var Page_AdvancedSettings_SpeechSettingsFields = ubx.FieldMap{
-	"EndpointerSensitivity":      ubx.FieldSpec{WireName: "endpointer_sensitivity"},
-	"Models":                     ubx.FieldSpec{WireName: "models"},
-	"NoSpeechTimeout":            ubx.FieldSpec{WireName: "no_speech_timeout"},
-	"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
-}
+		"EndpointerSensitivity": ubx.FieldSpec{WireName: "endpointer_sensitivity"},
+		"Models": ubx.FieldSpec{WireName: "models"},
+		"NoSpeechTimeout": ubx.FieldSpec{WireName: "no_speech_timeout"},
+		"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
+	}
 
 var Page_AdvancedSettingsFields = ubx.FieldMap{
-	"AudioExportGcsDestination": ubx.FieldSpec{
-		WireName: "audio_export_gcs_destination",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettings_AudioExportGcsDestinationFields,
-	},
-	"DtmfSettings": ubx.FieldSpec{
-		WireName: "dtmf_settings",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettings_DtmfSettingsFields,
-	},
-	"LoggingSettings": ubx.FieldSpec{
-		WireName: "logging_settings",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettings_LoggingSettingsFields,
-	},
-	"SpeechSettings": ubx.FieldSpec{
-		WireName: "speech_settings",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettings_SpeechSettingsFields,
-	},
-}
+		"AudioExportGcsDestination": ubx.FieldSpec{
+			WireName: "audio_export_gcs_destination",
+			Kind: "object",
+			Fields: Page_AdvancedSettings_AudioExportGcsDestinationFields,
+		},
+		"DtmfSettings": ubx.FieldSpec{
+			WireName: "dtmf_settings",
+			Kind: "object",
+			Fields: Page_AdvancedSettings_DtmfSettingsFields,
+		},
+		"LoggingSettings": ubx.FieldSpec{
+			WireName: "logging_settings",
+			Kind: "object",
+			Fields: Page_AdvancedSettings_LoggingSettingsFields,
+		},
+		"SpeechSettings": ubx.FieldSpec{
+			WireName: "speech_settings",
+			Kind: "object",
+			Fields: Page_AdvancedSettings_SpeechSettingsFields,
+		},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields = ubx.FieldMap{
-	"Metadata": ubx.FieldSpec{WireName: "metadata"},
-}
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Audio":                     ubx.FieldSpec{WireName: "audio"},
-	"Uri":                       ubx.FieldSpec{WireName: "uri"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Audio": ubx.FieldSpec{WireName: "audio"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields = ubx.FieldMap{
-	"Segments": ubx.FieldSpec{
-		WireName: "segments",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
-	},
-}
+		"Segments": ubx.FieldSpec{
+			WireName: "segments",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
+		},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Ssml":                      ubx.FieldSpec{WireName: "ssml"},
-	"Text":                      ubx.FieldSpec{WireName: "text"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Ssml": ubx.FieldSpec{WireName: "ssml"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"AudioUri":                  ubx.FieldSpec{WireName: "audio_uri"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"AudioUri": ubx.FieldSpec{WireName: "audio_uri"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields = ubx.FieldMap{
-	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-}
+		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Text":                      ubx.FieldSpec{WireName: "text"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields = ubx.FieldMap{
-	"Action":          ubx.FieldSpec{WireName: "action"},
-	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-	"Tool":            ubx.FieldSpec{WireName: "tool"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_MessageFields = ubx.FieldMap{
-	"Channel": ubx.FieldSpec{WireName: "channel"},
-	"ConversationSuccess": ubx.FieldSpec{
-		WireName: "conversation_success",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-	},
-	"EndInteraction":    ubx.FieldSpec{WireName: "end_interaction"},
-	"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
-	"LiveAgentHandoff": ubx.FieldSpec{
-		WireName: "live_agent_handoff",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-	},
-	"MixedAudio": ubx.FieldSpec{
-		WireName: "mixed_audio",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
-	},
-	"OutputAudioText": ubx.FieldSpec{
-		WireName: "output_audio_text",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
-	},
-	"Payload": ubx.FieldSpec{WireName: "payload"},
-	"PlayAudio": ubx.FieldSpec{
-		WireName: "play_audio",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
-	},
-	"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-	"TelephonyTransferCall": ubx.FieldSpec{
-		WireName: "telephony_transfer_call",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
-	},
-	"Text": ubx.FieldSpec{
-		WireName: "text",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
-	},
-	"ToolCall": ubx.FieldSpec{
-		WireName: "tool_call",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
-	},
-}
+		"Channel": ubx.FieldSpec{WireName: "channel"},
+		"ConversationSuccess": ubx.FieldSpec{
+			WireName: "conversation_success",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+		},
+		"EndInteraction": ubx.FieldSpec{WireName: "end_interaction"},
+		"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
+		"LiveAgentHandoff": ubx.FieldSpec{
+			WireName: "live_agent_handoff",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+		},
+		"MixedAudio": ubx.FieldSpec{
+			WireName: "mixed_audio",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
+		},
+		"OutputAudioText": ubx.FieldSpec{
+			WireName: "output_audio_text",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
+		},
+		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"PlayAudio": ubx.FieldSpec{
+			WireName: "play_audio",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
+		},
+		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
+		"TelephonyTransferCall": ubx.FieldSpec{
+			WireName: "telephony_transfer_call",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
+		},
+		"Text": ubx.FieldSpec{
+			WireName: "text",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
+		},
+		"ToolCall": ubx.FieldSpec{
+			WireName: "tool_call",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
+		},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_Cases_CaseContentFields = ubx.FieldMap{
-	"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
-	"Message": ubx.FieldSpec{
-		WireName: "message",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-	},
-}
+		"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
+		"Message": ubx.FieldSpec{
+			WireName: "message",
+			Kind: "object",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+		},
+	}
 
 var Page_EntryFulfillment_ConditionalCases_CasesFields = ubx.FieldMap{
-	"CaseContent": ubx.FieldSpec{
-		WireName: "case_content",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContentFields,
-	},
-	"Condition": ubx.FieldSpec{WireName: "condition"},
-}
+		"CaseContent": ubx.FieldSpec{
+			WireName: "case_content",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContentFields,
+		},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+	}
 
 var Page_EntryFulfillment_ConditionalCasesFields = ubx.FieldMap{
-	"Cases": ubx.FieldSpec{
-		WireName: "cases",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_ConditionalCases_CasesFields,
-	},
-}
+		"Cases": ubx.FieldSpec{
+			WireName: "cases",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_ConditionalCases_CasesFields,
+		},
+	}
 
 var Page_EntryFulfillment_GeneratorsFields = ubx.FieldMap{
-	"Generator":       ubx.FieldSpec{WireName: "generator"},
-	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-	"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
-}
+		"Generator": ubx.FieldSpec{WireName: "generator"},
+		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+		"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
+	}
 
 var Page_EntryFulfillment_SetParameterActionsFields = ubx.FieldMap{
-	"Parameter": ubx.FieldSpec{WireName: "parameter"},
-	"Value":     ubx.FieldSpec{WireName: "value"},
-}
+		"Parameter": ubx.FieldSpec{WireName: "parameter"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Page_EntryFulfillmentFields = ubx.FieldMap{
-	"AdvancedSettings": ubx.FieldSpec{
-		WireName: "advanced_settings",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettingsFields,
-	},
-	"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
-	"ConditionalCases": ubx.FieldSpec{
-		WireName: "conditional_cases",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_ConditionalCasesFields,
-	},
-	"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
-	"Generators": ubx.FieldSpec{
-		WireName: "generators",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_GeneratorsFields,
-	},
-	"Messages": ubx.FieldSpec{
-		WireName: "messages",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-	},
-	"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
-	"SetParameterActions": ubx.FieldSpec{
-		WireName: "set_parameter_actions",
-		Kind:     "list",
-		Fields:   Page_EntryFulfillment_SetParameterActionsFields,
-	},
-	"Tag":     ubx.FieldSpec{WireName: "tag"},
-	"Webhook": ubx.FieldSpec{WireName: "webhook"},
-}
+		"AdvancedSettings": ubx.FieldSpec{
+			WireName: "advanced_settings",
+			Kind: "object",
+			Fields: Page_AdvancedSettingsFields,
+		},
+		"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
+		"ConditionalCases": ubx.FieldSpec{
+			WireName: "conditional_cases",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_ConditionalCasesFields,
+		},
+		"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
+		"Generators": ubx.FieldSpec{
+			WireName: "generators",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_GeneratorsFields,
+		},
+		"Messages": ubx.FieldSpec{
+			WireName: "messages",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+		},
+		"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
+		"SetParameterActions": ubx.FieldSpec{
+			WireName: "set_parameter_actions",
+			Kind: "list",
+			Fields: Page_EntryFulfillment_SetParameterActionsFields,
+		},
+		"Tag": ubx.FieldSpec{WireName: "tag"},
+		"Webhook": ubx.FieldSpec{WireName: "webhook"},
+	}
 
 var Page_EventHandlersFields = ubx.FieldMap{
-	"Event":          ubx.FieldSpec{WireName: "event"},
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"TargetFlow":     ubx.FieldSpec{WireName: "target_flow"},
-	"TargetPage":     ubx.FieldSpec{WireName: "target_page"},
-	"TargetPlaybook": ubx.FieldSpec{WireName: "target_playbook"},
-	"TriggerFulfillment": ubx.FieldSpec{
-		WireName: "trigger_fulfillment",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillmentFields,
-	},
-}
+		"Event": ubx.FieldSpec{WireName: "event"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
+		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
+		"TargetPlaybook": ubx.FieldSpec{WireName: "target_playbook"},
+		"TriggerFulfillment": ubx.FieldSpec{
+			WireName: "trigger_fulfillment",
+			Kind: "object",
+			Fields: Page_EntryFulfillmentFields,
+		},
+	}
 
 var Page_Form_Parameters_FillBehaviorFields = ubx.FieldMap{
-	"InitialPromptFulfillment": ubx.FieldSpec{
-		WireName: "initial_prompt_fulfillment",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillmentFields,
-	},
-	"RepromptEventHandlers": ubx.FieldSpec{
-		WireName: "reprompt_event_handlers",
-		Kind:     "list",
-		Fields:   Page_EventHandlersFields,
-	},
-}
+		"InitialPromptFulfillment": ubx.FieldSpec{
+			WireName: "initial_prompt_fulfillment",
+			Kind: "object",
+			Fields: Page_EntryFulfillmentFields,
+		},
+		"RepromptEventHandlers": ubx.FieldSpec{
+			WireName: "reprompt_event_handlers",
+			Kind: "list",
+			Fields: Page_EventHandlersFields,
+		},
+	}
 
 var Page_Form_ParametersFields = ubx.FieldMap{
-	"AdvancedSettings": ubx.FieldSpec{
-		WireName: "advanced_settings",
-		Kind:     "object",
-		Fields:   Page_AdvancedSettingsFields,
-	},
-	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-	"EntityType":   ubx.FieldSpec{WireName: "entity_type"},
-	"FillBehavior": ubx.FieldSpec{
-		WireName: "fill_behavior",
-		Kind:     "object",
-		Fields:   Page_Form_Parameters_FillBehaviorFields,
-	},
-	"IsList":   ubx.FieldSpec{WireName: "is_list"},
-	"Redact":   ubx.FieldSpec{WireName: "redact"},
-	"Required": ubx.FieldSpec{WireName: "required"},
-}
+		"AdvancedSettings": ubx.FieldSpec{
+			WireName: "advanced_settings",
+			Kind: "object",
+			Fields: Page_AdvancedSettingsFields,
+		},
+		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
+		"FillBehavior": ubx.FieldSpec{
+			WireName: "fill_behavior",
+			Kind: "object",
+			Fields: Page_Form_Parameters_FillBehaviorFields,
+		},
+		"IsList": ubx.FieldSpec{WireName: "is_list"},
+		"Redact": ubx.FieldSpec{WireName: "redact"},
+		"Required": ubx.FieldSpec{WireName: "required"},
+	}
 
 var Page_FormFields = ubx.FieldMap{
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "list",
-		Fields:   Page_Form_ParametersFields,
-	},
-}
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "list",
+			Fields: Page_Form_ParametersFields,
+		},
+	}
 
 var Page_KnowledgeConnectorSettings_DataStoreConnectionsFields = ubx.FieldMap{
-	"DataStore":              ubx.FieldSpec{WireName: "data_store"},
-	"DataStoreType":          ubx.FieldSpec{WireName: "data_store_type"},
-	"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
-}
+		"DataStore": ubx.FieldSpec{WireName: "data_store"},
+		"DataStoreType": ubx.FieldSpec{WireName: "data_store_type"},
+		"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
+	}
 
 var Page_KnowledgeConnectorSettingsFields = ubx.FieldMap{
-	"DataStoreConnections": ubx.FieldSpec{
-		WireName: "data_store_connections",
-		Kind:     "list",
-		Fields:   Page_KnowledgeConnectorSettings_DataStoreConnectionsFields,
-	},
-	"Enabled":    ubx.FieldSpec{WireName: "enabled"},
-	"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
-	"TargetPage": ubx.FieldSpec{WireName: "target_page"},
-	"TriggerFulfillment": ubx.FieldSpec{
-		WireName: "trigger_fulfillment",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillmentFields,
-	},
-}
+		"DataStoreConnections": ubx.FieldSpec{
+			WireName: "data_store_connections",
+			Kind: "list",
+			Fields: Page_KnowledgeConnectorSettings_DataStoreConnectionsFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
+		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
+		"TriggerFulfillment": ubx.FieldSpec{
+			WireName: "trigger_fulfillment",
+			Kind: "object",
+			Fields: Page_EntryFulfillmentFields,
+		},
+	}
 
 var Page_TransitionRoutesFields = ubx.FieldMap{
-	"Condition":   ubx.FieldSpec{WireName: "condition"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Intent":      ubx.FieldSpec{WireName: "intent"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"TargetFlow":  ubx.FieldSpec{WireName: "target_flow"},
-	"TargetPage":  ubx.FieldSpec{WireName: "target_page"},
-	"TriggerFulfillment": ubx.FieldSpec{
-		WireName: "trigger_fulfillment",
-		Kind:     "object",
-		Fields:   Page_EntryFulfillmentFields,
-	},
-}
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Intent": ubx.FieldSpec{WireName: "intent"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
+		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
+		"TriggerFulfillment": ubx.FieldSpec{
+			WireName: "trigger_fulfillment",
+			Kind: "object",
+			Fields: Page_EntryFulfillmentFields,
+		},
+	}
 
 type PageConfig struct {
 	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
@@ -630,37 +630,37 @@ var Page = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedSettings": ubx.FieldSpec{
 			WireName: "advanced_settings",
-			Kind:     "object",
-			Fields:   Page_AdvancedSettingsFields,
+			Kind: "object",
+			Fields: Page_AdvancedSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EntryFulfillment": ubx.FieldSpec{
 			WireName: "entry_fulfillment",
-			Kind:     "object",
-			Fields:   Page_EntryFulfillmentFields,
+			Kind: "object",
+			Fields: Page_EntryFulfillmentFields,
 		},
 		"EventHandlers": ubx.FieldSpec{
 			WireName: "event_handlers",
-			Kind:     "list",
-			Fields:   Page_EventHandlersFields,
+			Kind: "list",
+			Fields: Page_EventHandlersFields,
 		},
 		"Form": ubx.FieldSpec{
 			WireName: "form",
-			Kind:     "object",
-			Fields:   Page_FormFields,
+			Kind: "object",
+			Fields: Page_FormFields,
 		},
 		"KnowledgeConnectorSettings": ubx.FieldSpec{
 			WireName: "knowledge_connector_settings",
-			Kind:     "object",
-			Fields:   Page_KnowledgeConnectorSettingsFields,
+			Kind: "object",
+			Fields: Page_KnowledgeConnectorSettingsFields,
 		},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TransitionRouteGroups": ubx.FieldSpec{WireName: "transition_route_groups"},
 		"TransitionRoutes": ubx.FieldSpec{
 			WireName: "transition_routes",
-			Kind:     "list",
-			Fields:   Page_TransitionRoutesFields,
+			Kind: "list",
+			Fields: Page_TransitionRoutesFields,
 		},
 	},
 }

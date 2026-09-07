@@ -32,9 +32,9 @@ type SpecialistPoolAttrs struct {
 var SpecialistPool = ubx.ResourceBinding{
 	WireType: "google_aiplatform_specialist_pool",
 	Fields: ubx.FieldMap{
-		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
-		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SpecialistManagerEmails": ubx.FieldSpec{WireName: "specialist_manager_emails"},
-		"SpecialistWorkerEmails":  ubx.FieldSpec{WireName: "specialist_worker_emails"},
+		"SpecialistWorkerEmails": ubx.FieldSpec{WireName: "specialist_worker_emails"},
 	},
 }

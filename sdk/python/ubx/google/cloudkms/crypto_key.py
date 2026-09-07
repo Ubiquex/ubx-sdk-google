@@ -74,7 +74,7 @@ class CryptoKey_Primary:
     reimport_eligible: Any = None
     # The current state of the CryptoKeyVersion.
     state: Any = None
-    # Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
+    # Optional. Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
     trusted_wrapping_enabled: Any = None
 
 @dataclasses.dataclass

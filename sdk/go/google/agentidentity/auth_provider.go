@@ -46,43 +46,43 @@ type AuthProvider_AuthProviderTypeParams struct {
 }
 
 var AuthProvider_AuthProviderTypeParams_ApiKeyFields = ubx.FieldMap{
-	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-}
+		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+	}
 
 var AuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields = ubx.FieldMap{
-	"AuthorizationUrl":   ubx.FieldSpec{WireName: "authorization_url"},
-	"ClientId":           ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret":       ubx.FieldSpec{WireName: "client_secret"},
-	"DefaultContinueUri": ubx.FieldSpec{WireName: "default_continue_uri"},
-	"EnablePkce":         ubx.FieldSpec{WireName: "enable_pkce"},
-	"RedirectUrl":        ubx.FieldSpec{WireName: "redirect_url"},
-	"TokenUrl":           ubx.FieldSpec{WireName: "token_url"},
-}
+		"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+		"DefaultContinueUri": ubx.FieldSpec{WireName: "default_continue_uri"},
+		"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
+		"RedirectUrl": ubx.FieldSpec{WireName: "redirect_url"},
+		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
+	}
 
 var AuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields = ubx.FieldMap{
-	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-	"TokenUrl":     ubx.FieldSpec{WireName: "token_url"},
-}
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+		"TokenUrl": ubx.FieldSpec{WireName: "token_url"},
+	}
 
 var AuthProvider_AuthProviderTypeParamsFields = ubx.FieldMap{
-	"ApiKey": ubx.FieldSpec{
-		WireName: "api_key",
-		Kind:     "object",
-		Fields:   AuthProvider_AuthProviderTypeParams_ApiKeyFields,
-	},
-	"GeAuthProvider": ubx.FieldSpec{WireName: "ge_auth_provider"},
-	"ThreeLeggedOauth": ubx.FieldSpec{
-		WireName: "three_legged_oauth",
-		Kind:     "object",
-		Fields:   AuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields,
-	},
-	"TwoLeggedOauth": ubx.FieldSpec{
-		WireName: "two_legged_oauth",
-		Kind:     "object",
-		Fields:   AuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields,
-	},
-}
+		"ApiKey": ubx.FieldSpec{
+			WireName: "api_key",
+			Kind: "object",
+			Fields: AuthProvider_AuthProviderTypeParams_ApiKeyFields,
+		},
+		"GeAuthProvider": ubx.FieldSpec{WireName: "ge_auth_provider"},
+		"ThreeLeggedOauth": ubx.FieldSpec{
+			WireName: "three_legged_oauth",
+			Kind: "object",
+			Fields: AuthProvider_AuthProviderTypeParams_ThreeLeggedOauthFields,
+		},
+		"TwoLeggedOauth": ubx.FieldSpec{
+			WireName: "two_legged_oauth",
+			Kind: "object",
+			Fields: AuthProvider_AuthProviderTypeParams_TwoLeggedOauthFields,
+		},
+	}
 
 type AuthProviderConfig struct {
 	// Optional. List of scopes that are allowed to be requested for this auth provider. If this list is non-empty, only scopes within this list may be requested. If this list is empty, all scopes may be requested. Scopes appearing in `blocked_scopes` are disallowed even if they appear in `allowed_scopes`. The number of allowed scopes is limited to 200.
@@ -134,13 +134,13 @@ var AuthProvider = ubx.ResourceBinding{
 		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
 		"AuthProviderTypeParams": ubx.FieldSpec{
 			WireName: "auth_provider_type_params",
-			Kind:     "object",
-			Fields:   AuthProvider_AuthProviderTypeParamsFields,
+			Kind: "object",
+			Fields: AuthProvider_AuthProviderTypeParamsFields,
 		},
 		"BlockedScopes": ubx.FieldSpec{WireName: "blocked_scopes"},
-		"Description":   ubx.FieldSpec{WireName: "description"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"WorkloadIds":   ubx.FieldSpec{WireName: "workload_ids"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"WorkloadIds": ubx.FieldSpec{WireName: "workload_ids"},
 	},
 }

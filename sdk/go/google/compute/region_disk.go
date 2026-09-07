@@ -54,44 +54,44 @@ type RegionDisk_ResourceStatus struct {
 }
 
 var RegionDisk_AsyncPrimaryDiskFields = ubx.FieldMap{
-	"ConsistencyGroupPolicy":   ubx.FieldSpec{WireName: "consistency_group_policy"},
-	"ConsistencyGroupPolicyId": ubx.FieldSpec{WireName: "consistency_group_policy_id"},
-	"Disk":                     ubx.FieldSpec{WireName: "disk"},
-	"DiskId":                   ubx.FieldSpec{WireName: "disk_id"},
-}
+		"ConsistencyGroupPolicy": ubx.FieldSpec{WireName: "consistency_group_policy"},
+		"ConsistencyGroupPolicyId": ubx.FieldSpec{WireName: "consistency_group_policy_id"},
+		"Disk": ubx.FieldSpec{WireName: "disk"},
+		"DiskId": ubx.FieldSpec{WireName: "disk_id"},
+	}
 
 var RegionDisk_DiskEncryptionKeyFields = ubx.FieldMap{
-	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
-	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
-	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
+		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+		"Sha256": ubx.FieldSpec{WireName: "sha256"},
+	}
 
 var RegionDisk_GuestOsFeaturesFields = ubx.FieldMap{
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var RegionDisk_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var RegionDisk_ResourceStatus_AsyncPrimaryDiskFields = ubx.FieldMap{
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var RegionDisk_ResourceStatusFields = ubx.FieldMap{
-	"AsyncPrimaryDisk": ubx.FieldSpec{
-		WireName: "async_primary_disk",
-		Kind:     "object",
-		Fields:   RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
-	},
-	"AsyncSecondaryDisks": ubx.FieldSpec{
-		WireName: "async_secondary_disks",
-		Kind:     "map",
-		Fields:   RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
-	},
-}
+		"AsyncPrimaryDisk": ubx.FieldSpec{
+			WireName: "async_primary_disk",
+			Kind: "object",
+			Fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+		},
+		"AsyncSecondaryDisks": ubx.FieldSpec{
+			WireName: "async_secondary_disks",
+			Kind: "map",
+			Fields: RegionDisk_ResourceStatus_AsyncPrimaryDiskFields,
+		},
+	}
 
 type RegionDiskConfig struct {
 	// The access mode of the disk. - READ_WRITE_SINGLE: The default AccessMode, means the disk can be attached to single instance in RW mode. - READ_WRITE_MANY: The AccessMode means the disk can be attached to multiple instances in RW mode. - READ_ONLY_MANY: The AccessMode means the disk can be attached to multiple instances in RO mode. The AccessMode is only valid for Hyperdisk disk types.
@@ -134,7 +134,7 @@ type RegionDiskConfig struct {
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus   any
+	ResourceStatus any
 	// Size, in GB, of the persistent disk. You can specify this field when creating a persistent disk using thesourceImage, sourceSnapshot, orsourceDisk parameter, or specify it alone to create an empty persistent disk. If you specify this field along with a source, the value ofsizeGb must not be less than the size of the source. Acceptable values are greater than 0.
 	SizeGb any
 	// The source disk used to create this disk. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
@@ -212,7 +212,7 @@ type RegionDiskAttrs struct {
 	ReplicaZones any
 	// Resource policies applied to this disk for automatic snapshot creations.
 	ResourcePolicies any
-	ResourceStatus   any
+	ResourceStatus any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. [Output Only] Reserved for future use.
@@ -262,64 +262,64 @@ type RegionDiskAttrs struct {
 var RegionDisk = ubx.ResourceBinding{
 	WireType: "google_compute_region_disk",
 	Fields: ubx.FieldMap{
-		"AccessMode":   ubx.FieldSpec{WireName: "access_mode"},
+		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
 		"Architecture": ubx.FieldSpec{WireName: "architecture"},
 		"AsyncPrimaryDisk": ubx.FieldSpec{
 			WireName: "async_primary_disk",
-			Kind:     "object",
-			Fields:   RegionDisk_AsyncPrimaryDiskFields,
+			Kind: "object",
+			Fields: RegionDisk_AsyncPrimaryDiskFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionKey": ubx.FieldSpec{
 			WireName: "disk_encryption_key",
-			Kind:     "object",
-			Fields:   RegionDisk_DiskEncryptionKeyFields,
+			Kind: "object",
+			Fields: RegionDisk_DiskEncryptionKeyFields,
 		},
 		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
 		"GuestOsFeatures": ubx.FieldSpec{
 			WireName: "guest_os_features",
-			Kind:     "list",
-			Fields:   RegionDisk_GuestOsFeaturesFields,
+			Kind: "list",
+			Fields: RegionDisk_GuestOsFeaturesFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes":     ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses":         ubx.FieldSpec{WireName: "licenses"},
-		"LocationHint":     ubx.FieldSpec{WireName: "location_hint"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Options":          ubx.FieldSpec{WireName: "options"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses": ubx.FieldSpec{WireName: "licenses"},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Options": ubx.FieldSpec{WireName: "options"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   RegionDisk_ParamsFields,
+			Kind: "object",
+			Fields: RegionDisk_ParamsFields,
 		},
 		"PhysicalBlockSizeBytes": ubx.FieldSpec{WireName: "physical_block_size_bytes"},
-		"ProvisionedIops":        ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput":  ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"ReplicaZones":           ubx.FieldSpec{WireName: "replica_zones"},
-		"ResourcePolicies":       ubx.FieldSpec{WireName: "resource_policies"},
+		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
+		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
+		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind:     "object",
-			Fields:   RegionDisk_ResourceStatusFields,
+			Kind: "object",
+			Fields: RegionDisk_ResourceStatusFields,
 		},
-		"SizeGb":      ubx.FieldSpec{WireName: "size_gb"},
-		"SourceDisk":  ubx.FieldSpec{WireName: "source_disk"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
 		"SourceImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_image_encryption_key",
-			Kind:     "object",
-			Fields:   RegionDisk_DiskEncryptionKeyFields,
+			Kind: "object",
+			Fields: RegionDisk_DiskEncryptionKeyFields,
 		},
 		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"SourceSnapshot":        ubx.FieldSpec{WireName: "source_snapshot"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
 		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_snapshot_encryption_key",
-			Kind:     "object",
-			Fields:   RegionDisk_DiskEncryptionKeyFields,
+			Kind: "object",
+			Fields: RegionDisk_DiskEncryptionKeyFields,
 		},
 		"SourceStorageObject": ubx.FieldSpec{WireName: "source_storage_object"},
-		"StoragePool":         ubx.FieldSpec{WireName: "storage_pool"},
-		"Type":                ubx.FieldSpec{WireName: "type"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

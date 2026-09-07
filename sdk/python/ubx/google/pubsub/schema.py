@@ -7,7 +7,21 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Schema_CompiledProtoSchema:
+    # Required. The compiled FileDescriptorSet binary.
+    compiled_bytes: Any = None
+    # Required. The name of the root message type in the schema.
+    root_message: Any = None
+
+_Schema_CompiledProtoSchemaFields = {
+    "compiled_bytes": ubx.FieldSpec(wire_name="compiled_bytes"),
+    "root_message": ubx.FieldSpec(wire_name="root_message"),
+}
+
+@dataclasses.dataclass
 class SchemaConfig:
+    # Configuration specific to compiled Protocol Buffer schemas.
+    compiled_proto_schema: Any = None
     # The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.
     definition: Any = None
     # Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
@@ -17,6 +31,8 @@ class SchemaConfig:
 
 @dataclasses.dataclass
 class SchemaAttrs:
+    # Configuration specific to compiled Protocol Buffer schemas.
+    compiled_proto_schema: Any = None
     # The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.
     definition: Any = None
     # Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
@@ -31,6 +47,11 @@ class SchemaAttrs:
 Schema = ubx.ResourceBinding(
     wire_type="google_pubsub_schema",
     fields={
+        "compiled_proto_schema": ubx.FieldSpec(
+            wire_name="compiled_proto_schema",
+            kind="object",
+            fields=_Schema_CompiledProtoSchemaFields,
+        ),
         "definition": ubx.FieldSpec(wire_name="definition"),
         "name": ubx.FieldSpec(wire_name="name"),
         "type": ubx.FieldSpec(wire_name="type"),

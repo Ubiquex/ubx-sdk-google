@@ -28,7 +28,7 @@ _V1beta1Workspace_PrivateResourceMetadataFields = {
 class V1beta1WorkspaceConfig:
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
-    # Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
+    # Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management.
     depth: Any = None
     # Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
     disable_moves: Any = None
@@ -47,7 +47,7 @@ class V1beta1WorkspaceAttrs:
     create_time: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
-    # Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
+    # Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management.
     depth: Any = None
     # Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
     disable_moves: Any = None

@@ -9,8 +9,8 @@ type AlphaTargetVpnGateway_Params struct {
 }
 
 var AlphaTargetVpnGateway_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type AlphaTargetVpnGatewayConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -27,7 +27,7 @@ type AlphaTargetVpnGatewayConfig struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params  any
+	Params any
 	// [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any
 	// [Output Only] Server-defined URL for the resource.
@@ -57,7 +57,7 @@ type AlphaTargetVpnGatewayAttrs struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params  any
+	Params any
 	// [Output Only] URL of the region where the target VPN gateway resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
 	Region any
 	// [Output Only] Server-defined URL for the resource.
@@ -71,21 +71,21 @@ type AlphaTargetVpnGatewayAttrs struct {
 var AlphaTargetVpnGateway = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_target_vpn_gateway",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"ForwardingRules":  ubx.FieldSpec{WireName: "forwarding_rules"},
-		"Id":               ubx.FieldSpec{WireName: "id"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ForwardingRules": ubx.FieldSpec{WireName: "forwarding_rules"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Network":          ubx.FieldSpec{WireName: "network"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   AlphaTargetVpnGateway_ParamsFields,
+			Kind: "object",
+			Fields: AlphaTargetVpnGateway_ParamsFields,
 		},
-		"Region":   ubx.FieldSpec{WireName: "region"},
+		"Region": ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Status":   ubx.FieldSpec{WireName: "status"},
-		"Tunnels":  ubx.FieldSpec{WireName: "tunnels"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Tunnels": ubx.FieldSpec{WireName: "tunnels"},
 	},
 }

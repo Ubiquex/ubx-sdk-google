@@ -13,10 +13,10 @@ type SingleTenantHsmInstance_QuorumAuth struct {
 }
 
 var SingleTenantHsmInstance_QuorumAuthFields = ubx.FieldMap{
-	"RequiredApproverCount":  ubx.FieldSpec{WireName: "required_approver_count"},
-	"TotalApproverCount":     ubx.FieldSpec{WireName: "total_approver_count"},
-	"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
-}
+		"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
+		"TotalApproverCount": ubx.FieldSpec{WireName: "total_approver_count"},
+		"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
+	}
 
 type SingleTenantHsmInstanceConfig struct {
 	// Optional. Immutable. Indicates whether key portability is enabled for the SingleTenantHsmInstance. This can only be set at creation time. Key portability features are disabled by default.
@@ -50,11 +50,11 @@ var SingleTenantHsmInstance = ubx.ResourceBinding{
 	WireType: "google_cloudkms_single_tenant_hsm_instance",
 	Fields: ubx.FieldMap{
 		"KeyPortabilityEnabled": ubx.FieldSpec{WireName: "key_portability_enabled"},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"QuorumAuth": ubx.FieldSpec{
 			WireName: "quorum_auth",
-			Kind:     "object",
-			Fields:   SingleTenantHsmInstance_QuorumAuthFields,
+			Kind: "object",
+			Fields: SingleTenantHsmInstance_QuorumAuthFields,
 		},
 	},
 }

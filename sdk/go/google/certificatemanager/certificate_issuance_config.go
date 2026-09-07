@@ -14,16 +14,16 @@ type CertificateIssuanceConfig_CertificateAuthorityConfig struct {
 }
 
 var CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields = ubx.FieldMap{
-	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-}
+		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+	}
 
 var CertificateIssuanceConfig_CertificateAuthorityConfigFields = ubx.FieldMap{
-	"CertificateAuthorityServiceConfig": ubx.FieldSpec{
-		WireName: "certificate_authority_service_config",
-		Kind:     "object",
-		Fields:   CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields,
-	},
-}
+		"CertificateAuthorityServiceConfig": ubx.FieldSpec{
+			WireName: "certificate_authority_service_config",
+			Kind: "object",
+			Fields: CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields,
+		},
+	}
 
 type CertificateIssuanceConfigConfig struct {
 	// The CA that issues the workload certificate. It includes CA address, type, authentication to CA service, etc.
@@ -72,15 +72,15 @@ var CertificateIssuanceConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CertificateAuthorityConfig": ubx.FieldSpec{
 			WireName: "certificate_authority_config",
-			Kind:     "object",
-			Fields:   CertificateIssuanceConfig_CertificateAuthorityConfigFields,
+			Kind: "object",
+			Fields: CertificateIssuanceConfig_CertificateAuthorityConfigFields,
 		},
-		"Description":              ubx.FieldSpec{WireName: "description"},
-		"KeyAlgorithm":             ubx.FieldSpec{WireName: "key_algorithm"},
-		"Labels":                   ubx.FieldSpec{WireName: "labels"},
-		"Lifetime":                 ubx.FieldSpec{WireName: "lifetime"},
-		"Name":                     ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Lifetime": ubx.FieldSpec{WireName: "lifetime"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RotationWindowPercentage": ubx.FieldSpec{WireName: "rotation_window_percentage"},
-		"Tags":                     ubx.FieldSpec{WireName: "tags"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

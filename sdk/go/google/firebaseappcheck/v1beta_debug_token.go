@@ -31,8 +31,8 @@ var V1betaDebugToken = ubx.ResourceBinding{
 	WireType: "google_firebaseappcheck_v1beta_debug_token",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Token":       ubx.FieldSpec{WireName: "token"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Token": ubx.FieldSpec{WireName: "token"},
 	},
 }

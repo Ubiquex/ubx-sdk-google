@@ -19,7 +19,7 @@ export interface V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpec {
 }
 
 export interface V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpec {
-  /** Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED. */
+  /** Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED. */
   codeExecutionRegion?: string | Computed<string>;
   /** Required. Python function. Expected user to define the following function, e.g.: def evaluate(instance: dict[str, Any]) -> float: Please include this function signature in the code snippet. Instance is the evaluation instance, any fields populated in the instance are available to the function as instance[field_name]. Example: Example input: ``` instance= EvaluationInstance( response=EvaluationInstance.InstanceData(text="The answer is 4."), reference=EvaluationInstance.InstanceData(text="4") ) ``` Example converted input: ``` { 'response': {'text': 'The answer is 4.'}, 'reference': {'text': '4'} } ``` Example python function: ``` def evaluate(instance: dict[str, Any]) -> float: if instance'response' == instance'reference': return 1.0 return 0.0 ``` CustomCodeExecutionSpec is also supported in Batch Evaluation (EvalDataset RPC) and Tuning Evaluation. Each line in the input jsonl file will be converted to dict[str, Any] and passed to the evaluation function. */
   evaluationFunction?: string | Computed<string>;
@@ -43,8 +43,6 @@ export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutorate
   languageCodes?: string[] | Computed<string[]>;
   /** Deprecated: Use top-level `language_codes` instead. Provides hints to the model about possible languages present in the audio. */
   languageHints?: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
-  /** Optional. Configures transcription mode. Supported values: `VERBATIM`, `SMART`. If unspecified, defaults to `VERBATIM` transcription. In `SMART` mode, the model performs disfluency removal (eliminating filler words, repetitions, and false starts), light grammatical cleanup, automatic formatting (paragraphs, bullet points, numbered lists), and minor user edits (inline self-corrections). Timestamps and diarization are incompatible with mode `SMART`. */
-  mode?: string | Computed<string>;
   /** Optional. Configures word-level timestamp generation. */
   wordTimestamp?: boolean | Computed<boolean>;
 }
@@ -219,6 +217,13 @@ export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutorate
   thinkingLevel?: string | Computed<string>;
 }
 
+export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig {
+  /** Optional. If `true`, the model will generate audio when the target language is spoken, essentially it will parrot the input. If `false`, we will not produce audio for the target language. */
+  echoTargetLanguage?: boolean | Computed<boolean>;
+  /** Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr"). */
+  targetLanguageCode?: string | Computed<string>;
+}
+
 export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig {
   /** Optional. If enabled, audio timestamps will be included in the request to the model. This can be useful for synchronizing audio with other modalities in the response. */
   audioTimestamp?: boolean | Computed<boolean>;
@@ -270,6 +275,8 @@ export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutorate
   topK?: number | Computed<number>;
   /** Optional. Specifies the nucleus sampling threshold. The model considers only the smallest set of tokens whose cumulative probability is at least `top_p`. This helps generate more diverse and less repetitive responses. For example, a `top_p` of 0.9 means the model considers tokens until the cumulative probability of the tokens to select from reaches 0.9. It's recommended to adjust either temperature or `top_p`, but not both. */
   topP?: number | Computed<number>;
+  /** Config for translation features. */
+  translationConfig?: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig | Computed<V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig>;
 }
 
 export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig {
@@ -291,7 +298,7 @@ export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRub
 }
 
 export interface V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig {
-  /** Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used. */
+  /** Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used. */
   codeExecutionRegion?: string | Computed<string>;
   /** Required. Python function for parsing results. The function should be defined within this string. The function takes a list of strings (LLM responses) and should return either a list of dictionaries (for rubrics) or a single dictionary (for a metric result). Example function signature: def parse(responses: list[str]) -> list[dict[str, Any]] | dict[str, Any]: When parsing rubrics, return a list of dictionaries, where each dictionary represents a Rubric. Example for rubrics: [ { "content": {"property": {"description": "The response is factual."}}, "type": "FACTUALITY", "importance": "HIGH" }, { "content": {"property": {"description": "The response is fluent."}}, "type": "FLUENCY", "importance": "MEDIUM" } ] When parsing critique results, return a dictionary representing a MetricResult. Example for a metric result: { "score": 0.8, "explanation": "The model followed most instructions.", "rubric_verdicts": [...] } ... code for result extraction and aggregation */
   parsingFunction?: string | Computed<string>;
@@ -446,7 +453,6 @@ const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
     kind: "object",
     fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
   },
-  mode: "mode",
   wordTimestamp: "word_timestamp",
 };
 
@@ -629,6 +635,11 @@ const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
   thinkingLevel: "thinking_level",
 };
 
+const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields: FieldMap = {
+  echoTargetLanguage: "echo_target_language",
+  targetLanguageCode: "target_language_code",
+};
+
 const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields: FieldMap = {
   audioTimestamp: "audio_timestamp",
   audioTranscriptionConfig: {
@@ -687,6 +698,11 @@ const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
   },
   topK: "top_k",
   topP: "top_p",
+  translationConfig: {
+    wireName: "translation_config",
+    kind: "object",
+    fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+  },
 };
 
 const V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields: FieldMap = {

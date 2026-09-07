@@ -291,23 +291,6 @@ class ContentPolicy_ContentPolicy_InspectConfig:
     rule_set: Any = None
 
 @dataclasses.dataclass
-class ContentPolicy_ContentPolicy_InspectTemplate:
-    # Optional. Enables the use of [limited-availability built-in infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes) in inspect_config. These infoTypes are supported only in specific regions and can cause scanning errors if used elsewhere.
-    allow_limited_availability_info_types: Any = None
-    # Output only. The creation timestamp of an inspectTemplate.
-    create_time: Any = None
-    # Short description (max 256 chars).
-    description: Any = None
-    # Display name (max 256 chars).
-    display_name: Any = None
-    # Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used.
-    inspect_config: Any = None
-    # Output only. The template name. The template will have one of the following formats: `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`;
-    name: Any = None
-    # Output only. The last update timestamp of an inspectTemplate.
-    update_time: Any = None
-
-@dataclasses.dataclass
 class ContentPolicy_ContentPolicy_LoggingConfigs_LogToBigQuery:
     # The BigQuery dataset ID this applies to. (AI-inferred)
     dataset_id: Any = None
@@ -346,8 +329,6 @@ class ContentPolicy_ContentPolicy_Rules:
     action: Any = None
     # The condition(s) that must hold for this rule to apply. (AI-inferred)
     conditions: Any = None
-    # Whether the boolean result of evaluating this condition is returned directly, without stopping the scan. (AI-inferred)
-    return_verdict: Any = None
 
 @dataclasses.dataclass
 class ContentPolicy_ContentPolicy:
@@ -365,8 +346,6 @@ class ContentPolicy_ContentPolicy:
     input_too_large: Any = None
     # Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used.
     inspect_config: Any = None
-    # The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more.
-    inspect_template: Any = None
     # Optional. Log the actions taken by the content policy to external systems.
     logging_configs: Any = None
     # Output only. Resource name of the policy.
@@ -763,20 +742,6 @@ _ContentPolicy_ContentPolicy_InspectConfigFields = {
     ),
 }
 
-_ContentPolicy_ContentPolicy_InspectTemplateFields = {
-    "allow_limited_availability_info_types": ubx.FieldSpec(wire_name="allow_limited_availability_info_types"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "inspect_config": ubx.FieldSpec(
-        wire_name="inspect_config",
-        kind="object",
-        fields=_ContentPolicy_ContentPolicy_InspectConfigFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 _ContentPolicy_ContentPolicy_LoggingConfigs_LogToBigQueryFields = {
     "dataset_id": ubx.FieldSpec(wire_name="dataset_id"),
     "project_id": ubx.FieldSpec(wire_name="project_id"),
@@ -824,7 +789,6 @@ _ContentPolicy_ContentPolicy_RulesFields = {
         kind="list",
         fields=_ContentPolicy_ContentPolicy_Rules_ConditionsFields,
     ),
-    "return_verdict": ubx.FieldSpec(wire_name="return_verdict"),
 }
 
 _ContentPolicy_ContentPolicyFields = {
@@ -854,11 +818,6 @@ _ContentPolicy_ContentPolicyFields = {
         wire_name="inspect_config",
         kind="object",
         fields=_ContentPolicy_ContentPolicy_InspectConfigFields,
-    ),
-    "inspect_template": ubx.FieldSpec(
-        wire_name="inspect_template",
-        kind="object",
-        fields=_ContentPolicy_ContentPolicy_InspectTemplateFields,
     ),
     "logging_configs": ubx.FieldSpec(
         wire_name="logging_configs",
@@ -906,8 +865,6 @@ class ContentPolicyAttrs:
     input_too_large: Any = None
     # Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used.
     inspect_config: Any = None
-    # The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more.
-    inspect_template: Any = None
     # Optional. Log the actions taken by the content policy to external systems.
     logging_configs: Any = None
     # Output only. Resource name of the policy.

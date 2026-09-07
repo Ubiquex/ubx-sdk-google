@@ -19,16 +19,16 @@ type V1beta1InboundSsoAssignment_SignInBehavior struct {
 }
 
 var V1beta1InboundSsoAssignment_OidcSsoInfoFields = ubx.FieldMap{
-	"InboundOidcSsoProfile": ubx.FieldSpec{WireName: "inbound_oidc_sso_profile"},
-}
+		"InboundOidcSsoProfile": ubx.FieldSpec{WireName: "inbound_oidc_sso_profile"},
+	}
 
 var V1beta1InboundSsoAssignment_SamlSsoInfoFields = ubx.FieldMap{
-	"InboundSamlSsoProfile": ubx.FieldSpec{WireName: "inbound_saml_sso_profile"},
-}
+		"InboundSamlSsoProfile": ubx.FieldSpec{WireName: "inbound_saml_sso_profile"},
+	}
 
 var V1beta1InboundSsoAssignment_SignInBehaviorFields = ubx.FieldMap{
-	"RedirectCondition": ubx.FieldSpec{WireName: "redirect_condition"},
-}
+		"RedirectCondition": ubx.FieldSpec{WireName: "redirect_condition"},
+	}
 
 type V1beta1InboundSsoAssignmentConfig struct {
 	// Immutable. The customer. For example: `customers/C0123abc`.
@@ -76,22 +76,22 @@ var V1beta1InboundSsoAssignment = ubx.ResourceBinding{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
 		"OidcSsoInfo": ubx.FieldSpec{
 			WireName: "oidc_sso_info",
-			Kind:     "object",
-			Fields:   V1beta1InboundSsoAssignment_OidcSsoInfoFields,
+			Kind: "object",
+			Fields: V1beta1InboundSsoAssignment_OidcSsoInfoFields,
 		},
 		"Rank": ubx.FieldSpec{WireName: "rank"},
 		"SamlSsoInfo": ubx.FieldSpec{
 			WireName: "saml_sso_info",
-			Kind:     "object",
-			Fields:   V1beta1InboundSsoAssignment_SamlSsoInfoFields,
+			Kind: "object",
+			Fields: V1beta1InboundSsoAssignment_SamlSsoInfoFields,
 		},
 		"SignInBehavior": ubx.FieldSpec{
 			WireName: "sign_in_behavior",
-			Kind:     "object",
-			Fields:   V1beta1InboundSsoAssignment_SignInBehaviorFields,
+			Kind: "object",
+			Fields: V1beta1InboundSsoAssignment_SignInBehaviorFields,
 		},
-		"SsoMode":       ubx.FieldSpec{WireName: "sso_mode"},
-		"TargetGroup":   ubx.FieldSpec{WireName: "target_group"},
+		"SsoMode": ubx.FieldSpec{WireName: "sso_mode"},
+		"TargetGroup": ubx.FieldSpec{WireName: "target_group"},
 		"TargetOrgUnit": ubx.FieldSpec{WireName: "target_org_unit"},
 	},
 }

@@ -27,24 +27,24 @@ type Destination_StateTimeline struct {
 }
 
 var Destination_EndpointsFields = ubx.FieldMap{
-	"Asn":        ubx.FieldSpec{WireName: "asn"},
-	"Csp":        ubx.FieldSpec{WireName: "csp"},
-	"State":      ubx.FieldSpec{WireName: "state"},
-	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-}
+		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"Csp": ubx.FieldSpec{WireName: "csp"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var Destination_StateTimeline_StatesFields = ubx.FieldMap{
-	"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-	"State":         ubx.FieldSpec{WireName: "state"},
-}
+		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var Destination_StateTimelineFields = ubx.FieldMap{
-	"States": ubx.FieldSpec{
-		WireName: "states",
-		Kind:     "list",
-		Fields:   Destination_StateTimeline_StatesFields,
-	},
-}
+		"States": ubx.FieldSpec{
+			WireName: "states",
+			Kind: "list",
+			Fields: Destination_StateTimeline_StatesFields,
+		},
+	}
 
 type DestinationConfig struct {
 	// Optional. A description of this resource.
@@ -92,17 +92,17 @@ var Destination = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind:     "list",
-			Fields:   Destination_EndpointsFields,
+			Kind: "list",
+			Fields: Destination_EndpointsFields,
 		},
-		"Etag":     ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"IpPrefix": ubx.FieldSpec{WireName: "ip_prefix"},
-		"Labels":   ubx.FieldSpec{WireName: "labels"},
-		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"StateTimeline": ubx.FieldSpec{
 			WireName: "state_timeline",
-			Kind:     "object",
-			Fields:   Destination_StateTimelineFields,
+			Kind: "object",
+			Fields: Destination_StateTimelineFields,
 		},
 	},
 }

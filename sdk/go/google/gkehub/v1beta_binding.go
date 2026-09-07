@@ -9,8 +9,8 @@ type V1betaBinding_State struct {
 }
 
 var V1betaBinding_StateFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 type V1betaBindingConfig struct {
 	// Optional. Labels for this MembershipBinding.
@@ -46,12 +46,12 @@ var V1betaBinding = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_binding",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
-		"Scope":  ubx.FieldSpec{WireName: "scope"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   V1betaBinding_StateFields,
+			Kind: "object",
+			Fields: V1betaBinding_StateFields,
 		},
 	},
 }

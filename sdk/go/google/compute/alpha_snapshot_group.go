@@ -4,24 +4,24 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaSnapshotGroup_SourceInfo struct {
-	ConsistencyGroup   any
+	ConsistencyGroup any
 	ConsistencyGroupId any
 }
 
 type AlphaSnapshotGroup_SourceInstantSnapshotGroupInfo struct {
-	InstantSnapshotGroup   any
+	InstantSnapshotGroup any
 	InstantSnapshotGroupId any
 }
 
 var AlphaSnapshotGroup_SourceInfoFields = ubx.FieldMap{
-	"ConsistencyGroup":   ubx.FieldSpec{WireName: "consistency_group"},
-	"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
-}
+		"ConsistencyGroup": ubx.FieldSpec{WireName: "consistency_group"},
+		"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
+	}
 
 var AlphaSnapshotGroup_SourceInstantSnapshotGroupInfoFields = ubx.FieldMap{
-	"InstantSnapshotGroup":   ubx.FieldSpec{WireName: "instant_snapshot_group"},
-	"InstantSnapshotGroupId": ubx.FieldSpec{WireName: "instant_snapshot_group_id"},
-}
+		"InstantSnapshotGroup": ubx.FieldSpec{WireName: "instant_snapshot_group"},
+		"InstantSnapshotGroupId": ubx.FieldSpec{WireName: "instant_snapshot_group_id"},
+	}
 
 type AlphaSnapshotGroupConfig struct {
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
@@ -65,17 +65,17 @@ var AlphaSnapshotGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_snapshot_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SourceInfo": ubx.FieldSpec{
 			WireName: "source_info",
-			Kind:     "object",
-			Fields:   AlphaSnapshotGroup_SourceInfoFields,
+			Kind: "object",
+			Fields: AlphaSnapshotGroup_SourceInfoFields,
 		},
 		"SourceInstantSnapshotGroup": ubx.FieldSpec{WireName: "source_instant_snapshot_group"},
 		"SourceInstantSnapshotGroupInfo": ubx.FieldSpec{
 			WireName: "source_instant_snapshot_group_info",
-			Kind:     "object",
-			Fields:   AlphaSnapshotGroup_SourceInstantSnapshotGroupInfoFields,
+			Kind: "object",
+			Fields: AlphaSnapshotGroup_SourceInstantSnapshotGroupInfoFields,
 		},
 	},
 }

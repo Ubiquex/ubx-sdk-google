@@ -21,6 +21,14 @@ class Example_Messages_Chunks_Blob:
     mime_type: Any = None
 
 @dataclasses.dataclass
+class Example_Messages_Chunks_Image:
+    alt_text: Any = None
+    # The literal data payload. (AI-inferred)
+    data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class Example_Messages_Chunks_ToolCall_ToolsetTool:
     # An identifier for this tool, unique within its own containing toolset. (AI-inferred)
     tool_id: Any = None
@@ -29,12 +37,14 @@ class Example_Messages_Chunks_ToolCall_ToolsetTool:
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_ToolCall:
+    agent_name: Any = None
     # The argument(s) passed to this call. (AI-inferred)
     args: Any = None
     # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
     # An identifier for this item. (AI-inferred)
     id: Any = None
+    parent_tool_call_id: Any = None
     # A reference to a single tool. (AI-inferred)
     tool: Any = None
     # A reference to a specific tool within a toolset. (AI-inferred)
@@ -42,10 +52,12 @@ class Example_Messages_Chunks_ToolCall:
 
 @dataclasses.dataclass
 class Example_Messages_Chunks_ToolResponse:
+    agent_name: Any = None
     # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
     # An identifier for this item. (AI-inferred)
     id: Any = None
+    parent_tool_call_id: Any = None
     # The response produced for this request. (AI-inferred)
     response: Any = None
     # A reference to a single tool. (AI-inferred)
@@ -95,15 +107,23 @@ _Example_Messages_Chunks_BlobFields = {
     "mime_type": ubx.FieldSpec(wire_name="mime_type"),
 }
 
+_Example_Messages_Chunks_ImageFields = {
+    "alt_text": ubx.FieldSpec(wire_name="alt_text"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
+}
+
 _Example_Messages_Chunks_ToolCall_ToolsetToolFields = {
     "tool_id": ubx.FieldSpec(wire_name="tool_id"),
     "toolset": ubx.FieldSpec(wire_name="toolset"),
 }
 
 _Example_Messages_Chunks_ToolCallFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "args": ubx.FieldSpec(wire_name="args"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
         wire_name="toolset_tool",
@@ -113,8 +133,10 @@ _Example_Messages_Chunks_ToolCallFields = {
 }
 
 _Example_Messages_Chunks_ToolResponseFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "response": ubx.FieldSpec(wire_name="response"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
@@ -139,7 +161,7 @@ _Example_Messages_ChunksFields = {
     "image": ubx.FieldSpec(
         wire_name="image",
         kind="object",
-        fields=_Example_Messages_Chunks_BlobFields,
+        fields=_Example_Messages_Chunks_ImageFields,
     ),
     "payload": ubx.FieldSpec(wire_name="payload"),
     "text": ubx.FieldSpec(wire_name="text"),

@@ -4,13 +4,13 @@ package firebasedataconnect
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaService_Connectors_ClientCache struct {
-	EntityIdIncluded        any
+	EntityIdIncluded any
 	StrictValidationEnabled any
 }
 
 type V1betaService_Connectors_Source_Files struct {
 	Content any
-	Path    any
+	Path any
 }
 
 type V1betaService_Connectors_Source struct {
@@ -20,68 +20,68 @@ type V1betaService_Connectors_Source struct {
 type V1betaService_Connectors struct {
 	Annotations any
 	ClientCache any
-	CreateTime  any
+	CreateTime any
 	DisplayName any
-	Etag        any
-	Labels      any
-	Name        any
+	Etag any
+	Labels any
+	Name any
 	Reconciling any
-	Source      any
-	Uid         any
-	UpdateTime  any
+	Source any
+	Uid any
+	UpdateTime any
 }
 
 type V1betaService_Schemas_Datasources_HttpGraphql struct {
 	Timeout any
-	Uri     any
+	Uri any
 }
 
 type V1betaService_Schemas_Datasources_Postgresql_CloudSql struct {
-	Edition  any
+	Edition any
 	Instance any
 }
 
 type V1betaService_Schemas_Datasources_Postgresql struct {
-	CloudSql         any
-	Database         any
-	Ephemeral        any
-	Schema           any
-	SchemaMigration  any
+	CloudSql any
+	Database any
+	Ephemeral any
+	Schema any
+	SchemaMigration any
 	SchemaValidation any
-	Unlinked         any
+	Unlinked any
 }
 
 type V1betaService_Schemas_Datasources struct {
 	HttpGraphql any
-	Postgresql  any
+	Postgresql any
 }
 
 type V1betaService_Schemas struct {
 	Annotations any
-	CreateTime  any
+	CreateTime any
 	Datasources any
 	DisplayName any
-	Etag        any
-	Labels      any
-	Name        any
+	Etag any
+	Labels any
+	Name any
 	Reconciling any
-	Source      any
-	Uid         any
-	UpdateTime  any
+	Source any
+	Uid any
+	UpdateTime any
 }
 
 var V1betaService_Connectors_Source_FilesFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Path":    ubx.FieldSpec{WireName: "path"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var V1betaService_Connectors_SourceFields = ubx.FieldMap{
-	"Files": ubx.FieldSpec{
-		WireName: "files",
-		Kind:     "list",
-		Fields:   V1betaService_Connectors_Source_FilesFields,
-	},
-}
+		"Files": ubx.FieldSpec{
+			WireName: "files",
+			Kind: "list",
+			Fields: V1betaService_Connectors_Source_FilesFields,
+		},
+	}
 
 type V1betaServiceConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -128,12 +128,12 @@ var V1betaService = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   V1betaService_Connectors_SourceFields,
+			Kind: "object",
+			Fields: V1betaService_Connectors_SourceFields,
 		},
 	},
 }

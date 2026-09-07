@@ -55,7 +55,7 @@ type RegionCommitment_Reservations_ReservationSharingPolicy struct {
 }
 
 type RegionCommitment_Reservations_ResourceMetadata struct {
-	ApiVersion   any
+	ApiVersion any
 	ResourceType any
 }
 
@@ -74,7 +74,7 @@ type RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_Upcomin
 	// The latest time at which the upcoming group maintenance window can start, as reported for this reservation's resource status. (AI-inferred)
 	LatestWindowStartTime any
 	MaintenanceOnShutdown any
-	MaintenanceReasons    any
+	MaintenanceReasons any
 	// The maintenance status of the upcoming group maintenance, indicating whether it is ONGOING, PENDING, or UNKNOWN. (AI-inferred)
 	MaintenanceStatus any
 	// The type of upcoming maintenance for the reservation group. Possible values are: MULTIPLE, SCHEDULED, UNKNOWN_TYPE, UNSCHEDULED. (AI-inferred)
@@ -117,7 +117,7 @@ type RegionCommitment_Reservations_ResourceStatus struct {
 	ReservationBlockCount any
 	// An object that provides the maintenance status details for the reservation, as part of the reservation's resource status. This is a computed field reflecting the current maintenance state of the reservation. (AI-inferred)
 	ReservationMaintenance any
-	SpecificSkuAllocation  any
+	SpecificSkuAllocation any
 }
 
 type RegionCommitment_Reservations_ShareSettings_ProjectMap struct {
@@ -169,7 +169,7 @@ type RegionCommitment_Reservations struct {
 	AdvancedDeploymentControl any
 	// The aggregate reservation configuration, used to reserve capacity for a pool of resources (such as CPU and memory) without specifying exact instance shapes. It includes a VM family and a list of reserved resource types with counts, offering flexible capacity reservation for a group of instances. (AI-inferred)
 	AggregateReservation any
-	Commitment           any
+	Commitment any
 	// Specifies the confidential computing type for the reservation. Valid values are CONFIDENTIAL_COMPUTE_TYPE_TDX (for Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED (default, unspecified). (AI-inferred)
 	ConfidentialComputeType any
 	// Creation timestamp in RFC3339 text format. (AI-inferred)
@@ -180,29 +180,29 @@ type RegionCommitment_Reservations struct {
 	DeleteAtTime any
 	// The deployment type for this reservation. Allowed values are DENSE and DEPLOYMENT_TYPE_UNSPECIFIED. (AI-inferred)
 	DeploymentType any
-	Description    any
+	Description any
 	// Specifies the early access mode for maintenance events on this reservation. Valid values are NO_EARLY_ACCESS, WAVE1, and WAVE2, indicating no early access, first wave, or second wave, respectively. (AI-inferred)
 	EarlyAccessMaintenance any
 	// Whether the reservation can be consumed by emergent maintenance requests. (AI-inferred)
 	EnableEmergentMaintenance any
-	Id                        any
+	Id any
 	// The type of the resource. Always 'compute#reservation' for this resource. (AI-inferred)
 	Kind any
 	// List of self_links of commitments linked to this reservation. This is used to associate the reservation with one or more commitments so that the commitment's discounts apply to the reserved capacity. (AI-inferred)
 	LinkedCommitments any
-	Name              any
-	Params            any
+	Name any
+	Params any
 	// The protection tier for the reservation, which determines the level of capacity protection. Valid values are `STANDARD`, `CAPACITY_OPTIMIZED`, and `PROTECTION_TIER_UNSPECIFIED` (the latter is the default when unspecified). (AI-inferred)
-	ProtectionTier           any
+	ProtectionTier any
 	ReservationSharingPolicy any
-	ResourceMetadata         any
-	ResourcePolicies         any
-	ResourceStatus           any
+	ResourceMetadata any
+	ResourcePolicies any
+	ResourceStatus any
 	// Whether this reservation satisfies the requirements for physical zone separation (PZS) for sole-tenant node groups. (AI-inferred)
 	SatisfiesPzs any
 	// The scheduling type of the reservation. Possible values: INDEPENDENT (reserves capacity for standalone instances), GROUPED (reserves capacity for a group of instances, typically used with managed instance groups), and GROUP_MAINTENANCE_TYPE_UNSPECIFIED (the scheduling type is not specified). (AI-inferred)
 	SchedulingType any
-	SelfLink       any
+	SelfLink any
 	// Configuration for sharing a reservation with other projects. It specifies the share type (LOCAL or SPECIFIC_PROJECTS) and, for SPECIFIC_PROJECTS, the set of projects that can use the reservation. (AI-inferred)
 	ShareSettings any
 	// Configuration for a specific reservation within the commitment. This block specifies the instance count and instance properties (such as machine type and GPUs) for reserved VMs, which are dedicated to a single project. (AI-inferred)
@@ -230,240 +230,240 @@ type RegionCommitment_Resources struct {
 }
 
 var RegionCommitment_LicenseResourceFields = ubx.FieldMap{
-	"Amount":          ubx.FieldSpec{WireName: "amount"},
-	"CoresPerLicense": ubx.FieldSpec{WireName: "cores_per_license"},
-	"License":         ubx.FieldSpec{WireName: "license"},
-}
+		"Amount": ubx.FieldSpec{WireName: "amount"},
+		"CoresPerLicense": ubx.FieldSpec{WireName: "cores_per_license"},
+		"License": ubx.FieldSpec{WireName: "license"},
+	}
 
 var RegionCommitment_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var RegionCommitment_Reservations_AdvancedDeploymentControlFields = ubx.FieldMap{
-	"ReservationOperationalMode": ubx.FieldSpec{WireName: "reservation_operational_mode"},
-}
+		"ReservationOperationalMode": ubx.FieldSpec{WireName: "reservation_operational_mode"},
+	}
 
 var RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields = ubx.FieldMap{
-	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
-}
+		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+	}
 
 var RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields = ubx.FieldMap{
-	"Accelerator": ubx.FieldSpec{
-		WireName: "accelerator",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
-	},
-}
+		"Accelerator": ubx.FieldSpec{
+			WireName: "accelerator",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+	}
 
 var RegionCommitment_Reservations_AggregateReservationFields = ubx.FieldMap{
-	"InUseResources": ubx.FieldSpec{
-		WireName: "in_use_resources",
-		Kind:     "list",
-		Fields:   RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
-	},
-	"ReservedResources": ubx.FieldSpec{
-		WireName: "reserved_resources",
-		Kind:     "list",
-		Fields:   RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
-	},
-	"VmFamily":     ubx.FieldSpec{WireName: "vm_family"},
-	"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
-}
+		"InUseResources": ubx.FieldSpec{
+			WireName: "in_use_resources",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+		},
+		"ReservedResources": ubx.FieldSpec{
+			WireName: "reserved_resources",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResourcesFields,
+		},
+		"VmFamily": ubx.FieldSpec{WireName: "vm_family"},
+		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
+	}
 
 var RegionCommitment_Reservations_DeleteAfterDurationFields = ubx.FieldMap{
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var RegionCommitment_Reservations_ReservationSharingPolicyFields = ubx.FieldMap{
-	"ServiceShareType": ubx.FieldSpec{WireName: "service_share_type"},
-}
+		"ServiceShareType": ubx.FieldSpec{WireName: "service_share_type"},
+	}
 
 var RegionCommitment_Reservations_ResourceMetadataFields = ubx.FieldMap{
-	"ApiVersion":   ubx.FieldSpec{WireName: "api_version"},
-	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-}
+		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	}
 
 var RegionCommitment_Reservations_ResourceStatus_HealthInfoFields = ubx.FieldMap{
-	"DegradedBlockCount": ubx.FieldSpec{WireName: "degraded_block_count"},
-	"HealthStatus":       ubx.FieldSpec{WireName: "health_status"},
-	"HealthyBlockCount":  ubx.FieldSpec{WireName: "healthy_block_count"},
-}
+		"DegradedBlockCount": ubx.FieldSpec{WireName: "degraded_block_count"},
+		"HealthStatus": ubx.FieldSpec{WireName: "health_status"},
+		"HealthyBlockCount": ubx.FieldSpec{WireName: "healthy_block_count"},
+	}
 
 var RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields = ubx.FieldMap{
-	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
-	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-	"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
-	"MaintenanceReasons":    ubx.FieldSpec{WireName: "maintenance_reasons"},
-	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
-	"Type":                  ubx.FieldSpec{WireName: "type"},
-	"WindowEndTime":         ubx.FieldSpec{WireName: "window_end_time"},
-	"WindowStartTime":       ubx.FieldSpec{WireName: "window_start_time"},
-}
+		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
+		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+		"MaintenanceOnShutdown": ubx.FieldSpec{WireName: "maintenance_on_shutdown"},
+		"MaintenanceReasons": ubx.FieldSpec{WireName: "maintenance_reasons"},
+		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
+		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
+	}
 
 var RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields = ubx.FieldMap{
-	"InstanceMaintenanceOngoingCount":      ubx.FieldSpec{WireName: "instance_maintenance_ongoing_count"},
-	"InstanceMaintenancePendingCount":      ubx.FieldSpec{WireName: "instance_maintenance_pending_count"},
-	"MaintenanceOngoingCount":              ubx.FieldSpec{WireName: "maintenance_ongoing_count"},
-	"MaintenancePendingCount":              ubx.FieldSpec{WireName: "maintenance_pending_count"},
-	"SchedulingType":                       ubx.FieldSpec{WireName: "scheduling_type"},
-	"SubblockInfraMaintenanceOngoingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_ongoing_count"},
-	"SubblockInfraMaintenancePendingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_pending_count"},
-	"UpcomingGroupMaintenance": ubx.FieldSpec{
-		WireName: "upcoming_group_maintenance",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
-	},
-}
+		"InstanceMaintenanceOngoingCount": ubx.FieldSpec{WireName: "instance_maintenance_ongoing_count"},
+		"InstanceMaintenancePendingCount": ubx.FieldSpec{WireName: "instance_maintenance_pending_count"},
+		"MaintenanceOngoingCount": ubx.FieldSpec{WireName: "maintenance_ongoing_count"},
+		"MaintenancePendingCount": ubx.FieldSpec{WireName: "maintenance_pending_count"},
+		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
+		"SubblockInfraMaintenanceOngoingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_ongoing_count"},
+		"SubblockInfraMaintenancePendingCount": ubx.FieldSpec{WireName: "subblock_infra_maintenance_pending_count"},
+		"UpcomingGroupMaintenance": ubx.FieldSpec{
+			WireName: "upcoming_group_maintenance",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenance_UpcomingGroupMaintenanceFields,
+		},
+	}
 
 var RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields = ubx.FieldMap{
-	"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
-	"Utilizations":             ubx.FieldSpec{WireName: "utilizations"},
-}
+		"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
+		"Utilizations": ubx.FieldSpec{WireName: "utilizations"},
+	}
 
 var RegionCommitment_Reservations_ResourceStatusFields = ubx.FieldMap{
-	"HealthInfo": ubx.FieldSpec{
-		WireName: "health_info",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceStatus_HealthInfoFields,
-	},
-	"ReservationBlockCount": ubx.FieldSpec{WireName: "reservation_block_count"},
-	"ReservationMaintenance": ubx.FieldSpec{
-		WireName: "reservation_maintenance",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields,
-	},
-	"SpecificSkuAllocation": ubx.FieldSpec{
-		WireName: "specific_sku_allocation",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields,
-	},
-}
+		"HealthInfo": ubx.FieldSpec{
+			WireName: "health_info",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_HealthInfoFields,
+		},
+		"ReservationBlockCount": ubx.FieldSpec{WireName: "reservation_block_count"},
+		"ReservationMaintenance": ubx.FieldSpec{
+			WireName: "reservation_maintenance",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_ReservationMaintenanceFields,
+		},
+		"SpecificSkuAllocation": ubx.FieldSpec{
+			WireName: "specific_sku_allocation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatus_SpecificSkuAllocationFields,
+		},
+	}
 
 var RegionCommitment_Reservations_ShareSettings_ProjectMapFields = ubx.FieldMap{
-	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-}
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	}
 
 var RegionCommitment_Reservations_ShareSettingsFields = ubx.FieldMap{
-	"ProjectMap": ubx.FieldSpec{
-		WireName: "project_map",
-		Kind:     "map",
-		Fields:   RegionCommitment_Reservations_ShareSettings_ProjectMapFields,
-	},
-	"ShareType": ubx.FieldSpec{WireName: "share_type"},
-}
+		"ProjectMap": ubx.FieldSpec{
+			WireName: "project_map",
+			Kind: "map",
+			Fields: RegionCommitment_Reservations_ShareSettings_ProjectMapFields,
+		},
+		"ShareType": ubx.FieldSpec{WireName: "share_type"},
+	}
 
 var RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields = ubx.FieldMap{
-	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-	"Interface":  ubx.FieldSpec{WireName: "interface"},
-}
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Interface": ubx.FieldSpec{WireName: "interface"},
+	}
 
 var RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields = ubx.FieldMap{
-	"GuestAccelerators": ubx.FieldSpec{
-		WireName: "guest_accelerators",
-		Kind:     "list",
-		Fields:   RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
-	},
-	"LocalSsds": ubx.FieldSpec{
-		WireName: "local_ssds",
-		Kind:     "list",
-		Fields:   RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields,
-	},
-	"LocationHint":   ubx.FieldSpec{WireName: "location_hint"},
-	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
-	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-}
+		"GuestAccelerators": ubx.FieldSpec{
+			WireName: "guest_accelerators",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+		"LocalSsds": ubx.FieldSpec{
+			WireName: "local_ssds",
+			Kind: "list",
+			Fields: RegionCommitment_Reservations_SpecificReservation_InstanceProperties_LocalSsdsFields,
+		},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	}
 
 var RegionCommitment_Reservations_SpecificReservationFields = ubx.FieldMap{
-	"AssuredCount": ubx.FieldSpec{WireName: "assured_count"},
-	"Count":        ubx.FieldSpec{WireName: "count"},
-	"InUseCount":   ubx.FieldSpec{WireName: "in_use_count"},
-	"InstanceProperties": ubx.FieldSpec{
-		WireName: "instance_properties",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields,
-	},
-	"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
-}
+		"AssuredCount": ubx.FieldSpec{WireName: "assured_count"},
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"InUseCount": ubx.FieldSpec{WireName: "in_use_count"},
+		"InstanceProperties": ubx.FieldSpec{
+			WireName: "instance_properties",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_SpecificReservation_InstancePropertiesFields,
+		},
+		"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
+	}
 
 var RegionCommitment_ReservationsFields = ubx.FieldMap{
-	"AdvancedDeploymentControl": ubx.FieldSpec{
-		WireName: "advanced_deployment_control",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_AdvancedDeploymentControlFields,
-	},
-	"AggregateReservation": ubx.FieldSpec{
-		WireName: "aggregate_reservation",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_AggregateReservationFields,
-	},
-	"Commitment":              ubx.FieldSpec{WireName: "commitment"},
-	"ConfidentialComputeType": ubx.FieldSpec{WireName: "confidential_compute_type"},
-	"CreationTimestamp":       ubx.FieldSpec{WireName: "creation_timestamp"},
-	"DeleteAfterDuration": ubx.FieldSpec{
-		WireName: "delete_after_duration",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_DeleteAfterDurationFields,
-	},
-	"DeleteAtTime":              ubx.FieldSpec{WireName: "delete_at_time"},
-	"DeploymentType":            ubx.FieldSpec{WireName: "deployment_type"},
-	"Description":               ubx.FieldSpec{WireName: "description"},
-	"EarlyAccessMaintenance":    ubx.FieldSpec{WireName: "early_access_maintenance"},
-	"EnableEmergentMaintenance": ubx.FieldSpec{WireName: "enable_emergent_maintenance"},
-	"Id":                        ubx.FieldSpec{WireName: "id"},
-	"Kind":                      ubx.FieldSpec{WireName: "kind"},
-	"LinkedCommitments":         ubx.FieldSpec{WireName: "linked_commitments"},
-	"Name":                      ubx.FieldSpec{WireName: "name"},
-	"Params": ubx.FieldSpec{
-		WireName: "params",
-		Kind:     "object",
-		Fields:   RegionCommitment_ParamsFields,
-	},
-	"ProtectionTier": ubx.FieldSpec{WireName: "protection_tier"},
-	"ReservationSharingPolicy": ubx.FieldSpec{
-		WireName: "reservation_sharing_policy",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ReservationSharingPolicyFields,
-	},
-	"ResourceMetadata": ubx.FieldSpec{
-		WireName: "resource_metadata",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceMetadataFields,
-	},
-	"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-	"ResourceStatus": ubx.FieldSpec{
-		WireName: "resource_status",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ResourceStatusFields,
-	},
-	"SatisfiesPzs":   ubx.FieldSpec{WireName: "satisfies_pzs"},
-	"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
-	"SelfLink":       ubx.FieldSpec{WireName: "self_link"},
-	"ShareSettings": ubx.FieldSpec{
-		WireName: "share_settings",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_ShareSettingsFields,
-	},
-	"SpecificReservation": ubx.FieldSpec{
-		WireName: "specific_reservation",
-		Kind:     "object",
-		Fields:   RegionCommitment_Reservations_SpecificReservationFields,
-	},
-	"SpecificReservationRequired": ubx.FieldSpec{WireName: "specific_reservation_required"},
-	"Status":                      ubx.FieldSpec{WireName: "status"},
-	"Zone":                        ubx.FieldSpec{WireName: "zone"},
-}
+		"AdvancedDeploymentControl": ubx.FieldSpec{
+			WireName: "advanced_deployment_control",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AdvancedDeploymentControlFields,
+		},
+		"AggregateReservation": ubx.FieldSpec{
+			WireName: "aggregate_reservation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_AggregateReservationFields,
+		},
+		"Commitment": ubx.FieldSpec{WireName: "commitment"},
+		"ConfidentialComputeType": ubx.FieldSpec{WireName: "confidential_compute_type"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"DeleteAfterDuration": ubx.FieldSpec{
+			WireName: "delete_after_duration",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_DeleteAfterDurationFields,
+		},
+		"DeleteAtTime": ubx.FieldSpec{WireName: "delete_at_time"},
+		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EarlyAccessMaintenance": ubx.FieldSpec{WireName: "early_access_maintenance"},
+		"EnableEmergentMaintenance": ubx.FieldSpec{WireName: "enable_emergent_maintenance"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"LinkedCommitments": ubx.FieldSpec{WireName: "linked_commitments"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Params": ubx.FieldSpec{
+			WireName: "params",
+			Kind: "object",
+			Fields: RegionCommitment_ParamsFields,
+		},
+		"ProtectionTier": ubx.FieldSpec{WireName: "protection_tier"},
+		"ReservationSharingPolicy": ubx.FieldSpec{
+			WireName: "reservation_sharing_policy",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ReservationSharingPolicyFields,
+		},
+		"ResourceMetadata": ubx.FieldSpec{
+			WireName: "resource_metadata",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceMetadataFields,
+		},
+		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
+		"ResourceStatus": ubx.FieldSpec{
+			WireName: "resource_status",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ResourceStatusFields,
+		},
+		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"ShareSettings": ubx.FieldSpec{
+			WireName: "share_settings",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_ShareSettingsFields,
+		},
+		"SpecificReservation": ubx.FieldSpec{
+			WireName: "specific_reservation",
+			Kind: "object",
+			Fields: RegionCommitment_Reservations_SpecificReservationFields,
+		},
+		"SpecificReservationRequired": ubx.FieldSpec{WireName: "specific_reservation_required"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var RegionCommitment_ResourceStatusFields = ubx.FieldMap{
-	"CustomTermEligibilityEndTimestamp": ubx.FieldSpec{WireName: "custom_term_eligibility_end_timestamp"},
-}
+		"CustomTermEligibilityEndTimestamp": ubx.FieldSpec{WireName: "custom_term_eligibility_end_timestamp"},
+	}
 
 var RegionCommitment_ResourcesFields = ubx.FieldMap{
-	"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	"Amount":          ubx.FieldSpec{WireName: "amount"},
-	"Type":            ubx.FieldSpec{WireName: "type"},
-}
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+		"Amount": ubx.FieldSpec{WireName: "amount"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type RegionCommitmentConfig struct {
 	// Specifies whether to automatically renew the commitment at the end of its current term. The default value is false. If you set the field to true, each time your commitment reaches the end of its term, Compute Engine automatically renews it for another term. You can update this field anytime before the commitment expires. For example, if the commitment is set to expire at 12 AM UTC-8 on January 3, 2027, you can update this field until 11:59 PM UTC-8 on January 2, 2027.
@@ -552,40 +552,40 @@ type RegionCommitmentAttrs struct {
 var RegionCommitment = ubx.ResourceBinding{
 	WireType: "google_compute_region_commitment",
 	Fields: ubx.FieldMap{
-		"AutoRenew":            ubx.FieldSpec{WireName: "auto_renew"},
-		"Category":             ubx.FieldSpec{WireName: "category"},
-		"CustomEndTimestamp":   ubx.FieldSpec{WireName: "custom_end_timestamp"},
-		"Description":          ubx.FieldSpec{WireName: "description"},
+		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"CustomEndTimestamp": ubx.FieldSpec{WireName: "custom_end_timestamp"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExistingReservations": ubx.FieldSpec{WireName: "existing_reservations"},
 		"LicenseResource": ubx.FieldSpec{
 			WireName: "license_resource",
-			Kind:     "object",
-			Fields:   RegionCommitment_LicenseResourceFields,
+			Kind: "object",
+			Fields: RegionCommitment_LicenseResourceFields,
 		},
 		"MergeSourceCommitments": ubx.FieldSpec{WireName: "merge_source_commitments"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   RegionCommitment_ParamsFields,
+			Kind: "object",
+			Fields: RegionCommitment_ParamsFields,
 		},
 		"Plan": ubx.FieldSpec{WireName: "plan"},
 		"Reservations": ubx.FieldSpec{
 			WireName: "reservations",
-			Kind:     "list",
-			Fields:   RegionCommitment_ReservationsFields,
+			Kind: "list",
+			Fields: RegionCommitment_ReservationsFields,
 		},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind:     "object",
-			Fields:   RegionCommitment_ResourceStatusFields,
+			Kind: "object",
+			Fields: RegionCommitment_ResourceStatusFields,
 		},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind:     "list",
-			Fields:   RegionCommitment_ResourcesFields,
+			Kind: "list",
+			Fields: RegionCommitment_ResourcesFields,
 		},
 		"SplitSourceCommitment": ubx.FieldSpec{WireName: "split_source_commitment"},
-		"Type":                  ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

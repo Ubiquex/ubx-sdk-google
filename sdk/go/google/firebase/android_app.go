@@ -48,12 +48,12 @@ type AndroidAppAttrs struct {
 var AndroidApp = ubx.ResourceBinding{
 	WireType: "google_firebase_android_app",
 	Fields: ubx.FieldMap{
-		"ApiKeyId":     ubx.FieldSpec{WireName: "api_key_id"},
-		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-		"Etag":         ubx.FieldSpec{WireName: "etag"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
-		"PackageName":  ubx.FieldSpec{WireName: "package_name"},
-		"Sha1Hashes":   ubx.FieldSpec{WireName: "sha1_hashes"},
+		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PackageName": ubx.FieldSpec{WireName: "package_name"},
+		"Sha1Hashes": ubx.FieldSpec{WireName: "sha1_hashes"},
 		"Sha256Hashes": ubx.FieldSpec{WireName: "sha256_hashes"},
 	},
 }

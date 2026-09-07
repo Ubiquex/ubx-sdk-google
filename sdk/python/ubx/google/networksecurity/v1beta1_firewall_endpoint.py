@@ -39,7 +39,7 @@ class V1beta1FirewallEndpoint_WildfireSettings:
     wildfire_realtime_lookup_duration: Any = None
     # Optional. Action to take on WildFire real time signature lookup timeout. Default value is ALLOW.
     wildfire_realtime_lookup_timeout_action: Any = None
-    # Optional. The region where WildFire analysis will be performed. PAN supports regions: https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-deployments/advanced-wildfire-global-cloud
+    # Optional. The region where WildFire analysis will be performed. Palo Alto Networks supports regions: https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-deployments/advanced-wildfire-global-cloud
     wildfire_region: Any = None
 
 _V1beta1FirewallEndpoint_EndpointSettingsFields = {
@@ -95,6 +95,8 @@ class V1beta1FirewallEndpointAttrs:
     description: Any = None
     # Settings for the endpoint.
     endpoint_settings: Any = None
+    # Output only. The resource name of the explicit PSC Attachment. Format: projects/{project}/regions/{region}/serviceAttachments/{id}
+    explicit_private_service_connect_attachment: Any = None
     # Optional. Labels as key value pairs
     labels: Any = None
     # Immutable. Identifier. Name of resource.

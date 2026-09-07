@@ -25,6 +25,6 @@ var AuthorizedViewSet = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_authorized_view_set",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

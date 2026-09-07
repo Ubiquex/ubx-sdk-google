@@ -35,7 +35,7 @@ var V2beta1Folder = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_v2beta1_folder",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Parent":      ubx.FieldSpec{WireName: "parent"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

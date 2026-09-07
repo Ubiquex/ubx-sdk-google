@@ -8,40 +8,40 @@ type AlphaGlobalForwardingRule_AttachedExtensions struct {
 }
 
 type AlphaGlobalForwardingRule_MetadataFilters_FilterLabels struct {
-	Name  any
+	Name any
 	Value any
 }
 
 type AlphaGlobalForwardingRule_MetadataFilters struct {
-	FilterLabels        any
+	FilterLabels any
 	FilterMatchCriteria any
 }
 
 type AlphaGlobalForwardingRule_ServiceDirectoryRegistrations struct {
-	Namespace              any
-	Service                any
+	Namespace any
+	Service any
 	ServiceDirectoryRegion any
 }
 
 var AlphaGlobalForwardingRule_MetadataFilters_FilterLabelsFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var AlphaGlobalForwardingRule_MetadataFiltersFields = ubx.FieldMap{
-	"FilterLabels": ubx.FieldSpec{
-		WireName: "filter_labels",
-		Kind:     "list",
-		Fields:   AlphaGlobalForwardingRule_MetadataFilters_FilterLabelsFields,
-	},
-	"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
-}
+		"FilterLabels": ubx.FieldSpec{
+			WireName: "filter_labels",
+			Kind: "list",
+			Fields: AlphaGlobalForwardingRule_MetadataFilters_FilterLabelsFields,
+		},
+		"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
+	}
 
 var AlphaGlobalForwardingRule_ServiceDirectoryRegistrationsFields = ubx.FieldMap{
-	"Namespace":              ubx.FieldSpec{WireName: "namespace"},
-	"Service":                ubx.FieldSpec{WireName: "service"},
-	"ServiceDirectoryRegion": ubx.FieldSpec{WireName: "service_directory_region"},
-}
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"ServiceDirectoryRegion": ubx.FieldSpec{WireName: "service_directory_region"},
+	}
 
 type AlphaGlobalForwardingRuleConfig struct {
 	// The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The allPorts field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, SCTP, or L3_DEFAULT. - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal and external protocol forwarding. - Set this field to true to allow packets addressed to any port or packets lacking destination port information (for example, UDP fragments after the first fragment) to be forwarded to the backends configured with this forwarding rule. The L3_DEFAULT protocol requiresallPorts be set to true.
@@ -86,6 +86,8 @@ type AlphaGlobalForwardingRuleConfig struct {
 	Name any
 	// This field is not used for global external load balancing. For internal passthrough Network Load Balancers, this field identifies the network that the load balanced IP should belong to for this forwarding rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
 	Network any
+	// Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+	NetworkAttachment any
 	// This signifies the networking tier used for configuring this load balancer and can only take the following values:PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM andSTANDARD. For GlobalForwardingRule, the valid value isPREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
 	NetworkTier any
 	// This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable.
@@ -98,6 +100,8 @@ type AlphaGlobalForwardingRuleConfig struct {
 	PscConnectionId any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
+	// Optional. Producer Service's Service class ID for the region of this forwarding rule. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+	ServiceClassId any
 	// Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
 	ServiceDirectoryRegistrations any
 	// An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -167,6 +171,8 @@ type AlphaGlobalForwardingRuleAttrs struct {
 	Name any
 	// This field is not used for global external load balancing. For internal passthrough Network Load Balancers, this field identifies the network that the load balanced IP should belong to for this forwarding rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
 	Network any
+	// Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+	NetworkAttachment any
 	// This signifies the networking tier used for configuring this load balancer and can only take the following values:PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM andSTANDARD. For GlobalForwardingRule, the valid value isPREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
 	NetworkTier any
 	// This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable.
@@ -187,6 +193,8 @@ type AlphaGlobalForwardingRuleAttrs struct {
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
 	SelfLinkWithId any
+	// Optional. Producer Service's Service class ID for the region of this forwarding rule. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+	ServiceClassId any
 	// Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
 	ServiceDirectoryRegistrations any
 	// An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -204,46 +212,48 @@ type AlphaGlobalForwardingRuleAttrs struct {
 var AlphaGlobalForwardingRule = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_global_forwarding_rule",
 	Fields: ubx.FieldMap{
-		"AllPorts":             ubx.FieldSpec{WireName: "all_ports"},
-		"AllowGlobalAccess":    ubx.FieldSpec{WireName: "allow_global_access"},
+		"AllPorts": ubx.FieldSpec{WireName: "all_ports"},
+		"AllowGlobalAccess": ubx.FieldSpec{WireName: "allow_global_access"},
 		"AllowPscGlobalAccess": ubx.FieldSpec{WireName: "allow_psc_global_access"},
-		"BackendService":       ubx.FieldSpec{WireName: "backend_service"},
-		"Description":          ubx.FieldSpec{WireName: "description"},
-		"ExternalManagedBackendBucketMigrationState":             ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_state"},
+		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExternalManagedBackendBucketMigrationState": ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_state"},
 		"ExternalManagedBackendBucketMigrationTestingPercentage": ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_testing_percentage"},
-		"Fingerprint":          ubx.FieldSpec{WireName: "fingerprint"},
-		"Id":                   ubx.FieldSpec{WireName: "id"},
-		"IpCollection":         ubx.FieldSpec{WireName: "ip_collection"},
-		"IpVersion":            ubx.FieldSpec{WireName: "ip_version"},
-		"Ipaddress":            ubx.FieldSpec{WireName: "ipaddress"},
-		"Ipaddresses":          ubx.FieldSpec{WireName: "ipaddresses"},
-		"Ipprotocol":           ubx.FieldSpec{WireName: "ipprotocol"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
+		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
+		"Ipaddress": ubx.FieldSpec{WireName: "ipaddress"},
+		"Ipaddresses": ubx.FieldSpec{WireName: "ipaddresses"},
+		"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
 		"IsMirroringCollector": ubx.FieldSpec{WireName: "is_mirroring_collector"},
-		"LabelFingerprint":     ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":               ubx.FieldSpec{WireName: "labels"},
-		"LoadBalancingScheme":  ubx.FieldSpec{WireName: "load_balancing_scheme"},
+		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
 		"MetadataFilters": ubx.FieldSpec{
 			WireName: "metadata_filters",
-			Kind:     "list",
-			Fields:   AlphaGlobalForwardingRule_MetadataFiltersFields,
+			Kind: "list",
+			Fields: AlphaGlobalForwardingRule_MetadataFiltersFields,
 		},
-		"Name":              ubx.FieldSpec{WireName: "name"},
-		"Network":           ubx.FieldSpec{WireName: "network"},
-		"NetworkTier":       ubx.FieldSpec{WireName: "network_tier"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
 		"NoAutomateDnsZone": ubx.FieldSpec{WireName: "no_automate_dns_zone"},
-		"PortRange":         ubx.FieldSpec{WireName: "port_range"},
-		"Ports":             ubx.FieldSpec{WireName: "ports"},
-		"PscConnectionId":   ubx.FieldSpec{WireName: "psc_connection_id"},
-		"SelfLink":          ubx.FieldSpec{WireName: "self_link"},
+		"PortRange": ubx.FieldSpec{WireName: "port_range"},
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"ServiceClassId": ubx.FieldSpec{WireName: "service_class_id"},
 		"ServiceDirectoryRegistrations": ubx.FieldSpec{
 			WireName: "service_directory_registrations",
-			Kind:     "list",
-			Fields:   AlphaGlobalForwardingRule_ServiceDirectoryRegistrationsFields,
+			Kind: "list",
+			Fields: AlphaGlobalForwardingRule_ServiceDirectoryRegistrationsFields,
 		},
-		"ServiceLabel":   ubx.FieldSpec{WireName: "service_label"},
-		"ServiceName":    ubx.FieldSpec{WireName: "service_name"},
+		"ServiceLabel": ubx.FieldSpec{WireName: "service_label"},
+		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
 		"SourceIpRanges": ubx.FieldSpec{WireName: "source_ip_ranges"},
-		"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
-		"Target":         ubx.FieldSpec{WireName: "target"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+		"Target": ubx.FieldSpec{WireName: "target"},
 	},
 }

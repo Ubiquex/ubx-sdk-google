@@ -14,6 +14,8 @@ type V1beta1BackupConfig struct {
 	SourceFileShare any
 	// The resource name of the source Filestore instance, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
 	SourceInstance any
+	// Optional. The resource name of the Filestore volume that the backup is created from. Should be in the format: projects/{project_id}/locations/{location_id}/volumePools/{volume_pool_id}/volumes/{volume_id}
+	SourceVolume any
 	// Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
 	Tags any
 }
@@ -45,6 +47,8 @@ type V1beta1BackupAttrs struct {
 	SourceInstance any
 	// Output only. The service tier of the source Filestore instance that this backup is created from.
 	SourceInstanceTier any
+	// Optional. The resource name of the Filestore volume that the backup is created from. Should be in the format: projects/{project_id}/locations/{location_id}/volumePools/{volume_pool_id}/volumes/{volume_id}
+	SourceVolume any
 	// Output only. The backup state.
 	State any
 	// Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
@@ -56,11 +60,12 @@ type V1beta1BackupAttrs struct {
 var V1beta1Backup = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_backup",
 	Fields: ubx.FieldMap{
-		"Description":     ubx.FieldSpec{WireName: "description"},
-		"KmsKeyName":      ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"SourceFileShare": ubx.FieldSpec{WireName: "source_file_share"},
-		"SourceInstance":  ubx.FieldSpec{WireName: "source_instance"},
-		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"SourceInstance": ubx.FieldSpec{WireName: "source_instance"},
+		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

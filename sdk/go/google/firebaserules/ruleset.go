@@ -23,22 +23,22 @@ type Ruleset_Source struct {
 }
 
 var Ruleset_MetadataFields = ubx.FieldMap{
-	"Services": ubx.FieldSpec{WireName: "services"},
-}
+		"Services": ubx.FieldSpec{WireName: "services"},
+	}
 
 var Ruleset_Source_FilesFields = ubx.FieldMap{
-	"Content":     ubx.FieldSpec{WireName: "content"},
-	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var Ruleset_SourceFields = ubx.FieldMap{
-	"Files": ubx.FieldSpec{
-		WireName: "files",
-		Kind:     "list",
-		Fields:   Ruleset_Source_FilesFields,
-	},
-}
+		"Files": ubx.FieldSpec{
+			WireName: "files",
+			Kind: "list",
+			Fields: Ruleset_Source_FilesFields,
+		},
+	}
 
 type RulesetConfig struct {
 	// Immutable. Intended resource to which this Ruleset should be released. May be left blank to signify the resource associated with the default release. Expected format: firestore.googleapis.com/projects//databases/
@@ -68,13 +68,13 @@ var Ruleset = ubx.ResourceBinding{
 		"AttachmentPoint": ubx.FieldSpec{WireName: "attachment_point"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind:     "object",
-			Fields:   Ruleset_MetadataFields,
+			Kind: "object",
+			Fields: Ruleset_MetadataFields,
 		},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   Ruleset_SourceFields,
+			Kind: "object",
+			Fields: Ruleset_SourceFields,
 		},
 	},
 }

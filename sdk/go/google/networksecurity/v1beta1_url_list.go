@@ -29,7 +29,7 @@ var V1beta1UrlList = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_url_list",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Values":      ubx.FieldSpec{WireName: "values"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Values": ubx.FieldSpec{WireName: "values"},
 	},
 }

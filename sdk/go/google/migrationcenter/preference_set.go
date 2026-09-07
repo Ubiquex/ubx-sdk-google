@@ -72,78 +72,78 @@ type PreferenceSet_VirtualMachinePreferences struct {
 }
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields = ubx.FieldMap{
-	"AllowedMachineSeries": ubx.FieldSpec{
-		WireName: "allowed_machine_series",
-		Kind:     "list",
-		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields,
-	},
-}
+		"AllowedMachineSeries": ubx.FieldSpec{
+			WireName: "allowed_machine_series",
+			Kind: "list",
+			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferences_AllowedMachineSeriesFields,
+		},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields = ubx.FieldMap{
-	"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-	"MachinePreferences": ubx.FieldSpec{
-		WireName: "machine_preferences",
-		Kind:     "object",
-		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
-	},
-	"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
-}
+		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+		"MachinePreferences": ubx.FieldSpec{
+			WireName: "machine_preferences",
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferences_MachinePreferencesFields,
+		},
+		"PersistentDiskType": ubx.FieldSpec{WireName: "persistent_disk_type"},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields = ubx.FieldMap{
-	"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
-}
+		"PreferredRegions": ubx.FieldSpec{WireName: "preferred_regions"},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields = ubx.FieldMap{
-	"NodeName": ubx.FieldSpec{WireName: "node_name"},
-}
+		"NodeName": ubx.FieldSpec{WireName: "node_name"},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields = ubx.FieldMap{
-	"CommitmentPlan":        ubx.FieldSpec{WireName: "commitment_plan"},
-	"CpuOvercommitRatio":    ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-	"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
-	"NodeTypes": ubx.FieldSpec{
-		WireName: "node_types",
-		Kind:     "list",
-		Fields:   PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields,
-	},
-}
+		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+		"HostMaintenancePolicy": ubx.FieldSpec{WireName: "host_maintenance_policy"},
+		"NodeTypes": ubx.FieldSpec{
+			WireName: "node_types",
+			Kind: "list",
+			Fields: PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferences_NodeTypesFields,
+		},
+	}
 
 var PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields = ubx.FieldMap{
-	"CommitmentPlan":                       ubx.FieldSpec{WireName: "commitment_plan"},
-	"CpuOvercommitRatio":                   ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
-	"MemoryOvercommitRatio":                ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
-	"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
-}
+		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+		"CpuOvercommitRatio": ubx.FieldSpec{WireName: "cpu_overcommit_ratio"},
+		"MemoryOvercommitRatio": ubx.FieldSpec{WireName: "memory_overcommit_ratio"},
+		"StorageDeduplicationCompressionRatio": ubx.FieldSpec{WireName: "storage_deduplication_compression_ratio"},
+	}
 
 var PreferenceSet_VirtualMachinePreferencesFields = ubx.FieldMap{
-	"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
-	"ComputeEnginePreferences": ubx.FieldSpec{
-		WireName: "compute_engine_preferences",
-		Kind:     "object",
-		Fields:   PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields,
-	},
-	"RegionPreferences": ubx.FieldSpec{
-		WireName: "region_preferences",
-		Kind:     "object",
-		Fields:   PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields,
-	},
-	"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
-	"SoleTenancyPreferences": ubx.FieldSpec{
-		WireName: "sole_tenancy_preferences",
-		Kind:     "object",
-		Fields:   PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields,
-	},
-	"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
-	"VmwareEnginePreferences": ubx.FieldSpec{
-		WireName: "vmware_engine_preferences",
-		Kind:     "object",
-		Fields:   PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields,
-	},
-}
+		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+		"ComputeEnginePreferences": ubx.FieldSpec{
+			WireName: "compute_engine_preferences",
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferences_ComputeEnginePreferencesFields,
+		},
+		"RegionPreferences": ubx.FieldSpec{
+			WireName: "region_preferences",
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferences_RegionPreferencesFields,
+		},
+		"SizingOptimizationStrategy": ubx.FieldSpec{WireName: "sizing_optimization_strategy"},
+		"SoleTenancyPreferences": ubx.FieldSpec{
+			WireName: "sole_tenancy_preferences",
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferences_SoleTenancyPreferencesFields,
+		},
+		"TargetProduct": ubx.FieldSpec{WireName: "target_product"},
+		"VmwareEnginePreferences": ubx.FieldSpec{
+			WireName: "vmware_engine_preferences",
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferences_VmwareEnginePreferencesFields,
+		},
+	}
 
 type PreferenceSetConfig struct {
 	// A description of the preference set.
@@ -176,8 +176,8 @@ var PreferenceSet = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"VirtualMachinePreferences": ubx.FieldSpec{
 			WireName: "virtual_machine_preferences",
-			Kind:     "object",
-			Fields:   PreferenceSet_VirtualMachinePreferencesFields,
+			Kind: "object",
+			Fields: PreferenceSet_VirtualMachinePreferencesFields,
 		},
 	},
 }

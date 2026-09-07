@@ -18,6 +18,8 @@ class V1beta1BackupConfig:
     source_file_share: Any = None
     # The resource name of the source Filestore instance, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}`, used to create this backup.
     source_instance: Any = None
+    # Optional. The resource name of the Filestore volume that the backup is created from. Should be in the format: projects/{project_id}/locations/{location_id}/volumePools/{volume_pool_id}/volumes/{volume_id}
+    source_volume: Any = None
     # Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
     tags: Any = None
 
@@ -49,6 +51,8 @@ class V1beta1BackupAttrs:
     source_instance: Any = None
     # Output only. The service tier of the source Filestore instance that this backup is created from.
     source_instance_tier: Any = None
+    # Optional. The resource name of the Filestore volume that the backup is created from. Should be in the format: projects/{project_id}/locations/{location_id}/volumePools/{volume_pool_id}/volumes/{volume_id}
+    source_volume: Any = None
     # Output only. The backup state.
     state: Any = None
     # Output only. The size of the storage used by the backup. As backups share storage, this number is expected to change with backup creation/deletion.
@@ -64,6 +68,7 @@ V1beta1Backup = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "source_file_share": ubx.FieldSpec(wire_name="source_file_share"),
         "source_instance": ubx.FieldSpec(wire_name="source_instance"),
+        "source_volume": ubx.FieldSpec(wire_name="source_volume"),
         "tags": ubx.FieldSpec(wire_name="tags"),
     },
 )

@@ -9,8 +9,8 @@ type BackupSchedule_WeeklyRecurrence struct {
 }
 
 var BackupSchedule_WeeklyRecurrenceFields = ubx.FieldMap{
-	"Day": ubx.FieldSpec{WireName: "day"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+	}
 
 type BackupScheduleConfig struct {
 	// Represents a recurring schedule that runs every day. The time zone is UTC.
@@ -40,11 +40,11 @@ var BackupSchedule = ubx.ResourceBinding{
 	WireType: "google_firestore_backup_schedule",
 	Fields: ubx.FieldMap{
 		"DailyRecurrence": ubx.FieldSpec{WireName: "daily_recurrence"},
-		"Retention":       ubx.FieldSpec{WireName: "retention"},
+		"Retention": ubx.FieldSpec{WireName: "retention"},
 		"WeeklyRecurrence": ubx.FieldSpec{
 			WireName: "weekly_recurrence",
-			Kind:     "object",
-			Fields:   BackupSchedule_WeeklyRecurrenceFields,
+			Kind: "object",
+			Fields: BackupSchedule_WeeklyRecurrenceFields,
 		},
 	},
 }

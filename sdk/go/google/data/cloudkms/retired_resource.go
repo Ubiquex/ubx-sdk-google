@@ -9,7 +9,7 @@ type RetiredResourceConfig struct {
 type RetiredResourceAttrs struct {
 	// Output only. The time at which the original resource was deleted and this RetiredResource record was created.
 	DeleteTime any
-	Name       any
+	Name any
 	// Output only. The full resource name of the original CryptoKey that was deleted in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
 	OriginalResource any
 	// Output only. The resource type of the original deleted resource.
@@ -18,5 +18,6 @@ type RetiredResourceAttrs struct {
 
 var RetiredResource = ubx.DataSourceBinding{
 	WireType: "google_cloudkms_retired_resource",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

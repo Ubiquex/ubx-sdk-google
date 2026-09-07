@@ -5,141 +5,141 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaRegionNetworkFirewallPolicy_Associations struct {
 	AttachmentTarget any
-	DisplayName      any
+	DisplayName any
 	FirewallPolicyId any
-	Name             any
-	Priority         any
-	ShortName        any
+	Name any
+	Priority any
+	ShortName any
 }
 
 type BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4Configs struct {
 	IpProtocol any
-	Ports      any
+	Ports any
 }
 
 type BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTags struct {
-	Name  any
+	Name any
 	State any
 }
 
 type BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match struct {
-	DestAddressGroups       any
-	DestFqdns               any
-	DestIpRanges            any
-	DestNetworkContext      any
-	DestNetworkScope        any
-	DestNetworkType         any
-	DestRegionCodes         any
+	DestAddressGroups any
+	DestFqdns any
+	DestIpRanges any
+	DestNetworkContext any
+	DestNetworkScope any
+	DestNetworkType any
+	DestRegionCodes any
 	DestThreatIntelligences any
-	Layer4Configs           any
-	SrcAddressGroups        any
-	SrcFqdns                any
-	SrcIpRanges             any
-	SrcNetworkContext       any
-	SrcNetworkScope         any
-	SrcNetworkType          any
-	SrcNetworks             any
-	SrcRegionCodes          any
-	SrcSecureTags           any
-	SrcThreatIntelligences  any
+	Layer4Configs any
+	SrcAddressGroups any
+	SrcFqdns any
+	SrcIpRanges any
+	SrcNetworkContext any
+	SrcNetworkScope any
+	SrcNetworkType any
+	SrcNetworks any
+	SrcRegionCodes any
+	SrcSecureTags any
+	SrcThreatIntelligences any
 }
 
 type BetaRegionNetworkFirewallPolicy_PacketMirroringRules struct {
-	Action                any
-	Description           any
-	Direction             any
-	Disabled              any
-	EnableLogging         any
-	Kind                  any
-	Match                 any
-	Priority              any
-	RuleName              any
-	RuleTupleCount        any
-	SecurityProfileGroup  any
+	Action any
+	Description any
+	Direction any
+	Disabled any
+	EnableLogging any
+	Kind any
+	Match any
+	Priority any
+	RuleName any
+	RuleTupleCount any
+	SecurityProfileGroup any
 	TargetForwardingRules any
-	TargetResources       any
-	TargetSecureTags      any
+	TargetResources any
+	TargetSecureTags any
 	TargetServiceAccounts any
-	TargetType            any
-	TlsInspect            any
+	TargetType any
+	TlsInspect any
 }
 
 var BetaRegionNetworkFirewallPolicy_AssociationsFields = ubx.FieldMap{
-	"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
-	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
-	"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
-	"Name":             ubx.FieldSpec{WireName: "name"},
-	"Priority":         ubx.FieldSpec{WireName: "priority"},
-	"ShortName":        ubx.FieldSpec{WireName: "short_name"},
-}
+		"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+	}
 
 var BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields = ubx.FieldMap{
-	"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-	"Ports":      ubx.FieldSpec{WireName: "ports"},
-}
+		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+	}
 
 var BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var BetaRegionNetworkFirewallPolicy_PacketMirroringRules_MatchFields = ubx.FieldMap{
-	"DestAddressGroups":       ubx.FieldSpec{WireName: "dest_address_groups"},
-	"DestFqdns":               ubx.FieldSpec{WireName: "dest_fqdns"},
-	"DestIpRanges":            ubx.FieldSpec{WireName: "dest_ip_ranges"},
-	"DestNetworkContext":      ubx.FieldSpec{WireName: "dest_network_context"},
-	"DestNetworkScope":        ubx.FieldSpec{WireName: "dest_network_scope"},
-	"DestNetworkType":         ubx.FieldSpec{WireName: "dest_network_type"},
-	"DestRegionCodes":         ubx.FieldSpec{WireName: "dest_region_codes"},
-	"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
-	"Layer4Configs": ubx.FieldSpec{
-		WireName: "layer4_configs",
-		Kind:     "list",
-		Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
-	},
-	"SrcAddressGroups":  ubx.FieldSpec{WireName: "src_address_groups"},
-	"SrcFqdns":          ubx.FieldSpec{WireName: "src_fqdns"},
-	"SrcIpRanges":       ubx.FieldSpec{WireName: "src_ip_ranges"},
-	"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
-	"SrcNetworkScope":   ubx.FieldSpec{WireName: "src_network_scope"},
-	"SrcNetworkType":    ubx.FieldSpec{WireName: "src_network_type"},
-	"SrcNetworks":       ubx.FieldSpec{WireName: "src_networks"},
-	"SrcRegionCodes":    ubx.FieldSpec{WireName: "src_region_codes"},
-	"SrcSecureTags": ubx.FieldSpec{
-		WireName: "src_secure_tags",
-		Kind:     "list",
-		Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-	},
-	"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
-}
+		"DestAddressGroups": ubx.FieldSpec{WireName: "dest_address_groups"},
+		"DestFqdns": ubx.FieldSpec{WireName: "dest_fqdns"},
+		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
+		"DestNetworkContext": ubx.FieldSpec{WireName: "dest_network_context"},
+		"DestNetworkScope": ubx.FieldSpec{WireName: "dest_network_scope"},
+		"DestNetworkType": ubx.FieldSpec{WireName: "dest_network_type"},
+		"DestRegionCodes": ubx.FieldSpec{WireName: "dest_region_codes"},
+		"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
+		"Layer4Configs": ubx.FieldSpec{
+			WireName: "layer4_configs",
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
+		},
+		"SrcAddressGroups": ubx.FieldSpec{WireName: "src_address_groups"},
+		"SrcFqdns": ubx.FieldSpec{WireName: "src_fqdns"},
+		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
+		"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
+		"SrcNetworkScope": ubx.FieldSpec{WireName: "src_network_scope"},
+		"SrcNetworkType": ubx.FieldSpec{WireName: "src_network_type"},
+		"SrcNetworks": ubx.FieldSpec{WireName: "src_networks"},
+		"SrcRegionCodes": ubx.FieldSpec{WireName: "src_region_codes"},
+		"SrcSecureTags": ubx.FieldSpec{
+			WireName: "src_secure_tags",
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+		},
+		"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
+	}
 
 var BetaRegionNetworkFirewallPolicy_PacketMirroringRulesFields = ubx.FieldMap{
-	"Action":        ubx.FieldSpec{WireName: "action"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"Direction":     ubx.FieldSpec{WireName: "direction"},
-	"Disabled":      ubx.FieldSpec{WireName: "disabled"},
-	"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-	"Kind":          ubx.FieldSpec{WireName: "kind"},
-	"Match": ubx.FieldSpec{
-		WireName: "match",
-		Kind:     "object",
-		Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRules_MatchFields,
-	},
-	"Priority":              ubx.FieldSpec{WireName: "priority"},
-	"RuleName":              ubx.FieldSpec{WireName: "rule_name"},
-	"RuleTupleCount":        ubx.FieldSpec{WireName: "rule_tuple_count"},
-	"SecurityProfileGroup":  ubx.FieldSpec{WireName: "security_profile_group"},
-	"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
-	"TargetResources":       ubx.FieldSpec{WireName: "target_resources"},
-	"TargetSecureTags": ubx.FieldSpec{
-		WireName: "target_secure_tags",
-		Kind:     "list",
-		Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-	},
-	"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-	"TargetType":            ubx.FieldSpec{WireName: "target_type"},
-	"TlsInspect":            ubx.FieldSpec{WireName: "tls_inspect"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Match": ubx.FieldSpec{
+			WireName: "match",
+			Kind: "object",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRules_MatchFields,
+		},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
+		"SecurityProfileGroup": ubx.FieldSpec{WireName: "security_profile_group"},
+		"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
+		"TargetResources": ubx.FieldSpec{WireName: "target_resources"},
+		"TargetSecureTags": ubx.FieldSpec{
+			WireName: "target_secure_tags",
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+		},
+		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
+		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"TlsInspect": ubx.FieldSpec{WireName: "tls_inspect"},
+	}
 
 type BetaRegionNetworkFirewallPolicyConfig struct {
 	// A list of associations that belong to this firewall policy.
@@ -212,27 +212,27 @@ var BetaRegionNetworkFirewallPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
-			Kind:     "list",
-			Fields:   BetaRegionNetworkFirewallPolicy_AssociationsFields,
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_AssociationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id":          ubx.FieldSpec{WireName: "id"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PacketMirroringRules": ubx.FieldSpec{
 			WireName: "packet_mirroring_rules",
-			Kind:     "list",
-			Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
 		"PolicySource": ubx.FieldSpec{WireName: "policy_source"},
-		"PolicyType":   ubx.FieldSpec{WireName: "policy_type"},
+		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   BetaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind: "list",
+			Fields: BetaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
-		"SelfLink":  ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ShortName": ubx.FieldSpec{WireName: "short_name"},
 	},
 }

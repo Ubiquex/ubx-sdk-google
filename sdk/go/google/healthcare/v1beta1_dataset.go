@@ -9,8 +9,8 @@ type V1beta1Dataset_EncryptionSpec struct {
 }
 
 var V1beta1Dataset_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 type V1beta1DatasetConfig struct {
 	// Represents a customer-managed encryption key spec that can be applied to a resource.
@@ -39,10 +39,10 @@ var V1beta1Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   V1beta1Dataset_EncryptionSpecFields,
+			Kind: "object",
+			Fields: V1beta1Dataset_EncryptionSpecFields,
 		},
-		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

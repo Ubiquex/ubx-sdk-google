@@ -177,7 +177,7 @@ export interface AlphaBackendService_FailoverPolicy {
 }
 
 export interface AlphaBackendService_HaPolicy_Leader_NetworkEndpoint {
-  /** The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use */
+  /** The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The value must be a valid RFC1035 name (1-63 characters) or a valid instance URL. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use */
   instance?: string | Computed<string>;
 }
 
@@ -1113,6 +1113,8 @@ export interface AlphaBackendServiceConfig {
   name?: string | Computed<string>;
   /** The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled. */
   network?: string | Computed<string>;
+  /** Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}. */
+  networkAttachment?: string | Computed<string>;
   networkPassThroughLbTrafficPolicy?: AlphaBackendService_NetworkPassThroughLbTrafficPolicy | Computed<AlphaBackendService_NetworkPassThroughLbTrafficPolicy>;
   /** A message containing information about the resource or system that manages the backend service. */
   orchestrationInfo?: AlphaBackendService_Backends_OrchestrationInfo | Computed<AlphaBackendService_Backends_OrchestrationInfo>;
@@ -1134,6 +1136,8 @@ export interface AlphaBackendServiceConfig {
   selfLink?: string | Computed<string>;
   /** URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty. */
   serviceBindings?: string[] | Computed<string[]>;
+  /** Optional. The service class ID associated with this resource. Producer Service's Service class ID for the region of this backend service. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id. */
+  serviceClassId?: string | Computed<string>;
   /** URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a global backend service, the service lb policy must be global. For a regional backend service, the service lb policy must be regional and in the same region. */
   serviceLbPolicy?: string | Computed<string>;
   /** Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). sessionAffinity cannot be specified with haPolicy. */
@@ -1217,6 +1221,8 @@ export interface AlphaBackendServiceAttrs {
   name: string;
   /** The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled. */
   network: string;
+  /** Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}. */
+  networkAttachment: string;
   networkPassThroughLbTrafficPolicy: AlphaBackendService_NetworkPassThroughLbTrafficPolicy;
   /** A message containing information about the resource or system that manages the backend service. */
   orchestrationInfo: AlphaBackendService_Backends_OrchestrationInfo;
@@ -1242,6 +1248,8 @@ export interface AlphaBackendServiceAttrs {
   selfLinkWithId: string;
   /** URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty. */
   serviceBindings: string[];
+  /** Optional. The service class ID associated with this resource. Producer Service's Service class ID for the region of this backend service. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id. */
+  serviceClassId: string;
   /** URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a global backend service, the service lb policy must be global. For a regional backend service, the service lb policy must be regional and in the same region. */
   serviceLbPolicy: string;
   /** Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). sessionAffinity cannot be specified with haPolicy. */
@@ -1349,6 +1357,7 @@ export const AlphaBackendService: ResourceBinding<AlphaBackendServiceConfig, Alp
     metadatas: "metadatas",
     name: "name",
     network: "network",
+    networkAttachment: "network_attachment",
     networkPassThroughLbTrafficPolicy: {
       wireName: "network_pass_through_lb_traffic_policy",
       kind: "object",
@@ -1380,6 +1389,7 @@ export const AlphaBackendService: ResourceBinding<AlphaBackendServiceConfig, Alp
     },
     selfLink: "self_link",
     serviceBindings: "service_bindings",
+    serviceClassId: "service_class_id",
     serviceLbPolicy: "service_lb_policy",
     sessionAffinity: "session_affinity",
     strongSessionAffinityCookie: {

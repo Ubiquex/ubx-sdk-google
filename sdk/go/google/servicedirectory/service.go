@@ -40,6 +40,6 @@ var Service = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_service",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

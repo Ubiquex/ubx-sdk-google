@@ -77,46 +77,46 @@ type Instance_ServerCaCerts struct {
 }
 
 var Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields = ubx.FieldMap{
-	"Hours":   ubx.FieldSpec{WireName: "hours"},
-	"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Hours": ubx.FieldSpec{WireName: "hours"},
+		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields = ubx.FieldMap{
-	"Day":      ubx.FieldSpec{WireName: "day"},
-	"Duration": ubx.FieldSpec{WireName: "duration"},
-	"StartTime": ubx.FieldSpec{
-		WireName: "start_time",
-		Kind:     "object",
-		Fields:   Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
-	},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"StartTime": ubx.FieldSpec{
+			WireName: "start_time",
+			Kind: "object",
+			Fields: Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
+		},
+	}
 
 var Instance_MaintenancePolicyFields = ubx.FieldMap{
-	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
-	"WeeklyMaintenanceWindow": ubx.FieldSpec{
-		WireName: "weekly_maintenance_window",
-		Kind:     "list",
-		Fields:   Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
-	},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"WeeklyMaintenanceWindow": ubx.FieldSpec{
+			WireName: "weekly_maintenance_window",
+			Kind: "list",
+			Fields: Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
+		},
+	}
 
 var Instance_MaintenanceScheduleFields = ubx.FieldMap{
-	"CanReschedule":        ubx.FieldSpec{WireName: "can_reschedule"},
-	"EndTime":              ubx.FieldSpec{WireName: "end_time"},
-	"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
-	"StartTime":            ubx.FieldSpec{WireName: "start_time"},
-}
+		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var Instance_PersistenceConfigFields = ubx.FieldMap{
-	"PersistenceMode":      ubx.FieldSpec{WireName: "persistence_mode"},
-	"RdbNextSnapshotTime":  ubx.FieldSpec{WireName: "rdb_next_snapshot_time"},
-	"RdbSnapshotPeriod":    ubx.FieldSpec{WireName: "rdb_snapshot_period"},
-	"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
-}
+		"PersistenceMode": ubx.FieldSpec{WireName: "persistence_mode"},
+		"RdbNextSnapshotTime": ubx.FieldSpec{WireName: "rdb_next_snapshot_time"},
+		"RdbSnapshotPeriod": ubx.FieldSpec{WireName: "rdb_snapshot_period"},
+		"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
+	}
 
 type InstanceConfig struct {
 	// Optional. If specified, at least one node will be provisioned in this zone in addition to the zone specified in location_id. Only applicable to standard tier. If provided, it must be a different zone from the one provided in [location_id]. Additional nodes beyond the first 2 will be placed in zones selected by the service.
@@ -253,42 +253,42 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "google_redis_instance",
 	Fields: ubx.FieldMap{
-		"AlternativeLocationId":        ubx.FieldSpec{WireName: "alternative_location_id"},
-		"AuthEnabled":                  ubx.FieldSpec{WireName: "auth_enabled"},
-		"AuthorizedNetwork":            ubx.FieldSpec{WireName: "authorized_network"},
+		"AlternativeLocationId": ubx.FieldSpec{WireName: "alternative_location_id"},
+		"AuthEnabled": ubx.FieldSpec{WireName: "auth_enabled"},
+		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
 		"AvailableMaintenanceVersions": ubx.FieldSpec{WireName: "available_maintenance_versions"},
-		"ConnectMode":                  ubx.FieldSpec{WireName: "connect_mode"},
-		"CustomerManagedKey":           ubx.FieldSpec{WireName: "customer_managed_key"},
-		"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
-		"Labels":                       ubx.FieldSpec{WireName: "labels"},
-		"LocationId":                   ubx.FieldSpec{WireName: "location_id"},
+		"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
+		"CustomerManagedKey": ubx.FieldSpec{WireName: "customer_managed_key"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind:     "object",
-			Fields:   Instance_MaintenancePolicyFields,
+			Kind: "object",
+			Fields: Instance_MaintenancePolicyFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind:     "object",
-			Fields:   Instance_MaintenanceScheduleFields,
+			Kind: "object",
+			Fields: Instance_MaintenanceScheduleFields,
 		},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
-		"MemorySizeGb":       ubx.FieldSpec{WireName: "memory_size_gb"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"MemorySizeGb": ubx.FieldSpec{WireName: "memory_size_gb"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PersistenceConfig": ubx.FieldSpec{
 			WireName: "persistence_config",
-			Kind:     "object",
-			Fields:   Instance_PersistenceConfigFields,
+			Kind: "object",
+			Fields: Instance_PersistenceConfigFields,
 		},
-		"ReadReplicasMode":      ubx.FieldSpec{WireName: "read_replicas_mode"},
-		"RedisConfigs":          ubx.FieldSpec{WireName: "redis_configs"},
-		"RedisVersion":          ubx.FieldSpec{WireName: "redis_version"},
-		"ReplicaCount":          ubx.FieldSpec{WireName: "replica_count"},
-		"ReservedIpRange":       ubx.FieldSpec{WireName: "reserved_ip_range"},
-		"SecondaryIpRange":      ubx.FieldSpec{WireName: "secondary_ip_range"},
-		"SuspensionReasons":     ubx.FieldSpec{WireName: "suspension_reasons"},
-		"Tags":                  ubx.FieldSpec{WireName: "tags"},
-		"Tier":                  ubx.FieldSpec{WireName: "tier"},
+		"ReadReplicasMode": ubx.FieldSpec{WireName: "read_replicas_mode"},
+		"RedisConfigs": ubx.FieldSpec{WireName: "redis_configs"},
+		"RedisVersion": ubx.FieldSpec{WireName: "redis_version"},
+		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
+		"SecondaryIpRange": ubx.FieldSpec{WireName: "secondary_ip_range"},
+		"SuspensionReasons": ubx.FieldSpec{WireName: "suspension_reasons"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tier": ubx.FieldSpec{WireName: "tier"},
 		"TransitEncryptionMode": ubx.FieldSpec{WireName: "transit_encryption_mode"},
 	},
 }

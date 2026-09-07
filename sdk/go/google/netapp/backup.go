@@ -13,10 +13,10 @@ type Backup_OntapSource struct {
 }
 
 var Backup_OntapSourceFields = ubx.FieldMap{
-	"SnapshotUuid": ubx.FieldSpec{WireName: "snapshot_uuid"},
-	"StoragePool":  ubx.FieldSpec{WireName: "storage_pool"},
-	"VolumeUuid":   ubx.FieldSpec{WireName: "volume_uuid"},
-}
+		"SnapshotUuid": ubx.FieldSpec{WireName: "snapshot_uuid"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+		"VolumeUuid": ubx.FieldSpec{WireName: "volume_uuid"},
+	}
 
 type BackupConfig struct {
 	// A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected.
@@ -72,14 +72,14 @@ var Backup = ubx.ResourceBinding{
 	WireType: "google_netapp_backup",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OntapSource": ubx.FieldSpec{
 			WireName: "ontap_source",
-			Kind:     "object",
-			Fields:   Backup_OntapSourceFields,
+			Kind: "object",
+			Fields: Backup_OntapSourceFields,
 		},
 		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-		"SourceVolume":   ubx.FieldSpec{WireName: "source_volume"},
+		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
 	},
 }

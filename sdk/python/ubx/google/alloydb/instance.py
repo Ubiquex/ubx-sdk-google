@@ -93,6 +93,11 @@ class Instance_ObservabilityConfig:
     track_wait_events: Any = None
 
 @dataclasses.dataclass
+class Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos:
+    fully_qualified_domain_name: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
 class Instance_PscInstanceConfig_PscAutoConnections:
     # A reference to the consumer-side VPC network this connection uses. (AI-inferred)
     consumer_network: Any = None
@@ -100,8 +105,11 @@ class Instance_PscInstanceConfig_PscAutoConnections:
     consumer_network_status: Any = None
     # A reference to the consumer's own Google Cloud project. (AI-inferred)
     consumer_project: Any = None
+    dns_automation_infos: Any = None
     # An IP address, in IPv4 or IPv6 format. (AI-inferred)
     ip_address: Any = None
+    service_connection_policy: Any = None
+    service_connection_policy_creation_state: Any = None
     # The current status of this resource. (AI-inferred)
     status: Any = None
 
@@ -114,14 +122,29 @@ class Instance_PscInstanceConfig_PscInterfaceConfigs:
 class Instance_PscInstanceConfig:
     # Optional. List of consumer projects that are allowed to create PSC endpoints to service-attachments to this instance.
     allowed_consumer_projects: Any = None
+    # Optional. Configuration for setting up PSC auto connection for the instance.
+    psc_auto_connection_policy_state: Any = None
     # Optional. Configurations for setting up PSC service automation.
     psc_auto_connections: Any = None
+    # Optional. Configuration for setting up PSC auto DNS for the instance.
+    psc_auto_dns_state: Any = None
     # Output only. The DNS name of the instance for PSC connectivity. Name convention: ...alloydb-psc.goog
     psc_dns_name: Any = None
     # Optional. Configurations for setting up PSC interfaces attached to the instance which are used for outbound connectivity. Only primary instances can have PSC interface attached. Currently we only support 0 or 1 PSC interface.
     psc_interface_configs: Any = None
     # Output only. The service attachment created when Private Service Connect (PSC) is enabled for the instance. The name of the resource will be in the format of `projects//regions//serviceAttachments/`
     service_attachment_link: Any = None
+
+@dataclasses.dataclass
+class Instance_PscInstanceInfo:
+    # Output only. Indicates if the PSC auto connection policy is enabled for the instance. For older instances, this will be off by default, but for newer instances, this will be auto-enabled.
+    effective_psc_auto_connection_policy: Any = None
+    # Output only. The effective state of the PSC auto DNS for the instance.
+    effective_psc_auto_dns_enabled: Any = None
+    # Output only. Specifies the auto DNS names for the instance.
+    psc_auto_dns_names: Any = None
+    # Output only. The PSC service connection policy name. The format is "projects//regions//serviceConnectionPolicies/"
+    service_connection_policy: Any = None
 
 @dataclasses.dataclass
 class Instance_QueryInsightsConfig:
@@ -194,11 +217,23 @@ _Instance_ObservabilityConfigFields = {
     "track_wait_events": ubx.FieldSpec(wire_name="track_wait_events"),
 }
 
+_Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields = {
+    "fully_qualified_domain_name": ubx.FieldSpec(wire_name="fully_qualified_domain_name"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
+
 _Instance_PscInstanceConfig_PscAutoConnectionsFields = {
     "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
     "consumer_network_status": ubx.FieldSpec(wire_name="consumer_network_status"),
     "consumer_project": ubx.FieldSpec(wire_name="consumer_project"),
+    "dns_automation_infos": ubx.FieldSpec(
+        wire_name="dns_automation_infos",
+        kind="list",
+        fields=_Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
+    ),
     "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "service_connection_policy": ubx.FieldSpec(wire_name="service_connection_policy"),
+    "service_connection_policy_creation_state": ubx.FieldSpec(wire_name="service_connection_policy_creation_state"),
     "status": ubx.FieldSpec(wire_name="status"),
 }
 
@@ -208,11 +243,13 @@ _Instance_PscInstanceConfig_PscInterfaceConfigsFields = {
 
 _Instance_PscInstanceConfigFields = {
     "allowed_consumer_projects": ubx.FieldSpec(wire_name="allowed_consumer_projects"),
+    "psc_auto_connection_policy_state": ubx.FieldSpec(wire_name="psc_auto_connection_policy_state"),
     "psc_auto_connections": ubx.FieldSpec(
         wire_name="psc_auto_connections",
         kind="list",
         fields=_Instance_PscInstanceConfig_PscAutoConnectionsFields,
     ),
+    "psc_auto_dns_state": ubx.FieldSpec(wire_name="psc_auto_dns_state"),
     "psc_dns_name": ubx.FieldSpec(wire_name="psc_dns_name"),
     "psc_interface_configs": ubx.FieldSpec(
         wire_name="psc_interface_configs",
@@ -220,6 +257,13 @@ _Instance_PscInstanceConfigFields = {
         fields=_Instance_PscInstanceConfig_PscInterfaceConfigsFields,
     ),
     "service_attachment_link": ubx.FieldSpec(wire_name="service_attachment_link"),
+}
+
+_Instance_PscInstanceInfoFields = {
+    "effective_psc_auto_connection_policy": ubx.FieldSpec(wire_name="effective_psc_auto_connection_policy"),
+    "effective_psc_auto_dns_enabled": ubx.FieldSpec(wire_name="effective_psc_auto_dns_enabled"),
+    "psc_auto_dns_names": ubx.FieldSpec(wire_name="psc_auto_dns_names"),
+    "service_connection_policy": ubx.FieldSpec(wire_name="service_connection_policy"),
 }
 
 _Instance_QueryInsightsConfigFields = {
@@ -275,6 +319,8 @@ class InstanceConfig:
     observability_config: Any = None
     # PscInstanceConfig contains PSC related configuration at an instance level.
     psc_instance_config: Any = None
+    # Information about the Private Service Connect (PSC) for the instance.
+    psc_instance_info: Any = None
     # QueryInsights Instance specific configuration.
     query_insights_config: Any = None
     # Configuration for a read pool instance.
@@ -330,6 +376,8 @@ class InstanceAttrs:
     outbound_public_ip_addresses: Any = None
     # PscInstanceConfig contains PSC related configuration at an instance level.
     psc_instance_config: Any = None
+    # Information about the Private Service Connect (PSC) for the instance.
+    psc_instance_info: Any = None
     # Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application.
     public_ip_address: Any = None
     # QueryInsights Instance specific configuration.
@@ -391,6 +439,11 @@ Instance = ubx.ResourceBinding(
             wire_name="psc_instance_config",
             kind="object",
             fields=_Instance_PscInstanceConfigFields,
+        ),
+        "psc_instance_info": ubx.FieldSpec(
+            wire_name="psc_instance_info",
+            kind="object",
+            fields=_Instance_PscInstanceInfoFields,
         ),
         "query_insights_config": ubx.FieldSpec(
             wire_name="query_insights_config",

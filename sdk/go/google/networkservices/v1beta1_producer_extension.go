@@ -15,11 +15,11 @@ type V1beta1ProducerExtension_ExtensionSettings struct {
 }
 
 var V1beta1ProducerExtension_ExtensionSettingsFields = ubx.FieldMap{
-	"Authority":         ubx.FieldSpec{WireName: "authority"},
-	"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
-	"Service":           ubx.FieldSpec{WireName: "service"},
-	"SupportedEvents":   ubx.FieldSpec{WireName: "supported_events"},
-}
+		"Authority": ubx.FieldSpec{WireName: "authority"},
+		"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
+	}
 
 type V1beta1ProducerExtensionConfig struct {
 	// Optional. A human-readable description of the resource.
@@ -59,14 +59,14 @@ var V1beta1ProducerExtension = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_producer_extension",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"ExtensionSettings": ubx.FieldSpec{
 			WireName: "extension_settings",
-			Kind:     "object",
-			Fields:   V1beta1ProducerExtension_ExtensionSettingsFields,
+			Kind: "object",
+			Fields: V1beta1ProducerExtension_ExtensionSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
-		"Phase":  ubx.FieldSpec{WireName: "phase"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Phase": ubx.FieldSpec{WireName: "phase"},
 	},
 }

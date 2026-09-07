@@ -70,56 +70,56 @@ type Api_SourceMetadata struct {
 }
 
 var Api_ApiFunctionalRequirements_EnumValues_ValuesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+	}
 
 var Api_ApiFunctionalRequirements_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Api_ApiFunctionalRequirements_EnumValues_ValuesFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Api_ApiFunctionalRequirements_EnumValues_ValuesFields,
+		},
+	}
 
 var Api_ApiFunctionalRequirements_JsonValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Api_ApiFunctionalRequirementsFields = ubx.FieldMap{
-	"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   Api_ApiFunctionalRequirements_EnumValuesFields,
-	},
-	"JsonValues": ubx.FieldSpec{
-		WireName: "json_values",
-		Kind:     "object",
-		Fields:   Api_ApiFunctionalRequirements_JsonValuesFields,
-	},
-	"StringValues": ubx.FieldSpec{
-		WireName: "string_values",
-		Kind:     "object",
-		Fields:   Api_ApiFunctionalRequirements_JsonValuesFields,
-	},
-	"UriValues": ubx.FieldSpec{
-		WireName: "uri_values",
-		Kind:     "object",
-		Fields:   Api_ApiFunctionalRequirements_JsonValuesFields,
-	},
-}
+		"Attribute": ubx.FieldSpec{WireName: "attribute"},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirements_EnumValuesFields,
+		},
+		"JsonValues": ubx.FieldSpec{
+			WireName: "json_values",
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirements_JsonValuesFields,
+		},
+		"StringValues": ubx.FieldSpec{
+			WireName: "string_values",
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirements_JsonValuesFields,
+		},
+		"UriValues": ubx.FieldSpec{
+			WireName: "uri_values",
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirements_JsonValuesFields,
+		},
+	}
 
 var Api_DocumentationFields = ubx.FieldMap{
-	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-}
+		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+	}
 
 var Api_OwnerFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Email":       ubx.FieldSpec{WireName: "email"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+	}
 
 type ApiConfig struct {
 	// The attribute values associated with resource.
@@ -204,63 +204,63 @@ var Api = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiFunctionalRequirements": ubx.FieldSpec{
 			WireName: "api_functional_requirements",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"ApiRequirements": ubx.FieldSpec{
 			WireName: "api_requirements",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"ApiStyle": ubx.FieldSpec{
 			WireName: "api_style",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"ApiTechnicalRequirements": ubx.FieldSpec{
 			WireName: "api_technical_requirements",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "map",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "map",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"BusinessUnit": ubx.FieldSpec{
 			WireName: "business_unit",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind:     "object",
-			Fields:   Api_DocumentationFields,
+			Kind: "object",
+			Fields: Api_DocumentationFields,
 		},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"MaturityLevel": ubx.FieldSpec{
 			WireName: "maturity_level",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Owner": ubx.FieldSpec{
 			WireName: "owner",
-			Kind:     "object",
-			Fields:   Api_OwnerFields,
+			Kind: "object",
+			Fields: Api_OwnerFields,
 		},
 		"SelectedVersion": ubx.FieldSpec{WireName: "selected_version"},
 		"TargetUser": ubx.FieldSpec{
 			WireName: "target_user",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 		"Team": ubx.FieldSpec{
 			WireName: "team",
-			Kind:     "object",
-			Fields:   Api_ApiFunctionalRequirementsFields,
+			Kind: "object",
+			Fields: Api_ApiFunctionalRequirementsFields,
 		},
 	},
 }

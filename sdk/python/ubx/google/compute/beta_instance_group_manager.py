@@ -8,6 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class BetaInstanceGroupManager_AllInstancesConfig_Properties:
+    # This optional flag exposes the hashed physical host ID.
+    expose_host_topology: Any = None
     # The label key-value pairs that you want to patch onto the instance.
     labels: Any = None
     # The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata.
@@ -390,6 +392,7 @@ class BetaInstanceGroupManager_Versions:
     target_size: Any = None
 
 _BetaInstanceGroupManager_AllInstancesConfig_PropertiesFields = {
+    "expose_host_topology": ubx.FieldSpec(wire_name="expose_host_topology"),
     "labels": ubx.FieldSpec(wire_name="labels"),
     "metadata": ubx.FieldSpec(wire_name="metadata"),
 }

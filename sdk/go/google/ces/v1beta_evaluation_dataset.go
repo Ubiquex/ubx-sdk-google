@@ -9,13 +9,13 @@ type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_Hallucination
 
 type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetrics struct {
 	AverageLatency any
-	Tool           any
+	Tool any
 }
 
 type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetrics struct {
 	FailCount any
 	PassCount any
-	Tool      any
+	Tool any
 }
 
 type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetrics struct {
@@ -23,24 +23,24 @@ type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn
 }
 
 type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn struct {
-	HallucinationMetrics      any
+	HallucinationMetrics any
 	SemanticSimilarityMetrics any
-	ToolCallLatencyMetrics    any
-	ToolMetrics               any
-	TurnIndex                 any
-	TurnLatencyMetrics        any
+	ToolCallLatencyMetrics any
+	ToolMetrics any
+	TurnIndex any
+	TurnLatencyMetrics any
 }
 
 type V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion struct {
-	AppVersionId              any
-	FailCount                 any
-	HallucinationMetrics      any
-	MetricsByTurn             any
-	PassCount                 any
+	AppVersionId any
+	FailCount any
+	HallucinationMetrics any
+	MetricsByTurn any
+	PassCount any
 	SemanticSimilarityMetrics any
-	ToolCallLatencyMetrics    any
-	ToolMetrics               any
-	TurnLatencyMetrics        any
+	ToolCallLatencyMetrics any
+	ToolMetrics any
+	TurnLatencyMetrics any
 }
 
 type V1betaEvaluationDataset_AggregatedMetrics struct {
@@ -49,96 +49,96 @@ type V1betaEvaluationDataset_AggregatedMetrics struct {
 }
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields = ubx.FieldMap{
-	"Score": ubx.FieldSpec{WireName: "score"},
-}
+		"Score": ubx.FieldSpec{WireName: "score"},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields = ubx.FieldMap{
-	"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
-	"Tool":           ubx.FieldSpec{WireName: "tool"},
-}
+		"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields = ubx.FieldMap{
-	"FailCount": ubx.FieldSpec{WireName: "fail_count"},
-	"PassCount": ubx.FieldSpec{WireName: "pass_count"},
-	"Tool":      ubx.FieldSpec{WireName: "tool"},
-}
+		"FailCount": ubx.FieldSpec{WireName: "fail_count"},
+		"PassCount": ubx.FieldSpec{WireName: "pass_count"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields = ubx.FieldMap{
-	"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
-}
+		"AverageLatency": ubx.FieldSpec{WireName: "average_latency"},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields = ubx.FieldMap{
-	"HallucinationMetrics": ubx.FieldSpec{
-		WireName: "hallucination_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-	},
-	"SemanticSimilarityMetrics": ubx.FieldSpec{
-		WireName: "semantic_similarity_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-	},
-	"ToolCallLatencyMetrics": ubx.FieldSpec{
-		WireName: "tool_call_latency_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
-	},
-	"ToolMetrics": ubx.FieldSpec{
-		WireName: "tool_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
-	},
-	"TurnIndex": ubx.FieldSpec{WireName: "turn_index"},
-	"TurnLatencyMetrics": ubx.FieldSpec{
-		WireName: "turn_latency_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
-	},
-}
+		"HallucinationMetrics": ubx.FieldSpec{
+			WireName: "hallucination_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+		},
+		"SemanticSimilarityMetrics": ubx.FieldSpec{
+			WireName: "semantic_similarity_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+		},
+		"ToolCallLatencyMetrics": ubx.FieldSpec{
+			WireName: "tool_call_latency_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
+		},
+		"ToolMetrics": ubx.FieldSpec{
+			WireName: "tool_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
+		},
+		"TurnIndex": ubx.FieldSpec{WireName: "turn_index"},
+		"TurnLatencyMetrics": ubx.FieldSpec{
+			WireName: "turn_latency_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
+		},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersionFields = ubx.FieldMap{
-	"AppVersionId": ubx.FieldSpec{WireName: "app_version_id"},
-	"FailCount":    ubx.FieldSpec{WireName: "fail_count"},
-	"HallucinationMetrics": ubx.FieldSpec{
-		WireName: "hallucination_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-	},
-	"MetricsByTurn": ubx.FieldSpec{
-		WireName: "metrics_by_turn",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields,
-	},
-	"PassCount": ubx.FieldSpec{WireName: "pass_count"},
-	"SemanticSimilarityMetrics": ubx.FieldSpec{
-		WireName: "semantic_similarity_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
-	},
-	"ToolCallLatencyMetrics": ubx.FieldSpec{
-		WireName: "tool_call_latency_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
-	},
-	"ToolMetrics": ubx.FieldSpec{
-		WireName: "tool_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
-	},
-	"TurnLatencyMetrics": ubx.FieldSpec{
-		WireName: "turn_latency_metrics",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
-	},
-}
+		"AppVersionId": ubx.FieldSpec{WireName: "app_version_id"},
+		"FailCount": ubx.FieldSpec{WireName: "fail_count"},
+		"HallucinationMetrics": ubx.FieldSpec{
+			WireName: "hallucination_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+		},
+		"MetricsByTurn": ubx.FieldSpec{
+			WireName: "metrics_by_turn",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurnFields,
+		},
+		"PassCount": ubx.FieldSpec{WireName: "pass_count"},
+		"SemanticSimilarityMetrics": ubx.FieldSpec{
+			WireName: "semantic_similarity_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_HallucinationMetricsFields,
+		},
+		"ToolCallLatencyMetrics": ubx.FieldSpec{
+			WireName: "tool_call_latency_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolCallLatencyMetricsFields,
+		},
+		"ToolMetrics": ubx.FieldSpec{
+			WireName: "tool_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_ToolMetricsFields,
+		},
+		"TurnLatencyMetrics": ubx.FieldSpec{
+			WireName: "turn_latency_metrics",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersion_MetricsByTurn_TurnLatencyMetricsFields,
+		},
+	}
 
 var V1betaEvaluationDataset_AggregatedMetricsFields = ubx.FieldMap{
-	"MetricsByAppVersion": ubx.FieldSpec{
-		WireName: "metrics_by_app_version",
-		Kind:     "list",
-		Fields:   V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersionFields,
-	},
-}
+		"MetricsByAppVersion": ubx.FieldSpec{
+			WireName: "metrics_by_app_version",
+			Kind: "list",
+			Fields: V1betaEvaluationDataset_AggregatedMetrics_MetricsByAppVersionFields,
+		},
+	}
 
 type V1betaEvaluationDatasetConfig struct {
 	// Aggregated metrics for an evaluation or evaluation dataset.
@@ -177,11 +177,11 @@ var V1betaEvaluationDataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedMetrics": ubx.FieldSpec{
 			WireName: "aggregated_metrics",
-			Kind:     "object",
-			Fields:   V1betaEvaluationDataset_AggregatedMetricsFields,
+			Kind: "object",
+			Fields: V1betaEvaluationDataset_AggregatedMetricsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Evaluations": ubx.FieldSpec{WireName: "evaluations"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

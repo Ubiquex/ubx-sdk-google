@@ -60,60 +60,60 @@ type SecurityProfile_UrlFilteringProfile struct {
 }
 
 var SecurityProfile_CustomInterceptProfileFields = ubx.FieldMap{
-	"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
-}
+		"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
+	}
 
 var SecurityProfile_CustomMirroringProfileFields = ubx.FieldMap{
-	"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
-}
+		"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
+	}
 
 var SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields = ubx.FieldMap{
-	"Action":   ubx.FieldSpec{WireName: "action"},
-	"Protocol": ubx.FieldSpec{WireName: "protocol"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+	}
 
 var SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields = ubx.FieldMap{
-	"Action":   ubx.FieldSpec{WireName: "action"},
-	"Severity": ubx.FieldSpec{WireName: "severity"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Severity": ubx.FieldSpec{WireName: "severity"},
+	}
 
 var SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields = ubx.FieldMap{
-	"Action":   ubx.FieldSpec{WireName: "action"},
-	"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var SecurityProfile_ThreatPreventionProfileFields = ubx.FieldMap{
-	"AntivirusOverrides": ubx.FieldSpec{
-		WireName: "antivirus_overrides",
-		Kind:     "list",
-		Fields:   SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
-	},
-	"SeverityOverrides": ubx.FieldSpec{
-		WireName: "severity_overrides",
-		Kind:     "list",
-		Fields:   SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields,
-	},
-	"ThreatOverrides": ubx.FieldSpec{
-		WireName: "threat_overrides",
-		Kind:     "list",
-		Fields:   SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields,
-	},
-}
+		"AntivirusOverrides": ubx.FieldSpec{
+			WireName: "antivirus_overrides",
+			Kind: "list",
+			Fields: SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
+		},
+		"SeverityOverrides": ubx.FieldSpec{
+			WireName: "severity_overrides",
+			Kind: "list",
+			Fields: SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields,
+		},
+		"ThreatOverrides": ubx.FieldSpec{
+			WireName: "threat_overrides",
+			Kind: "list",
+			Fields: SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields,
+		},
+	}
 
 var SecurityProfile_UrlFilteringProfile_UrlFiltersFields = ubx.FieldMap{
-	"FilteringAction": ubx.FieldSpec{WireName: "filtering_action"},
-	"Priority":        ubx.FieldSpec{WireName: "priority"},
-	"Urls":            ubx.FieldSpec{WireName: "urls"},
-}
+		"FilteringAction": ubx.FieldSpec{WireName: "filtering_action"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Urls": ubx.FieldSpec{WireName: "urls"},
+	}
 
 var SecurityProfile_UrlFilteringProfileFields = ubx.FieldMap{
-	"UrlFilters": ubx.FieldSpec{
-		WireName: "url_filters",
-		Kind:     "list",
-		Fields:   SecurityProfile_UrlFilteringProfile_UrlFiltersFields,
-	},
-}
+		"UrlFilters": ubx.FieldSpec{
+			WireName: "url_filters",
+			Kind: "list",
+			Fields: SecurityProfile_UrlFilteringProfile_UrlFiltersFields,
+		},
+	}
 
 type SecurityProfileConfig struct {
 	// CustomInterceptProfile defines in-band integration behavior (intercept). It is used by firewall rules with an APPLY_SECURITY_PROFILE_GROUP action.
@@ -164,27 +164,27 @@ var SecurityProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomInterceptProfile": ubx.FieldSpec{
 			WireName: "custom_intercept_profile",
-			Kind:     "object",
-			Fields:   SecurityProfile_CustomInterceptProfileFields,
+			Kind: "object",
+			Fields: SecurityProfile_CustomInterceptProfileFields,
 		},
 		"CustomMirroringProfile": ubx.FieldSpec{
 			WireName: "custom_mirroring_profile",
-			Kind:     "object",
-			Fields:   SecurityProfile_CustomMirroringProfileFields,
+			Kind: "object",
+			Fields: SecurityProfile_CustomMirroringProfileFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ThreatPreventionProfile": ubx.FieldSpec{
 			WireName: "threat_prevention_profile",
-			Kind:     "object",
-			Fields:   SecurityProfile_ThreatPreventionProfileFields,
+			Kind: "object",
+			Fields: SecurityProfile_ThreatPreventionProfileFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"UrlFilteringProfile": ubx.FieldSpec{
 			WireName: "url_filtering_profile",
-			Kind:     "object",
-			Fields:   SecurityProfile_UrlFilteringProfileFields,
+			Kind: "object",
+			Fields: SecurityProfile_UrlFilteringProfileFields,
 		},
 	},
 }

@@ -50,13 +50,13 @@ type OauthClientAttrs struct {
 var OauthClient = ubx.ResourceBinding{
 	WireType: "google_iam_oauth_client",
 	Fields: ubx.FieldMap{
-		"AllowedGrantTypes":   ubx.FieldSpec{WireName: "allowed_grant_types"},
+		"AllowedGrantTypes": ubx.FieldSpec{WireName: "allowed_grant_types"},
 		"AllowedRedirectUris": ubx.FieldSpec{WireName: "allowed_redirect_uris"},
-		"AllowedScopes":       ubx.FieldSpec{WireName: "allowed_scopes"},
-		"ClientType":          ubx.FieldSpec{WireName: "client_type"},
-		"Description":         ubx.FieldSpec{WireName: "description"},
-		"Disabled":            ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
+		"ClientType": ubx.FieldSpec{WireName: "client_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -9,8 +9,8 @@ type Link_BigqueryDataset struct {
 }
 
 var Link_BigqueryDatasetFields = ubx.FieldMap{
-	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-}
+		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	}
 
 type LinkConfig struct {
 	// Describes a BigQuery dataset that was created by a link.
@@ -37,8 +37,8 @@ var Link = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryDataset": ubx.FieldSpec{
 			WireName: "bigquery_dataset",
-			Kind:     "object",
-			Fields:   Link_BigqueryDatasetFields,
+			Kind: "object",
+			Fields: Link_BigqueryDatasetFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 	},

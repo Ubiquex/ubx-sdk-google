@@ -35,8 +35,8 @@ var IpamAdminScope = ubx.ResourceBinding{
 	WireType: "google_cloudnumberregistry_ipam_admin_scope",
 	Fields: ubx.FieldMap{
 		"EnabledAddonPlatforms": ubx.FieldSpec{WireName: "enabled_addon_platforms"},
-		"Labels":                ubx.FieldSpec{WireName: "labels"},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
-		"Scopes":                ubx.FieldSpec{WireName: "scopes"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
 	},
 }

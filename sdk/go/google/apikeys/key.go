@@ -51,62 +51,62 @@ type Key_Restrictions struct {
 }
 
 var Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields = ubx.FieldMap{
-	"PackageName":     ubx.FieldSpec{WireName: "package_name"},
-	"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
-}
+		"PackageName": ubx.FieldSpec{WireName: "package_name"},
+		"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
+	}
 
 var Key_Restrictions_AndroidKeyRestrictionsFields = ubx.FieldMap{
-	"AllowedApplications": ubx.FieldSpec{
-		WireName: "allowed_applications",
-		Kind:     "list",
-		Fields:   Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields,
-	},
-}
+		"AllowedApplications": ubx.FieldSpec{
+			WireName: "allowed_applications",
+			Kind: "list",
+			Fields: Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields,
+		},
+	}
 
 var Key_Restrictions_ApiTargetsFields = ubx.FieldMap{
-	"Methods": ubx.FieldSpec{WireName: "methods"},
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"Methods": ubx.FieldSpec{WireName: "methods"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var Key_Restrictions_BrowserKeyRestrictionsFields = ubx.FieldMap{
-	"AllowedReferrers": ubx.FieldSpec{WireName: "allowed_referrers"},
-}
+		"AllowedReferrers": ubx.FieldSpec{WireName: "allowed_referrers"},
+	}
 
 var Key_Restrictions_IosKeyRestrictionsFields = ubx.FieldMap{
-	"AllowedBundleIds": ubx.FieldSpec{WireName: "allowed_bundle_ids"},
-}
+		"AllowedBundleIds": ubx.FieldSpec{WireName: "allowed_bundle_ids"},
+	}
 
 var Key_Restrictions_ServerKeyRestrictionsFields = ubx.FieldMap{
-	"AllowedIps": ubx.FieldSpec{WireName: "allowed_ips"},
-}
+		"AllowedIps": ubx.FieldSpec{WireName: "allowed_ips"},
+	}
 
 var Key_RestrictionsFields = ubx.FieldMap{
-	"AndroidKeyRestrictions": ubx.FieldSpec{
-		WireName: "android_key_restrictions",
-		Kind:     "object",
-		Fields:   Key_Restrictions_AndroidKeyRestrictionsFields,
-	},
-	"ApiTargets": ubx.FieldSpec{
-		WireName: "api_targets",
-		Kind:     "list",
-		Fields:   Key_Restrictions_ApiTargetsFields,
-	},
-	"BrowserKeyRestrictions": ubx.FieldSpec{
-		WireName: "browser_key_restrictions",
-		Kind:     "object",
-		Fields:   Key_Restrictions_BrowserKeyRestrictionsFields,
-	},
-	"IosKeyRestrictions": ubx.FieldSpec{
-		WireName: "ios_key_restrictions",
-		Kind:     "object",
-		Fields:   Key_Restrictions_IosKeyRestrictionsFields,
-	},
-	"ServerKeyRestrictions": ubx.FieldSpec{
-		WireName: "server_key_restrictions",
-		Kind:     "object",
-		Fields:   Key_Restrictions_ServerKeyRestrictionsFields,
-	},
-}
+		"AndroidKeyRestrictions": ubx.FieldSpec{
+			WireName: "android_key_restrictions",
+			Kind: "object",
+			Fields: Key_Restrictions_AndroidKeyRestrictionsFields,
+		},
+		"ApiTargets": ubx.FieldSpec{
+			WireName: "api_targets",
+			Kind: "list",
+			Fields: Key_Restrictions_ApiTargetsFields,
+		},
+		"BrowserKeyRestrictions": ubx.FieldSpec{
+			WireName: "browser_key_restrictions",
+			Kind: "object",
+			Fields: Key_Restrictions_BrowserKeyRestrictionsFields,
+		},
+		"IosKeyRestrictions": ubx.FieldSpec{
+			WireName: "ios_key_restrictions",
+			Kind: "object",
+			Fields: Key_Restrictions_IosKeyRestrictionsFields,
+		},
+		"ServerKeyRestrictions": ubx.FieldSpec{
+			WireName: "server_key_restrictions",
+			Kind: "object",
+			Fields: Key_Restrictions_ServerKeyRestrictionsFields,
+		},
+	}
 
 type KeyConfig struct {
 	// Annotations is an unstructured key-value map stored with a policy that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -153,12 +153,12 @@ var Key = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Restrictions": ubx.FieldSpec{
 			WireName: "restrictions",
-			Kind:     "object",
-			Fields:   Key_RestrictionsFields,
+			Kind: "object",
+			Fields: Key_RestrictionsFields,
 		},
 		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
 	},

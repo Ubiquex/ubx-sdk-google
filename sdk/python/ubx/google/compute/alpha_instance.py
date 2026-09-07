@@ -305,6 +305,8 @@ class AlphaInstance_ResourceStatus_PhysicalHostTopology:
     cluster: Any = None
     # [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
     host: Any = None
+    # Output only. [Output Only] The ID of the machine on which the running instance is located. It is only populated for machines which have multiple hosts.
+    machine: Any = None
     # [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
     subblock: Any = None
 
@@ -875,6 +877,7 @@ _AlphaInstance_ResourceStatus_PhysicalHostTopologyFields = {
     "block": ubx.FieldSpec(wire_name="block"),
     "cluster": ubx.FieldSpec(wire_name="cluster"),
     "host": ubx.FieldSpec(wire_name="host"),
+    "machine": ubx.FieldSpec(wire_name="machine"),
     "subblock": ubx.FieldSpec(wire_name="subblock"),
 }
 

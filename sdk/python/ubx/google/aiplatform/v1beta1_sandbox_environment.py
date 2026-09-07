@@ -34,6 +34,8 @@ class V1beta1SandboxEnvironment_Spec:
     computer_use_environment: Any = None
     # The shell environment.
     shell_environment: Any = None
+    # Optional. Immutable. Whether to provision the SandboxEnvironment via the GKE TD pool. Immutable.
+    use_gke_td: Any = None
 
 _V1beta1SandboxEnvironment_ConnectionInfoFields = {
     "load_balancer_hostname": ubx.FieldSpec(wire_name="load_balancer_hostname"),
@@ -56,6 +58,7 @@ _V1beta1SandboxEnvironment_SpecFields = {
     ),
     "computer_use_environment": ubx.FieldSpec(wire_name="computer_use_environment"),
     "shell_environment": ubx.FieldSpec(wire_name="shell_environment"),
+    "use_gke_td": ubx.FieldSpec(wire_name="use_gke_td"),
 }
 
 @dataclasses.dataclass

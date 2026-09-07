@@ -23,22 +23,22 @@ type Database_SourceInfo struct {
 }
 
 var Database_CmekConfigFields = ubx.FieldMap{
-	"ActiveKeyVersion": ubx.FieldSpec{WireName: "active_key_version"},
-	"KmsKeyName":       ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"ActiveKeyVersion": ubx.FieldSpec{WireName: "active_key_version"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var Database_SourceInfo_BackupFields = ubx.FieldMap{
-	"Backup": ubx.FieldSpec{WireName: "backup"},
-}
+		"Backup": ubx.FieldSpec{WireName: "backup"},
+	}
 
 var Database_SourceInfoFields = ubx.FieldMap{
-	"Backup": ubx.FieldSpec{
-		WireName: "backup",
-		Kind:     "object",
-		Fields:   Database_SourceInfo_BackupFields,
-	},
-	"Operation": ubx.FieldSpec{WireName: "operation"},
-}
+		"Backup": ubx.FieldSpec{
+			WireName: "backup",
+			Kind: "object",
+			Fields: Database_SourceInfo_BackupFields,
+		},
+		"Operation": ubx.FieldSpec{WireName: "operation"},
+	}
 
 type DatabaseConfig struct {
 	// The App Engine integration mode to use for this database.
@@ -130,23 +130,23 @@ var Database = ubx.ResourceBinding{
 		"AppEngineIntegrationMode": ubx.FieldSpec{WireName: "app_engine_integration_mode"},
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind:     "object",
-			Fields:   Database_CmekConfigFields,
+			Kind: "object",
+			Fields: Database_CmekConfigFields,
 		},
-		"ConcurrencyMode":                 ubx.FieldSpec{WireName: "concurrency_mode"},
-		"DatabaseEdition":                 ubx.FieldSpec{WireName: "database_edition"},
-		"DeleteProtectionState":           ubx.FieldSpec{WireName: "delete_protection_state"},
-		"Etag":                            ubx.FieldSpec{WireName: "etag"},
-		"FirestoreDataAccessMode":         ubx.FieldSpec{WireName: "firestore_data_access_mode"},
-		"LocationId":                      ubx.FieldSpec{WireName: "location_id"},
+		"ConcurrencyMode": ubx.FieldSpec{WireName: "concurrency_mode"},
+		"DatabaseEdition": ubx.FieldSpec{WireName: "database_edition"},
+		"DeleteProtectionState": ubx.FieldSpec{WireName: "delete_protection_state"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"FirestoreDataAccessMode": ubx.FieldSpec{WireName: "firestore_data_access_mode"},
+		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 		"MongodbCompatibleDataAccessMode": ubx.FieldSpec{WireName: "mongodb_compatible_data_access_mode"},
-		"Name":                            ubx.FieldSpec{WireName: "name"},
-		"PointInTimeRecoveryEnablement":   ubx.FieldSpec{WireName: "point_in_time_recovery_enablement"},
-		"RealtimeUpdatesMode":             ubx.FieldSpec{WireName: "realtime_updates_mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PointInTimeRecoveryEnablement": ubx.FieldSpec{WireName: "point_in_time_recovery_enablement"},
+		"RealtimeUpdatesMode": ubx.FieldSpec{WireName: "realtime_updates_mode"},
 		"SourceInfo": ubx.FieldSpec{
 			WireName: "source_info",
-			Kind:     "object",
-			Fields:   Database_SourceInfoFields,
+			Kind: "object",
+			Fields: Database_SourceInfoFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Type": ubx.FieldSpec{WireName: "type"},

@@ -23,6 +23,6 @@ var Namespace = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_namespace",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

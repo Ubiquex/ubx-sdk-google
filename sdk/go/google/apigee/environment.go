@@ -37,36 +37,36 @@ type Environment_Properties struct {
 }
 
 var Environment_ClientIpResolutionConfig_HeaderIndexAlgorithmFields = ubx.FieldMap{
-	"IpHeaderIndex": ubx.FieldSpec{WireName: "ip_header_index"},
-	"IpHeaderName":  ubx.FieldSpec{WireName: "ip_header_name"},
-}
+		"IpHeaderIndex": ubx.FieldSpec{WireName: "ip_header_index"},
+		"IpHeaderName": ubx.FieldSpec{WireName: "ip_header_name"},
+	}
 
 var Environment_ClientIpResolutionConfigFields = ubx.FieldMap{
-	"HeaderIndexAlgorithm": ubx.FieldSpec{
-		WireName: "header_index_algorithm",
-		Kind:     "object",
-		Fields:   Environment_ClientIpResolutionConfig_HeaderIndexAlgorithmFields,
-	},
-}
+		"HeaderIndexAlgorithm": ubx.FieldSpec{
+			WireName: "header_index_algorithm",
+			Kind: "object",
+			Fields: Environment_ClientIpResolutionConfig_HeaderIndexAlgorithmFields,
+		},
+	}
 
 var Environment_NodeConfigFields = ubx.FieldMap{
-	"CurrentAggregateNodeCount": ubx.FieldSpec{WireName: "current_aggregate_node_count"},
-	"MaxNodeCount":              ubx.FieldSpec{WireName: "max_node_count"},
-	"MinNodeCount":              ubx.FieldSpec{WireName: "min_node_count"},
-}
+		"CurrentAggregateNodeCount": ubx.FieldSpec{WireName: "current_aggregate_node_count"},
+		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
+		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
+	}
 
 var Environment_Properties_PropertyFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Environment_PropertiesFields = ubx.FieldMap{
-	"Property": ubx.FieldSpec{
-		WireName: "property",
-		Kind:     "list",
-		Fields:   Environment_Properties_PropertyFields,
-	},
-}
+		"Property": ubx.FieldSpec{
+			WireName: "property",
+			Kind: "list",
+			Fields: Environment_Properties_PropertyFields,
+		},
+	}
 
 type EnvironmentConfig struct {
 	// Optional. API Proxy type supported by the environment. The type can be set when creating the Environment and cannot be changed.
@@ -130,24 +130,24 @@ var Environment = ubx.ResourceBinding{
 		"ApiProxyType": ubx.FieldSpec{WireName: "api_proxy_type"},
 		"ClientIpResolutionConfig": ubx.FieldSpec{
 			WireName: "client_ip_resolution_config",
-			Kind:     "object",
-			Fields:   Environment_ClientIpResolutionConfigFields,
+			Kind: "object",
+			Fields: Environment_ClientIpResolutionConfigFields,
 		},
-		"DeploymentType":       ubx.FieldSpec{WireName: "deployment_type"},
-		"Description":          ubx.FieldSpec{WireName: "description"},
-		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
-		"ForwardProxyUri":      ubx.FieldSpec{WireName: "forward_proxy_uri"},
+		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ForwardProxyUri": ubx.FieldSpec{WireName: "forward_proxy_uri"},
 		"HasAttachedFlowHooks": ubx.FieldSpec{WireName: "has_attached_flow_hooks"},
-		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodeConfig": ubx.FieldSpec{
 			WireName: "node_config",
-			Kind:     "object",
-			Fields:   Environment_NodeConfigFields,
+			Kind: "object",
+			Fields: Environment_NodeConfigFields,
 		},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind:     "object",
-			Fields:   Environment_PropertiesFields,
+			Kind: "object",
+			Fields: Environment_PropertiesFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

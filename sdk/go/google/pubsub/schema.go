@@ -3,7 +3,21 @@ package pubsub
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type Schema_CompiledProtoSchema struct {
+	// Required. The compiled FileDescriptorSet binary.
+	CompiledBytes any
+	// Required. The name of the root message type in the schema.
+	RootMessage any
+}
+
+var Schema_CompiledProtoSchemaFields = ubx.FieldMap{
+		"CompiledBytes": ubx.FieldSpec{WireName: "compiled_bytes"},
+		"RootMessage": ubx.FieldSpec{WireName: "root_message"},
+	}
+
 type SchemaConfig struct {
+	// Configuration specific to compiled Protocol Buffer schemas.
+	CompiledProtoSchema any
 	// The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.
 	Definition any
 	// Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
@@ -13,6 +27,8 @@ type SchemaConfig struct {
 }
 
 type SchemaAttrs struct {
+	// Configuration specific to compiled Protocol Buffer schemas.
+	CompiledProtoSchema any
 	// The definition of the schema. This should contain a string representing the full definition of the schema that is a valid schema definition of the type specified in `type`.
 	Definition any
 	// Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
@@ -28,8 +44,13 @@ type SchemaAttrs struct {
 var Schema = ubx.ResourceBinding{
 	WireType: "google_pubsub_schema",
 	Fields: ubx.FieldMap{
+		"CompiledProtoSchema": ubx.FieldSpec{
+			WireName: "compiled_proto_schema",
+			Kind: "object",
+			Fields: Schema_CompiledProtoSchemaFields,
+		},
 		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Name":       ubx.FieldSpec{WireName: "name"},
-		"Type":       ubx.FieldSpec{WireName: "type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

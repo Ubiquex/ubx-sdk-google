@@ -32,8 +32,8 @@ type Route_Warnings struct {
 }
 
 var Route_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type RouteConfig struct {
 	// An optional description of this resource. Provide this field when you create the resource.
@@ -128,24 +128,24 @@ type RouteAttrs struct {
 var Route = ubx.ResourceBinding{
 	WireType: "google_compute_route",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"DestRange":        ubx.FieldSpec{WireName: "dest_range"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Network":          ubx.FieldSpec{WireName: "network"},
-		"NextHopGateway":   ubx.FieldSpec{WireName: "next_hop_gateway"},
-		"NextHopIlb":       ubx.FieldSpec{WireName: "next_hop_ilb"},
-		"NextHopInstance":  ubx.FieldSpec{WireName: "next_hop_instance"},
-		"NextHopIp":        ubx.FieldSpec{WireName: "next_hop_ip"},
-		"NextHopNetwork":   ubx.FieldSpec{WireName: "next_hop_network"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NextHopGateway": ubx.FieldSpec{WireName: "next_hop_gateway"},
+		"NextHopIlb": ubx.FieldSpec{WireName: "next_hop_ilb"},
+		"NextHopInstance": ubx.FieldSpec{WireName: "next_hop_instance"},
+		"NextHopIp": ubx.FieldSpec{WireName: "next_hop_ip"},
+		"NextHopNetwork": ubx.FieldSpec{WireName: "next_hop_network"},
 		"NextHopVpnTunnel": ubx.FieldSpec{WireName: "next_hop_vpn_tunnel"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   Route_ParamsFields,
+			Kind: "object",
+			Fields: Route_ParamsFields,
 		},
-		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"RouteStatus": ubx.FieldSpec{WireName: "route_status"},
-		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

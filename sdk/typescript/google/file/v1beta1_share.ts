@@ -24,8 +24,10 @@ const V1beta1Share_NfsExportOptionsFields: FieldMap = {
 export interface V1beta1ShareConfig {
   /** Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup. */
   backup?: string | Computed<string>;
-  /** File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. */
+  /** Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified. */
   capacityGb?: string | Computed<string>;
+  /** Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified. */
+  capacityMb?: string | Computed<string>;
   /** A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
@@ -39,8 +41,10 @@ export interface V1beta1ShareConfig {
 export interface V1beta1ShareAttrs {
   /** Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup. */
   backup: string;
-  /** File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. */
+  /** Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified. */
   capacityGb: string;
+  /** Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified. */
+  capacityMb: string;
   /** Output only. The time when the share was created. */
   createTime: string;
   /** A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected. */
@@ -62,6 +66,7 @@ export const V1beta1Share: ResourceBinding<V1beta1ShareConfig, V1beta1ShareAttrs
   fields: {
     backup: "backup",
     capacityGb: "capacity_gb",
+    capacityMb: "capacity_mb",
     description: "description",
     labels: "labels",
     mountName: "mount_name",

@@ -60,50 +60,50 @@ type DocumentSchema_PropertyDefinitions struct {
 }
 
 var DocumentSchema_PropertyDefinitions_EnumTypeOptionsFields = ubx.FieldMap{
-	"PossibleValues":          ubx.FieldSpec{WireName: "possible_values"},
-	"ValidationCheckDisabled": ubx.FieldSpec{WireName: "validation_check_disabled"},
-}
+		"PossibleValues": ubx.FieldSpec{WireName: "possible_values"},
+		"ValidationCheckDisabled": ubx.FieldSpec{WireName: "validation_check_disabled"},
+	}
 
 var DocumentSchema_PropertyDefinitions_PropertyTypeOptionsFields = ubx.FieldMap{
-	"PropertyDefinitions": ubx.FieldSpec{WireName: "property_definitions"},
-}
+		"PropertyDefinitions": ubx.FieldSpec{WireName: "property_definitions"},
+	}
 
 var DocumentSchema_PropertyDefinitions_SchemaSourcesFields = ubx.FieldMap{
-	"Name":          ubx.FieldSpec{WireName: "name"},
-	"ProcessorType": ubx.FieldSpec{WireName: "processor_type"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ProcessorType": ubx.FieldSpec{WireName: "processor_type"},
+	}
 
 var DocumentSchema_PropertyDefinitionsFields = ubx.FieldMap{
-	"DateTimeTypeOptions": ubx.FieldSpec{WireName: "date_time_type_options"},
-	"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
-	"EnumTypeOptions": ubx.FieldSpec{
-		WireName: "enum_type_options",
-		Kind:     "object",
-		Fields:   DocumentSchema_PropertyDefinitions_EnumTypeOptionsFields,
-	},
-	"FloatTypeOptions":   ubx.FieldSpec{WireName: "float_type_options"},
-	"IntegerTypeOptions": ubx.FieldSpec{WireName: "integer_type_options"},
-	"IsFilterable":       ubx.FieldSpec{WireName: "is_filterable"},
-	"IsMetadata":         ubx.FieldSpec{WireName: "is_metadata"},
-	"IsRepeatable":       ubx.FieldSpec{WireName: "is_repeatable"},
-	"IsRequired":         ubx.FieldSpec{WireName: "is_required"},
-	"IsSearchable":       ubx.FieldSpec{WireName: "is_searchable"},
-	"MapTypeOptions":     ubx.FieldSpec{WireName: "map_type_options"},
-	"Name":               ubx.FieldSpec{WireName: "name"},
-	"PropertyTypeOptions": ubx.FieldSpec{
-		WireName: "property_type_options",
-		Kind:     "object",
-		Fields:   DocumentSchema_PropertyDefinitions_PropertyTypeOptionsFields,
-	},
-	"RetrievalImportance": ubx.FieldSpec{WireName: "retrieval_importance"},
-	"SchemaSources": ubx.FieldSpec{
-		WireName: "schema_sources",
-		Kind:     "list",
-		Fields:   DocumentSchema_PropertyDefinitions_SchemaSourcesFields,
-	},
-	"TextTypeOptions":      ubx.FieldSpec{WireName: "text_type_options"},
-	"TimestampTypeOptions": ubx.FieldSpec{WireName: "timestamp_type_options"},
-}
+		"DateTimeTypeOptions": ubx.FieldSpec{WireName: "date_time_type_options"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EnumTypeOptions": ubx.FieldSpec{
+			WireName: "enum_type_options",
+			Kind: "object",
+			Fields: DocumentSchema_PropertyDefinitions_EnumTypeOptionsFields,
+		},
+		"FloatTypeOptions": ubx.FieldSpec{WireName: "float_type_options"},
+		"IntegerTypeOptions": ubx.FieldSpec{WireName: "integer_type_options"},
+		"IsFilterable": ubx.FieldSpec{WireName: "is_filterable"},
+		"IsMetadata": ubx.FieldSpec{WireName: "is_metadata"},
+		"IsRepeatable": ubx.FieldSpec{WireName: "is_repeatable"},
+		"IsRequired": ubx.FieldSpec{WireName: "is_required"},
+		"IsSearchable": ubx.FieldSpec{WireName: "is_searchable"},
+		"MapTypeOptions": ubx.FieldSpec{WireName: "map_type_options"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PropertyTypeOptions": ubx.FieldSpec{
+			WireName: "property_type_options",
+			Kind: "object",
+			Fields: DocumentSchema_PropertyDefinitions_PropertyTypeOptionsFields,
+		},
+		"RetrievalImportance": ubx.FieldSpec{WireName: "retrieval_importance"},
+		"SchemaSources": ubx.FieldSpec{
+			WireName: "schema_sources",
+			Kind: "list",
+			Fields: DocumentSchema_PropertyDefinitions_SchemaSourcesFields,
+		},
+		"TextTypeOptions": ubx.FieldSpec{WireName: "text_type_options"},
+		"TimestampTypeOptions": ubx.FieldSpec{WireName: "timestamp_type_options"},
+	}
 
 type DocumentSchemaConfig struct {
 	// Schema description.
@@ -138,14 +138,14 @@ type DocumentSchemaAttrs struct {
 var DocumentSchema = ubx.ResourceBinding{
 	WireType: "google_contentwarehouse_document_schema",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DocumentIsFolder": ubx.FieldSpec{WireName: "document_is_folder"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PropertyDefinitions": ubx.FieldSpec{
 			WireName: "property_definitions",
-			Kind:     "list",
-			Fields:   DocumentSchema_PropertyDefinitionsFields,
+			Kind: "list",
+			Fields: DocumentSchema_PropertyDefinitionsFields,
 		},
 	},
 }

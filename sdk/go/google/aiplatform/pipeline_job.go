@@ -222,204 +222,204 @@ type PipelineJob_TemplateMetadata struct {
 }
 
 var PipelineJob_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var PipelineJob_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var PipelineJob_JobDetail_PipelineContextFields = ubx.FieldMap{
-	"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
-	"Description":    ubx.FieldSpec{WireName: "description"},
-	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-	"Etag":           ubx.FieldSpec{WireName: "etag"},
-	"Labels":         ubx.FieldSpec{WireName: "labels"},
-	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"ParentContexts": ubx.FieldSpec{WireName: "parent_contexts"},
-	"SchemaTitle":    ubx.FieldSpec{WireName: "schema_title"},
-	"SchemaVersion":  ubx.FieldSpec{WireName: "schema_version"},
-	"UpdateTime":     ubx.FieldSpec{WireName: "update_time"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ParentContexts": ubx.FieldSpec{WireName: "parent_contexts"},
+		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_ExecutionFields = ubx.FieldMap{
-	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"Etag":          ubx.FieldSpec{WireName: "etag"},
-	"Labels":        ubx.FieldSpec{WireName: "labels"},
-	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-	"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
-	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-	"State":         ubx.FieldSpec{WireName: "state"},
-	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields = ubx.FieldMap{
-	"FailedMainJobs":            ubx.FieldSpec{WireName: "failed_main_jobs"},
-	"FailedPreCachingCheckJobs": ubx.FieldSpec{WireName: "failed_pre_caching_check_jobs"},
-	"MainJob":                   ubx.FieldSpec{WireName: "main_job"},
-	"PreCachingCheckJob":        ubx.FieldSpec{WireName: "pre_caching_check_job"},
-}
+		"FailedMainJobs": ubx.FieldSpec{WireName: "failed_main_jobs"},
+		"FailedPreCachingCheckJobs": ubx.FieldSpec{WireName: "failed_pre_caching_check_jobs"},
+		"MainJob": ubx.FieldSpec{WireName: "main_job"},
+		"PreCachingCheckJob": ubx.FieldSpec{WireName: "pre_caching_check_job"},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields = ubx.FieldMap{
-	"FailedJobs": ubx.FieldSpec{WireName: "failed_jobs"},
-	"Job":        ubx.FieldSpec{WireName: "job"},
-}
+		"FailedJobs": ubx.FieldSpec{WireName: "failed_jobs"},
+		"Job": ubx.FieldSpec{WireName: "job"},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields = ubx.FieldMap{
-	"ContainerDetail": ubx.FieldSpec{
-		WireName: "container_detail",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields,
-	},
-	"CustomJobDetail": ubx.FieldSpec{
-		WireName: "custom_job_detail",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields,
-	},
-}
+		"ContainerDetail": ubx.FieldSpec{
+			WireName: "container_detail",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields,
+		},
+		"CustomJobDetail": ubx.FieldSpec{
+			WireName: "custom_job_detail",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields,
+		},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields = ubx.FieldMap{
-	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"Etag":          ubx.FieldSpec{WireName: "etag"},
-	"Labels":        ubx.FieldSpec{WireName: "labels"},
-	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-	"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
-	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-	"State":         ubx.FieldSpec{WireName: "state"},
-	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
-	"Uri":           ubx.FieldSpec{WireName: "uri"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_InputsFields = ubx.FieldMap{
-	"Artifacts": ubx.FieldSpec{
-		WireName: "artifacts",
-		Kind:     "list",
-		Fields:   PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields,
-	},
-}
+		"Artifacts": ubx.FieldSpec{
+			WireName: "artifacts",
+			Kind: "list",
+			Fields: PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields,
+		},
+	}
 
 var PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields = ubx.FieldMap{
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   PipelineJob_ErrorFields,
-	},
-	"State":      ubx.FieldSpec{WireName: "state"},
-	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-}
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: PipelineJob_ErrorFields,
+		},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var PipelineJob_JobDetail_TaskDetailsFields = ubx.FieldMap{
-	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   PipelineJob_ErrorFields,
-	},
-	"Execution": ubx.FieldSpec{
-		WireName: "execution",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_TaskDetails_ExecutionFields,
-	},
-	"ExecutorDetail": ubx.FieldSpec{
-		WireName: "executor_detail",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields,
-	},
-	"Inputs": ubx.FieldSpec{
-		WireName: "inputs",
-		Kind:     "map",
-		Fields:   PipelineJob_JobDetail_TaskDetails_InputsFields,
-	},
-	"Outputs": ubx.FieldSpec{
-		WireName: "outputs",
-		Kind:     "map",
-		Fields:   PipelineJob_JobDetail_TaskDetails_InputsFields,
-	},
-	"ParentTaskId": ubx.FieldSpec{WireName: "parent_task_id"},
-	"PipelineTaskStatus": ubx.FieldSpec{
-		WireName: "pipeline_task_status",
-		Kind:     "list",
-		Fields:   PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields,
-	},
-	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
-	"State":          ubx.FieldSpec{WireName: "state"},
-	"TaskId":         ubx.FieldSpec{WireName: "task_id"},
-	"TaskName":       ubx.FieldSpec{WireName: "task_name"},
-	"TaskUniqueName": ubx.FieldSpec{WireName: "task_unique_name"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: PipelineJob_ErrorFields,
+		},
+		"Execution": ubx.FieldSpec{
+			WireName: "execution",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_TaskDetails_ExecutionFields,
+		},
+		"ExecutorDetail": ubx.FieldSpec{
+			WireName: "executor_detail",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields,
+		},
+		"Inputs": ubx.FieldSpec{
+			WireName: "inputs",
+			Kind: "map",
+			Fields: PipelineJob_JobDetail_TaskDetails_InputsFields,
+		},
+		"Outputs": ubx.FieldSpec{
+			WireName: "outputs",
+			Kind: "map",
+			Fields: PipelineJob_JobDetail_TaskDetails_InputsFields,
+		},
+		"ParentTaskId": ubx.FieldSpec{WireName: "parent_task_id"},
+		"PipelineTaskStatus": ubx.FieldSpec{
+			WireName: "pipeline_task_status",
+			Kind: "list",
+			Fields: PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields,
+		},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"TaskId": ubx.FieldSpec{WireName: "task_id"},
+		"TaskName": ubx.FieldSpec{WireName: "task_name"},
+		"TaskUniqueName": ubx.FieldSpec{WireName: "task_unique_name"},
+	}
 
 var PipelineJob_JobDetailFields = ubx.FieldMap{
-	"PipelineContext": ubx.FieldSpec{
-		WireName: "pipeline_context",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_PipelineContextFields,
-	},
-	"PipelineRunContext": ubx.FieldSpec{
-		WireName: "pipeline_run_context",
-		Kind:     "object",
-		Fields:   PipelineJob_JobDetail_PipelineContextFields,
-	},
-	"TaskDetails": ubx.FieldSpec{
-		WireName: "task_details",
-		Kind:     "list",
-		Fields:   PipelineJob_JobDetail_TaskDetailsFields,
-	},
-}
+		"PipelineContext": ubx.FieldSpec{
+			WireName: "pipeline_context",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_PipelineContextFields,
+		},
+		"PipelineRunContext": ubx.FieldSpec{
+			WireName: "pipeline_run_context",
+			Kind: "object",
+			Fields: PipelineJob_JobDetail_PipelineContextFields,
+		},
+		"TaskDetails": ubx.FieldSpec{
+			WireName: "task_details",
+			Kind: "list",
+			Fields: PipelineJob_JobDetail_TaskDetailsFields,
+		},
+	}
 
 var PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-	"Domain":        ubx.FieldSpec{WireName: "domain"},
-	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-}
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+	}
 
 var PipelineJob_PscInterfaceConfigFields = ubx.FieldMap{
-	"DnsPeeringConfigs": ubx.FieldSpec{
-		WireName: "dns_peering_configs",
-		Kind:     "list",
-		Fields:   PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields,
-	},
-	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-}
+		"DnsPeeringConfigs": ubx.FieldSpec{
+			WireName: "dns_peering_configs",
+			Kind: "list",
+			Fields: PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields,
+		},
+		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	}
 
 var PipelineJob_RuntimeConfig_InputArtifactsFields = ubx.FieldMap{
-	"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-}
+		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
+	}
 
 var PipelineJob_RuntimeConfig_ParametersFields = ubx.FieldMap{
-	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 var PipelineJob_RuntimeConfigFields = ubx.FieldMap{
-	"FailurePolicy":      ubx.FieldSpec{WireName: "failure_policy"},
-	"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
-	"InputArtifacts": ubx.FieldSpec{
-		WireName: "input_artifacts",
-		Kind:     "map",
-		Fields:   PipelineJob_RuntimeConfig_InputArtifactsFields,
-	},
-	"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "map",
-		Fields:   PipelineJob_RuntimeConfig_ParametersFields,
-	},
-}
+		"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
+		"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
+		"InputArtifacts": ubx.FieldSpec{
+			WireName: "input_artifacts",
+			Kind: "map",
+			Fields: PipelineJob_RuntimeConfig_InputArtifactsFields,
+		},
+		"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "map",
+			Fields: PipelineJob_RuntimeConfig_ParametersFields,
+		},
+	}
 
 var PipelineJob_TemplateMetadataFields = ubx.FieldMap{
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 type PipelineJobConfig struct {
 	// The display name of the Pipeline. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -503,39 +503,39 @@ var PipelineJob = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   PipelineJob_EncryptionSpecFields,
+			Kind: "object",
+			Fields: PipelineJob_EncryptionSpecFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   PipelineJob_ErrorFields,
+			Kind: "object",
+			Fields: PipelineJob_ErrorFields,
 		},
 		"JobDetail": ubx.FieldSpec{
 			WireName: "job_detail",
-			Kind:     "object",
-			Fields:   PipelineJob_JobDetailFields,
+			Kind: "object",
+			Fields: PipelineJob_JobDetailFields,
 		},
-		"Labels":               ubx.FieldSpec{WireName: "labels"},
-		"Network":              ubx.FieldSpec{WireName: "network"},
-		"PipelineSpec":         ubx.FieldSpec{WireName: "pipeline_spec"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"PipelineSpec": ubx.FieldSpec{WireName: "pipeline_spec"},
 		"PreflightValidations": ubx.FieldSpec{WireName: "preflight_validations"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind:     "object",
-			Fields:   PipelineJob_PscInterfaceConfigFields,
+			Kind: "object",
+			Fields: PipelineJob_PscInterfaceConfigFields,
 		},
 		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
 		"RuntimeConfig": ubx.FieldSpec{
 			WireName: "runtime_config",
-			Kind:     "object",
-			Fields:   PipelineJob_RuntimeConfigFields,
+			Kind: "object",
+			Fields: PipelineJob_RuntimeConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"TemplateMetadata": ubx.FieldSpec{
 			WireName: "template_metadata",
-			Kind:     "object",
-			Fields:   PipelineJob_TemplateMetadataFields,
+			Kind: "object",
+			Fields: PipelineJob_TemplateMetadataFields,
 		},
 		"TemplateUri": ubx.FieldSpec{WireName: "template_uri"},
 	},

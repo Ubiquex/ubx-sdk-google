@@ -25,16 +25,16 @@ type FeedbackLabel_QaAnswerLabel struct {
 }
 
 var FeedbackLabel_QaAnswerLabelFields = ubx.FieldMap{
-	"BoolValue":       ubx.FieldSpec{WireName: "bool_value"},
-	"Key":             ubx.FieldSpec{WireName: "key"},
-	"NaValue":         ubx.FieldSpec{WireName: "na_value"},
-	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-	"NumValue":        ubx.FieldSpec{WireName: "num_value"},
-	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
-	"Score":           ubx.FieldSpec{WireName: "score"},
-	"SkipValue":       ubx.FieldSpec{WireName: "skip_value"},
-	"StrValue":        ubx.FieldSpec{WireName: "str_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"NaValue": ubx.FieldSpec{WireName: "na_value"},
+		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+		"NumValue": ubx.FieldSpec{WireName: "num_value"},
+		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"SkipValue": ubx.FieldSpec{WireName: "skip_value"},
+		"StrValue": ubx.FieldSpec{WireName: "str_value"},
+	}
 
 type FeedbackLabelConfig struct {
 	// String label used for Topic Modeling.
@@ -65,13 +65,13 @@ type FeedbackLabelAttrs struct {
 var FeedbackLabel = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_feedback_label",
 	Fields: ubx.FieldMap{
-		"Label":           ubx.FieldSpec{WireName: "label"},
+		"Label": ubx.FieldSpec{WireName: "label"},
 		"LabeledResource": ubx.FieldSpec{WireName: "labeled_resource"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"QaAnswerLabel": ubx.FieldSpec{
 			WireName: "qa_answer_label",
-			Kind:     "object",
-			Fields:   FeedbackLabel_QaAnswerLabelFields,
+			Kind: "object",
+			Fields: FeedbackLabel_QaAnswerLabelFields,
 		},
 	},
 }

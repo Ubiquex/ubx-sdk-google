@@ -25,7 +25,7 @@ var V2beta1Context = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_context",
 	Fields: ubx.FieldMap{
 		"LifespanCount": ubx.FieldSpec{WireName: "lifespan_count"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"Parameters":    ubx.FieldSpec{WireName: "parameters"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
 	},
 }

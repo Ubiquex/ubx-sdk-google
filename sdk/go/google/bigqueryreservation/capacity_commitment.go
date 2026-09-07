@@ -13,10 +13,10 @@ type CapacityCommitment_FailureStatus struct {
 }
 
 var CapacityCommitment_FailureStatusFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 type CapacityCommitmentConfig struct {
 	// Optional. Edition of the capacity commitment.
@@ -64,12 +64,12 @@ var CapacityCommitment = ubx.ResourceBinding{
 		"Edition": ubx.FieldSpec{WireName: "edition"},
 		"FailureStatus": ubx.FieldSpec{
 			WireName: "failure_status",
-			Kind:     "object",
-			Fields:   CapacityCommitment_FailureStatusFields,
+			Kind: "object",
+			Fields: CapacityCommitment_FailureStatusFields,
 		},
 		"MultiRegionAuxiliary": ubx.FieldSpec{WireName: "multi_region_auxiliary"},
-		"Plan":                 ubx.FieldSpec{WireName: "plan"},
-		"RenewalPlan":          ubx.FieldSpec{WireName: "renewal_plan"},
-		"SlotCount":            ubx.FieldSpec{WireName: "slot_count"},
+		"Plan": ubx.FieldSpec{WireName: "plan"},
+		"RenewalPlan": ubx.FieldSpec{WireName: "renewal_plan"},
+		"SlotCount": ubx.FieldSpec{WireName: "slot_count"},
 	},
 }

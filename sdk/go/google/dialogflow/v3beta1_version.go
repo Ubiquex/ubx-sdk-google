@@ -5,15 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V3beta1Version_NluSettings struct {
 	ClassificationThreshold any
-	ModelTrainingMode       any
-	ModelType               any
+	ModelTrainingMode any
+	ModelType any
 }
 
 var V3beta1Version_NluSettingsFields = ubx.FieldMap{
-	"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
-	"ModelTrainingMode":       ubx.FieldSpec{WireName: "model_training_mode"},
-	"ModelType":               ubx.FieldSpec{WireName: "model_type"},
-}
+		"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
+		"ModelTrainingMode": ubx.FieldSpec{WireName: "model_training_mode"},
+		"ModelType": ubx.FieldSpec{WireName: "model_type"},
+	}
 
 type V3beta1VersionConfig struct {
 	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
@@ -46,11 +46,11 @@ var V3beta1Version = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NluSettings": ubx.FieldSpec{
 			WireName: "nlu_settings",
-			Kind:     "object",
-			Fields:   V3beta1Version_NluSettingsFields,
+			Kind: "object",
+			Fields: V3beta1Version_NluSettingsFields,
 		},
 	},
 }

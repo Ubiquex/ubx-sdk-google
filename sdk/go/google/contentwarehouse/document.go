@@ -838,995 +838,995 @@ type Document_RequestMetadata struct {
 }
 
 var Document_CloudAiDocumentOptionFields = ubx.FieldMap{
-	"CustomizedEntitiesPropertiesConversions": ubx.FieldSpec{WireName: "customized_entities_properties_conversions"},
-	"EnableEntitiesConversions":               ubx.FieldSpec{WireName: "enable_entities_conversions"},
-}
+		"CustomizedEntitiesPropertiesConversions": ubx.FieldSpec{WireName: "customized_entities_properties_conversions"},
+		"EnableEntitiesConversions": ubx.FieldSpec{WireName: "enable_entities_conversions"},
+	}
 
 var Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields = ubx.FieldMap{
-	"PageEnd":   ubx.FieldSpec{WireName: "page_end"},
-	"PageStart": ubx.FieldSpec{WireName: "page_start"},
-}
+		"PageEnd": ubx.FieldSpec{WireName: "page_end"},
+		"PageStart": ubx.FieldSpec{WireName: "page_start"},
+	}
 
 var Document_CloudAiDocument_ChunkedDocument_Chunks_PageFootersFields = ubx.FieldMap{
-	"PageSpan": ubx.FieldSpec{
-		WireName: "page_span",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
-	},
-	"Text": ubx.FieldSpec{WireName: "text"},
-}
+		"PageSpan": ubx.FieldSpec{
+			WireName: "page_span",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
+		},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Document_CloudAiDocument_ChunkedDocument_ChunksFields = ubx.FieldMap{
-	"ChunkId": ubx.FieldSpec{WireName: "chunk_id"},
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"PageFooters": ubx.FieldSpec{
-		WireName: "page_footers",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_Chunks_PageFootersFields,
-	},
-	"PageHeaders": ubx.FieldSpec{
-		WireName: "page_headers",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_Chunks_PageFootersFields,
-	},
-	"PageSpan": ubx.FieldSpec{
-		WireName: "page_span",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
-	},
-	"SourceBlockIds": ubx.FieldSpec{WireName: "source_block_ids"},
-}
+		"ChunkId": ubx.FieldSpec{WireName: "chunk_id"},
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"PageFooters": ubx.FieldSpec{
+			WireName: "page_footers",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFootersFields,
+		},
+		"PageHeaders": ubx.FieldSpec{
+			WireName: "page_headers",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFootersFields,
+		},
+		"PageSpan": ubx.FieldSpec{
+			WireName: "page_span",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
+		},
+		"SourceBlockIds": ubx.FieldSpec{WireName: "source_block_ids"},
+	}
 
 var Document_CloudAiDocument_ChunkedDocumentFields = ubx.FieldMap{
-	"Chunks": ubx.FieldSpec{
-		WireName: "chunks",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_ChunksFields,
-	},
-}
+		"Chunks": ubx.FieldSpec{
+			WireName: "chunks",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_ChunkedDocument_ChunksFields,
+		},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntriesFields = ubx.FieldMap{
-	"Blocks": ubx.FieldSpec{WireName: "blocks"},
-}
+		"Blocks": ubx.FieldSpec{WireName: "blocks"},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_ListBlockFields = ubx.FieldMap{
-	"ListEntries": ubx.FieldSpec{
-		WireName: "list_entries",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntriesFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"ListEntries": ubx.FieldSpec{
+			WireName: "list_entries",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_ListBlock_ListEntriesFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_CellsFields = ubx.FieldMap{
-	"Blocks":  ubx.FieldSpec{WireName: "blocks"},
-	"ColSpan": ubx.FieldSpec{WireName: "col_span"},
-	"RowSpan": ubx.FieldSpec{WireName: "row_span"},
-}
+		"Blocks": ubx.FieldSpec{WireName: "blocks"},
+		"ColSpan": ubx.FieldSpec{WireName: "col_span"},
+		"RowSpan": ubx.FieldSpec{WireName: "row_span"},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRowsFields = ubx.FieldMap{
-	"Cells": ubx.FieldSpec{
-		WireName: "cells",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_CellsFields,
-	},
-}
+		"Cells": ubx.FieldSpec{
+			WireName: "cells",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRows_CellsFields,
+		},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_TableBlockFields = ubx.FieldMap{
-	"BodyRows": ubx.FieldSpec{
-		WireName: "body_rows",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRowsFields,
-	},
-	"Caption": ubx.FieldSpec{WireName: "caption"},
-	"HeaderRows": ubx.FieldSpec{
-		WireName: "header_rows",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRowsFields,
-	},
-}
+		"BodyRows": ubx.FieldSpec{
+			WireName: "body_rows",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRowsFields,
+		},
+		"Caption": ubx.FieldSpec{WireName: "caption"},
+		"HeaderRows": ubx.FieldSpec{
+			WireName: "header_rows",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlock_BodyRowsFields,
+		},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_Blocks_TextBlockFields = ubx.FieldMap{
-	"Blocks": ubx.FieldSpec{WireName: "blocks"},
-	"Text":   ubx.FieldSpec{WireName: "text"},
-	"Type":   ubx.FieldSpec{WireName: "type"},
-}
+		"Blocks": ubx.FieldSpec{WireName: "blocks"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_DocumentLayout_BlocksFields = ubx.FieldMap{
-	"BlockId": ubx.FieldSpec{WireName: "block_id"},
-	"ListBlock": ubx.FieldSpec{
-		WireName: "list_block",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_ListBlockFields,
-	},
-	"PageSpan": ubx.FieldSpec{
-		WireName: "page_span",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
-	},
-	"TableBlock": ubx.FieldSpec{
-		WireName: "table_block",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_TableBlockFields,
-	},
-	"TextBlock": ubx.FieldSpec{
-		WireName: "text_block",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_DocumentLayout_Blocks_TextBlockFields,
-	},
-}
+		"BlockId": ubx.FieldSpec{WireName: "block_id"},
+		"ListBlock": ubx.FieldSpec{
+			WireName: "list_block",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_ListBlockFields,
+		},
+		"PageSpan": ubx.FieldSpec{
+			WireName: "page_span",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ChunkedDocument_Chunks_PageFooters_PageSpanFields,
+		},
+		"TableBlock": ubx.FieldSpec{
+			WireName: "table_block",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_TableBlockFields,
+		},
+		"TextBlock": ubx.FieldSpec{
+			WireName: "text_block",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_DocumentLayout_Blocks_TextBlockFields,
+		},
+	}
 
 var Document_CloudAiDocument_DocumentLayoutFields = ubx.FieldMap{
-	"Blocks": ubx.FieldSpec{
-		WireName: "blocks",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_DocumentLayout_BlocksFields,
-	},
-}
+		"Blocks": ubx.FieldSpec{
+			WireName: "blocks",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_DocumentLayout_BlocksFields,
+		},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValue_AddressValueFields = ubx.FieldMap{
-	"AddressLines":       ubx.FieldSpec{WireName: "address_lines"},
-	"AdministrativeArea": ubx.FieldSpec{WireName: "administrative_area"},
-	"LanguageCode":       ubx.FieldSpec{WireName: "language_code"},
-	"Locality":           ubx.FieldSpec{WireName: "locality"},
-	"Organization":       ubx.FieldSpec{WireName: "organization"},
-	"PostalCode":         ubx.FieldSpec{WireName: "postal_code"},
-	"Recipients":         ubx.FieldSpec{WireName: "recipients"},
-	"RegionCode":         ubx.FieldSpec{WireName: "region_code"},
-	"Revision":           ubx.FieldSpec{WireName: "revision"},
-	"SortingCode":        ubx.FieldSpec{WireName: "sorting_code"},
-	"Sublocality":        ubx.FieldSpec{WireName: "sublocality"},
-}
+		"AddressLines": ubx.FieldSpec{WireName: "address_lines"},
+		"AdministrativeArea": ubx.FieldSpec{WireName: "administrative_area"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"Locality": ubx.FieldSpec{WireName: "locality"},
+		"Organization": ubx.FieldSpec{WireName: "organization"},
+		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
+		"Recipients": ubx.FieldSpec{WireName: "recipients"},
+		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+		"SortingCode": ubx.FieldSpec{WireName: "sorting_code"},
+		"Sublocality": ubx.FieldSpec{WireName: "sublocality"},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValue_DateValueFields = ubx.FieldMap{
-	"Day":   ubx.FieldSpec{WireName: "day"},
-	"Month": ubx.FieldSpec{WireName: "month"},
-	"Year":  ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZoneFields = ubx.FieldMap{
-	"Id":      ubx.FieldSpec{WireName: "id"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields = ubx.FieldMap{
-	"Day":     ubx.FieldSpec{WireName: "day"},
-	"Hours":   ubx.FieldSpec{WireName: "hours"},
-	"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	"Month":   ubx.FieldSpec{WireName: "month"},
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	"TimeZone": ubx.FieldSpec{
-		WireName: "time_zone",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZoneFields,
-	},
-	"UtcOffset": ubx.FieldSpec{WireName: "utc_offset"},
-	"Year":      ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Hours": ubx.FieldSpec{WireName: "hours"},
+		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+		"TimeZone": ubx.FieldSpec{
+			WireName: "time_zone",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValue_TimeZoneFields,
+		},
+		"UtcOffset": ubx.FieldSpec{WireName: "utc_offset"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValue_MoneyValueFields = ubx.FieldMap{
-	"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
-	"Nanos":        ubx.FieldSpec{WireName: "nanos"},
-	"Units":        ubx.FieldSpec{WireName: "units"},
-}
+		"CurrencyCode": ubx.FieldSpec{WireName: "currency_code"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Units": ubx.FieldSpec{WireName: "units"},
+	}
 
 var Document_CloudAiDocument_Entities_NormalizedValueFields = ubx.FieldMap{
-	"AddressValue": ubx.FieldSpec{
-		WireName: "address_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_AddressValueFields,
-	},
-	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-	"DateValue": ubx.FieldSpec{
-		WireName: "date_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_DateValueFields,
-	},
-	"DatetimeValue": ubx.FieldSpec{
-		WireName: "datetime_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
-	},
-	"FloatValue":   ubx.FieldSpec{WireName: "float_value"},
-	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-	"MoneyValue": ubx.FieldSpec{
-		WireName: "money_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_MoneyValueFields,
-	},
-	"Text": ubx.FieldSpec{WireName: "text"},
-}
+		"AddressValue": ubx.FieldSpec{
+			WireName: "address_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_AddressValueFields,
+		},
+		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+		"DateValue": ubx.FieldSpec{
+			WireName: "date_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_DateValueFields,
+		},
+		"DatetimeValue": ubx.FieldSpec{
+			WireName: "datetime_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
+		},
+		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
+		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+		"MoneyValue": ubx.FieldSpec{
+			WireName: "money_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_MoneyValueFields,
+		},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVerticesFields = ubx.FieldMap{
-	"X": ubx.FieldSpec{WireName: "x"},
-	"Y": ubx.FieldSpec{WireName: "y"},
-}
+		"X": ubx.FieldSpec{WireName: "x"},
+		"Y": ubx.FieldSpec{WireName: "y"},
+	}
 
 var Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPolyFields = ubx.FieldMap{
-	"NormalizedVertices": ubx.FieldSpec{
-		WireName: "normalized_vertices",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVerticesFields,
-	},
-	"Vertices": ubx.FieldSpec{
-		WireName: "vertices",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVerticesFields,
-	},
-}
+		"NormalizedVertices": ubx.FieldSpec{
+			WireName: "normalized_vertices",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVerticesFields,
+		},
+		"Vertices": ubx.FieldSpec{
+			WireName: "vertices",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPoly_NormalizedVerticesFields,
+		},
+	}
 
 var Document_CloudAiDocument_Entities_PageAnchor_PageRefsFields = ubx.FieldMap{
-	"BoundingPoly": ubx.FieldSpec{
-		WireName: "bounding_poly",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPolyFields,
-	},
-	"Confidence": ubx.FieldSpec{WireName: "confidence"},
-	"LayoutId":   ubx.FieldSpec{WireName: "layout_id"},
-	"LayoutType": ubx.FieldSpec{WireName: "layout_type"},
-	"Page":       ubx.FieldSpec{WireName: "page"},
-}
+		"BoundingPoly": ubx.FieldSpec{
+			WireName: "bounding_poly",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPolyFields,
+		},
+		"Confidence": ubx.FieldSpec{WireName: "confidence"},
+		"LayoutId": ubx.FieldSpec{WireName: "layout_id"},
+		"LayoutType": ubx.FieldSpec{WireName: "layout_type"},
+		"Page": ubx.FieldSpec{WireName: "page"},
+	}
 
 var Document_CloudAiDocument_Entities_PageAnchorFields = ubx.FieldMap{
-	"PageRefs": ubx.FieldSpec{
-		WireName: "page_refs",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchor_PageRefsFields,
-	},
-}
+		"PageRefs": ubx.FieldSpec{
+			WireName: "page_refs",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_PageAnchor_PageRefsFields,
+		},
+	}
 
 var Document_CloudAiDocument_Entities_Provenance_ParentsFields = ubx.FieldMap{
-	"Id":       ubx.FieldSpec{WireName: "id"},
-	"Index":    ubx.FieldSpec{WireName: "index"},
-	"Revision": ubx.FieldSpec{WireName: "revision"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Index": ubx.FieldSpec{WireName: "index"},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+	}
 
 var Document_CloudAiDocument_Entities_ProvenanceFields = ubx.FieldMap{
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"Parents": ubx.FieldSpec{
-		WireName: "parents",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_Provenance_ParentsFields,
-	},
-	"Revision": ubx.FieldSpec{WireName: "revision"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Parents": ubx.FieldSpec{
+			WireName: "parents",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_Provenance_ParentsFields,
+		},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_Entities_TextAnchor_TextSegmentsFields = ubx.FieldMap{
-	"EndIndex":   ubx.FieldSpec{WireName: "end_index"},
-	"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-}
+		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
+		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
+	}
 
 var Document_CloudAiDocument_Entities_TextAnchorFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"TextSegments": ubx.FieldSpec{
-		WireName: "text_segments",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_TextAnchor_TextSegmentsFields,
-	},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"TextSegments": ubx.FieldSpec{
+			WireName: "text_segments",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_TextAnchor_TextSegmentsFields,
+		},
+	}
 
 var Document_CloudAiDocument_EntitiesFields = ubx.FieldMap{
-	"Confidence":  ubx.FieldSpec{WireName: "confidence"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"MentionId":   ubx.FieldSpec{WireName: "mention_id"},
-	"MentionText": ubx.FieldSpec{WireName: "mention_text"},
-	"NormalizedValue": ubx.FieldSpec{
-		WireName: "normalized_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValueFields,
-	},
-	"PageAnchor": ubx.FieldSpec{
-		WireName: "page_anchor",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchorFields,
-	},
-	"Properties": ubx.FieldSpec{WireName: "properties"},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-	"Redacted": ubx.FieldSpec{WireName: "redacted"},
-	"TextAnchor": ubx.FieldSpec{
-		WireName: "text_anchor",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_TextAnchorFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Confidence": ubx.FieldSpec{WireName: "confidence"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"MentionId": ubx.FieldSpec{WireName: "mention_id"},
+		"MentionText": ubx.FieldSpec{WireName: "mention_text"},
+		"NormalizedValue": ubx.FieldSpec{
+			WireName: "normalized_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValueFields,
+		},
+		"PageAnchor": ubx.FieldSpec{
+			WireName: "page_anchor",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_PageAnchorFields,
+		},
+		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+		"Redacted": ubx.FieldSpec{WireName: "redacted"},
+		"TextAnchor": ubx.FieldSpec{
+			WireName: "text_anchor",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_TextAnchorFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_EntityRelationsFields = ubx.FieldMap{
-	"ObjectId":  ubx.FieldSpec{WireName: "object_id"},
-	"Relation":  ubx.FieldSpec{WireName: "relation"},
-	"SubjectId": ubx.FieldSpec{WireName: "subject_id"},
-}
+		"ObjectId": ubx.FieldSpec{WireName: "object_id"},
+		"Relation": ubx.FieldSpec{WireName: "relation"},
+		"SubjectId": ubx.FieldSpec{WireName: "subject_id"},
+	}
 
 var Document_CloudAiDocument_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields = ubx.FieldMap{
-	"Confidence":   ubx.FieldSpec{WireName: "confidence"},
-	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-}
+		"Confidence": ubx.FieldSpec{WireName: "confidence"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	}
 
 var Document_CloudAiDocument_Pages_Blocks_LayoutFields = ubx.FieldMap{
-	"BoundingPoly": ubx.FieldSpec{
-		WireName: "bounding_poly",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPolyFields,
-	},
-	"Confidence":  ubx.FieldSpec{WireName: "confidence"},
-	"Orientation": ubx.FieldSpec{WireName: "orientation"},
-	"TextAnchor": ubx.FieldSpec{
-		WireName: "text_anchor",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_TextAnchorFields,
-	},
-}
+		"BoundingPoly": ubx.FieldSpec{
+			WireName: "bounding_poly",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_PageAnchor_PageRefs_BoundingPolyFields,
+		},
+		"Confidence": ubx.FieldSpec{WireName: "confidence"},
+		"Orientation": ubx.FieldSpec{WireName: "orientation"},
+		"TextAnchor": ubx.FieldSpec{
+			WireName: "text_anchor",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_TextAnchorFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_BlocksFields = ubx.FieldMap{
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-}
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_DetectedBarcodes_BarcodeFields = ubx.FieldMap{
-	"Format":      ubx.FieldSpec{WireName: "format"},
-	"RawValue":    ubx.FieldSpec{WireName: "raw_value"},
-	"ValueFormat": ubx.FieldSpec{WireName: "value_format"},
-}
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"RawValue": ubx.FieldSpec{WireName: "raw_value"},
+		"ValueFormat": ubx.FieldSpec{WireName: "value_format"},
+	}
 
 var Document_CloudAiDocument_Pages_DetectedBarcodesFields = ubx.FieldMap{
-	"Barcode": ubx.FieldSpec{
-		WireName: "barcode",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_DetectedBarcodes_BarcodeFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-}
+		"Barcode": ubx.FieldSpec{
+			WireName: "barcode",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_DetectedBarcodes_BarcodeFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_DimensionFields = ubx.FieldMap{
-	"Height": ubx.FieldSpec{WireName: "height"},
-	"Unit":   ubx.FieldSpec{WireName: "unit"},
-	"Width":  ubx.FieldSpec{WireName: "width"},
-}
+		"Height": ubx.FieldSpec{WireName: "height"},
+		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"Width": ubx.FieldSpec{WireName: "width"},
+	}
 
 var Document_CloudAiDocument_Pages_FormFieldsFields = ubx.FieldMap{
-	"CorrectedKeyText":   ubx.FieldSpec{WireName: "corrected_key_text"},
-	"CorrectedValueText": ubx.FieldSpec{WireName: "corrected_value_text"},
-	"FieldName": ubx.FieldSpec{
-		WireName: "field_name",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"FieldValue": ubx.FieldSpec{
-		WireName: "field_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"NameDetectedLanguages": ubx.FieldSpec{
-		WireName: "name_detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-	"ValueDetectedLanguages": ubx.FieldSpec{
-		WireName: "value_detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"ValueType": ubx.FieldSpec{WireName: "value_type"},
-}
+		"CorrectedKeyText": ubx.FieldSpec{WireName: "corrected_key_text"},
+		"CorrectedValueText": ubx.FieldSpec{WireName: "corrected_value_text"},
+		"FieldName": ubx.FieldSpec{
+			WireName: "field_name",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"FieldValue": ubx.FieldSpec{
+			WireName: "field_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"NameDetectedLanguages": ubx.FieldSpec{
+			WireName: "name_detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+		"ValueDetectedLanguages": ubx.FieldSpec{
+			WireName: "value_detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 var Document_CloudAiDocument_Pages_ImageFields = ubx.FieldMap{
-	"Content":  ubx.FieldSpec{WireName: "content"},
-	"Height":   ubx.FieldSpec{WireName: "height"},
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	"Width":    ubx.FieldSpec{WireName: "width"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Height": ubx.FieldSpec{WireName: "height"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"Width": ubx.FieldSpec{WireName: "width"},
+	}
 
 var Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefectsFields = ubx.FieldMap{
-	"Confidence": ubx.FieldSpec{WireName: "confidence"},
-	"Type":       ubx.FieldSpec{WireName: "type"},
-}
+		"Confidence": ubx.FieldSpec{WireName: "confidence"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_Pages_ImageQualityScoresFields = ubx.FieldMap{
-	"DetectedDefects": ubx.FieldSpec{
-		WireName: "detected_defects",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefectsFields,
-	},
-	"QualityScore": ubx.FieldSpec{WireName: "quality_score"},
-}
+		"DetectedDefects": ubx.FieldSpec{
+			WireName: "detected_defects",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_ImageQualityScores_DetectedDefectsFields,
+		},
+		"QualityScore": ubx.FieldSpec{WireName: "quality_score"},
+	}
 
 var Document_CloudAiDocument_Pages_SymbolsFields = ubx.FieldMap{
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-}
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_Tables_BodyRows_CellsFields = ubx.FieldMap{
-	"ColSpan": ubx.FieldSpec{WireName: "col_span"},
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"RowSpan": ubx.FieldSpec{WireName: "row_span"},
-}
+		"ColSpan": ubx.FieldSpec{WireName: "col_span"},
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"RowSpan": ubx.FieldSpec{WireName: "row_span"},
+	}
 
 var Document_CloudAiDocument_Pages_Tables_BodyRowsFields = ubx.FieldMap{
-	"Cells": ubx.FieldSpec{
-		WireName: "cells",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Tables_BodyRows_CellsFields,
-	},
-}
+		"Cells": ubx.FieldSpec{
+			WireName: "cells",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Tables_BodyRows_CellsFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_TablesFields = ubx.FieldMap{
-	"BodyRows": ubx.FieldSpec{
-		WireName: "body_rows",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Tables_BodyRowsFields,
-	},
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"HeaderRows": ubx.FieldSpec{
-		WireName: "header_rows",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Tables_BodyRowsFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-}
+		"BodyRows": ubx.FieldSpec{
+			WireName: "body_rows",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Tables_BodyRowsFields,
+		},
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"HeaderRows": ubx.FieldSpec{
+			WireName: "header_rows",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Tables_BodyRowsFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_Tokens_DetectedBreakFields = ubx.FieldMap{
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields = ubx.FieldMap{
-	"Alpha": ubx.FieldSpec{WireName: "alpha"},
-	"Blue":  ubx.FieldSpec{WireName: "blue"},
-	"Green": ubx.FieldSpec{WireName: "green"},
-	"Red":   ubx.FieldSpec{WireName: "red"},
-}
+		"Alpha": ubx.FieldSpec{WireName: "alpha"},
+		"Blue": ubx.FieldSpec{WireName: "blue"},
+		"Green": ubx.FieldSpec{WireName: "green"},
+		"Red": ubx.FieldSpec{WireName: "red"},
+	}
 
 var Document_CloudAiDocument_Pages_Tokens_StyleInfoFields = ubx.FieldMap{
-	"BackgroundColor": ubx.FieldSpec{
-		WireName: "background_color",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
-	},
-	"Bold":          ubx.FieldSpec{WireName: "bold"},
-	"FontSize":      ubx.FieldSpec{WireName: "font_size"},
-	"FontType":      ubx.FieldSpec{WireName: "font_type"},
-	"FontWeight":    ubx.FieldSpec{WireName: "font_weight"},
-	"Handwritten":   ubx.FieldSpec{WireName: "handwritten"},
-	"Italic":        ubx.FieldSpec{WireName: "italic"},
-	"LetterSpacing": ubx.FieldSpec{WireName: "letter_spacing"},
-	"PixelFontSize": ubx.FieldSpec{WireName: "pixel_font_size"},
-	"Smallcaps":     ubx.FieldSpec{WireName: "smallcaps"},
-	"Strikeout":     ubx.FieldSpec{WireName: "strikeout"},
-	"Subscript":     ubx.FieldSpec{WireName: "subscript"},
-	"Superscript":   ubx.FieldSpec{WireName: "superscript"},
-	"TextColor": ubx.FieldSpec{
-		WireName: "text_color",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
-	},
-	"Underlined": ubx.FieldSpec{WireName: "underlined"},
-}
+		"BackgroundColor": ubx.FieldSpec{
+			WireName: "background_color",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
+		},
+		"Bold": ubx.FieldSpec{WireName: "bold"},
+		"FontSize": ubx.FieldSpec{WireName: "font_size"},
+		"FontType": ubx.FieldSpec{WireName: "font_type"},
+		"FontWeight": ubx.FieldSpec{WireName: "font_weight"},
+		"Handwritten": ubx.FieldSpec{WireName: "handwritten"},
+		"Italic": ubx.FieldSpec{WireName: "italic"},
+		"LetterSpacing": ubx.FieldSpec{WireName: "letter_spacing"},
+		"PixelFontSize": ubx.FieldSpec{WireName: "pixel_font_size"},
+		"Smallcaps": ubx.FieldSpec{WireName: "smallcaps"},
+		"Strikeout": ubx.FieldSpec{WireName: "strikeout"},
+		"Subscript": ubx.FieldSpec{WireName: "subscript"},
+		"Superscript": ubx.FieldSpec{WireName: "superscript"},
+		"TextColor": ubx.FieldSpec{
+			WireName: "text_color",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
+		},
+		"Underlined": ubx.FieldSpec{WireName: "underlined"},
+	}
 
 var Document_CloudAiDocument_Pages_TokensFields = ubx.FieldMap{
-	"DetectedBreak": ubx.FieldSpec{
-		WireName: "detected_break",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_DetectedBreakFields,
-	},
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-	"StyleInfo": ubx.FieldSpec{
-		WireName: "style_info",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_StyleInfoFields,
-	},
-}
+		"DetectedBreak": ubx.FieldSpec{
+			WireName: "detected_break",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_DetectedBreakFields,
+		},
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+		"StyleInfo": ubx.FieldSpec{
+			WireName: "style_info",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_StyleInfoFields,
+		},
+	}
 
 var Document_CloudAiDocument_Pages_TransformsFields = ubx.FieldMap{
-	"Cols": ubx.FieldSpec{WireName: "cols"},
-	"Data": ubx.FieldSpec{WireName: "data"},
-	"Rows": ubx.FieldSpec{WireName: "rows"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Cols": ubx.FieldSpec{WireName: "cols"},
+		"Data": ubx.FieldSpec{WireName: "data"},
+		"Rows": ubx.FieldSpec{WireName: "rows"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_Pages_VisualElementsFields = ubx.FieldMap{
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Document_CloudAiDocument_PagesFields = ubx.FieldMap{
-	"Blocks": ubx.FieldSpec{
-		WireName: "blocks",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_BlocksFields,
-	},
-	"DetectedBarcodes": ubx.FieldSpec{
-		WireName: "detected_barcodes",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_DetectedBarcodesFields,
-	},
-	"DetectedLanguages": ubx.FieldSpec{
-		WireName: "detected_languages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
-	},
-	"Dimension": ubx.FieldSpec{
-		WireName: "dimension",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_DimensionFields,
-	},
-	"FormFields": ubx.FieldSpec{
-		WireName: "form_fields",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_FormFieldsFields,
-	},
-	"Image": ubx.FieldSpec{
-		WireName: "image",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_ImageFields,
-	},
-	"ImageQualityScores": ubx.FieldSpec{
-		WireName: "image_quality_scores",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_ImageQualityScoresFields,
-	},
-	"Layout": ubx.FieldSpec{
-		WireName: "layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Blocks_LayoutFields,
-	},
-	"Lines": ubx.FieldSpec{
-		WireName: "lines",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_BlocksFields,
-	},
-	"PageNumber": ubx.FieldSpec{WireName: "page_number"},
-	"Paragraphs": ubx.FieldSpec{
-		WireName: "paragraphs",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_BlocksFields,
-	},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-	"Symbols": ubx.FieldSpec{
-		WireName: "symbols",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_SymbolsFields,
-	},
-	"Tables": ubx.FieldSpec{
-		WireName: "tables",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_TablesFields,
-	},
-	"Tokens": ubx.FieldSpec{
-		WireName: "tokens",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_TokensFields,
-	},
-	"Transforms": ubx.FieldSpec{
-		WireName: "transforms",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_TransformsFields,
-	},
-	"VisualElements": ubx.FieldSpec{
-		WireName: "visual_elements",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Pages_VisualElementsFields,
-	},
-}
+		"Blocks": ubx.FieldSpec{
+			WireName: "blocks",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_BlocksFields,
+		},
+		"DetectedBarcodes": ubx.FieldSpec{
+			WireName: "detected_barcodes",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_DetectedBarcodesFields,
+		},
+		"DetectedLanguages": ubx.FieldSpec{
+			WireName: "detected_languages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_Blocks_DetectedLanguagesFields,
+		},
+		"Dimension": ubx.FieldSpec{
+			WireName: "dimension",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_DimensionFields,
+		},
+		"FormFields": ubx.FieldSpec{
+			WireName: "form_fields",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_FormFieldsFields,
+		},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_ImageFields,
+		},
+		"ImageQualityScores": ubx.FieldSpec{
+			WireName: "image_quality_scores",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_ImageQualityScoresFields,
+		},
+		"Layout": ubx.FieldSpec{
+			WireName: "layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Blocks_LayoutFields,
+		},
+		"Lines": ubx.FieldSpec{
+			WireName: "lines",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_BlocksFields,
+		},
+		"PageNumber": ubx.FieldSpec{WireName: "page_number"},
+		"Paragraphs": ubx.FieldSpec{
+			WireName: "paragraphs",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_BlocksFields,
+		},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+		"Symbols": ubx.FieldSpec{
+			WireName: "symbols",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_SymbolsFields,
+		},
+		"Tables": ubx.FieldSpec{
+			WireName: "tables",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_TablesFields,
+		},
+		"Tokens": ubx.FieldSpec{
+			WireName: "tokens",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_TokensFields,
+		},
+		"Transforms": ubx.FieldSpec{
+			WireName: "transforms",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_TransformsFields,
+		},
+		"VisualElements": ubx.FieldSpec{
+			WireName: "visual_elements",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Pages_VisualElementsFields,
+		},
+	}
 
 var Document_CloudAiDocument_Revisions_HumanReviewFields = ubx.FieldMap{
-	"State":        ubx.FieldSpec{WireName: "state"},
-	"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-}
+		"State": ubx.FieldSpec{WireName: "state"},
+		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
+	}
 
 var Document_CloudAiDocument_RevisionsFields = ubx.FieldMap{
-	"Agent":      ubx.FieldSpec{WireName: "agent"},
-	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-	"HumanReview": ubx.FieldSpec{
-		WireName: "human_review",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Revisions_HumanReviewFields,
-	},
-	"Id":        ubx.FieldSpec{WireName: "id"},
-	"Parent":    ubx.FieldSpec{WireName: "parent"},
-	"ParentIds": ubx.FieldSpec{WireName: "parent_ids"},
-	"Processor": ubx.FieldSpec{WireName: "processor"},
-}
+		"Agent": ubx.FieldSpec{WireName: "agent"},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"HumanReview": ubx.FieldSpec{
+			WireName: "human_review",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Revisions_HumanReviewFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"ParentIds": ubx.FieldSpec{WireName: "parent_ids"},
+		"Processor": ubx.FieldSpec{WireName: "processor"},
+	}
 
 var Document_CloudAiDocument_ShardInfoFields = ubx.FieldMap{
-	"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
-	"ShardIndex": ubx.FieldSpec{WireName: "shard_index"},
-	"TextOffset": ubx.FieldSpec{WireName: "text_offset"},
-}
+		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
+		"ShardIndex": ubx.FieldSpec{WireName: "shard_index"},
+		"TextOffset": ubx.FieldSpec{WireName: "text_offset"},
+	}
 
 var Document_CloudAiDocument_TextChangesFields = ubx.FieldMap{
-	"ChangedText": ubx.FieldSpec{WireName: "changed_text"},
-	"Provenance": ubx.FieldSpec{
-		WireName: "provenance",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_ProvenanceFields,
-	},
-	"TextAnchor": ubx.FieldSpec{
-		WireName: "text_anchor",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_TextAnchorFields,
-	},
-}
+		"ChangedText": ubx.FieldSpec{WireName: "changed_text"},
+		"Provenance": ubx.FieldSpec{
+			WireName: "provenance",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_ProvenanceFields,
+		},
+		"TextAnchor": ubx.FieldSpec{
+			WireName: "text_anchor",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_TextAnchorFields,
+		},
+	}
 
 var Document_CloudAiDocument_TextStyles_FontSizeFields = ubx.FieldMap{
-	"Size": ubx.FieldSpec{WireName: "size"},
-	"Unit": ubx.FieldSpec{WireName: "unit"},
-}
+		"Size": ubx.FieldSpec{WireName: "size"},
+		"Unit": ubx.FieldSpec{WireName: "unit"},
+	}
 
 var Document_CloudAiDocument_TextStylesFields = ubx.FieldMap{
-	"BackgroundColor": ubx.FieldSpec{
-		WireName: "background_color",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
-	},
-	"Color": ubx.FieldSpec{
-		WireName: "color",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
-	},
-	"FontFamily": ubx.FieldSpec{WireName: "font_family"},
-	"FontSize": ubx.FieldSpec{
-		WireName: "font_size",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_TextStyles_FontSizeFields,
-	},
-	"FontWeight": ubx.FieldSpec{WireName: "font_weight"},
-	"TextAnchor": ubx.FieldSpec{
-		WireName: "text_anchor",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_TextAnchorFields,
-	},
-	"TextDecoration": ubx.FieldSpec{WireName: "text_decoration"},
-	"TextStyle":      ubx.FieldSpec{WireName: "text_style"},
-}
+		"BackgroundColor": ubx.FieldSpec{
+			WireName: "background_color",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
+		},
+		"Color": ubx.FieldSpec{
+			WireName: "color",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Pages_Tokens_StyleInfo_BackgroundColorFields,
+		},
+		"FontFamily": ubx.FieldSpec{WireName: "font_family"},
+		"FontSize": ubx.FieldSpec{
+			WireName: "font_size",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_TextStyles_FontSizeFields,
+		},
+		"FontWeight": ubx.FieldSpec{WireName: "font_weight"},
+		"TextAnchor": ubx.FieldSpec{
+			WireName: "text_anchor",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_TextAnchorFields,
+		},
+		"TextDecoration": ubx.FieldSpec{WireName: "text_decoration"},
+		"TextStyle": ubx.FieldSpec{WireName: "text_style"},
+	}
 
 var Document_CloudAiDocumentFields = ubx.FieldMap{
-	"ChunkedDocument": ubx.FieldSpec{
-		WireName: "chunked_document",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ChunkedDocumentFields,
-	},
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"DocumentLayout": ubx.FieldSpec{
-		WireName: "document_layout",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_DocumentLayoutFields,
-	},
-	"Entities": ubx.FieldSpec{
-		WireName: "entities",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_EntitiesFields,
-	},
-	"EntityRelations": ubx.FieldSpec{
-		WireName: "entity_relations",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_EntityRelationsFields,
-	},
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ErrorFields,
-	},
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	"Pages": ubx.FieldSpec{
-		WireName: "pages",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_PagesFields,
-	},
-	"Revisions": ubx.FieldSpec{
-		WireName: "revisions",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_RevisionsFields,
-	},
-	"ShardInfo": ubx.FieldSpec{
-		WireName: "shard_info",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_ShardInfoFields,
-	},
-	"Text": ubx.FieldSpec{WireName: "text"},
-	"TextChanges": ubx.FieldSpec{
-		WireName: "text_changes",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_TextChangesFields,
-	},
-	"TextStyles": ubx.FieldSpec{
-		WireName: "text_styles",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_TextStylesFields,
-	},
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"ChunkedDocument": ubx.FieldSpec{
+			WireName: "chunked_document",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ChunkedDocumentFields,
+		},
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"DocumentLayout": ubx.FieldSpec{
+			WireName: "document_layout",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_DocumentLayoutFields,
+		},
+		"Entities": ubx.FieldSpec{
+			WireName: "entities",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_EntitiesFields,
+		},
+		"EntityRelations": ubx.FieldSpec{
+			WireName: "entity_relations",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_EntityRelationsFields,
+		},
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ErrorFields,
+		},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"Pages": ubx.FieldSpec{
+			WireName: "pages",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_PagesFields,
+		},
+		"Revisions": ubx.FieldSpec{
+			WireName: "revisions",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_RevisionsFields,
+		},
+		"ShardInfo": ubx.FieldSpec{
+			WireName: "shard_info",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_ShardInfoFields,
+		},
+		"Text": ubx.FieldSpec{WireName: "text"},
+		"TextChanges": ubx.FieldSpec{
+			WireName: "text_changes",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_TextChangesFields,
+		},
+		"TextStyles": ubx.FieldSpec{
+			WireName: "text_styles",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_TextStylesFields,
+		},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Document_Document_Properties_DateTimeValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
+		},
+	}
 
 var Document_Document_Properties_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Document_Document_Properties_FloatValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Document_Document_Properties_MapProperty_Fields_EnumValueFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Document_Document_Properties_MapProperty_Fields_TimestampValueFields = ubx.FieldMap{
-	"TextValue":      ubx.FieldSpec{WireName: "text_value"},
-	"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
-}
+		"TextValue": ubx.FieldSpec{WireName: "text_value"},
+		"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
+	}
 
 var Document_Document_Properties_MapProperty_FieldsFields = ubx.FieldMap{
-	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-	"DatetimeValue": ubx.FieldSpec{
-		WireName: "datetime_value",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
-	},
-	"EnumValue": ubx.FieldSpec{
-		WireName: "enum_value",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_MapProperty_Fields_EnumValueFields,
-	},
-	"FloatValue":  ubx.FieldSpec{WireName: "float_value"},
-	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	"TimestampValue": ubx.FieldSpec{
-		WireName: "timestamp_value",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_MapProperty_Fields_TimestampValueFields,
-	},
-}
+		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+		"DatetimeValue": ubx.FieldSpec{
+			WireName: "datetime_value",
+			Kind: "object",
+			Fields: Document_CloudAiDocument_Entities_NormalizedValue_DatetimeValueFields,
+		},
+		"EnumValue": ubx.FieldSpec{
+			WireName: "enum_value",
+			Kind: "object",
+			Fields: Document_Document_Properties_MapProperty_Fields_EnumValueFields,
+		},
+		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+		"TimestampValue": ubx.FieldSpec{
+			WireName: "timestamp_value",
+			Kind: "object",
+			Fields: Document_Document_Properties_MapProperty_Fields_TimestampValueFields,
+		},
+	}
 
 var Document_Document_Properties_MapPropertyFields = ubx.FieldMap{
-	"Fields": ubx.FieldSpec{
-		WireName: "fields",
-		Kind:     "map",
-		Fields:   Document_Document_Properties_MapProperty_FieldsFields,
-	},
-}
+		"Fields": ubx.FieldSpec{
+			WireName: "fields",
+			Kind: "map",
+			Fields: Document_Document_Properties_MapProperty_FieldsFields,
+		},
+	}
 
 var Document_Document_Properties_PropertyValuesFields = ubx.FieldMap{
-	"Properties": ubx.FieldSpec{WireName: "properties"},
-}
+		"Properties": ubx.FieldSpec{WireName: "properties"},
+	}
 
 var Document_Document_Properties_TimestampValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Document_Document_Properties_MapProperty_Fields_TimestampValueFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Document_Document_Properties_MapProperty_Fields_TimestampValueFields,
+		},
+	}
 
 var Document_Document_PropertiesFields = ubx.FieldMap{
-	"DateTimeValues": ubx.FieldSpec{
-		WireName: "date_time_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_DateTimeValuesFields,
-	},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_EnumValuesFields,
-	},
-	"FloatValues": ubx.FieldSpec{
-		WireName: "float_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_FloatValuesFields,
-	},
-	"IntegerValues": ubx.FieldSpec{
-		WireName: "integer_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_FloatValuesFields,
-	},
-	"MapProperty": ubx.FieldSpec{
-		WireName: "map_property",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_MapPropertyFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"PropertyValues": ubx.FieldSpec{
-		WireName: "property_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_PropertyValuesFields,
-	},
-	"TextValues": ubx.FieldSpec{
-		WireName: "text_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_EnumValuesFields,
-	},
-	"TimestampValues": ubx.FieldSpec{
-		WireName: "timestamp_values",
-		Kind:     "object",
-		Fields:   Document_Document_Properties_TimestampValuesFields,
-	},
-}
+		"DateTimeValues": ubx.FieldSpec{
+			WireName: "date_time_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_DateTimeValuesFields,
+		},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_EnumValuesFields,
+		},
+		"FloatValues": ubx.FieldSpec{
+			WireName: "float_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_FloatValuesFields,
+		},
+		"IntegerValues": ubx.FieldSpec{
+			WireName: "integer_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_FloatValuesFields,
+		},
+		"MapProperty": ubx.FieldSpec{
+			WireName: "map_property",
+			Kind: "object",
+			Fields: Document_Document_Properties_MapPropertyFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PropertyValues": ubx.FieldSpec{
+			WireName: "property_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_PropertyValuesFields,
+		},
+		"TextValues": ubx.FieldSpec{
+			WireName: "text_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_EnumValuesFields,
+		},
+		"TimestampValues": ubx.FieldSpec{
+			WireName: "timestamp_values",
+			Kind: "object",
+			Fields: Document_Document_Properties_TimestampValuesFields,
+		},
+	}
 
 var Document_DocumentFields = ubx.FieldMap{
-	"CloudAiDocument": ubx.FieldSpec{
-		WireName: "cloud_ai_document",
-		Kind:     "object",
-		Fields:   Document_CloudAiDocumentFields,
-	},
-	"ContentCategory":    ubx.FieldSpec{WireName: "content_category"},
-	"CreateTime":         ubx.FieldSpec{WireName: "create_time"},
-	"Creator":            ubx.FieldSpec{WireName: "creator"},
-	"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
-	"DisplayUri":         ubx.FieldSpec{WireName: "display_uri"},
-	"DispositionTime":    ubx.FieldSpec{WireName: "disposition_time"},
-	"DocumentSchemaName": ubx.FieldSpec{WireName: "document_schema_name"},
-	"InlineRawDocument":  ubx.FieldSpec{WireName: "inline_raw_document"},
-	"LegalHold":          ubx.FieldSpec{WireName: "legal_hold"},
-	"Name":               ubx.FieldSpec{WireName: "name"},
-	"PlainText":          ubx.FieldSpec{WireName: "plain_text"},
-	"Properties": ubx.FieldSpec{
-		WireName: "properties",
-		Kind:     "list",
-		Fields:   Document_Document_PropertiesFields,
-	},
-	"RawDocumentFileType":    ubx.FieldSpec{WireName: "raw_document_file_type"},
-	"RawDocumentPath":        ubx.FieldSpec{WireName: "raw_document_path"},
-	"ReferenceId":            ubx.FieldSpec{WireName: "reference_id"},
-	"TextExtractionDisabled": ubx.FieldSpec{WireName: "text_extraction_disabled"},
-	"TextExtractionEnabled":  ubx.FieldSpec{WireName: "text_extraction_enabled"},
-	"Title":                  ubx.FieldSpec{WireName: "title"},
-	"UpdateTime":             ubx.FieldSpec{WireName: "update_time"},
-	"Updater":                ubx.FieldSpec{WireName: "updater"},
-}
+		"CloudAiDocument": ubx.FieldSpec{
+			WireName: "cloud_ai_document",
+			Kind: "object",
+			Fields: Document_CloudAiDocumentFields,
+		},
+		"ContentCategory": ubx.FieldSpec{WireName: "content_category"},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Creator": ubx.FieldSpec{WireName: "creator"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayUri": ubx.FieldSpec{WireName: "display_uri"},
+		"DispositionTime": ubx.FieldSpec{WireName: "disposition_time"},
+		"DocumentSchemaName": ubx.FieldSpec{WireName: "document_schema_name"},
+		"InlineRawDocument": ubx.FieldSpec{WireName: "inline_raw_document"},
+		"LegalHold": ubx.FieldSpec{WireName: "legal_hold"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PlainText": ubx.FieldSpec{WireName: "plain_text"},
+		"Properties": ubx.FieldSpec{
+			WireName: "properties",
+			Kind: "list",
+			Fields: Document_Document_PropertiesFields,
+		},
+		"RawDocumentFileType": ubx.FieldSpec{WireName: "raw_document_file_type"},
+		"RawDocumentPath": ubx.FieldSpec{WireName: "raw_document_path"},
+		"ReferenceId": ubx.FieldSpec{WireName: "reference_id"},
+		"TextExtractionDisabled": ubx.FieldSpec{WireName: "text_extraction_disabled"},
+		"TextExtractionEnabled": ubx.FieldSpec{WireName: "text_extraction_enabled"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Updater": ubx.FieldSpec{WireName: "updater"},
+	}
 
 var Document_Policy_AuditConfigs_AuditLogConfigsFields = ubx.FieldMap{
-	"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
-	"LogType":         ubx.FieldSpec{WireName: "log_type"},
-}
+		"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
+		"LogType": ubx.FieldSpec{WireName: "log_type"},
+	}
 
 var Document_Policy_AuditConfigsFields = ubx.FieldMap{
-	"AuditLogConfigs": ubx.FieldSpec{
-		WireName: "audit_log_configs",
-		Kind:     "list",
-		Fields:   Document_Policy_AuditConfigs_AuditLogConfigsFields,
-	},
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"AuditLogConfigs": ubx.FieldSpec{
+			WireName: "audit_log_configs",
+			Kind: "list",
+			Fields: Document_Policy_AuditConfigs_AuditLogConfigsFields,
+		},
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var Document_Policy_Bindings_ConditionFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Expression":  ubx.FieldSpec{WireName: "expression"},
-	"Location":    ubx.FieldSpec{WireName: "location"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var Document_Policy_BindingsFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{
-		WireName: "condition",
-		Kind:     "object",
-		Fields:   Document_Policy_Bindings_ConditionFields,
-	},
-	"Members": ubx.FieldSpec{WireName: "members"},
-	"Role":    ubx.FieldSpec{WireName: "role"},
-}
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: Document_Policy_Bindings_ConditionFields,
+		},
+		"Members": ubx.FieldSpec{WireName: "members"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 var Document_PolicyFields = ubx.FieldMap{
-	"AuditConfigs": ubx.FieldSpec{
-		WireName: "audit_configs",
-		Kind:     "list",
-		Fields:   Document_Policy_AuditConfigsFields,
-	},
-	"Bindings": ubx.FieldSpec{
-		WireName: "bindings",
-		Kind:     "list",
-		Fields:   Document_Policy_BindingsFields,
-	},
-	"Etag":    ubx.FieldSpec{WireName: "etag"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"AuditConfigs": ubx.FieldSpec{
+			WireName: "audit_configs",
+			Kind: "list",
+			Fields: Document_Policy_AuditConfigsFields,
+		},
+		"Bindings": ubx.FieldSpec{
+			WireName: "bindings",
+			Kind: "list",
+			Fields: Document_Policy_BindingsFields,
+		},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var Document_RequestMetadata_UserInfoFields = ubx.FieldMap{
-	"GroupIds": ubx.FieldSpec{WireName: "group_ids"},
-	"Id":       ubx.FieldSpec{WireName: "id"},
-}
+		"GroupIds": ubx.FieldSpec{WireName: "group_ids"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var Document_RequestMetadataFields = ubx.FieldMap{
-	"UserInfo": ubx.FieldSpec{
-		WireName: "user_info",
-		Kind:     "object",
-		Fields:   Document_RequestMetadata_UserInfoFields,
-	},
-}
+		"UserInfo": ubx.FieldSpec{
+			WireName: "user_info",
+			Kind: "object",
+			Fields: Document_RequestMetadata_UserInfoFields,
+		},
+	}
 
 type DocumentConfig struct {
 	// Request Option for processing Cloud AI Document in CW Document.
@@ -1901,24 +1901,24 @@ var Document = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudAiDocumentOption": ubx.FieldSpec{
 			WireName: "cloud_ai_document_option",
-			Kind:     "object",
-			Fields:   Document_CloudAiDocumentOptionFields,
+			Kind: "object",
+			Fields: Document_CloudAiDocumentOptionFields,
 		},
 		"CreateMask": ubx.FieldSpec{WireName: "create_mask"},
 		"Document": ubx.FieldSpec{
 			WireName: "document",
-			Kind:     "object",
-			Fields:   Document_DocumentFields,
+			Kind: "object",
+			Fields: Document_DocumentFields,
 		},
 		"Policy": ubx.FieldSpec{
 			WireName: "policy",
-			Kind:     "object",
-			Fields:   Document_PolicyFields,
+			Kind: "object",
+			Fields: Document_PolicyFields,
 		},
 		"RequestMetadata": ubx.FieldSpec{
 			WireName: "request_metadata",
-			Kind:     "object",
-			Fields:   Document_RequestMetadataFields,
+			Kind: "object",
+			Fields: Document_RequestMetadataFields,
 		},
 	},
 }

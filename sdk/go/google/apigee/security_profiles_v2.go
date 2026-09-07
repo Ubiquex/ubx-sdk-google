@@ -16,17 +16,17 @@ type SecurityProfilesV2_ProfileAssessmentConfigs struct {
 }
 
 var SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields = ubx.FieldMap{
-	"GatewayTypes": ubx.FieldSpec{WireName: "gateway_types"},
-}
+		"GatewayTypes": ubx.FieldSpec{WireName: "gateway_types"},
+	}
 
 var SecurityProfilesV2_ProfileAssessmentConfigsFields = ubx.FieldMap{
-	"Include": ubx.FieldSpec{
-		WireName: "include",
-		Kind:     "object",
-		Fields:   SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields,
-	},
-	"Weight": ubx.FieldSpec{WireName: "weight"},
-}
+		"Include": ubx.FieldSpec{
+			WireName: "include",
+			Kind: "object",
+			Fields: SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields,
+		},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
+	}
 
 type SecurityProfilesV2Config struct {
 	// Optional. The description of the security profile.
@@ -60,11 +60,11 @@ var SecurityProfilesV2 = ubx.ResourceBinding{
 	WireType: "google_apigee_security_profiles_v2",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProfileAssessmentConfigs": ubx.FieldSpec{
 			WireName: "profile_assessment_configs",
-			Kind:     "map",
-			Fields:   SecurityProfilesV2_ProfileAssessmentConfigsFields,
+			Kind: "map",
+			Fields: SecurityProfilesV2_ProfileAssessmentConfigsFields,
 		},
 		"RiskAssessmentType": ubx.FieldSpec{WireName: "risk_assessment_type"},
 	},

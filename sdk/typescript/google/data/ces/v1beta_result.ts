@@ -104,22 +104,32 @@ export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_
   mimeType?: string | Computed<string>;
 }
 
+export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
 }
 
 export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool>;
@@ -129,7 +139,7 @@ export interface V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_
   agentTransfer?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_AgentTransfer | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_AgentTransfer>;
   blob?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Blob>;
+  image?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Image | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall | Computed<V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall>;

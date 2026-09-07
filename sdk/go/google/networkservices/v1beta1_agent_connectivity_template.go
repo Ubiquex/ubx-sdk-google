@@ -22,20 +22,20 @@ type V1beta1AgentConnectivityTemplate_EgressNetworkConfig struct {
 }
 
 var V1beta1AgentConnectivityTemplate_EgressNetworkConfig_DnsPeeringConfigFields = ubx.FieldMap{
-	"Domain":        ubx.FieldSpec{WireName: "domain"},
-	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-}
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	}
 
 var V1beta1AgentConnectivityTemplate_EgressNetworkConfigFields = ubx.FieldMap{
-	"DnsPeeringConfig": ubx.FieldSpec{
-		WireName: "dns_peering_config",
-		Kind:     "object",
-		Fields:   V1beta1AgentConnectivityTemplate_EgressNetworkConfig_DnsPeeringConfigFields,
-	},
-	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	"TrustConfig":       ubx.FieldSpec{WireName: "trust_config"},
-	"VpcEgress":         ubx.FieldSpec{WireName: "vpc_egress"},
-}
+		"DnsPeeringConfig": ubx.FieldSpec{
+			WireName: "dns_peering_config",
+			Kind: "object",
+			Fields: V1beta1AgentConnectivityTemplate_EgressNetworkConfig_DnsPeeringConfigFields,
+		},
+		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
+		"VpcEgress": ubx.FieldSpec{WireName: "vpc_egress"},
+	}
 
 type V1beta1AgentConnectivityTemplateConfig struct {
 	// Required. Immutable. The path of the access. Maps roughly to ingress/egress, though we keep CLIENT_TO_AGENT and AGENT_TO_ANYWHERE as carryovers from Agent Gateway's original resource model. The path is immutable once set. Exactly one path can be set.
@@ -47,7 +47,7 @@ type V1beta1AgentConnectivityTemplateConfig struct {
 	// Required. The deployment model for the gateway.
 	DeploymentModel any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
-	Description         any
+	Description any
 	EgressNetworkConfig any
 	// Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
 	Etag any
@@ -69,7 +69,7 @@ type V1beta1AgentConnectivityTemplateAttrs struct {
 	// Required. The deployment model for the gateway.
 	DeploymentModel any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
-	Description         any
+	Description any
 	EgressNetworkConfig any
 	// Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
 	Etag any
@@ -84,18 +84,18 @@ type V1beta1AgentConnectivityTemplateAttrs struct {
 var V1beta1AgentConnectivityTemplate = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_agent_connectivity_template",
 	Fields: ubx.FieldMap{
-		"AccessPath":      ubx.FieldSpec{WireName: "access_path"},
-		"AccessTypes":     ubx.FieldSpec{WireName: "access_types"},
-		"AgentCompute":    ubx.FieldSpec{WireName: "agent_compute"},
+		"AccessPath": ubx.FieldSpec{WireName: "access_path"},
+		"AccessTypes": ubx.FieldSpec{WireName: "access_types"},
+		"AgentCompute": ubx.FieldSpec{WireName: "agent_compute"},
 		"DeploymentModel": ubx.FieldSpec{WireName: "deployment_model"},
-		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EgressNetworkConfig": ubx.FieldSpec{
 			WireName: "egress_network_config",
-			Kind:     "object",
-			Fields:   V1beta1AgentConnectivityTemplate_EgressNetworkConfigFields,
+			Kind: "object",
+			Fields: V1beta1AgentConnectivityTemplate_EgressNetworkConfigFields,
 		},
-		"Etag":   ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

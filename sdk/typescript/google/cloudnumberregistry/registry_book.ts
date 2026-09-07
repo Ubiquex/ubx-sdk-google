@@ -14,6 +14,12 @@ export interface RegistryBook_AggregatedData {
   uniqueScopesCount?: number | Computed<number>;
 }
 
+export interface RegistryBook_ClaimedScopesInfo {
+  displayName?: string | Computed<string>;
+  id?: string | Computed<string>;
+  name?: string | Computed<string>;
+}
+
 const RegistryBook_AggregatedDataFields: FieldMap = {
   customRangesCount: "custom_ranges_count",
   customRealmsCount: "custom_realms_count",
@@ -38,6 +44,8 @@ export interface RegistryBookAttrs {
   aggregatedData: RegistryBook_AggregatedData;
   /** Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once. */
   claimedScopes: string[];
+  /** Output only. Detailed scope information corresponding to each entry in `claimed_scopes`. */
+  claimedScopesInfo: RegistryBook_ClaimedScopesInfo[];
   /** Output only. The time at which the RegistryBook was created. */
   createTime: string;
   /** Output only. Whether the RegistryBook is the default one. */

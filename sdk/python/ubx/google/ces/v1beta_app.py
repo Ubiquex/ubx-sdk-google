@@ -25,6 +25,15 @@ class V1betaApp_AudioProcessingConfig_BargeInConfig:
     disable_barge_in: Any = None
 
 @dataclasses.dataclass
+class V1betaApp_AudioProcessingConfig_CustomVoiceSamples:
+    consent_audio_gcs_uri: Any = None
+    name: Any = None
+    preview_audio_content: Any = None
+    preview_text: Any = None
+    voice_instruction: Any = None
+    voice_sample_gcs_uri: Any = None
+
+@dataclasses.dataclass
 class V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigs:
     consent_audio_gcs_uri: Any = None
     instruction: Any = None
@@ -39,6 +48,8 @@ class V1betaApp_AudioProcessingConfig:
     ambient_sound_config: Any = None
     # Configuration for how the user barge-in activities should be handled.
     barge_in_config: Any = None
+    # Optional. Configures custom voice samples for voice cloning.
+    custom_voice_samples: Any = None
     # Optional. The duration of user inactivity (no speech or interaction) before the agent prompts the user for reengagement. If not set, the agent will not prompt the user for reengagement.
     inactivity_timeout: Any = None
     # Optional. Configuration of how the agent response should be synthesized, mapping from the language code to SynthesizeSpeechConfig. If the configuration for the specified language code is not found, the configuration for the root language code will be used. For example, if the map contains "en-us" and "en", and the specified language code is "en-gb", then "en" configuration will be used. Note: Language code is case-insensitive.
@@ -52,6 +63,11 @@ class V1betaApp_ClientCertificateSettings:
     private_key: Any = None
     # Required. The TLS certificate encoded in PEM format. This string must include the begin header and end footer lines.
     tls_certificate: Any = None
+
+@dataclasses.dataclass
+class V1betaApp_DashboardSettings:
+    # Optional. The resource name of the default Contact Center Insights dashboard associated with the app. This is the dashboard that will be displayed when users navigate to the Monitoring view for the app. Format: `projects/{project}/locations/{location}/dashboards/{dashboard}`
+    default_dashboard: Any = None
 
 @dataclasses.dataclass
 class V1betaApp_DataStoreSettings_Engines:
@@ -407,6 +423,15 @@ _V1betaApp_AudioProcessingConfig_BargeInConfigFields = {
     "disable_barge_in": ubx.FieldSpec(wire_name="disable_barge_in"),
 }
 
+_V1betaApp_AudioProcessingConfig_CustomVoiceSamplesFields = {
+    "consent_audio_gcs_uri": ubx.FieldSpec(wire_name="consent_audio_gcs_uri"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "preview_audio_content": ubx.FieldSpec(wire_name="preview_audio_content"),
+    "preview_text": ubx.FieldSpec(wire_name="preview_text"),
+    "voice_instruction": ubx.FieldSpec(wire_name="voice_instruction"),
+    "voice_sample_gcs_uri": ubx.FieldSpec(wire_name="voice_sample_gcs_uri"),
+}
+
 _V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigsFields = {
     "consent_audio_gcs_uri": ubx.FieldSpec(wire_name="consent_audio_gcs_uri"),
     "instruction": ubx.FieldSpec(wire_name="instruction"),
@@ -427,6 +452,11 @@ _V1betaApp_AudioProcessingConfigFields = {
         kind="object",
         fields=_V1betaApp_AudioProcessingConfig_BargeInConfigFields,
     ),
+    "custom_voice_samples": ubx.FieldSpec(
+        wire_name="custom_voice_samples",
+        kind="list",
+        fields=_V1betaApp_AudioProcessingConfig_CustomVoiceSamplesFields,
+    ),
     "inactivity_timeout": ubx.FieldSpec(wire_name="inactivity_timeout"),
     "synthesize_speech_configs": ubx.FieldSpec(
         wire_name="synthesize_speech_configs",
@@ -439,6 +469,10 @@ _V1betaApp_ClientCertificateSettingsFields = {
     "passphrase": ubx.FieldSpec(wire_name="passphrase"),
     "private_key": ubx.FieldSpec(wire_name="private_key"),
     "tls_certificate": ubx.FieldSpec(wire_name="tls_certificate"),
+}
+
+_V1betaApp_DashboardSettingsFields = {
+    "default_dashboard": ubx.FieldSpec(wire_name="default_dashboard"),
 }
 
 _V1betaApp_DataStoreSettings_EnginesFields = {
@@ -822,6 +856,8 @@ class V1betaAppConfig:
     audio_processing_config: Any = None
     # Settings for custom client certificates.
     client_certificate_settings: Any = None
+    # Settings for dashboards associated with the app, that show up in the Monitoring view.
+    dashboard_settings: Any = None
     # Data store related settings for the app.
     data_store_settings: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
@@ -875,6 +911,8 @@ class V1betaAppAttrs:
     client_certificate_settings: Any = None
     # Output only. Timestamp when the app was created.
     create_time: Any = None
+    # Settings for dashboards associated with the app, that show up in the Monitoring view.
+    dashboard_settings: Any = None
     # Data store related settings for the app.
     data_store_settings: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
@@ -942,6 +980,11 @@ V1betaApp = ubx.ResourceBinding(
             wire_name="client_certificate_settings",
             kind="object",
             fields=_V1betaApp_ClientCertificateSettingsFields,
+        ),
+        "dashboard_settings": ubx.FieldSpec(
+            wire_name="dashboard_settings",
+            kind="object",
+            fields=_V1betaApp_DashboardSettingsFields,
         ),
         "data_store_settings": ubx.FieldSpec(
             wire_name="data_store_settings",

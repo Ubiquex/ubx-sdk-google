@@ -529,358 +529,358 @@ type MigratingVm_VmwareSourceVmDetails struct {
 }
 
 var MigratingVm_AwsSourceVmDetails_DisksFields = ubx.FieldMap{
-	"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
-	"SizeGb":     ubx.FieldSpec{WireName: "size_gb"},
-	"VolumeId":   ubx.FieldSpec{WireName: "volume_id"},
-}
+		"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+	}
 
 var MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields = ubx.FieldMap{
-	"LastOsCapabilitiesUpdateTime": ubx.FieldSpec{WireName: "last_os_capabilities_update_time"},
-	"OsCapabilities":               ubx.FieldSpec{WireName: "os_capabilities"},
-}
+		"LastOsCapabilitiesUpdateTime": ubx.FieldSpec{WireName: "last_os_capabilities_update_time"},
+		"OsCapabilities": ubx.FieldSpec{WireName: "os_capabilities"},
+	}
 
 var MigratingVm_AwsSourceVmDetailsFields = ubx.FieldMap{
-	"Architecture":          ubx.FieldSpec{WireName: "architecture"},
-	"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   MigratingVm_AwsSourceVmDetails_DisksFields,
-	},
-	"Firmware": ubx.FieldSpec{WireName: "firmware"},
-	"VmCapabilitiesInfo": ubx.FieldSpec{
-		WireName: "vm_capabilities_info",
-		Kind:     "object",
-		Fields:   MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
-	},
-}
+		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: MigratingVm_AwsSourceVmDetails_DisksFields,
+		},
+		"Firmware": ubx.FieldSpec{WireName: "firmware"},
+		"VmCapabilitiesInfo": ubx.FieldSpec{
+			WireName: "vm_capabilities_info",
+			Kind: "object",
+			Fields: MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
+		},
+	}
 
 var MigratingVm_AzureSourceVmDetails_DisksFields = ubx.FieldMap{
-	"DiskId":     ubx.FieldSpec{WireName: "disk_id"},
-	"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
-	"SizeGb":     ubx.FieldSpec{WireName: "size_gb"},
-}
+		"DiskId": ubx.FieldSpec{WireName: "disk_id"},
+		"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	}
 
 var MigratingVm_AzureSourceVmDetailsFields = ubx.FieldMap{
-	"Architecture":          ubx.FieldSpec{WireName: "architecture"},
-	"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   MigratingVm_AzureSourceVmDetails_DisksFields,
-	},
-	"Firmware": ubx.FieldSpec{WireName: "firmware"},
-	"VmCapabilitiesInfo": ubx.FieldSpec{
-		WireName: "vm_capabilities_info",
-		Kind:     "object",
-		Fields:   MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
-	},
-}
+		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: MigratingVm_AzureSourceVmDetails_DisksFields,
+		},
+		"Firmware": ubx.FieldSpec{WireName: "firmware"},
+		"VmCapabilitiesInfo": ubx.FieldSpec{
+			WireName: "vm_capabilities_info",
+			Kind: "object",
+			Fields: MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
+		},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields = ubx.FieldMap{
-	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-}
+		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetailsFields = ubx.FieldMap{
-	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-}
+		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_DisksFields = ubx.FieldMap{
-	"AdditionalLabels": ubx.FieldSpec{WireName: "additional_labels"},
-	"DiskName":         ubx.FieldSpec{WireName: "disk_name"},
-	"DiskType":         ubx.FieldSpec{WireName: "disk_type"},
-	"Encryption": ubx.FieldSpec{
-		WireName: "encryption",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-	},
-	"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
-	"VmAttachmentDetails": ubx.FieldSpec{
-		WireName: "vm_attachment_details",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetailsFields,
-	},
-}
+		"AdditionalLabels": ubx.FieldSpec{WireName: "additional_labels"},
+		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"Encryption": ubx.FieldSpec{
+			WireName: "encryption",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
+		},
+		"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
+		"VmAttachmentDetails": ubx.FieldSpec{
+			WireName: "vm_attachment_details",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_VmAttachmentDetailsFields,
+		},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaults_ImageFields = ubx.FieldMap{
-	"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-}
+		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaultsFields = ubx.FieldMap{
-	"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-	"DiskName":   ubx.FieldSpec{WireName: "disk_name"},
-	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
-	"Encryption": ubx.FieldSpec{
-		WireName: "encryption",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-	},
-	"Image": ubx.FieldSpec{
-		WireName: "image",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaults_ImageFields,
-	},
-}
+		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
+		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"Encryption": ubx.FieldSpec{
+			WireName: "encryption",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
+		},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaults_ImageFields,
+		},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling_NodeAffinitiesFields = ubx.FieldMap{
-	"Key":      ubx.FieldSpec{WireName: "key"},
-	"Operator": ubx.FieldSpec{WireName: "operator"},
-	"Values":   ubx.FieldSpec{WireName: "values"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Operator": ubx.FieldSpec{WireName: "operator"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields = ubx.FieldMap{
-	"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-	"NodeAffinities": ubx.FieldSpec{
-		WireName: "node_affinities",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling_NodeAffinitiesFields,
-	},
-	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-	"RestartType":       ubx.FieldSpec{WireName: "restart_type"},
-}
+		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+		"NodeAffinities": ubx.FieldSpec{
+			WireName: "node_affinities",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeScheduling_NodeAffinitiesFields,
+		},
+		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+		"RestartType": ubx.FieldSpec{WireName: "restart_type"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields = ubx.FieldMap{
-	"ExternalIp":  ubx.FieldSpec{WireName: "external_ip"},
-	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
-	"Network":     ubx.FieldSpec{WireName: "network"},
-	"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
-}
+		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
+		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaultsFields = ubx.FieldMap{
-	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-	"BootDiskDefaults": ubx.FieldSpec{
-		WireName: "boot_disk_defaults",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaultsFields,
-	},
-	"ComputeScheduling": ubx.FieldSpec{
-		WireName: "compute_scheduling",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
-	},
-	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
-	"Encryption": ubx.FieldSpec{
-		WireName: "encryption",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-	},
-	"Hostname":          ubx.FieldSpec{WireName: "hostname"},
-	"Labels":            ubx.FieldSpec{WireName: "labels"},
-	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
-	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
-	"NetworkInterfaces": ubx.FieldSpec{
-		WireName: "network_interfaces",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
-	},
-	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
-	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"VmName":         ubx.FieldSpec{WireName: "vm_name"},
-}
+		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+		"BootDiskDefaults": ubx.FieldSpec{
+			WireName: "boot_disk_defaults",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_BootDiskDefaultsFields,
+		},
+		"ComputeScheduling": ubx.FieldSpec{
+			WireName: "compute_scheduling",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
+		},
+		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
+		"Encryption": ubx.FieldSpec{
+			WireName: "encryption",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
+		},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"NetworkInterfaces": ubx.FieldSpec{
+			WireName: "network_interfaces",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
+		},
+		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"VmName": ubx.FieldSpec{WireName: "vm_name"},
+	}
 
 var MigratingVm_ComputeEngineDisksTargetDefaultsFields = ubx.FieldMap{
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_DisksFields,
-	},
-	"DisksTargetDefaults": ubx.FieldSpec{WireName: "disks_target_defaults"},
-	"TargetProject":       ubx.FieldSpec{WireName: "target_project"},
-	"VmTargetDefaults": ubx.FieldSpec{
-		WireName: "vm_target_defaults",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaultsFields,
-	},
-	"Zone": ubx.FieldSpec{WireName: "zone"},
-}
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_DisksFields,
+		},
+		"DisksTargetDefaults": ubx.FieldSpec{WireName: "disks_target_defaults"},
+		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+		"VmTargetDefaults": ubx.FieldSpec{
+			WireName: "vm_target_defaults",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaultsFields,
+		},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiersFields = ubx.FieldMap{
-	"Modifier": ubx.FieldSpec{WireName: "modifier"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-}
+		"Modifier": ubx.FieldSpec{WireName: "modifier"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var MigratingVm_ComputeEngineTargetDefaults_AppliedLicenseFields = ubx.FieldMap{
-	"OsLicense": ubx.FieldSpec{WireName: "os_license"},
-	"Type":      ubx.FieldSpec{WireName: "type"},
-}
+		"OsLicense": ubx.FieldSpec{WireName: "os_license"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var MigratingVm_ComputeEngineTargetDefaultsFields = ubx.FieldMap{
-	"AdaptationModifiers": ubx.FieldSpec{
-		WireName: "adaptation_modifiers",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiersFields,
-	},
-	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-	"AppliedLicense": ubx.FieldSpec{
-		WireName: "applied_license",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineTargetDefaults_AppliedLicenseFields,
-	},
-	"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
-	"BootOption":     ubx.FieldSpec{WireName: "boot_option"},
-	"ComputeScheduling": ubx.FieldSpec{
-		WireName: "compute_scheduling",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
-	},
-	"DiskReplicaZones": ubx.FieldSpec{WireName: "disk_replica_zones"},
-	"DiskType":         ubx.FieldSpec{WireName: "disk_type"},
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_DisksFields,
-	},
-	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
-	"Encryption": ubx.FieldSpec{
-		WireName: "encryption",
-		Kind:     "object",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
-	},
-	"Hostname":          ubx.FieldSpec{WireName: "hostname"},
-	"Labels":            ubx.FieldSpec{WireName: "labels"},
-	"LicenseType":       ubx.FieldSpec{WireName: "license_type"},
-	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
-	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
-	"NetworkInterfaces": ubx.FieldSpec{
-		WireName: "network_interfaces",
-		Kind:     "list",
-		Fields:   MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
-	},
-	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
-	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"StoragePool":    ubx.FieldSpec{WireName: "storage_pool"},
-	"TargetProject":  ubx.FieldSpec{WireName: "target_project"},
-	"VmName":         ubx.FieldSpec{WireName: "vm_name"},
-	"Zone":           ubx.FieldSpec{WireName: "zone"},
-}
+		"AdaptationModifiers": ubx.FieldSpec{
+			WireName: "adaptation_modifiers",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineTargetDefaults_AdaptationModifiersFields,
+		},
+		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+		"AppliedLicense": ubx.FieldSpec{
+			WireName: "applied_license",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineTargetDefaults_AppliedLicenseFields,
+		},
+		"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
+		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
+		"ComputeScheduling": ubx.FieldSpec{
+			WireName: "compute_scheduling",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_ComputeSchedulingFields,
+		},
+		"DiskReplicaZones": ubx.FieldSpec{WireName: "disk_replica_zones"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_DisksFields,
+		},
+		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
+		"Encryption": ubx.FieldSpec{
+			WireName: "encryption",
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_Disks_EncryptionFields,
+		},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"NetworkInterfaces": ubx.FieldSpec{
+			WireName: "network_interfaces",
+			Kind: "list",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaults_VmTargetDefaults_NetworkInterfacesFields,
+		},
+		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+		"VmName": ubx.FieldSpec{WireName: "vm_name"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var MigratingVm_CurrentSyncInfo_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var MigratingVm_CurrentSyncInfo_Steps_ReplicatingFields = ubx.FieldMap{
-	"LastThirtyMinutesAverageBytesPerSecond": ubx.FieldSpec{WireName: "last_thirty_minutes_average_bytes_per_second"},
-	"LastTwoMinutesAverageBytesPerSecond":    ubx.FieldSpec{WireName: "last_two_minutes_average_bytes_per_second"},
-	"ReplicatedBytes":                        ubx.FieldSpec{WireName: "replicated_bytes"},
-	"TotalBytes":                             ubx.FieldSpec{WireName: "total_bytes"},
-}
+		"LastThirtyMinutesAverageBytesPerSecond": ubx.FieldSpec{WireName: "last_thirty_minutes_average_bytes_per_second"},
+		"LastTwoMinutesAverageBytesPerSecond": ubx.FieldSpec{WireName: "last_two_minutes_average_bytes_per_second"},
+		"ReplicatedBytes": ubx.FieldSpec{WireName: "replicated_bytes"},
+		"TotalBytes": ubx.FieldSpec{WireName: "total_bytes"},
+	}
 
 var MigratingVm_CurrentSyncInfo_StepsFields = ubx.FieldMap{
-	"EndTime":                 ubx.FieldSpec{WireName: "end_time"},
-	"InitializingReplication": ubx.FieldSpec{WireName: "initializing_replication"},
-	"PostProcessing":          ubx.FieldSpec{WireName: "post_processing"},
-	"Replicating": ubx.FieldSpec{
-		WireName: "replicating",
-		Kind:     "object",
-		Fields:   MigratingVm_CurrentSyncInfo_Steps_ReplicatingFields,
-	},
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"InitializingReplication": ubx.FieldSpec{WireName: "initializing_replication"},
+		"PostProcessing": ubx.FieldSpec{WireName: "post_processing"},
+		"Replicating": ubx.FieldSpec{
+			WireName: "replicating",
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfo_Steps_ReplicatingFields,
+		},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var MigratingVm_CurrentSyncInfo_Warnings_ActionItemFields = ubx.FieldMap{
-	"Locale":  ubx.FieldSpec{WireName: "locale"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Locale": ubx.FieldSpec{WireName: "locale"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var MigratingVm_CurrentSyncInfo_Warnings_HelpLinksFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Url":         ubx.FieldSpec{WireName: "url"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
 
 var MigratingVm_CurrentSyncInfo_WarningsFields = ubx.FieldMap{
-	"ActionItem": ubx.FieldSpec{
-		WireName: "action_item",
-		Kind:     "object",
-		Fields:   MigratingVm_CurrentSyncInfo_Warnings_ActionItemFields,
-	},
-	"Code": ubx.FieldSpec{WireName: "code"},
-	"HelpLinks": ubx.FieldSpec{
-		WireName: "help_links",
-		Kind:     "list",
-		Fields:   MigratingVm_CurrentSyncInfo_Warnings_HelpLinksFields,
-	},
-	"WarningMessage": ubx.FieldSpec{
-		WireName: "warning_message",
-		Kind:     "object",
-		Fields:   MigratingVm_CurrentSyncInfo_Warnings_ActionItemFields,
-	},
-	"WarningTime": ubx.FieldSpec{WireName: "warning_time"},
-}
+		"ActionItem": ubx.FieldSpec{
+			WireName: "action_item",
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfo_Warnings_ActionItemFields,
+		},
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"HelpLinks": ubx.FieldSpec{
+			WireName: "help_links",
+			Kind: "list",
+			Fields: MigratingVm_CurrentSyncInfo_Warnings_HelpLinksFields,
+		},
+		"WarningMessage": ubx.FieldSpec{
+			WireName: "warning_message",
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfo_Warnings_ActionItemFields,
+		},
+		"WarningTime": ubx.FieldSpec{WireName: "warning_time"},
+	}
 
 var MigratingVm_CurrentSyncInfoFields = ubx.FieldMap{
-	"CycleNumber": ubx.FieldSpec{WireName: "cycle_number"},
-	"EndTime":     ubx.FieldSpec{WireName: "end_time"},
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   MigratingVm_CurrentSyncInfo_ErrorFields,
-	},
-	"Name":            ubx.FieldSpec{WireName: "name"},
-	"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
-	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
-	"State":           ubx.FieldSpec{WireName: "state"},
-	"Steps": ubx.FieldSpec{
-		WireName: "steps",
-		Kind:     "list",
-		Fields:   MigratingVm_CurrentSyncInfo_StepsFields,
-	},
-	"TotalPauseDuration": ubx.FieldSpec{WireName: "total_pause_duration"},
-	"Warnings": ubx.FieldSpec{
-		WireName: "warnings",
-		Kind:     "list",
-		Fields:   MigratingVm_CurrentSyncInfo_WarningsFields,
-	},
-}
+		"CycleNumber": ubx.FieldSpec{WireName: "cycle_number"},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfo_ErrorFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Steps": ubx.FieldSpec{
+			WireName: "steps",
+			Kind: "list",
+			Fields: MigratingVm_CurrentSyncInfo_StepsFields,
+		},
+		"TotalPauseDuration": ubx.FieldSpec{WireName: "total_pause_duration"},
+		"Warnings": ubx.FieldSpec{
+			WireName: "warnings",
+			Kind: "list",
+			Fields: MigratingVm_CurrentSyncInfo_WarningsFields,
+		},
+	}
 
 var MigratingVm_CutoverForecastFields = ubx.FieldMap{
-	"EstimatedCutoverJobDuration": ubx.FieldSpec{WireName: "estimated_cutover_job_duration"},
-}
+		"EstimatedCutoverJobDuration": ubx.FieldSpec{WireName: "estimated_cutover_job_duration"},
+	}
 
 var MigratingVm_ExpirationFields = ubx.FieldMap{
-	"ExpireTime":     ubx.FieldSpec{WireName: "expire_time"},
-	"Extendable":     ubx.FieldSpec{WireName: "extendable"},
-	"ExtensionCount": ubx.FieldSpec{WireName: "extension_count"},
-}
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Extendable": ubx.FieldSpec{WireName: "extendable"},
+		"ExtensionCount": ubx.FieldSpec{WireName: "extension_count"},
+	}
 
 var MigratingVm_LastSyncFields = ubx.FieldMap{
-	"LastSyncTime": ubx.FieldSpec{WireName: "last_sync_time"},
-}
+		"LastSyncTime": ubx.FieldSpec{WireName: "last_sync_time"},
+	}
 
 var MigratingVm_PolicyFields = ubx.FieldMap{
-	"IdleDuration":     ubx.FieldSpec{WireName: "idle_duration"},
-	"SkipOsAdaptation": ubx.FieldSpec{WireName: "skip_os_adaptation"},
-}
+		"IdleDuration": ubx.FieldSpec{WireName: "idle_duration"},
+		"SkipOsAdaptation": ubx.FieldSpec{WireName: "skip_os_adaptation"},
+	}
 
 var MigratingVm_VmwareSourceVmDetails_DisksFields = ubx.FieldMap{
-	"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
-	"Label":      ubx.FieldSpec{WireName: "label"},
-	"SizeGb":     ubx.FieldSpec{WireName: "size_gb"},
-}
+		"DiskNumber": ubx.FieldSpec{WireName: "disk_number"},
+		"Label": ubx.FieldSpec{WireName: "label"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	}
 
 var MigratingVm_VmwareSourceVmDetailsFields = ubx.FieldMap{
-	"Architecture":          ubx.FieldSpec{WireName: "architecture"},
-	"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   MigratingVm_VmwareSourceVmDetails_DisksFields,
-	},
-	"Firmware": ubx.FieldSpec{WireName: "firmware"},
-	"VmCapabilitiesInfo": ubx.FieldSpec{
-		WireName: "vm_capabilities_info",
-		Kind:     "object",
-		Fields:   MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
-	},
-}
+		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"CommittedStorageBytes": ubx.FieldSpec{WireName: "committed_storage_bytes"},
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: MigratingVm_VmwareSourceVmDetails_DisksFields,
+		},
+		"Firmware": ubx.FieldSpec{WireName: "firmware"},
+		"VmCapabilitiesInfo": ubx.FieldSpec{
+			WireName: "vm_capabilities_info",
+			Kind: "object",
+			Fields: MigratingVm_AwsSourceVmDetails_VmCapabilitiesInfoFields,
+		},
+	}
 
 type MigratingVmConfig struct {
 	// Represent the source AWS VM details.
@@ -973,67 +973,67 @@ var MigratingVm = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AwsSourceVmDetails": ubx.FieldSpec{
 			WireName: "aws_source_vm_details",
-			Kind:     "object",
-			Fields:   MigratingVm_AwsSourceVmDetailsFields,
+			Kind: "object",
+			Fields: MigratingVm_AwsSourceVmDetailsFields,
 		},
 		"AzureSourceVmDetails": ubx.FieldSpec{
 			WireName: "azure_source_vm_details",
-			Kind:     "object",
-			Fields:   MigratingVm_AzureSourceVmDetailsFields,
+			Kind: "object",
+			Fields: MigratingVm_AzureSourceVmDetailsFields,
 		},
 		"ComputeEngineDisksTargetDefaults": ubx.FieldSpec{
 			WireName: "compute_engine_disks_target_defaults",
-			Kind:     "object",
-			Fields:   MigratingVm_ComputeEngineDisksTargetDefaultsFields,
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineDisksTargetDefaultsFields,
 		},
 		"ComputeEngineTargetDefaults": ubx.FieldSpec{
 			WireName: "compute_engine_target_defaults",
-			Kind:     "object",
-			Fields:   MigratingVm_ComputeEngineTargetDefaultsFields,
+			Kind: "object",
+			Fields: MigratingVm_ComputeEngineTargetDefaultsFields,
 		},
 		"CurrentSyncInfo": ubx.FieldSpec{
 			WireName: "current_sync_info",
-			Kind:     "object",
-			Fields:   MigratingVm_CurrentSyncInfoFields,
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfoFields,
 		},
 		"CutoverForecast": ubx.FieldSpec{
 			WireName: "cutover_forecast",
-			Kind:     "object",
-			Fields:   MigratingVm_CutoverForecastFields,
+			Kind: "object",
+			Fields: MigratingVm_CutoverForecastFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   MigratingVm_CurrentSyncInfo_ErrorFields,
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfo_ErrorFields,
 		},
 		"Expiration": ubx.FieldSpec{
 			WireName: "expiration",
-			Kind:     "object",
-			Fields:   MigratingVm_ExpirationFields,
+			Kind: "object",
+			Fields: MigratingVm_ExpirationFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LastReplicationCycle": ubx.FieldSpec{
 			WireName: "last_replication_cycle",
-			Kind:     "object",
-			Fields:   MigratingVm_CurrentSyncInfoFields,
+			Kind: "object",
+			Fields: MigratingVm_CurrentSyncInfoFields,
 		},
 		"LastSync": ubx.FieldSpec{
 			WireName: "last_sync",
-			Kind:     "object",
-			Fields:   MigratingVm_LastSyncFields,
+			Kind: "object",
+			Fields: MigratingVm_LastSyncFields,
 		},
 		"Policy": ubx.FieldSpec{
 			WireName: "policy",
-			Kind:     "object",
-			Fields:   MigratingVm_PolicyFields,
+			Kind: "object",
+			Fields: MigratingVm_PolicyFields,
 		},
 		"SourceVmId": ubx.FieldSpec{WireName: "source_vm_id"},
 		"VmwareSourceVmDetails": ubx.FieldSpec{
 			WireName: "vmware_source_vm_details",
-			Kind:     "object",
-			Fields:   MigratingVm_VmwareSourceVmDetailsFields,
+			Kind: "object",
+			Fields: MigratingVm_VmwareSourceVmDetailsFields,
 		},
 	},
 }

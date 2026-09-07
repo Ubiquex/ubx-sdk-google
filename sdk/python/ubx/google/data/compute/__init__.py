@@ -8,6 +8,7 @@ from .accelerator_type import AcceleratorType, AcceleratorTypeConfig
 from .alpha_accelerator_type import AlphaAcceleratorType, AlphaAcceleratorTypeConfig
 from .alpha_disk_setting import AlphaDiskSetting, AlphaDiskSettingConfig
 from .alpha_disk_type import AlphaDiskType, AlphaDiskTypeConfig
+from .alpha_global_frontend_setting import AlphaGlobalFrontendSetting, AlphaGlobalFrontendSettingConfig
 from .alpha_host import AlphaHost, AlphaHostConfig
 from .alpha_image_family_view import AlphaImageFamilyView, AlphaImageFamilyViewConfig
 from .alpha_image_view import AlphaImageView, AlphaImageViewConfig
@@ -68,6 +69,7 @@ from .network_profile import NetworkProfile, NetworkProfileConfig
 from .node_type import NodeType, NodeTypeConfig
 from .preview_feature import PreviewFeature, PreviewFeatureConfig
 from .project import Project, ProjectConfig
+from .project_view import ProjectView, ProjectViewConfig
 from .reliability_risk import ReliabilityRisk, ReliabilityRiskConfig
 from .reservation_block import ReservationBlock, ReservationBlockConfig
 from .reservation_slot import ReservationSlot, ReservationSlotConfig

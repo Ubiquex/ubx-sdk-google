@@ -27,24 +27,24 @@ type V1alphaAppConnector_ResourceInfo struct {
 }
 
 var V1alphaAppConnector_PrincipalInfo_ServiceAccountFields = ubx.FieldMap{
-	"Email": ubx.FieldSpec{WireName: "email"},
-}
+		"Email": ubx.FieldSpec{WireName: "email"},
+	}
 
 var V1alphaAppConnector_PrincipalInfoFields = ubx.FieldMap{
-	"ServiceAccount": ubx.FieldSpec{
-		WireName: "service_account",
-		Kind:     "object",
-		Fields:   V1alphaAppConnector_PrincipalInfo_ServiceAccountFields,
-	},
-}
+		"ServiceAccount": ubx.FieldSpec{
+			WireName: "service_account",
+			Kind: "object",
+			Fields: V1alphaAppConnector_PrincipalInfo_ServiceAccountFields,
+		},
+	}
 
 var V1alphaAppConnector_ResourceInfoFields = ubx.FieldMap{
-	"Id":       ubx.FieldSpec{WireName: "id"},
-	"Resource": ubx.FieldSpec{WireName: "resource"},
-	"Status":   ubx.FieldSpec{WireName: "status"},
-	"Sub":      ubx.FieldSpec{WireName: "sub"},
-	"Time":     ubx.FieldSpec{WireName: "time"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Sub": ubx.FieldSpec{WireName: "sub"},
+		"Time": ubx.FieldSpec{WireName: "time"},
+	}
 
 type V1alphaAppConnectorConfig struct {
 	// Optional. An arbitrary user-provided name for the AppConnector. Cannot exceed 64 characters.
@@ -84,17 +84,17 @@ var V1alphaAppConnector = ubx.ResourceBinding{
 	WireType: "google_beyondcorp_v1alpha_app_connector",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrincipalInfo": ubx.FieldSpec{
 			WireName: "principal_info",
-			Kind:     "object",
-			Fields:   V1alphaAppConnector_PrincipalInfoFields,
+			Kind: "object",
+			Fields: V1alphaAppConnector_PrincipalInfoFields,
 		},
 		"ResourceInfo": ubx.FieldSpec{
 			WireName: "resource_info",
-			Kind:     "object",
-			Fields:   V1alphaAppConnector_ResourceInfoFields,
+			Kind: "object",
+			Fields: V1alphaAppConnector_ResourceInfoFields,
 		},
 	},
 }

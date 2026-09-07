@@ -16,13 +16,19 @@ type RegistryBook_AggregatedData struct {
 	UniqueScopesCount any
 }
 
-var RegistryBook_AggregatedDataFields = ubx.FieldMap{
-	"CustomRangesCount":     ubx.FieldSpec{WireName: "custom_ranges_count"},
-	"CustomRealmsCount":     ubx.FieldSpec{WireName: "custom_realms_count"},
-	"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
-	"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
-	"UniqueScopesCount":     ubx.FieldSpec{WireName: "unique_scopes_count"},
+type RegistryBook_ClaimedScopesInfo struct {
+	DisplayName any
+	Id any
+	Name any
 }
+
+var RegistryBook_AggregatedDataFields = ubx.FieldMap{
+		"CustomRangesCount": ubx.FieldSpec{WireName: "custom_ranges_count"},
+		"CustomRealmsCount": ubx.FieldSpec{WireName: "custom_realms_count"},
+		"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
+		"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
+		"UniqueScopesCount": ubx.FieldSpec{WireName: "unique_scopes_count"},
+	}
 
 type RegistryBookConfig struct {
 	// Aggregated data for the RegistryBook.
@@ -40,6 +46,8 @@ type RegistryBookAttrs struct {
 	AggregatedData any
 	// Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once.
 	ClaimedScopes any
+	// Output only. Detailed scope information corresponding to each entry in `claimed_scopes`.
+	ClaimedScopesInfo any
 	// Output only. The time at which the RegistryBook was created.
 	CreateTime any
 	// Output only. Whether the RegistryBook is the default one.
@@ -57,11 +65,11 @@ var RegistryBook = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedData": ubx.FieldSpec{
 			WireName: "aggregated_data",
-			Kind:     "object",
-			Fields:   RegistryBook_AggregatedDataFields,
+			Kind: "object",
+			Fields: RegistryBook_AggregatedDataFields,
 		},
 		"ClaimedScopes": ubx.FieldSpec{WireName: "claimed_scopes"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

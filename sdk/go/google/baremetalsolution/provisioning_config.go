@@ -151,119 +151,119 @@ type ProvisioningConfig_Volumes struct {
 }
 
 var ProvisioningConfig_Instances_ClientNetworkFields = ubx.FieldMap{
-	"Address":           ubx.FieldSpec{WireName: "address"},
-	"ExistingNetworkId": ubx.FieldSpec{WireName: "existing_network_id"},
-	"NetworkId":         ubx.FieldSpec{WireName: "network_id"},
-}
+		"Address": ubx.FieldSpec{WireName: "address"},
+		"ExistingNetworkId": ubx.FieldSpec{WireName: "existing_network_id"},
+		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
+	}
 
 var ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfacesFields = ubx.FieldMap{
-	"DefaultGateway": ubx.FieldSpec{WireName: "default_gateway"},
-	"Id":             ubx.FieldSpec{WireName: "id"},
-	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
-	"Network":        ubx.FieldSpec{WireName: "network"},
-	"NetworkType":    ubx.FieldSpec{WireName: "network_type"},
-}
+		"DefaultGateway": ubx.FieldSpec{WireName: "default_gateway"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NetworkType": ubx.FieldSpec{WireName: "network_type"},
+	}
 
 var ProvisioningConfig_Instances_LogicalInterfacesFields = ubx.FieldMap{
-	"InterfaceIndex": ubx.FieldSpec{WireName: "interface_index"},
-	"LogicalNetworkInterfaces": ubx.FieldSpec{
-		WireName: "logical_network_interfaces",
-		Kind:     "list",
-		Fields:   ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfacesFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"InterfaceIndex": ubx.FieldSpec{WireName: "interface_index"},
+		"LogicalNetworkInterfaces": ubx.FieldSpec{
+			WireName: "logical_network_interfaces",
+			Kind: "list",
+			Fields: ProvisioningConfig_Instances_LogicalInterfaces_LogicalNetworkInterfacesFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var ProvisioningConfig_InstancesFields = ubx.FieldMap{
-	"AccountNetworksEnabled": ubx.FieldSpec{WireName: "account_networks_enabled"},
-	"ClientNetwork": ubx.FieldSpec{
-		WireName: "client_network",
-		Kind:     "object",
-		Fields:   ProvisioningConfig_Instances_ClientNetworkFields,
-	},
-	"Hyperthreading": ubx.FieldSpec{WireName: "hyperthreading"},
-	"Id":             ubx.FieldSpec{WireName: "id"},
-	"InstanceType":   ubx.FieldSpec{WireName: "instance_type"},
-	"KmsKeyVersion":  ubx.FieldSpec{WireName: "kms_key_version"},
-	"LogicalInterfaces": ubx.FieldSpec{
-		WireName: "logical_interfaces",
-		Kind:     "list",
-		Fields:   ProvisioningConfig_Instances_LogicalInterfacesFields,
-	},
-	"Name":            ubx.FieldSpec{WireName: "name"},
-	"NetworkConfig":   ubx.FieldSpec{WireName: "network_config"},
-	"NetworkTemplate": ubx.FieldSpec{WireName: "network_template"},
-	"OsImage":         ubx.FieldSpec{WireName: "os_image"},
-	"PrivateNetwork": ubx.FieldSpec{
-		WireName: "private_network",
-		Kind:     "object",
-		Fields:   ProvisioningConfig_Instances_ClientNetworkFields,
-	},
-	"SshKeyNames": ubx.FieldSpec{WireName: "ssh_key_names"},
-	"UserNote":    ubx.FieldSpec{WireName: "user_note"},
-}
+		"AccountNetworksEnabled": ubx.FieldSpec{WireName: "account_networks_enabled"},
+		"ClientNetwork": ubx.FieldSpec{
+			WireName: "client_network",
+			Kind: "object",
+			Fields: ProvisioningConfig_Instances_ClientNetworkFields,
+		},
+		"Hyperthreading": ubx.FieldSpec{WireName: "hyperthreading"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
+		"LogicalInterfaces": ubx.FieldSpec{
+			WireName: "logical_interfaces",
+			Kind: "list",
+			Fields: ProvisioningConfig_Instances_LogicalInterfacesFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NetworkConfig": ubx.FieldSpec{WireName: "network_config"},
+		"NetworkTemplate": ubx.FieldSpec{WireName: "network_template"},
+		"OsImage": ubx.FieldSpec{WireName: "os_image"},
+		"PrivateNetwork": ubx.FieldSpec{
+			WireName: "private_network",
+			Kind: "object",
+			Fields: ProvisioningConfig_Instances_ClientNetworkFields,
+		},
+		"SshKeyNames": ubx.FieldSpec{WireName: "ssh_key_names"},
+		"UserNote": ubx.FieldSpec{WireName: "user_note"},
+	}
 
 var ProvisioningConfig_Networks_VlanAttachmentsFields = ubx.FieldMap{
-	"Id":         ubx.FieldSpec{WireName: "id"},
-	"PairingKey": ubx.FieldSpec{WireName: "pairing_key"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"PairingKey": ubx.FieldSpec{WireName: "pairing_key"},
+	}
 
 var ProvisioningConfig_NetworksFields = ubx.FieldMap{
-	"Bandwidth":          ubx.FieldSpec{WireName: "bandwidth"},
-	"Cidr":               ubx.FieldSpec{WireName: "cidr"},
-	"GcpService":         ubx.FieldSpec{WireName: "gcp_service"},
-	"Id":                 ubx.FieldSpec{WireName: "id"},
-	"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
-	"Name":               ubx.FieldSpec{WireName: "name"},
-	"ServiceCidr":        ubx.FieldSpec{WireName: "service_cidr"},
-	"Type":               ubx.FieldSpec{WireName: "type"},
-	"UserNote":           ubx.FieldSpec{WireName: "user_note"},
-	"VlanAttachments": ubx.FieldSpec{
-		WireName: "vlan_attachments",
-		Kind:     "list",
-		Fields:   ProvisioningConfig_Networks_VlanAttachmentsFields,
-	},
-	"VlanSameProject": ubx.FieldSpec{WireName: "vlan_same_project"},
-	"Vrf":             ubx.FieldSpec{WireName: "vrf"},
-}
+		"Bandwidth": ubx.FieldSpec{WireName: "bandwidth"},
+		"Cidr": ubx.FieldSpec{WireName: "cidr"},
+		"GcpService": ubx.FieldSpec{WireName: "gcp_service"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ServiceCidr": ubx.FieldSpec{WireName: "service_cidr"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UserNote": ubx.FieldSpec{WireName: "user_note"},
+		"VlanAttachments": ubx.FieldSpec{
+			WireName: "vlan_attachments",
+			Kind: "list",
+			Fields: ProvisioningConfig_Networks_VlanAttachmentsFields,
+		},
+		"VlanSameProject": ubx.FieldSpec{WireName: "vlan_same_project"},
+		"Vrf": ubx.FieldSpec{WireName: "vrf"},
+	}
 
 var ProvisioningConfig_Volumes_LunRangesFields = ubx.FieldMap{
-	"Quantity": ubx.FieldSpec{WireName: "quantity"},
-	"SizeGb":   ubx.FieldSpec{WireName: "size_gb"},
-}
+		"Quantity": ubx.FieldSpec{WireName: "quantity"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	}
 
 var ProvisioningConfig_Volumes_NfsExportsFields = ubx.FieldMap{
-	"AllowDev":     ubx.FieldSpec{WireName: "allow_dev"},
-	"AllowSuid":    ubx.FieldSpec{WireName: "allow_suid"},
-	"Cidr":         ubx.FieldSpec{WireName: "cidr"},
-	"MachineId":    ubx.FieldSpec{WireName: "machine_id"},
-	"NetworkId":    ubx.FieldSpec{WireName: "network_id"},
-	"NoRootSquash": ubx.FieldSpec{WireName: "no_root_squash"},
-	"Permissions":  ubx.FieldSpec{WireName: "permissions"},
-}
+		"AllowDev": ubx.FieldSpec{WireName: "allow_dev"},
+		"AllowSuid": ubx.FieldSpec{WireName: "allow_suid"},
+		"Cidr": ubx.FieldSpec{WireName: "cidr"},
+		"MachineId": ubx.FieldSpec{WireName: "machine_id"},
+		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
+		"NoRootSquash": ubx.FieldSpec{WireName: "no_root_squash"},
+		"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	}
 
 var ProvisioningConfig_VolumesFields = ubx.FieldMap{
-	"GcpService": ubx.FieldSpec{WireName: "gcp_service"},
-	"Id":         ubx.FieldSpec{WireName: "id"},
-	"LunRanges": ubx.FieldSpec{
-		WireName: "lun_ranges",
-		Kind:     "list",
-		Fields:   ProvisioningConfig_Volumes_LunRangesFields,
-	},
-	"MachineIds": ubx.FieldSpec{WireName: "machine_ids"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"NfsExports": ubx.FieldSpec{
-		WireName: "nfs_exports",
-		Kind:     "list",
-		Fields:   ProvisioningConfig_Volumes_NfsExportsFields,
-	},
-	"PerformanceTier":  ubx.FieldSpec{WireName: "performance_tier"},
-	"Protocol":         ubx.FieldSpec{WireName: "protocol"},
-	"SizeGb":           ubx.FieldSpec{WireName: "size_gb"},
-	"SnapshotsEnabled": ubx.FieldSpec{WireName: "snapshots_enabled"},
-	"Type":             ubx.FieldSpec{WireName: "type"},
-	"UserNote":         ubx.FieldSpec{WireName: "user_note"},
-}
+		"GcpService": ubx.FieldSpec{WireName: "gcp_service"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"LunRanges": ubx.FieldSpec{
+			WireName: "lun_ranges",
+			Kind: "list",
+			Fields: ProvisioningConfig_Volumes_LunRangesFields,
+		},
+		"MachineIds": ubx.FieldSpec{WireName: "machine_ids"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NfsExports": ubx.FieldSpec{
+			WireName: "nfs_exports",
+			Kind: "list",
+			Fields: ProvisioningConfig_Volumes_NfsExportsFields,
+		},
+		"PerformanceTier": ubx.FieldSpec{WireName: "performance_tier"},
+		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+		"SnapshotsEnabled": ubx.FieldSpec{WireName: "snapshots_enabled"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UserNote": ubx.FieldSpec{WireName: "user_note"},
+	}
 
 type ProvisioningConfigConfig struct {
 	// Optional. The user-defined identifier of the provisioning config.
@@ -326,27 +326,27 @@ type ProvisioningConfigAttrs struct {
 var ProvisioningConfig = ubx.ResourceBinding{
 	WireType: "google_baremetalsolution_provisioning_config",
 	Fields: ubx.FieldMap{
-		"CustomId":               ubx.FieldSpec{WireName: "custom_id"},
-		"Email":                  ubx.FieldSpec{WireName: "email"},
+		"CustomId": ubx.FieldSpec{WireName: "custom_id"},
+		"Email": ubx.FieldSpec{WireName: "email"},
 		"HandoverServiceAccount": ubx.FieldSpec{WireName: "handover_service_account"},
 		"Instances": ubx.FieldSpec{
 			WireName: "instances",
-			Kind:     "list",
-			Fields:   ProvisioningConfig_InstancesFields,
+			Kind: "list",
+			Fields: ProvisioningConfig_InstancesFields,
 		},
 		"Location": ubx.FieldSpec{WireName: "location"},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind:     "list",
-			Fields:   ProvisioningConfig_NetworksFields,
+			Kind: "list",
+			Fields: ProvisioningConfig_NetworksFields,
 		},
-		"Pod":           ubx.FieldSpec{WireName: "pod"},
+		"Pod": ubx.FieldSpec{WireName: "pod"},
 		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"TicketId":      ubx.FieldSpec{WireName: "ticket_id"},
+		"TicketId": ubx.FieldSpec{WireName: "ticket_id"},
 		"Volumes": ubx.FieldSpec{
 			WireName: "volumes",
-			Kind:     "list",
-			Fields:   ProvisioningConfig_VolumesFields,
+			Kind: "list",
+			Fields: ProvisioningConfig_VolumesFields,
 		},
 		"VpcScEnabled": ubx.FieldSpec{WireName: "vpc_sc_enabled"},
 	},

@@ -25,6 +25,6 @@ var Attachment = ubx.ResourceBinding{
 	WireType: "google_apigee_attachment",
 	Fields: ubx.FieldMap{
 		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

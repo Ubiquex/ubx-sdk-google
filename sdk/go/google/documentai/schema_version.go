@@ -59,55 +59,55 @@ type SchemaVersion_Schema struct {
 }
 
 var SchemaVersion_Schema_EntityTypes_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var SchemaVersion_Schema_EntityTypes_PropertiesFields = ubx.FieldMap{
-	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-	"Method":         ubx.FieldSpec{WireName: "method"},
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"OccurrenceType": ubx.FieldSpec{WireName: "occurrence_type"},
-	"ValueType":      ubx.FieldSpec{WireName: "value_type"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Method": ubx.FieldSpec{WireName: "method"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OccurrenceType": ubx.FieldSpec{WireName: "occurrence_type"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 var SchemaVersion_Schema_EntityTypesFields = ubx.FieldMap{
-	"BaseTypes":   ubx.FieldSpec{WireName: "base_types"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   SchemaVersion_Schema_EntityTypes_EnumValuesFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Properties": ubx.FieldSpec{
-		WireName: "properties",
-		Kind:     "list",
-		Fields:   SchemaVersion_Schema_EntityTypes_PropertiesFields,
-	},
-}
+		"BaseTypes": ubx.FieldSpec{WireName: "base_types"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: SchemaVersion_Schema_EntityTypes_EnumValuesFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Properties": ubx.FieldSpec{
+			WireName: "properties",
+			Kind: "list",
+			Fields: SchemaVersion_Schema_EntityTypes_PropertiesFields,
+		},
+	}
 
 var SchemaVersion_Schema_MetadataFields = ubx.FieldMap{
-	"DocumentAllowMultipleLabels": ubx.FieldSpec{WireName: "document_allow_multiple_labels"},
-	"DocumentSplitter":            ubx.FieldSpec{WireName: "document_splitter"},
-	"PrefixedNamingOnProperties":  ubx.FieldSpec{WireName: "prefixed_naming_on_properties"},
-	"SkipNamingValidation":        ubx.FieldSpec{WireName: "skip_naming_validation"},
-}
+		"DocumentAllowMultipleLabels": ubx.FieldSpec{WireName: "document_allow_multiple_labels"},
+		"DocumentSplitter": ubx.FieldSpec{WireName: "document_splitter"},
+		"PrefixedNamingOnProperties": ubx.FieldSpec{WireName: "prefixed_naming_on_properties"},
+		"SkipNamingValidation": ubx.FieldSpec{WireName: "skip_naming_validation"},
+	}
 
 var SchemaVersion_SchemaFields = ubx.FieldMap{
-	"Description":    ubx.FieldSpec{WireName: "description"},
-	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-	"DocumentPrompt": ubx.FieldSpec{WireName: "document_prompt"},
-	"EntityTypes": ubx.FieldSpec{
-		WireName: "entity_types",
-		Kind:     "list",
-		Fields:   SchemaVersion_Schema_EntityTypesFields,
-	},
-	"Metadata": ubx.FieldSpec{
-		WireName: "metadata",
-		Kind:     "object",
-		Fields:   SchemaVersion_Schema_MetadataFields,
-	},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DocumentPrompt": ubx.FieldSpec{WireName: "document_prompt"},
+		"EntityTypes": ubx.FieldSpec{
+			WireName: "entity_types",
+			Kind: "list",
+			Fields: SchemaVersion_Schema_EntityTypesFields,
+		},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: SchemaVersion_Schema_MetadataFields,
+		},
+	}
 
 type SchemaVersionConfig struct {
 	// Required. The user-defined name of the SchemaVersion.
@@ -137,12 +137,12 @@ var SchemaVersion = ubx.ResourceBinding{
 	WireType: "google_documentai_schema_version",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind:     "object",
-			Fields:   SchemaVersion_SchemaFields,
+			Kind: "object",
+			Fields: SchemaVersion_SchemaFields,
 		},
 	},
 }

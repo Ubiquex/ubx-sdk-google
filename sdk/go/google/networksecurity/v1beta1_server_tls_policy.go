@@ -13,7 +13,7 @@ type V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpoint struct {
 
 type V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa struct {
 	CertificateProviderInstance any
-	GrpcEndpoint                any
+	GrpcEndpoint any
 }
 
 type V1beta1ServerTlsPolicy_MtlsPolicy struct {
@@ -26,35 +26,35 @@ type V1beta1ServerTlsPolicy_MtlsPolicy struct {
 }
 
 var V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstanceFields = ubx.FieldMap{
-	"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
-}
+		"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
+	}
 
 var V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpointFields = ubx.FieldMap{
-	"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-}
+		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
+	}
 
 var V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields = ubx.FieldMap{
-	"CertificateProviderInstance": ubx.FieldSpec{
-		WireName: "certificate_provider_instance",
-		Kind:     "object",
-		Fields:   V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstanceFields,
-	},
-	"GrpcEndpoint": ubx.FieldSpec{
-		WireName: "grpc_endpoint",
-		Kind:     "object",
-		Fields:   V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpointFields,
-	},
-}
+		"CertificateProviderInstance": ubx.FieldSpec{
+			WireName: "certificate_provider_instance",
+			Kind: "object",
+			Fields: V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_CertificateProviderInstanceFields,
+		},
+		"GrpcEndpoint": ubx.FieldSpec{
+			WireName: "grpc_endpoint",
+			Kind: "object",
+			Fields: V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCa_GrpcEndpointFields,
+		},
+	}
 
 var V1beta1ServerTlsPolicy_MtlsPolicyFields = ubx.FieldMap{
-	"ClientValidationCa": ubx.FieldSpec{
-		WireName: "client_validation_ca",
-		Kind:     "list",
-		Fields:   V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
-	},
-	"ClientValidationMode":        ubx.FieldSpec{WireName: "client_validation_mode"},
-	"ClientValidationTrustConfig": ubx.FieldSpec{WireName: "client_validation_trust_config"},
-}
+		"ClientValidationCa": ubx.FieldSpec{
+			WireName: "client_validation_ca",
+			Kind: "list",
+			Fields: V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
+		},
+		"ClientValidationMode": ubx.FieldSpec{WireName: "client_validation_mode"},
+		"ClientValidationTrustConfig": ubx.FieldSpec{WireName: "client_validation_trust_config"},
+	}
 
 type V1beta1ServerTlsPolicyConfig struct {
 	// This field applies only for Traffic Director policies. It is must be set to false for Application Load Balancer policies. Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if `allow_open` and `mtls_policy` are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility. Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80.
@@ -93,19 +93,19 @@ type V1beta1ServerTlsPolicyAttrs struct {
 var V1beta1ServerTlsPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_server_tls_policy",
 	Fields: ubx.FieldMap{
-		"AllowOpen":   ubx.FieldSpec{WireName: "allow_open"},
+		"AllowOpen": ubx.FieldSpec{WireName: "allow_open"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MtlsPolicy": ubx.FieldSpec{
 			WireName: "mtls_policy",
-			Kind:     "object",
-			Fields:   V1beta1ServerTlsPolicy_MtlsPolicyFields,
+			Kind: "object",
+			Fields: V1beta1ServerTlsPolicy_MtlsPolicyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServerCertificate": ubx.FieldSpec{
 			WireName: "server_certificate",
-			Kind:     "object",
-			Fields:   V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
+			Kind: "object",
+			Fields: V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
 		},
 	},
 }

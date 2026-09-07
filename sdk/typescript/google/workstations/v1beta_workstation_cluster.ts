@@ -46,6 +46,8 @@ const V1betaWorkstationCluster_PrivateClusterConfigFields: FieldMap = {
 export interface V1betaWorkstationClusterConfig {
   /** Optional. Client-specified annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
+  /** Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set. */
+  consoleBaseUrl?: string | Computed<string>;
   /** Optional. Human-readable name for this workstation cluster. */
   displayName?: string | Computed<string>;
   /** Configuration options for a custom domain. */
@@ -77,6 +79,8 @@ export interface V1betaWorkstationClusterAttrs {
   annotations: Record<string, string>;
   /** Output only. Status conditions describing the workstation cluster's current state. */
   conditions: V1betaWorkstationCluster_Conditions[];
+  /** Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set. */
+  consoleBaseUrl: string;
   /** Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address. */
   controlPlaneIp: string;
   /** Output only. Time when this workstation cluster was created. */
@@ -125,6 +129,7 @@ export const V1betaWorkstationCluster: ResourceBinding<V1betaWorkstationClusterC
   wireType: "google_workstations_v1beta_workstation_cluster",
   fields: {
     annotations: "annotations",
+    consoleBaseUrl: "console_base_url",
     displayName: "display_name",
     domainConfig: {
       wireName: "domain_config",

@@ -44,42 +44,42 @@ type DatacenterConnector_UpgradeStatus struct {
 }
 
 var DatacenterConnector_AvailableVersions_InPlaceUpdateFields = ubx.FieldMap{
-	"Critical":        ubx.FieldSpec{WireName: "critical"},
-	"ReleaseNotesUri": ubx.FieldSpec{WireName: "release_notes_uri"},
-	"Uri":             ubx.FieldSpec{WireName: "uri"},
-	"Version":         ubx.FieldSpec{WireName: "version"},
-}
+		"Critical": ubx.FieldSpec{WireName: "critical"},
+		"ReleaseNotesUri": ubx.FieldSpec{WireName: "release_notes_uri"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var DatacenterConnector_AvailableVersionsFields = ubx.FieldMap{
-	"InPlaceUpdate": ubx.FieldSpec{
-		WireName: "in_place_update",
-		Kind:     "object",
-		Fields:   DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
-	},
-	"NewDeployableAppliance": ubx.FieldSpec{
-		WireName: "new_deployable_appliance",
-		Kind:     "object",
-		Fields:   DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
-	},
-}
+		"InPlaceUpdate": ubx.FieldSpec{
+			WireName: "in_place_update",
+			Kind: "object",
+			Fields: DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
+		},
+		"NewDeployableAppliance": ubx.FieldSpec{
+			WireName: "new_deployable_appliance",
+			Kind: "object",
+			Fields: DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
+		},
+	}
 
 var DatacenterConnector_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var DatacenterConnector_UpgradeStatusFields = ubx.FieldMap{
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   DatacenterConnector_ErrorFields,
-	},
-	"PreviousVersion": ubx.FieldSpec{WireName: "previous_version"},
-	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
-	"State":           ubx.FieldSpec{WireName: "state"},
-	"Version":         ubx.FieldSpec{WireName: "version"},
-}
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: DatacenterConnector_ErrorFields,
+		},
+		"PreviousVersion": ubx.FieldSpec{WireName: "previous_version"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 type DatacenterConnectorConfig struct {
 	// Holds information about the available versions for upgrade.
@@ -132,20 +132,20 @@ var DatacenterConnector = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AvailableVersions": ubx.FieldSpec{
 			WireName: "available_versions",
-			Kind:     "object",
-			Fields:   DatacenterConnector_AvailableVersionsFields,
+			Kind: "object",
+			Fields: DatacenterConnector_AvailableVersionsFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   DatacenterConnector_ErrorFields,
+			Kind: "object",
+			Fields: DatacenterConnector_ErrorFields,
 		},
 		"RegistrationId": ubx.FieldSpec{WireName: "registration_id"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"UpgradeStatus": ubx.FieldSpec{
 			WireName: "upgrade_status",
-			Kind:     "object",
-			Fields:   DatacenterConnector_UpgradeStatusFields,
+			Kind: "object",
+			Fields: DatacenterConnector_UpgradeStatusFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

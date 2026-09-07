@@ -42,33 +42,33 @@ type Repository_WorkspaceCompilationOverrides struct {
 }
 
 var Repository_DataEncryptionStateFields = ubx.FieldMap{
-	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-}
+		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	}
 
 var Repository_GitRemoteSettings_SshAuthenticationConfigFields = ubx.FieldMap{
-	"HostPublicKey":               ubx.FieldSpec{WireName: "host_public_key"},
-	"UserPrivateKeySecretVersion": ubx.FieldSpec{WireName: "user_private_key_secret_version"},
-}
+		"HostPublicKey": ubx.FieldSpec{WireName: "host_public_key"},
+		"UserPrivateKeySecretVersion": ubx.FieldSpec{WireName: "user_private_key_secret_version"},
+	}
 
 var Repository_GitRemoteSettingsFields = ubx.FieldMap{
-	"AuthenticationTokenSecretVersion": ubx.FieldSpec{WireName: "authentication_token_secret_version"},
-	"DefaultBranch":                    ubx.FieldSpec{WireName: "default_branch"},
-	"EffectiveDefaultBranch":           ubx.FieldSpec{WireName: "effective_default_branch"},
-	"GitRepositoryLink":                ubx.FieldSpec{WireName: "git_repository_link"},
-	"SshAuthenticationConfig": ubx.FieldSpec{
-		WireName: "ssh_authentication_config",
-		Kind:     "object",
-		Fields:   Repository_GitRemoteSettings_SshAuthenticationConfigFields,
-	},
-	"TokenStatus": ubx.FieldSpec{WireName: "token_status"},
-	"Url":         ubx.FieldSpec{WireName: "url"},
-}
+		"AuthenticationTokenSecretVersion": ubx.FieldSpec{WireName: "authentication_token_secret_version"},
+		"DefaultBranch": ubx.FieldSpec{WireName: "default_branch"},
+		"EffectiveDefaultBranch": ubx.FieldSpec{WireName: "effective_default_branch"},
+		"GitRepositoryLink": ubx.FieldSpec{WireName: "git_repository_link"},
+		"SshAuthenticationConfig": ubx.FieldSpec{
+			WireName: "ssh_authentication_config",
+			Kind: "object",
+			Fields: Repository_GitRemoteSettings_SshAuthenticationConfigFields,
+		},
+		"TokenStatus": ubx.FieldSpec{WireName: "token_status"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
 
 var Repository_WorkspaceCompilationOverridesFields = ubx.FieldMap{
-	"DefaultDatabase": ubx.FieldSpec{WireName: "default_database"},
-	"SchemaSuffix":    ubx.FieldSpec{WireName: "schema_suffix"},
-	"TablePrefix":     ubx.FieldSpec{WireName: "table_prefix"},
-}
+		"DefaultDatabase": ubx.FieldSpec{WireName: "default_database"},
+		"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
+		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
+	}
 
 type RepositoryConfig struct {
 	// Optional. The name of the containing folder of the repository. The field is immutable and it can be modified via a MoveRepository operation. Format: `projects/*/locations/*/folders/*`. or `projects/*/locations/*/teamFolders/*`.
@@ -132,25 +132,25 @@ var Repository = ubx.ResourceBinding{
 		"ContainingFolder": ubx.FieldSpec{WireName: "containing_folder"},
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind:     "object",
-			Fields:   Repository_DataEncryptionStateFields,
+			Kind: "object",
+			Fields: Repository_DataEncryptionStateFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GitRemoteSettings": ubx.FieldSpec{
 			WireName: "git_remote_settings",
-			Kind:     "object",
-			Fields:   Repository_GitRemoteSettingsFields,
+			Kind: "object",
+			Fields: Repository_GitRemoteSettingsFields,
 		},
-		"KmsKeyName":                             ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels":                                 ubx.FieldSpec{WireName: "labels"},
-		"Name":                                   ubx.FieldSpec{WireName: "name"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NpmrcEnvironmentVariablesSecretVersion": ubx.FieldSpec{WireName: "npmrc_environment_variables_secret_version"},
-		"ServiceAccount":                         ubx.FieldSpec{WireName: "service_account"},
-		"SetAuthenticatedUserAdmin":              ubx.FieldSpec{WireName: "set_authenticated_user_admin"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"SetAuthenticatedUserAdmin": ubx.FieldSpec{WireName: "set_authenticated_user_admin"},
 		"WorkspaceCompilationOverrides": ubx.FieldSpec{
 			WireName: "workspace_compilation_overrides",
-			Kind:     "object",
-			Fields:   Repository_WorkspaceCompilationOverridesFields,
+			Kind: "object",
+			Fields: Repository_WorkspaceCompilationOverridesFields,
 		},
 	},
 }

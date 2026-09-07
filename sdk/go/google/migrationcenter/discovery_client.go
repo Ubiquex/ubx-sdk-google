@@ -65,12 +65,12 @@ type DiscoveryClientAttrs struct {
 var DiscoveryClient = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_discovery_client",
 	Fields: ubx.FieldMap{
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime":     ubx.FieldSpec{WireName: "expire_time"},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Source":         ubx.FieldSpec{WireName: "source"},
-		"Ttl":            ubx.FieldSpec{WireName: "ttl"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
 	},
 }

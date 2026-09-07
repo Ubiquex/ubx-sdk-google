@@ -26,12 +26,13 @@ type V2betaAttachmentAttrs struct {
 	Filename any
 	// Output only. The MIME type of the attachment (e.g. text/plain).
 	MimeType any
-	Name     any
+	Name any
 	// Output only. The size of the attachment in bytes.
 	SizeBytes any
 }
 
 var V2betaAttachment = ubx.DataSourceBinding{
 	WireType: "google_cloudsupport_v2beta_attachment",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

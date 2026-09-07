@@ -30,6 +30,6 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

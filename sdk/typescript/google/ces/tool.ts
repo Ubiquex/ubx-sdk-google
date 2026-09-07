@@ -219,6 +219,7 @@ export interface Tool_DataStoreTool_ModalityConfigs_RewriterConfig {
 export interface Tool_DataStoreTool_ModalityConfigs_SnippetsConfig {
   /** Whether source snippets are included alongside a generated answer. (AI-inferred) */
   enableSnippets?: boolean | Computed<boolean>;
+  maxSnippets?: number | Computed<number>;
 }
 
 export interface Tool_DataStoreTool_ModalityConfigs {
@@ -447,6 +448,8 @@ export interface Tool_RemoteAgentTool_AgentCard {
 export interface Tool_RemoteAgentTool {
   /** AgentCard conveys key information about a remote agent. It is a trimmed version of the AgentCard defined in the A2A protocol https://a2a-protocol.org/dev/specification/#441-agentcard */
   agentCard?: Tool_RemoteAgentTool_AgentCard | Computed<Tool_RemoteAgentTool_AgentCard>;
+  /** Authentication information required for API calls. */
+  apiAuthentication?: Tool_McpTool_ApiAuthentication | Computed<Tool_McpTool_ApiAuthentication>;
   /** Required. The description of the tool. */
   description?: string | Computed<string>;
   /** Required. The name of the tool. */
@@ -712,6 +715,7 @@ const Tool_DataStoreTool_ModalityConfigs_RewriterConfigFields: FieldMap = {
 
 const Tool_DataStoreTool_ModalityConfigs_SnippetsConfigFields: FieldMap = {
   enableSnippets: "enable_snippets",
+  maxSnippets: "max_snippets",
 };
 
 const Tool_DataStoreTool_ModalityConfigsFields: FieldMap = {
@@ -959,6 +963,11 @@ const Tool_RemoteAgentToolFields: FieldMap = {
     wireName: "agent_card",
     kind: "object",
     fields: Tool_RemoteAgentTool_AgentCardFields,
+  },
+  apiAuthentication: {
+    wireName: "api_authentication",
+    kind: "object",
+    fields: Tool_McpTool_ApiAuthenticationFields,
   },
   description: "description",
   name: "name",

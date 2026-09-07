@@ -360,369 +360,369 @@ type EvaluationSet_EncryptionSpec struct {
 }
 
 var EvaluationSet_AgentConfigs_Tools_ComputerUseFields = ubx.FieldMap{
-	"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
-	"Environment":                    ubx.FieldSpec{WireName: "environment"},
-	"ExcludedPredefinedFunctions":    ubx.FieldSpec{WireName: "excluded_predefined_functions"},
-}
+		"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
+		"Environment": ubx.FieldSpec{WireName: "environment"},
+		"ExcludedPredefinedFunctions": ubx.FieldSpec{WireName: "excluded_predefined_functions"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearchFields = ubx.FieldMap{
-	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
-}
+		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_ExaAiSearchFields = ubx.FieldMap{
-	"ApiKey":        ubx.FieldSpec{WireName: "api_key"},
-	"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-}
+		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_ParametersFields = ubx.FieldMap{
-	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
-	"Default":              ubx.FieldSpec{WireName: "default"},
-	"Defs":                 ubx.FieldSpec{WireName: "defs"},
-	"Description":          ubx.FieldSpec{WireName: "description"},
-	"Enum":                 ubx.FieldSpec{WireName: "enum"},
-	"Example":              ubx.FieldSpec{WireName: "example"},
-	"Format":               ubx.FieldSpec{WireName: "format"},
-	"Items":                ubx.FieldSpec{WireName: "items"},
-	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
-	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
-	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
-	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
-	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
-	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
-	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
-	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
-	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
-	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
-	"Properties":           ubx.FieldSpec{WireName: "properties"},
-	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
-	"Ref":                  ubx.FieldSpec{WireName: "ref"},
-	"Required":             ubx.FieldSpec{WireName: "required"},
-	"Title":                ubx.FieldSpec{WireName: "title"},
-	"Type":                 ubx.FieldSpec{WireName: "type"},
-}
+		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
+		"Default": ubx.FieldSpec{WireName: "default"},
+		"Defs": ubx.FieldSpec{WireName: "defs"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enum": ubx.FieldSpec{WireName: "enum"},
+		"Example": ubx.FieldSpec{WireName: "example"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Items": ubx.FieldSpec{WireName: "items"},
+		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
+		"Maximum": ubx.FieldSpec{WireName: "maximum"},
+		"MinItems": ubx.FieldSpec{WireName: "min_items"},
+		"MinLength": ubx.FieldSpec{WireName: "min_length"},
+		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
+		"Minimum": ubx.FieldSpec{WireName: "minimum"},
+		"Nullable": ubx.FieldSpec{WireName: "nullable"},
+		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
+		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_FunctionDeclarationsFields = ubx.FieldMap{
-	"Behavior":    ubx.FieldSpec{WireName: "behavior"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_ParametersFields,
-	},
-	"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
-	"Response": ubx.FieldSpec{
-		WireName: "response",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_ParametersFields,
-	},
-	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-}
+		"Behavior": ubx.FieldSpec{WireName: "behavior"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_ParametersFields,
+		},
+		"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
+		"Response": ubx.FieldSpec{
+			WireName: "response",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_FunctionDeclarations_ParametersFields,
+		},
+		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypesFields = ubx.FieldMap{
-	"Places":  ubx.FieldSpec{WireName: "places"},
-	"Routing": ubx.FieldSpec{WireName: "routing"},
-}
+		"Places": ubx.FieldSpec{WireName: "places"},
+		"Routing": ubx.FieldSpec{WireName: "routing"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleMapsFields = ubx.FieldMap{
-	"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
-	"GroundingTypes": ubx.FieldSpec{
-		WireName: "grounding_types",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypesFields,
-	},
-}
+		"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
+		"GroundingTypes": ubx.FieldSpec{
+			WireName: "grounding_types",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleMaps_GroundingTypesFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypesFields = ubx.FieldMap{
-	"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
-	"WebSearch":   ubx.FieldSpec{WireName: "web_search"},
-}
+		"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
+		"WebSearch": ubx.FieldSpec{WireName: "web_search"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleSearchFields = ubx.FieldMap{
-	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
-	"SearchTypes": ubx.FieldSpec{
-		WireName: "search_types",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypesFields,
-	},
-}
+		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
+		"SearchTypes": ubx.FieldSpec{
+			WireName: "search_types",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleSearch_SearchTypesFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields = ubx.FieldMap{
-	"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
-	"Mode":             ubx.FieldSpec{WireName: "mode"},
-}
+		"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrievalFields = ubx.FieldMap{
-	"DynamicRetrievalConfig": ubx.FieldSpec{
-		WireName: "dynamic_retrieval_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
-	},
-}
+		"DynamicRetrievalConfig": ubx.FieldSpec{
+			WireName: "dynamic_retrieval_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_ParallelAiSearchFields = ubx.FieldMap{
-	"ApiKey":                  ubx.FieldSpec{WireName: "api_key"},
-	"CustomConfigs":           ubx.FieldSpec{WireName: "custom_configs"},
-	"EnableDataRetention":     ubx.FieldSpec{WireName: "enable_data_retention"},
-	"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
-}
+		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
+		"EnableDataRetention": ubx.FieldSpec{WireName: "enable_data_retention"},
+		"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
-}
+		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuthFields = ubx.FieldMap{
-	"ApiKeyConfig": ubx.FieldSpec{
-		WireName: "api_key_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
-	},
-}
+		"ApiKeyConfig": ubx.FieldSpec{
+			WireName: "api_key_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-	"ApiKeySecret":        ubx.FieldSpec{WireName: "api_key_secret"},
-	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
-	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-	"Name":                ubx.FieldSpec{WireName: "name"},
-}
+		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
+		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
+		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields = ubx.FieldMap{
-	"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
-}
+		"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields = ubx.FieldMap{
-	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields = ubx.FieldMap{
-	"IdToken":        ubx.FieldSpec{WireName: "id_token"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"IdToken": ubx.FieldSpec{WireName: "id_token"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfigFields = ubx.FieldMap{
-	"ApiKeyConfig": ubx.FieldSpec{
-		WireName: "api_key_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
-	},
-	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	"GoogleServiceAccountConfig": ubx.FieldSpec{
-		WireName: "google_service_account_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
-	},
-	"HttpBasicAuthConfig": ubx.FieldSpec{
-		WireName: "http_basic_auth_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
-	},
-	"OauthConfig": ubx.FieldSpec{
-		WireName: "oauth_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
-	},
-	"OidcConfig": ubx.FieldSpec{
-		WireName: "oidc_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
-	},
-}
+		"ApiKeyConfig": ubx.FieldSpec{
+			WireName: "api_key_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
+		},
+		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"GoogleServiceAccountConfig": ubx.FieldSpec{
+			WireName: "google_service_account_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
+		},
+		"HttpBasicAuthConfig": ubx.FieldSpec{
+			WireName: "http_basic_auth_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
+		},
+		"OauthConfig": ubx.FieldSpec{
+			WireName: "oauth_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
+		},
+		"OidcConfig": ubx.FieldSpec{
+			WireName: "oidc_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields = ubx.FieldMap{
-	"Index":          ubx.FieldSpec{WireName: "index"},
-	"NumHits":        ubx.FieldSpec{WireName: "num_hits"},
-	"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
-}
+		"Index": ubx.FieldSpec{WireName: "index"},
+		"NumHits": ubx.FieldSpec{WireName: "num_hits"},
+		"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApiFields = ubx.FieldMap{
-	"ApiAuth": ubx.FieldSpec{
-		WireName: "api_auth",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuthFields,
-	},
-	"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
-	"AuthConfig": ubx.FieldSpec{
-		WireName: "auth_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfigFields,
-	},
-	"ElasticSearchParams": ubx.FieldSpec{
-		WireName: "elastic_search_params",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
-	},
-	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
-	"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
-}
+		"ApiAuth": ubx.FieldSpec{
+			WireName: "api_auth",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ApiAuthFields,
+		},
+		"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
+		"AuthConfig": ubx.FieldSpec{
+			WireName: "auth_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_AuthConfigFields,
+		},
+		"ElasticSearchParams": ubx.FieldSpec{
+			WireName: "elastic_search_params",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
+		},
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields = ubx.FieldMap{
-	"DataStore": ubx.FieldSpec{WireName: "data_store"},
-	"Filter":    ubx.FieldSpec{WireName: "filter"},
-}
+		"DataStore": ubx.FieldSpec{WireName: "data_store"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearchFields = ubx.FieldMap{
-	"DataStoreSpecs": ubx.FieldSpec{
-		WireName: "data_store_specs",
-		Kind:     "list",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
-	},
-	"Datastore":  ubx.FieldSpec{WireName: "datastore"},
-	"Engine":     ubx.FieldSpec{WireName: "engine"},
-	"Filter":     ubx.FieldSpec{WireName: "filter"},
-	"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-}
+		"DataStoreSpecs": ubx.FieldSpec{
+			WireName: "data_store_specs",
+			Kind: "list",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
+		},
+		"Datastore": ubx.FieldSpec{WireName: "datastore"},
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResourcesFields = ubx.FieldMap{
-	"RagCorpus":  ubx.FieldSpec{WireName: "rag_corpus"},
-	"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
-}
+		"RagCorpus": ubx.FieldSpec{WireName: "rag_corpus"},
+		"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields = ubx.FieldMap{
-	"MetadataFilter":            ubx.FieldSpec{WireName: "metadata_filter"},
-	"VectorDistanceThreshold":   ubx.FieldSpec{WireName: "vector_distance_threshold"},
-	"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
-}
+		"MetadataFilter": ubx.FieldSpec{WireName: "metadata_filter"},
+		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
+		"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields = ubx.FieldMap{
-	"ModelName": ubx.FieldSpec{WireName: "model_name"},
-}
+		"ModelName": ubx.FieldSpec{WireName: "model_name"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields = ubx.FieldMap{
-	"LlmRanker": ubx.FieldSpec{
-		WireName: "llm_ranker",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
-	},
-	"RankService": ubx.FieldSpec{
-		WireName: "rank_service",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
-	},
-}
+		"LlmRanker": ubx.FieldSpec{
+			WireName: "llm_ranker",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
+		},
+		"RankService": ubx.FieldSpec{
+			WireName: "rank_service",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields = ubx.FieldMap{
-	"Filter": ubx.FieldSpec{
-		WireName: "filter",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
-	},
-	"Ranking": ubx.FieldSpec{
-		WireName: "ranking",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
-	},
-	"TopK": ubx.FieldSpec{WireName: "top_k"},
-}
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
+		},
+		"Ranking": ubx.FieldSpec{
+			WireName: "ranking",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
+		},
+		"TopK": ubx.FieldSpec{WireName: "top_k"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStoreFields = ubx.FieldMap{
-	"RagResources": ubx.FieldSpec{
-		WireName: "rag_resources",
-		Kind:     "list",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResourcesFields,
-	},
-	"RagRetrievalConfig": ubx.FieldSpec{
-		WireName: "rag_retrieval_config",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
-	},
-	"SimilarityTopK":          ubx.FieldSpec{WireName: "similarity_top_k"},
-	"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-}
+		"RagResources": ubx.FieldSpec{
+			WireName: "rag_resources",
+			Kind: "list",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagResourcesFields,
+		},
+		"RagRetrievalConfig": ubx.FieldSpec{
+			WireName: "rag_retrieval_config",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
+		},
+		"SimilarityTopK": ubx.FieldSpec{WireName: "similarity_top_k"},
+		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
+	}
 
 var EvaluationSet_AgentConfigs_Tools_RetrievalFields = ubx.FieldMap{
-	"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
-	"ExternalApi": ubx.FieldSpec{
-		WireName: "external_api",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApiFields,
-	},
-	"VertexAiSearch": ubx.FieldSpec{
-		WireName: "vertex_ai_search",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearchFields,
-	},
-	"VertexRagStore": ubx.FieldSpec{
-		WireName: "vertex_rag_store",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStoreFields,
-	},
-}
+		"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
+		"ExternalApi": ubx.FieldSpec{
+			WireName: "external_api",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_ExternalApiFields,
+		},
+		"VertexAiSearch": ubx.FieldSpec{
+			WireName: "vertex_ai_search",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexAiSearchFields,
+		},
+		"VertexRagStore": ubx.FieldSpec{
+			WireName: "vertex_rag_store",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_Retrieval_VertexRagStoreFields,
+		},
+	}
 
 var EvaluationSet_AgentConfigs_ToolsFields = ubx.FieldMap{
-	"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
-	"ComputerUse": ubx.FieldSpec{
-		WireName: "computer_use",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_ComputerUseFields,
-	},
-	"EnterpriseWebSearch": ubx.FieldSpec{
-		WireName: "enterprise_web_search",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearchFields,
-	},
-	"ExaAiSearch": ubx.FieldSpec{
-		WireName: "exa_ai_search",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_ExaAiSearchFields,
-	},
-	"FunctionDeclarations": ubx.FieldSpec{
-		WireName: "function_declarations",
-		Kind:     "list",
-		Fields:   EvaluationSet_AgentConfigs_Tools_FunctionDeclarationsFields,
-	},
-	"GoogleMaps": ubx.FieldSpec{
-		WireName: "google_maps",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleMapsFields,
-	},
-	"GoogleSearch": ubx.FieldSpec{
-		WireName: "google_search",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleSearchFields,
-	},
-	"GoogleSearchRetrieval": ubx.FieldSpec{
-		WireName: "google_search_retrieval",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrievalFields,
-	},
-	"ParallelAiSearch": ubx.FieldSpec{
-		WireName: "parallel_ai_search",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_ParallelAiSearchFields,
-	},
-	"Retrieval": ubx.FieldSpec{
-		WireName: "retrieval",
-		Kind:     "object",
-		Fields:   EvaluationSet_AgentConfigs_Tools_RetrievalFields,
-	},
-	"UrlContext": ubx.FieldSpec{WireName: "url_context"},
-}
+		"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
+		"ComputerUse": ubx.FieldSpec{
+			WireName: "computer_use",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_ComputerUseFields,
+		},
+		"EnterpriseWebSearch": ubx.FieldSpec{
+			WireName: "enterprise_web_search",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_EnterpriseWebSearchFields,
+		},
+		"ExaAiSearch": ubx.FieldSpec{
+			WireName: "exa_ai_search",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_ExaAiSearchFields,
+		},
+		"FunctionDeclarations": ubx.FieldSpec{
+			WireName: "function_declarations",
+			Kind: "list",
+			Fields: EvaluationSet_AgentConfigs_Tools_FunctionDeclarationsFields,
+		},
+		"GoogleMaps": ubx.FieldSpec{
+			WireName: "google_maps",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleMapsFields,
+		},
+		"GoogleSearch": ubx.FieldSpec{
+			WireName: "google_search",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleSearchFields,
+		},
+		"GoogleSearchRetrieval": ubx.FieldSpec{
+			WireName: "google_search_retrieval",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_GoogleSearchRetrievalFields,
+		},
+		"ParallelAiSearch": ubx.FieldSpec{
+			WireName: "parallel_ai_search",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_ParallelAiSearchFields,
+		},
+		"Retrieval": ubx.FieldSpec{
+			WireName: "retrieval",
+			Kind: "object",
+			Fields: EvaluationSet_AgentConfigs_Tools_RetrievalFields,
+		},
+		"UrlContext": ubx.FieldSpec{WireName: "url_context"},
+	}
 
 var EvaluationSet_AgentConfigsFields = ubx.FieldMap{
-	"AgentId":     ubx.FieldSpec{WireName: "agent_id"},
-	"AgentType":   ubx.FieldSpec{WireName: "agent_type"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Instruction": ubx.FieldSpec{WireName: "instruction"},
-	"SubAgents":   ubx.FieldSpec{WireName: "sub_agents"},
-	"Tools": ubx.FieldSpec{
-		WireName: "tools",
-		Kind:     "list",
-		Fields:   EvaluationSet_AgentConfigs_ToolsFields,
-	},
-}
+		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
+		"AgentType": ubx.FieldSpec{WireName: "agent_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Instruction": ubx.FieldSpec{WireName: "instruction"},
+		"SubAgents": ubx.FieldSpec{WireName: "sub_agents"},
+		"Tools": ubx.FieldSpec{
+			WireName: "tools",
+			Kind: "list",
+			Fields: EvaluationSet_AgentConfigs_ToolsFields,
+		},
+	}
 
 var EvaluationSet_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 type EvaluationSetConfig struct {
 	// Optional. Static configurations for each agent associated with the items in this set. Key: `agent_id` (matches the `author` field in `events`). Value: The static configuration of the agent.
@@ -763,17 +763,17 @@ var EvaluationSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentConfigs": ubx.FieldSpec{
 			WireName: "agent_configs",
-			Kind:     "map",
-			Fields:   EvaluationSet_AgentConfigsFields,
+			Kind: "map",
+			Fields: EvaluationSet_AgentConfigsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   EvaluationSet_EncryptionSpecFields,
+			Kind: "object",
+			Fields: EvaluationSet_EncryptionSpecFields,
 		},
 		"EvaluationItems": ubx.FieldSpec{WireName: "evaluation_items"},
-		"Metadata":        ubx.FieldSpec{WireName: "metadata"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

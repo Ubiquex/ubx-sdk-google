@@ -4,7 +4,7 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaWorkstationCluster_Conditions struct {
-	Code    any
+	Code any
 	Details any
 	Message any
 }
@@ -31,23 +31,25 @@ type V1betaWorkstationCluster_PrivateClusterConfig struct {
 }
 
 var V1betaWorkstationCluster_DomainConfigFields = ubx.FieldMap{
-	"Domain": ubx.FieldSpec{WireName: "domain"},
-}
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+	}
 
 var V1betaWorkstationCluster_GatewayConfigFields = ubx.FieldMap{
-	"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
-}
+		"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
+	}
 
 var V1betaWorkstationCluster_PrivateClusterConfigFields = ubx.FieldMap{
-	"AllowedProjects":       ubx.FieldSpec{WireName: "allowed_projects"},
-	"ClusterHostname":       ubx.FieldSpec{WireName: "cluster_hostname"},
-	"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
-	"ServiceAttachmentUri":  ubx.FieldSpec{WireName: "service_attachment_uri"},
-}
+		"AllowedProjects": ubx.FieldSpec{WireName: "allowed_projects"},
+		"ClusterHostname": ubx.FieldSpec{WireName: "cluster_hostname"},
+		"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
+		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
+	}
 
 type V1betaWorkstationClusterConfig struct {
 	// Optional. Client-specified annotations.
 	Annotations any
+	// Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set.
+	ConsoleBaseUrl any
 	// Optional. Human-readable name for this workstation cluster.
 	DisplayName any
 	// Configuration options for a custom domain.
@@ -79,6 +81,8 @@ type V1betaWorkstationClusterAttrs struct {
 	Annotations any
 	// Output only. Status conditions describing the workstation cluster's current state.
 	Conditions any
+	// Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set.
+	ConsoleBaseUrl any
 	// Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address.
 	ControlPlaneIp any
 	// Output only. Time when this workstation cluster was created.
@@ -127,29 +131,30 @@ var V1betaWorkstationCluster = ubx.ResourceBinding{
 	WireType: "google_workstations_v1beta_workstation_cluster",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"ConsoleBaseUrl": ubx.FieldSpec{WireName: "console_base_url"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DomainConfig": ubx.FieldSpec{
 			WireName: "domain_config",
-			Kind:     "object",
-			Fields:   V1betaWorkstationCluster_DomainConfigFields,
+			Kind: "object",
+			Fields: V1betaWorkstationCluster_DomainConfigFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind:     "object",
-			Fields:   V1betaWorkstationCluster_GatewayConfigFields,
+			Kind: "object",
+			Fields: V1betaWorkstationCluster_GatewayConfigFields,
 		},
-		"Labels":  ubx.FieldSpec{WireName: "labels"},
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateClusterConfig": ubx.FieldSpec{
 			WireName: "private_cluster_config",
-			Kind:     "object",
-			Fields:   V1betaWorkstationCluster_PrivateClusterConfigFields,
+			Kind: "object",
+			Fields: V1betaWorkstationCluster_PrivateClusterConfigFields,
 		},
-		"Subnetwork":                  ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags":                        ubx.FieldSpec{WireName: "tags"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"WorkstationAuthorizationUrl": ubx.FieldSpec{WireName: "workstation_authorization_url"},
-		"WorkstationLaunchUrl":        ubx.FieldSpec{WireName: "workstation_launch_url"},
+		"WorkstationLaunchUrl": ubx.FieldSpec{WireName: "workstation_launch_url"},
 	},
 }

@@ -4,9 +4,9 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaDomainMapping_ResourceRecords struct {
-	Name   any
+	Name any
 	Rrdata any
-	Type   any
+	Type any
 }
 
 type V1betaDomainMapping_SslSettings struct {
@@ -19,10 +19,10 @@ type V1betaDomainMapping_SslSettings struct {
 }
 
 var V1betaDomainMapping_SslSettingsFields = ubx.FieldMap{
-	"CertificateId":               ubx.FieldSpec{WireName: "certificate_id"},
-	"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
-	"SslManagementType":           ubx.FieldSpec{WireName: "ssl_management_type"},
-}
+		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
+		"SslManagementType": ubx.FieldSpec{WireName: "ssl_management_type"},
+	}
 
 type V1betaDomainMappingConfig struct {
 	// Relative name of the domain serving the application. Example: example.com.
@@ -48,8 +48,8 @@ var V1betaDomainMapping = ubx.ResourceBinding{
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"SslSettings": ubx.FieldSpec{
 			WireName: "ssl_settings",
-			Kind:     "object",
-			Fields:   V1betaDomainMapping_SslSettingsFields,
+			Kind: "object",
+			Fields: V1betaDomainMapping_SslSettingsFields,
 		},
 	},
 }

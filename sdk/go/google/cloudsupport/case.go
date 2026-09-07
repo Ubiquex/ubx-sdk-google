@@ -22,16 +22,16 @@ type Case_Creator struct {
 }
 
 var Case_ClassificationFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var Case_CreatorFields = ubx.FieldMap{
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"Email":         ubx.FieldSpec{WireName: "email"},
-	"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
-	"Username":      ubx.FieldSpec{WireName: "username"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 type CaseConfig struct {
 	// A Case Classification represents the topic that a case is about. It's very important to use accurate classifications, because they're used to route your cases to specialists who can help you. A classification always has an ID that is its unique identifier. A valid ID is required when creating a case.
@@ -98,23 +98,23 @@ var Case = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Classification": ubx.FieldSpec{
 			WireName: "classification",
-			Kind:     "object",
-			Fields:   Case_ClassificationFields,
+			Kind: "object",
+			Fields: Case_ClassificationFields,
 		},
 		"ContactEmail": ubx.FieldSpec{WireName: "contact_email"},
 		"Creator": ubx.FieldSpec{
 			WireName: "creator",
-			Kind:     "object",
-			Fields:   Case_CreatorFields,
+			Kind: "object",
+			Fields: Case_CreatorFields,
 		},
-		"Description":              ubx.FieldSpec{WireName: "description"},
-		"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
-		"Escalated":                ubx.FieldSpec{WireName: "escalated"},
-		"LanguageCode":             ubx.FieldSpec{WireName: "language_code"},
-		"Name":                     ubx.FieldSpec{WireName: "name"},
-		"Priority":                 ubx.FieldSpec{WireName: "priority"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Escalated": ubx.FieldSpec{WireName: "escalated"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SubscriberEmailAddresses": ubx.FieldSpec{WireName: "subscriber_email_addresses"},
-		"TestCase":                 ubx.FieldSpec{WireName: "test_case"},
-		"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
+		"TestCase": ubx.FieldSpec{WireName: "test_case"},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

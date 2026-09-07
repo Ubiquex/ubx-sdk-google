@@ -5,11 +5,13 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .backup_run import BackupRun, BackupRunConfig
+from .blue_green_deployment import BlueGreenDeployment, BlueGreenDeploymentConfig
 from .database import Database, DatabaseConfig
 from .instance import Instance, InstanceConfig
 from .ssl_cert import SslCert, SslCertConfig
 from .user import User, UserConfig
 from .v1beta4_backup_run import V1beta4BackupRun, V1beta4BackupRunConfig
+from .v1beta4_blue_green_deployment import V1beta4BlueGreenDeployment, V1beta4BlueGreenDeploymentConfig
 from .v1beta4_database import V1beta4Database, V1beta4DatabaseConfig
 from .v1beta4_instance import V1beta4Instance, V1beta4InstanceConfig
 from .v1beta4_ssl_cert import V1beta4SslCert, V1beta4SslCertConfig

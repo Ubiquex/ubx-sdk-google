@@ -4,13 +4,13 @@ package servicedirectory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Service_Endpoints struct {
-	Address    any
+	Address any
 	CreateTime any
-	Metadata   any
-	Name       any
-	Network    any
-	Port       any
-	Uid        any
+	Metadata any
+	Name any
+	Network any
+	Port any
+	Uid any
 	UpdateTime any
 }
 
@@ -40,6 +40,6 @@ var V1beta1Service = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_v1beta1_service",
 	Fields: ubx.FieldMap{
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

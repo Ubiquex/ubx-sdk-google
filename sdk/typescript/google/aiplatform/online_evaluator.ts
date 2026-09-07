@@ -55,7 +55,7 @@ export interface OnlineEvaluator_CloudObservability_TraceScope {
 }
 
 export interface OnlineEvaluator_CloudObservability {
-  /** Optional. Optional log view that will be used to query logs. If empty, the `_Default` view will be used. */
+  /** Optional. Optional log view that will be used to query logs. If empty, the project's default view (`projects/{project_id}`) will be used. */
   logView?: string | Computed<string>;
   /** Configuration for data source following OpenTelemetry. */
   openTelemetry?: OnlineEvaluator_CloudObservability_OpenTelemetry | Computed<OnlineEvaluator_CloudObservability_OpenTelemetry>;
@@ -63,7 +63,7 @@ export interface OnlineEvaluator_CloudObservability {
   sessionScope?: OnlineEvaluator_CloudObservability_SessionScope | Computed<OnlineEvaluator_CloudObservability_SessionScope>;
   /** If chosen, the online evaluator will evaluate single traces matching specified `filter`. */
   traceScope?: OnlineEvaluator_CloudObservability_TraceScope | Computed<OnlineEvaluator_CloudObservability_TraceScope>;
-  /** Optional. Optional trace view that will be used to query traces. If empty, the `_Default` view will be used. NOTE: This field is not supported yet and will be ignored if set. */
+  /** Optional. Optional trace view that will be used to query traces. If empty, the `_AllSpans` view from `_Trace` US bucket will be used, i.e. `projects/{project_id}/locations/us/buckets/_Trace/datasets/Spans/views/_AllSpans`. */
   traceView?: string | Computed<string>;
 }
 
@@ -114,8 +114,6 @@ export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAu
   languageCodes?: string[] | Computed<string[]>;
   /** Candidate language(s) to bias transcription or generation toward, when the language isn't specified explicitly. (AI-inferred) */
   languageHints?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
-  /** Which operating mode this configuration uses. (AI-inferred) */
-  mode?: string | Computed<string>;
   /** Whether individual words in a transcript include their own timestamps. (AI-inferred) */
   wordTimestamp?: boolean | Computed<boolean>;
 }
@@ -312,6 +310,11 @@ export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAu
   thinkingLevel?: string | Computed<string>;
 }
 
+export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig {
+  echoTargetLanguage?: boolean | Computed<boolean>;
+  targetLanguageCode?: string | Computed<string>;
+}
+
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig {
   /** Whether transcribed segments include their own timestamps. (AI-inferred) */
   audioTimestamp?: boolean | Computed<boolean>;
@@ -361,6 +364,7 @@ export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAu
   topK?: number | Computed<number>;
   /** Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred) */
   topP?: number | Computed<number>;
+  translationConfig?: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig | Computed<OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig>;
 }
 
 export interface OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig {
@@ -660,7 +664,6 @@ const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
     kind: "object",
     fields: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
   },
-  mode: "mode",
   wordTimestamp: "word_timestamp",
 };
 
@@ -839,6 +842,11 @@ const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
   thinkingLevel: "thinking_level",
 };
 
+const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields: FieldMap = {
+  echoTargetLanguage: "echo_target_language",
+  targetLanguageCode: "target_language_code",
+};
+
 const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields: FieldMap = {
   audioTimestamp: "audio_timestamp",
   audioTranscriptionConfig: {
@@ -892,6 +900,11 @@ const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
   },
   topK: "top_k",
   topP: "top_p",
+  translationConfig: {
+    wireName: "translation_config",
+    kind: "object",
+    fields: OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+  },
 };
 
 const OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields: FieldMap = {

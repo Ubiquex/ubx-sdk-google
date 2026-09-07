@@ -95,87 +95,87 @@ type VmwareNodePool_Status struct {
 }
 
 var VmwareNodePool_Config_TaintsFields = ubx.FieldMap{
-	"Effect": ubx.FieldSpec{WireName: "effect"},
-	"Key":    ubx.FieldSpec{WireName: "key"},
-	"Value":  ubx.FieldSpec{WireName: "value"},
-}
+		"Effect": ubx.FieldSpec{WireName: "effect"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var VmwareNodePool_Config_VsphereConfig_TagsFields = ubx.FieldMap{
-	"Category": ubx.FieldSpec{WireName: "category"},
-	"Tag":      ubx.FieldSpec{WireName: "tag"},
-}
+		"Category": ubx.FieldSpec{WireName: "category"},
+		"Tag": ubx.FieldSpec{WireName: "tag"},
+	}
 
 var VmwareNodePool_Config_VsphereConfigFields = ubx.FieldMap{
-	"Datastore":  ubx.FieldSpec{WireName: "datastore"},
-	"HostGroups": ubx.FieldSpec{WireName: "host_groups"},
-	"Tags": ubx.FieldSpec{
-		WireName: "tags",
-		Kind:     "list",
-		Fields:   VmwareNodePool_Config_VsphereConfig_TagsFields,
-	},
-}
+		"Datastore": ubx.FieldSpec{WireName: "datastore"},
+		"HostGroups": ubx.FieldSpec{WireName: "host_groups"},
+		"Tags": ubx.FieldSpec{
+			WireName: "tags",
+			Kind: "list",
+			Fields: VmwareNodePool_Config_VsphereConfig_TagsFields,
+		},
+	}
 
 var VmwareNodePool_ConfigFields = ubx.FieldMap{
-	"BootDiskSizeGb":     ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-	"Cpus":               ubx.FieldSpec{WireName: "cpus"},
-	"EnableLoadBalancer": ubx.FieldSpec{WireName: "enable_load_balancer"},
-	"Image":              ubx.FieldSpec{WireName: "image"},
-	"ImageType":          ubx.FieldSpec{WireName: "image_type"},
-	"Labels":             ubx.FieldSpec{WireName: "labels"},
-	"MemoryMb":           ubx.FieldSpec{WireName: "memory_mb"},
-	"Replicas":           ubx.FieldSpec{WireName: "replicas"},
-	"Taints": ubx.FieldSpec{
-		WireName: "taints",
-		Kind:     "list",
-		Fields:   VmwareNodePool_Config_TaintsFields,
-	},
-	"VsphereConfig": ubx.FieldSpec{
-		WireName: "vsphere_config",
-		Kind:     "object",
-		Fields:   VmwareNodePool_Config_VsphereConfigFields,
-	},
-}
+		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+		"Cpus": ubx.FieldSpec{WireName: "cpus"},
+		"EnableLoadBalancer": ubx.FieldSpec{WireName: "enable_load_balancer"},
+		"Image": ubx.FieldSpec{WireName: "image"},
+		"ImageType": ubx.FieldSpec{WireName: "image_type"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"MemoryMb": ubx.FieldSpec{WireName: "memory_mb"},
+		"Replicas": ubx.FieldSpec{WireName: "replicas"},
+		"Taints": ubx.FieldSpec{
+			WireName: "taints",
+			Kind: "list",
+			Fields: VmwareNodePool_Config_TaintsFields,
+		},
+		"VsphereConfig": ubx.FieldSpec{
+			WireName: "vsphere_config",
+			Kind: "object",
+			Fields: VmwareNodePool_Config_VsphereConfigFields,
+		},
+	}
 
 var VmwareNodePool_NodePoolAutoscalingFields = ubx.FieldMap{
-	"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
-	"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
-}
+		"MaxReplicas": ubx.FieldSpec{WireName: "max_replicas"},
+		"MinReplicas": ubx.FieldSpec{WireName: "min_replicas"},
+	}
 
 var VmwareNodePool_Status_ConditionsFields = ubx.FieldMap{
-	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-	"Message":            ubx.FieldSpec{WireName: "message"},
-	"Reason":             ubx.FieldSpec{WireName: "reason"},
-	"State":              ubx.FieldSpec{WireName: "state"},
-	"Type":               ubx.FieldSpec{WireName: "type"},
-}
+		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var VmwareNodePool_Status_Versions_VersionsFields = ubx.FieldMap{
-	"Count":   ubx.FieldSpec{WireName: "count"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var VmwareNodePool_Status_VersionsFields = ubx.FieldMap{
-	"Versions": ubx.FieldSpec{
-		WireName: "versions",
-		Kind:     "list",
-		Fields:   VmwareNodePool_Status_Versions_VersionsFields,
-	},
-}
+		"Versions": ubx.FieldSpec{
+			WireName: "versions",
+			Kind: "list",
+			Fields: VmwareNodePool_Status_Versions_VersionsFields,
+		},
+	}
 
 var VmwareNodePool_StatusFields = ubx.FieldMap{
-	"Conditions": ubx.FieldSpec{
-		WireName: "conditions",
-		Kind:     "list",
-		Fields:   VmwareNodePool_Status_ConditionsFields,
-	},
-	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-	"Version":      ubx.FieldSpec{WireName: "version"},
-	"Versions": ubx.FieldSpec{
-		WireName: "versions",
-		Kind:     "object",
-		Fields:   VmwareNodePool_Status_VersionsFields,
-	},
-}
+		"Conditions": ubx.FieldSpec{
+			WireName: "conditions",
+			Kind: "list",
+			Fields: VmwareNodePool_Status_ConditionsFields,
+		},
+		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+		"Versions": ubx.FieldSpec{
+			WireName: "versions",
+			Kind: "object",
+			Fields: VmwareNodePool_Status_VersionsFields,
+		},
+	}
 
 type VmwareNodePoolConfig struct {
 	// Annotations on the node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.
@@ -233,22 +233,22 @@ var VmwareNodePool = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   VmwareNodePool_ConfigFields,
+			Kind: "object",
+			Fields: VmwareNodePool_ConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodePoolAutoscaling": ubx.FieldSpec{
 			WireName: "node_pool_autoscaling",
-			Kind:     "object",
-			Fields:   VmwareNodePool_NodePoolAutoscalingFields,
+			Kind: "object",
+			Fields: VmwareNodePool_NodePoolAutoscalingFields,
 		},
 		"OnPremVersion": ubx.FieldSpec{WireName: "on_prem_version"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind:     "object",
-			Fields:   VmwareNodePool_StatusFields,
+			Kind: "object",
+			Fields: VmwareNodePool_StatusFields,
 		},
 	},
 }

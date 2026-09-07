@@ -14,6 +14,8 @@ class V1betaGatewayConfig:
     display_name: Any = None
     # Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
+    # Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with.
+    streaming_mode: Any = None
 
 @dataclasses.dataclass
 class V1betaGatewayAttrs:
@@ -25,12 +27,16 @@ class V1betaGatewayAttrs:
     default_hostname: Any = None
     # Optional. Display name.
     display_name: Any = None
+    # Output only. The streaming mode this gateway is actually served with, which the service resolves at creation from `streaming_mode`, the referenced API Config, and the platform default at the time. Read this rather than `streaming_mode` to determine whether a gateway supports response streaming.
+    effective_streaming_mode: Any = None
     # Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
     # Output only. Resource name of the Gateway. Format: projects/{project}/locations/{location}/gateways/{gateway}
     name: Any = None
     # Output only. The current state of the Gateway.
     state: Any = None
+    # Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with.
+    streaming_mode: Any = None
     # Output only. Updated time.
     update_time: Any = None
 
@@ -40,5 +46,6 @@ V1betaGateway = ubx.ResourceBinding(
         "api_config": ubx.FieldSpec(wire_name="api_config"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
+        "streaming_mode": ubx.FieldSpec(wire_name="streaming_mode"),
     },
 )

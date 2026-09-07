@@ -12,7 +12,7 @@ type V1betaConnector_ClientCache struct {
 
 type V1betaConnector_Source_Files struct {
 	Content any
-	Path    any
+	Path any
 }
 
 type V1betaConnector_Source struct {
@@ -21,22 +21,22 @@ type V1betaConnector_Source struct {
 }
 
 var V1betaConnector_ClientCacheFields = ubx.FieldMap{
-	"EntityIdIncluded":        ubx.FieldSpec{WireName: "entity_id_included"},
-	"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
-}
+		"EntityIdIncluded": ubx.FieldSpec{WireName: "entity_id_included"},
+		"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
+	}
 
 var V1betaConnector_Source_FilesFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Path":    ubx.FieldSpec{WireName: "path"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var V1betaConnector_SourceFields = ubx.FieldMap{
-	"Files": ubx.FieldSpec{
-		WireName: "files",
-		Kind:     "list",
-		Fields:   V1betaConnector_Source_FilesFields,
-	},
-}
+		"Files": ubx.FieldSpec{
+			WireName: "files",
+			Kind: "list",
+			Fields: V1betaConnector_Source_FilesFields,
+		},
+	}
 
 type V1betaConnectorConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -84,16 +84,16 @@ var V1betaConnector = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ClientCache": ubx.FieldSpec{
 			WireName: "client_cache",
-			Kind:     "object",
-			Fields:   V1betaConnector_ClientCacheFields,
+			Kind: "object",
+			Fields: V1betaConnector_ClientCacheFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   V1betaConnector_SourceFields,
+			Kind: "object",
+			Fields: V1betaConnector_SourceFields,
 		},
 	},
 }

@@ -111,17 +111,17 @@ type Service_Schemas struct {
 }
 
 var Service_Connectors_Source_FilesFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Path":    ubx.FieldSpec{WireName: "path"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var Service_Connectors_SourceFields = ubx.FieldMap{
-	"Files": ubx.FieldSpec{
-		WireName: "files",
-		Kind:     "list",
-		Fields:   Service_Connectors_Source_FilesFields,
-	},
-}
+		"Files": ubx.FieldSpec{
+			WireName: "files",
+			Kind: "list",
+			Fields: Service_Connectors_Source_FilesFields,
+		},
+	}
 
 type ServiceConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -168,12 +168,12 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   Service_Connectors_SourceFields,
+			Kind: "object",
+			Fields: Service_Connectors_SourceFields,
 		},
 	},
 }

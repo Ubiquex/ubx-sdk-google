@@ -11,22 +11,32 @@ export interface V1betaExample_Messages_Chunks_Blob {
   mimeType?: string | Computed<string>;
 }
 
+export interface V1betaExample_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface V1betaExample_Messages_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
 }
 
 export interface V1betaExample_Messages_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaExample_Messages_Chunks_ToolCall_ToolsetTool | Computed<V1betaExample_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface V1betaExample_Messages_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaExample_Messages_Chunks_ToolCall_ToolsetTool | Computed<V1betaExample_Messages_Chunks_ToolCall_ToolsetTool>;
@@ -36,7 +46,7 @@ export interface V1betaExample_Messages_Chunks {
   agentTransfer?: V1betaExample_Messages_Chunks_AgentTransfer | Computed<V1betaExample_Messages_Chunks_AgentTransfer>;
   blob?: V1betaExample_Messages_Chunks_Blob | Computed<V1betaExample_Messages_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: V1betaExample_Messages_Chunks_Blob | Computed<V1betaExample_Messages_Chunks_Blob>;
+  image?: V1betaExample_Messages_Chunks_Image | Computed<V1betaExample_Messages_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: V1betaExample_Messages_Chunks_ToolCall | Computed<V1betaExample_Messages_Chunks_ToolCall>;
@@ -61,15 +71,23 @@ const V1betaExample_Messages_Chunks_BlobFields: FieldMap = {
   mimeType: "mime_type",
 };
 
+const V1betaExample_Messages_Chunks_ImageFields: FieldMap = {
+  altText: "alt_text",
+  data: "data",
+  mimeType: "mime_type",
+};
+
 const V1betaExample_Messages_Chunks_ToolCall_ToolsetToolFields: FieldMap = {
   toolId: "tool_id",
   toolset: "toolset",
 };
 
 const V1betaExample_Messages_Chunks_ToolCallFields: FieldMap = {
+  agentName: "agent_name",
   args: "args",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   tool: "tool",
   toolsetTool: {
     wireName: "toolset_tool",
@@ -79,8 +97,10 @@ const V1betaExample_Messages_Chunks_ToolCallFields: FieldMap = {
 };
 
 const V1betaExample_Messages_Chunks_ToolResponseFields: FieldMap = {
+  agentName: "agent_name",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   response: "response",
   tool: "tool",
   toolsetTool: {
@@ -105,7 +125,7 @@ const V1betaExample_Messages_ChunksFields: FieldMap = {
   image: {
     wireName: "image",
     kind: "object",
-    fields: V1betaExample_Messages_Chunks_BlobFields,
+    fields: V1betaExample_Messages_Chunks_ImageFields,
   },
   payload: "payload",
   text: "text",

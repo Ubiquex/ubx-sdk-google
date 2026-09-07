@@ -41,8 +41,6 @@ export interface V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeerin
 }
 
 export interface V1beta1SandboxEnvironmentTemplate_EgressControlConfig {
-  /** Optional. The customer VPC network that sandbox egress is routed into. */
-  customerVpcNetwork?: string | Computed<string>;
   /** Optional. DNS peering configurations that allow sandbox egress to resolve customer-internal domains via the customer VPC. */
   dnsPeeringConfigs?: V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs[] | Computed<V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs[]>;
   /** Optional. Whether to allow internet access. */
@@ -121,7 +119,6 @@ const V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFie
 };
 
 const V1beta1SandboxEnvironmentTemplate_EgressControlConfigFields: FieldMap = {
-  customerVpcNetwork: "customer_vpc_network",
   dnsPeeringConfigs: {
     wireName: "dns_peering_configs",
     kind: "list",
@@ -165,6 +162,8 @@ export interface V1beta1SandboxEnvironmentTemplateConfig {
   ingressControlConfig?: V1beta1SandboxEnvironmentTemplate_IngressControlConfig | Computed<V1beta1SandboxEnvironmentTemplate_IngressControlConfig>;
   /** Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}` */
   name?: string | Computed<string>;
+  /** Optional. Immutable. Whether to provision the SandboxEnvironmentTemplate via the GKE TD pool. */
+  useGkeTd?: boolean | Computed<boolean>;
 }
 
 export interface V1beta1SandboxEnvironmentTemplateAttrs {
@@ -186,6 +185,8 @@ export interface V1beta1SandboxEnvironmentTemplateAttrs {
   state: string;
   /** Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated. */
   updateTime: string;
+  /** Optional. Immutable. Whether to provision the SandboxEnvironmentTemplate via the GKE TD pool. */
+  useGkeTd: boolean;
 }
 
 export const V1beta1SandboxEnvironmentTemplate: ResourceBinding<V1beta1SandboxEnvironmentTemplateConfig, V1beta1SandboxEnvironmentTemplateAttrs> = {
@@ -213,5 +214,6 @@ export const V1beta1SandboxEnvironmentTemplate: ResourceBinding<V1beta1SandboxEn
       fields: V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields,
     },
     name: "name",
+    useGkeTd: "use_gke_td",
   },
 };

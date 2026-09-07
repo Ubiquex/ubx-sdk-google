@@ -14,12 +14,12 @@ type Workspace_PrivateResourceMetadata struct {
 }
 
 var Workspace_DataEncryptionStateFields = ubx.FieldMap{
-	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-}
+		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	}
 
 var Workspace_PrivateResourceMetadataFields = ubx.FieldMap{
-	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-}
+		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+	}
 
 type WorkspaceConfig struct {
 	// Describes encryption state of a resource.
@@ -52,15 +52,15 @@ var Workspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind:     "object",
-			Fields:   Workspace_DataEncryptionStateFields,
+			Kind: "object",
+			Fields: Workspace_DataEncryptionStateFields,
 		},
 		"DisableMoves": ubx.FieldSpec{WireName: "disable_moves"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind:     "object",
-			Fields:   Workspace_PrivateResourceMetadataFields,
+			Kind: "object",
+			Fields: Workspace_PrivateResourceMetadataFields,
 		},
 	},
 }

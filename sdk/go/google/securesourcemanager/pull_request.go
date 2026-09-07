@@ -11,9 +11,9 @@ type PullRequest_Base struct {
 }
 
 var PullRequest_BaseFields = ubx.FieldMap{
-	"Ref": ubx.FieldSpec{WireName: "ref"},
-	"Sha": ubx.FieldSpec{WireName: "sha"},
-}
+		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Sha": ubx.FieldSpec{WireName: "sha"},
+	}
 
 type PullRequestConfig struct {
 	// Branch represents a branch involved in a pull request.
@@ -52,14 +52,14 @@ var PullRequest = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Base": ubx.FieldSpec{
 			WireName: "base",
-			Kind:     "object",
-			Fields:   PullRequest_BaseFields,
+			Kind: "object",
+			Fields: PullRequest_BaseFields,
 		},
 		"Body": ubx.FieldSpec{WireName: "body"},
 		"Head": ubx.FieldSpec{
 			WireName: "head",
-			Kind:     "object",
-			Fields:   PullRequest_BaseFields,
+			Kind: "object",
+			Fields: PullRequest_BaseFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},

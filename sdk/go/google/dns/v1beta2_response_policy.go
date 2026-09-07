@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta2ResponsePolicy_GkeClusters struct {
 	GkeClusterName any
-	Kind           any
+	Kind any
 }
 
 type V1beta2ResponsePolicy_Networks struct {
-	Kind       any
+	Kind any
 	NetworkUrl any
 }
 
 var V1beta2ResponsePolicy_GkeClustersFields = ubx.FieldMap{
-	"GkeClusterName": ubx.FieldSpec{WireName: "gke_cluster_name"},
-	"Kind":           ubx.FieldSpec{WireName: "kind"},
-}
+		"GkeClusterName": ubx.FieldSpec{WireName: "gke_cluster_name"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+	}
 
 var V1beta2ResponsePolicy_NetworksFields = ubx.FieldMap{
-	"Kind":       ubx.FieldSpec{WireName: "kind"},
-	"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-}
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
+	}
 
 type V1beta2ResponsePolicyConfig struct {
 	// User-provided description for this Response Policy.
@@ -63,16 +63,16 @@ var V1beta2ResponsePolicy = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"GkeClusters": ubx.FieldSpec{
 			WireName: "gke_clusters",
-			Kind:     "list",
-			Fields:   V1beta2ResponsePolicy_GkeClustersFields,
+			Kind: "list",
+			Fields: V1beta2ResponsePolicy_GkeClustersFields,
 		},
-		"Id":     ubx.FieldSpec{WireName: "id"},
-		"Kind":   ubx.FieldSpec{WireName: "kind"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind:     "list",
-			Fields:   V1beta2ResponsePolicy_NetworksFields,
+			Kind: "list",
+			Fields: V1beta2ResponsePolicy_NetworksFields,
 		},
 		"ResponsePolicyName": ubx.FieldSpec{WireName: "response_policy_name"},
 	},

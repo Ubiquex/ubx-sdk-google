@@ -61,40 +61,40 @@ type RegionHealthCheck_SslHealthCheck struct {
 }
 
 var RegionHealthCheck_GrpcHealthCheckFields = ubx.FieldMap{
-	"GrpcServiceName":   ubx.FieldSpec{WireName: "grpc_service_name"},
-	"Port":              ubx.FieldSpec{WireName: "port"},
-	"PortName":          ubx.FieldSpec{WireName: "port_name"},
-	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-}
+		"GrpcServiceName": ubx.FieldSpec{WireName: "grpc_service_name"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"PortName": ubx.FieldSpec{WireName: "port_name"},
+		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+	}
 
 var RegionHealthCheck_GrpcTlsHealthCheckFields = ubx.FieldMap{
-	"GrpcServiceName":   ubx.FieldSpec{WireName: "grpc_service_name"},
-	"Port":              ubx.FieldSpec{WireName: "port"},
-	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-}
+		"GrpcServiceName": ubx.FieldSpec{WireName: "grpc_service_name"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+	}
 
 var RegionHealthCheck_Http2HealthCheckFields = ubx.FieldMap{
-	"Host":              ubx.FieldSpec{WireName: "host"},
-	"Port":              ubx.FieldSpec{WireName: "port"},
-	"PortName":          ubx.FieldSpec{WireName: "port_name"},
-	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-	"ProxyHeader":       ubx.FieldSpec{WireName: "proxy_header"},
-	"RequestPath":       ubx.FieldSpec{WireName: "request_path"},
-	"Response":          ubx.FieldSpec{WireName: "response"},
-}
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"PortName": ubx.FieldSpec{WireName: "port_name"},
+		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
+		"RequestPath": ubx.FieldSpec{WireName: "request_path"},
+		"Response": ubx.FieldSpec{WireName: "response"},
+	}
 
 var RegionHealthCheck_LogConfigFields = ubx.FieldMap{
-	"Enable": ubx.FieldSpec{WireName: "enable"},
-}
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+	}
 
 var RegionHealthCheck_SslHealthCheckFields = ubx.FieldMap{
-	"Port":              ubx.FieldSpec{WireName: "port"},
-	"PortName":          ubx.FieldSpec{WireName: "port_name"},
-	"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
-	"ProxyHeader":       ubx.FieldSpec{WireName: "proxy_header"},
-	"Request":           ubx.FieldSpec{WireName: "request"},
-	"Response":          ubx.FieldSpec{WireName: "response"},
-}
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"PortName": ubx.FieldSpec{WireName: "port_name"},
+		"PortSpecification": ubx.FieldSpec{WireName: "port_specification"},
+		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
+		"Request": ubx.FieldSpec{WireName: "request"},
+		"Response": ubx.FieldSpec{WireName: "response"},
+	}
 
 type RegionHealthCheckConfig struct {
 	// How often (in seconds) to send a health check. The default value is 5 seconds.
@@ -102,7 +102,7 @@ type RegionHealthCheckConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
-	GrpcHealthCheck    any
+	GrpcHealthCheck any
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
@@ -142,7 +142,7 @@ type RegionHealthCheckAttrs struct {
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// The gRPC health check configuration for this region health check. This field is output only, meaning it reflects the effective gRPC health check settings as determined by the Google Cloud API. (AI-inferred)
-	GrpcHealthCheck    any
+	GrpcHealthCheck any
 	GrpcTlsHealthCheck any
 	// A so-far unhealthy instance will be marked healthy after this many consecutive successes. The default value is 2.
 	HealthyThreshold any
@@ -182,54 +182,54 @@ var RegionHealthCheck = ubx.ResourceBinding{
 	WireType: "google_compute_region_health_check",
 	Fields: ubx.FieldMap{
 		"CheckIntervalSec": ubx.FieldSpec{WireName: "check_interval_sec"},
-		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"GrpcHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_GrpcHealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_GrpcHealthCheckFields,
 		},
 		"GrpcTlsHealthCheck": ubx.FieldSpec{
 			WireName: "grpc_tls_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_GrpcTlsHealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_GrpcTlsHealthCheckFields,
 		},
 		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
 		"Http2HealthCheck": ubx.FieldSpec{
 			WireName: "http2_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_Http2HealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpHealthCheck": ubx.FieldSpec{
 			WireName: "http_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_Http2HealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"HttpsHealthCheck": ubx.FieldSpec{
 			WireName: "https_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_Http2HealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_Http2HealthCheckFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_LogConfigFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_LogConfigFields,
 		},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"SelfLink":      ubx.FieldSpec{WireName: "self_link"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"SourceRegions": ubx.FieldSpec{WireName: "source_regions"},
 		"SslHealthCheck": ubx.FieldSpec{
 			WireName: "ssl_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_SslHealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_SslHealthCheckFields,
 		},
 		"TcpHealthCheck": ubx.FieldSpec{
 			WireName: "tcp_health_check",
-			Kind:     "object",
-			Fields:   RegionHealthCheck_SslHealthCheckFields,
+			Kind: "object",
+			Fields: RegionHealthCheck_SslHealthCheckFields,
 		},
-		"TimeoutSec":         ubx.FieldSpec{WireName: "timeout_sec"},
-		"Type":               ubx.FieldSpec{WireName: "type"},
+		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
 	},
 }

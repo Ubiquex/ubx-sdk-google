@@ -32,25 +32,25 @@ type ChannelPartnerLink_ChannelPartnerCloudIdentityInfo struct {
 }
 
 var ChannelPartnerLink_ChannelPartnerCloudIdentityInfo_EduDataFields = ubx.FieldMap{
-	"InstituteSize": ubx.FieldSpec{WireName: "institute_size"},
-	"InstituteType": ubx.FieldSpec{WireName: "institute_type"},
-	"Website":       ubx.FieldSpec{WireName: "website"},
-}
+		"InstituteSize": ubx.FieldSpec{WireName: "institute_size"},
+		"InstituteType": ubx.FieldSpec{WireName: "institute_type"},
+		"Website": ubx.FieldSpec{WireName: "website"},
+	}
 
 var ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields = ubx.FieldMap{
-	"AdminConsoleUri": ubx.FieldSpec{WireName: "admin_console_uri"},
-	"AlternateEmail":  ubx.FieldSpec{WireName: "alternate_email"},
-	"CustomerType":    ubx.FieldSpec{WireName: "customer_type"},
-	"EduData": ubx.FieldSpec{
-		WireName: "edu_data",
-		Kind:     "object",
-		Fields:   ChannelPartnerLink_ChannelPartnerCloudIdentityInfo_EduDataFields,
-	},
-	"IsDomainVerified": ubx.FieldSpec{WireName: "is_domain_verified"},
-	"LanguageCode":     ubx.FieldSpec{WireName: "language_code"},
-	"PhoneNumber":      ubx.FieldSpec{WireName: "phone_number"},
-	"PrimaryDomain":    ubx.FieldSpec{WireName: "primary_domain"},
-}
+		"AdminConsoleUri": ubx.FieldSpec{WireName: "admin_console_uri"},
+		"AlternateEmail": ubx.FieldSpec{WireName: "alternate_email"},
+		"CustomerType": ubx.FieldSpec{WireName: "customer_type"},
+		"EduData": ubx.FieldSpec{
+			WireName: "edu_data",
+			Kind: "object",
+			Fields: ChannelPartnerLink_ChannelPartnerCloudIdentityInfo_EduDataFields,
+		},
+		"IsDomainVerified": ubx.FieldSpec{WireName: "is_domain_verified"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+		"PrimaryDomain": ubx.FieldSpec{WireName: "primary_domain"},
+	}
 
 type ChannelPartnerLinkConfig struct {
 	// Cloud Identity information for the Cloud Channel Customer.
@@ -85,10 +85,10 @@ var ChannelPartnerLink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ChannelPartnerCloudIdentityInfo": ubx.FieldSpec{
 			WireName: "channel_partner_cloud_identity_info",
-			Kind:     "object",
-			Fields:   ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields,
+			Kind: "object",
+			Fields: ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields,
 		},
-		"LinkState":               ubx.FieldSpec{WireName: "link_state"},
+		"LinkState": ubx.FieldSpec{WireName: "link_state"},
 		"ResellerCloudIdentityId": ubx.FieldSpec{WireName: "reseller_cloud_identity_id"},
 	},
 }

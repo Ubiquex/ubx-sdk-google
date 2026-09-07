@@ -13,9 +13,9 @@ type Web_AndroidAppInfo struct {
 }
 
 type Web_ChromeAppInfo_Permissions struct {
-	AccessUserData   any
+	AccessUserData any
 	DocumentationUri any
-	Type             any
+	Type any
 }
 
 type Web_ChromeAppInfo_SiteAccess struct {
@@ -86,7 +86,7 @@ type WebAttrs struct {
 	IsPaidApp any
 	// Output only. Latest published time.
 	LatestPublishTime any
-	Name              any
+	Name any
 	// Output only. The URI pointing to the privacy policy of the app, if it was provided by the developer. Version-specific field that will only be set when the requested app version is found.
 	PrivacyPolicyUri any
 	// Output only. The publisher of the item.
@@ -105,5 +105,6 @@ type WebAttrs struct {
 
 var Web = ubx.DataSourceBinding{
 	WireType: "google_chromemanagement_web",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

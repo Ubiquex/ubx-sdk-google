@@ -535,514 +535,514 @@ type Job_Error struct {
 }
 
 var Job_Config_AdBreaksFields = ubx.FieldMap{
-	"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-}
+		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
+	}
 
 var Job_Config_EditListFields = ubx.FieldMap{
-	"EndTimeOffset":   ubx.FieldSpec{WireName: "end_time_offset"},
-	"Inputs":          ubx.FieldSpec{WireName: "inputs"},
-	"Key":             ubx.FieldSpec{WireName: "key"},
-	"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-}
+		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
+		"Inputs": ubx.FieldSpec{WireName: "inputs"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
+	}
 
 var Job_Config_ElementaryStreams_AudioStream_MappingFields = ubx.FieldMap{
-	"AtomKey":       ubx.FieldSpec{WireName: "atom_key"},
-	"GainDb":        ubx.FieldSpec{WireName: "gain_db"},
-	"InputChannel":  ubx.FieldSpec{WireName: "input_channel"},
-	"InputKey":      ubx.FieldSpec{WireName: "input_key"},
-	"InputTrack":    ubx.FieldSpec{WireName: "input_track"},
-	"OutputChannel": ubx.FieldSpec{WireName: "output_channel"},
-}
+		"AtomKey": ubx.FieldSpec{WireName: "atom_key"},
+		"GainDb": ubx.FieldSpec{WireName: "gain_db"},
+		"InputChannel": ubx.FieldSpec{WireName: "input_channel"},
+		"InputKey": ubx.FieldSpec{WireName: "input_key"},
+		"InputTrack": ubx.FieldSpec{WireName: "input_track"},
+		"OutputChannel": ubx.FieldSpec{WireName: "output_channel"},
+	}
 
 var Job_Config_ElementaryStreams_AudioStreamFields = ubx.FieldMap{
-	"BitrateBps":    ubx.FieldSpec{WireName: "bitrate_bps"},
-	"ChannelCount":  ubx.FieldSpec{WireName: "channel_count"},
-	"ChannelLayout": ubx.FieldSpec{WireName: "channel_layout"},
-	"Codec":         ubx.FieldSpec{WireName: "codec"},
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"LanguageCode":  ubx.FieldSpec{WireName: "language_code"},
-	"Mapping": ubx.FieldSpec{
-		WireName: "mapping",
-		Kind:     "list",
-		Fields:   Job_Config_ElementaryStreams_AudioStream_MappingFields,
-	},
-	"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
-}
+		"BitrateBps": ubx.FieldSpec{WireName: "bitrate_bps"},
+		"ChannelCount": ubx.FieldSpec{WireName: "channel_count"},
+		"ChannelLayout": ubx.FieldSpec{WireName: "channel_layout"},
+		"Codec": ubx.FieldSpec{WireName: "codec"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"Mapping": ubx.FieldSpec{
+			WireName: "mapping",
+			Kind: "list",
+			Fields: Job_Config_ElementaryStreams_AudioStream_MappingFields,
+		},
+		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
+	}
 
 var Job_Config_ElementaryStreams_TextStream_MappingFields = ubx.FieldMap{
-	"AtomKey":    ubx.FieldSpec{WireName: "atom_key"},
-	"InputKey":   ubx.FieldSpec{WireName: "input_key"},
-	"InputTrack": ubx.FieldSpec{WireName: "input_track"},
-}
+		"AtomKey": ubx.FieldSpec{WireName: "atom_key"},
+		"InputKey": ubx.FieldSpec{WireName: "input_key"},
+		"InputTrack": ubx.FieldSpec{WireName: "input_track"},
+	}
 
 var Job_Config_ElementaryStreams_TextStreamFields = ubx.FieldMap{
-	"Codec":        ubx.FieldSpec{WireName: "codec"},
-	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-	"Mapping": ubx.FieldSpec{
-		WireName: "mapping",
-		Kind:     "list",
-		Fields:   Job_Config_ElementaryStreams_TextStream_MappingFields,
-	},
-}
+		"Codec": ubx.FieldSpec{WireName: "codec"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"Mapping": ubx.FieldSpec{
+			WireName: "mapping",
+			Kind: "list",
+			Fields: Job_Config_ElementaryStreams_TextStream_MappingFields,
+		},
+	}
 
 var Job_Config_ElementaryStreams_VideoStream_H264Fields = ubx.FieldMap{
-	"AllowOpenGop":                ubx.FieldSpec{WireName: "allow_open_gop"},
-	"AqStrength":                  ubx.FieldSpec{WireName: "aq_strength"},
-	"BFrameCount":                 ubx.FieldSpec{WireName: "b_frame_count"},
-	"BPyramid":                    ubx.FieldSpec{WireName: "b_pyramid"},
-	"BitrateBps":                  ubx.FieldSpec{WireName: "bitrate_bps"},
-	"CrfLevel":                    ubx.FieldSpec{WireName: "crf_level"},
-	"EnableTwoPass":               ubx.FieldSpec{WireName: "enable_two_pass"},
-	"EntropyCoder":                ubx.FieldSpec{WireName: "entropy_coder"},
-	"FrameRate":                   ubx.FieldSpec{WireName: "frame_rate"},
-	"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
-	"GopDuration":                 ubx.FieldSpec{WireName: "gop_duration"},
-	"GopFrameCount":               ubx.FieldSpec{WireName: "gop_frame_count"},
-	"HeightPixels":                ubx.FieldSpec{WireName: "height_pixels"},
-	"Hlg":                         ubx.FieldSpec{WireName: "hlg"},
-	"PixelFormat":                 ubx.FieldSpec{WireName: "pixel_format"},
-	"Preset":                      ubx.FieldSpec{WireName: "preset"},
-	"Profile":                     ubx.FieldSpec{WireName: "profile"},
-	"RateControlMode":             ubx.FieldSpec{WireName: "rate_control_mode"},
-	"Sdr":                         ubx.FieldSpec{WireName: "sdr"},
-	"Tune":                        ubx.FieldSpec{WireName: "tune"},
-	"VbvFullnessBits":             ubx.FieldSpec{WireName: "vbv_fullness_bits"},
-	"VbvSizeBits":                 ubx.FieldSpec{WireName: "vbv_size_bits"},
-	"WidthPixels":                 ubx.FieldSpec{WireName: "width_pixels"},
-}
+		"AllowOpenGop": ubx.FieldSpec{WireName: "allow_open_gop"},
+		"AqStrength": ubx.FieldSpec{WireName: "aq_strength"},
+		"BFrameCount": ubx.FieldSpec{WireName: "b_frame_count"},
+		"BPyramid": ubx.FieldSpec{WireName: "b_pyramid"},
+		"BitrateBps": ubx.FieldSpec{WireName: "bitrate_bps"},
+		"CrfLevel": ubx.FieldSpec{WireName: "crf_level"},
+		"EnableTwoPass": ubx.FieldSpec{WireName: "enable_two_pass"},
+		"EntropyCoder": ubx.FieldSpec{WireName: "entropy_coder"},
+		"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
+		"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
+		"GopDuration": ubx.FieldSpec{WireName: "gop_duration"},
+		"GopFrameCount": ubx.FieldSpec{WireName: "gop_frame_count"},
+		"HeightPixels": ubx.FieldSpec{WireName: "height_pixels"},
+		"Hlg": ubx.FieldSpec{WireName: "hlg"},
+		"PixelFormat": ubx.FieldSpec{WireName: "pixel_format"},
+		"Preset": ubx.FieldSpec{WireName: "preset"},
+		"Profile": ubx.FieldSpec{WireName: "profile"},
+		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
+		"Sdr": ubx.FieldSpec{WireName: "sdr"},
+		"Tune": ubx.FieldSpec{WireName: "tune"},
+		"VbvFullnessBits": ubx.FieldSpec{WireName: "vbv_fullness_bits"},
+		"VbvSizeBits": ubx.FieldSpec{WireName: "vbv_size_bits"},
+		"WidthPixels": ubx.FieldSpec{WireName: "width_pixels"},
+	}
 
 var Job_Config_ElementaryStreams_VideoStream_H265Fields = ubx.FieldMap{
-	"AllowOpenGop":                ubx.FieldSpec{WireName: "allow_open_gop"},
-	"AqStrength":                  ubx.FieldSpec{WireName: "aq_strength"},
-	"BFrameCount":                 ubx.FieldSpec{WireName: "b_frame_count"},
-	"BPyramid":                    ubx.FieldSpec{WireName: "b_pyramid"},
-	"BitrateBps":                  ubx.FieldSpec{WireName: "bitrate_bps"},
-	"CrfLevel":                    ubx.FieldSpec{WireName: "crf_level"},
-	"EnableTwoPass":               ubx.FieldSpec{WireName: "enable_two_pass"},
-	"FrameRate":                   ubx.FieldSpec{WireName: "frame_rate"},
-	"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
-	"GopDuration":                 ubx.FieldSpec{WireName: "gop_duration"},
-	"GopFrameCount":               ubx.FieldSpec{WireName: "gop_frame_count"},
-	"Hdr10":                       ubx.FieldSpec{WireName: "hdr10"},
-	"HeightPixels":                ubx.FieldSpec{WireName: "height_pixels"},
-	"Hlg":                         ubx.FieldSpec{WireName: "hlg"},
-	"PixelFormat":                 ubx.FieldSpec{WireName: "pixel_format"},
-	"Preset":                      ubx.FieldSpec{WireName: "preset"},
-	"Profile":                     ubx.FieldSpec{WireName: "profile"},
-	"RateControlMode":             ubx.FieldSpec{WireName: "rate_control_mode"},
-	"Sdr":                         ubx.FieldSpec{WireName: "sdr"},
-	"Tune":                        ubx.FieldSpec{WireName: "tune"},
-	"VbvFullnessBits":             ubx.FieldSpec{WireName: "vbv_fullness_bits"},
-	"VbvSizeBits":                 ubx.FieldSpec{WireName: "vbv_size_bits"},
-	"WidthPixels":                 ubx.FieldSpec{WireName: "width_pixels"},
-}
+		"AllowOpenGop": ubx.FieldSpec{WireName: "allow_open_gop"},
+		"AqStrength": ubx.FieldSpec{WireName: "aq_strength"},
+		"BFrameCount": ubx.FieldSpec{WireName: "b_frame_count"},
+		"BPyramid": ubx.FieldSpec{WireName: "b_pyramid"},
+		"BitrateBps": ubx.FieldSpec{WireName: "bitrate_bps"},
+		"CrfLevel": ubx.FieldSpec{WireName: "crf_level"},
+		"EnableTwoPass": ubx.FieldSpec{WireName: "enable_two_pass"},
+		"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
+		"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
+		"GopDuration": ubx.FieldSpec{WireName: "gop_duration"},
+		"GopFrameCount": ubx.FieldSpec{WireName: "gop_frame_count"},
+		"Hdr10": ubx.FieldSpec{WireName: "hdr10"},
+		"HeightPixels": ubx.FieldSpec{WireName: "height_pixels"},
+		"Hlg": ubx.FieldSpec{WireName: "hlg"},
+		"PixelFormat": ubx.FieldSpec{WireName: "pixel_format"},
+		"Preset": ubx.FieldSpec{WireName: "preset"},
+		"Profile": ubx.FieldSpec{WireName: "profile"},
+		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
+		"Sdr": ubx.FieldSpec{WireName: "sdr"},
+		"Tune": ubx.FieldSpec{WireName: "tune"},
+		"VbvFullnessBits": ubx.FieldSpec{WireName: "vbv_fullness_bits"},
+		"VbvSizeBits": ubx.FieldSpec{WireName: "vbv_size_bits"},
+		"WidthPixels": ubx.FieldSpec{WireName: "width_pixels"},
+	}
 
 var Job_Config_ElementaryStreams_VideoStream_Vp9Fields = ubx.FieldMap{
-	"BitrateBps":                  ubx.FieldSpec{WireName: "bitrate_bps"},
-	"CrfLevel":                    ubx.FieldSpec{WireName: "crf_level"},
-	"FrameRate":                   ubx.FieldSpec{WireName: "frame_rate"},
-	"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
-	"GopDuration":                 ubx.FieldSpec{WireName: "gop_duration"},
-	"GopFrameCount":               ubx.FieldSpec{WireName: "gop_frame_count"},
-	"HeightPixels":                ubx.FieldSpec{WireName: "height_pixels"},
-	"Hlg":                         ubx.FieldSpec{WireName: "hlg"},
-	"PixelFormat":                 ubx.FieldSpec{WireName: "pixel_format"},
-	"Profile":                     ubx.FieldSpec{WireName: "profile"},
-	"RateControlMode":             ubx.FieldSpec{WireName: "rate_control_mode"},
-	"Sdr":                         ubx.FieldSpec{WireName: "sdr"},
-	"WidthPixels":                 ubx.FieldSpec{WireName: "width_pixels"},
-}
+		"BitrateBps": ubx.FieldSpec{WireName: "bitrate_bps"},
+		"CrfLevel": ubx.FieldSpec{WireName: "crf_level"},
+		"FrameRate": ubx.FieldSpec{WireName: "frame_rate"},
+		"FrameRateConversionStrategy": ubx.FieldSpec{WireName: "frame_rate_conversion_strategy"},
+		"GopDuration": ubx.FieldSpec{WireName: "gop_duration"},
+		"GopFrameCount": ubx.FieldSpec{WireName: "gop_frame_count"},
+		"HeightPixels": ubx.FieldSpec{WireName: "height_pixels"},
+		"Hlg": ubx.FieldSpec{WireName: "hlg"},
+		"PixelFormat": ubx.FieldSpec{WireName: "pixel_format"},
+		"Profile": ubx.FieldSpec{WireName: "profile"},
+		"RateControlMode": ubx.FieldSpec{WireName: "rate_control_mode"},
+		"Sdr": ubx.FieldSpec{WireName: "sdr"},
+		"WidthPixels": ubx.FieldSpec{WireName: "width_pixels"},
+	}
 
 var Job_Config_ElementaryStreams_VideoStreamFields = ubx.FieldMap{
-	"H264": ubx.FieldSpec{
-		WireName: "h264",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_VideoStream_H264Fields,
-	},
-	"H265": ubx.FieldSpec{
-		WireName: "h265",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_VideoStream_H265Fields,
-	},
-	"Vp9": ubx.FieldSpec{
-		WireName: "vp9",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_VideoStream_Vp9Fields,
-	},
-}
+		"H264": ubx.FieldSpec{
+			WireName: "h264",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_VideoStream_H264Fields,
+		},
+		"H265": ubx.FieldSpec{
+			WireName: "h265",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_VideoStream_H265Fields,
+		},
+		"Vp9": ubx.FieldSpec{
+			WireName: "vp9",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_VideoStream_Vp9Fields,
+		},
+	}
 
 var Job_Config_ElementaryStreamsFields = ubx.FieldMap{
-	"AudioStream": ubx.FieldSpec{
-		WireName: "audio_stream",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_AudioStreamFields,
-	},
-	"Key": ubx.FieldSpec{WireName: "key"},
-	"TextStream": ubx.FieldSpec{
-		WireName: "text_stream",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_TextStreamFields,
-	},
-	"VideoStream": ubx.FieldSpec{
-		WireName: "video_stream",
-		Kind:     "object",
-		Fields:   Job_Config_ElementaryStreams_VideoStreamFields,
-	},
-}
+		"AudioStream": ubx.FieldSpec{
+			WireName: "audio_stream",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_AudioStreamFields,
+		},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"TextStream": ubx.FieldSpec{
+			WireName: "text_stream",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_TextStreamFields,
+		},
+		"VideoStream": ubx.FieldSpec{
+			WireName: "video_stream",
+			Kind: "object",
+			Fields: Job_Config_ElementaryStreams_VideoStreamFields,
+		},
+	}
 
 var Job_Config_Encryptions_DrmSystemsFields = ubx.FieldMap{
-	"Clearkey":  ubx.FieldSpec{WireName: "clearkey"},
-	"Fairplay":  ubx.FieldSpec{WireName: "fairplay"},
-	"Playready": ubx.FieldSpec{WireName: "playready"},
-	"Widevine":  ubx.FieldSpec{WireName: "widevine"},
-}
+		"Clearkey": ubx.FieldSpec{WireName: "clearkey"},
+		"Fairplay": ubx.FieldSpec{WireName: "fairplay"},
+		"Playready": ubx.FieldSpec{WireName: "playready"},
+		"Widevine": ubx.FieldSpec{WireName: "widevine"},
+	}
 
 var Job_Config_Encryptions_MpegCencFields = ubx.FieldMap{
-	"Scheme": ubx.FieldSpec{WireName: "scheme"},
-}
+		"Scheme": ubx.FieldSpec{WireName: "scheme"},
+	}
 
 var Job_Config_Encryptions_SecretManagerKeySourceFields = ubx.FieldMap{
-	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-}
+		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+	}
 
 var Job_Config_EncryptionsFields = ubx.FieldMap{
-	"Aes128": ubx.FieldSpec{WireName: "aes128"},
-	"DrmSystems": ubx.FieldSpec{
-		WireName: "drm_systems",
-		Kind:     "object",
-		Fields:   Job_Config_Encryptions_DrmSystemsFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"MpegCenc": ubx.FieldSpec{
-		WireName: "mpeg_cenc",
-		Kind:     "object",
-		Fields:   Job_Config_Encryptions_MpegCencFields,
-	},
-	"SampleAes": ubx.FieldSpec{WireName: "sample_aes"},
-	"SecretManagerKeySource": ubx.FieldSpec{
-		WireName: "secret_manager_key_source",
-		Kind:     "object",
-		Fields:   Job_Config_Encryptions_SecretManagerKeySourceFields,
-	},
-}
+		"Aes128": ubx.FieldSpec{WireName: "aes128"},
+		"DrmSystems": ubx.FieldSpec{
+			WireName: "drm_systems",
+			Kind: "object",
+			Fields: Job_Config_Encryptions_DrmSystemsFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"MpegCenc": ubx.FieldSpec{
+			WireName: "mpeg_cenc",
+			Kind: "object",
+			Fields: Job_Config_Encryptions_MpegCencFields,
+		},
+		"SampleAes": ubx.FieldSpec{WireName: "sample_aes"},
+		"SecretManagerKeySource": ubx.FieldSpec{
+			WireName: "secret_manager_key_source",
+			Kind: "object",
+			Fields: Job_Config_Encryptions_SecretManagerKeySourceFields,
+		},
+	}
 
 var Job_Config_Inputs_Attributes_TrackDefinitionsFields = ubx.FieldMap{
-	"DetectLanguages":   ubx.FieldSpec{WireName: "detect_languages"},
-	"DetectedLanguages": ubx.FieldSpec{WireName: "detected_languages"},
-	"InputTrack":        ubx.FieldSpec{WireName: "input_track"},
-	"Languages":         ubx.FieldSpec{WireName: "languages"},
-}
+		"DetectLanguages": ubx.FieldSpec{WireName: "detect_languages"},
+		"DetectedLanguages": ubx.FieldSpec{WireName: "detected_languages"},
+		"InputTrack": ubx.FieldSpec{WireName: "input_track"},
+		"Languages": ubx.FieldSpec{WireName: "languages"},
+	}
 
 var Job_Config_Inputs_AttributesFields = ubx.FieldMap{
-	"TrackDefinitions": ubx.FieldSpec{
-		WireName: "track_definitions",
-		Kind:     "list",
-		Fields:   Job_Config_Inputs_Attributes_TrackDefinitionsFields,
-	},
-}
+		"TrackDefinitions": ubx.FieldSpec{
+			WireName: "track_definitions",
+			Kind: "list",
+			Fields: Job_Config_Inputs_Attributes_TrackDefinitionsFields,
+		},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_AudioFields = ubx.FieldMap{
-	"HighBoost": ubx.FieldSpec{WireName: "high_boost"},
-	"LowBoost":  ubx.FieldSpec{WireName: "low_boost"},
-	"Lufs":      ubx.FieldSpec{WireName: "lufs"},
-}
+		"HighBoost": ubx.FieldSpec{WireName: "high_boost"},
+		"LowBoost": ubx.FieldSpec{WireName: "low_boost"},
+		"Lufs": ubx.FieldSpec{WireName: "lufs"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_ColorFields = ubx.FieldMap{
-	"Brightness": ubx.FieldSpec{WireName: "brightness"},
-	"Contrast":   ubx.FieldSpec{WireName: "contrast"},
-	"Saturation": ubx.FieldSpec{WireName: "saturation"},
-}
+		"Brightness": ubx.FieldSpec{WireName: "brightness"},
+		"Contrast": ubx.FieldSpec{WireName: "contrast"},
+		"Saturation": ubx.FieldSpec{WireName: "saturation"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_CropFields = ubx.FieldMap{
-	"BottomPixels": ubx.FieldSpec{WireName: "bottom_pixels"},
-	"LeftPixels":   ubx.FieldSpec{WireName: "left_pixels"},
-	"RightPixels":  ubx.FieldSpec{WireName: "right_pixels"},
-	"TopPixels":    ubx.FieldSpec{WireName: "top_pixels"},
-}
+		"BottomPixels": ubx.FieldSpec{WireName: "bottom_pixels"},
+		"LeftPixels": ubx.FieldSpec{WireName: "left_pixels"},
+		"RightPixels": ubx.FieldSpec{WireName: "right_pixels"},
+		"TopPixels": ubx.FieldSpec{WireName: "top_pixels"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_DeblockFields = ubx.FieldMap{
-	"Enabled":  ubx.FieldSpec{WireName: "enabled"},
-	"Strength": ubx.FieldSpec{WireName: "strength"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Strength": ubx.FieldSpec{WireName: "strength"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_Deinterlace_BwdifFields = ubx.FieldMap{
-	"DeinterlaceAllFrames": ubx.FieldSpec{WireName: "deinterlace_all_frames"},
-	"Mode":                 ubx.FieldSpec{WireName: "mode"},
-	"Parity":               ubx.FieldSpec{WireName: "parity"},
-}
+		"DeinterlaceAllFrames": ubx.FieldSpec{WireName: "deinterlace_all_frames"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Parity": ubx.FieldSpec{WireName: "parity"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_Deinterlace_YadifFields = ubx.FieldMap{
-	"DeinterlaceAllFrames":      ubx.FieldSpec{WireName: "deinterlace_all_frames"},
-	"DisableSpatialInterlacing": ubx.FieldSpec{WireName: "disable_spatial_interlacing"},
-	"Mode":                      ubx.FieldSpec{WireName: "mode"},
-	"Parity":                    ubx.FieldSpec{WireName: "parity"},
-}
+		"DeinterlaceAllFrames": ubx.FieldSpec{WireName: "deinterlace_all_frames"},
+		"DisableSpatialInterlacing": ubx.FieldSpec{WireName: "disable_spatial_interlacing"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Parity": ubx.FieldSpec{WireName: "parity"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_DeinterlaceFields = ubx.FieldMap{
-	"Bwdif": ubx.FieldSpec{
-		WireName: "bwdif",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_Deinterlace_BwdifFields,
-	},
-	"Yadif": ubx.FieldSpec{
-		WireName: "yadif",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_Deinterlace_YadifFields,
-	},
-}
+		"Bwdif": ubx.FieldSpec{
+			WireName: "bwdif",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_Deinterlace_BwdifFields,
+		},
+		"Yadif": ubx.FieldSpec{
+			WireName: "yadif",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_Deinterlace_YadifFields,
+		},
+	}
 
 var Job_Config_Inputs_PreprocessingConfig_DenoiseFields = ubx.FieldMap{
-	"Strength": ubx.FieldSpec{WireName: "strength"},
-	"Tune":     ubx.FieldSpec{WireName: "tune"},
-}
+		"Strength": ubx.FieldSpec{WireName: "strength"},
+		"Tune": ubx.FieldSpec{WireName: "tune"},
+	}
 
 var Job_Config_Inputs_PreprocessingConfigFields = ubx.FieldMap{
-	"Audio": ubx.FieldSpec{
-		WireName: "audio",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_AudioFields,
-	},
-	"Color": ubx.FieldSpec{
-		WireName: "color",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_ColorFields,
-	},
-	"Crop": ubx.FieldSpec{
-		WireName: "crop",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_CropFields,
-	},
-	"Deblock": ubx.FieldSpec{
-		WireName: "deblock",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_DeblockFields,
-	},
-	"Deinterlace": ubx.FieldSpec{
-		WireName: "deinterlace",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_DeinterlaceFields,
-	},
-	"Denoise": ubx.FieldSpec{
-		WireName: "denoise",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_DenoiseFields,
-	},
-	"Pad": ubx.FieldSpec{
-		WireName: "pad",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfig_CropFields,
-	},
-}
+		"Audio": ubx.FieldSpec{
+			WireName: "audio",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_AudioFields,
+		},
+		"Color": ubx.FieldSpec{
+			WireName: "color",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_ColorFields,
+		},
+		"Crop": ubx.FieldSpec{
+			WireName: "crop",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_CropFields,
+		},
+		"Deblock": ubx.FieldSpec{
+			WireName: "deblock",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_DeblockFields,
+		},
+		"Deinterlace": ubx.FieldSpec{
+			WireName: "deinterlace",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_DeinterlaceFields,
+		},
+		"Denoise": ubx.FieldSpec{
+			WireName: "denoise",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_DenoiseFields,
+		},
+		"Pad": ubx.FieldSpec{
+			WireName: "pad",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfig_CropFields,
+		},
+	}
 
 var Job_Config_InputsFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{
-		WireName: "attributes",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_AttributesFields,
-	},
-	"Key": ubx.FieldSpec{WireName: "key"},
-	"PreprocessingConfig": ubx.FieldSpec{
-		WireName: "preprocessing_config",
-		Kind:     "object",
-		Fields:   Job_Config_Inputs_PreprocessingConfigFields,
-	},
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"Attributes": ubx.FieldSpec{
+			WireName: "attributes",
+			Kind: "object",
+			Fields: Job_Config_Inputs_AttributesFields,
+		},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"PreprocessingConfig": ubx.FieldSpec{
+			WireName: "preprocessing_config",
+			Kind: "object",
+			Fields: Job_Config_Inputs_PreprocessingConfigFields,
+		},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Job_Config_Manifests_DashFields = ubx.FieldMap{
-	"SegmentReferenceScheme": ubx.FieldSpec{WireName: "segment_reference_scheme"},
-}
+		"SegmentReferenceScheme": ubx.FieldSpec{WireName: "segment_reference_scheme"},
+	}
 
 var Job_Config_ManifestsFields = ubx.FieldMap{
-	"Dash": ubx.FieldSpec{
-		WireName: "dash",
-		Kind:     "object",
-		Fields:   Job_Config_Manifests_DashFields,
-	},
-	"FileName":   ubx.FieldSpec{WireName: "file_name"},
-	"MuxStreams": ubx.FieldSpec{WireName: "mux_streams"},
-	"Type":       ubx.FieldSpec{WireName: "type"},
-}
+		"Dash": ubx.FieldSpec{
+			WireName: "dash",
+			Kind: "object",
+			Fields: Job_Config_Manifests_DashFields,
+		},
+		"FileName": ubx.FieldSpec{WireName: "file_name"},
+		"MuxStreams": ubx.FieldSpec{WireName: "mux_streams"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Job_Config_MuxStreams_Fmp4Fields = ubx.FieldMap{
-	"CodecTag": ubx.FieldSpec{WireName: "codec_tag"},
-}
+		"CodecTag": ubx.FieldSpec{WireName: "codec_tag"},
+	}
 
 var Job_Config_MuxStreams_SegmentSettingsFields = ubx.FieldMap{
-	"IndividualSegments": ubx.FieldSpec{WireName: "individual_segments"},
-	"SegmentDuration":    ubx.FieldSpec{WireName: "segment_duration"},
-}
+		"IndividualSegments": ubx.FieldSpec{WireName: "individual_segments"},
+		"SegmentDuration": ubx.FieldSpec{WireName: "segment_duration"},
+	}
 
 var Job_Config_MuxStreamsFields = ubx.FieldMap{
-	"Container":         ubx.FieldSpec{WireName: "container"},
-	"ElementaryStreams": ubx.FieldSpec{WireName: "elementary_streams"},
-	"EncryptionId":      ubx.FieldSpec{WireName: "encryption_id"},
-	"FileName":          ubx.FieldSpec{WireName: "file_name"},
-	"Fmp4": ubx.FieldSpec{
-		WireName: "fmp4",
-		Kind:     "object",
-		Fields:   Job_Config_MuxStreams_Fmp4Fields,
-	},
-	"Key": ubx.FieldSpec{WireName: "key"},
-	"SegmentSettings": ubx.FieldSpec{
-		WireName: "segment_settings",
-		Kind:     "object",
-		Fields:   Job_Config_MuxStreams_SegmentSettingsFields,
-	},
-}
+		"Container": ubx.FieldSpec{WireName: "container"},
+		"ElementaryStreams": ubx.FieldSpec{WireName: "elementary_streams"},
+		"EncryptionId": ubx.FieldSpec{WireName: "encryption_id"},
+		"FileName": ubx.FieldSpec{WireName: "file_name"},
+		"Fmp4": ubx.FieldSpec{
+			WireName: "fmp4",
+			Kind: "object",
+			Fields: Job_Config_MuxStreams_Fmp4Fields,
+		},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"SegmentSettings": ubx.FieldSpec{
+			WireName: "segment_settings",
+			Kind: "object",
+			Fields: Job_Config_MuxStreams_SegmentSettingsFields,
+		},
+	}
 
 var Job_Config_OutputFields = ubx.FieldMap{
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Job_Config_Overlays_Animations_AnimationFade_XyFields = ubx.FieldMap{
-	"X": ubx.FieldSpec{WireName: "x"},
-	"Y": ubx.FieldSpec{WireName: "y"},
-}
+		"X": ubx.FieldSpec{WireName: "x"},
+		"Y": ubx.FieldSpec{WireName: "y"},
+	}
 
 var Job_Config_Overlays_Animations_AnimationFadeFields = ubx.FieldMap{
-	"EndTimeOffset":   ubx.FieldSpec{WireName: "end_time_offset"},
-	"FadeType":        ubx.FieldSpec{WireName: "fade_type"},
-	"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-	"Xy": ubx.FieldSpec{
-		WireName: "xy",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_Animations_AnimationFade_XyFields,
-	},
-}
+		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
+		"FadeType": ubx.FieldSpec{WireName: "fade_type"},
+		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
+		"Xy": ubx.FieldSpec{
+			WireName: "xy",
+			Kind: "object",
+			Fields: Job_Config_Overlays_Animations_AnimationFade_XyFields,
+		},
+	}
 
 var Job_Config_Overlays_Animations_AnimationStaticFields = ubx.FieldMap{
-	"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
-	"Xy": ubx.FieldSpec{
-		WireName: "xy",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_Animations_AnimationFade_XyFields,
-	},
-}
+		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
+		"Xy": ubx.FieldSpec{
+			WireName: "xy",
+			Kind: "object",
+			Fields: Job_Config_Overlays_Animations_AnimationFade_XyFields,
+		},
+	}
 
 var Job_Config_Overlays_AnimationsFields = ubx.FieldMap{
-	"AnimationEnd": ubx.FieldSpec{
-		WireName: "animation_end",
-		Kind:     "object",
-		Fields:   Job_Config_AdBreaksFields,
-	},
-	"AnimationFade": ubx.FieldSpec{
-		WireName: "animation_fade",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_Animations_AnimationFadeFields,
-	},
-	"AnimationStatic": ubx.FieldSpec{
-		WireName: "animation_static",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_Animations_AnimationStaticFields,
-	},
-}
+		"AnimationEnd": ubx.FieldSpec{
+			WireName: "animation_end",
+			Kind: "object",
+			Fields: Job_Config_AdBreaksFields,
+		},
+		"AnimationFade": ubx.FieldSpec{
+			WireName: "animation_fade",
+			Kind: "object",
+			Fields: Job_Config_Overlays_Animations_AnimationFadeFields,
+		},
+		"AnimationStatic": ubx.FieldSpec{
+			WireName: "animation_static",
+			Kind: "object",
+			Fields: Job_Config_Overlays_Animations_AnimationStaticFields,
+		},
+	}
 
 var Job_Config_Overlays_ImageFields = ubx.FieldMap{
-	"Alpha": ubx.FieldSpec{WireName: "alpha"},
-	"Resolution": ubx.FieldSpec{
-		WireName: "resolution",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_Animations_AnimationFade_XyFields,
-	},
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"Alpha": ubx.FieldSpec{WireName: "alpha"},
+		"Resolution": ubx.FieldSpec{
+			WireName: "resolution",
+			Kind: "object",
+			Fields: Job_Config_Overlays_Animations_AnimationFade_XyFields,
+		},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Job_Config_OverlaysFields = ubx.FieldMap{
-	"Animations": ubx.FieldSpec{
-		WireName: "animations",
-		Kind:     "list",
-		Fields:   Job_Config_Overlays_AnimationsFields,
-	},
-	"Image": ubx.FieldSpec{
-		WireName: "image",
-		Kind:     "object",
-		Fields:   Job_Config_Overlays_ImageFields,
-	},
-}
+		"Animations": ubx.FieldSpec{
+			WireName: "animations",
+			Kind: "list",
+			Fields: Job_Config_Overlays_AnimationsFields,
+		},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: Job_Config_Overlays_ImageFields,
+		},
+	}
 
 var Job_Config_PubsubDestinationFields = ubx.FieldMap{
-	"Topic": ubx.FieldSpec{WireName: "topic"},
-}
+		"Topic": ubx.FieldSpec{WireName: "topic"},
+	}
 
 var Job_Config_SpriteSheetsFields = ubx.FieldMap{
-	"ColumnCount":        ubx.FieldSpec{WireName: "column_count"},
-	"EndTimeOffset":      ubx.FieldSpec{WireName: "end_time_offset"},
-	"FilePrefix":         ubx.FieldSpec{WireName: "file_prefix"},
-	"Format":             ubx.FieldSpec{WireName: "format"},
-	"Interval":           ubx.FieldSpec{WireName: "interval"},
-	"Quality":            ubx.FieldSpec{WireName: "quality"},
-	"RowCount":           ubx.FieldSpec{WireName: "row_count"},
-	"SpriteHeightPixels": ubx.FieldSpec{WireName: "sprite_height_pixels"},
-	"SpriteWidthPixels":  ubx.FieldSpec{WireName: "sprite_width_pixels"},
-	"StartTimeOffset":    ubx.FieldSpec{WireName: "start_time_offset"},
-	"TotalCount":         ubx.FieldSpec{WireName: "total_count"},
-}
+		"ColumnCount": ubx.FieldSpec{WireName: "column_count"},
+		"EndTimeOffset": ubx.FieldSpec{WireName: "end_time_offset"},
+		"FilePrefix": ubx.FieldSpec{WireName: "file_prefix"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Interval": ubx.FieldSpec{WireName: "interval"},
+		"Quality": ubx.FieldSpec{WireName: "quality"},
+		"RowCount": ubx.FieldSpec{WireName: "row_count"},
+		"SpriteHeightPixels": ubx.FieldSpec{WireName: "sprite_height_pixels"},
+		"SpriteWidthPixels": ubx.FieldSpec{WireName: "sprite_width_pixels"},
+		"StartTimeOffset": ubx.FieldSpec{WireName: "start_time_offset"},
+		"TotalCount": ubx.FieldSpec{WireName: "total_count"},
+	}
 
 var Job_ConfigFields = ubx.FieldMap{
-	"AdBreaks": ubx.FieldSpec{
-		WireName: "ad_breaks",
-		Kind:     "list",
-		Fields:   Job_Config_AdBreaksFields,
-	},
-	"EditList": ubx.FieldSpec{
-		WireName: "edit_list",
-		Kind:     "list",
-		Fields:   Job_Config_EditListFields,
-	},
-	"ElementaryStreams": ubx.FieldSpec{
-		WireName: "elementary_streams",
-		Kind:     "list",
-		Fields:   Job_Config_ElementaryStreamsFields,
-	},
-	"Encryptions": ubx.FieldSpec{
-		WireName: "encryptions",
-		Kind:     "list",
-		Fields:   Job_Config_EncryptionsFields,
-	},
-	"Inputs": ubx.FieldSpec{
-		WireName: "inputs",
-		Kind:     "list",
-		Fields:   Job_Config_InputsFields,
-	},
-	"Manifests": ubx.FieldSpec{
-		WireName: "manifests",
-		Kind:     "list",
-		Fields:   Job_Config_ManifestsFields,
-	},
-	"MuxStreams": ubx.FieldSpec{
-		WireName: "mux_streams",
-		Kind:     "list",
-		Fields:   Job_Config_MuxStreamsFields,
-	},
-	"Output": ubx.FieldSpec{
-		WireName: "output",
-		Kind:     "object",
-		Fields:   Job_Config_OutputFields,
-	},
-	"Overlays": ubx.FieldSpec{
-		WireName: "overlays",
-		Kind:     "list",
-		Fields:   Job_Config_OverlaysFields,
-	},
-	"PubsubDestination": ubx.FieldSpec{
-		WireName: "pubsub_destination",
-		Kind:     "object",
-		Fields:   Job_Config_PubsubDestinationFields,
-	},
-	"SpriteSheets": ubx.FieldSpec{
-		WireName: "sprite_sheets",
-		Kind:     "list",
-		Fields:   Job_Config_SpriteSheetsFields,
-	},
-}
+		"AdBreaks": ubx.FieldSpec{
+			WireName: "ad_breaks",
+			Kind: "list",
+			Fields: Job_Config_AdBreaksFields,
+		},
+		"EditList": ubx.FieldSpec{
+			WireName: "edit_list",
+			Kind: "list",
+			Fields: Job_Config_EditListFields,
+		},
+		"ElementaryStreams": ubx.FieldSpec{
+			WireName: "elementary_streams",
+			Kind: "list",
+			Fields: Job_Config_ElementaryStreamsFields,
+		},
+		"Encryptions": ubx.FieldSpec{
+			WireName: "encryptions",
+			Kind: "list",
+			Fields: Job_Config_EncryptionsFields,
+		},
+		"Inputs": ubx.FieldSpec{
+			WireName: "inputs",
+			Kind: "list",
+			Fields: Job_Config_InputsFields,
+		},
+		"Manifests": ubx.FieldSpec{
+			WireName: "manifests",
+			Kind: "list",
+			Fields: Job_Config_ManifestsFields,
+		},
+		"MuxStreams": ubx.FieldSpec{
+			WireName: "mux_streams",
+			Kind: "list",
+			Fields: Job_Config_MuxStreamsFields,
+		},
+		"Output": ubx.FieldSpec{
+			WireName: "output",
+			Kind: "object",
+			Fields: Job_Config_OutputFields,
+		},
+		"Overlays": ubx.FieldSpec{
+			WireName: "overlays",
+			Kind: "list",
+			Fields: Job_Config_OverlaysFields,
+		},
+		"PubsubDestination": ubx.FieldSpec{
+			WireName: "pubsub_destination",
+			Kind: "object",
+			Fields: Job_Config_PubsubDestinationFields,
+		},
+		"SpriteSheets": ubx.FieldSpec{
+			WireName: "sprite_sheets",
+			Kind: "list",
+			Fields: Job_Config_SpriteSheetsFields,
+		},
+	}
 
 var Job_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 type JobConfig struct {
 	// The processing priority of a batch job. This field can only be set for batch mode jobs. The default value is 0. This value cannot be negative. Higher values correspond to higher priorities for the job.
@@ -1112,22 +1112,22 @@ var Job = ubx.ResourceBinding{
 		"BatchModePriority": ubx.FieldSpec{WireName: "batch_mode_priority"},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   Job_ConfigFields,
+			Kind: "object",
+			Fields: Job_ConfigFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   Job_ErrorFields,
+			Kind: "object",
+			Fields: Job_ErrorFields,
 		},
-		"FillContentGaps":        ubx.FieldSpec{WireName: "fill_content_gaps"},
-		"InputUri":               ubx.FieldSpec{WireName: "input_uri"},
-		"Labels":                 ubx.FieldSpec{WireName: "labels"},
-		"Mode":                   ubx.FieldSpec{WireName: "mode"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
-		"Optimization":           ubx.FieldSpec{WireName: "optimization"},
-		"OutputUri":              ubx.FieldSpec{WireName: "output_uri"},
-		"TemplateId":             ubx.FieldSpec{WireName: "template_id"},
+		"FillContentGaps": ubx.FieldSpec{WireName: "fill_content_gaps"},
+		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Optimization": ubx.FieldSpec{WireName: "optimization"},
+		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+		"TemplateId": ubx.FieldSpec{WireName: "template_id"},
 		"TtlAfterCompletionDays": ubx.FieldSpec{WireName: "ttl_after_completion_days"},
 	},
 }

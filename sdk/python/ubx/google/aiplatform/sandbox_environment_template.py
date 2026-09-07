@@ -52,8 +52,6 @@ class SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs:
 
 @dataclasses.dataclass
 class SandboxEnvironmentTemplate_EgressControlConfig:
-    # Optional. The customer VPC network that sandbox egress is routed into.
-    customer_vpc_network: Any = None
     # Optional. DNS peering configurations that allow sandbox egress to resolve customer-internal domains via the customer VPC.
     dns_peering_configs: Any = None
     # Optional. Whether to allow internet access.
@@ -135,7 +133,6 @@ _SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields = {
 }
 
 _SandboxEnvironmentTemplate_EgressControlConfigFields = {
-    "customer_vpc_network": ubx.FieldSpec(wire_name="customer_vpc_network"),
     "dns_peering_configs": ubx.FieldSpec(
         wire_name="dns_peering_configs",
         kind="list",

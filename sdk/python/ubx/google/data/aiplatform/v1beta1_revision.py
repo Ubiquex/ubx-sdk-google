@@ -18,6 +18,8 @@ class V1beta1RevisionConfig:
 
 @dataclasses.dataclass
 class V1beta1RevisionAttrs:
+    # Output only. Represents the context of the Memory Revision. The context may include context from both the historical revisions and the extracted content.
+    context: Any = None
     # Output only. Represents the timestamp when this Memory Revision was created.
     create_time: Any = None
     # Output only. Represents the timestamp of when this resource is considered expired.

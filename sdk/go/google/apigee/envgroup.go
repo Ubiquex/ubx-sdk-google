@@ -27,6 +27,6 @@ var Envgroup = ubx.ResourceBinding{
 	WireType: "google_apigee_envgroup",
 	Fields: ubx.FieldMap{
 		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

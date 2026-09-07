@@ -11,9 +11,9 @@ type Federation_BackendMetastores struct {
 }
 
 var Federation_BackendMetastoresFields = ubx.FieldMap{
-	"MetastoreType": ubx.FieldSpec{WireName: "metastore_type"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-}
+		"MetastoreType": ubx.FieldSpec{WireName: "metastore_type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 type FederationConfig struct {
 	// A map from BackendMetastore rank to BackendMetastores from which the federation service serves metadata at query time. The map key represents the order in which BackendMetastores should be evaluated to resolve database names at query time and should be greater than or equal to zero. A BackendMetastore with a lower number will be evaluated before a BackendMetastore with a higher number.
@@ -58,12 +58,12 @@ var Federation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackendMetastores": ubx.FieldSpec{
 			WireName: "backend_metastores",
-			Kind:     "map",
-			Fields:   Federation_BackendMetastoresFields,
+			Kind: "map",
+			Fields: Federation_BackendMetastoresFields,
 		},
-		"Labels":  ubx.FieldSpec{WireName: "labels"},
-		"Name":    ubx.FieldSpec{WireName: "name"},
-		"Tags":    ubx.FieldSpec{WireName: "tags"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

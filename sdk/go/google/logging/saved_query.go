@@ -119,126 +119,126 @@ type SavedQuery_OpsAnalyticsQuery struct {
 }
 
 var SavedQuery_LoggingQuery_SummaryFieldsFields = ubx.FieldMap{
-	"Field": ubx.FieldSpec{WireName: "field"},
-}
+		"Field": ubx.FieldSpec{WireName: "field"},
+	}
 
 var SavedQuery_LoggingQueryFields = ubx.FieldMap{
-	"Filter":            ubx.FieldSpec{WireName: "filter"},
-	"SummaryFieldEnd":   ubx.FieldSpec{WireName: "summary_field_end"},
-	"SummaryFieldStart": ubx.FieldSpec{WireName: "summary_field_start"},
-	"SummaryFields": ubx.FieldSpec{
-		WireName: "summary_fields",
-		Kind:     "list",
-		Fields:   SavedQuery_LoggingQuery_SummaryFieldsFields,
-	},
-}
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"SummaryFieldEnd": ubx.FieldSpec{WireName: "summary_field_end"},
+		"SummaryFieldStart": ubx.FieldSpec{WireName: "summary_field_start"},
+		"SummaryFields": ubx.FieldSpec{
+			WireName: "summary_fields",
+			Kind: "list",
+			Fields: SavedQuery_LoggingQuery_SummaryFieldsFields,
+		},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields = ubx.FieldMap{
-	"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	"Type":       ubx.FieldSpec{WireName: "type"},
-}
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields = ubx.FieldMap{
-	"UnderlyingFieldSources": ubx.FieldSpec{WireName: "underlying_field_sources"},
-	"VirtualFieldType":       ubx.FieldSpec{WireName: "virtual_field_type"},
-}
+		"UnderlyingFieldSources": ubx.FieldSpec{WireName: "underlying_field_sources"},
+		"VirtualFieldType": ubx.FieldSpec{WireName: "virtual_field_type"},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields = ubx.FieldMap{
-	"Alias":           ubx.FieldSpec{WireName: "alias"},
-	"Cast":            ubx.FieldSpec{WireName: "cast"},
-	"Field":           ubx.FieldSpec{WireName: "field"},
-	"Operation":       ubx.FieldSpec{WireName: "operation"},
-	"RegexExtraction": ubx.FieldSpec{WireName: "regex_extraction"},
-	"SqlAggregationFunction": ubx.FieldSpec{
-		WireName: "sql_aggregation_function",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields,
-	},
-	"TruncationGranularity": ubx.FieldSpec{WireName: "truncation_granularity"},
-	"VirtualField": ubx.FieldSpec{
-		WireName: "virtual_field",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields,
-	},
-}
+		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Cast": ubx.FieldSpec{WireName: "cast"},
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"Operation": ubx.FieldSpec{WireName: "operation"},
+		"RegexExtraction": ubx.FieldSpec{WireName: "regex_extraction"},
+		"SqlAggregationFunction": ubx.FieldSpec{
+			WireName: "sql_aggregation_function",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields,
+		},
+		"TruncationGranularity": ubx.FieldSpec{WireName: "truncation_granularity"},
+		"VirtualField": ubx.FieldSpec{
+			WireName: "virtual_field",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields,
+		},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields = ubx.FieldMap{
-	"AliasRef":   ubx.FieldSpec{WireName: "alias_ref"},
-	"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-	"Field":      ubx.FieldSpec{WireName: "field"},
-	"IsJson":     ubx.FieldSpec{WireName: "is_json"},
-	"ParentPath": ubx.FieldSpec{WireName: "parent_path"},
-	"ProjectedField": ubx.FieldSpec{
-		WireName: "projected_field",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields,
-	},
-}
+		"AliasRef": ubx.FieldSpec{WireName: "alias_ref"},
+		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"IsJson": ubx.FieldSpec{WireName: "is_json"},
+		"ParentPath": ubx.FieldSpec{WireName: "parent_path"},
+		"ProjectedField": ubx.FieldSpec{
+			WireName: "projected_field",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields,
+		},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields = ubx.FieldMap{
-	"Comparator": ubx.FieldSpec{WireName: "comparator"},
-	"FieldSource": ubx.FieldSpec{
-		WireName: "field_source",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-	},
-	"FieldSourceValue": ubx.FieldSpec{
-		WireName: "field_source_value",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-	},
-	"IsNegation":   ubx.FieldSpec{WireName: "is_negation"},
-	"LiteralValue": ubx.FieldSpec{WireName: "literal_value"},
-}
+		"Comparator": ubx.FieldSpec{WireName: "comparator"},
+		"FieldSource": ubx.FieldSpec{
+			WireName: "field_source",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+		},
+		"FieldSourceValue": ubx.FieldSpec{
+			WireName: "field_source_value",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+		},
+		"IsNegation": ubx.FieldSpec{WireName: "is_negation"},
+		"LiteralValue": ubx.FieldSpec{WireName: "literal_value"},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields = ubx.FieldMap{
-	"ChildPredicates": ubx.FieldSpec{WireName: "child_predicates"},
-	"LeafPredicate": ubx.FieldSpec{
-		WireName: "leaf_predicate",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields,
-	},
-	"OperatorType": ubx.FieldSpec{WireName: "operator_type"},
-}
+		"ChildPredicates": ubx.FieldSpec{WireName: "child_predicates"},
+		"LeafPredicate": ubx.FieldSpec{
+			WireName: "leaf_predicate",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields,
+		},
+		"OperatorType": ubx.FieldSpec{WireName: "operator_type"},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields = ubx.FieldMap{
-	"FieldSource": ubx.FieldSpec{
-		WireName: "field_source",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-	},
-	"SortOrderDirection": ubx.FieldSpec{WireName: "sort_order_direction"},
-}
+		"FieldSource": ubx.FieldSpec{
+			WireName: "field_source",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+		},
+		"SortOrderDirection": ubx.FieldSpec{WireName: "sort_order_direction"},
+	}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilderFields = ubx.FieldMap{
-	"FieldSources": ubx.FieldSpec{
-		WireName: "field_sources",
-		Kind:     "list",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-	},
-	"Filter": ubx.FieldSpec{
-		WireName: "filter",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields,
-	},
-	"Limit": ubx.FieldSpec{WireName: "limit"},
-	"OrderBys": ubx.FieldSpec{
-		WireName: "order_bys",
-		Kind:     "list",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields,
-	},
-	"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-	"SearchTerm":    ubx.FieldSpec{WireName: "search_term"},
-}
+		"FieldSources": ubx.FieldSpec{
+			WireName: "field_sources",
+			Kind: "list",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+		},
+		"Filter": ubx.FieldSpec{
+			WireName: "filter",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields,
+		},
+		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"OrderBys": ubx.FieldSpec{
+			WireName: "order_bys",
+			Kind: "list",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields,
+		},
+		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
+		"SearchTerm": ubx.FieldSpec{WireName: "search_term"},
+	}
 
 var SavedQuery_OpsAnalyticsQueryFields = ubx.FieldMap{
-	"QueryBuilder": ubx.FieldSpec{
-		WireName: "query_builder",
-		Kind:     "object",
-		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilderFields,
-	},
-	"SqlQueryText": ubx.FieldSpec{WireName: "sql_query_text"},
-}
+		"QueryBuilder": ubx.FieldSpec{
+			WireName: "query_builder",
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilderFields,
+		},
+		"SqlQueryText": ubx.FieldSpec{WireName: "sql_query_text"},
+	}
 
 type SavedQueryConfig struct {
 	// Optional. A human readable description of the saved query.
@@ -279,13 +279,13 @@ var SavedQuery = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LoggingQuery": ubx.FieldSpec{
 			WireName: "logging_query",
-			Kind:     "object",
-			Fields:   SavedQuery_LoggingQueryFields,
+			Kind: "object",
+			Fields: SavedQuery_LoggingQueryFields,
 		},
 		"OpsAnalyticsQuery": ubx.FieldSpec{
 			WireName: "ops_analytics_query",
-			Kind:     "object",
-			Fields:   SavedQuery_OpsAnalyticsQueryFields,
+			Kind: "object",
+			Fields: SavedQuery_OpsAnalyticsQueryFields,
 		},
 		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 	},

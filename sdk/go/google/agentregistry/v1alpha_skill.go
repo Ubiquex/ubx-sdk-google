@@ -50,45 +50,45 @@ type V1alphaSkill_InitialRevision struct {
 }
 
 var V1alphaSkill_FrontmatterFields = ubx.FieldMap{
-	"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"License":       ubx.FieldSpec{WireName: "license"},
-	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-}
+		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"License": ubx.FieldSpec{WireName: "license"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var V1alphaSkill_InitialRevision_ArchiveUploadSourceFields = ubx.FieldMap{
-	"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
-}
+		"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
+	}
 
 var V1alphaSkill_InitialRevision_GcsSourceFields = ubx.FieldMap{
-	"Generation": ubx.FieldSpec{WireName: "generation"},
-	"Uri":        ubx.FieldSpec{WireName: "uri"},
-}
+		"Generation": ubx.FieldSpec{WireName: "generation"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var V1alphaSkill_InitialRevisionFields = ubx.FieldMap{
-	"ArchiveUploadSource": ubx.FieldSpec{
-		WireName: "archive_upload_source",
-		Kind:     "object",
-		Fields:   V1alphaSkill_InitialRevision_ArchiveUploadSourceFields,
-	},
-	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-	"Frontmatter": ubx.FieldSpec{
-		WireName: "frontmatter",
-		Kind:     "object",
-		Fields:   V1alphaSkill_FrontmatterFields,
-	},
-	"GcsSource": ubx.FieldSpec{
-		WireName: "gcs_source",
-		Kind:     "object",
-		Fields:   V1alphaSkill_InitialRevision_GcsSourceFields,
-	},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
-	"SizeBytes":  ubx.FieldSpec{WireName: "size_bytes"},
-	"State":      ubx.FieldSpec{WireName: "state"},
-	"Uid":        ubx.FieldSpec{WireName: "uid"},
-}
+		"ArchiveUploadSource": ubx.FieldSpec{
+			WireName: "archive_upload_source",
+			Kind: "object",
+			Fields: V1alphaSkill_InitialRevision_ArchiveUploadSourceFields,
+		},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Frontmatter": ubx.FieldSpec{
+			WireName: "frontmatter",
+			Kind: "object",
+			Fields: V1alphaSkill_FrontmatterFields,
+		},
+		"GcsSource": ubx.FieldSpec{
+			WireName: "gcs_source",
+			Kind: "object",
+			Fields: V1alphaSkill_InitialRevision_GcsSourceFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
+		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Uid": ubx.FieldSpec{WireName: "uid"},
+	}
 
 type V1alphaSkillConfig struct {
 	// Optional. The full resource name of the revision currently served by default (floating track). Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}`
@@ -146,21 +146,21 @@ var V1alphaSkill = ubx.ResourceBinding{
 	WireType: "google_agentregistry_v1alpha_skill",
 	Fields: ubx.FieldMap{
 		"DefaultRevision": ubx.FieldSpec{WireName: "default_revision"},
-		"Description":     ubx.FieldSpec{WireName: "description"},
-		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Frontmatter": ubx.FieldSpec{
 			WireName: "frontmatter",
-			Kind:     "object",
-			Fields:   V1alphaSkill_FrontmatterFields,
+			Kind: "object",
+			Fields: V1alphaSkill_FrontmatterFields,
 		},
 		"InitialRevision": ubx.FieldSpec{
 			WireName: "initial_revision",
-			Kind:     "object",
-			Fields:   V1alphaSkill_InitialRevisionFields,
+			Kind: "object",
+			Fields: V1alphaSkill_InitialRevisionFields,
 		},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Publisher":   ubx.FieldSpec{WireName: "publisher"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Publisher": ubx.FieldSpec{WireName: "publisher"},
 		"TargetState": ubx.FieldSpec{WireName: "target_state"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

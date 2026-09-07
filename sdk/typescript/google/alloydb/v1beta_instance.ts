@@ -97,11 +97,19 @@ export interface V1betaInstance_ObservabilityConfig {
   trackWaitEvents?: boolean | Computed<boolean>;
 }
 
+export interface V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos {
+  fullyQualifiedDomainName?: string | Computed<string>;
+  state?: string | Computed<string>;
+}
+
 export interface V1betaInstance_PscInstanceConfig_PscAutoConnections {
   consumerNetwork?: string | Computed<string>;
   consumerNetworkStatus?: string | Computed<string>;
   consumerProject?: string | Computed<string>;
+  dnsAutomationInfos?: V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos[] | Computed<V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos[]>;
   ipAddress?: string | Computed<string>;
+  serviceConnectionPolicy?: string | Computed<string>;
+  serviceConnectionPolicyCreationState?: string | Computed<string>;
   status?: string | Computed<string>;
 }
 
@@ -259,11 +267,23 @@ const V1betaInstance_ObservabilityConfigFields: FieldMap = {
   trackWaitEvents: "track_wait_events",
 };
 
+const V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields: FieldMap = {
+  fullyQualifiedDomainName: "fully_qualified_domain_name",
+  state: "state",
+};
+
 const V1betaInstance_PscInstanceConfig_PscAutoConnectionsFields: FieldMap = {
   consumerNetwork: "consumer_network",
   consumerNetworkStatus: "consumer_network_status",
   consumerProject: "consumer_project",
+  dnsAutomationInfos: {
+    wireName: "dns_automation_infos",
+    kind: "list",
+    fields: V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
+  },
   ipAddress: "ip_address",
+  serviceConnectionPolicy: "service_connection_policy",
+  serviceConnectionPolicyCreationState: "service_connection_policy_creation_state",
   status: "status",
 };
 

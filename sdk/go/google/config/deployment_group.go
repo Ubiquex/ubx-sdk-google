@@ -22,16 +22,16 @@ type DeploymentGroup_ProvisioningError struct {
 }
 
 var DeploymentGroup_DeploymentUnitsFields = ubx.FieldMap{
-	"Dependencies": ubx.FieldSpec{WireName: "dependencies"},
-	"Deployment":   ubx.FieldSpec{WireName: "deployment"},
-	"Id":           ubx.FieldSpec{WireName: "id"},
-}
+		"Dependencies": ubx.FieldSpec{WireName: "dependencies"},
+		"Deployment": ubx.FieldSpec{WireName: "deployment"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var DeploymentGroup_ProvisioningErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 type DeploymentGroupConfig struct {
 	// Optional. Arbitrary key-value metadata storage e.g. to help client tools identify deployment group during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
@@ -77,15 +77,15 @@ var DeploymentGroup = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DeploymentUnits": ubx.FieldSpec{
 			WireName: "deployment_units",
-			Kind:     "list",
-			Fields:   DeploymentGroup_DeploymentUnitsFields,
+			Kind: "list",
+			Fields: DeploymentGroup_DeploymentUnitsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProvisioningError": ubx.FieldSpec{
 			WireName: "provisioning_error",
-			Kind:     "object",
-			Fields:   DeploymentGroup_ProvisioningErrorFields,
+			Kind: "object",
+			Fields: DeploymentGroup_ProvisioningErrorFields,
 		},
 	},
 }

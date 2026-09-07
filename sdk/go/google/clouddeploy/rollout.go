@@ -160,41 +160,41 @@ type Rollout_Phases struct {
 }
 
 var Rollout_Metadata_AutomationFields = ubx.FieldMap{
-	"AdvanceAutomationRuns": ubx.FieldSpec{WireName: "advance_automation_runs"},
-	"PromoteAutomationRun":  ubx.FieldSpec{WireName: "promote_automation_run"},
-	"RepairAutomationRuns":  ubx.FieldSpec{WireName: "repair_automation_runs"},
-}
+		"AdvanceAutomationRuns": ubx.FieldSpec{WireName: "advance_automation_runs"},
+		"PromoteAutomationRun": ubx.FieldSpec{WireName: "promote_automation_run"},
+		"RepairAutomationRuns": ubx.FieldSpec{WireName: "repair_automation_runs"},
+	}
 
 var Rollout_Metadata_CloudRunFields = ubx.FieldMap{
-	"Job":              ubx.FieldSpec{WireName: "job"},
-	"PreviousRevision": ubx.FieldSpec{WireName: "previous_revision"},
-	"Revision":         ubx.FieldSpec{WireName: "revision"},
-	"Service":          ubx.FieldSpec{WireName: "service"},
-	"ServiceUrls":      ubx.FieldSpec{WireName: "service_urls"},
-	"WorkerPool":       ubx.FieldSpec{WireName: "worker_pool"},
-}
+		"Job": ubx.FieldSpec{WireName: "job"},
+		"PreviousRevision": ubx.FieldSpec{WireName: "previous_revision"},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+		"Service": ubx.FieldSpec{WireName: "service"},
+		"ServiceUrls": ubx.FieldSpec{WireName: "service_urls"},
+		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+	}
 
 var Rollout_Metadata_CustomFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Rollout_MetadataFields = ubx.FieldMap{
-	"Automation": ubx.FieldSpec{
-		WireName: "automation",
-		Kind:     "object",
-		Fields:   Rollout_Metadata_AutomationFields,
-	},
-	"CloudRun": ubx.FieldSpec{
-		WireName: "cloud_run",
-		Kind:     "object",
-		Fields:   Rollout_Metadata_CloudRunFields,
-	},
-	"Custom": ubx.FieldSpec{
-		WireName: "custom",
-		Kind:     "object",
-		Fields:   Rollout_Metadata_CustomFields,
-	},
-}
+		"Automation": ubx.FieldSpec{
+			WireName: "automation",
+			Kind: "object",
+			Fields: Rollout_Metadata_AutomationFields,
+		},
+		"CloudRun": ubx.FieldSpec{
+			WireName: "cloud_run",
+			Kind: "object",
+			Fields: Rollout_Metadata_CloudRunFields,
+		},
+		"Custom": ubx.FieldSpec{
+			WireName: "custom",
+			Kind: "object",
+			Fields: Rollout_Metadata_CustomFields,
+		},
+	}
 
 type RolloutConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
@@ -267,14 +267,14 @@ var Rollout = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind:     "object",
-			Fields:   Rollout_MetadataFields,
+			Kind: "object",
+			Fields: Rollout_MetadataFields,
 		},
-		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TargetId": ubx.FieldSpec{WireName: "target_id"},
 	},
 }

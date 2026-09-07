@@ -36,9 +36,9 @@ type BigQueryExportAttrs struct {
 var BigQueryExport = ubx.ResourceBinding{
 	WireType: "google_securitycenter_big_query_export",
 	Fields: ubx.FieldMap{
-		"Dataset":     ubx.FieldSpec{WireName: "dataset"},
+		"Dataset": ubx.FieldSpec{WireName: "dataset"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filter":      ubx.FieldSpec{WireName: "filter"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

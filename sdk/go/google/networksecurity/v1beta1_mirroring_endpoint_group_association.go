@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MirroringEndpointGroupAssociation_Locations struct {
 	Location any
-	State    any
+	State any
 }
 
 type V1beta1MirroringEndpointGroupAssociationConfig struct {
@@ -47,9 +47,9 @@ type V1beta1MirroringEndpointGroupAssociationAttrs struct {
 var V1beta1MirroringEndpointGroupAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_mirroring_endpoint_group_association",
 	Fields: ubx.FieldMap{
-		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
-		"Network":                ubx.FieldSpec{WireName: "network"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 	},
 }

@@ -17,22 +17,32 @@ class Conversation_Messages_Chunks_Blob:
     mime_type: Any = None
 
 @dataclasses.dataclass
+class Conversation_Messages_Chunks_Image:
+    alt_text: Any = None
+    data: Any = None
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class Conversation_Messages_Chunks_ToolCall_ToolsetTool:
     tool_id: Any = None
     toolset: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Chunks_ToolCall:
+    agent_name: Any = None
     args: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     tool: Any = None
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class Conversation_Messages_Chunks_ToolResponse:
+    agent_name: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     response: Any = None
     tool: Any = None
     toolset_tool: Any = None
@@ -68,15 +78,12 @@ class Conversation_Turns_RootSpan:
 @dataclasses.dataclass
 class Conversation_Turns:
     messages: Any = None
-    resolved_developer_instruction: Any = None
     root_span: Any = None
-    template_attributes: Any = None
     user_intended_text: Any = None
 
 @dataclasses.dataclass
 class ConversationConfig:
     name: Any = None
-    view: Any = None
 
 @dataclasses.dataclass
 class ConversationAttrs:
@@ -104,12 +111,10 @@ class ConversationAttrs:
     turn_count: Any = None
     # Required. The turns in the conversation.
     turns: Any = None
-    view: Any = None
 
 Conversation = ubx.DataSourceBinding(
     wire_type="google_ces_conversation",
     fields={
         "name": ubx.FieldSpec(wire_name="name"),
-        "view": ubx.FieldSpec(wire_name="view"),
     },
 )

@@ -9,22 +9,22 @@ type BetaVpnGateway_Params struct {
 }
 
 type BetaVpnGateway_VpnInterfaces struct {
-	Id                     any
+	Id any
 	InterconnectAttachment any
-	IpAddress              any
-	Ipv6Address            any
+	IpAddress any
+	Ipv6Address any
 }
 
 var BetaVpnGateway_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var BetaVpnGateway_VpnInterfacesFields = ubx.FieldMap{
-	"Id":                     ubx.FieldSpec{WireName: "id"},
-	"InterconnectAttachment": ubx.FieldSpec{WireName: "interconnect_attachment"},
-	"IpAddress":              ubx.FieldSpec{WireName: "ip_address"},
-	"Ipv6Address":            ubx.FieldSpec{WireName: "ipv6_address"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"InterconnectAttachment": ubx.FieldSpec{WireName: "interconnect_attachment"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+	}
 
 type BetaVpnGatewayConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -39,7 +39,7 @@ type BetaVpnGatewayConfig struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params  any
+	Params any
 	// The stack type for this VPN gateway to identify the IP protocols that are enabled. Possible values are: IPV4_ONLY,IPV4_IPV6, IPV6_ONLY. If not specified,IPV4_ONLY is used if the gateway IP version isIPV4, or IPV4_IPV6 if the gateway IP version isIPV6.
 	StackType any
 	// The list of VPN interfaces associated with this VPN gateway.
@@ -65,7 +65,7 @@ type BetaVpnGatewayAttrs struct {
 	Name any
 	// URL of the network to which this VPN gateway is attached. Provided by the client when the VPN gateway is created.
 	Network any
-	Params  any
+	Params any
 	// Output only. [Output Only] URL of the region where the VPN gateway resides.
 	Region any
 	// Output only. [Output Only] Server-defined URL for the resource.
@@ -79,22 +79,22 @@ type BetaVpnGatewayAttrs struct {
 var BetaVpnGateway = ubx.ResourceBinding{
 	WireType: "google_compute_beta_vpn_gateway",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"GatewayIpVersion": ubx.FieldSpec{WireName: "gateway_ip_version"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Network":          ubx.FieldSpec{WireName: "network"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   BetaVpnGateway_ParamsFields,
+			Kind: "object",
+			Fields: BetaVpnGateway_ParamsFields,
 		},
 		"StackType": ubx.FieldSpec{WireName: "stack_type"},
 		"VpnInterfaces": ubx.FieldSpec{
 			WireName: "vpn_interfaces",
-			Kind:     "list",
-			Fields:   BetaVpnGateway_VpnInterfacesFields,
+			Kind: "list",
+			Fields: BetaVpnGateway_VpnInterfacesFields,
 		},
 	},
 }

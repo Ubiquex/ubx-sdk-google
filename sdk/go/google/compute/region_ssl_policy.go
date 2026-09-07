@@ -70,12 +70,12 @@ type RegionSslPolicyAttrs struct {
 var RegionSslPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_region_ssl_policy",
 	Fields: ubx.FieldMap{
-		"CustomFeatures":         ubx.FieldSpec{WireName: "custom_features"},
-		"Description":            ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
-		"MinTlsVersion":          ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PostQuantumKeyExchange": ubx.FieldSpec{WireName: "post_quantum_key_exchange"},
-		"Profile":                ubx.FieldSpec{WireName: "profile"},
+		"Profile": ubx.FieldSpec{WireName: "profile"},
 	},
 }

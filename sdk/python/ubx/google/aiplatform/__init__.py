@@ -59,6 +59,7 @@ from .training_pipeline import TrainingPipeline, TrainingPipelineConfig
 from .trial import Trial, TrialConfig
 from .tuning_job import TuningJob, TuningJobConfig
 from .v1beta1_a2a_task import V1beta1A2aTask, V1beta1A2aTaskConfig
+from .v1beta1_a2a_task_record import V1beta1A2aTaskRecord, V1beta1A2aTaskRecordConfig
 from .v1beta1_agent import V1beta1Agent, V1beta1AgentConfig
 from .v1beta1_agent_anomaly_detection_scope import V1beta1AgentAnomalyDetectionScope, V1beta1AgentAnomalyDetectionScopeConfig
 from .v1beta1_artifact import V1beta1Artifact, V1beta1ArtifactConfig
@@ -92,6 +93,7 @@ from .v1beta1_feedback_entry import V1beta1FeedbackEntry, V1beta1FeedbackEntryCo
 from .v1beta1_hyperparameter_tuning_job import V1beta1HyperparameterTuningJob, V1beta1HyperparameterTuningJobConfig
 from .v1beta1_index import V1beta1Index, V1beta1IndexConfig
 from .v1beta1_index_endpoint import V1beta1IndexEndpoint, V1beta1IndexEndpointConfig
+from .v1beta1_interactions_http import V1beta1InteractionsHttp, V1beta1InteractionsHttpConfig
 from .v1beta1_memory import V1beta1Memory, V1beta1MemoryConfig
 from .v1beta1_metadata_schema import V1beta1MetadataSchema, V1beta1MetadataSchemaConfig
 from .v1beta1_metadata_store import V1beta1MetadataStore, V1beta1MetadataStoreConfig

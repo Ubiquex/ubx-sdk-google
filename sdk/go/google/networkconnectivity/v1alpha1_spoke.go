@@ -4,16 +4,16 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1Spoke_LinkedRouterApplianceInstances struct {
-	IpAddress        any
+	IpAddress any
 	NetworkInterface any
-	VirtualMachine   any
+	VirtualMachine any
 }
 
 var V1alpha1Spoke_LinkedRouterApplianceInstancesFields = ubx.FieldMap{
-	"IpAddress":        ubx.FieldSpec{WireName: "ip_address"},
-	"NetworkInterface": ubx.FieldSpec{WireName: "network_interface"},
-	"VirtualMachine":   ubx.FieldSpec{WireName: "virtual_machine"},
-}
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"NetworkInterface": ubx.FieldSpec{WireName: "network_interface"},
+		"VirtualMachine": ubx.FieldSpec{WireName: "virtual_machine"},
+	}
 
 type V1alpha1SpokeConfig struct {
 	// The time when the Spoke was created.
@@ -64,18 +64,18 @@ type V1alpha1SpokeAttrs struct {
 var V1alpha1Spoke = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_v1alpha1_spoke",
 	Fields: ubx.FieldMap{
-		"CreateTime":                    ubx.FieldSpec{WireName: "create_time"},
-		"Description":                   ubx.FieldSpec{WireName: "description"},
-		"Hub":                           ubx.FieldSpec{WireName: "hub"},
-		"Labels":                        ubx.FieldSpec{WireName: "labels"},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Hub": ubx.FieldSpec{WireName: "hub"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LinkedInterconnectAttachments": ubx.FieldSpec{WireName: "linked_interconnect_attachments"},
 		"LinkedRouterApplianceInstances": ubx.FieldSpec{
 			WireName: "linked_router_appliance_instances",
-			Kind:     "list",
-			Fields:   V1alpha1Spoke_LinkedRouterApplianceInstancesFields,
+			Kind: "list",
+			Fields: V1alpha1Spoke_LinkedRouterApplianceInstancesFields,
 		},
 		"LinkedVpnTunnels": ubx.FieldSpec{WireName: "linked_vpn_tunnels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"UpdateTime":       ubx.FieldSpec{WireName: "update_time"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

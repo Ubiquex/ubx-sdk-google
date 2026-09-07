@@ -5,19 +5,19 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaNodeTemplate_Accelerators struct {
 	AcceleratorCount any
-	AcceleratorType  any
+	AcceleratorType any
 }
 
 type AlphaNodeTemplate_Disks struct {
-	DiskCount  any
+	DiskCount any
 	DiskSizeGb any
-	DiskType   any
+	DiskType any
 }
 
 type AlphaNodeTemplate_NodeTypeFlexibility struct {
-	Cpus     any
+	Cpus any
 	LocalSsd any
-	Memory   any
+	Memory any
 }
 
 type AlphaNodeTemplate_ServerBinding struct {
@@ -25,25 +25,25 @@ type AlphaNodeTemplate_ServerBinding struct {
 }
 
 var AlphaNodeTemplate_AcceleratorsFields = ubx.FieldMap{
-	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
-}
+		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+	}
 
 var AlphaNodeTemplate_DisksFields = ubx.FieldMap{
-	"DiskCount":  ubx.FieldSpec{WireName: "disk_count"},
-	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
-}
+		"DiskCount": ubx.FieldSpec{WireName: "disk_count"},
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+	}
 
 var AlphaNodeTemplate_NodeTypeFlexibilityFields = ubx.FieldMap{
-	"Cpus":     ubx.FieldSpec{WireName: "cpus"},
-	"LocalSsd": ubx.FieldSpec{WireName: "local_ssd"},
-	"Memory":   ubx.FieldSpec{WireName: "memory"},
-}
+		"Cpus": ubx.FieldSpec{WireName: "cpus"},
+		"LocalSsd": ubx.FieldSpec{WireName: "local_ssd"},
+		"Memory": ubx.FieldSpec{WireName: "memory"},
+	}
 
 var AlphaNodeTemplate_ServerBindingFields = ubx.FieldMap{
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type AlphaNodeTemplateConfig struct {
 	// The accelerator (e.g. GPU) type and count nodes created from this template provision. (AI-inferred)
@@ -108,28 +108,28 @@ var AlphaNodeTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Accelerators": ubx.FieldSpec{
 			WireName: "accelerators",
-			Kind:     "list",
-			Fields:   AlphaNodeTemplate_AcceleratorsFields,
+			Kind: "list",
+			Fields: AlphaNodeTemplate_AcceleratorsFields,
 		},
 		"CpuOvercommitType": ubx.FieldSpec{WireName: "cpu_overcommit_type"},
-		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"Disks": ubx.FieldSpec{
 			WireName: "disks",
-			Kind:     "list",
-			Fields:   AlphaNodeTemplate_DisksFields,
+			Kind: "list",
+			Fields: AlphaNodeTemplate_DisksFields,
 		},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodeAffinityLabels": ubx.FieldSpec{WireName: "node_affinity_labels"},
-		"NodeType":           ubx.FieldSpec{WireName: "node_type"},
+		"NodeType": ubx.FieldSpec{WireName: "node_type"},
 		"NodeTypeFlexibility": ubx.FieldSpec{
 			WireName: "node_type_flexibility",
-			Kind:     "object",
-			Fields:   AlphaNodeTemplate_NodeTypeFlexibilityFields,
+			Kind: "object",
+			Fields: AlphaNodeTemplate_NodeTypeFlexibilityFields,
 		},
 		"ServerBinding": ubx.FieldSpec{
 			WireName: "server_binding",
-			Kind:     "object",
-			Fields:   AlphaNodeTemplate_ServerBindingFields,
+			Kind: "object",
+			Fields: AlphaNodeTemplate_ServerBindingFields,
 		},
 	},
 }

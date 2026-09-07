@@ -22,16 +22,16 @@ type V1beta1InboundSamlSsoProfile_SpConfig struct {
 }
 
 var V1beta1InboundSamlSsoProfile_IdpConfigFields = ubx.FieldMap{
-	"ChangePasswordUri":      ubx.FieldSpec{WireName: "change_password_uri"},
-	"EntityId":               ubx.FieldSpec{WireName: "entity_id"},
-	"LogoutRedirectUri":      ubx.FieldSpec{WireName: "logout_redirect_uri"},
-	"SingleSignOnServiceUri": ubx.FieldSpec{WireName: "single_sign_on_service_uri"},
-}
+		"ChangePasswordUri": ubx.FieldSpec{WireName: "change_password_uri"},
+		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+		"LogoutRedirectUri": ubx.FieldSpec{WireName: "logout_redirect_uri"},
+		"SingleSignOnServiceUri": ubx.FieldSpec{WireName: "single_sign_on_service_uri"},
+	}
 
 var V1beta1InboundSamlSsoProfile_SpConfigFields = ubx.FieldMap{
-	"AssertionConsumerServiceUri": ubx.FieldSpec{WireName: "assertion_consumer_service_uri"},
-	"EntityId":                    ubx.FieldSpec{WireName: "entity_id"},
-}
+		"AssertionConsumerServiceUri": ubx.FieldSpec{WireName: "assertion_consumer_service_uri"},
+		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+	}
 
 type V1beta1InboundSamlSsoProfileConfig struct {
 	// Immutable. The customer. For example: `customers/C0123abc`.
@@ -60,17 +60,17 @@ type V1beta1InboundSamlSsoProfileAttrs struct {
 var V1beta1InboundSamlSsoProfile = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_v1beta1_inbound_saml_sso_profile",
 	Fields: ubx.FieldMap{
-		"Customer":    ubx.FieldSpec{WireName: "customer"},
+		"Customer": ubx.FieldSpec{WireName: "customer"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IdpConfig": ubx.FieldSpec{
 			WireName: "idp_config",
-			Kind:     "object",
-			Fields:   V1beta1InboundSamlSsoProfile_IdpConfigFields,
+			Kind: "object",
+			Fields: V1beta1InboundSamlSsoProfile_IdpConfigFields,
 		},
 		"SpConfig": ubx.FieldSpec{
 			WireName: "sp_config",
-			Kind:     "object",
-			Fields:   V1beta1InboundSamlSsoProfile_SpConfigFields,
+			Kind: "object",
+			Fields: V1beta1InboundSamlSsoProfile_SpConfigFields,
 		},
 	},
 }

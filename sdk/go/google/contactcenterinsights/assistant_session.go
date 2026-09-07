@@ -18,18 +18,18 @@ type AssistantSession_Messages struct {
 }
 
 var AssistantSession_Messages_ChunksFields = ubx.FieldMap{
-	"Text": ubx.FieldSpec{WireName: "text"},
-}
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var AssistantSession_MessagesFields = ubx.FieldMap{
-	"Chunks": ubx.FieldSpec{
-		WireName: "chunks",
-		Kind:     "list",
-		Fields:   AssistantSession_Messages_ChunksFields,
-	},
-	"EventTime": ubx.FieldSpec{WireName: "event_time"},
-	"Role":      ubx.FieldSpec{WireName: "role"},
-}
+		"Chunks": ubx.FieldSpec{
+			WireName: "chunks",
+			Kind: "list",
+			Fields: AssistantSession_Messages_ChunksFields,
+		},
+		"EventTime": ubx.FieldSpec{WireName: "event_time"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 type AssistantSessionConfig struct {
 	// Optional. The display name of the session.
@@ -63,8 +63,8 @@ var AssistantSession = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Messages": ubx.FieldSpec{
 			WireName: "messages",
-			Kind:     "list",
-			Fields:   AssistantSession_MessagesFields,
+			Kind: "list",
+			Fields: AssistantSession_MessagesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

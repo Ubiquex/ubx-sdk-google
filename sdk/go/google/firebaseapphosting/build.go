@@ -116,95 +116,95 @@ type Build_Source struct {
 }
 
 var Build_Config_EffectiveEnvFields = ubx.FieldMap{
-	"Availability":   ubx.FieldSpec{WireName: "availability"},
-	"Origin":         ubx.FieldSpec{WireName: "origin"},
-	"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
-	"Secret":         ubx.FieldSpec{WireName: "secret"},
-	"Value":          ubx.FieldSpec{WireName: "value"},
-	"Variable":       ubx.FieldSpec{WireName: "variable"},
-}
+		"Availability": ubx.FieldSpec{WireName: "availability"},
+		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
+		"Secret": ubx.FieldSpec{WireName: "secret"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+		"Variable": ubx.FieldSpec{WireName: "variable"},
+	}
 
 var Build_Config_RunConfigFields = ubx.FieldMap{
-	"Concurrency":  ubx.FieldSpec{WireName: "concurrency"},
-	"Cpu":          ubx.FieldSpec{WireName: "cpu"},
-	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-	"MemoryMib":    ubx.FieldSpec{WireName: "memory_mib"},
-	"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-}
+		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+		"Cpu": ubx.FieldSpec{WireName: "cpu"},
+		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+		"MemoryMib": ubx.FieldSpec{WireName: "memory_mib"},
+		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+	}
 
 var Build_ConfigFields = ubx.FieldMap{
-	"EffectiveEnv": ubx.FieldSpec{
-		WireName: "effective_env",
-		Kind:     "list",
-		Fields:   Build_Config_EffectiveEnvFields,
-	},
-	"Env": ubx.FieldSpec{
-		WireName: "env",
-		Kind:     "list",
-		Fields:   Build_Config_EffectiveEnvFields,
-	},
-	"RunConfig": ubx.FieldSpec{
-		WireName: "run_config",
-		Kind:     "object",
-		Fields:   Build_Config_RunConfigFields,
-	},
-}
+		"EffectiveEnv": ubx.FieldSpec{
+			WireName: "effective_env",
+			Kind: "list",
+			Fields: Build_Config_EffectiveEnvFields,
+		},
+		"Env": ubx.FieldSpec{
+			WireName: "env",
+			Kind: "list",
+			Fields: Build_Config_EffectiveEnvFields,
+		},
+		"RunConfig": ubx.FieldSpec{
+			WireName: "run_config",
+			Kind: "object",
+			Fields: Build_Config_RunConfigFields,
+		},
+	}
 
 var Build_Source_Archive_AuthorFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Email":       ubx.FieldSpec{WireName: "email"},
-	"ImageUri":    ubx.FieldSpec{WireName: "image_uri"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	}
 
 var Build_Source_ArchiveFields = ubx.FieldMap{
-	"Author": ubx.FieldSpec{
-		WireName: "author",
-		Kind:     "object",
-		Fields:   Build_Source_Archive_AuthorFields,
-	},
-	"Description":       ubx.FieldSpec{WireName: "description"},
-	"ExternalSignedUri": ubx.FieldSpec{WireName: "external_signed_uri"},
-	"RootDirectory":     ubx.FieldSpec{WireName: "root_directory"},
-	"UserStorageUri":    ubx.FieldSpec{WireName: "user_storage_uri"},
-}
+		"Author": ubx.FieldSpec{
+			WireName: "author",
+			Kind: "object",
+			Fields: Build_Source_Archive_AuthorFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExternalSignedUri": ubx.FieldSpec{WireName: "external_signed_uri"},
+		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+		"UserStorageUri": ubx.FieldSpec{WireName: "user_storage_uri"},
+	}
 
 var Build_Source_CodebaseFields = ubx.FieldMap{
-	"Author": ubx.FieldSpec{
-		WireName: "author",
-		Kind:     "object",
-		Fields:   Build_Source_Archive_AuthorFields,
-	},
-	"Branch":        ubx.FieldSpec{WireName: "branch"},
-	"Commit":        ubx.FieldSpec{WireName: "commit"},
-	"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
-	"CommitTime":    ubx.FieldSpec{WireName: "commit_time"},
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"Hash":          ubx.FieldSpec{WireName: "hash"},
-	"Repository":    ubx.FieldSpec{WireName: "repository"},
-	"Uri":           ubx.FieldSpec{WireName: "uri"},
-}
+		"Author": ubx.FieldSpec{
+			WireName: "author",
+			Kind: "object",
+			Fields: Build_Source_Archive_AuthorFields,
+		},
+		"Branch": ubx.FieldSpec{WireName: "branch"},
+		"Commit": ubx.FieldSpec{WireName: "commit"},
+		"CommitMessage": ubx.FieldSpec{WireName: "commit_message"},
+		"CommitTime": ubx.FieldSpec{WireName: "commit_time"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Hash": ubx.FieldSpec{WireName: "hash"},
+		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Build_Source_ContainerFields = ubx.FieldMap{
-	"Image": ubx.FieldSpec{WireName: "image"},
-}
+		"Image": ubx.FieldSpec{WireName: "image"},
+	}
 
 var Build_SourceFields = ubx.FieldMap{
-	"Archive": ubx.FieldSpec{
-		WireName: "archive",
-		Kind:     "object",
-		Fields:   Build_Source_ArchiveFields,
-	},
-	"Codebase": ubx.FieldSpec{
-		WireName: "codebase",
-		Kind:     "object",
-		Fields:   Build_Source_CodebaseFields,
-	},
-	"Container": ubx.FieldSpec{
-		WireName: "container",
-		Kind:     "object",
-		Fields:   Build_Source_ContainerFields,
-	},
-}
+		"Archive": ubx.FieldSpec{
+			WireName: "archive",
+			Kind: "object",
+			Fields: Build_Source_ArchiveFields,
+		},
+		"Codebase": ubx.FieldSpec{
+			WireName: "codebase",
+			Kind: "object",
+			Fields: Build_Source_CodebaseFields,
+		},
+		"Container": ubx.FieldSpec{
+			WireName: "container",
+			Kind: "object",
+			Fields: Build_Source_ContainerFields,
+		},
+	}
 
 type BuildConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -264,16 +264,16 @@ var Build = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   Build_ConfigFields,
+			Kind: "object",
+			Fields: Build_ConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   Build_SourceFields,
+			Kind: "object",
+			Fields: Build_SourceFields,
 		},
 	},
 }

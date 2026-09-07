@@ -11,22 +11,32 @@ export interface V1betaConversation_Messages_Chunks_Blob {
   mimeType?: string | Computed<string>;
 }
 
+export interface V1betaConversation_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface V1betaConversation_Messages_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
 }
 
 export interface V1betaConversation_Messages_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaConversation_Messages_Chunks_ToolCall_ToolsetTool | Computed<V1betaConversation_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface V1betaConversation_Messages_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaConversation_Messages_Chunks_ToolCall_ToolsetTool | Computed<V1betaConversation_Messages_Chunks_ToolCall_ToolsetTool>;
@@ -36,7 +46,7 @@ export interface V1betaConversation_Messages_Chunks {
   agentTransfer?: V1betaConversation_Messages_Chunks_AgentTransfer | Computed<V1betaConversation_Messages_Chunks_AgentTransfer>;
   blob?: V1betaConversation_Messages_Chunks_Blob | Computed<V1betaConversation_Messages_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: V1betaConversation_Messages_Chunks_Blob | Computed<V1betaConversation_Messages_Chunks_Blob>;
+  image?: V1betaConversation_Messages_Chunks_Image | Computed<V1betaConversation_Messages_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: V1betaConversation_Messages_Chunks_ToolCall | Computed<V1betaConversation_Messages_Chunks_ToolCall>;
@@ -62,15 +72,12 @@ export interface V1betaConversation_Turns_RootSpan {
 
 export interface V1betaConversation_Turns {
   messages?: V1betaConversation_Messages[] | Computed<V1betaConversation_Messages[]>;
-  resolvedDeveloperInstruction?: string | Computed<string>;
   rootSpan?: V1betaConversation_Turns_RootSpan | Computed<V1betaConversation_Turns_RootSpan>;
-  templateAttributes?: Record<string, unknown> | Computed<Record<string, unknown>>;
   userIntendedText?: string | Computed<string>;
 }
 
 export interface V1betaConversationConfig {
   name: string | Computed<string>;
-  view?: string | Computed<string>;
 }
 
 export interface V1betaConversationAttrs {
@@ -98,13 +105,11 @@ export interface V1betaConversationAttrs {
   turnCount: number;
   /** Required. The turns in the conversation. */
   turns: V1betaConversation_Turns[];
-  view: string;
 }
 
 export const V1betaConversation: DataSourceBinding<V1betaConversationConfig, V1betaConversationAttrs> = {
   wireType: "google_ces_v1beta_conversation",
   fields: {
     name: "name",
-    view: "view",
   },
 };

@@ -25,31 +25,31 @@ type LineageEvent_Links struct {
 }
 
 var LineageEvent_Links_DependencyInfoFields = ubx.FieldMap{
-	"DependencyType": ubx.FieldSpec{WireName: "dependency_type"},
-}
+		"DependencyType": ubx.FieldSpec{WireName: "dependency_type"},
+	}
 
 var LineageEvent_Links_SourceFields = ubx.FieldMap{
-	"Field":              ubx.FieldSpec{WireName: "field"},
-	"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-}
+		"Field": ubx.FieldSpec{WireName: "field"},
+		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
+	}
 
 var LineageEvent_LinksFields = ubx.FieldMap{
-	"DependencyInfo": ubx.FieldSpec{
-		WireName: "dependency_info",
-		Kind:     "object",
-		Fields:   LineageEvent_Links_DependencyInfoFields,
-	},
-	"Source": ubx.FieldSpec{
-		WireName: "source",
-		Kind:     "object",
-		Fields:   LineageEvent_Links_SourceFields,
-	},
-	"Target": ubx.FieldSpec{
-		WireName: "target",
-		Kind:     "object",
-		Fields:   LineageEvent_Links_SourceFields,
-	},
-}
+		"DependencyInfo": ubx.FieldSpec{
+			WireName: "dependency_info",
+			Kind: "object",
+			Fields: LineageEvent_Links_DependencyInfoFields,
+		},
+		"Source": ubx.FieldSpec{
+			WireName: "source",
+			Kind: "object",
+			Fields: LineageEvent_Links_SourceFields,
+		},
+		"Target": ubx.FieldSpec{
+			WireName: "target",
+			Kind: "object",
+			Fields: LineageEvent_Links_SourceFields,
+		},
+	}
 
 type LineageEventConfig struct {
 	// Optional. The end of the transformation which resulted in this lineage event. For streaming scenarios, it should be the end of the period from which the lineage is being reported.
@@ -79,10 +79,10 @@ var LineageEvent = ubx.ResourceBinding{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Links": ubx.FieldSpec{
 			WireName: "links",
-			Kind:     "list",
-			Fields:   LineageEvent_LinksFields,
+			Kind: "list",
+			Fields: LineageEvent_LinksFields,
 		},
-		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},
 }

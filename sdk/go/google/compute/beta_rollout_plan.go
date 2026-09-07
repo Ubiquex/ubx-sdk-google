@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaRolloutPlan_Waves_OrchestrationOptions_Delays struct {
 	Delimiter any
-	Duration  any
-	Type      any
+	Duration any
+	Type any
 }
 
 type BetaRolloutPlan_Waves_OrchestrationOptions struct {
-	Delays                            any
-	MaxConcurrentLocations            any
+	Delays any
+	MaxConcurrentLocations any
 	MaxConcurrentResourcesPerLocation any
 }
 
@@ -20,13 +20,13 @@ type BetaRolloutPlan_Waves_Selectors_LocationSelector struct {
 }
 
 type BetaRolloutPlan_Waves_Selectors_ResourceHierarchySelector struct {
-	IncludedFolders       any
+	IncludedFolders any
 	IncludedOrganizations any
-	IncludedProjects      any
+	IncludedProjects any
 }
 
 type BetaRolloutPlan_Waves_Selectors struct {
-	LocationSelector          any
+	LocationSelector any
 	ResourceHierarchySelector any
 }
 
@@ -36,88 +36,88 @@ type BetaRolloutPlan_Waves_Validation_TimeBasedValidationMetadata struct {
 
 type BetaRolloutPlan_Waves_Validation struct {
 	TimeBasedValidationMetadata any
-	Type                        any
+	Type any
 }
 
 type BetaRolloutPlan_Waves struct {
-	DisplayName          any
-	Number               any
+	DisplayName any
+	Number any
 	OrchestrationOptions any
-	Selectors            any
-	Validation           any
+	Selectors any
+	Validation any
 }
 
 var BetaRolloutPlan_Waves_OrchestrationOptions_DelaysFields = ubx.FieldMap{
-	"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-	"Duration":  ubx.FieldSpec{WireName: "duration"},
-	"Type":      ubx.FieldSpec{WireName: "type"},
-}
+		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var BetaRolloutPlan_Waves_OrchestrationOptionsFields = ubx.FieldMap{
-	"Delays": ubx.FieldSpec{
-		WireName: "delays",
-		Kind:     "list",
-		Fields:   BetaRolloutPlan_Waves_OrchestrationOptions_DelaysFields,
-	},
-	"MaxConcurrentLocations":            ubx.FieldSpec{WireName: "max_concurrent_locations"},
-	"MaxConcurrentResourcesPerLocation": ubx.FieldSpec{WireName: "max_concurrent_resources_per_location"},
-}
+		"Delays": ubx.FieldSpec{
+			WireName: "delays",
+			Kind: "list",
+			Fields: BetaRolloutPlan_Waves_OrchestrationOptions_DelaysFields,
+		},
+		"MaxConcurrentLocations": ubx.FieldSpec{WireName: "max_concurrent_locations"},
+		"MaxConcurrentResourcesPerLocation": ubx.FieldSpec{WireName: "max_concurrent_resources_per_location"},
+	}
 
 var BetaRolloutPlan_Waves_Selectors_LocationSelectorFields = ubx.FieldMap{
-	"IncludedLocations": ubx.FieldSpec{WireName: "included_locations"},
-}
+		"IncludedLocations": ubx.FieldSpec{WireName: "included_locations"},
+	}
 
 var BetaRolloutPlan_Waves_Selectors_ResourceHierarchySelectorFields = ubx.FieldMap{
-	"IncludedFolders":       ubx.FieldSpec{WireName: "included_folders"},
-	"IncludedOrganizations": ubx.FieldSpec{WireName: "included_organizations"},
-	"IncludedProjects":      ubx.FieldSpec{WireName: "included_projects"},
-}
+		"IncludedFolders": ubx.FieldSpec{WireName: "included_folders"},
+		"IncludedOrganizations": ubx.FieldSpec{WireName: "included_organizations"},
+		"IncludedProjects": ubx.FieldSpec{WireName: "included_projects"},
+	}
 
 var BetaRolloutPlan_Waves_SelectorsFields = ubx.FieldMap{
-	"LocationSelector": ubx.FieldSpec{
-		WireName: "location_selector",
-		Kind:     "object",
-		Fields:   BetaRolloutPlan_Waves_Selectors_LocationSelectorFields,
-	},
-	"ResourceHierarchySelector": ubx.FieldSpec{
-		WireName: "resource_hierarchy_selector",
-		Kind:     "object",
-		Fields:   BetaRolloutPlan_Waves_Selectors_ResourceHierarchySelectorFields,
-	},
-}
+		"LocationSelector": ubx.FieldSpec{
+			WireName: "location_selector",
+			Kind: "object",
+			Fields: BetaRolloutPlan_Waves_Selectors_LocationSelectorFields,
+		},
+		"ResourceHierarchySelector": ubx.FieldSpec{
+			WireName: "resource_hierarchy_selector",
+			Kind: "object",
+			Fields: BetaRolloutPlan_Waves_Selectors_ResourceHierarchySelectorFields,
+		},
+	}
 
 var BetaRolloutPlan_Waves_Validation_TimeBasedValidationMetadataFields = ubx.FieldMap{
-	"WaitDuration": ubx.FieldSpec{WireName: "wait_duration"},
-}
+		"WaitDuration": ubx.FieldSpec{WireName: "wait_duration"},
+	}
 
 var BetaRolloutPlan_Waves_ValidationFields = ubx.FieldMap{
-	"TimeBasedValidationMetadata": ubx.FieldSpec{
-		WireName: "time_based_validation_metadata",
-		Kind:     "object",
-		Fields:   BetaRolloutPlan_Waves_Validation_TimeBasedValidationMetadataFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"TimeBasedValidationMetadata": ubx.FieldSpec{
+			WireName: "time_based_validation_metadata",
+			Kind: "object",
+			Fields: BetaRolloutPlan_Waves_Validation_TimeBasedValidationMetadataFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var BetaRolloutPlan_WavesFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Number":      ubx.FieldSpec{WireName: "number"},
-	"OrchestrationOptions": ubx.FieldSpec{
-		WireName: "orchestration_options",
-		Kind:     "object",
-		Fields:   BetaRolloutPlan_Waves_OrchestrationOptionsFields,
-	},
-	"Selectors": ubx.FieldSpec{
-		WireName: "selectors",
-		Kind:     "list",
-		Fields:   BetaRolloutPlan_Waves_SelectorsFields,
-	},
-	"Validation": ubx.FieldSpec{
-		WireName: "validation",
-		Kind:     "object",
-		Fields:   BetaRolloutPlan_Waves_ValidationFields,
-	},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Number": ubx.FieldSpec{WireName: "number"},
+		"OrchestrationOptions": ubx.FieldSpec{
+			WireName: "orchestration_options",
+			Kind: "object",
+			Fields: BetaRolloutPlan_Waves_OrchestrationOptionsFields,
+		},
+		"Selectors": ubx.FieldSpec{
+			WireName: "selectors",
+			Kind: "list",
+			Fields: BetaRolloutPlan_Waves_SelectorsFields,
+		},
+		"Validation": ubx.FieldSpec{
+			WireName: "validation",
+			Kind: "object",
+			Fields: BetaRolloutPlan_Waves_ValidationFields,
+		},
+	}
 
 type BetaRolloutPlanConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -154,13 +154,13 @@ type BetaRolloutPlanAttrs struct {
 var BetaRolloutPlan = ubx.ResourceBinding{
 	WireType: "google_compute_beta_rollout_plan",
 	Fields: ubx.FieldMap{
-		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"LocationScope": ubx.FieldSpec{WireName: "location_scope"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Waves": ubx.FieldSpec{
 			WireName: "waves",
-			Kind:     "list",
-			Fields:   BetaRolloutPlan_WavesFields,
+			Kind: "list",
+			Fields: BetaRolloutPlan_WavesFields,
 		},
 	},
 }

@@ -145,6 +145,8 @@ export interface V1alphaAssistantConfig {
   enabledTools?: Record<string, V1alphaAssistant_EnabledTools> | Computed<Record<string, V1alphaAssistant_EnabledTools>>;
   /** Configuration for the generation of the assistant response. */
   generationConfig?: V1alphaAssistant_GenerationConfig | Computed<V1alphaAssistant_GenerationConfig>;
+  /** Optional. Indicates whether Knowledge Catalog is enabled for this specific assistant. When enabled, it powers discovery context using organizational data. */
+  knowledgeCatalogEnabled?: boolean | Computed<boolean>;
   /** Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters. */
   name?: string | Computed<string>;
   /** Optional. The type of web grounding to use. */
@@ -168,6 +170,8 @@ export interface V1alphaAssistantAttrs {
   enabledTools: Record<string, V1alphaAssistant_EnabledTools>;
   /** Configuration for the generation of the assistant response. */
   generationConfig: V1alphaAssistant_GenerationConfig;
+  /** Optional. Indicates whether Knowledge Catalog is enabled for this specific assistant. When enabled, it powers discovery context using organizational data. */
+  knowledgeCatalogEnabled: boolean;
   /** Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters. */
   name: string;
   /** Output only. Represents the time when this Assistant was most recently updated. */
@@ -198,6 +202,7 @@ export const V1alphaAssistant: ResourceBinding<V1alphaAssistantConfig, V1alphaAs
       kind: "object",
       fields: V1alphaAssistant_GenerationConfigFields,
     },
+    knowledgeCatalogEnabled: "knowledge_catalog_enabled",
     name: "name",
     webGroundingType: "web_grounding_type",
   },

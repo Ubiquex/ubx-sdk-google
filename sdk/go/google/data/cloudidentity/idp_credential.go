@@ -14,7 +14,7 @@ type IdpCredentialConfig struct {
 type IdpCredentialAttrs struct {
 	// Information of a DSA public key.
 	DsaKeyInfo any
-	Name       any
+	Name any
 	// Information of a RSA public key.
 	RsaKeyInfo any
 	// Output only. Time when the `IdpCredential` was last updated.
@@ -23,5 +23,6 @@ type IdpCredentialAttrs struct {
 
 var IdpCredential = ubx.DataSourceBinding{
 	WireType: "google_cloudidentity_idp_credential",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

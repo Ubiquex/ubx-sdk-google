@@ -14,16 +14,16 @@ type V1beta1ServingProfile_CmekConfig struct {
 }
 
 var V1beta1ServingProfile_CmekConfig_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var V1beta1ServingProfile_CmekConfigFields = ubx.FieldMap{
-	"EncryptionSpec": ubx.FieldSpec{
-		WireName: "encryption_spec",
-		Kind:     "object",
-		Fields:   V1beta1ServingProfile_CmekConfig_EncryptionSpecFields,
-	},
-}
+		"EncryptionSpec": ubx.FieldSpec{
+			WireName: "encryption_spec",
+			Kind: "object",
+			Fields: V1beta1ServingProfile_CmekConfig_EncryptionSpecFields,
+		},
+	}
 
 type V1beta1ServingProfileConfig struct {
 	// Configuration for Customer-Managed Encryption Keys (CMEK).
@@ -60,12 +60,12 @@ var V1beta1ServingProfile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind:     "object",
-			Fields:   V1beta1ServingProfile_CmekConfigFields,
+			Kind: "object",
+			Fields: V1beta1ServingProfile_CmekConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Scope":       ubx.FieldSpec{WireName: "scope"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
 	},
 }

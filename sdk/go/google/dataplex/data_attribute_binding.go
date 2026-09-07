@@ -11,9 +11,9 @@ type DataAttributeBinding_Paths struct {
 }
 
 var DataAttributeBinding_PathsFields = ubx.FieldMap{
-	"Attributes": ubx.FieldSpec{WireName: "attributes"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-}
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 type DataAttributeBindingConfig struct {
 	// Optional. List of attributes to be associated with the resource, provided in the form: projects/{project}/locations/{location}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}
@@ -60,15 +60,15 @@ type DataAttributeBindingAttrs struct {
 var DataAttributeBinding = ubx.ResourceBinding{
 	WireType: "google_dataplex_data_attribute_binding",
 	Fields: ubx.FieldMap{
-		"Attributes":  ubx.FieldSpec{WireName: "attributes"},
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Paths": ubx.FieldSpec{
 			WireName: "paths",
-			Kind:     "list",
-			Fields:   DataAttributeBinding_PathsFields,
+			Kind: "list",
+			Fields: DataAttributeBinding_PathsFields,
 		},
 		"Resource": ubx.FieldSpec{WireName: "resource"},
 	},

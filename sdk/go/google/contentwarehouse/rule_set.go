@@ -122,136 +122,136 @@ type RuleSet_Rules struct {
 }
 
 var RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigsFields = ubx.FieldMap{
-	"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
-	"LogType":         ubx.FieldSpec{WireName: "log_type"},
-}
+		"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
+		"LogType": ubx.FieldSpec{WireName: "log_type"},
+	}
 
 var RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigsFields = ubx.FieldMap{
-	"AuditLogConfigs": ubx.FieldSpec{
-		WireName: "audit_log_configs",
-		Kind:     "list",
-		Fields:   RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigsFields,
-	},
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"AuditLogConfigs": ubx.FieldSpec{
+			WireName: "audit_log_configs",
+			Kind: "list",
+			Fields: RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigs_AuditLogConfigsFields,
+		},
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var RuleSet_Rules_Actions_AccessControl_Policy_Bindings_ConditionFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Expression":  ubx.FieldSpec{WireName: "expression"},
-	"Location":    ubx.FieldSpec{WireName: "location"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var RuleSet_Rules_Actions_AccessControl_Policy_BindingsFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{
-		WireName: "condition",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_AccessControl_Policy_Bindings_ConditionFields,
-	},
-	"Members": ubx.FieldSpec{WireName: "members"},
-	"Role":    ubx.FieldSpec{WireName: "role"},
-}
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_AccessControl_Policy_Bindings_ConditionFields,
+		},
+		"Members": ubx.FieldSpec{WireName: "members"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 var RuleSet_Rules_Actions_AccessControl_PolicyFields = ubx.FieldMap{
-	"AuditConfigs": ubx.FieldSpec{
-		WireName: "audit_configs",
-		Kind:     "list",
-		Fields:   RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigsFields,
-	},
-	"Bindings": ubx.FieldSpec{
-		WireName: "bindings",
-		Kind:     "list",
-		Fields:   RuleSet_Rules_Actions_AccessControl_Policy_BindingsFields,
-	},
-	"Etag":    ubx.FieldSpec{WireName: "etag"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"AuditConfigs": ubx.FieldSpec{
+			WireName: "audit_configs",
+			Kind: "list",
+			Fields: RuleSet_Rules_Actions_AccessControl_Policy_AuditConfigsFields,
+		},
+		"Bindings": ubx.FieldSpec{
+			WireName: "bindings",
+			Kind: "list",
+			Fields: RuleSet_Rules_Actions_AccessControl_Policy_BindingsFields,
+		},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var RuleSet_Rules_Actions_AccessControlFields = ubx.FieldMap{
-	"OperationType": ubx.FieldSpec{WireName: "operation_type"},
-	"Policy": ubx.FieldSpec{
-		WireName: "policy",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_AccessControl_PolicyFields,
-	},
-}
+		"OperationType": ubx.FieldSpec{WireName: "operation_type"},
+		"Policy": ubx.FieldSpec{
+			WireName: "policy",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_AccessControl_PolicyFields,
+		},
+	}
 
 var RuleSet_Rules_Actions_AddToFolderFields = ubx.FieldMap{
-	"Folders": ubx.FieldSpec{WireName: "folders"},
-}
+		"Folders": ubx.FieldSpec{WireName: "folders"},
+	}
 
 var RuleSet_Rules_Actions_DataUpdateFields = ubx.FieldMap{
-	"Entries": ubx.FieldSpec{WireName: "entries"},
-}
+		"Entries": ubx.FieldSpec{WireName: "entries"},
+	}
 
 var RuleSet_Rules_Actions_DataValidationFields = ubx.FieldMap{
-	"Conditions": ubx.FieldSpec{WireName: "conditions"},
-}
+		"Conditions": ubx.FieldSpec{WireName: "conditions"},
+	}
 
 var RuleSet_Rules_Actions_DeleteDocumentActionFields = ubx.FieldMap{
-	"EnableHardDelete": ubx.FieldSpec{WireName: "enable_hard_delete"},
-}
+		"EnableHardDelete": ubx.FieldSpec{WireName: "enable_hard_delete"},
+	}
 
 var RuleSet_Rules_Actions_PublishToPubSubFields = ubx.FieldMap{
-	"Messages": ubx.FieldSpec{WireName: "messages"},
-	"TopicId":  ubx.FieldSpec{WireName: "topic_id"},
-}
+		"Messages": ubx.FieldSpec{WireName: "messages"},
+		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
+	}
 
 var RuleSet_Rules_Actions_RemoveFromFolderActionFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{WireName: "condition"},
-	"Folder":    ubx.FieldSpec{WireName: "folder"},
-}
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Folder": ubx.FieldSpec{WireName: "folder"},
+	}
 
 var RuleSet_Rules_ActionsFields = ubx.FieldMap{
-	"AccessControl": ubx.FieldSpec{
-		WireName: "access_control",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_AccessControlFields,
-	},
-	"ActionId": ubx.FieldSpec{WireName: "action_id"},
-	"AddToFolder": ubx.FieldSpec{
-		WireName: "add_to_folder",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_AddToFolderFields,
-	},
-	"DataUpdate": ubx.FieldSpec{
-		WireName: "data_update",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_DataUpdateFields,
-	},
-	"DataValidation": ubx.FieldSpec{
-		WireName: "data_validation",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_DataValidationFields,
-	},
-	"DeleteDocumentAction": ubx.FieldSpec{
-		WireName: "delete_document_action",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_DeleteDocumentActionFields,
-	},
-	"PublishToPubSub": ubx.FieldSpec{
-		WireName: "publish_to_pub_sub",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_PublishToPubSubFields,
-	},
-	"RemoveFromFolderAction": ubx.FieldSpec{
-		WireName: "remove_from_folder_action",
-		Kind:     "object",
-		Fields:   RuleSet_Rules_Actions_RemoveFromFolderActionFields,
-	},
-}
+		"AccessControl": ubx.FieldSpec{
+			WireName: "access_control",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_AccessControlFields,
+		},
+		"ActionId": ubx.FieldSpec{WireName: "action_id"},
+		"AddToFolder": ubx.FieldSpec{
+			WireName: "add_to_folder",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_AddToFolderFields,
+		},
+		"DataUpdate": ubx.FieldSpec{
+			WireName: "data_update",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_DataUpdateFields,
+		},
+		"DataValidation": ubx.FieldSpec{
+			WireName: "data_validation",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_DataValidationFields,
+		},
+		"DeleteDocumentAction": ubx.FieldSpec{
+			WireName: "delete_document_action",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_DeleteDocumentActionFields,
+		},
+		"PublishToPubSub": ubx.FieldSpec{
+			WireName: "publish_to_pub_sub",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_PublishToPubSubFields,
+		},
+		"RemoveFromFolderAction": ubx.FieldSpec{
+			WireName: "remove_from_folder_action",
+			Kind: "object",
+			Fields: RuleSet_Rules_Actions_RemoveFromFolderActionFields,
+		},
+	}
 
 var RuleSet_RulesFields = ubx.FieldMap{
-	"Actions": ubx.FieldSpec{
-		WireName: "actions",
-		Kind:     "list",
-		Fields:   RuleSet_Rules_ActionsFields,
-	},
-	"Condition":   ubx.FieldSpec{WireName: "condition"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"RuleId":      ubx.FieldSpec{WireName: "rule_id"},
-	"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
-}
+		"Actions": ubx.FieldSpec{
+			WireName: "actions",
+			Kind: "list",
+			Fields: RuleSet_Rules_ActionsFields,
+		},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
+	}
 
 type RuleSetConfig struct {
 	// Short description of the rule-set.
@@ -279,11 +279,11 @@ var RuleSet = ubx.ResourceBinding{
 	WireType: "google_contentwarehouse_rule_set",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   RuleSet_RulesFields,
+			Kind: "list",
+			Fields: RuleSet_RulesFields,
 		},
 		"Source": ubx.FieldSpec{WireName: "source"},
 	},

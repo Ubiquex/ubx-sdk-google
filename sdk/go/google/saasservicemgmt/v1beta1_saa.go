@@ -14,10 +14,10 @@ type V1beta1Saa_ApplicationTemplate struct {
 
 type V1beta1Saa_Conditions struct {
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	Status             any
-	Type               any
+	Message any
+	Reason any
+	Status any
+	Type any
 }
 
 type V1beta1Saa_Error struct {
@@ -34,20 +34,20 @@ type V1beta1Saa_Locations struct {
 }
 
 var V1beta1Saa_ApplicationTemplateFields = ubx.FieldMap{
-	"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
-	"Revision":            ubx.FieldSpec{WireName: "revision"},
-	"SyncOperation":       ubx.FieldSpec{WireName: "sync_operation"},
-}
+		"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+		"SyncOperation": ubx.FieldSpec{WireName: "sync_operation"},
+	}
 
 var V1beta1Saa_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var V1beta1Saa_LocationsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 type V1beta1SaaConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -99,19 +99,19 @@ var V1beta1Saa = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ApplicationTemplate": ubx.FieldSpec{
 			WireName: "application_template",
-			Kind:     "object",
-			Fields:   V1beta1Saa_ApplicationTemplateFields,
+			Kind: "object",
+			Fields: V1beta1Saa_ApplicationTemplateFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   V1beta1Saa_ErrorFields,
+			Kind: "object",
+			Fields: V1beta1Saa_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Locations": ubx.FieldSpec{
 			WireName: "locations",
-			Kind:     "list",
-			Fields:   V1beta1Saa_LocationsFields,
+			Kind: "list",
+			Fields: V1beta1Saa_LocationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -13,28 +13,28 @@ type InstantSnapshotGroup_ResourceStatus_SourceInfo struct {
 type InstantSnapshotGroup_ResourceStatus struct {
 	// Output only. [Output Only]
 	ConsistencyMembershipResolutionTime any
-	SourceInfo                          any
+	SourceInfo any
 }
 
 var InstantSnapshotGroup_ResourceStatus_SourceInfoFields = ubx.FieldMap{
-	"ConsistencyGroup":   ubx.FieldSpec{WireName: "consistency_group"},
-	"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
-}
+		"ConsistencyGroup": ubx.FieldSpec{WireName: "consistency_group"},
+		"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
+	}
 
 var InstantSnapshotGroup_ResourceStatusFields = ubx.FieldMap{
-	"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
-	"SourceInfo": ubx.FieldSpec{
-		WireName: "source_info",
-		Kind:     "object",
-		Fields:   InstantSnapshotGroup_ResourceStatus_SourceInfoFields,
-	},
-}
+		"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
+		"SourceInfo": ubx.FieldSpec{
+			WireName: "source_info",
+			Kind: "object",
+			Fields: InstantSnapshotGroup_ResourceStatus_SourceInfoFields,
+		},
+	}
 
 type InstantSnapshotGroupConfig struct {
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name           any
+	Name any
 	ResourceStatus any
 	// The self-link of the consistency group (resource policy) used as the source for the instant snapshots in this group. This field is computed and output only, populated when the group is associated with a consistency group. (AI-inferred)
 	SourceConsistencyGroup any
@@ -52,7 +52,7 @@ type InstantSnapshotGroupAttrs struct {
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Output only. [Output Only] URL of the region where the instant snapshot group resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region         any
+	Region any
 	ResourceStatus any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
@@ -70,11 +70,11 @@ var InstantSnapshotGroup = ubx.ResourceBinding{
 	WireType: "google_compute_instant_snapshot_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind:     "object",
-			Fields:   InstantSnapshotGroup_ResourceStatusFields,
+			Kind: "object",
+			Fields: InstantSnapshotGroup_ResourceStatusFields,
 		},
 		"SourceConsistencyGroup": ubx.FieldSpec{WireName: "source_consistency_group"},
 	},

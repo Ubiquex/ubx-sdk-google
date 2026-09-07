@@ -800,8 +800,6 @@ class ServiceConfig:
     default_uri_disabled: Any = None
     # User-provided description of the Service. This field currently has a 512-character limit.
     description: Any = None
-    # Optional. Immutable. Indicates whether the Service has durable execution enabled. This field is immutable once the Service is created.
-    durable_execution: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
     # Optional. IAP settings on the Service.
@@ -855,8 +853,6 @@ class ServiceAttrs:
     delete_time: Any = None
     # User-provided description of the Service. This field currently has a 512-character limit.
     description: Any = None
-    # Optional. Immutable. Indicates whether the Service has durable execution enabled. This field is immutable once the Service is created.
-    durable_execution: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
     # Output only. For a deleted resource, the time after which it will be permanently deleted.
@@ -931,7 +927,6 @@ Service = ubx.ResourceBinding(
         "custom_audiences": ubx.FieldSpec(wire_name="custom_audiences"),
         "default_uri_disabled": ubx.FieldSpec(wire_name="default_uri_disabled"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "durable_execution": ubx.FieldSpec(wire_name="durable_execution"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "iap_enabled": ubx.FieldSpec(wire_name="iap_enabled"),
         "ingress": ubx.FieldSpec(wire_name="ingress"),

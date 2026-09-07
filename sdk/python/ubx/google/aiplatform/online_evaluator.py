@@ -61,7 +61,7 @@ class OnlineEvaluator_CloudObservability_TraceScope:
 
 @dataclasses.dataclass
 class OnlineEvaluator_CloudObservability:
-    # Optional. Optional log view that will be used to query logs. If empty, the `_Default` view will be used.
+    # Optional. Optional log view that will be used to query logs. If empty, the project's default view (`projects/{project_id}`) will be used.
     log_view: Any = None
     # Configuration for data source following OpenTelemetry.
     open_telemetry: Any = None
@@ -69,7 +69,7 @@ class OnlineEvaluator_CloudObservability:
     session_scope: Any = None
     # If chosen, the online evaluator will evaluate single traces matching specified `filter`.
     trace_scope: Any = None
-    # Optional. Optional trace view that will be used to query traces. If empty, the `_Default` view will be used. NOTE: This field is not supported yet and will be ignored if set.
+    # Optional. Optional trace view that will be used to query traces. If empty, the `_AllSpans` view from `_Trace` US bucket will be used, i.e. `projects/{project_id}/locations/us/buckets/_Trace/datasets/Spans/views/_AllSpans`.
     trace_view: Any = None
 
 @dataclasses.dataclass
@@ -120,8 +120,6 @@ class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
     language_codes: Any = None
     # Candidate language(s) to bias transcription or generation toward, when the language isn't specified explicitly. (AI-inferred)
     language_hints: Any = None
-    # Which operating mode this configuration uses. (AI-inferred)
-    mode: Any = None
     # Whether individual words in a transcript include their own timestamps. (AI-inferred)
     word_timestamp: Any = None
 
@@ -318,6 +316,11 @@ class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
     thinking_level: Any = None
 
 @dataclasses.dataclass
+class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig:
+    echo_target_language: Any = None
+    target_language_code: Any = None
+
+@dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig:
     # Whether transcribed segments include their own timestamps. (AI-inferred)
     audio_timestamp: Any = None
@@ -367,6 +370,7 @@ class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConf
     top_k: Any = None
     # Restricts sampling to the smallest set of most-probable next tokens whose combined probability reaches this threshold. (AI-inferred)
     top_p: Any = None
+    translation_config: Any = None
 
 @dataclasses.dataclass
 class OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig:
@@ -665,7 +669,6 @@ _OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Ge
         kind="object",
         fields=_OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
     ),
-    "mode": ubx.FieldSpec(wire_name="mode"),
     "word_timestamp": ubx.FieldSpec(wire_name="word_timestamp"),
 }
 
@@ -844,6 +847,11 @@ _OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Ge
     "thinking_level": ubx.FieldSpec(wire_name="thinking_level"),
 }
 
+_OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields = {
+    "echo_target_language": ubx.FieldSpec(wire_name="echo_target_language"),
+    "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
+}
+
 _OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields = {
     "audio_timestamp": ubx.FieldSpec(wire_name="audio_timestamp"),
     "audio_transcription_config": ubx.FieldSpec(
@@ -897,6 +905,11 @@ _OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Ge
     ),
     "top_k": ubx.FieldSpec(wire_name="top_k"),
     "top_p": ubx.FieldSpec(wire_name="top_p"),
+    "translation_config": ubx.FieldSpec(
+        wire_name="translation_config",
+        kind="object",
+        fields=_OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+    ),
 }
 
 _OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields = {

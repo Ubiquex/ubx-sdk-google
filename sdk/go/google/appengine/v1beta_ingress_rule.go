@@ -28,9 +28,9 @@ type V1betaIngressRuleAttrs struct {
 var V1betaIngressRule = ubx.ResourceBinding{
 	WireType: "google_appengine_v1beta_ingress_rule",
 	Fields: ubx.FieldMap{
-		"Action":      ubx.FieldSpec{WireName: "action"},
+		"Action": ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SourceRange": ubx.FieldSpec{WireName: "source_range"},
 	},
 }

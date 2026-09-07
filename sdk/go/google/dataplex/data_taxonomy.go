@@ -42,7 +42,7 @@ var DataTaxonomy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 	},
 }

@@ -38,9 +38,9 @@ type EndpointAttachmentAttrs struct {
 var EndpointAttachment = ubx.ResourceBinding{
 	WireType: "google_connectors_endpoint_attachment",
 	Fields: ubx.FieldMap{
-		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EndpointGlobalAccess": ubx.FieldSpec{WireName: "endpoint_global_access"},
-		"Labels":               ubx.FieldSpec{WireName: "labels"},
-		"ServiceAttachment":    ubx.FieldSpec{WireName: "service_attachment"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
 	},
 }

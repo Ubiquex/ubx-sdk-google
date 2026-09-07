@@ -26,8 +26,8 @@ type PartitionAttrs struct {
 var Partition = ubx.ResourceBinding{
 	WireType: "google_dataplex_partition",
 	Fields: ubx.FieldMap{
-		"Etag":     ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Location": ubx.FieldSpec{WireName: "location"},
-		"Values":   ubx.FieldSpec{WireName: "values"},
+		"Values": ubx.FieldSpec{WireName: "values"},
 	},
 }

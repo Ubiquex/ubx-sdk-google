@@ -35,8 +35,8 @@ var Repository = ubx.ResourceBinding{
 	WireType: "google_cloudbuild_repository",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"RemoteUri":   ubx.FieldSpec{WireName: "remote_uri"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"RemoteUri": ubx.FieldSpec{WireName: "remote_uri"},
 	},
 }

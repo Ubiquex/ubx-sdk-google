@@ -20,15 +20,15 @@ type V1alphaConnection_Gateway struct {
 }
 
 var V1alphaConnection_ApplicationEndpointFields = ubx.FieldMap{
-	"Host": ubx.FieldSpec{WireName: "host"},
-	"Port": ubx.FieldSpec{WireName: "port"},
-}
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+	}
 
 var V1alphaConnection_GatewayFields = ubx.FieldMap{
-	"Type":     ubx.FieldSpec{WireName: "type"},
-	"Uri":      ubx.FieldSpec{WireName: "uri"},
-	"UserPort": ubx.FieldSpec{WireName: "user_port"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"UserPort": ubx.FieldSpec{WireName: "user_port"},
+	}
 
 type V1alphaConnectionConfig struct {
 	// ApplicationEndpoint represents a remote application endpoint.
@@ -77,18 +77,18 @@ var V1alphaConnection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApplicationEndpoint": ubx.FieldSpec{
 			WireName: "application_endpoint",
-			Kind:     "object",
-			Fields:   V1alphaConnection_ApplicationEndpointFields,
+			Kind: "object",
+			Fields: V1alphaConnection_ApplicationEndpointFields,
 		},
-		"Connectors":  ubx.FieldSpec{WireName: "connectors"},
+		"Connectors": ubx.FieldSpec{WireName: "connectors"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Gateway": ubx.FieldSpec{
 			WireName: "gateway",
-			Kind:     "object",
-			Fields:   V1alphaConnection_GatewayFields,
+			Kind: "object",
+			Fields: V1alphaConnection_GatewayFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
-		"Type":   ubx.FieldSpec{WireName: "type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

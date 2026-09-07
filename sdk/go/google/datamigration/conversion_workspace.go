@@ -11,9 +11,9 @@ type ConversionWorkspace_Destination struct {
 }
 
 var ConversionWorkspace_DestinationFields = ubx.FieldMap{
-	"Engine":  ubx.FieldSpec{WireName: "engine"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 type ConversionWorkspaceConfig struct {
 	// The type and version of a source or destination database.
@@ -64,17 +64,17 @@ var ConversionWorkspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind:     "object",
-			Fields:   ConversionWorkspace_DestinationFields,
+			Kind: "object",
+			Fields: ConversionWorkspace_DestinationFields,
 		},
 		"DestinationProvider": ubx.FieldSpec{WireName: "destination_provider"},
-		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
-		"GlobalSettings":      ubx.FieldSpec{WireName: "global_settings"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"GlobalSettings": ubx.FieldSpec{WireName: "global_settings"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   ConversionWorkspace_DestinationFields,
+			Kind: "object",
+			Fields: ConversionWorkspace_DestinationFields,
 		},
 		"SourceProvider": ubx.FieldSpec{WireName: "source_provider"},
 	},

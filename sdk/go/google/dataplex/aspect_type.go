@@ -63,53 +63,53 @@ type AspectType_MetadataTemplate struct {
 }
 
 var AspectType_AuthorizationFields = ubx.FieldMap{
-	"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
-}
+		"AlternateUsePermission": ubx.FieldSpec{WireName: "alternate_use_permission"},
+	}
 
 var AspectType_MetadataTemplate_AnnotationsFields = ubx.FieldMap{
-	"Deprecated":   ubx.FieldSpec{WireName: "deprecated"},
-	"Description":  ubx.FieldSpec{WireName: "description"},
-	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-	"DisplayOrder": ubx.FieldSpec{WireName: "display_order"},
-	"StringType":   ubx.FieldSpec{WireName: "string_type"},
-	"StringValues": ubx.FieldSpec{WireName: "string_values"},
-}
+		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayOrder": ubx.FieldSpec{WireName: "display_order"},
+		"StringType": ubx.FieldSpec{WireName: "string_type"},
+		"StringValues": ubx.FieldSpec{WireName: "string_values"},
+	}
 
 var AspectType_MetadataTemplate_ConstraintsFields = ubx.FieldMap{
-	"Required": ubx.FieldSpec{WireName: "required"},
-}
+		"Required": ubx.FieldSpec{WireName: "required"},
+	}
 
 var AspectType_MetadataTemplate_EnumValuesFields = ubx.FieldMap{
-	"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-	"Index":      ubx.FieldSpec{WireName: "index"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-}
+		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
+		"Index": ubx.FieldSpec{WireName: "index"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var AspectType_MetadataTemplateFields = ubx.FieldMap{
-	"Annotations": ubx.FieldSpec{
-		WireName: "annotations",
-		Kind:     "object",
-		Fields:   AspectType_MetadataTemplate_AnnotationsFields,
-	},
-	"ArrayItems": ubx.FieldSpec{WireName: "array_items"},
-	"Constraints": ubx.FieldSpec{
-		WireName: "constraints",
-		Kind:     "object",
-		Fields:   AspectType_MetadataTemplate_ConstraintsFields,
-	},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "list",
-		Fields:   AspectType_MetadataTemplate_EnumValuesFields,
-	},
-	"Index":        ubx.FieldSpec{WireName: "index"},
-	"MapItems":     ubx.FieldSpec{WireName: "map_items"},
-	"Name":         ubx.FieldSpec{WireName: "name"},
-	"RecordFields": ubx.FieldSpec{WireName: "record_fields"},
-	"Type":         ubx.FieldSpec{WireName: "type"},
-	"TypeId":       ubx.FieldSpec{WireName: "type_id"},
-	"TypeRef":      ubx.FieldSpec{WireName: "type_ref"},
-}
+		"Annotations": ubx.FieldSpec{
+			WireName: "annotations",
+			Kind: "object",
+			Fields: AspectType_MetadataTemplate_AnnotationsFields,
+		},
+		"ArrayItems": ubx.FieldSpec{WireName: "array_items"},
+		"Constraints": ubx.FieldSpec{
+			WireName: "constraints",
+			Kind: "object",
+			Fields: AspectType_MetadataTemplate_ConstraintsFields,
+		},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "list",
+			Fields: AspectType_MetadataTemplate_EnumValuesFields,
+		},
+		"Index": ubx.FieldSpec{WireName: "index"},
+		"MapItems": ubx.FieldSpec{WireName: "map_items"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"RecordFields": ubx.FieldSpec{WireName: "record_fields"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"TypeId": ubx.FieldSpec{WireName: "type_id"},
+		"TypeRef": ubx.FieldSpec{WireName: "type_ref"},
+	}
 
 type AspectTypeConfig struct {
 	// Authorization for an AspectType.
@@ -160,18 +160,18 @@ var AspectType = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authorization": ubx.FieldSpec{
 			WireName: "authorization",
-			Kind:     "object",
-			Fields:   AspectType_AuthorizationFields,
+			Kind: "object",
+			Fields: AspectType_AuthorizationFields,
 		},
 		"DataClassification": ubx.FieldSpec{WireName: "data_classification"},
-		"Description":        ubx.FieldSpec{WireName: "description"},
-		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
-		"Etag":               ubx.FieldSpec{WireName: "etag"},
-		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MetadataTemplate": ubx.FieldSpec{
 			WireName: "metadata_template",
-			Kind:     "object",
-			Fields:   AspectType_MetadataTemplateFields,
+			Kind: "object",
+			Fields: AspectType_MetadataTemplateFields,
 		},
 	},
 }

@@ -25,6 +25,6 @@ var Brand = ubx.ResourceBinding{
 	WireType: "google_iap_brand",
 	Fields: ubx.FieldMap{
 		"ApplicationTitle": ubx.FieldSpec{WireName: "application_title"},
-		"SupportEmail":     ubx.FieldSpec{WireName: "support_email"},
+		"SupportEmail": ubx.FieldSpec{WireName: "support_email"},
 	},
 }

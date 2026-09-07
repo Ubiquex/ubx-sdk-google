@@ -16,13 +16,6 @@ class GcpUserAccessBinding_Principal:
     service_account_project_number: Any = None
 
 @dataclasses.dataclass
-class GcpUserAccessBinding_RestrictedClientApplications:
-    # The OAuth client ID this restriction applies to. (AI-inferred)
-    client_id: Any = None
-    # The resource name or identifier of this object. (AI-inferred)
-    name: Any = None
-
-@dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings:
     # How long a session may remain inactive before requiring re-authentication. (AI-inferred)
     max_inactivity: Any = None
@@ -41,6 +34,13 @@ class GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings:
     access_levels: Any = None
     # Configuration for session length and re-authentication requirements. (AI-inferred)
     session_settings: Any = None
+
+@dataclasses.dataclass
+class GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplication:
+    # The OAuth client ID this restriction applies to. (AI-inferred)
+    client_id: Any = None
+    # The resource name or identifier of this object. (AI-inferred)
+    name: Any = None
 
 @dataclasses.dataclass
 class GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject:
@@ -74,11 +74,6 @@ _GcpUserAccessBinding_PrincipalFields = {
     "service_account_project_number": ubx.FieldSpec(wire_name="service_account_project_number"),
 }
 
-_GcpUserAccessBinding_RestrictedClientApplicationsFields = {
-    "client_id": ubx.FieldSpec(wire_name="client_id"),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 _GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields = {
     "max_inactivity": ubx.FieldSpec(wire_name="max_inactivity"),
     "session_length": ubx.FieldSpec(wire_name="session_length"),
@@ -96,6 +91,11 @@ _GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields = {
     ),
 }
 
+_GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields = {
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "name": ubx.FieldSpec(wire_name="name"),
+}
+
 _GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProjectFields = {
     "name": ubx.FieldSpec(wire_name="name"),
 }
@@ -104,7 +104,7 @@ _GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScopeFields = {
     "restricted_client_application": ubx.FieldSpec(
         wire_name="restricted_client_application",
         kind="object",
-        fields=_GcpUserAccessBinding_RestrictedClientApplicationsFields,
+        fields=_GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields,
     ),
     "restricted_project": ubx.FieldSpec(
         wire_name="restricted_project",
@@ -151,9 +151,7 @@ class GcpUserAccessBindingConfig:
     name: Any = None
     # The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding.
     principal: Any = None
-    # Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
-    restricted_client_applications: Any = None
-    # Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
+    # Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications.
     scoped_access_settings: Any = None
     # Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings.
     session_settings: Any = None
@@ -170,9 +168,7 @@ class GcpUserAccessBindingAttrs:
     name: Any = None
     # The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding.
     principal: Any = None
-    # Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
-    restricted_client_applications: Any = None
-    # Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
+    # Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications.
     scoped_access_settings: Any = None
     # Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings.
     session_settings: Any = None
@@ -188,11 +184,6 @@ GcpUserAccessBinding = ubx.ResourceBinding(
             wire_name="principal",
             kind="object",
             fields=_GcpUserAccessBinding_PrincipalFields,
-        ),
-        "restricted_client_applications": ubx.FieldSpec(
-            wire_name="restricted_client_applications",
-            kind="list",
-            fields=_GcpUserAccessBinding_RestrictedClientApplicationsFields,
         ),
         "scoped_access_settings": ubx.FieldSpec(
             wire_name="scoped_access_settings",

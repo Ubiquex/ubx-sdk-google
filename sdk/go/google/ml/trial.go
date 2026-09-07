@@ -31,26 +31,26 @@ type Trial_Parameters struct {
 }
 
 var Trial_FinalMeasurement_MetricsFields = ubx.FieldMap{
-	"Metric": ubx.FieldSpec{WireName: "metric"},
-	"Value":  ubx.FieldSpec{WireName: "value"},
-}
+		"Metric": ubx.FieldSpec{WireName: "metric"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Trial_FinalMeasurementFields = ubx.FieldMap{
-	"ElapsedTime": ubx.FieldSpec{WireName: "elapsed_time"},
-	"Metrics": ubx.FieldSpec{
-		WireName: "metrics",
-		Kind:     "list",
-		Fields:   Trial_FinalMeasurement_MetricsFields,
-	},
-	"StepCount": ubx.FieldSpec{WireName: "step_count"},
-}
+		"ElapsedTime": ubx.FieldSpec{WireName: "elapsed_time"},
+		"Metrics": ubx.FieldSpec{
+			WireName: "metrics",
+			Kind: "list",
+			Fields: Trial_FinalMeasurement_MetricsFields,
+		},
+		"StepCount": ubx.FieldSpec{WireName: "step_count"},
+	}
 
 var Trial_ParametersFields = ubx.FieldMap{
-	"FloatValue":  ubx.FieldSpec{WireName: "float_value"},
-	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
-	"Parameter":   ubx.FieldSpec{WireName: "parameter"},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"Parameter": ubx.FieldSpec{WireName: "parameter"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 type TrialConfig struct {
 	// A message representing a measurement.
@@ -91,18 +91,18 @@ var Trial = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FinalMeasurement": ubx.FieldSpec{
 			WireName: "final_measurement",
-			Kind:     "object",
-			Fields:   Trial_FinalMeasurementFields,
+			Kind: "object",
+			Fields: Trial_FinalMeasurementFields,
 		},
 		"Measurements": ubx.FieldSpec{
 			WireName: "measurements",
-			Kind:     "list",
-			Fields:   Trial_FinalMeasurementFields,
+			Kind: "list",
+			Fields: Trial_FinalMeasurementFields,
 		},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind:     "list",
-			Fields:   Trial_ParametersFields,
+			Kind: "list",
+			Fields: Trial_ParametersFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

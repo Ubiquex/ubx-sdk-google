@@ -29,7 +29,7 @@ var ManagedIdentity = ubx.ResourceBinding{
 	WireType: "google_iam_managed_identity",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

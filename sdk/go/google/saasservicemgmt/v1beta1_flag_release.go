@@ -19,16 +19,16 @@ type V1beta1FlagRelease_FlagSetsRelease struct {
 }
 
 var V1beta1FlagRelease_FlagNamesReleaseFields = ubx.FieldMap{
-	"Flags": ubx.FieldSpec{WireName: "flags"},
-}
+		"Flags": ubx.FieldSpec{WireName: "flags"},
+	}
 
 var V1beta1FlagRelease_FlagRevisionsReleaseFields = ubx.FieldMap{
-	"Revisions": ubx.FieldSpec{WireName: "revisions"},
-}
+		"Revisions": ubx.FieldSpec{WireName: "revisions"},
+	}
 
 var V1beta1FlagRelease_FlagSetsReleaseFields = ubx.FieldMap{
-	"Sets": ubx.FieldSpec{WireName: "sets"},
-}
+		"Sets": ubx.FieldSpec{WireName: "sets"},
+	}
 
 type V1beta1FlagReleaseConfig struct {
 	// Optional. Immutable. DEPRECATED: Use all_flags_release instead. Rollout all flags in the provided UnitKind. Only one of flag_revisions, all_flags, or flag_sets can be set.
@@ -97,29 +97,29 @@ type V1beta1FlagReleaseAttrs struct {
 var V1beta1FlagRelease = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_v1beta1_flag_release",
 	Fields: ubx.FieldMap{
-		"AllFlags":        ubx.FieldSpec{WireName: "all_flags"},
+		"AllFlags": ubx.FieldSpec{WireName: "all_flags"},
 		"AllFlagsRelease": ubx.FieldSpec{WireName: "all_flags_release"},
-		"Annotations":     ubx.FieldSpec{WireName: "annotations"},
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"FlagNamesRelease": ubx.FieldSpec{
 			WireName: "flag_names_release",
-			Kind:     "object",
-			Fields:   V1beta1FlagRelease_FlagNamesReleaseFields,
+			Kind: "object",
+			Fields: V1beta1FlagRelease_FlagNamesReleaseFields,
 		},
 		"FlagRevisions": ubx.FieldSpec{WireName: "flag_revisions"},
 		"FlagRevisionsRelease": ubx.FieldSpec{
 			WireName: "flag_revisions_release",
-			Kind:     "object",
-			Fields:   V1beta1FlagRelease_FlagRevisionsReleaseFields,
+			Kind: "object",
+			Fields: V1beta1FlagRelease_FlagRevisionsReleaseFields,
 		},
 		"FlagSets": ubx.FieldSpec{WireName: "flag_sets"},
 		"FlagSetsRelease": ubx.FieldSpec{
 			WireName: "flag_sets_release",
-			Kind:     "object",
-			Fields:   V1beta1FlagRelease_FlagSetsReleaseFields,
+			Kind: "object",
+			Fields: V1beta1FlagRelease_FlagSetsReleaseFields,
 		},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ObsoleteFlags": ubx.FieldSpec{WireName: "obsolete_flags"},
-		"UnitKind":      ubx.FieldSpec{WireName: "unit_kind"},
+		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 	},
 }

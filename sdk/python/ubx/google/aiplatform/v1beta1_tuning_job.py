@@ -184,7 +184,6 @@ class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
     language_auto: Any = None
     language_codes: Any = None
     language_hints: Any = None
-    mode: Any = None
     word_timestamp: Any = None
 
 @dataclasses.dataclass
@@ -315,6 +314,11 @@ class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
     thinking_level: Any = None
 
 @dataclasses.dataclass
+class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfig:
+    echo_target_language: Any = None
+    target_language_code: Any = None
+
+@dataclasses.dataclass
 class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig:
     audio_timestamp: Any = None
     audio_transcription_config: Any = None
@@ -341,6 +345,7 @@ class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
     thinking_config: Any = None
     top_k: Any = None
     top_p: Any = None
+    translation_config: Any = None
 
 @dataclasses.dataclass
 class V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig:
@@ -1194,7 +1199,6 @@ _V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardCo
         kind="object",
         fields=_V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
     ),
-    "mode": ubx.FieldSpec(wire_name="mode"),
     "word_timestamp": ubx.FieldSpec(wire_name="word_timestamp"),
 }
 
@@ -1377,6 +1381,11 @@ _V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardCo
     "thinking_level": ubx.FieldSpec(wire_name="thinking_level"),
 }
 
+_V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfigFields = {
+    "echo_target_language": ubx.FieldSpec(wire_name="echo_target_language"),
+    "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
+}
+
 _V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields = {
     "audio_timestamp": ubx.FieldSpec(wire_name="audio_timestamp"),
     "audio_transcription_config": ubx.FieldSpec(
@@ -1435,6 +1444,11 @@ _V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardCo
     ),
     "top_k": ubx.FieldSpec(wire_name="top_k"),
     "top_p": ubx.FieldSpec(wire_name="top_p"),
+    "translation_config": ubx.FieldSpec(
+        wire_name="translation_config",
+        kind="object",
+        fields=_V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfigFields,
+    ),
 }
 
 _V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields = {

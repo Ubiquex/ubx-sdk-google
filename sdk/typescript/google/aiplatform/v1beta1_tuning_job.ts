@@ -178,7 +178,6 @@ export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_
   languageAuto?: unknown | Computed<unknown>;
   languageCodes?: string[] | Computed<string[]>;
   languageHints?: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
-  mode?: string | Computed<string>;
   wordTimestamp?: boolean | Computed<boolean>;
 }
 
@@ -309,6 +308,11 @@ export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_
   thinkingLevel?: string | Computed<string>;
 }
 
+export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfig {
+  echoTargetLanguage?: boolean | Computed<boolean>;
+  targetLanguageCode?: string | Computed<string>;
+}
+
 export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig {
   audioTimestamp?: boolean | Computed<boolean>;
   audioTranscriptionConfig?: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig | Computed<V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig>;
@@ -335,6 +339,7 @@ export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_
   thinkingConfig?: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfig | Computed<V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfig>;
   topK?: number | Computed<number>;
   topP?: number | Computed<number>;
+  translationConfig?: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfig | Computed<V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfig>;
 }
 
 export interface V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig {
@@ -1189,7 +1194,6 @@ const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
     kind: "object",
     fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
   },
-  mode: "mode",
   wordTimestamp: "word_timestamp",
 };
 
@@ -1372,6 +1376,11 @@ const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
   thinkingLevel: "thinking_level",
 };
 
+const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfigFields: FieldMap = {
+  echoTargetLanguage: "echo_target_language",
+  targetLanguageCode: "target_language_code",
+};
+
 const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields: FieldMap = {
   audioTimestamp: "audio_timestamp",
   audioTranscriptionConfig: {
@@ -1430,6 +1439,11 @@ const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRew
   },
   topK: "top_k",
   topP: "top_p",
+  translationConfig: {
+    wireName: "translation_config",
+    kind: "object",
+    fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_TranslationConfigFields,
+  },
 };
 
 const V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields: FieldMap = {

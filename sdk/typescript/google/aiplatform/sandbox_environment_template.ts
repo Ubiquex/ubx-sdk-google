@@ -46,8 +46,6 @@ export interface SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfig
 }
 
 export interface SandboxEnvironmentTemplate_EgressControlConfig {
-  /** Optional. The customer VPC network that sandbox egress is routed into. */
-  customerVpcNetwork?: string | Computed<string>;
   /** Optional. DNS peering configurations that allow sandbox egress to resolve customer-internal domains via the customer VPC. */
   dnsPeeringConfigs?: SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs[] | Computed<SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs[]>;
   /** Optional. Whether to allow internet access. */
@@ -130,7 +128,6 @@ const SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields: Fi
 };
 
 const SandboxEnvironmentTemplate_EgressControlConfigFields: FieldMap = {
-  customerVpcNetwork: "customer_vpc_network",
   dnsPeeringConfigs: {
     wireName: "dns_peering_configs",
     kind: "list",

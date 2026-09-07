@@ -14,17 +14,17 @@ type V1beta1Workspace_PrivateResourceMetadata struct {
 }
 
 var V1beta1Workspace_DataEncryptionStateFields = ubx.FieldMap{
-	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-}
+		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	}
 
 var V1beta1Workspace_PrivateResourceMetadataFields = ubx.FieldMap{
-	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-}
+		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+	}
 
 type V1beta1WorkspaceConfig struct {
 	// Describes encryption state of a resource.
 	DataEncryptionState any
-	// Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
+	// Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management.
 	Depth any
 	// Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
 	DisableMoves any
@@ -43,7 +43,7 @@ type V1beta1WorkspaceAttrs struct {
 	CreateTime any
 	// Describes encryption state of a resource.
 	DataEncryptionState any
-	// Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management.
+	// Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management.
 	Depth any
 	// Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
 	DisableMoves any
@@ -66,18 +66,18 @@ var V1beta1Workspace = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind:     "object",
-			Fields:   V1beta1Workspace_DataEncryptionStateFields,
+			Kind: "object",
+			Fields: V1beta1Workspace_DataEncryptionStateFields,
 		},
-		"Depth":                  ubx.FieldSpec{WireName: "depth"},
-		"DisableMoves":           ubx.FieldSpec{WireName: "disable_moves"},
+		"Depth": ubx.FieldSpec{WireName: "depth"},
+		"DisableMoves": ubx.FieldSpec{WireName: "disable_moves"},
 		"EnableBranchManagement": ubx.FieldSpec{WireName: "enable_branch_management"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
-		"OriginalBranch":         ubx.FieldSpec{WireName: "original_branch"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OriginalBranch": ubx.FieldSpec{WireName: "original_branch"},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind:     "object",
-			Fields:   V1beta1Workspace_PrivateResourceMetadataFields,
+			Kind: "object",
+			Fields: V1beta1Workspace_PrivateResourceMetadataFields,
 		},
 	},
 }

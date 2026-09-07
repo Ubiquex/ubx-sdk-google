@@ -16,13 +16,13 @@ type EntityType_ExcludedPhrases struct {
 }
 
 var EntityType_EntitiesFields = ubx.FieldMap{
-	"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-}
+		"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var EntityType_ExcludedPhrasesFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 type EntityTypeConfig struct {
 	// Whether Dialogflow automatically generates additional synonyms for this entity beyond the ones explicitly listed. (AI-inferred)
@@ -65,21 +65,21 @@ type EntityTypeAttrs struct {
 var EntityType = ubx.ResourceBinding{
 	WireType: "google_dialogflow_entity_type",
 	Fields: ubx.FieldMap{
-		"AutoExpansionMode":     ubx.FieldSpec{WireName: "auto_expansion_mode"},
-		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+		"AutoExpansionMode": ubx.FieldSpec{WireName: "auto_expansion_mode"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EnableFuzzyExtraction": ubx.FieldSpec{WireName: "enable_fuzzy_extraction"},
 		"Entities": ubx.FieldSpec{
 			WireName: "entities",
-			Kind:     "list",
-			Fields:   EntityType_EntitiesFields,
+			Kind: "list",
+			Fields: EntityType_EntitiesFields,
 		},
 		"ExcludedPhrases": ubx.FieldSpec{
 			WireName: "excluded_phrases",
-			Kind:     "list",
-			Fields:   EntityType_ExcludedPhrasesFields,
+			Kind: "list",
+			Fields: EntityType_ExcludedPhrasesFields,
 		},
-		"Kind":   ubx.FieldSpec{WireName: "kind"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Redact": ubx.FieldSpec{WireName: "redact"},
 	},
 }

@@ -9,8 +9,8 @@ type ChangeStream_CollectionGroupScope struct {
 }
 
 var ChangeStream_CollectionGroupScopeFields = ubx.FieldMap{
-	"CollectionGroupId": ubx.FieldSpec{WireName: "collection_group_id"},
-}
+		"CollectionGroupId": ubx.FieldSpec{WireName: "collection_group_id"},
+	}
 
 type ChangeStreamConfig struct {
 	// The change stream is scoped to a collection group. Only events associated with the given collection group are visible to the Change Stream. Only a single change stream can be enabled per collection group.
@@ -49,12 +49,12 @@ var ChangeStream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectionGroupScope": ubx.FieldSpec{
 			WireName: "collection_group_scope",
-			Kind:     "object",
-			Fields:   ChangeStream_CollectionGroupScopeFields,
+			Kind: "object",
+			Fields: ChangeStream_CollectionGroupScopeFields,
 		},
-		"DatabaseScope":   ubx.FieldSpec{WireName: "database_scope"},
-		"Etag":            ubx.FieldSpec{WireName: "etag"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"DatabaseScope": ubx.FieldSpec{WireName: "database_scope"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
 	},
 }

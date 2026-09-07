@@ -27,24 +27,24 @@ type AppConnector_ResourceInfo struct {
 }
 
 var AppConnector_PrincipalInfo_ServiceAccountFields = ubx.FieldMap{
-	"Email": ubx.FieldSpec{WireName: "email"},
-}
+		"Email": ubx.FieldSpec{WireName: "email"},
+	}
 
 var AppConnector_PrincipalInfoFields = ubx.FieldMap{
-	"ServiceAccount": ubx.FieldSpec{
-		WireName: "service_account",
-		Kind:     "object",
-		Fields:   AppConnector_PrincipalInfo_ServiceAccountFields,
-	},
-}
+		"ServiceAccount": ubx.FieldSpec{
+			WireName: "service_account",
+			Kind: "object",
+			Fields: AppConnector_PrincipalInfo_ServiceAccountFields,
+		},
+	}
 
 var AppConnector_ResourceInfoFields = ubx.FieldMap{
-	"Id":       ubx.FieldSpec{WireName: "id"},
-	"Resource": ubx.FieldSpec{WireName: "resource"},
-	"Status":   ubx.FieldSpec{WireName: "status"},
-	"Sub":      ubx.FieldSpec{WireName: "sub"},
-	"Time":     ubx.FieldSpec{WireName: "time"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Resource": ubx.FieldSpec{WireName: "resource"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"Sub": ubx.FieldSpec{WireName: "sub"},
+		"Time": ubx.FieldSpec{WireName: "time"},
+	}
 
 type AppConnectorConfig struct {
 	// Optional. An arbitrary user-provided name for the AppConnector. Cannot exceed 64 characters.
@@ -84,17 +84,17 @@ var AppConnector = ubx.ResourceBinding{
 	WireType: "google_beyondcorp_app_connector",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrincipalInfo": ubx.FieldSpec{
 			WireName: "principal_info",
-			Kind:     "object",
-			Fields:   AppConnector_PrincipalInfoFields,
+			Kind: "object",
+			Fields: AppConnector_PrincipalInfoFields,
 		},
 		"ResourceInfo": ubx.FieldSpec{
 			WireName: "resource_info",
-			Kind:     "object",
-			Fields:   AppConnector_ResourceInfoFields,
+			Kind: "object",
+			Fields: AppConnector_ResourceInfoFields,
 		},
 	},
 }

@@ -85,6 +85,11 @@ export interface BetaUrlMap_DefaultRouteAction_CorsPolicy {
   maxAge?: number | Computed<number>;
 }
 
+export interface BetaUrlMap_DefaultRouteAction_DynamicCompressionPolicy {
+  /** Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header. */
+  compressionMode?: string | Computed<string>;
+}
+
 export interface BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_Abort {
   /** The HTTP status code used to abort the request. The value must be from 200 to 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director. */
   httpStatus?: number | Computed<number>;
@@ -169,6 +174,8 @@ export interface BetaUrlMap_DefaultRouteAction {
   cachePolicy?: BetaUrlMap_DefaultRouteAction_CachePolicy | Computed<BetaUrlMap_DefaultRouteAction_CachePolicy>;
   /** The specification for allowing client-side cross-origin requests. For more information about the W3C recommendation for cross-origin resource sharing (CORS), see Fetch API Living Standard. */
   corsPolicy?: BetaUrlMap_DefaultRouteAction_CorsPolicy | Computed<BetaUrlMap_DefaultRouteAction_CorsPolicy>;
+  /** Dynamic compression policy for this URL Map's route. */
+  dynamicCompressionPolicy?: BetaUrlMap_DefaultRouteAction_DynamicCompressionPolicy | Computed<BetaUrlMap_DefaultRouteAction_DynamicCompressionPolicy>;
   /** The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by the load balancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the load balancer for a percentage of requests. */
   faultInjectionPolicy?: BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy | Computed<BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy>;
   /** The configuration for Cloud CDN's image optimization feature. This feature dynamically processes and delivers images from the network edge. Image Optimization is only available for Global External Application Load Balancers. Either Cloud CDN must be enabled on the backend service or backend bucket serving the route, or cache policy must be configured on the same route. */
@@ -400,6 +407,10 @@ const BetaUrlMap_DefaultRouteAction_CorsPolicyFields: FieldMap = {
   maxAge: "max_age",
 };
 
+const BetaUrlMap_DefaultRouteAction_DynamicCompressionPolicyFields: FieldMap = {
+  compressionMode: "compression_mode",
+};
+
 const BetaUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields: FieldMap = {
   httpStatus: "http_status",
   percentage: "percentage",
@@ -503,6 +514,11 @@ const BetaUrlMap_DefaultRouteActionFields: FieldMap = {
     wireName: "cors_policy",
     kind: "object",
     fields: BetaUrlMap_DefaultRouteAction_CorsPolicyFields,
+  },
+  dynamicCompressionPolicy: {
+    wireName: "dynamic_compression_policy",
+    kind: "object",
+    fields: BetaUrlMap_DefaultRouteAction_DynamicCompressionPolicyFields,
   },
   faultInjectionPolicy: {
     wireName: "fault_injection_policy",

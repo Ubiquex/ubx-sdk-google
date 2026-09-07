@@ -103,11 +103,19 @@ class V1alphaInstance_ObservabilityConfig:
     track_wait_events: Any = None
 
 @dataclasses.dataclass
+class V1alphaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos:
+    fully_qualified_domain_name: Any = None
+    state: Any = None
+
+@dataclasses.dataclass
 class V1alphaInstance_PscInstanceConfig_PscAutoConnections:
     consumer_network: Any = None
     consumer_network_status: Any = None
     consumer_project: Any = None
+    dns_automation_infos: Any = None
     ip_address: Any = None
+    service_connection_policy: Any = None
+    service_connection_policy_creation_state: Any = None
     status: Any = None
 
 @dataclasses.dataclass
@@ -264,11 +272,23 @@ _V1alphaInstance_ObservabilityConfigFields = {
     "track_wait_events": ubx.FieldSpec(wire_name="track_wait_events"),
 }
 
+_V1alphaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields = {
+    "fully_qualified_domain_name": ubx.FieldSpec(wire_name="fully_qualified_domain_name"),
+    "state": ubx.FieldSpec(wire_name="state"),
+}
+
 _V1alphaInstance_PscInstanceConfig_PscAutoConnectionsFields = {
     "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
     "consumer_network_status": ubx.FieldSpec(wire_name="consumer_network_status"),
     "consumer_project": ubx.FieldSpec(wire_name="consumer_project"),
+    "dns_automation_infos": ubx.FieldSpec(
+        wire_name="dns_automation_infos",
+        kind="list",
+        fields=_V1alphaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
+    ),
     "ip_address": ubx.FieldSpec(wire_name="ip_address"),
+    "service_connection_policy": ubx.FieldSpec(wire_name="service_connection_policy"),
+    "service_connection_policy_creation_state": ubx.FieldSpec(wire_name="service_connection_policy_creation_state"),
     "status": ubx.FieldSpec(wire_name="status"),
 }
 

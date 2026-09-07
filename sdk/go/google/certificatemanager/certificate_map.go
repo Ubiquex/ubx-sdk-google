@@ -51,8 +51,8 @@ var CertificateMap = ubx.ResourceBinding{
 	WireType: "google_certificatemanager_certificate_map",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type NetworkFirewallPolicy_Associations struct {
 	// The target network resource (e.g., VPC network URL or ID) to which the firewall policy is attached. (AI-inferred)
 	AttachmentTarget any
-	DisplayName      any
+	DisplayName any
 	// The ID of the firewall policy to associate with the network. (AI-inferred)
 	FirewallPolicyId any
 	// The name of the network firewall policy association. (AI-inferred)
@@ -56,7 +56,7 @@ type NetworkFirewallPolicy_PacketMirroringRules_Match struct {
 	SrcNetworkContext any
 	// The source network type to match for the packet mirroring rule. Allowed values are: INTERNET, INTRA_VPC, NON_INTERNET, UNSPECIFIED, VPC_NETWORKS. (AI-inferred)
 	SrcNetworkType any
-	SrcNetworks    any
+	SrcNetworks any
 	// List of source region codes (e.g., 'us-central1') that the rule matches. The rule applies to packets originating from any of these regions. (AI-inferred)
 	SrcRegionCodes any
 	// A list of secure tags that source instances must have for the packet mirroring rule to match. Traffic from an instance with any of the listed secure tags is included in the rule. (AI-inferred)
@@ -67,7 +67,7 @@ type NetworkFirewallPolicy_PacketMirroringRules_Match struct {
 
 type NetworkFirewallPolicy_PacketMirroringRules struct {
 	// The action to perform when a packet matches this rule. For packet mirroring rules, the allowed values are 'mirror' to mirror the traffic and 'goto_next' to skip to the next rule. (AI-inferred)
-	Action      any
+	Action any
 	Description any
 	// Specifies the direction of traffic to which this rule applies. Valid values are EGRESS for outbound traffic and INGRESS for inbound traffic. (AI-inferred)
 	Direction any
@@ -75,12 +75,12 @@ type NetworkFirewallPolicy_PacketMirroringRules struct {
 	Disabled any
 	// Whether to enable logging for traffic matching this packet mirroring rule. (AI-inferred)
 	EnableLogging any
-	Kind          any
+	Kind any
 	// The match condition for the packet mirroring rule, which defines the traffic that should be mirrored. (AI-inferred)
 	Match any
 	// The priority of the packet mirroring rule. Lower values have higher precedence. Valid range is 0 to 2147483647. (AI-inferred)
-	Priority       any
-	RuleName       any
+	Priority any
+	RuleName any
 	RuleTupleCount any
 	// The name or URL of the security profile group that defines the security profiles to apply to mirrored traffic. (AI-inferred)
 	SecurityProfileGroup any
@@ -98,78 +98,78 @@ type NetworkFirewallPolicy_PacketMirroringRules struct {
 }
 
 var NetworkFirewallPolicy_AssociationsFields = ubx.FieldMap{
-	"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
-	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
-	"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
-	"Name":             ubx.FieldSpec{WireName: "name"},
-	"ShortName":        ubx.FieldSpec{WireName: "short_name"},
-}
+		"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+	}
 
 var NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields = ubx.FieldMap{
-	"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-	"Ports":      ubx.FieldSpec{WireName: "ports"},
-}
+		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+	}
 
 var NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var NetworkFirewallPolicy_PacketMirroringRules_MatchFields = ubx.FieldMap{
-	"DestAddressGroups":       ubx.FieldSpec{WireName: "dest_address_groups"},
-	"DestFqdns":               ubx.FieldSpec{WireName: "dest_fqdns"},
-	"DestIpRanges":            ubx.FieldSpec{WireName: "dest_ip_ranges"},
-	"DestNetworkContext":      ubx.FieldSpec{WireName: "dest_network_context"},
-	"DestNetworkType":         ubx.FieldSpec{WireName: "dest_network_type"},
-	"DestRegionCodes":         ubx.FieldSpec{WireName: "dest_region_codes"},
-	"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
-	"Layer4Configs": ubx.FieldSpec{
-		WireName: "layer4_configs",
-		Kind:     "list",
-		Fields:   NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
-	},
-	"SrcAddressGroups":  ubx.FieldSpec{WireName: "src_address_groups"},
-	"SrcFqdns":          ubx.FieldSpec{WireName: "src_fqdns"},
-	"SrcIpRanges":       ubx.FieldSpec{WireName: "src_ip_ranges"},
-	"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
-	"SrcNetworkType":    ubx.FieldSpec{WireName: "src_network_type"},
-	"SrcNetworks":       ubx.FieldSpec{WireName: "src_networks"},
-	"SrcRegionCodes":    ubx.FieldSpec{WireName: "src_region_codes"},
-	"SrcSecureTags": ubx.FieldSpec{
-		WireName: "src_secure_tags",
-		Kind:     "list",
-		Fields:   NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-	},
-	"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
-}
+		"DestAddressGroups": ubx.FieldSpec{WireName: "dest_address_groups"},
+		"DestFqdns": ubx.FieldSpec{WireName: "dest_fqdns"},
+		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
+		"DestNetworkContext": ubx.FieldSpec{WireName: "dest_network_context"},
+		"DestNetworkType": ubx.FieldSpec{WireName: "dest_network_type"},
+		"DestRegionCodes": ubx.FieldSpec{WireName: "dest_region_codes"},
+		"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
+		"Layer4Configs": ubx.FieldSpec{
+			WireName: "layer4_configs",
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
+		},
+		"SrcAddressGroups": ubx.FieldSpec{WireName: "src_address_groups"},
+		"SrcFqdns": ubx.FieldSpec{WireName: "src_fqdns"},
+		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
+		"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
+		"SrcNetworkType": ubx.FieldSpec{WireName: "src_network_type"},
+		"SrcNetworks": ubx.FieldSpec{WireName: "src_networks"},
+		"SrcRegionCodes": ubx.FieldSpec{WireName: "src_region_codes"},
+		"SrcSecureTags": ubx.FieldSpec{
+			WireName: "src_secure_tags",
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+		},
+		"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
+	}
 
 var NetworkFirewallPolicy_PacketMirroringRulesFields = ubx.FieldMap{
-	"Action":        ubx.FieldSpec{WireName: "action"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"Direction":     ubx.FieldSpec{WireName: "direction"},
-	"Disabled":      ubx.FieldSpec{WireName: "disabled"},
-	"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-	"Kind":          ubx.FieldSpec{WireName: "kind"},
-	"Match": ubx.FieldSpec{
-		WireName: "match",
-		Kind:     "object",
-		Fields:   NetworkFirewallPolicy_PacketMirroringRules_MatchFields,
-	},
-	"Priority":              ubx.FieldSpec{WireName: "priority"},
-	"RuleName":              ubx.FieldSpec{WireName: "rule_name"},
-	"RuleTupleCount":        ubx.FieldSpec{WireName: "rule_tuple_count"},
-	"SecurityProfileGroup":  ubx.FieldSpec{WireName: "security_profile_group"},
-	"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
-	"TargetResources":       ubx.FieldSpec{WireName: "target_resources"},
-	"TargetSecureTags": ubx.FieldSpec{
-		WireName: "target_secure_tags",
-		Kind:     "list",
-		Fields:   NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-	},
-	"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-	"TargetType":            ubx.FieldSpec{WireName: "target_type"},
-	"TlsInspect":            ubx.FieldSpec{WireName: "tls_inspect"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Match": ubx.FieldSpec{
+			WireName: "match",
+			Kind: "object",
+			Fields: NetworkFirewallPolicy_PacketMirroringRules_MatchFields,
+		},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
+		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
+		"SecurityProfileGroup": ubx.FieldSpec{WireName: "security_profile_group"},
+		"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
+		"TargetResources": ubx.FieldSpec{WireName: "target_resources"},
+		"TargetSecureTags": ubx.FieldSpec{
+			WireName: "target_secure_tags",
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+		},
+		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
+		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"TlsInspect": ubx.FieldSpec{WireName: "tls_inspect"},
+	}
 
 type NetworkFirewallPolicyConfig struct {
 	// A list of associations that belong to this firewall policy.
@@ -238,26 +238,26 @@ var NetworkFirewallPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
-			Kind:     "list",
-			Fields:   NetworkFirewallPolicy_AssociationsFields,
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_AssociationsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id":          ubx.FieldSpec{WireName: "id"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PacketMirroringRules": ubx.FieldSpec{
 			WireName: "packet_mirroring_rules",
-			Kind:     "list",
-			Fields:   NetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
 		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   NetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind: "list",
+			Fields: NetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
-		"SelfLink":  ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ShortName": ubx.FieldSpec{WireName: "short_name"},
 	},
 }

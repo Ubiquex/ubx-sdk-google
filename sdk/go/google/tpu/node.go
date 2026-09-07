@@ -102,58 +102,58 @@ type Node_UpcomingMaintenance struct {
 }
 
 var Node_AcceleratorConfigFields = ubx.FieldMap{
-	"Topology": ubx.FieldSpec{WireName: "topology"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"Topology": ubx.FieldSpec{WireName: "topology"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Node_BootDiskConfig_CustomerEncryptionKeyFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var Node_BootDiskConfigFields = ubx.FieldMap{
-	"CustomerEncryptionKey": ubx.FieldSpec{
-		WireName: "customer_encryption_key",
-		Kind:     "object",
-		Fields:   Node_BootDiskConfig_CustomerEncryptionKeyFields,
-	},
-}
+		"CustomerEncryptionKey": ubx.FieldSpec{
+			WireName: "customer_encryption_key",
+			Kind: "object",
+			Fields: Node_BootDiskConfig_CustomerEncryptionKeyFields,
+		},
+	}
 
 var Node_DataDisksFields = ubx.FieldMap{
-	"Mode":       ubx.FieldSpec{WireName: "mode"},
-	"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
-}
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
+	}
 
 var Node_NetworkConfigFields = ubx.FieldMap{
-	"CanIpForward":      ubx.FieldSpec{WireName: "can_ip_forward"},
-	"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
-	"Network":           ubx.FieldSpec{WireName: "network"},
-	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
-	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
-}
+		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
+		"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	}
 
 var Node_SchedulingConfigFields = ubx.FieldMap{
-	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-	"Reserved":    ubx.FieldSpec{WireName: "reserved"},
-	"Spot":        ubx.FieldSpec{WireName: "spot"},
-}
+		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+		"Reserved": ubx.FieldSpec{WireName: "reserved"},
+		"Spot": ubx.FieldSpec{WireName: "spot"},
+	}
 
 var Node_ServiceAccountFields = ubx.FieldMap{
-	"Email": ubx.FieldSpec{WireName: "email"},
-	"Scope": ubx.FieldSpec{WireName: "scope"},
-}
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+	}
 
 var Node_ShieldedInstanceConfigFields = ubx.FieldMap{
-	"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-}
+		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+	}
 
 var Node_UpcomingMaintenanceFields = ubx.FieldMap{
-	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
-	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
-	"Type":                  ubx.FieldSpec{WireName: "type"},
-	"WindowEndTime":         ubx.FieldSpec{WireName: "window_end_time"},
-	"WindowStartTime":       ubx.FieldSpec{WireName: "window_start_time"},
-}
+		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
+		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
+		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
+	}
 
 type NodeConfig struct {
 	// A TPU accelerator configuration.
@@ -254,56 +254,56 @@ var Node = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AcceleratorConfig": ubx.FieldSpec{
 			WireName: "accelerator_config",
-			Kind:     "object",
-			Fields:   Node_AcceleratorConfigFields,
+			Kind: "object",
+			Fields: Node_AcceleratorConfigFields,
 		},
 		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
 		"BootDiskConfig": ubx.FieldSpec{
 			WireName: "boot_disk_config",
-			Kind:     "object",
-			Fields:   Node_BootDiskConfigFields,
+			Kind: "object",
+			Fields: Node_BootDiskConfigFields,
 		},
 		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
 		"DataDisks": ubx.FieldSpec{
 			WireName: "data_disks",
-			Kind:     "list",
-			Fields:   Node_DataDisksFields,
+			Kind: "list",
+			Fields: Node_DataDisksFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Health":      ubx.FieldSpec{WireName: "health"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Metadata":    ubx.FieldSpec{WireName: "metadata"},
+		"Health": ubx.FieldSpec{WireName: "health"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind:     "object",
-			Fields:   Node_NetworkConfigFields,
+			Kind: "object",
+			Fields: Node_NetworkConfigFields,
 		},
 		"NetworkConfigs": ubx.FieldSpec{
 			WireName: "network_configs",
-			Kind:     "list",
-			Fields:   Node_NetworkConfigFields,
+			Kind: "list",
+			Fields: Node_NetworkConfigFields,
 		},
 		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
 		"SchedulingConfig": ubx.FieldSpec{
 			WireName: "scheduling_config",
-			Kind:     "object",
-			Fields:   Node_SchedulingConfigFields,
+			Kind: "object",
+			Fields: Node_SchedulingConfigFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{
 			WireName: "service_account",
-			Kind:     "object",
-			Fields:   Node_ServiceAccountFields,
+			Kind: "object",
+			Fields: Node_ServiceAccountFields,
 		},
 		"ShieldedInstanceConfig": ubx.FieldSpec{
 			WireName: "shielded_instance_config",
-			Kind:     "object",
-			Fields:   Node_ShieldedInstanceConfigFields,
+			Kind: "object",
+			Fields: Node_ShieldedInstanceConfigFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"UpcomingMaintenance": ubx.FieldSpec{
 			WireName: "upcoming_maintenance",
-			Kind:     "object",
-			Fields:   Node_UpcomingMaintenanceFields,
+			Kind: "object",
+			Fields: Node_UpcomingMaintenanceFields,
 		},
 	},
 }

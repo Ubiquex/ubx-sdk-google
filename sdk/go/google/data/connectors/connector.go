@@ -61,7 +61,7 @@ type ConnectorAttrs struct {
 	LaunchStage any
 	// Marketplace connector details.
 	MarketplaceConnectorDetails any
-	Name                        any
+	Name any
 	// Output only. Tags of the connector.
 	Tags any
 	// Output only. Updated time.
@@ -72,5 +72,6 @@ type ConnectorAttrs struct {
 
 var Connector = ubx.DataSourceBinding{
 	WireType: "google_connectors_connector",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -24,21 +24,21 @@ type V1beta1Connection_CloudSql struct {
 }
 
 var V1beta1Connection_CloudSql_CredentialFields = ubx.FieldMap{
-	"Password": ubx.FieldSpec{WireName: "password"},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var V1beta1Connection_CloudSqlFields = ubx.FieldMap{
-	"Credential": ubx.FieldSpec{
-		WireName: "credential",
-		Kind:     "object",
-		Fields:   V1beta1Connection_CloudSql_CredentialFields,
-	},
-	"Database":         ubx.FieldSpec{WireName: "database"},
-	"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
-	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	"Type":             ubx.FieldSpec{WireName: "type"},
-}
+		"Credential": ubx.FieldSpec{
+			WireName: "credential",
+			Kind: "object",
+			Fields: V1beta1Connection_CloudSql_CredentialFields,
+		},
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type V1beta1ConnectionConfig struct {
 	// Connection properties specific to the Cloud SQL.
@@ -73,11 +73,11 @@ var V1beta1Connection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudSql": ubx.FieldSpec{
 			WireName: "cloud_sql",
-			Kind:     "object",
-			Fields:   V1beta1Connection_CloudSqlFields,
+			Kind: "object",
+			Fields: V1beta1Connection_CloudSqlFields,
 		},
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -209,207 +209,207 @@ type MigrationJob_VpcPeeringConnectivity struct {
 }
 
 var MigrationJob_ConversionWorkspaceFields = ubx.FieldMap{
-	"CommitId": ubx.FieldSpec{WireName: "commit_id"},
-	"Name":     ubx.FieldSpec{WireName: "name"},
-}
+		"CommitId": ubx.FieldSpec{WireName: "commit_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var MigrationJob_DestinationDatabaseFields = ubx.FieldMap{
-	"Engine":   ubx.FieldSpec{WireName: "engine"},
-	"Provider": ubx.FieldSpec{WireName: "provider"},
-}
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Provider": ubx.FieldSpec{WireName: "provider"},
+	}
 
 var MigrationJob_DumpFlags_DumpFlagsFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var MigrationJob_DumpFlagsFields = ubx.FieldMap{
-	"DumpFlags": ubx.FieldSpec{
-		WireName: "dump_flags",
-		Kind:     "list",
-		Fields:   MigrationJob_DumpFlags_DumpFlagsFields,
-	},
-}
+		"DumpFlags": ubx.FieldSpec{
+			WireName: "dump_flags",
+			Kind: "list",
+			Fields: MigrationJob_DumpFlags_DumpFlagsFields,
+		},
+	}
 
 var MigrationJob_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var MigrationJob_MysqlHomogeneousConfigFields = ubx.FieldMap{
-	"IsPrimaryDestination": ubx.FieldSpec{WireName: "is_primary_destination"},
-}
+		"IsPrimaryDestination": ubx.FieldSpec{WireName: "is_primary_destination"},
+	}
 
 var MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifierFields = ubx.FieldMap{
-	"Database": ubx.FieldSpec{WireName: "database"},
-	"Schema":   ubx.FieldSpec{WireName: "schema"},
-	"Table":    ubx.FieldSpec{WireName: "table"},
-	"Type":     ubx.FieldSpec{WireName: "type"},
-}
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"Table": ubx.FieldSpec{WireName: "table"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigsFields = ubx.FieldMap{
-	"ObjectIdentifier": ubx.FieldSpec{
-		WireName: "object_identifier",
-		Kind:     "object",
-		Fields:   MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifierFields,
-	},
-}
+		"ObjectIdentifier": ubx.FieldSpec{
+			WireName: "object_identifier",
+			Kind: "object",
+			Fields: MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigs_ObjectIdentifierFields,
+		},
+	}
 
 var MigrationJob_ObjectsConfig_SourceObjectsConfigFields = ubx.FieldMap{
-	"ObjectConfigs": ubx.FieldSpec{
-		WireName: "object_configs",
-		Kind:     "list",
-		Fields:   MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigsFields,
-	},
-	"ObjectsSelectionType": ubx.FieldSpec{WireName: "objects_selection_type"},
-}
+		"ObjectConfigs": ubx.FieldSpec{
+			WireName: "object_configs",
+			Kind: "list",
+			Fields: MigrationJob_ObjectsConfig_SourceObjectsConfig_ObjectConfigsFields,
+		},
+		"ObjectsSelectionType": ubx.FieldSpec{WireName: "objects_selection_type"},
+	}
 
 var MigrationJob_ObjectsConfigFields = ubx.FieldMap{
-	"SourceObjectsConfig": ubx.FieldSpec{
-		WireName: "source_objects_config",
-		Kind:     "object",
-		Fields:   MigrationJob_ObjectsConfig_SourceObjectsConfigFields,
-	},
-}
+		"SourceObjectsConfig": ubx.FieldSpec{
+			WireName: "source_objects_config",
+			Kind: "object",
+			Fields: MigrationJob_ObjectsConfig_SourceObjectsConfigFields,
+		},
+	}
 
 var MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields = ubx.FieldMap{
-	"ArchivedLogDirectory": ubx.FieldSpec{WireName: "archived_log_directory"},
-	"OnlineLogDirectory":   ubx.FieldSpec{WireName: "online_log_directory"},
-}
+		"ArchivedLogDirectory": ubx.FieldSpec{WireName: "archived_log_directory"},
+		"OnlineLogDirectory": ubx.FieldSpec{WireName: "online_log_directory"},
+	}
 
 var MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParserFields = ubx.FieldMap{
-	"LogFileDirectories": ubx.FieldSpec{
-		WireName: "log_file_directories",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields,
-	},
-	"OracleAsmLogFileAccess": ubx.FieldSpec{WireName: "oracle_asm_log_file_access"},
-}
+		"LogFileDirectories": ubx.FieldSpec{
+			WireName: "log_file_directories",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields,
+		},
+		"OracleAsmLogFileAccess": ubx.FieldSpec{WireName: "oracle_asm_log_file_access"},
+	}
 
 var MigrationJob_OracleToPostgresConfig_OracleSourceConfigFields = ubx.FieldMap{
-	"BinaryLogParser": ubx.FieldSpec{
-		WireName: "binary_log_parser",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParserFields,
-	},
-	"CdcStartPosition":                 ubx.FieldSpec{WireName: "cdc_start_position"},
-	"LogMiner":                         ubx.FieldSpec{WireName: "log_miner"},
-	"MaxConcurrentCdcConnections":      ubx.FieldSpec{WireName: "max_concurrent_cdc_connections"},
-	"MaxConcurrentFullDumpConnections": ubx.FieldSpec{WireName: "max_concurrent_full_dump_connections"},
-	"SkipFullDump":                     ubx.FieldSpec{WireName: "skip_full_dump"},
-}
+		"BinaryLogParser": ubx.FieldSpec{
+			WireName: "binary_log_parser",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_OracleSourceConfig_BinaryLogParserFields,
+		},
+		"CdcStartPosition": ubx.FieldSpec{WireName: "cdc_start_position"},
+		"LogMiner": ubx.FieldSpec{WireName: "log_miner"},
+		"MaxConcurrentCdcConnections": ubx.FieldSpec{WireName: "max_concurrent_cdc_connections"},
+		"MaxConcurrentFullDumpConnections": ubx.FieldSpec{WireName: "max_concurrent_full_dump_connections"},
+		"SkipFullDump": ubx.FieldSpec{WireName: "skip_full_dump"},
+	}
 
 var MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields = ubx.FieldMap{
-	"MaxConcurrentConnections": ubx.FieldSpec{WireName: "max_concurrent_connections"},
-	"TransactionTimeout":       ubx.FieldSpec{WireName: "transaction_timeout"},
-}
+		"MaxConcurrentConnections": ubx.FieldSpec{WireName: "max_concurrent_connections"},
+		"TransactionTimeout": ubx.FieldSpec{WireName: "transaction_timeout"},
+	}
 
 var MigrationJob_OracleToPostgresConfigFields = ubx.FieldMap{
-	"OracleSourceConfig": ubx.FieldSpec{
-		WireName: "oracle_source_config",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_OracleSourceConfigFields,
-	},
-	"PostgresDestinationConfig": ubx.FieldSpec{
-		WireName: "postgres_destination_config",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
-	},
-}
+		"OracleSourceConfig": ubx.FieldSpec{
+			WireName: "oracle_source_config",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_OracleSourceConfigFields,
+		},
+		"PostgresDestinationConfig": ubx.FieldSpec{
+			WireName: "postgres_destination_config",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
+		},
+	}
 
 var MigrationJob_PerformanceConfigFields = ubx.FieldMap{
-	"DumpParallelLevel": ubx.FieldSpec{WireName: "dump_parallel_level"},
-}
+		"DumpParallelLevel": ubx.FieldSpec{WireName: "dump_parallel_level"},
+	}
 
 var MigrationJob_PostgresHomogeneousConfigFields = ubx.FieldMap{
-	"IsNativeLogical":            ubx.FieldSpec{WireName: "is_native_logical"},
-	"MaxAdditionalSubscriptions": ubx.FieldSpec{WireName: "max_additional_subscriptions"},
-}
+		"IsNativeLogical": ubx.FieldSpec{WireName: "is_native_logical"},
+		"MaxAdditionalSubscriptions": ubx.FieldSpec{WireName: "max_additional_subscriptions"},
+	}
 
 var MigrationJob_PostgresToSqlserverConfig_PostgresSourceConfigFields = ubx.FieldMap{
-	"SkipFullDump": ubx.FieldSpec{WireName: "skip_full_dump"},
-}
+		"SkipFullDump": ubx.FieldSpec{WireName: "skip_full_dump"},
+	}
 
 var MigrationJob_PostgresToSqlserverConfigFields = ubx.FieldMap{
-	"PostgresSourceConfig": ubx.FieldSpec{
-		WireName: "postgres_source_config",
-		Kind:     "object",
-		Fields:   MigrationJob_PostgresToSqlserverConfig_PostgresSourceConfigFields,
-	},
-	"SqlserverDestinationConfig": ubx.FieldSpec{
-		WireName: "sqlserver_destination_config",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
-	},
-}
+		"PostgresSourceConfig": ubx.FieldSpec{
+			WireName: "postgres_source_config",
+			Kind: "object",
+			Fields: MigrationJob_PostgresToSqlserverConfig_PostgresSourceConfigFields,
+		},
+		"SqlserverDestinationConfig": ubx.FieldSpec{
+			WireName: "sqlserver_destination_config",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
+		},
+	}
 
 var MigrationJob_ReverseSshConnectivityFields = ubx.FieldMap{
-	"Vm":     ubx.FieldSpec{WireName: "vm"},
-	"VmIp":   ubx.FieldSpec{WireName: "vm_ip"},
-	"VmPort": ubx.FieldSpec{WireName: "vm_port"},
-	"Vpc":    ubx.FieldSpec{WireName: "vpc"},
-}
+		"Vm": ubx.FieldSpec{WireName: "vm"},
+		"VmIp": ubx.FieldSpec{WireName: "vm_ip"},
+		"VmPort": ubx.FieldSpec{WireName: "vm_port"},
+		"Vpc": ubx.FieldSpec{WireName: "vpc"},
+	}
 
 var MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfigFields = ubx.FieldMap{
-	"LinkedServer": ubx.FieldSpec{WireName: "linked_server"},
-	"SourceAg":     ubx.FieldSpec{WireName: "source_ag"},
-}
+		"LinkedServer": ubx.FieldSpec{WireName: "linked_server"},
+		"SourceAg": ubx.FieldSpec{WireName: "source_ag"},
+	}
 
 var MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptionsFields = ubx.FieldMap{
-	"CertPath":    ubx.FieldSpec{WireName: "cert_path"},
-	"PvkPassword": ubx.FieldSpec{WireName: "pvk_password"},
-	"PvkPath":     ubx.FieldSpec{WireName: "pvk_path"},
-}
+		"CertPath": ubx.FieldSpec{WireName: "cert_path"},
+		"PvkPassword": ubx.FieldSpec{WireName: "pvk_password"},
+		"PvkPath": ubx.FieldSpec{WireName: "pvk_path"},
+	}
 
 var MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackupsFields = ubx.FieldMap{
-	"Database": ubx.FieldSpec{WireName: "database"},
-	"EncryptionOptions": ubx.FieldSpec{
-		WireName: "encryption_options",
-		Kind:     "object",
-		Fields:   MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptionsFields,
-	},
-}
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"EncryptionOptions": ubx.FieldSpec{
+			WireName: "encryption_options",
+			Kind: "object",
+			Fields: MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackups_EncryptionOptionsFields,
+		},
+	}
 
 var MigrationJob_SqlserverHomogeneousMigrationJobConfigFields = ubx.FieldMap{
-	"BackupFilePattern": ubx.FieldSpec{WireName: "backup_file_pattern"},
-	"DagConfig": ubx.FieldSpec{
-		WireName: "dag_config",
-		Kind:     "object",
-		Fields:   MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfigFields,
-	},
-	"DatabaseBackups": ubx.FieldSpec{
-		WireName: "database_backups",
-		Kind:     "list",
-		Fields:   MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackupsFields,
-	},
-	"PromoteWhenReady": ubx.FieldSpec{WireName: "promote_when_ready"},
-	"UseDiffBackup":    ubx.FieldSpec{WireName: "use_diff_backup"},
-}
+		"BackupFilePattern": ubx.FieldSpec{WireName: "backup_file_pattern"},
+		"DagConfig": ubx.FieldSpec{
+			WireName: "dag_config",
+			Kind: "object",
+			Fields: MigrationJob_SqlserverHomogeneousMigrationJobConfig_DagConfigFields,
+		},
+		"DatabaseBackups": ubx.FieldSpec{
+			WireName: "database_backups",
+			Kind: "list",
+			Fields: MigrationJob_SqlserverHomogeneousMigrationJobConfig_DatabaseBackupsFields,
+		},
+		"PromoteWhenReady": ubx.FieldSpec{WireName: "promote_when_ready"},
+		"UseDiffBackup": ubx.FieldSpec{WireName: "use_diff_backup"},
+	}
 
 var MigrationJob_SqlserverToPostgresConfig_SqlserverSourceConfigFields = ubx.FieldMap{
-	"CdcStartPosition":                 ubx.FieldSpec{WireName: "cdc_start_position"},
-	"MaxConcurrentCdcConnections":      ubx.FieldSpec{WireName: "max_concurrent_cdc_connections"},
-	"MaxConcurrentFullDumpConnections": ubx.FieldSpec{WireName: "max_concurrent_full_dump_connections"},
-	"SkipFullDump":                     ubx.FieldSpec{WireName: "skip_full_dump"},
-}
+		"CdcStartPosition": ubx.FieldSpec{WireName: "cdc_start_position"},
+		"MaxConcurrentCdcConnections": ubx.FieldSpec{WireName: "max_concurrent_cdc_connections"},
+		"MaxConcurrentFullDumpConnections": ubx.FieldSpec{WireName: "max_concurrent_full_dump_connections"},
+		"SkipFullDump": ubx.FieldSpec{WireName: "skip_full_dump"},
+	}
 
 var MigrationJob_SqlserverToPostgresConfigFields = ubx.FieldMap{
-	"PostgresDestinationConfig": ubx.FieldSpec{
-		WireName: "postgres_destination_config",
-		Kind:     "object",
-		Fields:   MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
-	},
-	"SqlserverSourceConfig": ubx.FieldSpec{
-		WireName: "sqlserver_source_config",
-		Kind:     "object",
-		Fields:   MigrationJob_SqlserverToPostgresConfig_SqlserverSourceConfigFields,
-	},
-}
+		"PostgresDestinationConfig": ubx.FieldSpec{
+			WireName: "postgres_destination_config",
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfig_PostgresDestinationConfigFields,
+		},
+		"SqlserverSourceConfig": ubx.FieldSpec{
+			WireName: "sqlserver_source_config",
+			Kind: "object",
+			Fields: MigrationJob_SqlserverToPostgresConfig_SqlserverSourceConfigFields,
+		},
+	}
 
 var MigrationJob_VpcPeeringConnectivityFields = ubx.FieldMap{
-	"Vpc": ubx.FieldSpec{WireName: "vpc"},
-}
+		"Vpc": ubx.FieldSpec{WireName: "vpc"},
+	}
 
 type MigrationJobConfig struct {
 	// The CMEK (customer-managed encryption key) fully qualified key name used for the migration job. This field supports all migration jobs types except for: * Mysql to Mysql (use the cmek field in the cloudsql connection profile instead). * PostrgeSQL to PostgreSQL (use the cmek field in the cloudsql connection profile instead). * PostgreSQL to AlloyDB (use the kms_key_name field in the alloydb connection profile instead). Each Cloud CMEK key has the following format: projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
@@ -551,90 +551,90 @@ var MigrationJob = ubx.ResourceBinding{
 		"CmekKeyName": ubx.FieldSpec{WireName: "cmek_key_name"},
 		"ConversionWorkspace": ubx.FieldSpec{
 			WireName: "conversion_workspace",
-			Kind:     "object",
-			Fields:   MigrationJob_ConversionWorkspaceFields,
+			Kind: "object",
+			Fields: MigrationJob_ConversionWorkspaceFields,
 		},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DestinationDatabase": ubx.FieldSpec{
 			WireName: "destination_database",
-			Kind:     "object",
-			Fields:   MigrationJob_DestinationDatabaseFields,
+			Kind: "object",
+			Fields: MigrationJob_DestinationDatabaseFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DumpFlags": ubx.FieldSpec{
 			WireName: "dump_flags",
-			Kind:     "object",
-			Fields:   MigrationJob_DumpFlagsFields,
+			Kind: "object",
+			Fields: MigrationJob_DumpFlagsFields,
 		},
 		"DumpPath": ubx.FieldSpec{WireName: "dump_path"},
 		"DumpType": ubx.FieldSpec{WireName: "dump_type"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   MigrationJob_ErrorFields,
+			Kind: "object",
+			Fields: MigrationJob_ErrorFields,
 		},
 		"Filter": ubx.FieldSpec{WireName: "filter"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MysqlHomogeneousConfig": ubx.FieldSpec{
 			WireName: "mysql_homogeneous_config",
-			Kind:     "object",
-			Fields:   MigrationJob_MysqlHomogeneousConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_MysqlHomogeneousConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ObjectsConfig": ubx.FieldSpec{
 			WireName: "objects_config",
-			Kind:     "object",
-			Fields:   MigrationJob_ObjectsConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_ObjectsConfigFields,
 		},
 		"OracleToPostgresConfig": ubx.FieldSpec{
 			WireName: "oracle_to_postgres_config",
-			Kind:     "object",
-			Fields:   MigrationJob_OracleToPostgresConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_OracleToPostgresConfigFields,
 		},
 		"OriginalMigrationName": ubx.FieldSpec{WireName: "original_migration_name"},
 		"PerformanceConfig": ubx.FieldSpec{
 			WireName: "performance_config",
-			Kind:     "object",
-			Fields:   MigrationJob_PerformanceConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_PerformanceConfigFields,
 		},
 		"PostgresHomogeneousConfig": ubx.FieldSpec{
 			WireName: "postgres_homogeneous_config",
-			Kind:     "object",
-			Fields:   MigrationJob_PostgresHomogeneousConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_PostgresHomogeneousConfigFields,
 		},
 		"PostgresToSqlserverConfig": ubx.FieldSpec{
 			WireName: "postgres_to_sqlserver_config",
-			Kind:     "object",
-			Fields:   MigrationJob_PostgresToSqlserverConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_PostgresToSqlserverConfigFields,
 		},
 		"ReverseSshConnectivity": ubx.FieldSpec{
 			WireName: "reverse_ssh_connectivity",
-			Kind:     "object",
-			Fields:   MigrationJob_ReverseSshConnectivityFields,
+			Kind: "object",
+			Fields: MigrationJob_ReverseSshConnectivityFields,
 		},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"SourceDatabase": ubx.FieldSpec{
 			WireName: "source_database",
-			Kind:     "object",
-			Fields:   MigrationJob_DestinationDatabaseFields,
+			Kind: "object",
+			Fields: MigrationJob_DestinationDatabaseFields,
 		},
 		"SqlserverHomogeneousMigrationJobConfig": ubx.FieldSpec{
 			WireName: "sqlserver_homogeneous_migration_job_config",
-			Kind:     "object",
-			Fields:   MigrationJob_SqlserverHomogeneousMigrationJobConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_SqlserverHomogeneousMigrationJobConfigFields,
 		},
 		"SqlserverToPostgresConfig": ubx.FieldSpec{
 			WireName: "sqlserver_to_postgres_config",
-			Kind:     "object",
-			Fields:   MigrationJob_SqlserverToPostgresConfigFields,
+			Kind: "object",
+			Fields: MigrationJob_SqlserverToPostgresConfigFields,
 		},
-		"State":                ubx.FieldSpec{WireName: "state"},
+		"State": ubx.FieldSpec{WireName: "state"},
 		"StaticIpConnectivity": ubx.FieldSpec{WireName: "static_ip_connectivity"},
-		"Type":                 ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"VpcPeeringConnectivity": ubx.FieldSpec{
 			WireName: "vpc_peering_connectivity",
-			Kind:     "object",
-			Fields:   MigrationJob_VpcPeeringConnectivityFields,
+			Kind: "object",
+			Fields: MigrationJob_VpcPeeringConnectivityFields,
 		},
 	},
 }

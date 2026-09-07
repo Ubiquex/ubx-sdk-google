@@ -56,13 +56,13 @@ type AlphaRegionHealthCheckServiceAttrs struct {
 var AlphaRegionHealthCheckService = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_health_check_service",
 	Fields: ubx.FieldMap{
-		"Description":                     ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":                     ubx.FieldSpec{WireName: "fingerprint"},
-		"HealthChecks":                    ubx.FieldSpec{WireName: "health_checks"},
-		"HealthStatusAggregationPolicy":   ubx.FieldSpec{WireName: "health_status_aggregation_policy"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"HealthChecks": ubx.FieldSpec{WireName: "health_checks"},
+		"HealthStatusAggregationPolicy": ubx.FieldSpec{WireName: "health_status_aggregation_policy"},
 		"HealthStatusAggregationStrategy": ubx.FieldSpec{WireName: "health_status_aggregation_strategy"},
-		"Name":                            ubx.FieldSpec{WireName: "name"},
-		"NetworkEndpointGroups":           ubx.FieldSpec{WireName: "network_endpoint_groups"},
-		"NotificationEndpoints":           ubx.FieldSpec{WireName: "notification_endpoints"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NetworkEndpointGroups": ubx.FieldSpec{WireName: "network_endpoint_groups"},
+		"NotificationEndpoints": ubx.FieldSpec{WireName: "notification_endpoints"},
 	},
 }

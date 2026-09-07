@@ -38,6 +38,8 @@ _Memory_TopicsFields = {
 
 @dataclasses.dataclass
 class MemoryConfig:
+    # Optional. Represents the context of the memory.
+    context: Any = None
     # Optional. Represents the description of the Memory.
     description: Any = None
     # Optional. Input only. Indicates whether no revision will be created for this request.
@@ -67,6 +69,8 @@ class MemoryConfig:
 
 @dataclasses.dataclass
 class MemoryAttrs:
+    # Optional. Represents the context of the memory.
+    context: Any = None
     # Output only. Represents the timestamp when this Memory was created.
     create_time: Any = None
     # Optional. Represents the description of the Memory.
@@ -101,6 +105,7 @@ class MemoryAttrs:
 Memory = ubx.ResourceBinding(
     wire_type="google_aiplatform_memory",
     fields={
+        "context": ubx.FieldSpec(wire_name="context"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disable_memory_revisions": ubx.FieldSpec(wire_name="disable_memory_revisions"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),

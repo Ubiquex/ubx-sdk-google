@@ -40,8 +40,8 @@ type DatasetAttrs struct {
 var Dataset = ubx.ResourceBinding{
 	WireType: "google_translate_dataset",
 	Fields: ubx.FieldMap{
-		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
 		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
 	},

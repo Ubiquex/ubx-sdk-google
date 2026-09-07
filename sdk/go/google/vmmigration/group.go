@@ -30,8 +30,8 @@ type GroupAttrs struct {
 var Group = ubx.ResourceBinding{
 	WireType: "google_vmmigration_group",
 	Fields: ubx.FieldMap{
-		"Description":         ubx.FieldSpec{WireName: "description"},
-		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"MigrationTargetType": ubx.FieldSpec{WireName: "migration_target_type"},
 	},
 }

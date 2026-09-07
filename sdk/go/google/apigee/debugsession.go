@@ -38,11 +38,11 @@ type DebugsessionAttrs struct {
 var Debugsession = ubx.ResourceBinding{
 	WireType: "google_apigee_debugsession",
 	Fields: ubx.FieldMap{
-		"Count":     ubx.FieldSpec{WireName: "count"},
-		"Filter":    ubx.FieldSpec{WireName: "filter"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
-		"Timeout":   ubx.FieldSpec{WireName: "timeout"},
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 		"Tracesize": ubx.FieldSpec{WireName: "tracesize"},
-		"Validity":  ubx.FieldSpec{WireName: "validity"},
+		"Validity": ubx.FieldSpec{WireName: "validity"},
 	},
 }

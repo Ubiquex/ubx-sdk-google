@@ -25,23 +25,23 @@ type Workstation_RuntimeHost struct {
 }
 
 var Workstation_PersistentDirectoriesFields = ubx.FieldMap{
-	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-	"SizeGb":    ubx.FieldSpec{WireName: "size_gb"},
-}
+		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	}
 
 var Workstation_RuntimeHost_GceInstanceHostFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Zone": ubx.FieldSpec{WireName: "zone"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var Workstation_RuntimeHostFields = ubx.FieldMap{
-	"GceInstanceHost": ubx.FieldSpec{
-		WireName: "gce_instance_host",
-		Kind:     "object",
-		Fields:   Workstation_RuntimeHost_GceInstanceHostFields,
-	},
-}
+		"GceInstanceHost": ubx.FieldSpec{
+			WireName: "gce_instance_host",
+			Kind: "object",
+			Fields: Workstation_RuntimeHost_GceInstanceHostFields,
+		},
+	}
 
 type WorkstationConfig_ struct {
 	// Optional. Client-specified annotations.
@@ -108,19 +108,19 @@ var Workstation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Env":         ubx.FieldSpec{WireName: "env"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Env": ubx.FieldSpec{WireName: "env"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PersistentDirectories": ubx.FieldSpec{
 			WireName: "persistent_directories",
-			Kind:     "list",
-			Fields:   Workstation_PersistentDirectoriesFields,
+			Kind: "list",
+			Fields: Workstation_PersistentDirectoriesFields,
 		},
 		"RuntimeHost": ubx.FieldSpec{
 			WireName: "runtime_host",
-			Kind:     "object",
-			Fields:   Workstation_RuntimeHostFields,
+			Kind: "object",
+			Fields: Workstation_RuntimeHostFields,
 		},
 		"SourceWorkstation": ubx.FieldSpec{WireName: "source_workstation"},
 	},

@@ -18,14 +18,14 @@ type V1alphaBinding_Source struct {
 }
 
 var V1alphaBinding_AuthProviderBindingFields = ubx.FieldMap{
-	"AuthProvider": ubx.FieldSpec{WireName: "auth_provider"},
-	"ContinueUri":  ubx.FieldSpec{WireName: "continue_uri"},
-	"Scopes":       ubx.FieldSpec{WireName: "scopes"},
-}
+		"AuthProvider": ubx.FieldSpec{WireName: "auth_provider"},
+		"ContinueUri": ubx.FieldSpec{WireName: "continue_uri"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+	}
 
 var V1alphaBinding_SourceFields = ubx.FieldMap{
-	"Identifier": ubx.FieldSpec{WireName: "identifier"},
-}
+		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	}
 
 type V1alphaBindingConfig struct {
 	// The AuthProvider of the Binding.
@@ -66,21 +66,21 @@ var V1alphaBinding = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AuthProviderBinding": ubx.FieldSpec{
 			WireName: "auth_provider_binding",
-			Kind:     "object",
-			Fields:   V1alphaBinding_AuthProviderBindingFields,
+			Kind: "object",
+			Fields: V1alphaBinding_AuthProviderBindingFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   V1alphaBinding_SourceFields,
+			Kind: "object",
+			Fields: V1alphaBinding_SourceFields,
 		},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind:     "object",
-			Fields:   V1alphaBinding_SourceFields,
+			Kind: "object",
+			Fields: V1alphaBinding_SourceFields,
 		},
 	},
 }

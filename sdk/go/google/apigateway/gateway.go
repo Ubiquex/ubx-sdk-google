@@ -10,6 +10,8 @@ type GatewayConfig struct {
 	DisplayName any
 	// Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
 	Labels any
+	// Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with.
+	StreamingMode any
 }
 
 type GatewayAttrs struct {
@@ -21,12 +23,16 @@ type GatewayAttrs struct {
 	DefaultHostname any
 	// Optional. Display name.
 	DisplayName any
+	// Output only. The streaming mode this gateway is actually served with, which the service resolves at creation from `streaming_mode`, the referenced API Config, and the platform default at the time. Read this rather than `streaming_mode` to determine whether a gateway supports response streaming.
+	EffectiveStreamingMode any
 	// Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
 	Labels any
 	// Output only. Resource name of the Gateway. Format: projects/{project}/locations/{location}/gateways/{gateway}
 	Name any
 	// Output only. The current state of the Gateway.
 	State any
+	// Optional. Immutable. Requests response streaming for a new gateway. An attempt to change it on update is rejected. If unset, the service selects the mode. This field records only what was requested and is never modified by the service; read `effective_streaming_mode` for the mode the gateway is served with.
+	StreamingMode any
 	// Output only. Updated time.
 	UpdateTime any
 }
@@ -34,8 +40,9 @@ type GatewayAttrs struct {
 var Gateway = ubx.ResourceBinding{
 	WireType: "google_apigateway_gateway",
 	Fields: ubx.FieldMap{
-		"ApiConfig":   ubx.FieldSpec{WireName: "api_config"},
+		"ApiConfig": ubx.FieldSpec{WireName: "api_config"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"StreamingMode": ubx.FieldSpec{WireName: "streaming_mode"},
 	},
 }

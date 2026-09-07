@@ -9,8 +9,8 @@ type Tensorboard_EncryptionSpec struct {
 }
 
 var Tensorboard_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 type TensorboardConfig struct {
 	// Description of this Tensorboard.
@@ -63,11 +63,11 @@ var Tensorboard = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   Tensorboard_EncryptionSpecFields,
+			Kind: "object",
+			Fields: Tensorboard_EncryptionSpecFields,
 		},
-		"Etag":      ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Labels":    ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 	},
 }

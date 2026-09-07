@@ -50,13 +50,13 @@ type TargetInstanceAttrs struct {
 var TargetInstance = ubx.ResourceBinding{
 	WireType: "google_compute_target_instance",
 	Fields: ubx.FieldMap{
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"Id":             ubx.FieldSpec{WireName: "id"},
-		"Instance":       ubx.FieldSpec{WireName: "instance"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
-		"NatPolicy":      ubx.FieldSpec{WireName: "nat_policy"},
-		"Network":        ubx.FieldSpec{WireName: "network"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Instance": ubx.FieldSpec{WireName: "instance"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NatPolicy": ubx.FieldSpec{WireName: "nat_policy"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"SelfLink":       ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

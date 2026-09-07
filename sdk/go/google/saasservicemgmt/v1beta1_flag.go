@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Flag_EvaluationSpec_Allocations_Slots struct {
 	Variant any
-	Weight  any
+	Weight any
 }
 
 type V1beta1Flag_EvaluationSpec_Allocations struct {
-	Description  any
-	Id           any
+	Description any
+	Id any
 	RandomizedOn any
-	Slots        any
+	Slots any
 }
 
 type V1beta1Flag_EvaluationSpec_Rules struct {
 	AllocationId any
-	Condition    any
-	Id           any
-	Target       any
-	VariantId    any
+	Condition any
+	Id any
+	Target any
+	VariantId any
 }
 
 type V1beta1Flag_EvaluationSpec_Variants struct {
-	BoolValue   any
+	BoolValue any
 	DoubleValue any
-	IntValue    any
-	Name        any
+	IntValue any
+	Name any
 	StringValue any
 }
 
@@ -46,75 +46,75 @@ type V1beta1Flag_EvaluationSpec struct {
 
 type V1beta1Flag_Variants struct {
 	BooleanValue any
-	Description  any
-	DoubleValue  any
-	Id           any
+	Description any
+	DoubleValue any
+	Id any
 	IntegerValue any
-	StringValue  any
-	TrackingId   any
+	StringValue any
+	TrackingId any
 }
 
 var V1beta1Flag_EvaluationSpec_Allocations_SlotsFields = ubx.FieldMap{
-	"Variant": ubx.FieldSpec{WireName: "variant"},
-	"Weight":  ubx.FieldSpec{WireName: "weight"},
-}
+		"Variant": ubx.FieldSpec{WireName: "variant"},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
+	}
 
 var V1beta1Flag_EvaluationSpec_AllocationsFields = ubx.FieldMap{
-	"Description":  ubx.FieldSpec{WireName: "description"},
-	"Id":           ubx.FieldSpec{WireName: "id"},
-	"RandomizedOn": ubx.FieldSpec{WireName: "randomized_on"},
-	"Slots": ubx.FieldSpec{
-		WireName: "slots",
-		Kind:     "list",
-		Fields:   V1beta1Flag_EvaluationSpec_Allocations_SlotsFields,
-	},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"RandomizedOn": ubx.FieldSpec{WireName: "randomized_on"},
+		"Slots": ubx.FieldSpec{
+			WireName: "slots",
+			Kind: "list",
+			Fields: V1beta1Flag_EvaluationSpec_Allocations_SlotsFields,
+		},
+	}
 
 var V1beta1Flag_EvaluationSpec_RulesFields = ubx.FieldMap{
-	"AllocationId": ubx.FieldSpec{WireName: "allocation_id"},
-	"Condition":    ubx.FieldSpec{WireName: "condition"},
-	"Id":           ubx.FieldSpec{WireName: "id"},
-	"Target":       ubx.FieldSpec{WireName: "target"},
-	"VariantId":    ubx.FieldSpec{WireName: "variant_id"},
-}
+		"AllocationId": ubx.FieldSpec{WireName: "allocation_id"},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Target": ubx.FieldSpec{WireName: "target"},
+		"VariantId": ubx.FieldSpec{WireName: "variant_id"},
+	}
 
 var V1beta1Flag_EvaluationSpec_VariantsFields = ubx.FieldMap{
-	"BoolValue":   ubx.FieldSpec{WireName: "bool_value"},
-	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 var V1beta1Flag_EvaluationSpecFields = ubx.FieldMap{
-	"Allocations": ubx.FieldSpec{
-		WireName: "allocations",
-		Kind:     "list",
-		Fields:   V1beta1Flag_EvaluationSpec_AllocationsFields,
-	},
-	"Attributes":    ubx.FieldSpec{WireName: "attributes"},
-	"DefaultTarget": ubx.FieldSpec{WireName: "default_target"},
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   V1beta1Flag_EvaluationSpec_RulesFields,
-	},
-	"Variants": ubx.FieldSpec{
-		WireName: "variants",
-		Kind:     "list",
-		Fields:   V1beta1Flag_EvaluationSpec_VariantsFields,
-	},
-}
+		"Allocations": ubx.FieldSpec{
+			WireName: "allocations",
+			Kind: "list",
+			Fields: V1beta1Flag_EvaluationSpec_AllocationsFields,
+		},
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"DefaultTarget": ubx.FieldSpec{WireName: "default_target"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: V1beta1Flag_EvaluationSpec_RulesFields,
+		},
+		"Variants": ubx.FieldSpec{
+			WireName: "variants",
+			Kind: "list",
+			Fields: V1beta1Flag_EvaluationSpec_VariantsFields,
+		},
+	}
 
 var V1beta1Flag_VariantsFields = ubx.FieldMap{
-	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-	"Description":  ubx.FieldSpec{WireName: "description"},
-	"DoubleValue":  ubx.FieldSpec{WireName: "double_value"},
-	"Id":           ubx.FieldSpec{WireName: "id"},
-	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
-	"TrackingId":   ubx.FieldSpec{WireName: "tracking_id"},
-}
+		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+		"TrackingId": ubx.FieldSpec{WireName: "tracking_id"},
+	}
 
 type V1beta1FlagConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -185,21 +185,21 @@ var V1beta1Flag = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EvaluationSpec": ubx.FieldSpec{
 			WireName: "evaluation_spec",
-			Kind:     "object",
-			Fields:   V1beta1Flag_EvaluationSpecFields,
+			Kind: "object",
+			Fields: V1beta1Flag_EvaluationSpecFields,
 		},
-		"FlagSet":       ubx.FieldSpec{WireName: "flag_set"},
+		"FlagSet": ubx.FieldSpec{WireName: "flag_set"},
 		"FlagValueType": ubx.FieldSpec{WireName: "flag_value_type"},
-		"Key":           ubx.FieldSpec{WireName: "key"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"State":         ubx.FieldSpec{WireName: "state"},
-		"UnitKind":      ubx.FieldSpec{WireName: "unit_kind"},
-		"ValueType":     ubx.FieldSpec{WireName: "value_type"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
 		"Variants": ubx.FieldSpec{
 			WireName: "variants",
-			Kind:     "list",
-			Fields:   V1beta1Flag_VariantsFields,
+			Kind: "list",
+			Fields: V1beta1Flag_VariantsFields,
 		},
 	},
 }

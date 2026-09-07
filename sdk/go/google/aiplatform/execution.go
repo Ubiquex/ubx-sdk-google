@@ -50,13 +50,13 @@ type ExecutionAttrs struct {
 var Execution = ubx.ResourceBinding{
 	WireType: "google_aiplatform_execution",
 	Fields: ubx.FieldMap{
-		"Description":   ubx.FieldSpec{WireName: "description"},
-		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-		"Etag":          ubx.FieldSpec{WireName: "etag"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Metadata":      ubx.FieldSpec{WireName: "metadata"},
-		"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"State":         ubx.FieldSpec{WireName: "state"},
+		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

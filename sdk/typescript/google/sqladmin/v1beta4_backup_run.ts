@@ -2,6 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta4BackupRun_DiskEncryptionConfiguration {
+  /** Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently. */
+  confidentialMode?: boolean | Computed<boolean>;
   /** This is always `sql#diskEncryptionConfiguration`. */
   kind?: string | Computed<string>;
   /** Resource name of KMS key for disk encryption */
@@ -25,6 +27,7 @@ export interface V1beta4BackupRun_Error {
 }
 
 const V1beta4BackupRun_DiskEncryptionConfigurationFields: FieldMap = {
+  confidentialMode: "confidential_mode",
   kind: "kind",
   kmsKeyName: "kms_key_name",
 };

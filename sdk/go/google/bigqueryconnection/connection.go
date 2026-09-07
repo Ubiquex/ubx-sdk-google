@@ -190,194 +190,194 @@ type Connection_Spark struct {
 }
 
 var Connection_Aws_AccessRoleFields = ubx.FieldMap{
-	"IamRoleId": ubx.FieldSpec{WireName: "iam_role_id"},
-	"Identity":  ubx.FieldSpec{WireName: "identity"},
-}
+		"IamRoleId": ubx.FieldSpec{WireName: "iam_role_id"},
+		"Identity": ubx.FieldSpec{WireName: "identity"},
+	}
 
 var Connection_AwsFields = ubx.FieldMap{
-	"AccessRole": ubx.FieldSpec{
-		WireName: "access_role",
-		Kind:     "object",
-		Fields:   Connection_Aws_AccessRoleFields,
-	},
-}
+		"AccessRole": ubx.FieldSpec{
+			WireName: "access_role",
+			Kind: "object",
+			Fields: Connection_Aws_AccessRoleFields,
+		},
+	}
 
 var Connection_AzureFields = ubx.FieldMap{
-	"Application":                  ubx.FieldSpec{WireName: "application"},
-	"ClientId":                     ubx.FieldSpec{WireName: "client_id"},
-	"CustomerTenantId":             ubx.FieldSpec{WireName: "customer_tenant_id"},
-	"FederatedApplicationClientId": ubx.FieldSpec{WireName: "federated_application_client_id"},
-	"Identity":                     ubx.FieldSpec{WireName: "identity"},
-	"ObjectId":                     ubx.FieldSpec{WireName: "object_id"},
-	"RedirectUri":                  ubx.FieldSpec{WireName: "redirect_uri"},
-}
+		"Application": ubx.FieldSpec{WireName: "application"},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"CustomerTenantId": ubx.FieldSpec{WireName: "customer_tenant_id"},
+		"FederatedApplicationClientId": ubx.FieldSpec{WireName: "federated_application_client_id"},
+		"Identity": ubx.FieldSpec{WireName: "identity"},
+		"ObjectId": ubx.FieldSpec{WireName: "object_id"},
+		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+	}
 
 var Connection_CloudResourceFields = ubx.FieldMap{
-	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-}
+		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+	}
 
 var Connection_CloudSpannerFields = ubx.FieldMap{
-	"Database":               ubx.FieldSpec{WireName: "database"},
-	"DatabaseRole":           ubx.FieldSpec{WireName: "database_role"},
-	"MaxParallelism":         ubx.FieldSpec{WireName: "max_parallelism"},
-	"UseDataBoost":           ubx.FieldSpec{WireName: "use_data_boost"},
-	"UseParallelism":         ubx.FieldSpec{WireName: "use_parallelism"},
-	"UseServerlessAnalytics": ubx.FieldSpec{WireName: "use_serverless_analytics"},
-}
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"DatabaseRole": ubx.FieldSpec{WireName: "database_role"},
+		"MaxParallelism": ubx.FieldSpec{WireName: "max_parallelism"},
+		"UseDataBoost": ubx.FieldSpec{WireName: "use_data_boost"},
+		"UseParallelism": ubx.FieldSpec{WireName: "use_parallelism"},
+		"UseServerlessAnalytics": ubx.FieldSpec{WireName: "use_serverless_analytics"},
+	}
 
 var Connection_CloudSql_CredentialFields = ubx.FieldMap{
-	"Password": ubx.FieldSpec{WireName: "password"},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var Connection_CloudSqlFields = ubx.FieldMap{
-	"Credential": ubx.FieldSpec{
-		WireName: "credential",
-		Kind:     "object",
-		Fields:   Connection_CloudSql_CredentialFields,
-	},
-	"Database":         ubx.FieldSpec{WireName: "database"},
-	"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
-	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	"Type":             ubx.FieldSpec{WireName: "type"},
-}
+		"Credential": ubx.FieldSpec{
+			WireName: "credential",
+			Kind: "object",
+			Fields: Connection_CloudSql_CredentialFields,
+		},
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Connection_Configuration_AssetFields = ubx.FieldMap{
-	"Database":            ubx.FieldSpec{WireName: "database"},
-	"GoogleCloudResource": ubx.FieldSpec{WireName: "google_cloud_resource"},
-}
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"GoogleCloudResource": ubx.FieldSpec{WireName: "google_cloud_resource"},
+	}
 
 var Connection_Configuration_Authentication_Parameters_SecretValueFields = ubx.FieldMap{
-	"Plaintext":  ubx.FieldSpec{WireName: "plaintext"},
-	"SecretType": ubx.FieldSpec{WireName: "secret_type"},
-}
+		"Plaintext": ubx.FieldSpec{WireName: "plaintext"},
+		"SecretType": ubx.FieldSpec{WireName: "secret_type"},
+	}
 
 var Connection_Configuration_Authentication_ParametersFields = ubx.FieldMap{
-	"BoolValue":   ubx.FieldSpec{WireName: "bool_value"},
-	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-	"Int32Value":  ubx.FieldSpec{WireName: "int32_value"},
-	"SecretValue": ubx.FieldSpec{
-		WireName: "secret_value",
-		Kind:     "object",
-		Fields:   Connection_Configuration_Authentication_Parameters_SecretValueFields,
-	},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+		"Int32Value": ubx.FieldSpec{WireName: "int32_value"},
+		"SecretValue": ubx.FieldSpec{
+			WireName: "secret_value",
+			Kind: "object",
+			Fields: Connection_Configuration_Authentication_Parameters_SecretValueFields,
+		},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 var Connection_Configuration_Authentication_UsernamePasswordFields = ubx.FieldMap{
-	"Password": ubx.FieldSpec{
-		WireName: "password",
-		Kind:     "object",
-		Fields:   Connection_Configuration_Authentication_Parameters_SecretValueFields,
-	},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Password": ubx.FieldSpec{
+			WireName: "password",
+			Kind: "object",
+			Fields: Connection_Configuration_Authentication_Parameters_SecretValueFields,
+		},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var Connection_Configuration_AuthenticationFields = ubx.FieldMap{
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "map",
-		Fields:   Connection_Configuration_Authentication_ParametersFields,
-	},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"UsernamePassword": ubx.FieldSpec{
-		WireName: "username_password",
-		Kind:     "object",
-		Fields:   Connection_Configuration_Authentication_UsernamePasswordFields,
-	},
-}
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "map",
+			Fields: Connection_Configuration_Authentication_ParametersFields,
+		},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"UsernamePassword": ubx.FieldSpec{
+			WireName: "username_password",
+			Kind: "object",
+			Fields: Connection_Configuration_Authentication_UsernamePasswordFields,
+		},
+	}
 
 var Connection_Configuration_EndpointFields = ubx.FieldMap{
-	"HostPort": ubx.FieldSpec{WireName: "host_port"},
-}
+		"HostPort": ubx.FieldSpec{WireName: "host_port"},
+	}
 
 var Connection_Configuration_Network_PrivateServiceConnectFields = ubx.FieldMap{
-	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-}
+		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	}
 
 var Connection_Configuration_NetworkFields = ubx.FieldMap{
-	"PrivateServiceConnect": ubx.FieldSpec{
-		WireName: "private_service_connect",
-		Kind:     "object",
-		Fields:   Connection_Configuration_Network_PrivateServiceConnectFields,
-	},
-}
+		"PrivateServiceConnect": ubx.FieldSpec{
+			WireName: "private_service_connect",
+			Kind: "object",
+			Fields: Connection_Configuration_Network_PrivateServiceConnectFields,
+		},
+	}
 
 var Connection_Configuration_Tls_PrivatePkiFields = ubx.FieldMap{
-	"TrustedCertificatesPem": ubx.FieldSpec{WireName: "trusted_certificates_pem"},
-}
+		"TrustedCertificatesPem": ubx.FieldSpec{WireName: "trusted_certificates_pem"},
+	}
 
 var Connection_Configuration_TlsFields = ubx.FieldMap{
-	"Mode": ubx.FieldSpec{WireName: "mode"},
-	"PrivatePki": ubx.FieldSpec{
-		WireName: "private_pki",
-		Kind:     "object",
-		Fields:   Connection_Configuration_Tls_PrivatePkiFields,
-	},
-	"WebPki": ubx.FieldSpec{WireName: "web_pki"},
-}
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"PrivatePki": ubx.FieldSpec{
+			WireName: "private_pki",
+			Kind: "object",
+			Fields: Connection_Configuration_Tls_PrivatePkiFields,
+		},
+		"WebPki": ubx.FieldSpec{WireName: "web_pki"},
+	}
 
 var Connection_ConfigurationFields = ubx.FieldMap{
-	"Asset": ubx.FieldSpec{
-		WireName: "asset",
-		Kind:     "object",
-		Fields:   Connection_Configuration_AssetFields,
-	},
-	"Authentication": ubx.FieldSpec{
-		WireName: "authentication",
-		Kind:     "object",
-		Fields:   Connection_Configuration_AuthenticationFields,
-	},
-	"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
-	"Endpoint": ubx.FieldSpec{
-		WireName: "endpoint",
-		Kind:     "object",
-		Fields:   Connection_Configuration_EndpointFields,
-	},
-	"Network": ubx.FieldSpec{
-		WireName: "network",
-		Kind:     "object",
-		Fields:   Connection_Configuration_NetworkFields,
-	},
-	"Parameters": ubx.FieldSpec{
-		WireName: "parameters",
-		Kind:     "map",
-		Fields:   Connection_Configuration_Authentication_ParametersFields,
-	},
-	"Tls": ubx.FieldSpec{
-		WireName: "tls",
-		Kind:     "object",
-		Fields:   Connection_Configuration_TlsFields,
-	},
-}
+		"Asset": ubx.FieldSpec{
+			WireName: "asset",
+			Kind: "object",
+			Fields: Connection_Configuration_AssetFields,
+		},
+		"Authentication": ubx.FieldSpec{
+			WireName: "authentication",
+			Kind: "object",
+			Fields: Connection_Configuration_AuthenticationFields,
+		},
+		"ConnectorId": ubx.FieldSpec{WireName: "connector_id"},
+		"Endpoint": ubx.FieldSpec{
+			WireName: "endpoint",
+			Kind: "object",
+			Fields: Connection_Configuration_EndpointFields,
+		},
+		"Network": ubx.FieldSpec{
+			WireName: "network",
+			Kind: "object",
+			Fields: Connection_Configuration_NetworkFields,
+		},
+		"Parameters": ubx.FieldSpec{
+			WireName: "parameters",
+			Kind: "map",
+			Fields: Connection_Configuration_Authentication_ParametersFields,
+		},
+		"Tls": ubx.FieldSpec{
+			WireName: "tls",
+			Kind: "object",
+			Fields: Connection_Configuration_TlsFields,
+		},
+	}
 
 var Connection_SalesforceDataCloudFields = ubx.FieldMap{
-	"Identity":    ubx.FieldSpec{WireName: "identity"},
-	"InstanceUri": ubx.FieldSpec{WireName: "instance_uri"},
-	"TenantId":    ubx.FieldSpec{WireName: "tenant_id"},
-}
+		"Identity": ubx.FieldSpec{WireName: "identity"},
+		"InstanceUri": ubx.FieldSpec{WireName: "instance_uri"},
+		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
+	}
 
 var Connection_Spark_MetastoreServiceConfigFields = ubx.FieldMap{
-	"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
-}
+		"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
+	}
 
 var Connection_Spark_SparkHistoryServerConfigFields = ubx.FieldMap{
-	"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
-}
+		"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
+	}
 
 var Connection_SparkFields = ubx.FieldMap{
-	"MetastoreServiceConfig": ubx.FieldSpec{
-		WireName: "metastore_service_config",
-		Kind:     "object",
-		Fields:   Connection_Spark_MetastoreServiceConfigFields,
-	},
-	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	"SparkHistoryServerConfig": ubx.FieldSpec{
-		WireName: "spark_history_server_config",
-		Kind:     "object",
-		Fields:   Connection_Spark_SparkHistoryServerConfigFields,
-	},
-}
+		"MetastoreServiceConfig": ubx.FieldSpec{
+			WireName: "metastore_service_config",
+			Kind: "object",
+			Fields: Connection_Spark_MetastoreServiceConfigFields,
+		},
+		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+		"SparkHistoryServerConfig": ubx.FieldSpec{
+			WireName: "spark_history_server_config",
+			Kind: "object",
+			Fields: Connection_Spark_SparkHistoryServerConfigFields,
+		},
+	}
 
 type ConnectionConfig struct {
 	// Connection properties specific to Amazon Web Services (AWS).
@@ -442,46 +442,46 @@ var Connection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aws": ubx.FieldSpec{
 			WireName: "aws",
-			Kind:     "object",
-			Fields:   Connection_AwsFields,
+			Kind: "object",
+			Fields: Connection_AwsFields,
 		},
 		"Azure": ubx.FieldSpec{
 			WireName: "azure",
-			Kind:     "object",
-			Fields:   Connection_AzureFields,
+			Kind: "object",
+			Fields: Connection_AzureFields,
 		},
 		"CloudResource": ubx.FieldSpec{
 			WireName: "cloud_resource",
-			Kind:     "object",
-			Fields:   Connection_CloudResourceFields,
+			Kind: "object",
+			Fields: Connection_CloudResourceFields,
 		},
 		"CloudSpanner": ubx.FieldSpec{
 			WireName: "cloud_spanner",
-			Kind:     "object",
-			Fields:   Connection_CloudSpannerFields,
+			Kind: "object",
+			Fields: Connection_CloudSpannerFields,
 		},
 		"CloudSql": ubx.FieldSpec{
 			WireName: "cloud_sql",
-			Kind:     "object",
-			Fields:   Connection_CloudSqlFields,
+			Kind: "object",
+			Fields: Connection_CloudSqlFields,
 		},
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind:     "object",
-			Fields:   Connection_ConfigurationFields,
+			Kind: "object",
+			Fields: Connection_ConfigurationFields,
 		},
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"KmsKeyName":   ubx.FieldSpec{WireName: "kms_key_name"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
 		"SalesforceDataCloud": ubx.FieldSpec{
 			WireName: "salesforce_data_cloud",
-			Kind:     "object",
-			Fields:   Connection_SalesforceDataCloudFields,
+			Kind: "object",
+			Fields: Connection_SalesforceDataCloudFields,
 		},
 		"Spark": ubx.FieldSpec{
 			WireName: "spark",
-			Kind:     "object",
-			Fields:   Connection_SparkFields,
+			Kind: "object",
+			Fields: Connection_SparkFields,
 		},
 	},
 }

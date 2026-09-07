@@ -26,7 +26,7 @@ type ObservationJobAttrs struct {
 var ObservationJob = ubx.ResourceBinding{
 	WireType: "google_apim_observation_job",
 	Fields: ubx.FieldMap{
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Sources": ubx.FieldSpec{WireName: "sources"},
 	},
 }

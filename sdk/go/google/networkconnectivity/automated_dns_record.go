@@ -11,9 +11,9 @@ type AutomatedDnsRecord_CurrentConfig struct {
 }
 
 var AutomatedDnsRecord_CurrentConfigFields = ubx.FieldMap{
-	"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-	"Ttl":     ubx.FieldSpec{WireName: "ttl"},
-}
+		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+	}
 
 type AutomatedDnsRecordConfig struct {
 	// Required. Immutable. The full resource path of the consumer network this AutomatedDnsRecord is visible to. Example: "projects/{projectNumOrId}/global/networks/{networkName}".
@@ -85,24 +85,24 @@ var AutomatedDnsRecord = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_automated_dns_record",
 	Fields: ubx.FieldMap{
 		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
-		"CreationMode":    ubx.FieldSpec{WireName: "creation_mode"},
+		"CreationMode": ubx.FieldSpec{WireName: "creation_mode"},
 		"CurrentConfig": ubx.FieldSpec{
 			WireName: "current_config",
-			Kind:     "object",
-			Fields:   AutomatedDnsRecord_CurrentConfigFields,
+			Kind: "object",
+			Fields: AutomatedDnsRecord_CurrentConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnsSuffix":   ubx.FieldSpec{WireName: "dns_suffix"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Hostname":    ubx.FieldSpec{WireName: "hostname"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OriginalConfig": ubx.FieldSpec{
 			WireName: "original_config",
-			Kind:     "object",
-			Fields:   AutomatedDnsRecord_CurrentConfigFields,
+			Kind: "object",
+			Fields: AutomatedDnsRecord_CurrentConfigFields,
 		},
-		"RecordType":   ubx.FieldSpec{WireName: "record_type"},
+		"RecordType": ubx.FieldSpec{WireName: "record_type"},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
 	},
 }

@@ -42,11 +42,11 @@ type QuotaRuleAttrs struct {
 var QuotaRule = ubx.ResourceBinding{
 	WireType: "google_netapp_quota_rule",
 	Fields: ubx.FieldMap{
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskLimitMib": ubx.FieldSpec{WireName: "disk_limit_mib"},
-		"Labels":       ubx.FieldSpec{WireName: "labels"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
-		"Target":       ubx.FieldSpec{WireName: "target"},
-		"Type":         ubx.FieldSpec{WireName: "type"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Target": ubx.FieldSpec{WireName: "target"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

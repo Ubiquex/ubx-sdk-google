@@ -77,70 +77,70 @@ type Target_Run struct {
 }
 
 var Target_AnthosClusterFields = ubx.FieldMap{
-	"Membership": ubx.FieldSpec{WireName: "membership"},
-}
+		"Membership": ubx.FieldSpec{WireName: "membership"},
+	}
 
 var Target_AssociatedEntities_GkeClustersFields = ubx.FieldMap{
-	"Cluster":     ubx.FieldSpec{WireName: "cluster"},
-	"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
-	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
-	"ProxyUrl":    ubx.FieldSpec{WireName: "proxy_url"},
-}
+		"Cluster": ubx.FieldSpec{WireName: "cluster"},
+		"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
+		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+		"ProxyUrl": ubx.FieldSpec{WireName: "proxy_url"},
+	}
 
 var Target_AssociatedEntitiesFields = ubx.FieldMap{
-	"AnthosClusters": ubx.FieldSpec{
-		WireName: "anthos_clusters",
-		Kind:     "list",
-		Fields:   Target_AnthosClusterFields,
-	},
-	"GkeClusters": ubx.FieldSpec{
-		WireName: "gke_clusters",
-		Kind:     "list",
-		Fields:   Target_AssociatedEntities_GkeClustersFields,
-	},
-}
+		"AnthosClusters": ubx.FieldSpec{
+			WireName: "anthos_clusters",
+			Kind: "list",
+			Fields: Target_AnthosClusterFields,
+		},
+		"GkeClusters": ubx.FieldSpec{
+			WireName: "gke_clusters",
+			Kind: "list",
+			Fields: Target_AssociatedEntities_GkeClustersFields,
+		},
+	}
 
 var Target_CustomTargetFields = ubx.FieldMap{
-	"CustomTargetType": ubx.FieldSpec{WireName: "custom_target_type"},
-}
+		"CustomTargetType": ubx.FieldSpec{WireName: "custom_target_type"},
+	}
 
 var Target_ExecutionConfigs_DefaultPoolFields = ubx.FieldMap{
-	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-	"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
-}
+		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var Target_ExecutionConfigs_PrivatePoolFields = ubx.FieldMap{
-	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-	"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
-	"WorkerPool":      ubx.FieldSpec{WireName: "worker_pool"},
-}
+		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+	}
 
 var Target_ExecutionConfigsFields = ubx.FieldMap{
-	"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-	"DefaultPool": ubx.FieldSpec{
-		WireName: "default_pool",
-		Kind:     "object",
-		Fields:   Target_ExecutionConfigs_DefaultPoolFields,
-	},
-	"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-	"PrivatePool": ubx.FieldSpec{
-		WireName: "private_pool",
-		Kind:     "object",
-		Fields:   Target_ExecutionConfigs_PrivatePoolFields,
-	},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"Usages":         ubx.FieldSpec{WireName: "usages"},
-	"Verbose":        ubx.FieldSpec{WireName: "verbose"},
-	"WorkerPool":     ubx.FieldSpec{WireName: "worker_pool"},
-}
+		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
+		"DefaultPool": ubx.FieldSpec{
+			WireName: "default_pool",
+			Kind: "object",
+			Fields: Target_ExecutionConfigs_DefaultPoolFields,
+		},
+		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
+		"PrivatePool": ubx.FieldSpec{
+			WireName: "private_pool",
+			Kind: "object",
+			Fields: Target_ExecutionConfigs_PrivatePoolFields,
+		},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"Usages": ubx.FieldSpec{WireName: "usages"},
+		"Verbose": ubx.FieldSpec{WireName: "verbose"},
+		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+	}
 
 var Target_MultiTargetFields = ubx.FieldMap{
-	"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
-}
+		"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
+	}
 
 var Target_RunFields = ubx.FieldMap{
-	"Location": ubx.FieldSpec{WireName: "location"},
-}
+		"Location": ubx.FieldSpec{WireName: "location"},
+	}
 
 type TargetConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
@@ -218,44 +218,44 @@ var Target = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AnthosCluster": ubx.FieldSpec{
 			WireName: "anthos_cluster",
-			Kind:     "object",
-			Fields:   Target_AnthosClusterFields,
+			Kind: "object",
+			Fields: Target_AnthosClusterFields,
 		},
 		"AssociatedEntities": ubx.FieldSpec{
 			WireName: "associated_entities",
-			Kind:     "map",
-			Fields:   Target_AssociatedEntitiesFields,
+			Kind: "map",
+			Fields: Target_AssociatedEntitiesFields,
 		},
 		"CustomTarget": ubx.FieldSpec{
 			WireName: "custom_target",
-			Kind:     "object",
-			Fields:   Target_CustomTargetFields,
+			Kind: "object",
+			Fields: Target_CustomTargetFields,
 		},
 		"DeployParameters": ubx.FieldSpec{WireName: "deploy_parameters"},
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"Etag":             ubx.FieldSpec{WireName: "etag"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"ExecutionConfigs": ubx.FieldSpec{
 			WireName: "execution_configs",
-			Kind:     "list",
-			Fields:   Target_ExecutionConfigsFields,
+			Kind: "list",
+			Fields: Target_ExecutionConfigsFields,
 		},
 		"Gke": ubx.FieldSpec{
 			WireName: "gke",
-			Kind:     "object",
-			Fields:   Target_AssociatedEntities_GkeClustersFields,
+			Kind: "object",
+			Fields: Target_AssociatedEntities_GkeClustersFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MultiTarget": ubx.FieldSpec{
 			WireName: "multi_target",
-			Kind:     "object",
-			Fields:   Target_MultiTargetFields,
+			Kind: "object",
+			Fields: Target_MultiTargetFields,
 		},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RequireApproval": ubx.FieldSpec{WireName: "require_approval"},
 		"Run": ubx.FieldSpec{
 			WireName: "run",
-			Kind:     "object",
-			Fields:   Target_RunFields,
+			Kind: "object",
+			Fields: Target_RunFields,
 		},
 	},
 }

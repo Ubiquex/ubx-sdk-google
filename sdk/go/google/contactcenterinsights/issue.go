@@ -31,7 +31,7 @@ var Issue = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_issue",
 	Fields: ubx.FieldMap{
 		"DisplayDescription": ubx.FieldSpec{WireName: "display_description"},
-		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

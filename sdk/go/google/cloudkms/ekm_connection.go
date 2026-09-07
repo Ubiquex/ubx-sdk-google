@@ -36,27 +36,27 @@ type EkmConnection_ServiceResolvers struct {
 }
 
 var EkmConnection_ServiceResolvers_ServerCertificatesFields = ubx.FieldMap{
-	"Issuer":                     ubx.FieldSpec{WireName: "issuer"},
-	"NotAfterTime":               ubx.FieldSpec{WireName: "not_after_time"},
-	"NotBeforeTime":              ubx.FieldSpec{WireName: "not_before_time"},
-	"Parsed":                     ubx.FieldSpec{WireName: "parsed"},
-	"RawDer":                     ubx.FieldSpec{WireName: "raw_der"},
-	"SerialNumber":               ubx.FieldSpec{WireName: "serial_number"},
-	"Sha256Fingerprint":          ubx.FieldSpec{WireName: "sha256_fingerprint"},
-	"Subject":                    ubx.FieldSpec{WireName: "subject"},
-	"SubjectAlternativeDnsNames": ubx.FieldSpec{WireName: "subject_alternative_dns_names"},
-}
+		"Issuer": ubx.FieldSpec{WireName: "issuer"},
+		"NotAfterTime": ubx.FieldSpec{WireName: "not_after_time"},
+		"NotBeforeTime": ubx.FieldSpec{WireName: "not_before_time"},
+		"Parsed": ubx.FieldSpec{WireName: "parsed"},
+		"RawDer": ubx.FieldSpec{WireName: "raw_der"},
+		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
+		"Sha256Fingerprint": ubx.FieldSpec{WireName: "sha256_fingerprint"},
+		"Subject": ubx.FieldSpec{WireName: "subject"},
+		"SubjectAlternativeDnsNames": ubx.FieldSpec{WireName: "subject_alternative_dns_names"},
+	}
 
 var EkmConnection_ServiceResolversFields = ubx.FieldMap{
-	"EndpointFilter": ubx.FieldSpec{WireName: "endpoint_filter"},
-	"Hostname":       ubx.FieldSpec{WireName: "hostname"},
-	"ServerCertificates": ubx.FieldSpec{
-		WireName: "server_certificates",
-		Kind:     "list",
-		Fields:   EkmConnection_ServiceResolvers_ServerCertificatesFields,
-	},
-	"ServiceDirectoryService": ubx.FieldSpec{WireName: "service_directory_service"},
-}
+		"EndpointFilter": ubx.FieldSpec{WireName: "endpoint_filter"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"ServerCertificates": ubx.FieldSpec{
+			WireName: "server_certificates",
+			Kind: "list",
+			Fields: EkmConnection_ServiceResolvers_ServerCertificatesFields,
+		},
+		"ServiceDirectoryService": ubx.FieldSpec{WireName: "service_directory_service"},
+	}
 
 type EkmConnectionConfig struct {
 	// Optional. Identifies the EKM Crypto Space that this EkmConnection maps to. Note: This field is required if KeyManagementMode is CLOUD_KMS.
@@ -87,13 +87,13 @@ type EkmConnectionAttrs struct {
 var EkmConnection = ubx.ResourceBinding{
 	WireType: "google_cloudkms_ekm_connection",
 	Fields: ubx.FieldMap{
-		"CryptoSpacePath":   ubx.FieldSpec{WireName: "crypto_space_path"},
-		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"CryptoSpacePath": ubx.FieldSpec{WireName: "crypto_space_path"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"KeyManagementMode": ubx.FieldSpec{WireName: "key_management_mode"},
 		"ServiceResolvers": ubx.FieldSpec{
 			WireName: "service_resolvers",
-			Kind:     "list",
-			Fields:   EkmConnection_ServiceResolversFields,
+			Kind: "list",
+			Fields: EkmConnection_ServiceResolversFields,
 		},
 	},
 }

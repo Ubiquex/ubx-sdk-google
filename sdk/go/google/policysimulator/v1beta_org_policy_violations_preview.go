@@ -4,65 +4,65 @@ package policysimulator
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraint struct {
-	ActionType    any
-	Condition     any
-	Description   any
-	DisplayName   any
-	MethodTypes   any
-	Name          any
+	ActionType any
+	Condition any
+	Description any
+	DisplayName any
+	MethodTypes any
+	Name any
 	ResourceTypes any
-	UpdateTime    any
+	UpdateTime any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraints struct {
-	CustomConstraint       any
+	CustomConstraint any
 	CustomConstraintParent any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Condition struct {
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	Expression any
+	Location any
+	Title any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_Values struct {
 	AllowedValues any
-	DeniedValues  any
+	DeniedValues any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules struct {
-	AllowAll   any
-	Condition  any
-	DenyAll    any
-	Enforce    any
+	AllowAll any
+	Condition any
+	DenyAll any
+	Enforce any
 	Parameters any
-	Values     any
+	Values any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec struct {
-	Etag              any
+	Etag any
 	InheritFromParent any
-	Reset             any
-	Rules             any
-	UpdateTime        any
+	Reset any
+	Rules any
+	UpdateTime any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate struct {
 	Launch any
-	Spec   any
+	Spec any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy struct {
-	Alternate  any
+	Alternate any
 	DryRunSpec any
-	Etag       any
-	Name       any
-	Spec       any
+	Etag any
+	Name any
+	Spec any
 }
 
 type V1betaOrgPolicyViolationsPreview_Overlay_Policies struct {
-	Policy       any
+	Policy any
 	PolicyParent any
 }
 
@@ -87,124 +87,124 @@ type V1betaOrgPolicyViolationsPreview_ResourceCounts struct {
 }
 
 var V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraintFields = ubx.FieldMap{
-	"ActionType":    ubx.FieldSpec{WireName: "action_type"},
-	"Condition":     ubx.FieldSpec{WireName: "condition"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"MethodTypes":   ubx.FieldSpec{WireName: "method_types"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
-}
+		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"MethodTypes": ubx.FieldSpec{WireName: "method_types"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraintsFields = ubx.FieldMap{
-	"CustomConstraint": ubx.FieldSpec{
-		WireName: "custom_constraint",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraintFields,
-	},
-	"CustomConstraintParent": ubx.FieldSpec{WireName: "custom_constraint_parent"},
-}
+		"CustomConstraint": ubx.FieldSpec{
+			WireName: "custom_constraint",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraints_CustomConstraintFields,
+		},
+		"CustomConstraintParent": ubx.FieldSpec{WireName: "custom_constraint_parent"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ConditionFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Expression":  ubx.FieldSpec{WireName: "expression"},
-	"Location":    ubx.FieldSpec{WireName: "location"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ValuesFields = ubx.FieldMap{
-	"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-	"DeniedValues":  ubx.FieldSpec{WireName: "denied_values"},
-}
+		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
+		"DeniedValues": ubx.FieldSpec{WireName: "denied_values"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_RulesFields = ubx.FieldMap{
-	"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
-	"Condition": ubx.FieldSpec{
-		WireName: "condition",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ConditionFields,
-	},
-	"DenyAll":    ubx.FieldSpec{WireName: "deny_all"},
-	"Enforce":    ubx.FieldSpec{WireName: "enforce"},
-	"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ValuesFields,
-	},
-}
+		"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ConditionFields,
+		},
+		"DenyAll": ubx.FieldSpec{WireName: "deny_all"},
+		"Enforce": ubx.FieldSpec{WireName: "enforce"},
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_Rules_ValuesFields,
+		},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields = ubx.FieldMap{
-	"Etag":              ubx.FieldSpec{WireName: "etag"},
-	"InheritFromParent": ubx.FieldSpec{WireName: "inherit_from_parent"},
-	"Reset":             ubx.FieldSpec{WireName: "reset"},
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_RulesFields,
-	},
-	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-}
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"InheritFromParent": ubx.FieldSpec{WireName: "inherit_from_parent"},
+		"Reset": ubx.FieldSpec{WireName: "reset"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_Spec_RulesFields,
+		},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_AlternateFields = ubx.FieldMap{
-	"Launch": ubx.FieldSpec{WireName: "launch"},
-	"Spec": ubx.FieldSpec{
-		WireName: "spec",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
-	},
-}
+		"Launch": ubx.FieldSpec{WireName: "launch"},
+		"Spec": ubx.FieldSpec{
+			WireName: "spec",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
+		},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_Policies_PolicyFields = ubx.FieldMap{
-	"Alternate": ubx.FieldSpec{
-		WireName: "alternate",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_AlternateFields,
-	},
-	"DryRunSpec": ubx.FieldSpec{
-		WireName: "dry_run_spec",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
-	},
-	"Etag": ubx.FieldSpec{WireName: "etag"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Spec": ubx.FieldSpec{
-		WireName: "spec",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
-	},
-}
+		"Alternate": ubx.FieldSpec{
+			WireName: "alternate",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_AlternateFields,
+		},
+		"DryRunSpec": ubx.FieldSpec{
+			WireName: "dry_run_spec",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
+		},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Spec": ubx.FieldSpec{
+			WireName: "spec",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_Policy_Alternate_SpecFields,
+		},
+	}
 
 var V1betaOrgPolicyViolationsPreview_Overlay_PoliciesFields = ubx.FieldMap{
-	"Policy": ubx.FieldSpec{
-		WireName: "policy",
-		Kind:     "object",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_Policies_PolicyFields,
-	},
-	"PolicyParent": ubx.FieldSpec{WireName: "policy_parent"},
-}
+		"Policy": ubx.FieldSpec{
+			WireName: "policy",
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_Policies_PolicyFields,
+		},
+		"PolicyParent": ubx.FieldSpec{WireName: "policy_parent"},
+	}
 
 var V1betaOrgPolicyViolationsPreview_OverlayFields = ubx.FieldMap{
-	"CustomConstraints": ubx.FieldSpec{
-		WireName: "custom_constraints",
-		Kind:     "list",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraintsFields,
-	},
-	"Policies": ubx.FieldSpec{
-		WireName: "policies",
-		Kind:     "list",
-		Fields:   V1betaOrgPolicyViolationsPreview_Overlay_PoliciesFields,
-	},
-}
+		"CustomConstraints": ubx.FieldSpec{
+			WireName: "custom_constraints",
+			Kind: "list",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_CustomConstraintsFields,
+		},
+		"Policies": ubx.FieldSpec{
+			WireName: "policies",
+			Kind: "list",
+			Fields: V1betaOrgPolicyViolationsPreview_Overlay_PoliciesFields,
+		},
+	}
 
 var V1betaOrgPolicyViolationsPreview_ResourceCountsFields = ubx.FieldMap{
-	"Compliant":    ubx.FieldSpec{WireName: "compliant"},
-	"Errors":       ubx.FieldSpec{WireName: "errors"},
-	"Noncompliant": ubx.FieldSpec{WireName: "noncompliant"},
-	"Scanned":      ubx.FieldSpec{WireName: "scanned"},
-	"Unenforced":   ubx.FieldSpec{WireName: "unenforced"},
-}
+		"Compliant": ubx.FieldSpec{WireName: "compliant"},
+		"Errors": ubx.FieldSpec{WireName: "errors"},
+		"Noncompliant": ubx.FieldSpec{WireName: "noncompliant"},
+		"Scanned": ubx.FieldSpec{WireName: "scanned"},
+		"Unenforced": ubx.FieldSpec{WireName: "unenforced"},
+	}
 
 type V1betaOrgPolicyViolationsPreviewConfig struct {
 	// The proposed changes to OrgPolicy.
@@ -235,13 +235,13 @@ var V1betaOrgPolicyViolationsPreview = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Overlay": ubx.FieldSpec{
 			WireName: "overlay",
-			Kind:     "object",
-			Fields:   V1betaOrgPolicyViolationsPreview_OverlayFields,
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_OverlayFields,
 		},
 		"ResourceCounts": ubx.FieldSpec{
 			WireName: "resource_counts",
-			Kind:     "object",
-			Fields:   V1betaOrgPolicyViolationsPreview_ResourceCountsFields,
+			Kind: "object",
+			Fields: V1betaOrgPolicyViolationsPreview_ResourceCountsFields,
 		},
 	},
 }

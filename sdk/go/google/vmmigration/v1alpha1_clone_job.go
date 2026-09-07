@@ -4,7 +4,7 @@ package vmmigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1CloneJob_ComputeEngineDisksTargetDetails_Disks struct {
-	DiskUri          any
+	DiskUri any
 	SourceDiskNumber any
 }
 
@@ -24,7 +24,7 @@ type V1alpha1CloneJob_ComputeEngineDisksTargetDetails struct {
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails_AdaptationModifiers struct {
 	Modifier any
-	Value    any
+	Value any
 }
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicense struct {
@@ -35,9 +35,9 @@ type V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicense struct {
 }
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities struct {
-	Key      any
+	Key any
 	Operator any
-	Values   any
+	Values any
 }
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeScheduling struct {
@@ -58,11 +58,11 @@ type V1alpha1CloneJob_ComputeEngineTargetDetails_Encryption struct {
 }
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfaces struct {
-	ExternalIp  any
-	InternalIp  any
-	Network     any
+	ExternalIp any
+	InternalIp any
+	Network any
 	NetworkTier any
-	Subnetwork  any
+	Subnetwork any
 }
 
 type V1alpha1CloneJob_ComputeEngineTargetDetails struct {
@@ -173,165 +173,165 @@ type V1alpha1CloneJob_Error struct {
 }
 
 type V1alpha1CloneJob_Steps struct {
-	AdaptingOs              any
-	EndTime                 any
+	AdaptingOs any
+	EndTime any
 	InstantiatingMigratedVm any
-	PreparingVmDisks        any
-	StartTime               any
+	PreparingVmDisks any
+	StartTime any
 }
 
 var V1alpha1CloneJob_ComputeEngineDisksTargetDetails_DisksFields = ubx.FieldMap{
-	"DiskUri":          ubx.FieldSpec{WireName: "disk_uri"},
-	"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
-}
+		"DiskUri": ubx.FieldSpec{WireName: "disk_uri"},
+		"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields = ubx.FieldMap{
-	"VmUri": ubx.FieldSpec{WireName: "vm_uri"},
-}
+		"VmUri": ubx.FieldSpec{WireName: "vm_uri"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineDisksTargetDetailsFields = ubx.FieldMap{
-	"Disks": ubx.FieldSpec{
-		WireName: "disks",
-		Kind:     "list",
-		Fields:   V1alpha1CloneJob_ComputeEngineDisksTargetDetails_DisksFields,
-	},
-	"DisksTargetDetails": ubx.FieldSpec{WireName: "disks_target_details"},
-	"VmTargetDetails": ubx.FieldSpec{
-		WireName: "vm_target_details",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
-	},
-}
+		"Disks": ubx.FieldSpec{
+			WireName: "disks",
+			Kind: "list",
+			Fields: V1alpha1CloneJob_ComputeEngineDisksTargetDetails_DisksFields,
+		},
+		"DisksTargetDetails": ubx.FieldSpec{WireName: "disks_target_details"},
+		"VmTargetDetails": ubx.FieldSpec{
+			WireName: "vm_target_details",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
+		},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_AdaptationModifiersFields = ubx.FieldMap{
-	"Modifier": ubx.FieldSpec{WireName: "modifier"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-}
+		"Modifier": ubx.FieldSpec{WireName: "modifier"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicenseFields = ubx.FieldMap{
-	"OsLicense": ubx.FieldSpec{WireName: "os_license"},
-	"Type":      ubx.FieldSpec{WireName: "type"},
-}
+		"OsLicense": ubx.FieldSpec{WireName: "os_license"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields = ubx.FieldMap{
-	"Key":      ubx.FieldSpec{WireName: "key"},
-	"Operator": ubx.FieldSpec{WireName: "operator"},
-	"Values":   ubx.FieldSpec{WireName: "values"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Operator": ubx.FieldSpec{WireName: "operator"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeSchedulingFields = ubx.FieldMap{
-	"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
-	"MinNodeCpus":      ubx.FieldSpec{WireName: "min_node_cpus"},
-	"NodeAffinities": ubx.FieldSpec{
-		WireName: "node_affinities",
-		Kind:     "list",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields,
-	},
-	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-	"RestartType":       ubx.FieldSpec{WireName: "restart_type"},
-}
+		"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
+		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+		"NodeAffinities": ubx.FieldSpec{
+			WireName: "node_affinities",
+			Kind: "list",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields,
+		},
+		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+		"RestartType": ubx.FieldSpec{WireName: "restart_type"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_EncryptionFields = ubx.FieldMap{
-	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-}
+		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfacesFields = ubx.FieldMap{
-	"ExternalIp":  ubx.FieldSpec{WireName: "external_ip"},
-	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
-	"Network":     ubx.FieldSpec{WireName: "network"},
-	"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
-}
+		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
+		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineTargetDetailsFields = ubx.FieldMap{
-	"AdaptationModifiers": ubx.FieldSpec{
-		WireName: "adaptation_modifiers",
-		Kind:     "list",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_AdaptationModifiersFields,
-	},
-	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-	"AppliedLicense": ubx.FieldSpec{
-		WireName: "applied_license",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicenseFields,
-	},
-	"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
-	"BootOption":     ubx.FieldSpec{WireName: "boot_option"},
-	"ComputeScheduling": ubx.FieldSpec{
-		WireName: "compute_scheduling",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
-	},
-	"DiskReplicaZones":          ubx.FieldSpec{WireName: "disk_replica_zones"},
-	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
-	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
-	"Encryption": ubx.FieldSpec{
-		WireName: "encryption",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_EncryptionFields,
-	},
-	"Hostname":          ubx.FieldSpec{WireName: "hostname"},
-	"Labels":            ubx.FieldSpec{WireName: "labels"},
-	"LicenseType":       ubx.FieldSpec{WireName: "license_type"},
-	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
-	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
-	"NetworkInterfaces": ubx.FieldSpec{
-		WireName: "network_interfaces",
-		Kind:     "list",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
-	},
-	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
-	"Project":        ubx.FieldSpec{WireName: "project"},
-	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"StoragePool":    ubx.FieldSpec{WireName: "storage_pool"},
-	"VmName":         ubx.FieldSpec{WireName: "vm_name"},
-	"Zone":           ubx.FieldSpec{WireName: "zone"},
-}
+		"AdaptationModifiers": ubx.FieldSpec{
+			WireName: "adaptation_modifiers",
+			Kind: "list",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_AdaptationModifiersFields,
+		},
+		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+		"AppliedLicense": ubx.FieldSpec{
+			WireName: "applied_license",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicenseFields,
+		},
+		"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
+		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
+		"ComputeScheduling": ubx.FieldSpec{
+			WireName: "compute_scheduling",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
+		},
+		"DiskReplicaZones": ubx.FieldSpec{WireName: "disk_replica_zones"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
+		"Encryption": ubx.FieldSpec{
+			WireName: "encryption",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_EncryptionFields,
+		},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"NetworkInterfaces": ubx.FieldSpec{
+			WireName: "network_interfaces",
+			Kind: "list",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
+		},
+		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+		"VmName": ubx.FieldSpec{WireName: "vm_name"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var V1alpha1CloneJob_ComputeEngineVmDetailsFields = ubx.FieldMap{
-	"AppliedLicense": ubx.FieldSpec{
-		WireName: "applied_license",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicenseFields,
-	},
-	"BootOption": ubx.FieldSpec{WireName: "boot_option"},
-	"ComputeScheduling": ubx.FieldSpec{
-		WireName: "compute_scheduling",
-		Kind:     "object",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
-	},
-	"DiskType":          ubx.FieldSpec{WireName: "disk_type"},
-	"ExternalIp":        ubx.FieldSpec{WireName: "external_ip"},
-	"InternalIp":        ubx.FieldSpec{WireName: "internal_ip"},
-	"Labels":            ubx.FieldSpec{WireName: "labels"},
-	"LicenseType":       ubx.FieldSpec{WireName: "license_type"},
-	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
-	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
-	"Name":              ubx.FieldSpec{WireName: "name"},
-	"Network":           ubx.FieldSpec{WireName: "network"},
-	"NetworkInterfaces": ubx.FieldSpec{
-		WireName: "network_interfaces",
-		Kind:     "list",
-		Fields:   V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
-	},
-	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
-	"Project":        ubx.FieldSpec{WireName: "project"},
-	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
-	"TargetProject":  ubx.FieldSpec{WireName: "target_project"},
-	"Zone":           ubx.FieldSpec{WireName: "zone"},
-}
+		"AppliedLicense": ubx.FieldSpec{
+			WireName: "applied_license",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_AppliedLicenseFields,
+		},
+		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
+		"ComputeScheduling": ubx.FieldSpec{
+			WireName: "compute_scheduling",
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
+		},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
+		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NetworkInterfaces": ubx.FieldSpec{
+			WireName: "network_interfaces",
+			Kind: "list",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
+		},
+		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var V1alpha1CloneJob_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 type V1alpha1CloneJobConfig struct {
 	// ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details.
@@ -376,28 +376,28 @@ var V1alpha1CloneJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeEngineDisksTargetDetails": ubx.FieldSpec{
 			WireName: "compute_engine_disks_target_details",
-			Kind:     "object",
-			Fields:   V1alpha1CloneJob_ComputeEngineDisksTargetDetailsFields,
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineDisksTargetDetailsFields,
 		},
 		"ComputeEngineTargetDetails": ubx.FieldSpec{
 			WireName: "compute_engine_target_details",
-			Kind:     "object",
-			Fields:   V1alpha1CloneJob_ComputeEngineTargetDetailsFields,
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineTargetDetailsFields,
 		},
 		"ComputeEngineVmDetails": ubx.FieldSpec{
 			WireName: "compute_engine_vm_details",
-			Kind:     "object",
-			Fields:   V1alpha1CloneJob_ComputeEngineVmDetailsFields,
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineVmDetailsFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   V1alpha1CloneJob_ErrorFields,
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ErrorFields,
 		},
 		"TargetDetails": ubx.FieldSpec{
 			WireName: "target_details",
-			Kind:     "object",
-			Fields:   V1alpha1CloneJob_ComputeEngineVmDetailsFields,
+			Kind: "object",
+			Fields: V1alpha1CloneJob_ComputeEngineVmDetailsFields,
 		},
 	},
 }

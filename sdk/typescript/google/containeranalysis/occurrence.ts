@@ -21,7 +21,31 @@ export interface Occurrence_AiSkillAnalysis_Findings {
   severity?: string | Computed<string>;
 }
 
+export interface Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage {
+  /** Cache matched tokens for implicit cache. */
+  cacheCount?: string | Computed<string>;
+  /** Tokens in the model response. */
+  candidateCount?: string | Computed<string>;
+  /** Tokens in the user request. */
+  promptCount?: string | Computed<string>;
+  /** Tokens in the thinking output. */
+  thinkingCount?: string | Computed<string>;
+  /** Prompt tokens for using tools. */
+  toolUsePromptCount?: string | Computed<string>;
+}
+
 export interface Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult {
+  /** Tracks max severity found. */
+  maxSeverity?: string | Computed<string>;
+  /** The base name of the model that performed the scan. */
+  modelId?: string | Computed<string>;
+  /** Status of the scan. */
+  scanStatus?: string | Computed<string>;
+  /** Token usage associated with an AI scan. */
+  tokenUsage?: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage>;
+}
+
+export interface Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult {
   /** Tracks max severity found. */
   maxSeverity?: string | Computed<string>;
   /** Status of the scan. */
@@ -39,7 +63,7 @@ export interface Occurrence_AiSkillAnalysis_PerScannerVerdict {
   /** Result of Malicious Content LLM scan. */
   maliciousContentLlmResult?: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
   /** Result of Malicious Content Static scan. */
-  maliciousContentStaticResult?: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult>;
+  maliciousContentStaticResult?: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult>;
   /** Result of Malware scan. */
   malwareScan?: Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan | Computed<Occurrence_AiSkillAnalysis_PerScannerVerdict_MalwareScan>;
   /** Result of Workspace Policy scan. */
@@ -965,7 +989,26 @@ const Occurrence_AiSkillAnalysis_FindingsFields: FieldMap = {
   severity: "severity",
 };
 
+const Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields: FieldMap = {
+  cacheCount: "cache_count",
+  candidateCount: "candidate_count",
+  promptCount: "prompt_count",
+  thinkingCount: "thinking_count",
+  toolUsePromptCount: "tool_use_prompt_count",
+};
+
 const Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields: FieldMap = {
+  maxSeverity: "max_severity",
+  modelId: "model_id",
+  scanStatus: "scan_status",
+  tokenUsage: {
+    wireName: "token_usage",
+    kind: "object",
+    fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields,
+  },
+};
+
+const Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields: FieldMap = {
   maxSeverity: "max_severity",
   scanStatus: "scan_status",
 };
@@ -984,7 +1027,7 @@ const Occurrence_AiSkillAnalysis_PerScannerVerdictFields: FieldMap = {
   maliciousContentStaticResult: {
     wireName: "malicious_content_static_result",
     kind: "object",
-    fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
+    fields: Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
   },
   malwareScan: {
     wireName: "malware_scan",

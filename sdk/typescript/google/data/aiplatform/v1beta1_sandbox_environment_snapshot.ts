@@ -27,6 +27,8 @@ export interface V1beta1SandboxEnvironmentSnapshotAttrs {
   ttl: string;
   /** Output only. The timestamp when this SandboxEnvironment was most recently updated. */
   updateTime: string;
+  /** Output only. Whether the source SandboxEnvironment uses the GKE TD pool. */
+  useGkeTd: boolean;
 }
 
 export const V1beta1SandboxEnvironmentSnapshot: DataSourceBinding<V1beta1SandboxEnvironmentSnapshotConfig, V1beta1SandboxEnvironmentSnapshotAttrs> = {

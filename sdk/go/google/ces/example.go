@@ -17,6 +17,14 @@ type Example_Messages_Chunks_Blob struct {
 	MimeType any
 }
 
+type Example_Messages_Chunks_Image struct {
+	AltText any
+	// The literal data payload. (AI-inferred)
+	Data any
+	// The IANA MIME type of this content. (AI-inferred)
+	MimeType any
+}
+
 type Example_Messages_Chunks_ToolCall_ToolsetTool struct {
 	// An identifier for this tool, unique within its own containing toolset. (AI-inferred)
 	ToolId any
@@ -25,12 +33,14 @@ type Example_Messages_Chunks_ToolCall_ToolsetTool struct {
 }
 
 type Example_Messages_Chunks_ToolCall struct {
+	AgentName any
 	// The argument(s) passed to this call. (AI-inferred)
 	Args any
 	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 	// An identifier for this item. (AI-inferred)
 	Id any
+	ParentToolCallId any
 	// A reference to a single tool. (AI-inferred)
 	Tool any
 	// A reference to a specific tool within a toolset. (AI-inferred)
@@ -38,10 +48,12 @@ type Example_Messages_Chunks_ToolCall struct {
 }
 
 type Example_Messages_Chunks_ToolResponse struct {
+	AgentName any
 	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
 	DisplayName any
 	// An identifier for this item. (AI-inferred)
 	Id any
+	ParentToolCallId any
 	// The response produced for this request. (AI-inferred)
 	Response any
 	// A reference to a single tool. (AI-inferred)
@@ -83,86 +95,96 @@ type Example_Messages struct {
 }
 
 var Example_Messages_Chunks_AgentTransferFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
+	}
 
 var Example_Messages_Chunks_BlobFields = ubx.FieldMap{
-	"Data":     ubx.FieldSpec{WireName: "data"},
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-}
+		"Data": ubx.FieldSpec{WireName: "data"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	}
+
+var Example_Messages_Chunks_ImageFields = ubx.FieldMap{
+		"AltText": ubx.FieldSpec{WireName: "alt_text"},
+		"Data": ubx.FieldSpec{WireName: "data"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	}
 
 var Example_Messages_Chunks_ToolCall_ToolsetToolFields = ubx.FieldMap{
-	"ToolId":  ubx.FieldSpec{WireName: "tool_id"},
-	"Toolset": ubx.FieldSpec{WireName: "toolset"},
-}
+		"ToolId": ubx.FieldSpec{WireName: "tool_id"},
+		"Toolset": ubx.FieldSpec{WireName: "toolset"},
+	}
 
 var Example_Messages_Chunks_ToolCallFields = ubx.FieldMap{
-	"Args":        ubx.FieldSpec{WireName: "args"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Tool":        ubx.FieldSpec{WireName: "tool"},
-	"ToolsetTool": ubx.FieldSpec{
-		WireName: "toolset_tool",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_ToolCall_ToolsetToolFields,
-	},
-}
+		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
+		"Args": ubx.FieldSpec{WireName: "args"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+		"ToolsetTool": ubx.FieldSpec{
+			WireName: "toolset_tool",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_ToolCall_ToolsetToolFields,
+		},
+	}
 
 var Example_Messages_Chunks_ToolResponseFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Response":    ubx.FieldSpec{WireName: "response"},
-	"Tool":        ubx.FieldSpec{WireName: "tool"},
-	"ToolsetTool": ubx.FieldSpec{
-		WireName: "toolset_tool",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_ToolCall_ToolsetToolFields,
-	},
-}
+		"AgentName": ubx.FieldSpec{WireName: "agent_name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"ParentToolCallId": ubx.FieldSpec{WireName: "parent_tool_call_id"},
+		"Response": ubx.FieldSpec{WireName: "response"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+		"ToolsetTool": ubx.FieldSpec{
+			WireName: "toolset_tool",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_ToolCall_ToolsetToolFields,
+		},
+	}
 
 var Example_Messages_ChunksFields = ubx.FieldMap{
-	"AgentTransfer": ubx.FieldSpec{
-		WireName: "agent_transfer",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_AgentTransferFields,
-	},
-	"Blob": ubx.FieldSpec{
-		WireName: "blob",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_BlobFields,
-	},
-	"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
-	"Image": ubx.FieldSpec{
-		WireName: "image",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_BlobFields,
-	},
-	"Payload": ubx.FieldSpec{WireName: "payload"},
-	"Text":    ubx.FieldSpec{WireName: "text"},
-	"ToolCall": ubx.FieldSpec{
-		WireName: "tool_call",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_ToolCallFields,
-	},
-	"ToolResponse": ubx.FieldSpec{
-		WireName: "tool_response",
-		Kind:     "object",
-		Fields:   Example_Messages_Chunks_ToolResponseFields,
-	},
-	"Transcript":       ubx.FieldSpec{WireName: "transcript"},
-	"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
-}
+		"AgentTransfer": ubx.FieldSpec{
+			WireName: "agent_transfer",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_AgentTransferFields,
+		},
+		"Blob": ubx.FieldSpec{
+			WireName: "blob",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_BlobFields,
+		},
+		"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_ImageFields,
+		},
+		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+		"ToolCall": ubx.FieldSpec{
+			WireName: "tool_call",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_ToolCallFields,
+		},
+		"ToolResponse": ubx.FieldSpec{
+			WireName: "tool_response",
+			Kind: "object",
+			Fields: Example_Messages_Chunks_ToolResponseFields,
+		},
+		"Transcript": ubx.FieldSpec{WireName: "transcript"},
+		"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
+	}
 
 var Example_MessagesFields = ubx.FieldMap{
-	"Chunks": ubx.FieldSpec{
-		WireName: "chunks",
-		Kind:     "list",
-		Fields:   Example_Messages_ChunksFields,
-	},
-	"EventTime": ubx.FieldSpec{WireName: "event_time"},
-	"Role":      ubx.FieldSpec{WireName: "role"},
-}
+		"Chunks": ubx.FieldSpec{
+			WireName: "chunks",
+			Kind: "list",
+			Fields: Example_Messages_ChunksFields,
+		},
+		"EventTime": ubx.FieldSpec{WireName: "event_time"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 type ExampleConfig struct {
 	// Optional. Human-readable description of the example.
@@ -205,12 +227,12 @@ var Example = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntryAgent":  ubx.FieldSpec{WireName: "entry_agent"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"EntryAgent": ubx.FieldSpec{WireName: "entry_agent"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Messages": ubx.FieldSpec{
 			WireName: "messages",
-			Kind:     "list",
-			Fields:   Example_MessagesFields,
+			Kind: "list",
+			Fields: Example_MessagesFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

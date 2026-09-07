@@ -19,12 +19,12 @@ type V1betaBackend_ManagedResources struct {
 }
 
 type V1betaBackend_OverrideEnv struct {
-	Availability   any
-	Origin         any
+	Availability any
+	Origin any
 	OriginFileName any
-	Secret         any
-	Value          any
-	Variable       any
+	Secret any
+	Value any
+	Variable any
 }
 
 type V1betaBackend_Runtime struct {
@@ -33,22 +33,22 @@ type V1betaBackend_Runtime struct {
 }
 
 var V1betaBackend_CodebaseFields = ubx.FieldMap{
-	"Repository":    ubx.FieldSpec{WireName: "repository"},
-	"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
-}
+		"Repository": ubx.FieldSpec{WireName: "repository"},
+		"RootDirectory": ubx.FieldSpec{WireName: "root_directory"},
+	}
 
 var V1betaBackend_OverrideEnvFields = ubx.FieldMap{
-	"Availability":   ubx.FieldSpec{WireName: "availability"},
-	"Origin":         ubx.FieldSpec{WireName: "origin"},
-	"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
-	"Secret":         ubx.FieldSpec{WireName: "secret"},
-	"Value":          ubx.FieldSpec{WireName: "value"},
-	"Variable":       ubx.FieldSpec{WireName: "variable"},
-}
+		"Availability": ubx.FieldSpec{WireName: "availability"},
+		"Origin": ubx.FieldSpec{WireName: "origin"},
+		"OriginFileName": ubx.FieldSpec{WireName: "origin_file_name"},
+		"Secret": ubx.FieldSpec{WireName: "secret"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+		"Variable": ubx.FieldSpec{WireName: "variable"},
+	}
 
 var V1betaBackend_RuntimeFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 type V1betaBackendConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
@@ -131,31 +131,31 @@ type V1betaBackendAttrs struct {
 var V1betaBackend = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_v1beta_backend",
 	Fields: ubx.FieldMap{
-		"Annotations":                       ubx.FieldSpec{WireName: "annotations"},
-		"AppId":                             ubx.FieldSpec{WireName: "app_id"},
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"AutomaticBaseImageUpdatesDisabled": ubx.FieldSpec{WireName: "automatic_base_image_updates_disabled"},
 		"Codebase": ubx.FieldSpec{
 			WireName: "codebase",
-			Kind:     "object",
-			Fields:   V1betaBackend_CodebaseFields,
+			Kind: "object",
+			Fields: V1betaBackend_CodebaseFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Mode":        ubx.FieldSpec{WireName: "mode"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OverrideEnv": ubx.FieldSpec{
 			WireName: "override_env",
-			Kind:     "list",
-			Fields:   V1betaBackend_OverrideEnvFields,
+			Kind: "list",
+			Fields: V1betaBackend_OverrideEnvFields,
 		},
 		"RequestLogsDisabled": ubx.FieldSpec{WireName: "request_logs_disabled"},
 		"Runtime": ubx.FieldSpec{
 			WireName: "runtime",
-			Kind:     "object",
-			Fields:   V1betaBackend_RuntimeFields,
+			Kind: "object",
+			Fields: V1betaBackend_RuntimeFields,
 		},
-		"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"ServingLocality": ubx.FieldSpec{WireName: "serving_locality"},
 	},
 }

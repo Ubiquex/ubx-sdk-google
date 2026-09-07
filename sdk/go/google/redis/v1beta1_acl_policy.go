@@ -4,26 +4,26 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision       any
+	AclPolicyRevision any
 	AclPolicyRevisionNumber any
-	ErrorMessage            any
-	State                   any
+	ErrorMessage any
+	State any
 }
 
 type V1beta1AclPolicy_ClusterAclPolicyAttachments struct {
 	AclPolicyRevisionStatuses any
-	Cluster                   any
+	Cluster any
 }
 
 type V1beta1AclPolicy_Rules struct {
-	Rule     any
+	Rule any
 	Username any
 }
 
 var V1beta1AclPolicy_RulesFields = ubx.FieldMap{
-	"Rule":     ubx.FieldSpec{WireName: "rule"},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Rule": ubx.FieldSpec{WireName: "rule"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 type V1beta1AclPolicyConfig struct {
 	// Identifier. Full resource path of the ACL policy.
@@ -57,8 +57,8 @@ var V1beta1AclPolicy = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   V1beta1AclPolicy_RulesFields,
+			Kind: "list",
+			Fields: V1beta1AclPolicy_RulesFields,
 		},
 	},
 }

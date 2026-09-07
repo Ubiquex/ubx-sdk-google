@@ -18,9 +18,9 @@ type Key_Attributes struct {
 }
 
 var Key_AttributesFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 type KeyConfig struct {
 	// List of attributes associated with the credential.
@@ -63,13 +63,13 @@ var Key = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "list",
-			Fields:   Key_AttributesFields,
+			Kind: "list",
+			Fields: Key_AttributesFields,
 		},
-		"ConsumerKey":      ubx.FieldSpec{WireName: "consumer_key"},
-		"ConsumerSecret":   ubx.FieldSpec{WireName: "consumer_secret"},
+		"ConsumerKey": ubx.FieldSpec{WireName: "consumer_key"},
+		"ConsumerSecret": ubx.FieldSpec{WireName: "consumer_secret"},
 		"ExpiresInSeconds": ubx.FieldSpec{WireName: "expires_in_seconds"},
-		"Scopes":           ubx.FieldSpec{WireName: "scopes"},
-		"Status":           ubx.FieldSpec{WireName: "status"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

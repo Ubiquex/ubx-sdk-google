@@ -29,21 +29,21 @@ type Lake_MetastoreStatus struct {
 }
 
 var Lake_AssetStatusFields = ubx.FieldMap{
-	"ActiveAssets":                 ubx.FieldSpec{WireName: "active_assets"},
-	"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
-	"UpdateTime":                   ubx.FieldSpec{WireName: "update_time"},
-}
+		"ActiveAssets": ubx.FieldSpec{WireName: "active_assets"},
+		"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var Lake_MetastoreFields = ubx.FieldMap{
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var Lake_MetastoreStatusFields = ubx.FieldMap{
-	"Endpoint":   ubx.FieldSpec{WireName: "endpoint"},
-	"Message":    ubx.FieldSpec{WireName: "message"},
-	"State":      ubx.FieldSpec{WireName: "state"},
-	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-}
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 type LakeConfig struct {
 	// Aggregated status of the underlying assets of a lake or zone.
@@ -92,21 +92,21 @@ var Lake = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssetStatus": ubx.FieldSpec{
 			WireName: "asset_status",
-			Kind:     "object",
-			Fields:   Lake_AssetStatusFields,
+			Kind: "object",
+			Fields: Lake_AssetStatusFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Metastore": ubx.FieldSpec{
 			WireName: "metastore",
-			Kind:     "object",
-			Fields:   Lake_MetastoreFields,
+			Kind: "object",
+			Fields: Lake_MetastoreFields,
 		},
 		"MetastoreStatus": ubx.FieldSpec{
 			WireName: "metastore_status",
-			Kind:     "object",
-			Fields:   Lake_MetastoreStatusFields,
+			Kind: "object",
+			Fields: Lake_MetastoreStatusFields,
 		},
 	},
 }

@@ -24,7 +24,7 @@ type ReleaseAttrs struct {
 var Release = ubx.ResourceBinding{
 	WireType: "google_firebaserules_release",
 	Fields: ubx.FieldMap{
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RulesetName": ubx.FieldSpec{WireName: "ruleset_name"},
 	},
 }

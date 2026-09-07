@@ -28,8 +28,8 @@ type GatewaySecurityPolicyAttrs struct {
 var GatewaySecurityPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_gateway_security_policy",
 	Fields: ubx.FieldMap{
-		"Description":         ubx.FieldSpec{WireName: "description"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TlsInspectionPolicy": ubx.FieldSpec{WireName: "tls_inspection_policy"},
 	},
 }

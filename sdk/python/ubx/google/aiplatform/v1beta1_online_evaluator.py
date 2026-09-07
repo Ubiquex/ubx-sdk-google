@@ -50,7 +50,7 @@ class V1beta1OnlineEvaluator_CloudObservability_TraceScope:
 
 @dataclasses.dataclass
 class V1beta1OnlineEvaluator_CloudObservability:
-    # Optional. Optional log view that will be used to query logs. If empty, the `_Default` view will be used.
+    # Optional. Optional log view that will be used to query logs. If empty, the project's default view (`projects/{project_id}`) will be used.
     log_view: Any = None
     # Configuration for data source following OpenTelemetry.
     open_telemetry: Any = None
@@ -58,7 +58,7 @@ class V1beta1OnlineEvaluator_CloudObservability:
     session_scope: Any = None
     # If chosen, the online evaluator will evaluate single traces matching specified `filter`.
     trace_scope: Any = None
-    # Optional. Optional trace view that will be used to query traces. If empty, the `_Default` view will be used. NOTE: This field is not supported yet and will be ignored if set.
+    # Optional. Optional trace view that will be used to query traces. If empty, the `_AllSpans` view from `_Trace` US bucket will be used, i.e. `projects/{project_id}/locations/us/buckets/_Trace/datasets/Spans/views/_AllSpans`.
     trace_view: Any = None
 
 @dataclasses.dataclass
@@ -99,7 +99,6 @@ class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
     language_auto: Any = None
     language_codes: Any = None
     language_hints: Any = None
-    mode: Any = None
     word_timestamp: Any = None
 
 @dataclasses.dataclass
@@ -230,6 +229,11 @@ class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
     thinking_level: Any = None
 
 @dataclasses.dataclass
+class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig:
+    echo_target_language: Any = None
+    target_language_code: Any = None
+
+@dataclasses.dataclass
 class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig:
     audio_timestamp: Any = None
     audio_transcription_config: Any = None
@@ -256,6 +260,7 @@ class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
     thinking_config: Any = None
     top_k: Any = None
     top_p: Any = None
+    translation_config: Any = None
 
 @dataclasses.dataclass
 class V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig:
@@ -503,7 +508,6 @@ _V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterCo
         kind="object",
         fields=_V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
     ),
-    "mode": ubx.FieldSpec(wire_name="mode"),
     "word_timestamp": ubx.FieldSpec(wire_name="word_timestamp"),
 }
 
@@ -686,6 +690,11 @@ _V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterCo
     "thinking_level": ubx.FieldSpec(wire_name="thinking_level"),
 }
 
+_V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields = {
+    "echo_target_language": ubx.FieldSpec(wire_name="echo_target_language"),
+    "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
+}
+
 _V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields = {
     "audio_timestamp": ubx.FieldSpec(wire_name="audio_timestamp"),
     "audio_transcription_config": ubx.FieldSpec(
@@ -744,6 +753,11 @@ _V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterCo
     ),
     "top_k": ubx.FieldSpec(wire_name="top_k"),
     "top_p": ubx.FieldSpec(wire_name="top_p"),
+    "translation_config": ubx.FieldSpec(
+        wire_name="translation_config",
+        kind="object",
+        fields=_V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+    ),
 }
 
 _V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields = {

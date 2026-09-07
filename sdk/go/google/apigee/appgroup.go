@@ -11,9 +11,9 @@ type Appgroup_Attributes struct {
 }
 
 var Appgroup_AttributesFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 type AppgroupConfig struct {
 	// A list of attributes
@@ -64,15 +64,15 @@ var Appgroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "list",
-			Fields:   Appgroup_AttributesFields,
+			Kind: "list",
+			Fields: Appgroup_AttributesFields,
 		},
-		"ChannelId":    ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelUri":   ubx.FieldSpec{WireName: "channel_uri"},
-		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-		"Email":        ubx.FieldSpec{WireName: "email"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+		"ChannelUri": ubx.FieldSpec{WireName: "channel_uri"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"Status":       ubx.FieldSpec{WireName: "status"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

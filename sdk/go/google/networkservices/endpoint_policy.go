@@ -28,30 +28,30 @@ type EndpointPolicy_TrafficPortSelector struct {
 }
 
 var EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabelsFields = ubx.FieldMap{
-	"LabelName":  ubx.FieldSpec{WireName: "label_name"},
-	"LabelValue": ubx.FieldSpec{WireName: "label_value"},
-}
+		"LabelName": ubx.FieldSpec{WireName: "label_name"},
+		"LabelValue": ubx.FieldSpec{WireName: "label_value"},
+	}
 
 var EndpointPolicy_EndpointMatcher_MetadataLabelMatcherFields = ubx.FieldMap{
-	"MetadataLabelMatchCriteria": ubx.FieldSpec{WireName: "metadata_label_match_criteria"},
-	"MetadataLabels": ubx.FieldSpec{
-		WireName: "metadata_labels",
-		Kind:     "list",
-		Fields:   EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabelsFields,
-	},
-}
+		"MetadataLabelMatchCriteria": ubx.FieldSpec{WireName: "metadata_label_match_criteria"},
+		"MetadataLabels": ubx.FieldSpec{
+			WireName: "metadata_labels",
+			Kind: "list",
+			Fields: EndpointPolicy_EndpointMatcher_MetadataLabelMatcher_MetadataLabelsFields,
+		},
+	}
 
 var EndpointPolicy_EndpointMatcherFields = ubx.FieldMap{
-	"MetadataLabelMatcher": ubx.FieldSpec{
-		WireName: "metadata_label_matcher",
-		Kind:     "object",
-		Fields:   EndpointPolicy_EndpointMatcher_MetadataLabelMatcherFields,
-	},
-}
+		"MetadataLabelMatcher": ubx.FieldSpec{
+			WireName: "metadata_label_matcher",
+			Kind: "object",
+			Fields: EndpointPolicy_EndpointMatcher_MetadataLabelMatcherFields,
+		},
+	}
 
 var EndpointPolicy_TrafficPortSelectorFields = ubx.FieldMap{
-	"Ports": ubx.FieldSpec{WireName: "ports"},
-}
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+	}
 
 type EndpointPolicyConfig struct {
 	// Optional. This field specifies the URL of AuthorizationPolicy resource that applies authorization policies to the inbound traffic at the matched endpoints. Refer to Authorization. If this field is not specified, authorization is disabled(no authz checks) for this endpoint.
@@ -103,20 +103,20 @@ var EndpointPolicy = ubx.ResourceBinding{
 	WireType: "google_networkservices_endpoint_policy",
 	Fields: ubx.FieldMap{
 		"AuthorizationPolicy": ubx.FieldSpec{WireName: "authorization_policy"},
-		"ClientTlsPolicy":     ubx.FieldSpec{WireName: "client_tls_policy"},
-		"Description":         ubx.FieldSpec{WireName: "description"},
+		"ClientTlsPolicy": ubx.FieldSpec{WireName: "client_tls_policy"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EndpointMatcher": ubx.FieldSpec{
 			WireName: "endpoint_matcher",
-			Kind:     "object",
-			Fields:   EndpointPolicy_EndpointMatcherFields,
+			Kind: "object",
+			Fields: EndpointPolicy_EndpointMatcherFields,
 		},
-		"Labels":          ubx.FieldSpec{WireName: "labels"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServerTlsPolicy": ubx.FieldSpec{WireName: "server_tls_policy"},
 		"TrafficPortSelector": ubx.FieldSpec{
 			WireName: "traffic_port_selector",
-			Kind:     "object",
-			Fields:   EndpointPolicy_TrafficPortSelectorFields,
+			Kind: "object",
+			Fields: EndpointPolicy_TrafficPortSelectorFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

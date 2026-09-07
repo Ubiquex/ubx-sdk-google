@@ -31,26 +31,26 @@ type CryptoKeyVersion_ExternalProtectionLevelOptions struct {
 }
 
 var CryptoKeyVersion_Attestation_CertChainsFields = ubx.FieldMap{
-	"CaviumCerts":          ubx.FieldSpec{WireName: "cavium_certs"},
-	"GoogleCardCerts":      ubx.FieldSpec{WireName: "google_card_certs"},
-	"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
-}
+		"CaviumCerts": ubx.FieldSpec{WireName: "cavium_certs"},
+		"GoogleCardCerts": ubx.FieldSpec{WireName: "google_card_certs"},
+		"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
+	}
 
 var CryptoKeyVersion_AttestationFields = ubx.FieldMap{
-	"CertChains": ubx.FieldSpec{
-		WireName: "cert_chains",
-		Kind:     "object",
-		Fields:   CryptoKeyVersion_Attestation_CertChainsFields,
-	},
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Format":  ubx.FieldSpec{WireName: "format"},
-}
+		"CertChains": ubx.FieldSpec{
+			WireName: "cert_chains",
+			Kind: "object",
+			Fields: CryptoKeyVersion_Attestation_CertChainsFields,
+		},
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+	}
 
 var CryptoKeyVersion_ExternalProtectionLevelOptionsFields = ubx.FieldMap{
-	"EkmConnectionBackendOverride": ubx.FieldSpec{WireName: "ekm_connection_backend_override"},
-	"EkmConnectionKeyPath":         ubx.FieldSpec{WireName: "ekm_connection_key_path"},
-	"ExternalKeyUri":               ubx.FieldSpec{WireName: "external_key_uri"},
-}
+		"EkmConnectionBackendOverride": ubx.FieldSpec{WireName: "ekm_connection_backend_override"},
+		"EkmConnectionKeyPath": ubx.FieldSpec{WireName: "ekm_connection_key_path"},
+		"ExternalKeyUri": ubx.FieldSpec{WireName: "external_key_uri"},
+	}
 
 type CryptoKeyVersionConfig struct {
 	// Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
@@ -59,7 +59,7 @@ type CryptoKeyVersionConfig struct {
 	ExternalProtectionLevelOptions any
 	// The current state of the CryptoKeyVersion.
 	State any
-	// Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
+	// Optional. Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
 	TrustedWrappingEnabled any
 }
 
@@ -98,7 +98,7 @@ type CryptoKeyVersionAttrs struct {
 	ReimportEligible any
 	// The current state of the CryptoKeyVersion.
 	State any
-	// Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
+	// Optional. Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
 	TrustedWrappingEnabled any
 }
 
@@ -107,15 +107,15 @@ var CryptoKeyVersion = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attestation": ubx.FieldSpec{
 			WireName: "attestation",
-			Kind:     "object",
-			Fields:   CryptoKeyVersion_AttestationFields,
+			Kind: "object",
+			Fields: CryptoKeyVersion_AttestationFields,
 		},
 		"ExternalProtectionLevelOptions": ubx.FieldSpec{
 			WireName: "external_protection_level_options",
-			Kind:     "object",
-			Fields:   CryptoKeyVersion_ExternalProtectionLevelOptionsFields,
+			Kind: "object",
+			Fields: CryptoKeyVersion_ExternalProtectionLevelOptionsFields,
 		},
-		"State":                  ubx.FieldSpec{WireName: "state"},
+		"State": ubx.FieldSpec{WireName: "state"},
 		"TrustedWrappingEnabled": ubx.FieldSpec{WireName: "trusted_wrapping_enabled"},
 	},
 }

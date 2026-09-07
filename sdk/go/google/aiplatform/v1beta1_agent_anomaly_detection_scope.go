@@ -30,9 +30,9 @@ type V1beta1AgentAnomalyDetectionScopeAttrs struct {
 var V1beta1AgentAnomalyDetectionScope = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_agent_anomaly_detection_scope",
 	Fields: ubx.FieldMap{
-		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
-		"LogBuckets":           ubx.FieldSpec{WireName: "log_buckets"},
-		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"LogBuckets": ubx.FieldSpec{WireName: "log_buckets"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ObservabilityBuckets": ubx.FieldSpec{WireName: "observability_buckets"},
 	},
 }

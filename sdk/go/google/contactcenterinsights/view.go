@@ -29,7 +29,7 @@ var View = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_view",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Value":       ubx.FieldSpec{WireName: "value"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
 	},
 }

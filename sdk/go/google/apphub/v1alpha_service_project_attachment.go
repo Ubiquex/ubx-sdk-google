@@ -26,7 +26,7 @@ type V1alphaServiceProjectAttachmentAttrs struct {
 var V1alphaServiceProjectAttachment = ubx.ResourceBinding{
 	WireType: "google_apphub_v1alpha_service_project_attachment",
 	Fields: ubx.FieldMap{
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServiceProject": ubx.FieldSpec{WireName: "service_project"},
 	},
 }

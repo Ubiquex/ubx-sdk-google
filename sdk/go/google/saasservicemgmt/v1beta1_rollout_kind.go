@@ -23,22 +23,22 @@ type V1beta1RolloutKind_UnitUpdatePacing struct {
 }
 
 var V1beta1RolloutKind_ErrorBudgetFields = ubx.FieldMap{
-	"AllowedCount":      ubx.FieldSpec{WireName: "allowed_count"},
-	"AllowedPercentage": ubx.FieldSpec{WireName: "allowed_percentage"},
-}
+		"AllowedCount": ubx.FieldSpec{WireName: "allowed_count"},
+		"AllowedPercentage": ubx.FieldSpec{WireName: "allowed_percentage"},
+	}
 
 var V1beta1RolloutKind_UnitUpdatePacing_MaxConcurrentOperationsPercentFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var V1beta1RolloutKind_UnitUpdatePacingFields = ubx.FieldMap{
-	"MaxConcurrentOperationsCount": ubx.FieldSpec{WireName: "max_concurrent_operations_count"},
-	"MaxConcurrentOperationsPercent": ubx.FieldSpec{
-		WireName: "max_concurrent_operations_percent",
-		Kind:     "object",
-		Fields:   V1beta1RolloutKind_UnitUpdatePacing_MaxConcurrentOperationsPercentFields,
-	},
-}
+		"MaxConcurrentOperationsCount": ubx.FieldSpec{WireName: "max_concurrent_operations_count"},
+		"MaxConcurrentOperationsPercent": ubx.FieldSpec{
+			WireName: "max_concurrent_operations_percent",
+			Kind: "object",
+			Fields: V1beta1RolloutKind_UnitUpdatePacing_MaxConcurrentOperationsPercentFields,
+		},
+	}
 
 type V1beta1RolloutKindConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -96,18 +96,18 @@ var V1beta1RolloutKind = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ErrorBudget": ubx.FieldSpec{
 			WireName: "error_budget",
-			Kind:     "object",
-			Fields:   V1beta1RolloutKind_ErrorBudgetFields,
+			Kind: "object",
+			Fields: V1beta1RolloutKind_ErrorBudgetFields,
 		},
-		"Labels":                       ubx.FieldSpec{WireName: "labels"},
-		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RolloutOrchestrationStrategy": ubx.FieldSpec{WireName: "rollout_orchestration_strategy"},
-		"UnitFilter":                   ubx.FieldSpec{WireName: "unit_filter"},
-		"UnitKind":                     ubx.FieldSpec{WireName: "unit_kind"},
+		"UnitFilter": ubx.FieldSpec{WireName: "unit_filter"},
+		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 		"UnitUpdatePacing": ubx.FieldSpec{
 			WireName: "unit_update_pacing",
-			Kind:     "object",
-			Fields:   V1beta1RolloutKind_UnitUpdatePacingFields,
+			Kind: "object",
+			Fields: V1beta1RolloutKind_UnitUpdatePacingFields,
 		},
 		"UpdateUnitKindStrategy": ubx.FieldSpec{WireName: "update_unit_kind_strategy"},
 	},

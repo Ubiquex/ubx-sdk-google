@@ -25,6 +25,76 @@ class Version_Snapshot_Agents_ModelSettings:
     temperature: Any = None
 
 @dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_Skills:
+    description: Any = None
+    examples: Any = None
+    id: Any = None
+    input_modes: Any = None
+    name: Any = None
+    output_modes: Any = None
+    tags: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces:
+    protocol_binding: Any = None
+    protocol_version: Any = None
+    tenant: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard:
+    description: Any = None
+    name: Any = None
+    skills: Any = None
+    supported_interfaces: Any = None
+    version: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig:
+    api_key_secret_version: Any = None
+    key_name: Any = None
+    request_location: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig:
+    token: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig:
+    client_id: Any = None
+    client_secret_version: Any = None
+    oauth_grant_type: Any = None
+    scopes: Any = None
+    token_endpoint: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig:
+    scopes: Any = None
+    service_account: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication:
+    api_key_config: Any = None
+    bearer_token_config: Any = None
+    oauth_config: Any = None
+    service_account_auth_config: Any = None
+    service_agent_id_token_auth_config: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig:
+    agent_card: Any = None
+    agent_registry: Any = None
+    api_authentication: Any = None
+    context_id: Any = None
+    input_variable_mapping: Any = None
+    output_variable_mapping: Any = None
+    streaming_enabled: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_Agents_RemoteA2aAgent:
+    a2a_config: Any = None
+
+@dataclasses.dataclass
 class Version_Snapshot_Agents_RemoteDialogflowAgent:
     # A reference to the agent this applies to. (AI-inferred)
     agent: Any = None
@@ -117,6 +187,7 @@ class Version_Snapshot_Agents:
     model_settings: Any = None
     # The resource name or identifier of this object. (AI-inferred)
     name: Any = None
+    remote_a2a_agent: Any = None
     # Configures this agent to delegate the conversation to a separate, existing Dialogflow CX agent. (AI-inferred)
     remote_dialogflow_agent: Any = None
     # The tool(s) available to this agent. (AI-inferred)
@@ -149,6 +220,15 @@ class Version_Snapshot_App_AudioProcessingConfig_BargeInConfig:
     disable_barge_in: Any = None
 
 @dataclasses.dataclass
+class Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamples:
+    consent_audio_gcs_uri: Any = None
+    name: Any = None
+    preview_audio_content: Any = None
+    preview_text: Any = None
+    voice_instruction: Any = None
+    voice_sample_gcs_uri: Any = None
+
+@dataclasses.dataclass
 class Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs:
     # The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred)
     consent_audio_gcs_uri: Any = None
@@ -169,6 +249,8 @@ class Version_Snapshot_App_AudioProcessingConfig:
     ambient_sound_config: Any = None
     # Configuration for how the user barge-in activities should be handled.
     barge_in_config: Any = None
+    # Optional. Configures custom voice samples for voice cloning.
+    custom_voice_samples: Any = None
     # Optional. The duration of user inactivity (no speech or interaction) before the agent prompts the user for reengagement. If not set, the agent will not prompt the user for reengagement.
     inactivity_timeout: Any = None
     # Optional. Configuration of how the agent response should be synthesized, mapping from the language code to SynthesizeSpeechConfig. If the configuration for the specified language code is not found, the configuration for the root language code will be used. For example, if the map contains "en-us" and "en", and the specified language code is "en-gb", then "en" configuration will be used. Note: Language code is case-insensitive.
@@ -182,6 +264,11 @@ class Version_Snapshot_App_ClientCertificateSettings:
     private_key: Any = None
     # Required. The TLS certificate encoded in PEM format. This string must include the begin header and end footer lines.
     tls_certificate: Any = None
+
+@dataclasses.dataclass
+class Version_Snapshot_App_DashboardSettings:
+    # Optional. The resource name of the default Contact Center Insights dashboard associated with the app. This is the dashboard that will be displayed when users navigate to the Monitoring view for the app. Format: `projects/{project}/locations/{location}/dashboards/{dashboard}`
+    default_dashboard: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_App_DataStoreSettings_Engines:
@@ -471,6 +558,8 @@ class Version_Snapshot_App:
     client_certificate_settings: Any = None
     # Output only. Timestamp when the app was created.
     create_time: Any = None
+    # Settings for dashboards associated with the app, that show up in the Monitoring view.
+    dashboard_settings: Any = None
     # Data store related settings for the app.
     data_store_settings: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
@@ -537,6 +626,14 @@ class Version_Snapshot_Examples_Messages_Chunks_Blob:
     mime_type: Any = None
 
 @dataclasses.dataclass
+class Version_Snapshot_Examples_Messages_Chunks_Image:
+    alt_text: Any = None
+    # The literal data payload. (AI-inferred)
+    data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool:
     # An identifier for this tool, unique within its own containing toolset. (AI-inferred)
     tool_id: Any = None
@@ -545,12 +642,14 @@ class Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool:
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolCall:
+    agent_name: Any = None
     # The argument(s) passed to this call. (AI-inferred)
     args: Any = None
     # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
     # An identifier for this item. (AI-inferred)
     id: Any = None
+    parent_tool_call_id: Any = None
     # A reference to a single tool. (AI-inferred)
     tool: Any = None
     # A reference to a specific tool within a toolset. (AI-inferred)
@@ -558,10 +657,12 @@ class Version_Snapshot_Examples_Messages_Chunks_ToolCall:
 
 @dataclasses.dataclass
 class Version_Snapshot_Examples_Messages_Chunks_ToolResponse:
+    agent_name: Any = None
     # A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
     display_name: Any = None
     # An identifier for this item. (AI-inferred)
     id: Any = None
+    parent_tool_call_id: Any = None
     # The response produced for this request. (AI-inferred)
     response: Any = None
     # A reference to a single tool. (AI-inferred)
@@ -918,6 +1019,7 @@ class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig:
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig:
     # Whether source snippets are included alongside a generated answer. (AI-inferred)
     enable_snippets: Any = None
+    max_snippets: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_DataStoreTool_ModalityConfigs:
@@ -981,53 +1083,6 @@ class Version_Snapshot_Tools_GoogleSearchTool:
     preferred_domains: Any = None
     # Per-modality prompt text guiding how this tool's own results are presented. (AI-inferred)
     prompt_config: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig:
-    # The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred)
-    api_key_secret_version: Any = None
-    # The name of the API key parameter. (AI-inferred)
-    key_name: Any = None
-    # Where in the request the credential is placed, e.g. a header or query parameter. (AI-inferred)
-    request_location: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig:
-    # A token used to authenticate this request. (AI-inferred)
-    token: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig:
-    # The OAuth client ID used to authenticate. (AI-inferred)
-    client_id: Any = None
-    # The Secret Manager secret version holding the OAuth client secret. (AI-inferred)
-    client_secret_version: Any = None
-    # Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred)
-    oauth_grant_type: Any = None
-    # The OAuth scope(s) requested. (AI-inferred)
-    scopes: Any = None
-    # The OAuth token endpoint URL used to obtain an access token. (AI-inferred)
-    token_endpoint: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig:
-    # The OAuth scope(s) requested. (AI-inferred)
-    scopes: Any = None
-    # The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred)
-    service_account: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_McpTool_ApiAuthentication:
-    # Authenticates using a static API key. (AI-inferred)
-    api_key_config: Any = None
-    # Authenticates using a static bearer token. (AI-inferred)
-    bearer_token_config: Any = None
-    # Authenticates using OAuth 2.0. (AI-inferred)
-    oauth_config: Any = None
-    # Authenticates using a Google Cloud service account's own identity token. (AI-inferred)
-    service_account_auth_config: Any = None
-    # Authenticates using this service's own service agent identity token. (AI-inferred)
-    service_agent_id_token_auth_config: Any = None
 
 @dataclasses.dataclass
 class Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig:
@@ -1102,50 +1157,10 @@ class Version_Snapshot_Tools_PythonFunction:
     service_directory_config: Any = None
 
 @dataclasses.dataclass
-class Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills:
-    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
-    description: Any = None
-    # Example(s) illustrating expected behavior. (AI-inferred)
-    examples: Any = None
-    # An identifier for this item. (AI-inferred)
-    id: Any = None
-    # The input modality/modalities (text, audio, etc.) this supports. (AI-inferred)
-    input_modes: Any = None
-    # The resource name or identifier of this object. (AI-inferred)
-    name: Any = None
-    # The output modality/modalities (text, audio, etc.) this supports. (AI-inferred)
-    output_modes: Any = None
-    # Free-form label(s) attached to this resource. (AI-inferred)
-    tags: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces:
-    # The communication protocol this interface accepts requests over. (AI-inferred)
-    protocol_binding: Any = None
-    # The protocol version this interface implements. (AI-inferred)
-    protocol_version: Any = None
-    # A reference to the tenant this applies to. (AI-inferred)
-    tenant: Any = None
-    # The URL this tool calls. (AI-inferred)
-    url: Any = None
-
-@dataclasses.dataclass
-class Version_Snapshot_Tools_RemoteAgentTool_AgentCard:
-    # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
-    description: Any = None
-    # The resource name or identifier of this object. (AI-inferred)
-    name: Any = None
-    # The skill(s) the remote agent advertises being able to perform. (AI-inferred)
-    skills: Any = None
-    # The transport/interface(s) (e.g. HTTP, gRPC) the remote agent supports being called over. (AI-inferred)
-    supported_interfaces: Any = None
-    # The version identifier this applies to. (AI-inferred)
-    version: Any = None
-
-@dataclasses.dataclass
 class Version_Snapshot_Tools_RemoteAgentTool:
     # The A2A agent card describing the remote agent's own identity, capabilities, and supported interfaces. (AI-inferred)
     agent_card: Any = None
+    api_authentication: Any = None
     # A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
     description: Any = None
     # The resource name or identifier of this object. (AI-inferred)
@@ -1362,6 +1377,112 @@ _Version_Snapshot_Agents_ModelSettingsFields = {
     "temperature": ubx.FieldSpec(wire_name="temperature"),
 }
 
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "examples": ubx.FieldSpec(wire_name="examples"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "input_modes": ubx.FieldSpec(wire_name="input_modes"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "output_modes": ubx.FieldSpec(wire_name="output_modes"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields = {
+    "protocol_binding": ubx.FieldSpec(wire_name="protocol_binding"),
+    "protocol_version": ubx.FieldSpec(wire_name="protocol_version"),
+    "tenant": ubx.FieldSpec(wire_name="tenant"),
+    "url": ubx.FieldSpec(wire_name="url"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "skills": ubx.FieldSpec(
+        wire_name="skills",
+        kind="list",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+    ),
+    "supported_interfaces": ubx.FieldSpec(
+        wire_name="supported_interfaces",
+        kind="list",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields = {
+    "api_key_secret_version": ubx.FieldSpec(wire_name="api_key_secret_version"),
+    "key_name": ubx.FieldSpec(wire_name="key_name"),
+    "request_location": ubx.FieldSpec(wire_name="request_location"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields = {
+    "token": ubx.FieldSpec(wire_name="token"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields = {
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_version": ubx.FieldSpec(wire_name="client_secret_version"),
+    "oauth_grant_type": ubx.FieldSpec(wire_name="oauth_grant_type"),
+    "scopes": ubx.FieldSpec(wire_name="scopes"),
+    "token_endpoint": ubx.FieldSpec(wire_name="token_endpoint"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields = {
+    "scopes": ubx.FieldSpec(wire_name="scopes"),
+    "service_account": ubx.FieldSpec(wire_name="service_account"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields = {
+    "api_key_config": ubx.FieldSpec(
+        wire_name="api_key_config",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+    ),
+    "bearer_token_config": ubx.FieldSpec(
+        wire_name="bearer_token_config",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+    ),
+    "oauth_config": ubx.FieldSpec(
+        wire_name="oauth_config",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+    ),
+    "service_account_auth_config": ubx.FieldSpec(
+        wire_name="service_account_auth_config",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+    ),
+    "service_agent_id_token_auth_config": ubx.FieldSpec(wire_name="service_agent_id_token_auth_config"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfigFields = {
+    "agent_card": ubx.FieldSpec(
+        wire_name="agent_card",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields,
+    ),
+    "agent_registry": ubx.FieldSpec(wire_name="agent_registry"),
+    "api_authentication": ubx.FieldSpec(
+        wire_name="api_authentication",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+    ),
+    "context_id": ubx.FieldSpec(wire_name="context_id"),
+    "input_variable_mapping": ubx.FieldSpec(wire_name="input_variable_mapping"),
+    "output_variable_mapping": ubx.FieldSpec(wire_name="output_variable_mapping"),
+    "streaming_enabled": ubx.FieldSpec(wire_name="streaming_enabled"),
+}
+
+_Version_Snapshot_Agents_RemoteA2aAgentFields = {
+    "a2a_config": ubx.FieldSpec(
+        wire_name="a2a_config",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfigFields,
+    ),
+}
+
 _Version_Snapshot_Agents_RemoteDialogflowAgentFields = {
     "agent": ubx.FieldSpec(wire_name="agent"),
     "environment_id": ubx.FieldSpec(wire_name="environment_id"),
@@ -1467,6 +1588,11 @@ _Version_Snapshot_AgentsFields = {
         fields=_Version_Snapshot_Agents_ModelSettingsFields,
     ),
     "name": ubx.FieldSpec(wire_name="name"),
+    "remote_a2a_agent": ubx.FieldSpec(
+        wire_name="remote_a2a_agent",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgentFields,
+    ),
     "remote_dialogflow_agent": ubx.FieldSpec(
         wire_name="remote_dialogflow_agent",
         kind="object",
@@ -1499,6 +1625,15 @@ _Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields = {
     "disable_barge_in": ubx.FieldSpec(wire_name="disable_barge_in"),
 }
 
+_Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamplesFields = {
+    "consent_audio_gcs_uri": ubx.FieldSpec(wire_name="consent_audio_gcs_uri"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "preview_audio_content": ubx.FieldSpec(wire_name="preview_audio_content"),
+    "preview_text": ubx.FieldSpec(wire_name="preview_text"),
+    "voice_instruction": ubx.FieldSpec(wire_name="voice_instruction"),
+    "voice_sample_gcs_uri": ubx.FieldSpec(wire_name="voice_sample_gcs_uri"),
+}
+
 _Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigsFields = {
     "consent_audio_gcs_uri": ubx.FieldSpec(wire_name="consent_audio_gcs_uri"),
     "instruction": ubx.FieldSpec(wire_name="instruction"),
@@ -1519,6 +1654,11 @@ _Version_Snapshot_App_AudioProcessingConfigFields = {
         kind="object",
         fields=_Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields,
     ),
+    "custom_voice_samples": ubx.FieldSpec(
+        wire_name="custom_voice_samples",
+        kind="list",
+        fields=_Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamplesFields,
+    ),
     "inactivity_timeout": ubx.FieldSpec(wire_name="inactivity_timeout"),
     "synthesize_speech_configs": ubx.FieldSpec(
         wire_name="synthesize_speech_configs",
@@ -1531,6 +1671,10 @@ _Version_Snapshot_App_ClientCertificateSettingsFields = {
     "passphrase": ubx.FieldSpec(wire_name="passphrase"),
     "private_key": ubx.FieldSpec(wire_name="private_key"),
     "tls_certificate": ubx.FieldSpec(wire_name="tls_certificate"),
+}
+
+_Version_Snapshot_App_DashboardSettingsFields = {
+    "default_dashboard": ubx.FieldSpec(wire_name="default_dashboard"),
 }
 
 _Version_Snapshot_App_DataStoreSettings_EnginesFields = {
@@ -1815,6 +1959,11 @@ _Version_Snapshot_AppFields = {
         fields=_Version_Snapshot_App_ClientCertificateSettingsFields,
     ),
     "create_time": ubx.FieldSpec(wire_name="create_time"),
+    "dashboard_settings": ubx.FieldSpec(
+        wire_name="dashboard_settings",
+        kind="object",
+        fields=_Version_Snapshot_App_DashboardSettingsFields,
+    ),
     "data_store_settings": ubx.FieldSpec(
         wire_name="data_store_settings",
         kind="object",
@@ -1896,15 +2045,23 @@ _Version_Snapshot_Examples_Messages_Chunks_BlobFields = {
     "mime_type": ubx.FieldSpec(wire_name="mime_type"),
 }
 
+_Version_Snapshot_Examples_Messages_Chunks_ImageFields = {
+    "alt_text": ubx.FieldSpec(wire_name="alt_text"),
+    "data": ubx.FieldSpec(wire_name="data"),
+    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
+}
+
 _Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields = {
     "tool_id": ubx.FieldSpec(wire_name="tool_id"),
     "toolset": ubx.FieldSpec(wire_name="toolset"),
 }
 
 _Version_Snapshot_Examples_Messages_Chunks_ToolCallFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "args": ubx.FieldSpec(wire_name="args"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
         wire_name="toolset_tool",
@@ -1914,8 +2071,10 @@ _Version_Snapshot_Examples_Messages_Chunks_ToolCallFields = {
 }
 
 _Version_Snapshot_Examples_Messages_Chunks_ToolResponseFields = {
+    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "id": ubx.FieldSpec(wire_name="id"),
+    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
     "response": ubx.FieldSpec(wire_name="response"),
     "tool": ubx.FieldSpec(wire_name="tool"),
     "toolset_tool": ubx.FieldSpec(
@@ -1940,7 +2099,7 @@ _Version_Snapshot_Examples_Messages_ChunksFields = {
     "image": ubx.FieldSpec(
         wire_name="image",
         kind="object",
-        fields=_Version_Snapshot_Examples_Messages_Chunks_BlobFields,
+        fields=_Version_Snapshot_Examples_Messages_Chunks_ImageFields,
     ),
     "payload": ubx.FieldSpec(wire_name="payload"),
     "text": ubx.FieldSpec(wire_name="text"),
@@ -2312,6 +2471,7 @@ _Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields = {
 
 _Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfigFields = {
     "enable_snippets": ubx.FieldSpec(wire_name="enable_snippets"),
+    "max_snippets": ubx.FieldSpec(wire_name="max_snippets"),
 }
 
 _Version_Snapshot_Tools_DataStoreTool_ModalityConfigsFields = {
@@ -2389,53 +2549,6 @@ _Version_Snapshot_Tools_GoogleSearchToolFields = {
     ),
 }
 
-_Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields = {
-    "api_key_secret_version": ubx.FieldSpec(wire_name="api_key_secret_version"),
-    "key_name": ubx.FieldSpec(wire_name="key_name"),
-    "request_location": ubx.FieldSpec(wire_name="request_location"),
-}
-
-_Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields = {
-    "token": ubx.FieldSpec(wire_name="token"),
-}
-
-_Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields = {
-    "client_id": ubx.FieldSpec(wire_name="client_id"),
-    "client_secret_version": ubx.FieldSpec(wire_name="client_secret_version"),
-    "oauth_grant_type": ubx.FieldSpec(wire_name="oauth_grant_type"),
-    "scopes": ubx.FieldSpec(wire_name="scopes"),
-    "token_endpoint": ubx.FieldSpec(wire_name="token_endpoint"),
-}
-
-_Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields = {
-    "scopes": ubx.FieldSpec(wire_name="scopes"),
-    "service_account": ubx.FieldSpec(wire_name="service_account"),
-}
-
-_Version_Snapshot_Tools_McpTool_ApiAuthenticationFields = {
-    "api_key_config": ubx.FieldSpec(
-        wire_name="api_key_config",
-        kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields,
-    ),
-    "bearer_token_config": ubx.FieldSpec(
-        wire_name="bearer_token_config",
-        kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields,
-    ),
-    "oauth_config": ubx.FieldSpec(
-        wire_name="oauth_config",
-        kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields,
-    ),
-    "service_account_auth_config": ubx.FieldSpec(
-        wire_name="service_account_auth_config",
-        kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
-    ),
-    "service_agent_id_token_auth_config": ubx.FieldSpec(wire_name="service_agent_id_token_auth_config"),
-}
-
 _Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields = {
     "service": ubx.FieldSpec(wire_name="service"),
 }
@@ -2457,7 +2570,7 @@ _Version_Snapshot_Tools_McpToolFields = {
     "api_authentication": ubx.FieldSpec(
         wire_name="api_authentication",
         kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
     ),
     "custom_headers": ubx.FieldSpec(wire_name="custom_headers"),
     "description": ubx.FieldSpec(wire_name="description"),
@@ -2491,7 +2604,7 @@ _Version_Snapshot_Tools_OpenApiToolFields = {
     "api_authentication": ubx.FieldSpec(
         wire_name="api_authentication",
         kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
     "ignore_unknown_fields": ubx.FieldSpec(wire_name="ignore_unknown_fields"),
@@ -2521,44 +2634,16 @@ _Version_Snapshot_Tools_PythonFunctionFields = {
     ),
 }
 
-_Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields = {
-    "description": ubx.FieldSpec(wire_name="description"),
-    "examples": ubx.FieldSpec(wire_name="examples"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "input_modes": ubx.FieldSpec(wire_name="input_modes"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "output_modes": ubx.FieldSpec(wire_name="output_modes"),
-    "tags": ubx.FieldSpec(wire_name="tags"),
-}
-
-_Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields = {
-    "protocol_binding": ubx.FieldSpec(wire_name="protocol_binding"),
-    "protocol_version": ubx.FieldSpec(wire_name="protocol_version"),
-    "tenant": ubx.FieldSpec(wire_name="tenant"),
-    "url": ubx.FieldSpec(wire_name="url"),
-}
-
-_Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields = {
-    "description": ubx.FieldSpec(wire_name="description"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "skills": ubx.FieldSpec(
-        wire_name="skills",
-        kind="list",
-        fields=_Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields,
-    ),
-    "supported_interfaces": ubx.FieldSpec(
-        wire_name="supported_interfaces",
-        kind="list",
-        fields=_Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
-    ),
-    "version": ubx.FieldSpec(wire_name="version"),
-}
-
 _Version_Snapshot_Tools_RemoteAgentToolFields = {
     "agent_card": ubx.FieldSpec(
         wire_name="agent_card",
         kind="object",
-        fields=_Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields,
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields,
+    ),
+    "api_authentication": ubx.FieldSpec(
+        wire_name="api_authentication",
+        kind="object",
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -2737,7 +2822,7 @@ _Version_Snapshot_Toolsets_McpToolsetFields = {
     "api_authentication": ubx.FieldSpec(
         wire_name="api_authentication",
         kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
     ),
     "custom_headers": ubx.FieldSpec(wire_name="custom_headers"),
     "server_address": ubx.FieldSpec(wire_name="server_address"),
@@ -2762,7 +2847,7 @@ _Version_Snapshot_Toolsets_OpenApiToolsetFields = {
     "api_authentication": ubx.FieldSpec(
         wire_name="api_authentication",
         kind="object",
-        fields=_Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+        fields=_Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
     ),
     "ignore_unknown_fields": ubx.FieldSpec(wire_name="ignore_unknown_fields"),
     "open_api_schema": ubx.FieldSpec(wire_name="open_api_schema"),
@@ -2870,6 +2955,8 @@ class VersionAttrs:
     name: Any = None
     # A snapshot of the app.
     snapshot: Any = None
+    # Output only. Timestamp when the app version was last updated.
+    update_time: Any = None
 
 Version = ubx.ResourceBinding(
     wire_type="google_ces_version",

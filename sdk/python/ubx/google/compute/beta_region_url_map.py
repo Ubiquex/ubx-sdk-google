@@ -91,6 +91,11 @@ class BetaRegionUrlMap_DefaultRouteAction_CorsPolicy:
     max_age: Any = None
 
 @dataclasses.dataclass
+class BetaRegionUrlMap_DefaultRouteAction_DynamicCompressionPolicy:
+    # Compress text responses using Brotli or gzip compression, based on the client's Accept-Encoding header.
+    compression_mode: Any = None
+
+@dataclasses.dataclass
 class BetaRegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_Abort:
     # The HTTP status code used to abort the request. The value must be from 200 to 599 inclusive. For gRPC protocol, the gRPC status code is mapped to HTTP status code according to this mapping table. HTTP status 200 is mapped to gRPC status UNKNOWN. Injecting an OK status is currently not supported by Traffic Director.
     http_status: Any = None
@@ -175,6 +180,8 @@ class BetaRegionUrlMap_DefaultRouteAction:
     cache_policy: Any = None
     # The specification for allowing client-side cross-origin requests. For more information about the W3C recommendation for cross-origin resource sharing (CORS), see Fetch API Living Standard.
     cors_policy: Any = None
+    # Dynamic compression policy for this URL Map's route.
+    dynamic_compression_policy: Any = None
     # The specification for fault injection introduced into traffic to test the resiliency of clients to backend service failure. As part of fault injection, when clients send requests to a backend service, delays can be introduced by the load balancer on a percentage of requests before sending those request to the backend service. Similarly requests from clients can be aborted by the load balancer for a percentage of requests.
     fault_injection_policy: Any = None
     # The configuration for Cloud CDN's image optimization feature. This feature dynamically processes and delivers images from the network edge. Image Optimization is only available for Global External Application Load Balancers. Either Cloud CDN must be enabled on the backend service or backend bucket serving the route, or cache policy must be configured on the same route.
@@ -405,6 +412,10 @@ _BetaRegionUrlMap_DefaultRouteAction_CorsPolicyFields = {
     "max_age": ubx.FieldSpec(wire_name="max_age"),
 }
 
+_BetaRegionUrlMap_DefaultRouteAction_DynamicCompressionPolicyFields = {
+    "compression_mode": ubx.FieldSpec(wire_name="compression_mode"),
+}
+
 _BetaRegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields = {
     "http_status": ubx.FieldSpec(wire_name="http_status"),
     "percentage": ubx.FieldSpec(wire_name="percentage"),
@@ -508,6 +519,11 @@ _BetaRegionUrlMap_DefaultRouteActionFields = {
         wire_name="cors_policy",
         kind="object",
         fields=_BetaRegionUrlMap_DefaultRouteAction_CorsPolicyFields,
+    ),
+    "dynamic_compression_policy": ubx.FieldSpec(
+        wire_name="dynamic_compression_policy",
+        kind="object",
+        fields=_BetaRegionUrlMap_DefaultRouteAction_DynamicCompressionPolicyFields,
     ),
     "fault_injection_policy": ubx.FieldSpec(
         wire_name="fault_injection_policy",

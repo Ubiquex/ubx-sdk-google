@@ -9,8 +9,8 @@ type NotificationConfig_StreamingConfig struct {
 }
 
 var NotificationConfig_StreamingConfigFields = ubx.FieldMap{
-	"Filter": ubx.FieldSpec{WireName: "filter"},
-}
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
 
 type NotificationConfigConfig struct {
 	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
@@ -40,12 +40,12 @@ var NotificationConfig = ubx.ResourceBinding{
 	WireType: "google_securitycenter_notification_config",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
 		"StreamingConfig": ubx.FieldSpec{
 			WireName: "streaming_config",
-			Kind:     "object",
-			Fields:   NotificationConfig_StreamingConfigFields,
+			Kind: "object",
+			Fields: NotificationConfig_StreamingConfigFields,
 		},
 	},
 }

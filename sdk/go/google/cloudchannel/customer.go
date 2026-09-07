@@ -72,48 +72,48 @@ type Customer_PrimaryContactInfo struct {
 }
 
 var Customer_CloudIdentityInfo_EduDataFields = ubx.FieldMap{
-	"InstituteSize": ubx.FieldSpec{WireName: "institute_size"},
-	"InstituteType": ubx.FieldSpec{WireName: "institute_type"},
-	"Website":       ubx.FieldSpec{WireName: "website"},
-}
+		"InstituteSize": ubx.FieldSpec{WireName: "institute_size"},
+		"InstituteType": ubx.FieldSpec{WireName: "institute_type"},
+		"Website": ubx.FieldSpec{WireName: "website"},
+	}
 
 var Customer_CloudIdentityInfoFields = ubx.FieldMap{
-	"AdminConsoleUri": ubx.FieldSpec{WireName: "admin_console_uri"},
-	"AlternateEmail":  ubx.FieldSpec{WireName: "alternate_email"},
-	"CustomerType":    ubx.FieldSpec{WireName: "customer_type"},
-	"EduData": ubx.FieldSpec{
-		WireName: "edu_data",
-		Kind:     "object",
-		Fields:   Customer_CloudIdentityInfo_EduDataFields,
-	},
-	"IsDomainVerified": ubx.FieldSpec{WireName: "is_domain_verified"},
-	"LanguageCode":     ubx.FieldSpec{WireName: "language_code"},
-	"PhoneNumber":      ubx.FieldSpec{WireName: "phone_number"},
-	"PrimaryDomain":    ubx.FieldSpec{WireName: "primary_domain"},
-}
+		"AdminConsoleUri": ubx.FieldSpec{WireName: "admin_console_uri"},
+		"AlternateEmail": ubx.FieldSpec{WireName: "alternate_email"},
+		"CustomerType": ubx.FieldSpec{WireName: "customer_type"},
+		"EduData": ubx.FieldSpec{
+			WireName: "edu_data",
+			Kind: "object",
+			Fields: Customer_CloudIdentityInfo_EduDataFields,
+		},
+		"IsDomainVerified": ubx.FieldSpec{WireName: "is_domain_verified"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+		"PrimaryDomain": ubx.FieldSpec{WireName: "primary_domain"},
+	}
 
 var Customer_OrgPostalAddressFields = ubx.FieldMap{
-	"AddressLines":       ubx.FieldSpec{WireName: "address_lines"},
-	"AdministrativeArea": ubx.FieldSpec{WireName: "administrative_area"},
-	"LanguageCode":       ubx.FieldSpec{WireName: "language_code"},
-	"Locality":           ubx.FieldSpec{WireName: "locality"},
-	"Organization":       ubx.FieldSpec{WireName: "organization"},
-	"PostalCode":         ubx.FieldSpec{WireName: "postal_code"},
-	"Recipients":         ubx.FieldSpec{WireName: "recipients"},
-	"RegionCode":         ubx.FieldSpec{WireName: "region_code"},
-	"Revision":           ubx.FieldSpec{WireName: "revision"},
-	"SortingCode":        ubx.FieldSpec{WireName: "sorting_code"},
-	"Sublocality":        ubx.FieldSpec{WireName: "sublocality"},
-}
+		"AddressLines": ubx.FieldSpec{WireName: "address_lines"},
+		"AdministrativeArea": ubx.FieldSpec{WireName: "administrative_area"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"Locality": ubx.FieldSpec{WireName: "locality"},
+		"Organization": ubx.FieldSpec{WireName: "organization"},
+		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
+		"Recipients": ubx.FieldSpec{WireName: "recipients"},
+		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
+		"Revision": ubx.FieldSpec{WireName: "revision"},
+		"SortingCode": ubx.FieldSpec{WireName: "sorting_code"},
+		"Sublocality": ubx.FieldSpec{WireName: "sublocality"},
+	}
 
 var Customer_PrimaryContactInfoFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Email":       ubx.FieldSpec{WireName: "email"},
-	"FirstName":   ubx.FieldSpec{WireName: "first_name"},
-	"LastName":    ubx.FieldSpec{WireName: "last_name"},
-	"Phone":       ubx.FieldSpec{WireName: "phone"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"FirstName": ubx.FieldSpec{WireName: "first_name"},
+		"LastName": ubx.FieldSpec{WireName: "last_name"},
+		"Phone": ubx.FieldSpec{WireName: "phone"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 type CustomerConfig struct {
 	// Secondary contact email. You need to provide an alternate email to create different domains if a primary contact email already exists. Users will receive a notification with credentials when you create an admin.google.com account. Secondary emails are also recovery email addresses. Alternate emails are optional when you create Team customers.
@@ -172,27 +172,27 @@ type CustomerAttrs struct {
 var Customer = ubx.ResourceBinding{
 	WireType: "google_cloudchannel_customer",
 	Fields: ubx.FieldMap{
-		"AlternateEmail":   ubx.FieldSpec{WireName: "alternate_email"},
+		"AlternateEmail": ubx.FieldSpec{WireName: "alternate_email"},
 		"ChannelPartnerId": ubx.FieldSpec{WireName: "channel_partner_id"},
 		"CloudIdentityInfo": ubx.FieldSpec{
 			WireName: "cloud_identity_info",
-			Kind:     "object",
-			Fields:   Customer_CloudIdentityInfoFields,
+			Kind: "object",
+			Fields: Customer_CloudIdentityInfoFields,
 		},
-		"CorrelationId":            ubx.FieldSpec{WireName: "correlation_id"},
+		"CorrelationId": ubx.FieldSpec{WireName: "correlation_id"},
 		"CustomerAttestationState": ubx.FieldSpec{WireName: "customer_attestation_state"},
-		"Domain":                   ubx.FieldSpec{WireName: "domain"},
-		"LanguageCode":             ubx.FieldSpec{WireName: "language_code"},
-		"OrgDisplayName":           ubx.FieldSpec{WireName: "org_display_name"},
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"OrgDisplayName": ubx.FieldSpec{WireName: "org_display_name"},
 		"OrgPostalAddress": ubx.FieldSpec{
 			WireName: "org_postal_address",
-			Kind:     "object",
-			Fields:   Customer_OrgPostalAddressFields,
+			Kind: "object",
+			Fields: Customer_OrgPostalAddressFields,
 		},
 		"PrimaryContactInfo": ubx.FieldSpec{
 			WireName: "primary_contact_info",
-			Kind:     "object",
-			Fields:   Customer_PrimaryContactInfoFields,
+			Kind: "object",
+			Fields: Customer_PrimaryContactInfoFields,
 		},
 	},
 }

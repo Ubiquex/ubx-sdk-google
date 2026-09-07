@@ -138,6 +138,8 @@ class BetaInstance_NetworkInterfaces_AccessConfigs:
 
 @dataclasses.dataclass
 class BetaInstance_NetworkInterfaces_AliasIpRanges:
+    candidate_subnetwork_range_names: Any = None
+    effective_subnetwork_range_name: Any = None
     ip_cidr_range: Any = None
     subnetwork_range_name: Any = None
 
@@ -236,6 +238,8 @@ class BetaInstance_ResourceStatus_PhysicalHostTopology:
     cluster: Any = None
     # [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency.
     host: Any = None
+    # Output only. [Output Only] The ID of the machine on which the running instance is located. It is only populated for machines which have multiple hosts.
+    machine: Any = None
     # [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block.
     subblock: Any = None
 
@@ -326,6 +330,8 @@ class BetaInstance_Scheduling:
     automatic_restart: Any = None
     # Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
     availability_domain: Any = None
+    # This optional flag exposes the hashed physical host ID in the ResourceStatus resource of the VM.
+    expose_host_topology: Any = None
     # The configuration for gracefully shutting down the instance.
     graceful_shutdown: Any = None
     # Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
@@ -559,6 +565,8 @@ _BetaInstance_NetworkInterfaces_AccessConfigsFields = {
 }
 
 _BetaInstance_NetworkInterfaces_AliasIpRangesFields = {
+    "candidate_subnetwork_range_names": ubx.FieldSpec(wire_name="candidate_subnetwork_range_names"),
+    "effective_subnetwork_range_name": ubx.FieldSpec(wire_name="effective_subnetwork_range_name"),
     "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
     "subnetwork_range_name": ubx.FieldSpec(wire_name="subnetwork_range_name"),
 }
@@ -659,6 +667,7 @@ _BetaInstance_ResourceStatus_PhysicalHostTopologyFields = {
     "block": ubx.FieldSpec(wire_name="block"),
     "cluster": ubx.FieldSpec(wire_name="cluster"),
     "host": ubx.FieldSpec(wire_name="host"),
+    "machine": ubx.FieldSpec(wire_name="machine"),
     "subblock": ubx.FieldSpec(wire_name="subblock"),
 }
 
@@ -752,6 +761,7 @@ _BetaInstance_Scheduling_OnInstanceStopActionFields = {
 _BetaInstance_SchedulingFields = {
     "automatic_restart": ubx.FieldSpec(wire_name="automatic_restart"),
     "availability_domain": ubx.FieldSpec(wire_name="availability_domain"),
+    "expose_host_topology": ubx.FieldSpec(wire_name="expose_host_topology"),
     "graceful_shutdown": ubx.FieldSpec(
         wire_name="graceful_shutdown",
         kind="object",

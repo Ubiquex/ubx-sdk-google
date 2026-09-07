@@ -34,8 +34,8 @@ type ManagementDnsZoneBindingAttrs struct {
 var ManagementDnsZoneBinding = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_management_dns_zone_binding",
 	Fields: ubx.FieldMap{
-		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"VmwareEngineNetwork": ubx.FieldSpec{WireName: "vmware_engine_network"},
-		"VpcNetwork":          ubx.FieldSpec{WireName: "vpc_network"},
+		"VpcNetwork": ubx.FieldSpec{WireName: "vpc_network"},
 	},
 }

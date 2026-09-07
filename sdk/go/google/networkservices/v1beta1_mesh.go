@@ -38,10 +38,10 @@ type V1beta1MeshAttrs struct {
 var V1beta1Mesh = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_mesh",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"EnvoyHeaders":     ubx.FieldSpec{WireName: "envoy_headers"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnvoyHeaders": ubx.FieldSpec{WireName: "envoy_headers"},
 		"InterceptionPort": ubx.FieldSpec{WireName: "interception_port"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

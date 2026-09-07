@@ -44,7 +44,7 @@ var VmwareEngineNetwork = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_vmware_engine_network",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

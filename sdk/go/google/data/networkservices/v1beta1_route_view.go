@@ -20,5 +20,6 @@ type V1beta1RouteViewAttrs struct {
 
 var V1beta1RouteView = ubx.DataSourceBinding{
 	WireType: "google_networkservices_v1beta1_route_view",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -33,7 +33,7 @@ var Snapshot = ubx.ResourceBinding{
 	WireType: "google_file_snapshot",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

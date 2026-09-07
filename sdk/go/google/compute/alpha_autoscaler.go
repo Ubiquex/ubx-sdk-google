@@ -42,11 +42,11 @@ type AlphaAutoscaler_AutoscalingPolicy_CpuUtilization struct {
 }
 
 type AlphaAutoscaler_AutoscalingPolicy_CustomMetricUtilizations struct {
-	Filter                   any
-	Metric                   any
+	Filter any
+	Metric any
 	SingleInstanceAssignment any
-	UtilizationTarget        any
-	UtilizationTargetType    any
+	UtilizationTarget any
+	UtilizationTargetType any
 }
 
 type AlphaAutoscaler_AutoscalingPolicy_LoadBalancingUtilization struct {
@@ -78,12 +78,12 @@ type AlphaAutoscaler_AutoscalingPolicy_ScaleInControl struct {
 }
 
 type AlphaAutoscaler_AutoscalingPolicy_ScalingSchedules struct {
-	Description         any
-	Disabled            any
-	DurationSec         any
+	Description any
+	Disabled any
+	DurationSec any
 	MinRequiredReplicas any
-	Schedule            any
-	TimeZone            any
+	Schedule any
+	TimeZone any
 }
 
 type AlphaAutoscaler_AutoscalingPolicy struct {
@@ -114,138 +114,138 @@ type AlphaAutoscaler_AutoscalingPolicy struct {
 type AlphaAutoscaler_ScalingScheduleStatus struct {
 	LastStartTime any
 	NextStartTime any
-	State         any
+	State any
 }
 
 type AlphaAutoscaler_StatusDetails struct {
 	Message any
-	Type    any
+	Type any
 }
 
 var AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregationFields = ubx.FieldMap{
-	"Percentile": ubx.FieldSpec{WireName: "percentile"},
-	"Statistic":  ubx.FieldSpec{WireName: "statistic"},
-}
+		"Percentile": ubx.FieldSpec{WireName: "percentile"},
+		"Statistic": ubx.FieldSpec{WireName: "statistic"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregationFields = ubx.FieldMap{
-	"Percentile":    ubx.FieldSpec{WireName: "percentile"},
-	"Statistic":     ubx.FieldSpec{WireName: "statistic"},
-	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-}
+		"Percentile": ubx.FieldSpec{WireName: "percentile"},
+		"Statistic": ubx.FieldSpec{WireName: "statistic"},
+		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRangeFields = ubx.FieldMap{
-	"MaxUtilization":    ubx.FieldSpec{WireName: "max_utilization"},
-	"MinUtilization":    ubx.FieldSpec{WireName: "min_utilization"},
-	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-}
+		"MaxUtilization": ubx.FieldSpec{WireName: "max_utilization"},
+		"MinUtilization": ubx.FieldSpec{WireName: "min_utilization"},
+		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_CpuUtilizationFields = ubx.FieldMap{
-	"PredictiveMethod": ubx.FieldSpec{WireName: "predictive_method"},
-	"SignalAggregation": ubx.FieldSpec{
-		WireName: "signal_aggregation",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregationFields,
-	},
-	"TimeAggregation": ubx.FieldSpec{
-		WireName: "time_aggregation",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregationFields,
-	},
-	"UtilizationRange": ubx.FieldSpec{
-		WireName: "utilization_range",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRangeFields,
-	},
-	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-}
+		"PredictiveMethod": ubx.FieldSpec{WireName: "predictive_method"},
+		"SignalAggregation": ubx.FieldSpec{
+			WireName: "signal_aggregation",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_SignalAggregationFields,
+		},
+		"TimeAggregation": ubx.FieldSpec{
+			WireName: "time_aggregation",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_TimeAggregationFields,
+		},
+		"UtilizationRange": ubx.FieldSpec{
+			WireName: "utilization_range",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_CpuUtilization_UtilizationRangeFields,
+		},
+		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields = ubx.FieldMap{
-	"Filter":                   ubx.FieldSpec{WireName: "filter"},
-	"Metric":                   ubx.FieldSpec{WireName: "metric"},
-	"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
-	"UtilizationTarget":        ubx.FieldSpec{WireName: "utilization_target"},
-	"UtilizationTargetType":    ubx.FieldSpec{WireName: "utilization_target_type"},
-}
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Metric": ubx.FieldSpec{WireName: "metric"},
+		"SingleInstanceAssignment": ubx.FieldSpec{WireName: "single_instance_assignment"},
+		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+		"UtilizationTargetType": ubx.FieldSpec{WireName: "utilization_target_type"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields = ubx.FieldMap{
-	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-}
+		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields = ubx.FieldMap{
-	"Calculated": ubx.FieldSpec{WireName: "calculated"},
-	"Fixed":      ubx.FieldSpec{WireName: "fixed"},
-	"Percent":    ubx.FieldSpec{WireName: "percent"},
-}
+		"Calculated": ubx.FieldSpec{WireName: "calculated"},
+		"Fixed": ubx.FieldSpec{WireName: "fixed"},
+		"Percent": ubx.FieldSpec{WireName: "percent"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_ScaleDownControlFields = ubx.FieldMap{
-	"MaxScaledDownReplicas": ubx.FieldSpec{
-		WireName: "max_scaled_down_replicas",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
-	},
-	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-}
+		"MaxScaledDownReplicas": ubx.FieldSpec{
+			WireName: "max_scaled_down_replicas",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
+		},
+		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_ScaleInControlFields = ubx.FieldMap{
-	"MaxScaledInReplicas": ubx.FieldSpec{
-		WireName: "max_scaled_in_replicas",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
-	},
-	"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
-}
+		"MaxScaledInReplicas": ubx.FieldSpec{
+			WireName: "max_scaled_in_replicas",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_ScaleDownControl_MaxScaledDownReplicasFields,
+		},
+		"TimeWindowSec": ubx.FieldSpec{WireName: "time_window_sec"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields = ubx.FieldMap{
-	"Description":         ubx.FieldSpec{WireName: "description"},
-	"Disabled":            ubx.FieldSpec{WireName: "disabled"},
-	"DurationSec":         ubx.FieldSpec{WireName: "duration_sec"},
-	"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
-	"Schedule":            ubx.FieldSpec{WireName: "schedule"},
-	"TimeZone":            ubx.FieldSpec{WireName: "time_zone"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"DurationSec": ubx.FieldSpec{WireName: "duration_sec"},
+		"MinRequiredReplicas": ubx.FieldSpec{WireName: "min_required_replicas"},
+		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+	}
 
 var AlphaAutoscaler_AutoscalingPolicyFields = ubx.FieldMap{
-	"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
-	"CpuUtilization": ubx.FieldSpec{
-		WireName: "cpu_utilization",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
-	},
-	"CustomMetricUtilizations": ubx.FieldSpec{
-		WireName: "custom_metric_utilizations",
-		Kind:     "list",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
-	},
-	"LoadBalancingUtilization": ubx.FieldSpec{
-		WireName: "load_balancing_utilization",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
-	},
-	"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
-	"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
-	"Mode":           ubx.FieldSpec{WireName: "mode"},
-	"ScaleDownControl": ubx.FieldSpec{
-		WireName: "scale_down_control",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_ScaleDownControlFields,
-	},
-	"ScaleInControl": ubx.FieldSpec{
-		WireName: "scale_in_control",
-		Kind:     "object",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_ScaleInControlFields,
-	},
-	"ScalingSchedules": ubx.FieldSpec{
-		WireName: "scaling_schedules",
-		Kind:     "map",
-		Fields:   AlphaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
-	},
-	"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
-}
+		"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
+		"CpuUtilization": ubx.FieldSpec{
+			WireName: "cpu_utilization",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_CpuUtilizationFields,
+		},
+		"CustomMetricUtilizations": ubx.FieldSpec{
+			WireName: "custom_metric_utilizations",
+			Kind: "list",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_CustomMetricUtilizationsFields,
+		},
+		"LoadBalancingUtilization": ubx.FieldSpec{
+			WireName: "load_balancing_utilization",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_LoadBalancingUtilizationFields,
+		},
+		"MaxNumReplicas": ubx.FieldSpec{WireName: "max_num_replicas"},
+		"MinNumReplicas": ubx.FieldSpec{WireName: "min_num_replicas"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"ScaleDownControl": ubx.FieldSpec{
+			WireName: "scale_down_control",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_ScaleDownControlFields,
+		},
+		"ScaleInControl": ubx.FieldSpec{
+			WireName: "scale_in_control",
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_ScaleInControlFields,
+		},
+		"ScalingSchedules": ubx.FieldSpec{
+			WireName: "scaling_schedules",
+			Kind: "map",
+			Fields: AlphaAutoscaler_AutoscalingPolicy_ScalingSchedulesFields,
+		},
+		"StabilizationPeriodSec": ubx.FieldSpec{WireName: "stabilization_period_sec"},
+	}
 
 var AlphaAutoscaler_StatusDetailsFields = ubx.FieldMap{
-	"Message": ubx.FieldSpec{WireName: "message"},
-	"Type":    ubx.FieldSpec{WireName: "type"},
-}
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type AlphaAutoscalerConfig struct {
 	// Cloud Autoscaler policy.
@@ -302,17 +302,17 @@ var AlphaAutoscaler = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind:     "object",
-			Fields:   AlphaAutoscaler_AutoscalingPolicyFields,
+			Kind: "object",
+			Fields: AlphaAutoscaler_AutoscalingPolicyFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
-		"Status":      ubx.FieldSpec{WireName: "status"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 		"StatusDetails": ubx.FieldSpec{
 			WireName: "status_details",
-			Kind:     "list",
-			Fields:   AlphaAutoscaler_StatusDetailsFields,
+			Kind: "list",
+			Fields: AlphaAutoscaler_StatusDetailsFields,
 		},
 		"Target": ubx.FieldSpec{WireName: "target"},
 	},

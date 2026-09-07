@@ -11,9 +11,9 @@ type InstanceGroup_NamedPorts struct {
 }
 
 var InstanceGroup_NamedPortsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Port": ubx.FieldSpec{WireName: "port"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+	}
 
 type InstanceGroupConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -59,11 +59,11 @@ var InstanceGroup = ubx.ResourceBinding{
 	WireType: "google_compute_instance_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NamedPorts": ubx.FieldSpec{
 			WireName: "named_ports",
-			Kind:     "list",
-			Fields:   InstanceGroup_NamedPortsFields,
+			Kind: "list",
+			Fields: InstanceGroup_NamedPortsFields,
 		},
 		"Network": ubx.FieldSpec{WireName: "network"},
 	},

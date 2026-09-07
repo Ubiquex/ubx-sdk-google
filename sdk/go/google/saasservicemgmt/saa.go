@@ -31,14 +31,14 @@ type Saa_Locations struct {
 }
 
 var Saa_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var Saa_LocationsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 type SaaConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -84,14 +84,14 @@ var Saa = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   Saa_ErrorFields,
+			Kind: "object",
+			Fields: Saa_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Locations": ubx.FieldSpec{
 			WireName: "locations",
-			Kind:     "list",
-			Fields:   Saa_LocationsFields,
+			Kind: "list",
+			Fields: Saa_LocationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

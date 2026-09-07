@@ -155,132 +155,132 @@ type Spec_SourceMetadata struct {
 }
 
 var Spec_Attributes_EnumValues_ValuesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+	}
 
 var Spec_Attributes_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Spec_Attributes_EnumValues_ValuesFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Spec_Attributes_EnumValues_ValuesFields,
+		},
+	}
 
 var Spec_Attributes_JsonValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Spec_AttributesFields = ubx.FieldMap{
-	"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   Spec_Attributes_EnumValuesFields,
-	},
-	"JsonValues": ubx.FieldSpec{
-		WireName: "json_values",
-		Kind:     "object",
-		Fields:   Spec_Attributes_JsonValuesFields,
-	},
-	"StringValues": ubx.FieldSpec{
-		WireName: "string_values",
-		Kind:     "object",
-		Fields:   Spec_Attributes_JsonValuesFields,
-	},
-	"UriValues": ubx.FieldSpec{
-		WireName: "uri_values",
-		Kind:     "object",
-		Fields:   Spec_Attributes_JsonValuesFields,
-	},
-}
+		"Attribute": ubx.FieldSpec{WireName: "attribute"},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: Spec_Attributes_EnumValuesFields,
+		},
+		"JsonValues": ubx.FieldSpec{
+			WireName: "json_values",
+			Kind: "object",
+			Fields: Spec_Attributes_JsonValuesFields,
+		},
+		"StringValues": ubx.FieldSpec{
+			WireName: "string_values",
+			Kind: "object",
+			Fields: Spec_Attributes_JsonValuesFields,
+		},
+		"UriValues": ubx.FieldSpec{
+			WireName: "uri_values",
+			Kind: "object",
+			Fields: Spec_Attributes_JsonValuesFields,
+		},
+	}
 
 var Spec_AdditionalSpecContents_SpecContentsFields = ubx.FieldMap{
-	"Contents": ubx.FieldSpec{WireName: "contents"},
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-}
+		"Contents": ubx.FieldSpec{WireName: "contents"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	}
 
 var Spec_Details_OpenApiSpecDetails_OwnerFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Email":       ubx.FieldSpec{WireName: "email"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+	}
 
 var Spec_Details_OpenApiSpecDetailsFields = ubx.FieldMap{
-	"Format": ubx.FieldSpec{WireName: "format"},
-	"Owner": ubx.FieldSpec{
-		WireName: "owner",
-		Kind:     "object",
-		Fields:   Spec_Details_OpenApiSpecDetails_OwnerFields,
-	},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Owner": ubx.FieldSpec{
+			WireName: "owner",
+			Kind: "object",
+			Fields: Spec_Details_OpenApiSpecDetails_OwnerFields,
+		},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var Spec_DetailsFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"OpenApiSpecDetails": ubx.FieldSpec{
-		WireName: "open_api_spec_details",
-		Kind:     "object",
-		Fields:   Spec_Details_OpenApiSpecDetailsFields,
-	},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"OpenApiSpecDetails": ubx.FieldSpec{
+			WireName: "open_api_spec_details",
+			Kind: "object",
+			Fields: Spec_Details_OpenApiSpecDetailsFields,
+		},
+	}
 
 var Spec_DocumentationFields = ubx.FieldMap{
-	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-}
+		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+	}
 
 var Spec_LintResponse_Issues_Range_EndFields = ubx.FieldMap{
-	"Character": ubx.FieldSpec{WireName: "character"},
-	"Line":      ubx.FieldSpec{WireName: "line"},
-}
+		"Character": ubx.FieldSpec{WireName: "character"},
+		"Line": ubx.FieldSpec{WireName: "line"},
+	}
 
 var Spec_LintResponse_Issues_RangeFields = ubx.FieldMap{
-	"End": ubx.FieldSpec{
-		WireName: "end",
-		Kind:     "object",
-		Fields:   Spec_LintResponse_Issues_Range_EndFields,
-	},
-	"Start": ubx.FieldSpec{
-		WireName: "start",
-		Kind:     "object",
-		Fields:   Spec_LintResponse_Issues_Range_EndFields,
-	},
-}
+		"End": ubx.FieldSpec{
+			WireName: "end",
+			Kind: "object",
+			Fields: Spec_LintResponse_Issues_Range_EndFields,
+		},
+		"Start": ubx.FieldSpec{
+			WireName: "start",
+			Kind: "object",
+			Fields: Spec_LintResponse_Issues_Range_EndFields,
+		},
+	}
 
 var Spec_LintResponse_IssuesFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-	"Path":    ubx.FieldSpec{WireName: "path"},
-	"Range": ubx.FieldSpec{
-		WireName: "range",
-		Kind:     "object",
-		Fields:   Spec_LintResponse_Issues_RangeFields,
-	},
-	"Severity": ubx.FieldSpec{WireName: "severity"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+		"Range": ubx.FieldSpec{
+			WireName: "range",
+			Kind: "object",
+			Fields: Spec_LintResponse_Issues_RangeFields,
+		},
+		"Severity": ubx.FieldSpec{WireName: "severity"},
+	}
 
 var Spec_LintResponse_SummaryFields = ubx.FieldMap{
-	"Count":    ubx.FieldSpec{WireName: "count"},
-	"Severity": ubx.FieldSpec{WireName: "severity"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Severity": ubx.FieldSpec{WireName: "severity"},
+	}
 
 var Spec_LintResponseFields = ubx.FieldMap{
-	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-	"Issues": ubx.FieldSpec{
-		WireName: "issues",
-		Kind:     "list",
-		Fields:   Spec_LintResponse_IssuesFields,
-	},
-	"Linter": ubx.FieldSpec{WireName: "linter"},
-	"Source": ubx.FieldSpec{WireName: "source"},
-	"State":  ubx.FieldSpec{WireName: "state"},
-	"Summary": ubx.FieldSpec{
-		WireName: "summary",
-		Kind:     "list",
-		Fields:   Spec_LintResponse_SummaryFields,
-	},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Issues": ubx.FieldSpec{
+			WireName: "issues",
+			Kind: "list",
+			Fields: Spec_LintResponse_IssuesFields,
+		},
+		"Linter": ubx.FieldSpec{WireName: "linter"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"Summary": ubx.FieldSpec{
+			WireName: "summary",
+			Kind: "list",
+			Fields: Spec_LintResponse_SummaryFields,
+		},
+	}
 
 type SpecConfig struct {
 	// Optional. The list of user defined attributes associated with the spec. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
@@ -341,37 +341,37 @@ var Spec = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "map",
-			Fields:   Spec_AttributesFields,
+			Kind: "map",
+			Fields: Spec_AttributesFields,
 		},
 		"Contents": ubx.FieldSpec{
 			WireName: "contents",
-			Kind:     "object",
-			Fields:   Spec_AdditionalSpecContents_SpecContentsFields,
+			Kind: "object",
+			Fields: Spec_AdditionalSpecContents_SpecContentsFields,
 		},
 		"Details": ubx.FieldSpec{
 			WireName: "details",
-			Kind:     "object",
-			Fields:   Spec_DetailsFields,
+			Kind: "object",
+			Fields: Spec_DetailsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind:     "object",
-			Fields:   Spec_DocumentationFields,
+			Kind: "object",
+			Fields: Spec_DocumentationFields,
 		},
 		"LintResponse": ubx.FieldSpec{
 			WireName: "lint_response",
-			Kind:     "object",
-			Fields:   Spec_LintResponseFields,
+			Kind: "object",
+			Fields: Spec_LintResponseFields,
 		},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ParsingMode": ubx.FieldSpec{WireName: "parsing_mode"},
-		"SourceUri":   ubx.FieldSpec{WireName: "source_uri"},
+		"SourceUri": ubx.FieldSpec{WireName: "source_uri"},
 		"SpecType": ubx.FieldSpec{
 			WireName: "spec_type",
-			Kind:     "object",
-			Fields:   Spec_AttributesFields,
+			Kind: "object",
+			Fields: Spec_AttributesFields,
 		},
 	},
 }

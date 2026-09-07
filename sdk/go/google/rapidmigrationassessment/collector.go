@@ -9,8 +9,8 @@ type Collector_GuestOsScan struct {
 }
 
 var Collector_GuestOsScanFields = ubx.FieldMap{
-	"CoreSource": ubx.FieldSpec{WireName: "core_source"},
-}
+		"CoreSource": ubx.FieldSpec{WireName: "core_source"},
+	}
 
 type CollectorConfig struct {
 	// How many days to collect data.
@@ -71,23 +71,23 @@ type CollectorAttrs struct {
 var Collector = ubx.ResourceBinding{
 	WireType: "google_rapidmigrationassessment_collector",
 	Fields: ubx.FieldMap{
-		"CollectionDays":     ubx.FieldSpec{WireName: "collection_days"},
-		"Description":        ubx.FieldSpec{WireName: "description"},
-		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
-		"EulaUri":            ubx.FieldSpec{WireName: "eula_uri"},
+		"CollectionDays": ubx.FieldSpec{WireName: "collection_days"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EulaUri": ubx.FieldSpec{WireName: "eula_uri"},
 		"ExpectedAssetCount": ubx.FieldSpec{WireName: "expected_asset_count"},
 		"GuestOsScan": ubx.FieldSpec{
 			WireName: "guest_os_scan",
-			Kind:     "object",
-			Fields:   Collector_GuestOsScanFields,
+			Kind: "object",
+			Fields: Collector_GuestOsScanFields,
 		},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"VsphereScan": ubx.FieldSpec{
 			WireName: "vsphere_scan",
-			Kind:     "object",
-			Fields:   Collector_GuestOsScanFields,
+			Kind: "object",
+			Fields: Collector_GuestOsScanFields,
 		},
 	},
 }

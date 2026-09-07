@@ -17,7 +17,7 @@ type V1alphaAccessSummaryAttrs struct {
 	Labels any
 	// Output only. The most recent time this user interacted with this workload, rounded to the previous hour.
 	LastAccessTime any
-	Name           any
+	Name any
 	// Output only. The time when this access summary is permanently deleted.
 	PurgeTime any
 	// Output only. All scopes that have been used by this user with this workload. The number of scopes is limited to 200.
@@ -32,5 +32,6 @@ type V1alphaAccessSummaryAttrs struct {
 
 var V1alphaAccessSummary = ubx.DataSourceBinding{
 	WireType: "google_agentidentity_v1alpha_access_summary",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -19,7 +19,7 @@ type V1alphaServer_GoogleManagedServerCredential struct {
 
 type V1alphaServer_InternalConfig_ConsumerAcceptList struct {
 	ConnectionLimit any
-	Project         any
+	Project any
 }
 
 type V1alphaServer_InternalConfig_ConsumerRejectList struct {
@@ -28,8 +28,8 @@ type V1alphaServer_InternalConfig_ConsumerRejectList struct {
 
 type V1alphaServer_InternalConfig_PscEndpoints struct {
 	Endpoint any
-	Network  any
-	Status   any
+	Network any
+	Status any
 }
 
 type V1alphaServer_InternalConfig struct {
@@ -44,48 +44,48 @@ type V1alphaServer_InternalConfig struct {
 }
 
 var V1alphaServer_ExternalConfigFields = ubx.FieldMap{
-	"AllowedCidrBlocks": ubx.FieldSpec{WireName: "allowed_cidr_blocks"},
-	"IpAddress":         ubx.FieldSpec{WireName: "ip_address"},
-}
+		"AllowedCidrBlocks": ubx.FieldSpec{WireName: "allowed_cidr_blocks"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+	}
 
 var V1alphaServer_GoogleManagedServerCredentialFields = ubx.FieldMap{
-	"AsymmetricAlgorithm": ubx.FieldSpec{WireName: "asymmetric_algorithm"},
-	"Fingerprint":         ubx.FieldSpec{WireName: "fingerprint"},
-}
+		"AsymmetricAlgorithm": ubx.FieldSpec{WireName: "asymmetric_algorithm"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	}
 
 var V1alphaServer_InternalConfig_ConsumerAcceptListFields = ubx.FieldMap{
-	"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
-	"Project":         ubx.FieldSpec{WireName: "project"},
-}
+		"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+	}
 
 var V1alphaServer_InternalConfig_ConsumerRejectListFields = ubx.FieldMap{
-	"Project": ubx.FieldSpec{WireName: "project"},
-}
+		"Project": ubx.FieldSpec{WireName: "project"},
+	}
 
 var V1alphaServer_InternalConfig_PscEndpointsFields = ubx.FieldMap{
-	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-	"Network":  ubx.FieldSpec{WireName: "network"},
-	"Status":   ubx.FieldSpec{WireName: "status"},
-}
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 var V1alphaServer_InternalConfigFields = ubx.FieldMap{
-	"ConsumerAcceptList": ubx.FieldSpec{
-		WireName: "consumer_accept_list",
-		Kind:     "list",
-		Fields:   V1alphaServer_InternalConfig_ConsumerAcceptListFields,
-	},
-	"ConsumerRejectList": ubx.FieldSpec{
-		WireName: "consumer_reject_list",
-		Kind:     "list",
-		Fields:   V1alphaServer_InternalConfig_ConsumerRejectListFields,
-	},
-	"PscEndpoints": ubx.FieldSpec{
-		WireName: "psc_endpoints",
-		Kind:     "list",
-		Fields:   V1alphaServer_InternalConfig_PscEndpointsFields,
-	},
-	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"ConsumerAcceptList": ubx.FieldSpec{
+			WireName: "consumer_accept_list",
+			Kind: "list",
+			Fields: V1alphaServer_InternalConfig_ConsumerAcceptListFields,
+		},
+		"ConsumerRejectList": ubx.FieldSpec{
+			WireName: "consumer_reject_list",
+			Kind: "list",
+			Fields: V1alphaServer_InternalConfig_ConsumerRejectListFields,
+		},
+		"PscEndpoints": ubx.FieldSpec{
+			WireName: "psc_endpoints",
+			Kind: "list",
+			Fields: V1alphaServer_InternalConfig_PscEndpointsFields,
+		},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 type V1alphaServerConfig struct {
 	// Required. The access type of the Server.
@@ -136,24 +136,24 @@ type V1alphaServerAttrs struct {
 var V1alphaServer = ubx.ResourceBinding{
 	WireType: "google_ftp_v1alpha_server",
 	Fields: ubx.FieldMap{
-		"AccessType":  ubx.FieldSpec{WireName: "access_type"},
+		"AccessType": ubx.FieldSpec{WireName: "access_type"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ExternalConfig": ubx.FieldSpec{
 			WireName: "external_config",
-			Kind:     "object",
-			Fields:   V1alphaServer_ExternalConfigFields,
+			Kind: "object",
+			Fields: V1alphaServer_ExternalConfigFields,
 		},
 		"GoogleManagedServerCredential": ubx.FieldSpec{
 			WireName: "google_managed_server_credential",
-			Kind:     "object",
-			Fields:   V1alphaServer_GoogleManagedServerCredentialFields,
+			Kind: "object",
+			Fields: V1alphaServer_GoogleManagedServerCredentialFields,
 		},
 		"InternalConfig": ubx.FieldSpec{
 			WireName: "internal_config",
-			Kind:     "object",
-			Fields:   V1alphaServer_InternalConfigFields,
+			Kind: "object",
+			Fields: V1alphaServer_InternalConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

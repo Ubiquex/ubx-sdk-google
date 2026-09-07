@@ -75,9 +75,9 @@ type DataSource_DataSourceBackupApplianceApplication struct {
 }
 
 type DataSource_DataSourceGcpResource_AlloyDbClusterDatasourceProperties_PitrWindows struct {
-	EndTime          any
+	EndTime any
 	LogRetentionDays any
-	StartTime        any
+	StartTime any
 }
 
 type DataSource_DataSourceGcpResource_AlloyDbClusterDatasourceProperties struct {
@@ -172,7 +172,7 @@ type DataSourceAttrs struct {
 	Etag any
 	// Optional. Resource labels to represent user provided metadata. No labels currently defined:
 	Labels any
-	Name   any
+	Name any
 	// Output only. The DataSource resource instance state.
 	State any
 	// The number of bytes (metadata and data) stored in this datasource.
@@ -183,5 +183,6 @@ type DataSourceAttrs struct {
 
 var DataSource = ubx.DataSourceBinding{
 	WireType: "google_backupdr_data_source",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

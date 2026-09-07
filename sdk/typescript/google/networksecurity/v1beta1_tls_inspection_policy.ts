@@ -4,6 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1TlsInspectionPolicyConfig {
   /** Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}". */
   caPool?: string | Computed<string>;
+  /** Optional. The mode used to issue certificates (local CA signing vs direct leaf). */
+  certificateIssuanceMode?: string | Computed<string>;
   /** Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field. */
   customTlsFeatures?: string[] | Computed<string[]>;
   /** Optional. Free-text description of the resource. */
@@ -23,6 +25,8 @@ export interface V1beta1TlsInspectionPolicyConfig {
 export interface V1beta1TlsInspectionPolicyAttrs {
   /** Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}". */
   caPool: string;
+  /** Optional. The mode used to issue certificates (local CA signing vs direct leaf). */
+  certificateIssuanceMode: string;
   /** Output only. The timestamp when the resource was created. */
   createTime: string;
   /** Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field. */
@@ -47,6 +51,7 @@ export const V1beta1TlsInspectionPolicy: ResourceBinding<V1beta1TlsInspectionPol
   wireType: "google_networksecurity_v1beta1_tls_inspection_policy",
   fields: {
     caPool: "ca_pool",
+    certificateIssuanceMode: "certificate_issuance_mode",
     customTlsFeatures: "custom_tls_features",
     description: "description",
     excludePublicCaSet: "exclude_public_ca_set",

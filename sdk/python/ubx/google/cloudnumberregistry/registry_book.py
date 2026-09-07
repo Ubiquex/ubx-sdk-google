@@ -19,6 +19,12 @@ class RegistryBook_AggregatedData:
     # Output only. Number of scopes unique to the RegistryBook.
     unique_scopes_count: Any = None
 
+@dataclasses.dataclass
+class RegistryBook_ClaimedScopesInfo:
+    display_name: Any = None
+    id: Any = None
+    name: Any = None
+
 _RegistryBook_AggregatedDataFields = {
     "custom_ranges_count": ubx.FieldSpec(wire_name="custom_ranges_count"),
     "custom_realms_count": ubx.FieldSpec(wire_name="custom_realms_count"),
@@ -44,6 +50,8 @@ class RegistryBookAttrs:
     aggregated_data: Any = None
     # Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once.
     claimed_scopes: Any = None
+    # Output only. Detailed scope information corresponding to each entry in `claimed_scopes`.
+    claimed_scopes_info: Any = None
     # Output only. The time at which the RegistryBook was created.
     create_time: Any = None
     # Output only. Whether the RegistryBook is the default one.

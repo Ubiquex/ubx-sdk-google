@@ -18,14 +18,14 @@ type InternalRange_Migration struct {
 }
 
 var InternalRange_AllocationOptionsFields = ubx.FieldMap{
-	"AllocationStrategy":             ubx.FieldSpec{WireName: "allocation_strategy"},
-	"FirstAvailableRangesLookupSize": ubx.FieldSpec{WireName: "first_available_ranges_lookup_size"},
-}
+		"AllocationStrategy": ubx.FieldSpec{WireName: "allocation_strategy"},
+		"FirstAvailableRangesLookupSize": ubx.FieldSpec{WireName: "first_available_ranges_lookup_size"},
+	}
 
 var InternalRange_MigrationFields = ubx.FieldMap{
-	"Source": ubx.FieldSpec{WireName: "source"},
-	"Target": ubx.FieldSpec{WireName: "target"},
-}
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"Target": ubx.FieldSpec{WireName: "target"},
+	}
 
 type InternalRangeConfig struct {
 	// Range auto-allocation options, to be optionally used when CIDR block is not explicitly set.
@@ -100,25 +100,25 @@ var InternalRange = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllocationOptions": ubx.FieldSpec{
 			WireName: "allocation_options",
-			Kind:     "object",
-			Fields:   InternalRange_AllocationOptionsFields,
+			Kind: "object",
+			Fields: InternalRange_AllocationOptionsFields,
 		},
-		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExcludeCidrRanges": ubx.FieldSpec{WireName: "exclude_cidr_ranges"},
-		"Immutable":         ubx.FieldSpec{WireName: "immutable"},
-		"IpCidrRange":       ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Migration": ubx.FieldSpec{
 			WireName: "migration",
-			Kind:     "object",
-			Fields:   InternalRange_MigrationFields,
+			Kind: "object",
+			Fields: InternalRange_MigrationFields,
 		},
-		"Name":            ubx.FieldSpec{WireName: "name"},
-		"Network":         ubx.FieldSpec{WireName: "network"},
-		"Overlaps":        ubx.FieldSpec{WireName: "overlaps"},
-		"Peering":         ubx.FieldSpec{WireName: "peering"},
-		"PrefixLength":    ubx.FieldSpec{WireName: "prefix_length"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Overlaps": ubx.FieldSpec{WireName: "overlaps"},
+		"Peering": ubx.FieldSpec{WireName: "peering"},
+		"PrefixLength": ubx.FieldSpec{WireName: "prefix_length"},
 		"TargetCidrRange": ubx.FieldSpec{WireName: "target_cidr_range"},
-		"Usage":           ubx.FieldSpec{WireName: "usage"},
+		"Usage": ubx.FieldSpec{WireName: "usage"},
 	},
 }

@@ -27,20 +27,20 @@ type Release_ReleaseRequirements struct {
 }
 
 var Release_BlueprintFields = ubx.FieldMap{
-	"Engine":  ubx.FieldSpec{WireName: "engine"},
-	"Package": ubx.FieldSpec{WireName: "package"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Package": ubx.FieldSpec{WireName: "package"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var Release_InputVariableDefaultsFields = ubx.FieldMap{
-	"Type":     ubx.FieldSpec{WireName: "type"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-	"Variable": ubx.FieldSpec{WireName: "variable"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+		"Variable": ubx.FieldSpec{WireName: "variable"},
+	}
 
 var Release_ReleaseRequirementsFields = ubx.FieldMap{
-	"UpgradeableFromReleases": ubx.FieldSpec{WireName: "upgradeable_from_releases"},
-}
+		"UpgradeableFromReleases": ubx.FieldSpec{WireName: "upgradeable_from_releases"},
+	}
 
 type ReleaseConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -94,20 +94,20 @@ var Release = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Blueprint": ubx.FieldSpec{
 			WireName: "blueprint",
-			Kind:     "object",
-			Fields:   Release_BlueprintFields,
+			Kind: "object",
+			Fields: Release_BlueprintFields,
 		},
 		"InputVariableDefaults": ubx.FieldSpec{
 			WireName: "input_variable_defaults",
-			Kind:     "list",
-			Fields:   Release_InputVariableDefaultsFields,
+			Kind: "list",
+			Fields: Release_InputVariableDefaultsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReleaseRequirements": ubx.FieldSpec{
 			WireName: "release_requirements",
-			Kind:     "object",
-			Fields:   Release_ReleaseRequirementsFields,
+			Kind: "object",
+			Fields: Release_ReleaseRequirementsFields,
 		},
 		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 	},

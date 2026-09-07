@@ -48,36 +48,36 @@ type AccountConnector_ProxyConfig struct {
 }
 
 var AccountConnector_CustomOauthConfig_ServiceDirectoryConfigFields = ubx.FieldMap{
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var AccountConnector_CustomOauthConfigFields = ubx.FieldMap{
-	"AuthUri":       ubx.FieldSpec{WireName: "auth_uri"},
-	"ClientId":      ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret":  ubx.FieldSpec{WireName: "client_secret"},
-	"HostUri":       ubx.FieldSpec{WireName: "host_uri"},
-	"PkceDisabled":  ubx.FieldSpec{WireName: "pkce_disabled"},
-	"ScmProvider":   ubx.FieldSpec{WireName: "scm_provider"},
-	"Scopes":        ubx.FieldSpec{WireName: "scopes"},
-	"ServerVersion": ubx.FieldSpec{WireName: "server_version"},
-	"ServiceDirectoryConfig": ubx.FieldSpec{
-		WireName: "service_directory_config",
-		Kind:     "object",
-		Fields:   AccountConnector_CustomOauthConfig_ServiceDirectoryConfigFields,
-	},
-	"SslCaCertificate": ubx.FieldSpec{WireName: "ssl_ca_certificate"},
-	"TokenUri":         ubx.FieldSpec{WireName: "token_uri"},
-}
+		"AuthUri": ubx.FieldSpec{WireName: "auth_uri"},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+		"HostUri": ubx.FieldSpec{WireName: "host_uri"},
+		"PkceDisabled": ubx.FieldSpec{WireName: "pkce_disabled"},
+		"ScmProvider": ubx.FieldSpec{WireName: "scm_provider"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"ServerVersion": ubx.FieldSpec{WireName: "server_version"},
+		"ServiceDirectoryConfig": ubx.FieldSpec{
+			WireName: "service_directory_config",
+			Kind: "object",
+			Fields: AccountConnector_CustomOauthConfig_ServiceDirectoryConfigFields,
+		},
+		"SslCaCertificate": ubx.FieldSpec{WireName: "ssl_ca_certificate"},
+		"TokenUri": ubx.FieldSpec{WireName: "token_uri"},
+	}
 
 var AccountConnector_ProviderOauthConfigFields = ubx.FieldMap{
-	"Scopes":           ubx.FieldSpec{WireName: "scopes"},
-	"SystemProviderId": ubx.FieldSpec{WireName: "system_provider_id"},
-}
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"SystemProviderId": ubx.FieldSpec{WireName: "system_provider_id"},
+	}
 
 var AccountConnector_ProxyConfigFields = ubx.FieldMap{
-	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
-	"HttpProxyBaseUri": ubx.FieldSpec{WireName: "http_proxy_base_uri"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"HttpProxyBaseUri": ubx.FieldSpec{WireName: "http_proxy_base_uri"},
+	}
 
 type AccountConnectorConfig struct {
 	// Optional. Allows users to store small amounts of arbitrary data.
@@ -127,21 +127,21 @@ var AccountConnector = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"CustomOauthConfig": ubx.FieldSpec{
 			WireName: "custom_oauth_config",
-			Kind:     "object",
-			Fields:   AccountConnector_CustomOauthConfigFields,
+			Kind: "object",
+			Fields: AccountConnector_CustomOauthConfigFields,
 		},
-		"Etag":   ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProviderOauthConfig": ubx.FieldSpec{
 			WireName: "provider_oauth_config",
-			Kind:     "object",
-			Fields:   AccountConnector_ProviderOauthConfigFields,
+			Kind: "object",
+			Fields: AccountConnector_ProviderOauthConfigFields,
 		},
 		"ProxyConfig": ubx.FieldSpec{
 			WireName: "proxy_config",
-			Kind:     "object",
-			Fields:   AccountConnector_ProxyConfigFields,
+			Kind: "object",
+			Fields: AccountConnector_ProxyConfigFields,
 		},
 	},
 }

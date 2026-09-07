@@ -39,37 +39,37 @@ type NodeGroup_ShareSettings struct {
 }
 
 var NodeGroup_AutoscalingPolicyFields = ubx.FieldMap{
-	"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
-	"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
-	"Mode":     ubx.FieldSpec{WireName: "mode"},
-}
+		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
+		"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+	}
 
 var NodeGroup_MaintenanceWindow_MaintenanceDurationFields = ubx.FieldMap{
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var NodeGroup_MaintenanceWindowFields = ubx.FieldMap{
-	"MaintenanceDuration": ubx.FieldSpec{
-		WireName: "maintenance_duration",
-		Kind:     "object",
-		Fields:   NodeGroup_MaintenanceWindow_MaintenanceDurationFields,
-	},
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"MaintenanceDuration": ubx.FieldSpec{
+			WireName: "maintenance_duration",
+			Kind: "object",
+			Fields: NodeGroup_MaintenanceWindow_MaintenanceDurationFields,
+		},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var NodeGroup_ShareSettings_ProjectMapFields = ubx.FieldMap{
-	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-}
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	}
 
 var NodeGroup_ShareSettingsFields = ubx.FieldMap{
-	"ProjectMap": ubx.FieldSpec{
-		WireName: "project_map",
-		Kind:     "map",
-		Fields:   NodeGroup_ShareSettings_ProjectMapFields,
-	},
-	"ShareType": ubx.FieldSpec{WireName: "share_type"},
-}
+		"ProjectMap": ubx.FieldSpec{
+			WireName: "project_map",
+			Kind: "map",
+			Fields: NodeGroup_ShareSettings_ProjectMapFields,
+		},
+		"ShareType": ubx.FieldSpec{WireName: "share_type"},
+	}
 
 type NodeGroupConfig struct {
 	// The autoscaling policy of the node group. This output-only field contains the configuration that determines how the node group automatically scales the number of nodes. (AI-inferred)
@@ -136,25 +136,25 @@ var NodeGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingPolicy": ubx.FieldSpec{
 			WireName: "autoscaling_policy",
-			Kind:     "object",
-			Fields:   NodeGroup_AutoscalingPolicyFields,
+			Kind: "object",
+			Fields: NodeGroup_AutoscalingPolicyFields,
 		},
-		"Description":         ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":         ubx.FieldSpec{WireName: "fingerprint"},
-		"LocationHint":        ubx.FieldSpec{WireName: "location_hint"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
 		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MaintenancePolicy":   ubx.FieldSpec{WireName: "maintenance_policy"},
+		"MaintenancePolicy": ubx.FieldSpec{WireName: "maintenance_policy"},
 		"MaintenanceWindow": ubx.FieldSpec{
 			WireName: "maintenance_window",
-			Kind:     "object",
-			Fields:   NodeGroup_MaintenanceWindowFields,
+			Kind: "object",
+			Fields: NodeGroup_MaintenanceWindowFields,
 		},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodeTemplate": ubx.FieldSpec{WireName: "node_template"},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind:     "object",
-			Fields:   NodeGroup_ShareSettingsFields,
+			Kind: "object",
+			Fields: NodeGroup_ShareSettingsFields,
 		},
 	},
 }

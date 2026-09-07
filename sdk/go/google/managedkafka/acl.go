@@ -15,11 +15,11 @@ type Acl_AclEntries struct {
 }
 
 var Acl_AclEntriesFields = ubx.FieldMap{
-	"Host":           ubx.FieldSpec{WireName: "host"},
-	"Operation":      ubx.FieldSpec{WireName: "operation"},
-	"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
-	"Principal":      ubx.FieldSpec{WireName: "principal"},
-}
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Operation": ubx.FieldSpec{WireName: "operation"},
+		"PermissionType": ubx.FieldSpec{WireName: "permission_type"},
+		"Principal": ubx.FieldSpec{WireName: "principal"},
+	}
 
 type AclConfig struct {
 	// Required. The ACL entries that apply to the resource pattern. The maximum number of allowed entries 100.
@@ -50,8 +50,8 @@ var Acl = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AclEntries": ubx.FieldSpec{
 			WireName: "acl_entries",
-			Kind:     "list",
-			Fields:   Acl_AclEntriesFields,
+			Kind: "list",
+			Fields: Acl_AclEntriesFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Name": ubx.FieldSpec{WireName: "name"},

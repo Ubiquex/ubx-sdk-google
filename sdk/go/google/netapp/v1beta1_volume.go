@@ -17,9 +17,9 @@ type V1beta1Volume_BackupConfig struct {
 type V1beta1Volume_BlockDevices struct {
 	HostGroups any
 	Identifier any
-	Name       any
-	OsType     any
-	SizeGib    any
+	Name any
+	OsType any
+	SizeGib any
 }
 
 type V1beta1Volume_CacheParameters_CacheConfig_CachePrePopulate struct {
@@ -79,19 +79,19 @@ type V1beta1Volume_CloneDetails struct {
 }
 
 type V1beta1Volume_ExportPolicy_Rules struct {
-	AccessType          any
-	AllowedClients      any
-	AnonUid             any
-	HasRootAccess       any
-	Kerberos5ReadOnly   any
-	Kerberos5ReadWrite  any
-	Kerberos5iReadOnly  any
+	AccessType any
+	AllowedClients any
+	AnonUid any
+	HasRootAccess any
+	Kerberos5ReadOnly any
+	Kerberos5ReadWrite any
+	Kerberos5iReadOnly any
 	Kerberos5iReadWrite any
-	Kerberos5pReadOnly  any
+	Kerberos5pReadOnly any
 	Kerberos5pReadWrite any
-	Nfsv3               any
-	Nfsv4               any
-	SquashMode          any
+	Nfsv3 any
+	Nfsv4 any
+	SquashMode any
 }
 
 type V1beta1Volume_ExportPolicy struct {
@@ -130,11 +130,11 @@ type V1beta1Volume_LargeCapacityConfig struct {
 }
 
 type V1beta1Volume_MountOptions struct {
-	Export       any
-	ExportFull   any
+	Export any
+	ExportFull any
 	Instructions any
-	IpAddress    any
-	Protocol     any
+	IpAddress any
+	Protocol any
 }
 
 type V1beta1Volume_RestoreParameters struct {
@@ -205,163 +205,163 @@ type V1beta1Volume_TieringPolicy struct {
 }
 
 var V1beta1Volume_BackupConfigFields = ubx.FieldMap{
-	"BackupChainBytes":       ubx.FieldSpec{WireName: "backup_chain_bytes"},
-	"BackupPolicies":         ubx.FieldSpec{WireName: "backup_policies"},
-	"BackupVault":            ubx.FieldSpec{WireName: "backup_vault"},
-	"ScheduledBackupEnabled": ubx.FieldSpec{WireName: "scheduled_backup_enabled"},
-}
+		"BackupChainBytes": ubx.FieldSpec{WireName: "backup_chain_bytes"},
+		"BackupPolicies": ubx.FieldSpec{WireName: "backup_policies"},
+		"BackupVault": ubx.FieldSpec{WireName: "backup_vault"},
+		"ScheduledBackupEnabled": ubx.FieldSpec{WireName: "scheduled_backup_enabled"},
+	}
 
 var V1beta1Volume_BlockDevicesFields = ubx.FieldMap{
-	"HostGroups": ubx.FieldSpec{WireName: "host_groups"},
-	"Identifier": ubx.FieldSpec{WireName: "identifier"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"OsType":     ubx.FieldSpec{WireName: "os_type"},
-	"SizeGib":    ubx.FieldSpec{WireName: "size_gib"},
-}
+		"HostGroups": ubx.FieldSpec{WireName: "host_groups"},
+		"Identifier": ubx.FieldSpec{WireName: "identifier"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OsType": ubx.FieldSpec{WireName: "os_type"},
+		"SizeGib": ubx.FieldSpec{WireName: "size_gib"},
+	}
 
 var V1beta1Volume_CacheParameters_CacheConfig_CachePrePopulateFields = ubx.FieldMap{
-	"ExcludePathList": ubx.FieldSpec{WireName: "exclude_path_list"},
-	"PathList":        ubx.FieldSpec{WireName: "path_list"},
-	"Recursion":       ubx.FieldSpec{WireName: "recursion"},
-}
+		"ExcludePathList": ubx.FieldSpec{WireName: "exclude_path_list"},
+		"PathList": ubx.FieldSpec{WireName: "path_list"},
+		"Recursion": ubx.FieldSpec{WireName: "recursion"},
+	}
 
 var V1beta1Volume_CacheParameters_CacheConfigFields = ubx.FieldMap{
-	"CachePrePopulate": ubx.FieldSpec{
-		WireName: "cache_pre_populate",
-		Kind:     "object",
-		Fields:   V1beta1Volume_CacheParameters_CacheConfig_CachePrePopulateFields,
-	},
-	"CachePrePopulateState":   ubx.FieldSpec{WireName: "cache_pre_populate_state"},
-	"CifsChangeNotifyEnabled": ubx.FieldSpec{WireName: "cifs_change_notify_enabled"},
-	"WritebackEnabled":        ubx.FieldSpec{WireName: "writeback_enabled"},
-}
+		"CachePrePopulate": ubx.FieldSpec{
+			WireName: "cache_pre_populate",
+			Kind: "object",
+			Fields: V1beta1Volume_CacheParameters_CacheConfig_CachePrePopulateFields,
+		},
+		"CachePrePopulateState": ubx.FieldSpec{WireName: "cache_pre_populate_state"},
+		"CifsChangeNotifyEnabled": ubx.FieldSpec{WireName: "cifs_change_notify_enabled"},
+		"WritebackEnabled": ubx.FieldSpec{WireName: "writeback_enabled"},
+	}
 
 var V1beta1Volume_CacheParametersFields = ubx.FieldMap{
-	"CacheConfig": ubx.FieldSpec{
-		WireName: "cache_config",
-		Kind:     "object",
-		Fields:   V1beta1Volume_CacheParameters_CacheConfigFields,
-	},
-	"CacheState":               ubx.FieldSpec{WireName: "cache_state"},
-	"Command":                  ubx.FieldSpec{WireName: "command"},
-	"EnableGlobalFileLock":     ubx.FieldSpec{WireName: "enable_global_file_lock"},
-	"Passphrase":               ubx.FieldSpec{WireName: "passphrase"},
-	"PeerClusterName":          ubx.FieldSpec{WireName: "peer_cluster_name"},
-	"PeerIpAddresses":          ubx.FieldSpec{WireName: "peer_ip_addresses"},
-	"PeerSvmName":              ubx.FieldSpec{WireName: "peer_svm_name"},
-	"PeerVolumeName":           ubx.FieldSpec{WireName: "peer_volume_name"},
-	"PeeringCommandExpiryTime": ubx.FieldSpec{WireName: "peering_command_expiry_time"},
-	"StateDetails":             ubx.FieldSpec{WireName: "state_details"},
-}
+		"CacheConfig": ubx.FieldSpec{
+			WireName: "cache_config",
+			Kind: "object",
+			Fields: V1beta1Volume_CacheParameters_CacheConfigFields,
+		},
+		"CacheState": ubx.FieldSpec{WireName: "cache_state"},
+		"Command": ubx.FieldSpec{WireName: "command"},
+		"EnableGlobalFileLock": ubx.FieldSpec{WireName: "enable_global_file_lock"},
+		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
+		"PeerClusterName": ubx.FieldSpec{WireName: "peer_cluster_name"},
+		"PeerIpAddresses": ubx.FieldSpec{WireName: "peer_ip_addresses"},
+		"PeerSvmName": ubx.FieldSpec{WireName: "peer_svm_name"},
+		"PeerVolumeName": ubx.FieldSpec{WireName: "peer_volume_name"},
+		"PeeringCommandExpiryTime": ubx.FieldSpec{WireName: "peering_command_expiry_time"},
+		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
+	}
 
 var V1beta1Volume_CloneDetailsFields = ubx.FieldMap{
-	"SharedSpaceGib": ubx.FieldSpec{WireName: "shared_space_gib"},
-	"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-	"SourceVolume":   ubx.FieldSpec{WireName: "source_volume"},
-	"SplitState":     ubx.FieldSpec{WireName: "split_state"},
-}
+		"SharedSpaceGib": ubx.FieldSpec{WireName: "shared_space_gib"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+		"SourceVolume": ubx.FieldSpec{WireName: "source_volume"},
+		"SplitState": ubx.FieldSpec{WireName: "split_state"},
+	}
 
 var V1beta1Volume_ExportPolicy_RulesFields = ubx.FieldMap{
-	"AccessType":          ubx.FieldSpec{WireName: "access_type"},
-	"AllowedClients":      ubx.FieldSpec{WireName: "allowed_clients"},
-	"AnonUid":             ubx.FieldSpec{WireName: "anon_uid"},
-	"HasRootAccess":       ubx.FieldSpec{WireName: "has_root_access"},
-	"Kerberos5ReadOnly":   ubx.FieldSpec{WireName: "kerberos5_read_only"},
-	"Kerberos5ReadWrite":  ubx.FieldSpec{WireName: "kerberos5_read_write"},
-	"Kerberos5iReadOnly":  ubx.FieldSpec{WireName: "kerberos5i_read_only"},
-	"Kerberos5iReadWrite": ubx.FieldSpec{WireName: "kerberos5i_read_write"},
-	"Kerberos5pReadOnly":  ubx.FieldSpec{WireName: "kerberos5p_read_only"},
-	"Kerberos5pReadWrite": ubx.FieldSpec{WireName: "kerberos5p_read_write"},
-	"Nfsv3":               ubx.FieldSpec{WireName: "nfsv3"},
-	"Nfsv4":               ubx.FieldSpec{WireName: "nfsv4"},
-	"SquashMode":          ubx.FieldSpec{WireName: "squash_mode"},
-}
+		"AccessType": ubx.FieldSpec{WireName: "access_type"},
+		"AllowedClients": ubx.FieldSpec{WireName: "allowed_clients"},
+		"AnonUid": ubx.FieldSpec{WireName: "anon_uid"},
+		"HasRootAccess": ubx.FieldSpec{WireName: "has_root_access"},
+		"Kerberos5ReadOnly": ubx.FieldSpec{WireName: "kerberos5_read_only"},
+		"Kerberos5ReadWrite": ubx.FieldSpec{WireName: "kerberos5_read_write"},
+		"Kerberos5iReadOnly": ubx.FieldSpec{WireName: "kerberos5i_read_only"},
+		"Kerberos5iReadWrite": ubx.FieldSpec{WireName: "kerberos5i_read_write"},
+		"Kerberos5pReadOnly": ubx.FieldSpec{WireName: "kerberos5p_read_only"},
+		"Kerberos5pReadWrite": ubx.FieldSpec{WireName: "kerberos5p_read_write"},
+		"Nfsv3": ubx.FieldSpec{WireName: "nfsv3"},
+		"Nfsv4": ubx.FieldSpec{WireName: "nfsv4"},
+		"SquashMode": ubx.FieldSpec{WireName: "squash_mode"},
+	}
 
 var V1beta1Volume_ExportPolicyFields = ubx.FieldMap{
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   V1beta1Volume_ExportPolicy_RulesFields,
-	},
-}
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: V1beta1Volume_ExportPolicy_RulesFields,
+		},
+	}
 
 var V1beta1Volume_HybridReplicationParametersFields = ubx.FieldMap{
-	"ClusterLocation":             ubx.FieldSpec{WireName: "cluster_location"},
-	"Description":                 ubx.FieldSpec{WireName: "description"},
-	"HybridReplicationType":       ubx.FieldSpec{WireName: "hybrid_replication_type"},
-	"Labels":                      ubx.FieldSpec{WireName: "labels"},
-	"LargeVolumeConstituentCount": ubx.FieldSpec{WireName: "large_volume_constituent_count"},
-	"PeerClusterName":             ubx.FieldSpec{WireName: "peer_cluster_name"},
-	"PeerIpAddresses":             ubx.FieldSpec{WireName: "peer_ip_addresses"},
-	"PeerSvmName":                 ubx.FieldSpec{WireName: "peer_svm_name"},
-	"PeerVolumeName":              ubx.FieldSpec{WireName: "peer_volume_name"},
-	"Replication":                 ubx.FieldSpec{WireName: "replication"},
-	"ReplicationSchedule":         ubx.FieldSpec{WireName: "replication_schedule"},
-}
+		"ClusterLocation": ubx.FieldSpec{WireName: "cluster_location"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"HybridReplicationType": ubx.FieldSpec{WireName: "hybrid_replication_type"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LargeVolumeConstituentCount": ubx.FieldSpec{WireName: "large_volume_constituent_count"},
+		"PeerClusterName": ubx.FieldSpec{WireName: "peer_cluster_name"},
+		"PeerIpAddresses": ubx.FieldSpec{WireName: "peer_ip_addresses"},
+		"PeerSvmName": ubx.FieldSpec{WireName: "peer_svm_name"},
+		"PeerVolumeName": ubx.FieldSpec{WireName: "peer_volume_name"},
+		"Replication": ubx.FieldSpec{WireName: "replication"},
+		"ReplicationSchedule": ubx.FieldSpec{WireName: "replication_schedule"},
+	}
 
 var V1beta1Volume_LargeCapacityConfigFields = ubx.FieldMap{
-	"ConstituentCount": ubx.FieldSpec{WireName: "constituent_count"},
-}
+		"ConstituentCount": ubx.FieldSpec{WireName: "constituent_count"},
+	}
 
 var V1beta1Volume_RestoreParametersFields = ubx.FieldMap{
-	"SourceBackup":   ubx.FieldSpec{WireName: "source_backup"},
-	"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-}
+		"SourceBackup": ubx.FieldSpec{WireName: "source_backup"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+	}
 
 var V1beta1Volume_SnapshotPolicy_DailyScheduleFields = ubx.FieldMap{
-	"Hour":            ubx.FieldSpec{WireName: "hour"},
-	"Minute":          ubx.FieldSpec{WireName: "minute"},
-	"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
-}
+		"Hour": ubx.FieldSpec{WireName: "hour"},
+		"Minute": ubx.FieldSpec{WireName: "minute"},
+		"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
+	}
 
 var V1beta1Volume_SnapshotPolicy_HourlyScheduleFields = ubx.FieldMap{
-	"Minute":          ubx.FieldSpec{WireName: "minute"},
-	"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
-}
+		"Minute": ubx.FieldSpec{WireName: "minute"},
+		"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
+	}
 
 var V1beta1Volume_SnapshotPolicy_MonthlyScheduleFields = ubx.FieldMap{
-	"DaysOfMonth":     ubx.FieldSpec{WireName: "days_of_month"},
-	"Hour":            ubx.FieldSpec{WireName: "hour"},
-	"Minute":          ubx.FieldSpec{WireName: "minute"},
-	"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
-}
+		"DaysOfMonth": ubx.FieldSpec{WireName: "days_of_month"},
+		"Hour": ubx.FieldSpec{WireName: "hour"},
+		"Minute": ubx.FieldSpec{WireName: "minute"},
+		"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
+	}
 
 var V1beta1Volume_SnapshotPolicy_WeeklyScheduleFields = ubx.FieldMap{
-	"Day":             ubx.FieldSpec{WireName: "day"},
-	"Hour":            ubx.FieldSpec{WireName: "hour"},
-	"Minute":          ubx.FieldSpec{WireName: "minute"},
-	"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Hour": ubx.FieldSpec{WireName: "hour"},
+		"Minute": ubx.FieldSpec{WireName: "minute"},
+		"SnapshotsToKeep": ubx.FieldSpec{WireName: "snapshots_to_keep"},
+	}
 
 var V1beta1Volume_SnapshotPolicyFields = ubx.FieldMap{
-	"DailySchedule": ubx.FieldSpec{
-		WireName: "daily_schedule",
-		Kind:     "object",
-		Fields:   V1beta1Volume_SnapshotPolicy_DailyScheduleFields,
-	},
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	"HourlySchedule": ubx.FieldSpec{
-		WireName: "hourly_schedule",
-		Kind:     "object",
-		Fields:   V1beta1Volume_SnapshotPolicy_HourlyScheduleFields,
-	},
-	"MonthlySchedule": ubx.FieldSpec{
-		WireName: "monthly_schedule",
-		Kind:     "object",
-		Fields:   V1beta1Volume_SnapshotPolicy_MonthlyScheduleFields,
-	},
-	"WeeklySchedule": ubx.FieldSpec{
-		WireName: "weekly_schedule",
-		Kind:     "object",
-		Fields:   V1beta1Volume_SnapshotPolicy_WeeklyScheduleFields,
-	},
-}
+		"DailySchedule": ubx.FieldSpec{
+			WireName: "daily_schedule",
+			Kind: "object",
+			Fields: V1beta1Volume_SnapshotPolicy_DailyScheduleFields,
+		},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"HourlySchedule": ubx.FieldSpec{
+			WireName: "hourly_schedule",
+			Kind: "object",
+			Fields: V1beta1Volume_SnapshotPolicy_HourlyScheduleFields,
+		},
+		"MonthlySchedule": ubx.FieldSpec{
+			WireName: "monthly_schedule",
+			Kind: "object",
+			Fields: V1beta1Volume_SnapshotPolicy_MonthlyScheduleFields,
+		},
+		"WeeklySchedule": ubx.FieldSpec{
+			WireName: "weekly_schedule",
+			Kind: "object",
+			Fields: V1beta1Volume_SnapshotPolicy_WeeklyScheduleFields,
+		},
+	}
 
 var V1beta1Volume_TieringPolicyFields = ubx.FieldMap{
-	"CoolingThresholdDays":     ubx.FieldSpec{WireName: "cooling_threshold_days"},
-	"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
-	"TierAction":               ubx.FieldSpec{WireName: "tier_action"},
-}
+		"CoolingThresholdDays": ubx.FieldSpec{WireName: "cooling_threshold_days"},
+		"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
+		"TierAction": ubx.FieldSpec{WireName: "tier_action"},
+	}
 
 type V1beta1VolumeConfig struct {
 	// BackupConfig contains backup related config on a volume.
@@ -516,69 +516,69 @@ var V1beta1Volume = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackupConfig": ubx.FieldSpec{
 			WireName: "backup_config",
-			Kind:     "object",
-			Fields:   V1beta1Volume_BackupConfigFields,
+			Kind: "object",
+			Fields: V1beta1Volume_BackupConfigFields,
 		},
 		"BlockDevices": ubx.FieldSpec{
 			WireName: "block_devices",
-			Kind:     "list",
-			Fields:   V1beta1Volume_BlockDevicesFields,
+			Kind: "list",
+			Fields: V1beta1Volume_BlockDevicesFields,
 		},
 		"CacheParameters": ubx.FieldSpec{
 			WireName: "cache_parameters",
-			Kind:     "object",
-			Fields:   V1beta1Volume_CacheParametersFields,
+			Kind: "object",
+			Fields: V1beta1Volume_CacheParametersFields,
 		},
 		"CapacityGib": ubx.FieldSpec{WireName: "capacity_gib"},
 		"CloneDetails": ubx.FieldSpec{
 			WireName: "clone_details",
-			Kind:     "object",
-			Fields:   V1beta1Volume_CloneDetailsFields,
+			Kind: "object",
+			Fields: V1beta1Volume_CloneDetailsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExportPolicy": ubx.FieldSpec{
 			WireName: "export_policy",
-			Kind:     "object",
-			Fields:   V1beta1Volume_ExportPolicyFields,
+			Kind: "object",
+			Fields: V1beta1Volume_ExportPolicyFields,
 		},
 		"HybridReplicationParameters": ubx.FieldSpec{
 			WireName: "hybrid_replication_parameters",
-			Kind:     "object",
-			Fields:   V1beta1Volume_HybridReplicationParametersFields,
+			Kind: "object",
+			Fields: V1beta1Volume_HybridReplicationParametersFields,
 		},
 		"KerberosEnabled": ubx.FieldSpec{WireName: "kerberos_enabled"},
-		"Labels":          ubx.FieldSpec{WireName: "labels"},
-		"LargeCapacity":   ubx.FieldSpec{WireName: "large_capacity"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LargeCapacity": ubx.FieldSpec{WireName: "large_capacity"},
 		"LargeCapacityConfig": ubx.FieldSpec{
 			WireName: "large_capacity_config",
-			Kind:     "object",
-			Fields:   V1beta1Volume_LargeCapacityConfigFields,
+			Kind: "object",
+			Fields: V1beta1Volume_LargeCapacityConfigFields,
 		},
 		"MultipleEndpoints": ubx.FieldSpec{WireName: "multiple_endpoints"},
-		"Name":              ubx.FieldSpec{WireName: "name"},
-		"Protocols":         ubx.FieldSpec{WireName: "protocols"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Protocols": ubx.FieldSpec{WireName: "protocols"},
 		"RestoreParameters": ubx.FieldSpec{
 			WireName: "restore_parameters",
-			Kind:     "object",
-			Fields:   V1beta1Volume_RestoreParametersFields,
+			Kind: "object",
+			Fields: V1beta1Volume_RestoreParametersFields,
 		},
 		"RestrictedActions": ubx.FieldSpec{WireName: "restricted_actions"},
-		"SecurityStyle":     ubx.FieldSpec{WireName: "security_style"},
-		"ShareName":         ubx.FieldSpec{WireName: "share_name"},
-		"SmbSettings":       ubx.FieldSpec{WireName: "smb_settings"},
-		"SnapReserve":       ubx.FieldSpec{WireName: "snap_reserve"},
+		"SecurityStyle": ubx.FieldSpec{WireName: "security_style"},
+		"ShareName": ubx.FieldSpec{WireName: "share_name"},
+		"SmbSettings": ubx.FieldSpec{WireName: "smb_settings"},
+		"SnapReserve": ubx.FieldSpec{WireName: "snap_reserve"},
 		"SnapshotDirectory": ubx.FieldSpec{WireName: "snapshot_directory"},
 		"SnapshotPolicy": ubx.FieldSpec{
 			WireName: "snapshot_policy",
-			Kind:     "object",
-			Fields:   V1beta1Volume_SnapshotPolicyFields,
+			Kind: "object",
+			Fields: V1beta1Volume_SnapshotPolicyFields,
 		},
-		"StoragePool":     ubx.FieldSpec{WireName: "storage_pool"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
 		"ThroughputMibps": ubx.FieldSpec{WireName: "throughput_mibps"},
 		"TieringPolicy": ubx.FieldSpec{
 			WireName: "tiering_policy",
-			Kind:     "object",
-			Fields:   V1beta1Volume_TieringPolicyFields,
+			Kind: "object",
+			Fields: V1beta1Volume_TieringPolicyFields,
 		},
 		"UnixPermissions": ubx.FieldSpec{WireName: "unix_permissions"},
 	},

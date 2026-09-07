@@ -41,10 +41,10 @@ var V1beta1HostGroup = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_host_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hosts":       ubx.FieldSpec{WireName: "hosts"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"OsType":      ubx.FieldSpec{WireName: "os_type"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"Hosts": ubx.FieldSpec{WireName: "hosts"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OsType": ubx.FieldSpec{WireName: "os_type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

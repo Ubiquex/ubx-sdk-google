@@ -138,6 +138,8 @@ class BetaRegionInstanceTemplate_Properties_NetworkInterfaces_AccessConfigs:
 
 @dataclasses.dataclass
 class BetaRegionInstanceTemplate_Properties_NetworkInterfaces_AliasIpRanges:
+    candidate_subnetwork_range_names: Any = None
+    effective_subnetwork_range_name: Any = None
     ip_cidr_range: Any = None
     subnetwork_range_name: Any = None
 
@@ -215,6 +217,8 @@ class BetaRegionInstanceTemplate_Properties_Scheduling:
     automatic_restart: Any = None
     # Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance.
     availability_domain: Any = None
+    # This optional flag exposes the hashed physical host ID in the ResourceStatus resource of the VM.
+    expose_host_topology: Any = None
     # The configuration for gracefully shutting down the instance.
     graceful_shutdown: Any = None
     # Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used.
@@ -510,6 +514,8 @@ _BetaRegionInstanceTemplate_Properties_NetworkInterfaces_AccessConfigsFields = {
 }
 
 _BetaRegionInstanceTemplate_Properties_NetworkInterfaces_AliasIpRangesFields = {
+    "candidate_subnetwork_range_names": ubx.FieldSpec(wire_name="candidate_subnetwork_range_names"),
+    "effective_subnetwork_range_name": ubx.FieldSpec(wire_name="effective_subnetwork_range_name"),
     "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
     "subnetwork_range_name": ubx.FieldSpec(wire_name="subnetwork_range_name"),
 }
@@ -597,6 +603,7 @@ _BetaRegionInstanceTemplate_Properties_Scheduling_OnInstanceStopActionFields = {
 _BetaRegionInstanceTemplate_Properties_SchedulingFields = {
     "automatic_restart": ubx.FieldSpec(wire_name="automatic_restart"),
     "availability_domain": ubx.FieldSpec(wire_name="availability_domain"),
+    "expose_host_topology": ubx.FieldSpec(wire_name="expose_host_topology"),
     "graceful_shutdown": ubx.FieldSpec(
         wire_name="graceful_shutdown",
         kind="object",

@@ -39,9 +39,9 @@ var TagValue = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_tag_value",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Parent":      ubx.FieldSpec{WireName: "parent"},
-		"ShortName":   ubx.FieldSpec{WireName: "short_name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"ShortName": ubx.FieldSpec{WireName: "short_name"},
 	},
 }

@@ -33,6 +33,6 @@ var V1beta1Backup = ubx.ResourceBinding{
 	WireType: "google_managedidentities_v1beta1_backup",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 	},
 }

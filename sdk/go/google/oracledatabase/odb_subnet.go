@@ -33,8 +33,8 @@ var OdbSubnet = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_odb_subnet",
 	Fields: ubx.FieldMap{
 		"CidrRange": ubx.FieldSpec{WireName: "cidr_range"},
-		"Labels":    ubx.FieldSpec{WireName: "labels"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
-		"Purpose":   ubx.FieldSpec{WireName: "purpose"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Purpose": ubx.FieldSpec{WireName: "purpose"},
 	},
 }

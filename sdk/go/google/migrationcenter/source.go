@@ -46,8 +46,8 @@ var Source = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Managed":     ubx.FieldSpec{WireName: "managed"},
-		"Priority":    ubx.FieldSpec{WireName: "priority"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"Managed": ubx.FieldSpec{WireName: "managed"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

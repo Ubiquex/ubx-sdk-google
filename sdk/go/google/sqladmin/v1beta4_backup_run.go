@@ -4,6 +4,8 @@ package sqladmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta4BackupRun_DiskEncryptionConfiguration struct {
+	// Optional. If true, enables Confidential Mode for the instance's Hyperdisk Balanced volumes. Only supported for zonal C4A instances currently.
+	ConfidentialMode any
 	// This is always `sql#diskEncryptionConfiguration`.
 	Kind any
 	// Resource name of KMS key for disk encryption
@@ -27,20 +29,21 @@ type V1beta4BackupRun_Error struct {
 }
 
 var V1beta4BackupRun_DiskEncryptionConfigurationFields = ubx.FieldMap{
-	"Kind":       ubx.FieldSpec{WireName: "kind"},
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"ConfidentialMode": ubx.FieldSpec{WireName: "confidential_mode"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var V1beta4BackupRun_DiskEncryptionStatusFields = ubx.FieldMap{
-	"Kind":              ubx.FieldSpec{WireName: "kind"},
-	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-}
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	}
 
 var V1beta4BackupRun_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Kind":    ubx.FieldSpec{WireName: "kind"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 type V1beta4BackupRunConfig struct {
 	// Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT.
@@ -123,34 +126,34 @@ type V1beta4BackupRunAttrs struct {
 var V1beta4BackupRun = ubx.ResourceBinding{
 	WireType: "google_sqladmin_v1beta4_backup_run",
 	Fields: ubx.FieldMap{
-		"BackupKind":  ubx.FieldSpec{WireName: "backup_kind"},
+		"BackupKind": ubx.FieldSpec{WireName: "backup_kind"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "disk_encryption_configuration",
-			Kind:     "object",
-			Fields:   V1beta4BackupRun_DiskEncryptionConfigurationFields,
+			Kind: "object",
+			Fields: V1beta4BackupRun_DiskEncryptionConfigurationFields,
 		},
 		"DiskEncryptionStatus": ubx.FieldSpec{
 			WireName: "disk_encryption_status",
-			Kind:     "object",
-			Fields:   V1beta4BackupRun_DiskEncryptionStatusFields,
+			Kind: "object",
+			Fields: V1beta4BackupRun_DiskEncryptionStatusFields,
 		},
-		"EndTime":      ubx.FieldSpec{WireName: "end_time"},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"EnqueuedTime": ubx.FieldSpec{WireName: "enqueued_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   V1beta4BackupRun_ErrorFields,
+			Kind: "object",
+			Fields: V1beta4BackupRun_ErrorFields,
 		},
-		"Id":              ubx.FieldSpec{WireName: "id"},
-		"Instance":        ubx.FieldSpec{WireName: "instance"},
-		"Kind":            ubx.FieldSpec{WireName: "kind"},
-		"Location":        ubx.FieldSpec{WireName: "location"},
-		"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
-		"StartTime":       ubx.FieldSpec{WireName: "start_time"},
-		"Status":          ubx.FieldSpec{WireName: "status"},
-		"TimeZone":        ubx.FieldSpec{WireName: "time_zone"},
-		"Type":            ubx.FieldSpec{WireName: "type"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Instance": ubx.FieldSpec{WireName: "instance"},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
 	},
 }

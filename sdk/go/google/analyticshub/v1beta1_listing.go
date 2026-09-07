@@ -25,19 +25,19 @@ type V1beta1Listing_RestrictedExportConfig struct {
 }
 
 var V1beta1Listing_BigqueryDatasetFields = ubx.FieldMap{
-	"Dataset": ubx.FieldSpec{WireName: "dataset"},
-}
+		"Dataset": ubx.FieldSpec{WireName: "dataset"},
+	}
 
 var V1beta1Listing_DataProviderFields = ubx.FieldMap{
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
+	}
 
 var V1beta1Listing_RestrictedExportConfigFields = ubx.FieldMap{
-	"Enabled":                   ubx.FieldSpec{WireName: "enabled"},
-	"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
-	"RestrictQueryResult":       ubx.FieldSpec{WireName: "restrict_query_result"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
+		"RestrictQueryResult": ubx.FieldSpec{WireName: "restrict_query_result"},
+	}
 
 type V1beta1ListingConfig struct {
 	// Optional. If true, the listing is only available to get the resource metadata. Listing is non subscribable.
@@ -103,30 +103,30 @@ var V1beta1Listing = ubx.ResourceBinding{
 		"AllowOnlyMetadataSharing": ubx.FieldSpec{WireName: "allow_only_metadata_sharing"},
 		"BigqueryDataset": ubx.FieldSpec{
 			WireName: "bigquery_dataset",
-			Kind:     "object",
-			Fields:   V1beta1Listing_BigqueryDatasetFields,
+			Kind: "object",
+			Fields: V1beta1Listing_BigqueryDatasetFields,
 		},
 		"Categories": ubx.FieldSpec{WireName: "categories"},
 		"DataProvider": ubx.FieldSpec{
 			WireName: "data_provider",
-			Kind:     "object",
-			Fields:   V1beta1Listing_DataProviderFields,
+			Kind: "object",
+			Fields: V1beta1Listing_DataProviderFields,
 		},
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
-		"Icon":           ubx.FieldSpec{WireName: "icon"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Documentation": ubx.FieldSpec{WireName: "documentation"},
+		"Icon": ubx.FieldSpec{WireName: "icon"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
 		"Publisher": ubx.FieldSpec{
 			WireName: "publisher",
-			Kind:     "object",
-			Fields:   V1beta1Listing_DataProviderFields,
+			Kind: "object",
+			Fields: V1beta1Listing_DataProviderFields,
 		},
 		"RequestAccess": ubx.FieldSpec{WireName: "request_access"},
 		"RestrictedExportConfig": ubx.FieldSpec{
 			WireName: "restricted_export_config",
-			Kind:     "object",
-			Fields:   V1beta1Listing_RestrictedExportConfigFields,
+			Kind: "object",
+			Fields: V1beta1Listing_RestrictedExportConfigFields,
 		},
 	},
 }

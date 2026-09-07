@@ -30,8 +30,8 @@ type V1alpha1GroupAttrs struct {
 var V1alpha1Group = ubx.ResourceBinding{
 	WireType: "google_vmmigration_v1alpha1_group",
 	Fields: ubx.FieldMap{
-		"Description":         ubx.FieldSpec{WireName: "description"},
-		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"MigrationTargetType": ubx.FieldSpec{WireName: "migration_target_type"},
 	},
 }

@@ -22,7 +22,7 @@ type BackupAttrs struct {
 	DatabaseUid any
 	// Output only. The timestamp at which this backup expires.
 	ExpireTime any
-	Name       any
+	Name any
 	// Output only. The backup contains an externally consistent copy of the database at this time.
 	SnapshotTime any
 	// Output only. The current state of the backup.
@@ -33,5 +33,6 @@ type BackupAttrs struct {
 
 var Backup = ubx.DataSourceBinding{
 	WireType: "google_firestore_backup",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

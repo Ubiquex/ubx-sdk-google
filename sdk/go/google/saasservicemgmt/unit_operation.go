@@ -43,27 +43,27 @@ type UnitOperation_Schedule struct {
 }
 
 var UnitOperation_FlagUpdateFields = ubx.FieldMap{
-	"FlagRelease": ubx.FieldSpec{WireName: "flag_release"},
-}
+		"FlagRelease": ubx.FieldSpec{WireName: "flag_release"},
+	}
 
 var UnitOperation_Provision_InputVariablesFields = ubx.FieldMap{
-	"Type":     ubx.FieldSpec{WireName: "type"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-	"Variable": ubx.FieldSpec{WireName: "variable"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+		"Variable": ubx.FieldSpec{WireName: "variable"},
+	}
 
 var UnitOperation_ProvisionFields = ubx.FieldMap{
-	"InputVariables": ubx.FieldSpec{
-		WireName: "input_variables",
-		Kind:     "list",
-		Fields:   UnitOperation_Provision_InputVariablesFields,
-	},
-	"Release": ubx.FieldSpec{WireName: "release"},
-}
+		"InputVariables": ubx.FieldSpec{
+			WireName: "input_variables",
+			Kind: "list",
+			Fields: UnitOperation_Provision_InputVariablesFields,
+		},
+		"Release": ubx.FieldSpec{WireName: "release"},
+	}
 
 var UnitOperation_ScheduleFields = ubx.FieldMap{
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 type UnitOperationConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -141,32 +141,32 @@ var UnitOperation = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_unit_operation",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Cancel":      ubx.FieldSpec{WireName: "cancel"},
+		"Cancel": ubx.FieldSpec{WireName: "cancel"},
 		"Deprovision": ubx.FieldSpec{WireName: "deprovision"},
 		"FlagUpdate": ubx.FieldSpec{
 			WireName: "flag_update",
-			Kind:     "object",
-			Fields:   UnitOperation_FlagUpdateFields,
+			Kind: "object",
+			Fields: UnitOperation_FlagUpdateFields,
 		},
-		"Labels":              ubx.FieldSpec{WireName: "labels"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ParentUnitOperation": ubx.FieldSpec{WireName: "parent_unit_operation"},
 		"Provision": ubx.FieldSpec{
 			WireName: "provision",
-			Kind:     "object",
-			Fields:   UnitOperation_ProvisionFields,
+			Kind: "object",
+			Fields: UnitOperation_ProvisionFields,
 		},
 		"Rollout": ubx.FieldSpec{WireName: "rollout"},
 		"Schedule": ubx.FieldSpec{
 			WireName: "schedule",
-			Kind:     "object",
-			Fields:   UnitOperation_ScheduleFields,
+			Kind: "object",
+			Fields: UnitOperation_ScheduleFields,
 		},
 		"Unit": ubx.FieldSpec{WireName: "unit"},
 		"Upgrade": ubx.FieldSpec{
 			WireName: "upgrade",
-			Kind:     "object",
-			Fields:   UnitOperation_ProvisionFields,
+			Kind: "object",
+			Fields: UnitOperation_ProvisionFields,
 		},
 	},
 }

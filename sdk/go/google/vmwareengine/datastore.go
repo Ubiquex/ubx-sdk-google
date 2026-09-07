@@ -29,29 +29,29 @@ type Datastore_NfsDatastore struct {
 }
 
 var Datastore_NfsDatastore_GoogleFileServiceFields = ubx.FieldMap{
-	"FilestoreInstance": ubx.FieldSpec{WireName: "filestore_instance"},
-	"NetappVolume":      ubx.FieldSpec{WireName: "netapp_volume"},
-}
+		"FilestoreInstance": ubx.FieldSpec{WireName: "filestore_instance"},
+		"NetappVolume": ubx.FieldSpec{WireName: "netapp_volume"},
+	}
 
 var Datastore_NfsDatastore_ThirdPartyFileServiceFields = ubx.FieldMap{
-	"FileShare": ubx.FieldSpec{WireName: "file_share"},
-	"Network":   ubx.FieldSpec{WireName: "network"},
-	"Servers":   ubx.FieldSpec{WireName: "servers"},
-}
+		"FileShare": ubx.FieldSpec{WireName: "file_share"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Servers": ubx.FieldSpec{WireName: "servers"},
+	}
 
 var Datastore_NfsDatastoreFields = ubx.FieldMap{
-	"GoogleFileService": ubx.FieldSpec{
-		WireName: "google_file_service",
-		Kind:     "object",
-		Fields:   Datastore_NfsDatastore_GoogleFileServiceFields,
-	},
-	"GoogleVmwareFileService": ubx.FieldSpec{WireName: "google_vmware_file_service"},
-	"ThirdPartyFileService": ubx.FieldSpec{
-		WireName: "third_party_file_service",
-		Kind:     "object",
-		Fields:   Datastore_NfsDatastore_ThirdPartyFileServiceFields,
-	},
-}
+		"GoogleFileService": ubx.FieldSpec{
+			WireName: "google_file_service",
+			Kind: "object",
+			Fields: Datastore_NfsDatastore_GoogleFileServiceFields,
+		},
+		"GoogleVmwareFileService": ubx.FieldSpec{WireName: "google_vmware_file_service"},
+		"ThirdPartyFileService": ubx.FieldSpec{
+			WireName: "third_party_file_service",
+			Kind: "object",
+			Fields: Datastore_NfsDatastore_ThirdPartyFileServiceFields,
+		},
+	}
 
 type DatastoreConfig struct {
 	// Optional. User-provided description for this datastore
@@ -87,11 +87,11 @@ var Datastore = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_datastore",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"NfsDatastore": ubx.FieldSpec{
 			WireName: "nfs_datastore",
-			Kind:     "object",
-			Fields:   Datastore_NfsDatastoreFields,
+			Kind: "object",
+			Fields: Datastore_NfsDatastoreFields,
 		},
 	},
 }

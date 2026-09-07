@@ -44,7 +44,7 @@ export interface V1beta1OnlineEvaluator_CloudObservability_TraceScope {
 }
 
 export interface V1beta1OnlineEvaluator_CloudObservability {
-  /** Optional. Optional log view that will be used to query logs. If empty, the `_Default` view will be used. */
+  /** Optional. Optional log view that will be used to query logs. If empty, the project's default view (`projects/{project_id}`) will be used. */
   logView?: string | Computed<string>;
   /** Configuration for data source following OpenTelemetry. */
   openTelemetry?: V1beta1OnlineEvaluator_CloudObservability_OpenTelemetry | Computed<V1beta1OnlineEvaluator_CloudObservability_OpenTelemetry>;
@@ -52,7 +52,7 @@ export interface V1beta1OnlineEvaluator_CloudObservability {
   sessionScope?: V1beta1OnlineEvaluator_CloudObservability_SessionScope | Computed<V1beta1OnlineEvaluator_CloudObservability_SessionScope>;
   /** If chosen, the online evaluator will evaluate single traces matching specified `filter`. */
   traceScope?: V1beta1OnlineEvaluator_CloudObservability_TraceScope | Computed<V1beta1OnlineEvaluator_CloudObservability_TraceScope>;
-  /** Optional. Optional trace view that will be used to query traces. If empty, the `_Default` view will be used. NOTE: This field is not supported yet and will be ignored if set. */
+  /** Optional. Optional trace view that will be used to query traces. If empty, the `_AllSpans` view from `_Trace` US bucket will be used, i.e. `projects/{project_id}/locations/us/buckets/_Trace/datasets/Spans/views/_AllSpans`. */
   traceView?: string | Computed<string>;
 }
 
@@ -93,7 +93,6 @@ export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_
   languageAuto?: unknown | Computed<unknown>;
   languageCodes?: string[] | Computed<string[]>;
   languageHints?: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
-  mode?: string | Computed<string>;
   wordTimestamp?: boolean | Computed<boolean>;
 }
 
@@ -224,6 +223,11 @@ export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_
   thinkingLevel?: string | Computed<string>;
 }
 
+export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig {
+  echoTargetLanguage?: boolean | Computed<boolean>;
+  targetLanguageCode?: string | Computed<string>;
+}
+
 export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig {
   audioTimestamp?: boolean | Computed<boolean>;
   audioTranscriptionConfig?: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig | Computed<V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig>;
@@ -250,6 +254,7 @@ export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_
   thinkingConfig?: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig | Computed<V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfig>;
   topK?: number | Computed<number>;
   topP?: number | Computed<number>;
+  translationConfig?: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig | Computed<V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig>;
 }
 
 export interface V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig {
@@ -498,7 +503,6 @@ const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
     kind: "object",
     fields: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
   },
-  mode: "mode",
   wordTimestamp: "word_timestamp",
 };
 
@@ -681,6 +685,11 @@ const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
   thinkingLevel: "thinking_level",
 };
 
+const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields: FieldMap = {
+  echoTargetLanguage: "echo_target_language",
+  targetLanguageCode: "target_language_code",
+};
+
 const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields: FieldMap = {
   audioTimestamp: "audio_timestamp",
   audioTranscriptionConfig: {
@@ -739,6 +748,11 @@ const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutora
   },
   topK: "top_k",
   topP: "top_p",
+  translationConfig: {
+    wireName: "translation_config",
+    kind: "object",
+    fields: V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+  },
 };
 
 const V1beta1OnlineEvaluator_MetricSources_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields: FieldMap = {

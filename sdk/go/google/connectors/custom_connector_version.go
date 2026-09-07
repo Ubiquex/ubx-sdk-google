@@ -315,305 +315,305 @@ type CustomConnectorVersion_PublishStatus struct {
 }
 
 var CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValueFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	"Type":       ubx.FieldSpec{WireName: "type"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields = ubx.FieldMap{
-	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-}
+		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+	}
 
 var CustomConnectorVersion_AuthConfig_AdditionalVariablesFields = ubx.FieldMap{
-	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-	"EncryptionKeyValue": ubx.FieldSpec{
-		WireName: "encryption_key_value",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValueFields,
-	},
-	"IntValue": ubx.FieldSpec{WireName: "int_value"},
-	"Key":      ubx.FieldSpec{WireName: "key"},
-	"SecretValue": ubx.FieldSpec{
-		WireName: "secret_value",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"EncryptionKeyValue": ubx.FieldSpec{
+			WireName: "encryption_key_value",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_EncryptionKeyValueFields,
+		},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"SecretValue": ubx.FieldSpec{
+			WireName: "secret_value",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 var CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowFields = ubx.FieldMap{
-	"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-	"AuthUri":  ubx.FieldSpec{WireName: "auth_uri"},
-	"ClientId": ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret": ubx.FieldSpec{
-		WireName: "client_secret",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"EnablePkce":   ubx.FieldSpec{WireName: "enable_pkce"},
-	"PkceVerifier": ubx.FieldSpec{WireName: "pkce_verifier"},
-	"RedirectUri":  ubx.FieldSpec{WireName: "redirect_uri"},
-	"Scopes":       ubx.FieldSpec{WireName: "scopes"},
-}
+		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
+		"AuthUri": ubx.FieldSpec{WireName: "auth_uri"},
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{
+			WireName: "client_secret",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
+		"PkceVerifier": ubx.FieldSpec{WireName: "pkce_verifier"},
+		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+	}
 
 var CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowGoogleManagedFields = ubx.FieldMap{
-	"AuthCode":    ubx.FieldSpec{WireName: "auth_code"},
-	"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-	"Scopes":      ubx.FieldSpec{WireName: "scopes"},
-}
+		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
+		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+	}
 
 var CustomConnectorVersion_AuthConfig_Oauth2ClientCredentialsFields = ubx.FieldMap{
-	"ClientId": ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret": ubx.FieldSpec{
-		WireName: "client_secret",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-}
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{
+			WireName: "client_secret",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+	}
 
 var CustomConnectorVersion_AuthConfig_Oauth2JwtBearer_JwtClaimsFields = ubx.FieldMap{
-	"Audience": ubx.FieldSpec{WireName: "audience"},
-	"Issuer":   ubx.FieldSpec{WireName: "issuer"},
-	"Subject":  ubx.FieldSpec{WireName: "subject"},
-}
+		"Audience": ubx.FieldSpec{WireName: "audience"},
+		"Issuer": ubx.FieldSpec{WireName: "issuer"},
+		"Subject": ubx.FieldSpec{WireName: "subject"},
+	}
 
 var CustomConnectorVersion_AuthConfig_Oauth2JwtBearerFields = ubx.FieldMap{
-	"ClientKey": ubx.FieldSpec{
-		WireName: "client_key",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"JwtClaims": ubx.FieldSpec{
-		WireName: "jwt_claims",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_Oauth2JwtBearer_JwtClaimsFields,
-	},
-}
+		"ClientKey": ubx.FieldSpec{
+			WireName: "client_key",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"JwtClaims": ubx.FieldSpec{
+			WireName: "jwt_claims",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_Oauth2JwtBearer_JwtClaimsFields,
+		},
+	}
 
 var CustomConnectorVersion_AuthConfig_SshPublicKeyFields = ubx.FieldMap{
-	"CertType": ubx.FieldSpec{WireName: "cert_type"},
-	"SshClientCert": ubx.FieldSpec{
-		WireName: "ssh_client_cert",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"SshClientCertPass": ubx.FieldSpec{
-		WireName: "ssh_client_cert_pass",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"CertType": ubx.FieldSpec{WireName: "cert_type"},
+		"SshClientCert": ubx.FieldSpec{
+			WireName: "ssh_client_cert",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"SshClientCertPass": ubx.FieldSpec{
+			WireName: "ssh_client_cert_pass",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var CustomConnectorVersion_AuthConfig_UserPasswordFields = ubx.FieldMap{
-	"Password": ubx.FieldSpec{
-		WireName: "password",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Password": ubx.FieldSpec{
+			WireName: "password",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var CustomConnectorVersion_AuthConfigFields = ubx.FieldMap{
-	"AdditionalVariables": ubx.FieldSpec{
-		WireName: "additional_variables",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariablesFields,
-	},
-	"AuthKey":  ubx.FieldSpec{WireName: "auth_key"},
-	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	"Oauth2AuthCodeFlow": ubx.FieldSpec{
-		WireName: "oauth2_auth_code_flow",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowFields,
-	},
-	"Oauth2AuthCodeFlowGoogleManaged": ubx.FieldSpec{
-		WireName: "oauth2_auth_code_flow_google_managed",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowGoogleManagedFields,
-	},
-	"Oauth2ClientCredentials": ubx.FieldSpec{
-		WireName: "oauth2_client_credentials",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_Oauth2ClientCredentialsFields,
-	},
-	"Oauth2JwtBearer": ubx.FieldSpec{
-		WireName: "oauth2_jwt_bearer",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_Oauth2JwtBearerFields,
-	},
-	"SshPublicKey": ubx.FieldSpec{
-		WireName: "ssh_public_key",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_SshPublicKeyFields,
-	},
-	"UserPassword": ubx.FieldSpec{
-		WireName: "user_password",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_UserPasswordFields,
-	},
-}
+		"AdditionalVariables": ubx.FieldSpec{
+			WireName: "additional_variables",
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariablesFields,
+		},
+		"AuthKey": ubx.FieldSpec{WireName: "auth_key"},
+		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"Oauth2AuthCodeFlow": ubx.FieldSpec{
+			WireName: "oauth2_auth_code_flow",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowFields,
+		},
+		"Oauth2AuthCodeFlowGoogleManaged": ubx.FieldSpec{
+			WireName: "oauth2_auth_code_flow_google_managed",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_Oauth2AuthCodeFlowGoogleManagedFields,
+		},
+		"Oauth2ClientCredentials": ubx.FieldSpec{
+			WireName: "oauth2_client_credentials",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_Oauth2ClientCredentialsFields,
+		},
+		"Oauth2JwtBearer": ubx.FieldSpec{
+			WireName: "oauth2_jwt_bearer",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_Oauth2JwtBearerFields,
+		},
+		"SshPublicKey": ubx.FieldSpec{
+			WireName: "ssh_public_key",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_SshPublicKeyFields,
+		},
+		"UserPassword": ubx.FieldSpec{
+			WireName: "user_password",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_UserPasswordFields,
+		},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLinkFields = ubx.FieldMap{
-	"ClientId": ubx.FieldSpec{WireName: "client_id"},
-	"ClientSecret": ubx.FieldSpec{
-		WireName: "client_secret",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
-	},
-	"EnablePkce":      ubx.FieldSpec{WireName: "enable_pkce"},
-	"OmitQueryParams": ubx.FieldSpec{WireName: "omit_query_params"},
-	"Scopes":          ubx.FieldSpec{WireName: "scopes"},
-	"Uri":             ubx.FieldSpec{WireName: "uri"},
-}
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecret": ubx.FieldSpec{
+			WireName: "client_secret",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfig_AdditionalVariables_SecretValueFields,
+		},
+		"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
+		"OmitQueryParams": ubx.FieldSpec{WireName: "omit_query_params"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptionsFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptionsFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Key":         ubx.FieldSpec{WireName: "key"},
-	"Preselected": ubx.FieldSpec{WireName: "preselected"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Preselected": ubx.FieldSpec{WireName: "preselected"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfigFields = ubx.FieldMap{
-	"AllowCustomValues": ubx.FieldSpec{WireName: "allow_custom_values"},
-	"MultipleSelectOptions": ubx.FieldSpec{
-		WireName: "multiple_select_options",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptionsFields,
-	},
-	"ValueSeparator": ubx.FieldSpec{WireName: "value_separator"},
-}
+		"AllowCustomValues": ubx.FieldSpec{WireName: "allow_custom_values"},
+		"MultipleSelectOptions": ubx.FieldSpec{
+			WireName: "multiple_select_options",
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptionsFields,
+		},
+		"ValueSeparator": ubx.FieldSpec{WireName: "value_separator"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisonsFields = ubx.FieldMap{
-	"BoolValue":   ubx.FieldSpec{WireName: "bool_value"},
-	"Comparator":  ubx.FieldSpec{WireName: "comparator"},
-	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
-	"Key":         ubx.FieldSpec{WireName: "key"},
-	"StringValue": ubx.FieldSpec{WireName: "string_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"Comparator": ubx.FieldSpec{WireName: "comparator"},
+		"IntValue": ubx.FieldSpec{WireName: "int_value"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"StringValue": ubx.FieldSpec{WireName: "string_value"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredConditionFields = ubx.FieldMap{
-	"FieldComparisons": ubx.FieldSpec{
-		WireName: "field_comparisons",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisonsFields,
-	},
-	"LogicalExpressions": ubx.FieldSpec{WireName: "logical_expressions"},
-	"LogicalOperator":    ubx.FieldSpec{WireName: "logical_operator"},
-}
+		"FieldComparisons": ubx.FieldSpec{
+			WireName: "field_comparisons",
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisonsFields,
+		},
+		"LogicalExpressions": ubx.FieldSpec{WireName: "logical_expressions"},
+		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_ResourceFields = ubx.FieldMap{
-	"PathTemplate": ubx.FieldSpec{WireName: "path_template"},
-	"Type":         ubx.FieldSpec{WireName: "type"},
-}
+		"PathTemplate": ubx.FieldSpec{WireName: "path_template"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrantFields = ubx.FieldMap{
-	"HelperTextTemplate": ubx.FieldSpec{WireName: "helper_text_template"},
-	"Principal":          ubx.FieldSpec{WireName: "principal"},
-	"Resource": ubx.FieldSpec{
-		WireName: "resource",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_ResourceFields,
-	},
-	"Roles": ubx.FieldSpec{WireName: "roles"},
-}
+		"HelperTextTemplate": ubx.FieldSpec{WireName: "helper_text_template"},
+		"Principal": ubx.FieldSpec{WireName: "principal"},
+		"Resource": ubx.FieldSpec{
+			WireName: "resource",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_ResourceFields,
+		},
+		"Roles": ubx.FieldSpec{WireName: "roles"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields = ubx.FieldMap{
-	"AuthorizationCodeLink": ubx.FieldSpec{
-		WireName: "authorization_code_link",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLinkFields,
-	},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"EnumOptions": ubx.FieldSpec{
-		WireName: "enum_options",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptionsFields,
-	},
-	"EnumSource":   ubx.FieldSpec{WireName: "enum_source"},
-	"IsAdvanced":   ubx.FieldSpec{WireName: "is_advanced"},
-	"Key":          ubx.FieldSpec{WireName: "key"},
-	"LocationType": ubx.FieldSpec{WireName: "location_type"},
-	"MultipleSelectConfig": ubx.FieldSpec{
-		WireName: "multiple_select_config",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfigFields,
-	},
-	"Required": ubx.FieldSpec{WireName: "required"},
-	"RequiredCondition": ubx.FieldSpec{
-		WireName: "required_condition",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredConditionFields,
-	},
-	"RoleGrant": ubx.FieldSpec{
-		WireName: "role_grant",
-		Kind:     "object",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrantFields,
-	},
-	"State":           ubx.FieldSpec{WireName: "state"},
-	"ValidationRegex": ubx.FieldSpec{WireName: "validation_regex"},
-	"ValueType":       ubx.FieldSpec{WireName: "value_type"},
-}
+		"AuthorizationCodeLink": ubx.FieldSpec{
+			WireName: "authorization_code_link",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLinkFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EnumOptions": ubx.FieldSpec{
+			WireName: "enum_options",
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_EnumOptionsFields,
+		},
+		"EnumSource": ubx.FieldSpec{WireName: "enum_source"},
+		"IsAdvanced": ubx.FieldSpec{WireName: "is_advanced"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"LocationType": ubx.FieldSpec{WireName: "location_type"},
+		"MultipleSelectConfig": ubx.FieldSpec{
+			WireName: "multiple_select_config",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfigFields,
+		},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"RequiredCondition": ubx.FieldSpec{
+			WireName: "required_condition",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RequiredConditionFields,
+		},
+		"RoleGrant": ubx.FieldSpec{
+			WireName: "role_grant",
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplates_RoleGrantFields,
+		},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"ValidationRegex": ubx.FieldSpec{WireName: "validation_regex"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 var CustomConnectorVersion_AuthConfigTemplatesFields = ubx.FieldMap{
-	"AuthKey":  ubx.FieldSpec{WireName: "auth_key"},
-	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-	"ConfigVariableTemplates": ubx.FieldSpec{
-		WireName: "config_variable_templates",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
-	},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"IsDefault":   ubx.FieldSpec{WireName: "is_default"},
-}
+		"AuthKey": ubx.FieldSpec{WireName: "auth_key"},
+		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+		"ConfigVariableTemplates": ubx.FieldSpec{
+			WireName: "config_variable_templates",
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
+	}
 
 var CustomConnectorVersion_DestinationConfigs_DestinationsFields = ubx.FieldMap{
-	"Host":              ubx.FieldSpec{WireName: "host"},
-	"Port":              ubx.FieldSpec{WireName: "port"},
-	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"Host": ubx.FieldSpec{WireName: "host"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 var CustomConnectorVersion_DestinationConfigsFields = ubx.FieldMap{
-	"Destinations": ubx.FieldSpec{
-		WireName: "destinations",
-		Kind:     "list",
-		Fields:   CustomConnectorVersion_DestinationConfigs_DestinationsFields,
-	},
-	"Key": ubx.FieldSpec{WireName: "key"},
-}
+		"Destinations": ubx.FieldSpec{
+			WireName: "destinations",
+			Kind: "list",
+			Fields: CustomConnectorVersion_DestinationConfigs_DestinationsFields,
+		},
+		"Key": ubx.FieldSpec{WireName: "key"},
+	}
 
 var CustomConnectorVersion_PartnerMetadataFields = ubx.FieldMap{
-	"AcceptGcpTos":                ubx.FieldSpec{WireName: "accept_gcp_tos"},
-	"AdditionalComments":          ubx.FieldSpec{WireName: "additional_comments"},
-	"ConfirmPartnerRequirements":  ubx.FieldSpec{WireName: "confirm_partner_requirements"},
-	"DemoUri":                     ubx.FieldSpec{WireName: "demo_uri"},
-	"HasDynamicSpecUri":           ubx.FieldSpec{WireName: "has_dynamic_spec_uri"},
-	"IntegrationTemplates":        ubx.FieldSpec{WireName: "integration_templates"},
-	"LocalSpecPath":               ubx.FieldSpec{WireName: "local_spec_path"},
-	"MarketplaceProduct":          ubx.FieldSpec{WireName: "marketplace_product"},
-	"MarketplaceProductId":        ubx.FieldSpec{WireName: "marketplace_product_id"},
-	"MarketplaceProductProjectId": ubx.FieldSpec{WireName: "marketplace_product_project_id"},
-	"MarketplaceProductUri":       ubx.FieldSpec{WireName: "marketplace_product_uri"},
-	"Partner":                     ubx.FieldSpec{WireName: "partner"},
-	"PartnerConnectorDisplayName": ubx.FieldSpec{WireName: "partner_connector_display_name"},
-	"PublishRequestTime":          ubx.FieldSpec{WireName: "publish_request_time"},
-	"TargetApplication":           ubx.FieldSpec{WireName: "target_application"},
-	"TargetCustomerSegment":       ubx.FieldSpec{WireName: "target_customer_segment"},
-	"UseCases":                    ubx.FieldSpec{WireName: "use_cases"},
-}
+		"AcceptGcpTos": ubx.FieldSpec{WireName: "accept_gcp_tos"},
+		"AdditionalComments": ubx.FieldSpec{WireName: "additional_comments"},
+		"ConfirmPartnerRequirements": ubx.FieldSpec{WireName: "confirm_partner_requirements"},
+		"DemoUri": ubx.FieldSpec{WireName: "demo_uri"},
+		"HasDynamicSpecUri": ubx.FieldSpec{WireName: "has_dynamic_spec_uri"},
+		"IntegrationTemplates": ubx.FieldSpec{WireName: "integration_templates"},
+		"LocalSpecPath": ubx.FieldSpec{WireName: "local_spec_path"},
+		"MarketplaceProduct": ubx.FieldSpec{WireName: "marketplace_product"},
+		"MarketplaceProductId": ubx.FieldSpec{WireName: "marketplace_product_id"},
+		"MarketplaceProductProjectId": ubx.FieldSpec{WireName: "marketplace_product_project_id"},
+		"MarketplaceProductUri": ubx.FieldSpec{WireName: "marketplace_product_uri"},
+		"Partner": ubx.FieldSpec{WireName: "partner"},
+		"PartnerConnectorDisplayName": ubx.FieldSpec{WireName: "partner_connector_display_name"},
+		"PublishRequestTime": ubx.FieldSpec{WireName: "publish_request_time"},
+		"TargetApplication": ubx.FieldSpec{WireName: "target_application"},
+		"TargetCustomerSegment": ubx.FieldSpec{WireName: "target_customer_segment"},
+		"UseCases": ubx.FieldSpec{WireName: "use_cases"},
+	}
 
 var CustomConnectorVersion_PublishStatusFields = ubx.FieldMap{
-	"PublishState":    ubx.FieldSpec{WireName: "publish_state"},
-	"PublishTime":     ubx.FieldSpec{WireName: "publish_time"},
-	"PublishedAs":     ubx.FieldSpec{WireName: "published_as"},
-	"PublishedSource": ubx.FieldSpec{WireName: "published_source"},
-}
+		"PublishState": ubx.FieldSpec{WireName: "publish_state"},
+		"PublishTime": ubx.FieldSpec{WireName: "publish_time"},
+		"PublishedAs": ubx.FieldSpec{WireName: "published_as"},
+		"PublishedSource": ubx.FieldSpec{WireName: "published_source"},
+	}
 
 type CustomConnectorVersionConfig struct {
 	// Optional. Indicates if Async Operations/Connector Job is supported. This is only available for SDK based custom connectors.
@@ -685,38 +685,38 @@ var CustomConnectorVersion = ubx.ResourceBinding{
 		"AsyncOperationsSupport": ubx.FieldSpec{WireName: "async_operations_support"},
 		"AuthConfig": ubx.FieldSpec{
 			WireName: "auth_config",
-			Kind:     "object",
-			Fields:   CustomConnectorVersion_AuthConfigFields,
+			Kind: "object",
+			Fields: CustomConnectorVersion_AuthConfigFields,
 		},
 		"AuthConfigTemplates": ubx.FieldSpec{
 			WireName: "auth_config_templates",
-			Kind:     "list",
-			Fields:   CustomConnectorVersion_AuthConfigTemplatesFields,
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplatesFields,
 		},
 		"AuthOverrideSupport": ubx.FieldSpec{WireName: "auth_override_support"},
 		"BackendVariableTemplates": ubx.FieldSpec{
 			WireName: "backend_variable_templates",
-			Kind:     "list",
-			Fields:   CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
+			Kind: "list",
+			Fields: CustomConnectorVersion_AuthConfigTemplates_ConfigVariableTemplatesFields,
 		},
 		"DestinationConfigs": ubx.FieldSpec{
 			WireName: "destination_configs",
-			Kind:     "list",
-			Fields:   CustomConnectorVersion_DestinationConfigsFields,
+			Kind: "list",
+			Fields: CustomConnectorVersion_DestinationConfigsFields,
 		},
 		"EnableBackendDestinationConfig": ubx.FieldSpec{WireName: "enable_backend_destination_config"},
-		"Labels":                         ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"PartnerMetadata": ubx.FieldSpec{
 			WireName: "partner_metadata",
-			Kind:     "object",
-			Fields:   CustomConnectorVersion_PartnerMetadataFields,
+			Kind: "object",
+			Fields: CustomConnectorVersion_PartnerMetadataFields,
 		},
 		"PublishStatus": ubx.FieldSpec{
 			WireName: "publish_status",
-			Kind:     "object",
-			Fields:   CustomConnectorVersion_PublishStatusFields,
+			Kind: "object",
+			Fields: CustomConnectorVersion_PublishStatusFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SpecLocation":   ubx.FieldSpec{WireName: "spec_location"},
+		"SpecLocation": ubx.FieldSpec{WireName: "spec_location"},
 	},
 }
