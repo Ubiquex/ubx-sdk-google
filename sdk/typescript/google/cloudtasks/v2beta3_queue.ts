@@ -234,7 +234,7 @@ const V2beta3Queue_StatsFields: FieldMap = {
 export interface V2beta3QueueConfig {
   /** App Engine HTTP queue. The task will be delivered to the App Engine application hostname specified by its AppEngineHttpQueue and AppEngineHttpRequest. The documentation for AppEngineHttpRequest explains how the task's host URL is constructed. Using AppEngineHttpQueue requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform` */
   appEngineHttpQueue?: V2beta3Queue_AppEngineHttpQueue | Computed<V2beta3Queue_AppEngineHttpQueue>;
-  /** HTTP target. When specified as a Queue, all the tasks with [HttpRequest] will be overridden according to the target. */
+  /** HTTP target. When specified at the Queue level, all tasks with HttpRequest are overridden according to the target. */
   httpTarget?: V2beta3Queue_HttpTarget | Computed<V2beta3Queue_HttpTarget>;
   /** Caller-specified and required in CreateQueue, after which it becomes output only. The queue name. The queue name must have the following format: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the queue's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or hyphens (-). The maximum length is 100 characters. */
   name?: string | Computed<string>;
@@ -261,7 +261,7 @@ export interface V2beta3QueueConfig {
 export interface V2beta3QueueAttrs {
   /** App Engine HTTP queue. The task will be delivered to the App Engine application hostname specified by its AppEngineHttpQueue and AppEngineHttpRequest. The documentation for AppEngineHttpRequest explains how the task's host URL is constructed. Using AppEngineHttpQueue requires [`appengine.applications.get`](https://cloud.google.com/appengine/docs/admin-api/access-control) Google IAM permission for the project and the following scope: `https://www.googleapis.com/auth/cloud-platform` */
   appEngineHttpQueue: V2beta3Queue_AppEngineHttpQueue;
-  /** HTTP target. When specified as a Queue, all the tasks with [HttpRequest] will be overridden according to the target. */
+  /** HTTP target. When specified at the Queue level, all tasks with HttpRequest are overridden according to the target. */
   httpTarget: V2beta3Queue_HttpTarget;
   /** Caller-specified and required in CreateQueue, after which it becomes output only. The queue name. The queue name must have the following format: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), or periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects) * `LOCATION_ID` is the canonical ID for the queue's location. The list of available locations can be obtained by calling ListLocations. For more information, see https://cloud.google.com/about/locations/. * `QUEUE_ID` can contain letters ([A-Za-z]), numbers ([0-9]), or hyphens (-). The maximum length is 100 characters. */
   name: string;

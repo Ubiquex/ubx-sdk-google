@@ -67,7 +67,7 @@ type Router_BgpPeers struct {
 	ImportPolicies any
 	// The name of the router interface the BGP peer is associated with. This must match the name of an existing interface on the same Compute Router. (AI-inferred)
 	InterfaceName any
-	IpAddress     any
+	IpAddress any
 	// The IPv4 address that this BGP peer uses as the next hop for advertised routes. (AI-inferred)
 	Ipv4NexthopAddress any
 	// The IPv6 address used as the next-hop for routes advertised to this BGP peer. If not specified, the default IPv6 next-hop (typically the interface's address) is used. (AI-inferred)
@@ -76,7 +76,7 @@ type Router_BgpPeers struct {
 	ManagementType any
 	// The name of the MD5 authentication key to use for this BGP peer. The key must be defined in the router's BGP configuration. (AI-inferred)
 	Md5AuthenticationKeyName any
-	Name                     any
+	Name any
 	// The autonomous system number (ASN) of the BGP peer. Required when configuring a BGP peer on a Compute Router. (AI-inferred)
 	PeerAsn any
 	// The IP address of the BGP peer that this router will establish a BGP session with. (AI-inferred)
@@ -99,7 +99,7 @@ type Router_Interfaces struct {
 	LinkedVpnTunnel any
 	// Indicates who manages this interface: MANAGED_BY_ATTACHMENT means the interface is managed by a VLAN attachment (Cloud Interconnect), while MANAGED_BY_USER means it is configured by the user. (AI-inferred)
 	ManagementType any
-	Name           any
+	Name any
 	// The private IP address of the Compute Router interface. (AI-inferred)
 	PrivateIpAddress any
 	// The name of another interface in the same router that serves as the redundancy pair for this interface. When set, this interface is configured as part of a redundant BGP session. (AI-inferred)
@@ -213,168 +213,168 @@ type Router_Params struct {
 }
 
 var Router_Bgp_AdvertisedIpRangesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Range":       ubx.FieldSpec{WireName: "range"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Range": ubx.FieldSpec{WireName: "range"},
+	}
 
 var Router_BgpFields = ubx.FieldMap{
-	"AdvertiseMode":    ubx.FieldSpec{WireName: "advertise_mode"},
-	"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
-	"AdvertisedIpRanges": ubx.FieldSpec{
-		WireName: "advertised_ip_ranges",
-		Kind:     "list",
-		Fields:   Router_Bgp_AdvertisedIpRangesFields,
-	},
-	"Asn":               ubx.FieldSpec{WireName: "asn"},
-	"IdentifierRange":   ubx.FieldSpec{WireName: "identifier_range"},
-	"KeepaliveInterval": ubx.FieldSpec{WireName: "keepalive_interval"},
-}
+		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
+		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
+		"AdvertisedIpRanges": ubx.FieldSpec{
+			WireName: "advertised_ip_ranges",
+			Kind: "list",
+			Fields: Router_Bgp_AdvertisedIpRangesFields,
+		},
+		"Asn": ubx.FieldSpec{WireName: "asn"},
+		"IdentifierRange": ubx.FieldSpec{WireName: "identifier_range"},
+		"KeepaliveInterval": ubx.FieldSpec{WireName: "keepalive_interval"},
+	}
 
 var Router_BgpPeers_BfdFields = ubx.FieldMap{
-	"MinReceiveInterval":        ubx.FieldSpec{WireName: "min_receive_interval"},
-	"MinTransmitInterval":       ubx.FieldSpec{WireName: "min_transmit_interval"},
-	"Multiplier":                ubx.FieldSpec{WireName: "multiplier"},
-	"SessionInitializationMode": ubx.FieldSpec{WireName: "session_initialization_mode"},
-}
+		"MinReceiveInterval": ubx.FieldSpec{WireName: "min_receive_interval"},
+		"MinTransmitInterval": ubx.FieldSpec{WireName: "min_transmit_interval"},
+		"Multiplier": ubx.FieldSpec{WireName: "multiplier"},
+		"SessionInitializationMode": ubx.FieldSpec{WireName: "session_initialization_mode"},
+	}
 
 var Router_BgpPeers_CustomLearnedIpRangesFields = ubx.FieldMap{
-	"Range": ubx.FieldSpec{WireName: "range"},
-}
+		"Range": ubx.FieldSpec{WireName: "range"},
+	}
 
 var Router_BgpPeersFields = ubx.FieldMap{
-	"AdvertiseMode":    ubx.FieldSpec{WireName: "advertise_mode"},
-	"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
-	"AdvertisedIpRanges": ubx.FieldSpec{
-		WireName: "advertised_ip_ranges",
-		Kind:     "list",
-		Fields:   Router_Bgp_AdvertisedIpRangesFields,
-	},
-	"AdvertisedRoutePriority": ubx.FieldSpec{WireName: "advertised_route_priority"},
-	"Bfd": ubx.FieldSpec{
-		WireName: "bfd",
-		Kind:     "object",
-		Fields:   Router_BgpPeers_BfdFields,
-	},
-	"CustomLearnedIpRanges": ubx.FieldSpec{
-		WireName: "custom_learned_ip_ranges",
-		Kind:     "list",
-		Fields:   Router_BgpPeers_CustomLearnedIpRangesFields,
-	},
-	"CustomLearnedRoutePriority": ubx.FieldSpec{WireName: "custom_learned_route_priority"},
-	"Enable":                     ubx.FieldSpec{WireName: "enable"},
-	"EnableIpv4":                 ubx.FieldSpec{WireName: "enable_ipv4"},
-	"EnableIpv6":                 ubx.FieldSpec{WireName: "enable_ipv6"},
-	"ExportPolicies":             ubx.FieldSpec{WireName: "export_policies"},
-	"ImportPolicies":             ubx.FieldSpec{WireName: "import_policies"},
-	"InterfaceName":              ubx.FieldSpec{WireName: "interface_name"},
-	"IpAddress":                  ubx.FieldSpec{WireName: "ip_address"},
-	"Ipv4NexthopAddress":         ubx.FieldSpec{WireName: "ipv4_nexthop_address"},
-	"Ipv6NexthopAddress":         ubx.FieldSpec{WireName: "ipv6_nexthop_address"},
-	"ManagementType":             ubx.FieldSpec{WireName: "management_type"},
-	"Md5AuthenticationKeyName":   ubx.FieldSpec{WireName: "md5_authentication_key_name"},
-	"Name":                       ubx.FieldSpec{WireName: "name"},
-	"PeerAsn":                    ubx.FieldSpec{WireName: "peer_asn"},
-	"PeerIpAddress":              ubx.FieldSpec{WireName: "peer_ip_address"},
-	"PeerIpv4NexthopAddress":     ubx.FieldSpec{WireName: "peer_ipv4_nexthop_address"},
-	"PeerIpv6NexthopAddress":     ubx.FieldSpec{WireName: "peer_ipv6_nexthop_address"},
-	"RouterApplianceInstance":    ubx.FieldSpec{WireName: "router_appliance_instance"},
-}
+		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
+		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
+		"AdvertisedIpRanges": ubx.FieldSpec{
+			WireName: "advertised_ip_ranges",
+			Kind: "list",
+			Fields: Router_Bgp_AdvertisedIpRangesFields,
+		},
+		"AdvertisedRoutePriority": ubx.FieldSpec{WireName: "advertised_route_priority"},
+		"Bfd": ubx.FieldSpec{
+			WireName: "bfd",
+			Kind: "object",
+			Fields: Router_BgpPeers_BfdFields,
+		},
+		"CustomLearnedIpRanges": ubx.FieldSpec{
+			WireName: "custom_learned_ip_ranges",
+			Kind: "list",
+			Fields: Router_BgpPeers_CustomLearnedIpRangesFields,
+		},
+		"CustomLearnedRoutePriority": ubx.FieldSpec{WireName: "custom_learned_route_priority"},
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"EnableIpv4": ubx.FieldSpec{WireName: "enable_ipv4"},
+		"EnableIpv6": ubx.FieldSpec{WireName: "enable_ipv6"},
+		"ExportPolicies": ubx.FieldSpec{WireName: "export_policies"},
+		"ImportPolicies": ubx.FieldSpec{WireName: "import_policies"},
+		"InterfaceName": ubx.FieldSpec{WireName: "interface_name"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Ipv4NexthopAddress": ubx.FieldSpec{WireName: "ipv4_nexthop_address"},
+		"Ipv6NexthopAddress": ubx.FieldSpec{WireName: "ipv6_nexthop_address"},
+		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
+		"Md5AuthenticationKeyName": ubx.FieldSpec{WireName: "md5_authentication_key_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
+		"PeerIpAddress": ubx.FieldSpec{WireName: "peer_ip_address"},
+		"PeerIpv4NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv4_nexthop_address"},
+		"PeerIpv6NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv6_nexthop_address"},
+		"RouterApplianceInstance": ubx.FieldSpec{WireName: "router_appliance_instance"},
+	}
 
 var Router_InterfacesFields = ubx.FieldMap{
-	"IpRange":                      ubx.FieldSpec{WireName: "ip_range"},
-	"IpVersion":                    ubx.FieldSpec{WireName: "ip_version"},
-	"LinkedInterconnectAttachment": ubx.FieldSpec{WireName: "linked_interconnect_attachment"},
-	"LinkedVpnTunnel":              ubx.FieldSpec{WireName: "linked_vpn_tunnel"},
-	"ManagementType":               ubx.FieldSpec{WireName: "management_type"},
-	"Name":                         ubx.FieldSpec{WireName: "name"},
-	"PrivateIpAddress":             ubx.FieldSpec{WireName: "private_ip_address"},
-	"RedundantInterface":           ubx.FieldSpec{WireName: "redundant_interface"},
-	"Subnetwork":                   ubx.FieldSpec{WireName: "subnetwork"},
-}
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
+		"LinkedInterconnectAttachment": ubx.FieldSpec{WireName: "linked_interconnect_attachment"},
+		"LinkedVpnTunnel": ubx.FieldSpec{WireName: "linked_vpn_tunnel"},
+		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+		"RedundantInterface": ubx.FieldSpec{WireName: "redundant_interface"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	}
 
 var Router_Md5AuthenticationKeysFields = ubx.FieldMap{
-	"Key":  ubx.FieldSpec{WireName: "key"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var Router_Nats_LogConfigFields = ubx.FieldMap{
-	"Enable": ubx.FieldSpec{WireName: "enable"},
-	"Filter": ubx.FieldSpec{WireName: "filter"},
-}
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
 
 var Router_Nats_Nat64SubnetworksFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var Router_Nats_Rules_ActionFields = ubx.FieldMap{
-	"SourceNatActiveIps":    ubx.FieldSpec{WireName: "source_nat_active_ips"},
-	"SourceNatActiveRanges": ubx.FieldSpec{WireName: "source_nat_active_ranges"},
-	"SourceNatDrainIps":     ubx.FieldSpec{WireName: "source_nat_drain_ips"},
-	"SourceNatDrainRanges":  ubx.FieldSpec{WireName: "source_nat_drain_ranges"},
-}
+		"SourceNatActiveIps": ubx.FieldSpec{WireName: "source_nat_active_ips"},
+		"SourceNatActiveRanges": ubx.FieldSpec{WireName: "source_nat_active_ranges"},
+		"SourceNatDrainIps": ubx.FieldSpec{WireName: "source_nat_drain_ips"},
+		"SourceNatDrainRanges": ubx.FieldSpec{WireName: "source_nat_drain_ranges"},
+	}
 
 var Router_Nats_RulesFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{
-		WireName: "action",
-		Kind:     "object",
-		Fields:   Router_Nats_Rules_ActionFields,
-	},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Match":       ubx.FieldSpec{WireName: "match"},
-	"RuleNumber":  ubx.FieldSpec{WireName: "rule_number"},
-}
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: Router_Nats_Rules_ActionFields,
+		},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Match": ubx.FieldSpec{WireName: "match"},
+		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
+	}
 
 var Router_Nats_SubnetworksFields = ubx.FieldMap{
-	"Name":                  ubx.FieldSpec{WireName: "name"},
-	"SecondaryIpRangeNames": ubx.FieldSpec{WireName: "secondary_ip_range_names"},
-	"SourceIpRangesToNat":   ubx.FieldSpec{WireName: "source_ip_ranges_to_nat"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SecondaryIpRangeNames": ubx.FieldSpec{WireName: "secondary_ip_range_names"},
+		"SourceIpRangesToNat": ubx.FieldSpec{WireName: "source_ip_ranges_to_nat"},
+	}
 
 var Router_NatsFields = ubx.FieldMap{
-	"AutoNetworkTier":                  ubx.FieldSpec{WireName: "auto_network_tier"},
-	"DrainNatIps":                      ubx.FieldSpec{WireName: "drain_nat_ips"},
-	"EffectiveTcpTimeWaitTimeoutSec":   ubx.FieldSpec{WireName: "effective_tcp_time_wait_timeout_sec"},
-	"EnableDynamicPortAllocation":      ubx.FieldSpec{WireName: "enable_dynamic_port_allocation"},
-	"EnableEndpointIndependentMapping": ubx.FieldSpec{WireName: "enable_endpoint_independent_mapping"},
-	"EndpointTypes":                    ubx.FieldSpec{WireName: "endpoint_types"},
-	"IcmpIdleTimeoutSec":               ubx.FieldSpec{WireName: "icmp_idle_timeout_sec"},
-	"LogConfig": ubx.FieldSpec{
-		WireName: "log_config",
-		Kind:     "object",
-		Fields:   Router_Nats_LogConfigFields,
-	},
-	"MaxPortsPerVm": ubx.FieldSpec{WireName: "max_ports_per_vm"},
-	"MinPortsPerVm": ubx.FieldSpec{WireName: "min_ports_per_vm"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-	"Nat64Subnetworks": ubx.FieldSpec{
-		WireName: "nat64_subnetworks",
-		Kind:     "list",
-		Fields:   Router_Nats_Nat64SubnetworksFields,
-	},
-	"NatIpAllocateOption": ubx.FieldSpec{WireName: "nat_ip_allocate_option"},
-	"NatIps":              ubx.FieldSpec{WireName: "nat_ips"},
-	"Rules": ubx.FieldSpec{
-		WireName: "rules",
-		Kind:     "list",
-		Fields:   Router_Nats_RulesFields,
-	},
-	"SourceSubnetworkIpRangesToNat":   ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat"},
-	"SourceSubnetworkIpRangesToNat64": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat64"},
-	"Subnetworks": ubx.FieldSpec{
-		WireName: "subnetworks",
-		Kind:     "list",
-		Fields:   Router_Nats_SubnetworksFields,
-	},
-	"TcpEstablishedIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_established_idle_timeout_sec"},
-	"TcpTimeWaitTimeoutSec":        ubx.FieldSpec{WireName: "tcp_time_wait_timeout_sec"},
-	"TcpTransitoryIdleTimeoutSec":  ubx.FieldSpec{WireName: "tcp_transitory_idle_timeout_sec"},
-	"Type":                         ubx.FieldSpec{WireName: "type"},
-	"UdpIdleTimeoutSec":            ubx.FieldSpec{WireName: "udp_idle_timeout_sec"},
-}
+		"AutoNetworkTier": ubx.FieldSpec{WireName: "auto_network_tier"},
+		"DrainNatIps": ubx.FieldSpec{WireName: "drain_nat_ips"},
+		"EffectiveTcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "effective_tcp_time_wait_timeout_sec"},
+		"EnableDynamicPortAllocation": ubx.FieldSpec{WireName: "enable_dynamic_port_allocation"},
+		"EnableEndpointIndependentMapping": ubx.FieldSpec{WireName: "enable_endpoint_independent_mapping"},
+		"EndpointTypes": ubx.FieldSpec{WireName: "endpoint_types"},
+		"IcmpIdleTimeoutSec": ubx.FieldSpec{WireName: "icmp_idle_timeout_sec"},
+		"LogConfig": ubx.FieldSpec{
+			WireName: "log_config",
+			Kind: "object",
+			Fields: Router_Nats_LogConfigFields,
+		},
+		"MaxPortsPerVm": ubx.FieldSpec{WireName: "max_ports_per_vm"},
+		"MinPortsPerVm": ubx.FieldSpec{WireName: "min_ports_per_vm"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Nat64Subnetworks": ubx.FieldSpec{
+			WireName: "nat64_subnetworks",
+			Kind: "list",
+			Fields: Router_Nats_Nat64SubnetworksFields,
+		},
+		"NatIpAllocateOption": ubx.FieldSpec{WireName: "nat_ip_allocate_option"},
+		"NatIps": ubx.FieldSpec{WireName: "nat_ips"},
+		"Rules": ubx.FieldSpec{
+			WireName: "rules",
+			Kind: "list",
+			Fields: Router_Nats_RulesFields,
+		},
+		"SourceSubnetworkIpRangesToNat": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat"},
+		"SourceSubnetworkIpRangesToNat64": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat64"},
+		"Subnetworks": ubx.FieldSpec{
+			WireName: "subnetworks",
+			Kind: "list",
+			Fields: Router_Nats_SubnetworksFields,
+		},
+		"TcpEstablishedIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_established_idle_timeout_sec"},
+		"TcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "tcp_time_wait_timeout_sec"},
+		"TcpTransitoryIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_transitory_idle_timeout_sec"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"UdpIdleTimeoutSec": ubx.FieldSpec{WireName: "udp_idle_timeout_sec"},
+	}
 
 var Router_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type RouterConfig struct {
 	// BGP configuration for the Cloud Router, including the autonomous system number (ASN), advertised route settings, and other BGP parameters. This field is optional when creating a router and is computed by the provider when not explicitly set. (AI-inferred)
@@ -447,41 +447,41 @@ var Router = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Bgp": ubx.FieldSpec{
 			WireName: "bgp",
-			Kind:     "object",
-			Fields:   Router_BgpFields,
+			Kind: "object",
+			Fields: Router_BgpFields,
 		},
 		"BgpPeers": ubx.FieldSpec{
 			WireName: "bgp_peers",
-			Kind:     "list",
-			Fields:   Router_BgpPeersFields,
+			Kind: "list",
+			Fields: Router_BgpPeersFields,
 		},
-		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptedInterconnectRouter": ubx.FieldSpec{WireName: "encrypted_interconnect_router"},
-		"Id":                          ubx.FieldSpec{WireName: "id"},
+		"Id": ubx.FieldSpec{WireName: "id"},
 		"Interfaces": ubx.FieldSpec{
 			WireName: "interfaces",
-			Kind:     "list",
-			Fields:   Router_InterfacesFields,
+			Kind: "list",
+			Fields: Router_InterfacesFields,
 		},
 		"Md5AuthenticationKeys": ubx.FieldSpec{
 			WireName: "md5_authentication_keys",
-			Kind:     "list",
-			Fields:   Router_Md5AuthenticationKeysFields,
+			Kind: "list",
+			Fields: Router_Md5AuthenticationKeysFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Nats": ubx.FieldSpec{
 			WireName: "nats",
-			Kind:     "list",
-			Fields:   Router_NatsFields,
+			Kind: "list",
+			Fields: Router_NatsFields,
 		},
 		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"Network":    ubx.FieldSpec{WireName: "network"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   Router_ParamsFields,
+			Kind: "object",
+			Fields: Router_ParamsFields,
 		},
-		"Region":   ubx.FieldSpec{WireName: "region"},
+		"Region": ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

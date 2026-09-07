@@ -38,10 +38,10 @@ type MeshAttrs struct {
 var Mesh = ubx.ResourceBinding{
 	WireType: "google_networkservices_mesh",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"EnvoyHeaders":     ubx.FieldSpec{WireName: "envoy_headers"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnvoyHeaders": ubx.FieldSpec{WireName: "envoy_headers"},
 		"InterceptionPort": ubx.FieldSpec{WireName: "interception_port"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

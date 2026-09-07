@@ -6,6 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TlsInspectionPolicyConfig struct {
 	// Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
 	CaPool any
+	// Optional. The mode used to issue certificates (local CA signing vs direct leaf).
+	CertificateIssuanceMode any
 	// Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
 	CustomTlsFeatures any
 	// Optional. Free-text description of the resource.
@@ -25,6 +27,8 @@ type TlsInspectionPolicyConfig struct {
 type TlsInspectionPolicyAttrs struct {
 	// Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
 	CaPool any
+	// Optional. The mode used to issue certificates (local CA signing vs direct leaf).
+	CertificateIssuanceMode any
 	// Output only. The timestamp when the resource was created.
 	CreateTime any
 	// Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
@@ -48,13 +52,14 @@ type TlsInspectionPolicyAttrs struct {
 var TlsInspectionPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_tls_inspection_policy",
 	Fields: ubx.FieldMap{
-		"CaPool":             ubx.FieldSpec{WireName: "ca_pool"},
-		"CustomTlsFeatures":  ubx.FieldSpec{WireName: "custom_tls_features"},
-		"Description":        ubx.FieldSpec{WireName: "description"},
+		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+		"CertificateIssuanceMode": ubx.FieldSpec{WireName: "certificate_issuance_mode"},
+		"CustomTlsFeatures": ubx.FieldSpec{WireName: "custom_tls_features"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExcludePublicCaSet": ubx.FieldSpec{WireName: "exclude_public_ca_set"},
-		"MinTlsVersion":      ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
-		"TlsFeatureProfile":  ubx.FieldSpec{WireName: "tls_feature_profile"},
-		"TrustConfig":        ubx.FieldSpec{WireName: "trust_config"},
+		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TlsFeatureProfile": ubx.FieldSpec{WireName: "tls_feature_profile"},
+		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
 	},
 }

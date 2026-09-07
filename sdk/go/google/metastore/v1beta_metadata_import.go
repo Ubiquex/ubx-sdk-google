@@ -15,11 +15,11 @@ type V1betaMetadataImport_DatabaseDump struct {
 }
 
 var V1betaMetadataImport_DatabaseDumpFields = ubx.FieldMap{
-	"DatabaseType":   ubx.FieldSpec{WireName: "database_type"},
-	"GcsUri":         ubx.FieldSpec{WireName: "gcs_uri"},
-	"SourceDatabase": ubx.FieldSpec{WireName: "source_database"},
-	"Type":           ubx.FieldSpec{WireName: "type"},
-}
+		"DatabaseType": ubx.FieldSpec{WireName: "database_type"},
+		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
+		"SourceDatabase": ubx.FieldSpec{WireName: "source_database"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type V1betaMetadataImportConfig struct {
 	// A specification of the location of and metadata about a database dump from a relational database management system.
@@ -52,10 +52,10 @@ var V1betaMetadataImport = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DatabaseDump": ubx.FieldSpec{
 			WireName: "database_dump",
-			Kind:     "object",
-			Fields:   V1betaMetadataImport_DatabaseDumpFields,
+			Kind: "object",
+			Fields: V1betaMetadataImport_DatabaseDumpFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

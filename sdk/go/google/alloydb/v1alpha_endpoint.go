@@ -11,9 +11,9 @@ type V1alphaEndpoint_DnsConfig struct {
 }
 
 var V1alphaEndpoint_DnsConfigFields = ubx.FieldMap{
-	"DnsName":       ubx.FieldSpec{WireName: "dns_name"},
-	"DnsRecordType": ubx.FieldSpec{WireName: "dns_record_type"},
-}
+		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
+		"DnsRecordType": ubx.FieldSpec{WireName: "dns_record_type"},
+	}
 
 type V1alphaEndpointConfig struct {
 	// Annotations to allow client tools to store small amount of arbitrary data. This is distinct from labels. https://google.aip.dev/128
@@ -68,11 +68,11 @@ var V1alphaEndpoint = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DnsConfig": ubx.FieldSpec{
 			WireName: "dns_config",
-			Kind:     "object",
-			Fields:   V1alphaEndpoint_DnsConfigFields,
+			Kind: "object",
+			Fields: V1alphaEndpoint_DnsConfigFields,
 		},
-		"EndpointType":    ubx.FieldSpec{WireName: "endpoint_type"},
-		"Etag":            ubx.FieldSpec{WireName: "etag"},
+		"EndpointType": ubx.FieldSpec{WireName: "endpoint_type"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"TargetInstances": ubx.FieldSpec{WireName: "target_instances"},
 	},
 }

@@ -9,113 +9,113 @@ type V2beta1Environment_Fulfillment_Features struct {
 
 type V2beta1Environment_Fulfillment_GenericWebService struct {
 	IsCloudFunction any
-	Password        any
-	RequestHeaders  any
-	Uri             any
-	Username        any
+	Password any
+	RequestHeaders any
+	Uri any
+	Username any
 }
 
 type V2beta1Environment_Fulfillment struct {
-	DisplayName       any
-	Enabled           any
-	Features          any
+	DisplayName any
+	Enabled any
+	Features any
 	GenericWebService any
-	Name              any
+	Name any
 }
 
 type V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_Pronunciations struct {
 	PhoneticEncoding any
-	Phrase           any
-	Pronunciation    any
+	Phrase any
+	Pronunciation any
 }
 
 type V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_Voice struct {
-	Name       any
+	Name any
 	SsmlGender any
 }
 
 type V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs struct {
 	EffectsProfileId any
-	Pitch            any
-	Pronunciations   any
-	SpeakingRate     any
-	Voice            any
-	VolumeGainDb     any
+	Pitch any
+	Pronunciations any
+	SpeakingRate any
+	Voice any
+	VolumeGainDb any
 }
 
 type V2beta1Environment_TextToSpeechSettings struct {
-	EnableTextToSpeech      any
-	OutputAudioEncoding     any
-	SampleRateHertz         any
+	EnableTextToSpeech any
+	OutputAudioEncoding any
+	SampleRateHertz any
 	SynthesizeSpeechConfigs any
 }
 
 var V2beta1Environment_Fulfillment_FeaturesFields = ubx.FieldMap{
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V2beta1Environment_Fulfillment_GenericWebServiceFields = ubx.FieldMap{
-	"IsCloudFunction": ubx.FieldSpec{WireName: "is_cloud_function"},
-	"Password":        ubx.FieldSpec{WireName: "password"},
-	"RequestHeaders":  ubx.FieldSpec{WireName: "request_headers"},
-	"Uri":             ubx.FieldSpec{WireName: "uri"},
-	"Username":        ubx.FieldSpec{WireName: "username"},
-}
+		"IsCloudFunction": ubx.FieldSpec{WireName: "is_cloud_function"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"RequestHeaders": ubx.FieldSpec{WireName: "request_headers"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var V2beta1Environment_FulfillmentFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
-	"Features": ubx.FieldSpec{
-		WireName: "features",
-		Kind:     "list",
-		Fields:   V2beta1Environment_Fulfillment_FeaturesFields,
-	},
-	"GenericWebService": ubx.FieldSpec{
-		WireName: "generic_web_service",
-		Kind:     "object",
-		Fields:   V2beta1Environment_Fulfillment_GenericWebServiceFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Features": ubx.FieldSpec{
+			WireName: "features",
+			Kind: "list",
+			Fields: V2beta1Environment_Fulfillment_FeaturesFields,
+		},
+		"GenericWebService": ubx.FieldSpec{
+			WireName: "generic_web_service",
+			Kind: "object",
+			Fields: V2beta1Environment_Fulfillment_GenericWebServiceFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_PronunciationsFields = ubx.FieldMap{
-	"PhoneticEncoding": ubx.FieldSpec{WireName: "phonetic_encoding"},
-	"Phrase":           ubx.FieldSpec{WireName: "phrase"},
-	"Pronunciation":    ubx.FieldSpec{WireName: "pronunciation"},
-}
+		"PhoneticEncoding": ubx.FieldSpec{WireName: "phonetic_encoding"},
+		"Phrase": ubx.FieldSpec{WireName: "phrase"},
+		"Pronunciation": ubx.FieldSpec{WireName: "pronunciation"},
+	}
 
 var V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields = ubx.FieldMap{
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"SsmlGender": ubx.FieldSpec{WireName: "ssml_gender"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SsmlGender": ubx.FieldSpec{WireName: "ssml_gender"},
+	}
 
 var V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigsFields = ubx.FieldMap{
-	"EffectsProfileId": ubx.FieldSpec{WireName: "effects_profile_id"},
-	"Pitch":            ubx.FieldSpec{WireName: "pitch"},
-	"Pronunciations": ubx.FieldSpec{
-		WireName: "pronunciations",
-		Kind:     "list",
-		Fields:   V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_PronunciationsFields,
-	},
-	"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-	"Voice": ubx.FieldSpec{
-		WireName: "voice",
-		Kind:     "object",
-		Fields:   V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields,
-	},
-	"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
-}
+		"EffectsProfileId": ubx.FieldSpec{WireName: "effects_profile_id"},
+		"Pitch": ubx.FieldSpec{WireName: "pitch"},
+		"Pronunciations": ubx.FieldSpec{
+			WireName: "pronunciations",
+			Kind: "list",
+			Fields: V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_PronunciationsFields,
+		},
+		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
+		"Voice": ubx.FieldSpec{
+			WireName: "voice",
+			Kind: "object",
+			Fields: V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields,
+		},
+		"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
+	}
 
 var V2beta1Environment_TextToSpeechSettingsFields = ubx.FieldMap{
-	"EnableTextToSpeech":  ubx.FieldSpec{WireName: "enable_text_to_speech"},
-	"OutputAudioEncoding": ubx.FieldSpec{WireName: "output_audio_encoding"},
-	"SampleRateHertz":     ubx.FieldSpec{WireName: "sample_rate_hertz"},
-	"SynthesizeSpeechConfigs": ubx.FieldSpec{
-		WireName: "synthesize_speech_configs",
-		Kind:     "map",
-		Fields:   V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigsFields,
-	},
-}
+		"EnableTextToSpeech": ubx.FieldSpec{WireName: "enable_text_to_speech"},
+		"OutputAudioEncoding": ubx.FieldSpec{WireName: "output_audio_encoding"},
+		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
+		"SynthesizeSpeechConfigs": ubx.FieldSpec{
+			WireName: "synthesize_speech_configs",
+			Kind: "map",
+			Fields: V2beta1Environment_TextToSpeechSettings_SynthesizeSpeechConfigsFields,
+		},
+	}
 
 type V2beta1EnvironmentConfig struct {
 	// The real version of the agent this evaluation was run against. (AI-inferred)
@@ -149,16 +149,16 @@ var V2beta1Environment = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_environment",
 	Fields: ubx.FieldMap{
 		"AgentVersion": ubx.FieldSpec{WireName: "agent_version"},
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fulfillment": ubx.FieldSpec{
 			WireName: "fulfillment",
-			Kind:     "object",
-			Fields:   V2beta1Environment_FulfillmentFields,
+			Kind: "object",
+			Fields: V2beta1Environment_FulfillmentFields,
 		},
 		"TextToSpeechSettings": ubx.FieldSpec{
 			WireName: "text_to_speech_settings",
-			Kind:     "object",
-			Fields:   V2beta1Environment_TextToSpeechSettingsFields,
+			Kind: "object",
+			Fields: V2beta1Environment_TextToSpeechSettingsFields,
 		},
 	},
 }

@@ -22,20 +22,20 @@ type ApiHubInstance_Config struct {
 }
 
 var ApiHubInstance_Config_AgentRegistrySyncConfigFields = ubx.FieldMap{
-	"Disabled": ubx.FieldSpec{WireName: "disabled"},
-}
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	}
 
 var ApiHubInstance_ConfigFields = ubx.FieldMap{
-	"AgentRegistrySyncConfig": ubx.FieldSpec{
-		WireName: "agent_registry_sync_config",
-		Kind:     "object",
-		Fields:   ApiHubInstance_Config_AgentRegistrySyncConfigFields,
-	},
-	"CmekKeyName":    ubx.FieldSpec{WireName: "cmek_key_name"},
-	"DisableSearch":  ubx.FieldSpec{WireName: "disable_search"},
-	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-	"VertexLocation": ubx.FieldSpec{WireName: "vertex_location"},
-}
+		"AgentRegistrySyncConfig": ubx.FieldSpec{
+			WireName: "agent_registry_sync_config",
+			Kind: "object",
+			Fields: ApiHubInstance_Config_AgentRegistrySyncConfigFields,
+		},
+		"CmekKeyName": ubx.FieldSpec{WireName: "cmek_key_name"},
+		"DisableSearch": ubx.FieldSpec{WireName: "disable_search"},
+		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+		"VertexLocation": ubx.FieldSpec{WireName: "vertex_location"},
+	}
 
 type ApiHubInstanceConfig struct {
 	// Available configurations to provision an ApiHub Instance.
@@ -72,11 +72,11 @@ var ApiHubInstance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   ApiHubInstance_ConfigFields,
+			Kind: "object",
+			Fields: ApiHubInstance_ConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -35,8 +35,8 @@ var OdbNetwork = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_odb_network",
 	Fields: ubx.FieldMap{
 		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"Network":       ubx.FieldSpec{WireName: "network"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 	},
 }

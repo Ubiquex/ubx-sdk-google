@@ -13,10 +13,10 @@ type ExternalAccessRule_DestinationIpRanges struct {
 }
 
 var ExternalAccessRule_DestinationIpRangesFields = ubx.FieldMap{
-	"ExternalAddress": ubx.FieldSpec{WireName: "external_address"},
-	"IpAddress":       ubx.FieldSpec{WireName: "ip_address"},
-	"IpAddressRange":  ubx.FieldSpec{WireName: "ip_address_range"},
-}
+		"ExternalAddress": ubx.FieldSpec{WireName: "external_address"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"IpAddressRange": ubx.FieldSpec{WireName: "ip_address_range"},
+	}
 
 type ExternalAccessRuleConfig struct {
 	// The action that the external access rule performs.
@@ -69,20 +69,20 @@ type ExternalAccessRuleAttrs struct {
 var ExternalAccessRule = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_external_access_rule",
 	Fields: ubx.FieldMap{
-		"Action":      ubx.FieldSpec{WireName: "action"},
+		"Action": ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationIpRanges": ubx.FieldSpec{
 			WireName: "destination_ip_ranges",
-			Kind:     "list",
-			Fields:   ExternalAccessRule_DestinationIpRangesFields,
+			Kind: "list",
+			Fields: ExternalAccessRule_DestinationIpRangesFields,
 		},
 		"DestinationPorts": ubx.FieldSpec{WireName: "destination_ports"},
-		"IpProtocol":       ubx.FieldSpec{WireName: "ip_protocol"},
-		"Priority":         ubx.FieldSpec{WireName: "priority"},
+		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"SourceIpRanges": ubx.FieldSpec{
 			WireName: "source_ip_ranges",
-			Kind:     "list",
-			Fields:   ExternalAccessRule_DestinationIpRangesFields,
+			Kind: "list",
+			Fields: ExternalAccessRule_DestinationIpRangesFields,
 		},
 		"SourcePorts": ubx.FieldSpec{WireName: "source_ports"},
 	},

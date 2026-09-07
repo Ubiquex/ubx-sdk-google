@@ -2,6 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BetaInstanceGroupManager_AllInstancesConfig_Properties {
+  /** This optional flag exposes the hashed physical host ID. */
+  exposeHostTopology?: boolean | Computed<boolean>;
   /** The label key-value pairs that you want to patch onto the instance. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The metadata key-value pairs that you want to patch onto the instance. For more information, see Project and instance metadata. */
@@ -385,6 +387,7 @@ export interface BetaInstanceGroupManager_Versions {
 }
 
 const BetaInstanceGroupManager_AllInstancesConfig_PropertiesFields: FieldMap = {
+  exposeHostTopology: "expose_host_topology",
   labels: "labels",
   metadata: "metadata",
 };

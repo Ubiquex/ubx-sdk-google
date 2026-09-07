@@ -61,7 +61,7 @@ export interface Key_WebSettings {
   allowAmpTraffic?: boolean | Computed<boolean>;
   /** Optional. Domains or subdomains of websites allowed to use the key. All subdomains of an allowed domain are automatically allowed. A valid domain requires a host and must not include any path, port, query or fragment. Examples: 'example.com' or 'subdomain.example.com' Each key supports a maximum of 250 domains. To use a key on more domains, set `allow_all_domains` to true. When this is set, you are responsible for validating the hostname by checking the `token_properties.hostname` field in each assessment response against your list of allowed domains. */
   allowedDomains?: string[] | Computed<string[]>;
-  /** Optional. Settings for the frequency and difficulty at which this key triggers captcha challenges. This should only be specified for `IntegrationType` CHECKBOX, INVISIBLE or POLICY_BASED_CHALLENGE. */
+  /** Optional. Settings for the frequency and difficulty at which this key triggers captcha challenges. This should only be specified for `IntegrationType` CHECKBOX (defaults to BALANCE), INVISIBLE (defaults to USABILITY), or POLICY_BASED_CHALLENGE (defaults to USABILITY). */
   challengeSecurityPreference?: string | Computed<string>;
   /** Settings for POLICY_BASED_CHALLENGE keys to control when a challenge is triggered. */
   challengeSettings?: Key_WebSettings_ChallengeSettings | Computed<Key_WebSettings_ChallengeSettings>;

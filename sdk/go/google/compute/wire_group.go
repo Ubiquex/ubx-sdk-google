@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WireGroup_Endpoints_Interconnects struct {
 	Interconnect any
-	VlanTags     any
+	VlanTags any
 }
 
 type WireGroup_Endpoints struct {
@@ -13,7 +13,7 @@ type WireGroup_Endpoints struct {
 }
 
 type WireGroup_Topology_Endpoints struct {
-	City  any
+	City any
 	Label any
 }
 
@@ -34,47 +34,47 @@ type WireGroup_WireProperties struct {
 type WireGroup_Wires_Endpoints struct {
 	// The URL of the Compute Engine interconnect used by this endpoint. (AI-inferred)
 	Interconnect any
-	VlanTag      any
+	VlanTag any
 }
 
 type WireGroup_Wires struct {
-	AdminEnabled   any
-	Endpoints      any
-	Label          any
+	AdminEnabled any
+	Endpoints any
+	Label any
 	WireProperties any
 }
 
 var WireGroup_Endpoints_InterconnectsFields = ubx.FieldMap{
-	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-	"VlanTags":     ubx.FieldSpec{WireName: "vlan_tags"},
-}
+		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+		"VlanTags": ubx.FieldSpec{WireName: "vlan_tags"},
+	}
 
 var WireGroup_EndpointsFields = ubx.FieldMap{
-	"Interconnects": ubx.FieldSpec{
-		WireName: "interconnects",
-		Kind:     "map",
-		Fields:   WireGroup_Endpoints_InterconnectsFields,
-	},
-}
+		"Interconnects": ubx.FieldSpec{
+			WireName: "interconnects",
+			Kind: "map",
+			Fields: WireGroup_Endpoints_InterconnectsFields,
+		},
+	}
 
 var WireGroup_Topology_EndpointsFields = ubx.FieldMap{
-	"City":  ubx.FieldSpec{WireName: "city"},
-	"Label": ubx.FieldSpec{WireName: "label"},
-}
+		"City": ubx.FieldSpec{WireName: "city"},
+		"Label": ubx.FieldSpec{WireName: "label"},
+	}
 
 var WireGroup_TopologyFields = ubx.FieldMap{
-	"Endpoints": ubx.FieldSpec{
-		WireName: "endpoints",
-		Kind:     "list",
-		Fields:   WireGroup_Topology_EndpointsFields,
-	},
-}
+		"Endpoints": ubx.FieldSpec{
+			WireName: "endpoints",
+			Kind: "list",
+			Fields: WireGroup_Topology_EndpointsFields,
+		},
+	}
 
 var WireGroup_WirePropertiesFields = ubx.FieldMap{
-	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-	"BandwidthUnmetered":  ubx.FieldSpec{WireName: "bandwidth_unmetered"},
-	"FaultResponse":       ubx.FieldSpec{WireName: "fault_response"},
-}
+		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+		"BandwidthUnmetered": ubx.FieldSpec{WireName: "bandwidth_unmetered"},
+		"FaultResponse": ubx.FieldSpec{WireName: "fault_response"},
+	}
 
 type WireGroupConfig struct {
 	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
@@ -122,22 +122,22 @@ var WireGroup = ubx.ResourceBinding{
 	WireType: "google_compute_wire_group",
 	Fields: ubx.FieldMap{
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind:     "map",
-			Fields:   WireGroup_EndpointsFields,
+			Kind: "map",
+			Fields: WireGroup_EndpointsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Topology": ubx.FieldSpec{
 			WireName: "topology",
-			Kind:     "object",
-			Fields:   WireGroup_TopologyFields,
+			Kind: "object",
+			Fields: WireGroup_TopologyFields,
 		},
 		"WireProperties": ubx.FieldSpec{
 			WireName: "wire_properties",
-			Kind:     "object",
-			Fields:   WireGroup_WirePropertiesFields,
+			Kind: "object",
+			Fields: WireGroup_WirePropertiesFields,
 		},
 	},
 }

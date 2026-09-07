@@ -43,9 +43,9 @@ var V1beta1Repository = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_v1beta1_repository",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Format":      ubx.FieldSpec{WireName: "format"},
-		"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

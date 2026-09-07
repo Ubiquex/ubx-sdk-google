@@ -26,7 +26,7 @@ type LogScopeAttrs struct {
 var LogScope = ubx.ResourceBinding{
 	WireType: "google_logging_log_scope",
 	Fields: ubx.FieldMap{
-		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
 	},
 }

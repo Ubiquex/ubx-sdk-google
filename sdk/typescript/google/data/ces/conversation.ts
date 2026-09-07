@@ -11,22 +11,32 @@ export interface Conversation_Messages_Chunks_Blob {
   mimeType?: string | Computed<string>;
 }
 
+export interface Conversation_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface Conversation_Messages_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
 }
 
 export interface Conversation_Messages_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   tool?: string | Computed<string>;
   toolsetTool?: Conversation_Messages_Chunks_ToolCall_ToolsetTool | Computed<Conversation_Messages_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface Conversation_Messages_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   tool?: string | Computed<string>;
   toolsetTool?: Conversation_Messages_Chunks_ToolCall_ToolsetTool | Computed<Conversation_Messages_Chunks_ToolCall_ToolsetTool>;
@@ -36,7 +46,7 @@ export interface Conversation_Messages_Chunks {
   agentTransfer?: Conversation_Messages_Chunks_AgentTransfer | Computed<Conversation_Messages_Chunks_AgentTransfer>;
   blob?: Conversation_Messages_Chunks_Blob | Computed<Conversation_Messages_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: Conversation_Messages_Chunks_Blob | Computed<Conversation_Messages_Chunks_Blob>;
+  image?: Conversation_Messages_Chunks_Image | Computed<Conversation_Messages_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: Conversation_Messages_Chunks_ToolCall | Computed<Conversation_Messages_Chunks_ToolCall>;
@@ -62,15 +72,12 @@ export interface Conversation_Turns_RootSpan {
 
 export interface Conversation_Turns {
   messages?: Conversation_Messages[] | Computed<Conversation_Messages[]>;
-  resolvedDeveloperInstruction?: string | Computed<string>;
   rootSpan?: Conversation_Turns_RootSpan | Computed<Conversation_Turns_RootSpan>;
-  templateAttributes?: Record<string, unknown> | Computed<Record<string, unknown>>;
   userIntendedText?: string | Computed<string>;
 }
 
 export interface ConversationConfig {
   name: string | Computed<string>;
-  view?: string | Computed<string>;
 }
 
 export interface ConversationAttrs {
@@ -98,13 +105,11 @@ export interface ConversationAttrs {
   turnCount: number;
   /** Required. The turns in the conversation. */
   turns: Conversation_Turns[];
-  view: string;
 }
 
 export const Conversation: DataSourceBinding<ConversationConfig, ConversationAttrs> = {
   wireType: "google_ces_conversation",
   fields: {
     name: "name",
-    view: "view",
   },
 };

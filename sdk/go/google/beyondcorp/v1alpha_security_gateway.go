@@ -58,76 +58,76 @@ type V1alphaSecurityGateway_ServiceDiscovery struct {
 }
 
 var V1alphaSecurityGateway_Hubs_InternetGatewayFields = ubx.FieldMap{
-	"AssignedIps": ubx.FieldSpec{WireName: "assigned_ips"},
-}
+		"AssignedIps": ubx.FieldSpec{WireName: "assigned_ips"},
+	}
 
 var V1alphaSecurityGateway_HubsFields = ubx.FieldMap{
-	"InternetGateway": ubx.FieldSpec{
-		WireName: "internet_gateway",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_Hubs_InternetGatewayFields,
-	},
-}
+		"InternetGateway": ubx.FieldSpec{
+			WireName: "internet_gateway",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_Hubs_InternetGatewayFields,
+		},
+	}
 
 var V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields = ubx.FieldMap{
-	"OutputType": ubx.FieldSpec{WireName: "output_type"},
-}
+		"OutputType": ubx.FieldSpec{WireName: "output_type"},
+	}
 
 var V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeadersFields = ubx.FieldMap{
-	"DeviceInfo": ubx.FieldSpec{
-		WireName: "device_info",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-	},
-	"DispatchInfo": ubx.FieldSpec{
-		WireName: "dispatch_info",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-	},
-	"GroupInfo": ubx.FieldSpec{
-		WireName: "group_info",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-	},
-	"OutputType": ubx.FieldSpec{WireName: "output_type"},
-	"UserInfo": ubx.FieldSpec{
-		WireName: "user_info",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
-	},
-}
+		"DeviceInfo": ubx.FieldSpec{
+			WireName: "device_info",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+		},
+		"DispatchInfo": ubx.FieldSpec{
+			WireName: "dispatch_info",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+		},
+		"GroupInfo": ubx.FieldSpec{
+			WireName: "group_info",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+		},
+		"OutputType": ubx.FieldSpec{WireName: "output_type"},
+		"UserInfo": ubx.FieldSpec{
+			WireName: "user_info",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeaders_DeviceInfoFields,
+		},
+	}
 
 var V1alphaSecurityGateway_ProxyProtocolConfigFields = ubx.FieldMap{
-	"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
-	"ClientIp":             ubx.FieldSpec{WireName: "client_ip"},
-	"ContextualHeaders": ubx.FieldSpec{
-		WireName: "contextual_headers",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeadersFields,
-	},
-	"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
-	"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
-}
+		"AllowedClientHeaders": ubx.FieldSpec{WireName: "allowed_client_headers"},
+		"ClientIp": ubx.FieldSpec{WireName: "client_ip"},
+		"ContextualHeaders": ubx.FieldSpec{
+			WireName: "contextual_headers",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfig_ContextualHeadersFields,
+		},
+		"GatewayIdentity": ubx.FieldSpec{WireName: "gateway_identity"},
+		"MetadataHeaders": ubx.FieldSpec{WireName: "metadata_headers"},
+	}
 
 var V1alphaSecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields = ubx.FieldMap{
-	"Path": ubx.FieldSpec{WireName: "path"},
-}
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var V1alphaSecurityGateway_ServiceDiscovery_ApiGatewayFields = ubx.FieldMap{
-	"ResourceOverride": ubx.FieldSpec{
-		WireName: "resource_override",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields,
-	},
-}
+		"ResourceOverride": ubx.FieldSpec{
+			WireName: "resource_override",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ServiceDiscovery_ApiGateway_ResourceOverrideFields,
+		},
+	}
 
 var V1alphaSecurityGateway_ServiceDiscoveryFields = ubx.FieldMap{
-	"ApiGateway": ubx.FieldSpec{
-		WireName: "api_gateway",
-		Kind:     "object",
-		Fields:   V1alphaSecurityGateway_ServiceDiscovery_ApiGatewayFields,
-	},
-}
+		"ApiGateway": ubx.FieldSpec{
+			WireName: "api_gateway",
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ServiceDiscovery_ApiGatewayFields,
+		},
+	}
 
 type V1alphaSecurityGatewayConfig struct {
 	// Optional. An arbitrary user-provided name for the SecurityGateway. Cannot exceed 64 characters.
@@ -175,20 +175,20 @@ var V1alphaSecurityGateway = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Hubs": ubx.FieldSpec{
 			WireName: "hubs",
-			Kind:     "map",
-			Fields:   V1alphaSecurityGateway_HubsFields,
+			Kind: "map",
+			Fields: V1alphaSecurityGateway_HubsFields,
 		},
 		"Logging": ubx.FieldSpec{WireName: "logging"},
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProxyProtocolConfig": ubx.FieldSpec{
 			WireName: "proxy_protocol_config",
-			Kind:     "object",
-			Fields:   V1alphaSecurityGateway_ProxyProtocolConfigFields,
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ProxyProtocolConfigFields,
 		},
 		"ServiceDiscovery": ubx.FieldSpec{
 			WireName: "service_discovery",
-			Kind:     "object",
-			Fields:   V1alphaSecurityGateway_ServiceDiscoveryFields,
+			Kind: "object",
+			Fields: V1alphaSecurityGateway_ServiceDiscoveryFields,
 		},
 	},
 }

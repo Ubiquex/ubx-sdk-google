@@ -159,136 +159,136 @@ type Routine_SparkOptions struct {
 }
 
 var Routine_Arguments_DataType_StructType_FieldsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Routine_Arguments_DataType_StructTypeFields = ubx.FieldMap{
-	"Fields": ubx.FieldSpec{
-		WireName: "fields",
-		Kind:     "list",
-		Fields:   Routine_Arguments_DataType_StructType_FieldsFields,
-	},
-}
+		"Fields": ubx.FieldSpec{
+			WireName: "fields",
+			Kind: "list",
+			Fields: Routine_Arguments_DataType_StructType_FieldsFields,
+		},
+	}
 
 var Routine_Arguments_DataTypeFields = ubx.FieldMap{
-	"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
-	"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
-	"StructType": ubx.FieldSpec{
-		WireName: "struct_type",
-		Kind:     "object",
-		Fields:   Routine_Arguments_DataType_StructTypeFields,
-	},
-	"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
-}
+		"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
+		"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
+		"StructType": ubx.FieldSpec{
+			WireName: "struct_type",
+			Kind: "object",
+			Fields: Routine_Arguments_DataType_StructTypeFields,
+		},
+		"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
+	}
 
 var Routine_Arguments_TableType_Columns_Type_StructTypeFields = ubx.FieldMap{
-	"Fields": ubx.FieldSpec{WireName: "fields"},
-}
+		"Fields": ubx.FieldSpec{WireName: "fields"},
+	}
 
 var Routine_Arguments_TableType_Columns_TypeFields = ubx.FieldMap{
-	"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
-	"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
-	"StructType": ubx.FieldSpec{
-		WireName: "struct_type",
-		Kind:     "object",
-		Fields:   Routine_Arguments_TableType_Columns_Type_StructTypeFields,
-	},
-	"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
-}
+		"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
+		"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
+		"StructType": ubx.FieldSpec{
+			WireName: "struct_type",
+			Kind: "object",
+			Fields: Routine_Arguments_TableType_Columns_Type_StructTypeFields,
+		},
+		"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
+	}
 
 var Routine_Arguments_TableType_ColumnsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Type": ubx.FieldSpec{
-		WireName: "type",
-		Kind:     "object",
-		Fields:   Routine_Arguments_TableType_Columns_TypeFields,
-	},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{
+			WireName: "type",
+			Kind: "object",
+			Fields: Routine_Arguments_TableType_Columns_TypeFields,
+		},
+	}
 
 var Routine_Arguments_TableTypeFields = ubx.FieldMap{
-	"Columns": ubx.FieldSpec{
-		WireName: "columns",
-		Kind:     "list",
-		Fields:   Routine_Arguments_TableType_ColumnsFields,
-	},
-}
+		"Columns": ubx.FieldSpec{
+			WireName: "columns",
+			Kind: "list",
+			Fields: Routine_Arguments_TableType_ColumnsFields,
+		},
+	}
 
 var Routine_ArgumentsFields = ubx.FieldMap{
-	"ArgumentKind": ubx.FieldSpec{WireName: "argument_kind"},
-	"DataType": ubx.FieldSpec{
-		WireName: "data_type",
-		Kind:     "object",
-		Fields:   Routine_Arguments_DataTypeFields,
-	},
-	"IsAggregate": ubx.FieldSpec{WireName: "is_aggregate"},
-	"Mode":        ubx.FieldSpec{WireName: "mode"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"TableType": ubx.FieldSpec{
-		WireName: "table_type",
-		Kind:     "object",
-		Fields:   Routine_Arguments_TableTypeFields,
-	},
-}
+		"ArgumentKind": ubx.FieldSpec{WireName: "argument_kind"},
+		"DataType": ubx.FieldSpec{
+			WireName: "data_type",
+			Kind: "object",
+			Fields: Routine_Arguments_DataTypeFields,
+		},
+		"IsAggregate": ubx.FieldSpec{WireName: "is_aggregate"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TableType": ubx.FieldSpec{
+			WireName: "table_type",
+			Kind: "object",
+			Fields: Routine_Arguments_TableTypeFields,
+		},
+	}
 
 var Routine_BuildStatus_ErrorResultFields = ubx.FieldMap{
-	"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
-	"Location":  ubx.FieldSpec{WireName: "location"},
-	"Message":   ubx.FieldSpec{WireName: "message"},
-	"Reason":    ubx.FieldSpec{WireName: "reason"},
-}
+		"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+		"Reason": ubx.FieldSpec{WireName: "reason"},
+	}
 
 var Routine_BuildStatusFields = ubx.FieldMap{
-	"BuildDuration":        ubx.FieldSpec{WireName: "build_duration"},
-	"BuildState":           ubx.FieldSpec{WireName: "build_state"},
-	"BuildStateUpdateTime": ubx.FieldSpec{WireName: "build_state_update_time"},
-	"ErrorResult": ubx.FieldSpec{
-		WireName: "error_result",
-		Kind:     "object",
-		Fields:   Routine_BuildStatus_ErrorResultFields,
-	},
-	"ImageSizeBytes": ubx.FieldSpec{WireName: "image_size_bytes"},
-}
+		"BuildDuration": ubx.FieldSpec{WireName: "build_duration"},
+		"BuildState": ubx.FieldSpec{WireName: "build_state"},
+		"BuildStateUpdateTime": ubx.FieldSpec{WireName: "build_state_update_time"},
+		"ErrorResult": ubx.FieldSpec{
+			WireName: "error_result",
+			Kind: "object",
+			Fields: Routine_BuildStatus_ErrorResultFields,
+		},
+		"ImageSizeBytes": ubx.FieldSpec{WireName: "image_size_bytes"},
+	}
 
 var Routine_ExternalRuntimeOptionsFields = ubx.FieldMap{
-	"ContainerCpu":                ubx.FieldSpec{WireName: "container_cpu"},
-	"ContainerMemory":             ubx.FieldSpec{WireName: "container_memory"},
-	"ContainerRequestConcurrency": ubx.FieldSpec{WireName: "container_request_concurrency"},
-	"MaxBatchingRows":             ubx.FieldSpec{WireName: "max_batching_rows"},
-	"RuntimeConnection":           ubx.FieldSpec{WireName: "runtime_connection"},
-	"RuntimeVersion":              ubx.FieldSpec{WireName: "runtime_version"},
-}
+		"ContainerCpu": ubx.FieldSpec{WireName: "container_cpu"},
+		"ContainerMemory": ubx.FieldSpec{WireName: "container_memory"},
+		"ContainerRequestConcurrency": ubx.FieldSpec{WireName: "container_request_concurrency"},
+		"MaxBatchingRows": ubx.FieldSpec{WireName: "max_batching_rows"},
+		"RuntimeConnection": ubx.FieldSpec{WireName: "runtime_connection"},
+		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+	}
 
 var Routine_PythonOptionsFields = ubx.FieldMap{
-	"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-	"Packages":   ubx.FieldSpec{WireName: "packages"},
-}
+		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
+		"Packages": ubx.FieldSpec{WireName: "packages"},
+	}
 
 var Routine_RemoteFunctionOptionsFields = ubx.FieldMap{
-	"Connection":         ubx.FieldSpec{WireName: "connection"},
-	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
-	"MaxBatchingRows":    ubx.FieldSpec{WireName: "max_batching_rows"},
-	"UserDefinedContext": ubx.FieldSpec{WireName: "user_defined_context"},
-}
+		"Connection": ubx.FieldSpec{WireName: "connection"},
+		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+		"MaxBatchingRows": ubx.FieldSpec{WireName: "max_batching_rows"},
+		"UserDefinedContext": ubx.FieldSpec{WireName: "user_defined_context"},
+	}
 
 var Routine_RoutineReferenceFields = ubx.FieldMap{
-	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
-}
+		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
+	}
 
 var Routine_SparkOptionsFields = ubx.FieldMap{
-	"ArchiveUris":    ubx.FieldSpec{WireName: "archive_uris"},
-	"Connection":     ubx.FieldSpec{WireName: "connection"},
-	"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-	"FileUris":       ubx.FieldSpec{WireName: "file_uris"},
-	"JarUris":        ubx.FieldSpec{WireName: "jar_uris"},
-	"MainClass":      ubx.FieldSpec{WireName: "main_class"},
-	"MainFileUri":    ubx.FieldSpec{WireName: "main_file_uri"},
-	"Properties":     ubx.FieldSpec{WireName: "properties"},
-	"PyFileUris":     ubx.FieldSpec{WireName: "py_file_uris"},
-	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-}
+		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+		"Connection": ubx.FieldSpec{WireName: "connection"},
+		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
+		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
+		"JarUris": ubx.FieldSpec{WireName: "jar_uris"},
+		"MainClass": ubx.FieldSpec{WireName: "main_class"},
+		"MainFileUri": ubx.FieldSpec{WireName: "main_file_uri"},
+		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"PyFileUris": ubx.FieldSpec{WireName: "py_file_uris"},
+		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+	}
 
 type RoutineConfig struct {
 	// Optional.
@@ -379,56 +379,56 @@ var Routine = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Arguments": ubx.FieldSpec{
 			WireName: "arguments",
-			Kind:     "list",
-			Fields:   Routine_ArgumentsFields,
+			Kind: "list",
+			Fields: Routine_ArgumentsFields,
 		},
 		"BuildStatus": ubx.FieldSpec{
 			WireName: "build_status",
-			Kind:     "object",
-			Fields:   Routine_BuildStatusFields,
+			Kind: "object",
+			Fields: Routine_BuildStatusFields,
 		},
 		"DataGovernanceType": ubx.FieldSpec{WireName: "data_governance_type"},
-		"DefinitionBody":     ubx.FieldSpec{WireName: "definition_body"},
-		"Description":        ubx.FieldSpec{WireName: "description"},
-		"DeterminismLevel":   ubx.FieldSpec{WireName: "determinism_level"},
+		"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DeterminismLevel": ubx.FieldSpec{WireName: "determinism_level"},
 		"ExternalRuntimeOptions": ubx.FieldSpec{
 			WireName: "external_runtime_options",
-			Kind:     "object",
-			Fields:   Routine_ExternalRuntimeOptionsFields,
+			Kind: "object",
+			Fields: Routine_ExternalRuntimeOptionsFields,
 		},
 		"ImportedLibraries": ubx.FieldSpec{WireName: "imported_libraries"},
-		"Language":          ubx.FieldSpec{WireName: "language"},
+		"Language": ubx.FieldSpec{WireName: "language"},
 		"PythonOptions": ubx.FieldSpec{
 			WireName: "python_options",
-			Kind:     "object",
-			Fields:   Routine_PythonOptionsFields,
+			Kind: "object",
+			Fields: Routine_PythonOptionsFields,
 		},
 		"RemoteFunctionOptions": ubx.FieldSpec{
 			WireName: "remote_function_options",
-			Kind:     "object",
-			Fields:   Routine_RemoteFunctionOptionsFields,
+			Kind: "object",
+			Fields: Routine_RemoteFunctionOptionsFields,
 		},
 		"ReturnTableType": ubx.FieldSpec{
 			WireName: "return_table_type",
-			Kind:     "object",
-			Fields:   Routine_Arguments_TableTypeFields,
+			Kind: "object",
+			Fields: Routine_Arguments_TableTypeFields,
 		},
 		"ReturnType": ubx.FieldSpec{
 			WireName: "return_type",
-			Kind:     "object",
-			Fields:   Routine_Arguments_DataTypeFields,
+			Kind: "object",
+			Fields: Routine_Arguments_DataTypeFields,
 		},
 		"RoutineReference": ubx.FieldSpec{
 			WireName: "routine_reference",
-			Kind:     "object",
-			Fields:   Routine_RoutineReferenceFields,
+			Kind: "object",
+			Fields: Routine_RoutineReferenceFields,
 		},
-		"RoutineType":  ubx.FieldSpec{WireName: "routine_type"},
+		"RoutineType": ubx.FieldSpec{WireName: "routine_type"},
 		"SecurityMode": ubx.FieldSpec{WireName: "security_mode"},
 		"SparkOptions": ubx.FieldSpec{
 			WireName: "spark_options",
-			Kind:     "object",
-			Fields:   Routine_SparkOptionsFields,
+			Kind: "object",
+			Fields: Routine_SparkOptionsFields,
 		},
 		"StrictMode": ubx.FieldSpec{WireName: "strict_mode"},
 	},

@@ -29,41 +29,41 @@ type Application_Attributes struct {
 }
 
 var Application_Attributes_BusinessOwnersFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Email":       ubx.FieldSpec{WireName: "email"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+	}
 
 var Application_Attributes_CriticalityFields = ubx.FieldMap{
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Application_AttributesFields = ubx.FieldMap{
-	"BusinessOwners": ubx.FieldSpec{
-		WireName: "business_owners",
-		Kind:     "list",
-		Fields:   Application_Attributes_BusinessOwnersFields,
-	},
-	"Criticality": ubx.FieldSpec{
-		WireName: "criticality",
-		Kind:     "object",
-		Fields:   Application_Attributes_CriticalityFields,
-	},
-	"DeveloperOwners": ubx.FieldSpec{
-		WireName: "developer_owners",
-		Kind:     "list",
-		Fields:   Application_Attributes_BusinessOwnersFields,
-	},
-	"Environment": ubx.FieldSpec{
-		WireName: "environment",
-		Kind:     "object",
-		Fields:   Application_Attributes_CriticalityFields,
-	},
-	"OperatorOwners": ubx.FieldSpec{
-		WireName: "operator_owners",
-		Kind:     "list",
-		Fields:   Application_Attributes_BusinessOwnersFields,
-	},
-}
+		"BusinessOwners": ubx.FieldSpec{
+			WireName: "business_owners",
+			Kind: "list",
+			Fields: Application_Attributes_BusinessOwnersFields,
+		},
+		"Criticality": ubx.FieldSpec{
+			WireName: "criticality",
+			Kind: "object",
+			Fields: Application_Attributes_CriticalityFields,
+		},
+		"DeveloperOwners": ubx.FieldSpec{
+			WireName: "developer_owners",
+			Kind: "list",
+			Fields: Application_Attributes_BusinessOwnersFields,
+		},
+		"Environment": ubx.FieldSpec{
+			WireName: "environment",
+			Kind: "object",
+			Fields: Application_Attributes_CriticalityFields,
+		},
+		"OperatorOwners": ubx.FieldSpec{
+			WireName: "operator_owners",
+			Kind: "list",
+			Fields: Application_Attributes_BusinessOwnersFields,
+		},
+	}
 
 type ApplicationConfig struct {
 	// Consumer provided attributes.
@@ -104,16 +104,16 @@ var Application = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "object",
-			Fields:   Application_AttributesFields,
+			Kind: "object",
+			Fields: Application_AttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind:     "object",
-			Fields:   Application_Attributes_CriticalityFields,
+			Kind: "object",
+			Fields: Application_Attributes_CriticalityFields,
 		},
 	},
 }

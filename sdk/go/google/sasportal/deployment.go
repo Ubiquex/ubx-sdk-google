@@ -25,6 +25,6 @@ var Deployment = ubx.ResourceBinding{
 	WireType: "google_sasportal_deployment",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"SasUserIds":  ubx.FieldSpec{WireName: "sas_user_ids"},
+		"SasUserIds": ubx.FieldSpec{WireName: "sas_user_ids"},
 	},
 }

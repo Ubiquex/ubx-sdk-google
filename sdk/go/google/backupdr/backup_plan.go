@@ -72,70 +72,70 @@ type BackupPlan_DiskBackupPlanProperties struct {
 }
 
 var BackupPlan_BackupRules_StandardSchedule_BackupWindowFields = ubx.FieldMap{
-	"EndHourOfDay":   ubx.FieldSpec{WireName: "end_hour_of_day"},
-	"StartHourOfDay": ubx.FieldSpec{WireName: "start_hour_of_day"},
-}
+		"EndHourOfDay": ubx.FieldSpec{WireName: "end_hour_of_day"},
+		"StartHourOfDay": ubx.FieldSpec{WireName: "start_hour_of_day"},
+	}
 
 var BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonthFields = ubx.FieldMap{
-	"DayOfWeek":   ubx.FieldSpec{WireName: "day_of_week"},
-	"WeekOfMonth": ubx.FieldSpec{WireName: "week_of_month"},
-}
+		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+		"WeekOfMonth": ubx.FieldSpec{WireName: "week_of_month"},
+	}
 
 var BackupPlan_BackupRules_StandardScheduleFields = ubx.FieldMap{
-	"BackupWindow": ubx.FieldSpec{
-		WireName: "backup_window",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupRules_StandardSchedule_BackupWindowFields,
-	},
-	"DaysOfMonth":     ubx.FieldSpec{WireName: "days_of_month"},
-	"DaysOfWeek":      ubx.FieldSpec{WireName: "days_of_week"},
-	"HourlyFrequency": ubx.FieldSpec{WireName: "hourly_frequency"},
-	"Months":          ubx.FieldSpec{WireName: "months"},
-	"RecurrenceType":  ubx.FieldSpec{WireName: "recurrence_type"},
-	"TimeZone":        ubx.FieldSpec{WireName: "time_zone"},
-	"WeekDayOfMonth": ubx.FieldSpec{
-		WireName: "week_day_of_month",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonthFields,
-	},
-}
+		"BackupWindow": ubx.FieldSpec{
+			WireName: "backup_window",
+			Kind: "object",
+			Fields: BackupPlan_BackupRules_StandardSchedule_BackupWindowFields,
+		},
+		"DaysOfMonth": ubx.FieldSpec{WireName: "days_of_month"},
+		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+		"HourlyFrequency": ubx.FieldSpec{WireName: "hourly_frequency"},
+		"Months": ubx.FieldSpec{WireName: "months"},
+		"RecurrenceType": ubx.FieldSpec{WireName: "recurrence_type"},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"WeekDayOfMonth": ubx.FieldSpec{
+			WireName: "week_day_of_month",
+			Kind: "object",
+			Fields: BackupPlan_BackupRules_StandardSchedule_WeekDayOfMonthFields,
+		},
+	}
 
 var BackupPlan_BackupRulesFields = ubx.FieldMap{
-	"BackupRetentionDays": ubx.FieldSpec{WireName: "backup_retention_days"},
-	"RuleId":              ubx.FieldSpec{WireName: "rule_id"},
-	"StandardSchedule": ubx.FieldSpec{
-		WireName: "standard_schedule",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupRules_StandardScheduleFields,
-	},
-}
+		"BackupRetentionDays": ubx.FieldSpec{WireName: "backup_retention_days"},
+		"RuleId": ubx.FieldSpec{WireName: "rule_id"},
+		"StandardSchedule": ubx.FieldSpec{
+			WireName: "standard_schedule",
+			Kind: "object",
+			Fields: BackupPlan_BackupRules_StandardScheduleFields,
+		},
+	}
 
 var BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_LabelsFields = ubx.FieldMap{
-	"Key":   ubx.FieldSpec{WireName: "key"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabelsFields = ubx.FieldMap{
-	"Labels": ubx.FieldSpec{
-		WireName: "labels",
-		Kind:     "list",
-		Fields:   BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_LabelsFields,
-	},
-}
+		"Labels": ubx.FieldSpec{
+			WireName: "labels",
+			Kind: "list",
+			Fields: BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_LabelsFields,
+		},
+	}
 
 var BackupPlan_ComputeInstanceBackupPlanPropertiesFields = ubx.FieldMap{
-	"BootDiskOnly": ubx.FieldSpec{WireName: "boot_disk_only"},
-	"DiskExclusionLabels": ubx.FieldSpec{
-		WireName: "disk_exclusion_labels",
-		Kind:     "object",
-		Fields:   BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabelsFields,
-	},
-	"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
-}
+		"BootDiskOnly": ubx.FieldSpec{WireName: "boot_disk_only"},
+		"DiskExclusionLabels": ubx.FieldSpec{
+			WireName: "disk_exclusion_labels",
+			Kind: "object",
+			Fields: BackupPlan_ComputeInstanceBackupPlanProperties_DiskExclusionLabelsFields,
+		},
+		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
+	}
 
 var BackupPlan_DiskBackupPlanPropertiesFields = ubx.FieldMap{
-	"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
-}
+		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
+	}
 
 type BackupPlanConfig struct {
 	// Optional. The backup rules for this `BackupPlan`.
@@ -204,25 +204,25 @@ var BackupPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackupRules": ubx.FieldSpec{
 			WireName: "backup_rules",
-			Kind:     "list",
-			Fields:   BackupPlan_BackupRulesFields,
+			Kind: "list",
+			Fields: BackupPlan_BackupRulesFields,
 		},
 		"BackupVault": ubx.FieldSpec{WireName: "backup_vault"},
 		"ComputeInstanceBackupPlanProperties": ubx.FieldSpec{
 			WireName: "compute_instance_backup_plan_properties",
-			Kind:     "object",
-			Fields:   BackupPlan_ComputeInstanceBackupPlanPropertiesFields,
+			Kind: "object",
+			Fields: BackupPlan_ComputeInstanceBackupPlanPropertiesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskBackupPlanProperties": ubx.FieldSpec{
 			WireName: "disk_backup_plan_properties",
-			Kind:     "object",
-			Fields:   BackupPlan_DiskBackupPlanPropertiesFields,
+			Kind: "object",
+			Fields: BackupPlan_DiskBackupPlanPropertiesFields,
 		},
-		"Etag":                           ubx.FieldSpec{WireName: "etag"},
-		"Labels":                         ubx.FieldSpec{WireName: "labels"},
-		"LogRetentionDays":               ubx.FieldSpec{WireName: "log_retention_days"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LogRetentionDays": ubx.FieldSpec{WireName: "log_retention_days"},
 		"MaxCustomOnDemandRetentionDays": ubx.FieldSpec{WireName: "max_custom_on_demand_retention_days"},
-		"ResourceType":                   ubx.FieldSpec{WireName: "resource_type"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

@@ -37,9 +37,9 @@ type App_Credentials struct {
 }
 
 var App_AttributesFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 type AppConfig struct {
 	// List of API products associated with the AppGroup app.
@@ -93,17 +93,17 @@ var App = ubx.ResourceBinding{
 	WireType: "google_apigee_app",
 	Fields: ubx.FieldMap{
 		"ApiProducts": ubx.FieldSpec{WireName: "api_products"},
-		"AppGroup":    ubx.FieldSpec{WireName: "app_group"},
-		"AppId":       ubx.FieldSpec{WireName: "app_id"},
+		"AppGroup": ubx.FieldSpec{WireName: "app_group"},
+		"AppId": ubx.FieldSpec{WireName: "app_id"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "list",
-			Fields:   App_AttributesFields,
+			Kind: "list",
+			Fields: App_AttributesFields,
 		},
-		"CallbackUrl":  ubx.FieldSpec{WireName: "callback_url"},
+		"CallbackUrl": ubx.FieldSpec{WireName: "callback_url"},
 		"KeyExpiresIn": ubx.FieldSpec{WireName: "key_expires_in"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
-		"Scopes":       ubx.FieldSpec{WireName: "scopes"},
-		"Status":       ubx.FieldSpec{WireName: "status"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

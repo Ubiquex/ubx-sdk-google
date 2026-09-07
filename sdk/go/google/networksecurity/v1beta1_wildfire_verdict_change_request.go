@@ -46,8 +46,8 @@ type V1beta1WildfireVerdictChangeRequestAttrs struct {
 var V1beta1WildfireVerdictChangeRequest = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_wildfire_verdict_change_request",
 	Fields: ubx.FieldMap{
-		"Comment":    ubx.FieldSpec{WireName: "comment"},
+		"Comment": ubx.FieldSpec{WireName: "comment"},
 		"NewVerdict": ubx.FieldSpec{WireName: "new_verdict"},
-		"Sha256":     ubx.FieldSpec{WireName: "sha256"},
+		"Sha256": ubx.FieldSpec{WireName: "sha256"},
 	},
 }

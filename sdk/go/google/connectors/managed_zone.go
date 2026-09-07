@@ -38,10 +38,10 @@ type ManagedZoneAttrs struct {
 var ManagedZone = ubx.ResourceBinding{
 	WireType: "google_connectors_managed_zone",
 	Fields: ubx.FieldMap{
-		"Description":   ubx.FieldSpec{WireName: "description"},
-		"Dns":           ubx.FieldSpec{WireName: "dns"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Dns": ubx.FieldSpec{WireName: "dns"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-		"TargetVpc":     ubx.FieldSpec{WireName: "target_vpc"},
+		"TargetVpc": ubx.FieldSpec{WireName: "target_vpc"},
 	},
 }

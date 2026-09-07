@@ -7,11 +7,20 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class SemanticGovernancePolicy_AgentResponseCustomization:
+    # Optional. Custom message shown to the end user when the policy check results in a denial. Use this to explain the rationale to the user. Max 1000 characters.
+    denial_message: Any = None
+
+@dataclasses.dataclass
 class SemanticGovernancePolicy_McpTools:
     # A reference to the MCP server this applies to. (AI-inferred)
     mcp_server: Any = None
     # The tool(s) (functions, grounding sources, code execution, etc.) made available to the model for this request. (AI-inferred)
     tools: Any = None
+
+_SemanticGovernancePolicy_AgentResponseCustomizationFields = {
+    "denial_message": ubx.FieldSpec(wire_name="denial_message"),
+}
 
 _SemanticGovernancePolicy_McpToolsFields = {
     "mcp_server": ubx.FieldSpec(wire_name="mcp_server"),
@@ -22,6 +31,8 @@ _SemanticGovernancePolicy_McpToolsFields = {
 class SemanticGovernancePolicyConfig:
     # Required. The name of the agent in Agent Registry that is affected by this policy.
     agent: Any = None
+    # Customizes the agent's response to the end user when a `SemanticGovernancePolicy` is evaluated (for example, with a custom message shown on denial).
+    agent_response_customization: Any = None
     # Optional. The description of the SemanticGovernancePolicy.
     description: Any = None
     # Optional. The user-defined name of the SemanticGovernancePolicy.
@@ -41,6 +52,8 @@ class SemanticGovernancePolicyAttrs:
     agent: Any = None
     # Output only. Represents the principal of the agent, used by the Policy Decision Point (PDP) for governance checks. For more information, see https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity Format: `principal://TRUST_DOMAIN/NAMESPACE/AGENT_NAME` Example: `principal://agents.global.org-ORGANIZATION_ID.system.id.goog/resources/aiplatform/projects/PROJECT_NUMBER/locations/LOCATION/reasoningEngines/AGENT_ENGINE_ID`
     agent_identity: Any = None
+    # Customizes the agent's response to the end user when a `SemanticGovernancePolicy` is evaluated (for example, with a custom message shown on denial).
+    agent_response_customization: Any = None
     # Output only. Timestamp when this SemanticGovernancePolicy was created.
     create_time: Any = None
     # Optional. The description of the SemanticGovernancePolicy.
@@ -62,6 +75,11 @@ SemanticGovernancePolicy = ubx.ResourceBinding(
     wire_type="google_aiplatform_semantic_governance_policy",
     fields={
         "agent": ubx.FieldSpec(wire_name="agent"),
+        "agent_response_customization": ubx.FieldSpec(
+            wire_name="agent_response_customization",
+            kind="object",
+            fields=_SemanticGovernancePolicy_AgentResponseCustomizationFields,
+        ),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),

@@ -40,10 +40,10 @@ type V1beta1TenantAttrs struct {
 var V1beta1Tenant = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_v1beta1_tenant",
 	Fields: ubx.FieldMap{
-		"Annotations":      ubx.FieldSpec{WireName: "annotations"},
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ConsumerResource": ubx.FieldSpec{WireName: "consumer_resource"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Saas":             ubx.FieldSpec{WireName: "saas"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Saas": ubx.FieldSpec{WireName: "saas"},
 	},
 }

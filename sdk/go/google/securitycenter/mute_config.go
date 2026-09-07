@@ -44,9 +44,9 @@ var MuteConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpiryTime":  ubx.FieldSpec{WireName: "expiry_time"},
-		"Filter":      ubx.FieldSpec{WireName: "filter"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"ExpiryTime": ubx.FieldSpec{WireName: "expiry_time"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

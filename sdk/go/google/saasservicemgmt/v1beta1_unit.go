@@ -5,20 +5,20 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Unit_Conditions struct {
 	LastTransitionTime any
-	Message            any
-	Reason             any
-	Status             any
-	Type               any
+	Message any
+	Reason any
+	Status any
+	Type any
 }
 
 type V1beta1Unit_Dependencies struct {
 	Alias any
-	Unit  any
+	Unit any
 }
 
 type V1beta1Unit_InputVariables struct {
-	Type     any
-	Value    any
+	Type any
+	Value any
 	Variable any
 }
 
@@ -28,8 +28,8 @@ type V1beta1Unit_Maintenance struct {
 }
 
 var V1beta1Unit_MaintenanceFields = ubx.FieldMap{
-	"PinnedUntilTime": ubx.FieldSpec{WireName: "pinned_until_time"},
-}
+		"PinnedUntilTime": ubx.FieldSpec{WireName: "pinned_until_time"},
+	}
 
 type V1beta1UnitConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -116,15 +116,15 @@ var V1beta1Unit = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Application": ubx.FieldSpec{WireName: "application"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Maintenance": ubx.FieldSpec{
 			WireName: "maintenance",
-			Kind:     "object",
-			Fields:   V1beta1Unit_MaintenanceFields,
+			Kind: "object",
+			Fields: V1beta1Unit_MaintenanceFields,
 		},
 		"ManagementMode": ubx.FieldSpec{WireName: "management_mode"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
-		"Tenant":         ubx.FieldSpec{WireName: "tenant"},
-		"UnitKind":       ubx.FieldSpec{WireName: "unit_kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tenant": ubx.FieldSpec{WireName: "tenant"},
+		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 	},
 }

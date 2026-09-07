@@ -28,46 +28,46 @@ type WidgetConfig_AssistantSettings struct {
 }
 
 type WidgetConfig_BatchAuthStatuses_ConnectorAuthState struct {
-	AuthState        any
+	AuthState any
 	AuthorizationUri any
-	UpdateTime       any
+	UpdateTime any
 }
 
 type WidgetConfig_BatchAuthStatuses struct {
 	BatchAuthorizationGroup any
-	ConnectorAuthState      any
-	Placeholder             any
+	ConnectorAuthState any
+	Placeholder any
 }
 
 type WidgetConfig_CollectionComponents_DataStoreComponents struct {
 	DataStoreConfigType any
-	DisplayName         any
-	EntityName          any
-	Id                  any
-	Name                any
+	DisplayName any
+	EntityName any
+	Id any
+	Name any
 }
 
 type WidgetConfig_CollectionComponents_Metadata struct {
-	Author           any
-	Description      any
-	Note             any
+	Author any
+	Description any
+	Note any
 	ShortDescription any
-	Title            any
+	Title any
 }
 
 type WidgetConfig_CollectionComponents struct {
-	ConnectorAuthState           any
-	ConnectorIconLink            any
-	DataSource                   any
-	DataSourceDisplayName        any
+	ConnectorAuthState any
+	ConnectorIconLink any
+	DataSource any
+	DataSourceDisplayName any
 	DataSourceEndUserDisplayName any
-	DataSourceVersion            any
-	DataStoreComponents          any
-	DisplayName                  any
-	Id                           any
-	IsFirstParty                 any
-	Metadata                     any
-	Name                         any
+	DataSourceVersion any
+	DataStoreComponents any
+	DisplayName any
+	Id any
+	IsFirstParty any
+	Metadata any
+	Name any
 }
 
 type WidgetConfig_ContentSearchSpec_ChunkSpec struct {
@@ -146,26 +146,28 @@ type WidgetConfig_ContentSearchSpec struct {
 }
 
 type WidgetConfig_CustomerProvidedConfig struct {
+	// Output only. The customer's Assured Workloads compliance level. `customer_type` collapses every compliance level into a single `GOVERNMENT_CUSTOMER` value, so a client that gates a feature on one specific level rather than on government status as a whole must read this field instead.
+	ComplianceLevel any
 	// Customer type.
 	CustomerType any
 }
 
 type WidgetConfig_DataStoreUiConfigs_FacetField struct {
 	DisplayName any
-	Field       any
+	Field any
 }
 
 type WidgetConfig_DataStoreUiConfigs_FieldsUiComponentsMap struct {
 	DeviceVisibility any
-	DisplayTemplate  any
-	Field            any
+	DisplayTemplate any
+	Field any
 }
 
 type WidgetConfig_DataStoreUiConfigs struct {
-	FacetField            any
+	FacetField any
 	FieldsUiComponentsMap any
-	Id                    any
-	Name                  any
+	Id any
+	Name any
 }
 
 type WidgetConfig_HomepageSetting_Shortcuts_Icon struct {
@@ -174,8 +176,8 @@ type WidgetConfig_HomepageSetting_Shortcuts_Icon struct {
 
 type WidgetConfig_HomepageSetting_Shortcuts struct {
 	DestinationUri any
-	Icon           any
-	Title          any
+	Icon any
+	Title any
 }
 
 type WidgetConfig_HomepageSetting struct {
@@ -184,12 +186,12 @@ type WidgetConfig_HomepageSetting struct {
 }
 
 type WidgetConfig_Nodes struct {
-	Description     any
-	DisplayName     any
-	IconUrl         any
-	OutputSchema    any
+	Description any
+	DisplayName any
+	IconUrl any
+	OutputSchema any
 	ParameterSchema any
-	Type            any
+	Type any
 }
 
 type WidgetConfig_UiBranding struct {
@@ -223,18 +225,18 @@ type WidgetConfig_UiSettings_GenerativeAnswerConfig struct {
 type WidgetConfig_UiSettings_ModelConfigInfo_ResolvedModels_AdminView struct {
 	AdminOverridable any
 	EnabledByDefault any
-	Regions          any
+	Regions any
 }
 
 type WidgetConfig_UiSettings_ModelConfigInfo_ResolvedModels struct {
-	AdminView   any
+	AdminView any
 	Description any
 	DisplayName any
-	Icon        any
-	IsPreview   any
-	Label       any
-	ModelId     any
-	Promoted    any
+	Icon any
+	IsPreview any
+	Label any
+	ModelId any
+	Promoted any
 }
 
 type WidgetConfig_UiSettings_ModelConfigInfo struct {
@@ -242,6 +244,15 @@ type WidgetConfig_UiSettings_ModelConfigInfo struct {
 	DefaultModelId any
 	// Output only. The list of models that are available to the end-user in the model selector, in the order in which they should be displayed.
 	ResolvedModels any
+}
+
+type WidgetConfig_UiSettings_SearchAddonSpec struct {
+	// Optional. If true, generative answer add-on is disabled. Generative answer add-on includes natural language to filters and simple answers.
+	GenerativeAnswerAddOnDisabled any
+	// Optional. If true, disables event re-ranking and personalization to optimize KPIs & personalize results.
+	KpiPersonalizationAddOnDisabled any
+	// Optional. If true, semantic add-on is disabled. Semantic add-on includes embeddings and jetstream.
+	SemanticAddOnDisabled any
 }
 
 type WidgetConfig_UiSettings struct {
@@ -265,7 +276,7 @@ type WidgetConfig_UiSettings struct {
 	EnableSearchAsYouType any
 	// If set to true, the widget will enable visual content summary on applicable search requests. Only used by healthcare search.
 	EnableVisualContentSummary any
-	// Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `speech-to-text` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `skills` * `skill-sharing` * `skill-sharing-without-admin-approval` * `disable-projects` * `sobi` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `workflow-agents` * `in-app-notifications`
+	// Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `speech-to-text` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `canvas-app-builder` * `skills` * `skill-sharing` * `skill-sharing-without-admin-approval` * `disable-projects` * `sobi` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `workflow-agents` * `in-app-notifications`
 	Features any
 	// Describes configuration for generative answer.
 	GenerativeAnswerConfig any
@@ -281,16 +292,18 @@ type WidgetConfig_UiSettings struct {
 	OnedrivePickerEnabled any
 	// Controls whether result extract is display and how (snippet or extractive answer). Default to no result if unspecified.
 	ResultDescriptionType any
+	// SearchAddonSpec is used to disable add-ons for search. By default, if this field is not specified, add-ons are enabled wherever applicable.
+	SearchAddonSpec any
 	// Optional. Whether to show the admin-configured display name for data connectors in the widget sources UI (instead of the connector kind). Opt-in; defaults to false.
 	SourceAdminDisplayNameEnabled any
 }
 
 type WidgetConfigConfig struct {
-	AcceptCache                                             any
+	AcceptCache any
 	GetWidgetConfigRequestOptionTurnOffCollectionComponents any
-	LanguageCode                                            any
-	ModelInfoView                                           any
-	Name                                                    any
+	LanguageCode any
+	ModelInfoView any
+	Name any
 }
 
 type WidgetConfigAttrs struct {
@@ -348,19 +361,19 @@ type WidgetConfigAttrs struct {
 	// The key is the UI component. Mock. Currently supported `title`, `thumbnail`, `url`, `custom1`, `custom2`, `custom3`. The value is the name of the field along with its device visibility. The 3 custom fields are optional and can be added or removed. `title`, `thumbnail`, `url` are required UI components that cannot be removed.
 	FieldsUiComponentsMap any
 	// Output only. Whether the subscription is gemini bundle or not.
-	GeminiBundle                                            any
+	GeminiBundle any
 	GetWidgetConfigRequestOptionTurnOffCollectionComponents any
 	// Describes the homepage setting of the widget. It includes all homepage related settings and configurations, such as shortcuts.
 	HomepageSetting any
 	// Output only. The industry vertical that the WidgetConfig registers. The WidgetConfig industry vertical is based on the associated Engine.
 	IndustryVertical any
-	LanguageCode     any
+	LanguageCode any
 	// Output only. Whether LLM is enabled in the corresponding data store.
 	LlmEnabled any
 	// Output only. Whether the customer accepted data use terms.
 	MinimumDataTermAccepted any
-	ModelInfoView           any
-	Name                    any
+	ModelInfoView any
+	Name any
 	// Output only. The nodes associated with the Widget Config.
 	Nodes any
 	// The type of snippet to display in UCS widget. - RESULT_DISPLAY_TYPE_UNSPECIFIED for existing users. - SNIPPET for new non-enterprise search users. - EXTRACTIVE_ANSWER for new enterprise search users.
@@ -380,8 +393,8 @@ var WidgetConfig = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AcceptCache": ubx.FieldSpec{WireName: "accept_cache"},
 		"GetWidgetConfigRequestOptionTurnOffCollectionComponents": ubx.FieldSpec{WireName: "get_widget_config_request_option_turn_off_collection_components"},
-		"LanguageCode":  ubx.FieldSpec{WireName: "language_code"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
 		"ModelInfoView": ubx.FieldSpec{WireName: "model_info_view"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

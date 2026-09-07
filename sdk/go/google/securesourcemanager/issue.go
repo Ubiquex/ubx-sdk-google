@@ -36,9 +36,9 @@ type IssueAttrs struct {
 var Issue = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_issue",
 	Fields: ubx.FieldMap{
-		"Body":  ubx.FieldSpec{WireName: "body"},
-		"Etag":  ubx.FieldSpec{WireName: "etag"},
-		"Name":  ubx.FieldSpec{WireName: "name"},
+		"Body": ubx.FieldSpec{WireName: "body"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},
 }

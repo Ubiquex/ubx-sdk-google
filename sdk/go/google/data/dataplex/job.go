@@ -98,19 +98,20 @@ type Job_DataDiscoverySpec struct {
 
 type Job_DataDocumentationResult_DatasetResult_Queries struct {
 	Description any
-	Sql         any
+	Sql any
+	SqlDialect any
 }
 
 type Job_DataDocumentationResult_DatasetResult_SchemaRelationships_LeftSchemaPaths struct {
-	Paths    any
+	Paths any
 	TableFqn any
 }
 
 type Job_DataDocumentationResult_DatasetResult_SchemaRelationships struct {
-	LeftSchemaPaths  any
+	LeftSchemaPaths any
 	RightSchemaPaths any
-	Sources          any
-	Type             any
+	Sources any
+	Type any
 }
 
 type Job_DataDocumentationResult_DatasetResult struct {
@@ -124,8 +125,8 @@ type Job_DataDocumentationResult_DatasetResult struct {
 
 type Job_DataDocumentationResult_TableResult_Schema_Fields struct {
 	Description any
-	Fields      any
-	Name        any
+	Fields any
+	Name any
 }
 
 type Job_DataDocumentationResult_TableResult_Schema struct {
@@ -156,6 +157,8 @@ type Job_DataDocumentationSpec struct {
 	CatalogPublishingEnabled any
 	// Optional. Specifies which components of the data documentation to generate. Any component that is required to generate the specified components will also be generated. If no generation scope is specified, all available documentation components will be generated.
 	GenerationScopes any
+	// Optional. The SQL dialect to use in the generated SQL queries. If not specified, the default dialect is Google SQL.
+	SqlDialect any
 }
 
 type Job_DataProfileResult_CatalogPublishingStatus struct {
@@ -176,25 +179,25 @@ type Job_DataProfileResult_PostScanActionsResult struct {
 }
 
 type Job_DataProfileResult_Profile_Fields_Profile_DoubleProfile struct {
-	Average           any
-	Max               any
-	Min               any
-	Quartiles         any
+	Average any
+	Max any
+	Min any
+	Quartiles any
 	StandardDeviation any
 }
 
 type Job_DataProfileResult_Profile_Fields_Profile_IntegerProfile struct {
-	Average           any
-	Max               any
-	Min               any
-	Quartiles         any
+	Average any
+	Max any
+	Min any
+	Quartiles any
 	StandardDeviation any
 }
 
 type Job_DataProfileResult_Profile_Fields_Profile_StringProfile struct {
 	AverageLength any
-	MaxLength     any
-	MinLength     any
+	MaxLength any
+	MinLength any
 }
 
 type Job_DataProfileResult_Profile_Fields_Profile_TopNvalues struct {
@@ -204,19 +207,19 @@ type Job_DataProfileResult_Profile_Fields_Profile_TopNvalues struct {
 }
 
 type Job_DataProfileResult_Profile_Fields_Profile struct {
-	DistinctRatio  any
-	DoubleProfile  any
+	DistinctRatio any
+	DoubleProfile any
 	IntegerProfile any
-	NullRatio      any
-	StringProfile  any
-	TopNvalues     any
+	NullRatio any
+	StringProfile any
+	TopNvalues any
 }
 
 type Job_DataProfileResult_Profile_Fields struct {
-	Mode    any
-	Name    any
+	Mode any
+	Name any
 	Profile any
-	Type    any
+	Type any
 }
 
 type Job_DataProfileResult_Profile struct {
@@ -300,20 +303,20 @@ type Job_DataQualityResult_Columns_Dimensions_Dimension struct {
 
 type Job_DataQualityResult_Columns_Dimensions struct {
 	Dimension any
-	Passed    any
-	Score     any
+	Passed any
+	Score any
 }
 
 type Job_DataQualityResult_Columns struct {
-	Column     any
+	Column any
 	Dimensions any
-	Passed     any
-	Score      any
+	Passed any
+	Score any
 }
 
 type Job_DataQualityResult_Rules_DebugQueriesResultSets_Results struct {
-	Name  any
-	Type  any
+	Name any
+	Type any
 	Value any
 }
 
@@ -322,13 +325,13 @@ type Job_DataQualityResult_Rules_DebugQueriesResultSets struct {
 }
 
 type Job_DataQualityResult_Rules_Rule_DebugQueries struct {
-	Description  any
+	Description any
 	SqlStatement any
 }
 
 type Job_DataQualityResult_Rules_Rule_RangeExpectation struct {
-	MaxValue         any
-	MinValue         any
+	MaxValue any
+	MinValue any
 	StrictMaxEnabled any
 	StrictMinEnabled any
 }
@@ -342,19 +345,19 @@ type Job_DataQualityResult_Rules_Rule_RowConditionExpectation struct {
 }
 
 type Job_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntryLinkSource struct {
-	EntryLink     any
+	EntryLink any
 	EntryLinkType any
 }
 
 type Job_DataQualityResult_Rules_Rule_RuleSource_RulePathElements_EntrySource struct {
 	DisplayName any
-	Entry       any
-	EntryType   any
+	Entry any
+	EntryType any
 }
 
 type Job_DataQualityResult_Rules_Rule_RuleSource_RulePathElements struct {
 	EntryLinkSource any
-	EntrySource     any
+	EntrySource any
 }
 
 type Job_DataQualityResult_Rules_Rule_RuleSource struct {
@@ -370,16 +373,16 @@ type Job_DataQualityResult_Rules_Rule_SqlAssertion struct {
 }
 
 type Job_DataQualityResult_Rules_Rule_StatisticRangeExpectation struct {
-	MaxValue         any
-	MinValue         any
-	Statistic        any
+	MaxValue any
+	MinValue any
+	Statistic any
 	StrictMaxEnabled any
 	StrictMinEnabled any
 }
 
 type Job_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_InputParameters struct {
 	DefaultValue any
-	Description  any
+	Description any
 }
 
 type Job_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollection struct {
@@ -387,11 +390,11 @@ type Job_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate_SqlCollecti
 }
 
 type Job_DataQualityResult_Rules_Rule_TemplateReference_RuleTemplate struct {
-	Capabilities    any
-	Dimension       any
+	Capabilities any
+	Dimension any
 	InputParameters any
-	Name            any
-	SqlCollection   any
+	Name any
+	SqlCollection any
 }
 
 type Job_DataQualityResult_Rules_Rule_TemplateReference_Values struct {
@@ -399,45 +402,45 @@ type Job_DataQualityResult_Rules_Rule_TemplateReference_Values struct {
 }
 
 type Job_DataQualityResult_Rules_Rule_TemplateReference struct {
-	Name         any
-	ResolvedSql  any
+	Name any
+	ResolvedSql any
 	RuleTemplate any
-	Values       any
+	Values any
 }
 
 type Job_DataQualityResult_Rules_Rule struct {
-	Attributes                any
-	Column                    any
-	DebugQueries              any
-	Description               any
-	Dimension                 any
-	IgnoreNull                any
-	Name                      any
-	NonNullExpectation        any
-	RangeExpectation          any
-	RegexExpectation          any
-	RowConditionExpectation   any
-	RuleSource                any
-	SetExpectation            any
-	SqlAssertion              any
+	Attributes any
+	Column any
+	DebugQueries any
+	Description any
+	Dimension any
+	IgnoreNull any
+	Name any
+	NonNullExpectation any
+	RangeExpectation any
+	RegexExpectation any
+	RowConditionExpectation any
+	RuleSource any
+	SetExpectation any
+	SqlAssertion any
 	StatisticRangeExpectation any
-	Suspended                 any
+	Suspended any
 	TableConditionExpectation any
-	TemplateReference         any
-	Threshold                 any
-	UniquenessExpectation     any
+	TemplateReference any
+	Threshold any
+	UniquenessExpectation any
 }
 
 type Job_DataQualityResult_Rules struct {
-	AssertionRowCount      any
+	AssertionRowCount any
 	DebugQueriesResultSets any
-	EvaluatedCount         any
-	FailingRowsQuery       any
-	NullCount              any
-	PassRatio              any
-	Passed                 any
-	PassedCount            any
-	Rule                   any
+	EvaluatedCount any
+	FailingRowsQuery any
+	NullCount any
+	PassRatio any
+	Passed any
+	PassedCount any
+	Rule any
 }
 
 type Job_DataQualityResult struct {
@@ -514,47 +517,47 @@ type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ExtractionHints st
 
 type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields_ExtractionHints struct {
 	Normalization any
-	Synthesis     any
+	Synthesis any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_Fields struct {
-	DataType        any
-	Description     any
+	DataType any
+	Description any
 	ExtractionHints any
-	Fields          any
-	MetadataType    any
-	Mode            any
-	Name            any
+	Fields any
+	MetadataType any
+	Mode any
+	Name any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys_FieldMappings struct {
-	Field           any
+	Field any
 	ReferencedField any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes_ForeignKeys struct {
-	Description        any
-	FieldMappings      any
-	Name               any
+	Description any
+	FieldMappings any
+	Name any
 	ReferencedNodeType any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile_EdgeTypes struct {
-	Description     any
+	Description any
 	ExtractionHints any
-	Fields          any
-	ForeignKeys     any
-	Name            any
-	SourceNodeType  any
-	TargetNodeType  any
+	Fields any
+	ForeignKeys any
+	Name any
+	SourceNodeType any
+	TargetNodeType any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile_NodeTypes struct {
-	Description     any
+	Description any
 	ExtractionHints any
-	Fields          any
-	Name            any
-	PrimaryKeys     any
+	Fields any
+	Name any
+	PrimaryKeys any
 }
 
 type Job_UnstructuredDataProfileResult_GraphProfile struct {
@@ -609,7 +612,7 @@ type JobAttrs struct {
 	EndTime any
 	// Output only. Additional information about the current state.
 	Message any
-	Name    any
+	Name any
 	// Output only. A message indicating partial failure details.
 	PartialFailureMessage any
 	// Output only. The time when the DataScanJob was started.
@@ -624,7 +627,7 @@ type JobAttrs struct {
 	UnstructuredDataProfileResult any
 	// Contains the specification for an unstructured data profile scan.
 	UnstructuredDataProfileSpec any
-	View                        any
+	View any
 }
 
 var Job = ubx.DataSourceBinding{

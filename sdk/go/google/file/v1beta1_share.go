@@ -4,30 +4,32 @@ package file
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Share_NfsExportOptions struct {
-	AccessMode      any
-	AnonGid         any
-	AnonUid         any
-	IpRanges        any
-	Network         any
+	AccessMode any
+	AnonGid any
+	AnonUid any
+	IpRanges any
+	Network any
 	SecurityFlavors any
-	SquashMode      any
+	SquashMode any
 }
 
 var V1beta1Share_NfsExportOptionsFields = ubx.FieldMap{
-	"AccessMode":      ubx.FieldSpec{WireName: "access_mode"},
-	"AnonGid":         ubx.FieldSpec{WireName: "anon_gid"},
-	"AnonUid":         ubx.FieldSpec{WireName: "anon_uid"},
-	"IpRanges":        ubx.FieldSpec{WireName: "ip_ranges"},
-	"Network":         ubx.FieldSpec{WireName: "network"},
-	"SecurityFlavors": ubx.FieldSpec{WireName: "security_flavors"},
-	"SquashMode":      ubx.FieldSpec{WireName: "squash_mode"},
-}
+		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
+		"AnonGid": ubx.FieldSpec{WireName: "anon_gid"},
+		"AnonUid": ubx.FieldSpec{WireName: "anon_uid"},
+		"IpRanges": ubx.FieldSpec{WireName: "ip_ranges"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"SecurityFlavors": ubx.FieldSpec{WireName: "security_flavors"},
+		"SquashMode": ubx.FieldSpec{WireName: "squash_mode"},
+	}
 
 type V1beta1ShareConfig struct {
 	// Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup.
 	Backup any
-	// File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0.
+	// Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
 	CapacityGb any
+	// Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
+	CapacityMb any
 	// A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected.
 	Description any
 	// Resource labels to represent user provided metadata.
@@ -41,8 +43,10 @@ type V1beta1ShareConfig struct {
 type V1beta1ShareAttrs struct {
 	// Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup.
 	Backup any
-	// File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0.
+	// Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
 	CapacityGb any
+	// Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
+	CapacityMb any
 	// Output only. The time when the share was created.
 	CreateTime any
 	// A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected.
@@ -62,15 +66,16 @@ type V1beta1ShareAttrs struct {
 var V1beta1Share = ubx.ResourceBinding{
 	WireType: "google_file_v1beta1_share",
 	Fields: ubx.FieldMap{
-		"Backup":      ubx.FieldSpec{WireName: "backup"},
-		"CapacityGb":  ubx.FieldSpec{WireName: "capacity_gb"},
+		"Backup": ubx.FieldSpec{WireName: "backup"},
+		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
+		"CapacityMb": ubx.FieldSpec{WireName: "capacity_mb"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"MountName":   ubx.FieldSpec{WireName: "mount_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"MountName": ubx.FieldSpec{WireName: "mount_name"},
 		"NfsExportOptions": ubx.FieldSpec{
 			WireName: "nfs_export_options",
-			Kind:     "list",
-			Fields:   V1beta1Share_NfsExportOptionsFields,
+			Kind: "list",
+			Fields: V1beta1Share_NfsExportOptionsFields,
 		},
 	},
 }

@@ -38,8 +38,8 @@ type Unit_Maintenance struct {
 }
 
 var Unit_MaintenanceFields = ubx.FieldMap{
-	"PinnedUntilTime": ubx.FieldSpec{WireName: "pinned_until_time"},
-}
+		"PinnedUntilTime": ubx.FieldSpec{WireName: "pinned_until_time"},
+	}
 
 type UnitConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -117,15 +117,15 @@ var Unit = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_unit",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Maintenance": ubx.FieldSpec{
 			WireName: "maintenance",
-			Kind:     "object",
-			Fields:   Unit_MaintenanceFields,
+			Kind: "object",
+			Fields: Unit_MaintenanceFields,
 		},
 		"ManagementMode": ubx.FieldSpec{WireName: "management_mode"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
-		"Tenant":         ubx.FieldSpec{WireName: "tenant"},
-		"UnitKind":       ubx.FieldSpec{WireName: "unit_kind"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Tenant": ubx.FieldSpec{WireName: "tenant"},
+		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
 	},
 }

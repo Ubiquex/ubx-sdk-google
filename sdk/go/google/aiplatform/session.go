@@ -44,12 +44,12 @@ type SessionAttrs struct {
 var Session = ubx.ResourceBinding{
 	WireType: "google_aiplatform_session",
 	Fields: ubx.FieldMap{
-		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime":   ubx.FieldSpec{WireName: "expire_time"},
-		"Labels":       ubx.FieldSpec{WireName: "labels"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SessionState": ubx.FieldSpec{WireName: "session_state"},
-		"Ttl":          ubx.FieldSpec{WireName: "ttl"},
-		"UserId":       ubx.FieldSpec{WireName: "user_id"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

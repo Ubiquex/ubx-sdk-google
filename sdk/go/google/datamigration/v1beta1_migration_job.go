@@ -36,26 +36,26 @@ type V1beta1MigrationJob_VpcPeeringConnectivity struct {
 }
 
 var V1beta1MigrationJob_DestinationDatabaseFields = ubx.FieldMap{
-	"Engine":   ubx.FieldSpec{WireName: "engine"},
-	"Provider": ubx.FieldSpec{WireName: "provider"},
-}
+		"Engine": ubx.FieldSpec{WireName: "engine"},
+		"Provider": ubx.FieldSpec{WireName: "provider"},
+	}
 
 var V1beta1MigrationJob_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var V1beta1MigrationJob_ReverseSshConnectivityFields = ubx.FieldMap{
-	"Vm":     ubx.FieldSpec{WireName: "vm"},
-	"VmIp":   ubx.FieldSpec{WireName: "vm_ip"},
-	"VmPort": ubx.FieldSpec{WireName: "vm_port"},
-	"Vpc":    ubx.FieldSpec{WireName: "vpc"},
-}
+		"Vm": ubx.FieldSpec{WireName: "vm"},
+		"VmIp": ubx.FieldSpec{WireName: "vm_ip"},
+		"VmPort": ubx.FieldSpec{WireName: "vm_port"},
+		"Vpc": ubx.FieldSpec{WireName: "vpc"},
+	}
 
 var V1beta1MigrationJob_VpcPeeringConnectivityFields = ubx.FieldMap{
-	"Vpc": ubx.FieldSpec{WireName: "vpc"},
-}
+		"Vpc": ubx.FieldSpec{WireName: "vpc"},
+	}
 
 type V1beta1MigrationJobConfig struct {
 	// Required. The resource name (URI) of the destination connection profile.
@@ -135,36 +135,36 @@ var V1beta1MigrationJob = ubx.ResourceBinding{
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DestinationDatabase": ubx.FieldSpec{
 			WireName: "destination_database",
-			Kind:     "object",
-			Fields:   V1beta1MigrationJob_DestinationDatabaseFields,
+			Kind: "object",
+			Fields: V1beta1MigrationJob_DestinationDatabaseFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DumpPath":    ubx.FieldSpec{WireName: "dump_path"},
+		"DumpPath": ubx.FieldSpec{WireName: "dump_path"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   V1beta1MigrationJob_ErrorFields,
+			Kind: "object",
+			Fields: V1beta1MigrationJob_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReverseSshConnectivity": ubx.FieldSpec{
 			WireName: "reverse_ssh_connectivity",
-			Kind:     "object",
-			Fields:   V1beta1MigrationJob_ReverseSshConnectivityFields,
+			Kind: "object",
+			Fields: V1beta1MigrationJob_ReverseSshConnectivityFields,
 		},
 		"Source": ubx.FieldSpec{WireName: "source"},
 		"SourceDatabase": ubx.FieldSpec{
 			WireName: "source_database",
-			Kind:     "object",
-			Fields:   V1beta1MigrationJob_DestinationDatabaseFields,
+			Kind: "object",
+			Fields: V1beta1MigrationJob_DestinationDatabaseFields,
 		},
-		"State":                ubx.FieldSpec{WireName: "state"},
+		"State": ubx.FieldSpec{WireName: "state"},
 		"StaticIpConnectivity": ubx.FieldSpec{WireName: "static_ip_connectivity"},
-		"Type":                 ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"VpcPeeringConnectivity": ubx.FieldSpec{
 			WireName: "vpc_peering_connectivity",
-			Kind:     "object",
-			Fields:   V1beta1MigrationJob_VpcPeeringConnectivityFields,
+			Kind: "object",
+			Fields: V1beta1MigrationJob_VpcPeeringConnectivityFields,
 		},
 	},
 }

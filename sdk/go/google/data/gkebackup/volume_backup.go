@@ -24,7 +24,7 @@ type VolumeBackupAttrs struct {
 	Etag any
 	// Output only. The format used for the volume backup.
 	Format any
-	Name   any
+	Name any
 	// Output only. [Output Only] Reserved for future use.
 	SatisfiesPzi any
 	// Output only. [Output Only] Reserved for future use.
@@ -47,5 +47,6 @@ type VolumeBackupAttrs struct {
 
 var VolumeBackup = ubx.DataSourceBinding{
 	WireType: "google_gkebackup_volume_backup",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -36,7 +36,7 @@ var QaScorecard = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsDefault":   ubx.FieldSpec{WireName: "is_default"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

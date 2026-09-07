@@ -22,9 +22,9 @@ export interface V1beta4User_PasswordPolicy {
 }
 
 export interface V1beta4User_SqlserverUserDetails {
-  /** If the user has been disabled */
+  /** Indicates if the user has been disabled. */
   disabled?: boolean | Computed<boolean>;
-  /** The server roles for this user */
+  /** Indicates the server roles for this user. */
   serverRoles?: string[] | Computed<string[]>;
 }
 

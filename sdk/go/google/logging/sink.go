@@ -26,18 +26,18 @@ type Sink_Exclusions struct {
 }
 
 var Sink_BigqueryOptionsFields = ubx.FieldMap{
-	"UsePartitionedTables":            ubx.FieldSpec{WireName: "use_partitioned_tables"},
-	"UsesTimestampColumnPartitioning": ubx.FieldSpec{WireName: "uses_timestamp_column_partitioning"},
-}
+		"UsePartitionedTables": ubx.FieldSpec{WireName: "use_partitioned_tables"},
+		"UsesTimestampColumnPartitioning": ubx.FieldSpec{WireName: "uses_timestamp_column_partitioning"},
+	}
 
 var Sink_ExclusionsFields = ubx.FieldMap{
-	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
-	"Filter":      ubx.FieldSpec{WireName: "filter"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 type SinkConfig struct {
 	// Options that change functionality of a sink exporting data to BigQuery.
@@ -98,21 +98,21 @@ var Sink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryOptions": ubx.FieldSpec{
 			WireName: "bigquery_options",
-			Kind:     "object",
-			Fields:   Sink_BigqueryOptionsFields,
+			Kind: "object",
+			Fields: Sink_BigqueryOptionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
 		"Exclusions": ubx.FieldSpec{
 			WireName: "exclusions",
-			Kind:     "list",
-			Fields:   Sink_ExclusionsFields,
+			Kind: "list",
+			Fields: Sink_ExclusionsFields,
 		},
-		"Filter":              ubx.FieldSpec{WireName: "filter"},
-		"IncludeChildren":     ubx.FieldSpec{WireName: "include_children"},
-		"InterceptChildren":   ubx.FieldSpec{WireName: "intercept_children"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"IncludeChildren": ubx.FieldSpec{WireName: "include_children"},
+		"InterceptChildren": ubx.FieldSpec{WireName: "intercept_children"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutputVersionFormat": ubx.FieldSpec{WireName: "output_version_format"},
 	},
 }

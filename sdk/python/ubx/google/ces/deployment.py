@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Deployment_AgentRegistryDeployment:
+    # Optional. Output only. The resource name of the deployed Agent Registry service. Format: `projects/{project}/locations/{location}/services/{service}`
+    agent_registry_service_name: Any = None
+
+@dataclasses.dataclass
 class Deployment_ChannelProfile_InstagramConfig:
     # Output only. The description of the Meta business page or profile.
     description: Any = None
@@ -130,6 +135,10 @@ class Deployment_WhatsappCredentials:
     # Required. The WhatsApp Business Account ID.
     waba_id: Any = None
 
+_Deployment_AgentRegistryDeploymentFields = {
+    "agent_registry_service_name": ubx.FieldSpec(wire_name="agent_registry_service_name"),
+}
+
 _Deployment_ChannelProfile_InstagramConfigFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -240,6 +249,8 @@ _Deployment_WhatsappCredentialsFields = {
 
 @dataclasses.dataclass
 class DeploymentConfig:
+    # Configuration and status for Agent Registry deployment.
+    agent_registry_deployment: Any = None
     # Optional. The resource name of the app version to deploy. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}` Use `projects/{project}/locations/{location}/apps/{app}/versions/-` to use the draft app.
     app_version: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
@@ -261,6 +272,8 @@ class DeploymentConfig:
 
 @dataclasses.dataclass
 class DeploymentAttrs:
+    # Configuration and status for Agent Registry deployment.
+    agent_registry_deployment: Any = None
     # Optional. The resource name of the app version to deploy. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}` Use `projects/{project}/locations/{location}/apps/{app}/versions/-` to use the draft app.
     app_version: Any = None
     # A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
@@ -289,6 +302,11 @@ class DeploymentAttrs:
 Deployment = ubx.ResourceBinding(
     wire_type="google_ces_deployment",
     fields={
+        "agent_registry_deployment": ubx.FieldSpec(
+            wire_name="agent_registry_deployment",
+            kind="object",
+            fields=_Deployment_AgentRegistryDeploymentFields,
+        ),
         "app_version": ubx.FieldSpec(wire_name="app_version"),
         "channel_profile": ubx.FieldSpec(
             wire_name="channel_profile",

@@ -31,8 +31,8 @@ var V1betaResourcePolicy = ubx.ResourceBinding{
 	WireType: "google_firebaseappcheck_v1beta_resource_policy",
 	Fields: ubx.FieldMap{
 		"EnforcementMode": ubx.FieldSpec{WireName: "enforcement_mode"},
-		"Etag":            ubx.FieldSpec{WireName: "etag"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
-		"TargetResource":  ubx.FieldSpec{WireName: "target_resource"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TargetResource": ubx.FieldSpec{WireName: "target_resource"},
 	},
 }

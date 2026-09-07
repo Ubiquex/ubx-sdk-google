@@ -21,7 +21,7 @@ type NodeTypeAttrs struct {
 	Kind any
 	// Output only. The amount of physical memory available, defined in GB.
 	MemoryGb any
-	Name     any
+	Name any
 	// Output only. The canonical identifier of the node type (corresponds to the `NodeType`). For example: standard-72.
 	NodeTypeId any
 	// Output only. The total number of CPU cores in a single node.
@@ -32,5 +32,6 @@ type NodeTypeAttrs struct {
 
 var NodeType = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_node_type",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

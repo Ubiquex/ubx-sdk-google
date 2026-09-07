@@ -16,17 +16,17 @@ type SecurityMonitoringCondition_Include struct {
 }
 
 var SecurityMonitoringCondition_Include_ResourcesFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var SecurityMonitoringCondition_IncludeFields = ubx.FieldMap{
-	"Resources": ubx.FieldSpec{
-		WireName: "resources",
-		Kind:     "list",
-		Fields:   SecurityMonitoringCondition_Include_ResourcesFields,
-	},
-}
+		"Resources": ubx.FieldSpec{
+			WireName: "resources",
+			Kind: "list",
+			Fields: SecurityMonitoringCondition_Include_ResourcesFields,
+		},
+	}
 
 type SecurityMonitoringConditionConfig struct {
 	// Optional. The API Hub gateway monitored by the security monitoring condition. This should only be set if risk_assessment_type is API_HUB. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
@@ -76,13 +76,13 @@ var SecurityMonitoringCondition = ubx.ResourceBinding{
 		"ApiHubGateway": ubx.FieldSpec{WireName: "api_hub_gateway"},
 		"Include": ubx.FieldSpec{
 			WireName: "include",
-			Kind:     "object",
-			Fields:   SecurityMonitoringCondition_IncludeFields,
+			Kind: "object",
+			Fields: SecurityMonitoringCondition_IncludeFields,
 		},
 		"IncludeAllResources": ubx.FieldSpec{WireName: "include_all_resources"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
-		"Profile":             ubx.FieldSpec{WireName: "profile"},
-		"RiskAssessmentType":  ubx.FieldSpec{WireName: "risk_assessment_type"},
-		"Scope":               ubx.FieldSpec{WireName: "scope"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Profile": ubx.FieldSpec{WireName: "profile"},
+		"RiskAssessmentType": ubx.FieldSpec{WireName: "risk_assessment_type"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
 	},
 }

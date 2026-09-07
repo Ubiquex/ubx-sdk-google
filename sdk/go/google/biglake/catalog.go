@@ -21,5 +21,6 @@ type CatalogAttrs struct {
 
 var Catalog = ubx.ResourceBinding{
 	WireType: "google_biglake_catalog",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

@@ -110,22 +110,32 @@ class V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation
     mime_type: Any = None
 
 @dataclasses.dataclass
+class V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_Image:
+    alt_text: Any = None
+    data: Any = None
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool:
     tool_id: Any = None
     toolset: Any = None
 
 @dataclasses.dataclass
 class V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolCall:
+    agent_name: Any = None
     args: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     tool: Any = None
     toolset_tool: Any = None
 
 @dataclasses.dataclass
 class V1betaResult_GoldenResult_TurnReplayResults_ExpectationOutcome_Expectation_AgentResponse_Chunks_ToolResponse:
+    agent_name: Any = None
     display_name: Any = None
     id: Any = None
+    parent_tool_call_id: Any = None
     response: Any = None
     tool: Any = None
     toolset_tool: Any = None

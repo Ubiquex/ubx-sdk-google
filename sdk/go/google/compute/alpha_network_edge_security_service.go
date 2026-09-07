@@ -40,9 +40,9 @@ type AlphaNetworkEdgeSecurityServiceAttrs struct {
 var AlphaNetworkEdgeSecurityService = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_network_edge_security_service",
 	Fields: ubx.FieldMap{
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":    ubx.FieldSpec{WireName: "fingerprint"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
 	},
 }

@@ -47,8 +47,6 @@ class V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs:
 
 @dataclasses.dataclass
 class V1beta1SandboxEnvironmentTemplate_EgressControlConfig:
-    # Optional. The customer VPC network that sandbox egress is routed into.
-    customer_vpc_network: Any = None
     # Optional. DNS peering configurations that allow sandbox egress to resolve customer-internal domains via the customer VPC.
     dns_peering_configs: Any = None
     # Optional. Whether to allow internet access.
@@ -126,7 +124,6 @@ _V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields =
 }
 
 _V1beta1SandboxEnvironmentTemplate_EgressControlConfigFields = {
-    "customer_vpc_network": ubx.FieldSpec(wire_name="customer_vpc_network"),
     "dns_peering_configs": ubx.FieldSpec(
         wire_name="dns_peering_configs",
         kind="list",
@@ -171,6 +168,8 @@ class V1beta1SandboxEnvironmentTemplateConfig:
     ingress_control_config: Any = None
     # Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}`
     name: Any = None
+    # Optional. Immutable. Whether to provision the SandboxEnvironmentTemplate via the GKE TD pool.
+    use_gke_td: Any = None
 
 @dataclasses.dataclass
 class V1beta1SandboxEnvironmentTemplateAttrs:
@@ -192,6 +191,8 @@ class V1beta1SandboxEnvironmentTemplateAttrs:
     state: Any = None
     # Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated.
     update_time: Any = None
+    # Optional. Immutable. Whether to provision the SandboxEnvironmentTemplate via the GKE TD pool.
+    use_gke_td: Any = None
 
 V1beta1SandboxEnvironmentTemplate = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_sandbox_environment_template",
@@ -218,5 +219,6 @@ V1beta1SandboxEnvironmentTemplate = ubx.ResourceBinding(
             fields=_V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
+        "use_gke_td": ubx.FieldSpec(wire_name="use_gke_td"),
     },
 )

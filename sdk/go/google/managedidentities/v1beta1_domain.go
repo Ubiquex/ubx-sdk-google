@@ -4,17 +4,17 @@ package managedidentities
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Domain_Trusts struct {
-	CreateTime              any
-	LastTrustHeartbeatTime  any
+	CreateTime any
+	LastTrustHeartbeatTime any
 	SelectiveAuthentication any
-	State                   any
-	StateDescription        any
-	TargetDnsIpAddresses    any
-	TargetDomainName        any
-	TrustDirection          any
-	TrustHandshakeSecret    any
-	TrustType               any
-	UpdateTime              any
+	State any
+	StateDescription any
+	TargetDnsIpAddresses any
+	TargetDomainName any
+	TrustDirection any
+	TrustHandshakeSecret any
+	TrustType any
+	UpdateTime any
 }
 
 type V1beta1DomainConfig struct {
@@ -64,11 +64,11 @@ type V1beta1DomainAttrs struct {
 var V1beta1Domain = ubx.ResourceBinding{
 	WireType: "google_managedidentities_v1beta1_domain",
 	Fields: ubx.FieldMap{
-		"Admin":              ubx.FieldSpec{WireName: "admin"},
-		"AuditLogsEnabled":   ubx.FieldSpec{WireName: "audit_logs_enabled"},
+		"Admin": ubx.FieldSpec{WireName: "admin"},
+		"AuditLogsEnabled": ubx.FieldSpec{WireName: "audit_logs_enabled"},
 		"AuthorizedNetworks": ubx.FieldSpec{WireName: "authorized_networks"},
-		"Labels":             ubx.FieldSpec{WireName: "labels"},
-		"Locations":          ubx.FieldSpec{WireName: "locations"},
-		"ReservedIpRange":    ubx.FieldSpec{WireName: "reserved_ip_range"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Locations": ubx.FieldSpec{WireName: "locations"},
+		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
 	},
 }

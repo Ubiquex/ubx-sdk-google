@@ -5,57 +5,57 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1TcpRoute_Rules_Action_Destinations struct {
 	ServiceName any
-	Weight      any
+	Weight any
 }
 
 type V1beta1TcpRoute_Rules_Action struct {
-	Destinations        any
-	IdleTimeout         any
+	Destinations any
+	IdleTimeout any
 	OriginalDestination any
 }
 
 type V1beta1TcpRoute_Rules_Matches struct {
 	Address any
-	Port    any
+	Port any
 }
 
 type V1beta1TcpRoute_Rules struct {
-	Action  any
+	Action any
 	Matches any
 }
 
 var V1beta1TcpRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	"Weight":      ubx.FieldSpec{WireName: "weight"},
-}
+		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
+	}
 
 var V1beta1TcpRoute_Rules_ActionFields = ubx.FieldMap{
-	"Destinations": ubx.FieldSpec{
-		WireName: "destinations",
-		Kind:     "list",
-		Fields:   V1beta1TcpRoute_Rules_Action_DestinationsFields,
-	},
-	"IdleTimeout":         ubx.FieldSpec{WireName: "idle_timeout"},
-	"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
-}
+		"Destinations": ubx.FieldSpec{
+			WireName: "destinations",
+			Kind: "list",
+			Fields: V1beta1TcpRoute_Rules_Action_DestinationsFields,
+		},
+		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+		"OriginalDestination": ubx.FieldSpec{WireName: "original_destination"},
+	}
 
 var V1beta1TcpRoute_Rules_MatchesFields = ubx.FieldMap{
-	"Address": ubx.FieldSpec{WireName: "address"},
-	"Port":    ubx.FieldSpec{WireName: "port"},
-}
+		"Address": ubx.FieldSpec{WireName: "address"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+	}
 
 var V1beta1TcpRoute_RulesFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{
-		WireName: "action",
-		Kind:     "object",
-		Fields:   V1beta1TcpRoute_Rules_ActionFields,
-	},
-	"Matches": ubx.FieldSpec{
-		WireName: "matches",
-		Kind:     "list",
-		Fields:   V1beta1TcpRoute_Rules_MatchesFields,
-	},
-}
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: V1beta1TcpRoute_Rules_ActionFields,
+		},
+		"Matches": ubx.FieldSpec{
+			WireName: "matches",
+			Kind: "list",
+			Fields: V1beta1TcpRoute_Rules_MatchesFields,
+		},
+	}
 
 type V1beta1TcpRouteConfig struct {
 	// Optional. A free-text description of the resource. Max length 1024 characters.
@@ -97,14 +97,14 @@ var V1beta1TcpRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_tcp_route",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Gateways": ubx.FieldSpec{WireName: "gateways"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Meshes": ubx.FieldSpec{WireName: "meshes"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   V1beta1TcpRoute_RulesFields,
+			Kind: "list",
+			Fields: V1beta1TcpRoute_RulesFields,
 		},
 	},
 }

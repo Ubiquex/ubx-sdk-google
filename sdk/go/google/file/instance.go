@@ -49,7 +49,7 @@ type Instance_FileShares struct {
 
 type Instance_Networks_PscConfig struct {
 	// A reference to the project this endpoint is created in. (AI-inferred)
-	EndpointProject    any
+	EndpointProject any
 	RequestedIpAddress any
 }
 
@@ -119,104 +119,104 @@ type Instance_Replication struct {
 }
 
 var Instance_DirectoryServices_LdapFields = ubx.FieldMap{
-	"Domain":   ubx.FieldSpec{WireName: "domain"},
-	"GroupsOu": ubx.FieldSpec{WireName: "groups_ou"},
-	"Servers":  ubx.FieldSpec{WireName: "servers"},
-	"UsersOu":  ubx.FieldSpec{WireName: "users_ou"},
-}
+		"Domain": ubx.FieldSpec{WireName: "domain"},
+		"GroupsOu": ubx.FieldSpec{WireName: "groups_ou"},
+		"Servers": ubx.FieldSpec{WireName: "servers"},
+		"UsersOu": ubx.FieldSpec{WireName: "users_ou"},
+	}
 
 var Instance_DirectoryServicesFields = ubx.FieldMap{
-	"Ldap": ubx.FieldSpec{
-		WireName: "ldap",
-		Kind:     "object",
-		Fields:   Instance_DirectoryServices_LdapFields,
-	},
-}
+		"Ldap": ubx.FieldSpec{
+			WireName: "ldap",
+			Kind: "object",
+			Fields: Instance_DirectoryServices_LdapFields,
+		},
+	}
 
 var Instance_FileShares_NfsExportOptionsFields = ubx.FieldMap{
-	"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
-	"AnonGid":    ubx.FieldSpec{WireName: "anon_gid"},
-	"AnonUid":    ubx.FieldSpec{WireName: "anon_uid"},
-	"IpRanges":   ubx.FieldSpec{WireName: "ip_ranges"},
-	"Network":    ubx.FieldSpec{WireName: "network"},
-	"SquashMode": ubx.FieldSpec{WireName: "squash_mode"},
-}
+		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
+		"AnonGid": ubx.FieldSpec{WireName: "anon_gid"},
+		"AnonUid": ubx.FieldSpec{WireName: "anon_uid"},
+		"IpRanges": ubx.FieldSpec{WireName: "ip_ranges"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"SquashMode": ubx.FieldSpec{WireName: "squash_mode"},
+	}
 
 var Instance_FileSharesFields = ubx.FieldMap{
-	"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
-	"Name":       ubx.FieldSpec{WireName: "name"},
-	"NfsExportOptions": ubx.FieldSpec{
-		WireName: "nfs_export_options",
-		Kind:     "list",
-		Fields:   Instance_FileShares_NfsExportOptionsFields,
-	},
-	"SourceBackup":         ubx.FieldSpec{WireName: "source_backup"},
-	"SourceBackupdrBackup": ubx.FieldSpec{WireName: "source_backupdr_backup"},
-}
+		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NfsExportOptions": ubx.FieldSpec{
+			WireName: "nfs_export_options",
+			Kind: "list",
+			Fields: Instance_FileShares_NfsExportOptionsFields,
+		},
+		"SourceBackup": ubx.FieldSpec{WireName: "source_backup"},
+		"SourceBackupdrBackup": ubx.FieldSpec{WireName: "source_backupdr_backup"},
+	}
 
 var Instance_Networks_PscConfigFields = ubx.FieldMap{
-	"EndpointProject":    ubx.FieldSpec{WireName: "endpoint_project"},
-	"RequestedIpAddress": ubx.FieldSpec{WireName: "requested_ip_address"},
-}
+		"EndpointProject": ubx.FieldSpec{WireName: "endpoint_project"},
+		"RequestedIpAddress": ubx.FieldSpec{WireName: "requested_ip_address"},
+	}
 
 var Instance_NetworksFields = ubx.FieldMap{
-	"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
-	"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
-	"Modes":       ubx.FieldSpec{WireName: "modes"},
-	"Network":     ubx.FieldSpec{WireName: "network"},
-	"PscConfig": ubx.FieldSpec{
-		WireName: "psc_config",
-		Kind:     "object",
-		Fields:   Instance_Networks_PscConfigFields,
-	},
-	"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
-}
+		"ConnectMode": ubx.FieldSpec{WireName: "connect_mode"},
+		"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
+		"Modes": ubx.FieldSpec{WireName: "modes"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"PscConfig": ubx.FieldSpec{
+			WireName: "psc_config",
+			Kind: "object",
+			Fields: Instance_Networks_PscConfigFields,
+		},
+		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
+	}
 
 var Instance_PerformanceConfig_FixedIopsFields = ubx.FieldMap{
-	"MaxIops": ubx.FieldSpec{WireName: "max_iops"},
-}
+		"MaxIops": ubx.FieldSpec{WireName: "max_iops"},
+	}
 
 var Instance_PerformanceConfig_IopsPerTbFields = ubx.FieldMap{
-	"MaxIopsPerTb": ubx.FieldSpec{WireName: "max_iops_per_tb"},
-}
+		"MaxIopsPerTb": ubx.FieldSpec{WireName: "max_iops_per_tb"},
+	}
 
 var Instance_PerformanceConfigFields = ubx.FieldMap{
-	"FixedIops": ubx.FieldSpec{
-		WireName: "fixed_iops",
-		Kind:     "object",
-		Fields:   Instance_PerformanceConfig_FixedIopsFields,
-	},
-	"IopsPerTb": ubx.FieldSpec{
-		WireName: "iops_per_tb",
-		Kind:     "object",
-		Fields:   Instance_PerformanceConfig_IopsPerTbFields,
-	},
-}
+		"FixedIops": ubx.FieldSpec{
+			WireName: "fixed_iops",
+			Kind: "object",
+			Fields: Instance_PerformanceConfig_FixedIopsFields,
+		},
+		"IopsPerTb": ubx.FieldSpec{
+			WireName: "iops_per_tb",
+			Kind: "object",
+			Fields: Instance_PerformanceConfig_IopsPerTbFields,
+		},
+	}
 
 var Instance_PerformanceLimitsFields = ubx.FieldMap{
-	"MaxIops":               ubx.FieldSpec{WireName: "max_iops"},
-	"MaxReadIops":           ubx.FieldSpec{WireName: "max_read_iops"},
-	"MaxReadThroughputBps":  ubx.FieldSpec{WireName: "max_read_throughput_bps"},
-	"MaxWriteIops":          ubx.FieldSpec{WireName: "max_write_iops"},
-	"MaxWriteThroughputBps": ubx.FieldSpec{WireName: "max_write_throughput_bps"},
-}
+		"MaxIops": ubx.FieldSpec{WireName: "max_iops"},
+		"MaxReadIops": ubx.FieldSpec{WireName: "max_read_iops"},
+		"MaxReadThroughputBps": ubx.FieldSpec{WireName: "max_read_throughput_bps"},
+		"MaxWriteIops": ubx.FieldSpec{WireName: "max_write_iops"},
+		"MaxWriteThroughputBps": ubx.FieldSpec{WireName: "max_write_throughput_bps"},
+	}
 
 var Instance_Replication_ReplicasFields = ubx.FieldMap{
-	"LastActiveSyncTime": ubx.FieldSpec{WireName: "last_active_sync_time"},
-	"PeerInstance":       ubx.FieldSpec{WireName: "peer_instance"},
-	"State":              ubx.FieldSpec{WireName: "state"},
-	"StateReasons":       ubx.FieldSpec{WireName: "state_reasons"},
-	"StateUpdateTime":    ubx.FieldSpec{WireName: "state_update_time"},
-}
+		"LastActiveSyncTime": ubx.FieldSpec{WireName: "last_active_sync_time"},
+		"PeerInstance": ubx.FieldSpec{WireName: "peer_instance"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"StateReasons": ubx.FieldSpec{WireName: "state_reasons"},
+		"StateUpdateTime": ubx.FieldSpec{WireName: "state_update_time"},
+	}
 
 var Instance_ReplicationFields = ubx.FieldMap{
-	"Replicas": ubx.FieldSpec{
-		WireName: "replicas",
-		Kind:     "list",
-		Fields:   Instance_Replication_ReplicasFields,
-	},
-	"Role": ubx.FieldSpec{WireName: "role"},
-}
+		"Replicas": ubx.FieldSpec{
+			WireName: "replicas",
+			Kind: "list",
+			Fields: Instance_Replication_ReplicasFields,
+		},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 type InstanceConfig struct {
 	// Optional. Indicates whether the instance is protected against deletion.
@@ -310,41 +310,41 @@ var Instance = ubx.ResourceBinding{
 	WireType: "google_file_instance",
 	Fields: ubx.FieldMap{
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"DeletionProtectionReason":  ubx.FieldSpec{WireName: "deletion_protection_reason"},
-		"Description":               ubx.FieldSpec{WireName: "description"},
+		"DeletionProtectionReason": ubx.FieldSpec{WireName: "deletion_protection_reason"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DirectoryServices": ubx.FieldSpec{
 			WireName: "directory_services",
-			Kind:     "object",
-			Fields:   Instance_DirectoryServicesFields,
+			Kind: "object",
+			Fields: Instance_DirectoryServicesFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"FileShares": ubx.FieldSpec{
 			WireName: "file_shares",
-			Kind:     "list",
-			Fields:   Instance_FileSharesFields,
+			Kind: "list",
+			Fields: Instance_FileSharesFields,
 		},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind:     "list",
-			Fields:   Instance_NetworksFields,
+			Kind: "list",
+			Fields: Instance_NetworksFields,
 		},
 		"PerformanceConfig": ubx.FieldSpec{
 			WireName: "performance_config",
-			Kind:     "object",
-			Fields:   Instance_PerformanceConfigFields,
+			Kind: "object",
+			Fields: Instance_PerformanceConfigFields,
 		},
 		"PerformanceLimits": ubx.FieldSpec{
 			WireName: "performance_limits",
-			Kind:     "object",
-			Fields:   Instance_PerformanceLimitsFields,
+			Kind: "object",
+			Fields: Instance_PerformanceLimitsFields,
 		},
 		"Protocol": ubx.FieldSpec{WireName: "protocol"},
 		"Replication": ubx.FieldSpec{
 			WireName: "replication",
-			Kind:     "object",
-			Fields:   Instance_ReplicationFields,
+			Kind: "object",
+			Fields: Instance_ReplicationFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"Tier": ubx.FieldSpec{WireName: "tier"},

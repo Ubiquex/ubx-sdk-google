@@ -9,8 +9,8 @@ type V1alphaScope_State struct {
 }
 
 var V1alphaScope_StateFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 type V1alphaScopeConfig struct {
 	// Optional. Labels for this Scope.
@@ -45,13 +45,13 @@ type V1alphaScopeAttrs struct {
 var V1alphaScope = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1alpha_scope",
 	Fields: ubx.FieldMap{
-		"Labels":          ubx.FieldSpec{WireName: "labels"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NamespaceLabels": ubx.FieldSpec{WireName: "namespace_labels"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   V1alphaScope_StateFields,
+			Kind: "object",
+			Fields: V1alphaScope_StateFields,
 		},
 	},
 }

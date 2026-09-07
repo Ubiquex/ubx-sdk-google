@@ -4,9 +4,9 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaDomainMapping_ResourceRecords struct {
-	Name   any
+	Name any
 	Rrdata any
-	Type   any
+	Type any
 }
 
 type V1alphaDomainMapping_SslSettings struct {
@@ -17,9 +17,9 @@ type V1alphaDomainMapping_SslSettings struct {
 }
 
 var V1alphaDomainMapping_SslSettingsFields = ubx.FieldMap{
-	"CertificateId":        ubx.FieldSpec{WireName: "certificate_id"},
-	"IsManagedCertificate": ubx.FieldSpec{WireName: "is_managed_certificate"},
-}
+		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
+		"IsManagedCertificate": ubx.FieldSpec{WireName: "is_managed_certificate"},
+	}
 
 type V1alphaDomainMappingConfig struct {
 	// Relative name of the domain serving the application. Example: example.com.
@@ -45,8 +45,8 @@ var V1alphaDomainMapping = ubx.ResourceBinding{
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"SslSettings": ubx.FieldSpec{
 			WireName: "ssl_settings",
-			Kind:     "object",
-			Fields:   V1alphaDomainMapping_SslSettingsFields,
+			Kind: "object",
+			Fields: V1alphaDomainMapping_SslSettingsFields,
 		},
 	},
 }

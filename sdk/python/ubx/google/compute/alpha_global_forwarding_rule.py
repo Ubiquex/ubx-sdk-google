@@ -90,6 +90,8 @@ class AlphaGlobalForwardingRuleConfig:
     name: Any = None
     # This field is not used for global external load balancing. For internal passthrough Network Load Balancers, this field identifies the network that the load balanced IP should belong to for this forwarding rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
     network: Any = None
+    # Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+    network_attachment: Any = None
     # This signifies the networking tier used for configuring this load balancer and can only take the following values:PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM andSTANDARD. For GlobalForwardingRule, the valid value isPREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
     network_tier: Any = None
     # This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable.
@@ -102,6 +104,8 @@ class AlphaGlobalForwardingRuleConfig:
     psc_connection_id: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
+    # Optional. Producer Service's Service class ID for the region of this forwarding rule. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+    service_class_id: Any = None
     # Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
     service_directory_registrations: Any = None
     # An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -171,6 +175,8 @@ class AlphaGlobalForwardingRuleAttrs:
     name: Any = None
     # This field is not used for global external load balancing. For internal passthrough Network Load Balancers, this field identifies the network that the load balanced IP should belong to for this forwarding rule. If the subnetwork is specified, the network of the subnetwork will be used. If neither subnetwork nor this field is specified, the default network will be used. For Private Service Connect forwarding rules that forward traffic to Google APIs, a network must be provided.
     network: Any = None
+    # Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+    network_attachment: Any = None
     # This signifies the networking tier used for configuring this load balancer and can only take the following values:PREMIUM, STANDARD. For regional ForwardingRule, the valid values are PREMIUM andSTANDARD. For GlobalForwardingRule, the valid value isPREMIUM. If this field is not specified, it is assumed to be PREMIUM. If IPAddress is specified, this value must be equal to the networkTier of the Address.
     network_tier: Any = None
     # This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable.
@@ -191,6 +197,8 @@ class AlphaGlobalForwardingRuleAttrs:
     self_link: Any = None
     # Output only. [Output Only] Server-defined URL for this resource with the resource id.
     self_link_with_id: Any = None
+    # Optional. Producer Service's Service class ID for the region of this forwarding rule. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+    service_class_id: Any = None
     # Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
     service_directory_registrations: Any = None
     # An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -232,12 +240,14 @@ AlphaGlobalForwardingRule = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
+        "network_attachment": ubx.FieldSpec(wire_name="network_attachment"),
         "network_tier": ubx.FieldSpec(wire_name="network_tier"),
         "no_automate_dns_zone": ubx.FieldSpec(wire_name="no_automate_dns_zone"),
         "port_range": ubx.FieldSpec(wire_name="port_range"),
         "ports": ubx.FieldSpec(wire_name="ports"),
         "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
+        "service_class_id": ubx.FieldSpec(wire_name="service_class_id"),
         "service_directory_registrations": ubx.FieldSpec(
             wire_name="service_directory_registrations",
             kind="list",

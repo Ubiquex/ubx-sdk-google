@@ -287,307 +287,307 @@ type Analyse_AnnotatorSelector struct {
 }
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields = ubx.FieldMap{
-	"TranscriptIndex": ubx.FieldSpec{WireName: "transcript_index"},
-	"WordIndex":       ubx.FieldSpec{WireName: "word_index"},
-}
+		"TranscriptIndex": ubx.FieldSpec{WireName: "transcript_index"},
+		"WordIndex": ubx.FieldSpec{WireName: "word_index"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields = ubx.FieldMap{
-	"Magnitude": ubx.FieldSpec{WireName: "magnitude"},
-	"Score":     ubx.FieldSpec{WireName: "score"},
-}
+		"Magnitude": ubx.FieldSpec{WireName: "magnitude"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionDataFields = ubx.FieldMap{
-	"EntityUniqueId": ubx.FieldSpec{WireName: "entity_unique_id"},
-	"Sentiment": ubx.FieldSpec{
-		WireName: "sentiment",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"EntityUniqueId": ubx.FieldSpec{WireName: "entity_unique_id"},
+		"Sentiment": ubx.FieldSpec{
+			WireName: "sentiment",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchDataFields = ubx.FieldMap{
-	"IntentUniqueId": ubx.FieldSpec{WireName: "intent_unique_id"},
-}
+		"IntentUniqueId": ubx.FieldSpec{WireName: "intent_unique_id"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignmentFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Issue":       ubx.FieldSpec{WireName: "issue"},
-	"Score":       ubx.FieldSpec{WireName: "score"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Issue": ubx.FieldSpec{WireName: "issue"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchDataFields = ubx.FieldMap{
-	"IssueAssignment": ubx.FieldSpec{
-		WireName: "issue_assignment",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignmentFields,
-	},
-}
+		"IssueAssignment": ubx.FieldSpec{
+			WireName: "issue_assignment",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignmentFields,
+		},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchDataFields = ubx.FieldMap{
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"PhraseMatcher": ubx.FieldSpec{WireName: "phrase_matcher"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"PhraseMatcher": ubx.FieldSpec{WireName: "phrase_matcher"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_AnnotationsFields = ubx.FieldMap{
-	"AnnotationEndBoundary": ubx.FieldSpec{
-		WireName: "annotation_end_boundary",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-	},
-	"AnnotationStartBoundary": ubx.FieldSpec{
-		WireName: "annotation_start_boundary",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-	},
-	"ChannelTag": ubx.FieldSpec{WireName: "channel_tag"},
-	"EntityMentionData": ubx.FieldSpec{
-		WireName: "entity_mention_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionDataFields,
-	},
-	"HoldData": ubx.FieldSpec{WireName: "hold_data"},
-	"IntentMatchData": ubx.FieldSpec{
-		WireName: "intent_match_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchDataFields,
-	},
-	"InterruptionData": ubx.FieldSpec{WireName: "interruption_data"},
-	"IssueMatchData": ubx.FieldSpec{
-		WireName: "issue_match_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchDataFields,
-	},
-	"PhraseMatchData": ubx.FieldSpec{
-		WireName: "phrase_match_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchDataFields,
-	},
-	"SentimentData": ubx.FieldSpec{
-		WireName: "sentiment_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
-	},
-	"SilenceData": ubx.FieldSpec{WireName: "silence_data"},
-}
+		"AnnotationEndBoundary": ubx.FieldSpec{
+			WireName: "annotation_end_boundary",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
+		},
+		"AnnotationStartBoundary": ubx.FieldSpec{
+			WireName: "annotation_start_boundary",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
+		},
+		"ChannelTag": ubx.FieldSpec{WireName: "channel_tag"},
+		"EntityMentionData": ubx.FieldSpec{
+			WireName: "entity_mention_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionDataFields,
+		},
+		"HoldData": ubx.FieldSpec{WireName: "hold_data"},
+		"IntentMatchData": ubx.FieldSpec{
+			WireName: "intent_match_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchDataFields,
+		},
+		"InterruptionData": ubx.FieldSpec{WireName: "interruption_data"},
+		"IssueMatchData": ubx.FieldSpec{
+			WireName: "issue_match_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchDataFields,
+		},
+		"PhraseMatchData": ubx.FieldSpec{
+			WireName: "phrase_match_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchDataFields,
+		},
+		"SentimentData": ubx.FieldSpec{
+			WireName: "sentiment_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
+		},
+		"SilenceData": ubx.FieldSpec{WireName: "silence_data"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_EntitiesFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Metadata":    ubx.FieldSpec{WireName: "metadata"},
-	"Salience":    ubx.FieldSpec{WireName: "salience"},
-	"Sentiment": ubx.FieldSpec{
-		WireName: "sentiment",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
-	},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Salience": ubx.FieldSpec{WireName: "salience"},
+		"Sentiment": ubx.FieldSpec{
+			WireName: "sentiment",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
+		},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_IntentsFields = ubx.FieldMap{
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResultFields = ubx.FieldMap{
-	"IssueModel": ubx.FieldSpec{WireName: "issue_model"},
-	"Issues": ubx.FieldSpec{
-		WireName: "issues",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignmentFields,
-	},
-}
+		"IssueModel": ubx.FieldSpec{WireName: "issue_model"},
+		"Issues": ubx.FieldSpec{
+			WireName: "issues",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignmentFields,
+		},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValueFields = ubx.FieldMap{
-	"BoolValue":       ubx.FieldSpec{WireName: "bool_value"},
-	"Key":             ubx.FieldSpec{WireName: "key"},
-	"NaValue":         ubx.FieldSpec{WireName: "na_value"},
-	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-	"NumValue":        ubx.FieldSpec{WireName: "num_value"},
-	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
-	"Score":           ubx.FieldSpec{WireName: "score"},
-	"SkipValue":       ubx.FieldSpec{WireName: "skip_value"},
-	"StrValue":        ubx.FieldSpec{WireName: "str_value"},
-}
+		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"NaValue": ubx.FieldSpec{WireName: "na_value"},
+		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+		"NumValue": ubx.FieldSpec{WireName: "num_value"},
+		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"SkipValue": ubx.FieldSpec{WireName: "skip_value"},
+		"StrValue": ubx.FieldSpec{WireName: "str_value"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSourcesFields = ubx.FieldMap{
-	"AnswerValue": ubx.FieldSpec{
-		WireName: "answer_value",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValueFields,
-	},
-	"SourceType": ubx.FieldSpec{WireName: "source_type"},
-}
+		"AnswerValue": ubx.FieldSpec{
+			WireName: "answer_value",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValueFields,
+		},
+		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswersFields = ubx.FieldMap{
-	"AnswerSources": ubx.FieldSpec{
-		WireName: "answer_sources",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSourcesFields,
-	},
-	"AnswerValue": ubx.FieldSpec{
-		WireName: "answer_value",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValueFields,
-	},
-	"Conversation": ubx.FieldSpec{WireName: "conversation"},
-	"QaQuestion":   ubx.FieldSpec{WireName: "qa_question"},
-	"QuestionBody": ubx.FieldSpec{WireName: "question_body"},
-	"Tags":         ubx.FieldSpec{WireName: "tags"},
-}
+		"AnswerSources": ubx.FieldSpec{
+			WireName: "answer_sources",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSourcesFields,
+		},
+		"AnswerValue": ubx.FieldSpec{
+			WireName: "answer_value",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValueFields,
+		},
+		"Conversation": ubx.FieldSpec{WireName: "conversation"},
+		"QaQuestion": ubx.FieldSpec{WireName: "qa_question"},
+		"QuestionBody": ubx.FieldSpec{WireName: "question_body"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResultsFields = ubx.FieldMap{
-	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
-	"Score":           ubx.FieldSpec{WireName: "score"},
-	"Tag":             ubx.FieldSpec{WireName: "tag"},
-}
+		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"Tag": ubx.FieldSpec{WireName: "tag"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSourcesFields = ubx.FieldMap{
-	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
-	"QaTagResults": ubx.FieldSpec{
-		WireName: "qa_tag_results",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResultsFields,
-	},
-	"Score":      ubx.FieldSpec{WireName: "score"},
-	"SourceType": ubx.FieldSpec{WireName: "source_type"},
-}
+		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
+		"QaTagResults": ubx.FieldSpec{
+			WireName: "qa_tag_results",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResultsFields,
+		},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResultsFields = ubx.FieldMap{
-	"AgentId":         ubx.FieldSpec{WireName: "agent_id"},
-	"Conversation":    ubx.FieldSpec{WireName: "conversation"},
-	"CreateTime":      ubx.FieldSpec{WireName: "create_time"},
-	"Name":            ubx.FieldSpec{WireName: "name"},
-	"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
-	"PotentialScore":  ubx.FieldSpec{WireName: "potential_score"},
-	"QaAnswers": ubx.FieldSpec{
-		WireName: "qa_answers",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswersFields,
-	},
-	"QaScorecardRevision": ubx.FieldSpec{WireName: "qa_scorecard_revision"},
-	"QaTagResults": ubx.FieldSpec{
-		WireName: "qa_tag_results",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResultsFields,
-	},
-	"Score": ubx.FieldSpec{WireName: "score"},
-	"ScoreSources": ubx.FieldSpec{
-		WireName: "score_sources",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSourcesFields,
-	},
-}
+		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
+		"Conversation": ubx.FieldSpec{WireName: "conversation"},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NormalizedScore": ubx.FieldSpec{WireName: "normalized_score"},
+		"PotentialScore": ubx.FieldSpec{WireName: "potential_score"},
+		"QaAnswers": ubx.FieldSpec{
+			WireName: "qa_answers",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswersFields,
+		},
+		"QaScorecardRevision": ubx.FieldSpec{WireName: "qa_scorecard_revision"},
+		"QaTagResults": ubx.FieldSpec{
+			WireName: "qa_tag_results",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResultsFields,
+		},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"ScoreSources": ubx.FieldSpec{
+			WireName: "score_sources",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSourcesFields,
+		},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_SentimentsFields = ubx.FieldMap{
-	"ChannelTag": ubx.FieldSpec{WireName: "channel_tag"},
-	"SentimentData": ubx.FieldSpec{
-		WireName: "sentiment_data",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
-	},
-}
+		"ChannelTag": ubx.FieldSpec{WireName: "channel_tag"},
+		"SentimentData": ubx.FieldSpec{
+			WireName: "sentiment_data",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_SentimentFields,
+		},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadata_SilenceFields = ubx.FieldMap{
-	"SilenceDuration":   ubx.FieldSpec{WireName: "silence_duration"},
-	"SilencePercentage": ubx.FieldSpec{WireName: "silence_percentage"},
-}
+		"SilenceDuration": ubx.FieldSpec{WireName: "silence_duration"},
+		"SilencePercentage": ubx.FieldSpec{WireName: "silence_percentage"},
+	}
 
 var Analyse_AnalysisResult_CallAnalysisMetadataFields = ubx.FieldMap{
-	"Annotations": ubx.FieldSpec{
-		WireName: "annotations",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_AnnotationsFields,
-	},
-	"Entities": ubx.FieldSpec{
-		WireName: "entities",
-		Kind:     "map",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_EntitiesFields,
-	},
-	"Intents": ubx.FieldSpec{
-		WireName: "intents",
-		Kind:     "map",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_IntentsFields,
-	},
-	"IssueModelResult": ubx.FieldSpec{
-		WireName: "issue_model_result",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResultFields,
-	},
-	"PhraseMatchers": ubx.FieldSpec{
-		WireName: "phrase_matchers",
-		Kind:     "map",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchDataFields,
-	},
-	"QaScorecardResults": ubx.FieldSpec{
-		WireName: "qa_scorecard_results",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResultsFields,
-	},
-	"Sentiments": ubx.FieldSpec{
-		WireName: "sentiments",
-		Kind:     "list",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_SentimentsFields,
-	},
-	"Silence": ubx.FieldSpec{
-		WireName: "silence",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadata_SilenceFields,
-	},
-}
+		"Annotations": ubx.FieldSpec{
+			WireName: "annotations",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_AnnotationsFields,
+		},
+		"Entities": ubx.FieldSpec{
+			WireName: "entities",
+			Kind: "map",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_EntitiesFields,
+		},
+		"Intents": ubx.FieldSpec{
+			WireName: "intents",
+			Kind: "map",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_IntentsFields,
+		},
+		"IssueModelResult": ubx.FieldSpec{
+			WireName: "issue_model_result",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_IssueModelResultFields,
+		},
+		"PhraseMatchers": ubx.FieldSpec{
+			WireName: "phrase_matchers",
+			Kind: "map",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchDataFields,
+		},
+		"QaScorecardResults": ubx.FieldSpec{
+			WireName: "qa_scorecard_results",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_QaScorecardResultsFields,
+		},
+		"Sentiments": ubx.FieldSpec{
+			WireName: "sentiments",
+			Kind: "list",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_SentimentsFields,
+		},
+		"Silence": ubx.FieldSpec{
+			WireName: "silence",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadata_SilenceFields,
+		},
+	}
 
 var Analyse_AnalysisResultFields = ubx.FieldMap{
-	"CallAnalysisMetadata": ubx.FieldSpec{
-		WireName: "call_analysis_metadata",
-		Kind:     "object",
-		Fields:   Analyse_AnalysisResult_CallAnalysisMetadataFields,
-	},
-	"EndTime": ubx.FieldSpec{WireName: "end_time"},
-}
+		"CallAnalysisMetadata": ubx.FieldSpec{
+			WireName: "call_analysis_metadata",
+			Kind: "object",
+			Fields: Analyse_AnalysisResult_CallAnalysisMetadataFields,
+		},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	}
 
 var Analyse_AnnotatorSelector_QaConfig_ScorecardListFields = ubx.FieldMap{
-	"QaScorecardRevisions": ubx.FieldSpec{WireName: "qa_scorecard_revisions"},
-}
+		"QaScorecardRevisions": ubx.FieldSpec{WireName: "qa_scorecard_revisions"},
+	}
 
 var Analyse_AnnotatorSelector_QaConfigFields = ubx.FieldMap{
-	"ScorecardList": ubx.FieldSpec{
-		WireName: "scorecard_list",
-		Kind:     "object",
-		Fields:   Analyse_AnnotatorSelector_QaConfig_ScorecardListFields,
-	},
-}
+		"ScorecardList": ubx.FieldSpec{
+			WireName: "scorecard_list",
+			Kind: "object",
+			Fields: Analyse_AnnotatorSelector_QaConfig_ScorecardListFields,
+		},
+	}
 
 var Analyse_AnnotatorSelector_SummarizationConfigFields = ubx.FieldMap{
-	"ConversationProfile": ubx.FieldSpec{WireName: "conversation_profile"},
-	"Generator":           ubx.FieldSpec{WireName: "generator"},
-	"SummarizationModel":  ubx.FieldSpec{WireName: "summarization_model"},
-}
+		"ConversationProfile": ubx.FieldSpec{WireName: "conversation_profile"},
+		"Generator": ubx.FieldSpec{WireName: "generator"},
+		"SummarizationModel": ubx.FieldSpec{WireName: "summarization_model"},
+	}
 
 var Analyse_AnnotatorSelectorFields = ubx.FieldMap{
-	"IssueModels":    ubx.FieldSpec{WireName: "issue_models"},
-	"PhraseMatchers": ubx.FieldSpec{WireName: "phrase_matchers"},
-	"QaConfig": ubx.FieldSpec{
-		WireName: "qa_config",
-		Kind:     "object",
-		Fields:   Analyse_AnnotatorSelector_QaConfigFields,
-	},
-	"RunAutoLabelingAnnotator":  ubx.FieldSpec{WireName: "run_auto_labeling_annotator"},
-	"RunEntityAnnotator":        ubx.FieldSpec{WireName: "run_entity_annotator"},
-	"RunIntentAnnotator":        ubx.FieldSpec{WireName: "run_intent_annotator"},
-	"RunInterruptionAnnotator":  ubx.FieldSpec{WireName: "run_interruption_annotator"},
-	"RunIssueModelAnnotator":    ubx.FieldSpec{WireName: "run_issue_model_annotator"},
-	"RunPhraseMatcherAnnotator": ubx.FieldSpec{WireName: "run_phrase_matcher_annotator"},
-	"RunQaAnnotator":            ubx.FieldSpec{WireName: "run_qa_annotator"},
-	"RunSentimentAnnotator":     ubx.FieldSpec{WireName: "run_sentiment_annotator"},
-	"RunSilenceAnnotator":       ubx.FieldSpec{WireName: "run_silence_annotator"},
-	"RunSummarizationAnnotator": ubx.FieldSpec{WireName: "run_summarization_annotator"},
-	"SummarizationConfig": ubx.FieldSpec{
-		WireName: "summarization_config",
-		Kind:     "object",
-		Fields:   Analyse_AnnotatorSelector_SummarizationConfigFields,
-	},
-}
+		"IssueModels": ubx.FieldSpec{WireName: "issue_models"},
+		"PhraseMatchers": ubx.FieldSpec{WireName: "phrase_matchers"},
+		"QaConfig": ubx.FieldSpec{
+			WireName: "qa_config",
+			Kind: "object",
+			Fields: Analyse_AnnotatorSelector_QaConfigFields,
+		},
+		"RunAutoLabelingAnnotator": ubx.FieldSpec{WireName: "run_auto_labeling_annotator"},
+		"RunEntityAnnotator": ubx.FieldSpec{WireName: "run_entity_annotator"},
+		"RunIntentAnnotator": ubx.FieldSpec{WireName: "run_intent_annotator"},
+		"RunInterruptionAnnotator": ubx.FieldSpec{WireName: "run_interruption_annotator"},
+		"RunIssueModelAnnotator": ubx.FieldSpec{WireName: "run_issue_model_annotator"},
+		"RunPhraseMatcherAnnotator": ubx.FieldSpec{WireName: "run_phrase_matcher_annotator"},
+		"RunQaAnnotator": ubx.FieldSpec{WireName: "run_qa_annotator"},
+		"RunSentimentAnnotator": ubx.FieldSpec{WireName: "run_sentiment_annotator"},
+		"RunSilenceAnnotator": ubx.FieldSpec{WireName: "run_silence_annotator"},
+		"RunSummarizationAnnotator": ubx.FieldSpec{WireName: "run_summarization_annotator"},
+		"SummarizationConfig": ubx.FieldSpec{
+			WireName: "summarization_config",
+			Kind: "object",
+			Fields: Analyse_AnnotatorSelector_SummarizationConfigFields,
+		},
+	}
 
 type AnalyseConfig struct {
 	// The result of an analysis.
@@ -616,13 +616,13 @@ var Analyse = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AnalysisResult": ubx.FieldSpec{
 			WireName: "analysis_result",
-			Kind:     "object",
-			Fields:   Analyse_AnalysisResultFields,
+			Kind: "object",
+			Fields: Analyse_AnalysisResultFields,
 		},
 		"AnnotatorSelector": ubx.FieldSpec{
 			WireName: "annotator_selector",
-			Kind:     "object",
-			Fields:   Analyse_AnnotatorSelectorFields,
+			Kind: "object",
+			Fields: Analyse_AnnotatorSelectorFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

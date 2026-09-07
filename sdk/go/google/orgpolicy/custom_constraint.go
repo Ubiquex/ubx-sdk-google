@@ -42,12 +42,12 @@ type CustomConstraintAttrs struct {
 var CustomConstraint = ubx.ResourceBinding{
 	WireType: "google_orgpolicy_custom_constraint",
 	Fields: ubx.FieldMap{
-		"ActionType":    ubx.FieldSpec{WireName: "action_type"},
-		"Condition":     ubx.FieldSpec{WireName: "condition"},
-		"Description":   ubx.FieldSpec{WireName: "description"},
-		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-		"MethodTypes":   ubx.FieldSpec{WireName: "method_types"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"MethodTypes": ubx.FieldSpec{WireName: "method_types"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
 	},
 }

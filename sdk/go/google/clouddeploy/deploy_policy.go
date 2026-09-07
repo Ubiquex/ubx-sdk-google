@@ -83,105 +83,105 @@ type DeployPolicy_Selectors struct {
 }
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields = ubx.FieldMap{
-	"Day":   ubx.FieldSpec{WireName: "day"},
-	"Month": ubx.FieldSpec{WireName: "month"},
-	"Year":  ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields = ubx.FieldMap{
-	"Hours":   ubx.FieldSpec{WireName: "hours"},
-	"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Hours": ubx.FieldSpec{WireName: "hours"},
+		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindowsFields = ubx.FieldMap{
-	"EndDate": ubx.FieldSpec{
-		WireName: "end_date",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields,
-	},
-	"EndTime": ubx.FieldSpec{
-		WireName: "end_time",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
-	},
-	"StartDate": ubx.FieldSpec{
-		WireName: "start_date",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields,
-	},
-	"StartTime": ubx.FieldSpec{
-		WireName: "start_time",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
-	},
-}
+		"EndDate": ubx.FieldSpec{
+			WireName: "end_date",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields,
+		},
+		"EndTime": ubx.FieldSpec{
+			WireName: "end_time",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
+		},
+		"StartDate": ubx.FieldSpec{
+			WireName: "start_date",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndDateFields,
+		},
+		"StartTime": ubx.FieldSpec{
+			WireName: "start_time",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
+		},
+	}
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindowsFields = ubx.FieldMap{
-	"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-	"EndTime": ubx.FieldSpec{
-		WireName: "end_time",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
-	},
-	"StartTime": ubx.FieldSpec{
-		WireName: "start_time",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
-	},
-}
+		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+		"EndTime": ubx.FieldSpec{
+			WireName: "end_time",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
+		},
+		"StartTime": ubx.FieldSpec{
+			WireName: "start_time",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindows_EndTimeFields,
+		},
+	}
 
 var DeployPolicy_Rules_RolloutRestriction_TimeWindowsFields = ubx.FieldMap{
-	"OneTimeWindows": ubx.FieldSpec{
-		WireName: "one_time_windows",
-		Kind:     "list",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindowsFields,
-	},
-	"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	"WeeklyWindows": ubx.FieldSpec{
-		WireName: "weekly_windows",
-		Kind:     "list",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindowsFields,
-	},
-}
+		"OneTimeWindows": ubx.FieldSpec{
+			WireName: "one_time_windows",
+			Kind: "list",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_OneTimeWindowsFields,
+		},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"WeeklyWindows": ubx.FieldSpec{
+			WireName: "weekly_windows",
+			Kind: "list",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindows_WeeklyWindowsFields,
+		},
+	}
 
 var DeployPolicy_Rules_RolloutRestrictionFields = ubx.FieldMap{
-	"Actions":  ubx.FieldSpec{WireName: "actions"},
-	"Id":       ubx.FieldSpec{WireName: "id"},
-	"Invokers": ubx.FieldSpec{WireName: "invokers"},
-	"TimeWindows": ubx.FieldSpec{
-		WireName: "time_windows",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestriction_TimeWindowsFields,
-	},
-}
+		"Actions": ubx.FieldSpec{WireName: "actions"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Invokers": ubx.FieldSpec{WireName: "invokers"},
+		"TimeWindows": ubx.FieldSpec{
+			WireName: "time_windows",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestriction_TimeWindowsFields,
+		},
+	}
 
 var DeployPolicy_RulesFields = ubx.FieldMap{
-	"RolloutRestriction": ubx.FieldSpec{
-		WireName: "rollout_restriction",
-		Kind:     "object",
-		Fields:   DeployPolicy_Rules_RolloutRestrictionFields,
-	},
-}
+		"RolloutRestriction": ubx.FieldSpec{
+			WireName: "rollout_restriction",
+			Kind: "object",
+			Fields: DeployPolicy_Rules_RolloutRestrictionFields,
+		},
+	}
 
 var DeployPolicy_Selectors_DeliveryPipelineFields = ubx.FieldMap{
-	"Id":     ubx.FieldSpec{WireName: "id"},
-	"Labels": ubx.FieldSpec{WireName: "labels"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+	}
 
 var DeployPolicy_SelectorsFields = ubx.FieldMap{
-	"DeliveryPipeline": ubx.FieldSpec{
-		WireName: "delivery_pipeline",
-		Kind:     "object",
-		Fields:   DeployPolicy_Selectors_DeliveryPipelineFields,
-	},
-	"Target": ubx.FieldSpec{
-		WireName: "target",
-		Kind:     "object",
-		Fields:   DeployPolicy_Selectors_DeliveryPipelineFields,
-	},
-}
+		"DeliveryPipeline": ubx.FieldSpec{
+			WireName: "delivery_pipeline",
+			Kind: "object",
+			Fields: DeployPolicy_Selectors_DeliveryPipelineFields,
+		},
+		"Target": ubx.FieldSpec{
+			WireName: "target",
+			Kind: "object",
+			Fields: DeployPolicy_Selectors_DeliveryPipelineFields,
+		},
+	}
 
 type DeployPolicyConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. Annotations must meet the following constraints: * Annotations are key/value pairs. * Valid annotation keys have two segments: an optional prefix and name, separated by a slash (`/`). * The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character (`[a-z0-9A-Z]`) with dashes (`-`), underscores (`_`), dots (`.`), and alphanumerics between. * The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots(`.`), not longer than 253 characters in total, followed by a slash (`/`). See https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/#syntax-and-character-set for more details.
@@ -230,17 +230,17 @@ var DeployPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   DeployPolicy_RulesFields,
+			Kind: "list",
+			Fields: DeployPolicy_RulesFields,
 		},
 		"Selectors": ubx.FieldSpec{
 			WireName: "selectors",
-			Kind:     "list",
-			Fields:   DeployPolicy_SelectorsFields,
+			Kind: "list",
+			Fields: DeployPolicy_SelectorsFields,
 		},
 		"Suspended": ubx.FieldSpec{WireName: "suspended"},
 	},

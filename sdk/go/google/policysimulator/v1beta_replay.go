@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaReplay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigs struct {
 	ExemptedMembers any
-	LogType         any
+	LogType any
 }
 
 type V1betaReplay_Config_PolicyOverlay_AuditConfigs struct {
 	AuditLogConfigs any
-	Service         any
+	Service any
 }
 
 type V1betaReplay_Config_PolicyOverlay_Bindings_Condition struct {
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	Expression any
+	Location any
+	Title any
 }
 
 type V1betaReplay_Config_PolicyOverlay_Bindings struct {
 	Condition any
-	Members   any
-	Role      any
+	Members any
+	Role any
 }
 
 type V1betaReplay_Config_PolicyOverlay struct {
 	AuditConfigs any
-	Bindings     any
-	Etag         any
-	Version      any
+	Bindings any
+	Etag any
+	Version any
 }
 
 type V1betaReplay_Config struct {
@@ -65,82 +65,82 @@ type V1betaReplay_ResultsSummary struct {
 }
 
 var V1betaReplay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields = ubx.FieldMap{
-	"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
-	"LogType":         ubx.FieldSpec{WireName: "log_type"},
-}
+		"ExemptedMembers": ubx.FieldSpec{WireName: "exempted_members"},
+		"LogType": ubx.FieldSpec{WireName: "log_type"},
+	}
 
 var V1betaReplay_Config_PolicyOverlay_AuditConfigsFields = ubx.FieldMap{
-	"AuditLogConfigs": ubx.FieldSpec{
-		WireName: "audit_log_configs",
-		Kind:     "list",
-		Fields:   V1betaReplay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields,
-	},
-	"Service": ubx.FieldSpec{WireName: "service"},
-}
+		"AuditLogConfigs": ubx.FieldSpec{
+			WireName: "audit_log_configs",
+			Kind: "list",
+			Fields: V1betaReplay_Config_PolicyOverlay_AuditConfigs_AuditLogConfigsFields,
+		},
+		"Service": ubx.FieldSpec{WireName: "service"},
+	}
 
 var V1betaReplay_Config_PolicyOverlay_Bindings_ConditionFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Expression":  ubx.FieldSpec{WireName: "expression"},
-	"Location":    ubx.FieldSpec{WireName: "location"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var V1betaReplay_Config_PolicyOverlay_BindingsFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{
-		WireName: "condition",
-		Kind:     "object",
-		Fields:   V1betaReplay_Config_PolicyOverlay_Bindings_ConditionFields,
-	},
-	"Members": ubx.FieldSpec{WireName: "members"},
-	"Role":    ubx.FieldSpec{WireName: "role"},
-}
+		"Condition": ubx.FieldSpec{
+			WireName: "condition",
+			Kind: "object",
+			Fields: V1betaReplay_Config_PolicyOverlay_Bindings_ConditionFields,
+		},
+		"Members": ubx.FieldSpec{WireName: "members"},
+		"Role": ubx.FieldSpec{WireName: "role"},
+	}
 
 var V1betaReplay_Config_PolicyOverlayFields = ubx.FieldMap{
-	"AuditConfigs": ubx.FieldSpec{
-		WireName: "audit_configs",
-		Kind:     "list",
-		Fields:   V1betaReplay_Config_PolicyOverlay_AuditConfigsFields,
-	},
-	"Bindings": ubx.FieldSpec{
-		WireName: "bindings",
-		Kind:     "list",
-		Fields:   V1betaReplay_Config_PolicyOverlay_BindingsFields,
-	},
-	"Etag":    ubx.FieldSpec{WireName: "etag"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"AuditConfigs": ubx.FieldSpec{
+			WireName: "audit_configs",
+			Kind: "list",
+			Fields: V1betaReplay_Config_PolicyOverlay_AuditConfigsFields,
+		},
+		"Bindings": ubx.FieldSpec{
+			WireName: "bindings",
+			Kind: "list",
+			Fields: V1betaReplay_Config_PolicyOverlay_BindingsFields,
+		},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var V1betaReplay_ConfigFields = ubx.FieldMap{
-	"LogSource": ubx.FieldSpec{WireName: "log_source"},
-	"PolicyOverlay": ubx.FieldSpec{
-		WireName: "policy_overlay",
-		Kind:     "map",
-		Fields:   V1betaReplay_Config_PolicyOverlayFields,
-	},
-}
+		"LogSource": ubx.FieldSpec{WireName: "log_source"},
+		"PolicyOverlay": ubx.FieldSpec{
+			WireName: "policy_overlay",
+			Kind: "map",
+			Fields: V1betaReplay_Config_PolicyOverlayFields,
+		},
+	}
 
 var V1betaReplay_ResultsSummary_NewestDateFields = ubx.FieldMap{
-	"Day":   ubx.FieldSpec{WireName: "day"},
-	"Month": ubx.FieldSpec{WireName: "month"},
-	"Year":  ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 var V1betaReplay_ResultsSummaryFields = ubx.FieldMap{
-	"DifferenceCount": ubx.FieldSpec{WireName: "difference_count"},
-	"ErrorCount":      ubx.FieldSpec{WireName: "error_count"},
-	"LogCount":        ubx.FieldSpec{WireName: "log_count"},
-	"NewestDate": ubx.FieldSpec{
-		WireName: "newest_date",
-		Kind:     "object",
-		Fields:   V1betaReplay_ResultsSummary_NewestDateFields,
-	},
-	"OldestDate": ubx.FieldSpec{
-		WireName: "oldest_date",
-		Kind:     "object",
-		Fields:   V1betaReplay_ResultsSummary_NewestDateFields,
-	},
-	"UnchangedCount": ubx.FieldSpec{WireName: "unchanged_count"},
-}
+		"DifferenceCount": ubx.FieldSpec{WireName: "difference_count"},
+		"ErrorCount": ubx.FieldSpec{WireName: "error_count"},
+		"LogCount": ubx.FieldSpec{WireName: "log_count"},
+		"NewestDate": ubx.FieldSpec{
+			WireName: "newest_date",
+			Kind: "object",
+			Fields: V1betaReplay_ResultsSummary_NewestDateFields,
+		},
+		"OldestDate": ubx.FieldSpec{
+			WireName: "oldest_date",
+			Kind: "object",
+			Fields: V1betaReplay_ResultsSummary_NewestDateFields,
+		},
+		"UnchangedCount": ubx.FieldSpec{WireName: "unchanged_count"},
+	}
 
 type V1betaReplayConfig struct {
 	// The configuration used for a Replay.
@@ -165,13 +165,13 @@ var V1betaReplay = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind:     "object",
-			Fields:   V1betaReplay_ConfigFields,
+			Kind: "object",
+			Fields: V1betaReplay_ConfigFields,
 		},
 		"ResultsSummary": ubx.FieldSpec{
 			WireName: "results_summary",
-			Kind:     "object",
-			Fields:   V1betaReplay_ResultsSummaryFields,
+			Kind: "object",
+			Fields: V1betaReplay_ResultsSummaryFields,
 		},
 	},
 }

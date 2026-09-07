@@ -63,57 +63,57 @@ type V1alphaAgent_StarterPrompts struct {
 }
 
 var V1alphaAgent_A2aAgentDefinition_CloudMarketplaceConfigFields = ubx.FieldMap{
-	"Entitlement": ubx.FieldSpec{WireName: "entitlement"},
-	"Order":       ubx.FieldSpec{WireName: "order"},
-}
+		"Entitlement": ubx.FieldSpec{WireName: "entitlement"},
+		"Order": ubx.FieldSpec{WireName: "order"},
+	}
 
 var V1alphaAgent_A2aAgentDefinitionFields = ubx.FieldMap{
-	"CloudMarketplaceConfig": ubx.FieldSpec{
-		WireName: "cloud_marketplace_config",
-		Kind:     "object",
-		Fields:   V1alphaAgent_A2aAgentDefinition_CloudMarketplaceConfigFields,
-	},
-	"JsonAgentCard": ubx.FieldSpec{WireName: "json_agent_card"},
-}
+		"CloudMarketplaceConfig": ubx.FieldSpec{
+			WireName: "cloud_marketplace_config",
+			Kind: "object",
+			Fields: V1alphaAgent_A2aAgentDefinition_CloudMarketplaceConfigFields,
+		},
+		"JsonAgentCard": ubx.FieldSpec{WireName: "json_agent_card"},
+	}
 
 var V1alphaAgent_AdkAgentDefinition_ProvisionedReasoningEngineFields = ubx.FieldMap{
-	"ReasoningEngine": ubx.FieldSpec{WireName: "reasoning_engine"},
-}
+		"ReasoningEngine": ubx.FieldSpec{WireName: "reasoning_engine"},
+	}
 
 var V1alphaAgent_AdkAgentDefinitionFields = ubx.FieldMap{
-	"ProvisionedReasoningEngine": ubx.FieldSpec{
-		WireName: "provisioned_reasoning_engine",
-		Kind:     "object",
-		Fields:   V1alphaAgent_AdkAgentDefinition_ProvisionedReasoningEngineFields,
-	},
-}
+		"ProvisionedReasoningEngine": ubx.FieldSpec{
+			WireName: "provisioned_reasoning_engine",
+			Kind: "object",
+			Fields: V1alphaAgent_AdkAgentDefinition_ProvisionedReasoningEngineFields,
+		},
+	}
 
 var V1alphaAgent_AuthorizationConfigFields = ubx.FieldMap{
-	"AgentAuthorization": ubx.FieldSpec{WireName: "agent_authorization"},
-	"ToolAuthorizations": ubx.FieldSpec{WireName: "tool_authorizations"},
-}
+		"AgentAuthorization": ubx.FieldSpec{WireName: "agent_authorization"},
+		"ToolAuthorizations": ubx.FieldSpec{WireName: "tool_authorizations"},
+	}
 
 var V1alphaAgent_DialogflowAgentDefinitionFields = ubx.FieldMap{
-	"DialogflowAgent": ubx.FieldSpec{WireName: "dialogflow_agent"},
-}
+		"DialogflowAgent": ubx.FieldSpec{WireName: "dialogflow_agent"},
+	}
 
 var V1alphaAgent_IconFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Uri":     ubx.FieldSpec{WireName: "uri"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var V1alphaAgent_ObservabilityConfigFields = ubx.FieldMap{
-	"ObservabilityEnabled":    ubx.FieldSpec{WireName: "observability_enabled"},
-	"SensitiveLoggingEnabled": ubx.FieldSpec{WireName: "sensitive_logging_enabled"},
-}
+		"ObservabilityEnabled": ubx.FieldSpec{WireName: "observability_enabled"},
+		"SensitiveLoggingEnabled": ubx.FieldSpec{WireName: "sensitive_logging_enabled"},
+	}
 
 var V1alphaAgent_SharingConfigFields = ubx.FieldMap{
-	"Scope": ubx.FieldSpec{WireName: "scope"},
-}
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+	}
 
 var V1alphaAgent_StarterPromptsFields = ubx.FieldMap{
-	"Text": ubx.FieldSpec{WireName: "text"},
-}
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 type V1alphaAgentConfig struct {
 	// Stored definition of an agent that uses A2A.
@@ -196,49 +196,49 @@ var V1alphaAgent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"A2aAgentDefinition": ubx.FieldSpec{
 			WireName: "a2a_agent_definition",
-			Kind:     "object",
-			Fields:   V1alphaAgent_A2aAgentDefinitionFields,
+			Kind: "object",
+			Fields: V1alphaAgent_A2aAgentDefinitionFields,
 		},
 		"AdkAgentDefinition": ubx.FieldSpec{
 			WireName: "adk_agent_definition",
-			Kind:     "object",
-			Fields:   V1alphaAgent_AdkAgentDefinitionFields,
+			Kind: "object",
+			Fields: V1alphaAgent_AdkAgentDefinitionFields,
 		},
 		"AuthorizationConfig": ubx.FieldSpec{
 			WireName: "authorization_config",
-			Kind:     "object",
-			Fields:   V1alphaAgent_AuthorizationConfigFields,
+			Kind: "object",
+			Fields: V1alphaAgent_AuthorizationConfigFields,
 		},
 		"CustomPlaceholderText": ubx.FieldSpec{WireName: "custom_placeholder_text"},
-		"Description":           ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DialogflowAgentDefinition": ubx.FieldSpec{
 			WireName: "dialogflow_agent_definition",
-			Kind:     "object",
-			Fields:   V1alphaAgent_DialogflowAgentDefinitionFields,
+			Kind: "object",
+			Fields: V1alphaAgent_DialogflowAgentDefinitionFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Icon": ubx.FieldSpec{
 			WireName: "icon",
-			Kind:     "object",
-			Fields:   V1alphaAgent_IconFields,
+			Kind: "object",
+			Fields: V1alphaAgent_IconFields,
 		},
-		"LanguageCode":           ubx.FieldSpec{WireName: "language_code"},
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
 		"ManagedAgentDefinition": ubx.FieldSpec{WireName: "managed_agent_definition"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ObservabilityConfig": ubx.FieldSpec{
 			WireName: "observability_config",
-			Kind:     "object",
-			Fields:   V1alphaAgent_ObservabilityConfigFields,
+			Kind: "object",
+			Fields: V1alphaAgent_ObservabilityConfigFields,
 		},
 		"SharingConfig": ubx.FieldSpec{
 			WireName: "sharing_config",
-			Kind:     "object",
-			Fields:   V1alphaAgent_SharingConfigFields,
+			Kind: "object",
+			Fields: V1alphaAgent_SharingConfigFields,
 		},
 		"StarterPrompts": ubx.FieldSpec{
 			WireName: "starter_prompts",
-			Kind:     "list",
-			Fields:   V1alphaAgent_StarterPromptsFields,
+			Kind: "list",
+			Fields: V1alphaAgent_StarterPromptsFields,
 		},
 	},
 }

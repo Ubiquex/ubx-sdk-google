@@ -52,6 +52,8 @@ class BetaInterconnect_Macsec_PreSharedKeys:
 class BetaInterconnect_Macsec:
     # If set to true, the Interconnect connection is configured with ashould-secure MACsec security policy, that allows the Google router to fallback to cleartext traffic if the MKA session cannot be established. By default, the Interconnect connection is configured with amust-secure security policy that drops all traffic if the MKA session cannot be established with your router.
     fail_open: Any = None
+    # Optional. URL of the InterconnectKeyGroup resource to use for MACsec, in the format: projects/{project}/locations/{region}/interconnectKeyGroups/{interconnectKeyGroup}.
+    interconnect_key_group: Any = None
     # Required. A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
     pre_shared_keys: Any = None
 
@@ -95,6 +97,7 @@ _BetaInterconnect_Macsec_PreSharedKeysFields = {
 
 _BetaInterconnect_MacsecFields = {
     "fail_open": ubx.FieldSpec(wire_name="fail_open"),
+    "interconnect_key_group": ubx.FieldSpec(wire_name="interconnect_key_group"),
     "pre_shared_keys": ubx.FieldSpec(
         wire_name="pre_shared_keys",
         kind="list",

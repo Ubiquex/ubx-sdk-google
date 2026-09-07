@@ -34,10 +34,10 @@ type EndpointAttrs struct {
 var Endpoint = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_endpoint",
 	Fields: ubx.FieldMap{
-		"Address":     ubx.FieldSpec{WireName: "address"},
+		"Address": ubx.FieldSpec{WireName: "address"},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Network":     ubx.FieldSpec{WireName: "network"},
-		"Port":        ubx.FieldSpec{WireName: "port"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Port": ubx.FieldSpec{WireName: "port"},
 	},
 }

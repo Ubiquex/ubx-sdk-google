@@ -60,49 +60,49 @@ type BackendBucket_UsedBy struct {
 }
 
 var BackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields = ubx.FieldMap{
-	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-}
+		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+	}
 
 var BackendBucket_CdnPolicy_CacheKeyPolicyFields = ubx.FieldMap{
-	"IncludeHttpHeaders":   ubx.FieldSpec{WireName: "include_http_headers"},
-	"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
-}
+		"IncludeHttpHeaders": ubx.FieldSpec{WireName: "include_http_headers"},
+		"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
+	}
 
 var BackendBucket_CdnPolicy_NegativeCachingPolicyFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-	"Ttl":  ubx.FieldSpec{WireName: "ttl"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+	}
 
 var BackendBucket_CdnPolicyFields = ubx.FieldMap{
-	"BypassCacheOnRequestHeaders": ubx.FieldSpec{
-		WireName: "bypass_cache_on_request_headers",
-		Kind:     "list",
-		Fields:   BackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields,
-	},
-	"CacheKeyPolicy": ubx.FieldSpec{
-		WireName: "cache_key_policy",
-		Kind:     "object",
-		Fields:   BackendBucket_CdnPolicy_CacheKeyPolicyFields,
-	},
-	"CacheMode":       ubx.FieldSpec{WireName: "cache_mode"},
-	"ClientTtl":       ubx.FieldSpec{WireName: "client_ttl"},
-	"DefaultTtl":      ubx.FieldSpec{WireName: "default_ttl"},
-	"MaxTtl":          ubx.FieldSpec{WireName: "max_ttl"},
-	"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
-	"NegativeCachingPolicy": ubx.FieldSpec{
-		WireName: "negative_caching_policy",
-		Kind:     "list",
-		Fields:   BackendBucket_CdnPolicy_NegativeCachingPolicyFields,
-	},
-	"RequestCoalescing":       ubx.FieldSpec{WireName: "request_coalescing"},
-	"ServeWhileStale":         ubx.FieldSpec{WireName: "serve_while_stale"},
-	"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
-	"SignedUrlKeyNames":       ubx.FieldSpec{WireName: "signed_url_key_names"},
-}
+		"BypassCacheOnRequestHeaders": ubx.FieldSpec{
+			WireName: "bypass_cache_on_request_headers",
+			Kind: "list",
+			Fields: BackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields,
+		},
+		"CacheKeyPolicy": ubx.FieldSpec{
+			WireName: "cache_key_policy",
+			Kind: "object",
+			Fields: BackendBucket_CdnPolicy_CacheKeyPolicyFields,
+		},
+		"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
+		"ClientTtl": ubx.FieldSpec{WireName: "client_ttl"},
+		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
+		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
+		"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
+		"NegativeCachingPolicy": ubx.FieldSpec{
+			WireName: "negative_caching_policy",
+			Kind: "list",
+			Fields: BackendBucket_CdnPolicy_NegativeCachingPolicyFields,
+		},
+		"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
+		"ServeWhileStale": ubx.FieldSpec{WireName: "serve_while_stale"},
+		"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
+		"SignedUrlKeyNames": ubx.FieldSpec{WireName: "signed_url_key_names"},
+	}
 
 var BackendBucket_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type BackendBucketConfig struct {
 	// Cloud Storage bucket name.
@@ -174,22 +174,22 @@ var BackendBucket = ubx.ResourceBinding{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"CdnPolicy": ubx.FieldSpec{
 			WireName: "cdn_policy",
-			Kind:     "object",
-			Fields:   BackendBucket_CdnPolicyFields,
+			Kind: "object",
+			Fields: BackendBucket_CdnPolicyFields,
 		},
-		"CompressionMode":       ubx.FieldSpec{WireName: "compression_mode"},
-		"CreationTimestamp":     ubx.FieldSpec{WireName: "creation_timestamp"},
+		"CompressionMode": ubx.FieldSpec{WireName: "compression_mode"},
+		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"CustomResponseHeaders": ubx.FieldSpec{WireName: "custom_response_headers"},
-		"Description":           ubx.FieldSpec{WireName: "description"},
-		"EdgeSecurityPolicy":    ubx.FieldSpec{WireName: "edge_security_policy"},
-		"EnableCdn":             ubx.FieldSpec{WireName: "enable_cdn"},
-		"Id":                    ubx.FieldSpec{WireName: "id"},
-		"LoadBalancingScheme":   ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EdgeSecurityPolicy": ubx.FieldSpec{WireName: "edge_security_policy"},
+		"EnableCdn": ubx.FieldSpec{WireName: "enable_cdn"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   BackendBucket_ParamsFields,
+			Kind: "object",
+			Fields: BackendBucket_ParamsFields,
 		},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},

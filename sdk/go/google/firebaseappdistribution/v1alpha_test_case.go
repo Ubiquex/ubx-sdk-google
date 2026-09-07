@@ -4,11 +4,11 @@ package firebaseappdistribution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaTestCase_AiInstructions_Steps struct {
-	Assertion       any
-	Goal            any
-	Hint            any
+	Assertion any
+	Goal any
+	Hint any
 	SuccessCriteria any
-	TestCase        any
+	TestCase any
 }
 
 type V1alphaTestCase_AiInstructions struct {
@@ -17,20 +17,20 @@ type V1alphaTestCase_AiInstructions struct {
 }
 
 var V1alphaTestCase_AiInstructions_StepsFields = ubx.FieldMap{
-	"Assertion":       ubx.FieldSpec{WireName: "assertion"},
-	"Goal":            ubx.FieldSpec{WireName: "goal"},
-	"Hint":            ubx.FieldSpec{WireName: "hint"},
-	"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
-	"TestCase":        ubx.FieldSpec{WireName: "test_case"},
-}
+		"Assertion": ubx.FieldSpec{WireName: "assertion"},
+		"Goal": ubx.FieldSpec{WireName: "goal"},
+		"Hint": ubx.FieldSpec{WireName: "hint"},
+		"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
+		"TestCase": ubx.FieldSpec{WireName: "test_case"},
+	}
 
 var V1alphaTestCase_AiInstructionsFields = ubx.FieldMap{
-	"Steps": ubx.FieldSpec{
-		WireName: "steps",
-		Kind:     "list",
-		Fields:   V1alphaTestCase_AiInstructions_StepsFields,
-	},
-}
+		"Steps": ubx.FieldSpec{
+			WireName: "steps",
+			Kind: "list",
+			Fields: V1alphaTestCase_AiInstructions_StepsFields,
+		},
+	}
 
 type V1alphaTestCaseConfig struct {
 	AiInstructions any
@@ -61,11 +61,11 @@ var V1alphaTestCase = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AiInstructions": ubx.FieldSpec{
 			WireName: "ai_instructions",
-			Kind:     "object",
-			Fields:   V1alphaTestCase_AiInstructionsFields,
+			Kind: "object",
+			Fields: V1alphaTestCase_AiInstructionsFields,
 		},
-		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
-		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrerequisiteTestCase": ubx.FieldSpec{WireName: "prerequisite_test_case"},
 	},
 }

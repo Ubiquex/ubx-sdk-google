@@ -46,12 +46,12 @@ type AddressGroupAttrs struct {
 var AddressGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_address_group",
 	Fields: ubx.FieldMap{
-		"Capacity":    ubx.FieldSpec{WireName: "capacity"},
+		"Capacity": ubx.FieldSpec{WireName: "capacity"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Items":       ubx.FieldSpec{WireName: "items"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Purpose":     ubx.FieldSpec{WireName: "purpose"},
-		"Type":        ubx.FieldSpec{WireName: "type"},
+		"Items": ubx.FieldSpec{WireName: "items"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Purpose": ubx.FieldSpec{WireName: "purpose"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

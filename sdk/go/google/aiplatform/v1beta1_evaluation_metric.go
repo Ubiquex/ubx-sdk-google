@@ -21,7 +21,7 @@ type V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpec struct {
 }
 
 type V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpec struct {
-	// Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED.
+	// Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED.
 	CodeExecutionRegion any
 	// Required. Python function. Expected user to define the following function, e.g.: def evaluate(instance: dict[str, Any]) -> float: Please include this function signature in the code snippet. Instance is the evaluation instance, any fields populated in the instance are available to the function as instance[field_name]. Example: Example input: ``` instance= EvaluationInstance( response=EvaluationInstance.InstanceData(text="The answer is 4."), reference=EvaluationInstance.InstanceData(text="4") ) ``` Example converted input: ``` { 'response': {'text': 'The answer is 4.'}, 'reference': {'text': '4'} } ``` Example python function: ``` def evaluate(instance: dict[str, Any]) -> float: if instance'response' == instance'reference': return 1.0 return 0.0 ``` CustomCodeExecutionSpec is also supported in Batch Evaluation (EvalDataset RPC) and Tuning Evaluation. Each line in the input jsonl file will be converted to dict[str, Any] and passed to the evaluation function.
 	EvaluationFunction any
@@ -45,8 +45,6 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 	LanguageCodes any
 	// Deprecated: Use top-level `language_codes` instead. Provides hints to the model about possible languages present in the audio.
 	LanguageHints any
-	// Optional. Configures transcription mode. Supported values: `VERBATIM`, `SMART`. If unspecified, defaults to `VERBATIM` transcription. In `SMART` mode, the model performs disfluency removal (eliminating filler words, repetitions, and false starts), light grammatical cleanup, automatic formatting (paragraphs, bullet points, numbered lists), and minor user edits (inline self-corrections). Timestamps and diarization are incompatible with mode `SMART`.
-	Mode any
 	// Optional. Configures word-level timestamp generation.
 	WordTimestamp any
 }
@@ -77,36 +75,36 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate    any
-	Delivery   any
-	MimeType   any
+	BitRate any
+	Delivery any
+	MimeType any
 	SampleRate any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
 	AspectRatio any
-	Delivery    any
-	ImageSize   any
-	MimeType    any
+	Delivery any
+	ImageSize any
+	MimeType any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
 	MimeType any
-	Schema   any
+	Schema any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
 	AspectRatio any
-	Delivery    any
-	Duration    any
-	GcsUri      any
-	Resolution  any
+	Delivery any
+	Duration any
+	GcsUri any
+	Resolution any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat struct {
 	Audio any
 	Image any
-	Text  any
+	Text any
 	Video any
 }
 
@@ -127,7 +125,7 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 	Example any
 	// Optional. The format of the data. For `NUMBER` type, format can be `float` or `double`. For `INTEGER` type, format can be `int32` or `int64`. For `STRING` type, format can be `email`, `byte`, `date`, `date-time`, `password`, and other formats to further refine the data type.
 	Format any
-	Items  any
+	Items any
 	// Optional. If type is `ARRAY`, `max_items` specifies the maximum number of items in an array.
 	MaxItems any
 	// Optional. If type is `STRING`, `max_length` specifies the maximum length of the string.
@@ -184,17 +182,17 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType         any
+	MimeType any
 	VoiceSampleAudio any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig   any
+	PrebuiltVoiceConfig any
 	ReplicatedVoiceConfig any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker     any
+	Speaker any
 	VoiceConfig any
 }
 
@@ -219,6 +217,13 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 	ThinkingBudget any
 	// Optional. The number of thoughts tokens that the model should generate.
 	ThinkingLevel any
+}
+
+type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig struct {
+	// Optional. If `true`, the model will generate audio when the target language is spoken, essentially it will parrot the input. If `false`, we will not produce audio for the target language.
+	EchoTargetLanguage any
+	// Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr").
+	TargetLanguageCode any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig struct {
@@ -272,6 +277,8 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gene
 	TopK any
 	// Optional. Specifies the nucleus sampling threshold. The model considers only the smallest set of tokens whose cumulative probability is at least `top_p`. This helps generate more diverse and less repetitive responses. For example, a `top_p` of 0.9 means the model considers tokens until the cumulative probability of the tokens to select from reaches 0.9. It's recommended to adjust either temperature or `top_p`, but not both.
 	TopP any
+	// Config for translation features.
+	TranslationConfig any
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig struct {
@@ -293,7 +300,7 @@ type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGeneratio
 }
 
 type V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig struct {
-	// Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used.
+	// Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used.
 	CodeExecutionRegion any
 	// Required. Python function for parsing results. The function should be defined within this string. The function takes a list of strings (LLM responses) and should return either a list of dictionaries (for rubrics) or a single dictionary (for a metric result). Example function signature: def parse(responses: list[str]) -> list[dict[str, Any]] | dict[str, Any]: When parsing rubrics, return a list of dictionaries, where each dictionary represents a Rubric. Example for rubrics: [ { "content": {"property": {"description": "The response is factual."}}, "type": "FACTUALITY", "importance": "HIGH" }, { "content": {"property": {"description": "The response is fluent."}}, "type": "FLUENCY", "importance": "MEDIUM" } ] When parsing critique results, return a dictionary representing a MetricResult. Example for a metric result: { "score": 0.8, "explanation": "The model followed most instructions.", "rubric_verdicts": [...] } ... code for result extraction and aggregation
 	ParsingFunction any
@@ -416,446 +423,455 @@ type V1beta1EvaluationMetric_Metric struct {
 }
 
 var V1beta1EvaluationMetric_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var V1beta1EvaluationMetric_Metric_BleuSpecFields = ubx.FieldMap{
-	"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
-}
+		"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
+	}
 
 var V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpecFields = ubx.FieldMap{
-	"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	"Type":       ubx.FieldSpec{WireName: "type"},
-}
+		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpecFields = ubx.FieldMap{
-	"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
-	"EvaluationFunction":  ubx.FieldSpec{WireName: "evaluation_function"},
-}
+		"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
+		"EvaluationFunction": ubx.FieldSpec{WireName: "evaluation_function"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields = ubx.FieldMap{
-	"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-}
+		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields = ubx.FieldMap{
-	"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
-	"CustomVocabulary":  ubx.FieldSpec{WireName: "custom_vocabulary"},
-	"Diarization":       ubx.FieldSpec{WireName: "diarization"},
-	"LanguageAuto":      ubx.FieldSpec{WireName: "language_auto"},
-	"LanguageCodes":     ubx.FieldSpec{WireName: "language_codes"},
-	"LanguageHints": ubx.FieldSpec{
-		WireName: "language_hints",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
-	},
-	"Mode":          ubx.FieldSpec{WireName: "mode"},
-	"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
-}
+		"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
+		"CustomVocabulary": ubx.FieldSpec{WireName: "custom_vocabulary"},
+		"Diarization": ubx.FieldSpec{WireName: "diarization"},
+		"LanguageAuto": ubx.FieldSpec{WireName: "language_auto"},
+		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+		"LanguageHints": ubx.FieldSpec{
+			WireName: "language_hints",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
+		},
+		"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields = ubx.FieldMap{
-	"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
-	"MimeType":           ubx.FieldSpec{WireName: "mime_type"},
-}
+		"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfigFields = ubx.FieldMap{
-	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-	"ImageOutputOptions": ubx.FieldSpec{
-		WireName: "image_output_options",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
-	},
-	"ImageSize":        ubx.FieldSpec{WireName: "image_size"},
-	"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
-	"ProminentPeople":  ubx.FieldSpec{WireName: "prominent_people"},
-}
+		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+		"ImageOutputOptions": ubx.FieldSpec{
+			WireName: "image_output_options",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
+		},
+		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
+		"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
+		"ProminentPeople": ubx.FieldSpec{WireName: "prominent_people"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ModelConfigFields = ubx.FieldMap{
-	"FeatureSelectionPreference": ubx.FieldSpec{WireName: "feature_selection_preference"},
-}
+		"FeatureSelectionPreference": ubx.FieldSpec{WireName: "feature_selection_preference"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_AudioFields = ubx.FieldMap{
-	"BitRate":    ubx.FieldSpec{WireName: "bit_rate"},
-	"Delivery":   ubx.FieldSpec{WireName: "delivery"},
-	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
-	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-}
+		"BitRate": ubx.FieldSpec{WireName: "bit_rate"},
+		"Delivery": ubx.FieldSpec{WireName: "delivery"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_ImageFields = ubx.FieldMap{
-	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
-	"ImageSize":   ubx.FieldSpec{WireName: "image_size"},
-	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
-}
+		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+		"Delivery": ubx.FieldSpec{WireName: "delivery"},
+		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_TextFields = ubx.FieldMap{
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	"Schema":   ubx.FieldSpec{WireName: "schema"},
-}
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"Schema": ubx.FieldSpec{WireName: "schema"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_VideoFields = ubx.FieldMap{
-	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
-	"Duration":    ubx.FieldSpec{WireName: "duration"},
-	"GcsUri":      ubx.FieldSpec{WireName: "gcs_uri"},
-	"Resolution":  ubx.FieldSpec{WireName: "resolution"},
-}
+		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+		"Delivery": ubx.FieldSpec{WireName: "delivery"},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
+		"Resolution": ubx.FieldSpec{WireName: "resolution"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormatFields = ubx.FieldMap{
-	"Audio": ubx.FieldSpec{
-		WireName: "audio",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
-	},
-	"Image": ubx.FieldSpec{
-		WireName: "image",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
-	},
-	"Text": ubx.FieldSpec{
-		WireName: "text",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
-	},
-	"Video": ubx.FieldSpec{
-		WireName: "video",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
-	},
-}
+		"Audio": ubx.FieldSpec{
+			WireName: "audio",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
+		},
+		"Image": ubx.FieldSpec{
+			WireName: "image",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
+		},
+		"Text": ubx.FieldSpec{
+			WireName: "text",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
+		},
+		"Video": ubx.FieldSpec{
+			WireName: "video",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchemaFields = ubx.FieldMap{
-	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
-	"Default":              ubx.FieldSpec{WireName: "default"},
-	"Defs":                 ubx.FieldSpec{WireName: "defs"},
-	"Description":          ubx.FieldSpec{WireName: "description"},
-	"Enum":                 ubx.FieldSpec{WireName: "enum"},
-	"Example":              ubx.FieldSpec{WireName: "example"},
-	"Format":               ubx.FieldSpec{WireName: "format"},
-	"Items":                ubx.FieldSpec{WireName: "items"},
-	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
-	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
-	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
-	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
-	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
-	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
-	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
-	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
-	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
-	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
-	"Properties":           ubx.FieldSpec{WireName: "properties"},
-	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
-	"Ref":                  ubx.FieldSpec{WireName: "ref"},
-	"Required":             ubx.FieldSpec{WireName: "required"},
-	"Title":                ubx.FieldSpec{WireName: "title"},
-	"Type":                 ubx.FieldSpec{WireName: "type"},
-}
+		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
+		"Default": ubx.FieldSpec{WireName: "default"},
+		"Defs": ubx.FieldSpec{WireName: "defs"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Enum": ubx.FieldSpec{WireName: "enum"},
+		"Example": ubx.FieldSpec{WireName: "example"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+		"Items": ubx.FieldSpec{WireName: "items"},
+		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
+		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
+		"Maximum": ubx.FieldSpec{WireName: "maximum"},
+		"MinItems": ubx.FieldSpec{WireName: "min_items"},
+		"MinLength": ubx.FieldSpec{WireName: "min_length"},
+		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
+		"Minimum": ubx.FieldSpec{WireName: "minimum"},
+		"Nullable": ubx.FieldSpec{WireName: "nullable"},
+		"Pattern": ubx.FieldSpec{WireName: "pattern"},
+		"Properties": ubx.FieldSpec{WireName: "properties"},
+		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
+		"Ref": ubx.FieldSpec{WireName: "ref"},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields = ubx.FieldMap{
-	"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
-}
+		"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields = ubx.FieldMap{
-	"ModelName": ubx.FieldSpec{WireName: "model_name"},
-}
+		"ModelName": ubx.FieldSpec{WireName: "model_name"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfigFields = ubx.FieldMap{
-	"AutoMode": ubx.FieldSpec{
-		WireName: "auto_mode",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
-	},
-	"ManualMode": ubx.FieldSpec{
-		WireName: "manual_mode",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-	},
-}
+		"AutoMode": ubx.FieldSpec{
+			WireName: "auto_mode",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
+		},
+		"ManualMode": ubx.FieldSpec{
+			WireName: "manual_mode",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields = ubx.FieldMap{
-	"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
-}
+		"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields = ubx.FieldMap{
-	"MimeType":         ubx.FieldSpec{WireName: "mime_type"},
-	"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
-}
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields = ubx.FieldMap{
-	"PrebuiltVoiceConfig": ubx.FieldSpec{
-		WireName: "prebuilt_voice_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
-	},
-	"ReplicatedVoiceConfig": ubx.FieldSpec{
-		WireName: "replicated_voice_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
-	},
-}
+		"PrebuiltVoiceConfig": ubx.FieldSpec{
+			WireName: "prebuilt_voice_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
+		},
+		"ReplicatedVoiceConfig": ubx.FieldSpec{
+			WireName: "replicated_voice_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields = ubx.FieldMap{
-	"Speaker": ubx.FieldSpec{WireName: "speaker"},
-	"VoiceConfig": ubx.FieldSpec{
-		WireName: "voice_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-	},
-}
+		"Speaker": ubx.FieldSpec{WireName: "speaker"},
+		"VoiceConfig": ubx.FieldSpec{
+			WireName: "voice_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields = ubx.FieldMap{
-	"SpeakerVoiceConfigs": ubx.FieldSpec{
-		WireName: "speaker_voice_configs",
-		Kind:     "list",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
-	},
-}
+		"SpeakerVoiceConfigs": ubx.FieldSpec{
+			WireName: "speaker_voice_configs",
+			Kind: "list",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfigFields = ubx.FieldMap{
-	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-	"MultiSpeakerVoiceConfig": ubx.FieldSpec{
-		WireName: "multi_speaker_voice_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
-	},
-	"VoiceConfig": ubx.FieldSpec{
-		WireName: "voice_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-	},
-}
+		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"MultiSpeakerVoiceConfig": ubx.FieldSpec{
+			WireName: "multi_speaker_voice_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
+		},
+		"VoiceConfig": ubx.FieldSpec{
+			WireName: "voice_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfigFields = ubx.FieldMap{
-	"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
-	"ThinkingBudget":  ubx.FieldSpec{WireName: "thinking_budget"},
-	"ThinkingLevel":   ubx.FieldSpec{WireName: "thinking_level"},
-}
+		"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
+		"ThinkingBudget": ubx.FieldSpec{WireName: "thinking_budget"},
+		"ThinkingLevel": ubx.FieldSpec{WireName: "thinking_level"},
+	}
+
+var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields = ubx.FieldMap{
+		"EchoTargetLanguage": ubx.FieldSpec{WireName: "echo_target_language"},
+		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields = ubx.FieldMap{
-	"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
-	"AudioTranscriptionConfig": ubx.FieldSpec{
-		WireName: "audio_transcription_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
-	},
-	"CandidateCount":        ubx.FieldSpec{WireName: "candidate_count"},
-	"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
-	"FrequencyPenalty":      ubx.FieldSpec{WireName: "frequency_penalty"},
-	"ImageConfig": ubx.FieldSpec{
-		WireName: "image_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfigFields,
-	},
-	"Logprobs":        ubx.FieldSpec{WireName: "logprobs"},
-	"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-	"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
-	"ModelConfig": ubx.FieldSpec{
-		WireName: "model_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ModelConfigFields,
-	},
-	"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
-	"ResponseFormat": ubx.FieldSpec{
-		WireName: "response_format",
-		Kind:     "list",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormatFields,
-	},
-	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-	"ResponseLogprobs":   ubx.FieldSpec{WireName: "response_logprobs"},
-	"ResponseMimeType":   ubx.FieldSpec{WireName: "response_mime_type"},
-	"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
-	"ResponseSchema": ubx.FieldSpec{
-		WireName: "response_schema",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchemaFields,
-	},
-	"RoutingConfig": ubx.FieldSpec{
-		WireName: "routing_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfigFields,
-	},
-	"Seed": ubx.FieldSpec{WireName: "seed"},
-	"SpeechConfig": ubx.FieldSpec{
-		WireName: "speech_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfigFields,
-	},
-	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
-	"ThinkingConfig": ubx.FieldSpec{
-		WireName: "thinking_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfigFields,
-	},
-	"TopK": ubx.FieldSpec{WireName: "top_k"},
-	"TopP": ubx.FieldSpec{WireName: "top_p"},
-}
+		"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
+		"AudioTranscriptionConfig": ubx.FieldSpec{
+			WireName: "audio_transcription_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
+		},
+		"CandidateCount": ubx.FieldSpec{WireName: "candidate_count"},
+		"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
+		"FrequencyPenalty": ubx.FieldSpec{WireName: "frequency_penalty"},
+		"ImageConfig": ubx.FieldSpec{
+			WireName: "image_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ImageConfigFields,
+		},
+		"Logprobs": ubx.FieldSpec{WireName: "logprobs"},
+		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
+		"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
+		"ModelConfig": ubx.FieldSpec{
+			WireName: "model_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ModelConfigFields,
+		},
+		"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
+		"ResponseFormat": ubx.FieldSpec{
+			WireName: "response_format",
+			Kind: "list",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseFormatFields,
+		},
+		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+		"ResponseLogprobs": ubx.FieldSpec{WireName: "response_logprobs"},
+		"ResponseMimeType": ubx.FieldSpec{WireName: "response_mime_type"},
+		"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
+		"ResponseSchema": ubx.FieldSpec{
+			WireName: "response_schema",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ResponseSchemaFields,
+		},
+		"RoutingConfig": ubx.FieldSpec{
+			WireName: "routing_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_RoutingConfigFields,
+		},
+		"Seed": ubx.FieldSpec{WireName: "seed"},
+		"SpeechConfig": ubx.FieldSpec{
+			WireName: "speech_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_SpeechConfigFields,
+		},
+		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+		"Temperature": ubx.FieldSpec{WireName: "temperature"},
+		"ThinkingConfig": ubx.FieldSpec{
+			WireName: "thinking_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_ThinkingConfigFields,
+		},
+		"TopK": ubx.FieldSpec{WireName: "top_k"},
+		"TopP": ubx.FieldSpec{WireName: "top_p"},
+		"TranslationConfig": ubx.FieldSpec{
+			WireName: "translation_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields = ubx.FieldMap{
-	"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
-	"FlipEnabled":    ubx.FieldSpec{WireName: "flip_enabled"},
-	"GenerationConfig": ubx.FieldSpec{
-		WireName: "generation_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields,
-	},
-	"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
-}
+		"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
+		"FlipEnabled": ubx.FieldSpec{WireName: "flip_enabled"},
+		"GenerationConfig": ubx.FieldSpec{
+			WireName: "generation_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields,
+		},
+		"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields = ubx.FieldMap{
-	"MetricSpecName":       ubx.FieldSpec{WireName: "metric_spec_name"},
-	"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
-}
+		"MetricSpecName": ubx.FieldSpec{WireName: "metric_spec_name"},
+		"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields = ubx.FieldMap{
-	"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
-	"ParsingFunction":     ubx.FieldSpec{WireName: "parsing_function"},
-}
+		"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
+		"ParsingFunction": ubx.FieldSpec{WireName: "parsing_function"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfigFields = ubx.FieldMap{
-	"CustomCodeParserConfig": ubx.FieldSpec{
-		WireName: "custom_code_parser_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
-	},
-}
+		"CustomCodeParserConfig": ubx.FieldSpec{
+			WireName: "custom_code_parser_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
+		},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_RubricGenerationSpecFields = ubx.FieldMap{
-	"ModelConfig": ubx.FieldSpec{
-		WireName: "model_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
-	},
-	"PromptTemplate":     ubx.FieldSpec{WireName: "prompt_template"},
-	"RubricContentType":  ubx.FieldSpec{WireName: "rubric_content_type"},
-	"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
-}
+		"ModelConfig": ubx.FieldSpec{
+			WireName: "model_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
+		},
+		"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
+		"RubricContentType": ubx.FieldSpec{WireName: "rubric_content_type"},
+		"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
+	}
 
 var V1beta1EvaluationMetric_Metric_LlmBasedMetricSpecFields = ubx.FieldMap{
-	"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
-	"JudgeAutoraterConfig": ubx.FieldSpec{
-		WireName: "judge_autorater_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
-	},
-	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-	"PredefinedRubricGenerationSpec": ubx.FieldSpec{
-		WireName: "predefined_rubric_generation_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-	},
-	"ResultParserConfig": ubx.FieldSpec{
-		WireName: "result_parser_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfigFields,
-	},
-	"RubricGenerationSpec": ubx.FieldSpec{
-		WireName: "rubric_generation_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_RubricGenerationSpecFields,
-	},
-	"RubricGroupKey":    ubx.FieldSpec{WireName: "rubric_group_key"},
-	"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-}
+		"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
+		"JudgeAutoraterConfig": ubx.FieldSpec{
+			WireName: "judge_autorater_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields,
+		},
+		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+		"PredefinedRubricGenerationSpec": ubx.FieldSpec{
+			WireName: "predefined_rubric_generation_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+		},
+		"ResultParserConfig": ubx.FieldSpec{
+			WireName: "result_parser_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfigFields,
+		},
+		"RubricGenerationSpec": ubx.FieldSpec{
+			WireName: "rubric_generation_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_RubricGenerationSpecFields,
+		},
+		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
+		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+	}
 
 var V1beta1EvaluationMetric_Metric_Metadata_ScoreRangeFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Max":         ubx.FieldSpec{WireName: "max"},
-	"Min":         ubx.FieldSpec{WireName: "min"},
-	"Step":        ubx.FieldSpec{WireName: "step"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Max": ubx.FieldSpec{WireName: "max"},
+		"Min": ubx.FieldSpec{WireName: "min"},
+		"Step": ubx.FieldSpec{WireName: "step"},
+	}
 
 var V1beta1EvaluationMetric_Metric_MetadataFields = ubx.FieldMap{
-	"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
-	"ScoreRange": ubx.FieldSpec{
-		WireName: "score_range",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_Metadata_ScoreRangeFields,
-	},
-	"Title": ubx.FieldSpec{WireName: "title"},
-}
+		"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
+		"ScoreRange": ubx.FieldSpec{
+			WireName: "score_range",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_Metadata_ScoreRangeFields,
+		},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var V1beta1EvaluationMetric_Metric_PairwiseMetricSpec_CustomOutputFormatConfigFields = ubx.FieldMap{
-	"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
-}
+		"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
+	}
 
 var V1beta1EvaluationMetric_Metric_PairwiseMetricSpecFields = ubx.FieldMap{
-	"BaselineResponseFieldName":  ubx.FieldSpec{WireName: "baseline_response_field_name"},
-	"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
-	"CustomOutputFormatConfig": ubx.FieldSpec{
-		WireName: "custom_output_format_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-	},
-	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
-}
+		"BaselineResponseFieldName": ubx.FieldSpec{WireName: "baseline_response_field_name"},
+		"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
+		"CustomOutputFormatConfig": ubx.FieldSpec{
+			WireName: "custom_output_format_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+		},
+		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+	}
 
 var V1beta1EvaluationMetric_Metric_PointwiseMetricSpecFields = ubx.FieldMap{
-	"CustomOutputFormatConfig": ubx.FieldSpec{
-		WireName: "custom_output_format_config",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-	},
-	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
-}
+		"CustomOutputFormatConfig": ubx.FieldSpec{
+			WireName: "custom_output_format_config",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+		},
+		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+	}
 
 var V1beta1EvaluationMetric_Metric_RougeSpecFields = ubx.FieldMap{
-	"RougeType":      ubx.FieldSpec{WireName: "rouge_type"},
-	"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
-	"UseStemmer":     ubx.FieldSpec{WireName: "use_stemmer"},
-}
+		"RougeType": ubx.FieldSpec{WireName: "rouge_type"},
+		"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
+		"UseStemmer": ubx.FieldSpec{WireName: "use_stemmer"},
+	}
 
 var V1beta1EvaluationMetric_MetricFields = ubx.FieldMap{
-	"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
-	"BleuSpec": ubx.FieldSpec{
-		WireName: "bleu_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_BleuSpecFields,
-	},
-	"ComputationBasedMetricSpec": ubx.FieldSpec{
-		WireName: "computation_based_metric_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpecFields,
-	},
-	"CustomCodeExecutionSpec": ubx.FieldSpec{
-		WireName: "custom_code_execution_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpecFields,
-	},
-	"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
-	"LlmBasedMetricSpec": ubx.FieldSpec{
-		WireName: "llm_based_metric_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpecFields,
-	},
-	"Metadata": ubx.FieldSpec{
-		WireName: "metadata",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_MetadataFields,
-	},
-	"PairwiseMetricSpec": ubx.FieldSpec{
-		WireName: "pairwise_metric_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_PairwiseMetricSpecFields,
-	},
-	"PointwiseMetricSpec": ubx.FieldSpec{
-		WireName: "pointwise_metric_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_PointwiseMetricSpecFields,
-	},
-	"PredefinedMetricSpec": ubx.FieldSpec{
-		WireName: "predefined_metric_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-	},
-	"RougeSpec": ubx.FieldSpec{
-		WireName: "rouge_spec",
-		Kind:     "object",
-		Fields:   V1beta1EvaluationMetric_Metric_RougeSpecFields,
-	},
-}
+		"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
+		"BleuSpec": ubx.FieldSpec{
+			WireName: "bleu_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_BleuSpecFields,
+		},
+		"ComputationBasedMetricSpec": ubx.FieldSpec{
+			WireName: "computation_based_metric_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpecFields,
+		},
+		"CustomCodeExecutionSpec": ubx.FieldSpec{
+			WireName: "custom_code_execution_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpecFields,
+		},
+		"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
+		"LlmBasedMetricSpec": ubx.FieldSpec{
+			WireName: "llm_based_metric_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpecFields,
+		},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_MetadataFields,
+		},
+		"PairwiseMetricSpec": ubx.FieldSpec{
+			WireName: "pairwise_metric_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_PairwiseMetricSpecFields,
+		},
+		"PointwiseMetricSpec": ubx.FieldSpec{
+			WireName: "pointwise_metric_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_PointwiseMetricSpecFields,
+		},
+		"PredefinedMetricSpec": ubx.FieldSpec{
+			WireName: "predefined_metric_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+		},
+		"RougeSpec": ubx.FieldSpec{
+			WireName: "rouge_spec",
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_Metric_RougeSpecFields,
+		},
+	}
 
 type V1beta1EvaluationMetricConfig struct {
 	// Optional. A description of the EvaluationMetric.
@@ -902,15 +918,15 @@ var V1beta1EvaluationMetric = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   V1beta1EvaluationMetric_EncryptionSpecFields,
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_EncryptionSpecFields,
 		},
 		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Metric": ubx.FieldSpec{
 			WireName: "metric",
-			Kind:     "object",
-			Fields:   V1beta1EvaluationMetric_MetricFields,
+			Kind: "object",
+			Fields: V1beta1EvaluationMetric_MetricFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

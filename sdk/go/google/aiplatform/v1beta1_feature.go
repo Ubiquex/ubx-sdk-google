@@ -4,14 +4,14 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Feature_FeatureStatsAndAnomaly struct {
-	DistributionDeviation   any
-	DriftDetected           any
+	DistributionDeviation any
+	DriftDetected any
 	DriftDetectionThreshold any
-	FeatureId               any
-	FeatureMonitorId        any
-	FeatureMonitorJobId     any
-	FeatureStats            any
-	StatsTime               any
+	FeatureId any
+	FeatureMonitorId any
+	FeatureMonitorJobId any
+	FeatureStats any
+	StatsTime any
 }
 
 type V1beta1Feature_MonitoringConfig_CategoricalThresholdConfig struct {
@@ -50,57 +50,57 @@ type V1beta1Feature_MonitoringConfig struct {
 
 type V1beta1Feature_MonitoringStats struct {
 	AnomalyDetectionThreshold any
-	AnomalyUri                any
-	DistributionDeviation     any
-	EndTime                   any
-	Score                     any
-	StartTime                 any
-	StatsUri                  any
+	AnomalyUri any
+	DistributionDeviation any
+	EndTime any
+	Score any
+	StartTime any
+	StatsUri any
 }
 
 type V1beta1Feature_MonitoringStatsAnomalies struct {
 	FeatureStatsAnomaly any
-	Objective           any
+	Objective any
 }
 
 var V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields = ubx.FieldMap{
-	"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
-	"State":                    ubx.FieldSpec{WireName: "state"},
-}
+		"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields = ubx.FieldMap{
-	"Disabled":               ubx.FieldSpec{WireName: "disabled"},
-	"MonitoringInterval":     ubx.FieldSpec{WireName: "monitoring_interval"},
-	"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
-	"StalenessDays":          ubx.FieldSpec{WireName: "staleness_days"},
-}
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"MonitoringInterval": ubx.FieldSpec{WireName: "monitoring_interval"},
+		"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
+		"StalenessDays": ubx.FieldSpec{WireName: "staleness_days"},
+	}
 
 var V1beta1Feature_MonitoringConfigFields = ubx.FieldMap{
-	"CategoricalThresholdConfig": ubx.FieldSpec{
-		WireName: "categorical_threshold_config",
-		Kind:     "object",
-		Fields:   V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
-	},
-	"ImportFeaturesAnalysis": ubx.FieldSpec{
-		WireName: "import_features_analysis",
-		Kind:     "object",
-		Fields:   V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields,
-	},
-	"NumericalThresholdConfig": ubx.FieldSpec{
-		WireName: "numerical_threshold_config",
-		Kind:     "object",
-		Fields:   V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
-	},
-	"SnapshotAnalysis": ubx.FieldSpec{
-		WireName: "snapshot_analysis",
-		Kind:     "object",
-		Fields:   V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields,
-	},
-}
+		"CategoricalThresholdConfig": ubx.FieldSpec{
+			WireName: "categorical_threshold_config",
+			Kind: "object",
+			Fields: V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
+		},
+		"ImportFeaturesAnalysis": ubx.FieldSpec{
+			WireName: "import_features_analysis",
+			Kind: "object",
+			Fields: V1beta1Feature_MonitoringConfig_ImportFeaturesAnalysisFields,
+		},
+		"NumericalThresholdConfig": ubx.FieldSpec{
+			WireName: "numerical_threshold_config",
+			Kind: "object",
+			Fields: V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields,
+		},
+		"SnapshotAnalysis": ubx.FieldSpec{
+			WireName: "snapshot_analysis",
+			Kind: "object",
+			Fields: V1beta1Feature_MonitoringConfig_SnapshotAnalysisFields,
+		},
+	}
 
 type V1beta1FeatureConfig struct {
 	// Description of the Feature.
@@ -157,18 +157,18 @@ type V1beta1FeatureAttrs struct {
 var V1beta1Feature = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_feature",
 	Fields: ubx.FieldMap{
-		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisableMonitoring": ubx.FieldSpec{WireName: "disable_monitoring"},
-		"Etag":              ubx.FieldSpec{WireName: "etag"},
-		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind:     "object",
-			Fields:   V1beta1Feature_MonitoringConfigFields,
+			Kind: "object",
+			Fields: V1beta1Feature_MonitoringConfigFields,
 		},
-		"Name":              ubx.FieldSpec{WireName: "name"},
-		"PointOfContact":    ubx.FieldSpec{WireName: "point_of_contact"},
-		"ValueType":         ubx.FieldSpec{WireName: "value_type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PointOfContact": ubx.FieldSpec{WireName: "point_of_contact"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
 		"VersionColumnName": ubx.FieldSpec{WireName: "version_column_name"},
 	},
 }

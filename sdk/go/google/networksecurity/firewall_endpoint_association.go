@@ -44,11 +44,11 @@ type FirewallEndpointAssociationAttrs struct {
 var FirewallEndpointAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_firewall_endpoint_association",
 	Fields: ubx.FieldMap{
-		"Disabled":            ubx.FieldSpec{WireName: "disabled"},
-		"FirewallEndpoint":    ubx.FieldSpec{WireName: "firewall_endpoint"},
-		"Labels":              ubx.FieldSpec{WireName: "labels"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
-		"Network":             ubx.FieldSpec{WireName: "network"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"FirewallEndpoint": ubx.FieldSpec{WireName: "firewall_endpoint"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"TlsInspectionPolicy": ubx.FieldSpec{WireName: "tls_inspection_policy"},
 	},
 }

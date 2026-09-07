@@ -3,6 +3,11 @@ package aiplatform
 
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
+type SemanticGovernancePolicy_AgentResponseCustomization struct {
+	// Optional. Custom message shown to the end user when the policy check results in a denial. Use this to explain the rationale to the user. Max 1000 characters.
+	DenialMessage any
+}
+
 type SemanticGovernancePolicy_McpTools struct {
 	// A reference to the MCP server this applies to. (AI-inferred)
 	McpServer any
@@ -10,14 +15,20 @@ type SemanticGovernancePolicy_McpTools struct {
 	Tools any
 }
 
+var SemanticGovernancePolicy_AgentResponseCustomizationFields = ubx.FieldMap{
+		"DenialMessage": ubx.FieldSpec{WireName: "denial_message"},
+	}
+
 var SemanticGovernancePolicy_McpToolsFields = ubx.FieldMap{
-	"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
-	"Tools":     ubx.FieldSpec{WireName: "tools"},
-}
+		"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
+		"Tools": ubx.FieldSpec{WireName: "tools"},
+	}
 
 type SemanticGovernancePolicyConfig struct {
 	// Required. The name of the agent in Agent Registry that is affected by this policy.
 	Agent any
+	// Customizes the agent's response to the end user when a `SemanticGovernancePolicy` is evaluated (for example, with a custom message shown on denial).
+	AgentResponseCustomization any
 	// Optional. The description of the SemanticGovernancePolicy.
 	Description any
 	// Optional. The user-defined name of the SemanticGovernancePolicy.
@@ -37,6 +48,8 @@ type SemanticGovernancePolicyAttrs struct {
 	Agent any
 	// Output only. Represents the principal of the agent, used by the Policy Decision Point (PDP) for governance checks. For more information, see https://docs.cloud.google.com/agent-builder/agent-engine/agent-identity Format: `principal://TRUST_DOMAIN/NAMESPACE/AGENT_NAME` Example: `principal://agents.global.org-ORGANIZATION_ID.system.id.goog/resources/aiplatform/projects/PROJECT_NUMBER/locations/LOCATION/reasoningEngines/AGENT_ENGINE_ID`
 	AgentIdentity any
+	// Customizes the agent's response to the end user when a `SemanticGovernancePolicy` is evaluated (for example, with a custom message shown on denial).
+	AgentResponseCustomization any
 	// Output only. Timestamp when this SemanticGovernancePolicy was created.
 	CreateTime any
 	// Optional. The description of the SemanticGovernancePolicy.
@@ -58,16 +71,21 @@ type SemanticGovernancePolicyAttrs struct {
 var SemanticGovernancePolicy = ubx.ResourceBinding{
 	WireType: "google_aiplatform_semantic_governance_policy",
 	Fields: ubx.FieldMap{
-		"Agent":       ubx.FieldSpec{WireName: "agent"},
+		"Agent": ubx.FieldSpec{WireName: "agent"},
+		"AgentResponseCustomization": ubx.FieldSpec{
+			WireName: "agent_response_customization",
+			Kind: "object",
+			Fields: SemanticGovernancePolicy_AgentResponseCustomizationFields,
+		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"McpTools": ubx.FieldSpec{
 			WireName: "mcp_tools",
-			Kind:     "list",
-			Fields:   SemanticGovernancePolicy_McpToolsFields,
+			Kind: "list",
+			Fields: SemanticGovernancePolicy_McpToolsFields,
 		},
-		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NaturalLanguageConstraint": ubx.FieldSpec{WireName: "natural_language_constraint"},
 	},
 }

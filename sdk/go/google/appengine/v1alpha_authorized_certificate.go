@@ -18,14 +18,14 @@ type V1alphaAuthorizedCertificate_ManagedCertificate struct {
 }
 
 var V1alphaAuthorizedCertificate_CertificateRawDataFields = ubx.FieldMap{
-	"PrivateKey":        ubx.FieldSpec{WireName: "private_key"},
-	"PublicCertificate": ubx.FieldSpec{WireName: "public_certificate"},
-}
+		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+		"PublicCertificate": ubx.FieldSpec{WireName: "public_certificate"},
+	}
 
 var V1alphaAuthorizedCertificate_ManagedCertificateFields = ubx.FieldMap{
-	"LastRenewalTime": ubx.FieldSpec{WireName: "last_renewal_time"},
-	"Status":          ubx.FieldSpec{WireName: "status"},
-}
+		"LastRenewalTime": ubx.FieldSpec{WireName: "last_renewal_time"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 type V1alphaAuthorizedCertificateConfig struct {
 	// An SSL certificate obtained from a certificate authority.
@@ -66,16 +66,16 @@ var V1alphaAuthorizedCertificate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CertificateRawData": ubx.FieldSpec{
 			WireName: "certificate_raw_data",
-			Kind:     "object",
-			Fields:   V1alphaAuthorizedCertificate_CertificateRawDataFields,
+			Kind: "object",
+			Fields: V1alphaAuthorizedCertificate_CertificateRawDataFields,
 		},
-		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DomainMappingsCount": ubx.FieldSpec{WireName: "domain_mappings_count"},
-		"ExpireTime":          ubx.FieldSpec{WireName: "expire_time"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"ManagedCertificate": ubx.FieldSpec{
 			WireName: "managed_certificate",
-			Kind:     "object",
-			Fields:   V1alphaAuthorizedCertificate_ManagedCertificateFields,
+			Kind: "object",
+			Fields: V1alphaAuthorizedCertificate_ManagedCertificateFields,
 		},
 	},
 }

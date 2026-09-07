@@ -54,54 +54,54 @@ type Schema_Source struct {
 }
 
 var Schema_Datasources_HttpGraphqlFields = ubx.FieldMap{
-	"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	"Uri":     ubx.FieldSpec{WireName: "uri"},
-}
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Schema_Datasources_Postgresql_CloudSqlFields = ubx.FieldMap{
-	"Edition":  ubx.FieldSpec{WireName: "edition"},
-	"Instance": ubx.FieldSpec{WireName: "instance"},
-}
+		"Edition": ubx.FieldSpec{WireName: "edition"},
+		"Instance": ubx.FieldSpec{WireName: "instance"},
+	}
 
 var Schema_Datasources_PostgresqlFields = ubx.FieldMap{
-	"CloudSql": ubx.FieldSpec{
-		WireName: "cloud_sql",
-		Kind:     "object",
-		Fields:   Schema_Datasources_Postgresql_CloudSqlFields,
-	},
-	"Database":         ubx.FieldSpec{WireName: "database"},
-	"Ephemeral":        ubx.FieldSpec{WireName: "ephemeral"},
-	"Schema":           ubx.FieldSpec{WireName: "schema"},
-	"SchemaMigration":  ubx.FieldSpec{WireName: "schema_migration"},
-	"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
-	"Unlinked":         ubx.FieldSpec{WireName: "unlinked"},
-}
+		"CloudSql": ubx.FieldSpec{
+			WireName: "cloud_sql",
+			Kind: "object",
+			Fields: Schema_Datasources_Postgresql_CloudSqlFields,
+		},
+		"Database": ubx.FieldSpec{WireName: "database"},
+		"Ephemeral": ubx.FieldSpec{WireName: "ephemeral"},
+		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"SchemaMigration": ubx.FieldSpec{WireName: "schema_migration"},
+		"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
+		"Unlinked": ubx.FieldSpec{WireName: "unlinked"},
+	}
 
 var Schema_DatasourcesFields = ubx.FieldMap{
-	"HttpGraphql": ubx.FieldSpec{
-		WireName: "http_graphql",
-		Kind:     "object",
-		Fields:   Schema_Datasources_HttpGraphqlFields,
-	},
-	"Postgresql": ubx.FieldSpec{
-		WireName: "postgresql",
-		Kind:     "object",
-		Fields:   Schema_Datasources_PostgresqlFields,
-	},
-}
+		"HttpGraphql": ubx.FieldSpec{
+			WireName: "http_graphql",
+			Kind: "object",
+			Fields: Schema_Datasources_HttpGraphqlFields,
+		},
+		"Postgresql": ubx.FieldSpec{
+			WireName: "postgresql",
+			Kind: "object",
+			Fields: Schema_Datasources_PostgresqlFields,
+		},
+	}
 
 var Schema_Source_FilesFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Path":    ubx.FieldSpec{WireName: "path"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var Schema_SourceFields = ubx.FieldMap{
-	"Files": ubx.FieldSpec{
-		WireName: "files",
-		Kind:     "list",
-		Fields:   Schema_Source_FilesFields,
-	},
-}
+		"Files": ubx.FieldSpec{
+			WireName: "files",
+			Kind: "list",
+			Fields: Schema_Source_FilesFields,
+		},
+	}
 
 type SchemaConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -149,16 +149,16 @@ var Schema = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Datasources": ubx.FieldSpec{
 			WireName: "datasources",
-			Kind:     "list",
-			Fields:   Schema_DatasourcesFields,
+			Kind: "list",
+			Fields: Schema_DatasourcesFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind:     "object",
-			Fields:   Schema_SourceFields,
+			Kind: "object",
+			Fields: Schema_SourceFields,
 		},
 	},
 }

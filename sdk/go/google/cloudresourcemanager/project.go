@@ -47,9 +47,9 @@ var Project = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_project",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Parent":      ubx.FieldSpec{WireName: "parent"},
-		"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

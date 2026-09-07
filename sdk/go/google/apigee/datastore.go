@@ -17,12 +17,12 @@ type Datastore_DatastoreConfig struct {
 }
 
 var Datastore_DatastoreConfigFields = ubx.FieldMap{
-	"BucketName":  ubx.FieldSpec{WireName: "bucket_name"},
-	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-	"Path":        ubx.FieldSpec{WireName: "path"},
-	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
-	"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-}
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
+	}
 
 type DatastoreConfig struct {
 	// Configuration detail for datastore
@@ -55,10 +55,10 @@ var Datastore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DatastoreConfig": ubx.FieldSpec{
 			WireName: "datastore_config",
-			Kind:     "object",
-			Fields:   Datastore_DatastoreConfigFields,
+			Kind: "object",
+			Fields: Datastore_DatastoreConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"TargetType":  ubx.FieldSpec{WireName: "target_type"},
+		"TargetType": ubx.FieldSpec{WireName: "target_type"},
 	},
 }

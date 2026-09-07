@@ -70,9 +70,9 @@ type Database_RestoreInfo struct {
 }
 
 var Database_EncryptionConfigFields = ubx.FieldMap{
-	"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
-	"KmsKeyNames": ubx.FieldSpec{WireName: "kms_key_names"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"KmsKeyNames": ubx.FieldSpec{WireName: "kms_key_names"},
+	}
 
 type DatabaseConfig struct {
 	// Required. A `CREATE DATABASE` statement, which specifies the ID of the new database. The database ID must conform to the regular expression `a-z*[a-z0-9]` and be between 2 and 30 characters in length. If the database ID is a reserved word or if it contains a hyphen, the database ID must be enclosed in backticks (`` ` ``).
@@ -126,10 +126,10 @@ var Database = ubx.ResourceBinding{
 		"CreateStatement": ubx.FieldSpec{WireName: "create_statement"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind:     "object",
-			Fields:   Database_EncryptionConfigFields,
+			Kind: "object",
+			Fields: Database_EncryptionConfigFields,
 		},
-		"ExtraStatements":  ubx.FieldSpec{WireName: "extra_statements"},
+		"ExtraStatements": ubx.FieldSpec{WireName: "extra_statements"},
 		"ProtoDescriptors": ubx.FieldSpec{WireName: "proto_descriptors"},
 	},
 }

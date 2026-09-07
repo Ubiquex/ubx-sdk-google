@@ -52,6 +52,8 @@ _V1betaWorkstationCluster_PrivateClusterConfigFields = {
 class V1betaWorkstationClusterConfig:
     # Optional. Client-specified annotations.
     annotations: Any = None
+    # Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set.
+    console_base_url: Any = None
     # Optional. Human-readable name for this workstation cluster.
     display_name: Any = None
     # Configuration options for a custom domain.
@@ -83,6 +85,8 @@ class V1betaWorkstationClusterAttrs:
     annotations: Any = None
     # Output only. Status conditions describing the workstation cluster's current state.
     conditions: Any = None
+    # Optional. Specifies a custom base URL for the Google Cloud Console. This field is intended to be user-configurable to support data residency for Cloud Workstations users. This will be used generally for user journeys where users need to go to the Cloud Console from Code OSS. When the Auth and Launch URLs are unset, this will be used as the base URL for those endpoints if set.
+    console_base_url: Any = None
     # Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address.
     control_plane_ip: Any = None
     # Output only. Time when this workstation cluster was created.
@@ -130,6 +134,7 @@ V1betaWorkstationCluster = ubx.ResourceBinding(
     wire_type="google_workstations_v1beta_workstation_cluster",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
+        "console_base_url": ubx.FieldSpec(wire_name="console_base_url"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "domain_config": ubx.FieldSpec(
             wire_name="domain_config",

@@ -22,7 +22,7 @@ const V1beta1Workspace_PrivateResourceMetadataFields: FieldMap = {
 export interface V1beta1WorkspaceConfig {
   /** Describes encryption state of a resource. */
   dataEncryptionState?: V1beta1Workspace_DataEncryptionState | Computed<V1beta1Workspace_DataEncryptionState>;
-  /** Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management. */
+  /** Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management. */
   depth?: number | Computed<number>;
   /** Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted. */
   disableMoves?: boolean | Computed<boolean>;
@@ -41,7 +41,7 @@ export interface V1beta1WorkspaceAttrs {
   createTime: string;
   /** Describes encryption state of a resource. */
   dataEncryptionState: V1beta1Workspace_DataEncryptionState;
-  /** Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, Gitlab and 1p repositories with enabled branch management. */
+  /** Optional. Input only. Immutable. The maximum depth of the Git repository to checkout for this workspace. If defined and greater than 0, the Git repository will be created as a shallow clone with the given depth, otherwise a full clone will be performed. This field is available only for GitHub, GitLab and 1p repositories with enabled branch management. */
   depth: number;
   /** Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted. */
   disableMoves: boolean;

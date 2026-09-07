@@ -17,12 +17,12 @@ type V1beta1BackupVault_BackupRetentionPolicy struct {
 }
 
 var V1beta1BackupVault_BackupRetentionPolicyFields = ubx.FieldMap{
-	"BackupMinimumEnforcedRetentionDays": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_days"},
-	"DailyBackupImmutable":               ubx.FieldSpec{WireName: "daily_backup_immutable"},
-	"ManualBackupImmutable":              ubx.FieldSpec{WireName: "manual_backup_immutable"},
-	"MonthlyBackupImmutable":             ubx.FieldSpec{WireName: "monthly_backup_immutable"},
-	"WeeklyBackupImmutable":              ubx.FieldSpec{WireName: "weekly_backup_immutable"},
-}
+		"BackupMinimumEnforcedRetentionDays": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_days"},
+		"DailyBackupImmutable": ubx.FieldSpec{WireName: "daily_backup_immutable"},
+		"ManualBackupImmutable": ubx.FieldSpec{WireName: "manual_backup_immutable"},
+		"MonthlyBackupImmutable": ubx.FieldSpec{WireName: "monthly_backup_immutable"},
+		"WeeklyBackupImmutable": ubx.FieldSpec{WireName: "weekly_backup_immutable"},
+	}
 
 type V1beta1BackupVaultConfig struct {
 	// Optional. Region where the backups are stored. Format: `projects/{project_id}/locations/{location}`
@@ -84,15 +84,15 @@ var V1beta1BackupVault = ubx.ResourceBinding{
 		"BackupRegion": ubx.FieldSpec{WireName: "backup_region"},
 		"BackupRetentionPolicy": ubx.FieldSpec{
 			WireName: "backup_retention_policy",
-			Kind:     "object",
-			Fields:   V1beta1BackupVault_BackupRetentionPolicyFields,
+			Kind: "object",
+			Fields: V1beta1BackupVault_BackupRetentionPolicyFields,
 		},
-		"BackupVaultType":   ubx.FieldSpec{WireName: "backup_vault_type"},
+		"BackupVaultType": ubx.FieldSpec{WireName: "backup_vault_type"},
 		"CrossProjectVault": ubx.FieldSpec{WireName: "cross_project_vault"},
-		"Description":       ubx.FieldSpec{WireName: "description"},
-		"KmsConfig":         ubx.FieldSpec{WireName: "kms_config"},
-		"Labels":            ubx.FieldSpec{WireName: "labels"},
-		"Name":              ubx.FieldSpec{WireName: "name"},
-		"SourceRegion":      ubx.FieldSpec{WireName: "source_region"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"KmsConfig": ubx.FieldSpec{WireName: "kms_config"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SourceRegion": ubx.FieldSpec{WireName: "source_region"},
 	},
 }

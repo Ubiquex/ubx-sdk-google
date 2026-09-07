@@ -794,8 +794,6 @@ export interface ServiceConfig {
   defaultUriDisabled?: boolean | Computed<boolean>;
   /** User-provided description of the Service. This field currently has a 512-character limit. */
   description?: string | Computed<string>;
-  /** Optional. Immutable. Indicates whether the Service has durable execution enabled. This field is immutable once the Service is created. */
-  durableExecution?: boolean | Computed<boolean>;
   /** Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates. */
   etag?: string | Computed<string>;
   /** Optional. IAP settings on the Service. */
@@ -849,8 +847,6 @@ export interface ServiceAttrs {
   deleteTime: string;
   /** User-provided description of the Service. This field currently has a 512-character limit. */
   description: string;
-  /** Optional. Immutable. Indicates whether the Service has durable execution enabled. This field is immutable once the Service is created. */
-  durableExecution: boolean;
   /** Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates. */
   etag: string;
   /** Output only. For a deleted resource, the time after which it will be permanently deleted. */
@@ -926,7 +922,6 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
     customAudiences: "custom_audiences",
     defaultUriDisabled: "default_uri_disabled",
     description: "description",
-    durableExecution: "durable_execution",
     etag: "etag",
     iapEnabled: "iap_enabled",
     ingress: "ingress",

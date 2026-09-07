@@ -44,11 +44,11 @@ type V1beta1VersionAttrs struct {
 var V1beta1Version = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_version",
 	Fields: ubx.FieldMap{
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"ImageUri":         ubx.FieldSpec{WireName: "image_uri"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PluginConfigData": ubx.FieldSpec{WireName: "plugin_config_data"},
-		"PluginConfigUri":  ubx.FieldSpec{WireName: "plugin_config_uri"},
+		"PluginConfigUri": ubx.FieldSpec{WireName: "plugin_config_uri"},
 	},
 }

@@ -9,8 +9,8 @@ type MulticastConsumerAssociation_State struct {
 }
 
 var MulticastConsumerAssociation_StateFields = ubx.FieldMap{
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 type MulticastConsumerAssociationConfig struct {
 	// Optional. An optional text description of the multicast consumer association.
@@ -55,15 +55,15 @@ type MulticastConsumerAssociationAttrs struct {
 var MulticastConsumerAssociation = ubx.ResourceBinding{
 	WireType: "google_networkservices_multicast_consumer_association",
 	Fields: ubx.FieldMap{
-		"Description":               ubx.FieldSpec{WireName: "description"},
-		"Labels":                    ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MulticastDomainActivation": ubx.FieldSpec{WireName: "multicast_domain_activation"},
-		"Name":                      ubx.FieldSpec{WireName: "name"},
-		"Network":                   ubx.FieldSpec{WireName: "network"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   MulticastConsumerAssociation_StateFields,
+			Kind: "object",
+			Fields: MulticastConsumerAssociation_StateFields,
 		},
 	},
 }

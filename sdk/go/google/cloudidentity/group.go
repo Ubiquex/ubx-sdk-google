@@ -32,32 +32,32 @@ type Group_DynamicGroupMetadata struct {
 }
 
 var Group_DynamicGroupMetadata_QueriesFields = ubx.FieldMap{
-	"Query":        ubx.FieldSpec{WireName: "query"},
-	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-}
+		"Query": ubx.FieldSpec{WireName: "query"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	}
 
 var Group_DynamicGroupMetadata_StatusFields = ubx.FieldMap{
-	"Status":     ubx.FieldSpec{WireName: "status"},
-	"StatusTime": ubx.FieldSpec{WireName: "status_time"},
-}
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StatusTime": ubx.FieldSpec{WireName: "status_time"},
+	}
 
 var Group_DynamicGroupMetadataFields = ubx.FieldMap{
-	"Queries": ubx.FieldSpec{
-		WireName: "queries",
-		Kind:     "list",
-		Fields:   Group_DynamicGroupMetadata_QueriesFields,
-	},
-	"Status": ubx.FieldSpec{
-		WireName: "status",
-		Kind:     "object",
-		Fields:   Group_DynamicGroupMetadata_StatusFields,
-	},
-}
+		"Queries": ubx.FieldSpec{
+			WireName: "queries",
+			Kind: "list",
+			Fields: Group_DynamicGroupMetadata_QueriesFields,
+		},
+		"Status": ubx.FieldSpec{
+			WireName: "status",
+			Kind: "object",
+			Fields: Group_DynamicGroupMetadata_StatusFields,
+		},
+	}
 
 var Group_AdditionalGroupKeysFields = ubx.FieldMap{
-	"Id":        ubx.FieldSpec{WireName: "id"},
-	"Namespace": ubx.FieldSpec{WireName: "namespace"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	}
 
 type GroupConfig struct {
 	// An extended description to help users determine the purpose of a `Group`. Must not be longer than 4,096 characters.
@@ -104,13 +104,13 @@ var Group = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DynamicGroupMetadata": ubx.FieldSpec{
 			WireName: "dynamic_group_metadata",
-			Kind:     "object",
-			Fields:   Group_DynamicGroupMetadataFields,
+			Kind: "object",
+			Fields: Group_DynamicGroupMetadataFields,
 		},
 		"GroupKey": ubx.FieldSpec{
 			WireName: "group_key",
-			Kind:     "object",
-			Fields:   Group_AdditionalGroupKeysFields,
+			Kind: "object",
+			Fields: Group_AdditionalGroupKeysFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Parent": ubx.FieldSpec{WireName: "parent"},

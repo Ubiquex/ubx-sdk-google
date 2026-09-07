@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaFirewall_Allowed struct {
 	Ipprotocol any
-	Ports      any
+	Ports any
 }
 
 type AlphaFirewall_LogConfig struct {
@@ -21,18 +21,18 @@ type AlphaFirewall_Params struct {
 }
 
 var AlphaFirewall_AllowedFields = ubx.FieldMap{
-	"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
-	"Ports":      ubx.FieldSpec{WireName: "ports"},
-}
+		"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+	}
 
 var AlphaFirewall_LogConfigFields = ubx.FieldMap{
-	"Enable":   ubx.FieldSpec{WireName: "enable"},
-	"Metadata": ubx.FieldSpec{WireName: "metadata"},
-}
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	}
 
 var AlphaFirewall_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type AlphaFirewallConfig struct {
 	// The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection.
@@ -125,37 +125,37 @@ var AlphaFirewall = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Allowed": ubx.FieldSpec{
 			WireName: "allowed",
-			Kind:     "list",
-			Fields:   AlphaFirewall_AllowedFields,
+			Kind: "list",
+			Fields: AlphaFirewall_AllowedFields,
 		},
 		"Denied": ubx.FieldSpec{
 			WireName: "denied",
-			Kind:     "list",
-			Fields:   AlphaFirewall_AllowedFields,
+			Kind: "list",
+			Fields: AlphaFirewall_AllowedFields,
 		},
-		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationRanges": ubx.FieldSpec{WireName: "destination_ranges"},
-		"Direction":         ubx.FieldSpec{WireName: "direction"},
-		"Disabled":          ubx.FieldSpec{WireName: "disabled"},
-		"EnableLogging":     ubx.FieldSpec{WireName: "enable_logging"},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind:     "object",
-			Fields:   AlphaFirewall_LogConfigFields,
+			Kind: "object",
+			Fields: AlphaFirewall_LogConfigFields,
 		},
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   AlphaFirewall_ParamsFields,
+			Kind: "object",
+			Fields: AlphaFirewall_ParamsFields,
 		},
-		"Priority":              ubx.FieldSpec{WireName: "priority"},
-		"SelfLink":              ubx.FieldSpec{WireName: "self_link"},
-		"SourceRanges":          ubx.FieldSpec{WireName: "source_ranges"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SourceRanges": ubx.FieldSpec{WireName: "source_ranges"},
 		"SourceServiceAccounts": ubx.FieldSpec{WireName: "source_service_accounts"},
-		"SourceTags":            ubx.FieldSpec{WireName: "source_tags"},
+		"SourceTags": ubx.FieldSpec{WireName: "source_tags"},
 		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-		"TargetTags":            ubx.FieldSpec{WireName: "target_tags"},
+		"TargetTags": ubx.FieldSpec{WireName: "target_tags"},
 	},
 }

@@ -41,38 +41,38 @@ type Instance_ScheduledMaintenance struct {
 }
 
 var Instance_AccessLoggingConfigFields = ubx.FieldMap{
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	"Filter":  ubx.FieldSpec{WireName: "filter"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
 
 var Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields = ubx.FieldMap{
-	"Hours":   ubx.FieldSpec{WireName: "hours"},
-	"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Hours": ubx.FieldSpec{WireName: "hours"},
+		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields = ubx.FieldMap{
-	"Day": ubx.FieldSpec{WireName: "day"},
-	"StartTime": ubx.FieldSpec{
-		WireName: "start_time",
-		Kind:     "object",
-		Fields:   Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields,
-	},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"StartTime": ubx.FieldSpec{
+			WireName: "start_time",
+			Kind: "object",
+			Fields: Instance_MaintenanceUpdatePolicy_MaintenanceWindows_StartTimeFields,
+		},
+	}
 
 var Instance_MaintenanceUpdatePolicyFields = ubx.FieldMap{
-	"MaintenanceChannel": ubx.FieldSpec{WireName: "maintenance_channel"},
-	"MaintenanceWindows": ubx.FieldSpec{
-		WireName: "maintenance_windows",
-		Kind:     "list",
-		Fields:   Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
-	},
-}
+		"MaintenanceChannel": ubx.FieldSpec{WireName: "maintenance_channel"},
+		"MaintenanceWindows": ubx.FieldSpec{
+			WireName: "maintenance_windows",
+			Kind: "list",
+			Fields: Instance_MaintenanceUpdatePolicy_MaintenanceWindowsFields,
+		},
+	}
 
 var Instance_ScheduledMaintenanceFields = ubx.FieldMap{
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 type InstanceConfig struct {
 	// Access logging configuration enables customers to ship the access logs from the tenant projects to their own project's cloud logging. The feature is at the instance level ad disabled by default. It can be enabled during CreateInstance or UpdateInstance.
@@ -145,26 +145,26 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessLoggingConfig": ubx.FieldSpec{
 			WireName: "access_logging_config",
-			Kind:     "object",
-			Fields:   Instance_AccessLoggingConfigFields,
+			Kind: "object",
+			Fields: Instance_AccessLoggingConfigFields,
 		},
-		"ConsumerAcceptList":    ubx.FieldSpec{WireName: "consumer_accept_list"},
-		"Description":           ubx.FieldSpec{WireName: "description"},
+		"ConsumerAcceptList": ubx.FieldSpec{WireName: "consumer_accept_list"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskEncryptionKeyName": ubx.FieldSpec{WireName: "disk_encryption_key_name"},
-		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
-		"IpRange":               ubx.FieldSpec{WireName: "ip_range"},
-		"Location":              ubx.FieldSpec{WireName: "location"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+		"Location": ubx.FieldSpec{WireName: "location"},
 		"MaintenanceUpdatePolicy": ubx.FieldSpec{
 			WireName: "maintenance_update_policy",
-			Kind:     "object",
-			Fields:   Instance_MaintenanceUpdatePolicyFields,
+			Kind: "object",
+			Fields: Instance_MaintenanceUpdatePolicyFields,
 		},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PeeringCidrRange": ubx.FieldSpec{WireName: "peering_cidr_range"},
 		"ScheduledMaintenance": ubx.FieldSpec{
 			WireName: "scheduled_maintenance",
-			Kind:     "object",
-			Fields:   Instance_ScheduledMaintenanceFields,
+			Kind: "object",
+			Fields: Instance_ScheduledMaintenanceFields,
 		},
 	},
 }

@@ -81,73 +81,73 @@ type Metric_MetricDescriptor struct {
 }
 
 var Metric_BucketOptions_ExplicitBucketsFields = ubx.FieldMap{
-	"Bounds": ubx.FieldSpec{WireName: "bounds"},
-}
+		"Bounds": ubx.FieldSpec{WireName: "bounds"},
+	}
 
 var Metric_BucketOptions_ExponentialBucketsFields = ubx.FieldMap{
-	"GrowthFactor":     ubx.FieldSpec{WireName: "growth_factor"},
-	"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
-	"Scale":            ubx.FieldSpec{WireName: "scale"},
-}
+		"GrowthFactor": ubx.FieldSpec{WireName: "growth_factor"},
+		"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
+		"Scale": ubx.FieldSpec{WireName: "scale"},
+	}
 
 var Metric_BucketOptions_LinearBucketsFields = ubx.FieldMap{
-	"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
-	"Offset":           ubx.FieldSpec{WireName: "offset"},
-	"Width":            ubx.FieldSpec{WireName: "width"},
-}
+		"NumFiniteBuckets": ubx.FieldSpec{WireName: "num_finite_buckets"},
+		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Width": ubx.FieldSpec{WireName: "width"},
+	}
 
 var Metric_BucketOptionsFields = ubx.FieldMap{
-	"ExplicitBuckets": ubx.FieldSpec{
-		WireName: "explicit_buckets",
-		Kind:     "object",
-		Fields:   Metric_BucketOptions_ExplicitBucketsFields,
-	},
-	"ExponentialBuckets": ubx.FieldSpec{
-		WireName: "exponential_buckets",
-		Kind:     "object",
-		Fields:   Metric_BucketOptions_ExponentialBucketsFields,
-	},
-	"LinearBuckets": ubx.FieldSpec{
-		WireName: "linear_buckets",
-		Kind:     "object",
-		Fields:   Metric_BucketOptions_LinearBucketsFields,
-	},
-}
+		"ExplicitBuckets": ubx.FieldSpec{
+			WireName: "explicit_buckets",
+			Kind: "object",
+			Fields: Metric_BucketOptions_ExplicitBucketsFields,
+		},
+		"ExponentialBuckets": ubx.FieldSpec{
+			WireName: "exponential_buckets",
+			Kind: "object",
+			Fields: Metric_BucketOptions_ExponentialBucketsFields,
+		},
+		"LinearBuckets": ubx.FieldSpec{
+			WireName: "linear_buckets",
+			Kind: "object",
+			Fields: Metric_BucketOptions_LinearBucketsFields,
+		},
+	}
 
 var Metric_MetricDescriptor_LabelsFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Key":         ubx.FieldSpec{WireName: "key"},
-	"ValueType":   ubx.FieldSpec{WireName: "value_type"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 var Metric_MetricDescriptor_MetadataFields = ubx.FieldMap{
-	"IngestDelay":                      ubx.FieldSpec{WireName: "ingest_delay"},
-	"LaunchStage":                      ubx.FieldSpec{WireName: "launch_stage"},
-	"SamplePeriod":                     ubx.FieldSpec{WireName: "sample_period"},
-	"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
-}
+		"IngestDelay": ubx.FieldSpec{WireName: "ingest_delay"},
+		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+		"SamplePeriod": ubx.FieldSpec{WireName: "sample_period"},
+		"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
+	}
 
 var Metric_MetricDescriptorFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Labels": ubx.FieldSpec{
-		WireName: "labels",
-		Kind:     "list",
-		Fields:   Metric_MetricDescriptor_LabelsFields,
-	},
-	"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-	"Metadata": ubx.FieldSpec{
-		WireName: "metadata",
-		Kind:     "object",
-		Fields:   Metric_MetricDescriptor_MetadataFields,
-	},
-	"MetricKind":             ubx.FieldSpec{WireName: "metric_kind"},
-	"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
-	"Name":                   ubx.FieldSpec{WireName: "name"},
-	"Type":                   ubx.FieldSpec{WireName: "type"},
-	"Unit":                   ubx.FieldSpec{WireName: "unit"},
-	"ValueType":              ubx.FieldSpec{WireName: "value_type"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Labels": ubx.FieldSpec{
+			WireName: "labels",
+			Kind: "list",
+			Fields: Metric_MetricDescriptor_LabelsFields,
+		},
+		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+		"Metadata": ubx.FieldSpec{
+			WireName: "metadata",
+			Kind: "object",
+			Fields: Metric_MetricDescriptor_MetadataFields,
+		},
+		"MetricKind": ubx.FieldSpec{WireName: "metric_kind"},
+		"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Unit": ubx.FieldSpec{WireName: "unit"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 type MetricConfig struct {
 	// Optional. The resource name of the Log Bucket that owns the Log Metric. Only Log Buckets in projects are supported. The bucket has to be in the same project as the metric.For example:projects/my-project/locations/global/buckets/my-bucketIf empty, then the Log Metric is considered a non-Bucket Log Metric.
@@ -207,20 +207,20 @@ var Metric = ubx.ResourceBinding{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"BucketOptions": ubx.FieldSpec{
 			WireName: "bucket_options",
-			Kind:     "object",
-			Fields:   Metric_BucketOptionsFields,
+			Kind: "object",
+			Fields: Metric_BucketOptionsFields,
 		},
-		"Description":     ubx.FieldSpec{WireName: "description"},
-		"Disabled":        ubx.FieldSpec{WireName: "disabled"},
-		"Filter":          ubx.FieldSpec{WireName: "filter"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Filter": ubx.FieldSpec{WireName: "filter"},
 		"LabelExtractors": ubx.FieldSpec{WireName: "label_extractors"},
 		"MetricDescriptor": ubx.FieldSpec{
 			WireName: "metric_descriptor",
-			Kind:     "object",
-			Fields:   Metric_MetricDescriptorFields,
+			Kind: "object",
+			Fields: Metric_MetricDescriptorFields,
 		},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ValueExtractor": ubx.FieldSpec{WireName: "value_extractor"},
-		"Version":        ubx.FieldSpec{WireName: "version"},
+		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

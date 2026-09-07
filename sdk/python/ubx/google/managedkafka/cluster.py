@@ -7,6 +7,11 @@ from typing import Any
 import ubx_sdk as ubx
 
 @dataclasses.dataclass
+class Cluster_BrokerCapacityConfig:
+    # Optional. The disk to provision for each broker in Gibibytes. Minimum: 100 GiB.
+    disk_size_gib: Any = None
+
+@dataclasses.dataclass
 class Cluster_BrokerDetails:
     # Output only. This broker's own index within the cluster. (AI-inferred)
     broker_index: Any = None
@@ -23,14 +28,28 @@ class Cluster_CapacityConfig:
     vcpu_count: Any = None
 
 @dataclasses.dataclass
+class Cluster_EffectiveCapacityConfig:
+    # Output only. The number of brokers in the cluster.
+    broker_count: Any = None
+    # Output only. The disk assigned to each broker in Gibibytes.
+    broker_disk_size_gib: Any = None
+
+@dataclasses.dataclass
 class Cluster_GcpConfig_AccessConfig_NetworkConfigs:
     # The subnet this cluster is reachable from. (AI-inferred)
     subnet: Any = None
 
 @dataclasses.dataclass
+class Cluster_GcpConfig_AccessConfig_PublicClusterConfig:
+    # Required. The list of IPv4 ranges in CIDR notation that are allowed to connect to the public Kafka broker endpoints. The Kafka cluster should only be exposed to trusted external ranges. A maximum of 500 IP ranges can be specified and no single range can be larger than a `/16`. This field is required if PublicClusterConfig is specified.
+    allowed_source_ip_ranges: Any = None
+
+@dataclasses.dataclass
 class Cluster_GcpConfig_AccessConfig:
     # Required. Virtual Private Cloud (VPC) networks that must be granted direct access to the Kafka cluster. Minimum of 1 network is required. Maximum 10 networks can be specified.
     network_configs: Any = None
+    # The configuration for a public Kafka cluster
+    public_cluster_config: Any = None
 
 @dataclasses.dataclass
 class Cluster_GcpConfig:
@@ -38,6 +57,13 @@ class Cluster_GcpConfig:
     access_config: Any = None
     # Optional. Immutable. The Cloud KMS Key name to use for encryption. The key must be located in the same region as the cluster and cannot be changed. Structured like: projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}.
     kms_key: Any = None
+
+@dataclasses.dataclass
+class Cluster_PublicClusterDetails:
+    # Output only. DNS discovery records that resolve to all of the external IP addresses associated with the public cluster. Used for configuring DNS-based egress firewall rules to a public cluster. discovery_dns_record can be added to this list if the cluster is scaled up. Must configure DNS based firewalls to resolve ALL DNS records in this list as large clusters have IP addresses sharded across records. Each record contains a maximum of 30 IP addresses.
+    discovery_dns_records: Any = None
+    # Output only. All of the external IP addresses associated with the public cluster used for configuring egress firewall rules to a public cluster. external_ip_address can be added to this list if the cluster is scaled up.
+    external_ip_addresses: Any = None
 
 @dataclasses.dataclass
 class Cluster_RebalanceConfig:
@@ -66,13 +92,26 @@ class Cluster_UpdateOptions:
     # Optional. If true, allows an update operation that increases the total vCPU and/or memory allocation of the cluster to significantly decrease the per-broker vCPU and/or memory allocation. This can result in reduced performance and availability. By default, the update operation will fail if an upscale request results in a vCPU or memory allocation for the brokers that is smaller than 90% of the current broker size.
     allow_broker_downscale_on_cluster_upscale: Any = None
 
+_Cluster_BrokerCapacityConfigFields = {
+    "disk_size_gib": ubx.FieldSpec(wire_name="disk_size_gib"),
+}
+
 _Cluster_CapacityConfigFields = {
     "memory_bytes": ubx.FieldSpec(wire_name="memory_bytes"),
     "vcpu_count": ubx.FieldSpec(wire_name="vcpu_count"),
 }
 
+_Cluster_EffectiveCapacityConfigFields = {
+    "broker_count": ubx.FieldSpec(wire_name="broker_count"),
+    "broker_disk_size_gib": ubx.FieldSpec(wire_name="broker_disk_size_gib"),
+}
+
 _Cluster_GcpConfig_AccessConfig_NetworkConfigsFields = {
     "subnet": ubx.FieldSpec(wire_name="subnet"),
+}
+
+_Cluster_GcpConfig_AccessConfig_PublicClusterConfigFields = {
+    "allowed_source_ip_ranges": ubx.FieldSpec(wire_name="allowed_source_ip_ranges"),
 }
 
 _Cluster_GcpConfig_AccessConfigFields = {
@@ -80,6 +119,11 @@ _Cluster_GcpConfig_AccessConfigFields = {
         wire_name="network_configs",
         kind="list",
         fields=_Cluster_GcpConfig_AccessConfig_NetworkConfigsFields,
+    ),
+    "public_cluster_config": ubx.FieldSpec(
+        wire_name="public_cluster_config",
+        kind="object",
+        fields=_Cluster_GcpConfig_AccessConfig_PublicClusterConfigFields,
     ),
 }
 
@@ -90,6 +134,11 @@ _Cluster_GcpConfigFields = {
         fields=_Cluster_GcpConfig_AccessConfigFields,
     ),
     "kms_key": ubx.FieldSpec(wire_name="kms_key"),
+}
+
+_Cluster_PublicClusterDetailsFields = {
+    "discovery_dns_records": ubx.FieldSpec(wire_name="discovery_dns_records"),
+    "external_ip_addresses": ubx.FieldSpec(wire_name="external_ip_addresses"),
 }
 
 _Cluster_RebalanceConfigFields = {
@@ -123,14 +172,20 @@ _Cluster_UpdateOptionsFields = {
 
 @dataclasses.dataclass
 class ClusterConfig:
+    # Capacity configuration at a per-broker level within the Kafka cluster. The config will be appled to each broker in the cluster.
+    broker_capacity_config: Any = None
     # A capacity configuration of a Kafka cluster.
     capacity_config: Any = None
+    # Describes the effective capacity configuration of a Kafka cluster, both cluster-wide and per-broker.
+    effective_capacity_config: Any = None
     # Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
     gcp_config: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Identifier. The name of the cluster. Structured like: projects/{project_number}/locations/{location}/clusters/{cluster_id}
     name: Any = None
+    # Details of the public cluster feature for the Kafka cluster.
+    public_cluster_details: Any = None
     # Defines rebalancing behavior of a Kafka cluster.
     rebalance_config: Any = None
     # The TLS configuration for the Kafka cluster.
@@ -140,12 +195,18 @@ class ClusterConfig:
 
 @dataclasses.dataclass
 class ClusterAttrs:
+    # Output only. The bootstrap address of the Kafka cluster. The returned address format is: `bootstrap-...managedkafka.s.cloud.goog` or `bootstrap...managedkafka..cloud.goog` (legacy format). ## Examples: `bootstrap-nol2mecj8p94jhx2ge2rg54579a.c0aad26f.europe-west1.managedkafka.s.cloud.goog` - `bootstrap.my-cluster.us-central1.managedkafka.my-project.cloud.goog` The port number is omitted so clients can connect to their target listener (for example, `:9092` for TLS or `:9094` for mTLS).
+    bootstrap_address: Any = None
+    # Capacity configuration at a per-broker level within the Kafka cluster. The config will be appled to each broker in the cluster.
+    broker_capacity_config: Any = None
     # Output only. Only populated when FULL view is requested. Details of each broker in the cluster.
     broker_details: Any = None
     # A capacity configuration of a Kafka cluster.
     capacity_config: Any = None
     # Output only. The time when the cluster was created.
     create_time: Any = None
+    # Describes the effective capacity configuration of a Kafka cluster, both cluster-wide and per-broker.
+    effective_capacity_config: Any = None
     # Configuration properties for a Kafka cluster deployed to Google Cloud Platform.
     gcp_config: Any = None
     # Output only. Only populated when FULL view is requested. The Kafka version of the cluster.
@@ -154,6 +215,8 @@ class ClusterAttrs:
     labels: Any = None
     # Identifier. The name of the cluster. Structured like: projects/{project_number}/locations/{location}/clusters/{cluster_id}
     name: Any = None
+    # Details of the public cluster feature for the Kafka cluster.
+    public_cluster_details: Any = None
     # Defines rebalancing behavior of a Kafka cluster.
     rebalance_config: Any = None
     # Output only. Reserved for future use.
@@ -172,10 +235,20 @@ class ClusterAttrs:
 Cluster = ubx.ResourceBinding(
     wire_type="google_managedkafka_cluster",
     fields={
+        "broker_capacity_config": ubx.FieldSpec(
+            wire_name="broker_capacity_config",
+            kind="object",
+            fields=_Cluster_BrokerCapacityConfigFields,
+        ),
         "capacity_config": ubx.FieldSpec(
             wire_name="capacity_config",
             kind="object",
             fields=_Cluster_CapacityConfigFields,
+        ),
+        "effective_capacity_config": ubx.FieldSpec(
+            wire_name="effective_capacity_config",
+            kind="object",
+            fields=_Cluster_EffectiveCapacityConfigFields,
         ),
         "gcp_config": ubx.FieldSpec(
             wire_name="gcp_config",
@@ -184,6 +257,11 @@ Cluster = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
+        "public_cluster_details": ubx.FieldSpec(
+            wire_name="public_cluster_details",
+            kind="object",
+            fields=_Cluster_PublicClusterDetailsFields,
+        ),
         "rebalance_config": ubx.FieldSpec(
             wire_name="rebalance_config",
             kind="object",

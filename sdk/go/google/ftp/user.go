@@ -24,17 +24,17 @@ type User_UserCredentials struct {
 }
 
 var User_StorageDirectoryMappingsFields = ubx.FieldMap{
-	"Bucket":       ubx.FieldSpec{WireName: "bucket"},
-	"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
-	"Directory":    ubx.FieldSpec{WireName: "directory"},
-	"Permission":   ubx.FieldSpec{WireName: "permission"},
-}
+		"Bucket": ubx.FieldSpec{WireName: "bucket"},
+		"BucketPrefix": ubx.FieldSpec{WireName: "bucket_prefix"},
+		"Directory": ubx.FieldSpec{WireName: "directory"},
+		"Permission": ubx.FieldSpec{WireName: "permission"},
+	}
 
 var User_UserCredentialsFields = ubx.FieldMap{
-	"CredentialName":   ubx.FieldSpec{WireName: "credential_name"},
-	"CredentialType":   ubx.FieldSpec{WireName: "credential_type"},
-	"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
-}
+		"CredentialName": ubx.FieldSpec{WireName: "credential_name"},
+		"CredentialType": ubx.FieldSpec{WireName: "credential_type"},
+		"SshPublicKeyBody": ubx.FieldSpec{WireName: "ssh_public_key_body"},
+	}
 
 type UserConfig struct {
 	// Required. Service account in customer project attached to this SFTP User.
@@ -74,17 +74,17 @@ var User = ubx.ResourceBinding{
 	WireType: "google_ftp_user",
 	Fields: ubx.FieldMap{
 		"CustomerServiceAccount": ubx.FieldSpec{WireName: "customer_service_account"},
-		"Labels":                 ubx.FieldSpec{WireName: "labels"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"StorageDirectoryMappings": ubx.FieldSpec{
 			WireName: "storage_directory_mappings",
-			Kind:     "list",
-			Fields:   User_StorageDirectoryMappingsFields,
+			Kind: "list",
+			Fields: User_StorageDirectoryMappingsFields,
 		},
 		"UserCredentials": ubx.FieldSpec{
 			WireName: "user_credentials",
-			Kind:     "list",
-			Fields:   User_UserCredentialsFields,
+			Kind: "list",
+			Fields: User_UserCredentialsFields,
 		},
 	},
 }

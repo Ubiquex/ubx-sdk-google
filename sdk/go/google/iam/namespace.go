@@ -9,8 +9,8 @@ type Namespace_OwnerService struct {
 }
 
 var Namespace_OwnerServiceFields = ubx.FieldMap{
-	"PrincipalSubject": ubx.FieldSpec{WireName: "principal_subject"},
-}
+		"PrincipalSubject": ubx.FieldSpec{WireName: "principal_subject"},
+	}
 
 type NamespaceConfig struct {
 	// Optional. A description of the namespace. Cannot exceed 256 characters.
@@ -42,12 +42,12 @@ var Namespace = ubx.ResourceBinding{
 	WireType: "google_iam_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OwnerService": ubx.FieldSpec{
 			WireName: "owner_service",
-			Kind:     "object",
-			Fields:   Namespace_OwnerServiceFields,
+			Kind: "object",
+			Fields: Namespace_OwnerServiceFields,
 		},
 	},
 }

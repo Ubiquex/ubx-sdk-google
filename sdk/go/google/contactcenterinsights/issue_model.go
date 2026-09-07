@@ -31,26 +31,26 @@ type IssueModel_TrainingStats struct {
 }
 
 var IssueModel_InputDataConfigFields = ubx.FieldMap{
-	"Filter":                     ubx.FieldSpec{WireName: "filter"},
-	"Medium":                     ubx.FieldSpec{WireName: "medium"},
-	"TrainingConversationsCount": ubx.FieldSpec{WireName: "training_conversations_count"},
-}
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Medium": ubx.FieldSpec{WireName: "medium"},
+		"TrainingConversationsCount": ubx.FieldSpec{WireName: "training_conversations_count"},
+	}
 
 var IssueModel_TrainingStats_IssueStatsFields = ubx.FieldMap{
-	"DisplayName":               ubx.FieldSpec{WireName: "display_name"},
-	"Issue":                     ubx.FieldSpec{WireName: "issue"},
-	"LabeledConversationsCount": ubx.FieldSpec{WireName: "labeled_conversations_count"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Issue": ubx.FieldSpec{WireName: "issue"},
+		"LabeledConversationsCount": ubx.FieldSpec{WireName: "labeled_conversations_count"},
+	}
 
 var IssueModel_TrainingStatsFields = ubx.FieldMap{
-	"AnalyzedConversationsCount": ubx.FieldSpec{WireName: "analyzed_conversations_count"},
-	"IssueStats": ubx.FieldSpec{
-		WireName: "issue_stats",
-		Kind:     "map",
-		Fields:   IssueModel_TrainingStats_IssueStatsFields,
-	},
-	"UnclassifiedConversationsCount": ubx.FieldSpec{WireName: "unclassified_conversations_count"},
-}
+		"AnalyzedConversationsCount": ubx.FieldSpec{WireName: "analyzed_conversations_count"},
+		"IssueStats": ubx.FieldSpec{
+			WireName: "issue_stats",
+			Kind: "map",
+			Fields: IssueModel_TrainingStats_IssueStatsFields,
+		},
+		"UnclassifiedConversationsCount": ubx.FieldSpec{WireName: "unclassified_conversations_count"},
+	}
 
 type IssueModelConfig struct {
 	// The representative name for the issue model.
@@ -96,16 +96,16 @@ var IssueModel = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"InputDataConfig": ubx.FieldSpec{
 			WireName: "input_data_config",
-			Kind:     "object",
-			Fields:   IssueModel_InputDataConfigFields,
+			Kind: "object",
+			Fields: IssueModel_InputDataConfigFields,
 		},
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"ModelType":    ubx.FieldSpec{WireName: "model_type"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
+		"ModelType": ubx.FieldSpec{WireName: "model_type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TrainingStats": ubx.FieldSpec{
 			WireName: "training_stats",
-			Kind:     "object",
-			Fields:   IssueModel_TrainingStatsFields,
+			Kind: "object",
+			Fields: IssueModel_TrainingStatsFields,
 		},
 	},
 }

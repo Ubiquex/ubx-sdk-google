@@ -89,7 +89,7 @@ type NotebookRuntime_SoftwareConfig_ColabImage struct {
 }
 
 type NotebookRuntime_SoftwareConfig_Env struct {
-	Name  any
+	Name any
 	Value any
 }
 
@@ -139,7 +139,7 @@ type NotebookRuntimeAttrs struct {
 	Labels any
 	// Specification of a single machine.
 	MachineSpec any
-	Name        any
+	Name any
 	// Network spec.
 	NetworkSpec any
 	// Optional. The Compute Engine tags to add to runtime (see [Tagging instances](https://cloud.google.com/vpc/docs/add-remove-network-tags)).
@@ -174,5 +174,6 @@ type NotebookRuntimeAttrs struct {
 
 var NotebookRuntime = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_notebook_runtime",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

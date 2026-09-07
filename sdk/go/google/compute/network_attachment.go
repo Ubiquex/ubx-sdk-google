@@ -12,7 +12,7 @@ type NetworkAttachment_ConnectionEndpoints struct {
 	ProjectIdOrNum any
 	// List of secondary IP CIDR ranges from the subnetwork that this connection endpoint is allowed to use. If empty, all secondary ranges of the subnetwork are permitted. (AI-inferred)
 	SecondaryIpCidrRanges any
-	ServiceClassId        any
+	ServiceClassId any
 	// The status of the connection endpoint, which can be one of: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, or STATUS_UNSPECIFIED. (AI-inferred)
 	Status any
 	// The subnetwork URL of the connected endpoint. (AI-inferred)
@@ -75,11 +75,11 @@ var NetworkAttachment = ubx.ResourceBinding{
 	WireType: "google_compute_network_attachment",
 	Fields: ubx.FieldMap{
 		"ConnectionPreference": ubx.FieldSpec{WireName: "connection_preference"},
-		"Description":          ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":          ubx.FieldSpec{WireName: "fingerprint"},
-		"Name":                 ubx.FieldSpec{WireName: "name"},
-		"ProducerAcceptLists":  ubx.FieldSpec{WireName: "producer_accept_lists"},
-		"ProducerRejectLists":  ubx.FieldSpec{WireName: "producer_reject_lists"},
-		"Subnetworks":          ubx.FieldSpec{WireName: "subnetworks"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ProducerAcceptLists": ubx.FieldSpec{WireName: "producer_accept_lists"},
+		"ProducerRejectLists": ubx.FieldSpec{WireName: "producer_reject_lists"},
+		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

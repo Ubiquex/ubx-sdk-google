@@ -33,7 +33,7 @@ export interface V1beta1FirewallEndpoint_WildfireSettings {
   wildfireRealtimeLookupDuration?: string | Computed<string>;
   /** Optional. Action to take on WildFire real time signature lookup timeout. Default value is ALLOW. */
   wildfireRealtimeLookupTimeoutAction?: string | Computed<string>;
-  /** Optional. The region where WildFire analysis will be performed. PAN supports regions: https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-deployments/advanced-wildfire-global-cloud */
+  /** Optional. The region where WildFire analysis will be performed. Palo Alto Networks supports regions: https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-deployments/advanced-wildfire-global-cloud */
   wildfireRegion?: string | Computed<string>;
 }
 
@@ -89,6 +89,8 @@ export interface V1beta1FirewallEndpointAttrs {
   description: string;
   /** Settings for the endpoint. */
   endpointSettings: V1beta1FirewallEndpoint_EndpointSettings;
+  /** Output only. The resource name of the explicit PSC Attachment. Format: projects/{project}/regions/{region}/serviceAttachments/{id} */
+  explicitPrivateServiceConnectAttachment: string;
   /** Optional. Labels as key value pairs */
   labels: Record<string, string>;
   /** Immutable. Identifier. Name of resource. */

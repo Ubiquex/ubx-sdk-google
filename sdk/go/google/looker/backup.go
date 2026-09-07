@@ -13,10 +13,10 @@ type Backup_EncryptionConfig struct {
 }
 
 var Backup_EncryptionConfigFields = ubx.FieldMap{
-	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
-	"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
-	"KmsKeyState":       ubx.FieldSpec{WireName: "kms_key_state"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
+		"KmsKeyState": ubx.FieldSpec{WireName: "kms_key_state"},
+	}
 
 type BackupConfig struct {
 	// Encryption configuration (i.e. CMEK).
@@ -43,8 +43,8 @@ var Backup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind:     "object",
-			Fields:   Backup_EncryptionConfigFields,
+			Kind: "object",
+			Fields: Backup_EncryptionConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

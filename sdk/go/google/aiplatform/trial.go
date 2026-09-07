@@ -27,19 +27,19 @@ type Trial_Parameters struct {
 }
 
 var Trial_FinalMeasurement_MetricsFields = ubx.FieldMap{
-	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-	"Value":    ubx.FieldSpec{WireName: "value"},
-}
+		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Trial_FinalMeasurementFields = ubx.FieldMap{
-	"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
-	"Metrics": ubx.FieldSpec{
-		WireName: "metrics",
-		Kind:     "list",
-		Fields:   Trial_FinalMeasurement_MetricsFields,
-	},
-	"StepCount": ubx.FieldSpec{WireName: "step_count"},
-}
+		"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
+		"Metrics": ubx.FieldSpec{
+			WireName: "metrics",
+			Kind: "list",
+			Fields: Trial_FinalMeasurement_MetricsFields,
+		},
+		"StepCount": ubx.FieldSpec{WireName: "step_count"},
+	}
 
 type TrialConfig struct {
 	// A message representing a Measurement of a Trial. A Measurement contains the Metrics got by executing a Trial using suggested hyperparameter values.
@@ -78,8 +78,8 @@ var Trial = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FinalMeasurement": ubx.FieldSpec{
 			WireName: "final_measurement",
-			Kind:     "object",
-			Fields:   Trial_FinalMeasurementFields,
+			Kind: "object",
+			Fields: Trial_FinalMeasurementFields,
 		},
 	},
 }

@@ -39,34 +39,34 @@ type DataPolicy_DataPolicy struct {
 }
 
 var DataPolicy_DataGovernanceTagFields = ubx.FieldMap{
-	"Key":   ubx.FieldSpec{WireName: "key"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var DataPolicy_DataMaskingPolicyFields = ubx.FieldMap{
-	"PredefinedExpression": ubx.FieldSpec{WireName: "predefined_expression"},
-	"Routine":              ubx.FieldSpec{WireName: "routine"},
-}
+		"PredefinedExpression": ubx.FieldSpec{WireName: "predefined_expression"},
+		"Routine": ubx.FieldSpec{WireName: "routine"},
+	}
 
 var DataPolicy_DataPolicyFields = ubx.FieldMap{
-	"DataGovernanceTag": ubx.FieldSpec{
-		WireName: "data_governance_tag",
-		Kind:     "object",
-		Fields:   DataPolicy_DataGovernanceTagFields,
-	},
-	"DataMaskingPolicy": ubx.FieldSpec{
-		WireName: "data_masking_policy",
-		Kind:     "object",
-		Fields:   DataPolicy_DataMaskingPolicyFields,
-	},
-	"DataPolicyId":   ubx.FieldSpec{WireName: "data_policy_id"},
-	"DataPolicyType": ubx.FieldSpec{WireName: "data_policy_type"},
-	"Etag":           ubx.FieldSpec{WireName: "etag"},
-	"Grantees":       ubx.FieldSpec{WireName: "grantees"},
-	"Name":           ubx.FieldSpec{WireName: "name"},
-	"PolicyTag":      ubx.FieldSpec{WireName: "policy_tag"},
-	"Version":        ubx.FieldSpec{WireName: "version"},
-}
+		"DataGovernanceTag": ubx.FieldSpec{
+			WireName: "data_governance_tag",
+			Kind: "object",
+			Fields: DataPolicy_DataGovernanceTagFields,
+		},
+		"DataMaskingPolicy": ubx.FieldSpec{
+			WireName: "data_masking_policy",
+			Kind: "object",
+			Fields: DataPolicy_DataMaskingPolicyFields,
+		},
+		"DataPolicyId": ubx.FieldSpec{WireName: "data_policy_id"},
+		"DataPolicyType": ubx.FieldSpec{WireName: "data_policy_type"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Grantees": ubx.FieldSpec{WireName: "grantees"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PolicyTag": ubx.FieldSpec{WireName: "policy_tag"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 type DataPolicyConfig struct {
 	// Represents the label-policy binding.
@@ -101,8 +101,8 @@ var DataPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataPolicy": ubx.FieldSpec{
 			WireName: "data_policy",
-			Kind:     "object",
-			Fields:   DataPolicy_DataPolicyFields,
+			Kind: "object",
+			Fields: DataPolicy_DataPolicyFields,
 		},
 	},
 }

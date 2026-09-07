@@ -38,8 +38,8 @@ type ModelAttrs struct {
 var Model = ubx.ResourceBinding{
 	WireType: "google_translate_model",
 	Fields: ubx.FieldMap{
-		"Dataset":     ubx.FieldSpec{WireName: "dataset"},
+		"Dataset": ubx.FieldSpec{WireName: "dataset"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

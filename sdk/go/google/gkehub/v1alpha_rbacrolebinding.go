@@ -16,13 +16,13 @@ type V1alphaRbacrolebinding_State struct {
 }
 
 var V1alphaRbacrolebinding_RoleFields = ubx.FieldMap{
-	"CustomRole":     ubx.FieldSpec{WireName: "custom_role"},
-	"PredefinedRole": ubx.FieldSpec{WireName: "predefined_role"},
-}
+		"CustomRole": ubx.FieldSpec{WireName: "custom_role"},
+		"PredefinedRole": ubx.FieldSpec{WireName: "predefined_role"},
+	}
 
 var V1alphaRbacrolebinding_StateFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 type V1alphaRbacrolebindingConfig struct {
 	// group is the group, as seen by the kubernetes cluster.
@@ -65,18 +65,18 @@ type V1alphaRbacrolebindingAttrs struct {
 var V1alphaRbacrolebinding = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1alpha_rbacrolebinding",
 	Fields: ubx.FieldMap{
-		"Group":  ubx.FieldSpec{WireName: "group"},
+		"Group": ubx.FieldSpec{WireName: "group"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Role": ubx.FieldSpec{
 			WireName: "role",
-			Kind:     "object",
-			Fields:   V1alphaRbacrolebinding_RoleFields,
+			Kind: "object",
+			Fields: V1alphaRbacrolebinding_RoleFields,
 		},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   V1alphaRbacrolebinding_StateFields,
+			Kind: "object",
+			Fields: V1alphaRbacrolebinding_StateFields,
 		},
 		"User": ubx.FieldSpec{WireName: "user"},
 	},

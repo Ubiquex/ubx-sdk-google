@@ -23,6 +23,6 @@ var HostProjectRegistration = ubx.ResourceBinding{
 	WireType: "google_apihub_host_project_registration",
 	Fields: ubx.FieldMap{
 		"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
-		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

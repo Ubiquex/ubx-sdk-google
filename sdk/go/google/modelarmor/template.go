@@ -92,99 +92,99 @@ type Template_TemplateMetadata struct {
 }
 
 var Template_FilterConfig_MaliciousUriFilterSettingsFields = ubx.FieldMap{
-	"FilterEnforcement": ubx.FieldSpec{WireName: "filter_enforcement"},
-}
+		"FilterEnforcement": ubx.FieldSpec{WireName: "filter_enforcement"},
+	}
 
 var Template_FilterConfig_PiAndJailbreakFilterSettingsFields = ubx.FieldMap{
-	"ConfidenceLevel":   ubx.FieldSpec{WireName: "confidence_level"},
-	"FilterEnforcement": ubx.FieldSpec{WireName: "filter_enforcement"},
-}
+		"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
+		"FilterEnforcement": ubx.FieldSpec{WireName: "filter_enforcement"},
+	}
 
 var Template_FilterConfig_RaiSettings_RaiFiltersFields = ubx.FieldMap{
-	"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
-	"FilterType":      ubx.FieldSpec{WireName: "filter_type"},
-}
+		"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
+		"FilterType": ubx.FieldSpec{WireName: "filter_type"},
+	}
 
 var Template_FilterConfig_RaiSettingsFields = ubx.FieldMap{
-	"RaiFilters": ubx.FieldSpec{
-		WireName: "rai_filters",
-		Kind:     "list",
-		Fields:   Template_FilterConfig_RaiSettings_RaiFiltersFields,
-	},
-}
+		"RaiFilters": ubx.FieldSpec{
+			WireName: "rai_filters",
+			Kind: "list",
+			Fields: Template_FilterConfig_RaiSettings_RaiFiltersFields,
+		},
+	}
 
 var Template_FilterConfig_SdpSettings_AdvancedConfigFields = ubx.FieldMap{
-	"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
-	"InspectTemplate":    ubx.FieldSpec{WireName: "inspect_template"},
-}
+		"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
+		"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
+	}
 
 var Template_FilterConfig_SdpSettingsFields = ubx.FieldMap{
-	"AdvancedConfig": ubx.FieldSpec{
-		WireName: "advanced_config",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_SdpSettings_AdvancedConfigFields,
-	},
-	"BasicConfig": ubx.FieldSpec{
-		WireName: "basic_config",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_MaliciousUriFilterSettingsFields,
-	},
-}
+		"AdvancedConfig": ubx.FieldSpec{
+			WireName: "advanced_config",
+			Kind: "object",
+			Fields: Template_FilterConfig_SdpSettings_AdvancedConfigFields,
+		},
+		"BasicConfig": ubx.FieldSpec{
+			WireName: "basic_config",
+			Kind: "object",
+			Fields: Template_FilterConfig_MaliciousUriFilterSettingsFields,
+		},
+	}
 
 var Template_FilterConfigFields = ubx.FieldMap{
-	"MaliciousUriFilterSettings": ubx.FieldSpec{
-		WireName: "malicious_uri_filter_settings",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_MaliciousUriFilterSettingsFields,
-	},
-	"PiAndJailbreakFilterSettings": ubx.FieldSpec{
-		WireName: "pi_and_jailbreak_filter_settings",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_PiAndJailbreakFilterSettingsFields,
-	},
-	"RaiSettings": ubx.FieldSpec{
-		WireName: "rai_settings",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_RaiSettingsFields,
-	},
-	"SdpSettings": ubx.FieldSpec{
-		WireName: "sdp_settings",
-		Kind:     "object",
-		Fields:   Template_FilterConfig_SdpSettingsFields,
-	},
-}
+		"MaliciousUriFilterSettings": ubx.FieldSpec{
+			WireName: "malicious_uri_filter_settings",
+			Kind: "object",
+			Fields: Template_FilterConfig_MaliciousUriFilterSettingsFields,
+		},
+		"PiAndJailbreakFilterSettings": ubx.FieldSpec{
+			WireName: "pi_and_jailbreak_filter_settings",
+			Kind: "object",
+			Fields: Template_FilterConfig_PiAndJailbreakFilterSettingsFields,
+		},
+		"RaiSettings": ubx.FieldSpec{
+			WireName: "rai_settings",
+			Kind: "object",
+			Fields: Template_FilterConfig_RaiSettingsFields,
+		},
+		"SdpSettings": ubx.FieldSpec{
+			WireName: "sdp_settings",
+			Kind: "object",
+			Fields: Template_FilterConfig_SdpSettingsFields,
+		},
+	}
 
 var Template_TemplateMetadata_FilterVersionSelectorFields = ubx.FieldMap{
-	"Alias":   ubx.FieldSpec{WireName: "alias"},
-	"Version": ubx.FieldSpec{WireName: "version"},
-}
+		"Alias": ubx.FieldSpec{WireName: "alias"},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
 
 var Template_TemplateMetadata_MultiLanguageDetectionFields = ubx.FieldMap{
-	"EnableMultiLanguageDetection": ubx.FieldSpec{WireName: "enable_multi_language_detection"},
-}
+		"EnableMultiLanguageDetection": ubx.FieldSpec{WireName: "enable_multi_language_detection"},
+	}
 
 var Template_TemplateMetadataFields = ubx.FieldMap{
-	"CustomLlmResponseSafetyErrorCode":    ubx.FieldSpec{WireName: "custom_llm_response_safety_error_code"},
-	"CustomLlmResponseSafetyErrorMessage": ubx.FieldSpec{WireName: "custom_llm_response_safety_error_message"},
-	"CustomPromptSafetyErrorCode":         ubx.FieldSpec{WireName: "custom_prompt_safety_error_code"},
-	"CustomPromptSafetyErrorMessage":      ubx.FieldSpec{WireName: "custom_prompt_safety_error_message"},
-	"DataResidencyCompliant":              ubx.FieldSpec{WireName: "data_residency_compliant"},
-	"EnforcementType":                     ubx.FieldSpec{WireName: "enforcement_type"},
-	"FilterVersionSelector": ubx.FieldSpec{
-		WireName: "filter_version_selector",
-		Kind:     "object",
-		Fields:   Template_TemplateMetadata_FilterVersionSelectorFields,
-	},
-	"IgnorePartialInvocationFailures": ubx.FieldSpec{WireName: "ignore_partial_invocation_failures"},
-	"LogSanitizeOperations":           ubx.FieldSpec{WireName: "log_sanitize_operations"},
-	"LogTemplateOperations":           ubx.FieldSpec{WireName: "log_template_operations"},
-	"Modalities":                      ubx.FieldSpec{WireName: "modalities"},
-	"MultiLanguageDetection": ubx.FieldSpec{
-		WireName: "multi_language_detection",
-		Kind:     "object",
-		Fields:   Template_TemplateMetadata_MultiLanguageDetectionFields,
-	},
-}
+		"CustomLlmResponseSafetyErrorCode": ubx.FieldSpec{WireName: "custom_llm_response_safety_error_code"},
+		"CustomLlmResponseSafetyErrorMessage": ubx.FieldSpec{WireName: "custom_llm_response_safety_error_message"},
+		"CustomPromptSafetyErrorCode": ubx.FieldSpec{WireName: "custom_prompt_safety_error_code"},
+		"CustomPromptSafetyErrorMessage": ubx.FieldSpec{WireName: "custom_prompt_safety_error_message"},
+		"DataResidencyCompliant": ubx.FieldSpec{WireName: "data_residency_compliant"},
+		"EnforcementType": ubx.FieldSpec{WireName: "enforcement_type"},
+		"FilterVersionSelector": ubx.FieldSpec{
+			WireName: "filter_version_selector",
+			Kind: "object",
+			Fields: Template_TemplateMetadata_FilterVersionSelectorFields,
+		},
+		"IgnorePartialInvocationFailures": ubx.FieldSpec{WireName: "ignore_partial_invocation_failures"},
+		"LogSanitizeOperations": ubx.FieldSpec{WireName: "log_sanitize_operations"},
+		"LogTemplateOperations": ubx.FieldSpec{WireName: "log_template_operations"},
+		"Modalities": ubx.FieldSpec{WireName: "modalities"},
+		"MultiLanguageDetection": ubx.FieldSpec{
+			WireName: "multi_language_detection",
+			Kind: "object",
+			Fields: Template_TemplateMetadata_MultiLanguageDetectionFields,
+		},
+	}
 
 type TemplateConfig struct {
 	// Filters configuration.
@@ -217,15 +217,15 @@ var Template = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"FilterConfig": ubx.FieldSpec{
 			WireName: "filter_config",
-			Kind:     "object",
-			Fields:   Template_FilterConfigFields,
+			Kind: "object",
+			Fields: Template_FilterConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"TemplateMetadata": ubx.FieldSpec{
 			WireName: "template_metadata",
-			Kind:     "object",
-			Fields:   Template_TemplateMetadataFields,
+			Kind: "object",
+			Fields: Template_TemplateMetadataFields,
 		},
 	},
 }

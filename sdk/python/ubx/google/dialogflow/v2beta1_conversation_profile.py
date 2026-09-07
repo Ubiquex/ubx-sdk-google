@@ -146,14 +146,24 @@ class V2beta1ConversationProfile_SipConfig:
     max_audio_recording_duration: Any = None
 
 @dataclasses.dataclass
+class V2beta1ConversationProfile_SttConfig_GeminiAsrConfig:
+    end_of_speech_sensitivity: Any = None
+    model_id: Any = None
+    prefix_padding_ms: Any = None
+    silence_duration_ms: Any = None
+    start_of_speech_sensitivity: Any = None
+
+@dataclasses.dataclass
 class V2beta1ConversationProfile_SttConfig:
     audio_encoding: Any = None
     enable_word_info: Any = None
+    gemini_asr_config: Any = None
     language_code: Any = None
     model: Any = None
     phrase_sets: Any = None
     sample_rate_hertz: Any = None
     speech_model_variant: Any = None
+    use_gemini_asr: Any = None
     use_timeout_based_endpointing: Any = None
 
 @dataclasses.dataclass
@@ -391,14 +401,28 @@ _V2beta1ConversationProfile_SipConfigFields = {
     "max_audio_recording_duration": ubx.FieldSpec(wire_name="max_audio_recording_duration"),
 }
 
+_V2beta1ConversationProfile_SttConfig_GeminiAsrConfigFields = {
+    "end_of_speech_sensitivity": ubx.FieldSpec(wire_name="end_of_speech_sensitivity"),
+    "model_id": ubx.FieldSpec(wire_name="model_id"),
+    "prefix_padding_ms": ubx.FieldSpec(wire_name="prefix_padding_ms"),
+    "silence_duration_ms": ubx.FieldSpec(wire_name="silence_duration_ms"),
+    "start_of_speech_sensitivity": ubx.FieldSpec(wire_name="start_of_speech_sensitivity"),
+}
+
 _V2beta1ConversationProfile_SttConfigFields = {
     "audio_encoding": ubx.FieldSpec(wire_name="audio_encoding"),
     "enable_word_info": ubx.FieldSpec(wire_name="enable_word_info"),
+    "gemini_asr_config": ubx.FieldSpec(
+        wire_name="gemini_asr_config",
+        kind="object",
+        fields=_V2beta1ConversationProfile_SttConfig_GeminiAsrConfigFields,
+    ),
     "language_code": ubx.FieldSpec(wire_name="language_code"),
     "model": ubx.FieldSpec(wire_name="model"),
     "phrase_sets": ubx.FieldSpec(wire_name="phrase_sets"),
     "sample_rate_hertz": ubx.FieldSpec(wire_name="sample_rate_hertz"),
     "speech_model_variant": ubx.FieldSpec(wire_name="speech_model_variant"),
+    "use_gemini_asr": ubx.FieldSpec(wire_name="use_gemini_asr"),
     "use_timeout_based_endpointing": ubx.FieldSpec(wire_name="use_timeout_based_endpointing"),
 }
 

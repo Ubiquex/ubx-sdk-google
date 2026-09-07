@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaCustomer_CustomerOnboardingState_OnboardingSteps struct {
 	CompletionState any
-	CompletionTime  any
-	StartTime       any
-	Step            any
+	CompletionTime any
+	StartTime any
+	Step any
 }
 
 type V1betaCustomer_CustomerOnboardingState struct {
@@ -16,19 +16,19 @@ type V1betaCustomer_CustomerOnboardingState struct {
 }
 
 var V1betaCustomer_CustomerOnboardingState_OnboardingStepsFields = ubx.FieldMap{
-	"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
-	"CompletionTime":  ubx.FieldSpec{WireName: "completion_time"},
-	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
-	"Step":            ubx.FieldSpec{WireName: "step"},
-}
+		"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
+		"CompletionTime": ubx.FieldSpec{WireName: "completion_time"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"Step": ubx.FieldSpec{WireName: "step"},
+	}
 
 var V1betaCustomer_CustomerOnboardingStateFields = ubx.FieldMap{
-	"OnboardingSteps": ubx.FieldSpec{
-		WireName: "onboarding_steps",
-		Kind:     "list",
-		Fields:   V1betaCustomer_CustomerOnboardingState_OnboardingStepsFields,
-	},
-}
+		"OnboardingSteps": ubx.FieldSpec{
+			WireName: "onboarding_steps",
+			Kind: "list",
+			Fields: V1betaCustomer_CustomerOnboardingState_OnboardingStepsFields,
+		},
+	}
 
 type V1betaCustomerConfig struct {
 	// Container for customer onboarding steps
@@ -57,10 +57,10 @@ var V1betaCustomer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomerOnboardingState": ubx.FieldSpec{
 			WireName: "customer_onboarding_state",
-			Kind:     "object",
-			Fields:   V1betaCustomer_CustomerOnboardingStateFields,
+			Kind: "object",
+			Fields: V1betaCustomer_CustomerOnboardingStateFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

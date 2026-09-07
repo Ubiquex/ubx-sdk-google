@@ -183,7 +183,7 @@ class AlphaBackendService_FailoverPolicy:
 
 @dataclasses.dataclass
 class AlphaBackendService_HaPolicy_Leader_NetworkEndpoint:
-    # The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The name must be 1-63 characters long, and comply with RFC1035. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
+    # The name of the VM instance of the leader network endpoint. The instance must already be attached to the NEG specified in the haPolicy.leader.backendGroup. The value must be a valid RFC1035 name (1-63 characters) or a valid instance URL. Authorization requires the following IAM permission on the specified resource instance: compute.instances.use
     instance: Any = None
 
 @dataclasses.dataclass
@@ -1119,6 +1119,8 @@ class AlphaBackendServiceConfig:
     name: Any = None
     # The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
     network: Any = None
+    # Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+    network_attachment: Any = None
     network_pass_through_lb_traffic_policy: Any = None
     # A message containing information about the resource or system that manages the backend service.
     orchestration_info: Any = None
@@ -1140,6 +1142,8 @@ class AlphaBackendServiceConfig:
     self_link: Any = None
     # URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
     service_bindings: Any = None
+    # Optional. The service class ID associated with this resource. Producer Service's Service class ID for the region of this backend service. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+    service_class_id: Any = None
     # URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a global backend service, the service lb policy must be global. For a regional backend service, the service lb policy must be regional and in the same region.
     service_lb_policy: Any = None
     # Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). sessionAffinity cannot be specified with haPolicy.
@@ -1223,6 +1227,8 @@ class AlphaBackendServiceAttrs:
     name: Any = None
     # The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
     network: Any = None
+    # Optional. The URL of the network attachment that this resource belongs to.projects/{project}/regions/{region_name}/networkAttachments/{network_attachment_name}.
+    network_attachment: Any = None
     network_pass_through_lb_traffic_policy: Any = None
     # A message containing information about the resource or system that manages the backend service.
     orchestration_info: Any = None
@@ -1248,6 +1254,8 @@ class AlphaBackendServiceAttrs:
     self_link_with_id: Any = None
     # URLs of networkservices.ServiceBinding resources. Can only be set if load balancing scheme is INTERNAL_SELF_MANAGED. If set, lists of backends and health checks must be both empty.
     service_bindings: Any = None
+    # Optional. The service class ID associated with this resource. Producer Service's Service class ID for the region of this backend service. Can only be used with network_attachment. It is not possible to use on its own; however, network_attachment can be used without service_class_id.
+    service_class_id: Any = None
     # URL to networkservices.ServiceLbPolicy resource. Can only be set if load balancing scheme is EXTERNAL_MANAGED, INTERNAL_MANAGED or INTERNAL_SELF_MANAGED for a global backend service, and EXTERNAL_MANAGED or INTERNAL_MANAGED for a regional backend service. For a global backend service, the service lb policy must be global. For a regional backend service, the service lb policy must be regional and in the same region.
     service_lb_policy: Any = None
     # Type of session affinity to use. The default is NONE. Only NONE and HEADER_FIELD are supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. For more details, see: [Session Affinity](https://cloud.google.com/load-balancing/docs/backend-service#session_affinity). sessionAffinity cannot be specified with haPolicy.
@@ -1354,6 +1362,7 @@ AlphaBackendService = ubx.ResourceBinding(
         "metadatas": ubx.FieldSpec(wire_name="metadatas"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
+        "network_attachment": ubx.FieldSpec(wire_name="network_attachment"),
         "network_pass_through_lb_traffic_policy": ubx.FieldSpec(
             wire_name="network_pass_through_lb_traffic_policy",
             kind="object",
@@ -1385,6 +1394,7 @@ AlphaBackendService = ubx.ResourceBinding(
         ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "service_bindings": ubx.FieldSpec(wire_name="service_bindings"),
+        "service_class_id": ubx.FieldSpec(wire_name="service_class_id"),
         "service_lb_policy": ubx.FieldSpec(wire_name="service_lb_policy"),
         "session_affinity": ubx.FieldSpec(wire_name="session_affinity"),
         "strong_session_affinity_cookie": ubx.FieldSpec(

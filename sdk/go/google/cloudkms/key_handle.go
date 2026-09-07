@@ -22,7 +22,7 @@ type KeyHandleAttrs struct {
 var KeyHandle = ubx.ResourceBinding{
 	WireType: "google_cloudkms_key_handle",
 	Fields: ubx.FieldMap{
-		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceTypeSelector": ubx.FieldSpec{WireName: "resource_type_selector"},
 	},
 }

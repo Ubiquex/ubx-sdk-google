@@ -26,16 +26,16 @@ type BetaRegionSnapshot_SnapshotEncryptionKey struct {
 }
 
 var BetaRegionSnapshot_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var BetaRegionSnapshot_SnapshotEncryptionKeyFields = ubx.FieldMap{
-	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
-	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
-	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
+		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+		"Sha256": ubx.FieldSpec{WireName: "sha256"},
+	}
 
 type BetaRegionSnapshotConfig struct {
 	// Creates the new snapshot in the snapshot chain labeled with the specified name. The chain name must be 1-63 characters long and comply with RFC1035. This is an uncommon option only for advanced service owners who needs to create separate snapshot chains, for example, for chargeback tracking. When you describe your snapshot resource, this field is visible only if it has a non-empty value.
@@ -53,17 +53,17 @@ type BetaRegionSnapshotConfig struct {
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Additional snapshot params.
-	Params                any
+	Params any
 	SnapshotEncryptionKey any
 	// Indicates the type of the snapshot.
 	SnapshotType any
 	// The source disk used to create this snapshot.
-	SourceDisk              any
+	SourceDisk any
 	SourceDiskEncryptionKey any
 	// The source disk whose recovery checkpoint will be used to create this snapshot.
 	SourceDiskForRecoveryCheckpoint any
 	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
-	SourceInstantSnapshot              any
+	SourceInstantSnapshot any
 	SourceInstantSnapshotEncryptionKey any
 	// Cloud Storage bucket storage location of the snapshot (regional or multi-regional).
 	StorageLocations any
@@ -117,7 +117,7 @@ type BetaRegionSnapshotAttrs struct {
 	// Output only. [Output Only] Reserved for future use.
 	SatisfiesPzs any
 	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink              any
+	SelfLink any
 	SnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
 	SnapshotGroupId any
@@ -126,14 +126,14 @@ type BetaRegionSnapshotAttrs struct {
 	// Indicates the type of the snapshot.
 	SnapshotType any
 	// The source disk used to create this snapshot.
-	SourceDisk              any
+	SourceDisk any
 	SourceDiskEncryptionKey any
 	// The source disk whose recovery checkpoint will be used to create this snapshot.
 	SourceDiskForRecoveryCheckpoint any
 	// Output only. [Output Only] The ID value of the disk used to create this snapshot. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given disk name.
 	SourceDiskId any
 	// The source instant snapshot used to create this snapshot. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instantSnapshots/instantSnapshot - projects/project/zones/zone/instantSnapshots/instantSnapshot - zones/zone/instantSnapshots/instantSnapshot
-	SourceInstantSnapshot              any
+	SourceInstantSnapshot any
 	SourceInstantSnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this snapshot. For example, if you created the snapshot from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
 	SourceInstantSnapshotId any
@@ -154,36 +154,36 @@ type BetaRegionSnapshotAttrs struct {
 var BetaRegionSnapshot = ubx.ResourceBinding{
 	WireType: "google_compute_beta_region_snapshot",
 	Fields: ubx.FieldMap{
-		"ChainName":        ubx.FieldSpec{WireName: "chain_name"},
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"GuestFlush":       ubx.FieldSpec{WireName: "guest_flush"},
+		"ChainName": ubx.FieldSpec{WireName: "chain_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"LocationHint":     ubx.FieldSpec{WireName: "location_hint"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   BetaRegionSnapshot_ParamsFields,
+			Kind: "object",
+			Fields: BetaRegionSnapshot_ParamsFields,
 		},
 		"SnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "snapshot_encryption_key",
-			Kind:     "object",
-			Fields:   BetaRegionSnapshot_SnapshotEncryptionKeyFields,
+			Kind: "object",
+			Fields: BetaRegionSnapshot_SnapshotEncryptionKeyFields,
 		},
 		"SnapshotType": ubx.FieldSpec{WireName: "snapshot_type"},
-		"SourceDisk":   ubx.FieldSpec{WireName: "source_disk"},
+		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind:     "object",
-			Fields:   BetaRegionSnapshot_SnapshotEncryptionKeyFields,
+			Kind: "object",
+			Fields: BetaRegionSnapshot_SnapshotEncryptionKeyFields,
 		},
 		"SourceDiskForRecoveryCheckpoint": ubx.FieldSpec{WireName: "source_disk_for_recovery_checkpoint"},
-		"SourceInstantSnapshot":           ubx.FieldSpec{WireName: "source_instant_snapshot"},
+		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
 		"SourceInstantSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_instant_snapshot_encryption_key",
-			Kind:     "object",
-			Fields:   BetaRegionSnapshot_SnapshotEncryptionKeyFields,
+			Kind: "object",
+			Fields: BetaRegionSnapshot_SnapshotEncryptionKeyFields,
 		},
 		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},

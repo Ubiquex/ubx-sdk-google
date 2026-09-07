@@ -19,6 +19,76 @@ export interface Version_Snapshot_Agents_ModelSettings {
   temperature?: number | Computed<number>;
 }
 
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_Skills {
+  description?: string | Computed<string>;
+  examples?: string[] | Computed<string[]>;
+  id?: string | Computed<string>;
+  inputModes?: string[] | Computed<string[]>;
+  name?: string | Computed<string>;
+  outputModes?: string[] | Computed<string[]>;
+  tags?: string[] | Computed<string[]>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces {
+  protocolBinding?: string | Computed<string>;
+  protocolVersion?: string | Computed<string>;
+  tenant?: string | Computed<string>;
+  url?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard {
+  description?: string | Computed<string>;
+  name?: string | Computed<string>;
+  skills?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_Skills[] | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_Skills[]>;
+  supportedInterfaces?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces[] | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces[]>;
+  version?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig {
+  apiKeySecretVersion?: string | Computed<string>;
+  keyName?: string | Computed<string>;
+  requestLocation?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig {
+  token?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig {
+  clientId?: string | Computed<string>;
+  clientSecretVersion?: string | Computed<string>;
+  oauthGrantType?: string | Computed<string>;
+  scopes?: string[] | Computed<string[]>;
+  tokenEndpoint?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig {
+  scopes?: string[] | Computed<string[]>;
+  serviceAccount?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication {
+  apiKeyConfig?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig>;
+  bearerTokenConfig?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig>;
+  oauthConfig?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig>;
+  serviceAccountAuthConfig?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig>;
+  serviceAgentIdTokenAuthConfig?: unknown | Computed<unknown>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig {
+  agentCard?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard>;
+  agentRegistry?: string | Computed<string>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
+  contextId?: string | Computed<string>;
+  inputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  outputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  streamingEnabled?: boolean | Computed<boolean>;
+}
+
+export interface Version_Snapshot_Agents_RemoteA2aAgent {
+  a2aConfig?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig>;
+}
+
 export interface Version_Snapshot_Agents_RemoteDialogflowAgent {
   /** A reference to the agent this applies to. (AI-inferred) */
   agent?: string | Computed<string>;
@@ -111,6 +181,7 @@ export interface Version_Snapshot_Agents {
   modelSettings?: Version_Snapshot_Agents_ModelSettings | Computed<Version_Snapshot_Agents_ModelSettings>;
   /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
+  remoteA2aAgent?: Version_Snapshot_Agents_RemoteA2aAgent | Computed<Version_Snapshot_Agents_RemoteA2aAgent>;
   /** Configures this agent to delegate the conversation to a separate, existing Dialogflow CX agent. (AI-inferred) */
   remoteDialogflowAgent?: Version_Snapshot_Agents_RemoteDialogflowAgent | Computed<Version_Snapshot_Agents_RemoteDialogflowAgent>;
   /** The tool(s) available to this agent. (AI-inferred) */
@@ -143,6 +214,15 @@ export interface Version_Snapshot_App_AudioProcessingConfig_BargeInConfig {
   disableBargeIn?: boolean | Computed<boolean>;
 }
 
+export interface Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamples {
+  consentAudioGcsUri?: string | Computed<string>;
+  name?: string | Computed<string>;
+  previewAudioContent?: string | Computed<string>;
+  previewText?: string | Computed<string>;
+  voiceInstruction?: string | Computed<string>;
+  voiceSampleGcsUri?: string | Computed<string>;
+}
+
 export interface Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs {
   /** The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred) */
   consentAudioGcsUri?: string | Computed<string>;
@@ -163,6 +243,8 @@ export interface Version_Snapshot_App_AudioProcessingConfig {
   ambientSoundConfig?: Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfig | Computed<Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfig>;
   /** Configuration for how the user barge-in activities should be handled. */
   bargeInConfig?: Version_Snapshot_App_AudioProcessingConfig_BargeInConfig | Computed<Version_Snapshot_App_AudioProcessingConfig_BargeInConfig>;
+  /** Optional. Configures custom voice samples for voice cloning. */
+  customVoiceSamples?: Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamples[] | Computed<Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamples[]>;
   /** Optional. The duration of user inactivity (no speech or interaction) before the agent prompts the user for reengagement. If not set, the agent will not prompt the user for reengagement. */
   inactivityTimeout?: string | Computed<string>;
   /** Optional. Configuration of how the agent response should be synthesized, mapping from the language code to SynthesizeSpeechConfig. If the configuration for the specified language code is not found, the configuration for the root language code will be used. For example, if the map contains "en-us" and "en", and the specified language code is "en-gb", then "en" configuration will be used. Note: Language code is case-insensitive. */
@@ -176,6 +258,11 @@ export interface Version_Snapshot_App_ClientCertificateSettings {
   privateKey?: string | Computed<string>;
   /** Required. The TLS certificate encoded in PEM format. This string must include the begin header and end footer lines. */
   tlsCertificate?: string | Computed<string>;
+}
+
+export interface Version_Snapshot_App_DashboardSettings {
+  /** Optional. The resource name of the default Contact Center Insights dashboard associated with the app. This is the dashboard that will be displayed when users navigate to the Monitoring view for the app. Format: `projects/{project}/locations/{location}/dashboards/{dashboard}` */
+  defaultDashboard?: string | Computed<string>;
 }
 
 export interface Version_Snapshot_App_DataStoreSettings_Engines {
@@ -465,6 +552,8 @@ export interface Version_Snapshot_App {
   clientCertificateSettings?: Version_Snapshot_App_ClientCertificateSettings | Computed<Version_Snapshot_App_ClientCertificateSettings>;
   /** Output only. Timestamp when the app was created. */
   createTime?: string | Computed<string>;
+  /** Settings for dashboards associated with the app, that show up in the Monitoring view. */
+  dashboardSettings?: Version_Snapshot_App_DashboardSettings | Computed<Version_Snapshot_App_DashboardSettings>;
   /** Data store related settings for the app. */
   dataStoreSettings?: Version_Snapshot_App_DataStoreSettings | Computed<Version_Snapshot_App_DataStoreSettings>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
@@ -531,6 +620,14 @@ export interface Version_Snapshot_Examples_Messages_Chunks_Blob {
   mimeType?: string | Computed<string>;
 }
 
+export interface Version_Snapshot_Examples_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  /** The literal data payload. (AI-inferred) */
+  data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
+  mimeType?: string | Computed<string>;
+}
+
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool {
   /** An identifier for this tool, unique within its own containing toolset. (AI-inferred) */
   toolId?: string | Computed<string>;
@@ -539,12 +636,14 @@ export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool 
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   /** The argument(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
   /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
   /** A reference to a specific tool within a toolset. (AI-inferred) */
@@ -552,10 +651,12 @@ export interface Version_Snapshot_Examples_Messages_Chunks_ToolCall {
 }
 
 export interface Version_Snapshot_Examples_Messages_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
   /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** A reference to a single tool. (AI-inferred) */
@@ -572,7 +673,7 @@ export interface Version_Snapshot_Examples_Messages_Chunks {
   /** The default value(s) for this app's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Image content. (AI-inferred) */
-  image?: Version_Snapshot_Examples_Messages_Chunks_Blob | Computed<Version_Snapshot_Examples_Messages_Chunks_Blob>;
+  image?: Version_Snapshot_Examples_Messages_Chunks_Image | Computed<Version_Snapshot_Examples_Messages_Chunks_Image>;
   /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** The plain-text content. (AI-inferred) */
@@ -912,6 +1013,7 @@ export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterCo
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig {
   /** Whether source snippets are included alongside a generated answer. (AI-inferred) */
   enableSnippets?: boolean | Computed<boolean>;
+  maxSnippets?: number | Computed<number>;
 }
 
 export interface Version_Snapshot_Tools_DataStoreTool_ModalityConfigs {
@@ -977,53 +1079,6 @@ export interface Version_Snapshot_Tools_GoogleSearchTool {
   promptConfig?: Version_Snapshot_Tools_GoogleSearchTool_PromptConfig | Computed<Version_Snapshot_Tools_GoogleSearchTool_PromptConfig>;
 }
 
-export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig {
-  /** The Secret Manager secret version holding the API key, instead of storing it inline. (AI-inferred) */
-  apiKeySecretVersion?: string | Computed<string>;
-  /** The name of the API key parameter. (AI-inferred) */
-  keyName?: string | Computed<string>;
-  /** Where in the request the credential is placed, e.g. a header or query parameter. (AI-inferred) */
-  requestLocation?: string | Computed<string>;
-}
-
-export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig {
-  /** A token used to authenticate this request. (AI-inferred) */
-  token?: string | Computed<string>;
-}
-
-export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig {
-  /** The OAuth client ID used to authenticate. (AI-inferred) */
-  clientId?: string | Computed<string>;
-  /** The Secret Manager secret version holding the OAuth client secret. (AI-inferred) */
-  clientSecretVersion?: string | Computed<string>;
-  /** Which OAuth 2.0 grant type is used to obtain an access token. (AI-inferred) */
-  oauthGrantType?: string | Computed<string>;
-  /** The OAuth scope(s) requested. (AI-inferred) */
-  scopes?: string[] | Computed<string[]>;
-  /** The OAuth token endpoint URL used to obtain an access token. (AI-inferred) */
-  tokenEndpoint?: string | Computed<string>;
-}
-
-export interface Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig {
-  /** The OAuth scope(s) requested. (AI-inferred) */
-  scopes?: string[] | Computed<string[]>;
-  /** The service account this resource acts as (or is managed by) when calling other Google Cloud APIs. (AI-inferred) */
-  serviceAccount?: string | Computed<string>;
-}
-
-export interface Version_Snapshot_Tools_McpTool_ApiAuthentication {
-  /** Authenticates using a static API key. (AI-inferred) */
-  apiKeyConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig>;
-  /** Authenticates using a static bearer token. (AI-inferred) */
-  bearerTokenConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig>;
-  /** Authenticates using OAuth 2.0. (AI-inferred) */
-  oauthConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig>;
-  /** Authenticates using a Google Cloud service account's own identity token. (AI-inferred) */
-  serviceAccountAuthConfig?: Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig>;
-  /** Authenticates using this service's own service agent identity token. (AI-inferred) */
-  serviceAgentIdTokenAuthConfig?: unknown | Computed<unknown>;
-}
-
 export interface Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig {
   /** A reference to the Service Directory service this is reached through. (AI-inferred) */
   service?: string | Computed<string>;
@@ -1043,7 +1098,7 @@ export interface Version_Snapshot_Tools_McpTool_TlsConfig {
 
 export interface Version_Snapshot_Tools_McpTool {
   /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
-  apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
   /** Additional caller-defined HTTP header(s) sent with this request. (AI-inferred) */
   customHeaders?: Record<string, string> | Computed<Record<string, string>>;
   /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
@@ -1068,7 +1123,7 @@ export interface Version_Snapshot_Tools_McpTool {
 
 export interface Version_Snapshot_Tools_OpenApiTool {
   /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
-  apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
   /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
   /** Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred) */
@@ -1096,50 +1151,10 @@ export interface Version_Snapshot_Tools_PythonFunction {
   serviceDirectoryConfig?: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig | Computed<Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig>;
 }
 
-export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills {
-  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
-  description?: string | Computed<string>;
-  /** Example(s) illustrating expected behavior. (AI-inferred) */
-  examples?: string[] | Computed<string[]>;
-  /** An identifier for this item. (AI-inferred) */
-  id?: string | Computed<string>;
-  /** The input modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
-  inputModes?: string[] | Computed<string[]>;
-  /** The resource name or identifier of this object. (AI-inferred) */
-  name?: string | Computed<string>;
-  /** The output modality/modalities (text, audio, etc.) this supports. (AI-inferred) */
-  outputModes?: string[] | Computed<string[]>;
-  /** Free-form label(s) attached to this resource. (AI-inferred) */
-  tags?: string[] | Computed<string[]>;
-}
-
-export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces {
-  /** The communication protocol this interface accepts requests over. (AI-inferred) */
-  protocolBinding?: string | Computed<string>;
-  /** The protocol version this interface implements. (AI-inferred) */
-  protocolVersion?: string | Computed<string>;
-  /** A reference to the tenant this applies to. (AI-inferred) */
-  tenant?: string | Computed<string>;
-  /** The URL this tool calls. (AI-inferred) */
-  url?: string | Computed<string>;
-}
-
-export interface Version_Snapshot_Tools_RemoteAgentTool_AgentCard {
-  /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
-  description?: string | Computed<string>;
-  /** The resource name or identifier of this object. (AI-inferred) */
-  name?: string | Computed<string>;
-  /** The skill(s) the remote agent advertises being able to perform. (AI-inferred) */
-  skills?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills[] | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills[]>;
-  /** The transport/interface(s) (e.g. HTTP, gRPC) the remote agent supports being called over. (AI-inferred) */
-  supportedInterfaces?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces[] | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces[]>;
-  /** The version identifier this applies to. (AI-inferred) */
-  version?: string | Computed<string>;
-}
-
 export interface Version_Snapshot_Tools_RemoteAgentTool {
   /** The A2A agent card describing the remote agent's own identity, capabilities, and supported interfaces. (AI-inferred) */
-  agentCard?: Version_Snapshot_Tools_RemoteAgentTool_AgentCard | Computed<Version_Snapshot_Tools_RemoteAgentTool_AgentCard>;
+  agentCard?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
   /** A human-readable explanation of this schema's own meaning and intended use. (AI-inferred) */
   description?: string | Computed<string>;
   /** The resource name or identifier of this object. (AI-inferred) */
@@ -1275,7 +1290,7 @@ export interface Version_Snapshot_Toolsets_McpToolset_ToolOverrides {
 
 export interface Version_Snapshot_Toolsets_McpToolset {
   /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
-  apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
   /** Additional caller-defined HTTP header(s) sent with this request. (AI-inferred) */
   customHeaders?: Record<string, string> | Computed<Record<string, string>>;
   /** The address of the server this connects to. (AI-inferred) */
@@ -1290,7 +1305,7 @@ export interface Version_Snapshot_Toolsets_McpToolset {
 
 export interface Version_Snapshot_Toolsets_OpenApiToolset {
   /** Authentication configuration for calling this tool's own external API. (AI-inferred) */
-  apiAuthentication?: Version_Snapshot_Tools_McpTool_ApiAuthentication | Computed<Version_Snapshot_Tools_McpTool_ApiAuthentication>;
+  apiAuthentication?: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
   /** Whether unrecognized fields in the response are silently ignored, rather than causing an error. (AI-inferred) */
   ignoreUnknownFields?: boolean | Computed<boolean>;
   /** Defines this tool's own callable operations using an OpenAPI specification document. (AI-inferred) */
@@ -1355,6 +1370,112 @@ const Version_Snapshot_Agents_AfterAgentCallbacksFields: FieldMap = {
 const Version_Snapshot_Agents_ModelSettingsFields: FieldMap = {
   model: "model",
   temperature: "temperature",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields: FieldMap = {
+  description: "description",
+  examples: "examples",
+  id: "id",
+  inputModes: "input_modes",
+  name: "name",
+  outputModes: "output_modes",
+  tags: "tags",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields: FieldMap = {
+  protocolBinding: "protocol_binding",
+  protocolVersion: "protocol_version",
+  tenant: "tenant",
+  url: "url",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields: FieldMap = {
+  description: "description",
+  name: "name",
+  skills: {
+    wireName: "skills",
+    kind: "list",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+  },
+  supportedInterfaces: {
+    wireName: "supported_interfaces",
+    kind: "list",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+  },
+  version: "version",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields: FieldMap = {
+  apiKeySecretVersion: "api_key_secret_version",
+  keyName: "key_name",
+  requestLocation: "request_location",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields: FieldMap = {
+  token: "token",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields: FieldMap = {
+  clientId: "client_id",
+  clientSecretVersion: "client_secret_version",
+  oauthGrantType: "oauth_grant_type",
+  scopes: "scopes",
+  tokenEndpoint: "token_endpoint",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields: FieldMap = {
+  scopes: "scopes",
+  serviceAccount: "service_account",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields: FieldMap = {
+  apiKeyConfig: {
+    wireName: "api_key_config",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+  },
+  bearerTokenConfig: {
+    wireName: "bearer_token_config",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+  },
+  oauthConfig: {
+    wireName: "oauth_config",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+  },
+  serviceAccountAuthConfig: {
+    wireName: "service_account_auth_config",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+  },
+  serviceAgentIdTokenAuthConfig: "service_agent_id_token_auth_config",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgent_A2aConfigFields: FieldMap = {
+  agentCard: {
+    wireName: "agent_card",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields,
+  },
+  agentRegistry: "agent_registry",
+  apiAuthentication: {
+    wireName: "api_authentication",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+  },
+  contextId: "context_id",
+  inputVariableMapping: "input_variable_mapping",
+  outputVariableMapping: "output_variable_mapping",
+  streamingEnabled: "streaming_enabled",
+};
+
+const Version_Snapshot_Agents_RemoteA2aAgentFields: FieldMap = {
+  a2aConfig: {
+    wireName: "a2a_config",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfigFields,
+  },
 };
 
 const Version_Snapshot_Agents_RemoteDialogflowAgentFields: FieldMap = {
@@ -1462,6 +1583,11 @@ const Version_Snapshot_AgentsFields: FieldMap = {
     fields: Version_Snapshot_Agents_ModelSettingsFields,
   },
   name: "name",
+  remoteA2aAgent: {
+    wireName: "remote_a2a_agent",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgentFields,
+  },
   remoteDialogflowAgent: {
     wireName: "remote_dialogflow_agent",
     kind: "object",
@@ -1494,6 +1620,15 @@ const Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields: FieldMap =
   disableBargeIn: "disable_barge_in",
 };
 
+const Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamplesFields: FieldMap = {
+  consentAudioGcsUri: "consent_audio_gcs_uri",
+  name: "name",
+  previewAudioContent: "preview_audio_content",
+  previewText: "preview_text",
+  voiceInstruction: "voice_instruction",
+  voiceSampleGcsUri: "voice_sample_gcs_uri",
+};
+
 const Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigsFields: FieldMap = {
   consentAudioGcsUri: "consent_audio_gcs_uri",
   instruction: "instruction",
@@ -1514,6 +1649,11 @@ const Version_Snapshot_App_AudioProcessingConfigFields: FieldMap = {
     kind: "object",
     fields: Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields,
   },
+  customVoiceSamples: {
+    wireName: "custom_voice_samples",
+    kind: "list",
+    fields: Version_Snapshot_App_AudioProcessingConfig_CustomVoiceSamplesFields,
+  },
   inactivityTimeout: "inactivity_timeout",
   synthesizeSpeechConfigs: {
     wireName: "synthesize_speech_configs",
@@ -1526,6 +1666,10 @@ const Version_Snapshot_App_ClientCertificateSettingsFields: FieldMap = {
   passphrase: "passphrase",
   privateKey: "private_key",
   tlsCertificate: "tls_certificate",
+};
+
+const Version_Snapshot_App_DashboardSettingsFields: FieldMap = {
+  defaultDashboard: "default_dashboard",
 };
 
 const Version_Snapshot_App_DataStoreSettings_EnginesFields: FieldMap = {
@@ -1810,6 +1954,11 @@ const Version_Snapshot_AppFields: FieldMap = {
     fields: Version_Snapshot_App_ClientCertificateSettingsFields,
   },
   createTime: "create_time",
+  dashboardSettings: {
+    wireName: "dashboard_settings",
+    kind: "object",
+    fields: Version_Snapshot_App_DashboardSettingsFields,
+  },
   dataStoreSettings: {
     wireName: "data_store_settings",
     kind: "object",
@@ -1891,15 +2040,23 @@ const Version_Snapshot_Examples_Messages_Chunks_BlobFields: FieldMap = {
   mimeType: "mime_type",
 };
 
+const Version_Snapshot_Examples_Messages_Chunks_ImageFields: FieldMap = {
+  altText: "alt_text",
+  data: "data",
+  mimeType: "mime_type",
+};
+
 const Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields: FieldMap = {
   toolId: "tool_id",
   toolset: "toolset",
 };
 
 const Version_Snapshot_Examples_Messages_Chunks_ToolCallFields: FieldMap = {
+  agentName: "agent_name",
   args: "args",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   tool: "tool",
   toolsetTool: {
     wireName: "toolset_tool",
@@ -1909,8 +2066,10 @@ const Version_Snapshot_Examples_Messages_Chunks_ToolCallFields: FieldMap = {
 };
 
 const Version_Snapshot_Examples_Messages_Chunks_ToolResponseFields: FieldMap = {
+  agentName: "agent_name",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   response: "response",
   tool: "tool",
   toolsetTool: {
@@ -1935,7 +2094,7 @@ const Version_Snapshot_Examples_Messages_ChunksFields: FieldMap = {
   image: {
     wireName: "image",
     kind: "object",
-    fields: Version_Snapshot_Examples_Messages_Chunks_BlobFields,
+    fields: Version_Snapshot_Examples_Messages_Chunks_ImageFields,
   },
   payload: "payload",
   text: "text",
@@ -2307,6 +2466,7 @@ const Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields:
 
 const Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfigFields: FieldMap = {
   enableSnippets: "enable_snippets",
+  maxSnippets: "max_snippets",
 };
 
 const Version_Snapshot_Tools_DataStoreTool_ModalityConfigsFields: FieldMap = {
@@ -2384,53 +2544,6 @@ const Version_Snapshot_Tools_GoogleSearchToolFields: FieldMap = {
   },
 };
 
-const Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields: FieldMap = {
-  apiKeySecretVersion: "api_key_secret_version",
-  keyName: "key_name",
-  requestLocation: "request_location",
-};
-
-const Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields: FieldMap = {
-  token: "token",
-};
-
-const Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields: FieldMap = {
-  clientId: "client_id",
-  clientSecretVersion: "client_secret_version",
-  oauthGrantType: "oauth_grant_type",
-  scopes: "scopes",
-  tokenEndpoint: "token_endpoint",
-};
-
-const Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields: FieldMap = {
-  scopes: "scopes",
-  serviceAccount: "service_account",
-};
-
-const Version_Snapshot_Tools_McpTool_ApiAuthenticationFields: FieldMap = {
-  apiKeyConfig: {
-    wireName: "api_key_config",
-    kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields,
-  },
-  bearerTokenConfig: {
-    wireName: "bearer_token_config",
-    kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields,
-  },
-  oauthConfig: {
-    wireName: "oauth_config",
-    kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields,
-  },
-  serviceAccountAuthConfig: {
-    wireName: "service_account_auth_config",
-    kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
-  },
-  serviceAgentIdTokenAuthConfig: "service_agent_id_token_auth_config",
-};
-
 const Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields: FieldMap = {
   service: "service",
 };
@@ -2452,7 +2565,7 @@ const Version_Snapshot_Tools_McpToolFields: FieldMap = {
   apiAuthentication: {
     wireName: "api_authentication",
     kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
   },
   customHeaders: "custom_headers",
   description: "description",
@@ -2486,7 +2599,7 @@ const Version_Snapshot_Tools_OpenApiToolFields: FieldMap = {
   apiAuthentication: {
     wireName: "api_authentication",
     kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
   },
   description: "description",
   ignoreUnknownFields: "ignore_unknown_fields",
@@ -2516,44 +2629,16 @@ const Version_Snapshot_Tools_PythonFunctionFields: FieldMap = {
   },
 };
 
-const Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields: FieldMap = {
-  description: "description",
-  examples: "examples",
-  id: "id",
-  inputModes: "input_modes",
-  name: "name",
-  outputModes: "output_modes",
-  tags: "tags",
-};
-
-const Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields: FieldMap = {
-  protocolBinding: "protocol_binding",
-  protocolVersion: "protocol_version",
-  tenant: "tenant",
-  url: "url",
-};
-
-const Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields: FieldMap = {
-  description: "description",
-  name: "name",
-  skills: {
-    wireName: "skills",
-    kind: "list",
-    fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields,
-  },
-  supportedInterfaces: {
-    wireName: "supported_interfaces",
-    kind: "list",
-    fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
-  },
-  version: "version",
-};
-
 const Version_Snapshot_Tools_RemoteAgentToolFields: FieldMap = {
   agentCard: {
     wireName: "agent_card",
     kind: "object",
-    fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields,
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_AgentCardFields,
+  },
+  apiAuthentication: {
+    wireName: "api_authentication",
+    kind: "object",
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
   },
   description: "description",
   name: "name",
@@ -2732,7 +2817,7 @@ const Version_Snapshot_Toolsets_McpToolsetFields: FieldMap = {
   apiAuthentication: {
     wireName: "api_authentication",
     kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
   },
   customHeaders: "custom_headers",
   serverAddress: "server_address",
@@ -2757,7 +2842,7 @@ const Version_Snapshot_Toolsets_OpenApiToolsetFields: FieldMap = {
   apiAuthentication: {
     wireName: "api_authentication",
     kind: "object",
-    fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+    fields: Version_Snapshot_Agents_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
   },
   ignoreUnknownFields: "ignore_unknown_fields",
   openApiSchema: "open_api_schema",
@@ -2864,6 +2949,8 @@ export interface VersionAttrs {
   name: string;
   /** A snapshot of the app. */
   snapshot: Version_Snapshot;
+  /** Output only. Timestamp when the app version was last updated. */
+  updateTime: string;
 }
 
 export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {

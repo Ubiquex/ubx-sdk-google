@@ -34,12 +34,12 @@ type BackupPlanAssociation_RulesConfigInfo struct {
 }
 
 var BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields = ubx.FieldMap{
-	"ClusterUid": ubx.FieldSpec{WireName: "cluster_uid"},
-}
+		"ClusterUid": ubx.FieldSpec{WireName: "cluster_uid"},
+	}
 
 var BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields = ubx.FieldMap{
-	"InstanceCreateTime": ubx.FieldSpec{WireName: "instance_create_time"},
-}
+		"InstanceCreateTime": ubx.FieldSpec{WireName: "instance_create_time"},
+	}
 
 type BackupPlanAssociationConfig struct {
 	// Properties for an AlloyDB cluster backup plan association.
@@ -92,21 +92,21 @@ var BackupPlanAssociation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlloydbClusterBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "alloydb_cluster_backup_plan_association_properties",
-			Kind:     "object",
-			Fields:   BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields,
+			Kind: "object",
+			Fields: BackupPlanAssociation_AlloydbClusterBackupPlanAssociationPropertiesFields,
 		},
 		"BackupPlan": ubx.FieldSpec{WireName: "backup_plan"},
 		"CloudSqlInstanceBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "cloud_sql_instance_backup_plan_association_properties",
-			Kind:     "object",
-			Fields:   BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
+			Kind: "object",
+			Fields: BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
 		},
 		"FilestoreInstanceBackupPlanAssociationProperties": ubx.FieldSpec{
 			WireName: "filestore_instance_backup_plan_association_properties",
-			Kind:     "object",
-			Fields:   BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
+			Kind: "object",
+			Fields: BackupPlanAssociation_CloudSqlInstanceBackupPlanAssociationPropertiesFields,
 		},
-		"Resource":     ubx.FieldSpec{WireName: "resource"},
+		"Resource": ubx.FieldSpec{WireName: "resource"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

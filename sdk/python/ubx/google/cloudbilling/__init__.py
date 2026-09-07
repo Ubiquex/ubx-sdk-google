@@ -5,3 +5,4 @@
 SOURCE_PROVENANCE = {"source": "google", "version": "dynamic"}
 
 from .billing_account import BillingAccount, BillingAccountConfig
+from .push_notification_config import PushNotificationConfig, PushNotificationConfigConfig

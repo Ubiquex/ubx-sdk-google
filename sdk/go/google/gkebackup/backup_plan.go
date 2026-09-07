@@ -122,128 +122,128 @@ type BackupPlan_RetentionPolicy struct {
 }
 
 var BackupPlan_BackupConfig_EncryptionKeyFields = ubx.FieldMap{
-	"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
-}
+		"GcpKmsEncryptionKey": ubx.FieldSpec{WireName: "gcp_kms_encryption_key"},
+	}
 
 var BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields = ubx.FieldMap{
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"Namespace": ubx.FieldSpec{WireName: "namespace"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	}
 
 var BackupPlan_BackupConfig_SelectedApplicationsFields = ubx.FieldMap{
-	"NamespacedNames": ubx.FieldSpec{
-		WireName: "namespaced_names",
-		Kind:     "list",
-		Fields:   BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields,
-	},
-}
+		"NamespacedNames": ubx.FieldSpec{
+			WireName: "namespaced_names",
+			Kind: "list",
+			Fields: BackupPlan_BackupConfig_SelectedApplications_NamespacedNamesFields,
+		},
+	}
 
 var BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields = ubx.FieldMap{
-	"Key":   ubx.FieldSpec{WireName: "key"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var BackupPlan_BackupConfig_SelectedNamespaceLabelsFields = ubx.FieldMap{
-	"ResourceLabels": ubx.FieldSpec{
-		WireName: "resource_labels",
-		Kind:     "list",
-		Fields:   BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields,
-	},
-}
+		"ResourceLabels": ubx.FieldSpec{
+			WireName: "resource_labels",
+			Kind: "list",
+			Fields: BackupPlan_BackupConfig_SelectedNamespaceLabels_ResourceLabelsFields,
+		},
+	}
 
 var BackupPlan_BackupConfig_SelectedNamespacesFields = ubx.FieldMap{
-	"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
-}
+		"Namespaces": ubx.FieldSpec{WireName: "namespaces"},
+	}
 
 var BackupPlan_BackupConfigFields = ubx.FieldMap{
-	"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
-	"EncryptionKey": ubx.FieldSpec{
-		WireName: "encryption_key",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupConfig_EncryptionKeyFields,
-	},
-	"IncludeSecrets":    ubx.FieldSpec{WireName: "include_secrets"},
-	"IncludeVolumeData": ubx.FieldSpec{WireName: "include_volume_data"},
-	"PermissiveMode":    ubx.FieldSpec{WireName: "permissive_mode"},
-	"SelectedApplications": ubx.FieldSpec{
-		WireName: "selected_applications",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupConfig_SelectedApplicationsFields,
-	},
-	"SelectedNamespaceLabels": ubx.FieldSpec{
-		WireName: "selected_namespace_labels",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupConfig_SelectedNamespaceLabelsFields,
-	},
-	"SelectedNamespaces": ubx.FieldSpec{
-		WireName: "selected_namespaces",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupConfig_SelectedNamespacesFields,
-	},
-}
+		"AllNamespaces": ubx.FieldSpec{WireName: "all_namespaces"},
+		"EncryptionKey": ubx.FieldSpec{
+			WireName: "encryption_key",
+			Kind: "object",
+			Fields: BackupPlan_BackupConfig_EncryptionKeyFields,
+		},
+		"IncludeSecrets": ubx.FieldSpec{WireName: "include_secrets"},
+		"IncludeVolumeData": ubx.FieldSpec{WireName: "include_volume_data"},
+		"PermissiveMode": ubx.FieldSpec{WireName: "permissive_mode"},
+		"SelectedApplications": ubx.FieldSpec{
+			WireName: "selected_applications",
+			Kind: "object",
+			Fields: BackupPlan_BackupConfig_SelectedApplicationsFields,
+		},
+		"SelectedNamespaceLabels": ubx.FieldSpec{
+			WireName: "selected_namespace_labels",
+			Kind: "object",
+			Fields: BackupPlan_BackupConfig_SelectedNamespaceLabelsFields,
+		},
+		"SelectedNamespaces": ubx.FieldSpec{
+			WireName: "selected_namespaces",
+			Kind: "object",
+			Fields: BackupPlan_BackupConfig_SelectedNamespacesFields,
+		},
+	}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields = ubx.FieldMap{
-	"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-}
+		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+	}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields = ubx.FieldMap{
-	"Day":   ubx.FieldSpec{WireName: "day"},
-	"Month": ubx.FieldSpec{WireName: "month"},
-	"Year":  ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields = ubx.FieldMap{
-	"Hours":   ubx.FieldSpec{WireName: "hours"},
-	"Minutes": ubx.FieldSpec{WireName: "minutes"},
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Hours": ubx.FieldSpec{WireName: "hours"},
+		"Minutes": ubx.FieldSpec{WireName: "minutes"},
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields = ubx.FieldMap{
-	"Daily": ubx.FieldSpec{WireName: "daily"},
-	"DaysOfWeek": ubx.FieldSpec{
-		WireName: "days_of_week",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields,
-	},
-	"Duration": ubx.FieldSpec{WireName: "duration"},
-	"SingleOccurrenceDate": ubx.FieldSpec{
-		WireName: "single_occurrence_date",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields,
-	},
-	"StartTime": ubx.FieldSpec{
-		WireName: "start_time",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields,
-	},
-}
+		"Daily": ubx.FieldSpec{WireName: "daily"},
+		"DaysOfWeek": ubx.FieldSpec{
+			WireName: "days_of_week",
+			Kind: "object",
+			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_DaysOfWeekFields,
+		},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"SingleOccurrenceDate": ubx.FieldSpec{
+			WireName: "single_occurrence_date",
+			Kind: "object",
+			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_SingleOccurrenceDateFields,
+		},
+		"StartTime": ubx.FieldSpec{
+			WireName: "start_time",
+			Kind: "object",
+			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindows_StartTimeFields,
+		},
+	}
 
 var BackupPlan_BackupSchedule_RpoConfigFields = ubx.FieldMap{
-	"ExclusionWindows": ubx.FieldSpec{
-		WireName: "exclusion_windows",
-		Kind:     "list",
-		Fields:   BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields,
-	},
-	"TargetRpoMinutes": ubx.FieldSpec{WireName: "target_rpo_minutes"},
-}
+		"ExclusionWindows": ubx.FieldSpec{
+			WireName: "exclusion_windows",
+			Kind: "list",
+			Fields: BackupPlan_BackupSchedule_RpoConfig_ExclusionWindowsFields,
+		},
+		"TargetRpoMinutes": ubx.FieldSpec{WireName: "target_rpo_minutes"},
+	}
 
 var BackupPlan_BackupScheduleFields = ubx.FieldMap{
-	"CronSchedule":            ubx.FieldSpec{WireName: "cron_schedule"},
-	"NextScheduledBackupTime": ubx.FieldSpec{WireName: "next_scheduled_backup_time"},
-	"Paused":                  ubx.FieldSpec{WireName: "paused"},
-	"RpoConfig": ubx.FieldSpec{
-		WireName: "rpo_config",
-		Kind:     "object",
-		Fields:   BackupPlan_BackupSchedule_RpoConfigFields,
-	},
-}
+		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
+		"NextScheduledBackupTime": ubx.FieldSpec{WireName: "next_scheduled_backup_time"},
+		"Paused": ubx.FieldSpec{WireName: "paused"},
+		"RpoConfig": ubx.FieldSpec{
+			WireName: "rpo_config",
+			Kind: "object",
+			Fields: BackupPlan_BackupSchedule_RpoConfigFields,
+		},
+	}
 
 var BackupPlan_RetentionPolicyFields = ubx.FieldMap{
-	"BackupDeleteLockDays": ubx.FieldSpec{WireName: "backup_delete_lock_days"},
-	"BackupRetainDays":     ubx.FieldSpec{WireName: "backup_retain_days"},
-	"Locked":               ubx.FieldSpec{WireName: "locked"},
-}
+		"BackupDeleteLockDays": ubx.FieldSpec{WireName: "backup_delete_lock_days"},
+		"BackupRetainDays": ubx.FieldSpec{WireName: "backup_retain_days"},
+		"Locked": ubx.FieldSpec{WireName: "locked"},
+	}
 
 type BackupPlanConfig struct {
 	// BackupConfig defines the configuration of Backups created via this BackupPlan.
@@ -310,22 +310,22 @@ var BackupPlan = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackupConfig": ubx.FieldSpec{
 			WireName: "backup_config",
-			Kind:     "object",
-			Fields:   BackupPlan_BackupConfigFields,
+			Kind: "object",
+			Fields: BackupPlan_BackupConfigFields,
 		},
 		"BackupSchedule": ubx.FieldSpec{
 			WireName: "backup_schedule",
-			Kind:     "object",
-			Fields:   BackupPlan_BackupScheduleFields,
+			Kind: "object",
+			Fields: BackupPlan_BackupScheduleFields,
 		},
-		"Cluster":     ubx.FieldSpec{WireName: "cluster"},
+		"Cluster": ubx.FieldSpec{WireName: "cluster"},
 		"Deactivated": ubx.FieldSpec{WireName: "deactivated"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"RetentionPolicy": ubx.FieldSpec{
 			WireName: "retention_policy",
-			Kind:     "object",
-			Fields:   BackupPlan_RetentionPolicyFields,
+			Kind: "object",
+			Fields: BackupPlan_RetentionPolicyFields,
 		},
 	},
 }

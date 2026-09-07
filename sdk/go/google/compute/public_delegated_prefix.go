@@ -7,8 +7,8 @@ type PublicDelegatedPrefix_PublicDelegatedSubPrefixs struct {
 	// The prefix length (in bits) of the sub-prefixes that can be allocated from this delegated sub-prefix. For instance, a value of 26 indicates that /26 CIDR blocks can be allocated. (AI-inferred)
 	AllocatablePrefixLength any
 	// The project ID or name to which this sub-prefix is delegated, allowing that project to use the delegated prefix. (AI-inferred)
-	DelegateeProject             any
-	Description                  any
+	DelegateeProject any
+	Description any
 	EnableEnhancedIpv4Allocation any
 	// The IP CIDR range of this public delegated sub-prefix. (AI-inferred)
 	IpCidrRange any
@@ -27,18 +27,18 @@ type PublicDelegatedPrefix_PublicDelegatedSubPrefixs struct {
 }
 
 var PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields = ubx.FieldMap{
-	"AllocatablePrefixLength":      ubx.FieldSpec{WireName: "allocatable_prefix_length"},
-	"DelegateeProject":             ubx.FieldSpec{WireName: "delegatee_project"},
-	"Description":                  ubx.FieldSpec{WireName: "description"},
-	"EnableEnhancedIpv4Allocation": ubx.FieldSpec{WireName: "enable_enhanced_ipv4_allocation"},
-	"IpCidrRange":                  ubx.FieldSpec{WireName: "ip_cidr_range"},
-	"Ipv6AccessType":               ubx.FieldSpec{WireName: "ipv6_access_type"},
-	"IsAddress":                    ubx.FieldSpec{WireName: "is_address"},
-	"Mode":                         ubx.FieldSpec{WireName: "mode"},
-	"Name":                         ubx.FieldSpec{WireName: "name"},
-	"Region":                       ubx.FieldSpec{WireName: "region"},
-	"Status":                       ubx.FieldSpec{WireName: "status"},
-}
+		"AllocatablePrefixLength": ubx.FieldSpec{WireName: "allocatable_prefix_length"},
+		"DelegateeProject": ubx.FieldSpec{WireName: "delegatee_project"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnableEnhancedIpv4Allocation": ubx.FieldSpec{WireName: "enable_enhanced_ipv4_allocation"},
+		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"IsAddress": ubx.FieldSpec{WireName: "is_address"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+	}
 
 type PublicDelegatedPrefixConfig struct {
 	// The allocatable prefix length supported by this public delegated prefix. This field is optional and cannot be set for prefixes in DELEGATION mode. It cannot be set for IPv4 prefixes either, and it always defaults to 32.
@@ -106,17 +106,17 @@ var PublicDelegatedPrefix = ubx.ResourceBinding{
 	WireType: "google_compute_public_delegated_prefix",
 	Fields: ubx.FieldMap{
 		"AllocatablePrefixLength": ubx.FieldSpec{WireName: "allocatable_prefix_length"},
-		"Description":             ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":             ubx.FieldSpec{WireName: "fingerprint"},
-		"IpCidrRange":             ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"IsLiveMigration":         ubx.FieldSpec{WireName: "is_live_migration"},
-		"Mode":                    ubx.FieldSpec{WireName: "mode"},
-		"Name":                    ubx.FieldSpec{WireName: "name"},
-		"ParentPrefix":            ubx.FieldSpec{WireName: "parent_prefix"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"IsLiveMigration": ubx.FieldSpec{WireName: "is_live_migration"},
+		"Mode": ubx.FieldSpec{WireName: "mode"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ParentPrefix": ubx.FieldSpec{WireName: "parent_prefix"},
 		"PublicDelegatedSubPrefixs": ubx.FieldSpec{
 			WireName: "public_delegated_sub_prefixs",
-			Kind:     "list",
-			Fields:   PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields,
+			Kind: "list",
+			Fields: PublicDelegatedPrefix_PublicDelegatedSubPrefixsFields,
 		},
 		"Status": ubx.FieldSpec{WireName: "status"},
 	},

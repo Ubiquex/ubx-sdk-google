@@ -4,13 +4,13 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1DiscoveryClient_Errors struct {
-	Code    any
+	Code any
 	Details any
 	Message any
 }
 
 type V1alpha1DiscoveryClient_RecommendedVersions struct {
-	Uri     any
+	Uri any
 	Version any
 }
 
@@ -69,12 +69,12 @@ type V1alpha1DiscoveryClientAttrs struct {
 var V1alpha1DiscoveryClient = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_discovery_client",
 	Fields: ubx.FieldMap{
-		"Description":    ubx.FieldSpec{WireName: "description"},
-		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime":     ubx.FieldSpec{WireName: "expire_time"},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Source":         ubx.FieldSpec{WireName: "source"},
-		"Ttl":            ubx.FieldSpec{WireName: "ttl"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
 	},
 }

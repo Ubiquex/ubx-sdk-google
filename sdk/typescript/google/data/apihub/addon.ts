@@ -39,6 +39,8 @@ export interface AddonConfig {
 }
 
 export interface AddonAttrs {
+  /** Output only. The Vertex AI region where the BoostSpec Gemini model calls run for this API Hub instance. Populated only for the SpecGen addon (`system-spec-generation`); other addons leave this field empty. `gemini-2.5-flash` is not available in every API Hub region, so the effective region may differ from the API Hub instance's own region. The value follows these semantics: - `""`: BoostSpec is disabled in this region (the addon is not SpecGen, or the API Hub instance region has no configured Gemini endpoint or fallback). - Equal to the API Hub instance region: BoostSpec calls run in-region. - Differs from the API Hub instance region: BoostSpec calls run in the specified fallback region. Callers rendering this field can derive the three display states from this single field combined with the API Hub instance region. */
+  boostSpecGeminiRegionId: string;
   /** Configuration for the addon. */
   config: Addon_Config;
   /** Output only. The time at which the addon was created. */

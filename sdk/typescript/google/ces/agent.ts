@@ -19,6 +19,105 @@ export interface Agent_ModelSettings {
   temperature?: number | Computed<number>;
 }
 
+export interface Agent_RemoteA2aAgent_A2aConfig_AgentCard_Skills {
+  description?: string | Computed<string>;
+  examples?: string[] | Computed<string[]>;
+  id?: string | Computed<string>;
+  inputModes?: string[] | Computed<string[]>;
+  name?: string | Computed<string>;
+  outputModes?: string[] | Computed<string[]>;
+  tags?: string[] | Computed<string[]>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces {
+  protocolBinding?: string | Computed<string>;
+  protocolVersion?: string | Computed<string>;
+  tenant?: string | Computed<string>;
+  url?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_AgentCard {
+  /** Required. A description of the agent's domain of action/solution space. */
+  description?: string | Computed<string>;
+  /** Required. A human-readable name for the agent. */
+  name?: string | Computed<string>;
+  /** Required. Skills represent a unit of ability an agent can perform. This may somewhat abstract but represents a more focused set of actions that the agent is highly likely to succeed at. */
+  skills?: Agent_RemoteA2aAgent_A2aConfig_AgentCard_Skills[] | Computed<Agent_RemoteA2aAgent_A2aConfig_AgentCard_Skills[]>;
+  /** Required. Ordered list of supported interfaces. The first entry is preferred. */
+  supportedInterfaces?: Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces[] | Computed<Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces[]>;
+  /** Required. The version of the agent. */
+  version?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig {
+  /** Required. The name of the SecretManager secret version resource storing the API key. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`. */
+  apiKeySecretVersion?: string | Computed<string>;
+  /** Required. The parameter name or the header name of the API key. E.g., If the API request is "https://example.com/act?X-Api-Key=", "X-Api-Key" would be the parameter name. */
+  keyName?: string | Computed<string>;
+  /** Required. Key location in the request. */
+  requestLocation?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig {
+  /** Required. The bearer token. Must be in the format `$context.variables.`. */
+  token?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig {
+  /** Required. The client ID from the OAuth provider. */
+  clientId?: string | Computed<string>;
+  /** Required. The name of the SecretManager secret version resource storing the client secret. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`. */
+  clientSecretVersion?: string | Computed<string>;
+  /** Required. OAuth grant types. */
+  oauthGrantType?: string | Computed<string>;
+  /** Optional. The OAuth scopes to grant. */
+  scopes?: string[] | Computed<string[]>;
+  /** Required. The token endpoint in the OAuth provider to exchange for an access token. */
+  tokenEndpoint?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig {
+  /** Optional. The OAuth scopes to grant. If not specified, the default scope `https://www.googleapis.com/auth/cloud-platform` is used. */
+  scopes?: string[] | Computed<string[]>;
+  /** Required. The email address of the service account used for authentication. CES uses this service account to exchange an access token and the access token is then sent in the `Authorization` header of the request. The service account must have the `roles/iam.serviceAccountTokenCreator` role granted to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`. */
+  serviceAccount?: string | Computed<string>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication {
+  /** Configurations for authentication with API key. */
+  apiKeyConfig?: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig | Computed<Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig>;
+  /** Configurations for authentication with a bearer token. */
+  bearerTokenConfig?: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig | Computed<Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig>;
+  /** Configurations for authentication with OAuth. */
+  oauthConfig?: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig | Computed<Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig>;
+  /** Configurations for authentication using a custom service account. */
+  serviceAccountAuthConfig?: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig | Computed<Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig>;
+  /** Configurations for authentication with [ID token](https://cloud.google.com/docs/authentication/token-types#id) generated from service agent. */
+  serviceAgentIdTokenAuthConfig?: unknown | Computed<unknown>;
+}
+
+export interface Agent_RemoteA2aAgent_A2aConfig {
+  /** AgentCard conveys key information about a remote agent. It is a trimmed version of the AgentCard defined in the A2A protocol https://a2a-protocol.org/dev/specification/#441-agentcard */
+  agentCard?: Agent_RemoteA2aAgent_A2aConfig_AgentCard | Computed<Agent_RemoteA2aAgent_A2aConfig_AgentCard>;
+  /** Optional. Reference to the agent in the Agent Registry. Format: `projects/{project}/locations/{location}/agents/{agent}` */
+  agentRegistry?: string | Computed<string>;
+  /** Authentication information required for API calls. */
+  apiAuthentication?: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication | Computed<Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication>;
+  /** Optional. If not empty, interactions with the remote A2A agent will use this context ID. This context_id field can refer to a session variable like `$context.variables.order_agent_session_id`. */
+  contextId?: string | Computed<string>;
+  /** Optional. Mapping of input variable names of remote agent to GECX variable names. */
+  inputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** Optional. Mapping of output variable names of remote agent to GECX variable names. */
+  outputVariableMapping?: Record<string, string> | Computed<Record<string, string>>;
+  /** Optional. Whether streaming is enabled for the remote agent. */
+  streamingEnabled?: boolean | Computed<boolean>;
+}
+
+export interface Agent_RemoteA2aAgent {
+  /** Shared configuration for connecting to a remote [A2A](https://github.com/a2aproject/A2A) agent. */
+  a2aConfig?: Agent_RemoteA2aAgent_A2aConfig | Computed<Agent_RemoteA2aAgent_A2aConfig>;
+}
+
 export interface Agent_RemoteDialogflowAgent {
   /** Required. The [Dialogflow](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent resource name. Format: `projects/{project}/locations/{location}/agents/{agent}` */
   agent?: string | Computed<string>;
@@ -86,6 +185,112 @@ const Agent_AfterAgentCallbacksFields: FieldMap = {
 const Agent_ModelSettingsFields: FieldMap = {
   model: "model",
   temperature: "temperature",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields: FieldMap = {
+  description: "description",
+  examples: "examples",
+  id: "id",
+  inputModes: "input_modes",
+  name: "name",
+  outputModes: "output_modes",
+  tags: "tags",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields: FieldMap = {
+  protocolBinding: "protocol_binding",
+  protocolVersion: "protocol_version",
+  tenant: "tenant",
+  url: "url",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_AgentCardFields: FieldMap = {
+  description: "description",
+  name: "name",
+  skills: {
+    wireName: "skills",
+    kind: "list",
+    fields: Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+  },
+  supportedInterfaces: {
+    wireName: "supported_interfaces",
+    kind: "list",
+    fields: Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+  },
+  version: "version",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields: FieldMap = {
+  apiKeySecretVersion: "api_key_secret_version",
+  keyName: "key_name",
+  requestLocation: "request_location",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields: FieldMap = {
+  token: "token",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields: FieldMap = {
+  clientId: "client_id",
+  clientSecretVersion: "client_secret_version",
+  oauthGrantType: "oauth_grant_type",
+  scopes: "scopes",
+  tokenEndpoint: "token_endpoint",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields: FieldMap = {
+  scopes: "scopes",
+  serviceAccount: "service_account",
+};
+
+const Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields: FieldMap = {
+  apiKeyConfig: {
+    wireName: "api_key_config",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+  },
+  bearerTokenConfig: {
+    wireName: "bearer_token_config",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+  },
+  oauthConfig: {
+    wireName: "oauth_config",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+  },
+  serviceAccountAuthConfig: {
+    wireName: "service_account_auth_config",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+  },
+  serviceAgentIdTokenAuthConfig: "service_agent_id_token_auth_config",
+};
+
+const Agent_RemoteA2aAgent_A2aConfigFields: FieldMap = {
+  agentCard: {
+    wireName: "agent_card",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_AgentCardFields,
+  },
+  agentRegistry: "agent_registry",
+  apiAuthentication: {
+    wireName: "api_authentication",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+  },
+  contextId: "context_id",
+  inputVariableMapping: "input_variable_mapping",
+  outputVariableMapping: "output_variable_mapping",
+  streamingEnabled: "streaming_enabled",
+};
+
+const Agent_RemoteA2aAgentFields: FieldMap = {
+  a2aConfig: {
+    wireName: "a2a_config",
+    kind: "object",
+    fields: Agent_RemoteA2aAgent_A2aConfigFields,
+  },
 };
 
 const Agent_RemoteDialogflowAgentFields: FieldMap = {
@@ -178,6 +383,8 @@ export interface AgentConfig {
   modelSettings?: Agent_ModelSettings | Computed<Agent_ModelSettings>;
   /** Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}` */
   name?: string | Computed<string>;
+  /** The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent. */
+  remoteA2aAgent?: Agent_RemoteA2aAgent | Computed<Agent_RemoteA2aAgent>;
   /** The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent. */
   remoteDialogflowAgent?: Agent_RemoteDialogflowAgent | Computed<Agent_RemoteDialogflowAgent>;
   /** Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` */
@@ -223,6 +430,8 @@ export interface AgentAttrs {
   modelSettings: Agent_ModelSettings;
   /** Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}` */
   name: string;
+  /** The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent. */
+  remoteA2aAgent: Agent_RemoteA2aAgent;
   /** The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent. */
   remoteDialogflowAgent: Agent_RemoteDialogflowAgent;
   /** Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}` */
@@ -283,6 +492,11 @@ export const Agent: ResourceBinding<AgentConfig, AgentAttrs> = {
       fields: Agent_ModelSettingsFields,
     },
     name: "name",
+    remoteA2aAgent: {
+      wireName: "remote_a2a_agent",
+      kind: "object",
+      fields: Agent_RemoteA2aAgentFields,
+    },
     remoteDialogflowAgent: {
       wireName: "remote_dialogflow_agent",
       kind: "object",

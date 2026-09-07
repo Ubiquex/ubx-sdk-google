@@ -21,5 +21,6 @@ type HcxActivationKeyAttrs struct {
 
 var HcxActivationKey = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_hcx_activation_key",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

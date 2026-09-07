@@ -88,7 +88,7 @@ type V1beta1NotebookRuntimeTemplate_SoftwareConfig_ColabImage struct {
 }
 
 type V1beta1NotebookRuntimeTemplate_SoftwareConfig_Env struct {
-	Name  any
+	Name any
 	Value any
 }
 
@@ -111,94 +111,94 @@ type V1beta1NotebookRuntimeTemplate_SoftwareConfig struct {
 }
 
 var V1beta1NotebookRuntimeTemplate_DataPersistentDiskSpecFields = ubx.FieldMap{
-	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
-}
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_EucConfigFields = ubx.FieldMap{
-	"BypassActasCheck": ubx.FieldSpec{WireName: "bypass_actas_check"},
-	"EucDisabled":      ubx.FieldSpec{WireName: "euc_disabled"},
-}
+		"BypassActasCheck": ubx.FieldSpec{WireName: "bypass_actas_check"},
+		"EucDisabled": ubx.FieldSpec{WireName: "euc_disabled"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_IdleShutdownConfigFields = ubx.FieldMap{
-	"IdleShutdownDisabled": ubx.FieldSpec{WireName: "idle_shutdown_disabled"},
-	"IdleTimeout":          ubx.FieldSpec{WireName: "idle_timeout"},
-}
+		"IdleShutdownDisabled": ubx.FieldSpec{WireName: "idle_shutdown_disabled"},
+		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-	"Key":                     ubx.FieldSpec{WireName: "key"},
-	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-	"Values":                  ubx.FieldSpec{WireName: "values"},
-}
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_MachineSpecFields = ubx.FieldMap{
-	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
-	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
-	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
-	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
-	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-	"ReservationAffinity": ubx.FieldSpec{
-		WireName: "reservation_affinity",
-		Kind:     "object",
-		Fields:   V1beta1NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields,
-	},
-	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-}
+		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+		"ReservationAffinity": ubx.FieldSpec{
+			WireName: "reservation_affinity",
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_MachineSpec_ReservationAffinityFields,
+		},
+		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_NetworkSpecFields = ubx.FieldMap{
-	"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
-	"Network":              ubx.FieldSpec{WireName: "network"},
-	"Subnetwork":           ubx.FieldSpec{WireName: "subnetwork"},
-}
+		"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_ReservationAffinityFields = ubx.FieldMap{
-	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-	"Key":                    ubx.FieldSpec{WireName: "key"},
-	"Values":                 ubx.FieldSpec{WireName: "values"},
-}
+		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_ShieldedVmConfigFields = ubx.FieldMap{
-	"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-}
+		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"ReleaseName": ubx.FieldSpec{WireName: "release_name"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ReleaseName": ubx.FieldSpec{WireName: "release_name"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_SoftwareConfig_EnvFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields = ubx.FieldMap{
-	"PostStartupScript":         ubx.FieldSpec{WireName: "post_startup_script"},
-	"PostStartupScriptBehavior": ubx.FieldSpec{WireName: "post_startup_script_behavior"},
-	"PostStartupScriptUrl":      ubx.FieldSpec{WireName: "post_startup_script_url"},
-}
+		"PostStartupScript": ubx.FieldSpec{WireName: "post_startup_script"},
+		"PostStartupScriptBehavior": ubx.FieldSpec{WireName: "post_startup_script_behavior"},
+		"PostStartupScriptUrl": ubx.FieldSpec{WireName: "post_startup_script_url"},
+	}
 
 var V1beta1NotebookRuntimeTemplate_SoftwareConfigFields = ubx.FieldMap{
-	"ColabImage": ubx.FieldSpec{
-		WireName: "colab_image",
-		Kind:     "object",
-		Fields:   V1beta1NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields,
-	},
-	"Env": ubx.FieldSpec{
-		WireName: "env",
-		Kind:     "list",
-		Fields:   V1beta1NotebookRuntimeTemplate_SoftwareConfig_EnvFields,
-	},
-	"PostStartupScriptConfig": ubx.FieldSpec{
-		WireName: "post_startup_script_config",
-		Kind:     "object",
-		Fields:   V1beta1NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields,
-	},
-}
+		"ColabImage": ubx.FieldSpec{
+			WireName: "colab_image",
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_SoftwareConfig_ColabImageFields,
+		},
+		"Env": ubx.FieldSpec{
+			WireName: "env",
+			Kind: "list",
+			Fields: V1beta1NotebookRuntimeTemplate_SoftwareConfig_EnvFields,
+		},
+		"PostStartupScriptConfig": ubx.FieldSpec{
+			WireName: "post_startup_script_config",
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_SoftwareConfig_PostStartupScriptConfigFields,
+		},
+	}
 
 type V1beta1NotebookRuntimeTemplateConfig struct {
 	// Represents the spec of persistent disk and hyperdisk options.
@@ -285,56 +285,56 @@ var V1beta1NotebookRuntimeTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataPersistentDiskSpec": ubx.FieldSpec{
 			WireName: "data_persistent_disk_spec",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_DataPersistentDiskSpecFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_DataPersistentDiskSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_EncryptionSpecFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_EncryptionSpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"EucConfig": ubx.FieldSpec{
 			WireName: "euc_config",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_EucConfigFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_EucConfigFields,
 		},
 		"IdleShutdownConfig": ubx.FieldSpec{
 			WireName: "idle_shutdown_config",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_IdleShutdownConfigFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_IdleShutdownConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MachineSpec": ubx.FieldSpec{
 			WireName: "machine_spec",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_MachineSpecFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_MachineSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkSpec": ubx.FieldSpec{
 			WireName: "network_spec",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_NetworkSpecFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_NetworkSpecFields,
 		},
-		"NetworkTags":         ubx.FieldSpec{WireName: "network_tags"},
+		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
 		"NotebookRuntimeType": ubx.FieldSpec{WireName: "notebook_runtime_type"},
 		"ReservationAffinity": ubx.FieldSpec{
 			WireName: "reservation_affinity",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_ReservationAffinityFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_ReservationAffinityFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"ShieldedVmConfig": ubx.FieldSpec{
 			WireName: "shielded_vm_config",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_ShieldedVmConfigFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_ShieldedVmConfigFields,
 		},
 		"SoftwareConfig": ubx.FieldSpec{
 			WireName: "software_config",
-			Kind:     "object",
-			Fields:   V1beta1NotebookRuntimeTemplate_SoftwareConfigFields,
+			Kind: "object",
+			Fields: V1beta1NotebookRuntimeTemplate_SoftwareConfigFields,
 		},
 	},
 }

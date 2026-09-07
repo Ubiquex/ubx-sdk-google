@@ -26,25 +26,25 @@ type Glossary_LanguagePair struct {
 }
 
 var Glossary_InputConfig_GcsSourceFields = ubx.FieldMap{
-	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-}
+		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+	}
 
 var Glossary_InputConfigFields = ubx.FieldMap{
-	"GcsSource": ubx.FieldSpec{
-		WireName: "gcs_source",
-		Kind:     "object",
-		Fields:   Glossary_InputConfig_GcsSourceFields,
-	},
-}
+		"GcsSource": ubx.FieldSpec{
+			WireName: "gcs_source",
+			Kind: "object",
+			Fields: Glossary_InputConfig_GcsSourceFields,
+		},
+	}
 
 var Glossary_LanguageCodesSetFields = ubx.FieldMap{
-	"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-}
+		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+	}
 
 var Glossary_LanguagePairFields = ubx.FieldMap{
-	"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
-	"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
-}
+		"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
+		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
+	}
 
 type GlossaryConfig struct {
 	// Optional. The display name of the glossary.
@@ -84,18 +84,18 @@ var Glossary = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"InputConfig": ubx.FieldSpec{
 			WireName: "input_config",
-			Kind:     "object",
-			Fields:   Glossary_InputConfigFields,
+			Kind: "object",
+			Fields: Glossary_InputConfigFields,
 		},
 		"LanguageCodesSet": ubx.FieldSpec{
 			WireName: "language_codes_set",
-			Kind:     "object",
-			Fields:   Glossary_LanguageCodesSetFields,
+			Kind: "object",
+			Fields: Glossary_LanguageCodesSetFields,
 		},
 		"LanguagePair": ubx.FieldSpec{
 			WireName: "language_pair",
-			Kind:     "object",
-			Fields:   Glossary_LanguagePairFields,
+			Kind: "object",
+			Fields: Glossary_LanguagePairFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

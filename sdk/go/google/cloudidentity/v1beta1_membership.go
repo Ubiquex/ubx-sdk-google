@@ -23,45 +23,45 @@ type V1beta1Membership_Roles_RestrictionEvaluations struct {
 }
 
 type V1beta1Membership_Roles struct {
-	ExpiryDetail           any
-	Name                   any
+	ExpiryDetail any
+	Name any
 	RestrictionEvaluations any
 }
 
 var V1beta1Membership_MemberKeyFields = ubx.FieldMap{
-	"Id":        ubx.FieldSpec{WireName: "id"},
-	"Namespace": ubx.FieldSpec{WireName: "namespace"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	}
 
 var V1beta1Membership_Roles_ExpiryDetailFields = ubx.FieldMap{
-	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-}
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	}
 
 var V1beta1Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields = ubx.FieldMap{
-	"State": ubx.FieldSpec{WireName: "state"},
-}
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var V1beta1Membership_Roles_RestrictionEvaluationsFields = ubx.FieldMap{
-	"MemberRestrictionEvaluation": ubx.FieldSpec{
-		WireName: "member_restriction_evaluation",
-		Kind:     "object",
-		Fields:   V1beta1Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields,
-	},
-}
+		"MemberRestrictionEvaluation": ubx.FieldSpec{
+			WireName: "member_restriction_evaluation",
+			Kind: "object",
+			Fields: V1beta1Membership_Roles_RestrictionEvaluations_MemberRestrictionEvaluationFields,
+		},
+	}
 
 var V1beta1Membership_RolesFields = ubx.FieldMap{
-	"ExpiryDetail": ubx.FieldSpec{
-		WireName: "expiry_detail",
-		Kind:     "object",
-		Fields:   V1beta1Membership_Roles_ExpiryDetailFields,
-	},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"RestrictionEvaluations": ubx.FieldSpec{
-		WireName: "restriction_evaluations",
-		Kind:     "object",
-		Fields:   V1beta1Membership_Roles_RestrictionEvaluationsFields,
-	},
-}
+		"ExpiryDetail": ubx.FieldSpec{
+			WireName: "expiry_detail",
+			Kind: "object",
+			Fields: V1beta1Membership_Roles_ExpiryDetailFields,
+		},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"RestrictionEvaluations": ubx.FieldSpec{
+			WireName: "restriction_evaluations",
+			Kind: "object",
+			Fields: V1beta1Membership_Roles_RestrictionEvaluationsFields,
+		},
+	}
 
 type V1beta1MembershipConfig struct {
 	// A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s.
@@ -96,18 +96,18 @@ var V1beta1Membership = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"MemberKey": ubx.FieldSpec{
 			WireName: "member_key",
-			Kind:     "object",
-			Fields:   V1beta1Membership_MemberKeyFields,
+			Kind: "object",
+			Fields: V1beta1Membership_MemberKeyFields,
 		},
 		"PreferredMemberKey": ubx.FieldSpec{
 			WireName: "preferred_member_key",
-			Kind:     "object",
-			Fields:   V1beta1Membership_MemberKeyFields,
+			Kind: "object",
+			Fields: V1beta1Membership_MemberKeyFields,
 		},
 		"Roles": ubx.FieldSpec{
 			WireName: "roles",
-			Kind:     "list",
-			Fields:   V1beta1Membership_RolesFields,
+			Kind: "list",
+			Fields: V1beta1Membership_RolesFields,
 		},
 	},
 }

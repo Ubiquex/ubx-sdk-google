@@ -132,6 +132,8 @@ export interface BetaInstanceTemplate_Properties_NetworkInterfaces_AccessConfigs
 }
 
 export interface BetaInstanceTemplate_Properties_NetworkInterfaces_AliasIpRanges {
+  candidateSubnetworkRangeNames?: string[] | Computed<string[]>;
+  effectiveSubnetworkRangeName?: string | Computed<string>;
   ipCidrRange?: string | Computed<string>;
   subnetworkRangeName?: string | Computed<string>;
 }
@@ -209,6 +211,8 @@ export interface BetaInstanceTemplate_Properties_Scheduling {
   automaticRestart?: boolean | Computed<boolean>;
   /** Specifies the availability domain to place the instance in. The value must be a number between 1 and the number of availability domains specified in the spread placement policy attached to the instance. */
   availabilityDomain?: number | Computed<number>;
+  /** This optional flag exposes the hashed physical host ID in the ResourceStatus resource of the VM. */
+  exposeHostTopology?: boolean | Computed<boolean>;
   /** The configuration for gracefully shutting down the instance. */
   gracefulShutdown?: BetaInstanceTemplate_Properties_Scheduling_GracefulShutdown | Computed<BetaInstanceTemplate_Properties_Scheduling_GracefulShutdown>;
   /** Specify the time in seconds for host error detection, the value must be within the range of [90, 330] with the increment of 30, if unset, the default behavior of host error recovery will be used. */
@@ -505,6 +509,8 @@ const BetaInstanceTemplate_Properties_NetworkInterfaces_AccessConfigsFields: Fie
 };
 
 const BetaInstanceTemplate_Properties_NetworkInterfaces_AliasIpRangesFields: FieldMap = {
+  candidateSubnetworkRangeNames: "candidate_subnetwork_range_names",
+  effectiveSubnetworkRangeName: "effective_subnetwork_range_name",
   ipCidrRange: "ip_cidr_range",
   subnetworkRangeName: "subnetwork_range_name",
 };
@@ -592,6 +598,7 @@ const BetaInstanceTemplate_Properties_Scheduling_OnInstanceStopActionFields: Fie
 const BetaInstanceTemplate_Properties_SchedulingFields: FieldMap = {
   automaticRestart: "automatic_restart",
   availabilityDomain: "availability_domain",
+  exposeHostTopology: "expose_host_topology",
   gracefulShutdown: {
     wireName: "graceful_shutdown",
     kind: "object",

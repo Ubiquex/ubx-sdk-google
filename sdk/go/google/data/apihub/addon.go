@@ -10,7 +10,7 @@ type Addon_Config_AllDataAddonConfig struct {
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig_EnvironmentFilter struct {
 	AllEnvironments any
-	Environments    any
+	Environments any
 }
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig struct {
@@ -18,10 +18,10 @@ type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs_ApigeeEdgeConfig
 }
 
 type Addon_Config_GatewayPluginAddonConfig_GatewayPluginConfigs struct {
-	ApigeeEdgeConfig    any
-	ApigeeOpdkConfig    any
+	ApigeeEdgeConfig any
+	ApigeeOpdkConfig any
 	ApigeeXhybridConfig any
-	PluginInstance      any
+	PluginInstance any
 }
 
 type Addon_Config_GatewayPluginAddonConfig struct {
@@ -41,6 +41,8 @@ type AddonConfig struct {
 }
 
 type AddonAttrs struct {
+	// Output only. The Vertex AI region where the BoostSpec Gemini model calls run for this API Hub instance. Populated only for the SpecGen addon (`system-spec-generation`); other addons leave this field empty. `gemini-2.5-flash` is not available in every API Hub region, so the effective region may differ from the API Hub instance's own region. The value follows these semantics: - `""`: BoostSpec is disabled in this region (the addon is not SpecGen, or the API Hub instance region has no configured Gemini endpoint or fallback). - Equal to the API Hub instance region: BoostSpec calls run in-region. - Differs from the API Hub instance region: BoostSpec calls run in the specified fallback region. Callers rendering this field can derive the three display states from this single field combined with the API Hub instance region.
+	BoostSpecGeminiRegionId any
 	// Configuration for the addon.
 	Config any
 	// Output only. The time at which the addon was created.
@@ -51,7 +53,7 @@ type AddonAttrs struct {
 	Description any
 	// Required. The display name of the addon.
 	DisplayName any
-	Name        any
+	Name any
 	// Output only. The state of the addon.
 	State any
 	// Output only. The time at which the addon was last updated.

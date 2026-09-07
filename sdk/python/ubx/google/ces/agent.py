@@ -25,6 +25,105 @@ class Agent_ModelSettings:
     temperature: Any = None
 
 @dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_AgentCard_Skills:
+    description: Any = None
+    examples: Any = None
+    id: Any = None
+    input_modes: Any = None
+    name: Any = None
+    output_modes: Any = None
+    tags: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces:
+    protocol_binding: Any = None
+    protocol_version: Any = None
+    tenant: Any = None
+    url: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_AgentCard:
+    # Required. A description of the agent's domain of action/solution space.
+    description: Any = None
+    # Required. A human-readable name for the agent.
+    name: Any = None
+    # Required. Skills represent a unit of ability an agent can perform. This may somewhat abstract but represents a more focused set of actions that the agent is highly likely to succeed at.
+    skills: Any = None
+    # Required. Ordered list of supported interfaces. The first entry is preferred.
+    supported_interfaces: Any = None
+    # Required. The version of the agent.
+    version: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig:
+    # Required. The name of the SecretManager secret version resource storing the API key. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+    api_key_secret_version: Any = None
+    # Required. The parameter name or the header name of the API key. E.g., If the API request is "https://example.com/act?X-Api-Key=", "X-Api-Key" would be the parameter name.
+    key_name: Any = None
+    # Required. Key location in the request.
+    request_location: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig:
+    # Required. The bearer token. Must be in the format `$context.variables.`.
+    token: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig:
+    # Required. The client ID from the OAuth provider.
+    client_id: Any = None
+    # Required. The name of the SecretManager secret version resource storing the client secret. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+    client_secret_version: Any = None
+    # Required. OAuth grant types.
+    oauth_grant_type: Any = None
+    # Optional. The OAuth scopes to grant.
+    scopes: Any = None
+    # Required. The token endpoint in the OAuth provider to exchange for an access token.
+    token_endpoint: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig:
+    # Optional. The OAuth scopes to grant. If not specified, the default scope `https://www.googleapis.com/auth/cloud-platform` is used.
+    scopes: Any = None
+    # Required. The email address of the service account used for authentication. CES uses this service account to exchange an access token and the access token is then sent in the `Authorization` header of the request. The service account must have the `roles/iam.serviceAccountTokenCreator` role granted to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+    service_account: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication:
+    # Configurations for authentication with API key.
+    api_key_config: Any = None
+    # Configurations for authentication with a bearer token.
+    bearer_token_config: Any = None
+    # Configurations for authentication with OAuth.
+    oauth_config: Any = None
+    # Configurations for authentication using a custom service account.
+    service_account_auth_config: Any = None
+    # Configurations for authentication with [ID token](https://cloud.google.com/docs/authentication/token-types#id) generated from service agent.
+    service_agent_id_token_auth_config: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent_A2aConfig:
+    # AgentCard conveys key information about a remote agent. It is a trimmed version of the AgentCard defined in the A2A protocol https://a2a-protocol.org/dev/specification/#441-agentcard
+    agent_card: Any = None
+    # Optional. Reference to the agent in the Agent Registry. Format: `projects/{project}/locations/{location}/agents/{agent}`
+    agent_registry: Any = None
+    # Authentication information required for API calls.
+    api_authentication: Any = None
+    # Optional. If not empty, interactions with the remote A2A agent will use this context ID. This context_id field can refer to a session variable like `$context.variables.order_agent_session_id`.
+    context_id: Any = None
+    # Optional. Mapping of input variable names of remote agent to GECX variable names.
+    input_variable_mapping: Any = None
+    # Optional. Mapping of output variable names of remote agent to GECX variable names.
+    output_variable_mapping: Any = None
+    # Optional. Whether streaming is enabled for the remote agent.
+    streaming_enabled: Any = None
+
+@dataclasses.dataclass
+class Agent_RemoteA2aAgent:
+    # Shared configuration for connecting to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+    a2a_config: Any = None
+
+@dataclasses.dataclass
 class Agent_RemoteDialogflowAgent:
     # Required. The [Dialogflow](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent resource name. Format: `projects/{project}/locations/{location}/agents/{agent}`
     agent: Any = None
@@ -91,6 +190,112 @@ _Agent_AfterAgentCallbacksFields = {
 _Agent_ModelSettingsFields = {
     "model": ubx.FieldSpec(wire_name="model"),
     "temperature": ubx.FieldSpec(wire_name="temperature"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "examples": ubx.FieldSpec(wire_name="examples"),
+    "id": ubx.FieldSpec(wire_name="id"),
+    "input_modes": ubx.FieldSpec(wire_name="input_modes"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "output_modes": ubx.FieldSpec(wire_name="output_modes"),
+    "tags": ubx.FieldSpec(wire_name="tags"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields = {
+    "protocol_binding": ubx.FieldSpec(wire_name="protocol_binding"),
+    "protocol_version": ubx.FieldSpec(wire_name="protocol_version"),
+    "tenant": ubx.FieldSpec(wire_name="tenant"),
+    "url": ubx.FieldSpec(wire_name="url"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_AgentCardFields = {
+    "description": ubx.FieldSpec(wire_name="description"),
+    "name": ubx.FieldSpec(wire_name="name"),
+    "skills": ubx.FieldSpec(
+        wire_name="skills",
+        kind="list",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+    ),
+    "supported_interfaces": ubx.FieldSpec(
+        wire_name="supported_interfaces",
+        kind="list",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+    ),
+    "version": ubx.FieldSpec(wire_name="version"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields = {
+    "api_key_secret_version": ubx.FieldSpec(wire_name="api_key_secret_version"),
+    "key_name": ubx.FieldSpec(wire_name="key_name"),
+    "request_location": ubx.FieldSpec(wire_name="request_location"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields = {
+    "token": ubx.FieldSpec(wire_name="token"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields = {
+    "client_id": ubx.FieldSpec(wire_name="client_id"),
+    "client_secret_version": ubx.FieldSpec(wire_name="client_secret_version"),
+    "oauth_grant_type": ubx.FieldSpec(wire_name="oauth_grant_type"),
+    "scopes": ubx.FieldSpec(wire_name="scopes"),
+    "token_endpoint": ubx.FieldSpec(wire_name="token_endpoint"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields = {
+    "scopes": ubx.FieldSpec(wire_name="scopes"),
+    "service_account": ubx.FieldSpec(wire_name="service_account"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields = {
+    "api_key_config": ubx.FieldSpec(
+        wire_name="api_key_config",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+    ),
+    "bearer_token_config": ubx.FieldSpec(
+        wire_name="bearer_token_config",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+    ),
+    "oauth_config": ubx.FieldSpec(
+        wire_name="oauth_config",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+    ),
+    "service_account_auth_config": ubx.FieldSpec(
+        wire_name="service_account_auth_config",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+    ),
+    "service_agent_id_token_auth_config": ubx.FieldSpec(wire_name="service_agent_id_token_auth_config"),
+}
+
+_Agent_RemoteA2aAgent_A2aConfigFields = {
+    "agent_card": ubx.FieldSpec(
+        wire_name="agent_card",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_AgentCardFields,
+    ),
+    "agent_registry": ubx.FieldSpec(wire_name="agent_registry"),
+    "api_authentication": ubx.FieldSpec(
+        wire_name="api_authentication",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+    ),
+    "context_id": ubx.FieldSpec(wire_name="context_id"),
+    "input_variable_mapping": ubx.FieldSpec(wire_name="input_variable_mapping"),
+    "output_variable_mapping": ubx.FieldSpec(wire_name="output_variable_mapping"),
+    "streaming_enabled": ubx.FieldSpec(wire_name="streaming_enabled"),
+}
+
+_Agent_RemoteA2aAgentFields = {
+    "a2a_config": ubx.FieldSpec(
+        wire_name="a2a_config",
+        kind="object",
+        fields=_Agent_RemoteA2aAgent_A2aConfigFields,
+    ),
 }
 
 _Agent_RemoteDialogflowAgentFields = {
@@ -184,6 +389,8 @@ class AgentConfig:
     model_settings: Any = None
     # Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
     name: Any = None
+    # The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+    remote_a2a_agent: Any = None
     # The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent.
     remote_dialogflow_agent: Any = None
     # Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
@@ -229,6 +436,8 @@ class AgentAttrs:
     model_settings: Any = None
     # Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
     name: Any = None
+    # The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+    remote_a2a_agent: Any = None
     # The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent.
     remote_dialogflow_agent: Any = None
     # Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
@@ -288,6 +497,11 @@ Agent = ubx.ResourceBinding(
             fields=_Agent_ModelSettingsFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
+        "remote_a2a_agent": ubx.FieldSpec(
+            wire_name="remote_a2a_agent",
+            kind="object",
+            fields=_Agent_RemoteA2aAgentFields,
+        ),
         "remote_dialogflow_agent": ubx.FieldSpec(
             wire_name="remote_dialogflow_agent",
             kind="object",

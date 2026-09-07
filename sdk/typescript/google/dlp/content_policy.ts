@@ -285,23 +285,6 @@ export interface ContentPolicy_ContentPolicy_InspectConfig {
   ruleSet?: ContentPolicy_ContentPolicy_InspectConfig_RuleSet[] | Computed<ContentPolicy_ContentPolicy_InspectConfig_RuleSet[]>;
 }
 
-export interface ContentPolicy_ContentPolicy_InspectTemplate {
-  /** Optional. Enables the use of [limited-availability built-in infoTypes](https://docs.cloud.google.com/sensitive-data-protection/docs/infotypes-reference#limited-availability-infotypes) in inspect_config. These infoTypes are supported only in specific regions and can cause scanning errors if used elsewhere. */
-  allowLimitedAvailabilityInfoTypes?: boolean | Computed<boolean>;
-  /** Output only. The creation timestamp of an inspectTemplate. */
-  createTime?: string | Computed<string>;
-  /** Short description (max 256 chars). */
-  description?: string | Computed<string>;
-  /** Display name (max 256 chars). */
-  displayName?: string | Computed<string>;
-  /** Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used. */
-  inspectConfig?: ContentPolicy_ContentPolicy_InspectConfig | Computed<ContentPolicy_ContentPolicy_InspectConfig>;
-  /** Output only. The template name. The template will have one of the following formats: `projects/PROJECT_ID/inspectTemplates/TEMPLATE_ID` OR `organizations/ORGANIZATION_ID/inspectTemplates/TEMPLATE_ID`; */
-  name?: string | Computed<string>;
-  /** Output only. The last update timestamp of an inspectTemplate. */
-  updateTime?: string | Computed<string>;
-}
-
 export interface ContentPolicy_ContentPolicy_LoggingConfigs_LogToBigQuery {
   /** The BigQuery dataset ID this applies to. (AI-inferred) */
   datasetId?: string | Computed<string>;
@@ -340,8 +323,6 @@ export interface ContentPolicy_ContentPolicy_Rules {
   action?: ContentPolicy_ContentPolicy_DefaultAction | Computed<ContentPolicy_ContentPolicy_DefaultAction>;
   /** The condition(s) that must hold for this rule to apply. (AI-inferred) */
   conditions?: ContentPolicy_ContentPolicy_Rules_Conditions[] | Computed<ContentPolicy_ContentPolicy_Rules_Conditions[]>;
-  /** Whether the boolean result of evaluating this condition is returned directly, without stopping the scan. (AI-inferred) */
-  returnVerdict?: string | Computed<string>;
 }
 
 export interface ContentPolicy_ContentPolicy {
@@ -359,8 +340,6 @@ export interface ContentPolicy_ContentPolicy {
   inputTooLarge?: ContentPolicy_ContentPolicy_DefaultAction | Computed<ContentPolicy_ContentPolicy_DefaultAction>;
   /** Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used. */
   inspectConfig?: ContentPolicy_ContentPolicy_InspectConfig | Computed<ContentPolicy_ContentPolicy_InspectConfig>;
-  /** The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more. */
-  inspectTemplate?: ContentPolicy_ContentPolicy_InspectTemplate | Computed<ContentPolicy_ContentPolicy_InspectTemplate>;
   /** Optional. Log the actions taken by the content policy to external systems. */
   loggingConfigs?: ContentPolicy_ContentPolicy_LoggingConfigs[] | Computed<ContentPolicy_ContentPolicy_LoggingConfigs[]>;
   /** Output only. Resource name of the policy. */
@@ -758,20 +737,6 @@ const ContentPolicy_ContentPolicy_InspectConfigFields: FieldMap = {
   },
 };
 
-const ContentPolicy_ContentPolicy_InspectTemplateFields: FieldMap = {
-  allowLimitedAvailabilityInfoTypes: "allow_limited_availability_info_types",
-  createTime: "create_time",
-  description: "description",
-  displayName: "display_name",
-  inspectConfig: {
-    wireName: "inspect_config",
-    kind: "object",
-    fields: ContentPolicy_ContentPolicy_InspectConfigFields,
-  },
-  name: "name",
-  updateTime: "update_time",
-};
-
 const ContentPolicy_ContentPolicy_LoggingConfigs_LogToBigQueryFields: FieldMap = {
   datasetId: "dataset_id",
   projectId: "project_id",
@@ -819,7 +784,6 @@ const ContentPolicy_ContentPolicy_RulesFields: FieldMap = {
     kind: "list",
     fields: ContentPolicy_ContentPolicy_Rules_ConditionsFields,
   },
-  returnVerdict: "return_verdict",
 };
 
 const ContentPolicy_ContentPolicyFields: FieldMap = {
@@ -849,11 +813,6 @@ const ContentPolicy_ContentPolicyFields: FieldMap = {
     wireName: "inspect_config",
     kind: "object",
     fields: ContentPolicy_ContentPolicy_InspectConfigFields,
-  },
-  inspectTemplate: {
-    wireName: "inspect_template",
-    kind: "object",
-    fields: ContentPolicy_ContentPolicy_InspectTemplateFields,
   },
   loggingConfigs: {
     wireName: "logging_configs",
@@ -900,8 +859,6 @@ export interface ContentPolicyAttrs {
   inputTooLarge: ContentPolicy_ContentPolicy_DefaultAction;
   /** Configuration description of the scanning process. When used with redactContent only info_types and min_likelihood are currently used. */
   inspectConfig: ContentPolicy_ContentPolicy_InspectConfig;
-  /** The inspectTemplate contains a configuration (set of types of sensitive data to be detected) to be used anywhere you otherwise would normally specify InspectConfig. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more. */
-  inspectTemplate: ContentPolicy_ContentPolicy_InspectTemplate;
   /** Optional. Log the actions taken by the content policy to external systems. */
   loggingConfigs: ContentPolicy_ContentPolicy_LoggingConfigs[];
   /** Output only. Resource name of the policy. */

@@ -29,25 +29,25 @@ type ImportJob_PublicKey struct {
 }
 
 var ImportJob_Attestation_CertChainsFields = ubx.FieldMap{
-	"CaviumCerts":          ubx.FieldSpec{WireName: "cavium_certs"},
-	"GoogleCardCerts":      ubx.FieldSpec{WireName: "google_card_certs"},
-	"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
-}
+		"CaviumCerts": ubx.FieldSpec{WireName: "cavium_certs"},
+		"GoogleCardCerts": ubx.FieldSpec{WireName: "google_card_certs"},
+		"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
+	}
 
 var ImportJob_AttestationFields = ubx.FieldMap{
-	"CertChains": ubx.FieldSpec{
-		WireName: "cert_chains",
-		Kind:     "object",
-		Fields:   ImportJob_Attestation_CertChainsFields,
-	},
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Format":  ubx.FieldSpec{WireName: "format"},
-}
+		"CertChains": ubx.FieldSpec{
+			WireName: "cert_chains",
+			Kind: "object",
+			Fields: ImportJob_Attestation_CertChainsFields,
+		},
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Format": ubx.FieldSpec{WireName: "format"},
+	}
 
 var ImportJob_PublicKeyFields = ubx.FieldMap{
-	"Data": ubx.FieldSpec{WireName: "data"},
-	"Pem":  ubx.FieldSpec{WireName: "pem"},
-}
+		"Data": ubx.FieldSpec{WireName: "data"},
+		"Pem": ubx.FieldSpec{WireName: "pem"},
+	}
 
 type ImportJobConfig struct {
 	// Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
@@ -94,16 +94,16 @@ var ImportJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attestation": ubx.FieldSpec{
 			WireName: "attestation",
-			Kind:     "object",
-			Fields:   ImportJob_AttestationFields,
+			Kind: "object",
+			Fields: ImportJob_AttestationFields,
 		},
 		"CryptoKeyBackend": ubx.FieldSpec{WireName: "crypto_key_backend"},
-		"ImportMethod":     ubx.FieldSpec{WireName: "import_method"},
-		"ProtectionLevel":  ubx.FieldSpec{WireName: "protection_level"},
+		"ImportMethod": ubx.FieldSpec{WireName: "import_method"},
+		"ProtectionLevel": ubx.FieldSpec{WireName: "protection_level"},
 		"PublicKey": ubx.FieldSpec{
 			WireName: "public_key",
-			Kind:     "object",
-			Fields:   ImportJob_PublicKeyFields,
+			Kind: "object",
+			Fields: ImportJob_PublicKeyFields,
 		},
 	},
 }

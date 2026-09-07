@@ -35,8 +35,8 @@ var ServiceBinding = ubx.ResourceBinding{
 	WireType: "google_networkservices_service_binding",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Service":     ubx.FieldSpec{WireName: "service"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Service": ubx.FieldSpec{WireName: "service"},
 	},
 }

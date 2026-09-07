@@ -32,6 +32,8 @@ const Memory_TopicsFields: FieldMap = {
 };
 
 export interface MemoryConfig {
+  /** Optional. Represents the context of the memory. */
+  context?: string | Computed<string>;
   /** Optional. Represents the description of the Memory. */
   description?: string | Computed<string>;
   /** Optional. Input only. Indicates whether no revision will be created for this request. */
@@ -61,6 +63,8 @@ export interface MemoryConfig {
 }
 
 export interface MemoryAttrs {
+  /** Optional. Represents the context of the memory. */
+  context: string;
   /** Output only. Represents the timestamp when this Memory was created. */
   createTime: string;
   /** Optional. Represents the description of the Memory. */
@@ -96,6 +100,7 @@ export interface MemoryAttrs {
 export const Memory: ResourceBinding<MemoryConfig, MemoryAttrs> = {
   wireType: "google_aiplatform_memory",
   fields: {
+    context: "context",
     description: "description",
     disableMemoryRevisions: "disable_memory_revisions",
     displayName: "display_name",

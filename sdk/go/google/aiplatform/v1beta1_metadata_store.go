@@ -19,16 +19,16 @@ type V1beta1MetadataStore_State struct {
 }
 
 var V1beta1MetadataStore_DataplexConfigFields = ubx.FieldMap{
-	"EnabledPipelinesLineage": ubx.FieldSpec{WireName: "enabled_pipelines_lineage"},
-}
+		"EnabledPipelinesLineage": ubx.FieldSpec{WireName: "enabled_pipelines_lineage"},
+	}
 
 var V1beta1MetadataStore_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 var V1beta1MetadataStore_StateFields = ubx.FieldMap{
-	"DiskUtilizationBytes": ubx.FieldSpec{WireName: "disk_utilization_bytes"},
-}
+		"DiskUtilizationBytes": ubx.FieldSpec{WireName: "disk_utilization_bytes"},
+	}
 
 type V1beta1MetadataStoreConfig struct {
 	// Represents Dataplex integration settings.
@@ -63,19 +63,19 @@ var V1beta1MetadataStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataplexConfig": ubx.FieldSpec{
 			WireName: "dataplex_config",
-			Kind:     "object",
-			Fields:   V1beta1MetadataStore_DataplexConfigFields,
+			Kind: "object",
+			Fields: V1beta1MetadataStore_DataplexConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   V1beta1MetadataStore_EncryptionSpecFields,
+			Kind: "object",
+			Fields: V1beta1MetadataStore_EncryptionSpecFields,
 		},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   V1beta1MetadataStore_StateFields,
+			Kind: "object",
+			Fields: V1beta1MetadataStore_StateFields,
 		},
 	},
 }

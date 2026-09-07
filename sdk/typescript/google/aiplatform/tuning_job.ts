@@ -163,8 +163,6 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
   languageCodes?: string[] | Computed<string[]>;
   /** Deprecated: Use top-level `language_codes` instead. Provides hints to the model about possible languages present in the audio. */
   languageHints?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHints>;
-  /** Optional. Configures transcription mode. Supported values: `VERBATIM`, `SMART`. If unspecified, defaults to `VERBATIM` transcription. In `SMART` mode, the model performs disfluency removal (eliminating filler words, repetitions, and false starts), light grammatical cleanup, automatic formatting (paragraphs, bullet points, numbered lists), and minor user edits (inline self-corrections). Timestamps and diarization are incompatible with mode `SMART`. */
-  mode?: string | Computed<string>;
   /** Optional. Configures word-level timestamp generation. */
   wordTimestamp?: boolean | Computed<boolean>;
 }
@@ -361,6 +359,13 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
   thinkingLevel?: string | Computed<string>;
 }
 
+export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfig {
+  /** Optional. If `true`, the model will generate audio when the target language is spoken, essentially it will parrot the input. If `false`, we will not produce audio for the target language. */
+  echoTargetLanguage?: boolean | Computed<boolean>;
+  /** Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr"). */
+  targetLanguageCode?: string | Computed<string>;
+}
+
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig {
   /** Optional. If enabled, audio timestamps will be included in the request to the model. This can be useful for synchronizing audio with other modalities in the response. */
   audioTimestamp?: boolean | Computed<boolean>;
@@ -410,6 +415,8 @@ export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig
   topK?: number | Computed<number>;
   /** Optional. Specifies the nucleus sampling threshold. The model considers only the smallest set of tokens whose cumulative probability is at least `top_p`. This helps generate more diverse and less repetitive responses. For example, a `top_p` of 0.9 means the model considers tokens until the cumulative probability of the tokens to select from reaches 0.9. It's recommended to adjust either temperature or `top_p`, but not both. */
   topP?: number | Computed<number>;
+  /** Config for translation features. */
+  translationConfig?: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfig | Computed<TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfig>;
 }
 
 export interface TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig {
@@ -968,7 +975,6 @@ const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
     kind: "object",
     fields: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
   },
-  mode: "mode",
   wordTimestamp: "word_timestamp",
 };
 
@@ -1147,6 +1153,11 @@ const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
   thinkingLevel: "thinking_level",
 };
 
+const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfigFields: FieldMap = {
+  echoTargetLanguage: "echo_target_language",
+  targetLanguageCode: "target_language_code",
+};
+
 const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfigFields: FieldMap = {
   audioTimestamp: "audio_timestamp",
   audioTranscriptionConfig: {
@@ -1200,6 +1211,11 @@ const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
   },
   topK: "top_k",
   topP: "top_p",
+  translationConfig: {
+    wireName: "translation_config",
+    kind: "object",
+    fields: TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfigFields,
+  },
 };
 
 const TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfigFields: FieldMap = {

@@ -225,6 +225,7 @@ class Tool_DataStoreTool_ModalityConfigs_RewriterConfig:
 class Tool_DataStoreTool_ModalityConfigs_SnippetsConfig:
     # Whether source snippets are included alongside a generated answer. (AI-inferred)
     enable_snippets: Any = None
+    max_snippets: Any = None
 
 @dataclasses.dataclass
 class Tool_DataStoreTool_ModalityConfigs:
@@ -453,6 +454,8 @@ class Tool_RemoteAgentTool_AgentCard:
 class Tool_RemoteAgentTool:
     # AgentCard conveys key information about a remote agent. It is a trimmed version of the AgentCard defined in the A2A protocol https://a2a-protocol.org/dev/specification/#441-agentcard
     agent_card: Any = None
+    # Authentication information required for API calls.
+    api_authentication: Any = None
     # Required. The description of the tool.
     description: Any = None
     # Required. The name of the tool.
@@ -717,6 +720,7 @@ _Tool_DataStoreTool_ModalityConfigs_RewriterConfigFields = {
 
 _Tool_DataStoreTool_ModalityConfigs_SnippetsConfigFields = {
     "enable_snippets": ubx.FieldSpec(wire_name="enable_snippets"),
+    "max_snippets": ubx.FieldSpec(wire_name="max_snippets"),
 }
 
 _Tool_DataStoreTool_ModalityConfigsFields = {
@@ -964,6 +968,11 @@ _Tool_RemoteAgentToolFields = {
         wire_name="agent_card",
         kind="object",
         fields=_Tool_RemoteAgentTool_AgentCardFields,
+    ),
+    "api_authentication": ubx.FieldSpec(
+        wire_name="api_authentication",
+        kind="object",
+        fields=_Tool_McpTool_ApiAuthenticationFields,
     ),
     "description": ubx.FieldSpec(wire_name="description"),
     "name": ubx.FieldSpec(wire_name="name"),

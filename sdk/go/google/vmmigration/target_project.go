@@ -27,6 +27,6 @@ var TargetProject = ubx.ResourceBinding{
 	WireType: "google_vmmigration_target_project",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Project":     ubx.FieldSpec{WireName: "project"},
+		"Project": ubx.FieldSpec{WireName: "project"},
 	},
 }

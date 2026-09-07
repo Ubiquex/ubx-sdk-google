@@ -147,22 +147,32 @@ export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_C
   mimeType?: string | Computed<string>;
 }
 
+export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
 }
 
 export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool>;
 }
 
 export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   displayName?: string | Computed<string>;
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   tool?: string | Computed<string>;
   toolsetTool?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetTool>;
@@ -172,7 +182,7 @@ export interface V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_C
   agentTransfer?: V1betaEvaluation_Golden_Turns_Steps_AgentTransfer | Computed<V1betaEvaluation_Golden_Turns_Steps_AgentTransfer>;
   blob?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob>;
+  image?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Image | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall>;
@@ -220,7 +230,7 @@ export interface V1betaEvaluation_Golden_Turns_Steps_UserInput {
   blob?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob>;
   dtmf?: string | Computed<string>;
   event?: V1betaEvaluation_Golden_Turns_Steps_UserInput_Event | Computed<V1betaEvaluation_Golden_Turns_Steps_UserInput_Event>;
-  image?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Blob>;
+  image?: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Image | Computed<V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_Image>;
   text?: string | Computed<string>;
   toolResponses?: V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponses | Computed<V1betaEvaluation_Golden_Turns_Steps_UserInput_ToolResponses>;
   variables?: Record<string, unknown> | Computed<Record<string, unknown>>;
@@ -744,15 +754,23 @@ const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobF
   mimeType: "mime_type",
 };
 
+const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ImageFields: FieldMap = {
+  altText: "alt_text",
+  data: "data",
+  mimeType: "mime_type",
+};
+
 const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCall_ToolsetToolFields: FieldMap = {
   toolId: "tool_id",
   toolset: "toolset",
 };
 
 const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolCallFields: FieldMap = {
+  agentName: "agent_name",
   args: "args",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   tool: "tool",
   toolsetTool: {
     wireName: "toolset_tool",
@@ -762,8 +780,10 @@ const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolC
 };
 
 const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ToolResponseFields: FieldMap = {
+  agentName: "agent_name",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   response: "response",
   tool: "tool",
   toolsetTool: {
@@ -788,7 +808,7 @@ const V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_ChunksFields
   image: {
     wireName: "image",
     kind: "object",
-    fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+    fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ImageFields,
   },
   payload: "payload",
   text: "text",
@@ -896,7 +916,7 @@ const V1betaEvaluation_Golden_Turns_Steps_UserInputFields: FieldMap = {
   image: {
     wireName: "image",
     kind: "object",
-    fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_BlobFields,
+    fields: V1betaEvaluation_Golden_Turns_Steps_Expectation_AgentResponse_Chunks_ImageFields,
   },
   text: "text",
   toolResponses: {

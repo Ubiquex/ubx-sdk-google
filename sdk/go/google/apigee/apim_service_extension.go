@@ -24,17 +24,17 @@ type ApimServiceExtension_NetworkConfigs struct {
 }
 
 var ApimServiceExtension_ExtensionsFields = ubx.FieldMap{
-	"FailOpen":        ubx.FieldSpec{WireName: "fail_open"},
-	"Hostname":        ubx.FieldSpec{WireName: "hostname"},
-	"MatchCondition":  ubx.FieldSpec{WireName: "match_condition"},
-	"Name":            ubx.FieldSpec{WireName: "name"},
-	"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-}
+		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"MatchCondition": ubx.FieldSpec{WireName: "match_condition"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
+	}
 
 var ApimServiceExtension_NetworkConfigsFields = ubx.FieldMap{
-	"Region": ubx.FieldSpec{WireName: "region"},
-	"Subnet": ubx.FieldSpec{WireName: "subnet"},
-}
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"Subnet": ubx.FieldSpec{WireName: "subnet"},
+	}
 
 type ApimServiceExtensionConfig struct {
 	// Required. Name of the proxy deployed in the Apigee X instance.
@@ -78,16 +78,16 @@ var ApimServiceExtension = ubx.ResourceBinding{
 		"ExtensionProcessor": ubx.FieldSpec{WireName: "extension_processor"},
 		"Extensions": ubx.FieldSpec{
 			WireName: "extensions",
-			Kind:     "list",
-			Fields:   ApimServiceExtension_ExtensionsFields,
+			Kind: "list",
+			Fields: ApimServiceExtension_ExtensionsFields,
 		},
 		"LbForwardingRule": ubx.FieldSpec{WireName: "lb_forwarding_rule"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
-		"Network":          ubx.FieldSpec{WireName: "network"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
 		"NetworkConfigs": ubx.FieldSpec{
 			WireName: "network_configs",
-			Kind:     "list",
-			Fields:   ApimServiceExtension_NetworkConfigsFields,
+			Kind: "list",
+			Fields: ApimServiceExtension_NetworkConfigsFields,
 		},
 	},
 }

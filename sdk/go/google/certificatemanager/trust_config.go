@@ -16,21 +16,21 @@ type TrustConfig_SpiffeTrustStores struct {
 }
 
 var TrustConfig_AllowlistedCertificatesFields = ubx.FieldMap{
-	"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
-}
+		"PemCertificate": ubx.FieldSpec{WireName: "pem_certificate"},
+	}
 
 var TrustConfig_SpiffeTrustStoresFields = ubx.FieldMap{
-	"IntermediateCas": ubx.FieldSpec{
-		WireName: "intermediate_cas",
-		Kind:     "list",
-		Fields:   TrustConfig_AllowlistedCertificatesFields,
-	},
-	"TrustAnchors": ubx.FieldSpec{
-		WireName: "trust_anchors",
-		Kind:     "list",
-		Fields:   TrustConfig_AllowlistedCertificatesFields,
-	},
-}
+		"IntermediateCas": ubx.FieldSpec{
+			WireName: "intermediate_cas",
+			Kind: "list",
+			Fields: TrustConfig_AllowlistedCertificatesFields,
+		},
+		"TrustAnchors": ubx.FieldSpec{
+			WireName: "trust_anchors",
+			Kind: "list",
+			Fields: TrustConfig_AllowlistedCertificatesFields,
+		},
+	}
 
 type TrustConfigConfig struct {
 	// Optional. A certificate matching an allowlisted certificate is always considered valid as long as the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met.
@@ -79,23 +79,23 @@ var TrustConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowlistedCertificates": ubx.FieldSpec{
 			WireName: "allowlisted_certificates",
-			Kind:     "list",
-			Fields:   TrustConfig_AllowlistedCertificatesFields,
+			Kind: "list",
+			Fields: TrustConfig_AllowlistedCertificatesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"SpiffeTrustStores": ubx.FieldSpec{
 			WireName: "spiffe_trust_stores",
-			Kind:     "map",
-			Fields:   TrustConfig_SpiffeTrustStoresFields,
+			Kind: "map",
+			Fields: TrustConfig_SpiffeTrustStoresFields,
 		},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 		"TrustStores": ubx.FieldSpec{
 			WireName: "trust_stores",
-			Kind:     "list",
-			Fields:   TrustConfig_SpiffeTrustStoresFields,
+			Kind: "list",
+			Fields: TrustConfig_SpiffeTrustStoresFields,
 		},
 	},
 }

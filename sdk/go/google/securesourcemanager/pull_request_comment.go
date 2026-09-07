@@ -40,32 +40,32 @@ type PullRequestComment_Review struct {
 }
 
 var PullRequestComment_Code_PositionFields = ubx.FieldMap{
-	"Line": ubx.FieldSpec{WireName: "line"},
-	"Path": ubx.FieldSpec{WireName: "path"},
-}
+		"Line": ubx.FieldSpec{WireName: "line"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var PullRequestComment_CodeFields = ubx.FieldMap{
-	"Body":                 ubx.FieldSpec{WireName: "body"},
-	"EffectiveCommitSha":   ubx.FieldSpec{WireName: "effective_commit_sha"},
-	"EffectiveRootComment": ubx.FieldSpec{WireName: "effective_root_comment"},
-	"Position": ubx.FieldSpec{
-		WireName: "position",
-		Kind:     "object",
-		Fields:   PullRequestComment_Code_PositionFields,
-	},
-	"Reply":    ubx.FieldSpec{WireName: "reply"},
-	"Resolved": ubx.FieldSpec{WireName: "resolved"},
-}
+		"Body": ubx.FieldSpec{WireName: "body"},
+		"EffectiveCommitSha": ubx.FieldSpec{WireName: "effective_commit_sha"},
+		"EffectiveRootComment": ubx.FieldSpec{WireName: "effective_root_comment"},
+		"Position": ubx.FieldSpec{
+			WireName: "position",
+			Kind: "object",
+			Fields: PullRequestComment_Code_PositionFields,
+		},
+		"Reply": ubx.FieldSpec{WireName: "reply"},
+		"Resolved": ubx.FieldSpec{WireName: "resolved"},
+	}
 
 var PullRequestComment_CommentFields = ubx.FieldMap{
-	"Body": ubx.FieldSpec{WireName: "body"},
-}
+		"Body": ubx.FieldSpec{WireName: "body"},
+	}
 
 var PullRequestComment_ReviewFields = ubx.FieldMap{
-	"ActionType":         ubx.FieldSpec{WireName: "action_type"},
-	"Body":               ubx.FieldSpec{WireName: "body"},
-	"EffectiveCommitSha": ubx.FieldSpec{WireName: "effective_commit_sha"},
-}
+		"ActionType": ubx.FieldSpec{WireName: "action_type"},
+		"Body": ubx.FieldSpec{WireName: "body"},
+		"EffectiveCommitSha": ubx.FieldSpec{WireName: "effective_commit_sha"},
+	}
 
 type PullRequestCommentConfig struct {
 	// The comment on a code line.
@@ -98,19 +98,19 @@ var PullRequestComment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Code": ubx.FieldSpec{
 			WireName: "code",
-			Kind:     "object",
-			Fields:   PullRequestComment_CodeFields,
+			Kind: "object",
+			Fields: PullRequestComment_CodeFields,
 		},
 		"Comment": ubx.FieldSpec{
 			WireName: "comment",
-			Kind:     "object",
-			Fields:   PullRequestComment_CommentFields,
+			Kind: "object",
+			Fields: PullRequestComment_CommentFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Review": ubx.FieldSpec{
 			WireName: "review",
-			Kind:     "object",
-			Fields:   PullRequestComment_ReviewFields,
+			Kind: "object",
+			Fields: PullRequestComment_ReviewFields,
 		},
 	},
 }

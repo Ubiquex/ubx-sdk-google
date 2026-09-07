@@ -151,6 +151,8 @@ class V1alphaAssistantConfig:
     enabled_tools: Any = None
     # Configuration for the generation of the assistant response.
     generation_config: Any = None
+    # Optional. Indicates whether Knowledge Catalog is enabled for this specific assistant. When enabled, it powers discovery context using organizational data.
+    knowledge_catalog_enabled: Any = None
     # Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters.
     name: Any = None
     # Optional. The type of web grounding to use.
@@ -174,6 +176,8 @@ class V1alphaAssistantAttrs:
     enabled_tools: Any = None
     # Configuration for the generation of the assistant response.
     generation_config: Any = None
+    # Optional. Indicates whether Knowledge Catalog is enabled for this specific assistant. When enabled, it powers discovery context using organizational data.
+    knowledge_catalog_enabled: Any = None
     # Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters.
     name: Any = None
     # Output only. Represents the time when this Assistant was most recently updated.
@@ -203,6 +207,7 @@ V1alphaAssistant = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaAssistant_GenerationConfigFields,
         ),
+        "knowledge_catalog_enabled": ubx.FieldSpec(wire_name="knowledge_catalog_enabled"),
         "name": ubx.FieldSpec(wire_name="name"),
         "web_grounding_type": ubx.FieldSpec(wire_name="web_grounding_type"),
     },

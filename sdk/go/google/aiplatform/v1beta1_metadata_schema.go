@@ -32,9 +32,9 @@ type V1beta1MetadataSchemaAttrs struct {
 var V1beta1MetadataSchema = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_metadata_schema",
 	Fields: ubx.FieldMap{
-		"Description":   ubx.FieldSpec{WireName: "description"},
-		"Schema":        ubx.FieldSpec{WireName: "schema"},
-		"SchemaType":    ubx.FieldSpec{WireName: "schema_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"SchemaType": ubx.FieldSpec{WireName: "schema_type"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
 	},
 }

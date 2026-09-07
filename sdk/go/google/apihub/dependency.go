@@ -54,58 +54,58 @@ type Dependency_ErrorDetail struct {
 }
 
 var Dependency_Attributes_EnumValues_ValuesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+	}
 
 var Dependency_Attributes_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Dependency_Attributes_EnumValues_ValuesFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Dependency_Attributes_EnumValues_ValuesFields,
+		},
+	}
 
 var Dependency_Attributes_JsonValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Dependency_AttributesFields = ubx.FieldMap{
-	"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   Dependency_Attributes_EnumValuesFields,
-	},
-	"JsonValues": ubx.FieldSpec{
-		WireName: "json_values",
-		Kind:     "object",
-		Fields:   Dependency_Attributes_JsonValuesFields,
-	},
-	"StringValues": ubx.FieldSpec{
-		WireName: "string_values",
-		Kind:     "object",
-		Fields:   Dependency_Attributes_JsonValuesFields,
-	},
-	"UriValues": ubx.FieldSpec{
-		WireName: "uri_values",
-		Kind:     "object",
-		Fields:   Dependency_Attributes_JsonValuesFields,
-	},
-}
+		"Attribute": ubx.FieldSpec{WireName: "attribute"},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: Dependency_Attributes_EnumValuesFields,
+		},
+		"JsonValues": ubx.FieldSpec{
+			WireName: "json_values",
+			Kind: "object",
+			Fields: Dependency_Attributes_JsonValuesFields,
+		},
+		"StringValues": ubx.FieldSpec{
+			WireName: "string_values",
+			Kind: "object",
+			Fields: Dependency_Attributes_JsonValuesFields,
+		},
+		"UriValues": ubx.FieldSpec{
+			WireName: "uri_values",
+			Kind: "object",
+			Fields: Dependency_Attributes_JsonValuesFields,
+		},
+	}
 
 var Dependency_ConsumerFields = ubx.FieldMap{
-	"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
-	"ExternalApiResourceName": ubx.FieldSpec{WireName: "external_api_resource_name"},
-	"OperationResourceName":   ubx.FieldSpec{WireName: "operation_resource_name"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExternalApiResourceName": ubx.FieldSpec{WireName: "external_api_resource_name"},
+		"OperationResourceName": ubx.FieldSpec{WireName: "operation_resource_name"},
+	}
 
 var Dependency_ErrorDetailFields = ubx.FieldMap{
-	"Error":     ubx.FieldSpec{WireName: "error"},
-	"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
-}
+		"Error": ubx.FieldSpec{WireName: "error"},
+		"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
+	}
 
 type DependencyConfig struct {
 	// Optional. The list of user defined attributes associated with the dependency resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
@@ -150,25 +150,25 @@ var Dependency = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind:     "map",
-			Fields:   Dependency_AttributesFields,
+			Kind: "map",
+			Fields: Dependency_AttributesFields,
 		},
 		"Consumer": ubx.FieldSpec{
 			WireName: "consumer",
-			Kind:     "object",
-			Fields:   Dependency_ConsumerFields,
+			Kind: "object",
+			Fields: Dependency_ConsumerFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ErrorDetail": ubx.FieldSpec{
 			WireName: "error_detail",
-			Kind:     "object",
-			Fields:   Dependency_ErrorDetailFields,
+			Kind: "object",
+			Fields: Dependency_ErrorDetailFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Supplier": ubx.FieldSpec{
 			WireName: "supplier",
-			Kind:     "object",
-			Fields:   Dependency_ConsumerFields,
+			Kind: "object",
+			Fields: Dependency_ConsumerFields,
 		},
 	},
 }

@@ -103,31 +103,31 @@ type ServiceConnectionMap_ProducerPscConfigs struct {
 }
 
 var ServiceConnectionMap_ConsumerPscConfigsFields = ubx.FieldMap{
-	"ConsumerInstanceProject":       ubx.FieldSpec{WireName: "consumer_instance_project"},
-	"DisableGlobalAccess":           ubx.FieldSpec{WireName: "disable_global_access"},
-	"IpVersion":                     ubx.FieldSpec{WireName: "ip_version"},
-	"Network":                       ubx.FieldSpec{WireName: "network"},
-	"ProducerInstanceId":            ubx.FieldSpec{WireName: "producer_instance_id"},
-	"ProducerInstanceMetadata":      ubx.FieldSpec{WireName: "producer_instance_metadata"},
-	"Project":                       ubx.FieldSpec{WireName: "project"},
-	"ServiceAttachmentIpAddressMap": ubx.FieldSpec{WireName: "service_attachment_ip_address_map"},
-	"State":                         ubx.FieldSpec{WireName: "state"},
-}
+		"ConsumerInstanceProject": ubx.FieldSpec{WireName: "consumer_instance_project"},
+		"DisableGlobalAccess": ubx.FieldSpec{WireName: "disable_global_access"},
+		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"ProducerInstanceId": ubx.FieldSpec{WireName: "producer_instance_id"},
+		"ProducerInstanceMetadata": ubx.FieldSpec{WireName: "producer_instance_metadata"},
+		"Project": ubx.FieldSpec{WireName: "project"},
+		"ServiceAttachmentIpAddressMap": ubx.FieldSpec{WireName: "service_attachment_ip_address_map"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields = ubx.FieldMap{
-	"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
-	"Hostname":  ubx.FieldSpec{WireName: "hostname"},
-	"Ttl":       ubx.FieldSpec{WireName: "ttl"},
-}
+		"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+	}
 
 var ServiceConnectionMap_ProducerPscConfigsFields = ubx.FieldMap{
-	"AutomatedDnsCreationSpec": ubx.FieldSpec{
-		WireName: "automated_dns_creation_spec",
-		Kind:     "object",
-		Fields:   ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields,
-	},
-	"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-}
+		"AutomatedDnsCreationSpec": ubx.FieldSpec{
+			WireName: "automated_dns_creation_spec",
+			Kind: "object",
+			Fields: ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields,
+		},
+		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
+	}
 
 type ServiceConnectionMapConfig struct {
 	// The PSC configurations on consumer side.
@@ -182,19 +182,19 @@ var ServiceConnectionMap = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConsumerPscConfigs": ubx.FieldSpec{
 			WireName: "consumer_psc_configs",
-			Kind:     "list",
-			Fields:   ServiceConnectionMap_ConsumerPscConfigsFields,
+			Kind: "list",
+			Fields: ServiceConnectionMap_ConsumerPscConfigsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProducerPscConfigs": ubx.FieldSpec{
 			WireName: "producer_psc_configs",
-			Kind:     "list",
-			Fields:   ServiceConnectionMap_ProducerPscConfigsFields,
+			Kind: "list",
+			Fields: ServiceConnectionMap_ProducerPscConfigsFields,
 		},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
-		"Token":        ubx.FieldSpec{WireName: "token"},
+		"Token": ubx.FieldSpec{WireName: "token"},
 	},
 }

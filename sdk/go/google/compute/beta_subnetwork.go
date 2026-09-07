@@ -24,27 +24,27 @@ type BetaSubnetwork_Params struct {
 }
 
 type BetaSubnetwork_SecondaryIpRanges struct {
-	IpCidrRange           any
-	IpCollection          any
-	IpVersion             any
-	RangeName             any
+	IpCidrRange any
+	IpCollection any
+	IpVersion any
+	RangeName any
 	ReservedInternalRange any
 }
 
 type BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIp struct {
 	High any
-	Low  any
+	Low any
 }
 
 type BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization struct {
 	TotalAllocatedIp any
-	TotalFreeIp      any
+	TotalFreeIp any
 }
 
 type BetaSubnetwork_UtilizationDetails_Ipv4Utilizations struct {
-	RangeName        any
+	RangeName any
 	TotalAllocatedIp any
-	TotalFreeIp      any
+	TotalFreeIp any
 }
 
 type BetaSubnetwork_UtilizationDetails struct {
@@ -59,72 +59,72 @@ type BetaSubnetwork_UtilizationDetails struct {
 }
 
 var BetaSubnetwork_LogConfigFields = ubx.FieldMap{
-	"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
-	"Enable":              ubx.FieldSpec{WireName: "enable"},
-	"FilterExpr":          ubx.FieldSpec{WireName: "filter_expr"},
-	"FlowSampling":        ubx.FieldSpec{WireName: "flow_sampling"},
-	"Metadata":            ubx.FieldSpec{WireName: "metadata"},
-	"MetadataFields":      ubx.FieldSpec{WireName: "metadata_fields"},
-}
+		"AggregationInterval": ubx.FieldSpec{WireName: "aggregation_interval"},
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"FilterExpr": ubx.FieldSpec{WireName: "filter_expr"},
+		"FlowSampling": ubx.FieldSpec{WireName: "flow_sampling"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"MetadataFields": ubx.FieldSpec{WireName: "metadata_fields"},
+	}
 
 var BetaSubnetwork_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var BetaSubnetwork_SecondaryIpRangesFields = ubx.FieldMap{
-	"IpCidrRange":           ubx.FieldSpec{WireName: "ip_cidr_range"},
-	"IpCollection":          ubx.FieldSpec{WireName: "ip_collection"},
-	"IpVersion":             ubx.FieldSpec{WireName: "ip_version"},
-	"RangeName":             ubx.FieldSpec{WireName: "range_name"},
-	"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
-}
+		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
+		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
+		"RangeName": ubx.FieldSpec{WireName: "range_name"},
+		"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
+	}
 
 var BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields = ubx.FieldMap{
-	"High": ubx.FieldSpec{WireName: "high"},
-	"Low":  ubx.FieldSpec{WireName: "low"},
-}
+		"High": ubx.FieldSpec{WireName: "high"},
+		"Low": ubx.FieldSpec{WireName: "low"},
+	}
 
 var BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields = ubx.FieldMap{
-	"TotalAllocatedIp": ubx.FieldSpec{
-		WireName: "total_allocated_ip",
-		Kind:     "object",
-		Fields:   BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
-	},
-	"TotalFreeIp": ubx.FieldSpec{
-		WireName: "total_free_ip",
-		Kind:     "object",
-		Fields:   BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
-	},
-}
+		"TotalAllocatedIp": ubx.FieldSpec{
+			WireName: "total_allocated_ip",
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
+		},
+		"TotalFreeIp": ubx.FieldSpec{
+			WireName: "total_free_ip",
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization_TotalAllocatedIpFields,
+		},
+	}
 
 var BetaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields = ubx.FieldMap{
-	"RangeName":        ubx.FieldSpec{WireName: "range_name"},
-	"TotalAllocatedIp": ubx.FieldSpec{WireName: "total_allocated_ip"},
-	"TotalFreeIp":      ubx.FieldSpec{WireName: "total_free_ip"},
-}
+		"RangeName": ubx.FieldSpec{WireName: "range_name"},
+		"TotalAllocatedIp": ubx.FieldSpec{WireName: "total_allocated_ip"},
+		"TotalFreeIp": ubx.FieldSpec{WireName: "total_free_ip"},
+	}
 
 var BetaSubnetwork_UtilizationDetailsFields = ubx.FieldMap{
-	"ExternalIpv6InstanceUtilization": ubx.FieldSpec{
-		WireName: "external_ipv6_instance_utilization",
-		Kind:     "object",
-		Fields:   BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-	},
-	"ExternalIpv6LbUtilization": ubx.FieldSpec{
-		WireName: "external_ipv6_lb_utilization",
-		Kind:     "object",
-		Fields:   BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-	},
-	"InternalIpv6Utilization": ubx.FieldSpec{
-		WireName: "internal_ipv6_utilization",
-		Kind:     "object",
-		Fields:   BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
-	},
-	"Ipv4Utilizations": ubx.FieldSpec{
-		WireName: "ipv4_utilizations",
-		Kind:     "list",
-		Fields:   BetaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields,
-	},
-}
+		"ExternalIpv6InstanceUtilization": ubx.FieldSpec{
+			WireName: "external_ipv6_instance_utilization",
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+		},
+		"ExternalIpv6LbUtilization": ubx.FieldSpec{
+			WireName: "external_ipv6_lb_utilization",
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+		},
+		"InternalIpv6Utilization": ubx.FieldSpec{
+			WireName: "internal_ipv6_utilization",
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetails_ExternalIpv6InstanceUtilizationFields,
+		},
+		"Ipv4Utilizations": ubx.FieldSpec{
+			WireName: "ipv4_utilizations",
+			Kind: "list",
+			Fields: BetaSubnetwork_UtilizationDetails_Ipv4UtilizationsFields,
+		},
+	}
 
 type BetaSubnetworkConfig struct {
 	// Whether this subnetwork's ranges can conflict with existing custom routes. Setting this to true allows this subnetwork's primary and secondary ranges to overlap with (and contain) custom routes that have already been configured on the corresponding network. For example if a static route has range 10.1.0.0/16, a subnet range 10.0.0.0/8 could only be created if allow_conflicting_routes=true. Overlapping is only allowed on subnetwork operations; routes whose ranges conflict with this subnetwork's ranges won't be allowed unless route.allow_conflicting_subnetworks is set to true. Typically packets destined to IPs within the subnetwork (which may contain private/sensitive data) are prevented from leaving the virtual network. Setting this field to true will disable this feature. The default value is false and applies to all existing subnetworks and automatically created subnetworks.
@@ -254,45 +254,45 @@ var BetaSubnetwork = ubx.ResourceBinding{
 	WireType: "google_compute_beta_subnetwork",
 	Fields: ubx.FieldMap{
 		"AllowSubnetCidrRoutesOverlap": ubx.FieldSpec{WireName: "allow_subnet_cidr_routes_overlap"},
-		"Description":                  ubx.FieldSpec{WireName: "description"},
-		"EnableFlowLogs":               ubx.FieldSpec{WireName: "enable_flow_logs"},
-		"ExternalIpv6Prefix":           ubx.FieldSpec{WireName: "external_ipv6_prefix"},
-		"Fingerprint":                  ubx.FieldSpec{WireName: "fingerprint"},
-		"InternalIpv6Prefix":           ubx.FieldSpec{WireName: "internal_ipv6_prefix"},
-		"IpCidrRange":                  ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"IpCollection":                 ubx.FieldSpec{WireName: "ip_collection"},
-		"Ipv6AccessType":               ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Ipv6NetworkTier":              ubx.FieldSpec{WireName: "ipv6_network_tier"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnableFlowLogs": ubx.FieldSpec{WireName: "enable_flow_logs"},
+		"ExternalIpv6Prefix": ubx.FieldSpec{WireName: "external_ipv6_prefix"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"InternalIpv6Prefix": ubx.FieldSpec{WireName: "internal_ipv6_prefix"},
+		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
+		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
+		"Ipv6NetworkTier": ubx.FieldSpec{WireName: "ipv6_network_tier"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind:     "object",
-			Fields:   BetaSubnetwork_LogConfigFields,
+			Kind: "object",
+			Fields: BetaSubnetwork_LogConfigFields,
 		},
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   BetaSubnetwork_ParamsFields,
+			Kind: "object",
+			Fields: BetaSubnetwork_ParamsFields,
 		},
-		"PrivateIpGoogleAccess":   ubx.FieldSpec{WireName: "private_ip_google_access"},
+		"PrivateIpGoogleAccess": ubx.FieldSpec{WireName: "private_ip_google_access"},
 		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"Purpose":                 ubx.FieldSpec{WireName: "purpose"},
-		"Region":                  ubx.FieldSpec{WireName: "region"},
-		"ReservedInternalRange":   ubx.FieldSpec{WireName: "reserved_internal_range"},
-		"ResolveSubnetMask":       ubx.FieldSpec{WireName: "resolve_subnet_mask"},
-		"Role":                    ubx.FieldSpec{WireName: "role"},
+		"Purpose": ubx.FieldSpec{WireName: "purpose"},
+		"Region": ubx.FieldSpec{WireName: "region"},
+		"ReservedInternalRange": ubx.FieldSpec{WireName: "reserved_internal_range"},
+		"ResolveSubnetMask": ubx.FieldSpec{WireName: "resolve_subnet_mask"},
+		"Role": ubx.FieldSpec{WireName: "role"},
 		"SecondaryIpRanges": ubx.FieldSpec{
 			WireName: "secondary_ip_ranges",
-			Kind:     "list",
-			Fields:   BetaSubnetwork_SecondaryIpRangesFields,
+			Kind: "list",
+			Fields: BetaSubnetwork_SecondaryIpRangesFields,
 		},
-		"SelfLink":  ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"StackType": ubx.FieldSpec{WireName: "stack_type"},
 		"UtilizationDetails": ubx.FieldSpec{
 			WireName: "utilization_details",
-			Kind:     "object",
-			Fields:   BetaSubnetwork_UtilizationDetailsFields,
+			Kind: "object",
+			Fields: BetaSubnetwork_UtilizationDetailsFields,
 		},
 	},
 }

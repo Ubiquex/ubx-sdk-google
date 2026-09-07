@@ -29,6 +29,6 @@ var TeamFolder = ubx.ResourceBinding{
 	WireType: "google_dataform_team_folder",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

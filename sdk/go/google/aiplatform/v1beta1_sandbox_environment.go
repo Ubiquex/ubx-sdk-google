@@ -30,30 +30,33 @@ type V1beta1SandboxEnvironment_Spec struct {
 	ComputerUseEnvironment any
 	// The shell environment.
 	ShellEnvironment any
+	// Optional. Immutable. Whether to provision the SandboxEnvironment via the GKE TD pool. Immutable.
+	UseGkeTd any
 }
 
 var V1beta1SandboxEnvironment_ConnectionInfoFields = ubx.FieldMap{
-	"LoadBalancerHostname": ubx.FieldSpec{WireName: "load_balancer_hostname"},
-	"LoadBalancerIp":       ubx.FieldSpec{WireName: "load_balancer_ip"},
-	"RoutingToken":         ubx.FieldSpec{WireName: "routing_token"},
-	"SandboxInternalIp":    ubx.FieldSpec{WireName: "sandbox_internal_ip"},
-	"ServiceAttachment":    ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"LoadBalancerHostname": ubx.FieldSpec{WireName: "load_balancer_hostname"},
+		"LoadBalancerIp": ubx.FieldSpec{WireName: "load_balancer_ip"},
+		"RoutingToken": ubx.FieldSpec{WireName: "routing_token"},
+		"SandboxInternalIp": ubx.FieldSpec{WireName: "sandbox_internal_ip"},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 var V1beta1SandboxEnvironment_Spec_CodeExecutionEnvironmentFields = ubx.FieldMap{
-	"CodeLanguage":  ubx.FieldSpec{WireName: "code_language"},
-	"MachineConfig": ubx.FieldSpec{WireName: "machine_config"},
-}
+		"CodeLanguage": ubx.FieldSpec{WireName: "code_language"},
+		"MachineConfig": ubx.FieldSpec{WireName: "machine_config"},
+	}
 
 var V1beta1SandboxEnvironment_SpecFields = ubx.FieldMap{
-	"CodeExecutionEnvironment": ubx.FieldSpec{
-		WireName: "code_execution_environment",
-		Kind:     "object",
-		Fields:   V1beta1SandboxEnvironment_Spec_CodeExecutionEnvironmentFields,
-	},
-	"ComputerUseEnvironment": ubx.FieldSpec{WireName: "computer_use_environment"},
-	"ShellEnvironment":       ubx.FieldSpec{WireName: "shell_environment"},
-}
+		"CodeExecutionEnvironment": ubx.FieldSpec{
+			WireName: "code_execution_environment",
+			Kind: "object",
+			Fields: V1beta1SandboxEnvironment_Spec_CodeExecutionEnvironmentFields,
+		},
+		"ComputerUseEnvironment": ubx.FieldSpec{WireName: "computer_use_environment"},
+		"ShellEnvironment": ubx.FieldSpec{WireName: "shell_environment"},
+		"UseGkeTd": ubx.FieldSpec{WireName: "use_gke_td"},
+	}
 
 type V1beta1SandboxEnvironmentConfig struct {
 	// The connection information of the SandboxEnvironment.
@@ -110,19 +113,19 @@ var V1beta1SandboxEnvironment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConnectionInfo": ubx.FieldSpec{
 			WireName: "connection_info",
-			Kind:     "object",
-			Fields:   V1beta1SandboxEnvironment_ConnectionInfoFields,
+			Kind: "object",
+			Fields: V1beta1SandboxEnvironment_ConnectionInfoFields,
 		},
-		"DisplayName":                ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime":                 ubx.FieldSpec{WireName: "expire_time"},
-		"Name":                       ubx.FieldSpec{WireName: "name"},
-		"Owner":                      ubx.FieldSpec{WireName: "owner"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Owner": ubx.FieldSpec{WireName: "owner"},
 		"SandboxEnvironmentSnapshot": ubx.FieldSpec{WireName: "sandbox_environment_snapshot"},
 		"SandboxEnvironmentTemplate": ubx.FieldSpec{WireName: "sandbox_environment_template"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind:     "object",
-			Fields:   V1beta1SandboxEnvironment_SpecFields,
+			Kind: "object",
+			Fields: V1beta1SandboxEnvironment_SpecFields,
 		},
 		"Ttl": ubx.FieldSpec{WireName: "ttl"},
 	},

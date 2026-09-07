@@ -45,10 +45,10 @@ var GatewayAdvertisedRoute = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_gateway_advertised_route",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpRange":     ubx.FieldSpec{WireName: "ip_range"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Priority":    ubx.FieldSpec{WireName: "priority"},
-		"Recipient":   ubx.FieldSpec{WireName: "recipient"},
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Recipient": ubx.FieldSpec{WireName: "recipient"},
 	},
 }

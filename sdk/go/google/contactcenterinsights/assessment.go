@@ -33,20 +33,20 @@ type Assessment_AgentInfo struct {
 }
 
 var Assessment_AgentInfoFields = ubx.FieldMap{
-	"AgentId":                  ubx.FieldSpec{WireName: "agent_id"},
-	"AgentType":                ubx.FieldSpec{WireName: "agent_type"},
-	"DeploymentDisplayName":    ubx.FieldSpec{WireName: "deployment_display_name"},
-	"DeploymentId":             ubx.FieldSpec{WireName: "deployment_id"},
-	"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
-	"DispositionCode":          ubx.FieldSpec{WireName: "disposition_code"},
-	"EntrySubagentDisplayName": ubx.FieldSpec{WireName: "entry_subagent_display_name"},
-	"EntrySubagentId":          ubx.FieldSpec{WireName: "entry_subagent_id"},
-	"Location":                 ubx.FieldSpec{WireName: "location"},
-	"Team":                     ubx.FieldSpec{WireName: "team"},
-	"Teams":                    ubx.FieldSpec{WireName: "teams"},
-	"VersionDisplayName":       ubx.FieldSpec{WireName: "version_display_name"},
-	"VersionId":                ubx.FieldSpec{WireName: "version_id"},
-}
+		"AgentId": ubx.FieldSpec{WireName: "agent_id"},
+		"AgentType": ubx.FieldSpec{WireName: "agent_type"},
+		"DeploymentDisplayName": ubx.FieldSpec{WireName: "deployment_display_name"},
+		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DispositionCode": ubx.FieldSpec{WireName: "disposition_code"},
+		"EntrySubagentDisplayName": ubx.FieldSpec{WireName: "entry_subagent_display_name"},
+		"EntrySubagentId": ubx.FieldSpec{WireName: "entry_subagent_id"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Team": ubx.FieldSpec{WireName: "team"},
+		"Teams": ubx.FieldSpec{WireName: "teams"},
+		"VersionDisplayName": ubx.FieldSpec{WireName: "version_display_name"},
+		"VersionId": ubx.FieldSpec{WireName: "version_id"},
+	}
 
 type AssessmentConfig struct {
 	// Information about an agent involved in the conversation.
@@ -73,8 +73,8 @@ var Assessment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentInfo": ubx.FieldSpec{
 			WireName: "agent_info",
-			Kind:     "object",
-			Fields:   Assessment_AgentInfoFields,
+			Kind: "object",
+			Fields: Assessment_AgentInfoFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

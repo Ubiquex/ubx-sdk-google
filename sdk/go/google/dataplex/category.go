@@ -38,7 +38,7 @@ var Category = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Parent":      ubx.FieldSpec{WireName: "parent"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
 	},
 }

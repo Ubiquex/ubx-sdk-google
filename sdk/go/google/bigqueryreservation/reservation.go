@@ -38,31 +38,31 @@ type Reservation_SchedulingPolicy struct {
 }
 
 var Reservation_AutoscaleFields = ubx.FieldMap{
-	"CurrentSlots": ubx.FieldSpec{WireName: "current_slots"},
-	"MaxSlots":     ubx.FieldSpec{WireName: "max_slots"},
-}
+		"CurrentSlots": ubx.FieldSpec{WireName: "current_slots"},
+		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
+	}
 
 var Reservation_ReplicationStatus_ErrorFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var Reservation_ReplicationStatusFields = ubx.FieldMap{
-	"Error": ubx.FieldSpec{
-		WireName: "error",
-		Kind:     "object",
-		Fields:   Reservation_ReplicationStatus_ErrorFields,
-	},
-	"LastErrorTime":         ubx.FieldSpec{WireName: "last_error_time"},
-	"LastReplicationTime":   ubx.FieldSpec{WireName: "last_replication_time"},
-	"SoftFailoverStartTime": ubx.FieldSpec{WireName: "soft_failover_start_time"},
-}
+		"Error": ubx.FieldSpec{
+			WireName: "error",
+			Kind: "object",
+			Fields: Reservation_ReplicationStatus_ErrorFields,
+		},
+		"LastErrorTime": ubx.FieldSpec{WireName: "last_error_time"},
+		"LastReplicationTime": ubx.FieldSpec{WireName: "last_replication_time"},
+		"SoftFailoverStartTime": ubx.FieldSpec{WireName: "soft_failover_start_time"},
+	}
 
 var Reservation_SchedulingPolicyFields = ubx.FieldMap{
-	"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-	"MaxSlots":    ubx.FieldSpec{WireName: "max_slots"},
-}
+		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
+	}
 
 type ReservationConfig struct {
 	// Auto scaling settings.
@@ -141,29 +141,29 @@ var Reservation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Autoscale": ubx.FieldSpec{
 			WireName: "autoscale",
-			Kind:     "object",
-			Fields:   Reservation_AutoscaleFields,
+			Kind: "object",
+			Fields: Reservation_AutoscaleFields,
 		},
-		"Concurrency":          ubx.FieldSpec{WireName: "concurrency"},
-		"Edition":              ubx.FieldSpec{WireName: "edition"},
-		"IgnoreIdleSlots":      ubx.FieldSpec{WireName: "ignore_idle_slots"},
-		"Labels":               ubx.FieldSpec{WireName: "labels"},
-		"MaxSlots":             ubx.FieldSpec{WireName: "max_slots"},
+		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+		"Edition": ubx.FieldSpec{WireName: "edition"},
+		"IgnoreIdleSlots": ubx.FieldSpec{WireName: "ignore_idle_slots"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
 		"MultiRegionAuxiliary": ubx.FieldSpec{WireName: "multi_region_auxiliary"},
-		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReplicationStatus": ubx.FieldSpec{
 			WireName: "replication_status",
-			Kind:     "object",
-			Fields:   Reservation_ReplicationStatusFields,
+			Kind: "object",
+			Fields: Reservation_ReplicationStatusFields,
 		},
 		"ReservationGroup": ubx.FieldSpec{WireName: "reservation_group"},
-		"ScalingMode":      ubx.FieldSpec{WireName: "scaling_mode"},
+		"ScalingMode": ubx.FieldSpec{WireName: "scaling_mode"},
 		"SchedulingPolicy": ubx.FieldSpec{
 			WireName: "scheduling_policy",
-			Kind:     "object",
-			Fields:   Reservation_SchedulingPolicyFields,
+			Kind: "object",
+			Fields: Reservation_SchedulingPolicyFields,
 		},
 		"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
-		"SlotCapacity":      ubx.FieldSpec{WireName: "slot_capacity"},
+		"SlotCapacity": ubx.FieldSpec{WireName: "slot_capacity"},
 	},
 }

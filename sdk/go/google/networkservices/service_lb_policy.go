@@ -21,17 +21,17 @@ type ServiceLbPolicy_IsolationConfig struct {
 }
 
 var ServiceLbPolicy_AutoCapacityDrainFields = ubx.FieldMap{
-	"Enable": ubx.FieldSpec{WireName: "enable"},
-}
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+	}
 
 var ServiceLbPolicy_FailoverConfigFields = ubx.FieldMap{
-	"FailoverHealthThreshold": ubx.FieldSpec{WireName: "failover_health_threshold"},
-}
+		"FailoverHealthThreshold": ubx.FieldSpec{WireName: "failover_health_threshold"},
+	}
 
 var ServiceLbPolicy_IsolationConfigFields = ubx.FieldMap{
-	"IsolationGranularity": ubx.FieldSpec{WireName: "isolation_granularity"},
-	"IsolationMode":        ubx.FieldSpec{WireName: "isolation_mode"},
-}
+		"IsolationGranularity": ubx.FieldSpec{WireName: "isolation_granularity"},
+		"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
+	}
 
 type ServiceLbPolicyConfig struct {
 	// Option to specify if an unhealthy IG/NEG should be considered for global load balancing and traffic routing.
@@ -76,22 +76,22 @@ var ServiceLbPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoCapacityDrain": ubx.FieldSpec{
 			WireName: "auto_capacity_drain",
-			Kind:     "object",
-			Fields:   ServiceLbPolicy_AutoCapacityDrainFields,
+			Kind: "object",
+			Fields: ServiceLbPolicy_AutoCapacityDrainFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FailoverConfig": ubx.FieldSpec{
 			WireName: "failover_config",
-			Kind:     "object",
-			Fields:   ServiceLbPolicy_FailoverConfigFields,
+			Kind: "object",
+			Fields: ServiceLbPolicy_FailoverConfigFields,
 		},
 		"IsolationConfig": ubx.FieldSpec{
 			WireName: "isolation_config",
-			Kind:     "object",
-			Fields:   ServiceLbPolicy_IsolationConfigFields,
+			Kind: "object",
+			Fields: ServiceLbPolicy_IsolationConfigFields,
 		},
-		"Labels":                 ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingAlgorithm": ubx.FieldSpec{WireName: "load_balancing_algorithm"},
-		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -38,9 +38,9 @@ type RestoreChannelAttrs struct {
 var RestoreChannel = ubx.ResourceBinding{
 	WireType: "google_gkebackup_restore_channel",
 	Fields: ubx.FieldMap{
-		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationProject": ubx.FieldSpec{WireName: "destination_project"},
-		"Labels":             ubx.FieldSpec{WireName: "labels"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

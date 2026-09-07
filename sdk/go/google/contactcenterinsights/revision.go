@@ -21,14 +21,14 @@ type Revision_Snapshot struct {
 }
 
 var Revision_SnapshotFields = ubx.FieldMap{
-	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"IsDefault":   ubx.FieldSpec{WireName: "is_default"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"Source":      ubx.FieldSpec{WireName: "source"},
-	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
-}
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Source": ubx.FieldSpec{WireName: "source"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 type RevisionConfig struct {
 	// Identifier. The name of the scorecard revision. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}
@@ -56,8 +56,8 @@ var Revision = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Snapshot": ubx.FieldSpec{
 			WireName: "snapshot",
-			Kind:     "object",
-			Fields:   Revision_SnapshotFields,
+			Kind: "object",
+			Fields: Revision_SnapshotFields,
 		},
 	},
 }

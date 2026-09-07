@@ -71,51 +71,51 @@ type V1alpha1ConnectionProfile_PrivateConnectivity struct {
 }
 
 var V1alpha1ConnectionProfile_ForwardSshConnectivityFields = ubx.FieldMap{
-	"Hostname":   ubx.FieldSpec{WireName: "hostname"},
-	"Password":   ubx.FieldSpec{WireName: "password"},
-	"Port":       ubx.FieldSpec{WireName: "port"},
-	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-	"Username":   ubx.FieldSpec{WireName: "username"},
-}
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var V1alpha1ConnectionProfile_GcsProfileFields = ubx.FieldMap{
-	"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-	"RootPath":   ubx.FieldSpec{WireName: "root_path"},
-}
+		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
+		"RootPath": ubx.FieldSpec{WireName: "root_path"},
+	}
 
 var V1alpha1ConnectionProfile_MysqlProfile_SslConfigFields = ubx.FieldMap{
-	"CaCertificate":        ubx.FieldSpec{WireName: "ca_certificate"},
-	"CaCertificateSet":     ubx.FieldSpec{WireName: "ca_certificate_set"},
-	"ClientCertificate":    ubx.FieldSpec{WireName: "client_certificate"},
-	"ClientCertificateSet": ubx.FieldSpec{WireName: "client_certificate_set"},
-	"ClientKey":            ubx.FieldSpec{WireName: "client_key"},
-	"ClientKeySet":         ubx.FieldSpec{WireName: "client_key_set"},
-}
+		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
+		"CaCertificateSet": ubx.FieldSpec{WireName: "ca_certificate_set"},
+		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
+		"ClientCertificateSet": ubx.FieldSpec{WireName: "client_certificate_set"},
+		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
+		"ClientKeySet": ubx.FieldSpec{WireName: "client_key_set"},
+	}
 
 var V1alpha1ConnectionProfile_MysqlProfileFields = ubx.FieldMap{
-	"Hostname": ubx.FieldSpec{WireName: "hostname"},
-	"Password": ubx.FieldSpec{WireName: "password"},
-	"Port":     ubx.FieldSpec{WireName: "port"},
-	"SslConfig": ubx.FieldSpec{
-		WireName: "ssl_config",
-		Kind:     "object",
-		Fields:   V1alpha1ConnectionProfile_MysqlProfile_SslConfigFields,
-	},
-	"Username": ubx.FieldSpec{WireName: "username"},
-}
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"SslConfig": ubx.FieldSpec{
+			WireName: "ssl_config",
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_MysqlProfile_SslConfigFields,
+		},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var V1alpha1ConnectionProfile_OracleProfileFields = ubx.FieldMap{
-	"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
-	"DatabaseService":      ubx.FieldSpec{WireName: "database_service"},
-	"Hostname":             ubx.FieldSpec{WireName: "hostname"},
-	"Password":             ubx.FieldSpec{WireName: "password"},
-	"Port":                 ubx.FieldSpec{WireName: "port"},
-	"Username":             ubx.FieldSpec{WireName: "username"},
-}
+		"ConnectionAttributes": ubx.FieldSpec{WireName: "connection_attributes"},
+		"DatabaseService": ubx.FieldSpec{WireName: "database_service"},
+		"Hostname": ubx.FieldSpec{WireName: "hostname"},
+		"Password": ubx.FieldSpec{WireName: "password"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 var V1alpha1ConnectionProfile_PrivateConnectivityFields = ubx.FieldMap{
-	"PrivateConnectionName": ubx.FieldSpec{WireName: "private_connection_name"},
-}
+		"PrivateConnectionName": ubx.FieldSpec{WireName: "private_connection_name"},
+	}
 
 type V1alpha1ConnectionProfileConfig struct {
 	// Required. Display name.
@@ -171,30 +171,30 @@ var V1alpha1ConnectionProfile = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ForwardSshConnectivity": ubx.FieldSpec{
 			WireName: "forward_ssh_connectivity",
-			Kind:     "object",
-			Fields:   V1alpha1ConnectionProfile_ForwardSshConnectivityFields,
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_ForwardSshConnectivityFields,
 		},
 		"GcsProfile": ubx.FieldSpec{
 			WireName: "gcs_profile",
-			Kind:     "object",
-			Fields:   V1alpha1ConnectionProfile_GcsProfileFields,
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_GcsProfileFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MysqlProfile": ubx.FieldSpec{
 			WireName: "mysql_profile",
-			Kind:     "object",
-			Fields:   V1alpha1ConnectionProfile_MysqlProfileFields,
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_MysqlProfileFields,
 		},
 		"NoConnectivity": ubx.FieldSpec{WireName: "no_connectivity"},
 		"OracleProfile": ubx.FieldSpec{
 			WireName: "oracle_profile",
-			Kind:     "object",
-			Fields:   V1alpha1ConnectionProfile_OracleProfileFields,
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_OracleProfileFields,
 		},
 		"PrivateConnectivity": ubx.FieldSpec{
 			WireName: "private_connectivity",
-			Kind:     "object",
-			Fields:   V1alpha1ConnectionProfile_PrivateConnectivityFields,
+			Kind: "object",
+			Fields: V1alpha1ConnectionProfile_PrivateConnectivityFields,
 		},
 		"StaticServiceIpConnectivity": ubx.FieldSpec{WireName: "static_service_ip_connectivity"},
 	},

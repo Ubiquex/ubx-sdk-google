@@ -92,102 +92,102 @@ type Pipeline_RetryPolicy struct {
 }
 
 var Pipeline_Destinations_AuthenticationConfig_GoogleOidcFields = ubx.FieldMap{
-	"Audience":       ubx.FieldSpec{WireName: "audience"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"Audience": ubx.FieldSpec{WireName: "audience"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var Pipeline_Destinations_AuthenticationConfig_OauthTokenFields = ubx.FieldMap{
-	"Scope":          ubx.FieldSpec{WireName: "scope"},
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var Pipeline_Destinations_AuthenticationConfigFields = ubx.FieldMap{
-	"GoogleOidc": ubx.FieldSpec{
-		WireName: "google_oidc",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_AuthenticationConfig_GoogleOidcFields,
-	},
-	"OauthToken": ubx.FieldSpec{
-		WireName: "oauth_token",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_AuthenticationConfig_OauthTokenFields,
-	},
-}
+		"GoogleOidc": ubx.FieldSpec{
+			WireName: "google_oidc",
+			Kind: "object",
+			Fields: Pipeline_Destinations_AuthenticationConfig_GoogleOidcFields,
+		},
+		"OauthToken": ubx.FieldSpec{
+			WireName: "oauth_token",
+			Kind: "object",
+			Fields: Pipeline_Destinations_AuthenticationConfig_OauthTokenFields,
+		},
+	}
 
 var Pipeline_Destinations_HttpEndpointFields = ubx.FieldMap{
-	"MessageBindingTemplate": ubx.FieldSpec{WireName: "message_binding_template"},
-	"Uri":                    ubx.FieldSpec{WireName: "uri"},
-}
+		"MessageBindingTemplate": ubx.FieldSpec{WireName: "message_binding_template"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Pipeline_Destinations_NetworkConfigFields = ubx.FieldMap{
-	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-}
+		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	}
 
 var Pipeline_Destinations_OutputPayloadFormat_AvroFields = ubx.FieldMap{
-	"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
-}
+		"SchemaDefinition": ubx.FieldSpec{WireName: "schema_definition"},
+	}
 
 var Pipeline_Destinations_OutputPayloadFormatFields = ubx.FieldMap{
-	"Avro": ubx.FieldSpec{
-		WireName: "avro",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_OutputPayloadFormat_AvroFields,
-	},
-	"Json": ubx.FieldSpec{WireName: "json"},
-	"Protobuf": ubx.FieldSpec{
-		WireName: "protobuf",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_OutputPayloadFormat_AvroFields,
-	},
-}
+		"Avro": ubx.FieldSpec{
+			WireName: "avro",
+			Kind: "object",
+			Fields: Pipeline_Destinations_OutputPayloadFormat_AvroFields,
+		},
+		"Json": ubx.FieldSpec{WireName: "json"},
+		"Protobuf": ubx.FieldSpec{
+			WireName: "protobuf",
+			Kind: "object",
+			Fields: Pipeline_Destinations_OutputPayloadFormat_AvroFields,
+		},
+	}
 
 var Pipeline_DestinationsFields = ubx.FieldMap{
-	"AuthenticationConfig": ubx.FieldSpec{
-		WireName: "authentication_config",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_AuthenticationConfigFields,
-	},
-	"HttpEndpoint": ubx.FieldSpec{
-		WireName: "http_endpoint",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_HttpEndpointFields,
-	},
-	"MessageBus": ubx.FieldSpec{WireName: "message_bus"},
-	"NetworkConfig": ubx.FieldSpec{
-		WireName: "network_config",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_NetworkConfigFields,
-	},
-	"OutputPayloadFormat": ubx.FieldSpec{
-		WireName: "output_payload_format",
-		Kind:     "object",
-		Fields:   Pipeline_Destinations_OutputPayloadFormatFields,
-	},
-	"Topic":    ubx.FieldSpec{WireName: "topic"},
-	"Workflow": ubx.FieldSpec{WireName: "workflow"},
-}
+		"AuthenticationConfig": ubx.FieldSpec{
+			WireName: "authentication_config",
+			Kind: "object",
+			Fields: Pipeline_Destinations_AuthenticationConfigFields,
+		},
+		"HttpEndpoint": ubx.FieldSpec{
+			WireName: "http_endpoint",
+			Kind: "object",
+			Fields: Pipeline_Destinations_HttpEndpointFields,
+		},
+		"MessageBus": ubx.FieldSpec{WireName: "message_bus"},
+		"NetworkConfig": ubx.FieldSpec{
+			WireName: "network_config",
+			Kind: "object",
+			Fields: Pipeline_Destinations_NetworkConfigFields,
+		},
+		"OutputPayloadFormat": ubx.FieldSpec{
+			WireName: "output_payload_format",
+			Kind: "object",
+			Fields: Pipeline_Destinations_OutputPayloadFormatFields,
+		},
+		"Topic": ubx.FieldSpec{WireName: "topic"},
+		"Workflow": ubx.FieldSpec{WireName: "workflow"},
+	}
 
 var Pipeline_LoggingConfigFields = ubx.FieldMap{
-	"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
-}
+		"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
+	}
 
 var Pipeline_Mediations_TransformationFields = ubx.FieldMap{
-	"TransformationTemplate": ubx.FieldSpec{WireName: "transformation_template"},
-}
+		"TransformationTemplate": ubx.FieldSpec{WireName: "transformation_template"},
+	}
 
 var Pipeline_MediationsFields = ubx.FieldMap{
-	"Transformation": ubx.FieldSpec{
-		WireName: "transformation",
-		Kind:     "object",
-		Fields:   Pipeline_Mediations_TransformationFields,
-	},
-}
+		"Transformation": ubx.FieldSpec{
+			WireName: "transformation",
+			Kind: "object",
+			Fields: Pipeline_Mediations_TransformationFields,
+		},
+	}
 
 var Pipeline_RetryPolicyFields = ubx.FieldMap{
-	"MaxAttempts":   ubx.FieldSpec{WireName: "max_attempts"},
-	"MaxRetryDelay": ubx.FieldSpec{WireName: "max_retry_delay"},
-	"MinRetryDelay": ubx.FieldSpec{WireName: "min_retry_delay"},
-}
+		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
+		"MaxRetryDelay": ubx.FieldSpec{WireName: "max_retry_delay"},
+		"MinRetryDelay": ubx.FieldSpec{WireName: "min_retry_delay"},
+	}
 
 type PipelineConfig struct {
 	// Optional. User-defined annotations. See https://google.aip.dev/128#annotations.
@@ -248,35 +248,35 @@ type PipelineAttrs struct {
 var Pipeline = ubx.ResourceBinding{
 	WireType: "google_eventarc_pipeline",
 	Fields: ubx.FieldMap{
-		"Annotations":   ubx.FieldSpec{WireName: "annotations"},
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind:     "list",
-			Fields:   Pipeline_DestinationsFields,
+			Kind: "list",
+			Fields: Pipeline_DestinationsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"InputPayloadFormat": ubx.FieldSpec{
 			WireName: "input_payload_format",
-			Kind:     "object",
-			Fields:   Pipeline_Destinations_OutputPayloadFormatFields,
+			Kind: "object",
+			Fields: Pipeline_Destinations_OutputPayloadFormatFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind:     "object",
-			Fields:   Pipeline_LoggingConfigFields,
+			Kind: "object",
+			Fields: Pipeline_LoggingConfigFields,
 		},
 		"Mediations": ubx.FieldSpec{
 			WireName: "mediations",
-			Kind:     "list",
-			Fields:   Pipeline_MediationsFields,
+			Kind: "list",
+			Fields: Pipeline_MediationsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RetryPolicy": ubx.FieldSpec{
 			WireName: "retry_policy",
-			Kind:     "object",
-			Fields:   Pipeline_RetryPolicyFields,
+			Kind: "object",
+			Fields: Pipeline_RetryPolicyFields,
 		},
 	},
 }

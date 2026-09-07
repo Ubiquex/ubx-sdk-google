@@ -13,10 +13,10 @@ type V1betaLicenseConfig_EarlyTerminationDate struct {
 }
 
 var V1betaLicenseConfig_EarlyTerminationDateFields = ubx.FieldMap{
-	"Day":   ubx.FieldSpec{WireName: "day"},
-	"Month": ubx.FieldSpec{WireName: "month"},
-	"Year":  ubx.FieldSpec{WireName: "year"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Month": ubx.FieldSpec{WireName: "month"},
+		"Year": ubx.FieldSpec{WireName: "year"},
+	}
 
 type V1betaLicenseConfigConfig struct {
 	// Optional. Whether the license config should be auto renewed when it reaches the end date.
@@ -76,22 +76,22 @@ var V1betaLicenseConfig = ubx.ResourceBinding{
 		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
 		"EarlyTerminationDate": ubx.FieldSpec{
 			WireName: "early_termination_date",
-			Kind:     "object",
-			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind: "object",
+			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
 		"EndDate": ubx.FieldSpec{
 			WireName: "end_date",
-			Kind:     "object",
-			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind: "object",
+			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
-		"FreeTrial":          ubx.FieldSpec{WireName: "free_trial"},
+		"FreeTrial": ubx.FieldSpec{WireName: "free_trial"},
 		"LastUserUpdateTime": ubx.FieldSpec{WireName: "last_user_update_time"},
-		"LicenseCount":       ubx.FieldSpec{WireName: "license_count"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"LicenseCount": ubx.FieldSpec{WireName: "license_count"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"StartDate": ubx.FieldSpec{
 			WireName: "start_date",
-			Kind:     "object",
-			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind: "object",
+			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
 		"SubscriptionTerm": ubx.FieldSpec{WireName: "subscription_term"},
 		"SubscriptionTier": ubx.FieldSpec{WireName: "subscription_tier"},

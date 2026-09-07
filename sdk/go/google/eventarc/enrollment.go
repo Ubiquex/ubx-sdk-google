@@ -49,11 +49,11 @@ var Enrollment = ubx.ResourceBinding{
 	WireType: "google_eventarc_enrollment",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CelMatch":    ubx.FieldSpec{WireName: "cel_match"},
+		"CelMatch": ubx.FieldSpec{WireName: "cel_match"},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"MessageBus":  ubx.FieldSpec{WireName: "message_bus"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"MessageBus": ubx.FieldSpec{WireName: "message_bus"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

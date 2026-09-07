@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaSampleQuery_QueryEntry_Targets struct {
 	PageNumbers any
-	Score       any
-	Uri         any
+	Score any
+	Uri any
 }
 
 type V1alphaSampleQuery_QueryEntry struct {
@@ -17,19 +17,19 @@ type V1alphaSampleQuery_QueryEntry struct {
 }
 
 var V1alphaSampleQuery_QueryEntry_TargetsFields = ubx.FieldMap{
-	"PageNumbers": ubx.FieldSpec{WireName: "page_numbers"},
-	"Score":       ubx.FieldSpec{WireName: "score"},
-	"Uri":         ubx.FieldSpec{WireName: "uri"},
-}
+		"PageNumbers": ubx.FieldSpec{WireName: "page_numbers"},
+		"Score": ubx.FieldSpec{WireName: "score"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var V1alphaSampleQuery_QueryEntryFields = ubx.FieldMap{
-	"Query": ubx.FieldSpec{WireName: "query"},
-	"Targets": ubx.FieldSpec{
-		WireName: "targets",
-		Kind:     "list",
-		Fields:   V1alphaSampleQuery_QueryEntry_TargetsFields,
-	},
-}
+		"Query": ubx.FieldSpec{WireName: "query"},
+		"Targets": ubx.FieldSpec{
+			WireName: "targets",
+			Kind: "list",
+			Fields: V1alphaSampleQuery_QueryEntry_TargetsFields,
+		},
+	}
 
 type V1alphaSampleQueryConfig struct {
 	// Identifier. The full resource name of the sample query, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sample_query_set}/sampleQueries/{sample_query}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -53,8 +53,8 @@ var V1alphaSampleQuery = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"QueryEntry": ubx.FieldSpec{
 			WireName: "query_entry",
-			Kind:     "object",
-			Fields:   V1alphaSampleQuery_QueryEntryFields,
+			Kind: "object",
+			Fields: V1alphaSampleQuery_QueryEntryFields,
 		},
 	},
 }

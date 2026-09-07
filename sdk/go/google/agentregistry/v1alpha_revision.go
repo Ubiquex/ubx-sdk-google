@@ -29,21 +29,21 @@ type V1alphaRevision_GcsSource struct {
 }
 
 var V1alphaRevision_ArchiveUploadSourceFields = ubx.FieldMap{
-	"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
-}
+		"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
+	}
 
 var V1alphaRevision_FrontmatterFields = ubx.FieldMap{
-	"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"License":       ubx.FieldSpec{WireName: "license"},
-	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
-	"Name":          ubx.FieldSpec{WireName: "name"},
-}
+		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"License": ubx.FieldSpec{WireName: "license"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var V1alphaRevision_GcsSourceFields = ubx.FieldMap{
-	"Generation": ubx.FieldSpec{WireName: "generation"},
-	"Uri":        ubx.FieldSpec{WireName: "uri"},
-}
+		"Generation": ubx.FieldSpec{WireName: "generation"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 type V1alphaRevisionConfig struct {
 	// Direct write-only raw archive payload upload.
@@ -82,18 +82,18 @@ var V1alphaRevision = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ArchiveUploadSource": ubx.FieldSpec{
 			WireName: "archive_upload_source",
-			Kind:     "object",
-			Fields:   V1alphaRevision_ArchiveUploadSourceFields,
+			Kind: "object",
+			Fields: V1alphaRevision_ArchiveUploadSourceFields,
 		},
 		"Frontmatter": ubx.FieldSpec{
 			WireName: "frontmatter",
-			Kind:     "object",
-			Fields:   V1alphaRevision_FrontmatterFields,
+			Kind: "object",
+			Fields: V1alphaRevision_FrontmatterFields,
 		},
 		"GcsSource": ubx.FieldSpec{
 			WireName: "gcs_source",
-			Kind:     "object",
-			Fields:   V1alphaRevision_GcsSourceFields,
+			Kind: "object",
+			Fields: V1alphaRevision_GcsSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

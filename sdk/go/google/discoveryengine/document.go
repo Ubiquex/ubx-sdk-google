@@ -52,49 +52,49 @@ type Document_IndexStatus struct {
 }
 
 var Document_AclInfo_Readers_PrincipalsFields = ubx.FieldMap{
-	"ExternalEntityId": ubx.FieldSpec{WireName: "external_entity_id"},
-	"GroupId":          ubx.FieldSpec{WireName: "group_id"},
-	"UserId":           ubx.FieldSpec{WireName: "user_id"},
-}
+		"ExternalEntityId": ubx.FieldSpec{WireName: "external_entity_id"},
+		"GroupId": ubx.FieldSpec{WireName: "group_id"},
+		"UserId": ubx.FieldSpec{WireName: "user_id"},
+	}
 
 var Document_AclInfo_ReadersFields = ubx.FieldMap{
-	"IdpWide": ubx.FieldSpec{WireName: "idp_wide"},
-	"Principals": ubx.FieldSpec{
-		WireName: "principals",
-		Kind:     "list",
-		Fields:   Document_AclInfo_Readers_PrincipalsFields,
-	},
-}
+		"IdpWide": ubx.FieldSpec{WireName: "idp_wide"},
+		"Principals": ubx.FieldSpec{
+			WireName: "principals",
+			Kind: "list",
+			Fields: Document_AclInfo_Readers_PrincipalsFields,
+		},
+	}
 
 var Document_AclInfoFields = ubx.FieldMap{
-	"Readers": ubx.FieldSpec{
-		WireName: "readers",
-		Kind:     "list",
-		Fields:   Document_AclInfo_ReadersFields,
-	},
-}
+		"Readers": ubx.FieldSpec{
+			WireName: "readers",
+			Kind: "list",
+			Fields: Document_AclInfo_ReadersFields,
+		},
+	}
 
 var Document_ContentFields = ubx.FieldMap{
-	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
-	"Uri":      ubx.FieldSpec{WireName: "uri"},
-}
+		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"RawBytes": ubx.FieldSpec{WireName: "raw_bytes"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Document_IndexStatus_ErrorSamplesFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var Document_IndexStatusFields = ubx.FieldMap{
-	"ErrorSamples": ubx.FieldSpec{
-		WireName: "error_samples",
-		Kind:     "list",
-		Fields:   Document_IndexStatus_ErrorSamplesFields,
-	},
-	"IndexTime":      ubx.FieldSpec{WireName: "index_time"},
-	"PendingMessage": ubx.FieldSpec{WireName: "pending_message"},
-}
+		"ErrorSamples": ubx.FieldSpec{
+			WireName: "error_samples",
+			Kind: "list",
+			Fields: Document_IndexStatus_ErrorSamplesFields,
+		},
+		"IndexTime": ubx.FieldSpec{WireName: "index_time"},
+		"PendingMessage": ubx.FieldSpec{WireName: "pending_message"},
+	}
 
 type DocumentConfig struct {
 	// ACL Information of the Document.
@@ -147,24 +147,24 @@ var Document = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AclInfo": ubx.FieldSpec{
 			WireName: "acl_info",
-			Kind:     "object",
-			Fields:   Document_AclInfoFields,
+			Kind: "object",
+			Fields: Document_AclInfoFields,
 		},
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind:     "object",
-			Fields:   Document_ContentFields,
+			Kind: "object",
+			Fields: Document_ContentFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"IndexStatus": ubx.FieldSpec{
 			WireName: "index_status",
-			Kind:     "object",
-			Fields:   Document_IndexStatusFields,
+			Kind: "object",
+			Fields: Document_IndexStatusFields,
 		},
-		"JsonData":         ubx.FieldSpec{WireName: "json_data"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"JsonData": ubx.FieldSpec{WireName: "json_data"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ParentDocumentId": ubx.FieldSpec{WireName: "parent_document_id"},
-		"SchemaId":         ubx.FieldSpec{WireName: "schema_id"},
-		"StructData":       ubx.FieldSpec{WireName: "struct_data"},
+		"SchemaId": ubx.FieldSpec{WireName: "schema_id"},
+		"StructData": ubx.FieldSpec{WireName: "struct_data"},
 	},
 }

@@ -12,18 +12,18 @@ type V1alphaService_AgentSpec struct {
 
 type V1alphaService_Interfaces struct {
 	ProtocolBinding any
-	Url             any
+	Url any
 }
 
 var V1alphaService_AgentSpecFields = ubx.FieldMap{
-	"Content": ubx.FieldSpec{WireName: "content"},
-	"Type":    ubx.FieldSpec{WireName: "type"},
-}
+		"Content": ubx.FieldSpec{WireName: "content"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var V1alphaService_InterfacesFields = ubx.FieldMap{
-	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-	"Url":             ubx.FieldSpec{WireName: "url"},
-}
+		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
 
 type V1alphaServiceConfig struct {
 	// The spec of the agent.
@@ -70,25 +70,25 @@ var V1alphaService = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentSpec": ubx.FieldSpec{
 			WireName: "agent_spec",
-			Kind:     "object",
-			Fields:   V1alphaService_AgentSpecFields,
+			Kind: "object",
+			Fields: V1alphaService_AgentSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EndpointSpec": ubx.FieldSpec{
 			WireName: "endpoint_spec",
-			Kind:     "object",
-			Fields:   V1alphaService_AgentSpecFields,
+			Kind: "object",
+			Fields: V1alphaService_AgentSpecFields,
 		},
 		"Interfaces": ubx.FieldSpec{
 			WireName: "interfaces",
-			Kind:     "list",
-			Fields:   V1alphaService_InterfacesFields,
+			Kind: "list",
+			Fields: V1alphaService_InterfacesFields,
 		},
 		"McpServerSpec": ubx.FieldSpec{
 			WireName: "mcp_server_spec",
-			Kind:     "object",
-			Fields:   V1alphaService_AgentSpecFields,
+			Kind: "object",
+			Fields: V1alphaService_AgentSpecFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

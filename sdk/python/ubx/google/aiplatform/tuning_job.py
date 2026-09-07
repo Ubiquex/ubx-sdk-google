@@ -169,8 +169,6 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
     language_codes: Any = None
     # Deprecated: Use top-level `language_codes` instead. Provides hints to the model about possible languages present in the audio.
     language_hints: Any = None
-    # Optional. Configures transcription mode. Supported values: `VERBATIM`, `SMART`. If unspecified, defaults to `VERBATIM` transcription. In `SMART` mode, the model performs disfluency removal (eliminating filler words, repetitions, and false starts), light grammatical cleanup, automatic formatting (paragraphs, bullet points, numbered lists), and minor user edits (inline self-corrections). Timestamps and diarization are incompatible with mode `SMART`.
-    mode: Any = None
     # Optional. Configures word-level timestamp generation.
     word_timestamp: Any = None
 
@@ -367,6 +365,13 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
     thinking_level: Any = None
 
 @dataclasses.dataclass
+class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfig:
+    # Optional. If `true`, the model will generate audio when the target language is spoken, essentially it will parrot the input. If `false`, we will not produce audio for the target language.
+    echo_target_language: Any = None
+    # Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr").
+    target_language_code: Any = None
+
+@dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig:
     # Optional. If enabled, audio timestamps will be included in the request to the model. This can be useful for synchronizing audio with other modalities in the response.
     audio_timestamp: Any = None
@@ -416,6 +421,8 @@ class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_Generation
     top_k: Any = None
     # Optional. Specifies the nucleus sampling threshold. The model considers only the smallest set of tokens whose cumulative probability is at least `top_p`. This helps generate more diverse and less repetitive responses. For example, a `top_p` of 0.9 means the model considers tokens until the cumulative probability of the tokens to select from reaches 0.9. It's recommended to adjust either temperature or `top_p`, but not both.
     top_p: Any = None
+    # Config for translation features.
+    translation_config: Any = None
 
 @dataclasses.dataclass
 class TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig:
@@ -973,7 +980,6 @@ _TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfi
         kind="object",
         fields=_TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
     ),
-    "mode": ubx.FieldSpec(wire_name="mode"),
     "word_timestamp": ubx.FieldSpec(wire_name="word_timestamp"),
 }
 
@@ -1152,6 +1158,11 @@ _TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfi
     "thinking_level": ubx.FieldSpec(wire_name="thinking_level"),
 }
 
+_TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfigFields = {
+    "echo_target_language": ubx.FieldSpec(wire_name="echo_target_language"),
+    "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
+}
+
 _TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfigFields = {
     "audio_timestamp": ubx.FieldSpec(wire_name="audio_timestamp"),
     "audio_transcription_config": ubx.FieldSpec(
@@ -1205,6 +1216,11 @@ _TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfi
     ),
     "top_k": ubx.FieldSpec(wire_name="top_k"),
     "top_p": ubx.FieldSpec(wire_name="top_p"),
+    "translation_config": ubx.FieldSpec(
+        wire_name="translation_config",
+        kind="object",
+        fields=_TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfig_GenerationConfig_TranslationConfigFields,
+    ),
 }
 
 _TuningJob_SupervisedTuningSpec_EvaluationConfig_AutoraterConfigFields = {

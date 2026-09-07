@@ -15,11 +15,11 @@ type Attribute_AllowedValues struct {
 }
 
 var Attribute_AllowedValuesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+	}
 
 type AttributeConfig struct {
 	// Optional. The list of allowed values when the attribute value is of type enum. This is required when the data_type of the attribute is ENUM. The maximum number of allowed values of an attribute will be 1000.
@@ -68,14 +68,14 @@ var Attribute = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowedValues": ubx.FieldSpec{
 			WireName: "allowed_values",
-			Kind:     "list",
-			Fields:   Attribute_AllowedValuesFields,
+			Kind: "list",
+			Fields: Attribute_AllowedValuesFields,
 		},
 		"Cardinality": ubx.FieldSpec{WireName: "cardinality"},
-		"DataType":    ubx.FieldSpec{WireName: "data_type"},
+		"DataType": ubx.FieldSpec{WireName: "data_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
-		"Scope":       ubx.FieldSpec{WireName: "scope"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Scope": ubx.FieldSpec{WireName: "scope"},
 	},
 }

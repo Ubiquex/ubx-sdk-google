@@ -29,7 +29,7 @@ var Annotation = ubx.ResourceBinding{
 	WireType: "google_rapidmigrationassessment_annotation",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
-		"Type":   ubx.FieldSpec{WireName: "type"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

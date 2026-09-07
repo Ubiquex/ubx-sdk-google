@@ -184,148 +184,148 @@ type WorkstationConfig_ReadinessChecks struct {
 }
 
 var WorkstationConfig_AllowedPortsFields = ubx.FieldMap{
-	"First": ubx.FieldSpec{WireName: "first"},
-	"Last":  ubx.FieldSpec{WireName: "last"},
-}
+		"First": ubx.FieldSpec{WireName: "first"},
+		"Last": ubx.FieldSpec{WireName: "last"},
+	}
 
 var WorkstationConfig_ContainerFields = ubx.FieldMap{
-	"Args":       ubx.FieldSpec{WireName: "args"},
-	"Command":    ubx.FieldSpec{WireName: "command"},
-	"Env":        ubx.FieldSpec{WireName: "env"},
-	"Image":      ubx.FieldSpec{WireName: "image"},
-	"RunAsUser":  ubx.FieldSpec{WireName: "run_as_user"},
-	"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
-}
+		"Args": ubx.FieldSpec{WireName: "args"},
+		"Command": ubx.FieldSpec{WireName: "command"},
+		"Env": ubx.FieldSpec{WireName: "env"},
+		"Image": ubx.FieldSpec{WireName: "image"},
+		"RunAsUser": ubx.FieldSpec{WireName: "run_as_user"},
+		"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
+	}
 
 var WorkstationConfig_EncryptionKeyFields = ubx.FieldMap{
-	"KmsKey":               ubx.FieldSpec{WireName: "kms_key"},
-	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-}
+		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	}
 
 var WorkstationConfig_EphemeralDirectories_GcePdFields = ubx.FieldMap{
-	"DiskType":       ubx.FieldSpec{WireName: "disk_type"},
-	"ReadOnly":       ubx.FieldSpec{WireName: "read_only"},
-	"SourceImage":    ubx.FieldSpec{WireName: "source_image"},
-	"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-}
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+	}
 
 var WorkstationConfig_EphemeralDirectoriesFields = ubx.FieldMap{
-	"GcePd": ubx.FieldSpec{
-		WireName: "gce_pd",
-		Kind:     "object",
-		Fields:   WorkstationConfig_EphemeralDirectories_GcePdFields,
-	},
-	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-}
+		"GcePd": ubx.FieldSpec{
+			WireName: "gce_pd",
+			Kind: "object",
+			Fields: WorkstationConfig_EphemeralDirectories_GcePdFields,
+		},
+		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	}
 
 var WorkstationConfig_Host_GceInstance_AcceleratorsFields = ubx.FieldMap{
-	"Count": ubx.FieldSpec{WireName: "count"},
-	"Type":  ubx.FieldSpec{WireName: "type"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var WorkstationConfig_Host_GceInstance_BoostConfigsFields = ubx.FieldMap{
-	"Accelerators": ubx.FieldSpec{
-		WireName: "accelerators",
-		Kind:     "list",
-		Fields:   WorkstationConfig_Host_GceInstance_AcceleratorsFields,
-	},
-	"BootDiskSizeGb":             ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-	"Id":                         ubx.FieldSpec{WireName: "id"},
-	"MachineType":                ubx.FieldSpec{WireName: "machine_type"},
-	"PoolSize":                   ubx.FieldSpec{WireName: "pool_size"},
-}
+		"Accelerators": ubx.FieldSpec{
+			WireName: "accelerators",
+			Kind: "list",
+			Fields: WorkstationConfig_Host_GceInstance_AcceleratorsFields,
+		},
+		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"PoolSize": ubx.FieldSpec{WireName: "pool_size"},
+	}
 
 var WorkstationConfig_Host_GceInstance_ConfidentialInstanceConfigFields = ubx.FieldMap{
-	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-}
+		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	}
 
 var WorkstationConfig_Host_GceInstance_ShieldedInstanceConfigFields = ubx.FieldMap{
-	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
-	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
-}
+		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
+	}
 
 var WorkstationConfig_Host_GceInstanceFields = ubx.FieldMap{
-	"Accelerators": ubx.FieldSpec{
-		WireName: "accelerators",
-		Kind:     "list",
-		Fields:   WorkstationConfig_Host_GceInstance_AcceleratorsFields,
-	},
-	"BoostConfigs": ubx.FieldSpec{
-		WireName: "boost_configs",
-		Kind:     "list",
-		Fields:   WorkstationConfig_Host_GceInstance_BoostConfigsFields,
-	},
-	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-	"ConfidentialInstanceConfig": ubx.FieldSpec{
-		WireName: "confidential_instance_config",
-		Kind:     "object",
-		Fields:   WorkstationConfig_Host_GceInstance_ConfidentialInstanceConfigFields,
-	},
-	"DisablePublicIpAddresses":   ubx.FieldSpec{WireName: "disable_public_ip_addresses"},
-	"DisableSsh":                 ubx.FieldSpec{WireName: "disable_ssh"},
-	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-	"InstanceMetadata":           ubx.FieldSpec{WireName: "instance_metadata"},
-	"MachineType":                ubx.FieldSpec{WireName: "machine_type"},
-	"PoolSize":                   ubx.FieldSpec{WireName: "pool_size"},
-	"PooledInstances":            ubx.FieldSpec{WireName: "pooled_instances"},
-	"ServiceAccount":             ubx.FieldSpec{WireName: "service_account"},
-	"ServiceAccountScopes":       ubx.FieldSpec{WireName: "service_account_scopes"},
-	"ShieldedInstanceConfig": ubx.FieldSpec{
-		WireName: "shielded_instance_config",
-		Kind:     "object",
-		Fields:   WorkstationConfig_Host_GceInstance_ShieldedInstanceConfigFields,
-	},
-	"StartupScriptUri": ubx.FieldSpec{WireName: "startup_script_uri"},
-	"Tags":             ubx.FieldSpec{WireName: "tags"},
-	"VmTags":           ubx.FieldSpec{WireName: "vm_tags"},
-}
+		"Accelerators": ubx.FieldSpec{
+			WireName: "accelerators",
+			Kind: "list",
+			Fields: WorkstationConfig_Host_GceInstance_AcceleratorsFields,
+		},
+		"BoostConfigs": ubx.FieldSpec{
+			WireName: "boost_configs",
+			Kind: "list",
+			Fields: WorkstationConfig_Host_GceInstance_BoostConfigsFields,
+		},
+		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+		"ConfidentialInstanceConfig": ubx.FieldSpec{
+			WireName: "confidential_instance_config",
+			Kind: "object",
+			Fields: WorkstationConfig_Host_GceInstance_ConfidentialInstanceConfigFields,
+		},
+		"DisablePublicIpAddresses": ubx.FieldSpec{WireName: "disable_public_ip_addresses"},
+		"DisableSsh": ubx.FieldSpec{WireName: "disable_ssh"},
+		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+		"InstanceMetadata": ubx.FieldSpec{WireName: "instance_metadata"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"PoolSize": ubx.FieldSpec{WireName: "pool_size"},
+		"PooledInstances": ubx.FieldSpec{WireName: "pooled_instances"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"ServiceAccountScopes": ubx.FieldSpec{WireName: "service_account_scopes"},
+		"ShieldedInstanceConfig": ubx.FieldSpec{
+			WireName: "shielded_instance_config",
+			Kind: "object",
+			Fields: WorkstationConfig_Host_GceInstance_ShieldedInstanceConfigFields,
+		},
+		"StartupScriptUri": ubx.FieldSpec{WireName: "startup_script_uri"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"VmTags": ubx.FieldSpec{WireName: "vm_tags"},
+	}
 
 var WorkstationConfig_HostFields = ubx.FieldMap{
-	"GceInstance": ubx.FieldSpec{
-		WireName: "gce_instance",
-		Kind:     "object",
-		Fields:   WorkstationConfig_Host_GceInstanceFields,
-	},
-}
+		"GceInstance": ubx.FieldSpec{
+			WireName: "gce_instance",
+			Kind: "object",
+			Fields: WorkstationConfig_Host_GceInstanceFields,
+		},
+	}
 
 var WorkstationConfig_PersistentDirectories_GceHdFields = ubx.FieldMap{
-	"ArchiveTimeout": ubx.FieldSpec{WireName: "archive_timeout"},
-	"MaxSizeGb":      ubx.FieldSpec{WireName: "max_size_gb"},
-	"ReclaimPolicy":  ubx.FieldSpec{WireName: "reclaim_policy"},
-	"SizeGb":         ubx.FieldSpec{WireName: "size_gb"},
-	"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-}
+		"ArchiveTimeout": ubx.FieldSpec{WireName: "archive_timeout"},
+		"MaxSizeGb": ubx.FieldSpec{WireName: "max_size_gb"},
+		"ReclaimPolicy": ubx.FieldSpec{WireName: "reclaim_policy"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+	}
 
 var WorkstationConfig_PersistentDirectories_GcePdFields = ubx.FieldMap{
-	"ArchiveTimeout": ubx.FieldSpec{WireName: "archive_timeout"},
-	"DiskType":       ubx.FieldSpec{WireName: "disk_type"},
-	"FsType":         ubx.FieldSpec{WireName: "fs_type"},
-	"MaxSizeGb":      ubx.FieldSpec{WireName: "max_size_gb"},
-	"ReclaimPolicy":  ubx.FieldSpec{WireName: "reclaim_policy"},
-	"SizeGb":         ubx.FieldSpec{WireName: "size_gb"},
-	"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-}
+		"ArchiveTimeout": ubx.FieldSpec{WireName: "archive_timeout"},
+		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+		"FsType": ubx.FieldSpec{WireName: "fs_type"},
+		"MaxSizeGb": ubx.FieldSpec{WireName: "max_size_gb"},
+		"ReclaimPolicy": ubx.FieldSpec{WireName: "reclaim_policy"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
+	}
 
 var WorkstationConfig_PersistentDirectoriesFields = ubx.FieldMap{
-	"GceHd": ubx.FieldSpec{
-		WireName: "gce_hd",
-		Kind:     "object",
-		Fields:   WorkstationConfig_PersistentDirectories_GceHdFields,
-	},
-	"GcePd": ubx.FieldSpec{
-		WireName: "gce_pd",
-		Kind:     "object",
-		Fields:   WorkstationConfig_PersistentDirectories_GcePdFields,
-	},
-	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-}
+		"GceHd": ubx.FieldSpec{
+			WireName: "gce_hd",
+			Kind: "object",
+			Fields: WorkstationConfig_PersistentDirectories_GceHdFields,
+		},
+		"GcePd": ubx.FieldSpec{
+			WireName: "gce_pd",
+			Kind: "object",
+			Fields: WorkstationConfig_PersistentDirectories_GcePdFields,
+		},
+		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	}
 
 var WorkstationConfig_ReadinessChecksFields = ubx.FieldMap{
-	"Path": ubx.FieldSpec{WireName: "path"},
-	"Port": ubx.FieldSpec{WireName: "port"},
-}
+		"Path": ubx.FieldSpec{WireName: "path"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+	}
 
 type WorkstationConfigConfig struct {
 	// Optional. A list of PortRanges specifying single ports or ranges of ports that are externally accessible in the workstation. Allowed ports must be one of 22, 80, or within range 1024-65535. If not specified defaults to ports 22, 80, and ports 1024-65535.
@@ -350,7 +350,9 @@ type WorkstationConfigConfig struct {
 	GrantWorkstationAdminRoleOnCreate any
 	// Runtime host for a workstation.
 	Host any
-	// Optional. Number of seconds to wait before automatically stopping a workstation after it last received user traffic. A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration should never time out due to idleness. Provide [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration) terminated by `s` for seconds—for example, `"7200s"` (2 hours). The default is `"1200s"` (20 minutes).
+	// Optional. The action to take when the workstation has been idle for the duration specified in idle_timeout. Defaults to STOP.
+	IdleAction any
+	// Optional. Number of seconds to wait before automatically stopping or suspending a workstation after it last received user traffic. See idle_action to configure whether to stop or suspend idle workstations. A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration should never time out due to idleness. Provide [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration) terminated by `s` for seconds—for example, `"7200s"` (2 hours). The default is `"1200s"` (20 minutes).
 	IdleTimeout any
 	// Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation configuration and that are also propagated to the underlying Compute Engine resources.
 	Labels any
@@ -364,7 +366,7 @@ type WorkstationConfigConfig struct {
 	ReadinessChecks any
 	// Optional. Immutable. Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`. If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created.
 	ReplicaZones any
-	// Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates.
+	// Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Note: This timeout applies to workstations in the following states: * STATE_RUNNING * STATE_SUSPENDED Suspending a workstation does not reset this timeout. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates.
 	RunningTimeout any
 }
 
@@ -399,7 +401,9 @@ type WorkstationConfigAttrs struct {
 	GrantWorkstationAdminRoleOnCreate any
 	// Runtime host for a workstation.
 	Host any
-	// Optional. Number of seconds to wait before automatically stopping a workstation after it last received user traffic. A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration should never time out due to idleness. Provide [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration) terminated by `s` for seconds—for example, `"7200s"` (2 hours). The default is `"1200s"` (20 minutes).
+	// Optional. The action to take when the workstation has been idle for the duration specified in idle_timeout. Defaults to STOP.
+	IdleAction any
+	// Optional. Number of seconds to wait before automatically stopping or suspending a workstation after it last received user traffic. See idle_action to configure whether to stop or suspend idle workstations. A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration should never time out due to idleness. Provide [duration](https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#duration) terminated by `s` for seconds—for example, `"7200s"` (2 hours). The default is `"1200s"` (20 minutes).
 	IdleTimeout any
 	// Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation configuration and that are also propagated to the underlying Compute Engine resources.
 	Labels any
@@ -415,7 +419,7 @@ type WorkstationConfigAttrs struct {
 	Reconciling any
 	// Optional. Immutable. Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`. If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created.
 	ReplicaZones any
-	// Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates.
+	// Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Note: This timeout applies to workstations in the following states: * STATE_RUNNING * STATE_SUSPENDED Suspending a workstation does not reset this timeout. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates.
 	RunningTimeout any
 	// Output only. A system-assigned unique identifier for this workstation configuration.
 	Uid any
@@ -428,50 +432,51 @@ var WorkstationConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowedPorts": ubx.FieldSpec{
 			WireName: "allowed_ports",
-			Kind:     "list",
-			Fields:   WorkstationConfig_AllowedPortsFields,
+			Kind: "list",
+			Fields: WorkstationConfig_AllowedPortsFields,
 		},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Container": ubx.FieldSpec{
 			WireName: "container",
-			Kind:     "object",
-			Fields:   WorkstationConfig_ContainerFields,
+			Kind: "object",
+			Fields: WorkstationConfig_ContainerFields,
 		},
 		"DisableTcpConnections": ubx.FieldSpec{WireName: "disable_tcp_connections"},
-		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
-		"EnableAuditAgent":      ubx.FieldSpec{WireName: "enable_audit_agent"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"EnableAuditAgent": ubx.FieldSpec{WireName: "enable_audit_agent"},
 		"EncryptionKey": ubx.FieldSpec{
 			WireName: "encryption_key",
-			Kind:     "object",
-			Fields:   WorkstationConfig_EncryptionKeyFields,
+			Kind: "object",
+			Fields: WorkstationConfig_EncryptionKeyFields,
 		},
 		"EphemeralDirectories": ubx.FieldSpec{
 			WireName: "ephemeral_directories",
-			Kind:     "list",
-			Fields:   WorkstationConfig_EphemeralDirectoriesFields,
+			Kind: "list",
+			Fields: WorkstationConfig_EphemeralDirectoriesFields,
 		},
-		"Etag":                              ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GrantWorkstationAdminRoleOnCreate": ubx.FieldSpec{WireName: "grant_workstation_admin_role_on_create"},
 		"Host": ubx.FieldSpec{
 			WireName: "host",
-			Kind:     "object",
-			Fields:   WorkstationConfig_HostFields,
+			Kind: "object",
+			Fields: WorkstationConfig_HostFields,
 		},
-		"IdleTimeout":           ubx.FieldSpec{WireName: "idle_timeout"},
-		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"IdleAction": ubx.FieldSpec{WireName: "idle_action"},
+		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MaxUsableWorkstations": ubx.FieldSpec{WireName: "max_usable_workstations"},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PersistentDirectories": ubx.FieldSpec{
 			WireName: "persistent_directories",
-			Kind:     "list",
-			Fields:   WorkstationConfig_PersistentDirectoriesFields,
+			Kind: "list",
+			Fields: WorkstationConfig_PersistentDirectoriesFields,
 		},
 		"ReadinessChecks": ubx.FieldSpec{
 			WireName: "readiness_checks",
-			Kind:     "list",
-			Fields:   WorkstationConfig_ReadinessChecksFields,
+			Kind: "list",
+			Fields: WorkstationConfig_ReadinessChecksFields,
 		},
-		"ReplicaZones":   ubx.FieldSpec{WireName: "replica_zones"},
+		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
 		"RunningTimeout": ubx.FieldSpec{WireName: "running_timeout"},
 	},
 }

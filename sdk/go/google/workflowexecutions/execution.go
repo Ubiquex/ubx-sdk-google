@@ -55,56 +55,56 @@ type Execution_Status struct {
 }
 
 var Execution_Error_StackTrace_Elements_PositionFields = ubx.FieldMap{
-	"Column": ubx.FieldSpec{WireName: "column"},
-	"Length": ubx.FieldSpec{WireName: "length"},
-	"Line":   ubx.FieldSpec{WireName: "line"},
-}
+		"Column": ubx.FieldSpec{WireName: "column"},
+		"Length": ubx.FieldSpec{WireName: "length"},
+		"Line": ubx.FieldSpec{WireName: "line"},
+	}
 
 var Execution_Error_StackTrace_ElementsFields = ubx.FieldMap{
-	"Position": ubx.FieldSpec{
-		WireName: "position",
-		Kind:     "object",
-		Fields:   Execution_Error_StackTrace_Elements_PositionFields,
-	},
-	"Routine": ubx.FieldSpec{WireName: "routine"},
-	"Step":    ubx.FieldSpec{WireName: "step"},
-}
+		"Position": ubx.FieldSpec{
+			WireName: "position",
+			Kind: "object",
+			Fields: Execution_Error_StackTrace_Elements_PositionFields,
+		},
+		"Routine": ubx.FieldSpec{WireName: "routine"},
+		"Step": ubx.FieldSpec{WireName: "step"},
+	}
 
 var Execution_Error_StackTraceFields = ubx.FieldMap{
-	"Elements": ubx.FieldSpec{
-		WireName: "elements",
-		Kind:     "list",
-		Fields:   Execution_Error_StackTrace_ElementsFields,
-	},
-}
+		"Elements": ubx.FieldSpec{
+			WireName: "elements",
+			Kind: "list",
+			Fields: Execution_Error_StackTrace_ElementsFields,
+		},
+	}
 
 var Execution_ErrorFields = ubx.FieldMap{
-	"Context": ubx.FieldSpec{WireName: "context"},
-	"Payload": ubx.FieldSpec{WireName: "payload"},
-	"StackTrace": ubx.FieldSpec{
-		WireName: "stack_trace",
-		Kind:     "object",
-		Fields:   Execution_Error_StackTraceFields,
-	},
-}
+		"Context": ubx.FieldSpec{WireName: "context"},
+		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"StackTrace": ubx.FieldSpec{
+			WireName: "stack_trace",
+			Kind: "object",
+			Fields: Execution_Error_StackTraceFields,
+		},
+	}
 
 var Execution_StateErrorFields = ubx.FieldMap{
-	"Details": ubx.FieldSpec{WireName: "details"},
-	"Type":    ubx.FieldSpec{WireName: "type"},
-}
+		"Details": ubx.FieldSpec{WireName: "details"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Execution_Status_CurrentStepsFields = ubx.FieldMap{
-	"Routine": ubx.FieldSpec{WireName: "routine"},
-	"Step":    ubx.FieldSpec{WireName: "step"},
-}
+		"Routine": ubx.FieldSpec{WireName: "routine"},
+		"Step": ubx.FieldSpec{WireName: "step"},
+	}
 
 var Execution_StatusFields = ubx.FieldMap{
-	"CurrentSteps": ubx.FieldSpec{
-		WireName: "current_steps",
-		Kind:     "list",
-		Fields:   Execution_Status_CurrentStepsFields,
-	},
-}
+		"CurrentSteps": ubx.FieldSpec{
+			WireName: "current_steps",
+			Kind: "list",
+			Fields: Execution_Status_CurrentStepsFields,
+		},
+	}
 
 type ExecutionConfig struct {
 	// Input parameters of the execution represented as a JSON string. The size limit is 32KB. *Note*: If you are using the REST API directly to run your workflow, you must escape any JSON string value of `argument`. Example: `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
@@ -163,25 +163,25 @@ type ExecutionAttrs struct {
 var Execution = ubx.ResourceBinding{
 	WireType: "google_workflowexecutions_execution",
 	Fields: ubx.FieldMap{
-		"Argument":     ubx.FieldSpec{WireName: "argument"},
+		"Argument": ubx.FieldSpec{WireName: "argument"},
 		"CallLogLevel": ubx.FieldSpec{WireName: "call_log_level"},
 		"DisableConcurrencyQuotaOverflowBuffering": ubx.FieldSpec{WireName: "disable_concurrency_quota_overflow_buffering"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind:     "object",
-			Fields:   Execution_ErrorFields,
+			Kind: "object",
+			Fields: Execution_ErrorFields,
 		},
 		"ExecutionHistoryLevel": ubx.FieldSpec{WireName: "execution_history_level"},
-		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"StateError": ubx.FieldSpec{
 			WireName: "state_error",
-			Kind:     "object",
-			Fields:   Execution_StateErrorFields,
+			Kind: "object",
+			Fields: Execution_StateErrorFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind:     "object",
-			Fields:   Execution_StatusFields,
+			Kind: "object",
+			Fields: Execution_StatusFields,
 		},
 	},
 }

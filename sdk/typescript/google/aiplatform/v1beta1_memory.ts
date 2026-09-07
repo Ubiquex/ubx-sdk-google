@@ -38,6 +38,8 @@ const V1beta1Memory_TopicsFields: FieldMap = {
 };
 
 export interface V1beta1MemoryConfig {
+  /** Optional. Represents the context of the memory. */
+  context?: string | Computed<string>;
   /** Optional. Represents the description of the Memory. */
   description?: string | Computed<string>;
   /** Optional. Input only. Indicates whether no revision will be created for this request. */
@@ -71,6 +73,8 @@ export interface V1beta1MemoryConfig {
 }
 
 export interface V1beta1MemoryAttrs {
+  /** Optional. Represents the context of the memory. */
+  context: string;
   /** Output only. Represents the timestamp when this Memory was created. */
   createTime: string;
   /** Optional. Represents the description of the Memory. */
@@ -110,6 +114,7 @@ export interface V1beta1MemoryAttrs {
 export const V1beta1Memory: ResourceBinding<V1beta1MemoryConfig, V1beta1MemoryAttrs> = {
   wireType: "google_aiplatform_v1beta1_memory",
   fields: {
+    context: "context",
     description: "description",
     disableMemoryRevisions: "disable_memory_revisions",
     displayName: "display_name",

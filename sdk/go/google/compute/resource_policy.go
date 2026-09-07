@@ -125,126 +125,126 @@ type ResourcePolicy_WorkloadPolicy struct {
 }
 
 var ResourcePolicy_GroupPlacementPolicyFields = ubx.FieldMap{
-	"AcceleratorTopologyMode": ubx.FieldSpec{WireName: "accelerator_topology_mode"},
-	"AvailabilityDomainCount": ubx.FieldSpec{WireName: "availability_domain_count"},
-	"Collocation":             ubx.FieldSpec{WireName: "collocation"},
-	"GpuTopology":             ubx.FieldSpec{WireName: "gpu_topology"},
-	"VmCount":                 ubx.FieldSpec{WireName: "vm_count"},
-}
+		"AcceleratorTopologyMode": ubx.FieldSpec{WireName: "accelerator_topology_mode"},
+		"AvailabilityDomainCount": ubx.FieldSpec{WireName: "availability_domain_count"},
+		"Collocation": ubx.FieldSpec{WireName: "collocation"},
+		"GpuTopology": ubx.FieldSpec{WireName: "gpu_topology"},
+		"VmCount": ubx.FieldSpec{WireName: "vm_count"},
+	}
 
 var ResourcePolicy_InstanceSchedulePolicy_VmStartScheduleFields = ubx.FieldMap{
-	"Schedule": ubx.FieldSpec{WireName: "schedule"},
-}
+		"Schedule": ubx.FieldSpec{WireName: "schedule"},
+	}
 
 var ResourcePolicy_InstanceSchedulePolicyFields = ubx.FieldMap{
-	"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
-	"TimeZone":       ubx.FieldSpec{WireName: "time_zone"},
-	"VmStartSchedule": ubx.FieldSpec{
-		WireName: "vm_start_schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_InstanceSchedulePolicy_VmStartScheduleFields,
-	},
-	"VmStopSchedule": ubx.FieldSpec{
-		WireName: "vm_stop_schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_InstanceSchedulePolicy_VmStartScheduleFields,
-	},
-}
+		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"VmStartSchedule": ubx.FieldSpec{
+			WireName: "vm_start_schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_InstanceSchedulePolicy_VmStartScheduleFields,
+		},
+		"VmStopSchedule": ubx.FieldSpec{
+			WireName: "vm_stop_schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_InstanceSchedulePolicy_VmStartScheduleFields,
+		},
+	}
 
 var ResourcePolicy_ResourceStatus_InstanceSchedulePolicyFields = ubx.FieldMap{
-	"LastRunStartTime": ubx.FieldSpec{WireName: "last_run_start_time"},
-	"NextRunStartTime": ubx.FieldSpec{WireName: "next_run_start_time"},
-}
+		"LastRunStartTime": ubx.FieldSpec{WireName: "last_run_start_time"},
+		"NextRunStartTime": ubx.FieldSpec{WireName: "next_run_start_time"},
+	}
 
 var ResourcePolicy_ResourceStatusFields = ubx.FieldMap{
-	"InstanceSchedulePolicy": ubx.FieldSpec{
-		WireName: "instance_schedule_policy",
-		Kind:     "object",
-		Fields:   ResourcePolicy_ResourceStatus_InstanceSchedulePolicyFields,
-	},
-}
+		"InstanceSchedulePolicy": ubx.FieldSpec{
+			WireName: "instance_schedule_policy",
+			Kind: "object",
+			Fields: ResourcePolicy_ResourceStatus_InstanceSchedulePolicyFields,
+		},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_RetentionPolicyFields = ubx.FieldMap{
-	"MaxRetentionDays":   ubx.FieldSpec{WireName: "max_retention_days"},
-	"OnSourceDiskDelete": ubx.FieldSpec{WireName: "on_source_disk_delete"},
-}
+		"MaxRetentionDays": ubx.FieldSpec{WireName: "max_retention_days"},
+		"OnSourceDiskDelete": ubx.FieldSpec{WireName: "on_source_disk_delete"},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_Schedule_DailyScheduleFields = ubx.FieldMap{
-	"DaysInCycle": ubx.FieldSpec{WireName: "days_in_cycle"},
-	"Duration":    ubx.FieldSpec{WireName: "duration"},
-	"StartTime":   ubx.FieldSpec{WireName: "start_time"},
-}
+		"DaysInCycle": ubx.FieldSpec{WireName: "days_in_cycle"},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_Schedule_HourlyScheduleFields = ubx.FieldMap{
-	"Duration":     ubx.FieldSpec{WireName: "duration"},
-	"HoursInCycle": ubx.FieldSpec{WireName: "hours_in_cycle"},
-	"StartTime":    ubx.FieldSpec{WireName: "start_time"},
-}
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"HoursInCycle": ubx.FieldSpec{WireName: "hours_in_cycle"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklySchedule_DayOfWeeksFields = ubx.FieldMap{
-	"Day":       ubx.FieldSpec{WireName: "day"},
-	"Duration":  ubx.FieldSpec{WireName: "duration"},
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"Day": ubx.FieldSpec{WireName: "day"},
+		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklyScheduleFields = ubx.FieldMap{
-	"DayOfWeeks": ubx.FieldSpec{
-		WireName: "day_of_weeks",
-		Kind:     "list",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklySchedule_DayOfWeeksFields,
-	},
-}
+		"DayOfWeeks": ubx.FieldSpec{
+			WireName: "day_of_weeks",
+			Kind: "list",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklySchedule_DayOfWeeksFields,
+		},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_ScheduleFields = ubx.FieldMap{
-	"DailySchedule": ubx.FieldSpec{
-		WireName: "daily_schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_Schedule_DailyScheduleFields,
-	},
-	"HourlySchedule": ubx.FieldSpec{
-		WireName: "hourly_schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_Schedule_HourlyScheduleFields,
-	},
-	"WeeklySchedule": ubx.FieldSpec{
-		WireName: "weekly_schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklyScheduleFields,
-	},
-}
+		"DailySchedule": ubx.FieldSpec{
+			WireName: "daily_schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_Schedule_DailyScheduleFields,
+		},
+		"HourlySchedule": ubx.FieldSpec{
+			WireName: "hourly_schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_Schedule_HourlyScheduleFields,
+		},
+		"WeeklySchedule": ubx.FieldSpec{
+			WireName: "weekly_schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_Schedule_WeeklyScheduleFields,
+		},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicy_SnapshotPropertiesFields = ubx.FieldMap{
-	"ChainName":        ubx.FieldSpec{WireName: "chain_name"},
-	"GuestFlush":       ubx.FieldSpec{WireName: "guest_flush"},
-	"Labels":           ubx.FieldSpec{WireName: "labels"},
-	"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
-}
+		"ChainName": ubx.FieldSpec{WireName: "chain_name"},
+		"GuestFlush": ubx.FieldSpec{WireName: "guest_flush"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
+	}
 
 var ResourcePolicy_SnapshotSchedulePolicyFields = ubx.FieldMap{
-	"RetentionPolicy": ubx.FieldSpec{
-		WireName: "retention_policy",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_RetentionPolicyFields,
-	},
-	"Schedule": ubx.FieldSpec{
-		WireName: "schedule",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_ScheduleFields,
-	},
-	"SnapshotProperties": ubx.FieldSpec{
-		WireName: "snapshot_properties",
-		Kind:     "object",
-		Fields:   ResourcePolicy_SnapshotSchedulePolicy_SnapshotPropertiesFields,
-	},
-}
+		"RetentionPolicy": ubx.FieldSpec{
+			WireName: "retention_policy",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_RetentionPolicyFields,
+		},
+		"Schedule": ubx.FieldSpec{
+			WireName: "schedule",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_ScheduleFields,
+		},
+		"SnapshotProperties": ubx.FieldSpec{
+			WireName: "snapshot_properties",
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicy_SnapshotPropertiesFields,
+		},
+	}
 
 var ResourcePolicy_WorkloadPolicyFields = ubx.FieldMap{
-	"AcceleratorTopology":     ubx.FieldSpec{WireName: "accelerator_topology"},
-	"AcceleratorTopologyMode": ubx.FieldSpec{WireName: "accelerator_topology_mode"},
-	"MaxTopologyDistance":     ubx.FieldSpec{WireName: "max_topology_distance"},
-	"Type":                    ubx.FieldSpec{WireName: "type"},
-}
+		"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
+		"AcceleratorTopologyMode": ubx.FieldSpec{WireName: "accelerator_topology_mode"},
+		"MaxTopologyDistance": ubx.FieldSpec{WireName: "max_topology_distance"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type ResourcePolicyConfig struct {
 	// An output-only description of the resource policy, as returned by the Google Cloud API. (AI-inferred)
@@ -299,33 +299,33 @@ type ResourcePolicyAttrs struct {
 var ResourcePolicy = ubx.ResourceBinding{
 	WireType: "google_compute_resource_policy",
 	Fields: ubx.FieldMap{
-		"Description":                ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskConsistencyGroupPolicy": ubx.FieldSpec{WireName: "disk_consistency_group_policy"},
 		"GroupPlacementPolicy": ubx.FieldSpec{
 			WireName: "group_placement_policy",
-			Kind:     "object",
-			Fields:   ResourcePolicy_GroupPlacementPolicyFields,
+			Kind: "object",
+			Fields: ResourcePolicy_GroupPlacementPolicyFields,
 		},
 		"InstanceSchedulePolicy": ubx.FieldSpec{
 			WireName: "instance_schedule_policy",
-			Kind:     "object",
-			Fields:   ResourcePolicy_InstanceSchedulePolicyFields,
+			Kind: "object",
+			Fields: ResourcePolicy_InstanceSchedulePolicyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind:     "object",
-			Fields:   ResourcePolicy_ResourceStatusFields,
+			Kind: "object",
+			Fields: ResourcePolicy_ResourceStatusFields,
 		},
 		"SnapshotSchedulePolicy": ubx.FieldSpec{
 			WireName: "snapshot_schedule_policy",
-			Kind:     "object",
-			Fields:   ResourcePolicy_SnapshotSchedulePolicyFields,
+			Kind: "object",
+			Fields: ResourcePolicy_SnapshotSchedulePolicyFields,
 		},
 		"WorkloadPolicy": ubx.FieldSpec{
 			WireName: "workload_policy",
-			Kind:     "object",
-			Fields:   ResourcePolicy_WorkloadPolicyFields,
+			Kind: "object",
+			Fields: ResourcePolicy_WorkloadPolicyFields,
 		},
 	},
 }

@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages struct {
-	Percentage   any
+	Percentage any
 	TrafficClass any
 }
 
@@ -25,29 +25,31 @@ type BetaInterconnect_ApplicationAwareInterconnect struct {
 
 type BetaInterconnect_CircuitInfos struct {
 	CustomerDemarcId any
-	GoogleCircuitId  any
-	GoogleDemarcId   any
+	GoogleCircuitId any
+	GoogleDemarcId any
 }
 
 type BetaInterconnect_ExpectedOutages struct {
 	AffectedCircuits any
-	Description      any
-	EndTime          any
-	IssueType        any
-	Name             any
-	Source           any
-	StartTime        any
-	State            any
+	Description any
+	EndTime any
+	IssueType any
+	Name any
+	Source any
+	StartTime any
+	State any
 }
 
 type BetaInterconnect_Macsec_PreSharedKeys struct {
-	Name      any
+	Name any
 	StartTime any
 }
 
 type BetaInterconnect_Macsec struct {
 	// If set to true, the Interconnect connection is configured with ashould-secure MACsec security policy, that allows the Google router to fallback to cleartext traffic if the MKA session cannot be established. By default, the Interconnect connection is configured with amust-secure security policy that drops all traffic if the MKA session cannot be established with your router.
 	FailOpen any
+	// Optional. URL of the InterconnectKeyGroup resource to use for MACsec, in the format: projects/{project}/locations/{region}/interconnectKeyGroups/{interconnectKeyGroup}.
+	InterconnectKeyGroup any
 	// Required. A keychain placeholder describing a set of named key objects along with their start times. A MACsec CKN/CAK is generated for each key in the key chain. Google router automatically picks the key with the most recent startTime when establishing or re-establishing a MACsec secure link.
 	PreSharedKeys any
 }
@@ -58,50 +60,51 @@ type BetaInterconnect_Params struct {
 }
 
 var BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields = ubx.FieldMap{
-	"Percentage":   ubx.FieldSpec{WireName: "percentage"},
-	"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
-}
+		"Percentage": ubx.FieldSpec{WireName: "percentage"},
+		"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
+	}
 
 var BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields = ubx.FieldMap{
-	"BandwidthPercentages": ubx.FieldSpec{
-		WireName: "bandwidth_percentages",
-		Kind:     "list",
-		Fields:   BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-	},
-}
+		"BandwidthPercentages": ubx.FieldSpec{
+			WireName: "bandwidth_percentages",
+			Kind: "list",
+			Fields: BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+		},
+	}
 
 var BetaInterconnect_ApplicationAwareInterconnectFields = ubx.FieldMap{
-	"BandwidthPercentagePolicy": ubx.FieldSpec{
-		WireName: "bandwidth_percentage_policy",
-		Kind:     "object",
-		Fields:   BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
-	},
-	"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
-	"ShapeAveragePercentages": ubx.FieldSpec{
-		WireName: "shape_average_percentages",
-		Kind:     "list",
-		Fields:   BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-	},
-	"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
-}
+		"BandwidthPercentagePolicy": ubx.FieldSpec{
+			WireName: "bandwidth_percentage_policy",
+			Kind: "object",
+			Fields: BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
+		},
+		"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
+		"ShapeAveragePercentages": ubx.FieldSpec{
+			WireName: "shape_average_percentages",
+			Kind: "list",
+			Fields: BetaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+		},
+		"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
+	}
 
 var BetaInterconnect_Macsec_PreSharedKeysFields = ubx.FieldMap{
-	"Name":      ubx.FieldSpec{WireName: "name"},
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var BetaInterconnect_MacsecFields = ubx.FieldMap{
-	"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-	"PreSharedKeys": ubx.FieldSpec{
-		WireName: "pre_shared_keys",
-		Kind:     "list",
-		Fields:   BetaInterconnect_Macsec_PreSharedKeysFields,
-	},
-}
+		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
+		"InterconnectKeyGroup": ubx.FieldSpec{WireName: "interconnect_key_group"},
+		"PreSharedKeys": ubx.FieldSpec{
+			WireName: "pre_shared_keys",
+			Kind: "list",
+			Fields: BetaInterconnect_Macsec_PreSharedKeysFields,
+		},
+	}
 
 var BetaInterconnect_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type BetaInterconnectConfig struct {
 	// Enable or disable the application awareness feature on this Cloud Interconnect.
@@ -228,37 +231,37 @@ type BetaInterconnectAttrs struct {
 var BetaInterconnect = ubx.ResourceBinding{
 	WireType: "google_compute_beta_interconnect",
 	Fields: ubx.FieldMap{
-		"AaiEnabled":   ubx.FieldSpec{WireName: "aai_enabled"},
+		"AaiEnabled": ubx.FieldSpec{WireName: "aai_enabled"},
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
 		"ApplicationAwareInterconnect": ubx.FieldSpec{
 			WireName: "application_aware_interconnect",
-			Kind:     "object",
-			Fields:   BetaInterconnect_ApplicationAwareInterconnectFields,
+			Kind: "object",
+			Fields: BetaInterconnect_ApplicationAwareInterconnectFields,
 		},
 		"AvailableFeatures": ubx.FieldSpec{WireName: "available_features"},
-		"CustomerName":      ubx.FieldSpec{WireName: "customer_name"},
-		"Description":       ubx.FieldSpec{WireName: "description"},
-		"InterconnectType":  ubx.FieldSpec{WireName: "interconnect_type"},
-		"LabelFingerprint":  ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":            ubx.FieldSpec{WireName: "labels"},
-		"LinkType":          ubx.FieldSpec{WireName: "link_type"},
-		"Location":          ubx.FieldSpec{WireName: "location"},
+		"CustomerName": ubx.FieldSpec{WireName: "customer_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"InterconnectType": ubx.FieldSpec{WireName: "interconnect_type"},
+		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"LinkType": ubx.FieldSpec{WireName: "link_type"},
+		"Location": ubx.FieldSpec{WireName: "location"},
 		"Macsec": ubx.FieldSpec{
 			WireName: "macsec",
-			Kind:     "object",
-			Fields:   BetaInterconnect_MacsecFields,
+			Kind: "object",
+			Fields: BetaInterconnect_MacsecFields,
 		},
-		"MacsecEnabled":   ubx.FieldSpec{WireName: "macsec_enabled"},
-		"Name":            ubx.FieldSpec{WireName: "name"},
+		"MacsecEnabled": ubx.FieldSpec{WireName: "macsec_enabled"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NocContactEmail": ubx.FieldSpec{WireName: "noc_contact_email"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   BetaInterconnect_ParamsFields,
+			Kind: "object",
+			Fields: BetaInterconnect_ParamsFields,
 		},
-		"RemoteLocation":     ubx.FieldSpec{WireName: "remote_location"},
-		"RequestedFeatures":  ubx.FieldSpec{WireName: "requested_features"},
+		"RemoteLocation": ubx.FieldSpec{WireName: "remote_location"},
+		"RequestedFeatures": ubx.FieldSpec{WireName: "requested_features"},
 		"RequestedLinkCount": ubx.FieldSpec{WireName: "requested_link_count"},
-		"Subzone":            ubx.FieldSpec{WireName: "subzone"},
+		"Subzone": ubx.FieldSpec{WireName: "subzone"},
 	},
 }

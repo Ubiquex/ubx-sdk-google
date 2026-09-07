@@ -4,25 +4,25 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaServiceAttachment_ConnectedEndpoints struct {
-	ConsumerNetwork           any
-	Endpoint                  any
-	EndpointWithId            any
-	NatIps                    any
+	ConsumerNetwork any
+	Endpoint any
+	EndpointWithId any
+	NatIps any
 	PropagatedConnectionCount any
-	PscConnectionId           any
-	Status                    any
+	PscConnectionId any
+	Status any
 }
 
 type AlphaServiceAttachment_ConsumerAcceptLists struct {
 	ConnectionLimit any
-	EndpointUrl     any
-	NetworkUrl      any
-	ProjectIdOrNum  any
+	EndpointUrl any
+	NetworkUrl any
+	ProjectIdOrNum any
 }
 
 type AlphaServiceAttachment_PscServiceAttachmentId struct {
 	High any
-	Low  any
+	Low any
 }
 
 type AlphaServiceAttachment_TunnelingConfig struct {
@@ -33,21 +33,21 @@ type AlphaServiceAttachment_TunnelingConfig struct {
 }
 
 var AlphaServiceAttachment_ConsumerAcceptListsFields = ubx.FieldMap{
-	"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
-	"EndpointUrl":     ubx.FieldSpec{WireName: "endpoint_url"},
-	"NetworkUrl":      ubx.FieldSpec{WireName: "network_url"},
-	"ProjectIdOrNum":  ubx.FieldSpec{WireName: "project_id_or_num"},
-}
+		"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
+		"EndpointUrl": ubx.FieldSpec{WireName: "endpoint_url"},
+		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
+		"ProjectIdOrNum": ubx.FieldSpec{WireName: "project_id_or_num"},
+	}
 
 var AlphaServiceAttachment_PscServiceAttachmentIdFields = ubx.FieldMap{
-	"High": ubx.FieldSpec{WireName: "high"},
-	"Low":  ubx.FieldSpec{WireName: "low"},
-}
+		"High": ubx.FieldSpec{WireName: "high"},
+		"Low": ubx.FieldSpec{WireName: "low"},
+	}
 
 var AlphaServiceAttachment_TunnelingConfigFields = ubx.FieldMap{
-	"EncapsulationProfile": ubx.FieldSpec{WireName: "encapsulation_profile"},
-	"RoutingMode":          ubx.FieldSpec{WireName: "routing_mode"},
-}
+		"EncapsulationProfile": ubx.FieldSpec{WireName: "encapsulation_profile"},
+		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
+	}
 
 type AlphaServiceAttachmentConfig struct {
 	// The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
@@ -141,31 +141,31 @@ var AlphaServiceAttachment = ubx.ResourceBinding{
 		"ConnectionPreference": ubx.FieldSpec{WireName: "connection_preference"},
 		"ConsumerAcceptLists": ubx.FieldSpec{
 			WireName: "consumer_accept_lists",
-			Kind:     "list",
-			Fields:   AlphaServiceAttachment_ConsumerAcceptListsFields,
+			Kind: "list",
+			Fields: AlphaServiceAttachment_ConsumerAcceptListsFields,
 		},
-		"ConsumerRejectLists":       ubx.FieldSpec{WireName: "consumer_reject_lists"},
-		"Description":               ubx.FieldSpec{WireName: "description"},
-		"DomainNames":               ubx.FieldSpec{WireName: "domain_names"},
-		"EnableProxyProtocol":       ubx.FieldSpec{WireName: "enable_proxy_protocol"},
-		"Fingerprint":               ubx.FieldSpec{WireName: "fingerprint"},
-		"Metadata":                  ubx.FieldSpec{WireName: "metadata"},
-		"Name":                      ubx.FieldSpec{WireName: "name"},
-		"NatIpsPerEndpoint":         ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
-		"NatSubnets":                ubx.FieldSpec{WireName: "nat_subnets"},
-		"ProducerForwardingRule":    ubx.FieldSpec{WireName: "producer_forwarding_rule"},
+		"ConsumerRejectLists": ubx.FieldSpec{WireName: "consumer_reject_lists"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DomainNames": ubx.FieldSpec{WireName: "domain_names"},
+		"EnableProxyProtocol": ubx.FieldSpec{WireName: "enable_proxy_protocol"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NatIpsPerEndpoint": ubx.FieldSpec{WireName: "nat_ips_per_endpoint"},
+		"NatSubnets": ubx.FieldSpec{WireName: "nat_subnets"},
+		"ProducerForwardingRule": ubx.FieldSpec{WireName: "producer_forwarding_rule"},
 		"PropagatedConnectionLimit": ubx.FieldSpec{WireName: "propagated_connection_limit"},
 		"PscServiceAttachmentId": ubx.FieldSpec{
 			WireName: "psc_service_attachment_id",
-			Kind:     "object",
-			Fields:   AlphaServiceAttachment_PscServiceAttachmentIdFields,
+			Kind: "object",
+			Fields: AlphaServiceAttachment_PscServiceAttachmentIdFields,
 		},
 		"ReconcileConnections": ubx.FieldSpec{WireName: "reconcile_connections"},
-		"TargetService":        ubx.FieldSpec{WireName: "target_service"},
+		"TargetService": ubx.FieldSpec{WireName: "target_service"},
 		"TunnelingConfig": ubx.FieldSpec{
 			WireName: "tunneling_config",
-			Kind:     "object",
-			Fields:   AlphaServiceAttachment_TunnelingConfigFields,
+			Kind: "object",
+			Fields: AlphaServiceAttachment_TunnelingConfigFields,
 		},
 	},
 }

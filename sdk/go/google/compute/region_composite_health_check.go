@@ -44,10 +44,10 @@ type RegionCompositeHealthCheckAttrs struct {
 var RegionCompositeHealthCheck = ubx.ResourceBinding{
 	WireType: "google_compute_region_composite_health_check",
 	Fields: ubx.FieldMap{
-		"Description":       ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":       ubx.FieldSpec{WireName: "fingerprint"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HealthDestination": ubx.FieldSpec{WireName: "health_destination"},
-		"HealthSources":     ubx.FieldSpec{WireName: "health_sources"},
-		"Name":              ubx.FieldSpec{WireName: "name"},
+		"HealthSources": ubx.FieldSpec{WireName: "health_sources"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -15,5 +15,6 @@ type KeyRingAttrs struct {
 
 var KeyRing = ubx.ResourceBinding{
 	WireType: "google_cloudkms_key_ring",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

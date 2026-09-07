@@ -9,9 +9,9 @@ type BetaInstanceGroup_NamedPorts struct {
 }
 
 var BetaInstanceGroup_NamedPortsFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Port": ubx.FieldSpec{WireName: "port"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Port": ubx.FieldSpec{WireName: "port"},
+	}
 
 type BetaInstanceGroupConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -57,11 +57,11 @@ var BetaInstanceGroup = ubx.ResourceBinding{
 	WireType: "google_compute_beta_instance_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"NamedPorts": ubx.FieldSpec{
 			WireName: "named_ports",
-			Kind:     "list",
-			Fields:   BetaInstanceGroup_NamedPortsFields,
+			Kind: "list",
+			Fields: BetaInstanceGroup_NamedPortsFields,
 		},
 		"Network": ubx.FieldSpec{WireName: "network"},
 	},

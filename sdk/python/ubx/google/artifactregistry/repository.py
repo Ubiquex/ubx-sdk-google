@@ -137,7 +137,7 @@ class Repository_VirtualRepositoryConfig:
 
 @dataclasses.dataclass
 class Repository_VulnerabilityScanningConfig:
-    # Optional. Config for whether this repository has vulnerability scanning disabled.
+    # Optional. Config for whether this repository has vulnerability scanning disabled. When unset (ENABLEMENT_CONFIG_UNSPECIFIED), this is treated as INHERITED for Docker repositories and DISABLED for non-Docker repositories.
     enablement_config: Any = None
     # Output only. State of feature enablement, combining repository enablement config and API enablement state.
     enablement_state: Any = None

@@ -19,7 +19,7 @@ type AnnouncementAttrs struct {
 	Description any
 	// Output only. Additional structured details about this announcement.
 	Metadata any
-	Name     any
+	Name any
 	// A Private Cloud resource name.
 	PrivateCloud any
 	// Output only. State of the resource. New values may be added to this enum when appropriate.
@@ -32,5 +32,6 @@ type AnnouncementAttrs struct {
 
 var Announcement = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_announcement",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

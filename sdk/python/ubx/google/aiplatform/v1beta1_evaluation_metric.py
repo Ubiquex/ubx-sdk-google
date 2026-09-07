@@ -25,7 +25,7 @@ class V1beta1EvaluationMetric_Metric_ComputationBasedMetricSpec:
 
 @dataclasses.dataclass
 class V1beta1EvaluationMetric_Metric_CustomCodeExecutionSpec:
-    # Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED.
+    # Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used; requests from regions where the sandbox is unavailable will fail with UNIMPLEMENTED.
     code_execution_region: Any = None
     # Required. Python function. Expected user to define the following function, e.g.: def evaluate(instance: dict[str, Any]) -> float: Please include this function signature in the code snippet. Instance is the evaluation instance, any fields populated in the instance are available to the function as instance[field_name]. Example: Example input: ``` instance= EvaluationInstance( response=EvaluationInstance.InstanceData(text="The answer is 4."), reference=EvaluationInstance.InstanceData(text="4") ) ``` Example converted input: ``` { 'response': {'text': 'The answer is 4.'}, 'reference': {'text': '4'} } ``` Example python function: ``` def evaluate(instance: dict[str, Any]) -> float: if instance'response' == instance'reference': return 1.0 return 0.0 ``` CustomCodeExecutionSpec is also supported in Batch Evaluation (EvalDataset RPC) and Tuning Evaluation. Each line in the input jsonl file will be converted to dict[str, Any] and passed to the evaluation function.
     evaluation_function: Any = None
@@ -49,8 +49,6 @@ class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
     language_codes: Any = None
     # Deprecated: Use top-level `language_codes` instead. Provides hints to the model about possible languages present in the audio.
     language_hints: Any = None
-    # Optional. Configures transcription mode. Supported values: `VERBATIM`, `SMART`. If unspecified, defaults to `VERBATIM` transcription. In `SMART` mode, the model performs disfluency removal (eliminating filler words, repetitions, and false starts), light grammatical cleanup, automatic formatting (paragraphs, bullet points, numbered lists), and minor user edits (inline self-corrections). Timestamps and diarization are incompatible with mode `SMART`.
-    mode: Any = None
     # Optional. Configures word-level timestamp generation.
     word_timestamp: Any = None
 
@@ -225,6 +223,13 @@ class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
     thinking_level: Any = None
 
 @dataclasses.dataclass
+class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfig:
+    # Optional. If `true`, the model will generate audio when the target language is spoken, essentially it will parrot the input. If `false`, we will not produce audio for the target language.
+    echo_target_language: Any = None
+    # Required. The target language for translation. Supported values are BCP-47 language codes (e.g. "en", "es", "fr").
+    target_language_code: Any = None
+
+@dataclasses.dataclass
 class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig:
     # Optional. If enabled, audio timestamps will be included in the request to the model. This can be useful for synchronizing audio with other modalities in the response.
     audio_timestamp: Any = None
@@ -276,6 +281,8 @@ class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Gen
     top_k: Any = None
     # Optional. Specifies the nucleus sampling threshold. The model considers only the smallest set of tokens whose cumulative probability is at least `top_p`. This helps generate more diverse and less repetitive responses. For example, a `top_p` of 0.9 means the model considers tokens until the cumulative probability of the tokens to select from reaches 0.9. It's recommended to adjust either temperature or `top_p`, but not both.
     top_p: Any = None
+    # Config for translation features.
+    translation_config: Any = None
 
 @dataclasses.dataclass
 class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig:
@@ -297,7 +304,7 @@ class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_PredefinedRubricGenerati
 
 @dataclasses.dataclass
 class V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig:
-    # Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: us-central1, us-east1, us-east4, us-west1, us-west4, southamerica-east1, europe-west2, europe-west3, asia-east1, asia-south1, asia-southeast1. If unset, the request's originating region is used.
+    # Optional. The region to use for code execution. If set, the Code Execution Sandbox will be invoked in the specified region regardless of the request's originating region. Must be a region where the Code Execution Sandbox is available. Supported regions: northamerica-northeast1, southamerica-east1, us-central1, us-east1, us-east4, us-west1, us-west4, europe-central2, europe-north1, europe-southwest1, europe-west1, europe-west2, europe-west3, europe-west4, europe-west6, europe-west8, europe-west9, me-west1, asia-east1, asia-east2, asia-northeast1, asia-northeast3, asia-south1, asia-south2, asia-southeast1, australia-southeast2. If unset, the request's originating region is used.
     code_execution_region: Any = None
     # Required. Python function for parsing results. The function should be defined within this string. The function takes a list of strings (LLM responses) and should return either a list of dictionaries (for rubrics) or a single dictionary (for a metric result). Example function signature: def parse(responses: list[str]) -> list[dict[str, Any]] | dict[str, Any]: When parsing rubrics, return a list of dictionaries, where each dictionary represents a Rubric. Example for rubrics: [ { "content": {"property": {"description": "The response is factual."}}, "type": "FACTUALITY", "importance": "HIGH" }, { "content": {"property": {"description": "The response is fluent."}}, "type": "FLUENCY", "importance": "MEDIUM" } ] When parsing critique results, return a dictionary representing a MetricResult. Example for a metric result: { "score": 0.8, "explanation": "The model followed most instructions.", "rubric_verdicts": [...] } ... code for result extraction and aggregation
     parsing_function: Any = None
@@ -451,7 +458,6 @@ _V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generati
         kind="object",
         fields=_V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
     ),
-    "mode": ubx.FieldSpec(wire_name="mode"),
     "word_timestamp": ubx.FieldSpec(wire_name="word_timestamp"),
 }
 
@@ -634,6 +640,11 @@ _V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generati
     "thinking_level": ubx.FieldSpec(wire_name="thinking_level"),
 }
 
+_V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields = {
+    "echo_target_language": ubx.FieldSpec(wire_name="echo_target_language"),
+    "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
+}
+
 _V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfigFields = {
     "audio_timestamp": ubx.FieldSpec(wire_name="audio_timestamp"),
     "audio_transcription_config": ubx.FieldSpec(
@@ -692,6 +703,11 @@ _V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_Generati
     ),
     "top_k": ubx.FieldSpec(wire_name="top_k"),
     "top_p": ubx.FieldSpec(wire_name="top_p"),
+    "translation_config": ubx.FieldSpec(
+        wire_name="translation_config",
+        kind="object",
+        fields=_V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfig_GenerationConfig_TranslationConfigFields,
+    ),
 }
 
 _V1beta1EvaluationMetric_Metric_LlmBasedMetricSpec_JudgeAutoraterConfigFields = {

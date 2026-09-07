@@ -48,11 +48,11 @@ type AlphaRegionHealthAggregationPolicyAttrs struct {
 var AlphaRegionHealthAggregationPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_health_aggregation_policy",
 	Fields: ubx.FieldMap{
-		"Description":             ubx.FieldSpec{WireName: "description"},
-		"Fingerprint":             ubx.FieldSpec{WireName: "fingerprint"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HealthyPercentThreshold": ubx.FieldSpec{WireName: "healthy_percent_threshold"},
-		"MinHealthyThreshold":     ubx.FieldSpec{WireName: "min_healthy_threshold"},
-		"Name":                    ubx.FieldSpec{WireName: "name"},
-		"PolicyType":              ubx.FieldSpec{WireName: "policy_type"},
+		"MinHealthyThreshold": ubx.FieldSpec{WireName: "min_healthy_threshold"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
 	},
 }

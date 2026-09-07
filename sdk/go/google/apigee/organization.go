@@ -54,66 +54,66 @@ type Organization_Properties struct {
 }
 
 var Organization_AddonsConfig_AdvancedApiOpsConfigFields = ubx.FieldMap{
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
 
 var Organization_AddonsConfig_AnalyticsConfigFields = ubx.FieldMap{
-	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
-	"ExpireTimeMillis": ubx.FieldSpec{WireName: "expire_time_millis"},
-	"State":            ubx.FieldSpec{WireName: "state"},
-	"UpdateTime":       ubx.FieldSpec{WireName: "update_time"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ExpireTimeMillis": ubx.FieldSpec{WireName: "expire_time_millis"},
+		"State": ubx.FieldSpec{WireName: "state"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 var Organization_AddonsConfig_ApiSecurityConfigFields = ubx.FieldMap{
-	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
-	"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
+	}
 
 var Organization_AddonsConfigFields = ubx.FieldMap{
-	"AdvancedApiOpsConfig": ubx.FieldSpec{
-		WireName: "advanced_api_ops_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-	},
-	"AnalyticsConfig": ubx.FieldSpec{
-		WireName: "analytics_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_AnalyticsConfigFields,
-	},
-	"ApiSecurityConfig": ubx.FieldSpec{
-		WireName: "api_security_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_ApiSecurityConfigFields,
-	},
-	"ConnectorsPlatformConfig": ubx.FieldSpec{
-		WireName: "connectors_platform_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_ApiSecurityConfigFields,
-	},
-	"IntegrationConfig": ubx.FieldSpec{
-		WireName: "integration_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-	},
-	"MonetizationConfig": ubx.FieldSpec{
-		WireName: "monetization_config",
-		Kind:     "object",
-		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-	},
-}
+		"AdvancedApiOpsConfig": ubx.FieldSpec{
+			WireName: "advanced_api_ops_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+		},
+		"AnalyticsConfig": ubx.FieldSpec{
+			WireName: "analytics_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_AnalyticsConfigFields,
+		},
+		"ApiSecurityConfig": ubx.FieldSpec{
+			WireName: "api_security_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_ApiSecurityConfigFields,
+		},
+		"ConnectorsPlatformConfig": ubx.FieldSpec{
+			WireName: "connectors_platform_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_ApiSecurityConfigFields,
+		},
+		"IntegrationConfig": ubx.FieldSpec{
+			WireName: "integration_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+		},
+		"MonetizationConfig": ubx.FieldSpec{
+			WireName: "monetization_config",
+			Kind: "object",
+			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+		},
+	}
 
 var Organization_Properties_PropertyFields = ubx.FieldMap{
-	"Name":  ubx.FieldSpec{WireName: "name"},
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Organization_PropertiesFields = ubx.FieldMap{
-	"Property": ubx.FieldSpec{
-		WireName: "property",
-		Kind:     "list",
-		Fields:   Organization_Properties_PropertyFields,
-	},
-}
+		"Property": ubx.FieldSpec{
+			WireName: "property",
+			Kind: "list",
+			Fields: Organization_Properties_PropertyFields,
+		},
+	}
 
 type OrganizationConfig struct {
 	// Add-on configurations for the Apigee organization.
@@ -222,29 +222,29 @@ var Organization = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddonsConfig": ubx.FieldSpec{
 			WireName: "addons_config",
-			Kind:     "object",
-			Fields:   Organization_AddonsConfigFields,
+			Kind: "object",
+			Fields: Organization_AddonsConfigFields,
 		},
-		"AnalyticsRegion":                  ubx.FieldSpec{WireName: "analytics_region"},
+		"AnalyticsRegion": ubx.FieldSpec{WireName: "analytics_region"},
 		"ApiConsumerDataEncryptionKeyName": ubx.FieldSpec{WireName: "api_consumer_data_encryption_key_name"},
-		"ApiConsumerDataLocation":          ubx.FieldSpec{WireName: "api_consumer_data_location"},
-		"Attributes":                       ubx.FieldSpec{WireName: "attributes"},
-		"AuthorizedNetwork":                ubx.FieldSpec{WireName: "authorized_network"},
-		"BillingType":                      ubx.FieldSpec{WireName: "billing_type"},
-		"ControlPlaneEncryptionKeyName":    ubx.FieldSpec{WireName: "control_plane_encryption_key_name"},
-		"CustomerName":                     ubx.FieldSpec{WireName: "customer_name"},
-		"Description":                      ubx.FieldSpec{WireName: "description"},
-		"DisableVpcPeering":                ubx.FieldSpec{WireName: "disable_vpc_peering"},
-		"DisplayName":                      ubx.FieldSpec{WireName: "display_name"},
-		"NetworkEgressRestricted":          ubx.FieldSpec{WireName: "network_egress_restricted"},
-		"PortalDisabled":                   ubx.FieldSpec{WireName: "portal_disabled"},
+		"ApiConsumerDataLocation": ubx.FieldSpec{WireName: "api_consumer_data_location"},
+		"Attributes": ubx.FieldSpec{WireName: "attributes"},
+		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
+		"BillingType": ubx.FieldSpec{WireName: "billing_type"},
+		"ControlPlaneEncryptionKeyName": ubx.FieldSpec{WireName: "control_plane_encryption_key_name"},
+		"CustomerName": ubx.FieldSpec{WireName: "customer_name"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisableVpcPeering": ubx.FieldSpec{WireName: "disable_vpc_peering"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"NetworkEgressRestricted": ubx.FieldSpec{WireName: "network_egress_restricted"},
+		"PortalDisabled": ubx.FieldSpec{WireName: "portal_disabled"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind:     "object",
-			Fields:   Organization_PropertiesFields,
+			Kind: "object",
+			Fields: Organization_PropertiesFields,
 		},
 		"RuntimeDatabaseEncryptionKeyName": ubx.FieldSpec{WireName: "runtime_database_encryption_key_name"},
-		"RuntimeType":                      ubx.FieldSpec{WireName: "runtime_type"},
-		"Type":                             ubx.FieldSpec{WireName: "type"},
+		"RuntimeType": ubx.FieldSpec{WireName: "runtime_type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

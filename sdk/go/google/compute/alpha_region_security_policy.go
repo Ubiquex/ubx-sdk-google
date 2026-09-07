@@ -4,28 +4,28 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_AutoDeployConfig struct {
-	ConfidenceThreshold       any
-	ExpirationSec             any
+	ConfidenceThreshold any
+	ExpirationSec any
 	ImpactedBaselineThreshold any
-	LoadThreshold             any
+	LoadThreshold any
 }
 
 type AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigs struct {
 	EnableEachUniqueValue any
-	Type                  any
-	Value                 any
+	Type any
+	Value any
 }
 
 type AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs struct {
-	AutoDeployConfidenceThreshold       any
-	AutoDeployExpirationSec             any
+	AutoDeployConfidenceThreshold any
+	AutoDeployExpirationSec any
 	AutoDeployImpactedBaselineThreshold any
-	AutoDeployLoadThreshold             any
-	DetectionAbsoluteQps                any
-	DetectionLoadThreshold              any
-	DetectionRelativeToBaselineQps      any
-	Name                                any
-	TrafficGranularityConfigs           any
+	AutoDeployLoadThreshold any
+	DetectionAbsoluteQps any
+	DetectionLoadThreshold any
+	DetectionRelativeToBaselineQps any
+	Name any
+	TrafficGranularityConfigs any
 }
 
 type AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig struct {
@@ -51,8 +51,8 @@ type AlphaRegionSecurityPolicy_AdvancedOptionsConfig_JsonCustomConfig struct {
 
 type AlphaRegionSecurityPolicy_AdvancedOptionsConfig struct {
 	JsonCustomConfig any
-	JsonParsing      any
-	LogLevel         any
+	JsonParsing any
+	LogLevel any
 	// The maximum request size chosen by the customer with Waf enabled. Values supported are "8KB", "16KB, "32KB", "48KB" and "64KB". Values are case insensitive.
 	RequestBodyInspectionSize any
 	// An optional list of case-insensitive request header names to use for resolving the callers client IP address.
@@ -60,13 +60,13 @@ type AlphaRegionSecurityPolicy_AdvancedOptionsConfig struct {
 }
 
 type AlphaRegionSecurityPolicy_Associations struct {
-	AttachmentId     any
-	DisplayName      any
-	ExcludedFolders  any
+	AttachmentId any
+	DisplayName any
+	ExcludedFolders any
 	ExcludedProjects any
-	Name             any
+	Name any
 	SecurityPolicyId any
-	ShortName        any
+	ShortName any
 }
 
 type AlphaRegionSecurityPolicy_CloudArmorConfig struct {
@@ -78,7 +78,7 @@ type AlphaRegionSecurityPolicy_DdosProtectionConfig struct {
 	DdosAdaptiveProtection any
 	// DDoS Protection for Network Load Balancers (and VMs with public IPs) builds DDoS mitigations that minimize collateral damage. It quantifies this as the fraction of a non-abuse baseline that's inadvertently blocked. Rules whose collateral damage exceeds ddosImpactedBaselineThreshold will not be deployed. Using a lower value will prioritize keeping collateral damage low, possibly at the cost of its effectiveness in rate limiting some or all of the attack. It should typically be unset, so Advanced DDoS (and Adaptive Protection) uses the best mitigation it can find. Setting the threshold is advised if there are logs for false positive detections with high collateral damage, and will cause Advanced DDoS to attempt to find a less aggressive rule that satisfies the constraint. If a suitable rule cannot be found, the system falls back to either no mitigation for smaller attacks or broader network throttles for larger ones.
 	DdosImpactedBaselineThreshold any
-	DdosProtection                any
+	DdosProtection any
 }
 
 type AlphaRegionSecurityPolicy_RecaptchaOptionsConfig struct {
@@ -87,7 +87,7 @@ type AlphaRegionSecurityPolicy_RecaptchaOptionsConfig struct {
 }
 
 type AlphaRegionSecurityPolicy_Rules_HeaderAction_RequestHeadersToAdds struct {
-	HeaderName  any
+	HeaderName any
 	HeaderValue any
 }
 
@@ -97,25 +97,25 @@ type AlphaRegionSecurityPolicy_Rules_HeaderAction struct {
 
 type AlphaRegionSecurityPolicy_Rules_Match_Config_DestPorts struct {
 	IpProtocol any
-	Ports      any
+	Ports any
 }
 
 type AlphaRegionSecurityPolicy_Rules_Match_Config struct {
-	DestIpRanges  any
-	DestPorts     any
+	DestIpRanges any
+	DestPorts any
 	Layer4Configs any
-	SrcIpRanges   any
+	SrcIpRanges any
 }
 
 type AlphaRegionSecurityPolicy_Rules_Match_Expr struct {
 	Description any
-	Expression  any
-	Location    any
-	Title       any
+	Expression any
+	Location any
+	Title any
 }
 
 type AlphaRegionSecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptions struct {
-	ActionTokenSiteKeys  any
+	ActionTokenSiteKeys any
 	SessionTokenSiteKeys any
 }
 
@@ -124,41 +124,41 @@ type AlphaRegionSecurityPolicy_Rules_Match_ExprOptions struct {
 }
 
 type AlphaRegionSecurityPolicy_Rules_Match struct {
-	Config        any
-	Expr          any
-	ExprOptions   any
+	Config any
+	Expr any
+	ExprOptions any
 	VersionedExpr any
 }
 
 type AlphaRegionSecurityPolicy_Rules_NetworkMatch_UserDefinedFields struct {
-	Name   any
+	Name any
 	Values any
 }
 
 type AlphaRegionSecurityPolicy_Rules_NetworkMatch struct {
-	DestIpRanges      any
-	DestPorts         any
-	IpProtocols       any
-	SrcAsns           any
-	SrcIpRanges       any
-	SrcPorts          any
-	SrcRegionCodes    any
+	DestIpRanges any
+	DestPorts any
+	IpProtocols any
+	SrcAsns any
+	SrcIpRanges any
+	SrcPorts any
+	SrcRegionCodes any
 	UserDefinedFields any
 }
 
 type AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExclude struct {
-	Op  any
+	Op any
 	Val any
 }
 
 type AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions struct {
-	RequestBodiesToExclude      any
-	RequestCookiesToExclude     any
-	RequestHeadersToExclude     any
+	RequestBodiesToExclude any
+	RequestCookiesToExclude any
+	RequestHeadersToExclude any
 	RequestQueryParamsToExclude any
-	RequestUrisToExclude        any
-	TargetRuleIds               any
-	TargetRuleSet               any
+	RequestUrisToExclude any
+	TargetRuleIds any
+	TargetRuleSet any
 }
 
 type AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig struct {
@@ -166,7 +166,7 @@ type AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig struct {
 }
 
 type AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThreshold struct {
-	Count       any
+	Count any
 	IntervalSec any
 }
 
@@ -176,391 +176,391 @@ type AlphaRegionSecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigs struct
 }
 
 type AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedActionRpcStatus struct {
-	Code    any
+	Code any
 	Message any
 }
 
 type AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptions struct {
 	Target any
-	Type   any
+	Type any
 }
 
 type AlphaRegionSecurityPolicy_Rules_RateLimitOptions struct {
-	BanDurationSec        any
-	BanThreshold          any
-	ConformAction         any
-	EnforceOnKey          any
-	EnforceOnKeyConfigs   any
-	EnforceOnKeyName      any
-	ExceedAction          any
+	BanDurationSec any
+	BanThreshold any
+	ConformAction any
+	EnforceOnKey any
+	EnforceOnKeyConfigs any
+	EnforceOnKeyName any
+	ExceedAction any
 	ExceedActionRpcStatus any
 	ExceedRedirectOptions any
-	RateLimitThreshold    any
+	RateLimitThreshold any
 }
 
 type AlphaRegionSecurityPolicy_Rules struct {
-	Action                    any
-	Description               any
-	Direction                 any
-	EnableLogging             any
-	HeaderAction              any
-	Kind                      any
-	Match                     any
-	NetworkMatch              any
-	PreconfiguredWafConfig    any
-	Preview                   any
-	Priority                  any
-	RateLimitOptions          any
-	RedirectOptions           any
-	RedirectTarget            any
+	Action any
+	Description any
+	Direction any
+	EnableLogging any
+	HeaderAction any
+	Kind any
+	Match any
+	NetworkMatch any
+	PreconfiguredWafConfig any
+	Preview any
+	Priority any
+	RateLimitOptions any
+	RedirectOptions any
+	RedirectTarget any
 	RuleManagedProtectionTier any
-	RuleNumber                any
-	RuleTupleCount            any
-	TargetResources           any
-	TargetServiceAccounts     any
+	RuleNumber any
+	RuleTupleCount any
+	TargetResources any
+	TargetServiceAccounts any
 }
 
 type AlphaRegionSecurityPolicy_UserDefinedFields struct {
-	Base   any
-	Mask   any
-	Name   any
+	Base any
+	Mask any
+	Name any
 	Offset any
-	Size   any
+	Size any
 }
 
 var AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_AutoDeployConfigFields = ubx.FieldMap{
-	"ConfidenceThreshold":       ubx.FieldSpec{WireName: "confidence_threshold"},
-	"ExpirationSec":             ubx.FieldSpec{WireName: "expiration_sec"},
-	"ImpactedBaselineThreshold": ubx.FieldSpec{WireName: "impacted_baseline_threshold"},
-	"LoadThreshold":             ubx.FieldSpec{WireName: "load_threshold"},
-}
+		"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
+		"ExpirationSec": ubx.FieldSpec{WireName: "expiration_sec"},
+		"ImpactedBaselineThreshold": ubx.FieldSpec{WireName: "impacted_baseline_threshold"},
+		"LoadThreshold": ubx.FieldSpec{WireName: "load_threshold"},
+	}
 
 var AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields = ubx.FieldMap{
-	"EnableEachUniqueValue": ubx.FieldSpec{WireName: "enable_each_unique_value"},
-	"Type":                  ubx.FieldSpec{WireName: "type"},
-	"Value":                 ubx.FieldSpec{WireName: "value"},
-}
+		"EnableEachUniqueValue": ubx.FieldSpec{WireName: "enable_each_unique_value"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigsFields = ubx.FieldMap{
-	"AutoDeployConfidenceThreshold":       ubx.FieldSpec{WireName: "auto_deploy_confidence_threshold"},
-	"AutoDeployExpirationSec":             ubx.FieldSpec{WireName: "auto_deploy_expiration_sec"},
-	"AutoDeployImpactedBaselineThreshold": ubx.FieldSpec{WireName: "auto_deploy_impacted_baseline_threshold"},
-	"AutoDeployLoadThreshold":             ubx.FieldSpec{WireName: "auto_deploy_load_threshold"},
-	"DetectionAbsoluteQps":                ubx.FieldSpec{WireName: "detection_absolute_qps"},
-	"DetectionLoadThreshold":              ubx.FieldSpec{WireName: "detection_load_threshold"},
-	"DetectionRelativeToBaselineQps":      ubx.FieldSpec{WireName: "detection_relative_to_baseline_qps"},
-	"Name":                                ubx.FieldSpec{WireName: "name"},
-	"TrafficGranularityConfigs": ubx.FieldSpec{
-		WireName: "traffic_granularity_configs",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields,
-	},
-}
+		"AutoDeployConfidenceThreshold": ubx.FieldSpec{WireName: "auto_deploy_confidence_threshold"},
+		"AutoDeployExpirationSec": ubx.FieldSpec{WireName: "auto_deploy_expiration_sec"},
+		"AutoDeployImpactedBaselineThreshold": ubx.FieldSpec{WireName: "auto_deploy_impacted_baseline_threshold"},
+		"AutoDeployLoadThreshold": ubx.FieldSpec{WireName: "auto_deploy_load_threshold"},
+		"DetectionAbsoluteQps": ubx.FieldSpec{WireName: "detection_absolute_qps"},
+		"DetectionLoadThreshold": ubx.FieldSpec{WireName: "detection_load_threshold"},
+		"DetectionRelativeToBaselineQps": ubx.FieldSpec{WireName: "detection_relative_to_baseline_qps"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"TrafficGranularityConfigs": ubx.FieldSpec{
+			WireName: "traffic_granularity_configs",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigs_TrafficGranularityConfigsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields = ubx.FieldMap{
-	"Enable":         ubx.FieldSpec{WireName: "enable"},
-	"RuleVisibility": ubx.FieldSpec{WireName: "rule_visibility"},
-	"ThresholdConfigs": ubx.FieldSpec{
-		WireName: "threshold_configs",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigsFields,
-	},
-}
+		"Enable": ubx.FieldSpec{WireName: "enable"},
+		"RuleVisibility": ubx.FieldSpec{WireName: "rule_visibility"},
+		"ThresholdConfigs": ubx.FieldSpec{
+			WireName: "threshold_configs",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfig_ThresholdConfigsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_AdaptiveProtectionConfigFields = ubx.FieldMap{
-	"AutoDeployConfig": ubx.FieldSpec{
-		WireName: "auto_deploy_config",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_AutoDeployConfigFields,
-	},
-	"Layer7DdosDefenseConfig": ubx.FieldSpec{
-		WireName: "layer7_ddos_defense_config",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields,
-	},
-}
+		"AutoDeployConfig": ubx.FieldSpec{
+			WireName: "auto_deploy_config",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_AutoDeployConfigFields,
+		},
+		"Layer7DdosDefenseConfig": ubx.FieldSpec{
+			WireName: "layer7_ddos_defense_config",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_AdaptiveProtectionConfig_Layer7DdosDefenseConfigFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields = ubx.FieldMap{
-	"ContentTypes": ubx.FieldSpec{WireName: "content_types"},
-}
+		"ContentTypes": ubx.FieldSpec{WireName: "content_types"},
+	}
 
 var AlphaRegionSecurityPolicy_AdvancedOptionsConfigFields = ubx.FieldMap{
-	"JsonCustomConfig": ubx.FieldSpec{
-		WireName: "json_custom_config",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
-	},
-	"JsonParsing":               ubx.FieldSpec{WireName: "json_parsing"},
-	"LogLevel":                  ubx.FieldSpec{WireName: "log_level"},
-	"RequestBodyInspectionSize": ubx.FieldSpec{WireName: "request_body_inspection_size"},
-	"UserIpRequestHeaders":      ubx.FieldSpec{WireName: "user_ip_request_headers"},
-}
+		"JsonCustomConfig": ubx.FieldSpec{
+			WireName: "json_custom_config",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_AdvancedOptionsConfig_JsonCustomConfigFields,
+		},
+		"JsonParsing": ubx.FieldSpec{WireName: "json_parsing"},
+		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+		"RequestBodyInspectionSize": ubx.FieldSpec{WireName: "request_body_inspection_size"},
+		"UserIpRequestHeaders": ubx.FieldSpec{WireName: "user_ip_request_headers"},
+	}
 
 var AlphaRegionSecurityPolicy_AssociationsFields = ubx.FieldMap{
-	"AttachmentId":     ubx.FieldSpec{WireName: "attachment_id"},
-	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
-	"ExcludedFolders":  ubx.FieldSpec{WireName: "excluded_folders"},
-	"ExcludedProjects": ubx.FieldSpec{WireName: "excluded_projects"},
-	"Name":             ubx.FieldSpec{WireName: "name"},
-	"SecurityPolicyId": ubx.FieldSpec{WireName: "security_policy_id"},
-	"ShortName":        ubx.FieldSpec{WireName: "short_name"},
-}
+		"AttachmentId": ubx.FieldSpec{WireName: "attachment_id"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ExcludedFolders": ubx.FieldSpec{WireName: "excluded_folders"},
+		"ExcludedProjects": ubx.FieldSpec{WireName: "excluded_projects"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"SecurityPolicyId": ubx.FieldSpec{WireName: "security_policy_id"},
+		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+	}
 
 var AlphaRegionSecurityPolicy_CloudArmorConfigFields = ubx.FieldMap{
-	"EnableMl": ubx.FieldSpec{WireName: "enable_ml"},
-}
+		"EnableMl": ubx.FieldSpec{WireName: "enable_ml"},
+	}
 
 var AlphaRegionSecurityPolicy_DdosProtectionConfigFields = ubx.FieldMap{
-	"DdosAdaptiveProtection":        ubx.FieldSpec{WireName: "ddos_adaptive_protection"},
-	"DdosImpactedBaselineThreshold": ubx.FieldSpec{WireName: "ddos_impacted_baseline_threshold"},
-	"DdosProtection":                ubx.FieldSpec{WireName: "ddos_protection"},
-}
+		"DdosAdaptiveProtection": ubx.FieldSpec{WireName: "ddos_adaptive_protection"},
+		"DdosImpactedBaselineThreshold": ubx.FieldSpec{WireName: "ddos_impacted_baseline_threshold"},
+		"DdosProtection": ubx.FieldSpec{WireName: "ddos_protection"},
+	}
 
 var AlphaRegionSecurityPolicy_RecaptchaOptionsConfigFields = ubx.FieldMap{
-	"RedirectSiteKey": ubx.FieldSpec{WireName: "redirect_site_key"},
-}
+		"RedirectSiteKey": ubx.FieldSpec{WireName: "redirect_site_key"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields = ubx.FieldMap{
-	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
-	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-}
+		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_HeaderActionFields = ubx.FieldMap{
-	"RequestHeadersToAdds": ubx.FieldSpec{
-		WireName: "request_headers_to_adds",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields,
-	},
-}
+		"RequestHeadersToAdds": ubx.FieldSpec{
+			WireName: "request_headers_to_adds",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_HeaderAction_RequestHeadersToAddsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_Match_Config_DestPortsFields = ubx.FieldMap{
-	"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-	"Ports":      ubx.FieldSpec{WireName: "ports"},
-}
+		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
+		"Ports": ubx.FieldSpec{WireName: "ports"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_Match_ConfigFields = ubx.FieldMap{
-	"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
-	"DestPorts": ubx.FieldSpec{
-		WireName: "dest_ports",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_Config_DestPortsFields,
-	},
-	"Layer4Configs": ubx.FieldSpec{
-		WireName: "layer4_configs",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_Config_DestPortsFields,
-	},
-	"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
-}
+		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
+		"DestPorts": ubx.FieldSpec{
+			WireName: "dest_ports",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_Config_DestPortsFields,
+		},
+		"Layer4Configs": ubx.FieldSpec{
+			WireName: "layer4_configs",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_Config_DestPortsFields,
+		},
+		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_Match_ExprFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Expression":  ubx.FieldSpec{WireName: "expression"},
-	"Location":    ubx.FieldSpec{WireName: "location"},
-	"Title":       ubx.FieldSpec{WireName: "title"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"Title": ubx.FieldSpec{WireName: "title"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields = ubx.FieldMap{
-	"ActionTokenSiteKeys":  ubx.FieldSpec{WireName: "action_token_site_keys"},
-	"SessionTokenSiteKeys": ubx.FieldSpec{WireName: "session_token_site_keys"},
-}
+		"ActionTokenSiteKeys": ubx.FieldSpec{WireName: "action_token_site_keys"},
+		"SessionTokenSiteKeys": ubx.FieldSpec{WireName: "session_token_site_keys"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_Match_ExprOptionsFields = ubx.FieldMap{
-	"RecaptchaOptions": ubx.FieldSpec{
-		WireName: "recaptcha_options",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields,
-	},
-}
+		"RecaptchaOptions": ubx.FieldSpec{
+			WireName: "recaptcha_options",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_ExprOptions_RecaptchaOptionsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_MatchFields = ubx.FieldMap{
-	"Config": ubx.FieldSpec{
-		WireName: "config",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_ConfigFields,
-	},
-	"Expr": ubx.FieldSpec{
-		WireName: "expr",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_ExprFields,
-	},
-	"ExprOptions": ubx.FieldSpec{
-		WireName: "expr_options",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_Match_ExprOptionsFields,
-	},
-	"VersionedExpr": ubx.FieldSpec{WireName: "versioned_expr"},
-}
+		"Config": ubx.FieldSpec{
+			WireName: "config",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_ConfigFields,
+		},
+		"Expr": ubx.FieldSpec{
+			WireName: "expr",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_ExprFields,
+		},
+		"ExprOptions": ubx.FieldSpec{
+			WireName: "expr_options",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_Match_ExprOptionsFields,
+		},
+		"VersionedExpr": ubx.FieldSpec{WireName: "versioned_expr"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields = ubx.FieldMap{
-	"Name":   ubx.FieldSpec{WireName: "name"},
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_NetworkMatchFields = ubx.FieldMap{
-	"DestIpRanges":   ubx.FieldSpec{WireName: "dest_ip_ranges"},
-	"DestPorts":      ubx.FieldSpec{WireName: "dest_ports"},
-	"IpProtocols":    ubx.FieldSpec{WireName: "ip_protocols"},
-	"SrcAsns":        ubx.FieldSpec{WireName: "src_asns"},
-	"SrcIpRanges":    ubx.FieldSpec{WireName: "src_ip_ranges"},
-	"SrcPorts":       ubx.FieldSpec{WireName: "src_ports"},
-	"SrcRegionCodes": ubx.FieldSpec{WireName: "src_region_codes"},
-	"UserDefinedFields": ubx.FieldSpec{
-		WireName: "user_defined_fields",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields,
-	},
-}
+		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
+		"DestPorts": ubx.FieldSpec{WireName: "dest_ports"},
+		"IpProtocols": ubx.FieldSpec{WireName: "ip_protocols"},
+		"SrcAsns": ubx.FieldSpec{WireName: "src_asns"},
+		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
+		"SrcPorts": ubx.FieldSpec{WireName: "src_ports"},
+		"SrcRegionCodes": ubx.FieldSpec{WireName: "src_region_codes"},
+		"UserDefinedFields": ubx.FieldSpec{
+			WireName: "user_defined_fields",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_NetworkMatch_UserDefinedFieldsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields = ubx.FieldMap{
-	"Op":  ubx.FieldSpec{WireName: "op"},
-	"Val": ubx.FieldSpec{WireName: "val"},
-}
+		"Op": ubx.FieldSpec{WireName: "op"},
+		"Val": ubx.FieldSpec{WireName: "val"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields = ubx.FieldMap{
-	"RequestBodiesToExclude": ubx.FieldSpec{
-		WireName: "request_bodies_to_exclude",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
-	},
-	"RequestCookiesToExclude": ubx.FieldSpec{
-		WireName: "request_cookies_to_exclude",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
-	},
-	"RequestHeadersToExclude": ubx.FieldSpec{
-		WireName: "request_headers_to_exclude",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
-	},
-	"RequestQueryParamsToExclude": ubx.FieldSpec{
-		WireName: "request_query_params_to_exclude",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
-	},
-	"RequestUrisToExclude": ubx.FieldSpec{
-		WireName: "request_uris_to_exclude",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
-	},
-	"TargetRuleIds": ubx.FieldSpec{WireName: "target_rule_ids"},
-	"TargetRuleSet": ubx.FieldSpec{WireName: "target_rule_set"},
-}
+		"RequestBodiesToExclude": ubx.FieldSpec{
+			WireName: "request_bodies_to_exclude",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
+		},
+		"RequestCookiesToExclude": ubx.FieldSpec{
+			WireName: "request_cookies_to_exclude",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
+		},
+		"RequestHeadersToExclude": ubx.FieldSpec{
+			WireName: "request_headers_to_exclude",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
+		},
+		"RequestQueryParamsToExclude": ubx.FieldSpec{
+			WireName: "request_query_params_to_exclude",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
+		},
+		"RequestUrisToExclude": ubx.FieldSpec{
+			WireName: "request_uris_to_exclude",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_Exclusions_RequestBodiesToExcludeFields,
+		},
+		"TargetRuleIds": ubx.FieldSpec{WireName: "target_rule_ids"},
+		"TargetRuleSet": ubx.FieldSpec{WireName: "target_rule_set"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfigFields = ubx.FieldMap{
-	"Exclusions": ubx.FieldSpec{
-		WireName: "exclusions",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields,
-	},
-}
+		"Exclusions": ubx.FieldSpec{
+			WireName: "exclusions",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfig_ExclusionsFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThresholdFields = ubx.FieldMap{
-	"Count":       ubx.FieldSpec{WireName: "count"},
-	"IntervalSec": ubx.FieldSpec{WireName: "interval_sec"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"IntervalSec": ubx.FieldSpec{WireName: "interval_sec"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields = ubx.FieldMap{
-	"EnforceOnKeyName": ubx.FieldSpec{WireName: "enforce_on_key_name"},
-	"EnforceOnKeyType": ubx.FieldSpec{WireName: "enforce_on_key_type"},
-}
+		"EnforceOnKeyName": ubx.FieldSpec{WireName: "enforce_on_key_name"},
+		"EnforceOnKeyType": ubx.FieldSpec{WireName: "enforce_on_key_type"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedActionRpcStatusFields = ubx.FieldMap{
-	"Code":    ubx.FieldSpec{WireName: "code"},
-	"Message": ubx.FieldSpec{WireName: "message"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+		"Message": ubx.FieldSpec{WireName: "message"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields = ubx.FieldMap{
-	"Target": ubx.FieldSpec{WireName: "target"},
-	"Type":   ubx.FieldSpec{WireName: "type"},
-}
+		"Target": ubx.FieldSpec{WireName: "target"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var AlphaRegionSecurityPolicy_Rules_RateLimitOptionsFields = ubx.FieldMap{
-	"BanDurationSec": ubx.FieldSpec{WireName: "ban_duration_sec"},
-	"BanThreshold": ubx.FieldSpec{
-		WireName: "ban_threshold",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
-	},
-	"ConformAction": ubx.FieldSpec{WireName: "conform_action"},
-	"EnforceOnKey":  ubx.FieldSpec{WireName: "enforce_on_key"},
-	"EnforceOnKeyConfigs": ubx.FieldSpec{
-		WireName: "enforce_on_key_configs",
-		Kind:     "list",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields,
-	},
-	"EnforceOnKeyName": ubx.FieldSpec{WireName: "enforce_on_key_name"},
-	"ExceedAction":     ubx.FieldSpec{WireName: "exceed_action"},
-	"ExceedActionRpcStatus": ubx.FieldSpec{
-		WireName: "exceed_action_rpc_status",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedActionRpcStatusFields,
-	},
-	"ExceedRedirectOptions": ubx.FieldSpec{
-		WireName: "exceed_redirect_options",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
-	},
-	"RateLimitThreshold": ubx.FieldSpec{
-		WireName: "rate_limit_threshold",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
-	},
-}
+		"BanDurationSec": ubx.FieldSpec{WireName: "ban_duration_sec"},
+		"BanThreshold": ubx.FieldSpec{
+			WireName: "ban_threshold",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
+		},
+		"ConformAction": ubx.FieldSpec{WireName: "conform_action"},
+		"EnforceOnKey": ubx.FieldSpec{WireName: "enforce_on_key"},
+		"EnforceOnKeyConfigs": ubx.FieldSpec{
+			WireName: "enforce_on_key_configs",
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_EnforceOnKeyConfigsFields,
+		},
+		"EnforceOnKeyName": ubx.FieldSpec{WireName: "enforce_on_key_name"},
+		"ExceedAction": ubx.FieldSpec{WireName: "exceed_action"},
+		"ExceedActionRpcStatus": ubx.FieldSpec{
+			WireName: "exceed_action_rpc_status",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedActionRpcStatusFields,
+		},
+		"ExceedRedirectOptions": ubx.FieldSpec{
+			WireName: "exceed_redirect_options",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
+		},
+		"RateLimitThreshold": ubx.FieldSpec{
+			WireName: "rate_limit_threshold",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_BanThresholdFields,
+		},
+	}
 
 var AlphaRegionSecurityPolicy_RulesFields = ubx.FieldMap{
-	"Action":        ubx.FieldSpec{WireName: "action"},
-	"Description":   ubx.FieldSpec{WireName: "description"},
-	"Direction":     ubx.FieldSpec{WireName: "direction"},
-	"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-	"HeaderAction": ubx.FieldSpec{
-		WireName: "header_action",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_HeaderActionFields,
-	},
-	"Kind": ubx.FieldSpec{WireName: "kind"},
-	"Match": ubx.FieldSpec{
-		WireName: "match",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_MatchFields,
-	},
-	"NetworkMatch": ubx.FieldSpec{
-		WireName: "network_match",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_NetworkMatchFields,
-	},
-	"PreconfiguredWafConfig": ubx.FieldSpec{
-		WireName: "preconfigured_waf_config",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfigFields,
-	},
-	"Preview":  ubx.FieldSpec{WireName: "preview"},
-	"Priority": ubx.FieldSpec{WireName: "priority"},
-	"RateLimitOptions": ubx.FieldSpec{
-		WireName: "rate_limit_options",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptionsFields,
-	},
-	"RedirectOptions": ubx.FieldSpec{
-		WireName: "redirect_options",
-		Kind:     "object",
-		Fields:   AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
-	},
-	"RedirectTarget":            ubx.FieldSpec{WireName: "redirect_target"},
-	"RuleManagedProtectionTier": ubx.FieldSpec{WireName: "rule_managed_protection_tier"},
-	"RuleNumber":                ubx.FieldSpec{WireName: "rule_number"},
-	"RuleTupleCount":            ubx.FieldSpec{WireName: "rule_tuple_count"},
-	"TargetResources":           ubx.FieldSpec{WireName: "target_resources"},
-	"TargetServiceAccounts":     ubx.FieldSpec{WireName: "target_service_accounts"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
+		"HeaderAction": ubx.FieldSpec{
+			WireName: "header_action",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_HeaderActionFields,
+		},
+		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Match": ubx.FieldSpec{
+			WireName: "match",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_MatchFields,
+		},
+		"NetworkMatch": ubx.FieldSpec{
+			WireName: "network_match",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_NetworkMatchFields,
+		},
+		"PreconfiguredWafConfig": ubx.FieldSpec{
+			WireName: "preconfigured_waf_config",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_PreconfiguredWafConfigFields,
+		},
+		"Preview": ubx.FieldSpec{WireName: "preview"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"RateLimitOptions": ubx.FieldSpec{
+			WireName: "rate_limit_options",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptionsFields,
+		},
+		"RedirectOptions": ubx.FieldSpec{
+			WireName: "redirect_options",
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_Rules_RateLimitOptions_ExceedRedirectOptionsFields,
+		},
+		"RedirectTarget": ubx.FieldSpec{WireName: "redirect_target"},
+		"RuleManagedProtectionTier": ubx.FieldSpec{WireName: "rule_managed_protection_tier"},
+		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
+		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
+		"TargetResources": ubx.FieldSpec{WireName: "target_resources"},
+		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
+	}
 
 var AlphaRegionSecurityPolicy_UserDefinedFieldsFields = ubx.FieldMap{
-	"Base":   ubx.FieldSpec{WireName: "base"},
-	"Mask":   ubx.FieldSpec{WireName: "mask"},
-	"Name":   ubx.FieldSpec{WireName: "name"},
-	"Offset": ubx.FieldSpec{WireName: "offset"},
-	"Size":   ubx.FieldSpec{WireName: "size"},
-}
+		"Base": ubx.FieldSpec{WireName: "base"},
+		"Mask": ubx.FieldSpec{WireName: "mask"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Offset": ubx.FieldSpec{WireName: "offset"},
+		"Size": ubx.FieldSpec{WireName: "size"},
+	}
 
 type AlphaRegionSecurityPolicyConfig struct {
 	// Configuration options for Cloud Armor Adaptive Protection (CAAP).
@@ -584,7 +584,7 @@ type AlphaRegionSecurityPolicyConfig struct {
 	// Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
 	Labels any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name                   any
+	Name any
 	RecaptchaOptionsConfig any
 	// A list of rules that belong to this policy. There must always be a default rule which is a rule with priority 2147483647 and match all condition (for the match condition this means match "*" for srcIpRanges and for the networkMatch condition every field must be either match "*" or not set). If no rules are provided when creating a security policy, a default rule with action "allow" will be added.
 	Rules any
@@ -626,7 +626,7 @@ type AlphaRegionSecurityPolicyAttrs struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Output only. [Output Only] The parent of the security policy.
-	Parent                 any
+	Parent any
 	RecaptchaOptionsConfig any
 	// Output only. [Output Only] URL of the region where the regional security policy resides. This field is not applicable to global security policies.
 	Region any
@@ -651,51 +651,51 @@ var AlphaRegionSecurityPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdaptiveProtectionConfig": ubx.FieldSpec{
 			WireName: "adaptive_protection_config",
-			Kind:     "object",
-			Fields:   AlphaRegionSecurityPolicy_AdaptiveProtectionConfigFields,
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_AdaptiveProtectionConfigFields,
 		},
 		"AdvancedOptionsConfig": ubx.FieldSpec{
 			WireName: "advanced_options_config",
-			Kind:     "object",
-			Fields:   AlphaRegionSecurityPolicy_AdvancedOptionsConfigFields,
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_AdvancedOptionsConfigFields,
 		},
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
-			Kind:     "list",
-			Fields:   AlphaRegionSecurityPolicy_AssociationsFields,
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_AssociationsFields,
 		},
 		"CloudArmorConfig": ubx.FieldSpec{
 			WireName: "cloud_armor_config",
-			Kind:     "object",
-			Fields:   AlphaRegionSecurityPolicy_CloudArmorConfigFields,
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_CloudArmorConfigFields,
 		},
 		"DdosProtectionConfig": ubx.FieldSpec{
 			WireName: "ddos_protection_config",
-			Kind:     "object",
-			Fields:   AlphaRegionSecurityPolicy_DdosProtectionConfigFields,
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_DdosProtectionConfigFields,
 		},
-		"Description":      ubx.FieldSpec{WireName: "description"},
-		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
-		"Fingerprint":      ubx.FieldSpec{WireName: "fingerprint"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels":           ubx.FieldSpec{WireName: "labels"},
-		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"RecaptchaOptionsConfig": ubx.FieldSpec{
 			WireName: "recaptcha_options_config",
-			Kind:     "object",
-			Fields:   AlphaRegionSecurityPolicy_RecaptchaOptionsConfigFields,
+			Kind: "object",
+			Fields: AlphaRegionSecurityPolicy_RecaptchaOptionsConfigFields,
 		},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   AlphaRegionSecurityPolicy_RulesFields,
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_RulesFields,
 		},
 		"ShortName": ubx.FieldSpec{WireName: "short_name"},
-		"Type":      ubx.FieldSpec{WireName: "type"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 		"UserDefinedFields": ubx.FieldSpec{
 			WireName: "user_defined_fields",
-			Kind:     "list",
-			Fields:   AlphaRegionSecurityPolicy_UserDefinedFieldsFields,
+			Kind: "list",
+			Fields: AlphaRegionSecurityPolicy_UserDefinedFieldsFields,
 		},
 	},
 }

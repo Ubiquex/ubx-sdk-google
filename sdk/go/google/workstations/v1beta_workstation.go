@@ -4,19 +4,19 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaWorkstation_BoostConfigs struct {
-	Id      any
+	Id any
 	Running any
 }
 
 type V1betaWorkstation_Conditions struct {
-	Code    any
+	Code any
 	Details any
 	Message any
 }
 
 type V1betaWorkstation_PersistentDirectories struct {
 	MountPath any
-	SizeGb    any
+	SizeGb any
 }
 
 type V1betaWorkstation_RuntimeHost_GceInstanceHost struct {
@@ -34,23 +34,23 @@ type V1betaWorkstation_RuntimeHost struct {
 }
 
 var V1betaWorkstation_PersistentDirectoriesFields = ubx.FieldMap{
-	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-	"SizeGb":    ubx.FieldSpec{WireName: "size_gb"},
-}
+		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	}
 
 var V1betaWorkstation_RuntimeHost_GceInstanceHostFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Name": ubx.FieldSpec{WireName: "name"},
-	"Zone": ubx.FieldSpec{WireName: "zone"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var V1betaWorkstation_RuntimeHostFields = ubx.FieldMap{
-	"GceInstanceHost": ubx.FieldSpec{
-		WireName: "gce_instance_host",
-		Kind:     "object",
-		Fields:   V1betaWorkstation_RuntimeHost_GceInstanceHostFields,
-	},
-}
+		"GceInstanceHost": ubx.FieldSpec{
+			WireName: "gce_instance_host",
+			Kind: "object",
+			Fields: V1betaWorkstation_RuntimeHost_GceInstanceHostFields,
+		},
+	}
 
 type V1betaWorkstationConfig_ struct {
 	// Optional. Client-specified annotations.
@@ -127,19 +127,19 @@ var V1betaWorkstation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Env":         ubx.FieldSpec{WireName: "env"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Env": ubx.FieldSpec{WireName: "env"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PersistentDirectories": ubx.FieldSpec{
 			WireName: "persistent_directories",
-			Kind:     "list",
-			Fields:   V1betaWorkstation_PersistentDirectoriesFields,
+			Kind: "list",
+			Fields: V1betaWorkstation_PersistentDirectoriesFields,
 		},
 		"RuntimeHost": ubx.FieldSpec{
 			WireName: "runtime_host",
-			Kind:     "object",
-			Fields:   V1betaWorkstation_RuntimeHostFields,
+			Kind: "object",
+			Fields: V1betaWorkstation_RuntimeHostFields,
 		},
 		"SourceWorkstation": ubx.FieldSpec{WireName: "source_workstation"},
 	},

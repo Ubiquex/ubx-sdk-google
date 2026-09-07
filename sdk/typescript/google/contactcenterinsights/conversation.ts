@@ -474,6 +474,14 @@ export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chun
   mimeType?: string | Computed<string>;
 }
 
+export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  /** The literal data payload. (AI-inferred) */
+  data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
+  mimeType?: string | Computed<string>;
+}
+
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool {
   /** An identifier for the tool this applies to. (AI-inferred) */
   toolId?: string | Computed<string>;
@@ -523,7 +531,7 @@ export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chun
   /** The default value(s) for this resource's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Image content. (AI-inferred) */
-  image?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob>;
+  image?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image>;
   /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** The plain-text content. (AI-inferred) */

@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRoute_AsPaths struct {
-	AsLists         any
+	AsLists any
 	PathSegmentType any
 }
 
@@ -14,19 +14,19 @@ type AlphaRoute_Params struct {
 }
 
 type AlphaRoute_Warnings_Data struct {
-	Key   any
+	Key any
 	Value any
 }
 
 type AlphaRoute_Warnings struct {
-	Code    any
-	Data    any
+	Code any
+	Data any
 	Message any
 }
 
 var AlphaRoute_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 type AlphaRouteConfig struct {
 	// Whether this route can conflict with existing subnetworks. Setting this to true allows this route to conflict with subnetworks that have already been configured on the corresponding network.
@@ -132,25 +132,25 @@ var AlphaRoute = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_route",
 	Fields: ubx.FieldMap{
 		"AllowConflictingSubnetworks": ubx.FieldSpec{WireName: "allow_conflicting_subnetworks"},
-		"Description":                 ubx.FieldSpec{WireName: "description"},
-		"DestRange":                   ubx.FieldSpec{WireName: "dest_range"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
 		"IlbRouteBehaviorOnUnhealthy": ubx.FieldSpec{WireName: "ilb_route_behavior_on_unhealthy"},
-		"Name":                        ubx.FieldSpec{WireName: "name"},
-		"Network":                     ubx.FieldSpec{WireName: "network"},
-		"NextHopGateway":              ubx.FieldSpec{WireName: "next_hop_gateway"},
-		"NextHopIlb":                  ubx.FieldSpec{WireName: "next_hop_ilb"},
-		"NextHopInstance":             ubx.FieldSpec{WireName: "next_hop_instance"},
-		"NextHopIp":                   ubx.FieldSpec{WireName: "next_hop_ip"},
-		"NextHopNetwork":              ubx.FieldSpec{WireName: "next_hop_network"},
-		"NextHopVpnTunnel":            ubx.FieldSpec{WireName: "next_hop_vpn_tunnel"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"NextHopGateway": ubx.FieldSpec{WireName: "next_hop_gateway"},
+		"NextHopIlb": ubx.FieldSpec{WireName: "next_hop_ilb"},
+		"NextHopInstance": ubx.FieldSpec{WireName: "next_hop_instance"},
+		"NextHopIp": ubx.FieldSpec{WireName: "next_hop_ip"},
+		"NextHopNetwork": ubx.FieldSpec{WireName: "next_hop_network"},
+		"NextHopVpnTunnel": ubx.FieldSpec{WireName: "next_hop_vpn_tunnel"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   AlphaRoute_ParamsFields,
+			Kind: "object",
+			Fields: AlphaRoute_ParamsFields,
 		},
-		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"RouteStatus": ubx.FieldSpec{WireName: "route_status"},
-		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
-		"Tags":        ubx.FieldSpec{WireName: "tags"},
+		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

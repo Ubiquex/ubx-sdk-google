@@ -27,7 +27,31 @@ class Occurrence_AiSkillAnalysis_Findings:
     severity: Any = None
 
 @dataclasses.dataclass
+class Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsage:
+    # Cache matched tokens for implicit cache.
+    cache_count: Any = None
+    # Tokens in the model response.
+    candidate_count: Any = None
+    # Tokens in the user request.
+    prompt_count: Any = None
+    # Tokens in the thinking output.
+    thinking_count: Any = None
+    # Prompt tokens for using tools.
+    tool_use_prompt_count: Any = None
+
+@dataclasses.dataclass
 class Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult:
+    # Tracks max severity found.
+    max_severity: Any = None
+    # The base name of the model that performed the scan.
+    model_id: Any = None
+    # Status of the scan.
+    scan_status: Any = None
+    # Token usage associated with an AI scan.
+    token_usage: Any = None
+
+@dataclasses.dataclass
+class Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResult:
     # Tracks max severity found.
     max_severity: Any = None
     # Status of the scan.
@@ -970,7 +994,26 @@ _Occurrence_AiSkillAnalysis_FindingsFields = {
     "severity": ubx.FieldSpec(wire_name="severity"),
 }
 
+_Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields = {
+    "cache_count": ubx.FieldSpec(wire_name="cache_count"),
+    "candidate_count": ubx.FieldSpec(wire_name="candidate_count"),
+    "prompt_count": ubx.FieldSpec(wire_name="prompt_count"),
+    "thinking_count": ubx.FieldSpec(wire_name="thinking_count"),
+    "tool_use_prompt_count": ubx.FieldSpec(wire_name="tool_use_prompt_count"),
+}
+
 _Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields = {
+    "max_severity": ubx.FieldSpec(wire_name="max_severity"),
+    "model_id": ubx.FieldSpec(wire_name="model_id"),
+    "scan_status": ubx.FieldSpec(wire_name="scan_status"),
+    "token_usage": ubx.FieldSpec(
+        wire_name="token_usage",
+        kind="object",
+        fields=_Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResult_TokenUsageFields,
+    ),
+}
+
+_Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields = {
     "max_severity": ubx.FieldSpec(wire_name="max_severity"),
     "scan_status": ubx.FieldSpec(wire_name="scan_status"),
 }
@@ -989,7 +1032,7 @@ _Occurrence_AiSkillAnalysis_PerScannerVerdictFields = {
     "malicious_content_static_result": ubx.FieldSpec(
         wire_name="malicious_content_static_result",
         kind="object",
-        fields=_Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentLlmResultFields,
+        fields=_Occurrence_AiSkillAnalysis_PerScannerVerdict_MaliciousContentStaticResultFields,
     ),
     "malware_scan": ubx.FieldSpec(
         wire_name="malware_scan",

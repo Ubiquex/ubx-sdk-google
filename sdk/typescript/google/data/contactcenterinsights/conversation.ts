@@ -366,6 +366,12 @@ export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chun
   mimeType?: string | Computed<string>;
 }
 
+export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  data?: string | Computed<string>;
+  mimeType?: string | Computed<string>;
+}
+
 export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool {
   toolId?: string | Computed<string>;
   toolset?: string | Computed<string>;
@@ -395,7 +401,7 @@ export interface Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chun
   agentTransfer?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransfer>;
   blob?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob>;
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  image?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob>;
+  image?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image>;
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   text?: string | Computed<string>;
   toolCall?: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall | Computed<Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall>;

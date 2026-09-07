@@ -36,42 +36,42 @@ type EntityType_MonitoringConfig struct {
 }
 
 var EntityType_MonitoringConfig_CategoricalThresholdConfigFields = ubx.FieldMap{
-	"Value": ubx.FieldSpec{WireName: "value"},
-}
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var EntityType_MonitoringConfig_ImportFeaturesAnalysisFields = ubx.FieldMap{
-	"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
-	"State":                    ubx.FieldSpec{WireName: "state"},
-}
+		"AnomalyDetectionBaseline": ubx.FieldSpec{WireName: "anomaly_detection_baseline"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var EntityType_MonitoringConfig_SnapshotAnalysisFields = ubx.FieldMap{
-	"Disabled":               ubx.FieldSpec{WireName: "disabled"},
-	"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
-	"StalenessDays":          ubx.FieldSpec{WireName: "staleness_days"},
-}
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"MonitoringIntervalDays": ubx.FieldSpec{WireName: "monitoring_interval_days"},
+		"StalenessDays": ubx.FieldSpec{WireName: "staleness_days"},
+	}
 
 var EntityType_MonitoringConfigFields = ubx.FieldMap{
-	"CategoricalThresholdConfig": ubx.FieldSpec{
-		WireName: "categorical_threshold_config",
-		Kind:     "object",
-		Fields:   EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
-	},
-	"ImportFeaturesAnalysis": ubx.FieldSpec{
-		WireName: "import_features_analysis",
-		Kind:     "object",
-		Fields:   EntityType_MonitoringConfig_ImportFeaturesAnalysisFields,
-	},
-	"NumericalThresholdConfig": ubx.FieldSpec{
-		WireName: "numerical_threshold_config",
-		Kind:     "object",
-		Fields:   EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
-	},
-	"SnapshotAnalysis": ubx.FieldSpec{
-		WireName: "snapshot_analysis",
-		Kind:     "object",
-		Fields:   EntityType_MonitoringConfig_SnapshotAnalysisFields,
-	},
-}
+		"CategoricalThresholdConfig": ubx.FieldSpec{
+			WireName: "categorical_threshold_config",
+			Kind: "object",
+			Fields: EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
+		},
+		"ImportFeaturesAnalysis": ubx.FieldSpec{
+			WireName: "import_features_analysis",
+			Kind: "object",
+			Fields: EntityType_MonitoringConfig_ImportFeaturesAnalysisFields,
+		},
+		"NumericalThresholdConfig": ubx.FieldSpec{
+			WireName: "numerical_threshold_config",
+			Kind: "object",
+			Fields: EntityType_MonitoringConfig_CategoricalThresholdConfigFields,
+		},
+		"SnapshotAnalysis": ubx.FieldSpec{
+			WireName: "snapshot_analysis",
+			Kind: "object",
+			Fields: EntityType_MonitoringConfig_SnapshotAnalysisFields,
+		},
+	}
 
 type EntityTypeConfig struct {
 	// Optional. Description of the EntityType.
@@ -115,14 +115,14 @@ var EntityType = ubx.ResourceBinding{
 	WireType: "google_aiplatform_entity_type",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind:     "object",
-			Fields:   EntityType_MonitoringConfigFields,
+			Kind: "object",
+			Fields: EntityType_MonitoringConfigFields,
 		},
-		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"OfflineStorageTtlDays": ubx.FieldSpec{WireName: "offline_storage_ttl_days"},
 	},
 }

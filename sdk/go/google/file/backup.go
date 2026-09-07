@@ -56,11 +56,11 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_file_backup",
 	Fields: ubx.FieldMap{
-		"Description":     ubx.FieldSpec{WireName: "description"},
-		"KmsKey":          ubx.FieldSpec{WireName: "kms_key"},
-		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"SourceFileShare": ubx.FieldSpec{WireName: "source_file_share"},
-		"SourceInstance":  ubx.FieldSpec{WireName: "source_instance"},
-		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"SourceInstance": ubx.FieldSpec{WireName: "source_instance"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},
 }

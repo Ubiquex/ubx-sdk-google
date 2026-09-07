@@ -15,12 +15,12 @@ type V1betaConfig_GatewayConfig struct {
 
 type V1betaConfig_GrpcServices_FileDescriptorSet struct {
 	Contents any
-	Path     any
+	Path any
 }
 
 type V1betaConfig_GrpcServices struct {
 	FileDescriptorSet any
-	Source            any
+	Source any
 }
 
 type V1betaConfig_OpenapiDocuments struct {
@@ -28,42 +28,42 @@ type V1betaConfig_OpenapiDocuments struct {
 }
 
 var V1betaConfig_GatewayConfig_BackendConfigFields = ubx.FieldMap{
-	"GoogleServiceAccount": ubx.FieldSpec{WireName: "google_service_account"},
-}
+		"GoogleServiceAccount": ubx.FieldSpec{WireName: "google_service_account"},
+	}
 
 var V1betaConfig_GatewayConfigFields = ubx.FieldMap{
-	"BackendConfig": ubx.FieldSpec{
-		WireName: "backend_config",
-		Kind:     "object",
-		Fields:   V1betaConfig_GatewayConfig_BackendConfigFields,
-	},
-}
+		"BackendConfig": ubx.FieldSpec{
+			WireName: "backend_config",
+			Kind: "object",
+			Fields: V1betaConfig_GatewayConfig_BackendConfigFields,
+		},
+	}
 
 var V1betaConfig_GrpcServices_FileDescriptorSetFields = ubx.FieldMap{
-	"Contents": ubx.FieldSpec{WireName: "contents"},
-	"Path":     ubx.FieldSpec{WireName: "path"},
-}
+		"Contents": ubx.FieldSpec{WireName: "contents"},
+		"Path": ubx.FieldSpec{WireName: "path"},
+	}
 
 var V1betaConfig_GrpcServicesFields = ubx.FieldMap{
-	"FileDescriptorSet": ubx.FieldSpec{
-		WireName: "file_descriptor_set",
-		Kind:     "object",
-		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
-	},
-	"Source": ubx.FieldSpec{
-		WireName: "source",
-		Kind:     "list",
-		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
-	},
-}
+		"FileDescriptorSet": ubx.FieldSpec{
+			WireName: "file_descriptor_set",
+			Kind: "object",
+			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
+		},
+		"Source": ubx.FieldSpec{
+			WireName: "source",
+			Kind: "list",
+			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
+		},
+	}
 
 var V1betaConfig_OpenapiDocumentsFields = ubx.FieldMap{
-	"Document": ubx.FieldSpec{
-		WireName: "document",
-		Kind:     "object",
-		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
-	},
-}
+		"Document": ubx.FieldSpec{
+			WireName: "document",
+			Kind: "object",
+			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
+		},
+	}
 
 type V1betaConfigConfig struct {
 	// Optional. Display name.
@@ -115,25 +115,25 @@ var V1betaConfig = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind:     "object",
-			Fields:   V1betaConfig_GatewayConfigFields,
+			Kind: "object",
+			Fields: V1betaConfig_GatewayConfigFields,
 		},
 		"GatewayServiceAccount": ubx.FieldSpec{WireName: "gateway_service_account"},
 		"GrpcServices": ubx.FieldSpec{
 			WireName: "grpc_services",
-			Kind:     "list",
-			Fields:   V1betaConfig_GrpcServicesFields,
+			Kind: "list",
+			Fields: V1betaConfig_GrpcServicesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManagedServiceConfigs": ubx.FieldSpec{
 			WireName: "managed_service_configs",
-			Kind:     "list",
-			Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
+			Kind: "list",
+			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
 		},
 		"OpenapiDocuments": ubx.FieldSpec{
 			WireName: "openapi_documents",
-			Kind:     "list",
-			Fields:   V1betaConfig_OpenapiDocumentsFields,
+			Kind: "list",
+			Fields: V1betaConfig_OpenapiDocumentsFields,
 		},
 	},
 }

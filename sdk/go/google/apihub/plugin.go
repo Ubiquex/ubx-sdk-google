@@ -104,112 +104,112 @@ type Plugin_Type struct {
 }
 
 var Plugin_ActionsConfigFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"TriggerMode": ubx.FieldSpec{WireName: "trigger_mode"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"TriggerMode": ubx.FieldSpec{WireName: "trigger_mode"},
+	}
 
 var Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptionsFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+	}
 
 var Plugin_ConfigTemplate_AdditionalConfigTemplateFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"EnumOptions": ubx.FieldSpec{
-		WireName: "enum_options",
-		Kind:     "list",
-		Fields:   Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptionsFields,
-	},
-	"Id": ubx.FieldSpec{WireName: "id"},
-	"MultiSelectOptions": ubx.FieldSpec{
-		WireName: "multi_select_options",
-		Kind:     "list",
-		Fields:   Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptionsFields,
-	},
-	"Required":        ubx.FieldSpec{WireName: "required"},
-	"ValidationRegex": ubx.FieldSpec{WireName: "validation_regex"},
-	"ValueType":       ubx.FieldSpec{WireName: "value_type"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"EnumOptions": ubx.FieldSpec{
+			WireName: "enum_options",
+			Kind: "list",
+			Fields: Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptionsFields,
+		},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"MultiSelectOptions": ubx.FieldSpec{
+			WireName: "multi_select_options",
+			Kind: "list",
+			Fields: Plugin_ConfigTemplate_AdditionalConfigTemplate_EnumOptionsFields,
+		},
+		"Required": ubx.FieldSpec{WireName: "required"},
+		"ValidationRegex": ubx.FieldSpec{WireName: "validation_regex"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+	}
 
 var Plugin_ConfigTemplate_AuthConfigTemplate_ServiceAccountFields = ubx.FieldMap{
-	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-}
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
 
 var Plugin_ConfigTemplate_AuthConfigTemplateFields = ubx.FieldMap{
-	"ServiceAccount": ubx.FieldSpec{
-		WireName: "service_account",
-		Kind:     "object",
-		Fields:   Plugin_ConfigTemplate_AuthConfigTemplate_ServiceAccountFields,
-	},
-	"SupportedAuthTypes": ubx.FieldSpec{WireName: "supported_auth_types"},
-}
+		"ServiceAccount": ubx.FieldSpec{
+			WireName: "service_account",
+			Kind: "object",
+			Fields: Plugin_ConfigTemplate_AuthConfigTemplate_ServiceAccountFields,
+		},
+		"SupportedAuthTypes": ubx.FieldSpec{WireName: "supported_auth_types"},
+	}
 
 var Plugin_ConfigTemplateFields = ubx.FieldMap{
-	"AdditionalConfigTemplate": ubx.FieldSpec{
-		WireName: "additional_config_template",
-		Kind:     "list",
-		Fields:   Plugin_ConfigTemplate_AdditionalConfigTemplateFields,
-	},
-	"AuthConfigTemplate": ubx.FieldSpec{
-		WireName: "auth_config_template",
-		Kind:     "object",
-		Fields:   Plugin_ConfigTemplate_AuthConfigTemplateFields,
-	},
-}
+		"AdditionalConfigTemplate": ubx.FieldSpec{
+			WireName: "additional_config_template",
+			Kind: "list",
+			Fields: Plugin_ConfigTemplate_AdditionalConfigTemplateFields,
+		},
+		"AuthConfigTemplate": ubx.FieldSpec{
+			WireName: "auth_config_template",
+			Kind: "object",
+			Fields: Plugin_ConfigTemplate_AuthConfigTemplateFields,
+		},
+	}
 
 var Plugin_DocumentationFields = ubx.FieldMap{
-	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-}
+		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+	}
 
 var Plugin_HostingServiceFields = ubx.FieldMap{
-	"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
-}
+		"ServiceUri": ubx.FieldSpec{WireName: "service_uri"},
+	}
 
 var Plugin_Type_EnumValues_ValuesFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	"Id":          ubx.FieldSpec{WireName: "id"},
-	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Immutable": ubx.FieldSpec{WireName: "immutable"},
+	}
 
 var Plugin_Type_EnumValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{
-		WireName: "values",
-		Kind:     "list",
-		Fields:   Plugin_Type_EnumValues_ValuesFields,
-	},
-}
+		"Values": ubx.FieldSpec{
+			WireName: "values",
+			Kind: "list",
+			Fields: Plugin_Type_EnumValues_ValuesFields,
+		},
+	}
 
 var Plugin_Type_JsonValuesFields = ubx.FieldMap{
-	"Values": ubx.FieldSpec{WireName: "values"},
-}
+		"Values": ubx.FieldSpec{WireName: "values"},
+	}
 
 var Plugin_TypeFields = ubx.FieldMap{
-	"Attribute": ubx.FieldSpec{WireName: "attribute"},
-	"EnumValues": ubx.FieldSpec{
-		WireName: "enum_values",
-		Kind:     "object",
-		Fields:   Plugin_Type_EnumValuesFields,
-	},
-	"JsonValues": ubx.FieldSpec{
-		WireName: "json_values",
-		Kind:     "object",
-		Fields:   Plugin_Type_JsonValuesFields,
-	},
-	"StringValues": ubx.FieldSpec{
-		WireName: "string_values",
-		Kind:     "object",
-		Fields:   Plugin_Type_JsonValuesFields,
-	},
-	"UriValues": ubx.FieldSpec{
-		WireName: "uri_values",
-		Kind:     "object",
-		Fields:   Plugin_Type_JsonValuesFields,
-	},
-}
+		"Attribute": ubx.FieldSpec{WireName: "attribute"},
+		"EnumValues": ubx.FieldSpec{
+			WireName: "enum_values",
+			Kind: "object",
+			Fields: Plugin_Type_EnumValuesFields,
+		},
+		"JsonValues": ubx.FieldSpec{
+			WireName: "json_values",
+			Kind: "object",
+			Fields: Plugin_Type_JsonValuesFields,
+		},
+		"StringValues": ubx.FieldSpec{
+			WireName: "string_values",
+			Kind: "object",
+			Fields: Plugin_Type_JsonValuesFields,
+		},
+		"UriValues": ubx.FieldSpec{
+			WireName: "uri_values",
+			Kind: "object",
+			Fields: Plugin_Type_JsonValuesFields,
+		},
+	}
 
 type PluginConfig struct {
 	// Optional. The configuration of actions supported by the plugin. **REQUIRED**: This field must be provided when creating or updating a Plugin. The server will reject requests if this field is missing.
@@ -270,33 +270,33 @@ var Plugin = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActionsConfig": ubx.FieldSpec{
 			WireName: "actions_config",
-			Kind:     "list",
-			Fields:   Plugin_ActionsConfigFields,
+			Kind: "list",
+			Fields: Plugin_ActionsConfigFields,
 		},
 		"ConfigTemplate": ubx.FieldSpec{
 			WireName: "config_template",
-			Kind:     "object",
-			Fields:   Plugin_ConfigTemplateFields,
+			Kind: "object",
+			Fields: Plugin_ConfigTemplateFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind:     "object",
-			Fields:   Plugin_DocumentationFields,
+			Kind: "object",
+			Fields: Plugin_DocumentationFields,
 		},
 		"GatewayType": ubx.FieldSpec{WireName: "gateway_type"},
 		"HostingService": ubx.FieldSpec{
 			WireName: "hosting_service",
-			Kind:     "object",
-			Fields:   Plugin_HostingServiceFields,
+			Kind: "object",
+			Fields: Plugin_HostingServiceFields,
 		},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PluginCategory": ubx.FieldSpec{WireName: "plugin_category"},
 		"Type": ubx.FieldSpec{
 			WireName: "type",
-			Kind:     "object",
-			Fields:   Plugin_TypeFields,
+			Kind: "object",
+			Fields: Plugin_TypeFields,
 		},
 	},
 }

@@ -11,9 +11,9 @@ type V1beta1Project_Parent struct {
 }
 
 var V1beta1Project_ParentFields = ubx.FieldMap{
-	"Id":   ubx.FieldSpec{WireName: "id"},
-	"Type": ubx.FieldSpec{WireName: "type"},
-}
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 type V1beta1ProjectConfig struct {
 	// Creation time. Read-only.
@@ -54,16 +54,16 @@ type V1beta1ProjectAttrs struct {
 var V1beta1Project = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_v1beta1_project",
 	Fields: ubx.FieldMap{
-		"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"Name":           ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parent": ubx.FieldSpec{
 			WireName: "parent",
-			Kind:     "object",
-			Fields:   V1beta1Project_ParentFields,
+			Kind: "object",
+			Fields: V1beta1Project_ParentFields,
 		},
-		"ProjectId":     ubx.FieldSpec{WireName: "project_id"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
 	},
 }

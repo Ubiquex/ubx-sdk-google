@@ -44,11 +44,11 @@ type V1beta1FlagAttributeAttrs struct {
 var V1beta1FlagAttribute = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_v1beta1_flag_attribute",
 	Fields: ubx.FieldMap{
-		"Annotations":        ubx.FieldSpec{WireName: "annotations"},
+		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AttributeValueType": ubx.FieldSpec{WireName: "attribute_value_type"},
-		"Key":                ubx.FieldSpec{WireName: "key"},
-		"Labels":             ubx.FieldSpec{WireName: "labels"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
-		"ValueType":          ubx.FieldSpec{WireName: "value_type"},
+		"Key": ubx.FieldSpec{WireName: "key"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"ValueType": ubx.FieldSpec{WireName: "value_type"},
 	},
 }

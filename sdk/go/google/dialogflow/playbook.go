@@ -279,304 +279,304 @@ type Playbook_LlmModelSettings struct {
 }
 
 var Playbook_CodeBlockFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_AudioExportGcsDestinationFields = ubx.FieldMap{
-	"Uri": ubx.FieldSpec{WireName: "uri"},
-}
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_DtmfSettingsFields = ubx.FieldMap{
-	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
-	"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
-	"FinishDigit":                ubx.FieldSpec{WireName: "finish_digit"},
-	"InterdigitTimeoutDuration":  ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
-	"MaxDigits":                  ubx.FieldSpec{WireName: "max_digits"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
+		"FinishDigit": ubx.FieldSpec{WireName: "finish_digit"},
+		"InterdigitTimeoutDuration": ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
+		"MaxDigits": ubx.FieldSpec{WireName: "max_digits"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_LoggingSettingsFields = ubx.FieldMap{
-	"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
-	"EnableInteractionLogging":    ubx.FieldSpec{WireName: "enable_interaction_logging"},
-	"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-}
+		"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
+		"EnableInteractionLogging": ubx.FieldSpec{WireName: "enable_interaction_logging"},
+		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettingsFields = ubx.FieldMap{
-	"EndpointerSensitivity":      ubx.FieldSpec{WireName: "endpointer_sensitivity"},
-	"Models":                     ubx.FieldSpec{WireName: "models"},
-	"NoSpeechTimeout":            ubx.FieldSpec{WireName: "no_speech_timeout"},
-	"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
-}
+		"EndpointerSensitivity": ubx.FieldSpec{WireName: "endpointer_sensitivity"},
+		"Models": ubx.FieldSpec{WireName: "models"},
+		"NoSpeechTimeout": ubx.FieldSpec{WireName: "no_speech_timeout"},
+		"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettingsFields = ubx.FieldMap{
-	"AudioExportGcsDestination": ubx.FieldSpec{
-		WireName: "audio_export_gcs_destination",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_AudioExportGcsDestinationFields,
-	},
-	"DtmfSettings": ubx.FieldSpec{
-		WireName: "dtmf_settings",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_DtmfSettingsFields,
-	},
-	"LoggingSettings": ubx.FieldSpec{
-		WireName: "logging_settings",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_LoggingSettingsFields,
-	},
-	"SpeechSettings": ubx.FieldSpec{
-		WireName: "speech_settings",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettingsFields,
-	},
-}
+		"AudioExportGcsDestination": ubx.FieldSpec{
+			WireName: "audio_export_gcs_destination",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_AudioExportGcsDestinationFields,
+		},
+		"DtmfSettings": ubx.FieldSpec{
+			WireName: "dtmf_settings",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_DtmfSettingsFields,
+		},
+		"LoggingSettings": ubx.FieldSpec{
+			WireName: "logging_settings",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_LoggingSettingsFields,
+		},
+		"SpeechSettings": ubx.FieldSpec{
+			WireName: "speech_settings",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettingsFields,
+		},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields = ubx.FieldMap{
-	"Metadata": ubx.FieldSpec{WireName: "metadata"},
-}
+		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Audio":                     ubx.FieldSpec{WireName: "audio"},
-	"Uri":                       ubx.FieldSpec{WireName: "uri"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Audio": ubx.FieldSpec{WireName: "audio"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields = ubx.FieldMap{
-	"Segments": ubx.FieldSpec{
-		WireName: "segments",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
-	},
-}
+		"Segments": ubx.FieldSpec{
+			WireName: "segments",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
+		},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Ssml":                      ubx.FieldSpec{WireName: "ssml"},
-	"Text":                      ubx.FieldSpec{WireName: "text"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Ssml": ubx.FieldSpec{WireName: "ssml"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"AudioUri":                  ubx.FieldSpec{WireName: "audio_uri"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"AudioUri": ubx.FieldSpec{WireName: "audio_uri"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields = ubx.FieldMap{
-	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-}
+		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields = ubx.FieldMap{
-	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-	"Text":                      ubx.FieldSpec{WireName: "text"},
-}
+		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields = ubx.FieldMap{
-	"Action":          ubx.FieldSpec{WireName: "action"},
-	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-	"Tool":            ubx.FieldSpec{WireName: "tool"},
-}
+		"Action": ubx.FieldSpec{WireName: "action"},
+		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_MessageFields = ubx.FieldMap{
-	"Channel": ubx.FieldSpec{WireName: "channel"},
-	"ConversationSuccess": ubx.FieldSpec{
-		WireName: "conversation_success",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-	},
-	"EndInteraction":    ubx.FieldSpec{WireName: "end_interaction"},
-	"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
-	"LiveAgentHandoff": ubx.FieldSpec{
-		WireName: "live_agent_handoff",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-	},
-	"MixedAudio": ubx.FieldSpec{
-		WireName: "mixed_audio",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
-	},
-	"OutputAudioText": ubx.FieldSpec{
-		WireName: "output_audio_text",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
-	},
-	"Payload": ubx.FieldSpec{WireName: "payload"},
-	"PlayAudio": ubx.FieldSpec{
-		WireName: "play_audio",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
-	},
-	"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-	"TelephonyTransferCall": ubx.FieldSpec{
-		WireName: "telephony_transfer_call",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
-	},
-	"Text": ubx.FieldSpec{
-		WireName: "text",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
-	},
-	"ToolCall": ubx.FieldSpec{
-		WireName: "tool_call",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
-	},
-}
+		"Channel": ubx.FieldSpec{WireName: "channel"},
+		"ConversationSuccess": ubx.FieldSpec{
+			WireName: "conversation_success",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+		},
+		"EndInteraction": ubx.FieldSpec{WireName: "end_interaction"},
+		"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
+		"LiveAgentHandoff": ubx.FieldSpec{
+			WireName: "live_agent_handoff",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+		},
+		"MixedAudio": ubx.FieldSpec{
+			WireName: "mixed_audio",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
+		},
+		"OutputAudioText": ubx.FieldSpec{
+			WireName: "output_audio_text",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
+		},
+		"Payload": ubx.FieldSpec{WireName: "payload"},
+		"PlayAudio": ubx.FieldSpec{
+			WireName: "play_audio",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
+		},
+		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
+		"TelephonyTransferCall": ubx.FieldSpec{
+			WireName: "telephony_transfer_call",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
+		},
+		"Text": ubx.FieldSpec{
+			WireName: "text",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
+		},
+		"ToolCall": ubx.FieldSpec{
+			WireName: "tool_call",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
+		},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContentFields = ubx.FieldMap{
-	"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
-	"Message": ubx.FieldSpec{
-		WireName: "message",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-	},
-}
+		"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
+		"Message": ubx.FieldSpec{
+			WireName: "message",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+		},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_CasesFields = ubx.FieldMap{
-	"CaseContent": ubx.FieldSpec{
-		WireName: "case_content",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContentFields,
-	},
-	"Condition": ubx.FieldSpec{WireName: "condition"},
-}
+		"CaseContent": ubx.FieldSpec{
+			WireName: "case_content",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContentFields,
+		},
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_ConditionalCasesFields = ubx.FieldMap{
-	"Cases": ubx.FieldSpec{
-		WireName: "cases",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_CasesFields,
-	},
-}
+		"Cases": ubx.FieldSpec{
+			WireName: "cases",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_CasesFields,
+		},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_GeneratorsFields = ubx.FieldMap{
-	"Generator":       ubx.FieldSpec{WireName: "generator"},
-	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-	"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
-}
+		"Generator": ubx.FieldSpec{WireName: "generator"},
+		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+		"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
+	}
 
 var Playbook_Handlers_EventHandler_Fulfillment_SetParameterActionsFields = ubx.FieldMap{
-	"Parameter": ubx.FieldSpec{WireName: "parameter"},
-	"Value":     ubx.FieldSpec{WireName: "value"},
-}
+		"Parameter": ubx.FieldSpec{WireName: "parameter"},
+		"Value": ubx.FieldSpec{WireName: "value"},
+	}
 
 var Playbook_Handlers_EventHandler_FulfillmentFields = ubx.FieldMap{
-	"AdvancedSettings": ubx.FieldSpec{
-		WireName: "advanced_settings",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettingsFields,
-	},
-	"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
-	"ConditionalCases": ubx.FieldSpec{
-		WireName: "conditional_cases",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCasesFields,
-	},
-	"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
-	"Generators": ubx.FieldSpec{
-		WireName: "generators",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_GeneratorsFields,
-	},
-	"Messages": ubx.FieldSpec{
-		WireName: "messages",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-	},
-	"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
-	"SetParameterActions": ubx.FieldSpec{
-		WireName: "set_parameter_actions",
-		Kind:     "list",
-		Fields:   Playbook_Handlers_EventHandler_Fulfillment_SetParameterActionsFields,
-	},
-	"Tag":     ubx.FieldSpec{WireName: "tag"},
-	"Webhook": ubx.FieldSpec{WireName: "webhook"},
-}
+		"AdvancedSettings": ubx.FieldSpec{
+			WireName: "advanced_settings",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettingsFields,
+		},
+		"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
+		"ConditionalCases": ubx.FieldSpec{
+			WireName: "conditional_cases",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCasesFields,
+		},
+		"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
+		"Generators": ubx.FieldSpec{
+			WireName: "generators",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_GeneratorsFields,
+		},
+		"Messages": ubx.FieldSpec{
+			WireName: "messages",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+		},
+		"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
+		"SetParameterActions": ubx.FieldSpec{
+			WireName: "set_parameter_actions",
+			Kind: "list",
+			Fields: Playbook_Handlers_EventHandler_Fulfillment_SetParameterActionsFields,
+		},
+		"Tag": ubx.FieldSpec{WireName: "tag"},
+		"Webhook": ubx.FieldSpec{WireName: "webhook"},
+	}
 
 var Playbook_Handlers_EventHandlerFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{WireName: "condition"},
-	"Event":     ubx.FieldSpec{WireName: "event"},
-	"Fulfillment": ubx.FieldSpec{
-		WireName: "fulfillment",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_FulfillmentFields,
-	},
-}
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Event": ubx.FieldSpec{WireName: "event"},
+		"Fulfillment": ubx.FieldSpec{
+			WireName: "fulfillment",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_FulfillmentFields,
+		},
+	}
 
 var Playbook_Handlers_LifecycleHandlerFields = ubx.FieldMap{
-	"Condition": ubx.FieldSpec{WireName: "condition"},
-	"Fulfillment": ubx.FieldSpec{
-		WireName: "fulfillment",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandler_FulfillmentFields,
-	},
-	"LifecycleStage": ubx.FieldSpec{WireName: "lifecycle_stage"},
-}
+		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Fulfillment": ubx.FieldSpec{
+			WireName: "fulfillment",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandler_FulfillmentFields,
+		},
+		"LifecycleStage": ubx.FieldSpec{WireName: "lifecycle_stage"},
+	}
 
 var Playbook_HandlersFields = ubx.FieldMap{
-	"EventHandler": ubx.FieldSpec{
-		WireName: "event_handler",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_EventHandlerFields,
-	},
-	"LifecycleHandler": ubx.FieldSpec{
-		WireName: "lifecycle_handler",
-		Kind:     "object",
-		Fields:   Playbook_Handlers_LifecycleHandlerFields,
-	},
-}
+		"EventHandler": ubx.FieldSpec{
+			WireName: "event_handler",
+			Kind: "object",
+			Fields: Playbook_Handlers_EventHandlerFields,
+		},
+		"LifecycleHandler": ubx.FieldSpec{
+			WireName: "lifecycle_handler",
+			Kind: "object",
+			Fields: Playbook_Handlers_LifecycleHandlerFields,
+		},
+	}
 
 var Playbook_InputParameterDefinitions_TypeSchema_InlineSchemaFields = ubx.FieldMap{
-	"Items": ubx.FieldSpec{WireName: "items"},
-	"Type":  ubx.FieldSpec{WireName: "type"},
-}
+		"Items": ubx.FieldSpec{WireName: "items"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+	}
 
 var Playbook_InputParameterDefinitions_TypeSchema_SchemaReferenceFields = ubx.FieldMap{
-	"Schema": ubx.FieldSpec{WireName: "schema"},
-	"Tool":   ubx.FieldSpec{WireName: "tool"},
-}
+		"Schema": ubx.FieldSpec{WireName: "schema"},
+		"Tool": ubx.FieldSpec{WireName: "tool"},
+	}
 
 var Playbook_InputParameterDefinitions_TypeSchemaFields = ubx.FieldMap{
-	"InlineSchema": ubx.FieldSpec{
-		WireName: "inline_schema",
-		Kind:     "object",
-		Fields:   Playbook_InputParameterDefinitions_TypeSchema_InlineSchemaFields,
-	},
-	"SchemaReference": ubx.FieldSpec{
-		WireName: "schema_reference",
-		Kind:     "object",
-		Fields:   Playbook_InputParameterDefinitions_TypeSchema_SchemaReferenceFields,
-	},
-}
+		"InlineSchema": ubx.FieldSpec{
+			WireName: "inline_schema",
+			Kind: "object",
+			Fields: Playbook_InputParameterDefinitions_TypeSchema_InlineSchemaFields,
+		},
+		"SchemaReference": ubx.FieldSpec{
+			WireName: "schema_reference",
+			Kind: "object",
+			Fields: Playbook_InputParameterDefinitions_TypeSchema_SchemaReferenceFields,
+		},
+	}
 
 var Playbook_InputParameterDefinitionsFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"Name":        ubx.FieldSpec{WireName: "name"},
-	"Type":        ubx.FieldSpec{WireName: "type"},
-	"TypeSchema": ubx.FieldSpec{
-		WireName: "type_schema",
-		Kind:     "object",
-		Fields:   Playbook_InputParameterDefinitions_TypeSchemaFields,
-	},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Type": ubx.FieldSpec{WireName: "type"},
+		"TypeSchema": ubx.FieldSpec{
+			WireName: "type_schema",
+			Kind: "object",
+			Fields: Playbook_InputParameterDefinitions_TypeSchemaFields,
+		},
+	}
 
 var Playbook_Instruction_StepsFields = ubx.FieldMap{
-	"Steps": ubx.FieldSpec{WireName: "steps"},
-	"Text":  ubx.FieldSpec{WireName: "text"},
-}
+		"Steps": ubx.FieldSpec{WireName: "steps"},
+		"Text": ubx.FieldSpec{WireName: "text"},
+	}
 
 var Playbook_InstructionFields = ubx.FieldMap{
-	"Guidelines": ubx.FieldSpec{WireName: "guidelines"},
-	"Steps": ubx.FieldSpec{
-		WireName: "steps",
-		Kind:     "list",
-		Fields:   Playbook_Instruction_StepsFields,
-	},
-}
+		"Guidelines": ubx.FieldSpec{WireName: "guidelines"},
+		"Steps": ubx.FieldSpec{
+			WireName: "steps",
+			Kind: "list",
+			Fields: Playbook_Instruction_StepsFields,
+		},
+	}
 
 var Playbook_LlmModelSettingsFields = ubx.FieldMap{
-	"Model":      ubx.FieldSpec{WireName: "model"},
-	"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
-}
+		"Model": ubx.FieldSpec{WireName: "model"},
+		"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
+	}
 
 type PlaybookConfig struct {
 	// Custom code run inline as part of this fulfillment or tool. (AI-inferred)
@@ -645,38 +645,38 @@ var Playbook = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CodeBlock": ubx.FieldSpec{
 			WireName: "code_block",
-			Kind:     "object",
-			Fields:   Playbook_CodeBlockFields,
+			Kind: "object",
+			Fields: Playbook_CodeBlockFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Goal":        ubx.FieldSpec{WireName: "goal"},
+		"Goal": ubx.FieldSpec{WireName: "goal"},
 		"Handlers": ubx.FieldSpec{
 			WireName: "handlers",
-			Kind:     "list",
-			Fields:   Playbook_HandlersFields,
+			Kind: "list",
+			Fields: Playbook_HandlersFields,
 		},
 		"InputParameterDefinitions": ubx.FieldSpec{
 			WireName: "input_parameter_definitions",
-			Kind:     "list",
-			Fields:   Playbook_InputParameterDefinitionsFields,
+			Kind: "list",
+			Fields: Playbook_InputParameterDefinitionsFields,
 		},
 		"Instruction": ubx.FieldSpec{
 			WireName: "instruction",
-			Kind:     "object",
-			Fields:   Playbook_InstructionFields,
+			Kind: "object",
+			Fields: Playbook_InstructionFields,
 		},
 		"LlmModelSettings": ubx.FieldSpec{
 			WireName: "llm_model_settings",
-			Kind:     "object",
-			Fields:   Playbook_LlmModelSettingsFields,
+			Kind: "object",
+			Fields: Playbook_LlmModelSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OutputParameterDefinitions": ubx.FieldSpec{
 			WireName: "output_parameter_definitions",
-			Kind:     "list",
-			Fields:   Playbook_InputParameterDefinitionsFields,
+			Kind: "list",
+			Fields: Playbook_InputParameterDefinitionsFields,
 		},
-		"PlaybookType":    ubx.FieldSpec{WireName: "playbook_type"},
+		"PlaybookType": ubx.FieldSpec{WireName: "playbook_type"},
 		"ReferencedTools": ubx.FieldSpec{WireName: "referenced_tools"},
 	},
 }

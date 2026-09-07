@@ -43,8 +43,8 @@ var Channel = ubx.ResourceBinding{
 	WireType: "google_eventarc_channel",
 	Fields: ubx.FieldMap{
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Labels":        ubx.FieldSpec{WireName: "labels"},
-		"Name":          ubx.FieldSpec{WireName: "name"},
-		"Provider":      ubx.FieldSpec{WireName: "provider"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Provider": ubx.FieldSpec{WireName: "provider"},
 	},
 }

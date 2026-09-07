@@ -18,5 +18,6 @@ type DeploymentAttrs struct {
 
 var Deployment = ubx.DataSourceBinding{
 	WireType: "google_sasportal_deployment",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

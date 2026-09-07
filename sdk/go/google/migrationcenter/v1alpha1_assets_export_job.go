@@ -14,20 +14,20 @@ type V1alpha1AssetsExportJob_PerformanceData struct {
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result_Error struct {
-	Code    any
+	Code any
 	Details any
 	Message any
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUri struct {
 	File any
-	Uri  any
+	Uri any
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile struct {
 	ColumnsCount any
-	RowCount     any
-	SignedUri    any
+	RowCount any
+	SignedUri any
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFile struct {
@@ -35,8 +35,8 @@ type V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOut
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries struct {
-	CsvOutputFile  any
-	FileSizeBytes  any
+	CsvOutputFile any
+	FileSizeBytes any
 	XlsxOutputFile any
 }
 
@@ -49,18 +49,18 @@ type V1alpha1AssetsExportJob_RecentExecutions_Result_SignedUris struct {
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions_Result struct {
-	Error       any
+	Error any
 	OutputFiles any
-	SignedUris  any
+	SignedUris any
 }
 
 type V1alpha1AssetsExportJob_RecentExecutions struct {
-	EndTime             any
-	ExecutionId         any
-	ExpireTime          any
+	EndTime any
+	ExecutionId any
+	ExpireTime any
 	RequestedAssetCount any
-	Result              any
-	StartTime           any
+	Result any
+	StartTime any
 }
 
 type V1alpha1AssetsExportJob_SignedUriDestination struct {
@@ -69,16 +69,16 @@ type V1alpha1AssetsExportJob_SignedUriDestination struct {
 }
 
 var V1alpha1AssetsExportJob_ConditionFields = ubx.FieldMap{
-	"Filter": ubx.FieldSpec{WireName: "filter"},
-}
+		"Filter": ubx.FieldSpec{WireName: "filter"},
+	}
 
 var V1alpha1AssetsExportJob_PerformanceDataFields = ubx.FieldMap{
-	"MaxDays": ubx.FieldSpec{WireName: "max_days"},
-}
+		"MaxDays": ubx.FieldSpec{WireName: "max_days"},
+	}
 
 var V1alpha1AssetsExportJob_SignedUriDestinationFields = ubx.FieldMap{
-	"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-}
+		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
+	}
 
 type V1alpha1AssetsExportJobConfig struct {
 	// Conditions for selecting assets to export.
@@ -127,22 +127,22 @@ var V1alpha1AssetsExportJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind:     "object",
-			Fields:   V1alpha1AssetsExportJob_ConditionFields,
+			Kind: "object",
+			Fields: V1alpha1AssetsExportJob_ConditionFields,
 		},
-		"Inventory":           ubx.FieldSpec{WireName: "inventory"},
-		"Labels":              ubx.FieldSpec{WireName: "labels"},
+		"Inventory": ubx.FieldSpec{WireName: "inventory"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"NetworkDependencies": ubx.FieldSpec{WireName: "network_dependencies"},
 		"PerformanceData": ubx.FieldSpec{
 			WireName: "performance_data",
-			Kind:     "object",
-			Fields:   V1alpha1AssetsExportJob_PerformanceDataFields,
+			Kind: "object",
+			Fields: V1alpha1AssetsExportJob_PerformanceDataFields,
 		},
 		"ShowHidden": ubx.FieldSpec{WireName: "show_hidden"},
 		"SignedUriDestination": ubx.FieldSpec{
 			WireName: "signed_uri_destination",
-			Kind:     "object",
-			Fields:   V1alpha1AssetsExportJob_SignedUriDestinationFields,
+			Kind: "object",
+			Fields: V1alpha1AssetsExportJob_SignedUriDestinationFields,
 		},
 	},
 }

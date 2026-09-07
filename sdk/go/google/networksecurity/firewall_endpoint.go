@@ -16,8 +16,8 @@ type FirewallEndpoint_EndpointSettings struct {
 }
 
 var FirewallEndpoint_EndpointSettingsFields = ubx.FieldMap{
-	"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
-}
+		"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
+	}
 
 type FirewallEndpointConfig struct {
 	// Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.
@@ -65,13 +65,13 @@ var FirewallEndpoint = ubx.ResourceBinding{
 	WireType: "google_networksecurity_firewall_endpoint",
 	Fields: ubx.FieldMap{
 		"BillingProjectId": ubx.FieldSpec{WireName: "billing_project_id"},
-		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EndpointSettings": ubx.FieldSpec{
 			WireName: "endpoint_settings",
-			Kind:     "object",
-			Fields:   FirewallEndpoint_EndpointSettingsFields,
+			Kind: "object",
+			Fields: FirewallEndpoint_EndpointSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -42,11 +42,11 @@ type V1beta1QuotaRuleAttrs struct {
 var V1beta1QuotaRule = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_quota_rule",
 	Fields: ubx.FieldMap{
-		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiskLimitMib": ubx.FieldSpec{WireName: "disk_limit_mib"},
-		"Labels":       ubx.FieldSpec{WireName: "labels"},
-		"Name":         ubx.FieldSpec{WireName: "name"},
-		"Target":       ubx.FieldSpec{WireName: "target"},
-		"Type":         ubx.FieldSpec{WireName: "type"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Target": ubx.FieldSpec{WireName: "target"},
+		"Type": ubx.FieldSpec{WireName: "type"},
 	},
 }

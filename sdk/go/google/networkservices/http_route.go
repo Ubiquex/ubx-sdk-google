@@ -206,216 +206,216 @@ type HttpRoute_Rules struct {
 }
 
 var HttpRoute_Rules_Action_CorsPolicyFields = ubx.FieldMap{
-	"AllowCredentials":   ubx.FieldSpec{WireName: "allow_credentials"},
-	"AllowHeaders":       ubx.FieldSpec{WireName: "allow_headers"},
-	"AllowMethods":       ubx.FieldSpec{WireName: "allow_methods"},
-	"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
-	"AllowOrigins":       ubx.FieldSpec{WireName: "allow_origins"},
-	"Disabled":           ubx.FieldSpec{WireName: "disabled"},
-	"ExposeHeaders":      ubx.FieldSpec{WireName: "expose_headers"},
-	"MaxAge":             ubx.FieldSpec{WireName: "max_age"},
-}
+		"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
+		"AllowHeaders": ubx.FieldSpec{WireName: "allow_headers"},
+		"AllowMethods": ubx.FieldSpec{WireName: "allow_methods"},
+		"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
+		"AllowOrigins": ubx.FieldSpec{WireName: "allow_origins"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
+		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
+	}
 
 var HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields = ubx.FieldMap{
-	"Add":    ubx.FieldSpec{WireName: "add"},
-	"Remove": ubx.FieldSpec{WireName: "remove"},
-	"Set":    ubx.FieldSpec{WireName: "set"},
-}
+		"Add": ubx.FieldSpec{WireName: "add"},
+		"Remove": ubx.FieldSpec{WireName: "remove"},
+		"Set": ubx.FieldSpec{WireName: "set"},
+	}
 
 var HttpRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-	"RequestHeaderModifier": ubx.FieldSpec{
-		WireName: "request_header_modifier",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
-	},
-	"ResponseHeaderModifier": ubx.FieldSpec{
-		WireName: "response_header_modifier",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
-	},
-	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-	"Weight":      ubx.FieldSpec{WireName: "weight"},
-}
+		"RequestHeaderModifier": ubx.FieldSpec{
+			WireName: "request_header_modifier",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
+		},
+		"ResponseHeaderModifier": ubx.FieldSpec{
+			WireName: "response_header_modifier",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
+		},
+		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"Weight": ubx.FieldSpec{WireName: "weight"},
+	}
 
 var HttpRoute_Rules_Action_DirectResponseFields = ubx.FieldMap{
-	"BytesBody":  ubx.FieldSpec{WireName: "bytes_body"},
-	"Status":     ubx.FieldSpec{WireName: "status"},
-	"StringBody": ubx.FieldSpec{WireName: "string_body"},
-}
+		"BytesBody": ubx.FieldSpec{WireName: "bytes_body"},
+		"Status": ubx.FieldSpec{WireName: "status"},
+		"StringBody": ubx.FieldSpec{WireName: "string_body"},
+	}
 
 var HttpRoute_Rules_Action_FaultInjectionPolicy_AbortFields = ubx.FieldMap{
-	"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
-	"Percentage": ubx.FieldSpec{WireName: "percentage"},
-}
+		"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
+		"Percentage": ubx.FieldSpec{WireName: "percentage"},
+	}
 
 var HttpRoute_Rules_Action_FaultInjectionPolicy_DelayFields = ubx.FieldMap{
-	"FixedDelay": ubx.FieldSpec{WireName: "fixed_delay"},
-	"Percentage": ubx.FieldSpec{WireName: "percentage"},
-}
+		"FixedDelay": ubx.FieldSpec{WireName: "fixed_delay"},
+		"Percentage": ubx.FieldSpec{WireName: "percentage"},
+	}
 
 var HttpRoute_Rules_Action_FaultInjectionPolicyFields = ubx.FieldMap{
-	"Abort": ubx.FieldSpec{
-		WireName: "abort",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_FaultInjectionPolicy_AbortFields,
-	},
-	"Delay": ubx.FieldSpec{
-		WireName: "delay",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_FaultInjectionPolicy_DelayFields,
-	},
-}
+		"Abort": ubx.FieldSpec{
+			WireName: "abort",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_FaultInjectionPolicy_AbortFields,
+		},
+		"Delay": ubx.FieldSpec{
+			WireName: "delay",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_FaultInjectionPolicy_DelayFields,
+		},
+	}
 
 var HttpRoute_Rules_Action_RedirectFields = ubx.FieldMap{
-	"HostRedirect":  ubx.FieldSpec{WireName: "host_redirect"},
-	"HttpsRedirect": ubx.FieldSpec{WireName: "https_redirect"},
-	"PathRedirect":  ubx.FieldSpec{WireName: "path_redirect"},
-	"PortRedirect":  ubx.FieldSpec{WireName: "port_redirect"},
-	"PrefixRewrite": ubx.FieldSpec{WireName: "prefix_rewrite"},
-	"ResponseCode":  ubx.FieldSpec{WireName: "response_code"},
-	"StripQuery":    ubx.FieldSpec{WireName: "strip_query"},
-}
+		"HostRedirect": ubx.FieldSpec{WireName: "host_redirect"},
+		"HttpsRedirect": ubx.FieldSpec{WireName: "https_redirect"},
+		"PathRedirect": ubx.FieldSpec{WireName: "path_redirect"},
+		"PortRedirect": ubx.FieldSpec{WireName: "port_redirect"},
+		"PrefixRewrite": ubx.FieldSpec{WireName: "prefix_rewrite"},
+		"ResponseCode": ubx.FieldSpec{WireName: "response_code"},
+		"StripQuery": ubx.FieldSpec{WireName: "strip_query"},
+	}
 
 var HttpRoute_Rules_Action_RequestMirrorPolicyFields = ubx.FieldMap{
-	"Destination": ubx.FieldSpec{
-		WireName: "destination",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_DestinationsFields,
-	},
-	"MirrorPercent": ubx.FieldSpec{WireName: "mirror_percent"},
-}
+		"Destination": ubx.FieldSpec{
+			WireName: "destination",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_DestinationsFields,
+		},
+		"MirrorPercent": ubx.FieldSpec{WireName: "mirror_percent"},
+	}
 
 var HttpRoute_Rules_Action_RetryPolicyFields = ubx.FieldMap{
-	"NumRetries":      ubx.FieldSpec{WireName: "num_retries"},
-	"PerTryTimeout":   ubx.FieldSpec{WireName: "per_try_timeout"},
-	"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
-}
+		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
+		"PerTryTimeout": ubx.FieldSpec{WireName: "per_try_timeout"},
+		"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
+	}
 
 var HttpRoute_Rules_Action_StatefulSessionAffinityFields = ubx.FieldMap{
-	"CookieTtl": ubx.FieldSpec{WireName: "cookie_ttl"},
-}
+		"CookieTtl": ubx.FieldSpec{WireName: "cookie_ttl"},
+	}
 
 var HttpRoute_Rules_Action_UrlRewriteFields = ubx.FieldMap{
-	"HostRewrite":       ubx.FieldSpec{WireName: "host_rewrite"},
-	"PathPrefixRewrite": ubx.FieldSpec{WireName: "path_prefix_rewrite"},
-}
+		"HostRewrite": ubx.FieldSpec{WireName: "host_rewrite"},
+		"PathPrefixRewrite": ubx.FieldSpec{WireName: "path_prefix_rewrite"},
+	}
 
 var HttpRoute_Rules_ActionFields = ubx.FieldMap{
-	"CorsPolicy": ubx.FieldSpec{
-		WireName: "cors_policy",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_CorsPolicyFields,
-	},
-	"Destinations": ubx.FieldSpec{
-		WireName: "destinations",
-		Kind:     "list",
-		Fields:   HttpRoute_Rules_Action_DestinationsFields,
-	},
-	"DirectResponse": ubx.FieldSpec{
-		WireName: "direct_response",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_DirectResponseFields,
-	},
-	"FaultInjectionPolicy": ubx.FieldSpec{
-		WireName: "fault_injection_policy",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_FaultInjectionPolicyFields,
-	},
-	"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-	"Redirect": ubx.FieldSpec{
-		WireName: "redirect",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_RedirectFields,
-	},
-	"RequestHeaderModifier": ubx.FieldSpec{
-		WireName: "request_header_modifier",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
-	},
-	"RequestMirrorPolicy": ubx.FieldSpec{
-		WireName: "request_mirror_policy",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_RequestMirrorPolicyFields,
-	},
-	"ResponseHeaderModifier": ubx.FieldSpec{
-		WireName: "response_header_modifier",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
-	},
-	"RetryPolicy": ubx.FieldSpec{
-		WireName: "retry_policy",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_RetryPolicyFields,
-	},
-	"StatefulSessionAffinity": ubx.FieldSpec{
-		WireName: "stateful_session_affinity",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_StatefulSessionAffinityFields,
-	},
-	"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	"UrlRewrite": ubx.FieldSpec{
-		WireName: "url_rewrite",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Action_UrlRewriteFields,
-	},
-}
+		"CorsPolicy": ubx.FieldSpec{
+			WireName: "cors_policy",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_CorsPolicyFields,
+		},
+		"Destinations": ubx.FieldSpec{
+			WireName: "destinations",
+			Kind: "list",
+			Fields: HttpRoute_Rules_Action_DestinationsFields,
+		},
+		"DirectResponse": ubx.FieldSpec{
+			WireName: "direct_response",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_DirectResponseFields,
+		},
+		"FaultInjectionPolicy": ubx.FieldSpec{
+			WireName: "fault_injection_policy",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_FaultInjectionPolicyFields,
+		},
+		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+		"Redirect": ubx.FieldSpec{
+			WireName: "redirect",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_RedirectFields,
+		},
+		"RequestHeaderModifier": ubx.FieldSpec{
+			WireName: "request_header_modifier",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
+		},
+		"RequestMirrorPolicy": ubx.FieldSpec{
+			WireName: "request_mirror_policy",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_RequestMirrorPolicyFields,
+		},
+		"ResponseHeaderModifier": ubx.FieldSpec{
+			WireName: "response_header_modifier",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_Destinations_RequestHeaderModifierFields,
+		},
+		"RetryPolicy": ubx.FieldSpec{
+			WireName: "retry_policy",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_RetryPolicyFields,
+		},
+		"StatefulSessionAffinity": ubx.FieldSpec{
+			WireName: "stateful_session_affinity",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_StatefulSessionAffinityFields,
+		},
+		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"UrlRewrite": ubx.FieldSpec{
+			WireName: "url_rewrite",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Action_UrlRewriteFields,
+		},
+	}
 
 var HttpRoute_Rules_Matches_Headers_RangeMatchFields = ubx.FieldMap{
-	"End":   ubx.FieldSpec{WireName: "end"},
-	"Start": ubx.FieldSpec{WireName: "start"},
-}
+		"End": ubx.FieldSpec{WireName: "end"},
+		"Start": ubx.FieldSpec{WireName: "start"},
+	}
 
 var HttpRoute_Rules_Matches_HeadersFields = ubx.FieldMap{
-	"ExactMatch":   ubx.FieldSpec{WireName: "exact_match"},
-	"Header":       ubx.FieldSpec{WireName: "header"},
-	"InvertMatch":  ubx.FieldSpec{WireName: "invert_match"},
-	"PrefixMatch":  ubx.FieldSpec{WireName: "prefix_match"},
-	"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
-	"RangeMatch": ubx.FieldSpec{
-		WireName: "range_match",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_Matches_Headers_RangeMatchFields,
-	},
-	"RegexMatch":  ubx.FieldSpec{WireName: "regex_match"},
-	"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
-}
+		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
+		"Header": ubx.FieldSpec{WireName: "header"},
+		"InvertMatch": ubx.FieldSpec{WireName: "invert_match"},
+		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
+		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+		"RangeMatch": ubx.FieldSpec{
+			WireName: "range_match",
+			Kind: "object",
+			Fields: HttpRoute_Rules_Matches_Headers_RangeMatchFields,
+		},
+		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+		"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
+	}
 
 var HttpRoute_Rules_Matches_QueryParametersFields = ubx.FieldMap{
-	"ExactMatch":     ubx.FieldSpec{WireName: "exact_match"},
-	"PresentMatch":   ubx.FieldSpec{WireName: "present_match"},
-	"QueryParameter": ubx.FieldSpec{WireName: "query_parameter"},
-	"RegexMatch":     ubx.FieldSpec{WireName: "regex_match"},
-}
+		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
+		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+		"QueryParameter": ubx.FieldSpec{WireName: "query_parameter"},
+		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+	}
 
 var HttpRoute_Rules_MatchesFields = ubx.FieldMap{
-	"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
-	"Headers": ubx.FieldSpec{
-		WireName: "headers",
-		Kind:     "list",
-		Fields:   HttpRoute_Rules_Matches_HeadersFields,
-	},
-	"IgnoreCase":  ubx.FieldSpec{WireName: "ignore_case"},
-	"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-	"QueryParameters": ubx.FieldSpec{
-		WireName: "query_parameters",
-		Kind:     "list",
-		Fields:   HttpRoute_Rules_Matches_QueryParametersFields,
-	},
-	"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-}
+		"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
+		"Headers": ubx.FieldSpec{
+			WireName: "headers",
+			Kind: "list",
+			Fields: HttpRoute_Rules_Matches_HeadersFields,
+		},
+		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
+		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
+		"QueryParameters": ubx.FieldSpec{
+			WireName: "query_parameters",
+			Kind: "list",
+			Fields: HttpRoute_Rules_Matches_QueryParametersFields,
+		},
+		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+	}
 
 var HttpRoute_RulesFields = ubx.FieldMap{
-	"Action": ubx.FieldSpec{
-		WireName: "action",
-		Kind:     "object",
-		Fields:   HttpRoute_Rules_ActionFields,
-	},
-	"Matches": ubx.FieldSpec{
-		WireName: "matches",
-		Kind:     "list",
-		Fields:   HttpRoute_Rules_MatchesFields,
-	},
-}
+		"Action": ubx.FieldSpec{
+			WireName: "action",
+			Kind: "object",
+			Fields: HttpRoute_Rules_ActionFields,
+		},
+		"Matches": ubx.FieldSpec{
+			WireName: "matches",
+			Kind: "list",
+			Fields: HttpRoute_Rules_MatchesFields,
+		},
+	}
 
 type HttpRouteConfig struct {
 	// Optional. A free-text description of the resource. Max length 1024 characters.
@@ -461,15 +461,15 @@ var HttpRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_http_route",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
-		"Hostnames":   ubx.FieldSpec{WireName: "hostnames"},
-		"Labels":      ubx.FieldSpec{WireName: "labels"},
-		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Gateways": ubx.FieldSpec{WireName: "gateways"},
+		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Meshes": ubx.FieldSpec{WireName: "meshes"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind:     "list",
-			Fields:   HttpRoute_RulesFields,
+			Kind: "list",
+			Fields: HttpRoute_RulesFields,
 		},
 	},
 }

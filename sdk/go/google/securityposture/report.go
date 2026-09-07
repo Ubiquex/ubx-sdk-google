@@ -64,8 +64,8 @@ type Report_IacValidationReport struct {
 }
 
 var Report_IacFields = ubx.FieldMap{
-	"TfPlan": ubx.FieldSpec{WireName: "tf_plan"},
-}
+		"TfPlan": ubx.FieldSpec{WireName: "tf_plan"},
+	}
 
 type ReportConfig struct {
 	// Details of an infrastructure-as-code (IaC) configuration.
@@ -90,8 +90,8 @@ var Report = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Iac": ubx.FieldSpec{
 			WireName: "iac",
-			Kind:     "object",
-			Fields:   Report_IacFields,
+			Kind: "object",
+			Fields: Report_IacFields,
 		},
 	},
 }

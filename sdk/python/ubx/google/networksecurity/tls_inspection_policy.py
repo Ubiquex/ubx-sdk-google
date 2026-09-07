@@ -10,6 +10,8 @@ import ubx_sdk as ubx
 class TlsInspectionPolicyConfig:
     # Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
     ca_pool: Any = None
+    # Optional. The mode used to issue certificates (local CA signing vs direct leaf).
+    certificate_issuance_mode: Any = None
     # Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
     custom_tls_features: Any = None
     # Optional. Free-text description of the resource.
@@ -29,6 +31,8 @@ class TlsInspectionPolicyConfig:
 class TlsInspectionPolicyAttrs:
     # Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
     ca_pool: Any = None
+    # Optional. The mode used to issue certificates (local CA signing vs direct leaf).
+    certificate_issuance_mode: Any = None
     # Output only. The timestamp when the resource was created.
     create_time: Any = None
     # Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
@@ -52,6 +56,7 @@ TlsInspectionPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_tls_inspection_policy",
     fields={
         "ca_pool": ubx.FieldSpec(wire_name="ca_pool"),
+        "certificate_issuance_mode": ubx.FieldSpec(wire_name="certificate_issuance_mode"),
         "custom_tls_features": ubx.FieldSpec(wire_name="custom_tls_features"),
         "description": ubx.FieldSpec(wire_name="description"),
         "exclude_public_ca_set": ubx.FieldSpec(wire_name="exclude_public_ca_set"),

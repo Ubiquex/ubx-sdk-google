@@ -67,47 +67,47 @@ type V1beta1Replication_TransferStats struct {
 }
 
 var V1beta1Replication_DestinationVolumeParameters_TieringPolicyFields = ubx.FieldMap{
-	"CoolingThresholdDays":     ubx.FieldSpec{WireName: "cooling_threshold_days"},
-	"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
-	"TierAction":               ubx.FieldSpec{WireName: "tier_action"},
-}
+		"CoolingThresholdDays": ubx.FieldSpec{WireName: "cooling_threshold_days"},
+		"HotTierBypassModeEnabled": ubx.FieldSpec{WireName: "hot_tier_bypass_mode_enabled"},
+		"TierAction": ubx.FieldSpec{WireName: "tier_action"},
+	}
 
 var V1beta1Replication_DestinationVolumeParametersFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"ShareName":   ubx.FieldSpec{WireName: "share_name"},
-	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-	"TieringPolicy": ubx.FieldSpec{
-		WireName: "tiering_policy",
-		Kind:     "object",
-		Fields:   V1beta1Replication_DestinationVolumeParameters_TieringPolicyFields,
-	},
-	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ShareName": ubx.FieldSpec{WireName: "share_name"},
+		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+		"TieringPolicy": ubx.FieldSpec{
+			WireName: "tiering_policy",
+			Kind: "object",
+			Fields: V1beta1Replication_DestinationVolumeParameters_TieringPolicyFields,
+		},
+		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+	}
 
 var V1beta1Replication_HybridPeeringDetailsFields = ubx.FieldMap{
-	"Command":           ubx.FieldSpec{WireName: "command"},
-	"CommandExpiryTime": ubx.FieldSpec{WireName: "command_expiry_time"},
-	"Passphrase":        ubx.FieldSpec{WireName: "passphrase"},
-	"PeerClusterName":   ubx.FieldSpec{WireName: "peer_cluster_name"},
-	"PeerSvmName":       ubx.FieldSpec{WireName: "peer_svm_name"},
-	"PeerVolumeName":    ubx.FieldSpec{WireName: "peer_volume_name"},
-	"SubnetIp":          ubx.FieldSpec{WireName: "subnet_ip"},
-}
+		"Command": ubx.FieldSpec{WireName: "command"},
+		"CommandExpiryTime": ubx.FieldSpec{WireName: "command_expiry_time"},
+		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
+		"PeerClusterName": ubx.FieldSpec{WireName: "peer_cluster_name"},
+		"PeerSvmName": ubx.FieldSpec{WireName: "peer_svm_name"},
+		"PeerVolumeName": ubx.FieldSpec{WireName: "peer_volume_name"},
+		"SubnetIp": ubx.FieldSpec{WireName: "subnet_ip"},
+	}
 
 var V1beta1Replication_HybridReplicationUserCommandsFields = ubx.FieldMap{
-	"Commands": ubx.FieldSpec{WireName: "commands"},
-}
+		"Commands": ubx.FieldSpec{WireName: "commands"},
+	}
 
 var V1beta1Replication_TransferStatsFields = ubx.FieldMap{
-	"LagDuration":           ubx.FieldSpec{WireName: "lag_duration"},
-	"LastTransferBytes":     ubx.FieldSpec{WireName: "last_transfer_bytes"},
-	"LastTransferDuration":  ubx.FieldSpec{WireName: "last_transfer_duration"},
-	"LastTransferEndTime":   ubx.FieldSpec{WireName: "last_transfer_end_time"},
-	"LastTransferError":     ubx.FieldSpec{WireName: "last_transfer_error"},
-	"TotalTransferDuration": ubx.FieldSpec{WireName: "total_transfer_duration"},
-	"TransferBytes":         ubx.FieldSpec{WireName: "transfer_bytes"},
-	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
-}
+		"LagDuration": ubx.FieldSpec{WireName: "lag_duration"},
+		"LastTransferBytes": ubx.FieldSpec{WireName: "last_transfer_bytes"},
+		"LastTransferDuration": ubx.FieldSpec{WireName: "last_transfer_duration"},
+		"LastTransferEndTime": ubx.FieldSpec{WireName: "last_transfer_end_time"},
+		"LastTransferError": ubx.FieldSpec{WireName: "last_transfer_error"},
+		"TotalTransferDuration": ubx.FieldSpec{WireName: "total_transfer_duration"},
+		"TransferBytes": ubx.FieldSpec{WireName: "transfer_bytes"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	}
 
 type V1beta1ReplicationConfig struct {
 	// Optional. Location of the user cluster.
@@ -173,29 +173,29 @@ var V1beta1Replication = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_replication",
 	Fields: ubx.FieldMap{
 		"ClusterLocation": ubx.FieldSpec{WireName: "cluster_location"},
-		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"DestinationVolumeParameters": ubx.FieldSpec{
 			WireName: "destination_volume_parameters",
-			Kind:     "object",
-			Fields:   V1beta1Replication_DestinationVolumeParametersFields,
+			Kind: "object",
+			Fields: V1beta1Replication_DestinationVolumeParametersFields,
 		},
 		"HybridPeeringDetails": ubx.FieldSpec{
 			WireName: "hybrid_peering_details",
-			Kind:     "object",
-			Fields:   V1beta1Replication_HybridPeeringDetailsFields,
+			Kind: "object",
+			Fields: V1beta1Replication_HybridPeeringDetailsFields,
 		},
 		"HybridReplicationUserCommands": ubx.FieldSpec{
 			WireName: "hybrid_replication_user_commands",
-			Kind:     "object",
-			Fields:   V1beta1Replication_HybridReplicationUserCommandsFields,
+			Kind: "object",
+			Fields: V1beta1Replication_HybridReplicationUserCommandsFields,
 		},
-		"Labels":              ubx.FieldSpec{WireName: "labels"},
-		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReplicationSchedule": ubx.FieldSpec{WireName: "replication_schedule"},
 		"TransferStats": ubx.FieldSpec{
 			WireName: "transfer_stats",
-			Kind:     "object",
-			Fields:   V1beta1Replication_TransferStatsFields,
+			Kind: "object",
+			Fields: V1beta1Replication_TransferStatsFields,
 		},
 	},
 }

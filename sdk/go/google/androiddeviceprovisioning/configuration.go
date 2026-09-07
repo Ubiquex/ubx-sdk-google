@@ -52,14 +52,14 @@ type ConfigurationAttrs struct {
 var Configuration = ubx.ResourceBinding{
 	WireType: "google_androiddeviceprovisioning_configuration",
 	Fields: ubx.FieldMap{
-		"CompanyName":       ubx.FieldSpec{WireName: "company_name"},
+		"CompanyName": ubx.FieldSpec{WireName: "company_name"},
 		"ConfigurationName": ubx.FieldSpec{WireName: "configuration_name"},
-		"ContactEmail":      ubx.FieldSpec{WireName: "contact_email"},
-		"ContactPhone":      ubx.FieldSpec{WireName: "contact_phone"},
-		"CustomMessage":     ubx.FieldSpec{WireName: "custom_message"},
-		"DpcExtras":         ubx.FieldSpec{WireName: "dpc_extras"},
-		"DpcResourcePath":   ubx.FieldSpec{WireName: "dpc_resource_path"},
-		"ForcedResetTime":   ubx.FieldSpec{WireName: "forced_reset_time"},
-		"IsDefault":         ubx.FieldSpec{WireName: "is_default"},
+		"ContactEmail": ubx.FieldSpec{WireName: "contact_email"},
+		"ContactPhone": ubx.FieldSpec{WireName: "contact_phone"},
+		"CustomMessage": ubx.FieldSpec{WireName: "custom_message"},
+		"DpcExtras": ubx.FieldSpec{WireName: "dpc_extras"},
+		"DpcResourcePath": ubx.FieldSpec{WireName: "dpc_resource_path"},
+		"ForcedResetTime": ubx.FieldSpec{WireName: "forced_reset_time"},
+		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
 	},
 }

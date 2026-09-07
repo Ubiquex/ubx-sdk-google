@@ -35,28 +35,28 @@ type Instance_WorkforceIdentityFederationConfig struct {
 }
 
 var Instance_HostConfigFields = ubx.FieldMap{
-	"Api":     ubx.FieldSpec{WireName: "api"},
-	"GitHttp": ubx.FieldSpec{WireName: "git_http"},
-	"GitSsh":  ubx.FieldSpec{WireName: "git_ssh"},
-	"Html":    ubx.FieldSpec{WireName: "html"},
-}
+		"Api": ubx.FieldSpec{WireName: "api"},
+		"GitHttp": ubx.FieldSpec{WireName: "git_http"},
+		"GitSsh": ubx.FieldSpec{WireName: "git_ssh"},
+		"Html": ubx.FieldSpec{WireName: "html"},
+	}
 
 var Instance_PrivateConfigFields = ubx.FieldMap{
-	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-	"CustomHostConfig": ubx.FieldSpec{
-		WireName: "custom_host_config",
-		Kind:     "object",
-		Fields:   Instance_HostConfigFields,
-	},
-	"HttpServiceAttachment": ubx.FieldSpec{WireName: "http_service_attachment"},
-	"IsPrivate":             ubx.FieldSpec{WireName: "is_private"},
-	"PscAllowedProjects":    ubx.FieldSpec{WireName: "psc_allowed_projects"},
-	"SshServiceAttachment":  ubx.FieldSpec{WireName: "ssh_service_attachment"},
-}
+		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+		"CustomHostConfig": ubx.FieldSpec{
+			WireName: "custom_host_config",
+			Kind: "object",
+			Fields: Instance_HostConfigFields,
+		},
+		"HttpServiceAttachment": ubx.FieldSpec{WireName: "http_service_attachment"},
+		"IsPrivate": ubx.FieldSpec{WireName: "is_private"},
+		"PscAllowedProjects": ubx.FieldSpec{WireName: "psc_allowed_projects"},
+		"SshServiceAttachment": ubx.FieldSpec{WireName: "ssh_service_attachment"},
+	}
 
 var Instance_WorkforceIdentityFederationConfigFields = ubx.FieldMap{
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
 
 type InstanceConfig struct {
 	// HostConfig has different instance endpoints.
@@ -105,21 +105,21 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HostConfig": ubx.FieldSpec{
 			WireName: "host_config",
-			Kind:     "object",
-			Fields:   Instance_HostConfigFields,
+			Kind: "object",
+			Fields: Instance_HostConfigFields,
 		},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivateConfig": ubx.FieldSpec{
 			WireName: "private_config",
-			Kind:     "object",
-			Fields:   Instance_PrivateConfigFields,
+			Kind: "object",
+			Fields: Instance_PrivateConfigFields,
 		},
 		"WorkforceIdentityFederationConfig": ubx.FieldSpec{
 			WireName: "workforce_identity_federation_config",
-			Kind:     "object",
-			Fields:   Instance_WorkforceIdentityFederationConfigFields,
+			Kind: "object",
+			Fields: Instance_WorkforceIdentityFederationConfigFields,
 		},
 	},
 }

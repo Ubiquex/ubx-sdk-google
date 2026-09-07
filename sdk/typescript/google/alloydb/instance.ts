@@ -87,6 +87,11 @@ export interface Instance_ObservabilityConfig {
   trackWaitEvents?: boolean | Computed<boolean>;
 }
 
+export interface Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos {
+  fullyQualifiedDomainName?: string | Computed<string>;
+  state?: string | Computed<string>;
+}
+
 export interface Instance_PscInstanceConfig_PscAutoConnections {
   /** A reference to the consumer-side VPC network this connection uses. (AI-inferred) */
   consumerNetwork?: string | Computed<string>;
@@ -94,8 +99,11 @@ export interface Instance_PscInstanceConfig_PscAutoConnections {
   consumerNetworkStatus?: string | Computed<string>;
   /** A reference to the consumer's own Google Cloud project. (AI-inferred) */
   consumerProject?: string | Computed<string>;
+  dnsAutomationInfos?: Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos[] | Computed<Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos[]>;
   /** An IP address, in IPv4 or IPv6 format. (AI-inferred) */
   ipAddress?: string | Computed<string>;
+  serviceConnectionPolicy?: string | Computed<string>;
+  serviceConnectionPolicyCreationState?: string | Computed<string>;
   /** The current status of this resource. (AI-inferred) */
   status?: string | Computed<string>;
 }
@@ -108,14 +116,29 @@ export interface Instance_PscInstanceConfig_PscInterfaceConfigs {
 export interface Instance_PscInstanceConfig {
   /** Optional. List of consumer projects that are allowed to create PSC endpoints to service-attachments to this instance. */
   allowedConsumerProjects?: string[] | Computed<string[]>;
+  /** Optional. Configuration for setting up PSC auto connection for the instance. */
+  pscAutoConnectionPolicyState?: string | Computed<string>;
   /** Optional. Configurations for setting up PSC service automation. */
   pscAutoConnections?: Instance_PscInstanceConfig_PscAutoConnections[] | Computed<Instance_PscInstanceConfig_PscAutoConnections[]>;
+  /** Optional. Configuration for setting up PSC auto DNS for the instance. */
+  pscAutoDnsState?: string | Computed<string>;
   /** Output only. The DNS name of the instance for PSC connectivity. Name convention: ...alloydb-psc.goog */
   pscDnsName?: string | Computed<string>;
   /** Optional. Configurations for setting up PSC interfaces attached to the instance which are used for outbound connectivity. Only primary instances can have PSC interface attached. Currently we only support 0 or 1 PSC interface. */
   pscInterfaceConfigs?: Instance_PscInstanceConfig_PscInterfaceConfigs[] | Computed<Instance_PscInstanceConfig_PscInterfaceConfigs[]>;
   /** Output only. The service attachment created when Private Service Connect (PSC) is enabled for the instance. The name of the resource will be in the format of `projects//regions//serviceAttachments/` */
   serviceAttachmentLink?: string | Computed<string>;
+}
+
+export interface Instance_PscInstanceInfo {
+  /** Output only. Indicates if the PSC auto connection policy is enabled for the instance. For older instances, this will be off by default, but for newer instances, this will be auto-enabled. */
+  effectivePscAutoConnectionPolicy?: boolean | Computed<boolean>;
+  /** Output only. The effective state of the PSC auto DNS for the instance. */
+  effectivePscAutoDnsEnabled?: boolean | Computed<boolean>;
+  /** Output only. Specifies the auto DNS names for the instance. */
+  pscAutoDnsNames?: string[] | Computed<string[]>;
+  /** Output only. The PSC service connection policy name. The format is "projects//regions//serviceConnectionPolicies/" */
+  serviceConnectionPolicy?: string | Computed<string>;
 }
 
 export interface Instance_QueryInsightsConfig {
@@ -189,11 +212,23 @@ const Instance_ObservabilityConfigFields: FieldMap = {
   trackWaitEvents: "track_wait_events",
 };
 
+const Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields: FieldMap = {
+  fullyQualifiedDomainName: "fully_qualified_domain_name",
+  state: "state",
+};
+
 const Instance_PscInstanceConfig_PscAutoConnectionsFields: FieldMap = {
   consumerNetwork: "consumer_network",
   consumerNetworkStatus: "consumer_network_status",
   consumerProject: "consumer_project",
+  dnsAutomationInfos: {
+    wireName: "dns_automation_infos",
+    kind: "list",
+    fields: Instance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
+  },
   ipAddress: "ip_address",
+  serviceConnectionPolicy: "service_connection_policy",
+  serviceConnectionPolicyCreationState: "service_connection_policy_creation_state",
   status: "status",
 };
 
@@ -203,11 +238,13 @@ const Instance_PscInstanceConfig_PscInterfaceConfigsFields: FieldMap = {
 
 const Instance_PscInstanceConfigFields: FieldMap = {
   allowedConsumerProjects: "allowed_consumer_projects",
+  pscAutoConnectionPolicyState: "psc_auto_connection_policy_state",
   pscAutoConnections: {
     wireName: "psc_auto_connections",
     kind: "list",
     fields: Instance_PscInstanceConfig_PscAutoConnectionsFields,
   },
+  pscAutoDnsState: "psc_auto_dns_state",
   pscDnsName: "psc_dns_name",
   pscInterfaceConfigs: {
     wireName: "psc_interface_configs",
@@ -215,6 +252,13 @@ const Instance_PscInstanceConfigFields: FieldMap = {
     fields: Instance_PscInstanceConfig_PscInterfaceConfigsFields,
   },
   serviceAttachmentLink: "service_attachment_link",
+};
+
+const Instance_PscInstanceInfoFields: FieldMap = {
+  effectivePscAutoConnectionPolicy: "effective_psc_auto_connection_policy",
+  effectivePscAutoDnsEnabled: "effective_psc_auto_dns_enabled",
+  pscAutoDnsNames: "psc_auto_dns_names",
+  serviceConnectionPolicy: "service_connection_policy",
 };
 
 const Instance_QueryInsightsConfigFields: FieldMap = {
@@ -269,6 +313,8 @@ export interface InstanceConfig {
   observabilityConfig?: Instance_ObservabilityConfig | Computed<Instance_ObservabilityConfig>;
   /** PscInstanceConfig contains PSC related configuration at an instance level. */
   pscInstanceConfig?: Instance_PscInstanceConfig | Computed<Instance_PscInstanceConfig>;
+  /** Information about the Private Service Connect (PSC) for the instance. */
+  pscInstanceInfo?: Instance_PscInstanceInfo | Computed<Instance_PscInstanceInfo>;
   /** QueryInsights Instance specific configuration. */
   queryInsightsConfig?: Instance_QueryInsightsConfig | Computed<Instance_QueryInsightsConfig>;
   /** Configuration for a read pool instance. */
@@ -324,6 +370,8 @@ export interface InstanceAttrs {
   outboundPublicIpAddresses: string[];
   /** PscInstanceConfig contains PSC related configuration at an instance level. */
   pscInstanceConfig: Instance_PscInstanceConfig;
+  /** Information about the Private Service Connect (PSC) for the instance. */
+  pscInstanceInfo: Instance_PscInstanceInfo;
   /** Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application. */
   publicIpAddress: string;
   /** QueryInsights Instance specific configuration. */
@@ -386,6 +434,11 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       wireName: "psc_instance_config",
       kind: "object",
       fields: Instance_PscInstanceConfigFields,
+    },
+    pscInstanceInfo: {
+      wireName: "psc_instance_info",
+      kind: "object",
+      fields: Instance_PscInstanceInfoFields,
     },
     queryInsightsConfig: {
       wireName: "query_insights_config",

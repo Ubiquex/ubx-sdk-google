@@ -9,8 +9,8 @@ type Hook_PushOption struct {
 }
 
 var Hook_PushOptionFields = ubx.FieldMap{
-	"BranchFilter": ubx.FieldSpec{WireName: "branch_filter"},
-}
+		"BranchFilter": ubx.FieldSpec{WireName: "branch_filter"},
+	}
 
 type HookConfig struct {
 	// Optional. Determines if the hook disabled or not. Set to true to stop sending traffic.
@@ -52,14 +52,14 @@ var Hook = ubx.ResourceBinding{
 	WireType: "google_securesourcemanager_hook",
 	Fields: ubx.FieldMap{
 		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Events":   ubx.FieldSpec{WireName: "events"},
-		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Events": ubx.FieldSpec{WireName: "events"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"PushOption": ubx.FieldSpec{
 			WireName: "push_option",
-			Kind:     "object",
-			Fields:   Hook_PushOptionFields,
+			Kind: "object",
+			Fields: Hook_PushOptionFields,
 		},
 		"SensitiveQueryString": ubx.FieldSpec{WireName: "sensitive_query_string"},
-		"TargetUri":            ubx.FieldSpec{WireName: "target_uri"},
+		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
 	},
 }

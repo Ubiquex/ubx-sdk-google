@@ -4,29 +4,29 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfo struct {
-	ConsistencyGroup   any
+	ConsistencyGroup any
 	ConsistencyGroupId any
 }
 
 type AlphaRegionInstantSnapshotGroup_ResourceStatus struct {
 	// Output only. [Output Only]
 	ConsistencyMembershipResolutionTime any
-	SourceInfo                          any
+	SourceInfo any
 }
 
 var AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields = ubx.FieldMap{
-	"ConsistencyGroup":   ubx.FieldSpec{WireName: "consistency_group"},
-	"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
-}
+		"ConsistencyGroup": ubx.FieldSpec{WireName: "consistency_group"},
+		"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
+	}
 
 var AlphaRegionInstantSnapshotGroup_ResourceStatusFields = ubx.FieldMap{
-	"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
-	"SourceInfo": ubx.FieldSpec{
-		WireName: "source_info",
-		Kind:     "object",
-		Fields:   AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields,
-	},
-}
+		"ConsistencyMembershipResolutionTime": ubx.FieldSpec{WireName: "consistency_membership_resolution_time"},
+		"SourceInfo": ubx.FieldSpec{
+			WireName: "source_info",
+			Kind: "object",
+			Fields: AlphaRegionInstantSnapshotGroup_ResourceStatus_SourceInfoFields,
+		},
+	}
 
 type AlphaRegionInstantSnapshotGroupConfig struct {
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
@@ -70,11 +70,11 @@ var AlphaRegionInstantSnapshotGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_instant_snapshot_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind:     "object",
-			Fields:   AlphaRegionInstantSnapshotGroup_ResourceStatusFields,
+			Kind: "object",
+			Fields: AlphaRegionInstantSnapshotGroup_ResourceStatusFields,
 		},
 		"SourceConsistencyGroup": ubx.FieldSpec{WireName: "source_consistency_group"},
 	},

@@ -26,13 +26,13 @@ type Enterprise_PlaySearch struct {
 }
 
 var Enterprise_ManagedConfigurationsFields = ubx.FieldMap{
-	"Enabled": ubx.FieldSpec{WireName: "enabled"},
-}
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
 
 var Enterprise_PlaySearchFields = ubx.FieldMap{
-	"ApproveApps": ubx.FieldSpec{WireName: "approve_apps"},
-	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
-}
+		"ApproveApps": ubx.FieldSpec{WireName: "approve_apps"},
+		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	}
 
 type EnterpriseConfig struct {
 	// Real settings controlling whether this enterprise supports app-level managed configurations. (AI-inferred)
@@ -91,35 +91,35 @@ var Enterprise = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ManagedConfigurations": ubx.FieldSpec{
 			WireName: "managed_configurations",
-			Kind:     "object",
-			Fields:   Enterprise_ManagedConfigurationsFields,
+			Kind: "object",
+			Fields: Enterprise_ManagedConfigurationsFields,
 		},
-		"Parent":     ubx.FieldSpec{WireName: "parent"},
+		"Parent": ubx.FieldSpec{WireName: "parent"},
 		"Permission": ubx.FieldSpec{WireName: "permission"},
 		"PlaySearch": ubx.FieldSpec{
 			WireName: "play_search",
-			Kind:     "object",
-			Fields:   Enterprise_PlaySearchFields,
+			Kind: "object",
+			Fields: Enterprise_PlaySearchFields,
 		},
 		"PrivateApps": ubx.FieldSpec{
 			WireName: "private_apps",
-			Kind:     "object",
-			Fields:   Enterprise_ManagedConfigurationsFields,
+			Kind: "object",
+			Fields: Enterprise_ManagedConfigurationsFields,
 		},
 		"StoreBuilder": ubx.FieldSpec{
 			WireName: "store_builder",
-			Kind:     "object",
-			Fields:   Enterprise_ManagedConfigurationsFields,
+			Kind: "object",
+			Fields: Enterprise_ManagedConfigurationsFields,
 		},
 		"WebApps": ubx.FieldSpec{
 			WireName: "web_apps",
-			Kind:     "object",
-			Fields:   Enterprise_ManagedConfigurationsFields,
+			Kind: "object",
+			Fields: Enterprise_ManagedConfigurationsFields,
 		},
 		"ZeroTouch": ubx.FieldSpec{
 			WireName: "zero_touch",
-			Kind:     "object",
-			Fields:   Enterprise_ManagedConfigurationsFields,
+			Kind: "object",
+			Fields: Enterprise_ManagedConfigurationsFields,
 		},
 	},
 }

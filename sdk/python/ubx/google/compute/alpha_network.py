@@ -109,6 +109,8 @@ class AlphaNetworkConfig:
 
 @dataclasses.dataclass
 class AlphaNetworkAttrs:
+    # Output only. [Output Only] Additional tags for this resource.
+    additional_tags: Any = None
     # Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
     auto_create_subnetworks: Any = None
     # Output only. [Output Only] Creation timestamp inRFC3339 text format.

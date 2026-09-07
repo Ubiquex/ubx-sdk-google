@@ -26,6 +26,7 @@ from .tls_route import TlsRoute, TlsRouteConfig
 from .v1beta1_agent_connectivity_template import V1beta1AgentConnectivityTemplate, V1beta1AgentConnectivityTemplateConfig
 from .v1beta1_agent_gateway import V1beta1AgentGateway, V1beta1AgentGatewayConfig
 from .v1beta1_authz_extension import V1beta1AuthzExtension, V1beta1AuthzExtensionConfig
+from .v1beta1_cdn_edge_extension import V1beta1CdnEdgeExtension, V1beta1CdnEdgeExtensionConfig
 from .v1beta1_endpoint_policy import V1beta1EndpointPolicy, V1beta1EndpointPolicyConfig
 from .v1beta1_extension_binding import V1beta1ExtensionBinding, V1beta1ExtensionBindingConfig
 from .v1beta1_gateway import V1beta1Gateway, V1beta1GatewayConfig

@@ -19,6 +19,15 @@ export interface App_AudioProcessingConfig_BargeInConfig {
   disableBargeIn?: boolean | Computed<boolean>;
 }
 
+export interface App_AudioProcessingConfig_CustomVoiceSamples {
+  consentAudioGcsUri?: string | Computed<string>;
+  name?: string | Computed<string>;
+  previewAudioContent?: string | Computed<string>;
+  previewText?: string | Computed<string>;
+  voiceInstruction?: string | Computed<string>;
+  voiceSampleGcsUri?: string | Computed<string>;
+}
+
 export interface App_AudioProcessingConfig_SynthesizeSpeechConfigs {
   /** The Cloud Storage URI of a recorded consent statement for voice cloning. (AI-inferred) */
   consentAudioGcsUri?: string | Computed<string>;
@@ -39,6 +48,8 @@ export interface App_AudioProcessingConfig {
   ambientSoundConfig?: App_AudioProcessingConfig_AmbientSoundConfig | Computed<App_AudioProcessingConfig_AmbientSoundConfig>;
   /** Configuration for how the user barge-in activities should be handled. */
   bargeInConfig?: App_AudioProcessingConfig_BargeInConfig | Computed<App_AudioProcessingConfig_BargeInConfig>;
+  /** Optional. Configures custom voice samples for voice cloning. */
+  customVoiceSamples?: App_AudioProcessingConfig_CustomVoiceSamples[] | Computed<App_AudioProcessingConfig_CustomVoiceSamples[]>;
   /** Optional. The duration of user inactivity (no speech or interaction) before the agent prompts the user for reengagement. If not set, the agent will not prompt the user for reengagement. */
   inactivityTimeout?: string | Computed<string>;
   /** Optional. Configuration of how the agent response should be synthesized, mapping from the language code to SynthesizeSpeechConfig. If the configuration for the specified language code is not found, the configuration for the root language code will be used. For example, if the map contains "en-us" and "en", and the specified language code is "en-gb", then "en" configuration will be used. Note: Language code is case-insensitive. */
@@ -52,6 +63,11 @@ export interface App_ClientCertificateSettings {
   privateKey?: string | Computed<string>;
   /** Required. The TLS certificate encoded in PEM format. This string must include the begin header and end footer lines. */
   tlsCertificate?: string | Computed<string>;
+}
+
+export interface App_DashboardSettings {
+  /** Optional. The resource name of the default Contact Center Insights dashboard associated with the app. This is the dashboard that will be displayed when users navigate to the Monitoring view for the app. Format: `projects/{project}/locations/{location}/dashboards/{dashboard}` */
+  defaultDashboard?: string | Computed<string>;
 }
 
 export interface App_DataStoreSettings_Engines {
@@ -353,6 +369,15 @@ const App_AudioProcessingConfig_BargeInConfigFields: FieldMap = {
   disableBargeIn: "disable_barge_in",
 };
 
+const App_AudioProcessingConfig_CustomVoiceSamplesFields: FieldMap = {
+  consentAudioGcsUri: "consent_audio_gcs_uri",
+  name: "name",
+  previewAudioContent: "preview_audio_content",
+  previewText: "preview_text",
+  voiceInstruction: "voice_instruction",
+  voiceSampleGcsUri: "voice_sample_gcs_uri",
+};
+
 const App_AudioProcessingConfig_SynthesizeSpeechConfigsFields: FieldMap = {
   consentAudioGcsUri: "consent_audio_gcs_uri",
   instruction: "instruction",
@@ -373,6 +398,11 @@ const App_AudioProcessingConfigFields: FieldMap = {
     kind: "object",
     fields: App_AudioProcessingConfig_BargeInConfigFields,
   },
+  customVoiceSamples: {
+    wireName: "custom_voice_samples",
+    kind: "list",
+    fields: App_AudioProcessingConfig_CustomVoiceSamplesFields,
+  },
   inactivityTimeout: "inactivity_timeout",
   synthesizeSpeechConfigs: {
     wireName: "synthesize_speech_configs",
@@ -385,6 +415,10 @@ const App_ClientCertificateSettingsFields: FieldMap = {
   passphrase: "passphrase",
   privateKey: "private_key",
   tlsCertificate: "tls_certificate",
+};
+
+const App_DashboardSettingsFields: FieldMap = {
+  defaultDashboard: "default_dashboard",
 };
 
 const App_DataStoreSettings_EnginesFields: FieldMap = {
@@ -667,6 +701,8 @@ export interface AppConfig {
   audioProcessingConfig?: App_AudioProcessingConfig | Computed<App_AudioProcessingConfig>;
   /** Settings for custom client certificates. */
   clientCertificateSettings?: App_ClientCertificateSettings | Computed<App_ClientCertificateSettings>;
+  /** Settings for dashboards associated with the app, that show up in the Monitoring view. */
+  dashboardSettings?: App_DashboardSettings | Computed<App_DashboardSettings>;
   /** Data store related settings for the app. */
   dataStoreSettings?: App_DataStoreSettings | Computed<App_DataStoreSettings>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
@@ -716,6 +752,8 @@ export interface AppAttrs {
   clientCertificateSettings: App_ClientCertificateSettings;
   /** Output only. Timestamp when the app was created. */
   createTime: string;
+  /** Settings for dashboards associated with the app, that show up in the Monitoring view. */
+  dashboardSettings: App_DashboardSettings;
   /** Data store related settings for the app. */
   dataStoreSettings: App_DataStoreSettings;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
@@ -780,6 +818,11 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       wireName: "client_certificate_settings",
       kind: "object",
       fields: App_ClientCertificateSettingsFields,
+    },
+    dashboardSettings: {
+      wireName: "dashboard_settings",
+      kind: "object",
+      fields: App_DashboardSettingsFields,
     },
     dataStoreSettings: {
       wireName: "data_store_settings",

@@ -26,5 +26,6 @@ type OrganizationAttrs struct {
 
 var Organization = ubx.DataSourceBinding{
 	WireType: "google_cloudresourcemanager_organization",
-	Fields:   ubx.FieldMap{},
+	Fields: ubx.FieldMap{
+	},
 }

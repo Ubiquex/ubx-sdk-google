@@ -15,6 +15,14 @@ export interface Example_Messages_Chunks_Blob {
   mimeType?: string | Computed<string>;
 }
 
+export interface Example_Messages_Chunks_Image {
+  altText?: string | Computed<string>;
+  /** The literal data payload. (AI-inferred) */
+  data?: string | Computed<string>;
+  /** The IANA MIME type of this content. (AI-inferred) */
+  mimeType?: string | Computed<string>;
+}
+
 export interface Example_Messages_Chunks_ToolCall_ToolsetTool {
   /** An identifier for this tool, unique within its own containing toolset. (AI-inferred) */
   toolId?: string | Computed<string>;
@@ -23,12 +31,14 @@ export interface Example_Messages_Chunks_ToolCall_ToolsetTool {
 }
 
 export interface Example_Messages_Chunks_ToolCall {
+  agentName?: string | Computed<string>;
   /** The argument(s) passed to this call. (AI-inferred) */
   args?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
   /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   /** A reference to a single tool. (AI-inferred) */
   tool?: string | Computed<string>;
   /** A reference to a specific tool within a toolset. (AI-inferred) */
@@ -36,10 +46,12 @@ export interface Example_Messages_Chunks_ToolCall {
 }
 
 export interface Example_Messages_Chunks_ToolResponse {
+  agentName?: string | Computed<string>;
   /** A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred) */
   displayName?: string | Computed<string>;
   /** An identifier for this item. (AI-inferred) */
   id?: string | Computed<string>;
+  parentToolCallId?: string | Computed<string>;
   /** The response produced for this request. (AI-inferred) */
   response?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** A reference to a single tool. (AI-inferred) */
@@ -56,7 +68,7 @@ export interface Example_Messages_Chunks {
   /** The default value(s) for this app's own declared variables. (AI-inferred) */
   defaultVariables?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Image content. (AI-inferred) */
-  image?: Example_Messages_Chunks_Blob | Computed<Example_Messages_Chunks_Blob>;
+  image?: Example_Messages_Chunks_Image | Computed<Example_Messages_Chunks_Image>;
   /** A custom, integration-specific payload. (AI-inferred) */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** The plain-text content. (AI-inferred) */
@@ -90,15 +102,23 @@ const Example_Messages_Chunks_BlobFields: FieldMap = {
   mimeType: "mime_type",
 };
 
+const Example_Messages_Chunks_ImageFields: FieldMap = {
+  altText: "alt_text",
+  data: "data",
+  mimeType: "mime_type",
+};
+
 const Example_Messages_Chunks_ToolCall_ToolsetToolFields: FieldMap = {
   toolId: "tool_id",
   toolset: "toolset",
 };
 
 const Example_Messages_Chunks_ToolCallFields: FieldMap = {
+  agentName: "agent_name",
   args: "args",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   tool: "tool",
   toolsetTool: {
     wireName: "toolset_tool",
@@ -108,8 +128,10 @@ const Example_Messages_Chunks_ToolCallFields: FieldMap = {
 };
 
 const Example_Messages_Chunks_ToolResponseFields: FieldMap = {
+  agentName: "agent_name",
   displayName: "display_name",
   id: "id",
+  parentToolCallId: "parent_tool_call_id",
   response: "response",
   tool: "tool",
   toolsetTool: {
@@ -134,7 +156,7 @@ const Example_Messages_ChunksFields: FieldMap = {
   image: {
     wireName: "image",
     kind: "object",
-    fields: Example_Messages_Chunks_BlobFields,
+    fields: Example_Messages_Chunks_ImageFields,
   },
   payload: "payload",
   text: "text",

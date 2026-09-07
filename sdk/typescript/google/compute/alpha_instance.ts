@@ -299,6 +299,8 @@ export interface AlphaInstance_ResourceStatus_PhysicalHostTopology {
   cluster?: string | Computed<string>;
   /** [Output Only] The ID of the host on which the running instance is located. Instances on the same host experience the lowest possible network latency. */
   host?: string | Computed<string>;
+  /** Output only. [Output Only] The ID of the machine on which the running instance is located. It is only populated for machines which have multiple hosts. */
+  machine?: string | Computed<string>;
   /** [Output Only] The ID of the sub-block in which the running instance is located. Instances in the same sub-block experience lower network latency than instances in the same block. */
   subblock?: string | Computed<string>;
 }
@@ -870,6 +872,7 @@ const AlphaInstance_ResourceStatus_PhysicalHostTopologyFields: FieldMap = {
   block: "block",
   cluster: "cluster",
   host: "host",
+  machine: "machine",
   subblock: "subblock",
 };
 

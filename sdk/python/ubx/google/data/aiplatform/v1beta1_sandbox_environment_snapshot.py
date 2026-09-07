@@ -33,6 +33,8 @@ class V1beta1SandboxEnvironmentSnapshotAttrs:
     ttl: Any = None
     # Output only. The timestamp when this SandboxEnvironment was most recently updated.
     update_time: Any = None
+    # Output only. Whether the source SandboxEnvironment uses the GKE TD pool.
+    use_gke_td: Any = None
 
 V1beta1SandboxEnvironmentSnapshot = ubx.DataSourceBinding(
     wire_type="google_aiplatform_v1beta1_sandbox_environment_snapshot",

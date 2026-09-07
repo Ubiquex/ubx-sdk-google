@@ -191,209 +191,209 @@ type FutureReservation_StoragePoolProperties struct {
 }
 
 var FutureReservation_AggregateReservation_InUseResources_AcceleratorFields = ubx.FieldMap{
-	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
-}
+		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
+	}
 
 var FutureReservation_AggregateReservation_InUseResourcesFields = ubx.FieldMap{
-	"Accelerator": ubx.FieldSpec{
-		WireName: "accelerator",
-		Kind:     "object",
-		Fields:   FutureReservation_AggregateReservation_InUseResources_AcceleratorFields,
-	},
-}
+		"Accelerator": ubx.FieldSpec{
+			WireName: "accelerator",
+			Kind: "object",
+			Fields: FutureReservation_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+	}
 
 var FutureReservation_AggregateReservationFields = ubx.FieldMap{
-	"InUseResources": ubx.FieldSpec{
-		WireName: "in_use_resources",
-		Kind:     "list",
-		Fields:   FutureReservation_AggregateReservation_InUseResourcesFields,
-	},
-	"ReservedResources": ubx.FieldSpec{
-		WireName: "reserved_resources",
-		Kind:     "list",
-		Fields:   FutureReservation_AggregateReservation_InUseResourcesFields,
-	},
-	"VmFamily":     ubx.FieldSpec{WireName: "vm_family"},
-	"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
-}
+		"InUseResources": ubx.FieldSpec{
+			WireName: "in_use_resources",
+			Kind: "list",
+			Fields: FutureReservation_AggregateReservation_InUseResourcesFields,
+		},
+		"ReservedResources": ubx.FieldSpec{
+			WireName: "reserved_resources",
+			Kind: "list",
+			Fields: FutureReservation_AggregateReservation_InUseResourcesFields,
+		},
+		"VmFamily": ubx.FieldSpec{WireName: "vm_family"},
+		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
+	}
 
 var FutureReservation_AutoCreatedReservationsDurationFields = ubx.FieldMap{
-	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
-	"Seconds": ubx.FieldSpec{WireName: "seconds"},
-}
+		"Nanos": ubx.FieldSpec{WireName: "nanos"},
+		"Seconds": ubx.FieldSpec{WireName: "seconds"},
+	}
 
 var FutureReservation_CommitmentInfoFields = ubx.FieldMap{
-	"CommitmentName":          ubx.FieldSpec{WireName: "commitment_name"},
-	"CommitmentPlan":          ubx.FieldSpec{WireName: "commitment_plan"},
-	"PreviousCommitmentTerms": ubx.FieldSpec{WireName: "previous_commitment_terms"},
-}
+		"CommitmentName": ubx.FieldSpec{WireName: "commitment_name"},
+		"CommitmentPlan": ubx.FieldSpec{WireName: "commitment_plan"},
+		"PreviousCommitmentTerms": ubx.FieldSpec{WireName: "previous_commitment_terms"},
+	}
 
 var FutureReservation_ParamsFields = ubx.FieldMap{
-	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-}
+		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	}
 
 var FutureReservation_ResourceMetadataFields = ubx.FieldMap{
-	"ApiVersion":   ubx.FieldSpec{WireName: "api_version"},
-	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-}
+		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	}
 
 var FutureReservation_ShareSettings_ProjectMapFields = ubx.FieldMap{
-	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-}
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	}
 
 var FutureReservation_ShareSettingsFields = ubx.FieldMap{
-	"ProjectMap": ubx.FieldSpec{
-		WireName: "project_map",
-		Kind:     "map",
-		Fields:   FutureReservation_ShareSettings_ProjectMapFields,
-	},
-	"ShareType": ubx.FieldSpec{WireName: "share_type"},
-}
+		"ProjectMap": ubx.FieldSpec{
+			WireName: "project_map",
+			Kind: "map",
+			Fields: FutureReservation_ShareSettings_ProjectMapFields,
+		},
+		"ShareType": ubx.FieldSpec{WireName: "share_type"},
+	}
 
 var FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsdsFields = ubx.FieldMap{
-	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-	"Interface":  ubx.FieldSpec{WireName: "interface"},
-}
+		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Interface": ubx.FieldSpec{WireName: "interface"},
+	}
 
 var FutureReservation_SpecificSkuProperties_InstancePropertiesFields = ubx.FieldMap{
-	"GuestAccelerators": ubx.FieldSpec{
-		WireName: "guest_accelerators",
-		Kind:     "list",
-		Fields:   FutureReservation_AggregateReservation_InUseResources_AcceleratorFields,
-	},
-	"LocalSsds": ubx.FieldSpec{
-		WireName: "local_ssds",
-		Kind:     "list",
-		Fields:   FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsdsFields,
-	},
-	"LocationHint":   ubx.FieldSpec{WireName: "location_hint"},
-	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
-	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-}
+		"GuestAccelerators": ubx.FieldSpec{
+			WireName: "guest_accelerators",
+			Kind: "list",
+			Fields: FutureReservation_AggregateReservation_InUseResources_AcceleratorFields,
+		},
+		"LocalSsds": ubx.FieldSpec{
+			WireName: "local_ssds",
+			Kind: "list",
+			Fields: FutureReservation_SpecificSkuProperties_InstanceProperties_LocalSsdsFields,
+		},
+		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
+		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	}
 
 var FutureReservation_SpecificSkuPropertiesFields = ubx.FieldMap{
-	"InstanceProperties": ubx.FieldSpec{
-		WireName: "instance_properties",
-		Kind:     "object",
-		Fields:   FutureReservation_SpecificSkuProperties_InstancePropertiesFields,
-	},
-	"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
-	"TotalCount":             ubx.FieldSpec{WireName: "total_count"},
-}
+		"InstanceProperties": ubx.FieldSpec{
+			WireName: "instance_properties",
+			Kind: "object",
+			Fields: FutureReservation_SpecificSkuProperties_InstancePropertiesFields,
+		},
+		"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
+		"TotalCount": ubx.FieldSpec{WireName: "total_count"},
+	}
 
 var FutureReservation_Status_ExapoolProvisionedCapacityGbFields = ubx.FieldMap{
-	"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
-	"ReadOptimized":     ubx.FieldSpec{WireName: "read_optimized"},
-	"WriteOptimized":    ubx.FieldSpec{WireName: "write_optimized"},
-}
+		"CapacityOptimized": ubx.FieldSpec{WireName: "capacity_optimized"},
+		"ReadOptimized": ubx.FieldSpec{WireName: "read_optimized"},
+		"WriteOptimized": ubx.FieldSpec{WireName: "write_optimized"},
+	}
 
 var FutureReservation_Status_ExistingMatchingUsageInfoFields = ubx.FieldMap{
-	"Count":     ubx.FieldSpec{WireName: "count"},
-	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-}
+		"Count": ubx.FieldSpec{WireName: "count"},
+		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+	}
 
 var FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields = ubx.FieldMap{
-	"Duration": ubx.FieldSpec{
-		WireName: "duration",
-		Kind:     "object",
-		Fields:   FutureReservation_AutoCreatedReservationsDurationFields,
-	},
-	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
-	"StartTime": ubx.FieldSpec{WireName: "start_time"},
-}
+		"Duration": ubx.FieldSpec{
+			WireName: "duration",
+			Kind: "object",
+			Fields: FutureReservation_AutoCreatedReservationsDurationFields,
+		},
+		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	}
 
 var FutureReservation_Status_LastKnownGoodState_FutureReservationSpecsFields = ubx.FieldMap{
-	"ShareSettings": ubx.FieldSpec{
-		WireName: "share_settings",
-		Kind:     "object",
-		Fields:   FutureReservation_ShareSettingsFields,
-	},
-	"SpecificSkuProperties": ubx.FieldSpec{
-		WireName: "specific_sku_properties",
-		Kind:     "object",
-		Fields:   FutureReservation_SpecificSkuPropertiesFields,
-	},
-	"TimeWindow": ubx.FieldSpec{
-		WireName: "time_window",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
-	},
-}
+		"ShareSettings": ubx.FieldSpec{
+			WireName: "share_settings",
+			Kind: "object",
+			Fields: FutureReservation_ShareSettingsFields,
+		},
+		"SpecificSkuProperties": ubx.FieldSpec{
+			WireName: "specific_sku_properties",
+			Kind: "object",
+			Fields: FutureReservation_SpecificSkuPropertiesFields,
+		},
+		"TimeWindow": ubx.FieldSpec{
+			WireName: "time_window",
+			Kind: "object",
+			Fields: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
+		},
+	}
 
 var FutureReservation_Status_LastKnownGoodStateFields = ubx.FieldMap{
-	"Description": ubx.FieldSpec{WireName: "description"},
-	"ExistingMatchingUsageInfo": ubx.FieldSpec{
-		WireName: "existing_matching_usage_info",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_ExistingMatchingUsageInfoFields,
-	},
-	"FutureReservationSpecs": ubx.FieldSpec{
-		WireName: "future_reservation_specs",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_LastKnownGoodState_FutureReservationSpecsFields,
-	},
-	"LockTime":          ubx.FieldSpec{WireName: "lock_time"},
-	"NamePrefix":        ubx.FieldSpec{WireName: "name_prefix"},
-	"ProcurementStatus": ubx.FieldSpec{WireName: "procurement_status"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExistingMatchingUsageInfo": ubx.FieldSpec{
+			WireName: "existing_matching_usage_info",
+			Kind: "object",
+			Fields: FutureReservation_Status_ExistingMatchingUsageInfoFields,
+		},
+		"FutureReservationSpecs": ubx.FieldSpec{
+			WireName: "future_reservation_specs",
+			Kind: "object",
+			Fields: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecsFields,
+		},
+		"LockTime": ubx.FieldSpec{WireName: "lock_time"},
+		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
+		"ProcurementStatus": ubx.FieldSpec{WireName: "procurement_status"},
+	}
 
 var FutureReservation_Status_SpecificSkuPropertiesFields = ubx.FieldMap{
-	"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
-}
+		"SourceInstanceTemplateId": ubx.FieldSpec{WireName: "source_instance_template_id"},
+	}
 
 var FutureReservation_Status_StoragePoolProvisionedCapacityFields = ubx.FieldMap{
-	"PoolProvisionedCapacityGb": ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
-	"PoolProvisionedIops":       ubx.FieldSpec{WireName: "pool_provisioned_iops"},
-	"PoolProvisionedThroughput": ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
-}
+		"PoolProvisionedCapacityGb": ubx.FieldSpec{WireName: "pool_provisioned_capacity_gb"},
+		"PoolProvisionedIops": ubx.FieldSpec{WireName: "pool_provisioned_iops"},
+		"PoolProvisionedThroughput": ubx.FieldSpec{WireName: "pool_provisioned_throughput"},
+	}
 
 var FutureReservation_StatusFields = ubx.FieldMap{
-	"AmendmentStatus":         ubx.FieldSpec{WireName: "amendment_status"},
-	"AutoCreatedReservations": ubx.FieldSpec{WireName: "auto_created_reservations"},
-	"ExapoolProvisionedCapacityGb": ubx.FieldSpec{
-		WireName: "exapool_provisioned_capacity_gb",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_ExapoolProvisionedCapacityGbFields,
-	},
-	"ExistingMatchingUsageInfo": ubx.FieldSpec{
-		WireName: "existing_matching_usage_info",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_ExistingMatchingUsageInfoFields,
-	},
-	"FulfilledCount": ubx.FieldSpec{WireName: "fulfilled_count"},
-	"LastKnownGoodState": ubx.FieldSpec{
-		WireName: "last_known_good_state",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_LastKnownGoodStateFields,
-	},
-	"LockTime":          ubx.FieldSpec{WireName: "lock_time"},
-	"ProcurementStatus": ubx.FieldSpec{WireName: "procurement_status"},
-	"SpecificSkuProperties": ubx.FieldSpec{
-		WireName: "specific_sku_properties",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_SpecificSkuPropertiesFields,
-	},
-	"StoragePoolProvisionedCapacity": ubx.FieldSpec{
-		WireName: "storage_pool_provisioned_capacity",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_StoragePoolProvisionedCapacityFields,
-	},
-}
+		"AmendmentStatus": ubx.FieldSpec{WireName: "amendment_status"},
+		"AutoCreatedReservations": ubx.FieldSpec{WireName: "auto_created_reservations"},
+		"ExapoolProvisionedCapacityGb": ubx.FieldSpec{
+			WireName: "exapool_provisioned_capacity_gb",
+			Kind: "object",
+			Fields: FutureReservation_Status_ExapoolProvisionedCapacityGbFields,
+		},
+		"ExistingMatchingUsageInfo": ubx.FieldSpec{
+			WireName: "existing_matching_usage_info",
+			Kind: "object",
+			Fields: FutureReservation_Status_ExistingMatchingUsageInfoFields,
+		},
+		"FulfilledCount": ubx.FieldSpec{WireName: "fulfilled_count"},
+		"LastKnownGoodState": ubx.FieldSpec{
+			WireName: "last_known_good_state",
+			Kind: "object",
+			Fields: FutureReservation_Status_LastKnownGoodStateFields,
+		},
+		"LockTime": ubx.FieldSpec{WireName: "lock_time"},
+		"ProcurementStatus": ubx.FieldSpec{WireName: "procurement_status"},
+		"SpecificSkuProperties": ubx.FieldSpec{
+			WireName: "specific_sku_properties",
+			Kind: "object",
+			Fields: FutureReservation_Status_SpecificSkuPropertiesFields,
+		},
+		"StoragePoolProvisionedCapacity": ubx.FieldSpec{
+			WireName: "storage_pool_provisioned_capacity",
+			Kind: "object",
+			Fields: FutureReservation_Status_StoragePoolProvisionedCapacityFields,
+		},
+	}
 
 var FutureReservation_StoragePoolPropertiesFields = ubx.FieldMap{
-	"RequestedExapoolProvisionedCapacityGb": ubx.FieldSpec{
-		WireName: "requested_exapool_provisioned_capacity_gb",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_ExapoolProvisionedCapacityGbFields,
-	},
-	"RequestedStoragePoolProvisionedCapacity": ubx.FieldSpec{
-		WireName: "requested_storage_pool_provisioned_capacity",
-		Kind:     "object",
-		Fields:   FutureReservation_Status_StoragePoolProvisionedCapacityFields,
-	},
-	"StoragePoolType": ubx.FieldSpec{WireName: "storage_pool_type"},
-}
+		"RequestedExapoolProvisionedCapacityGb": ubx.FieldSpec{
+			WireName: "requested_exapool_provisioned_capacity_gb",
+			Kind: "object",
+			Fields: FutureReservation_Status_ExapoolProvisionedCapacityGbFields,
+		},
+		"RequestedStoragePoolProvisionedCapacity": ubx.FieldSpec{
+			WireName: "requested_storage_pool_provisioned_capacity",
+			Kind: "object",
+			Fields: FutureReservation_Status_StoragePoolProvisionedCapacityFields,
+		},
+		"StoragePoolType": ubx.FieldSpec{WireName: "storage_pool_type"},
+	}
 
 type FutureReservationConfig struct {
 	// This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
@@ -514,67 +514,67 @@ var FutureReservation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregateReservation": ubx.FieldSpec{
 			WireName: "aggregate_reservation",
-			Kind:     "object",
-			Fields:   FutureReservation_AggregateReservationFields,
+			Kind: "object",
+			Fields: FutureReservation_AggregateReservationFields,
 		},
 		"AutoCreatedReservationsDeleteTime": ubx.FieldSpec{WireName: "auto_created_reservations_delete_time"},
 		"AutoCreatedReservationsDuration": ubx.FieldSpec{
 			WireName: "auto_created_reservations_duration",
-			Kind:     "object",
-			Fields:   FutureReservation_AutoCreatedReservationsDurationFields,
+			Kind: "object",
+			Fields: FutureReservation_AutoCreatedReservationsDurationFields,
 		},
 		"AutoDeleteAutoCreatedReservations": ubx.FieldSpec{WireName: "auto_delete_auto_created_reservations"},
 		"CommitmentInfo": ubx.FieldSpec{
 			WireName: "commitment_info",
-			Kind:     "object",
-			Fields:   FutureReservation_CommitmentInfoFields,
+			Kind: "object",
+			Fields: FutureReservation_CommitmentInfoFields,
 		},
-		"ConfidentialComputeType":   ubx.FieldSpec{WireName: "confidential_compute_type"},
-		"DeploymentType":            ubx.FieldSpec{WireName: "deployment_type"},
-		"Description":               ubx.FieldSpec{WireName: "description"},
+		"ConfidentialComputeType": ubx.FieldSpec{WireName: "confidential_compute_type"},
+		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
+		"Description": ubx.FieldSpec{WireName: "description"},
 		"EnableEmergentMaintenance": ubx.FieldSpec{WireName: "enable_emergent_maintenance"},
-		"Name":                      ubx.FieldSpec{WireName: "name"},
-		"NamePrefix":                ubx.FieldSpec{WireName: "name_prefix"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"NamePrefix": ubx.FieldSpec{WireName: "name_prefix"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind:     "object",
-			Fields:   FutureReservation_ParamsFields,
+			Kind: "object",
+			Fields: FutureReservation_ParamsFields,
 		},
-		"PlanningStatus":  ubx.FieldSpec{WireName: "planning_status"},
+		"PlanningStatus": ubx.FieldSpec{WireName: "planning_status"},
 		"ReservationMode": ubx.FieldSpec{WireName: "reservation_mode"},
 		"ReservationName": ubx.FieldSpec{WireName: "reservation_name"},
 		"ResourceMetadata": ubx.FieldSpec{
 			WireName: "resource_metadata",
-			Kind:     "object",
-			Fields:   FutureReservation_ResourceMetadataFields,
+			Kind: "object",
+			Fields: FutureReservation_ResourceMetadataFields,
 		},
-		"ResourceName":   ubx.FieldSpec{WireName: "resource_name"},
+		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
 		"SchedulingType": ubx.FieldSpec{WireName: "scheduling_type"},
 		"ShareSettings": ubx.FieldSpec{
 			WireName: "share_settings",
-			Kind:     "object",
-			Fields:   FutureReservation_ShareSettingsFields,
+			Kind: "object",
+			Fields: FutureReservation_ShareSettingsFields,
 		},
 		"SpecificReservationRequired": ubx.FieldSpec{WireName: "specific_reservation_required"},
 		"SpecificSkuProperties": ubx.FieldSpec{
 			WireName: "specific_sku_properties",
-			Kind:     "object",
-			Fields:   FutureReservation_SpecificSkuPropertiesFields,
+			Kind: "object",
+			Fields: FutureReservation_SpecificSkuPropertiesFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind:     "object",
-			Fields:   FutureReservation_StatusFields,
+			Kind: "object",
+			Fields: FutureReservation_StatusFields,
 		},
 		"StoragePoolProperties": ubx.FieldSpec{
 			WireName: "storage_pool_properties",
-			Kind:     "object",
-			Fields:   FutureReservation_StoragePoolPropertiesFields,
+			Kind: "object",
+			Fields: FutureReservation_StoragePoolPropertiesFields,
 		},
 		"TimeWindow": ubx.FieldSpec{
 			WireName: "time_window",
-			Kind:     "object",
-			Fields:   FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
+			Kind: "object",
+			Fields: FutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
 		},
 	},
 }

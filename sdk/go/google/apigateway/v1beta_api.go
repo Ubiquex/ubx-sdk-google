@@ -32,8 +32,8 @@ type V1betaApiAttrs struct {
 var V1betaApi = ubx.ResourceBinding{
 	WireType: "google_apigateway_v1beta_api",
 	Fields: ubx.FieldMap{
-		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
-		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManagedService": ubx.FieldSpec{WireName: "managed_service"},
 	},
 }

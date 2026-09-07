@@ -140,14 +140,24 @@ export interface V2beta1ConversationProfile_SipConfig {
   maxAudioRecordingDuration?: string | Computed<string>;
 }
 
+export interface V2beta1ConversationProfile_SttConfig_GeminiAsrConfig {
+  endOfSpeechSensitivity?: string | Computed<string>;
+  modelId?: string | Computed<string>;
+  prefixPaddingMs?: number | Computed<number>;
+  silenceDurationMs?: number | Computed<number>;
+  startOfSpeechSensitivity?: string | Computed<string>;
+}
+
 export interface V2beta1ConversationProfile_SttConfig {
   audioEncoding?: string | Computed<string>;
   enableWordInfo?: boolean | Computed<boolean>;
+  geminiAsrConfig?: V2beta1ConversationProfile_SttConfig_GeminiAsrConfig | Computed<V2beta1ConversationProfile_SttConfig_GeminiAsrConfig>;
   languageCode?: string | Computed<string>;
   model?: string | Computed<string>;
   phraseSets?: string[] | Computed<string[]>;
   sampleRateHertz?: number | Computed<number>;
   speechModelVariant?: string | Computed<string>;
+  useGeminiAsr?: boolean | Computed<boolean>;
   useTimeoutBasedEndpointing?: boolean | Computed<boolean>;
 }
 
@@ -386,14 +396,28 @@ const V2beta1ConversationProfile_SipConfigFields: FieldMap = {
   maxAudioRecordingDuration: "max_audio_recording_duration",
 };
 
+const V2beta1ConversationProfile_SttConfig_GeminiAsrConfigFields: FieldMap = {
+  endOfSpeechSensitivity: "end_of_speech_sensitivity",
+  modelId: "model_id",
+  prefixPaddingMs: "prefix_padding_ms",
+  silenceDurationMs: "silence_duration_ms",
+  startOfSpeechSensitivity: "start_of_speech_sensitivity",
+};
+
 const V2beta1ConversationProfile_SttConfigFields: FieldMap = {
   audioEncoding: "audio_encoding",
   enableWordInfo: "enable_word_info",
+  geminiAsrConfig: {
+    wireName: "gemini_asr_config",
+    kind: "object",
+    fields: V2beta1ConversationProfile_SttConfig_GeminiAsrConfigFields,
+  },
   languageCode: "language_code",
   model: "model",
   phraseSets: "phrase_sets",
   sampleRateHertz: "sample_rate_hertz",
   speechModelVariant: "speech_model_variant",
+  useGeminiAsr: "use_gemini_asr",
   useTimeoutBasedEndpointing: "use_timeout_based_endpointing",
 };
 

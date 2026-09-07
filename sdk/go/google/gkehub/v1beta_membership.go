@@ -47,7 +47,7 @@ type V1betaMembership_Endpoint_KubernetesMetadata struct {
 
 type V1betaMembership_Endpoint_KubernetesResource_ConnectResources struct {
 	ClusterScoped any
-	Manifest      any
+	Manifest any
 }
 
 type V1betaMembership_Endpoint_KubernetesResource_ResourceOptions struct {
@@ -121,120 +121,120 @@ type V1betaMembership_State struct {
 }
 
 var V1betaMembership_AuthorityFields = ubx.FieldMap{
-	"IdentityProvider":                 ubx.FieldSpec{WireName: "identity_provider"},
-	"Issuer":                           ubx.FieldSpec{WireName: "issuer"},
-	"OidcJwks":                         ubx.FieldSpec{WireName: "oidc_jwks"},
-	"ScopeTenancyIdentityProvider":     ubx.FieldSpec{WireName: "scope_tenancy_identity_provider"},
-	"ScopeTenancyWorkloadIdentityPool": ubx.FieldSpec{WireName: "scope_tenancy_workload_identity_pool"},
-	"WorkloadIdentityPool":             ubx.FieldSpec{WireName: "workload_identity_pool"},
-}
+		"IdentityProvider": ubx.FieldSpec{WireName: "identity_provider"},
+		"Issuer": ubx.FieldSpec{WireName: "issuer"},
+		"OidcJwks": ubx.FieldSpec{WireName: "oidc_jwks"},
+		"ScopeTenancyIdentityProvider": ubx.FieldSpec{WireName: "scope_tenancy_identity_provider"},
+		"ScopeTenancyWorkloadIdentityPool": ubx.FieldSpec{WireName: "scope_tenancy_workload_identity_pool"},
+		"WorkloadIdentityPool": ubx.FieldSpec{WireName: "workload_identity_pool"},
+	}
 
 var V1betaMembership_Endpoint_ApplianceClusterFields = ubx.FieldMap{
-	"ResourceLink": ubx.FieldSpec{WireName: "resource_link"},
-}
+		"ResourceLink": ubx.FieldSpec{WireName: "resource_link"},
+	}
 
 var V1betaMembership_Endpoint_GkeClusterFields = ubx.FieldMap{
-	"ClusterMissing": ubx.FieldSpec{WireName: "cluster_missing"},
-	"ResourceLink":   ubx.FieldSpec{WireName: "resource_link"},
-}
+		"ClusterMissing": ubx.FieldSpec{WireName: "cluster_missing"},
+		"ResourceLink": ubx.FieldSpec{WireName: "resource_link"},
+	}
 
 var V1betaMembership_Endpoint_KubernetesMetadataFields = ubx.FieldMap{
-	"KubernetesApiServerVersion": ubx.FieldSpec{WireName: "kubernetes_api_server_version"},
-	"MemoryMb":                   ubx.FieldSpec{WireName: "memory_mb"},
-	"NodeCount":                  ubx.FieldSpec{WireName: "node_count"},
-	"NodeProviderId":             ubx.FieldSpec{WireName: "node_provider_id"},
-	"UpdateTime":                 ubx.FieldSpec{WireName: "update_time"},
-	"VcpuCount":                  ubx.FieldSpec{WireName: "vcpu_count"},
-}
+		"KubernetesApiServerVersion": ubx.FieldSpec{WireName: "kubernetes_api_server_version"},
+		"MemoryMb": ubx.FieldSpec{WireName: "memory_mb"},
+		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+		"NodeProviderId": ubx.FieldSpec{WireName: "node_provider_id"},
+		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"VcpuCount": ubx.FieldSpec{WireName: "vcpu_count"},
+	}
 
 var V1betaMembership_Endpoint_KubernetesResource_ConnectResourcesFields = ubx.FieldMap{
-	"ClusterScoped": ubx.FieldSpec{WireName: "cluster_scoped"},
-	"Manifest":      ubx.FieldSpec{WireName: "manifest"},
-}
+		"ClusterScoped": ubx.FieldSpec{WireName: "cluster_scoped"},
+		"Manifest": ubx.FieldSpec{WireName: "manifest"},
+	}
 
 var V1betaMembership_Endpoint_KubernetesResource_ResourceOptionsFields = ubx.FieldMap{
-	"ConnectVersion": ubx.FieldSpec{WireName: "connect_version"},
-	"K8sGitVersion":  ubx.FieldSpec{WireName: "k8s_git_version"},
-	"K8sVersion":     ubx.FieldSpec{WireName: "k8s_version"},
-	"V1beta1Crd":     ubx.FieldSpec{WireName: "v1beta1_crd"},
-}
+		"ConnectVersion": ubx.FieldSpec{WireName: "connect_version"},
+		"K8sGitVersion": ubx.FieldSpec{WireName: "k8s_git_version"},
+		"K8sVersion": ubx.FieldSpec{WireName: "k8s_version"},
+		"V1beta1Crd": ubx.FieldSpec{WireName: "v1beta1_crd"},
+	}
 
 var V1betaMembership_Endpoint_KubernetesResourceFields = ubx.FieldMap{
-	"ConnectResources": ubx.FieldSpec{
-		WireName: "connect_resources",
-		Kind:     "list",
-		Fields:   V1betaMembership_Endpoint_KubernetesResource_ConnectResourcesFields,
-	},
-	"MembershipCrManifest": ubx.FieldSpec{WireName: "membership_cr_manifest"},
-	"MembershipResources": ubx.FieldSpec{
-		WireName: "membership_resources",
-		Kind:     "list",
-		Fields:   V1betaMembership_Endpoint_KubernetesResource_ConnectResourcesFields,
-	},
-	"ResourceOptions": ubx.FieldSpec{
-		WireName: "resource_options",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_KubernetesResource_ResourceOptionsFields,
-	},
-}
+		"ConnectResources": ubx.FieldSpec{
+			WireName: "connect_resources",
+			Kind: "list",
+			Fields: V1betaMembership_Endpoint_KubernetesResource_ConnectResourcesFields,
+		},
+		"MembershipCrManifest": ubx.FieldSpec{WireName: "membership_cr_manifest"},
+		"MembershipResources": ubx.FieldSpec{
+			WireName: "membership_resources",
+			Kind: "list",
+			Fields: V1betaMembership_Endpoint_KubernetesResource_ConnectResourcesFields,
+		},
+		"ResourceOptions": ubx.FieldSpec{
+			WireName: "resource_options",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_KubernetesResource_ResourceOptionsFields,
+		},
+	}
 
 var V1betaMembership_Endpoint_OnPremClusterFields = ubx.FieldMap{
-	"AdminCluster":   ubx.FieldSpec{WireName: "admin_cluster"},
-	"ClusterMissing": ubx.FieldSpec{WireName: "cluster_missing"},
-	"ClusterType":    ubx.FieldSpec{WireName: "cluster_type"},
-	"ResourceLink":   ubx.FieldSpec{WireName: "resource_link"},
-}
+		"AdminCluster": ubx.FieldSpec{WireName: "admin_cluster"},
+		"ClusterMissing": ubx.FieldSpec{WireName: "cluster_missing"},
+		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
+		"ResourceLink": ubx.FieldSpec{WireName: "resource_link"},
+	}
 
 var V1betaMembership_EndpointFields = ubx.FieldMap{
-	"ApplianceCluster": ubx.FieldSpec{
-		WireName: "appliance_cluster",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_ApplianceClusterFields,
-	},
-	"EdgeCluster": ubx.FieldSpec{
-		WireName: "edge_cluster",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_ApplianceClusterFields,
-	},
-	"GkeCluster": ubx.FieldSpec{
-		WireName: "gke_cluster",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_GkeClusterFields,
-	},
-	"GoogleManaged": ubx.FieldSpec{WireName: "google_managed"},
-	"KubernetesMetadata": ubx.FieldSpec{
-		WireName: "kubernetes_metadata",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_KubernetesMetadataFields,
-	},
-	"KubernetesResource": ubx.FieldSpec{
-		WireName: "kubernetes_resource",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_KubernetesResourceFields,
-	},
-	"MultiCloudCluster": ubx.FieldSpec{
-		WireName: "multi_cloud_cluster",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_GkeClusterFields,
-	},
-	"OnPremCluster": ubx.FieldSpec{
-		WireName: "on_prem_cluster",
-		Kind:     "object",
-		Fields:   V1betaMembership_Endpoint_OnPremClusterFields,
-	},
-}
+		"ApplianceCluster": ubx.FieldSpec{
+			WireName: "appliance_cluster",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_ApplianceClusterFields,
+		},
+		"EdgeCluster": ubx.FieldSpec{
+			WireName: "edge_cluster",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_ApplianceClusterFields,
+		},
+		"GkeCluster": ubx.FieldSpec{
+			WireName: "gke_cluster",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_GkeClusterFields,
+		},
+		"GoogleManaged": ubx.FieldSpec{WireName: "google_managed"},
+		"KubernetesMetadata": ubx.FieldSpec{
+			WireName: "kubernetes_metadata",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_KubernetesMetadataFields,
+		},
+		"KubernetesResource": ubx.FieldSpec{
+			WireName: "kubernetes_resource",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_KubernetesResourceFields,
+		},
+		"MultiCloudCluster": ubx.FieldSpec{
+			WireName: "multi_cloud_cluster",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_GkeClusterFields,
+		},
+		"OnPremCluster": ubx.FieldSpec{
+			WireName: "on_prem_cluster",
+			Kind: "object",
+			Fields: V1betaMembership_Endpoint_OnPremClusterFields,
+		},
+	}
 
 var V1betaMembership_MonitoringConfigFields = ubx.FieldMap{
-	"Cluster":                 ubx.FieldSpec{WireName: "cluster"},
-	"ClusterHash":             ubx.FieldSpec{WireName: "cluster_hash"},
-	"KubernetesMetricsPrefix": ubx.FieldSpec{WireName: "kubernetes_metrics_prefix"},
-	"Location":                ubx.FieldSpec{WireName: "location"},
-	"ProjectId":               ubx.FieldSpec{WireName: "project_id"},
-}
+		"Cluster": ubx.FieldSpec{WireName: "cluster"},
+		"ClusterHash": ubx.FieldSpec{WireName: "cluster_hash"},
+		"KubernetesMetricsPrefix": ubx.FieldSpec{WireName: "kubernetes_metrics_prefix"},
+		"Location": ubx.FieldSpec{WireName: "location"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	}
 
 var V1betaMembership_StateFields = ubx.FieldMap{
-	"Code": ubx.FieldSpec{WireName: "code"},
-}
+		"Code": ubx.FieldSpec{WireName: "code"},
+	}
 
 type V1betaMembershipConfig struct {
 	// Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
@@ -289,25 +289,25 @@ var V1betaMembership = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Authority": ubx.FieldSpec{
 			WireName: "authority",
-			Kind:     "object",
-			Fields:   V1betaMembership_AuthorityFields,
+			Kind: "object",
+			Fields: V1betaMembership_AuthorityFields,
 		},
 		"Endpoint": ubx.FieldSpec{
 			WireName: "endpoint",
-			Kind:     "object",
-			Fields:   V1betaMembership_EndpointFields,
+			Kind: "object",
+			Fields: V1betaMembership_EndpointFields,
 		},
 		"ExternalId": ubx.FieldSpec{WireName: "external_id"},
-		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind:     "object",
-			Fields:   V1betaMembership_MonitoringConfigFields,
+			Kind: "object",
+			Fields: V1betaMembership_MonitoringConfigFields,
 		},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind:     "object",
-			Fields:   V1betaMembership_StateFields,
+			Kind: "object",
+			Fields: V1betaMembership_StateFields,
 		},
 	},
 }

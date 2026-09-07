@@ -480,6 +480,14 @@ class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob:
     mime_type: Any = None
 
 @dataclasses.dataclass
+class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Image:
+    alt_text: Any = None
+    # The literal data payload. (AI-inferred)
+    data: Any = None
+    # The IANA MIME type of this content. (AI-inferred)
+    mime_type: Any = None
+
+@dataclasses.dataclass
 class Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool:
     # An identifier for the tool this applies to. (AI-inferred)
     tool_id: Any = None

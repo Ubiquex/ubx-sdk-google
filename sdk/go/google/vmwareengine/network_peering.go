@@ -64,15 +64,15 @@ type NetworkPeeringAttrs struct {
 var NetworkPeering = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_network_peering",
 	Fields: ubx.FieldMap{
-		"Description":                    ubx.FieldSpec{WireName: "description"},
-		"ExchangeSubnetRoutes":           ubx.FieldSpec{WireName: "exchange_subnet_routes"},
-		"ExportCustomRoutes":             ubx.FieldSpec{WireName: "export_custom_routes"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"ExchangeSubnetRoutes": ubx.FieldSpec{WireName: "exchange_subnet_routes"},
+		"ExportCustomRoutes": ubx.FieldSpec{WireName: "export_custom_routes"},
 		"ExportCustomRoutesWithPublicIp": ubx.FieldSpec{WireName: "export_custom_routes_with_public_ip"},
-		"ImportCustomRoutes":             ubx.FieldSpec{WireName: "import_custom_routes"},
+		"ImportCustomRoutes": ubx.FieldSpec{WireName: "import_custom_routes"},
 		"ImportCustomRoutesWithPublicIp": ubx.FieldSpec{WireName: "import_custom_routes_with_public_ip"},
-		"PeerMtu":                        ubx.FieldSpec{WireName: "peer_mtu"},
-		"PeerNetwork":                    ubx.FieldSpec{WireName: "peer_network"},
-		"PeerNetworkType":                ubx.FieldSpec{WireName: "peer_network_type"},
-		"VmwareEngineNetwork":            ubx.FieldSpec{WireName: "vmware_engine_network"},
+		"PeerMtu": ubx.FieldSpec{WireName: "peer_mtu"},
+		"PeerNetwork": ubx.FieldSpec{WireName: "peer_network"},
+		"PeerNetworkType": ubx.FieldSpec{WireName: "peer_network_type"},
+		"VmwareEngineNetwork": ubx.FieldSpec{WireName: "vmware_engine_network"},
 	},
 }

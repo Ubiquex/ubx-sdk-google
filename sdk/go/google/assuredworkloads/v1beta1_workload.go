@@ -47,13 +47,13 @@ type V1beta1Workload_PartnerPermissions struct {
 }
 
 type V1beta1Workload_ResourceSettings struct {
-	DisplayName  any
-	ResourceId   any
+	DisplayName any
+	ResourceId any
 	ResourceType any
 }
 
 type V1beta1Workload_Resources struct {
-	ResourceId   any
+	ResourceId any
 	ResourceType any
 }
 
@@ -70,52 +70,52 @@ type V1beta1Workload_WorkloadOptions struct {
 }
 
 var V1beta1Workload_CjisSettings_KmsSettingsFields = ubx.FieldMap{
-	"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
-	"RotationPeriod":   ubx.FieldSpec{WireName: "rotation_period"},
-}
+		"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
+		"RotationPeriod": ubx.FieldSpec{WireName: "rotation_period"},
+	}
 
 var V1beta1Workload_CjisSettingsFields = ubx.FieldMap{
-	"KmsSettings": ubx.FieldSpec{
-		WireName: "kms_settings",
-		Kind:     "object",
-		Fields:   V1beta1Workload_CjisSettings_KmsSettingsFields,
-	},
-}
+		"KmsSettings": ubx.FieldSpec{
+			WireName: "kms_settings",
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettings_KmsSettingsFields,
+		},
+	}
 
 var V1beta1Workload_ComplianceStatusFields = ubx.FieldMap{
-	"AcknowledgedResourceViolationCount": ubx.FieldSpec{WireName: "acknowledged_resource_violation_count"},
-	"AcknowledgedViolationCount":         ubx.FieldSpec{WireName: "acknowledged_violation_count"},
-	"ActiveResourceViolationCount":       ubx.FieldSpec{WireName: "active_resource_violation_count"},
-	"ActiveViolationCount":               ubx.FieldSpec{WireName: "active_violation_count"},
-}
+		"AcknowledgedResourceViolationCount": ubx.FieldSpec{WireName: "acknowledged_resource_violation_count"},
+		"AcknowledgedViolationCount": ubx.FieldSpec{WireName: "acknowledged_violation_count"},
+		"ActiveResourceViolationCount": ubx.FieldSpec{WireName: "active_resource_violation_count"},
+		"ActiveViolationCount": ubx.FieldSpec{WireName: "active_violation_count"},
+	}
 
 var V1beta1Workload_EkmProvisioningResponseFields = ubx.FieldMap{
-	"EkmProvisioningErrorDomain":  ubx.FieldSpec{WireName: "ekm_provisioning_error_domain"},
-	"EkmProvisioningErrorMapping": ubx.FieldSpec{WireName: "ekm_provisioning_error_mapping"},
-	"EkmProvisioningState":        ubx.FieldSpec{WireName: "ekm_provisioning_state"},
-}
+		"EkmProvisioningErrorDomain": ubx.FieldSpec{WireName: "ekm_provisioning_error_domain"},
+		"EkmProvisioningErrorMapping": ubx.FieldSpec{WireName: "ekm_provisioning_error_mapping"},
+		"EkmProvisioningState": ubx.FieldSpec{WireName: "ekm_provisioning_state"},
+	}
 
 var V1beta1Workload_PartnerPermissionsFields = ubx.FieldMap{
-	"AccessTransparencyLogsSupportCaseViewer": ubx.FieldSpec{WireName: "access_transparency_logs_support_case_viewer"},
-	"AssuredWorkloadsMonitoring":              ubx.FieldSpec{WireName: "assured_workloads_monitoring"},
-	"DataLogsViewer":                          ubx.FieldSpec{WireName: "data_logs_viewer"},
-	"ServiceAccessApprover":                   ubx.FieldSpec{WireName: "service_access_approver"},
-}
+		"AccessTransparencyLogsSupportCaseViewer": ubx.FieldSpec{WireName: "access_transparency_logs_support_case_viewer"},
+		"AssuredWorkloadsMonitoring": ubx.FieldSpec{WireName: "assured_workloads_monitoring"},
+		"DataLogsViewer": ubx.FieldSpec{WireName: "data_logs_viewer"},
+		"ServiceAccessApprover": ubx.FieldSpec{WireName: "service_access_approver"},
+	}
 
 var V1beta1Workload_ResourceSettingsFields = ubx.FieldMap{
-	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
-	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
-	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
+		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+	}
 
 var V1beta1Workload_SaaEnrollmentResponseFields = ubx.FieldMap{
-	"SetupErrors": ubx.FieldSpec{WireName: "setup_errors"},
-	"SetupStatus": ubx.FieldSpec{WireName: "setup_status"},
-}
+		"SetupErrors": ubx.FieldSpec{WireName: "setup_errors"},
+		"SetupStatus": ubx.FieldSpec{WireName: "setup_status"},
+	}
 
 var V1beta1Workload_WorkloadOptionsFields = ubx.FieldMap{
-	"KajEnrollmentType": ubx.FieldSpec{WireName: "kaj_enrollment_type"},
-}
+		"KajEnrollmentType": ubx.FieldSpec{WireName: "kaj_enrollment_type"},
+	}
 
 type V1beta1WorkloadConfig struct {
 	// Optional. The billing account used for the resources which are direct children of workload. This billing account is initially associated with the resources created as part of Workload creation. After the initial creation of these resources, the customer can change the assigned billing account. The resource name has the form `billingAccounts/{billing_account_id}`. For example, `billingAccounts/012345-567890-ABCDEF`.
@@ -231,68 +231,68 @@ var V1beta1Workload = ubx.ResourceBinding{
 		"BillingAccount": ubx.FieldSpec{WireName: "billing_account"},
 		"CjisSettings": ubx.FieldSpec{
 			WireName: "cjis_settings",
-			Kind:     "object",
-			Fields:   V1beta1Workload_CjisSettingsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettingsFields,
 		},
 		"ComplianceRegime": ubx.FieldSpec{WireName: "compliance_regime"},
 		"ComplianceStatus": ubx.FieldSpec{
 			WireName: "compliance_status",
-			Kind:     "object",
-			Fields:   V1beta1Workload_ComplianceStatusFields,
+			Kind: "object",
+			Fields: V1beta1Workload_ComplianceStatusFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EkmProvisioningResponse": ubx.FieldSpec{
 			WireName: "ekm_provisioning_response",
-			Kind:     "object",
-			Fields:   V1beta1Workload_EkmProvisioningResponseFields,
+			Kind: "object",
+			Fields: V1beta1Workload_EkmProvisioningResponseFields,
 		},
 		"EnableSovereignControls": ubx.FieldSpec{WireName: "enable_sovereign_controls"},
-		"Etag":                    ubx.FieldSpec{WireName: "etag"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"FedrampHighSettings": ubx.FieldSpec{
 			WireName: "fedramp_high_settings",
-			Kind:     "object",
-			Fields:   V1beta1Workload_CjisSettingsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettingsFields,
 		},
 		"FedrampModerateSettings": ubx.FieldSpec{
 			WireName: "fedramp_moderate_settings",
-			Kind:     "object",
-			Fields:   V1beta1Workload_CjisSettingsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettingsFields,
 		},
 		"Il4Settings": ubx.FieldSpec{
 			WireName: "il4_settings",
-			Kind:     "object",
-			Fields:   V1beta1Workload_CjisSettingsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettingsFields,
 		},
 		"KmsSettings": ubx.FieldSpec{
 			WireName: "kms_settings",
-			Kind:     "object",
-			Fields:   V1beta1Workload_CjisSettings_KmsSettingsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_CjisSettings_KmsSettingsFields,
 		},
-		"Labels":  ubx.FieldSpec{WireName: "labels"},
-		"Name":    ubx.FieldSpec{WireName: "name"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Partner": ubx.FieldSpec{WireName: "partner"},
 		"PartnerPermissions": ubx.FieldSpec{
 			WireName: "partner_permissions",
-			Kind:     "object",
-			Fields:   V1beta1Workload_PartnerPermissionsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_PartnerPermissionsFields,
 		},
 		"PartnerServicesBillingAccount": ubx.FieldSpec{WireName: "partner_services_billing_account"},
-		"ProvisionedResourcesParent":    ubx.FieldSpec{WireName: "provisioned_resources_parent"},
+		"ProvisionedResourcesParent": ubx.FieldSpec{WireName: "provisioned_resources_parent"},
 		"ResourceSettings": ubx.FieldSpec{
 			WireName: "resource_settings",
-			Kind:     "list",
-			Fields:   V1beta1Workload_ResourceSettingsFields,
+			Kind: "list",
+			Fields: V1beta1Workload_ResourceSettingsFields,
 		},
 		"SaaEnrollmentResponse": ubx.FieldSpec{
 			WireName: "saa_enrollment_response",
-			Kind:     "object",
-			Fields:   V1beta1Workload_SaaEnrollmentResponseFields,
+			Kind: "object",
+			Fields: V1beta1Workload_SaaEnrollmentResponseFields,
 		},
 		"ViolationNotificationsEnabled": ubx.FieldSpec{WireName: "violation_notifications_enabled"},
 		"WorkloadOptions": ubx.FieldSpec{
 			WireName: "workload_options",
-			Kind:     "object",
-			Fields:   V1beta1Workload_WorkloadOptionsFields,
+			Kind: "object",
+			Fields: V1beta1Workload_WorkloadOptionsFields,
 		},
 	},
 }

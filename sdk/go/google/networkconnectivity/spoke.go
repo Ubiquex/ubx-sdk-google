@@ -104,68 +104,68 @@ type Spoke_Reasons struct {
 }
 
 var Spoke_Gateway_IpRangeReservationsFields = ubx.FieldMap{
-	"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-}
+		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+	}
 
 var Spoke_GatewayFields = ubx.FieldMap{
-	"Capacity":     ubx.FieldSpec{WireName: "capacity"},
-	"CloudRouters": ubx.FieldSpec{WireName: "cloud_routers"},
-	"IpRangeReservations": ubx.FieldSpec{
-		WireName: "ip_range_reservations",
-		Kind:     "list",
-		Fields:   Spoke_Gateway_IpRangeReservationsFields,
-	},
-	"SacAttachment": ubx.FieldSpec{WireName: "sac_attachment"},
-}
+		"Capacity": ubx.FieldSpec{WireName: "capacity"},
+		"CloudRouters": ubx.FieldSpec{WireName: "cloud_routers"},
+		"IpRangeReservations": ubx.FieldSpec{
+			WireName: "ip_range_reservations",
+			Kind: "list",
+			Fields: Spoke_Gateway_IpRangeReservationsFields,
+		},
+		"SacAttachment": ubx.FieldSpec{WireName: "sac_attachment"},
+	}
 
 var Spoke_LinkedInterconnectAttachmentsFields = ubx.FieldMap{
-	"ExcludeExportRanges":    ubx.FieldSpec{WireName: "exclude_export_ranges"},
-	"ExcludeImportRanges":    ubx.FieldSpec{WireName: "exclude_import_ranges"},
-	"IncludeExportRanges":    ubx.FieldSpec{WireName: "include_export_ranges"},
-	"IncludeImportRanges":    ubx.FieldSpec{WireName: "include_import_ranges"},
-	"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
-	"Uris":                   ubx.FieldSpec{WireName: "uris"},
-	"VpcNetwork":             ubx.FieldSpec{WireName: "vpc_network"},
-}
+		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
+		"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
+		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
+		"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
+		"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
+		"Uris": ubx.FieldSpec{WireName: "uris"},
+		"VpcNetwork": ubx.FieldSpec{WireName: "vpc_network"},
+	}
 
 var Spoke_LinkedProducerVpcNetworkFields = ubx.FieldMap{
-	"ExcludeExportRanges":         ubx.FieldSpec{WireName: "exclude_export_ranges"},
-	"IncludeExportRanges":         ubx.FieldSpec{WireName: "include_export_ranges"},
-	"Network":                     ubx.FieldSpec{WireName: "network"},
-	"Peering":                     ubx.FieldSpec{WireName: "peering"},
-	"ProducerNetwork":             ubx.FieldSpec{WireName: "producer_network"},
-	"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
-	"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
-	"ServiceConsumerVpcSpoke":     ubx.FieldSpec{WireName: "service_consumer_vpc_spoke"},
-}
+		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
+		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"Peering": ubx.FieldSpec{WireName: "peering"},
+		"ProducerNetwork": ubx.FieldSpec{WireName: "producer_network"},
+		"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
+		"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
+		"ServiceConsumerVpcSpoke": ubx.FieldSpec{WireName: "service_consumer_vpc_spoke"},
+	}
 
 var Spoke_LinkedRouterApplianceInstances_InstancesFields = ubx.FieldMap{
-	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
-	"VirtualMachine": ubx.FieldSpec{WireName: "virtual_machine"},
-}
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"VirtualMachine": ubx.FieldSpec{WireName: "virtual_machine"},
+	}
 
 var Spoke_LinkedRouterApplianceInstancesFields = ubx.FieldMap{
-	"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
-	"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
-	"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
-	"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
-	"Instances": ubx.FieldSpec{
-		WireName: "instances",
-		Kind:     "list",
-		Fields:   Spoke_LinkedRouterApplianceInstances_InstancesFields,
-	},
-	"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
-	"VpcNetwork":             ubx.FieldSpec{WireName: "vpc_network"},
-}
+		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
+		"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
+		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
+		"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
+		"Instances": ubx.FieldSpec{
+			WireName: "instances",
+			Kind: "list",
+			Fields: Spoke_LinkedRouterApplianceInstances_InstancesFields,
+		},
+		"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
+		"VpcNetwork": ubx.FieldSpec{WireName: "vpc_network"},
+	}
 
 var Spoke_LinkedVpcNetworkFields = ubx.FieldMap{
-	"ExcludeExportRanges":         ubx.FieldSpec{WireName: "exclude_export_ranges"},
-	"IncludeExportRanges":         ubx.FieldSpec{WireName: "include_export_ranges"},
-	"ProducerVpcSpokes":           ubx.FieldSpec{WireName: "producer_vpc_spokes"},
-	"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
-	"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
-	"Uri":                         ubx.FieldSpec{WireName: "uri"},
-}
+		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
+		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
+		"ProducerVpcSpokes": ubx.FieldSpec{WireName: "producer_vpc_spokes"},
+		"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
+		"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
+		"Uri": ubx.FieldSpec{WireName: "uri"},
+	}
 
 type SpokeConfig struct {
 	// Optional. An optional description of the spoke.
@@ -240,41 +240,41 @@ type SpokeAttrs struct {
 var Spoke = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_spoke",
 	Fields: ubx.FieldMap{
-		"Description":             ubx.FieldSpec{WireName: "description"},
-		"Etag":                    ubx.FieldSpec{WireName: "etag"},
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"FieldPathsPendingUpdate": ubx.FieldSpec{WireName: "field_paths_pending_update"},
 		"Gateway": ubx.FieldSpec{
 			WireName: "gateway",
-			Kind:     "object",
-			Fields:   Spoke_GatewayFields,
+			Kind: "object",
+			Fields: Spoke_GatewayFields,
 		},
-		"Group":  ubx.FieldSpec{WireName: "group"},
-		"Hub":    ubx.FieldSpec{WireName: "hub"},
+		"Group": ubx.FieldSpec{WireName: "group"},
+		"Hub": ubx.FieldSpec{WireName: "hub"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LinkedInterconnectAttachments": ubx.FieldSpec{
 			WireName: "linked_interconnect_attachments",
-			Kind:     "object",
-			Fields:   Spoke_LinkedInterconnectAttachmentsFields,
+			Kind: "object",
+			Fields: Spoke_LinkedInterconnectAttachmentsFields,
 		},
 		"LinkedProducerVpcNetwork": ubx.FieldSpec{
 			WireName: "linked_producer_vpc_network",
-			Kind:     "object",
-			Fields:   Spoke_LinkedProducerVpcNetworkFields,
+			Kind: "object",
+			Fields: Spoke_LinkedProducerVpcNetworkFields,
 		},
 		"LinkedRouterApplianceInstances": ubx.FieldSpec{
 			WireName: "linked_router_appliance_instances",
-			Kind:     "object",
-			Fields:   Spoke_LinkedRouterApplianceInstancesFields,
+			Kind: "object",
+			Fields: Spoke_LinkedRouterApplianceInstancesFields,
 		},
 		"LinkedVpcNetwork": ubx.FieldSpec{
 			WireName: "linked_vpc_network",
-			Kind:     "object",
-			Fields:   Spoke_LinkedVpcNetworkFields,
+			Kind: "object",
+			Fields: Spoke_LinkedVpcNetworkFields,
 		},
 		"LinkedVpnTunnels": ubx.FieldSpec{
 			WireName: "linked_vpn_tunnels",
-			Kind:     "object",
-			Fields:   Spoke_LinkedInterconnectAttachmentsFields,
+			Kind: "object",
+			Fields: Spoke_LinkedInterconnectAttachmentsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

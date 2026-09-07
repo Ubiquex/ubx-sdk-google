@@ -4,10 +4,10 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaAgent_AfterAgentCallbacks struct {
-	Description               any
-	Disabled                  any
+	Description any
+	Disabled any
 	ProactiveExecutionEnabled any
-	PythonCode                any
+	PythonCode any
 }
 
 type V1betaAgent_ModelSettings struct {
@@ -15,6 +15,105 @@ type V1betaAgent_ModelSettings struct {
 	Model any
 	// Optional. If set, this temperature will be used for the LLM model. Temperature controls the randomness of the model's responses. Lower temperatures produce responses that are more predictable. Higher temperatures produce responses that are more creative.
 	Temperature any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_Skills struct {
+	Description any
+	Examples any
+	Id any
+	InputModes any
+	Name any
+	OutputModes any
+	Tags any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfaces struct {
+	ProtocolBinding any
+	ProtocolVersion any
+	Tenant any
+	Url any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard struct {
+	// Required. A description of the agent's domain of action/solution space.
+	Description any
+	// Required. A human-readable name for the agent.
+	Name any
+	// Required. Skills represent a unit of ability an agent can perform. This may somewhat abstract but represents a more focused set of actions that the agent is highly likely to succeed at.
+	Skills any
+	// Required. Ordered list of supported interfaces. The first entry is preferred.
+	SupportedInterfaces any
+	// Required. The version of the agent.
+	Version any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfig struct {
+	// Required. The name of the SecretManager secret version resource storing the API key. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+	ApiKeySecretVersion any
+	// Required. The parameter name or the header name of the API key. E.g., If the API request is "https://example.com/act?X-Api-Key=", "X-Api-Key" would be the parameter name.
+	KeyName any
+	// Required. Key location in the request.
+	RequestLocation any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfig struct {
+	// Required. The bearer token. Must be in the format `$context.variables.`.
+	Token any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfig struct {
+	// Required. The client ID from the OAuth provider.
+	ClientId any
+	// Required. The name of the SecretManager secret version resource storing the client secret. Format: `projects/{project}/secrets/{secret}/versions/{version}` Note: You should grant `roles/secretmanager.secretAccessor` role to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+	ClientSecretVersion any
+	// Required. OAuth grant types.
+	OauthGrantType any
+	// Optional. The OAuth scopes to grant.
+	Scopes any
+	// Required. The token endpoint in the OAuth provider to exchange for an access token.
+	TokenEndpoint any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfig struct {
+	// Optional. The OAuth scopes to grant. If not specified, the default scope `https://www.googleapis.com/auth/cloud-platform` is used.
+	Scopes any
+	// Required. The email address of the service account used for authentication. CES uses this service account to exchange an access token and the access token is then sent in the `Authorization` header of the request. The service account must have the `roles/iam.serviceAccountTokenCreator` role granted to the CES service agent `service-@gcp-sa-ces.iam.gserviceaccount.com`.
+	ServiceAccount any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication struct {
+	// Configurations for authentication with API key.
+	ApiKeyConfig any
+	// Configurations for authentication with a bearer token.
+	BearerTokenConfig any
+	// Configurations for authentication with OAuth.
+	OauthConfig any
+	// Configurations for authentication using a custom service account.
+	ServiceAccountAuthConfig any
+	// Configurations for authentication with [ID token](https://cloud.google.com/docs/authentication/token-types#id) generated from service agent.
+	ServiceAgentIdTokenAuthConfig any
+}
+
+type V1betaAgent_RemoteA2aAgent_A2aConfig struct {
+	// AgentCard conveys key information about a remote agent. It is a trimmed version of the AgentCard defined in the A2A protocol https://a2a-protocol.org/dev/specification/#441-agentcard
+	AgentCard any
+	// Optional. Reference to the agent in the Agent Registry. Format: `projects/{project}/locations/{location}/agents/{agent}`
+	AgentRegistry any
+	// Authentication information required for API calls.
+	ApiAuthentication any
+	// Optional. If not empty, interactions with the remote A2A agent will use this context ID. This context_id field can refer to a session variable like `$context.variables.order_agent_session_id`.
+	ContextId any
+	// Optional. Mapping of input variable names of remote agent to GECX variable names.
+	InputVariableMapping any
+	// Optional. Mapping of output variable names of remote agent to GECX variable names.
+	OutputVariableMapping any
+	// Optional. Whether streaming is enabled for the remote agent.
+	StreamingEnabled any
+}
+
+type V1betaAgent_RemoteA2aAgent struct {
+	// Shared configuration for connecting to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+	A2aConfig any
 }
 
 type V1betaAgent_RemoteDialogflowAgent struct {
@@ -57,82 +156,188 @@ type V1betaAgent_TransferRules_DisablePlannerTransfer struct {
 }
 
 type V1betaAgent_TransferRules struct {
-	ChildAgent             any
-	DeterministicTransfer  any
-	Direction              any
+	ChildAgent any
+	DeterministicTransfer any
+	Direction any
 	DisablePlannerTransfer any
 }
 
 var V1betaAgent_AfterAgentCallbacksFields = ubx.FieldMap{
-	"Description":               ubx.FieldSpec{WireName: "description"},
-	"Disabled":                  ubx.FieldSpec{WireName: "disabled"},
-	"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
-	"PythonCode":                ubx.FieldSpec{WireName: "python_code"},
-}
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
+		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+	}
 
 var V1betaAgent_ModelSettingsFields = ubx.FieldMap{
-	"Model":       ubx.FieldSpec{WireName: "model"},
-	"Temperature": ubx.FieldSpec{WireName: "temperature"},
-}
+		"Model": ubx.FieldSpec{WireName: "model"},
+		"Temperature": ubx.FieldSpec{WireName: "temperature"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Examples": ubx.FieldSpec{WireName: "examples"},
+		"Id": ubx.FieldSpec{WireName: "id"},
+		"InputModes": ubx.FieldSpec{WireName: "input_modes"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
+		"Tags": ubx.FieldSpec{WireName: "tags"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields = ubx.FieldMap{
+		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+		"Tenant": ubx.FieldSpec{WireName: "tenant"},
+		"Url": ubx.FieldSpec{WireName: "url"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCardFields = ubx.FieldMap{
+		"Description": ubx.FieldSpec{WireName: "description"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+		"Skills": ubx.FieldSpec{
+			WireName: "skills",
+			Kind: "list",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_SkillsFields,
+		},
+		"SupportedInterfaces": ubx.FieldSpec{
+			WireName: "supported_interfaces",
+			Kind: "list",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCard_SupportedInterfacesFields,
+		},
+		"Version": ubx.FieldSpec{WireName: "version"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields = ubx.FieldMap{
+		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+		"KeyName": ubx.FieldSpec{WireName: "key_name"},
+		"RequestLocation": ubx.FieldSpec{WireName: "request_location"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields = ubx.FieldMap{
+		"Token": ubx.FieldSpec{WireName: "token"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields = ubx.FieldMap{
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
+		"OauthGrantType": ubx.FieldSpec{WireName: "oauth_grant_type"},
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields = ubx.FieldMap{
+		"Scopes": ubx.FieldSpec{WireName: "scopes"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields = ubx.FieldMap{
+		"ApiKeyConfig": ubx.FieldSpec{
+			WireName: "api_key_config",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ApiKeyConfigFields,
+		},
+		"BearerTokenConfig": ubx.FieldSpec{
+			WireName: "bearer_token_config",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_BearerTokenConfigFields,
+		},
+		"OauthConfig": ubx.FieldSpec{
+			WireName: "oauth_config",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_OauthConfigFields,
+		},
+		"ServiceAccountAuthConfig": ubx.FieldSpec{
+			WireName: "service_account_auth_config",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthentication_ServiceAccountAuthConfigFields,
+		},
+		"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
+	}
+
+var V1betaAgent_RemoteA2aAgent_A2aConfigFields = ubx.FieldMap{
+		"AgentCard": ubx.FieldSpec{
+			WireName: "agent_card",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_AgentCardFields,
+		},
+		"AgentRegistry": ubx.FieldSpec{WireName: "agent_registry"},
+		"ApiAuthentication": ubx.FieldSpec{
+			WireName: "api_authentication",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfig_ApiAuthenticationFields,
+		},
+		"ContextId": ubx.FieldSpec{WireName: "context_id"},
+		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
+		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
+		"StreamingEnabled": ubx.FieldSpec{WireName: "streaming_enabled"},
+	}
+
+var V1betaAgent_RemoteA2aAgentFields = ubx.FieldMap{
+		"A2aConfig": ubx.FieldSpec{
+			WireName: "a2a_config",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgent_A2aConfigFields,
+		},
+	}
 
 var V1betaAgent_RemoteDialogflowAgentFields = ubx.FieldMap{
-	"Agent":                               ubx.FieldSpec{WireName: "agent"},
-	"EnvironmentId":                       ubx.FieldSpec{WireName: "environment_id"},
-	"FlowId":                              ubx.FieldSpec{WireName: "flow_id"},
-	"InputVariableMapping":                ubx.FieldSpec{WireName: "input_variable_mapping"},
-	"LanguageCodeVariable":                ubx.FieldSpec{WireName: "language_code_variable"},
-	"OutputVariableMapping":               ubx.FieldSpec{WireName: "output_variable_mapping"},
-	"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
-}
+		"Agent": ubx.FieldSpec{WireName: "agent"},
+		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
+		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
+		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
+		"LanguageCodeVariable": ubx.FieldSpec{WireName: "language_code_variable"},
+		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
+		"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
+	}
 
 var V1betaAgent_ToolsetsFields = ubx.FieldMap{
-	"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
-	"Toolset": ubx.FieldSpec{WireName: "toolset"},
-}
+		"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
+		"Toolset": ubx.FieldSpec{WireName: "toolset"},
+	}
 
 var V1betaAgent_TransferRules_DeterministicTransfer_ExpressionConditionFields = ubx.FieldMap{
-	"Expression": ubx.FieldSpec{WireName: "expression"},
-}
+		"Expression": ubx.FieldSpec{WireName: "expression"},
+	}
 
 var V1betaAgent_TransferRules_DeterministicTransfer_PythonCodeConditionFields = ubx.FieldMap{
-	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-}
+		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+	}
 
 var V1betaAgent_TransferRules_DeterministicTransferFields = ubx.FieldMap{
-	"ExpressionCondition": ubx.FieldSpec{
-		WireName: "expression_condition",
-		Kind:     "object",
-		Fields:   V1betaAgent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-	},
-	"PythonCodeCondition": ubx.FieldSpec{
-		WireName: "python_code_condition",
-		Kind:     "object",
-		Fields:   V1betaAgent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
-	},
-}
+		"ExpressionCondition": ubx.FieldSpec{
+			WireName: "expression_condition",
+			Kind: "object",
+			Fields: V1betaAgent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+		},
+		"PythonCodeCondition": ubx.FieldSpec{
+			WireName: "python_code_condition",
+			Kind: "object",
+			Fields: V1betaAgent_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
+		},
+	}
 
 var V1betaAgent_TransferRules_DisablePlannerTransferFields = ubx.FieldMap{
-	"ExpressionCondition": ubx.FieldSpec{
-		WireName: "expression_condition",
-		Kind:     "object",
-		Fields:   V1betaAgent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-	},
-}
+		"ExpressionCondition": ubx.FieldSpec{
+			WireName: "expression_condition",
+			Kind: "object",
+			Fields: V1betaAgent_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+		},
+	}
 
 var V1betaAgent_TransferRulesFields = ubx.FieldMap{
-	"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
-	"DeterministicTransfer": ubx.FieldSpec{
-		WireName: "deterministic_transfer",
-		Kind:     "object",
-		Fields:   V1betaAgent_TransferRules_DeterministicTransferFields,
-	},
-	"Direction": ubx.FieldSpec{WireName: "direction"},
-	"DisablePlannerTransfer": ubx.FieldSpec{
-		WireName: "disable_planner_transfer",
-		Kind:     "object",
-		Fields:   V1betaAgent_TransferRules_DisablePlannerTransferFields,
-	},
-}
+		"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
+		"DeterministicTransfer": ubx.FieldSpec{
+			WireName: "deterministic_transfer",
+			Kind: "object",
+			Fields: V1betaAgent_TransferRules_DeterministicTransferFields,
+		},
+		"Direction": ubx.FieldSpec{WireName: "direction"},
+		"DisablePlannerTransfer": ubx.FieldSpec{
+			WireName: "disable_planner_transfer",
+			Kind: "object",
+			Fields: V1betaAgent_TransferRules_DisablePlannerTransferFields,
+		},
+	}
 
 type V1betaAgentConfig struct {
 	// Optional. The callbacks to execute after the agent is called. The provided callbacks are executed sequentially in the exact order they are given in the list. If a callback returns an overridden response, execution stops and any remaining callbacks are skipped.
@@ -165,6 +370,8 @@ type V1betaAgentConfig struct {
 	ModelSettings any
 	// Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
 	Name any
+	// The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+	RemoteA2aAgent any
 	// The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent.
 	RemoteDialogflowAgent any
 	// Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
@@ -210,6 +417,8 @@ type V1betaAgentAttrs struct {
 	ModelSettings any
 	// Identifier. The unique identifier of the agent. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
 	Name any
+	// The agent which will transfer execution to a remote [A2A](https://github.com/a2aproject/A2A) agent.
+	RemoteA2aAgent any
 	// The agent which will transfer execution to a remote [Dialogflow CX](https://docs.cloud.google.com/dialogflow/cx/docs/concept/agent) agent. The Dialogflow agent will process subsequent user queries until the session ends or flow ends, and the control is transferred back to the parent CES agent.
 	RemoteDialogflowAgent any
 	// Optional. List of available tools for the agent. Format: `projects/{project}/locations/{location}/apps/{app}/tools/{tool}`
@@ -229,62 +438,67 @@ var V1betaAgent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AfterAgentCallbacks": ubx.FieldSpec{
 			WireName: "after_agent_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"AfterModelCallbacks": ubx.FieldSpec{
 			WireName: "after_model_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"AfterToolCallbacks": ubx.FieldSpec{
 			WireName: "after_tool_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"BeforeAgentCallbacks": ubx.FieldSpec{
 			WireName: "before_agent_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"BeforeModelCallbacks": ubx.FieldSpec{
 			WireName: "before_model_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"BeforeToolCallbacks": ubx.FieldSpec{
 			WireName: "before_tool_callbacks",
-			Kind:     "list",
-			Fields:   V1betaAgent_AfterAgentCallbacksFields,
+			Kind: "list",
+			Fields: V1betaAgent_AfterAgentCallbacksFields,
 		},
 		"ChildAgents": ubx.FieldSpec{WireName: "child_agents"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag":        ubx.FieldSpec{WireName: "etag"},
-		"Guardrails":  ubx.FieldSpec{WireName: "guardrails"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
 		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"LlmAgent":    ubx.FieldSpec{WireName: "llm_agent"},
+		"LlmAgent": ubx.FieldSpec{WireName: "llm_agent"},
 		"ModelSettings": ubx.FieldSpec{
 			WireName: "model_settings",
-			Kind:     "object",
-			Fields:   V1betaAgent_ModelSettingsFields,
+			Kind: "object",
+			Fields: V1betaAgent_ModelSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
+		"RemoteA2aAgent": ubx.FieldSpec{
+			WireName: "remote_a2a_agent",
+			Kind: "object",
+			Fields: V1betaAgent_RemoteA2aAgentFields,
+		},
 		"RemoteDialogflowAgent": ubx.FieldSpec{
 			WireName: "remote_dialogflow_agent",
-			Kind:     "object",
-			Fields:   V1betaAgent_RemoteDialogflowAgentFields,
+			Kind: "object",
+			Fields: V1betaAgent_RemoteDialogflowAgentFields,
 		},
 		"Tools": ubx.FieldSpec{WireName: "tools"},
 		"Toolsets": ubx.FieldSpec{
 			WireName: "toolsets",
-			Kind:     "list",
-			Fields:   V1betaAgent_ToolsetsFields,
+			Kind: "list",
+			Fields: V1betaAgent_ToolsetsFields,
 		},
 		"TransferRules": ubx.FieldSpec{
 			WireName: "transfer_rules",
-			Kind:     "list",
-			Fields:   V1betaAgent_TransferRulesFields,
+			Kind: "list",
+			Fields: V1betaAgent_TransferRulesFields,
 		},
 	},
 }

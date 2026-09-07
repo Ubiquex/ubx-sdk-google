@@ -153,6 +153,8 @@ export interface V1alphaWidgetConfig_ContentSearchSpec {
 }
 
 export interface V1alphaWidgetConfig_CustomerProvidedConfig {
+  /** Output only. The customer's Assured Workloads compliance level. `customer_type` collapses every compliance level into a single `GOVERNMENT_CUSTOMER` value, so a client that gates a feature on one specific level rather than on government status as a whole must read this field instead. */
+  complianceLevel?: string | Computed<string>;
   /** Customer type. */
   customerType?: string | Computed<string>;
 }
@@ -281,7 +283,7 @@ export interface V1alphaWidgetConfig_UiSettings {
   enableSearchAsYouType?: boolean | Computed<boolean>;
   /** If set to true, the widget will enable visual content summary on applicable search requests. Only used by healthcare search. */
   enableVisualContentSummary?: boolean | Computed<boolean>;
-  /** Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `speech-to-text` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `skills` * `skill-sharing` * `skill-sharing-without-admin-approval` * `disable-projects` * `sobi` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `workflow-agents` * `in-app-notifications` */
+  /** Output only. Feature config for the engine to opt in or opt out of features. Supported keys: * `agent-gallery` * `no-code-agent-builder` * `prompt-gallery` * `model-selector` * `notebook-lm` * `people-search` * `people-search-org-chart` * `bi-directional-audio` * `speech-to-text` * `feedback` * `session-sharing` * `personalization-memory` * `personalization-suggested-highlights` * `mobile-app-access` * `disable-agent-sharing` * `disable-image-generation` * `disable-video-generation` * `disable-onedrive-upload` * `disable-talk-to-content` * `disable-google-drive-upload` * `disable-welcome-emails` * `disable-canvas` * `canvas-workspace` * `canvas-app-builder` * `skills` * `skill-sharing` * `skill-sharing-without-admin-approval` * `disable-projects` * `sobi` * `enable-end-user-sharing-with-groups` * `single-agent-orchestration` * `multi-agent-orchestration` * `cross-product-intelligence` * `workflow-agents` * `in-app-notifications` */
   features?: Record<string, string> | Computed<Record<string, string>>;
   /** Describes configuration for generative answer. */
   generativeAnswerConfig?: V1alphaWidgetConfig_UiSettings_GenerativeAnswerConfig | Computed<V1alphaWidgetConfig_UiSettings_GenerativeAnswerConfig>;

@@ -73,65 +73,65 @@ type FeatureOnlineStore_EncryptionSpec struct {
 }
 
 var FeatureOnlineStore_Bigtable_AutoScalingFields = ubx.FieldMap{
-	"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
-	"MaxNodeCount":         ubx.FieldSpec{WireName: "max_node_count"},
-	"MinNodeCount":         ubx.FieldSpec{WireName: "min_node_count"},
-}
+		"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
+		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
+		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
+	}
 
 var FeatureOnlineStore_Bigtable_BigtableMetadataFields = ubx.FieldMap{
-	"InstanceId":      ubx.FieldSpec{WireName: "instance_id"},
-	"TableId":         ubx.FieldSpec{WireName: "table_id"},
-	"TenantProjectId": ubx.FieldSpec{WireName: "tenant_project_id"},
-}
+		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+		"TableId": ubx.FieldSpec{WireName: "table_id"},
+		"TenantProjectId": ubx.FieldSpec{WireName: "tenant_project_id"},
+	}
 
 var FeatureOnlineStore_BigtableFields = ubx.FieldMap{
-	"AutoScaling": ubx.FieldSpec{
-		WireName: "auto_scaling",
-		Kind:     "object",
-		Fields:   FeatureOnlineStore_Bigtable_AutoScalingFields,
-	},
-	"BigtableMetadata": ubx.FieldSpec{
-		WireName: "bigtable_metadata",
-		Kind:     "object",
-		Fields:   FeatureOnlineStore_Bigtable_BigtableMetadataFields,
-	},
-	"EnableDirectBigtableAccess": ubx.FieldSpec{WireName: "enable_direct_bigtable_access"},
-	"Zone":                       ubx.FieldSpec{WireName: "zone"},
-}
+		"AutoScaling": ubx.FieldSpec{
+			WireName: "auto_scaling",
+			Kind: "object",
+			Fields: FeatureOnlineStore_Bigtable_AutoScalingFields,
+		},
+		"BigtableMetadata": ubx.FieldSpec{
+			WireName: "bigtable_metadata",
+			Kind: "object",
+			Fields: FeatureOnlineStore_Bigtable_BigtableMetadataFields,
+		},
+		"EnableDirectBigtableAccess": ubx.FieldSpec{WireName: "enable_direct_bigtable_access"},
+		"Zone": ubx.FieldSpec{WireName: "zone"},
+	}
 
 var FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields = ubx.FieldMap{
-	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
-	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
-	"Network":        ubx.FieldSpec{WireName: "network"},
-	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
-	"State":          ubx.FieldSpec{WireName: "state"},
-}
+		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+		"Network": ubx.FieldSpec{WireName: "network"},
+		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"State": ubx.FieldSpec{WireName: "state"},
+	}
 
 var FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfigFields = ubx.FieldMap{
-	"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-	"ProjectAllowlist":            ubx.FieldSpec{WireName: "project_allowlist"},
-	"PscAutomationConfigs": ubx.FieldSpec{
-		WireName: "psc_automation_configs",
-		Kind:     "list",
-		Fields:   FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
-	},
-	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
+		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
+		"PscAutomationConfigs": ubx.FieldSpec{
+			WireName: "psc_automation_configs",
+			Kind: "list",
+			Fields: FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfig_PscAutomationConfigsFields,
+		},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 var FeatureOnlineStore_DedicatedServingEndpointFields = ubx.FieldMap{
-	"PrivateServiceConnectConfig": ubx.FieldSpec{
-		WireName: "private_service_connect_config",
-		Kind:     "object",
-		Fields:   FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfigFields,
-	},
-	"PublicEndpointDomainName": ubx.FieldSpec{WireName: "public_endpoint_domain_name"},
-	"ServiceAttachment":        ubx.FieldSpec{WireName: "service_attachment"},
-}
+		"PrivateServiceConnectConfig": ubx.FieldSpec{
+			WireName: "private_service_connect_config",
+			Kind: "object",
+			Fields: FeatureOnlineStore_DedicatedServingEndpoint_PrivateServiceConnectConfigFields,
+		},
+		"PublicEndpointDomainName": ubx.FieldSpec{WireName: "public_endpoint_domain_name"},
+		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+	}
 
 var FeatureOnlineStore_EncryptionSpecFields = ubx.FieldMap{
-	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-}
+		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	}
 
 type FeatureOnlineStoreConfig struct {
 	// Configuration for the Bigtable instance backing this online serving store. (AI-inferred)
@@ -182,22 +182,22 @@ var FeatureOnlineStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Bigtable": ubx.FieldSpec{
 			WireName: "bigtable",
-			Kind:     "object",
-			Fields:   FeatureOnlineStore_BigtableFields,
+			Kind: "object",
+			Fields: FeatureOnlineStore_BigtableFields,
 		},
 		"DedicatedServingEndpoint": ubx.FieldSpec{
 			WireName: "dedicated_serving_endpoint",
-			Kind:     "object",
-			Fields:   FeatureOnlineStore_DedicatedServingEndpointFields,
+			Kind: "object",
+			Fields: FeatureOnlineStore_DedicatedServingEndpointFields,
 		},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind:     "object",
-			Fields:   FeatureOnlineStore_EncryptionSpecFields,
+			Kind: "object",
+			Fields: FeatureOnlineStore_EncryptionSpecFields,
 		},
-		"Etag":      ubx.FieldSpec{WireName: "etag"},
-		"Labels":    ubx.FieldSpec{WireName: "labels"},
-		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Optimized": ubx.FieldSpec{WireName: "optimized"},
 	},
 }

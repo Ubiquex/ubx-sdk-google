@@ -10,13 +10,6 @@ export interface GcpUserAccessBinding_Principal {
   serviceAccountProjectNumber?: string | Computed<string>;
 }
 
-export interface GcpUserAccessBinding_RestrictedClientApplications {
-  /** The OAuth client ID this restriction applies to. (AI-inferred) */
-  clientId?: string | Computed<string>;
-  /** The resource name or identifier of this object. (AI-inferred) */
-  name?: string | Computed<string>;
-}
-
 export interface GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings {
   /** How long a session may remain inactive before requiring re-authentication. (AI-inferred) */
   maxInactivity?: string | Computed<string>;
@@ -37,6 +30,13 @@ export interface GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings {
   sessionSettings?: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings | Computed<GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings>;
 }
 
+export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplication {
+  /** The OAuth client ID this restriction applies to. (AI-inferred) */
+  clientId?: string | Computed<string>;
+  /** The resource name or identifier of this object. (AI-inferred) */
+  name?: string | Computed<string>;
+}
+
 export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject {
   /** The resource name or identifier of this object. (AI-inferred) */
   name?: string | Computed<string>;
@@ -44,7 +44,7 @@ export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_Res
 
 export interface GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope {
   /** Restricts this rule to a specific client application. (AI-inferred) */
-  restrictedClientApplication?: GcpUserAccessBinding_RestrictedClientApplications | Computed<GcpUserAccessBinding_RestrictedClientApplications>;
+  restrictedClientApplication?: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplication | Computed<GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplication>;
   /** A reference to the project this restriction applies to. (AI-inferred) */
   restrictedProject?: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject | Computed<GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject>;
 }
@@ -69,11 +69,6 @@ const GcpUserAccessBinding_PrincipalFields: FieldMap = {
   serviceAccountProjectNumber: "service_account_project_number",
 };
 
-const GcpUserAccessBinding_RestrictedClientApplicationsFields: FieldMap = {
-  clientId: "client_id",
-  name: "name",
-};
-
 const GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields: FieldMap = {
   maxInactivity: "max_inactivity",
   sessionLength: "session_length",
@@ -91,6 +86,11 @@ const GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields: FieldMap =
   },
 };
 
+const GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields: FieldMap = {
+  clientId: "client_id",
+  name: "name",
+};
+
 const GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProjectFields: FieldMap = {
   name: "name",
 };
@@ -99,7 +99,7 @@ const GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScopeFields: FieldMa
   restrictedClientApplication: {
     wireName: "restricted_client_application",
     kind: "object",
-    fields: GcpUserAccessBinding_RestrictedClientApplicationsFields,
+    fields: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields,
   },
   restrictedProject: {
     wireName: "restricted_project",
@@ -145,9 +145,7 @@ export interface GcpUserAccessBindingConfig {
   name?: string | Computed<string>;
   /** The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding. */
   principal?: GcpUserAccessBinding_Principal | Computed<GcpUserAccessBinding_Principal>;
-  /** Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications. */
-  restrictedClientApplications?: GcpUserAccessBinding_RestrictedClientApplications[] | Computed<GcpUserAccessBinding_RestrictedClientApplications[]>;
-  /** Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set. */
+  /** Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. */
   scopedAccessSettings?: GcpUserAccessBinding_ScopedAccessSettings[] | Computed<GcpUserAccessBinding_ScopedAccessSettings[]>;
   /** Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings. */
   sessionSettings?: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings | Computed<GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings>;
@@ -164,9 +162,7 @@ export interface GcpUserAccessBindingAttrs {
   name: string;
   /** The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding. */
   principal: GcpUserAccessBinding_Principal;
-  /** Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications. */
-  restrictedClientApplications: GcpUserAccessBinding_RestrictedClientApplications[];
-  /** Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set. */
+  /** Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. */
   scopedAccessSettings: GcpUserAccessBinding_ScopedAccessSettings[];
   /** Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings. */
   sessionSettings: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings;
@@ -183,11 +179,6 @@ export const GcpUserAccessBinding: ResourceBinding<GcpUserAccessBindingConfig, G
       wireName: "principal",
       kind: "object",
       fields: GcpUserAccessBinding_PrincipalFields,
-    },
-    restrictedClientApplications: {
-      wireName: "restricted_client_applications",
-      kind: "list",
-      fields: GcpUserAccessBinding_RestrictedClientApplicationsFields,
     },
     scopedAccessSettings: {
       wireName: "scoped_access_settings",

@@ -30,8 +30,10 @@ _V1beta1Share_NfsExportOptionsFields = {
 class V1beta1ShareConfig:
     # Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup.
     backup: Any = None
-    # File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0.
+    # Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
     capacity_gb: Any = None
+    # Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
+    capacity_mb: Any = None
     # A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
     # Resource labels to represent user provided metadata.
@@ -45,8 +47,10 @@ class V1beta1ShareConfig:
 class V1beta1ShareAttrs:
     # Immutable. Full name of the Cloud Filestore Backup resource that this Share is restored from, in the format of projects/{project_id}/locations/{location_id}/backups/{backup_id}. Empty, if the Share is created from scratch and not restored from a backup.
     backup: Any = None
-    # File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0.
+    # Optional. File share capacity in gigabytes (GB). Filestore defines 1 GB as 1024^3 bytes. Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
     capacity_gb: Any = None
+    # Optional. File share capacity in Megabytes (MB). Must be greater than 0. Exactly one of capacity_gb or capacity_mb must be specified.
+    capacity_mb: Any = None
     # Output only. The time when the share was created.
     create_time: Any = None
     # A description of the share with 2048 characters or less. Requests with longer descriptions will be rejected.
@@ -67,6 +71,7 @@ V1beta1Share = ubx.ResourceBinding(
     fields={
         "backup": ubx.FieldSpec(wire_name="backup"),
         "capacity_gb": ubx.FieldSpec(wire_name="capacity_gb"),
+        "capacity_mb": ubx.FieldSpec(wire_name="capacity_mb"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "mount_name": ubx.FieldSpec(wire_name="mount_name"),

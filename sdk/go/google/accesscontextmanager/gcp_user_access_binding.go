@@ -12,13 +12,6 @@ type GcpUserAccessBinding_Principal struct {
 	ServiceAccountProjectNumber any
 }
 
-type GcpUserAccessBinding_RestrictedClientApplications struct {
-	// The OAuth client ID this restriction applies to. (AI-inferred)
-	ClientId any
-	// The resource name or identifier of this object. (AI-inferred)
-	Name any
-}
-
 type GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettings struct {
 	// How long a session may remain inactive before requiring re-authentication. (AI-inferred)
 	MaxInactivity any
@@ -37,6 +30,13 @@ type GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings struct {
 	AccessLevels any
 	// Configuration for session length and re-authentication requirements. (AI-inferred)
 	SessionSettings any
+}
+
+type GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplication struct {
+	// The OAuth client ID this restriction applies to. (AI-inferred)
+	ClientId any
+	// The resource name or identifier of this object. (AI-inferred)
+	Name any
 }
 
 type GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProject struct {
@@ -66,75 +66,75 @@ type GcpUserAccessBinding_ScopedAccessSettings struct {
 }
 
 var GcpUserAccessBinding_PrincipalFields = ubx.FieldMap{
-	"FederatedPrincipal":          ubx.FieldSpec{WireName: "federated_principal"},
-	"ServiceAccount":              ubx.FieldSpec{WireName: "service_account"},
-	"ServiceAccountProjectNumber": ubx.FieldSpec{WireName: "service_account_project_number"},
-}
-
-var GcpUserAccessBinding_RestrictedClientApplicationsFields = ubx.FieldMap{
-	"ClientId": ubx.FieldSpec{WireName: "client_id"},
-	"Name":     ubx.FieldSpec{WireName: "name"},
-}
+		"FederatedPrincipal": ubx.FieldSpec{WireName: "federated_principal"},
+		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+		"ServiceAccountProjectNumber": ubx.FieldSpec{WireName: "service_account_project_number"},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields = ubx.FieldMap{
-	"MaxInactivity":        ubx.FieldSpec{WireName: "max_inactivity"},
-	"SessionLength":        ubx.FieldSpec{WireName: "session_length"},
-	"SessionLengthEnabled": ubx.FieldSpec{WireName: "session_length_enabled"},
-	"SessionReauthMethod":  ubx.FieldSpec{WireName: "session_reauth_method"},
-	"UseOidcMaxAge":        ubx.FieldSpec{WireName: "use_oidc_max_age"},
-}
+		"MaxInactivity": ubx.FieldSpec{WireName: "max_inactivity"},
+		"SessionLength": ubx.FieldSpec{WireName: "session_length"},
+		"SessionLengthEnabled": ubx.FieldSpec{WireName: "session_length_enabled"},
+		"SessionReauthMethod": ubx.FieldSpec{WireName: "session_reauth_method"},
+		"UseOidcMaxAge": ubx.FieldSpec{WireName: "use_oidc_max_age"},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields = ubx.FieldMap{
-	"AccessLevels": ubx.FieldSpec{WireName: "access_levels"},
-	"SessionSettings": ubx.FieldSpec{
-		WireName: "session_settings",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields,
-	},
-}
+		"AccessLevels": ubx.FieldSpec{WireName: "access_levels"},
+		"SessionSettings": ubx.FieldSpec{
+			WireName: "session_settings",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields,
+		},
+	}
+
+var GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields = ubx.FieldMap{
+		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProjectFields = ubx.FieldMap{
-	"Name": ubx.FieldSpec{WireName: "name"},
-}
+		"Name": ubx.FieldSpec{WireName: "name"},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScopeFields = ubx.FieldMap{
-	"RestrictedClientApplication": ubx.FieldSpec{
-		WireName: "restricted_client_application",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_RestrictedClientApplicationsFields,
-	},
-	"RestrictedProject": ubx.FieldSpec{
-		WireName: "restricted_project",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProjectFields,
-	},
-}
+		"RestrictedClientApplication": ubx.FieldSpec{
+			WireName: "restricted_client_application",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedClientApplicationFields,
+		},
+		"RestrictedProject": ubx.FieldSpec{
+			WireName: "restricted_project",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScope_RestrictedProjectFields,
+		},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettings_ScopeFields = ubx.FieldMap{
-	"ClientScope": ubx.FieldSpec{
-		WireName: "client_scope",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScopeFields,
-	},
-}
+		"ClientScope": ubx.FieldSpec{
+			WireName: "client_scope",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_Scope_ClientScopeFields,
+		},
+	}
 
 var GcpUserAccessBinding_ScopedAccessSettingsFields = ubx.FieldMap{
-	"ActiveSettings": ubx.FieldSpec{
-		WireName: "active_settings",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields,
-	},
-	"DryRunSettings": ubx.FieldSpec{
-		WireName: "dry_run_settings",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields,
-	},
-	"Scope": ubx.FieldSpec{
-		WireName: "scope",
-		Kind:     "object",
-		Fields:   GcpUserAccessBinding_ScopedAccessSettings_ScopeFields,
-	},
-}
+		"ActiveSettings": ubx.FieldSpec{
+			WireName: "active_settings",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields,
+		},
+		"DryRunSettings": ubx.FieldSpec{
+			WireName: "dry_run_settings",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettingsFields,
+		},
+		"Scope": ubx.FieldSpec{
+			WireName: "scope",
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_ScopeFields,
+		},
+	}
 
 type GcpUserAccessBindingConfig struct {
 	// Optional. Access level that a user must have to be granted access. Only one access level is supported, not multiple. This repeated field must have exactly one element. Example: "accessPolicies/9522/accessLevels/device_trusted"
@@ -147,9 +147,7 @@ type GcpUserAccessBindingConfig struct {
 	Name any
 	// The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding.
 	Principal any
-	// Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
-	RestrictedClientApplications any
-	// Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
+	// Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications.
 	ScopedAccessSettings any
 	// Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings.
 	SessionSettings any
@@ -166,9 +164,7 @@ type GcpUserAccessBindingAttrs struct {
 	Name any
 	// The comprehensive identity container supporting identities including groups, service accounts, and federated identities. Only one of them can be set to create an access binding.
 	Principal any
-	// Optional. Deprecated: Use `scoped_access_settings` instead. A list of applications that are subject to this binding's restrictions. If the list is empty, the binding restrictions will universally apply to all applications.
-	RestrictedClientApplications any
-	// Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications. This field cannot be set if restricted_client_applications is set.
+	// Optional. A list of scoped access settings that set this binding's restrictions on a subset of applications.
 	ScopedAccessSettings any
 	// Stores settings related to Google Cloud Session Length including session duration, the type of challenge (i.e. method) they should face when their session expires, and other related settings.
 	SessionSettings any
@@ -177,29 +173,24 @@ type GcpUserAccessBindingAttrs struct {
 var GcpUserAccessBinding = ubx.ResourceBinding{
 	WireType: "google_accesscontextmanager_gcp_user_access_binding",
 	Fields: ubx.FieldMap{
-		"AccessLevels":       ubx.FieldSpec{WireName: "access_levels"},
+		"AccessLevels": ubx.FieldSpec{WireName: "access_levels"},
 		"DryRunAccessLevels": ubx.FieldSpec{WireName: "dry_run_access_levels"},
-		"GroupKey":           ubx.FieldSpec{WireName: "group_key"},
-		"Name":               ubx.FieldSpec{WireName: "name"},
+		"GroupKey": ubx.FieldSpec{WireName: "group_key"},
+		"Name": ubx.FieldSpec{WireName: "name"},
 		"Principal": ubx.FieldSpec{
 			WireName: "principal",
-			Kind:     "object",
-			Fields:   GcpUserAccessBinding_PrincipalFields,
-		},
-		"RestrictedClientApplications": ubx.FieldSpec{
-			WireName: "restricted_client_applications",
-			Kind:     "list",
-			Fields:   GcpUserAccessBinding_RestrictedClientApplicationsFields,
+			Kind: "object",
+			Fields: GcpUserAccessBinding_PrincipalFields,
 		},
 		"ScopedAccessSettings": ubx.FieldSpec{
 			WireName: "scoped_access_settings",
-			Kind:     "list",
-			Fields:   GcpUserAccessBinding_ScopedAccessSettingsFields,
+			Kind: "list",
+			Fields: GcpUserAccessBinding_ScopedAccessSettingsFields,
 		},
 		"SessionSettings": ubx.FieldSpec{
 			WireName: "session_settings",
-			Kind:     "object",
-			Fields:   GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields,
+			Kind: "object",
+			Fields: GcpUserAccessBinding_ScopedAccessSettings_ActiveSettings_SessionSettingsFields,
 		},
 	},
 }

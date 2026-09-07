@@ -15,11 +15,11 @@ type Comment_Creator struct {
 }
 
 var Comment_CreatorFields = ubx.FieldMap{
-	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
-	"Email":         ubx.FieldSpec{WireName: "email"},
-	"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
-	"Username":      ubx.FieldSpec{WireName: "username"},
-}
+		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Email": ubx.FieldSpec{WireName: "email"},
+		"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
+		"Username": ubx.FieldSpec{WireName: "username"},
+	}
 
 type CommentConfig struct {
 	// The full comment body. Maximum of 12800 characters.
@@ -47,8 +47,8 @@ var Comment = ubx.ResourceBinding{
 		"Body": ubx.FieldSpec{WireName: "body"},
 		"Creator": ubx.FieldSpec{
 			WireName: "creator",
-			Kind:     "object",
-			Fields:   Comment_CreatorFields,
+			Kind: "object",
+			Fields: Comment_CreatorFields,
 		},
 	},
 }
