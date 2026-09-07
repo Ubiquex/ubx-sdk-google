@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NotificationChannelDescriptor_Labels struct {
 	Description any
-	Key any
-	ValueType any
+	Key         any
+	ValueType   any
 }
 
 type NotificationChannelDescriptorConfig struct {
@@ -22,7 +22,7 @@ type NotificationChannelDescriptorAttrs struct {
 	Labels any
 	// The product launch stage for channels of this type.
 	LaunchStage any
-	Name any
+	Name        any
 	// The tiers that support this notification channel; the project service tier must be one of the supported_tiers.
 	SupportedTiers any
 	// The type of notification channel, such as "email" and "sms". To view the full list of channels, see Channel descriptors (https://cloud.google.com/monitoring/alerts/using-channels-api#ncd). Notification channel types are globally unique.

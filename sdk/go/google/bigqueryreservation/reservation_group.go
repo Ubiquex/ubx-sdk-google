@@ -24,7 +24,7 @@ type ReservationGroupAttrs struct {
 var ReservationGroup = ubx.ResourceBinding{
 	WireType: "google_bigqueryreservation_reservation_group",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ParentGroup": ubx.FieldSpec{WireName: "parent_group"},
 	},
 }

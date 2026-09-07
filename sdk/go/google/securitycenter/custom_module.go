@@ -46,12 +46,12 @@ type CustomModuleAttrs struct {
 var CustomModule = ubx.ResourceBinding{
 	WireType: "google_securitycenter_custom_module",
 	Fields: ubx.FieldMap{
-		"CloudProvider": ubx.FieldSpec{WireName: "cloud_provider"},
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CloudProvider":   ubx.FieldSpec{WireName: "cloud_provider"},
+		"Config":          ubx.FieldSpec{WireName: "config"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
 		"EnablementState": ubx.FieldSpec{WireName: "enablement_state"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

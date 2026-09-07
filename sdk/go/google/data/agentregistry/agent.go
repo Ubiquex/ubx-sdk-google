@@ -12,21 +12,21 @@ type Agent_Card struct {
 
 type Agent_Protocols_Interfaces struct {
 	ProtocolBinding any
-	Url any
+	Url             any
 }
 
 type Agent_Protocols struct {
-	Interfaces any
+	Interfaces      any
 	ProtocolVersion any
-	Type any
+	Type            any
 }
 
 type Agent_Skills struct {
 	Description any
-	Examples any
-	Id any
-	Name any
-	Tags any
+	Examples    any
+	Id          any
+	Name        any
+	Tags        any
 }
 
 type AgentConfig struct {
@@ -48,7 +48,7 @@ type AgentAttrs struct {
 	DisplayName any
 	// Output only. The location where agent is hosted. The value is defined by the hosting environment (i.e. cloud provider).
 	Location any
-	Name any
+	Name     any
 	// Output only. The connection details for the Agent.
 	Protocols any
 	// Output only. Skills the agent possesses, often obtained from the A2A Agent Card.

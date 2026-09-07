@@ -38,29 +38,29 @@ type V1p1beta1PhraseSet_PhraseSet struct {
 }
 
 var V1p1beta1PhraseSet_PhraseSet_PhrasesFields = ubx.FieldMap{
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Boost": ubx.FieldSpec{WireName: "boost"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1p1beta1PhraseSet_PhraseSetFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phrases": ubx.FieldSpec{
-			WireName: "phrases",
-			Kind: "list",
-			Fields: V1p1beta1PhraseSet_PhraseSet_PhrasesFields,
-		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Annotations":       ubx.FieldSpec{WireName: "annotations"},
+	"Boost":             ubx.FieldSpec{WireName: "boost"},
+	"DeleteTime":        ubx.FieldSpec{WireName: "delete_time"},
+	"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+	"Etag":              ubx.FieldSpec{WireName: "etag"},
+	"ExpireTime":        ubx.FieldSpec{WireName: "expire_time"},
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Phrases": ubx.FieldSpec{
+		WireName: "phrases",
+		Kind:     "list",
+		Fields:   V1p1beta1PhraseSet_PhraseSet_PhrasesFields,
+	},
+	"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"Uid":         ubx.FieldSpec{WireName: "uid"},
+}
 
 type V1p1beta1PhraseSetConfig struct {
 	// Provides "hints" to the speech recognizer to favor specific words and phrases in the results.
@@ -107,8 +107,8 @@ var V1p1beta1PhraseSet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"PhraseSet": ubx.FieldSpec{
 			WireName: "phrase_set",
-			Kind: "object",
-			Fields: V1p1beta1PhraseSet_PhraseSetFields,
+			Kind:     "object",
+			Fields:   V1p1beta1PhraseSet_PhraseSetFields,
 		},
 		"PhraseSetId": ubx.FieldSpec{WireName: "phrase_set_id"},
 	},

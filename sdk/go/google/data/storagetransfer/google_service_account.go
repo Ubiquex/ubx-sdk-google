@@ -10,7 +10,7 @@ type GoogleServiceAccountConfig struct {
 type GoogleServiceAccountAttrs struct {
 	// Email address of the service account.
 	AccountEmail any
-	ProjectId any
+	ProjectId    any
 	// Unique identifier for the service account.
 	SubjectId any
 }

@@ -37,8 +37,8 @@ var ScimTenant = ubx.ResourceBinding{
 	WireType: "google_iam_scim_tenant",
 	Fields: ubx.FieldMap{
 		"ClaimMapping": ubx.FieldSpec{WireName: "claim_mapping"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

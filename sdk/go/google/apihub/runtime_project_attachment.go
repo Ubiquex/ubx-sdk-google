@@ -22,7 +22,7 @@ type RuntimeProjectAttachmentAttrs struct {
 var RuntimeProjectAttachment = ubx.ResourceBinding{
 	WireType: "google_apihub_runtime_project_attachment",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"RuntimeProject": ubx.FieldSpec{WireName: "runtime_project"},
 	},
 }

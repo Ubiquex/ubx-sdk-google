@@ -15,11 +15,11 @@ type RowAccessPolicy_RowAccessPolicyReference struct {
 }
 
 var RowAccessPolicy_RowAccessPolicyReferenceFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 type RowAccessPolicyConfig struct {
 	// Required. A SQL boolean expression that represents the rows defined by this row access policy, similar to the boolean expression in a WHERE clause of a SELECT query on a table. References to other tables, routines, and temporary functions are not supported. Examples: region="EU" date_field = CAST('2019-9-27' as DATE) nullable_field is not NULL numeric_field BETWEEN 1.0 AND 5.0
@@ -49,11 +49,11 @@ var RowAccessPolicy = ubx.ResourceBinding{
 	WireType: "google_bigquery_row_access_policy",
 	Fields: ubx.FieldMap{
 		"FilterPredicate": ubx.FieldSpec{WireName: "filter_predicate"},
-		"Grantees": ubx.FieldSpec{WireName: "grantees"},
+		"Grantees":        ubx.FieldSpec{WireName: "grantees"},
 		"RowAccessPolicyReference": ubx.FieldSpec{
 			WireName: "row_access_policy_reference",
-			Kind: "object",
-			Fields: RowAccessPolicy_RowAccessPolicyReferenceFields,
+			Kind:     "object",
+			Fields:   RowAccessPolicy_RowAccessPolicyReferenceFields,
 		},
 	},
 }

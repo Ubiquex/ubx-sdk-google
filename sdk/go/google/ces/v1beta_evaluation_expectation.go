@@ -9,8 +9,8 @@ type V1betaEvaluationExpectation_LlmCriteria struct {
 }
 
 var V1betaEvaluationExpectation_LlmCriteriaFields = ubx.FieldMap{
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 type V1betaEvaluationExpectationConfig struct {
 	// Required. User-defined display name. Must be unique within the app.
@@ -46,8 +46,8 @@ var V1betaEvaluationExpectation = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LlmCriteria": ubx.FieldSpec{
 			WireName: "llm_criteria",
-			Kind: "object",
-			Fields: V1betaEvaluationExpectation_LlmCriteriaFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluationExpectation_LlmCriteriaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},

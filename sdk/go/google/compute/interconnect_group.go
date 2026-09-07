@@ -43,12 +43,12 @@ type InterconnectGroup_Interconnects struct {
 
 type InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones struct {
 	Interconnects any
-	Zone any
+	Zone          any
 }
 
 type InterconnectGroup_PhysicalStructure_Metros_Facilities struct {
 	Facility any
-	Zones any
+	Zones    any
 }
 
 type InterconnectGroup_PhysicalStructure_Metros struct {
@@ -63,70 +63,70 @@ type InterconnectGroup_PhysicalStructure struct {
 }
 
 var InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields = ubx.FieldMap{
-		"BlockerType": ubx.FieldSpec{WireName: "blocker_type"},
-		"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Facilities": ubx.FieldSpec{WireName: "facilities"},
-		"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
-		"Metros": ubx.FieldSpec{WireName: "metros"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"BlockerType":       ubx.FieldSpec{WireName: "blocker_type"},
+	"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
+	"Explanation":       ubx.FieldSpec{WireName: "explanation"},
+	"Facilities":        ubx.FieldSpec{WireName: "facilities"},
+	"Interconnects":     ubx.FieldSpec{WireName: "interconnects"},
+	"Metros":            ubx.FieldSpec{WireName: "metros"},
+	"Zones":             ubx.FieldSpec{WireName: "zones"},
+}
 
 var InterconnectGroup_Configured_TopologyCapabilityFields = ubx.FieldMap{
-		"IntendedCapabilityBlockers": ubx.FieldSpec{
-			WireName: "intended_capability_blockers",
-			Kind: "list",
-			Fields: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
-		},
-		"SupportedSla": ubx.FieldSpec{WireName: "supported_sla"},
-	}
+	"IntendedCapabilityBlockers": ubx.FieldSpec{
+		WireName: "intended_capability_blockers",
+		Kind:     "list",
+		Fields:   InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
+	},
+	"SupportedSla": ubx.FieldSpec{WireName: "supported_sla"},
+}
 
 var InterconnectGroup_ConfiguredFields = ubx.FieldMap{
-		"TopologyCapability": ubx.FieldSpec{
-			WireName: "topology_capability",
-			Kind: "object",
-			Fields: InterconnectGroup_Configured_TopologyCapabilityFields,
-		},
-	}
+	"TopologyCapability": ubx.FieldSpec{
+		WireName: "topology_capability",
+		Kind:     "object",
+		Fields:   InterconnectGroup_Configured_TopologyCapabilityFields,
+	},
+}
 
 var InterconnectGroup_IntentFields = ubx.FieldMap{
-		"TopologyCapability": ubx.FieldSpec{WireName: "topology_capability"},
-	}
+	"TopologyCapability": ubx.FieldSpec{WireName: "topology_capability"},
+}
 
 var InterconnectGroup_InterconnectsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-	}
+	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+}
 
 var InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields = ubx.FieldMap{
-		"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
+	"Zone":          ubx.FieldSpec{WireName: "zone"},
+}
 
 var InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields = ubx.FieldMap{
-		"Facility": ubx.FieldSpec{WireName: "facility"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
-		},
-	}
+	"Facility": ubx.FieldSpec{WireName: "facility"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
+	},
+}
 
 var InterconnectGroup_PhysicalStructure_MetrosFields = ubx.FieldMap{
-		"Facilities": ubx.FieldSpec{
-			WireName: "facilities",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
-		},
-		"Metro": ubx.FieldSpec{WireName: "metro"},
-	}
+	"Facilities": ubx.FieldSpec{
+		WireName: "facilities",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
+	},
+	"Metro": ubx.FieldSpec{WireName: "metro"},
+}
 
 var InterconnectGroup_PhysicalStructureFields = ubx.FieldMap{
-		"Metros": ubx.FieldSpec{
-			WireName: "metros",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_MetrosFields,
-		},
-	}
+	"Metros": ubx.FieldSpec{
+		WireName: "metros",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_MetrosFields,
+	},
+}
 
 type InterconnectGroupConfig struct {
 	// [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
@@ -175,26 +175,26 @@ var InterconnectGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configured": ubx.FieldSpec{
 			WireName: "configured",
-			Kind: "object",
-			Fields: InterconnectGroup_ConfiguredFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_ConfiguredFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Intent": ubx.FieldSpec{
 			WireName: "intent",
-			Kind: "object",
-			Fields: InterconnectGroup_IntentFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_IntentFields,
 		},
 		"Interconnects": ubx.FieldSpec{
 			WireName: "interconnects",
-			Kind: "map",
-			Fields: InterconnectGroup_InterconnectsFields,
+			Kind:     "map",
+			Fields:   InterconnectGroup_InterconnectsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PhysicalStructure": ubx.FieldSpec{
 			WireName: "physical_structure",
-			Kind: "object",
-			Fields: InterconnectGroup_PhysicalStructureFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_PhysicalStructureFields,
 		},
 	},
 }

@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1LbTcpExtension_ExtensionChains_Extensions struct {
 	AllowDynamicForwarding any
-	Authority any
-	FailOpen any
-	ForwardAttributes any
-	ForwardHeaders any
-	Metadata any
-	Name any
-	ObservabilityMode any
-	RequestBodySendMode any
-	ResponseBodySendMode any
-	Service any
-	SupportedEvents any
-	Timeout any
+	Authority              any
+	FailOpen               any
+	ForwardAttributes      any
+	ForwardHeaders         any
+	Metadata               any
+	Name                   any
+	ObservabilityMode      any
+	RequestBodySendMode    any
+	ResponseBodySendMode   any
+	Service                any
+	SupportedEvents        any
+	Timeout                any
 }
 
 type V1beta1LbTcpExtension_ExtensionChains_MatchCondition struct {
@@ -24,44 +24,44 @@ type V1beta1LbTcpExtension_ExtensionChains_MatchCondition struct {
 }
 
 type V1beta1LbTcpExtension_ExtensionChains struct {
-	Extensions any
+	Extensions     any
 	MatchCondition any
-	Name any
+	Name           any
 }
 
 var V1beta1LbTcpExtension_ExtensionChains_ExtensionsFields = ubx.FieldMap{
-		"AllowDynamicForwarding": ubx.FieldSpec{WireName: "allow_dynamic_forwarding"},
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"ForwardAttributes": ubx.FieldSpec{WireName: "forward_attributes"},
-		"ForwardHeaders": ubx.FieldSpec{WireName: "forward_headers"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
-		"RequestBodySendMode": ubx.FieldSpec{WireName: "request_body_send_mode"},
-		"ResponseBodySendMode": ubx.FieldSpec{WireName: "response_body_send_mode"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"AllowDynamicForwarding": ubx.FieldSpec{WireName: "allow_dynamic_forwarding"},
+	"Authority":              ubx.FieldSpec{WireName: "authority"},
+	"FailOpen":               ubx.FieldSpec{WireName: "fail_open"},
+	"ForwardAttributes":      ubx.FieldSpec{WireName: "forward_attributes"},
+	"ForwardHeaders":         ubx.FieldSpec{WireName: "forward_headers"},
+	"Metadata":               ubx.FieldSpec{WireName: "metadata"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"ObservabilityMode":      ubx.FieldSpec{WireName: "observability_mode"},
+	"RequestBodySendMode":    ubx.FieldSpec{WireName: "request_body_send_mode"},
+	"ResponseBodySendMode":   ubx.FieldSpec{WireName: "response_body_send_mode"},
+	"Service":                ubx.FieldSpec{WireName: "service"},
+	"SupportedEvents":        ubx.FieldSpec{WireName: "supported_events"},
+	"Timeout":                ubx.FieldSpec{WireName: "timeout"},
+}
 
 var V1beta1LbTcpExtension_ExtensionChains_MatchConditionFields = ubx.FieldMap{
-		"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
-	}
+	"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
+}
 
 var V1beta1LbTcpExtension_ExtensionChainsFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "list",
-			Fields: V1beta1LbTcpExtension_ExtensionChains_ExtensionsFields,
-		},
-		"MatchCondition": ubx.FieldSpec{
-			WireName: "match_condition",
-			Kind: "object",
-			Fields: V1beta1LbTcpExtension_ExtensionChains_MatchConditionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "list",
+		Fields:   V1beta1LbTcpExtension_ExtensionChains_ExtensionsFields,
+	},
+	"MatchCondition": ubx.FieldSpec{
+		WireName: "match_condition",
+		Kind:     "object",
+		Fields:   V1beta1LbTcpExtension_ExtensionChains_MatchConditionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type V1beta1LbTcpExtensionConfig struct {
 	// Optional. A human-readable description of the resource.
@@ -103,12 +103,12 @@ var V1beta1LbTcpExtension = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionChains": ubx.FieldSpec{
 			WireName: "extension_chains",
-			Kind: "list",
-			Fields: V1beta1LbTcpExtension_ExtensionChainsFields,
+			Kind:     "list",
+			Fields:   V1beta1LbTcpExtension_ExtensionChainsFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Networks": ubx.FieldSpec{WireName: "networks"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Networks":            ubx.FieldSpec{WireName: "networks"},
 	},
 }

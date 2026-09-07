@@ -33,7 +33,7 @@ type ProjectDataProfileAttrs struct {
 	DataRiskLevel any
 	// The number of file store data profiles generated for this project.
 	FileStoreDataProfileCount any
-	Name any
+	Name                      any
 	// The last time the profile was generated.
 	ProfileLastGenerated any
 	// Success or errors for the profile generation.

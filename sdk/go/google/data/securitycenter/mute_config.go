@@ -8,15 +8,15 @@ type MuteConfigConfig struct {
 }
 
 type MuteConfigAttrs struct {
-	CreateTime any
-	Description any
-	DisplayName any
-	ExpiryTime any
-	Filter any
+	CreateTime       any
+	Description      any
+	DisplayName      any
+	ExpiryTime       any
+	Filter           any
 	MostRecentEditor any
-	Name any
-	Type any
-	UpdateTime any
+	Name             any
+	Type             any
+	UpdateTime       any
 }
 
 var MuteConfig = ubx.DataSourceBinding{

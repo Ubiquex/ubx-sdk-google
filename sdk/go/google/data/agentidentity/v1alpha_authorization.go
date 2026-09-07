@@ -12,7 +12,7 @@ type V1alphaAuthorizationAttrs struct {
 	ClientUserId any
 	// Output only. The creation timestamp.
 	CreateTime any
-	Name any
+	Name       any
 	// Output only. The scopes actually granted by the end user during the consent flow.
 	Scopes any
 	// Output only. The state of the authorization.

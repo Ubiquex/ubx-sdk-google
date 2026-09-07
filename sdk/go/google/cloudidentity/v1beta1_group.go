@@ -4,12 +4,12 @@ package cloudidentity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Group_AdditionalGroupKeys struct {
-	Id any
+	Id        any
 	Namespace any
 }
 
 type V1beta1Group_DynamicGroupMetadata_Queries struct {
-	Query any
+	Query        any
 	ResourceType any
 }
 
@@ -28,44 +28,44 @@ type V1beta1Group_DynamicGroupMetadata struct {
 }
 
 type V1beta1Group_PosixGroups struct {
-	Gid any
-	Name any
+	Gid      any
+	Name     any
 	SystemId any
 }
 
 var V1beta1Group_DynamicGroupMetadata_QueriesFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"Query":        ubx.FieldSpec{WireName: "query"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var V1beta1Group_DynamicGroupMetadata_StatusFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusTime": ubx.FieldSpec{WireName: "status_time"},
-	}
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"StatusTime": ubx.FieldSpec{WireName: "status_time"},
+}
 
 var V1beta1Group_DynamicGroupMetadataFields = ubx.FieldMap{
-		"Queries": ubx.FieldSpec{
-			WireName: "queries",
-			Kind: "list",
-			Fields: V1beta1Group_DynamicGroupMetadata_QueriesFields,
-		},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1Group_DynamicGroupMetadata_StatusFields,
-		},
-	}
+	"Queries": ubx.FieldSpec{
+		WireName: "queries",
+		Kind:     "list",
+		Fields:   V1beta1Group_DynamicGroupMetadata_QueriesFields,
+	},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   V1beta1Group_DynamicGroupMetadata_StatusFields,
+	},
+}
 
 var V1beta1Group_AdditionalGroupKeysFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+}
 
 var V1beta1Group_PosixGroupsFields = ubx.FieldMap{
-		"Gid": ubx.FieldSpec{WireName: "gid"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SystemId": ubx.FieldSpec{WireName: "system_id"},
-	}
+	"Gid":      ubx.FieldSpec{WireName: "gid"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"SystemId": ubx.FieldSpec{WireName: "system_id"},
+}
 
 type V1beta1GroupConfig struct {
 	// An extended description to help users determine the purpose of a `Group`. Must not be longer than 4,096 characters.
@@ -120,25 +120,25 @@ var V1beta1Group = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DynamicGroupMetadata": ubx.FieldSpec{
 			WireName: "dynamic_group_metadata",
-			Kind: "object",
-			Fields: V1beta1Group_DynamicGroupMetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1Group_DynamicGroupMetadataFields,
 		},
 		"ExternalIds": ubx.FieldSpec{
 			WireName: "external_ids",
-			Kind: "list",
-			Fields: V1beta1Group_AdditionalGroupKeysFields,
+			Kind:     "list",
+			Fields:   V1beta1Group_AdditionalGroupKeysFields,
 		},
 		"GroupKey": ubx.FieldSpec{
 			WireName: "group_key",
-			Kind: "object",
-			Fields: V1beta1Group_AdditionalGroupKeysFields,
+			Kind:     "object",
+			Fields:   V1beta1Group_AdditionalGroupKeysFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"Parent": ubx.FieldSpec{WireName: "parent"},
 		"PosixGroups": ubx.FieldSpec{
 			WireName: "posix_groups",
-			Kind: "list",
-			Fields: V1beta1Group_PosixGroupsFields,
+			Kind:     "list",
+			Fields:   V1beta1Group_PosixGroupsFields,
 		},
 	},
 }

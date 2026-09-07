@@ -17,12 +17,12 @@ type Key_KeyData struct {
 }
 
 var Key_KeyDataFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"KeySpec": ubx.FieldSpec{WireName: "key_spec"},
-		"NotAfterTime": ubx.FieldSpec{WireName: "not_after_time"},
-		"NotBeforeTime": ubx.FieldSpec{WireName: "not_before_time"},
-	}
+	"Format":        ubx.FieldSpec{WireName: "format"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"KeySpec":       ubx.FieldSpec{WireName: "key_spec"},
+	"NotAfterTime":  ubx.FieldSpec{WireName: "not_after_time"},
+	"NotBeforeTime": ubx.FieldSpec{WireName: "not_before_time"},
+}
 
 type KeyConfig struct {
 	// Represents a public key data along with its format.
@@ -51,10 +51,10 @@ var Key = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"KeyData": ubx.FieldSpec{
 			WireName: "key_data",
-			Kind: "object",
-			Fields: Key_KeyDataFields,
+			Kind:     "object",
+			Fields:   Key_KeyDataFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Use": ubx.FieldSpec{WireName: "use"},
+		"Use":  ubx.FieldSpec{WireName: "use"},
 	},
 }

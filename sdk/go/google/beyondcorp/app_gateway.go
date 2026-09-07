@@ -56,9 +56,9 @@ var AppGateway = ubx.ResourceBinding{
 	WireType: "google_beyondcorp_app_gateway",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"HostType": ubx.FieldSpec{WireName: "host_type"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"HostType":    ubx.FieldSpec{WireName: "host_type"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

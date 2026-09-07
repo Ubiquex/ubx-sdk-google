@@ -16,13 +16,13 @@ type EnrollmentToken_User struct {
 }
 
 var EnrollmentToken_GoogleAuthenticationOptionsFields = ubx.FieldMap{
-		"AuthenticationRequirement": ubx.FieldSpec{WireName: "authentication_requirement"},
-		"RequiredAccountEmail": ubx.FieldSpec{WireName: "required_account_email"},
-	}
+	"AuthenticationRequirement": ubx.FieldSpec{WireName: "authentication_requirement"},
+	"RequiredAccountEmail":      ubx.FieldSpec{WireName: "required_account_email"},
+}
 
 var EnrollmentToken_UserFields = ubx.FieldMap{
-		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-	}
+	"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
+}
 
 type EnrollmentTokenConfig struct {
 	// Optional, arbitrary data associated with the enrollment token. This could contain, for example, the ID of an org unit the device is assigned to after enrollment. After a device enrolls with the token, this data will be exposed in the enrollment_token_data field of the Device resource. The data must be 1024 characters or less; otherwise, the creation request will fail.
@@ -77,23 +77,23 @@ type EnrollmentTokenAttrs struct {
 var EnrollmentToken = ubx.ResourceBinding{
 	WireType: "google_androidmanagement_enrollment_token",
 	Fields: ubx.FieldMap{
-		"AdditionalData": ubx.FieldSpec{WireName: "additional_data"},
-		"AllowPersonalUsage": ubx.FieldSpec{WireName: "allow_personal_usage"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"AdditionalData":      ubx.FieldSpec{WireName: "additional_data"},
+		"AllowPersonalUsage":  ubx.FieldSpec{WireName: "allow_personal_usage"},
+		"Duration":            ubx.FieldSpec{WireName: "duration"},
 		"ExpirationTimestamp": ubx.FieldSpec{WireName: "expiration_timestamp"},
 		"GoogleAuthenticationOptions": ubx.FieldSpec{
 			WireName: "google_authentication_options",
-			Kind: "object",
-			Fields: EnrollmentToken_GoogleAuthenticationOptionsFields,
+			Kind:     "object",
+			Fields:   EnrollmentToken_GoogleAuthenticationOptionsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OneTimeOnly": ubx.FieldSpec{WireName: "one_time_only"},
-		"PolicyName": ubx.FieldSpec{WireName: "policy_name"},
-		"QrCode": ubx.FieldSpec{WireName: "qr_code"},
+		"PolicyName":  ubx.FieldSpec{WireName: "policy_name"},
+		"QrCode":      ubx.FieldSpec{WireName: "qr_code"},
 		"User": ubx.FieldSpec{
 			WireName: "user",
-			Kind: "object",
-			Fields: EnrollmentToken_UserFields,
+			Kind:     "object",
+			Fields:   EnrollmentToken_UserFields,
 		},
 		"Value": ubx.FieldSpec{WireName: "value"},
 	},

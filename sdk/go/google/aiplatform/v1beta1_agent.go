@@ -5,17 +5,17 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Agent_Tools struct {
 	Headers any
-	Name any
-	Type any
-	Url any
+	Name    any
+	Type    any
+	Url     any
 }
 
 var V1beta1Agent_ToolsFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Headers": ubx.FieldSpec{WireName: "headers"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+	"Url":     ubx.FieldSpec{WireName: "url"},
+}
 
 type V1beta1AgentConfig struct {
 	// Required. Immutable. The base agent for the agent. Supported values: * `antigravity-preview-05-2026` Immutable: `UpdateAgent` rejects a change, including clearing it. The kind of agent this is gets derived from this field when the agent is created and is recorded then; nothing recomputes it afterwards, so a later change would leave the agent described as one kind and behaving as another. Create a new agent instead.
@@ -64,17 +64,17 @@ type V1beta1AgentAttrs struct {
 var V1beta1Agent = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_agent",
 	Fields: ubx.FieldMap{
-		"BaseAgent": ubx.FieldSpec{WireName: "base_agent"},
-		"BaseEnvironment": ubx.FieldSpec{WireName: "base_environment"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"BaseAgent":         ubx.FieldSpec{WireName: "base_agent"},
+		"BaseEnvironment":   ubx.FieldSpec{WireName: "base_environment"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
 		"Tools": ubx.FieldSpec{
 			WireName: "tools",
-			Kind: "list",
-			Fields: V1beta1Agent_ToolsFields,
+			Kind:     "list",
+			Fields:   V1beta1Agent_ToolsFields,
 		},
 	},
 }

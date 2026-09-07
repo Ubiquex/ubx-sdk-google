@@ -20,7 +20,7 @@ type V1beta2TagAttrs struct {
 var V1beta2Tag = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_v1beta2_tag",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

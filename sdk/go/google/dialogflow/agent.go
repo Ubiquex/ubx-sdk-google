@@ -125,115 +125,115 @@ type Agent_TextToSpeechSettings struct {
 }
 
 var Agent_AdvancedSettings_AudioExportGcsDestinationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Agent_AdvancedSettings_DtmfSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
-		"FinishDigit": ubx.FieldSpec{WireName: "finish_digit"},
-		"InterdigitTimeoutDuration": ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
-		"MaxDigits": ubx.FieldSpec{WireName: "max_digits"},
-	}
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
+	"FinishDigit":                ubx.FieldSpec{WireName: "finish_digit"},
+	"InterdigitTimeoutDuration":  ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
+	"MaxDigits":                  ubx.FieldSpec{WireName: "max_digits"},
+}
 
 var Agent_AdvancedSettings_LoggingSettingsFields = ubx.FieldMap{
-		"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
-		"EnableInteractionLogging": ubx.FieldSpec{WireName: "enable_interaction_logging"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-	}
+	"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
+	"EnableInteractionLogging":    ubx.FieldSpec{WireName: "enable_interaction_logging"},
+	"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+}
 
 var Agent_AdvancedSettings_SpeechSettingsFields = ubx.FieldMap{
-		"EndpointerSensitivity": ubx.FieldSpec{WireName: "endpointer_sensitivity"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"NoSpeechTimeout": ubx.FieldSpec{WireName: "no_speech_timeout"},
-		"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
-	}
+	"EndpointerSensitivity":      ubx.FieldSpec{WireName: "endpointer_sensitivity"},
+	"Models":                     ubx.FieldSpec{WireName: "models"},
+	"NoSpeechTimeout":            ubx.FieldSpec{WireName: "no_speech_timeout"},
+	"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
+}
 
 var Agent_AdvancedSettingsFields = ubx.FieldMap{
-		"AudioExportGcsDestination": ubx.FieldSpec{
-			WireName: "audio_export_gcs_destination",
-			Kind: "object",
-			Fields: Agent_AdvancedSettings_AudioExportGcsDestinationFields,
-		},
-		"DtmfSettings": ubx.FieldSpec{
-			WireName: "dtmf_settings",
-			Kind: "object",
-			Fields: Agent_AdvancedSettings_DtmfSettingsFields,
-		},
-		"LoggingSettings": ubx.FieldSpec{
-			WireName: "logging_settings",
-			Kind: "object",
-			Fields: Agent_AdvancedSettings_LoggingSettingsFields,
-		},
-		"SpeechSettings": ubx.FieldSpec{
-			WireName: "speech_settings",
-			Kind: "object",
-			Fields: Agent_AdvancedSettings_SpeechSettingsFields,
-		},
-	}
+	"AudioExportGcsDestination": ubx.FieldSpec{
+		WireName: "audio_export_gcs_destination",
+		Kind:     "object",
+		Fields:   Agent_AdvancedSettings_AudioExportGcsDestinationFields,
+	},
+	"DtmfSettings": ubx.FieldSpec{
+		WireName: "dtmf_settings",
+		Kind:     "object",
+		Fields:   Agent_AdvancedSettings_DtmfSettingsFields,
+	},
+	"LoggingSettings": ubx.FieldSpec{
+		WireName: "logging_settings",
+		Kind:     "object",
+		Fields:   Agent_AdvancedSettings_LoggingSettingsFields,
+	},
+	"SpeechSettings": ubx.FieldSpec{
+		WireName: "speech_settings",
+		Kind:     "object",
+		Fields:   Agent_AdvancedSettings_SpeechSettingsFields,
+	},
+}
 
 var Agent_AnswerFeedbackSettingsFields = ubx.FieldMap{
-		"EnableAnswerFeedback": ubx.FieldSpec{WireName: "enable_answer_feedback"},
-	}
+	"EnableAnswerFeedback": ubx.FieldSpec{WireName: "enable_answer_feedback"},
+}
 
 var Agent_ClientCertificateSettingsFields = ubx.FieldMap{
-		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"SslCertificate": ubx.FieldSpec{WireName: "ssl_certificate"},
-	}
+	"Passphrase":     ubx.FieldSpec{WireName: "passphrase"},
+	"PrivateKey":     ubx.FieldSpec{WireName: "private_key"},
+	"SslCertificate": ubx.FieldSpec{WireName: "ssl_certificate"},
+}
 
 var Agent_GenAppBuilderSettingsFields = ubx.FieldMap{
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-	}
+	"Engine": ubx.FieldSpec{WireName: "engine"},
+}
 
 var Agent_GitIntegrationSettings_GithubSettingsFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"Branches": ubx.FieldSpec{WireName: "branches"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"RepositoryUri": ubx.FieldSpec{WireName: "repository_uri"},
-		"TrackingBranch": ubx.FieldSpec{WireName: "tracking_branch"},
-	}
+	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+	"Branches":       ubx.FieldSpec{WireName: "branches"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"RepositoryUri":  ubx.FieldSpec{WireName: "repository_uri"},
+	"TrackingBranch": ubx.FieldSpec{WireName: "tracking_branch"},
+}
 
 var Agent_GitIntegrationSettingsFields = ubx.FieldMap{
-		"GithubSettings": ubx.FieldSpec{
-			WireName: "github_settings",
-			Kind: "object",
-			Fields: Agent_GitIntegrationSettings_GithubSettingsFields,
-		},
-	}
+	"GithubSettings": ubx.FieldSpec{
+		WireName: "github_settings",
+		Kind:     "object",
+		Fields:   Agent_GitIntegrationSettings_GithubSettingsFields,
+	},
+}
 
 var Agent_PersonalizationSettingsFields = ubx.FieldMap{
-		"DefaultEndUserMetadata": ubx.FieldSpec{WireName: "default_end_user_metadata"},
-	}
+	"DefaultEndUserMetadata": ubx.FieldSpec{WireName: "default_end_user_metadata"},
+}
 
 var Agent_SpeechToTextSettingsFields = ubx.FieldMap{
-		"EnableSpeechAdaptation": ubx.FieldSpec{WireName: "enable_speech_adaptation"},
-	}
+	"EnableSpeechAdaptation": ubx.FieldSpec{WireName: "enable_speech_adaptation"},
+}
 
 var Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SsmlGender": ubx.FieldSpec{WireName: "ssml_gender"},
-	}
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"SsmlGender": ubx.FieldSpec{WireName: "ssml_gender"},
+}
 
 var Agent_TextToSpeechSettings_SynthesizeSpeechConfigsFields = ubx.FieldMap{
-		"EffectsProfileId": ubx.FieldSpec{WireName: "effects_profile_id"},
-		"Pitch": ubx.FieldSpec{WireName: "pitch"},
-		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-		"Voice": ubx.FieldSpec{
-			WireName: "voice",
-			Kind: "object",
-			Fields: Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields,
-		},
-		"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
-	}
+	"EffectsProfileId": ubx.FieldSpec{WireName: "effects_profile_id"},
+	"Pitch":            ubx.FieldSpec{WireName: "pitch"},
+	"SpeakingRate":     ubx.FieldSpec{WireName: "speaking_rate"},
+	"Voice": ubx.FieldSpec{
+		WireName: "voice",
+		Kind:     "object",
+		Fields:   Agent_TextToSpeechSettings_SynthesizeSpeechConfigs_VoiceFields,
+	},
+	"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
+}
 
 var Agent_TextToSpeechSettingsFields = ubx.FieldMap{
-		"SynthesizeSpeechConfigs": ubx.FieldSpec{
-			WireName: "synthesize_speech_configs",
-			Kind: "map",
-			Fields: Agent_TextToSpeechSettings_SynthesizeSpeechConfigsFields,
-		},
-	}
+	"SynthesizeSpeechConfigs": ubx.FieldSpec{
+		WireName: "synthesize_speech_configs",
+		Kind:     "map",
+		Fields:   Agent_TextToSpeechSettings_SynthesizeSpeechConfigsFields,
+	},
+}
 
 type AgentConfig struct {
 	// Speech, DTMF, and logging behavior overrides for this agent, flow, page, or intent -- settings at a more specific level override the same setting inherited from a broader one. (AI-inferred)
@@ -338,56 +338,56 @@ var Agent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdvancedSettings": ubx.FieldSpec{
 			WireName: "advanced_settings",
-			Kind: "object",
-			Fields: Agent_AdvancedSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_AdvancedSettingsFields,
 		},
 		"AnswerFeedbackSettings": ubx.FieldSpec{
 			WireName: "answer_feedback_settings",
-			Kind: "object",
-			Fields: Agent_AnswerFeedbackSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_AnswerFeedbackSettingsFields,
 		},
 		"AvatarUri": ubx.FieldSpec{WireName: "avatar_uri"},
 		"ClientCertificateSettings": ubx.FieldSpec{
 			WireName: "client_certificate_settings",
-			Kind: "object",
-			Fields: Agent_ClientCertificateSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_ClientCertificateSettingsFields,
 		},
-		"DefaultLanguageCode": ubx.FieldSpec{WireName: "default_language_code"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DefaultLanguageCode":         ubx.FieldSpec{WireName: "default_language_code"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EnableMultiLanguageTraining": ubx.FieldSpec{WireName: "enable_multi_language_training"},
-		"EnableSpellCorrection": ubx.FieldSpec{WireName: "enable_spell_correction"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+		"EnableSpellCorrection":       ubx.FieldSpec{WireName: "enable_spell_correction"},
+		"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
 		"GenAppBuilderSettings": ubx.FieldSpec{
 			WireName: "gen_app_builder_settings",
-			Kind: "object",
-			Fields: Agent_GenAppBuilderSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_GenAppBuilderSettingsFields,
 		},
 		"GitIntegrationSettings": ubx.FieldSpec{
 			WireName: "git_integration_settings",
-			Kind: "object",
-			Fields: Agent_GitIntegrationSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_GitIntegrationSettingsFields,
 		},
 		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PersonalizationSettings": ubx.FieldSpec{
 			WireName: "personalization_settings",
-			Kind: "object",
-			Fields: Agent_PersonalizationSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_PersonalizationSettingsFields,
 		},
 		"SecuritySettings": ubx.FieldSpec{WireName: "security_settings"},
 		"SpeechToTextSettings": ubx.FieldSpec{
 			WireName: "speech_to_text_settings",
-			Kind: "object",
-			Fields: Agent_SpeechToTextSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_SpeechToTextSettingsFields,
 		},
-		"StartFlow": ubx.FieldSpec{WireName: "start_flow"},
-		"StartPlaybook": ubx.FieldSpec{WireName: "start_playbook"},
+		"StartFlow":              ubx.FieldSpec{WireName: "start_flow"},
+		"StartPlaybook":          ubx.FieldSpec{WireName: "start_playbook"},
 		"SupportedLanguageCodes": ubx.FieldSpec{WireName: "supported_language_codes"},
 		"TextToSpeechSettings": ubx.FieldSpec{
 			WireName: "text_to_speech_settings",
-			Kind: "object",
-			Fields: Agent_TextToSpeechSettingsFields,
+			Kind:     "object",
+			Fields:   Agent_TextToSpeechSettingsFields,
 		},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},

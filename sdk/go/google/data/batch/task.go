@@ -8,11 +8,11 @@ type Task_Status_StatusEvents_TaskExecution struct {
 }
 
 type Task_Status_StatusEvents struct {
-	Description any
-	EventTime any
+	Description   any
+	EventTime     any
 	TaskExecution any
-	TaskState any
-	Type any
+	TaskState     any
+	Type          any
 }
 
 type Task_Status struct {

@@ -11,9 +11,9 @@ type V1beta2Repository_MavenConfig struct {
 }
 
 var V1beta2Repository_MavenConfigFields = ubx.FieldMap{
-		"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
-		"VersionPolicy": ubx.FieldSpec{WireName: "version_policy"},
-	}
+	"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
+	"VersionPolicy":           ubx.FieldSpec{WireName: "version_policy"},
+}
 
 type V1beta2RepositoryConfig struct {
 	// The user-provided description of the repository.
@@ -59,13 +59,13 @@ var V1beta2Repository = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_v1beta2_repository",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MavenConfig": ubx.FieldSpec{
 			WireName: "maven_config",
-			Kind: "object",
-			Fields: V1beta2Repository_MavenConfigFields,
+			Kind:     "object",
+			Fields:   V1beta2Repository_MavenConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

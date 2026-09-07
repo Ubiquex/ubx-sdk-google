@@ -4,7 +4,7 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FirewallEndpoint_Associations struct {
-	Name any
+	Name    any
 	Network any
 }
 
@@ -40,28 +40,28 @@ type V1beta1FirewallEndpoint_WildfireSettings struct {
 }
 
 var V1beta1FirewallEndpoint_EndpointSettingsFields = ubx.FieldMap{
-		"ContentCloudRegion": ubx.FieldSpec{WireName: "content_cloud_region"},
-		"HttpPartialResponseBlocked": ubx.FieldSpec{WireName: "http_partial_response_blocked"},
-		"JumboFramesEnabled": ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
-	}
+	"ContentCloudRegion":         ubx.FieldSpec{WireName: "content_cloud_region"},
+	"HttpPartialResponseBlocked": ubx.FieldSpec{WireName: "http_partial_response_blocked"},
+	"JumboFramesEnabled":         ubx.FieldSpec{WireName: "jumbo_frames_enabled"},
+}
 
 var V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields = ubx.FieldMap{
-		"MaxAnalysisDuration": ubx.FieldSpec{WireName: "max_analysis_duration"},
-		"SubmissionTimeoutLoggingDisabled": ubx.FieldSpec{WireName: "submission_timeout_logging_disabled"},
-		"TimeoutAction": ubx.FieldSpec{WireName: "timeout_action"},
-	}
+	"MaxAnalysisDuration":              ubx.FieldSpec{WireName: "max_analysis_duration"},
+	"SubmissionTimeoutLoggingDisabled": ubx.FieldSpec{WireName: "submission_timeout_logging_disabled"},
+	"TimeoutAction":                    ubx.FieldSpec{WireName: "timeout_action"},
+}
 
 var V1beta1FirewallEndpoint_WildfireSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"WildfireInlineCloudAnalysisSettings": ubx.FieldSpec{
-			WireName: "wildfire_inline_cloud_analysis_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields,
-		},
-		"WildfireRealtimeLookupDuration": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_duration"},
-		"WildfireRealtimeLookupTimeoutAction": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_timeout_action"},
-		"WildfireRegion": ubx.FieldSpec{WireName: "wildfire_region"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"WildfireInlineCloudAnalysisSettings": ubx.FieldSpec{
+		WireName: "wildfire_inline_cloud_analysis_settings",
+		Kind:     "object",
+		Fields:   V1beta1FirewallEndpoint_WildfireSettings_WildfireInlineCloudAnalysisSettingsFields,
+	},
+	"WildfireRealtimeLookupDuration":      ubx.FieldSpec{WireName: "wildfire_realtime_lookup_duration"},
+	"WildfireRealtimeLookupTimeoutAction": ubx.FieldSpec{WireName: "wildfire_realtime_lookup_timeout_action"},
+	"WildfireRegion":                      ubx.FieldSpec{WireName: "wildfire_region"},
+}
 
 type V1beta1FirewallEndpointConfig struct {
 	// Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.
@@ -115,18 +115,18 @@ var V1beta1FirewallEndpoint = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_firewall_endpoint",
 	Fields: ubx.FieldMap{
 		"BillingProjectId": ubx.FieldSpec{WireName: "billing_project_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EndpointSettings": ubx.FieldSpec{
 			WireName: "endpoint_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_EndpointSettingsFields,
+			Kind:     "object",
+			Fields:   V1beta1FirewallEndpoint_EndpointSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"WildfireSettings": ubx.FieldSpec{
 			WireName: "wildfire_settings",
-			Kind: "object",
-			Fields: V1beta1FirewallEndpoint_WildfireSettingsFields,
+			Kind:     "object",
+			Fields:   V1beta1FirewallEndpoint_WildfireSettingsFields,
 		},
 	},
 }

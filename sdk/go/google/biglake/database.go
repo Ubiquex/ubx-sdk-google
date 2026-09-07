@@ -11,9 +11,9 @@ type Database_HiveOptions struct {
 }
 
 var Database_HiveOptionsFields = ubx.FieldMap{
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+}
 
 type DatabaseConfig struct {
 	// Options of a Hive database.
@@ -44,8 +44,8 @@ var Database = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"HiveOptions": ubx.FieldSpec{
 			WireName: "hive_options",
-			Kind: "object",
-			Fields: Database_HiveOptionsFields,
+			Kind:     "object",
+			Fields:   Database_HiveOptionsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

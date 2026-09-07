@@ -31,6 +31,5 @@ type HmacKeyAttrs struct {
 
 var HmacKey = ubx.ResourceBinding{
 	WireType: "google_storage_hmac_key",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

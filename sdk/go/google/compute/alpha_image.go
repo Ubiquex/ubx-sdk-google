@@ -57,7 +57,7 @@ type AlphaImage_RawDisk struct {
 }
 
 type AlphaImage_ShieldedInstanceInitialState_Dbs struct {
-	Content any
+	Content  any
 	FileType any
 }
 
@@ -68,76 +68,76 @@ type AlphaImage_ShieldedInstanceInitialState struct {
 	Dbxs any
 	// The Key Exchange Key (KEK).
 	Keks any
-	Pk any
+	Pk   any
 }
 
 var AlphaImage_Deprecated_StateOverrideFields = ubx.FieldMap{
-		"DefaultRolloutTime": ubx.FieldSpec{WireName: "default_rollout_time"},
-		"LocationRolloutPolicies": ubx.FieldSpec{WireName: "location_rollout_policies"},
-	}
+	"DefaultRolloutTime":      ubx.FieldSpec{WireName: "default_rollout_time"},
+	"LocationRolloutPolicies": ubx.FieldSpec{WireName: "location_rollout_policies"},
+}
 
 var AlphaImage_DeprecatedFields = ubx.FieldMap{
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"Obsolete": ubx.FieldSpec{WireName: "obsolete"},
-		"Replacement": ubx.FieldSpec{WireName: "replacement"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateOverride": ubx.FieldSpec{
-			WireName: "state_override",
-			Kind: "object",
-			Fields: AlphaImage_Deprecated_StateOverrideFields,
-		},
-	}
+	"Deleted":     ubx.FieldSpec{WireName: "deleted"},
+	"Deprecated":  ubx.FieldSpec{WireName: "deprecated"},
+	"Obsolete":    ubx.FieldSpec{WireName: "obsolete"},
+	"Replacement": ubx.FieldSpec{WireName: "replacement"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"StateOverride": ubx.FieldSpec{
+		WireName: "state_override",
+		Kind:     "object",
+		Fields:   AlphaImage_Deprecated_StateOverrideFields,
+	},
+}
 
 var AlphaImage_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaImage_ImageEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var AlphaImage_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaImage_RawDiskFields = ubx.FieldMap{
-		"ContainerType": ubx.FieldSpec{WireName: "container_type"},
-		"Sha1Checksum": ubx.FieldSpec{WireName: "sha1_checksum"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"ContainerType": ubx.FieldSpec{WireName: "container_type"},
+	"Sha1Checksum":  ubx.FieldSpec{WireName: "sha1_checksum"},
+	"Source":        ubx.FieldSpec{WireName: "source"},
+}
 
 var AlphaImage_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var AlphaImage_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: AlphaImage_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: AlphaImage_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: AlphaImage_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: AlphaImage_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   AlphaImage_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   AlphaImage_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   AlphaImage_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   AlphaImage_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 type AlphaImageConfig struct {
 	// The architecture of the image. Valid values are ARM64 or X86_64.
@@ -153,7 +153,7 @@ type AlphaImageConfig struct {
 	// The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
 	Family any
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
-	GuestOsFeatures any
+	GuestOsFeatures    any
 	ImageEncryptionKey any
 	// A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
 	LabelFingerprint any
@@ -176,13 +176,13 @@ type AlphaImageConfig struct {
 	// Initial State for shielded instance, these are public keys which are safe to store in public
 	ShieldedInstanceInitialState any
 	// URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceDisk any
+	SourceDisk              any
 	SourceDiskEncryptionKey any
 	// URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceImage any
+	SourceImage              any
 	SourceImageEncryptionKey any
 	// URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceSnapshot any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
 	// The type of the image used to create this disk. The default and only valid value is RAW.
 	SourceType any
@@ -210,7 +210,7 @@ type AlphaImageAttrs struct {
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
 	GuestOsFeatures any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Id                 any
 	ImageEncryptionKey any
 	// Output only. [Output Only] Type of the resource. Always compute#image for images.
 	Kind any
@@ -243,17 +243,17 @@ type AlphaImageAttrs struct {
 	// Initial State for shielded instance, these are public keys which are safe to store in public
 	ShieldedInstanceInitialState any
 	// URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceDisk any
+	SourceDisk              any
 	SourceDiskEncryptionKey any
 	// Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
 	SourceDiskId any
 	// URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceImage any
+	SourceImage              any
 	SourceImageEncryptionKey any
 	// Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
 	SourceImageId any
 	// URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceSnapshot any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
 	// Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
 	SourceSnapshotId any
@@ -268,71 +268,71 @@ type AlphaImageAttrs struct {
 var AlphaImage = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_image",
 	Fields: ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"Architecture":     ubx.FieldSpec{WireName: "architecture"},
 		"ArchiveSizeBytes": ubx.FieldSpec{WireName: "archive_size_bytes"},
 		"Deprecated": ubx.FieldSpec{
 			WireName: "deprecated",
-			Kind: "object",
-			Fields: AlphaImage_DeprecatedFields,
+			Kind:     "object",
+			Fields:   AlphaImage_DeprecatedFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"Family": ubx.FieldSpec{WireName: "family"},
+		"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Family":      ubx.FieldSpec{WireName: "family"},
 		"GuestOsFeatures": ubx.FieldSpec{
 			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: AlphaImage_GuestOsFeaturesFields,
+			Kind:     "list",
+			Fields:   AlphaImage_GuestOsFeaturesFields,
 		},
 		"ImageEncryptionKey": ubx.FieldSpec{
 			WireName: "image_encryption_key",
-			Kind: "object",
-			Fields: AlphaImage_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ImageEncryptionKeyFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes":     ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses":         ubx.FieldSpec{WireName: "licenses"},
+		"Locked":           ubx.FieldSpec{WireName: "locked"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaImage_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ParamsFields,
 		},
 		"RawDisk": ubx.FieldSpec{
 			WireName: "raw_disk",
-			Kind: "object",
-			Fields: AlphaImage_RawDiskFields,
+			Kind:     "object",
+			Fields:   AlphaImage_RawDiskFields,
 		},
 		"RolloutOverride": ubx.FieldSpec{
 			WireName: "rollout_override",
-			Kind: "object",
-			Fields: AlphaImage_Deprecated_StateOverrideFields,
+			Kind:     "object",
+			Fields:   AlphaImage_Deprecated_StateOverrideFields,
 		},
 		"ShieldedInstanceInitialState": ubx.FieldSpec{
 			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: AlphaImage_ShieldedInstanceInitialStateFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ShieldedInstanceInitialStateFields,
 		},
 		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind: "object",
-			Fields: AlphaImage_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ImageEncryptionKeyFields,
 		},
 		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
 		"SourceImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: AlphaImage_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ImageEncryptionKeyFields,
 		},
 		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
 		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: AlphaImage_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   AlphaImage_ImageEncryptionKeyFields,
 		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},
 }

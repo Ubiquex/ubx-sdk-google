@@ -30,8 +30,8 @@ type CustomerAttrs struct {
 var Customer = ubx.ResourceBinding{
 	WireType: "google_sasportal_customer",
 	Fields: ubx.FieldMap{
-		"NewDeploymentDisplayName": ubx.FieldSpec{WireName: "new_deployment_display_name"},
+		"NewDeploymentDisplayName":   ubx.FieldSpec{WireName: "new_deployment_display_name"},
 		"NewOrganizationDisplayName": ubx.FieldSpec{WireName: "new_organization_display_name"},
-		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
+		"OrganizationId":             ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

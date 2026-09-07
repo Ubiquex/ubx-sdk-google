@@ -32,6 +32,6 @@ var ArchiveDeployment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

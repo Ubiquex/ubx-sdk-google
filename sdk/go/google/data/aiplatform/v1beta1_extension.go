@@ -5,45 +5,45 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Extension_ExtensionOperations_FunctionDeclaration_Parameters struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Example any
-	Format any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	Nullable any
-	Pattern any
-	Properties any
-	PropertyOrdering any
-	Ref any
-	Required any
-	Title any
-	Type any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Example              any
+	Format               any
+	Items                any
+	MaxItems             any
+	MaxLength            any
+	MaxProperties        any
+	Maximum              any
+	MinItems             any
+	MinLength            any
+	MinProperties        any
+	Minimum              any
+	Nullable             any
+	Pattern              any
+	Properties           any
+	PropertyOrdering     any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
 }
 
 type V1beta1Extension_ExtensionOperations_FunctionDeclaration struct {
-	Behavior any
-	Description any
-	Name any
-	Parameters any
+	Behavior             any
+	Description          any
+	Name                 any
+	Parameters           any
 	ParametersJsonSchema any
-	Response any
-	ResponseJsonSchema any
+	Response             any
+	ResponseJsonSchema   any
 }
 
 type V1beta1Extension_ExtensionOperations struct {
 	FunctionDeclaration any
-	OperationId any
+	OperationId         any
 }
 
 type V1beta1Extension_Manifest_ApiSpec struct {
@@ -136,23 +136,23 @@ type V1beta1Extension_RuntimeConfig_VertexAiSearchRuntimeConfig struct {
 type V1beta1Extension_RuntimeConfig struct {
 	CodeInterpreterRuntimeConfig any
 	// Optional. Default parameters that will be set for all the execution of this extension. If specified, the parameter values can be overridden by values in [[ExecuteExtensionRequest.operation_params]] at request time. The struct should be in a form of map with param name as the key and actual param value as the value. E.g. If this operation requires a param "name" to be set to "abc". you can set this to something like {"name": "abc"}.
-	DefaultParams any
+	DefaultParams               any
 	VertexAiSearchRuntimeConfig any
 }
 
 type V1beta1Extension_ToolUseExamples_ExtensionOperation struct {
-	Extension any
+	Extension   any
 	OperationId any
 }
 
 type V1beta1Extension_ToolUseExamples struct {
-	DisplayName any
+	DisplayName        any
 	ExtensionOperation any
-	FunctionName any
-	Query any
-	RequestParams any
-	ResponseParams any
-	ResponseSummary any
+	FunctionName       any
+	Query              any
+	RequestParams      any
+	ResponseParams     any
+	ResponseSummary    any
 }
 
 type V1beta1ExtensionConfig struct {
@@ -172,7 +172,7 @@ type V1beta1ExtensionAttrs struct {
 	ExtensionOperations any
 	// Manifest spec of an Extension needed for runtime execution.
 	Manifest any
-	Name any
+	Name     any
 	// PrivateExtensionConfig configuration for the extension.
 	PrivateServiceConnectConfig any
 	// Runtime configuration to run the extension.

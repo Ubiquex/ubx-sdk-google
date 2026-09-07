@@ -29,29 +29,29 @@ type Table_HiveOptions struct {
 }
 
 var Table_HiveOptions_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
-		"SerializationLib": ubx.FieldSpec{WireName: "serialization_lib"},
-	}
+	"SerializationLib": ubx.FieldSpec{WireName: "serialization_lib"},
+}
 
 var Table_HiveOptions_StorageDescriptorFields = ubx.FieldMap{
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"SerdeInfo": ubx.FieldSpec{
-			WireName: "serde_info",
-			Kind: "object",
-			Fields: Table_HiveOptions_StorageDescriptor_SerdeInfoFields,
-		},
-	}
+	"InputFormat":  ubx.FieldSpec{WireName: "input_format"},
+	"LocationUri":  ubx.FieldSpec{WireName: "location_uri"},
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+	"SerdeInfo": ubx.FieldSpec{
+		WireName: "serde_info",
+		Kind:     "object",
+		Fields:   Table_HiveOptions_StorageDescriptor_SerdeInfoFields,
+	},
+}
 
 var Table_HiveOptionsFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "object",
-			Fields: Table_HiveOptions_StorageDescriptorFields,
-		},
-		"TableType": ubx.FieldSpec{WireName: "table_type"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"StorageDescriptor": ubx.FieldSpec{
+		WireName: "storage_descriptor",
+		Kind:     "object",
+		Fields:   Table_HiveOptions_StorageDescriptorFields,
+	},
+	"TableType": ubx.FieldSpec{WireName: "table_type"},
+}
 
 type TableConfig struct {
 	// The checksum of a table object computed by the server based on the value of other fields. It may be sent on update requests to ensure the client has an up-to-date value before proceeding. It is only checked for update table operations.
@@ -87,8 +87,8 @@ var Table = ubx.ResourceBinding{
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"HiveOptions": ubx.FieldSpec{
 			WireName: "hive_options",
-			Kind: "object",
-			Fields: Table_HiveOptionsFields,
+			Kind:     "object",
+			Fields:   Table_HiveOptionsFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

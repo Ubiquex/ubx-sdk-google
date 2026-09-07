@@ -33,8 +33,8 @@ var DnsThreatDetector = ubx.ResourceBinding{
 	WireType: "google_networksecurity_dns_threat_detector",
 	Fields: ubx.FieldMap{
 		"ExcludedNetworks": ubx.FieldSpec{WireName: "excluded_networks"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Provider":         ubx.FieldSpec{WireName: "provider"},
 	},
 }

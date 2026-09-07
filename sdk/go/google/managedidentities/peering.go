@@ -35,7 +35,7 @@ var Peering = ubx.ResourceBinding{
 	WireType: "google_managedidentities_peering",
 	Fields: ubx.FieldMap{
 		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
-		"DomainResource": ubx.FieldSpec{WireName: "domain_resource"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DomainResource":    ubx.FieldSpec{WireName: "domain_resource"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
 	},
 }

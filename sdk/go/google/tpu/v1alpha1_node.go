@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1Node_NetworkEndpoints struct {
 	IpAddress any
-	Port any
+	Port      any
 }
 
 type V1alpha1Node_SchedulingConfig struct {
@@ -16,16 +16,16 @@ type V1alpha1Node_SchedulingConfig struct {
 }
 
 type V1alpha1Node_Symptoms struct {
-	CreateTime any
-	Details any
+	CreateTime  any
+	Details     any
 	SymptomType any
-	WorkerId any
+	WorkerId    any
 }
 
 var V1alpha1Node_SchedulingConfigFields = ubx.FieldMap{
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"Reserved": ubx.FieldSpec{WireName: "reserved"},
-	}
+	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+	"Reserved":    ubx.FieldSpec{WireName: "reserved"},
+}
 
 type V1alpha1NodeConfig struct {
 	// Required. The type of hardware accelerators associated with this node.
@@ -97,19 +97,19 @@ var V1alpha1Node = ubx.ResourceBinding{
 	WireType: "google_tpu_v1alpha1_node",
 	Fields: ubx.FieldMap{
 		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Health": ubx.FieldSpec{WireName: "health"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Port": ubx.FieldSpec{WireName: "port"},
+		"CidrBlock":       ubx.FieldSpec{WireName: "cidr_block"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"Health":          ubx.FieldSpec{WireName: "health"},
+		"IpAddress":       ubx.FieldSpec{WireName: "ip_address"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Network":         ubx.FieldSpec{WireName: "network"},
+		"Port":            ubx.FieldSpec{WireName: "port"},
 		"SchedulingConfig": ubx.FieldSpec{
 			WireName: "scheduling_config",
-			Kind: "object",
-			Fields: V1alpha1Node_SchedulingConfigFields,
+			Kind:     "object",
+			Fields:   V1alpha1Node_SchedulingConfigFields,
 		},
-		"TensorflowVersion": ubx.FieldSpec{WireName: "tensorflow_version"},
+		"TensorflowVersion":    ubx.FieldSpec{WireName: "tensorflow_version"},
 		"UseServiceNetworking": ubx.FieldSpec{WireName: "use_service_networking"},
 	},
 }

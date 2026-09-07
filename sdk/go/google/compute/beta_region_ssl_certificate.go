@@ -20,15 +20,15 @@ type BetaRegionSslCertificate_SelfManaged struct {
 }
 
 var BetaRegionSslCertificate_ManagedFields = ubx.FieldMap{
-		"DomainStatus": ubx.FieldSpec{WireName: "domain_status"},
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"DomainStatus": ubx.FieldSpec{WireName: "domain_status"},
+	"Domains":      ubx.FieldSpec{WireName: "domains"},
+	"Status":       ubx.FieldSpec{WireName: "status"},
+}
 
 var BetaRegionSslCertificate_SelfManagedFields = ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-	}
+	"Certificate": ubx.FieldSpec{WireName: "certificate"},
+	"PrivateKey":  ubx.FieldSpec{WireName: "private_key"},
+}
 
 type BetaRegionSslCertificateConfig struct {
 	// A value read into memory from a certificate file. The certificate file must be in PEM format. The certificate chain must be no greater than 5 certs long. The chain must include at least one intermediate cert.
@@ -87,22 +87,22 @@ type BetaRegionSslCertificateAttrs struct {
 var BetaRegionSslCertificate = ubx.ResourceBinding{
 	WireType: "google_compute_beta_region_ssl_certificate",
 	Fields: ubx.FieldMap{
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
+		"Certificate":       ubx.FieldSpec{WireName: "certificate"},
 		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
 		"Managed": ubx.FieldSpec{
 			WireName: "managed",
-			Kind: "object",
-			Fields: BetaRegionSslCertificate_ManagedFields,
+			Kind:     "object",
+			Fields:   BetaRegionSslCertificate_ManagedFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":   ubx.FieldSpec{WireName: "self_link"},
 		"SelfManaged": ubx.FieldSpec{
 			WireName: "self_managed",
-			Kind: "object",
-			Fields: BetaRegionSslCertificate_SelfManagedFields,
+			Kind:     "object",
+			Fields:   BetaRegionSslCertificate_SelfManagedFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

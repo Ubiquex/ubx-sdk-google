@@ -18,14 +18,14 @@ type Snooz_Interval struct {
 }
 
 var Snooz_CriteriaFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Policies": ubx.FieldSpec{WireName: "policies"},
-	}
+	"Filter":   ubx.FieldSpec{WireName: "filter"},
+	"Policies": ubx.FieldSpec{WireName: "policies"},
+}
 
 var Snooz_IntervalFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 type SnoozConfig struct {
 	// Criteria specific to the AlertPolicys that this Snooze applies to. The Snooze will suppress alerts that come from one of the AlertPolicys whose names are supplied.
@@ -54,14 +54,14 @@ var Snooz = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Criteria": ubx.FieldSpec{
 			WireName: "criteria",
-			Kind: "object",
-			Fields: Snooz_CriteriaFields,
+			Kind:     "object",
+			Fields:   Snooz_CriteriaFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Interval": ubx.FieldSpec{
 			WireName: "interval",
-			Kind: "object",
-			Fields: Snooz_IntervalFields,
+			Kind:     "object",
+			Fields:   Snooz_IntervalFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

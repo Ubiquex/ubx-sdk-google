@@ -30,31 +30,31 @@ type Rollout_Stats struct {
 }
 
 var Rollout_Control_RunParamsFields = ubx.FieldMap{
-		"RetryFailedOperations": ubx.FieldSpec{WireName: "retry_failed_operations"},
-	}
+	"RetryFailedOperations": ubx.FieldSpec{WireName: "retry_failed_operations"},
+}
 
 var Rollout_ControlFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"RunParams": ubx.FieldSpec{
-			WireName: "run_params",
-			Kind: "object",
-			Fields: Rollout_Control_RunParamsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"RunParams": ubx.FieldSpec{
+		WireName: "run_params",
+		Kind:     "object",
+		Fields:   Rollout_Control_RunParamsFields,
+	},
+}
 
 var Rollout_Stats_OperationsByStateFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Group": ubx.FieldSpec{WireName: "group"},
+}
 
 var Rollout_StatsFields = ubx.FieldMap{
-		"EstimatedTotalUnitCount": ubx.FieldSpec{WireName: "estimated_total_unit_count"},
-		"OperationsByState": ubx.FieldSpec{
-			WireName: "operations_by_state",
-			Kind: "list",
-			Fields: Rollout_Stats_OperationsByStateFields,
-		},
-	}
+	"EstimatedTotalUnitCount": ubx.FieldSpec{WireName: "estimated_total_unit_count"},
+	"OperationsByState": ubx.FieldSpec{
+		WireName: "operations_by_state",
+		Kind:     "list",
+		Fields:   Rollout_Stats_OperationsByStateFields,
+	},
+}
 
 type RolloutConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -134,19 +134,19 @@ var Rollout = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Control": ubx.FieldSpec{
 			WireName: "control",
-			Kind: "object",
-			Fields: Rollout_ControlFields,
+			Kind:     "object",
+			Fields:   Rollout_ControlFields,
 		},
-		"FlagRelease": ubx.FieldSpec{WireName: "flag_release"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Release": ubx.FieldSpec{WireName: "release"},
-		"RolloutKind": ubx.FieldSpec{WireName: "rollout_kind"},
+		"FlagRelease":                  ubx.FieldSpec{WireName: "flag_release"},
+		"Labels":                       ubx.FieldSpec{WireName: "labels"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"Release":                      ubx.FieldSpec{WireName: "release"},
+		"RolloutKind":                  ubx.FieldSpec{WireName: "rollout_kind"},
 		"RolloutOrchestrationStrategy": ubx.FieldSpec{WireName: "rollout_orchestration_strategy"},
 		"Stats": ubx.FieldSpec{
 			WireName: "stats",
-			Kind: "object",
-			Fields: Rollout_StatsFields,
+			Kind:     "object",
+			Fields:   Rollout_StatsFields,
 		},
 		"UnitFilter": ubx.FieldSpec{WireName: "unit_filter"},
 	},

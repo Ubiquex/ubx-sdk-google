@@ -73,79 +73,79 @@ type InterconnectAttachmentGroup_LogicalStructure struct {
 }
 
 var InterconnectAttachmentGroup_AttachmentsFields = ubx.FieldMap{
-		"Attachment": ubx.FieldSpec{WireName: "attachment"},
-	}
+	"Attachment": ubx.FieldSpec{WireName: "attachment"},
+}
 
 var InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields = ubx.FieldMap{
-		"Attachments": ubx.FieldSpec{WireName: "attachments"},
-		"BlockerType": ubx.FieldSpec{WireName: "blocker_type"},
-		"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Metros": ubx.FieldSpec{WireName: "metros"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"Attachments":       ubx.FieldSpec{WireName: "attachments"},
+	"BlockerType":       ubx.FieldSpec{WireName: "blocker_type"},
+	"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
+	"Explanation":       ubx.FieldSpec{WireName: "explanation"},
+	"Metros":            ubx.FieldSpec{WireName: "metros"},
+	"Regions":           ubx.FieldSpec{WireName: "regions"},
+	"Zones":             ubx.FieldSpec{WireName: "zones"},
+}
 
 var InterconnectAttachmentGroup_Configured_AvailabilitySlaFields = ubx.FieldMap{
-		"EffectiveSla": ubx.FieldSpec{WireName: "effective_sla"},
-		"IntendedSlaBlockers": ubx.FieldSpec{
-			WireName: "intended_sla_blockers",
-			Kind: "list",
-			Fields: InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields,
-		},
-	}
+	"EffectiveSla": ubx.FieldSpec{WireName: "effective_sla"},
+	"IntendedSlaBlockers": ubx.FieldSpec{
+		WireName: "intended_sla_blockers",
+		Kind:     "list",
+		Fields:   InterconnectAttachmentGroup_Configured_AvailabilitySla_IntendedSlaBlockersFields,
+	},
+}
 
 var InterconnectAttachmentGroup_ConfiguredFields = ubx.FieldMap{
-		"AvailabilitySla": ubx.FieldSpec{
-			WireName: "availability_sla",
-			Kind: "object",
-			Fields: InterconnectAttachmentGroup_Configured_AvailabilitySlaFields,
-		},
-	}
+	"AvailabilitySla": ubx.FieldSpec{
+		WireName: "availability_sla",
+		Kind:     "object",
+		Fields:   InterconnectAttachmentGroup_Configured_AvailabilitySlaFields,
+	},
+}
 
 var InterconnectAttachmentGroup_IntentFields = ubx.FieldMap{
-		"AvailabilitySla": ubx.FieldSpec{WireName: "availability_sla"},
-	}
+	"AvailabilitySla": ubx.FieldSpec{WireName: "availability_sla"},
+}
 
 var InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields = ubx.FieldMap{
-		"Attachments": ubx.FieldSpec{WireName: "attachments"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Attachments": ubx.FieldSpec{WireName: "attachments"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields = ubx.FieldMap{
-		"Facility": ubx.FieldSpec{WireName: "facility"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields,
-		},
-	}
+	"Facility": ubx.FieldSpec{WireName: "facility"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_Facilities_ZonesFields,
+	},
+}
 
 var InterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields = ubx.FieldMap{
-		"Facilities": ubx.FieldSpec{
-			WireName: "facilities",
-			Kind: "list",
-			Fields: InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields,
-		},
-		"Metro": ubx.FieldSpec{WireName: "metro"},
-	}
+	"Facilities": ubx.FieldSpec{
+		WireName: "facilities",
+		Kind:     "list",
+		Fields:   InterconnectAttachmentGroup_LogicalStructure_Regions_Metros_FacilitiesFields,
+	},
+	"Metro": ubx.FieldSpec{WireName: "metro"},
+}
 
 var InterconnectAttachmentGroup_LogicalStructure_RegionsFields = ubx.FieldMap{
-		"Metros": ubx.FieldSpec{
-			WireName: "metros",
-			Kind: "list",
-			Fields: InterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Metros": ubx.FieldSpec{
+		WireName: "metros",
+		Kind:     "list",
+		Fields:   InterconnectAttachmentGroup_LogicalStructure_Regions_MetrosFields,
+	},
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var InterconnectAttachmentGroup_LogicalStructureFields = ubx.FieldMap{
-		"Regions": ubx.FieldSpec{
-			WireName: "regions",
-			Kind: "list",
-			Fields: InterconnectAttachmentGroup_LogicalStructure_RegionsFields,
-		},
-	}
+	"Regions": ubx.FieldSpec{
+		WireName: "regions",
+		Kind:     "list",
+		Fields:   InterconnectAttachmentGroup_LogicalStructure_RegionsFields,
+	},
+}
 
 type InterconnectAttachmentGroupConfig struct {
 	// Attachments in the AttachmentGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Attachments per group" quota.
@@ -198,26 +198,26 @@ var InterconnectAttachmentGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attachments": ubx.FieldSpec{
 			WireName: "attachments",
-			Kind: "map",
-			Fields: InterconnectAttachmentGroup_AttachmentsFields,
+			Kind:     "map",
+			Fields:   InterconnectAttachmentGroup_AttachmentsFields,
 		},
 		"Configured": ubx.FieldSpec{
 			WireName: "configured",
-			Kind: "object",
-			Fields: InterconnectAttachmentGroup_ConfiguredFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachmentGroup_ConfiguredFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Intent": ubx.FieldSpec{
 			WireName: "intent",
-			Kind: "object",
-			Fields: InterconnectAttachmentGroup_IntentFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachmentGroup_IntentFields,
 		},
 		"InterconnectGroup": ubx.FieldSpec{WireName: "interconnect_group"},
 		"LogicalStructure": ubx.FieldSpec{
 			WireName: "logical_structure",
-			Kind: "object",
-			Fields: InterconnectAttachmentGroup_LogicalStructureFields,
+			Kind:     "object",
+			Fields:   InterconnectAttachmentGroup_LogicalStructureFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

@@ -72,78 +72,78 @@ type CustomTargetType_Tasks struct {
 }
 
 var CustomTargetType_CustomActions_IncludeSkaffoldModules_GitFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repo": ubx.FieldSpec{WireName: "repo"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Ref":  ubx.FieldSpec{WireName: "ref"},
+	"Repo": ubx.FieldSpec{WireName: "repo"},
+}
 
 var CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Ref":        ubx.FieldSpec{WireName: "ref"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"Path":   ubx.FieldSpec{WireName: "path"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+}
 
 var CustomTargetType_CustomActions_IncludeSkaffoldModulesFields = ubx.FieldMap{
-		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: CustomTargetType_CustomActions_IncludeSkaffoldModules_GitFields,
-		},
-		"GoogleCloudBuildRepo": ubx.FieldSpec{
-			WireName: "google_cloud_build_repo",
-			Kind: "object",
-			Fields: CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields,
-		},
-		"GoogleCloudStorage": ubx.FieldSpec{
-			WireName: "google_cloud_storage",
-			Kind: "object",
-			Fields: CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields,
-		},
-	}
+	"Configs": ubx.FieldSpec{WireName: "configs"},
+	"Git": ubx.FieldSpec{
+		WireName: "git",
+		Kind:     "object",
+		Fields:   CustomTargetType_CustomActions_IncludeSkaffoldModules_GitFields,
+	},
+	"GoogleCloudBuildRepo": ubx.FieldSpec{
+		WireName: "google_cloud_build_repo",
+		Kind:     "object",
+		Fields:   CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields,
+	},
+	"GoogleCloudStorage": ubx.FieldSpec{
+		WireName: "google_cloud_storage",
+		Kind:     "object",
+		Fields:   CustomTargetType_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields,
+	},
+}
 
 var CustomTargetType_CustomActionsFields = ubx.FieldMap{
-		"DeployAction": ubx.FieldSpec{WireName: "deploy_action"},
-		"IncludeSkaffoldModules": ubx.FieldSpec{
-			WireName: "include_skaffold_modules",
-			Kind: "list",
-			Fields: CustomTargetType_CustomActions_IncludeSkaffoldModulesFields,
-		},
-		"RenderAction": ubx.FieldSpec{WireName: "render_action"},
-	}
+	"DeployAction": ubx.FieldSpec{WireName: "deploy_action"},
+	"IncludeSkaffoldModules": ubx.FieldSpec{
+		WireName: "include_skaffold_modules",
+		Kind:     "list",
+		Fields:   CustomTargetType_CustomActions_IncludeSkaffoldModulesFields,
+	},
+	"RenderAction": ubx.FieldSpec{WireName: "render_action"},
+}
 
 var CustomTargetType_Tasks_Deploy_ContainerFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env":     ubx.FieldSpec{WireName: "env"},
+	"Image":   ubx.FieldSpec{WireName: "image"},
+}
 
 var CustomTargetType_Tasks_DeployFields = ubx.FieldMap{
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: CustomTargetType_Tasks_Deploy_ContainerFields,
-		},
-	}
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   CustomTargetType_Tasks_Deploy_ContainerFields,
+	},
+}
 
 var CustomTargetType_TasksFields = ubx.FieldMap{
-		"Deploy": ubx.FieldSpec{
-			WireName: "deploy",
-			Kind: "object",
-			Fields: CustomTargetType_Tasks_DeployFields,
-		},
-		"Render": ubx.FieldSpec{
-			WireName: "render",
-			Kind: "object",
-			Fields: CustomTargetType_Tasks_DeployFields,
-		},
-	}
+	"Deploy": ubx.FieldSpec{
+		WireName: "deploy",
+		Kind:     "object",
+		Fields:   CustomTargetType_Tasks_DeployFields,
+	},
+	"Render": ubx.FieldSpec{
+		WireName: "render",
+		Kind:     "object",
+		Fields:   CustomTargetType_Tasks_DeployFields,
+	},
+}
 
 type CustomTargetTypeConfig struct {
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
@@ -193,17 +193,17 @@ var CustomTargetType = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"CustomActions": ubx.FieldSpec{
 			WireName: "custom_actions",
-			Kind: "object",
-			Fields: CustomTargetType_CustomActionsFields,
+			Kind:     "object",
+			Fields:   CustomTargetType_CustomActionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Tasks": ubx.FieldSpec{
 			WireName: "tasks",
-			Kind: "object",
-			Fields: CustomTargetType_TasksFields,
+			Kind:     "object",
+			Fields:   CustomTargetType_TasksFields,
 		},
 	},
 }

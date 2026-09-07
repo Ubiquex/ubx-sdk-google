@@ -5,60 +5,60 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1SipTrunk_Connections_ErrorDetails struct {
 	CertificateState any
-	ErrorMessage any
+	ErrorMessage     any
 }
 
 type V2beta1SipTrunk_Connections struct {
 	ConnectionId any
 	ErrorDetails any
-	State any
-	UpdateTime any
+	State        any
+	UpdateTime   any
 }
 
 type V2beta1SipTrunk_PeerHostnames_ProbeDetails struct {
-	InitTime any
+	InitTime       any
 	OptionsLatency any
-	ProbeStatus any
+	ProbeStatus    any
 }
 
 type V2beta1SipTrunk_PeerHostnames struct {
-	ConnectionState any
-	EnabledSipPing any
-	ErrorDetails any
-	PeerHostname any
+	ConnectionState   any
+	EnabledSipPing    any
+	ErrorDetails      any
+	PeerHostname      any
 	PeerSocketAddress any
-	PingInterval any
-	ProbeDetails any
+	PingInterval      any
+	ProbeDetails      any
 }
 
 var V2beta1SipTrunk_Connections_ErrorDetailsFields = ubx.FieldMap{
-		"CertificateState": ubx.FieldSpec{WireName: "certificate_state"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-	}
+	"CertificateState": ubx.FieldSpec{WireName: "certificate_state"},
+	"ErrorMessage":     ubx.FieldSpec{WireName: "error_message"},
+}
 
 var V2beta1SipTrunk_PeerHostnames_ProbeDetailsFields = ubx.FieldMap{
-		"InitTime": ubx.FieldSpec{WireName: "init_time"},
-		"OptionsLatency": ubx.FieldSpec{WireName: "options_latency"},
-		"ProbeStatus": ubx.FieldSpec{WireName: "probe_status"},
-	}
+	"InitTime":       ubx.FieldSpec{WireName: "init_time"},
+	"OptionsLatency": ubx.FieldSpec{WireName: "options_latency"},
+	"ProbeStatus":    ubx.FieldSpec{WireName: "probe_status"},
+}
 
 var V2beta1SipTrunk_PeerHostnamesFields = ubx.FieldMap{
-		"ConnectionState": ubx.FieldSpec{WireName: "connection_state"},
-		"EnabledSipPing": ubx.FieldSpec{WireName: "enabled_sip_ping"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "object",
-			Fields: V2beta1SipTrunk_Connections_ErrorDetailsFields,
-		},
-		"PeerHostname": ubx.FieldSpec{WireName: "peer_hostname"},
-		"PeerSocketAddress": ubx.FieldSpec{WireName: "peer_socket_address"},
-		"PingInterval": ubx.FieldSpec{WireName: "ping_interval"},
-		"ProbeDetails": ubx.FieldSpec{
-			WireName: "probe_details",
-			Kind: "object",
-			Fields: V2beta1SipTrunk_PeerHostnames_ProbeDetailsFields,
-		},
-	}
+	"ConnectionState": ubx.FieldSpec{WireName: "connection_state"},
+	"EnabledSipPing":  ubx.FieldSpec{WireName: "enabled_sip_ping"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "object",
+		Fields:   V2beta1SipTrunk_Connections_ErrorDetailsFields,
+	},
+	"PeerHostname":      ubx.FieldSpec{WireName: "peer_hostname"},
+	"PeerSocketAddress": ubx.FieldSpec{WireName: "peer_socket_address"},
+	"PingInterval":      ubx.FieldSpec{WireName: "ping_interval"},
+	"ProbeDetails": ubx.FieldSpec{
+		WireName: "probe_details",
+		Kind:     "object",
+		Fields:   V2beta1SipTrunk_PeerHostnames_ProbeDetailsFields,
+	},
+}
 
 type V2beta1SipTrunkConfig struct {
 	// A mutable, user-settable, human-readable name for this resource, shown in the console UI. Not required to be unique. (AI-inferred)
@@ -91,14 +91,14 @@ type V2beta1SipTrunkAttrs struct {
 var V2beta1SipTrunk = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_sip_trunk",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpectedHostname": ubx.FieldSpec{WireName: "expected_hostname"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"ExpectedHostname":   ubx.FieldSpec{WireName: "expected_hostname"},
 		"GoogleRootCertFile": ubx.FieldSpec{WireName: "google_root_cert_file"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"PeerHostnames": ubx.FieldSpec{
 			WireName: "peer_hostnames",
-			Kind: "list",
-			Fields: V2beta1SipTrunk_PeerHostnamesFields,
+			Kind:     "list",
+			Fields:   V2beta1SipTrunk_PeerHostnamesFields,
 		},
 	},
 }

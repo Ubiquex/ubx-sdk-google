@@ -4,11 +4,11 @@ package config
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceDrift_PropertyDrifts struct {
-	After any
-	AfterSensitivePaths any
-	Before any
+	After                any
+	AfterSensitivePaths  any
+	Before               any
 	BeforeSensitivePaths any
-	Path any
+	Path                 any
 }
 
 type ResourceDrift_TerraformInfo struct {

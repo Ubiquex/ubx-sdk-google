@@ -38,7 +38,7 @@ type VolumeAttrs struct {
 	Labels any
 	// Maximum size volume can be expanded to in case of evergency, in GiB.
 	MaxSizeGib any
-	Name any
+	Name       any
 	// Input only. User-specified notes for new Volume. Used to provision Volumes that require manual intervention.
 	Notes any
 	// Originally requested size, in GiB.
@@ -69,6 +69,5 @@ type VolumeAttrs struct {
 
 var Volume = ubx.DataSourceBinding{
 	WireType: "google_baremetalsolution_volume",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

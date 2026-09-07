@@ -20,7 +20,7 @@ type V1alphaNotebook_Metadata struct {
 }
 
 type V1alphaNotebook_Sources_Metadata_AgentspaceMetadata struct {
-	DocumentName any
+	DocumentName  any
 	DocumentTitle any
 }
 
@@ -31,21 +31,21 @@ type V1alphaNotebook_Sources_Metadata_GoogleDocsMetadata struct {
 
 type V1alphaNotebook_Sources_Metadata_YoutubeMetadata struct {
 	ChannelName any
-	VideoId any
+	VideoId     any
 }
 
 type V1alphaNotebook_Sources_Metadata struct {
-	AgentspaceMetadata any
-	GoogleDocsMetadata any
+	AgentspaceMetadata   any
+	GoogleDocsMetadata   any
 	SourceAddedTimestamp any
-	TokenCount any
-	WordCount any
-	YoutubeMetadata any
+	TokenCount           any
+	WordCount            any
+	YoutubeMetadata      any
 }
 
 type V1alphaNotebook_Sources_Settings_FailureReason_AudioTranscriptionError struct {
 	LanguageDetectionFailed any
-	NoAudioDetected any
+	NoAudioDetected         any
 }
 
 type V1alphaNotebook_Sources_Settings_FailureReason_GoogleDriveError struct {
@@ -67,24 +67,24 @@ type V1alphaNotebook_Sources_Settings_FailureReason_YoutubeError struct {
 
 type V1alphaNotebook_Sources_Settings_FailureReason struct {
 	AudioTranscriptionError any
-	DomainBlocked any
-	GoogleDriveError any
-	IngestionError any
-	MimeTypeBlocked any
-	PaywallError any
-	PolicyCheckFailed any
-	SourceEmpty any
-	SourceLimitExceeded any
-	SourceTooLong any
-	SourceUnreachable any
-	Unknown any
-	UploadError any
-	YoutubeError any
+	DomainBlocked           any
+	GoogleDriveError        any
+	IngestionError          any
+	MimeTypeBlocked         any
+	PaywallError            any
+	PolicyCheckFailed       any
+	SourceEmpty             any
+	SourceLimitExceeded     any
+	SourceTooLong           any
+	SourceUnreachable       any
+	Unknown                 any
+	UploadError             any
+	YoutubeError            any
 }
 
 type V1alphaNotebook_Sources_Settings struct {
 	FailureReason any
-	Status any
+	Status        any
 }
 
 type V1alphaNotebook_Sources_SourceId struct {
@@ -93,22 +93,22 @@ type V1alphaNotebook_Sources_SourceId struct {
 
 type V1alphaNotebook_Sources struct {
 	Metadata any
-	Name any
+	Name     any
 	Settings any
 	SourceId any
-	Title any
+	Title    any
 }
 
 var V1alphaNotebook_CmekConfigFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var V1alphaNotebook_MetadataFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"IsShareable": ubx.FieldSpec{WireName: "is_shareable"},
-		"IsShared": ubx.FieldSpec{WireName: "is_shared"},
-		"LastViewed": ubx.FieldSpec{WireName: "last_viewed"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"IsShareable": ubx.FieldSpec{WireName: "is_shareable"},
+	"IsShared":    ubx.FieldSpec{WireName: "is_shared"},
+	"LastViewed":  ubx.FieldSpec{WireName: "last_viewed"},
+}
 
 type V1alphaNotebookConfig struct {
 	// Customer-managed encryption configuration for Notebooks.
@@ -143,15 +143,15 @@ var V1alphaNotebook = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: V1alphaNotebook_CmekConfigFields,
+			Kind:     "object",
+			Fields:   V1alphaNotebook_CmekConfigFields,
 		},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1alphaNotebook_MetadataFields,
+			Kind:     "object",
+			Fields:   V1alphaNotebook_MetadataFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Title": ubx.FieldSpec{WireName: "title"},
 	},
 }

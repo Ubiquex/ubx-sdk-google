@@ -9,8 +9,8 @@ type V1betaScope_State struct {
 }
 
 var V1betaScope_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaScopeConfig struct {
 	// Optional. Labels for this Scope.
@@ -45,13 +45,13 @@ type V1betaScopeAttrs struct {
 var V1betaScope = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_scope",
 	Fields: ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NamespaceLabels": ubx.FieldSpec{WireName: "namespace_labels"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaScope_StateFields,
+			Kind:     "object",
+			Fields:   V1betaScope_StateFields,
 		},
 	},
 }

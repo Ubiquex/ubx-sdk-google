@@ -268,309 +268,309 @@ type Cluster_StorageResources struct {
 }
 
 var Cluster_ComputeResources_Config_NewFlexStartInstancesFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"MaxDuration": ubx.FieldSpec{WireName: "max_duration"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var Cluster_ComputeResources_Config_NewOnDemandInstancesFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var Cluster_ComputeResources_Config_NewReservedInstancesFields = ubx.FieldMap{
-		"Reservation": ubx.FieldSpec{WireName: "reservation"},
-	}
+	"Reservation": ubx.FieldSpec{WireName: "reservation"},
+}
 
 var Cluster_ComputeResources_Config_NewSpotInstancesFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"TerminationAction": ubx.FieldSpec{WireName: "termination_action"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
+	"TerminationAction": ubx.FieldSpec{WireName: "termination_action"},
+	"Zone":              ubx.FieldSpec{WireName: "zone"},
+}
 
 var Cluster_ComputeResources_ConfigFields = ubx.FieldMap{
-		"NewFlexStartInstances": ubx.FieldSpec{
-			WireName: "new_flex_start_instances",
-			Kind: "object",
-			Fields: Cluster_ComputeResources_Config_NewFlexStartInstancesFields,
-		},
-		"NewOnDemandInstances": ubx.FieldSpec{
-			WireName: "new_on_demand_instances",
-			Kind: "object",
-			Fields: Cluster_ComputeResources_Config_NewOnDemandInstancesFields,
-		},
-		"NewReservedInstances": ubx.FieldSpec{
-			WireName: "new_reserved_instances",
-			Kind: "object",
-			Fields: Cluster_ComputeResources_Config_NewReservedInstancesFields,
-		},
-		"NewSpotInstances": ubx.FieldSpec{
-			WireName: "new_spot_instances",
-			Kind: "object",
-			Fields: Cluster_ComputeResources_Config_NewSpotInstancesFields,
-		},
-	}
+	"NewFlexStartInstances": ubx.FieldSpec{
+		WireName: "new_flex_start_instances",
+		Kind:     "object",
+		Fields:   Cluster_ComputeResources_Config_NewFlexStartInstancesFields,
+	},
+	"NewOnDemandInstances": ubx.FieldSpec{
+		WireName: "new_on_demand_instances",
+		Kind:     "object",
+		Fields:   Cluster_ComputeResources_Config_NewOnDemandInstancesFields,
+	},
+	"NewReservedInstances": ubx.FieldSpec{
+		WireName: "new_reserved_instances",
+		Kind:     "object",
+		Fields:   Cluster_ComputeResources_Config_NewReservedInstancesFields,
+	},
+	"NewSpotInstances": ubx.FieldSpec{
+		WireName: "new_spot_instances",
+		Kind:     "object",
+		Fields:   Cluster_ComputeResources_Config_NewSpotInstancesFields,
+	},
+}
 
 var Cluster_ComputeResourcesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Cluster_ComputeResources_ConfigFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Cluster_ComputeResources_ConfigFields,
+	},
+}
 
 var Cluster_NetworkResources_Config_ExistingNetworkFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var Cluster_NetworkResources_Config_NewNetworkFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+}
 
 var Cluster_NetworkResources_ConfigFields = ubx.FieldMap{
-		"ExistingNetwork": ubx.FieldSpec{
-			WireName: "existing_network",
-			Kind: "object",
-			Fields: Cluster_NetworkResources_Config_ExistingNetworkFields,
-		},
-		"NewNetwork": ubx.FieldSpec{
-			WireName: "new_network",
-			Kind: "object",
-			Fields: Cluster_NetworkResources_Config_NewNetworkFields,
-		},
-	}
+	"ExistingNetwork": ubx.FieldSpec{
+		WireName: "existing_network",
+		Kind:     "object",
+		Fields:   Cluster_NetworkResources_Config_ExistingNetworkFields,
+	},
+	"NewNetwork": ubx.FieldSpec{
+		WireName: "new_network",
+		Kind:     "object",
+		Fields:   Cluster_NetworkResources_Config_NewNetworkFields,
+	},
+}
 
 var Cluster_NetworkResourcesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Cluster_NetworkResources_ConfigFields,
-		},
-		"Network": ubx.FieldSpec{
-			WireName: "network",
-			Kind: "object",
-			Fields: Cluster_NetworkResources_Config_ExistingNetworkFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Cluster_NetworkResources_ConfigFields,
+	},
+	"Network": ubx.FieldSpec{
+		WireName: "network",
+		Kind:     "object",
+		Fields:   Cluster_NetworkResources_Config_ExistingNetworkFields,
+	},
+}
 
 var Cluster_Orchestrator_Slurm_LoginNodes_BootDiskFields = ubx.FieldMap{
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var Cluster_Orchestrator_Slurm_LoginNodes_InstancesFields = ubx.FieldMap{
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-	}
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+}
 
 var Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LocalMount": ubx.FieldSpec{WireName: "local_mount"},
-	}
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"LocalMount": ubx.FieldSpec{WireName: "local_mount"},
+}
 
 var Cluster_Orchestrator_Slurm_LoginNodesFields = ubx.FieldMap{
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodes_BootDiskFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"EnableOsLogin": ubx.FieldSpec{WireName: "enable_os_login"},
-		"EnablePublicIps": ubx.FieldSpec{WireName: "enable_public_ips"},
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodes_InstancesFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"StartupScript": ubx.FieldSpec{WireName: "startup_script"},
-		"StorageConfigs": ubx.FieldSpec{
-			WireName: "storage_configs",
-			Kind: "list",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigsFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodes_BootDiskFields,
+	},
+	"Count":           ubx.FieldSpec{WireName: "count"},
+	"EnableOsLogin":   ubx.FieldSpec{WireName: "enable_os_login"},
+	"EnablePublicIps": ubx.FieldSpec{WireName: "enable_public_ips"},
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodes_InstancesFields,
+	},
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+	"MachineType":   ubx.FieldSpec{WireName: "machine_type"},
+	"StartupScript": ubx.FieldSpec{WireName: "startup_script"},
+	"StorageConfigs": ubx.FieldSpec{
+		WireName: "storage_configs",
+		Kind:     "list",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigsFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var Cluster_Orchestrator_Slurm_NodeSets_ComputeInstanceFields = ubx.FieldMap{
-		"BootDisk": ubx.FieldSpec{
-			WireName: "boot_disk",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodes_BootDiskFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"StartupScript": ubx.FieldSpec{WireName: "startup_script"},
-	}
+	"BootDisk": ubx.FieldSpec{
+		WireName: "boot_disk",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodes_BootDiskFields,
+	},
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+	"StartupScript": ubx.FieldSpec{WireName: "startup_script"},
+}
 
 var Cluster_Orchestrator_Slurm_NodeSetsFields = ubx.FieldMap{
-		"ComputeId": ubx.FieldSpec{WireName: "compute_id"},
-		"ComputeInstance": ubx.FieldSpec{
-			WireName: "compute_instance",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_Slurm_NodeSets_ComputeInstanceFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MaxDynamicNodeCount": ubx.FieldSpec{WireName: "max_dynamic_node_count"},
-		"StaticNodeCount": ubx.FieldSpec{WireName: "static_node_count"},
-		"StorageConfigs": ubx.FieldSpec{
-			WireName: "storage_configs",
-			Kind: "list",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigsFields,
-		},
-	}
+	"ComputeId": ubx.FieldSpec{WireName: "compute_id"},
+	"ComputeInstance": ubx.FieldSpec{
+		WireName: "compute_instance",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_Slurm_NodeSets_ComputeInstanceFields,
+	},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"MaxDynamicNodeCount": ubx.FieldSpec{WireName: "max_dynamic_node_count"},
+	"StaticNodeCount":     ubx.FieldSpec{WireName: "static_node_count"},
+	"StorageConfigs": ubx.FieldSpec{
+		WireName: "storage_configs",
+		Kind:     "list",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodes_StorageConfigsFields,
+	},
+}
 
 var Cluster_Orchestrator_Slurm_PartitionsFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"NodeSetIds": ubx.FieldSpec{WireName: "node_set_ids"},
-	}
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"NodeSetIds": ubx.FieldSpec{WireName: "node_set_ids"},
+}
 
 var Cluster_Orchestrator_SlurmFields = ubx.FieldMap{
-		"DefaultPartition": ubx.FieldSpec{WireName: "default_partition"},
-		"EpilogBashScripts": ubx.FieldSpec{WireName: "epilog_bash_scripts"},
-		"LoginNodes": ubx.FieldSpec{
-			WireName: "login_nodes",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_Slurm_LoginNodesFields,
-		},
-		"NodeSets": ubx.FieldSpec{
-			WireName: "node_sets",
-			Kind: "list",
-			Fields: Cluster_Orchestrator_Slurm_NodeSetsFields,
-		},
-		"Partitions": ubx.FieldSpec{
-			WireName: "partitions",
-			Kind: "list",
-			Fields: Cluster_Orchestrator_Slurm_PartitionsFields,
-		},
-		"PrologBashScripts": ubx.FieldSpec{WireName: "prolog_bash_scripts"},
-	}
+	"DefaultPartition":  ubx.FieldSpec{WireName: "default_partition"},
+	"EpilogBashScripts": ubx.FieldSpec{WireName: "epilog_bash_scripts"},
+	"LoginNodes": ubx.FieldSpec{
+		WireName: "login_nodes",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_Slurm_LoginNodesFields,
+	},
+	"NodeSets": ubx.FieldSpec{
+		WireName: "node_sets",
+		Kind:     "list",
+		Fields:   Cluster_Orchestrator_Slurm_NodeSetsFields,
+	},
+	"Partitions": ubx.FieldSpec{
+		WireName: "partitions",
+		Kind:     "list",
+		Fields:   Cluster_Orchestrator_Slurm_PartitionsFields,
+	},
+	"PrologBashScripts": ubx.FieldSpec{WireName: "prolog_bash_scripts"},
+}
 
 var Cluster_OrchestratorFields = ubx.FieldMap{
-		"Slurm": ubx.FieldSpec{
-			WireName: "slurm",
-			Kind: "object",
-			Fields: Cluster_Orchestrator_SlurmFields,
-		},
-	}
+	"Slurm": ubx.FieldSpec{
+		WireName: "slurm",
+		Kind:     "object",
+		Fields:   Cluster_Orchestrator_SlurmFields,
+	},
+}
 
 var Cluster_StorageResources_BucketFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+}
 
 var Cluster_StorageResources_Config_ExistingFilestoreFields = ubx.FieldMap{
-		"Filestore": ubx.FieldSpec{WireName: "filestore"},
-	}
+	"Filestore": ubx.FieldSpec{WireName: "filestore"},
+}
 
 var Cluster_StorageResources_Config_ExistingLustreFields = ubx.FieldMap{
-		"Lustre": ubx.FieldSpec{WireName: "lustre"},
-	}
+	"Lustre": ubx.FieldSpec{WireName: "lustre"},
+}
 
 var Cluster_StorageResources_Config_NewBucket_AutoclassFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"TerminalStorageClass": ubx.FieldSpec{WireName: "terminal_storage_class"},
-	}
+	"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+	"TerminalStorageClass": ubx.FieldSpec{WireName: "terminal_storage_class"},
+}
 
 var Cluster_StorageResources_Config_NewBucket_HierarchicalNamespaceFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Cluster_StorageResources_Config_NewBucketFields = ubx.FieldMap{
-		"Autoclass": ubx.FieldSpec{
-			WireName: "autoclass",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_NewBucket_AutoclassFields,
-		},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"HierarchicalNamespace": ubx.FieldSpec{
-			WireName: "hierarchical_namespace",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_NewBucket_HierarchicalNamespaceFields,
-		},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"Autoclass": ubx.FieldSpec{
+		WireName: "autoclass",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_NewBucket_AutoclassFields,
+	},
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+	"HierarchicalNamespace": ubx.FieldSpec{
+		WireName: "hierarchical_namespace",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_NewBucket_HierarchicalNamespaceFields,
+	},
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var Cluster_StorageResources_Config_NewFilestore_FileSharesFields = ubx.FieldMap{
-		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
-		"FileShare": ubx.FieldSpec{WireName: "file_share"},
-	}
+	"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
+	"FileShare":  ubx.FieldSpec{WireName: "file_share"},
+}
 
 var Cluster_StorageResources_Config_NewFilestoreFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FileShares": ubx.FieldSpec{
-			WireName: "file_shares",
-			Kind: "list",
-			Fields: Cluster_StorageResources_Config_NewFilestore_FileSharesFields,
-		},
-		"Filestore": ubx.FieldSpec{WireName: "filestore"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FileShares": ubx.FieldSpec{
+		WireName: "file_shares",
+		Kind:     "list",
+		Fields:   Cluster_StorageResources_Config_NewFilestore_FileSharesFields,
+	},
+	"Filestore": ubx.FieldSpec{WireName: "filestore"},
+	"Protocol":  ubx.FieldSpec{WireName: "protocol"},
+	"Tier":      ubx.FieldSpec{WireName: "tier"},
+}
 
 var Cluster_StorageResources_Config_NewLustreFields = ubx.FieldMap{
-		"CapacityGb": ubx.FieldSpec{WireName: "capacity_gb"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filesystem": ubx.FieldSpec{WireName: "filesystem"},
-		"Lustre": ubx.FieldSpec{WireName: "lustre"},
-		"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
-	}
+	"CapacityGb":               ubx.FieldSpec{WireName: "capacity_gb"},
+	"Description":              ubx.FieldSpec{WireName: "description"},
+	"Filesystem":               ubx.FieldSpec{WireName: "filesystem"},
+	"Lustre":                   ubx.FieldSpec{WireName: "lustre"},
+	"PerUnitStorageThroughput": ubx.FieldSpec{WireName: "per_unit_storage_throughput"},
+}
 
 var Cluster_StorageResources_ConfigFields = ubx.FieldMap{
-		"ExistingBucket": ubx.FieldSpec{
-			WireName: "existing_bucket",
-			Kind: "object",
-			Fields: Cluster_StorageResources_BucketFields,
-		},
-		"ExistingFilestore": ubx.FieldSpec{
-			WireName: "existing_filestore",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_ExistingFilestoreFields,
-		},
-		"ExistingLustre": ubx.FieldSpec{
-			WireName: "existing_lustre",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_ExistingLustreFields,
-		},
-		"NewBucket": ubx.FieldSpec{
-			WireName: "new_bucket",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_NewBucketFields,
-		},
-		"NewFilestore": ubx.FieldSpec{
-			WireName: "new_filestore",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_NewFilestoreFields,
-		},
-		"NewLustre": ubx.FieldSpec{
-			WireName: "new_lustre",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_NewLustreFields,
-		},
-	}
+	"ExistingBucket": ubx.FieldSpec{
+		WireName: "existing_bucket",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_BucketFields,
+	},
+	"ExistingFilestore": ubx.FieldSpec{
+		WireName: "existing_filestore",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_ExistingFilestoreFields,
+	},
+	"ExistingLustre": ubx.FieldSpec{
+		WireName: "existing_lustre",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_ExistingLustreFields,
+	},
+	"NewBucket": ubx.FieldSpec{
+		WireName: "new_bucket",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_NewBucketFields,
+	},
+	"NewFilestore": ubx.FieldSpec{
+		WireName: "new_filestore",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_NewFilestoreFields,
+	},
+	"NewLustre": ubx.FieldSpec{
+		WireName: "new_lustre",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_NewLustreFields,
+	},
+}
 
 var Cluster_StorageResourcesFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{
-			WireName: "bucket",
-			Kind: "object",
-			Fields: Cluster_StorageResources_BucketFields,
-		},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: Cluster_StorageResources_ConfigFields,
-		},
-		"Filestore": ubx.FieldSpec{
-			WireName: "filestore",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_ExistingFilestoreFields,
-		},
-		"Lustre": ubx.FieldSpec{
-			WireName: "lustre",
-			Kind: "object",
-			Fields: Cluster_StorageResources_Config_ExistingLustreFields,
-		},
-	}
+	"Bucket": ubx.FieldSpec{
+		WireName: "bucket",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_BucketFields,
+	},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_ConfigFields,
+	},
+	"Filestore": ubx.FieldSpec{
+		WireName: "filestore",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_ExistingFilestoreFields,
+	},
+	"Lustre": ubx.FieldSpec{
+		WireName: "lustre",
+		Kind:     "object",
+		Fields:   Cluster_StorageResources_Config_ExistingLustreFields,
+	},
+}
 
 type ClusterConfig struct {
 	// Optional. Compute resources available to the cluster. Keys specify the ID of the compute resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters).
@@ -619,26 +619,26 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeResources": ubx.FieldSpec{
 			WireName: "compute_resources",
-			Kind: "map",
-			Fields: Cluster_ComputeResourcesFields,
+			Kind:     "map",
+			Fields:   Cluster_ComputeResourcesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"NetworkResources": ubx.FieldSpec{
 			WireName: "network_resources",
-			Kind: "map",
-			Fields: Cluster_NetworkResourcesFields,
+			Kind:     "map",
+			Fields:   Cluster_NetworkResourcesFields,
 		},
 		"Orchestrator": ubx.FieldSpec{
 			WireName: "orchestrator",
-			Kind: "object",
-			Fields: Cluster_OrchestratorFields,
+			Kind:     "object",
+			Fields:   Cluster_OrchestratorFields,
 		},
 		"StorageResources": ubx.FieldSpec{
 			WireName: "storage_resources",
-			Kind: "map",
-			Fields: Cluster_StorageResourcesFields,
+			Kind:     "map",
+			Fields:   Cluster_StorageResourcesFields,
 		},
 	},
 }

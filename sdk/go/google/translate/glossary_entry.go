@@ -23,30 +23,30 @@ type GlossaryEntry_TermsSet struct {
 }
 
 var GlossaryEntry_TermsPair_SourceTermFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+}
 
 var GlossaryEntry_TermsPairFields = ubx.FieldMap{
-		"SourceTerm": ubx.FieldSpec{
-			WireName: "source_term",
-			Kind: "object",
-			Fields: GlossaryEntry_TermsPair_SourceTermFields,
-		},
-		"TargetTerm": ubx.FieldSpec{
-			WireName: "target_term",
-			Kind: "object",
-			Fields: GlossaryEntry_TermsPair_SourceTermFields,
-		},
-	}
+	"SourceTerm": ubx.FieldSpec{
+		WireName: "source_term",
+		Kind:     "object",
+		Fields:   GlossaryEntry_TermsPair_SourceTermFields,
+	},
+	"TargetTerm": ubx.FieldSpec{
+		WireName: "target_term",
+		Kind:     "object",
+		Fields:   GlossaryEntry_TermsPair_SourceTermFields,
+	},
+}
 
 var GlossaryEntry_TermsSetFields = ubx.FieldMap{
-		"Terms": ubx.FieldSpec{
-			WireName: "terms",
-			Kind: "list",
-			Fields: GlossaryEntry_TermsPair_SourceTermFields,
-		},
-	}
+	"Terms": ubx.FieldSpec{
+		WireName: "terms",
+		Kind:     "list",
+		Fields:   GlossaryEntry_TermsPair_SourceTermFields,
+	},
+}
 
 type GlossaryEntryConfig struct {
 	// Describes the glossary entry.
@@ -74,16 +74,16 @@ var GlossaryEntry = ubx.ResourceBinding{
 	WireType: "google_translate_glossary_entry",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"TermsPair": ubx.FieldSpec{
 			WireName: "terms_pair",
-			Kind: "object",
-			Fields: GlossaryEntry_TermsPairFields,
+			Kind:     "object",
+			Fields:   GlossaryEntry_TermsPairFields,
 		},
 		"TermsSet": ubx.FieldSpec{
 			WireName: "terms_set",
-			Kind: "object",
-			Fields: GlossaryEntry_TermsSetFields,
+			Kind:     "object",
+			Fields:   GlossaryEntry_TermsSetFields,
 		},
 	},
 }

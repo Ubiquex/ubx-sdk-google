@@ -25,7 +25,7 @@ type V1beta1MonitoredAgentAttrs struct {
 	CreateTime any
 	// Optional. The display name of the MonitoredAgent.
 	DisplayName any
-	Name any
+	Name        any
 	// Output only. The current state of the agent's enablement.
 	State any
 	// Output only. A brief message explaining the current state.

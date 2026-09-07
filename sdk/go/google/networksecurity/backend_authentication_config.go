@@ -43,10 +43,10 @@ var BackendAuthenticationConfig = ubx.ResourceBinding{
 	WireType: "google_networksecurity_backend_authentication_config",
 	Fields: ubx.FieldMap{
 		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
-		"WellKnownRoots": ubx.FieldSpec{WireName: "well_known_roots"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"TrustConfig":       ubx.FieldSpec{WireName: "trust_config"},
+		"WellKnownRoots":    ubx.FieldSpec{WireName: "well_known_roots"},
 	},
 }

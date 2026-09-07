@@ -57,7 +57,7 @@ type AlphaImageFamilyView_Image_RawDisk struct {
 }
 
 type AlphaImageFamilyView_Image_ShieldedInstanceInitialState_Dbs struct {
-	Content any
+	Content  any
 	FileType any
 }
 
@@ -68,7 +68,7 @@ type AlphaImageFamilyView_Image_ShieldedInstanceInitialState struct {
 	Dbxs any
 	// The Key Exchange Key (KEK).
 	Keks any
-	Pk any
+	Pk   any
 }
 
 type AlphaImageFamilyView_Image struct {
@@ -91,7 +91,7 @@ type AlphaImageFamilyView_Image struct {
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
 	GuestOsFeatures any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Id                 any
 	ImageEncryptionKey any
 	// Output only. [Output Only] Type of the resource. Always compute#image for images.
 	Kind any
@@ -124,17 +124,17 @@ type AlphaImageFamilyView_Image struct {
 	// Initial State for shielded instance, these are public keys which are safe to store in public
 	ShieldedInstanceInitialState any
 	// URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceDisk any
+	SourceDisk              any
 	SourceDiskEncryptionKey any
 	// Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
 	SourceDiskId any
 	// URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceImage any
+	SourceImage              any
 	SourceImageEncryptionKey any
 	// Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
 	SourceImageId any
 	// URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceSnapshot any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
 	// Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
 	SourceSnapshotId any
@@ -147,24 +147,24 @@ type AlphaImageFamilyView_Image struct {
 }
 
 type AlphaImageFamilyViewConfig struct {
-	Family any
+	Family  any
 	Project any
-	Zone any
+	Zone    any
 }
 
 type AlphaImageFamilyViewAttrs struct {
 	Family any
 	// Represents an Image resource. You can use images to create boot disks for your VM instances. For more information, read Images.
-	Image any
+	Image   any
 	Project any
-	Zone any
+	Zone    any
 }
 
 var AlphaImageFamilyView = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_image_family_view",
 	Fields: ubx.FieldMap{
-		"Family": ubx.FieldSpec{WireName: "family"},
+		"Family":  ubx.FieldSpec{WireName: "family"},
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":    ubx.FieldSpec{WireName: "zone"},
 	},
 }

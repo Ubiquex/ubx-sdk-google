@@ -40,32 +40,32 @@ type SecurityProfile_ScoringConfigs struct {
 }
 
 var SecurityProfile_EnvironmentsFields = ubx.FieldMap{
-		"AttachTime": ubx.FieldSpec{WireName: "attach_time"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-	}
+	"AttachTime":  ubx.FieldSpec{WireName: "attach_time"},
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+}
 
 var SecurityProfile_ProfileConfig_CategoriesFields = ubx.FieldMap{
-		"Abuse": ubx.FieldSpec{WireName: "abuse"},
-		"Authorization": ubx.FieldSpec{WireName: "authorization"},
-		"Cors": ubx.FieldSpec{WireName: "cors"},
-		"Mediation": ubx.FieldSpec{WireName: "mediation"},
-		"Mtls": ubx.FieldSpec{WireName: "mtls"},
-		"Threat": ubx.FieldSpec{WireName: "threat"},
-	}
+	"Abuse":         ubx.FieldSpec{WireName: "abuse"},
+	"Authorization": ubx.FieldSpec{WireName: "authorization"},
+	"Cors":          ubx.FieldSpec{WireName: "cors"},
+	"Mediation":     ubx.FieldSpec{WireName: "mediation"},
+	"Mtls":          ubx.FieldSpec{WireName: "mtls"},
+	"Threat":        ubx.FieldSpec{WireName: "threat"},
+}
 
 var SecurityProfile_ProfileConfigFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{
-			WireName: "categories",
-			Kind: "list",
-			Fields: SecurityProfile_ProfileConfig_CategoriesFields,
-		},
-	}
+	"Categories": ubx.FieldSpec{
+		WireName: "categories",
+		Kind:     "list",
+		Fields:   SecurityProfile_ProfileConfig_CategoriesFields,
+	},
+}
 
 var SecurityProfile_ScoringConfigsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ScorePath": ubx.FieldSpec{WireName: "score_path"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"ScorePath":   ubx.FieldSpec{WireName: "score_path"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 type SecurityProfileConfig struct {
 	// Description of the security profile.
@@ -116,19 +116,19 @@ var SecurityProfile = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Environments": ubx.FieldSpec{
 			WireName: "environments",
-			Kind: "list",
-			Fields: SecurityProfile_EnvironmentsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_EnvironmentsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProfileConfig": ubx.FieldSpec{
 			WireName: "profile_config",
-			Kind: "object",
-			Fields: SecurityProfile_ProfileConfigFields,
+			Kind:     "object",
+			Fields:   SecurityProfile_ProfileConfigFields,
 		},
 		"ScoringConfigs": ubx.FieldSpec{
 			WireName: "scoring_configs",
-			Kind: "list",
-			Fields: SecurityProfile_ScoringConfigsFields,
+			Kind:     "list",
+			Fields:   SecurityProfile_ScoringConfigsFields,
 		},
 	},
 }

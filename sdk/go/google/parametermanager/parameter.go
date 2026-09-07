@@ -11,9 +11,9 @@ type Parameter_PolicyMember struct {
 }
 
 var Parameter_PolicyMemberFields = ubx.FieldMap{
-		"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
-		"IamPolicyUidPrincipal": ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
-	}
+	"IamPolicyNamePrincipal": ubx.FieldSpec{WireName: "iam_policy_name_principal"},
+	"IamPolicyUidPrincipal":  ubx.FieldSpec{WireName: "iam_policy_uid_principal"},
+}
 
 type ParameterConfig struct {
 	// Optional. Specifies the format of a Parameter.
@@ -51,11 +51,11 @@ var Parameter = ubx.ResourceBinding{
 		"Format": ubx.FieldSpec{WireName: "format"},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PolicyMember": ubx.FieldSpec{
 			WireName: "policy_member",
-			Kind: "object",
-			Fields: Parameter_PolicyMemberFields,
+			Kind:     "object",
+			Fields:   Parameter_PolicyMemberFields,
 		},
 	},
 }

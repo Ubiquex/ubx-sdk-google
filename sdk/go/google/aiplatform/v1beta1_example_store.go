@@ -28,6 +28,5 @@ type V1beta1ExampleStoreAttrs struct {
 
 var V1beta1ExampleStore = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_example_store",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

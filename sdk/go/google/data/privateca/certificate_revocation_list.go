@@ -4,8 +4,8 @@ package privateca
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CertificateRevocationList_RevokedCertificates struct {
-	Certificate any
-	HexSerialNumber any
+	Certificate      any
+	HexSerialNumber  any
 	RevocationReason any
 }
 
@@ -20,7 +20,7 @@ type CertificateRevocationListAttrs struct {
 	CreateTime any
 	// Optional. Labels with user-defined metadata.
 	Labels any
-	Name any
+	Name   any
 	// Output only. The PEM-encoded X.509 CRL.
 	PemCrl any
 	// Output only. The revision ID of this CertificateRevocationList. A new revision is committed whenever a new CRL is published. The format is an 8-character hexadecimal string.

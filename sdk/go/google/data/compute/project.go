@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Project_CommonInstanceMetadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -18,10 +18,10 @@ type Project_CommonInstanceMetadata struct {
 }
 
 type Project_Quotas struct {
-	Limit any
+	Limit  any
 	Metric any
-	Owner any
-	Usage any
+	Owner  any
+	Usage  any
 }
 
 type Project_UsageExportLocation struct {
@@ -55,7 +55,7 @@ type ProjectAttrs struct {
 	// Output only. [Output Only] Type of the resource. Always compute#project for projects.
 	Kind any
 	// The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
-	Name any
+	Name    any
 	Project any
 	// [Output Only] Quotas assigned to this project.
 	Quotas any

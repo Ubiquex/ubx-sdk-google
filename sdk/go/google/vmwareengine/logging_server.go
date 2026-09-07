@@ -36,9 +36,9 @@ type LoggingServerAttrs struct {
 var LoggingServer = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_logging_server",
 	Fields: ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Hostname":   ubx.FieldSpec{WireName: "hostname"},
+		"Port":       ubx.FieldSpec{WireName: "port"},
+		"Protocol":   ubx.FieldSpec{WireName: "protocol"},
 		"SourceType": ubx.FieldSpec{WireName: "source_type"},
 	},
 }

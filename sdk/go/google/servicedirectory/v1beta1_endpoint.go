@@ -38,10 +38,10 @@ type V1beta1EndpointAttrs struct {
 var V1beta1Endpoint = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_v1beta1_endpoint",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
+		"Address":  ubx.FieldSpec{WireName: "address"},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Port": ubx.FieldSpec{WireName: "port"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Network":  ubx.FieldSpec{WireName: "network"},
+		"Port":     ubx.FieldSpec{WireName: "port"},
 	},
 }

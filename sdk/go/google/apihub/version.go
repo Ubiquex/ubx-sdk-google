@@ -63,51 +63,51 @@ type Version_SourceMetadata struct {
 }
 
 var Version_Accreditation_EnumValues_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 var Version_Accreditation_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Version_Accreditation_EnumValues_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Version_Accreditation_EnumValues_ValuesFields,
+	},
+}
 
 var Version_Accreditation_JsonValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Version_AccreditationFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: Version_Accreditation_EnumValuesFields,
-		},
-		"JsonValues": ubx.FieldSpec{
-			WireName: "json_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-		"StringValues": ubx.FieldSpec{
-			WireName: "string_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-		"UriValues": ubx.FieldSpec{
-			WireName: "uri_values",
-			Kind: "object",
-			Fields: Version_Accreditation_JsonValuesFields,
-		},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_EnumValuesFields,
+	},
+	"JsonValues": ubx.FieldSpec{
+		WireName: "json_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+	"StringValues": ubx.FieldSpec{
+		WireName: "string_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+	"UriValues": ubx.FieldSpec{
+		WireName: "uri_values",
+		Kind:     "object",
+		Fields:   Version_Accreditation_JsonValuesFields,
+	},
+}
 
 var Version_DocumentationFields = ubx.FieldMap{
-		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-	}
+	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+}
 
 type VersionConfig struct {
 	// The attribute values associated with resource.
@@ -172,33 +172,33 @@ var Version = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Accreditation": ubx.FieldSpec{
 			WireName: "accreditation",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "map",
-			Fields: Version_AccreditationFields,
+			Kind:     "map",
+			Fields:   Version_AccreditationFields,
 		},
 		"Compliance": ubx.FieldSpec{
 			WireName: "compliance",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
 		"Deployments": ubx.FieldSpec{WireName: "deployments"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: Version_DocumentationFields,
+			Kind:     "object",
+			Fields:   Version_DocumentationFields,
 		},
 		"Lifecycle": ubx.FieldSpec{
 			WireName: "lifecycle",
-			Kind: "object",
-			Fields: Version_AccreditationFields,
+			Kind:     "object",
+			Fields:   Version_AccreditationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SelectedDeployment": ubx.FieldSpec{WireName: "selected_deployment"},
 	},
 }

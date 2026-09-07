@@ -13,10 +13,10 @@ type OauthIdpConfig_ResponseType struct {
 }
 
 var OauthIdpConfig_ResponseTypeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"IdToken": ubx.FieldSpec{WireName: "id_token"},
+	"Token":   ubx.FieldSpec{WireName: "token"},
+}
 
 type OauthIdpConfigConfig struct {
 	// The client id of an OAuth client.
@@ -55,16 +55,16 @@ type OauthIdpConfigAttrs struct {
 var OauthIdpConfig = ubx.ResourceBinding{
 	WireType: "google_identitytoolkit_oauth_idp_config",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":     ubx.FieldSpec{WireName: "client_id"},
 		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+		"Issuer":       ubx.FieldSpec{WireName: "issuer"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"ResponseType": ubx.FieldSpec{
 			WireName: "response_type",
-			Kind: "object",
-			Fields: OauthIdpConfig_ResponseTypeFields,
+			Kind:     "object",
+			Fields:   OauthIdpConfig_ResponseTypeFields,
 		},
 	},
 }

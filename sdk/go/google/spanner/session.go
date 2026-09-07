@@ -19,13 +19,13 @@ type Session_Session struct {
 }
 
 var Session_SessionFields = ubx.FieldMap{
-		"ApproximateLastUseTime": ubx.FieldSpec{WireName: "approximate_last_use_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatorRole": ubx.FieldSpec{WireName: "creator_role"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Multiplexed": ubx.FieldSpec{WireName: "multiplexed"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApproximateLastUseTime": ubx.FieldSpec{WireName: "approximate_last_use_time"},
+	"CreateTime":             ubx.FieldSpec{WireName: "create_time"},
+	"CreatorRole":            ubx.FieldSpec{WireName: "creator_role"},
+	"Labels":                 ubx.FieldSpec{WireName: "labels"},
+	"Multiplexed":            ubx.FieldSpec{WireName: "multiplexed"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+}
 
 type SessionConfig struct {
 	// A session in the Cloud Spanner API.
@@ -54,8 +54,8 @@ var Session = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Session": ubx.FieldSpec{
 			WireName: "session",
-			Kind: "object",
-			Fields: Session_SessionFields,
+			Kind:     "object",
+			Fields:   Session_SessionFields,
 		},
 	},
 }

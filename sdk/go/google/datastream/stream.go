@@ -610,727 +610,727 @@ type Stream_SourceConfig struct {
 }
 
 var Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_FieldsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+}
 
 var Stream_BackfillAll_MongodbExcludedObjects_Databases_CollectionsFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{WireName: "collection"},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_FieldsFields,
-		},
-	}
+	"Collection": ubx.FieldSpec{WireName: "collection"},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjects_Databases_Collections_FieldsFields,
+	},
+}
 
 var Stream_BackfillAll_MongodbExcludedObjects_DatabasesFields = ubx.FieldMap{
-		"Collections": ubx.FieldSpec{
-			WireName: "collections",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MongodbExcludedObjects_Databases_CollectionsFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-	}
+	"Collections": ubx.FieldSpec{
+		WireName: "collections",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjects_Databases_CollectionsFields,
+	},
+	"Database": ubx.FieldSpec{WireName: "database"},
+}
 
 var Stream_BackfillAll_MongodbExcludedObjectsFields = ubx.FieldMap{
-		"Databases": ubx.FieldSpec{
-			WireName: "databases",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MongodbExcludedObjects_DatabasesFields,
-		},
-	}
+	"Databases": ubx.FieldSpec{
+		WireName: "databases",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjects_DatabasesFields,
+	},
+}
 
 var Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields = ubx.FieldMap{
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Collation":       ubx.FieldSpec{WireName: "collation"},
+	"Column":          ubx.FieldSpec{WireName: "column"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"Nullable":        ubx.FieldSpec{WireName: "nullable"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"Precision":       ubx.FieldSpec{WireName: "precision"},
+	"PrimaryKey":      ubx.FieldSpec{WireName: "primary_key"},
+	"Scale":           ubx.FieldSpec{WireName: "scale"},
+}
 
 var Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields = ubx.FieldMap{
-		"MysqlColumns": ubx.FieldSpec{
-			WireName: "mysql_columns",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"MysqlColumns": ubx.FieldSpec{
+		WireName: "mysql_columns",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTables_MysqlColumnsFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"MysqlTables": ubx.FieldSpec{
-			WireName: "mysql_tables",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields,
-		},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"MysqlTables": ubx.FieldSpec{
+		WireName: "mysql_tables",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabases_MysqlTablesFields,
+	},
+}
 
 var Stream_BackfillAll_MysqlExcludedObjectsFields = ubx.FieldMap{
-		"MysqlDatabases": ubx.FieldSpec{
-			WireName: "mysql_databases",
-			Kind: "list",
-			Fields: Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields,
-		},
-	}
+	"MysqlDatabases": ubx.FieldSpec{
+		WireName: "mysql_databases",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjects_MysqlDatabasesFields,
+	},
+}
 
 var Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Column":          ubx.FieldSpec{WireName: "column"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"Encoding":        ubx.FieldSpec{WireName: "encoding"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"Nullable":        ubx.FieldSpec{WireName: "nullable"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"Precision":       ubx.FieldSpec{WireName: "precision"},
+	"PrimaryKey":      ubx.FieldSpec{WireName: "primary_key"},
+	"Scale":           ubx.FieldSpec{WireName: "scale"},
+}
 
 var Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields = ubx.FieldMap{
-		"OracleColumns": ubx.FieldSpec{
-			WireName: "oracle_columns",
-			Kind: "list",
-			Fields: Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"OracleColumns": ubx.FieldSpec{
+		WireName: "oracle_columns",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTables_OracleColumnsFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields = ubx.FieldMap{
-		"OracleTables": ubx.FieldSpec{
-			WireName: "oracle_tables",
-			Kind: "list",
-			Fields: Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields,
-		},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"OracleTables": ubx.FieldSpec{
+		WireName: "oracle_tables",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_OracleExcludedObjects_OracleSchemas_OracleTablesFields,
+	},
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+}
 
 var Stream_BackfillAll_OracleExcludedObjectsFields = ubx.FieldMap{
-		"OracleSchemas": ubx.FieldSpec{
-			WireName: "oracle_schemas",
-			Kind: "list",
-			Fields: Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields,
-		},
-	}
+	"OracleSchemas": ubx.FieldSpec{
+		WireName: "oracle_schemas",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_OracleExcludedObjects_OracleSchemasFields,
+	},
+}
 
 var Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Column":          ubx.FieldSpec{WireName: "column"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"Length":          ubx.FieldSpec{WireName: "length"},
+	"Nullable":        ubx.FieldSpec{WireName: "nullable"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+	"Precision":       ubx.FieldSpec{WireName: "precision"},
+	"PrimaryKey":      ubx.FieldSpec{WireName: "primary_key"},
+	"Scale":           ubx.FieldSpec{WireName: "scale"},
+}
 
 var Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTablesFields = ubx.FieldMap{
-		"PostgresqlColumns": ubx.FieldSpec{
-			WireName: "postgresql_columns",
-			Kind: "list",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumnsFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"PostgresqlColumns": ubx.FieldSpec{
+		WireName: "postgresql_columns",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumnsFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemasFields = ubx.FieldMap{
-		"PostgresqlTables": ubx.FieldSpec{
-			WireName: "postgresql_tables",
-			Kind: "list",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTablesFields,
-		},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"PostgresqlTables": ubx.FieldSpec{
+		WireName: "postgresql_tables",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTablesFields,
+	},
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+}
 
 var Stream_BackfillAll_PostgresqlExcludedObjectsFields = ubx.FieldMap{
-		"PostgresqlSchemas": ubx.FieldSpec{
-			WireName: "postgresql_schemas",
-			Kind: "list",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemasFields,
-		},
-	}
+	"PostgresqlSchemas": ubx.FieldSpec{
+		WireName: "postgresql_schemas",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemasFields,
+	},
+}
 
 var Stream_BackfillAll_SaasExcludedObjects_Objects_PropertiesFields = ubx.FieldMap{
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyName": ubx.FieldSpec{WireName: "property_name"},
-	}
+	"PrimaryKey":   ubx.FieldSpec{WireName: "primary_key"},
+	"Properties":   ubx.FieldSpec{WireName: "properties"},
+	"PropertyName": ubx.FieldSpec{WireName: "property_name"},
+}
 
 var Stream_BackfillAll_SaasExcludedObjects_ObjectsFields = ubx.FieldMap{
-		"ObjectName": ubx.FieldSpec{WireName: "object_name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SaasExcludedObjects_Objects_PropertiesFields,
-		},
-	}
+	"ObjectName": ubx.FieldSpec{WireName: "object_name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SaasExcludedObjects_Objects_PropertiesFields,
+	},
+}
 
 var Stream_BackfillAll_SaasExcludedObjectsFields = ubx.FieldMap{
-		"Objects": ubx.FieldSpec{
-			WireName: "objects",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SaasExcludedObjects_ObjectsFields,
-		},
-	}
+	"Objects": ubx.FieldSpec{
+		WireName: "objects",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SaasExcludedObjects_ObjectsFields,
+	},
+}
 
 var Stream_BackfillAll_SalesforceExcludedObjects_Objects_FieldsFields = ubx.FieldMap{
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nillable": ubx.FieldSpec{WireName: "nillable"},
-	}
+	"DataType": ubx.FieldSpec{WireName: "data_type"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Nillable": ubx.FieldSpec{WireName: "nillable"},
+}
 
 var Stream_BackfillAll_SalesforceExcludedObjects_ObjectsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SalesforceExcludedObjects_Objects_FieldsFields,
-		},
-		"ObjectName": ubx.FieldSpec{WireName: "object_name"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SalesforceExcludedObjects_Objects_FieldsFields,
+	},
+	"ObjectName": ubx.FieldSpec{WireName: "object_name"},
+}
 
 var Stream_BackfillAll_SalesforceExcludedObjectsFields = ubx.FieldMap{
-		"Objects": ubx.FieldSpec{
-			WireName: "objects",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SalesforceExcludedObjects_ObjectsFields,
-		},
-	}
+	"Objects": ubx.FieldSpec{
+		WireName: "objects",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SalesforceExcludedObjects_ObjectsFields,
+	},
+}
 
 var Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_ColumnsFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"IsPrimaryKey": ubx.FieldSpec{WireName: "is_primary_key"},
-		"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
-	}
+	"Column":          ubx.FieldSpec{WireName: "column"},
+	"DataType":        ubx.FieldSpec{WireName: "data_type"},
+	"IsPrimaryKey":    ubx.FieldSpec{WireName: "is_primary_key"},
+	"OrdinalPosition": ubx.FieldSpec{WireName: "ordinal_position"},
+}
 
 var Stream_BackfillAll_SpannerExcludedObjects_Schemas_TablesFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_ColumnsFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjects_Schemas_Tables_ColumnsFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_BackfillAll_SpannerExcludedObjects_SchemasFields = ubx.FieldMap{
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"Tables": ubx.FieldSpec{
-			WireName: "tables",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SpannerExcludedObjects_Schemas_TablesFields,
-		},
-	}
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+	"Tables": ubx.FieldSpec{
+		WireName: "tables",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjects_Schemas_TablesFields,
+	},
+}
 
 var Stream_BackfillAll_SpannerExcludedObjectsFields = ubx.FieldMap{
-		"Schemas": ubx.FieldSpec{
-			WireName: "schemas",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SpannerExcludedObjects_SchemasFields,
-		},
-	}
+	"Schemas": ubx.FieldSpec{
+		WireName: "schemas",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjects_SchemasFields,
+	},
+}
 
 var Stream_BackfillAll_SqlServerExcludedObjects_Schemas_TablesFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumnsFields,
-		},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjects_PostgresqlSchemas_PostgresqlTables_PostgresqlColumnsFields,
+	},
+	"Table": ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_BackfillAll_SqlServerExcludedObjects_SchemasFields = ubx.FieldMap{
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"Tables": ubx.FieldSpec{
-			WireName: "tables",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SqlServerExcludedObjects_Schemas_TablesFields,
-		},
-	}
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+	"Tables": ubx.FieldSpec{
+		WireName: "tables",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SqlServerExcludedObjects_Schemas_TablesFields,
+	},
+}
 
 var Stream_BackfillAll_SqlServerExcludedObjectsFields = ubx.FieldMap{
-		"Schemas": ubx.FieldSpec{
-			WireName: "schemas",
-			Kind: "list",
-			Fields: Stream_BackfillAll_SqlServerExcludedObjects_SchemasFields,
-		},
-	}
+	"Schemas": ubx.FieldSpec{
+		WireName: "schemas",
+		Kind:     "list",
+		Fields:   Stream_BackfillAll_SqlServerExcludedObjects_SchemasFields,
+	},
+}
 
 var Stream_BackfillAllFields = ubx.FieldMap{
-		"MongodbExcludedObjects": ubx.FieldSpec{
-			WireName: "mongodb_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MongodbExcludedObjectsFields,
-		},
-		"MysqlExcludedObjects": ubx.FieldSpec{
-			WireName: "mysql_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-		"OracleExcludedObjects": ubx.FieldSpec{
-			WireName: "oracle_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-		"PostgresqlExcludedObjects": ubx.FieldSpec{
-			WireName: "postgresql_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjectsFields,
-		},
-		"SaasExcludedObjects": ubx.FieldSpec{
-			WireName: "saas_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SaasExcludedObjectsFields,
-		},
-		"SalesforceExcludedObjects": ubx.FieldSpec{
-			WireName: "salesforce_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SalesforceExcludedObjectsFields,
-		},
-		"SpannerExcludedObjects": ubx.FieldSpec{
-			WireName: "spanner_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SpannerExcludedObjectsFields,
-		},
-		"SqlServerExcludedObjects": ubx.FieldSpec{
-			WireName: "sql_server_excluded_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SqlServerExcludedObjectsFields,
-		},
-	}
+	"MongodbExcludedObjects": ubx.FieldSpec{
+		WireName: "mongodb_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjectsFields,
+	},
+	"MysqlExcludedObjects": ubx.FieldSpec{
+		WireName: "mysql_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+	"OracleExcludedObjects": ubx.FieldSpec{
+		WireName: "oracle_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+	"PostgresqlExcludedObjects": ubx.FieldSpec{
+		WireName: "postgresql_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjectsFields,
+	},
+	"SaasExcludedObjects": ubx.FieldSpec{
+		WireName: "saas_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SaasExcludedObjectsFields,
+	},
+	"SalesforceExcludedObjects": ubx.FieldSpec{
+		WireName: "salesforce_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SalesforceExcludedObjectsFields,
+	},
+	"SpannerExcludedObjects": ubx.FieldSpec{
+		WireName: "spanner_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjectsFields,
+	},
+	"SqlServerExcludedObjects": ubx.FieldSpec{
+		WireName: "sql_server_excluded_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SqlServerExcludedObjectsFields,
+	},
+}
 
 var Stream_DestinationConfig_BigqueryDestinationConfig_BlmtConfigFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-		"RootPath": ubx.FieldSpec{WireName: "root_path"},
-		"TableFormat": ubx.FieldSpec{WireName: "table_format"},
-	}
+	"Bucket":         ubx.FieldSpec{WireName: "bucket"},
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"FileFormat":     ubx.FieldSpec{WireName: "file_format"},
+	"RootPath":       ubx.FieldSpec{WireName: "root_path"},
+	"TableFormat":    ubx.FieldSpec{WireName: "table_format"},
+}
 
 var Stream_DestinationConfig_BigqueryDestinationConfig_SingleTargetDatasetFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+}
 
 var Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasets_DatasetTemplateFields = ubx.FieldMap{
-		"DatasetIdPrefix": ubx.FieldSpec{WireName: "dataset_id_prefix"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"DatasetIdPrefix": ubx.FieldSpec{WireName: "dataset_id_prefix"},
+	"KmsKeyName":      ubx.FieldSpec{WireName: "kms_key_name"},
+	"Location":        ubx.FieldSpec{WireName: "location"},
+}
 
 var Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasetsFields = ubx.FieldMap{
-		"DatasetTemplate": ubx.FieldSpec{
-			WireName: "dataset_template",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasets_DatasetTemplateFields,
-		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"DatasetTemplate": ubx.FieldSpec{
+		WireName: "dataset_template",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasets_DatasetTemplateFields,
+	},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Stream_DestinationConfig_BigqueryDestinationConfigFields = ubx.FieldMap{
-		"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
-		"BlmtConfig": ubx.FieldSpec{
-			WireName: "blmt_config",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_BigqueryDestinationConfig_BlmtConfigFields,
-		},
-		"DataFreshness": ubx.FieldSpec{WireName: "data_freshness"},
-		"Merge": ubx.FieldSpec{WireName: "merge"},
-		"SingleTargetDataset": ubx.FieldSpec{
-			WireName: "single_target_dataset",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_BigqueryDestinationConfig_SingleTargetDatasetFields,
-		},
-		"SourceHierarchyDatasets": ubx.FieldSpec{
-			WireName: "source_hierarchy_datasets",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasetsFields,
-		},
-	}
+	"AppendOnly": ubx.FieldSpec{WireName: "append_only"},
+	"BlmtConfig": ubx.FieldSpec{
+		WireName: "blmt_config",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_BigqueryDestinationConfig_BlmtConfigFields,
+	},
+	"DataFreshness": ubx.FieldSpec{WireName: "data_freshness"},
+	"Merge":         ubx.FieldSpec{WireName: "merge"},
+	"SingleTargetDataset": ubx.FieldSpec{
+		WireName: "single_target_dataset",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_BigqueryDestinationConfig_SingleTargetDatasetFields,
+	},
+	"SourceHierarchyDatasets": ubx.FieldSpec{
+		WireName: "source_hierarchy_datasets",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_BigqueryDestinationConfig_SourceHierarchyDatasetsFields,
+	},
+}
 
 var Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields = ubx.FieldMap{
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"SchemaFileFormat": ubx.FieldSpec{WireName: "schema_file_format"},
-	}
+	"Compression":      ubx.FieldSpec{WireName: "compression"},
+	"SchemaFileFormat": ubx.FieldSpec{WireName: "schema_file_format"},
+}
 
 var Stream_DestinationConfig_GcsDestinationConfigFields = ubx.FieldMap{
-		"AvroFileFormat": ubx.FieldSpec{WireName: "avro_file_format"},
-		"FileRotationInterval": ubx.FieldSpec{WireName: "file_rotation_interval"},
-		"FileRotationMb": ubx.FieldSpec{WireName: "file_rotation_mb"},
-		"JsonFileFormat": ubx.FieldSpec{
-			WireName: "json_file_format",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"AvroFileFormat":       ubx.FieldSpec{WireName: "avro_file_format"},
+	"FileRotationInterval": ubx.FieldSpec{WireName: "file_rotation_interval"},
+	"FileRotationMb":       ubx.FieldSpec{WireName: "file_rotation_mb"},
+	"JsonFileFormat": ubx.FieldSpec{
+		WireName: "json_file_format",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_GcsDestinationConfig_JsonFileFormatFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Stream_DestinationConfigFields = ubx.FieldMap{
-		"BigqueryDestinationConfig": ubx.FieldSpec{
-			WireName: "bigquery_destination_config",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_BigqueryDestinationConfigFields,
-		},
-		"DestinationConnectionProfile": ubx.FieldSpec{WireName: "destination_connection_profile"},
-		"GcsDestinationConfig": ubx.FieldSpec{
-			WireName: "gcs_destination_config",
-			Kind: "object",
-			Fields: Stream_DestinationConfig_GcsDestinationConfigFields,
-		},
-	}
+	"BigqueryDestinationConfig": ubx.FieldSpec{
+		WireName: "bigquery_destination_config",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_BigqueryDestinationConfigFields,
+	},
+	"DestinationConnectionProfile": ubx.FieldSpec{WireName: "destination_connection_profile"},
+	"GcsDestinationConfig": ubx.FieldSpec{
+		WireName: "gcs_destination_config",
+		Kind:     "object",
+		Fields:   Stream_DestinationConfig_GcsDestinationConfigFields,
+	},
+}
 
 var Stream_RuleSets_CustomizationRules_BigqueryClusteringFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-	}
+	"Columns": ubx.FieldSpec{WireName: "columns"},
+}
 
 var Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartitionFields = ubx.FieldMap{
-		"PartitioningTimeGranularity": ubx.FieldSpec{WireName: "partitioning_time_granularity"},
-	}
+	"PartitioningTimeGranularity": ubx.FieldSpec{WireName: "partitioning_time_granularity"},
+}
 
 var Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartitionFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"Column":   ubx.FieldSpec{WireName: "column"},
+	"End":      ubx.FieldSpec{WireName: "end"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+}
 
 var Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartitionFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"PartitioningTimeGranularity": ubx.FieldSpec{WireName: "partitioning_time_granularity"},
-	}
+	"Column":                      ubx.FieldSpec{WireName: "column"},
+	"PartitioningTimeGranularity": ubx.FieldSpec{WireName: "partitioning_time_granularity"},
+}
 
 var Stream_RuleSets_CustomizationRules_BigqueryPartitioningFields = ubx.FieldMap{
-		"IngestionTimePartition": ubx.FieldSpec{
-			WireName: "ingestion_time_partition",
-			Kind: "object",
-			Fields: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartitionFields,
-		},
-		"IntegerRangePartition": ubx.FieldSpec{
-			WireName: "integer_range_partition",
-			Kind: "object",
-			Fields: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartitionFields,
-		},
-		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"TimeUnitPartition": ubx.FieldSpec{
-			WireName: "time_unit_partition",
-			Kind: "object",
-			Fields: Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartitionFields,
-		},
-	}
+	"IngestionTimePartition": ubx.FieldSpec{
+		WireName: "ingestion_time_partition",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IngestionTimePartitionFields,
+	},
+	"IntegerRangePartition": ubx.FieldSpec{
+		WireName: "integer_range_partition",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_CustomizationRules_BigqueryPartitioning_IntegerRangePartitionFields,
+	},
+	"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
+	"TimeUnitPartition": ubx.FieldSpec{
+		WireName: "time_unit_partition",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_CustomizationRules_BigqueryPartitioning_TimeUnitPartitionFields,
+	},
+}
 
 var Stream_RuleSets_CustomizationRulesFields = ubx.FieldMap{
-		"BigqueryClustering": ubx.FieldSpec{
-			WireName: "bigquery_clustering",
-			Kind: "object",
-			Fields: Stream_RuleSets_CustomizationRules_BigqueryClusteringFields,
-		},
-		"BigqueryPartitioning": ubx.FieldSpec{
-			WireName: "bigquery_partitioning",
-			Kind: "object",
-			Fields: Stream_RuleSets_CustomizationRules_BigqueryPartitioningFields,
-		},
-	}
+	"BigqueryClustering": ubx.FieldSpec{
+		WireName: "bigquery_clustering",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_CustomizationRules_BigqueryClusteringFields,
+	},
+	"BigqueryPartitioning": ubx.FieldSpec{
+		WireName: "bigquery_partitioning",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_CustomizationRules_BigqueryPartitioningFields,
+	},
+}
 
 var Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifierFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{WireName: "collection"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-	}
+	"Collection": ubx.FieldSpec{WireName: "collection"},
+	"Database":   ubx.FieldSpec{WireName: "database"},
+}
 
 var Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifierFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Table":    ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields = ubx.FieldMap{
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Schema": ubx.FieldSpec{WireName: "schema"},
+	"Table":  ubx.FieldSpec{WireName: "table"},
+}
 
 var Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifierFields = ubx.FieldMap{
-		"ObjectName": ubx.FieldSpec{WireName: "object_name"},
-	}
+	"ObjectName": ubx.FieldSpec{WireName: "object_name"},
+}
 
 var Stream_RuleSets_ObjectFilter_SourceObjectIdentifierFields = ubx.FieldMap{
-		"MongodbIdentifier": ubx.FieldSpec{
-			WireName: "mongodb_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifierFields,
-		},
-		"MysqlIdentifier": ubx.FieldSpec{
-			WireName: "mysql_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifierFields,
-		},
-		"OracleIdentifier": ubx.FieldSpec{
-			WireName: "oracle_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
-		},
-		"PostgresqlIdentifier": ubx.FieldSpec{
-			WireName: "postgresql_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
-		},
-		"SalesforceIdentifier": ubx.FieldSpec{
-			WireName: "salesforce_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifierFields,
-		},
-		"SpannerIdentifier": ubx.FieldSpec{
-			WireName: "spanner_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
-		},
-		"SqlServerIdentifier": ubx.FieldSpec{
-			WireName: "sql_server_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
-		},
-	}
+	"MongodbIdentifier": ubx.FieldSpec{
+		WireName: "mongodb_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MongodbIdentifierFields,
+	},
+	"MysqlIdentifier": ubx.FieldSpec{
+		WireName: "mysql_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_MysqlIdentifierFields,
+	},
+	"OracleIdentifier": ubx.FieldSpec{
+		WireName: "oracle_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
+	},
+	"PostgresqlIdentifier": ubx.FieldSpec{
+		WireName: "postgresql_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
+	},
+	"SalesforceIdentifier": ubx.FieldSpec{
+		WireName: "salesforce_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_SalesforceIdentifierFields,
+	},
+	"SpannerIdentifier": ubx.FieldSpec{
+		WireName: "spanner_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
+	},
+	"SqlServerIdentifier": ubx.FieldSpec{
+		WireName: "sql_server_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifier_OracleIdentifierFields,
+	},
+}
 
 var Stream_RuleSets_ObjectFilterFields = ubx.FieldMap{
-		"SourceObjectIdentifier": ubx.FieldSpec{
-			WireName: "source_object_identifier",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilter_SourceObjectIdentifierFields,
-		},
-	}
+	"SourceObjectIdentifier": ubx.FieldSpec{
+		WireName: "source_object_identifier",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilter_SourceObjectIdentifierFields,
+	},
+}
 
 var Stream_RuleSetsFields = ubx.FieldMap{
-		"CustomizationRules": ubx.FieldSpec{
-			WireName: "customization_rules",
-			Kind: "list",
-			Fields: Stream_RuleSets_CustomizationRulesFields,
-		},
-		"ObjectFilter": ubx.FieldSpec{
-			WireName: "object_filter",
-			Kind: "object",
-			Fields: Stream_RuleSets_ObjectFilterFields,
-		},
-	}
+	"CustomizationRules": ubx.FieldSpec{
+		WireName: "customization_rules",
+		Kind:     "list",
+		Fields:   Stream_RuleSets_CustomizationRulesFields,
+	},
+	"ObjectFilter": ubx.FieldSpec{
+		WireName: "object_filter",
+		Kind:     "object",
+		Fields:   Stream_RuleSets_ObjectFilterFields,
+	},
+}
 
 var Stream_SourceConfig_DataverseSourceConfigFields = ubx.FieldMap{
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SaasExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SaasExcludedObjectsFields,
-		},
-		"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
-	}
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SaasExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SaasExcludedObjectsFields,
+	},
+	"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
+}
 
 var Stream_SourceConfig_MongodbSourceConfigFields = ubx.FieldMap{
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MongodbExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MongodbExcludedObjectsFields,
-		},
-		"JsonMode": ubx.FieldSpec{WireName: "json_mode"},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-	}
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MongodbExcludedObjectsFields,
+	},
+	"JsonMode":                   ubx.FieldSpec{WireName: "json_mode"},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+}
 
 var Stream_SourceConfig_MysqlSourceConfigFields = ubx.FieldMap{
-		"BinaryLogPosition": ubx.FieldSpec{WireName: "binary_log_position"},
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-		"Gtid": ubx.FieldSpec{WireName: "gtid"},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_MysqlExcludedObjectsFields,
-		},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-		"MaxConcurrentCdcTasks": ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
-	}
+	"BinaryLogPosition": ubx.FieldSpec{WireName: "binary_log_position"},
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+	"Gtid": ubx.FieldSpec{WireName: "gtid"},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_MysqlExcludedObjectsFields,
+	},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+	"MaxConcurrentCdcTasks":      ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
+}
 
 var Stream_SourceConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields = ubx.FieldMap{
-		"ArchivedLogDirectory": ubx.FieldSpec{WireName: "archived_log_directory"},
-		"OnlineLogDirectory": ubx.FieldSpec{WireName: "online_log_directory"},
-	}
+	"ArchivedLogDirectory": ubx.FieldSpec{WireName: "archived_log_directory"},
+	"OnlineLogDirectory":   ubx.FieldSpec{WireName: "online_log_directory"},
+}
 
 var Stream_SourceConfig_OracleSourceConfig_BinaryLogParserFields = ubx.FieldMap{
-		"LogFileDirectories": ubx.FieldSpec{
-			WireName: "log_file_directories",
-			Kind: "object",
-			Fields: Stream_SourceConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields,
-		},
-		"OracleAsmLogFileAccess": ubx.FieldSpec{WireName: "oracle_asm_log_file_access"},
-	}
+	"LogFileDirectories": ubx.FieldSpec{
+		WireName: "log_file_directories",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_OracleSourceConfig_BinaryLogParser_LogFileDirectoriesFields,
+	},
+	"OracleAsmLogFileAccess": ubx.FieldSpec{WireName: "oracle_asm_log_file_access"},
+}
 
 var Stream_SourceConfig_OracleSourceConfigFields = ubx.FieldMap{
-		"BinaryLogParser": ubx.FieldSpec{
-			WireName: "binary_log_parser",
-			Kind: "object",
-			Fields: Stream_SourceConfig_OracleSourceConfig_BinaryLogParserFields,
-		},
-		"DropLargeObjects": ubx.FieldSpec{WireName: "drop_large_objects"},
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_OracleExcludedObjectsFields,
-		},
-		"LogMiner": ubx.FieldSpec{WireName: "log_miner"},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-		"MaxConcurrentCdcTasks": ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
-		"StreamLargeObjects": ubx.FieldSpec{WireName: "stream_large_objects"},
-	}
+	"BinaryLogParser": ubx.FieldSpec{
+		WireName: "binary_log_parser",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_OracleSourceConfig_BinaryLogParserFields,
+	},
+	"DropLargeObjects": ubx.FieldSpec{WireName: "drop_large_objects"},
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_OracleExcludedObjectsFields,
+	},
+	"LogMiner":                   ubx.FieldSpec{WireName: "log_miner"},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+	"MaxConcurrentCdcTasks":      ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
+	"StreamLargeObjects":         ubx.FieldSpec{WireName: "stream_large_objects"},
+}
 
 var Stream_SourceConfig_PostgresqlSourceConfigFields = ubx.FieldMap{
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_PostgresqlExcludedObjectsFields,
-		},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-		"Publication": ubx.FieldSpec{WireName: "publication"},
-		"ReplicationSlot": ubx.FieldSpec{WireName: "replication_slot"},
-	}
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_PostgresqlExcludedObjectsFields,
+	},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+	"Publication":                ubx.FieldSpec{WireName: "publication"},
+	"ReplicationSlot":            ubx.FieldSpec{WireName: "replication_slot"},
+}
 
 var Stream_SourceConfig_SalesforceMarketingCloudSourceConfigFields = ubx.FieldMap{
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SaasExcludedObjectsFields,
-		},
-		"FullRefreshPollingInterval": ubx.FieldSpec{WireName: "full_refresh_polling_interval"},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SaasExcludedObjectsFields,
-		},
-		"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
-	}
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SaasExcludedObjectsFields,
+	},
+	"FullRefreshPollingInterval": ubx.FieldSpec{WireName: "full_refresh_polling_interval"},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SaasExcludedObjectsFields,
+	},
+	"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
+}
 
 var Stream_SourceConfig_SalesforceSourceConfigFields = ubx.FieldMap{
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SalesforceExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SalesforceExcludedObjectsFields,
-		},
-		"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
-	}
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SalesforceExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SalesforceExcludedObjectsFields,
+	},
+	"PollingInterval": ubx.FieldSpec{WireName: "polling_interval"},
+}
 
 var Stream_SourceConfig_SpannerSourceConfigFields = ubx.FieldMap{
-		"BackfillDataBoostEnabled": ubx.FieldSpec{WireName: "backfill_data_boost_enabled"},
-		"ChangeStreamName": ubx.FieldSpec{WireName: "change_stream_name"},
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SpannerExcludedObjectsFields,
-		},
-		"FgacRole": ubx.FieldSpec{WireName: "fgac_role"},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SpannerExcludedObjectsFields,
-		},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-		"MaxConcurrentCdcTasks": ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
-		"SpannerRpcPriority": ubx.FieldSpec{WireName: "spanner_rpc_priority"},
-	}
+	"BackfillDataBoostEnabled": ubx.FieldSpec{WireName: "backfill_data_boost_enabled"},
+	"ChangeStreamName":         ubx.FieldSpec{WireName: "change_stream_name"},
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjectsFields,
+	},
+	"FgacRole": ubx.FieldSpec{WireName: "fgac_role"},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SpannerExcludedObjectsFields,
+	},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+	"MaxConcurrentCdcTasks":      ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
+	"SpannerRpcPriority":         ubx.FieldSpec{WireName: "spanner_rpc_priority"},
+}
 
 var Stream_SourceConfig_SqlServerSourceConfigFields = ubx.FieldMap{
-		"ChangeTables": ubx.FieldSpec{WireName: "change_tables"},
-		"ExcludeObjects": ubx.FieldSpec{
-			WireName: "exclude_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SqlServerExcludedObjectsFields,
-		},
-		"IncludeObjects": ubx.FieldSpec{
-			WireName: "include_objects",
-			Kind: "object",
-			Fields: Stream_BackfillAll_SqlServerExcludedObjectsFields,
-		},
-		"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
-		"MaxConcurrentCdcTasks": ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
-		"TransactionLogs": ubx.FieldSpec{WireName: "transaction_logs"},
-	}
+	"ChangeTables": ubx.FieldSpec{WireName: "change_tables"},
+	"ExcludeObjects": ubx.FieldSpec{
+		WireName: "exclude_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SqlServerExcludedObjectsFields,
+	},
+	"IncludeObjects": ubx.FieldSpec{
+		WireName: "include_objects",
+		Kind:     "object",
+		Fields:   Stream_BackfillAll_SqlServerExcludedObjectsFields,
+	},
+	"MaxConcurrentBackfillTasks": ubx.FieldSpec{WireName: "max_concurrent_backfill_tasks"},
+	"MaxConcurrentCdcTasks":      ubx.FieldSpec{WireName: "max_concurrent_cdc_tasks"},
+	"TransactionLogs":            ubx.FieldSpec{WireName: "transaction_logs"},
+}
 
 var Stream_SourceConfigFields = ubx.FieldMap{
-		"DataverseSourceConfig": ubx.FieldSpec{
-			WireName: "dataverse_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_DataverseSourceConfigFields,
-		},
-		"MongodbSourceConfig": ubx.FieldSpec{
-			WireName: "mongodb_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_MongodbSourceConfigFields,
-		},
-		"MysqlSourceConfig": ubx.FieldSpec{
-			WireName: "mysql_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_MysqlSourceConfigFields,
-		},
-		"OracleSourceConfig": ubx.FieldSpec{
-			WireName: "oracle_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_OracleSourceConfigFields,
-		},
-		"PostgresqlSourceConfig": ubx.FieldSpec{
-			WireName: "postgresql_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_PostgresqlSourceConfigFields,
-		},
-		"SalesforceMarketingCloudSourceConfig": ubx.FieldSpec{
-			WireName: "salesforce_marketing_cloud_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_SalesforceMarketingCloudSourceConfigFields,
-		},
-		"SalesforceSourceConfig": ubx.FieldSpec{
-			WireName: "salesforce_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_SalesforceSourceConfigFields,
-		},
-		"ServiceNowSourceConfig": ubx.FieldSpec{
-			WireName: "service_now_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_DataverseSourceConfigFields,
-		},
-		"SourceConnectionProfile": ubx.FieldSpec{WireName: "source_connection_profile"},
-		"SpannerSourceConfig": ubx.FieldSpec{
-			WireName: "spanner_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_SpannerSourceConfigFields,
-		},
-		"SqlServerSourceConfig": ubx.FieldSpec{
-			WireName: "sql_server_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_SqlServerSourceConfigFields,
-		},
-		"WorkdaySourceConfig": ubx.FieldSpec{
-			WireName: "workday_source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfig_DataverseSourceConfigFields,
-		},
-	}
+	"DataverseSourceConfig": ubx.FieldSpec{
+		WireName: "dataverse_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_DataverseSourceConfigFields,
+	},
+	"MongodbSourceConfig": ubx.FieldSpec{
+		WireName: "mongodb_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_MongodbSourceConfigFields,
+	},
+	"MysqlSourceConfig": ubx.FieldSpec{
+		WireName: "mysql_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_MysqlSourceConfigFields,
+	},
+	"OracleSourceConfig": ubx.FieldSpec{
+		WireName: "oracle_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_OracleSourceConfigFields,
+	},
+	"PostgresqlSourceConfig": ubx.FieldSpec{
+		WireName: "postgresql_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_PostgresqlSourceConfigFields,
+	},
+	"SalesforceMarketingCloudSourceConfig": ubx.FieldSpec{
+		WireName: "salesforce_marketing_cloud_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_SalesforceMarketingCloudSourceConfigFields,
+	},
+	"SalesforceSourceConfig": ubx.FieldSpec{
+		WireName: "salesforce_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_SalesforceSourceConfigFields,
+	},
+	"ServiceNowSourceConfig": ubx.FieldSpec{
+		WireName: "service_now_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_DataverseSourceConfigFields,
+	},
+	"SourceConnectionProfile": ubx.FieldSpec{WireName: "source_connection_profile"},
+	"SpannerSourceConfig": ubx.FieldSpec{
+		WireName: "spanner_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_SpannerSourceConfigFields,
+	},
+	"SqlServerSourceConfig": ubx.FieldSpec{
+		WireName: "sql_server_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_SqlServerSourceConfigFields,
+	},
+	"WorkdaySourceConfig": ubx.FieldSpec{
+		WireName: "workday_source_config",
+		Kind:     "object",
+		Fields:   Stream_SourceConfig_DataverseSourceConfigFields,
+	},
+}
 
 type StreamConfig struct {
 	// Backfill strategy to automatically backfill the Stream's objects. Specific objects can be excluded.
@@ -1393,27 +1393,27 @@ var Stream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BackfillAll": ubx.FieldSpec{
 			WireName: "backfill_all",
-			Kind: "object",
-			Fields: Stream_BackfillAllFields,
+			Kind:     "object",
+			Fields:   Stream_BackfillAllFields,
 		},
-		"BackfillNone": ubx.FieldSpec{WireName: "backfill_none"},
+		"BackfillNone":                 ubx.FieldSpec{WireName: "backfill_none"},
 		"CustomerManagedEncryptionKey": ubx.FieldSpec{WireName: "customer_managed_encryption_key"},
 		"DestinationConfig": ubx.FieldSpec{
 			WireName: "destination_config",
-			Kind: "object",
-			Fields: Stream_DestinationConfigFields,
+			Kind:     "object",
+			Fields:   Stream_DestinationConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"RuleSets": ubx.FieldSpec{
 			WireName: "rule_sets",
-			Kind: "list",
-			Fields: Stream_RuleSetsFields,
+			Kind:     "list",
+			Fields:   Stream_RuleSetsFields,
 		},
 		"SourceConfig": ubx.FieldSpec{
 			WireName: "source_config",
-			Kind: "object",
-			Fields: Stream_SourceConfigFields,
+			Kind:     "object",
+			Fields:   Stream_SourceConfigFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

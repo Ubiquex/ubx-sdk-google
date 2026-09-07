@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaSchema_Datasources_HttpGraphql struct {
 	Timeout any
-	Uri any
+	Uri     any
 }
 
 type V1betaSchema_Datasources_Postgresql_CloudSql struct {
-	Edition any
+	Edition  any
 	Instance any
 }
 
 type V1betaSchema_Datasources_Postgresql struct {
-	CloudSql any
-	Database any
-	Ephemeral any
-	Schema any
-	SchemaMigration any
+	CloudSql         any
+	Database         any
+	Ephemeral        any
+	Schema           any
+	SchemaMigration  any
 	SchemaValidation any
-	Unlinked any
+	Unlinked         any
 }
 
 type V1betaSchema_Datasources struct {
 	HttpGraphql any
-	Postgresql any
+	Postgresql  any
 }
 
 type V1betaSchema_Source_Files struct {
 	Content any
-	Path any
+	Path    any
 }
 
 type V1betaSchema_Source struct {
@@ -39,54 +39,54 @@ type V1betaSchema_Source struct {
 }
 
 var V1betaSchema_Datasources_HttpGraphqlFields = ubx.FieldMap{
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+	"Uri":     ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1betaSchema_Datasources_Postgresql_CloudSqlFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-	}
+	"Edition":  ubx.FieldSpec{WireName: "edition"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+}
 
 var V1betaSchema_Datasources_PostgresqlFields = ubx.FieldMap{
-		"CloudSql": ubx.FieldSpec{
-			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: V1betaSchema_Datasources_Postgresql_CloudSqlFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Ephemeral": ubx.FieldSpec{WireName: "ephemeral"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SchemaMigration": ubx.FieldSpec{WireName: "schema_migration"},
-		"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
-		"Unlinked": ubx.FieldSpec{WireName: "unlinked"},
-	}
+	"CloudSql": ubx.FieldSpec{
+		WireName: "cloud_sql",
+		Kind:     "object",
+		Fields:   V1betaSchema_Datasources_Postgresql_CloudSqlFields,
+	},
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"Ephemeral":        ubx.FieldSpec{WireName: "ephemeral"},
+	"Schema":           ubx.FieldSpec{WireName: "schema"},
+	"SchemaMigration":  ubx.FieldSpec{WireName: "schema_migration"},
+	"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
+	"Unlinked":         ubx.FieldSpec{WireName: "unlinked"},
+}
 
 var V1betaSchema_DatasourcesFields = ubx.FieldMap{
-		"HttpGraphql": ubx.FieldSpec{
-			WireName: "http_graphql",
-			Kind: "object",
-			Fields: V1betaSchema_Datasources_HttpGraphqlFields,
-		},
-		"Postgresql": ubx.FieldSpec{
-			WireName: "postgresql",
-			Kind: "object",
-			Fields: V1betaSchema_Datasources_PostgresqlFields,
-		},
-	}
+	"HttpGraphql": ubx.FieldSpec{
+		WireName: "http_graphql",
+		Kind:     "object",
+		Fields:   V1betaSchema_Datasources_HttpGraphqlFields,
+	},
+	"Postgresql": ubx.FieldSpec{
+		WireName: "postgresql",
+		Kind:     "object",
+		Fields:   V1betaSchema_Datasources_PostgresqlFields,
+	},
+}
 
 var V1betaSchema_Source_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+}
 
 var V1betaSchema_SourceFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: V1betaSchema_Source_FilesFields,
-		},
-	}
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   V1betaSchema_Source_FilesFields,
+	},
+}
 
 type V1betaSchemaConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -134,16 +134,16 @@ var V1betaSchema = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Datasources": ubx.FieldSpec{
 			WireName: "datasources",
-			Kind: "list",
-			Fields: V1betaSchema_DatasourcesFields,
+			Kind:     "list",
+			Fields:   V1betaSchema_DatasourcesFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: V1betaSchema_SourceFields,
+			Kind:     "object",
+			Fields:   V1betaSchema_SourceFields,
 		},
 	},
 }

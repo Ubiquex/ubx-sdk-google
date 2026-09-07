@@ -46,7 +46,7 @@ type AlertAttrs struct {
 	Metadata any
 	// A specific metric, identified by specifying values for all of the labels of a MetricDescriptor.
 	Metric any
-	Name any
+	Name   any
 	// The time when the alert was opened.
 	OpenTime any
 	// The state of the policy at the time the alert was generated.

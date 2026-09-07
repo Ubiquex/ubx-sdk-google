@@ -115,136 +115,136 @@ type ConnectorConfig_Status struct {
 }
 
 var ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields = ubx.FieldMap{
-		"EnabledDefaultEvents": ubx.FieldSpec{WireName: "enabled_default_events"},
-		"EnabledDeviceEvents": ubx.FieldSpec{WireName: "enabled_device_events"},
-		"EnabledOptInEvents": ubx.FieldSpec{WireName: "enabled_opt_in_events"},
-	}
+	"EnabledDefaultEvents": ubx.FieldSpec{WireName: "enabled_default_events"},
+	"EnabledDeviceEvents":  ubx.FieldSpec{WireName: "enabled_device_events"},
+	"EnabledOptInEvents":   ubx.FieldSpec{WireName: "enabled_opt_in_events"},
+}
 
 var ConnectorConfig_Details_CrowdStrikeConfigFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"ReportingSettings": ubx.FieldSpec{
-			WireName: "reporting_settings",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
-		},
-	}
+	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+	"Host":   ubx.FieldSpec{WireName: "host"},
+	"ReportingSettings": ubx.FieldSpec{
+		WireName: "reporting_settings",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
+	},
+}
 
 var ConnectorConfig_Details_CrowdStrikeXdrConfig_XdrSettingsFields = ubx.FieldMap{
-		"EnableAllXdrEvents": ubx.FieldSpec{WireName: "enable_all_xdr_events"},
-	}
+	"EnableAllXdrEvents": ubx.FieldSpec{WireName: "enable_all_xdr_events"},
+}
 
 var ConnectorConfig_Details_CrowdStrikeXdrConfigFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"XdrSettings": ubx.FieldSpec{
-			WireName: "xdr_settings",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeXdrConfig_XdrSettingsFields,
-		},
-	}
+	"ApiKey": ubx.FieldSpec{WireName: "api_key"},
+	"Host":   ubx.FieldSpec{WireName: "host"},
+	"XdrSettings": ubx.FieldSpec{
+		WireName: "xdr_settings",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeXdrConfig_XdrSettingsFields,
+	},
+}
 
 var ConnectorConfig_Details_DeviceTrustConfigFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccounts": ubx.FieldSpec{WireName: "service_accounts"},
-		"ServiceProvider": ubx.FieldSpec{WireName: "service_provider"},
-		"UrlMatchers": ubx.FieldSpec{WireName: "url_matchers"},
-	}
+	"Scope":           ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccounts": ubx.FieldSpec{WireName: "service_accounts"},
+	"ServiceProvider": ubx.FieldSpec{WireName: "service_provider"},
+	"UrlMatchers":     ubx.FieldSpec{WireName: "url_matchers"},
+}
 
 var ConnectorConfig_Details_MipLabelConfigFields = ubx.FieldMap{
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"MicrosoftTenantId": ubx.FieldSpec{WireName: "microsoft_tenant_id"},
-	}
+	"Domains":           ubx.FieldSpec{WireName: "domains"},
+	"MicrosoftTenantId": ubx.FieldSpec{WireName: "microsoft_tenant_id"},
+}
 
 var ConnectorConfig_Details_PubSubConfigFields = ubx.FieldMap{
-		"ReportingSettings": ubx.FieldSpec{
-			WireName: "reporting_settings",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
-		},
-		"TopicFullPath": ubx.FieldSpec{WireName: "topic_full_path"},
-	}
+	"ReportingSettings": ubx.FieldSpec{
+		WireName: "reporting_settings",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
+	},
+	"TopicFullPath": ubx.FieldSpec{WireName: "topic_full_path"},
+}
 
 var ConnectorConfig_Details_PubSubXdrConfigFields = ubx.FieldMap{
-		"TopicFullPath": ubx.FieldSpec{WireName: "topic_full_path"},
-		"XdrSettings": ubx.FieldSpec{
-			WireName: "xdr_settings",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeXdrConfig_XdrSettingsFields,
-		},
-	}
+	"TopicFullPath": ubx.FieldSpec{WireName: "topic_full_path"},
+	"XdrSettings": ubx.FieldSpec{
+		WireName: "xdr_settings",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeXdrConfig_XdrSettingsFields,
+	},
+}
 
 var ConnectorConfig_Details_SplunkConfigFields = ubx.FieldMap{
-		"HecToken": ubx.FieldSpec{WireName: "hec_token"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"PortNumber": ubx.FieldSpec{WireName: "port_number"},
-		"ReportingSettings": ubx.FieldSpec{
-			WireName: "reporting_settings",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"UnsecureScheme": ubx.FieldSpec{WireName: "unsecure_scheme"},
-	}
+	"HecToken":   ubx.FieldSpec{WireName: "hec_token"},
+	"Host":       ubx.FieldSpec{WireName: "host"},
+	"PortNumber": ubx.FieldSpec{WireName: "port_number"},
+	"ReportingSettings": ubx.FieldSpec{
+		WireName: "reporting_settings",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfig_ReportingSettingsFields,
+	},
+	"Source":         ubx.FieldSpec{WireName: "source"},
+	"UnsecureScheme": ubx.FieldSpec{WireName: "unsecure_scheme"},
+}
 
 var ConnectorConfig_DetailsFields = ubx.FieldMap{
-		"CrowdStrikeConfig": ubx.FieldSpec{
-			WireName: "crowd_strike_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfigFields,
-		},
-		"CrowdStrikeFalconNextGenConfig": ubx.FieldSpec{
-			WireName: "crowd_strike_falcon_next_gen_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfigFields,
-		},
-		"CrowdStrikeXdrConfig": ubx.FieldSpec{
-			WireName: "crowd_strike_xdr_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeXdrConfigFields,
-		},
-		"DeviceTrustConfig": ubx.FieldSpec{
-			WireName: "device_trust_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_DeviceTrustConfigFields,
-		},
-		"GoogleSecOpsConfig": ubx.FieldSpec{
-			WireName: "google_sec_ops_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfigFields,
-		},
-		"MipLabelConfig": ubx.FieldSpec{
-			WireName: "mip_label_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_MipLabelConfigFields,
-		},
-		"PaloAltoNetworksConfig": ubx.FieldSpec{
-			WireName: "palo_alto_networks_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_CrowdStrikeConfigFields,
-		},
-		"PubSubConfig": ubx.FieldSpec{
-			WireName: "pub_sub_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_PubSubConfigFields,
-		},
-		"PubSubXdrConfig": ubx.FieldSpec{
-			WireName: "pub_sub_xdr_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_PubSubXdrConfigFields,
-		},
-		"SplunkConfig": ubx.FieldSpec{
-			WireName: "splunk_config",
-			Kind: "object",
-			Fields: ConnectorConfig_Details_SplunkConfigFields,
-		},
-	}
+	"CrowdStrikeConfig": ubx.FieldSpec{
+		WireName: "crowd_strike_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfigFields,
+	},
+	"CrowdStrikeFalconNextGenConfig": ubx.FieldSpec{
+		WireName: "crowd_strike_falcon_next_gen_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfigFields,
+	},
+	"CrowdStrikeXdrConfig": ubx.FieldSpec{
+		WireName: "crowd_strike_xdr_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeXdrConfigFields,
+	},
+	"DeviceTrustConfig": ubx.FieldSpec{
+		WireName: "device_trust_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_DeviceTrustConfigFields,
+	},
+	"GoogleSecOpsConfig": ubx.FieldSpec{
+		WireName: "google_sec_ops_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfigFields,
+	},
+	"MipLabelConfig": ubx.FieldSpec{
+		WireName: "mip_label_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_MipLabelConfigFields,
+	},
+	"PaloAltoNetworksConfig": ubx.FieldSpec{
+		WireName: "palo_alto_networks_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_CrowdStrikeConfigFields,
+	},
+	"PubSubConfig": ubx.FieldSpec{
+		WireName: "pub_sub_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_PubSubConfigFields,
+	},
+	"PubSubXdrConfig": ubx.FieldSpec{
+		WireName: "pub_sub_xdr_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_PubSubXdrConfigFields,
+	},
+	"SplunkConfig": ubx.FieldSpec{
+		WireName: "splunk_config",
+		Kind:     "object",
+		Fields:   ConnectorConfig_Details_SplunkConfigFields,
+	},
+}
 
 var ConnectorConfig_StatusFields = ubx.FieldMap{
-		"FailureStartTime": ubx.FieldSpec{WireName: "failure_start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"FailureStartTime": ubx.FieldSpec{WireName: "failure_start_time"},
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":       ubx.FieldSpec{WireName: "update_time"},
+}
 
 type ConnectorConfigConfig struct {
 	// The details of the connector config.
@@ -277,15 +277,15 @@ var ConnectorConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Details": ubx.FieldSpec{
 			WireName: "details",
-			Kind: "object",
-			Fields: ConnectorConfig_DetailsFields,
+			Kind:     "object",
+			Fields:   ConnectorConfig_DetailsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: ConnectorConfig_StatusFields,
+			Kind:     "object",
+			Fields:   ConnectorConfig_StatusFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 	},

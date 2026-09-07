@@ -34,17 +34,17 @@ type Actuation_DeploymentOutput struct {
 }
 
 var Actuation_ActuationOutputFields = ubx.FieldMap{
-		"ActuateLogs": ubx.FieldSpec{WireName: "actuate_logs"},
-		"AnsibleError": ubx.FieldSpec{WireName: "ansible_error"},
-		"AnsibleFailedTask": ubx.FieldSpec{WireName: "ansible_failed_task"},
-		"BlueprintId": ubx.FieldSpec{WireName: "blueprint_id"},
-		"CloudbuildId": ubx.FieldSpec{WireName: "cloudbuild_id"},
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorLogs": ubx.FieldSpec{WireName: "error_logs"},
-		"HasUserFacingErrorMsg": ubx.FieldSpec{WireName: "has_user_facing_error_msg"},
-		"TerraformError": ubx.FieldSpec{WireName: "terraform_error"},
-		"TerraformTemplate": ubx.FieldSpec{WireName: "terraform_template"},
-	}
+	"ActuateLogs":           ubx.FieldSpec{WireName: "actuate_logs"},
+	"AnsibleError":          ubx.FieldSpec{WireName: "ansible_error"},
+	"AnsibleFailedTask":     ubx.FieldSpec{WireName: "ansible_failed_task"},
+	"BlueprintId":           ubx.FieldSpec{WireName: "blueprint_id"},
+	"CloudbuildId":          ubx.FieldSpec{WireName: "cloudbuild_id"},
+	"ErrorCode":             ubx.FieldSpec{WireName: "error_code"},
+	"ErrorLogs":             ubx.FieldSpec{WireName: "error_logs"},
+	"HasUserFacingErrorMsg": ubx.FieldSpec{WireName: "has_user_facing_error_msg"},
+	"TerraformError":        ubx.FieldSpec{WireName: "terraform_error"},
+	"TerraformTemplate":     ubx.FieldSpec{WireName: "terraform_template"},
+}
 
 type ActuationConfig struct {
 	// Message for output of actuation.
@@ -73,8 +73,8 @@ var Actuation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ActuationOutput": ubx.FieldSpec{
 			WireName: "actuation_output",
-			Kind: "object",
-			Fields: Actuation_ActuationOutputFields,
+			Kind:     "object",
+			Fields:   Actuation_ActuationOutputFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

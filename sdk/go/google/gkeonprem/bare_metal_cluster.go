@@ -321,355 +321,355 @@ type BareMetalCluster_ValidationCheck struct {
 }
 
 var BareMetalCluster_BinaryAuthorizationFields = ubx.FieldMap{
-		"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
-	}
+	"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
+}
 
 var BareMetalCluster_ClusterOperationsFields = ubx.FieldMap{
-		"EnableApplicationLogs": ubx.FieldSpec{WireName: "enable_application_logs"},
-	}
+	"EnableApplicationLogs": ubx.FieldSpec{WireName: "enable_application_logs"},
+}
 
 var BareMetalCluster_ControlPlane_ApiServerArgsFields = ubx.FieldMap{
-		"Argument": ubx.FieldSpec{WireName: "argument"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Argument": ubx.FieldSpec{WireName: "argument"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_KubeletConfigFields = ubx.FieldMap{
-		"RegistryBurst": ubx.FieldSpec{WireName: "registry_burst"},
-		"RegistryPullQps": ubx.FieldSpec{WireName: "registry_pull_qps"},
-		"SerializeImagePullsDisabled": ubx.FieldSpec{WireName: "serialize_image_pulls_disabled"},
-	}
+	"RegistryBurst":               ubx.FieldSpec{WireName: "registry_burst"},
+	"RegistryPullQps":             ubx.FieldSpec{WireName: "registry_pull_qps"},
+	"SerializeImagePullsDisabled": ubx.FieldSpec{WireName: "serialize_image_pulls_disabled"},
+}
 
 var BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
+}
 
 var BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_TaintsFields = ubx.FieldMap{
-		"Effect": ubx.FieldSpec{WireName: "effect"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Effect": ubx.FieldSpec{WireName: "effect"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfigFields = ubx.FieldMap{
-		"KubeletConfig": ubx.FieldSpec{
-			WireName: "kubelet_config",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_KubeletConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"NodeConfigs": ubx.FieldSpec{
-			WireName: "node_configs",
-			Kind: "list",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigsFields,
-		},
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"Taints": ubx.FieldSpec{
-			WireName: "taints",
-			Kind: "list",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_TaintsFields,
-		},
-	}
+	"KubeletConfig": ubx.FieldSpec{
+		WireName: "kubelet_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_KubeletConfigFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"NodeConfigs": ubx.FieldSpec{
+		WireName: "node_configs",
+		Kind:     "list",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_NodeConfigsFields,
+	},
+	"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+	"Taints": ubx.FieldSpec{
+		WireName: "taints",
+		Kind:     "list",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfig_TaintsFields,
+	},
+}
 
 var BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields = ubx.FieldMap{
-		"NodePoolConfig": ubx.FieldSpec{
-			WireName: "node_pool_config",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfigFields,
-		},
-	}
+	"NodePoolConfig": ubx.FieldSpec{
+		WireName: "node_pool_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfig_NodePoolConfigFields,
+	},
+}
 
 var BareMetalCluster_ControlPlaneFields = ubx.FieldMap{
-		"ApiServerArgs": ubx.FieldSpec{
-			WireName: "api_server_args",
-			Kind: "list",
-			Fields: BareMetalCluster_ControlPlane_ApiServerArgsFields,
-		},
-		"ControlPlaneNodePoolConfig": ubx.FieldSpec{
-			WireName: "control_plane_node_pool_config",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
-		},
-	}
+	"ApiServerArgs": ubx.FieldSpec{
+		WireName: "api_server_args",
+		Kind:     "list",
+		Fields:   BareMetalCluster_ControlPlane_ApiServerArgsFields,
+	},
+	"ControlPlaneNodePoolConfig": ubx.FieldSpec{
+		WireName: "control_plane_node_pool_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
+	},
+}
 
 var BareMetalCluster_FleetFields = ubx.FieldMap{
-		"Membership": ubx.FieldSpec{WireName: "membership"},
-	}
+	"Membership": ubx.FieldSpec{WireName: "membership"},
+}
 
 var BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPoolsFields = ubx.FieldMap{
-		"Addresses": ubx.FieldSpec{WireName: "addresses"},
-		"AvoidBuggyIps": ubx.FieldSpec{WireName: "avoid_buggy_ips"},
-		"ManualAssign": ubx.FieldSpec{WireName: "manual_assign"},
-		"Pool": ubx.FieldSpec{WireName: "pool"},
-	}
+	"Addresses":     ubx.FieldSpec{WireName: "addresses"},
+	"AvoidBuggyIps": ubx.FieldSpec{WireName: "avoid_buggy_ips"},
+	"ManualAssign":  ubx.FieldSpec{WireName: "manual_assign"},
+	"Pool":          ubx.FieldSpec{WireName: "pool"},
+}
 
 var BareMetalCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigsFields = ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"ControlPlaneNodes": ubx.FieldSpec{WireName: "control_plane_nodes"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-	}
+	"Asn":               ubx.FieldSpec{WireName: "asn"},
+	"ControlPlaneNodes": ubx.FieldSpec{WireName: "control_plane_nodes"},
+	"IpAddress":         ubx.FieldSpec{WireName: "ip_address"},
+}
 
 var BareMetalCluster_LoadBalancer_BgpLbConfigFields = ubx.FieldMap{
-		"AddressPools": ubx.FieldSpec{
-			WireName: "address_pools",
-			Kind: "list",
-			Fields: BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPoolsFields,
-		},
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"BgpPeerConfigs": ubx.FieldSpec{
-			WireName: "bgp_peer_configs",
-			Kind: "list",
-			Fields: BareMetalCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigsFields,
-		},
-		"LoadBalancerNodePoolConfig": ubx.FieldSpec{
-			WireName: "load_balancer_node_pool_config",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
-		},
-	}
+	"AddressPools": ubx.FieldSpec{
+		WireName: "address_pools",
+		Kind:     "list",
+		Fields:   BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPoolsFields,
+	},
+	"Asn": ubx.FieldSpec{WireName: "asn"},
+	"BgpPeerConfigs": ubx.FieldSpec{
+		WireName: "bgp_peer_configs",
+		Kind:     "list",
+		Fields:   BareMetalCluster_LoadBalancer_BgpLbConfig_BgpPeerConfigsFields,
+	},
+	"LoadBalancerNodePoolConfig": ubx.FieldSpec{
+		WireName: "load_balancer_node_pool_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
+	},
+}
 
 var BareMetalCluster_LoadBalancer_ManualLbConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var BareMetalCluster_LoadBalancer_MetalLbConfigFields = ubx.FieldMap{
-		"AddressPools": ubx.FieldSpec{
-			WireName: "address_pools",
-			Kind: "list",
-			Fields: BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPoolsFields,
-		},
-		"LoadBalancerNodePoolConfig": ubx.FieldSpec{
-			WireName: "load_balancer_node_pool_config",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
-		},
-	}
+	"AddressPools": ubx.FieldSpec{
+		WireName: "address_pools",
+		Kind:     "list",
+		Fields:   BareMetalCluster_LoadBalancer_BgpLbConfig_AddressPoolsFields,
+	},
+	"LoadBalancerNodePoolConfig": ubx.FieldSpec{
+		WireName: "load_balancer_node_pool_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ControlPlane_ControlPlaneNodePoolConfigFields,
+	},
+}
 
 var BareMetalCluster_LoadBalancer_PortConfigFields = ubx.FieldMap{
-		"ControlPlaneLoadBalancerPort": ubx.FieldSpec{WireName: "control_plane_load_balancer_port"},
-	}
+	"ControlPlaneLoadBalancerPort": ubx.FieldSpec{WireName: "control_plane_load_balancer_port"},
+}
 
 var BareMetalCluster_LoadBalancer_VipConfigFields = ubx.FieldMap{
-		"ControlPlaneVip": ubx.FieldSpec{WireName: "control_plane_vip"},
-		"IngressVip": ubx.FieldSpec{WireName: "ingress_vip"},
-	}
+	"ControlPlaneVip": ubx.FieldSpec{WireName: "control_plane_vip"},
+	"IngressVip":      ubx.FieldSpec{WireName: "ingress_vip"},
+}
 
 var BareMetalCluster_LoadBalancerFields = ubx.FieldMap{
-		"BgpLbConfig": ubx.FieldSpec{
-			WireName: "bgp_lb_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_BgpLbConfigFields,
-		},
-		"ManualLbConfig": ubx.FieldSpec{
-			WireName: "manual_lb_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_ManualLbConfigFields,
-		},
-		"MetalLbConfig": ubx.FieldSpec{
-			WireName: "metal_lb_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_MetalLbConfigFields,
-		},
-		"PortConfig": ubx.FieldSpec{
-			WireName: "port_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_PortConfigFields,
-		},
-		"VipConfig": ubx.FieldSpec{
-			WireName: "vip_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_VipConfigFields,
-		},
-	}
+	"BgpLbConfig": ubx.FieldSpec{
+		WireName: "bgp_lb_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_BgpLbConfigFields,
+	},
+	"ManualLbConfig": ubx.FieldSpec{
+		WireName: "manual_lb_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_ManualLbConfigFields,
+	},
+	"MetalLbConfig": ubx.FieldSpec{
+		WireName: "metal_lb_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_MetalLbConfigFields,
+	},
+	"PortConfig": ubx.FieldSpec{
+		WireName: "port_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_PortConfigFields,
+	},
+	"VipConfig": ubx.FieldSpec{
+		WireName: "vip_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_VipConfigFields,
+	},
+}
 
 var BareMetalCluster_MaintenanceConfigFields = ubx.FieldMap{
-		"MaintenanceAddressCidrBlocks": ubx.FieldSpec{WireName: "maintenance_address_cidr_blocks"},
-	}
+	"MaintenanceAddressCidrBlocks": ubx.FieldSpec{WireName: "maintenance_address_cidr_blocks"},
+}
 
 var BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachinesFields = ubx.FieldMap{
-		"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
-	}
+	"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
+}
 
 var BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachinesFields = ubx.FieldMap{
-		"NodeIp": ubx.FieldSpec{WireName: "node_ip"},
-		"PodCount": ubx.FieldSpec{WireName: "pod_count"},
-	}
+	"NodeIp":   ubx.FieldSpec{WireName: "node_ip"},
+	"PodCount": ubx.FieldSpec{WireName: "pod_count"},
+}
 
 var BareMetalCluster_MaintenanceStatus_MachineDrainStatusFields = ubx.FieldMap{
-		"DrainedMachines": ubx.FieldSpec{
-			WireName: "drained_machines",
-			Kind: "list",
-			Fields: BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachinesFields,
-		},
-		"DrainingMachines": ubx.FieldSpec{
-			WireName: "draining_machines",
-			Kind: "list",
-			Fields: BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachinesFields,
-		},
-	}
+	"DrainedMachines": ubx.FieldSpec{
+		WireName: "drained_machines",
+		Kind:     "list",
+		Fields:   BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainedMachinesFields,
+	},
+	"DrainingMachines": ubx.FieldSpec{
+		WireName: "draining_machines",
+		Kind:     "list",
+		Fields:   BareMetalCluster_MaintenanceStatus_MachineDrainStatus_DrainingMachinesFields,
+	},
+}
 
 var BareMetalCluster_MaintenanceStatusFields = ubx.FieldMap{
-		"MachineDrainStatus": ubx.FieldSpec{
-			WireName: "machine_drain_status",
-			Kind: "object",
-			Fields: BareMetalCluster_MaintenanceStatus_MachineDrainStatusFields,
-		},
-	}
+	"MachineDrainStatus": ubx.FieldSpec{
+		WireName: "machine_drain_status",
+		Kind:     "object",
+		Fields:   BareMetalCluster_MaintenanceStatus_MachineDrainStatusFields,
+	},
+}
 
 var BareMetalCluster_NetworkConfig_IslandModeCidrFields = ubx.FieldMap{
-		"PodAddressCidrBlocks": ubx.FieldSpec{WireName: "pod_address_cidr_blocks"},
-		"ServiceAddressCidrBlocks": ubx.FieldSpec{WireName: "service_address_cidr_blocks"},
-	}
+	"PodAddressCidrBlocks":     ubx.FieldSpec{WireName: "pod_address_cidr_blocks"},
+	"ServiceAddressCidrBlocks": ubx.FieldSpec{WireName: "service_address_cidr_blocks"},
+}
 
 var BareMetalCluster_NetworkConfigFields = ubx.FieldMap{
-		"AdvancedNetworking": ubx.FieldSpec{WireName: "advanced_networking"},
-		"IslandModeCidr": ubx.FieldSpec{
-			WireName: "island_mode_cidr",
-			Kind: "object",
-			Fields: BareMetalCluster_NetworkConfig_IslandModeCidrFields,
-		},
-		"MultipleNetworkInterfacesConfig": ubx.FieldSpec{
-			WireName: "multiple_network_interfaces_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_ManualLbConfigFields,
-		},
-		"SrIovConfig": ubx.FieldSpec{
-			WireName: "sr_iov_config",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancer_ManualLbConfigFields,
-		},
-	}
+	"AdvancedNetworking": ubx.FieldSpec{WireName: "advanced_networking"},
+	"IslandModeCidr": ubx.FieldSpec{
+		WireName: "island_mode_cidr",
+		Kind:     "object",
+		Fields:   BareMetalCluster_NetworkConfig_IslandModeCidrFields,
+	},
+	"MultipleNetworkInterfacesConfig": ubx.FieldSpec{
+		WireName: "multiple_network_interfaces_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_ManualLbConfigFields,
+	},
+	"SrIovConfig": ubx.FieldSpec{
+		WireName: "sr_iov_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_LoadBalancer_ManualLbConfigFields,
+	},
+}
 
 var BareMetalCluster_NodeAccessConfigFields = ubx.FieldMap{
-		"LoginUser": ubx.FieldSpec{WireName: "login_user"},
-	}
+	"LoginUser": ubx.FieldSpec{WireName: "login_user"},
+}
 
 var BareMetalCluster_NodeConfigFields = ubx.FieldMap{
-		"ContainerRuntime": ubx.FieldSpec{WireName: "container_runtime"},
-		"MaxPodsPerNode": ubx.FieldSpec{WireName: "max_pods_per_node"},
-	}
+	"ContainerRuntime": ubx.FieldSpec{WireName: "container_runtime"},
+	"MaxPodsPerNode":   ubx.FieldSpec{WireName: "max_pods_per_node"},
+}
 
 var BareMetalCluster_OsEnvironmentConfigFields = ubx.FieldMap{
-		"PackageRepoExcluded": ubx.FieldSpec{WireName: "package_repo_excluded"},
-	}
+	"PackageRepoExcluded": ubx.FieldSpec{WireName: "package_repo_excluded"},
+}
 
 var BareMetalCluster_ProxyFields = ubx.FieldMap{
-		"NoProxy": ubx.FieldSpec{WireName: "no_proxy"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"NoProxy": ubx.FieldSpec{WireName: "no_proxy"},
+	"Uri":     ubx.FieldSpec{WireName: "uri"},
+}
 
 var BareMetalCluster_SecurityConfig_Authorization_AdminUsersFields = ubx.FieldMap{
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var BareMetalCluster_SecurityConfig_AuthorizationFields = ubx.FieldMap{
-		"AdminUsers": ubx.FieldSpec{
-			WireName: "admin_users",
-			Kind: "list",
-			Fields: BareMetalCluster_SecurityConfig_Authorization_AdminUsersFields,
-		},
-	}
+	"AdminUsers": ubx.FieldSpec{
+		WireName: "admin_users",
+		Kind:     "list",
+		Fields:   BareMetalCluster_SecurityConfig_Authorization_AdminUsersFields,
+	},
+}
 
 var BareMetalCluster_SecurityConfigFields = ubx.FieldMap{
-		"Authorization": ubx.FieldSpec{
-			WireName: "authorization",
-			Kind: "object",
-			Fields: BareMetalCluster_SecurityConfig_AuthorizationFields,
-		},
-	}
+	"Authorization": ubx.FieldSpec{
+		WireName: "authorization",
+		Kind:     "object",
+		Fields:   BareMetalCluster_SecurityConfig_AuthorizationFields,
+	},
+}
 
 var BareMetalCluster_Status_ConditionsFields = ubx.FieldMap{
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var BareMetalCluster_Status_Versions_VersionsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Count":   ubx.FieldSpec{WireName: "count"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var BareMetalCluster_Status_VersionsFields = ubx.FieldMap{
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: BareMetalCluster_Status_Versions_VersionsFields,
-		},
-	}
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   BareMetalCluster_Status_Versions_VersionsFields,
+	},
+}
 
 var BareMetalCluster_StatusFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: BareMetalCluster_Status_ConditionsFields,
-		},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "object",
-			Fields: BareMetalCluster_Status_VersionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   BareMetalCluster_Status_ConditionsFields,
+	},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"Version":      ubx.FieldSpec{WireName: "version"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "object",
+		Fields:   BareMetalCluster_Status_VersionsFields,
+	},
+}
 
 var BareMetalCluster_Storage_LvpNodeMountsConfigFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-	}
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
+}
 
 var BareMetalCluster_Storage_LvpShareConfigFields = ubx.FieldMap{
-		"LvpConfig": ubx.FieldSpec{
-			WireName: "lvp_config",
-			Kind: "object",
-			Fields: BareMetalCluster_Storage_LvpNodeMountsConfigFields,
-		},
-		"SharedPathPvCount": ubx.FieldSpec{WireName: "shared_path_pv_count"},
-	}
+	"LvpConfig": ubx.FieldSpec{
+		WireName: "lvp_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_Storage_LvpNodeMountsConfigFields,
+	},
+	"SharedPathPvCount": ubx.FieldSpec{WireName: "shared_path_pv_count"},
+}
 
 var BareMetalCluster_StorageFields = ubx.FieldMap{
-		"LvpNodeMountsConfig": ubx.FieldSpec{
-			WireName: "lvp_node_mounts_config",
-			Kind: "object",
-			Fields: BareMetalCluster_Storage_LvpNodeMountsConfigFields,
-		},
-		"LvpShareConfig": ubx.FieldSpec{
-			WireName: "lvp_share_config",
-			Kind: "object",
-			Fields: BareMetalCluster_Storage_LvpShareConfigFields,
-		},
-	}
+	"LvpNodeMountsConfig": ubx.FieldSpec{
+		WireName: "lvp_node_mounts_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_Storage_LvpNodeMountsConfigFields,
+	},
+	"LvpShareConfig": ubx.FieldSpec{
+		WireName: "lvp_share_config",
+		Kind:     "object",
+		Fields:   BareMetalCluster_Storage_LvpShareConfigFields,
+	},
+}
 
 var BareMetalCluster_UpgradePolicyFields = ubx.FieldMap{
-		"Pause": ubx.FieldSpec{WireName: "pause"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Pause":  ubx.FieldSpec{WireName: "pause"},
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var BareMetalCluster_ValidationCheck_Status_ResultFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Category":    ubx.FieldSpec{WireName: "category"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Details":     ubx.FieldSpec{WireName: "details"},
+	"Reason":      ubx.FieldSpec{WireName: "reason"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var BareMetalCluster_ValidationCheck_StatusFields = ubx.FieldMap{
-		"Result": ubx.FieldSpec{
-			WireName: "result",
-			Kind: "list",
-			Fields: BareMetalCluster_ValidationCheck_Status_ResultFields,
-		},
-	}
+	"Result": ubx.FieldSpec{
+		WireName: "result",
+		Kind:     "list",
+		Fields:   BareMetalCluster_ValidationCheck_Status_ResultFields,
+	},
+}
 
 var BareMetalCluster_ValidationCheckFields = ubx.FieldMap{
-		"Option": ubx.FieldSpec{WireName: "option"},
-		"Scenario": ubx.FieldSpec{WireName: "scenario"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: BareMetalCluster_ValidationCheck_StatusFields,
-		},
-	}
+	"Option":   ubx.FieldSpec{WireName: "option"},
+	"Scenario": ubx.FieldSpec{WireName: "scenario"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   BareMetalCluster_ValidationCheck_StatusFields,
+	},
+}
 
 type BareMetalClusterConfig struct {
 	// Required. The admin cluster this bare metal user cluster belongs to. This is the full resource name of the admin cluster's fleet membership.
@@ -791,94 +791,94 @@ var BareMetalCluster = ubx.ResourceBinding{
 	WireType: "google_gkeonprem_bare_metal_cluster",
 	Fields: ubx.FieldMap{
 		"AdminClusterMembership": ubx.FieldSpec{WireName: "admin_cluster_membership"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"BareMetalVersion": ubx.FieldSpec{WireName: "bare_metal_version"},
+		"Annotations":            ubx.FieldSpec{WireName: "annotations"},
+		"BareMetalVersion":       ubx.FieldSpec{WireName: "bare_metal_version"},
 		"BinaryAuthorization": ubx.FieldSpec{
 			WireName: "binary_authorization",
-			Kind: "object",
-			Fields: BareMetalCluster_BinaryAuthorizationFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_BinaryAuthorizationFields,
 		},
 		"ClusterOperations": ubx.FieldSpec{
 			WireName: "cluster_operations",
-			Kind: "object",
-			Fields: BareMetalCluster_ClusterOperationsFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_ClusterOperationsFields,
 		},
 		"ControlPlane": ubx.FieldSpec{
 			WireName: "control_plane",
-			Kind: "object",
-			Fields: BareMetalCluster_ControlPlaneFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_ControlPlaneFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fleet": ubx.FieldSpec{
 			WireName: "fleet",
-			Kind: "object",
-			Fields: BareMetalCluster_FleetFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_FleetFields,
 		},
 		"LoadBalancer": ubx.FieldSpec{
 			WireName: "load_balancer",
-			Kind: "object",
-			Fields: BareMetalCluster_LoadBalancerFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_LoadBalancerFields,
 		},
 		"MaintenanceConfig": ubx.FieldSpec{
 			WireName: "maintenance_config",
-			Kind: "object",
-			Fields: BareMetalCluster_MaintenanceConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_MaintenanceConfigFields,
 		},
 		"MaintenanceStatus": ubx.FieldSpec{
 			WireName: "maintenance_status",
-			Kind: "object",
-			Fields: BareMetalCluster_MaintenanceStatusFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_MaintenanceStatusFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: BareMetalCluster_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_NetworkConfigFields,
 		},
 		"NodeAccessConfig": ubx.FieldSpec{
 			WireName: "node_access_config",
-			Kind: "object",
-			Fields: BareMetalCluster_NodeAccessConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_NodeAccessConfigFields,
 		},
 		"NodeConfig": ubx.FieldSpec{
 			WireName: "node_config",
-			Kind: "object",
-			Fields: BareMetalCluster_NodeConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_NodeConfigFields,
 		},
 		"OsEnvironmentConfig": ubx.FieldSpec{
 			WireName: "os_environment_config",
-			Kind: "object",
-			Fields: BareMetalCluster_OsEnvironmentConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_OsEnvironmentConfigFields,
 		},
 		"Proxy": ubx.FieldSpec{
 			WireName: "proxy",
-			Kind: "object",
-			Fields: BareMetalCluster_ProxyFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_ProxyFields,
 		},
 		"SecurityConfig": ubx.FieldSpec{
 			WireName: "security_config",
-			Kind: "object",
-			Fields: BareMetalCluster_SecurityConfigFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_SecurityConfigFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: BareMetalCluster_StatusFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_StatusFields,
 		},
 		"Storage": ubx.FieldSpec{
 			WireName: "storage",
-			Kind: "object",
-			Fields: BareMetalCluster_StorageFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_StorageFields,
 		},
 		"UpgradePolicy": ubx.FieldSpec{
 			WireName: "upgrade_policy",
-			Kind: "object",
-			Fields: BareMetalCluster_UpgradePolicyFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_UpgradePolicyFields,
 		},
 		"ValidationCheck": ubx.FieldSpec{
 			WireName: "validation_check",
-			Kind: "object",
-			Fields: BareMetalCluster_ValidationCheckFields,
+			Kind:     "object",
+			Fields:   BareMetalCluster_ValidationCheckFields,
 		},
 	},
 }

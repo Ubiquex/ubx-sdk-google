@@ -4,7 +4,7 @@ package documentai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta3Processor_ProcessorVersionAliases struct {
-	Alias any
+	Alias            any
 	ProcessorVersion any
 }
 
@@ -51,10 +51,10 @@ type V1beta3ProcessorAttrs struct {
 var V1beta3Processor = ubx.ResourceBinding{
 	WireType: "google_documentai_v1beta3_processor",
 	Fields: ubx.FieldMap{
-		"ActiveSchemaVersion": ubx.FieldSpec{WireName: "active_schema_version"},
+		"ActiveSchemaVersion":     ubx.FieldSpec{WireName: "active_schema_version"},
 		"DefaultProcessorVersion": ubx.FieldSpec{WireName: "default_processor_version"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"DisplayName":             ubx.FieldSpec{WireName: "display_name"},
+		"KmsKeyName":              ubx.FieldSpec{WireName: "kms_key_name"},
+		"Type":                    ubx.FieldSpec{WireName: "type"},
 	},
 }

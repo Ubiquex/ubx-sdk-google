@@ -96,102 +96,102 @@ type ResourceRecordSet_RoutingPolicy struct {
 }
 
 var ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"IpAddress":        ubx.FieldSpec{WireName: "ip_address"},
+	"IpProtocol":       ubx.FieldSpec{WireName: "ip_protocol"},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
+	"NetworkUrl":       ubx.FieldSpec{WireName: "network_url"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"Project":          ubx.FieldSpec{WireName: "project"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+}
 
 var ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields = ubx.FieldMap{
-		"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
-		"InternalLoadBalancers": ubx.FieldSpec{
-			WireName: "internal_load_balancers",
-			Kind: "list",
-			Fields: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
-		},
-	}
+	"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
+	"InternalLoadBalancers": ubx.FieldSpec{
+		WireName: "internal_load_balancers",
+		Kind:     "list",
+		Fields:   ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
+	},
+}
 
 var ResourceRecordSet_RoutingPolicy_Geo_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Location":         ubx.FieldSpec{WireName: "location"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+}
 
 var ResourceRecordSet_RoutingPolicy_GeoFields = ubx.FieldMap{
-		"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResourceRecordSet_RoutingPolicy_Geo_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResourceRecordSet_RoutingPolicy_Geo_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var ResourceRecordSet_RoutingPolicy_PrimaryBackupFields = ubx.FieldMap{
-		"BackupGeoTargets": ubx.FieldSpec{
-			WireName: "backup_geo_targets",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_GeoFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryTargets": ubx.FieldSpec{
-			WireName: "primary_targets",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
-	}
+	"BackupGeoTargets": ubx.FieldSpec{
+		WireName: "backup_geo_targets",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_GeoFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"PrimaryTargets": ubx.FieldSpec{
+		WireName: "primary_targets",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
+}
 
 var ResourceRecordSet_RoutingPolicy_Wrr_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var ResourceRecordSet_RoutingPolicy_WrrFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResourceRecordSet_RoutingPolicy_Wrr_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResourceRecordSet_RoutingPolicy_Wrr_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var ResourceRecordSet_RoutingPolicyFields = ubx.FieldMap{
-		"Geo": ubx.FieldSpec{
-			WireName: "geo",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_GeoFields,
-		},
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryBackup": ubx.FieldSpec{
-			WireName: "primary_backup",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_PrimaryBackupFields,
-		},
-		"Wrr": ubx.FieldSpec{
-			WireName: "wrr",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicy_WrrFields,
-		},
-	}
+	"Geo": ubx.FieldSpec{
+		WireName: "geo",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_GeoFields,
+	},
+	"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"PrimaryBackup": ubx.FieldSpec{
+		WireName: "primary_backup",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_PrimaryBackupFields,
+	},
+	"Wrr": ubx.FieldSpec{
+		WireName: "wrr",
+		Kind:     "object",
+		Fields:   ResourceRecordSet_RoutingPolicy_WrrFields,
+	},
+}
 
 type ResourceRecordSetConfig struct {
 	// The kind of resource or value this is. (AI-inferred)
@@ -234,12 +234,12 @@ var ResourceRecordSet = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"RoutingPolicy": ubx.FieldSpec{
 			WireName: "routing_policy",
-			Kind: "object",
-			Fields: ResourceRecordSet_RoutingPolicyFields,
+			Kind:     "object",
+			Fields:   ResourceRecordSet_RoutingPolicyFields,
 		},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
+		"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
 		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Ttl":              ubx.FieldSpec{WireName: "ttl"},
+		"Type":             ubx.FieldSpec{WireName: "type"},
 	},
 }

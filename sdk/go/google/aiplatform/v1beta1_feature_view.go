@@ -17,7 +17,7 @@ type V1beta1FeatureView_BigtableMetadata struct {
 
 type V1beta1FeatureView_FeatureRegistrySource_FeatureGroups struct {
 	FeatureGroupId any
-	FeatureIds any
+	FeatureIds     any
 }
 
 type V1beta1FeatureView_FeatureRegistrySource struct {
@@ -76,68 +76,68 @@ type V1beta1FeatureView_VertexRagSource struct {
 }
 
 var V1beta1FeatureView_BigQuerySourceFields = ubx.FieldMap{
-		"EntityIdColumns": ubx.FieldSpec{WireName: "entity_id_columns"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"EntityIdColumns": ubx.FieldSpec{WireName: "entity_id_columns"},
+	"Uri":             ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1FeatureView_BigtableMetadataFields = ubx.FieldMap{
-		"ReadAppProfile": ubx.FieldSpec{WireName: "read_app_profile"},
-	}
+	"ReadAppProfile": ubx.FieldSpec{WireName: "read_app_profile"},
+}
 
 var V1beta1FeatureView_FeatureRegistrySource_FeatureGroupsFields = ubx.FieldMap{
-		"FeatureGroupId": ubx.FieldSpec{WireName: "feature_group_id"},
-		"FeatureIds": ubx.FieldSpec{WireName: "feature_ids"},
-	}
+	"FeatureGroupId": ubx.FieldSpec{WireName: "feature_group_id"},
+	"FeatureIds":     ubx.FieldSpec{WireName: "feature_ids"},
+}
 
 var V1beta1FeatureView_FeatureRegistrySourceFields = ubx.FieldMap{
-		"FeatureGroups": ubx.FieldSpec{
-			WireName: "feature_groups",
-			Kind: "list",
-			Fields: V1beta1FeatureView_FeatureRegistrySource_FeatureGroupsFields,
-		},
-		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
-	}
+	"FeatureGroups": ubx.FieldSpec{
+		WireName: "feature_groups",
+		Kind:     "list",
+		Fields:   V1beta1FeatureView_FeatureRegistrySource_FeatureGroupsFields,
+	},
+	"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
+}
 
 var V1beta1FeatureView_IndexConfig_TreeAhConfigFields = ubx.FieldMap{
-		"LeafNodeEmbeddingCount": ubx.FieldSpec{WireName: "leaf_node_embedding_count"},
-	}
+	"LeafNodeEmbeddingCount": ubx.FieldSpec{WireName: "leaf_node_embedding_count"},
+}
 
 var V1beta1FeatureView_IndexConfigFields = ubx.FieldMap{
-		"BruteForceConfig": ubx.FieldSpec{WireName: "brute_force_config"},
-		"CrowdingColumn": ubx.FieldSpec{WireName: "crowding_column"},
-		"DistanceMeasureType": ubx.FieldSpec{WireName: "distance_measure_type"},
-		"EmbeddingColumn": ubx.FieldSpec{WireName: "embedding_column"},
-		"EmbeddingDimension": ubx.FieldSpec{WireName: "embedding_dimension"},
-		"FilterColumns": ubx.FieldSpec{WireName: "filter_columns"},
-		"TreeAhConfig": ubx.FieldSpec{
-			WireName: "tree_ah_config",
-			Kind: "object",
-			Fields: V1beta1FeatureView_IndexConfig_TreeAhConfigFields,
-		},
-	}
+	"BruteForceConfig":    ubx.FieldSpec{WireName: "brute_force_config"},
+	"CrowdingColumn":      ubx.FieldSpec{WireName: "crowding_column"},
+	"DistanceMeasureType": ubx.FieldSpec{WireName: "distance_measure_type"},
+	"EmbeddingColumn":     ubx.FieldSpec{WireName: "embedding_column"},
+	"EmbeddingDimension":  ubx.FieldSpec{WireName: "embedding_dimension"},
+	"FilterColumns":       ubx.FieldSpec{WireName: "filter_columns"},
+	"TreeAhConfig": ubx.FieldSpec{
+		WireName: "tree_ah_config",
+		Kind:     "object",
+		Fields:   V1beta1FeatureView_IndexConfig_TreeAhConfigFields,
+	},
+}
 
 var V1beta1FeatureView_OptimizedConfig_AutomaticResourcesFields = ubx.FieldMap{
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-	}
+	"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
+	"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
+}
 
 var V1beta1FeatureView_OptimizedConfigFields = ubx.FieldMap{
-		"AutomaticResources": ubx.FieldSpec{
-			WireName: "automatic_resources",
-			Kind: "object",
-			Fields: V1beta1FeatureView_OptimizedConfig_AutomaticResourcesFields,
-		},
-	}
+	"AutomaticResources": ubx.FieldSpec{
+		WireName: "automatic_resources",
+		Kind:     "object",
+		Fields:   V1beta1FeatureView_OptimizedConfig_AutomaticResourcesFields,
+	},
+}
 
 var V1beta1FeatureView_SyncConfigFields = ubx.FieldMap{
-		"Continuous": ubx.FieldSpec{WireName: "continuous"},
-		"Cron": ubx.FieldSpec{WireName: "cron"},
-	}
+	"Continuous": ubx.FieldSpec{WireName: "continuous"},
+	"Cron":       ubx.FieldSpec{WireName: "cron"},
+}
 
 var V1beta1FeatureView_VertexRagSourceFields = ubx.FieldMap{
-		"RagCorpusId": ubx.FieldSpec{WireName: "rag_corpus_id"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"RagCorpusId": ubx.FieldSpec{WireName: "rag_corpus_id"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 type V1beta1FeatureViewConfig struct {
 	BigQuerySource any
@@ -206,47 +206,47 @@ var V1beta1FeatureView = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigQuerySource": ubx.FieldSpec{
 			WireName: "big_query_source",
-			Kind: "object",
-			Fields: V1beta1FeatureView_BigQuerySourceFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_BigQuerySourceFields,
 		},
 		"BigtableMetadata": ubx.FieldSpec{
 			WireName: "bigtable_metadata",
-			Kind: "object",
-			Fields: V1beta1FeatureView_BigtableMetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_BigtableMetadataFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"FeatureRegistrySource": ubx.FieldSpec{
 			WireName: "feature_registry_source",
-			Kind: "object",
-			Fields: V1beta1FeatureView_FeatureRegistrySourceFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_FeatureRegistrySourceFields,
 		},
 		"IndexConfig": ubx.FieldSpec{
 			WireName: "index_config",
-			Kind: "object",
-			Fields: V1beta1FeatureView_IndexConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_IndexConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"OptimizedConfig": ubx.FieldSpec{
 			WireName: "optimized_config",
-			Kind: "object",
-			Fields: V1beta1FeatureView_OptimizedConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_OptimizedConfigFields,
 		},
 		"ServiceAgentType": ubx.FieldSpec{WireName: "service_agent_type"},
 		"SyncConfig": ubx.FieldSpec{
 			WireName: "sync_config",
-			Kind: "object",
-			Fields: V1beta1FeatureView_SyncConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_SyncConfigFields,
 		},
 		"VectorSearchConfig": ubx.FieldSpec{
 			WireName: "vector_search_config",
-			Kind: "object",
-			Fields: V1beta1FeatureView_IndexConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_IndexConfigFields,
 		},
 		"VertexRagSource": ubx.FieldSpec{
 			WireName: "vertex_rag_source",
-			Kind: "object",
-			Fields: V1beta1FeatureView_VertexRagSourceFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureView_VertexRagSourceFields,
 		},
 	},
 }

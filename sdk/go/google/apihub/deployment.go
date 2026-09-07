@@ -63,51 +63,51 @@ type Deployment_SourceMetadata struct {
 }
 
 var Deployment_Attributes_EnumValues_ValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 var Deployment_Attributes_EnumValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "list",
-			Fields: Deployment_Attributes_EnumValues_ValuesFields,
-		},
-	}
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "list",
+		Fields:   Deployment_Attributes_EnumValues_ValuesFields,
+	},
+}
 
 var Deployment_Attributes_JsonValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Deployment_AttributesFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"EnumValues": ubx.FieldSpec{
-			WireName: "enum_values",
-			Kind: "object",
-			Fields: Deployment_Attributes_EnumValuesFields,
-		},
-		"JsonValues": ubx.FieldSpec{
-			WireName: "json_values",
-			Kind: "object",
-			Fields: Deployment_Attributes_JsonValuesFields,
-		},
-		"StringValues": ubx.FieldSpec{
-			WireName: "string_values",
-			Kind: "object",
-			Fields: Deployment_Attributes_JsonValuesFields,
-		},
-		"UriValues": ubx.FieldSpec{
-			WireName: "uri_values",
-			Kind: "object",
-			Fields: Deployment_Attributes_JsonValuesFields,
-		},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"EnumValues": ubx.FieldSpec{
+		WireName: "enum_values",
+		Kind:     "object",
+		Fields:   Deployment_Attributes_EnumValuesFields,
+	},
+	"JsonValues": ubx.FieldSpec{
+		WireName: "json_values",
+		Kind:     "object",
+		Fields:   Deployment_Attributes_JsonValuesFields,
+	},
+	"StringValues": ubx.FieldSpec{
+		WireName: "string_values",
+		Kind:     "object",
+		Fields:   Deployment_Attributes_JsonValuesFields,
+	},
+	"UriValues": ubx.FieldSpec{
+		WireName: "uri_values",
+		Kind:     "object",
+		Fields:   Deployment_Attributes_JsonValuesFields,
+	},
+}
 
 var Deployment_DocumentationFields = ubx.FieldMap{
-		"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
-	}
+	"ExternalUri": ubx.FieldSpec{WireName: "external_uri"},
+}
 
 type DeploymentConfig struct {
 	// Optional. The list of user defined attributes associated with the deployment resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
@@ -184,45 +184,45 @@ var Deployment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "map",
-			Fields: Deployment_AttributesFields,
+			Kind:     "map",
+			Fields:   Deployment_AttributesFields,
 		},
 		"DeploymentType": ubx.FieldSpec{
 			WireName: "deployment_type",
-			Kind: "object",
-			Fields: Deployment_AttributesFields,
+			Kind:     "object",
+			Fields:   Deployment_AttributesFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: Deployment_DocumentationFields,
+			Kind:     "object",
+			Fields:   Deployment_DocumentationFields,
 		},
 		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
 		"Environment": ubx.FieldSpec{
 			WireName: "environment",
-			Kind: "object",
-			Fields: Deployment_AttributesFields,
+			Kind:     "object",
+			Fields:   Deployment_AttributesFields,
 		},
 		"ManagementUrl": ubx.FieldSpec{
 			WireName: "management_url",
-			Kind: "object",
-			Fields: Deployment_AttributesFields,
+			Kind:     "object",
+			Fields:   Deployment_AttributesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
 		"Slo": ubx.FieldSpec{
 			WireName: "slo",
-			Kind: "object",
-			Fields: Deployment_AttributesFields,
+			Kind:     "object",
+			Fields:   Deployment_AttributesFields,
 		},
 		"SourceEnvironment": ubx.FieldSpec{WireName: "source_environment"},
-		"SourceProject": ubx.FieldSpec{WireName: "source_project"},
+		"SourceProject":     ubx.FieldSpec{WireName: "source_project"},
 		"SourceUri": ubx.FieldSpec{
 			WireName: "source_uri",
-			Kind: "object",
-			Fields: Deployment_AttributesFields,
+			Kind:     "object",
+			Fields:   Deployment_AttributesFields,
 		},
 	},
 }

@@ -9,8 +9,8 @@ type V1betaNamespace_State struct {
 }
 
 var V1betaNamespace_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaNamespaceConfig struct {
 	// Optional. Labels for this Namespace.
@@ -49,14 +49,14 @@ type V1betaNamespaceAttrs struct {
 var V1betaNamespace = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_namespace",
 	Fields: ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NamespaceLabels": ubx.FieldSpec{WireName: "namespace_labels"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":           ubx.FieldSpec{WireName: "scope"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaNamespace_StateFields,
+			Kind:     "object",
+			Fields:   V1betaNamespace_StateFields,
 		},
 	},
 }

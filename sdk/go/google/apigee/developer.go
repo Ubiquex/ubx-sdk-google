@@ -11,9 +11,9 @@ type Developer_Attributes struct {
 }
 
 var Developer_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type DeveloperConfig struct {
 	// Access type.
@@ -73,18 +73,18 @@ var Developer = ubx.ResourceBinding{
 	WireType: "google_apigee_developer",
 	Fields: ubx.FieldMap{
 		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"AppFamily": ubx.FieldSpec{WireName: "app_family"},
-		"Apps": ubx.FieldSpec{WireName: "apps"},
+		"AppFamily":  ubx.FieldSpec{WireName: "app_family"},
+		"Apps":       ubx.FieldSpec{WireName: "apps"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Developer_AttributesFields,
+			Kind:     "list",
+			Fields:   Developer_AttributesFields,
 		},
-		"Companies": ubx.FieldSpec{WireName: "companies"},
+		"Companies":   ubx.FieldSpec{WireName: "companies"},
 		"DeveloperId": ubx.FieldSpec{WireName: "developer_id"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"FirstName": ubx.FieldSpec{WireName: "first_name"},
-		"LastName": ubx.FieldSpec{WireName: "last_name"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
+		"Email":       ubx.FieldSpec{WireName: "email"},
+		"FirstName":   ubx.FieldSpec{WireName: "first_name"},
+		"LastName":    ubx.FieldSpec{WireName: "last_name"},
+		"UserName":    ubx.FieldSpec{WireName: "user_name"},
 	},
 }

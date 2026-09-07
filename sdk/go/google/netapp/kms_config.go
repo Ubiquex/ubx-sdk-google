@@ -39,8 +39,8 @@ var KmsConfig = ubx.ResourceBinding{
 	WireType: "google_netapp_kms_config",
 	Fields: ubx.FieldMap{
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

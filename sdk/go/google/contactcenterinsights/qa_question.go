@@ -48,39 +48,39 @@ type QaQuestion_TuningMetadata struct {
 }
 
 var QaQuestion_AnswerChoicesFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"NaValue": ubx.FieldSpec{WireName: "na_value"},
-		"NumValue": ubx.FieldSpec{WireName: "num_value"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"StrValue": ubx.FieldSpec{WireName: "str_value"},
-	}
+	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"NaValue":   ubx.FieldSpec{WireName: "na_value"},
+	"NumValue":  ubx.FieldSpec{WireName: "num_value"},
+	"Score":     ubx.FieldSpec{WireName: "score"},
+	"StrValue":  ubx.FieldSpec{WireName: "str_value"},
+}
 
 var QaQuestion_MetricsFields = ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
-	}
+	"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
+}
 
 var QaQuestion_PredefinedQuestionConfigFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields = ubx.FieldMap{
-		"IncludeDialogflowInteractionData": ubx.FieldSpec{WireName: "include_dialogflow_interaction_data"},
-	}
+	"IncludeDialogflowInteractionData": ubx.FieldSpec{WireName: "include_dialogflow_interaction_data"},
+}
 
 var QaQuestion_QaQuestionDataOptionsFields = ubx.FieldMap{
-		"ConversationDataOptions": ubx.FieldSpec{
-			WireName: "conversation_data_options",
-			Kind: "object",
-			Fields: QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields,
-		},
-	}
+	"ConversationDataOptions": ubx.FieldSpec{
+		WireName: "conversation_data_options",
+		Kind:     "object",
+		Fields:   QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields,
+	},
+}
 
 var QaQuestion_TuningMetadataFields = ubx.FieldMap{
-		"DatasetValidationWarnings": ubx.FieldSpec{WireName: "dataset_validation_warnings"},
-		"TotalValidLabelCount": ubx.FieldSpec{WireName: "total_valid_label_count"},
-		"TuningError": ubx.FieldSpec{WireName: "tuning_error"},
-	}
+	"DatasetValidationWarnings": ubx.FieldSpec{WireName: "dataset_validation_warnings"},
+	"TotalValidLabelCount":      ubx.FieldSpec{WireName: "total_valid_label_count"},
+	"TuningError":               ubx.FieldSpec{WireName: "tuning_error"},
+}
 
 type QaQuestionConfig struct {
 	// Short, descriptive string, used in the UI where it's not practical to display the full question body. E.g., "Greeting".
@@ -146,34 +146,34 @@ var QaQuestion = ubx.ResourceBinding{
 		"Abbreviation": ubx.FieldSpec{WireName: "abbreviation"},
 		"AnswerChoices": ubx.FieldSpec{
 			WireName: "answer_choices",
-			Kind: "list",
-			Fields: QaQuestion_AnswerChoicesFields,
+			Kind:     "list",
+			Fields:   QaQuestion_AnswerChoicesFields,
 		},
 		"AnswerInstructions": ubx.FieldSpec{WireName: "answer_instructions"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "object",
-			Fields: QaQuestion_MetricsFields,
+			Kind:     "object",
+			Fields:   QaQuestion_MetricsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Order": ubx.FieldSpec{WireName: "order"},
 		"PredefinedQuestionConfig": ubx.FieldSpec{
 			WireName: "predefined_question_config",
-			Kind: "object",
-			Fields: QaQuestion_PredefinedQuestionConfigFields,
+			Kind:     "object",
+			Fields:   QaQuestion_PredefinedQuestionConfigFields,
 		},
 		"QaQuestionDataOptions": ubx.FieldSpec{
 			WireName: "qa_question_data_options",
-			Kind: "object",
-			Fields: QaQuestion_QaQuestionDataOptionsFields,
+			Kind:     "object",
+			Fields:   QaQuestion_QaQuestionDataOptionsFields,
 		},
 		"QuestionBody": ubx.FieldSpec{WireName: "question_body"},
 		"QuestionType": ubx.FieldSpec{WireName: "question_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 		"TuningMetadata": ubx.FieldSpec{
 			WireName: "tuning_metadata",
-			Kind: "object",
-			Fields: QaQuestion_TuningMetadataFields,
+			Kind:     "object",
+			Fields:   QaQuestion_TuningMetadataFields,
 		},
 	},
 }

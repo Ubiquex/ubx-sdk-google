@@ -35,7 +35,7 @@ type ReliabilityRisk_Recommendation struct {
 }
 
 type ReliabilityRiskConfig struct {
-	Project any
+	Project         any
 	ReliabilityRisk any
 }
 
@@ -51,10 +51,10 @@ type ReliabilityRiskAttrs struct {
 	// Output only. [Output Only] Type of resource. Always compute#reliabilityRisk for reliability risks.
 	Kind any
 	// Name of the resource. The name must be 1-63 characters long and comply with RFC1035.
-	Name any
+	Name    any
 	Project any
 	// Recommendation for mitigating a reliability risk, including a reference URL.
-	Recommendation any
+	Recommendation  any
 	ReliabilityRisk any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
@@ -65,7 +65,7 @@ type ReliabilityRiskAttrs struct {
 var ReliabilityRisk = ubx.DataSourceBinding{
 	WireType: "google_compute_reliability_risk",
 	Fields: ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":         ubx.FieldSpec{WireName: "project"},
 		"ReliabilityRisk": ubx.FieldSpec{WireName: "reliability_risk"},
 	},
 }

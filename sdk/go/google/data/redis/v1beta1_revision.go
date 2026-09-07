@@ -4,19 +4,19 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Revision_Snapshot_ClusterAclPolicyAttachments_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision any
+	AclPolicyRevision       any
 	AclPolicyRevisionNumber any
-	ErrorMessage any
-	State any
+	ErrorMessage            any
+	State                   any
 }
 
 type V1beta1Revision_Snapshot_ClusterAclPolicyAttachments struct {
 	AclPolicyRevisionStatuses any
-	Cluster any
+	Cluster                   any
 }
 
 type V1beta1Revision_Snapshot_Rules struct {
-	Rule any
+	Rule     any
 	Username any
 }
 
@@ -48,7 +48,7 @@ type V1beta1RevisionAttrs struct {
 	AttachedClusters any
 	// Output only. The timestamp that the revision was created.
 	CreateTime any
-	Name any
+	Name       any
 	// Output only. The revision number of the ACL policy revision.
 	RevisionNumber any
 	// The ACL policy resource.

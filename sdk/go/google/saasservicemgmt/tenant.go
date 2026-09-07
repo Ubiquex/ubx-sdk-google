@@ -40,10 +40,10 @@ type TenantAttrs struct {
 var Tenant = ubx.ResourceBinding{
 	WireType: "google_saasservicemgmt_tenant",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":      ubx.FieldSpec{WireName: "annotations"},
 		"ConsumerResource": ubx.FieldSpec{WireName: "consumer_resource"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Saas": ubx.FieldSpec{WireName: "saas"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Saas":             ubx.FieldSpec{WireName: "saas"},
 	},
 }

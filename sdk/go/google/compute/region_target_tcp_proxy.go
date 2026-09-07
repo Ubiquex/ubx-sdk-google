@@ -50,13 +50,13 @@ type RegionTargetTcpProxyAttrs struct {
 var RegionTargetTcpProxy = ubx.ResourceBinding{
 	WireType: "google_compute_region_target_tcp_proxy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Id":                  ubx.FieldSpec{WireName: "id"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyBind": ubx.FieldSpec{WireName: "proxy_bind"},
-		"ProxyHeader": ubx.FieldSpec{WireName: "proxy_header"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Service": ubx.FieldSpec{WireName: "service"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"ProxyBind":           ubx.FieldSpec{WireName: "proxy_bind"},
+		"ProxyHeader":         ubx.FieldSpec{WireName: "proxy_header"},
+		"SelfLink":            ubx.FieldSpec{WireName: "self_link"},
+		"Service":             ubx.FieldSpec{WireName: "service"},
 	},
 }

@@ -67,62 +67,62 @@ type Image_ShieldedInstanceInitialState struct {
 }
 
 var Image_DeprecatedFields = ubx.FieldMap{
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"Obsolete": ubx.FieldSpec{WireName: "obsolete"},
-		"Replacement": ubx.FieldSpec{WireName: "replacement"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Deleted":     ubx.FieldSpec{WireName: "deleted"},
+	"Deprecated":  ubx.FieldSpec{WireName: "deprecated"},
+	"Obsolete":    ubx.FieldSpec{WireName: "obsolete"},
+	"Replacement": ubx.FieldSpec{WireName: "replacement"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var Image_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Image_ImageEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var Image_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Image_RawDiskFields = ubx.FieldMap{
-		"ContainerType": ubx.FieldSpec{WireName: "container_type"},
-		"Sha1Checksum": ubx.FieldSpec{WireName: "sha1_checksum"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"ContainerType": ubx.FieldSpec{WireName: "container_type"},
+	"Sha1Checksum":  ubx.FieldSpec{WireName: "sha1_checksum"},
+	"Source":        ubx.FieldSpec{WireName: "source"},
+}
 
 var Image_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var Image_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 type ImageConfig struct {
 	// The architecture of the image. Valid values are ARM64 or X86_64.
@@ -251,65 +251,65 @@ type ImageAttrs struct {
 var Image = ubx.ResourceBinding{
 	WireType: "google_compute_image",
 	Fields: ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"Architecture":     ubx.FieldSpec{WireName: "architecture"},
 		"ArchiveSizeBytes": ubx.FieldSpec{WireName: "archive_size_bytes"},
 		"Deprecated": ubx.FieldSpec{
 			WireName: "deprecated",
-			Kind: "object",
-			Fields: Image_DeprecatedFields,
+			Kind:     "object",
+			Fields:   Image_DeprecatedFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"Family": ubx.FieldSpec{WireName: "family"},
+		"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Family":      ubx.FieldSpec{WireName: "family"},
 		"GuestOsFeatures": ubx.FieldSpec{
 			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: Image_GuestOsFeaturesFields,
+			Kind:     "list",
+			Fields:   Image_GuestOsFeaturesFields,
 		},
 		"ImageEncryptionKey": ubx.FieldSpec{
 			WireName: "image_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes":     ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses":         ubx.FieldSpec{WireName: "licenses"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Image_ParamsFields,
+			Kind:     "object",
+			Fields:   Image_ParamsFields,
 		},
 		"RawDisk": ubx.FieldSpec{
 			WireName: "raw_disk",
-			Kind: "object",
-			Fields: Image_RawDiskFields,
+			Kind:     "object",
+			Fields:   Image_RawDiskFields,
 		},
 		"ShieldedInstanceInitialState": ubx.FieldSpec{
 			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: Image_ShieldedInstanceInitialStateFields,
+			Kind:     "object",
+			Fields:   Image_ShieldedInstanceInitialStateFields,
 		},
 		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
 		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
 		"SourceImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
 		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
 		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},
 }

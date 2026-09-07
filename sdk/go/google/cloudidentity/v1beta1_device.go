@@ -23,65 +23,65 @@ type V1beta1Device_AndroidSpecificAttributes struct {
 }
 
 type V1beta1Device_AntivirusInfo struct {
-	DisplayName any
-	ProductGuid any
+	DisplayName  any
+	ProductGuid  any
 	ProductState any
 }
 
 type V1beta1Device_BrowserProfiles_ChromeBrowserInfo_Policies_Conflicts struct {
-	Scope any
+	Scope  any
 	Source any
-	Value any
+	Value  any
 }
 
 type V1beta1Device_BrowserProfiles_ChromeBrowserInfo_Policies struct {
 	Conflicts any
-	Name any
-	Scope any
-	Source any
-	Value any
+	Name      any
+	Scope     any
+	Source    any
+	Value     any
 }
 
 type V1beta1Device_BrowserProfiles_ChromeBrowserInfo struct {
-	BrowserManagementState any
-	BrowserVersion any
-	IsBuiltInDnsClientEnabled any
-	IsBulkDataEntryAnalysisEnabled any
-	IsChromeCleanupEnabled any
-	IsChromeRemoteDesktopAppBlocked any
-	IsFileDownloadAnalysisEnabled any
-	IsFileUploadAnalysisEnabled any
-	IsRealtimeUrlCheckEnabled any
-	IsSecurityEventAnalysisEnabled any
-	IsSiteIsolationEnabled any
-	IsThirdPartyBlockingEnabled any
+	BrowserManagementState           any
+	BrowserVersion                   any
+	IsBuiltInDnsClientEnabled        any
+	IsBulkDataEntryAnalysisEnabled   any
+	IsChromeCleanupEnabled           any
+	IsChromeRemoteDesktopAppBlocked  any
+	IsFileDownloadAnalysisEnabled    any
+	IsFileUploadAnalysisEnabled      any
+	IsRealtimeUrlCheckEnabled        any
+	IsSecurityEventAnalysisEnabled   any
+	IsSiteIsolationEnabled           any
+	IsThirdPartyBlockingEnabled      any
 	PasswordProtectionWarningTrigger any
-	Policies any
-	SafeBrowsingProtectionLevel any
+	Policies                         any
+	SafeBrowsingProtectionLevel      any
 }
 
 type V1beta1Device_BrowserProfiles struct {
-	ChromeBrowserInfo any
-	ChromeProfileId any
+	ChromeBrowserInfo   any
+	ChromeProfileId     any
 	LastProfileSyncTime any
 }
 
 type V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplate struct {
-	Id any
+	Id           any
 	MajorVersion any
 	MinorVersion any
 }
 
 type V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributes struct {
-	CertificateTemplate any
-	Fingerprint any
-	Issuer any
-	SerialNumber any
-	Subject any
-	Thumbprint any
-	ValidationState any
+	CertificateTemplate    any
+	Fingerprint            any
+	Issuer                 any
+	SerialNumber           any
+	Subject                any
+	Thumbprint             any
+	ValidationState        any
 	ValidityExpirationTime any
-	ValidityStartTime any
+	ValidityStartTime      any
 }
 
 type V1beta1Device_Device_EndpointVerificationSpecificAttributes struct {
@@ -182,174 +182,174 @@ type V1beta1Device_Device struct {
 }
 
 var V1beta1Device_AndroidSpecificAttributesFields = ubx.FieldMap{
-		"CtsProfileMatch": ubx.FieldSpec{WireName: "cts_profile_match"},
-		"EnabledUnknownSources": ubx.FieldSpec{WireName: "enabled_unknown_sources"},
-		"HasPotentiallyHarmfulApps": ubx.FieldSpec{WireName: "has_potentially_harmful_apps"},
-		"OwnerProfileAccount": ubx.FieldSpec{WireName: "owner_profile_account"},
-		"OwnershipPrivilege": ubx.FieldSpec{WireName: "ownership_privilege"},
-		"SupportsWorkProfile": ubx.FieldSpec{WireName: "supports_work_profile"},
-		"VerifiedBoot": ubx.FieldSpec{WireName: "verified_boot"},
-		"VerifyAppsEnabled": ubx.FieldSpec{WireName: "verify_apps_enabled"},
-	}
+	"CtsProfileMatch":           ubx.FieldSpec{WireName: "cts_profile_match"},
+	"EnabledUnknownSources":     ubx.FieldSpec{WireName: "enabled_unknown_sources"},
+	"HasPotentiallyHarmfulApps": ubx.FieldSpec{WireName: "has_potentially_harmful_apps"},
+	"OwnerProfileAccount":       ubx.FieldSpec{WireName: "owner_profile_account"},
+	"OwnershipPrivilege":        ubx.FieldSpec{WireName: "ownership_privilege"},
+	"SupportsWorkProfile":       ubx.FieldSpec{WireName: "supports_work_profile"},
+	"VerifiedBoot":              ubx.FieldSpec{WireName: "verified_boot"},
+	"VerifyAppsEnabled":         ubx.FieldSpec{WireName: "verify_apps_enabled"},
+}
 
 var V1beta1Device_AntivirusInfoFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ProductGuid": ubx.FieldSpec{WireName: "product_guid"},
-		"ProductState": ubx.FieldSpec{WireName: "product_state"},
-	}
+	"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+	"ProductGuid":  ubx.FieldSpec{WireName: "product_guid"},
+	"ProductState": ubx.FieldSpec{WireName: "product_state"},
+}
 
 var V1beta1Device_BrowserProfiles_ChromeBrowserInfo_Policies_ConflictsFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Scope":  ubx.FieldSpec{WireName: "scope"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1Device_BrowserProfiles_ChromeBrowserInfo_PoliciesFields = ubx.FieldMap{
-		"Conflicts": ubx.FieldSpec{
-			WireName: "conflicts",
-			Kind: "list",
-			Fields: V1beta1Device_BrowserProfiles_ChromeBrowserInfo_Policies_ConflictsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Conflicts": ubx.FieldSpec{
+		WireName: "conflicts",
+		Kind:     "list",
+		Fields:   V1beta1Device_BrowserProfiles_ChromeBrowserInfo_Policies_ConflictsFields,
+	},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Scope":  ubx.FieldSpec{WireName: "scope"},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1Device_BrowserProfiles_ChromeBrowserInfoFields = ubx.FieldMap{
-		"BrowserManagementState": ubx.FieldSpec{WireName: "browser_management_state"},
-		"BrowserVersion": ubx.FieldSpec{WireName: "browser_version"},
-		"IsBuiltInDnsClientEnabled": ubx.FieldSpec{WireName: "is_built_in_dns_client_enabled"},
-		"IsBulkDataEntryAnalysisEnabled": ubx.FieldSpec{WireName: "is_bulk_data_entry_analysis_enabled"},
-		"IsChromeCleanupEnabled": ubx.FieldSpec{WireName: "is_chrome_cleanup_enabled"},
-		"IsChromeRemoteDesktopAppBlocked": ubx.FieldSpec{WireName: "is_chrome_remote_desktop_app_blocked"},
-		"IsFileDownloadAnalysisEnabled": ubx.FieldSpec{WireName: "is_file_download_analysis_enabled"},
-		"IsFileUploadAnalysisEnabled": ubx.FieldSpec{WireName: "is_file_upload_analysis_enabled"},
-		"IsRealtimeUrlCheckEnabled": ubx.FieldSpec{WireName: "is_realtime_url_check_enabled"},
-		"IsSecurityEventAnalysisEnabled": ubx.FieldSpec{WireName: "is_security_event_analysis_enabled"},
-		"IsSiteIsolationEnabled": ubx.FieldSpec{WireName: "is_site_isolation_enabled"},
-		"IsThirdPartyBlockingEnabled": ubx.FieldSpec{WireName: "is_third_party_blocking_enabled"},
-		"PasswordProtectionWarningTrigger": ubx.FieldSpec{WireName: "password_protection_warning_trigger"},
-		"Policies": ubx.FieldSpec{
-			WireName: "policies",
-			Kind: "list",
-			Fields: V1beta1Device_BrowserProfiles_ChromeBrowserInfo_PoliciesFields,
-		},
-		"SafeBrowsingProtectionLevel": ubx.FieldSpec{WireName: "safe_browsing_protection_level"},
-	}
+	"BrowserManagementState":           ubx.FieldSpec{WireName: "browser_management_state"},
+	"BrowserVersion":                   ubx.FieldSpec{WireName: "browser_version"},
+	"IsBuiltInDnsClientEnabled":        ubx.FieldSpec{WireName: "is_built_in_dns_client_enabled"},
+	"IsBulkDataEntryAnalysisEnabled":   ubx.FieldSpec{WireName: "is_bulk_data_entry_analysis_enabled"},
+	"IsChromeCleanupEnabled":           ubx.FieldSpec{WireName: "is_chrome_cleanup_enabled"},
+	"IsChromeRemoteDesktopAppBlocked":  ubx.FieldSpec{WireName: "is_chrome_remote_desktop_app_blocked"},
+	"IsFileDownloadAnalysisEnabled":    ubx.FieldSpec{WireName: "is_file_download_analysis_enabled"},
+	"IsFileUploadAnalysisEnabled":      ubx.FieldSpec{WireName: "is_file_upload_analysis_enabled"},
+	"IsRealtimeUrlCheckEnabled":        ubx.FieldSpec{WireName: "is_realtime_url_check_enabled"},
+	"IsSecurityEventAnalysisEnabled":   ubx.FieldSpec{WireName: "is_security_event_analysis_enabled"},
+	"IsSiteIsolationEnabled":           ubx.FieldSpec{WireName: "is_site_isolation_enabled"},
+	"IsThirdPartyBlockingEnabled":      ubx.FieldSpec{WireName: "is_third_party_blocking_enabled"},
+	"PasswordProtectionWarningTrigger": ubx.FieldSpec{WireName: "password_protection_warning_trigger"},
+	"Policies": ubx.FieldSpec{
+		WireName: "policies",
+		Kind:     "list",
+		Fields:   V1beta1Device_BrowserProfiles_ChromeBrowserInfo_PoliciesFields,
+	},
+	"SafeBrowsingProtectionLevel": ubx.FieldSpec{WireName: "safe_browsing_protection_level"},
+}
 
 var V1beta1Device_BrowserProfilesFields = ubx.FieldMap{
-		"ChromeBrowserInfo": ubx.FieldSpec{
-			WireName: "chrome_browser_info",
-			Kind: "object",
-			Fields: V1beta1Device_BrowserProfiles_ChromeBrowserInfoFields,
-		},
-		"ChromeProfileId": ubx.FieldSpec{WireName: "chrome_profile_id"},
-		"LastProfileSyncTime": ubx.FieldSpec{WireName: "last_profile_sync_time"},
-	}
+	"ChromeBrowserInfo": ubx.FieldSpec{
+		WireName: "chrome_browser_info",
+		Kind:     "object",
+		Fields:   V1beta1Device_BrowserProfiles_ChromeBrowserInfoFields,
+	},
+	"ChromeProfileId":     ubx.FieldSpec{WireName: "chrome_profile_id"},
+	"LastProfileSyncTime": ubx.FieldSpec{WireName: "last_profile_sync_time"},
+}
 
 var V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MajorVersion": ubx.FieldSpec{WireName: "major_version"},
-		"MinorVersion": ubx.FieldSpec{WireName: "minor_version"},
-	}
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"MajorVersion": ubx.FieldSpec{WireName: "major_version"},
+	"MinorVersion": ubx.FieldSpec{WireName: "minor_version"},
+}
 
 var V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields = ubx.FieldMap{
-		"CertificateTemplate": ubx.FieldSpec{
-			WireName: "certificate_template",
-			Kind: "object",
-			Fields: V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields,
-		},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
-		"ValidationState": ubx.FieldSpec{WireName: "validation_state"},
-		"ValidityExpirationTime": ubx.FieldSpec{WireName: "validity_expiration_time"},
-		"ValidityStartTime": ubx.FieldSpec{WireName: "validity_start_time"},
-	}
+	"CertificateTemplate": ubx.FieldSpec{
+		WireName: "certificate_template",
+		Kind:     "object",
+		Fields:   V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields,
+	},
+	"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
+	"Issuer":                 ubx.FieldSpec{WireName: "issuer"},
+	"SerialNumber":           ubx.FieldSpec{WireName: "serial_number"},
+	"Subject":                ubx.FieldSpec{WireName: "subject"},
+	"Thumbprint":             ubx.FieldSpec{WireName: "thumbprint"},
+	"ValidationState":        ubx.FieldSpec{WireName: "validation_state"},
+	"ValidityExpirationTime": ubx.FieldSpec{WireName: "validity_expiration_time"},
+	"ValidityStartTime":      ubx.FieldSpec{WireName: "validity_start_time"},
+}
 
 var V1beta1Device_Device_EndpointVerificationSpecificAttributesFields = ubx.FieldMap{
-		"AdditionalSignals": ubx.FieldSpec{WireName: "additional_signals"},
-		"BrowserAttributes": ubx.FieldSpec{
-			WireName: "browser_attributes",
-			Kind: "list",
-			Fields: V1beta1Device_BrowserProfilesFields,
-		},
-		"CertificateAttributes": ubx.FieldSpec{
-			WireName: "certificate_attributes",
-			Kind: "list",
-			Fields: V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields,
-		},
-	}
+	"AdditionalSignals": ubx.FieldSpec{WireName: "additional_signals"},
+	"BrowserAttributes": ubx.FieldSpec{
+		WireName: "browser_attributes",
+		Kind:     "list",
+		Fields:   V1beta1Device_BrowserProfilesFields,
+	},
+	"CertificateAttributes": ubx.FieldSpec{
+		WireName: "certificate_attributes",
+		Kind:     "list",
+		Fields:   V1beta1Device_Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields,
+	},
+}
 
 var V1beta1Device_Device_WindowsSpecificDeviceAttributesFields = ubx.FieldMap{
-		"Hotfixes": ubx.FieldSpec{WireName: "hotfixes"},
-		"SecureBootMode": ubx.FieldSpec{WireName: "secure_boot_mode"},
-		"WindowsMachineDomain": ubx.FieldSpec{WireName: "windows_machine_domain"},
-		"WindowsUserDomain": ubx.FieldSpec{WireName: "windows_user_domain"},
-	}
+	"Hotfixes":             ubx.FieldSpec{WireName: "hotfixes"},
+	"SecureBootMode":       ubx.FieldSpec{WireName: "secure_boot_mode"},
+	"WindowsMachineDomain": ubx.FieldSpec{WireName: "windows_machine_domain"},
+	"WindowsUserDomain":    ubx.FieldSpec{WireName: "windows_user_domain"},
+}
 
 var V1beta1Device_DeviceFields = ubx.FieldMap{
-		"AndroidSpecificAttributes": ubx.FieldSpec{
-			WireName: "android_specific_attributes",
-			Kind: "object",
-			Fields: V1beta1Device_AndroidSpecificAttributesFields,
-		},
-		"AntivirusInfo": ubx.FieldSpec{
-			WireName: "antivirus_info",
-			Kind: "list",
-			Fields: V1beta1Device_AntivirusInfoFields,
-		},
-		"AssetTag": ubx.FieldSpec{WireName: "asset_tag"},
-		"BasebandVersion": ubx.FieldSpec{WireName: "baseband_version"},
-		"BootloaderVersion": ubx.FieldSpec{WireName: "bootloader_version"},
-		"Brand": ubx.FieldSpec{WireName: "brand"},
-		"BrowserProfiles": ubx.FieldSpec{
-			WireName: "browser_profiles",
-			Kind: "list",
-			Fields: V1beta1Device_BrowserProfilesFields,
-		},
-		"BuildNumber": ubx.FieldSpec{WireName: "build_number"},
-		"ClientTypes": ubx.FieldSpec{WireName: "client_types"},
-		"CompromisedState": ubx.FieldSpec{WireName: "compromised_state"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"DeviceType": ubx.FieldSpec{WireName: "device_type"},
-		"EnabledDeveloperOptions": ubx.FieldSpec{WireName: "enabled_developer_options"},
-		"EnabledUsbDebugging": ubx.FieldSpec{WireName: "enabled_usb_debugging"},
-		"EncryptionState": ubx.FieldSpec{WireName: "encryption_state"},
-		"EndpointVerificationSpecificAttributes": ubx.FieldSpec{
-			WireName: "endpoint_verification_specific_attributes",
-			Kind: "object",
-			Fields: V1beta1Device_Device_EndpointVerificationSpecificAttributesFields,
-		},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Imei": ubx.FieldSpec{WireName: "imei"},
-		"KernelVersion": ubx.FieldSpec{WireName: "kernel_version"},
-		"LastSyncTime": ubx.FieldSpec{WireName: "last_sync_time"},
-		"ManagementState": ubx.FieldSpec{WireName: "management_state"},
-		"Manufacturer": ubx.FieldSpec{WireName: "manufacturer"},
-		"Meid": ubx.FieldSpec{WireName: "meid"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkOperator": ubx.FieldSpec{WireName: "network_operator"},
-		"OsFirewallStatus": ubx.FieldSpec{WireName: "os_firewall_status"},
-		"OsVersion": ubx.FieldSpec{WireName: "os_version"},
-		"OtherAccounts": ubx.FieldSpec{WireName: "other_accounts"},
-		"OwnerType": ubx.FieldSpec{WireName: "owner_type"},
-		"ReleaseVersion": ubx.FieldSpec{WireName: "release_version"},
-		"SecurityPatchTime": ubx.FieldSpec{WireName: "security_patch_time"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"UnifiedDeviceId": ubx.FieldSpec{WireName: "unified_device_id"},
-		"WifiMacAddresses": ubx.FieldSpec{WireName: "wifi_mac_addresses"},
-		"WindowsSpecificDeviceAttributes": ubx.FieldSpec{
-			WireName: "windows_specific_device_attributes",
-			Kind: "object",
-			Fields: V1beta1Device_Device_WindowsSpecificDeviceAttributesFields,
-		},
-	}
+	"AndroidSpecificAttributes": ubx.FieldSpec{
+		WireName: "android_specific_attributes",
+		Kind:     "object",
+		Fields:   V1beta1Device_AndroidSpecificAttributesFields,
+	},
+	"AntivirusInfo": ubx.FieldSpec{
+		WireName: "antivirus_info",
+		Kind:     "list",
+		Fields:   V1beta1Device_AntivirusInfoFields,
+	},
+	"AssetTag":          ubx.FieldSpec{WireName: "asset_tag"},
+	"BasebandVersion":   ubx.FieldSpec{WireName: "baseband_version"},
+	"BootloaderVersion": ubx.FieldSpec{WireName: "bootloader_version"},
+	"Brand":             ubx.FieldSpec{WireName: "brand"},
+	"BrowserProfiles": ubx.FieldSpec{
+		WireName: "browser_profiles",
+		Kind:     "list",
+		Fields:   V1beta1Device_BrowserProfilesFields,
+	},
+	"BuildNumber":             ubx.FieldSpec{WireName: "build_number"},
+	"ClientTypes":             ubx.FieldSpec{WireName: "client_types"},
+	"CompromisedState":        ubx.FieldSpec{WireName: "compromised_state"},
+	"CreateTime":              ubx.FieldSpec{WireName: "create_time"},
+	"DeviceId":                ubx.FieldSpec{WireName: "device_id"},
+	"DeviceType":              ubx.FieldSpec{WireName: "device_type"},
+	"EnabledDeveloperOptions": ubx.FieldSpec{WireName: "enabled_developer_options"},
+	"EnabledUsbDebugging":     ubx.FieldSpec{WireName: "enabled_usb_debugging"},
+	"EncryptionState":         ubx.FieldSpec{WireName: "encryption_state"},
+	"EndpointVerificationSpecificAttributes": ubx.FieldSpec{
+		WireName: "endpoint_verification_specific_attributes",
+		Kind:     "object",
+		Fields:   V1beta1Device_Device_EndpointVerificationSpecificAttributesFields,
+	},
+	"Hostname":          ubx.FieldSpec{WireName: "hostname"},
+	"Imei":              ubx.FieldSpec{WireName: "imei"},
+	"KernelVersion":     ubx.FieldSpec{WireName: "kernel_version"},
+	"LastSyncTime":      ubx.FieldSpec{WireName: "last_sync_time"},
+	"ManagementState":   ubx.FieldSpec{WireName: "management_state"},
+	"Manufacturer":      ubx.FieldSpec{WireName: "manufacturer"},
+	"Meid":              ubx.FieldSpec{WireName: "meid"},
+	"Model":             ubx.FieldSpec{WireName: "model"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"NetworkOperator":   ubx.FieldSpec{WireName: "network_operator"},
+	"OsFirewallStatus":  ubx.FieldSpec{WireName: "os_firewall_status"},
+	"OsVersion":         ubx.FieldSpec{WireName: "os_version"},
+	"OtherAccounts":     ubx.FieldSpec{WireName: "other_accounts"},
+	"OwnerType":         ubx.FieldSpec{WireName: "owner_type"},
+	"ReleaseVersion":    ubx.FieldSpec{WireName: "release_version"},
+	"SecurityPatchTime": ubx.FieldSpec{WireName: "security_patch_time"},
+	"SerialNumber":      ubx.FieldSpec{WireName: "serial_number"},
+	"UnifiedDeviceId":   ubx.FieldSpec{WireName: "unified_device_id"},
+	"WifiMacAddresses":  ubx.FieldSpec{WireName: "wifi_mac_addresses"},
+	"WindowsSpecificDeviceAttributes": ubx.FieldSpec{
+		WireName: "windows_specific_device_attributes",
+		Kind:     "object",
+		Fields:   V1beta1Device_Device_WindowsSpecificDeviceAttributesFields,
+	},
+}
 
 type V1beta1DeviceConfig struct {
 	// Optional. [Resource name](https://cloud.google.com/apis/design/resource_names) of the customer. If you're using this API for your own organization, use `customers/my_customer` If you're using this API to manage another organization, use `customers/{customer_id}`, where customer_id is the customer to whom the device belongs.
@@ -445,8 +445,8 @@ var V1beta1Device = ubx.ResourceBinding{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
 		"Device": ubx.FieldSpec{
 			WireName: "device",
-			Kind: "object",
-			Fields: V1beta1Device_DeviceFields,
+			Kind:     "object",
+			Fields:   V1beta1Device_DeviceFields,
 		},
 	},
 }

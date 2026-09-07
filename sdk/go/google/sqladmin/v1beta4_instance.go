@@ -51,9 +51,9 @@ type V1beta4Instance_DiskEncryptionStatus struct {
 
 type V1beta4Instance_DnsNames struct {
 	ConnectionType any
-	DnsScope any
-	Name any
-	RecordManager any
+	DnsScope       any
+	Name           any
+	RecordManager  any
 }
 
 type V1beta4Instance_FailoverReplica struct {
@@ -79,32 +79,32 @@ type V1beta4Instance_GeminiConfig struct {
 }
 
 type V1beta4Instance_IpAddresses struct {
-	IpAddress any
+	IpAddress    any
 	TimeToRetire any
-	Type any
+	Type         any
 }
 
 type V1beta4Instance_Nodes_PscAutoConnections struct {
-	ConsumerNetwork any
-	ConsumerNetworkStatus any
-	ConsumerProject any
-	InstanceAutoDnsStatus any
-	IpAddress any
-	ServiceConnectionPolicy any
+	ConsumerNetwork                       any
+	ConsumerNetworkStatus                 any
+	ConsumerProject                       any
+	InstanceAutoDnsStatus                 any
+	IpAddress                             any
+	ServiceConnectionPolicy               any
 	ServiceConnectionPolicyCreationResult any
-	Status any
-	WriteEndpointAutoDnsStatus any
+	Status                                any
+	WriteEndpointAutoDnsStatus            any
 }
 
 type V1beta4Instance_Nodes struct {
-	DnsName any
-	DnsNames any
-	GceZone any
-	IpAddresses any
-	Name any
-	PscAutoConnections any
+	DnsName                  any
+	DnsNames                 any
+	GceZone                  any
+	IpAddresses              any
+	Name                     any
+	PscAutoConnections       any
 	PscServiceAttachmentLink any
-	State any
+	State                    any
 }
 
 type V1beta4Instance_OnPremisesConfiguration_SelectedObjects struct {
@@ -274,7 +274,7 @@ type V1beta4Instance_Settings_BackupConfiguration struct {
 }
 
 type V1beta4Instance_Settings_ConnectionPoolConfig_Flags struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -293,9 +293,9 @@ type V1beta4Instance_Settings_DataCacheConfig struct {
 }
 
 type V1beta4Instance_Settings_DenyMaintenancePeriods struct {
-	EndDate any
+	EndDate   any
 	StartDate any
-	Time any
+	Time      any
 }
 
 type V1beta4Instance_Settings_EntraidConfig struct {
@@ -331,9 +331,9 @@ type V1beta4Instance_Settings_InsightsConfig struct {
 
 type V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworks struct {
 	ExpirationTime any
-	Kind any
-	Name any
-	Value any
+	Kind           any
+	Name           any
+	Value          any
 }
 
 type V1beta4Instance_Settings_IpConfiguration_PscConfig struct {
@@ -451,7 +451,7 @@ type V1beta4Instance_Settings_PerformanceCaptureConfig struct {
 }
 
 type V1beta4Instance_Settings_ReadPoolAutoScaleConfig_TargetMetrics struct {
-	Metric any
+	Metric      any
 	TargetValue any
 }
 
@@ -579,481 +579,481 @@ type V1beta4Instance_Settings struct {
 }
 
 type V1beta4Instance_UpgradableDatabaseVersions struct {
-	DisplayName any
+	DisplayName  any
 	MajorVersion any
-	Name any
+	Name         any
 }
 
 var V1beta4Instance_DeploymentInfo_Source_TargetIdFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Project": ubx.FieldSpec{WireName: "project"},
+	"Region":  ubx.FieldSpec{WireName: "region"},
+}
 
 var V1beta4Instance_DeploymentInfo_SourceFields = ubx.FieldMap{
-		"TargetId": ubx.FieldSpec{
-			WireName: "target_id",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
-		},
-	}
+	"TargetId": ubx.FieldSpec{
+		WireName: "target_id",
+		Kind:     "object",
+		Fields:   V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
+	},
+}
 
 var V1beta4Instance_DeploymentInfo_TargetFields = ubx.FieldMap{
-		"SourceId": ubx.FieldSpec{
-			WireName: "source_id",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
-		},
-	}
+	"SourceId": ubx.FieldSpec{
+		WireName: "source_id",
+		Kind:     "object",
+		Fields:   V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
+	},
+}
 
 var V1beta4Instance_DeploymentInfoFields = ubx.FieldMap{
-		"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfo_SourceFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Target": ubx.FieldSpec{
-			WireName: "target",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfo_TargetFields,
-		},
-	}
+	"DeploymentId": ubx.FieldSpec{WireName: "deployment_id"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   V1beta4Instance_DeploymentInfo_SourceFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Target": ubx.FieldSpec{
+		WireName: "target",
+		Kind:     "object",
+		Fields:   V1beta4Instance_DeploymentInfo_TargetFields,
+	},
+}
 
 var V1beta4Instance_DiskEncryptionConfigurationFields = ubx.FieldMap{
-		"ConfidentialMode": ubx.FieldSpec{WireName: "confidential_mode"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"ConfidentialMode": ubx.FieldSpec{WireName: "confidential_mode"},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"KmsKeyName":       ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta4Instance_DiskEncryptionStatusFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var V1beta4Instance_FailoverReplicaFields = ubx.FieldMap{
-		"Available": ubx.FieldSpec{WireName: "available"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Available": ubx.FieldSpec{WireName: "available"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta4Instance_GeminiConfigFields = ubx.FieldMap{
-		"ActiveQueryEnabled": ubx.FieldSpec{WireName: "active_query_enabled"},
-		"Entitled": ubx.FieldSpec{WireName: "entitled"},
-		"FlagRecommenderEnabled": ubx.FieldSpec{WireName: "flag_recommender_enabled"},
-		"GoogleVacuumMgmtEnabled": ubx.FieldSpec{WireName: "google_vacuum_mgmt_enabled"},
-		"IndexAdvisorEnabled": ubx.FieldSpec{WireName: "index_advisor_enabled"},
-		"OomSessionCancelEnabled": ubx.FieldSpec{WireName: "oom_session_cancel_enabled"},
-	}
+	"ActiveQueryEnabled":      ubx.FieldSpec{WireName: "active_query_enabled"},
+	"Entitled":                ubx.FieldSpec{WireName: "entitled"},
+	"FlagRecommenderEnabled":  ubx.FieldSpec{WireName: "flag_recommender_enabled"},
+	"GoogleVacuumMgmtEnabled": ubx.FieldSpec{WireName: "google_vacuum_mgmt_enabled"},
+	"IndexAdvisorEnabled":     ubx.FieldSpec{WireName: "index_advisor_enabled"},
+	"OomSessionCancelEnabled": ubx.FieldSpec{WireName: "oom_session_cancel_enabled"},
+}
 
 var V1beta4Instance_IpAddressesFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"TimeToRetire": ubx.FieldSpec{WireName: "time_to_retire"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"IpAddress":    ubx.FieldSpec{WireName: "ip_address"},
+	"TimeToRetire": ubx.FieldSpec{WireName: "time_to_retire"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta4Instance_OnPremisesConfiguration_SelectedObjectsFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+}
 
 var V1beta4Instance_OnPremisesConfigurationFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"DmsManaged": ubx.FieldSpec{WireName: "dms_managed"},
-		"DumpFilePath": ubx.FieldSpec{WireName: "dump_file_path"},
-		"HostPort": ubx.FieldSpec{WireName: "host_port"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"SelectedObjects": ubx.FieldSpec{
-			WireName: "selected_objects",
-			Kind: "list",
-			Fields: V1beta4Instance_OnPremisesConfiguration_SelectedObjectsFields,
-		},
-		"SourceInstance": ubx.FieldSpec{
-			WireName: "source_instance",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
-		},
-		"SslOption": ubx.FieldSpec{WireName: "ssl_option"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"CaCertificate":     ubx.FieldSpec{WireName: "ca_certificate"},
+	"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientKey":         ubx.FieldSpec{WireName: "client_key"},
+	"DmsManaged":        ubx.FieldSpec{WireName: "dms_managed"},
+	"DumpFilePath":      ubx.FieldSpec{WireName: "dump_file_path"},
+	"HostPort":          ubx.FieldSpec{WireName: "host_port"},
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"Password":          ubx.FieldSpec{WireName: "password"},
+	"SelectedObjects": ubx.FieldSpec{
+		WireName: "selected_objects",
+		Kind:     "list",
+		Fields:   V1beta4Instance_OnPremisesConfiguration_SelectedObjectsFields,
+	},
+	"SourceInstance": ubx.FieldSpec{
+		WireName: "source_instance",
+		Kind:     "object",
+		Fields:   V1beta4Instance_DeploymentInfo_Source_TargetIdFields,
+	},
+	"SslOption": ubx.FieldSpec{WireName: "ssl_option"},
+	"Username":  ubx.FieldSpec{WireName: "username"},
+}
 
 var V1beta4Instance_OutOfDiskReportFields = ubx.FieldMap{
-		"SqlMinRecommendedIncreaseSizeGb": ubx.FieldSpec{WireName: "sql_min_recommended_increase_size_gb"},
-		"SqlOutOfDiskState": ubx.FieldSpec{WireName: "sql_out_of_disk_state"},
-	}
+	"SqlMinRecommendedIncreaseSizeGb": ubx.FieldSpec{WireName: "sql_min_recommended_increase_size_gb"},
+	"SqlOutOfDiskState":               ubx.FieldSpec{WireName: "sql_out_of_disk_state"},
+}
 
 var V1beta4Instance_ReplicaConfiguration_MysqlReplicaConfigurationFields = ubx.FieldMap{
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"ClientCertificate": ubx.FieldSpec{WireName: "client_certificate"},
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"ConnectRetryInterval": ubx.FieldSpec{WireName: "connect_retry_interval"},
-		"DumpFilePath": ubx.FieldSpec{WireName: "dump_file_path"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MasterHeartbeatPeriod": ubx.FieldSpec{WireName: "master_heartbeat_period"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"SslCipher": ubx.FieldSpec{WireName: "ssl_cipher"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"VerifyServerCertificate": ubx.FieldSpec{WireName: "verify_server_certificate"},
-	}
+	"CaCertificate":           ubx.FieldSpec{WireName: "ca_certificate"},
+	"ClientCertificate":       ubx.FieldSpec{WireName: "client_certificate"},
+	"ClientKey":               ubx.FieldSpec{WireName: "client_key"},
+	"ConnectRetryInterval":    ubx.FieldSpec{WireName: "connect_retry_interval"},
+	"DumpFilePath":            ubx.FieldSpec{WireName: "dump_file_path"},
+	"Kind":                    ubx.FieldSpec{WireName: "kind"},
+	"MasterHeartbeatPeriod":   ubx.FieldSpec{WireName: "master_heartbeat_period"},
+	"Password":                ubx.FieldSpec{WireName: "password"},
+	"SslCipher":               ubx.FieldSpec{WireName: "ssl_cipher"},
+	"Username":                ubx.FieldSpec{WireName: "username"},
+	"VerifyServerCertificate": ubx.FieldSpec{WireName: "verify_server_certificate"},
+}
 
 var V1beta4Instance_ReplicaConfigurationFields = ubx.FieldMap{
-		"CascadableReplica": ubx.FieldSpec{WireName: "cascadable_replica"},
-		"FailoverTarget": ubx.FieldSpec{WireName: "failover_target"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MysqlReplicaConfiguration": ubx.FieldSpec{
-			WireName: "mysql_replica_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_ReplicaConfiguration_MysqlReplicaConfigurationFields,
-		},
-	}
+	"CascadableReplica": ubx.FieldSpec{WireName: "cascadable_replica"},
+	"FailoverTarget":    ubx.FieldSpec{WireName: "failover_target"},
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"MysqlReplicaConfiguration": ubx.FieldSpec{
+		WireName: "mysql_replica_configuration",
+		Kind:     "object",
+		Fields:   V1beta4Instance_ReplicaConfiguration_MysqlReplicaConfigurationFields,
+	},
+}
 
 var V1beta4Instance_ReplicationClusterFields = ubx.FieldMap{
-		"DrReplica": ubx.FieldSpec{WireName: "dr_replica"},
-		"FailoverDrReplicaName": ubx.FieldSpec{WireName: "failover_dr_replica_name"},
-		"PsaWriteEndpoint": ubx.FieldSpec{WireName: "psa_write_endpoint"},
-	}
+	"DrReplica":             ubx.FieldSpec{WireName: "dr_replica"},
+	"FailoverDrReplicaName": ubx.FieldSpec{WireName: "failover_dr_replica_name"},
+	"PsaWriteEndpoint":      ubx.FieldSpec{WireName: "psa_write_endpoint"},
+}
 
 var V1beta4Instance_ScheduledMaintenanceFields = ubx.FieldMap{
-		"CanDefer": ubx.FieldSpec{WireName: "can_defer"},
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"CanDefer":             ubx.FieldSpec{WireName: "can_defer"},
+	"CanReschedule":        ubx.FieldSpec{WireName: "can_reschedule"},
+	"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
+	"StartTime":            ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta4Instance_ServerCaCertFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{WireName: "cert"},
-		"CertSerialNumber": ubx.FieldSpec{WireName: "cert_serial_number"},
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
-	}
+	"Cert":             ubx.FieldSpec{WireName: "cert"},
+	"CertSerialNumber": ubx.FieldSpec{WireName: "cert_serial_number"},
+	"CommonName":       ubx.FieldSpec{WireName: "common_name"},
+	"CreateTime":       ubx.FieldSpec{WireName: "create_time"},
+	"ExpirationTime":   ubx.FieldSpec{WireName: "expiration_time"},
+	"Instance":         ubx.FieldSpec{WireName: "instance"},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"SelfLink":         ubx.FieldSpec{WireName: "self_link"},
+	"Sha1Fingerprint":  ubx.FieldSpec{WireName: "sha1_fingerprint"},
+}
 
 var V1beta4Instance_Settings_ActiveDirectoryConfigFields = ubx.FieldMap{
-		"AdminCredentialSecretName": ubx.FieldSpec{WireName: "admin_credential_secret_name"},
-		"DnsServers": ubx.FieldSpec{WireName: "dns_servers"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-	}
+	"AdminCredentialSecretName": ubx.FieldSpec{WireName: "admin_credential_secret_name"},
+	"DnsServers":                ubx.FieldSpec{WireName: "dns_servers"},
+	"Domain":                    ubx.FieldSpec{WireName: "domain"},
+	"Kind":                      ubx.FieldSpec{WireName: "kind"},
+	"Mode":                      ubx.FieldSpec{WireName: "mode"},
+	"OrganizationalUnit":        ubx.FieldSpec{WireName: "organizational_unit"},
+}
 
 var V1beta4Instance_Settings_AdvancedMachineFeaturesFields = ubx.FieldMap{
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-	}
+	"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
+}
 
 var V1beta4Instance_Settings_BackupConfiguration_BackupRetentionSettingsFields = ubx.FieldMap{
-		"RetainedBackups": ubx.FieldSpec{WireName: "retained_backups"},
-		"RetentionUnit": ubx.FieldSpec{WireName: "retention_unit"},
-	}
+	"RetainedBackups": ubx.FieldSpec{WireName: "retained_backups"},
+	"RetentionUnit":   ubx.FieldSpec{WireName: "retention_unit"},
+}
 
 var V1beta4Instance_Settings_BackupConfigurationFields = ubx.FieldMap{
-		"BackupRetentionSettings": ubx.FieldSpec{
-			WireName: "backup_retention_settings",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_BackupConfiguration_BackupRetentionSettingsFields,
-		},
-		"BackupTier": ubx.FieldSpec{WireName: "backup_tier"},
-		"BinaryLogEnabled": ubx.FieldSpec{WireName: "binary_log_enabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"PointInTimeRecoveryEnabled": ubx.FieldSpec{WireName: "point_in_time_recovery_enabled"},
-		"ReplicationLogArchivingEnabled": ubx.FieldSpec{WireName: "replication_log_archiving_enabled"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TransactionLogRetentionDays": ubx.FieldSpec{WireName: "transaction_log_retention_days"},
-		"TransactionalLogStorageState": ubx.FieldSpec{WireName: "transactional_log_storage_state"},
-	}
+	"BackupRetentionSettings": ubx.FieldSpec{
+		WireName: "backup_retention_settings",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_BackupConfiguration_BackupRetentionSettingsFields,
+	},
+	"BackupTier":                     ubx.FieldSpec{WireName: "backup_tier"},
+	"BinaryLogEnabled":               ubx.FieldSpec{WireName: "binary_log_enabled"},
+	"Enabled":                        ubx.FieldSpec{WireName: "enabled"},
+	"Kind":                           ubx.FieldSpec{WireName: "kind"},
+	"Location":                       ubx.FieldSpec{WireName: "location"},
+	"PointInTimeRecoveryEnabled":     ubx.FieldSpec{WireName: "point_in_time_recovery_enabled"},
+	"ReplicationLogArchivingEnabled": ubx.FieldSpec{WireName: "replication_log_archiving_enabled"},
+	"StartTime":                      ubx.FieldSpec{WireName: "start_time"},
+	"TransactionLogRetentionDays":    ubx.FieldSpec{WireName: "transaction_log_retention_days"},
+	"TransactionalLogStorageState":   ubx.FieldSpec{WireName: "transactional_log_storage_state"},
+}
 
 var V1beta4Instance_Settings_ConnectionPoolConfig_FlagsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta4Instance_Settings_ConnectionPoolConfigFields = ubx.FieldMap{
-		"ConnectionPoolingEnabled": ubx.FieldSpec{WireName: "connection_pooling_enabled"},
-		"Flags": ubx.FieldSpec{
-			WireName: "flags",
-			Kind: "list",
-			Fields: V1beta4Instance_Settings_ConnectionPoolConfig_FlagsFields,
-		},
-		"PoolerCount": ubx.FieldSpec{WireName: "pooler_count"},
-	}
+	"ConnectionPoolingEnabled": ubx.FieldSpec{WireName: "connection_pooling_enabled"},
+	"Flags": ubx.FieldSpec{
+		WireName: "flags",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Settings_ConnectionPoolConfig_FlagsFields,
+	},
+	"PoolerCount": ubx.FieldSpec{WireName: "pooler_count"},
+}
 
 var V1beta4Instance_Settings_DataCacheConfigFields = ubx.FieldMap{
-		"DataCacheEnabled": ubx.FieldSpec{WireName: "data_cache_enabled"},
-	}
+	"DataCacheEnabled": ubx.FieldSpec{WireName: "data_cache_enabled"},
+}
 
 var V1beta4Instance_Settings_DenyMaintenancePeriodsFields = ubx.FieldMap{
-		"EndDate": ubx.FieldSpec{WireName: "end_date"},
-		"StartDate": ubx.FieldSpec{WireName: "start_date"},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"EndDate":   ubx.FieldSpec{WireName: "end_date"},
+	"StartDate": ubx.FieldSpec{WireName: "start_date"},
+	"Time":      ubx.FieldSpec{WireName: "time"},
+}
 
 var V1beta4Instance_Settings_EntraidConfigFields = ubx.FieldMap{
-		"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ApplicationId": ubx.FieldSpec{WireName: "application_id"},
+	"Kind":          ubx.FieldSpec{WireName: "kind"},
+	"TenantId":      ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var V1beta4Instance_Settings_FinalBackupConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
-	}
+	"Enabled":       ubx.FieldSpec{WireName: "enabled"},
+	"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
+}
 
 var V1beta4Instance_Settings_InsightsConfigFields = ubx.FieldMap{
-		"EnhancedQueryInsightsEnabled": ubx.FieldSpec{WireName: "enhanced_query_insights_enabled"},
-		"QueryInsightsEnabled": ubx.FieldSpec{WireName: "query_insights_enabled"},
-		"QueryPlansPerMinute": ubx.FieldSpec{WireName: "query_plans_per_minute"},
-		"QueryStringLength": ubx.FieldSpec{WireName: "query_string_length"},
-		"RecordApplicationTags": ubx.FieldSpec{WireName: "record_application_tags"},
-		"RecordClientAddress": ubx.FieldSpec{WireName: "record_client_address"},
-	}
+	"EnhancedQueryInsightsEnabled": ubx.FieldSpec{WireName: "enhanced_query_insights_enabled"},
+	"QueryInsightsEnabled":         ubx.FieldSpec{WireName: "query_insights_enabled"},
+	"QueryPlansPerMinute":          ubx.FieldSpec{WireName: "query_plans_per_minute"},
+	"QueryStringLength":            ubx.FieldSpec{WireName: "query_string_length"},
+	"RecordApplicationTags":        ubx.FieldSpec{WireName: "record_application_tags"},
+	"RecordClientAddress":          ubx.FieldSpec{WireName: "record_client_address"},
+}
 
 var V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworksFields = ubx.FieldMap{
-		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
+	"Kind":           ubx.FieldSpec{WireName: "kind"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"Value":          ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta4Instance_Nodes_PscAutoConnectionsFields = ubx.FieldMap{
-		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
-		"ConsumerNetworkStatus": ubx.FieldSpec{WireName: "consumer_network_status"},
-		"ConsumerProject": ubx.FieldSpec{WireName: "consumer_project"},
-		"InstanceAutoDnsStatus": ubx.FieldSpec{WireName: "instance_auto_dns_status"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"ServiceConnectionPolicy": ubx.FieldSpec{WireName: "service_connection_policy"},
-		"ServiceConnectionPolicyCreationResult": ubx.FieldSpec{WireName: "service_connection_policy_creation_result"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"WriteEndpointAutoDnsStatus": ubx.FieldSpec{WireName: "write_endpoint_auto_dns_status"},
-	}
+	"ConsumerNetwork":                       ubx.FieldSpec{WireName: "consumer_network"},
+	"ConsumerNetworkStatus":                 ubx.FieldSpec{WireName: "consumer_network_status"},
+	"ConsumerProject":                       ubx.FieldSpec{WireName: "consumer_project"},
+	"InstanceAutoDnsStatus":                 ubx.FieldSpec{WireName: "instance_auto_dns_status"},
+	"IpAddress":                             ubx.FieldSpec{WireName: "ip_address"},
+	"ServiceConnectionPolicy":               ubx.FieldSpec{WireName: "service_connection_policy"},
+	"ServiceConnectionPolicyCreationResult": ubx.FieldSpec{WireName: "service_connection_policy_creation_result"},
+	"Status":                                ubx.FieldSpec{WireName: "status"},
+	"WriteEndpointAutoDnsStatus":            ubx.FieldSpec{WireName: "write_endpoint_auto_dns_status"},
+}
 
 var V1beta4Instance_Settings_IpConfiguration_PscConfigFields = ubx.FieldMap{
-		"AllowedConsumerProjects": ubx.FieldSpec{WireName: "allowed_consumer_projects"},
-		"NetworkAttachmentUri": ubx.FieldSpec{WireName: "network_attachment_uri"},
-		"PscAutoConnectionPolicyEnabled": ubx.FieldSpec{WireName: "psc_auto_connection_policy_enabled"},
-		"PscAutoConnections": ubx.FieldSpec{
-			WireName: "psc_auto_connections",
-			Kind: "list",
-			Fields: V1beta4Instance_Nodes_PscAutoConnectionsFields,
-		},
-		"PscAutoDnsEnabled": ubx.FieldSpec{WireName: "psc_auto_dns_enabled"},
-		"PscEnabled": ubx.FieldSpec{WireName: "psc_enabled"},
-		"PscWriteEndpointDnsEnabled": ubx.FieldSpec{WireName: "psc_write_endpoint_dns_enabled"},
-	}
+	"AllowedConsumerProjects":        ubx.FieldSpec{WireName: "allowed_consumer_projects"},
+	"NetworkAttachmentUri":           ubx.FieldSpec{WireName: "network_attachment_uri"},
+	"PscAutoConnectionPolicyEnabled": ubx.FieldSpec{WireName: "psc_auto_connection_policy_enabled"},
+	"PscAutoConnections": ubx.FieldSpec{
+		WireName: "psc_auto_connections",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Nodes_PscAutoConnectionsFields,
+	},
+	"PscAutoDnsEnabled":          ubx.FieldSpec{WireName: "psc_auto_dns_enabled"},
+	"PscEnabled":                 ubx.FieldSpec{WireName: "psc_enabled"},
+	"PscWriteEndpointDnsEnabled": ubx.FieldSpec{WireName: "psc_write_endpoint_dns_enabled"},
+}
 
 var V1beta4Instance_Settings_IpConfigurationFields = ubx.FieldMap{
-		"AllocatedIpRange": ubx.FieldSpec{WireName: "allocated_ip_range"},
-		"AuthorizedNetworks": ubx.FieldSpec{
-			WireName: "authorized_networks",
-			Kind: "list",
-			Fields: V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworksFields,
-		},
-		"CustomSubjectAlternativeNames": ubx.FieldSpec{WireName: "custom_subject_alternative_names"},
-		"EnablePrivatePathForGoogleCloudServices": ubx.FieldSpec{WireName: "enable_private_path_for_google_cloud_services"},
-		"Ipv4Enabled": ubx.FieldSpec{WireName: "ipv4_enabled"},
-		"PrivateNetwork": ubx.FieldSpec{WireName: "private_network"},
-		"PscConfig": ubx.FieldSpec{
-			WireName: "psc_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_IpConfiguration_PscConfigFields,
-		},
-		"RequireSsl": ubx.FieldSpec{WireName: "require_ssl"},
-		"ServerCaMode": ubx.FieldSpec{WireName: "server_ca_mode"},
-		"ServerCaPool": ubx.FieldSpec{WireName: "server_ca_pool"},
-		"ServerCertificateRotationMode": ubx.FieldSpec{WireName: "server_certificate_rotation_mode"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"AllocatedIpRange": ubx.FieldSpec{WireName: "allocated_ip_range"},
+	"AuthorizedNetworks": ubx.FieldSpec{
+		WireName: "authorized_networks",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworksFields,
+	},
+	"CustomSubjectAlternativeNames":           ubx.FieldSpec{WireName: "custom_subject_alternative_names"},
+	"EnablePrivatePathForGoogleCloudServices": ubx.FieldSpec{WireName: "enable_private_path_for_google_cloud_services"},
+	"Ipv4Enabled":    ubx.FieldSpec{WireName: "ipv4_enabled"},
+	"PrivateNetwork": ubx.FieldSpec{WireName: "private_network"},
+	"PscConfig": ubx.FieldSpec{
+		WireName: "psc_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_IpConfiguration_PscConfigFields,
+	},
+	"RequireSsl":                    ubx.FieldSpec{WireName: "require_ssl"},
+	"ServerCaMode":                  ubx.FieldSpec{WireName: "server_ca_mode"},
+	"ServerCaPool":                  ubx.FieldSpec{WireName: "server_ca_pool"},
+	"ServerCertificateRotationMode": ubx.FieldSpec{WireName: "server_certificate_rotation_mode"},
+	"SslMode":                       ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var V1beta4Instance_Settings_LocationPreferenceFields = ubx.FieldMap{
-		"FollowGaeApplication": ubx.FieldSpec{WireName: "follow_gae_application"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"SecondaryZone": ubx.FieldSpec{WireName: "secondary_zone"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"FollowGaeApplication": ubx.FieldSpec{WireName: "follow_gae_application"},
+	"Kind":                 ubx.FieldSpec{WireName: "kind"},
+	"SecondaryZone":        ubx.FieldSpec{WireName: "secondary_zone"},
+	"Zone":                 ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1beta4Instance_Settings_MaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Hour": ubx.FieldSpec{WireName: "hour"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"UpdateTrack": ubx.FieldSpec{WireName: "update_track"},
-	}
+	"Day":         ubx.FieldSpec{WireName: "day"},
+	"Hour":        ubx.FieldSpec{WireName: "hour"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"UpdateTrack": ubx.FieldSpec{WireName: "update_track"},
+}
 
 var V1beta4Instance_Settings_PasswordValidationPolicyFields = ubx.FieldMap{
-		"Complexity": ubx.FieldSpec{WireName: "complexity"},
-		"DisallowCompromisedCredentials": ubx.FieldSpec{WireName: "disallow_compromised_credentials"},
-		"DisallowUsernameSubstring": ubx.FieldSpec{WireName: "disallow_username_substring"},
-		"EnablePasswordPolicy": ubx.FieldSpec{WireName: "enable_password_policy"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"PasswordChangeInterval": ubx.FieldSpec{WireName: "password_change_interval"},
-		"ReuseInterval": ubx.FieldSpec{WireName: "reuse_interval"},
-	}
+	"Complexity":                     ubx.FieldSpec{WireName: "complexity"},
+	"DisallowCompromisedCredentials": ubx.FieldSpec{WireName: "disallow_compromised_credentials"},
+	"DisallowUsernameSubstring":      ubx.FieldSpec{WireName: "disallow_username_substring"},
+	"EnablePasswordPolicy":           ubx.FieldSpec{WireName: "enable_password_policy"},
+	"MinLength":                      ubx.FieldSpec{WireName: "min_length"},
+	"PasswordChangeInterval":         ubx.FieldSpec{WireName: "password_change_interval"},
+	"ReuseInterval":                  ubx.FieldSpec{WireName: "reuse_interval"},
+}
 
 var V1beta4Instance_Settings_PerformanceCaptureConfigFields = ubx.FieldMap{
-		"CpuUtilizationThresholdPercent": ubx.FieldSpec{WireName: "cpu_utilization_threshold_percent"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"HistoryListLengthThresholdCount": ubx.FieldSpec{WireName: "history_list_length_threshold_count"},
-		"MemoryUsageThresholdPercent": ubx.FieldSpec{WireName: "memory_usage_threshold_percent"},
-		"ProbeThreshold": ubx.FieldSpec{WireName: "probe_threshold"},
-		"ProbingIntervalSeconds": ubx.FieldSpec{WireName: "probing_interval_seconds"},
-		"RunningThreadsThreshold": ubx.FieldSpec{WireName: "running_threads_threshold"},
-		"SecondsBehindSourceThreshold": ubx.FieldSpec{WireName: "seconds_behind_source_threshold"},
-		"SemaphoreWaitThresholdCount": ubx.FieldSpec{WireName: "semaphore_wait_threshold_count"},
-		"TransactionDurationThreshold": ubx.FieldSpec{WireName: "transaction_duration_threshold"},
-		"TransactionKillExcludedUserHosts": ubx.FieldSpec{WireName: "transaction_kill_excluded_user_hosts"},
-		"TransactionKillThresholdSeconds": ubx.FieldSpec{WireName: "transaction_kill_threshold_seconds"},
-		"TransactionKillType": ubx.FieldSpec{WireName: "transaction_kill_type"},
-		"TransactionLockWaitThresholdCount": ubx.FieldSpec{WireName: "transaction_lock_wait_threshold_count"},
-	}
+	"CpuUtilizationThresholdPercent":    ubx.FieldSpec{WireName: "cpu_utilization_threshold_percent"},
+	"Enabled":                           ubx.FieldSpec{WireName: "enabled"},
+	"HistoryListLengthThresholdCount":   ubx.FieldSpec{WireName: "history_list_length_threshold_count"},
+	"MemoryUsageThresholdPercent":       ubx.FieldSpec{WireName: "memory_usage_threshold_percent"},
+	"ProbeThreshold":                    ubx.FieldSpec{WireName: "probe_threshold"},
+	"ProbingIntervalSeconds":            ubx.FieldSpec{WireName: "probing_interval_seconds"},
+	"RunningThreadsThreshold":           ubx.FieldSpec{WireName: "running_threads_threshold"},
+	"SecondsBehindSourceThreshold":      ubx.FieldSpec{WireName: "seconds_behind_source_threshold"},
+	"SemaphoreWaitThresholdCount":       ubx.FieldSpec{WireName: "semaphore_wait_threshold_count"},
+	"TransactionDurationThreshold":      ubx.FieldSpec{WireName: "transaction_duration_threshold"},
+	"TransactionKillExcludedUserHosts":  ubx.FieldSpec{WireName: "transaction_kill_excluded_user_hosts"},
+	"TransactionKillThresholdSeconds":   ubx.FieldSpec{WireName: "transaction_kill_threshold_seconds"},
+	"TransactionKillType":               ubx.FieldSpec{WireName: "transaction_kill_type"},
+	"TransactionLockWaitThresholdCount": ubx.FieldSpec{WireName: "transaction_lock_wait_threshold_count"},
+}
 
 var V1beta4Instance_Settings_ReadPoolAutoScaleConfig_TargetMetricsFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"TargetValue": ubx.FieldSpec{WireName: "target_value"},
-	}
+	"Metric":      ubx.FieldSpec{WireName: "metric"},
+	"TargetValue": ubx.FieldSpec{WireName: "target_value"},
+}
 
 var V1beta4Instance_Settings_ReadPoolAutoScaleConfigFields = ubx.FieldMap{
-		"DisableScaleIn": ubx.FieldSpec{WireName: "disable_scale_in"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-		"ScaleInCooldownSeconds": ubx.FieldSpec{WireName: "scale_in_cooldown_seconds"},
-		"ScaleOutCooldownSeconds": ubx.FieldSpec{WireName: "scale_out_cooldown_seconds"},
-		"TargetMetrics": ubx.FieldSpec{
-			WireName: "target_metrics",
-			Kind: "list",
-			Fields: V1beta4Instance_Settings_ReadPoolAutoScaleConfig_TargetMetricsFields,
-		},
-	}
+	"DisableScaleIn":          ubx.FieldSpec{WireName: "disable_scale_in"},
+	"Enabled":                 ubx.FieldSpec{WireName: "enabled"},
+	"MaxNodeCount":            ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount":            ubx.FieldSpec{WireName: "min_node_count"},
+	"ScaleInCooldownSeconds":  ubx.FieldSpec{WireName: "scale_in_cooldown_seconds"},
+	"ScaleOutCooldownSeconds": ubx.FieldSpec{WireName: "scale_out_cooldown_seconds"},
+	"TargetMetrics": ubx.FieldSpec{
+		WireName: "target_metrics",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Settings_ReadPoolAutoScaleConfig_TargetMetricsFields,
+	},
+}
 
 var V1beta4Instance_Settings_SqlServerAuditConfigFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"RetentionInterval": ubx.FieldSpec{WireName: "retention_interval"},
-		"UploadInterval": ubx.FieldSpec{WireName: "upload_interval"},
-	}
+	"Bucket":            ubx.FieldSpec{WireName: "bucket"},
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"RetentionInterval": ubx.FieldSpec{WireName: "retention_interval"},
+	"UploadInterval":    ubx.FieldSpec{WireName: "upload_interval"},
+}
 
 var V1beta4Instance_SettingsFields = ubx.FieldMap{
-		"AcceleratedReplicaMode": ubx.FieldSpec{WireName: "accelerated_replica_mode"},
-		"ActivationPolicy": ubx.FieldSpec{WireName: "activation_policy"},
-		"ActiveDirectoryConfig": ubx.FieldSpec{
-			WireName: "active_directory_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_ActiveDirectoryConfigFields,
-		},
-		"AdvancedMachineFeatures": ubx.FieldSpec{
-			WireName: "advanced_machine_features",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_AdvancedMachineFeaturesFields,
-		},
-		"AuthorizedGaeApplications": ubx.FieldSpec{WireName: "authorized_gae_applications"},
-		"AutoUpgradeEnabled": ubx.FieldSpec{WireName: "auto_upgrade_enabled"},
-		"AvailabilityType": ubx.FieldSpec{WireName: "availability_type"},
-		"BackupConfiguration": ubx.FieldSpec{
-			WireName: "backup_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_BackupConfigurationFields,
-		},
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"ConnectionPoolConfig": ubx.FieldSpec{
-			WireName: "connection_pool_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_ConnectionPoolConfigFields,
-		},
-		"ConnectorEnforcement": ubx.FieldSpec{WireName: "connector_enforcement"},
-		"CrashSafeReplicationEnabled": ubx.FieldSpec{WireName: "crash_safe_replication_enabled"},
-		"DataApiAccess": ubx.FieldSpec{WireName: "data_api_access"},
-		"DataCacheConfig": ubx.FieldSpec{
-			WireName: "data_cache_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_DataCacheConfigFields,
-		},
-		"DataDiskProvisionedIops": ubx.FieldSpec{WireName: "data_disk_provisioned_iops"},
-		"DataDiskProvisionedThroughput": ubx.FieldSpec{WireName: "data_disk_provisioned_throughput"},
-		"DataDiskSizeGb": ubx.FieldSpec{WireName: "data_disk_size_gb"},
-		"DataDiskType": ubx.FieldSpec{WireName: "data_disk_type"},
-		"DatabaseFlags": ubx.FieldSpec{
-			WireName: "database_flags",
-			Kind: "list",
-			Fields: V1beta4Instance_Settings_ConnectionPoolConfig_FlagsFields,
-		},
-		"DatabaseReplicationEnabled": ubx.FieldSpec{WireName: "database_replication_enabled"},
-		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"DenyMaintenancePeriods": ubx.FieldSpec{
-			WireName: "deny_maintenance_periods",
-			Kind: "list",
-			Fields: V1beta4Instance_Settings_DenyMaintenancePeriodsFields,
-		},
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"EnableDataplexIntegration": ubx.FieldSpec{WireName: "enable_dataplex_integration"},
-		"EnableGoogleMlIntegration": ubx.FieldSpec{WireName: "enable_google_ml_integration"},
-		"EntraidConfig": ubx.FieldSpec{
-			WireName: "entraid_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_EntraidConfigFields,
-		},
-		"FinalBackupConfig": ubx.FieldSpec{
-			WireName: "final_backup_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_FinalBackupConfigFields,
-		},
-		"InsightsConfig": ubx.FieldSpec{
-			WireName: "insights_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_InsightsConfigFields,
-		},
-		"IpConfiguration": ubx.FieldSpec{
-			WireName: "ip_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_IpConfigurationFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LocationPreference": ubx.FieldSpec{
-			WireName: "location_preference",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_LocationPreferenceFields,
-		},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_MaintenanceWindowFields,
-		},
-		"PasswordValidationPolicy": ubx.FieldSpec{
-			WireName: "password_validation_policy",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_PasswordValidationPolicyFields,
-		},
-		"PerformanceCaptureConfig": ubx.FieldSpec{
-			WireName: "performance_capture_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_PerformanceCaptureConfigFields,
-		},
-		"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
-		"ReadPoolAutoScaleConfig": ubx.FieldSpec{
-			WireName: "read_pool_auto_scale_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_ReadPoolAutoScaleConfigFields,
-		},
-		"ReplicationLagMaxSeconds": ubx.FieldSpec{WireName: "replication_lag_max_seconds"},
-		"ReplicationType": ubx.FieldSpec{WireName: "replication_type"},
-		"RetainBackupsOnDelete": ubx.FieldSpec{WireName: "retain_backups_on_delete"},
-		"SettingsVersion": ubx.FieldSpec{WireName: "settings_version"},
-		"SqlServerAuditConfig": ubx.FieldSpec{
-			WireName: "sql_server_audit_config",
-			Kind: "object",
-			Fields: V1beta4Instance_Settings_SqlServerAuditConfigFields,
-		},
-		"StorageAutoResize": ubx.FieldSpec{WireName: "storage_auto_resize"},
-		"StorageAutoResizeLimit": ubx.FieldSpec{WireName: "storage_auto_resize_limit"},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
-	}
+	"AcceleratedReplicaMode": ubx.FieldSpec{WireName: "accelerated_replica_mode"},
+	"ActivationPolicy":       ubx.FieldSpec{WireName: "activation_policy"},
+	"ActiveDirectoryConfig": ubx.FieldSpec{
+		WireName: "active_directory_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_ActiveDirectoryConfigFields,
+	},
+	"AdvancedMachineFeatures": ubx.FieldSpec{
+		WireName: "advanced_machine_features",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_AdvancedMachineFeaturesFields,
+	},
+	"AuthorizedGaeApplications": ubx.FieldSpec{WireName: "authorized_gae_applications"},
+	"AutoUpgradeEnabled":        ubx.FieldSpec{WireName: "auto_upgrade_enabled"},
+	"AvailabilityType":          ubx.FieldSpec{WireName: "availability_type"},
+	"BackupConfiguration": ubx.FieldSpec{
+		WireName: "backup_configuration",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_BackupConfigurationFields,
+	},
+	"Collation": ubx.FieldSpec{WireName: "collation"},
+	"ConnectionPoolConfig": ubx.FieldSpec{
+		WireName: "connection_pool_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_ConnectionPoolConfigFields,
+	},
+	"ConnectorEnforcement":        ubx.FieldSpec{WireName: "connector_enforcement"},
+	"CrashSafeReplicationEnabled": ubx.FieldSpec{WireName: "crash_safe_replication_enabled"},
+	"DataApiAccess":               ubx.FieldSpec{WireName: "data_api_access"},
+	"DataCacheConfig": ubx.FieldSpec{
+		WireName: "data_cache_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_DataCacheConfigFields,
+	},
+	"DataDiskProvisionedIops":       ubx.FieldSpec{WireName: "data_disk_provisioned_iops"},
+	"DataDiskProvisionedThroughput": ubx.FieldSpec{WireName: "data_disk_provisioned_throughput"},
+	"DataDiskSizeGb":                ubx.FieldSpec{WireName: "data_disk_size_gb"},
+	"DataDiskType":                  ubx.FieldSpec{WireName: "data_disk_type"},
+	"DatabaseFlags": ubx.FieldSpec{
+		WireName: "database_flags",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Settings_ConnectionPoolConfig_FlagsFields,
+	},
+	"DatabaseReplicationEnabled": ubx.FieldSpec{WireName: "database_replication_enabled"},
+	"DeletionProtectionEnabled":  ubx.FieldSpec{WireName: "deletion_protection_enabled"},
+	"DenyMaintenancePeriods": ubx.FieldSpec{
+		WireName: "deny_maintenance_periods",
+		Kind:     "list",
+		Fields:   V1beta4Instance_Settings_DenyMaintenancePeriodsFields,
+	},
+	"Edition":                   ubx.FieldSpec{WireName: "edition"},
+	"EnableDataplexIntegration": ubx.FieldSpec{WireName: "enable_dataplex_integration"},
+	"EnableGoogleMlIntegration": ubx.FieldSpec{WireName: "enable_google_ml_integration"},
+	"EntraidConfig": ubx.FieldSpec{
+		WireName: "entraid_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_EntraidConfigFields,
+	},
+	"FinalBackupConfig": ubx.FieldSpec{
+		WireName: "final_backup_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_FinalBackupConfigFields,
+	},
+	"InsightsConfig": ubx.FieldSpec{
+		WireName: "insights_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_InsightsConfigFields,
+	},
+	"IpConfiguration": ubx.FieldSpec{
+		WireName: "ip_configuration",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_IpConfigurationFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"LocationPreference": ubx.FieldSpec{
+		WireName: "location_preference",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_LocationPreferenceFields,
+	},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_MaintenanceWindowFields,
+	},
+	"PasswordValidationPolicy": ubx.FieldSpec{
+		WireName: "password_validation_policy",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_PasswordValidationPolicyFields,
+	},
+	"PerformanceCaptureConfig": ubx.FieldSpec{
+		WireName: "performance_capture_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_PerformanceCaptureConfigFields,
+	},
+	"PricingPlan": ubx.FieldSpec{WireName: "pricing_plan"},
+	"ReadPoolAutoScaleConfig": ubx.FieldSpec{
+		WireName: "read_pool_auto_scale_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_ReadPoolAutoScaleConfigFields,
+	},
+	"ReplicationLagMaxSeconds": ubx.FieldSpec{WireName: "replication_lag_max_seconds"},
+	"ReplicationType":          ubx.FieldSpec{WireName: "replication_type"},
+	"RetainBackupsOnDelete":    ubx.FieldSpec{WireName: "retain_backups_on_delete"},
+	"SettingsVersion":          ubx.FieldSpec{WireName: "settings_version"},
+	"SqlServerAuditConfig": ubx.FieldSpec{
+		WireName: "sql_server_audit_config",
+		Kind:     "object",
+		Fields:   V1beta4Instance_Settings_SqlServerAuditConfigFields,
+	},
+	"StorageAutoResize":      ubx.FieldSpec{WireName: "storage_auto_resize"},
+	"StorageAutoResizeLimit": ubx.FieldSpec{WireName: "storage_auto_resize_limit"},
+	"Tier":                   ubx.FieldSpec{WireName: "tier"},
+	"TimeZone":               ubx.FieldSpec{WireName: "time_zone"},
+	"UserLabels":             ubx.FieldSpec{WireName: "user_labels"},
+}
 
 type V1beta4InstanceConfig struct {
 	// The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type.
@@ -1254,98 +1254,98 @@ type V1beta4InstanceAttrs struct {
 var V1beta4Instance = ubx.ResourceBinding{
 	WireType: "google_sqladmin_v1beta4_instance",
 	Fields: ubx.FieldMap{
-		"BackendType": ubx.FieldSpec{WireName: "backend_type"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"CurrentDiskSize": ubx.FieldSpec{WireName: "current_disk_size"},
+		"BackendType":                      ubx.FieldSpec{WireName: "backend_type"},
+		"ConnectionName":                   ubx.FieldSpec{WireName: "connection_name"},
+		"CurrentDiskSize":                  ubx.FieldSpec{WireName: "current_disk_size"},
 		"DatabaseCenterIntegrationEnabled": ubx.FieldSpec{WireName: "database_center_integration_enabled"},
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
+		"DatabaseVersion":                  ubx.FieldSpec{WireName: "database_version"},
 		"DeploymentInfo": ubx.FieldSpec{
 			WireName: "deployment_info",
-			Kind: "object",
-			Fields: V1beta4Instance_DeploymentInfoFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_DeploymentInfoFields,
 		},
 		"DiskEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "disk_encryption_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_DiskEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_DiskEncryptionConfigurationFields,
 		},
 		"DiskEncryptionStatus": ubx.FieldSpec{
 			WireName: "disk_encryption_status",
-			Kind: "object",
-			Fields: V1beta4Instance_DiskEncryptionStatusFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_DiskEncryptionStatusFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"FailoverReplica": ubx.FieldSpec{
 			WireName: "failover_replica",
-			Kind: "object",
-			Fields: V1beta4Instance_FailoverReplicaFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_FailoverReplicaFields,
 		},
 		"GceZone": ubx.FieldSpec{WireName: "gce_zone"},
 		"GeminiConfig": ubx.FieldSpec{
 			WireName: "gemini_config",
-			Kind: "object",
-			Fields: V1beta4Instance_GeminiConfigFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_GeminiConfigFields,
 		},
 		"IncludeReplicasForMajorVersionUpgrade": ubx.FieldSpec{WireName: "include_replicas_for_major_version_upgrade"},
-		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
+		"InstanceType":                          ubx.FieldSpec{WireName: "instance_type"},
 		"IpAddresses": ubx.FieldSpec{
 			WireName: "ip_addresses",
-			Kind: "list",
-			Fields: V1beta4Instance_IpAddressesFields,
+			Kind:     "list",
+			Fields:   V1beta4Instance_IpAddressesFields,
 		},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Ipv6Address":        ubx.FieldSpec{WireName: "ipv6_address"},
+		"Kind":               ubx.FieldSpec{WireName: "kind"},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
 		"MasterInstanceName": ubx.FieldSpec{WireName: "master_instance_name"},
-		"MaxDiskSize": ubx.FieldSpec{WireName: "max_disk_size"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+		"MaxDiskSize":        ubx.FieldSpec{WireName: "max_disk_size"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"NodeCount":          ubx.FieldSpec{WireName: "node_count"},
 		"OnPremisesConfiguration": ubx.FieldSpec{
 			WireName: "on_premises_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_OnPremisesConfigurationFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_OnPremisesConfigurationFields,
 		},
 		"OutOfDiskReport": ubx.FieldSpec{
 			WireName: "out_of_disk_report",
-			Kind: "object",
-			Fields: V1beta4Instance_OutOfDiskReportFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_OutOfDiskReportFields,
 		},
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":  ubx.FieldSpec{WireName: "region"},
 		"ReplicaConfiguration": ubx.FieldSpec{
 			WireName: "replica_configuration",
-			Kind: "object",
-			Fields: V1beta4Instance_ReplicaConfigurationFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_ReplicaConfigurationFields,
 		},
 		"ReplicaNames": ubx.FieldSpec{WireName: "replica_names"},
 		"ReplicationCluster": ubx.FieldSpec{
 			WireName: "replication_cluster",
-			Kind: "object",
-			Fields: V1beta4Instance_ReplicationClusterFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_ReplicationClusterFields,
 		},
 		"RootPassword": ubx.FieldSpec{WireName: "root_password"},
 		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ScheduledMaintenance": ubx.FieldSpec{
 			WireName: "scheduled_maintenance",
-			Kind: "object",
-			Fields: V1beta4Instance_ScheduledMaintenanceFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_ScheduledMaintenanceFields,
 		},
 		"SecondaryGceZone": ubx.FieldSpec{WireName: "secondary_gce_zone"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":         ubx.FieldSpec{WireName: "self_link"},
 		"ServerCaCert": ubx.FieldSpec{
 			WireName: "server_ca_cert",
-			Kind: "object",
-			Fields: V1beta4Instance_ServerCaCertFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_ServerCaCertFields,
 		},
 		"ServiceAccountEmailAddress": ubx.FieldSpec{WireName: "service_account_email_address"},
 		"Settings": ubx.FieldSpec{
 			WireName: "settings",
-			Kind: "object",
-			Fields: V1beta4Instance_SettingsFields,
+			Kind:     "object",
+			Fields:   V1beta4Instance_SettingsFields,
 		},
 		"SqlNetworkArchitecture": ubx.FieldSpec{WireName: "sql_network_architecture"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SuspensionReason": ubx.FieldSpec{WireName: "suspension_reason"},
+		"State":                  ubx.FieldSpec{WireName: "state"},
+		"SuspensionReason":       ubx.FieldSpec{WireName: "suspension_reason"},
 		"SwitchTransactionLogsToCloudStorageEnabled": ubx.FieldSpec{WireName: "switch_transaction_logs_to_cloud_storage_enabled"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
 	},

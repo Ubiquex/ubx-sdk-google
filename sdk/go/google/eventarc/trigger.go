@@ -84,74 +84,74 @@ type Trigger_Transport struct {
 }
 
 var Trigger_Destination_CloudRunFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Region":  ubx.FieldSpec{WireName: "region"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Trigger_Destination_GkeFields = ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Cluster":   ubx.FieldSpec{WireName: "cluster"},
+	"Location":  ubx.FieldSpec{WireName: "location"},
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"Path":      ubx.FieldSpec{WireName: "path"},
+	"Service":   ubx.FieldSpec{WireName: "service"},
+}
 
 var Trigger_Destination_HttpEndpointFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var Trigger_Destination_NetworkConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var Trigger_DestinationFields = ubx.FieldMap{
-		"CloudFunction": ubx.FieldSpec{WireName: "cloud_function"},
-		"CloudRun": ubx.FieldSpec{
-			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Trigger_Destination_CloudRunFields,
-		},
-		"Gke": ubx.FieldSpec{
-			WireName: "gke",
-			Kind: "object",
-			Fields: Trigger_Destination_GkeFields,
-		},
-		"HttpEndpoint": ubx.FieldSpec{
-			WireName: "http_endpoint",
-			Kind: "object",
-			Fields: Trigger_Destination_HttpEndpointFields,
-		},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: Trigger_Destination_NetworkConfigFields,
-		},
-		"Workflow": ubx.FieldSpec{WireName: "workflow"},
-	}
+	"CloudFunction": ubx.FieldSpec{WireName: "cloud_function"},
+	"CloudRun": ubx.FieldSpec{
+		WireName: "cloud_run",
+		Kind:     "object",
+		Fields:   Trigger_Destination_CloudRunFields,
+	},
+	"Gke": ubx.FieldSpec{
+		WireName: "gke",
+		Kind:     "object",
+		Fields:   Trigger_Destination_GkeFields,
+	},
+	"HttpEndpoint": ubx.FieldSpec{
+		WireName: "http_endpoint",
+		Kind:     "object",
+		Fields:   Trigger_Destination_HttpEndpointFields,
+	},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   Trigger_Destination_NetworkConfigFields,
+	},
+	"Workflow": ubx.FieldSpec{WireName: "workflow"},
+}
 
 var Trigger_EventFiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operator":  ubx.FieldSpec{WireName: "operator"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Trigger_RetryPolicyFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-	}
+	"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
+}
 
 var Trigger_Transport_PubsubFields = ubx.FieldMap{
-		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Subscription": ubx.FieldSpec{WireName: "subscription"},
+	"Topic":        ubx.FieldSpec{WireName: "topic"},
+}
 
 var Trigger_TransportFields = ubx.FieldMap{
-		"Pubsub": ubx.FieldSpec{
-			WireName: "pubsub",
-			Kind: "object",
-			Fields: Trigger_Transport_PubsubFields,
-		},
-	}
+	"Pubsub": ubx.FieldSpec{
+		WireName: "pubsub",
+		Kind:     "object",
+		Fields:   Trigger_Transport_PubsubFields,
+	},
+}
 
 type TriggerConfig struct {
 	// Optional. The name of the channel associated with the trigger in `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from Eventarc SaaS partners.
@@ -213,27 +213,27 @@ var Trigger = ubx.ResourceBinding{
 		"Channel": ubx.FieldSpec{WireName: "channel"},
 		"Destination": ubx.FieldSpec{
 			WireName: "destination",
-			Kind: "object",
-			Fields: Trigger_DestinationFields,
+			Kind:     "object",
+			Fields:   Trigger_DestinationFields,
 		},
 		"EventDataContentType": ubx.FieldSpec{WireName: "event_data_content_type"},
 		"EventFilters": ubx.FieldSpec{
 			WireName: "event_filters",
-			Kind: "list",
-			Fields: Trigger_EventFiltersFields,
+			Kind:     "list",
+			Fields:   Trigger_EventFiltersFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"RetryPolicy": ubx.FieldSpec{
 			WireName: "retry_policy",
-			Kind: "object",
-			Fields: Trigger_RetryPolicyFields,
+			Kind:     "object",
+			Fields:   Trigger_RetryPolicyFields,
 		},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"Transport": ubx.FieldSpec{
 			WireName: "transport",
-			Kind: "object",
-			Fields: Trigger_TransportFields,
+			Kind:     "object",
+			Fields:   Trigger_TransportFields,
 		},
 	},
 }

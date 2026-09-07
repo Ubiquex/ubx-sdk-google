@@ -592,566 +592,566 @@ type Table_View struct {
 }
 
 var Table_BiglakeConfigurationFields = ubx.FieldMap{
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-		"StorageUri": ubx.FieldSpec{WireName: "storage_uri"},
-		"TableFormat": ubx.FieldSpec{WireName: "table_format"},
-	}
+	"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+	"FileFormat":   ubx.FieldSpec{WireName: "file_format"},
+	"StorageUri":   ubx.FieldSpec{WireName: "storage_uri"},
+	"TableFormat":  ubx.FieldSpec{WireName: "table_format"},
+}
 
 var Table_CloneDefinition_BaseTableReferenceFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Table_CloneDefinitionFields = ubx.FieldMap{
-		"BaseTableReference": ubx.FieldSpec{
-			WireName: "base_table_reference",
-			Kind: "object",
-			Fields: Table_CloneDefinition_BaseTableReferenceFields,
-		},
-		"CloneTime": ubx.FieldSpec{WireName: "clone_time"},
-	}
+	"BaseTableReference": ubx.FieldSpec{
+		WireName: "base_table_reference",
+		Kind:     "object",
+		Fields:   Table_CloneDefinition_BaseTableReferenceFields,
+	},
+	"CloneTime": ubx.FieldSpec{WireName: "clone_time"},
+}
 
 var Table_ClusteringFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-	}
+	"Fields": ubx.FieldSpec{WireName: "fields"},
+}
 
 var Table_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Table_ExternalCatalogTableOptions_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
-	}
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"Parameters":           ubx.FieldSpec{WireName: "parameters"},
+	"SerializationLibrary": ubx.FieldSpec{WireName: "serialization_library"},
+}
 
 var Table_ExternalCatalogTableOptions_StorageDescriptorFields = ubx.FieldMap{
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"SerdeInfo": ubx.FieldSpec{
-			WireName: "serde_info",
-			Kind: "object",
-			Fields: Table_ExternalCatalogTableOptions_StorageDescriptor_SerdeInfoFields,
-		},
-	}
+	"InputFormat":  ubx.FieldSpec{WireName: "input_format"},
+	"LocationUri":  ubx.FieldSpec{WireName: "location_uri"},
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+	"SerdeInfo": ubx.FieldSpec{
+		WireName: "serde_info",
+		Kind:     "object",
+		Fields:   Table_ExternalCatalogTableOptions_StorageDescriptor_SerdeInfoFields,
+	},
+}
 
 var Table_ExternalCatalogTableOptionsFields = ubx.FieldMap{
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "object",
-			Fields: Table_ExternalCatalogTableOptions_StorageDescriptorFields,
-		},
-	}
+	"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+	"Parameters":   ubx.FieldSpec{WireName: "parameters"},
+	"StorageDescriptor": ubx.FieldSpec{
+		WireName: "storage_descriptor",
+		Kind:     "object",
+		Fields:   Table_ExternalCatalogTableOptions_StorageDescriptorFields,
+	},
+}
 
 var Table_ExternalDataConfiguration_AvroOptionsFields = ubx.FieldMap{
-		"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
-	}
+	"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
+}
 
 var Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields = ubx.FieldMap{
-		"ProtoMessageName": ubx.FieldSpec{WireName: "proto_message_name"},
-		"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
-	}
+	"ProtoMessageName": ubx.FieldSpec{WireName: "proto_message_name"},
+	"SchemaBundleId":   ubx.FieldSpec{WireName: "schema_bundle_id"},
+}
 
 var Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_ColumnsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
-		"ProtoConfig": ubx.FieldSpec{
-			WireName: "proto_config",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
-		},
-		"QualifierEncoded": ubx.FieldSpec{WireName: "qualifier_encoded"},
-		"QualifierString": ubx.FieldSpec{WireName: "qualifier_string"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Encoding":       ubx.FieldSpec{WireName: "encoding"},
+	"FieldName":      ubx.FieldSpec{WireName: "field_name"},
+	"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
+	"ProtoConfig": ubx.FieldSpec{
+		WireName: "proto_config",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
+	},
+	"QualifierEncoded": ubx.FieldSpec{WireName: "qualifier_encoded"},
+	"QualifierString":  ubx.FieldSpec{WireName: "qualifier_string"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_ExternalDataConfiguration_BigtableOptions_ColumnFamiliesFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_ColumnsFields,
-		},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FamilyId": ubx.FieldSpec{WireName: "family_id"},
-		"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
-		"ProtoConfig": ubx.FieldSpec{
-			WireName: "proto_config",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_ColumnsFields,
+	},
+	"Encoding":       ubx.FieldSpec{WireName: "encoding"},
+	"FamilyId":       ubx.FieldSpec{WireName: "family_id"},
+	"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
+	"ProtoConfig": ubx.FieldSpec{
+		WireName: "proto_config",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_ExternalDataConfiguration_BigtableOptionsFields = ubx.FieldMap{
-		"ColumnFamilies": ubx.FieldSpec{
-			WireName: "column_families",
-			Kind: "list",
-			Fields: Table_ExternalDataConfiguration_BigtableOptions_ColumnFamiliesFields,
-		},
-		"IgnoreUnspecifiedColumnFamilies": ubx.FieldSpec{WireName: "ignore_unspecified_column_families"},
-		"OutputColumnFamiliesAsJson": ubx.FieldSpec{WireName: "output_column_families_as_json"},
-		"ReadRowkeyAsString": ubx.FieldSpec{WireName: "read_rowkey_as_string"},
-	}
+	"ColumnFamilies": ubx.FieldSpec{
+		WireName: "column_families",
+		Kind:     "list",
+		Fields:   Table_ExternalDataConfiguration_BigtableOptions_ColumnFamiliesFields,
+	},
+	"IgnoreUnspecifiedColumnFamilies": ubx.FieldSpec{WireName: "ignore_unspecified_column_families"},
+	"OutputColumnFamiliesAsJson":      ubx.FieldSpec{WireName: "output_column_families_as_json"},
+	"ReadRowkeyAsString":              ubx.FieldSpec{WireName: "read_rowkey_as_string"},
+}
 
 var Table_ExternalDataConfiguration_CsvOptionsFields = ubx.FieldMap{
-		"AllowJaggedRows": ubx.FieldSpec{WireName: "allow_jagged_rows"},
-		"AllowQuotedNewlines": ubx.FieldSpec{WireName: "allow_quoted_newlines"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"NullMarker": ubx.FieldSpec{WireName: "null_marker"},
-		"NullMarkers": ubx.FieldSpec{WireName: "null_markers"},
-		"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-		"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
-		"SourceColumnMatch": ubx.FieldSpec{WireName: "source_column_match"},
-	}
+	"AllowJaggedRows":                ubx.FieldSpec{WireName: "allow_jagged_rows"},
+	"AllowQuotedNewlines":            ubx.FieldSpec{WireName: "allow_quoted_newlines"},
+	"Encoding":                       ubx.FieldSpec{WireName: "encoding"},
+	"FieldDelimiter":                 ubx.FieldSpec{WireName: "field_delimiter"},
+	"NullMarker":                     ubx.FieldSpec{WireName: "null_marker"},
+	"NullMarkers":                    ubx.FieldSpec{WireName: "null_markers"},
+	"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
+	"Quote":                          ubx.FieldSpec{WireName: "quote"},
+	"SkipLeadingRows":                ubx.FieldSpec{WireName: "skip_leading_rows"},
+	"SourceColumnMatch":              ubx.FieldSpec{WireName: "source_column_match"},
+}
 
 var Table_ExternalDataConfiguration_GoogleSheetsOptionsFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{WireName: "range"},
-		"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
-	}
+	"Range":           ubx.FieldSpec{WireName: "range"},
+	"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
+}
 
 var Table_ExternalDataConfiguration_HivePartitioningOptionsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"SourceUriPrefix": ubx.FieldSpec{WireName: "source_uri_prefix"},
-	}
+	"Fields":                 ubx.FieldSpec{WireName: "fields"},
+	"Mode":                   ubx.FieldSpec{WireName: "mode"},
+	"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
+	"SourceUriPrefix":        ubx.FieldSpec{WireName: "source_uri_prefix"},
+}
 
 var Table_ExternalDataConfiguration_JsonOptionsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Table_ExternalDataConfiguration_ParquetOptionsFields = ubx.FieldMap{
-		"EnableListInference": ubx.FieldSpec{WireName: "enable_list_inference"},
-		"EnumAsString": ubx.FieldSpec{WireName: "enum_as_string"},
-		"MapTargetType": ubx.FieldSpec{WireName: "map_target_type"},
-	}
+	"EnableListInference": ubx.FieldSpec{WireName: "enable_list_inference"},
+	"EnumAsString":        ubx.FieldSpec{WireName: "enum_as_string"},
+	"MapTargetType":       ubx.FieldSpec{WireName: "map_target_type"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_CategoriesFields = ubx.FieldMap{
-		"Names": ubx.FieldSpec{WireName: "names"},
-	}
+	"Names": ubx.FieldSpec{WireName: "names"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfoFields = ubx.FieldMap{
-		"DataGovernanceTags": ubx.FieldSpec{WireName: "data_governance_tags"},
-	}
+	"DataGovernanceTags": ubx.FieldSpec{WireName: "data_governance_tags"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_DataPoliciesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_DataPolicyListFields = ubx.FieldMap{
-		"DataPolicies": ubx.FieldSpec{
-			WireName: "data_policies",
-			Kind: "list",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_DataPoliciesFields,
-		},
-	}
+	"DataPolicies": ubx.FieldSpec{
+		WireName: "data_policies",
+		Kind:     "list",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_DataPoliciesFields,
+	},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields = ubx.FieldMap{
-		"Asynchronous": ubx.FieldSpec{WireName: "asynchronous"},
-		"GenerationExpression": ubx.FieldSpec{WireName: "generation_expression"},
-		"Stored": ubx.FieldSpec{WireName: "stored"},
-	}
+	"Asynchronous":         ubx.FieldSpec{WireName: "asynchronous"},
+	"GenerationExpression": ubx.FieldSpec{WireName: "generation_expression"},
+	"Stored":               ubx.FieldSpec{WireName: "stored"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumnFields = ubx.FieldMap{
-		"GeneratedExpressionInfo": ubx.FieldSpec{
-			WireName: "generated_expression_info",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields,
-		},
-		"GeneratedMode": ubx.FieldSpec{WireName: "generated_mode"},
-	}
+	"GeneratedExpressionInfo": ubx.FieldSpec{
+		WireName: "generated_expression_info",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields,
+	},
+	"GeneratedMode": ubx.FieldSpec{WireName: "generated_mode"},
+}
 
 var Table_ExternalDataConfiguration_Schema_Fields_RangeElementTypeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_ExternalDataConfiguration_Schema_FieldsFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{
-			WireName: "categories",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_CategoriesFields,
-		},
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"DataGovernanceTagsInfo": ubx.FieldSpec{
-			WireName: "data_governance_tags_info",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfoFields,
-		},
-		"DataPolicies": ubx.FieldSpec{
-			WireName: "data_policies",
-			Kind: "list",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_DataPoliciesFields,
-		},
-		"DataPolicyList": ubx.FieldSpec{
-			WireName: "data_policy_list",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_DataPolicyListFields,
-		},
-		"DefaultValueExpression": ubx.FieldSpec{WireName: "default_value_expression"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"ForeignTypeDefinition": ubx.FieldSpec{WireName: "foreign_type_definition"},
-		"GeneratedColumn": ubx.FieldSpec{
-			WireName: "generated_column",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumnFields,
-		},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyTags": ubx.FieldSpec{
-			WireName: "policy_tags",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_CategoriesFields,
-		},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"RangeElementType": ubx.FieldSpec{
-			WireName: "range_element_type",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_RangeElementTypeFields,
-		},
-		"RoundingMode": ubx.FieldSpec{WireName: "rounding_mode"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-		"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Categories": ubx.FieldSpec{
+		WireName: "categories",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_CategoriesFields,
+	},
+	"Collation": ubx.FieldSpec{WireName: "collation"},
+	"DataGovernanceTagsInfo": ubx.FieldSpec{
+		WireName: "data_governance_tags_info",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_DataGovernanceTagsInfoFields,
+	},
+	"DataPolicies": ubx.FieldSpec{
+		WireName: "data_policies",
+		Kind:     "list",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_DataPoliciesFields,
+	},
+	"DataPolicyList": ubx.FieldSpec{
+		WireName: "data_policy_list",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_DataPolicyListFields,
+	},
+	"DefaultValueExpression": ubx.FieldSpec{WireName: "default_value_expression"},
+	"Description":            ubx.FieldSpec{WireName: "description"},
+	"Fields":                 ubx.FieldSpec{WireName: "fields"},
+	"ForeignTypeDefinition":  ubx.FieldSpec{WireName: "foreign_type_definition"},
+	"GeneratedColumn": ubx.FieldSpec{
+		WireName: "generated_column",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_GeneratedColumnFields,
+	},
+	"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"PolicyTags": ubx.FieldSpec{
+		WireName: "policy_tags",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_CategoriesFields,
+	},
+	"Precision": ubx.FieldSpec{WireName: "precision"},
+	"RangeElementType": ubx.FieldSpec{
+		WireName: "range_element_type",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_Fields_RangeElementTypeFields,
+	},
+	"RoundingMode":       ubx.FieldSpec{WireName: "rounding_mode"},
+	"Scale":              ubx.FieldSpec{WireName: "scale"},
+	"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_ExternalDataConfiguration_Schema_ForeignTypeInfoFields = ubx.FieldMap{
-		"TypeSystem": ubx.FieldSpec{WireName: "type_system"},
-	}
+	"TypeSystem": ubx.FieldSpec{WireName: "type_system"},
+}
 
 var Table_ExternalDataConfiguration_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Table_ExternalDataConfiguration_Schema_FieldsFields,
-		},
-		"ForeignTypeInfo": ubx.FieldSpec{
-			WireName: "foreign_type_info",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_ForeignTypeInfoFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Table_ExternalDataConfiguration_Schema_FieldsFields,
+	},
+	"ForeignTypeInfo": ubx.FieldSpec{
+		WireName: "foreign_type_info",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_Schema_ForeignTypeInfoFields,
+	},
+}
 
 var Table_ExternalDataConfigurationFields = ubx.FieldMap{
-		"Autodetect": ubx.FieldSpec{WireName: "autodetect"},
-		"AvroOptions": ubx.FieldSpec{
-			WireName: "avro_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_AvroOptionsFields,
-		},
-		"BigtableOptions": ubx.FieldSpec{
-			WireName: "bigtable_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_BigtableOptionsFields,
-		},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"CsvOptions": ubx.FieldSpec{
-			WireName: "csv_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_CsvOptionsFields,
-		},
-		"DateFormat": ubx.FieldSpec{WireName: "date_format"},
-		"DatetimeFormat": ubx.FieldSpec{WireName: "datetime_format"},
-		"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
-		"FileSetSpecType": ubx.FieldSpec{WireName: "file_set_spec_type"},
-		"GoogleSheetsOptions": ubx.FieldSpec{
-			WireName: "google_sheets_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_GoogleSheetsOptionsFields,
-		},
-		"HivePartitioningOptions": ubx.FieldSpec{
-			WireName: "hive_partitioning_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_HivePartitioningOptionsFields,
-		},
-		"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
-		"JsonExtension": ubx.FieldSpec{WireName: "json_extension"},
-		"JsonOptions": ubx.FieldSpec{
-			WireName: "json_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_JsonOptionsFields,
-		},
-		"MaxBadRecords": ubx.FieldSpec{WireName: "max_bad_records"},
-		"MetadataCacheMode": ubx.FieldSpec{WireName: "metadata_cache_mode"},
-		"ObjectMetadata": ubx.FieldSpec{WireName: "object_metadata"},
-		"ParquetOptions": ubx.FieldSpec{
-			WireName: "parquet_options",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_ParquetOptionsFields,
-		},
-		"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_SchemaFields,
-		},
-		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
-		"SourceUris": ubx.FieldSpec{WireName: "source_uris"},
-		"TimeFormat": ubx.FieldSpec{WireName: "time_format"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-		"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
-	}
+	"Autodetect": ubx.FieldSpec{WireName: "autodetect"},
+	"AvroOptions": ubx.FieldSpec{
+		WireName: "avro_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_AvroOptionsFields,
+	},
+	"BigtableOptions": ubx.FieldSpec{
+		WireName: "bigtable_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_BigtableOptionsFields,
+	},
+	"Compression":  ubx.FieldSpec{WireName: "compression"},
+	"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+	"CsvOptions": ubx.FieldSpec{
+		WireName: "csv_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_CsvOptionsFields,
+	},
+	"DateFormat":         ubx.FieldSpec{WireName: "date_format"},
+	"DatetimeFormat":     ubx.FieldSpec{WireName: "datetime_format"},
+	"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
+	"FileSetSpecType":    ubx.FieldSpec{WireName: "file_set_spec_type"},
+	"GoogleSheetsOptions": ubx.FieldSpec{
+		WireName: "google_sheets_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_GoogleSheetsOptionsFields,
+	},
+	"HivePartitioningOptions": ubx.FieldSpec{
+		WireName: "hive_partitioning_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_HivePartitioningOptionsFields,
+	},
+	"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
+	"JsonExtension":       ubx.FieldSpec{WireName: "json_extension"},
+	"JsonOptions": ubx.FieldSpec{
+		WireName: "json_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_JsonOptionsFields,
+	},
+	"MaxBadRecords":     ubx.FieldSpec{WireName: "max_bad_records"},
+	"MetadataCacheMode": ubx.FieldSpec{WireName: "metadata_cache_mode"},
+	"ObjectMetadata":    ubx.FieldSpec{WireName: "object_metadata"},
+	"ParquetOptions": ubx.FieldSpec{
+		WireName: "parquet_options",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_ParquetOptionsFields,
+	},
+	"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Table_ExternalDataConfiguration_SchemaFields,
+	},
+	"SourceFormat":             ubx.FieldSpec{WireName: "source_format"},
+	"SourceUris":               ubx.FieldSpec{WireName: "source_uris"},
+	"TimeFormat":               ubx.FieldSpec{WireName: "time_format"},
+	"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
+	"TimestampFormat":          ubx.FieldSpec{WireName: "timestamp_format"},
+	"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
+}
 
 var Table_MaterializedViewFields = ubx.FieldMap{
-		"AllowNonIncrementalDefinition": ubx.FieldSpec{WireName: "allow_non_incremental_definition"},
-		"EnableRefresh": ubx.FieldSpec{WireName: "enable_refresh"},
-		"LastRefreshTime": ubx.FieldSpec{WireName: "last_refresh_time"},
-		"MaxStaleness": ubx.FieldSpec{WireName: "max_staleness"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"RefreshIntervalMs": ubx.FieldSpec{WireName: "refresh_interval_ms"},
-	}
+	"AllowNonIncrementalDefinition": ubx.FieldSpec{WireName: "allow_non_incremental_definition"},
+	"EnableRefresh":                 ubx.FieldSpec{WireName: "enable_refresh"},
+	"LastRefreshTime":               ubx.FieldSpec{WireName: "last_refresh_time"},
+	"MaxStaleness":                  ubx.FieldSpec{WireName: "max_staleness"},
+	"Query":                         ubx.FieldSpec{WireName: "query"},
+	"RefreshIntervalMs":             ubx.FieldSpec{WireName: "refresh_interval_ms"},
+}
 
 var Table_MaterializedViewStatus_LastRefreshStatusFields = ubx.FieldMap{
-		"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
+	"Location":  ubx.FieldSpec{WireName: "location"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var Table_MaterializedViewStatusFields = ubx.FieldMap{
-		"LastRefreshStatus": ubx.FieldSpec{
-			WireName: "last_refresh_status",
-			Kind: "object",
-			Fields: Table_MaterializedViewStatus_LastRefreshStatusFields,
-		},
-		"RefreshWatermark": ubx.FieldSpec{WireName: "refresh_watermark"},
-	}
+	"LastRefreshStatus": ubx.FieldSpec{
+		WireName: "last_refresh_status",
+		Kind:     "object",
+		Fields:   Table_MaterializedViewStatus_LastRefreshStatusFields,
+	},
+	"RefreshWatermark": ubx.FieldSpec{WireName: "refresh_watermark"},
+}
 
 var Table_Model_ModelOptionsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LossType": ubx.FieldSpec{WireName: "loss_type"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-	}
+	"Labels":    ubx.FieldSpec{WireName: "labels"},
+	"LossType":  ubx.FieldSpec{WireName: "loss_type"},
+	"ModelType": ubx.FieldSpec{WireName: "model_type"},
+}
 
 var Table_Model_TrainingRuns_IterationResultsFields = ubx.FieldMap{
-		"DurationMs": ubx.FieldSpec{WireName: "duration_ms"},
-		"EvalLoss": ubx.FieldSpec{WireName: "eval_loss"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"LearnRate": ubx.FieldSpec{WireName: "learn_rate"},
-		"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
-	}
+	"DurationMs":   ubx.FieldSpec{WireName: "duration_ms"},
+	"EvalLoss":     ubx.FieldSpec{WireName: "eval_loss"},
+	"Index":        ubx.FieldSpec{WireName: "index"},
+	"LearnRate":    ubx.FieldSpec{WireName: "learn_rate"},
+	"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
+}
 
 var Table_Model_TrainingRuns_TrainingOptionsFields = ubx.FieldMap{
-		"EarlyStop": ubx.FieldSpec{WireName: "early_stop"},
-		"L1Reg": ubx.FieldSpec{WireName: "l1_reg"},
-		"L2Reg": ubx.FieldSpec{WireName: "l2_reg"},
-		"LearnRate": ubx.FieldSpec{WireName: "learn_rate"},
-		"LearnRateStrategy": ubx.FieldSpec{WireName: "learn_rate_strategy"},
-		"LineSearchInitLearnRate": ubx.FieldSpec{WireName: "line_search_init_learn_rate"},
-		"MaxIteration": ubx.FieldSpec{WireName: "max_iteration"},
-		"MinRelProgress": ubx.FieldSpec{WireName: "min_rel_progress"},
-		"WarmStart": ubx.FieldSpec{WireName: "warm_start"},
-	}
+	"EarlyStop":               ubx.FieldSpec{WireName: "early_stop"},
+	"L1Reg":                   ubx.FieldSpec{WireName: "l1_reg"},
+	"L2Reg":                   ubx.FieldSpec{WireName: "l2_reg"},
+	"LearnRate":               ubx.FieldSpec{WireName: "learn_rate"},
+	"LearnRateStrategy":       ubx.FieldSpec{WireName: "learn_rate_strategy"},
+	"LineSearchInitLearnRate": ubx.FieldSpec{WireName: "line_search_init_learn_rate"},
+	"MaxIteration":            ubx.FieldSpec{WireName: "max_iteration"},
+	"MinRelProgress":          ubx.FieldSpec{WireName: "min_rel_progress"},
+	"WarmStart":               ubx.FieldSpec{WireName: "warm_start"},
+}
 
 var Table_Model_TrainingRunsFields = ubx.FieldMap{
-		"IterationResults": ubx.FieldSpec{
-			WireName: "iteration_results",
-			Kind: "list",
-			Fields: Table_Model_TrainingRuns_IterationResultsFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TrainingOptions": ubx.FieldSpec{
-			WireName: "training_options",
-			Kind: "object",
-			Fields: Table_Model_TrainingRuns_TrainingOptionsFields,
-		},
-	}
+	"IterationResults": ubx.FieldSpec{
+		WireName: "iteration_results",
+		Kind:     "list",
+		Fields:   Table_Model_TrainingRuns_IterationResultsFields,
+	},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+	"TrainingOptions": ubx.FieldSpec{
+		WireName: "training_options",
+		Kind:     "object",
+		Fields:   Table_Model_TrainingRuns_TrainingOptionsFields,
+	},
+}
 
 var Table_ModelFields = ubx.FieldMap{
-		"ModelOptions": ubx.FieldSpec{
-			WireName: "model_options",
-			Kind: "object",
-			Fields: Table_Model_ModelOptionsFields,
-		},
-		"TrainingRuns": ubx.FieldSpec{
-			WireName: "training_runs",
-			Kind: "list",
-			Fields: Table_Model_TrainingRunsFields,
-		},
-	}
+	"ModelOptions": ubx.FieldSpec{
+		WireName: "model_options",
+		Kind:     "object",
+		Fields:   Table_Model_ModelOptionsFields,
+	},
+	"TrainingRuns": ubx.FieldSpec{
+		WireName: "training_runs",
+		Kind:     "list",
+		Fields:   Table_Model_TrainingRunsFields,
+	},
+}
 
 var Table_PartitionDefinition_PartitionedColumnFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+}
 
 var Table_PartitionDefinitionFields = ubx.FieldMap{
-		"PartitionedColumn": ubx.FieldSpec{
-			WireName: "partitioned_column",
-			Kind: "list",
-			Fields: Table_PartitionDefinition_PartitionedColumnFields,
-		},
-	}
+	"PartitionedColumn": ubx.FieldSpec{
+		WireName: "partitioned_column",
+		Kind:     "list",
+		Fields:   Table_PartitionDefinition_PartitionedColumnFields,
+	},
+}
 
 var Table_RangePartitioning_RangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":      ubx.FieldSpec{WireName: "end"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+}
 
 var Table_RangePartitioningFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: Table_RangePartitioning_RangeFields,
-		},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   Table_RangePartitioning_RangeFields,
+	},
+}
 
 var Table_SnapshotDefinitionFields = ubx.FieldMap{
-		"BaseTableReference": ubx.FieldSpec{
-			WireName: "base_table_reference",
-			Kind: "object",
-			Fields: Table_CloneDefinition_BaseTableReferenceFields,
-		},
-		"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
-	}
+	"BaseTableReference": ubx.FieldSpec{
+		WireName: "base_table_reference",
+		Kind:     "object",
+		Fields:   Table_CloneDefinition_BaseTableReferenceFields,
+	},
+	"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
+}
 
 var Table_StreamingBufferFields = ubx.FieldMap{
-		"EstimatedBytes": ubx.FieldSpec{WireName: "estimated_bytes"},
-		"EstimatedRows": ubx.FieldSpec{WireName: "estimated_rows"},
-		"OldestEntryTime": ubx.FieldSpec{WireName: "oldest_entry_time"},
-	}
+	"EstimatedBytes":  ubx.FieldSpec{WireName: "estimated_bytes"},
+	"EstimatedRows":   ubx.FieldSpec{WireName: "estimated_rows"},
+	"OldestEntryTime": ubx.FieldSpec{WireName: "oldest_entry_time"},
+}
 
 var Table_TableConstraints_ForeignKeys_ColumnReferencesFields = ubx.FieldMap{
-		"ReferencedColumn": ubx.FieldSpec{WireName: "referenced_column"},
-		"ReferencingColumn": ubx.FieldSpec{WireName: "referencing_column"},
-	}
+	"ReferencedColumn":  ubx.FieldSpec{WireName: "referenced_column"},
+	"ReferencingColumn": ubx.FieldSpec{WireName: "referencing_column"},
+}
 
 var Table_TableConstraints_ForeignKeysFields = ubx.FieldMap{
-		"ColumnReferences": ubx.FieldSpec{
-			WireName: "column_references",
-			Kind: "list",
-			Fields: Table_TableConstraints_ForeignKeys_ColumnReferencesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReferencedTable": ubx.FieldSpec{
-			WireName: "referenced_table",
-			Kind: "object",
-			Fields: Table_CloneDefinition_BaseTableReferenceFields,
-		},
-	}
+	"ColumnReferences": ubx.FieldSpec{
+		WireName: "column_references",
+		Kind:     "list",
+		Fields:   Table_TableConstraints_ForeignKeys_ColumnReferencesFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ReferencedTable": ubx.FieldSpec{
+		WireName: "referenced_table",
+		Kind:     "object",
+		Fields:   Table_CloneDefinition_BaseTableReferenceFields,
+	},
+}
 
 var Table_TableConstraints_PrimaryKeyFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{WireName: "columns"},
-	}
+	"Columns": ubx.FieldSpec{WireName: "columns"},
+}
 
 var Table_TableConstraintsFields = ubx.FieldMap{
-		"ForeignKeys": ubx.FieldSpec{
-			WireName: "foreign_keys",
-			Kind: "list",
-			Fields: Table_TableConstraints_ForeignKeysFields,
-		},
-		"PrimaryKey": ubx.FieldSpec{
-			WireName: "primary_key",
-			Kind: "object",
-			Fields: Table_TableConstraints_PrimaryKeyFields,
-		},
-	}
+	"ForeignKeys": ubx.FieldSpec{
+		WireName: "foreign_keys",
+		Kind:     "list",
+		Fields:   Table_TableConstraints_ForeignKeysFields,
+	},
+	"PrimaryKey": ubx.FieldSpec{
+		WireName: "primary_key",
+		Kind:     "object",
+		Fields:   Table_TableConstraints_PrimaryKeyFields,
+	},
+}
 
 var Table_TableReplicationInfoFields = ubx.FieldMap{
-		"ReplicatedSourceLastRefreshTime": ubx.FieldSpec{WireName: "replicated_source_last_refresh_time"},
-		"ReplicationError": ubx.FieldSpec{
-			WireName: "replication_error",
-			Kind: "object",
-			Fields: Table_MaterializedViewStatus_LastRefreshStatusFields,
-		},
-		"ReplicationIntervalMs": ubx.FieldSpec{WireName: "replication_interval_ms"},
-		"ReplicationStatus": ubx.FieldSpec{WireName: "replication_status"},
-		"SourceTable": ubx.FieldSpec{
-			WireName: "source_table",
-			Kind: "object",
-			Fields: Table_CloneDefinition_BaseTableReferenceFields,
-		},
-	}
+	"ReplicatedSourceLastRefreshTime": ubx.FieldSpec{WireName: "replicated_source_last_refresh_time"},
+	"ReplicationError": ubx.FieldSpec{
+		WireName: "replication_error",
+		Kind:     "object",
+		Fields:   Table_MaterializedViewStatus_LastRefreshStatusFields,
+	},
+	"ReplicationIntervalMs": ubx.FieldSpec{WireName: "replication_interval_ms"},
+	"ReplicationStatus":     ubx.FieldSpec{WireName: "replication_status"},
+	"SourceTable": ubx.FieldSpec{
+		WireName: "source_table",
+		Kind:     "object",
+		Fields:   Table_CloneDefinition_BaseTableReferenceFields,
+	},
+}
 
 var Table_TimePartitioningFields = ubx.FieldMap{
-		"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExpirationMs":           ubx.FieldSpec{WireName: "expiration_ms"},
+	"Field":                  ubx.FieldSpec{WireName: "field"},
+	"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var Table_View_ForeignDefinitionsFields = ubx.FieldMap{
-		"Dialect": ubx.FieldSpec{WireName: "dialect"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Dialect": ubx.FieldSpec{WireName: "dialect"},
+	"Query":   ubx.FieldSpec{WireName: "query"},
+}
 
 var Table_View_PrivacyPolicy_AggregationThresholdPolicyFields = ubx.FieldMap{
-		"PrivacyUnitColumns": ubx.FieldSpec{WireName: "privacy_unit_columns"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"PrivacyUnitColumns": ubx.FieldSpec{WireName: "privacy_unit_columns"},
+	"Threshold":          ubx.FieldSpec{WireName: "threshold"},
+}
 
 var Table_View_PrivacyPolicy_DifferentialPrivacyPolicyFields = ubx.FieldMap{
-		"DeltaBudget": ubx.FieldSpec{WireName: "delta_budget"},
-		"DeltaBudgetRemaining": ubx.FieldSpec{WireName: "delta_budget_remaining"},
-		"DeltaPerQuery": ubx.FieldSpec{WireName: "delta_per_query"},
-		"EpsilonBudget": ubx.FieldSpec{WireName: "epsilon_budget"},
-		"EpsilonBudgetRemaining": ubx.FieldSpec{WireName: "epsilon_budget_remaining"},
-		"MaxEpsilonPerQuery": ubx.FieldSpec{WireName: "max_epsilon_per_query"},
-		"MaxGroupsContributed": ubx.FieldSpec{WireName: "max_groups_contributed"},
-		"PrivacyUnitColumn": ubx.FieldSpec{WireName: "privacy_unit_column"},
-	}
+	"DeltaBudget":            ubx.FieldSpec{WireName: "delta_budget"},
+	"DeltaBudgetRemaining":   ubx.FieldSpec{WireName: "delta_budget_remaining"},
+	"DeltaPerQuery":          ubx.FieldSpec{WireName: "delta_per_query"},
+	"EpsilonBudget":          ubx.FieldSpec{WireName: "epsilon_budget"},
+	"EpsilonBudgetRemaining": ubx.FieldSpec{WireName: "epsilon_budget_remaining"},
+	"MaxEpsilonPerQuery":     ubx.FieldSpec{WireName: "max_epsilon_per_query"},
+	"MaxGroupsContributed":   ubx.FieldSpec{WireName: "max_groups_contributed"},
+	"PrivacyUnitColumn":      ubx.FieldSpec{WireName: "privacy_unit_column"},
+}
 
 var Table_View_PrivacyPolicy_JoinRestrictionPolicyFields = ubx.FieldMap{
-		"JoinAllowedColumns": ubx.FieldSpec{WireName: "join_allowed_columns"},
-		"JoinCondition": ubx.FieldSpec{WireName: "join_condition"},
-	}
+	"JoinAllowedColumns": ubx.FieldSpec{WireName: "join_allowed_columns"},
+	"JoinCondition":      ubx.FieldSpec{WireName: "join_condition"},
+}
 
 var Table_View_PrivacyPolicyFields = ubx.FieldMap{
-		"AggregationThresholdPolicy": ubx.FieldSpec{
-			WireName: "aggregation_threshold_policy",
-			Kind: "object",
-			Fields: Table_View_PrivacyPolicy_AggregationThresholdPolicyFields,
-		},
-		"DifferentialPrivacyPolicy": ubx.FieldSpec{
-			WireName: "differential_privacy_policy",
-			Kind: "object",
-			Fields: Table_View_PrivacyPolicy_DifferentialPrivacyPolicyFields,
-		},
-		"JoinRestrictionPolicy": ubx.FieldSpec{
-			WireName: "join_restriction_policy",
-			Kind: "object",
-			Fields: Table_View_PrivacyPolicy_JoinRestrictionPolicyFields,
-		},
-	}
+	"AggregationThresholdPolicy": ubx.FieldSpec{
+		WireName: "aggregation_threshold_policy",
+		Kind:     "object",
+		Fields:   Table_View_PrivacyPolicy_AggregationThresholdPolicyFields,
+	},
+	"DifferentialPrivacyPolicy": ubx.FieldSpec{
+		WireName: "differential_privacy_policy",
+		Kind:     "object",
+		Fields:   Table_View_PrivacyPolicy_DifferentialPrivacyPolicyFields,
+	},
+	"JoinRestrictionPolicy": ubx.FieldSpec{
+		WireName: "join_restriction_policy",
+		Kind:     "object",
+		Fields:   Table_View_PrivacyPolicy_JoinRestrictionPolicyFields,
+	},
+}
 
 var Table_View_UserDefinedFunctionResourcesFields = ubx.FieldMap{
-		"InlineCode": ubx.FieldSpec{WireName: "inline_code"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-	}
+	"InlineCode":  ubx.FieldSpec{WireName: "inline_code"},
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+}
 
 var Table_ViewFields = ubx.FieldMap{
-		"ForeignDefinitions": ubx.FieldSpec{
-			WireName: "foreign_definitions",
-			Kind: "list",
-			Fields: Table_View_ForeignDefinitionsFields,
-		},
-		"PrivacyPolicy": ubx.FieldSpec{
-			WireName: "privacy_policy",
-			Kind: "object",
-			Fields: Table_View_PrivacyPolicyFields,
-		},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"UseExplicitColumnNames": ubx.FieldSpec{WireName: "use_explicit_column_names"},
-		"UseLegacySql": ubx.FieldSpec{WireName: "use_legacy_sql"},
-		"UserDefinedFunctionResources": ubx.FieldSpec{
-			WireName: "user_defined_function_resources",
-			Kind: "list",
-			Fields: Table_View_UserDefinedFunctionResourcesFields,
-		},
-	}
+	"ForeignDefinitions": ubx.FieldSpec{
+		WireName: "foreign_definitions",
+		Kind:     "list",
+		Fields:   Table_View_ForeignDefinitionsFields,
+	},
+	"PrivacyPolicy": ubx.FieldSpec{
+		WireName: "privacy_policy",
+		Kind:     "object",
+		Fields:   Table_View_PrivacyPolicyFields,
+	},
+	"Query":                  ubx.FieldSpec{WireName: "query"},
+	"UseExplicitColumnNames": ubx.FieldSpec{WireName: "use_explicit_column_names"},
+	"UseLegacySql":           ubx.FieldSpec{WireName: "use_legacy_sql"},
+	"UserDefinedFunctionResources": ubx.FieldSpec{
+		WireName: "user_defined_function_resources",
+		Kind:     "list",
+		Fields:   Table_View_UserDefinedFunctionResourcesFields,
+	},
+}
 
 type TableConfig struct {
 	// Configuration for BigQuery tables for Apache Iceberg (formerly BigLake managed tables.)
@@ -1330,114 +1330,114 @@ var Table = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BiglakeConfiguration": ubx.FieldSpec{
 			WireName: "biglake_configuration",
-			Kind: "object",
-			Fields: Table_BiglakeConfigurationFields,
+			Kind:     "object",
+			Fields:   Table_BiglakeConfigurationFields,
 		},
 		"CloneDefinition": ubx.FieldSpec{
 			WireName: "clone_definition",
-			Kind: "object",
-			Fields: Table_CloneDefinitionFields,
+			Kind:     "object",
+			Fields:   Table_CloneDefinitionFields,
 		},
 		"Clustering": ubx.FieldSpec{
 			WireName: "clustering",
-			Kind: "object",
-			Fields: Table_ClusteringFields,
+			Kind:     "object",
+			Fields:   Table_ClusteringFields,
 		},
-		"DefaultCollation": ubx.FieldSpec{WireName: "default_collation"},
+		"DefaultCollation":    ubx.FieldSpec{WireName: "default_collation"},
 		"DefaultRoundingMode": ubx.FieldSpec{WireName: "default_rounding_mode"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: Table_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Table_EncryptionConfigurationFields,
 		},
 		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
 		"ExternalCatalogTableOptions": ubx.FieldSpec{
 			WireName: "external_catalog_table_options",
-			Kind: "object",
-			Fields: Table_ExternalCatalogTableOptionsFields,
+			Kind:     "object",
+			Fields:   Table_ExternalCatalogTableOptionsFields,
 		},
 		"ExternalDataConfiguration": ubx.FieldSpec{
 			WireName: "external_data_configuration",
-			Kind: "object",
-			Fields: Table_ExternalDataConfigurationFields,
+			Kind:     "object",
+			Fields:   Table_ExternalDataConfigurationFields,
 		},
-		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"FriendlyName":     ubx.FieldSpec{WireName: "friendly_name"},
+		"Kind":             ubx.FieldSpec{WireName: "kind"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
 		"ManagedTableType": ubx.FieldSpec{WireName: "managed_table_type"},
 		"MaterializedView": ubx.FieldSpec{
 			WireName: "materialized_view",
-			Kind: "object",
-			Fields: Table_MaterializedViewFields,
+			Kind:     "object",
+			Fields:   Table_MaterializedViewFields,
 		},
 		"MaterializedViewStatus": ubx.FieldSpec{
 			WireName: "materialized_view_status",
-			Kind: "object",
-			Fields: Table_MaterializedViewStatusFields,
+			Kind:     "object",
+			Fields:   Table_MaterializedViewStatusFields,
 		},
 		"MaxStaleness": ubx.FieldSpec{WireName: "max_staleness"},
 		"Model": ubx.FieldSpec{
 			WireName: "model",
-			Kind: "object",
-			Fields: Table_ModelFields,
+			Kind:     "object",
+			Fields:   Table_ModelFields,
 		},
 		"PartitionDefinition": ubx.FieldSpec{
 			WireName: "partition_definition",
-			Kind: "object",
-			Fields: Table_PartitionDefinitionFields,
+			Kind:     "object",
+			Fields:   Table_PartitionDefinitionFields,
 		},
 		"RangePartitioning": ubx.FieldSpec{
 			WireName: "range_partitioning",
-			Kind: "object",
-			Fields: Table_RangePartitioningFields,
+			Kind:     "object",
+			Fields:   Table_RangePartitioningFields,
 		},
 		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
+		"ResourceTags":           ubx.FieldSpec{WireName: "resource_tags"},
 		"Restrictions": ubx.FieldSpec{
 			WireName: "restrictions",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_Schema_Fields_RangeElementTypeFields,
+			Kind:     "object",
+			Fields:   Table_ExternalDataConfiguration_Schema_Fields_RangeElementTypeFields,
 		},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Table_ExternalDataConfiguration_SchemaFields,
+			Kind:     "object",
+			Fields:   Table_ExternalDataConfiguration_SchemaFields,
 		},
 		"SnapshotDefinition": ubx.FieldSpec{
 			WireName: "snapshot_definition",
-			Kind: "object",
-			Fields: Table_SnapshotDefinitionFields,
+			Kind:     "object",
+			Fields:   Table_SnapshotDefinitionFields,
 		},
 		"StreamingBuffer": ubx.FieldSpec{
 			WireName: "streaming_buffer",
-			Kind: "object",
-			Fields: Table_StreamingBufferFields,
+			Kind:     "object",
+			Fields:   Table_StreamingBufferFields,
 		},
 		"TableConstraints": ubx.FieldSpec{
 			WireName: "table_constraints",
-			Kind: "object",
-			Fields: Table_TableConstraintsFields,
+			Kind:     "object",
+			Fields:   Table_TableConstraintsFields,
 		},
 		"TableReference": ubx.FieldSpec{
 			WireName: "table_reference",
-			Kind: "object",
-			Fields: Table_CloneDefinition_BaseTableReferenceFields,
+			Kind:     "object",
+			Fields:   Table_CloneDefinition_BaseTableReferenceFields,
 		},
 		"TableReplicationInfo": ubx.FieldSpec{
 			WireName: "table_replication_info",
-			Kind: "object",
-			Fields: Table_TableReplicationInfoFields,
+			Kind:     "object",
+			Fields:   Table_TableReplicationInfoFields,
 		},
 		"TimePartitioning": ubx.FieldSpec{
 			WireName: "time_partitioning",
-			Kind: "object",
-			Fields: Table_TimePartitioningFields,
+			Kind:     "object",
+			Fields:   Table_TimePartitioningFields,
 		},
 		"View": ubx.FieldSpec{
 			WireName: "view",
-			Kind: "object",
-			Fields: Table_ViewFields,
+			Kind:     "object",
+			Fields:   Table_ViewFields,
 		},
 	},
 }

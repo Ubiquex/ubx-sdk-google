@@ -30,7 +30,7 @@ type V1beta1RuntimeRevision_Spec_DeploymentSpec_AgentGatewayConfig struct {
 }
 
 type V1beta1RuntimeRevision_Spec_DeploymentSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -49,7 +49,7 @@ type V1beta1RuntimeRevision_Spec_DeploymentSpec_KeepAliveProbe struct {
 }
 
 type V1beta1RuntimeRevision_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -62,12 +62,12 @@ type V1beta1RuntimeRevision_Spec_DeploymentSpec_PscInterfaceConfig struct {
 }
 
 type V1beta1RuntimeRevision_Spec_DeploymentSpec_SecretEnv_SecretRef struct {
-	Secret any
+	Secret  any
 	Version any
 }
 
 type V1beta1RuntimeRevision_Spec_DeploymentSpec_SecretEnv struct {
-	Name any
+	Name      any
 	SecretRef any
 }
 
@@ -197,7 +197,7 @@ type V1beta1RuntimeRevisionConfig struct {
 type V1beta1RuntimeRevisionAttrs struct {
 	// Output only. Timestamp when this ReasoningEngineRuntimeRevision was created.
 	CreateTime any
-	Name any
+	Name       any
 	// ReasoningEngine configurations
 	Spec any
 	// Output only. The state of the revision.

@@ -4,12 +4,12 @@ package artifactregistry
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_Fingerprints struct {
-	Type any
+	Type  any
 	Value any
 }
 
 type Version_RelatedTags struct {
-	Name any
+	Name    any
 	Version any
 }
 
@@ -29,12 +29,12 @@ type VersionAttrs struct {
 	Fingerprints any
 	// Output only. Repository-specific Metadata stored against this version. The fields returned are defined by the underlying repository-specific resource. Currently, the resources could be: DockerImage MavenArtifact
 	Metadata any
-	Name any
+	Name     any
 	// Output only. A list of related tags. Will contain up to 100 tags that reference this version.
 	RelatedTags any
 	// The time when the version was last updated.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var Version = ubx.DataSourceBinding{

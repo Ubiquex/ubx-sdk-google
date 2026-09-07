@@ -4,16 +4,16 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaDhcpOptionsConfig_Associations struct {
-	Network any
+	Network   any
 	NetworkId any
-	State any
+	State     any
 }
 
 var BetaDhcpOptionsConfig_AssociationsFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkId": ubx.FieldSpec{WireName: "network_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Network":   ubx.FieldSpec{WireName: "network"},
+	"NetworkId": ubx.FieldSpec{WireName: "network_id"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 type BetaDhcpOptionsConfigConfig struct {
 	// Mapping of user-defined keys to DhcpOptionsConfig to Network associations.
@@ -88,20 +88,20 @@ var BetaDhcpOptionsConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
-			Kind: "map",
-			Fields: BetaDhcpOptionsConfig_AssociationsFields,
+			Kind:     "map",
+			Fields:   BetaDhcpOptionsConfig_AssociationsFields,
 		},
-		"BootFileIpv4Name": ubx.FieldSpec{WireName: "boot_file_ipv4_name"},
-		"BootFileIpv6Parameters": ubx.FieldSpec{WireName: "boot_file_ipv6_parameters"},
-		"BootFileIpv6Url": ubx.FieldSpec{WireName: "boot_file_ipv6_url"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnsSearchPaths": ubx.FieldSpec{WireName: "dns_search_paths"},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"LeaseTimeSec": ubx.FieldSpec{WireName: "lease_time_sec"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NtpServerIpv4Addresses": ubx.FieldSpec{WireName: "ntp_server_ipv4_addresses"},
-		"NtpServerIpv6Addresses": ubx.FieldSpec{WireName: "ntp_server_ipv6_addresses"},
+		"BootFileIpv4Name":        ubx.FieldSpec{WireName: "boot_file_ipv4_name"},
+		"BootFileIpv6Parameters":  ubx.FieldSpec{WireName: "boot_file_ipv6_parameters"},
+		"BootFileIpv6Url":         ubx.FieldSpec{WireName: "boot_file_ipv6_url"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"DnsSearchPaths":          ubx.FieldSpec{WireName: "dns_search_paths"},
+		"DomainName":              ubx.FieldSpec{WireName: "domain_name"},
+		"LeaseTimeSec":            ubx.FieldSpec{WireName: "lease_time_sec"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"NtpServerIpv4Addresses":  ubx.FieldSpec{WireName: "ntp_server_ipv4_addresses"},
+		"NtpServerIpv6Addresses":  ubx.FieldSpec{WireName: "ntp_server_ipv6_addresses"},
 		"TftpServerIpv4Addresses": ubx.FieldSpec{WireName: "tftp_server_ipv4_addresses"},
-		"TftpServerIpv4Name": ubx.FieldSpec{WireName: "tftp_server_ipv4_name"},
+		"TftpServerIpv4Name":      ubx.FieldSpec{WireName: "tftp_server_ipv4_name"},
 	},
 }

@@ -11,9 +11,9 @@ type Connector_Subnet struct {
 }
 
 var Connector_SubnetFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 type ConnectorConfig struct {
 	// Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
@@ -64,18 +64,18 @@ type ConnectorAttrs struct {
 var Connector = ubx.ResourceBinding{
 	WireType: "google_vpcaccess_connector",
 	Fields: ubx.FieldMap{
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+		"IpCidrRange":   ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"MachineType":   ubx.FieldSpec{WireName: "machine_type"},
+		"MaxInstances":  ubx.FieldSpec{WireName: "max_instances"},
 		"MaxThroughput": ubx.FieldSpec{WireName: "max_throughput"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+		"MinInstances":  ubx.FieldSpec{WireName: "min_instances"},
 		"MinThroughput": ubx.FieldSpec{WireName: "min_throughput"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Network":       ubx.FieldSpec{WireName: "network"},
 		"Subnet": ubx.FieldSpec{
 			WireName: "subnet",
-			Kind: "object",
-			Fields: Connector_SubnetFields,
+			Kind:     "object",
+			Fields:   Connector_SubnetFields,
 		},
 	},
 }

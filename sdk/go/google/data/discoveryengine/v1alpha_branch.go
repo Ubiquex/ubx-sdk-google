@@ -22,8 +22,8 @@ type V1alphaBranchAttrs struct {
 	IsDefault any
 	// Output only. Timestamp of last import through DocumentService.ImportDocuments. Empty value means no import has been made to this branch.
 	LastDocumentImportTime any
-	Name any
-	View any
+	Name                   any
+	View                   any
 }
 
 var V1alphaBranch = ubx.DataSourceBinding{

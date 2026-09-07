@@ -75,9 +75,9 @@ type DataSource_DataSourceBackupApplianceApplication struct {
 }
 
 type DataSource_DataSourceGcpResource_AlloyDbClusterDatasourceProperties_PitrWindows struct {
-	EndTime any
+	EndTime          any
 	LogRetentionDays any
-	StartTime any
+	StartTime        any
 }
 
 type DataSource_DataSourceGcpResource_AlloyDbClusterDatasourceProperties struct {
@@ -193,7 +193,7 @@ type DataSourceAttrs struct {
 var DataSource = ubx.ResourceBinding{
 	WireType: "google_backupdr_data_source",
 	Fields: ubx.FieldMap{
-		"BackupId": ubx.FieldSpec{WireName: "backup_id"},
+		"BackupId":  ubx.FieldSpec{WireName: "backup_id"},
 		"RequestId": ubx.FieldSpec{WireName: "request_id"},
 	},
 }

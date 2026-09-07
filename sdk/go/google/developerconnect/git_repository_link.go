@@ -47,9 +47,9 @@ var GitRepositoryLink = ubx.ResourceBinding{
 	WireType: "google_developerconnect_git_repository_link",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CloneUri": ubx.FieldSpec{WireName: "clone_uri"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CloneUri":    ubx.FieldSpec{WireName: "clone_uri"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

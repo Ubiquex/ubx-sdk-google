@@ -22,20 +22,20 @@ type Backup_EncryptionInfo struct {
 }
 
 var Backup_EncryptionInfo_EncryptionStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Backup_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionStatus": ubx.FieldSpec{
-			WireName: "encryption_status",
-			Kind: "object",
-			Fields: Backup_EncryptionInfo_EncryptionStatusFields,
-		},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-	}
+	"EncryptionStatus": ubx.FieldSpec{
+		WireName: "encryption_status",
+		Kind:     "object",
+		Fields:   Backup_EncryptionInfo_EncryptionStatusFields,
+	},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyVersion":  ubx.FieldSpec{WireName: "kms_key_version"},
+}
 
 type BackupConfig struct {
 	// Indicates the backup type of the backup.
@@ -83,12 +83,12 @@ var Backup = ubx.ResourceBinding{
 		"BackupType": ubx.FieldSpec{WireName: "backup_type"},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: Backup_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   Backup_EncryptionInfoFields,
 		},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"ExpireTime":        ubx.FieldSpec{WireName: "expire_time"},
 		"HotToStandardTime": ubx.FieldSpec{WireName: "hot_to_standard_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SourceTable": ubx.FieldSpec{WireName: "source_table"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"SourceTable":       ubx.FieldSpec{WireName: "source_table"},
 	},
 }

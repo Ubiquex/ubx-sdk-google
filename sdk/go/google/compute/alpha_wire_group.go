@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaWireGroup_Endpoints_Interconnects struct {
 	Interconnect any
-	VlanTags any
+	VlanTags     any
 }
 
 type AlphaWireGroup_Endpoints struct {
@@ -18,7 +18,7 @@ type AlphaWireGroup_ServiceLevel struct {
 }
 
 type AlphaWireGroup_Topology_Endpoints struct {
-	City any
+	City  any
 	Label any
 }
 
@@ -34,81 +34,81 @@ type AlphaWireGroup_WireGroupProperties struct {
 
 type AlphaWireGroup_WireInputs_WirePropertyOverrides struct {
 	BandwidthAllocation any
-	BandwidthMetered any
-	BandwidthUnmetered any
-	FaultResponse any
-	FlowManagement any
+	BandwidthMetered    any
+	BandwidthUnmetered  any
+	FaultResponse       any
+	FlowManagement      any
 	NetworkServiceClass any
 }
 
 type AlphaWireGroup_WireInputs struct {
-	AdminEnabled any
+	AdminEnabled          any
 	WirePropertyOverrides any
 }
 
 type AlphaWireGroup_Wires_Endpoints struct {
 	Interconnect any
-	VlanTag any
+	VlanTag      any
 }
 
 type AlphaWireGroup_Wires struct {
-	AdminEnabled any
-	Endpoints any
-	Label any
+	AdminEnabled   any
+	Endpoints      any
+	Label          any
 	WireProperties any
 }
 
 var AlphaWireGroup_Endpoints_InterconnectsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-		"VlanTags": ubx.FieldSpec{WireName: "vlan_tags"},
-	}
+	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+	"VlanTags":     ubx.FieldSpec{WireName: "vlan_tags"},
+}
 
 var AlphaWireGroup_EndpointsFields = ubx.FieldMap{
-		"Interconnects": ubx.FieldSpec{
-			WireName: "interconnects",
-			Kind: "map",
-			Fields: AlphaWireGroup_Endpoints_InterconnectsFields,
-		},
-	}
+	"Interconnects": ubx.FieldSpec{
+		WireName: "interconnects",
+		Kind:     "map",
+		Fields:   AlphaWireGroup_Endpoints_InterconnectsFields,
+	},
+}
 
 var AlphaWireGroup_ServiceLevelFields = ubx.FieldMap{
-		"AvailabilityClass": ubx.FieldSpec{WireName: "availability_class"},
-	}
+	"AvailabilityClass": ubx.FieldSpec{WireName: "availability_class"},
+}
 
 var AlphaWireGroup_Topology_EndpointsFields = ubx.FieldMap{
-		"City": ubx.FieldSpec{WireName: "city"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"City":  ubx.FieldSpec{WireName: "city"},
+	"Label": ubx.FieldSpec{WireName: "label"},
+}
 
 var AlphaWireGroup_TopologyFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{
-			WireName: "endpoints",
-			Kind: "list",
-			Fields: AlphaWireGroup_Topology_EndpointsFields,
-		},
-	}
+	"Endpoints": ubx.FieldSpec{
+		WireName: "endpoints",
+		Kind:     "list",
+		Fields:   AlphaWireGroup_Topology_EndpointsFields,
+	},
+}
 
 var AlphaWireGroup_WireGroupPropertiesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaWireGroup_WireInputs_WirePropertyOverridesFields = ubx.FieldMap{
-		"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
-		"BandwidthMetered": ubx.FieldSpec{WireName: "bandwidth_metered"},
-		"BandwidthUnmetered": ubx.FieldSpec{WireName: "bandwidth_unmetered"},
-		"FaultResponse": ubx.FieldSpec{WireName: "fault_response"},
-		"FlowManagement": ubx.FieldSpec{WireName: "flow_management"},
-		"NetworkServiceClass": ubx.FieldSpec{WireName: "network_service_class"},
-	}
+	"BandwidthAllocation": ubx.FieldSpec{WireName: "bandwidth_allocation"},
+	"BandwidthMetered":    ubx.FieldSpec{WireName: "bandwidth_metered"},
+	"BandwidthUnmetered":  ubx.FieldSpec{WireName: "bandwidth_unmetered"},
+	"FaultResponse":       ubx.FieldSpec{WireName: "fault_response"},
+	"FlowManagement":      ubx.FieldSpec{WireName: "flow_management"},
+	"NetworkServiceClass": ubx.FieldSpec{WireName: "network_service_class"},
+}
 
 var AlphaWireGroup_WireInputsFields = ubx.FieldMap{
-		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"WirePropertyOverrides": ubx.FieldSpec{
-			WireName: "wire_property_overrides",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
-		},
-	}
+	"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
+	"WirePropertyOverrides": ubx.FieldSpec{
+		WireName: "wire_property_overrides",
+		Kind:     "object",
+		Fields:   AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
+	},
+}
 
 type AlphaWireGroupConfig struct {
 	// Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true.
@@ -170,37 +170,37 @@ var AlphaWireGroup = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_wire_group",
 	Fields: ubx.FieldMap{
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "map",
-			Fields: AlphaWireGroup_EndpointsFields,
+			Kind:     "map",
+			Fields:   AlphaWireGroup_EndpointsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServiceLevel": ubx.FieldSpec{
 			WireName: "service_level",
-			Kind: "object",
-			Fields: AlphaWireGroup_ServiceLevelFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_ServiceLevelFields,
 		},
 		"Topology": ubx.FieldSpec{
 			WireName: "topology",
-			Kind: "object",
-			Fields: AlphaWireGroup_TopologyFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_TopologyFields,
 		},
 		"WireGroupProperties": ubx.FieldSpec{
 			WireName: "wire_group_properties",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireGroupPropertiesFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_WireGroupPropertiesFields,
 		},
 		"WireInputs": ubx.FieldSpec{
 			WireName: "wire_inputs",
-			Kind: "map",
-			Fields: AlphaWireGroup_WireInputsFields,
+			Kind:     "map",
+			Fields:   AlphaWireGroup_WireInputsFields,
 		},
 		"WireProperties": ubx.FieldSpec{
 			WireName: "wire_properties",
-			Kind: "object",
-			Fields: AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
+			Kind:     "object",
+			Fields:   AlphaWireGroup_WireInputs_WirePropertyOverridesFields,
 		},
 	},
 }

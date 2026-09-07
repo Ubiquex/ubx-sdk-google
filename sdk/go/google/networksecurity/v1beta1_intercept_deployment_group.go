@@ -9,11 +9,11 @@ type V1beta1InterceptDeploymentGroup_ConnectedEndpointGroups struct {
 
 type V1beta1InterceptDeploymentGroup_Locations struct {
 	Location any
-	State any
+	State    any
 }
 
 type V1beta1InterceptDeploymentGroup_NestedDeployments struct {
-	Name any
+	Name  any
 	State any
 }
 
@@ -57,8 +57,8 @@ var V1beta1InterceptDeploymentGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_intercept_deployment_group",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Network":     ubx.FieldSpec{WireName: "network"},
 	},
 }

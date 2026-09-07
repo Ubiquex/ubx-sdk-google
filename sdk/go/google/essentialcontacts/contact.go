@@ -30,8 +30,8 @@ type ContactAttrs struct {
 var Contact = ubx.ResourceBinding{
 	WireType: "google_essentialcontacts_contact",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"LanguageTag": ubx.FieldSpec{WireName: "language_tag"},
+		"Email":                             ubx.FieldSpec{WireName: "email"},
+		"LanguageTag":                       ubx.FieldSpec{WireName: "language_tag"},
 		"NotificationCategorySubscriptions": ubx.FieldSpec{WireName: "notification_category_subscriptions"},
 	},
 }

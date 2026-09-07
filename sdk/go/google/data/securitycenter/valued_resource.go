@@ -12,12 +12,12 @@ type ValuedResourceConfig struct {
 }
 
 type ValuedResourceAttrs struct {
-	DisplayName any
-	ExposedScore any
-	Name any
-	Resource any
-	ResourceType any
-	ResourceValue any
+	DisplayName              any
+	ExposedScore             any
+	Name                     any
+	Resource                 any
+	ResourceType             any
+	ResourceValue            any
 	ResourceValueConfigsUsed any
 }
 

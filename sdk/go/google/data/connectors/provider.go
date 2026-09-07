@@ -21,7 +21,7 @@ type ProviderAttrs struct {
 	Labels any
 	// Output only. Flag to mark the version indicating the launch stage.
 	LaunchStage any
-	Name any
+	Name        any
 	// Output only. Updated time.
 	UpdateTime any
 	// Output only. Cloud storage location of icons etc consumed by UI.
@@ -30,6 +30,5 @@ type ProviderAttrs struct {
 
 var Provider = ubx.DataSourceBinding{
 	WireType: "google_connectors_provider",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

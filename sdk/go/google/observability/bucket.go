@@ -13,10 +13,10 @@ type Bucket_CmekSettings struct {
 }
 
 var Bucket_CmekSettingsFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-	}
+	"KmsKey":           ubx.FieldSpec{WireName: "kms_key"},
+	"KmsKeyVersion":    ubx.FieldSpec{WireName: "kms_key_version"},
+	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+}
 
 type BucketConfig struct {
 	// Settings for configuring CMEK for a bucket.
@@ -53,11 +53,11 @@ var Bucket = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CmekSettings": ubx.FieldSpec{
 			WireName: "cmek_settings",
-			Kind: "object",
-			Fields: Bucket_CmekSettingsFields,
+			Kind:     "object",
+			Fields:   Bucket_CmekSettingsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -33,8 +33,8 @@ var Exclusion = ubx.ResourceBinding{
 	WireType: "google_logging_exclusion",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

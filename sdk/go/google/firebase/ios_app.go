@@ -48,12 +48,12 @@ type IosAppAttrs struct {
 var IosApp = ubx.ResourceBinding{
 	WireType: "google_firebase_ios_app",
 	Fields: ubx.FieldMap{
-		"ApiKeyId": ubx.FieldSpec{WireName: "api_key_id"},
-		"AppStoreId": ubx.FieldSpec{WireName: "app_store_id"},
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+		"ApiKeyId":    ubx.FieldSpec{WireName: "api_key_id"},
+		"AppStoreId":  ubx.FieldSpec{WireName: "app_store_id"},
+		"BundleId":    ubx.FieldSpec{WireName: "bundle_id"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"TeamId":      ubx.FieldSpec{WireName: "team_id"},
 	},
 }

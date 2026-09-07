@@ -61,79 +61,79 @@ type Service_ServiceReference struct {
 }
 
 var Service_Attributes_BusinessOwnersFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var Service_Attributes_CriticalityFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Service_AttributesFields = ubx.FieldMap{
-		"BusinessOwners": ubx.FieldSpec{
-			WireName: "business_owners",
-			Kind: "list",
-			Fields: Service_Attributes_BusinessOwnersFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "object",
-			Fields: Service_Attributes_CriticalityFields,
-		},
-		"DeveloperOwners": ubx.FieldSpec{
-			WireName: "developer_owners",
-			Kind: "list",
-			Fields: Service_Attributes_BusinessOwnersFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: Service_Attributes_CriticalityFields,
-		},
-		"OperatorOwners": ubx.FieldSpec{
-			WireName: "operator_owners",
-			Kind: "list",
-			Fields: Service_Attributes_BusinessOwnersFields,
-		},
-	}
+	"BusinessOwners": ubx.FieldSpec{
+		WireName: "business_owners",
+		Kind:     "list",
+		Fields:   Service_Attributes_BusinessOwnersFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "object",
+		Fields:   Service_Attributes_CriticalityFields,
+	},
+	"DeveloperOwners": ubx.FieldSpec{
+		WireName: "developer_owners",
+		Kind:     "list",
+		Fields:   Service_Attributes_BusinessOwnersFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   Service_Attributes_CriticalityFields,
+	},
+	"OperatorOwners": ubx.FieldSpec{
+		WireName: "operator_owners",
+		Kind:     "list",
+		Fields:   Service_Attributes_BusinessOwnersFields,
+	},
+}
 
 var Service_ServiceProperties_ExtendedMetadataFields = ubx.FieldMap{
-		"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
-	}
+	"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
+}
 
 var Service_ServiceProperties_IdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var Service_ServicePropertiesFields = ubx.FieldMap{
-		"ExtendedMetadata": ubx.FieldSpec{
-			WireName: "extended_metadata",
-			Kind: "map",
-			Fields: Service_ServiceProperties_ExtendedMetadataFields,
-		},
-		"FunctionalType": ubx.FieldSpec{
-			WireName: "functional_type",
-			Kind: "object",
-			Fields: Service_Attributes_CriticalityFields,
-		},
-		"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "object",
-			Fields: Service_ServiceProperties_IdentityFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"RegistrationType": ubx.FieldSpec{
-			WireName: "registration_type",
-			Kind: "object",
-			Fields: Service_Attributes_CriticalityFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ExtendedMetadata": ubx.FieldSpec{
+		WireName: "extended_metadata",
+		Kind:     "map",
+		Fields:   Service_ServiceProperties_ExtendedMetadataFields,
+	},
+	"FunctionalType": ubx.FieldSpec{
+		WireName: "functional_type",
+		Kind:     "object",
+		Fields:   Service_Attributes_CriticalityFields,
+	},
+	"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "object",
+		Fields:   Service_ServiceProperties_IdentityFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"RegistrationType": ubx.FieldSpec{
+		WireName: "registration_type",
+		Kind:     "object",
+		Fields:   Service_Attributes_CriticalityFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var Service_ServiceReferenceFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 type ServiceConfig struct {
 	// Consumer provided attributes.
@@ -182,22 +182,22 @@ var Service = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: Service_AttributesFields,
+			Kind:     "object",
+			Fields:   Service_AttributesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DiscoveredService": ubx.FieldSpec{WireName: "discovered_service"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ServiceProperties": ubx.FieldSpec{
 			WireName: "service_properties",
-			Kind: "object",
-			Fields: Service_ServicePropertiesFields,
+			Kind:     "object",
+			Fields:   Service_ServicePropertiesFields,
 		},
 		"ServiceReference": ubx.FieldSpec{
 			WireName: "service_reference",
-			Kind: "object",
-			Fields: Service_ServiceReferenceFields,
+			Kind:     "object",
+			Fields:   Service_ServiceReferenceFields,
 		},
 	},
 }

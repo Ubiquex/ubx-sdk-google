@@ -19,16 +19,16 @@ type GoogleApiSource_ProjectSubscriptions struct {
 }
 
 var GoogleApiSource_LoggingConfigFields = ubx.FieldMap{
-		"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
-	}
+	"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
+}
 
 var GoogleApiSource_OrganizationSubscriptionFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var GoogleApiSource_ProjectSubscriptionsFields = ubx.FieldMap{
-		"List": ubx.FieldSpec{WireName: "list"},
-	}
+	"List": ubx.FieldSpec{WireName: "list"},
+}
 
 type GoogleApiSourceConfig struct {
 	// Optional. Resource annotations.
@@ -83,26 +83,26 @@ type GoogleApiSourceAttrs struct {
 var GoogleApiSource = ubx.ResourceBinding{
 	WireType: "google_eventarc_google_api_source",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":   ubx.FieldSpec{WireName: "annotations"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Destination":   ubx.FieldSpec{WireName: "destination"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: GoogleApiSource_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OrganizationSubscription": ubx.FieldSpec{
 			WireName: "organization_subscription",
-			Kind: "object",
-			Fields: GoogleApiSource_OrganizationSubscriptionFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_OrganizationSubscriptionFields,
 		},
 		"ProjectSubscriptions": ubx.FieldSpec{
 			WireName: "project_subscriptions",
-			Kind: "object",
-			Fields: GoogleApiSource_ProjectSubscriptionsFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_ProjectSubscriptionsFields,
 		},
 	},
 }

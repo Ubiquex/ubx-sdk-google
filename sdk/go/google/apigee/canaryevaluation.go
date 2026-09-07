@@ -13,10 +13,10 @@ type Canaryevaluation_MetricLabels struct {
 }
 
 var Canaryevaluation_MetricLabelsFields = ubx.FieldMap{
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Env":        ubx.FieldSpec{WireName: "env"},
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+	"Location":   ubx.FieldSpec{WireName: "location"},
+}
 
 type CanaryevaluationConfig struct {
 	// Required. The stable version that is serving requests.
@@ -59,8 +59,8 @@ var Canaryevaluation = ubx.ResourceBinding{
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"MetricLabels": ubx.FieldSpec{
 			WireName: "metric_labels",
-			Kind: "object",
-			Fields: Canaryevaluation_MetricLabelsFields,
+			Kind:     "object",
+			Fields:   Canaryevaluation_MetricLabelsFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 		"Treatment": ubx.FieldSpec{WireName: "treatment"},

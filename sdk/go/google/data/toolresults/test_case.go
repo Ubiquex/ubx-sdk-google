@@ -29,26 +29,26 @@ type TestCase_ToolOutputs_Output struct {
 
 type TestCase_ToolOutputs struct {
 	CreationTime any
-	Output any
-	TestCase any
+	Output       any
+	TestCase     any
 }
 
 type TestCaseConfig struct {
 	ExecutionId any
-	HistoryId any
-	ProjectId any
-	StepId any
-	TestCaseId any
+	HistoryId   any
+	ProjectId   any
+	StepId      any
+	TestCaseId  any
 }
 
 type TestCaseAttrs struct {
 	// A Duration represents a signed, fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". It is related to Timestamp in that the difference between two Timestamp values is a Duration and it can be added or subtracted from a Timestamp. Range is approximately +-10,000 years.
 	ElapsedTime any
 	// A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.
-	EndTime any
+	EndTime     any
 	ExecutionId any
-	HistoryId any
-	ProjectId any
+	HistoryId   any
+	ProjectId   any
 	// Why the test case was skipped. Present only for skipped test case
 	SkippedMessage any
 	// The stack trace details if the test case failed or encountered an error. The maximum size of the stack traces is 100KiB, beyond which the stack track will be truncated. Zero if the test case passed.
@@ -56,8 +56,8 @@ type TestCaseAttrs struct {
 	// A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.
 	StartTime any
 	// The status of the test case. Required.
-	Status any
-	StepId any
+	Status     any
+	StepId     any
 	TestCaseId any
 	// A reference to a test case. Test case references are canonically ordered lexicographically by these three factors: * First, by test_suite_name. * Second, by class_name. * Third, by name.
 	TestCaseReference any
@@ -69,9 +69,9 @@ var TestCase = ubx.DataSourceBinding{
 	WireType: "google_toolresults_test_case",
 	Fields: ubx.FieldMap{
 		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
-		"TestCaseId": ubx.FieldSpec{WireName: "test_case_id"},
+		"HistoryId":   ubx.FieldSpec{WireName: "history_id"},
+		"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+		"StepId":      ubx.FieldSpec{WireName: "step_id"},
+		"TestCaseId":  ubx.FieldSpec{WireName: "test_case_id"},
 	},
 }

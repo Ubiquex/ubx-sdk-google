@@ -4,8 +4,8 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaLicenseConfig_AlertPolicyResourceConfig_AlertEnrollments struct {
-	AlertId any
-	EnrollState any
+	AlertId            any
+	EnrollState        any
 	NotificationParams any
 }
 
@@ -36,36 +36,36 @@ type V1alphaLicenseConfig_EarlyTerminationDate struct {
 }
 
 var V1alphaLicenseConfig_AlertPolicyResourceConfig_AlertEnrollmentsFields = ubx.FieldMap{
-		"AlertId": ubx.FieldSpec{WireName: "alert_id"},
-		"EnrollState": ubx.FieldSpec{WireName: "enroll_state"},
-		"NotificationParams": ubx.FieldSpec{WireName: "notification_params"},
-	}
+	"AlertId":            ubx.FieldSpec{WireName: "alert_id"},
+	"EnrollState":        ubx.FieldSpec{WireName: "enroll_state"},
+	"NotificationParams": ubx.FieldSpec{WireName: "notification_params"},
+}
 
 var V1alphaLicenseConfig_AlertPolicyResourceConfig_ContactDetailsFields = ubx.FieldMap{
-		"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
-	}
+	"EmailAddress": ubx.FieldSpec{WireName: "email_address"},
+}
 
 var V1alphaLicenseConfig_AlertPolicyResourceConfigFields = ubx.FieldMap{
-		"AlertEnrollments": ubx.FieldSpec{
-			WireName: "alert_enrollments",
-			Kind: "list",
-			Fields: V1alphaLicenseConfig_AlertPolicyResourceConfig_AlertEnrollmentsFields,
-		},
-		"AlertPolicy": ubx.FieldSpec{WireName: "alert_policy"},
-		"ContactDetails": ubx.FieldSpec{
-			WireName: "contact_details",
-			Kind: "list",
-			Fields: V1alphaLicenseConfig_AlertPolicyResourceConfig_ContactDetailsFields,
-		},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
-	}
+	"AlertEnrollments": ubx.FieldSpec{
+		WireName: "alert_enrollments",
+		Kind:     "list",
+		Fields:   V1alphaLicenseConfig_AlertPolicyResourceConfig_AlertEnrollmentsFields,
+	},
+	"AlertPolicy": ubx.FieldSpec{WireName: "alert_policy"},
+	"ContactDetails": ubx.FieldSpec{
+		WireName: "contact_details",
+		Kind:     "list",
+		Fields:   V1alphaLicenseConfig_AlertPolicyResourceConfig_ContactDetailsFields,
+	},
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"RegionCode":   ubx.FieldSpec{WireName: "region_code"},
+}
 
 var V1alphaLicenseConfig_EarlyTerminationDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 type V1alphaLicenseConfigConfig struct {
 	// The resource level alert config. Used in: * UserLicense * EngineUserData The AlertPolicyConfig in data connector is of same usage. No easy way to migrate.
@@ -128,28 +128,28 @@ var V1alphaLicenseConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AlertPolicyResourceConfig": ubx.FieldSpec{
 			WireName: "alert_policy_resource_config",
-			Kind: "object",
-			Fields: V1alphaLicenseConfig_AlertPolicyResourceConfigFields,
+			Kind:     "object",
+			Fields:   V1alphaLicenseConfig_AlertPolicyResourceConfigFields,
 		},
 		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
 		"EarlyTerminationDate": ubx.FieldSpec{
 			WireName: "early_termination_date",
-			Kind: "object",
-			Fields: V1alphaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1alphaLicenseConfig_EarlyTerminationDateFields,
 		},
 		"EndDate": ubx.FieldSpec{
 			WireName: "end_date",
-			Kind: "object",
-			Fields: V1alphaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1alphaLicenseConfig_EarlyTerminationDateFields,
 		},
-		"FreeTrial": ubx.FieldSpec{WireName: "free_trial"},
+		"FreeTrial":          ubx.FieldSpec{WireName: "free_trial"},
 		"LastUserUpdateTime": ubx.FieldSpec{WireName: "last_user_update_time"},
-		"LicenseCount": ubx.FieldSpec{WireName: "license_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"LicenseCount":       ubx.FieldSpec{WireName: "license_count"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"StartDate": ubx.FieldSpec{
 			WireName: "start_date",
-			Kind: "object",
-			Fields: V1alphaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1alphaLicenseConfig_EarlyTerminationDateFields,
 		},
 		"SubscriptionTerm": ubx.FieldSpec{WireName: "subscription_term"},
 		"SubscriptionTier": ubx.FieldSpec{WireName: "subscription_tier"},

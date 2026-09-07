@@ -99,93 +99,93 @@ type Environment_WebhookConfig struct {
 }
 
 var Environment_TestCasesConfigFields = ubx.FieldMap{
-		"EnableContinuousRun": ubx.FieldSpec{WireName: "enable_continuous_run"},
-		"EnablePredeploymentRun": ubx.FieldSpec{WireName: "enable_predeployment_run"},
-		"TestCases": ubx.FieldSpec{WireName: "test_cases"},
-	}
+	"EnableContinuousRun":    ubx.FieldSpec{WireName: "enable_continuous_run"},
+	"EnablePredeploymentRun": ubx.FieldSpec{WireName: "enable_predeployment_run"},
+	"TestCases":              ubx.FieldSpec{WireName: "test_cases"},
+}
 
 var Environment_VersionConfigsFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Environment_WebhookConfig_WebhookOverrides_GenericWebService_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"SecretVersionForClientSecret": ubx.FieldSpec{WireName: "secret_version_for_client_secret"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":                     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                 ubx.FieldSpec{WireName: "client_secret"},
+	"Scopes":                       ubx.FieldSpec{WireName: "scopes"},
+	"SecretVersionForClientSecret": ubx.FieldSpec{WireName: "secret_version_for_client_secret"},
+	"TokenEndpoint":                ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Environment_WebhookConfig_WebhookOverrides_GenericWebService_SecretVersionsForRequestHeadersFields = ubx.FieldMap{
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var Environment_WebhookConfig_WebhookOverrides_GenericWebService_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Environment_WebhookConfig_WebhookOverrides_GenericWebServiceFields = ubx.FieldMap{
-		"AllowedCaCerts": ubx.FieldSpec{WireName: "allowed_ca_certs"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: Environment_WebhookConfig_WebhookOverrides_GenericWebService_OauthConfigFields,
-		},
-		"ParameterMapping": ubx.FieldSpec{WireName: "parameter_mapping"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
-		"RequestHeaders": ubx.FieldSpec{WireName: "request_headers"},
-		"SecretVersionForUsernamePassword": ubx.FieldSpec{WireName: "secret_version_for_username_password"},
-		"SecretVersionsForRequestHeaders": ubx.FieldSpec{
-			WireName: "secret_versions_for_request_headers",
-			Kind: "map",
-			Fields: Environment_WebhookConfig_WebhookOverrides_GenericWebService_SecretVersionsForRequestHeadersFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: Environment_WebhookConfig_WebhookOverrides_GenericWebService_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentAuth": ubx.FieldSpec{WireName: "service_agent_auth"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"WebhookType": ubx.FieldSpec{WireName: "webhook_type"},
-	}
+	"AllowedCaCerts": ubx.FieldSpec{WireName: "allowed_ca_certs"},
+	"HttpMethod":     ubx.FieldSpec{WireName: "http_method"},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_GenericWebService_OauthConfigFields,
+	},
+	"ParameterMapping":                 ubx.FieldSpec{WireName: "parameter_mapping"},
+	"Password":                         ubx.FieldSpec{WireName: "password"},
+	"RequestBody":                      ubx.FieldSpec{WireName: "request_body"},
+	"RequestHeaders":                   ubx.FieldSpec{WireName: "request_headers"},
+	"SecretVersionForUsernamePassword": ubx.FieldSpec{WireName: "secret_version_for_username_password"},
+	"SecretVersionsForRequestHeaders": ubx.FieldSpec{
+		WireName: "secret_versions_for_request_headers",
+		Kind:     "map",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_GenericWebService_SecretVersionsForRequestHeadersFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_GenericWebService_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentAuth": ubx.FieldSpec{WireName: "service_agent_auth"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+	"Username":         ubx.FieldSpec{WireName: "username"},
+	"WebhookType":      ubx.FieldSpec{WireName: "webhook_type"},
+}
 
 var Environment_WebhookConfig_WebhookOverrides_ServiceDirectoryFields = ubx.FieldMap{
-		"GenericWebService": ubx.FieldSpec{
-			WireName: "generic_web_service",
-			Kind: "object",
-			Fields: Environment_WebhookConfig_WebhookOverrides_GenericWebServiceFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"GenericWebService": ubx.FieldSpec{
+		WireName: "generic_web_service",
+		Kind:     "object",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_GenericWebServiceFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Environment_WebhookConfig_WebhookOverridesFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GenericWebService": ubx.FieldSpec{
-			WireName: "generic_web_service",
-			Kind: "object",
-			Fields: Environment_WebhookConfig_WebhookOverrides_GenericWebServiceFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceDirectory": ubx.FieldSpec{
-			WireName: "service_directory",
-			Kind: "object",
-			Fields: Environment_WebhookConfig_WebhookOverrides_ServiceDirectoryFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"GenericWebService": ubx.FieldSpec{
+		WireName: "generic_web_service",
+		Kind:     "object",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_GenericWebServiceFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ServiceDirectory": ubx.FieldSpec{
+		WireName: "service_directory",
+		Kind:     "object",
+		Fields:   Environment_WebhookConfig_WebhookOverrides_ServiceDirectoryFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var Environment_WebhookConfigFields = ubx.FieldMap{
-		"WebhookOverrides": ubx.FieldSpec{
-			WireName: "webhook_overrides",
-			Kind: "list",
-			Fields: Environment_WebhookConfig_WebhookOverridesFields,
-		},
-	}
+	"WebhookOverrides": ubx.FieldSpec{
+		WireName: "webhook_overrides",
+		Kind:     "list",
+		Fields:   Environment_WebhookConfig_WebhookOverridesFields,
+	},
+}
 
 type EnvironmentConfig struct {
 	// A human-readable explanation of this schema's own meaning and intended use. (AI-inferred)
@@ -224,21 +224,21 @@ var Environment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"TestCasesConfig": ubx.FieldSpec{
 			WireName: "test_cases_config",
-			Kind: "object",
-			Fields: Environment_TestCasesConfigFields,
+			Kind:     "object",
+			Fields:   Environment_TestCasesConfigFields,
 		},
 		"VersionConfigs": ubx.FieldSpec{
 			WireName: "version_configs",
-			Kind: "list",
-			Fields: Environment_VersionConfigsFields,
+			Kind:     "list",
+			Fields:   Environment_VersionConfigsFields,
 		},
 		"WebhookConfig": ubx.FieldSpec{
 			WireName: "webhook_config",
-			Kind: "object",
-			Fields: Environment_WebhookConfigFields,
+			Kind:     "object",
+			Fields:   Environment_WebhookConfigFields,
 		},
 	},
 }

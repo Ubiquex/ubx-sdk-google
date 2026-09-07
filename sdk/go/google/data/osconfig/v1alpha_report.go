@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaReport_OsPolicyCompliances_OsPolicyResourceCompliances_ConfigSteps struct {
 	ErrorMessage any
-	Type any
+	Type         any
 }
 
 type V1alphaReport_OsPolicyCompliances_OsPolicyResourceCompliances_ExecResourceOutput struct {
@@ -13,17 +13,17 @@ type V1alphaReport_OsPolicyCompliances_OsPolicyResourceCompliances_ExecResourceO
 }
 
 type V1alphaReport_OsPolicyCompliances_OsPolicyResourceCompliances struct {
-	ComplianceState any
+	ComplianceState       any
 	ComplianceStateReason any
-	ConfigSteps any
-	ExecResourceOutput any
-	OsPolicyResourceId any
+	ConfigSteps           any
+	ExecResourceOutput    any
+	OsPolicyResourceId    any
 }
 
 type V1alphaReport_OsPolicyCompliances struct {
-	ComplianceState any
-	ComplianceStateReason any
-	OsPolicyId any
+	ComplianceState             any
+	ComplianceStateReason       any
+	OsPolicyId                  any
 	OsPolicyResourceCompliances any
 }
 
@@ -36,7 +36,7 @@ type V1alphaReportAttrs struct {
 	Instance any
 	// Unique identifier of the last attempted run to apply the OS policies associated with this assignment on the VM. This ID is logged by the OS Config agent while applying the OS policies associated with this assignment on the VM. NOTE: If the service is unable to successfully connect to the agent for this run, then this id will not be available in the agent logs.
 	LastRunId any
-	Name any
+	Name      any
 	// Reference to the `OSPolicyAssignment` API resource that the `OSPolicy` belongs to. Format: `projects/{project_number}/locations/{location}/osPolicyAssignments/{os_policy_assignment_id@revision_id}`
 	OsPolicyAssignment any
 	// Compliance data for each `OSPolicy` that is applied to the VM.

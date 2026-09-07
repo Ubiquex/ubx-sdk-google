@@ -42,11 +42,11 @@ type AttachmentAttrs struct {
 var Attachment = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_attachment",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":         ubx.FieldSpec{WireName: "annotations"},
 		"AttachmentNamespace": ubx.FieldSpec{WireName: "attachment_namespace"},
-		"Files": ubx.FieldSpec{WireName: "files"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Files":               ubx.FieldSpec{WireName: "files"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Target":              ubx.FieldSpec{WireName: "target"},
+		"Type":                ubx.FieldSpec{WireName: "type"},
 	},
 }

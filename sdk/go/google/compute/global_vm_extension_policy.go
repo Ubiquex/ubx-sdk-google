@@ -6,7 +6,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GlobalVmExtensionPolicy_ExtensionPolicies struct {
 	// The specific version of the extension to pin the policy to. When set, the policy always uses this exact version. If unset, the latest available version is used. (AI-inferred)
 	PinnedVersion any
-	StringConfig any
+	StringConfig  any
 }
 
 type GlobalVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
@@ -37,8 +37,8 @@ type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_Loca
 type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts struct {
 	// A map of location names to the current rollout status for each location, indicating the progress of the rollout operation in each geographic region. (AI-inferred)
 	LocationRolloutStatus any
-	Rollout any
-	RolloutPlan any
+	Rollout               any
+	RolloutPlan           any
 	// The current state of the rollout operation, with possible values STATE_CANCELLED, STATE_COMPLETED, STATE_FAILED, STATE_PAUSED, STATE_PROCESSING, STATE_UNKNOWN, and STATE_UNSPECIFIED. (AI-inferred)
 	State any
 }
@@ -51,74 +51,74 @@ type GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus struct {
 }
 
 type GlobalVmExtensionPolicy_RolloutOperation struct {
-	RolloutInput any
+	RolloutInput  any
 	RolloutStatus any
 }
 
 var GlobalVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
-		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
-	}
+	"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
+	"StringConfig":  ubx.FieldSpec{WireName: "string_config"},
+}
 
 var GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-	}
+	"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
+}
 
 var GlobalVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
-		},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   GlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
+	},
+}
 
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields = ubx.FieldMap{
-		"ConflictBehavior": ubx.FieldSpec{WireName: "conflict_behavior"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
-		"RetryUuid": ubx.FieldSpec{WireName: "retry_uuid"},
-	}
+	"ConflictBehavior":      ubx.FieldSpec{WireName: "conflict_behavior"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
+	"RetryUuid":             ubx.FieldSpec{WireName: "retry_uuid"},
+}
 
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields = ubx.FieldMap{
-		"LocationRolloutStatus": ubx.FieldSpec{
-			WireName: "location_rollout_status",
-			Kind: "map",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
-		},
-		"Rollout": ubx.FieldSpec{WireName: "rollout"},
-		"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"LocationRolloutStatus": ubx.FieldSpec{
+		WireName: "location_rollout_status",
+		Kind:     "map",
+		Fields:   GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
+	},
+	"Rollout":     ubx.FieldSpec{WireName: "rollout"},
+	"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields = ubx.FieldMap{
-		"CurrentRollouts": ubx.FieldSpec{
-			WireName: "current_rollouts",
-			Kind: "list",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
-		},
-		"PreviousRollout": ubx.FieldSpec{
-			WireName: "previous_rollout",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
-		},
-	}
+	"CurrentRollouts": ubx.FieldSpec{
+		WireName: "current_rollouts",
+		Kind:     "list",
+		Fields:   GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
+	},
+	"PreviousRollout": ubx.FieldSpec{
+		WireName: "previous_rollout",
+		Kind:     "object",
+		Fields:   GlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
+	},
+}
 
 var GlobalVmExtensionPolicy_RolloutOperationFields = ubx.FieldMap{
-		"RolloutInput": ubx.FieldSpec{
-			WireName: "rollout_input",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
-		},
-		"RolloutStatus": ubx.FieldSpec{
-			WireName: "rollout_status",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
-		},
-	}
+	"RolloutInput": ubx.FieldSpec{
+		WireName: "rollout_input",
+		Kind:     "object",
+		Fields:   GlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
+	},
+	"RolloutStatus": ubx.FieldSpec{
+		WireName: "rollout_status",
+		Kind:     "object",
+		Fields:   GlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
+	},
+}
 
 type GlobalVmExtensionPolicyConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -170,20 +170,20 @@ var GlobalVmExtensionPolicy = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "map",
-			Fields: GlobalVmExtensionPolicy_ExtensionPoliciesFields,
+			Kind:     "map",
+			Fields:   GlobalVmExtensionPolicy_ExtensionPoliciesFields,
 		},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
-			Kind: "list",
-			Fields: GlobalVmExtensionPolicy_InstanceSelectorsFields,
+			Kind:     "list",
+			Fields:   GlobalVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"RolloutOperation": ubx.FieldSpec{
 			WireName: "rollout_operation",
-			Kind: "object",
-			Fields: GlobalVmExtensionPolicy_RolloutOperationFields,
+			Kind:     "object",
+			Fields:   GlobalVmExtensionPolicy_RolloutOperationFields,
 		},
 	},
 }

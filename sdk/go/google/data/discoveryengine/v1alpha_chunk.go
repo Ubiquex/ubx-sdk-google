@@ -4,12 +4,12 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaChunk_AnnotationMetadata_StructuredContent struct {
-	Content any
+	Content       any
 	StructureType any
 }
 
 type V1alphaChunk_AnnotationMetadata struct {
-	ImageId any
+	ImageId           any
 	StructuredContent any
 }
 
@@ -58,7 +58,7 @@ type V1alphaChunkAttrs struct {
 	// Document metadata contains the information of the document of the current chunk.
 	DocumentMetadata any
 	// Unique chunk ID of the current chunk.
-	Id any
+	Id   any
 	Name any
 	// Page span of the chunk.
 	PageSpan any

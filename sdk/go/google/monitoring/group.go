@@ -33,9 +33,9 @@ var Group = ubx.ResourceBinding{
 	WireType: "google_monitoring_group",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"IsCluster": ubx.FieldSpec{WireName: "is_cluster"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentName": ubx.FieldSpec{WireName: "parent_name"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"IsCluster":   ubx.FieldSpec{WireName: "is_cluster"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"ParentName":  ubx.FieldSpec{WireName: "parent_name"},
 	},
 }

@@ -47,57 +47,57 @@ type V1betaFleet_State struct {
 }
 
 var V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields = ubx.FieldMap{
-		"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
-		"PolicyBindings": ubx.FieldSpec{
-			WireName: "policy_bindings",
-			Kind: "list",
-			Fields: V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields,
-		},
-	}
+	"EvaluationMode": ubx.FieldSpec{WireName: "evaluation_mode"},
+	"PolicyBindings": ubx.FieldSpec{
+		WireName: "policy_bindings",
+		Kind:     "list",
+		Fields:   V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfig_PolicyBindingsFields,
+	},
+}
 
 var V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields = ubx.FieldMap{
-		"Standard": ubx.FieldSpec{WireName: "standard"},
-	}
+	"Standard": ubx.FieldSpec{WireName: "standard"},
+}
 
 var V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields = ubx.FieldMap{
-		"ComplianceStandards": ubx.FieldSpec{
-			WireName: "compliance_standards",
-			Kind: "list",
-			Fields: V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"ComplianceStandards": ubx.FieldSpec{
+		WireName: "compliance_standards",
+		Kind:     "list",
+		Fields:   V1betaFleet_DefaultClusterConfig_CompliancePostureConfig_ComplianceStandardsFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"VulnerabilityMode": ubx.FieldSpec{WireName: "vulnerability_mode"},
-	}
+	"Mode":              ubx.FieldSpec{WireName: "mode"},
+	"VulnerabilityMode": ubx.FieldSpec{WireName: "vulnerability_mode"},
+}
 
 var V1betaFleet_DefaultClusterConfigFields = ubx.FieldMap{
-		"BinaryAuthorizationConfig": ubx.FieldSpec{
-			WireName: "binary_authorization_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields,
-		},
-		"CompliancePostureConfig": ubx.FieldSpec{
-			WireName: "compliance_posture_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields,
-		},
-		"SecurityPostureConfig": ubx.FieldSpec{
-			WireName: "security_posture_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields,
-		},
-	}
+	"BinaryAuthorizationConfig": ubx.FieldSpec{
+		WireName: "binary_authorization_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_BinaryAuthorizationConfigFields,
+	},
+	"CompliancePostureConfig": ubx.FieldSpec{
+		WireName: "compliance_posture_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_CompliancePostureConfigFields,
+	},
+	"SecurityPostureConfig": ubx.FieldSpec{
+		WireName: "security_posture_config",
+		Kind:     "object",
+		Fields:   V1betaFleet_DefaultClusterConfig_SecurityPostureConfigFields,
+	},
+}
 
 var V1betaFleet_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaFleetConfig struct {
 	// DefaultClusterConfig describes the default cluster configurations to be applied to all clusters born-in-fleet.
@@ -136,15 +136,15 @@ var V1betaFleet = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultClusterConfig": ubx.FieldSpec{
 			WireName: "default_cluster_config",
-			Kind: "object",
-			Fields: V1betaFleet_DefaultClusterConfigFields,
+			Kind:     "object",
+			Fields:   V1betaFleet_DefaultClusterConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaFleet_StateFields,
+			Kind:     "object",
+			Fields:   V1betaFleet_StateFields,
 		},
 	},
 }

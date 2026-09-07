@@ -4,7 +4,7 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaWorkstationCluster_Conditions struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -31,19 +31,19 @@ type V1betaWorkstationCluster_PrivateClusterConfig struct {
 }
 
 var V1betaWorkstationCluster_DomainConfigFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var V1betaWorkstationCluster_GatewayConfigFields = ubx.FieldMap{
-		"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
-	}
+	"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
+}
 
 var V1betaWorkstationCluster_PrivateClusterConfigFields = ubx.FieldMap{
-		"AllowedProjects": ubx.FieldSpec{WireName: "allowed_projects"},
-		"ClusterHostname": ubx.FieldSpec{WireName: "cluster_hostname"},
-		"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
-		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-	}
+	"AllowedProjects":       ubx.FieldSpec{WireName: "allowed_projects"},
+	"ClusterHostname":       ubx.FieldSpec{WireName: "cluster_hostname"},
+	"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
+	"ServiceAttachmentUri":  ubx.FieldSpec{WireName: "service_attachment_uri"},
+}
 
 type V1betaWorkstationClusterConfig struct {
 	// Optional. Client-specified annotations.
@@ -130,31 +130,31 @@ type V1betaWorkstationClusterAttrs struct {
 var V1betaWorkstationCluster = ubx.ResourceBinding{
 	WireType: "google_workstations_v1beta_workstation_cluster",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":    ubx.FieldSpec{WireName: "annotations"},
 		"ConsoleBaseUrl": ubx.FieldSpec{WireName: "console_base_url"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
 		"DomainConfig": ubx.FieldSpec{
 			WireName: "domain_config",
-			Kind: "object",
-			Fields: V1betaWorkstationCluster_DomainConfigFields,
+			Kind:     "object",
+			Fields:   V1betaWorkstationCluster_DomainConfigFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind: "object",
-			Fields: V1betaWorkstationCluster_GatewayConfigFields,
+			Kind:     "object",
+			Fields:   V1betaWorkstationCluster_GatewayConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateClusterConfig": ubx.FieldSpec{
 			WireName: "private_cluster_config",
-			Kind: "object",
-			Fields: V1betaWorkstationCluster_PrivateClusterConfigFields,
+			Kind:     "object",
+			Fields:   V1betaWorkstationCluster_PrivateClusterConfigFields,
 		},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Subnetwork":                  ubx.FieldSpec{WireName: "subnetwork"},
+		"Tags":                        ubx.FieldSpec{WireName: "tags"},
 		"WorkstationAuthorizationUrl": ubx.FieldSpec{WireName: "workstation_authorization_url"},
-		"WorkstationLaunchUrl": ubx.FieldSpec{WireName: "workstation_launch_url"},
+		"WorkstationLaunchUrl":        ubx.FieldSpec{WireName: "workstation_launch_url"},
 	},
 }

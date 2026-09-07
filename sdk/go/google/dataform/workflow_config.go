@@ -48,24 +48,24 @@ type WorkflowConfig_RecentScheduledExecutionRecords struct {
 }
 
 var WorkflowConfig_InvocationConfig_IncludedTargetsFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"Database": ubx.FieldSpec{WireName: "database"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Schema":   ubx.FieldSpec{WireName: "schema"},
+}
 
 var WorkflowConfig_InvocationConfigFields = ubx.FieldMap{
-		"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
-		"IncludedTags": ubx.FieldSpec{WireName: "included_tags"},
-		"IncludedTargets": ubx.FieldSpec{
-			WireName: "included_targets",
-			Kind: "list",
-			Fields: WorkflowConfig_InvocationConfig_IncludedTargetsFields,
-		},
-		"QueryPriority": ubx.FieldSpec{WireName: "query_priority"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
-		"TransitiveDependentsIncluded": ubx.FieldSpec{WireName: "transitive_dependents_included"},
-	}
+	"FullyRefreshIncrementalTablesEnabled": ubx.FieldSpec{WireName: "fully_refresh_incremental_tables_enabled"},
+	"IncludedTags":                         ubx.FieldSpec{WireName: "included_tags"},
+	"IncludedTargets": ubx.FieldSpec{
+		WireName: "included_targets",
+		Kind:     "list",
+		Fields:   WorkflowConfig_InvocationConfig_IncludedTargetsFields,
+	},
+	"QueryPriority":                  ubx.FieldSpec{WireName: "query_priority"},
+	"ServiceAccount":                 ubx.FieldSpec{WireName: "service_account"},
+	"TransitiveDependenciesIncluded": ubx.FieldSpec{WireName: "transitive_dependencies_included"},
+	"TransitiveDependentsIncluded":   ubx.FieldSpec{WireName: "transitive_dependents_included"},
+}
 
 type WorkflowConfigConfig struct {
 	// Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
@@ -109,14 +109,14 @@ var WorkflowConfig = ubx.ResourceBinding{
 	WireType: "google_dataform_workflow_config",
 	Fields: ubx.FieldMap{
 		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":     ubx.FieldSpec{WireName: "disabled"},
 		"InvocationConfig": ubx.FieldSpec{
 			WireName: "invocation_config",
-			Kind: "object",
-			Fields: WorkflowConfig_InvocationConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowConfig_InvocationConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"ReleaseConfig": ubx.FieldSpec{WireName: "release_config"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"TimeZone":      ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

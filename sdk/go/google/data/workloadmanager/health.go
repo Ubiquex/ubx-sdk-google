@@ -5,65 +5,65 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties_SapInstanceProperties_AgentStates_HanaMonitoring_IamPermissions struct {
 	Granted any
-	Name any
+	Name    any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties_SapInstanceProperties_AgentStates_HanaMonitoring struct {
 	IamPermissions any
-	State any
+	State          any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties_SapInstanceProperties_AgentStates struct {
 	AvailableVersion any
-	HanaMonitoring any
+	HanaMonitoring   any
 	InstalledVersion any
-	IsFullyEnabled any
-	ProcessMetrics any
-	SystemDiscovery any
+	IsFullyEnabled   any
+	ProcessMetrics   any
+	SystemDiscovery  any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties_SapInstanceProperties struct {
 	AgentStates any
-	Numbers any
+	Numbers     any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties_UpcomingMaintenanceEvent struct {
-	EndTime any
+	EndTime           any
 	MaintenanceStatus any
 	OnHostMaintenance any
-	StartTime any
-	Type any
+	StartTime         any
+	Type              any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource_InstanceProperties struct {
-	InstanceNumber any
-	MachineType any
-	Roles any
-	SapInstanceProperties any
-	Status any
+	InstanceNumber           any
+	MachineType              any
+	Roles                    any
+	SapInstanceProperties    any
+	Status                   any
 	UpcomingMaintenanceEvent any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks_Resource struct {
 	InstanceProperties any
-	Kind any
-	Name any
+	Kind               any
+	Name               any
 }
 
 type Health_ComponentsHealth_ComponentHealthChecks struct {
-	Message any
-	Metric any
+	Message  any
+	Metric   any
 	Resource any
-	Source any
-	State any
+	Source   any
+	State    any
 }
 
 type Health_ComponentsHealth struct {
-	Component any
+	Component             any
 	ComponentHealthChecks any
-	ComponentHealthType any
-	State any
-	SubComponentsHealth any
+	ComponentHealthType   any
+	State                 any
+	SubComponentsHealth   any
 }
 
 type HealthConfig struct {
@@ -75,7 +75,7 @@ type HealthAttrs struct {
 	CheckTime any
 	// The detailed condition reports of each component.
 	ComponentsHealth any
-	Name any
+	Name             any
 	// Output only. The health state of the workload.
 	State any
 }

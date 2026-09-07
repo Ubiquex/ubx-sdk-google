@@ -29,7 +29,7 @@ var Datacollector = ubx.ResourceBinding{
 	WireType: "google_apigee_datacollector",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

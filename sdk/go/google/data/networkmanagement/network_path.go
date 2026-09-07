@@ -11,9 +11,9 @@ type NetworkPath_DestinationGeoLocation struct {
 }
 
 type NetworkPath_ProviderTags struct {
-	Category any
+	Category     any
 	ResourceType any
-	Value any
+	Value        any
 }
 
 type NetworkPathConfig struct {
@@ -41,7 +41,7 @@ type NetworkPathAttrs struct {
 	MonitoringPolicyId any
 	// Output only. The monitoring status of the network path.
 	MonitoringStatus any
-	Name any
+	Name             any
 	// Output only. The network protocol of the network path.
 	NetworkProtocol any
 	// Output only. The provider tags of the network path.

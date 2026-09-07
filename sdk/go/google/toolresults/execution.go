@@ -151,156 +151,156 @@ type Execution_Specification struct {
 }
 
 var Execution_CompletionTimeFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Execution_Outcome_FailureDetailFields = ubx.FieldMap{
-		"Crashed": ubx.FieldSpec{WireName: "crashed"},
-		"DeviceOutOfMemory": ubx.FieldSpec{WireName: "device_out_of_memory"},
-		"FailedRoboscript": ubx.FieldSpec{WireName: "failed_roboscript"},
-		"NotInstalled": ubx.FieldSpec{WireName: "not_installed"},
-		"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
-		"TimedOut": ubx.FieldSpec{WireName: "timed_out"},
-		"UnableToCrawl": ubx.FieldSpec{WireName: "unable_to_crawl"},
-	}
+	"Crashed":           ubx.FieldSpec{WireName: "crashed"},
+	"DeviceOutOfMemory": ubx.FieldSpec{WireName: "device_out_of_memory"},
+	"FailedRoboscript":  ubx.FieldSpec{WireName: "failed_roboscript"},
+	"NotInstalled":      ubx.FieldSpec{WireName: "not_installed"},
+	"OtherNativeCrash":  ubx.FieldSpec{WireName: "other_native_crash"},
+	"TimedOut":          ubx.FieldSpec{WireName: "timed_out"},
+	"UnableToCrawl":     ubx.FieldSpec{WireName: "unable_to_crawl"},
+}
 
 var Execution_Outcome_InconclusiveDetailFields = ubx.FieldMap{
-		"AbortedByUser": ubx.FieldSpec{WireName: "aborted_by_user"},
-		"HasErrorLogs": ubx.FieldSpec{WireName: "has_error_logs"},
-		"InfrastructureFailure": ubx.FieldSpec{WireName: "infrastructure_failure"},
-	}
+	"AbortedByUser":         ubx.FieldSpec{WireName: "aborted_by_user"},
+	"HasErrorLogs":          ubx.FieldSpec{WireName: "has_error_logs"},
+	"InfrastructureFailure": ubx.FieldSpec{WireName: "infrastructure_failure"},
+}
 
 var Execution_Outcome_SkippedDetailFields = ubx.FieldMap{
-		"IncompatibleAppVersion": ubx.FieldSpec{WireName: "incompatible_app_version"},
-		"IncompatibleArchitecture": ubx.FieldSpec{WireName: "incompatible_architecture"},
-		"IncompatibleDevice": ubx.FieldSpec{WireName: "incompatible_device"},
-		"PendingTimeout": ubx.FieldSpec{WireName: "pending_timeout"},
-	}
+	"IncompatibleAppVersion":   ubx.FieldSpec{WireName: "incompatible_app_version"},
+	"IncompatibleArchitecture": ubx.FieldSpec{WireName: "incompatible_architecture"},
+	"IncompatibleDevice":       ubx.FieldSpec{WireName: "incompatible_device"},
+	"PendingTimeout":           ubx.FieldSpec{WireName: "pending_timeout"},
+}
 
 var Execution_Outcome_SuccessDetailFields = ubx.FieldMap{
-		"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
-	}
+	"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
+}
 
 var Execution_OutcomeFields = ubx.FieldMap{
-		"FailureDetail": ubx.FieldSpec{
-			WireName: "failure_detail",
-			Kind: "object",
-			Fields: Execution_Outcome_FailureDetailFields,
-		},
-		"InconclusiveDetail": ubx.FieldSpec{
-			WireName: "inconclusive_detail",
-			Kind: "object",
-			Fields: Execution_Outcome_InconclusiveDetailFields,
-		},
-		"SkippedDetail": ubx.FieldSpec{
-			WireName: "skipped_detail",
-			Kind: "object",
-			Fields: Execution_Outcome_SkippedDetailFields,
-		},
-		"SuccessDetail": ubx.FieldSpec{
-			WireName: "success_detail",
-			Kind: "object",
-			Fields: Execution_Outcome_SuccessDetailFields,
-		},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-	}
+	"FailureDetail": ubx.FieldSpec{
+		WireName: "failure_detail",
+		Kind:     "object",
+		Fields:   Execution_Outcome_FailureDetailFields,
+	},
+	"InconclusiveDetail": ubx.FieldSpec{
+		WireName: "inconclusive_detail",
+		Kind:     "object",
+		Fields:   Execution_Outcome_InconclusiveDetailFields,
+	},
+	"SkippedDetail": ubx.FieldSpec{
+		WireName: "skipped_detail",
+		Kind:     "object",
+		Fields:   Execution_Outcome_SkippedDetailFields,
+	},
+	"SuccessDetail": ubx.FieldSpec{
+		WireName: "success_detail",
+		Kind:     "object",
+		Fields:   Execution_Outcome_SuccessDetailFields,
+	},
+	"Summary": ubx.FieldSpec{WireName: "summary"},
+}
 
 var Execution_Specification_AndroidTest_AndroidAppInfoFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PackageName": ubx.FieldSpec{WireName: "package_name"},
-		"VersionCode": ubx.FieldSpec{WireName: "version_code"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
-	}
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PackageName": ubx.FieldSpec{WireName: "package_name"},
+	"VersionCode": ubx.FieldSpec{WireName: "version_code"},
+	"VersionName": ubx.FieldSpec{WireName: "version_name"},
+}
 
 var Execution_Specification_AndroidTest_AndroidInstrumentationTestFields = ubx.FieldMap{
-		"TestPackageId": ubx.FieldSpec{WireName: "test_package_id"},
-		"TestRunnerClass": ubx.FieldSpec{WireName: "test_runner_class"},
-		"TestTargets": ubx.FieldSpec{WireName: "test_targets"},
-		"UseOrchestrator": ubx.FieldSpec{WireName: "use_orchestrator"},
-	}
+	"TestPackageId":   ubx.FieldSpec{WireName: "test_package_id"},
+	"TestRunnerClass": ubx.FieldSpec{WireName: "test_runner_class"},
+	"TestTargets":     ubx.FieldSpec{WireName: "test_targets"},
+	"UseOrchestrator": ubx.FieldSpec{WireName: "use_orchestrator"},
+}
 
 var Execution_Specification_AndroidTest_AndroidRoboTestFields = ubx.FieldMap{
-		"AppInitialActivity": ubx.FieldSpec{WireName: "app_initial_activity"},
-		"BootstrapPackageId": ubx.FieldSpec{WireName: "bootstrap_package_id"},
-		"BootstrapRunnerClass": ubx.FieldSpec{WireName: "bootstrap_runner_class"},
-		"MaxDepth": ubx.FieldSpec{WireName: "max_depth"},
-		"MaxSteps": ubx.FieldSpec{WireName: "max_steps"},
-	}
+	"AppInitialActivity":   ubx.FieldSpec{WireName: "app_initial_activity"},
+	"BootstrapPackageId":   ubx.FieldSpec{WireName: "bootstrap_package_id"},
+	"BootstrapRunnerClass": ubx.FieldSpec{WireName: "bootstrap_runner_class"},
+	"MaxDepth":             ubx.FieldSpec{WireName: "max_depth"},
+	"MaxSteps":             ubx.FieldSpec{WireName: "max_steps"},
+}
 
 var Execution_Specification_AndroidTestFields = ubx.FieldMap{
-		"AndroidAppInfo": ubx.FieldSpec{
-			WireName: "android_app_info",
-			Kind: "object",
-			Fields: Execution_Specification_AndroidTest_AndroidAppInfoFields,
-		},
-		"AndroidInstrumentationTest": ubx.FieldSpec{
-			WireName: "android_instrumentation_test",
-			Kind: "object",
-			Fields: Execution_Specification_AndroidTest_AndroidInstrumentationTestFields,
-		},
-		"AndroidRoboTest": ubx.FieldSpec{
-			WireName: "android_robo_test",
-			Kind: "object",
-			Fields: Execution_Specification_AndroidTest_AndroidRoboTestFields,
-		},
-		"AndroidTestLoop": ubx.FieldSpec{WireName: "android_test_loop"},
-		"TestTimeout": ubx.FieldSpec{
-			WireName: "test_timeout",
-			Kind: "object",
-			Fields: Execution_CompletionTimeFields,
-		},
-	}
+	"AndroidAppInfo": ubx.FieldSpec{
+		WireName: "android_app_info",
+		Kind:     "object",
+		Fields:   Execution_Specification_AndroidTest_AndroidAppInfoFields,
+	},
+	"AndroidInstrumentationTest": ubx.FieldSpec{
+		WireName: "android_instrumentation_test",
+		Kind:     "object",
+		Fields:   Execution_Specification_AndroidTest_AndroidInstrumentationTestFields,
+	},
+	"AndroidRoboTest": ubx.FieldSpec{
+		WireName: "android_robo_test",
+		Kind:     "object",
+		Fields:   Execution_Specification_AndroidTest_AndroidRoboTestFields,
+	},
+	"AndroidTestLoop": ubx.FieldSpec{WireName: "android_test_loop"},
+	"TestTimeout": ubx.FieldSpec{
+		WireName: "test_timeout",
+		Kind:     "object",
+		Fields:   Execution_CompletionTimeFields,
+	},
+}
 
 var Execution_Specification_IosTest_IosAppInfoFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Execution_Specification_IosTest_IosTestLoopFields = ubx.FieldMap{
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-	}
+	"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+}
 
 var Execution_Specification_IosTest_IosXcTestFields = ubx.FieldMap{
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"XcodeVersion": ubx.FieldSpec{WireName: "xcode_version"},
-	}
+	"BundleId":     ubx.FieldSpec{WireName: "bundle_id"},
+	"XcodeVersion": ubx.FieldSpec{WireName: "xcode_version"},
+}
 
 var Execution_Specification_IosTestFields = ubx.FieldMap{
-		"IosAppInfo": ubx.FieldSpec{
-			WireName: "ios_app_info",
-			Kind: "object",
-			Fields: Execution_Specification_IosTest_IosAppInfoFields,
-		},
-		"IosRoboTest": ubx.FieldSpec{WireName: "ios_robo_test"},
-		"IosTestLoop": ubx.FieldSpec{
-			WireName: "ios_test_loop",
-			Kind: "object",
-			Fields: Execution_Specification_IosTest_IosTestLoopFields,
-		},
-		"IosXcTest": ubx.FieldSpec{
-			WireName: "ios_xc_test",
-			Kind: "object",
-			Fields: Execution_Specification_IosTest_IosXcTestFields,
-		},
-		"TestTimeout": ubx.FieldSpec{
-			WireName: "test_timeout",
-			Kind: "object",
-			Fields: Execution_CompletionTimeFields,
-		},
-	}
+	"IosAppInfo": ubx.FieldSpec{
+		WireName: "ios_app_info",
+		Kind:     "object",
+		Fields:   Execution_Specification_IosTest_IosAppInfoFields,
+	},
+	"IosRoboTest": ubx.FieldSpec{WireName: "ios_robo_test"},
+	"IosTestLoop": ubx.FieldSpec{
+		WireName: "ios_test_loop",
+		Kind:     "object",
+		Fields:   Execution_Specification_IosTest_IosTestLoopFields,
+	},
+	"IosXcTest": ubx.FieldSpec{
+		WireName: "ios_xc_test",
+		Kind:     "object",
+		Fields:   Execution_Specification_IosTest_IosXcTestFields,
+	},
+	"TestTimeout": ubx.FieldSpec{
+		WireName: "test_timeout",
+		Kind:     "object",
+		Fields:   Execution_CompletionTimeFields,
+	},
+}
 
 var Execution_SpecificationFields = ubx.FieldMap{
-		"AndroidTest": ubx.FieldSpec{
-			WireName: "android_test",
-			Kind: "object",
-			Fields: Execution_Specification_AndroidTestFields,
-		},
-		"IosTest": ubx.FieldSpec{
-			WireName: "ios_test",
-			Kind: "object",
-			Fields: Execution_Specification_IosTestFields,
-		},
-	}
+	"AndroidTest": ubx.FieldSpec{
+		WireName: "android_test",
+		Kind:     "object",
+		Fields:   Execution_Specification_AndroidTestFields,
+	},
+	"IosTest": ubx.FieldSpec{
+		WireName: "ios_test",
+		Kind:     "object",
+		Fields:   Execution_Specification_IosTestFields,
+	},
+}
 
 type ExecutionConfig struct {
 	// A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.
@@ -345,27 +345,27 @@ var Execution = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompletionTime": ubx.FieldSpec{
 			WireName: "completion_time",
-			Kind: "object",
-			Fields: Execution_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Execution_CompletionTimeFields,
 		},
 		"CreationTime": ubx.FieldSpec{
 			WireName: "creation_time",
-			Kind: "object",
-			Fields: Execution_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Execution_CompletionTimeFields,
 		},
 		"DimensionDefinitions": ubx.FieldSpec{WireName: "dimension_definitions"},
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
+		"ExecutionId":          ubx.FieldSpec{WireName: "execution_id"},
 		"Outcome": ubx.FieldSpec{
 			WireName: "outcome",
-			Kind: "object",
-			Fields: Execution_OutcomeFields,
+			Kind:     "object",
+			Fields:   Execution_OutcomeFields,
 		},
 		"Specification": ubx.FieldSpec{
 			WireName: "specification",
-			Kind: "object",
-			Fields: Execution_SpecificationFields,
+			Kind:     "object",
+			Fields:   Execution_SpecificationFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":                 ubx.FieldSpec{WireName: "state"},
 		"TestExecutionMatrixId": ubx.FieldSpec{WireName: "test_execution_matrix_id"},
 	},
 }

@@ -11,9 +11,9 @@ type CustomRange_Attributes struct {
 }
 
 var CustomRange_AttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type CustomRangeConfig struct {
 	// Optional. The attributes of the CustomRange.
@@ -60,15 +60,15 @@ var CustomRange = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: CustomRange_AttributesFields,
+			Kind:     "list",
+			Fields:   CustomRange_AttributesFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"Ipv4CidrRange": ubx.FieldSpec{WireName: "ipv4_cidr_range"},
 		"Ipv6CidrRange": ubx.FieldSpec{WireName: "ipv6_cidr_range"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentRange": ubx.FieldSpec{WireName: "parent_range"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"ParentRange":   ubx.FieldSpec{WireName: "parent_range"},
+		"Realm":         ubx.FieldSpec{WireName: "realm"},
 	},
 }

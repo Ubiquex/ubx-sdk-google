@@ -40,10 +40,10 @@ type V1beta1InterceptDeploymentAttrs struct {
 var V1beta1InterceptDeployment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_intercept_deployment",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"ForwardingRule":           ubx.FieldSpec{WireName: "forwarding_rule"},
 		"InterceptDeploymentGroup": ubx.FieldSpec{WireName: "intercept_deployment_group"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Device_ApplicationReports_Events struct {
 	CreateTime any
-	EventType any
+	EventType  any
 }
 
 type Device_ApplicationReports_KeyedAppStates struct {
-	CreateTime any
-	Data any
-	Key any
+	CreateTime     any
+	Data           any
+	Key            any
 	LastUpdateTime any
-	Message any
-	Severity any
+	Message        any
+	Severity       any
 }
 
 type Device_ApplicationReports_SigningKeyCerts struct {
@@ -22,36 +22,36 @@ type Device_ApplicationReports_SigningKeyCerts struct {
 }
 
 type Device_ApplicationReports struct {
-	ApplicationSource any
-	DisplayName any
-	Events any
-	InstallerPackageName any
-	KeyedAppStates any
-	PackageName any
-	PackageSha256Hash any
+	ApplicationSource          any
+	DisplayName                any
+	Events                     any
+	InstallerPackageName       any
+	KeyedAppStates             any
+	PackageName                any
+	PackageSha256Hash          any
 	SigningKeyCertFingerprints any
-	SigningKeyCerts any
-	State any
-	UserFacingType any
-	VersionCode any
-	VersionName any
+	SigningKeyCerts            any
+	State                      any
+	UserFacingType             any
+	VersionCode                any
+	VersionName                any
 }
 
 type Device_AppliedPasswordPolicies struct {
 	MaximumFailedPasswordsForWipe any
-	PasswordExpirationTimeout any
-	PasswordHistoryLength any
-	PasswordMinimumLength any
-	PasswordMinimumLetters any
-	PasswordMinimumLowerCase any
-	PasswordMinimumNonLetter any
-	PasswordMinimumNumeric any
-	PasswordMinimumSymbols any
-	PasswordMinimumUpperCase any
-	PasswordQuality any
-	PasswordScope any
-	RequirePasswordUnlock any
-	UnifiedLockSettings any
+	PasswordExpirationTimeout     any
+	PasswordHistoryLength         any
+	PasswordMinimumLength         any
+	PasswordMinimumLetters        any
+	PasswordMinimumLowerCase      any
+	PasswordMinimumNonLetter      any
+	PasswordMinimumNumeric        any
+	PasswordMinimumSymbols        any
+	PasswordMinimumUpperCase      any
+	PasswordQuality               any
+	PasswordScope                 any
+	RequirePasswordUnlock         any
+	UnifiedLockSettings           any
 }
 
 type Device_CommonCriteriaModeInfo struct {
@@ -63,13 +63,13 @@ type Device_CommonCriteriaModeInfo struct {
 
 type Device_DefaultApplicationInfo_DefaultApplicationSettingAttempts struct {
 	AttemptOutcome any
-	PackageName any
+	PackageName    any
 }
 
 type Device_DefaultApplicationInfo struct {
 	DefaultApplicationSettingAttempts any
-	DefaultApplicationType any
-	PackageName any
+	DefaultApplicationType            any
+	PackageName                       any
 }
 
 type Device_DeviceSettings struct {
@@ -97,13 +97,13 @@ type Device_DisabledReason struct {
 }
 
 type Device_Displays struct {
-	Density any
-	DisplayId any
-	Height any
-	Name any
+	Density     any
+	DisplayId   any
+	Height      any
+	Name        any
 	RefreshRate any
-	State any
-	Width any
+	State       any
+	Width       any
 }
 
 type Device_DpcMigrationInfo struct {
@@ -154,18 +154,18 @@ type Device_HardwareInfo struct {
 
 type Device_HardwareStatusSamples struct {
 	BatteryTemperatures any
-	CpuTemperatures any
-	CpuUsages any
-	CreateTime any
-	FanSpeeds any
-	GpuTemperatures any
-	SkinTemperatures any
+	CpuTemperatures     any
+	CpuUsages           any
+	CreateTime          any
+	FanSpeeds           any
+	GpuTemperatures     any
+	SkinTemperatures    any
 }
 
 type Device_MemoryEvents struct {
-	ByteCount any
+	ByteCount  any
 	CreateTime any
-	EventType any
+	EventType  any
 }
 
 type Device_MemoryInfo struct {
@@ -177,10 +177,10 @@ type Device_MemoryInfo struct {
 
 type Device_NetworkInfo_TelephonyInfos struct {
 	ActivationState any
-	CarrierName any
-	ConfigMode any
-	IccId any
-	PhoneNumber any
+	CarrierName     any
+	ConfigMode      any
+	IccId           any
+	PhoneNumber     any
 }
 
 type Device_NetworkInfo struct {
@@ -210,29 +210,29 @@ type Device_NonComplianceDetails_SpecificNonComplianceContext_PasswordPoliciesCo
 
 type Device_NonComplianceDetails_SpecificNonComplianceContext struct {
 	DefaultApplicationContext any
-	OncWifiContext any
-	PasswordPoliciesContext any
+	OncWifiContext            any
+	PasswordPoliciesContext   any
 }
 
 type Device_NonComplianceDetails struct {
-	CurrentValue any
-	FieldPath any
-	InstallationFailureReason any
-	NonComplianceReason any
-	PackageName any
-	SettingName any
+	CurrentValue                 any
+	FieldPath                    any
+	InstallationFailureReason    any
+	NonComplianceReason          any
+	PackageName                  any
+	SettingName                  any
 	SpecificNonComplianceContext any
-	SpecificNonComplianceReason any
+	SpecificNonComplianceReason  any
 }
 
 type Device_PowerManagementEvents struct {
 	BatteryLevel any
-	CreateTime any
-	EventType any
+	CreateTime   any
+	EventType    any
 }
 
 type Device_SecurityPosture_PostureDetails struct {
-	Advice any
+	Advice       any
 	SecurityRisk any
 }
 
@@ -331,7 +331,7 @@ type DeviceAttrs struct {
 	MemoryEvents any
 	// Information about device memory and storage.
 	MemoryInfo any
-	Name any
+	Name       any
 	// Device network info.
 	NetworkInfo any
 	// Details about policy settings that the device is not compliant with.

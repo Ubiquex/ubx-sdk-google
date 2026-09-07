@@ -13,7 +13,7 @@ type NodeAttrs struct {
 	Fqdn any
 	// Output only. Internal IP address of the node.
 	InternalIp any
-	Name any
+	Name       any
 	// Output only. The canonical identifier of the node type (corresponds to the `NodeType`). For example: standard-72.
 	NodeTypeId any
 	// Output only. The state of the appliance.
@@ -24,6 +24,5 @@ type NodeAttrs struct {
 
 var Node = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_node",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

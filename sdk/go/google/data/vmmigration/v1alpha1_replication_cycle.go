@@ -14,35 +14,35 @@ type V1alpha1ReplicationCycle_Error struct {
 
 type V1alpha1ReplicationCycle_Steps_Replicating struct {
 	LastThirtyMinutesAverageBytesPerSecond any
-	LastTwoMinutesAverageBytesPerSecond any
-	ReplicatedBytes any
-	TotalBytes any
+	LastTwoMinutesAverageBytesPerSecond    any
+	ReplicatedBytes                        any
+	TotalBytes                             any
 }
 
 type V1alpha1ReplicationCycle_Steps struct {
-	EndTime any
+	EndTime                 any
 	InitializingReplication any
-	PostProcessing any
-	Replicating any
-	StartTime any
+	PostProcessing          any
+	Replicating             any
+	StartTime               any
 }
 
 type V1alpha1ReplicationCycle_Warnings_ActionItem struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type V1alpha1ReplicationCycle_Warnings_HelpLinks struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type V1alpha1ReplicationCycle_Warnings struct {
-	ActionItem any
-	Code any
-	HelpLinks any
+	ActionItem     any
+	Code           any
+	HelpLinks      any
 	WarningMessage any
-	WarningTime any
+	WarningTime    any
 }
 
 type V1alpha1ReplicationCycleConfig struct {
@@ -56,7 +56,7 @@ type V1alpha1ReplicationCycleAttrs struct {
 	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	Name any
+	Name  any
 	// The current progress in percentage of this cycle.
 	Progress any
 	// The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately.

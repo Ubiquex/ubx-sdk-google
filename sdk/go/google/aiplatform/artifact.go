@@ -54,14 +54,14 @@ type ArtifactAttrs struct {
 var Artifact = ubx.ResourceBinding{
 	WireType: "google_aiplatform_artifact",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+		"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
+		"State":         ubx.FieldSpec{WireName: "state"},
+		"Uri":           ubx.FieldSpec{WireName: "uri"},
 	},
 }

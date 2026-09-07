@@ -10,7 +10,7 @@ type NpmPackageConfig struct {
 type NpmPackageAttrs struct {
 	// Output only. Time the package was created.
 	CreateTime any
-	Name any
+	Name       any
 	// Package for the artifact.
 	PackageName any
 	// Tags attached to this package.

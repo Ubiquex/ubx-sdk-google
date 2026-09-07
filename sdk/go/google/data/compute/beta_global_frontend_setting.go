@@ -19,7 +19,7 @@ type BetaGlobalFrontendSettingAttrs struct {
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// Output only. OUTPUT_ONLY fields [Output Only] Name of the resource. Must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name    any
 	Project any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any

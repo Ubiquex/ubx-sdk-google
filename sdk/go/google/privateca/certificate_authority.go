@@ -258,222 +258,222 @@ type CertificateAuthority_UserDefinedAccessUrls struct {
 }
 
 var CertificateAuthority_AccessUrlsFields = ubx.FieldMap{
-		"CaCertificateAccessUrl": ubx.FieldSpec{WireName: "ca_certificate_access_url"},
-		"CrlAccessUrls": ubx.FieldSpec{WireName: "crl_access_urls"},
-	}
+	"CaCertificateAccessUrl": ubx.FieldSpec{WireName: "ca_certificate_access_url"},
+	"CrlAccessUrls":          ubx.FieldSpec{WireName: "crl_access_urls"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_PublicKeyFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Key":    ubx.FieldSpec{WireName: "key"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields = ubx.FieldMap{
-		"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
-	}
+	"ObjectIdPath": ubx.FieldSpec{WireName: "object_id_path"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_AttributesFields = ubx.FieldMap{
-		"ObjectId": ubx.FieldSpec{
-			WireName: "object_id",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ObjectId": ubx.FieldSpec{
+		WireName: "object_id",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
+	},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequenceFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_AttributesFields,
-		},
-	}
+	"Attributes": ubx.FieldSpec{
+		WireName: "attributes",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_AttributesFields,
+	},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectFields = ubx.FieldMap{
-		"CommonName": ubx.FieldSpec{WireName: "common_name"},
-		"CountryCode": ubx.FieldSpec{WireName: "country_code"},
-		"Locality": ubx.FieldSpec{WireName: "locality"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
-		"PostalCode": ubx.FieldSpec{WireName: "postal_code"},
-		"Province": ubx.FieldSpec{WireName: "province"},
-		"RdnSequence": ubx.FieldSpec{
-			WireName: "rdn_sequence",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequenceFields,
-		},
-		"StreetAddress": ubx.FieldSpec{WireName: "street_address"},
-	}
+	"CommonName":         ubx.FieldSpec{WireName: "common_name"},
+	"CountryCode":        ubx.FieldSpec{WireName: "country_code"},
+	"Locality":           ubx.FieldSpec{WireName: "locality"},
+	"Organization":       ubx.FieldSpec{WireName: "organization"},
+	"OrganizationalUnit": ubx.FieldSpec{WireName: "organizational_unit"},
+	"PostalCode":         ubx.FieldSpec{WireName: "postal_code"},
+	"Province":           ubx.FieldSpec{WireName: "province"},
+	"RdnSequence": ubx.FieldSpec{
+		WireName: "rdn_sequence",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequenceFields,
+	},
+	"StreetAddress": ubx.FieldSpec{WireName: "street_address"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSansFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ObjectId": ubx.FieldSpec{
-			WireName: "object_id",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
-		},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Critical": ubx.FieldSpec{WireName: "critical"},
+	"ObjectId": ubx.FieldSpec{
+		WireName: "object_id",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
+	},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields = ubx.FieldMap{
-		"CustomSans": ubx.FieldSpec{
-			WireName: "custom_sans",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSansFields,
-		},
-		"DnsNames": ubx.FieldSpec{WireName: "dns_names"},
-		"EmailAddresses": ubx.FieldSpec{WireName: "email_addresses"},
-		"IpAddresses": ubx.FieldSpec{WireName: "ip_addresses"},
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"CustomSans": ubx.FieldSpec{
+		WireName: "custom_sans",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSansFields,
+	},
+	"DnsNames":       ubx.FieldSpec{WireName: "dns_names"},
+	"EmailAddresses": ubx.FieldSpec{WireName: "email_addresses"},
+	"IpAddresses":    ubx.FieldSpec{WireName: "ip_addresses"},
+	"Uris":           ubx.FieldSpec{WireName: "uris"},
+}
 
 var CertificateAuthority_Config_SubjectConfigFields = ubx.FieldMap{
-		"Subject": ubx.FieldSpec{
-			WireName: "subject",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectFields,
-		},
-		"SubjectAltName": ubx.FieldSpec{
-			WireName: "subject_alt_name",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
-		},
-	}
+	"Subject": ubx.FieldSpec{
+		WireName: "subject",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectFields,
+	},
+	"SubjectAltName": ubx.FieldSpec{
+		WireName: "subject_alt_name",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
+	},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-	}
+	"KeyId": ubx.FieldSpec{WireName: "key_id"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptionsFields = ubx.FieldMap{
-		"IsCa": ubx.FieldSpec{WireName: "is_ca"},
-		"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
-	}
+	"IsCa":                ubx.FieldSpec{WireName: "is_ca"},
+	"MaxIssuerPathLength": ubx.FieldSpec{WireName: "max_issuer_path_length"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsageFields = ubx.FieldMap{
-		"CertSign": ubx.FieldSpec{WireName: "cert_sign"},
-		"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
-		"CrlSign": ubx.FieldSpec{WireName: "crl_sign"},
-		"DataEncipherment": ubx.FieldSpec{WireName: "data_encipherment"},
-		"DecipherOnly": ubx.FieldSpec{WireName: "decipher_only"},
-		"DigitalSignature": ubx.FieldSpec{WireName: "digital_signature"},
-		"EncipherOnly": ubx.FieldSpec{WireName: "encipher_only"},
-		"KeyAgreement": ubx.FieldSpec{WireName: "key_agreement"},
-		"KeyEncipherment": ubx.FieldSpec{WireName: "key_encipherment"},
-	}
+	"CertSign":          ubx.FieldSpec{WireName: "cert_sign"},
+	"ContentCommitment": ubx.FieldSpec{WireName: "content_commitment"},
+	"CrlSign":           ubx.FieldSpec{WireName: "crl_sign"},
+	"DataEncipherment":  ubx.FieldSpec{WireName: "data_encipherment"},
+	"DecipherOnly":      ubx.FieldSpec{WireName: "decipher_only"},
+	"DigitalSignature":  ubx.FieldSpec{WireName: "digital_signature"},
+	"EncipherOnly":      ubx.FieldSpec{WireName: "encipher_only"},
+	"KeyAgreement":      ubx.FieldSpec{WireName: "key_agreement"},
+	"KeyEncipherment":   ubx.FieldSpec{WireName: "key_encipherment"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsageFields = ubx.FieldMap{
-		"ClientAuth": ubx.FieldSpec{WireName: "client_auth"},
-		"CodeSigning": ubx.FieldSpec{WireName: "code_signing"},
-		"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
-		"OcspSigning": ubx.FieldSpec{WireName: "ocsp_signing"},
-		"ServerAuth": ubx.FieldSpec{WireName: "server_auth"},
-		"TimeStamping": ubx.FieldSpec{WireName: "time_stamping"},
-	}
+	"ClientAuth":      ubx.FieldSpec{WireName: "client_auth"},
+	"CodeSigning":     ubx.FieldSpec{WireName: "code_signing"},
+	"EmailProtection": ubx.FieldSpec{WireName: "email_protection"},
+	"OcspSigning":     ubx.FieldSpec{WireName: "ocsp_signing"},
+	"ServerAuth":      ubx.FieldSpec{WireName: "server_auth"},
+	"TimeStamping":    ubx.FieldSpec{WireName: "time_stamping"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsageFields = ubx.FieldMap{
-		"BaseKeyUsage": ubx.FieldSpec{
-			WireName: "base_key_usage",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsageFields,
-		},
-		"ExtendedKeyUsage": ubx.FieldSpec{
-			WireName: "extended_key_usage",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsageFields,
-		},
-		"UnknownExtendedKeyUsages": ubx.FieldSpec{
-			WireName: "unknown_extended_key_usages",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
-		},
-	}
+	"BaseKeyUsage": ubx.FieldSpec{
+		WireName: "base_key_usage",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_BaseKeyUsageFields,
+	},
+	"ExtendedKeyUsage": ubx.FieldSpec{
+		WireName: "extended_key_usage",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsage_ExtendedKeyUsageFields,
+	},
+	"UnknownExtendedKeyUsages": ubx.FieldSpec{
+		WireName: "unknown_extended_key_usages",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
+	},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraintsFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ExcludedDnsNames": ubx.FieldSpec{WireName: "excluded_dns_names"},
-		"ExcludedEmailAddresses": ubx.FieldSpec{WireName: "excluded_email_addresses"},
-		"ExcludedIpRanges": ubx.FieldSpec{WireName: "excluded_ip_ranges"},
-		"ExcludedUris": ubx.FieldSpec{WireName: "excluded_uris"},
-		"PermittedDnsNames": ubx.FieldSpec{WireName: "permitted_dns_names"},
-		"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
-		"PermittedIpRanges": ubx.FieldSpec{WireName: "permitted_ip_ranges"},
-		"PermittedUris": ubx.FieldSpec{WireName: "permitted_uris"},
-	}
+	"Critical":                ubx.FieldSpec{WireName: "critical"},
+	"ExcludedDnsNames":        ubx.FieldSpec{WireName: "excluded_dns_names"},
+	"ExcludedEmailAddresses":  ubx.FieldSpec{WireName: "excluded_email_addresses"},
+	"ExcludedIpRanges":        ubx.FieldSpec{WireName: "excluded_ip_ranges"},
+	"ExcludedUris":            ubx.FieldSpec{WireName: "excluded_uris"},
+	"PermittedDnsNames":       ubx.FieldSpec{WireName: "permitted_dns_names"},
+	"PermittedEmailAddresses": ubx.FieldSpec{WireName: "permitted_email_addresses"},
+	"PermittedIpRanges":       ubx.FieldSpec{WireName: "permitted_ip_ranges"},
+	"PermittedUris":           ubx.FieldSpec{WireName: "permitted_uris"},
+}
 
 var CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields = ubx.FieldMap{
-		"AdditionalExtensions": ubx.FieldSpec{
-			WireName: "additional_extensions",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSansFields,
-		},
-		"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
-		"CaOptions": ubx.FieldSpec{
-			WireName: "ca_options",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptionsFields,
-		},
-		"KeyUsage": ubx.FieldSpec{
-			WireName: "key_usage",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsageFields,
-		},
-		"NameConstraints": ubx.FieldSpec{
-			WireName: "name_constraints",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraintsFields,
-		},
-		"PolicyIds": ubx.FieldSpec{
-			WireName: "policy_ids",
-			Kind: "list",
-			Fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
-		},
-	}
+	"AdditionalExtensions": ubx.FieldSpec{
+		WireName: "additional_extensions",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltName_CustomSansFields,
+	},
+	"AiaOcspServers": ubx.FieldSpec{WireName: "aia_ocsp_servers"},
+	"CaOptions": ubx.FieldSpec{
+		WireName: "ca_options",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptionsFields,
+	},
+	"KeyUsage": ubx.FieldSpec{
+		WireName: "key_usage",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509Description_KeyUsageFields,
+	},
+	"NameConstraints": ubx.FieldSpec{
+		WireName: "name_constraints",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509Description_NameConstraintsFields,
+	},
+	"PolicyIds": ubx.FieldSpec{
+		WireName: "policy_ids",
+		Kind:     "list",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_SubjectDescription_Subject_RdnSequence_Attributes_ObjectIdFields,
+	},
+}
 
 var CertificateAuthority_ConfigFields = ubx.FieldMap{
-		"PublicKey": ubx.FieldSpec{
-			WireName: "public_key",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_PublicKeyFields,
-		},
-		"SubjectConfig": ubx.FieldSpec{
-			WireName: "subject_config",
-			Kind: "object",
-			Fields: CertificateAuthority_Config_SubjectConfigFields,
-		},
-		"SubjectKeyId": ubx.FieldSpec{
-			WireName: "subject_key_id",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
-		},
-		"X509Config": ubx.FieldSpec{
-			WireName: "x509_config",
-			Kind: "object",
-			Fields: CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields,
-		},
-	}
+	"PublicKey": ubx.FieldSpec{
+		WireName: "public_key",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_PublicKeyFields,
+	},
+	"SubjectConfig": ubx.FieldSpec{
+		WireName: "subject_config",
+		Kind:     "object",
+		Fields:   CertificateAuthority_Config_SubjectConfigFields,
+	},
+	"SubjectKeyId": ubx.FieldSpec{
+		WireName: "subject_key_id",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
+	},
+	"X509Config": ubx.FieldSpec{
+		WireName: "x509_config",
+		Kind:     "object",
+		Fields:   CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields,
+	},
+}
 
 var CertificateAuthority_KeySpecFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"CloudKmsKeyVersion": ubx.FieldSpec{WireName: "cloud_kms_key_version"},
-	}
+	"Algorithm":          ubx.FieldSpec{WireName: "algorithm"},
+	"CloudKmsKeyVersion": ubx.FieldSpec{WireName: "cloud_kms_key_version"},
+}
 
 var CertificateAuthority_SubordinateConfig_PemIssuerChainFields = ubx.FieldMap{
-		"PemCertificates": ubx.FieldSpec{WireName: "pem_certificates"},
-	}
+	"PemCertificates": ubx.FieldSpec{WireName: "pem_certificates"},
+}
 
 var CertificateAuthority_SubordinateConfigFields = ubx.FieldMap{
-		"CertificateAuthority": ubx.FieldSpec{WireName: "certificate_authority"},
-		"PemIssuerChain": ubx.FieldSpec{
-			WireName: "pem_issuer_chain",
-			Kind: "object",
-			Fields: CertificateAuthority_SubordinateConfig_PemIssuerChainFields,
-		},
-	}
+	"CertificateAuthority": ubx.FieldSpec{WireName: "certificate_authority"},
+	"PemIssuerChain": ubx.FieldSpec{
+		WireName: "pem_issuer_chain",
+		Kind:     "object",
+		Fields:   CertificateAuthority_SubordinateConfig_PemIssuerChainFields,
+	},
+}
 
 var CertificateAuthority_UserDefinedAccessUrlsFields = ubx.FieldMap{
-		"AiaIssuingCertificateUrls": ubx.FieldSpec{WireName: "aia_issuing_certificate_urls"},
-		"CrlAccessUrls": ubx.FieldSpec{WireName: "crl_access_urls"},
-	}
+	"AiaIssuingCertificateUrls": ubx.FieldSpec{WireName: "aia_issuing_certificate_urls"},
+	"CrlAccessUrls":             ubx.FieldSpec{WireName: "crl_access_urls"},
+}
 
 type CertificateAuthorityConfig struct {
 	// URLs where a CertificateAuthority will publish content.
@@ -546,33 +546,33 @@ var CertificateAuthority = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AccessUrls": ubx.FieldSpec{
 			WireName: "access_urls",
-			Kind: "object",
-			Fields: CertificateAuthority_AccessUrlsFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_AccessUrlsFields,
 		},
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: CertificateAuthority_ConfigFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_ConfigFields,
 		},
 		"GcsBucket": ubx.FieldSpec{WireName: "gcs_bucket"},
 		"KeySpec": ubx.FieldSpec{
 			WireName: "key_spec",
-			Kind: "object",
-			Fields: CertificateAuthority_KeySpecFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_KeySpecFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":   ubx.FieldSpec{WireName: "labels"},
 		"Lifetime": ubx.FieldSpec{WireName: "lifetime"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"SubordinateConfig": ubx.FieldSpec{
 			WireName: "subordinate_config",
-			Kind: "object",
-			Fields: CertificateAuthority_SubordinateConfigFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_SubordinateConfigFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"UserDefinedAccessUrls": ubx.FieldSpec{
 			WireName: "user_defined_access_urls",
-			Kind: "object",
-			Fields: CertificateAuthority_UserDefinedAccessUrlsFields,
+			Kind:     "object",
+			Fields:   CertificateAuthority_UserDefinedAccessUrlsFields,
 		},
 	},
 }

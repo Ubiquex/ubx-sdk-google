@@ -40,9 +40,9 @@ type GatewayAttrs struct {
 var Gateway = ubx.ResourceBinding{
 	WireType: "google_apigateway_gateway",
 	Fields: ubx.FieldMap{
-		"ApiConfig": ubx.FieldSpec{WireName: "api_config"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ApiConfig":     ubx.FieldSpec{WireName: "api_config"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"StreamingMode": ubx.FieldSpec{WireName: "streaming_mode"},
 	},
 }

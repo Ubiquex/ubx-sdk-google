@@ -25,23 +25,23 @@ type V1beta1Featurestore_OnlineServingConfig struct {
 }
 
 var V1beta1Featurestore_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1Featurestore_OnlineServingConfig_ScalingFields = ubx.FieldMap{
-		"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-	}
+	"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
+	"MaxNodeCount":         ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount":         ubx.FieldSpec{WireName: "min_node_count"},
+}
 
 var V1beta1Featurestore_OnlineServingConfigFields = ubx.FieldMap{
-		"FixedNodeCount": ubx.FieldSpec{WireName: "fixed_node_count"},
-		"Scaling": ubx.FieldSpec{
-			WireName: "scaling",
-			Kind: "object",
-			Fields: V1beta1Featurestore_OnlineServingConfig_ScalingFields,
-		},
-	}
+	"FixedNodeCount": ubx.FieldSpec{WireName: "fixed_node_count"},
+	"Scaling": ubx.FieldSpec{
+		WireName: "scaling",
+		Kind:     "object",
+		Fields:   V1beta1Featurestore_OnlineServingConfig_ScalingFields,
+	},
+}
 
 type V1beta1FeaturestoreConfig struct {
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -86,15 +86,15 @@ var V1beta1Featurestore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Featurestore_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Featurestore_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"OnlineServingConfig": ubx.FieldSpec{
 			WireName: "online_serving_config",
-			Kind: "object",
-			Fields: V1beta1Featurestore_OnlineServingConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Featurestore_OnlineServingConfigFields,
 		},
 		"OnlineStorageTtlDays": ubx.FieldSpec{WireName: "online_storage_ttl_days"},
 	},

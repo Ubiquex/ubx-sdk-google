@@ -26,17 +26,17 @@ type Profile_DeviceInfo struct {
 }
 
 type Profile_ReportingData_ExtensionData struct {
-	Description any
-	ExtensionId any
-	ExtensionType any
-	HomepageUri any
-	InstallationType any
-	IsDisabled any
+	Description         any
+	ExtensionId         any
+	ExtensionType       any
+	HomepageUri         any
+	InstallationType    any
+	IsDisabled          any
 	IsWebstoreExtension any
-	ManifestVersion any
-	Name any
-	Permissions any
-	Version any
+	ManifestVersion     any
+	Name                any
+	Permissions         any
+	Version             any
 }
 
 type Profile_ReportingData_ExtensionPolicyData_PolicyData_Conflicts struct {
@@ -45,16 +45,16 @@ type Profile_ReportingData_ExtensionPolicyData_PolicyData_Conflicts struct {
 
 type Profile_ReportingData_ExtensionPolicyData_PolicyData struct {
 	Conflicts any
-	Error any
-	Name any
-	Source any
-	Value any
+	Error     any
+	Name      any
+	Source    any
+	Value     any
 }
 
 type Profile_ReportingData_ExtensionPolicyData struct {
-	ExtensionId any
+	ExtensionId   any
 	ExtensionName any
-	PolicyData any
+	PolicyData    any
 }
 
 type Profile_ReportingData struct {
@@ -109,7 +109,7 @@ type ProfileAttrs struct {
 	LastPolicySyncTime any
 	// Output only. Timestamp of the latest status report by the profile.
 	LastStatusReportTime any
-	Name any
+	Name                 any
 	// Output only. OS platform of the device on which the profile exists.
 	OsPlatformType any
 	// Output only. Major OS platform version of the device on which the profile exists, from profile reporting.

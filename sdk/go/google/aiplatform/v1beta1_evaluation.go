@@ -5,18 +5,18 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_Range struct {
 	High any
-	Low any
+	Low  any
 }
 
 type V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_Value struct {
-	FloatValue any
+	FloatValue  any
 	StringValue any
 }
 
 type V1beta1Evaluation_BiasConfigs_BiasSlices_Configs struct {
 	AllValues any
-	Range any
-	Value any
+	Range     any
+	Value     any
 }
 
 type V1beta1Evaluation_BiasConfigs_BiasSlices struct {
@@ -32,47 +32,47 @@ type V1beta1Evaluation_BiasConfigs struct {
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata struct {
 	FeatureAttributionsSchemaUri any
-	Inputs any
-	LatentSpaceSource any
-	Outputs any
+	Inputs                       any
+	LatentSpaceSource            any
+	Outputs                      any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSource struct {
@@ -81,20 +81,20 @@ type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_Exam
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource struct {
 	DataFormat any
-	GcsSource any
+	GcsSource  any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_Presets struct {
 	Modality any
-	Query any
+	Query    any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples struct {
-	ExampleGcsSource any
-	GcsSource any
+	ExampleGcsSource            any
+	GcsSource                   any
 	NearestNeighborSearchConfig any
-	NeighborCount any
-	Presets any
+	NeighborCount               any
+	Presets                     any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfig struct {
@@ -102,7 +102,7 @@ type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGra
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -112,14 +112,14 @@ type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGra
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig struct {
 	FeatureNoiseSigma any
-	NoiseSigma any
-	NoisySampleCount any
+	NoiseSigma        any
+	NoisySampleCount  any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution struct {
 	BlurBaselineConfig any
-	SmoothGradConfig any
-	StepCount any
+	SmoothGradConfig   any
+	StepCount          any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttribution struct {
@@ -127,16 +127,16 @@ type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShaple
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters struct {
-	Examples any
+	Examples                       any
 	IntegratedGradientsAttribution any
-	OutputIndices any
-	SampledShapleyAttribution any
-	TopK any
-	XraiAttribution any
+	OutputIndices                  any
+	SampledShapleyAttribution      any
+	TopK                           any
+	XraiAttribution                any
 }
 
 type V1beta1Evaluation_ExplanationSpecs_ExplanationSpec struct {
-	Metadata any
+	Metadata   any
 	Parameters any
 }
 
@@ -146,13 +146,13 @@ type V1beta1Evaluation_ExplanationSpecs struct {
 }
 
 type V1beta1Evaluation_ModelEvaluation_ModelExplanation_MeanAttributions struct {
-	ApproximationError any
+	ApproximationError  any
 	BaselineOutputValue any
 	FeatureAttributions any
 	InstanceOutputValue any
-	OutputDisplayName any
-	OutputIndex any
-	OutputName any
+	OutputDisplayName   any
+	OutputIndex         any
+	OutputName          any
 }
 
 type V1beta1Evaluation_ModelEvaluation_ModelExplanation struct {
@@ -184,278 +184,278 @@ type V1beta1Evaluation_ModelEvaluation struct {
 }
 
 var V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_RangeFields = ubx.FieldMap{
-		"High": ubx.FieldSpec{WireName: "high"},
-		"Low": ubx.FieldSpec{WireName: "low"},
-	}
+	"High": ubx.FieldSpec{WireName: "high"},
+	"Low":  ubx.FieldSpec{WireName: "low"},
+}
 
 var V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_ValueFields = ubx.FieldMap{
-		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"FloatValue":  ubx.FieldSpec{WireName: "float_value"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var V1beta1Evaluation_BiasConfigs_BiasSlices_ConfigsFields = ubx.FieldMap{
-		"AllValues": ubx.FieldSpec{WireName: "all_values"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_RangeFields,
-		},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_ValueFields,
-		},
-	}
+	"AllValues": ubx.FieldSpec{WireName: "all_values"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_RangeFields,
+	},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_BiasConfigs_BiasSlices_Configs_ValueFields,
+	},
+}
 
 var V1beta1Evaluation_BiasConfigs_BiasSlicesFields = ubx.FieldMap{
-		"Configs": ubx.FieldSpec{
-			WireName: "configs",
-			Kind: "map",
-			Fields: V1beta1Evaluation_BiasConfigs_BiasSlices_ConfigsFields,
-		},
-	}
+	"Configs": ubx.FieldSpec{
+		WireName: "configs",
+		Kind:     "map",
+		Fields:   V1beta1Evaluation_BiasConfigs_BiasSlices_ConfigsFields,
+	},
+}
 
 var V1beta1Evaluation_BiasConfigsFields = ubx.FieldMap{
-		"BiasSlices": ubx.FieldSpec{
-			WireName: "bias_slices",
-			Kind: "object",
-			Fields: V1beta1Evaluation_BiasConfigs_BiasSlicesFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"BiasSlices": ubx.FieldSpec{
+		WireName: "bias_slices",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_BiasConfigs_BiasSlicesFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecs_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpec_ParametersFields,
+	},
+}
 
 var V1beta1Evaluation_ExplanationSpecsFields = ubx.FieldMap{
-		"ExplanationSpec": ubx.FieldSpec{
-			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ExplanationSpecs_ExplanationSpecFields,
-		},
-		"ExplanationType": ubx.FieldSpec{WireName: "explanation_type"},
-	}
+	"ExplanationSpec": ubx.FieldSpec{
+		WireName: "explanation_spec",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ExplanationSpecs_ExplanationSpecFields,
+	},
+	"ExplanationType": ubx.FieldSpec{WireName: "explanation_type"},
+}
 
 var V1beta1Evaluation_ModelEvaluation_ModelExplanation_MeanAttributionsFields = ubx.FieldMap{
-		"ApproximationError": ubx.FieldSpec{WireName: "approximation_error"},
-		"BaselineOutputValue": ubx.FieldSpec{WireName: "baseline_output_value"},
-		"FeatureAttributions": ubx.FieldSpec{WireName: "feature_attributions"},
-		"InstanceOutputValue": ubx.FieldSpec{WireName: "instance_output_value"},
-		"OutputDisplayName": ubx.FieldSpec{WireName: "output_display_name"},
-		"OutputIndex": ubx.FieldSpec{WireName: "output_index"},
-		"OutputName": ubx.FieldSpec{WireName: "output_name"},
-	}
+	"ApproximationError":  ubx.FieldSpec{WireName: "approximation_error"},
+	"BaselineOutputValue": ubx.FieldSpec{WireName: "baseline_output_value"},
+	"FeatureAttributions": ubx.FieldSpec{WireName: "feature_attributions"},
+	"InstanceOutputValue": ubx.FieldSpec{WireName: "instance_output_value"},
+	"OutputDisplayName":   ubx.FieldSpec{WireName: "output_display_name"},
+	"OutputIndex":         ubx.FieldSpec{WireName: "output_index"},
+	"OutputName":          ubx.FieldSpec{WireName: "output_name"},
+}
 
 var V1beta1Evaluation_ModelEvaluation_ModelExplanationFields = ubx.FieldMap{
-		"MeanAttributions": ubx.FieldSpec{
-			WireName: "mean_attributions",
-			Kind: "list",
-			Fields: V1beta1Evaluation_ModelEvaluation_ModelExplanation_MeanAttributionsFields,
-		},
-	}
+	"MeanAttributions": ubx.FieldSpec{
+		WireName: "mean_attributions",
+		Kind:     "list",
+		Fields:   V1beta1Evaluation_ModelEvaluation_ModelExplanation_MeanAttributionsFields,
+	},
+}
 
 var V1beta1Evaluation_ModelEvaluationFields = ubx.FieldMap{
-		"BiasConfigs": ubx.FieldSpec{
-			WireName: "bias_configs",
-			Kind: "object",
-			Fields: V1beta1Evaluation_BiasConfigsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExplanationSpecs": ubx.FieldSpec{
-			WireName: "explanation_specs",
-			Kind: "list",
-			Fields: V1beta1Evaluation_ExplanationSpecsFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"MetricsSchemaUri": ubx.FieldSpec{WireName: "metrics_schema_uri"},
-		"ModelExplanation": ubx.FieldSpec{
-			WireName: "model_explanation",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ModelEvaluation_ModelExplanationFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SliceDimensions": ubx.FieldSpec{WireName: "slice_dimensions"},
-	}
+	"BiasConfigs": ubx.FieldSpec{
+		WireName: "bias_configs",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_BiasConfigsFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ExplanationSpecs": ubx.FieldSpec{
+		WireName: "explanation_specs",
+		Kind:     "list",
+		Fields:   V1beta1Evaluation_ExplanationSpecsFields,
+	},
+	"Metadata":         ubx.FieldSpec{WireName: "metadata"},
+	"Metrics":          ubx.FieldSpec{WireName: "metrics"},
+	"MetricsSchemaUri": ubx.FieldSpec{WireName: "metrics_schema_uri"},
+	"ModelExplanation": ubx.FieldSpec{
+		WireName: "model_explanation",
+		Kind:     "object",
+		Fields:   V1beta1Evaluation_ModelEvaluation_ModelExplanationFields,
+	},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SliceDimensions": ubx.FieldSpec{WireName: "slice_dimensions"},
+}
 
 type V1beta1EvaluationConfig struct {
 	// A collection of metrics calculated by comparing Model's predictions on all of the test data against annotations from the test data.
@@ -492,8 +492,8 @@ var V1beta1Evaluation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ModelEvaluation": ubx.FieldSpec{
 			WireName: "model_evaluation",
-			Kind: "object",
-			Fields: V1beta1Evaluation_ModelEvaluationFields,
+			Kind:     "object",
+			Fields:   V1beta1Evaluation_ModelEvaluationFields,
 		},
 	},
 }

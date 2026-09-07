@@ -46,8 +46,8 @@ var V1alpha1Source = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsManaged": ubx.FieldSpec{WireName: "is_managed"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"IsManaged":   ubx.FieldSpec{WireName: "is_managed"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

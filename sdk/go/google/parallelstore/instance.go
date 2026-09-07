@@ -60,14 +60,14 @@ type InstanceAttrs struct {
 var Instance = ubx.ResourceBinding{
 	WireType: "google_parallelstore_instance",
 	Fields: ubx.FieldMap{
-		"CapacityGib": ubx.FieldSpec{WireName: "capacity_gib"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CapacityGib":          ubx.FieldSpec{WireName: "capacity_gib"},
+		"DeploymentType":       ubx.FieldSpec{WireName: "deployment_type"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DirectoryStripeLevel": ubx.FieldSpec{WireName: "directory_stripe_level"},
-		"FileStripeLevel": ubx.FieldSpec{WireName: "file_stripe_level"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
+		"FileStripeLevel":      ubx.FieldSpec{WireName: "file_stripe_level"},
+		"Labels":               ubx.FieldSpec{WireName: "labels"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Network":              ubx.FieldSpec{WireName: "network"},
+		"ReservedIpRange":      ubx.FieldSpec{WireName: "reserved_ip_range"},
 	},
 }

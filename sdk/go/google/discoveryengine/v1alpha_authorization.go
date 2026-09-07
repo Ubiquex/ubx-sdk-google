@@ -19,13 +19,13 @@ type V1alphaAuthorization_ServerSideOauth2 struct {
 }
 
 var V1alphaAuthorization_ServerSideOauth2Fields = ubx.FieldMap{
-		"AuthorizationUri": ubx.FieldSpec{WireName: "authorization_uri"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"PkceVerificationEnabled": ubx.FieldSpec{WireName: "pkce_verification_enabled"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"TokenUri": ubx.FieldSpec{WireName: "token_uri"},
-	}
+	"AuthorizationUri":        ubx.FieldSpec{WireName: "authorization_uri"},
+	"ClientId":                ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":            ubx.FieldSpec{WireName: "client_secret"},
+	"PkceVerificationEnabled": ubx.FieldSpec{WireName: "pkce_verification_enabled"},
+	"Scopes":                  ubx.FieldSpec{WireName: "scopes"},
+	"TokenUri":                ubx.FieldSpec{WireName: "token_uri"},
+}
 
 type V1alphaAuthorizationConfig struct {
 	// Required. The display name of the authorization. It must be a UTF-8 encoded string with a length limit of 128 characters.
@@ -49,11 +49,11 @@ var V1alphaAuthorization = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_authorization",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ServerSideOauth2": ubx.FieldSpec{
 			WireName: "server_side_oauth2",
-			Kind: "object",
-			Fields: V1alphaAuthorization_ServerSideOauth2Fields,
+			Kind:     "object",
+			Fields:   V1alphaAuthorization_ServerSideOauth2Fields,
 		},
 	},
 }

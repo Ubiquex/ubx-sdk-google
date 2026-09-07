@@ -5,49 +5,49 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Slice_EvaluatedAnnotations_ErrorAnalysisAnnotations_AttributedItems struct {
 	AnnotationResourceName any
-	Distance any
+	Distance               any
 }
 
 type Slice_EvaluatedAnnotations_ErrorAnalysisAnnotations struct {
-	AttributedItems any
-	OutlierScore any
+	AttributedItems  any
+	OutlierScore     any
 	OutlierThreshold any
-	QueryType any
+	QueryType        any
 }
 
 type Slice_EvaluatedAnnotations_Explanations_Explanation_Attributions struct {
-	ApproximationError any
+	ApproximationError  any
 	BaselineOutputValue any
 	FeatureAttributions any
 	InstanceOutputValue any
-	OutputDisplayName any
-	OutputIndex any
-	OutputName any
+	OutputDisplayName   any
+	OutputIndex         any
+	OutputName          any
 }
 
 type Slice_EvaluatedAnnotations_Explanations_Explanation_Neighbors struct {
 	NeighborDistance any
-	NeighborId any
+	NeighborId       any
 }
 
 type Slice_EvaluatedAnnotations_Explanations_Explanation struct {
 	Attributions any
-	Neighbors any
+	Neighbors    any
 }
 
 type Slice_EvaluatedAnnotations_Explanations struct {
-	Explanation any
+	Explanation     any
 	ExplanationType any
 }
 
 type Slice_EvaluatedAnnotations struct {
-	DataItemPayload any
+	DataItemPayload          any
 	ErrorAnalysisAnnotations any
-	EvaluatedDataItemViewId any
-	Explanations any
-	GroundTruths any
-	Predictions any
-	Type any
+	EvaluatedDataItemViewId  any
+	Explanations             any
+	GroundTruths             any
+	Predictions              any
+	Type                     any
 }
 
 type Slice_ModelExplanation struct {
@@ -57,18 +57,18 @@ type Slice_ModelExplanation struct {
 
 type Slice_Slice_SliceSpec_Configs_Range struct {
 	High any
-	Low any
+	Low  any
 }
 
 type Slice_Slice_SliceSpec_Configs_Value struct {
-	FloatValue any
+	FloatValue  any
 	StringValue any
 }
 
 type Slice_Slice_SliceSpec_Configs struct {
 	AllValues any
-	Range any
-	Value any
+	Range     any
+	Value     any
 }
 
 type Slice_Slice_SliceSpec struct {
@@ -86,75 +86,75 @@ type Slice_Slice struct {
 }
 
 var Slice_EvaluatedAnnotations_ErrorAnalysisAnnotations_AttributedItemsFields = ubx.FieldMap{
-		"AnnotationResourceName": ubx.FieldSpec{WireName: "annotation_resource_name"},
-		"Distance": ubx.FieldSpec{WireName: "distance"},
-	}
+	"AnnotationResourceName": ubx.FieldSpec{WireName: "annotation_resource_name"},
+	"Distance":               ubx.FieldSpec{WireName: "distance"},
+}
 
 var Slice_EvaluatedAnnotations_ErrorAnalysisAnnotationsFields = ubx.FieldMap{
-		"AttributedItems": ubx.FieldSpec{
-			WireName: "attributed_items",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotations_ErrorAnalysisAnnotations_AttributedItemsFields,
-		},
-		"OutlierScore": ubx.FieldSpec{WireName: "outlier_score"},
-		"OutlierThreshold": ubx.FieldSpec{WireName: "outlier_threshold"},
-		"QueryType": ubx.FieldSpec{WireName: "query_type"},
-	}
+	"AttributedItems": ubx.FieldSpec{
+		WireName: "attributed_items",
+		Kind:     "list",
+		Fields:   Slice_EvaluatedAnnotations_ErrorAnalysisAnnotations_AttributedItemsFields,
+	},
+	"OutlierScore":     ubx.FieldSpec{WireName: "outlier_score"},
+	"OutlierThreshold": ubx.FieldSpec{WireName: "outlier_threshold"},
+	"QueryType":        ubx.FieldSpec{WireName: "query_type"},
+}
 
 var Slice_EvaluatedAnnotations_Explanations_Explanation_AttributionsFields = ubx.FieldMap{
-		"ApproximationError": ubx.FieldSpec{WireName: "approximation_error"},
-		"BaselineOutputValue": ubx.FieldSpec{WireName: "baseline_output_value"},
-		"FeatureAttributions": ubx.FieldSpec{WireName: "feature_attributions"},
-		"InstanceOutputValue": ubx.FieldSpec{WireName: "instance_output_value"},
-		"OutputDisplayName": ubx.FieldSpec{WireName: "output_display_name"},
-		"OutputIndex": ubx.FieldSpec{WireName: "output_index"},
-		"OutputName": ubx.FieldSpec{WireName: "output_name"},
-	}
+	"ApproximationError":  ubx.FieldSpec{WireName: "approximation_error"},
+	"BaselineOutputValue": ubx.FieldSpec{WireName: "baseline_output_value"},
+	"FeatureAttributions": ubx.FieldSpec{WireName: "feature_attributions"},
+	"InstanceOutputValue": ubx.FieldSpec{WireName: "instance_output_value"},
+	"OutputDisplayName":   ubx.FieldSpec{WireName: "output_display_name"},
+	"OutputIndex":         ubx.FieldSpec{WireName: "output_index"},
+	"OutputName":          ubx.FieldSpec{WireName: "output_name"},
+}
 
 var Slice_EvaluatedAnnotations_Explanations_Explanation_NeighborsFields = ubx.FieldMap{
-		"NeighborDistance": ubx.FieldSpec{WireName: "neighbor_distance"},
-		"NeighborId": ubx.FieldSpec{WireName: "neighbor_id"},
-	}
+	"NeighborDistance": ubx.FieldSpec{WireName: "neighbor_distance"},
+	"NeighborId":       ubx.FieldSpec{WireName: "neighbor_id"},
+}
 
 var Slice_EvaluatedAnnotations_Explanations_ExplanationFields = ubx.FieldMap{
-		"Attributions": ubx.FieldSpec{
-			WireName: "attributions",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotations_Explanations_Explanation_AttributionsFields,
-		},
-		"Neighbors": ubx.FieldSpec{
-			WireName: "neighbors",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotations_Explanations_Explanation_NeighborsFields,
-		},
-	}
+	"Attributions": ubx.FieldSpec{
+		WireName: "attributions",
+		Kind:     "list",
+		Fields:   Slice_EvaluatedAnnotations_Explanations_Explanation_AttributionsFields,
+	},
+	"Neighbors": ubx.FieldSpec{
+		WireName: "neighbors",
+		Kind:     "list",
+		Fields:   Slice_EvaluatedAnnotations_Explanations_Explanation_NeighborsFields,
+	},
+}
 
 var Slice_EvaluatedAnnotations_ExplanationsFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{
-			WireName: "explanation",
-			Kind: "object",
-			Fields: Slice_EvaluatedAnnotations_Explanations_ExplanationFields,
-		},
-		"ExplanationType": ubx.FieldSpec{WireName: "explanation_type"},
-	}
+	"Explanation": ubx.FieldSpec{
+		WireName: "explanation",
+		Kind:     "object",
+		Fields:   Slice_EvaluatedAnnotations_Explanations_ExplanationFields,
+	},
+	"ExplanationType": ubx.FieldSpec{WireName: "explanation_type"},
+}
 
 var Slice_EvaluatedAnnotationsFields = ubx.FieldMap{
-		"DataItemPayload": ubx.FieldSpec{WireName: "data_item_payload"},
-		"ErrorAnalysisAnnotations": ubx.FieldSpec{
-			WireName: "error_analysis_annotations",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotations_ErrorAnalysisAnnotationsFields,
-		},
-		"EvaluatedDataItemViewId": ubx.FieldSpec{WireName: "evaluated_data_item_view_id"},
-		"Explanations": ubx.FieldSpec{
-			WireName: "explanations",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotations_ExplanationsFields,
-		},
-		"GroundTruths": ubx.FieldSpec{WireName: "ground_truths"},
-		"Predictions": ubx.FieldSpec{WireName: "predictions"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DataItemPayload": ubx.FieldSpec{WireName: "data_item_payload"},
+	"ErrorAnalysisAnnotations": ubx.FieldSpec{
+		WireName: "error_analysis_annotations",
+		Kind:     "list",
+		Fields:   Slice_EvaluatedAnnotations_ErrorAnalysisAnnotationsFields,
+	},
+	"EvaluatedDataItemViewId": ubx.FieldSpec{WireName: "evaluated_data_item_view_id"},
+	"Explanations": ubx.FieldSpec{
+		WireName: "explanations",
+		Kind:     "list",
+		Fields:   Slice_EvaluatedAnnotations_ExplanationsFields,
+	},
+	"GroundTruths": ubx.FieldSpec{WireName: "ground_truths"},
+	"Predictions":  ubx.FieldSpec{WireName: "predictions"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 type SliceConfig struct {
 	// Required. Evaluated annotations resource to be imported.
@@ -183,8 +183,8 @@ var Slice = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EvaluatedAnnotations": ubx.FieldSpec{
 			WireName: "evaluated_annotations",
-			Kind: "list",
-			Fields: Slice_EvaluatedAnnotationsFields,
+			Kind:     "list",
+			Fields:   Slice_EvaluatedAnnotationsFields,
 		},
 	},
 }

@@ -25,23 +25,23 @@ type Report_Properties struct {
 }
 
 var Report_MetricsFields = ubx.FieldMap{
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Function": ubx.FieldSpec{WireName: "function"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Report_Properties_ValueFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Report_PropertiesFields = ubx.FieldMap{
-		"Property": ubx.FieldSpec{WireName: "property"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "list",
-			Fields: Report_Properties_ValueFields,
-		},
-	}
+	"Property": ubx.FieldSpec{WireName: "property"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "list",
+		Fields:   Report_Properties_ValueFields,
+	},
+}
 
 type ReportConfig struct {
 	// This field contains the chart type for the report
@@ -130,30 +130,30 @@ type ReportAttrs struct {
 var Report = ubx.ResourceBinding{
 	WireType: "google_apigee_report",
 	Fields: ubx.FieldMap{
-		"ChartType": ubx.FieldSpec{WireName: "chart_type"},
-		"Comments": ubx.FieldSpec{WireName: "comments"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+		"ChartType":   ubx.FieldSpec{WireName: "chart_type"},
+		"Comments":    ubx.FieldSpec{WireName: "comments"},
+		"Dimensions":  ubx.FieldSpec{WireName: "dimensions"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FromTime": ubx.FieldSpec{WireName: "from_time"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"FromTime":    ubx.FieldSpec{WireName: "from_time"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: Report_MetricsFields,
+			Kind:     "list",
+			Fields:   Report_MetricsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "list",
-			Fields: Report_PropertiesFields,
+			Kind:     "list",
+			Fields:   Report_PropertiesFields,
 		},
 		"SortByCols": ubx.FieldSpec{WireName: "sort_by_cols"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
-		"Topk": ubx.FieldSpec{WireName: "topk"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
+		"TimeUnit":   ubx.FieldSpec{WireName: "time_unit"},
+		"ToTime":     ubx.FieldSpec{WireName: "to_time"},
+		"Topk":       ubx.FieldSpec{WireName: "topk"},
 	},
 }

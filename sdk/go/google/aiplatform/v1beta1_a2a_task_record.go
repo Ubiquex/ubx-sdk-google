@@ -4,31 +4,31 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1A2aTaskRecord_Artifacts_Parts struct {
-	Data any
-	Filename any
+	Data      any
+	Filename  any
 	MediaType any
-	Metadata any
-	Raw any
-	Text any
-	Url any
+	Metadata  any
+	Raw       any
+	Text      any
+	Url       any
 }
 
 type V1beta1A2aTaskRecord_Artifacts struct {
-	ArtifactId any
+	ArtifactId  any
 	Description any
 	DisplayName any
-	Extensions any
-	Metadata any
-	Parts any
+	Extensions  any
+	Metadata    any
+	Parts       any
 }
 
 type V1beta1A2aTaskRecord_History struct {
-	Extensions any
-	MessageId any
-	Metadata any
-	Parts any
+	Extensions       any
+	MessageId        any
+	Metadata         any
+	Parts            any
 	ReferenceTaskIds any
-	Role any
+	Role             any
 }
 
 type V1beta1A2aTaskRecord_Status struct {
@@ -41,37 +41,37 @@ type V1beta1A2aTaskRecord_Status struct {
 }
 
 var V1beta1A2aTaskRecord_Artifacts_PartsFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"MediaType": ubx.FieldSpec{WireName: "media_type"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Raw": ubx.FieldSpec{WireName: "raw"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Data":      ubx.FieldSpec{WireName: "data"},
+	"Filename":  ubx.FieldSpec{WireName: "filename"},
+	"MediaType": ubx.FieldSpec{WireName: "media_type"},
+	"Metadata":  ubx.FieldSpec{WireName: "metadata"},
+	"Raw":       ubx.FieldSpec{WireName: "raw"},
+	"Text":      ubx.FieldSpec{WireName: "text"},
+	"Url":       ubx.FieldSpec{WireName: "url"},
+}
 
 var V1beta1A2aTaskRecord_HistoryFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{WireName: "extensions"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1A2aTaskRecord_Artifacts_PartsFields,
-		},
-		"ReferenceTaskIds": ubx.FieldSpec{WireName: "reference_task_ids"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Extensions": ubx.FieldSpec{WireName: "extensions"},
+	"MessageId":  ubx.FieldSpec{WireName: "message_id"},
+	"Metadata":   ubx.FieldSpec{WireName: "metadata"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1A2aTaskRecord_Artifacts_PartsFields,
+	},
+	"ReferenceTaskIds": ubx.FieldSpec{WireName: "reference_task_ids"},
+	"Role":             ubx.FieldSpec{WireName: "role"},
+}
 
 var V1beta1A2aTaskRecord_StatusFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: V1beta1A2aTaskRecord_HistoryFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   V1beta1A2aTaskRecord_HistoryFields,
+	},
+	"State":     ubx.FieldSpec{WireName: "state"},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 type V1beta1A2aTaskRecordConfig struct {
 	// Optional. Agent application which created the task.
@@ -130,17 +130,17 @@ type V1beta1A2aTaskRecordAttrs struct {
 var V1beta1A2aTaskRecord = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_a2a_task_record",
 	Fields: ubx.FieldMap{
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
-		"ContextId": ubx.FieldSpec{WireName: "context_id"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AppId":           ubx.FieldSpec{WireName: "app_id"},
+		"ContextId":       ubx.FieldSpec{WireName: "context_id"},
+		"Metadata":        ubx.FieldSpec{WireName: "metadata"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ServiceMetadata": ubx.FieldSpec{WireName: "service_metadata"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1A2aTaskRecord_StatusFields,
+			Kind:     "object",
+			Fields:   V1beta1A2aTaskRecord_StatusFields,
 		},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"Ttl":    ubx.FieldSpec{WireName: "ttl"},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

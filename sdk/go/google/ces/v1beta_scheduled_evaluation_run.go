@@ -53,7 +53,7 @@ type V1betaScheduledEvaluationRun_Request_OptimizationConfig struct {
 }
 
 type V1betaScheduledEvaluationRun_Request_PersonaRunConfigs struct {
-	Persona any
+	Persona   any
 	TaskCount any
 }
 
@@ -96,87 +96,87 @@ type V1betaScheduledEvaluationRun_SchedulingConfig struct {
 }
 
 var V1betaScheduledEvaluationRun_Request_Config_InputAudioConfigFields = ubx.FieldMap{
-		"AudioEncoding": ubx.FieldSpec{WireName: "audio_encoding"},
-		"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
-		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
-	}
+	"AudioEncoding":         ubx.FieldSpec{WireName: "audio_encoding"},
+	"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
+	"SampleRateHertz":       ubx.FieldSpec{WireName: "sample_rate_hertz"},
+}
 
 var V1betaScheduledEvaluationRun_Request_Config_OutputAudioConfigFields = ubx.FieldMap{
-		"AudioEncoding": ubx.FieldSpec{WireName: "audio_encoding"},
-		"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
-	}
+	"AudioEncoding":   ubx.FieldSpec{WireName: "audio_encoding"},
+	"SampleRateHertz": ubx.FieldSpec{WireName: "sample_rate_hertz"},
+}
 
 var V1betaScheduledEvaluationRun_Request_ConfigFields = ubx.FieldMap{
-		"EvaluationChannel": ubx.FieldSpec{WireName: "evaluation_channel"},
-		"InputAudioConfig": ubx.FieldSpec{
-			WireName: "input_audio_config",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_Request_Config_InputAudioConfigFields,
-		},
-		"OutputAudioConfig": ubx.FieldSpec{
-			WireName: "output_audio_config",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_Request_Config_OutputAudioConfigFields,
-		},
-		"ToolCallBehaviour": ubx.FieldSpec{WireName: "tool_call_behaviour"},
-	}
+	"EvaluationChannel": ubx.FieldSpec{WireName: "evaluation_channel"},
+	"InputAudioConfig": ubx.FieldSpec{
+		WireName: "input_audio_config",
+		Kind:     "object",
+		Fields:   V1betaScheduledEvaluationRun_Request_Config_InputAudioConfigFields,
+	},
+	"OutputAudioConfig": ubx.FieldSpec{
+		WireName: "output_audio_config",
+		Kind:     "object",
+		Fields:   V1betaScheduledEvaluationRun_Request_Config_OutputAudioConfigFields,
+	},
+	"ToolCallBehaviour": ubx.FieldSpec{WireName: "tool_call_behaviour"},
+}
 
 var V1betaScheduledEvaluationRun_Request_EvaluationRunCachingSettingsFields = ubx.FieldMap{
-		"RunCachingMode": ubx.FieldSpec{WireName: "run_caching_mode"},
-	}
+	"RunCachingMode": ubx.FieldSpec{WireName: "run_caching_mode"},
+}
 
 var V1betaScheduledEvaluationRun_Request_OptimizationConfigFields = ubx.FieldMap{
-		"AssistantSession": ubx.FieldSpec{WireName: "assistant_session"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"GenerateLossReport": ubx.FieldSpec{WireName: "generate_loss_report"},
-		"LossReport": ubx.FieldSpec{WireName: "loss_report"},
-		"ReportSummary": ubx.FieldSpec{WireName: "report_summary"},
-		"ShouldSuggestFix": ubx.FieldSpec{WireName: "should_suggest_fix"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"AssistantSession":   ubx.FieldSpec{WireName: "assistant_session"},
+	"ErrorMessage":       ubx.FieldSpec{WireName: "error_message"},
+	"GenerateLossReport": ubx.FieldSpec{WireName: "generate_loss_report"},
+	"LossReport":         ubx.FieldSpec{WireName: "loss_report"},
+	"ReportSummary":      ubx.FieldSpec{WireName: "report_summary"},
+	"ShouldSuggestFix":   ubx.FieldSpec{WireName: "should_suggest_fix"},
+	"Status":             ubx.FieldSpec{WireName: "status"},
+}
 
 var V1betaScheduledEvaluationRun_Request_PersonaRunConfigsFields = ubx.FieldMap{
-		"Persona": ubx.FieldSpec{WireName: "persona"},
-		"TaskCount": ubx.FieldSpec{WireName: "task_count"},
-	}
+	"Persona":   ubx.FieldSpec{WireName: "persona"},
+	"TaskCount": ubx.FieldSpec{WireName: "task_count"},
+}
 
 var V1betaScheduledEvaluationRun_RequestFields = ubx.FieldMap{
-		"App": ubx.FieldSpec{WireName: "app"},
-		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_Request_ConfigFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EvaluationDataset": ubx.FieldSpec{WireName: "evaluation_dataset"},
-		"EvaluationRunCachingSettings": ubx.FieldSpec{
-			WireName: "evaluation_run_caching_settings",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_Request_EvaluationRunCachingSettingsFields,
-		},
-		"Evaluations": ubx.FieldSpec{WireName: "evaluations"},
-		"GenerateLatencyReport": ubx.FieldSpec{WireName: "generate_latency_report"},
-		"GoldenRunMethod": ubx.FieldSpec{WireName: "golden_run_method"},
-		"OptimizationConfig": ubx.FieldSpec{
-			WireName: "optimization_config",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_Request_OptimizationConfigFields,
-		},
-		"PersonaRunConfigs": ubx.FieldSpec{
-			WireName: "persona_run_configs",
-			Kind: "list",
-			Fields: V1betaScheduledEvaluationRun_Request_PersonaRunConfigsFields,
-		},
-		"RunCount": ubx.FieldSpec{WireName: "run_count"},
-		"ScheduledEvaluationRun": ubx.FieldSpec{WireName: "scheduled_evaluation_run"},
-	}
+	"App":        ubx.FieldSpec{WireName: "app"},
+	"AppVersion": ubx.FieldSpec{WireName: "app_version"},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   V1betaScheduledEvaluationRun_Request_ConfigFields,
+	},
+	"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+	"EvaluationDataset": ubx.FieldSpec{WireName: "evaluation_dataset"},
+	"EvaluationRunCachingSettings": ubx.FieldSpec{
+		WireName: "evaluation_run_caching_settings",
+		Kind:     "object",
+		Fields:   V1betaScheduledEvaluationRun_Request_EvaluationRunCachingSettingsFields,
+	},
+	"Evaluations":           ubx.FieldSpec{WireName: "evaluations"},
+	"GenerateLatencyReport": ubx.FieldSpec{WireName: "generate_latency_report"},
+	"GoldenRunMethod":       ubx.FieldSpec{WireName: "golden_run_method"},
+	"OptimizationConfig": ubx.FieldSpec{
+		WireName: "optimization_config",
+		Kind:     "object",
+		Fields:   V1betaScheduledEvaluationRun_Request_OptimizationConfigFields,
+	},
+	"PersonaRunConfigs": ubx.FieldSpec{
+		WireName: "persona_run_configs",
+		Kind:     "list",
+		Fields:   V1betaScheduledEvaluationRun_Request_PersonaRunConfigsFields,
+	},
+	"RunCount":               ubx.FieldSpec{WireName: "run_count"},
+	"ScheduledEvaluationRun": ubx.FieldSpec{WireName: "scheduled_evaluation_run"},
+}
 
 var V1betaScheduledEvaluationRun_SchedulingConfigFields = ubx.FieldMap{
-		"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"DaysOfWeek": ubx.FieldSpec{WireName: "days_of_week"},
+	"Frequency":  ubx.FieldSpec{WireName: "frequency"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+}
 
 type V1betaScheduledEvaluationRunConfig struct {
 	// Optional. Whether this config is active
@@ -227,19 +227,19 @@ type V1betaScheduledEvaluationRunAttrs struct {
 var V1betaScheduledEvaluationRun = ubx.ResourceBinding{
 	WireType: "google_ces_v1beta_scheduled_evaluation_run",
 	Fields: ubx.FieldMap{
-		"Active": ubx.FieldSpec{WireName: "active"},
+		"Active":      ubx.FieldSpec{WireName: "active"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Request": ubx.FieldSpec{
 			WireName: "request",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_RequestFields,
+			Kind:     "object",
+			Fields:   V1betaScheduledEvaluationRun_RequestFields,
 		},
 		"SchedulingConfig": ubx.FieldSpec{
 			WireName: "scheduling_config",
-			Kind: "object",
-			Fields: V1betaScheduledEvaluationRun_SchedulingConfigFields,
+			Kind:     "object",
+			Fields:   V1betaScheduledEvaluationRun_SchedulingConfigFields,
 		},
 	},
 }

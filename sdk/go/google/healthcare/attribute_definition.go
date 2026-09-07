@@ -36,11 +36,11 @@ type AttributeDefinitionAttrs struct {
 var AttributeDefinition = ubx.ResourceBinding{
 	WireType: "google_healthcare_attribute_definition",
 	Fields: ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"ConsentDefaultValues": ubx.FieldSpec{WireName: "consent_default_values"},
+		"AllowedValues":           ubx.FieldSpec{WireName: "allowed_values"},
+		"Category":                ubx.FieldSpec{WireName: "category"},
+		"ConsentDefaultValues":    ubx.FieldSpec{WireName: "consent_default_values"},
 		"DataMappingDefaultValue": ubx.FieldSpec{WireName: "data_mapping_default_value"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -22,32 +22,32 @@ type V1beta1FeatureGroup_BigQuery struct {
 	EntityIdColumns any
 	// Optional. Set if the data source is not a time-series.
 	StaticDataSource any
-	TimeSeries any
+	TimeSeries       any
 }
 
 var V1beta1FeatureGroup_BigQuery_BigQuerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var V1beta1FeatureGroup_BigQuery_TimeSeriesFields = ubx.FieldMap{
-		"TimestampColumn": ubx.FieldSpec{WireName: "timestamp_column"},
-	}
+	"TimestampColumn": ubx.FieldSpec{WireName: "timestamp_column"},
+}
 
 var V1beta1FeatureGroup_BigQueryFields = ubx.FieldMap{
-		"BigQuerySource": ubx.FieldSpec{
-			WireName: "big_query_source",
-			Kind: "object",
-			Fields: V1beta1FeatureGroup_BigQuery_BigQuerySourceFields,
-		},
-		"Dense": ubx.FieldSpec{WireName: "dense"},
-		"EntityIdColumns": ubx.FieldSpec{WireName: "entity_id_columns"},
-		"StaticDataSource": ubx.FieldSpec{WireName: "static_data_source"},
-		"TimeSeries": ubx.FieldSpec{
-			WireName: "time_series",
-			Kind: "object",
-			Fields: V1beta1FeatureGroup_BigQuery_TimeSeriesFields,
-		},
-	}
+	"BigQuerySource": ubx.FieldSpec{
+		WireName: "big_query_source",
+		Kind:     "object",
+		Fields:   V1beta1FeatureGroup_BigQuery_BigQuerySourceFields,
+	},
+	"Dense":            ubx.FieldSpec{WireName: "dense"},
+	"EntityIdColumns":  ubx.FieldSpec{WireName: "entity_id_columns"},
+	"StaticDataSource": ubx.FieldSpec{WireName: "static_data_source"},
+	"TimeSeries": ubx.FieldSpec{
+		WireName: "time_series",
+		Kind:     "object",
+		Fields:   V1beta1FeatureGroup_BigQuery_TimeSeriesFields,
+	},
+}
 
 type V1beta1FeatureGroupConfig struct {
 	// Input source type for BigQuery Tables and Views.
@@ -90,13 +90,13 @@ var V1beta1FeatureGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigQuery": ubx.FieldSpec{
 			WireName: "big_query",
-			Kind: "object",
-			Fields: V1beta1FeatureGroup_BigQueryFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureGroup_BigQueryFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"Etag":             ubx.FieldSpec{WireName: "etag"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ServiceAgentType": ubx.FieldSpec{WireName: "service_agent_type"},
 	},
 }

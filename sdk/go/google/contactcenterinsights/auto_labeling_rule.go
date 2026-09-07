@@ -11,9 +11,9 @@ type AutoLabelingRule_Conditions struct {
 }
 
 var AutoLabelingRule_ConditionsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 type AutoLabelingRuleConfig struct {
 	// Whether the rule is active.
@@ -59,13 +59,13 @@ var AutoLabelingRule = ubx.ResourceBinding{
 		"Active": ubx.FieldSpec{WireName: "active"},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: AutoLabelingRule_ConditionsFields,
+			Kind:     "list",
+			Fields:   AutoLabelingRule_ConditionsFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LabelKey": ubx.FieldSpec{WireName: "label_key"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"LabelKey":     ubx.FieldSpec{WireName: "label_key"},
 		"LabelKeyType": ubx.FieldSpec{WireName: "label_key_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

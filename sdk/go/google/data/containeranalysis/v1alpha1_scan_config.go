@@ -14,7 +14,7 @@ type V1alpha1ScanConfigAttrs struct {
 	Description any
 	// Indicates whether the Scan is enabled.
 	Enabled any
-	Name any
+	Name    any
 	// Output only. The time this scan config was last updated.
 	UpdateTime any
 }

@@ -67,11 +67,11 @@ type V1betaInstance_NetworkConfig struct {
 }
 
 type V1betaInstance_Nodes struct {
-	Id any
-	Ip any
+	Id           any
+	Ip           any
 	IsHotStandby any
-	State any
-	ZoneId any
+	State        any
+	ZoneId       any
 }
 
 type V1betaInstance_ObservabilityConfig struct {
@@ -101,18 +101,18 @@ type V1betaInstance_ObservabilityConfig struct {
 
 type V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfos struct {
 	FullyQualifiedDomainName any
-	State any
+	State                    any
 }
 
 type V1betaInstance_PscInstanceConfig_PscAutoConnections struct {
-	ConsumerNetwork any
-	ConsumerNetworkStatus any
-	ConsumerProject any
-	DnsAutomationInfos any
-	IpAddress any
-	ServiceConnectionPolicy any
+	ConsumerNetwork                      any
+	ConsumerNetworkStatus                any
+	ConsumerProject                      any
+	DnsAutomationInfos                   any
+	IpAddress                            any
+	ServiceConnectionPolicy              any
 	ServiceConnectionPolicyCreationState any
-	Status any
+	Status                               any
 }
 
 type V1betaInstance_PscInstanceConfig_PscInterfaceConfigs struct {
@@ -176,12 +176,12 @@ type V1betaInstance_ReadPoolConfig_AutoScalingConfig_Policy struct {
 
 type V1betaInstance_ReadPoolConfig_AutoScalingConfig_Schedules struct {
 	CronExpression any
-	Description any
-	Disabled any
-	DurationSec any
-	MinNodeCount any
-	Name any
-	TimeZone any
+	Description    any
+	Disabled       any
+	DurationSec    any
+	MinNodeCount   any
+	Name           any
+	TimeZone       any
 }
 
 type V1betaInstance_ReadPoolConfig_AutoScalingConfig struct {
@@ -204,185 +204,185 @@ type V1betaInstance_UpdatePolicy struct {
 }
 
 var V1betaInstance_ClientConnectionConfig_SslConfigFields = ubx.FieldMap{
-		"CaSource": ubx.FieldSpec{WireName: "ca_source"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-	}
+	"CaSource": ubx.FieldSpec{WireName: "ca_source"},
+	"SslMode":  ubx.FieldSpec{WireName: "ssl_mode"},
+}
 
 var V1betaInstance_ClientConnectionConfigFields = ubx.FieldMap{
-		"RequireConnectors": ubx.FieldSpec{WireName: "require_connectors"},
-		"SslConfig": ubx.FieldSpec{
-			WireName: "ssl_config",
-			Kind: "object",
-			Fields: V1betaInstance_ClientConnectionConfig_SslConfigFields,
-		},
-	}
+	"RequireConnectors": ubx.FieldSpec{WireName: "require_connectors"},
+	"SslConfig": ubx.FieldSpec{
+		WireName: "ssl_config",
+		Kind:     "object",
+		Fields:   V1betaInstance_ClientConnectionConfig_SslConfigFields,
+	},
+}
 
 var V1betaInstance_ConnectionPoolConfigFields = ubx.FieldMap{
-		"AuthproxyPoolerCount": ubx.FieldSpec{WireName: "authproxy_pooler_count"},
-		"AuthproxyPoolerScalingType": ubx.FieldSpec{WireName: "authproxy_pooler_scaling_type"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Flags": ubx.FieldSpec{WireName: "flags"},
-		"PoolerCount": ubx.FieldSpec{WireName: "pooler_count"},
-		"PoolerScalingType": ubx.FieldSpec{WireName: "pooler_scaling_type"},
-	}
+	"AuthproxyPoolerCount":       ubx.FieldSpec{WireName: "authproxy_pooler_count"},
+	"AuthproxyPoolerScalingType": ubx.FieldSpec{WireName: "authproxy_pooler_scaling_type"},
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"Flags":                      ubx.FieldSpec{WireName: "flags"},
+	"PoolerCount":                ubx.FieldSpec{WireName: "pooler_count"},
+	"PoolerScalingType":          ubx.FieldSpec{WireName: "pooler_scaling_type"},
+}
 
 var V1betaInstance_GcaConfigFields = ubx.FieldMap{
-		"GcaEntitlement": ubx.FieldSpec{WireName: "gca_entitlement"},
-	}
+	"GcaEntitlement": ubx.FieldSpec{WireName: "gca_entitlement"},
+}
 
 var V1betaInstance_GeminiConfigFields = ubx.FieldMap{
-		"Entitled": ubx.FieldSpec{WireName: "entitled"},
-	}
+	"Entitled": ubx.FieldSpec{WireName: "entitled"},
+}
 
 var V1betaInstance_MachineConfigFields = ubx.FieldMap{
-		"CpuCount": ubx.FieldSpec{WireName: "cpu_count"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-	}
+	"CpuCount":    ubx.FieldSpec{WireName: "cpu_count"},
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+}
 
 var V1betaInstance_NetworkConfig_AuthorizedExternalNetworksFields = ubx.FieldMap{
-		"CidrRange": ubx.FieldSpec{WireName: "cidr_range"},
-	}
+	"CidrRange": ubx.FieldSpec{WireName: "cidr_range"},
+}
 
 var V1betaInstance_NetworkConfigFields = ubx.FieldMap{
-		"AllocatedIpRangeOverride": ubx.FieldSpec{WireName: "allocated_ip_range_override"},
-		"AuthorizedExternalNetworks": ubx.FieldSpec{
-			WireName: "authorized_external_networks",
-			Kind: "list",
-			Fields: V1betaInstance_NetworkConfig_AuthorizedExternalNetworksFields,
-		},
-		"EnableOutboundPublicIp": ubx.FieldSpec{WireName: "enable_outbound_public_ip"},
-		"EnablePublicIp": ubx.FieldSpec{WireName: "enable_public_ip"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
+	"AllocatedIpRangeOverride": ubx.FieldSpec{WireName: "allocated_ip_range_override"},
+	"AuthorizedExternalNetworks": ubx.FieldSpec{
+		WireName: "authorized_external_networks",
+		Kind:     "list",
+		Fields:   V1betaInstance_NetworkConfig_AuthorizedExternalNetworksFields,
+	},
+	"EnableOutboundPublicIp": ubx.FieldSpec{WireName: "enable_outbound_public_ip"},
+	"EnablePublicIp":         ubx.FieldSpec{WireName: "enable_public_ip"},
+	"Network":                ubx.FieldSpec{WireName: "network"},
+}
 
 var V1betaInstance_ObservabilityConfigFields = ubx.FieldMap{
-		"AssistiveExperiencesEnabled": ubx.FieldSpec{WireName: "assistive_experiences_enabled"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxQueryStringLength": ubx.FieldSpec{WireName: "max_query_string_length"},
-		"PreserveComments": ubx.FieldSpec{WireName: "preserve_comments"},
-		"QueryPlansPerMinute": ubx.FieldSpec{WireName: "query_plans_per_minute"},
-		"RecordApplicationTags": ubx.FieldSpec{WireName: "record_application_tags"},
-		"TrackActiveQueries": ubx.FieldSpec{WireName: "track_active_queries"},
-		"TrackActiveQueryPlan": ubx.FieldSpec{WireName: "track_active_query_plan"},
-		"TrackClientAddress": ubx.FieldSpec{WireName: "track_client_address"},
-		"TrackWaitEventTypes": ubx.FieldSpec{WireName: "track_wait_event_types"},
-		"TrackWaitEvents": ubx.FieldSpec{WireName: "track_wait_events"},
-	}
+	"AssistiveExperiencesEnabled": ubx.FieldSpec{WireName: "assistive_experiences_enabled"},
+	"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+	"MaxQueryStringLength":        ubx.FieldSpec{WireName: "max_query_string_length"},
+	"PreserveComments":            ubx.FieldSpec{WireName: "preserve_comments"},
+	"QueryPlansPerMinute":         ubx.FieldSpec{WireName: "query_plans_per_minute"},
+	"RecordApplicationTags":       ubx.FieldSpec{WireName: "record_application_tags"},
+	"TrackActiveQueries":          ubx.FieldSpec{WireName: "track_active_queries"},
+	"TrackActiveQueryPlan":        ubx.FieldSpec{WireName: "track_active_query_plan"},
+	"TrackClientAddress":          ubx.FieldSpec{WireName: "track_client_address"},
+	"TrackWaitEventTypes":         ubx.FieldSpec{WireName: "track_wait_event_types"},
+	"TrackWaitEvents":             ubx.FieldSpec{WireName: "track_wait_events"},
+}
 
 var V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields = ubx.FieldMap{
-		"FullyQualifiedDomainName": ubx.FieldSpec{WireName: "fully_qualified_domain_name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"FullyQualifiedDomainName": ubx.FieldSpec{WireName: "fully_qualified_domain_name"},
+	"State":                    ubx.FieldSpec{WireName: "state"},
+}
 
 var V1betaInstance_PscInstanceConfig_PscAutoConnectionsFields = ubx.FieldMap{
-		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
-		"ConsumerNetworkStatus": ubx.FieldSpec{WireName: "consumer_network_status"},
-		"ConsumerProject": ubx.FieldSpec{WireName: "consumer_project"},
-		"DnsAutomationInfos": ubx.FieldSpec{
-			WireName: "dns_automation_infos",
-			Kind: "list",
-			Fields: V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
-		},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"ServiceConnectionPolicy": ubx.FieldSpec{WireName: "service_connection_policy"},
-		"ServiceConnectionPolicyCreationState": ubx.FieldSpec{WireName: "service_connection_policy_creation_state"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"ConsumerNetwork":       ubx.FieldSpec{WireName: "consumer_network"},
+	"ConsumerNetworkStatus": ubx.FieldSpec{WireName: "consumer_network_status"},
+	"ConsumerProject":       ubx.FieldSpec{WireName: "consumer_project"},
+	"DnsAutomationInfos": ubx.FieldSpec{
+		WireName: "dns_automation_infos",
+		Kind:     "list",
+		Fields:   V1betaInstance_PscInstanceConfig_PscAutoConnections_DnsAutomationInfosFields,
+	},
+	"IpAddress":                            ubx.FieldSpec{WireName: "ip_address"},
+	"ServiceConnectionPolicy":              ubx.FieldSpec{WireName: "service_connection_policy"},
+	"ServiceConnectionPolicyCreationState": ubx.FieldSpec{WireName: "service_connection_policy_creation_state"},
+	"Status":                               ubx.FieldSpec{WireName: "status"},
+}
 
 var V1betaInstance_PscInstanceConfig_PscInterfaceConfigsFields = ubx.FieldMap{
-		"NetworkAttachmentResource": ubx.FieldSpec{WireName: "network_attachment_resource"},
-	}
+	"NetworkAttachmentResource": ubx.FieldSpec{WireName: "network_attachment_resource"},
+}
 
 var V1betaInstance_PscInstanceConfigFields = ubx.FieldMap{
-		"AllowedConsumerProjects": ubx.FieldSpec{WireName: "allowed_consumer_projects"},
-		"PscAutoConnectionPolicyState": ubx.FieldSpec{WireName: "psc_auto_connection_policy_state"},
-		"PscAutoConnections": ubx.FieldSpec{
-			WireName: "psc_auto_connections",
-			Kind: "list",
-			Fields: V1betaInstance_PscInstanceConfig_PscAutoConnectionsFields,
-		},
-		"PscAutoDnsState": ubx.FieldSpec{WireName: "psc_auto_dns_state"},
-		"PscDnsName": ubx.FieldSpec{WireName: "psc_dns_name"},
-		"PscInterfaceConfigs": ubx.FieldSpec{
-			WireName: "psc_interface_configs",
-			Kind: "list",
-			Fields: V1betaInstance_PscInstanceConfig_PscInterfaceConfigsFields,
-		},
-		"ServiceAttachmentLink": ubx.FieldSpec{WireName: "service_attachment_link"},
-	}
+	"AllowedConsumerProjects":      ubx.FieldSpec{WireName: "allowed_consumer_projects"},
+	"PscAutoConnectionPolicyState": ubx.FieldSpec{WireName: "psc_auto_connection_policy_state"},
+	"PscAutoConnections": ubx.FieldSpec{
+		WireName: "psc_auto_connections",
+		Kind:     "list",
+		Fields:   V1betaInstance_PscInstanceConfig_PscAutoConnectionsFields,
+	},
+	"PscAutoDnsState": ubx.FieldSpec{WireName: "psc_auto_dns_state"},
+	"PscDnsName":      ubx.FieldSpec{WireName: "psc_dns_name"},
+	"PscInterfaceConfigs": ubx.FieldSpec{
+		WireName: "psc_interface_configs",
+		Kind:     "list",
+		Fields:   V1betaInstance_PscInstanceConfig_PscInterfaceConfigsFields,
+	},
+	"ServiceAttachmentLink": ubx.FieldSpec{WireName: "service_attachment_link"},
+}
 
 var V1betaInstance_PscInstanceInfoFields = ubx.FieldMap{
-		"EffectivePscAutoConnectionPolicy": ubx.FieldSpec{WireName: "effective_psc_auto_connection_policy"},
-		"EffectivePscAutoDnsEnabled": ubx.FieldSpec{WireName: "effective_psc_auto_dns_enabled"},
-		"PscAutoDnsNames": ubx.FieldSpec{WireName: "psc_auto_dns_names"},
-		"ServiceConnectionPolicy": ubx.FieldSpec{WireName: "service_connection_policy"},
-	}
+	"EffectivePscAutoConnectionPolicy": ubx.FieldSpec{WireName: "effective_psc_auto_connection_policy"},
+	"EffectivePscAutoDnsEnabled":       ubx.FieldSpec{WireName: "effective_psc_auto_dns_enabled"},
+	"PscAutoDnsNames":                  ubx.FieldSpec{WireName: "psc_auto_dns_names"},
+	"ServiceConnectionPolicy":          ubx.FieldSpec{WireName: "service_connection_policy"},
+}
 
 var V1betaInstance_QueryInsightsConfigFields = ubx.FieldMap{
-		"QueryPlansPerMinute": ubx.FieldSpec{WireName: "query_plans_per_minute"},
-		"QueryStringLength": ubx.FieldSpec{WireName: "query_string_length"},
-		"RecordApplicationTags": ubx.FieldSpec{WireName: "record_application_tags"},
-		"RecordClientAddress": ubx.FieldSpec{WireName: "record_client_address"},
-	}
+	"QueryPlansPerMinute":   ubx.FieldSpec{WireName: "query_plans_per_minute"},
+	"QueryStringLength":     ubx.FieldSpec{WireName: "query_string_length"},
+	"RecordApplicationTags": ubx.FieldSpec{WireName: "record_application_tags"},
+	"RecordClientAddress":   ubx.FieldSpec{WireName: "record_client_address"},
+}
 
 var V1betaInstance_ReadPoolConfig_AutoScalingConfig_Policy_CpuUtilizationFields = ubx.FieldMap{
-		"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
-	}
+	"UtilizationTarget": ubx.FieldSpec{WireName: "utilization_target"},
+}
 
 var V1betaInstance_ReadPoolConfig_AutoScalingConfig_PolicyFields = ubx.FieldMap{
-		"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
-		"CpuUtilization": ubx.FieldSpec{
-			WireName: "cpu_utilization",
-			Kind: "object",
-			Fields: V1betaInstance_ReadPoolConfig_AutoScalingConfig_Policy_CpuUtilizationFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-	}
+	"CoolDownPeriodSec": ubx.FieldSpec{WireName: "cool_down_period_sec"},
+	"CpuUtilization": ubx.FieldSpec{
+		WireName: "cpu_utilization",
+		Kind:     "object",
+		Fields:   V1betaInstance_ReadPoolConfig_AutoScalingConfig_Policy_CpuUtilizationFields,
+	},
+	"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+	"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
+}
 
 var V1betaInstance_ReadPoolConfig_AutoScalingConfig_SchedulesFields = ubx.FieldMap{
-		"CronExpression": ubx.FieldSpec{WireName: "cron_expression"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DurationSec": ubx.FieldSpec{WireName: "duration_sec"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"CronExpression": ubx.FieldSpec{WireName: "cron_expression"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"Disabled":       ubx.FieldSpec{WireName: "disabled"},
+	"DurationSec":    ubx.FieldSpec{WireName: "duration_sec"},
+	"MinNodeCount":   ubx.FieldSpec{WireName: "min_node_count"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"TimeZone":       ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var V1betaInstance_ReadPoolConfig_AutoScalingConfigFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: V1betaInstance_ReadPoolConfig_AutoScalingConfig_PolicyFields,
-		},
-		"Schedules": ubx.FieldSpec{
-			WireName: "schedules",
-			Kind: "list",
-			Fields: V1betaInstance_ReadPoolConfig_AutoScalingConfig_SchedulesFields,
-		},
-	}
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   V1betaInstance_ReadPoolConfig_AutoScalingConfig_PolicyFields,
+	},
+	"Schedules": ubx.FieldSpec{
+		WireName: "schedules",
+		Kind:     "list",
+		Fields:   V1betaInstance_ReadPoolConfig_AutoScalingConfig_SchedulesFields,
+	},
+}
 
 var V1betaInstance_ReadPoolConfigFields = ubx.FieldMap{
-		"AutoScalingConfig": ubx.FieldSpec{
-			WireName: "auto_scaling_config",
-			Kind: "object",
-			Fields: V1betaInstance_ReadPoolConfig_AutoScalingConfigFields,
-		},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-	}
+	"AutoScalingConfig": ubx.FieldSpec{
+		WireName: "auto_scaling_config",
+		Kind:     "object",
+		Fields:   V1betaInstance_ReadPoolConfig_AutoScalingConfigFields,
+	},
+	"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+}
 
 var V1betaInstance_UpdatePolicyFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1betaInstance_NodesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"IsHotStandby": ubx.FieldSpec{WireName: "is_hot_standby"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"ZoneId": ubx.FieldSpec{WireName: "zone_id"},
-	}
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"Ip":           ubx.FieldSpec{WireName: "ip"},
+	"IsHotStandby": ubx.FieldSpec{WireName: "is_hot_standby"},
+	"State":        ubx.FieldSpec{WireName: "state"},
+	"ZoneId":       ubx.FieldSpec{WireName: "zone_id"},
+}
 
 type V1betaInstanceConfig struct {
 	// Optional. Specifies whether an instance needs to spin up. Once the instance is active, the activation policy can be updated to the `NEVER` to stop the instance. Likewise, the activation policy can be updated to `ALWAYS` to start the instance. There are restrictions around when an instance can/cannot be activated (for example, a read pool instance should be stopped before stopping primary etc.). Please refer to the API documentation for more details.
@@ -512,79 +512,79 @@ var V1betaInstance = ubx.ResourceBinding{
 	WireType: "google_alloydb_v1beta_instance",
 	Fields: ubx.FieldMap{
 		"ActivationPolicy": ubx.FieldSpec{WireName: "activation_policy"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":      ubx.FieldSpec{WireName: "annotations"},
 		"AvailabilityType": ubx.FieldSpec{WireName: "availability_type"},
 		"ClientConnectionConfig": ubx.FieldSpec{
 			WireName: "client_connection_config",
-			Kind: "object",
-			Fields: V1betaInstance_ClientConnectionConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_ClientConnectionConfigFields,
 		},
 		"ConnectionPoolConfig": ubx.FieldSpec{
 			WireName: "connection_pool_config",
-			Kind: "object",
-			Fields: V1betaInstance_ConnectionPoolConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_ConnectionPoolConfigFields,
 		},
 		"DataApiAccess": ubx.FieldSpec{WireName: "data_api_access"},
 		"DatabaseFlags": ubx.FieldSpec{WireName: "database_flags"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
 		"GcaConfig": ubx.FieldSpec{
 			WireName: "gca_config",
-			Kind: "object",
-			Fields: V1betaInstance_GcaConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_GcaConfigFields,
 		},
 		"GceZone": ubx.FieldSpec{WireName: "gce_zone"},
 		"GeminiConfig": ubx.FieldSpec{
 			WireName: "gemini_config",
-			Kind: "object",
-			Fields: V1betaInstance_GeminiConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_GeminiConfigFields,
 		},
 		"InstanceType": ubx.FieldSpec{WireName: "instance_type"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
 		"MachineConfig": ubx.FieldSpec{
 			WireName: "machine_config",
-			Kind: "object",
-			Fields: V1betaInstance_MachineConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_MachineConfigFields,
 		},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: V1betaInstance_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_NetworkConfigFields,
 		},
 		"ObservabilityConfig": ubx.FieldSpec{
 			WireName: "observability_config",
-			Kind: "object",
-			Fields: V1betaInstance_ObservabilityConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_ObservabilityConfigFields,
 		},
 		"PscInstanceConfig": ubx.FieldSpec{
 			WireName: "psc_instance_config",
-			Kind: "object",
-			Fields: V1betaInstance_PscInstanceConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_PscInstanceConfigFields,
 		},
 		"PscInstanceInfo": ubx.FieldSpec{
 			WireName: "psc_instance_info",
-			Kind: "object",
-			Fields: V1betaInstance_PscInstanceInfoFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_PscInstanceInfoFields,
 		},
 		"QueryInsightsConfig": ubx.FieldSpec{
 			WireName: "query_insights_config",
-			Kind: "object",
-			Fields: V1betaInstance_QueryInsightsConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_QueryInsightsConfigFields,
 		},
 		"ReadPoolConfig": ubx.FieldSpec{
 			WireName: "read_pool_config",
-			Kind: "object",
-			Fields: V1betaInstance_ReadPoolConfigFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_ReadPoolConfigFields,
 		},
 		"UpdatePolicy": ubx.FieldSpec{
 			WireName: "update_policy",
-			Kind: "object",
-			Fields: V1betaInstance_UpdatePolicyFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_UpdatePolicyFields,
 		},
 		"WritableNode": ubx.FieldSpec{
 			WireName: "writable_node",
-			Kind: "object",
-			Fields: V1betaInstance_NodesFields,
+			Kind:     "object",
+			Fields:   V1betaInstance_NodesFields,
 		},
 	},
 }

@@ -23,22 +23,22 @@ type Connector_Source struct {
 }
 
 var Connector_ClientCacheFields = ubx.FieldMap{
-		"EntityIdIncluded": ubx.FieldSpec{WireName: "entity_id_included"},
-		"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
-	}
+	"EntityIdIncluded":        ubx.FieldSpec{WireName: "entity_id_included"},
+	"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
+}
 
 var Connector_Source_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+}
 
 var Connector_SourceFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: Connector_Source_FilesFields,
-		},
-	}
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   Connector_Source_FilesFields,
+	},
+}
 
 type ConnectorConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
@@ -86,16 +86,16 @@ var Connector = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ClientCache": ubx.FieldSpec{
 			WireName: "client_cache",
-			Kind: "object",
-			Fields: Connector_ClientCacheFields,
+			Kind:     "object",
+			Fields:   Connector_ClientCacheFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Connector_SourceFields,
+			Kind:     "object",
+			Fields:   Connector_SourceFields,
 		},
 	},
 }

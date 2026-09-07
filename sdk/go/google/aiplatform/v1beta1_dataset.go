@@ -9,34 +9,34 @@ type V1beta1Dataset_EncryptionSpec struct {
 }
 
 type V1beta1Dataset_SavedQueries struct {
-	AnnotationFilter any
-	AnnotationSpecCount any
-	CreateTime any
-	DisplayName any
-	Etag any
-	Metadata any
-	Name any
-	ProblemType any
+	AnnotationFilter      any
+	AnnotationSpecCount   any
+	CreateTime            any
+	DisplayName           any
+	Etag                  any
+	Metadata              any
+	Name                  any
+	ProblemType           any
 	SupportAutomlTraining any
-	UpdateTime any
+	UpdateTime            any
 }
 
 var V1beta1Dataset_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1Dataset_SavedQueriesFields = ubx.FieldMap{
-		"AnnotationFilter": ubx.FieldSpec{WireName: "annotation_filter"},
-		"AnnotationSpecCount": ubx.FieldSpec{WireName: "annotation_spec_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProblemType": ubx.FieldSpec{WireName: "problem_type"},
-		"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AnnotationFilter":      ubx.FieldSpec{WireName: "annotation_filter"},
+	"AnnotationSpecCount":   ubx.FieldSpec{WireName: "annotation_spec_count"},
+	"CreateTime":            ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
+	"Etag":                  ubx.FieldSpec{WireName: "etag"},
+	"Metadata":              ubx.FieldSpec{WireName: "metadata"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"ProblemType":           ubx.FieldSpec{WireName: "problem_type"},
+	"SupportAutomlTraining": ubx.FieldSpec{WireName: "support_automl_training"},
+	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1beta1DatasetConfig struct {
 	// The description of the Dataset.
@@ -101,18 +101,18 @@ var V1beta1Dataset = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Dataset_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Dataset_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"Metadata":          ubx.FieldSpec{WireName: "metadata"},
 		"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
-		"ModelReference": ubx.FieldSpec{WireName: "model_reference"},
+		"ModelReference":    ubx.FieldSpec{WireName: "model_reference"},
 		"SavedQueries": ubx.FieldSpec{
 			WireName: "saved_queries",
-			Kind: "list",
-			Fields: V1beta1Dataset_SavedQueriesFields,
+			Kind:     "list",
+			Fields:   V1beta1Dataset_SavedQueriesFields,
 		},
 	},
 }

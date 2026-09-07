@@ -99,96 +99,96 @@ type Experiment_VariantsHistory struct {
 }
 
 var Experiment_Definition_VersionVariants_VariantsFields = ubx.FieldMap{
-		"IsControlGroup": ubx.FieldSpec{WireName: "is_control_group"},
-		"TrafficAllocation": ubx.FieldSpec{WireName: "traffic_allocation"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"IsControlGroup":    ubx.FieldSpec{WireName: "is_control_group"},
+	"TrafficAllocation": ubx.FieldSpec{WireName: "traffic_allocation"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 var Experiment_Definition_VersionVariantsFields = ubx.FieldMap{
-		"Variants": ubx.FieldSpec{
-			WireName: "variants",
-			Kind: "list",
-			Fields: Experiment_Definition_VersionVariants_VariantsFields,
-		},
-	}
+	"Variants": ubx.FieldSpec{
+		WireName: "variants",
+		Kind:     "list",
+		Fields:   Experiment_Definition_VersionVariants_VariantsFields,
+	},
+}
 
 var Experiment_DefinitionFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"VersionVariants": ubx.FieldSpec{
-			WireName: "version_variants",
-			Kind: "object",
-			Fields: Experiment_Definition_VersionVariantsFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+	"VersionVariants": ubx.FieldSpec{
+		WireName: "version_variants",
+		Kind:     "object",
+		Fields:   Experiment_Definition_VersionVariantsFields,
+	},
+}
 
 var Experiment_Result_VersionMetrics_Metrics_ConfidenceIntervalFields = ubx.FieldMap{
-		"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
-		"LowerBound": ubx.FieldSpec{WireName: "lower_bound"},
-		"Ratio": ubx.FieldSpec{WireName: "ratio"},
-		"UpperBound": ubx.FieldSpec{WireName: "upper_bound"},
-	}
+	"ConfidenceLevel": ubx.FieldSpec{WireName: "confidence_level"},
+	"LowerBound":      ubx.FieldSpec{WireName: "lower_bound"},
+	"Ratio":           ubx.FieldSpec{WireName: "ratio"},
+	"UpperBound":      ubx.FieldSpec{WireName: "upper_bound"},
+}
 
 var Experiment_Result_VersionMetrics_MetricsFields = ubx.FieldMap{
-		"ConfidenceInterval": ubx.FieldSpec{
-			WireName: "confidence_interval",
-			Kind: "object",
-			Fields: Experiment_Result_VersionMetrics_Metrics_ConfidenceIntervalFields,
-		},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"CountType": ubx.FieldSpec{WireName: "count_type"},
-		"Ratio": ubx.FieldSpec{WireName: "ratio"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ConfidenceInterval": ubx.FieldSpec{
+		WireName: "confidence_interval",
+		Kind:     "object",
+		Fields:   Experiment_Result_VersionMetrics_Metrics_ConfidenceIntervalFields,
+	},
+	"Count":     ubx.FieldSpec{WireName: "count"},
+	"CountType": ubx.FieldSpec{WireName: "count_type"},
+	"Ratio":     ubx.FieldSpec{WireName: "ratio"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Experiment_Result_VersionMetricsFields = ubx.FieldMap{
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Experiment_Result_VersionMetrics_MetricsFields,
-		},
-		"SessionCount": ubx.FieldSpec{WireName: "session_count"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Experiment_Result_VersionMetrics_MetricsFields,
+	},
+	"SessionCount": ubx.FieldSpec{WireName: "session_count"},
+	"Version":      ubx.FieldSpec{WireName: "version"},
+}
 
 var Experiment_ResultFields = ubx.FieldMap{
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"VersionMetrics": ubx.FieldSpec{
-			WireName: "version_metrics",
-			Kind: "list",
-			Fields: Experiment_Result_VersionMetricsFields,
-		},
-	}
+	"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
+	"VersionMetrics": ubx.FieldSpec{
+		WireName: "version_metrics",
+		Kind:     "list",
+		Fields:   Experiment_Result_VersionMetricsFields,
+	},
+}
 
 var Experiment_RolloutConfig_RolloutStepsFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
-		"TrafficPercent": ubx.FieldSpec{WireName: "traffic_percent"},
-	}
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"MinDuration":    ubx.FieldSpec{WireName: "min_duration"},
+	"TrafficPercent": ubx.FieldSpec{WireName: "traffic_percent"},
+}
 
 var Experiment_RolloutConfigFields = ubx.FieldMap{
-		"FailureCondition": ubx.FieldSpec{WireName: "failure_condition"},
-		"RolloutCondition": ubx.FieldSpec{WireName: "rollout_condition"},
-		"RolloutSteps": ubx.FieldSpec{
-			WireName: "rollout_steps",
-			Kind: "list",
-			Fields: Experiment_RolloutConfig_RolloutStepsFields,
-		},
-	}
+	"FailureCondition": ubx.FieldSpec{WireName: "failure_condition"},
+	"RolloutCondition": ubx.FieldSpec{WireName: "rollout_condition"},
+	"RolloutSteps": ubx.FieldSpec{
+		WireName: "rollout_steps",
+		Kind:     "list",
+		Fields:   Experiment_RolloutConfig_RolloutStepsFields,
+	},
+}
 
 var Experiment_RolloutStateFields = ubx.FieldMap{
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-		"StepIndex": ubx.FieldSpec{WireName: "step_index"},
-	}
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"Step":      ubx.FieldSpec{WireName: "step"},
+	"StepIndex": ubx.FieldSpec{WireName: "step_index"},
+}
 
 var Experiment_VariantsHistoryFields = ubx.FieldMap{
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VersionVariants": ubx.FieldSpec{
-			WireName: "version_variants",
-			Kind: "object",
-			Fields: Experiment_Definition_VersionVariantsFields,
-		},
-	}
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"VersionVariants": ubx.FieldSpec{
+		WireName: "version_variants",
+		Kind:     "object",
+		Fields:   Experiment_Definition_VersionVariantsFields,
+	},
+}
 
 type ExperimentConfig struct {
 	// Output only. The timestamp when this resource was created. (AI-inferred)
@@ -262,37 +262,37 @@ var Experiment = ubx.ResourceBinding{
 		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Definition": ubx.FieldSpec{
 			WireName: "definition",
-			Kind: "object",
-			Fields: Experiment_DefinitionFields,
+			Kind:     "object",
+			Fields:   Experiment_DefinitionFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"EndTime":          ubx.FieldSpec{WireName: "end_time"},
 		"ExperimentLength": ubx.FieldSpec{WireName: "experiment_length"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"LastUpdateTime":   ubx.FieldSpec{WireName: "last_update_time"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Result": ubx.FieldSpec{
 			WireName: "result",
-			Kind: "object",
-			Fields: Experiment_ResultFields,
+			Kind:     "object",
+			Fields:   Experiment_ResultFields,
 		},
 		"RolloutConfig": ubx.FieldSpec{
 			WireName: "rollout_config",
-			Kind: "object",
-			Fields: Experiment_RolloutConfigFields,
+			Kind:     "object",
+			Fields:   Experiment_RolloutConfigFields,
 		},
 		"RolloutFailureReason": ubx.FieldSpec{WireName: "rollout_failure_reason"},
 		"RolloutState": ubx.FieldSpec{
 			WireName: "rollout_state",
-			Kind: "object",
-			Fields: Experiment_RolloutStateFields,
+			Kind:     "object",
+			Fields:   Experiment_RolloutStateFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":     ubx.FieldSpec{WireName: "state"},
 		"VariantsHistory": ubx.FieldSpec{
 			WireName: "variants_history",
-			Kind: "list",
-			Fields: Experiment_VariantsHistoryFields,
+			Kind:     "list",
+			Fields:   Experiment_VariantsHistoryFields,
 		},
 	},
 }

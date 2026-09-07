@@ -4,14 +4,14 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1ReportConfig_GroupPreferencesetAssignments struct {
-	Group any
+	Group         any
 	PreferenceSet any
 }
 
 var V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
-	}
+	"Group":         ubx.FieldSpec{WireName: "group"},
+	"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
+}
 
 type V1alpha1ReportConfigConfig struct {
 	// Free-text description.
@@ -44,8 +44,8 @@ var V1alpha1ReportConfig = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GroupPreferencesetAssignments": ubx.FieldSpec{
 			WireName: "group_preferenceset_assignments",
-			Kind: "list",
-			Fields: V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
+			Kind:     "list",
+			Fields:   V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
 		},
 	},
 }

@@ -13,10 +13,10 @@ type TimeSery_Metadata struct {
 }
 
 var TimeSery_MetadataFields = ubx.FieldMap{
-		"MaxBlobSequenceLength": ubx.FieldSpec{WireName: "max_blob_sequence_length"},
-		"MaxStep": ubx.FieldSpec{WireName: "max_step"},
-		"MaxWallTime": ubx.FieldSpec{WireName: "max_wall_time"},
-	}
+	"MaxBlobSequenceLength": ubx.FieldSpec{WireName: "max_blob_sequence_length"},
+	"MaxStep":               ubx.FieldSpec{WireName: "max_step"},
+	"MaxWallTime":           ubx.FieldSpec{WireName: "max_wall_time"},
+}
 
 type TimeSeryConfig struct {
 	// Description of this TensorboardTimeSeries.
@@ -63,14 +63,14 @@ var TimeSery = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: TimeSery_MetadataFields,
+			Kind:     "object",
+			Fields:   TimeSery_MetadataFields,
 		},
 		"PluginData": ubx.FieldSpec{WireName: "plugin_data"},
 		"PluginName": ubx.FieldSpec{WireName: "plugin_name"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+		"ValueType":  ubx.FieldSpec{WireName: "value_type"},
 	},
 }

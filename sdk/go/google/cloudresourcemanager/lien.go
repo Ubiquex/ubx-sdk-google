@@ -36,11 +36,11 @@ type LienAttrs struct {
 var Lien = ubx.ResourceBinding{
 	WireType: "google_cloudresourcemanager_lien",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Origin": ubx.FieldSpec{WireName: "origin"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"CreateTime":   ubx.FieldSpec{WireName: "create_time"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Origin":       ubx.FieldSpec{WireName: "origin"},
+		"Parent":       ubx.FieldSpec{WireName: "parent"},
+		"Reason":       ubx.FieldSpec{WireName: "reason"},
 		"Restrictions": ubx.FieldSpec{WireName: "restrictions"},
 	},
 }

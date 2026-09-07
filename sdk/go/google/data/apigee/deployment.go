@@ -4,52 +4,52 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Deployment_Instances_DeployedRevisions struct {
 	Percentage any
-	Revision any
+	Revision   any
 }
 
 type Deployment_Instances_DeployedRoutes struct {
-	Basepath any
-	Envgroup any
+	Basepath    any
+	Envgroup    any
 	Environment any
-	Percentage any
+	Percentage  any
 }
 
 type Deployment_Instances struct {
 	DeployedRevisions any
-	DeployedRoutes any
-	Instance any
+	DeployedRoutes    any
+	Instance          any
 }
 
 type Deployment_Pods struct {
-	AppVersion any
-	DeploymentStatus any
+	AppVersion           any
+	DeploymentStatus     any
 	DeploymentStatusTime any
-	DeploymentTime any
-	PodName any
-	PodStatus any
-	PodStatusTime any
-	StatusCode any
-	StatusCodeDetails any
+	DeploymentTime       any
+	PodName              any
+	PodStatus            any
+	PodStatusTime        any
+	StatusCode           any
+	StatusCodeDetails    any
 }
 
 type Deployment_RouteConflicts_ConflictingDeployment struct {
-	ApiProxy any
-	Basepath any
+	ApiProxy    any
+	Basepath    any
 	Environment any
-	Revision any
+	Revision    any
 }
 
 type Deployment_RouteConflicts struct {
 	ConflictingDeployment any
-	Description any
-	EnvironmentGroup any
+	Description           any
+	EnvironmentGroup      any
 }
 
 type DeploymentConfig struct {
@@ -67,7 +67,7 @@ type DeploymentAttrs struct {
 	Errors any
 	// Status reported by each runtime instance. **Note**: This field is displayed only when viewing deployment status.
 	Instances any
-	Name any
+	Name      any
 	// Status reported by runtime pods. **Note**: **This field is deprecated**. Runtime versions 1.3 and above report instance level status rather than pod status.
 	Pods any
 	// Output only. The type of the deployment (standard or extensible) Deployed proxy revision will be marked as extensible in following 2 cases. 1. The deployed proxy revision uses extensible policies. 2. If a environment supports flowhooks and flow hook is configured.

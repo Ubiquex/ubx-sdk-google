@@ -49,9 +49,9 @@ type MirroringEndpointGroupAssociationAttrs struct {
 var MirroringEndpointGroupAssociation = ubx.ResourceBinding{
 	WireType: "google_networksecurity_mirroring_endpoint_group_association",
 	Fields: ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
 		"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
+		"Network":                ubx.FieldSpec{WireName: "network"},
 	},
 }

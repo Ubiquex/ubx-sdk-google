@@ -18,17 +18,17 @@ type RegistryBook_AggregatedData struct {
 
 type RegistryBook_ClaimedScopesInfo struct {
 	DisplayName any
-	Id any
-	Name any
+	Id          any
+	Name        any
 }
 
 var RegistryBook_AggregatedDataFields = ubx.FieldMap{
-		"CustomRangesCount": ubx.FieldSpec{WireName: "custom_ranges_count"},
-		"CustomRealmsCount": ubx.FieldSpec{WireName: "custom_realms_count"},
-		"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
-		"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
-		"UniqueScopesCount": ubx.FieldSpec{WireName: "unique_scopes_count"},
-	}
+	"CustomRangesCount":     ubx.FieldSpec{WireName: "custom_ranges_count"},
+	"CustomRealmsCount":     ubx.FieldSpec{WireName: "custom_realms_count"},
+	"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
+	"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
+	"UniqueScopesCount":     ubx.FieldSpec{WireName: "unique_scopes_count"},
+}
 
 type RegistryBookConfig struct {
 	// Aggregated data for the RegistryBook.
@@ -65,11 +65,11 @@ var RegistryBook = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedData": ubx.FieldSpec{
 			WireName: "aggregated_data",
-			Kind: "object",
-			Fields: RegistryBook_AggregatedDataFields,
+			Kind:     "object",
+			Fields:   RegistryBook_AggregatedDataFields,
 		},
 		"ClaimedScopes": ubx.FieldSpec{WireName: "claimed_scopes"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

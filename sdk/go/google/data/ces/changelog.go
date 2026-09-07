@@ -20,7 +20,7 @@ type ChangelogAttrs struct {
 	Description any
 	// Output only. Display name of the change. It typically should be the display name of the resource that was changed.
 	DisplayName any
-	Name any
+	Name        any
 	// Output only. The new resource after the change.
 	NewResource any
 	// Output only. The original resource before the change.

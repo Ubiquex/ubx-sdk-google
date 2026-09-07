@@ -12,9 +12,9 @@ type SimulationConfig struct {
 }
 
 type SimulationAttrs struct {
-	CloudProvider any
-	CreateTime any
-	Name any
+	CloudProvider                any
+	CreateTime                   any
+	Name                         any
 	ResourceValueConfigsMetadata any
 }
 

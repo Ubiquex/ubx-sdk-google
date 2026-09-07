@@ -29,7 +29,7 @@ type Interconnect_ApplicationAwareInterconnect struct {
 type Interconnect_CircuitInfos struct {
 	// The customer-side demarcation ID for the interconnect circuit. (AI-inferred)
 	CustomerDemarcId any
-	GoogleCircuitId any
+	GoogleCircuitId  any
 	// The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred)
 	GoogleDemarcId any
 }
@@ -37,12 +37,12 @@ type Interconnect_CircuitInfos struct {
 type Interconnect_ExpectedOutages struct {
 	// The list of circuit names that are affected by this outage. (AI-inferred)
 	AffectedCircuits any
-	Description any
+	Description      any
 	// The time at which the expected outage is scheduled to end. (AI-inferred)
 	EndTime any
 	// The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred)
 	IssueType any
-	Name any
+	Name      any
 	// The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred)
 	Source any
 	// The start time of the outage, in RFC3339 format. (AI-inferred)
@@ -71,50 +71,50 @@ type Interconnect_Params struct {
 }
 
 var Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields = ubx.FieldMap{
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-		"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
-	}
+	"Percentage":   ubx.FieldSpec{WireName: "percentage"},
+	"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
+}
 
 var Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields = ubx.FieldMap{
-		"BandwidthPercentages": ubx.FieldSpec{
-			WireName: "bandwidth_percentages",
-			Kind: "list",
-			Fields: Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-		},
-	}
+	"BandwidthPercentages": ubx.FieldSpec{
+		WireName: "bandwidth_percentages",
+		Kind:     "list",
+		Fields:   Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+	},
+}
 
 var Interconnect_ApplicationAwareInterconnectFields = ubx.FieldMap{
-		"BandwidthPercentagePolicy": ubx.FieldSpec{
-			WireName: "bandwidth_percentage_policy",
-			Kind: "object",
-			Fields: Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
-		},
-		"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
-		"ShapeAveragePercentages": ubx.FieldSpec{
-			WireName: "shape_average_percentages",
-			Kind: "list",
-			Fields: Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-		},
-		"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
-	}
+	"BandwidthPercentagePolicy": ubx.FieldSpec{
+		WireName: "bandwidth_percentage_policy",
+		Kind:     "object",
+		Fields:   Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
+	},
+	"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
+	"ShapeAveragePercentages": ubx.FieldSpec{
+		WireName: "shape_average_percentages",
+		Kind:     "list",
+		Fields:   Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+	},
+	"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
+}
 
 var Interconnect_Macsec_PreSharedKeysFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Interconnect_MacsecFields = ubx.FieldMap{
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"PreSharedKeys": ubx.FieldSpec{
-			WireName: "pre_shared_keys",
-			Kind: "list",
-			Fields: Interconnect_Macsec_PreSharedKeysFields,
-		},
-	}
+	"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
+	"PreSharedKeys": ubx.FieldSpec{
+		WireName: "pre_shared_keys",
+		Kind:     "list",
+		Fields:   Interconnect_Macsec_PreSharedKeysFields,
+	},
+}
 
 var Interconnect_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type InterconnectConfig struct {
 	// Enable or disable the application awareness feature on this Cloud Interconnect.
@@ -241,37 +241,37 @@ type InterconnectAttrs struct {
 var Interconnect = ubx.ResourceBinding{
 	WireType: "google_compute_interconnect",
 	Fields: ubx.FieldMap{
-		"AaiEnabled": ubx.FieldSpec{WireName: "aai_enabled"},
+		"AaiEnabled":   ubx.FieldSpec{WireName: "aai_enabled"},
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
 		"ApplicationAwareInterconnect": ubx.FieldSpec{
 			WireName: "application_aware_interconnect",
-			Kind: "object",
-			Fields: Interconnect_ApplicationAwareInterconnectFields,
+			Kind:     "object",
+			Fields:   Interconnect_ApplicationAwareInterconnectFields,
 		},
 		"AvailableFeatures": ubx.FieldSpec{WireName: "available_features"},
-		"CustomerName": ubx.FieldSpec{WireName: "customer_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InterconnectType": ubx.FieldSpec{WireName: "interconnect_type"},
-		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LinkType": ubx.FieldSpec{WireName: "link_type"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"CustomerName":      ubx.FieldSpec{WireName: "customer_name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"InterconnectType":  ubx.FieldSpec{WireName: "interconnect_type"},
+		"LabelFingerprint":  ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"LinkType":          ubx.FieldSpec{WireName: "link_type"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
 		"Macsec": ubx.FieldSpec{
 			WireName: "macsec",
-			Kind: "object",
-			Fields: Interconnect_MacsecFields,
+			Kind:     "object",
+			Fields:   Interconnect_MacsecFields,
 		},
-		"MacsecEnabled": ubx.FieldSpec{WireName: "macsec_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MacsecEnabled":   ubx.FieldSpec{WireName: "macsec_enabled"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NocContactEmail": ubx.FieldSpec{WireName: "noc_contact_email"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Interconnect_ParamsFields,
+			Kind:     "object",
+			Fields:   Interconnect_ParamsFields,
 		},
-		"RemoteLocation": ubx.FieldSpec{WireName: "remote_location"},
-		"RequestedFeatures": ubx.FieldSpec{WireName: "requested_features"},
+		"RemoteLocation":     ubx.FieldSpec{WireName: "remote_location"},
+		"RequestedFeatures":  ubx.FieldSpec{WireName: "requested_features"},
 		"RequestedLinkCount": ubx.FieldSpec{WireName: "requested_link_count"},
-		"Subzone": ubx.FieldSpec{WireName: "subzone"},
+		"Subzone":            ubx.FieldSpec{WireName: "subzone"},
 	},
 }

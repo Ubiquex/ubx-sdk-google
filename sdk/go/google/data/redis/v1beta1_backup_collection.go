@@ -18,7 +18,7 @@ type V1beta1BackupCollectionAttrs struct {
 	KmsKey any
 	// Output only. The last time a backup was created in the backup collection.
 	LastBackupTime any
-	Name any
+	Name           any
 	// Output only. Total number of backups in the backup collection.
 	TotalBackupCount any
 	// Output only. Total size of all backups in the backup collection.

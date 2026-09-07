@@ -290,287 +290,287 @@ type Instance_VpcAccess struct {
 }
 
 var Instance_BinaryAuthorizationFields = ubx.FieldMap{
-		"BreakglassJustification": ubx.FieldSpec{WireName: "breakglass_justification"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"UseDefault": ubx.FieldSpec{WireName: "use_default"},
-	}
+	"BreakglassJustification": ubx.FieldSpec{WireName: "breakglass_justification"},
+	"Policy":                  ubx.FieldSpec{WireName: "policy"},
+	"UseDefault":              ubx.FieldSpec{WireName: "use_default"},
+}
 
 var Instance_Containers_BuildInfoFields = ubx.FieldMap{
-		"FunctionTarget": ubx.FieldSpec{WireName: "function_target"},
-		"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
-	}
+	"FunctionTarget": ubx.FieldSpec{WireName: "function_target"},
+	"SourceLocation": ubx.FieldSpec{WireName: "source_location"},
+}
 
 var Instance_Containers_Env_ValueSource_SecretKeyRefFields = ubx.FieldMap{
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Secret":  ubx.FieldSpec{WireName: "secret"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Instance_Containers_Env_ValueSourceFields = ubx.FieldMap{
-		"SecretKeyRef": ubx.FieldSpec{
-			WireName: "secret_key_ref",
-			Kind: "object",
-			Fields: Instance_Containers_Env_ValueSource_SecretKeyRefFields,
-		},
-	}
+	"SecretKeyRef": ubx.FieldSpec{
+		WireName: "secret_key_ref",
+		Kind:     "object",
+		Fields:   Instance_Containers_Env_ValueSource_SecretKeyRefFields,
+	},
+}
 
 var Instance_Containers_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueSource": ubx.FieldSpec{
-			WireName: "value_source",
-			Kind: "object",
-			Fields: Instance_Containers_Env_ValueSourceFields,
-		},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+	"ValueSource": ubx.FieldSpec{
+		WireName: "value_source",
+		Kind:     "object",
+		Fields:   Instance_Containers_Env_ValueSourceFields,
+	},
+}
 
 var Instance_Containers_LivenessProbe_GrpcFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Instance_Containers_LivenessProbe_HttpGet_HttpHeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Instance_Containers_LivenessProbe_HttpGetFields = ubx.FieldMap{
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: Instance_Containers_LivenessProbe_HttpGet_HttpHeadersFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   Instance_Containers_LivenessProbe_HttpGet_HttpHeadersFields,
+	},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var Instance_Containers_LivenessProbe_TcpSocketFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var Instance_Containers_LivenessProbeFields = ubx.FieldMap{
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbe_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbe_TcpSocketFields,
-		},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbe_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbe_TcpSocketFields,
+	},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var Instance_Containers_PortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var Instance_Containers_ResourcesFields = ubx.FieldMap{
-		"CpuIdle": ubx.FieldSpec{WireName: "cpu_idle"},
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"StartupCpuBoost": ubx.FieldSpec{WireName: "startup_cpu_boost"},
-	}
+	"CpuIdle":         ubx.FieldSpec{WireName: "cpu_idle"},
+	"Limits":          ubx.FieldSpec{WireName: "limits"},
+	"StartupCpuBoost": ubx.FieldSpec{WireName: "startup_cpu_boost"},
+}
 
 var Instance_Containers_SourceCode_CloudStorageSourceFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+}
 
 var Instance_Containers_SourceCode_InlinedSource_SourcesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"Filename": ubx.FieldSpec{WireName: "filename"},
+}
 
 var Instance_Containers_SourceCode_InlinedSourceFields = ubx.FieldMap{
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Instance_Containers_SourceCode_InlinedSource_SourcesFields,
-		},
-	}
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Instance_Containers_SourceCode_InlinedSource_SourcesFields,
+	},
+}
 
 var Instance_Containers_SourceCodeFields = ubx.FieldMap{
-		"CloudStorageSource": ubx.FieldSpec{
-			WireName: "cloud_storage_source",
-			Kind: "object",
-			Fields: Instance_Containers_SourceCode_CloudStorageSourceFields,
-		},
-		"InlinedSource": ubx.FieldSpec{
-			WireName: "inlined_source",
-			Kind: "object",
-			Fields: Instance_Containers_SourceCode_InlinedSourceFields,
-		},
-	}
+	"CloudStorageSource": ubx.FieldSpec{
+		WireName: "cloud_storage_source",
+		Kind:     "object",
+		Fields:   Instance_Containers_SourceCode_CloudStorageSourceFields,
+	},
+	"InlinedSource": ubx.FieldSpec{
+		WireName: "inlined_source",
+		Kind:     "object",
+		Fields:   Instance_Containers_SourceCode_InlinedSourceFields,
+	},
+}
 
 var Instance_Containers_VolumeMountsFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SubPath": ubx.FieldSpec{WireName: "sub_path"},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"SubPath":   ubx.FieldSpec{WireName: "sub_path"},
+}
 
 var Instance_ContainersFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"BaseImageUri": ubx.FieldSpec{WireName: "base_image_uri"},
-		"BuildInfo": ubx.FieldSpec{
-			WireName: "build_info",
-			Kind: "object",
-			Fields: Instance_Containers_BuildInfoFields,
-		},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: Instance_Containers_EnvFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbeFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Instance_Containers_PortsFields,
-		},
-		"ReadinessProbe": ubx.FieldSpec{
-			WireName: "readiness_probe",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbeFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: Instance_Containers_ResourcesFields,
-		},
-		"SandboxLauncher": ubx.FieldSpec{WireName: "sandbox_launcher"},
-		"SourceCode": ubx.FieldSpec{
-			WireName: "source_code",
-			Kind: "object",
-			Fields: Instance_Containers_SourceCodeFields,
-		},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: Instance_Containers_LivenessProbeFields,
-		},
-		"VolumeMounts": ubx.FieldSpec{
-			WireName: "volume_mounts",
-			Kind: "list",
-			Fields: Instance_Containers_VolumeMountsFields,
-		},
-		"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
-	}
+	"Args":         ubx.FieldSpec{WireName: "args"},
+	"BaseImageUri": ubx.FieldSpec{WireName: "base_image_uri"},
+	"BuildInfo": ubx.FieldSpec{
+		WireName: "build_info",
+		Kind:     "object",
+		Fields:   Instance_Containers_BuildInfoFields,
+	},
+	"Command":   ubx.FieldSpec{WireName: "command"},
+	"DependsOn": ubx.FieldSpec{WireName: "depends_on"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   Instance_Containers_EnvFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbeFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Instance_Containers_PortsFields,
+	},
+	"ReadinessProbe": ubx.FieldSpec{
+		WireName: "readiness_probe",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbeFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   Instance_Containers_ResourcesFields,
+	},
+	"SandboxLauncher": ubx.FieldSpec{WireName: "sandbox_launcher"},
+	"SourceCode": ubx.FieldSpec{
+		WireName: "source_code",
+		Kind:     "object",
+		Fields:   Instance_Containers_SourceCodeFields,
+	},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   Instance_Containers_LivenessProbeFields,
+	},
+	"VolumeMounts": ubx.FieldSpec{
+		WireName: "volume_mounts",
+		Kind:     "list",
+		Fields:   Instance_Containers_VolumeMountsFields,
+	},
+	"WorkingDir": ubx.FieldSpec{WireName: "working_dir"},
+}
 
 var Instance_NodeSelectorFields = ubx.FieldMap{
-		"Accelerator": ubx.FieldSpec{WireName: "accelerator"},
-	}
+	"Accelerator": ubx.FieldSpec{WireName: "accelerator"},
+}
 
 var Instance_ConditionsFields = ubx.FieldMap{
-		"ExecutionReason": ubx.FieldSpec{WireName: "execution_reason"},
-		"InstanceReason": ubx.FieldSpec{WireName: "instance_reason"},
-		"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"RevisionReason": ubx.FieldSpec{WireName: "revision_reason"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExecutionReason":    ubx.FieldSpec{WireName: "execution_reason"},
+	"InstanceReason":     ubx.FieldSpec{WireName: "instance_reason"},
+	"LastTransitionTime": ubx.FieldSpec{WireName: "last_transition_time"},
+	"Message":            ubx.FieldSpec{WireName: "message"},
+	"Reason":             ubx.FieldSpec{WireName: "reason"},
+	"RevisionReason":     ubx.FieldSpec{WireName: "revision_reason"},
+	"Severity":           ubx.FieldSpec{WireName: "severity"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Instance_Volumes_CloudSqlInstanceFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{WireName: "instances"},
-	}
+	"Instances": ubx.FieldSpec{WireName: "instances"},
+}
 
 var Instance_Volumes_EmptyDirFields = ubx.FieldMap{
-		"Medium": ubx.FieldSpec{WireName: "medium"},
-		"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
-	}
+	"Medium":    ubx.FieldSpec{WireName: "medium"},
+	"SizeLimit": ubx.FieldSpec{WireName: "size_limit"},
+}
 
 var Instance_Volumes_GcsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-	}
+	"Bucket":       ubx.FieldSpec{WireName: "bucket"},
+	"MountOptions": ubx.FieldSpec{WireName: "mount_options"},
+	"ReadOnly":     ubx.FieldSpec{WireName: "read_only"},
+}
 
 var Instance_Volumes_NfsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"Path":     ubx.FieldSpec{WireName: "path"},
+	"ReadOnly": ubx.FieldSpec{WireName: "read_only"},
+	"Server":   ubx.FieldSpec{WireName: "server"},
+}
 
 var Instance_Volumes_Secret_ItemsFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Mode":    ubx.FieldSpec{WireName: "mode"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Instance_Volumes_SecretFields = ubx.FieldMap{
-		"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Instance_Volumes_Secret_ItemsFields,
-		},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-	}
+	"DefaultMode": ubx.FieldSpec{WireName: "default_mode"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Instance_Volumes_Secret_ItemsFields,
+	},
+	"Secret": ubx.FieldSpec{WireName: "secret"},
+}
 
 var Instance_VolumesFields = ubx.FieldMap{
-		"CloudSqlInstance": ubx.FieldSpec{
-			WireName: "cloud_sql_instance",
-			Kind: "object",
-			Fields: Instance_Volumes_CloudSqlInstanceFields,
-		},
-		"EmptyDir": ubx.FieldSpec{
-			WireName: "empty_dir",
-			Kind: "object",
-			Fields: Instance_Volumes_EmptyDirFields,
-		},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: Instance_Volumes_GcsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nfs": ubx.FieldSpec{
-			WireName: "nfs",
-			Kind: "object",
-			Fields: Instance_Volumes_NfsFields,
-		},
-		"Secret": ubx.FieldSpec{
-			WireName: "secret",
-			Kind: "object",
-			Fields: Instance_Volumes_SecretFields,
-		},
-	}
+	"CloudSqlInstance": ubx.FieldSpec{
+		WireName: "cloud_sql_instance",
+		Kind:     "object",
+		Fields:   Instance_Volumes_CloudSqlInstanceFields,
+	},
+	"EmptyDir": ubx.FieldSpec{
+		WireName: "empty_dir",
+		Kind:     "object",
+		Fields:   Instance_Volumes_EmptyDirFields,
+	},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   Instance_Volumes_GcsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Nfs": ubx.FieldSpec{
+		WireName: "nfs",
+		Kind:     "object",
+		Fields:   Instance_Volumes_NfsFields,
+	},
+	"Secret": ubx.FieldSpec{
+		WireName: "secret",
+		Kind:     "object",
+		Fields:   Instance_Volumes_SecretFields,
+	},
+}
 
 var Instance_VpcAccess_NetworkInterfacesFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	"Tags":       ubx.FieldSpec{WireName: "tags"},
+}
 
 var Instance_VpcAccessFields = ubx.FieldMap{
-		"Connector": ubx.FieldSpec{WireName: "connector"},
-		"Egress": ubx.FieldSpec{WireName: "egress"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: Instance_VpcAccess_NetworkInterfacesFields,
-		},
-	}
+	"Connector": ubx.FieldSpec{WireName: "connector"},
+	"Egress":    ubx.FieldSpec{WireName: "egress"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   Instance_VpcAccess_NetworkInterfacesFields,
+	},
+}
 
 type InstanceConfig struct {
 	// Optional. Arbitrary key/value metadata attached to this resource for client tooling to read; not used by Google Cloud itself for filtering or lookup. (AI-inferred)
@@ -710,50 +710,50 @@ var Instance = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"BinaryAuthorization": ubx.FieldSpec{
 			WireName: "binary_authorization",
-			Kind: "object",
-			Fields: Instance_BinaryAuthorizationFields,
+			Kind:     "object",
+			Fields:   Instance_BinaryAuthorizationFields,
 		},
-		"Client": ubx.FieldSpec{WireName: "client"},
+		"Client":        ubx.FieldSpec{WireName: "client"},
 		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
 		"Containers": ubx.FieldSpec{
 			WireName: "containers",
-			Kind: "list",
-			Fields: Instance_ContainersFields,
+			Kind:     "list",
+			Fields:   Instance_ContainersFields,
 		},
-		"DefaultUriDisabled": ubx.FieldSpec{WireName: "default_uri_disabled"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EncryptionKey": ubx.FieldSpec{WireName: "encryption_key"},
+		"DefaultUriDisabled":            ubx.FieldSpec{WireName: "default_uri_disabled"},
+		"Description":                   ubx.FieldSpec{WireName: "description"},
+		"EncryptionKey":                 ubx.FieldSpec{WireName: "encryption_key"},
 		"EncryptionKeyRevocationAction": ubx.FieldSpec{WireName: "encryption_key_revocation_action"},
 		"EncryptionKeyShutdownDuration": ubx.FieldSpec{WireName: "encryption_key_shutdown_duration"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"GpuZonalRedundancyDisabled": ubx.FieldSpec{WireName: "gpu_zonal_redundancy_disabled"},
-		"IapEnabled": ubx.FieldSpec{WireName: "iap_enabled"},
-		"Ingress": ubx.FieldSpec{WireName: "ingress"},
-		"InvokerIamDisabled": ubx.FieldSpec{WireName: "invoker_iam_disabled"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":                          ubx.FieldSpec{WireName: "etag"},
+		"GpuZonalRedundancyDisabled":    ubx.FieldSpec{WireName: "gpu_zonal_redundancy_disabled"},
+		"IapEnabled":                    ubx.FieldSpec{WireName: "iap_enabled"},
+		"Ingress":                       ubx.FieldSpec{WireName: "ingress"},
+		"InvokerIamDisabled":            ubx.FieldSpec{WireName: "invoker_iam_disabled"},
+		"Labels":                        ubx.FieldSpec{WireName: "labels"},
+		"LaunchStage":                   ubx.FieldSpec{WireName: "launch_stage"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"NodeSelector": ubx.FieldSpec{
 			WireName: "node_selector",
-			Kind: "object",
-			Fields: Instance_NodeSelectorFields,
+			Kind:     "object",
+			Fields:   Instance_NodeSelectorFields,
 		},
-		"RestartPolicy": ubx.FieldSpec{WireName: "restart_policy"},
+		"RestartPolicy":  ubx.FieldSpec{WireName: "restart_policy"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"TerminalCondition": ubx.FieldSpec{
 			WireName: "terminal_condition",
-			Kind: "object",
-			Fields: Instance_ConditionsFields,
+			Kind:     "object",
+			Fields:   Instance_ConditionsFields,
 		},
 		"Volumes": ubx.FieldSpec{
 			WireName: "volumes",
-			Kind: "list",
-			Fields: Instance_VolumesFields,
+			Kind:     "list",
+			Fields:   Instance_VolumesFields,
 		},
 		"VpcAccess": ubx.FieldSpec{
 			WireName: "vpc_access",
-			Kind: "object",
-			Fields: Instance_VpcAccessFields,
+			Kind:     "object",
+			Fields:   Instance_VpcAccessFields,
 		},
 	},
 }

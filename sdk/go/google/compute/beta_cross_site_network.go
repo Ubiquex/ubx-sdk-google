@@ -29,6 +29,6 @@ var BetaCrossSiteNetwork = ubx.ResourceBinding{
 	WireType: "google_compute_beta_cross_site_network",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

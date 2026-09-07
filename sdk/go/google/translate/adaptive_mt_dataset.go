@@ -36,9 +36,9 @@ type AdaptiveMtDatasetAttrs struct {
 var AdaptiveMtDataset = ubx.ResourceBinding{
 	WireType: "google_translate_adaptive_mt_dataset",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExampleCount": ubx.FieldSpec{WireName: "example_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"ExampleCount":       ubx.FieldSpec{WireName: "example_count"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
 		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
 	},

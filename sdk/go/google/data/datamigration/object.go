@@ -39,7 +39,7 @@ type ObjectAttrs struct {
 	Error any
 	// Metadata for heterogeneous migration jobs objects.
 	HeterogeneousMetadata any
-	Name any
+	Name                  any
 	// Output only. The phase of the migration job object.
 	Phase any
 	// An identifier for the Migration Job Object.

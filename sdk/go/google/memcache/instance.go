@@ -84,53 +84,53 @@ type Instance_NodeConfig struct {
 }
 
 var Instance_InstanceMessagesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
-		},
-	}
+	"Day":      ubx.FieldSpec{WireName: "day"},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Instance_MaintenancePolicy_WeeklyMaintenanceWindow_StartTimeFields,
+	},
+}
 
 var Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WeeklyMaintenanceWindow": ubx.FieldSpec{
-			WireName: "weekly_maintenance_window",
-			Kind: "list",
-			Fields: Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
-		},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+	"WeeklyMaintenanceWindow": ubx.FieldSpec{
+		WireName: "weekly_maintenance_window",
+		Kind:     "list",
+		Fields:   Instance_MaintenancePolicy_WeeklyMaintenanceWindowFields,
+	},
+}
 
 var Instance_MaintenanceScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":              ubx.FieldSpec{WireName: "end_time"},
+	"ScheduleDeadlineTime": ubx.FieldSpec{WireName: "schedule_deadline_time"},
+	"StartTime":            ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Instance_NodeConfigFields = ubx.FieldMap{
-		"CpuCount": ubx.FieldSpec{WireName: "cpu_count"},
-		"MemorySizeMb": ubx.FieldSpec{WireName: "memory_size_mb"},
-	}
+	"CpuCount":     ubx.FieldSpec{WireName: "cpu_count"},
+	"MemorySizeMb": ubx.FieldSpec{WireName: "memory_size_mb"},
+}
 
 var Instance_MemcacheNodes_ParametersFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Params": ubx.FieldSpec{WireName: "params"},
-	}
+	"Id":     ubx.FieldSpec{WireName: "id"},
+	"Params": ubx.FieldSpec{WireName: "params"},
+}
 
 type InstanceConfig struct {
 	// The full name of the Google Compute Engine [network](/compute/docs/networks-and-firewalls#networks) to which the instance is connected. If left unspecified, the `default` network will be used.
@@ -218,38 +218,38 @@ var Instance = ubx.ResourceBinding{
 	WireType: "google_memcache_instance",
 	Fields: ubx.FieldMap{
 		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
 		"InstanceMessages": ubx.FieldSpec{
 			WireName: "instance_messages",
-			Kind: "list",
-			Fields: Instance_InstanceMessagesFields,
+			Kind:     "list",
+			Fields:   Instance_InstanceMessagesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenancePolicyFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: Instance_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   Instance_MaintenanceScheduleFields,
 		},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
-		"MemcacheVersion": ubx.FieldSpec{WireName: "memcache_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MemcacheVersion":    ubx.FieldSpec{WireName: "memcache_version"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"NodeConfig": ubx.FieldSpec{
 			WireName: "node_config",
-			Kind: "object",
-			Fields: Instance_NodeConfigFields,
+			Kind:     "object",
+			Fields:   Instance_NodeConfigFields,
 		},
 		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "object",
-			Fields: Instance_MemcacheNodes_ParametersFields,
+			Kind:     "object",
+			Fields:   Instance_MemcacheNodes_ParametersFields,
 		},
 		"ReservedIpRangeId": ubx.FieldSpec{WireName: "reserved_ip_range_id"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
+		"Zones":             ubx.FieldSpec{WireName: "zones"},
 	},
 }

@@ -102,78 +102,78 @@ type Device_EndpointVerificationSpecificAttributes struct {
 }
 
 var Device_AndroidSpecificAttributesFields = ubx.FieldMap{
-		"CtsProfileMatch": ubx.FieldSpec{WireName: "cts_profile_match"},
-		"EnabledUnknownSources": ubx.FieldSpec{WireName: "enabled_unknown_sources"},
-		"HasPotentiallyHarmfulApps": ubx.FieldSpec{WireName: "has_potentially_harmful_apps"},
-		"OwnerProfileAccount": ubx.FieldSpec{WireName: "owner_profile_account"},
-		"OwnershipPrivilege": ubx.FieldSpec{WireName: "ownership_privilege"},
-		"SupportsWorkProfile": ubx.FieldSpec{WireName: "supports_work_profile"},
-		"VerifiedBoot": ubx.FieldSpec{WireName: "verified_boot"},
-		"VerifyAppsEnabled": ubx.FieldSpec{WireName: "verify_apps_enabled"},
-	}
+	"CtsProfileMatch":           ubx.FieldSpec{WireName: "cts_profile_match"},
+	"EnabledUnknownSources":     ubx.FieldSpec{WireName: "enabled_unknown_sources"},
+	"HasPotentiallyHarmfulApps": ubx.FieldSpec{WireName: "has_potentially_harmful_apps"},
+	"OwnerProfileAccount":       ubx.FieldSpec{WireName: "owner_profile_account"},
+	"OwnershipPrivilege":        ubx.FieldSpec{WireName: "ownership_privilege"},
+	"SupportsWorkProfile":       ubx.FieldSpec{WireName: "supports_work_profile"},
+	"VerifiedBoot":              ubx.FieldSpec{WireName: "verified_boot"},
+	"VerifyAppsEnabled":         ubx.FieldSpec{WireName: "verify_apps_enabled"},
+}
 
 var Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfoFields = ubx.FieldMap{
-		"BrowserManagementState": ubx.FieldSpec{WireName: "browser_management_state"},
-		"BrowserVersion": ubx.FieldSpec{WireName: "browser_version"},
-		"IsBuiltInDnsClientEnabled": ubx.FieldSpec{WireName: "is_built_in_dns_client_enabled"},
-		"IsBulkDataEntryAnalysisEnabled": ubx.FieldSpec{WireName: "is_bulk_data_entry_analysis_enabled"},
-		"IsChromeCleanupEnabled": ubx.FieldSpec{WireName: "is_chrome_cleanup_enabled"},
-		"IsChromeRemoteDesktopAppBlocked": ubx.FieldSpec{WireName: "is_chrome_remote_desktop_app_blocked"},
-		"IsFileDownloadAnalysisEnabled": ubx.FieldSpec{WireName: "is_file_download_analysis_enabled"},
-		"IsFileUploadAnalysisEnabled": ubx.FieldSpec{WireName: "is_file_upload_analysis_enabled"},
-		"IsRealtimeUrlCheckEnabled": ubx.FieldSpec{WireName: "is_realtime_url_check_enabled"},
-		"IsSecurityEventAnalysisEnabled": ubx.FieldSpec{WireName: "is_security_event_analysis_enabled"},
-		"IsSiteIsolationEnabled": ubx.FieldSpec{WireName: "is_site_isolation_enabled"},
-		"IsThirdPartyBlockingEnabled": ubx.FieldSpec{WireName: "is_third_party_blocking_enabled"},
-		"PasswordProtectionWarningTrigger": ubx.FieldSpec{WireName: "password_protection_warning_trigger"},
-		"SafeBrowsingProtectionLevel": ubx.FieldSpec{WireName: "safe_browsing_protection_level"},
-	}
+	"BrowserManagementState":           ubx.FieldSpec{WireName: "browser_management_state"},
+	"BrowserVersion":                   ubx.FieldSpec{WireName: "browser_version"},
+	"IsBuiltInDnsClientEnabled":        ubx.FieldSpec{WireName: "is_built_in_dns_client_enabled"},
+	"IsBulkDataEntryAnalysisEnabled":   ubx.FieldSpec{WireName: "is_bulk_data_entry_analysis_enabled"},
+	"IsChromeCleanupEnabled":           ubx.FieldSpec{WireName: "is_chrome_cleanup_enabled"},
+	"IsChromeRemoteDesktopAppBlocked":  ubx.FieldSpec{WireName: "is_chrome_remote_desktop_app_blocked"},
+	"IsFileDownloadAnalysisEnabled":    ubx.FieldSpec{WireName: "is_file_download_analysis_enabled"},
+	"IsFileUploadAnalysisEnabled":      ubx.FieldSpec{WireName: "is_file_upload_analysis_enabled"},
+	"IsRealtimeUrlCheckEnabled":        ubx.FieldSpec{WireName: "is_realtime_url_check_enabled"},
+	"IsSecurityEventAnalysisEnabled":   ubx.FieldSpec{WireName: "is_security_event_analysis_enabled"},
+	"IsSiteIsolationEnabled":           ubx.FieldSpec{WireName: "is_site_isolation_enabled"},
+	"IsThirdPartyBlockingEnabled":      ubx.FieldSpec{WireName: "is_third_party_blocking_enabled"},
+	"PasswordProtectionWarningTrigger": ubx.FieldSpec{WireName: "password_protection_warning_trigger"},
+	"SafeBrowsingProtectionLevel":      ubx.FieldSpec{WireName: "safe_browsing_protection_level"},
+}
 
 var Device_EndpointVerificationSpecificAttributes_BrowserAttributesFields = ubx.FieldMap{
-		"ChromeBrowserInfo": ubx.FieldSpec{
-			WireName: "chrome_browser_info",
-			Kind: "object",
-			Fields: Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfoFields,
-		},
-		"ChromeProfileId": ubx.FieldSpec{WireName: "chrome_profile_id"},
-		"LastProfileSyncTime": ubx.FieldSpec{WireName: "last_profile_sync_time"},
-	}
+	"ChromeBrowserInfo": ubx.FieldSpec{
+		WireName: "chrome_browser_info",
+		Kind:     "object",
+		Fields:   Device_EndpointVerificationSpecificAttributes_BrowserAttributes_ChromeBrowserInfoFields,
+	},
+	"ChromeProfileId":     ubx.FieldSpec{WireName: "chrome_profile_id"},
+	"LastProfileSyncTime": ubx.FieldSpec{WireName: "last_profile_sync_time"},
+}
 
 var Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MajorVersion": ubx.FieldSpec{WireName: "major_version"},
-		"MinorVersion": ubx.FieldSpec{WireName: "minor_version"},
-	}
+	"Id":           ubx.FieldSpec{WireName: "id"},
+	"MajorVersion": ubx.FieldSpec{WireName: "major_version"},
+	"MinorVersion": ubx.FieldSpec{WireName: "minor_version"},
+}
 
 var Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields = ubx.FieldMap{
-		"CertificateTemplate": ubx.FieldSpec{
-			WireName: "certificate_template",
-			Kind: "object",
-			Fields: Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields,
-		},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-		"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
-		"ValidationState": ubx.FieldSpec{WireName: "validation_state"},
-		"ValidityExpirationTime": ubx.FieldSpec{WireName: "validity_expiration_time"},
-		"ValidityStartTime": ubx.FieldSpec{WireName: "validity_start_time"},
-	}
+	"CertificateTemplate": ubx.FieldSpec{
+		WireName: "certificate_template",
+		Kind:     "object",
+		Fields:   Device_EndpointVerificationSpecificAttributes_CertificateAttributes_CertificateTemplateFields,
+	},
+	"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
+	"Issuer":                 ubx.FieldSpec{WireName: "issuer"},
+	"SerialNumber":           ubx.FieldSpec{WireName: "serial_number"},
+	"Subject":                ubx.FieldSpec{WireName: "subject"},
+	"Thumbprint":             ubx.FieldSpec{WireName: "thumbprint"},
+	"ValidationState":        ubx.FieldSpec{WireName: "validation_state"},
+	"ValidityExpirationTime": ubx.FieldSpec{WireName: "validity_expiration_time"},
+	"ValidityStartTime":      ubx.FieldSpec{WireName: "validity_start_time"},
+}
 
 var Device_EndpointVerificationSpecificAttributesFields = ubx.FieldMap{
-		"AdditionalSignals": ubx.FieldSpec{WireName: "additional_signals"},
-		"BrowserAttributes": ubx.FieldSpec{
-			WireName: "browser_attributes",
-			Kind: "list",
-			Fields: Device_EndpointVerificationSpecificAttributes_BrowserAttributesFields,
-		},
-		"CertificateAttributes": ubx.FieldSpec{
-			WireName: "certificate_attributes",
-			Kind: "list",
-			Fields: Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields,
-		},
-	}
+	"AdditionalSignals": ubx.FieldSpec{WireName: "additional_signals"},
+	"BrowserAttributes": ubx.FieldSpec{
+		WireName: "browser_attributes",
+		Kind:     "list",
+		Fields:   Device_EndpointVerificationSpecificAttributes_BrowserAttributesFields,
+	},
+	"CertificateAttributes": ubx.FieldSpec{
+		WireName: "certificate_attributes",
+		Kind:     "list",
+		Fields:   Device_EndpointVerificationSpecificAttributes_CertificateAttributesFields,
+	},
+}
 
 type DeviceConfig struct {
 	// Resource representing the Android specific attributes of a Device.
@@ -266,19 +266,19 @@ var Device = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AndroidSpecificAttributes": ubx.FieldSpec{
 			WireName: "android_specific_attributes",
-			Kind: "object",
-			Fields: Device_AndroidSpecificAttributesFields,
+			Kind:     "object",
+			Fields:   Device_AndroidSpecificAttributesFields,
 		},
 		"AssetTag": ubx.FieldSpec{WireName: "asset_tag"},
 		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
 		"EndpointVerificationSpecificAttributes": ubx.FieldSpec{
 			WireName: "endpoint_verification_specific_attributes",
-			Kind: "object",
-			Fields: Device_EndpointVerificationSpecificAttributesFields,
+			Kind:     "object",
+			Fields:   Device_EndpointVerificationSpecificAttributesFields,
 		},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"LastSyncTime": ubx.FieldSpec{WireName: "last_sync_time"},
-		"SerialNumber": ubx.FieldSpec{WireName: "serial_number"},
+		"Hostname":         ubx.FieldSpec{WireName: "hostname"},
+		"LastSyncTime":     ubx.FieldSpec{WireName: "last_sync_time"},
+		"SerialNumber":     ubx.FieldSpec{WireName: "serial_number"},
 		"WifiMacAddresses": ubx.FieldSpec{WireName: "wifi_mac_addresses"},
 	},
 }

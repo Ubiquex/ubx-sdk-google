@@ -56,12 +56,12 @@ type PostureDeploymentAttrs struct {
 var PostureDeployment = ubx.ResourceBinding{
 	WireType: "google_securityposture_posture_deployment",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PostureId": ubx.FieldSpec{WireName: "posture_id"},
+		"Annotations":       ubx.FieldSpec{WireName: "annotations"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"Etag":              ubx.FieldSpec{WireName: "etag"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"PostureId":         ubx.FieldSpec{WireName: "posture_id"},
 		"PostureRevisionId": ubx.FieldSpec{WireName: "posture_revision_id"},
-		"TargetResource": ubx.FieldSpec{WireName: "target_resource"},
+		"TargetResource":    ubx.FieldSpec{WireName: "target_resource"},
 	},
 }

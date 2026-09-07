@@ -46,12 +46,12 @@ type V1beta1BackupPolicyAttrs struct {
 var V1beta1BackupPolicy = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_backup_policy",
 	Fields: ubx.FieldMap{
-		"DailyBackupLimit": ubx.FieldSpec{WireName: "daily_backup_limit"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DailyBackupLimit":   ubx.FieldSpec{WireName: "daily_backup_limit"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Enabled":            ubx.FieldSpec{WireName: "enabled"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
 		"MonthlyBackupLimit": ubx.FieldSpec{WireName: "monthly_backup_limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"WeeklyBackupLimit": ubx.FieldSpec{WireName: "weekly_backup_limit"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"WeeklyBackupLimit":  ubx.FieldSpec{WireName: "weekly_backup_limit"},
 	},
 }

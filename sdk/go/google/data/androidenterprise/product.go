@@ -4,22 +4,22 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Product_AppRestrictionsSchema_Restrictions_DefaultValue struct {
-	Type any
-	ValueBool any
-	ValueInteger any
+	Type             any
+	ValueBool        any
+	ValueInteger     any
 	ValueMultiselect any
-	ValueString any
+	ValueString      any
 }
 
 type Product_AppRestrictionsSchema_Restrictions struct {
-	DefaultValue any
-	Description any
-	Entry any
-	EntryValue any
-	Key any
+	DefaultValue      any
+	Description       any
+	Entry             any
+	EntryValue        any
+	Key               any
 	NestedRestriction any
-	RestrictionType any
-	Title any
+	RestrictionType   any
+	Title             any
 }
 
 type Product_AppRestrictionsSchema struct {
@@ -31,21 +31,21 @@ type Product_AppRestrictionsSchema struct {
 
 type Product_AppTracks struct {
 	TrackAlias any
-	TrackId any
+	TrackId    any
 }
 
 type Product_AppVersion struct {
-	IsProduction any
+	IsProduction     any
 	TargetSdkVersion any
-	Track any
-	TrackId any
-	VersionCode any
-	VersionString any
+	Track            any
+	TrackId          any
+	VersionCode      any
+	VersionString    any
 }
 
 type Product_Permissions struct {
 	PermissionId any
-	State any
+	State        any
 }
 
 type Product_SigningCertificate struct {
@@ -57,8 +57,8 @@ type Product_SigningCertificate struct {
 
 type ProductConfig struct {
 	EnterpriseId any
-	Language any
-	ProductId any
+	Language     any
+	ProductId    any
 }
 
 type ProductAttrs struct {
@@ -84,13 +84,13 @@ type ProductAttrs struct {
 	DetailsUrl any
 	// How and to whom the package is made available. The value publicGoogleHosted means that the package is available through the Play store and not restricted to a specific enterprise. The value privateGoogleHosted means that the package is a private app (restricted to an enterprise) but hosted by Google. The value privateSelfHosted means that the package is a private app (restricted to an enterprise) and is privately hosted.
 	DistributionChannel any
-	EnterpriseId any
+	EnterpriseId        any
 	// Noteworthy features (if any) of this product.
 	Features any
 	// The localized full app store description, if available.
 	FullDescription any
 	// A link to an image that can be used as an icon for the product. This image is suitable for use at up to 512px x 512px.
-	IconUrl any
+	IconUrl  any
 	Language any
 	// The approximate time (within 7 days) the app was last published, expressed in milliseconds since epoch.
 	LastUpdatedTimestampMillis any
@@ -98,7 +98,7 @@ type ProductAttrs struct {
 	MinAndroidSdkVersion any
 	// A list of permissions required by the app.
 	Permissions any
-	ProductId any
+	ProductId   any
 	// Whether this product is free, free with in-app purchases, or paid. If the pricing is unknown, this means the product is not generally available anymore (even though it might still be available to people who own it).
 	ProductPricing any
 	// A description of the recent changes made to the app.
@@ -106,7 +106,7 @@ type ProductAttrs struct {
 	// Deprecated.
 	RequiresContainerApp any
 	// A list of screenshot links representing the app.
-	ScreenshotUrls any
+	ScreenshotUrls     any
 	SigningCertificate any
 	// A link to a smaller image that can be used as an icon for the product. This image is suitable for use at up to 128px x 128px.
 	SmallIconUrl any
@@ -120,7 +120,7 @@ var Product = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_product",
 	Fields: ubx.FieldMap{
 		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"Language":     ubx.FieldSpec{WireName: "language"},
+		"ProductId":    ubx.FieldSpec{WireName: "product_id"},
 	},
 }

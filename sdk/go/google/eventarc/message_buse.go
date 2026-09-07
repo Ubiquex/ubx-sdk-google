@@ -9,8 +9,8 @@ type MessageBuse_LoggingConfig struct {
 }
 
 var MessageBuse_LoggingConfigFields = ubx.FieldMap{
-		"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
-	}
+	"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
+}
 
 type MessageBuseConfig struct {
 	// Optional. Resource annotations.
@@ -53,14 +53,14 @@ type MessageBuseAttrs struct {
 var MessageBuse = ubx.ResourceBinding{
 	WireType: "google_eventarc_message_buse",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":   ubx.FieldSpec{WireName: "annotations"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: MessageBuse_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   MessageBuse_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},

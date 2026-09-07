@@ -10,7 +10,7 @@ type PythonPackageConfig struct {
 type PythonPackageAttrs struct {
 	// Output only. Time the package was created.
 	CreateTime any
-	Name any
+	Name       any
 	// Package for the artifact.
 	PackageName any
 	// Output only. Time the package was updated.

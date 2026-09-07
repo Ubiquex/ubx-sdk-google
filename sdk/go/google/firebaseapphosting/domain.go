@@ -71,76 +71,76 @@ type Domain_Serve struct {
 }
 
 var Domain_CustomDomainStatus_IssuesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Rdata": ubx.FieldSpec{WireName: "rdata"},
-		"RelevantState": ubx.FieldSpec{WireName: "relevant_state"},
-		"RequiredAction": ubx.FieldSpec{WireName: "required_action"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+	"Rdata":          ubx.FieldSpec{WireName: "rdata"},
+	"RelevantState":  ubx.FieldSpec{WireName: "relevant_state"},
+	"RequiredAction": ubx.FieldSpec{WireName: "required_action"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Domain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields = ubx.FieldMap{
-		"CheckError": ubx.FieldSpec{
-			WireName: "check_error",
-			Kind: "object",
-			Fields: Domain_CustomDomainStatus_IssuesFields,
-		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Records": ubx.FieldSpec{
-			WireName: "records",
-			Kind: "list",
-			Fields: Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields,
-		},
-	}
+	"CheckError": ubx.FieldSpec{
+		WireName: "check_error",
+		Kind:     "object",
+		Fields:   Domain_CustomDomainStatus_IssuesFields,
+	},
+	"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+	"Records": ubx.FieldSpec{
+		WireName: "records",
+		Kind:     "list",
+		Fields:   Domain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields,
+	},
+}
 
 var Domain_CustomDomainStatus_RequiredDnsUpdatesFields = ubx.FieldMap{
-		"CheckTime": ubx.FieldSpec{WireName: "check_time"},
-		"Desired": ubx.FieldSpec{
-			WireName: "desired",
-			Kind: "list",
-			Fields: Domain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
-		},
-		"Discovered": ubx.FieldSpec{
-			WireName: "discovered",
-			Kind: "list",
-			Fields: Domain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
-		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-	}
+	"CheckTime": ubx.FieldSpec{WireName: "check_time"},
+	"Desired": ubx.FieldSpec{
+		WireName: "desired",
+		Kind:     "list",
+		Fields:   Domain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
+	},
+	"Discovered": ubx.FieldSpec{
+		WireName: "discovered",
+		Kind:     "list",
+		Fields:   Domain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
+	},
+	"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+}
 
 var Domain_CustomDomainStatusFields = ubx.FieldMap{
-		"CertState": ubx.FieldSpec{WireName: "cert_state"},
-		"HostState": ubx.FieldSpec{WireName: "host_state"},
-		"Issues": ubx.FieldSpec{
-			WireName: "issues",
-			Kind: "list",
-			Fields: Domain_CustomDomainStatus_IssuesFields,
-		},
-		"OwnershipState": ubx.FieldSpec{WireName: "ownership_state"},
-		"RequiredDnsUpdates": ubx.FieldSpec{
-			WireName: "required_dns_updates",
-			Kind: "list",
-			Fields: Domain_CustomDomainStatus_RequiredDnsUpdatesFields,
-		},
-	}
+	"CertState": ubx.FieldSpec{WireName: "cert_state"},
+	"HostState": ubx.FieldSpec{WireName: "host_state"},
+	"Issues": ubx.FieldSpec{
+		WireName: "issues",
+		Kind:     "list",
+		Fields:   Domain_CustomDomainStatus_IssuesFields,
+	},
+	"OwnershipState": ubx.FieldSpec{WireName: "ownership_state"},
+	"RequiredDnsUpdates": ubx.FieldSpec{
+		WireName: "required_dns_updates",
+		Kind:     "list",
+		Fields:   Domain_CustomDomainStatus_RequiredDnsUpdatesFields,
+	},
+}
 
 var Domain_Serve_RedirectFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Uri":    ubx.FieldSpec{WireName: "uri"},
+}
 
 var Domain_ServeFields = ubx.FieldMap{
-		"Redirect": ubx.FieldSpec{
-			WireName: "redirect",
-			Kind: "object",
-			Fields: Domain_Serve_RedirectFields,
-		},
-	}
+	"Redirect": ubx.FieldSpec{
+		WireName: "redirect",
+		Kind:     "object",
+		Fields:   Domain_Serve_RedirectFields,
+	},
+}
 
 type DomainConfig struct {
 	// Optional. Annotations as key value pairs.
@@ -196,17 +196,17 @@ var Domain = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"CustomDomainStatus": ubx.FieldSpec{
 			WireName: "custom_domain_status",
-			Kind: "object",
-			Fields: Domain_CustomDomainStatusFields,
+			Kind:     "object",
+			Fields:   Domain_CustomDomainStatusFields,
 		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Serve": ubx.FieldSpec{
 			WireName: "serve",
-			Kind: "object",
-			Fields: Domain_ServeFields,
+			Kind:     "object",
+			Fields:   Domain_ServeFields,
 		},
 	},
 }

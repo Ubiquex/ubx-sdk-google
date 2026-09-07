@@ -31,30 +31,30 @@ type Firewallpolicy_Actions struct {
 }
 
 var Firewallpolicy_Actions_SetHeaderFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Firewallpolicy_Actions_SubstituteFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Firewallpolicy_ActionsFields = ubx.FieldMap{
-		"Allow": ubx.FieldSpec{WireName: "allow"},
-		"Block": ubx.FieldSpec{WireName: "block"},
-		"IncludeRecaptchaScript": ubx.FieldSpec{WireName: "include_recaptcha_script"},
-		"Redirect": ubx.FieldSpec{WireName: "redirect"},
-		"SetHeader": ubx.FieldSpec{
-			WireName: "set_header",
-			Kind: "object",
-			Fields: Firewallpolicy_Actions_SetHeaderFields,
-		},
-		"Substitute": ubx.FieldSpec{
-			WireName: "substitute",
-			Kind: "object",
-			Fields: Firewallpolicy_Actions_SubstituteFields,
-		},
-	}
+	"Allow":                  ubx.FieldSpec{WireName: "allow"},
+	"Block":                  ubx.FieldSpec{WireName: "block"},
+	"IncludeRecaptchaScript": ubx.FieldSpec{WireName: "include_recaptcha_script"},
+	"Redirect":               ubx.FieldSpec{WireName: "redirect"},
+	"SetHeader": ubx.FieldSpec{
+		WireName: "set_header",
+		Kind:     "object",
+		Fields:   Firewallpolicy_Actions_SetHeaderFields,
+	},
+	"Substitute": ubx.FieldSpec{
+		WireName: "substitute",
+		Kind:     "object",
+		Fields:   Firewallpolicy_Actions_SubstituteFields,
+	},
+}
 
 type FirewallpolicyConfig struct {
 	// Optional. The actions that the caller should take regarding user access. There should be at most one terminal action. A terminal action is any action that forces a response, such as `AllowAction`, `BlockAction` or `SubstituteAction`. Zero or more non-terminal actions such as `SetHeader` might be specified. A single policy can contain up to 16 actions.
@@ -87,12 +87,12 @@ var Firewallpolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Firewallpolicy_ActionsFields,
+			Kind:     "list",
+			Fields:   Firewallpolicy_ActionsFields,
 		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
+		"Condition":   ubx.FieldSpec{WireName: "condition"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Path":        ubx.FieldSpec{WireName: "path"},
 	},
 }

@@ -29,27 +29,27 @@ type V1beta3ProcessorVersion_DocumentSchema_EntityTypes_Properties_PropertyMetad
 
 type V1beta3ProcessorVersion_DocumentSchema_EntityTypes_Properties_PropertyMetadata struct {
 	FieldExtractionMetadata any
-	Inactive any
+	Inactive                any
 }
 
 type V1beta3ProcessorVersion_DocumentSchema_EntityTypes_Properties struct {
-	Description any
-	DisplayName any
-	Method any
-	Name any
-	OccurrenceType any
+	Description      any
+	DisplayName      any
+	Method           any
+	Name             any
+	OccurrenceType   any
 	PropertyMetadata any
-	ValueType any
+	ValueType        any
 }
 
 type V1beta3ProcessorVersion_DocumentSchema_EntityTypes struct {
-	BaseTypes any
-	Description any
-	DisplayName any
+	BaseTypes          any
+	Description        any
+	DisplayName        any
 	EntityTypeMetadata any
-	EnumValues any
-	Name any
-	Properties any
+	EnumValues         any
+	Name               any
+	Properties         any
 }
 
 type V1beta3ProcessorVersion_DocumentSchema_Metadata struct {
@@ -158,7 +158,7 @@ type V1beta3ProcessorVersionAttrs struct {
 	LatestEvaluation any
 	// Output only. The model type of this processor version.
 	ModelType any
-	Name any
+	Name      any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. Reserved for future use.

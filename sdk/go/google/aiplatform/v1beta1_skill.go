@@ -50,12 +50,12 @@ type V1beta1SkillAttrs struct {
 var V1beta1Skill = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_skill",
 	Fields: ubx.FieldMap{
-		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Compatibility":    ubx.FieldSpec{WireName: "compatibility"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"License":          ubx.FieldSpec{WireName: "license"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ZippedFilesystem": ubx.FieldSpec{WireName: "zipped_filesystem"},
 	},
 }

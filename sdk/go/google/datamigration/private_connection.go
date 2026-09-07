@@ -32,24 +32,24 @@ type PrivateConnection_VpcPeeringConfig struct {
 }
 
 var PrivateConnection_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PrivateConnection_PscInterfaceConfigFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var PrivateConnection_ReservedPublicIpConfigFields = ubx.FieldMap{
-		"EgressPublicIps": ubx.FieldSpec{WireName: "egress_public_ips"},
-		"NatIpsCount": ubx.FieldSpec{WireName: "nat_ips_count"},
-	}
+	"EgressPublicIps": ubx.FieldSpec{WireName: "egress_public_ips"},
+	"NatIpsCount":     ubx.FieldSpec{WireName: "nat_ips_count"},
+}
 
 var PrivateConnection_VpcPeeringConfigFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
-	}
+	"Subnet":  ubx.FieldSpec{WireName: "subnet"},
+	"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
+}
 
 type PrivateConnectionConfig struct {
 	// The private connection display name.
@@ -101,25 +101,25 @@ var PrivateConnection = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: PrivateConnection_ErrorFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: PrivateConnection_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_PscInterfaceConfigFields,
 		},
 		"ReservedPublicIpConfig": ubx.FieldSpec{
 			WireName: "reserved_public_ip_config",
-			Kind: "object",
-			Fields: PrivateConnection_ReservedPublicIpConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_ReservedPublicIpConfigFields,
 		},
 		"VpcPeeringConfig": ubx.FieldSpec{
 			WireName: "vpc_peering_config",
-			Kind: "object",
-			Fields: PrivateConnection_VpcPeeringConfigFields,
+			Kind:     "object",
+			Fields:   PrivateConnection_VpcPeeringConfigFields,
 		},
 	},
 }

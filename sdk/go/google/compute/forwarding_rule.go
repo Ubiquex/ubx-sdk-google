@@ -32,24 +32,24 @@ type ForwardingRule_ServiceDirectoryRegistrations struct {
 }
 
 var ForwardingRule_MetadataFilters_FilterLabelsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ForwardingRule_MetadataFiltersFields = ubx.FieldMap{
-		"FilterLabels": ubx.FieldSpec{
-			WireName: "filter_labels",
-			Kind: "list",
-			Fields: ForwardingRule_MetadataFilters_FilterLabelsFields,
-		},
-		"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
-	}
+	"FilterLabels": ubx.FieldSpec{
+		WireName: "filter_labels",
+		Kind:     "list",
+		Fields:   ForwardingRule_MetadataFilters_FilterLabelsFields,
+	},
+	"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
+}
 
 var ForwardingRule_ServiceDirectoryRegistrationsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceDirectoryRegion": ubx.FieldSpec{WireName: "service_directory_region"},
-	}
+	"Namespace":              ubx.FieldSpec{WireName: "namespace"},
+	"Service":                ubx.FieldSpec{WireName: "service"},
+	"ServiceDirectoryRegion": ubx.FieldSpec{WireName: "service_directory_region"},
+}
 
 type ForwardingRuleConfig struct {
 	// The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The allPorts field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, SCTP, or L3_DEFAULT. - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal and external protocol forwarding. - Set this field to true to allow packets addressed to any port or packets lacking destination port information (for example, UDP fragments after the first fragment) to be forwarded to the backends configured with this forwarding rule. The L3_DEFAULT protocol requiresallPorts be set to true.
@@ -202,45 +202,45 @@ type ForwardingRuleAttrs struct {
 var ForwardingRule = ubx.ResourceBinding{
 	WireType: "google_compute_forwarding_rule",
 	Fields: ubx.FieldMap{
-		"AllPorts": ubx.FieldSpec{WireName: "all_ports"},
-		"AllowGlobalAccess": ubx.FieldSpec{WireName: "allow_global_access"},
+		"AllPorts":             ubx.FieldSpec{WireName: "all_ports"},
+		"AllowGlobalAccess":    ubx.FieldSpec{WireName: "allow_global_access"},
 		"AllowPscGlobalAccess": ubx.FieldSpec{WireName: "allow_psc_global_access"},
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExternalManagedBackendBucketMigrationState": ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_state"},
+		"BackendService":       ubx.FieldSpec{WireName: "backend_service"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"ExternalManagedBackendBucketMigrationState":             ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_state"},
 		"ExternalManagedBackendBucketMigrationTestingPercentage": ubx.FieldSpec{WireName: "external_managed_backend_bucket_migration_testing_percentage"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IpCollection": ubx.FieldSpec{WireName: "ip_collection"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Ipaddress": ubx.FieldSpec{WireName: "ipaddress"},
-		"Ipprotocol": ubx.FieldSpec{WireName: "ipprotocol"},
+		"Fingerprint":          ubx.FieldSpec{WireName: "fingerprint"},
+		"Id":                   ubx.FieldSpec{WireName: "id"},
+		"IpCollection":         ubx.FieldSpec{WireName: "ip_collection"},
+		"IpVersion":            ubx.FieldSpec{WireName: "ip_version"},
+		"Ipaddress":            ubx.FieldSpec{WireName: "ipaddress"},
+		"Ipprotocol":           ubx.FieldSpec{WireName: "ipprotocol"},
 		"IsMirroringCollector": ubx.FieldSpec{WireName: "is_mirroring_collector"},
-		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
+		"LabelFingerprint":     ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels":               ubx.FieldSpec{WireName: "labels"},
+		"LoadBalancingScheme":  ubx.FieldSpec{WireName: "load_balancing_scheme"},
 		"MetadataFilters": ubx.FieldSpec{
 			WireName: "metadata_filters",
-			Kind: "list",
-			Fields: ForwardingRule_MetadataFiltersFields,
+			Kind:     "list",
+			Fields:   ForwardingRule_MetadataFiltersFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Network":           ubx.FieldSpec{WireName: "network"},
+		"NetworkTier":       ubx.FieldSpec{WireName: "network_tier"},
 		"NoAutomateDnsZone": ubx.FieldSpec{WireName: "no_automate_dns_zone"},
-		"PortRange": ubx.FieldSpec{WireName: "port_range"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"PortRange":         ubx.FieldSpec{WireName: "port_range"},
+		"Ports":             ubx.FieldSpec{WireName: "ports"},
+		"PscConnectionId":   ubx.FieldSpec{WireName: "psc_connection_id"},
+		"SelfLink":          ubx.FieldSpec{WireName: "self_link"},
 		"ServiceDirectoryRegistrations": ubx.FieldSpec{
 			WireName: "service_directory_registrations",
-			Kind: "list",
-			Fields: ForwardingRule_ServiceDirectoryRegistrationsFields,
+			Kind:     "list",
+			Fields:   ForwardingRule_ServiceDirectoryRegistrationsFields,
 		},
-		"ServiceLabel": ubx.FieldSpec{WireName: "service_label"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"ServiceLabel":   ubx.FieldSpec{WireName: "service_label"},
+		"ServiceName":    ubx.FieldSpec{WireName: "service_name"},
 		"SourceIpRanges": ubx.FieldSpec{WireName: "source_ip_ranges"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Target": ubx.FieldSpec{WireName: "target"},
+		"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
+		"Target":         ubx.FieldSpec{WireName: "target"},
 	},
 }

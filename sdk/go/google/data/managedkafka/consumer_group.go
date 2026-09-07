@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConsumerGroup_Topics_Partitions struct {
 	Metadata any
-	Offset any
+	Offset   any
 }
 
 type ConsumerGroup_Topics struct {

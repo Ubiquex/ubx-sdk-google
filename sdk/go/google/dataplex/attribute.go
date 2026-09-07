@@ -18,14 +18,14 @@ type Attribute_ResourceAccessSpec struct {
 }
 
 var Attribute_DataAccessSpecFields = ubx.FieldMap{
-		"Readers": ubx.FieldSpec{WireName: "readers"},
-	}
+	"Readers": ubx.FieldSpec{WireName: "readers"},
+}
 
 var Attribute_ResourceAccessSpecFields = ubx.FieldMap{
-		"Owners": ubx.FieldSpec{WireName: "owners"},
-		"Readers": ubx.FieldSpec{WireName: "readers"},
-		"Writers": ubx.FieldSpec{WireName: "writers"},
-	}
+	"Owners":  ubx.FieldSpec{WireName: "owners"},
+	"Readers": ubx.FieldSpec{WireName: "readers"},
+	"Writers": ubx.FieldSpec{WireName: "writers"},
+}
 
 type AttributeConfig struct {
 	// DataAccessSpec holds the access control configuration to be enforced on data stored within resources (eg: rows, columns in BigQuery Tables). When associated with data, the data is only accessible to principals explicitly granted access through the DataAccessSpec. Principals with access to the containing resource are not implicitly granted access.
@@ -76,18 +76,18 @@ var Attribute = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DataAccessSpec": ubx.FieldSpec{
 			WireName: "data_access_spec",
-			Kind: "object",
-			Fields: Attribute_DataAccessSpecFields,
+			Kind:     "object",
+			Fields:   Attribute_DataAccessSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"ParentId":    ubx.FieldSpec{WireName: "parent_id"},
 		"ResourceAccessSpec": ubx.FieldSpec{
 			WireName: "resource_access_spec",
-			Kind: "object",
-			Fields: Attribute_ResourceAccessSpecFields,
+			Kind:     "object",
+			Fields:   Attribute_ResourceAccessSpecFields,
 		},
 	},
 }

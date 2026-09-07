@@ -85,94 +85,94 @@ type Example_Actions struct {
 }
 
 var Example_Actions_AgentUtteranceFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Example_Actions_FlowInvocationFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Flow": ubx.FieldSpec{WireName: "flow"},
-		"FlowState": ubx.FieldSpec{WireName: "flow_state"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Flow":        ubx.FieldSpec{WireName: "flow"},
+	"FlowState":   ubx.FieldSpec{WireName: "flow_state"},
+}
 
 var Example_Actions_FlowTransitionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Flow": ubx.FieldSpec{WireName: "flow"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Flow":        ubx.FieldSpec{WireName: "flow"},
+}
 
 var Example_Actions_PlaybookInvocation_PlaybookInputFields = ubx.FieldMap{
-		"PrecedingConversationSummary": ubx.FieldSpec{WireName: "preceding_conversation_summary"},
-	}
+	"PrecedingConversationSummary": ubx.FieldSpec{WireName: "preceding_conversation_summary"},
+}
 
 var Example_Actions_PlaybookInvocation_PlaybookOutputFields = ubx.FieldMap{
-		"ExecutionSummary": ubx.FieldSpec{WireName: "execution_summary"},
-	}
+	"ExecutionSummary": ubx.FieldSpec{WireName: "execution_summary"},
+}
 
 var Example_Actions_PlaybookInvocationFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Playbook": ubx.FieldSpec{WireName: "playbook"},
-		"PlaybookInput": ubx.FieldSpec{
-			WireName: "playbook_input",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookInvocation_PlaybookInputFields,
-		},
-		"PlaybookOutput": ubx.FieldSpec{
-			WireName: "playbook_output",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookInvocation_PlaybookOutputFields,
-		},
-		"PlaybookState": ubx.FieldSpec{WireName: "playbook_state"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Playbook":    ubx.FieldSpec{WireName: "playbook"},
+	"PlaybookInput": ubx.FieldSpec{
+		WireName: "playbook_input",
+		Kind:     "object",
+		Fields:   Example_Actions_PlaybookInvocation_PlaybookInputFields,
+	},
+	"PlaybookOutput": ubx.FieldSpec{
+		WireName: "playbook_output",
+		Kind:     "object",
+		Fields:   Example_Actions_PlaybookInvocation_PlaybookOutputFields,
+	},
+	"PlaybookState": ubx.FieldSpec{WireName: "playbook_state"},
+}
 
 var Example_Actions_PlaybookTransitionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Playbook": ubx.FieldSpec{WireName: "playbook"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Playbook":    ubx.FieldSpec{WireName: "playbook"},
+}
 
 var Example_Actions_ToolUseFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InputActionParameters": ubx.FieldSpec{WireName: "input_action_parameters"},
-		"OutputActionParameters": ubx.FieldSpec{WireName: "output_action_parameters"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"Action":                 ubx.FieldSpec{WireName: "action"},
+	"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+	"InputActionParameters":  ubx.FieldSpec{WireName: "input_action_parameters"},
+	"OutputActionParameters": ubx.FieldSpec{WireName: "output_action_parameters"},
+	"Tool":                   ubx.FieldSpec{WireName: "tool"},
+}
 
 var Example_ActionsFields = ubx.FieldMap{
-		"AgentUtterance": ubx.FieldSpec{
-			WireName: "agent_utterance",
-			Kind: "object",
-			Fields: Example_Actions_AgentUtteranceFields,
-		},
-		"FlowInvocation": ubx.FieldSpec{
-			WireName: "flow_invocation",
-			Kind: "object",
-			Fields: Example_Actions_FlowInvocationFields,
-		},
-		"FlowTransition": ubx.FieldSpec{
-			WireName: "flow_transition",
-			Kind: "object",
-			Fields: Example_Actions_FlowTransitionFields,
-		},
-		"PlaybookInvocation": ubx.FieldSpec{
-			WireName: "playbook_invocation",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookInvocationFields,
-		},
-		"PlaybookTransition": ubx.FieldSpec{
-			WireName: "playbook_transition",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookTransitionFields,
-		},
-		"ToolUse": ubx.FieldSpec{
-			WireName: "tool_use",
-			Kind: "object",
-			Fields: Example_Actions_ToolUseFields,
-		},
-		"UserUtterance": ubx.FieldSpec{
-			WireName: "user_utterance",
-			Kind: "object",
-			Fields: Example_Actions_AgentUtteranceFields,
-		},
-	}
+	"AgentUtterance": ubx.FieldSpec{
+		WireName: "agent_utterance",
+		Kind:     "object",
+		Fields:   Example_Actions_AgentUtteranceFields,
+	},
+	"FlowInvocation": ubx.FieldSpec{
+		WireName: "flow_invocation",
+		Kind:     "object",
+		Fields:   Example_Actions_FlowInvocationFields,
+	},
+	"FlowTransition": ubx.FieldSpec{
+		WireName: "flow_transition",
+		Kind:     "object",
+		Fields:   Example_Actions_FlowTransitionFields,
+	},
+	"PlaybookInvocation": ubx.FieldSpec{
+		WireName: "playbook_invocation",
+		Kind:     "object",
+		Fields:   Example_Actions_PlaybookInvocationFields,
+	},
+	"PlaybookTransition": ubx.FieldSpec{
+		WireName: "playbook_transition",
+		Kind:     "object",
+		Fields:   Example_Actions_PlaybookTransitionFields,
+	},
+	"ToolUse": ubx.FieldSpec{
+		WireName: "tool_use",
+		Kind:     "object",
+		Fields:   Example_Actions_ToolUseFields,
+	},
+	"UserUtterance": ubx.FieldSpec{
+		WireName: "user_utterance",
+		Kind:     "object",
+		Fields:   Example_Actions_AgentUtteranceFields,
+	},
+}
 
 type ExampleConfig struct {
 	// The action(s) taken by this step or event. (AI-inferred)
@@ -223,23 +223,23 @@ var Example = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Actions": ubx.FieldSpec{
 			WireName: "actions",
-			Kind: "list",
-			Fields: Example_ActionsFields,
+			Kind:     "list",
+			Fields:   Example_ActionsFields,
 		},
 		"ConversationState": ubx.FieldSpec{WireName: "conversation_state"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+		"LanguageCode":      ubx.FieldSpec{WireName: "language_code"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"PlaybookInput": ubx.FieldSpec{
 			WireName: "playbook_input",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookInvocation_PlaybookInputFields,
+			Kind:     "object",
+			Fields:   Example_Actions_PlaybookInvocation_PlaybookInputFields,
 		},
 		"PlaybookOutput": ubx.FieldSpec{
 			WireName: "playbook_output",
-			Kind: "object",
-			Fields: Example_Actions_PlaybookInvocation_PlaybookOutputFields,
+			Kind:     "object",
+			Fields:   Example_Actions_PlaybookInvocation_PlaybookOutputFields,
 		},
 	},
 }

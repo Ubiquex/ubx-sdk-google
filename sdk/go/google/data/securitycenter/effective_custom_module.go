@@ -7,17 +7,16 @@ type EffectiveCustomModuleConfig struct {
 }
 
 type EffectiveCustomModuleAttrs struct {
-	CloudProvider any
-	Config any
-	Description any
-	DisplayName any
+	CloudProvider   any
+	Config          any
+	Description     any
+	DisplayName     any
 	EnablementState any
-	Name any
-	Type any
+	Name            any
+	Type            any
 }
 
 var EffectiveCustomModule = ubx.DataSourceBinding{
 	WireType: "google_securitycenter_effective_custom_module",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -23,7 +23,7 @@ type RegionBackendService_Backends struct {
 	CapacityScaler any
 	// Custom metrics for backend load balancing, used when the backend's balancing_mode is set to 'CUSTOM'. Each object specifies the metric name and optional maximum rate. (AI-inferred)
 	CustomMetrics any
-	Description any
+	Description   any
 	// Specifies whether this backend is a failover backend. If true, the backend is used only when the primary (non-failover) backends become unhealthy. (AI-inferred)
 	Failover any
 	// The fully qualified URL of the instance group or network endpoint group (NEG) that serves as the backend for this region backend service. This is typically the self_link of the resource. (AI-inferred)
@@ -51,7 +51,7 @@ type RegionBackendService_Backends struct {
 	// Configures the orchestration settings for this backend. Requires that the backend is a network endpoint group (NEG) and specifies the name of the orchestration it belongs to. (AI-inferred)
 	OrchestrationInfo any
 	// The preference for this backend, indicating whether it should be used preferentially over other backends in the backend service. Valid values are DEFAULT (normal preference), PREFERENCE_UNSPECIFIED (no preference), and PREFERRED (traffic is preferentially routed to this backend). (AI-inferred)
-	Preference any
+	Preference      any
 	TrafficDuration any
 }
 
@@ -168,7 +168,7 @@ type RegionBackendService_ConsistentHash struct {
 type RegionBackendService_CustomMetrics struct {
 	// If set to true, this metric is used only for logging and not for load balancing decisions. (AI-inferred)
 	DryRun any
-	Name any
+	Name   any
 }
 
 type RegionBackendService_FailoverPolicy struct {
@@ -335,289 +335,289 @@ type RegionBackendService_UsedBy struct {
 }
 
 var RegionBackendService_Backends_CustomMetricsFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"MaxUtilization": ubx.FieldSpec{WireName: "max_utilization"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DryRun":         ubx.FieldSpec{WireName: "dry_run"},
+	"MaxUtilization": ubx.FieldSpec{WireName: "max_utilization"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+}
 
 var RegionBackendService_Backends_OrchestrationInfoFields = ubx.FieldMap{
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-	}
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+}
 
 var RegionBackendService_BackendsFields = ubx.FieldMap{
-		"BalancingMode": ubx.FieldSpec{WireName: "balancing_mode"},
-		"CapacityScaler": ubx.FieldSpec{WireName: "capacity_scaler"},
-		"CustomMetrics": ubx.FieldSpec{
-			WireName: "custom_metrics",
-			Kind: "list",
-			Fields: RegionBackendService_Backends_CustomMetricsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Failover": ubx.FieldSpec{WireName: "failover"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"MaxConnections": ubx.FieldSpec{WireName: "max_connections"},
-		"MaxConnectionsPerEndpoint": ubx.FieldSpec{WireName: "max_connections_per_endpoint"},
-		"MaxConnectionsPerInstance": ubx.FieldSpec{WireName: "max_connections_per_instance"},
-		"MaxInFlightRequests": ubx.FieldSpec{WireName: "max_in_flight_requests"},
-		"MaxInFlightRequestsPerEndpoint": ubx.FieldSpec{WireName: "max_in_flight_requests_per_endpoint"},
-		"MaxInFlightRequestsPerInstance": ubx.FieldSpec{WireName: "max_in_flight_requests_per_instance"},
-		"MaxRate": ubx.FieldSpec{WireName: "max_rate"},
-		"MaxRatePerEndpoint": ubx.FieldSpec{WireName: "max_rate_per_endpoint"},
-		"MaxRatePerInstance": ubx.FieldSpec{WireName: "max_rate_per_instance"},
-		"MaxUtilization": ubx.FieldSpec{WireName: "max_utilization"},
-		"OrchestrationInfo": ubx.FieldSpec{
-			WireName: "orchestration_info",
-			Kind: "object",
-			Fields: RegionBackendService_Backends_OrchestrationInfoFields,
-		},
-		"Preference": ubx.FieldSpec{WireName: "preference"},
-		"TrafficDuration": ubx.FieldSpec{WireName: "traffic_duration"},
-	}
+	"BalancingMode":  ubx.FieldSpec{WireName: "balancing_mode"},
+	"CapacityScaler": ubx.FieldSpec{WireName: "capacity_scaler"},
+	"CustomMetrics": ubx.FieldSpec{
+		WireName: "custom_metrics",
+		Kind:     "list",
+		Fields:   RegionBackendService_Backends_CustomMetricsFields,
+	},
+	"Description":                    ubx.FieldSpec{WireName: "description"},
+	"Failover":                       ubx.FieldSpec{WireName: "failover"},
+	"Group":                          ubx.FieldSpec{WireName: "group"},
+	"MaxConnections":                 ubx.FieldSpec{WireName: "max_connections"},
+	"MaxConnectionsPerEndpoint":      ubx.FieldSpec{WireName: "max_connections_per_endpoint"},
+	"MaxConnectionsPerInstance":      ubx.FieldSpec{WireName: "max_connections_per_instance"},
+	"MaxInFlightRequests":            ubx.FieldSpec{WireName: "max_in_flight_requests"},
+	"MaxInFlightRequestsPerEndpoint": ubx.FieldSpec{WireName: "max_in_flight_requests_per_endpoint"},
+	"MaxInFlightRequestsPerInstance": ubx.FieldSpec{WireName: "max_in_flight_requests_per_instance"},
+	"MaxRate":                        ubx.FieldSpec{WireName: "max_rate"},
+	"MaxRatePerEndpoint":             ubx.FieldSpec{WireName: "max_rate_per_endpoint"},
+	"MaxRatePerInstance":             ubx.FieldSpec{WireName: "max_rate_per_instance"},
+	"MaxUtilization":                 ubx.FieldSpec{WireName: "max_utilization"},
+	"OrchestrationInfo": ubx.FieldSpec{
+		WireName: "orchestration_info",
+		Kind:     "object",
+		Fields:   RegionBackendService_Backends_OrchestrationInfoFields,
+	},
+	"Preference":      ubx.FieldSpec{WireName: "preference"},
+	"TrafficDuration": ubx.FieldSpec{WireName: "traffic_duration"},
+}
 
 var RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-	}
+	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+}
 
 var RegionBackendService_CdnPolicy_CacheKeyPolicyFields = ubx.FieldMap{
-		"IncludeHost": ubx.FieldSpec{WireName: "include_host"},
-		"IncludeHttpHeaders": ubx.FieldSpec{WireName: "include_http_headers"},
-		"IncludeNamedCookies": ubx.FieldSpec{WireName: "include_named_cookies"},
-		"IncludeProtocol": ubx.FieldSpec{WireName: "include_protocol"},
-		"IncludeQueryString": ubx.FieldSpec{WireName: "include_query_string"},
-		"QueryStringBlacklist": ubx.FieldSpec{WireName: "query_string_blacklist"},
-		"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
-	}
+	"IncludeHost":          ubx.FieldSpec{WireName: "include_host"},
+	"IncludeHttpHeaders":   ubx.FieldSpec{WireName: "include_http_headers"},
+	"IncludeNamedCookies":  ubx.FieldSpec{WireName: "include_named_cookies"},
+	"IncludeProtocol":      ubx.FieldSpec{WireName: "include_protocol"},
+	"IncludeQueryString":   ubx.FieldSpec{WireName: "include_query_string"},
+	"QueryStringBlacklist": ubx.FieldSpec{WireName: "query_string_blacklist"},
+	"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
+}
 
 var RegionBackendService_CdnPolicy_NegativeCachingPolicyFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Ttl":  ubx.FieldSpec{WireName: "ttl"},
+}
 
 var RegionBackendService_CdnPolicyFields = ubx.FieldMap{
-		"BypassCacheOnRequestHeaders": ubx.FieldSpec{
-			WireName: "bypass_cache_on_request_headers",
-			Kind: "list",
-			Fields: RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
-		},
-		"CacheKeyPolicy": ubx.FieldSpec{
-			WireName: "cache_key_policy",
-			Kind: "object",
-			Fields: RegionBackendService_CdnPolicy_CacheKeyPolicyFields,
-		},
-		"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
-		"ClientTtl": ubx.FieldSpec{WireName: "client_ttl"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
-		"NegativeCachingPolicy": ubx.FieldSpec{
-			WireName: "negative_caching_policy",
-			Kind: "list",
-			Fields: RegionBackendService_CdnPolicy_NegativeCachingPolicyFields,
-		},
-		"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
-		"ServeWhileStale": ubx.FieldSpec{WireName: "serve_while_stale"},
-		"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
-		"SignedUrlKeyNames": ubx.FieldSpec{WireName: "signed_url_key_names"},
-	}
+	"BypassCacheOnRequestHeaders": ubx.FieldSpec{
+		WireName: "bypass_cache_on_request_headers",
+		Kind:     "list",
+		Fields:   RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
+	},
+	"CacheKeyPolicy": ubx.FieldSpec{
+		WireName: "cache_key_policy",
+		Kind:     "object",
+		Fields:   RegionBackendService_CdnPolicy_CacheKeyPolicyFields,
+	},
+	"CacheMode":       ubx.FieldSpec{WireName: "cache_mode"},
+	"ClientTtl":       ubx.FieldSpec{WireName: "client_ttl"},
+	"DefaultTtl":      ubx.FieldSpec{WireName: "default_ttl"},
+	"MaxTtl":          ubx.FieldSpec{WireName: "max_ttl"},
+	"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
+	"NegativeCachingPolicy": ubx.FieldSpec{
+		WireName: "negative_caching_policy",
+		Kind:     "list",
+		Fields:   RegionBackendService_CdnPolicy_NegativeCachingPolicyFields,
+	},
+	"RequestCoalescing":       ubx.FieldSpec{WireName: "request_coalescing"},
+	"ServeWhileStale":         ubx.FieldSpec{WireName: "serve_while_stale"},
+	"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
+	"SignedUrlKeyNames":       ubx.FieldSpec{WireName: "signed_url_key_names"},
+}
 
 var RegionBackendService_CircuitBreakersFields = ubx.FieldMap{
-		"MaxConnections": ubx.FieldSpec{WireName: "max_connections"},
-		"MaxPendingRequests": ubx.FieldSpec{WireName: "max_pending_requests"},
-		"MaxRequests": ubx.FieldSpec{WireName: "max_requests"},
-		"MaxRequestsPerConnection": ubx.FieldSpec{WireName: "max_requests_per_connection"},
-		"MaxRetries": ubx.FieldSpec{WireName: "max_retries"},
-	}
+	"MaxConnections":           ubx.FieldSpec{WireName: "max_connections"},
+	"MaxPendingRequests":       ubx.FieldSpec{WireName: "max_pending_requests"},
+	"MaxRequests":              ubx.FieldSpec{WireName: "max_requests"},
+	"MaxRequestsPerConnection": ubx.FieldSpec{WireName: "max_requests_per_connection"},
+	"MaxRetries":               ubx.FieldSpec{WireName: "max_retries"},
+}
 
 var RegionBackendService_ConnectionDrainingFields = ubx.FieldMap{
-		"DrainingTimeoutSec": ubx.FieldSpec{WireName: "draining_timeout_sec"},
-	}
+	"DrainingTimeoutSec": ubx.FieldSpec{WireName: "draining_timeout_sec"},
+}
 
 var RegionBackendService_ConnectionTrackingPolicyFields = ubx.FieldMap{
-		"ConnectionPersistenceOnUnhealthyBackends": ubx.FieldSpec{WireName: "connection_persistence_on_unhealthy_backends"},
-		"EnableStrongAffinity": ubx.FieldSpec{WireName: "enable_strong_affinity"},
-		"IdleTimeoutSec": ubx.FieldSpec{WireName: "idle_timeout_sec"},
-		"TrackingMode": ubx.FieldSpec{WireName: "tracking_mode"},
-	}
+	"ConnectionPersistenceOnUnhealthyBackends": ubx.FieldSpec{WireName: "connection_persistence_on_unhealthy_backends"},
+	"EnableStrongAffinity":                     ubx.FieldSpec{WireName: "enable_strong_affinity"},
+	"IdleTimeoutSec":                           ubx.FieldSpec{WireName: "idle_timeout_sec"},
+	"TrackingMode":                             ubx.FieldSpec{WireName: "tracking_mode"},
+}
 
 var RegionBackendService_ConsistentHash_HttpCookie_TtlFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var RegionBackendService_ConsistentHash_HttpCookieFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ttl": ubx.FieldSpec{
-			WireName: "ttl",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Ttl": ubx.FieldSpec{
+		WireName: "ttl",
+		Kind:     "object",
+		Fields:   RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
+	},
+}
 
 var RegionBackendService_ConsistentHashFields = ubx.FieldMap{
-		"HttpCookie": ubx.FieldSpec{
-			WireName: "http_cookie",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookieFields,
-		},
-		"HttpHeaderName": ubx.FieldSpec{WireName: "http_header_name"},
-		"MinimumRingSize": ubx.FieldSpec{WireName: "minimum_ring_size"},
-	}
+	"HttpCookie": ubx.FieldSpec{
+		WireName: "http_cookie",
+		Kind:     "object",
+		Fields:   RegionBackendService_ConsistentHash_HttpCookieFields,
+	},
+	"HttpHeaderName":  ubx.FieldSpec{WireName: "http_header_name"},
+	"MinimumRingSize": ubx.FieldSpec{WireName: "minimum_ring_size"},
+}
 
 var RegionBackendService_CustomMetricsFields = ubx.FieldMap{
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+}
 
 var RegionBackendService_FailoverPolicyFields = ubx.FieldMap{
-		"DisableConnectionDrainOnFailover": ubx.FieldSpec{WireName: "disable_connection_drain_on_failover"},
-		"DropTrafficIfUnhealthy": ubx.FieldSpec{WireName: "drop_traffic_if_unhealthy"},
-		"FailoverRatio": ubx.FieldSpec{WireName: "failover_ratio"},
-	}
+	"DisableConnectionDrainOnFailover": ubx.FieldSpec{WireName: "disable_connection_drain_on_failover"},
+	"DropTrafficIfUnhealthy":           ubx.FieldSpec{WireName: "drop_traffic_if_unhealthy"},
+	"FailoverRatio":                    ubx.FieldSpec{WireName: "failover_ratio"},
+}
 
 var RegionBackendService_HaPolicy_Leader_NetworkEndpointFields = ubx.FieldMap{
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-	}
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+}
 
 var RegionBackendService_HaPolicy_LeaderFields = ubx.FieldMap{
-		"BackendGroup": ubx.FieldSpec{WireName: "backend_group"},
-		"NetworkEndpoint": ubx.FieldSpec{
-			WireName: "network_endpoint",
-			Kind: "object",
-			Fields: RegionBackendService_HaPolicy_Leader_NetworkEndpointFields,
-		},
-	}
+	"BackendGroup": ubx.FieldSpec{WireName: "backend_group"},
+	"NetworkEndpoint": ubx.FieldSpec{
+		WireName: "network_endpoint",
+		Kind:     "object",
+		Fields:   RegionBackendService_HaPolicy_Leader_NetworkEndpointFields,
+	},
+}
 
 var RegionBackendService_HaPolicyFields = ubx.FieldMap{
-		"FastIpmove": ubx.FieldSpec{WireName: "fast_ipmove"},
-		"Leader": ubx.FieldSpec{
-			WireName: "leader",
-			Kind: "object",
-			Fields: RegionBackendService_HaPolicy_LeaderFields,
-		},
-	}
+	"FastIpmove": ubx.FieldSpec{WireName: "fast_ipmove"},
+	"Leader": ubx.FieldSpec{
+		WireName: "leader",
+		Kind:     "object",
+		Fields:   RegionBackendService_HaPolicy_LeaderFields,
+	},
+}
 
 var RegionBackendService_IapFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Oauth2ClientId": ubx.FieldSpec{WireName: "oauth2_client_id"},
-		"Oauth2ClientSecret": ubx.FieldSpec{WireName: "oauth2_client_secret"},
-		"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
-	}
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"Oauth2ClientId":           ubx.FieldSpec{WireName: "oauth2_client_id"},
+	"Oauth2ClientSecret":       ubx.FieldSpec{WireName: "oauth2_client_secret"},
+	"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
+}
 
 var RegionBackendService_LocalityLbPolicies_CustomPolicyFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var RegionBackendService_LocalityLbPolicies_PolicyFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var RegionBackendService_LocalityLbPoliciesFields = ubx.FieldMap{
-		"CustomPolicy": ubx.FieldSpec{
-			WireName: "custom_policy",
-			Kind: "object",
-			Fields: RegionBackendService_LocalityLbPolicies_CustomPolicyFields,
-		},
-		"Policy": ubx.FieldSpec{
-			WireName: "policy",
-			Kind: "object",
-			Fields: RegionBackendService_LocalityLbPolicies_PolicyFields,
-		},
-	}
+	"CustomPolicy": ubx.FieldSpec{
+		WireName: "custom_policy",
+		Kind:     "object",
+		Fields:   RegionBackendService_LocalityLbPolicies_CustomPolicyFields,
+	},
+	"Policy": ubx.FieldSpec{
+		WireName: "policy",
+		Kind:     "object",
+		Fields:   RegionBackendService_LocalityLbPolicies_PolicyFields,
+	},
+}
 
 var RegionBackendService_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"LoggingHttpRequestHeaders": ubx.FieldSpec{
-			WireName: "logging_http_request_headers",
-			Kind: "list",
-			Fields: RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
-		},
-		"LoggingHttpResponseHeaders": ubx.FieldSpec{
-			WireName: "logging_http_response_headers",
-			Kind: "list",
-			Fields: RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
-		},
-		"OptionalFields": ubx.FieldSpec{WireName: "optional_fields"},
-		"OptionalMode": ubx.FieldSpec{WireName: "optional_mode"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"Enable": ubx.FieldSpec{WireName: "enable"},
+	"LoggingHttpRequestHeaders": ubx.FieldSpec{
+		WireName: "logging_http_request_headers",
+		Kind:     "list",
+		Fields:   RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
+	},
+	"LoggingHttpResponseHeaders": ubx.FieldSpec{
+		WireName: "logging_http_response_headers",
+		Kind:     "list",
+		Fields:   RegionBackendService_CdnPolicy_BypassCacheOnRequestHeadersFields,
+	},
+	"OptionalFields": ubx.FieldSpec{WireName: "optional_fields"},
+	"OptionalMode":   ubx.FieldSpec{WireName: "optional_mode"},
+	"SampleRate":     ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var RegionBackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinityFields = ubx.FieldMap{
-		"Spillover": ubx.FieldSpec{WireName: "spillover"},
-		"SpilloverRatio": ubx.FieldSpec{WireName: "spillover_ratio"},
-	}
+	"Spillover":      ubx.FieldSpec{WireName: "spillover"},
+	"SpilloverRatio": ubx.FieldSpec{WireName: "spillover_ratio"},
+}
 
 var RegionBackendService_NetworkPassThroughLbTrafficPolicyFields = ubx.FieldMap{
-		"ZonalAffinity": ubx.FieldSpec{
-			WireName: "zonal_affinity",
-			Kind: "object",
-			Fields: RegionBackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinityFields,
-		},
-	}
+	"ZonalAffinity": ubx.FieldSpec{
+		WireName: "zonal_affinity",
+		Kind:     "object",
+		Fields:   RegionBackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinityFields,
+	},
+}
 
 var RegionBackendService_OutlierDetectionFields = ubx.FieldMap{
-		"BaseEjectionTime": ubx.FieldSpec{
-			WireName: "base_ejection_time",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
-		},
-		"ConsecutiveErrors": ubx.FieldSpec{WireName: "consecutive_errors"},
-		"ConsecutiveGatewayFailure": ubx.FieldSpec{WireName: "consecutive_gateway_failure"},
-		"EnforcingConsecutiveErrors": ubx.FieldSpec{WireName: "enforcing_consecutive_errors"},
-		"EnforcingConsecutiveGatewayFailure": ubx.FieldSpec{WireName: "enforcing_consecutive_gateway_failure"},
-		"EnforcingSuccessRate": ubx.FieldSpec{WireName: "enforcing_success_rate"},
-		"Interval": ubx.FieldSpec{
-			WireName: "interval",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
-		},
-		"MaxEjectionPercent": ubx.FieldSpec{WireName: "max_ejection_percent"},
-		"SuccessRateMinimumHosts": ubx.FieldSpec{WireName: "success_rate_minimum_hosts"},
-		"SuccessRateRequestVolume": ubx.FieldSpec{WireName: "success_rate_request_volume"},
-		"SuccessRateStdevFactor": ubx.FieldSpec{WireName: "success_rate_stdev_factor"},
-	}
+	"BaseEjectionTime": ubx.FieldSpec{
+		WireName: "base_ejection_time",
+		Kind:     "object",
+		Fields:   RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
+	},
+	"ConsecutiveErrors":                  ubx.FieldSpec{WireName: "consecutive_errors"},
+	"ConsecutiveGatewayFailure":          ubx.FieldSpec{WireName: "consecutive_gateway_failure"},
+	"EnforcingConsecutiveErrors":         ubx.FieldSpec{WireName: "enforcing_consecutive_errors"},
+	"EnforcingConsecutiveGatewayFailure": ubx.FieldSpec{WireName: "enforcing_consecutive_gateway_failure"},
+	"EnforcingSuccessRate":               ubx.FieldSpec{WireName: "enforcing_success_rate"},
+	"Interval": ubx.FieldSpec{
+		WireName: "interval",
+		Kind:     "object",
+		Fields:   RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
+	},
+	"MaxEjectionPercent":       ubx.FieldSpec{WireName: "max_ejection_percent"},
+	"SuccessRateMinimumHosts":  ubx.FieldSpec{WireName: "success_rate_minimum_hosts"},
+	"SuccessRateRequestVolume": ubx.FieldSpec{WireName: "success_rate_request_volume"},
+	"SuccessRateStdevFactor":   ubx.FieldSpec{WireName: "success_rate_stdev_factor"},
+}
 
 var RegionBackendService_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var RegionBackendService_SecuritySettings_AwsV4AuthenticationFields = ubx.FieldMap{
-		"AccessKey": ubx.FieldSpec{WireName: "access_key"},
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"AccessKeyVersion": ubx.FieldSpec{WireName: "access_key_version"},
-		"OriginRegion": ubx.FieldSpec{WireName: "origin_region"},
-	}
+	"AccessKey":        ubx.FieldSpec{WireName: "access_key"},
+	"AccessKeyId":      ubx.FieldSpec{WireName: "access_key_id"},
+	"AccessKeyVersion": ubx.FieldSpec{WireName: "access_key_version"},
+	"OriginRegion":     ubx.FieldSpec{WireName: "origin_region"},
+}
 
 var RegionBackendService_SecuritySettingsFields = ubx.FieldMap{
-		"AwsV4Authentication": ubx.FieldSpec{
-			WireName: "aws_v4_authentication",
-			Kind: "object",
-			Fields: RegionBackendService_SecuritySettings_AwsV4AuthenticationFields,
-		},
-		"ClientTlsPolicy": ubx.FieldSpec{WireName: "client_tls_policy"},
-		"SubjectAltNames": ubx.FieldSpec{WireName: "subject_alt_names"},
-	}
+	"AwsV4Authentication": ubx.FieldSpec{
+		WireName: "aws_v4_authentication",
+		Kind:     "object",
+		Fields:   RegionBackendService_SecuritySettings_AwsV4AuthenticationFields,
+	},
+	"ClientTlsPolicy": ubx.FieldSpec{WireName: "client_tls_policy"},
+	"SubjectAltNames": ubx.FieldSpec{WireName: "subject_alt_names"},
+}
 
 var RegionBackendService_SubsettingFields = ubx.FieldMap{
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-	}
+	"Policy": ubx.FieldSpec{WireName: "policy"},
+}
 
 var RegionBackendService_TlsSettings_SubjectAltNamesFields = ubx.FieldMap{
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
-		"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
-	}
+	"DnsName":                   ubx.FieldSpec{WireName: "dns_name"},
+	"UniformResourceIdentifier": ubx.FieldSpec{WireName: "uniform_resource_identifier"},
+}
 
 var RegionBackendService_TlsSettingsFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{WireName: "authentication_config"},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"Sni": ubx.FieldSpec{WireName: "sni"},
-		"SubjectAltNames": ubx.FieldSpec{
-			WireName: "subject_alt_names",
-			Kind: "list",
-			Fields: RegionBackendService_TlsSettings_SubjectAltNamesFields,
-		},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{WireName: "authentication_config"},
+	"Identity":             ubx.FieldSpec{WireName: "identity"},
+	"Sni":                  ubx.FieldSpec{WireName: "sni"},
+	"SubjectAltNames": ubx.FieldSpec{
+		WireName: "subject_alt_names",
+		Kind:     "list",
+		Fields:   RegionBackendService_TlsSettings_SubjectAltNamesFields,
+	},
+}
 
 type RegionBackendServiceConfig struct {
 	// Lifetime of cookies in seconds. This setting is applicable to Application Load Balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true.
@@ -656,7 +656,7 @@ type RegionBackendServiceConfig struct {
 	FailoverPolicy any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
 	Fingerprint any
-	HaPolicy any
+	HaPolicy    any
 	// The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
 	HealthChecks any
 	// Identity-Aware Proxy
@@ -680,7 +680,7 @@ type RegionBackendServiceConfig struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
-	Network any
+	Network                           any
 	NetworkPassThroughLbTrafficPolicy any
 	// A message containing information about the resource or system that manages the backend service.
 	OrchestrationInfo any
@@ -755,7 +755,7 @@ type RegionBackendServiceAttrs struct {
 	FailoverPolicy any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService.
 	Fingerprint any
-	HaPolicy any
+	HaPolicy    any
 	// The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy.
 	HealthChecks any
 	// Identity-Aware Proxy
@@ -781,7 +781,7 @@ type RegionBackendServiceAttrs struct {
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled.
-	Network any
+	Network                           any
 	NetworkPassThroughLbTrafficPolicy any
 	// A message containing information about the resource or system that manages the backend service.
 	OrchestrationInfo any
@@ -827,134 +827,134 @@ var RegionBackendService = ubx.ResourceBinding{
 		"AffinityCookieTtlSec": ubx.FieldSpec{WireName: "affinity_cookie_ttl_sec"},
 		"Backends": ubx.FieldSpec{
 			WireName: "backends",
-			Kind: "list",
-			Fields: RegionBackendService_BackendsFields,
+			Kind:     "list",
+			Fields:   RegionBackendService_BackendsFields,
 		},
 		"CdnPolicy": ubx.FieldSpec{
 			WireName: "cdn_policy",
-			Kind: "object",
-			Fields: RegionBackendService_CdnPolicyFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_CdnPolicyFields,
 		},
 		"CircuitBreakers": ubx.FieldSpec{
 			WireName: "circuit_breakers",
-			Kind: "object",
-			Fields: RegionBackendService_CircuitBreakersFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_CircuitBreakersFields,
 		},
 		"CompressionMode": ubx.FieldSpec{WireName: "compression_mode"},
 		"ConnectionDraining": ubx.FieldSpec{
 			WireName: "connection_draining",
-			Kind: "object",
-			Fields: RegionBackendService_ConnectionDrainingFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ConnectionDrainingFields,
 		},
 		"ConnectionTrackingPolicy": ubx.FieldSpec{
 			WireName: "connection_tracking_policy",
-			Kind: "object",
-			Fields: RegionBackendService_ConnectionTrackingPolicyFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ConnectionTrackingPolicyFields,
 		},
 		"ConsistentHash": ubx.FieldSpec{
 			WireName: "consistent_hash",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHashFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ConsistentHashFields,
 		},
 		"CustomMetrics": ubx.FieldSpec{
 			WireName: "custom_metrics",
-			Kind: "list",
-			Fields: RegionBackendService_CustomMetricsFields,
+			Kind:     "list",
+			Fields:   RegionBackendService_CustomMetricsFields,
 		},
-		"CustomRequestHeaders": ubx.FieldSpec{WireName: "custom_request_headers"},
-		"CustomResponseHeaders": ubx.FieldSpec{WireName: "custom_response_headers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EdgeSecurityPolicy": ubx.FieldSpec{WireName: "edge_security_policy"},
-		"EnableCdn": ubx.FieldSpec{WireName: "enable_cdn"},
-		"ExternalManagedMigrationState": ubx.FieldSpec{WireName: "external_managed_migration_state"},
+		"CustomRequestHeaders":                      ubx.FieldSpec{WireName: "custom_request_headers"},
+		"CustomResponseHeaders":                     ubx.FieldSpec{WireName: "custom_response_headers"},
+		"Description":                               ubx.FieldSpec{WireName: "description"},
+		"EdgeSecurityPolicy":                        ubx.FieldSpec{WireName: "edge_security_policy"},
+		"EnableCdn":                                 ubx.FieldSpec{WireName: "enable_cdn"},
+		"ExternalManagedMigrationState":             ubx.FieldSpec{WireName: "external_managed_migration_state"},
 		"ExternalManagedMigrationTestingPercentage": ubx.FieldSpec{WireName: "external_managed_migration_testing_percentage"},
 		"FailoverPolicy": ubx.FieldSpec{
 			WireName: "failover_policy",
-			Kind: "object",
-			Fields: RegionBackendService_FailoverPolicyFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_FailoverPolicyFields,
 		},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HaPolicy": ubx.FieldSpec{
 			WireName: "ha_policy",
-			Kind: "object",
-			Fields: RegionBackendService_HaPolicyFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_HaPolicyFields,
 		},
 		"HealthChecks": ubx.FieldSpec{WireName: "health_checks"},
 		"Iap": ubx.FieldSpec{
 			WireName: "iap",
-			Kind: "object",
-			Fields: RegionBackendService_IapFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_IapFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                       ubx.FieldSpec{WireName: "id"},
 		"IpAddressSelectionPolicy": ubx.FieldSpec{WireName: "ip_address_selection_policy"},
-		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
+		"LoadBalancingScheme":      ubx.FieldSpec{WireName: "load_balancing_scheme"},
 		"LocalityLbPolicies": ubx.FieldSpec{
 			WireName: "locality_lb_policies",
-			Kind: "list",
-			Fields: RegionBackendService_LocalityLbPoliciesFields,
+			Kind:     "list",
+			Fields:   RegionBackendService_LocalityLbPoliciesFields,
 		},
 		"LocalityLbPolicy": ubx.FieldSpec{WireName: "locality_lb_policy"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: RegionBackendService_LogConfigFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_LogConfigFields,
 		},
 		"MaxStreamDuration": ubx.FieldSpec{
 			WireName: "max_stream_duration",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ConsistentHash_HttpCookie_TtlFields,
 		},
 		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Network":   ubx.FieldSpec{WireName: "network"},
 		"NetworkPassThroughLbTrafficPolicy": ubx.FieldSpec{
 			WireName: "network_pass_through_lb_traffic_policy",
-			Kind: "object",
-			Fields: RegionBackendService_NetworkPassThroughLbTrafficPolicyFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_NetworkPassThroughLbTrafficPolicyFields,
 		},
 		"OrchestrationInfo": ubx.FieldSpec{
 			WireName: "orchestration_info",
-			Kind: "object",
-			Fields: RegionBackendService_Backends_OrchestrationInfoFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_Backends_OrchestrationInfoFields,
 		},
 		"OutlierDetection": ubx.FieldSpec{
 			WireName: "outlier_detection",
-			Kind: "object",
-			Fields: RegionBackendService_OutlierDetectionFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_OutlierDetectionFields,
 		},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: RegionBackendService_ParamsFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ParamsFields,
 		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PortName": ubx.FieldSpec{WireName: "port_name"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
+		"Port":           ubx.FieldSpec{WireName: "port"},
+		"PortName":       ubx.FieldSpec{WireName: "port_name"},
+		"Protocol":       ubx.FieldSpec{WireName: "protocol"},
 		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
 		"SecuritySettings": ubx.FieldSpec{
 			WireName: "security_settings",
-			Kind: "object",
-			Fields: RegionBackendService_SecuritySettingsFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_SecuritySettingsFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+		"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
 		"ServiceBindings": ubx.FieldSpec{WireName: "service_bindings"},
 		"ServiceLbPolicy": ubx.FieldSpec{WireName: "service_lb_policy"},
 		"SessionAffinity": ubx.FieldSpec{WireName: "session_affinity"},
 		"StrongSessionAffinityCookie": ubx.FieldSpec{
 			WireName: "strong_session_affinity_cookie",
-			Kind: "object",
-			Fields: RegionBackendService_ConsistentHash_HttpCookieFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_ConsistentHash_HttpCookieFields,
 		},
 		"Subsetting": ubx.FieldSpec{
 			WireName: "subsetting",
-			Kind: "object",
-			Fields: RegionBackendService_SubsettingFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_SubsettingFields,
 		},
 		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
 		"TlsSettings": ubx.FieldSpec{
 			WireName: "tls_settings",
-			Kind: "object",
-			Fields: RegionBackendService_TlsSettingsFields,
+			Kind:     "object",
+			Fields:   RegionBackendService_TlsSettingsFields,
 		},
 	},
 }

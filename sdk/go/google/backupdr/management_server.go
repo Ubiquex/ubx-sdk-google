@@ -32,24 +32,24 @@ type ManagementServer_WorkforceIdentityBasedOauth2ClientId struct {
 }
 
 var ManagementServer_ManagementUriFields = ubx.FieldMap{
-		"Api": ubx.FieldSpec{WireName: "api"},
-		"WebUi": ubx.FieldSpec{WireName: "web_ui"},
-	}
+	"Api":   ubx.FieldSpec{WireName: "api"},
+	"WebUi": ubx.FieldSpec{WireName: "web_ui"},
+}
 
 var ManagementServer_NetworksFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PeeringMode": ubx.FieldSpec{WireName: "peering_mode"},
-	}
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"PeeringMode": ubx.FieldSpec{WireName: "peering_mode"},
+}
 
 var ManagementServer_WorkforceIdentityBasedManagementUriFields = ubx.FieldMap{
-		"FirstPartyManagementUri": ubx.FieldSpec{WireName: "first_party_management_uri"},
-		"ThirdPartyManagementUri": ubx.FieldSpec{WireName: "third_party_management_uri"},
-	}
+	"FirstPartyManagementUri": ubx.FieldSpec{WireName: "first_party_management_uri"},
+	"ThirdPartyManagementUri": ubx.FieldSpec{WireName: "third_party_management_uri"},
+}
 
 var ManagementServer_WorkforceIdentityBasedOauth2ClientIdFields = ubx.FieldMap{
-		"FirstPartyOauth2ClientId": ubx.FieldSpec{WireName: "first_party_oauth2_client_id"},
-		"ThirdPartyOauth2ClientId": ubx.FieldSpec{WireName: "third_party_oauth2_client_id"},
-	}
+	"FirstPartyOauth2ClientId": ubx.FieldSpec{WireName: "first_party_oauth2_client_id"},
+	"ThirdPartyOauth2ClientId": ubx.FieldSpec{WireName: "third_party_oauth2_client_id"},
+}
 
 type ManagementServerConfig struct {
 	// Optional. The description of the ManagementServer instance (2048 characters or less).
@@ -109,28 +109,28 @@ var ManagementServer = ubx.ResourceBinding{
 	WireType: "google_backupdr_management_server",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"ManagementUri": ubx.FieldSpec{
 			WireName: "management_uri",
-			Kind: "object",
-			Fields: ManagementServer_ManagementUriFields,
+			Kind:     "object",
+			Fields:   ManagementServer_ManagementUriFields,
 		},
 		"Networks": ubx.FieldSpec{
 			WireName: "networks",
-			Kind: "list",
-			Fields: ManagementServer_NetworksFields,
+			Kind:     "list",
+			Fields:   ManagementServer_NetworksFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
 		"WorkforceIdentityBasedManagementUri": ubx.FieldSpec{
 			WireName: "workforce_identity_based_management_uri",
-			Kind: "object",
-			Fields: ManagementServer_WorkforceIdentityBasedManagementUriFields,
+			Kind:     "object",
+			Fields:   ManagementServer_WorkforceIdentityBasedManagementUriFields,
 		},
 		"WorkforceIdentityBasedOauth2ClientId": ubx.FieldSpec{
 			WireName: "workforce_identity_based_oauth2_client_id",
-			Kind: "object",
-			Fields: ManagementServer_WorkforceIdentityBasedOauth2ClientIdFields,
+			Kind:     "object",
+			Fields:   ManagementServer_WorkforceIdentityBasedOauth2ClientIdFields,
 		},
 	},
 }

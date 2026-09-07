@@ -14,12 +14,12 @@ type BetaInstantSnapshot_ResourceStatus struct {
 }
 
 var BetaInstantSnapshot_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var BetaInstantSnapshot_ResourceStatusFields = ubx.FieldMap{
-		"StorageSizeBytes": ubx.FieldSpec{WireName: "storage_size_bytes"},
-	}
+	"StorageSizeBytes": ubx.FieldSpec{WireName: "storage_size_bytes"},
+}
 
 type BetaInstantSnapshotConfig struct {
 	// An optional description of this resource. Provide this property when you create the resource.
@@ -31,7 +31,7 @@ type BetaInstantSnapshotConfig struct {
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Additional instant snapshot params.
-	Params any
+	Params         any
 	ResourceStatus any
 	// URL of the source disk used to create this instant snapshot. Note that the source disk must be in the same zone/region as the instant snapshot to be created. This can be a full or valid partial URL. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - https://www.googleapis.com/compute/v1/projects/project/regions/region/disks/disk - projects/project/zones/zone/disks/disk - projects/project/regions/region/disks/disk - zones/zone/disks/disk - regions/region/disks/disk
 	SourceDisk any
@@ -59,7 +59,7 @@ type BetaInstantSnapshotAttrs struct {
 	// Additional instant snapshot params.
 	Params any
 	// Output only. [Output Only] URL of the region where the instant snapshot resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
+	Region         any
 	ResourceStatus any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
@@ -86,19 +86,19 @@ type BetaInstantSnapshotAttrs struct {
 var BetaInstantSnapshot = ubx.ResourceBinding{
 	WireType: "google_compute_beta_instant_snapshot",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaInstantSnapshot_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaInstantSnapshot_ParamsFields,
 		},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: BetaInstantSnapshot_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   BetaInstantSnapshot_ResourceStatusFields,
 		},
 		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 	},

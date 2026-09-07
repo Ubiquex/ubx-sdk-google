@@ -11,9 +11,9 @@ type NetworkPolicy_ExternalIp struct {
 }
 
 var NetworkPolicy_ExternalIpFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"State":   ubx.FieldSpec{WireName: "state"},
+}
 
 type NetworkPolicyConfig struct {
 	// Optional. User-provided description for this network policy.
@@ -54,17 +54,17 @@ type NetworkPolicyAttrs struct {
 var NetworkPolicy = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_network_policy",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
 		"EdgeServicesCidr": ubx.FieldSpec{WireName: "edge_services_cidr"},
 		"ExternalIp": ubx.FieldSpec{
 			WireName: "external_ip",
-			Kind: "object",
-			Fields: NetworkPolicy_ExternalIpFields,
+			Kind:     "object",
+			Fields:   NetworkPolicy_ExternalIpFields,
 		},
 		"InternetAccess": ubx.FieldSpec{
 			WireName: "internet_access",
-			Kind: "object",
-			Fields: NetworkPolicy_ExternalIpFields,
+			Kind:     "object",
+			Fields:   NetworkPolicy_ExternalIpFields,
 		},
 		"VmwareEngineNetwork": ubx.FieldSpec{WireName: "vmware_engine_network"},
 	},

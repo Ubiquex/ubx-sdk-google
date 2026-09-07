@@ -4,37 +4,37 @@ package sqladmin
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BlueGreenDeployment_DeploymentMappings_Diffs struct {
-	Field any
+	Field       any
 	SourceValue any
 	TargetValue any
 }
 
 type BlueGreenDeployment_DeploymentMappings_Source_IpMappings struct {
-	IpAddress any
+	IpAddress    any
 	TimeToRetire any
-	Type any
+	Type         any
 }
 
 type BlueGreenDeployment_DeploymentMappings_Source struct {
 	Connection any
-	Dns any
-	Instance any
+	Dns        any
+	Instance   any
 	IpMappings any
 }
 
 type BlueGreenDeployment_DeploymentMappings struct {
-	Diffs any
+	Diffs  any
 	Source any
-	State any
+	State  any
 	Target any
 }
 
 type BlueGreenDeployment_DeploymentTasks_Task struct {
-	EndTime any
+	EndTime      any
 	ErrorMessage any
-	StartTime any
-	State any
-	Type any
+	StartTime    any
+	State        any
+	Type         any
 }
 
 type BlueGreenDeployment_DeploymentTasks struct {
@@ -48,24 +48,24 @@ type BlueGreenDeployment_RequestedConfig struct {
 }
 
 var BlueGreenDeployment_DeploymentTasks_TaskFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"EndTime":      ubx.FieldSpec{WireName: "end_time"},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"StartTime":    ubx.FieldSpec{WireName: "start_time"},
+	"State":        ubx.FieldSpec{WireName: "state"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var BlueGreenDeployment_DeploymentTasksFields = ubx.FieldMap{
-		"Task": ubx.FieldSpec{
-			WireName: "task",
-			Kind: "list",
-			Fields: BlueGreenDeployment_DeploymentTasks_TaskFields,
-		},
-	}
+	"Task": ubx.FieldSpec{
+		WireName: "task",
+		Kind:     "list",
+		Fields:   BlueGreenDeployment_DeploymentTasks_TaskFields,
+	},
+}
 
 var BlueGreenDeployment_RequestedConfigFields = ubx.FieldMap{
-		"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
-	}
+	"DatabaseVersion": ubx.FieldSpec{WireName: "database_version"},
+}
 
 type BlueGreenDeploymentConfig struct {
 	// Combined list of tasks for all paired nodes in the deployment.
@@ -106,14 +106,14 @@ var BlueGreenDeployment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeploymentTasks": ubx.FieldSpec{
 			WireName: "deployment_tasks",
-			Kind: "object",
-			Fields: BlueGreenDeployment_DeploymentTasksFields,
+			Kind:     "object",
+			Fields:   BlueGreenDeployment_DeploymentTasksFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"RequestedConfig": ubx.FieldSpec{
 			WireName: "requested_config",
-			Kind: "object",
-			Fields: BlueGreenDeployment_RequestedConfigFields,
+			Kind:     "object",
+			Fields:   BlueGreenDeployment_RequestedConfigFields,
 		},
 		"SourceInstance": ubx.FieldSpec{WireName: "source_instance"},
 	},

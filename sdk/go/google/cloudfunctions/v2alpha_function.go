@@ -83,8 +83,8 @@ type V2alphaFunction_BuildConfig struct {
 
 type V2alphaFunction_EventTrigger_EventFilters struct {
 	Attribute any
-	Operator any
-	Value any
+	Operator  any
+	Value     any
 }
 
 type V2alphaFunction_EventTrigger struct {
@@ -109,28 +109,28 @@ type V2alphaFunction_EventTrigger struct {
 }
 
 type V2alphaFunction_ServiceConfig_DirectVpcNetworkInterface struct {
-	Network any
+	Network    any
 	Subnetwork any
-	Tags any
+	Tags       any
 }
 
 type V2alphaFunction_ServiceConfig_SecretEnvironmentVariables struct {
-	Key any
+	Key       any
 	ProjectId any
-	Secret any
-	Version any
+	Secret    any
+	Version   any
 }
 
 type V2alphaFunction_ServiceConfig_SecretVolumes_Versions struct {
-	Path any
+	Path    any
 	Version any
 }
 
 type V2alphaFunction_ServiceConfig_SecretVolumes struct {
 	MountPath any
 	ProjectId any
-	Secret any
-	Versions any
+	Secret    any
+	Versions  any
 }
 
 type V2alphaFunction_ServiceConfig struct {
@@ -179,9 +179,9 @@ type V2alphaFunction_ServiceConfig struct {
 }
 
 type V2alphaFunction_StateMessages struct {
-	Message any
+	Message  any
 	Severity any
-	Type any
+	Type     any
 }
 
 type V2alphaFunction_UpgradeInfo struct {
@@ -196,186 +196,186 @@ type V2alphaFunction_UpgradeInfo struct {
 }
 
 var V2alphaFunction_BuildConfig_OnDeployUpdatePolicyFields = ubx.FieldMap{
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-	}
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+}
 
 var V2alphaFunction_BuildConfig_Source_RepoSourceFields = ubx.FieldMap{
-		"BranchName": ubx.FieldSpec{WireName: "branch_name"},
-		"CommitSha": ubx.FieldSpec{WireName: "commit_sha"},
-		"Dir": ubx.FieldSpec{WireName: "dir"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RepoName": ubx.FieldSpec{WireName: "repo_name"},
-		"TagName": ubx.FieldSpec{WireName: "tag_name"},
-	}
+	"BranchName": ubx.FieldSpec{WireName: "branch_name"},
+	"CommitSha":  ubx.FieldSpec{WireName: "commit_sha"},
+	"Dir":        ubx.FieldSpec{WireName: "dir"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+	"RepoName":   ubx.FieldSpec{WireName: "repo_name"},
+	"TagName":    ubx.FieldSpec{WireName: "tag_name"},
+}
 
 var V2alphaFunction_BuildConfig_Source_StorageSourceFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"SourceUploadUrl": ubx.FieldSpec{WireName: "source_upload_url"},
-	}
+	"Bucket":          ubx.FieldSpec{WireName: "bucket"},
+	"Generation":      ubx.FieldSpec{WireName: "generation"},
+	"Object":          ubx.FieldSpec{WireName: "object"},
+	"SourceUploadUrl": ubx.FieldSpec{WireName: "source_upload_url"},
+}
 
 var V2alphaFunction_BuildConfig_SourceFields = ubx.FieldMap{
-		"GitUri": ubx.FieldSpec{WireName: "git_uri"},
-		"RepoSource": ubx.FieldSpec{
-			WireName: "repo_source",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_Source_RepoSourceFields,
-		},
-		"StorageSource": ubx.FieldSpec{
-			WireName: "storage_source",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_Source_StorageSourceFields,
-		},
-	}
+	"GitUri": ubx.FieldSpec{WireName: "git_uri"},
+	"RepoSource": ubx.FieldSpec{
+		WireName: "repo_source",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_Source_RepoSourceFields,
+	},
+	"StorageSource": ubx.FieldSpec{
+		WireName: "storage_source",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_Source_StorageSourceFields,
+	},
+}
 
 var V2alphaFunction_BuildConfig_SourceProvenanceFields = ubx.FieldMap{
-		"GitUri": ubx.FieldSpec{WireName: "git_uri"},
-		"ResolvedRepoSource": ubx.FieldSpec{
-			WireName: "resolved_repo_source",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_Source_RepoSourceFields,
-		},
-		"ResolvedStorageSource": ubx.FieldSpec{
-			WireName: "resolved_storage_source",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_Source_StorageSourceFields,
-		},
-	}
+	"GitUri": ubx.FieldSpec{WireName: "git_uri"},
+	"ResolvedRepoSource": ubx.FieldSpec{
+		WireName: "resolved_repo_source",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_Source_RepoSourceFields,
+	},
+	"ResolvedStorageSource": ubx.FieldSpec{
+		WireName: "resolved_storage_source",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_Source_StorageSourceFields,
+	},
+}
 
 var V2alphaFunction_BuildConfigFields = ubx.FieldMap{
-		"AutomaticUpdatePolicy": ubx.FieldSpec{WireName: "automatic_update_policy"},
-		"Build": ubx.FieldSpec{WireName: "build"},
-		"DockerRegistry": ubx.FieldSpec{WireName: "docker_registry"},
-		"DockerRepository": ubx.FieldSpec{WireName: "docker_repository"},
-		"EntryPoint": ubx.FieldSpec{WireName: "entry_point"},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"OnDeployUpdatePolicy": ubx.FieldSpec{
-			WireName: "on_deploy_update_policy",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_OnDeployUpdatePolicyFields,
-		},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_SourceFields,
-		},
-		"SourceProvenance": ubx.FieldSpec{
-			WireName: "source_provenance",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfig_SourceProvenanceFields,
-		},
-		"SourceToken": ubx.FieldSpec{WireName: "source_token"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"AutomaticUpdatePolicy": ubx.FieldSpec{WireName: "automatic_update_policy"},
+	"Build":                 ubx.FieldSpec{WireName: "build"},
+	"DockerRegistry":        ubx.FieldSpec{WireName: "docker_registry"},
+	"DockerRepository":      ubx.FieldSpec{WireName: "docker_repository"},
+	"EntryPoint":            ubx.FieldSpec{WireName: "entry_point"},
+	"EnvironmentVariables":  ubx.FieldSpec{WireName: "environment_variables"},
+	"OnDeployUpdatePolicy": ubx.FieldSpec{
+		WireName: "on_deploy_update_policy",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_OnDeployUpdatePolicyFields,
+	},
+	"Runtime":        ubx.FieldSpec{WireName: "runtime"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_SourceFields,
+	},
+	"SourceProvenance": ubx.FieldSpec{
+		WireName: "source_provenance",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfig_SourceProvenanceFields,
+	},
+	"SourceToken": ubx.FieldSpec{WireName: "source_token"},
+	"WorkerPool":  ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var V2alphaFunction_EventTrigger_EventFiltersFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Operator":  ubx.FieldSpec{WireName: "operator"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var V2alphaFunction_EventTriggerFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"EventFilters": ubx.FieldSpec{
-			WireName: "event_filters",
-			Kind: "list",
-			Fields: V2alphaFunction_EventTrigger_EventFiltersFields,
-		},
-		"EventType": ubx.FieldSpec{WireName: "event_type"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"RetryPolicy": ubx.FieldSpec{WireName: "retry_policy"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"Trigger": ubx.FieldSpec{WireName: "trigger"},
-		"TriggerRegion": ubx.FieldSpec{WireName: "trigger_region"},
-	}
+	"Channel": ubx.FieldSpec{WireName: "channel"},
+	"EventFilters": ubx.FieldSpec{
+		WireName: "event_filters",
+		Kind:     "list",
+		Fields:   V2alphaFunction_EventTrigger_EventFiltersFields,
+	},
+	"EventType":           ubx.FieldSpec{WireName: "event_type"},
+	"PubsubTopic":         ubx.FieldSpec{WireName: "pubsub_topic"},
+	"RetryPolicy":         ubx.FieldSpec{WireName: "retry_policy"},
+	"Service":             ubx.FieldSpec{WireName: "service"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+	"Trigger":             ubx.FieldSpec{WireName: "trigger"},
+	"TriggerRegion":       ubx.FieldSpec{WireName: "trigger_region"},
+}
 
 var V2alphaFunction_ServiceConfig_DirectVpcNetworkInterfaceFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	"Tags":       ubx.FieldSpec{WireName: "tags"},
+}
 
 var V2alphaFunction_ServiceConfig_SecretEnvironmentVariablesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"Secret":    ubx.FieldSpec{WireName: "secret"},
+	"Version":   ubx.FieldSpec{WireName: "version"},
+}
 
 var V2alphaFunction_ServiceConfig_SecretVolumes_VersionsFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V2alphaFunction_ServiceConfig_SecretVolumesFields = ubx.FieldMap{
-		"MountPath": ubx.FieldSpec{WireName: "mount_path"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Versions": ubx.FieldSpec{
-			WireName: "versions",
-			Kind: "list",
-			Fields: V2alphaFunction_ServiceConfig_SecretVolumes_VersionsFields,
-		},
-	}
+	"MountPath": ubx.FieldSpec{WireName: "mount_path"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"Secret":    ubx.FieldSpec{WireName: "secret"},
+	"Versions": ubx.FieldSpec{
+		WireName: "versions",
+		Kind:     "list",
+		Fields:   V2alphaFunction_ServiceConfig_SecretVolumes_VersionsFields,
+	},
+}
 
 var V2alphaFunction_ServiceConfigFields = ubx.FieldMap{
-		"AllTrafficOnLatestRevision": ubx.FieldSpec{WireName: "all_traffic_on_latest_revision"},
-		"AvailableCpu": ubx.FieldSpec{WireName: "available_cpu"},
-		"AvailableMemory": ubx.FieldSpec{WireName: "available_memory"},
-		"BinaryAuthorizationPolicy": ubx.FieldSpec{WireName: "binary_authorization_policy"},
-		"DirectVpcEgress": ubx.FieldSpec{WireName: "direct_vpc_egress"},
-		"DirectVpcNetworkInterface": ubx.FieldSpec{
-			WireName: "direct_vpc_network_interface",
-			Kind: "list",
-			Fields: V2alphaFunction_ServiceConfig_DirectVpcNetworkInterfaceFields,
-		},
-		"EnvironmentVariables": ubx.FieldSpec{WireName: "environment_variables"},
-		"IngressSettings": ubx.FieldSpec{WireName: "ingress_settings"},
-		"MaxInstanceCount": ubx.FieldSpec{WireName: "max_instance_count"},
-		"MaxInstanceRequestConcurrency": ubx.FieldSpec{WireName: "max_instance_request_concurrency"},
-		"MinInstanceCount": ubx.FieldSpec{WireName: "min_instance_count"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"SecretEnvironmentVariables": ubx.FieldSpec{
-			WireName: "secret_environment_variables",
-			Kind: "list",
-			Fields: V2alphaFunction_ServiceConfig_SecretEnvironmentVariablesFields,
-		},
-		"SecretVolumes": ubx.FieldSpec{
-			WireName: "secret_volumes",
-			Kind: "list",
-			Fields: V2alphaFunction_ServiceConfig_SecretVolumesFields,
-		},
-		"SecurityLevel": ubx.FieldSpec{WireName: "security_level"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"VpcConnector": ubx.FieldSpec{WireName: "vpc_connector"},
-		"VpcConnectorEgressSettings": ubx.FieldSpec{WireName: "vpc_connector_egress_settings"},
-	}
+	"AllTrafficOnLatestRevision": ubx.FieldSpec{WireName: "all_traffic_on_latest_revision"},
+	"AvailableCpu":               ubx.FieldSpec{WireName: "available_cpu"},
+	"AvailableMemory":            ubx.FieldSpec{WireName: "available_memory"},
+	"BinaryAuthorizationPolicy":  ubx.FieldSpec{WireName: "binary_authorization_policy"},
+	"DirectVpcEgress":            ubx.FieldSpec{WireName: "direct_vpc_egress"},
+	"DirectVpcNetworkInterface": ubx.FieldSpec{
+		WireName: "direct_vpc_network_interface",
+		Kind:     "list",
+		Fields:   V2alphaFunction_ServiceConfig_DirectVpcNetworkInterfaceFields,
+	},
+	"EnvironmentVariables":          ubx.FieldSpec{WireName: "environment_variables"},
+	"IngressSettings":               ubx.FieldSpec{WireName: "ingress_settings"},
+	"MaxInstanceCount":              ubx.FieldSpec{WireName: "max_instance_count"},
+	"MaxInstanceRequestConcurrency": ubx.FieldSpec{WireName: "max_instance_request_concurrency"},
+	"MinInstanceCount":              ubx.FieldSpec{WireName: "min_instance_count"},
+	"Revision":                      ubx.FieldSpec{WireName: "revision"},
+	"SecretEnvironmentVariables": ubx.FieldSpec{
+		WireName: "secret_environment_variables",
+		Kind:     "list",
+		Fields:   V2alphaFunction_ServiceConfig_SecretEnvironmentVariablesFields,
+	},
+	"SecretVolumes": ubx.FieldSpec{
+		WireName: "secret_volumes",
+		Kind:     "list",
+		Fields:   V2alphaFunction_ServiceConfig_SecretVolumesFields,
+	},
+	"SecurityLevel":              ubx.FieldSpec{WireName: "security_level"},
+	"Service":                    ubx.FieldSpec{WireName: "service"},
+	"ServiceAccountEmail":        ubx.FieldSpec{WireName: "service_account_email"},
+	"TimeoutSeconds":             ubx.FieldSpec{WireName: "timeout_seconds"},
+	"Uri":                        ubx.FieldSpec{WireName: "uri"},
+	"VpcConnector":               ubx.FieldSpec{WireName: "vpc_connector"},
+	"VpcConnectorEgressSettings": ubx.FieldSpec{WireName: "vpc_connector_egress_settings"},
+}
 
 var V2alphaFunction_UpgradeInfoFields = ubx.FieldMap{
-		"BuildConfig": ubx.FieldSpec{
-			WireName: "build_config",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfigFields,
-		},
-		"EventTrigger": ubx.FieldSpec{
-			WireName: "event_trigger",
-			Kind: "object",
-			Fields: V2alphaFunction_EventTriggerFields,
-		},
-		"ServiceConfig": ubx.FieldSpec{
-			WireName: "service_config",
-			Kind: "object",
-			Fields: V2alphaFunction_ServiceConfigFields,
-		},
-		"UpgradeState": ubx.FieldSpec{WireName: "upgrade_state"},
-	}
+	"BuildConfig": ubx.FieldSpec{
+		WireName: "build_config",
+		Kind:     "object",
+		Fields:   V2alphaFunction_BuildConfigFields,
+	},
+	"EventTrigger": ubx.FieldSpec{
+		WireName: "event_trigger",
+		Kind:     "object",
+		Fields:   V2alphaFunction_EventTriggerFields,
+	},
+	"ServiceConfig": ubx.FieldSpec{
+		WireName: "service_config",
+		Kind:     "object",
+		Fields:   V2alphaFunction_ServiceConfigFields,
+	},
+	"UpgradeState": ubx.FieldSpec{WireName: "upgrade_state"},
+}
 
 type V2alphaFunctionConfig struct {
 	// Describes the Build step of the function that builds a container from the given source.
@@ -438,28 +438,28 @@ var V2alphaFunction = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BuildConfig": ubx.FieldSpec{
 			WireName: "build_config",
-			Kind: "object",
-			Fields: V2alphaFunction_BuildConfigFields,
+			Kind:     "object",
+			Fields:   V2alphaFunction_BuildConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Environment": ubx.FieldSpec{WireName: "environment"},
 		"EventTrigger": ubx.FieldSpec{
 			WireName: "event_trigger",
-			Kind: "object",
-			Fields: V2alphaFunction_EventTriggerFields,
+			Kind:     "object",
+			Fields:   V2alphaFunction_EventTriggerFields,
 		},
 		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"ServiceConfig": ubx.FieldSpec{
 			WireName: "service_config",
-			Kind: "object",
-			Fields: V2alphaFunction_ServiceConfigFields,
+			Kind:     "object",
+			Fields:   V2alphaFunction_ServiceConfigFields,
 		},
 		"UpgradeInfo": ubx.FieldSpec{
 			WireName: "upgrade_info",
-			Kind: "object",
-			Fields: V2alphaFunction_UpgradeInfoFields,
+			Kind:     "object",
+			Fields:   V2alphaFunction_UpgradeInfoFields,
 		},
 	},
 }

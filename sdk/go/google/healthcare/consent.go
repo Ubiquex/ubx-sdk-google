@@ -29,29 +29,29 @@ type Consent_Policies struct {
 }
 
 var Consent_Policies_AuthorizationRuleFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Consent_Policies_ResourceAttributesFields = ubx.FieldMap{
-		"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
+	"Values":                ubx.FieldSpec{WireName: "values"},
+}
 
 var Consent_PoliciesFields = ubx.FieldMap{
-		"AuthorizationRule": ubx.FieldSpec{
-			WireName: "authorization_rule",
-			Kind: "object",
-			Fields: Consent_Policies_AuthorizationRuleFields,
-		},
-		"ResourceAttributes": ubx.FieldSpec{
-			WireName: "resource_attributes",
-			Kind: "list",
-			Fields: Consent_Policies_ResourceAttributesFields,
-		},
-	}
+	"AuthorizationRule": ubx.FieldSpec{
+		WireName: "authorization_rule",
+		Kind:     "object",
+		Fields:   Consent_Policies_AuthorizationRuleFields,
+	},
+	"ResourceAttributes": ubx.FieldSpec{
+		WireName: "resource_attributes",
+		Kind:     "list",
+		Fields:   Consent_Policies_ResourceAttributesFields,
+	},
+}
 
 type ConsentConfig struct {
 	// Required. The resource name of the Consent artifact that contains proof of the end user's consent, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/consentArtifacts/{consent_artifact_id}`.
@@ -99,16 +99,16 @@ var Consent = ubx.ResourceBinding{
 	WireType: "google_healthcare_consent",
 	Fields: ubx.FieldMap{
 		"ConsentArtifact": ubx.FieldSpec{WireName: "consent_artifact"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ExpireTime":      ubx.FieldSpec{WireName: "expire_time"},
+		"Metadata":        ubx.FieldSpec{WireName: "metadata"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Policies": ubx.FieldSpec{
 			WireName: "policies",
-			Kind: "list",
-			Fields: Consent_PoliciesFields,
+			Kind:     "list",
+			Fields:   Consent_PoliciesFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
+		"State":  ubx.FieldSpec{WireName: "state"},
+		"Ttl":    ubx.FieldSpec{WireName: "ttl"},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -45,37 +45,37 @@ type LbTrafficExtension_ExtensionChains struct {
 }
 
 var LbTrafficExtension_ExtensionChains_ExtensionsFields = ubx.FieldMap{
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"ForwardAttributes": ubx.FieldSpec{WireName: "forward_attributes"},
-		"ForwardHeaders": ubx.FieldSpec{WireName: "forward_headers"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
-		"RequestBodySendMode": ubx.FieldSpec{WireName: "request_body_send_mode"},
-		"ResponseBodySendMode": ubx.FieldSpec{WireName: "response_body_send_mode"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Authority":            ubx.FieldSpec{WireName: "authority"},
+	"FailOpen":             ubx.FieldSpec{WireName: "fail_open"},
+	"ForwardAttributes":    ubx.FieldSpec{WireName: "forward_attributes"},
+	"ForwardHeaders":       ubx.FieldSpec{WireName: "forward_headers"},
+	"Metadata":             ubx.FieldSpec{WireName: "metadata"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"ObservabilityMode":    ubx.FieldSpec{WireName: "observability_mode"},
+	"RequestBodySendMode":  ubx.FieldSpec{WireName: "request_body_send_mode"},
+	"ResponseBodySendMode": ubx.FieldSpec{WireName: "response_body_send_mode"},
+	"Service":              ubx.FieldSpec{WireName: "service"},
+	"SupportedEvents":      ubx.FieldSpec{WireName: "supported_events"},
+	"Timeout":              ubx.FieldSpec{WireName: "timeout"},
+}
 
 var LbTrafficExtension_ExtensionChains_MatchConditionFields = ubx.FieldMap{
-		"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
-	}
+	"CelExpression": ubx.FieldSpec{WireName: "cel_expression"},
+}
 
 var LbTrafficExtension_ExtensionChainsFields = ubx.FieldMap{
-		"Extensions": ubx.FieldSpec{
-			WireName: "extensions",
-			Kind: "list",
-			Fields: LbTrafficExtension_ExtensionChains_ExtensionsFields,
-		},
-		"MatchCondition": ubx.FieldSpec{
-			WireName: "match_condition",
-			Kind: "object",
-			Fields: LbTrafficExtension_ExtensionChains_MatchConditionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Extensions": ubx.FieldSpec{
+		WireName: "extensions",
+		Kind:     "list",
+		Fields:   LbTrafficExtension_ExtensionChains_ExtensionsFields,
+	},
+	"MatchCondition": ubx.FieldSpec{
+		WireName: "match_condition",
+		Kind:     "object",
+		Fields:   LbTrafficExtension_ExtensionChains_MatchConditionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 type LbTrafficExtensionConfig struct {
 	// Optional. A human-readable description of the resource.
@@ -121,13 +121,13 @@ var LbTrafficExtension = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionChains": ubx.FieldSpec{
 			WireName: "extension_chains",
-			Kind: "list",
-			Fields: LbTrafficExtension_ExtensionChainsFields,
+			Kind:     "list",
+			Fields:   LbTrafficExtension_ExtensionChainsFields,
 		},
-		"ForwardingRules": ubx.FieldSpec{WireName: "forwarding_rules"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"ForwardingRules":     ubx.FieldSpec{WireName: "forwarding_rules"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Metadata":            ubx.FieldSpec{WireName: "metadata"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 	},
 }

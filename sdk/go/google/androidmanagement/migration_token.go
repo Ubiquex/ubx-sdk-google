@@ -49,11 +49,11 @@ var MigrationToken = ubx.ResourceBinding{
 	WireType: "google_androidmanagement_migration_token",
 	Fields: ubx.FieldMap{
 		"AdditionalData": ubx.FieldSpec{WireName: "additional_data"},
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"DeviceId":       ubx.FieldSpec{WireName: "device_id"},
+		"ExpireTime":     ubx.FieldSpec{WireName: "expire_time"},
 		"ManagementMode": ubx.FieldSpec{WireName: "management_mode"},
-		"Policy": ubx.FieldSpec{WireName: "policy"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"Policy":         ubx.FieldSpec{WireName: "policy"},
+		"Ttl":            ubx.FieldSpec{WireName: "ttl"},
+		"UserId":         ubx.FieldSpec{WireName: "user_id"},
 	},
 }

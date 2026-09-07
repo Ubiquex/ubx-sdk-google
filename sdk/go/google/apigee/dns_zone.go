@@ -11,9 +11,9 @@ type DnsZone_PeeringConfig struct {
 }
 
 var DnsZone_PeeringConfigFields = ubx.FieldMap{
-		"TargetNetworkId": ubx.FieldSpec{WireName: "target_network_id"},
-		"TargetProjectId": ubx.FieldSpec{WireName: "target_project_id"},
-	}
+	"TargetNetworkId": ubx.FieldSpec{WireName: "target_network_id"},
+	"TargetProjectId": ubx.FieldSpec{WireName: "target_project_id"},
+}
 
 type DnsZoneConfig struct {
 	// Required. Description of the resource. String of at most 1024 characters associated with this resource for the user's convenience.
@@ -47,12 +47,12 @@ var DnsZone = ubx.ResourceBinding{
 	WireType: "google_apigee_dns_zone",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Domain":      ubx.FieldSpec{WireName: "domain"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PeeringConfig": ubx.FieldSpec{
 			WireName: "peering_config",
-			Kind: "object",
-			Fields: DnsZone_PeeringConfigFields,
+			Kind:     "object",
+			Fields:   DnsZone_PeeringConfigFields,
 		},
 	},
 }

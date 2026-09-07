@@ -9,8 +9,8 @@ type BackupVault_EncryptionConfig struct {
 }
 
 var BackupVault_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 type BackupVaultConfig struct {
 	// Optional. Restricts access to certain sources and destinations for data being sent into, or restored from, the backup vault. Defaults to WITHIN_ORGANIZATION if not provided during creation.
@@ -75,18 +75,18 @@ type BackupVaultAttrs struct {
 var BackupVault = ubx.ResourceBinding{
 	WireType: "google_backupdr_backup_vault",
 	Fields: ubx.FieldMap{
-		"AccessRestriction": ubx.FieldSpec{WireName: "access_restriction"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"AccessRestriction":                      ubx.FieldSpec{WireName: "access_restriction"},
+		"Annotations":                            ubx.FieldSpec{WireName: "annotations"},
 		"BackupMinimumEnforcedRetentionDuration": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_duration"},
-		"BackupRetentionInheritance": ubx.FieldSpec{WireName: "backup_retention_inheritance"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+		"BackupRetentionInheritance":             ubx.FieldSpec{WireName: "backup_retention_inheritance"},
+		"Description":                            ubx.FieldSpec{WireName: "description"},
+		"EffectiveTime":                          ubx.FieldSpec{WireName: "effective_time"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: BackupVault_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   BackupVault_EncryptionConfigFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 	},
 }

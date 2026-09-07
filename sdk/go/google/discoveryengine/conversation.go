@@ -96,112 +96,112 @@ type Conversation_Messages struct {
 }
 
 var Conversation_Messages_Reply_Summary_SafetyAttributesFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{WireName: "categories"},
-		"Scores": ubx.FieldSpec{WireName: "scores"},
-	}
+	"Categories": ubx.FieldSpec{WireName: "categories"},
+	"Scores":     ubx.FieldSpec{WireName: "scores"},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_SourcesFields = ubx.FieldMap{
-		"ReferenceIndex": ubx.FieldSpec{WireName: "reference_index"},
-	}
+	"ReferenceIndex": ubx.FieldSpec{WireName: "reference_index"},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_CitationsFields = ubx.FieldMap{
-		"EndIndex": ubx.FieldSpec{WireName: "end_index"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "list",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_SourcesFields,
-		},
-		"StartIndex": ubx.FieldSpec{WireName: "start_index"},
-	}
+	"EndIndex": ubx.FieldSpec{WireName: "end_index"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "list",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_Citations_SourcesFields,
+	},
+	"StartIndex": ubx.FieldSpec{WireName: "start_index"},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadataFields = ubx.FieldMap{
-		"Citations": ubx.FieldSpec{
-			WireName: "citations",
-			Kind: "list",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_CitationsFields,
-		},
-	}
+	"Citations": ubx.FieldSpec{
+		WireName: "citations",
+		Kind:     "list",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadata_CitationsFields,
+	},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContentsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
-	}
+	"Content":        ubx.FieldSpec{WireName: "content"},
+	"PageIdentifier": ubx.FieldSpec{WireName: "page_identifier"},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadata_ReferencesFields = ubx.FieldMap{
-		"ChunkContents": ubx.FieldSpec{
-			WireName: "chunk_contents",
-			Kind: "list",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContentsFields,
-		},
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ChunkContents": ubx.FieldSpec{
+		WireName: "chunk_contents",
+		Kind:     "list",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadata_References_ChunkContentsFields,
+	},
+	"Document": ubx.FieldSpec{WireName: "document"},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+	"Uri":      ubx.FieldSpec{WireName: "uri"},
+}
 
 var Conversation_Messages_Reply_Summary_SummaryWithMetadataFields = ubx.FieldMap{
-		"CitationMetadata": ubx.FieldSpec{
-			WireName: "citation_metadata",
-			Kind: "object",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadataFields,
-		},
-		"References": ubx.FieldSpec{
-			WireName: "references",
-			Kind: "list",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadata_ReferencesFields,
-		},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-	}
+	"CitationMetadata": ubx.FieldSpec{
+		WireName: "citation_metadata",
+		Kind:     "object",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadata_CitationMetadataFields,
+	},
+	"References": ubx.FieldSpec{
+		WireName: "references",
+		Kind:     "list",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadata_ReferencesFields,
+	},
+	"Summary": ubx.FieldSpec{WireName: "summary"},
+}
 
 var Conversation_Messages_Reply_SummaryFields = ubx.FieldMap{
-		"SafetyAttributes": ubx.FieldSpec{
-			WireName: "safety_attributes",
-			Kind: "object",
-			Fields: Conversation_Messages_Reply_Summary_SafetyAttributesFields,
-		},
-		"SummarySkippedReasons": ubx.FieldSpec{WireName: "summary_skipped_reasons"},
-		"SummaryText": ubx.FieldSpec{WireName: "summary_text"},
-		"SummaryWithMetadata": ubx.FieldSpec{
-			WireName: "summary_with_metadata",
-			Kind: "object",
-			Fields: Conversation_Messages_Reply_Summary_SummaryWithMetadataFields,
-		},
-	}
+	"SafetyAttributes": ubx.FieldSpec{
+		WireName: "safety_attributes",
+		Kind:     "object",
+		Fields:   Conversation_Messages_Reply_Summary_SafetyAttributesFields,
+	},
+	"SummarySkippedReasons": ubx.FieldSpec{WireName: "summary_skipped_reasons"},
+	"SummaryText":           ubx.FieldSpec{WireName: "summary_text"},
+	"SummaryWithMetadata": ubx.FieldSpec{
+		WireName: "summary_with_metadata",
+		Kind:     "object",
+		Fields:   Conversation_Messages_Reply_Summary_SummaryWithMetadataFields,
+	},
+}
 
 var Conversation_Messages_ReplyFields = ubx.FieldMap{
-		"Summary": ubx.FieldSpec{
-			WireName: "summary",
-			Kind: "object",
-			Fields: Conversation_Messages_Reply_SummaryFields,
-		},
-	}
+	"Summary": ubx.FieldSpec{
+		WireName: "summary",
+		Kind:     "object",
+		Fields:   Conversation_Messages_Reply_SummaryFields,
+	},
+}
 
 var Conversation_Messages_UserInput_ContextFields = ubx.FieldMap{
-		"ActiveDocument": ubx.FieldSpec{WireName: "active_document"},
-		"ContextDocuments": ubx.FieldSpec{WireName: "context_documents"},
-	}
+	"ActiveDocument":   ubx.FieldSpec{WireName: "active_document"},
+	"ContextDocuments": ubx.FieldSpec{WireName: "context_documents"},
+}
 
 var Conversation_Messages_UserInputFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "object",
-			Fields: Conversation_Messages_UserInput_ContextFields,
-		},
-		"Input": ubx.FieldSpec{WireName: "input"},
-	}
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "object",
+		Fields:   Conversation_Messages_UserInput_ContextFields,
+	},
+	"Input": ubx.FieldSpec{WireName: "input"},
+}
 
 var Conversation_MessagesFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Reply": ubx.FieldSpec{
-			WireName: "reply",
-			Kind: "object",
-			Fields: Conversation_Messages_ReplyFields,
-		},
-		"UserInput": ubx.FieldSpec{
-			WireName: "user_input",
-			Kind: "object",
-			Fields: Conversation_Messages_UserInputFields,
-		},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Reply": ubx.FieldSpec{
+		WireName: "reply",
+		Kind:     "object",
+		Fields:   Conversation_Messages_ReplyFields,
+	},
+	"UserInput": ubx.FieldSpec{
+		WireName: "user_input",
+		Kind:     "object",
+		Fields:   Conversation_Messages_UserInputFields,
+	},
+}
 
 type ConversationConfig struct {
 	// Conversation messages.
@@ -234,11 +234,11 @@ var Conversation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Messages": ubx.FieldSpec{
 			WireName: "messages",
-			Kind: "list",
-			Fields: Conversation_MessagesFields,
+			Kind:     "list",
+			Fields:   Conversation_MessagesFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"State":        ubx.FieldSpec{WireName: "state"},
 		"UserPseudoId": ubx.FieldSpec{WireName: "user_pseudo_id"},
 	},
 }

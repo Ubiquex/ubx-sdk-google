@@ -70,64 +70,64 @@ type TransferConfig_ScheduleOptionsV2 struct {
 }
 
 var TransferConfig_EmailPreferencesFields = ubx.FieldMap{
-		"EnableFailureEmail": ubx.FieldSpec{WireName: "enable_failure_email"},
-	}
+	"EnableFailureEmail": ubx.FieldSpec{WireName: "enable_failure_email"},
+}
 
 var TransferConfig_EncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var TransferConfig_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var TransferConfig_MetadataDestination_DataplexConfigurationFields = ubx.FieldMap{
-		"EntryGroup": ubx.FieldSpec{WireName: "entry_group"},
-	}
+	"EntryGroup": ubx.FieldSpec{WireName: "entry_group"},
+}
 
 var TransferConfig_MetadataDestinationFields = ubx.FieldMap{
-		"DataplexConfiguration": ubx.FieldSpec{
-			WireName: "dataplex_configuration",
-			Kind: "object",
-			Fields: TransferConfig_MetadataDestination_DataplexConfigurationFields,
-		},
-	}
+	"DataplexConfiguration": ubx.FieldSpec{
+		WireName: "dataplex_configuration",
+		Kind:     "object",
+		Fields:   TransferConfig_MetadataDestination_DataplexConfigurationFields,
+	},
+}
 
 var TransferConfig_OwnerInfoFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var TransferConfig_ScheduleOptionsFields = ubx.FieldMap{
-		"DisableAutoScheduling": ubx.FieldSpec{WireName: "disable_auto_scheduling"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"DisableAutoScheduling": ubx.FieldSpec{WireName: "disable_auto_scheduling"},
+	"EndTime":               ubx.FieldSpec{WireName: "end_time"},
+	"StartTime":             ubx.FieldSpec{WireName: "start_time"},
+}
 
 var TransferConfig_ScheduleOptionsV2_EventDrivenScheduleFields = ubx.FieldMap{
-		"PubsubSubscription": ubx.FieldSpec{WireName: "pubsub_subscription"},
-	}
+	"PubsubSubscription": ubx.FieldSpec{WireName: "pubsub_subscription"},
+}
 
 var TransferConfig_ScheduleOptionsV2_TimeBasedScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"Schedule":  ubx.FieldSpec{WireName: "schedule"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var TransferConfig_ScheduleOptionsV2Fields = ubx.FieldMap{
-		"EventDrivenSchedule": ubx.FieldSpec{
-			WireName: "event_driven_schedule",
-			Kind: "object",
-			Fields: TransferConfig_ScheduleOptionsV2_EventDrivenScheduleFields,
-		},
-		"ManualSchedule": ubx.FieldSpec{WireName: "manual_schedule"},
-		"TimeBasedSchedule": ubx.FieldSpec{
-			WireName: "time_based_schedule",
-			Kind: "object",
-			Fields: TransferConfig_ScheduleOptionsV2_TimeBasedScheduleFields,
-		},
-	}
+	"EventDrivenSchedule": ubx.FieldSpec{
+		WireName: "event_driven_schedule",
+		Kind:     "object",
+		Fields:   TransferConfig_ScheduleOptionsV2_EventDrivenScheduleFields,
+	},
+	"ManualSchedule": ubx.FieldSpec{WireName: "manual_schedule"},
+	"TimeBasedSchedule": ubx.FieldSpec{
+		WireName: "time_based_schedule",
+		Kind:     "object",
+		Fields:   TransferConfig_ScheduleOptionsV2_TimeBasedScheduleFields,
+	},
+}
 
 type TransferConfigConfig struct {
 	// The number of days to look back to automatically refresh the data. For example, if `data_refresh_window_days = 10`, then every day BigQuery reingests data for [today-10, today-1], rather than ingesting data for just [today-1]. Only valid if the data source supports the feature. Set the value to 0 to use the default value.
@@ -219,49 +219,49 @@ var TransferConfig = ubx.ResourceBinding{
 	WireType: "google_bigquerydatatransfer_transfer_config",
 	Fields: ubx.FieldMap{
 		"DataRefreshWindowDays": ubx.FieldSpec{WireName: "data_refresh_window_days"},
-		"DataSourceId": ubx.FieldSpec{WireName: "data_source_id"},
-		"DestinationDatasetId": ubx.FieldSpec{WireName: "destination_dataset_id"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DataSourceId":          ubx.FieldSpec{WireName: "data_source_id"},
+		"DestinationDatasetId":  ubx.FieldSpec{WireName: "destination_dataset_id"},
+		"Disabled":              ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
 		"EmailPreferences": ubx.FieldSpec{
 			WireName: "email_preferences",
-			Kind: "object",
-			Fields: TransferConfig_EmailPreferencesFields,
+			Kind:     "object",
+			Fields:   TransferConfig_EmailPreferencesFields,
 		},
 		"EncryptionConfiguration": ubx.FieldSpec{
 			WireName: "encryption_configuration",
-			Kind: "object",
-			Fields: TransferConfig_EncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   TransferConfig_EncryptionConfigurationFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: TransferConfig_ErrorFields,
+			Kind:     "object",
+			Fields:   TransferConfig_ErrorFields,
 		},
 		"ManagedTableType": ubx.FieldSpec{WireName: "managed_table_type"},
 		"MetadataDestination": ubx.FieldSpec{
 			WireName: "metadata_destination",
-			Kind: "object",
-			Fields: TransferConfig_MetadataDestinationFields,
+			Kind:     "object",
+			Fields:   TransferConfig_MetadataDestinationFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"NotificationPubsubTopic": ubx.FieldSpec{WireName: "notification_pubsub_topic"},
 		"OwnerInfo": ubx.FieldSpec{
 			WireName: "owner_info",
-			Kind: "object",
-			Fields: TransferConfig_OwnerInfoFields,
+			Kind:     "object",
+			Fields:   TransferConfig_OwnerInfoFields,
 		},
-		"Params": ubx.FieldSpec{WireName: "params"},
+		"Params":   ubx.FieldSpec{WireName: "params"},
 		"Schedule": ubx.FieldSpec{WireName: "schedule"},
 		"ScheduleOptions": ubx.FieldSpec{
 			WireName: "schedule_options",
-			Kind: "object",
-			Fields: TransferConfig_ScheduleOptionsFields,
+			Kind:     "object",
+			Fields:   TransferConfig_ScheduleOptionsFields,
 		},
 		"ScheduleOptionsV2": ubx.FieldSpec{
 			WireName: "schedule_options_v2",
-			Kind: "object",
-			Fields: TransferConfig_ScheduleOptionsV2Fields,
+			Kind:     "object",
+			Fields:   TransferConfig_ScheduleOptionsV2Fields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},

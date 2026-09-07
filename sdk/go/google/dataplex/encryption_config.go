@@ -11,9 +11,9 @@ type EncryptionConfig_FailureDetails struct {
 }
 
 var EncryptionConfig_FailureDetailsFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-	}
+	"ErrorCode":    ubx.FieldSpec{WireName: "error_code"},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+}
 
 type EncryptionConfigConfig struct {
 	// Optional. Represent the state of CMEK opt-in for metastore.
@@ -51,13 +51,13 @@ var EncryptionConfig = ubx.ResourceBinding{
 	WireType: "google_dataplex_encryption_config",
 	Fields: ubx.FieldMap{
 		"EnableMetastoreEncryption": ubx.FieldSpec{WireName: "enable_metastore_encryption"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":                      ubx.FieldSpec{WireName: "etag"},
 		"FailureDetails": ubx.FieldSpec{
 			WireName: "failure_details",
-			Kind: "object",
-			Fields: EncryptionConfig_FailureDetailsFields,
+			Kind:     "object",
+			Fields:   EncryptionConfig_FailureDetailsFields,
 		},
-		"Key": ubx.FieldSpec{WireName: "key"},
+		"Key":  ubx.FieldSpec{WireName: "key"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

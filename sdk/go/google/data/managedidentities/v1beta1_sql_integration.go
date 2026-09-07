@@ -10,7 +10,7 @@ type V1beta1SqlIntegrationConfig struct {
 type V1beta1SqlIntegrationAttrs struct {
 	// Output only. The time sql integration was created.
 	CreateTime any
-	Name any
+	Name       any
 	// The full resource name of an integrated sql instance
 	SqlInstance any
 	// Output only. The current state of the sql integration.

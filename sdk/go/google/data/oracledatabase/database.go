@@ -65,7 +65,7 @@ type DatabaseAttrs struct {
 	DbUniqueName any
 	// Output only. The GCP Oracle zone where the Database is created.
 	GcpOracleZone any
-	Name any
+	Name          any
 	// Optional. The national character set for the database. The default is AL16UTF16.
 	NcharacterSet any
 	// Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.

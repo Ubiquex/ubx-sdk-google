@@ -9,72 +9,72 @@ type Conversation_Messages_Chunks_AgentTransfer struct {
 }
 
 type Conversation_Messages_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type Conversation_Messages_Chunks_Image struct {
-	AltText any
-	Data any
+	AltText  any
+	Data     any
 	MimeType any
 }
 
 type Conversation_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type Conversation_Messages_Chunks_ToolCall struct {
-	AgentName any
-	Args any
-	DisplayName any
-	Id any
+	AgentName        any
+	Args             any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Tool any
-	ToolsetTool any
+	Tool             any
+	ToolsetTool      any
 }
 
 type Conversation_Messages_Chunks_ToolResponse struct {
-	AgentName any
-	DisplayName any
-	Id any
+	AgentName        any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Response any
-	Tool any
-	ToolsetTool any
+	Response         any
+	Tool             any
+	ToolsetTool      any
 }
 
 type Conversation_Messages_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type Conversation_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type Conversation_Turns_RootSpan struct {
 	Attributes any
 	ChildSpans any
-	Duration any
-	EndTime any
-	Name any
-	StartTime any
+	Duration   any
+	EndTime    any
+	Name       any
+	StartTime  any
 }
 
 type Conversation_Turns struct {
-	Messages any
-	RootSpan any
+	Messages         any
+	RootSpan         any
 	UserIntendedText any
 }
 
@@ -99,8 +99,8 @@ type ConversationAttrs struct {
 	LanguageCode any
 	// Deprecated. Use turns instead.
 	Messages any
-	Name any
-	Source any
+	Name     any
+	Source   any
 	// Output only. Timestamp when the conversation was created.
 	StartTime any
 	// Output only. The number of turns in the conversation.

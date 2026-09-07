@@ -31,22 +31,22 @@ type App_Iap struct {
 }
 
 var App_DispatchRulesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Domain":  ubx.FieldSpec{WireName: "domain"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var App_FeatureSettingsFields = ubx.FieldMap{
-		"SplitHealthChecks": ubx.FieldSpec{WireName: "split_health_checks"},
-		"UseContainerOptimizedOs": ubx.FieldSpec{WireName: "use_container_optimized_os"},
-	}
+	"SplitHealthChecks":       ubx.FieldSpec{WireName: "split_health_checks"},
+	"UseContainerOptimizedOs": ubx.FieldSpec{WireName: "use_container_optimized_os"},
+}
 
 var App_IapFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Oauth2ClientId": ubx.FieldSpec{WireName: "oauth2_client_id"},
-		"Oauth2ClientSecret": ubx.FieldSpec{WireName: "oauth2_client_secret"},
-		"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
-	}
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"Oauth2ClientId":           ubx.FieldSpec{WireName: "oauth2_client_id"},
+	"Oauth2ClientSecret":       ubx.FieldSpec{WireName: "oauth2_client_secret"},
+	"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
+}
 
 type AppConfig struct {
 	// Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account.
@@ -115,29 +115,29 @@ type AppAttrs struct {
 var App = ubx.ResourceBinding{
 	WireType: "google_appengine_app",
 	Fields: ubx.FieldMap{
-		"AuthDomain": ubx.FieldSpec{WireName: "auth_domain"},
-		"DatabaseType": ubx.FieldSpec{WireName: "database_type"},
+		"AuthDomain":              ubx.FieldSpec{WireName: "auth_domain"},
+		"DatabaseType":            ubx.FieldSpec{WireName: "database_type"},
 		"DefaultCookieExpiration": ubx.FieldSpec{WireName: "default_cookie_expiration"},
 		"DispatchRules": ubx.FieldSpec{
 			WireName: "dispatch_rules",
-			Kind: "list",
-			Fields: App_DispatchRulesFields,
+			Kind:     "list",
+			Fields:   App_DispatchRulesFields,
 		},
 		"FeatureSettings": ubx.FieldSpec{
 			WireName: "feature_settings",
-			Kind: "object",
-			Fields: App_FeatureSettingsFields,
+			Kind:     "object",
+			Fields:   App_FeatureSettingsFields,
 		},
 		"GeneratedCustomerMetadata": ubx.FieldSpec{WireName: "generated_customer_metadata"},
 		"Iap": ubx.FieldSpec{
 			WireName: "iap",
-			Kind: "object",
-			Fields: App_IapFields,
+			Kind:     "object",
+			Fields:   App_IapFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LocationId": ubx.FieldSpec{WireName: "location_id"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"LocationId":     ubx.FieldSpec{WireName: "location_id"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServingStatus": ubx.FieldSpec{WireName: "serving_status"},
-		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
+		"ServingStatus":  ubx.FieldSpec{WireName: "serving_status"},
+		"SslPolicy":      ubx.FieldSpec{WireName: "ssl_policy"},
 	},
 }

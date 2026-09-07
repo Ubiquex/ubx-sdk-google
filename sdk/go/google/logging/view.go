@@ -27,6 +27,6 @@ var View = ubx.ResourceBinding{
 	WireType: "google_logging_view",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
 	},
 }

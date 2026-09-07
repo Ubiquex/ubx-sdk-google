@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1UserDataMapping_ResourceAttributes struct {
 	AttributeDefinitionId any
-	Values any
+	Values                any
 }
 
 var V1beta1UserDataMapping_ResourceAttributesFields = ubx.FieldMap{
-		"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
+	"Values":                ubx.FieldSpec{WireName: "values"},
+}
 
 type V1beta1UserDataMappingConfig struct {
 	// Required. A unique identifier for the mapped resource.
@@ -43,11 +43,11 @@ var V1beta1UserDataMapping = ubx.ResourceBinding{
 	WireType: "google_healthcare_v1beta1_user_data_mapping",
 	Fields: ubx.FieldMap{
 		"DataId": ubx.FieldSpec{WireName: "data_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ResourceAttributes": ubx.FieldSpec{
 			WireName: "resource_attributes",
-			Kind: "list",
-			Fields: V1beta1UserDataMapping_ResourceAttributesFields,
+			Kind:     "list",
+			Fields:   V1beta1UserDataMapping_ResourceAttributesFields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},

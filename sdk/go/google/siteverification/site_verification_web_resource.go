@@ -11,9 +11,9 @@ type SiteVerificationWebResource_Site struct {
 }
 
 var SiteVerificationWebResource_SiteFields = ubx.FieldMap{
-		"Identifier": ubx.FieldSpec{WireName: "identifier"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Identifier": ubx.FieldSpec{WireName: "identifier"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 type SiteVerificationWebResourceConfig struct {
 	// The string used to identify this site. This value should be used in the "id" portion of the REST URL for the Get, Update, and Delete operations.
@@ -36,12 +36,12 @@ type SiteVerificationWebResourceAttrs struct {
 var SiteVerificationWebResource = ubx.ResourceBinding{
 	WireType: "google_siteverification_site_verification_web_resource",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":     ubx.FieldSpec{WireName: "id"},
 		"Owners": ubx.FieldSpec{WireName: "owners"},
 		"Site": ubx.FieldSpec{
 			WireName: "site",
-			Kind: "object",
-			Fields: SiteVerificationWebResource_SiteFields,
+			Kind:     "object",
+			Fields:   SiteVerificationWebResource_SiteFields,
 		},
 	},
 }

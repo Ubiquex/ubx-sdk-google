@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaProject_CommonInstanceMetadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -18,10 +18,10 @@ type AlphaProject_CommonInstanceMetadata struct {
 }
 
 type AlphaProject_Quotas struct {
-	Limit any
+	Limit  any
 	Metric any
-	Owner any
-	Usage any
+	Owner  any
+	Usage  any
 }
 
 type AlphaProject_UsageExportLocation struct {
@@ -57,7 +57,7 @@ type AlphaProjectAttrs struct {
 	// Output only. [Output Only] The Cloud Armor Managed Protection (CAMP) tier for this project. It can be one of the following values:CA_STANDARD, CAMP_PLUS_PAYGO. If this field is not specified, it is assumed to beCA_STANDARD.
 	ManagedProtectionTier any
 	// The project ID. For example: my-example-project. Use the project ID to make requests to Compute Engine.
-	Name any
+	Name    any
 	Project any
 	// [Output Only] Quotas assigned to this project.
 	Quotas any

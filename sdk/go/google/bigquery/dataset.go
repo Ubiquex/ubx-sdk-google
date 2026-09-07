@@ -111,96 +111,96 @@ type Dataset_Tags struct {
 }
 
 var Dataset_Access_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Dataset_Access_Dataset_DatasetFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Dataset_Access_DatasetFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{
-			WireName: "dataset",
-			Kind: "object",
-			Fields: Dataset_Access_Dataset_DatasetFields,
-		},
-		"TargetTypes": ubx.FieldSpec{WireName: "target_types"},
-	}
+	"Dataset": ubx.FieldSpec{
+		WireName: "dataset",
+		Kind:     "object",
+		Fields:   Dataset_Access_Dataset_DatasetFields,
+	},
+	"TargetTypes": ubx.FieldSpec{WireName: "target_types"},
+}
 
 var Dataset_Access_RoutineFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
+}
 
 var Dataset_Access_ViewFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Dataset_AccessFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Dataset_Access_ConditionFields,
-		},
-		"Dataset": ubx.FieldSpec{
-			WireName: "dataset",
-			Kind: "object",
-			Fields: Dataset_Access_DatasetFields,
-		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"GroupByEmail": ubx.FieldSpec{WireName: "group_by_email"},
-		"IamMember": ubx.FieldSpec{WireName: "iam_member"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Routine": ubx.FieldSpec{
-			WireName: "routine",
-			Kind: "object",
-			Fields: Dataset_Access_RoutineFields,
-		},
-		"SpecialGroup": ubx.FieldSpec{WireName: "special_group"},
-		"UserByEmail": ubx.FieldSpec{WireName: "user_by_email"},
-		"View": ubx.FieldSpec{
-			WireName: "view",
-			Kind: "object",
-			Fields: Dataset_Access_ViewFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Dataset_Access_ConditionFields,
+	},
+	"Dataset": ubx.FieldSpec{
+		WireName: "dataset",
+		Kind:     "object",
+		Fields:   Dataset_Access_DatasetFields,
+	},
+	"Domain":       ubx.FieldSpec{WireName: "domain"},
+	"GroupByEmail": ubx.FieldSpec{WireName: "group_by_email"},
+	"IamMember":    ubx.FieldSpec{WireName: "iam_member"},
+	"Role":         ubx.FieldSpec{WireName: "role"},
+	"Routine": ubx.FieldSpec{
+		WireName: "routine",
+		Kind:     "object",
+		Fields:   Dataset_Access_RoutineFields,
+	},
+	"SpecialGroup": ubx.FieldSpec{WireName: "special_group"},
+	"UserByEmail":  ubx.FieldSpec{WireName: "user_by_email"},
+	"View": ubx.FieldSpec{
+		WireName: "view",
+		Kind:     "object",
+		Fields:   Dataset_Access_ViewFields,
+	},
+}
 
 var Dataset_DefaultEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Dataset_ExternalCatalogDatasetOptionsFields = ubx.FieldMap{
-		"DefaultStorageLocationUri": ubx.FieldSpec{WireName: "default_storage_location_uri"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"DefaultStorageLocationUri": ubx.FieldSpec{WireName: "default_storage_location_uri"},
+	"Parameters":                ubx.FieldSpec{WireName: "parameters"},
+}
 
 var Dataset_ExternalDatasetReferenceFields = ubx.FieldMap{
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"ExternalSource": ubx.FieldSpec{WireName: "external_source"},
-	}
+	"Connection":     ubx.FieldSpec{WireName: "connection"},
+	"ExternalSource": ubx.FieldSpec{WireName: "external_source"},
+}
 
 var Dataset_LinkedDatasetMetadataFields = ubx.FieldMap{
-		"LinkState": ubx.FieldSpec{WireName: "link_state"},
-	}
+	"LinkState": ubx.FieldSpec{WireName: "link_state"},
+}
 
 var Dataset_LinkedDatasetSourceFields = ubx.FieldMap{
-		"SourceDataset": ubx.FieldSpec{
-			WireName: "source_dataset",
-			Kind: "object",
-			Fields: Dataset_Access_Dataset_DatasetFields,
-		},
-	}
+	"SourceDataset": ubx.FieldSpec{
+		WireName: "source_dataset",
+		Kind:     "object",
+		Fields:   Dataset_Access_Dataset_DatasetFields,
+	},
+}
 
 var Dataset_RestrictionsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type DatasetConfig struct {
 	// Optional. An array of objects that define dataset access for one or more entities. You can set this property when inserting or updating a dataset in order to control who is allowed to access the data. If unspecified at dataset creation time, BigQuery adds default dataset access for the following entities: access.specialGroup: projectReaders; access.role: READER; access.specialGroup: projectWriters; access.role: WRITER; access.specialGroup: projectOwners; access.role: OWNER; access.userByEmail: [dataset creator email]; access.role: OWNER; If you patch a dataset, then this field is overwritten by the patched dataset's access field. To add entities, you must supply the entire existing access array in addition to any new entities that you want to add.
@@ -315,54 +315,54 @@ var Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Access": ubx.FieldSpec{
 			WireName: "access",
-			Kind: "list",
-			Fields: Dataset_AccessFields,
+			Kind:     "list",
+			Fields:   Dataset_AccessFields,
 		},
 		"DatasetReference": ubx.FieldSpec{
 			WireName: "dataset_reference",
-			Kind: "object",
-			Fields: Dataset_Access_Dataset_DatasetFields,
+			Kind:     "object",
+			Fields:   Dataset_Access_Dataset_DatasetFields,
 		},
 		"DefaultCollation": ubx.FieldSpec{WireName: "default_collation"},
 		"DefaultEncryptionConfiguration": ubx.FieldSpec{
 			WireName: "default_encryption_configuration",
-			Kind: "object",
-			Fields: Dataset_DefaultEncryptionConfigurationFields,
+			Kind:     "object",
+			Fields:   Dataset_DefaultEncryptionConfigurationFields,
 		},
 		"DefaultPartitionExpirationMs": ubx.FieldSpec{WireName: "default_partition_expiration_ms"},
-		"DefaultRoundingMode": ubx.FieldSpec{WireName: "default_rounding_mode"},
-		"DefaultTableExpirationMs": ubx.FieldSpec{WireName: "default_table_expiration_ms"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"DefaultRoundingMode":          ubx.FieldSpec{WireName: "default_rounding_mode"},
+		"DefaultTableExpirationMs":     ubx.FieldSpec{WireName: "default_table_expiration_ms"},
+		"Description":                  ubx.FieldSpec{WireName: "description"},
 		"ExternalCatalogDatasetOptions": ubx.FieldSpec{
 			WireName: "external_catalog_dataset_options",
-			Kind: "object",
-			Fields: Dataset_ExternalCatalogDatasetOptionsFields,
+			Kind:     "object",
+			Fields:   Dataset_ExternalCatalogDatasetOptionsFields,
 		},
 		"ExternalDatasetReference": ubx.FieldSpec{
 			WireName: "external_dataset_reference",
-			Kind: "object",
-			Fields: Dataset_ExternalDatasetReferenceFields,
+			Kind:     "object",
+			Fields:   Dataset_ExternalDatasetReferenceFields,
 		},
-		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
+		"FriendlyName":      ubx.FieldSpec{WireName: "friendly_name"},
 		"IsCaseInsensitive": ubx.FieldSpec{WireName: "is_case_insensitive"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
 		"LinkedDatasetMetadata": ubx.FieldSpec{
 			WireName: "linked_dataset_metadata",
-			Kind: "object",
-			Fields: Dataset_LinkedDatasetMetadataFields,
+			Kind:     "object",
+			Fields:   Dataset_LinkedDatasetMetadataFields,
 		},
 		"LinkedDatasetSource": ubx.FieldSpec{
 			WireName: "linked_dataset_source",
-			Kind: "object",
-			Fields: Dataset_LinkedDatasetSourceFields,
+			Kind:     "object",
+			Fields:   Dataset_LinkedDatasetSourceFields,
 		},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"Location":           ubx.FieldSpec{WireName: "location"},
 		"MaxTimeTravelHours": ubx.FieldSpec{WireName: "max_time_travel_hours"},
-		"ResourceTags": ubx.FieldSpec{WireName: "resource_tags"},
+		"ResourceTags":       ubx.FieldSpec{WireName: "resource_tags"},
 		"Restrictions": ubx.FieldSpec{
 			WireName: "restrictions",
-			Kind: "object",
-			Fields: Dataset_RestrictionsFields,
+			Kind:     "object",
+			Fields:   Dataset_RestrictionsFields,
 		},
 		"StorageBillingModel": ubx.FieldSpec{WireName: "storage_billing_model"},
 	},

@@ -29,6 +29,6 @@ var Snapshot = ubx.ResourceBinding{
 	WireType: "google_baremetalsolution_snapshot",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

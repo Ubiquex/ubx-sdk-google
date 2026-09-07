@@ -8,14 +8,14 @@ type ChangelogConfig struct {
 }
 
 type ChangelogAttrs struct {
-	Action any
-	CreateTime any
-	DisplayName any
+	Action       any
+	CreateTime   any
+	DisplayName  any
 	LanguageCode any
-	Name any
-	Resource any
-	Type any
-	UserEmail any
+	Name         any
+	Resource     any
+	Type         any
+	UserEmail    any
 }
 
 var Changelog = ubx.DataSourceBinding{

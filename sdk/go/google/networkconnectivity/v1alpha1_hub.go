@@ -38,10 +38,10 @@ type V1alpha1HubAttrs struct {
 var V1alpha1Hub = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_v1alpha1_hub",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
 	},
 }

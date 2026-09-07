@@ -5,51 +5,51 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2betaPolicy_Rules_DenyRule_DenialCondition struct {
 	Description any
-	Expression any
-	Location any
-	Title any
+	Expression  any
+	Location    any
+	Title       any
 }
 
 type V2betaPolicy_Rules_DenyRule struct {
-	DenialCondition any
-	DeniedPermissions any
-	DeniedPrincipals any
+	DenialCondition      any
+	DeniedPermissions    any
+	DeniedPrincipals     any
 	ExceptionPermissions any
-	ExceptionPrincipals any
+	ExceptionPrincipals  any
 }
 
 type V2betaPolicy_Rules struct {
-	DenyRule any
+	DenyRule    any
 	Description any
 }
 
 var V2betaPolicy_Rules_DenyRule_DenialConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var V2betaPolicy_Rules_DenyRuleFields = ubx.FieldMap{
-		"DenialCondition": ubx.FieldSpec{
-			WireName: "denial_condition",
-			Kind: "object",
-			Fields: V2betaPolicy_Rules_DenyRule_DenialConditionFields,
-		},
-		"DeniedPermissions": ubx.FieldSpec{WireName: "denied_permissions"},
-		"DeniedPrincipals": ubx.FieldSpec{WireName: "denied_principals"},
-		"ExceptionPermissions": ubx.FieldSpec{WireName: "exception_permissions"},
-		"ExceptionPrincipals": ubx.FieldSpec{WireName: "exception_principals"},
-	}
+	"DenialCondition": ubx.FieldSpec{
+		WireName: "denial_condition",
+		Kind:     "object",
+		Fields:   V2betaPolicy_Rules_DenyRule_DenialConditionFields,
+	},
+	"DeniedPermissions":    ubx.FieldSpec{WireName: "denied_permissions"},
+	"DeniedPrincipals":     ubx.FieldSpec{WireName: "denied_principals"},
+	"ExceptionPermissions": ubx.FieldSpec{WireName: "exception_permissions"},
+	"ExceptionPrincipals":  ubx.FieldSpec{WireName: "exception_principals"},
+}
 
 var V2betaPolicy_RulesFields = ubx.FieldMap{
-		"DenyRule": ubx.FieldSpec{
-			WireName: "deny_rule",
-			Kind: "object",
-			Fields: V2betaPolicy_Rules_DenyRuleFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-	}
+	"DenyRule": ubx.FieldSpec{
+		WireName: "deny_rule",
+		Kind:     "object",
+		Fields:   V2betaPolicy_Rules_DenyRuleFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+}
 
 type V2betaPolicyConfig struct {
 	// A key-value map to store arbitrary metadata for the `Policy`. Keys can be up to 63 characters. Values can be up to 255 characters.
@@ -94,12 +94,12 @@ var V2betaPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: V2betaPolicy_RulesFields,
+			Kind:     "list",
+			Fields:   V2betaPolicy_RulesFields,
 		},
 		"Uid": ubx.FieldSpec{WireName: "uid"},
 	},

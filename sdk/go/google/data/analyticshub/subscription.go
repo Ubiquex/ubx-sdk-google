@@ -35,9 +35,9 @@ type Subscription_DestinationDataset struct {
 }
 
 type Subscription_LinkedDatasetMap struct {
-	LinkedDataset any
+	LinkedDataset            any
 	LinkedPubsubSubscription any
-	Listing any
+	Listing                  any
 }
 
 type SubscriptionConfig struct {
@@ -62,7 +62,7 @@ type SubscriptionAttrs struct {
 	Listing any
 	// Output only. By default, false. If true, the Subscriber agreed to the email sharing mandate that is enabled for DataExchange/Listing.
 	LogLinkedDatasetQueryUserEmail any
-	Name any
+	Name                           any
 	// Output only. Display name of the project of this subscription.
 	OrganizationDisplayName any
 	// Output only. Organization of the project this subscription belongs to.
@@ -77,6 +77,5 @@ type SubscriptionAttrs struct {
 
 var Subscription = ubx.DataSourceBinding{
 	WireType: "google_analyticshub_subscription",
-	Fields: ubx.FieldMap{
-	},
+	Fields:   ubx.FieldMap{},
 }

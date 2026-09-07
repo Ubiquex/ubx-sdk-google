@@ -33,6 +33,6 @@ var ExternalAddress = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_external_address",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
+		"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
 	},
 }

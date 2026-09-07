@@ -23,30 +23,30 @@ type Config_OpenapiDocuments struct {
 }
 
 var Config_GrpcServices_FileDescriptorSetFields = ubx.FieldMap{
-		"Contents": ubx.FieldSpec{WireName: "contents"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Contents": ubx.FieldSpec{WireName: "contents"},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+}
 
 var Config_GrpcServicesFields = ubx.FieldMap{
-		"FileDescriptorSet": ubx.FieldSpec{
-			WireName: "file_descriptor_set",
-			Kind: "object",
-			Fields: Config_GrpcServices_FileDescriptorSetFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "list",
-			Fields: Config_GrpcServices_FileDescriptorSetFields,
-		},
-	}
+	"FileDescriptorSet": ubx.FieldSpec{
+		WireName: "file_descriptor_set",
+		Kind:     "object",
+		Fields:   Config_GrpcServices_FileDescriptorSetFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "list",
+		Fields:   Config_GrpcServices_FileDescriptorSetFields,
+	},
+}
 
 var Config_OpenapiDocumentsFields = ubx.FieldMap{
-		"Document": ubx.FieldSpec{
-			WireName: "document",
-			Kind: "object",
-			Fields: Config_GrpcServices_FileDescriptorSetFields,
-		},
-	}
+	"Document": ubx.FieldSpec{
+		WireName: "document",
+		Kind:     "object",
+		Fields:   Config_GrpcServices_FileDescriptorSetFields,
+	},
+}
 
 type ConfigConfig struct {
 	// Optional. Display name.
@@ -91,23 +91,23 @@ type ConfigAttrs struct {
 var Config = ubx.ResourceBinding{
 	WireType: "google_apigateway_config",
 	Fields: ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
 		"GatewayServiceAccount": ubx.FieldSpec{WireName: "gateway_service_account"},
 		"GrpcServices": ubx.FieldSpec{
 			WireName: "grpc_services",
-			Kind: "list",
-			Fields: Config_GrpcServicesFields,
+			Kind:     "list",
+			Fields:   Config_GrpcServicesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManagedServiceConfigs": ubx.FieldSpec{
 			WireName: "managed_service_configs",
-			Kind: "list",
-			Fields: Config_GrpcServices_FileDescriptorSetFields,
+			Kind:     "list",
+			Fields:   Config_GrpcServices_FileDescriptorSetFields,
 		},
 		"OpenapiDocuments": ubx.FieldSpec{
 			WireName: "openapi_documents",
-			Kind: "list",
-			Fields: Config_OpenapiDocumentsFields,
+			Kind:     "list",
+			Fields:   Config_OpenapiDocumentsFields,
 		},
 	},
 }

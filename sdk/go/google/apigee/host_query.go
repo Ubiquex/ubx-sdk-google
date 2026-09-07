@@ -39,12 +39,12 @@ type HostQuery_Result struct {
 }
 
 var HostQuery_MetricsFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Alias":    ubx.FieldSpec{WireName: "alias"},
+	"Function": ubx.FieldSpec{WireName: "function"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 type HostQueryConfig struct {
 	// Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\t`).
@@ -119,20 +119,20 @@ type HostQueryAttrs struct {
 var HostQuery = ubx.ResourceBinding{
 	WireType: "google_apigee_host_query",
 	Fields: ubx.FieldMap{
-		"CsvDelimiter": ubx.FieldSpec{WireName: "csv_delimiter"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+		"CsvDelimiter":     ubx.FieldSpec{WireName: "csv_delimiter"},
+		"Dimensions":       ubx.FieldSpec{WireName: "dimensions"},
 		"EnvgroupHostname": ubx.FieldSpec{WireName: "envgroup_hostname"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"GroupByTimeUnit": ubx.FieldSpec{WireName: "group_by_time_unit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Filter":           ubx.FieldSpec{WireName: "filter"},
+		"GroupByTimeUnit":  ubx.FieldSpec{WireName: "group_by_time_unit"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: HostQuery_MetricsFields,
+			Kind:     "list",
+			Fields:   HostQuery_MetricsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"OutputFormat":       ubx.FieldSpec{WireName: "output_format"},
 		"ReportDefinitionId": ubx.FieldSpec{WireName: "report_definition_id"},
-		"TimeRange": ubx.FieldSpec{WireName: "time_range"},
+		"TimeRange":          ubx.FieldSpec{WireName: "time_range"},
 	},
 }

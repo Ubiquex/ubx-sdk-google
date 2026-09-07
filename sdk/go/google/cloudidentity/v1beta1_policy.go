@@ -22,16 +22,16 @@ type V1beta1Policy_Setting struct {
 }
 
 var V1beta1Policy_PolicyQueryFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"OrgUnit": ubx.FieldSpec{WireName: "org_unit"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-	}
+	"Group":     ubx.FieldSpec{WireName: "group"},
+	"OrgUnit":   ubx.FieldSpec{WireName: "org_unit"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+	"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
+}
 
 var V1beta1Policy_SettingFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type V1beta1PolicyConfig struct {
 	// Immutable. Customer that the Policy belongs to. The value is in the format 'customers/{customerId}'. The `customerId` must begin with "C" To find your customer ID in Admin Console see https://support.google.com/a/answer/10070793.
@@ -61,13 +61,13 @@ var V1beta1Policy = ubx.ResourceBinding{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
 		"PolicyQuery": ubx.FieldSpec{
 			WireName: "policy_query",
-			Kind: "object",
-			Fields: V1beta1Policy_PolicyQueryFields,
+			Kind:     "object",
+			Fields:   V1beta1Policy_PolicyQueryFields,
 		},
 		"Setting": ubx.FieldSpec{
 			WireName: "setting",
-			Kind: "object",
-			Fields: V1beta1Policy_SettingFields,
+			Kind:     "object",
+			Fields:   V1beta1Policy_SettingFields,
 		},
 	},
 }

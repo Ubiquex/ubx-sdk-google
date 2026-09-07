@@ -113,116 +113,116 @@ type Change_Additions struct {
 }
 
 var Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"IpAddress":        ubx.FieldSpec{WireName: "ip_address"},
+	"IpProtocol":       ubx.FieldSpec{WireName: "ip_protocol"},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
+	"NetworkUrl":       ubx.FieldSpec{WireName: "network_url"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"Project":          ubx.FieldSpec{WireName: "project"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+}
 
 var Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields = ubx.FieldMap{
-		"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
-		"InternalLoadBalancers": ubx.FieldSpec{
-			WireName: "internal_load_balancers",
-			Kind: "list",
-			Fields: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
-		},
-	}
+	"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
+	"InternalLoadBalancers": ubx.FieldSpec{
+		WireName: "internal_load_balancers",
+		Kind:     "list",
+		Fields:   Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
+	},
+}
 
 var Change_Additions_RoutingPolicy_Geo_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Location":         ubx.FieldSpec{WireName: "location"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+}
 
 var Change_Additions_RoutingPolicy_GeoFields = ubx.FieldMap{
-		"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Change_Additions_RoutingPolicy_Geo_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Change_Additions_RoutingPolicy_Geo_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var Change_Additions_RoutingPolicy_PrimaryBackupFields = ubx.FieldMap{
-		"BackupGeoTargets": ubx.FieldSpec{
-			WireName: "backup_geo_targets",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_GeoFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryTargets": ubx.FieldSpec{
-			WireName: "primary_targets",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
-	}
+	"BackupGeoTargets": ubx.FieldSpec{
+		WireName: "backup_geo_targets",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_GeoFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"PrimaryTargets": ubx.FieldSpec{
+		WireName: "primary_targets",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
+}
 
 var Change_Additions_RoutingPolicy_Wrr_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var Change_Additions_RoutingPolicy_WrrFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: Change_Additions_RoutingPolicy_Wrr_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   Change_Additions_RoutingPolicy_Wrr_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var Change_Additions_RoutingPolicyFields = ubx.FieldMap{
-		"Geo": ubx.FieldSpec{
-			WireName: "geo",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_GeoFields,
-		},
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryBackup": ubx.FieldSpec{
-			WireName: "primary_backup",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_PrimaryBackupFields,
-		},
-		"Wrr": ubx.FieldSpec{
-			WireName: "wrr",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicy_WrrFields,
-		},
-	}
+	"Geo": ubx.FieldSpec{
+		WireName: "geo",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_GeoFields,
+	},
+	"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"PrimaryBackup": ubx.FieldSpec{
+		WireName: "primary_backup",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_PrimaryBackupFields,
+	},
+	"Wrr": ubx.FieldSpec{
+		WireName: "wrr",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicy_WrrFields,
+	},
+}
 
 var Change_AdditionsFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoutingPolicy": ubx.FieldSpec{
-			WireName: "routing_policy",
-			Kind: "object",
-			Fields: Change_Additions_RoutingPolicyFields,
-		},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RoutingPolicy": ubx.FieldSpec{
+		WireName: "routing_policy",
+		Kind:     "object",
+		Fields:   Change_Additions_RoutingPolicyFields,
+	},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+	"Ttl":              ubx.FieldSpec{WireName: "ttl"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 type ChangeConfig struct {
 	// Which ResourceRecordSets to add?
@@ -263,18 +263,18 @@ var Change = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Additions": ubx.FieldSpec{
 			WireName: "additions",
-			Kind: "list",
-			Fields: Change_AdditionsFields,
+			Kind:     "list",
+			Fields:   Change_AdditionsFields,
 		},
 		"Deletions": ubx.FieldSpec{
 			WireName: "deletions",
-			Kind: "list",
-			Fields: Change_AdditionsFields,
+			Kind:     "list",
+			Fields:   Change_AdditionsFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":        ubx.FieldSpec{WireName: "id"},
 		"IsServing": ubx.FieldSpec{WireName: "is_serving"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":      ubx.FieldSpec{WireName: "kind"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":    ubx.FieldSpec{WireName: "status"},
 	},
 }

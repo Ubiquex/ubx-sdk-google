@@ -309,363 +309,363 @@ type PolicyOrchestrator_OrchestrationState struct {
 }
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabelsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_InventoriesFields = ubx.FieldMap{
-		"OsShortName": ubx.FieldSpec{WireName: "os_short_name"},
-		"OsVersion": ubx.FieldSpec{WireName: "os_version"},
-	}
+	"OsShortName": ubx.FieldSpec{WireName: "os_short_name"},
+	"OsVersion":   ubx.FieldSpec{WireName: "os_version"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilterFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"ExclusionLabels": ubx.FieldSpec{
-			WireName: "exclusion_labels",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabelsFields,
-		},
-		"InclusionLabels": ubx.FieldSpec{
-			WireName: "inclusion_labels",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabelsFields,
-		},
-		"Inventories": ubx.FieldSpec{
-			WireName: "inventories",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_InventoriesFields,
-		},
-	}
+	"All": ubx.FieldSpec{WireName: "all"},
+	"ExclusionLabels": ubx.FieldSpec{
+		WireName: "exclusion_labels",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabelsFields,
+	},
+	"InclusionLabels": ubx.FieldSpec{
+		WireName: "inclusion_labels",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_ExclusionLabelsFields,
+	},
+	"Inventories": ubx.FieldSpec{
+		WireName: "inventories",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_InventoriesFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields = ubx.FieldMap{
-		"Sha256Checksum": ubx.FieldSpec{WireName: "sha256_checksum"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Sha256Checksum": ubx.FieldSpec{WireName: "sha256_checksum"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields = ubx.FieldMap{
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields,
-		},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"Remote": ubx.FieldSpec{
-			WireName: "remote",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields,
-		},
-	}
+	"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields,
+	},
+	"LocalPath": ubx.FieldSpec{WireName: "local_path"},
+	"Remote": ubx.FieldSpec{
+		WireName: "remote",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-		"Interpreter": ubx.FieldSpec{WireName: "interpreter"},
-		"OutputFilePath": ubx.FieldSpec{WireName: "output_file_path"},
-		"Script": ubx.FieldSpec{WireName: "script"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+	"Interpreter":    ubx.FieldSpec{WireName: "interpreter"},
+	"OutputFilePath": ubx.FieldSpec{WireName: "output_file_path"},
+	"Script":         ubx.FieldSpec{WireName: "script"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_ExecFields = ubx.FieldMap{
-		"Enforce": ubx.FieldSpec{
-			WireName: "enforce",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
-		},
-		"Validate": ubx.FieldSpec{
-			WireName: "validate",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
-		},
-	}
+	"Enforce": ubx.FieldSpec{
+		WireName: "enforce",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
+	},
+	"Validate": ubx.FieldSpec{
+		WireName: "validate",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_FileFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_DebFields = ubx.FieldMap{
-		"PullDeps": ubx.FieldSpec{WireName: "pull_deps"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-	}
+	"PullDeps": ubx.FieldSpec{WireName: "pull_deps"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-	}
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_PkgFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Deb": ubx.FieldSpec{
-			WireName: "deb",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
-		},
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Googet": ubx.FieldSpec{
-			WireName: "googet",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Msi": ubx.FieldSpec{
-			WireName: "msi",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields,
-		},
-		"Rpm": ubx.FieldSpec{
-			WireName: "rpm",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Deb": ubx.FieldSpec{
+		WireName: "deb",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
+	},
+	"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+	"Googet": ubx.FieldSpec{
+		WireName: "googet",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Msi": ubx.FieldSpec{
+		WireName: "msi",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields,
+	},
+	"Rpm": ubx.FieldSpec{
+		WireName: "rpm",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_AptFields = ubx.FieldMap{
-		"ArchiveType": ubx.FieldSpec{WireName: "archive_type"},
-		"Components": ubx.FieldSpec{WireName: "components"},
-		"Distribution": ubx.FieldSpec{WireName: "distribution"},
-		"GpgKey": ubx.FieldSpec{WireName: "gpg_key"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ArchiveType":  ubx.FieldSpec{WireName: "archive_type"},
+	"Components":   ubx.FieldSpec{WireName: "components"},
+	"Distribution": ubx.FieldSpec{WireName: "distribution"},
+	"GpgKey":       ubx.FieldSpec{WireName: "gpg_key"},
+	"Uri":          ubx.FieldSpec{WireName: "uri"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_GooFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_YumFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GpgKeys": ubx.FieldSpec{WireName: "gpg_keys"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"BaseUrl":     ubx.FieldSpec{WireName: "base_url"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"GpgKeys":     ubx.FieldSpec{WireName: "gpg_keys"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_RepositoryFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_AptFields,
-		},
-		"Goo": ubx.FieldSpec{
-			WireName: "goo",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_GooFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_AptFields,
+	},
+	"Goo": ubx.FieldSpec{
+		WireName: "goo",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_GooFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_ResourcesFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_ExecFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_FileFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Pkg": ubx.FieldSpec{
-			WireName: "pkg",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_PkgFields,
-		},
-		"Repository": ubx.FieldSpec{
-			WireName: "repository",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_RepositoryFields,
-		},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_ExecFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_FileFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Pkg": ubx.FieldSpec{
+		WireName: "pkg",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_PkgFields,
+	},
+	"Repository": ubx.FieldSpec{
+		WireName: "repository",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_Resources_RepositoryFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroupsFields = ubx.FieldMap{
-		"InventoryFilters": ubx.FieldSpec{
-			WireName: "inventory_filters",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_InventoriesFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_ResourcesFields,
-		},
-	}
+	"InventoryFilters": ubx.FieldSpec{
+		WireName: "inventory_filters",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilter_InventoriesFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroups_ResourcesFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPoliciesFields = ubx.FieldMap{
-		"AllowNoResourceGroupMatch": ubx.FieldSpec{WireName: "allow_no_resource_group_match"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ResourceGroups": ubx.FieldSpec{
-			WireName: "resource_groups",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroupsFields,
-		},
-	}
+	"AllowNoResourceGroupMatch": ubx.FieldSpec{WireName: "allow_no_resource_group_match"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Id":                        ubx.FieldSpec{WireName: "id"},
+	"Mode":                      ubx.FieldSpec{WireName: "mode"},
+	"ResourceGroups": ubx.FieldSpec{
+		WireName: "resource_groups",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPolicies_ResourceGroupsFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Rollout_DisruptionBudgetFields = ubx.FieldMap{
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Fixed":   ubx.FieldSpec{WireName: "fixed"},
+	"Percent": ubx.FieldSpec{WireName: "percent"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_RolloutFields = ubx.FieldMap{
-		"DisruptionBudget": ubx.FieldSpec{
-			WireName: "disruption_budget",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Rollout_DisruptionBudgetFields,
-		},
-		"MinWaitDuration": ubx.FieldSpec{WireName: "min_wait_duration"},
-	}
+	"DisruptionBudget": ubx.FieldSpec{
+		WireName: "disruption_budget",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_Rollout_DisruptionBudgetFields,
+	},
+	"MinWaitDuration": ubx.FieldSpec{WireName: "min_wait_duration"},
+}
 
 var PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1PayloadFields = ubx.FieldMap{
-		"Baseline": ubx.FieldSpec{WireName: "baseline"},
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"InstanceFilter": ubx.FieldSpec{
-			WireName: "instance_filter",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilterFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OsPolicies": ubx.FieldSpec{
-			WireName: "os_policies",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPoliciesFields,
-		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"Rollout": ubx.FieldSpec{
-			WireName: "rollout",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_RolloutFields,
-		},
-		"RolloutState": ubx.FieldSpec{WireName: "rollout_state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Baseline":    ubx.FieldSpec{WireName: "baseline"},
+	"Deleted":     ubx.FieldSpec{WireName: "deleted"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Etag":        ubx.FieldSpec{WireName: "etag"},
+	"InstanceFilter": ubx.FieldSpec{
+		WireName: "instance_filter",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_InstanceFilterFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OsPolicies": ubx.FieldSpec{
+		WireName: "os_policies",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_OsPoliciesFields,
+	},
+	"Reconciling":        ubx.FieldSpec{WireName: "reconciling"},
+	"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
+	"RevisionId":         ubx.FieldSpec{WireName: "revision_id"},
+	"Rollout": ubx.FieldSpec{
+		WireName: "rollout",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1Payload_RolloutFields,
+	},
+	"RolloutState": ubx.FieldSpec{WireName: "rollout_state"},
+	"Uid":          ubx.FieldSpec{WireName: "uid"},
+}
 
 var PolicyOrchestrator_OrchestratedResourceFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"OsPolicyAssignmentV1Payload": ubx.FieldSpec{
-			WireName: "os_policy_assignment_v1_payload",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1PayloadFields,
-		},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"OsPolicyAssignmentV1Payload": ubx.FieldSpec{
+		WireName: "os_policy_assignment_v1_payload",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestratedResource_OsPolicyAssignmentV1PayloadFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelectorFields = ubx.FieldMap{
-		"IncludedLocations": ubx.FieldSpec{WireName: "included_locations"},
-	}
+	"IncludedLocations": ubx.FieldSpec{WireName: "included_locations"},
+}
 
 var PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelectorFields = ubx.FieldMap{
-		"IncludedFolders": ubx.FieldSpec{WireName: "included_folders"},
-		"IncludedProjects": ubx.FieldSpec{WireName: "included_projects"},
-	}
+	"IncludedFolders":  ubx.FieldSpec{WireName: "included_folders"},
+	"IncludedProjects": ubx.FieldSpec{WireName: "included_projects"},
+}
 
 var PolicyOrchestrator_OrchestrationScope_SelectorsFields = ubx.FieldMap{
-		"LocationSelector": ubx.FieldSpec{
-			WireName: "location_selector",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelectorFields,
-		},
-		"ResourceHierarchySelector": ubx.FieldSpec{
-			WireName: "resource_hierarchy_selector",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelectorFields,
-		},
-	}
+	"LocationSelector": ubx.FieldSpec{
+		WireName: "location_selector",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestrationScope_Selectors_LocationSelectorFields,
+	},
+	"ResourceHierarchySelector": ubx.FieldSpec{
+		WireName: "resource_hierarchy_selector",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestrationScope_Selectors_ResourceHierarchySelectorFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestrationScopeFields = ubx.FieldMap{
-		"Selectors": ubx.FieldSpec{
-			WireName: "selectors",
-			Kind: "list",
-			Fields: PolicyOrchestrator_OrchestrationScope_SelectorsFields,
-		},
-	}
+	"Selectors": ubx.FieldSpec{
+		WireName: "selectors",
+		Kind:     "list",
+		Fields:   PolicyOrchestrator_OrchestrationScope_SelectorsFields,
+	},
+}
 
 var PolicyOrchestrator_OrchestrationState_CurrentIterationState_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var PolicyOrchestrator_OrchestrationState_CurrentIterationStateFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationState_CurrentIterationState_ErrorFields,
-		},
-		"FailedActions": ubx.FieldSpec{WireName: "failed_actions"},
-		"FinishTime": ubx.FieldSpec{WireName: "finish_time"},
-		"IterationId": ubx.FieldSpec{WireName: "iteration_id"},
-		"PerformedActions": ubx.FieldSpec{WireName: "performed_actions"},
-		"Progress": ubx.FieldSpec{WireName: "progress"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestrationState_CurrentIterationState_ErrorFields,
+	},
+	"FailedActions":    ubx.FieldSpec{WireName: "failed_actions"},
+	"FinishTime":       ubx.FieldSpec{WireName: "finish_time"},
+	"IterationId":      ubx.FieldSpec{WireName: "iteration_id"},
+	"PerformedActions": ubx.FieldSpec{WireName: "performed_actions"},
+	"Progress":         ubx.FieldSpec{WireName: "progress"},
+	"StartTime":        ubx.FieldSpec{WireName: "start_time"},
+	"State":            ubx.FieldSpec{WireName: "state"},
+}
 
 var PolicyOrchestrator_OrchestrationStateFields = ubx.FieldMap{
-		"CurrentIterationState": ubx.FieldSpec{
-			WireName: "current_iteration_state",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationState_CurrentIterationStateFields,
-		},
-		"PreviousIterationState": ubx.FieldSpec{
-			WireName: "previous_iteration_state",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationState_CurrentIterationStateFields,
-		},
-	}
+	"CurrentIterationState": ubx.FieldSpec{
+		WireName: "current_iteration_state",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestrationState_CurrentIterationStateFields,
+	},
+	"PreviousIterationState": ubx.FieldSpec{
+		WireName: "previous_iteration_state",
+		Kind:     "object",
+		Fields:   PolicyOrchestrator_OrchestrationState_CurrentIterationStateFields,
+	},
+}
 
 type PolicyOrchestratorConfig struct {
 	// Required. Action to be done by the orchestrator in `projects/{project_id}/zones/{zone_id}` locations defined by the `orchestration_scope`. Allowed values: - `UPSERT` - Orchestrator will create or update target resources. - `DELETE` - Orchestrator will delete target resources, if they exist
@@ -716,24 +716,24 @@ type PolicyOrchestratorAttrs struct {
 var PolicyOrchestrator = ubx.ResourceBinding{
 	WireType: "google_osconfig_policy_orchestrator",
 	Fields: ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
+		"Action":      ubx.FieldSpec{WireName: "action"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OrchestratedResource": ubx.FieldSpec{
 			WireName: "orchestrated_resource",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestratedResourceFields,
+			Kind:     "object",
+			Fields:   PolicyOrchestrator_OrchestratedResourceFields,
 		},
 		"OrchestrationScope": ubx.FieldSpec{
 			WireName: "orchestration_scope",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationScopeFields,
+			Kind:     "object",
+			Fields:   PolicyOrchestrator_OrchestrationScopeFields,
 		},
 		"OrchestrationState": ubx.FieldSpec{
 			WireName: "orchestration_state",
-			Kind: "object",
-			Fields: PolicyOrchestrator_OrchestrationStateFields,
+			Kind:     "object",
+			Fields:   PolicyOrchestrator_OrchestrationStateFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

@@ -11,9 +11,9 @@ type SecurityFeedback_FeedbackContexts struct {
 }
 
 var SecurityFeedback_FeedbackContextsFields = ubx.FieldMap{
-		"Attribute": ubx.FieldSpec{WireName: "attribute"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Attribute": ubx.FieldSpec{WireName: "attribute"},
+	"Values":    ubx.FieldSpec{WireName: "values"},
+}
 
 type SecurityFeedbackConfig struct {
 	// Optional. Optional text the user can provide for additional, unstructured context.
@@ -50,14 +50,14 @@ type SecurityFeedbackAttrs struct {
 var SecurityFeedback = ubx.ResourceBinding{
 	WireType: "google_apigee_security_feedback",
 	Fields: ubx.FieldMap{
-		"Comment": ubx.FieldSpec{WireName: "comment"},
+		"Comment":     ubx.FieldSpec{WireName: "comment"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"FeedbackContexts": ubx.FieldSpec{
 			WireName: "feedback_contexts",
-			Kind: "list",
-			Fields: SecurityFeedback_FeedbackContextsFields,
+			Kind:     "list",
+			Fields:   SecurityFeedback_FeedbackContextsFields,
 		},
 		"FeedbackType": ubx.FieldSpec{WireName: "feedback_type"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
+		"Reason":       ubx.FieldSpec{WireName: "reason"},
 	},
 }

@@ -4,12 +4,12 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaProject_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatuses struct {
-	EffectiveTpmThreshold any
-	ModelVersion any
-	StartTime any
-	TerminateTime any
+	EffectiveTpmThreshold      any
+	ModelVersion               any
+	StartTime                  any
+	TerminateTime              any
 	TpmThresholdNextUpdateTime any
-	UpdateType any
+	UpdateType                 any
 }
 
 type V1alphaProject_ConfigurableBillingStatus struct {
@@ -79,17 +79,17 @@ type V1alphaProject_SaasParams struct {
 }
 
 type V1alphaProject_ServiceTermsMap struct {
-	AcceptTime any
+	AcceptTime  any
 	DeclineTime any
-	Id any
-	State any
-	Version any
+	Id          any
+	State       any
+	Version     any
 }
 
 var V1alphaProject_SaasParamsFields = ubx.FieldMap{
-		"AcceptBizQos": ubx.FieldSpec{WireName: "accept_biz_qos"},
-		"IsBiz": ubx.FieldSpec{WireName: "is_biz"},
-	}
+	"AcceptBizQos": ubx.FieldSpec{WireName: "accept_biz_qos"},
+	"IsBiz":        ubx.FieldSpec{WireName: "is_biz"},
+}
 
 type V1alphaProjectConfig struct {
 	// Required. Set to `true` to specify that caller has read and would like to give consent to the [Terms for data use](https://cloud.google.com/retail/data-use-terms).
@@ -124,12 +124,12 @@ type V1alphaProjectAttrs struct {
 var V1alphaProject = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_project",
 	Fields: ubx.FieldMap{
-		"AcceptDataUseTerms": ubx.FieldSpec{WireName: "accept_data_use_terms"},
+		"AcceptDataUseTerms":  ubx.FieldSpec{WireName: "accept_data_use_terms"},
 		"DataUseTermsVersion": ubx.FieldSpec{WireName: "data_use_terms_version"},
 		"SaasParams": ubx.FieldSpec{
 			WireName: "saas_params",
-			Kind: "object",
-			Fields: V1alphaProject_SaasParamsFields,
+			Kind:     "object",
+			Fields:   V1alphaProject_SaasParamsFields,
 		},
 	},
 }

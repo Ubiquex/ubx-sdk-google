@@ -32,32 +32,32 @@ type ConnectCluster_GcpConfig struct {
 }
 
 var ConnectCluster_CapacityConfigFields = ubx.FieldMap{
-		"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
-		"VcpuCount": ubx.FieldSpec{WireName: "vcpu_count"},
-	}
+	"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
+	"VcpuCount":   ubx.FieldSpec{WireName: "vcpu_count"},
+}
 
 var ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields = ubx.FieldMap{
-		"AdditionalSubnets": ubx.FieldSpec{WireName: "additional_subnets"},
-		"DnsDomainNames": ubx.FieldSpec{WireName: "dns_domain_names"},
-		"PrimarySubnet": ubx.FieldSpec{WireName: "primary_subnet"},
-	}
+	"AdditionalSubnets": ubx.FieldSpec{WireName: "additional_subnets"},
+	"DnsDomainNames":    ubx.FieldSpec{WireName: "dns_domain_names"},
+	"PrimarySubnet":     ubx.FieldSpec{WireName: "primary_subnet"},
+}
 
 var ConnectCluster_GcpConfig_AccessConfigFields = ubx.FieldMap{
-		"NetworkConfigs": ubx.FieldSpec{
-			WireName: "network_configs",
-			Kind: "list",
-			Fields: ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields,
-		},
-	}
+	"NetworkConfigs": ubx.FieldSpec{
+		WireName: "network_configs",
+		Kind:     "list",
+		Fields:   ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields,
+	},
+}
 
 var ConnectCluster_GcpConfigFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: ConnectCluster_GcpConfig_AccessConfigFields,
-		},
-		"SecretPaths": ubx.FieldSpec{WireName: "secret_paths"},
-	}
+	"AccessConfig": ubx.FieldSpec{
+		WireName: "access_config",
+		Kind:     "object",
+		Fields:   ConnectCluster_GcpConfig_AccessConfigFields,
+	},
+	"SecretPaths": ubx.FieldSpec{WireName: "secret_paths"},
+}
 
 type ConnectClusterConfig struct {
 	// A capacity configuration of a Kafka cluster.
@@ -104,17 +104,17 @@ var ConnectCluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityConfig": ubx.FieldSpec{
 			WireName: "capacity_config",
-			Kind: "object",
-			Fields: ConnectCluster_CapacityConfigFields,
+			Kind:     "object",
+			Fields:   ConnectCluster_CapacityConfigFields,
 		},
 		"Config": ubx.FieldSpec{WireName: "config"},
 		"GcpConfig": ubx.FieldSpec{
 			WireName: "gcp_config",
-			Kind: "object",
-			Fields: ConnectCluster_GcpConfigFields,
+			Kind:     "object",
+			Fields:   ConnectCluster_GcpConfigFields,
 		},
 		"KafkaCluster": ubx.FieldSpec{WireName: "kafka_cluster"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

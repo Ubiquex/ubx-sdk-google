@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Backup_BackupFiles struct {
 	CreateTime any
-	FileName any
-	SizeBytes any
+	FileName   any
+	SizeBytes  any
 }
 
 type V1beta1Backup_EncryptionInfo struct {
@@ -41,7 +41,7 @@ type V1beta1BackupAttrs struct {
 	EngineVersion any
 	// Output only. The time when the backup will expire.
 	ExpireTime any
-	Name any
+	Name       any
 	// Output only. Node type of the cluster.
 	NodeType any
 	// Output only. Number of replicas for the cluster.

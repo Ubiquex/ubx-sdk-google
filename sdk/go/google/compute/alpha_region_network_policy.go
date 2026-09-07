@@ -5,43 +5,43 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRegionNetworkPolicy_Associations struct {
 	AttachmentTarget any
-	Name any
+	Name             any
 }
 
 type AlphaRegionNetworkPolicy_TrafficClassificationRules_Action struct {
-	DscpMode any
-	DscpValue any
+	DscpMode     any
+	DscpValue    any
 	TrafficClass any
-	Type any
+	Type         any
 }
 
 type AlphaRegionNetworkPolicy_TrafficClassificationRules_Match_Layer4Configs struct {
 	IpProtocol any
-	Ports any
+	Ports      any
 }
 
 type AlphaRegionNetworkPolicy_TrafficClassificationRules_Match struct {
 	DestAddressGroups any
-	DestIpRanges any
-	Layer4Configs any
-	SrcIpRanges any
+	DestIpRanges      any
+	Layer4Configs     any
+	SrcIpRanges       any
 }
 
 type AlphaRegionNetworkPolicy_TrafficClassificationRules_TargetSecureTags struct {
-	Name any
+	Name  any
 	State any
 }
 
 type AlphaRegionNetworkPolicy_TrafficClassificationRules struct {
-	Action any
-	Description any
-	Disabled any
-	Kind any
-	Match any
-	Priority any
-	RuleName any
-	RuleTupleCount any
-	TargetSecureTags any
+	Action                any
+	Description           any
+	Disabled              any
+	Kind                  any
+	Match                 any
+	Priority              any
+	RuleName              any
+	RuleTupleCount        any
+	TargetSecureTags      any
 	TargetServiceAccounts any
 }
 
@@ -83,7 +83,7 @@ var AlphaRegionNetworkPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_network_policy",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -29,9 +29,9 @@ type AclPolicy_Rules struct {
 }
 
 var AclPolicy_RulesFields = ubx.FieldMap{
-		"Rule": ubx.FieldSpec{WireName: "rule"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Rule":     ubx.FieldSpec{WireName: "rule"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 type AclPolicyConfig struct {
 	// Identifier. Full resource path of the ACL policy.
@@ -65,8 +65,8 @@ var AclPolicy = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: AclPolicy_RulesFields,
+			Kind:     "list",
+			Fields:   AclPolicy_RulesFields,
 		},
 	},
 }

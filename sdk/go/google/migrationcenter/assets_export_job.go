@@ -92,16 +92,16 @@ type AssetsExportJob_SignedUriDestination struct {
 }
 
 var AssetsExportJob_ConditionFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var AssetsExportJob_PerformanceDataFields = ubx.FieldMap{
-		"MaxDays": ubx.FieldSpec{WireName: "max_days"},
-	}
+	"MaxDays": ubx.FieldSpec{WireName: "max_days"},
+}
 
 var AssetsExportJob_SignedUriDestinationFields = ubx.FieldMap{
-		"FileFormat": ubx.FieldSpec{WireName: "file_format"},
-	}
+	"FileFormat": ubx.FieldSpec{WireName: "file_format"},
+}
 
 type AssetsExportJobConfig struct {
 	// Conditions for selecting assets to export.
@@ -150,22 +150,22 @@ var AssetsExportJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: AssetsExportJob_ConditionFields,
+			Kind:     "object",
+			Fields:   AssetsExportJob_ConditionFields,
 		},
-		"Inventory": ubx.FieldSpec{WireName: "inventory"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Inventory":           ubx.FieldSpec{WireName: "inventory"},
+		"Labels":              ubx.FieldSpec{WireName: "labels"},
 		"NetworkDependencies": ubx.FieldSpec{WireName: "network_dependencies"},
 		"PerformanceData": ubx.FieldSpec{
 			WireName: "performance_data",
-			Kind: "object",
-			Fields: AssetsExportJob_PerformanceDataFields,
+			Kind:     "object",
+			Fields:   AssetsExportJob_PerformanceDataFields,
 		},
 		"ShowHidden": ubx.FieldSpec{WireName: "show_hidden"},
 		"SignedUriDestination": ubx.FieldSpec{
 			WireName: "signed_uri_destination",
-			Kind: "object",
-			Fields: AssetsExportJob_SignedUriDestinationFields,
+			Kind:     "object",
+			Fields:   AssetsExportJob_SignedUriDestinationFields,
 		},
 	},
 }

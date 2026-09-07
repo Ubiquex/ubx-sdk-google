@@ -46,42 +46,42 @@ type AgentGateway_SelfManaged struct {
 }
 
 var AgentGateway_AgentGatewayCardFields = ubx.FieldMap{
-		"MtlsEndpoint": ubx.FieldSpec{WireName: "mtls_endpoint"},
-		"RootCertificates": ubx.FieldSpec{WireName: "root_certificates"},
-		"ServiceExtensionsServiceAccount": ubx.FieldSpec{WireName: "service_extensions_service_account"},
-	}
+	"MtlsEndpoint":                    ubx.FieldSpec{WireName: "mtls_endpoint"},
+	"RootCertificates":                ubx.FieldSpec{WireName: "root_certificates"},
+	"ServiceExtensionsServiceAccount": ubx.FieldSpec{WireName: "service_extensions_service_account"},
+}
 
 var AgentGateway_GoogleManagedFields = ubx.FieldMap{
-		"GovernedAccessPath": ubx.FieldSpec{WireName: "governed_access_path"},
-	}
+	"GovernedAccessPath": ubx.FieldSpec{WireName: "governed_access_path"},
+}
 
 var AgentGateway_NetworkConfig_DnsPeeringConfigFields = ubx.FieldMap{
-		"Domains": ubx.FieldSpec{WireName: "domains"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domains":       ubx.FieldSpec{WireName: "domains"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var AgentGateway_NetworkConfig_EgressFields = ubx.FieldMap{
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var AgentGateway_NetworkConfigFields = ubx.FieldMap{
-		"DnsPeeringConfig": ubx.FieldSpec{
-			WireName: "dns_peering_config",
-			Kind: "object",
-			Fields: AgentGateway_NetworkConfig_DnsPeeringConfigFields,
-		},
-		"Egress": ubx.FieldSpec{
-			WireName: "egress",
-			Kind: "object",
-			Fields: AgentGateway_NetworkConfig_EgressFields,
-		},
-	}
+	"DnsPeeringConfig": ubx.FieldSpec{
+		WireName: "dns_peering_config",
+		Kind:     "object",
+		Fields:   AgentGateway_NetworkConfig_DnsPeeringConfigFields,
+	},
+	"Egress": ubx.FieldSpec{
+		WireName: "egress",
+		Kind:     "object",
+		Fields:   AgentGateway_NetworkConfig_EgressFields,
+	},
+}
 
 var AgentGateway_SelfManagedFields = ubx.FieldMap{
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"ResourceUris": ubx.FieldSpec{WireName: "resource_uris"},
-	}
+	"ResourceUri":  ubx.FieldSpec{WireName: "resource_uri"},
+	"ResourceUris": ubx.FieldSpec{WireName: "resource_uris"},
+}
 
 type AgentGatewayConfig struct {
 	// Optional. The resource name of the AgentConnectivityTemplate. Format: projects/{project}/locations/{location}/agentConnectivityTemplates/{template}
@@ -143,29 +143,29 @@ var AgentGateway = ubx.ResourceBinding{
 		"AgentConnectivityTemplate": ubx.FieldSpec{WireName: "agent_connectivity_template"},
 		"AgentGatewayCard": ubx.FieldSpec{
 			WireName: "agent_gateway_card",
-			Kind: "object",
-			Fields: AgentGateway_AgentGatewayCardFields,
+			Kind:     "object",
+			Fields:   AgentGateway_AgentGatewayCardFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"GoogleManaged": ubx.FieldSpec{
 			WireName: "google_managed",
-			Kind: "object",
-			Fields: AgentGateway_GoogleManagedFields,
+			Kind:     "object",
+			Fields:   AgentGateway_GoogleManagedFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: AgentGateway_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   AgentGateway_NetworkConfigFields,
 		},
-		"Protocols": ubx.FieldSpec{WireName: "protocols"},
+		"Protocols":  ubx.FieldSpec{WireName: "protocols"},
 		"Registries": ubx.FieldSpec{WireName: "registries"},
 		"SelfManaged": ubx.FieldSpec{
 			WireName: "self_managed",
-			Kind: "object",
-			Fields: AgentGateway_SelfManagedFields,
+			Kind:     "object",
+			Fields:   AgentGateway_SelfManagedFields,
 		},
 	},
 }

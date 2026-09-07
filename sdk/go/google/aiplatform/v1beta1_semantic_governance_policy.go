@@ -10,17 +10,17 @@ type V1beta1SemanticGovernancePolicy_AgentResponseCustomization struct {
 
 type V1beta1SemanticGovernancePolicy_McpTools struct {
 	McpServer any
-	Tools any
+	Tools     any
 }
 
 var V1beta1SemanticGovernancePolicy_AgentResponseCustomizationFields = ubx.FieldMap{
-		"DenialMessage": ubx.FieldSpec{WireName: "denial_message"},
-	}
+	"DenialMessage": ubx.FieldSpec{WireName: "denial_message"},
+}
 
 var V1beta1SemanticGovernancePolicy_McpToolsFields = ubx.FieldMap{
-		"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
-		"Tools": ubx.FieldSpec{WireName: "tools"},
-	}
+	"McpServer": ubx.FieldSpec{WireName: "mcp_server"},
+	"Tools":     ubx.FieldSpec{WireName: "tools"},
+}
 
 type V1beta1SemanticGovernancePolicyConfig struct {
 	// Required. The name of the agent in Agent Registry that is affected by this policy.
@@ -72,18 +72,18 @@ var V1beta1SemanticGovernancePolicy = ubx.ResourceBinding{
 		"Agent": ubx.FieldSpec{WireName: "agent"},
 		"AgentResponseCustomization": ubx.FieldSpec{
 			WireName: "agent_response_customization",
-			Kind: "object",
-			Fields: V1beta1SemanticGovernancePolicy_AgentResponseCustomizationFields,
+			Kind:     "object",
+			Fields:   V1beta1SemanticGovernancePolicy_AgentResponseCustomizationFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"McpTools": ubx.FieldSpec{
 			WireName: "mcp_tools",
-			Kind: "list",
-			Fields: V1beta1SemanticGovernancePolicy_McpToolsFields,
+			Kind:     "list",
+			Fields:   V1beta1SemanticGovernancePolicy_McpToolsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
 		"NaturalLanguageConstraint": ubx.FieldSpec{WireName: "natural_language_constraint"},
 	},
 }

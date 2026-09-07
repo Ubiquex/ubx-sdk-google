@@ -30,9 +30,9 @@ type V1beta1PolicyTagAttrs struct {
 var V1beta1PolicyTag = ubx.ResourceBinding{
 	WireType: "google_datacatalog_v1beta1_policy_tag",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ParentPolicyTag": ubx.FieldSpec{WireName: "parent_policy_tag"},
 	},
 }

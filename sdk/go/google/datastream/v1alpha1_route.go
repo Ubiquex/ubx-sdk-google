@@ -35,8 +35,8 @@ var V1alpha1Route = ubx.ResourceBinding{
 	WireType: "google_datastream_v1alpha1_route",
 	Fields: ubx.FieldMap{
 		"DestinationAddress": ubx.FieldSpec{WireName: "destination_address"},
-		"DestinationPort": ubx.FieldSpec{WireName: "destination_port"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DestinationPort":    ubx.FieldSpec{WireName: "destination_port"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
 	},
 }

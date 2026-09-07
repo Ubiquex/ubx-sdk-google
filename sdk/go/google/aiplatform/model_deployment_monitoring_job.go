@@ -159,186 +159,186 @@ type ModelDeploymentMonitoringJob_ModelMonitoringAlertConfig struct {
 }
 
 var ModelDeploymentMonitoringJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var ModelDeploymentMonitoringJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadataFields = ubx.FieldMap{
-		"RunTime": ubx.FieldSpec{WireName: "run_time"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ErrorFields,
-		},
-	}
+	"RunTime": ubx.FieldSpec{WireName: "run_time"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ErrorFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_LoggingSamplingStrategy_RandomSampleConfigFields = ubx.FieldMap{
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var ModelDeploymentMonitoringJob_LoggingSamplingStrategyFields = ubx.FieldMap{
-		"RandomSampleConfig": ubx.FieldSpec{
-			WireName: "random_sample_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_LoggingSamplingStrategy_RandomSampleConfigFields,
-		},
-	}
+	"RandomSampleConfig": ubx.FieldSpec{
+		WireName: "random_sample_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_LoggingSamplingStrategy_RandomSampleConfigFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_BigqueryFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_GcsFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaselineFields = ubx.FieldMap{
-		"Bigquery": ubx.FieldSpec{
-			WireName: "bigquery",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_BigqueryFields,
-		},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_GcsFields,
-		},
-		"PredictionFormat": ubx.FieldSpec{WireName: "prediction_format"},
-	}
+	"Bigquery": ubx.FieldSpec{
+		WireName: "bigquery",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_BigqueryFields,
+	},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_GcsFields,
+	},
+	"PredictionFormat": ubx.FieldSpec{WireName: "prediction_format"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfigFields = ubx.FieldMap{
-		"EnableFeatureAttributes": ubx.FieldSpec{WireName: "enable_feature_attributes"},
-		"ExplanationBaseline": ubx.FieldSpec{
-			WireName: "explanation_baseline",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaselineFields,
-		},
-	}
+	"EnableFeatureAttributes": ubx.FieldSpec{WireName: "enable_feature_attributes"},
+	"ExplanationBaseline": ubx.FieldSpec{
+		WireName: "explanation_baseline",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaselineFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfigFields = ubx.FieldMap{
-		"AttributionScoreDriftThresholds": ubx.FieldSpec{
-			WireName: "attribution_score_drift_thresholds",
-			Kind: "map",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DefaultDriftThreshold": ubx.FieldSpec{
-			WireName: "default_drift_threshold",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DriftThresholds": ubx.FieldSpec{
-			WireName: "drift_thresholds",
-			Kind: "map",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-	}
+	"AttributionScoreDriftThresholds": ubx.FieldSpec{
+		WireName: "attribution_score_drift_thresholds",
+		Kind:     "map",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DefaultDriftThreshold": ubx.FieldSpec{
+		WireName: "default_drift_threshold",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DriftThresholds": ubx.FieldSpec{
+		WireName: "drift_thresholds",
+		Kind:     "map",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDatasetFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySourceFields,
-		},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSourceFields,
-		},
-		"LoggingSamplingStrategy": ubx.FieldSpec{
-			WireName: "logging_sampling_strategy",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_LoggingSamplingStrategyFields,
-		},
-		"TargetField": ubx.FieldSpec{WireName: "target_field"},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_BigquerySourceFields,
+	},
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"Dataset":    ubx.FieldSpec{WireName: "dataset"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDataset_GcsSourceFields,
+	},
+	"LoggingSamplingStrategy": ubx.FieldSpec{
+		WireName: "logging_sampling_strategy",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_LoggingSamplingStrategyFields,
+	},
+	"TargetField": ubx.FieldSpec{WireName: "target_field"},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfigFields = ubx.FieldMap{
-		"AttributionScoreSkewThresholds": ubx.FieldSpec{
-			WireName: "attribution_score_skew_thresholds",
-			Kind: "map",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"DefaultSkewThreshold": ubx.FieldSpec{
-			WireName: "default_skew_threshold",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-		"SkewThresholds": ubx.FieldSpec{
-			WireName: "skew_thresholds",
-			Kind: "map",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
-		},
-	}
+	"AttributionScoreSkewThresholds": ubx.FieldSpec{
+		WireName: "attribution_score_skew_thresholds",
+		Kind:     "map",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"DefaultSkewThreshold": ubx.FieldSpec{
+		WireName: "default_skew_threshold",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+	"SkewThresholds": ubx.FieldSpec{
+		WireName: "skew_thresholds",
+		Kind:     "map",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfig_AttributionScoreDriftThresholdsFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfigFields = ubx.FieldMap{
-		"ExplanationConfig": ubx.FieldSpec{
-			WireName: "explanation_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfigFields,
-		},
-		"PredictionDriftDetectionConfig": ubx.FieldSpec{
-			WireName: "prediction_drift_detection_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfigFields,
-		},
-		"TrainingDataset": ubx.FieldSpec{
-			WireName: "training_dataset",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDatasetFields,
-		},
-		"TrainingPredictionSkewDetectionConfig": ubx.FieldSpec{
-			WireName: "training_prediction_skew_detection_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfigFields,
-		},
-	}
+	"ExplanationConfig": ubx.FieldSpec{
+		WireName: "explanation_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfigFields,
+	},
+	"PredictionDriftDetectionConfig": ubx.FieldSpec{
+		WireName: "prediction_drift_detection_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_PredictionDriftDetectionConfigFields,
+	},
+	"TrainingDataset": ubx.FieldSpec{
+		WireName: "training_dataset",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingDatasetFields,
+	},
+	"TrainingPredictionSkewDetectionConfig": ubx.FieldSpec{
+		WireName: "training_prediction_skew_detection_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_TrainingPredictionSkewDetectionConfigFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigsFields = ubx.FieldMap{
-		"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
-		"ObjectiveConfig": ubx.FieldSpec{
-			WireName: "objective_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfigFields,
-		},
-	}
+	"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
+	"ObjectiveConfig": ubx.FieldSpec{
+		WireName: "objective_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfigFields,
+	},
+}
 
 var ModelDeploymentMonitoringJob_ModelDeploymentMonitoringScheduleConfigFields = ubx.FieldMap{
-		"MonitorInterval": ubx.FieldSpec{WireName: "monitor_interval"},
-		"MonitorWindow": ubx.FieldSpec{WireName: "monitor_window"},
-	}
+	"MonitorInterval": ubx.FieldSpec{WireName: "monitor_interval"},
+	"MonitorWindow":   ubx.FieldSpec{WireName: "monitor_window"},
+}
 
 var ModelDeploymentMonitoringJob_ModelMonitoringAlertConfig_EmailAlertConfigFields = ubx.FieldMap{
-		"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
-	}
+	"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
+}
 
 var ModelDeploymentMonitoringJob_ModelMonitoringAlertConfigFields = ubx.FieldMap{
-		"EmailAlertConfig": ubx.FieldSpec{
-			WireName: "email_alert_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelMonitoringAlertConfig_EmailAlertConfigFields,
-		},
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"NotificationChannels": ubx.FieldSpec{WireName: "notification_channels"},
-	}
+	"EmailAlertConfig": ubx.FieldSpec{
+		WireName: "email_alert_config",
+		Kind:     "object",
+		Fields:   ModelDeploymentMonitoringJob_ModelMonitoringAlertConfig_EmailAlertConfigFields,
+	},
+	"EnableLogging":        ubx.FieldSpec{WireName: "enable_logging"},
+	"NotificationChannels": ubx.FieldSpec{WireName: "notification_channels"},
+}
 
 type ModelDeploymentMonitoringJobConfig struct {
 	// YAML schema file uri describing the format of a single instance that you want Tensorflow Data Validation (TFDV) to analyze. If this field is empty, all the feature data types are inferred from predict_instance_schema_uri, meaning that TFDV will use the data in the exact format(data type) as prediction request/response. If there are any data type differences between predict instance and TFDV instance, this field can be used to override the schema. For models trained with Vertex AI, this field must be set as all the fields in predict instance formatted as string.
@@ -431,53 +431,53 @@ type ModelDeploymentMonitoringJobAttrs struct {
 var ModelDeploymentMonitoringJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_model_deployment_monitoring_job",
 	Fields: ubx.FieldMap{
-		"AnalysisInstanceSchemaUri": ubx.FieldSpec{WireName: "analysis_instance_schema_uri"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"AnalysisInstanceSchemaUri":    ubx.FieldSpec{WireName: "analysis_instance_schema_uri"},
+		"DisplayName":                  ubx.FieldSpec{WireName: "display_name"},
 		"EnableMonitoringPipelineLogs": ubx.FieldSpec{WireName: "enable_monitoring_pipeline_logs"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_EncryptionSpecFields,
 		},
 		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ErrorFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LatestMonitoringPipelineMetadata": ubx.FieldSpec{
 			WireName: "latest_monitoring_pipeline_metadata",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadataFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_LatestMonitoringPipelineMetadataFields,
 		},
 		"LogTtl": ubx.FieldSpec{WireName: "log_ttl"},
 		"LoggingSamplingStrategy": ubx.FieldSpec{
 			WireName: "logging_sampling_strategy",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_LoggingSamplingStrategyFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_LoggingSamplingStrategyFields,
 		},
 		"ModelDeploymentMonitoringObjectiveConfigs": ubx.FieldSpec{
 			WireName: "model_deployment_monitoring_objective_configs",
-			Kind: "list",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigsFields,
+			Kind:     "list",
+			Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigsFields,
 		},
 		"ModelDeploymentMonitoringScheduleConfig": ubx.FieldSpec{
 			WireName: "model_deployment_monitoring_schedule_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringScheduleConfigFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringScheduleConfigFields,
 		},
 		"ModelMonitoringAlertConfig": ubx.FieldSpec{
 			WireName: "model_monitoring_alert_config",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelMonitoringAlertConfigFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_ModelMonitoringAlertConfigFields,
 		},
 		"PredictInstanceSchemaUri": ubx.FieldSpec{WireName: "predict_instance_schema_uri"},
-		"SamplePredictInstance": ubx.FieldSpec{WireName: "sample_predict_instance"},
+		"SamplePredictInstance":    ubx.FieldSpec{WireName: "sample_predict_instance"},
 		"StatsAnomaliesBaseDirectory": ubx.FieldSpec{
 			WireName: "stats_anomalies_base_directory",
-			Kind: "object",
-			Fields: ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_GcsFields,
+			Kind:     "object",
+			Fields:   ModelDeploymentMonitoringJob_ModelDeploymentMonitoringObjectiveConfigs_ObjectiveConfig_ExplanationConfig_ExplanationBaseline_GcsFields,
 		},
 	},
 }

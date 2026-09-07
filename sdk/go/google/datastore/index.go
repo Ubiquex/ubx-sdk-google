@@ -11,9 +11,9 @@ type Index_Properties struct {
 }
 
 var Index_PropertiesFields = ubx.FieldMap{
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+}
 
 type IndexConfig struct {
 	// Required. The index's ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED.
@@ -43,11 +43,11 @@ var Index = ubx.ResourceBinding{
 	WireType: "google_datastore_index",
 	Fields: ubx.FieldMap{
 		"Ancestor": ubx.FieldSpec{WireName: "ancestor"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "list",
-			Fields: Index_PropertiesFields,
+			Kind:     "list",
+			Fields:   Index_PropertiesFields,
 		},
 	},
 }

@@ -22,10 +22,10 @@ type DomainMapping_SslSettings struct {
 }
 
 var DomainMapping_SslSettingsFields = ubx.FieldMap{
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
-		"SslManagementType": ubx.FieldSpec{WireName: "ssl_management_type"},
-	}
+	"CertificateId":               ubx.FieldSpec{WireName: "certificate_id"},
+	"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
+	"SslManagementType":           ubx.FieldSpec{WireName: "ssl_management_type"},
+}
 
 type DomainMappingConfig struct {
 	// Relative name of the domain serving the application. Example: example.com.
@@ -51,8 +51,8 @@ var DomainMapping = ubx.ResourceBinding{
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"SslSettings": ubx.FieldSpec{
 			WireName: "ssl_settings",
-			Kind: "object",
-			Fields: DomainMapping_SslSettingsFields,
+			Kind:     "object",
+			Fields:   DomainMapping_SslSettingsFields,
 		},
 	},
 }
