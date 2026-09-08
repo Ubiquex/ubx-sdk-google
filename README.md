@@ -7,8 +7,8 @@ SDK languages in one combined repo:
 
 - [`sdk/go/`](sdk/go/) — Go bindings, module `github.com/ubiquex/ubx-sdk-google/sdk/go`
   (a subdirectory Go module, tagged `sdk/go/vX.Y.Z`)
-- [`sdk/typescript/`](sdk/typescript/) — TypeScript bindings, published to JSR as
-  [`@ubx/sdk-google`](https://jsr.io/@ubx/sdk-google)
+- [`sdk/typescript/`](sdk/typescript/) — TypeScript bindings, published to npm as
+  [`@ubx/sdk-google`](https://www.npmjs.com/package/@ubx/sdk-google)
 - [`sdk/python/`](sdk/python/) — Python bindings, published to PyPI as
   [`ubx-sdk-google`](https://pypi.org/project/ubx-sdk-google/) (imported as
   `ubx.google.*`, a real PEP 420 namespace package)
@@ -68,7 +68,7 @@ watch is separate follow-up work, not done in this PR; the workflow is
 removed here rather than left silently watching a source this repo no
 longer generates from.
 
-Package identity (module path, JSR/PyPI names) is unchanged — only
+Package identity (module path, npm/PyPI names) is unchanged — only
 the generated content and `VERSION`'s own format changed.
 
 Local sanity: `go build`/`go vet` clean against the regenerated
@@ -76,7 +76,7 @@ Local sanity: `go build`/`go vet` clean against the regenerated
 sanity (`deno check`, real module import) not run locally.
 
 Depends on the shared runtime: [ubx-sdk-go](https://github.com/ubiquex/ubx-sdk-go) (Go),
-[`jsr:@ubx/sdk`](https://jsr.io/@ubx/sdk) (TypeScript),
+[`@ubx/sdk`](https://www.npmjs.com/package/@ubx/sdk) (TypeScript),
 [`ubx-sdk`](https://pypi.org/project/ubx-sdk/) (Python, imported as `ubx_sdk`).
 
 <!-- README-GEN:BEGIN -->
